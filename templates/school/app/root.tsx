@@ -78,6 +78,9 @@ function DbSyncSetup() {
   useDbSync({
     queryClient: qc,
     queryKeys: [
+      "session",
+      "admin-overview-stats",
+      "admin-staff",
       "school",
       "subjects",
       "units",

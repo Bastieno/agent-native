@@ -7,7 +7,8 @@ import {
 import { getSession, runWithRequestContext } from "@agent-native/core/server";
 import { getDb, schema } from "../db/index.js";
 import { eq, and, desc, asc, inArray, sql, count } from "drizzle-orm";
-import { getOrgSetting } from "@agent-native/core/settings";
+import { getOrgSetting, getAllSettings, putOrgSetting } from "@agent-native/core/settings";
+import { nanoid } from "nanoid";
 
 // ─── Helper ──────────────────────────────────────────────────────────────────
 
@@ -15,6 +16,15 @@ async function requireSession(event: any) {
   const session = await getSession(event);
   if (!session?.email) {
     throw createError({ statusCode: 401, message: "Unauthorized" });
+  }
+  // Older session paths (legacy cookie, desktop SSO) may not include userId.
+  // Fall back to a lookup by email so all handlers always have a userId.
+  if (!session.userId) {
+    const db = getDb();
+    const row = await db.get(
+      sql`SELECT id FROM "user" WHERE email = ${session.email} LIMIT 1`,
+    ) as { id: string } | undefined;
+    if (row?.id) (session as any).userId = row.id;
   }
   return session;
 }
@@ -30,10 +40,66 @@ async function getSchoolProfile(db: any, userId: string) {
 
 // ─── Session info (role detection) ───────────────────────────────────────────
 
+/**
+ * When an invited staff member signs in for the first time they have no
+ * school_profiles row yet.  Scan pending-staff-invites across all orgs and
+ * auto-create the profile so they land in the right portal immediately
+ * without the admin having to manually run finalize-staff-invite.
+ */
+async function autoActivateInvitedStaff(
+  db: any,
+  userId: string,
+  email: string,
+): Promise<{ schoolRole: string; schoolId: string } | null> {
+  const all = await getAllSettings();
+  const INVITE_KEY_RE = /^o:([^:]+):pending-staff-invites$/;
+  for (const [fullKey, value] of Object.entries(all)) {
+    const m = INVITE_KEY_RE.exec(fullKey);
+    if (!m) continue;
+    const orgId = m[1];
+    const invites = Array.isArray(value) ? value : [];
+    const match = invites.find(
+      (inv: any) => inv.email?.toLowerCase() === email.toLowerCase(),
+    );
+    if (!match) continue;
+    const schoolRole = match.schoolRole as string;
+    // Create the school profile
+    await db.insert(schema.schoolProfiles).values({
+      id: nanoid(),
+      userId,
+      schoolId: orgId,
+      schoolRole,
+      status: "active",
+    });
+    // Remove from pending list so they no longer show under "Pending invitations"
+    const remaining = invites.filter(
+      (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
+    );
+    await putOrgSetting(orgId, "pending-staff-invites", remaining as any);
+    return { schoolRole, schoolId: orgId };
+  }
+  return null;
+}
+
 export const getSessionInfo = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
+  let profile = session.userId
+    ? await getSchoolProfile(db, session.userId)
+    : null;
+
+  // Auto-activate if the user is in a pending invite list
+  if (!profile && session.userId && session.email) {
+    const activated = await autoActivateInvitedStaff(
+      db,
+      session.userId,
+      session.email,
+    );
+    if (activated) {
+      profile = { schoolRole: activated.schoolRole, schoolId: activated.schoolId };
+    }
+  }
+
   return {
     user: { id: session.userId, email: session.email, name: session.name },
     schoolRole: profile?.schoolRole ?? null,
@@ -88,6 +154,59 @@ export const getStats = defineEventHandler(async (event) => {
     classCount: classRows[0]?.c ?? 0,
     subjectCount: subjectRows[0]?.c ?? 0,
   };
+});
+
+// ─── Staff list (active + pending invites) ───────────────────────────────────
+
+export const getStaff = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId!);
+  if (!profile) return { active: [], pending: [] };
+  const schoolId = profile.schoolId;
+
+  const profiles = await db
+    .select()
+    .from(schema.schoolProfiles)
+    .where(
+      and(
+        eq(schema.schoolProfiles.schoolId, schoolId),
+        inArray(schema.schoolProfiles.schoolRole, [
+          "school_admin",
+          "teacher",
+          "subject_coordinator",
+        ]),
+      ),
+    );
+
+  const active = await Promise.all(
+    profiles.map(async (p) => {
+      const userRow = (await db.get(
+        sql`SELECT email, name FROM "user" WHERE id = ${p.userId} LIMIT 1`,
+      )) as { email: string; name: string } | undefined;
+      return { ...p, email: userRow?.email ?? null, name: userRow?.name ?? null };
+    }),
+  );
+
+  const activeEmails = new Set(
+    active.map((a) => a.email?.toLowerCase()).filter(Boolean),
+  );
+
+  const allPending = ((await getOrgSetting(schoolId, "pending-staff-invites")) ??
+    []) as Array<{
+    id: string;
+    email: string;
+    name: string;
+    schoolRole: string;
+    invitedAt: number;
+  }>;
+
+  // Filter out anyone who has already been activated (has an active school profile)
+  const pending = allPending.filter(
+    (inv) => !activeEmails.has(inv.email?.toLowerCase()),
+  );
+
+  return { active, pending };
 });
 
 // ─── School config ────────────────────────────────────────────────────────────

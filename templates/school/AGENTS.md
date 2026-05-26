@@ -96,9 +96,22 @@ pnpm action navigate --view=curriculum-setup --curriculumDraftId=<id>
 ```bash
 pnpm action list-staff
 pnpm action invite-staff --email "teacher@school.com" --name "Ms Smith" --schoolRole teacher
+pnpm action cancel-staff-invite --email "teacher@school.com"
+pnpm action finalize-staff-invite --email "teacher@school.com"
 pnpm action update-staff-role --userId <id> --schoolRole subject_coordinator
 pnpm action suspend-staff --userId <id>
 ```
+
+**Invitation lifecycle — always follow this order:**
+1. `invite-staff` — sends invite email and records the pending invite (visible on Staff page)
+2. Staff member clicks the link and signs in
+3. `finalize-staff-invite --email "..."` — creates their school profile so they can access the portal
+
+**If an invite needs to be resent or the email was wrong:**
+- `cancel-staff-invite --email "..."` — removes from pending list
+- Then `invite-staff` again with the correct details
+
+**Never skip `finalize-staff-invite`** — until it runs, the staff member has no school role and cannot use the teacher portal.
 
 ### A4. School Analytics
 

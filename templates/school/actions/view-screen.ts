@@ -1,5 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { readAppState } from "@agent-native/core/application-state";
+import { getOrgSetting } from "@agent-native/core/settings";
+import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, sql } from "drizzle-orm";
 import { z } from "zod";
@@ -21,72 +23,110 @@ export default defineAction({
     const screen: Record<string, unknown> = { navigation: nav };
     const role = nav.role;
 
+    // Resolve school context from the authenticated session (not from nav state,
+    // which does not carry schoolId or userId).
+    const { orgId: schoolId, userEmail } = currentAccess();
+
     // ─── Admin views ─────────────────────────────────────────────────────────
     if (role === "admin") {
       if (nav.view === "overview" || !nav.view) {
-        try {
-          const [staffCount] = await db
-            .select({ count: sql<number>`count(*)` })
-            .from(schema.schoolProfiles)
-            .where(
-              and(
-                eq(schema.schoolProfiles.schoolId, nav.schoolId ?? ""),
-                sql`school_role != 'student'`,
-              ),
-            );
-          const [studentCount] = await db
-            .select({ count: sql<number>`count(*)` })
-            .from(schema.schoolProfiles)
-            .where(
-              and(
-                eq(schema.schoolProfiles.schoolId, nav.schoolId ?? ""),
-                eq(schema.schoolProfiles.schoolRole, "student"),
-              ),
-            );
-          const [classCount] = await db
-            .select({ count: sql<number>`count(*)` })
-            .from(schema.classes)
-            .where(eq(schema.classes.orgId, nav.schoolId ?? ""));
-          const [subjectCount] = await db
-            .select({ count: sql<number>`count(*)` })
-            .from(schema.subjects)
-            .where(eq(schema.subjects.schoolId, nav.schoolId ?? ""));
+        if (!schoolId) {
+          screen.setupRequired = true;
+          screen.message =
+            "No school has been set up yet. Run setup-school to initialize your school.";
+        } else {
+          try {
+            const [staffCount] = await db
+              .select({ count: sql<number>`count(*)` })
+              .from(schema.schoolProfiles)
+              .where(
+                and(
+                  eq(schema.schoolProfiles.schoolId, schoolId),
+                  sql`school_role != 'student'`,
+                ),
+              );
+            const [studentCount] = await db
+              .select({ count: sql<number>`count(*)` })
+              .from(schema.schoolProfiles)
+              .where(
+                and(
+                  eq(schema.schoolProfiles.schoolId, schoolId),
+                  eq(schema.schoolProfiles.schoolRole, "student"),
+                ),
+              );
+            const [classCount] = await db
+              .select({ count: sql<number>`count(*)` })
+              .from(schema.classes)
+              .where(eq(schema.classes.orgId, schoolId));
+            const [subjectCount] = await db
+              .select({ count: sql<number>`count(*)` })
+              .from(schema.subjects)
+              .where(eq(schema.subjects.schoolId, schoolId));
 
-          screen.stats = {
-            staffCount: staffCount?.count ?? 0,
-            studentCount: studentCount?.count ?? 0,
-            classCount: classCount?.count ?? 0,
-            subjectCount: subjectCount?.count ?? 0,
-          };
+            screen.stats = {
+              staffCount: staffCount?.count ?? 0,
+              studentCount: studentCount?.count ?? 0,
+              classCount: classCount?.count ?? 0,
+              subjectCount: subjectCount?.count ?? 0,
+            };
+          } catch {
+            // continue without stats
+          }
+        }
+      }
+
+      if (nav.view === "settings" && schoolId) {
+        try {
+          const config = await getOrgSetting(schoolId, "school-config");
+          const customFields = await getOrgSetting(
+            schoolId,
+            "custom-fields-schema",
+          );
+          const gradeLevels = await db
+            .select()
+            .from(schema.gradeLevels)
+            .where(eq(schema.gradeLevels.schoolId, schoolId))
+            .orderBy(schema.gradeLevels.sequence);
+          const terms = await db
+            .select()
+            .from(schema.terms)
+            .where(eq(schema.terms.schoolId, schoolId))
+            .orderBy(schema.terms.sequence);
+          screen.schoolConfig = config ?? null;
+          screen.customFieldsSchema = customFields ?? null;
+          screen.gradeLevels = gradeLevels;
+          screen.terms = terms;
         } catch {
-          // continue without stats
+          // continue
         }
       }
 
       if (nav.view === "curriculum" || nav.subjectId) {
-        try {
-          const subjects = await db
-            .select()
-            .from(schema.subjects)
-            .where(eq(schema.subjects.schoolId, nav.schoolId ?? ""))
-            .orderBy(schema.subjects.position);
-          screen.subjects = subjects.map((s) => ({
-            id: s.id,
-            name: s.name,
-            code: s.code,
-            color: s.color,
-            status: s.status,
-          }));
-          if (nav.subjectId) {
-            const units = await db
+        if (schoolId) {
+          try {
+            const subjects = await db
               .select()
-              .from(schema.units)
-              .where(eq(schema.units.subjectId, nav.subjectId))
-              .orderBy(schema.units.sequence);
-            screen.units = units;
+              .from(schema.subjects)
+              .where(eq(schema.subjects.schoolId, schoolId))
+              .orderBy(schema.subjects.position);
+            screen.subjects = subjects.map((s) => ({
+              id: s.id,
+              name: s.name,
+              code: s.code,
+              color: s.color,
+              status: s.status,
+            }));
+            if (nav.subjectId) {
+              const units = await db
+                .select()
+                .from(schema.units)
+                .where(eq(schema.units.subjectId, nav.subjectId))
+                .orderBy(schema.units.sequence);
+              screen.units = units;
+            }
+          } catch {
+            // continue
           }
-        } catch {
-          // continue
         }
       }
 
@@ -110,12 +150,12 @@ export default defineAction({
         screen.liveWorkspace = draftState;
       }
 
-      if (nav.view === "students" || nav.studentId) {
+      if ((nav.view === "students" || nav.studentId) && schoolId) {
         try {
           const students = await db
             .select()
             .from(schema.students)
-            .where(eq(schema.students.schoolId, nav.schoolId ?? ""))
+            .where(eq(schema.students.schoolId, schoolId))
             .limit(50);
           screen.students = students.map((s) => ({
             id: s.id,
@@ -199,9 +239,7 @@ export default defineAction({
             .from(schema.lessonNotes)
             .where(eq(schema.lessonNotes.id, nav.lessonId))
             .limit(1);
-          const liveEdit = await readAppState(
-            `lesson-edit-${nav.lessonId}`,
-          );
+          const liveEdit = await readAppState(`lesson-edit-${nav.lessonId}`);
           const resources = await db
             .select()
             .from(schema.lessonResources)
@@ -295,18 +333,28 @@ export default defineAction({
 
       if (nav.view === "dashboard" || !nav.view) {
         try {
-          const myClasses = await db
-            .select()
-            .from(schema.classes)
-            .where(eq(schema.classes.primaryTeacherUserId, nav.userId ?? ""))
-            .orderBy(schema.classes.createdAt)
-            .limit(10);
-          screen.myClasses = myClasses.map((c) => ({
-            id: c.id,
-            name: c.name,
-            subjectId: c.subjectId,
-            status: c.status,
-          }));
+          // Look up teacher's userId from the framework user table
+          let teacherUserId: string | undefined;
+          if (userEmail) {
+            const userRow = await db.get<{ id: string }>(
+              sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
+            );
+            teacherUserId = userRow?.id;
+          }
+          if (teacherUserId) {
+            const myClasses = await db
+              .select()
+              .from(schema.classes)
+              .where(eq(schema.classes.primaryTeacherUserId, teacherUserId))
+              .orderBy(schema.classes.createdAt)
+              .limit(10);
+            screen.myClasses = myClasses.map((c) => ({
+              id: c.id,
+              name: c.name,
+              subjectId: c.subjectId,
+              status: c.status,
+            }));
+          }
         } catch {
           // continue
         }
@@ -315,6 +363,19 @@ export default defineAction({
 
     // ─── Student views ────────────────────────────────────────────────────────
     if (role === "student") {
+      // Resolve current student's userId from the framework user table
+      let studentUserId: string | undefined;
+      if (userEmail) {
+        try {
+          const userRow = await db.get<{ id: string }>(
+            sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
+          );
+          studentUserId = userRow?.id;
+        } catch {
+          // continue
+        }
+      }
+
       if (nav.view === "assessment" && nav.assessmentId) {
         try {
           const [assessment] = await db
@@ -329,23 +390,26 @@ export default defineAction({
             .limit(1);
           if (assessment) {
             // Get assigned variant (never reveal difficulty name to student)
-            const [assigned] = await db
-              .select()
-              .from(schema.studentAssessments)
-              .where(
-                and(
-                  eq(schema.studentAssessments.assessmentId, nav.assessmentId),
-                  eq(schema.studentAssessments.studentId, nav.studentId ?? ""),
-                ),
-              )
-              .limit(1);
+            const [assigned] = studentUserId
+              ? await db
+                  .select()
+                  .from(schema.studentAssessments)
+                  .where(
+                    and(
+                      eq(
+                        schema.studentAssessments.assessmentId,
+                        nav.assessmentId,
+                      ),
+                      eq(schema.studentAssessments.studentId, studentUserId),
+                    ),
+                  )
+                  .limit(1)
+              : [undefined];
             const variant = assigned?.variantId
               ? await db
                   .select()
                   .from(schema.assessmentVariants)
-                  .where(
-                    eq(schema.assessmentVariants.id, assigned.variantId),
-                  )
+                  .where(eq(schema.assessmentVariants.id, assigned.variantId))
                   .limit(1)
                   .then(([v]) => v)
               : null;
@@ -389,16 +453,15 @@ export default defineAction({
                   status: submission.status,
                   content: submission.content,
                   submittedAt: submission.submittedAt,
-                  grade:
-                    grade?.isPublished
-                      ? {
-                          score: grade.score,
-                          maxScore: grade.maxScore,
-                          percentage: grade.percentage,
-                          letterGrade: grade.letterGrade,
-                          feedback: grade.feedback,
-                        }
-                      : null,
+                  grade: grade?.isPublished
+                    ? {
+                        score: grade.score,
+                        maxScore: grade.maxScore,
+                        percentage: grade.percentage,
+                        letterGrade: grade.letterGrade,
+                        feedback: grade.feedback,
+                      }
+                    : null,
                 }
               : null;
             screen.submissionDraft = submissionDraft;
@@ -409,20 +472,21 @@ export default defineAction({
       }
 
       if (nav.view === "dashboard" || nav.view === "classes") {
-        try {
-          const enrollments = await db
-            .select()
-            .from(schema.classEnrollments)
-            .where(
-              and(
-                eq(schema.classEnrollments.studentUserId, nav.userId ?? ""),
-                eq(schema.classEnrollments.status, "active"),
-              ),
-            );
-          const classIds = enrollments.map((e) => e.classId);
-          screen.enrolledClasses = classIds.length;
-        } catch {
-          // continue
+        if (studentUserId) {
+          try {
+            const enrollments = await db
+              .select()
+              .from(schema.classEnrollments)
+              .where(
+                and(
+                  eq(schema.classEnrollments.studentUserId, studentUserId),
+                  eq(schema.classEnrollments.status, "active"),
+                ),
+              );
+            screen.enrolledClasses = enrollments.length;
+          } catch {
+            // continue
+          }
         }
       }
     }

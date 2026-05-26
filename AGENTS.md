@@ -83,6 +83,7 @@ Agent skills in `.agents/skills/` provide detailed guidance. Read the relevant s
 | `portability`          | Keeping code database- and hosting-agnostic                     |
 | `server-plugins`       | Framework plugins and the `/_agent-native/` namespace           |
 | `authentication`       | Auth modes, sessions, orgs, protecting routes                   |
+| `react-router-ssr-nitro` | Fix NitroViteError "No fetch handler" when using React Router v7 with Nitro |
 | `security`             | Input validation, SQL injection, XSS, secrets, data scoping     |
 | `a2a-protocol`         | Enabling inter-agent communication                              |
 | `external-agents`      | Connecting Claude Code/Cowork/Codex; deep links; `link` builder |
