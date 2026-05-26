@@ -8,14 +8,14 @@ const handler = createRequestHandler(
   () => import("virtual:react-router/server-build"),
 );
 
-// Paths served by Vite's own middleware — skip React Router to avoid
-// verbose 404 logs for source maps and pre-bundled deps in dev mode.
-const VITE_INTERNAL = /^\/node_modules\/|\.map$/;
-
 export default {
   async fetch(request: Request) {
-    const { pathname } = new URL(request.url);
-    if (VITE_INTERNAL.test(pathname)) {
+    // Only hand HTML document requests to React Router.
+    // API calls, source maps, Chrome DevTools probes, and other non-page
+    // requests should be handled by Nitro routes or Vite's dev middleware —
+    // not by React Router, which would log a verbose 404 for each one.
+    const accept = request.headers.get("accept") ?? "";
+    if (!accept.includes("text/html")) {
       return new Response(null, { status: 404 });
     }
     return handler(request);
