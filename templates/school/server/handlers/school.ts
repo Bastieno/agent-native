@@ -345,7 +345,21 @@ export const listClasses = defineEventHandler(async (event) => {
   const countMap: Record<string, number> = {};
   for (const e of enrollments) countMap[e.classId] = Number(e.c);
 
-  return rows.map((r: any) => ({ ...r, enrollmentCount: countMap[r.id] ?? 0 }));
+  // Fetch teacher names
+  const teacherIds = [...new Set(rows.map((r: any) => r.primaryTeacherUserId).filter(Boolean))];
+  const teacherMap: Record<string, string> = {};
+  if (teacherIds.length > 0) {
+    const teacherRows = await db.all(
+      sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(teacherIds.map((id: string) => sql`${id}`), sql`, `)})`,
+    ) as Array<{ id: string; name: string; email: string }>;
+    for (const t of teacherRows) teacherMap[t.id] = t.name ?? t.email ?? t.id;
+  }
+
+  return rows.map((r: any) => ({
+    ...r,
+    enrollmentCount: countMap[r.id] ?? 0,
+    teacherName: r.primaryTeacherUserId ? (teacherMap[r.primaryTeacherUserId] ?? null) : null,
+  }));
 });
 
 // ─── Teacher's own classes ────────────────────────────────────────────────────
@@ -537,14 +551,213 @@ export const listMyStudents = defineEventHandler(async (event) => {
     if (!latestCategory[key]) latestCategory[key] = cat.category;
   }
 
+  // Fetch user names/emails in one query
+  const userRows = await db.all(
+    sql`SELECT id, email, name FROM "user" WHERE id IN (${sql.join(studentUserIds.map((id: string) => sql`${id}`), sql`, `)})`,
+  ) as Array<{ id: string; email: string; name: string }>;
+  const userMap: Record<string, { email: string; name: string }> = {};
+  for (const u of userRows) userMap[u.id] = u;
+
+  // Map categories (keyed by studentId — use first classId match)
+  const categoryByUser: Record<string, string> = {};
+  for (const cat of categories) {
+    if (!categoryByUser[cat.studentId]) categoryByUser[cat.studentId] = cat.category;
+  }
+
   return studentUserIds.map((userId: string) => ({
     id: userId,
-    name: null,
-    email: null,
-    category: null,
+    name: userMap[userId]?.name ?? null,
+    email: userMap[userId]?.email ?? null,
+    category: categoryByUser[userId] ?? null,
     averageScore: null,
     completionRate: null,
     className: null,
+  }));
+});
+
+// ─── All students (admin view) ────────────────────────────────────────────────
+
+export const listStudents = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) return [];
+
+  const students = await db
+    .select({
+      id: schema.students.id,
+      userId: schema.students.userId,
+      admissionNumber: schema.students.admissionNumber,
+      status: schema.students.status,
+      gradeLevelId: schema.students.gradeLevelId,
+      gradeLevelName: schema.gradeLevels.name,
+    })
+    .from(schema.students)
+    .leftJoin(schema.gradeLevels, eq(schema.students.gradeLevelId, schema.gradeLevels.id))
+    .where(eq(schema.students.schoolId, profile.schoolId));
+
+  if (students.length === 0) return [];
+
+  const userIds = students.map((s: any) => s.userId).filter(Boolean);
+  const userMap: Record<string, { name: string; email: string }> = {};
+  if (userIds.length > 0) {
+    const userRows = await db.all(
+      sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(userIds.map((id: string) => sql`${id}`), sql`, `)})`,
+    ) as Array<{ id: string; name: string; email: string }>;
+    for (const u of userRows) userMap[u.id] = { name: u.name, email: u.email };
+  }
+
+  return students.map((s: any) => ({
+    ...s,
+    name: userMap[s.userId]?.name ?? null,
+    email: userMap[s.userId]?.email ?? null,
+  }));
+});
+
+// ─── Class detail (teacher/admin view) ───────────────────────────────────────
+
+export const getClassDetail = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const classId = getRouterParam(event, "classId");
+  if (!classId) throw createError({ statusCode: 400, message: "Missing classId" });
+
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) throw createError({ statusCode: 403, message: "Forbidden" });
+
+  const rows = await db
+    .select({
+      id: schema.classes.id,
+      name: schema.classes.name,
+      status: schema.classes.status,
+      primaryTeacherUserId: schema.classes.primaryTeacherUserId,
+      subjectId: schema.classes.subjectId,
+      gradeLevelId: schema.classes.gradeLevelId,
+      subjectName: schema.subjects.name,
+      gradeLevelName: schema.gradeLevels.name,
+    })
+    .from(schema.classes)
+    .leftJoin(schema.subjects, eq(schema.classes.subjectId, schema.subjects.id))
+    .leftJoin(schema.gradeLevels, eq(schema.classes.gradeLevelId, schema.gradeLevels.id))
+    .where(and(eq(schema.classes.id, classId), eq(schema.classes.orgId, profile.schoolId)))
+    .limit(1);
+
+  if (!rows[0]) throw createError({ statusCode: 404, message: "Not found" });
+  const cls = rows[0] as any;
+
+  let teacherName: string | null = null;
+  if (cls.primaryTeacherUserId) {
+    const t = await db.get(
+      sql`SELECT name, email FROM "user" WHERE id = ${cls.primaryTeacherUserId} LIMIT 1`,
+    ) as { name: string; email: string } | undefined;
+    teacherName = t?.name ?? t?.email ?? null;
+  }
+
+  return { ...cls, teacherName };
+});
+
+// ─── Lessons list (by classId) ────────────────────────────────────────────────
+
+export const listLessons = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) return [];
+
+  const q = getQuery(event);
+  const classId = q.classId as string | undefined;
+  if (!classId) return [];
+
+  return db
+    .select({
+      id: schema.lessonNotes.id,
+      title: schema.lessonNotes.title,
+      status: schema.lessonNotes.status,
+      unitId: schema.lessonNotes.unitId,
+      createdAt: schema.lessonNotes.createdAt,
+    })
+    .from(schema.lessonNotes)
+    .where(eq(schema.lessonNotes.classId, classId))
+    .orderBy(desc(schema.lessonNotes.createdAt));
+});
+
+// ─── Assessments list (by classId) ───────────────────────────────────────────
+
+export const listAssessments = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) return [];
+
+  const q = getQuery(event);
+  const classId = q.classId as string | undefined;
+  if (!classId) return [];
+
+  return db
+    .select({
+      id: schema.assessments.id,
+      title: schema.assessments.title,
+      assessmentType: schema.assessments.assessmentType,
+      dueDate: schema.assessments.dueDate,
+      totalPoints: schema.assessments.totalPoints,
+      status: schema.assessments.status,
+    })
+    .from(schema.assessments)
+    .where(eq(schema.assessments.classId, classId))
+    .orderBy(asc(schema.assessments.dueDate));
+});
+
+// ─── Class students list ──────────────────────────────────────────────────────
+
+export const listClassStudents = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) return [];
+
+  const q = getQuery(event);
+  const classId = q.classId as string | undefined;
+  if (!classId) return [];
+
+  const enrollments = await db
+    .select({
+      enrollmentId: schema.classEnrollments.id,
+      studentUserId: schema.classEnrollments.studentUserId,
+      status: schema.classEnrollments.status,
+    })
+    .from(schema.classEnrollments)
+    .where(
+      and(
+        eq(schema.classEnrollments.classId, classId),
+        eq(schema.classEnrollments.status, "active"),
+      ),
+    );
+
+  if (enrollments.length === 0) return [];
+
+  const userIds = enrollments.map((e: any) => e.studentUserId);
+  const userRows = await db.all(
+    sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(userIds.map((id: string) => sql`${id}`), sql`, `)})`,
+  ) as Array<{ id: string; name: string; email: string }>;
+  const userMap: Record<string, { name: string; email: string }> = {};
+  for (const u of userRows) userMap[u.id] = { name: u.name, email: u.email };
+
+  const categories = await db
+    .select()
+    .from(schema.studentCategories)
+    .where(eq(schema.studentCategories.classId, classId))
+    .orderBy(desc(schema.studentCategories.assessedAt));
+  const categoryByUser: Record<string, string> = {};
+  for (const cat of categories) {
+    if (!categoryByUser[cat.studentId]) categoryByUser[cat.studentId] = cat.category;
+  }
+
+  return enrollments.map((e: any) => ({
+    enrollmentId: e.enrollmentId,
+    studentUserId: e.studentUserId,
+    name: userMap[e.studentUserId]?.name ?? null,
+    email: userMap[e.studentUserId]?.email ?? null,
+    category: categoryByUser[e.studentUserId] ?? null,
   }));
 });
 
@@ -599,9 +812,16 @@ export const getGradebook = defineEventHandler(async (event) => {
     gradeMap[g.studentId][g.assessmentId] = g;
   }
 
+  // Fetch actual names from user table
+  const userRows = await db.all(
+    sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(studentIds.map((id: string) => sql`${id}`), sql`, `)})`,
+  ) as Array<{ id: string; name: string; email: string }>;
+  const userMap: Record<string, string> = {};
+  for (const u of userRows) userMap[u.id] = u.name ?? u.email ?? u.id;
+
   const students = studentIds.map((sid: string) => ({
     id: sid,
-    name: sid,
+    name: userMap[sid] ?? sid,
     grades: gradeMap[sid] ?? {},
   }));
 

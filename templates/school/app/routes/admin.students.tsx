@@ -25,8 +25,9 @@ export default function AdminStudents() {
 
   const filtered = students.filter((s: any) =>
     !search ||
-    s.admissionNumber?.toLowerCase().includes(search.toLowerCase()) ||
-    s.userId?.toLowerCase().includes(search.toLowerCase()),
+    s.name?.toLowerCase().includes(search.toLowerCase()) ||
+    s.email?.toLowerCase().includes(search.toLowerCase()) ||
+    s.admissionNumber?.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
@@ -59,10 +60,12 @@ export default function AdminStudents() {
           {filtered.map((student: any) => (
             <div key={student.id} className="flex items-center justify-between px-4 py-3">
               <div>
-                <p className="text-sm font-medium">{student.userId}</p>
-                {student.admissionNumber && (
-                  <p className="text-xs text-muted-foreground">{student.admissionNumber}</p>
-                )}
+                <p className="text-sm font-medium">{student.name ?? student.email ?? student.userId}</p>
+                <p className="text-xs text-muted-foreground">
+                  {student.email && student.name ? student.email : null}
+                  {student.admissionNumber ? ` · ${student.admissionNumber}` : null}
+                  {student.gradeLevelName ? ` · ${student.gradeLevelName}` : null}
+                </p>
               </div>
               <Badge variant={student.status === "active" ? "default" : "secondary"}>
                 {student.status}

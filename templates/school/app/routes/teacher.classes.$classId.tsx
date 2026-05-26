@@ -125,7 +125,10 @@ export default function TeacherClass() {
           ) : (
             students.map((s: any) => (
               <div key={s.enrollmentId} className="flex items-center justify-between rounded-lg border p-3">
-                <span className="text-sm">{s.studentUserId}</span>
+                <div>
+                  <p className="text-sm font-medium">{s.name ?? s.email ?? s.studentUserId}</p>
+                  {s.email && s.name && <p className="text-xs text-muted-foreground">{s.email}</p>}
+                </div>
                 {s.category && (
                   <Badge variant="outline" className="text-xs capitalize">{s.category}</Badge>
                 )}

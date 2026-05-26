@@ -16,14 +16,12 @@ export default function TeacherDashboard() {
   }, [sync, user?.id]);
 
   const { data: classes = [] } = useQuery<any[]>({
-    queryKey: ["teacher-classes", user?.id],
+    queryKey: ["my-classes"],
     queryFn: async () => {
-      if (!user?.id) return [];
-      const res = await fetch(agentNativePath(`/api/school/classes?teacherUserId=${user.id}`));
+      const res = await fetch(agentNativePath("/api/school/my-classes"));
       if (!res.ok) return [];
       return res.json();
     },
-    enabled: !!user?.id,
   });
 
   return (

@@ -4,8 +4,10 @@ import {
   IconBook,
   IconChartBar,
   IconTrophy,
+  IconLogout,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
+import { agentNativePath } from "@agent-native/core/client";
 
 const navItems = [
   { href: "/student", label: "Dashboard", icon: IconLayoutDashboard, end: true },
@@ -17,8 +19,8 @@ const navItems = [
 export function StudentNav() {
   return (
     <header className="flex h-14 items-center gap-4 border-b bg-background px-4">
-      <span className="text-sm font-semibold">Student Portal</span>
-      <nav className="flex items-center gap-1">
+      <span className="text-sm font-semibold shrink-0">Student Portal</span>
+      <nav className="flex flex-1 items-center gap-1">
         {navItems.map(({ href, label, icon: Icon, end }) => (
           <NavLink
             key={href}
@@ -38,6 +40,17 @@ export function StudentNav() {
           </NavLink>
         ))}
       </nav>
+      <button
+        type="button"
+        onClick={async () => {
+          await fetch(agentNativePath("/_agent-native/auth/logout"), { method: "POST" });
+          window.location.href = "/login";
+        }}
+        className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent/60 shrink-0"
+      >
+        <IconLogout size={14} />
+        Sign out
+      </button>
     </header>
   );
 }
