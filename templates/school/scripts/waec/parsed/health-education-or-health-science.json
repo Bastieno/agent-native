@@ -1,0 +1,648 @@
+{
+  "found": true,
+  "subject": "Health Education",
+  "subjectCode": "HE",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "History and Development of Health Education",
+      "abbreviation": "HIST",
+      "subStrands": [
+        {
+          "name": "Meaning and Setting for Health Education",
+          "objectives": [
+            {
+              "code": "HE-HIST-1",
+              "description": "Meaning of health education."
+            },
+            {
+              "code": "HE-HIST-2",
+              "description": "Settings for health education: home-based; school-based; community-based; health facility-based; work place-based."
+            },
+            {
+              "code": "HE-HIST-3",
+              "description": "Meaning of health promotion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Human Anatomy and Physiology",
+      "abbreviation": "ANAT",
+      "subStrands": [
+        {
+          "name": "Cells and Tissues",
+          "objectives": [
+            {
+              "code": "HE-ANAT-1",
+              "description": "Types of cell: somatic cells; sex cells. Structure of a typical animal cell and functions of its parts."
+            },
+            {
+              "code": "HE-ANAT-2",
+              "description": "Cell division: Mitosis; Meiosis. Differences between mitosis and meiosis."
+            },
+            {
+              "code": "HE-ANAT-3",
+              "description": "Cell differentiation: formation of tissues, organs and systems. Epithelial, connective and muscular tissue; meaning of an organ and a system."
+            },
+            {
+              "code": "HE-ANAT-4",
+              "description": "Growth and development: differences between growth and development; factors that affect growth and development."
+            }
+          ]
+        },
+        {
+          "name": "Sense Organs",
+          "objectives": [
+            {
+              "code": "HE-ANAT-5",
+              "description": "Structure and functions of the sense organs: eye (including accommodation); ear (including process of hearing and balancing); skin; nose; tongue."
+            }
+          ]
+        },
+        {
+          "name": "Skeletal System and Muscles",
+          "objectives": [
+            {
+              "code": "HE-ANAT-6",
+              "description": "The general plan of the axial and appendicular skeleton. Types of bones that make up the mammalian skeleton."
+            },
+            {
+              "code": "HE-ANAT-7",
+              "description": "Functions of the skeletal system."
+            },
+            {
+              "code": "HE-ANAT-8",
+              "description": "Joints: structures and types; emphasis on synovial joint; location of the different types of joint; classes of levers."
+            },
+            {
+              "code": "HE-ANAT-9",
+              "description": "Structures and types of muscle tissues. The three different types of muscles in relation to their functions."
+            },
+            {
+              "code": "HE-ANAT-10",
+              "description": "Movement: origin and insertion of muscles in relation to movement."
+            }
+          ]
+        },
+        {
+          "name": "Circulatory System",
+          "objectives": [
+            {
+              "code": "HE-ANAT-11",
+              "description": "Structure and functions of the circulatory system: heart; blood and lymph vessels."
+            },
+            {
+              "code": "HE-ANAT-12",
+              "description": "Composition of blood and lymph."
+            },
+            {
+              "code": "HE-ANAT-13",
+              "description": "Blood and lymph circulation (pulmonary and systemic). Process of blood clotting."
+            },
+            {
+              "code": "HE-ANAT-14",
+              "description": "Blood groups, rhesus factors, haemoglobin, genotype. Relevance in relation to blood transfusion."
+            },
+            {
+              "code": "HE-ANAT-15",
+              "description": "Diseases/disorders of the circulatory system and their causes: sickle cell anaemia, leukaemia, haemophilia, arteriosclerosis, hypertension, coronary thrombosis and stroke. Heredity aspect of sickle cell and haemophilia; prevention of anaemia and arteriosclerosis."
+            }
+          ]
+        },
+        {
+          "name": "Digestive System",
+          "objectives": [
+            {
+              "code": "HE-ANAT-16",
+              "description": "Organs of the digestive system and their functions, including accessory organs of digestion. Digestive enzymes in relation to substrates and end-products."
+            },
+            {
+              "code": "HE-ANAT-17",
+              "description": "Process of digestion."
+            },
+            {
+              "code": "HE-ANAT-18",
+              "description": "Absorption, assimilation and metabolism. Osmosis and diffusion and their importance in absorption. Tissue respiration in relation to metabolism."
+            },
+            {
+              "code": "HE-ANAT-19",
+              "description": "Diseases/disorders of the digestive system and their prevention. Importance of proper eating habits; effects of over-eating and under-eating."
+            }
+          ]
+        },
+        {
+          "name": "Excretory System",
+          "objectives": [
+            {
+              "code": "HE-ANAT-20",
+              "description": "Structure and functions of the kidney and skin. Excretory functions of the lungs. Use of dialysis machine for kidney failure."
+            },
+            {
+              "code": "HE-ANAT-21",
+              "description": "Process of urine formation."
+            }
+          ]
+        },
+        {
+          "name": "Respiratory System",
+          "objectives": [
+            {
+              "code": "HE-ANAT-22",
+              "description": "Structure and functions of the respiratory system."
+            },
+            {
+              "code": "HE-ANAT-23",
+              "description": "Process of respiration: mechanism of breathing; gaseous exchange (total, complemental and residual air); tissue/cellular respiration."
+            },
+            {
+              "code": "HE-ANAT-24",
+              "description": "Diseases/disorders of the respiratory system and their control."
+            }
+          ]
+        },
+        {
+          "name": "Nervous System and Endocrine System",
+          "objectives": [
+            {
+              "code": "HE-ANAT-25",
+              "description": "Structure and functions of the components of the nervous system: brain, spinal cord and nerves. Voluntary and involuntary actions; the reflex arc. Diseases/disorders of the nervous system."
+            },
+            {
+              "code": "HE-ANAT-26",
+              "description": "Endocrine system: location of the different endocrine glands, the hormones produced and their functions. Characteristics of endocrine glands; effects of over- and under-secretion of hormones."
+            },
+            {
+              "code": "HE-ANAT-27",
+              "description": "Homeostasis: physiological factors affecting homeostasis including body temperature, blood sugar level, water balance, electrolytes balance, pH and blood pressure. Positive and negative feedback control system."
+            }
+          ]
+        },
+        {
+          "name": "Posture and Postural Defects",
+          "objectives": [
+            {
+              "code": "HE-ANAT-28",
+              "description": "Definition and characteristics of correct posture. Determination of correct postures in relation to sitting, standing, walking and lifting. Roles of nutrition and exercise as determinants of correct posture."
+            },
+            {
+              "code": "HE-ANAT-29",
+              "description": "Types of postural defects: flat foot; scoliosis; kyphosis and lordosis. Causes of postural defects e.g. habits, accidents, heredity and diseases. Effects of incorrect posture on physical appearance, position and functions of body organs. Roles of orthopaedic hospital and physiotherapy unit in correction."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Personal Health",
+      "abbreviation": "PERSONAL",
+      "subStrands": [
+        {
+          "name": "Personal Hygiene and Health Promotion",
+          "objectives": [
+            {
+              "code": "HE-PERSONAL-1",
+              "description": "Meaning and importance of physical health."
+            },
+            {
+              "code": "HE-PERSONAL-2",
+              "description": "Personal hygiene: care of body parts including the teeth, mouth, hair, hands and nails."
+            },
+            {
+              "code": "HE-PERSONAL-3",
+              "description": "Promotion and maintenance of health: definition; factors and their roles in the maintenance of health."
+            }
+          ]
+        },
+        {
+          "name": "Health Screening",
+          "objectives": [
+            {
+              "code": "HE-PERSONAL-4",
+              "description": "Eye defects and their corrections: myopia; hypermetropia; astigmatism; presbyopia; squints (cross eye). Use of Snellen chart for vision screening; roles of eye specialist."
+            },
+            {
+              "code": "HE-PERSONAL-5",
+              "description": "Auditory defects: conductive impairment; neurosensory impairment. Otitis media. Use of tuning fork, audiometer, guitar strings and wrist watch in auditory screening; sign language."
+            },
+            {
+              "code": "HE-PERSONAL-6",
+              "description": "Disorder of the skin. Care of the eye, ear and skin."
+            }
+          ]
+        },
+        {
+          "name": "Dental Health Education",
+          "objectives": [
+            {
+              "code": "HE-PERSONAL-7",
+              "description": "Meaning and types of dental health. Types of human teeth; structure and functions of the different types of teeth. Teeth diseases: dental caries and gingivitis."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Community Health",
+      "abbreviation": "COMM",
+      "subStrands": [
+        {
+          "name": "Community Health Services",
+          "objectives": [
+            {
+              "code": "HE-COMM-1",
+              "description": "Definition of community health services. Providers: orthodox services e.g. primary health care; traditional services e.g. bone setters, birth attendants. Advantages and disadvantages of traditional medicine. Community efforts in health promotion and awareness campaigns."
+            }
+          ]
+        },
+        {
+          "name": "School Health Programme",
+          "objectives": [
+            {
+              "code": "HE-COMM-2",
+              "description": "Definition of school health programme. Components: skill-based health education; healthful school environment (physical and biological); school feeding services; school health and nutrition services; school, home and community relationship. Goals and objectives."
+            },
+            {
+              "code": "HE-COMM-3",
+              "description": "Linkages for promotion (initiatives): Health Promoting School (HPS); Child-Friendly School (CFS); Focusing Resources on Effective Schools Health (FRESH); Life Skills (LS); Education for All (EFA)."
+            }
+          ]
+        },
+        {
+          "name": "Family Health, Ageing and Vital Statistics",
+          "objectives": [
+            {
+              "code": "HE-COMM-4",
+              "description": "Meaning of family health. Different aspects of family health including maternal and child health: antenatal care, immunization, oral rehydration therapy (ORT), breast feeding and safe motherhood. Family size and budgeting."
+            },
+            {
+              "code": "HE-COMM-5",
+              "description": "Ageing and death education: definition and features of the elderly; ways of relating with the elderly; meaning of grief and death; common causes of death."
+            },
+            {
+              "code": "HE-COMM-6",
+              "description": "Epidemiology and vital statistics: definitions; components of vital statistics (birth rate, mortality rate, morbidity rate); uses of the major components. Meaning of population dynamics; importance and use of health records."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Environmental Health",
+      "abbreviation": "ENVIRON",
+      "subStrands": [
+        {
+          "name": "Housing, Water Supply and Waste Disposal",
+          "objectives": [
+            {
+              "code": "HE-ENVIRON-1",
+              "description": "Housing: criteria for good housing including siting, ventilation, lighting and sanitation. Components of a standard house. Effects of poor sanitation, pest infestation and substandard housing on health."
+            },
+            {
+              "code": "HE-ENVIRON-2",
+              "description": "Water supply: definition and sources (rain, borehole, rivers, streams, springs, well, pond, pipe borne water). Purification and uses."
+            },
+            {
+              "code": "HE-ENVIRON-3",
+              "description": "Waste disposal: meaning; types (refuse; sewage); methods. Advantages and disadvantages of each method."
+            }
+          ]
+        },
+        {
+          "name": "Pollution, Industrial Health and Pests/Vectors",
+          "objectives": [
+            {
+              "code": "HE-ENVIRON-4",
+              "description": "Pollution: meaning; types (air, water, soil and noise); meaning and sources of pollutants; health consequences of pollution."
+            },
+            {
+              "code": "HE-ENVIRON-5",
+              "description": "Industrial occupation: meaning; industrial health services; occupation hazards. Need for health care, rehabilitation and health insurance schemes."
+            },
+            {
+              "code": "HE-ENVIRON-6",
+              "description": "Pests and vectors control: meaning; habitats of pests and vectors; harmful effects and control. Differentiation between pests and vectors."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nutrition and Food Nutrients",
+      "abbreviation": "NUTR",
+      "subStrands": [
+        {
+          "name": "Nutrition and Balanced Diet",
+          "objectives": [
+            {
+              "code": "HE-NUTR-1",
+              "description": "Classes, sources and functions of food nutrients. Caloric value of food nutrients. Caloric needs in relation to age, occupation and health condition."
+            },
+            {
+              "code": "HE-NUTR-2",
+              "description": "Balanced/adequate diets: definition; classification; nutritional problems including food deficiency diseases. Factors responsible for unbalanced diet and effects associated with poor diet."
+            },
+            {
+              "code": "HE-NUTR-3",
+              "description": "Factors influencing feeding habits/choice of foods: availability, religion, education, age, belief, health condition and cost."
+            },
+            {
+              "code": "HE-NUTR-4",
+              "description": "Water: role of water in relation to nutrition."
+            },
+            {
+              "code": "HE-NUTR-5",
+              "description": "Nutritional processes: ingestion, digestion, absorption, assimilation and metabolism and defecation/ejection."
+            },
+            {
+              "code": "HE-NUTR-6",
+              "description": "Beverages: definition; types and effects (positive and negative). Nutritional value of non-alcoholic beverages."
+            },
+            {
+              "code": "HE-NUTR-7",
+              "description": "Diet for different groups of people: children, male adolescent, female adolescent, athletes, pregnant woman, adult and aged."
+            }
+          ]
+        },
+        {
+          "name": "Food Hygiene, Preservation and Storage",
+          "objectives": [
+            {
+              "code": "HE-NUTR-8",
+              "description": "Meaning and principles of food hygiene. Food handling; cleanliness of cooking utensils and surroundings; effects of poor food handling."
+            },
+            {
+              "code": "HE-NUTR-9",
+              "description": "Effects of methods of food preparation on nutrients: washing, boiling, frying, baking and roasting."
+            },
+            {
+              "code": "HE-NUTR-10",
+              "description": "Methods of food preservation: smoking/drying/dehydration; freezing/refrigeration; addition of chemicals/sugar/salts; bottling/pickling/canning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Safety Education and First Aid",
+      "abbreviation": "SAFETY",
+      "subStrands": [
+        {
+          "name": "First Aid",
+          "objectives": [
+            {
+              "code": "HE-SAFETY-1",
+              "description": "Meaning, aims and principles of first aid."
+            },
+            {
+              "code": "HE-SAFETY-2",
+              "description": "First aid kit: contents and uses."
+            },
+            {
+              "code": "HE-SAFETY-3",
+              "description": "Specific emergency conditions: cuts; wounds; bleeding; dislocation; fractures; burns; scalds; shocks; asphyxia/suffocation; poisoning."
+            },
+            {
+              "code": "HE-SAFETY-4",
+              "description": "Agencies providing First Aid Services."
+            }
+          ]
+        },
+        {
+          "name": "Disaster, Accident and Disability",
+          "objectives": [
+            {
+              "code": "HE-SAFETY-5",
+              "description": "Disaster: meaning and types; disaster relief activities."
+            },
+            {
+              "code": "HE-SAFETY-6",
+              "description": "Accident: types and causes; prevention."
+            },
+            {
+              "code": "HE-SAFETY-7",
+              "description": "Disability and rehabilitation: meaning; types and prevention."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drug, Alcohol and Tobacco Education",
+      "abbreviation": "DRUG",
+      "subStrands": [
+        {
+          "name": "Drug Education",
+          "objectives": [
+            {
+              "code": "HE-DRUG-1",
+              "description": "Terminologies in drug education: drug abuse, drug dependence, drug misuse, drug addiction, self medication, alcoholism, rehabilitation."
+            },
+            {
+              "code": "HE-DRUG-2",
+              "description": "Classes of drugs commonly abused."
+            },
+            {
+              "code": "HE-DRUG-3",
+              "description": "Ways of taking drugs into the body: oral, injection, inhalation, topical and anal."
+            },
+            {
+              "code": "HE-DRUG-4",
+              "description": "Drug abuse and consequences of self medication. Prevention of drug abuse."
+            }
+          ]
+        },
+        {
+          "name": "Behaviour Altering Chemicals",
+          "objectives": [
+            {
+              "code": "HE-DRUG-5",
+              "description": "Tobacco: components; effects of smoking on health."
+            },
+            {
+              "code": "HE-DRUG-6",
+              "description": "Alcohol: effects of alcohol on health."
+            },
+            {
+              "code": "HE-DRUG-7",
+              "description": "Drugs: effects of drug on health."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communicable and Non-Communicable Diseases",
+      "abbreviation": "DISEASE",
+      "subStrands": [
+        {
+          "name": "Communicable Diseases",
+          "objectives": [
+            {
+              "code": "HE-DISEASE-1",
+              "description": "Meaning and classes of diseases. Definition and classification of communicable diseases."
+            },
+            {
+              "code": "HE-DISEASE-2",
+              "description": "Air-borne/respiratory diseases: common cold, measles, whooping cough, poliomyelitis, tuberculosis, cerebro-spinal meningitis, diphtheria. Life cycle of the pathogen of each disease."
+            },
+            {
+              "code": "HE-DISEASE-3",
+              "description": "Water/food-borne diseases: dysentery, cholera, typhoid fever, schistosomiasis, guinea worm."
+            },
+            {
+              "code": "HE-DISEASE-4",
+              "description": "Insect-borne diseases: malaria, yellow fever, trypanosomiasis and filariasis."
+            },
+            {
+              "code": "HE-DISEASE-5",
+              "description": "Worm infections: Ascaris lumbricoides (round worm); Taenia solium (tape worm); Ancylostoma duodenale (hook worm); Dracunculus medinensis (guinea worm). Life cycle of each worm."
+            },
+            {
+              "code": "HE-DISEASE-6",
+              "description": "Animal-borne diseases: rabies, leptospirosis."
+            },
+            {
+              "code": "HE-DISEASE-7",
+              "description": "Contact diseases: gonorrhoea, syphilis, Tinea pedis (athlete's foot), Tinea capitis (ringworm), leprosy, scabies and Acquired Immune Deficiency Syndrome (AIDS)."
+            },
+            {
+              "code": "HE-DISEASE-8",
+              "description": "Factors necessary for communicable diseases to occur: causative agent; susceptible host; transmission route (environment)."
+            }
+          ]
+        },
+        {
+          "name": "Non-Communicable Diseases",
+          "objectives": [
+            {
+              "code": "HE-DISEASE-9",
+              "description": "Types of non-communicable diseases: deficiency diseases (scurvy, pellagra, rickets, Kwashiorkor, anaemia, beriberi); diseases due to growth in cells, heredity and normal disorders (cancer, diabetes, epilepsy, haemophilia, heart disease, hypertension, ulcer, mental illness, sickle cell, rheumatism, infertility, asthma, albinism)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Family Life and Human Sexuality Education",
+      "abbreviation": "FAMILY",
+      "subStrands": [
+        {
+          "name": "Human Reproduction",
+          "objectives": [
+            {
+              "code": "HE-FAMILY-1",
+              "description": "Definition of terms: reproduction; sex gametes; ovulation; menstruation; fertilization; pregnancy and gestation. Secondary sexual characteristics in boys and girls."
+            },
+            {
+              "code": "HE-FAMILY-2",
+              "description": "Structures and functions of male and female reproductive organs. Menstrual cycle; sex determination; ante-natal care. Causes of infertility. Artificial insemination and test tube babies."
+            },
+            {
+              "code": "HE-FAMILY-3",
+              "description": "Conception, pregnancy, foetal development and child birth."
+            },
+            {
+              "code": "HE-FAMILY-4",
+              "description": "Diseases and disorders of the reproductive system."
+            }
+          ]
+        },
+        {
+          "name": "Human Sexuality Education",
+          "objectives": [
+            {
+              "code": "HE-FAMILY-5",
+              "description": "Meaning and importance of human sexuality education. Meaning of sexuality, sexuality education, sexual reproductive health rights, gender and equality. Life skills: assertive negotiation and communication skills."
+            }
+          ]
+        },
+        {
+          "name": "Family, Family Planning and Population",
+          "objectives": [
+            {
+              "code": "HE-FAMILY-6",
+              "description": "The family: meaning and types. Family size. Family member roles."
+            },
+            {
+              "code": "HE-FAMILY-7",
+              "description": "Family life challenges: widowhood; single parenthood; pre-marital and extra-marital affairs; in-laws. Agencies promoting healthy family living."
+            },
+            {
+              "code": "HE-FAMILY-8",
+              "description": "Family planning and safe motherhood: meaning and need for family planning; birth control methods; safe motherhood. Distinction between family planning and safe motherhood."
+            },
+            {
+              "code": "HE-FAMILY-9",
+              "description": "Population education: meaning of population and population education; census and its problems; small and large population. Advantages of accurate census."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Emotional and Social Health",
+      "abbreviation": "EMOTIONAL",
+      "subStrands": [
+        {
+          "name": "Emotional and Social Health",
+          "objectives": [
+            {
+              "code": "HE-EMOTIONAL-1",
+              "description": "Interrelationship between emotional health and social health."
+            },
+            {
+              "code": "HE-EMOTIONAL-2",
+              "description": "Attributes: definition of personality and personality traits; attributes of emotional and social health; personality problems and solutions."
+            },
+            {
+              "code": "HE-EMOTIONAL-3",
+              "description": "Mental health: definition; promotion; types, causes, prevention and management; importance of mental and social health."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Consumer Health Education",
+      "abbreviation": "CONSUMER",
+      "subStrands": [
+        {
+          "name": "Consumer Health Products, Services and Protection",
+          "objectives": [
+            {
+              "code": "HE-CONSUMER-1",
+              "description": "Consumer health products and services. Features of genuine products and services."
+            },
+            {
+              "code": "HE-CONSUMER-2",
+              "description": "Laws protecting the consumer. Various agencies promoting consumer health."
+            },
+            {
+              "code": "HE-CONSUMER-3",
+              "description": "Factors influencing choice of consumer products: authenticity; cost; availability; accessibility; advertisement."
+            },
+            {
+              "code": "HE-CONSUMER-4",
+              "description": "Consumer health care services: various types of health services including traditional medicine, orthodox medicine, alternative methods of healing (acupuncture, yoga and faith healing)."
+            },
+            {
+              "code": "HE-CONSUMER-5",
+              "description": "Quacks and quackery: meaning and types (mechanical, electrical, drug, cosmetic and medical quackery); dangers of quacks and quackery."
+            },
+            {
+              "code": "HE-CONSUMER-6",
+              "description": "Health insurance: meaning and importance; state of health insurance. Advertisement of health products and consumer services."
+            },
+            {
+              "code": "HE-CONSUMER-7",
+              "description": "Nostrum: definition and types (health tonic; miracle substances; magic portions; amulets and talisman); reasons for avoiding nostrum."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

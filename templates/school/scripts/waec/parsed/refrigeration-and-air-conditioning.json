@@ -1,0 +1,101 @@
+{
+  "found": true,
+  "subject": "Refrigeration and Air Conditioning",
+  "subjectCode": "REFAC",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Safety and Energy",
+      "abbreviation": "SAFETY",
+      "subStrands": [
+        {
+          "name": "Workshop Safety, First Aid, Energy and Matter",
+          "objectives": [
+            {
+              "code": "REFAC-SAFETY-1",
+              "description": "Safety and first aid in the workshop: workshop rules and regulations; safety devices/equipment (helmet, goggles, safety boots, hand gloves, overall, apron, sand bag, fire extinguishers, etc.); accident causes and prevention; first aid materials, charts, posters, first aid box; application of first aid materials."
+            },
+            {
+              "code": "REFAC-SAFETY-2",
+              "description": "Energy: definition; energy conversion (electrical to mechanical, gas to vapour, mechanical to heat); internal energy; enthalpy of a fluid substance; PH diagram of refrigerant; states of matter (solid, liquid, gas/vapour); change of state of matter."
+            },
+            {
+              "code": "REFAC-SAFETY-3",
+              "description": "Power: meaning; calculation of power used by a compressor; units of power (watts and kilowatts) and heat (joules and kilojoules)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Temperature and Pressure",
+      "abbreviation": "TEMP",
+      "subStrands": [
+        {
+          "name": "Temperature Measurement, Scales and Gas Laws",
+          "objectives": [
+            {
+              "code": "REFAC-TEMP-1",
+              "description": "Temperature: concept; types of thermometer (gas, resistance, liquid and thermocouple); temperature scale conversion (Celsius to Fahrenheit, Celsius to Kelvin, Fahrenheit to Rankine); international practical temperature (boiling point of oxygen, triple point of water, boiling point of water)."
+            },
+            {
+              "code": "REFAC-TEMP-2",
+              "description": "Pressure: concept; types of pressure measuring devices (barometer, manometer, bourdon tube gauge); pressure measurement; suction and high pressure gauges; effects of temperature, pressure and volume."
+            },
+            {
+              "code": "REFAC-TEMP-3",
+              "description": "Gas laws: Boyle's Law, Charles' Law, Dalton's Law; calculations involving general gas law (P1V1/T1 = P2V2/T2)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Refrigeration and Air Conditioning Systems",
+      "abbreviation": "SYSTEMS",
+      "subStrands": [
+        {
+          "name": "Refrigeration Cycle, Refrigerants and Air Conditioning",
+          "objectives": [
+            {
+              "code": "REFAC-SYSTEMS-1",
+              "description": "Introduction to refrigeration: refrigeration cycle (evaporation, compression, condensation, expansion); layout diagram; types and applications; principles of operation; functions of components and accessories (relay, solenoid valves, capacitors, thermostat)."
+            },
+            {
+              "code": "REFAC-SYSTEMS-2",
+              "description": "Refrigerants: definition and types; chemical names and formulae; properties and uses; refrigerant flow controls (TEV, AEV, capillary tube); identification of refrigerant by cylinder colours."
+            },
+            {
+              "code": "REFAC-SYSTEMS-3",
+              "description": "Air Conditioning processes: psychometric properties of air; processes of air conditioning (heating and cooling); latent and sensible heat; saturated and super-saturated vapour."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Components and Workshop Practice",
+      "abbreviation": "COMP",
+      "subStrands": [
+        {
+          "name": "Compressors, Condensers, Evaporators and Fault Diagnosis",
+          "objectives": [
+            {
+              "code": "REFAC-COMP-1",
+              "description": "Compressors: types; construction; working principles. Condensers: construction; calculation of heat load; types and functions of liquid receiver and service valves; principle of operation of liquid receiver and service valves."
+            },
+            {
+              "code": "REFAC-COMP-2",
+              "description": "Evaporators: types; construction and servicing; working principles; heat load estimates."
+            },
+            {
+              "code": "REFAC-COMP-3",
+              "description": "Workshop practices: basic tools (hacksaw, coil spring benders, reamers, tube cutters, etc.); tools and procedures for servicing window unit air-conditioner; methods of diagnosing faults (systematic and observation); common faults in refrigeration systems and their symptoms (leakage, faulty units, faulty compressor, poor cooling); maintenance and testing procedures."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

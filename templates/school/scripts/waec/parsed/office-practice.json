@@ -1,0 +1,101 @@
+{
+  "found": true,
+  "subject": "Office Practice",
+  "subjectCode": "OFFPRAC",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "The Office and Organisation",
+      "abbreviation": "OFFICE",
+      "subStrands": [
+        {
+          "name": "Office Definition, Functions, Departments and Equipment",
+          "objectives": [
+            {
+              "code": "OFFPRAC-OFFICE-1",
+              "description": "The Office: definition; functions; layout; principles of office organisation (span of control, unity of control, unity of function); office procedures; sections of the office."
+            },
+            {
+              "code": "OFFPRAC-OFFICE-2",
+              "description": "Departments in an Organisation: list of departments; functions of each department; organisational chart."
+            },
+            {
+              "code": "OFFPRAC-OFFICE-3",
+              "description": "Office Equipment: meaning; types — manual (typewriter, perforator, stapling machine, duplicating machine) and electrical (typewriter, photocopier, shredding machine, computer, scanning machine, facsimile machine); uses and care of office equipment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Office Operations",
+      "abbreviation": "OPS",
+      "subStrands": [
+        {
+          "name": "Reception, Documents, Correspondence and Mail",
+          "objectives": [
+            {
+              "code": "OFFPRAC-OPS-1",
+              "description": "The Reception: meaning; duties of the receptionist; documents handled; qualities of a receptionist; procedures for handling telephone calls."
+            },
+            {
+              "code": "OFFPRAC-OPS-2",
+              "description": "Office Documents: meaning; types (administrative, sales, stores, purchasing); uses; preparation of office documents."
+            },
+            {
+              "code": "OFFPRAC-OPS-3",
+              "description": "Office Correspondence: meaning; types — memos, business letters, notice of meetings, minutes of meetings, reports, circulars."
+            },
+            {
+              "code": "OFFPRAC-OPS-4",
+              "description": "Mail: types of mail (personal, official, urgent, confidential); classification (incoming and outgoing); procedures for handling incoming and outgoing mail."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Filing and Communication",
+      "abbreviation": "FILING",
+      "subStrands": [
+        {
+          "name": "Filing, Communication and Meetings",
+          "objectives": [
+            {
+              "code": "OFFPRAC-FILING-1",
+              "description": "Filing: definition; systems (vertical, lateral, electronic); classifications (alphabetical, chronological, numerical, geographical, alpha-numerical, subject); purposes; steps involved; filing equipment."
+            },
+            {
+              "code": "OFFPRAC-FILING-2",
+              "description": "Communication: definition; importance; types (verbal — oral and written; non-verbal — visual, audio, audio-visual); methods/media (print and electronic); communication service providers (NIPOST, NITEL, media houses, satellite stations, internet, GSM)."
+            },
+            {
+              "code": "OFFPRAC-FILING-3",
+              "description": "Meetings: definition; purpose; types (statutory, emergency, board, management, AGM, staff, committee); procedure for conducting a meeting (agenda, chairman's opening, reading of minutes, adoption, matters arising, main business, AOB, adjournment); meeting terminologies; roles of chairman and secretary; writing the minutes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Report Writing and Information",
+      "abbreviation": "REPINFO",
+      "subStrands": [
+        {
+          "name": "Report Writing and Information Management",
+          "objectives": [
+            {
+              "code": "OFFPRAC-REPINFO-1",
+              "description": "Report Writing: meaning; types (short, long, investigative, routine/periodic); parts of a report; importance of report writing."
+            },
+            {
+              "code": "OFFPRAC-REPINFO-2",
+              "description": "Information: definition; types; uses; sources; storage; qualities of good information (timeliness, accuracy, speed of delivery, usability, etc.)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

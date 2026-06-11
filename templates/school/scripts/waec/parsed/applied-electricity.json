@@ -1,0 +1,294 @@
+{
+  "found": true,
+  "subject": "Applied Electricity / Basic Electricity",
+  "subjectCode": "APELEC",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Direct Current Circuit Theory",
+      "abbreviation": "DCCT",
+      "subStrands": [
+        {
+          "name": "Structure, Resistors, Ohm's Law and Power",
+          "objectives": [
+            {
+              "code": "APELEC-DCCT-1",
+              "description": "Structure of matter: qualitative treatment of the structure of atoms in relation to electric current."
+            },
+            {
+              "code": "APELEC-DCCT-2",
+              "description": "Resistors: types of resistors, resistor colour code, resistors in series and parallel, power rating of resistors."
+            },
+            {
+              "code": "APELEC-DCCT-3",
+              "description": "Conductors and insulators: definition, examples and characteristics."
+            },
+            {
+              "code": "APELEC-DCCT-4",
+              "description": "Ohm's law and Kirchhoff's laws: qualitative treatments only."
+            },
+            {
+              "code": "APELEC-DCCT-5",
+              "description": "Power and energy: treatment should include calculations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Magnetic Field and Electromagnetism",
+      "abbreviation": "MAGEM",
+      "subStrands": [
+        {
+          "name": "Magnetism, Electric Field, Capacitors and Electromagnetic Induction",
+          "objectives": [
+            {
+              "code": "APELEC-MAGEM-1",
+              "description": "Fundamentals of magnetism: types of magnet; magnetic properties of materials — magnetic flux, magnetic flux density, permeability, magnetomotive force and reluctance."
+            },
+            {
+              "code": "APELEC-MAGEM-2",
+              "description": "Concept of electric field and properties: electric flux, electric flux density, electric field strength, permittivity and dielectric constant, potential gradient; comparison between magnetic and electric circuits."
+            },
+            {
+              "code": "APELEC-MAGEM-3",
+              "description": "Capacitors: types of capacitor; capacitance and dielectric; charge on capacitor, relationship between charge and applied voltage; application of capacitors; voltage rating; series and parallel connection; energy stored in a capacitor (E = ½QV = ½CV²)."
+            },
+            {
+              "code": "APELEC-MAGEM-4",
+              "description": "Electromagnetic field: magnetic field around a current-carrying conductor; Fleming's Right Hand Rule; force on a current-carrying conductor in a magnetic field (F = BILsinθ); Lenz's law and Faraday's law; emf induced in a coil (E = BLVsinθ); simple calculations involving force and e.m.f."
+            },
+            {
+              "code": "APELEC-MAGEM-5",
+              "description": "Self and Mutual Induction: qualitative treatment of self and mutual induction; energy stored in a coil (E = ½LI²); application of electromagnetism as found in electric bell, security alarm system, solenoid, loudspeaker, buzzer, moving-coil instruments etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Measuring Instruments",
+      "abbreviation": "MSINST",
+      "subStrands": [
+        {
+          "name": "Moving-Coil, Moving-Iron and Digital Instruments",
+          "objectives": [
+            {
+              "code": "APELEC-MSINST-1",
+              "description": "Moving-coil instrument: construction, advantages and disadvantages; conversion of moving-coil instrument to ammeter and voltmeter; calculations of shunts and multipliers."
+            },
+            {
+              "code": "APELEC-MSINST-2",
+              "description": "Moving-iron instrument: construction, principles of operation, advantages and disadvantages."
+            },
+            {
+              "code": "APELEC-MSINST-3",
+              "description": "Digital instrument: multimeter, voltmeter, ammeter etc.; advantages and disadvantages."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Digital Electronics",
+      "abbreviation": "DIGELEC",
+      "subStrands": [
+        {
+          "name": "Binary Numbers and Logic Gates",
+          "objectives": [
+            {
+              "code": "APELEC-DIGELEC-1",
+              "description": "Binary number: conversion of decimal numbers to binary numbers and vice versa."
+            },
+            {
+              "code": "APELEC-DIGELEC-2",
+              "description": "Logic gates: series connection of switches (AND gate), parallel connection of switches (OR gate) and inverter (NOT gate); truth table for logic gates; general symbols for AND, OR, NOT, NAND and NOR gates; Boolean expression."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Alternating Current Circuit Theory",
+      "abbreviation": "ACCT",
+      "subStrands": [
+        {
+          "name": "AC Generation, Quantities and RLC Circuits",
+          "objectives": [
+            {
+              "code": "APELEC-ACCT-1",
+              "description": "Generation of e.m.f. in a single turn coil: plotting of labelled sinusoidal waveform for a complete cycle."
+            },
+            {
+              "code": "APELEC-ACCT-2",
+              "description": "A.C quantities: r.m.s., peak and average values, form factor, cycle, period and frequency."
+            },
+            {
+              "code": "APELEC-ACCT-3",
+              "description": "RLC circuits: solution of problems involving RL, RC and RLC series circuits; conditions for resonance; phasor diagram of series resonance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Transformers",
+      "abbreviation": "TRANS",
+      "subStrands": [
+        {
+          "name": "Types, Operation, Losses and Cooling",
+          "objectives": [
+            {
+              "code": "APELEC-TRANS-1",
+              "description": "Types of transformer: based on (i) construction (shell and core) and (ii) function (current and voltage)."
+            },
+            {
+              "code": "APELEC-TRANS-2",
+              "description": "Principles of operation of a transformer: operation and transformation ratio."
+            },
+            {
+              "code": "APELEC-TRANS-3",
+              "description": "Losses and temperature rise in transformers: transformer losses (copper and iron); effect of losses and temperature rise — qualitative treatment only."
+            },
+            {
+              "code": "APELEC-TRANS-4",
+              "description": "Efficiency of transformers: losses and efficiency of transformer."
+            },
+            {
+              "code": "APELEC-TRANS-5",
+              "description": "Cooling of transformers: methods of cooling and need for cooling."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power Supply",
+      "abbreviation": "PWRSUP",
+      "subStrands": [
+        {
+          "name": "Power Supply Units and Rectification",
+          "objectives": [
+            {
+              "code": "APELEC-PWRSUP-1",
+              "description": "Power supply units: dry cell, solar cell, cadium cell and accumulator; block diagram of d.c. power supply; functions of blocks of power supply."
+            },
+            {
+              "code": "APELEC-PWRSUP-2",
+              "description": "Rectification: half-wave and full-wave rectifications; filtration and stabilization."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electrical Machines",
+      "abbreviation": "ELMACH",
+      "subStrands": [
+        {
+          "name": "AC and DC Motors, Alternators and Generators",
+          "objectives": [
+            {
+              "code": "APELEC-ELMACH-1",
+              "description": "A.C. motors (Single phase): types of single phase motor — split-phase, capacitor-start, capacitor-run; application of single-phase motors."
+            },
+            {
+              "code": "APELEC-ELMACH-2",
+              "description": "Alternators: principles of operation, parts and types; relationship of speed, number of poles and frequency (f = Np/60 Hz)."
+            },
+            {
+              "code": "APELEC-ELMACH-3",
+              "description": "A.C. motors (Three phase): principles of operation, parts, type and application; methods of starting — direct-on-line, star delta and auto transformer."
+            },
+            {
+              "code": "APELEC-ELMACH-4",
+              "description": "D.C. generators: principles of operation, parts and methods of connecting field windings."
+            },
+            {
+              "code": "APELEC-ELMACH-5",
+              "description": "D.C. motors: principles of operation, parts, types (shunt, compound, series) and application."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electrical Energy Supply",
+      "abbreviation": "ENGSUP",
+      "subStrands": [
+        {
+          "name": "Generating Station",
+          "objectives": [
+            {
+              "code": "APELEC-ENGSUP-1",
+              "description": "Methods of generating electrical power: diesel engine, steam engine, hydro-electric, nuclear, gas turbine."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electrical Wiring",
+      "abbreviation": "WIRING",
+      "subStrands": [
+        {
+          "name": "Installation, Wiring, Protection, Earthing and Safety",
+          "objectives": [
+            {
+              "code": "APELEC-WIRING-1",
+              "description": "Electrical installation: types of wiring — surface, conduit, trunking, ducting; selection of materials, tools and accessories; application of IEE wiring regulation regarding domestic installation."
+            },
+            {
+              "code": "APELEC-WIRING-2",
+              "description": "Wiring: cables and accessories; current-carrying capacity of cable; wiring of lighting and socket outlets and connection of plugs; conduit, surface, trunking and ducting installations."
+            },
+            {
+              "code": "APELEC-WIRING-3",
+              "description": "Protection: protective devices, fuses and circuit breakers, discrimination of protective devices."
+            },
+            {
+              "code": "APELEC-WIRING-4",
+              "description": "Earthing: reasons for earthing, methods of earthing, earth loop impedance."
+            },
+            {
+              "code": "APELEC-WIRING-5",
+              "description": "Maintenance, fault diagnosis and repairs: types of fault — short circuit, open circuit and earth leakage; methods of diagnosing and repair of faults in an installation and equipment such as fluorescent fitting, electric iron, electric fan, blender etc."
+            },
+            {
+              "code": "APELEC-WIRING-6",
+              "description": "Testing of an installation: continuity test, insulation resistance test, earth leakage test and polarity test."
+            },
+            {
+              "code": "APELEC-WIRING-7",
+              "description": "General Workshop Safety: application of electrical safety regulations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electricity Transmission and Distribution (Nigeria)",
+      "abbreviation": "TXDIST",
+      "subStrands": [
+        {
+          "name": "Transmission, Distribution and Maintenance",
+          "objectives": [
+            {
+              "code": "APELEC-TXDIST-1",
+              "description": "Electricity transmission: layout diagram of high voltage overhead transmission system; treatment of main components (towers, insulators and conductors) and functions; operating voltage levels for transmission lines (132 kV and 330 kV) and the need for high voltage system."
+            },
+            {
+              "code": "APELEC-TXDIST-2",
+              "description": "Distribution of electricity: layout diagram and main components of electricity distribution; functions of substation components (transformers, feeders etc.)."
+            },
+            {
+              "code": "APELEC-TXDIST-3",
+              "description": "Maintenance of electrical appliances: types (predictive, preventive and corrective); common faults that occur in electrical appliances (blender, electric iron, electric kettle, toaster, fluorescent lamps etc) such as short circuit, open circuit, earth fault etc."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

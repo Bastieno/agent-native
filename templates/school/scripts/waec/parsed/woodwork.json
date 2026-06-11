@@ -1,0 +1,120 @@
+{
+  "found": true,
+  "subject": "Woodwork",
+  "subjectCode": "WOOD",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "General Workshop Safety",
+      "abbreviation": "SAFETY",
+      "subStrands": [
+        {
+          "name": "Personal Safety, Regulations and Machine Safety",
+          "objectives": [
+            {
+              "code": "WOOD-SAFETY-1",
+              "description": "Personal safety precautions; general workshop safety regulations; safety devices and appliances; hand tool safety."
+            },
+            {
+              "code": "WOOD-SAFETY-2",
+              "description": "Machine safety: general machine shop safety; safety precautions in the use of portable power tools and machines; safety in machine operations; prevention of mechanical faults. First aid: materials and administration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hand Tools and Machines",
+      "abbreviation": "TOOLS",
+      "subStrands": [
+        {
+          "name": "Hand Tools, Special Purpose Tools and Machines",
+          "objectives": [
+            {
+              "code": "WOOD-TOOLS-1",
+              "description": "Hand tools: types; classification (geometrical, holding and supporting, impelling and percussion, cutting, boring, abrading and scraping tools); identification, description, types and uses; safety precautions in carrying, storing and handling."
+            },
+            {
+              "code": "WOOD-TOOLS-2",
+              "description": "Special purpose hand tools: planes (spokeshaves, rebate plane, plough plane, block plane, shoulder plane); saws (bow saw, pad/keyhole saw, coping saw, fret saw); boring bits (expansion bit, forstner bit, countersink bit, auger bit)."
+            },
+            {
+              "code": "WOOD-TOOLS-3",
+              "description": "Woodworking machines: types, identification, uses, operation, care and maintenance; safety precautions in machine operations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Joints and Construction",
+      "abbreviation": "JOINTS",
+      "subStrands": [
+        {
+          "name": "Joints, Wood Materials and Construction Methods",
+          "objectives": [
+            {
+              "code": "WOOD-JOINTS-1",
+              "description": "Widening joints: plain/simple butt, dowelled, tongued and grooved, rebated butt."
+            },
+            {
+              "code": "WOOD-JOINTS-2",
+              "description": "Angle joints (box-like): common and lapped dovetail, pin joints. Shelf-like construction: housing joints, pinned joints, dowelled, plain mitre. Framing joints: mortise and tenon, bridle and lapped joints, mitre, dowelled."
+            },
+            {
+              "code": "WOOD-JOINTS-3",
+              "description": "Wood materials: solid wood (types of timber — hardwood and softwood; characteristics, properties and uses; seasoning and defects); manufactured boards (plywood, blockboard, chipboard, hardboard, MDF — manufacture, characteristics and uses); non-wood materials; adhesives (types, properties and uses)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drawing, Design and Construction Principles",
+      "abbreviation": "DESIGN",
+      "subStrands": [
+        {
+          "name": "Technical Drawing, Design and Construction",
+          "objectives": [
+            {
+              "code": "WOOD-DESIGN-1",
+              "description": "Technical drawing: drawing tools and their uses; types of drawing (isometric, oblique, orthographic projection); dimensioning; construction of geometric shapes; reading and interpreting working drawings; drawing to scale."
+            },
+            {
+              "code": "WOOD-DESIGN-2",
+              "description": "Design: elements and principles of design; following a design brief; producing working drawings; interpretation of working drawings."
+            },
+            {
+              "code": "WOOD-DESIGN-3",
+              "description": "Methods and principles of construction: practical operations (cutting — ripping, cross-cutting; planing — surfacing, thicknessing; shaping — chamfering, rounding, tapering; assembling and finishing — testing for squareness, parallelism, trial assembly, cramping, surface preparation, application of finishes)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Surface Decoration, Mass Production and Entrepreneurship",
+      "abbreviation": "ENTREP",
+      "subStrands": [
+        {
+          "name": "Surface Decoration, Mass Production and Business in Woodworking",
+          "objectives": [
+            {
+              "code": "WOOD-ENTREP-1",
+              "description": "Surface decoration: types (inlaying, veneering, marquetry, lamination, laminated plastics, mouldings); identification, description, processes, techniques and application."
+            },
+            {
+              "code": "WOOD-ENTREP-2",
+              "description": "Mass production: concept and principles; processes (market survey, design, production, quality assurance, sales/marketing, management, procurement, cost estimation, tooling up for production); mass production terms (templates, fixtures, trial run, departments, prototype, quality control)."
+            },
+            {
+              "code": "WOOD-ENTREP-3",
+              "description": "Entrepreneurship in Woodworking (Nigeria): types of business organisation (sole proprietorship, partnership, cooperatives); business opportunities (merchandising, spray painting, upholstery work, wood turning); business plans (format and content); sources of fund (gifts, personal savings, loans, inheritance, cooperatives)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

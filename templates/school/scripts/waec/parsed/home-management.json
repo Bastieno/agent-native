@@ -1,0 +1,125 @@
+{
+  "found": true,
+  "subject": "Home Management",
+  "subjectCode": "HOMEMGT",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Principles of Management",
+      "abbreviation": "PRINCIP",
+      "subStrands": [
+        {
+          "name": "Management Process, Motivations and Resources",
+          "objectives": [
+            {
+              "code": "HOMEMGT-PRINCIP-1",
+              "description": "Definition of home management; careers in home management."
+            },
+            {
+              "code": "HOMEMGT-PRINCIP-2",
+              "description": "The management process: planning, organization, implementation, evaluation; application of process to specific tasks."
+            },
+            {
+              "code": "HOMEMGT-PRINCIP-3",
+              "description": "Motivations for home management: personal characteristics, values, goals, standards, needs, events."
+            },
+            {
+              "code": "HOMEMGT-PRINCIP-4",
+              "description": "Family resources: definition, characteristics, kinds — human (time, energy, skill, work simplification as it applies to the home), non-human/material, community resources."
+            },
+            {
+              "code": "HOMEMGT-PRINCIP-5",
+              "description": "Decision-making: definition and process of decision-making."
+            },
+            {
+              "code": "HOMEMGT-PRINCIP-6",
+              "description": "Management of time and energy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Family Living",
+      "abbreviation": "FAMILY",
+      "subStrands": [
+        {
+          "name": "Family Types, Marriage, Courtship and Parenthood",
+          "objectives": [
+            {
+              "code": "HOMEMGT-FAMILY-1",
+              "description": "The family: definition; types — nuclear, monogamous, polygamous, extended; advantages and disadvantages of each type; family life cycle — beginning, expanding, contracting and empty-nest; functions of the family; roles and responsibilities of family members (mother, father, children, working mothers, single parent etc.); family relationship — husband and wife, parent/child, sibling/sibling; factors affecting family relationship; conflict and conflict resolution."
+            },
+            {
+              "code": "HOMEMGT-FAMILY-2",
+              "description": "Courtship and marriage: types of marriage; boy/girl relationship — definition, traditional/custom, guidelines for healthy boy/girl relationship, problems of unhealthy boy/girl relationship, consequences of indiscriminate sexual indulgence, sex education; choosing a life partner — factors to consider (blood group, genotype, HIV status), dating, courtship, engagement; preparation for marriage — readiness (where to live, maturity, finances), introduction to each other's family; marriage ceremony in different localities."
+            },
+            {
+              "code": "HOMEMGT-FAMILY-3",
+              "description": "Parenthood: preparation for parenthood — planning a family, reproduction, pregnancy, ante-natal care; child birth — labour, delivery, post-natal care, immunization; parenting — meaning, importance, responsibilities (provision of needs, bathing etc.)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Feeding the Family",
+      "abbreviation": "FEED",
+      "subStrands": [
+        {
+          "name": "Nutrients, Meal Planning, Food Preparation and Preservation",
+          "objectives": [
+            {
+              "code": "HOMEMGT-FEED-1",
+              "description": "Nutrients and nutrition: functions, sources and effects of deficiency of nutrients (carbohydrates, proteins, fats and oils, vitamins, minerals, water and roughage)."
+            },
+            {
+              "code": "HOMEMGT-FEED-2",
+              "description": "Meal planning: factors to consider in meal planning; planning balanced meals for different members of the family; special meals for the sick, elderly, and children; budgeting for food."
+            },
+            {
+              "code": "HOMEMGT-FEED-3",
+              "description": "Food preparation and cooking: methods of cooking food; preparation of local and continental dishes; food hygiene and safety practices."
+            },
+            {
+              "code": "HOMEMGT-FEED-4",
+              "description": "Food preservation and storage: reasons for food preservation; methods of food preservation (traditional and modern); storage of foods."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Housing and Home Care",
+      "abbreviation": "HOUSE",
+      "subStrands": [
+        {
+          "name": "Housing, Home Equipment, Textiles and Consumer Education",
+          "objectives": [
+            {
+              "code": "HOMEMGT-HOUSE-1",
+              "description": "Housing: factors to consider when choosing a house; types of housing; planning of rooms; sanitation and maintenance of the home."
+            },
+            {
+              "code": "HOMEMGT-HOUSE-2",
+              "description": "Home equipment and furnishings: selection, use, care, maintenance and storage of home equipment and furnishings."
+            },
+            {
+              "code": "HOMEMGT-HOUSE-3",
+              "description": "Textiles and clothing: types of fibre and fabric; selection and care of clothing; laundry — equipment and processes."
+            },
+            {
+              "code": "HOMEMGT-HOUSE-4",
+              "description": "Consumer education: meaning of consumer; rights and responsibilities of a consumer; consumer protection; budgeting and management of family income."
+            },
+            {
+              "code": "HOMEMGT-HOUSE-5",
+              "description": "Entrepreneurship in home management: setting up a home-based enterprise; business plan; marketing of home management products and services."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

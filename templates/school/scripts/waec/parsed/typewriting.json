@@ -1,0 +1,74 @@
+{
+  "found": true,
+  "subject": "Typewriting",
+  "subjectCode": "TYPE",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Correspondence and Manuscript",
+      "abbreviation": "CORR",
+      "subStrands": [
+        {
+          "name": "Letters, Memos, Form Letters and Manuscripts",
+          "objectives": [
+            {
+              "code": "TYPE-CORR-1",
+              "description": "Correspondence: letters and memoranda with insets, continuation sheets, subject headings, enclosures, attention lines, including private, personal, confidential and distribution of carbon copies; use of pre-printed A4 and A5 headed paper."
+            },
+            {
+              "code": "TYPE-CORR-2",
+              "description": "Form letters and circular letters with or without tear-off portions; envelope addressing; envelope with special marks."
+            },
+            {
+              "code": "TYPE-CORR-3",
+              "description": "Manuscript: typing from manuscript drafts with or without inset matter, including manuscript correction signs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Display Work and Specialised Documents",
+      "abbreviation": "DISPLAY",
+      "subStrands": [
+        {
+          "name": "Headings, Paragraphing, Tabulation, Meetings and Financial Statements",
+          "objectives": [
+            {
+              "code": "TYPE-DISPLAY-1",
+              "description": "Headings: main, sub-heading, shoulder, paragraph and marginal/side heading. Paragraphing: blocked, indented and hanging paragraphs. Paragraph numbering: Arabic, Roman, decimal and alphabetical."
+            },
+            {
+              "code": "TYPE-DISPLAY-2",
+              "description": "Display work: menu, advertisement, and itineraries. Meetings and report: notice of meetings (with or without agenda), chairman's agenda, minutes and reports."
+            },
+            {
+              "code": "TYPE-DISPLAY-3",
+              "description": "Business Forms and Cards: completion of pre-printed forms — application and personal records forms, invoices, order forms, delivery note, advice note, invitation cards and postcards."
+            },
+            {
+              "code": "TYPE-DISPLAY-4",
+              "description": "Tabulation: tabulation with ruling, with or without leader dots, chronological and alphabetical arrangements. Literary Work: short plays, poems and articles; footnotes. Financial Statement: simple statement of accounts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Speed and Accuracy",
+      "abbreviation": "SPEED",
+      "subStrands": [
+        {
+          "name": "Typing Speed at 40 Words Per Minute",
+          "objectives": [
+            {
+              "code": "TYPE-SPEED-1",
+              "description": "Speed and accuracy test at 40 words per minute (syllabic intensity 1.35–1.40); production of mailable documents; typing from manuscript, typescript and printed drafts with interpolations and correction signs; total standard words between 1350 and 1450."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

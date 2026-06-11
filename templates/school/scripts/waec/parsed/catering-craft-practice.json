@@ -1,0 +1,136 @@
+{
+  "found": true,
+  "subject": "Catering Craft Practice",
+  "subjectCode": "CATER",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "The Concept of Catering",
+      "abbreviation": "CONCPT",
+      "subStrands": [
+        {
+          "name": "Hospitality Industry, Establishments, Safety and Hygiene",
+          "objectives": [
+            {
+              "code": "CATER-CONCPT-1",
+              "description": "Hospitality industry/catering: definitions of hospitality and catering; components of hospitality industry."
+            },
+            {
+              "code": "CATER-CONCPT-2",
+              "description": "Types of catering establishments e.g. hotel, restaurant, hospitality catering, outdoor catering, school, mobile catering etc.; functions of catering establishments."
+            },
+            {
+              "code": "CATER-CONCPT-3",
+              "description": "Culinary terms: culinary terms commonly used in catering; glossary of culinary terms."
+            },
+            {
+              "code": "CATER-CONCPT-4",
+              "description": "Safety precaution in catering: types and causes of accidents; prevention/management; first aid; fire fighting equipment."
+            },
+            {
+              "code": "CATER-CONCPT-5",
+              "description": "Sanitation and hygiene in catering: water sanitation, environmental sanitation, food safety practices, kitchen hygiene, personal hygiene."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Food Commodities and Methods of Preparation",
+      "abbreviation": "FOOD",
+      "subStrands": [
+        {
+          "name": "Food Commodities and Cooking Methods",
+          "objectives": [
+            {
+              "code": "CATER-FOOD-1",
+              "description": "Study of food commodities: poultry, game, meat, fish, vegetables, fruits, dairy products, pulses, cereals, herbs, flavourings etc."
+            },
+            {
+              "code": "CATER-FOOD-2",
+              "description": "Methods of cooking: boiling e.g. stock, soups and sauces; roasting e.g. fish, beef and poultry; grilling e.g. fish, meat etc.; baking e.g. pastry and confectionery."
+            },
+            {
+              "code": "CATER-FOOD-3",
+              "description": "Principles of cooking methods; preparation of the various food commodities; standard/local measurements."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Service of Foods and Drinks",
+      "abbreviation": "SERVICE",
+      "subStrands": [
+        {
+          "name": "Food Service Personnel, Types of Service, Drinks and Costing",
+          "objectives": [
+            {
+              "code": "CATER-SERVICE-1",
+              "description": "Food and beverage service personnel: personnel in the foods and beverage area; functions of food and beverage personnel."
+            },
+            {
+              "code": "CATER-SERVICE-2",
+              "description": "Types of food service and table laying/setting: different types of food service e.g. Gueridon, silver service, waiter service, vending, buffet and banquet service; types of covers; types of table laying/setting."
+            },
+            {
+              "code": "CATER-SERVICE-3",
+              "description": "Types of alcoholic and non-alcoholic drinks: bar, alcoholic beverages, non-alcoholic beverages."
+            },
+            {
+              "code": "CATER-SERVICE-4",
+              "description": "Costing and control in catering: cost/sales, dish costing, portion control."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kitchen Equipment",
+      "abbreviation": "EQUIP",
+      "subStrands": [
+        {
+          "name": "Types, Uses, Care and Maintenance",
+          "objectives": [
+            {
+              "code": "CATER-EQUIP-1",
+              "description": "Types of kitchen equipment and their uses."
+            },
+            {
+              "code": "CATER-EQUIP-2",
+              "description": "Care and maintenance of kitchen equipment: care and maintenance of various kitchen equipment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Menu Planning",
+      "abbreviation": "MENU",
+      "subStrands": [
+        {
+          "name": "Principles, Types, Special Menus and Accompaniments",
+          "objectives": [
+            {
+              "code": "CATER-MENU-1",
+              "description": "Principles of menu planning: meaning and scope of menu; factors that affect menu planning."
+            },
+            {
+              "code": "CATER-MENU-2",
+              "description": "Types of menu: table d'hote, a la carte and special occasions; others — breakfast, tea, dinner, supper, luncheon, carte du jour, plate du jour etc."
+            },
+            {
+              "code": "CATER-MENU-3",
+              "description": "Special menu and demonstrations: meals plan for vegetarians; meals plan for the vulnerable group; meals plan for manual and sedentary workers etc."
+            },
+            {
+              "code": "CATER-MENU-4",
+              "description": "Accompaniments: food accompaniments; table accompaniments."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
