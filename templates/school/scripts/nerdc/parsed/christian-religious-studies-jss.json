@@ -1,0 +1,118 @@
+{
+  "found": true,
+  "subject": "Christian Religious Studies",
+  "subjectCode": "CRS",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Old Testament",
+      "abbreviation": "OT",
+      "subStrands": [
+        {
+          "name": "Creation, Patriarchs, and Covenant",
+          "objectives": [
+            {
+              "code": "CRS-OT-1",
+              "description": "Describe the creation story and the fall of humanity as recorded in Genesis and draw moral lessons"
+            },
+            {
+              "code": "CRS-OT-2",
+              "description": "Explain the accounts of Cain and Abel, Noah and the flood, and identify lessons on obedience and justice"
+            },
+            {
+              "code": "CRS-OT-3",
+              "description": "Describe God's call of Abraham, his covenant with God, and Abraham's relationship with Lot"
+            },
+            {
+              "code": "CRS-OT-4",
+              "description": "Recount the stories of Isaac, Jacob, Esau, and Joseph in Egypt and identify their significance for faith"
+            },
+            {
+              "code": "CRS-OT-5",
+              "description": "Explain Moses' leadership, the Ten Commandments, and the journey of the Israelites to the Promised Land"
+            },
+            {
+              "code": "CRS-OT-6",
+              "description": "Describe the role of the judges of Israel and identify lessons on leadership and faithfulness to God"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New Testament",
+      "abbreviation": "NT",
+      "subStrands": [
+        {
+          "name": "Life, Ministry, and Passion of Jesus",
+          "objectives": [
+            {
+              "code": "CRS-NT-1",
+              "description": "Describe the birth of John the Baptist and Jesus and explain the significance of the Annunciation"
+            },
+            {
+              "code": "CRS-NT-2",
+              "description": "Recount the baptism, temptation, and early ministry of Jesus including his first miracle"
+            },
+            {
+              "code": "CRS-NT-3",
+              "description": "Describe the Sermon on the Mount and explain the central teachings of Jesus on the Kingdom of God"
+            },
+            {
+              "code": "CRS-NT-4",
+              "description": "Identify and interpret key parables of Jesus and their application to everyday Christian living"
+            },
+            {
+              "code": "CRS-NT-5",
+              "description": "Describe the miracles of Jesus and explain how they demonstrated his divine power and compassion"
+            },
+            {
+              "code": "CRS-NT-6",
+              "description": "Recount the events of Holy Week: the triumphal entry, the Last Supper, betrayal, trial, and crucifixion"
+            },
+            {
+              "code": "CRS-NT-7",
+              "description": "Describe the death, burial, resurrection, and ascension of Jesus and explain their significance for Christians"
+            },
+            {
+              "code": "CRS-NT-8",
+              "description": "Explain the Great Commission and Pentecost event and their importance for the spread of Christianity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Christian Living and Relationships",
+      "abbreviation": "CLR",
+      "subStrands": [
+        {
+          "name": "Family, School, and Community",
+          "objectives": [
+            {
+              "code": "CRS-CLR-1",
+              "description": "Explain the roles of family members and apply biblical principles for healthy family relationships (Eph. 6:1–9; Col. 3:18–21)"
+            },
+            {
+              "code": "CRS-CLR-2",
+              "description": "Describe the value of a good family name and explain how Christians can uphold family honour (Prov. 22:1)"
+            },
+            {
+              "code": "CRS-CLR-3",
+              "description": "Apply biblical guidelines for choosing and maintaining healthy friendships in school (1 Sam. 18:1–5; Prov. 1:10–12)"
+            },
+            {
+              "code": "CRS-CLR-4",
+              "description": "Describe the importance of community relationships and the Christian's responsibility to community leaders"
+            },
+            {
+              "code": "CRS-CLR-5",
+              "description": "Explain the importance of fellowship, unity, and service within the church community"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
