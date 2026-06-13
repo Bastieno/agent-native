@@ -5,15 +5,17 @@ This is an **agent-native** school learning platform. Every action the UI can do
 ## Session Start Checklist
 
 At the start of every conversation:
-1. Call `view-screen` — this gives you the current navigation state and a role-aware snapshot
-2. Read `SCHOOL_GUIDE.md` resource (`--scope shared`) — school-specific instructions, terminology, grading, and pedagogy
-3. Read `LEARNINGS.md` resource (`--scope personal` and `--scope shared`) — your accumulated corrections and preferences
+
+1. **Navigation context is pre-injected** — a `<current-screen>` block in the system prompt already tells you `role`, `view`, and any active entity IDs. You do NOT need to call `view-screen` just to discover the role or current view.
+2. Call `view-screen` only when you need a **full data snapshot** — entity details, live content, submission drafts, stats. Skip it for simple lookups or when the pre-injected context is enough.
+3. Read `SCHOOL_GUIDE.md` resource (`--scope shared`) — needed for grading, curriculum co-authoring, onboarding, analytics, or anything school-policy-specific. Skip for simple lookups.
+4. Read `LEARNINGS.md` resource (`--scope personal` and `--scope shared`) — needed when preferences, corrections, or past context may affect the answer. Skip for simple lookups.
 
 **CRITICAL: Always check `navigation.role` first.** It determines which section of this guide applies and how you should behave.
 
 ## Role Detection
 
-`view-screen` always includes `navigation.role`. This tells you which portal the user is in:
+The `<current-screen>` block injected at the start of every turn includes `role`. Use it directly. Call `view-screen` for full data — not just to determine the role.
 
 | `navigation.role` | Portal | Section |
 |---|---|---|
@@ -21,7 +23,11 @@ At the start of every conversation:
 | `"teacher"` | Teacher Portal | Section B |
 | `"student"` | Student Portal → **TUTOR MODE** | Section C |
 
-**If `navigation.role` is missing**, call `view-screen` before acting. Never guess the role.
+**If `role` is missing from `<current-screen>`**, call `view-screen` before acting. Never guess the role.
+
+## Destructive Actions
+
+Before executing any destructive or irreversible action (suspend, remove, delete, publish grades, close assessment), always confirm with the user first — describe what will happen and ask them to confirm before proceeding.
 
 ## Running Actions
 
@@ -90,6 +96,37 @@ commit-curriculum-draft --id {id}       ← materializes into subjects + units +
 ```bash
 pnpm action navigate --view=curriculum-setup --curriculumDraftId=<id>
 ```
+
+**Standards alignment**: Units carry a `standards` array — official reference codes from a recognized
+curriculum framework. Populate these during co-authoring by including them in the draft state:
+
+```json
+{
+  "standards": [
+    { "framework": "NERDC", "code": "MATH-NS-1", "description": "Whole numbers and basic operations" },
+    { "framework": "WAEC", "code": "MATH-ALG-1", "description": "Algebraic processes — linear equations" }
+  ]
+}
+```
+
+`commit-curriculum-draft` saves these into `standardsJson` on each unit. When generating lesson notes
+or assessments for a unit, read the unit's standards and reference them explicitly in the content.
+
+**For this school template (Nigerian JSS + SSS)**: The standards library is already seeded. Always
+call `list-framework-objectives` at the start of every curriculum co-authoring session:
+
+```bash
+# For JSS1–JSS3 subjects (NERDC, 22 subjects available):
+pnpm action list-framework-objectives --framework "NERDC" --subject "Mathematics"
+
+# For SS1–SS3 subjects (WAEC, 61 subjects available):
+pnpm action list-framework-objectives --framework "WAEC" --subject "Mathematics"
+```
+
+**Read `SCHOOL_GUIDE.md` first** — it contains the NERDC and WAEC 9-term pacing tables, the
+JSS3/SS3 revision-only rules, and the BECE/WASSCE exam constraints. Apply those pacing percentages
+when distributing objectives across terms. See `docs/curriculum-coauthoring-guide.md` for the
+full end-to-end walkthrough.
 
 ### A3. Staff Management
 
@@ -311,7 +348,29 @@ When asked "How is my class doing?":
 3. `identify-struggling-students --classId <classId>`
 4. Return: class average, category distribution, weak students, weak units, recommendation
 
-### B6. Navigation Map (Teacher)
+### B6. Daily Schedule
+
+When a teacher asks "what do I have today?", "what are my classes today?", or similar:
+
+```bash
+pnpm action get-my-schedule
+# Returns: date, dayName, ordered list of class slots with times/rooms,
+# and a flag for each slot showing whether a lesson note has been prepared.
+```
+
+`view-screen` on the teacher dashboard also includes `todaySchedule` — use this first if you
+already called view-screen. Call `get-my-schedule` when you need a fresh snapshot or a different
+date.
+
+To set up a class schedule (usually done during school setup):
+
+```bash
+pnpm action create-class-schedule --classId <id> --dayOfWeek 1 --startTime "08:00" --endTime "08:45" --periodNumber 1
+```
+
+Run once per day-slot per class. dayOfWeek: 1=Monday … 5=Friday.
+
+### B7. Navigation Map (Teacher)
 
 | User says | Navigate to |
 |---|---|
@@ -424,7 +483,8 @@ pnpm action get-my-classes           # Enrolled classes
 | `list-terms` / `create-term` | `--academicYearId --name --startDate --endDate --sequence` |
 | `list-departments` / `create-department` | `--name [--headTeacherUserId]` |
 | `manage-grade-levels` | `--levels '[...]'` — replaces all grade levels |
-| `update-school-resource` | `--content "..."` — writes to SCHOOL_GUIDE.md |
+| `update-school-resource` | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped) |
+| `get-school-resource` | — reads current SCHOOL_GUIDE.md content |
 
 ### Staff Management (admin)
 | Action | Args |
@@ -440,7 +500,7 @@ pnpm action get-my-classes           # Enrolled classes
 |---|---|
 | `list-subjects` / `create-subject` | `--name --code --color --departmentId` |
 | `update-subject` | `--id ...fields` |
-| `list-units` / `create-unit` | `--subjectId --gradeLevelId --title --description --weekStart --weekEnd` |
+| `list-units` / `create-unit` | `--subjectId --gradeLevelId --title --description --weekStart --weekEnd [--standards '[{"framework":"Common Core","code":"8.EE.C.7","description":"..."}]']` |
 | `update-unit` / `reorder-units` | `--subjectId --order '[ids]'` |
 | `start-curriculum-draft` | `--sessionTitle` |
 | `update-curriculum-draft` | `--id --stateJson '...'` — persists accumulated state |
@@ -470,6 +530,8 @@ pnpm action get-my-classes           # Enrolled classes
 | `bulk-enroll-students` | `--classId --studentUserIds '[...]'` |
 | `unenroll-student` | `--classId --studentUserId` |
 | `add-teacher-to-class` | `--classId --teacherUserId --role primary\|support\|observer` |
+| `create-class-schedule` | `--classId --dayOfWeek (1-7) --startTime "HH:MM" --endTime "HH:MM" [--periodNumber] [--room]` |
+| `get-my-schedule` | `[--date YYYY-MM-DD]` — defaults to today; returns slots + lesson prep status |
 
 ### Lesson Notes (teacher)
 | Action | Args |
