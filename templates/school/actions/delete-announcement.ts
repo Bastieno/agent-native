@@ -9,7 +9,7 @@ export default defineAction({
   schema: z.object({
     id: z.string().describe("Announcement ID"),
   }),
-  http: { method: "DELETE" },
+  http: { method: "POST" },
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");

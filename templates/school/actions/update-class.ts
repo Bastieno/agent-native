@@ -15,7 +15,7 @@ export default defineAction({
     roomNumber: z.string().optional(),
     capacity: z.number().optional(),
   }),
-  http: { method: "PUT" },
+  http: { method: "POST" },
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");

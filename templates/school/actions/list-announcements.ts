@@ -23,7 +23,7 @@ export default defineAction({
       .default(20)
       .describe("Maximum number of results"),
   }),
-  http: { method: "GET" },
+  http: { method: "POST" },
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");

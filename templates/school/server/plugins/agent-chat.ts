@@ -3,7 +3,7 @@ import {
   loadActionsFromStaticRegistry,
 } from "@agent-native/core/server";
 import { getOrgContext } from "@agent-native/core/org";
-import { readAppState } from "@agent-native/core/application-state";
+import { appStateGet } from "@agent-native/core/application-state";
 import actionsRegistry from "../../.generated/actions-registry.js";
 
 export default createAgentChatPlugin({
@@ -14,9 +14,9 @@ export default createAgentChatPlugin({
     const ctx = await getOrgContext(event);
     return ctx.orgId;
   },
-  extraContext: async () => {
+  extraContext: async (_event: any, owner: string) => {
     try {
-      const nav = (await readAppState("navigation")) as any;
+      const nav = (await appStateGet(owner, "navigation")) as any;
       if (!nav) return null;
       const lines: string[] = ["<current-screen>"];
       if (nav.role) lines.push(`role: ${nav.role}`);

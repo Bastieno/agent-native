@@ -13,7 +13,7 @@ export default defineAction({
       .enum(["teacher", "subject_coordinator", "school_admin"])
       .describe("New role to assign"),
   }),
-  http: { method: "PUT" },
+  http: { method: "POST" },
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
