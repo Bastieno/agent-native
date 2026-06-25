@@ -95,20 +95,39 @@ export default defineAction({
       status: "active",
     });
 
+    // Add to org_members so the framework's getOrgContext can resolve orgId for this user
+    const existingMember = await db.get<{ id: string }>(
+      sql`SELECT id FROM org_members WHERE org_id = ${orgId} AND LOWER(email) = ${email} LIMIT 1`,
+    );
+    if (!existingMember) {
+      await db.run(
+        sql`INSERT INTO org_members (id, org_id, email, role, joined_at) VALUES (${nanoid()}, ${orgId}, ${email}, 'member', ${Date.now()})`,
+      );
+    }
+
     // Remove from pending list now that the profile is active
-    const currentList = ((await getOrgSetting(orgId, "pending-staff-invites")) ??
-      []) as Array<{ email: string }>;
+    const currentList = ((await getOrgSetting(
+      orgId,
+      "pending-staff-invites",
+    )) ?? []) as Array<{ email: string }>;
     await putOrgSetting(
       orgId,
       "pending-staff-invites",
       currentList.filter((inv) => inv.email !== email) as any,
     );
 
+    const schoolConfig =
+      ((await getOrgSetting(orgId, "school-config")) as Record<
+        string,
+        unknown
+      > | null) ?? {};
+    const schoolName = (schoolConfig.name as string) || "the school";
+
     return {
       success: true,
       email,
       schoolRole,
-      message: `${email} is now active as ${schoolRole} at Green Valley Academy. They can log in and access the ${schoolRole === "student" ? "student" : "teacher"} portal.`,
+      message: `${email} is now active as ${schoolRole} at ${schoolName}. They can log in and access the ${(schoolRole as string) === "student" ? "student" : "teacher"} portal.`,
     };
   },
 });
