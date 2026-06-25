@@ -1,13 +1,12 @@
-import {
-  defineEventHandler,
-  getRouterParam,
-  getQuery,
-  createError,
-} from "h3";
+import { defineEventHandler, getRouterParam, getQuery, createError } from "h3";
 import { getSession, runWithRequestContext } from "@agent-native/core/server";
 import { getDb, schema } from "../db/index.js";
 import { eq, and, desc, asc, inArray, sql, count } from "drizzle-orm";
-import { getOrgSetting, getAllSettings, putOrgSetting } from "@agent-native/core/settings";
+import {
+  getOrgSetting,
+  getAllSettings,
+  putOrgSetting,
+} from "@agent-native/core/settings";
 import { nanoid } from "nanoid";
 
 // ─── Helper ──────────────────────────────────────────────────────────────────
@@ -21,9 +20,9 @@ async function requireSession(event: any) {
   // Fall back to a lookup by email so all handlers always have a userId.
   if (!session.userId) {
     const db = getDb();
-    const row = await db.get(
+    const row = (await db.get(
       sql`SELECT id FROM "user" WHERE email = ${session.email} LIMIT 1`,
-    ) as { id: string } | undefined;
+    )) as { id: string } | undefined;
     if (row?.id) (session as any).userId = row.id;
   }
   return session;
@@ -81,6 +80,55 @@ async function autoActivateInvitedStaff(
   return null;
 }
 
+/**
+ * When an invited student signs in for the first time, auto-create their
+ * school_profiles row (role=student) and students academic record.
+ */
+async function autoActivateInvitedStudents(
+  db: any,
+  userId: string,
+  email: string,
+): Promise<{ schoolRole: string; schoolId: string } | null> {
+  const all = await getAllSettings();
+  const INVITE_KEY_RE = /^o:([^:]+):pending-student-invites$/;
+  for (const [fullKey, value] of Object.entries(all)) {
+    const m = INVITE_KEY_RE.exec(fullKey);
+    if (!m) continue;
+    const orgId = m[1];
+    const invites = Array.isArray(value) ? value : [];
+    const match = invites.find(
+      (inv: any) => inv.email?.toLowerCase() === email.toLowerCase(),
+    );
+    if (!match) continue;
+    // Create school profile
+    await db.insert(schema.schoolProfiles).values({
+      id: nanoid(),
+      userId,
+      schoolId: orgId,
+      schoolRole: "student",
+      status: "active",
+    });
+    // Create student academic record
+    await db.insert(schema.students).values({
+      id: nanoid(),
+      userId,
+      schoolId: orgId,
+      customFieldsJson: "{}",
+      status: "active",
+      ownerEmail: email,
+      orgId,
+      visibility: "org",
+    });
+    // Remove from pending list
+    const remaining = invites.filter(
+      (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
+    );
+    await putOrgSetting(orgId, "pending-student-invites", remaining as any);
+    return { schoolRole: "student", schoolId: orgId };
+  }
+  return null;
+}
+
 export const getSessionInfo = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
@@ -88,7 +136,7 @@ export const getSessionInfo = defineEventHandler(async (event) => {
     ? await getSchoolProfile(db, session.userId)
     : null;
 
-  // Auto-activate if the user is in a pending invite list
+  // Auto-activate if the user is in a pending staff invite list
   if (!profile && session.userId && session.email) {
     const activated = await autoActivateInvitedStaff(
       db,
@@ -96,7 +144,25 @@ export const getSessionInfo = defineEventHandler(async (event) => {
       session.email,
     );
     if (activated) {
-      profile = { schoolRole: activated.schoolRole, schoolId: activated.schoolId };
+      profile = {
+        schoolRole: activated.schoolRole,
+        schoolId: activated.schoolId,
+      };
+    }
+  }
+
+  // Auto-activate if the user is in a pending student invite list
+  if (!profile && session.userId && session.email) {
+    const activated = await autoActivateInvitedStudents(
+      db,
+      session.userId,
+      session.email,
+    );
+    if (activated) {
+      profile = {
+        schoolRole: activated.schoolRole,
+        schoolId: activated.schoolId,
+      };
     }
   }
 
@@ -113,7 +179,8 @@ export const getStats = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
   const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) return { staffCount: 0, studentCount: 0, classCount: 0, subjectCount: 0 };
+  if (!profile)
+    return { staffCount: 0, studentCount: 0, classCount: 0, subjectCount: 0 };
 
   const schoolId = profile.schoolId;
 
@@ -124,7 +191,11 @@ export const getStats = defineEventHandler(async (event) => {
       .where(
         and(
           eq(schema.schoolProfiles.schoolId, schoolId),
-          inArray(schema.schoolProfiles.schoolRole, ["teacher", "subject_coordinator", "school_admin"]),
+          inArray(schema.schoolProfiles.schoolRole, [
+            "teacher",
+            "subject_coordinator",
+            "school_admin",
+          ]),
           eq(schema.schoolProfiles.status, "active"),
         ),
       ),
@@ -141,11 +212,21 @@ export const getStats = defineEventHandler(async (event) => {
     db
       .select({ c: count() })
       .from(schema.classes)
-      .where(and(eq(schema.classes.orgId, schoolId), eq(schema.classes.status, "active"))),
+      .where(
+        and(
+          eq(schema.classes.orgId, schoolId),
+          eq(schema.classes.status, "active"),
+        ),
+      ),
     db
       .select({ c: count() })
       .from(schema.subjects)
-      .where(and(eq(schema.subjects.orgId, schoolId), eq(schema.subjects.status, "active"))),
+      .where(
+        and(
+          eq(schema.subjects.orgId, schoolId),
+          eq(schema.subjects.status, "active"),
+        ),
+      ),
   ]);
 
   return {
@@ -184,7 +265,11 @@ export const getStaff = defineEventHandler(async (event) => {
       const userRow = (await db.get(
         sql`SELECT email, name FROM "user" WHERE id = ${p.userId} LIMIT 1`,
       )) as { email: string; name: string } | undefined;
-      return { ...p, email: userRow?.email ?? null, name: userRow?.name ?? null };
+      return {
+        ...p,
+        email: userRow?.email ?? null,
+        name: userRow?.name ?? null,
+      };
     }),
   );
 
@@ -192,8 +277,10 @@ export const getStaff = defineEventHandler(async (event) => {
     active.map((a) => a.email?.toLowerCase()).filter(Boolean),
   );
 
-  const allPending = ((await getOrgSetting(schoolId, "pending-staff-invites")) ??
-    []) as Array<{
+  const allPending = ((await getOrgSetting(
+    schoolId,
+    "pending-staff-invites",
+  )) ?? []) as Array<{
     id: string;
     email: string;
     name: string;
@@ -207,6 +294,30 @@ export const getStaff = defineEventHandler(async (event) => {
   );
 
   return { active, pending };
+});
+
+export const getPendingStaffInvites = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId!);
+  if (!profile) return [];
+  const list = ((await getOrgSetting(
+    profile.schoolId,
+    "pending-staff-invites",
+  )) ?? []) as any[];
+  return list;
+});
+
+export const getPendingStudentInvites = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId!);
+  if (!profile) return [];
+  const list = ((await getOrgSetting(
+    profile.schoolId,
+    "pending-student-invites",
+  )) ?? []) as any[];
+  return list;
 });
 
 // ─── School config ────────────────────────────────────────────────────────────
@@ -249,7 +360,8 @@ export const listSubjects = defineEventHandler(async (event) => {
 export const getSubject = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const subjectId = getRouterParam(event, "subjectId");
-  if (!subjectId) throw createError({ statusCode: 400, message: "Missing subjectId" });
+  if (!subjectId)
+    throw createError({ statusCode: 400, message: "Missing subjectId" });
 
   const db = getDb();
   const profile = await getSchoolProfile(db, session.userId);
@@ -258,7 +370,12 @@ export const getSubject = defineEventHandler(async (event) => {
   const rows = await db
     .select()
     .from(schema.subjects)
-    .where(and(eq(schema.subjects.id, subjectId), eq(schema.subjects.orgId, profile.schoolId)))
+    .where(
+      and(
+        eq(schema.subjects.id, subjectId),
+        eq(schema.subjects.orgId, profile.schoolId),
+      ),
+    )
     .limit(1);
   if (!rows[0]) throw createError({ statusCode: 404, message: "Not found" });
   return rows[0];
@@ -300,7 +417,10 @@ export const listUnits = defineEventHandler(async (event) => {
     objsByUnit[obj.unitId].push(obj);
   }
 
-  return units.map((u: any) => ({ ...u, learningObjectives: objsByUnit[u.id] ?? [] }));
+  return units.map((u: any) => ({
+    ...u,
+    learningObjectives: objsByUnit[u.id] ?? [],
+  }));
 });
 
 // ─── Classes ─────────────────────────────────────────────────────────────────
@@ -324,7 +444,10 @@ export const listClasses = defineEventHandler(async (event) => {
     })
     .from(schema.classes)
     .leftJoin(schema.subjects, eq(schema.classes.subjectId, schema.subjects.id))
-    .leftJoin(schema.gradeLevels, eq(schema.classes.gradeLevelId, schema.gradeLevels.id))
+    .leftJoin(
+      schema.gradeLevels,
+      eq(schema.classes.gradeLevelId, schema.gradeLevels.id),
+    )
     .where(eq(schema.classes.orgId, profile.schoolId));
 
   // Enrollment counts
@@ -346,19 +469,26 @@ export const listClasses = defineEventHandler(async (event) => {
   for (const e of enrollments) countMap[e.classId] = Number(e.c);
 
   // Fetch teacher names
-  const teacherIds = [...new Set(rows.map((r: any) => r.primaryTeacherUserId).filter(Boolean))];
+  const teacherIds = [
+    ...new Set(rows.map((r: any) => r.primaryTeacherUserId).filter(Boolean)),
+  ];
   const teacherMap: Record<string, string> = {};
   if (teacherIds.length > 0) {
-    const teacherRows = await db.all(
-      sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(teacherIds.map((id: string) => sql`${id}`), sql`, `)})`,
-    ) as Array<{ id: string; name: string; email: string }>;
+    const teacherRows = (await db.all(
+      sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(
+        teacherIds.map((id: string) => sql`${id}`),
+        sql`, `,
+      )})`,
+    )) as Array<{ id: string; name: string; email: string }>;
     for (const t of teacherRows) teacherMap[t.id] = t.name ?? t.email ?? t.id;
   }
 
   return rows.map((r: any) => ({
     ...r,
     enrollmentCount: countMap[r.id] ?? 0,
-    teacherName: r.primaryTeacherUserId ? (teacherMap[r.primaryTeacherUserId] ?? null) : null,
+    teacherName: r.primaryTeacherUserId
+      ? (teacherMap[r.primaryTeacherUserId] ?? null)
+      : null,
   }));
 });
 
@@ -396,11 +526,18 @@ export const listMyClasses = defineEventHandler(async (event) => {
         subjectName: schema.subjects.name,
       })
       .from(schema.classes)
-      .leftJoin(schema.subjects, eq(schema.classes.subjectId, schema.subjects.id))
+      .leftJoin(
+        schema.subjects,
+        eq(schema.classes.subjectId, schema.subjects.id),
+      )
       .where(inArray(schema.classes.id, classIds));
 
     // Pending assessments per class
-    return rows.map((r: any) => ({ ...r, pendingAssessments: 0, teacherName: null }));
+    return rows.map((r: any) => ({
+      ...r,
+      pendingAssessments: 0,
+      teacherName: null,
+    }));
   } else {
     // Teacher's assigned classes
     const teacherClassRows = await db
@@ -416,7 +553,10 @@ export const listMyClasses = defineEventHandler(async (event) => {
     ).map((r: any) => r.id);
 
     const allClassIds = [
-      ...new Set([...teacherClassRows.map((r: any) => r.classId), ...primaryClassIds]),
+      ...new Set([
+        ...teacherClassRows.map((r: any) => r.classId),
+        ...primaryClassIds,
+      ]),
     ];
     if (allClassIds.length === 0) return [];
 
@@ -429,8 +569,14 @@ export const listMyClasses = defineEventHandler(async (event) => {
         gradeLevelName: schema.gradeLevels.name,
       })
       .from(schema.classes)
-      .leftJoin(schema.subjects, eq(schema.classes.subjectId, schema.subjects.id))
-      .leftJoin(schema.gradeLevels, eq(schema.classes.gradeLevelId, schema.gradeLevels.id))
+      .leftJoin(
+        schema.subjects,
+        eq(schema.classes.subjectId, schema.subjects.id),
+      )
+      .leftJoin(
+        schema.gradeLevels,
+        eq(schema.classes.gradeLevelId, schema.gradeLevels.id),
+      )
       .where(inArray(schema.classes.id, allClassIds));
 
     const enrollments = await db
@@ -447,7 +593,10 @@ export const listMyClasses = defineEventHandler(async (event) => {
     const countMap: Record<string, number> = {};
     for (const e of enrollments) countMap[e.classId] = Number(e.c);
 
-    return rows.map((r: any) => ({ ...r, enrollmentCount: countMap[r.id] ?? 0 }));
+    return rows.map((r: any) => ({
+      ...r,
+      enrollmentCount: countMap[r.id] ?? 0,
+    }));
   }
 });
 
@@ -456,7 +605,8 @@ export const listMyClasses = defineEventHandler(async (event) => {
 export const getMyClassDetail = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const classId = getRouterParam(event, "classId");
-  if (!classId) throw createError({ statusCode: 400, message: "Missing classId" });
+  if (!classId)
+    throw createError({ statusCode: 400, message: "Missing classId" });
 
   const db = getDb();
   const profile = await getSchoolProfile(db, session.userId);
@@ -474,20 +624,41 @@ export const getMyClassDetail = defineEventHandler(async (event) => {
     .where(eq(schema.classes.id, classId))
     .limit(1);
 
-  if (!classRows[0]) throw createError({ statusCode: 404, message: "Not found" });
+  if (!classRows[0])
+    throw createError({ statusCode: 404, message: "Not found" });
   const cls = classRows[0];
 
   const [lessons, assessments] = await Promise.all([
     db
-      .select({ id: schema.lessonNotes.id, title: schema.lessonNotes.title, summary: schema.lessonNotes.summary })
+      .select({
+        id: schema.lessonNotes.id,
+        title: schema.lessonNotes.title,
+        summary: schema.lessonNotes.summary,
+      })
       .from(schema.lessonNotes)
-      .where(and(eq(schema.lessonNotes.classId, classId), eq(schema.lessonNotes.status, "finalized")))
+      .where(
+        and(
+          eq(schema.lessonNotes.classId, classId),
+          eq(schema.lessonNotes.status, "finalized"),
+        ),
+      )
       .orderBy(desc(schema.lessonNotes.createdAt))
       .limit(10),
     db
-      .select({ id: schema.assessments.id, title: schema.assessments.title, assessmentType: schema.assessments.assessmentType, dueDate: schema.assessments.dueDate, status: schema.assessments.status })
+      .select({
+        id: schema.assessments.id,
+        title: schema.assessments.title,
+        assessmentType: schema.assessments.assessmentType,
+        dueDate: schema.assessments.dueDate,
+        status: schema.assessments.status,
+      })
       .from(schema.assessments)
-      .where(and(eq(schema.assessments.classId, classId), eq(schema.assessments.status, "published")))
+      .where(
+        and(
+          eq(schema.assessments.classId, classId),
+          eq(schema.assessments.status, "published"),
+        ),
+      )
       .orderBy(asc(schema.assessments.dueDate)),
   ]);
 
@@ -527,7 +698,10 @@ export const listMyStudents = defineEventHandler(async (event) => {
   if (classIds.length === 0) return [];
 
   const enrollments = await db
-    .select({ studentUserId: schema.classEnrollments.studentUserId, classId: schema.classEnrollments.classId })
+    .select({
+      studentUserId: schema.classEnrollments.studentUserId,
+      classId: schema.classEnrollments.classId,
+    })
     .from(schema.classEnrollments)
     .where(
       and(
@@ -536,7 +710,9 @@ export const listMyStudents = defineEventHandler(async (event) => {
       ),
     );
 
-  const studentUserIds = [...new Set(enrollments.map((e: any) => e.studentUserId))];
+  const studentUserIds = [
+    ...new Set(enrollments.map((e: any) => e.studentUserId)),
+  ];
   if (studentUserIds.length === 0) return [];
 
   const categories = await db
@@ -552,16 +728,20 @@ export const listMyStudents = defineEventHandler(async (event) => {
   }
 
   // Fetch user names/emails in one query
-  const userRows = await db.all(
-    sql`SELECT id, email, name FROM "user" WHERE id IN (${sql.join(studentUserIds.map((id: string) => sql`${id}`), sql`, `)})`,
-  ) as Array<{ id: string; email: string; name: string }>;
+  const userRows = (await db.all(
+    sql`SELECT id, email, name FROM "user" WHERE id IN (${sql.join(
+      studentUserIds.map((id: string) => sql`${id}`),
+      sql`, `,
+    )})`,
+  )) as Array<{ id: string; email: string; name: string }>;
   const userMap: Record<string, { email: string; name: string }> = {};
   for (const u of userRows) userMap[u.id] = u;
 
   // Map categories (keyed by studentId — use first classId match)
   const categoryByUser: Record<string, string> = {};
   for (const cat of categories) {
-    if (!categoryByUser[cat.studentId]) categoryByUser[cat.studentId] = cat.category;
+    if (!categoryByUser[cat.studentId])
+      categoryByUser[cat.studentId] = cat.category;
   }
 
   return studentUserIds.map((userId: string) => ({
@@ -593,7 +773,10 @@ export const listStudents = defineEventHandler(async (event) => {
       gradeLevelName: schema.gradeLevels.name,
     })
     .from(schema.students)
-    .leftJoin(schema.gradeLevels, eq(schema.students.gradeLevelId, schema.gradeLevels.id))
+    .leftJoin(
+      schema.gradeLevels,
+      eq(schema.students.gradeLevelId, schema.gradeLevels.id),
+    )
     .where(eq(schema.students.schoolId, profile.schoolId));
 
   if (students.length === 0) return [];
@@ -601,9 +784,12 @@ export const listStudents = defineEventHandler(async (event) => {
   const userIds = students.map((s: any) => s.userId).filter(Boolean);
   const userMap: Record<string, { name: string; email: string }> = {};
   if (userIds.length > 0) {
-    const userRows = await db.all(
-      sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(userIds.map((id: string) => sql`${id}`), sql`, `)})`,
-    ) as Array<{ id: string; name: string; email: string }>;
+    const userRows = (await db.all(
+      sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(
+        userIds.map((id: string) => sql`${id}`),
+        sql`, `,
+      )})`,
+    )) as Array<{ id: string; name: string; email: string }>;
     for (const u of userRows) userMap[u.id] = { name: u.name, email: u.email };
   }
 
@@ -619,7 +805,8 @@ export const listStudents = defineEventHandler(async (event) => {
 export const getClassDetail = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const classId = getRouterParam(event, "classId");
-  if (!classId) throw createError({ statusCode: 400, message: "Missing classId" });
+  if (!classId)
+    throw createError({ statusCode: 400, message: "Missing classId" });
 
   const db = getDb();
   const profile = await getSchoolProfile(db, session.userId);
@@ -638,8 +825,16 @@ export const getClassDetail = defineEventHandler(async (event) => {
     })
     .from(schema.classes)
     .leftJoin(schema.subjects, eq(schema.classes.subjectId, schema.subjects.id))
-    .leftJoin(schema.gradeLevels, eq(schema.classes.gradeLevelId, schema.gradeLevels.id))
-    .where(and(eq(schema.classes.id, classId), eq(schema.classes.orgId, profile.schoolId)))
+    .leftJoin(
+      schema.gradeLevels,
+      eq(schema.classes.gradeLevelId, schema.gradeLevels.id),
+    )
+    .where(
+      and(
+        eq(schema.classes.id, classId),
+        eq(schema.classes.orgId, profile.schoolId),
+      ),
+    )
     .limit(1);
 
   if (!rows[0]) throw createError({ statusCode: 404, message: "Not found" });
@@ -647,9 +842,9 @@ export const getClassDetail = defineEventHandler(async (event) => {
 
   let teacherName: string | null = null;
   if (cls.primaryTeacherUserId) {
-    const t = await db.get(
+    const t = (await db.get(
       sql`SELECT name, email FROM "user" WHERE id = ${cls.primaryTeacherUserId} LIMIT 1`,
-    ) as { name: string; email: string } | undefined;
+    )) as { name: string; email: string } | undefined;
     teacherName = t?.name ?? t?.email ?? null;
   }
 
@@ -736,9 +931,12 @@ export const listClassStudents = defineEventHandler(async (event) => {
   if (enrollments.length === 0) return [];
 
   const userIds = enrollments.map((e: any) => e.studentUserId);
-  const userRows = await db.all(
-    sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(userIds.map((id: string) => sql`${id}`), sql`, `)})`,
-  ) as Array<{ id: string; name: string; email: string }>;
+  const userRows = (await db.all(
+    sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(
+      userIds.map((id: string) => sql`${id}`),
+      sql`, `,
+    )})`,
+  )) as Array<{ id: string; name: string; email: string }>;
   const userMap: Record<string, { name: string; email: string }> = {};
   for (const u of userRows) userMap[u.id] = { name: u.name, email: u.email };
 
@@ -749,7 +947,8 @@ export const listClassStudents = defineEventHandler(async (event) => {
     .orderBy(desc(schema.studentCategories.assessedAt));
   const categoryByUser: Record<string, string> = {};
   for (const cat of categories) {
-    if (!categoryByUser[cat.studentId]) categoryByUser[cat.studentId] = cat.category;
+    if (!categoryByUser[cat.studentId])
+      categoryByUser[cat.studentId] = cat.category;
   }
 
   return enrollments.map((e: any) => ({
@@ -766,7 +965,8 @@ export const listClassStudents = defineEventHandler(async (event) => {
 export const getGradebook = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const classId = getRouterParam(event, "classId");
-  if (!classId) throw createError({ statusCode: 400, message: "Missing classId" });
+  if (!classId)
+    throw createError({ statusCode: 400, message: "Missing classId" });
 
   const db = getDb();
   const profile = await getSchoolProfile(db, session.userId);
@@ -777,20 +977,36 @@ export const getGradebook = defineEventHandler(async (event) => {
     .from(schema.classes)
     .where(eq(schema.classes.id, classId))
     .limit(1);
-  if (!classRows[0]) throw createError({ statusCode: 404, message: "Not found" });
+  if (!classRows[0])
+    throw createError({ statusCode: 404, message: "Not found" });
 
   const assessments = await db
-    .select({ id: schema.assessments.id, title: schema.assessments.title, totalPoints: schema.assessments.totalPoints })
+    .select({
+      id: schema.assessments.id,
+      title: schema.assessments.title,
+      totalPoints: schema.assessments.totalPoints,
+    })
     .from(schema.assessments)
-    .where(and(eq(schema.assessments.classId, classId), eq(schema.assessments.status, "published")));
+    .where(
+      and(
+        eq(schema.assessments.classId, classId),
+        eq(schema.assessments.status, "published"),
+      ),
+    );
 
   const enrollments = await db
     .select({ studentUserId: schema.classEnrollments.studentUserId })
     .from(schema.classEnrollments)
-    .where(and(eq(schema.classEnrollments.classId, classId), eq(schema.classEnrollments.status, "active")));
+    .where(
+      and(
+        eq(schema.classEnrollments.classId, classId),
+        eq(schema.classEnrollments.status, "active"),
+      ),
+    );
 
   const studentIds = enrollments.map((e: any) => e.studentUserId);
-  if (studentIds.length === 0) return { className: classRows[0].name, assessments, students: [] };
+  if (studentIds.length === 0)
+    return { className: classRows[0].name, assessments, students: [] };
 
   const assessmentIds = assessments.map((a: any) => a.id);
   const grades =
@@ -813,9 +1029,12 @@ export const getGradebook = defineEventHandler(async (event) => {
   }
 
   // Fetch actual names from user table
-  const userRows = await db.all(
-    sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(studentIds.map((id: string) => sql`${id}`), sql`, `)})`,
-  ) as Array<{ id: string; name: string; email: string }>;
+  const userRows = (await db.all(
+    sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(
+      studentIds.map((id: string) => sql`${id}`),
+      sql`, `,
+    )})`,
+  )) as Array<{ id: string; name: string; email: string }>;
   const userMap: Record<string, string> = {};
   for (const u of userRows) userMap[u.id] = u.name ?? u.email ?? u.id;
 
@@ -849,6 +1068,7 @@ export const getSchoolAnalytics = defineEventHandler(async (event) => {
 export const getMyAnalytics = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId);
 
   const primaryClasses = await db
     .select({ id: schema.classes.id, name: schema.classes.name })
@@ -858,7 +1078,10 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
   if (primaryClasses.length === 0) return null;
 
   const classIds = primaryClasses.map((c: any) => c.id);
+  const schoolConfig = profile ? (await getOrgSetting(profile.schoolId, "school-config") as any) : null;
+  const passMark = schoolConfig?.passMark ?? 50;
 
+  // Enrollment counts per class
   const enrollmentCounts = await db
     .select({ classId: schema.classEnrollments.classId, c: count() })
     .from(schema.classEnrollments)
@@ -873,19 +1096,119 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
   const countMap: Record<string, number> = {};
   for (const e of enrollmentCounts) countMap[e.classId] = Number(e.c);
 
-  return {
-    overallAverage: null,
-    pendingGrading: 0,
-    strugglingCount: 0,
-    byClass: primaryClasses.map((c: any) => ({
+  // All assessments in these classes
+  const assessments = await db
+    .select({ id: schema.assessments.id, classId: schema.assessments.classId })
+    .from(schema.assessments)
+    .where(inArray(schema.assessments.classId, classIds));
+
+  const assessmentIds = assessments.map((a: any) => a.id);
+
+  // Published grades for these assessments
+  const grades = assessmentIds.length > 0
+    ? await db
+        .select()
+        .from(schema.grades)
+        .where(
+          and(
+            inArray(schema.grades.assessmentId, assessmentIds),
+            eq(schema.grades.isPublished, true),
+          ),
+        )
+    : [];
+
+  // Pending (submitted but not graded) submissions
+  const pendingSubmissions = assessmentIds.length > 0
+    ? await db
+        .select({ id: schema.submissions.id, assessmentId: schema.submissions.assessmentId })
+        .from(schema.submissions)
+        .where(
+          and(
+            inArray(schema.submissions.assessmentId, assessmentIds),
+            eq(schema.submissions.status, "submitted"),
+          ),
+        )
+    : [];
+
+  // Check which submissions already have grades
+  const gradedSubmissionIds = new Set(grades.map((g: any) => g.submissionId));
+  const pendingGrading = pendingSubmissions.filter((s: any) => !gradedSubmissionIds.has(s.id)).length;
+
+  // Overall average from all published grades
+  const allPercentages = grades
+    .map((g: any) => parseFloat(g.percentage ?? "0"))
+    .filter((p: number) => !isNaN(p));
+  const overallAverage = allPercentages.length > 0
+    ? (allPercentages.reduce((a: number, b: number) => a + b, 0) / allPercentages.length).toFixed(1)
+    : null;
+
+  // Struggling: enrolled students with average below passMark
+  // Count unique students with avg < passMark across all classes
+  const studentScores: Record<string, number[]> = {};
+  for (const g of grades as any[]) {
+    if (g.studentId && g.percentage != null) {
+      const p = parseFloat(g.percentage);
+      if (!isNaN(p)) {
+        if (!studentScores[g.studentId]) studentScores[g.studentId] = [];
+        studentScores[g.studentId].push(p);
+      }
+    }
+  }
+  const strugglingCount = Object.values(studentScores).filter((scores) => {
+    const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+    return avg < passMark;
+  }).length;
+
+  // Per-class breakdown
+  const byClass = primaryClasses.map((c: any) => {
+    const classAssessmentIds = new Set(
+      assessments.filter((a: any) => a.classId === c.id).map((a: any) => a.id),
+    );
+    const classGrades = (grades as any[]).filter((g: any) =>
+      classAssessmentIds.has(g.assessmentId),
+    );
+    const classPercentages = classGrades
+      .map((g: any) => parseFloat(g.percentage ?? "0"))
+      .filter((p: number) => !isNaN(p));
+    const classAvg =
+      classPercentages.length > 0
+        ? (classPercentages.reduce((a: number, b: number) => a + b, 0) / classPercentages.length).toFixed(1)
+        : null;
+
+    const classPendingSubs = pendingSubmissions.filter(
+      (s: any) => classAssessmentIds.has(s.assessmentId) && !gradedSubmissionIds.has(s.id),
+    ).length;
+
+    const classStudentScores: Record<string, number[]> = {};
+    for (const g of classGrades) {
+      if (g.studentId && g.percentage != null) {
+        const p = parseFloat(g.percentage);
+        if (!isNaN(p)) {
+          if (!classStudentScores[g.studentId]) classStudentScores[g.studentId] = [];
+          classStudentScores[g.studentId].push(p);
+        }
+      }
+    }
+    const classStruggling = Object.values(classStudentScores).filter((scores) => {
+      const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+      return avg < passMark;
+    }).length;
+
+    return {
       classId: c.id,
       className: c.name,
-      averageScore: null,
-      completionRate: null,
+      averageScore: classAvg,
       studentCount: countMap[c.id] ?? 0,
-      pendingGrading: 0,
-      strugglingCount: 0,
-    })),
+      pendingGrading: classPendingSubs,
+      strugglingCount: classStruggling,
+    };
+  });
+
+  return {
+    overallAverage,
+    pendingGrading,
+    strugglingCount,
+    byClass,
   };
 });
 
@@ -941,7 +1264,10 @@ export const getMyGrades = defineEventHandler(async (event) => {
     .select()
     .from(schema.grades)
     .where(
-      and(eq(schema.grades.studentId, session.userId), eq(schema.grades.isPublished, 1 as any)),
+      and(
+        eq(schema.grades.studentId, session.userId),
+        eq(schema.grades.isPublished, 1 as any),
+      ),
     )
     .orderBy(desc(schema.grades.gradedAt));
 
@@ -949,11 +1275,18 @@ export const getMyGrades = defineEventHandler(async (event) => {
 
   const assessmentIds = [...new Set(grades.map((g: any) => g.assessmentId))];
   const assessments = await db
-    .select({ id: schema.assessments.id, title: schema.assessments.title, assessmentType: schema.assessments.assessmentType, classId: schema.assessments.classId })
+    .select({
+      id: schema.assessments.id,
+      title: schema.assessments.title,
+      assessmentType: schema.assessments.assessmentType,
+      classId: schema.assessments.classId,
+    })
     .from(schema.assessments)
     .where(inArray(schema.assessments.id, assessmentIds));
 
-  const classIds = [...new Set(assessments.map((a: any) => a.classId).filter(Boolean))];
+  const classIds = [
+    ...new Set(assessments.map((a: any) => a.classId).filter(Boolean)),
+  ];
   const classes =
     classIds.length > 0
       ? await db
@@ -995,11 +1328,19 @@ export const getMyProgress = defineEventHandler(async (event) => {
     .select()
     .from(schema.grades)
     .where(
-      and(eq(schema.grades.studentId, session.userId), eq(schema.grades.isPublished, 1 as any)),
+      and(
+        eq(schema.grades.studentId, session.userId),
+        eq(schema.grades.isPublished, 1 as any),
+      ),
     );
 
   if (grades.length === 0) {
-    return { overallAverage: null, assignmentsCompleted: 0, completionRate: null, classSummaries: [] };
+    return {
+      overallAverage: null,
+      assignmentsCompleted: 0,
+      completionRate: null,
+      classSummaries: [],
+    };
   }
 
   const assessmentIds = [...new Set(grades.map((g: any) => g.assessmentId))];
@@ -1008,7 +1349,9 @@ export const getMyProgress = defineEventHandler(async (event) => {
     .from(schema.assessments)
     .where(inArray(schema.assessments.id, assessmentIds));
 
-  const classIds = [...new Set(assessments.map((a: any) => a.classId).filter(Boolean))];
+  const classIds = [
+    ...new Set(assessments.map((a: any) => a.classId).filter(Boolean)),
+  ];
 
   const classMap: Record<string, any> = {};
   if (classIds.length > 0) {
@@ -1031,10 +1374,14 @@ export const getMyProgress = defineEventHandler(async (event) => {
   }
 
   const classSummaries = Object.entries(byClass).map(([classId, scores]) => {
-    const avg = scores.length > 0 ? (scores.reduce((s, n) => s + n, 0) / scores.length).toFixed(1) : null;
+    const avg =
+      scores.length > 0
+        ? (scores.reduce((s, n) => s + n, 0) / scores.length).toFixed(1)
+        : null;
     const isStruggling = avg !== null && parseFloat(avg) < 50;
     return {
-      classId: classMap[classId]?.name ?? classId,
+      classId,
+      className: classMap[classId]?.name ?? classId,
       averageScore: avg,
       completionRate: 100,
       gradedCount: scores.length,
@@ -1043,8 +1390,13 @@ export const getMyProgress = defineEventHandler(async (event) => {
     };
   });
 
-  const allScores = grades.map((g: any) => g.percentage ? parseFloat(g.percentage) : null).filter((n): n is number => n !== null);
-  const overallAverage = allScores.length > 0 ? Math.round(allScores.reduce((s, n) => s + n, 0) / allScores.length) : null;
+  const allScores = grades
+    .map((g: any) => (g.percentage ? parseFloat(g.percentage) : null))
+    .filter((n): n is number => n !== null);
+  const overallAverage =
+    allScores.length > 0
+      ? Math.round(allScores.reduce((s, n) => s + n, 0) / allScores.length)
+      : null;
 
   return {
     overallAverage,
@@ -1059,7 +1411,8 @@ export const getMyProgress = defineEventHandler(async (event) => {
 export const getCurriculumDraft = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const draftId = getRouterParam(event, "draftId");
-  if (!draftId) throw createError({ statusCode: 400, message: "Missing draftId" });
+  if (!draftId)
+    throw createError({ statusCode: 400, message: "Missing draftId" });
 
   const db = getDb();
   const profile = await getSchoolProfile(db, session.userId);
@@ -1068,7 +1421,12 @@ export const getCurriculumDraft = defineEventHandler(async (event) => {
   const rows = await db
     .select()
     .from(schema.curriculumDrafts)
-    .where(and(eq(schema.curriculumDrafts.id, draftId), eq(schema.curriculumDrafts.orgId, profile.schoolId)))
+    .where(
+      and(
+        eq(schema.curriculumDrafts.id, draftId),
+        eq(schema.curriculumDrafts.orgId, profile.schoolId),
+      ),
+    )
     .limit(1);
 
   if (!rows[0]) throw createError({ statusCode: 404, message: "Not found" });
@@ -1085,7 +1443,8 @@ export const getCurriculumDraft = defineEventHandler(async (event) => {
 export const getLessonNote = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const lessonId = getRouterParam(event, "lessonId");
-  if (!lessonId) throw createError({ statusCode: 400, message: "Missing lessonId" });
+  if (!lessonId)
+    throw createError({ statusCode: 400, message: "Missing lessonId" });
 
   const db = getDb();
   const rows = await db
@@ -1101,7 +1460,8 @@ export const getLessonNote = defineEventHandler(async (event) => {
 export const finalizeLessonNote = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const lessonId = getRouterParam(event, "lessonId");
-  if (!lessonId) throw createError({ statusCode: 400, message: "Missing lessonId" });
+  if (!lessonId)
+    throw createError({ statusCode: 400, message: "Missing lessonId" });
 
   const db = getDb();
   await db
@@ -1117,7 +1477,8 @@ export const finalizeLessonNote = defineEventHandler(async (event) => {
 export const getAssessment = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const assessmentId = getRouterParam(event, "assessmentId");
-  if (!assessmentId) throw createError({ statusCode: 400, message: "Missing assessmentId" });
+  if (!assessmentId)
+    throw createError({ statusCode: 400, message: "Missing assessmentId" });
 
   const db = getDb();
   const profile = await getSchoolProfile(db, session.userId);
@@ -1151,7 +1512,8 @@ export const getAssessment = defineEventHandler(async (event) => {
       .limit(1);
 
     const myVariantId = assigned[0]?.variantId;
-    const myVariant = variants.find((v: any) => v.id === myVariantId) ?? variants[0] ?? null;
+    const myVariant =
+      variants.find((v: any) => v.id === myVariantId) ?? variants[0] ?? null;
 
     const submission = await db
       .select()
@@ -1203,9 +1565,28 @@ export const getAssessment = defineEventHandler(async (event) => {
 
   // Teacher view: all variants + submission summary
   const [submittedCount, gradedCount, totalCount] = await Promise.all([
-    db.select({ c: count() }).from(schema.submissions).where(and(eq(schema.submissions.assessmentId, assessmentId), inArray(schema.submissions.status, ["submitted", "graded"]))),
-    db.select({ c: count() }).from(schema.submissions).where(and(eq(schema.submissions.assessmentId, assessmentId), eq(schema.submissions.status, "graded"))),
-    db.select({ c: count() }).from(schema.studentAssessments).where(eq(schema.studentAssessments.assessmentId, assessmentId)),
+    db
+      .select({ c: count() })
+      .from(schema.submissions)
+      .where(
+        and(
+          eq(schema.submissions.assessmentId, assessmentId),
+          inArray(schema.submissions.status, ["submitted", "graded"]),
+        ),
+      ),
+    db
+      .select({ c: count() })
+      .from(schema.submissions)
+      .where(
+        and(
+          eq(schema.submissions.assessmentId, assessmentId),
+          eq(schema.submissions.status, "graded"),
+        ),
+      ),
+    db
+      .select({ c: count() })
+      .from(schema.studentAssessments)
+      .where(eq(schema.studentAssessments.assessmentId, assessmentId)),
   ]);
 
   return {
@@ -1217,4 +1598,64 @@ export const getAssessment = defineEventHandler(async (event) => {
       graded: Number(gradedCount[0]?.c ?? 0),
     },
   };
+});
+
+// ─── Assessment Variants list ─────────────────────────────────────────────────
+
+export const listVariants = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) return [];
+
+  const q = getQuery(event);
+  const assessmentId = q.assessmentId as string | undefined;
+  if (!assessmentId) return [];
+
+  return db
+    .select()
+    .from(schema.assessmentVariants)
+    .where(eq(schema.assessmentVariants.assessmentId, assessmentId))
+    .orderBy(asc(schema.assessmentVariants.position));
+});
+
+// ─── Submissions list (teacher view) ─────────────────────────────────────────
+
+export const listSubmissions = defineEventHandler(async (event) => {
+  const session = await requireSession(event);
+  const db = getDb();
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) return [];
+
+  const q = getQuery(event);
+  const assessmentId = q.assessmentId as string | undefined;
+  const status = q.status as string | undefined;
+  if (!assessmentId) return [];
+
+  const conditions: any[] = [eq(schema.submissions.assessmentId, assessmentId)];
+  if (status) conditions.push(eq(schema.submissions.status, status));
+
+  const subs = await db
+    .select()
+    .from(schema.submissions)
+    .where(and(...conditions))
+    .orderBy(desc(schema.submissions.submittedAt));
+
+  if (subs.length === 0) return [];
+
+  const studentIds = [...new Set(subs.map((s: any) => s.studentId))];
+  const userRows = (await db.all(
+    sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(
+      studentIds.map((id: string) => sql`${id}`),
+      sql`, `,
+    )})`,
+  )) as Array<{ id: string; name: string; email: string }>;
+  const userMap: Record<string, { name: string; email: string }> = {};
+  for (const u of userRows) userMap[u.id] = { name: u.name, email: u.email };
+
+  return subs.map((s: any) => ({
+    ...s,
+    studentName: userMap[s.studentId]?.name ?? null,
+    studentEmail: userMap[s.studentId]?.email ?? null,
+  }));
 });

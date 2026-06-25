@@ -15,7 +15,7 @@ export default defineAction({
   run: async (args) => {
     const { orgId } = currentAccess();
     const db = getDb();
-    const config = await getOrgSetting(orgId!, "school-config") as any;
+    const config = (await getOrgSetting(orgId!, "school-config")) as any;
     const passMark = config?.passMark ?? 50;
 
     // Get all class enrollments for student
@@ -43,6 +43,12 @@ export default defineAction({
     let totalSubmitted = 0;
 
     for (const enrollment of enrollments) {
+      const [cls] = await db
+        .select({ name: schema.classes.name })
+        .from(schema.classes)
+        .where(eq(schema.classes.id, enrollment.classId))
+        .limit(1);
+
       const assessments = await db
         .select()
         .from(schema.assessments)
@@ -66,8 +72,13 @@ export default defineAction({
       const classGrades = grades.filter((g) =>
         assessments.some((a) => a.id === g.assessmentId),
       );
-      const percentages = classGrades.map((g) => parseFloat(g.percentage ?? "0")).filter(p => !isNaN(p));
-      const average = percentages.length > 0 ? percentages.reduce((a, b) => a + b) / percentages.length : null;
+      const percentages = classGrades
+        .map((g) => parseFloat(g.percentage ?? "0"))
+        .filter((p) => !isNaN(p));
+      const average =
+        percentages.length > 0
+          ? percentages.reduce((a, b) => a + b) / percentages.length
+          : null;
       totalScore += percentages.reduce((a, b) => a + b, 0);
       totalGraded += percentages.length;
 
@@ -86,28 +97,40 @@ export default defineAction({
 
       classSummaries.push({
         classId: enrollment.classId,
+        className: cls?.name ?? enrollment.classId,
         averageScore: average !== null ? average.toFixed(1) : null,
         gradedCount: percentages.length,
         totalAssessments: assessments.length,
-        completionRate: assessments.length > 0 ? (submitted.length / assessments.length * 100).toFixed(0) : "0",
+        completionRate:
+          assessments.length > 0
+            ? ((submitted.length / assessments.length) * 100).toFixed(0)
+            : "0",
         isStruggling: average !== null && average < passMark,
       });
     }
 
-    const overallAverage = totalGraded > 0 ? (totalScore / totalGraded).toFixed(1) : null;
-    const strongClasses = classSummaries.filter((c) => c.averageScore && parseFloat(c.averageScore) >= 70);
-    const weakClasses = classSummaries.filter((c) => c.averageScore && parseFloat(c.averageScore) < passMark);
+    const overallAverage =
+      totalGraded > 0 ? (totalScore / totalGraded).toFixed(1) : null;
+    const strongClasses = classSummaries.filter(
+      (c) => c.averageScore && parseFloat(c.averageScore) >= 70,
+    );
+    const weakClasses = classSummaries.filter(
+      (c) => c.averageScore && parseFloat(c.averageScore) < passMark,
+    );
 
     return {
       studentId: args.studentId,
       overallAverage,
       assignmentsCompleted: totalSubmitted,
       assignmentsTotal: totalAssigned,
-      completionRate: totalAssigned > 0 ? (totalSubmitted / totalAssigned * 100).toFixed(0) : "0",
+      completionRate:
+        totalAssigned > 0
+          ? ((totalSubmitted / totalAssigned) * 100).toFixed(0)
+          : "0",
       classSummaries,
       strengthsAndWeaknesses: {
-        strong: strongClasses.map((c) => c.classId),
-        needsWork: weakClasses.map((c) => c.classId),
+        strong: strongClasses.map((c) => (c as any).className ?? c.classId),
+        needsWork: weakClasses.map((c) => (c as any).className ?? c.classId),
       },
     };
   },

@@ -6,6 +6,12 @@ import { eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 
+interface StandardEntry {
+  framework: string;
+  code: string;
+  description?: string;
+}
+
 interface SubjectDraft {
   name: string;
   code?: string;
@@ -20,6 +26,7 @@ interface SubjectDraft {
       weekStart?: number;
       weekEnd?: number;
       sequence?: number;
+      standards?: StandardEntry[];
       objectives?: Array<{ description: string; bloomsLevel?: string }>;
     }>;
   }>;
@@ -51,7 +58,11 @@ export default defineAction({
     };
     const subjects = state.subjects ?? [];
 
-    const results = { subjectsCreated: 0, unitsCreated: 0, objectivesCreated: 0 };
+    const results = {
+      subjectsCreated: 0,
+      unitsCreated: 0,
+      objectivesCreated: 0,
+    };
 
     for (const s of subjects) {
       const subjectId = nanoid();
@@ -84,6 +95,7 @@ export default defineAction({
             weekStart: u.weekStart ?? null,
             weekEnd: u.weekEnd ?? null,
             sequence: u.sequence ?? 1,
+            standardsJson: JSON.stringify(u.standards ?? []),
             status: "active",
             ownerEmail: userEmail ?? "",
             orgId,

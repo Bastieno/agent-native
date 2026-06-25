@@ -26,37 +26,57 @@ export default function StudentProgress() {
     <div className="p-6 space-y-6">
       <div>
         <h1 className="text-xl font-semibold">My Progress</h1>
-        <p className="text-sm text-muted-foreground mt-1">Track your performance across all classes.</p>
+        <p className="text-sm text-muted-foreground mt-1">
+          Track your performance across all classes.
+        </p>
       </div>
       {!progress ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconChartBar size={28} className="mx-auto text-muted-foreground mb-2" />
+          <IconChartBar
+            size={28}
+            className="mx-auto text-muted-foreground mb-2"
+          />
           <p className="text-sm font-medium">No progress data yet</p>
         </div>
       ) : (
         <>
           <div className="grid grid-cols-3 gap-4">
             <div className="rounded-lg border bg-card p-4 text-center">
-              <p className="text-2xl font-semibold">{progress.overallAverage ?? "—"}%</p>
-              <p className="text-xs text-muted-foreground mt-1">Overall Average</p>
+              <p className="text-2xl font-semibold">
+                {progress.overallAverage ?? "—"}%
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Overall Average
+              </p>
             </div>
             <div className="rounded-lg border bg-card p-4 text-center">
-              <p className="text-2xl font-semibold">{progress.assignmentsCompleted}</p>
+              <p className="text-2xl font-semibold">
+                {progress.assignmentsCompleted}
+              </p>
               <p className="text-xs text-muted-foreground mt-1">Completed</p>
             </div>
             <div className="rounded-lg border bg-card p-4 text-center">
-              <p className="text-2xl font-semibold">{progress.completionRate}%</p>
-              <p className="text-xs text-muted-foreground mt-1">Completion Rate</p>
+              <p className="text-2xl font-semibold">
+                {progress.completionRate}%
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Completion Rate
+              </p>
             </div>
           </div>
           <div className="space-y-3">
             <h2 className="text-sm font-medium">By Class</h2>
             {(progress.classSummaries ?? []).map((cls: any) => (
-              <div key={cls.classId} className="rounded-lg border p-4 space-y-2">
+              <div
+                key={cls.classId}
+                className="rounded-lg border p-4 space-y-2"
+              >
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">{cls.classId}</span>
+                  <span className="text-sm font-medium">{cls.className}</span>
                   {cls.isStruggling && (
-                    <Badge variant="destructive" className="text-xs">Needs attention</Badge>
+                    <Badge variant="destructive" className="text-xs">
+                      Needs attention
+                    </Badge>
                   )}
                 </div>
                 <div className="flex items-center gap-3">
@@ -69,7 +89,8 @@ export default function StudentProgress() {
                   </span>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Completion: {cls.completionRate}% ({cls.gradedCount}/{cls.totalAssessments} graded)
+                  Completion: {cls.completionRate}% ({cls.gradedCount}/
+                  {cls.totalAssessments} graded)
                 </p>
               </div>
             ))}

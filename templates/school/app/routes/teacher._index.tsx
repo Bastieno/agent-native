@@ -11,10 +11,6 @@ export default function TeacherDashboard() {
   const { sync } = useNavigationState();
   const { user } = useRole();
 
-  useEffect(() => {
-    sync({ role: "teacher", view: "dashboard", userId: user?.id } as any);
-  }, [sync, user?.id]);
-
   const { data: classes = [] } = useQuery<any[]>({
     queryKey: ["my-classes"],
     queryFn: async () => {
@@ -24,17 +20,30 @@ export default function TeacherDashboard() {
     },
   });
 
+  useEffect(() => {
+    sync({
+      role: "teacher",
+      view: "dashboard",
+      classCount: classes.length,
+    } as any);
+  }, [sync, classes.length]);
+
   return (
     <div className="h-full overflow-auto p-6 space-y-6">
       <div>
         <h1 className="text-xl font-semibold">Dashboard</h1>
-        <p className="text-sm text-muted-foreground mt-1">Welcome back. Here's your overview.</p>
+        <p className="text-sm text-muted-foreground mt-1">
+          Welcome back. Here's your overview.
+        </p>
       </div>
       <div>
         <h2 className="text-sm font-medium mb-3">My Classes</h2>
         {classes.length === 0 ? (
           <div className="rounded-lg border border-dashed p-8 text-center">
-            <IconSchool size={28} className="mx-auto text-muted-foreground mb-2" />
+            <IconSchool
+              size={28}
+              className="mx-auto text-muted-foreground mb-2"
+            />
             <p className="text-sm font-medium">No classes assigned yet</p>
             <p className="text-xs text-muted-foreground mt-1">
               Ask the admin to create classes or assign you to one.

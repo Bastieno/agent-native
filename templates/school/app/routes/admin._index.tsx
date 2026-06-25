@@ -3,6 +3,7 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useRole } from "@/hooks/use-role";
 import { useEffect } from "react";
+import { Link } from "react-router";
 import {
   IconUsers,
   IconSchool,
@@ -36,10 +37,6 @@ export default function AdminOverview() {
   const { sync } = useNavigationState();
   const { schoolId } = useRole();
 
-  useEffect(() => {
-    sync({ role: "admin", view: "overview" });
-  }, [sync]);
-
   const { data: stats } = useQuery({
     queryKey: ["admin-overview-stats"],
     queryFn: async () => {
@@ -50,6 +47,18 @@ export default function AdminOverview() {
   });
 
   const isNewSchool = !schoolId;
+
+  useEffect(() => {
+    sync({
+      role: "admin",
+      view: "overview",
+      isNewSchool: !schoolId,
+      staffCount: stats?.staffCount ?? 0,
+      studentCount: stats?.studentCount ?? 0,
+      classCount: stats?.classCount ?? 0,
+      subjectCount: stats?.subjectCount ?? 0,
+    } as any);
+  }, [sync, schoolId, stats]);
 
   return (
     <div className="h-full overflow-auto p-6 space-y-6">
@@ -86,26 +95,21 @@ export default function AdminOverview() {
       ) : (
         <>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            <StatCard
-              label="Staff Members"
-              value={stats?.staffCount ?? "—"}
-              icon={IconUsers}
-            />
-            <StatCard
-              label="Students"
-              value={stats?.studentCount ?? "—"}
-              icon={IconUsers}
-            />
-            <StatCard
-              label="Classes"
-              value={stats?.classCount ?? "—"}
-              icon={IconSchool}
-            />
-            <StatCard
-              label="Subjects"
-              value={stats?.subjectCount ?? "—"}
-              icon={IconBook}
-            />
+            <Link to="/admin/staff" className="rounded-lg hover:opacity-80 transition-opacity">
+              <StatCard label="Staff Members" value={stats?.staffCount ?? "—"} icon={IconUsers} />
+            </Link>
+            <Link to="/admin/students" className="rounded-lg hover:opacity-80 transition-opacity">
+              <StatCard label="Students" value={stats?.studentCount ?? "—"} icon={IconUsers} />
+            </Link>
+            <Link to="/admin/classes" className="rounded-lg hover:opacity-80 transition-opacity">
+              <StatCard label="Classes" value={stats?.classCount ?? "—"} icon={IconSchool} />
+            </Link>
+            <Link
+              to="/admin/curriculum"
+              className="rounded-lg hover:opacity-80 transition-opacity"
+            >
+              <StatCard label="Subjects" value={stats?.subjectCount ?? "—"} icon={IconBook} />
+            </Link>
           </div>
           <div className="rounded-lg border bg-card p-6">
             <h2 className="text-sm font-medium mb-2">Quick Actions</h2>

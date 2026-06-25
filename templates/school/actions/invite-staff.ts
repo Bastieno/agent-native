@@ -69,7 +69,7 @@ export default defineAction({
     await putOrgSetting(orgId, "pending-staff-invites", [
       ...existingList,
       invite,
-    ]);
+    ] as any);
 
     const schoolConfig = (await getOrgSetting(orgId, "school-config")) as {
       name?: string;

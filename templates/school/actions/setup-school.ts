@@ -1,6 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting, putOrgSetting } from "@agent-native/core/settings";
+import { writeAppState } from "@agent-native/core/application-state";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { nanoid } from "nanoid";
@@ -86,6 +87,9 @@ export default defineAction({
       timezone: args.timezone ?? "UTC",
       country: args.country ?? "",
     });
+
+    // Invalidate all UI caches so the admin overview reflects the new school immediately
+    await writeAppState("refresh-signal", { ts: Date.now() });
 
     return {
       success: true,

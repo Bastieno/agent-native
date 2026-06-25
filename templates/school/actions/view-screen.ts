@@ -345,7 +345,12 @@ export default defineAction({
             const myClasses = await db
               .select()
               .from(schema.classes)
-              .where(eq(schema.classes.primaryTeacherUserId, teacherUserId))
+              .where(
+                and(
+                  eq(schema.classes.primaryTeacherUserId, teacherUserId),
+                  eq(schema.classes.status, "active"),
+                ),
+              )
               .orderBy(schema.classes.createdAt)
               .limit(10);
             screen.myClasses = myClasses.map((c) => ({
@@ -354,6 +359,55 @@ export default defineAction({
               subjectId: c.subjectId,
               status: c.status,
             }));
+
+            // Today's schedule — day of week 1=Mon … 7=Sun
+            const jsDay = new Date().getDay(); // 0=Sun … 6=Sat
+            const todayDow = jsDay === 0 ? 7 : jsDay;
+            const todayStr = new Date().toISOString().slice(0, 10);
+            const classIds = myClasses.map((c) => c.id);
+            if (classIds.length > 0) {
+              const allSlots = await db
+                .select()
+                .from(schema.classSchedules)
+                .where(
+                  and(
+                    eq(schema.classSchedules.dayOfWeek, todayDow),
+                    eq(schema.classSchedules.orgId, schoolId!),
+                  ),
+                );
+              const todaySlots = allSlots
+                .filter((s) => classIds.includes(s.classId))
+                .sort((a, b) => a.startTime.localeCompare(b.startTime));
+
+              screen.todaySchedule = await Promise.all(
+                todaySlots.map(async (slot) => {
+                  const cls = myClasses.find((c) => c.id === slot.classId);
+                  const [lesson] = await db
+                    .select({
+                      id: schema.lessonNotes.id,
+                      title: schema.lessonNotes.title,
+                    })
+                    .from(schema.lessonNotes)
+                    .where(
+                      and(
+                        eq(schema.lessonNotes.classId, slot.classId),
+                        eq(schema.lessonNotes.lessonDate, todayStr),
+                      ),
+                    )
+                    .limit(1);
+                  return {
+                    classId: slot.classId,
+                    className: cls?.name,
+                    startTime: slot.startTime,
+                    endTime: slot.endTime,
+                    periodNumber: slot.periodNumber,
+                    room: slot.room ?? cls?.roomNumber ?? null,
+                    lessonPrepared: !!lesson,
+                    lesson: lesson ?? null,
+                  };
+                }),
+              );
+            }
           }
         } catch {
           // continue
@@ -371,6 +425,26 @@ export default defineAction({
             sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
           );
           studentUserId = userRow?.id;
+        } catch {
+          // continue
+        }
+      }
+
+      // Expose student IDs so the agent can pass them to student-facing actions
+      if (studentUserId && schoolId) {
+        screen.studentUserId = studentUserId;
+        try {
+          const [studentRow] = await db
+            .select({ id: schema.students.id })
+            .from(schema.students)
+            .where(
+              and(
+                eq(schema.students.userId, studentUserId),
+                eq(schema.students.schoolId, schoolId),
+              ),
+            )
+            .limit(1);
+          if (studentRow) screen.studentId = studentRow.id;
         } catch {
           // continue
         }

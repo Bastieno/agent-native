@@ -8,6 +8,7 @@ import {
   IconSettings,
   IconPuzzle,
   IconLogout,
+  IconBell,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
@@ -19,6 +20,7 @@ const navItems = [
   { href: "/admin/students", label: "Students", icon: IconUsers },
   { href: "/admin/classes", label: "Classes", icon: IconSchool },
   { href: "/admin/analytics", label: "Analytics", icon: IconChartBar },
+  { href: "/admin/announcements", label: "Announcements", icon: IconBell },
   { href: "/admin/extensions", label: "Extensions", icon: IconPuzzle },
   { href: "/admin/settings", label: "Settings", icon: IconSettings },
 ];

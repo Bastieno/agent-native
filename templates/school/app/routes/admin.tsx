@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from "react-router";
 import { useEffect } from "react";
 import { AgentSidebar } from "@agent-native/core/client";
+import { getSchoolSuggestions } from "@/lib/school-suggestions";
 import { AdminSidebar } from "@/components/layout/AdminSidebar";
 import { useRole } from "@/hooks/use-role";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -40,6 +41,7 @@ export default function AdminLayout() {
       students: "/admin/students",
       classes: "/admin/classes",
       analytics: "/admin/analytics",
+      announcements: "/admin/announcements",
       settings: "/admin/settings",
       extensions: "/admin/extensions",
     };
@@ -57,7 +59,11 @@ export default function AdminLayout() {
   if (!isAuthenticated) return null;
 
   return (
-    <AgentSidebar emptyStateText="How can I help you manage your school?">
+    <AgentSidebar
+      emptyStateText="How can I help you manage your school?"
+      dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
+      defaultOpen
+    >
       <div className="flex h-screen overflow-hidden bg-background">
         <AdminSidebar />
         <main className="flex-1 overflow-hidden">

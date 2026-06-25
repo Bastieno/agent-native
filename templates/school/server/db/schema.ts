@@ -108,6 +108,8 @@ export const units = table("units", {
   weekStart: integer("week_start"),
   weekEnd: integer("week_end"),
   sequence: integer("sequence").notNull().default(1),
+  // JSON array of { framework, code, description } — e.g. Common Core, WAEC, IGCSE
+  standardsJson: text("standards_json").notNull().default("[]"),
   status: text("status").notNull().default("draft"), // draft | active | archived
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
@@ -156,6 +158,20 @@ export const classEnrollments = table("class_enrollments", {
   enrolledAt: text("enrolled_at").notNull().default(now()),
   status: text("status").notNull().default("active"), // active | withdrawn | suspended
   createdAt: text("created_at").notNull().default(now()),
+});
+
+export const classSchedules = table("class_schedules", {
+  id: text("id").primaryKey(),
+  classId: text("class_id").notNull(),
+  schoolId: text("school_id").notNull(),
+  dayOfWeek: integer("day_of_week").notNull(), // 1=Monday … 5=Friday (6=Sat, 7=Sun if needed)
+  periodNumber: integer("period_number"), // optional human-readable period label (1–8)
+  startTime: text("start_time").notNull(), // "08:00" — 24-hour HH:MM
+  endTime: text("end_time").notNull(), // "08:45"
+  room: text("room"), // room override (falls back to class.roomNumber)
+  createdAt: text("created_at").notNull().default(now()),
+  updatedAt: text("updated_at").notNull().default(now()),
+  ...ownableColumns(),
 });
 
 // ─── Layer 5: Content ────────────────────────────────────────────────────────
@@ -312,7 +328,9 @@ export const grades = table("grades", {
   rubricScoresJson: text("rubric_scores_json").notNull().default("{}"),
   gradedBy: text("graded_by"),
   gradedAt: text("graded_at"),
-  isPublished: integer("is_published", { mode: "boolean" }).notNull().default(false),
+  isPublished: integer("is_published", { mode: "boolean" })
+    .notNull()
+    .default(false),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
 });
@@ -324,11 +342,41 @@ export const gradebookEntries = table("gradebook_entries", {
   termId: text("term_id").notNull(),
   computedScore: text("computed_score"),
   letterGrade: text("letter_grade"),
-  isPublished: integer("is_published", { mode: "boolean" }).notNull().default(false),
+  isPublished: integer("is_published", { mode: "boolean" })
+    .notNull()
+    .default(false),
   publishedAt: text("published_at"),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),
+});
+
+// ─── Standards Library ───────────────────────────────────────────────────────
+// Built-in reference tables for curriculum frameworks (WAEC, Common Core, etc.)
+// These are not user-owned — orgId = null means available to all schools.
+
+export const curriculumFrameworks = table("curriculum_frameworks", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(), // "WAEC", "Common Core", "Cambridge IGCSE"
+  subject: text("subject"), // "Mathematics", NULL = cross-subject
+  gradeRange: text("grade_range"), // "SS1-SS3", "Grade 6-8"
+  version: text("version"), // "2024-2025 syllabus"
+  sourceUrl: text("source_url"),
+  orgId: text("org_id"), // NULL = built-in global; orgId = school-custom framework
+  createdAt: text("created_at").notNull().default(now()),
+});
+
+export const frameworkObjectives = table("framework_objectives", {
+  id: text("id").primaryKey(),
+  frameworkId: text("framework_id").notNull(),
+  code: text("code").notNull(), // "MATH-ALG-1", "8.EE.C.7"
+  strand: text("strand"), // "Algebra", "Number and Numeration"
+  subStrand: text("sub_strand"), // "Linear Equations"
+  subject: text("subject"), // "Mathematics"
+  description: text("description").notNull(),
+  gradeLevel: text("grade_level"), // "SS1-SS3", "Grade 8"
+  sequence: integer("sequence").notNull().default(1),
+  createdAt: text("created_at").notNull().default(now()),
 });
 
 // ─── Layer 9: Communication ──────────────────────────────────────────────────

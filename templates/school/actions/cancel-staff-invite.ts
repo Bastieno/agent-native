@@ -8,7 +8,10 @@ export default defineAction({
   description:
     "Cancel a pending staff invitation. Use this before re-inviting if the email was wrong or the invite needs to be resent fresh.",
   schema: z.object({
-    email: z.string().email().describe("Email address of the pending invite to cancel"),
+    email: z
+      .string()
+      .email()
+      .describe("Email address of the pending invite to cancel"),
   }),
   http: { method: "POST" },
   run: async (args) => {
@@ -18,7 +21,12 @@ export default defineAction({
     const email = args.email.trim().toLowerCase();
 
     const list = ((await getOrgSetting(orgId, "pending-staff-invites")) ??
-      []) as Array<{ id: string; email: string; name: string; schoolRole: string }>;
+      []) as Array<{
+      id: string;
+      email: string;
+      name: string;
+      schoolRole: string;
+    }>;
 
     const filtered = list.filter((inv) => inv.email !== email);
 
@@ -28,7 +36,7 @@ export default defineAction({
       );
     }
 
-    await putOrgSetting(orgId, "pending-staff-invites", filtered);
+    await putOrgSetting(orgId, "pending-staff-invites", filtered as any);
 
     // Best-effort: mark cancelled in the framework invitations table
     try {

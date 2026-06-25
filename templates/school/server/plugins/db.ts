@@ -444,6 +444,56 @@ export default runMigrations(
         visibility TEXT NOT NULL DEFAULT 'private'
       )`,
     },
+    {
+      version: 30,
+      sql: `ALTER TABLE units ADD COLUMN standards_json TEXT NOT NULL DEFAULT '[]'`,
+    },
+    {
+      version: 31,
+      sql: `CREATE TABLE IF NOT EXISTS class_schedules (
+        id TEXT PRIMARY KEY,
+        class_id TEXT NOT NULL,
+        school_id TEXT NOT NULL,
+        day_of_week INTEGER NOT NULL,
+        period_number INTEGER,
+        start_time TEXT NOT NULL,
+        end_time TEXT NOT NULL,
+        room TEXT,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+        owner_email TEXT,
+        org_id TEXT,
+        visibility TEXT NOT NULL DEFAULT 'private'
+      )`,
+    },
+    {
+      version: 32,
+      sql: `CREATE TABLE IF NOT EXISTS curriculum_frameworks (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        subject TEXT,
+        grade_range TEXT,
+        version TEXT,
+        source_url TEXT,
+        org_id TEXT,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      )`,
+    },
+    {
+      version: 33,
+      sql: `CREATE TABLE IF NOT EXISTS framework_objectives (
+        id TEXT PRIMARY KEY,
+        framework_id TEXT NOT NULL,
+        code TEXT NOT NULL,
+        strand TEXT,
+        sub_strand TEXT,
+        subject TEXT,
+        description TEXT NOT NULL,
+        grade_level TEXT,
+        sequence INTEGER NOT NULL DEFAULT 1,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      )`,
+    },
   ],
   { table: "school_migrations" },
 );
