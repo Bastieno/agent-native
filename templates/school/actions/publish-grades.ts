@@ -8,7 +8,7 @@ export default defineAction({
   schema: z.object({
     assessmentId: z.string().describe("Assessment ID"),
   }),
-  http: { method: "PUT" },
+  http: { method: "POST" },
   run: async (args) => {
     const db = getDb();
     const now = new Date().toISOString();
