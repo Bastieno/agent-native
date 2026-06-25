@@ -482,7 +482,7 @@ pnpm action get-my-classes           # Enrolled classes
 | `list-academic-years` / `create-academic-year` | `--name --startDate --endDate` |
 | `list-terms` / `create-term` | `--academicYearId --name --startDate --endDate --sequence` |
 | `list-departments` / `create-department` | `--name [--headTeacherUserId]` |
-| `manage-grade-levels` | `--levels '[...]'` — replaces all grade levels |
+| `manage-grade-levels` | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred |
 | `update-school-resource` | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped) |
 | `get-school-resource` | — reads current SCHOOL_GUIDE.md content |
 

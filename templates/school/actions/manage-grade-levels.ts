@@ -31,6 +31,11 @@ export default defineAction({
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
 
+    // Auto-infer bulk-create when levels array is provided without an explicit action
+    if (args.levels?.length && args.action === "list") {
+      args = { ...args, action: "bulk-create" };
+    }
+
     if (args.action === "list") {
       const levels = await db
         .select()
@@ -51,6 +56,8 @@ export default defineAction({
         orgId,
         visibility: "org" as const,
       }));
+      // Replace: delete existing grade levels for this school, then insert fresh
+      await db.delete(schema.gradeLevels).where(eq(schema.gradeLevels.schoolId, orgId));
       await db.insert(schema.gradeLevels).values(rows);
       return { created: rows.length, levels: rows };
     }
