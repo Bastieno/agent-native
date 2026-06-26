@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -70,7 +71,11 @@ export default function AdminAnnouncements() {
     queryFn: async () => {
       const res = await fetch(
         agentNativePath(`/_agent-native/actions/list-announcements`),
-        { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({}) },
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({}),
+        },
       );
       if (!res.ok) return [];
       const data = await res.json();
@@ -151,14 +156,13 @@ export default function AdminAnnouncements() {
       ) : (
         <div className="space-y-3">
           {announcements.map((a: any) => (
-            <div
-              key={a.id}
-              className="rounded-lg border p-4 space-y-1.5"
-            >
+            <div key={a.id} className="rounded-lg border p-4 space-y-1.5">
               <div className="flex items-start justify-between gap-2">
                 <div className="space-y-0.5 flex-1 min-w-0">
                   <p className="text-sm font-medium">{a.title}</p>
-                  <p className="text-xs text-muted-foreground line-clamp-2">{a.content}</p>
+                  <p className="text-xs text-muted-foreground line-clamp-2">
+                    {a.content}
+                  </p>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   <Badge variant="outline" className="text-xs capitalize">
@@ -189,6 +193,9 @@ export default function AdminAnnouncements() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>New Announcement</DialogTitle>
+            <DialogDescription>
+              Post an announcement to staff and students.
+            </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="space-y-1.5">
@@ -210,7 +217,10 @@ export default function AdminAnnouncements() {
             </div>
             <div className="space-y-1.5">
               <Label>Audience</Label>
-              <Select value={scope} onValueChange={(v) => setScope(v as "school" | "class")}>
+              <Select
+                value={scope}
+                onValueChange={(v) => setScope(v as "school" | "class")}
+              >
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
@@ -253,7 +263,10 @@ export default function AdminAnnouncements() {
       </Dialog>
 
       {/* Delete Confirmation */}
-      <AlertDialog open={!!deleteTarget} onOpenChange={(o) => !o && setDeleteTarget(null)}>
+      <AlertDialog
+        open={!!deleteTarget}
+        onOpenChange={(o) => !o && setDeleteTarget(null)}
+      >
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Delete announcement?</AlertDialogTitle>

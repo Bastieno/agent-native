@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -105,7 +106,11 @@ export default function AdminStaff() {
     if (!inviteName || !inviteEmail) return;
     setInviteLoading(true);
     try {
-      await callAction("invite-staff", { name: inviteName, email: inviteEmail, schoolRole: inviteRole });
+      await callAction("invite-staff", {
+        name: inviteName,
+        email: inviteEmail,
+        schoolRole: inviteRole,
+      });
       qc.invalidateQueries({ queryKey: ["admin-staff"] });
       toast.success(`Invite sent to ${inviteEmail}`);
       setInviteOpen(false);
@@ -123,7 +128,10 @@ export default function AdminStaff() {
     if (!changeRoleTarget || !newRole) return;
     setChangeRoleLoading(true);
     try {
-      await callAction("update-staff-role", { userId: changeRoleTarget.userId, schoolRole: newRole });
+      await callAction("update-staff-role", {
+        userId: changeRoleTarget.userId,
+        schoolRole: newRole,
+      });
       qc.invalidateQueries({ queryKey: ["admin-staff"] });
       toast.success("Role updated");
       setChangeRoleTarget(null);
@@ -138,7 +146,9 @@ export default function AdminStaff() {
     if (!cancelInviteTarget) return;
     setConfirmLoading(true);
     try {
-      await callAction("cancel-staff-invite", { email: cancelInviteTarget.email });
+      await callAction("cancel-staff-invite", {
+        email: cancelInviteTarget.email,
+      });
       qc.invalidateQueries({ queryKey: ["admin-staff"] });
       toast.success("Invitation cancelled");
       setCancelInviteTarget(null);
@@ -155,7 +165,8 @@ export default function AdminStaff() {
         <div>
           <h1 className="text-xl font-semibold">Staff</h1>
           <p className="text-xs text-muted-foreground mt-0.5">
-            {active.length} active{pending.length > 0 ? `, ${pending.length} pending` : ""}
+            {active.length} active
+            {pending.length > 0 ? `, ${pending.length} pending` : ""}
           </p>
         </div>
         <Button size="sm" onClick={() => setInviteOpen(true)}>
@@ -175,10 +186,15 @@ export default function AdminStaff() {
         <>
           {active.length > 0 && (
             <section className="space-y-2">
-              <h2 className="text-sm font-medium text-muted-foreground">Active</h2>
+              <h2 className="text-sm font-medium text-muted-foreground">
+                Active
+              </h2>
               <div className="rounded-lg border divide-y">
                 {active.map((member: any) => (
-                  <div key={member.id} className="flex items-center gap-3 px-4 py-3">
+                  <div
+                    key={member.id}
+                    className="flex items-center gap-3 px-4 py-3"
+                  >
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted shrink-0">
                       <IconUser size={15} className="text-muted-foreground" />
                     </div>
@@ -187,7 +203,9 @@ export default function AdminStaff() {
                         {member.name ?? member.email ?? member.userId}
                       </p>
                       {member.email && member.name && (
-                        <p className="text-xs text-muted-foreground truncate">{member.email}</p>
+                        <p className="text-xs text-muted-foreground truncate">
+                          {member.email}
+                        </p>
                       )}
                     </div>
                     <Badge variant="outline" className="text-xs shrink-0">
@@ -195,7 +213,11 @@ export default function AdminStaff() {
                     </Badge>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 shrink-0"
+                        >
                           <IconDotsVertical size={14} />
                         </Button>
                       </DropdownMenuTrigger>
@@ -244,16 +266,25 @@ export default function AdminStaff() {
 
           {pending.length > 0 && (
             <section className="space-y-2">
-              <h2 className="text-sm font-medium text-muted-foreground">Pending invitations</h2>
+              <h2 className="text-sm font-medium text-muted-foreground">
+                Pending invitations
+              </h2>
               <div className="rounded-lg border divide-y">
                 {pending.map((invite: any) => (
-                  <div key={invite.id} className="flex items-center gap-3 px-4 py-3">
+                  <div
+                    key={invite.id}
+                    className="flex items-center gap-3 px-4 py-3"
+                  >
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted shrink-0">
                       <IconMail size={15} className="text-muted-foreground" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">{invite.name}</p>
-                      <p className="text-xs text-muted-foreground truncate">{invite.email}</p>
+                      <p className="text-sm font-medium truncate">
+                        {invite.name}
+                      </p>
+                      <p className="text-xs text-muted-foreground truncate">
+                        {invite.email}
+                      </p>
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
                       <Badge variant="outline" className="text-xs">
@@ -265,7 +296,11 @@ export default function AdminStaff() {
                     </div>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 w-7 shrink-0"
+                        >
                           <IconDotsVertical size={14} />
                         </Button>
                       </DropdownMenuTrigger>
@@ -291,6 +326,9 @@ export default function AdminStaff() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Invite Staff Member</DialogTitle>
+            <DialogDescription>
+              Send an email invitation to a new staff member.
+            </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="space-y-1.5">
@@ -318,7 +356,9 @@ export default function AdminStaff() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="teacher">Teacher</SelectItem>
-                  <SelectItem value="subject_coordinator">Subject Coordinator</SelectItem>
+                  <SelectItem value="subject_coordinator">
+                    Subject Coordinator
+                  </SelectItem>
                   <SelectItem value="school_admin">Admin</SelectItem>
                 </SelectContent>
               </Select>
@@ -339,10 +379,16 @@ export default function AdminStaff() {
       </Dialog>
 
       {/* Change Role Dialog */}
-      <Dialog open={!!changeRoleTarget} onOpenChange={(o) => !o && setChangeRoleTarget(null)}>
+      <Dialog
+        open={!!changeRoleTarget}
+        onOpenChange={(o) => !o && setChangeRoleTarget(null)}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Change Role</DialogTitle>
+            <DialogDescription>
+              Update this staff member's role in the school.
+            </DialogDescription>
           </DialogHeader>
           <div className="py-2 space-y-1.5">
             <Label>
@@ -354,7 +400,9 @@ export default function AdminStaff() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="teacher">Teacher</SelectItem>
-                <SelectItem value="subject_coordinator">Subject Coordinator</SelectItem>
+                <SelectItem value="subject_coordinator">
+                  Subject Coordinator
+                </SelectItem>
                 <SelectItem value="school_admin">Admin</SelectItem>
               </SelectContent>
             </Select>
@@ -377,14 +425,20 @@ export default function AdminStaff() {
       >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Cancel invite for {cancelInviteTarget?.email}?</AlertDialogTitle>
+            <AlertDialogTitle>
+              Cancel invite for {cancelInviteTarget?.email}?
+            </AlertDialogTitle>
             <AlertDialogDescription>
-              The invitation link will no longer work. You can send a new invite later.
+              The invitation link will no longer work. You can send a new invite
+              later.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Keep invite</AlertDialogCancel>
-            <AlertDialogAction onClick={handleCancelInvite} disabled={confirmLoading}>
+            <AlertDialogAction
+              onClick={handleCancelInvite}
+              disabled={confirmLoading}
+            >
               {confirmLoading ? "Cancelling…" : "Cancel invite"}
             </AlertDialogAction>
           </AlertDialogFooter>
