@@ -15,6 +15,7 @@ interface SessionData {
   };
   schoolRole?: SchoolRole;
   schoolId?: string | null;
+  accessDenied?: boolean;
 }
 
 export function useRole() {
@@ -34,6 +35,7 @@ export function useRole() {
     schoolId: data?.schoolId ?? null,
     isLoading,
     isAuthenticated: !!data?.user,
+    accessDenied: data?.accessDenied ?? false,
     isAdmin: data?.schoolRole === "school_admin",
     isTeacher:
       data?.schoolRole === "teacher" ||

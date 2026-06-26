@@ -166,10 +166,27 @@ export const getSessionInfo = defineEventHandler(async (event) => {
     }
   }
 
+  // If still no profile, check whether this school has already been initialized.
+  // If it has, this user arrived without an invite — deny school access so they
+  // land on the pending-activation page rather than the admin onboarding wizard.
+  // (Before setup-school runs there is no school-config entry, so the first
+  // legitimate admin always gets through to the wizard.)
+  let accessDenied = false;
+  if (!profile && session.email) {
+    const all = await getAllSettings();
+    const schoolIsInitialized = Object.keys(all).some((k) =>
+      /^o:[^:]+:school-config$/.test(k),
+    );
+    if (schoolIsInitialized) {
+      accessDenied = true;
+    }
+  }
+
   return {
     user: { id: session.userId, email: session.email, name: session.name },
     schoolRole: profile?.schoolRole ?? null,
     schoolId: profile?.schoolId ?? null,
+    accessDenied,
   };
 });
 
@@ -1078,7 +1095,9 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
   if (primaryClasses.length === 0) return null;
 
   const classIds = primaryClasses.map((c: any) => c.id);
-  const schoolConfig = profile ? (await getOrgSetting(profile.schoolId, "school-config") as any) : null;
+  const schoolConfig = profile
+    ? ((await getOrgSetting(profile.schoolId, "school-config")) as any)
+    : null;
   const passMark = schoolConfig?.passMark ?? 50;
 
   // Enrollment counts per class
@@ -1105,42 +1124,53 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
   const assessmentIds = assessments.map((a: any) => a.id);
 
   // Published grades for these assessments
-  const grades = assessmentIds.length > 0
-    ? await db
-        .select()
-        .from(schema.grades)
-        .where(
-          and(
-            inArray(schema.grades.assessmentId, assessmentIds),
-            eq(schema.grades.isPublished, true),
-          ),
-        )
-    : [];
+  const grades =
+    assessmentIds.length > 0
+      ? await db
+          .select()
+          .from(schema.grades)
+          .where(
+            and(
+              inArray(schema.grades.assessmentId, assessmentIds),
+              eq(schema.grades.isPublished, true),
+            ),
+          )
+      : [];
 
   // Pending (submitted but not graded) submissions
-  const pendingSubmissions = assessmentIds.length > 0
-    ? await db
-        .select({ id: schema.submissions.id, assessmentId: schema.submissions.assessmentId })
-        .from(schema.submissions)
-        .where(
-          and(
-            inArray(schema.submissions.assessmentId, assessmentIds),
-            eq(schema.submissions.status, "submitted"),
-          ),
-        )
-    : [];
+  const pendingSubmissions =
+    assessmentIds.length > 0
+      ? await db
+          .select({
+            id: schema.submissions.id,
+            assessmentId: schema.submissions.assessmentId,
+          })
+          .from(schema.submissions)
+          .where(
+            and(
+              inArray(schema.submissions.assessmentId, assessmentIds),
+              eq(schema.submissions.status, "submitted"),
+            ),
+          )
+      : [];
 
   // Check which submissions already have grades
   const gradedSubmissionIds = new Set(grades.map((g: any) => g.submissionId));
-  const pendingGrading = pendingSubmissions.filter((s: any) => !gradedSubmissionIds.has(s.id)).length;
+  const pendingGrading = pendingSubmissions.filter(
+    (s: any) => !gradedSubmissionIds.has(s.id),
+  ).length;
 
   // Overall average from all published grades
   const allPercentages = grades
     .map((g: any) => parseFloat(g.percentage ?? "0"))
     .filter((p: number) => !isNaN(p));
-  const overallAverage = allPercentages.length > 0
-    ? (allPercentages.reduce((a: number, b: number) => a + b, 0) / allPercentages.length).toFixed(1)
-    : null;
+  const overallAverage =
+    allPercentages.length > 0
+      ? (
+          allPercentages.reduce((a: number, b: number) => a + b, 0) /
+          allPercentages.length
+        ).toFixed(1)
+      : null;
 
   // Struggling: enrolled students with average below passMark
   // Count unique students with avg < passMark across all classes
@@ -1172,11 +1202,16 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
       .filter((p: number) => !isNaN(p));
     const classAvg =
       classPercentages.length > 0
-        ? (classPercentages.reduce((a: number, b: number) => a + b, 0) / classPercentages.length).toFixed(1)
+        ? (
+            classPercentages.reduce((a: number, b: number) => a + b, 0) /
+            classPercentages.length
+          ).toFixed(1)
         : null;
 
     const classPendingSubs = pendingSubmissions.filter(
-      (s: any) => classAssessmentIds.has(s.assessmentId) && !gradedSubmissionIds.has(s.id),
+      (s: any) =>
+        classAssessmentIds.has(s.assessmentId) &&
+        !gradedSubmissionIds.has(s.id),
     ).length;
 
     const classStudentScores: Record<string, number[]> = {};
@@ -1184,15 +1219,18 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
       if (g.studentId && g.percentage != null) {
         const p = parseFloat(g.percentage);
         if (!isNaN(p)) {
-          if (!classStudentScores[g.studentId]) classStudentScores[g.studentId] = [];
+          if (!classStudentScores[g.studentId])
+            classStudentScores[g.studentId] = [];
           classStudentScores[g.studentId].push(p);
         }
       }
     }
-    const classStruggling = Object.values(classStudentScores).filter((scores) => {
-      const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-      return avg < passMark;
-    }).length;
+    const classStruggling = Object.values(classStudentScores).filter(
+      (scores) => {
+        const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+        return avg < passMark;
+      },
+    ).length;
 
     return {
       classId: c.id,

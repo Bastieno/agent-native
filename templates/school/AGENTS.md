@@ -139,16 +139,15 @@ pnpm action update-staff-role --userId <id> --schoolRole subject_coordinator
 pnpm action suspend-staff --userId <id>
 ```
 
-**Invitation lifecycle — always follow this order:**
+**Invitation lifecycle:**
 1. `invite-staff` — sends invite email and records the pending invite (visible on Staff page)
-2. Staff member clicks the link and signs in
-3. `finalize-staff-invite --email "..."` — creates their school profile so they can access the portal
+2. Staff member clicks the link and signs in — their school profile is **created automatically** on first login; no manual step needed
 
 **If an invite needs to be resent or the email was wrong:**
 - `cancel-staff-invite --email "..."` — removes from pending list
 - Then `invite-staff` again with the correct details
 
-**Never skip `finalize-staff-invite`** — until it runs, the staff member has no school role and cannot use the teacher portal.
+**`finalize-staff-invite` is a recovery tool only.** Run it if a staff member reports they can't access the portal after signing in (e.g. they signed up before the invite was recorded). Do not run it after every `invite-staff` call — auto-activation handles the normal flow.
 
 ### A4. School Analytics
 

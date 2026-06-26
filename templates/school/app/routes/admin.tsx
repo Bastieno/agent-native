@@ -8,7 +8,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { DefaultSpinner } from "@agent-native/core/client";
 
 export default function AdminLayout() {
-  const { role, isLoading, isAuthenticated } = useRole();
+  const { role, isLoading, isAuthenticated, accessDenied } = useRole();
   const navigate = useNavigate();
   const { command, clearCommand } = useNavigationState();
 
@@ -19,12 +19,17 @@ export default function AdminLayout() {
       navigate("/login");
       return;
     }
+    // Authenticated but school is set up and they have no invite
+    if (accessDenied) {
+      navigate("/pending-activation");
+      return;
+    }
     // Logged in but assigned a non-admin role → send to their portal
     if (role && role !== "school_admin") {
       navigate("/");
     }
-    // Authenticated with no role (new user) or school_admin → stay here
-  }, [isLoading, isAuthenticated, role, navigate]);
+    // Authenticated with no role (first admin) or school_admin → stay here
+  }, [isLoading, isAuthenticated, accessDenied, role, navigate]);
 
   useEffect(() => {
     if (!command.data) return;
