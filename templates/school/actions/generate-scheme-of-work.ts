@@ -291,11 +291,18 @@ export default defineAction({
         : 0,
     };
 
+    // Lesson notes belong to a class, so with no class there is nothing to
+    // attach them to. Say so rather than reporting a bare zero.
+    const noClassesNote =
+      classes.length === 0
+        ? ` No ${subject.name} class exists for ${gradeLevel.name} yet, so no lesson notes will be created — create the class and re-run with replace=true to add them.`
+        : "";
+
     if (!args.confirm) {
       return {
         preview: true,
         ...preview,
-        message: `Ready to create ${planned.length} units across ${teachingWeeks} teaching weeks (${examWeeks} exam week${examWeeks === 1 ? "" : "s"}) for ${classes.length} class${classes.length === 1 ? "" : "es"}. Re-run with confirm=true to write it.`,
+        message: `Ready to create ${planned.length} units across ${teachingWeeks} teaching weeks (${examWeeks} exam week${examWeeks === 1 ? "" : "s"}) for ${classes.length} class${classes.length === 1 ? "" : "es"}.${noClassesNote} Re-run with confirm=true to write it.`,
       };
     }
 
@@ -395,7 +402,7 @@ export default defineAction({
       unitsCreated: createdUnits.length,
       objectivesCreated: planned.reduce((n, u) => n + u.objectives.length, 0),
       lessonNotesCreated,
-      message: `Created ${createdUnits.length} units and ${lessonNotesCreated} draft lesson notes for ${subject.name} ${gradeLevel.name}, ${term.name}.`,
+      message: `Created ${createdUnits.length} units and ${lessonNotesCreated} draft lesson notes for ${subject.name} ${gradeLevel.name}, ${term.name}.${noClassesNote}`,
     };
   },
 });

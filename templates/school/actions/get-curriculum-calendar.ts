@@ -107,6 +107,8 @@ export default defineAction({
           return {
             unitId: u.unit.id,
             unitTitle: u.unit.title,
+            subjectId: u.unit.subjectId,
+            gradeLevelId: u.unit.gradeLevelId,
             subjectName: u.subjectName ?? "—",
             gradeLevelName: u.gradeLevelName ?? "—",
             objectives: objectives
