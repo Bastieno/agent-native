@@ -54,11 +54,13 @@ export interface StudentNav {
     | "dashboard"
     | "classes"
     | "class"
+    | "lesson"
     | "assessment"
     | "submission"
     | "grades"
     | "progress";
   classId?: string;
+  lessonId?: string;
   assessmentId?: string;
   submissionId?: string;
   _ts?: number;

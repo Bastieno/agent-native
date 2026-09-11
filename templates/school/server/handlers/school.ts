@@ -1688,7 +1688,44 @@ export const getLessonNote = defineEventHandler(async (event) => {
     .limit(1);
 
   if (!rows[0]) throw createError({ statusCode: 404, message: "Not found" });
-  return rows[0];
+  const lesson = rows[0];
+
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) throw createError({ statusCode: 403, message: "Forbidden" });
+
+  // Keep lessons inside their own school.
+  const [cls] = await db
+    .select({ id: schema.classes.id, orgId: schema.classes.orgId })
+    .from(schema.classes)
+    .where(eq(schema.classes.id, lesson.classId))
+    .limit(1);
+  if (cls && cls.orgId && cls.orgId !== profile.schoolId) {
+    throw createError({ statusCode: 404, message: "Not found" });
+  }
+
+  // Students may only read finalized lessons for classes they are enrolled in —
+  // never another class's material, and never a teacher's unfinished draft.
+  if (profile.schoolRole === "student") {
+    if (lesson.status !== "finalized") {
+      throw createError({ statusCode: 404, message: "Not found" });
+    }
+    const [enrolment] = await db
+      .select({ id: schema.classEnrollments.id })
+      .from(schema.classEnrollments)
+      .where(
+        and(
+          eq(schema.classEnrollments.classId, lesson.classId),
+          eq(schema.classEnrollments.studentUserId, session.userId),
+          eq(schema.classEnrollments.status, "active"),
+        ),
+      )
+      .limit(1);
+    if (!enrolment) {
+      throw createError({ statusCode: 403, message: "Forbidden" });
+    }
+  }
+
+  return lesson;
 });
 
 export const finalizeLessonNote = defineEventHandler(async (event) => {

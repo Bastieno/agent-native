@@ -22,7 +22,9 @@ export default function StudentClassDetail() {
   const { data: classDetail } = useQuery({
     queryKey: ["student-class", classId],
     queryFn: async () => {
-      const res = await fetch(agentNativePath(`/api/school/my-classes/${classId}`));
+      const res = await fetch(
+        agentNativePath(`/api/school/my-classes/${classId}`),
+      );
       if (!res.ok) return null;
       return res.json();
     },
@@ -44,7 +46,10 @@ export default function StudentClassDetail() {
   return (
     <div className="p-6 space-y-6">
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Link to="/student/classes" className="hover:text-foreground flex items-center gap-1">
+        <Link
+          to="/student/classes"
+          className="hover:text-foreground flex items-center gap-1"
+        >
           <IconChevronLeft size={14} />
           My Classes
         </Link>
@@ -77,7 +82,8 @@ export default function StudentClassDetail() {
                     {a.title}
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    {a.assessmentType} · {a.dueDate ? `Due ${a.dueDate}` : "No due date"}
+                    {a.assessmentType} ·{" "}
+                    {a.dueDate ? `Due ${a.dueDate}` : "No due date"}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
@@ -112,14 +118,26 @@ export default function StudentClassDetail() {
           </h2>
           <div className="space-y-2">
             {lessons.map((lesson: any) => (
-              <div key={lesson.id} className="rounded-lg border p-3 space-y-1">
-                <p className="text-sm font-medium">{lesson.title}</p>
-                {lesson.summary && (
-                  <p className="text-xs text-muted-foreground line-clamp-2">
-                    {lesson.summary}
+              <Link
+                key={lesson.id}
+                to={`/student/lessons/${lesson.id}`}
+                className="group flex items-center justify-between gap-3 rounded-lg border p-3 hover:border-primary/50 transition-colors"
+              >
+                <div className="space-y-1">
+                  <p className="text-sm font-medium group-hover:text-primary transition-colors">
+                    {lesson.title}
                   </p>
-                )}
-              </div>
+                  {lesson.summary && (
+                    <p className="text-xs text-muted-foreground line-clamp-2">
+                      {lesson.summary}
+                    </p>
+                  )}
+                </div>
+                <IconChevronRight
+                  size={16}
+                  className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors"
+                />
+              </Link>
             ))}
           </div>
         </div>
@@ -128,7 +146,10 @@ export default function StudentClassDetail() {
       {(!assessments || assessments.length === 0) &&
         (!lessons || lessons.length === 0) && (
           <div className="rounded-lg border border-dashed p-10 text-center">
-            <IconBook size={28} className="mx-auto text-muted-foreground mb-2" />
+            <IconBook
+              size={28}
+              className="mx-auto text-muted-foreground mb-2"
+            />
             <p className="text-sm font-medium">Nothing here yet</p>
             <p className="text-xs text-muted-foreground mt-1">
               Your teacher will add lessons and assessments soon.
