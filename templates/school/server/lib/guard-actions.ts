@@ -1,4 +1,5 @@
 import { currentAccess } from "@agent-native/core/sharing";
+import { runWithRequestContext } from "@agent-native/core/server";
 import { getSchoolRole } from "./student-access.js";
 import {
   actorForEmail,
@@ -46,6 +47,22 @@ export function guardActions<T extends Record<string, any>>(actions: T): T {
       run: async (args: any, ctx: any) => {
         await assertCallerMayRun(name);
         await assertCallerMayTouch(name, args);
+
+        // External MCP clients arrive with an identity but no org: the
+        // framework derives the org from a token's domain claim, and a school
+        // org has no email domain. A user belongs to exactly one school, so
+        // resolve it from their profile and run the action in that context —
+        // otherwise every action fails with "No school context".
+        const { userEmail, orgId } = currentAccess();
+        if (!orgId && userEmail) {
+          const actor = await actorForEmail(userEmail);
+          if (actor?.schoolId) {
+            return runWithRequestContext(
+              { userEmail, orgId: actor.schoolId },
+              () => entry.run(args, ctx),
+            );
+          }
+        }
         return entry.run(args, ctx);
       },
     };
