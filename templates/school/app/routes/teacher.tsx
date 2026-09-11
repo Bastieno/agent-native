@@ -2,6 +2,7 @@ import { Outlet, useNavigate } from "react-router";
 import { useEffect } from "react";
 import { AgentSidebar } from "@agent-native/core/client";
 import { getSchoolSuggestions } from "@/lib/school-suggestions";
+import { SchoolTheme } from "@/components/SchoolTheme";
 import { TeacherSidebar } from "@/components/layout/TeacherSidebar";
 import { PortalShell } from "@/components/layout/PortalShell";
 import { useRole } from "@/hooks/use-role";
@@ -58,6 +59,7 @@ export default function TeacherLayout() {
         typeof window !== "undefined" ? window.innerWidth >= 1280 : false
       }
     >
+      <SchoolTheme />
       <PortalShell
         sidebar={<TeacherSidebar />}
         drawerSidebar={<TeacherSidebar showAgentToggle={false} />}

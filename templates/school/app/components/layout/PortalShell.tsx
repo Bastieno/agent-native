@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { useLocation } from "react-router";
 import { AgentToggleButton } from "@agent-native/core/client";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { useSchoolConfig } from "@/hooks/use-school-config";
 import { IconMenu2 } from "@tabler/icons-react";
 
 /**
@@ -36,6 +37,11 @@ export function PortalShell({
 }) {
   const [navOpen, setNavOpen] = useState(false);
   const location = useLocation();
+  const { config } = useSchoolConfig();
+  // One deployment, many schools: the header carries the school's name, with
+  // the portal name only as a fallback before config loads.
+  const heading =
+    (config as any)?.theme?.displayName ?? (config as any)?.name ?? title;
 
   // Navigating from the drawer should close it.
   useEffect(() => {
@@ -71,7 +77,7 @@ export function PortalShell({
           >
             <IconMenu2 size={20} />
           </button>
-          <span className="truncate text-sm font-semibold">{title}</span>
+          <span className="truncate text-sm font-semibold">{heading}</span>
         </header>
 
         <main className="min-w-0 flex-1 overflow-hidden">{children}</main>

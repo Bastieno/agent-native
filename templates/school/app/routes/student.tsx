@@ -2,6 +2,7 @@ import { Outlet, useNavigate } from "react-router";
 import { useEffect } from "react";
 import { AgentSidebar, AgentToggleButton } from "@agent-native/core/client";
 import { getSchoolSuggestions } from "@/lib/school-suggestions";
+import { SchoolTheme } from "@/components/SchoolTheme";
 import { StudentNav } from "@/components/layout/StudentNav";
 import { useRole } from "@/hooks/use-role";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -56,6 +57,7 @@ export default function StudentLayout() {
         typeof window !== "undefined" ? window.innerWidth >= 1280 : false
       }
     >
+      <SchoolTheme />
       <div className="flex h-screen flex-col overflow-hidden bg-background">
         <StudentNav />
         <main className="flex-1 overflow-auto">

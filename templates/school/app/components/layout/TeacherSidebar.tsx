@@ -7,6 +7,7 @@ import {
   IconLogout,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
+import { useSchoolConfig } from "@/hooks/use-school-config";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 
 const navItems = [
@@ -24,11 +25,16 @@ const navItems = [
 export function TeacherSidebar({
   showAgentToggle = true,
 }: { showAgentToggle?: boolean } = {}) {
+  const { config } = useSchoolConfig();
+  const schoolName =
+    (config as any)?.theme?.displayName ??
+    (config as any)?.name ??
+    "Teacher Portal";
   return (
     <aside className="flex h-full w-full flex-col border-r bg-sidebar lg:w-56">
       <div className="flex h-14 items-center border-b px-4 gap-2">
         <span className="flex-1 text-sm font-semibold text-sidebar-foreground">
-          Teacher Portal
+          {schoolName}
         </span>
         {showAgentToggle ? <AgentToggleButton /> : null}
       </div>

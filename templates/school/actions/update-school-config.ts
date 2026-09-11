@@ -36,6 +36,20 @@ export default defineAction({
     assessmentTerminology: z
       .enum(["assignment", "assessment", "task", "homework"])
       .optional(),
+    theme: z
+      .object({
+        // HSL triples, matching the CSS variables the app already uses:
+        // "221 83% 53%". Stored per school so one deployment can carry many.
+        primary: z.string().optional().describe('e.g. "221 83% 53%"'),
+        primaryForeground: z.string().optional(),
+        logoUrl: z.string().optional().describe("Shown in the portal header"),
+        displayName: z
+          .string()
+          .optional()
+          .describe("Overrides the school name shown in the header"),
+      })
+      .optional()
+      .describe("Per-school branding"),
     schoolTimezone: z.string().optional(),
     locale: z.string().optional(),
     customLabels: z
@@ -55,6 +69,13 @@ export default defineAction({
         unknown
       > | null) ?? {};
     const merged = { ...existing, ...args } as Record<string, unknown>;
+    if (args.theme) {
+      // Merge, so setting a logo does not clear a colour set earlier.
+      merged.theme = {
+        ...((existing.theme as Record<string, unknown>) ?? {}),
+        ...args.theme,
+      };
+    }
     if (args.customLabels) {
       merged.customLabels = {
         ...((existing.customLabels as Record<string, string>) ?? {}),

@@ -7,6 +7,7 @@ import {
   IconLogout,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
+import { useSchoolConfig } from "@/hooks/use-school-config";
 import { agentNativePath } from "@agent-native/core/client";
 
 const navItems = [
@@ -22,12 +23,17 @@ const navItems = [
 ];
 
 export function StudentNav() {
+  const { config } = useSchoolConfig();
+  const schoolName =
+    (config as any)?.theme?.displayName ??
+    (config as any)?.name ??
+    "Student Portal";
   return (
     <header className="flex h-14 items-center gap-2 border-b bg-background px-3 sm:gap-4 sm:px-4">
       {/* The title is the first thing to go on a tablet with the agent panel
           open — the navigation itself matters more. */}
       <span className="hidden text-sm font-semibold shrink-0 lg:inline">
-        Student Portal
+        {schoolName}
       </span>
       <nav className="flex flex-1 items-center gap-1 overflow-x-auto">
         {navItems.map(({ href, label, icon: Icon, end }) => (
