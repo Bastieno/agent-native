@@ -24,6 +24,36 @@ async function getJson(path: string) {
   return res.json();
 }
 
+/**
+ * What the coloured week markers mean. Colour alone is not an explanation —
+ * and not everyone can tell amber from grey — so the wording appears wherever
+ * the markers do, and each card also states its counts in words.
+ */
+function StatusLegend({ className }: { className?: string }) {
+  return (
+    <div
+      className={`flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground ${className ?? ""}`}
+    >
+      <span className="flex items-center gap-1.5">
+        <span className="h-2.5 w-2.5 rounded-sm bg-green-500/70" />
+        Lesson ready
+      </span>
+      <span className="flex items-center gap-1.5">
+        <span className="h-2.5 w-2.5 rounded-sm bg-amber-500/70" />
+        Draft lesson
+      </span>
+      <span className="flex items-center gap-1.5">
+        <span className="h-2.5 w-2.5 rounded-sm bg-muted-foreground/30" />
+        Planned, no lesson note
+      </span>
+      <span className="flex items-center gap-1.5">
+        <span className="h-2.5 w-2.5 rounded-sm bg-muted/40" />
+        Nothing planned
+      </span>
+    </div>
+  );
+}
+
 const ALL = "__all__";
 
 export default function AdminCalendar() {
@@ -288,19 +318,8 @@ export default function AdminCalendar() {
                   })}
                 </tbody>
               </table>
-              <div className="flex items-center gap-4 px-3 py-2 text-xs text-muted-foreground border-t">
-                <span className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-sm bg-green-500/70" />
-                  Lesson ready
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-sm bg-amber-500/70" />
-                  Draft lesson
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-sm bg-muted-foreground/30" />
-                  Planned, no lesson note
-                </span>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-t px-3 py-2 text-xs text-muted-foreground">
+                <StatusLegend />
                 <span className="ml-auto">
                   Select a subject to see the weeks
                 </span>
@@ -333,9 +352,40 @@ export default function AdminCalendar() {
                       <span className="text-sm font-medium">{name}</span>
                       <span className="text-xs text-muted-foreground">
                         {entries.filter((e: any) => e.entry).length} of{" "}
-                        {calendar.weeks} weeks
+                        {calendar.weeks} weeks planned
                       </span>
                     </div>
+                    {/* Say it in words too, so the colours are a shortcut
+                        rather than the only way to read the card. */}
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      {(() => {
+                        const ready = entries.filter(
+                          (e: any) => e.entry?.lessonsPrepared > 0,
+                        ).length;
+                        const draft = entries.filter(
+                          (e: any) =>
+                            e.entry &&
+                            !e.entry.lessonsPrepared &&
+                            e.entry.lessonsDrafted > 0,
+                        ).length;
+                        const none = entries.filter(
+                          (e: any) =>
+                            e.entry &&
+                            !e.entry.lessonsPrepared &&
+                            !e.entry.lessonsDrafted,
+                        ).length;
+                        const parts = [];
+                        if (ready)
+                          parts.push(
+                            `${ready} lesson${ready === 1 ? "" : "s"} ready`,
+                          );
+                        if (draft) parts.push(`${draft} draft`);
+                        if (none) parts.push(`${none} with no lesson note`);
+                        return parts.length
+                          ? parts.join(" · ")
+                          : "No weeks planned";
+                      })()}
+                    </p>
                     <div className="mt-2 flex flex-wrap gap-1">
                       {entries.map(({ week, entry }: any) => (
                         <span
@@ -362,6 +412,7 @@ export default function AdminCalendar() {
                   </button>
                 );
               })}
+              <StatusLegend className="px-1 pt-1" />
             </div>
           ) : null}
 
