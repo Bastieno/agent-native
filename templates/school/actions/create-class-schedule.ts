@@ -15,11 +15,28 @@ export default defineAction({
       .int()
       .min(1)
       .max(7)
-      .describe("Day of week: 1=Monday, 2=Tuesday, 3=Wednesday, 4=Thursday, 5=Friday, 6=Saturday, 7=Sunday"),
-    startTime: z.string().regex(/^\d{2}:\d{2}$/).describe("Start time in HH:MM 24-hour format, e.g. '08:00'"),
-    endTime: z.string().regex(/^\d{2}:\d{2}$/).describe("End time in HH:MM 24-hour format, e.g. '08:45'"),
-    periodNumber: z.number().int().optional().describe("Optional period number (1–8) for human-readable reference"),
-    room: z.string().optional().describe("Room override — defaults to the class's roomNumber if omitted"),
+      .describe(
+        "Day of week: 1=Monday, 2=Tuesday, 3=Wednesday, 4=Thursday, 5=Friday, 6=Saturday, 7=Sunday",
+      ),
+    startTime: z
+      .string()
+      .regex(/^\d{2}:\d{2}$/)
+      .describe("Start time in HH:MM 24-hour format, e.g. '08:00'"),
+    endTime: z
+      .string()
+      .regex(/^\d{2}:\d{2}$/)
+      .describe("End time in HH:MM 24-hour format, e.g. '08:45'"),
+    periodNumber: z
+      .number()
+      .int()
+      .optional()
+      .describe("Optional period number (1–8) for human-readable reference"),
+    room: z
+      .string()
+      .optional()
+      .describe(
+        "Room override — defaults to the class's roomNumber if omitted",
+      ),
   }),
   http: { method: "POST" },
   run: async (args) => {
@@ -31,7 +48,12 @@ export default defineAction({
     const [cls] = await db
       .select()
       .from(schema.classes)
-      .where(and(eq(schema.classes.id, args.classId), eq(schema.classes.orgId, orgId)))
+      .where(
+        and(
+          eq(schema.classes.id, args.classId),
+          eq(schema.classes.orgId, orgId),
+        ),
+      )
       .limit(1);
     if (!cls) throw new Error(`Class not found: ${args.classId}`);
 
@@ -50,7 +72,16 @@ export default defineAction({
       visibility: "org" as const,
     });
 
-    const dayNames = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const dayNames = [
+      "",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
     return {
       id,
       classId: args.classId,

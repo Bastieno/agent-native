@@ -14,7 +14,9 @@ export default defineAction({
       .boolean()
       .optional()
       .default(false)
-      .describe("Pass true to commit the categorization to DB. Default false = preview only."),
+      .describe(
+        "Pass true to commit the categorization to DB. Default false = preview only.",
+      ),
   }),
   http: false,
   run: async (args) => {
@@ -132,8 +134,10 @@ export default defineAction({
 
     const summary = {
       advanced: categorizations.filter((c) => c.category === "advanced").length,
-      developing: categorizations.filter((c) => c.category === "developing").length,
-      foundational: categorizations.filter((c) => c.category === "foundational").length,
+      developing: categorizations.filter((c) => c.category === "developing")
+        .length,
+      foundational: categorizations.filter((c) => c.category === "foundational")
+        .length,
     };
 
     return {

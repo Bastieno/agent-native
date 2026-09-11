@@ -1,5 +1,8 @@
 import { defineAction } from "@agent-native/core";
-import { readAppState, writeAppState } from "@agent-native/core/application-state";
+import {
+  readAppState,
+  writeAppState,
+} from "@agent-native/core/application-state";
 import { getDb, schema } from "../server/db/index.js";
 import { eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
@@ -13,8 +16,12 @@ export default defineAction({
     difficulty: z
       .enum(["foundational", "developing", "advanced", "custom"])
       .describe("Difficulty level for this variant"),
-    label: z.string().describe('Human label, e.g. "Foundation", "Core", "Extension"'),
-    content: z.string().describe("Markdown content — the actual questions/tasks"),
+    label: z
+      .string()
+      .describe('Human label, e.g. "Foundation", "Core", "Extension"'),
+    content: z
+      .string()
+      .describe("Markdown content — the actual questions/tasks"),
     instructions: z.string().optional().describe("How to attempt this variant"),
     totalPoints: z.number().optional().default(100),
     position: z.number().optional().default(0),
@@ -34,11 +41,24 @@ export default defineAction({
       position: args.position ?? 0,
     });
     // Update assessment-draft app-state
-    const existing = (await readAppState(`assessment-draft-${args.assessmentId}`)) as any;
+    const existing = (await readAppState(
+      `assessment-draft-${args.assessmentId}`,
+    )) as any;
     if (existing) {
-      const variants = [...(existing.variants ?? []), { id, difficulty: args.difficulty, label: args.label }];
-      await writeAppState(`assessment-draft-${args.assessmentId}`, { ...existing, variants });
+      const variants = [
+        ...(existing.variants ?? []),
+        { id, difficulty: args.difficulty, label: args.label },
+      ];
+      await writeAppState(`assessment-draft-${args.assessmentId}`, {
+        ...existing,
+        variants,
+      });
     }
-    return { id, difficulty: args.difficulty, label: args.label, assessmentId: args.assessmentId };
+    return {
+      id,
+      difficulty: args.difficulty,
+      label: args.label,
+      assessmentId: args.assessmentId,
+    };
   },
 });

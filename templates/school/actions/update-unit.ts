@@ -4,7 +4,8 @@ import { eq } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
-  description: "Update a curriculum unit's title, description, dates, sequence, or status.",
+  description:
+    "Update a curriculum unit's title, description, dates, sequence, or status.",
   schema: z.object({
     id: z.string().describe("Unit ID"),
     title: z.string().optional(),

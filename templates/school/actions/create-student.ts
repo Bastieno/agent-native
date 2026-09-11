@@ -11,7 +11,10 @@ export default defineAction({
     userId: z.string().describe("The user ID from Better Auth (must exist)"),
     gradeLevelId: z.string().optional(),
     admissionNumber: z.string().optional(),
-    customFields: z.record(z.string(), z.unknown()).optional().describe("Custom field values, keyed by field name"),
+    customFields: z
+      .record(z.string(), z.unknown())
+      .optional()
+      .describe("Custom field values, keyed by field name"),
   }),
   http: { method: "POST" },
   run: async (args) => {

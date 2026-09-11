@@ -39,8 +39,10 @@ export default defineAction({
     const email = args.email.trim().toLowerCase();
 
     // Check for duplicate in our own pending list
-    const existingList = ((await getOrgSetting(orgId, "pending-staff-invites")) ??
-      []) as PendingInvite[];
+    const existingList = ((await getOrgSetting(
+      orgId,
+      "pending-staff-invites",
+    )) ?? []) as PendingInvite[];
     if (existingList.some((inv) => inv.email === email)) {
       throw new Error(
         `An invitation is already pending for ${email}. They should check their inbox (or spam folder).`,

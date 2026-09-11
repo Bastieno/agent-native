@@ -169,7 +169,9 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
 
   // ── Student-facing reads (own data only) ──────────────────────────────
   "get-my-classes": EVERYONE,
+  "get-my-class": EVERYONE,
   "get-my-assessments": EVERYONE,
+  "get-my-assessment": EVERYONE,
   "get-my-submission": EVERYONE,
   "get-my-grades": EVERYONE,
   "get-my-progress": EVERYONE,

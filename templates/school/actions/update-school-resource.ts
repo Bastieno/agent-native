@@ -10,7 +10,12 @@ export default defineAction({
   }),
   http: { method: "POST" },
   run: async (args) => {
-    await resourcePut(SHARED_OWNER, "SCHOOL_GUIDE.md", args.content, "text/markdown");
+    await resourcePut(
+      SHARED_OWNER,
+      "SCHOOL_GUIDE.md",
+      args.content,
+      "text/markdown",
+    );
     return { success: true, message: "SCHOOL_GUIDE.md updated successfully." };
   },
 });

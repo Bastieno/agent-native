@@ -21,7 +21,10 @@ export default defineAction({
       .where(eq(schema.students.id, args.id))
       .limit(1);
     if (!student) throw new Error(`Student not found: ${args.id}`);
-    const customFieldsSchema = await getOrgSetting(orgId, "custom-fields-schema");
+    const customFieldsSchema = await getOrgSetting(
+      orgId,
+      "custom-fields-schema",
+    );
     const studentFieldDefs = (customFieldsSchema as any)?.student ?? [];
     return {
       ...student,

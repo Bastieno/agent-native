@@ -18,7 +18,8 @@ function computeLetterGrade(
 }
 
 export default defineAction({
-  description: "Grade a student submission. Records score, feedback, and optional rubric scores.",
+  description:
+    "Grade a student submission. Records score, feedback, and optional rubric scores.",
   schema: z.object({
     submissionId: z.string().describe("Submission ID"),
     score: z.number().describe("Points awarded"),
@@ -44,7 +45,8 @@ export default defineAction({
       .from(schema.submissions)
       .where(eq(schema.submissions.id, args.submissionId))
       .limit(1);
-    if (!submission) throw new Error(`Submission not found: ${args.submissionId}`);
+    if (!submission)
+      throw new Error(`Submission not found: ${args.submissionId}`);
 
     const [assessment] = await db
       .select()
@@ -53,8 +55,11 @@ export default defineAction({
       .limit(1);
     const maxScore = assessment?.totalPoints ?? 100;
     const percentage = (args.score / maxScore) * 100;
-    const schoolConfig = await getOrgSetting(orgId, "school-config") as any;
-    const letterGrade = computeLetterGrade(percentage, schoolConfig?.gradingScale);
+    const schoolConfig = (await getOrgSetting(orgId, "school-config")) as any;
+    const letterGrade = computeLetterGrade(
+      percentage,
+      schoolConfig?.gradingScale,
+    );
     const now = new Date().toISOString();
 
     // Check if grade already exists

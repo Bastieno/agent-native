@@ -4,7 +4,8 @@ import { eq, and, asc } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
-  description: "List curriculum units for a subject, optionally filtered by grade level or term.",
+  description:
+    "List curriculum units for a subject, optionally filtered by grade level or term.",
   schema: z.object({
     subjectId: z.string().describe("Subject ID"),
     gradeLevelId: z.string().optional(),
@@ -15,7 +16,8 @@ export default defineAction({
   run: async (args) => {
     const db = getDb();
     const conditions = [eq(schema.units.subjectId, args.subjectId)];
-    if (args.gradeLevelId) conditions.push(eq(schema.units.gradeLevelId, args.gradeLevelId));
+    if (args.gradeLevelId)
+      conditions.push(eq(schema.units.gradeLevelId, args.gradeLevelId));
     if (args.termId) conditions.push(eq(schema.units.termId, args.termId));
     if (args.status) conditions.push(eq(schema.units.status, args.status));
     const units = await db

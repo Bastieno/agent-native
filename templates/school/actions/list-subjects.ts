@@ -16,7 +16,8 @@ export default defineAction({
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
     const conditions = [eq(schema.subjects.schoolId, orgId)];
-    if (args.departmentId) conditions.push(eq(schema.subjects.departmentId, args.departmentId));
+    if (args.departmentId)
+      conditions.push(eq(schema.subjects.departmentId, args.departmentId));
     if (args.status) conditions.push(eq(schema.subjects.status, args.status));
     return db
       .select()

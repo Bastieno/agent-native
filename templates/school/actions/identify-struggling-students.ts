@@ -13,14 +13,16 @@ export default defineAction({
     threshold: z
       .number()
       .optional()
-      .describe("Percentage below which a student is considered struggling. Defaults to school pass mark."),
+      .describe(
+        "Percentage below which a student is considered struggling. Defaults to school pass mark.",
+      ),
   }),
   http: false,
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
-    const config = await getOrgSetting(orgId, "school-config") as any;
+    const config = (await getOrgSetting(orgId, "school-config")) as any;
     const threshold = args.threshold ?? config?.passMark ?? 50;
 
     const enrollments = await db

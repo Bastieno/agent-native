@@ -21,7 +21,9 @@ export function useCustomFields(entity?: CustomFieldEntity) {
   const { data, isLoading } = useQuery<CustomFieldsSchema>({
     queryKey: ["custom-fields-schema"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/custom-fields"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-custom-fields-schema"),
+      );
       if (!res.ok) return {} as CustomFieldsSchema;
       return res.json();
     },

@@ -26,8 +26,7 @@ export function useSubmissionEditor(submissionId: string) {
   // Read live draft from app-state (agent tutor can see student's in-progress work)
   const { data: draft } = useQuery<SubmissionDraftState | null>({
     queryKey: ["submission-draft", submissionId],
-    queryFn: () =>
-      apiFetch(`/_agent-native/application-state/${appStateKey}`),
+    queryFn: () => apiFetch(`/_agent-native/application-state/${appStateKey}`),
     refetchInterval: 2_000,
     enabled: !!submissionId,
   });

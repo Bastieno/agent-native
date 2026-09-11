@@ -50,11 +50,15 @@ export default defineAction({
       .boolean()
       .optional()
       .default(false)
-      .describe("Preview what would be inserted without writing to the database"),
+      .describe(
+        "Preview what would be inserted without writing to the database",
+      ),
     subject: z
       .string()
       .optional()
-      .describe('Seed only this subject, e.g. "Mathematics". Omit to seed all.'),
+      .describe(
+        'Seed only this subject, e.g. "Mathematics". Omit to seed all.',
+      ),
   }),
   http: false,
   run: async (args) => {
@@ -74,7 +78,8 @@ export default defineAction({
     if (jsonFiles.length === 0) {
       return {
         success: false,
-        error: "No .json files found in parsed directory. Complete the Co-work parsing step first.",
+        error:
+          "No .json files found in parsed directory. Complete the Co-work parsing step first.",
       };
     }
 
@@ -91,7 +96,11 @@ export default defineAction({
     }
 
     const db = getDb();
-    const results: Array<{ subject: string; status: string; objectives?: number }> = [];
+    const results: Array<{
+      subject: string;
+      status: string;
+      objectives?: number;
+    }> = [];
     let totalInserted = 0;
     let totalSkipped = 0;
 
@@ -105,7 +114,10 @@ export default defineAction({
       }
 
       if (!data.found || !data.strands?.length) {
-        results.push({ subject: data.subject ?? file, status: "skipped: no syllabus content" });
+        results.push({
+          subject: data.subject ?? file,
+          status: "skipped: no syllabus content",
+        });
         continue;
       }
 
@@ -130,13 +142,20 @@ export default defineAction({
         .limit(1);
 
       if (existing.length > 0) {
-        results.push({ subject: data.subject, status: "skipped: already seeded" });
+        results.push({
+          subject: data.subject,
+          status: "skipped: already seeded",
+        });
         totalSkipped++;
         continue;
       }
 
       if (dryRun) {
-        results.push({ subject: data.subject, status: "would insert", objectives: objCount });
+        results.push({
+          subject: data.subject,
+          status: "would insert",
+          objectives: objCount,
+        });
         totalInserted++;
         continue;
       }
@@ -177,7 +196,11 @@ export default defineAction({
         }
       }
 
-      results.push({ subject: data.subject, status: "inserted", objectives: objCount });
+      results.push({
+        subject: data.subject,
+        status: "inserted",
+        objectives: objCount,
+      });
       totalInserted++;
     }
 

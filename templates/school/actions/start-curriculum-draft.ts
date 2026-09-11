@@ -9,7 +9,11 @@ export default defineAction({
   description:
     "Start a durable multi-turn curriculum co-authoring session. Creates a curriculum_drafts SQL row for persistence and a curriculum-draft-{id} app-state key for the live workspace UI. Call update-curriculum-draft after each turn to persist progress.",
   schema: z.object({
-    sessionTitle: z.string().describe("Brief title for this co-authoring session, e.g. 'Grade 9 Science Curriculum'"),
+    sessionTitle: z
+      .string()
+      .describe(
+        "Brief title for this co-authoring session, e.g. 'Grade 9 Science Curriculum'",
+      ),
     initialState: z
       .record(z.string(), z.unknown())
       .optional()

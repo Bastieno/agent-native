@@ -13,8 +13,14 @@ export default defineAction({
       .enum(["list", "create", "update", "delete", "bulk-create"])
       .default("list"),
     id: z.string().optional().describe("Grade level ID for update/delete"),
-    name: z.string().optional().describe("Grade level name, e.g. 'Grade 7' or 'Form 1'"),
-    sequence: z.number().optional().describe("Order position (1 = first/youngest)"),
+    name: z
+      .string()
+      .optional()
+      .describe("Grade level name, e.g. 'Grade 7' or 'Form 1'"),
+    sequence: z
+      .number()
+      .optional()
+      .describe("Order position (1 = first/youngest)"),
     levels: z
       .array(
         z.object({
@@ -57,7 +63,9 @@ export default defineAction({
         visibility: "org" as const,
       }));
       // Replace: delete existing grade levels for this school, then insert fresh
-      await db.delete(schema.gradeLevels).where(eq(schema.gradeLevels.schoolId, orgId));
+      await db
+        .delete(schema.gradeLevels)
+        .where(eq(schema.gradeLevels.schoolId, orgId));
       await db.insert(schema.gradeLevels).values(rows);
       return { created: rows.length, levels: rows };
     }

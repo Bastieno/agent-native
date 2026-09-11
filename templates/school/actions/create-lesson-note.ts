@@ -12,9 +12,16 @@ export default defineAction({
     classId: z.string().describe("Class ID"),
     unitId: z.string().describe("Unit this lesson belongs to"),
     title: z.string().describe("Lesson title"),
-    content: z.string().optional().default("").describe("Initial markdown content"),
+    content: z
+      .string()
+      .optional()
+      .default("")
+      .describe("Initial markdown content"),
     summary: z.string().optional(),
-    lessonDate: z.string().optional().describe("ISO date string for when this lesson will be taught"),
+    lessonDate: z
+      .string()
+      .optional()
+      .describe("ISO date string for when this lesson will be taught"),
     customFields: z.record(z.string(), z.unknown()).optional(),
   }),
   http: { method: "POST" },
@@ -45,6 +52,11 @@ export default defineAction({
       status: "draft",
       customFieldsJson: args.customFields ?? {},
     });
-    return { id, title: args.title, classId: args.classId, unitId: args.unitId };
+    return {
+      id,
+      title: args.title,
+      classId: args.classId,
+      unitId: args.unitId,
+    };
   },
 });

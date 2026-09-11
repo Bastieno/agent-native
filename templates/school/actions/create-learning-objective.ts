@@ -7,9 +7,20 @@ export default defineAction({
   description: "Add a learning objective to a unit.",
   schema: z.object({
     unitId: z.string().describe("Unit ID"),
-    description: z.string().describe("What students will be able to do, e.g. 'Add fractions with unlike denominators'"),
+    description: z
+      .string()
+      .describe(
+        "What students will be able to do, e.g. 'Add fractions with unlike denominators'",
+      ),
     bloomsLevel: z
-      .enum(["remember", "understand", "apply", "analyze", "evaluate", "create"])
+      .enum([
+        "remember",
+        "understand",
+        "apply",
+        "analyze",
+        "evaluate",
+        "create",
+      ])
       .optional()
       .describe("Bloom's taxonomy level"),
     sequence: z.number().optional().default(1),

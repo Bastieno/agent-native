@@ -4,7 +4,8 @@ import { eq, and } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
-  description: "Get aggregate performance statistics for a class: average scores, distribution, completion rates.",
+  description:
+    "Get aggregate performance statistics for a class: average scores, distribution, completion rates.",
   schema: z.object({
     classId: z.string().describe("Class ID"),
   }),
@@ -52,9 +53,10 @@ export default defineAction({
       const percentages = grades
         .map((g) => parseFloat(g.percentage ?? "0"))
         .filter((p) => !isNaN(p));
-      const average = percentages.length > 0
-        ? percentages.reduce((a, b) => a + b, 0) / percentages.length
-        : null;
+      const average =
+        percentages.length > 0
+          ? percentages.reduce((a, b) => a + b, 0) / percentages.length
+          : null;
       const distribution = {
         advanced: percentages.filter((p) => p >= 75).length,
         developing: percentages.filter((p) => p >= 50 && p < 75).length,
@@ -68,7 +70,10 @@ export default defineAction({
         submittedCount: submissions.length,
         gradedCount: grades.length,
         totalStudents,
-        completionRate: totalStudents > 0 ? (submissions.length / totalStudents * 100).toFixed(1) : "0",
+        completionRate:
+          totalStudents > 0
+            ? ((submissions.length / totalStudents) * 100).toFixed(1)
+            : "0",
         averageScore: average !== null ? average.toFixed(1) : null,
         distribution,
       });

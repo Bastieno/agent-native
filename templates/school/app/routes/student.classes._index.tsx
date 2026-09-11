@@ -17,7 +17,9 @@ export default function StudentClasses() {
   const { data: classes, isLoading } = useQuery({
     queryKey: ["my-enrolled-classes"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/my-classes"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-my-classes"),
+      );
       if (!res.ok) return [];
       return res.json();
     },

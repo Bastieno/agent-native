@@ -4,7 +4,8 @@ import { eq } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
-  description: "Publish all grades for an assessment, making them visible to students.",
+  description:
+    "Publish all grades for an assessment, making them visible to students.",
   schema: z.object({
     assessmentId: z.string().describe("Assessment ID"),
   }),

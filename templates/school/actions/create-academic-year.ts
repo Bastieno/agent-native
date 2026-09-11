@@ -11,7 +11,11 @@ export default defineAction({
     name: z.string().describe('Academic year name, e.g. "2025-2026"'),
     startDate: z.string().describe("Start date ISO string"),
     endDate: z.string().describe("End date ISO string"),
-    setActive: z.boolean().optional().default(false).describe("Set this as the active academic year"),
+    setActive: z
+      .boolean()
+      .optional()
+      .default(false)
+      .describe("Set this as the active academic year"),
   }),
   http: { method: "POST" },
   run: async (args) => {
@@ -36,6 +40,11 @@ export default defineAction({
       orgId,
       visibility: "org" as const,
     });
-    return { id, name: args.name, startDate: args.startDate, endDate: args.endDate };
+    return {
+      id,
+      name: args.name,
+      startDate: args.startDate,
+      endDate: args.endDate,
+    };
   },
 });

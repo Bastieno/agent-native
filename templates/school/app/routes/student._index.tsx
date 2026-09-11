@@ -12,7 +12,9 @@ export default function StudentDashboard() {
   const { data: assessments = [] } = useQuery<any[]>({
     queryKey: ["my-assessments"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/my-assessments"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-my-assessments"),
+      );
       if (!res.ok) return [];
       return res.json();
     },

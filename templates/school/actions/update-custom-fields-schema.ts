@@ -34,7 +34,11 @@ export default defineAction({
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
-    const existing = (await getOrgSetting(orgId, "custom-fields-schema") as Record<string, any[]> | null) ?? {};
+    const existing =
+      ((await getOrgSetting(orgId, "custom-fields-schema")) as Record<
+        string,
+        any[]
+      > | null) ?? {};
     const entityFields: any[] = existing[args.entity] ?? [];
 
     let updated = [...entityFields];

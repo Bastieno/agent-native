@@ -4,7 +4,16 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, sql } from "drizzle-orm";
 import { z } from "zod";
 
-const DAY_NAMES = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const DAY_NAMES = [
+  "",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 
 export default defineAction({
   description:
@@ -13,7 +22,9 @@ export default defineAction({
     date: z
       .string()
       .optional()
-      .describe("ISO date string (YYYY-MM-DD). Defaults to today's date. Used to determine the day of week."),
+      .describe(
+        "ISO date string (YYYY-MM-DD). Defaults to today's date. Used to determine the day of week.",
+      ),
   }),
   http: { method: "POST" },
   run: async (args) => {
@@ -47,7 +58,13 @@ export default defineAction({
       );
 
     if (teacherClasses.length === 0) {
-      return { date: targetDate, dayOfWeek, dayName: DAY_NAMES[dayOfWeek], slots: [], message: "No active classes assigned to you." };
+      return {
+        date: targetDate,
+        dayOfWeek,
+        dayName: DAY_NAMES[dayOfWeek],
+        slots: [],
+        message: "No active classes assigned to you.",
+      };
     }
 
     const classIds = teacherClasses.map((c) => c.id);
@@ -82,7 +99,11 @@ export default defineAction({
 
         // Check if there's a lesson note prepared for today
         const [recentLesson] = await db
-          .select({ id: schema.lessonNotes.id, title: schema.lessonNotes.title, status: schema.lessonNotes.status })
+          .select({
+            id: schema.lessonNotes.id,
+            title: schema.lessonNotes.title,
+            status: schema.lessonNotes.status,
+          })
           .from(schema.lessonNotes)
           .where(
             and(

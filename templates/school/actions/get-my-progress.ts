@@ -2,17 +2,34 @@ import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and } from "drizzle-orm";
+import { eq, and, inArray } from "drizzle-orm";
+import {
+  resolveStudentId,
+  resolveUserId,
+} from "../server/lib/student-session.js";
 import { z } from "zod";
 
 export default defineAction({
   description:
     "Student-facing: Get overall progress overview — grades by class, completion rate, strengths and weaknesses.",
   schema: z.object({
-    studentId: z.string().describe("Student record ID"),
+    studentId: z
+      .string()
+      .optional()
+      .describe(
+        "Student record ID. Omit when the signed-in user is the student — it is resolved from the session.",
+      ),
   }),
   http: { method: "GET" },
-  run: async (args) => {
+  run: async (rawArgs) => {
+    const args = {
+      ...rawArgs,
+      studentId: await resolveStudentId(rawArgs.studentId),
+    };
+    if (!args.studentId) {
+      // Staff must name a student; a student is resolved from their session.
+      throw new Error("studentId is required — say which student you mean.");
+    }
     const { orgId } = currentAccess();
     const db = getDb();
     const config = (await getOrgSetting(orgId!, "school-config")) as any;
@@ -88,7 +105,9 @@ export default defineAction({
         .where(
           and(
             eq(schema.submissions.studentId, args.studentId),
-            eq(schema.submissions.status, "submitted"),
+            // Graded work is completed work — counting only "submitted"
+            // reported a student who had been marked as having done nothing.
+            inArray(schema.submissions.status, ["submitted", "graded"]),
           ),
         );
       totalSubmitted += submitted.filter((s) =>

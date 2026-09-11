@@ -7,7 +7,10 @@ import { z } from "zod";
 export default defineAction({
   description: "List terms for a given academic year.",
   schema: z.object({
-    academicYearId: z.string().optional().describe("Filter by academic year ID"),
+    academicYearId: z
+      .string()
+      .optional()
+      .describe("Filter by academic year ID"),
   }),
   http: { method: "GET" },
   run: async (args) => {

@@ -11,8 +11,15 @@ export default defineAction({
     id: z.string().describe("Curriculum draft ID from start-curriculum-draft"),
     stateJson: z
       .record(z.string(), z.unknown())
-      .describe("The full accumulated state object — subjects, units, objectives built so far"),
-    step: z.string().optional().describe("Current step label for the UI, e.g. 'Adding units for Grade 9'"),
+      .describe(
+        "The full accumulated state object — subjects, units, objectives built so far",
+      ),
+    step: z
+      .string()
+      .optional()
+      .describe(
+        "Current step label for the UI, e.g. 'Adding units for Grade 9'",
+      ),
     lastAction: z.string().optional().describe("Last action performed"),
   }),
   http: { method: "PUT" },

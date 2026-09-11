@@ -24,15 +24,17 @@ export function useCurriculumDraft(draftId: string | null) {
   const appStateKey = draftId ? `curriculum-draft-${draftId}` : null;
 
   // Polls the live co-authoring workspace — agent writes here as it builds curriculum
-  const { data: draftState, isLoading } = useQuery<CurriculumDraftState | null>({
-    queryKey: ["curriculum-draft", draftId],
-    queryFn: () =>
-      appStateKey
-        ? apiFetch(`/_agent-native/application-state/${appStateKey}`)
-        : null,
-    refetchInterval: 2_000,
-    enabled: !!draftId,
-  });
+  const { data: draftState, isLoading } = useQuery<CurriculumDraftState | null>(
+    {
+      queryKey: ["curriculum-draft", draftId],
+      queryFn: () =>
+        appStateKey
+          ? apiFetch(`/_agent-native/application-state/${appStateKey}`)
+          : null,
+      refetchInterval: 2_000,
+      enabled: !!draftId,
+    },
+  );
 
   const updateMutation = useMutation({
     mutationFn: (state: Partial<CurriculumDraftState>) =>

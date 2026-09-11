@@ -5,10 +5,16 @@ import { nanoid } from "nanoid";
 import { z } from "zod";
 
 export default defineAction({
-  description: "Create a grading rubric for an assessment (optionally for a specific variant).",
+  description:
+    "Create a grading rubric for an assessment (optionally for a specific variant).",
   schema: z.object({
     assessmentId: z.string().describe("Assessment ID"),
-    variantId: z.string().optional().describe("If set, rubric applies only to this variant. If omitted, applies to all variants."),
+    variantId: z
+      .string()
+      .optional()
+      .describe(
+        "If set, rubric applies only to this variant. If omitted, applies to all variants.",
+      ),
     title: z.string().describe("Rubric title"),
     criteria: z
       .array(
@@ -45,6 +51,10 @@ export default defineAction({
         sequence: c.sequence ?? i + 1,
       });
     }
-    return { id: rubricId, title: args.title, criteriaCount: args.criteria.length };
+    return {
+      id: rubricId,
+      title: args.title,
+      criteriaCount: args.criteria.length,
+    };
   },
 });

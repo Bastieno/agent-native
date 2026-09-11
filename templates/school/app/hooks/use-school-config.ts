@@ -48,7 +48,9 @@ export function useSchoolConfig() {
   const { data, isLoading } = useQuery<SchoolConfig>({
     queryKey: ["school-config"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/config"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-school-config"),
+      );
       if (!res.ok) return DEFAULT_CONFIG;
       const json = await res.json();
       return { ...DEFAULT_CONFIG, ...json };

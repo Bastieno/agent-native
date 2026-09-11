@@ -23,7 +23,9 @@ export default function StudentClassDetail() {
     queryKey: ["student-class", classId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/my-classes/${classId}`),
+        agentNativePath(
+          `/_agent-native/actions/get-my-class?classId=${classId}`,
+        ),
       );
       if (!res.ok) return null;
       return res.json();

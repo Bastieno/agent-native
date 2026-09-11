@@ -8,7 +8,10 @@ export default defineAction({
   description: "Create a department (e.g. Science, Humanities, Languages).",
   schema: z.object({
     name: z.string().describe("Department name"),
-    headTeacherUserId: z.string().optional().describe("User ID of the head teacher"),
+    headTeacherUserId: z
+      .string()
+      .optional()
+      .describe("User ID of the head teacher"),
   }),
   http: { method: "POST" },
   run: async (args) => {

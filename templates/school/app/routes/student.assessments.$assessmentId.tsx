@@ -22,21 +22,12 @@ export default function StudentAssessment() {
     queryKey: ["student-assessment", assessmentId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/assessments/${assessmentId}`),
+        agentNativePath(
+          `/_agent-native/actions/get-my-assessment?assessmentId=${assessmentId}`,
+        ),
       );
       if (!res.ok) return null;
-      // Endpoint returns { assessment, myVariant, mySubmission, myGrade };
-      // flatten it into the shape this screen renders.
-      const data = await res.json();
-      if (!data?.assessment) return null;
-      return {
-        ...data.assessment,
-        variant: data.myVariant ?? null,
-        submission: data.mySubmission
-          ? { ...data.mySubmission, grade: data.myGrade ?? null }
-          : null,
-        submissionId: data.mySubmission?.id ?? null,
-      };
+      return res.json();
     },
     enabled: !!assessmentId,
   });

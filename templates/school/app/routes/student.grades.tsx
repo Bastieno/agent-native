@@ -15,7 +15,9 @@ export default function StudentGrades() {
   const { data: grades = [] } = useQuery<any[]>({
     queryKey: ["my-grades"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/my-grades"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-my-grades"),
+      );
       if (!res.ok) return [];
       return res.json();
     },
@@ -25,11 +27,16 @@ export default function StudentGrades() {
     <div className="p-6 space-y-4">
       <div>
         <h1 className="text-xl font-semibold">My Grades</h1>
-        <p className="text-sm text-muted-foreground mt-1">All published grades across your classes.</p>
+        <p className="text-sm text-muted-foreground mt-1">
+          All published grades across your classes.
+        </p>
       </div>
       {grades.length === 0 ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconTrophy size={28} className="mx-auto text-muted-foreground mb-2" />
+          <IconTrophy
+            size={28}
+            className="mx-auto text-muted-foreground mb-2"
+          />
           <p className="text-sm font-medium">No grades yet</p>
           <p className="text-xs text-muted-foreground mt-1">
             Grades will appear here once your teacher publishes them.
@@ -38,11 +45,16 @@ export default function StudentGrades() {
       ) : (
         <div className="space-y-2">
           {grades.map((grade: any, i: number) => (
-            <div key={i} className="rounded-lg border p-4 flex items-center justify-between">
+            <div
+              key={i}
+              className="rounded-lg border p-4 flex items-center justify-between"
+            >
               <div>
                 <p className="text-sm font-medium">{grade.assessmentTitle}</p>
                 {grade.feedback && (
-                  <p className="text-xs text-muted-foreground line-clamp-1 mt-0.5">{grade.feedback}</p>
+                  <p className="text-xs text-muted-foreground line-clamp-1 mt-0.5">
+                    {grade.feedback}
+                  </p>
                 )}
               </div>
               <div className="text-right">

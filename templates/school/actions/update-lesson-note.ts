@@ -19,7 +19,10 @@ export default defineAction({
   run: async (args) => {
     const db = getDb();
     const { id, customFields, ...rest } = args;
-    const updates: Record<string, unknown> = { ...rest, updatedAt: new Date().toISOString() };
+    const updates: Record<string, unknown> = {
+      ...rest,
+      updatedAt: new Date().toISOString(),
+    };
     if (customFields) {
       const [existing] = await db
         .select({ customFieldsJson: schema.lessonNotes.customFieldsJson })
@@ -31,7 +34,10 @@ export default defineAction({
         ...customFields,
       });
     }
-    await db.update(schema.lessonNotes).set(updates).where(eq(schema.lessonNotes.id, id));
+    await db
+      .update(schema.lessonNotes)
+      .set(updates)
+      .where(eq(schema.lessonNotes.id, id));
     // Sync to live editor app-state
     await writeAppState(`lesson-edit-${id}`, {
       title: rest.title,

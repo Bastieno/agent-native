@@ -4,7 +4,8 @@ import { eq, and, desc } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
-  description: "List lesson notes for a class, optionally filtered by unit or status.",
+  description:
+    "List lesson notes for a class, optionally filtered by unit or status.",
   schema: z.object({
     classId: z.string().describe("Class ID"),
     unitId: z.string().optional(),
@@ -15,8 +16,10 @@ export default defineAction({
   run: async (args) => {
     const db = getDb();
     const conditions = [eq(schema.lessonNotes.classId, args.classId)];
-    if (args.unitId) conditions.push(eq(schema.lessonNotes.unitId, args.unitId));
-    if (args.status) conditions.push(eq(schema.lessonNotes.status, args.status));
+    if (args.unitId)
+      conditions.push(eq(schema.lessonNotes.unitId, args.unitId));
+    if (args.status)
+      conditions.push(eq(schema.lessonNotes.status, args.status));
     return db
       .select()
       .from(schema.lessonNotes)

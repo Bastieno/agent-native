@@ -5,7 +5,8 @@ import { eq, and, ne, sql } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
-  description: "List all staff members (teachers, coordinators, admins) for the school.",
+  description:
+    "List all staff members (teachers, coordinators, admins) for the school.",
   schema: z.object({
     role: z
       .enum(["school_admin", "teacher", "subject_coordinator"])
@@ -22,8 +23,10 @@ export default defineAction({
       eq(schema.schoolProfiles.schoolId, orgId),
       ne(schema.schoolProfiles.schoolRole, "student"),
     ];
-    if (args.role) conditions.push(eq(schema.schoolProfiles.schoolRole, args.role));
-    if (args.status) conditions.push(eq(schema.schoolProfiles.status, args.status));
+    if (args.role)
+      conditions.push(eq(schema.schoolProfiles.schoolRole, args.role));
+    if (args.status)
+      conditions.push(eq(schema.schoolProfiles.status, args.status));
 
     const profiles = await db
       .select()
@@ -33,9 +36,9 @@ export default defineAction({
     // Enrich with name and email from the framework user table
     const enriched = await Promise.all(
       profiles.map(async (p) => {
-        const userRow = await db.get(
+        const userRow = (await db.get(
           sql`SELECT email, name FROM "user" WHERE id = ${p.userId} LIMIT 1`,
-        ) as { email: string; name: string } | undefined;
+        )) as { email: string; name: string } | undefined;
         return {
           ...p,
           email: userRow?.email ?? null,

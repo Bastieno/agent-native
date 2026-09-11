@@ -11,7 +11,9 @@ export default defineAction({
   http: false,
   run: async (args) => {
     if (!/^\s*SELECT/i.test(args.sql)) {
-      throw new Error("Only SELECT queries are allowed in db-query. Use db-exec for mutations.");
+      throw new Error(
+        "Only SELECT queries are allowed in db-query. Use db-exec for mutations.",
+      );
     }
     const db = getDb();
     const result = await db.run(sql.raw(args.sql));

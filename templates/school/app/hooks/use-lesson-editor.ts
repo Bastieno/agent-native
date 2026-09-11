@@ -29,8 +29,7 @@ export function useLessonEditor(lessonId: string) {
   // Read live edit state from app-state (agent writes here too)
   const { data: liveEdit } = useQuery<LessonEditState | null>({
     queryKey: ["lesson-edit", lessonId],
-    queryFn: () =>
-      apiFetch(`/_agent-native/application-state/${appStateKey}`),
+    queryFn: () => apiFetch(`/_agent-native/application-state/${appStateKey}`),
     refetchInterval: 2_000,
     enabled: !!lessonId,
   });

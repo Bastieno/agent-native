@@ -16,7 +16,9 @@ export default function StudentProgress() {
   const { data: progress } = useQuery({
     queryKey: ["my-progress"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/my-progress"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-my-progress"),
+      );
       if (!res.ok) return null;
       return res.json();
     },

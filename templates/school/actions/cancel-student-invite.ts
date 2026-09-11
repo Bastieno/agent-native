@@ -7,7 +7,10 @@ export default defineAction({
   description:
     "Cancel a pending student invitation. Use this before re-inviting if the email was wrong or the invite needs to be resent fresh.",
   schema: z.object({
-    email: z.string().email().describe("Email address of the pending invite to cancel"),
+    email: z
+      .string()
+      .email()
+      .describe("Email address of the pending invite to cancel"),
   }),
   http: { method: "POST" },
   run: async (args) => {

@@ -14,7 +14,9 @@ export default function StudentLesson() {
     queryKey: ["student-lesson", lessonId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/lessons/${lessonId}`),
+        agentNativePath(
+          `/_agent-native/actions/get-lesson-note?id=${lessonId}`,
+        ),
       );
       if (!res.ok) return null;
       return res.json();

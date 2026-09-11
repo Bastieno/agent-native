@@ -9,7 +9,8 @@ export default defineAction({
   http: { method: "GET" },
   run: async () => {
     const { orgId } = currentAccess();
-    if (!orgId) throw new Error("No school (org) context found. Are you logged in?");
+    if (!orgId)
+      throw new Error("No school (org) context found. Are you logged in?");
     const config = await getOrgSetting(orgId, "school-config");
     const customFields = await getOrgSetting(orgId, "custom-fields-schema");
     return {

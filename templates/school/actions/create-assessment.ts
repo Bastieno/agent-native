@@ -14,10 +14,21 @@ export default defineAction({
     title: z.string().describe("Assessment title"),
     description: z.string().optional(),
     assessmentType: z
-      .enum(["homework", "quiz", "test", "project", "oral", "practical", "custom"])
+      .enum([
+        "homework",
+        "quiz",
+        "test",
+        "project",
+        "oral",
+        "practical",
+        "custom",
+      ])
       .optional()
       .default("homework"),
-    dueDate: z.string().optional().describe("ISO date string for when it is due"),
+    dueDate: z
+      .string()
+      .optional()
+      .describe("ISO date string for when it is due"),
     totalPoints: z.number().optional().default(100),
     customFields: z.record(z.string(), z.unknown()).optional(),
   }),

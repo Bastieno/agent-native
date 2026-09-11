@@ -4,7 +4,8 @@ import { eq, and } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
-  description: "Get the full gradebook for a class and term. Returns all students × all assessments with scores.",
+  description:
+    "Get the full gradebook for a class and term. Returns all students × all assessments with scores.",
   schema: z.object({
     classId: z.string().describe("Class ID"),
     termId: z.string().optional().describe("Term ID to filter assessments"),
@@ -38,7 +39,15 @@ export default defineAction({
         .limit(1);
       if (!student) continue;
 
-      const grades: Record<string, { score: number | null; percentage: string | null; letterGrade: string | null; isPublished: boolean }> = {};
+      const grades: Record<
+        string,
+        {
+          score: number | null;
+          percentage: string | null;
+          letterGrade: string | null;
+          isPublished: boolean;
+        }
+      > = {};
       for (const assessment of assessments) {
         const [submission] = await db
           .select()
@@ -63,15 +72,29 @@ export default defineAction({
             isPublished: !!grade?.isPublished,
           };
         } else {
-          grades[assessment.id] = { score: null, percentage: null, letterGrade: null, isPublished: false };
+          grades[assessment.id] = {
+            score: null,
+            percentage: null,
+            letterGrade: null,
+            isPublished: false,
+          };
         }
       }
-      gradebook.push({ studentId: student.id, studentUserId: enrollment.studentUserId, grades });
+      gradebook.push({
+        studentId: student.id,
+        studentUserId: enrollment.studentUserId,
+        grades,
+      });
     }
 
     return {
       classId: args.classId,
-      assessments: assessments.map((a) => ({ id: a.id, title: a.title, totalPoints: a.totalPoints, assessmentType: a.assessmentType })),
+      assessments: assessments.map((a) => ({
+        id: a.id,
+        title: a.title,
+        totalPoints: a.totalPoints,
+        assessmentType: a.assessmentType,
+      })),
       gradebook,
     };
   },

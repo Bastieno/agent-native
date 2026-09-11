@@ -49,11 +49,15 @@ export default defineAction({
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
-    const existing = (await getOrgSetting(orgId, "school-config") as Record<string, unknown> | null) ?? {};
+    const existing =
+      ((await getOrgSetting(orgId, "school-config")) as Record<
+        string,
+        unknown
+      > | null) ?? {};
     const merged = { ...existing, ...args } as Record<string, unknown>;
     if (args.customLabels) {
       merged.customLabels = {
-        ...(existing.customLabels as Record<string, string> ?? {}),
+        ...((existing.customLabels as Record<string, string>) ?? {}),
         ...args.customLabels,
       };
     }

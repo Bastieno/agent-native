@@ -5,7 +5,8 @@ import { nanoid } from "nanoid";
 import { z } from "zod";
 
 export default defineAction({
-  description: "Create a class (a teacher's delivery of a subject to a grade level in an academic year).",
+  description:
+    "Create a class (a teacher's delivery of a subject to a grade level in an academic year).",
   schema: z.object({
     subjectId: z.string(),
     gradeLevelId: z.string(),
@@ -24,7 +25,7 @@ export default defineAction({
     const id = nanoid();
     await db.insert(schema.classes).values({
       id,
-      
+
       subjectId: args.subjectId,
       gradeLevelId: args.gradeLevelId,
       academicYearId: args.academicYearId,

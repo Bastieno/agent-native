@@ -47,14 +47,17 @@ export default defineAction({
     }> = [];
 
     if (args.strategy === "auto-by-category") {
-      if (!args.classId) throw new Error("Provide --classId for auto-by-category strategy.");
+      if (!args.classId)
+        throw new Error("Provide --classId for auto-by-category strategy.");
 
       // Get all variants for this assessment
       const variants = await db
         .select()
         .from(schema.assessmentVariants)
         .where(eq(schema.assessmentVariants.assessmentId, args.assessmentId));
-      const variantByDifficulty = new Map(variants.map((v) => [v.difficulty, v.id]));
+      const variantByDifficulty = new Map(
+        variants.map((v) => [v.difficulty, v.id]),
+      );
 
       // Get all enrolled students with their categories
       const enrollments = await db
@@ -86,20 +89,29 @@ export default defineAction({
           )
           .limit(1);
 
-        const difficulty = category ? CATEGORY_TO_DIFFICULTY[category.category] : null;
+        const difficulty = category
+          ? CATEGORY_TO_DIFFICULTY[category.category]
+          : null;
         const variantId = difficulty
           ? (variantByDifficulty.get(difficulty) ?? args.defaultVariantId)
           : args.defaultVariantId;
 
         if (variantId) {
-          assignments.push({ studentId: student.id, variantId, category: category?.category });
+          assignments.push({
+            studentId: student.id,
+            variantId,
+            category: category?.category,
+          });
         }
       }
     } else if (args.strategy === "manual") {
       if (!args.variantAssignments?.length)
         throw new Error("Provide --variantAssignments for manual strategy.");
       assignments.push(
-        ...args.variantAssignments.map((a) => ({ studentId: a.studentId, variantId: a.variantId })),
+        ...args.variantAssignments.map((a) => ({
+          studentId: a.studentId,
+          variantId: a.variantId,
+        })),
       );
     }
 
