@@ -135,19 +135,49 @@ the school's own conventions survive, rather than US defaults.
 
 ### A6. Curriculum (the big one)
 
-> Let's build the JSS1 Mathematics curriculum for Term 1, aligned to NERDC.
+Two ways to do this. Try the generator first — it is the one that makes a new
+school look like a working school.
 
-**Expect:** the agent calls `list-framework-objectives` for NERDC Mathematics,
-proposes units with objectives, and the Curriculum Setup page shows the tree
-appearing live. Approve it and ask it to commit.
+> Generate the scheme of work for JSS1 Mathematics, First Term, using NERDC.
 
-**Check:** units appear under Mathematics with learning objectives attached, and
-the objectives resemble the real NERDC syllabus rather than invented topics.
+**Expect:** a preview — how many teaching weeks the term's dates give, how many
+exam weeks are reserved, which units, how many objectives, and how many lesson
+notes it would create. Nothing is written until you confirm.
+
+> Yes, create it.
+
+**Check:** the number of weeks matches your term dates (a 2025-09-01 to
+2025-12-15 term gives 15 weeks: 14 teaching plus 1 exam), the units are real
+NERDC strands rather than invented topics, and each teaching week now has a
+draft lesson note for every class in that subject and year group.
+
+Then the conversational route, which is better when you want to shape the
+pacing yourself:
+
+> Let's build the JSS1 English curriculum for First Term together, aligned to
+> NERDC. Read the framework objectives first.
+
+**Check:** the Curriculum Setup page shows the tree appearing live as you talk.
 
 > Switch the agent to Sonnet or Opus for this step. Haiku is too weak for
 > curriculum writing. The model picker is at the bottom of the chat.
 
-Repeat briefly for English so students have two subjects.
+**Note:** generating twice for the same subject, year group and term is refused
+on purpose, so a curriculum cannot be duplicated. Pass "replace" to redo one —
+the superseded units are archived, not deleted.
+
+### A6b. The curriculum calendar
+
+Open **Calendar** in the sidebar.
+
+**Check:** the term is laid out week by week for the year group you pick.
+"All subjects" shows a grid — subjects down, weeks across, coloured by whether
+each week's lesson is ready, drafted, or missing — and choosing one subject
+opens its weeks in detail. Subjects with no plan for that year group are named
+underneath, which is the thing worth noticing.
+
+**Check on a phone-sized window:** the grid becomes one card per subject. If
+you see a table squeezed sideways, that is a bug.
 
 ### A7. Invite the two teachers
 
@@ -207,8 +237,10 @@ reads in later sessions — worth confirming it persists.
 
 > How is the school performing so far?
 
-**Known gap:** the Analytics _page_ always shows "—"; its API was never
-finished. The agent's answer does work. Don't log the page as a new bug.
+**Check:** the Analytics page now shows real figures — school average,
+completion, active students, graded submissions, and breakdowns by subject and
+year group. The page and the agent read the same computation, so if they
+disagree, that is a bug worth reporting.
 
 ---
 
@@ -221,7 +253,9 @@ the agent in plain language.
 (any naming); grading scale; pass mark; term structure; academic years and
 terms; departments; custom terminology ("learners" instead of "students").
 
-**Curriculum:** subjects; units with week ranges; learning objectives with
+**Curriculum:** generate a term's scheme of work for a subject and year group
+(units, objectives, and a draft lesson note per teaching week); the week-by-week
+calendar; subjects; units with week ranges; learning objectives with
 Bloom's levels; multi-turn curriculum co-authoring; standards alignment against
 the seeded WAEC/NERDC libraries; reordering units.
 
@@ -313,9 +347,10 @@ Sign in as `student1@pilot.test` (Ada) in her own window.
 **Check:** Dashboard shows pending work; the class page lists the assessment and
 the lesson note.
 
-**Known gap:** lesson notes are **not readable by students** — the class page
-shows the title and summary, but there is no page to open. Ask if you want this
-built; it is small.
+**Check:** tap a lesson note. It should open and render as a formatted
+document — headings, lists, and any maths — not raw markdown symbols. Only
+lessons the teacher has finalized appear; drafts must stay invisible to
+students.
 
 ### C2. Open the assessment
 
@@ -404,22 +439,68 @@ As the admin:
 
 ---
 
+## Fixed since this plan was written
+
+These were gaps in the first draft and are now done. If any of them
+misbehaves, that is a regression and worth reporting.
+
+| Area               | What changed                                                                      |
+| ------------------ | --------------------------------------------------------------------------------- |
+| Lesson notes       | Students can open and read them; drafts stay private to the teacher               |
+| Admin analytics    | Real figures, computed by the same action the agent uses                          |
+| Loading states     | Lists show skeletons, no longer claim to be empty while loading                   |
+| Role permissions   | All 106 actions role-checked, on the UI, the agent and external clients alike     |
+| Class-level access | A teacher cannot reach another class's gradebook, lessons or submissions          |
+| Student data       | A student cannot read another student's grades, progress or work                  |
+| Raw SQL            | Removed from the agent's tools — data is reachable only through checked actions   |
+| Tablet layout      | Navigation and agent panel collapse as the screen narrows; content keeps the room |
+| Curriculum         | Scheme-of-work generator and a week-by-week calendar                              |
+| Data path          | 32 parallel API endpoints folded into actions, so UI and agent cannot diverge     |
+
+---
+
 ## Known gaps — expected, don't log as new
 
-Found during the Phase 0 walkthrough. Everything else you hit is new information.
+| #   | Gap                                             | Impact                          |
+| --- | ----------------------------------------------- | ------------------------------- |
+| 1   | Teachers cannot review student AI chats         | Safeguarding — before children  |
+| 2   | Students can pick the AI model                  | Cost; a UI lock is still open   |
+| 3   | AI marking quality is unproven                  | Test in D2 — the key question   |
+| 4   | No whiteboard, file or photo answers            | Next build phase                |
+| 5   | No CSV import, attendance, or parent access     | Later phase                     |
+| 6   | Nothing is deployed yet                         | Local only; Netlify + Neon next |
+| 7   | Phones show the agent panel at 85% width        | Tablets are the pilot target    |
+| 8   | Grade thresholds in the gradebook are hardcoded | Ignores your custom pass mark   |
 
-| #   | Gap                                           | Impact                  |
-| --- | --------------------------------------------- | ----------------------- |
-| 1   | Students cannot open a lesson note            | Blocks C1               |
-| 2   | Admin Analytics page always shows "—"         | Use the agent instead   |
-| 3   | Lists show "none yet" while still loading     | Looks like data loss    |
-| 4   | Student portal is cramped on tablets          | Pilot-critical, Phase 2 |
-| 5   | Students see a model picker and Workspace tab | Cost and safety         |
-| 6   | Almost no action checks your role             | Phase 1 security        |
-| 7   | Teachers can't review student AI chats        | Safeguarding, Phase 2   |
-| 8   | AI marking quality is unproven                | Test in D2              |
-| 9   | No whiteboard, file or photo answers          | Phase 2                 |
-| 10  | No CSV import, attendance, or parent access   | Phase 2/3               |
+---
+
+## Also worth testing now
+
+Things built after the first draft, which the stages above do not fully cover.
+
+### Curriculum regeneration
+
+> Generate the scheme of work for JSS1 Mathematics, First Term again.
+
+**Check:** it refuses rather than duplicating the curriculum, and says to pass
+"replace" instead.
+
+### Working from your own Claude (optional)
+
+If you connected Claude Code over MCP, the same actions are reachable there.
+
+> Use only the agent-native-localhost MCP tools. List the classes in the school.
+
+**Check:** it answers with names, not IDs. Then swap the email in the MCP
+config to a teacher's and ask it to invite a staff member — it must refuse.
+This runs on your Claude subscription rather than the app's API key, which is
+the argument for teachers doing heavy curriculum work this way.
+
+### Every screen at three widths
+
+Open each portal at a phone width, a tablet width, and full screen, **with the
+agent panel open**. Most layout faults found so far only appeared with the
+panel open, because it takes a third of the screen.
 
 ---
 
@@ -431,6 +512,7 @@ For each stage note: worked / broken / awkward. "Awkward" matters as much as
 | Stage                               | Result | Notes |
 | ----------------------------------- | ------ | ----- |
 | A1–A6 school + curriculum           |        |       |
+| A6b curriculum calendar             |        |       |
 | A7–A11 people and classes           |        |       |
 | A12–A15 timetable, guide, analytics |        |       |
 | B1–B3 lesson notes                  |        |       |
@@ -440,6 +522,9 @@ For each stage note: worked / broken / awkward. "Awkward" matters as much as
 | C5–C6 submission                    |        |       |
 | D1–D2 grading                       |        |       |
 | D3–D5 publish and analytics         |        |       |
+| Regeneration refused                |        |       |
+| MCP from your own Claude (optional) |        |       |
+| Three widths, agent panel open      |        |       |
 
 The three questions worth answering by the end:
 
