@@ -3,6 +3,7 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
+import { ListState } from "@/components/ListState";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -37,7 +38,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { IconSearch, IconUsers, IconDotsVertical, IconUserPlus, IconMailForward, IconX } from "@tabler/icons-react";
+import {
+  IconSearch,
+  IconUsers,
+  IconDotsVertical,
+  IconUserPlus,
+  IconMailForward,
+  IconX,
+} from "@tabler/icons-react";
 
 async function callAction(name: string, params: Record<string, unknown>) {
   const res = await fetch(agentNativePath(`/_agent-native/actions/${name}`), {
@@ -78,7 +86,7 @@ export default function AdminStudents() {
     sync({ role: "admin", view: "students" });
   }, [sync]);
 
-  const { data: students = [] } = useQuery<any[]>({
+  const { data: students = [], isLoading } = useQuery<any[]>({
     queryKey: ["admin-students"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/api/school/students"));
@@ -90,7 +98,9 @@ export default function AdminStudents() {
   const { data: pendingInvites = [] } = useQuery<any[]>({
     queryKey: ["admin-student-invites"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/students/invitations"));
+      const res = await fetch(
+        agentNativePath("/api/school/students/invitations"),
+      );
       if (!res.ok) return [];
       return res.json();
     },
@@ -107,7 +117,10 @@ export default function AdminStudents() {
   }
 
   const gradeLevels = useMemo(
-    () => Array.from(new Set(students.map((s: any) => s.gradeLevelName).filter(Boolean))).sort(),
+    () =>
+      Array.from(
+        new Set(students.map((s: any) => s.gradeLevelName).filter(Boolean)),
+      ).sort(),
     [students],
   );
 
@@ -117,7 +130,8 @@ export default function AdminStudents() {
       s.name?.toLowerCase().includes(search.toLowerCase()) ||
       s.email?.toLowerCase().includes(search.toLowerCase()) ||
       s.admissionNumber?.toLowerCase().includes(search.toLowerCase());
-    const matchesGrade = gradeFilter === "all" || s.gradeLevelName === gradeFilter;
+    const matchesGrade =
+      gradeFilter === "all" || s.gradeLevelName === gradeFilter;
     return matchesSearch && matchesGrade;
   });
 
@@ -125,7 +139,10 @@ export default function AdminStudents() {
     if (!inviteName || !inviteEmail) return;
     setInviteLoading(true);
     try {
-      await callAction("invite-student", { name: inviteName, email: inviteEmail });
+      await callAction("invite-student", {
+        name: inviteName,
+        email: inviteEmail,
+      });
       qc.invalidateQueries({ queryKey: ["admin-students"] });
       toast.success(`Invite sent to ${inviteEmail}`);
       setInviteOpen(false);
@@ -166,7 +183,10 @@ export default function AdminStudents() {
     if (!suspendTarget) return;
     setSuspendLoading(true);
     try {
-      await callAction("update-student", { id: suspendTarget.id, status: "inactive" });
+      await callAction("update-student", {
+        id: suspendTarget.id,
+        status: "inactive",
+      });
       qc.invalidateQueries({ queryKey: ["admin-students"] });
       toast.success("Student suspended");
       setSuspendTarget(null);
@@ -221,18 +241,21 @@ export default function AdminStudents() {
         )}
       </div>
 
-      {filtered.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconUsers size={32} className="mx-auto text-muted-foreground mb-3" />
-          <p className="text-sm font-medium">
-            {search || gradeFilter !== "all" ? "No students match" : "No students yet"}
-          </p>
-          <p className="text-xs text-muted-foreground mt-1">
-            {search || gradeFilter !== "all"
+      {isLoading || filtered.length === 0 ? (
+        <ListState
+          loading={isLoading}
+          icon={IconUsers}
+          title={
+            search || gradeFilter !== "all"
+              ? "No students match"
+              : "No students yet"
+          }
+          description={
+            search || gradeFilter !== "all"
               ? "Try adjusting your search or filter."
-              : "Click \"Invite Student\" to add your first student."}
-          </p>
-        </div>
+              : 'Click "Invite Student" to add your first student.'
+          }
+        />
       ) : (
         <div className="rounded-lg border divide-y">
           {filtered.map((student: any) => (
@@ -243,21 +266,33 @@ export default function AdminStudents() {
                 </p>
                 <p className="text-xs text-muted-foreground">
                   {student.email && student.name ? student.email : null}
-                  {student.admissionNumber ? ` · ${student.admissionNumber}` : null}
-                  {student.gradeLevelName ? ` · ${student.gradeLevelName}` : null}
+                  {student.admissionNumber
+                    ? ` · ${student.admissionNumber}`
+                    : null}
+                  {student.gradeLevelName
+                    ? ` · ${student.gradeLevelName}`
+                    : null}
                 </p>
               </div>
-              <Badge variant={student.status === "active" ? "default" : "secondary"}>
+              <Badge
+                variant={student.status === "active" ? "default" : "secondary"}
+              >
                 {student.status}
               </Badge>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-7 w-7 shrink-0"
+                  >
                     <IconDotsVertical size={14} />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={() => openEdit(student)}>Edit</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => openEdit(student)}>
+                    Edit
+                  </DropdownMenuItem>
                   {student.status === "active" && (
                     <DropdownMenuItem
                       className="text-destructive"
@@ -287,7 +322,9 @@ export default function AdminStudents() {
                   <p className="text-sm font-medium">{inv.name}</p>
                   <p className="text-xs text-muted-foreground">{inv.email}</p>
                 </div>
-                <Badge variant="outline" className="text-xs">Pending</Badge>
+                <Badge variant="outline" className="text-xs">
+                  Pending
+                </Badge>
                 <Button
                   variant="ghost"
                   size="icon"
@@ -342,7 +379,10 @@ export default function AdminStudents() {
       </Dialog>
 
       {/* Edit Student Dialog */}
-      <Dialog open={!!editTarget} onOpenChange={(o) => !o && setEditTarget(null)}>
+      <Dialog
+        open={!!editTarget}
+        onOpenChange={(o) => !o && setEditTarget(null)}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Edit Student</DialogTitle>
@@ -369,7 +409,10 @@ export default function AdminStudents() {
       </Dialog>
 
       {/* Suspend AlertDialog */}
-      <AlertDialog open={!!suspendTarget} onOpenChange={(o) => !o && setSuspendTarget(null)}>
+      <AlertDialog
+        open={!!suspendTarget}
+        onOpenChange={(o) => !o && setSuspendTarget(null)}
+      >
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
@@ -381,7 +424,10 @@ export default function AdminStudents() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={handleSuspend} disabled={suspendLoading}>
+            <AlertDialogAction
+              onClick={handleSuspend}
+              disabled={suspendLoading}
+            >
               {suspendLoading ? "Suspending…" : "Suspend"}
             </AlertDialogAction>
           </AlertDialogFooter>

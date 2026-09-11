@@ -4,6 +4,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
+import { ListState } from "@/components/ListState";
 import { IconSchool, IconUsers, IconChevronRight } from "@tabler/icons-react";
 
 export default function TeacherClasses() {
@@ -13,7 +14,7 @@ export default function TeacherClasses() {
     sync({ role: "teacher", view: "classes" });
   }, [sync]);
 
-  const { data: classes } = useQuery({
+  const { data: classes, isLoading } = useQuery({
     queryKey: ["my-classes"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/api/school/my-classes"));
@@ -31,17 +32,13 @@ export default function TeacherClasses() {
         </p>
       </div>
 
-      {!classes || classes.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconSchool
-            size={28}
-            className="mx-auto text-muted-foreground mb-2"
-          />
-          <p className="text-sm font-medium">No classes assigned yet</p>
-          <p className="text-xs text-muted-foreground mt-1">
-            An admin needs to assign you to classes first.
-          </p>
-        </div>
+      {isLoading || !classes || classes.length === 0 ? (
+        <ListState
+          loading={isLoading}
+          icon={IconSchool}
+          title="No classes assigned yet"
+          description="An admin needs to assign you to classes first."
+        />
       ) : (
         <div className="grid grid-cols-2 gap-4">
           {(classes ?? []).map((cls: any) => (

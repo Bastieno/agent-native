@@ -3,6 +3,7 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
+import { ListState } from "@/components/ListState";
 import { Badge } from "@/components/ui/badge";
 import { IconUsers, IconSearch } from "@tabler/icons-react";
 
@@ -20,7 +21,7 @@ export default function TeacherStudents() {
     sync({ role: "teacher", view: "students" });
   }, [sync]);
 
-  const { data: students } = useQuery({
+  const { data: students, isLoading } = useQuery({
     queryKey: ["teacher-students"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/api/school/my-students"));
@@ -60,13 +61,12 @@ export default function TeacherStudents() {
         />
       </div>
 
-      {filtered.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconUsers size={28} className="mx-auto text-muted-foreground mb-2" />
-          <p className="text-sm font-medium">
-            {search ? "No students match your search" : "No students yet"}
-          </p>
-        </div>
+      {isLoading || filtered.length === 0 ? (
+        <ListState
+          loading={isLoading}
+          icon={IconUsers}
+          title={search ? "No students match your search" : "No students yet"}
+        />
       ) : (
         <div className="rounded-lg border">
           <table className="w-full text-sm">
@@ -76,7 +76,9 @@ export default function TeacherStudents() {
                 <th className="px-4 py-2.5 text-left font-medium">Class</th>
                 <th className="px-4 py-2.5 text-left font-medium">Category</th>
                 <th className="px-4 py-2.5 text-left font-medium">Avg Score</th>
-                <th className="px-4 py-2.5 text-left font-medium">Completion</th>
+                <th className="px-4 py-2.5 text-left font-medium">
+                  Completion
+                </th>
               </tr>
             </thead>
             <tbody>

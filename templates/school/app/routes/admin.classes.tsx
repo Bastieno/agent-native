@@ -3,6 +3,7 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { ListState } from "@/components/ListState";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
@@ -12,7 +13,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { IconSchool, IconUsers, IconChevronDown, IconChevronRight } from "@tabler/icons-react";
+import {
+  IconSchool,
+  IconUsers,
+  IconChevronDown,
+  IconChevronRight,
+} from "@tabler/icons-react";
 import {
   Select,
   SelectContent,
@@ -59,7 +65,7 @@ export default function AdminClasses() {
   });
   const staffList = staffData?.active ?? [];
 
-  const { data: classes = [] } = useQuery<any[]>({
+  const { data: classes = [], isLoading } = useQuery<any[]>({
     queryKey: ["admin-classes"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/api/school/classes"));
@@ -79,20 +85,28 @@ export default function AdminClasses() {
   }, [sync, classes.length, gradeFilter, teacherFilter]);
 
   const gradeLevels = useMemo(
-    () => Array.from(new Set(classes.map((c: any) => c.gradeLevelName).filter(Boolean))).sort(),
+    () =>
+      Array.from(
+        new Set(classes.map((c: any) => c.gradeLevelName).filter(Boolean)),
+      ).sort(),
     [classes],
   );
 
   const teachers = useMemo(
-    () => Array.from(new Set(classes.map((c: any) => c.teacherName).filter(Boolean))).sort(),
+    () =>
+      Array.from(
+        new Set(classes.map((c: any) => c.teacherName).filter(Boolean)),
+      ).sort(),
     [classes],
   );
 
   const filtered = useMemo(
     () =>
       classes.filter((c: any) => {
-        if (gradeFilter !== "all" && c.gradeLevelName !== gradeFilter) return false;
-        if (teacherFilter !== "all" && c.teacherName !== teacherFilter) return false;
+        if (gradeFilter !== "all" && c.gradeLevelName !== gradeFilter)
+          return false;
+        if (teacherFilter !== "all" && c.teacherName !== teacherFilter)
+          return false;
         return true;
       }),
     [classes, gradeFilter, teacherFilter],
@@ -194,18 +208,19 @@ export default function AdminClasses() {
 
       {/* Content */}
       <div className="flex-1 overflow-auto px-6 pb-6 space-y-3">
-        {filtered.length === 0 ? (
-          <div className="rounded-lg border border-dashed p-10 text-center">
-            <IconSchool size={28} className="mx-auto text-muted-foreground mb-2" />
-            <p className="text-sm font-medium">
-              {hasFilters ? "No classes match these filters" : "No classes yet"}
-            </p>
-            <p className="text-xs text-muted-foreground mt-1">
-              {hasFilters
+        {isLoading || filtered.length === 0 ? (
+          <ListState
+            loading={isLoading}
+            icon={IconSchool}
+            title={
+              hasFilters ? "No classes match these filters" : "No classes yet"
+            }
+            description={
+              hasFilters
                 ? "Try adjusting the filters above."
-                : "Ask the agent to create classes."}
-            </p>
-          </div>
+                : "Ask the agent to create classes."
+            }
+          />
         ) : (
           grouped.map(([grade, rows]) => {
             const isCollapsed = collapsed[grade];
@@ -222,9 +237,15 @@ export default function AdminClasses() {
                       {rows.length} class{rows.length !== 1 ? "es" : ""}
                     </span>
                     {isCollapsed ? (
-                      <IconChevronRight size={14} className="text-muted-foreground" />
+                      <IconChevronRight
+                        size={14}
+                        className="text-muted-foreground"
+                      />
                     ) : (
-                      <IconChevronDown size={14} className="text-muted-foreground" />
+                      <IconChevronDown
+                        size={14}
+                        className="text-muted-foreground"
+                      />
                     )}
                   </div>
                 </button>
@@ -258,7 +279,9 @@ export default function AdminClasses() {
                           className="border-b last:border-0 hover:bg-muted/20 cursor-pointer"
                           onClick={() => openClassDialog(cls)}
                         >
-                          <td className="px-4 py-2.5 font-medium">{cls.name}</td>
+                          <td className="px-4 py-2.5 font-medium">
+                            {cls.name}
+                          </td>
                           <td className="px-4 py-2.5 text-muted-foreground">
                             {cls.subjectName ?? "—"}
                           </td>
@@ -273,7 +296,11 @@ export default function AdminClasses() {
                           </td>
                           <td className="px-4 py-2.5">
                             <Badge
-                              variant={cls.status === "active" ? "default" : "secondary"}
+                              variant={
+                                cls.status === "active"
+                                  ? "default"
+                                  : "secondary"
+                              }
                               className="text-xs capitalize"
                             >
                               {cls.status}
@@ -291,7 +318,10 @@ export default function AdminClasses() {
       </div>
 
       {/* Class detail dialog */}
-      <Dialog open={!!selectedClass} onOpenChange={(o) => !o && setSelectedClass(null)}>
+      <Dialog
+        open={!!selectedClass}
+        onOpenChange={(o) => !o && setSelectedClass(null)}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>{selectedClass?.name}</DialogTitle>
@@ -299,11 +329,17 @@ export default function AdminClasses() {
           <div className="space-y-4 py-2 text-sm">
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-muted-foreground">
               <span>Subject</span>
-              <span className="text-foreground">{selectedClass?.subjectName ?? "—"}</span>
+              <span className="text-foreground">
+                {selectedClass?.subjectName ?? "—"}
+              </span>
               <span>Grade</span>
-              <span className="text-foreground">{selectedClass?.gradeLevelName ?? "—"}</span>
+              <span className="text-foreground">
+                {selectedClass?.gradeLevelName ?? "—"}
+              </span>
               <span>Students</span>
-              <span className="text-foreground">{selectedClass?.enrollmentCount ?? 0}</span>
+              <span className="text-foreground">
+                {selectedClass?.enrollmentCount ?? 0}
+              </span>
             </div>
             <div className="space-y-1.5">
               <Label>Primary Teacher</Label>

@@ -4,6 +4,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ListState } from "@/components/ListState";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -89,7 +90,7 @@ export default function AdminStaff() {
     sync({ role: "admin", view: "staff" });
   }, [sync]);
 
-  const { data } = useQuery<{ active: any[]; pending: any[] }>({
+  const { data, isLoading } = useQuery<{ active: any[]; pending: any[] }>({
     queryKey: ["admin-staff"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/api/school/staff"));
@@ -174,14 +175,13 @@ export default function AdminStaff() {
         </Button>
       </div>
 
-      {isEmpty ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconUsers size={32} className="mx-auto text-muted-foreground mb-3" />
-          <p className="text-sm font-medium">No staff members yet</p>
-          <p className="text-xs text-muted-foreground mt-1">
-            Click &ldquo;Invite Staff&rdquo; to add your first team member.
-          </p>
-        </div>
+      {isLoading || isEmpty ? (
+        <ListState
+          loading={isLoading}
+          icon={IconUsers}
+          title="No staff members yet"
+          description="Click “Invite Staff” to add your first team member."
+        />
       ) : (
         <>
           {active.length > 0 && (

@@ -4,6 +4,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
+import { ListState } from "@/components/ListState";
 import { IconBook, IconChevronRight } from "@tabler/icons-react";
 
 export default function StudentClasses() {
@@ -13,7 +14,7 @@ export default function StudentClasses() {
     sync({ role: "student", view: "classes" });
   }, [sync]);
 
-  const { data: classes } = useQuery({
+  const { data: classes, isLoading } = useQuery({
     queryKey: ["my-enrolled-classes"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/api/school/my-classes"));
@@ -31,14 +32,13 @@ export default function StudentClasses() {
         </p>
       </div>
 
-      {!classes || classes.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconBook size={28} className="mx-auto text-muted-foreground mb-2" />
-          <p className="text-sm font-medium">No classes yet</p>
-          <p className="text-xs text-muted-foreground mt-1">
-            Your teacher will enroll you in classes.
-          </p>
-        </div>
+      {isLoading || !classes || classes.length === 0 ? (
+        <ListState
+          loading={isLoading}
+          icon={IconBook}
+          title="No classes yet"
+          description="Your teacher will enroll you in classes."
+        />
       ) : (
         <div className="space-y-3">
           {(classes ?? []).map((cls: any) => (
