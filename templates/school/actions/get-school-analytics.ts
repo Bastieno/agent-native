@@ -109,7 +109,10 @@ export default defineAction({
     const enrollments =
       classIds.length > 0
         ? await db
-            .select({ classId: schema.classEnrollments.classId })
+            .select({
+              classId: schema.classEnrollments.classId,
+              studentUserId: schema.classEnrollments.studentUserId,
+            })
             .from(schema.classEnrollments)
             .where(
               and(
@@ -183,15 +186,44 @@ export default defineAction({
       ).toFixed(1);
     }
 
+    /** Distinct students enrolled across a set of classes. */
+    function studentsIn(classIdSet: Set<string>): number {
+      return new Set(
+        enrollments
+          .filter((e: any) => classIdSet.has(e.classId))
+          .map((e: any) => e.studentUserId),
+      ).size;
+    }
+
+    /** Weighted completion across a set of classes. */
+    function completionOf(classIdSet: Set<string>): number | null {
+      let expected = 0;
+      let done = 0;
+      for (const classId of classIdSet) {
+        const count = assessments.filter(
+          (a: any) => a.classId === classId,
+        ).length;
+        expected += (enrolledPerClass[classId] ?? 0) * count;
+        done += doneByClass[classId] ?? 0;
+      }
+      if (expected === 0) return null;
+      return Math.round((Math.min(done, expected) / expected) * 100);
+    }
+
     const bySubject = subjects
       .map((s: any) => {
         const subset = classSummaries.filter(
           (c: any) => c.subjectName === s.name,
         );
+        const ids = new Set(subset.map((c: any) => c.classId));
         return {
+          subjectId: s.id,
           subjectName: s.name,
           classCount: subset.length,
+          studentCount: studentsIn(ids),
+          average: averageOf(subset),
           averageScore: averageOf(subset),
+          completionRate: completionOf(ids),
         };
       })
       .filter((s: any) => s.classCount > 0);
@@ -201,10 +233,16 @@ export default defineAction({
         const subset = classSummaries.filter(
           (c: any) => c.gradeLevel === g.name,
         );
+        const ids = new Set(subset.map((c: any) => c.classId));
         return {
+          gradeLevelId: g.id,
+          gradeLevelName: g.name,
           gradeLevel: g.name,
           classCount: subset.length,
+          studentCount: studentsIn(ids),
+          average: averageOf(subset),
           averageScore: averageOf(subset),
+          completionRate: completionOf(ids),
         };
       })
       .filter((g: any) => g.classCount > 0);
