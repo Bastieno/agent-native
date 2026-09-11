@@ -89,7 +89,9 @@ export default function AdminStudents() {
   const { data: students = [], isLoading } = useQuery<any[]>({
     queryKey: ["admin-students"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/students"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-students"),
+      );
       if (!res.ok) return [];
       return res.json();
     },
@@ -99,7 +101,7 @@ export default function AdminStudents() {
     queryKey: ["admin-student-invites"],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath("/api/school/students/invitations"),
+        agentNativePath("/_agent-native/actions/list-student-invites"),
       );
       if (!res.ok) return [];
       return res.json();

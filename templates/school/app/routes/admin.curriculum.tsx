@@ -16,7 +16,9 @@ export default function AdminCurriculum() {
   const { data: subjects = [] } = useQuery<any[]>({
     queryKey: ["subjects"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/subjects"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-subjects"),
+      );
       if (!res.ok) return [];
       return res.json();
     },
@@ -49,12 +51,16 @@ export default function AdminCurriculum() {
               <div className="flex items-center gap-2">
                 <div
                   className="h-3 w-3 rounded-full"
-                  style={{ backgroundColor: subject.color ?? "hsl(var(--primary))" }}
+                  style={{
+                    backgroundColor: subject.color ?? "hsl(var(--primary))",
+                  }}
                 />
                 <span className="text-sm font-medium">{subject.name}</span>
               </div>
               {subject.code && (
-                <Badge variant="secondary" className="text-xs">{subject.code}</Badge>
+                <Badge variant="secondary" className="text-xs">
+                  {subject.code}
+                </Badge>
               )}
               <Badge
                 variant={subject.status === "active" ? "default" : "outline"}

@@ -40,7 +40,9 @@ export default function AdminOverview() {
   const { data: stats } = useQuery({
     queryKey: ["admin-overview-stats"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/stats"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-school-stats"),
+      );
       if (!res.ok) return null;
       return res.json();
     },
@@ -95,20 +97,45 @@ export default function AdminOverview() {
       ) : (
         <>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            <Link to="/admin/staff" className="rounded-lg hover:opacity-80 transition-opacity">
-              <StatCard label="Staff Members" value={stats?.staffCount ?? "—"} icon={IconUsers} />
+            <Link
+              to="/admin/staff"
+              className="rounded-lg hover:opacity-80 transition-opacity"
+            >
+              <StatCard
+                label="Staff Members"
+                value={stats?.staffCount ?? "—"}
+                icon={IconUsers}
+              />
             </Link>
-            <Link to="/admin/students" className="rounded-lg hover:opacity-80 transition-opacity">
-              <StatCard label="Students" value={stats?.studentCount ?? "—"} icon={IconUsers} />
+            <Link
+              to="/admin/students"
+              className="rounded-lg hover:opacity-80 transition-opacity"
+            >
+              <StatCard
+                label="Students"
+                value={stats?.studentCount ?? "—"}
+                icon={IconUsers}
+              />
             </Link>
-            <Link to="/admin/classes" className="rounded-lg hover:opacity-80 transition-opacity">
-              <StatCard label="Classes" value={stats?.classCount ?? "—"} icon={IconSchool} />
+            <Link
+              to="/admin/classes"
+              className="rounded-lg hover:opacity-80 transition-opacity"
+            >
+              <StatCard
+                label="Classes"
+                value={stats?.classCount ?? "—"}
+                icon={IconSchool}
+              />
             </Link>
             <Link
               to="/admin/curriculum"
               className="rounded-lg hover:opacity-80 transition-opacity"
             >
-              <StatCard label="Subjects" value={stats?.subjectCount ?? "—"} icon={IconBook} />
+              <StatCard
+                label="Subjects"
+                value={stats?.subjectCount ?? "—"}
+                icon={IconBook}
+              />
             </Link>
           </div>
           <div className="rounded-lg border bg-card p-6">

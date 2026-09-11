@@ -57,7 +57,9 @@ export default function AdminClasses() {
   const { data: staffData } = useQuery<{ active: any[] }>({
     queryKey: ["admin-staff"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/staff"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-staff"),
+      );
       if (!res.ok) return { active: [] };
       return res.json();
     },
@@ -68,7 +70,9 @@ export default function AdminClasses() {
   const { data: classes = [], isLoading } = useQuery<any[]>({
     queryKey: ["admin-classes"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/classes"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-classes"),
+      );
       if (!res.ok) return [];
       return res.json();
     },

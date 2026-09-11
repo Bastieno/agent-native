@@ -1,5 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
+import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, ne, sql } from "drizzle-orm";
 import { z } from "zod";
@@ -47,6 +48,17 @@ export default defineAction({
       }),
     );
 
-    return enriched;
+    // Pending invitations belong with the roster: an admin asking "who is on
+    // staff?" needs to know who has been invited but has not signed in yet.
+    const activeEmails = new Set(
+      enriched.map((m: any) => m.email?.toLowerCase()).filter(Boolean),
+    );
+    const allPending = ((await getOrgSetting(orgId, "pending-staff-invites")) ??
+      []) as Array<{ email: string; name: string; schoolRole: string }>;
+    const pending = allPending.filter(
+      (inv) => !activeEmails.has(inv.email?.toLowerCase()),
+    );
+
+    return { active: enriched, pending };
   },
 });

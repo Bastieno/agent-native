@@ -93,7 +93,9 @@ export default function AdminStaff() {
   const { data, isLoading } = useQuery<{ active: any[]; pending: any[] }>({
     queryKey: ["admin-staff"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/staff"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-staff"),
+      );
       if (!res.ok) return { active: [], pending: [] };
       return res.json();
     },

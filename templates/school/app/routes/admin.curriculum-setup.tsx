@@ -13,7 +13,11 @@ export default function AdminCurriculumSetup() {
   const draftId = searchParams.get("draftId") ?? undefined;
 
   useEffect(() => {
-    sync({ role: "admin", view: "curriculum-setup", curriculumDraftId: draftId });
+    sync({
+      role: "admin",
+      view: "curriculum-setup",
+      curriculumDraftId: draftId,
+    });
   }, [sync, draftId]);
 
   const { draftState: liveDraft } = useCurriculumDraft(draftId ?? null);
@@ -22,7 +26,11 @@ export default function AdminCurriculumSetup() {
     queryKey: ["curriculum-draft", draftId],
     queryFn: async () => {
       if (!draftId) return null;
-      const res = await fetch(agentNativePath(`/api/school/curriculum-drafts/${draftId}`));
+      const res = await fetch(
+        agentNativePath(
+          `/_agent-native/actions/get-curriculum-draft?id=${draftId}`,
+        ),
+      );
       if (!res.ok) return null;
       return res.json();
     },
@@ -71,7 +79,9 @@ export default function AdminCurriculumSetup() {
             Committed
           </Badge>
         ) : (
-          <Badge variant="secondary" className="text-xs">In Progress</Badge>
+          <Badge variant="secondary" className="text-xs">
+            In Progress
+          </Badge>
         )}
       </div>
 
@@ -88,7 +98,9 @@ export default function AdminCurriculumSetup() {
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold">{subject.name}</h3>
                 {subject.code && (
-                  <span className="text-xs text-muted-foreground">{subject.code}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {subject.code}
+                  </span>
                 )}
               </div>
               {subject.units && subject.units.length > 0 && (
@@ -96,16 +108,22 @@ export default function AdminCurriculumSetup() {
                   {subject.units.map((unit: any, ui: number) => (
                     <div key={ui} className="space-y-1">
                       <p className="text-sm font-medium">{unit.title}</p>
-                      {unit.learningObjectives && unit.learningObjectives.length > 0 && (
-                        <ul className="space-y-0.5 pl-3">
-                          {unit.learningObjectives.map((obj: string, oi: number) => (
-                            <li key={oi} className="text-xs text-muted-foreground flex gap-1.5">
-                              <span>•</span>
-                              <span>{obj}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                      {unit.learningObjectives &&
+                        unit.learningObjectives.length > 0 && (
+                          <ul className="space-y-0.5 pl-3">
+                            {unit.learningObjectives.map(
+                              (obj: string, oi: number) => (
+                                <li
+                                  key={oi}
+                                  className="text-xs text-muted-foreground flex gap-1.5"
+                                >
+                                  <span>•</span>
+                                  <span>{obj}</span>
+                                </li>
+                              ),
+                            )}
+                          </ul>
+                        )}
                     </div>
                   ))}
                 </div>

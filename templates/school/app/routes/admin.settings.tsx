@@ -36,10 +36,15 @@ export default function AdminSettings() {
     sync({ role: "admin", view: "settings" });
   }, [sync]);
 
-  const { data: guideData } = useQuery<{ content: string | null; updatedAt: string | null }>({
+  const { data: guideData } = useQuery<{
+    content: string | null;
+    updatedAt: string | null;
+  }>({
     queryKey: ["school-guide"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/guide"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-school-resource"),
+      );
       if (!res.ok) return { content: null, updatedAt: null };
       return res.json();
     },
@@ -91,10 +96,19 @@ export default function AdminSettings() {
             </div>
             <div className="space-y-1">
               {config.gradingScale.levels.map((level) => (
-                <div key={level.grade} className="flex items-center justify-between text-sm">
+                <div
+                  key={level.grade}
+                  className="flex items-center justify-between text-sm"
+                >
                   <span className="font-medium w-8">{level.grade}</span>
-                  <span className="text-muted-foreground">{level.min}% – {level.max}%</span>
-                  {level.label && <span className="text-muted-foreground text-xs">{level.label}</span>}
+                  <span className="text-muted-foreground">
+                    {level.min}% – {level.max}%
+                  </span>
+                  {level.label && (
+                    <span className="text-muted-foreground text-xs">
+                      {level.label}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -111,7 +125,9 @@ export default function AdminSettings() {
         <TabsContent value="terms" className="mt-4">
           <div className="rounded-lg border bg-card p-4 space-y-2">
             <h3 className="text-sm font-medium">Term Structure</h3>
-            <Badge variant="secondary" className="capitalize">{config.termStructure}</Badge>
+            <Badge variant="secondary" className="capitalize">
+              {config.termStructure}
+            </Badge>
             <p className="text-xs text-muted-foreground">
               Use the agent to create or modify terms and academic years.
             </p>
@@ -122,8 +138,9 @@ export default function AdminSettings() {
           <div className="rounded-lg border bg-card p-4">
             <h3 className="text-sm font-medium mb-2">Custom Fields</h3>
             <p className="text-xs text-muted-foreground">
-              Use the agent to add custom fields to students, lesson notes, and assessments.
-              For example: "add a 'house' field to students with options Phoenix, Eagle, Lion, Shark".
+              Use the agent to add custom fields to students, lesson notes, and
+              assessments. For example: "add a 'house' field to students with
+              options Phoenix, Eagle, Lion, Shark".
             </p>
           </div>
         </TabsContent>
@@ -155,15 +172,17 @@ export default function AdminSettings() {
             <div>
               <h3 className="text-sm font-medium">School Guide</h3>
               <p className="text-xs text-muted-foreground mt-1">
-                This markdown document tells the agent about your school — identity, pedagogy,
-                curriculum frameworks, grading conventions, and terminology. The agent reads it
-                at the start of every curriculum, grading, and analytics session.
+                This markdown document tells the agent about your school —
+                identity, pedagogy, curriculum frameworks, grading conventions,
+                and terminology. The agent reads it at the start of every
+                curriculum, grading, and analytics session.
               </p>
             </div>
             <div className="space-y-1.5">
               <p className="text-xs text-muted-foreground">
-                Tip: include grade structure, term structure, exam boards (WAEC, Common Core,
-                Cambridge, etc.), any school-specific rules, and preferred terminology.
+                Tip: include grade structure, term structure, exam boards (WAEC,
+                Common Core, Cambridge, etc.), any school-specific rules, and
+                preferred terminology.
               </p>
               <Textarea
                 className="font-mono text-xs min-h-80 resize-y"
@@ -190,9 +209,10 @@ export default function AdminSettings() {
           </div>
           <div className="rounded-lg border bg-muted/40 p-3">
             <p className="text-xs text-muted-foreground">
-              <strong>Pro tip:</strong> You can also ask the agent to update the School Guide
-              for you — e.g. "update the school guide to note that we follow WAEC for SSS
-              certification and use Common Core for Mathematics".
+              <strong>Pro tip:</strong> You can also ask the agent to update the
+              School Guide for you — e.g. "update the school guide to note that
+              we follow WAEC for SSS certification and use Common Core for
+              Mathematics".
             </p>
           </div>
         </TabsContent>

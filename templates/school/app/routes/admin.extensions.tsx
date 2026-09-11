@@ -31,11 +31,14 @@ export default function AdminExtensions() {
 
       {!extensions || extensions.length === 0 ? (
         <div className="rounded-lg border border-dashed p-12 text-center">
-          <IconPuzzle size={28} className="mx-auto text-muted-foreground mb-3" />
+          <IconPuzzle
+            size={28}
+            className="mx-auto text-muted-foreground mb-3"
+          />
           <p className="text-sm font-medium">No extensions yet</p>
           <p className="text-xs text-muted-foreground mt-1 max-w-xs mx-auto">
-            Ask the agent to create school-specific widgets — house badges, attendance
-            trackers, custom dashboards, and more.
+            Ask the agent to create school-specific widgets — house badges,
+            attendance trackers, custom dashboards, and more.
           </p>
         </div>
       ) : (
@@ -46,10 +49,14 @@ export default function AdminExtensions() {
                 <h3 className="text-sm font-semibold">{ext.name}</h3>
               </div>
               {ext.description && (
-                <p className="text-xs text-muted-foreground">{ext.description}</p>
+                <p className="text-xs text-muted-foreground">
+                  {ext.description}
+                </p>
               )}
               <iframe
-                src={agentNativePath(`/_agent-native/extensions/${ext.id}/render`)}
+                src={agentNativePath(
+                  `/_agent-native/extensions/${ext.id}/render`,
+                )}
                 className="w-full h-48 rounded border bg-muted/20"
                 sandbox="allow-scripts allow-same-origin"
                 title={ext.name}

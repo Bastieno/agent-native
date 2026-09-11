@@ -55,6 +55,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   // ── School identity & configuration ───────────────────────────────────
   "setup-school": ADMIN,
   "get-school": EVERYONE,
+  "get-school-stats": STAFF,
   "get-school-config": EVERYONE, // grading scale, labels — UI needs it
   "update-school-config": ADMIN,
   "get-custom-fields-schema": STAFF,
@@ -81,6 +82,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
 
   // ── Curriculum ────────────────────────────────────────────────────────
   "list-subjects": EVERYONE, // students see their subjects
+  "get-subject": STAFF,
   "create-subject": ADMIN_COORD,
   "update-subject": ADMIN_COORD,
   "list-units": STAFF,
@@ -103,6 +105,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "create-student": ADMIN,
   "update-student": ADMIN,
   "invite-student": ADMIN,
+  "list-student-invites": ADMIN,
   "cancel-student-invite": ADMIN,
   "reactivate-student": ADMIN,
   // Categories must never be visible to the student they describe.

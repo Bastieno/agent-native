@@ -86,7 +86,9 @@ export default function AdminAnnouncements() {
   const { data: classes = [] } = useQuery<any[]>({
     queryKey: ["admin-classes"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/classes"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-classes"),
+      );
       if (!res.ok) return [];
       return res.json();
     },
