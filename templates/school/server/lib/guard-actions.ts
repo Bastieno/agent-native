@@ -1,6 +1,14 @@
 import { currentAccess } from "@agent-native/core/sharing";
 import { getSchoolRole } from "./student-access.js";
 import {
+  actorForEmail,
+  canAccessClass,
+  classIdForAssessment,
+  classIdForLesson,
+  classIdForSubmission,
+  classIdForVariant,
+} from "./class-access.js";
+import {
   findUnclassifiedActions,
   rolesFor,
   type SchoolRole,
@@ -37,11 +45,84 @@ export function guardActions<T extends Record<string, any>>(actions: T): T {
       ...entry,
       run: async (args: any, ctx: any) => {
         await assertCallerMayRun(name);
+        await assertCallerMayTouch(name, args);
         return entry.run(args, ctx);
       },
     };
   }
   return guarded as T;
+}
+
+/**
+ * What an action's bare `id` argument refers to. Actions that take `--id` are
+ * ambiguous on their own, so the kind is declared here; anything not listed is
+ * checked only through its explicit classId/assessmentId/etc. arguments.
+ */
+const ID_KIND: Record<string, "class" | "assessment" | "lesson" | "variant"> = {
+  "update-class": "class",
+  "update-assessment": "assessment",
+  "publish-assessment": "assessment",
+  "close-assessment": "assessment",
+  "update-lesson-note": "lesson",
+  "finalize-lesson-note": "lesson",
+  "get-lesson-note": "lesson",
+  "update-variant": "variant",
+  "delete-variant": "variant",
+};
+
+/**
+ * Row-level scope check driven by the arguments themselves: whatever the
+ * action is, if it names a class, assessment, submission, variant or lesson,
+ * the caller must have access to it. Applying this centrally means a new
+ * action is covered the day it is written.
+ */
+async function assertCallerMayTouch(
+  actionName: string,
+  args: any,
+): Promise<void> {
+  if (!args || typeof args !== "object") return;
+
+  const { userEmail } = currentAccess();
+  if (!userEmail) return; // already rejected by assertCallerMayRun
+
+  const actor = await actorForEmail(userEmail);
+  if (!actor) return; // role check already threw for non-members
+
+  const classIds: Array<string | null> = [];
+
+  if (typeof args.classId === "string") classIds.push(args.classId);
+  if (typeof args.assessmentId === "string") {
+    classIds.push(await classIdForAssessment(args.assessmentId));
+  }
+  if (typeof args.submissionId === "string") {
+    classIds.push(await classIdForSubmission(args.submissionId));
+  }
+  if (typeof args.variantId === "string") {
+    classIds.push(await classIdForVariant(args.variantId));
+  }
+  if (typeof args.lessonId === "string") {
+    classIds.push(await classIdForLesson(args.lessonId));
+  }
+
+  const idKind = ID_KIND[actionName];
+  if (idKind && typeof args.id === "string") {
+    if (idKind === "class") classIds.push(args.id);
+    if (idKind === "assessment")
+      classIds.push(await classIdForAssessment(args.id));
+    if (idKind === "lesson") classIds.push(await classIdForLesson(args.id));
+    if (idKind === "variant") classIds.push(await classIdForVariant(args.id));
+  }
+
+  for (const classId of classIds) {
+    // A null means the referenced row does not exist; let the action itself
+    // produce its own "not found" error rather than masking it here.
+    if (!classId) continue;
+    if (!(await canAccessClass(actor, classId))) {
+      throw new Error(
+        `Not permitted: you do not have access to that class (action "${actionName}").`,
+      );
+    }
+  }
 }
 
 async function assertCallerMayRun(actionName: string): Promise<void> {

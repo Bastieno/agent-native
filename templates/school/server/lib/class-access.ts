@@ -1,4 +1,4 @@
-import { and, eq } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
 
 /**
@@ -18,6 +18,47 @@ export interface ClassAccessActor {
   userId: string;
   schoolId: string;
   schoolRole: string;
+}
+
+/**
+ * Build an actor from an email — actions carry the caller's email, not a
+ * session. Returns null when the caller is not a member of any school.
+ */
+export async function actorForEmail(
+  email: string,
+): Promise<ClassAccessActor | null> {
+  const db = getDb();
+  const row = (await db.get(
+    sql`SELECT id FROM "user" WHERE email = ${email} LIMIT 1`,
+  )) as { id: string } | undefined;
+  if (!row?.id) return null;
+  const [profile] = await db
+    .select({
+      schoolId: schema.schoolProfiles.schoolId,
+      schoolRole: schema.schoolProfiles.schoolRole,
+    })
+    .from(schema.schoolProfiles)
+    .where(eq(schema.schoolProfiles.userId, row.id))
+    .limit(1);
+  if (!profile) return null;
+  return {
+    userId: row.id,
+    schoolId: profile.schoolId,
+    schoolRole: profile.schoolRole,
+  };
+}
+
+/** The class a lesson note belongs to. */
+export async function classIdForLesson(
+  lessonId: string,
+): Promise<string | null> {
+  const db = getDb();
+  const [row] = await db
+    .select({ classId: schema.lessonNotes.classId })
+    .from(schema.lessonNotes)
+    .where(eq(schema.lessonNotes.id, lessonId))
+    .limit(1);
+  return row?.classId ?? null;
 }
 
 export class AccessDeniedError extends Error {
