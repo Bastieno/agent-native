@@ -1,6 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
+import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
 
 export default defineAction({
@@ -31,6 +32,7 @@ export default defineAction({
       .where(and(...assessmentConditions));
 
     const gradebook = [];
+    const studentUserIds: string[] = [];
     for (const enrollment of enrollments) {
       const [student] = await db
         .select()
@@ -85,10 +87,27 @@ export default defineAction({
         studentUserId: enrollment.studentUserId,
         grades,
       });
+      studentUserIds.push(enrollment.studentUserId);
     }
+
+    // The page and the agent both read this: give it the class name and the
+    // students' names, not just ids.
+    const [cls] = await db
+      .select({ name: schema.classes.name })
+      .from(schema.classes)
+      .where(eq(schema.classes.id, args.classId))
+      .limit(1);
+    const labels = await getUserLabels(studentUserIds);
 
     return {
       classId: args.classId,
+      className: cls?.name ?? null,
+      students: gradebook.map((row: any) => ({
+        id: row.studentUserId,
+        studentId: row.studentId,
+        name: labelFor(labels, row.studentUserId) ?? row.studentUserId,
+        grades: row.grades,
+      })),
       assessments: assessments.map((a) => ({
         id: a.id,
         title: a.title,

@@ -22,7 +22,9 @@ export default function TeacherLesson() {
     queryKey: ["lesson", lessonId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/lessons/${lessonId}`),
+        agentNativePath(
+          `/_agent-native/actions/get-lesson-note?id=${lessonId}`,
+        ),
       );
       if (!res.ok) return null;
       return res.json();
@@ -58,9 +60,11 @@ export default function TeacherLesson() {
   const finalizeMutation = useMutation({
     mutationFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/lessons/${lessonId}/finalize`),
+        agentNativePath("/_agent-native/actions/finalize-lesson-note"),
         {
-          method: "PATCH",
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: lessonId }),
         },
       );
       if (!res.ok) throw new Error("Failed to finalize");

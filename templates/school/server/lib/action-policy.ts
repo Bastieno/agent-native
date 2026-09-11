@@ -111,6 +111,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
 
   // ── Classes ───────────────────────────────────────────────────────────
   "list-classes": STAFF,
+  "get-class": STAFF,
   "create-class": ADMIN,
   "update-class": STAFF,
   "list-class-students": STAFF,
@@ -132,6 +133,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
 
   // ── Assessments ───────────────────────────────────────────────────────
   "list-assessments": STAFF,
+  "get-assessment": STAFF,
   "create-assessment": STAFF,
   "update-assessment": STAFF,
   "publish-assessment": STAFF,
@@ -161,6 +163,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "save-submission-draft": STUDENT_ONLY,
 
   // ── Analytics ─────────────────────────────────────────────────────────
+  "get-my-analytics": STAFF,
+  "list-my-students": STAFF,
   "get-class-performance": STAFF,
   "get-assessment-analytics": STAFF,
   "get-student-performance": STAFF,

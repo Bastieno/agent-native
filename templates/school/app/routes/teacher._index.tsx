@@ -14,7 +14,9 @@ export default function TeacherDashboard() {
   const { data: classes = [] } = useQuery<any[]>({
     queryKey: ["my-classes"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/my-classes"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-my-classes"),
+      );
       if (!res.ok) return [];
       return res.json();
     },

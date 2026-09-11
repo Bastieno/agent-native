@@ -75,7 +75,7 @@ export default function TeacherClass() {
     queryKey: ["class", classId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/classes/${classId}`),
+        agentNativePath(`/_agent-native/actions/get-class?classId=${classId}`),
       );
       if (!res.ok) return null;
       return res.json();
@@ -87,7 +87,9 @@ export default function TeacherClass() {
     queryKey: ["lessons", classId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/lessons?classId=${classId}`),
+        agentNativePath(
+          `/_agent-native/actions/list-lesson-notes?classId=${classId}`,
+        ),
       );
       if (!res.ok) return [];
       return res.json();
@@ -99,7 +101,9 @@ export default function TeacherClass() {
     queryKey: ["assessments", classId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/assessments?classId=${classId}`),
+        agentNativePath(
+          `/_agent-native/actions/list-assessments?classId=${classId}`,
+        ),
       );
       if (!res.ok) return [];
       return res.json();
@@ -111,7 +115,9 @@ export default function TeacherClass() {
     queryKey: ["class-students", classId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/class-students?classId=${classId}`),
+        agentNativePath(
+          `/_agent-native/actions/list-class-students?classId=${classId}`,
+        ),
       );
       if (!res.ok) return [];
       return res.json();
@@ -122,7 +128,9 @@ export default function TeacherClass() {
   const { data: allStudents = [] } = useQuery<any[]>({
     queryKey: ["admin-students"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/students"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-students"),
+      );
       if (!res.ok) return [];
       return res.json();
     },

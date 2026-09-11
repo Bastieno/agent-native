@@ -63,7 +63,9 @@ export default function TeacherAssessment() {
     queryKey: ["assessment", assessmentId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/assessments/${assessmentId}`),
+        agentNativePath(
+          `/_agent-native/actions/get-assessment?id=${assessmentId}`,
+        ),
       );
       if (!res.ok) return null;
       // The endpoint returns { assessment, variants, submissionSummary }.
@@ -77,7 +79,9 @@ export default function TeacherAssessment() {
     queryKey: ["variants", assessmentId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/variants?assessmentId=${assessmentId}`),
+        agentNativePath(
+          `/_agent-native/actions/list-variants?assessmentId=${assessmentId}`,
+        ),
       );
       if (!res.ok) return [];
       return res.json();
@@ -89,7 +93,9 @@ export default function TeacherAssessment() {
     queryKey: ["submissions", assessmentId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/submissions?assessmentId=${assessmentId}`),
+        agentNativePath(
+          `/_agent-native/actions/list-submissions?assessmentId=${assessmentId}`,
+        ),
       );
       if (!res.ok) return [];
       return res.json();

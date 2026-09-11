@@ -16,7 +16,9 @@ export default function TeacherAnalytics() {
   const { data: analytics } = useQuery({
     queryKey: ["teacher-analytics"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/my-analytics"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-my-analytics"),
+      );
       if (!res.ok) return null;
       return res.json();
     },
@@ -33,26 +35,42 @@ export default function TeacherAnalytics() {
 
       {!analytics ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconChartBar size={28} className="mx-auto text-muted-foreground mb-2" />
+          <IconChartBar
+            size={28}
+            className="mx-auto text-muted-foreground mb-2"
+          />
           <p className="text-sm font-medium">No analytics yet</p>
           <p className="text-xs text-muted-foreground mt-1">
-            Analytics will populate once students submit and you grade their work.
+            Analytics will populate once students submit and you grade their
+            work.
           </p>
         </div>
       ) : (
         <>
           <div className="grid grid-cols-3 gap-4">
             <div className="rounded-lg border bg-card p-4 text-center">
-              <p className="text-2xl font-semibold">{analytics.overallAverage ?? "—"}%</p>
-              <p className="text-xs text-muted-foreground mt-1">Overall Average</p>
+              <p className="text-2xl font-semibold">
+                {analytics.overallAverage ?? "—"}%
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Overall Average
+              </p>
             </div>
             <div className="rounded-lg border bg-card p-4 text-center">
-              <p className="text-2xl font-semibold">{analytics.pendingGrading ?? 0}</p>
-              <p className="text-xs text-muted-foreground mt-1">Awaiting Grading</p>
+              <p className="text-2xl font-semibold">
+                {analytics.pendingGrading ?? 0}
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Awaiting Grading
+              </p>
             </div>
             <div className="rounded-lg border bg-card p-4 text-center">
-              <p className="text-2xl font-semibold">{analytics.strugglingCount ?? 0}</p>
-              <p className="text-xs text-muted-foreground mt-1">Students Struggling</p>
+              <p className="text-2xl font-semibold">
+                {analytics.strugglingCount ?? 0}
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Students Struggling
+              </p>
             </div>
           </div>
 
@@ -60,7 +78,10 @@ export default function TeacherAnalytics() {
             <div className="space-y-3">
               <h2 className="text-sm font-medium">By Class</h2>
               {analytics.byClass.map((cls: any) => (
-                <div key={cls.classId} className="rounded-lg border p-4 space-y-2">
+                <div
+                  key={cls.classId}
+                  className="rounded-lg border p-4 space-y-2"
+                >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">{cls.className}</span>
                     <div className="flex items-center gap-2">
@@ -82,7 +103,9 @@ export default function TeacherAnalytics() {
                     <span>{cls.studentCount} students</span>
                     <span>{cls.completionRate ?? 0}% completion</span>
                     {cls.pendingGrading > 0 && (
-                      <span className="text-amber-600">{cls.pendingGrading} to grade</span>
+                      <span className="text-amber-600">
+                        {cls.pendingGrading} to grade
+                      </span>
                     )}
                   </div>
                 </div>

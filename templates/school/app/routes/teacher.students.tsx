@@ -24,7 +24,9 @@ export default function TeacherStudents() {
   const { data: students, isLoading } = useQuery({
     queryKey: ["teacher-students"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/my-students"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-my-students"),
+      );
       if (!res.ok) return [];
       return res.json();
     },

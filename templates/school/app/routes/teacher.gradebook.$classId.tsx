@@ -18,7 +18,9 @@ export default function TeacherGradebook() {
     queryKey: ["gradebook", classId],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath(`/api/school/gradebook/${classId}`),
+        agentNativePath(
+          `/_agent-native/actions/get-gradebook?classId=${classId}`,
+        ),
       );
       if (!res.ok) return null;
       return res.json();
