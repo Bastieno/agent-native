@@ -1,7 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and } from "drizzle-orm";
+import { eq, and, inArray } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
@@ -67,55 +67,153 @@ export default defineAction({
       classes = classes.filter((c) => ids.includes(c.subjectId));
     }
 
-    const classSummaries = [];
-    for (const cls of classes) {
-      const subject = subjects.find((s) => s.id === cls.subjectId);
-      const gl = gradeLevels.find((g) => g.id === cls.gradeLevelId);
+    // Batched: three queries for the whole school rather than one per class
+    // and one per assessment.
+    const classIds = classes.map((c: any) => c.id);
+    const assessments =
+      classIds.length > 0
+        ? await db
+            .select()
+            .from(schema.assessments)
+            .where(
+              and(
+                inArray(schema.assessments.classId, classIds),
+                eq(schema.assessments.status, "published"),
+              ),
+            )
+        : [];
+    const assessmentIds = assessments.map((a: any) => a.id);
 
-      const assessments = await db
-        .select()
-        .from(schema.assessments)
-        .where(
-          and(
-            eq(schema.assessments.classId, cls.id),
-            eq(schema.assessments.status, "published"),
-          ),
-        );
+    const grades =
+      assessmentIds.length > 0
+        ? await db
+            .select()
+            .from(schema.grades)
+            .where(inArray(schema.grades.assessmentId, assessmentIds))
+        : [];
+    const turnedIn =
+      assessmentIds.length > 0
+        ? await db
+            .select({
+              assessmentId: schema.submissions.assessmentId,
+              studentId: schema.submissions.studentId,
+            })
+            .from(schema.submissions)
+            .where(
+              and(
+                inArray(schema.submissions.assessmentId, assessmentIds),
+                inArray(schema.submissions.status, ["submitted", "graded"]),
+              ),
+            )
+        : [];
+    const enrollments =
+      classIds.length > 0
+        ? await db
+            .select({ classId: schema.classEnrollments.classId })
+            .from(schema.classEnrollments)
+            .where(
+              and(
+                inArray(schema.classEnrollments.classId, classIds),
+                eq(schema.classEnrollments.status, "active"),
+              ),
+            )
+        : [];
 
-      const allPercentages: number[] = [];
-      for (const a of assessments) {
-        const grades = await db
-          .select()
-          .from(schema.grades)
-          .where(eq(schema.grades.assessmentId, a.id));
-        for (const g of grades) {
-          const p = parseFloat(g.percentage ?? "");
-          if (!isNaN(p)) allPercentages.push(p);
-        }
-      }
+    const classIdByAssessment: Record<string, string> = {};
+    for (const a of assessments) classIdByAssessment[a.id] = a.classId;
+    const enrolledPerClass: Record<string, number> = {};
+    for (const e of enrollments)
+      enrolledPerClass[e.classId] = (enrolledPerClass[e.classId] ?? 0) + 1;
 
-      const average =
-        allPercentages.length > 0
-          ? (
-              allPercentages.reduce((a, b) => a + b, 0) / allPercentages.length
-            ).toFixed(1)
-          : null;
+    const pctByClass: Record<string, number[]> = {};
+    for (const g of grades as any[]) {
+      const classId = classIdByAssessment[g.assessmentId];
+      const p = parseFloat(g.percentage ?? "");
+      if (!classId || isNaN(p)) continue;
+      (pctByClass[classId] ??= []).push(p);
+    }
+    const doneByClass: Record<string, number> = {};
+    for (const s of turnedIn as any[]) {
+      const classId = classIdByAssessment[s.assessmentId];
+      if (!classId) continue;
+      doneByClass[classId] = (doneByClass[classId] ?? 0) + 1;
+    }
 
-      classSummaries.push({
+    const classSummaries = classes.map((cls: any) => {
+      const subject = subjects.find((s: any) => s.id === cls.subjectId);
+      const gl = gradeLevels.find((g: any) => g.id === cls.gradeLevelId);
+      const pcts = pctByClass[cls.id] ?? [];
+      const classAssessments = assessments.filter(
+        (a: any) => a.classId === cls.id,
+      );
+      const expected =
+        (enrolledPerClass[cls.id] ?? 0) * classAssessments.length;
+      const done = doneByClass[cls.id] ?? 0;
+
+      return {
         classId: cls.id,
         className: cls.name,
         subjectName: subject?.name ?? "Unknown",
         gradeLevel: gl?.name ?? "Unknown",
-        assessmentCount: assessments.length,
-        gradedCount: allPercentages.length,
-        averageScore: average,
+        assessmentCount: classAssessments.length,
+        gradedCount: pcts.length,
+        averageScore:
+          pcts.length > 0
+            ? (pcts.reduce((a, b) => a + b, 0) / pcts.length).toFixed(1)
+            : null,
+        completionRate:
+          expected > 0
+            ? Math.round((Math.min(done, expected) / expected) * 100)
+            : null,
         distribution: {
-          advanced: allPercentages.filter((p) => p >= 75).length,
-          developing: allPercentages.filter((p) => p >= 50 && p < 75).length,
-          foundational: allPercentages.filter((p) => p < 50).length,
+          advanced: pcts.filter((p) => p >= 75).length,
+          developing: pcts.filter((p) => p >= 50 && p < 75).length,
+          foundational: pcts.filter((p) => p < 50).length,
         },
-      });
+      };
+    });
+
+    /** Average of class averages for a subset of classes. */
+    function averageOf(summaries: any[]): string | null {
+      const scored = summaries.filter((c) => c.averageScore);
+      if (scored.length === 0) return null;
+      return (
+        scored.reduce((sum, c) => sum + parseFloat(c.averageScore), 0) /
+        scored.length
+      ).toFixed(1);
     }
+
+    const bySubject = subjects
+      .map((s: any) => {
+        const subset = classSummaries.filter(
+          (c: any) => c.subjectName === s.name,
+        );
+        return {
+          subjectName: s.name,
+          classCount: subset.length,
+          averageScore: averageOf(subset),
+        };
+      })
+      .filter((s: any) => s.classCount > 0);
+
+    const byGradeLevel = gradeLevels
+      .map((g: any) => {
+        const subset = classSummaries.filter(
+          (c: any) => c.gradeLevel === g.name,
+        );
+        return {
+          gradeLevel: g.name,
+          classCount: subset.length,
+          averageScore: averageOf(subset),
+        };
+      })
+      .filter((g: any) => g.classCount > 0);
+
+    const totalExpected = classes.reduce((sum: number, cls: any) => {
+      const count = assessments.filter((a: any) => a.classId === cls.id).length;
+      return sum + (enrolledPerClass[cls.id] ?? 0) * count;
+    }, 0);
+    const totalDone = Object.values(doneByClass).reduce((a, b) => a + b, 0);
 
     const studentProfiles = await db
       .select()
@@ -144,6 +242,18 @@ export default defineAction({
       totalStudents: studentProfiles.length,
       totalClasses: classes.length,
       overallAverage,
+      // Named for the admin dashboard, which reads these directly.
+      schoolAverage: overallAverage,
+      activeStudents: studentProfiles.length,
+      gradedSubmissions: grades.length,
+      completionRate:
+        totalExpected > 0
+          ? Math.round(
+              (Math.min(totalDone, totalExpected) / totalExpected) * 100,
+            )
+          : null,
+      bySubject,
+      byGradeLevel,
       classSummaries,
     };
   },

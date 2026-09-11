@@ -1272,22 +1272,6 @@ export const getGradebook = defineEventHandler(async (event) => {
 
 // ─── Analytics ────────────────────────────────────────────────────────────────
 
-export const getSchoolAnalytics = defineEventHandler(async (event) => {
-  const session = await requireSession(event);
-  const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) return null;
-  // Simple stub — the agent populates via get-school-analytics action
-  return {
-    schoolAverage: null,
-    completionRate: null,
-    activeStudents: null,
-    gradedSubmissions: null,
-    bySubject: [],
-    byGradeLevel: [],
-  };
-});
-
 export const getMyAnalytics = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();

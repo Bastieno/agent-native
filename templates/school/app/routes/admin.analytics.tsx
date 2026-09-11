@@ -3,7 +3,12 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
-import { IconChartBar, IconTrendingUp, IconTrendingDown } from "@tabler/icons-react";
+import { ListState } from "@/components/ListState";
+import {
+  IconChartBar,
+  IconTrendingUp,
+  IconTrendingDown,
+} from "@tabler/icons-react";
 
 export default function AdminAnalytics() {
   const { sync } = useNavigationState();
@@ -12,10 +17,14 @@ export default function AdminAnalytics() {
     sync({ role: "admin", view: "analytics" });
   }, [sync]);
 
-  const { data: analytics } = useQuery({
+  // Straight to the action — the same computation the agent uses, so the page
+  // and "how is the school doing?" can never disagree.
+  const { data: analytics, isLoading } = useQuery({
     queryKey: ["school-analytics"],
     queryFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/analytics"));
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-school-analytics"),
+      );
       if (!res.ok) return null;
       return res.json();
     },
@@ -30,24 +39,38 @@ export default function AdminAnalytics() {
         </p>
       </div>
 
-      {!analytics ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconChartBar size={28} className="mx-auto text-muted-foreground mb-2" />
-          <p className="text-sm font-medium">No analytics data yet</p>
-          <p className="text-xs text-muted-foreground mt-1">
-            Analytics will populate once students start submitting work.
-          </p>
-        </div>
+      {isLoading || !analytics ? (
+        <ListState
+          loading={isLoading}
+          icon={IconChartBar}
+          title="No analytics data yet"
+          description="Analytics will populate once students start submitting work."
+        />
       ) : (
         <>
           <div className="grid grid-cols-4 gap-4">
             {[
-              { label: "School Average", value: `${analytics.schoolAverage ?? "—"}%` },
-              { label: "Completion Rate", value: `${analytics.completionRate ?? "—"}%` },
-              { label: "Active Students", value: analytics.activeStudents ?? "—" },
-              { label: "Graded Submissions", value: analytics.gradedSubmissions ?? "—" },
+              {
+                label: "School Average",
+                value: `${analytics.schoolAverage ?? "—"}%`,
+              },
+              {
+                label: "Completion Rate",
+                value: `${analytics.completionRate ?? "—"}%`,
+              },
+              {
+                label: "Active Students",
+                value: analytics.activeStudents ?? "—",
+              },
+              {
+                label: "Graded Submissions",
+                value: analytics.gradedSubmissions ?? "—",
+              },
             ].map(({ label, value }) => (
-              <div key={label} className="rounded-lg border bg-card p-4 text-center">
+              <div
+                key={label}
+                className="rounded-lg border bg-card p-4 text-center"
+              >
                 <p className="text-2xl font-semibold">{value}</p>
                 <p className="text-xs text-muted-foreground mt-1">{label}</p>
               </div>
@@ -58,7 +81,10 @@ export default function AdminAnalytics() {
             <div className="space-y-3">
               <h2 className="text-sm font-medium">Performance by Subject</h2>
               {analytics.bySubject.map((s: any) => (
-                <div key={s.subjectId} className="rounded-lg border p-4 space-y-2">
+                <div
+                  key={s.subjectId}
+                  className="rounded-lg border p-4 space-y-2"
+                >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">{s.subjectName}</span>
                     <span className="text-sm text-muted-foreground flex items-center gap-1">
@@ -75,7 +101,8 @@ export default function AdminAnalytics() {
                     className="h-1.5"
                   />
                   <p className="text-xs text-muted-foreground">
-                    {s.classCount} class{s.classCount !== 1 ? "es" : ""} · {s.studentCount} students
+                    {s.classCount} class{s.classCount !== 1 ? "es" : ""} ·{" "}
+                    {s.studentCount} students
                   </p>
                 </div>
               ))}
@@ -84,24 +111,43 @@ export default function AdminAnalytics() {
 
           {analytics.byGradeLevel && analytics.byGradeLevel.length > 0 && (
             <div className="space-y-3">
-              <h2 className="text-sm font-medium">Performance by Grade Level</h2>
+              <h2 className="text-sm font-medium">
+                Performance by Grade Level
+              </h2>
               <div className="rounded-lg border">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b bg-muted/40">
-                      <th className="px-4 py-2.5 text-left font-medium">Grade Level</th>
-                      <th className="px-4 py-2.5 text-left font-medium">Average</th>
-                      <th className="px-4 py-2.5 text-left font-medium">Students</th>
-                      <th className="px-4 py-2.5 text-left font-medium">Completion</th>
+                      <th className="px-4 py-2.5 text-left font-medium">
+                        Grade Level
+                      </th>
+                      <th className="px-4 py-2.5 text-left font-medium">
+                        Average
+                      </th>
+                      <th className="px-4 py-2.5 text-left font-medium">
+                        Students
+                      </th>
+                      <th className="px-4 py-2.5 text-left font-medium">
+                        Completion
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {analytics.byGradeLevel.map((g: any) => (
-                      <tr key={g.gradeLevelId} className="border-b last:border-0">
-                        <td className="px-4 py-2.5 font-medium">{g.gradeLevelName}</td>
+                      <tr
+                        key={g.gradeLevelId}
+                        className="border-b last:border-0"
+                      >
+                        <td className="px-4 py-2.5 font-medium">
+                          {g.gradeLevelName}
+                        </td>
                         <td className="px-4 py-2.5">{g.average ?? "—"}%</td>
-                        <td className="px-4 py-2.5 text-muted-foreground">{g.studentCount}</td>
-                        <td className="px-4 py-2.5 text-muted-foreground">{g.completionRate ?? "—"}%</td>
+                        <td className="px-4 py-2.5 text-muted-foreground">
+                          {g.studentCount}
+                        </td>
+                        <td className="px-4 py-2.5 text-muted-foreground">
+                          {g.completionRate ?? "—"}%
+                        </td>
                       </tr>
                     ))}
                   </tbody>
