@@ -48,7 +48,13 @@ export default function StudentLayout() {
     <AgentSidebar
       emptyStateText="Ask me for help with your assignments!"
       dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
-      defaultOpen
+      // On a tablet the panel would take half the screen before the student
+      // has asked anything, leaving too little room to read a question or
+      // write an answer. Start closed on narrow screens; the toggle is always
+      // one tap away.
+      defaultOpen={
+        typeof window !== "undefined" ? window.innerWidth >= 1024 : false
+      }
     >
       <div className="flex h-screen flex-col overflow-hidden bg-background">
         <StudentNav />
