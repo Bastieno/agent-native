@@ -3,13 +3,14 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useRole } from "@/hooks/use-role";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSubmissionEditor } from "@/hooks/use-submission-editor";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { IconSend } from "@tabler/icons-react";
+import { Markdown } from "@/components/Markdown";
 
 export default function StudentAssessment() {
   const { assessmentId } = useParams();
@@ -20,9 +21,22 @@ export default function StudentAssessment() {
   const { data: assessment } = useQuery({
     queryKey: ["student-assessment", assessmentId],
     queryFn: async () => {
-      const res = await fetch(agentNativePath(`/api/school/my-assessment/${assessmentId}`));
+      const res = await fetch(
+        agentNativePath(`/api/school/assessments/${assessmentId}`),
+      );
       if (!res.ok) return null;
-      return res.json();
+      // Endpoint returns { assessment, myVariant, mySubmission, myGrade };
+      // flatten it into the shape this screen renders.
+      const data = await res.json();
+      if (!data?.assessment) return null;
+      return {
+        ...data.assessment,
+        variant: data.myVariant ?? null,
+        submission: data.mySubmission
+          ? { ...data.mySubmission, grade: data.myGrade ?? null }
+          : null,
+        submissionId: data.mySubmission?.id ?? null,
+      };
     },
     enabled: !!assessmentId,
   });
@@ -41,7 +55,16 @@ export default function StudentAssessment() {
     });
   }, [sync, assessmentId, submissionId]);
 
+  // Don't clobber what the student is typing with a poll result that is
+  // older than their local text (the draft is polled every 2s).
+  const isEditingRef = useRef(false);
+  const lastSentRef = useRef<string | null>(null);
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(
+    undefined,
+  );
+
   useEffect(() => {
+    if (isEditingRef.current) return;
     if (draft?.content !== undefined) {
       setContent(draft.content);
     } else if (assessment?.submission?.content) {
@@ -51,16 +74,45 @@ export default function StudentAssessment() {
 
   const handleChange = (value: string) => {
     setContent(value);
+    isEditingRef.current = true;
     if (submissionId) save({ content: value });
+    // Persist to SQL too. On the first keystroke there is no submission row
+    // yet, so this is what creates it (and makes the draft visible to the
+    // tutor agent).
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(async () => {
+      if (lastSentRef.current === value) return;
+      lastSentRef.current = value;
+      try {
+        await fetch(
+          agentNativePath("/_agent-native/actions/save-submission-draft"),
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ assessmentId, content: value }),
+          },
+        );
+        if (!submissionId) {
+          qc.invalidateQueries({
+            queryKey: ["student-assessment", assessmentId],
+          });
+        }
+      } catch {
+        /* keystrokes keep working offline; next save retries */
+      }
+    }, 1000);
   };
 
   const submitMutation = useMutation({
     mutationFn: async () => {
-      const res = await fetch(agentNativePath("/api/school/submit"), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ assessmentId, content }),
-      });
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/submit-work"),
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ assessmentId, content }),
+        },
+      );
       if (!res.ok) throw new Error("Failed to submit");
     },
     onSuccess: () => {
@@ -71,8 +123,10 @@ export default function StudentAssessment() {
     onError: () => toast.error("Failed to submit work"),
   });
 
-  const isSubmitted = ["submitted", "graded"].includes(assessment?.submission?.status ?? "");
-  const hasGrade = assessment?.submission?.grade !== null;
+  const isSubmitted = ["submitted", "graded"].includes(
+    assessment?.submission?.status ?? "",
+  );
+  const hasGrade = !!assessment?.submission?.grade;
 
   return (
     <div className="h-full flex flex-col overflow-hidden">
@@ -120,9 +174,7 @@ export default function StudentAssessment() {
         {assessment?.variant?.content && (
           <div className="rounded-lg border p-4">
             <h3 className="text-sm font-medium mb-2">Questions</h3>
-            <pre className="text-sm whitespace-pre-wrap">
-              {assessment.variant.content}
-            </pre>
+            <Markdown>{assessment.variant.content}</Markdown>
           </div>
         )}
         {hasGrade ? (

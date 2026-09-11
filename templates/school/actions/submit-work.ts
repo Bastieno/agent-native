@@ -1,6 +1,10 @@
 import { defineAction } from "@agent-native/core";
-import { readAppState, writeAppState } from "@agent-native/core/application-state";
+import {
+  readAppState,
+  writeAppState,
+} from "@agent-native/core/application-state";
 import { currentAccess } from "@agent-native/core/sharing";
+import { resolveStudentId } from "../server/lib/student-access.js";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
@@ -11,14 +15,28 @@ export default defineAction({
     "Submit a student's work for an assessment. Creates or updates the submission row and transitions status to submitted. Only the student themselves (or an admin) can submit.",
   schema: z.object({
     assessmentId: z.string().describe("Assessment ID"),
-    studentId: z.string().describe("Student record ID"),
-    content: z.string().optional().describe("Final submission content (markdown). If omitted, uses the submission-draft app-state."),
+    studentId: z
+      .string()
+      .optional()
+      .describe(
+        "Student record ID. Omit when the signed-in user is the student — it is resolved from the session.",
+      ),
+    content: z
+      .string()
+      .optional()
+      .describe(
+        "Final submission content (markdown). If omitted, uses the submission-draft app-state.",
+      ),
   }),
   http: { method: "POST" },
-  run: async (args) => {
+  run: async (rawArgs) => {
     const { orgId, userEmail } = currentAccess();
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
+    const args = {
+      ...rawArgs,
+      studentId: await resolveStudentId(userEmail, rawArgs.studentId, orgId),
+    };
 
     // Find assigned variant
     const [assigned] = await db
@@ -47,7 +65,9 @@ export default defineAction({
     // Read content from draft app-state if not provided
     let content = args.content;
     if (!content && existing) {
-      const draft = (await readAppState(`submission-draft-${existing.id}`)) as any;
+      const draft = (await readAppState(
+        `submission-draft-${existing.id}`,
+      )) as any;
       content = draft?.content ?? existing.content;
     }
 

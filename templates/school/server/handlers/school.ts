@@ -150,6 +150,19 @@ async function getStudentRecordMaps(db: any, userIds: string[]) {
   return { recordIdByUser, userIdByRecord };
 }
 
+/** The signed-in student's record ID (`students.id`), or null if they have none. */
+async function getMyStudentRecordId(
+  db: any,
+  userId: string,
+): Promise<string | null> {
+  const [row] = await db
+    .select({ id: schema.students.id })
+    .from(schema.students)
+    .where(eq(schema.students.userId, userId))
+    .limit(1);
+  return row?.id ?? null;
+}
+
 export const getSessionInfo = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
@@ -700,7 +713,45 @@ export const getMyClassDetail = defineEventHandler(async (event) => {
       .orderBy(asc(schema.assessments.dueDate)),
   ]);
 
-  return { cls: { ...cls, teacherName: null }, lessons, assessments };
+  // Teacher name for the class header
+  let teacherName: string | null = null;
+  if (cls.primaryTeacherUserId) {
+    const t = (await db.get(
+      sql`SELECT name, email FROM "user" WHERE id = ${cls.primaryTeacherUserId} LIMIT 1`,
+    )) as { name: string | null; email: string | null } | undefined;
+    teacherName = t?.name ?? t?.email ?? null;
+  }
+
+  // The student's own submission status per assessment, so the class page
+  // doesn't show graded work as "Not Started".
+  const studentRecordId = await getMyStudentRecordId(db, session.userId);
+  const assessmentIds = assessments.map((a: any) => a.id);
+  const mySubs =
+    studentRecordId && assessmentIds.length > 0
+      ? await db
+          .select({
+            assessmentId: schema.submissions.assessmentId,
+            status: schema.submissions.status,
+          })
+          .from(schema.submissions)
+          .where(
+            and(
+              eq(schema.submissions.studentId, studentRecordId),
+              inArray(schema.submissions.assessmentId, assessmentIds),
+            ),
+          )
+      : [];
+  const statusByAssessment: Record<string, string> = {};
+  for (const s of mySubs) statusByAssessment[s.assessmentId] = s.status;
+
+  return {
+    cls: { ...cls, teacherName },
+    lessons,
+    assessments: assessments.map((a: any) => ({
+      ...a,
+      submissionStatus: statusByAssessment[a.id] ?? "not_started",
+    })),
+  };
 });
 
 // ─── Students ─────────────────────────────────────────────────────────────────
@@ -1391,10 +1442,14 @@ export const getMyAssessments = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
 
+  // studentAssessments/submissions are keyed by student record ID, not user ID.
+  const studentRecordId = await getMyStudentRecordId(db, session.userId);
+  if (!studentRecordId) return [];
+
   const assigned = await db
     .select()
     .from(schema.studentAssessments)
-    .where(eq(schema.studentAssessments.studentId, session.userId));
+    .where(eq(schema.studentAssessments.studentId, studentRecordId));
 
   if (assigned.length === 0) return [];
 
@@ -1409,7 +1464,7 @@ export const getMyAssessments = defineEventHandler(async (event) => {
     .from(schema.submissions)
     .where(
       and(
-        eq(schema.submissions.studentId, session.userId),
+        eq(schema.submissions.studentId, studentRecordId),
         inArray(schema.submissions.assessmentId, assessmentIds),
       ),
     );
@@ -1433,12 +1488,15 @@ export const getMyGrades = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
 
+  const studentRecordId = await getMyStudentRecordId(db, session.userId);
+  if (!studentRecordId) return [];
+
   const grades = await db
     .select()
     .from(schema.grades)
     .where(
       and(
-        eq(schema.grades.studentId, session.userId),
+        eq(schema.grades.studentId, studentRecordId),
         eq(schema.grades.isPublished, 1 as any),
       ),
     )
@@ -1497,15 +1555,18 @@ export const getMyProgress = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
 
-  const grades = await db
-    .select()
-    .from(schema.grades)
-    .where(
-      and(
-        eq(schema.grades.studentId, session.userId),
-        eq(schema.grades.isPublished, 1 as any),
-      ),
-    );
+  const studentRecordId = await getMyStudentRecordId(db, session.userId);
+  const grades = studentRecordId
+    ? await db
+        .select()
+        .from(schema.grades)
+        .where(
+          and(
+            eq(schema.grades.studentId, studentRecordId),
+            eq(schema.grades.isPublished, 1 as any),
+          ),
+        )
+    : [];
 
   if (grades.length === 0) {
     return {
@@ -1673,12 +1734,16 @@ export const getAssessment = defineEventHandler(async (event) => {
   // For students: find their assigned variant, strip difficulty
   const isStudent = profile?.schoolRole === "student";
   if (isStudent) {
+    const studentRecordId = await getMyStudentRecordId(db, session.userId);
     const assigned = await db
       .select()
       .from(schema.studentAssessments)
       .where(
         and(
-          eq(schema.studentAssessments.studentId, session.userId),
+          eq(
+            schema.studentAssessments.studentId,
+            studentRecordId ?? "__none__",
+          ),
           eq(schema.studentAssessments.assessmentId, assessmentId),
         ),
       )
@@ -1693,7 +1758,7 @@ export const getAssessment = defineEventHandler(async (event) => {
       .from(schema.submissions)
       .where(
         and(
-          eq(schema.submissions.studentId, session.userId),
+          eq(schema.submissions.studentId, studentRecordId ?? "__none__"),
           eq(schema.submissions.assessmentId, assessmentId),
         ),
       )
