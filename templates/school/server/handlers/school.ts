@@ -8,6 +8,10 @@ import {
   putOrgSetting,
 } from "@agent-native/core/settings";
 import { nanoid } from "nanoid";
+import {
+  assertClassAccess,
+  assertAssessmentAccess,
+} from "../lib/class-access.js";
 
 // ─── Helper ──────────────────────────────────────────────────────────────────
 
@@ -26,6 +30,40 @@ async function requireSession(event: any) {
     if (row?.id) (session as any).userId = row.id;
   }
   return session;
+}
+
+/**
+ * Build the actor used for row-level checks, or throw if the caller is not a
+ * member of a school.
+ */
+async function requireActor(db: any, session: any) {
+  const profile = await getSchoolProfile(db, session.userId);
+  if (!profile) throw createError({ statusCode: 403, message: "Forbidden" });
+  return {
+    userId: session.userId as string,
+    schoolId: profile.schoolId as string,
+    schoolRole: profile.schoolRole as string,
+  };
+}
+
+function isStaff(role: string): boolean {
+  return (
+    role === "school_admin" ||
+    role === "subject_coordinator" ||
+    role === "teacher"
+  );
+}
+
+/** Turn an AccessDeniedError into a 403 rather than a 500. */
+async function guard(fn: () => Promise<void>): Promise<void> {
+  try {
+    await fn();
+  } catch (err: any) {
+    if (err?.name === "AccessDeniedError") {
+      throw createError({ statusCode: 403, message: err.message });
+    }
+    throw err;
+  }
 }
 
 async function getSchoolProfile(db: any, userId: string) {
@@ -660,8 +698,9 @@ export const getMyClassDetail = defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: "Missing classId" });
 
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) throw createError({ statusCode: 403, message: "Forbidden" });
+  const actor = await requireActor(db, session);
+  // A student may only open a class they are enrolled in.
+  await guard(() => assertClassAccess(actor, classId));
 
   const classRows = await db
     .select({
@@ -979,8 +1018,13 @@ export const getClassDetail = defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: "Missing classId" });
 
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) throw createError({ statusCode: 403, message: "Forbidden" });
+  const actor = await requireActor(db, session);
+  // Staff view of a class. Students have /api/school/my-classes/:classId,
+  // which returns only what a learner should see.
+  if (!isStaff(actor.schoolRole)) {
+    throw createError({ statusCode: 403, message: "Forbidden" });
+  }
+  await guard(() => assertClassAccess(actor, classId));
 
   const rows = await db
     .select({
@@ -1002,7 +1046,7 @@ export const getClassDetail = defineEventHandler(async (event) => {
     .where(
       and(
         eq(schema.classes.id, classId),
-        eq(schema.classes.orgId, profile.schoolId),
+        eq(schema.classes.orgId, actor.schoolId),
       ),
     )
     .limit(1);
@@ -1026,12 +1070,12 @@ export const getClassDetail = defineEventHandler(async (event) => {
 export const listLessons = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) return [];
+  const actor = await requireActor(db, session);
 
   const q = getQuery(event);
   const classId = q.classId as string | undefined;
   if (!classId) return [];
+  await guard(() => assertClassAccess(actor, classId));
 
   return db
     .select({
@@ -1051,12 +1095,12 @@ export const listLessons = defineEventHandler(async (event) => {
 export const listAssessments = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) return [];
+  const actor = await requireActor(db, session);
 
   const q = getQuery(event);
   const classId = q.classId as string | undefined;
   if (!classId) return [];
+  await guard(() => assertClassAccess(actor, classId));
 
   return db
     .select({
@@ -1077,12 +1121,13 @@ export const listAssessments = defineEventHandler(async (event) => {
 export const listClassStudents = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) return [];
+  const actor = await requireActor(db, session);
+  if (!isStaff(actor.schoolRole)) return [];
 
   const q = getQuery(event);
   const classId = q.classId as string | undefined;
   if (!classId) return [];
+  await guard(() => assertClassAccess(actor, classId));
 
   const enrollments = await db
     .select({
@@ -1139,8 +1184,11 @@ export const getGradebook = defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: "Missing classId" });
 
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) throw createError({ statusCode: 403, message: "Forbidden" });
+  const actor = await requireActor(db, session);
+  if (!isStaff(actor.schoolRole)) {
+    throw createError({ statusCode: 403, message: "Forbidden" });
+  }
+  await guard(() => assertClassAccess(actor, classId));
 
   const classRows = await db
     .select({ id: schema.classes.id, name: schema.classes.name })
@@ -1752,7 +1800,9 @@ export const getAssessment = defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: "Missing assessmentId" });
 
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
+  const actor = await requireActor(db, session);
+  const profile = { schoolRole: actor.schoolRole };
+  await guard(() => assertAssessmentAccess(actor, assessmentId));
 
   const rows = await db
     .select()
@@ -1880,12 +1930,14 @@ export const getAssessment = defineEventHandler(async (event) => {
 export const listVariants = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) return [];
+  const actor = await requireActor(db, session);
+  // Variants carry difficulty labels — never expose them to students.
+  if (!isStaff(actor.schoolRole)) return [];
 
   const q = getQuery(event);
   const assessmentId = q.assessmentId as string | undefined;
   if (!assessmentId) return [];
+  await guard(() => assertAssessmentAccess(actor, assessmentId));
 
   return db
     .select()
@@ -1899,13 +1951,15 @@ export const listVariants = defineEventHandler(async (event) => {
 export const listSubmissions = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
-  const profile = await getSchoolProfile(db, session.userId);
-  if (!profile) return [];
+  const actor = await requireActor(db, session);
+  // Other students' work is never listable.
+  if (!isStaff(actor.schoolRole)) return [];
 
   const q = getQuery(event);
   const assessmentId = q.assessmentId as string | undefined;
   const status = q.status as string | undefined;
   if (!assessmentId) return [];
+  await guard(() => assertAssessmentAccess(actor, assessmentId));
 
   const conditions: any[] = [eq(schema.submissions.assessmentId, assessmentId)];
   if (status) conditions.push(eq(schema.submissions.status, status));
