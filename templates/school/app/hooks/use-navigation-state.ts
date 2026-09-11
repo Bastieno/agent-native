@@ -95,15 +95,23 @@ export function useNavigationState() {
       }),
   });
 
-  const sync = useCallback(
-    (state: NavigationState) => {
-      if (debounceRef.current) clearTimeout(debounceRef.current);
-      debounceRef.current = setTimeout(() => {
-        putMutation.mutate(state);
-      }, 500);
-    },
-    [putMutation],
-  );
+  // `sync` must be referentially stable: every route calls it from an effect
+  // that lists it as a dependency. Depending on the `useMutation` result object
+  // (which changes identity on every mutation state change) caused a
+  // PUT → rerender → new sync → effect → PUT loop of ~2 requests/second.
+  const mutateRef = useRef(putMutation.mutate);
+  mutateRef.current = putMutation.mutate;
+  const lastSentRef = useRef<string | null>(null);
+
+  const sync = useCallback((state: NavigationState) => {
+    const serialized = JSON.stringify(state);
+    if (serialized === lastSentRef.current) return;
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      lastSentRef.current = serialized;
+      mutateRef.current(state);
+    }, 500);
+  }, []);
 
   // One-shot command: agent writes navigate, UI reads and deletes it
   const command = useQuery<NavigationState | null>({
