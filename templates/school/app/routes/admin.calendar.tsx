@@ -209,11 +209,11 @@ export default function AdminCalendar() {
               chips. Show the whole term as a grid first — subjects down,
               weeks across — and let the reader open one subject. */}
           {subjectId === ALL ? (
-            <div className="rounded-lg border overflow-x-auto">
+            <div className="hidden overflow-x-auto rounded-lg border md:block">
               <table className="text-sm w-full border-collapse">
                 <thead>
                   <tr className="border-b bg-muted/40">
-                    <th className="sticky left-0 bg-muted/40 px-3 py-2 text-left font-medium min-w-[9rem]">
+                    <th className="sticky left-0 z-10 min-w-[9rem] border-r bg-card px-3 py-2 text-left font-medium">
                       Subject
                     </th>
                     {Array.from(
@@ -247,7 +247,7 @@ export default function AdminCalendar() {
                         }
                         title={`Open ${name} week by week`}
                       >
-                        <td className="sticky left-0 bg-background px-3 py-2 font-medium whitespace-nowrap">
+                        <td className="sticky left-0 z-10 whitespace-nowrap border-r bg-background px-3 py-2 font-medium">
                           {name}
                         </td>
                         {calendar.calendar.map((week: any) => {
@@ -306,7 +306,66 @@ export default function AdminCalendar() {
                 </span>
               </div>
             </div>
-          ) : (
+          ) : null}
+
+          {/* A fourteen-column table cannot work on a phone. Below md each
+              subject becomes a card whose week markers wrap, so nothing
+              scrolls sideways and nothing hides under a sticky column. */}
+          {subjectId === ALL ? (
+            <div className="space-y-2 md:hidden">
+              {[...plannedSubjects].map((name) => {
+                const entries = (calendar.calendar ?? []).map((w: any) => ({
+                  week: w.week,
+                  entry: w.entries.find((e: any) => e.subjectName === name),
+                }));
+                const firstEntry = entries.find((e: any) => e.entry)?.entry;
+                return (
+                  <button
+                    key={name}
+                    type="button"
+                    onClick={() =>
+                      firstEntry?.subjectId &&
+                      setSubjectId(firstEntry.subjectId)
+                    }
+                    className="w-full rounded-lg border p-3 text-left transition-colors hover:border-primary/50"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-sm font-medium">{name}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {entries.filter((e: any) => e.entry).length} of{" "}
+                        {calendar.weeks} weeks
+                      </span>
+                    </div>
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      {entries.map(({ week, entry }: any) => (
+                        <span
+                          key={week}
+                          title={
+                            entry
+                              ? `Week ${week}: ${entry.unitTitle}`
+                              : `Week ${week}: nothing planned`
+                          }
+                          className={`flex h-5 w-5 items-center justify-center rounded-sm text-[10px] ${
+                            !entry
+                              ? "bg-muted/40 text-muted-foreground"
+                              : entry.lessonsPrepared > 0
+                                ? "bg-green-500/70 text-background"
+                                : entry.lessonsDrafted > 0
+                                  ? "bg-amber-500/70 text-background"
+                                  : "bg-muted-foreground/30"
+                          } ${currentWeek === week ? "ring-1 ring-primary" : ""}`}
+                        >
+                          {week}
+                        </span>
+                      ))}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          ) : null}
+
+          {subjectId === ALL ? null : (
             <div className="space-y-2">
               {calendar.calendar.map((week: any) => {
                 const isCurrent = currentWeek === week.week;
