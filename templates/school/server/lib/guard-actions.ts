@@ -8,6 +8,7 @@ import {
   classIdForLesson,
   classIdForSubmission,
   classIdForVariant,
+  studentRecordIdForUser,
 } from "./class-access.js";
 import {
   findUnclassifiedActions,
@@ -119,6 +120,22 @@ async function assertCallerMayTouch(
   }
   if (typeof args.lessonId === "string") {
     classIds.push(await classIdForLesson(args.lessonId));
+  }
+
+  // A student may only ever name themselves. Without this, "my" actions that
+  // take a studentId (get-my-grades, get-my-progress, get-my-assessments) hand
+  // one student another student's results.
+  if (actor.schoolRole === "student") {
+    const ownRecordId = await studentRecordIdForUser(actor.userId);
+    if (typeof args.studentId === "string" && args.studentId !== ownRecordId) {
+      throw new Error("Not permitted: you can only access your own record.");
+    }
+    if (
+      typeof args.studentUserId === "string" &&
+      args.studentUserId !== actor.userId
+    ) {
+      throw new Error("Not permitted: you can only access your own record.");
+    }
   }
 
   const idKind = ID_KIND[actionName];

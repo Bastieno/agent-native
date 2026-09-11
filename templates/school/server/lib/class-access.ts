@@ -48,6 +48,19 @@ export async function actorForEmail(
   };
 }
 
+/** The student record id for a user, or null when they have none. */
+export async function studentRecordIdForUser(
+  userId: string,
+): Promise<string | null> {
+  const db = getDb();
+  const [row] = await db
+    .select({ id: schema.students.id })
+    .from(schema.students)
+    .where(eq(schema.students.userId, userId))
+    .limit(1);
+  return row?.id ?? null;
+}
+
 /** The class a lesson note belongs to. */
 export async function classIdForLesson(
   lessonId: string,
