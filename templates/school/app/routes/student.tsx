@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router";
 import { useEffect } from "react";
-import { AgentSidebar } from "@agent-native/core/client";
+import { AgentSidebar, AgentToggleButton } from "@agent-native/core/client";
 import { getSchoolSuggestions } from "@/lib/school-suggestions";
 import { StudentNav } from "@/components/layout/StudentNav";
 import { useRole } from "@/hooks/use-role";
@@ -48,12 +48,12 @@ export default function StudentLayout() {
     <AgentSidebar
       emptyStateText="Ask me for help with your assignments!"
       dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
-      // On a tablet the panel would take half the screen before the student
-      // has asked anything, leaving too little room to read a question or
-      // write an answer. Start closed on narrow screens; the toggle is always
-      // one tap away.
+      // Side by side only on a large desktop. On a tablet the panel would
+      // take half the screen before the student has asked anything, leaving
+      // too little room to read a question or write an answer.
+      overlayBreakpointPx={1279}
       defaultOpen={
-        typeof window !== "undefined" ? window.innerWidth >= 1024 : false
+        typeof window !== "undefined" ? window.innerWidth >= 1280 : false
       }
     >
       <div className="flex h-screen flex-col overflow-hidden bg-background">
@@ -61,6 +61,7 @@ export default function StudentLayout() {
         <main className="flex-1 overflow-auto">
           <Outlet />
         </main>
+        <AgentToggleButton className="fixed bottom-6 right-6 z-30 h-12 w-12 rounded-full border bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:text-primary-foreground xl:hidden" />
       </div>
     </AgentSidebar>
   );

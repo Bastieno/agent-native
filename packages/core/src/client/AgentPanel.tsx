@@ -1995,6 +1995,16 @@ export interface AgentSidebarProps {
   /** Animate the mobile overlay in a sheet-style slide transition. */
   animateMobile?: boolean;
   /**
+   * Width (px) at or below which the panel becomes an overlay with a backdrop
+   * instead of taking space in the layout. Defaults to 767 (phones).
+   *
+   * Apps whose own chrome is wide — a nav sidebar plus a dense main column —
+   * squeeze the panel long before a phone width, so they can overlay earlier
+   * (e.g. 1279 to keep it in-layout only on large desktops) and pair it with
+   * an `AgentToggleButton`.
+   */
+  overlayBreakpointPx?: number;
+  /**
    * Bind chats to a resource. When set, every chat started here is
    * scoped to `{type, id}`, the tab bar/history partition by that scope,
    * and a "Working on {label}" badge appears with a Detach option.
@@ -2019,6 +2029,7 @@ export function AgentSidebar({
   position = "right",
   defaultOpen = false,
   animateMobile = false,
+  overlayBreakpointPx,
   scope,
   browserTabId,
 }: AgentSidebarProps) {
@@ -2028,12 +2039,13 @@ export function AgentSidebar({
   );
   const [presentationMode, setPresentationMode] = useState(false);
   const [width, setWidth] = useState(initialWidth);
+  const overlayQuery = `(max-width: ${overlayBreakpointPx ?? 767}px)`;
   const [fullscreen, setFullscreen] = useState(() => {
-    // Force-disable on mobile: a Claude-style centered column makes no sense
-    // when the sidebar already covers most of the viewport.
+    // Force-disable in overlay mode: a Claude-style centered column makes no
+    // sense when the sidebar already covers most of the viewport.
     if (
       typeof window !== "undefined" &&
-      window.matchMedia("(max-width: 767px)").matches
+      window.matchMedia(overlayQuery).matches
     ) {
       return false;
     }
@@ -2044,18 +2056,19 @@ export function AgentSidebar({
     }
   });
 
-  // Track mobile viewport so we can switch to overlay mode.
+  // Track the viewport so we can switch to overlay mode. Narrow by default;
+  // apps with their own wide chrome can overlay at larger widths.
   const [isMobile, setIsMobile] = useState(
     () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(max-width: 767px)").matches,
+      typeof window !== "undefined" && window.matchMedia(overlayQuery).matches,
   );
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
+    const mq = window.matchMedia(overlayQuery);
+    setIsMobile(mq.matches);
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
-  }, []);
+  }, [overlayQuery]);
   useEffect(() => {
     try {
       const saved = localStorage.getItem(SIDEBAR_STORAGE_KEY);

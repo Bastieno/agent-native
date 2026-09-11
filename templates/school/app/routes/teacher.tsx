@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { AgentSidebar } from "@agent-native/core/client";
 import { getSchoolSuggestions } from "@/lib/school-suggestions";
 import { TeacherSidebar } from "@/components/layout/TeacherSidebar";
+import { PortalShell } from "@/components/layout/PortalShell";
 import { useRole } from "@/hooks/use-role";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { DefaultSpinner } from "@agent-native/core/client";
@@ -52,14 +53,14 @@ export default function TeacherLayout() {
     <AgentSidebar
       emptyStateText="How can I help you with your classes?"
       dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
-      defaultOpen
+      overlayBreakpointPx={1279}
+      defaultOpen={
+        typeof window !== "undefined" ? window.innerWidth >= 1280 : false
+      }
     >
-      <div className="flex h-screen overflow-hidden bg-background">
-        <TeacherSidebar />
-        <main className="flex-1 overflow-hidden">
-          <Outlet />
-        </main>
-      </div>
+      <PortalShell sidebar={<TeacherSidebar />} title="Teacher Portal">
+        <Outlet />
+      </PortalShell>
     </AgentSidebar>
   );
 }
