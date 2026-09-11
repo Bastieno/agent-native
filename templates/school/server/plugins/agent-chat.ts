@@ -5,11 +5,18 @@ import {
 import { getOrgContext } from "@agent-native/core/org";
 import { appStateGet } from "@agent-native/core/application-state";
 import actionsRegistry from "../../.generated/actions-registry.js";
+import { guardActions } from "../lib/guard-actions.js";
 
 export default createAgentChatPlugin({
-  actions: loadActionsFromStaticRegistry(actionsRegistry),
+  // Every action is role-checked. This map backs both the agent's tools and
+  // the auto-mounted HTTP endpoints, so the guard covers both paths.
+  actions: guardActions(loadActionsFromStaticRegistry(actionsRegistry)),
   appId: "school",
   model: "claude-haiku-4-5",
+  // A school org holds every student, teacher and grade. The framework's SQL
+  // tools are org-scoped, which would let any signed-in student read the whole
+  // school. Data access goes through role-checked actions only.
+  disableDbDataTools: true,
   resolveOrgId: async (event) => {
     const ctx = await getOrgContext(event);
     return ctx.orgId;
