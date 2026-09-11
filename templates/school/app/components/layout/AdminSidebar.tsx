@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import {
   IconLayoutDashboard,
   IconBook,
+  IconCalendar,
   IconUsers,
   IconSchool,
   IconChartBar,
@@ -16,6 +17,7 @@ import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 const navItems = [
   { href: "/admin", label: "Overview", icon: IconLayoutDashboard, end: true },
   { href: "/admin/curriculum", label: "Curriculum", icon: IconBook },
+  { href: "/admin/calendar", label: "Calendar", icon: IconCalendar },
   { href: "/admin/staff", label: "Staff", icon: IconUsers },
   { href: "/admin/students", label: "Students", icon: IconUsers },
   { href: "/admin/classes", label: "Classes", icon: IconSchool },

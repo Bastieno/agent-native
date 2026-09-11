@@ -95,6 +95,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-curriculum-draft": ADMIN_COORD,
   "commit-curriculum-draft": ADMIN_COORD,
   "generate-scheme-of-work": ADMIN_COORD,
+  "get-curriculum-calendar": STAFF,
 
   // ── Students (staff-facing) ───────────────────────────────────────────
   "list-students": STAFF,

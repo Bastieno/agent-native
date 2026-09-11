@@ -11,6 +11,7 @@ export interface AdminNav {
     | "overview"
     | "curriculum"
     | "curriculum-setup"
+    | "calendar"
     | "staff"
     | "students"
     | "classes"
