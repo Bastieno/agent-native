@@ -24,9 +24,13 @@ async function getJson(path: string) {
   return res.json();
 }
 
+const ALL = "__all__";
+
 export default function AdminCalendar() {
   const { sync } = useNavigationState();
-  const [termId, setTermId] = useState<string>("");
+  const [termId, setTermId] = useState("");
+  const [gradeLevelId, setGradeLevelId] = useState("");
+  const [subjectId, setSubjectId] = useState(ALL);
 
   useEffect(() => {
     sync({ role: "admin", view: "calendar" });
@@ -37,24 +41,55 @@ export default function AdminCalendar() {
     queryFn: async () =>
       (await getJson("/_agent-native/actions/list-terms")) ?? [],
   });
+  const { data: gradeLevels = [] } = useQuery<any[]>({
+    queryKey: ["grade-levels"],
+    queryFn: async () => {
+      // manage-grade-levels is a POST action; listing is its default mode.
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/manage-grade-levels"),
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ action: "list" }),
+        },
+      );
+      if (!res.ok) return [];
+      const data = await res.json();
+      return Array.isArray(data) ? data : (data?.levels ?? []);
+    },
+  });
+  const { data: subjects = [] } = useQuery<any[]>({
+    queryKey: ["subjects"],
+    queryFn: async () =>
+      (await getJson("/_agent-native/actions/list-subjects")) ?? [],
+  });
 
-  // Default to the term covering today, else the first one.
+  // Default to the term covering today, and the first year group — a calendar
+  // for every year group at once is unreadable in a school with six of them.
   useEffect(() => {
-    if (termId || terms.length === 0) return;
-    const today = new Date().toISOString().slice(0, 10);
-    const current = terms.find(
-      (t: any) => t.startDate <= today && t.endDate >= today,
-    );
-    setTermId(current?.id ?? terms[0].id);
-  }, [terms, termId]);
+    if (!termId && terms.length > 0) {
+      const today = new Date().toISOString().slice(0, 10);
+      const current = terms.find(
+        (t: any) => t.startDate <= today && t.endDate >= today,
+      );
+      setTermId(current?.id ?? terms[0].id);
+    }
+    if (!gradeLevelId && gradeLevels.length > 0) {
+      setGradeLevelId(gradeLevels[0].id);
+    }
+  }, [terms, termId, gradeLevels, gradeLevelId]);
 
   const { data: calendar, isLoading } = useQuery({
-    queryKey: ["curriculum-calendar", termId],
-    queryFn: async () =>
-      await getJson(
-        `/_agent-native/actions/get-curriculum-calendar?termId=${termId}`,
-      ),
-    enabled: !!termId,
+    queryKey: ["curriculum-calendar", termId, gradeLevelId, subjectId],
+    queryFn: async () => {
+      const params = new URLSearchParams({ termId });
+      if (gradeLevelId) params.set("gradeLevelId", gradeLevelId);
+      if (subjectId !== ALL) params.set("subjectId", subjectId);
+      return await getJson(
+        `/_agent-native/actions/get-curriculum-calendar?${params}`,
+      );
+    },
+    enabled: !!termId && !!gradeLevelId,
   });
 
   const today = new Date().toISOString().slice(0, 10);
@@ -67,19 +102,63 @@ export default function AdminCalendar() {
         ) + 1
       : null;
 
+  const gradeLevelName =
+    gradeLevels.find((g: any) => g.id === gradeLevelId)?.name ?? "";
+
+  // Which subjects have a plan for this year group, and which do not — the
+  // gap is the thing an admin is actually looking for.
+  const plannedSubjects = new Set<string>(
+    (calendar?.calendar ?? []).flatMap((w: any) =>
+      w.entries.map((e: any) => e.subjectName),
+    ),
+  );
+  const unplanned = subjects
+    .filter((s: any) => !plannedSubjects.has(s.name))
+    .map((s: any) => s.name);
+
   return (
     <div className="h-full overflow-auto p-6 space-y-5">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-xl font-semibold">Curriculum Calendar</h1>
+          <h1 className="text-xl font-semibold">
+            Curriculum Calendar
+            {gradeLevelName ? ` — ${gradeLevelName}` : ""}
+          </h1>
           <p className="text-sm text-muted-foreground mt-1">
-            What each year group covers, week by week.
+            {calendar?.term?.name
+              ? `${calendar.term.name}: ${calendar.term.startDate} to ${calendar.term.endDate}`
+              : "What this year group covers, week by week."}
           </p>
         </div>
-        {terms.length > 0 && (
+        <div className="flex items-center gap-2">
+          <Select value={gradeLevelId} onValueChange={setGradeLevelId}>
+            <SelectTrigger className="w-32">
+              <SelectValue placeholder="Year group" />
+            </SelectTrigger>
+            <SelectContent>
+              {gradeLevels.map((g: any) => (
+                <SelectItem key={g.id} value={g.id}>
+                  {g.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Select value={subjectId} onValueChange={setSubjectId}>
+            <SelectTrigger className="w-44">
+              <SelectValue placeholder="All subjects" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value={ALL}>All subjects</SelectItem>
+              {subjects.map((s: any) => (
+                <SelectItem key={s.id} value={s.id}>
+                  {s.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           <Select value={termId} onValueChange={setTermId}>
-            <SelectTrigger className="w-48">
-              <SelectValue placeholder="Select term" />
+            <SelectTrigger className="w-36">
+              <SelectValue placeholder="Term" />
             </SelectTrigger>
             <SelectContent>
               {terms.map((t: any) => (
@@ -89,14 +168,14 @@ export default function AdminCalendar() {
               ))}
             </SelectContent>
           </Select>
-        )}
+        </div>
       </div>
 
       {isLoading || !calendar || calendar.unitCount === 0 ? (
         <ListState
           loading={isLoading}
           icon={IconCalendar}
-          title="No curriculum planned for this term"
+          title={`No curriculum planned for ${gradeLevelName || "this year group"}`}
           description="Ask the agent to generate a scheme of work for a subject and year group."
           rows={5}
         />
@@ -105,10 +184,10 @@ export default function AdminCalendar() {
           <div className="flex flex-wrap gap-4 text-sm">
             {[
               { label: "Teaching weeks", value: calendar.weeks },
+              { label: "Subjects planned", value: plannedSubjects.size },
               { label: "Units", value: calendar.unitCount },
-              { label: "Lesson notes", value: calendar.lessonNoteCount },
               {
-                label: "Finalized",
+                label: "Lessons ready",
                 value: `${calendar.finalizedLessonCount}/${calendar.lessonNoteCount}`,
               },
             ].map(({ label, value }) => (
@@ -118,6 +197,13 @@ export default function AdminCalendar() {
               </div>
             ))}
           </div>
+
+          {unplanned.length > 0 && subjectId === ALL && (
+            <p className="text-xs text-muted-foreground">
+              No plan yet for {gradeLevelName}:{" "}
+              <span className="text-foreground">{unplanned.join(", ")}</span>
+            </p>
+          )}
 
           <div className="space-y-2">
             {calendar.calendar.map((week: any) => {
@@ -132,21 +218,47 @@ export default function AdminCalendar() {
                         size={15}
                         className="shrink-0 text-muted-foreground transition-transform group-data-[state=open]:rotate-90"
                       />
-                      <span className="text-sm font-medium shrink-0">
+                      <span className="text-sm font-medium shrink-0 w-16">
                         Week {week.week}
                       </span>
                       {isCurrent && (
-                        <Badge className="text-xs h-5">This week</Badge>
+                        <Badge className="text-xs h-5 shrink-0">
+                          This week
+                        </Badge>
                       )}
-                      <span className="text-xs text-muted-foreground truncate ml-1">
-                        {week.entries.length === 0
-                          ? "Nothing planned"
-                          : week.entries
-                              .map(
-                                (e: any) => `${e.subjectName} · ${e.unitTitle}`,
-                              )
-                              .join("  ·  ")}
-                      </span>
+                      {/* One chip per subject keeps a ten-subject week
+                          scannable, where a joined sentence would not be. */}
+                      <div className="flex flex-wrap items-center gap-1.5 min-w-0">
+                        {week.entries.length === 0 ? (
+                          <span className="text-xs text-muted-foreground">
+                            Nothing planned
+                          </span>
+                        ) : (
+                          week.entries.map((e: any) => (
+                            <span
+                              key={e.unitId}
+                              className="inline-flex items-center gap-1 rounded-md border bg-background px-2 py-0.5 text-xs"
+                              title={`${e.subjectName}: ${e.unitTitle}`}
+                            >
+                              <span
+                                className={`h-1.5 w-1.5 rounded-full ${
+                                  e.lessonsPrepared > 0
+                                    ? "bg-green-500"
+                                    : e.lessonsDrafted > 0
+                                      ? "bg-amber-500"
+                                      : "bg-muted-foreground/40"
+                                }`}
+                              />
+                              <span className="font-medium">
+                                {e.subjectName}
+                              </span>
+                              <span className="text-muted-foreground truncate max-w-[12rem]">
+                                {e.unitTitle}
+                              </span>
+                            </span>
+                          ))
+                        )}
+                      </div>
                     </CollapsibleTrigger>
                     <CollapsibleContent>
                       <div className="border-t px-4 py-3 space-y-4">
@@ -178,7 +290,7 @@ export default function AdminCalendar() {
                                   {entry.lessonsPrepared > 0
                                     ? `${entry.lessonsPrepared} lesson${entry.lessonsPrepared === 1 ? "" : "s"} ready`
                                     : entry.lessonsDrafted > 0
-                                      ? "Draft lesson"
+                                      ? `${entry.lessonsDrafted} draft lesson${entry.lessonsDrafted === 1 ? "" : "s"}`
                                       : "No lesson note"}
                                 </Badge>
                               </div>
