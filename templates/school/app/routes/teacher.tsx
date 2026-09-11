@@ -58,7 +58,11 @@ export default function TeacherLayout() {
         typeof window !== "undefined" ? window.innerWidth >= 1280 : false
       }
     >
-      <PortalShell sidebar={<TeacherSidebar />} title="Teacher Portal">
+      <PortalShell
+        sidebar={<TeacherSidebar />}
+        drawerSidebar={<TeacherSidebar showAgentToggle={false} />}
+        title="Teacher Portal"
+      >
         <Outlet />
       </PortalShell>
     </AgentSidebar>

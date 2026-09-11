@@ -20,10 +20,17 @@ import { IconMenu2 } from "@tabler/icons-react";
  */
 export function PortalShell({
   sidebar,
+  drawerSidebar,
   title,
   children,
 }: {
   sidebar: ReactNode;
+  /**
+   * The navigation as it appears in the drawer. Same component, without the
+   * agent toggle — the floating button already does that job, and leaving it
+   * in means the drawer opens with its tooltip showing.
+   */
+  drawerSidebar?: ReactNode;
   title: string;
   children: ReactNode;
 }) {
@@ -42,9 +49,14 @@ export function PortalShell({
 
       {/* Drawer navigation below lg */}
       <Sheet open={navOpen} onOpenChange={setNavOpen}>
-        <SheetContent side="left" className="w-64 p-0">
+        {/* Exactly the sidebar's width: anything wider leaves a strip of
+            drawer background beside the navigation. */}
+        <SheetContent
+          side="left"
+          className="w-56 gap-0 border-r-0 p-0 [&>button]:top-4"
+        >
           <SheetTitle className="sr-only">{title} navigation</SheetTitle>
-          {sidebar}
+          {drawerSidebar ?? sidebar}
         </SheetContent>
       </Sheet>
 

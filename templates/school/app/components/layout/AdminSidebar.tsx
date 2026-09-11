@@ -27,14 +27,16 @@ const navItems = [
   { href: "/admin/settings", label: "Settings", icon: IconSettings },
 ];
 
-export function AdminSidebar() {
+export function AdminSidebar({
+  showAgentToggle = true,
+}: { showAgentToggle?: boolean } = {}) {
   return (
-    <aside className="flex h-full w-56 flex-col border-r bg-sidebar">
+    <aside className="flex h-full w-full flex-col border-r bg-sidebar lg:w-56">
       <div className="flex h-14 items-center border-b px-4 gap-2">
         <span className="flex-1 text-sm font-semibold text-sidebar-foreground">
           Admin Portal
         </span>
-        <AgentToggleButton />
+        {showAgentToggle ? <AgentToggleButton /> : null}
       </div>
       <nav className="flex-1 overflow-y-auto p-2 space-y-0.5">
         {navItems.map(({ href, label, icon: Icon, end }) => (

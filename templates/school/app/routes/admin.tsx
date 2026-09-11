@@ -75,7 +75,11 @@ export default function AdminLayout() {
         typeof window !== "undefined" ? window.innerWidth >= 1280 : false
       }
     >
-      <PortalShell sidebar={<AdminSidebar />} title="Admin Portal">
+      <PortalShell
+        sidebar={<AdminSidebar />}
+        drawerSidebar={<AdminSidebar showAgentToggle={false} />}
+        title="Admin Portal"
+      >
         <Outlet />
       </PortalShell>
     </AgentSidebar>

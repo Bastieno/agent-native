@@ -10,18 +10,27 @@ import { cn } from "@/lib/utils";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 
 const navItems = [
-  { href: "/teacher", label: "Dashboard", icon: IconLayoutDashboard, end: true },
+  {
+    href: "/teacher",
+    label: "Dashboard",
+    icon: IconLayoutDashboard,
+    end: true,
+  },
   { href: "/teacher/classes", label: "My Classes", icon: IconSchool },
   { href: "/teacher/students", label: "Students", icon: IconUsers },
   { href: "/teacher/analytics", label: "Analytics", icon: IconChartBar },
 ];
 
-export function TeacherSidebar() {
+export function TeacherSidebar({
+  showAgentToggle = true,
+}: { showAgentToggle?: boolean } = {}) {
   return (
-    <aside className="flex h-full w-56 flex-col border-r bg-sidebar">
+    <aside className="flex h-full w-full flex-col border-r bg-sidebar lg:w-56">
       <div className="flex h-14 items-center border-b px-4 gap-2">
-        <span className="flex-1 text-sm font-semibold text-sidebar-foreground">Teacher Portal</span>
-        <AgentToggleButton />
+        <span className="flex-1 text-sm font-semibold text-sidebar-foreground">
+          Teacher Portal
+        </span>
+        {showAgentToggle ? <AgentToggleButton /> : null}
       </div>
       <nav className="flex-1 overflow-y-auto p-2 space-y-0.5">
         {navItems.map(({ href, label, icon: Icon, end }) => (
@@ -47,7 +56,9 @@ export function TeacherSidebar() {
         <button
           type="button"
           onClick={async () => {
-            await fetch(agentNativePath("/_agent-native/auth/logout"), { method: "POST" });
+            await fetch(agentNativePath("/_agent-native/auth/logout"), {
+              method: "POST",
+            });
             window.location.href = "/login";
           }}
           className="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm text-sidebar-foreground transition-colors hover:bg-sidebar-accent/60"
