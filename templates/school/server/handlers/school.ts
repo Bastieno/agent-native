@@ -129,6 +129,27 @@ async function autoActivateInvitedStudents(
   return null;
 }
 
+/**
+ * Students have two identifiers: the auth user ID (used by class_enrollments)
+ * and the student record ID (`students.id`, used by submissions, grades, and
+ * student_categories). Joining across them without this mapping silently
+ * matches nothing.
+ */
+async function getStudentRecordMaps(db: any, userIds: string[]) {
+  const recordIdByUser: Record<string, string> = {};
+  const userIdByRecord: Record<string, string> = {};
+  if (userIds.length === 0) return { recordIdByUser, userIdByRecord };
+  const rows = await db
+    .select({ id: schema.students.id, userId: schema.students.userId })
+    .from(schema.students)
+    .where(inArray(schema.students.userId, userIds));
+  for (const r of rows) {
+    recordIdByUser[r.userId] = r.id;
+    userIdByRecord[r.id] = r.userId;
+  }
+  return { recordIdByUser, userIdByRecord };
+}
+
 export const getSessionInfo = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
@@ -754,22 +775,103 @@ export const listMyStudents = defineEventHandler(async (event) => {
   const userMap: Record<string, { email: string; name: string }> = {};
   for (const u of userRows) userMap[u.id] = u;
 
-  // Map categories (keyed by studentId — use first classId match)
-  const categoryByUser: Record<string, string> = {};
+  // Categories, submissions, and grades are keyed by student record ID.
+  const { recordIdByUser } = await getStudentRecordMaps(db, studentUserIds);
+  const recordIds = Object.values(recordIdByUser);
+
+  const categoryByRecord: Record<string, string> = {};
   for (const cat of categories) {
-    if (!categoryByUser[cat.studentId])
-      categoryByUser[cat.studentId] = cat.category;
+    if (!categoryByRecord[cat.studentId])
+      categoryByRecord[cat.studentId] = cat.category;
   }
 
-  return studentUserIds.map((userId: string) => ({
-    id: userId,
-    name: userMap[userId]?.name ?? null,
-    email: userMap[userId]?.email ?? null,
-    category: categoryByUser[userId] ?? null,
-    averageScore: null,
-    completionRate: null,
-    className: null,
-  }));
+  const classRows = await db
+    .select({ id: schema.classes.id, name: schema.classes.name })
+    .from(schema.classes)
+    .where(inArray(schema.classes.id, classIds));
+  const classNameById: Record<string, string> = {};
+  for (const c of classRows) classNameById[c.id] = c.name;
+
+  const publishedAssessments = await db
+    .select({ id: schema.assessments.id, classId: schema.assessments.classId })
+    .from(schema.assessments)
+    .where(
+      and(
+        inArray(schema.assessments.classId, classIds),
+        inArray(schema.assessments.status, ["published", "closed"]),
+      ),
+    );
+  const assessmentIds = publishedAssessments.map((a: any) => a.id);
+
+  const subs =
+    assessmentIds.length > 0 && recordIds.length > 0
+      ? await db
+          .select({
+            studentId: schema.submissions.studentId,
+            assessmentId: schema.submissions.assessmentId,
+          })
+          .from(schema.submissions)
+          .where(
+            and(
+              inArray(schema.submissions.assessmentId, assessmentIds),
+              inArray(schema.submissions.studentId, recordIds),
+              inArray(schema.submissions.status, ["submitted", "graded"]),
+            ),
+          )
+      : [];
+  const gradeRows =
+    assessmentIds.length > 0 && recordIds.length > 0
+      ? await db
+          .select({
+            studentId: schema.grades.studentId,
+            percentage: schema.grades.percentage,
+          })
+          .from(schema.grades)
+          .where(
+            and(
+              inArray(schema.grades.assessmentId, assessmentIds),
+              inArray(schema.grades.studentId, recordIds),
+            ),
+          )
+      : [];
+
+  return studentUserIds.map((userId: string) => {
+    const recordId = recordIdByUser[userId];
+    const studentClassIds = enrollments
+      .filter((e: any) => e.studentUserId === userId)
+      .map((e: any) => e.classId);
+    const expected = publishedAssessments.filter((a: any) =>
+      studentClassIds.includes(a.classId),
+    ).length;
+    const done = new Set(
+      subs
+        .filter((s: any) => s.studentId === recordId)
+        .map((s: any) => s.assessmentId),
+    ).size;
+    const pcts = gradeRows
+      .filter((g: any) => g.studentId === recordId && g.percentage != null)
+      .map((g: any) => parseFloat(g.percentage))
+      .filter((p: number) => !isNaN(p));
+    return {
+      id: userId,
+      studentId: recordId ?? null,
+      name: userMap[userId]?.name ?? null,
+      email: userMap[userId]?.email ?? null,
+      category: recordId ? (categoryByRecord[recordId] ?? null) : null,
+      averageScore:
+        pcts.length > 0
+          ? (
+              pcts.reduce((a: number, b: number) => a + b, 0) / pcts.length
+            ).toFixed(1)
+          : null,
+      completionRate: expected > 0 ? Math.round((done / expected) * 100) : null,
+      className:
+        studentClassIds
+          .map((id: string) => classNameById[id])
+          .filter(Boolean)
+          .join(", ") || null,
+    };
+  });
 });
 
 // ─── All students (admin view) ────────────────────────────────────────────────
@@ -1025,15 +1127,19 @@ export const getGradebook = defineEventHandler(async (event) => {
   if (studentIds.length === 0)
     return { className: classRows[0].name, assessments, students: [] };
 
+  // Enrollments hold user IDs; grades hold student record IDs.
+  const { recordIdByUser } = await getStudentRecordMaps(db, studentIds);
+  const recordIds = Object.values(recordIdByUser);
+
   const assessmentIds = assessments.map((a: any) => a.id);
   const grades =
-    assessmentIds.length > 0
+    assessmentIds.length > 0 && recordIds.length > 0
       ? await db
           .select()
           .from(schema.grades)
           .where(
             and(
-              inArray(schema.grades.studentId, studentIds),
+              inArray(schema.grades.studentId, recordIds),
               inArray(schema.grades.assessmentId, assessmentIds),
             ),
           )
@@ -1057,8 +1163,9 @@ export const getGradebook = defineEventHandler(async (event) => {
 
   const students = studentIds.map((sid: string) => ({
     id: sid,
+    studentId: recordIdByUser[sid] ?? null,
     name: userMap[sid] ?? sid,
-    grades: gradeMap[sid] ?? {},
+    grades: gradeMap[recordIdByUser[sid]] ?? {},
   }));
 
   return { className: classRows[0].name, assessments, students };
@@ -1154,6 +1261,23 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
           )
       : [];
 
+  // Turned-in work (submitted or graded), for completion rates
+  const turnedIn =
+    assessmentIds.length > 0
+      ? await db
+          .select({
+            studentId: schema.submissions.studentId,
+            assessmentId: schema.submissions.assessmentId,
+          })
+          .from(schema.submissions)
+          .where(
+            and(
+              inArray(schema.submissions.assessmentId, assessmentIds),
+              inArray(schema.submissions.status, ["submitted", "graded"]),
+            ),
+          )
+      : [];
+
   // Check which submissions already have grades
   const gradedSubmissionIds = new Set(grades.map((g: any) => g.submissionId));
   const pendingGrading = pendingSubmissions.filter(
@@ -1232,6 +1356,13 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
       },
     ).length;
 
+    const expected = (countMap[c.id] ?? 0) * classAssessmentIds.size;
+    const done = new Set(
+      turnedIn
+        .filter((s: any) => classAssessmentIds.has(s.assessmentId))
+        .map((s: any) => `${s.studentId}:${s.assessmentId}`),
+    ).size;
+
     return {
       classId: c.id,
       className: c.name,
@@ -1239,6 +1370,10 @@ export const getMyAnalytics = defineEventHandler(async (event) => {
       studentCount: countMap[c.id] ?? 0,
       pendingGrading: classPendingSubs,
       strugglingCount: classStruggling,
+      completionRate:
+        expected > 0
+          ? Math.round((Math.min(done, expected) / expected) * 100)
+          : null,
     };
   });
 
@@ -1691,9 +1826,28 @@ export const listSubmissions = defineEventHandler(async (event) => {
   const userMap: Record<string, { name: string; email: string }> = {};
   for (const u of userRows) userMap[u.id] = { name: u.name, email: u.email };
 
-  return subs.map((s: any) => ({
-    ...s,
-    studentName: userMap[s.studentId]?.name ?? null,
-    studentEmail: userMap[s.studentId]?.email ?? null,
-  }));
+  const gradeRows = await db
+    .select()
+    .from(schema.grades)
+    .where(
+      inArray(
+        schema.grades.submissionId,
+        subs.map((s: any) => s.id),
+      ),
+    );
+  const gradeMap: Record<string, any> = {};
+  for (const g of gradeRows) gradeMap[g.submissionId] = g;
+
+  return subs.map((s: any) => {
+    const g = gradeMap[s.id];
+    return {
+      ...s,
+      studentName: userMap[s.studentId]?.name ?? null,
+      studentEmail: userMap[s.studentId]?.email ?? null,
+      score: g?.score ?? null,
+      maxScore: g?.maxScore ?? null,
+      feedback: g?.feedback ?? null,
+      gradePublished: g ? !!g.isPublished : false,
+    };
+  });
 });

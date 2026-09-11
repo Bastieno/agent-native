@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Markdown } from "@/components/Markdown";
 import { toast } from "sonner";
 import { IconCheck, IconPencil } from "@tabler/icons-react";
 
@@ -19,7 +21,9 @@ export default function TeacherLesson() {
   const { data: lesson, isLoading } = useQuery({
     queryKey: ["lesson", lessonId],
     queryFn: async () => {
-      const res = await fetch(agentNativePath(`/api/school/lessons/${lessonId}`));
+      const res = await fetch(
+        agentNativePath(`/api/school/lessons/${lessonId}`),
+      );
       if (!res.ok) return null;
       return res.json();
     },
@@ -53,9 +57,12 @@ export default function TeacherLesson() {
 
   const finalizeMutation = useMutation({
     mutationFn: async () => {
-      const res = await fetch(agentNativePath(`/api/school/lessons/${lessonId}/finalize`), {
-        method: "PATCH",
-      });
+      const res = await fetch(
+        agentNativePath(`/api/school/lessons/${lessonId}/finalize`),
+        {
+          method: "PATCH",
+        },
+      );
       if (!res.ok) throw new Error("Failed to finalize");
     },
     onSuccess: () => {
@@ -66,15 +73,22 @@ export default function TeacherLesson() {
     onError: () => toast.error("Failed to finalize lesson"),
   });
 
-  if (isLoading) return <div className="p-6 text-sm text-muted-foreground">Loading…</div>;
-  if (!lesson) return <div className="p-6 text-sm text-muted-foreground">Lesson not found.</div>;
+  if (isLoading)
+    return <div className="p-6 text-sm text-muted-foreground">Loading…</div>;
+  if (!lesson)
+    return (
+      <div className="p-6 text-sm text-muted-foreground">Lesson not found.</div>
+    );
 
   return (
     <div className="h-full flex flex-col overflow-hidden">
       <div className="flex items-center justify-between border-b px-6 py-3">
         <div className="flex items-center gap-3">
           <h1 className="text-base font-semibold">{lesson.title}</h1>
-          <Badge variant={lesson.status === "finalized" ? "default" : "secondary"} className="text-xs">
+          <Badge
+            variant={lesson.status === "finalized" ? "default" : "secondary"}
+            className="text-xs"
+          >
             {lesson.status}
           </Badge>
         </div>
@@ -97,21 +111,32 @@ export default function TeacherLesson() {
       </div>
       <div className="flex-1 overflow-auto p-6">
         {lesson.status === "draft" ? (
-          <div className="space-y-2">
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <IconPencil size={12} />
-              Edit your lesson note below. Changes auto-save and sync with the agent.
+          <Tabs defaultValue="write" className="space-y-2">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <IconPencil size={12} />
+                Changes auto-save and sync with the agent.
+              </div>
+              <TabsList>
+                <TabsTrigger value="write">Write</TabsTrigger>
+                <TabsTrigger value="preview">Preview</TabsTrigger>
+              </TabsList>
             </div>
-            <Textarea
-              className="min-h-125 font-mono text-sm resize-none"
-              value={content}
-              onChange={(e) => handleContentChange(e.target.value)}
-              placeholder="Write your lesson note in markdown…"
-            />
-          </div>
+            <TabsContent value="write">
+              <Textarea
+                className="min-h-125 font-mono text-sm resize-none"
+                value={content}
+                onChange={(e) => handleContentChange(e.target.value)}
+                placeholder="Write your lesson note in markdown…"
+              />
+            </TabsContent>
+            <TabsContent value="preview" className="max-w-3xl">
+              <Markdown>{content}</Markdown>
+            </TabsContent>
+          </Tabs>
         ) : (
-          <div className="prose prose-sm max-w-none">
-            <pre className="whitespace-pre-wrap text-sm">{content}</pre>
+          <div className="max-w-3xl">
+            <Markdown>{content}</Markdown>
           </div>
         )}
       </div>

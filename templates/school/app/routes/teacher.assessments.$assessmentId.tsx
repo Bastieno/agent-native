@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
 import { IconAlertTriangle } from "@tabler/icons-react";
+import { Markdown } from "@/components/Markdown";
 
 async function callAction(name: string, params: Record<string, unknown>) {
   const res = await fetch(agentNativePath(`/_agent-native/actions/${name}`), {
@@ -65,7 +66,9 @@ export default function TeacherAssessment() {
         agentNativePath(`/api/school/assessments/${assessmentId}`),
       );
       if (!res.ok) return null;
-      return res.json();
+      // The endpoint returns { assessment, variants, submissionSummary }.
+      const data = await res.json();
+      return data?.assessment ?? null;
     },
     enabled: !!assessmentId,
   });
@@ -113,6 +116,11 @@ export default function TeacherAssessment() {
     (s: any) => s.status === "graded",
   ).length;
 
+  const gradingVariant = gradingTarget
+    ? variants.find((v: any) => v.id === gradingTarget.variantId)
+    : null;
+  const maxPoints = gradingTarget?.maxScore ?? assessment?.totalPoints ?? null;
+
   function openGrading(sub: any) {
     setGradingTarget(sub);
     setGradeScore(sub.score != null ? String(sub.score) : "");
@@ -126,7 +134,6 @@ export default function TeacherAssessment() {
       await callAction("grade-submission", {
         submissionId: gradingTarget.id,
         score: Number(gradeScore),
-        maxScore: assessment?.totalPoints ?? 100,
         feedback: gradeFeedback,
       });
       qc.invalidateQueries({ queryKey: ["submissions", assessmentId] });
@@ -240,6 +247,11 @@ export default function TeacherAssessment() {
                       {variant.instructions}
                     </p>
                   )}
+                  {activeVariant === variant.id && variant.content ? (
+                    <div className="border-t pt-3 mt-1">
+                      <Markdown>{variant.content}</Markdown>
+                    </div>
+                  ) : null}
                 </button>
               ))}
             </div>
@@ -261,7 +273,8 @@ export default function TeacherAssessment() {
                   </p>
                   {sub.score != null && (
                     <p className="text-xs text-muted-foreground">
-                      Score: {sub.score} / {assessment?.totalPoints ?? "—"}
+                      Score: {sub.score} /{" "}
+                      {sub.maxScore ?? assessment?.totalPoints ?? "—"}
                     </p>
                   )}
                 </div>
@@ -291,23 +304,39 @@ export default function TeacherAssessment() {
                 gradingTarget?.studentId}
             </DialogTitle>
           </DialogHeader>
-          <div className="space-y-4 py-2">
+          <div className="space-y-4 py-2 max-h-[70vh] overflow-y-auto">
+            {gradingVariant?.content ? (
+              <div className="space-y-1.5">
+                <Label className="text-muted-foreground">
+                  Question ({gradingVariant.label})
+                </Label>
+                <div className="rounded-md border bg-muted/30 p-3">
+                  <Markdown>{gradingVariant.content}</Markdown>
+                </div>
+              </div>
+            ) : null}
+            <div className="space-y-1.5">
+              <Label className="text-muted-foreground">Student answer</Label>
+              <div className="rounded-md border p-3">
+                {gradingTarget?.content ? (
+                  <Markdown>{gradingTarget.content}</Markdown>
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    No written answer.
+                  </p>
+                )}
+              </div>
+            </div>
             <div className="space-y-1.5">
               <Label>
                 Score
-                {assessment?.totalPoints
-                  ? ` (out of ${assessment.totalPoints})`
-                  : ""}
+                {maxPoints ? ` (out of ${maxPoints})` : ""}
               </Label>
               <Input
                 type="number"
                 min={0}
-                max={assessment?.totalPoints ?? undefined}
-                placeholder={
-                  assessment?.totalPoints
-                    ? `/ ${assessment.totalPoints}`
-                    : "Score"
-                }
+                max={maxPoints ?? undefined}
+                placeholder={maxPoints ? `/ ${maxPoints}` : "Score"}
                 value={gradeScore}
                 onChange={(e) => setGradeScore(e.target.value)}
               />

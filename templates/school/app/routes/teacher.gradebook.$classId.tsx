@@ -17,7 +17,9 @@ export default function TeacherGradebook() {
   const { data: gradebook } = useQuery({
     queryKey: ["gradebook", classId],
     queryFn: async () => {
-      const res = await fetch(agentNativePath(`/api/school/gradebook/${classId}`));
+      const res = await fetch(
+        agentNativePath(`/api/school/gradebook/${classId}`),
+      );
       if (!res.ok) return null;
       return res.json();
     },
@@ -43,7 +45,8 @@ export default function TeacherGradebook() {
       <div>
         <h1 className="text-xl font-semibold">Gradebook — {className}</h1>
         <p className="text-sm text-muted-foreground mt-1">
-          {students?.length ?? 0} students · {assessments?.length ?? 0} assessments
+          {students?.length ?? 0} students · {assessments?.length ?? 0}{" "}
+          assessments
         </p>
       </div>
 
@@ -69,7 +72,9 @@ export default function TeacherGradebook() {
                     className="px-3 py-2.5 text-center font-medium whitespace-nowrap min-w-[100px]"
                     title={a.title}
                   >
-                    <div className="truncate max-w-[90px] mx-auto">{a.title}</div>
+                    <div className="truncate max-w-[90px] mx-auto">
+                      {a.title}
+                    </div>
                     <div className="text-xs text-muted-foreground font-normal">
                       /{a.totalPoints}
                     </div>
@@ -80,16 +85,24 @@ export default function TeacherGradebook() {
             </thead>
             <tbody>
               {students.map((student: any) => {
+                // Average percentages, not raw scores — assessments can have
+                // different point totals.
                 const scores = (assessments ?? []).map((a: any) => {
                   const grade = student.grades?.[a.id];
-                  return grade?.score ?? null;
+                  if (grade?.score == null) return null;
+                  const max = grade.maxScore ?? a.totalPoints;
+                  return max ? (grade.score / max) * 100 : null;
                 });
-                const validScores = scores.filter((s: any) => s !== null) as number[];
+                const validScores = scores.filter(
+                  (s: any) => s !== null,
+                ) as number[];
                 const avg =
                   validScores.length > 0
                     ? Math.round(
-                        validScores.reduce((sum: number, s: number) => sum + s, 0) /
-                          validScores.length,
+                        validScores.reduce(
+                          (sum: number, s: number) => sum + s,
+                          0,
+                        ) / validScores.length,
                       )
                     : null;
 
@@ -120,7 +133,13 @@ export default function TeacherGradebook() {
                     <td className="px-4 py-2.5 text-center">
                       {avg !== null ? (
                         <Badge
-                          variant={avg >= 70 ? "default" : avg >= 50 ? "secondary" : "destructive"}
+                          variant={
+                            avg >= 70
+                              ? "default"
+                              : avg >= 50
+                                ? "secondary"
+                                : "destructive"
+                          }
                           className="text-xs"
                         >
                           {avg}%
