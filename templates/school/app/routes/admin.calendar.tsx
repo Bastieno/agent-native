@@ -130,7 +130,7 @@ export default function AdminCalendar() {
               : "What this year group covers, week by week."}
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <Select value={gradeLevelId} onValueChange={setGradeLevelId}>
             <SelectTrigger className="w-32">
               <SelectValue placeholder="Year group" />
@@ -315,12 +315,15 @@ export default function AdminCalendar() {
                     <div
                       className={`rounded-lg border ${isCurrent ? "border-primary/60 bg-primary/5" : ""}`}
                     >
-                      <CollapsibleTrigger className="group flex w-full items-center gap-3 px-4 py-3 text-left">
+                      {/* min-w-0 throughout: without it a flex child refuses to
+                        shrink below its content and the chips overflow the
+                        card instead of truncating. */}
+                      <CollapsibleTrigger className="group flex w-full min-w-0 items-center gap-3 overflow-hidden px-4 py-3 text-left">
                         <IconChevronRight
                           size={15}
                           className="shrink-0 text-muted-foreground transition-transform group-data-[state=open]:rotate-90"
                         />
-                        <span className="text-sm font-medium shrink-0 w-16">
+                        <span className="w-16 shrink-0 text-sm font-medium">
                           Week {week.week}
                         </span>
                         {isCurrent && (
@@ -339,11 +342,11 @@ export default function AdminCalendar() {
                             week.entries.map((e: any) => (
                               <span
                                 key={e.unitId}
-                                className="inline-flex items-center gap-1 rounded-md border bg-background px-2 py-0.5 text-xs"
+                                className="inline-flex min-w-0 max-w-full items-center gap-1 overflow-hidden rounded-md border bg-background px-2 py-0.5 text-xs"
                                 title={`${e.subjectName}: ${e.unitTitle}`}
                               >
                                 <span
-                                  className={`h-1.5 w-1.5 rounded-full ${
+                                  className={`h-1.5 w-1.5 shrink-0 rounded-full ${
                                     e.lessonsPrepared > 0
                                       ? "bg-green-500"
                                       : e.lessonsDrafted > 0
@@ -351,10 +354,10 @@ export default function AdminCalendar() {
                                         : "bg-muted-foreground/40"
                                   }`}
                                 />
-                                <span className="font-medium">
+                                <span className="shrink-0 font-medium">
                                   {e.subjectName}
                                 </span>
-                                <span className="text-muted-foreground truncate max-w-[12rem]">
+                                <span className="min-w-0 truncate text-muted-foreground">
                                   {e.unitTitle}
                                 </span>
                               </span>
