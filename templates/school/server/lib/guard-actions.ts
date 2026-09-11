@@ -60,9 +60,15 @@ async function assertCallerMayRun(actionName: string): Promise<void> {
 
   const { userEmail } = currentAccess();
 
-  // No signed-in user: CLI/operator context. The CLI is already a trusted
-  // shell on the server, and HTTP requests always carry a session.
-  if (!userEmail) return;
+  // Every caller of this map is a request: the agent chat, the auto-mounted
+  // HTTP routes, or an MCP client (which runs actions under the token
+  // holder's identity). The CLI loads action files directly and never reaches
+  // this guard, so "no identity" here means an unauthenticated caller.
+  if (!userEmail) {
+    throw new Error(
+      `Not permitted: "${actionName}" requires a signed-in school member.`,
+    );
+  }
 
   const role = (await getSchoolRole(userEmail)) as SchoolRole | null;
   if (!role) {
