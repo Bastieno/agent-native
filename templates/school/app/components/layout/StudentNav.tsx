@@ -28,10 +28,18 @@ export function StudentNav() {
     (config as any)?.theme?.displayName ??
     (config as any)?.name ??
     "Student Portal";
+  const crest = (config as any)?.theme?.logoUrl ?? null;
   return (
     <header className="flex h-14 items-center gap-2 border-b bg-background px-3 sm:gap-4 sm:px-4">
       {/* The title is the first thing to go on a tablet with the agent panel
           open — the navigation itself matters more. */}
+      {crest ? (
+        <img
+          src={crest}
+          alt=""
+          className="hidden h-6 w-6 shrink-0 object-contain sm:block"
+        />
+      ) : null}
       <span className="hidden text-sm font-semibold shrink-0 lg:inline">
         {schoolName}
       </span>

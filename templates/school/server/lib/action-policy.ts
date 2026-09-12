@@ -85,6 +85,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "get-school-stats": STAFF,
   "get-school-config": EVERYONE, // grading scale, labels — UI needs it
   "update-school-config": ADMIN,
+  "set-school-logo": ADMIN,
   "get-custom-fields-schema": STAFF,
   "update-custom-fields-schema": ADMIN,
   "manage-grade-levels": ADMIN,

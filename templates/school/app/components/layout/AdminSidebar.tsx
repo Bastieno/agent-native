@@ -36,10 +36,14 @@ export function AdminSidebar({
     (config as any)?.theme?.displayName ??
     (config as any)?.name ??
     "Admin Portal";
+  const crest = (config as any)?.theme?.logoUrl ?? null;
   return (
     <aside className="flex h-full w-full flex-col border-r bg-sidebar lg:w-56">
       <div className="flex h-14 items-center border-b px-4 gap-2">
-        <span className="flex-1 text-sm font-semibold text-sidebar-foreground">
+        {crest ? (
+          <img src={crest} alt="" className="h-6 w-6 shrink-0 object-contain" />
+        ) : null}
+        <span className="min-w-0 flex-1 truncate text-sm font-semibold text-sidebar-foreground">
           {schoolName}
         </span>
         {showAgentToggle ? <AgentToggleButton /> : null}

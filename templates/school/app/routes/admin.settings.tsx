@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { IconSettings, IconDeviceFloppy } from "@tabler/icons-react";
+import { SchoolCrestField } from "@/components/SchoolCrestField";
 
 async function callAction(name: string, params: Record<string, unknown>) {
   const res = await fetch(agentNativePath(`/_agent-native/actions/${name}`), {
@@ -85,8 +86,22 @@ export default function AdminSettings() {
           <TabsTrigger value="terms">Terms</TabsTrigger>
           <TabsTrigger value="custom-fields">Custom Fields</TabsTrigger>
           <TabsTrigger value="labels">Terminology</TabsTrigger>
+          <TabsTrigger value="branding">Branding</TabsTrigger>
           <TabsTrigger value="guide">School Guide</TabsTrigger>
         </TabsList>
+
+        <TabsContent value="branding" className="mt-4 space-y-4">
+          <div className="space-y-3 rounded-lg border bg-card p-4">
+            <SchoolCrestField
+              currentLogoUrl={(config as any)?.theme?.logoUrl ?? null}
+            />
+          </div>
+          <p className="text-xs text-muted-foreground">
+            The crest is stored with this school's settings, so it appears only
+            for this school. Colours and the display name are set by asking the
+            agent.
+          </p>
+        </TabsContent>
 
         <TabsContent value="grading" className="mt-4 space-y-4">
           <div className="rounded-lg border bg-card p-4 space-y-3">

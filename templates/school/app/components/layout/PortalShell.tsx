@@ -42,6 +42,7 @@ export function PortalShell({
   // the portal name only as a fallback before config loads.
   const heading =
     (config as any)?.theme?.displayName ?? (config as any)?.name ?? title;
+  const crest = (config as any)?.theme?.logoUrl ?? null;
 
   // Navigating from the drawer should close it.
   useEffect(() => {
@@ -77,6 +78,13 @@ export function PortalShell({
           >
             <IconMenu2 size={20} />
           </button>
+          {crest ? (
+            <img
+              src={crest}
+              alt=""
+              className="h-6 w-6 shrink-0 object-contain"
+            />
+          ) : null}
           <span className="truncate text-sm font-semibold">{heading}</span>
         </header>
 
