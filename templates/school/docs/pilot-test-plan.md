@@ -456,6 +456,10 @@ misbehaves, that is a regression and worth reporting.
 | Tablet layout      | Navigation and agent panel collapse as the screen narrows; content keeps the room |
 | Curriculum         | Scheme-of-work generator and a week-by-week calendar                              |
 | Data path          | 32 parallel API endpoints folded into actions, so UI and agent cannot diverge     |
+| Activities         | Work is created by the agent and renders in its own shape — cards, questions, steps, tables, marking criteria |
+| Timed work         | Per-learner clocks: questions stay hidden until Begin, a countdown warns at a minute, and time up hands the work in |
+| Student worklist   | Published work reaches every enrolled student, not only those with an assigned variant |
+| Grading thresholds | Student levels and gradebook colours follow the school's own pass mark and grading scale, not numbers in the code |
 
 ---
 

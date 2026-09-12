@@ -72,7 +72,10 @@ export default function TeacherGradebook() {
           <table className="text-sm min-w-full">
             <thead>
               <tr className="border-b bg-muted/40">
-                <th className="px-4 py-2.5 text-left font-medium sticky left-0 bg-muted/40 min-w-[160px]">
+                {/* Opaque, and above the columns that slide under it: at 40%
+                    opacity the scrolling marks showed straight through the
+                    names. The border keeps the seam visible once scrolled. */}
+                <th className="sticky left-0 z-20 min-w-[160px] border-r bg-muted px-4 py-2.5 text-left font-medium">
                   Student
                 </th>
                 {(assessments ?? []).map((a: any) => (
@@ -117,7 +120,7 @@ export default function TeacherGradebook() {
 
                 return (
                   <tr key={student.id} className="border-b last:border-0">
-                    <td className="px-4 py-2.5 sticky left-0 bg-background">
+                    <td className="sticky left-0 z-10 border-r bg-background px-4 py-2.5">
                       <p className="font-medium">{student.name}</p>
                     </td>
                     {(assessments ?? []).map((a: any) => {

@@ -2,13 +2,14 @@ import { defineAction } from "@agent-native/core";
 import { getOrgSetting, putOrgSetting } from "@agent-native/core/settings";
 import { currentAccess } from "@agent-native/core/sharing";
 import { z } from "zod";
+import { jsonish } from "../shared/zod-json.js";
 
 export default defineAction({
   description:
     "Update the school's configuration: grading scale, term structure, grade prefix, pass mark, assessment terminology, timezone, locale, or custom label overrides. Pass only the fields you want to change — others are merged.",
   schema: z.object({
-    gradingScale: z
-      .object({
+    gradingScale: jsonish(
+      z.object({
         type: z.enum(["letter", "percentage", "points", "proficiency"]),
         levels: z.array(
           z.object({
@@ -18,7 +19,8 @@ export default defineAction({
             label: z.string().optional(),
           }),
         ),
-      })
+      }),
+    )
       .optional()
       .describe("Grading scale definition"),
     termStructure: z
@@ -29,12 +31,16 @@ export default defineAction({
       .string()
       .optional()
       .describe('Grade level prefix — "Grade", "Form", "Year", "Class", etc.'),
-    passMark: z.number().optional().describe("Minimum passing percentage"),
-    categoryThresholds: z
-      .object({
-        advanced: z.number(),
-        developing: z.number(),
-      })
+    passMark: z.coerce
+      .number()
+      .optional()
+      .describe("Minimum passing percentage"),
+    categoryThresholds: jsonish(
+      z.object({
+        advanced: z.coerce.number(),
+        developing: z.coerce.number(),
+      }),
+    )
       .optional()
       .describe(
         "Where a student's average places them as advanced or developing (below the developing figure is foundational). Only set this when the school wants different lines from its own grading scale and pass mark — those are used otherwise.",
@@ -45,8 +51,8 @@ export default defineAction({
     assessmentTerminology: z
       .enum(["assignment", "assessment", "task", "homework"])
       .optional(),
-    theme: z
-      .object({
+    theme: jsonish(
+      z.object({
         // HSL triples, matching the CSS variables the app already uses:
         // "221 83% 53%". Stored per school so one deployment can carry many.
         primary: z.string().optional().describe('e.g. "221 83% 53%"'),
@@ -56,13 +62,13 @@ export default defineAction({
           .string()
           .optional()
           .describe("Overrides the school name shown in the header"),
-      })
+      }),
+    )
       .optional()
       .describe("Per-school branding"),
     schoolTimezone: z.string().optional(),
     locale: z.string().optional(),
-    customLabels: z
-      .record(z.string(), z.string())
+    customLabels: jsonish(z.record(z.string(), z.string()))
       .optional()
       .describe(
         'Override terminology — e.g. {"student": "Learner", "teacher": "Educator"}',
