@@ -48,9 +48,30 @@ export default defineAction({
     for (const s of students) userIdByRecord[s.id] = s.userId;
     const labels = await getUserLabels(Object.values(userIdByRecord));
 
-    return rows.map((r: any) => ({
-      ...r,
-      studentName: labelFor(labels, userIdByRecord[r.studentId]),
-    }));
+    // How each paper stands, so a teacher can see which ones want attention
+    // before opening any of them.
+    const responses = await db
+      .select()
+      .from(schema.questionResponses)
+      .where(
+        inArray(
+          schema.questionResponses.submissionId,
+          rows.map((r: any) => r.id),
+        ),
+      );
+
+    return rows.map((r: any) => {
+      const mine = responses.filter((q: any) => q.submissionId === r.id);
+      return {
+        ...r,
+        studentName: labelFor(labels, userIdByRecord[r.studentId]),
+        questionCount: mine.length,
+        flaggedCount: mine.filter((q: any) => q.needsReview).length,
+        unmarkedCount: mine.filter(
+          (q: any) =>
+            (q.isCorrect === null || q.isCorrect === undefined) && !q.markedAt,
+        ).length,
+      };
+    });
   },
 });

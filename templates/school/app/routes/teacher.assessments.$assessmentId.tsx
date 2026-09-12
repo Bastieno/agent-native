@@ -27,7 +27,8 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
-import { IconAlertTriangle, IconEye } from "@tabler/icons-react";
+import { IconAlertTriangle, IconEye, IconFlag } from "@tabler/icons-react";
+import { AnswerReview } from "@/components/activity/AnswerReview";
 import { Markdown } from "@/components/Markdown";
 import {
   ActivityContent,
@@ -127,6 +128,21 @@ export default function TeacherAssessment() {
   const gradedCount = submissions.filter(
     (s: any) => s.status === "graded",
   ).length;
+
+  // The list row does not carry the per-question detail; this does.
+  const { data: gradingDetail } = useQuery({
+    queryKey: ["submission", gradingTarget?.id],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath(
+          `/_agent-native/actions/get-submission?id=${gradingTarget.id}`,
+        ),
+      );
+      if (!res.ok) return null;
+      return res.json();
+    },
+    enabled: !!gradingTarget?.id,
+  });
 
   const gradingVariant = gradingTarget
     ? variants.find((v: any) => v.id === gradingTarget.variantId)
@@ -330,9 +346,18 @@ export default function TeacherAssessment() {
                 onClick={() => openGrading(sub)}
                 className="w-full flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50 transition-colors text-left"
               >
-                <div>
-                  <p className="text-sm font-medium">
-                    {sub.studentName ?? sub.studentEmail ?? sub.studentId}
+                <div className="min-w-0">
+                  <p className="flex items-center gap-2 text-sm font-medium">
+                    <span className="truncate">
+                      {sub.studentName ?? sub.studentEmail ?? sub.studentId}
+                    </span>
+                    {/* Which papers want a second look, before opening any. */}
+                    {sub.flaggedCount || sub.unmarkedCount ? (
+                      <Badge variant="destructive" className="gap-1 text-xs">
+                        <IconFlag size={10} />
+                        {(sub.flaggedCount ?? 0) + (sub.unmarkedCount ?? 0)}
+                      </Badge>
+                    ) : null}
                   </p>
                   {sub.score != null && (
                     <p className="text-xs text-muted-foreground">
@@ -368,7 +393,17 @@ export default function TeacherAssessment() {
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-4 py-2 max-h-[70vh] overflow-y-auto">
-            {gradingVariant?.content ? (
+            {gradingDetail?.answers?.length ? (
+              <AnswerReview
+                answers={gradingDetail.answers}
+                onChanged={() =>
+                  qc.invalidateQueries({
+                    queryKey: ["submissions", assessmentId],
+                  })
+                }
+              />
+            ) : null}
+            {!gradingDetail?.answers?.length && gradingVariant?.content ? (
               <div className="space-y-1.5">
                 <Label className="text-muted-foreground">
                   Question ({gradingVariant.label})
