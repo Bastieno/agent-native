@@ -187,15 +187,31 @@ export default defineAction({
       objectives = rows.map((r: any) => r.description);
     }
 
+    // Marks carried by the questions themselves count. Without this, a paper
+    // of questions worth 2, 3 and 5 marks was recorded as unmarked practice:
+    // the learner was told there was nothing to hand in, and the gradebook —
+    // which rightly hides work that carries no marks — left it out entirely.
+    const blockList: any[] = args.blocks?.length
+      ? (args.blocks as any[])
+      : ((args.variants?.[0] as any)?.blocks ?? []);
+    const blockPoints = blockList.reduce(
+      (sum, b) => sum + (typeof b?.points === "number" ? b.points : 0),
+      0,
+    );
+
     const gradingMode =
       args.gradingMode ??
-      (args.rubric?.length ? "rubric" : args.totalPoints ? "points" : "none");
+      (args.rubric?.length
+        ? "rubric"
+        : args.totalPoints || blockPoints
+          ? "points"
+          : "none");
     const responseMode =
       args.responseMode ?? (gradingMode === "none" ? "none" : "typed");
     const totalPoints =
       args.totalPoints ??
       args.rubric?.reduce((sum, c) => sum + c.maxPoints, 0) ??
-      (gradingMode === "none" ? 0 : 100);
+      (blockPoints || (gradingMode === "none" ? 0 : 100));
 
     const shape = args.renderAs ?? "prose";
 
