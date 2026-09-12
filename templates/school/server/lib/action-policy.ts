@@ -190,6 +190,11 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-gradebook-entry": STAFF,
   "publish-grades": STAFF,
   "generate-report-card": STAFF,
+  // Marking open answers: gather the work, record a mark with its evidence,
+  // then total it. Nothing here publishes — publish-grades still does that.
+  "get-marking-queue": STAFF,
+  "record-answer-mark": STAFF,
+  "compile-submission-grade": STAFF,
   // Staff only for now. When learners can photograph or scan their working,
   // they will need this for their own submission and it becomes EVERYONE with
   // a per-student scope check, like submit-work.

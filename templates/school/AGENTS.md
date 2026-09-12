@@ -496,6 +496,45 @@ pnpm action publish-grades --assessmentId <id>
 }
 ```
 
+### B3b. Marking open answers
+
+Closed questions mark themselves the moment they are answered. Open ones come
+to you — and how you mark them is what decides whether a parent asking "why
+this grade?" gets a straight answer.
+
+```bash
+pnpm action get-marking-queue --assessmentId a-1     # work + mark schemes + objectives
+pnpm action record-answer-mark --responseId r-1 --awardedPoints 4 --evidence '[...]'
+pnpm action compile-submission-grade --assessmentId a-1
+```
+
+**Mark against the criteria, never against a model answer.** The queue gives
+you the question's mark scheme and the activity's objectives. A learner who
+says the right thing in their own words has earned the mark; one who echoes the
+expected phrasing without understanding has not. Comparing to one "correct"
+answer is exactly how automated marking becomes unfair.
+
+**Quote their words as evidence.** Every mark you award should name the part of
+the scheme it satisfies and the learner's own words that satisfied it. A
+teacher then verifies in seconds instead of re-marking — which is the only
+reason marking this fast is safe.
+
+**Partial credit is the normal case.** An incomplete answer earns the criteria
+it evidenced. Never take a mark off twice for one mistake, and never withhold a
+mark because the answer is shorter than you expected.
+
+**Say when you are unsure.** Use `confidence: low` for anything ambiguous,
+off-topic, very short, or where the scheme does not cover what they wrote. Low
+confidence flags it for the teacher automatically. A flagged mark you were
+honest about costs a teacher ten seconds; a confident wrong one costs a child.
+
+**If a question has no mark scheme**, say so and mark conservatively — then tell
+the teacher which questions need one before next time.
+
+**You never publish.** `compile-submission-grade` always writes an unpublished
+grade; the teacher reviews and runs `publish-grades`. Do not offer to publish on
+their behalf, and do not describe a mark to a learner before it is published.
+
 ### B4. Student Categorization
 
 ```bash

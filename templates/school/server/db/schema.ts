@@ -367,6 +367,22 @@ export const questionResponses = table("question_responses", {
   /** Null where the question needs a person to read it. */
   isCorrect: integer("is_correct", { mode: "boolean" }),
   awardedPoints: integer("awarded_points"),
+  /** What the learner is told about this answer. */
+  feedback: text("feedback"),
+  /**
+   * Which of the learner's own words earned each mark, as
+   * [{ criterion, points, quote }]. A teacher verifying a mark should be able
+   * to see the evidence rather than re-read and re-decide.
+   */
+  evidenceJson: text("evidence_json"),
+  /** high | medium | low — how sure the marker was. */
+  confidence: text("confidence"),
+  markedBy: text("marked_by"),
+  markedAt: text("marked_at"),
+  /** Put in front of a person before anything is published. */
+  needsReview: integer("needs_review", { mode: "boolean" })
+    .notNull()
+    .default(false),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
 });

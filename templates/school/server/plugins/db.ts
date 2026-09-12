@@ -585,6 +585,33 @@ export default runMigrations(
       sql: `CREATE UNIQUE INDEX IF NOT EXISTS question_responses_unique
         ON question_responses (submission_id, block_index)`,
     },
+    // Marking an open answer: what it earned, why, and how sure the marker
+    // was. The evidence is the point — a teacher checking twenty scripts needs
+    // to see which words earned each mark, not just a number to re-derive.
+    {
+      version: 48,
+      sql: `ALTER TABLE question_responses ADD COLUMN feedback TEXT`,
+    },
+    {
+      version: 49,
+      sql: `ALTER TABLE question_responses ADD COLUMN evidence_json TEXT`,
+    },
+    {
+      version: 50,
+      sql: `ALTER TABLE question_responses ADD COLUMN confidence TEXT`,
+    },
+    {
+      version: 51,
+      sql: `ALTER TABLE question_responses ADD COLUMN marked_by TEXT`,
+    },
+    {
+      version: 52,
+      sql: `ALTER TABLE question_responses ADD COLUMN marked_at TEXT`,
+    },
+    {
+      version: 53,
+      sql: `ALTER TABLE question_responses ADD COLUMN needs_review INTEGER NOT NULL DEFAULT 0`,
+    },
   ],
   { table: "school_migrations" },
 );
