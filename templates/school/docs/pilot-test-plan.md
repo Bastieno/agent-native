@@ -470,7 +470,7 @@ misbehaves, that is a regression and worth reporting.
 | 5   | No CSV import, attendance, or parent access     | Later phase                     |
 | 6   | Nothing is deployed yet                         | Local only; Netlify + Neon next |
 | 7   | Phones show the agent panel at 85% width        | Tablets are the pilot target    |
-| 8   | Grade thresholds in the gradebook are hardcoded | Ignores your custom pass mark   |
+| 8   | MCQ auto-marking not built yet                  | Decided: per-activity setting for instant right/wrong feedback, off by default for marked work |
 
 ---
 

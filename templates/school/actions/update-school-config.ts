@@ -30,6 +30,15 @@ export default defineAction({
       .optional()
       .describe('Grade level prefix — "Grade", "Form", "Year", "Class", etc.'),
     passMark: z.number().optional().describe("Minimum passing percentage"),
+    categoryThresholds: z
+      .object({
+        advanced: z.number(),
+        developing: z.number(),
+      })
+      .optional()
+      .describe(
+        "Where a student's average places them as advanced or developing (below the developing figure is foundational). Only set this when the school wants different lines from its own grading scale and pass mark — those are used otherwise.",
+      ),
     lateSubmissionPolicy: z
       .enum(["accepted", "penalty", "not_accepted"])
       .optional(),

@@ -5,8 +5,15 @@ import { useEffect } from "react";
 import { useParams } from "react-router";
 import { Badge } from "@/components/ui/badge";
 import { IconTable } from "@tabler/icons-react";
+import { useSchoolConfig } from "@/hooks/use-school-config";
+import { resolveCategoryThresholds } from "@shared/student-levels";
 
 export default function TeacherGradebook() {
+  // Colour the class average by this school's own bands, not by numbers
+  // written into the page. A school passing at 40% should not see its solid
+  // students flagged red.
+  const { config } = useSchoolConfig();
+  const thresholds = resolveCategoryThresholds(config as any);
   const { classId } = useParams<{ classId: string }>();
   const { sync } = useNavigationState();
 
@@ -136,9 +143,9 @@ export default function TeacherGradebook() {
                       {avg !== null ? (
                         <Badge
                           variant={
-                            avg >= 70
+                            avg >= thresholds.advanced
                               ? "default"
-                              : avg >= 50
+                              : avg >= thresholds.developing
                                 ? "secondary"
                                 : "destructive"
                           }
