@@ -11,6 +11,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { IconSend, IconClock, IconLock } from "@tabler/icons-react";
 import { Markdown } from "@/components/Markdown";
+import {
+  ActivityContent,
+  headingFor,
+} from "@/components/activity/ActivityContent";
 import { ActivityCountdown } from "@/components/ActivityCountdown";
 
 export default function StudentAssessment() {
@@ -133,6 +137,10 @@ export default function StudentAssessment() {
       }
     | undefined;
   const isTimed = !!assessment?.durationMinutes;
+  // Practice with nothing to hand in — a card deck, a reading, a reference
+  // sheet. There is no answer box and no submit, and saying so is kinder than
+  // leaving a learner hunting for one.
+  const nothingToHandIn = assessment?.responseMode === "none";
   const needsToStart = isTimed && !timing?.started && !isSubmitted;
 
   const startMutation = useMutation({
@@ -201,16 +209,19 @@ export default function StudentAssessment() {
               {assessment.submission.status.replace("_", " ")}
             </Badge>
           )}
-          {!isSubmitted && !needsToStart && timing?.isOpen !== false && (
-            <Button
-              size="sm"
-              onClick={() => submitMutation.mutate()}
-              disabled={submitMutation.isPending || !content.trim()}
-            >
-              <IconSend size={14} className="mr-1.5" />
-              Submit
-            </Button>
-          )}
+          {!isSubmitted &&
+            !needsToStart &&
+            !nothingToHandIn &&
+            timing?.isOpen !== false && (
+              <Button
+                size="sm"
+                onClick={() => submitMutation.mutate()}
+                disabled={submitMutation.isPending || !content.trim()}
+              >
+                <IconSend size={14} className="mr-1.5" />
+                Submit
+              </Button>
+            )}
         </div>
       </div>
       <div className="flex-1 overflow-auto p-6 space-y-6">
@@ -288,10 +299,17 @@ export default function StudentAssessment() {
           )}
         {!needsToStart &&
           !timing?.notYetOpen &&
-          assessment?.variant?.content && (
+          (assessment?.variant?.content ||
+            assessment?.variant?.contentJson) && (
             <div className="rounded-lg border p-4">
-              <h3 className="text-sm font-medium mb-2">Questions</h3>
-              <Markdown>{assessment.variant.content}</Markdown>
+              <h3 className="mb-3 text-sm font-medium">
+                {headingFor(assessment?.renderAs)}
+              </h3>
+              <ActivityContent
+                contentJson={assessment.variant.contentJson}
+                markdown={assessment.variant.content}
+                audience="student"
+              />
             </div>
           )}
         {hasGrade ? (
@@ -320,6 +338,11 @@ export default function StudentAssessment() {
               </div>
             )}
           </div>
+        ) : nothingToHandIn ? (
+          <p className="text-xs text-muted-foreground">
+            There is nothing to hand in for this — work through it as many times
+            as you like.
+          </p>
         ) : (
           !isSubmitted &&
           !needsToStart &&

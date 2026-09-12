@@ -5,6 +5,11 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, asc } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import {
+  RENDER_SHAPES,
+  type ActivityContent,
+} from "../shared/activity-content.js";
+import { jsonish } from "../shared/zod-json.js";
 
 /**
  * Create a piece of work for a class — a worksheet, a reading task, a problem
@@ -42,8 +47,7 @@ export default defineAction({
       .describe(
         "Curriculum unit this belongs to — sets the objectives when they are not given explicitly",
       ),
-    objectives: z
-      .array(z.string())
+    objectives: jsonish(z.array(z.string()))
       .optional()
       .describe(
         "The learning objectives this work is meant to move. Defaults to the unit's objectives. These carry through to the rubric, the marking and the report comment.",
@@ -52,33 +56,51 @@ export default defineAction({
       .string()
       .optional()
       .describe("What the learner should do, in markdown"),
+    renderAs: z
+      .enum(RENDER_SHAPES)
+      .optional()
+      .describe(
+        "How the work displays: 'questions' (worksheet, problem set, discussion prompts), 'cards' (flashcards, vocabulary), 'table' (compare/contrast, formula reference, timeline), 'steps' (practical, procedure), 'criteria' (marking grid), or 'prose' (reading, notes). Take it from the school's blueprint for this format. Omit for prose.",
+      ),
+    blocks: jsonish(z.array(z.record(z.string(), z.any())))
+      .optional()
+      .describe(
+        "The structured body, matching renderAs. questions: {prompt, points?, hint?, options?, answerSpace?}. cards: {front, back, hint?}. steps: {text, note?}. table: {cells:[...]} with `columns` set. criteria: {description, maxPoints?}. Also write `content` as markdown — it is the fallback and the print view.",
+      ),
+    columns: jsonish(z.array(z.string()))
+      .optional()
+      .describe("Column headings — renderAs 'table' only"),
     content: z
       .string()
       .optional()
       .describe(
-        "The work itself — questions, the passage to read, the task — in markdown. Use `variants` instead when differentiating.",
+        "The work itself in markdown — always write this, even when `blocks` is given: it is the fallback renderer and the print view. Use `variants` instead when differentiating.",
       ),
-    variants: z
-      .array(
+    variants: jsonish(
+      z.array(
         z.object({
           label: z.string(),
           difficulty: z.enum(["advanced", "developing", "foundational"]),
           content: z.string(),
+          blocks: z.array(z.record(z.string(), z.any())).optional(),
+          columns: z.array(z.string()).optional(),
           instructions: z.string().optional(),
           totalPoints: z.coerce.number().optional(),
         }),
-      )
+      ),
+    )
       .optional()
       .describe(
         "Differentiated versions. Learners never see which they were given.",
       ),
-    rubric: z
-      .array(
+    rubric: jsonish(
+      z.array(
         z.object({
           description: z.string().describe("What is being judged"),
           maxPoints: z.coerce.number(),
         }),
-      )
+      ),
+    )
       .optional()
       .describe(
         "How the work is marked. Write criteria against the objectives, so marking and feedback speak the same language as the curriculum.",
@@ -163,10 +185,14 @@ export default defineAction({
       args.rubric?.reduce((sum, c) => sum + c.maxPoints, 0) ??
       (gradingMode === "none" ? 0 : 100);
 
+    const shape = args.renderAs ?? "prose";
+
     const preview = {
       class: cls.name,
       title: args.title,
       format: args.format,
+      renderAs: shape,
+      blockCount: args.blocks?.length ?? 0,
       objectives,
       objectiveCount: objectives.length,
       variants: args.variants?.length ?? (args.content ? 1 : 0),
@@ -208,6 +234,7 @@ export default defineAction({
       closesAt: args.closesAt ?? null,
       durationMinutes: args.durationMinutes ?? null,
       objectivesJson: JSON.stringify(objectives),
+      renderAs: args.renderAs ?? null,
       dueDate: args.dueDate ?? null,
       totalPoints,
       status: args.publish ? "published" : "draft",
@@ -219,12 +246,14 @@ export default defineAction({
     // Either differentiated versions, or a single one holding the work.
     const variants = args.variants?.length
       ? args.variants
-      : args.content
+      : args.content || args.blocks?.length
         ? [
             {
               label: "All learners",
               difficulty: "developing" as const,
-              content: args.content,
+              content: args.content ?? "",
+              blocks: args.blocks,
+              columns: args.columns,
               instructions: args.instructions,
               totalPoints,
             },
@@ -232,12 +261,24 @@ export default defineAction({
         : [];
     let position = 0;
     for (const v of variants) {
+      // Structured body when there is one; the markdown is always kept beside
+      // it as the fallback renderer and the print view.
+      const blocks = (v as { blocks?: unknown[] }).blocks ?? undefined;
+      const contentJson: ActivityContent | null = blocks?.length
+        ? {
+            shape,
+            columns: (v as { columns?: string[] }).columns ?? args.columns,
+            blocks: blocks as ActivityContent["blocks"],
+          }
+        : null;
+
       await db.insert(schema.assessmentVariants).values({
         id: nanoid(),
         assessmentId,
         difficulty: v.difficulty,
         label: v.label,
         content: v.content,
+        contentJson: contentJson ? JSON.stringify(contentJson) : null,
         instructions: v.instructions ?? args.instructions ?? null,
         totalPoints: v.totalPoints ?? totalPoints,
         position: position++,

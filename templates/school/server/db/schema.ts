@@ -229,6 +229,10 @@ export const assessments = table("assessments", {
   // The learning objectives this activity is meant to move, carried through to
   // the rubric, the marking and the report comment.
   objectivesJson: text("objectives_json").notNull().default("[]"),
+  // Display structure: prose | questions | cards | table | steps | criteria.
+  // Unset means prose. Distinct from `format`, which is the school's own word
+  // for the material and stays free text.
+  renderAs: text("render_as"),
   dueDate: text("due_date"),
   totalPoints: integer("total_points").notNull().default(100),
   status: text("status").notNull().default("draft"), // draft | published | closed
@@ -246,6 +250,9 @@ export const assessmentVariants = table("assessment_variants", {
   difficulty: text("difficulty").notNull(), // foundational | developing | advanced | custom
   label: text("label").notNull(),
   content: text("content").notNull().default(""),
+  // Structured body, shaped by the activity's renderAs. The markdown above is
+  // kept as the fallback renderer and the print view.
+  contentJson: text("content_json"),
   instructions: text("instructions"),
   totalPoints: integer("total_points").notNull().default(100),
   position: integer("position").notNull().default(0),

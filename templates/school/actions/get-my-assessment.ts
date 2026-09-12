@@ -38,6 +38,7 @@ export default defineAction({
         title: schema.assessments.title,
         assessmentType: schema.assessments.assessmentType,
         format: schema.assessments.format,
+        renderAs: schema.assessments.renderAs,
         responseMode: schema.assessments.responseMode,
         dueDate: schema.assessments.dueDate,
         totalPoints: schema.assessments.totalPoints,
@@ -110,6 +111,7 @@ export default defineAction({
         ? {
             id: mine.id,
             content: mine.content,
+            contentJson: mine.contentJson ?? null,
             instructions: mine.instructions,
             totalPoints: mine.totalPoints,
           }

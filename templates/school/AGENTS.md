@@ -349,13 +349,38 @@ timing, marking — and create it only once they agree.
 - Time-limit only what genuinely needs it. A 30-minute quiz, yes; a week's
   reading, no.
 
+**`format` and `renderAs` are different things.** `format` is what the school
+calls the material and is free text — "vocabulary drill", "DBQ practice", "WAEC
+practical write-up". `renderAs` is what it structurally _is_ on screen, from a
+closed set of six. Many names collapse to one shape:
+
+| `renderAs`  | Use it for                                                     |
+| ----------- | -------------------------------------------------------------- |
+| `questions` | worksheet, problem set, DBQ practice, discussion prompts       |
+| `cards`     | flashcards, vocabulary, term/definition, matching              |
+| `table`     | compare/contrast, formula reference, timeline, data table      |
+| `steps`     | practical, lab procedure, method, instructions to follow       |
+| `criteria`  | marking guide, essay rubric shown to learners                  |
+| `prose`     | reading, notes, annotation guide, source extract (the default) |
+
+Write `blocks` in the shape's own structure **and** `content` as markdown — the
+markdown is the fallback renderer and the print view. Take the shape from the
+subject's blueprint (`renderAs`, or `formatShapes` when a subject uses several);
+if it has none, choose the obvious one and save it back to the blueprint so the
+next teacher gets it for free. A format nobody has named yet is fine — give it
+the shape that fits and let the school rename it.
+
+Not everything has questions in it. A card deck or a reference table usually
+carries `gradingMode: none` and `responseMode: none`, which removes the answer
+box entirely and tells the learner there is nothing to hand in.
+
 **Timing has three separate clocks — set only the ones you mean:**
 
-| Field             | Applies to     | Use it for                                   |
-| ----------------- | -------------- | -------------------------------------------- |
-| `opensAt`         | everyone       | work scheduled for a later lesson            |
-| `closesAt`        | everyone       | a hard deadline for the whole class          |
-| `durationMinutes` | each learner   | time allowed once **that learner** begins    |
+| Field             | Applies to   | Use it for                                |
+| ----------------- | ------------ | ----------------------------------------- |
+| `opensAt`         | everyone     | work scheduled for a later lesson         |
+| `closesAt`        | everyone     | a hard deadline for the whole class       |
+| `durationMinutes` | each learner | time allowed once **that learner** begins |
 
 `durationMinutes` starts when the learner presses begin, not when you create the
 activity, so twenty students can sit the same paper at different moments. Until

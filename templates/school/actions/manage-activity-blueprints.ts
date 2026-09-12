@@ -38,6 +38,18 @@ export default defineAction({
           .optional()
           .describe("Kinds of work that suit this subject, most common first"),
         defaultFormat: z.string().optional(),
+        renderAs: z
+          .string()
+          .optional()
+          .describe(
+            "How this subject's work displays: questions | cards | table | steps | criteria | prose. The school's own format name stays whatever they call it; this only says what structure it takes on screen.",
+          ),
+        formatShapes: z
+          .record(z.string(), z.string())
+          .optional()
+          .describe(
+            'Per-format shape, when a subject uses several — e.g. {"vocabulary drill":"cards","problem set":"questions"}',
+          ),
         typicalDurationMinutes: z.number().optional(),
         gradingMode: z
           .string()

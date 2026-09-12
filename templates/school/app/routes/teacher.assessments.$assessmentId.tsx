@@ -27,8 +27,12 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
-import { IconAlertTriangle } from "@tabler/icons-react";
+import { IconAlertTriangle, IconEye } from "@tabler/icons-react";
 import { Markdown } from "@/components/Markdown";
+import {
+  ActivityContent,
+  headingFor,
+} from "@/components/activity/ActivityContent";
 
 async function callAction(name: string, params: Record<string, unknown>) {
   const res = await fetch(agentNativePath(`/_agent-native/actions/${name}`), {
@@ -48,6 +52,8 @@ export default function TeacherAssessment() {
   const { sync } = useNavigationState();
   const qc = useQueryClient();
   const [activeVariant, setActiveVariant] = useState<string | null>(null);
+  // Whether the open variant is being shown as the class will see it.
+  const [asStudent, setAsStudent] = useState(false);
 
   // Grading dialog
   const [gradingTarget, setGradingTarget] = useState<any>(null);
@@ -169,9 +175,9 @@ export default function TeacherAssessment() {
 
   return (
     <div className="h-full overflow-auto p-6 space-y-4">
-      <div className="flex items-start justify-between">
-        <div>
-          <h1 className="text-xl font-semibold">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h1 className="text-xl font-semibold break-words">
             {assessment?.title ?? "Assessment"}
           </h1>
           {/* One quiet line rather than a row of badges: what kind of work it
@@ -194,7 +200,7 @@ export default function TeacherAssessment() {
             ) : null;
           })()}
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           {gradedCount > 0 && (
             <Button
               size="sm"
@@ -243,37 +249,74 @@ export default function TeacherAssessment() {
             </div>
           ) : (
             <div className="grid gap-3">
-              {variants.map((variant: any) => (
-                <button
-                  key={variant.id}
-                  onClick={() => setActiveVariant(variant.id)}
-                  className={`rounded-lg border p-4 text-left space-y-2 transition-colors hover:border-primary/40 ${
-                    activeVariant === variant.id
-                      ? "border-primary bg-primary/5"
-                      : ""
-                  }`}
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium">{variant.label}</span>
-                    <Badge variant="outline" className="text-xs capitalize">
-                      {variant.difficulty}
-                    </Badge>
-                    <span className="text-xs text-muted-foreground ml-auto">
-                      {variant.totalPoints} pts
-                    </span>
+              {variants.map((variant: any) => {
+                const open = activeVariant === variant.id;
+                return (
+                  <div
+                    key={variant.id}
+                    className={`min-w-0 rounded-lg border transition-colors ${
+                      open ? "border-primary" : "hover:border-primary/40"
+                    }`}
+                  >
+                    {/* Only the header is a button: the body can hold cards
+                        and other controls, which cannot nest inside one. */}
+                    <button
+                      type="button"
+                      onClick={() => setActiveVariant(open ? null : variant.id)}
+                      aria-expanded={open}
+                      className={`w-full space-y-2 p-4 text-left ${
+                        open ? "bg-primary/5" : ""
+                      }`}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium">
+                          {variant.label}
+                        </span>
+                        <Badge variant="outline" className="text-xs capitalize">
+                          {variant.difficulty}
+                        </Badge>
+                        <span className="ml-auto text-xs text-muted-foreground">
+                          {variant.totalPoints} pts
+                        </span>
+                      </div>
+                      {variant.instructions && (
+                        <p className="line-clamp-2 text-xs text-muted-foreground">
+                          {variant.instructions}
+                        </p>
+                      )}
+                    </button>
+
+                    {open && (variant.content || variant.contentJson) ? (
+                      <div className="space-y-3 border-t p-4">
+                        {/* The teacher's own view shows hints and card backs
+                            outright; flipping to the learner's view uses the
+                            very same renderer, so it cannot drift from what
+                            the class actually gets. */}
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-xs font-medium text-muted-foreground">
+                            {headingFor(assessment?.renderAs)}
+                          </span>
+                          <Button
+                            size="sm"
+                            variant={asStudent ? "default" : "outline"}
+                            onClick={() => setAsStudent((v) => !v)}
+                          >
+                            <IconEye size={14} className="mr-1.5" />
+                            {asStudent
+                              ? "Seeing it as a student"
+                              : "View as student"}
+                          </Button>
+                        </div>
+                        <ActivityContent
+                          contentJson={variant.contentJson}
+                          markdown={variant.content}
+                          audience={asStudent ? "student" : "teacher"}
+                        />
+                      </div>
+                    ) : null}
                   </div>
-                  {variant.instructions && (
-                    <p className="text-xs text-muted-foreground line-clamp-2">
-                      {variant.instructions}
-                    </p>
-                  )}
-                  {activeVariant === variant.id && variant.content ? (
-                    <div className="border-t pt-3 mt-1">
-                      <Markdown>{variant.content}</Markdown>
-                    </div>
-                  ) : null}
-                </button>
-              ))}
+                );
+              })}
             </div>
           )}
         </TabsContent>

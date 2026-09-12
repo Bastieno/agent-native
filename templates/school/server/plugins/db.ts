@@ -532,6 +532,19 @@ export default runMigrations(
       version: 41,
       sql: `ALTER TABLE submissions ADD COLUMN started_at TEXT`,
     },
+    // How the work is shaped on screen. `format` stays the school's own word
+    // ("vocabulary drill"); `render_as` is the structure it displays as
+    // ("cards"), from a small closed set. The markdown in
+    // assessment_variants.content is kept as the fallback and the print view,
+    // so content_json is strictly an addition.
+    {
+      version: 42,
+      sql: `ALTER TABLE assessments ADD COLUMN render_as TEXT`,
+    },
+    {
+      version: 43,
+      sql: `ALTER TABLE assessment_variants ADD COLUMN content_json TEXT`,
+    },
   ],
   { table: "school_migrations" },
 );
