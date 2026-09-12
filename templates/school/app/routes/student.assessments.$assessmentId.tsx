@@ -176,7 +176,9 @@ export default function StudentAssessment() {
             {[
               assessment?.format,
               assessment?.dueDate ? `Due ${assessment.dueDate}` : null,
-              isTimed ? `${assessment.durationMinutes} minutes` : null,
+              isTimed
+                ? `${assessment.durationMinutes} minute${assessment.durationMinutes === 1 ? "" : "s"}`
+                : null,
             ]
               .filter(Boolean)
               .join(" · ")}
@@ -235,7 +237,8 @@ export default function StudentAssessment() {
               className="mx-auto mb-2 text-muted-foreground"
             />
             <p className="text-sm font-medium">
-              You have {assessment.durationMinutes} minutes for this
+              You have {assessment.durationMinutes} minute
+              {assessment.durationMinutes === 1 ? "" : "s"} for this
             </p>
             <p className="mx-auto mt-1 max-w-sm text-xs text-muted-foreground">
               The clock starts when you press begin and keeps running if you

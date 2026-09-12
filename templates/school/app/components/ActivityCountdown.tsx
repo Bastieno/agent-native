@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IconClock } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 
@@ -34,12 +34,21 @@ export function ActivityCountdown({
   // deadline rather than on the ticking value.
   const [warned, setWarned] = useState(false);
   const [expired, setExpired] = useState(false);
+  // Only count as "ran out" if we watched it run out. Opening a page whose
+  // time went long ago must not fire the hand-in — the server would refuse a
+  // submission into a closed window, and the learner would be shown an error
+  // for simply looking at old work.
+  const sawItRunningRef = useRef(false);
+
   useEffect(() => {
     setWarned(false);
     setExpired(false);
+    sawItRunningRef.current = false;
   }, [deadline]);
 
   useEffect(() => {
+    if (secondsLeft > 5) sawItRunningRef.current = true;
+    if (!sawItRunningRef.current) return;
     if (!warned && secondsLeft <= 60 && secondsLeft > 5) {
       setWarned(true);
       onWarning?.();

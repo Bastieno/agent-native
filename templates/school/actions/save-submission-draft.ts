@@ -2,6 +2,10 @@ import { defineAction } from "@agent-native/core";
 import { writeAppState } from "@agent-native/core/application-state";
 import { currentAccess } from "@agent-native/core/sharing";
 import { resolveStudentId } from "../server/lib/student-access.js";
+import {
+  activityWindow,
+  closedMessage,
+} from "../server/lib/activity-window.js";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
@@ -51,6 +55,39 @@ export default defineAction({
         ),
       )
       .limit(1);
+
+    // Handed-in work is finished. A draft save arriving afterwards — a
+    // debounced keystroke landing just after the submit, the tutor agent
+    // saving, a second tab — must never walk the row back to "draft": the
+    // teacher's list would quietly lose a submission that was made, and the
+    // row would carry a submittedAt with a draft status.
+    if (existing && ["submitted", "graded"].includes(existing.status)) {
+      return {
+        submissionId: existing.id,
+        status: existing.status,
+        saved: false,
+        message: "Already handed in — this draft was not saved over it.",
+      };
+    }
+
+    // Nor should a draft be saved into a window that has closed; the learner
+    // cannot submit it, so saving would only suggest the work still counts.
+    const [activity] = await db
+      .select({
+        title: schema.assessments.title,
+        status: schema.assessments.status,
+        opensAt: schema.assessments.opensAt,
+        closesAt: schema.assessments.closesAt,
+        durationMinutes: schema.assessments.durationMinutes,
+      })
+      .from(schema.assessments)
+      .where(eq(schema.assessments.id, args.assessmentId))
+      .limit(1);
+    if (activity) {
+      const window = activityWindow(activity, existing?.startedAt);
+      if (window.hasClosed)
+        throw new Error(closedMessage(activity.title, window));
+    }
 
     let submissionId: string;
     if (existing) {
