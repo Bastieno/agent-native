@@ -13,6 +13,7 @@ import {
 import {
   findUnclassifiedActions,
   rolesFor,
+  denialReasonFor,
   type SchoolRole,
 } from "./action-policy.js";
 
@@ -160,6 +161,13 @@ async function assertCallerMayTouch(
 }
 
 async function assertCallerMayRun(actionName: string): Promise<void> {
+  // A framework action this school app deliberately does not use: say so,
+  // rather than reporting it as an oversight.
+  const denial = denialReasonFor(actionName);
+  if (denial) {
+    throw new Error(`Action "${actionName}" is not available. ${denial}`);
+  }
+
   const allowed = rolesFor(actionName);
 
   if (allowed === null) {

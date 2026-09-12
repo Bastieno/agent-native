@@ -35,6 +35,33 @@ const EVERYONE: SchoolRole[] = ALL_ROLES;
 const STUDENT_ONLY: SchoolRole[] = ["student"];
 
 /**
+ * Framework actions this app deliberately does not use.
+ *
+ * These come from `packages/core`, not `actions/`, so they were never in the
+ * list below and the guard denied them as unclassified — fail-safe, but by
+ * accident rather than by decision. Naming them here records the decision and
+ * lets the caller be told why.
+ *
+ * The school has its own visibility model: work belongs to a class, and who
+ * may see it follows from role and enrolment, enforced in every action. The
+ * framework's generic sharing lets one user hand a resource to another user
+ * directly, which would route around that — a teacher could share a class's
+ * assessment with someone who does not teach it, or with a pupil. If a school
+ * needs to share something, it should happen through a school action that
+ * knows what a class is.
+ */
+export const DENIED: Record<string, string> = {
+  "share-resource":
+    "Sharing is decided by role and class enrolment in this school, not per resource.",
+  "unshare-resource":
+    "Sharing is decided by role and class enrolment in this school, not per resource.",
+  "list-resource-shares":
+    "Sharing is decided by role and class enrolment in this school, not per resource.",
+  "set-resource-visibility":
+    "Visibility follows the class a resource belongs to and cannot be set directly.",
+};
+
+/**
  * Actions nobody may call over HTTP or as an agent tool — operator-only
  * maintenance run from the CLI (`agent-native action <name>`), where there is
  * no signed-in user and no role to check.
@@ -162,6 +189,10 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-gradebook-entry": STAFF,
   "publish-grades": STAFF,
   "generate-report-card": STAFF,
+  // Staff only for now. When learners can photograph or scan their working,
+  // they will need this for their own submission and it becomes EVERYONE with
+  // a per-student scope check, like submit-work.
+  "upload-image": STAFF,
   // Printable documents, composed on demand and held in the caller's own
   // application state.
   "create-document": STAFF,
@@ -200,12 +231,18 @@ export function rolesFor(actionName: string): SchoolRole[] | null {
   return ACTION_POLICY[actionName] ?? null;
 }
 
+/** Why a deliberately unused framework action is refused, if it is one. */
+export function denialReasonFor(actionName: string): string | null {
+  return DENIED[actionName] ?? null;
+}
+
 /**
  * Fail loudly when an action has no policy entry, so adding an action forces a
  * decision about who may call it instead of silently inheriting access.
  */
 export function findUnclassifiedActions(actionNames: string[]): string[] {
   return actionNames.filter(
-    (name) => !OPERATOR_ONLY.has(name) && !(name in ACTION_POLICY),
+    (name) =>
+      !OPERATOR_ONLY.has(name) && !(name in ACTION_POLICY) && !(name in DENIED),
   );
 }
