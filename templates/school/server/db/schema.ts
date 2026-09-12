@@ -321,6 +321,9 @@ export const submissions = table("submissions", {
   content: text("content").notNull().default(""),
   attachmentsJson: text("attachments_json").notNull().default("[]"),
   status: text("status").notNull().default("not_started"), // not_started | draft | submitted | resubmission_requested | graded
+  // Set the first time a learner opens a timed activity; their own deadline is
+  // startedAt + the activity's durationMinutes.
+  startedAt: text("started_at"),
   submittedAt: text("submitted_at"),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),

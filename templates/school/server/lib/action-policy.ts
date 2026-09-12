@@ -165,6 +165,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   // Students act on their own work only; the actions resolve the student from
   // the session and reject any other studentId.
   "submit-work": STUDENT_ONLY,
+  "start-activity": STUDENT_ONLY,
   "save-submission-draft": STUDENT_ONLY,
 
   // ── Analytics ─────────────────────────────────────────────────────────

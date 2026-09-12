@@ -1,6 +1,8 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting, putOrgSetting } from "@agent-native/core/settings";
+import { getDb, schema } from "../server/db/index.js";
+import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 
 /**
@@ -57,17 +59,38 @@ export default defineAction({
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
+    const db = getDb();
 
     const all = ((await getOrgSetting(orgId, "activity-blueprints")) ??
       {}) as Record<string, unknown>;
 
     if (args.action === "list") {
+      // Name the subjects that have nothing yet. Without this the agent has to
+      // guess whether silence means "no blueprint" or "no such subject", and
+      // setup quietly skips half the timetable.
+      const subjects = await db
+        .select({ name: schema.subjects.name })
+        .from(schema.subjects)
+        .where(
+          and(
+            eq(schema.subjects.schoolId, orgId),
+            eq(schema.subjects.status, "active"),
+          ),
+        );
+      const covered = new Set(Object.keys(all));
+      const missing = subjects
+        .map((s: { name: string }) => s.name)
+        .filter((name: string) => !covered.has(name));
+
       return {
         blueprints: all,
         count: Object.keys(all).length,
-        message: Object.keys(all).length
-          ? undefined
-          : "No blueprints yet. Draft them from the school's subjects and framework, then save each with action='set'.",
+        subjectsWithoutBlueprint: missing,
+        message: missing.length
+          ? `${missing.length} subject(s) have no blueprint yet: ${missing.join(", ")}. Draft one for each from the school's own framework and grade levels, then save it with action='set'.`
+          : Object.keys(all).length
+            ? undefined
+            : "No blueprints and no subjects yet. Create the school's subjects first.",
       };
     }
 

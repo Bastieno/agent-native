@@ -5,6 +5,10 @@ import {
 } from "@agent-native/core/application-state";
 import { currentAccess } from "@agent-native/core/sharing";
 import { resolveStudentId } from "../server/lib/student-access.js";
+import {
+  activityWindow,
+  closedMessage,
+} from "../server/lib/activity-window.js";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
@@ -38,28 +42,6 @@ export default defineAction({
       studentId: await resolveStudentId(userEmail, rawArgs.studentId, orgId),
     };
 
-    // A closing time has to mean something: once it passes the work is no
-    // longer accepted, whatever the screen happens to be showing.
-    const [activity] = await db
-      .select({
-        closesAt: schema.assessments.closesAt,
-        status: schema.assessments.status,
-        title: schema.assessments.title,
-      })
-      .from(schema.assessments)
-      .where(eq(schema.assessments.id, args.assessmentId))
-      .limit(1);
-    if (activity?.closesAt && new Date(activity.closesAt) < new Date()) {
-      throw new Error(
-        `"${activity.title}" closed on ${new Date(activity.closesAt).toLocaleString()} and is no longer accepting work.`,
-      );
-    }
-    if (activity?.status === "closed") {
-      throw new Error(
-        `"${activity.title}" is closed and no longer accepting work.`,
-      );
-    }
-
     // Find assigned variant
     const [assigned] = await db
       .select()
@@ -83,6 +65,33 @@ export default defineAction({
         ),
       )
       .limit(1);
+
+    // The window has to mean something: once any of the three clocks has run
+    // out the work is no longer accepted, whatever the screen happens to be
+    // showing. The duration clock is this learner's own, so it needs their
+    // submission row — which is why this sits after the lookup above.
+    const [activity] = await db
+      .select({
+        title: schema.assessments.title,
+        status: schema.assessments.status,
+        opensAt: schema.assessments.opensAt,
+        closesAt: schema.assessments.closesAt,
+        durationMinutes: schema.assessments.durationMinutes,
+      })
+      .from(schema.assessments)
+      .where(eq(schema.assessments.id, args.assessmentId))
+      .limit(1);
+    if (activity) {
+      const window = activityWindow(activity, existing?.startedAt);
+      if (window.hasClosed) {
+        throw new Error(closedMessage(activity.title, window));
+      }
+      if (window.notYetOpen) {
+        throw new Error(
+          `"${activity.title}" has not opened yet. ${window.reason}`,
+        );
+      }
+    }
 
     // Read content from draft app-state if not provided
     let content = args.content;

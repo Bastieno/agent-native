@@ -9,8 +9,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { IconSend } from "@tabler/icons-react";
+import { IconSend, IconClock, IconLock } from "@tabler/icons-react";
 import { Markdown } from "@/components/Markdown";
+import { ActivityCountdown } from "@/components/ActivityCountdown";
 
 export default function StudentAssessment() {
   const { assessmentId } = useParams();
@@ -119,6 +120,51 @@ export default function StudentAssessment() {
   );
   const hasGrade = !!assessment?.submission?.grade;
 
+  // The server decided all of this; the page only renders it.
+  const timing = assessment?.window as
+    | {
+        isOpen: boolean;
+        notYetOpen: boolean;
+        hasClosed: boolean;
+        closedBy: string | null;
+        deadline: string | null;
+        started: boolean;
+        reason: string | null;
+      }
+    | undefined;
+  const isTimed = !!assessment?.durationMinutes;
+  const needsToStart = isTimed && !timing?.started && !isSubmitted;
+
+  const startMutation = useMutation({
+    mutationFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/start-activity"),
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ assessmentId }),
+        },
+      );
+      if (!res.ok) throw new Error((await res.json())?.message ?? "Failed");
+      return res.json();
+    },
+    onSuccess: () =>
+      qc.invalidateQueries({ queryKey: ["student-assessment", assessmentId] }),
+    onError: (e: Error) => toast.error(e.message),
+  });
+
+  // When the clock runs out, hand in what they have written rather than
+  // letting the work sit there unsubmitted. Their text is already saved
+  // server-side, so nothing is lost either way — but a learner who ran out of
+  // time should still be marked on what they did.
+  const autoSubmittedRef = useRef(false);
+  const handleExpiry = () => {
+    if (autoSubmittedRef.current || isSubmitted) return;
+    autoSubmittedRef.current = true;
+    submitMutation.mutate();
+    toast.info("Time is up — your work has been handed in.");
+  };
+
   return (
     <div className="h-full flex flex-col overflow-hidden">
       <div className="flex items-center justify-between border-b px-6 py-3">
@@ -126,13 +172,25 @@ export default function StudentAssessment() {
           <h1 className="text-base font-semibold">
             {assessment?.title ?? "Assessment"}
           </h1>
-          {assessment?.dueDate && (
-            <p className="text-xs text-muted-foreground">
-              Due: {assessment.dueDate}
-            </p>
-          )}
+          <p className="text-xs text-muted-foreground">
+            {[
+              assessment?.format,
+              assessment?.dueDate ? `Due ${assessment.dueDate}` : null,
+              isTimed ? `${assessment.durationMinutes} minutes` : null,
+            ]
+              .filter(Boolean)
+              .join(" · ")}
+          </p>
         </div>
         <div className="flex items-center gap-2">
+          {/* Only while the clock is actually running for them. */}
+          {timing?.started && timing.deadline && !isSubmitted && (
+            <ActivityCountdown
+              deadline={timing.deadline}
+              onWarning={() => toast.warning("One minute left.")}
+              onExpiring={handleExpiry}
+            />
+          )}
           {assessment?.submission?.status && (
             <Badge
               variant={isSubmitted ? "default" : "secondary"}
@@ -141,7 +199,7 @@ export default function StudentAssessment() {
               {assessment.submission.status.replace("_", " ")}
             </Badge>
           )}
-          {!isSubmitted && (
+          {!isSubmitted && !needsToStart && timing?.isOpen !== false && (
             <Button
               size="sm"
               onClick={() => submitMutation.mutate()}
@@ -154,20 +212,85 @@ export default function StudentAssessment() {
         </div>
       </div>
       <div className="flex-1 overflow-auto p-6 space-y-6">
-        {assessment?.variant?.instructions && (
-          <div className="rounded-lg bg-muted/50 border p-4">
-            <h3 className="text-sm font-medium mb-2">Instructions</h3>
-            <p className="text-sm text-muted-foreground whitespace-pre-wrap">
-              {assessment.variant.instructions}
+        {/* Nothing to see yet — a paper the teacher has scheduled for later. */}
+        {timing?.notYetOpen && (
+          <div className="rounded-lg border border-dashed p-6 text-center">
+            <IconClock
+              size={20}
+              className="mx-auto mb-2 text-muted-foreground"
+            />
+            <p className="text-sm font-medium">Not open yet</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {timing.reason}
             </p>
           </div>
         )}
-        {assessment?.variant?.content && (
-          <div className="rounded-lg border p-4">
-            <h3 className="text-sm font-medium mb-2">Questions</h3>
-            <Markdown>{assessment.variant.content}</Markdown>
+
+        {/* Timed work stays covered until they choose to begin — reading the
+            questions first would make the time limit meaningless. */}
+        {!timing?.notYetOpen && needsToStart && !timing?.hasClosed && (
+          <div className="rounded-lg border p-6 text-center">
+            <IconClock
+              size={20}
+              className="mx-auto mb-2 text-muted-foreground"
+            />
+            <p className="text-sm font-medium">
+              You have {assessment.durationMinutes} minutes for this
+            </p>
+            <p className="mx-auto mt-1 max-w-sm text-xs text-muted-foreground">
+              The clock starts when you press begin and keeps running if you
+              close the page, so start when you are ready. Your answer saves as
+              you type.
+            </p>
+            <Button
+              className="mt-4"
+              size="sm"
+              onClick={() => startMutation.mutate()}
+              disabled={startMutation.isPending}
+            >
+              Begin
+            </Button>
           </div>
         )}
+
+        {/* Closed, and they never handed anything in. Their draft is still
+            saved, so say so rather than implying the work vanished. */}
+        {timing?.hasClosed && !isSubmitted && (
+          <div className="rounded-lg border border-dashed p-6 text-center">
+            <IconLock
+              size={20}
+              className="mx-auto mb-2 text-muted-foreground"
+            />
+            <p className="text-sm font-medium">
+              {timing.closedBy === "time-allowed"
+                ? "Your time has run out"
+                : "Closed"}
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {timing.reason} Anything you had written is saved and your teacher
+              can still see it.
+            </p>
+          </div>
+        )}
+
+        {!needsToStart &&
+          !timing?.notYetOpen &&
+          assessment?.variant?.instructions && (
+            <div className="rounded-lg bg-muted/50 border p-4">
+              <h3 className="text-sm font-medium mb-2">Instructions</h3>
+              <p className="text-sm text-muted-foreground whitespace-pre-wrap">
+                {assessment.variant.instructions}
+              </p>
+            </div>
+          )}
+        {!needsToStart &&
+          !timing?.notYetOpen &&
+          assessment?.variant?.content && (
+            <div className="rounded-lg border p-4">
+              <h3 className="text-sm font-medium mb-2">Questions</h3>
+              <Markdown>{assessment.variant.content}</Markdown>
+            </div>
+          )}
         {hasGrade ? (
           <div className="rounded-lg border bg-card p-4 space-y-3">
             <h3 className="text-sm font-medium">Grade</h3>
@@ -195,7 +318,9 @@ export default function StudentAssessment() {
             )}
           </div>
         ) : (
-          !isSubmitted && (
+          !isSubmitted &&
+          !needsToStart &&
+          timing?.isOpen !== false && (
             <div className="space-y-2">
               <h3 className="text-sm font-medium">Your Answer</h3>
               <p className="text-xs text-muted-foreground">

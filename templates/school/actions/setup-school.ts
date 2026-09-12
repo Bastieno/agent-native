@@ -96,7 +96,17 @@ export default defineAction({
       schoolId: orgId,
       name: args.name,
       type: args.type,
-      message: `School '${args.name}' initialized. You can now run manage-grade-levels, update-school-config, create-subject, and start-curriculum-draft to complete the setup.`,
+      // The order matters: blueprints are drafted from the subjects, and the
+      // scheme of work needs the terms, so naming the sequence here keeps a
+      // freshly created school from stalling at an empty dashboard.
+      nextSteps: [
+        "manage-grade-levels — the year groups this school actually teaches",
+        "update-school-config — terms, grading scale, what learners are called, branding",
+        "create-subject — the timetable",
+        "manage-activity-blueprints — for each subject, how work is set and marked here",
+        "start-curriculum-draft, then generate-scheme-of-work — the year, week by week",
+      ],
+      message: `School '${args.name}' initialized. Present the setup sheet for the admin to correct, then work through: grade levels, config, subjects, activity blueprints for each subject, and the curriculum.`,
     };
   },
 });

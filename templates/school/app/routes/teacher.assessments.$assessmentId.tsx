@@ -174,11 +174,25 @@ export default function TeacherAssessment() {
           <h1 className="text-xl font-semibold">
             {assessment?.title ?? "Assessment"}
           </h1>
-          {assessment?.dueDate && (
-            <p className="text-xs text-muted-foreground mt-0.5">
-              Due: {assessment.dueDate}
-            </p>
-          )}
+          {/* One quiet line rather than a row of badges: what kind of work it
+              is, and any clock on it. */}
+          {(() => {
+            const meta = [
+              assessment?.format,
+              assessment?.dueDate ? `Due ${assessment.dueDate}` : null,
+              assessment?.durationMinutes
+                ? `${assessment.durationMinutes} min once started`
+                : null,
+              assessment?.closesAt
+                ? `Closes ${new Date(assessment.closesAt).toLocaleString()}`
+                : null,
+            ].filter(Boolean);
+            return meta.length ? (
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {meta.join(" · ")}
+              </p>
+            ) : null;
+          })()}
         </div>
         <div className="flex items-center gap-2">
           {gradedCount > 0 && (

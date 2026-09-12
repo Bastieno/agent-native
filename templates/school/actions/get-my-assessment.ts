@@ -2,6 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { resolveStudentId } from "../server/lib/student-session.js";
+import { activityWindow } from "../server/lib/activity-window.js";
 import { z } from "zod";
 
 /**
@@ -36,10 +37,15 @@ export default defineAction({
         id: schema.assessments.id,
         title: schema.assessments.title,
         assessmentType: schema.assessments.assessmentType,
+        format: schema.assessments.format,
+        responseMode: schema.assessments.responseMode,
         dueDate: schema.assessments.dueDate,
         totalPoints: schema.assessments.totalPoints,
         status: schema.assessments.status,
         classId: schema.assessments.classId,
+        opensAt: schema.assessments.opensAt,
+        closesAt: schema.assessments.closesAt,
+        durationMinutes: schema.assessments.durationMinutes,
       })
       .from(schema.assessments)
       .where(eq(schema.assessments.id, rawArgs.assessmentId))
@@ -92,9 +98,14 @@ export default defineAction({
       grade = g ?? null;
     }
 
+    // The same computation the server uses to accept or refuse the work, so a
+    // countdown on the tablet and the rule in `submit-work` never disagree.
+    const window = activityWindow(assessment, submission?.startedAt);
+
     return {
       ...assessment,
       // difficulty is deliberately omitted.
+      window,
       variant: mine
         ? {
             id: mine.id,

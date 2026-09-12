@@ -525,6 +525,13 @@ export default runMigrations(
       version: 40,
       sql: `ALTER TABLE assessments ADD COLUMN objectives_json TEXT NOT NULL DEFAULT '[]'`,
     },
+    // When this learner started. A timed activity's clock is per-learner —
+    // twenty students open the same paper at different moments — so the
+    // deadline is derived from here, not from the activity.
+    {
+      version: 41,
+      sql: `ALTER TABLE submissions ADD COLUMN started_at TEXT`,
+    },
   ],
   { table: "school_migrations" },
 );

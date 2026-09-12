@@ -65,7 +65,7 @@ export default defineAction({
           difficulty: z.enum(["advanced", "developing", "foundational"]),
           content: z.string(),
           instructions: z.string().optional(),
-          totalPoints: z.number().optional(),
+          totalPoints: z.coerce.number().optional(),
         }),
       )
       .optional()
@@ -76,7 +76,7 @@ export default defineAction({
       .array(
         z.object({
           description: z.string().describe("What is being judged"),
-          maxPoints: z.number(),
+          maxPoints: z.coerce.number(),
         }),
       )
       .optional()
@@ -95,8 +95,10 @@ export default defineAction({
       .describe(
         "'rubric', 'points', or 'none' for practice that carries no marks",
       ),
-    totalPoints: z.number().optional(),
-    durationMinutes: z
+    // Coerced, not plain numbers: these arrive as strings from the CLI
+    // (`--durationMinutes 30`) as well as numbers from the agent and the UI.
+    totalPoints: z.coerce.number().optional(),
+    durationMinutes: z.coerce
       .number()
       .optional()
       .describe("Time allowed once a learner starts, e.g. 30"),

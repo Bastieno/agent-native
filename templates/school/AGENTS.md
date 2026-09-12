@@ -106,9 +106,22 @@ When an admin has a new/empty school, walk them through setup in this order:
 3. **School config** — `update-school-config --termStructure ... --gradePrefix ... --gradingScale ...`
 4. **Departments** (optional) — `create-department --name "..."`
 5. **Subjects** — `create-subject --name "..." --code ...`
-6. **Curriculum** — `start-curriculum-draft` → multi-turn co-authoring → `commit-curriculum-draft`
-7. **Academic year + terms** — `create-academic-year` → `create-term`
-8. **School guide** — `update-school-resource` to write `SCHOOL_GUIDE.md` with school identity, pedagogy, terminology
+6. **Activity blueprints** — `manage-activity-blueprints --action list` names every
+   subject still without one; draft one per subject and save it. Do this as part
+   of setup, not lazily on the first worksheet: a teacher asking for work in
+   week one should get something shaped like this school's work, and
+   `subjectsWithoutBlueprint` is how you know you have finished.
+7. **Curriculum** — `start-curriculum-draft` → multi-turn co-authoring → `commit-curriculum-draft`
+8. **Academic year + terms** — `create-academic-year` → `create-term`
+9. **Scheme of work** — `generate-scheme-of-work` per class, so the year is laid
+   out week by week before anyone logs in
+10. **School guide** — `update-school-resource` to write `SCHOOL_GUIDE.md` with school identity, pedagogy, terminology
+
+**Draft blueprints from the school's own answers**, not from what subjects are
+usually like: their framework, their year groups, their grading scale, anything
+they said on the setup sheet. Then show them the set and let them correct it —
+a school that marks Mathematics on method rather than answers will say so, and
+that belongs in the blueprint before the first worksheet exists.
 
 **Important**: The school defines its own grade structure. Never hardcode "Grade 9–12". Ask them what they use.
 
@@ -335,6 +348,22 @@ timing, marking — and create it only once they agree.
   — say so rather than inventing points.
 - Time-limit only what genuinely needs it. A 30-minute quiz, yes; a week's
   reading, no.
+
+**Timing has three separate clocks — set only the ones you mean:**
+
+| Field             | Applies to     | Use it for                                   |
+| ----------------- | -------------- | -------------------------------------------- |
+| `opensAt`         | everyone       | work scheduled for a later lesson            |
+| `closesAt`        | everyone       | a hard deadline for the whole class          |
+| `durationMinutes` | each learner   | time allowed once **that learner** begins    |
+
+`durationMinutes` starts when the learner presses begin, not when you create the
+activity, so twenty students can sit the same paper at different moments. Until
+they begin, the questions stay hidden from them. When their time runs out their
+work is handed in automatically, so a learner who runs out of time is still
+marked on what they did. A duration also means the learner cannot preview the
+questions first — never put one on take-home work.
+
 - If the school's blueprint for the subject disagrees with your instinct,
   follow the blueprint and say why you would have chosen differently.
 
