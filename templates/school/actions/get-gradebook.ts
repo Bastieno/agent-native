@@ -1,6 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and } from "drizzle-orm";
+import { eq, and, ne, or, isNull } from "drizzle-orm";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
 
@@ -25,7 +25,17 @@ export default defineAction({
         ),
       );
 
-    const assessmentConditions = [eq(schema.assessments.classId, args.classId)];
+    // A gradebook is a record of marks, so work that carries none does not
+    // belong in it. A card deck or a reference sheet is real work a learner
+    // does, but printing it as a column of "/0" tells a teacher nothing and
+    // pushes the columns that do matter off the side of the screen.
+    const assessmentConditions = [
+      eq(schema.assessments.classId, args.classId),
+      or(
+        isNull(schema.assessments.gradingMode),
+        ne(schema.assessments.gradingMode, "none"),
+      ),
+    ];
     const assessments = await db
       .select()
       .from(schema.assessments)
@@ -113,6 +123,7 @@ export default defineAction({
         title: a.title,
         totalPoints: a.totalPoints,
         assessmentType: a.assessmentType,
+        format: a.format,
       })),
       gradebook,
     };
