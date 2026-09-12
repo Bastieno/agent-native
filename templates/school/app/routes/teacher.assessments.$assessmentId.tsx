@@ -144,6 +144,18 @@ export default function TeacherAssessment() {
     enabled: !!gradingTarget?.id,
   });
 
+  // Total what the answers earned, so the teacher confirms a number rather
+  // than adding it up themselves.
+  useEffect(() => {
+    const answers = gradingDetail?.answers;
+    if (!answers?.length || gradeScore !== "") return;
+    const sum = answers.reduce(
+      (total: number, a: any) => total + (a.awardedPoints ?? 0),
+      0,
+    );
+    setGradeScore(String(sum));
+  }, [gradingDetail, gradeScore]);
+
   const gradingVariant = gradingTarget
     ? variants.find((v: any) => v.id === gradingTarget.variantId)
     : null;
@@ -396,11 +408,12 @@ export default function TeacherAssessment() {
             {gradingDetail?.answers?.length ? (
               <AnswerReview
                 answers={gradingDetail.answers}
-                onChanged={() =>
+                onChanged={(newTotal) => {
+                  setGradeScore(String(newTotal));
                   qc.invalidateQueries({
                     queryKey: ["submissions", assessmentId],
-                  })
-                }
+                  });
+                }}
               />
             ) : null}
             {!gradingDetail?.answers?.length && gradingVariant?.content ? (
@@ -413,7 +426,10 @@ export default function TeacherAssessment() {
                 </div>
               </div>
             ) : null}
-            <div className="space-y-1.5">
+            <div
+              className="space-y-1.5"
+              hidden={!!gradingDetail?.answers?.length}
+            >
               <Label className="text-muted-foreground">Student answer</Label>
               <div className="rounded-md border p-3">
                 {gradingTarget?.content ? (

@@ -18,6 +18,21 @@ import {
 } from "@tabler/icons-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { Markdown } from "@/components/Markdown";
+
+/**
+ * A one-line label for a prompt written in markdown. The collapsed row has no
+ * room to render properly, and printing the asterisks is worse than dropping
+ * them — the full prompt is rendered when the row opens.
+ */
+function plainLabel(text: string | null): string {
+  if (!text) return "(question not found)";
+  return text
+    .replace(/[*_`]/g, "")
+    .replace(/\$\$?([^$]*)\$\$?/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 export type Answer = {
   responseId: string;
@@ -56,7 +71,8 @@ export function AnswerReview({
   onChanged,
 }: {
   answers: Answer[];
-  onChanged?: () => void;
+  /** Called with the paper's new total whenever a mark is changed. */
+  onChanged?: (newTotal: number) => void;
 }) {
   const qc = useQueryClient();
   const [editing, setEditing] = useState<Record<string, string>>({});
@@ -88,11 +104,21 @@ export function AnswerReview({
       if (!res.ok) throw new Error((body as any).error ?? "Failed");
       return body;
     },
-    onSuccess: () => {
+    onSuccess: (_body, variables) => {
       qc.invalidateQueries({ queryKey: ["submission"] });
       qc.invalidateQueries({ queryKey: ["submissions"] });
-      toast.success("Mark updated — remember to recompile the total");
-      onChanged?.();
+      // Re-total here rather than telling the teacher to remember: the score
+      // they are about to save must agree with the marks above it.
+      const newTotal = answers.reduce(
+        (sum, a) =>
+          sum +
+          (a.responseId === variables.responseId
+            ? variables.points
+            : (a.awardedPoints ?? 0)),
+        0,
+      );
+      toast.success(`Mark updated — the total is now ${newTotal}`);
+      onChanged?.(newTotal);
     },
     onError: (e: Error) => toast.error(e.message),
   });
@@ -131,7 +157,7 @@ export function AnswerReview({
                   {a.questionNumber}.
                 </span>
                 <span className="min-w-0 flex-1 truncate text-xs">
-                  {a.prompt ?? "(question not found)"}
+                  {plainLabel(a.prompt)}
                 </span>
 
                 {a.timedOut ? (
@@ -172,6 +198,14 @@ export function AnswerReview({
 
               <CollapsibleContent>
                 <div className="space-y-3 border-t p-3 text-xs">
+                  {a.prompt ? (
+                    <div>
+                      <p className="mb-1 font-medium text-muted-foreground">
+                        Question
+                      </p>
+                      <Markdown className="text-xs">{a.prompt}</Markdown>
+                    </div>
+                  ) : null}
                   <div>
                     <p className="mb-1 font-medium text-muted-foreground">
                       Their answer
