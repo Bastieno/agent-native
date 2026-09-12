@@ -214,6 +214,21 @@ export const assessments = table("assessments", {
   title: text("title").notNull(),
   description: text("description"),
   assessmentType: text("assessment_type").notNull().default("homework"), // homework | quiz | test | project | oral | practical | custom
+  // How the work is shaped. Free text on purpose: the set of sensible formats
+  // differs by subject, country and school, and belongs in school data rather
+  // than in an enum here. e.g. "worksheet", "reading", "problem set",
+  // "practical write-up", "recitation".
+  format: text("format"),
+  // How a learner responds: "typed", "upload", "none" (nothing to hand in).
+  responseMode: text("response_mode"),
+  // "rubric", "points", or "none" for practice that carries no marks.
+  gradingMode: text("grading_mode"),
+  opensAt: text("opens_at"),
+  closesAt: text("closes_at"),
+  durationMinutes: integer("duration_minutes"),
+  // The learning objectives this activity is meant to move, carried through to
+  // the rubric, the marking and the report comment.
+  objectivesJson: text("objectives_json").notNull().default("[]"),
   dueDate: text("due_date"),
   totalPoints: integer("total_points").notNull().default(100),
   status: text("status").notNull().default("draft"), // draft | published | closed

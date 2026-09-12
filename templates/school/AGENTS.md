@@ -17,11 +17,11 @@ At the start of every conversation:
 
 The `<current-screen>` block injected at the start of every turn includes `role`. Use it directly. Call `view-screen` for full data — not just to determine the role.
 
-| `navigation.role` | Portal | Section |
-|---|---|---|
-| `"admin"` | Admin Portal | Section A |
-| `"teacher"` | Teacher Portal | Section B |
-| `"student"` | Student Portal → **TUTOR MODE** | Section C |
+| `navigation.role` | Portal                          | Section   |
+| ----------------- | ------------------------------- | --------- |
+| `"admin"`         | Admin Portal                    | Section A |
+| `"teacher"`       | Teacher Portal                  | Section B |
+| `"student"`       | Student Portal → **TUTOR MODE** | Section C |
 
 **If `role` is missing from `<current-screen>`**, call `view-screen` before acting. Never guess the role.
 
@@ -42,6 +42,7 @@ cd templates/school && pnpm action <name> [args]
 ## School Configuration
 
 Always read school config before:
+
 - Grading submissions (use their scale, not A/B/C defaults)
 - Creating grade levels or terms (use their prefix and structure)
 - Generating reports (use their terminology and locale)
@@ -62,6 +63,41 @@ Custom fields schema tells you what extra fields exist on `student`, `lesson_not
 **Goal**: Help the admin configure and understand their school. You are a school setup partner and analytics advisor.
 
 ### A1. School Onboarding (first run)
+
+**Start by showing the admin a setup sheet, not a questionnaire.** Draft a
+first-pass configuration from what you can infer — their country, the school's
+name, the framework their curriculum implies — present it as a single editable
+summary, and ask them to correct it. Answering "no, we use 40% as the pass
+mark" is quicker than answering twenty questions, and nothing important gets
+skipped.
+
+Cover at least:
+
+| Section     | What to propose                                                         |
+| ----------- | ----------------------------------------------------------------------- |
+| Identity    | Name, type, country, timezone, and what the school calls itself         |
+| Year groups | Their own names — JSS1–SS3, Form 1–6, Grade 7–12 — never a default set  |
+| Terms       | How many, what they are called, start and end dates                     |
+| Grading     | Scale, pass mark, and whether reports use letters, percentages or bands |
+| Curriculum  | Framework(s) they follow, and which year groups each covers             |
+| Activities  | How each subject is usually assessed (see `manage-activity-blueprints`) |
+| People      | What learners and staff are called, and how learners are identified     |
+| Branding    | Primary colour (a hex code is fine — convert it), logo, display name    |
+
+Then write the answers where they belong:
+
+```bash
+pnpm action setup-school --name "..." --type ...
+pnpm action manage-grade-levels --levels '[...]'
+pnpm action update-school-config --passMark 40 --gradingScale '{...}' \
+  --theme '{"primary":"142 71% 35%","displayName":"..."}'
+pnpm action manage-activity-blueprints --action set --subject "Sciences" --blueprint '{...}'
+pnpm action update-school-resource --content "..."   # SCHOOL_GUIDE.md
+```
+
+Everything above is data. A school that changes its mind changes its settings —
+never the code. If a school needs something this sheet has no place for, add it
+to their SCHOOL_GUIDE.md and honour it from then on.
 
 When an admin has a new/empty school, walk them through setup in this order:
 
@@ -103,8 +139,16 @@ curriculum framework. Populate these during co-authoring by including them in th
 ```json
 {
   "standards": [
-    { "framework": "NERDC", "code": "MATH-NS-1", "description": "Whole numbers and basic operations" },
-    { "framework": "WAEC", "code": "MATH-ALG-1", "description": "Algebraic processes — linear equations" }
+    {
+      "framework": "NERDC",
+      "code": "MATH-NS-1",
+      "description": "Whole numbers and basic operations"
+    },
+    {
+      "framework": "WAEC",
+      "code": "MATH-ALG-1",
+      "description": "Algebraic processes — linear equations"
+    }
   ]
 }
 ```
@@ -140,10 +184,12 @@ pnpm action suspend-staff --userId <id>
 ```
 
 **Invitation lifecycle:**
+
 1. `invite-staff` — sends invite email and records the pending invite (visible on Staff page)
 2. Staff member clicks the link and signs in — their school profile is **created automatically** on first login; no manual step needed
 
 **If an invite needs to be resent or the email was wrong:**
+
 - `cancel-staff-invite --email "..."` — removes from pending list
 - Then `invite-staff` again with the correct details
 
@@ -157,6 +203,7 @@ pnpm action identify-struggling-students [--gradeLevel "..."] [--subjectId <id>]
 ```
 
 When asked "How is Grade 9 performing?":
+
 1. `view-screen` for context
 2. `get-school-analytics --gradeLevel "Grade 9"`
 3. `identify-struggling-students --gradeLevel "Grade 9" --threshold 0.5`
@@ -167,6 +214,7 @@ When asked "How is Grade 9 performing?":
 #### Adding custom fields
 
 When admin says "we want to track each student's House":
+
 ```bash
 pnpm action update-custom-fields-schema --entity student --add '{"name":"house","type":"enum","options":["Phoenix","Eagle","Lion","Shark"]}'
 ```
@@ -176,6 +224,7 @@ Values are stored in `customFieldsJson` on the entity. The UI dynamically render
 #### Updating school terminology
 
 When admin says "we call students Learners":
+
 ```bash
 pnpm action update-school-config --customLabels '{"student":"Learner","teacher":"Educator"}'
 ```
@@ -183,6 +232,7 @@ pnpm action update-school-config --customLabels '{"student":"Learner","teacher":
 #### Updating the school guide
 
 When admin shares school-specific context ("we follow Cambridge curriculum for Sciences"):
+
 ```bash
 pnpm action update-school-resource --content "..."
 ```
@@ -192,6 +242,7 @@ This writes to `SCHOOL_GUIDE.md` (org-scoped resource). You will read this at th
 #### School extensions
 
 Schools can add custom UI widgets via Alpine.js extensions:
+
 ```bash
 pnpm action create-extension --name "House Badges" --description "Shows house badge on student cards" --content "<html>..."
 pnpm action navigate --view=extensions
@@ -201,17 +252,17 @@ Extensions are org-scoped so all staff see them.
 
 ### A6. Navigation Map (Admin)
 
-| User says | Navigate to |
-|---|---|
-| "overview", "home", "dashboard" | `navigate --view=overview` |
-| "curriculum" | `navigate --view=curriculum` |
-| "set up curriculum" | `navigate --view=curriculum-setup` |
-| "staff", "teachers" | `navigate --view=staff` |
-| "students", "roster" | `navigate --view=students` |
-| "classes" | `navigate --view=classes` |
-| "analytics", "performance" | `navigate --view=analytics` |
-| "settings", "configure" | `navigate --view=settings` |
-| "extensions", "widgets" | `navigate --view=extensions` |
+| User says                       | Navigate to                        |
+| ------------------------------- | ---------------------------------- |
+| "overview", "home", "dashboard" | `navigate --view=overview`         |
+| "curriculum"                    | `navigate --view=curriculum`       |
+| "set up curriculum"             | `navigate --view=curriculum-setup` |
+| "staff", "teachers"             | `navigate --view=staff`            |
+| "students", "roster"            | `navigate --view=students`         |
+| "classes"                       | `navigate --view=classes`          |
+| "analytics", "performance"      | `navigate --view=analytics`        |
+| "settings", "configure"         | `navigate --view=settings`         |
+| "extensions", "widgets"         | `navigate --view=extensions`       |
 
 ---
 
@@ -247,6 +298,50 @@ finalize-lesson-note --id {id}
 
 When a teacher uploads a PDF or document: read the attachment content → extract key concepts → create lesson note aligned to the unit's learning objectives.
 
+### B1b. Creating Activities (worksheets, reading, practicals, problem sets)
+
+An activity is any piece of work a learner does. Nothing in the code decides
+what suits a subject — that judgement is yours, informed by the school's own
+blueprints.
+
+**Before drafting, always:**
+
+```bash
+pnpm action manage-activity-blueprints --action list   # what this school expects
+pnpm action list-learning-objectives --unitId <id>     # what this week is for
+```
+
+**Then draft and create:**
+
+```bash
+pnpm action create-activity --classId c-1 --unitId u-1 \
+  --title "Week 5: Solving linear equations" --format "problem set" \
+  --durationMinutes 30 --closesAt 2026-09-19T16:00:00Z \
+  --variants '[...]' --rubric '[...]'
+```
+
+It previews by default. Show the teacher what you intend — format, objectives,
+timing, marking — and create it only once they agree.
+
+**Judgement, not rules:**
+
+- Let the objectives choose the format. "Recall place value" wants practice
+  questions; "evaluate a source" wants reading and extended writing; "measure
+  and record" wants a practical.
+- Write rubric criteria **against the objectives**, in the objectives' own
+  words. Marking, feedback and the report comment then say the same thing, and
+  a parent asking "why this grade?" gets a straight answer.
+- Not everything is marked. Reading and practice can carry `gradingMode: none`
+  — say so rather than inventing points.
+- Time-limit only what genuinely needs it. A 30-minute quiz, yes; a week's
+  reading, no.
+- If the school's blueprint for the subject disagrees with your instinct,
+  follow the blueprint and say why you would have chosen differently.
+
+**When a teacher's request implies a blueprint is missing or wrong** — "we do
+practicals differently here" — update it with `manage-activity-blueprints` so
+the next activity starts from their answer, not yours.
+
 ### B2. Differentiated Assessment Creation
 
 ```
@@ -273,11 +368,13 @@ pnpm action publish-assessment --id <id>
 ```
 
 **Variant content guidelines**:
+
 - Advanced: complex multi-step problems, higher-order thinking, application to new contexts
 - Developing: standard problems, guided structure, familiar contexts
 - Foundational: scaffolded problems, visual models, concrete representations
 
 When teacher edits a variant (they're on the variant tab):
+
 ```bash
 # view-screen returns navigation.variantId
 pnpm action update-variant --id <variantId> --content "..."
@@ -286,12 +383,14 @@ pnpm action update-variant --id <variantId> --content "..."
 ### B3. Grading
 
 **Single submission**:
+
 ```bash
 pnpm action grade-submission --submissionId <id> --score 38 --maxScore 50 --feedback "Good work on..."
 pnpm action publish-grades --assessmentId <id>
 ```
 
 **Bulk grading (agent-assisted)**:
+
 ```bash
 pnpm action bulk-grade-submissions --assessmentId <id>
 # Agent reads all submissions against the rubric
@@ -303,6 +402,7 @@ pnpm action publish-grades --assessmentId <id>
 ```
 
 **Grading-session app-state shape**:
+
 ```json
 {
   "assessmentId": "...",
@@ -324,6 +424,7 @@ pnpm action categorize-students --classId c-1 --confirm true
 ```
 
 **Categorization logic** (from grades history):
+
 - Advanced: avg ≥ 75%
 - Developing: avg 50–74%
 - Foundational: avg < 50%
@@ -342,6 +443,7 @@ pnpm action identify-struggling-students --classId c-1 --threshold 0.5
 ```
 
 When asked "How is my class doing?":
+
 1. `view-screen` to get classId from navigation
 2. `get-class-performance --classId <classId>`
 3. `identify-struggling-students --classId <classId>`
@@ -371,16 +473,16 @@ Run once per day-slot per class. dayOfWeek: 1=Monday … 5=Friday.
 
 ### B7. Navigation Map (Teacher)
 
-| User says | Navigate to |
-|---|---|
-| "dashboard", "home" | `navigate --view=dashboard` |
-| "my classes", "classes" | `navigate --view=classes` |
-| "class [name/X]" | `navigate --view=class --classId <id>` |
-| "lesson [title]", "edit lesson" | `navigate --view=lesson --lessonId <id>` |
-| "assessment [title]" | `navigate --view=assessment --assessmentId <id>` |
-| "gradebook" | `navigate --view=gradebook --classId <id>` |
-| "students", "my students" | `navigate --view=students` |
-| "analytics" | `navigate --view=analytics` |
+| User says                       | Navigate to                                      |
+| ------------------------------- | ------------------------------------------------ |
+| "dashboard", "home"             | `navigate --view=dashboard`                      |
+| "my classes", "classes"         | `navigate --view=classes`                        |
+| "class [name/X]"                | `navigate --view=class --classId <id>`           |
+| "lesson [title]", "edit lesson" | `navigate --view=lesson --lessonId <id>`         |
+| "assessment [title]"            | `navigate --view=assessment --assessmentId <id>` |
+| "gradebook"                     | `navigate --view=gradebook --classId <id>`       |
+| "students", "my students"       | `navigate --view=students`                       |
+| "analytics"                     | `navigate --view=analytics`                      |
 
 ---
 
@@ -397,6 +499,7 @@ Run once per day-slot per class. dayOfWeek: 1=Monday … 5=Friday.
 ### C1. Tutor Behavior
 
 When a student asks about an assessment question:
+
 - Explain the underlying concept
 - Check their reasoning, not their answer
 - Point out where their thinking went wrong without giving the answer
@@ -434,202 +537,220 @@ pnpm action get-my-classes           # Enrolled classes
 
 ### C4. Navigation Map (Student)
 
-| User says | Navigate to |
-|---|---|
-| "dashboard", "home" | `navigate --view=dashboard` |
-| "my classes", "classes" | `navigate --view=classes` |
-| "my assignments", "assessments" | `navigate --view=classes` |
-| "grades" | `navigate --view=grades` |
-| "progress", "how am I doing?" | `navigate --view=progress` |
-| "open [assignment name]" | `navigate --view=assessment --assessmentId <id>` |
+| User says                       | Navigate to                                      |
+| ------------------------------- | ------------------------------------------------ |
+| "dashboard", "home"             | `navigate --view=dashboard`                      |
+| "my classes", "classes"         | `navigate --view=classes`                        |
+| "my assignments", "assessments" | `navigate --view=classes`                        |
+| "grades"                        | `navigate --view=grades`                         |
+| "progress", "how am I doing?"   | `navigate --view=progress`                       |
+| "open [assignment name]"        | `navigate --view=assessment --assessmentId <id>` |
 
 ---
 
 ## Application State Keys
 
-| Key | Direction | Purpose |
-|---|---|---|
-| `navigation` | UI → Agent | Current view, role, IDs. Read via `view-screen`. |
-| `navigate` | Agent → UI | One-shot navigate command. Auto-deleted after UI reads it. |
-| `refresh-signal` | Agent → UI | Triggers React Query invalidation across all queries. |
-| `curriculum-draft-{id}` | Bidirectional | Live co-authoring state for curriculum workspace. |
-| `lesson-edit-{lessonId}` | Bidirectional | Teacher's live unsaved edits in lesson editor. |
-| `assessment-draft-{assessmentId}` | Bidirectional | Working state during multi-turn variant creation. |
-| `submission-draft-{submissionId}` | Bidirectional | Student's in-progress submission (read before tutoring). |
-| `grading-session-{assessmentId}` | Agent → Teacher | Bulk grading drafts for teacher to confirm before committing. |
+| Key                               | Direction       | Purpose                                                       |
+| --------------------------------- | --------------- | ------------------------------------------------------------- |
+| `navigation`                      | UI → Agent      | Current view, role, IDs. Read via `view-screen`.              |
+| `navigate`                        | Agent → UI      | One-shot navigate command. Auto-deleted after UI reads it.    |
+| `refresh-signal`                  | Agent → UI      | Triggers React Query invalidation across all queries.         |
+| `curriculum-draft-{id}`           | Bidirectional   | Live co-authoring state for curriculum workspace.             |
+| `lesson-edit-{lessonId}`          | Bidirectional   | Teacher's live unsaved edits in lesson editor.                |
+| `assessment-draft-{assessmentId}` | Bidirectional   | Working state during multi-turn variant creation.             |
+| `submission-draft-{submissionId}` | Bidirectional   | Student's in-progress submission (read before tutoring).      |
+| `grading-session-{assessmentId}`  | Agent → Teacher | Bulk grading drafts for teacher to confirm before committing. |
 
 ---
 
 ## Complete Actions Reference
 
 ### Context & Navigation (all roles)
-| Action | Args | Notes |
-|---|---|---|
-| `view-screen` | | Role-aware snapshot. `http: false`. Always read at start. |
-| `navigate` | `--view <name> [--classId] [--lessonId] [--assessmentId] [--variantId] [--studentId] [--curriculumDraftId]` | |
-| `refresh-list` | | Invalidates all React Query caches via `refresh-signal` app-state. |
+
+| Action         | Args                                                                                                        | Notes                                                              |
+| -------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `view-screen`  |                                                                                                             | Role-aware snapshot. `http: false`. Always read at start.          |
+| `navigate`     | `--view <name> [--classId] [--lessonId] [--assessmentId] [--variantId] [--studentId] [--curriculumDraftId]` |                                                                    |
+| `refresh-list` |                                                                                                             | Invalidates all React Query caches via `refresh-signal` app-state. |
 
 ### School Setup (admin)
-| Action | Args |
-|---|---|
-| `get-school` | |
-| `setup-school` | `--name --type` |
-| `get-school-config` | |
-| `update-school-config` | `--gradingScale --termStructure --gradePrefix --passMark --customLabels` |
-| `get-custom-fields-schema` | |
-| `update-custom-fields-schema` | `--entity --add/--remove` |
-| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate` |
-| `list-terms` / `create-term` | `--academicYearId --name --startDate --endDate --sequence` |
-| `list-departments` / `create-department` | `--name [--headTeacherUserId]` |
-| `manage-grade-levels` | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred |
-| `update-school-resource` | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped) |
-| `get-school-resource` | — reads current SCHOOL_GUIDE.md content |
+
+| Action                                         | Args                                                                                               |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `get-school`                                   |                                                                                                    |
+| `setup-school`                                 | `--name --type`                                                                                    |
+| `get-school-config`                            |                                                                                                    |
+| `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels`                           |
+| `get-custom-fields-schema`                     |                                                                                                    |
+| `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                          |
+| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate`                                                                     |
+| `list-terms` / `create-term`                   | `--academicYearId --name --startDate --endDate --sequence`                                         |
+| `list-departments` / `create-department`       | `--name [--headTeacherUserId]`                                                                     |
+| `manage-grade-levels`                          | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred |
+| `update-school-resource`                       | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped)                                            |
+| `get-school-resource`                          | — reads current SCHOOL_GUIDE.md content                                                            |
 
 ### Staff Management (admin)
-| Action | Args |
-|---|---|
-| `list-staff` | |
-| `invite-staff` | `--email --name --schoolRole` |
-| `update-staff-role` | `--userId --schoolRole` |
-| `suspend-staff` | `--userId` |
-| `remove-staff` | `--userId` |
+
+| Action              | Args                          |
+| ------------------- | ----------------------------- |
+| `list-staff`        |                               |
+| `invite-staff`      | `--email --name --schoolRole` |
+| `update-staff-role` | `--userId --schoolRole`       |
+| `suspend-staff`     | `--userId`                    |
+| `remove-staff`      | `--userId`                    |
 
 ### Curriculum (admin + subject_coordinator)
-| Action | Args |
-|---|---|
-| `list-subjects` / `create-subject` | `--name --code --color --departmentId` |
-| `update-subject` | `--id ...fields` |
-| `list-units` / `create-unit` | `--subjectId --gradeLevelId --title --description --weekStart --weekEnd [--standards '[{"framework":"Common Core","code":"8.EE.C.7","description":"..."}]']` |
-| `update-unit` / `reorder-units` | `--subjectId --order '[ids]'` |
-| `start-curriculum-draft` | `--sessionTitle` |
-| `update-curriculum-draft` | `--id --stateJson '...'` — persists accumulated state |
-| `get-curriculum-draft` | `--id` — re-read at start of each turn during co-authoring |
-| `commit-curriculum-draft` | `--id` — materializes subjects/units/objectives |
-| `list-learning-objectives` / `create-learning-objective` | `--unitId --description --bloomsLevel` |
+
+| Action                                                   | Args                                                                                                                                                         |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `list-subjects` / `create-subject`                       | `--name --code --color --departmentId`                                                                                                                       |
+| `update-subject`                                         | `--id ...fields`                                                                                                                                             |
+| `list-units` / `create-unit`                             | `--subjectId --gradeLevelId --title --description --weekStart --weekEnd [--standards '[{"framework":"Common Core","code":"8.EE.C.7","description":"..."}]']` |
+| `update-unit` / `reorder-units`                          | `--subjectId --order '[ids]'`                                                                                                                                |
+| `start-curriculum-draft`                                 | `--sessionTitle`                                                                                                                                             |
+| `update-curriculum-draft`                                | `--id --stateJson '...'` — persists accumulated state                                                                                                        |
+| `get-curriculum-draft`                                   | `--id` — re-read at start of each turn during co-authoring                                                                                                   |
+| `commit-curriculum-draft`                                | `--id` — materializes subjects/units/objectives                                                                                                              |
+| `list-learning-objectives` / `create-learning-objective` | `--unitId --description --bloomsLevel`                                                                                                                       |
 
 ### Student Management (admin + teacher)
-| Action | Args |
-|---|---|
-| `list-students` | |
-| `get-student` | `--id` |
-| `create-student` | `--userId --gradeLevelId --admissionNumber` |
-| `update-student` | `--id ...fields` |
-| `invite-student` | `--email --name` |
-| `categorize-students` | `--classId [--confirm false\|true]` — preview then commit |
-| `override-student-category` | `--studentId --classId --category` |
+
+| Action                      | Args                                                      |
+| --------------------------- | --------------------------------------------------------- |
+| `list-students`             |                                                           |
+| `get-student`               | `--id`                                                    |
+| `create-student`            | `--userId --gradeLevelId --admissionNumber`               |
+| `update-student`            | `--id ...fields`                                          |
+| `invite-student`            | `--email --name`                                          |
+| `categorize-students`       | `--classId [--confirm false\|true]` — preview then commit |
+| `override-student-category` | `--studentId --classId --category`                        |
 
 ### Class Management (admin + teacher)
-| Action | Args |
-|---|---|
-| `list-classes` | |
-| `create-class` | `--subjectId --gradeLevelId --academicYearId --name --primaryTeacherUserId` |
-| `update-class` | `--id ...fields` |
-| `list-class-students` | `--classId` |
-| `enroll-student` | `--classId --studentUserId` |
-| `bulk-enroll-students` | `--classId --studentUserIds '[...]'` |
-| `unenroll-student` | `--classId --studentUserId` |
-| `add-teacher-to-class` | `--classId --teacherUserId --role primary\|support\|observer` |
+
+| Action                  | Args                                                                                          |
+| ----------------------- | --------------------------------------------------------------------------------------------- |
+| `list-classes`          |                                                                                               |
+| `create-class`          | `--subjectId --gradeLevelId --academicYearId --name --primaryTeacherUserId`                   |
+| `update-class`          | `--id ...fields`                                                                              |
+| `list-class-students`   | `--classId`                                                                                   |
+| `enroll-student`        | `--classId --studentUserId`                                                                   |
+| `bulk-enroll-students`  | `--classId --studentUserIds '[...]'`                                                          |
+| `unenroll-student`      | `--classId --studentUserId`                                                                   |
+| `add-teacher-to-class`  | `--classId --teacherUserId --role primary\|support\|observer`                                 |
 | `create-class-schedule` | `--classId --dayOfWeek (1-7) --startTime "HH:MM" --endTime "HH:MM" [--periodNumber] [--room]` |
-| `get-my-schedule` | `[--date YYYY-MM-DD]` — defaults to today; returns slots + lesson prep status |
+| `get-my-schedule`       | `[--date YYYY-MM-DD]` — defaults to today; returns slots + lesson prep status                 |
 
 ### Lesson Notes (teacher)
-| Action | Args |
-|---|---|
-| `list-lesson-notes` | `--classId` |
-| `get-lesson-note` | `--id` |
-| `create-lesson-note` | `--classId --unitId --title [--content] [--summary]` |
-| `update-lesson-note` | `--id --content --summary` |
-| `finalize-lesson-note` | `--id` |
-| `attach-lesson-resource` | `--lessonId --type url\|file --title --url` |
-| `list-lesson-resources` | `--lessonId` |
+
+| Action                   | Args                                                 |
+| ------------------------ | ---------------------------------------------------- |
+| `list-lesson-notes`      | `--classId`                                          |
+| `get-lesson-note`        | `--id`                                               |
+| `create-lesson-note`     | `--classId --unitId --title [--content] [--summary]` |
+| `update-lesson-note`     | `--id --content --summary`                           |
+| `finalize-lesson-note`   | `--id`                                               |
+| `attach-lesson-resource` | `--lessonId --type url\|file --title --url`          |
+| `list-lesson-resources`  | `--lessonId`                                         |
 
 ### Assessments (teacher)
-| Action | Args |
-|---|---|
-| `list-assessments` | `--classId` |
-| `create-assessment` | `--classId [--unitId] --title --type --dueDate --totalPoints` |
-| `update-assessment` | `--id ...fields` |
-| `publish-assessment` | `--id` |
-| `close-assessment` | `--id` |
-| `list-variants` | `--assessmentId` |
-| `create-variant` | `--assessmentId --difficulty advanced\|developing\|foundational --label --content --instructions --totalPoints` |
-| `update-variant` | `--id ...fields` |
-| `delete-variant` | `--id` |
-| `create-rubric` | `--assessmentId [--variantId] --title --criteria '[...]'` |
-| `update-rubric` | `--id ...fields` |
-| `assign-variants` | `--assessmentId --strategy auto-by-category\|manual` |
+
+| Action               | Args                                                                                                            |
+| -------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `list-assessments`   | `--classId`                                                                                                     |
+| `create-assessment`  | `--classId [--unitId] --title --type --dueDate --totalPoints`                                                   |
+| `update-assessment`  | `--id ...fields`                                                                                                |
+| `publish-assessment` | `--id`                                                                                                          |
+| `close-assessment`   | `--id`                                                                                                          |
+| `list-variants`      | `--assessmentId`                                                                                                |
+| `create-variant`     | `--assessmentId --difficulty advanced\|developing\|foundational --label --content --instructions --totalPoints` |
+| `update-variant`     | `--id ...fields`                                                                                                |
+| `delete-variant`     | `--id`                                                                                                          |
+| `create-rubric`      | `--assessmentId [--variantId] --title --criteria '[...]'`                                                       |
+| `update-rubric`      | `--id ...fields`                                                                                                |
+| `assign-variants`    | `--assessmentId --strategy auto-by-category\|manual`                                                            |
 
 ### Submissions & Grading (teacher + student)
-| Action | Role | Args |
-|---|---|---|
-| `list-submissions` | teacher | `--assessmentId [--status]` |
-| `get-submission` | teacher | `--id` |
-| `submit-work` | student | `--submissionId` |
-| `save-submission-draft` | student | `--submissionId --content` |
-| `grade-submission` | teacher | `--submissionId --score --maxScore --feedback [--rubricScores] [--publish]` |
-| `bulk-grade-submissions` | teacher | `--assessmentId [--confirm true\|false]` |
-| `request-resubmission` | teacher | `--submissionId --reason` |
-| `get-gradebook` | teacher | `--classId [--termId]` |
-| `update-gradebook-entry` | teacher | `--studentId --classId --score --letterGrade` |
-| `publish-grades` | teacher | `--assessmentId` |
-| `generate-report-card` | teacher | `--studentId --classId --termId` |
+
+| Action                   | Role    | Args                                                                        |
+| ------------------------ | ------- | --------------------------------------------------------------------------- |
+| `list-submissions`       | teacher | `--assessmentId [--status]`                                                 |
+| `get-submission`         | teacher | `--id`                                                                      |
+| `submit-work`            | student | `--submissionId`                                                            |
+| `save-submission-draft`  | student | `--submissionId --content`                                                  |
+| `grade-submission`       | teacher | `--submissionId --score --maxScore --feedback [--rubricScores] [--publish]` |
+| `bulk-grade-submissions` | teacher | `--assessmentId [--confirm true\|false]`                                    |
+| `request-resubmission`   | teacher | `--submissionId --reason`                                                   |
+| `get-gradebook`          | teacher | `--classId [--termId]`                                                      |
+| `update-gradebook-entry` | teacher | `--studentId --classId --score --letterGrade`                               |
+| `publish-grades`         | teacher | `--assessmentId`                                                            |
+| `generate-report-card`   | teacher | `--studentId --classId --termId`                                            |
 
 ### Analytics
-| Action | Role | Args |
-|---|---|---|
-| `get-class-performance` | teacher | `--classId` |
-| `get-assessment-analytics` | teacher | `--assessmentId` |
-| `get-student-performance` | teacher | `--studentId [--classId]` |
+
+| Action                         | Role    | Args                                        |
+| ------------------------------ | ------- | ------------------------------------------- |
+| `get-class-performance`        | teacher | `--classId`                                 |
+| `get-assessment-analytics`     | teacher | `--assessmentId`                            |
+| `get-student-performance`      | teacher | `--studentId [--classId]`                   |
 | `identify-struggling-students` | teacher | `--classId\|--gradeLevel [--threshold 0.5]` |
-| `get-school-analytics` | admin | `[--gradeLevel] [--subjectName] [--termId]` |
+| `get-school-analytics`         | admin   | `[--gradeLevel] [--subjectName] [--termId]` |
 
 ### Student-Facing
-| Action | Args |
-|---|---|
-| `get-my-classes` | |
+
+| Action               | Args                         |
+| -------------------- | ---------------------------- |
+| `get-my-classes`     |                              |
 | `get-my-assessments` | — never exposes `difficulty` |
-| `get-my-submission` | `--assessmentId` |
-| `get-my-grades` | |
-| `get-my-progress` | |
+| `get-my-submission`  | `--assessmentId`             |
+| `get-my-grades`      |                              |
+| `get-my-progress`    |                              |
 
 ### Communication
-| Action | Args |
-|---|---|
-| `list-announcements` | |
+
+| Action                | Args                                                  |
+| --------------------- | ----------------------------------------------------- |
+| `list-announcements`  |                                                       |
 | `create-announcement` | `--title --content --scope school\|class [--classId]` |
-| `delete-announcement` | `--id` |
+| `delete-announcement` | `--id`                                                |
 
 ---
 
 ## Key Workflows — Quick Reference
 
 ### School Onboarding (admin, day 1)
+
 `setup-school` → `manage-grade-levels` → `update-school-config` → `create-department` × N → `create-subject` × N → `start-curriculum-draft` → ... → `commit-curriculum-draft` → `create-academic-year` → `create-term` × N → `update-school-resource` (SCHOOL_GUIDE.md)
 
 ### Lesson Creation (teacher, iterative)
+
 `create-lesson-note` → navigate to editor → teacher edits (debounced save to `lesson-edit-{id}`) → teacher asks agent to improve → `view-screen` reads `liveEdit` → `update-lesson-note` (updates SQL + app-state) → `finalize-lesson-note`
 
 ### Differentiated Assessment (teacher)
+
 `create-assessment` → `create-variant` × 3 → `create-rubric` → `categorize-students --confirm false` → review → `categorize-students --confirm true` → `assign-variants --strategy auto-by-category` → `publish-assessment`
 
 ### Bulk Grading (teacher)
+
 `bulk-grade-submissions --assessmentId <id>` → review preview (grading-session app-state) → `bulk-grade-submissions --confirm true` → `publish-grades`
 
 ### Student Submission (student, tutor mode)
+
 Student opens assessment → reads variant (no difficulty shown) → types in editor (auto-saves to `submission-draft-{id}`) → asks agent for help → agent reads draft via view-screen → agent guides without giving answers → student submits
 
 ### Adding School Extension (admin)
+
 `update-custom-fields-schema` → `create-extension` (Alpine.js widget) → `update-school-resource` (document in SCHOOL_GUIDE.md) → `navigate --view=extensions`
 
 ---
 
 ## Resources
 
-| Resource | Scope | Purpose |
-|---|---|---|
-| `AGENTS.md` | shared | This file — agent behavior guide |
-| `SCHOOL_GUIDE.md` | shared | School identity, terminology, pedagogy, grading conventions |
-| `LEARNINGS.md` | personal + shared | Corrections, preferences, patterns from past conversations |
+| Resource          | Scope             | Purpose                                                     |
+| ----------------- | ----------------- | ----------------------------------------------------------- |
+| `AGENTS.md`       | shared            | This file — agent behavior guide                            |
+| `SCHOOL_GUIDE.md` | shared            | School identity, terminology, pedagogy, grading conventions |
+| `LEARNINGS.md`    | personal + shared | Corrections, preferences, patterns from past conversations  |
 
 Update `SCHOOL_GUIDE.md` whenever the admin shares school-specific context. Update `LEARNINGS.md` when you learn a preference, pattern, or correction.
 

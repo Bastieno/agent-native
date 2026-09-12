@@ -494,6 +494,37 @@ export default runMigrations(
         created_at TEXT NOT NULL DEFAULT (datetime('now'))
       )`,
     },
+    // Activities: how the work is shaped, when it runs, and how it is marked.
+    // All free text — a school names its own formats ("WAEC practical
+    // write-up", "recitation") without a code change.
+    {
+      version: 34,
+      sql: `ALTER TABLE assessments ADD COLUMN format TEXT`,
+    },
+    {
+      version: 35,
+      sql: `ALTER TABLE assessments ADD COLUMN response_mode TEXT`,
+    },
+    {
+      version: 36,
+      sql: `ALTER TABLE assessments ADD COLUMN grading_mode TEXT`,
+    },
+    {
+      version: 37,
+      sql: `ALTER TABLE assessments ADD COLUMN opens_at TEXT`,
+    },
+    {
+      version: 38,
+      sql: `ALTER TABLE assessments ADD COLUMN closes_at TEXT`,
+    },
+    {
+      version: 39,
+      sql: `ALTER TABLE assessments ADD COLUMN duration_minutes INTEGER`,
+    },
+    {
+      version: 40,
+      sql: `ALTER TABLE assessments ADD COLUMN objectives_json TEXT NOT NULL DEFAULT '[]'`,
+    },
   ],
   { table: "school_migrations" },
 );

@@ -138,6 +138,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "list-assessments": STAFF,
   "get-assessment": STAFF,
   "create-assessment": STAFF,
+  "create-activity": STAFF,
+  "manage-activity-blueprints": STAFF,
   "update-assessment": STAFF,
   "publish-assessment": STAFF,
   "close-assessment": STAFF,

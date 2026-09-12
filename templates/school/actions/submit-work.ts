@@ -38,6 +38,28 @@ export default defineAction({
       studentId: await resolveStudentId(userEmail, rawArgs.studentId, orgId),
     };
 
+    // A closing time has to mean something: once it passes the work is no
+    // longer accepted, whatever the screen happens to be showing.
+    const [activity] = await db
+      .select({
+        closesAt: schema.assessments.closesAt,
+        status: schema.assessments.status,
+        title: schema.assessments.title,
+      })
+      .from(schema.assessments)
+      .where(eq(schema.assessments.id, args.assessmentId))
+      .limit(1);
+    if (activity?.closesAt && new Date(activity.closesAt) < new Date()) {
+      throw new Error(
+        `"${activity.title}" closed on ${new Date(activity.closesAt).toLocaleString()} and is no longer accepting work.`,
+      );
+    }
+    if (activity?.status === "closed") {
+      throw new Error(
+        `"${activity.title}" is closed and no longer accepting work.`,
+      );
+    }
+
     // Find assigned variant
     const [assigned] = await db
       .select()
