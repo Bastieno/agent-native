@@ -1,6 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { writeAppState } from "@agent-native/core/application-state";
 import { currentAccess } from "@agent-native/core/sharing";
+import { buildDeepLink } from "@agent-native/core/server";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 
@@ -58,6 +59,29 @@ export default defineAction({
       .describe("Small print at the foot of every page — a caveat or a source"),
   }),
   http: { method: "POST" },
+  /**
+   * A teacher working through Claude or another external agent gets a link,
+   * not a relative path: `/print/abc` means nothing in a chat window. This
+   * resolves to the running app, where they are already signed in, so the
+   * document opens on the school's own header ready to print.
+   */
+  link: ({ result }) => {
+    const documentId = (result as { documentId?: string } | undefined)
+      ?.documentId;
+    if (!documentId) return null;
+    return {
+      url: buildDeepLink({
+        app: "school",
+        view: "document",
+        params: { documentId },
+        // The printable is a real route, so point straight at it. Without
+        // `to`, the open route redirects to /<view> and the id is lost.
+        to: `/print/${documentId}`,
+      }),
+      label: "Open the document to print",
+      view: "document",
+    };
+  },
   run: async (args) => {
     const { userEmail } = currentAccess();
     const documentId = nanoid();
@@ -77,7 +101,7 @@ export default defineAction({
       documentId,
       path,
       orientation: args.orientation ?? "portrait",
-      message: `"${args.title}" is ready at ${path} — open it and use Print to save it as a PDF. Navigate there with: navigate --path ${path}`,
+      message: `"${args.title}" is ready at ${path} — open it and use Print to save it as a PDF. Take the teacher there with: navigate --view document --documentId ${documentId}`,
     };
   },
 });
