@@ -130,7 +130,7 @@ export default function TeacherGradebook() {
       ) : (
         <>
           {/* One card per learner on a narrow screen. */}
-          <div className="flex-1 space-y-2 overflow-auto md:hidden">
+          <div className="min-h-0 space-y-2 overflow-auto md:hidden">
             {rows.map(({ student, marks, avg, markedCount }: any) => (
               <Collapsible key={student.id} className="rounded-lg border">
                 <CollapsibleTrigger className="group flex w-full items-center justify-between gap-3 p-3 text-left">
@@ -188,7 +188,7 @@ export default function TeacherGradebook() {
           </div>
 
           {/* The table, from md up, where there is room to compare columns. */}
-          <div className="hidden flex-1 overflow-auto rounded-lg border md:block">
+          <div className="hidden min-h-0 overflow-auto rounded-lg border md:block">
             <table className="min-w-full text-sm">
               <thead>
                 <tr className="border-b bg-muted/40">
@@ -201,13 +201,13 @@ export default function TeacherGradebook() {
                   {assessments.map((a: any) => (
                     <th
                       key={a.id}
-                      className="min-w-[100px] whitespace-nowrap px-3 py-2.5 text-center font-medium"
+                      className="min-w-[150px] max-w-[220px] px-3 py-2.5 text-center align-bottom font-medium"
                       title={a.title}
                     >
-                      <div className="mx-auto max-w-[90px] truncate">
+                      <div className="mx-auto line-clamp-2 whitespace-normal leading-snug">
                         {a.title}
                       </div>
-                      <div className="text-xs font-normal text-muted-foreground">
+                      <div className="mt-0.5 text-xs font-normal text-muted-foreground">
                         /{a.totalPoints}
                       </div>
                     </th>
