@@ -91,3 +91,66 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground) / 0.4);
 }
+
+/* ── Printing ──────────────────────────────────────────────────────────────
+   Documents are composed by the agent and printed by the teacher; the browser's
+   own "Save as PDF" is the PDF engine, so there is no renderer to install and
+   nothing to run on the server. These rules decide what ends up on the paper.
+   They apply to any page, so a teacher hitting Ctrl+P on a normal screen also
+   gets something sensible. */
+@media print {
+  /* Screen-only furniture: buttons, navigation, the agent panel. */
+  [data-print-hide],
+  nav,
+  aside {
+    display: none !important;
+  }
+
+  /* Paper is white and light, whatever the tablet's theme. */
+  :root,
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  * {
+    box-shadow: none !important;
+  }
+
+  /* A row of marks split across two pages is a reprint. */
+  tr,
+  img,
+  blockquote,
+  pre {
+    break-inside: avoid;
+  }
+
+  /* Nor should a heading be the last thing on a page. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  /* Tables carry data, so they need visible rules on paper — on screen the
+     app leans on subtle borders that print as nothing. */
+  .print-body table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .print-body th,
+  .print-body td {
+    border: 1px solid #999 !important;
+    padding: 4px 6px !important;
+  }
+  .print-body thead {
+    display: table-header-group; /* repeat headings on every page */
+  }
+
+  /* Links print as text; a blue underline on paper is noise. */
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}

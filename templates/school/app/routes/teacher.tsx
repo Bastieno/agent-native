@@ -19,7 +19,10 @@ export default function TeacherLayout() {
     const nav = command.data as any;
     clearCommand();
     if (!nav.view) return;
-    if (nav.view === "dashboard") navigate("/teacher");
+    // A printable is a route of its own, outside the portal shell.
+    if (nav.view === "document" && nav.documentId)
+      navigate(`/print/${nav.documentId}`);
+    else if (nav.view === "dashboard") navigate("/teacher");
     else if (nav.view === "classes") navigate("/teacher/classes");
     else if (nav.view === "class" && nav.classId)
       navigate(`/teacher/classes/${nav.classId}`);

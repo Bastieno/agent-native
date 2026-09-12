@@ -162,6 +162,9 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-gradebook-entry": STAFF,
   "publish-grades": STAFF,
   "generate-report-card": STAFF,
+  // Printable documents, composed on demand and held in the caller's own
+  // application state.
+  "create-document": STAFF,
   // Students act on their own work only; the actions resolve the student from
   // the session and reject any other studentId.
   "submit-work": STUDENT_ONLY,

@@ -18,7 +18,10 @@ export default function StudentLayout() {
     const nav = command.data as any;
     clearCommand();
     if (!nav.view) return;
-    if (nav.view === "dashboard") navigate("/student");
+    // A printable is a route of its own, outside the portal shell.
+    if (nav.view === "document" && nav.documentId)
+      navigate(`/print/${nav.documentId}`);
+    else if (nav.view === "dashboard") navigate("/student");
     else if (nav.view === "classes") navigate("/student/classes");
     else if (nav.view === "class" && nav.classId)
       navigate(`/student/classes/${nav.classId}`);

@@ -51,6 +51,8 @@ export default function AdminLayout() {
       announcements: "/admin/announcements",
       settings: "/admin/settings",
       extensions: "/admin/extensions",
+      // A printable is a route of its own, outside the portal shell.
+      ...(nav.documentId ? { document: `/print/${nav.documentId}` } : {}),
     };
     const path = viewMap[nav.view];
     if (path) navigate(path);

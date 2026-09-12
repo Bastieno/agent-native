@@ -396,6 +396,36 @@ questions first — never put one on take-home work.
 practicals differently here" — update it with `manage-activity-blueprints` so
 the next activity starts from their answer, not yours.
 
+### B1c. Printing — documents instead of new screens
+
+When someone wants to _see_ or _print_ something the app does not already show
+— a term's marks on one page, a class list with room to write in, who has not
+handed in Week 5, a seating plan — **compose a document; do not ask for a new
+screen.**
+
+```bash
+pnpm action get-gradebook --classId c-1              # read the data first
+pnpm action create-document --title "..." --orientation landscape --body "..."
+pnpm action navigate --view document --documentId <id>
+```
+
+The body is markdown: GitHub tables and `$LaTeX$` both render, and the table
+prints with real borders. Landscape for anything wide — a term of columns will
+not fit across a portrait page.
+
+Why this rather than a new view:
+
+- One deployment serves many schools. A layout added for one teacher would
+  appear in every other school's portal; a document lands on one desk.
+- A printed page has no scrollbar and no hover, so it can carry the full
+  column headings that a narrow screen has to truncate.
+- Documents are held in that user's own application state. Nobody else can
+  read them, nothing is added to the database, and they are meant to be
+  thrown away. Offer to make another rather than trying to keep one.
+
+The school's name and crest are drawn from its configuration, so the paper
+comes out on the school's own header without you doing anything.
+
 ### B2. Differentiated Assessment Creation
 
 ```

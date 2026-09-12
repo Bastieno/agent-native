@@ -9,13 +9,17 @@ export default defineAction({
     view: z
       .string()
       .describe(
-        "The view to navigate to. Admin: overview, curriculum, curriculum-setup, staff, students, classes, analytics, settings, extensions. Teacher: dashboard, classes, class, unit, lesson, assessment, gradebook, students, analytics. Student: dashboard, classes, class, assessment, submission, grades, progress.",
+        "The view to navigate to. Admin: overview, curriculum, curriculum-setup, staff, students, classes, analytics, settings, extensions. Teacher: dashboard, classes, class, unit, lesson, assessment, gradebook, students, analytics. Student: dashboard, classes, class, assessment, submission, grades, progress. Any staff role: document (a printable made with create-activity's sibling, create-document) — pass documentId.",
       ),
     classId: z
       .string()
       .optional()
       .describe("Class ID for class/lesson/assessment/gradebook views"),
     subjectId: z.string().optional().describe("Subject ID for curriculum view"),
+    documentId: z
+      .string()
+      .optional()
+      .describe("Document ID from create-document, for the 'document' view"),
     unitId: z.string().optional().describe("Unit ID for unit/lesson views"),
     lessonId: z.string().optional().describe("Lesson note ID for lesson view"),
     assessmentId: z
