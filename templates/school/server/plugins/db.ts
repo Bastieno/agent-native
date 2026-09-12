@@ -545,6 +545,46 @@ export default runMigrations(
       version: 43,
       sql: `ALTER TABLE assessment_variants ADD COLUMN content_json TEXT`,
     },
+    // How a paper is sat: "linear" serves one question at a time and does not
+    // let a learner go back, which is what makes a per-question time limit
+    // mean anything. Unset behaves as it always did — the whole paper at once.
+    {
+      version: 44,
+      sql: `ALTER TABLE assessments ADD COLUMN navigation TEXT`,
+    },
+    // Whether a learner is told right or wrong as they go. Off for anything
+    // that carries marks, on for practice — the teacher decides per activity.
+    {
+      version: 45,
+      sql: `ALTER TABLE assessments ADD COLUMN instant_feedback INTEGER NOT NULL DEFAULT 0`,
+    },
+    // One row per learner per question: what they answered, when it was put in
+    // front of them, and how long they took. The timing is the point — a mark
+    // alone cannot tell a teacher the difference between fluent and guessing.
+    {
+      version: 46,
+      sql: `CREATE TABLE IF NOT EXISTS question_responses (
+        id TEXT PRIMARY KEY,
+        submission_id TEXT NOT NULL,
+        assessment_id TEXT NOT NULL,
+        student_id TEXT NOT NULL,
+        block_index INTEGER NOT NULL,
+        answer TEXT,
+        served_at TEXT,
+        answered_at TEXT,
+        elapsed_ms INTEGER,
+        timed_out INTEGER NOT NULL DEFAULT 0,
+        is_correct INTEGER,
+        awarded_points INTEGER,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+      )`,
+    },
+    {
+      version: 47,
+      sql: `CREATE UNIQUE INDEX IF NOT EXISTS question_responses_unique
+        ON question_responses (submission_id, block_index)`,
+    },
   ],
   { table: "school_migrations" },
 );

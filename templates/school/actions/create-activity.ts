@@ -65,7 +65,7 @@ export default defineAction({
     blocks: jsonish(z.array(z.record(z.string(), z.any())))
       .optional()
       .describe(
-        "The structured body, matching renderAs. questions: {prompt, points?, hint?, options?, answerSpace?}. cards: {front, back, hint?}. steps: {text, note?}. table: {cells:[...]} with `columns` set. criteria: {description, maxPoints?}. Also write `content` as markdown — it is the fallback and the print view.",
+        "The structured body, matching renderAs. questions: {prompt, points?, hint?, options?, answerSpace?, durationSeconds?, answer?, acceptableAnswers?, markScheme?} — `answer` makes a question mark itself (the option index/letter for a choice, or the value); `markScheme` says what earns each mark on an open question and is never shown to a learner. cards: {front, back, hint?}. steps: {text, note?}. table: {cells:[...]} with `columns` set. criteria: {description, maxPoints?}. Also write `content` as markdown — it is the fallback and the print view.",
       ),
     columns: jsonish(z.array(z.string()))
       .optional()
@@ -124,6 +124,18 @@ export default defineAction({
       .number()
       .optional()
       .describe("Time allowed once a learner starts, e.g. 30"),
+    navigation: z
+      .enum(["linear", "free"])
+      .optional()
+      .describe(
+        "'linear' serves one question at a time with no going back, which is what makes per-question time limits mean anything. 'free' shows the whole paper. Default free.",
+      ),
+    instantFeedback: z.coerce
+      .boolean()
+      .optional()
+      .describe(
+        "Tell the learner right or wrong as they go. Leave off for anything that carries marks — it turns an assessment into a practice drill.",
+      ),
     opensAt: z
       .string()
       .optional()
@@ -193,6 +205,11 @@ export default defineAction({
       format: args.format,
       renderAs: shape,
       blockCount: args.blocks?.length ?? 0,
+      navigation: args.navigation ?? "free",
+      instantFeedback: !!args.instantFeedback,
+      autoMarkable: (args.blocks ?? []).filter(
+        (b: any) => b?.answer !== undefined && b?.answer !== null,
+      ).length,
       objectives,
       objectiveCount: objectives.length,
       variants: args.variants?.length ?? (args.content ? 1 : 0),
@@ -235,6 +252,8 @@ export default defineAction({
       durationMinutes: args.durationMinutes ?? null,
       objectivesJson: JSON.stringify(objectives),
       renderAs: args.renderAs ?? null,
+      navigation: args.navigation ?? null,
+      instantFeedback: !!args.instantFeedback,
       dueDate: args.dueDate ?? null,
       totalPoints,
       status: args.publish ? "published" : "draft",

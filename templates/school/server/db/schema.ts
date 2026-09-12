@@ -229,6 +229,13 @@ export const assessments = table("assessments", {
   // The learning objectives this activity is meant to move, carried through to
   // the rubric, the marking and the report comment.
   objectivesJson: text("objectives_json").notNull().default("[]"),
+  // "linear" serves one question at a time, no going back. Unset = the whole
+  // paper at once, as it has always behaved.
+  navigation: text("navigation"),
+  // Tell the learner right or wrong as they go. Off for marked work.
+  instantFeedback: integer("instant_feedback", { mode: "boolean" })
+    .notNull()
+    .default(false),
   // Display structure: prose | questions | cards | table | steps | criteria.
   // Unset means prose. Distinct from `format`, which is the school's own word
   // for the material and stays free text.
@@ -335,6 +342,33 @@ export const submissions = table("submissions", {
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),
+});
+
+/**
+ * One learner's answer to one question, with the clock.
+ *
+ * Kept apart from `submissions.content` because the interesting data is the
+ * timing: how long each question took, and whether the clock ran out. A mark
+ * says a learner got it wrong; this says whether they were guessing quickly or
+ * stuck for four minutes, which is a different conversation with them.
+ */
+export const questionResponses = table("question_responses", {
+  id: text("id").primaryKey(),
+  submissionId: text("submission_id").notNull(),
+  assessmentId: text("assessment_id").notNull(),
+  studentId: text("student_id").notNull(),
+  blockIndex: integer("block_index").notNull(),
+  answer: text("answer"),
+  /** When this question was put in front of them — the server's clock. */
+  servedAt: text("served_at"),
+  answeredAt: text("answered_at"),
+  elapsedMs: integer("elapsed_ms"),
+  timedOut: integer("timed_out", { mode: "boolean" }).notNull().default(false),
+  /** Null where the question needs a person to read it. */
+  isCorrect: integer("is_correct", { mode: "boolean" }),
+  awardedPoints: integer("awarded_points"),
+  createdAt: text("created_at").notNull().default(now()),
+  updatedAt: text("updated_at").notNull().default(now()),
 });
 
 export const submissionShares = createSharesTable("submission_shares");

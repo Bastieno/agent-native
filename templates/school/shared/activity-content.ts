@@ -48,6 +48,30 @@ export type QuestionBlock = {
   options?: string[];
   /** Roughly how much room the learner needs: a word, a line, a paragraph. */
   answerSpace?: "short" | "long";
+  /**
+   * Time allowed on this question alone, counted from when it was served to
+   * this learner. Questions in the same paper can differ — a recall question
+   * is not a multi-step problem.
+   */
+  durationSeconds?: number;
+
+  // ── Marking. Never sent to a learner; see `forLearner` below. ────────────
+
+  /**
+   * The correct answer. For a choice question this is the zero-based index of
+   * the right option, or its letter. For a number or short text question it is
+   * the value itself.
+   */
+  answer?: string | number;
+  /** Other answers that should also be accepted — "0.5", "1/2", "a half". */
+  acceptableAnswers?: string[];
+  /**
+   * How an open question earns its marks: what each mark is for, what partial
+   * credit looks like, and the misconceptions to expect. This is what makes
+   * marking defensible rather than a guess, and it is drafted with the
+   * question so the teacher can correct it before anyone sits the paper.
+   */
+  markScheme?: string;
 };
 
 /** Two-sided practice: term/definition, question/answer, word/translation. */
@@ -98,6 +122,31 @@ export type ActivityContent = {
   /** Said once at the top, above the blocks. */
   preamble?: string;
 };
+
+/** Fields on a block that would give the answer away. */
+const MARKING_FIELDS = ["answer", "acceptableAnswers", "markScheme"] as const;
+
+/**
+ * The same content, with everything that gives the answer away removed.
+ *
+ * This is not presentation, it is a boundary. The structured body is sent to
+ * the learner's own browser, so anything left in it can be read from the
+ * network tab by any pupil curious enough to look — an answer key included.
+ * Every path that returns content to a learner must go through here.
+ */
+export function forLearner(
+  content: ActivityContent | null,
+): ActivityContent | null {
+  if (!content) return null;
+  return {
+    ...content,
+    blocks: content.blocks.map((block) => {
+      const copy: Record<string, unknown> = { ...(block as object) };
+      for (const field of MARKING_FIELDS) delete copy[field];
+      return copy as ActivityBlock;
+    }),
+  };
+}
 
 export function isRenderShape(value: unknown): value is RenderShape {
   return (

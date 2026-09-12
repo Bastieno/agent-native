@@ -3,6 +3,10 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { resolveStudentId } from "../server/lib/student-session.js";
 import { activityWindow } from "../server/lib/activity-window.js";
+import {
+  forLearner,
+  parseActivityContent,
+} from "../shared/activity-content.js";
 import { z } from "zod";
 
 /**
@@ -47,6 +51,8 @@ export default defineAction({
         opensAt: schema.assessments.opensAt,
         closesAt: schema.assessments.closesAt,
         durationMinutes: schema.assessments.durationMinutes,
+        navigation: schema.assessments.navigation,
+        instantFeedback: schema.assessments.instantFeedback,
       })
       .from(schema.assessments)
       .where(eq(schema.assessments.id, rawArgs.assessmentId))
@@ -111,7 +117,16 @@ export default defineAction({
         ? {
             id: mine.id,
             content: mine.content,
-            contentJson: mine.contentJson ?? null,
+            // Stripped of answers and mark schemes: this goes to the pupil's
+            // own browser, where anything left in it is readable from the
+            // network tab.
+            contentJson: mine.contentJson
+              ? JSON.stringify(
+                  forLearner(
+                    parseActivityContent(mine.contentJson, assessment.renderAs),
+                  ),
+                )
+              : null,
             instructions: mine.instructions,
             totalPoints: mine.totalPoints,
           }
