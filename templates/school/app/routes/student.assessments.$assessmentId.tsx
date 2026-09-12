@@ -16,6 +16,7 @@ import {
   headingFor,
 } from "@/components/activity/ActivityContent";
 import { ActivityCountdown } from "@/components/ActivityCountdown";
+import { QuestionRunner } from "@/components/activity/QuestionRunner";
 
 export default function StudentAssessment() {
   const { assessmentId } = useParams();
@@ -141,6 +142,12 @@ export default function StudentAssessment() {
   // sheet. There is no answer box and no submit, and saying so is kinder than
   // leaving a learner hunting for one.
   const nothingToHandIn = assessment?.responseMode === "none";
+  // A linear paper is worked through one question at a time, against each
+  // question's own clock, rather than shown all at once with a single box.
+  const oneAtATime =
+    assessment?.navigation === "linear" &&
+    assessment?.renderAs === "questions" &&
+    !isSubmitted;
   const needsToStart = isTimed && !timing?.started && !isSubmitted;
 
   const startMutation = useMutation({
@@ -287,7 +294,15 @@ export default function StudentAssessment() {
           </div>
         )}
 
-        {!needsToStart &&
+        {!needsToStart && !timing?.notYetOpen && oneAtATime ? (
+          <QuestionRunner
+            assessmentId={assessmentId!}
+            onFinished={() => submitMutation.mutate()}
+          />
+        ) : null}
+
+        {!oneAtATime &&
+          !needsToStart &&
           !timing?.notYetOpen &&
           assessment?.variant?.instructions && (
             <div className="rounded-lg bg-muted/50 border p-4">
@@ -297,7 +312,8 @@ export default function StudentAssessment() {
               </p>
             </div>
           )}
-        {!needsToStart &&
+        {!oneAtATime &&
+          !needsToStart &&
           !timing?.notYetOpen &&
           (assessment?.variant?.content ||
             assessment?.variant?.contentJson) && (
@@ -338,7 +354,7 @@ export default function StudentAssessment() {
               </div>
             )}
           </div>
-        ) : nothingToHandIn ? (
+        ) : oneAtATime ? null : nothingToHandIn ? (
           <p className="text-xs text-muted-foreground">
             There is nothing to hand in for this — work through it as many times
             as you like.
