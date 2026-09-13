@@ -49,6 +49,13 @@ export type QuestionBlock = {
   /** Roughly how much room the learner needs: a word, a line, a paragraph. */
   answerSpace?: "short" | "long";
   /**
+   * How the learner answers. "drawing" gives them a page to write on with a
+   * stylus, "both" gives them that and a box for the final value — which is
+   * what most mathematics wants, since the method carries most of the marks.
+   * Defaults to typing.
+   */
+  answerMode?: "text" | "drawing" | "both";
+  /**
    * Time allowed on this question alone, counted from when it was served to
    * this learner. Questions in the same paper can differ — a recall question
    * is not a multi-step problem.

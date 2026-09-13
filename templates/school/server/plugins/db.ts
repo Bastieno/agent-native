@@ -612,6 +612,12 @@ export default runMigrations(
       version: 53,
       sql: `ALTER TABLE question_responses ADD COLUMN needs_review INTEGER NOT NULL DEFAULT 0`,
     },
+    // Handwritten working, as strokes. Beside the typed answer rather than
+    // instead of it: a maths question wants the method and the value.
+    {
+      version: 54,
+      sql: `ALTER TABLE question_responses ADD COLUMN drawing_json TEXT`,
+    },
   ],
   { table: "school_migrations" },
 );

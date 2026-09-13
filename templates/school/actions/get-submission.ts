@@ -90,6 +90,7 @@ export default defineAction({
           markScheme: block?.markScheme ?? null,
           expectedAnswer: block?.answer ?? null,
           answer: r.answer ?? "",
+          drawing: r.drawingJson ?? null,
           isCorrect: r.isCorrect,
           awardedPoints: r.awardedPoints,
           feedback: r.feedback ?? null,

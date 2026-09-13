@@ -367,6 +367,12 @@ export const questionResponses = table("question_responses", {
   /** Null where the question needs a person to read it. */
   isCorrect: integer("is_correct", { mode: "boolean" }),
   awardedPoints: integer("awarded_points"),
+  /**
+   * Handwritten working as strokes — see shared/drawing.ts. Stored beside the
+   * typed answer, because "show your working" is a second answer, not an
+   * alternative to the first.
+   */
+  drawingJson: text("drawing_json"),
   /** What the learner is told about this answer. */
   feedback: text("feedback"),
   /**

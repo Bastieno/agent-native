@@ -19,6 +19,7 @@ import {
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Markdown } from "@/components/Markdown";
+import { StrokesView } from "@/components/activity/StrokesView";
 
 /**
  * A one-line label for a prompt written in markdown. The collapsed row has no
@@ -41,6 +42,7 @@ export type Answer = {
   maxPoints: number | null;
   markScheme: string | null;
   answer: string;
+  drawing?: string | null;
   isCorrect: boolean | null;
   awardedPoints: number | null;
   feedback: string | null;
@@ -214,9 +216,21 @@ export function AnswerReview({
                         : ""}
                     </p>
                     <p className="whitespace-pre-wrap rounded bg-muted/40 p-2">
-                      {a.answer.trim() || "(nothing written)"}
+                      {a.answer.trim() ||
+                        (a.drawing
+                          ? "(working shown below)"
+                          : "(nothing written)")}
                     </p>
                   </div>
+
+                  {a.drawing ? (
+                    <div>
+                      <p className="mb-1 font-medium text-muted-foreground">
+                        Their working
+                      </p>
+                      <StrokesView drawing={a.drawing} />
+                    </div>
+                  ) : null}
 
                   {a.evidence.length > 0 ? (
                     <div>

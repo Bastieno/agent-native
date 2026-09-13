@@ -138,6 +138,8 @@ export default defineAction({
           markScheme: block?.markScheme ?? null,
           answer: r.answer ?? "",
           answerLength: (r.answer ?? "").trim().length,
+          // You cannot read this. Say so and leave it for the teacher.
+          hasHandwrittenWorking: !!r.drawingJson,
           secondsTaken:
             r.elapsedMs === null ? null : Math.round(r.elapsedMs / 1000),
           timedOut: !!r.timedOut,
@@ -152,6 +154,7 @@ export default defineAction({
       );
 
     const missingSchemes = items.filter((i) => !i.markScheme).length;
+    const handwritten = items.filter((i) => i.hasHandwrittenWorking).length;
 
     return {
       assessment: assessment.title,
@@ -163,6 +166,10 @@ export default defineAction({
         ? `${items.length} open answer(s) to mark.${
             missingSchemes
               ? ` ${missingSchemes} have no mark scheme — mark those conservatively and tell the teacher which questions need one.`
+              : ""
+          }${
+            handwritten
+              ? ` ${handwritten} include handwritten working, which you cannot read — do not mark those. Leave them for the teacher and say which they are.`
               : ""
           } Mark against the scheme and the objectives, quote the learner's own words as evidence, then record each with record-answer-mark. Nothing reaches a learner until the teacher publishes.`
         : "Nothing open is waiting to be marked.",

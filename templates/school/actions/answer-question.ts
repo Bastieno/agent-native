@@ -14,6 +14,8 @@ import {
   isPastQuestionDeadline,
 } from "../server/lib/question-paper.js";
 import { markAnswer, isAutoMarkable } from "../shared/mark-answer.js";
+import { jsonish } from "../shared/zod-json.js";
+import { parseDrawing, countPoints, isBlank } from "../shared/drawing.js";
 
 /**
  * Record a learner's answer to one question, and move them on.
@@ -39,6 +41,11 @@ export default defineAction({
       .optional()
       .describe(
         "What the learner gave. For a choice question, the option index, its letter, or its text.",
+      ),
+    drawing: jsonish(z.record(z.string(), z.any()))
+      .optional()
+      .describe(
+        "Handwritten working as strokes (see shared/drawing.ts). Sent beside the typed answer, not instead of it.",
       ),
     studentId: z
       .string()
@@ -108,12 +115,25 @@ export default defineAction({
       ? Math.max(0, now.getTime() - new Date(servedAt).getTime())
       : null;
 
+    // Working is stored as strokes, validated here so a malformed payload
+    // cannot land in the database and break every later read of the paper.
+    let drawingJson: string | null = null;
+    if (rawArgs.drawing) {
+      const drawing = parseDrawing(rawArgs.drawing);
+      if (!drawing) throw new Error("That drawing could not be read.");
+      if (countPoints(drawing) > 40_000) {
+        throw new Error("That drawing is too large to save.");
+      }
+      drawingJson = isBlank(drawing) ? null : JSON.stringify(drawing);
+    }
+
     // An answer that arrived after the question's own time still counts as
     // given — it just carries the fact that it overran.
     const mark = markAnswer(block, rawArgs.answer);
 
     const row = {
       answer: rawArgs.answer ?? null,
+      drawingJson: drawingJson ?? existing?.drawingJson ?? null,
       answeredAt: now.toISOString(),
       elapsedMs,
       timedOut,

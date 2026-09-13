@@ -15,6 +15,8 @@ import {
   IconSend,
 } from "@tabler/icons-react";
 import { toast } from "sonner";
+import { DrawingPad } from "@/components/activity/DrawingPad";
+import { parseDrawing, isBlank, type Drawing } from "@shared/drawing";
 
 type Served = {
   index: number;
@@ -27,10 +29,12 @@ type Served = {
     hint: string | null;
     points: number | null;
     answerSpace: string | null;
+    answerMode?: "text" | "drawing" | "both";
   };
   deadline: string | null;
   secondsAllowed: number | null;
   previousAnswer: string | null;
+  previousDrawing?: string | null;
 };
 
 /**
@@ -57,6 +61,7 @@ export function QuestionRunner({
   const qc = useQueryClient();
   const [index, setIndex] = useState<number | null>(null);
   const [answer, setAnswer] = useState("");
+  const [drawing, setDrawing] = useState<Drawing | null>(null);
   const [feedback, setFeedback] = useState<{
     isCorrect: boolean | null;
     text: string | null;
@@ -89,8 +94,9 @@ export function QuestionRunner({
   // Restore whatever they had typed if they come back to a question.
   useEffect(() => {
     setAnswer(served?.previousAnswer ?? "");
+    setDrawing(parseDrawing(served?.previousDrawing));
     setFeedback(null);
-  }, [served?.index, served?.previousAnswer]);
+  }, [served?.index, served?.previousAnswer, served?.previousDrawing]);
 
   const answered = useRef(false);
   useEffect(() => {
@@ -99,6 +105,7 @@ export function QuestionRunner({
 
   const send = useMutation({
     mutationFn: async (value: string) => {
+      const working = drawing && !isBlank(drawing) ? drawing : undefined;
       const res = await fetch(
         agentNativePath("/_agent-native/actions/answer-question"),
         {
@@ -108,6 +115,7 @@ export function QuestionRunner({
             assessmentId,
             index: served?.index,
             answer: value,
+            drawing: working,
           }),
         },
       );
@@ -171,6 +179,12 @@ export function QuestionRunner({
 
   const q = served.question;
   const isChoice = !!q.options?.length;
+  const mode = q.answerMode ?? "text";
+  const wantsDrawing = !isChoice && (mode === "drawing" || mode === "both");
+  const wantsTyping = !isChoice && (mode === "text" || mode === "both");
+  // Working alone is an answer; so is a typed value. Either will do.
+  const hasSomething =
+    answer.trim().length > 0 || (!!drawing && !isBlank(drawing));
   const position = served.index + 1;
 
   return (
@@ -229,16 +243,32 @@ export function QuestionRunner({
             })}
           </div>
         ) : (
-          <Textarea
-            className={cn(
-              "mt-4 resize-none text-sm",
-              q.answerSpace === "long" ? "min-h-40" : "min-h-20",
-            )}
-            value={answer}
-            disabled={!!feedback}
-            onChange={(e) => setAnswer(e.target.value)}
-            placeholder="Your answer…"
-          />
+          <div className="mt-4 space-y-3">
+            {wantsDrawing ? (
+              <DrawingPad
+                value={drawing}
+                onChange={setDrawing}
+                disabled={!!feedback}
+                height={q.answerSpace === "long" ? 380 : 280}
+              />
+            ) : null}
+            {wantsTyping ? (
+              <Textarea
+                className={cn(
+                  "resize-none text-sm",
+                  q.answerSpace === "long" && !wantsDrawing
+                    ? "min-h-40"
+                    : "min-h-20",
+                )}
+                value={answer}
+                disabled={!!feedback}
+                onChange={(e) => setAnswer(e.target.value)}
+                placeholder={
+                  wantsDrawing ? "Your final answer…" : "Your answer…"
+                }
+              />
+            ) : null}
+          </div>
         )}
 
         {q.hint && !feedback ? (
@@ -288,7 +318,7 @@ export function QuestionRunner({
           </p>
           <Button
             size="sm"
-            disabled={send.isPending || !answer.trim()}
+            disabled={send.isPending || !hasSomething}
             onClick={() => submit(answer)}
           >
             {served.isLast ? "Finish" : "Next"}

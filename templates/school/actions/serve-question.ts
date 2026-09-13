@@ -156,6 +156,7 @@ export default defineAction({
         hint: block.hint ?? null,
         points: block.points ?? null,
         answerSpace: block.answerSpace ?? null,
+        answerMode: block.answerMode ?? "text",
       },
       servedAt,
       deadline,
@@ -168,6 +169,7 @@ export default defineAction({
         : null,
       navigation: assessment.navigation ?? "free",
       previousAnswer: existing?.answer ?? null,
+      previousDrawing: existing?.drawingJson ?? null,
     };
   },
 });
