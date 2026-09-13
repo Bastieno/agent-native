@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -50,6 +50,7 @@ async function callAction(name: string, params: Record<string, unknown>) {
 
 export default function TeacherAssessment() {
   const { assessmentId } = useParams();
+  const navigate = useNavigate();
   const { sync } = useNavigationState();
   const qc = useQueryClient();
   const [activeVariant, setActiveVariant] = useState<string | null>(null);
@@ -66,7 +67,7 @@ export default function TeacherAssessment() {
   const [publishOpen, setPublishOpen] = useState(false);
   const [publishLoading, setPublishLoading] = useState(false);
 
-  const { data: assessment } = useQuery({
+  const { data: assessment, isLoading: assessmentLoading } = useQuery({
     queryKey: ["assessment", assessmentId],
     queryFn: async () => {
       const res = await fetch(
@@ -199,6 +200,40 @@ export default function TeacherAssessment() {
     } finally {
       setPublishLoading(false);
     }
+  }
+
+  if (assessmentLoading) {
+    return (
+      <div className="p-6">
+        <p className="text-sm text-muted-foreground">Loading…</p>
+      </div>
+    );
+  }
+
+  if (!assessment) {
+    return (
+      <div className="p-6">
+        <div className="rounded-lg border border-dashed p-10 text-center">
+          <IconAlertTriangle
+            size={28}
+            className="mx-auto mb-2 text-muted-foreground"
+          />
+          <p className="text-sm font-medium">This activity no longer exists</p>
+          <p className="mx-auto mt-1 max-w-sm text-xs text-muted-foreground">
+            It may have been deleted, or the link may be out of date. Anything
+            students handed in was removed with it.
+          </p>
+          <Button
+            size="sm"
+            variant="outline"
+            className="mt-4"
+            onClick={() => navigate("/teacher/classes")}
+          >
+            Back to my classes
+          </Button>
+        </div>
+      </div>
+    );
   }
 
   return (
