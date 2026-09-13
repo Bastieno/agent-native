@@ -3,6 +3,7 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
 import { useParams } from "react-router";
+import { BackLink } from "@/components/layout/BackLink";
 import { Badge } from "@/components/ui/badge";
 import { IconTable, IconChevronDown } from "@tabler/icons-react";
 import {
@@ -100,6 +101,9 @@ export default function TeacherGradebook() {
   return (
     <div className="flex h-full flex-col space-y-4 overflow-hidden p-4 sm:p-6">
       <div className="min-w-0">
+        <BackLink to={`/teacher/classes/${classId}`}>
+          {className ?? "Back to the class"}
+        </BackLink>
         <h1 className="text-xl font-semibold break-words">
           Gradebook — {className}
         </h1>

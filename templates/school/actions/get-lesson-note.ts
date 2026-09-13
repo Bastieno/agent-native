@@ -34,6 +34,13 @@ export default defineAction({
       .from(schema.lessonResources)
       .where(eq(schema.lessonResources.lessonNoteId, args.id));
 
-    return { ...note, resources };
+    // The lesson's own class, so the page can link back to it by name.
+    const [cls] = await db
+      .select({ name: schema.classes.name })
+      .from(schema.classes)
+      .where(eq(schema.classes.id, note.classId))
+      .limit(1);
+
+    return { ...note, className: cls?.name ?? null, resources };
   },
 });

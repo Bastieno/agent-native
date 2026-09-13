@@ -109,8 +109,15 @@ export default defineAction({
     // countdown on the tablet and the rule in `submit-work` never disagree.
     const window = activityWindow(assessment, submission?.startedAt);
 
+    const [cls] = await db
+      .select({ name: schema.classes.name })
+      .from(schema.classes)
+      .where(eq(schema.classes.id, assessment.classId))
+      .limit(1);
+
     return {
       ...assessment,
+      className: cls?.name ?? null,
       // difficulty is deliberately omitted.
       window,
       variant: mine

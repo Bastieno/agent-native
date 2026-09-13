@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Markdown } from "@/components/Markdown";
 import { toast } from "sonner";
 import { IconCheck, IconPencil } from "@tabler/icons-react";
+import { BackLink } from "@/components/layout/BackLink";
 
 export default function TeacherLesson() {
   const { lessonId } = useParams();
@@ -88,6 +89,15 @@ export default function TeacherLesson() {
     <div className="h-full flex flex-col overflow-hidden">
       <div className="flex items-center justify-between border-b px-6 py-3">
         <div className="flex items-center gap-3">
+          <BackLink
+            to={
+              lesson.classId
+                ? `/teacher/classes/${lesson.classId}`
+                : "/teacher/classes"
+            }
+          >
+            {lesson.className ?? "Back to the class"}
+          </BackLink>
           <h1 className="text-base font-semibold">{lesson.title}</h1>
           <Badge
             variant={lesson.status === "finalized" ? "default" : "secondary"}

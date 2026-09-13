@@ -39,6 +39,7 @@ import {
   IconUserPlus,
   IconSearch,
 } from "@tabler/icons-react";
+import { BackLink } from "@/components/layout/BackLink";
 
 async function callAction(name: string, params: Record<string, unknown>) {
   const res = await fetch(agentNativePath(`/_agent-native/actions/${name}`), {
@@ -185,6 +186,7 @@ export default function TeacherClass() {
   return (
     <div className="h-full overflow-auto p-6 space-y-4">
       <div>
+        <BackLink to="/teacher/classes">My classes</BackLink>
         <h1 className="text-xl font-semibold">{cls?.name ?? "Class"}</h1>
         {cls && (
           <Badge

@@ -27,6 +27,14 @@ export default defineAction({
       .limit(1);
     if (!assessment) throw new Error("Assessment not found.");
 
+    // The page above this one is the class, so it needs the class's name —
+    // both to link back and to say which class the teacher is looking at.
+    const [cls] = await db
+      .select({ id: schema.classes.id, name: schema.classes.name })
+      .from(schema.classes)
+      .where(eq(schema.classes.id, assessment.classId))
+      .limit(1);
+
     const variants = await db
       .select()
       .from(schema.assessmentVariants)
@@ -42,7 +50,7 @@ export default defineAction({
       .where(eq(schema.submissions.assessmentId, args.id));
 
     return {
-      assessment,
+      assessment: { ...assessment, className: cls?.name ?? null },
       variants,
       submissionSummary: {
         total: submissions.length,

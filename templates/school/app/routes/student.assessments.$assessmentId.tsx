@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import { BackLink } from "@/components/layout/BackLink";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -190,7 +191,16 @@ export default function StudentAssessment() {
   return (
     <div className="h-full flex flex-col overflow-hidden">
       <div className="flex items-center justify-between border-b px-6 py-3">
-        <div>
+        <div className="min-w-0">
+          <BackLink
+            to={
+              assessment?.classId
+                ? `/student/classes/${assessment.classId}`
+                : "/student/classes"
+            }
+          >
+            {assessment?.className ?? "My classes"}
+          </BackLink>
           <h1 className="text-base font-semibold">
             {assessment?.title ?? "Assessment"}
           </h1>

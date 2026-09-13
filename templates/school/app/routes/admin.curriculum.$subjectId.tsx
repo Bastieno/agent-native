@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { Badge } from "@/components/ui/badge";
 import { IconBook, IconChevronRight } from "@tabler/icons-react";
 
@@ -43,7 +43,11 @@ export default function AdminSubjectDetail() {
   return (
     <div className="p-6 space-y-6">
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <span>Curriculum</span>
+        {/* Was plain text, which reads as navigable and is not — worse than
+            having no breadcrumb at all. */}
+        <Link to="/admin/curriculum" className="hover:text-foreground">
+          Curriculum
+        </Link>
         <IconChevronRight size={14} />
         <span className="text-foreground font-medium">
           {subject?.name ?? "Subject"}
