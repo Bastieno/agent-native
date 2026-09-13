@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { agentNativePath } from "@agent-native/core/client";
 import { IconPrinter, IconFileText } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { LeavePrintView } from "@/components/layout/LeavePrintView";
 import { Markdown } from "@/components/Markdown";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 
@@ -62,6 +63,9 @@ export default function PrintReportCard() {
         <p className="max-w-sm text-xs text-muted-foreground">
           It may have been issued by another school, or the link may be wrong.
         </p>
+        <div className="mt-2">
+          <LeavePrintView />
+        </div>
       </div>
     );
   }
@@ -77,10 +81,13 @@ export default function PrintReportCard() {
           data-print-hide
           className="mx-auto mb-4 flex max-w-[210mm] items-center justify-between gap-3 px-4"
         >
-          <p className="text-xs text-muted-foreground">
-            Issued {new Date(report.issuedAt).toLocaleDateString()} · this is
-            the record as it was issued and will not change.
-          </p>
+          <div className="flex min-w-0 items-center gap-3">
+            <LeavePrintView />
+            <p className="truncate text-xs text-muted-foreground">
+              Issued {new Date(report.issuedAt).toLocaleDateString()} · this is
+              the record as it was issued and will not change.
+            </p>
+          </div>
           <Button size="sm" onClick={() => window.print()}>
             <IconPrinter size={14} className="mr-1.5" />
             Print

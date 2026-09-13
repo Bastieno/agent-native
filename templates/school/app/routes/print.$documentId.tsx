@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { agentNativePath } from "@agent-native/core/client";
 import { IconPrinter, IconFileText } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { LeavePrintView } from "@/components/layout/LeavePrintView";
 import { Markdown } from "@/components/Markdown";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 
@@ -78,6 +79,9 @@ export default function PrintDocument() {
           Documents are temporary — they are meant to be printed and discarded.
           Ask for it again and a fresh one will be made.
         </p>
+        <div className="mt-2">
+          <LeavePrintView />
+        </div>
       </div>
     );
   }
@@ -94,10 +98,13 @@ export default function PrintDocument() {
           data-print-hide
           className="mx-auto mb-4 flex max-w-[210mm] items-center justify-between gap-3 px-4"
         >
-          <p className="text-xs text-muted-foreground">
-            Printing this saves it as a PDF. Nothing here is stored for anyone
-            else.
-          </p>
+          <div className="flex min-w-0 items-center gap-3">
+            <LeavePrintView />
+            <p className="truncate text-xs text-muted-foreground">
+              Printing this saves it as a PDF. Nothing here is stored for anyone
+              else.
+            </p>
+          </div>
           <Button size="sm" onClick={() => window.print()}>
             <IconPrinter size={14} className="mr-1.5" />
             Print
