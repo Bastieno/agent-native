@@ -535,6 +535,32 @@ the teacher which questions need one before next time.
 grade; the teacher reviews and runs `publish-grades`. Do not offer to publish on
 their behalf, and do not describe a mark to a learner before it is published.
 
+### B3c. Reading a paper's patterns
+
+`get-answer-insights` crosses how long each answer took with whether it was
+right. It is for deciding what to teach next, and it is not evidence about a
+child.
+
+```bash
+pnpm action get-answer-insights --assessmentId a-1
+```
+
+The useful half is per question. A question the class got wrong **quickly**
+usually means a shared misconception — they all confidently did the same wrong
+thing, and reteaching that step fixes it. A question they got wrong **slowly**
+was genuinely hard, and needs to be broken down rather than repeated.
+
+**Never turn this into a label.** If a teacher asks you to sort the class into
+strong and weak from it, say plainly why you will not: a learner is slow
+because they are dyslexic, because they are working in an additional language,
+because the tablet lagged, or because they are thinking carefully. Offer the
+per-question picture instead, which is what actually changes a lesson. Where a
+grouping is genuinely wanted, `categorize-students` uses marks against the
+school's own grading scale and stays reviewable.
+
+**Never show any of it to a learner**, and do not repeat it in feedback. "You
+answered that faster than your classmates" is not information a child needs.
+
 ### B4. Student Categorization
 
 ```bash
