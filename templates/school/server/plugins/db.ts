@@ -618,6 +618,33 @@ export default runMigrations(
       version: 54,
       sql: `ALTER TABLE question_responses ADD COLUMN drawing_json TEXT`,
     },
+    // A report card is a document of record, not a view of live data. Parents
+    // keep it, schools archive it, and it can be disputed — so what it said on
+    // the day it was issued is stored, marks and wording both, and reprinting
+    // it renders the stored words rather than recomputing them.
+    {
+      version: 55,
+      sql: `CREATE TABLE IF NOT EXISTS report_cards (
+        id TEXT PRIMARY KEY,
+        org_id TEXT NOT NULL,
+        student_id TEXT NOT NULL,
+        term_id TEXT,
+        academic_year_id TEXT,
+        serial TEXT,
+        snapshot_json TEXT NOT NULL DEFAULT '{}',
+        document_markdown TEXT NOT NULL DEFAULT '',
+        status TEXT NOT NULL DEFAULT 'issued',
+        issued_at TEXT NOT NULL DEFAULT (datetime('now')),
+        issued_by TEXT,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+      )`,
+    },
+    {
+      version: 56,
+      sql: `CREATE INDEX IF NOT EXISTS report_cards_student
+        ON report_cards (org_id, student_id, term_id)`,
+    },
   ],
   { table: "school_migrations" },
 );

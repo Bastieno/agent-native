@@ -190,6 +190,10 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-gradebook-entry": STAFF,
   "publish-grades": STAFF,
   "generate-report-card": STAFF,
+  // Report cards as records: issued by staff, frozen at issue, readable by
+  // the learner they belong to (the action scopes students to their own).
+  "issue-report-card": ADMIN_COORD,
+  "get-report-card": EVERYONE,
   // Marking open answers: gather the work, record a mark with its evidence,
   // then total it. Nothing here publishes — publish-grades still does that.
   "get-marking-queue": STAFF,

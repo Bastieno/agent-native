@@ -393,6 +393,36 @@ export const questionResponses = table("question_responses", {
   updatedAt: text("updated_at").notNull().default(now()),
 });
 
+/**
+ * A report card as it was issued.
+ *
+ * Everything a school app usually gets wrong about report cards comes from
+ * treating them as a query. A Term 1 report reopened in Term 3 must show Term
+ * 1's marks — not marks recomputed from data that has moved on, and not a
+ * comment reworded since. So the figures are frozen in `snapshotJson` and the
+ * words are frozen in `documentMarkdown`: reprinting renders what was stored,
+ * which is the only way a reprint can be trusted to match the copy a parent
+ * already holds.
+ */
+export const reportCards = table("report_cards", {
+  id: text("id").primaryKey(),
+  orgId: text("org_id").notNull(),
+  studentId: text("student_id").notNull(),
+  termId: text("term_id"),
+  academicYearId: text("academic_year_id"),
+  /** Human reference a parent can quote back to the school. */
+  serial: text("serial"),
+  /** The figures as they stood, for machines. */
+  snapshotJson: text("snapshot_json").notNull().default("{}"),
+  /** The document as it read, for people. Reprinting renders exactly this. */
+  documentMarkdown: text("document_markdown").notNull().default(""),
+  status: text("status").notNull().default("issued"),
+  issuedAt: text("issued_at").notNull().default(now()),
+  issuedBy: text("issued_by"),
+  createdAt: text("created_at").notNull().default(now()),
+  updatedAt: text("updated_at").notNull().default(now()),
+});
+
 export const submissionShares = createSharesTable("submission_shares");
 
 export const grades = table("grades", {
