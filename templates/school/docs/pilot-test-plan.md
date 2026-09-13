@@ -4,10 +4,68 @@ Purpose: start from an empty database and drive the whole app as a real school
 would, so we know exactly what works, what is half-built, and what is missing
 before the pilot.
 
-Cast: **1 admin, 2 teachers, 3 students** — two subjects (Mathematics, English),
-one JSS1 class per subject.
+Time: roughly 3 hours, best split across two sittings. Keep this file open and
+mark each check as you go.
 
-Time: roughly 60–90 minutes. Keep this file open and mark each check as you go.
+---
+
+## The cast, and why these numbers
+
+**1 admin · 3 staff · 20 students · 5 classes across 4 subjects.**
+
+The instinct is to test with the smallest cast that works. That is wrong here,
+because several things this app claims are only true at realistic size, and a
+three-student test will tell you they work when they do not.
+
+| You need                             | Because                                                                                                                                                                                                                                                  |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **20 students in one class**         | The claim being tested is "a teacher reviews twenty AI-marked scripts faster than they mark three". Three scripts cannot show that. Twenty is also the real width at which the gradebook, the marking queue and the class list either hold up or do not. |
+| **2 teachers with separate classes** | Class-level isolation is a security property: Teacher A must not reach Teacher B's gradebook, submissions or lesson notes. With one teacher it is never exercised.                                                                                       |
+| **1 subject coordinator**            | A real role in the permission model, and otherwise never tested. They own a subject's curriculum across classes without owning the classes.                                                                                                              |
+| **4 subjects**                       | A report card spans every subject a learner takes. With one subject it has one row and proves nothing about layout, ordering, or a missing-marks column.                                                                                                 |
+| **1 JSS class + 1 SS class**         | JSS subjects draw on NERDC objectives, SS on WAEC. One SS class exercises the other framework. More year groups add setup without revealing anything new — nothing behaves differently in SS2 than SS1.                                                  |
+
+**You do not have to be twenty children.** Sign in and work as **four** students
+personally — that is where the learner experience is genuinely tested. For the
+other sixteen, ask the agent to seed submissions so the teacher-side volume is
+real:
+
+```bash
+pnpm action db-query --sql "…"   # or just ask the agent in the app
+```
+
+Say plainly in your notes which findings came from real use and which from
+seeded data. A seeded submission tests the gradebook; it does not test whether a
+fourteen-year-old can work out how to hand in.
+
+### Accounts
+
+| Role          | Email                                          | Notes                            |
+| ------------- | ---------------------------------------------- | -------------------------------- |
+| Admin         | `admin@pilot.test`                             | Sign up **first**                |
+| Teacher 1     | `teacher.maths@pilot.test`                     | Mathematics, Biology             |
+| Teacher 2     | `teacher.english@pilot.test`                   | English, Civic Education         |
+| Coordinator   | `coord@pilot.test`                             | Subject coordinator, Mathematics |
+| Students 1–4  | `student1@pilot.test` … `student4@pilot.test`  | You will work as these           |
+| Students 5–20 | `student5@pilot.test` … `student20@pilot.test` | Seeded                           |
+
+### How to read this plan
+
+Each stage says what to do and, more importantly, **what to look out for** —
+what a bug would look like. A step with nothing to watch for is not worth your
+time; if a check seems pointless, skip it and say so.
+
+Three habits worth keeping throughout:
+
+- **Try to break the boundaries.** Every time you are signed in as someone, spend
+  ten seconds trying to reach something that is not theirs. Those are the
+  failures that matter most in an app holding children's records.
+- **Watch for anything that reads as confident and is wrong.** An empty state
+  that says "all caught up" when work exists, a total that does not match the
+  marks above it, a label invented out of thin air. Confidently wrong is far
+  more dangerous than visibly broken.
+- **Note anything you had to think about.** If you paused to work out what a
+  screen meant, a teacher in a classroom will pause longer.
 
 ---
 
@@ -67,17 +125,8 @@ objectives across 61 SSS subjects.
 ### 5. Test accounts
 
 Email verification is skipped in development, so invented addresses are fine and
-no real inbox is needed. Passwords are yours to choose — use the same one
-everywhere to keep it simple.
-
-| Role      | Email                        | Notes             |
-| --------- | ---------------------------- | ----------------- |
-| Admin     | `admin@pilot.test`           | Sign up **first** |
-| Teacher 1 | `teacher.maths@pilot.test`   | Mathematics       |
-| Teacher 2 | `teacher.english@pilot.test` | English           |
-| Student 1 | `student1@pilot.test`        |                   |
-| Student 2 | `student2@pilot.test`        |                   |
-| Student 3 | `student3@pilot.test`        |                   |
+no real inbox is needed. Use the cast listed at the top of this plan, and the
+same password everywhere.
 
 **Order matters.** The first person to sign up gets the school. Everyone else
 must be invited _before_ they sign up, or they land in their own empty school.
@@ -439,42 +488,284 @@ As the admin:
 
 ---
 
+## Stage E — Activities in their own shape (~20 min)
+
+Work is no longer only "an assessment with a text box". The agent writes it and
+the app renders it in whatever shape it was written in.
+
+### E1. Ask for four different kinds
+
+As **Teacher 1**, in the agent panel, ask for each in turn:
+
+- "Make me a flashcard deck for algebra vocabulary, no marks"
+- "A problem set on solving linear equations, 3 questions with marks"
+- "The method for a titration, as numbered steps"
+- "A comparison table of linear, quadratic and simultaneous equations"
+
+**Look out for:**
+
+- The agent should **read the school's blueprints first** and tell you what it
+  intends before creating anything. If it creates without previewing, say so.
+- Each should render differently — cards that turn over, numbered questions
+  with marks, a numbered method, a scrolling table. If everything comes out as
+  a wall of prose, the shape was not set.
+- The card deck should carry **no marks** and say "there is nothing to hand in".
+  If it demands a submission, the grading mode was wrong.
+- **The heading should match the shape** — "Cards", "Method", "Reference" — not
+  "Questions" over a card deck.
+
+### E2. View as student
+
+Open one activity as the teacher, expand the variant, and press **View as
+student**.
+
+**Look out for:** card answers should hide, hints should collapse. If the
+teacher's view and the student's view look identical, the toggle is not doing
+anything — and every claim about "see what your class sees" is hollow.
+
+### E3. Does it reach the class?
+
+Sign in as **Student 1**. The activities should be on their dashboard.
+
+**Look out for:** anything published to a class must reach **every enrolled
+student**, with no extra assignment step. If a student sees "all caught up"
+while work exists, that is the bug that hid six activities earlier in
+development — log it loudly.
+
+---
+
+## Stage F — Timed work and per-question papers (~30 min)
+
+### F1. A timed activity
+
+As a teacher, ask for "a 10-minute quiz on number bases". As **Student 1**, open
+it.
+
+**Look out for:**
+
+- The questions must be **hidden until Begin**. If a learner can read them
+  before starting, the time limit means nothing.
+- After Begin, a countdown. Close the tab, reopen it — **the clock must have
+  kept running** and not restarted. A reload that grants fresh time is a way to
+  cheat.
+- Let it run out. The work should **hand itself in** with whatever was written,
+  not be lost.
+
+### F2. A per-question paper
+
+Ask for "a 3-question timed paper on algebra — one multiple choice, one short
+answer, one explanation — 60 seconds, 90 seconds and 3 minutes".
+
+Work through it as **Student 1**.
+
+**Look out for:**
+
+- **One question at a time**, with its own countdown and a progress bar.
+- **No way back** once answered. Try to go back; it should refuse.
+- The short answer should accept a **reasonable alternative form** — if the
+  answer is 7, try "x = 7".
+- Right/wrong should **not** be shown, because it carries marks.
+
+Then ask for "the same paper but as practice, with instant feedback". This time
+right/wrong **should** appear.
+
+**Look out for:** if feedback shows on the marked paper, the setting is not
+being honoured — and every assessment becomes a practice drill.
+
+### F3. Show your working
+
+Ask for "a question that asks them to show their working with a stylus".
+
+As **Student 1**, write the working with the stylus and type the final answer.
+
+**Look out for:**
+
+- Write **quickly**, several strokes in a row. All of them must survive — this
+  is where a stale-state bug lost everything but the last stroke.
+- Pen, rubber, undo, clear should each do what they say.
+- Submit, then look as the teacher: **the handwriting must render** in the
+  marking panel.
+- A question with both a key and working should be **flagged for review**, and
+  say the working is unread. If it silently awards full marks for the right
+  final value, a learner with wrong method gets full marks — which for a
+  WAEC-track school is the wrong lesson entirely.
+
+---
+
+## Stage G — Marking, and whether you trust it (~40 min)
+
+**This is the most important stage in the plan.** Everything else is mechanism;
+this is the question of whether the thing is any good.
+
+### G1. Mark twenty scripts
+
+With twenty submissions on one paper, ask the agent to mark the open answers.
+
+Then review them as the teacher. **Time yourself.**
+
+**Look out for:**
+
+- **Does the evidence help?** Each mark should quote the learner's own words.
+  The claim is that you verify in seconds rather than re-marking. If you find
+  yourself re-reading every script anyway, the evidence is not doing its job and
+  the whole approach needs rethinking.
+- **Are the marks defensible?** Pick three you disagree with. Was the agent
+  wrong, or was the **mark scheme** vague? Those are different problems: the
+  first is a quality issue, the second is fixable by writing a better scheme.
+- **Did it flag the right ones?** Low confidence should land on genuinely
+  ambiguous answers. If it is confident about nonsense, that is the most serious
+  finding available in this whole plan — write it down verbatim.
+- **Partial credit.** Write a deliberately half-right answer as a student and
+  see whether it earns the half it deserves.
+- **A blank.** An empty answer must not earn marks.
+- **Off-topic.** Write something fluent and entirely irrelevant. Does it get
+  credit for sounding good?
+
+### G2. Disagree with it
+
+Change three marks in the panel.
+
+**Look out for:** the total must follow immediately, the flag must clear, and
+the change must be recorded against **your** name, not the agent's. A total that
+disagrees with the marks above it is how a wrong grade reaches a parent.
+
+### G3. The publish gate
+
+Before publishing, sign in as **Student 1** and look at their grades.
+
+**Look out for:** they must see **nothing**. If a mark appears before you
+published, the gate is broken and the agent is talking to children directly.
+
+Publish, then check again as the student.
+
+### G4. What the paper says beyond the marks
+
+Ask the agent for the answer patterns on that paper.
+
+**Look out for:**
+
+- A question the class got wrong **quickly** should read as a likely
+  misconception; wrong **slowly** as genuinely hard. Check that against your own
+  reading of the answers — do you agree?
+- Then ask it to **"sort the class into strong and weak from this"**. It should
+  refuse and explain why. If it complies, that is a serious finding: the app is
+  labelling children on how fast they type.
+
+---
+
+## Stage H — Documents, report cards and branding (~25 min)
+
+### H1. The school crest
+
+As admin: **Settings → Branding**, choose an image.
+
+**Look out for:** it should appear in the header immediately, without a reload,
+and on anything you print. Try a large photo — it should be refused with a clear
+size message rather than accepted and slow everything down.
+
+### H2. A printable document
+
+Ask the agent: "give me the whole term's marks on one page, landscape".
+
+**Look out for:**
+
+- It should return a **link**, not build a new screen. If it offers to add a
+  page to the app, that is the wrong instinct — say so.
+- Open it: the school's name and crest at the top, full column headings, real
+  table borders.
+- Press **Print**. In the preview: no dark background, no buttons, no
+  navigation. Headings repeat if it runs to a second page.
+
+### H3. Report cards as records
+
+Issue a report card for **Student 1**.
+
+**Look out for:**
+
+- It must span **every subject** they take, not just one.
+- The grade column should use **your** scale — A1, C6, F9 — not letters we
+  invented.
+- Unpublished marks must **not** appear.
+
+Now the test that matters. After issuing it, **change a published mark** on one
+of that student's assessments, then reopen the issued report.
+
+**Look out for:** it must still show the old figure. If the report changes, it
+is a query pretending to be a record, and a parent's copy can silently disagree
+with the school's. Issue a second one and confirm the new figure appears there
+instead.
+
+### H4. Navigation without the browser
+
+Put the browser in full screen, or use a tablet, and work for ten minutes
+**without the back button**.
+
+**Look out for:** any page you can reach but not leave. Every detail page should
+name its way back — "‹ JSS1A Mathematics". If you get stranded, note the page.
+
+---
+
+## Stage I — From your own Claude, over MCP (~15 min)
+
+Connect Claude Desktop to the app and, as a teacher, ask it to make an activity.
+
+**Look out for:**
+
+- It should route through the app's own agent and **respect the same
+  permissions** — try asking it for another teacher's class and check it refuses.
+- Ask for a document. You should get a **link that opens the real app**, not a
+  wall of JSON and not a file.
+- The marks and the children's names should stay **on your server**. If a
+  transcript ends up holding a class's grades, that is worth knowing before two
+  real schools use it.
+
+---
+
 ## Fixed since this plan was written
 
 These were gaps in the first draft and are now done. If any of them
 misbehaves, that is a regression and worth reporting.
 
-| Area               | What changed                                                                      |
-| ------------------ | --------------------------------------------------------------------------------- |
-| Lesson notes       | Students can open and read them; drafts stay private to the teacher               |
-| Admin analytics    | Real figures, computed by the same action the agent uses                          |
-| Loading states     | Lists show skeletons, no longer claim to be empty while loading                   |
-| Role permissions   | All 106 actions role-checked, on the UI, the agent and external clients alike     |
-| Class-level access | A teacher cannot reach another class's gradebook, lessons or submissions          |
-| Student data       | A student cannot read another student's grades, progress or work                  |
-| Raw SQL            | Removed from the agent's tools — data is reachable only through checked actions   |
-| Tablet layout      | Navigation and agent panel collapse as the screen narrows; content keeps the room |
-| Curriculum         | Scheme-of-work generator and a week-by-week calendar                              |
-| Data path          | 32 parallel API endpoints folded into actions, so UI and agent cannot diverge     |
-| Activities         | Work is created by the agent and renders in its own shape — cards, questions, steps, tables, marking criteria |
-| Timed work         | Per-learner clocks: questions stay hidden until Begin, a countdown warns at a minute, and time up hands the work in |
-| Student worklist   | Published work reaches every enrolled student, not only those with an assigned variant |
-| Grading thresholds | Student levels and gradebook colours follow the school's own pass mark and grading scale, not numbers in the code |
+| Area                | What changed                                                                                                                                          |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Lesson notes        | Students can open and read them; drafts stay private to the teacher                                                                                   |
+| Admin analytics     | Real figures, computed by the same action the agent uses                                                                                              |
+| Loading states      | Lists show skeletons, no longer claim to be empty while loading                                                                                       |
+| Role permissions    | All 106 actions role-checked, on the UI, the agent and external clients alike                                                                         |
+| Class-level access  | A teacher cannot reach another class's gradebook, lessons or submissions                                                                              |
+| Student data        | A student cannot read another student's grades, progress or work                                                                                      |
+| Raw SQL             | Removed from the agent's tools — data is reachable only through checked actions                                                                       |
+| Tablet layout       | Navigation and agent panel collapse as the screen narrows; content keeps the room                                                                     |
+| Curriculum          | Scheme-of-work generator and a week-by-week calendar                                                                                                  |
+| Data path           | 32 parallel API endpoints folded into actions, so UI and agent cannot diverge                                                                         |
+| Activities          | Work is created by the agent and renders in its own shape — cards, questions, steps, tables, marking criteria                                         |
+| Timed work          | Per-learner clocks: questions stay hidden until Begin, a countdown warns at a minute, and time up hands the work in                                   |
+| Student worklist    | Published work reaches every enrolled student, not only those with an assigned variant                                                                |
+| Grading thresholds  | Student levels and gradebook colours follow the school's own pass mark and grading scale, not numbers in the code                                     |
+| Marking             | Open answers marked against the mark scheme with the learner's own words quoted as evidence, flagged when uncertain, and never published by the agent |
+| Per-question papers | One question at a time, each with its own clock, MCQ marked on the spot, no going back                                                                |
+| Handwriting         | Working drawn with a stylus, stored as strokes, rendered for the teacher and for print                                                                |
+| Printing            | The agent composes a document and hands over a link; the browser makes the PDF                                                                        |
+| Report cards        | Issued as records — frozen at issue, reprinting what was stored                                                                                       |
+| Branding            | The school's crest, held in its own configuration, with no file hosting                                                                               |
+| Navigation          | Every detail page names its way back, so the browser's back button is not the only exit                                                               |
 
 ---
 
 ## Known gaps — expected, don't log as new
 
-| #   | Gap                                             | Impact                          |
-| --- | ----------------------------------------------- | ------------------------------- |
-| 1   | Teachers cannot review student AI chats         | Safeguarding — before children  |
-| 2   | Students can pick the AI model                  | Cost; a UI lock is still open   |
-| 3   | AI marking quality is unproven                  | Test in D2 — the key question   |
-| 4   | No whiteboard, file or photo answers            | Next build phase                |
-| 5   | No CSV import, attendance, or parent access     | Later phase                     |
-| 6   | Nothing is deployed yet                         | Local only; Netlify + Neon next |
-| 7   | Phones show the agent panel at 85% width        | Tablets are the pilot target    |
-| 8   | MCQ auto-marking not built yet                  | Decided: per-activity setting for instant right/wrong feedback, off by default for marked work |
+| #   | Gap                                                  | Impact                                                    |
+| --- | ---------------------------------------------------- | --------------------------------------------------------- |
+| 1   | Teachers cannot review student AI chats              | Safeguarding — settle before children use it              |
+| 2   | Students can pick the AI model                       | Cost; a UI lock is still open                             |
+| 3   | **AI marking quality is unproven**                   | Stage G is the whole question                             |
+| 4   | Attendance is typed at report time, not tracked      | Fine for a pilot; a register is a real build              |
+| 5   | Conduct ratings are typed per report                 | 240 learners × 3 terms is a lot of typing                 |
+| 6   | No CSV import, no parent access                      | Later phase                                               |
+| 7   | Nothing is deployed yet                              | Local only; Netlify + Neon next                           |
+| 8   | Phones show the agent panel at 85% width             | Tablets are the pilot target                              |
+| 9   | Photographs and file uploads need a storage provider | Strokes need none; photos would                           |
+| 10  | The dev server hangs after some hours                | Vite only — production does not run it. Stop and start it |
 
 ---
 
@@ -510,28 +801,37 @@ panel open, because it takes a third of the screen.
 
 ## Record as you go
 
-For each stage note: worked / broken / awkward. "Awkward" matters as much as
-"broken" — a teacher with 20 scripts to mark will abandon anything clumsy.
+One line per finding, in a file beside this one. What you were doing, what you
+expected, what happened. A screenshot when it is visual.
 
-| Stage                               | Result | Notes |
-| ----------------------------------- | ------ | ----- |
-| A1–A6 school + curriculum           |        |       |
-| A6b curriculum calendar             |        |       |
-| A7–A11 people and classes           |        |       |
-| A12–A15 timetable, guide, analytics |        |       |
-| B1–B3 lesson notes                  |        |       |
-| B4–B6 assessments                   |        |       |
-| C1–C3 student sees and writes       |        |       |
-| C4 tutor safety                     |        |       |
-| C5–C6 submission                    |        |       |
-| D1–D2 grading                       |        |       |
-| D3–D5 publish and analytics         |        |       |
-| Regeneration refused                |        |       |
-| MCP from your own Claude (optional) |        |       |
-| Three widths, agent panel open      |        |       |
+**Sort findings into three piles**, because they need different responses:
 
-The three questions worth answering by the end:
+| Pile          | What it means                         | Example                                                                                                          |
+| ------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Wrong**     | The app did something untrue          | A total that disagrees with its marks; a mark shown before publishing; a student reaching another student's work |
+| **Confusing** | It worked, but you had to think       | You could not tell which class a page belonged to; you could not find the way back                               |
+| **Missing**   | It cannot do something a school needs | No attendance register; no parent access                                                                         |
 
-1. Could a real teacher run a week of lessons with this, unaided?
-2. Would you let a 13-year-old use the tutor without a teacher watching?
-3. What would embarrass us in front of a head teacher?
+**Wrong beats confusing beats missing.** A missing feature is a roadmap item. A
+confusing screen costs a teacher a minute. Something that is wrong and confident
+can send a false grade to a parent, and those are the ones to write down in
+full — what you did, what it said, what it should have said.
+
+### The three questions this run should answer
+
+Everything above is in service of these. If you only answer these, the run was
+worth it.
+
+1. **Are the AI marks good enough to stand behind?** Not "does marking run" —
+   would you defend these marks to a parent? Stage G.
+2. **Is reviewing twenty scripts genuinely faster than marking them?** If not,
+   the central claim of the app does not hold and the design needs rethinking.
+3. **Can a teacher who has never seen this app get through a lesson with it?**
+   If you can, that proves little — you built it. Worth handing a tablet to
+   someone else for ten minutes and watching without helping.
+
+### What I would most like to be told
+
+- Anything the agent said that was confidently wrong.
+- Anywhere you felt watched, or that a child would feel watched.
+- Anything you would be embarrassed to show a headteacher.
