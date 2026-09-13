@@ -87,7 +87,11 @@ export default defineAction({
       throw new Error("That answer is not part of this school.");
     }
 
-    if (response.isCorrect !== null && response.isCorrect !== undefined) {
+    if (
+      response.isCorrect !== null &&
+      response.isCorrect !== undefined &&
+      !response.drawingJson
+    ) {
       throw new Error(
         "That question was settled by its answer key and does not need marking by hand.",
       );

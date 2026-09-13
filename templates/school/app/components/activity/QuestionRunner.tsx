@@ -67,7 +67,11 @@ export function QuestionRunner({
     text: string | null;
   } | null>(null);
 
-  const { data: served, isLoading } = useQuery<Served | null>({
+  const {
+    data: served,
+    isLoading,
+    error,
+  } = useQuery<Served | null>({
     queryKey: ["served-question", assessmentId, index],
     queryFn: async () => {
       const res = await fetch(
@@ -162,6 +166,19 @@ export function QuestionRunner({
   if (isLoading) {
     return (
       <p className="p-6 text-sm text-muted-foreground">Loading question…</p>
+    );
+  }
+
+  // Something went wrong fetching the question — saying "all answered" here
+  // would tell a learner their work is done when it may not have started.
+  if (error) {
+    return (
+      <div className="rounded-lg border border-destructive/40 p-6 text-center">
+        <p className="text-sm font-medium">This could not be opened</p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          {(error as Error).message}
+        </p>
+      </div>
     );
   }
 

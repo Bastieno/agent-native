@@ -116,7 +116,10 @@ export default defineAction({
 
     const items = responses
       .filter((r: any) => {
-        // Already settled by the answer key — nothing to read.
+        // Handwritten working always needs a person, even when the key
+        // settled the final value — the method is most of the marks.
+        if (r.drawingJson) return args.includeMarked || !r.markedAt;
+        // Otherwise, settled by the answer key means nothing to read.
         if (r.isCorrect !== null && r.isCorrect !== undefined) return false;
         if (!args.includeMarked && r.markedAt) return false;
         return true;
@@ -140,6 +143,12 @@ export default defineAction({
           answerLength: (r.answer ?? "").trim().length,
           // You cannot read this. Say so and leave it for the teacher.
           hasHandwrittenWorking: !!r.drawingJson,
+          autoMarkedOnFinalValue:
+            r.drawingJson && r.isCorrect !== null && r.isCorrect !== undefined
+              ? r.isCorrect
+                ? "the final value is right, but the working is unread"
+                : "the final value is wrong; the working may still earn method marks"
+              : null,
           secondsTaken:
             r.elapsedMs === null ? null : Math.round(r.elapsedMs / 1000),
           timedOut: !!r.timedOut,

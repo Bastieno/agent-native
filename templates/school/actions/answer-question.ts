@@ -131,9 +131,16 @@ export default defineAction({
     // given — it just carries the fact that it overran.
     const mark = markAnswer(block, rawArgs.answer);
 
+    const keptDrawing = drawingJson ?? existing?.drawingJson ?? null;
+
     const row = {
       answer: rawArgs.answer ?? null,
-      drawingJson: drawingJson ?? existing?.drawingJson ?? null,
+      drawingJson: keptDrawing,
+      // Handwriting always reaches a person. An answer key can confirm the
+      // final value, but on a question that asked for working the method
+      // carries most of the marks and nothing here can read it — so the
+      // automatic mark is provisional, never the last word.
+      needsReview: !!keptDrawing,
       answeredAt: now.toISOString(),
       elapsedMs,
       timedOut,

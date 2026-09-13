@@ -51,6 +51,13 @@ export function DrawingPad({
   const [current, setCurrent] = useState<Stroke | null>(null);
   const [erasing, setErasing] = useState(false);
 
+  // Refs alongside the state, because pointer events arrive faster than React
+  // re-renders. Reading `strokes` from a closure loses a stroke whenever two
+  // finish between paints — which a quick writer does constantly — and reading
+  // the in-progress stroke that way drops points out of the middle of a line.
+  const strokesRef = useRef<Stroke[]>(strokes);
+  const currentRef = useRef<Stroke | null>(null);
+
   // The canvas is as wide as the column it sits in; strokes are stored in that
   // coordinate space and the viewBox makes them redraw correctly anywhere.
   useEffect(() => {
@@ -64,8 +71,20 @@ export function DrawingPad({
     return () => observer.disconnect();
   }, [height]);
 
+  useEffect(() => {
+    if (
+      value?.strokes &&
+      strokesRef.current.length === 0 &&
+      value.strokes.length > 0
+    ) {
+      strokesRef.current = value.strokes;
+      setStrokes(value.strokes);
+    }
+  }, [value]);
+
   const commit = useCallback(
     (next: Stroke[]) => {
+      strokesRef.current = next;
       setStrokes(next);
       onChange({ v: 1, width: size.width, height: size.height, strokes: next });
     },
@@ -93,29 +112,39 @@ export function DrawingPad({
     // Claim the pointer so a stroke keeps drawing if the stylus leaves the box.
     e.currentTarget.setPointerCapture(e.pointerId);
     const [x, y] = pointFrom(e);
-    setCurrent({ p: [x, y], w: widthFor(e), e: erasing || undefined });
+    const stroke: Stroke = {
+      p: [x, y],
+      w: widthFor(e),
+      e: erasing || undefined,
+    };
+    currentRef.current = stroke;
+    setCurrent(stroke);
   }
 
   function onMove(e: React.PointerEvent<SVGSVGElement>) {
-    if (!current || disabled) return;
+    const stroke = currentRef.current;
+    if (!stroke || disabled) return;
     const [x, y] = pointFrom(e);
-    const p = current.p;
+    const p = stroke.p;
     // Skip points too close to matter: fewer points, same line, smaller JSON.
     const dx = x - p[p.length - 2];
     const dy = y - p[p.length - 1];
     if (dx * dx + dy * dy < 4) return;
-    setCurrent({ ...current, p: [...p, x, y] });
+    const next = { ...stroke, p: [...p, x, y] };
+    currentRef.current = next;
+    setCurrent(next);
   }
 
   function onUp() {
-    if (!current) return;
-    const next = [...strokes, current];
+    const stroke = currentRef.current;
+    if (!stroke) return;
+    currentRef.current = null;
     setCurrent(null);
+    const next = [...strokesRef.current, stroke];
     // A learner can fill a page; they cannot fill the database.
     if (
       countPoints({ v: 1, ...size, strokes: next }) > MAX_POINTS_PER_DRAWING
     ) {
-      setStrokes(strokes);
       return;
     }
     commit(next);
@@ -151,7 +180,7 @@ export function DrawingPad({
           size="sm"
           variant="ghost"
           disabled={disabled || strokes.length === 0}
-          onClick={() => commit(strokes.slice(0, -1))}
+          onClick={() => commit(strokesRef.current.slice(0, -1))}
         >
           <IconArrowBackUp size={14} className="mr-1.5" />
           Undo

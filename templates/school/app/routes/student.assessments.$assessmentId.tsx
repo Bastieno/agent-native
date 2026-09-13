@@ -148,7 +148,14 @@ export default function StudentAssessment() {
     assessment?.navigation === "linear" &&
     assessment?.renderAs === "questions" &&
     !isSubmitted;
-  const needsToStart = isTimed && !timing?.started && !isSubmitted;
+
+  // A linear paper is started deliberately too, even when the paper as a whole
+  // carries no clock: each question's timer runs from when it was served, and
+  // nothing can be served before the attempt exists.
+  const isLinear =
+    assessment?.navigation === "linear" && assessment?.renderAs === "questions";
+  const needsToStart =
+    (isTimed || isLinear) && !timing?.started && !isSubmitted;
 
   const startMutation = useMutation({
     mutationFn: async () => {
@@ -255,13 +262,16 @@ export default function StudentAssessment() {
               className="mx-auto mb-2 text-muted-foreground"
             />
             <p className="text-sm font-medium">
-              You have {assessment.durationMinutes} minute
-              {assessment.durationMinutes === 1 ? "" : "s"} for this
+              {isTimed
+                ? `You have ${assessment.durationMinutes} minute${
+                    assessment.durationMinutes === 1 ? "" : "s"
+                  } for this`
+                : "Ready when you are"}
             </p>
             <p className="mx-auto mt-1 max-w-sm text-xs text-muted-foreground">
-              The clock starts when you press begin and keeps running if you
-              close the page, so start when you are ready. Your answer saves as
-              you type.
+              {isTimed
+                ? "The clock starts when you press begin and keeps running if you close the page, so start when you are ready. Your answer saves as you type."
+                : "You will get one question at a time, and cannot go back once you answer. Start when you are ready."}
             </p>
             <Button
               className="mt-4"
