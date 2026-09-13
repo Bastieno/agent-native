@@ -275,14 +275,18 @@ export function AnswerReview({
                     </details>
                   ) : null}
 
-                  {/* Auto-marked questions are settled by their key; only the
-                      ones a marker judged can be argued with here. */}
-                  {!a.autoMarked ? (
+                  {/* Auto-marked questions are settled by their key — except
+                      when there is handwriting, where the key only saw the
+                      final value and the method is still unread. Those the
+                      teacher must be able to change. */}
+                  {!a.autoMarked || a.drawing ? (
                     <div className="flex items-center gap-2 border-t pt-2">
                       <span className="text-muted-foreground">
-                        {a.confidence
-                          ? `Marked with ${a.confidence} confidence.`
-                          : "Not marked yet."}
+                        {a.autoMarked && a.drawing
+                          ? "Marked on the final value only — the working is unread."
+                          : a.confidence
+                            ? `Marked with ${a.confidence} confidence.`
+                            : "Not marked yet."}
                       </span>
                       <span className="ml-auto flex items-center gap-1.5">
                         <Input
