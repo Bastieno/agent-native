@@ -195,6 +195,9 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "get-marking-queue": STAFF,
   "record-answer-mark": STAFF,
   "compile-submission-grade": STAFF,
+  // Observations about speed and accuracy. Staff only, and never shown to a
+  // learner — see the caution the action returns.
+  "get-answer-insights": STAFF,
   // Staff only for now. When learners can photograph or scan their working,
   // they will need this for their own submission and it becomes EVERYONE with
   // a per-student scope check, like submit-work.
