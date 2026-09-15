@@ -107,6 +107,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "list-academic-years": STAFF,
   "create-academic-year": ADMIN,
   "list-terms": STAFF,
+  // Which session and term it is — everyone needs the context.
+  "get-current-term": EVERYONE,
   "create-term": ADMIN,
   "list-departments": STAFF,
   "create-department": ADMIN,

@@ -3,6 +3,7 @@ import { useLocation } from "react-router";
 import { AgentToggleButton } from "@agent-native/core/client";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useSchoolConfig } from "@/hooks/use-school-config";
+import { useCurrentTerm } from "@/hooks/use-current-term";
 import { IconMenu2 } from "@tabler/icons-react";
 
 /**
@@ -38,6 +39,7 @@ export function PortalShell({
   const [navOpen, setNavOpen] = useState(false);
   const location = useLocation();
   const { config } = useSchoolConfig();
+  const term = useCurrentTerm();
   // One deployment, many schools: the header carries the school's name, with
   // the portal name only as a fallback before config loads.
   const heading =
@@ -85,7 +87,14 @@ export function PortalShell({
               className="h-6 w-6 shrink-0 object-contain"
             />
           ) : null}
-          <span className="truncate text-sm font-semibold">{heading}</span>
+          <span className="min-w-0 truncate text-sm font-semibold">
+            {heading}
+            {term?.label ? (
+              <span className="ml-2 text-[11px] font-normal text-muted-foreground">
+                {term.label}
+              </span>
+            ) : null}
+          </span>
         </header>
 
         <main className="min-w-0 flex-1 overflow-hidden">{children}</main>

@@ -13,6 +13,7 @@ import {
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
+import { useCurrentTerm } from "@/hooks/use-current-term";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 
 const navItems = [
@@ -32,6 +33,7 @@ export function AdminSidebar({
   showAgentToggle = true,
 }: { showAgentToggle?: boolean } = {}) {
   const { config } = useSchoolConfig();
+  const term = useCurrentTerm();
   const schoolName =
     (config as any)?.theme?.displayName ??
     (config as any)?.name ??
@@ -45,6 +47,11 @@ export function AdminSidebar({
         ) : null}
         <span className="min-w-0 flex-1 truncate text-sm font-semibold text-sidebar-foreground">
           {schoolName}
+          {term?.label ? (
+            <span className="block truncate text-[11px] font-normal text-muted-foreground">
+              {term.label}
+            </span>
+          ) : null}
         </span>
         {showAgentToggle ? <AgentToggleButton /> : null}
       </div>
