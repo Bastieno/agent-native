@@ -31,6 +31,42 @@ function objectivesOf(unit: any): any[] {
   return Array.isArray(list) ? list : [];
 }
 
+/**
+ * The weeks of a term with no unit against them, in order.
+ *
+ * A gap is not necessarily a mistake — a mid-term break and an examination
+ * week are both deliberate — but an invisible gap is. The page cannot know
+ * which it is, so it shows them and lets the person reading decide; the draft's
+ * own notes usually say.
+ */
+function unplannedWeeks(units: any[], totalWeeks: number): number[] {
+  const planned = new Set<number>();
+  for (const unit of units) {
+    const from = Number(unit?.weekStart);
+    const to = Number(unit?.weekEnd ?? unit?.weekStart);
+    if (!Number.isFinite(from)) continue;
+    for (let w = from; w <= (Number.isFinite(to) ? to : from); w++) {
+      planned.add(w);
+    }
+  }
+  const gaps: number[] = [];
+  for (let w = 1; w <= totalWeeks; w++) if (!planned.has(w)) gaps.push(w);
+  return gaps;
+}
+
+/** "6" or "12–13" — consecutive weeks read as a range. */
+function describeWeeks(weeks: number[]): string[] {
+  const out: string[] = [];
+  let i = 0;
+  while (i < weeks.length) {
+    let j = i;
+    while (j + 1 < weeks.length && weeks[j + 1] === weeks[j] + 1) j++;
+    out.push(i === j ? `Week ${weeks[i]}` : `Weeks ${weeks[i]}–${weeks[j]}`);
+    i = j + 1;
+  }
+  return out;
+}
+
 export default function AdminCurriculumSetup() {
   const { sync } = useNavigationState();
   const navigate = useNavigate();
@@ -63,6 +99,19 @@ export default function AdminCurriculumSetup() {
       return res.json();
     },
     enabled: !!draftId,
+  });
+
+  // Units carry a termId; how long that term runs is what turns "weeks 1-3,
+  // 4-5, 7-9" into "and nothing in week 6".
+  const { data: terms = [] } = useQuery<any[]>({
+    queryKey: ["terms"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-terms"),
+      );
+      if (!res.ok) return [];
+      return res.json();
+    },
   });
 
   // The record holds the title and status; the live poll holds the tree as it
@@ -185,6 +234,12 @@ export default function AdminCurriculumSetup() {
         </AlertDialogContent>
       </AlertDialog>
 
+      {(draft?.stateJson as any)?.notes ? (
+        <p className="rounded-lg border bg-muted/30 p-3 text-xs text-muted-foreground">
+          {(draft.stateJson as any).notes}
+        </p>
+      ) : null}
+
       {subjects.length === 0 ? (
         <div className="rounded-lg border border-dashed p-8 text-center">
           <p className="text-sm font-medium">Nothing drafted yet</p>
@@ -243,9 +298,9 @@ export default function AdminCurriculumSetup() {
                 ) : (
                   groups.map((group: any, gi: number) => (
                     <div key={gi} className="space-y-2">
-                      {group.gradeLevelName || group.gradeLevelId ? (
+                      {(group.gradeLevelName ?? group.name) ? (
                         <p className="text-xs font-medium text-muted-foreground">
-                          {group.gradeLevelName ?? group.gradeLevelId}
+                          {group.gradeLevelName ?? group.name}
                         </p>
                       ) : null}
                       <div className="space-y-2 border-l-2 border-muted pl-3">
@@ -297,6 +352,32 @@ export default function AdminCurriculumSetup() {
                           </div>
                         ))}
                       </div>
+                      {(() => {
+                        // A break and an oversight look identical in a list of
+                        // units. Naming the empty weeks makes the difference
+                        // visible; the draft's notes usually say which it is.
+                        const termId = (group.units ?? []).find(
+                          (u: any) => u.termId,
+                        )?.termId;
+                        const term = terms.find((t: any) => t.id === termId);
+                        if (!term?.startDate || !term?.endDate) return null;
+                        const weeks = Math.max(
+                          1,
+                          Math.round(
+                            (new Date(term.endDate).getTime() -
+                              new Date(term.startDate).getTime()) /
+                              (7 * 24 * 60 * 60 * 1000),
+                          ),
+                        );
+                        const gaps = unplannedWeeks(group.units ?? [], weeks);
+                        if (gaps.length === 0) return null;
+                        return (
+                          <p className="pl-3 text-xs text-muted-foreground">
+                            Nothing planned for {describeWeeks(gaps).join(", ")}{" "}
+                            of {term.name}&apos;s {weeks} weeks
+                          </p>
+                        );
+                      })()}
                     </div>
                   ))
                 )}
