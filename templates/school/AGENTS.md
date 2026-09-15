@@ -146,6 +146,14 @@ commit-curriculum-draft --id {id}       ← materializes into subjects + units +
 pnpm action navigate --view=curriculum-setup --curriculumDraftId=<id>
 ```
 
+**The draft's shape matters.** `commit-curriculum-draft` reads
+`subjects[] → gradeLevels[] → units[] → learningObjectives[]`, and the
+workspace renders the same shape. Units nest under the year group they are
+written for, because the same subject is taught differently in JSS1 and SS2.
+Send the whole state on each update, not a patch. The exact shape is in
+`update-curriculum-draft`'s own description — follow it rather than inventing
+field names, or the commit will find nothing to create.
+
 **Standards alignment**: Units carry a `standards` array — official reference codes from a recognized
 curriculum framework. Populate these during co-authoring by including them in the draft state:
 

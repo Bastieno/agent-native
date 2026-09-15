@@ -12,7 +12,13 @@ export default defineAction({
     stateJson: z
       .record(z.string(), z.unknown())
       .describe(
-        "The full accumulated state object — subjects, units, objectives built so far",
+        "The full accumulated state, in the shape commit-curriculum-draft reads:\n" +
+          '{ "subjects": [ { "subjectId": "<existing subject id, to avoid creating a duplicate>", "name": "Mathematics", "code": "MTH",\n' +
+          '  "gradeLevels": [ { "gradeLevelId": "<grade level id>", "gradeLevelName": "JSS1",\n' +
+          '    "units": [ { "title": "Whole Numbers", "termId": "<term id>", "weekStart": 1, "weekEnd": 3,\n' +
+          '      "standards": [ { "framework": "NERDC", "code": "MATHJSS-NN-1", "description": "..." } ],\n' +
+          '      "learningObjectives": [ { "description": "...", "bloomsLevel": "understand" } ] } ] } ] } ] }\n' +
+          "Units nest under the year group they are written for. Send the whole state each time, not a patch.",
       ),
     step: z
       .string()

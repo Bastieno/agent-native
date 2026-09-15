@@ -20,6 +20,17 @@ import { IconWand, IconCheck, IconTrash } from "@tabler/icons-react";
 import { BackLink } from "@/components/layout/BackLink";
 import { useCurriculumDraft } from "@/hooks/use-curriculum-draft";
 
+/**
+ * A unit's objectives, however the draft spelled them. Agents write
+ * `learningObjectives` or `objectives`, and each entry as a string or as
+ * `{ description, bloomsLevel }` — none of which should decide whether a
+ * teacher can see their own curriculum.
+ */
+function objectivesOf(unit: any): any[] {
+  const list = unit?.learningObjectives ?? unit?.objectives;
+  return Array.isArray(list) ? list : [];
+}
+
 export default function AdminCurriculumSetup() {
   const { sync } = useNavigationState();
   const navigate = useNavigate();
@@ -184,43 +195,114 @@ export default function AdminCurriculumSetup() {
         </div>
       ) : (
         <div className="space-y-4">
-          {subjects.map((subject: any, si: number) => (
-            <div key={si} className="rounded-lg border p-4 space-y-3">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm font-semibold">{subject.name}</h3>
-                {subject.code && (
-                  <span className="text-xs text-muted-foreground">
-                    {subject.code}
+          {subjects.map((subject: any, si: number) => {
+            // The draft's canonical shape nests units under the year group
+            // they are written for — subjects → gradeLevels → units — which
+            // is what commit-curriculum-draft reads. This page was written
+            // against a flatter shape and so showed a subject with nothing
+            // under it. Read the canonical shape, and accept the flat one so
+            // an older draft still renders.
+            const groups: any[] = Array.isArray(subject.gradeLevels)
+              ? subject.gradeLevels
+              : Array.isArray(subject.units)
+                ? [{ gradeLevelName: null, units: subject.units }]
+                : [];
+            const unitCount = groups.reduce(
+              (sum: number, g: any) => sum + (g.units?.length ?? 0),
+              0,
+            );
+            const objectiveCount = groups.reduce(
+              (sum: number, g: any) =>
+                sum +
+                (g.units ?? []).reduce(
+                  (inner: number, u: any) =>
+                    inner + (objectivesOf(u).length ?? 0),
+                  0,
+                ),
+              0,
+            );
+
+            return (
+              <div key={si} className="space-y-3 rounded-lg border p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="min-w-0 truncate text-sm font-semibold">
+                    {subject.name}
+                  </h3>
+                  <span className="shrink-0 text-xs text-muted-foreground">
+                    {unitCount} unit{unitCount === 1 ? "" : "s"} ·{" "}
+                    {objectiveCount} objective
+                    {objectiveCount === 1 ? "" : "s"}
+                    {subject.code ? ` · ${subject.code}` : ""}
                   </span>
+                </div>
+
+                {groups.length === 0 ? (
+                  <p className="text-xs text-muted-foreground">
+                    No units drafted for this subject yet.
+                  </p>
+                ) : (
+                  groups.map((group: any, gi: number) => (
+                    <div key={gi} className="space-y-2">
+                      {group.gradeLevelName || group.gradeLevelId ? (
+                        <p className="text-xs font-medium text-muted-foreground">
+                          {group.gradeLevelName ?? group.gradeLevelId}
+                        </p>
+                      ) : null}
+                      <div className="space-y-2 border-l-2 border-muted pl-3">
+                        {(group.units ?? []).map((unit: any, ui: number) => (
+                          <div key={ui} className="space-y-1">
+                            <p className="text-sm font-medium">
+                              {unit.title ?? unit.name}
+                              {unit.weekStart ? (
+                                <span className="ml-2 text-xs font-normal text-muted-foreground">
+                                  {unit.weekStart === unit.weekEnd
+                                    ? `Week ${unit.weekStart}`
+                                    : `Weeks ${unit.weekStart}–${unit.weekEnd}`}
+                                </span>
+                              ) : null}
+                            </p>
+                            {/* The standards are why the unit is defensible:
+                                show which ones it was written against. */}
+                            {Array.isArray(unit.standards) &&
+                            unit.standards.length > 0 ? (
+                              <p className="text-[11px] text-muted-foreground">
+                                {unit.standards
+                                  .map((st: any) => st.code ?? st)
+                                  .join(", ")}
+                              </p>
+                            ) : null}
+                            {objectivesOf(unit).length > 0 ? (
+                              <ul className="space-y-0.5 pl-3">
+                                {objectivesOf(unit).map(
+                                  (obj: any, oi: number) => (
+                                    <li
+                                      key={oi}
+                                      className="flex gap-1.5 text-xs text-muted-foreground"
+                                    >
+                                      <span>•</span>
+                                      <span>
+                                        {typeof obj === "string"
+                                          ? obj
+                                          : (obj?.description ?? "")}
+                                      </span>
+                                    </li>
+                                  ),
+                                )}
+                              </ul>
+                            ) : (
+                              <p className="pl-3 text-xs text-muted-foreground">
+                                No objectives yet
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))
                 )}
               </div>
-              {subject.units && subject.units.length > 0 && (
-                <div className="space-y-2 pl-2 border-l-2 border-muted">
-                  {subject.units.map((unit: any, ui: number) => (
-                    <div key={ui} className="space-y-1">
-                      <p className="text-sm font-medium">{unit.title}</p>
-                      {unit.learningObjectives &&
-                        unit.learningObjectives.length > 0 && (
-                          <ul className="space-y-0.5 pl-3">
-                            {unit.learningObjectives.map(
-                              (obj: string, oi: number) => (
-                                <li
-                                  key={oi}
-                                  className="text-xs text-muted-foreground flex gap-1.5"
-                                >
-                                  <span>•</span>
-                                  <span>{obj}</span>
-                                </li>
-                              ),
-                            )}
-                          </ul>
-                        )}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>
