@@ -6,6 +6,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, asc, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { paceObjectives, type WeekPlan } from "../shared/objective-pacing.js";
 
 /**
  * Build a term's scheme of work for one subject and year group.
@@ -26,6 +27,8 @@ interface PlannedUnit {
   weekStart: number;
   weekEnd: number;
   objectives: string[];
+  /** Optional: objectives per week, one array per week of the unit. */
+  objectivesByWeek?: string[][];
   standards?: Array<{ framework: string; code: string; description?: string }>;
 }
 
@@ -86,6 +89,12 @@ export default defineAction({
           weekStart: z.number(),
           weekEnd: z.number(),
           objectives: z.array(z.string()),
+          objectivesByWeek: z
+            .array(z.array(z.string()))
+            .optional()
+            .describe(
+              "Which objectives belong to which week, one array per week of the unit. Give it when some weeks are lighter than others — a unit's word-problems week is not its introduction week. Omitted, objectives are shared out evenly in order.",
+            ),
           standards: z
             .array(
               z.object({
@@ -285,6 +294,18 @@ export default defineAction({
         title: u.title,
         weeks: `${u.weekStart}–${u.weekEnd}`,
         objectiveCount: u.objectives.length,
+        // The pacing, visible before anything is written: which objectives
+        // each week of the unit carries.
+        byWeek: paceObjectives(
+          u.objectives,
+          u.weekStart,
+          u.weekEnd,
+          u.objectivesByWeek,
+        ).map((w) => ({
+          week: w.week,
+          objectives: w.objectives,
+          continues: w.continues,
+        })),
       })),
       lessonNotesToCreate: args.createLessonNotes
         ? teachingWeeks * classes.length
@@ -367,21 +388,42 @@ export default defineAction({
     // objectives.
     let lessonNotesCreated = 0;
     if (args.createLessonNotes && createdUnits.length > 0) {
+      // Work out each unit's weekly share once, rather than per class: every
+      // class in the year group follows the same pacing.
+      const weekPlans = new Map<string, Map<number, WeekPlan>>();
+      for (const c of createdUnits) {
+        const plans = paceObjectives(
+          c.unit.objectives,
+          c.unit.weekStart,
+          c.unit.weekEnd,
+          c.unit.objectivesByWeek,
+        );
+        weekPlans.set(c.id, new Map(plans.map((p) => [p.week, p])));
+      }
+
       for (const cls of classes) {
         for (let week = 1; week <= teachingWeeks; week++) {
           const match =
             createdUnits.find(
               (c) => week >= c.unit.weekStart && week <= c.unit.weekEnd,
             ) ?? createdUnits[createdUnits.length - 1];
-          const objectives = match.unit.objectives
-            .map((o) => `- ${o}`)
-            .join("\n");
+          // This week's share of the unit, not the whole of it. A teacher
+          // planning week 8 of a three-week unit needs to know which two
+          // objectives are theirs.
+          const plan = weekPlans.get(match.id)?.get(week);
+          const thisWeek = plan?.objectives ?? match.unit.objectives;
+          const objectives = thisWeek.map((o) => `- ${o}`).join("\n");
+          const position = plan
+            ? `Week ${plan.weekOfUnit} of ${plan.weeksInUnit} in this unit${
+                plan.continues ? " — continuing from last week" : ""
+              }.`
+            : "";
           await db.insert(schema.lessonNotes).values({
             id: nanoid(),
             classId: cls.id,
             unitId: match.id,
             title: `Week ${week} — ${match.unit.title}`,
-            content: `# Week ${week}: ${match.unit.title}\n\n## Learning objectives\n${objectives}\n\n## Starter\n_To be planned._\n\n## Main activity\n_To be planned._\n\n## Assessment\n_To be planned._\n`,
+            content: `# Week ${week}: ${match.unit.title}\n\n${position}\n\n## This week's objectives\n${objectives}\n\n## Starter\n_To be planned._\n\n## Main activity\n_To be planned._\n\n## Assessment\n_To be planned._\n`,
             summary: `${subject.name} · ${gradeLevel.name} · ${term.name}, week ${week}`,
             lessonDate: weekStartDate(term.startDate, week),
             status: "draft",

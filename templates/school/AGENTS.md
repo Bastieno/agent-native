@@ -154,6 +154,14 @@ Send the whole state on each update, not a patch. The exact shape is in
 `update-curriculum-draft`'s own description — follow it rather than inventing
 field names, or the commit will find nothing to create.
 
+**Pacing within a unit.** A unit spans weeks; its objectives do not all
+belong to every one of them. When `generate-scheme-of-work` writes a lesson note
+per week, each week gets its own share of the unit's objectives, in order. The
+even split is only the default — pass `objectivesByWeek` on a unit when some
+weeks are heavier than others, because an introduction week and a word-problems
+week are not the same size. Check the `byWeek` breakdown in the preview before
+confirming; that is where a bad split is cheap to fix.
+
 **Standards alignment**: Units carry a `standards` array — official reference codes from a recognized
 curriculum framework. Populate these during co-authoring by including them in the draft state:
 
