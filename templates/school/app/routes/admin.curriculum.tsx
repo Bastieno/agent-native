@@ -4,7 +4,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
-import { IconBook } from "@tabler/icons-react";
+import { IconBook, IconPencil } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 
 type Coverage = {
@@ -55,6 +55,22 @@ export default function AdminCurriculum() {
     },
   });
 
+  // A draft is durable but was unreachable once the tab closed: the workspace
+  // that shows it is only navigable with an id, and nothing listed the ids.
+  const { data: draftData } = useQuery<{ drafts: any[] } | null>({
+    queryKey: ["curriculum-drafts"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath(
+          "/_agent-native/actions/list-curriculum-drafts?status=in_progress",
+        ),
+      );
+      if (!res.ok) return null;
+      return res.json();
+    },
+  });
+  const drafts = draftData?.drafts ?? [];
+
   const subjects = data?.subjects ?? [];
   // The work comes first: a subject with nothing written is what an admin is
   // here to find.
@@ -75,6 +91,35 @@ export default function AdminCurriculum() {
             : "Subjects, units, and learning objectives for your school."}
         </p>
       </div>
+
+      {drafts.length > 0 ? (
+        <div className="space-y-2">
+          <h2 className="text-xs font-medium text-muted-foreground">
+            Sessions in progress
+          </h2>
+          {drafts.map((draft: any) => (
+            <Link
+              key={draft.id}
+              to={`/admin/curriculum-setup?draftId=${draft.id}`}
+              className="flex items-center gap-3 rounded-lg border border-primary/40 bg-primary/5 p-3 transition-colors hover:border-primary"
+            >
+              <IconPencil size={16} className="shrink-0 text-primary" />
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-medium">
+                  {draft.sessionTitle}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {draft.units} unit{draft.units === 1 ? "" : "s"} ·{" "}
+                  {draft.objectives} objective
+                  {draft.objectives === 1 ? "" : "s"} drafted — not in the
+                  curriculum until committed
+                </p>
+              </div>
+              <span className="shrink-0 text-xs text-primary">Resume</span>
+            </Link>
+          ))}
+        </div>
+      ) : null}
 
       {subjects.length === 0 ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
