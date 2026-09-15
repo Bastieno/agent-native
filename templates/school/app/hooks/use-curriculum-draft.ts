@@ -26,7 +26,11 @@ export function useCurriculumDraft(draftId: string | null) {
   // Polls the live co-authoring workspace — agent writes here as it builds curriculum
   const { data: draftState, isLoading } = useQuery<CurriculumDraftState | null>(
     {
-      queryKey: ["curriculum-draft", draftId],
+      // Distinct from the stored draft's own key: this polls the live
+      // app-state the agent writes, which carries the evolving tree but not
+      // the record's title or status. Sharing a key had them overwrite each
+      // other, and whichever landed last decided what the page showed.
+      queryKey: ["curriculum-draft-live", draftId],
       queryFn: () =>
         appStateKey
           ? apiFetch(`/_agent-native/application-state/${appStateKey}`)

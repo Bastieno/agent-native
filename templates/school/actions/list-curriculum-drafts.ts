@@ -22,7 +22,7 @@ export default defineAction({
     "List curriculum co-authoring sessions, newest first, with how much has been drafted in each. Use it to resume a session rather than starting a new one — an unfinished draft is easy to lose track of.",
   schema: z.object({
     status: z
-      .enum(["in_progress", "committed", "all"])
+      .enum(["in_progress", "committed", "discarded", "all"])
       .optional()
       .default("in_progress")
       .describe("Which sessions to list. Defaults to unfinished ones."),

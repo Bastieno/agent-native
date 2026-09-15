@@ -1,14 +1,31 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
-import { useSearchParams } from "react-router";
-import { useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router";
+import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { IconWand, IconCheck } from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { toast } from "sonner";
+import { IconWand, IconCheck, IconTrash } from "@tabler/icons-react";
+import { BackLink } from "@/components/layout/BackLink";
 import { useCurriculumDraft } from "@/hooks/use-curriculum-draft";
 
 export default function AdminCurriculumSetup() {
   const { sync } = useNavigationState();
+  const navigate = useNavigate();
+  const qc = useQueryClient();
+  const [discardOpen, setDiscardOpen] = useState(false);
+  const [discarding, setDiscarding] = useState(false);
   const [searchParams] = useSearchParams();
   const draftId = searchParams.get("draftId") ?? undefined;
 
@@ -23,7 +40,7 @@ export default function AdminCurriculumSetup() {
   const { draftState: liveDraft } = useCurriculumDraft(draftId ?? null);
 
   const { data: activeDraft } = useQuery({
-    queryKey: ["curriculum-draft", draftId],
+    queryKey: ["curriculum-draft-record", draftId],
     queryFn: async () => {
       if (!draftId) return null;
       const res = await fetch(
@@ -37,12 +54,16 @@ export default function AdminCurriculumSetup() {
     enabled: !!draftId,
   });
 
-  const draft = liveDraft ?? activeDraft;
+  // The record holds the title and status; the live poll holds the tree as it
+  // is written. Take both — replacing one with the other loses whichever
+  // fields the other does not have.
+  const draft: any = { ...(activeDraft ?? {}), ...(liveDraft ?? {}) };
 
   if (!draftId) {
     return (
       <div className="p-6 space-y-6">
         <div>
+          <BackLink to="/admin/curriculum">Curriculum</BackLink>
           <h1 className="text-xl font-semibold">Curriculum Setup</h1>
           <p className="text-sm text-muted-foreground mt-1">
             Co-author your curriculum with the agent.
@@ -65,30 +86,100 @@ export default function AdminCurriculumSetup() {
   return (
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-xl font-semibold">
-            {(draft as any)?.sessionTitle ?? "Curriculum Session"}
+        <div className="min-w-0">
+          <BackLink to="/admin/curriculum">Curriculum</BackLink>
+          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            Curriculum session
+          </p>
+          <h1 className="text-xl font-semibold break-words">
+            {draft?.sessionTitle ?? "Untitled session"}
           </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Live co-authoring workspace — changes update in real time.
+          <p className="mt-1 text-sm text-muted-foreground">
+            Units and objectives appear here as the agent writes them. Nothing
+            reaches the curriculum until the session is committed.
           </p>
         </div>
-        {(draft as any)?.status === "committed" ? (
-          <Badge className="text-xs gap-1">
-            <IconCheck size={12} />
-            Committed
-          </Badge>
-        ) : (
-          <Badge variant="secondary" className="text-xs">
-            In Progress
-          </Badge>
-        )}
+        <div className="flex shrink-0 items-center gap-2">
+          {(draft as any)?.status === "committed" ? (
+            <Badge className="gap-1 text-xs">
+              <IconCheck size={12} />
+              Committed
+            </Badge>
+          ) : (
+            <>
+              <Badge variant="secondary" className="text-xs">
+                In Progress
+              </Badge>
+              {/* Only an uncommitted session can be set aside — once it is in
+                  the curriculum, discarding the draft would change nothing. */}
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={() => setDiscardOpen(true)}
+              >
+                <IconTrash size={14} className="mr-1.5" />
+                Discard
+              </Button>
+            </>
+          )}
+        </div>
       </div>
+
+      <AlertDialog open={discardOpen} onOpenChange={setDiscardOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Set this session aside?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Nothing has been added to the curriculum yet, so nothing is lost
+              from it. The draft itself is kept rather than deleted, in case it
+              is wanted back.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={discarding}>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              disabled={discarding}
+              onClick={async (e) => {
+                e.preventDefault();
+                setDiscarding(true);
+                try {
+                  const res = await fetch(
+                    agentNativePath(
+                      "/_agent-native/actions/discard-curriculum-draft",
+                    ),
+                    {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ id: draftId }),
+                    },
+                  );
+                  const body = await res.json().catch(() => ({}));
+                  if (!res.ok) {
+                    throw new Error((body as any).error ?? "Failed");
+                  }
+                  qc.invalidateQueries({ queryKey: ["curriculum-drafts"] });
+                  toast.success((body as any).message ?? "Set aside");
+                  navigate("/admin/curriculum");
+                } catch (err: any) {
+                  toast.error(err.message ?? "Could not discard the session");
+                } finally {
+                  setDiscarding(false);
+                  setDiscardOpen(false);
+                }
+              }}
+            >
+              {discarding ? "Setting aside…" : "Set aside"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       {subjects.length === 0 ? (
         <div className="rounded-lg border border-dashed p-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            The agent is building the curriculum structure…
+          <p className="text-sm font-medium">Nothing drafted yet</p>
+          <p className="mx-auto mt-1 max-w-sm text-xs text-muted-foreground">
+            Ask the agent to build a subject's units and objectives — name the
+            subject and the year group. They will appear here as it works.
           </p>
         </div>
       ) : (

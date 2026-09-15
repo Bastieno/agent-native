@@ -140,6 +140,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "start-curriculum-draft": ADMIN_COORD,
   "get-curriculum-draft": ADMIN_COORD,
   "list-curriculum-drafts": ADMIN_COORD,
+  "discard-curriculum-draft": ADMIN_COORD,
   "update-curriculum-draft": ADMIN_COORD,
   "commit-curriculum-draft": ADMIN_COORD,
   "generate-scheme-of-work": ADMIN_COORD,
