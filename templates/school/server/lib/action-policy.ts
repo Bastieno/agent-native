@@ -73,6 +73,21 @@ export const OPERATOR_ONLY = new Set<string>([
   "run",
 ]);
 
+/**
+ * Actions a signed-in person may run *before* they belong to any school.
+ *
+ * Every other action requires a school role, and a school role only exists
+ * once `setup-school` has created one — so without this exception the first
+ * admin of a new school can never get started. The guard denied them, and the
+ * only reason it was not noticed sooner is that every test school already had
+ * its profile from before the guard existed.
+ *
+ * This is not a hole: `setup-school` itself refuses when the organisation
+ * already has a school admin, so it can create a school where there is none
+ * and cannot be used to seize one that exists.
+ */
+export const BOOTSTRAP = new Set<string>(["setup-school"]);
+
 export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   // ── Context & navigation ──────────────────────────────────────────────
   "view-screen": EVERYONE,

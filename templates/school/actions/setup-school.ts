@@ -42,6 +42,31 @@ export default defineAction({
       );
     }
 
+    // This is the one action a person with no school role may run, so it is
+    // also the one that has to make sure that cannot be abused: a school which
+    // already has an admin is somebody else's, and setting it up again would
+    // hand its records to whoever asked.
+    const existingAdmins = await db
+      .select({
+        userId: schema.schoolProfiles.userId,
+      })
+      .from(schema.schoolProfiles)
+      .where(
+        and(
+          eq(schema.schoolProfiles.schoolId, orgId),
+          eq(schema.schoolProfiles.schoolRole, "school_admin"),
+          eq(schema.schoolProfiles.status, "active"),
+        ),
+      );
+    if (
+      existingAdmins.length > 0 &&
+      !existingAdmins.some((a: { userId: string }) => a.userId === userId)
+    ) {
+      throw new Error(
+        "This school already has an administrator. Ask them to invite you rather than setting it up again.",
+      );
+    }
+
     // Create the school_admin profile for this user if it doesn't exist yet
     const existing = await db
       .select()
