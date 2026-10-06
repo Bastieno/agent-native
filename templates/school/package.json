@@ -13,7 +13,8 @@
     "script": "agent-native script",
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
-    "journey": "tsx test/sim/run.ts"
+    "journey": "tsx test/sim/run.ts",
+    "journey:school": "tsx test/sim/run-school.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",

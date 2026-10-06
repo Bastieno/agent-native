@@ -110,7 +110,7 @@ export async function teachWeek(
     totalPoints,
     confirm: true,
   });
-  const assessmentId = idOf(created, "assessment", "assessmentId");
+  const assessmentId = created?.assessmentId ?? idOf(created, "assessment");
   findings.expect(phase, !!assessmentId, "the week's work is created");
 
   // Before it is shared, no learner should be able to reach it.
