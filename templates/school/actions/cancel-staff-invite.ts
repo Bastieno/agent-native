@@ -51,7 +51,10 @@ export default defineAction({
 
     return {
       success: true,
-      message: `Invitation for ${email} cancelled. You can now run invite-staff again to send a fresh invite.`,
+      // The sign-in address in the email is the school's own and keeps
+      // working; what a cancellation removes is the invitation it would have
+      // been matched against.
+      message: `Invitation for ${email} cancelled. The link they were emailed is the school's ordinary sign-in address and still opens the app, but signing in with ${email} no longer makes them a staff member — they would reach the "waiting for activation" screen instead. Invite them again to restore it.`,
     };
   },
 });

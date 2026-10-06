@@ -5,6 +5,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import { nanoid } from "nanoid";
+import { realNameOrNull } from "../server/lib/user-names.js";
 import { z } from "zod";
 
 export default defineAction({
@@ -28,8 +29,8 @@ export default defineAction({
     const db = getDb();
 
     // Look up the user by email in the framework user table
-    const userRow = await db.get<{ id: string }>(
-      sql`SELECT id FROM "user" WHERE LOWER(email) = ${email} LIMIT 1`,
+    const userRow = await db.get<{ id: string; name: string | null }>(
+      sql`SELECT id, name FROM "user" WHERE LOWER(email) = ${email} LIMIT 1`,
     );
     if (!userRow?.id) {
       throw new Error(
@@ -40,11 +41,15 @@ export default defineAction({
 
     // Determine school role: explicit arg takes priority, then pending invite, then error
     let schoolRole = args.schoolRole;
-    if (!schoolRole) {
+    let invitedName: string | null = null;
+    {
       const list = ((await getOrgSetting(orgId, "pending-staff-invites")) ??
-        []) as Array<{ email: string; schoolRole: string }>;
+        []) as Array<{ email: string; schoolRole: string; name?: string }>;
       const match = list.find((inv) => inv.email === email);
-      schoolRole = (match?.schoolRole as typeof schoolRole) ?? undefined;
+      invitedName = match?.name?.trim() || null;
+      if (!schoolRole) {
+        schoolRole = (match?.schoolRole as typeof schoolRole) ?? undefined;
+      }
     }
     if (!schoolRole) {
       throw new Error(
@@ -94,6 +99,15 @@ export default defineAction({
       schoolRole,
       status: "active",
     });
+
+    // Same as the ordinary sign-in path: keep the name they were invited
+    // under, unless they have chosen one themselves. Signing up derives a
+    // name from the address, and "teacher.maths" is nobody's name.
+    if (invitedName && !realNameOrNull(userRow.name, email)) {
+      await db.run(
+        sql`UPDATE "user" SET name = ${invitedName} WHERE id = ${userId}`,
+      );
+    }
 
     // Add to org_members so the framework's getOrgContext can resolve orgId for this user
     const existingMember = await db.get<{ id: string }>(

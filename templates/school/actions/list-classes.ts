@@ -4,9 +4,11 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray } from "drizzle-orm";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
+import { isUnassignedTeacher } from "../shared/class-teacher.js";
 
 export default defineAction({
-  description: "List classes for the school or for a specific teacher.",
+  description:
+    "List classes for the school or for a specific teacher. Active classes by default; pass status for archived ones or 'all' for both.",
   schema: z.object({
     teacherUserId: z
       .string()
@@ -15,7 +17,11 @@ export default defineAction({
     subjectId: z.string().optional(),
     gradeLevelId: z.string().optional(),
     academicYearId: z.string().optional(),
-    status: z.enum(["active", "archived"]).optional(),
+    status: z
+      .enum(["active", "archived", "all"])
+      .optional()
+      .default("active")
+      .describe("Which classes to list. Defaults to the ones running."),
   }),
   http: { method: "GET" },
   run: async (args) => {
@@ -33,7 +39,9 @@ export default defineAction({
       conditions.push(eq(schema.classes.gradeLevelId, args.gradeLevelId));
     if (args.academicYearId)
       conditions.push(eq(schema.classes.academicYearId, args.academicYearId));
-    if (args.status) conditions.push(eq(schema.classes.status, args.status));
+    if (args.status && args.status !== "all") {
+      conditions.push(eq(schema.classes.status, args.status));
+    }
 
     const rows = await db
       .select({
@@ -82,8 +90,15 @@ export default defineAction({
       gradeLevelName: r.gradeLevelName ?? null,
       // Both spellings: `teacherName` is what the pages read, and
       // `primaryTeacherName` says which teacher it is.
-      teacherName: labelFor(labels, r.cls.primaryTeacherUserId),
-      primaryTeacherName: labelFor(labels, r.cls.primaryTeacherUserId),
+      // An unassigned class matches no user, so the label would be blank;
+      // saying so is the point of creating one unassigned.
+      teacherName: isUnassignedTeacher(r.cls.primaryTeacherUserId)
+        ? null
+        : labelFor(labels, r.cls.primaryTeacherUserId),
+      primaryTeacherName: isUnassignedTeacher(r.cls.primaryTeacherUserId)
+        ? null
+        : labelFor(labels, r.cls.primaryTeacherUserId),
+      teacherAssigned: !isUnassignedTeacher(r.cls.primaryTeacherUserId),
       enrollmentCount: countByClass[r.cls.id] ?? 0,
       studentCount: countByClass[r.cls.id] ?? 0,
     }));

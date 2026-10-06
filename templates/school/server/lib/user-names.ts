@@ -42,3 +42,17 @@ export function labelFor(
   const entry = map[userId];
   return entry?.name ?? entry?.email ?? null;
 }
+
+// The rule itself is shared with the UI, which greets people by name and must
+// not greet anyone as "student1".
+export { realNameOrNull } from "../../shared/person-name.js";
+
+/** The name and email of one user, by email address. */
+export async function userByEmail(
+  email: string,
+): Promise<{ name: string | null; email: string } | null> {
+  const row = (await getDb().get(
+    sql`SELECT name, email FROM "user" WHERE LOWER(email) = ${email.toLowerCase()} LIMIT 1`,
+  )) as { name: string | null; email: string } | undefined;
+  return row ?? null;
+}

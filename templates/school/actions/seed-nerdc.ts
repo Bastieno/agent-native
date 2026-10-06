@@ -168,6 +168,8 @@ export default defineAction({
         version: `${currentYear}-${currentYear + 1} syllabus`,
         sourceUrl: null,
         orgId: null,
+        // Shipped sample data, not the full published syllabus.
+        isSample: true,
         createdAt: new Date().toISOString(),
       });
 

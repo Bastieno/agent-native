@@ -10,6 +10,7 @@ import {
   emailStrong,
 } from "@agent-native/core/server";
 import { nanoid } from "nanoid";
+import { realNameOrNull, userByEmail } from "../server/lib/user-names.js";
 import { z } from "zod";
 
 interface PendingInvite {
@@ -85,14 +86,28 @@ export default defineAction({
 
     if (emailConfigured) {
       try {
+        // The school does the inviting, because that is the part always
+        // true. The person who sent it goes at the foot as what is actually
+        // recorded — a name only when someone gave one, otherwise the
+        // address alone. Signing up derives a name from the address, so
+        // leading with it would introduce "admin" as a colleague.
+        const inviter = await userByEmail(userEmail);
+        const inviterName = realNameOrNull(inviter?.name, userEmail);
+        const role = args.schoolRole.replace(/_/g, " ");
+        const article = /^[aeiou]/i.test(role) ? "an" : "a";
+
         const { html, text } = renderEmail({
           heading: `You're invited to join ${schoolName}`,
           paragraphs: [
-            `${emailStrong(userEmail)} has invited you to join their school as ${emailStrong(args.schoolRole.replace(/_/g, " "))}.`,
-            `Sign in with ${emailStrong(email)} to accept the invitation and access the school portal.`,
+            `${emailStrong(schoolName)} has invited you to join as ${article} ${emailStrong(role)}.`,
+            // There is no account yet: the first visit creates one, and the
+            // invitation is matched by the address it was sent to.
+            `Create your account with ${emailStrong(email)} to accept. That address is how the invitation reaches you, so use it exactly.`,
           ],
           cta: { label: "Accept invitation", url: appUrl },
-          footer: `If you weren't expecting this, you can safely ignore this email.`,
+          footer: `Invited by ${
+            inviterName ? `${inviterName} (${userEmail})` : userEmail
+          }. If you weren't expecting this, you can safely ignore this email.`,
         });
         await sendEmail({
           to: email,
@@ -115,11 +130,18 @@ export default defineAction({
       emailSent,
       emailError: emailError ?? null,
       inviteUrl: appUrl,
+      // This used to promise to run finalize-staff-invite after sign-in, which
+      // the guide forbids in the normal flow: the account activates itself.
+      // inviteUrl is the school's sign-in address, the same for everyone —
+      // an invitation is matched by the email address it was sent to, not by
+      // a token in the link. Saying so stops an agent reporting a missing
+      // token as a fault, and stops anyone expecting a personal link.
+      inviteUrlNote: `This is the school's sign-in address, the same for everyone. The invitation is matched by email address, so ${args.name} must sign in with ${email} for it to apply.`,
       message: emailSent
-        ? `Invitation sent to ${args.name} (${email}). Once they sign in, tell me and I'll run finalize-staff-invite to activate their account.`
+        ? `Invitation emailed to ${args.name} (${email}). They must sign in with that address for the invitation to apply. Their account activates on first sign-in; after that they can be given classes.`
         : emailError
-          ? `Invite recorded but email delivery failed: ${emailError}. Share this link manually: ${appUrl}`
-          : `No email provider configured. Share this link manually: ${appUrl}. Once they sign in, tell me and I'll run finalize-staff-invite to activate their account.`,
+          ? `Invite recorded, but the email failed to send: ${emailError}. Nobody has been told — send ${args.name} the school's sign-in address yourself: ${appUrl}, and tell them to sign in with ${email}.`
+          : `Invite recorded, but no email was sent — the school has no email provider set up. Send ${args.name} the school's sign-in address yourself: ${appUrl}, and tell them to sign in with ${email}. Their account activates on first sign-in; after that they can be given classes.`,
     };
   },
 });
