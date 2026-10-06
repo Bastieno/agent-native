@@ -17,7 +17,13 @@ export interface SchoolConfig {
   gradePrefix: "Grade" | "Form" | "Year" | "Class" | string;
   passMark: number;
   lateSubmissionPolicy: "accepted" | "penalty" | "not_accepted";
-  assessmentTerminology: "assignment" | "assessment" | "task" | "homework";
+  /** Weeks each term keeps for examinations, if the school has said. */
+  examWeeksPerTerm?: number;
+  /** The school's own word for one piece of work, and its plural. */
+  assessmentTerminology: string;
+  assessmentTerminologyPlural?: string;
+  /** What the school prints on. A4 until they say otherwise. */
+  paperSize?: "a4" | "letter";
   schoolTimezone: string;
   locale: string;
   customLabels: Record<string, string>;
@@ -39,6 +45,7 @@ const DEFAULT_CONFIG: SchoolConfig = {
   passMark: 50,
   lateSubmissionPolicy: "accepted",
   assessmentTerminology: "assessment",
+  assessmentTerminologyPlural: "assessments",
   schoolTimezone: "UTC",
   locale: "en",
   customLabels: {},
@@ -51,10 +58,16 @@ export function useSchoolConfig() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-school-config"),
       );
-      if (!res.ok) return DEFAULT_CONFIG;
+      // Returning the defaults here would cache them as the answer: a request
+      // that failed while the session was still settling left a student
+      // looking at "Student Portal" and A–F grades instead of their school's
+      // name and its own scale, for as long as the cache held. Throwing lets
+      // the query retry; the defaults are still what renders meanwhile.
+      if (!res.ok) throw new Error(`school config unavailable (${res.status})`);
       const json = await res.json();
       return { ...DEFAULT_CONFIG, ...json };
     },
+    retry: 3,
     staleTime: 5 * 60_000,
   });
 
