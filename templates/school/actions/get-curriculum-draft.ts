@@ -3,6 +3,7 @@ import { readAppState } from "@agent-native/core/application-state";
 import { getDb, schema } from "../server/db/index.js";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
+import { assertMayOpenDraft } from "../server/lib/curriculum-access.js";
 
 export default defineAction({
   description:
@@ -19,6 +20,7 @@ export default defineAction({
       .where(eq(schema.curriculumDrafts.id, args.id))
       .limit(1);
     if (!draft) throw new Error(`Curriculum draft not found: ${args.id}`);
+    await assertMayOpenDraft(draft.stateJson, draft.status);
     const liveState = await readAppState(`curriculum-draft-${args.id}`);
     return {
       id: draft.id,

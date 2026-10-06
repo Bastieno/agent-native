@@ -1,5 +1,7 @@
 import { defineAction } from "@agent-native/core";
+import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
+import { assertUnitInSchool } from "../server/lib/curriculum-access.js";
 import { eq, asc } from "drizzle-orm";
 import { z } from "zod";
 
@@ -10,6 +12,9 @@ export default defineAction({
   }),
   http: { method: "GET" },
   run: async (args) => {
+    const { orgId } = currentAccess();
+    if (!orgId) throw new Error("No school context.");
+    await assertUnitInSchool(args.unitId, orgId);
     const db = getDb();
     return db
       .select()

@@ -1,8 +1,12 @@
 import { defineAction } from "@agent-native/core";
+import { currentAccess } from "@agent-native/core/sharing";
 import { writeAppState } from "@agent-native/core/application-state";
 import { getDb, schema } from "../server/db/index.js";
 import { eq } from "drizzle-orm";
+import { pacingReport } from "../server/lib/pacing-report.js";
+import { weekPlanFromDraft } from "../shared/week-plan.js";
 import { z } from "zod";
+import { assertMayOpenDraft } from "../server/lib/curriculum-access.js";
 
 export default defineAction({
   description:
@@ -31,6 +35,19 @@ export default defineAction({
   http: { method: "PUT" },
   run: async (args) => {
     const db = getDb();
+    // A teacher may draft the subjects they teach; this is where that is
+    // checked, against the draft as it stands before this write.
+    const [existing] = await db
+      .select({
+        stateJson: schema.curriculumDrafts.stateJson,
+        status: schema.curriculumDrafts.status,
+      })
+      .from(schema.curriculumDrafts)
+      .where(eq(schema.curriculumDrafts.id, args.id))
+      .limit(1);
+    if (!existing) throw new Error(`Curriculum draft not found: ${args.id}`);
+    await assertMayOpenDraft(existing.stateJson, existing.status);
+
     const stateJsonStr = JSON.stringify(args.stateJson);
     await db
       .update(schema.curriculumDrafts)
@@ -42,6 +59,49 @@ export default defineAction({
       step: args.step ?? "in_progress",
       lastAction: args.lastAction ?? "update-curriculum-draft",
     });
-    return { success: true, id: args.id };
+    // Say what the draft now adds up to. A shape nobody could teach from is
+    // cheap to fix while it is still a draft.
+    const { orgId } = currentAccess();
+    const pacing = orgId
+      ? await pacingReport(args.stateJson, orgId)
+      : { terms: [], problems: [], observations: [] };
+
+    // Saying only "saved" left an agent unable to tell whether the weekly
+    // pacing it just wrote had been understood — the reply was identical
+    // before and after adding it.
+    const weekPlans: Array<{
+      unit: string;
+      weeks: Array<{ week: number; objectives: string[]; note: string | null }>;
+    }> = [];
+    for (const subject of (args.stateJson as any)?.subjects ?? []) {
+      for (const gl of subject?.gradeLevels ?? []) {
+        for (const unit of gl?.units ?? []) {
+          const plan = weekPlanFromDraft(unit);
+          if (!plan) continue;
+          weekPlans.push({
+            unit: unit?.title ?? "untitled unit",
+            // The objectives themselves, not a count: a count of 0 was the
+            // only sign that a plan written in an unexpected shape had been
+            // read as empty, and it took an agent noticing to catch it.
+            weeks: plan.map((w) => ({
+              week: w.week,
+              objectives: w.objectives,
+              note: w.note ?? null,
+            })),
+          });
+        }
+      }
+    }
+
+    const lines = [...pacing.problems, ...pacing.observations];
+    return {
+      success: true,
+      id: args.id,
+      pacing: pacing.terms,
+      weekPlans,
+      problems: pacing.problems,
+      observations: pacing.observations,
+      message: lines.length ? `Saved. ${lines.join(" ")}` : "Saved.",
+    };
   },
 });

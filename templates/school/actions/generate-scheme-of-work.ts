@@ -6,7 +6,14 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, asc, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
-import { paceObjectives, type WeekPlan } from "../shared/objective-pacing.js";
+import { paceObjectives } from "../shared/objective-pacing.js";
+import {
+  missingNotes,
+  planNotes,
+  writeNotes,
+} from "../server/lib/lesson-note-writer.js";
+import { writeStudentNotes } from "../server/lib/student-note-writer.js";
+import { weekPlanFromDraft } from "../shared/week-plan.js";
 
 /**
  * Build a term's scheme of work for one subject and year group.
@@ -41,13 +48,6 @@ function weeksBetween(startISO: string, endISO: string): number {
   return Math.max(1, Math.ceil(ms / (7 * 24 * 60 * 60 * 1000)));
 }
 
-/** The Monday-anchored date a given week of the term starts on. */
-function weekStartDate(termStartISO: string, week: number): string {
-  const start = new Date(termStartISO);
-  start.setDate(start.getDate() + (week - 1) * 7);
-  return start.toISOString().slice(0, 10);
-}
-
 /** Spread items over buckets as evenly as possible, front-loading remainders. */
 function spread<T>(items: T[], buckets: number): T[][] {
   const out: T[][] = Array.from({ length: buckets }, () => []);
@@ -66,7 +66,7 @@ function spread<T>(items: T[], buckets: number): T[][] {
 
 export default defineAction({
   description:
-    "Generate a term's scheme of work for a subject and year group: units laid out week by week, each with learning objectives and standards tags, plus draft lesson notes for every teaching week. Preview by default — pass confirm=true to write it. Supply `units` to control the pacing yourself (read framework objectives first); omit it for an even spread across the term's teaching weeks.",
+    "Generate a term's scheme of work for a subject and year group: units laid out week by week, each with learning objectives and standards tags, plus draft lesson notes for each week a unit covers, per class. For a subject that already has units, use plan-lesson-notes instead — this refuses rather than duplicate a curriculum. Preview by default — pass confirm=true to write it. Supply `units` to control the pacing yourself (read framework objectives first); omit it for an even spread across the term's teaching weeks.",
   schema: z.object({
     subjectId: z.string().describe("Subject to plan"),
     gradeLevelId: z.string().describe("Year group to plan for"),
@@ -79,7 +79,7 @@ export default defineAction({
       .number()
       .optional()
       .describe(
-        "Weeks at the end of term reserved for examinations. Defaults to the school's examWeeksPerTerm setting, else 1.",
+        "Weeks at the end of term reserved for examinations. Defaults to the school's examWeeksPerTerm setting; when the school has not set one, none are reserved.",
       ),
     units: z
       .array(
@@ -168,9 +168,13 @@ export default defineAction({
     // The term's own dates decide the length — never a fixed number of weeks.
     const config = (await getOrgSetting(orgId, "school-config")) as any;
     const totalWeeks = weeksBetween(term.startDate, term.endDate);
+    // Only what the school has said. Assuming a week here meant every school
+    // on the deployment had its last teaching week quietly taken away,
+    // including schools that examine mid-term or not at all. A school that
+    // keeps examination weeks records how many; until it does, none are.
     const examWeeks = Math.max(
       0,
-      args.examWeeks ?? config?.examWeeksPerTerm ?? 1,
+      args.examWeeks ?? config?.examWeeksPerTerm ?? 0,
     );
     const teachingWeeks = Math.max(1, totalWeeks - examWeeks);
 
@@ -277,6 +281,27 @@ export default defineAction({
         ),
       );
 
+    // The same plan the notes will be written from, so the preview's count is
+    // the count that gets written. Unit ids do not exist yet; positions stand
+    // in for them.
+    const notePlan = planNotes(
+      planned.map((u, i) => ({
+        id: String(i),
+        title: u.title,
+        weekStart: u.weekStart,
+        weekEnd: u.weekEnd,
+        objectives: u.objectives,
+        objectivesByWeek: u.objectivesByWeek,
+      })),
+      {
+        subjectName: subject.name,
+        gradeLevelName: gradeLevel.name,
+        termName: term.name,
+        termStart: term.startDate,
+        totalWeeks: teachingWeeks,
+      },
+    );
+
     const preview = {
       subject: subject.name,
       gradeLevel: gradeLevel.name,
@@ -308,28 +333,36 @@ export default defineAction({
         })),
       })),
       lessonNotesToCreate: args.createLessonNotes
-        ? teachingWeeks * classes.length
+        ? notePlan.notes.length * classes.length
         : 0,
+      weeksWithoutLessonNote: notePlan.uncoveredWeeks,
     };
 
     // Lesson notes belong to a class, so with no class there is nothing to
     // attach them to. Say so rather than reporting a bare zero.
     const noClassesNote =
       classes.length === 0
-        ? ` No ${subject.name} class exists for ${gradeLevel.name} yet, so no lesson notes will be created — create the class and re-run with replace=true to add them.`
+        ? ` No ${subject.name} class exists for ${gradeLevel.name} yet, so no lesson notes will be created — once the class exists, run plan-lesson-notes to add them. The units stay as they are.`
+        : "";
+    const gapNote = notePlan.uncoveredNote ? ` ${notePlan.uncoveredNote}` : "";
+    // An existing curriculum is not a reason to regenerate one. Most often the
+    // person wants lesson notes for it, and that needs no archiving at all.
+    const existingNote =
+      existingUnits.length > 0
+        ? ` ${subject.name} ${gradeLevel.name} already has ${existingUnits.length} unit(s) for ${term.name}: writing this would need replace=true, which archives them. To add lesson notes to the existing units instead, use plan-lesson-notes.`
         : "";
 
     if (!args.confirm) {
       return {
         preview: true,
         ...preview,
-        message: `Ready to create ${planned.length} units across ${teachingWeeks} teaching weeks (${examWeeks} exam week${examWeeks === 1 ? "" : "s"}) for ${classes.length} class${classes.length === 1 ? "" : "es"}.${noClassesNote} Re-run with confirm=true to write it.`,
+        message: `Ready to create ${planned.length} units across ${teachingWeeks} teaching weeks (${examWeeks} exam week${examWeeks === 1 ? "" : "s"}) for ${classes.length} class${classes.length === 1 ? "" : "es"}.${noClassesNote}${gapNote}${existingNote} Re-run with confirm=true to write it.`,
       };
     }
 
     if (existingUnits.length > 0 && !args.replace) {
       throw new Error(
-        `${subject.name} ${gradeLevel.name} already has ${existingUnits.length} unit(s) planned for ${term.name}. Re-run with replace=true to archive those and regenerate, or edit the existing units instead.`,
+        `${subject.name} ${gradeLevel.name} already has ${existingUnits.length} unit(s) planned for ${term.name}. To give them lesson notes, use plan-lesson-notes — nothing is archived. To throw them away and plan again, re-run with replace=true. To change them, edit the units.`,
       );
     }
 
@@ -366,6 +399,12 @@ export default defineAction({
         weekEnd: u.weekEnd,
         sequence: sequence++,
         standardsJson: JSON.stringify(u.standards ?? []),
+        // Keep the pacing on the unit, so lesson notes written later — after
+        // a class is created, say — follow it rather than an even spread.
+        weekPlanJson: (() => {
+          const plan = weekPlanFromDraft(u as any);
+          return plan ? JSON.stringify(plan) : null;
+        })(),
         status: "active",
         ownerEmail: userEmail ?? "",
         orgId,
@@ -384,56 +423,47 @@ export default defineAction({
     }
 
     // Draft lesson notes give teachers somewhere to start rather than an
-    // empty class page — one per teaching week, carrying that week's
-    // objectives.
+    // empty class page — one per week each unit covers, carrying that week's
+    // share of its objectives. Weeks with no unit get none.
     let lessonNotesCreated = 0;
-    if (args.createLessonNotes && createdUnits.length > 0) {
-      // Work out each unit's weekly share once, rather than per class: every
-      // class in the year group follows the same pacing.
-      const weekPlans = new Map<string, Map<number, WeekPlan>>();
-      for (const c of createdUnits) {
-        const plans = paceObjectives(
-          c.unit.objectives,
-          c.unit.weekStart,
-          c.unit.weekEnd,
-          c.unit.objectivesByWeek,
-        );
-        weekPlans.set(c.id, new Map(plans.map((p) => [p.week, p])));
-      }
-
-      for (const cls of classes) {
-        for (let week = 1; week <= teachingWeeks; week++) {
-          const match =
-            createdUnits.find(
-              (c) => week >= c.unit.weekStart && week <= c.unit.weekEnd,
-            ) ?? createdUnits[createdUnits.length - 1];
-          // This week's share of the unit, not the whole of it. A teacher
-          // planning week 8 of a three-week unit needs to know which two
-          // objectives are theirs.
-          const plan = weekPlans.get(match.id)?.get(week);
-          const thisWeek = plan?.objectives ?? match.unit.objectives;
-          const objectives = thisWeek.map((o) => `- ${o}`).join("\n");
-          const position = plan
-            ? `Week ${plan.weekOfUnit} of ${plan.weeksInUnit} in this unit${
-                plan.continues ? " — continuing from last week" : ""
-              }.`
-            : "";
-          await db.insert(schema.lessonNotes).values({
-            id: nanoid(),
-            classId: cls.id,
-            unitId: match.id,
-            title: `Week ${week} — ${match.unit.title}`,
-            content: `# Week ${week}: ${match.unit.title}\n\n${position}\n\n## This week's objectives\n${objectives}\n\n## Starter\n_To be planned._\n\n## Main activity\n_To be planned._\n\n## Assessment\n_To be planned._\n`,
-            summary: `${subject.name} · ${gradeLevel.name} · ${term.name}, week ${week}`,
-            lessonDate: weekStartDate(term.startDate, week),
-            status: "draft",
-            ownerEmail: userEmail ?? "",
-            orgId,
-            visibility: "org" as const,
-          });
-          lessonNotesCreated++;
-        }
-      }
+    let studentNotesCreated = 0;
+    if (args.createLessonNotes && createdUnits.length > 0 && classes.length) {
+      const { notes } = planNotes(
+        createdUnits.map((c) => ({
+          id: c.id,
+          title: c.unit.title,
+          weekStart: c.unit.weekStart,
+          weekEnd: c.unit.weekEnd,
+          objectives: c.unit.objectives,
+          objectivesByWeek: c.unit.objectivesByWeek,
+        })),
+        {
+          subjectName: subject.name,
+          gradeLevelName: gradeLevel.name,
+          termName: term.name,
+          termStart: term.startDate,
+          totalWeeks: teachingWeeks,
+        },
+      );
+      const created = await writeNotes(
+        await missingNotes(
+          classes.map((c: any) => c.id),
+          notes,
+        ),
+        { ownerEmail: userEmail ?? "", orgId },
+      );
+      lessonNotesCreated = created.length;
+      // Each week's note gets the page its class reads, unpublished until
+      // the teacher has looked at it.
+      studentNotesCreated = await writeStudentNotes(
+        created,
+        {
+          subjectName: subject.name,
+          gradeLevelName: gradeLevel.name,
+          termName: term.name,
+        },
+        { ownerEmail: userEmail ?? "", orgId },
+      );
     }
 
     await writeAppState("refresh-signal", { ts: Date.now() });
@@ -444,7 +474,12 @@ export default defineAction({
       unitsCreated: createdUnits.length,
       objectivesCreated: planned.reduce((n, u) => n + u.objectives.length, 0),
       lessonNotesCreated,
-      message: `Created ${createdUnits.length} units and ${lessonNotesCreated} draft lesson notes for ${subject.name} ${gradeLevel.name}, ${term.name}.${noClassesNote}`,
+      studentNotesCreated,
+      message: `Created ${createdUnits.length} units and ${lessonNotesCreated} draft lesson notes for ${subject.name} ${gradeLevel.name}, ${term.name}.${
+        studentNotesCreated
+          ? ` Each week also has a page for the class to read — ${studentNotesCreated} of them, unpublished until a teacher has read them.`
+          : ""
+      }${noClassesNote}${gapNote}`,
     };
   },
 });

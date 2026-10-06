@@ -1,5 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
+import { canOpenCurriculumDraft } from "../server/lib/curriculum-access.js";
+import { actorForEmail } from "../server/lib/class-access.js";
 import { getDb, schema } from "../server/db/index.js";
 import { and, desc, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -38,11 +40,28 @@ export default defineAction({
       conditions.push(eq(schema.curriculumDrafts.status, args.status));
     }
 
-    const rows = await db
+    const all = await db
       .select()
       .from(schema.curriculumDrafts)
       .where(and(...conditions))
       .orderBy(desc(schema.curriculumDrafts.updatedAt));
+
+    // A teacher sees sessions for the subjects they teach. Listing the rest
+    // and refusing to open them would only advertise work that is not
+    // theirs.
+    const { userEmail } = currentAccess();
+    const actor = userEmail ? await actorForEmail(userEmail) : null;
+    const rows = actor
+      ? (
+          await Promise.all(
+            all.map(async (row: any) =>
+              (await canOpenCurriculumDraft(actor, row.stateJson, row.status))
+                ? row
+                : null,
+            ),
+          )
+        ).filter(Boolean)
+      : all;
 
     const drafts = rows.map((row: any) => {
       // The draft's shape is the agent's to decide, so count tolerantly
@@ -55,12 +74,23 @@ export default defineAction({
         const subjectList = Array.isArray(state.subjects) ? state.subjects : [];
         subjects = subjectList.length;
         for (const subject of subjectList) {
-          const unitList = Array.isArray(subject?.units) ? subject.units : [];
+          // Units nest under year groups in the documented shape; a flat
+          // `units` list is still counted for older drafts.
+          const unitList = [
+            ...(Array.isArray(subject?.units) ? subject.units : []),
+            ...(Array.isArray(subject?.gradeLevels)
+              ? subject.gradeLevels.flatMap((gl: any) =>
+                  Array.isArray(gl?.units) ? gl.units : [],
+                )
+              : []),
+          ];
           units += unitList.length;
           for (const unit of unitList) {
-            const objectiveList = Array.isArray(unit?.objectives)
-              ? unit.objectives
-              : [];
+            const objectiveList = Array.isArray(unit?.learningObjectives)
+              ? unit.learningObjectives
+              : Array.isArray(unit?.objectives)
+                ? unit.objectives
+                : [];
             objectives += objectiveList.length;
           }
         }
