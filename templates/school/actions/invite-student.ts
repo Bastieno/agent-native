@@ -12,6 +12,7 @@ import { getDbExec } from "@agent-native/core/db";
 import { nanoid } from "nanoid";
 import { realNameOrNull, userByEmail } from "../server/lib/user-names.js";
 import { z } from "zod";
+import { withOrgSettingLock } from "../server/lib/org-setting-lock.js";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq, isNull, or } from "drizzle-orm";
 import { jsonish } from "../shared/zod-json.js";
@@ -56,17 +57,6 @@ export default defineAction({
     if (!orgId) throw new Error("No org context. Are you logged in?");
 
     const email = args.email.trim().toLowerCase();
-
-    const existingList = ((await getOrgSetting(
-      orgId,
-      "pending-student-invites",
-    )) ?? []) as PendingStudentInvite[];
-
-    if (existingList.some((inv) => inv.email === email)) {
-      throw new Error(
-        `An invitation is already pending for ${email}. They should check their inbox (or spam folder).`,
-      );
-    }
 
     // The year group by whatever the school calls it. Resolved now rather
     // than at sign-in, so a name nobody has is refused while the person who
@@ -131,10 +121,25 @@ export default defineAction({
       ...(gradeLevelId ? { gradeLevelId, gradeLevelName } : {}),
       ...(Object.keys(fieldValues).length ? { fields: fieldValues } : {}),
     };
-    await putOrgSetting(orgId, "pending-student-invites", [
-      ...existingList,
-      invite,
-    ] as any);
+    // One writer at a time: read, append and write are a single operation.
+    // In parallel — the way an agent invites a class — two invitations read
+    // the same list and the second write dropped the first. Ten at once lost
+    // two; forty lost twelve, with nothing reported to anybody.
+    await withOrgSettingLock(`${orgId}:pending-student-invites`, async () => {
+      const existingList = ((await getOrgSetting(
+        orgId,
+        "pending-student-invites",
+      )) ?? []) as PendingStudentInvite[];
+      if (existingList.some((inv) => inv.email === email)) {
+        throw new Error(
+          `An invitation is already pending for ${email}. They should check their inbox (or spam folder).`,
+        );
+      }
+      await putOrgSetting(orgId, "pending-student-invites", [
+        ...existingList,
+        invite,
+      ] as any);
+    });
 
     // Without this the framework has no record that the address belongs to
     // this school, so signing up creates the student a brand-new org of their

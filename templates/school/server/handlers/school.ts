@@ -10,6 +10,7 @@ import {
 import { nanoid } from "nanoid";
 import { putUserSetting } from "@agent-native/core/settings";
 import { realNameOrNull } from "../lib/user-names.js";
+import { withOrgSettingLock } from "../lib/org-setting-lock.js";
 import {
   assertClassAccess,
   assertAssessmentAccess,
@@ -181,7 +182,17 @@ async function autoActivateInvitedStaff(
     const remaining = invites.filter(
       (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
     );
-    await putOrgSetting(orgId, "pending-staff-invites", remaining as any);
+    await withOrgSettingLock(`${orgId}:pending-staff-invites`, async () => {
+      const current = ((await getOrgSetting(orgId, "pending-staff-invites")) ??
+        []) as any[];
+      await putOrgSetting(
+        orgId,
+        "pending-staff-invites",
+        current.filter(
+          (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
+        ) as any,
+      );
+    });
     return { schoolRole, schoolId: orgId };
   }
   return null;
@@ -235,11 +246,23 @@ async function autoActivateInvitedStudents(
       orgId,
       visibility: "org",
     });
-    // Remove from pending list
-    const remaining = invites.filter(
-      (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
-    );
-    await putOrgSetting(orgId, "pending-student-invites", remaining as any);
+    // Taking this invitation off the list is a read-modify-write like
+    // adding one, so it takes the same lock: two learners signing in at the
+    // same moment would otherwise each write back a list still containing
+    // the other, and one of them would be activated twice on a later visit.
+    await withOrgSettingLock(`${orgId}:pending-student-invites`, async () => {
+      const current = ((await getOrgSetting(
+        orgId,
+        "pending-student-invites",
+      )) ?? []) as any[];
+      await putOrgSetting(
+        orgId,
+        "pending-student-invites",
+        current.filter(
+          (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
+        ) as any,
+      );
+    });
     return { schoolRole: "student", schoolId: orgId };
   }
   return null;

@@ -12,6 +12,7 @@ import {
 import { nanoid } from "nanoid";
 import { realNameOrNull, userByEmail } from "../server/lib/user-names.js";
 import { z } from "zod";
+import { withOrgSettingLock } from "../server/lib/org-setting-lock.js";
 
 interface PendingInvite {
   id: string;
@@ -39,16 +40,32 @@ export default defineAction({
 
     const email = args.email.trim().toLowerCase();
 
-    // Check for duplicate in our own pending list
-    const existingList = ((await getOrgSetting(
-      orgId,
-      "pending-staff-invites",
-    )) ?? []) as PendingInvite[];
-    if (existingList.some((inv) => inv.email === email)) {
-      throw new Error(
-        `An invitation is already pending for ${email}. They should check their inbox (or spam folder).`,
-      );
-    }
+    // Reading the list, appending and writing it back is one operation, not
+    // three. Sent in parallel — which is how an agent invites a class — two
+    // invitations both read the same list and the second write dropped the
+    // first, silently.
+    const invite: PendingInvite = {
+      id: nanoid(),
+      email,
+      name: args.name,
+      schoolRole: args.schoolRole,
+      invitedAt: Date.now(),
+    };
+    await withOrgSettingLock(`${orgId}:pending-staff-invites`, async () => {
+      const existingList = ((await getOrgSetting(
+        orgId,
+        "pending-staff-invites",
+      )) ?? []) as PendingInvite[];
+      if (existingList.some((inv) => inv.email === email)) {
+        throw new Error(
+          `An invitation is already pending for ${email}. They should check their inbox (or spam folder).`,
+        );
+      }
+      await putOrgSetting(orgId, "pending-staff-invites", [
+        ...existingList,
+        invite,
+      ] as any);
+    });
 
     // Try to insert into the framework org_invitations table (best-effort)
     try {
@@ -60,19 +77,6 @@ export default defineAction({
     } catch {
       // Non-fatal — our own pending list is the source of truth for the UI
     }
-
-    // Store in our pending invites list (source of truth for the staff page)
-    const invite: PendingInvite = {
-      id: nanoid(),
-      email,
-      name: args.name,
-      schoolRole: args.schoolRole,
-      invitedAt: Date.now(),
-    };
-    await putOrgSetting(orgId, "pending-staff-invites", [
-      ...existingList,
-      invite,
-    ] as any);
 
     const schoolConfig = (await getOrgSetting(orgId, "school-config")) as {
       name?: string;
