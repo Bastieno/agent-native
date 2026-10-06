@@ -12,7 +12,7 @@ import { z } from "zod";
 
 export default defineAction({
   description:
-    "Teacher-facing: the students across the classes you teach, with their class, category, average and completion.",
+    "Teacher-facing: the students across the classes you teach, with their classes, category, average and completion. Each student appears once, however many of your classes they are in; `classes` names every one of them, so the caller can narrow to a single class without asking again.",
   schema: z.object({}),
   http: { method: "GET" },
   run: async () => {
@@ -187,6 +187,12 @@ export default defineAction({
             : null,
         completionRate:
           expected > 0 ? Math.round((done / expected) * 100) : null,
+        // Every class of yours this student is in. A teacher with several
+        // classes needs to be able to narrow to one, and a comma-joined
+        // string cannot be filtered on without guessing where names end.
+        classes: studentClassIds
+          .filter((id: string) => classNameById[id])
+          .map((id: string) => ({ id, name: classNameById[id]! })),
         className:
           studentClassIds
             .map((id: string) => classNameById[id])

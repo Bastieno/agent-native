@@ -16,7 +16,20 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { IconCalendar, IconChevronRight } from "@tabler/icons-react";
+import {
+  IconCalendar,
+  IconChevronRight,
+  IconFileText,
+} from "@tabler/icons-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { Markdown } from "@/components/Markdown";
+import { useSchoolDates } from "@/hooks/use-school-dates";
 
 async function getJson(path: string) {
   const res = await fetch(agentNativePath(path));
@@ -62,9 +75,17 @@ export default function AdminCalendar() {
   const [gradeLevelId, setGradeLevelId] = useState("");
   const [subjectId, setSubjectId] = useState(ALL);
 
+  // The lesson note open for reading, if any. A head teacher checking
+  // preparation needs to see what "draft" actually says, not only that it is.
+  const [openLessonId, setOpenLessonId] = useState<string | null>(null);
+
   useEffect(() => {
-    sync({ role: "admin", view: "calendar" });
-  }, [sync]);
+    sync({
+      role: "admin",
+      view: "calendar",
+      ...(openLessonId ? { lessonId: openLessonId } : {}),
+    });
+  }, [sync, openLessonId]);
 
   const { data: terms = [] } = useQuery<any[]>({
     queryKey: ["terms"],
@@ -142,9 +163,9 @@ export default function AdminCalendar() {
       w.entries.map((e: any) => e.subjectName),
     ),
   );
-  const unplanned = subjects
-    .filter((s: any) => !plannedSubjects.has(s.name))
-    .map((s: any) => s.name);
+  // From the server, which knows which subjects this year group takes.
+  const unplanned: string[] = calendar?.unplannedSubjects ?? [];
+  const notStated: string[] = calendar?.yearGroupsNotStated ?? [];
 
   return (
     <div className="h-full overflow-auto p-6 space-y-5">
@@ -228,12 +249,13 @@ export default function AdminCalendar() {
             ))}
           </div>
 
-          {unplanned.length > 0 && subjectId === ALL && (
-            <p className="text-xs text-muted-foreground">
-              No plan yet for {gradeLevelName}:{" "}
-              <span className="text-foreground">{unplanned.join(", ")}</span>
-            </p>
-          )}
+          {subjectId === ALL ? (
+            <UnplannedLine
+              gradeLevelName={gradeLevelName}
+              unplanned={unplanned}
+              notStated={notStated}
+            />
+          ) : null}
 
           {/* With a dozen subjects, a week-by-week list becomes a wall of
               chips. Show the whole term as a grid first — subjects down,
@@ -528,6 +550,32 @@ export default function AdminCalendar() {
                                     )}
                                   </ul>
                                 )}
+                                {entry.lessons.length > 0 ? (
+                                  <div className="flex flex-wrap gap-1.5 pt-1">
+                                    {entry.lessons.map((lesson: any) => (
+                                      <button
+                                        key={lesson.id}
+                                        type="button"
+                                        onClick={() =>
+                                          setOpenLessonId(lesson.id)
+                                        }
+                                        className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-xs transition-colors hover:border-primary/50"
+                                      >
+                                        <IconFileText
+                                          size={13}
+                                          className="text-muted-foreground"
+                                        />
+                                        {lesson.className ?? "Lesson note"}
+                                        <span className="text-muted-foreground">
+                                          ·{" "}
+                                          {lesson.status === "finalized"
+                                            ? "ready"
+                                            : "draft"}
+                                        </span>
+                                      </button>
+                                    ))}
+                                  </div>
+                                ) : null}
                               </div>
                             ))
                           )}
@@ -541,6 +589,123 @@ export default function AdminCalendar() {
           )}
         </>
       )}
+      <LessonNoteSheet
+        lessonId={openLessonId}
+        onClose={() => setOpenLessonId(null)}
+      />
+    </div>
+  );
+}
+
+/**
+ * A lesson note, read-only. Teachers write lesson notes in their class; an
+ * admin reads them here to see how a week is prepared. Editing stays with the
+ * teacher, so there is one place a note is written.
+ */
+function LessonNoteSheet({
+  lessonId,
+  onClose,
+}: {
+  lessonId: string | null;
+  onClose: () => void;
+}) {
+  const { formatDate } = useSchoolDates();
+  const { data: note, isLoading } = useQuery<any>({
+    queryKey: ["lesson-note", lessonId],
+    queryFn: () =>
+      getJson(`/_agent-native/actions/get-lesson-note?id=${lessonId}`),
+    enabled: !!lessonId,
+  });
+
+  const date = note?.lessonDate
+    ? formatDate(note.lessonDate, {
+        weekday: "short",
+        day: "numeric",
+        month: "short",
+      })
+    : null;
+
+  return (
+    <Sheet open={!!lessonId} onOpenChange={(open) => !open && onClose()}>
+      <SheetContent className="w-full overflow-y-auto sm:max-w-xl">
+        <SheetHeader className="text-left">
+          <SheetTitle className="pr-6">
+            {note?.title ?? (isLoading ? "Loading…" : "Lesson note")}
+          </SheetTitle>
+          <SheetDescription>
+            {[
+              note?.className,
+              date,
+              note ? (note.status === "finalized" ? "Ready" : "Draft") : null,
+            ]
+              .filter(Boolean)
+              .join(" · ")}
+          </SheetDescription>
+        </SheetHeader>
+        <div className="mt-6">
+          {note ? (
+            <Markdown>{note.content}</Markdown>
+          ) : !isLoading ? (
+            <p className="text-sm text-muted-foreground">
+              This lesson note could not be opened.
+            </p>
+          ) : null}
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
+}
+
+/**
+ * Which of this year group's subjects still have no plan this term.
+ *
+ * It used to list every subject in the school — twenty-six names, Physics and
+ * Government among JSS1's — so the few that mattered were lost. Now it names
+ * only subjects the year group takes, shows the first few, and keeps the rest
+ * one tap away. Subjects whose year groups the school has not recorded are
+ * counted separately, since they cannot be said to be missing.
+ */
+function UnplannedLine({
+  gradeLevelName,
+  unplanned,
+  notStated,
+}: {
+  gradeLevelName: string;
+  unplanned: string[];
+  notStated: string[];
+}) {
+  const [expanded, setExpanded] = useState(false);
+  if (unplanned.length === 0 && notStated.length === 0) return null;
+  const SHOWN = 4;
+  const visible = expanded ? unplanned : unplanned.slice(0, SHOWN);
+  const hidden = unplanned.length - visible.length;
+
+  return (
+    <div className="space-y-1 text-xs text-muted-foreground">
+      {unplanned.length > 0 ? (
+        <p>
+          No plan yet for {gradeLevelName}:{" "}
+          <span className="text-foreground">{visible.join(", ")}</span>
+          {hidden > 0 ? (
+            <button
+              type="button"
+              onClick={() => setExpanded(true)}
+              className="ml-1 underline-offset-2 hover:text-foreground hover:underline"
+            >
+              and {hidden} more
+            </button>
+          ) : null}
+        </p>
+      ) : null}
+      {notStated.length > 0 ? (
+        <p>
+          {notStated.length} subject{notStated.length === 1 ? "" : "s"} do
+          {notStated.length === 1 ? "es" : ""} not say which year groups take
+          {notStated.length === 1 ? " it" : " them"} yet, so{" "}
+          {notStated.length === 1 ? "it is" : "they are"} not counted here. Ask
+          the agent to record them.
+        </p>
+      ) : null}
     </div>
   );
 }

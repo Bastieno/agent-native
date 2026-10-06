@@ -4,6 +4,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
+import { numberish } from "../shared/zod-json.js";
 
 export default defineAction({
   description:
@@ -11,7 +12,7 @@ export default defineAction({
   schema: z.object({
     gradeLevelId: z.string().optional(),
     status: z.enum(["active", "graduated", "withdrawn"]).optional(),
-    limit: z.number().optional().default(50),
+    limit: numberish().optional().default(50),
   }),
   http: { method: "GET" },
   run: async (args) => {

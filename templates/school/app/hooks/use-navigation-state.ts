@@ -15,10 +15,25 @@ export interface AdminNav {
     | "staff"
     | "students"
     | "classes"
+    // Lesson-note readiness across the school, and a single note opened from
+    // it — an admin may write and mark ready on a teacher's behalf.
+    | "lessons"
+    | "lesson"
+    // An activity opened from a lesson's "what your class sees".
+    | "assessment"
     | "analytics"
     | "settings"
     | "extensions";
   subjectId?: string;
+  /** The class whose lesson notes are open. */
+  classId?: string;
+  /** The year group open on a subject's curriculum page. */
+  gradeLevelId?: string;
+  /** The activity being read, and which of its variants is open. */
+  assessmentId?: string;
+  variantId?: string;
+  /** A lesson note open for reading, from the calendar. */
+  lessonId?: string;
   departmentId?: string;
   studentId?: string;
   staffUserId?: string;
@@ -37,7 +52,10 @@ export interface TeacherNav {
     | "assessment"
     | "gradebook"
     | "students"
-    | "analytics";
+    | "analytics"
+    // Drafting a curriculum is subject work, so a teacher reaches these too.
+    | "curriculum"
+    | "curriculum-setup";
   classId?: string;
   unitId?: string;
   lessonId?: string;
@@ -45,6 +63,9 @@ export interface TeacherNav {
   variantId?: string;
   studentId?: string;
   termId?: string;
+  subjectId?: string;
+  /** The drafting session open in the workspace. */
+  curriculumDraftId?: string;
   lessonDraftStatus?: "draft" | "finalized";
   _ts?: number;
 }

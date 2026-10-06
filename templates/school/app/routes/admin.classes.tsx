@@ -1,6 +1,7 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
+import { NO_TEACHER_LABEL } from "@shared/class-teacher";
 import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { ListState } from "@/components/ListState";
@@ -71,7 +72,9 @@ export default function AdminClasses() {
     queryKey: ["admin-classes"],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath("/_agent-native/actions/list-classes"),
+        // Archived classes too: this page shows the status and is where a
+        // class is archived, so hiding them would leave no way back.
+        agentNativePath("/_agent-native/actions/list-classes?status=all"),
       );
       if (!res.ok) return [];
       return res.json();
@@ -290,7 +293,11 @@ export default function AdminClasses() {
                             {cls.subjectName ?? "—"}
                           </td>
                           <td className="px-4 py-2.5 text-muted-foreground">
-                            {cls.teacherName ?? "—"}
+                            {/* A class can be planned before it is staffed;
+                                a dash would read as missing data. */}
+                            {cls.teacherName ?? (
+                              <span className="italic">{NO_TEACHER_LABEL}</span>
+                            )}
                           </td>
                           <td className="px-4 py-2.5">
                             <span className="inline-flex items-center gap-1 text-muted-foreground">

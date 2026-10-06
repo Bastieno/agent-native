@@ -102,6 +102,9 @@ export function PortalShell({
 
       {/* Agent button, for the widths where the panel is an overlay. Sits
           clear of the bottom edge and above page content. */}
+      {/* Only where the sidebar is not on screen. Above xl the sidebar's own
+          header carries the toggle, so a floating bubble would sit over the
+          page for no reason — and over the open panel. */}
       <AgentToggleButton className="fixed bottom-6 right-6 z-30 h-12 w-12 rounded-full border bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:text-primary-foreground xl:hidden" />
     </div>
   );

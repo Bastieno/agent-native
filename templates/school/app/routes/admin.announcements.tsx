@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { IconBell, IconPlus, IconTrash } from "@tabler/icons-react";
+import { useSchoolDates } from "@/hooks/use-school-dates";
 
 async function callAction(name: string, params: Record<string, unknown>) {
   const res = await fetch(agentNativePath(`/_agent-native/actions/${name}`), {
@@ -49,6 +50,7 @@ async function callAction(name: string, params: Record<string, unknown>) {
 }
 
 export default function AdminAnnouncements() {
+  const { formatDate } = useSchoolDates();
   const { sync } = useNavigationState();
   const qc = useQueryClient();
 
@@ -182,7 +184,7 @@ export default function AdminAnnouncements() {
               </div>
               {a.createdAt && (
                 <p className="text-xs text-muted-foreground">
-                  {new Date(a.createdAt).toLocaleDateString()}
+                  {formatDate(a.createdAt, { dateStyle: "medium" })}
                 </p>
               )}
             </div>

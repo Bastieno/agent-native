@@ -79,6 +79,11 @@ export default function AdminStaff() {
 
   // Change role dialog
   const [changeRoleTarget, setChangeRoleTarget] = useState<any>(null);
+  // Renaming, because a name is set at sign-up from the email address or
+  // typed on an invitation, and a misspelling followed people everywhere.
+  const [renameTarget, setRenameTarget] = useState<any>(null);
+  const [newName, setNewName] = useState("");
+  const [renameLoading, setRenameLoading] = useState(false);
   const [newRole, setNewRole] = useState("");
   const [changeRoleLoading, setChangeRoleLoading] = useState(false);
 
@@ -142,6 +147,24 @@ export default function AdminStaff() {
       toast.error(e.message ?? "Failed to update role");
     } finally {
       setChangeRoleLoading(false);
+    }
+  }
+
+  async function handleRename() {
+    if (!renameTarget || !newName.trim()) return;
+    setRenameLoading(true);
+    try {
+      await callAction("update-person-name", {
+        userId: renameTarget.userId,
+        name: newName,
+      });
+      qc.invalidateQueries({ queryKey: ["admin-staff"] });
+      toast.success("Name updated");
+      setRenameTarget(null);
+    } catch (e: any) {
+      toast.error(e.message ?? "Failed to update the name");
+    } finally {
+      setRenameLoading(false);
     }
   }
 
@@ -224,6 +247,14 @@ export default function AdminStaff() {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
+                        <DropdownMenuItem
+                          onClick={() => {
+                            setRenameTarget(member);
+                            setNewName(member.name ?? "");
+                          }}
+                        >
+                          Rename
+                        </DropdownMenuItem>
                         <DropdownMenuItem
                           onClick={() => {
                             setChangeRoleTarget(member);
@@ -375,6 +406,46 @@ export default function AdminStaff() {
               disabled={inviteLoading || !inviteName || !inviteEmail}
             >
               {inviteLoading ? "Sending…" : "Send Invite"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Rename Dialog */}
+      <Dialog
+        open={!!renameTarget}
+        onOpenChange={(o) => !o && setRenameTarget(null)}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Rename</DialogTitle>
+            <DialogDescription>
+              How this person is shown across the school — staff list,
+              gradebook, marking and report cards. Report cards already issued
+              keep the name they were issued with.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-1.5 py-2">
+            <Label>Name for {renameTarget?.email ?? "this person"}</Label>
+            <Input
+              value={newName}
+              autoFocus
+              placeholder="Mrs Adaeze Okoro"
+              onChange={(e) => setNewName(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleRename();
+              }}
+            />
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setRenameTarget(null)}>
+              Cancel
+            </Button>
+            <Button
+              onClick={handleRename}
+              disabled={renameLoading || !newName.trim()}
+            >
+              {renameLoading ? "Saving…" : "Save"}
             </Button>
           </DialogFooter>
         </DialogContent>

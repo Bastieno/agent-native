@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import {
   IconLayoutDashboard,
   IconBook,
+  IconNotebook,
   IconCalendar,
   IconUsers,
   IconSchool,
@@ -23,6 +24,7 @@ const navItems = [
   { href: "/admin/staff", label: "Staff", icon: IconUsers },
   { href: "/admin/students", label: "Students", icon: IconUsers },
   { href: "/admin/classes", label: "Classes", icon: IconSchool },
+  { href: "/admin/lessons", label: "Lesson notes", icon: IconNotebook },
   { href: "/admin/analytics", label: "Analytics", icon: IconChartBar },
   { href: "/admin/announcements", label: "Announcements", icon: IconBell },
   { href: "/admin/extensions", label: "Extensions", icon: IconPuzzle },

@@ -22,6 +22,11 @@ export default function TeacherLayout() {
     // A printable is a route of its own, outside the portal shell.
     if (nav.view === "document" && nav.documentId)
       navigate(`/print/${nav.documentId}`);
+    // Printed from the stored blocks, not from retyped markdown.
+    else if (nav.view === "print-material" && nav.lessonId)
+      navigate(`/print/material/${nav.lessonId}`);
+    else if (nav.view === "print-activity" && nav.assessmentId)
+      navigate(`/print/activity/${nav.assessmentId}`);
     else if (nav.view === "dashboard") navigate("/teacher");
     else if (nav.view === "classes") navigate("/teacher/classes");
     else if (nav.view === "class" && nav.classId)

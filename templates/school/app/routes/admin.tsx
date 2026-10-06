@@ -40,19 +40,43 @@ export default function AdminLayout() {
     if (!nav.view) return;
     const viewMap: Record<string, string> = {
       overview: "/admin",
-      curriculum: "/admin/curriculum",
+      // A subject opens its own page; without one, the list of subjects —
+      // narrowed to a year group when one is given.
+      curriculum: nav.subjectId
+        ? `/admin/curriculum/${nav.subjectId}${
+            nav.gradeLevelId ? `?year=${nav.gradeLevelId}` : ""
+          }`
+        : nav.gradeLevelId
+          ? `/admin/curriculum?year=${nav.gradeLevelId}`
+          : "/admin/curriculum",
       "curriculum-setup": nav.curriculumDraftId
         ? `/admin/curriculum-setup?draftId=${nav.curriculumDraftId}`
         : "/admin/curriculum-setup",
       staff: "/admin/staff",
       students: "/admin/students",
       classes: "/admin/classes",
+      // A note opens on its own; without one, how ready each class is.
+      lessons: nav.lessonId
+        ? `/admin/lessons/${nav.lessonId}`
+        : nav.classId
+          ? `/admin/lessons?classId=${nav.classId}`
+          : "/admin/lessons",
+      lesson: nav.lessonId
+        ? `/admin/lessons/${nav.lessonId}`
+        : "/admin/lessons",
       analytics: "/admin/analytics",
       announcements: "/admin/announcements",
       settings: "/admin/settings",
       extensions: "/admin/extensions",
       // A printable is a route of its own, outside the portal shell.
       ...(nav.documentId ? { document: `/print/${nav.documentId}` } : {}),
+      // Printed from the stored blocks, not from retyped markdown.
+      ...(nav.lessonId
+        ? { "print-material": `/print/material/${nav.lessonId}` }
+        : {}),
+      ...(nav.assessmentId
+        ? { "print-activity": `/print/activity/${nav.assessmentId}` }
+        : {}),
     };
     const path = viewMap[nav.view];
     if (path) navigate(path);

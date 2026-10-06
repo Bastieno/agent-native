@@ -9,13 +9,24 @@ export default defineAction({
     view: z
       .string()
       .describe(
-        "The view to navigate to. Admin: overview, curriculum, curriculum-setup, staff, students, classes, analytics, settings, extensions. Teacher: dashboard, classes, class, unit, lesson, assessment, gradebook, students, analytics. Student: dashboard, classes, class, assessment, submission, grades, progress. Any staff role: document (a printable made with create-activity's sibling, create-document) — pass documentId.",
+        "The view to navigate to. Admin: overview, curriculum, curriculum-setup, staff, students, classes, lessons (lesson-note readiness; pass classId for one class or lessonId for one note), analytics, settings, extensions. Teacher: dashboard, classes, class, unit, lesson, assessment, gradebook, students, analytics. Student: dashboard, classes, class, assessment, submission, grades, progress. Any staff role: document (a printable made with create-activity's sibling, create-document) — pass documentId; print-material (a week's worksheets, reading and card decks printed from what is stored) — pass lessonId; print-activity (one of them) — pass assessmentId.",
       ),
     classId: z
       .string()
       .optional()
       .describe("Class ID for class/lesson/assessment/gradebook views"),
-    subjectId: z.string().optional().describe("Subject ID for curriculum view"),
+    subjectId: z
+      .string()
+      .optional()
+      .describe(
+        "Subject ID for the curriculum view — opens that subject's own page",
+      ),
+    gradeLevelId: z
+      .string()
+      .optional()
+      .describe(
+        "Year group to show: on the curriculum list, only that year group's subjects; on a subject's page, that year group's tab",
+      ),
     documentId: z
       .string()
       .optional()

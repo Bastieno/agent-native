@@ -178,27 +178,85 @@ the school's own conventions survive, rather than US defaults.
 
 ### A5. Subjects
 
-> Add two subjects: Mathematics and English Language.
+> Add two subjects: Mathematics and English Language, both taken by JSS1 to
+> SS3.
 
-**Check:** Curriculum page lists both.
+**Check:** Curriculum page lists both. Then open **Calendar**: with no plan
+written yet, it should name both as having no plan for JSS1. If the agent did
+not record the year groups, the calendar says how many subjects do not say
+which year groups take them — that is the agent missing a step, not the
+calendar.
 
-### A6. Curriculum (the big one)
+A school that already has many subjects — YellowVille has 26 — needs them
+recorded in one go:
 
-Two ways to do this. Try the generator first — it is the one that makes a new
-school look like a working school.
+> Record which year groups take each subject. Propose it from NERDC and WAEC
+> and show me before saving.
+
+**Check:** it proposes junior subjects (Basic Science, Social Studies) for
+JSS1–3 and senior ones (Physics, Government) for SS1–3, asks before saving, and
+afterwards the Calendar for JSS1 lists only JSS1 subjects.
+
+### A6. Invite the two teachers
+
+> Invite teacher.maths@pilot.test as a teacher named Mr Musa, and
+> teacher.english@pilot.test as a teacher named Mrs Okoro.
+
+**Check:** both appear under Pending on the Staff page.
+
+### A7. Invite the three students
+
+> Invite student1@pilot.test, student2@pilot.test and student3@pilot.test as
+> students named Ada, Bola and Chidi.
+
+### A8. Sign the others in
+
+Open a **private/incognito window** for each teacher and student and sign up
+with their invited email. Using separate windows keeps sessions apart.
+
+**Check after each signup:** the admin's Staff/Students page moves them from
+Pending to Active, and they land in the right portal (teacher vs student).
+
+### A9. Create the classes
+
+> Create JSS1A Mathematics with Mr Musa as teacher, and JSS1A English with
+> Mrs Okoro, both for JSS1 in the 2026/2027 year.
+
+**Check:** Classes page lists both with the right teacher.
+
+A class needs its teacher's account, which is why this comes after the sign-ins
+in A8 — a teacher who has only been invited cannot be given a class yet.
+
+### A10. Enrol the students
+
+Back as admin:
+
+> Enrol Ada, Bola and Chidi in both JSS1A Mathematics and JSS1A English.
+
+**Check:** each class shows 3 students.
+
+### A11. Curriculum (the big one)
+
+This comes after the classes on purpose. A lesson note belongs to a class, so a
+curriculum written before its class exists has nowhere to put its lesson notes.
+
+There are two ways to build a curriculum. Try the generator first — it is the
+one that makes a new school look like a working school.
 
 > Generate the scheme of work for JSS1 Mathematics, First Term, using NERDC.
 
 **Expect:** a preview — how many teaching weeks the term's dates give, how many
-exam weeks are reserved, which units, how many objectives, and how many lesson
-notes it would create. Nothing is written until you confirm.
+exam weeks are reserved, which units, how many objectives, how many lesson notes
+it would create for JSS1A Mathematics, and any weeks no unit covers. Nothing is
+written until you confirm.
 
 > Yes, create it.
 
 **Check:** the number of weeks matches your term dates (a 2025-09-01 to
-2025-12-15 term gives 15 weeks: 14 teaching plus 1 exam), the units are real
-NERDC strands rather than invented topics, and each teaching week now has a
-draft lesson note for every class in that subject and year group.
+2025-12-15 term gives 15 weeks: 14 teaching plus 1 exam), and the units are real
+NERDC strands rather than invented topics. Then open **JSS1A Mathematics** as
+Mr Musa: the Lessons tab has one draft per week a unit covers, and each lists
+only that week's share of the unit's objectives, not the whole unit.
 
 Then the conversational route, which is better when you want to shape the
 pacing yourself:
@@ -207,15 +265,29 @@ pacing yourself:
 > NERDC. Read the framework objectives first.
 
 **Check:** the Curriculum Setup page shows the tree appearing live as you talk.
+After you commit, **Curriculum → English Language** shows it by year group and
+term; tap a unit to see its objectives and standards codes.
+
+A curriculum built this way has units but no lesson notes yet. Ask for them:
+
+> Plan the lesson notes for JSS1 English, First Term.
+
+**Expect:** a preview naming JSS1A English, how many notes it would write, and
+which weeks get none — any gap between units, and the exam weeks. It must say
+the units are left as they are. Confirm, and the drafts appear in JSS1A English.
+
+**Check:** ask again. It should reply that every class already has its lesson
+notes — nothing is duplicated, and nothing a teacher has started is touched.
 
 > Switch the agent to Sonnet or Opus for this step. Haiku is too weak for
 > curriculum writing. The model picker is at the bottom of the chat.
 
 **Note:** generating twice for the same subject, year group and term is refused
-on purpose, so a curriculum cannot be duplicated. Pass "replace" to redo one —
-the superseded units are archived, not deleted.
+on purpose, so a curriculum cannot be duplicated. The refusal should point you
+to planning lesson notes instead. Passing "replace" redoes the curriculum — the
+superseded units are archived, not deleted — and is almost never what you want.
 
-### A6b. The curriculum calendar
+### A11b. The curriculum calendar
 
 Open **Calendar** in the sidebar.
 
@@ -228,40 +300,10 @@ underneath, which is the thing worth noticing.
 **Check on a phone-sized window:** the grid becomes one card per subject. If
 you see a table squeezed sideways, that is a bug.
 
-### A7. Invite the two teachers
-
-> Invite teacher.maths@pilot.test as a teacher named Mr Musa, and
-> teacher.english@pilot.test as a teacher named Mrs Okoro.
-
-**Check:** both appear under Pending on the Staff page.
-
-### A8. Invite the three students
-
-> Invite student1@pilot.test, student2@pilot.test and student3@pilot.test as
-> students named Ada, Bola and Chidi.
-
-### A9. Create the classes
-
-> Create JSS1A Mathematics with Mr Musa as teacher, and JSS1A English with
-> Mrs Okoro, both for JSS1 in the 2026/2027 year.
-
-**Check:** Classes page lists both with the right teacher.
-
-### A10. Sign the others in
-
-Open a **private/incognito window** for each teacher and student and sign up
-with their invited email. Using separate windows keeps sessions apart.
-
-**Check after each signup:** the admin's Staff/Students page moves them from
-Pending to Active, and they land in the right portal (teacher vs student).
-
-### A11. Enrol the students
-
-Back as admin:
-
-> Enrol Ada, Bola and Chidi in both JSS1A Mathematics and JSS1A English.
-
-**Check:** each class shows 3 students.
+**Check the lesson notes themselves:** choose Mathematics, open a week, and tap
+the lesson note shown under its unit. It opens read-only in a side panel, with
+its class, date and whether it is a draft or ready. A week no unit covers says
+"Nothing planned" and has no note — it should never show another unit's note.
 
 ### A12. Timetable (optional but worth it)
 

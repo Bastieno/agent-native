@@ -1,10 +1,11 @@
 import { NavLink } from "react-router";
 import {
-  IconLayoutDashboard,
-  IconSchool,
+  IconBook,
   IconChartBar,
-  IconUsers,
+  IconLayoutDashboard,
   IconLogout,
+  IconSchool,
+  IconUsers,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
@@ -18,6 +19,9 @@ const navItems = [
     end: true,
   },
   { href: "/teacher/classes", label: "My Classes", icon: IconSchool },
+  // What they are meant to be teaching — and, for the subjects they teach,
+  // where they can help draft it.
+  { href: "/teacher/curriculum", label: "Curriculum", icon: IconBook },
   { href: "/teacher/students", label: "Students", icon: IconUsers },
   { href: "/teacher/analytics", label: "Analytics", icon: IconChartBar },
 ];

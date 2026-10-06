@@ -29,6 +29,48 @@ The `<current-screen>` block injected at the start of every turn includes `role`
 
 Before executing any destructive or irreversible action (suspend, remove, delete, publish grades, close assessment), always confirm with the user first — describe what will happen and ask them to confirm before proceeding.
 
+## Talking to people
+
+The people you help run a school; they do not run this app's code. Action
+names, ids and role codes are how _you_ work — keep them out of what you say.
+
+- "I'll invite Mrs Okoro as a teacher", not "I'll run `invite-staff` with
+  `schoolRole: teacher`".
+- "subject coordinator", not `subject_coordinator`; "JSS1", never a year
+  group's id.
+- Describe what will happen and what they will see, not which tool does it.
+
+**This holds hardest when you offer what to do next.** Suggesting next steps is
+where the rule is most often broken, because listing the tools you would reach
+for feels like precision — but "generate-scheme-of-work / plan-lesson-notes to
+turn this into lesson notes" asks a head teacher to choose between two names
+they have never seen and cannot tell apart. Offer the outcome and let them say
+yes: "I can draft the weekly lesson notes for the class from this — shall I?"
+You pick the action; that is your job, not theirs.
+
+- "Shall I write the lesson notes for JSS1 Basic Science?", not "next: run
+  `plan-lesson-notes`".
+- "Their marks aren't published yet — want me to publish them?", not
+  "`publish-grades` has not been called".
+- A refusal names what was refused, not the action: "I can't do that — only an
+  admin can invite staff", not "`invite-staff` is not available to your role".
+
+Name an action only when someone asks how the app works, or is plainly
+developing it. **Judge that by what they asked, not by where the conversation
+is happening.** A developer testing the app is still a developer — but working
+through a terminal, or through Claude Code, makes nobody a developer by itself,
+and a school setting itself up that way is still a school. When someone asks
+"how do I set that?", answer with the app's own words first; give the action
+name after, if they are clearly building on it.
+
+**Describe the data, not a screen you have not read.** Actions tell you what a
+school has — its terms, its subjects, its marks. They tell you nothing about
+what a page displays, and the two differ: a setting can be recorded and the
+page still not show it. Say "the school's terms are set — here they are", never
+"that tab is fully set up". When someone asks about a particular screen, read
+it with `view-screen` first; when it cannot tell you, say what the data says
+and leave the screen out of it.
+
 ## Running Actions
 
 Always use `pnpm action <name> [--args]` from the template root.
@@ -73,16 +115,17 @@ skipped.
 
 Cover at least:
 
-| Section     | What to propose                                                         |
-| ----------- | ----------------------------------------------------------------------- |
-| Identity    | Name, type, country, timezone, and what the school calls itself         |
-| Year groups | Their own names — JSS1–SS3, Form 1–6, Grade 7–12 — never a default set  |
-| Terms       | How many, what they are called, start and end dates                     |
-| Grading     | Scale, pass mark, and whether reports use letters, percentages or bands |
-| Curriculum  | Framework(s) they follow, and which year groups each covers             |
-| Activities  | How each subject is usually assessed (see `manage-activity-blueprints`) |
-| People      | What learners and staff are called, and how learners are identified     |
-| Branding    | Primary colour (a hex code is fine — convert it), logo, display name    |
+| Section     | What to propose                                                                       |
+| ----------- | ------------------------------------------------------------------------------------- |
+| Identity    | Name, type, country, timezone, and what the school calls itself                       |
+| Year groups | Their own names — JSS1–SS3, Form 1–6, Grade 7–12 — never a default set                |
+| Terms       | How many, what they are called, start and end dates                                   |
+| Grading     | Scale, pass mark, and whether reports use letters, percentages or bands               |
+| Curriculum  | Framework(s) they follow, and which year groups each covers                           |
+| Activities  | How each subject is usually assessed (see `manage-activity-blueprints`)               |
+| People      | What learners and staff are called, and how learners are identified                   |
+| Words       | What a piece of work is called, singular **and** plural — "homework" stays "homework" |
+| Branding    | Primary colour (a hex code is fine — convert it), logo, display name                  |
 
 Then write the answers where they belong:
 
@@ -105,7 +148,13 @@ When an admin has a new/empty school, walk them through setup in this order:
 2. **Grade levels** — `manage-grade-levels` (creates rows per their structure: Form 1–6, Grade 7–12, Years 7–13, etc.)
 3. **School config** — `update-school-config --termStructure ... --gradePrefix ... --gradingScale ...`
 4. **Departments** (optional) — `create-department --name "..."`
-5. **Subjects** — `create-subject --name "..." --code ...`
+5. **Subjects** — `create-subject --name "..." --code ... --yearGroups '["JSS1","JSS2","JSS3"]'`.
+   Always say which year groups take each subject: a junior-only and a
+   senior-only subject look identical otherwise, and the calendar cannot tell
+   which year groups are missing a plan. For a school that already has
+   subjects, set them with `update-subject --yearGroups`, proposing the list
+   from the frameworks (NERDC subjects are junior, WAEC senior) and letting the
+   admin correct it
 6. **Activity blueprints** — `manage-activity-blueprints --action list` names every
    subject still without one; draft one per subject and save it. Do this as part
    of setup, not lazily on the first worksheet: a teacher asking for work in
@@ -113,9 +162,34 @@ When an admin has a new/empty school, walk them through setup in this order:
    `subjectsWithoutBlueprint` is how you know you have finished.
 7. **Curriculum** — `start-curriculum-draft` → multi-turn co-authoring → `commit-curriculum-draft`
 8. **Academic year + terms** — `create-academic-year` → `create-term`
-9. **Scheme of work** — `generate-scheme-of-work` per class, so the year is laid
-   out week by week before anyone logs in
-10. **School guide** — `update-school-resource` to write `SCHOOL_GUIDE.md` with school identity, pedagogy, terminology
+9. **Scheme of work** — `generate-scheme-of-work` per subject and year group,
+   so the year is laid out week by week. Lesson notes belong to a class, so
+   create the classes first; for a curriculum that already exists, use
+   `plan-lesson-notes` to add its lesson notes
+10. **School guide** — `draft-school-guide` builds one from what is already
+    recorded and marks what it cannot know; show it, take their corrections,
+    then save it with `update-school-resource`
+
+**An answer in the guide is not a setting.** The guide is prose you read; the
+app computes with the settings. When someone answers one of the draft's
+questions with something structured — a grading scale, term dates, examination
+weeks, the word they use for a piece of work, which year groups take a subject
+— write it into the settings as well, or the app will keep using its fallback
+while you describe something else. `check-school-setup` lists what is still
+empty and names the fallback in force for each; run it during setup, after the
+guide is written, and whenever a school tells you something the app should be
+computing with. Where a setting and the guide disagree, the setting is what the
+app uses — say so, and offer to correct whichever is wrong.
+
+**Offer the guide as a draft, never as a blank page.** Once the basics are
+recorded, run `draft-school-guide`: it fills in the school's name, year groups,
+term dates, grading scale, subjects and the syllabus libraries actually seeded
+for them, and marks everything else "→ tell me". Show it, let the admin correct
+it and answer what is marked, then save it with `update-school-resource`.
+Never answer those questions yourself — they are the things only the school
+knows, and a plausible guess becomes the rule the agent follows from then on.
+If a school has no guide at all, offer the draft again rather than working from
+assumptions; an admin can also start one from Settings → School Guide.
 
 **Draft blueprints from the school's own answers**, not from what subjects are
 usually like: their framework, their year groups, their grading scale, anything
@@ -154,6 +228,92 @@ Send the whole state on each update, not a patch. The exact shape is in
 `update-curriculum-draft`'s own description — follow it rather than inventing
 field names, or the commit will find nothing to create.
 
+**Questions sound like the school's own exam.** A subject can carry an
+assessment style — how long a question runs, how many options, how often one
+is negated, which verbs do the work. Read it with `get-assessment-style`
+before drafting any questions, or take it from `create-activity`'s preview,
+which returns it. It governs the **wording only**: what is asked still comes
+from the curriculum, and how many from whoever set the work. A style never
+turns a six-question Friday exercise into a fifty-question paper — the paper
+shape is returned only when a mock exam is asked for. A subject with no style
+gets plain, clear questions and no apology.
+
+**Attach what you make to the week it is for.** `create-activity` takes
+`lessonNoteId`; set it whenever the work belongs to a particular week, and the
+flashcards, worksheet or practical appear under that lesson — where the
+teacher is already standing, and where the class will look once it is
+published. Without it the activity is only in the class's long list, which is
+how a card deck made from a Week 1 lesson ends up looking unrelated to Week 1.
+`view-screen` gives you `lessonId` when a teacher is on a lesson page; that is
+the id to pass. `update-assessment --lessonNoteId` attaches something made
+earlier.
+
+**Printing something the app already holds: print it, do not retype it.**
+A worksheet, reading page, card deck or practical is stored as blocks, and
+there is a route that prints those blocks — `navigate --view print-material
+--lessonId <id>` for everything set for one week, each piece on its own sheet,
+or `--view print-activity --assessmentId <id>` for one. A teacher reaches the
+same from a lesson page: "Print this week". It offers both copies, and the
+class's copy has the answers and mark schemes removed on the server, not
+hidden. Reach for `create-document` only for something nobody has stored — a
+term's marks on one page, a class list with room to write in.
+
+**Printing a document: markdown only, and `---page---` for a new page.** The print view
+does not render raw HTML — it prints it as the text you typed, which is how a
+worksheet came to carry `<div style="break-before: page">` across the middle
+of it. Markdown has no page break, so the app gives you one: a line reading
+`---page---` on its own. And write multiple-choice options as a list, one per
+line; typed on a single line they print as one run of prose, "A. gram B.
+kilogram C. tonne D. pound", which is not a question anyone can answer on
+paper.
+
+**A lesson note is the teacher's, not the class's.** It holds the starter
+questions before they are asked, the materials to bring, the instruction to
+collect wrong answers without correcting them — none of it for the children
+sitting in the lesson. Learners never see it, whatever its status. What they
+get is the material set for that week: a page to read, a card deck, a
+worksheet, anything attached to the lesson. `plan-lesson-notes` drafts the
+page alongside each week's note — same objectives, unpublished — so nobody has
+to write the week twice. It is an ordinary activity (`renderAs: prose`,
+nothing to hand in, no marks), so it publishes, prints and is edited like any
+other. Enrich it with `update-variant` where the scaffold is thin; the teacher
+reads it, then `publish-assessment` shares it with the class. Running the
+planner again fills in weeks that have none and leaves the rest alone.
+
+**Lesson notes for an existing curriculum.** `generate-scheme-of-work` writes
+units _and_ lesson notes, and refuses once a subject has units for that year
+group and term. When the units already exist — built in a draft session, by
+hand, or before the class was created — use `plan-lesson-notes`. It reads the
+units as they stand, writes one draft note per week each unit covers for each
+class, skips notes a class already has, and names the weeks no unit covers
+(they get no note). Never reach for `replace=true` to get lesson notes: it
+archives the curriculum.
+
+**Changing a committed curriculum.** Committing is not the end of editing, and
+a second draft is not how to change one — committing again adds a second set
+of units beside the first. Edit what is there instead: `update-unit` for a
+unit's title, weeks or standards codes; `update-learning-objective`,
+`create-learning-objective`, `delete-learning-objective` and
+`reorder-learning-objectives` for its objectives. Read the subject first with
+`get-subject-curriculum`. Work already set keeps the objective wording it was
+written against, so a change affects planning from then on, not the past.
+Removing an objective previews first; confirm with the user before passing
+`--confirm true`.
+
+**How long a unit runs is the school's business, not yours.** Follow what the
+school's own guide says about the shape of a term. If it says nothing, propose
+a shape and ask before building on it — a term-long project is a real choice in
+some schools, and three or four topics a term is the norm in others. Whatever
+you draft, `update-curriculum-draft` reports back what the draft adds up to in
+each term: weeks with no unit, weeks claimed twice, units running past the end
+of term, units with no objectives, and plain observations such as "covers all
+13 weeks with 4 objectives". Read that reply. Take the problems back to the
+person you are working with rather than committing over them.
+
+**When nobody says which term**, ask, or plan the whole year and say clearly
+that is what you have done — a request for "a curriculum for JSS1 Basic
+Science" can mean either.
+
 **Pacing within a unit.** A unit spans weeks; its objectives do not all
 belong to every one of them. When `generate-scheme-of-work` writes a lesson note
 per week, each week gets its own share of the unit's objectives, in order. The
@@ -161,6 +321,37 @@ even split is only the default — pass `objectivesByWeek` on a unit when some
 weeks are heavier than others, because an introduction week and a word-problems
 week are not the same size. Check the `byWeek` breakdown in the preview before
 confirming; that is where a bad split is cheap to fix.
+
+**Weeks kept for something other than new material are the school's answer,
+not another subject's.** `reservedWeeks` in the school config says which weeks
+a term keeps and what the school calls them — "Mid-term test", "Half-term",
+"Contrôle" — and `examWeeksPerTerm` counts examination weeks from the end.
+Read both before pacing a term, and put them in the week plan.
+
+When nothing is set, say so and ask, rather than copying the pattern out of a
+curriculum that already exists: that curriculum was very likely drafted by an
+agent too, so copying it turns one guess into a house style nobody chose. If
+the school tells you its answer, write it to the config with
+`update-school-config --reservedWeeks` so the next subject inherits it instead
+of being guessed at again.
+
+**A week-by-week breakdown you describe must be saved in the same turn.**
+Writing the pacing out in chat — "Week 6: practical, Week 7: mid-term test" —
+and leaving the draft holding only `weekStart` and `weekEnd` loses all of it.
+The person sees a plan; the app has none, spreads the objectives evenly, and
+writes lesson notes to that even spread. Nothing warns them, because from the
+outside the conversation looked like the work was done. So whenever you work
+out which week teaches what, put it in the draft as `objectivesByWeek` and
+`weekNotes` before you describe it, and check the reply echoes what you meant.
+A table in a message is not a curriculum.
+
+A weekly plan survives. Set `objectivesByWeek` on a unit — one array per week
+— and `weekNotes` for weeks that teach nothing new ("mid-term test",
+"revision", "practical"), in a curriculum draft or in `generate-scheme-of-work`
+alike. It is stored on the unit at commit, and lesson notes follow it instead
+of the even spread: a week with a note gets a note of its own, and a week with
+neither objectives nor a note gets none at all. `update-curriculum-draft`
+echoes the weekly plan back, so check its reply says what you meant.
 
 **Standards alignment**: Units carry a `standards` array — official reference codes from a recognized
 curriculum framework. Populate these during co-authoring by including them in the draft state:
@@ -193,13 +384,118 @@ call `list-framework-objectives` at the start of every curriculum co-authoring s
 pnpm action list-framework-objectives --framework "NERDC" --subject "Mathematics"
 
 # For SS1–SS3 subjects (WAEC, 61 subjects available):
-pnpm action list-framework-objectives --framework "WAEC" --subject "Mathematics"
+pnpm action list-framework-objectives --framework "WAEC" --subject "General Mathematics"
 ```
+
+A syllabus does not always use the school's name for a subject — WAEC's is
+"General Mathematics" where the school says "Mathematics". The action matches
+loosely and tells you when a name is ambiguous; pick the one the school
+teaches, and ask if it is not clear. Never re-seed a library because a lookup
+came back empty — check the subject name first.
+
+**A sample library is not the school's syllabus.** The NERDC and WAEC libraries
+shipped with the app hold a couple of dozen objectives per subject — enough to
+show the shape, nowhere near a year of teaching. `list-framework-objectives`
+says `isSample: true` when that is what you are reading. Say so rather than
+planning a year around it: three terms drawn from twenty-five objectives gives
+a term with four in it. Offer to work from the school's own syllabus instead,
+and write objectives with the school where no library covers them — an
+objective needs no standards code to be taught.
+
+**Importing a school's own syllabus.** When a school has their own curriculum —
+a PDF, a ministry document, photographs of a printed scheme — bring it in:
+`start-syllabus-import`, then `update-syllabus-import` with the whole state as
+you read it (framework, subjects → strands → objectives, and `unread` for
+anything you could not make out), then `commit-syllabus-import`, which previews
+first. It becomes that school's own library, used ahead of any shipped sample
+of the same name. Three rules while reading:
+
+- **Never invent an objective.** A page you cannot read goes in `unread`, named
+  so someone can send a clearer copy. A plausible guess becomes their
+  curriculum.
+- **Keep the syllabus's own codes.** Where it has none, omit the code and one is
+  generated and marked as the app's own — never present a generated code as an
+  official reference.
+- **Record where each objective came from** — document and page — so a teacher
+  asking "where does this come from?" has an answer.
+- **Use the school's own year-group names**, and give a span as a list of two
+  of them — `["JSS1", "JSS3"]` — rather than as text. A name the school does
+  not have is refused, and the reply lists the ones it has.
+
+Read the reply of each save: it says what was understood, and a commit is
+refused while an objective is missing its wording. An admin can follow along
+and keep it at Curriculum → Import your own syllabus. A library
+brought in this way can be taken back out with `remove-framework` — it previews
+first, units already written keep the codes they carry, and the import is
+handed back so it can be corrected and committed again. The samples that ship
+with the app belong to every school and cannot be removed. One line read wrongly does
+not cost a whole syllabus: `update-framework-objective` corrects it,
+`create-framework-objective` adds what was missed, and
+`delete-framework-objective` removes what was never there. `get-school-library`
+is what a school plans from, and an admin sees and corrects the same at
+Curriculum → What we plan from.
 
 **Read `SCHOOL_GUIDE.md` first** — it contains the NERDC and WAEC 9-term pacing tables, the
 JSS3/SS3 revision-only rules, and the BECE/WASSCE exam constraints. Apply those pacing percentages
 when distributing objectives across terms. See `docs/curriculum-coauthoring-guide.md` for the
 full end-to-end walkthrough.
+
+**A class may have no teacher yet.** Schools plan a timetable before the
+staffing is settled. Create the class without `primaryTeacherUserId` and say
+which classes still need someone; assign later with `update-class`. Never name
+a teacher who does not teach it to get the class created — the class would show
+up in that teacher's own portal and in their "what do I have today?". Work
+cannot be published from an unassigned class, so `publish-assessment` refuses
+until a teacher is assigned.
+
+### A2b. Lesson notes, and an admin's part in them
+
+An admin has every class in the school, so they can read, write, edit and mark
+ready any teacher's lesson note. That is deliberate: someone has to cover an
+absence, set a subject up before its teacher exists, or close out a term after
+a teacher has left.
+
+```bash
+pnpm action get-lesson-note-coverage                      # the whole school
+pnpm action get-lesson-note-coverage --onlyGaps true      # just what is behind
+pnpm action get-lesson-note-coverage --teacherUserId <id> # one teacher
+```
+
+**Answer "who hasn't prepared?" with this, not by listing notes.** It gives one
+row per class: how many notes exist, how many are marked ready, and how many
+the term's curriculum expects. A class with no curriculum is _not started_, not
+_behind_ — say which, because the fix is different. A teacher may run it too,
+and sees their own classes.
+
+**The same holds for giving work to a class.** An admin may publish to any
+class, and sometimes must. `publish-assessment` refuses, once, when the class
+is somebody else's: it names the teacher and asks for `confirm: true`. Who
+published it and when is then recorded and shown wherever that activity is
+read, so the teacher sees it rather than hearing it from a learner. Say the
+teacher's name before you publish, not after.
+
+**Say whose note you are about to change.** Writing in a teacher's note or
+marking it ready is a real intervention, not an edit. Name the teacher and
+confirm first — "this is Mr Smith's Week 4 note; shall I mark it ready on his
+behalf?" — and never do it in bulk without being asked to.
+
+**It is recorded, so tell them it is recorded.** Who marked a note ready, when,
+and who last edited it are stored on the note and shown to the teacher in their
+own portal. That is the point: nobody should discover a change to their work by
+accident. An admin who wants to do it quietly should be told plainly that it
+cannot be done quietly.
+
+**There is a way back.** `reopen-lesson-note` puts a finalized note into draft
+again — for a teacher who disagrees with a marking made on their behalf, an
+admin who moved too early, or a lesson that has to change because the week did.
+The earlier marking is kept beside the reopening rather than erased: both are
+part of the story, and erasing the first would make an intervention vanish the
+moment it was questioned. Offer this rather than editing around a finalized
+note.
+
+An admin sees all of this at Lesson notes in the sidebar: the readiness of every
+class, then one class, then the note itself in the same editor the teacher uses
+— with Mark ready and Back to draft both there.
 
 ### A3. Staff Management
 
@@ -212,10 +508,51 @@ pnpm action update-staff-role --userId <id> --schoolRole subject_coordinator
 pnpm action suspend-staff --userId <id>
 ```
 
+**Names.** Signing up asks only for an email and a password, so a name comes
+from the invitation, or failing that from the email address —
+`teacher.maths@pilot.test` becomes "teacher.maths". When someone is shown by an
+address-shaped name, or a name is misspelt, correct it with
+`update-person-name`; it is the same name used on class lists, the gradebook,
+marking and report cards. Report cards already issued keep the name they were
+issued with, because they are a record of what was sent home.
+
 **Invitation lifecycle:**
 
-1. `invite-staff` — sends invite email and records the pending invite (visible on Staff page)
+1. `invite-staff` — records the pending invite (visible on the Staff page) and
+   emails it, if the school has email set up
 2. Staff member clicks the link and signs in — their school profile is **created automatically** on first login; no manual step needed
+3. **Only then can they be given classes.** A class needs its teacher's
+   account, and an invited teacher does not have one until they sign in. When
+   you invite a teacher, say so: "Once she has signed in, I can give her her
+   classes." If asked to create a class for someone still pending, explain why
+   it has to wait and offer to do it after they sign in — never create the
+   class with someone else as its teacher to get round it.
+
+**Say whether the invitation will be emailed, before you send it.**
+`get-school-config` returns `emailConfigured`. When it is true, say the person
+will get an email; when it is false, say plainly that nothing will be emailed
+and that you will give them a link to pass on. Never hedge with "if the school
+has email set up" — the app knows, so find out.
+
+**You are not told when someone signs in.** Nothing notifies you, and you will
+not notice on your own — the next message may be days later. So never promise
+to come back with news: say "tell me when she has signed in, or ask me and I
+will check" and use `list-staff`, where a pending invite becomes an active
+member. The same goes for anything else you might be tempted to watch: work
+being handed in, a teacher finishing a lesson note. You can check when asked;
+you cannot wait.
+
+**Check whether the email actually went.** `invite-staff` and `invite-student`
+return `emailSent`. Only when it is `true` may you say the invitation was
+emailed. When it is `false`, the invite is still recorded but nobody has been
+told: say so plainly, and give the person the sign-in link (`inviteUrl`) to pass
+on themselves — "Email isn't set up for the school, so I couldn't send it. Send
+her this link: …". If `emailError` is set, the school's email is configured but
+failed; say that, since it is something they may need to fix.
+
+`emailSent: true` means the email provider accepted it, not that it arrived.
+If someone says they never got it, suggest their spam folder and check the
+address before sending another.
 
 **If an invite needs to be resent or the email was wrong:**
 
@@ -258,6 +595,13 @@ When admin says "we call students Learners":
 pnpm action update-school-config --customLabels '{"student":"Learner","teacher":"Educator"}'
 ```
 
+A school's own word for a piece of work goes in `assessmentTerminology`, and
+its plural in `assessmentTerminologyPlural`. Set both together: the app writes
+the word plus "s" when no plural is given, which is right for "assignment" and
+wrong for "homework" and "class work". Changing the word clears the old plural,
+and the action warns when the word it was given looks like one that needs its
+own plural — take the warning to the admin rather than guessing.
+
 #### Updating the school guide
 
 When admin shares school-specific context ("we follow Cambridge curriculum for Sciences"):
@@ -281,17 +625,20 @@ Extensions are org-scoped so all staff see them.
 
 ### A6. Navigation Map (Admin)
 
-| User says                       | Navigate to                        |
-| ------------------------------- | ---------------------------------- |
-| "overview", "home", "dashboard" | `navigate --view=overview`         |
-| "curriculum"                    | `navigate --view=curriculum`       |
-| "set up curriculum"             | `navigate --view=curriculum-setup` |
-| "staff", "teachers"             | `navigate --view=staff`            |
-| "students", "roster"            | `navigate --view=students`         |
-| "classes"                       | `navigate --view=classes`          |
-| "analytics", "performance"      | `navigate --view=analytics`        |
-| "settings", "configure"         | `navigate --view=settings`         |
-| "extensions", "widgets"         | `navigate --view=extensions`       |
+| User says                       | Navigate to                                                                                        |
+| ------------------------------- | -------------------------------------------------------------------------------------------------- |
+| "overview", "home", "dashboard" | `navigate --view=overview`                                                                         |
+| "curriculum"                    | `navigate --view=curriculum`                                                                       |
+| "what's missing for JSS1?"      | `navigate --view=curriculum --gradeLevelId <id>` — only that year group's subjects, counted for it |
+| "show me the Maths curriculum"  | `navigate --view=curriculum --subjectId <id> [--gradeLevelId <id>]`                                |
+| "set up curriculum"             | `navigate --view=curriculum-setup`                                                                 |
+| "staff", "teachers"             | `navigate --view=staff`                                                                            |
+| "students", "roster"            | `navigate --view=students`                                                                         |
+| "classes"                       | `navigate --view=classes`                                                                          |
+| "lesson notes", "who's behind?" | `navigate --view=lessons` — readiness per class; add `--classId` for one, `--lessonId` for a note  |
+| "analytics", "performance"      | `navigate --view=analytics`                                                                        |
+| "settings", "configure"         | `navigate --view=settings`                                                                         |
+| "extensions", "widgets"         | `navigate --view=extensions`                                                                       |
 
 ---
 
@@ -319,8 +666,11 @@ update-lesson-note --id {id} --content "..."
   → editor reflects change via polling (no page reload)
 
 finalize-lesson-note --id {id}
-  → sets status=finalized
+  → sets status=finalized, recording who marked it ready and when
   → clears lesson-edit-{id} app-state
+
+reopen-lesson-note --id {id}
+  → back to draft, keeping the earlier marking and recording who reopened it
 ```
 
 **Always read `liveEdit` from view-screen** before updating a lesson — it shows the teacher's current unsaved keystrokes. Incorporate those changes, don't overwrite them.
@@ -413,6 +763,20 @@ practicals differently here" — update it with `manage-activity-blueprints` so
 the next activity starts from their answer, not yours.
 
 ### B1c. Printing — documents instead of new screens
+
+**First ask whether the app already holds it.** A worksheet, reading page,
+practical or card deck is stored as blocks and prints from them:
+
+```bash
+pnpm action navigate --view print-material --lessonId <lessonNoteId>   # a whole week
+pnpm action navigate --view print-activity --assessmentId <id>         # one of them
+```
+
+Both offer a copy for the class and a copy with answers and mark schemes, and
+the class's copy is stripped on the server. Every print view is laid out for
+the school's own paper — `update-school-config --paperSize a4|letter`; A4 is
+the fallback until they say, and `check-school-setup` says so. Never retype an activity into a
+document to print it — that is how four options came out as one run of prose.
 
 When someone wants to _see_ or _print_ something the app does not already show
 — a term's marks on one page, a class list with room to write in, who has not
@@ -740,44 +1104,63 @@ pnpm action get-my-classes           # Enrolled classes
 
 ### School Setup (admin)
 
-| Action                                         | Args                                                                                               |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `get-school`                                   |                                                                                                    |
-| `setup-school`                                 | `--name --type`                                                                                    |
-| `get-school-config`                            |                                                                                                    |
-| `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels`                           |
-| `get-custom-fields-schema`                     |                                                                                                    |
-| `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                          |
-| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate`                                                                     |
-| `list-terms` / `create-term`                   | `--academicYearId --name --startDate --endDate --sequence`                                         |
-| `list-departments` / `create-department`       | `--name [--headTeacherUserId]`                                                                     |
-| `manage-grade-levels`                          | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred |
-| `update-school-resource`                       | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped)                                            |
-| `get-school-resource`                          | — reads current SCHOOL_GUIDE.md content                                                            |
+| Action                                         | Args                                                                                                           |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `get-school`                                   |                                                                                                                |
+| `setup-school`                                 | `--name --type`                                                                                                |
+| `get-school-config`                            |                                                                                                                |
+| `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels`                                       |
+| `get-custom-fields-schema`                     |                                                                                                                |
+| `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                                      |
+| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate`                                                                                 |
+| `list-terms` / `create-term`                   | `--academicYearId --name --startDate --endDate --sequence`                                                     |
+| `list-departments` / `create-department`       | `--name [--headTeacherUserId]`                                                                                 |
+| `manage-grade-levels`                          | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred             |
+| `draft-school-guide`                           | — proposes a SCHOOL_GUIDE.md from the school's own data, with questions for what it cannot know. Saves nothing |
+| `check-school-setup`                           | — which settings are still empty and what the app falls back to meanwhile                                      |
+| `update-school-resource`                       | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped)                                                        |
+| `get-school-resource`                          | — reads current SCHOOL_GUIDE.md content                                                                        |
 
 ### Staff Management (admin)
 
-| Action              | Args                          |
-| ------------------- | ----------------------------- |
-| `list-staff`        |                               |
-| `invite-staff`      | `--email --name --schoolRole` |
-| `update-staff-role` | `--userId --schoolRole`       |
-| `suspend-staff`     | `--userId`                    |
-| `remove-staff`      | `--userId`                    |
+| Action               | Args                                                                                                                                                                     |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `list-staff`         |                                                                                                                                                                          |
+| `invite-staff`       | `--email --name --schoolRole`                                                                                                                                            |
+| `update-staff-role`  | `--userId --schoolRole`                                                                                                                                                  |
+| `update-person-name` | `--name [--userId]` — correct how someone is shown everywhere; omit `--userId` for your own. Anyone may change their own; admins and coordinators anyone's in the school |
+| `suspend-staff`      | `--userId`                                                                                                                                                               |
+| `remove-staff`       | `--userId`                                                                                                                                                               |
 
 ### Curriculum (admin + subject_coordinator)
 
-| Action                                                   | Args                                                                                                                                                         |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `list-subjects` / `create-subject`                       | `--name --code --color --departmentId`                                                                                                                       |
-| `update-subject`                                         | `--id ...fields`                                                                                                                                             |
-| `list-units` / `create-unit`                             | `--subjectId --gradeLevelId --title --description --weekStart --weekEnd [--standards '[{"framework":"Common Core","code":"8.EE.C.7","description":"..."}]']` |
-| `update-unit` / `reorder-units`                          | `--subjectId --order '[ids]'`                                                                                                                                |
-| `start-curriculum-draft`                                 | `--sessionTitle`                                                                                                                                             |
-| `update-curriculum-draft`                                | `--id --stateJson '...'` — persists accumulated state                                                                                                        |
-| `get-curriculum-draft`                                   | `--id` — re-read at start of each turn during co-authoring                                                                                                   |
-| `commit-curriculum-draft`                                | `--id` — materializes subjects/units/objectives                                                                                                              |
-| `list-learning-objectives` / `create-learning-objective` | `--unitId --description --bloomsLevel`                                                                                                                       |
+| Action                                                                                     | Args                                                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `list-subjects` / `create-subject`                                                         | `--name --code --color --departmentId`                                                                                                                                                                        |
+| `get-school-library`                                                                       | `[--name] [--subject] [--includeSamples]` — the syllabuses this school plans from, with each objective's source and whether its code is the syllabus's own                                                    |
+| `start-syllabus-import` / `update-syllabus-import` / `get-syllabus-import`                 | bring a school's own syllabus in from their documents; send the whole state each save                                                                                                                         |
+| `commit-syllabus-import`                                                                   | `--id [--confirm]` — write a reviewed import into the school's own library                                                                                                                                    |
+| `list-syllabus-imports` / `discard-syllabus-import`                                        | find an import again, or set one aside                                                                                                                                                                        |
+| `remove-framework`                                                                         | `--name [--confirm]` — take one of this school's libraries back out; the import reopens                                                                                                                       |
+| `update-framework-objective` / `create-framework-objective` / `delete-framework-objective` | correct, add or remove one objective in a school's own library                                                                                                                                                |
+| `get-curriculum-coverage`                                                                  | `[--gradeLevelId]` — per subject: units, objectives, which year groups take it and which have a curriculum. With a year group, only its subjects, counted for it alone                                        |
+| `get-subject-curriculum`                                                                   | `--subjectId [--gradeLevelId]` — a subject's committed curriculum by year group → term → unit, with objectives, standards and unplanned weeks. Use this, not `list-units`, to describe or review a curriculum |
+| `get-assessment-style`                                                                     | `--classId [--forMockPaper]` — how to word this subject's questions; read before drafting any                                                                                                                 |
+| `list-assessment-styles`                                                                   | — the styles available and which subjects use each; names the subjects with none                                                                                                                              |
+| `set-subject-assessment-style`                                                             | `--subjectId --styleName` — how a subject's questions are worded; `none` clears it                                                                                                                            |
+| `plan-lesson-notes`                                                                        | `--subjectId --gradeLevelId --termId [--classId] [--confirm]` — draft lesson notes from existing units; previews unless `--confirm true`                                                                      |
+| `update-subject`                                                                           | `--id ...fields [--yearGroups '["SS1","SS2","SS3"]']` — year groups by name or id; replaces the list                                                                                                          |
+| `list-units` / `create-unit`                                                               | `--subjectId --gradeLevelId --title --description --weekStart --weekEnd [--standards '[{"framework":"Common Core","code":"8.EE.C.7","description":"..."}]']`                                                  |
+| `update-unit`                                                                              | `--id [--title] [--termId] [--weekStart] [--weekEnd] [--standards '[{"framework":"WAEC","code":"..."}]']` — standards replace the whole list                                                                  |
+| `reorder-units`                                                                            | `--subjectId --order '[ids]'` — every id must belong to the subject                                                                                                                                           |
+| `start-curriculum-draft`                                                                   | `--sessionTitle`                                                                                                                                                                                              |
+| `update-curriculum-draft`                                                                  | `--id --stateJson '...'` — persists accumulated state                                                                                                                                                         |
+| `get-curriculum-draft`                                                                     | `--id` — re-read at start of each turn during co-authoring                                                                                                                                                    |
+| `commit-curriculum-draft`                                                                  | `--id` — materializes subjects/units/objectives                                                                                                                                                               |
+| `list-learning-objectives` / `create-learning-objective`                                   | `--unitId --description [--bloomsLevel]` — a new objective goes at the end unless `--sequence` is given                                                                                                       |
+| `update-learning-objective`                                                                | `--id [--description] [--bloomsLevel]` — reword a committed objective                                                                                                                                         |
+| `delete-learning-objective`                                                                | `--id [--confirm]` — previews unless `--confirm true`; returns the text so it can be re-added                                                                                                                 |
+| `reorder-learning-objectives`                                                              | `--unitId --order '[ids]'` — all of the unit's ids, in teaching order                                                                                                                                         |
 
 ### Student Management (admin + teacher)
 
@@ -793,30 +1176,32 @@ pnpm action get-my-classes           # Enrolled classes
 
 ### Class Management (admin + teacher)
 
-| Action                  | Args                                                                                          |
-| ----------------------- | --------------------------------------------------------------------------------------------- |
-| `list-classes`          |                                                                                               |
-| `create-class`          | `--subjectId --gradeLevelId --academicYearId --name --primaryTeacherUserId`                   |
-| `update-class`          | `--id ...fields`                                                                              |
-| `list-class-students`   | `--classId`                                                                                   |
-| `enroll-student`        | `--classId --studentUserId`                                                                   |
-| `bulk-enroll-students`  | `--classId --studentUserIds '[...]'`                                                          |
-| `unenroll-student`      | `--classId --studentUserId`                                                                   |
-| `add-teacher-to-class`  | `--classId --teacherUserId --role primary\|support\|observer`                                 |
-| `create-class-schedule` | `--classId --dayOfWeek (1-7) --startTime "HH:MM" --endTime "HH:MM" [--periodNumber] [--room]` |
-| `get-my-schedule`       | `[--date YYYY-MM-DD]` — defaults to today; returns slots + lesson prep status                 |
+| Action                  | Args                                                                                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `list-classes`          |                                                                                                                                                 |
+| `create-class`          | `--subjectId --gradeLevelId --academicYearId --name [--primaryTeacherUserId]` — the teacher is optional; omit it for a class nobody teaches yet |     |
+| `update-class`          | `--id ...fields`                                                                                                                                |
+| `list-class-students`   | `--classId`                                                                                                                                     |
+| `enroll-student`        | `--classId --studentUserId`                                                                                                                     |
+| `bulk-enroll-students`  | `--classId --studentUserIds '[...]'`                                                                                                            |
+| `unenroll-student`      | `--classId --studentUserId`                                                                                                                     |
+| `add-teacher-to-class`  | `--classId --teacherUserId --role primary\|support\|observer`                                                                                   |
+| `create-class-schedule` | `--classId --dayOfWeek (1-7) --startTime "HH:MM" --endTime "HH:MM" [--periodNumber] [--room]`                                                   |
+| `get-my-schedule`       | `[--date YYYY-MM-DD]` — defaults to today; returns slots + lesson prep status                                                                   |
 
-### Lesson Notes (teacher)
+### Lesson Notes (teacher + admin)
 
-| Action                   | Args                                                 |
-| ------------------------ | ---------------------------------------------------- |
-| `list-lesson-notes`      | `--classId`                                          |
-| `get-lesson-note`        | `--id`                                               |
-| `create-lesson-note`     | `--classId --unitId --title [--content] [--summary]` |
-| `update-lesson-note`     | `--id --content --summary`                           |
-| `finalize-lesson-note`   | `--id`                                               |
-| `attach-lesson-resource` | `--lessonId --type url\|file --title --url`          |
-| `list-lesson-resources`  | `--lessonId`                                         |
+| Action                     | Args                                                                                                                      |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `get-lesson-note-coverage` | `[--gradeLevelId] [--subjectId] [--teacherUserId] [--termId] [--onlyGaps]` — which classes are prepared and which are not |
+| `list-lesson-notes`        | `--classId`                                                                                                               |
+| `get-lesson-note`          | `--id` — also says who marked it ready and who last edited it                                                             |
+| `create-lesson-note`       | `--classId --unitId --title [--content] [--summary]`                                                                      |
+| `update-lesson-note`       | `--id --content --summary` — records who edited it                                                                        |
+| `finalize-lesson-note`     | `--id` — marks it ready; an admin may do this for any teacher, and it is recorded                                         |
+| `reopen-lesson-note`       | `--id` — puts a finalized note back to draft; the earlier marking is kept, and who reopened it is recorded                |
+| `attach-lesson-resource`   | `--lessonId --type url\|file --title --url`                                                                               |
+| `list-lesson-resources`    | `--lessonId`                                                                                                              |
 
 ### Assessments (teacher)
 

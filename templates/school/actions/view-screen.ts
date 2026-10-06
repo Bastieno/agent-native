@@ -5,6 +5,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, sql } from "drizzle-orm";
 import { z } from "zod";
+import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 
 export default defineAction({
   description:
@@ -61,7 +62,12 @@ export default defineAction({
             const [subjectCount] = await db
               .select({ count: sql<number>`count(*)` })
               .from(schema.subjects)
-              .where(eq(schema.subjects.schoolId, schoolId));
+              .where(
+                and(
+                  eq(schema.subjects.schoolId, schoolId),
+                  eq(schema.subjects.status, "active"),
+                ),
+              );
 
             screen.stats = {
               staffCount: staffCount?.count ?? 0,
@@ -107,7 +113,15 @@ export default defineAction({
             const subjects = await db
               .select()
               .from(schema.subjects)
-              .where(eq(schema.subjects.schoolId, schoolId))
+              // Archived subjects are off the page, so they are off the
+              // agent's screen too — otherwise it sees a second "Mathematics"
+              // the admin cannot.
+              .where(
+                and(
+                  eq(schema.subjects.schoolId, schoolId),
+                  eq(schema.subjects.status, "active"),
+                ),
+              )
               .orderBy(schema.subjects.position);
             screen.subjects = subjects.map((s) => ({
               id: s.id,
@@ -117,17 +131,52 @@ export default defineAction({
               status: s.status,
             }));
             if (nav.subjectId) {
-              const units = await db
-                .select()
-                .from(schema.units)
-                .where(eq(schema.units.subjectId, nav.subjectId))
-                .orderBy(schema.units.sequence);
-              screen.units = units;
+              // The subject page groups by year group and term; so does this,
+              // so "unit 1" means the same thing to the agent as to the admin.
+              const curriculum = await loadSubjectCurriculum(
+                nav.subjectId,
+                schoolId,
+              );
+              if (curriculum) {
+                screen.subjectCurriculum = curriculum;
+                screen.selectedYearGroup =
+                  curriculum.yearGroups.find(
+                    (y) => y.gradeLevelId === nav.gradeLevelId,
+                  )?.name ??
+                  curriculum.yearGroups[0]?.name ??
+                  null;
+              }
             }
           } catch {
             // continue
           }
         }
+      }
+
+      // A lesson note opened for reading from the admin calendar.
+      if (nav.lessonId && schoolId) {
+        const [note] = await db
+          .select({
+            id: schema.lessonNotes.id,
+            title: schema.lessonNotes.title,
+            status: schema.lessonNotes.status,
+            lessonDate: schema.lessonNotes.lessonDate,
+            content: schema.lessonNotes.content,
+            className: schema.classes.name,
+          })
+          .from(schema.lessonNotes)
+          .leftJoin(
+            schema.classes,
+            eq(schema.lessonNotes.classId, schema.classes.id),
+          )
+          .where(
+            and(
+              eq(schema.lessonNotes.id, nav.lessonId),
+              eq(schema.lessonNotes.orgId, schoolId),
+            ),
+          )
+          .limit(1);
+        if (note) screen.openLessonNote = note;
       }
 
       if (nav.view === "curriculum-setup" && nav.curriculumDraftId) {

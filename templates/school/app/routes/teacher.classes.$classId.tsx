@@ -5,6 +5,8 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import { isCurrentWeek } from "@shared/term-weeks";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -98,7 +100,7 @@ export default function TeacherClass() {
     enabled: !!classId,
   });
 
-  const { data: assessments = [] } = useQuery<any[]>({
+  const { data: allActivities = [] } = useQuery<any[]>({
     queryKey: ["assessments", classId],
     queryFn: async () => {
       const res = await fetch(
@@ -110,7 +112,13 @@ export default function TeacherClass() {
       return res.json();
     },
     enabled: !!classId,
-  });
+  }); // Reading material and work are both activities underneath, but a teacher
+  // asking "what have I set this class?" does not mean the thirteen pages
+  // their class reads. Those belong to their week, and are shown there.
+  const assessments = allActivities.filter(
+    (a: any) => !(a.gradingMode === "none" && a.responseMode === "none"),
+  );
+  const materialCount = allActivities.length - assessments.length;
 
   const { data: students = [] } = useQuery<any[]>({
     queryKey: ["class-students", classId],
@@ -218,29 +226,53 @@ export default function TeacherClass() {
               No lesson notes yet. Ask the agent to create one.
             </p>
           ) : (
-            lessons.map((lesson: any) => (
-              <Link
-                key={lesson.id}
-                to={`/teacher/lessons/${lesson.id}`}
-                className="flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50 transition-colors"
-              >
-                <span className="text-sm font-medium">{lesson.title}</span>
-                <Badge
-                  variant={
-                    lesson.status === "finalized" ? "default" : "secondary"
-                  }
-                  className="text-xs"
+            lessons.map((lesson: any) => {
+              // Thirteen near-identical rows, and the one a teacher wants is
+              // almost always today's.
+              const thisWeek = isCurrentWeek(lesson.lessonDate);
+              return (
+                <Link
+                  key={lesson.id}
+                  to={`/teacher/lessons/${lesson.id}`}
+                  className={cn(
+                    "flex items-center justify-between gap-3 rounded-lg border p-3 transition-colors hover:bg-accent/50",
+                    thisWeek && "border-primary/60 bg-primary/5",
+                  )}
                 >
-                  {lesson.status}
-                </Badge>
-              </Link>
-            ))
+                  <span className="min-w-0 truncate text-sm font-medium">
+                    {lesson.title}
+                  </span>
+                  <span className="flex shrink-0 items-center gap-2">
+                    {thisWeek ? (
+                      <Badge className="text-xs">This week</Badge>
+                    ) : null}
+                    <Badge
+                      variant={
+                        lesson.status === "finalized" ? "default" : "secondary"
+                      }
+                      className="text-xs"
+                    >
+                      {lesson.status}
+                    </Badge>
+                  </span>
+                </Link>
+              );
+            })
           )}
         </TabsContent>
         <TabsContent value="assessments" className="mt-4 space-y-2">
+          {/* Say what this list is before saying what it leaves out — the
+              other way round reads as an apology for a missing feature. */}
+          {materialCount > 0 ? (
+            <p className="text-xs text-muted-foreground">
+              Work to hand in or mark. The {materialCount} things the class
+              reads or practises with are on their own week — see Lessons.
+            </p>
+          ) : null}
           {assessments.length === 0 ? (
             <p className="text-sm text-muted-foreground">
-              No assessments yet. Ask the agent to create one.
+              Nothing set for this class to hand in yet. Ask the agent for a
+              worksheet or a test.
             </p>
           ) : (
             assessments.map((assessment: any) => (
