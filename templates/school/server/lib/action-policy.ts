@@ -69,6 +69,7 @@ export const DENIED: Record<string, string> = {
 export const OPERATOR_ONLY = new Set<string>([
   "seed-nerdc",
   "seed-waec",
+  "seed-assessment-styles",
   "db-query",
   "run",
 ]);
@@ -114,6 +115,18 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "create-department": ADMIN,
   "get-school-resource": STAFF,
   "update-school-resource": ADMIN,
+  "draft-school-guide": ADMIN_COORD,
+  "check-school-setup": ADMIN_COORD,
+  // How a subject's questions are worded is a curriculum decision.
+  "list-assessment-styles": STAFF,
+  "get-assessment-style": STAFF,
+  // Reading the school's own papers into a style is curriculum work.
+  "start-style-import": ADMIN_COORD,
+  "update-style-import": ADMIN_COORD,
+  "commit-style-import": ADMIN_COORD,
+  "discard-style-import": ADMIN_COORD,
+  "list-style-imports": ADMIN_COORD,
+  "set-subject-assessment-style": ADMIN_COORD,
 
   // ── Staff management ──────────────────────────────────────────────────
   "list-staff": ADMIN,
@@ -121,6 +134,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "cancel-staff-invite": ADMIN,
   "finalize-staff-invite": ADMIN,
   "update-staff-role": ADMIN,
+  // Anyone may correct their own name; the handler decides whose.
+  "update-person-name": EVERYONE,
   "suspend-staff": ADMIN,
   "reactivate-staff": ADMIN,
   "remove-staff": ADMIN,
@@ -136,16 +151,38 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "reorder-units": ADMIN_COORD,
   "list-learning-objectives": STAFF,
   "create-learning-objective": ADMIN_COORD,
+  "update-learning-objective": ADMIN_COORD,
+  "delete-learning-objective": ADMIN_COORD,
+  "reorder-learning-objectives": ADMIN_COORD,
   "list-framework-objectives": STAFF,
-  "start-curriculum-draft": ADMIN_COORD,
-  "get-curriculum-draft": ADMIN_COORD,
-  "list-curriculum-drafts": ADMIN_COORD,
+  // A school's own syllabus, on its way in from their documents.
+  "start-syllabus-import": ADMIN_COORD,
+  "update-syllabus-import": ADMIN_COORD,
+  "get-syllabus-import": ADMIN_COORD,
+  "list-syllabus-imports": ADMIN_COORD,
+  "commit-syllabus-import": ADMIN_COORD,
+  "get-school-library": STAFF,
+  "update-framework-objective": ADMIN_COORD,
+  "delete-framework-objective": ADMIN_COORD,
+  "create-framework-objective": ADMIN_COORD,
+  "remove-framework": ADMIN_COORD,
+  "discard-syllabus-import": ADMIN_COORD,
+  // Drafting a curriculum is subject work, and the person who has taught
+  // the subject for a decade is the teacher. Reading and writing a draft is
+  // open to staff — scoped, for a teacher, to subjects they actually teach.
+  // Committing it stays with the admin or the subject coordinator: that is
+  // the moment it becomes the school's, and someone has to answer for it.
+  "start-curriculum-draft": STAFF,
+  "get-curriculum-draft": STAFF,
+  "list-curriculum-drafts": STAFF,
   "discard-curriculum-draft": ADMIN_COORD,
-  "update-curriculum-draft": ADMIN_COORD,
+  "update-curriculum-draft": STAFF,
   "commit-curriculum-draft": ADMIN_COORD,
   "generate-scheme-of-work": ADMIN_COORD,
   "get-curriculum-calendar": STAFF,
   "get-curriculum-coverage": ADMIN_COORD,
+  "get-subject-curriculum": STAFF,
+  "plan-lesson-notes": STAFF,
 
   // ── Students (staff-facing) ───────────────────────────────────────────
   "list-students": STAFF,
@@ -175,10 +212,17 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
 
   // ── Lesson notes ──────────────────────────────────────────────────────
   "list-lesson-notes": STAFF,
+  // Readiness across classes. An admin checking that teachers have prepared,
+  // or a teacher checking their own — the action narrows to the caller's
+  // classes, so the same question is safe to ask from either portal.
+  "get-lesson-note-coverage": STAFF,
   "get-lesson-note": EVERYONE, // handler restricts students to their own finalized lessons
   "create-lesson-note": STAFF,
   "update-lesson-note": STAFF,
   "finalize-lesson-note": STAFF,
+  // The way back from "ready". A teacher must be able to undo a marking made
+  // on their behalf, or the privilege above is one-directional.
+  "reopen-lesson-note": STAFF,
   "attach-lesson-resource": STAFF,
   "list-lesson-resources": EVERYONE,
 
@@ -190,6 +234,17 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "manage-activity-blueprints": STAFF,
   "update-assessment": STAFF,
   "publish-assessment": STAFF,
+  // The way back. Whoever may share may unshare.
+  "unshare-assessment": STAFF,
+  // The way back from making something by mistake.
+  "delete-activity": STAFF,
+  // Printing what is stored, rather than retyping it into a document.
+  "get-print-material": STAFF,
+  // Who is missing a year group or one of the school's own student fields.
+  "check-student-records": STAFF,
+  // A learner's own practice: theirs to record, nobody's to inspect by name.
+  "record-card-review": STUDENT_ONLY,
+  "get-card-difficulty": STAFF,
   "close-assessment": STAFF,
   // Variants expose difficulty levels — staff only, always.
   "list-variants": STAFF,
