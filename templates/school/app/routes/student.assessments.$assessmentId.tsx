@@ -18,6 +18,8 @@ import {
 } from "@/components/activity/ActivityContent";
 import { ActivityCountdown } from "@/components/ActivityCountdown";
 import { QuestionRunner } from "@/components/activity/QuestionRunner";
+import { AnswerSheet } from "@/components/activity/AnswerSheet";
+import { parseActivityContent } from "@shared/activity-content";
 
 export default function StudentAssessment() {
   const { assessmentId } = useParams();
@@ -108,7 +110,15 @@ export default function StudentAssessment() {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ assessmentId, content }),
+          body: JSON.stringify({
+            assessmentId,
+            content,
+            // A paper of questions is answered question by question even when
+            // it is all on one screen — so the closed ones can be marked.
+            answers: Object.entries(answers)
+              .filter(([, a]) => a.trim() !== "")
+              .map(([index, answer]) => ({ index: Number(index), answer })),
+          }),
         },
       );
       if (!res.ok) throw new Error("Failed to submit");
@@ -138,6 +148,16 @@ export default function StudentAssessment() {
         reason: string | null;
       }
     | undefined;
+  /** Answers to a whole paper, by question index. */
+  const [answers, setAnswers] = useState<Record<number, string>>({});
+  // The questions of a whole paper, when that is what this is.
+  const questionBlocks =
+    assessment?.renderAs === "questions" &&
+    assessment?.navigation !== "linear" &&
+    assessment?.responseMode !== "none"
+      ? ((parseActivityContent(assessment?.variant?.contentJson)?.blocks ??
+          []) as any[])
+      : [];
   const isTimed = !!assessment?.durationMinutes;
   // Practice with nothing to hand in — a card deck, a reading, a reference
   // sheet. There is no answer box and no submit, and saying so is kinder than
@@ -204,7 +224,7 @@ export default function StudentAssessment() {
           <h1 className="text-base font-semibold">
             {assessment?.title ?? "Assessment"}
           </h1>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground first-letter:uppercase">
             {[
               assessment?.format,
               assessment?.dueDate ? `Due ${assessment.dueDate}` : null,
@@ -343,6 +363,7 @@ export default function StudentAssessment() {
               </h3>
               <ActivityContent
                 contentJson={assessment.variant.contentJson}
+                assessmentId={assessmentId}
                 markdown={assessment.variant.content}
                 audience="student"
               />
@@ -389,12 +410,24 @@ export default function StudentAssessment() {
                 Your work auto-saves as you type. Use the agent for help — it
                 can explain concepts without giving you the answers directly.
               </p>
-              <Textarea
-                className="min-h-75 text-sm resize-none"
-                value={content}
-                onChange={(e) => handleChange(e.target.value)}
-                placeholder="Write your answer here…"
-              />
+              {/* A paper of questions gets a box per question, so the closed
+                  ones can be marked. Anything else keeps the single sheet. */}
+              {questionBlocks.length ? (
+                <AnswerSheet
+                  blocks={questionBlocks}
+                  answers={answers}
+                  onChange={(index, value) =>
+                    setAnswers((prev) => ({ ...prev, [index]: value }))
+                  }
+                />
+              ) : (
+                <Textarea
+                  className="min-h-75 text-sm resize-none"
+                  value={content}
+                  onChange={(e) => handleChange(e.target.value)}
+                  placeholder="Write your answer here…"
+                />
+              )}
             </div>
           )
         )}

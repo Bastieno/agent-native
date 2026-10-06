@@ -6,7 +6,7 @@ import { z } from "zod";
 
 export default defineAction({
   description:
-    "Update an assessment's title, description, due date, total points, or type.",
+    "Update an assessment's title, description, due date, total points, type, or the week's lesson it belongs to.",
   schema: z.object({
     id: z.string().describe("Assessment ID"),
     title: z.string().optional(),
@@ -24,6 +24,12 @@ export default defineAction({
       .optional(),
     dueDate: z.string().optional().describe("ISO date string, e.g. 2026-06-15"),
     totalPoints: z.number().optional(),
+    lessonNoteId: z
+      .string()
+      .optional()
+      .describe(
+        "Attach this to a week's lesson, so it shows under that lesson rather than only in the class's list. Pass an empty string to detach it.",
+      ),
   }),
   http: { method: "PUT" },
   run: async (args) => {
@@ -38,6 +44,12 @@ export default defineAction({
     if (args.assessmentType !== undefined)
       updates.assessmentType = args.assessmentType;
     if (args.dueDate !== undefined) updates.dueDate = args.dueDate;
+    // Empty string detaches: a week it no longer belongs to is a real edit,
+    // and omitting the field has to keep meaning "leave it alone".
+    if (args.lessonNoteId !== undefined) {
+      updates.lessonNoteId =
+        args.lessonNoteId === "" ? null : args.lessonNoteId;
+    }
     if (args.totalPoints !== undefined) updates.totalPoints = args.totalPoints;
 
     await db

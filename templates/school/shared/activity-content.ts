@@ -83,6 +83,12 @@ export type QuestionBlock = {
 
 /** Two-sided practice: term/definition, question/answer, word/translation. */
 export type CardBlock = {
+  /**
+   * Set when the card is created, so a learner's history survives the deck
+   * being edited or reordered. Older cards fall back to their question text
+   * — see `cardKey`.
+   */
+  id?: string;
   front: string;
   back: string;
   hint?: string;
@@ -223,4 +229,25 @@ export function blockNoun(shape: RenderShape, count: number): string {
   };
   const [one, many] = nouns[shape] ?? nouns.prose;
   return count === 1 ? one : many;
+}
+
+/**
+ * Whether a learner would see this shape differently from a teacher.
+ *
+ * Only some shapes have a hidden half: a card keeps its back, a question
+ * keeps its mark scheme and shows its hint on request. Prose, a table, a
+ * list of steps read the same to everyone — and offering "view as student"
+ * there promises a difference that does not exist, which teaches a teacher
+ * to stop trusting the button on the pages where it matters.
+ */
+export function audienceChangesView(
+  shape: RenderShape,
+  blocks: ActivityBlock[],
+): boolean {
+  if (shape === "cards" || shape === "questions") return true;
+  // A hint is withheld from a learner whatever the shape holding it.
+  return blocks.some(
+    (b) =>
+      typeof (b as { hint?: unknown }).hint === "string" && !!(b as any).hint,
+  );
 }

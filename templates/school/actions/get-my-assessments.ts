@@ -127,6 +127,11 @@ export default defineAction({
         format: activity.format,
         renderAs: activity.renderAs,
         responseMode: activity.responseMode,
+        gradingMode: activity.gradingMode,
+        // Something to read or practise with, as against something owed.
+        // Every count a learner is shown turns on this.
+        isMaterial:
+          activity.gradingMode === "none" && activity.responseMode === "none",
         dueDate: activity.dueDate,
         durationMinutes: activity.durationMinutes,
         totalPoints: mine?.totalPoints ?? activity.totalPoints,

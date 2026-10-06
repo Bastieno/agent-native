@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   Collapsible,
   CollapsibleContent,
@@ -6,7 +6,15 @@ import {
 } from "@/components/ui/collapsible";
 import { Markdown } from "@/components/Markdown";
 import { cn } from "@/lib/utils";
-import { IconBulb, IconRotate2 } from "@tabler/icons-react";
+import {
+  IconBulb,
+  IconChevronLeft,
+  IconChevronRight,
+  IconRotate2,
+} from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
+import { agentNativePath } from "@agent-native/core/client";
+import { cardKey } from "@shared/card-key";
 import {
   parseActivityContent,
   type ActivityContent as Content,
@@ -34,12 +42,16 @@ export function ActivityContent({
   markdown,
   audience,
   className,
+  assessmentId,
 }: {
   /** Structured body, as stored. Null/absent falls back to the markdown. */
   contentJson?: unknown;
   /** Always written alongside the blocks; the fallback and the print view. */
   markdown?: string | null;
   audience: "teacher" | "student";
+  /** The activity these blocks belong to, when a learner's practice is
+      being recorded against it. */
+  assessmentId?: string;
   className?: string;
 }) {
   const content = parseActivityContent(contentJson);
@@ -55,7 +67,11 @@ export function ActivityContent({
   return (
     <div className={cn("space-y-4", className)}>
       {content.preamble && <Markdown>{content.preamble}</Markdown>}
-      <ShapeBody content={content} audience={audience} />
+      <ShapeBody
+        content={content}
+        audience={audience}
+        assessmentId={assessmentId}
+      />
     </div>
   );
 }
@@ -63,9 +79,12 @@ export function ActivityContent({
 function ShapeBody({
   content,
   audience,
+  assessmentId,
 }: {
   content: Content;
   audience: "teacher" | "student";
+  /** Needed to record a learner's practice; absent in previews. */
+  assessmentId?: string;
 }) {
   switch (content.shape) {
     case "questions":
@@ -82,7 +101,19 @@ function ShapeBody({
         </ol>
       );
     case "cards":
-      return (
+      // A deck is retrieval practice: the worth of it is the moment a learner
+      // tries to produce the answer before seeing it. All the fronts at once
+      // defeats that — the eye skims instead of committing, and once one card
+      // is turned its neighbours' answers are on screen for the next.
+      //
+      // A teacher is not studying. They are proofreading fourteen cards
+      // before publishing, and want both sides of all of them at once.
+      return audience === "student" ? (
+        <CardDeck
+          blocks={content.blocks as CardBlock[]}
+          assessmentId={assessmentId}
+        />
+      ) : (
         <div className="grid gap-3 sm:grid-cols-2">
           {content.blocks.map((b, i) => (
             <Card key={i} block={b as CardBlock} audience={audience} />
@@ -158,7 +189,53 @@ function Question({
         )}
       </div>
       {block.hint && <Hint text={block.hint} audience={audience} />}
+      {audience === "teacher" ? <Marking block={block} /> : null}
     </li>
+  );
+}
+
+/**
+ * How the question earns its marks — the teacher's half of it.
+ *
+ * These fields were drafted with the question precisely so a teacher could
+ * correct the marking before anyone sits the paper, and `forLearner` already
+ * strips them from everything a student is served. But nothing drew them, so
+ * the one person they were written for could not read them: the worksheet
+ * looked like six questions with no answers, and the mark scheme existed only
+ * in the chat message that proposed it.
+ *
+ * Shown outright rather than behind a disclosure. A teacher checking a paper
+ * is checking this, and a page of closed rows would make them click six times
+ * to do one job.
+ */
+function Marking({ block }: { block: QuestionBlock }) {
+  const answer =
+    block.answer !== undefined && block.answer !== null
+      ? String(block.answer)
+      : null;
+  if (!answer && !block.markScheme && !block.acceptableAnswers?.length) {
+    return null;
+  }
+  return (
+    <div className="mt-3 space-y-1.5 rounded-md border border-dashed bg-muted/30 p-3">
+      <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+        Marking · not shown to the class
+      </p>
+      {answer ? (
+        <p className="text-xs">
+          <span className="text-muted-foreground">Answer: </span>
+          {answer}
+          {block.acceptableAnswers?.length
+            ? ` (also accept: ${block.acceptableAnswers.join(", ")})`
+            : ""}
+        </p>
+      ) : null}
+      {block.markScheme ? (
+        <Markdown className="text-xs text-muted-foreground">
+          {block.markScheme}
+        </Markdown>
+      ) : null}
+    </div>
   );
 }
 
@@ -200,6 +277,219 @@ function Hint({
  * back stays hidden until they commit to an answer; a teacher reviewing the
  * deck gets both sides at once.
  */
+/**
+ * One card at a time: question, attempt, answer, next.
+ *
+ * Keyboard as well as pointer — a learner revising moves fast, and reaching
+ * for the mouse between every card is enough friction to stop them finishing
+ * a deck. Left and right move, space turns the card over.
+ */
+function CardDeck({
+  blocks,
+  assessmentId,
+}: {
+  blocks: CardBlock[];
+  assessmentId?: string;
+}) {
+  const [at, setAt] = useState(0);
+  const [turned, setTurned] = useState(false);
+  const [shuffled, setShuffled] = useState(false);
+  const [order, setOrder] = useState<number[]>(() => blocks.map((_, i) => i));
+  /** Verdicts given this sitting, so the deck can say what was hard. */
+  const [verdicts, setVerdicts] = useState<Record<string, "got_it" | "missed">>(
+    {},
+  );
+
+  const deck = order.map((i) => blocks[i]).filter(Boolean);
+  const card = deck[at];
+
+  const go = useCallback(
+    (delta: number) => {
+      // The updater stays pure. Turning the card over from inside it made a
+      // single arrow press walk the whole deck — React may run an updater
+      // more than once, and each run was advancing the card again.
+      setAt((i) => Math.min(blocks.length - 1, Math.max(0, i + delta)));
+      // A new card always starts face up; carrying the turn over would show
+      // the next answer before its question.
+      setTurned(false);
+    },
+    [blocks.length],
+  );
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      // Not while someone is typing — a deck can sit beside an answer box.
+      const el = document.activeElement;
+      if (
+        el instanceof HTMLInputElement ||
+        el instanceof HTMLTextAreaElement ||
+        (el as HTMLElement)?.isContentEditable
+      ) {
+        return;
+      }
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        go(1);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        go(-1);
+      } else if (e.key === " " || e.key === "Spacebar") {
+        e.preventDefault();
+        setTurned((t) => !t);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [go]);
+
+  const rate = (rating: "got_it" | "missed") => {
+    // No id, no record. A made-up key would attach this practice to
+    // whichever card happened to share its wording.
+    const key = card ? cardKey(card) : null;
+    if (key) {
+      setVerdicts((v) => ({ ...v, [key]: rating }));
+      // Recorded quietly: a learner practising should never wait on a
+      // network, and a lost verdict costs nothing but a repeat.
+      if (assessmentId) {
+        void fetch(
+          agentNativePath("/_agent-native/actions/record-card-review"),
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ assessmentId, cardKey: key, rating }),
+          },
+        ).catch(() => {});
+      }
+    }
+    if (at < deck.length - 1) go(1);
+    else setTurned(false);
+  };
+
+  const shuffle = () => {
+    const next = blocks.map((_, i) => i);
+    for (let i = next.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [next[i], next[j]] = [next[j], next[i]];
+    }
+    setOrder(next);
+    setShuffled(true);
+    setAt(0);
+    setTurned(false);
+  };
+
+  if (!card) return null;
+
+  const missed = Object.values(verdicts).filter((v) => v === "missed").length;
+  const seen = Object.keys(verdicts).length;
+
+  return (
+    <div className="space-y-3">
+      <p className="text-center text-xs text-muted-foreground">
+        {turned ? "The answer" : "Try to answer it, then turn the card over"}
+      </p>
+
+      <button
+        type="button"
+        onClick={() => setTurned((t) => !t)}
+        aria-label={turned ? "Show the question" : "Show the answer"}
+        className={cn(
+          "flex min-h-60 w-full flex-col items-center justify-center gap-3 rounded-xl border p-8 text-center transition-colors",
+          // The back looks unmistakably different, so a glance tells a
+          // learner which side they are on.
+          turned
+            ? "border-primary/40 bg-primary/5"
+            : "bg-card hover:bg-accent/40",
+        )}
+      >
+        <span className="max-w-prose text-lg font-medium">
+          {turned ? card.back : card.front}
+        </span>
+        {!turned && card.hint ? (
+          <span className="text-xs text-muted-foreground">
+            Hint: {card.hint}
+          </span>
+        ) : null}
+        <span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
+          <IconRotate2 size={12} />
+          {turned ? "Back to the question" : "Turn the card over"}
+        </span>
+      </button>
+
+      {/* Only once they have looked. Asking before the answer is shown
+          would be asking them to predict themselves; asking after is at
+          least a judgement about something they have just seen.
+
+          It is their own verdict, for their own practice. No mark comes
+          from it and no teacher sees it against their name — which is also
+          what keeps it honest, since a rating anyone is judged on becomes a
+          performance. */}
+      {turned ? (
+        <div className="flex items-center justify-center gap-2">
+          <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            onClick={() => rate("missed")}
+          >
+            Didn&apos;t know it
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            onClick={() => rate("got_it")}
+          >
+            Knew it
+          </Button>
+        </div>
+      ) : null}
+
+      <div className="flex items-center justify-center gap-4">
+        <Button
+          type="button"
+          size="icon"
+          variant="ghost"
+          onClick={() => go(-1)}
+          disabled={at === 0}
+          aria-label="Previous card"
+        >
+          <IconChevronLeft size={18} />
+        </Button>
+        <span className="text-xs tabular-nums text-muted-foreground">
+          {at + 1} of {deck.length}
+        </span>
+        <Button
+          type="button"
+          size="icon"
+          variant="ghost"
+          onClick={() => go(1)}
+          disabled={at === deck.length - 1}
+          aria-label="Next card"
+        >
+          <IconChevronRight size={18} />
+        </Button>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] text-muted-foreground">
+        <span>
+          {at === deck.length - 1 && seen > 0
+            ? missed > 0
+              ? `That is the last card. ${missed} to come back to.`
+              : "That is the last card, and you knew them all."
+            : "Arrow keys to move, space to turn the card over"}
+        </span>
+        <button
+          type="button"
+          onClick={shuffle}
+          className="underline-offset-2 hover:text-foreground hover:underline"
+        >
+          {shuffled ? "Shuffle again" : "Shuffle"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Card({
   block,
   audience,

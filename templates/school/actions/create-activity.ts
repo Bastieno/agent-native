@@ -1,5 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
+import { getOrgSetting } from "@agent-native/core/settings";
 import { writeAppState } from "@agent-native/core/application-state";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, asc } from "drizzle-orm";
@@ -10,6 +11,8 @@ import {
   type ActivityContent,
 } from "../shared/activity-content.js";
 import { jsonish } from "../shared/zod-json.js";
+import { withCardIds } from "../shared/card-key.js";
+import { styleForClass } from "../server/lib/assessment-style.js";
 
 /**
  * Create a piece of work for a class — a worksheet, a reading task, a problem
@@ -26,6 +29,49 @@ import { jsonish } from "../shared/zod-json.js";
  * `format` is deliberately free text. A school that runs "recitation" or
  * "WAEC practical write-up" should never need a code change to name it.
  */
+/**
+ * Where this draft departs from how the subject is usually done here.
+ *
+ * Said, not enforced: a teacher may well want a 10-minute quiz in a subject
+ * whose usual activity runs 40, and a blueprint is a description of habits
+ * rather than a rule. But it should be a decision, not an oversight.
+ */
+function blueprintNotes(
+  blueprint: any,
+  args: { format?: string; durationMinutes?: number; gradingMode?: string },
+  subjectName?: string | null,
+): string[] {
+  if (!blueprint) return [];
+  const notes: string[] = [];
+  const formats: string[] = Array.isArray(blueprint.formats)
+    ? blueprint.formats
+    : [];
+  if (args.format && formats.length && !formats.includes(args.format)) {
+    notes.push(
+      `${subjectName ?? "This subject"} usually sets ${formats.join(", ")} here; "${args.format}" is not one of them.`,
+    );
+  }
+  if (
+    typeof blueprint.typicalDurationMinutes === "number" &&
+    typeof args.durationMinutes === "number" &&
+    args.durationMinutes !== blueprint.typicalDurationMinutes
+  ) {
+    notes.push(
+      `${subjectName ?? "This subject"}'s work usually runs ${blueprint.typicalDurationMinutes} minutes; this one is ${args.durationMinutes}.`,
+    );
+  }
+  if (
+    blueprint.gradingMode &&
+    args.gradingMode &&
+    args.gradingMode !== blueprint.gradingMode
+  ) {
+    notes.push(
+      `It is usually marked by ${blueprint.gradingMode} here; this one is set to ${args.gradingMode}.`,
+    );
+  }
+  return notes;
+}
+
 export default defineAction({
   description:
     "Create an activity for a class: any piece of work a learner does — worksheet, reading, problem set, essay, practical, oral. You supply the content (instructions, questions, optional difficulty variants, optional rubric); this records it with its objectives, timing and marking mode. Read the week's objectives and the school's activity blueprints first, then draft. Preview by default; pass confirm=true to create.",
@@ -46,6 +92,12 @@ export default defineAction({
       .optional()
       .describe(
         "Curriculum unit this belongs to — sets the objectives when they are not given explicitly",
+      ),
+    lessonNoteId: z
+      .string()
+      .optional()
+      .describe(
+        "The week's lesson this belongs to. Set it whenever the work is for a particular week — it is what makes the material appear under that lesson, for the teacher now and the class once published. A unit id cannot say which of its weeks this is for.",
       ),
     objectives: jsonish(z.array(z.string()))
       .optional()
@@ -80,7 +132,16 @@ export default defineAction({
       z.array(
         z.object({
           label: z.string(),
-          difficulty: z.enum(["advanced", "developing", "foundational"]),
+          // "custom" belongs here too: it is what the column documents,
+          // what create-variant accepts, and what the app itself writes for
+          // a one-variant activity like a reading page. Leaving it out meant
+          // the action refused material the app creates daily.
+          difficulty: z.enum([
+            "advanced",
+            "developing",
+            "foundational",
+            "custom",
+          ]),
           content: z.string(),
           blocks: z.array(z.record(z.string(), z.any())).optional(),
           columns: z.array(z.string()).optional(),
@@ -165,8 +226,16 @@ export default defineAction({
     const db = getDb();
 
     const [cls] = await db
-      .select({ id: schema.classes.id, name: schema.classes.name })
+      .select({
+        id: schema.classes.id,
+        name: schema.classes.name,
+        subjectName: schema.subjects.name,
+      })
       .from(schema.classes)
+      .leftJoin(
+        schema.subjects,
+        eq(schema.subjects.id, schema.classes.subjectId),
+      )
       .where(
         and(
           eq(schema.classes.id, args.classId),
@@ -175,6 +244,28 @@ export default defineAction({
       )
       .limit(1);
     if (!cls) throw new Error("Class not found.");
+
+    // What work looks like in this subject here — the kinds of it, how long
+    // it usually runs, how it is marked.
+    //
+    // The drafter was told to go and read this first, which only works if it
+    // remembers to. Returning it with the preview means the house style
+    // arrives at the moment it is useful: before anything is confirmed, and
+    // beside the thing it describes. A 40-minute rubric-marked worksheet is
+    // then what the school gets on the first attempt rather than the third.
+    const blueprints = (await getOrgSetting(
+      orgId,
+      "activity-blueprints",
+    )) as Record<string, any> | null;
+    const blueprint = cls.subjectName
+      ? (blueprints?.[cls.subjectName] ?? null)
+      : null;
+
+    // How this subject's questions are worded here. Returned with the preview
+    // so the drafter sees the house habits before writing anything — the
+    // agent previews first by design, which is the moment the style is
+    // actually useful. Null when the subject has none.
+    const { style: houseStyle } = await styleForClass(args.classId, orgId);
 
     // Objectives come from the unit unless the caller names them.
     let objectives = args.objectives ?? [];
@@ -238,17 +329,48 @@ export default defineAction({
       closesAt: args.closesAt ?? null,
       dueDate: args.dueDate ?? null,
       willPublish: !!args.publish,
+      // Named for what it is: this school's answer, not the app's.
+      subjectBlueprint: blueprint
+        ? {
+            subject: cls.subjectName,
+            formats: blueprint.formats ?? null,
+            defaultFormat: blueprint.defaultFormat ?? null,
+            shapeForThisFormat:
+              blueprint.formatShapes?.[args.format] ??
+              blueprint.renderAs ??
+              null,
+            typicalDurationMinutes: blueprint.typicalDurationMinutes ?? null,
+            gradingMode: blueprint.gradingMode ?? null,
+            rubricCriteria: blueprint.rubricCriteria ?? null,
+            notes: blueprint.notes ?? null,
+          }
+        : null,
+      houseStyle: houseStyle
+        ? {
+            name: houseStyle.name,
+            isSample: houseStyle.isSample,
+            // Wording only. The paper shape is deliberately left out: it
+            // describes a mock, and most activities are not one.
+            followWhenWritingQuestions: houseStyle.guidance,
+          }
+        : null,
     };
 
     if (!args.confirm) {
       return {
         preview: true,
         ...preview,
-        message: `Ready to create "${args.title}" (${args.format}) for ${cls.name}${
+        message: `${blueprintNotes(blueprint, args, cls.subjectName).join(" ")}${
+          blueprintNotes(blueprint, args, cls.subjectName).length ? " " : ""
+        }Ready to create "${args.title}" (${args.format}) for ${cls.name}${
           objectives.length
             ? `, covering ${objectives.length} objective(s)`
             : ""
-        }. Re-run with confirm=true to create it.`,
+        }.${
+          houseStyle
+            ? ` ${cls.name} questions are worded like ${houseStyle.name} here — check the content against houseStyle.followWhenWritingQuestions before confirming.`
+            : ""
+        } Re-run with confirm=true to create it.`,
       };
     }
 
@@ -257,6 +379,8 @@ export default defineAction({
       id: assessmentId,
       classId: args.classId,
       unitId: args.unitId ?? null,
+      lessonNoteId: args.lessonNoteId ?? null,
+      assessmentStyleId: houseStyle?.id ?? null,
       title: args.title,
       description: args.instructions ?? null,
       assessmentType: args.format,
@@ -303,7 +427,12 @@ export default defineAction({
         ? {
             shape,
             columns: (v as { columns?: string[] }).columns ?? args.columns,
-            blocks: blocks as ActivityContent["blocks"],
+            // A card gets an id at birth, so a learner's record of
+            // practising it survives the deck being reordered or added to.
+            blocks: withCardIds(
+              shape,
+              blocks as any[],
+            ) as ActivityContent["blocks"],
           }
         : null;
 
