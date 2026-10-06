@@ -12,6 +12,7 @@ import {
   classIdForVariant,
   studentRecordIdForUser,
 } from "./class-access.js";
+import { roleWord } from "./lesson-attribution.js";
 import {
   findUnclassifiedActions,
   rolesFor,
@@ -192,8 +193,16 @@ async function assertCallerMayTouch(
     // produce its own "not found" error rather than masking it here.
     if (!classId) continue;
     if (!(await canAccessClass(actor, classId))) {
+      console.warn(
+        `[guard] ${actor.schoolRole} attempted "${actionName}" on a class they do not have`,
+      );
       throw new Error(
-        `Not permitted: you do not have access to that class (action "${actionName}").`,
+        // The action's name is ours, not the reader's. A teacher told
+        // 'you do not have access to that class (action "get-gradebook")'
+        // is being handed the plumbing; the guide asks every refusal to
+        // name what was refused instead. The name stays in the log line
+        // below, where it is useful.
+        "Not permitted: that class is not one of yours.",
       );
     }
   }
@@ -243,8 +252,12 @@ async function assertCallerMayRun(actionName: string): Promise<void> {
     );
   }
   if (!allowed.includes(role)) {
+    // Same again: what was refused, not which function refused it.
+    console.warn(
+      `[guard] ${role} attempted "${actionName}", which is not available to that role`,
+    );
     throw new Error(
-      `Not permitted: "${actionName}" is not available to your role (${role}).`,
+      `Not permitted: that is not something a ${roleWord(role)} can do.`,
     );
   }
 }
