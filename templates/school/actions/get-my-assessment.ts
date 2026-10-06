@@ -59,6 +59,22 @@ export default defineAction({
       .limit(1);
     if (!assessment) throw new Error("Assessment not found.");
 
+    // Not shared with the class means not readable by the class, whatever the
+    // learner knows about it.
+    //
+    // Every other student-facing read filters on published; this one fetched
+    // by id alone, so a draft — a test still being written, or something a
+    // teacher had deliberately stopped sharing — could still be read in full
+    // by any enrolled learner holding its id. `unshare-assessment` promises
+    // the work comes off their screens; this is what made that untrue.
+    //
+    // The wording matches the missing case on purpose: "there is no such
+    // activity" and "you cannot see it" should be indistinguishable, or the
+    // refusal itself confirms that a test exists.
+    if (assessment.status !== "published" && assessment.status !== "closed") {
+      throw new Error("Assessment not found.");
+    }
+
     const [assigned] = await db
       .select()
       .from(schema.studentAssessments)

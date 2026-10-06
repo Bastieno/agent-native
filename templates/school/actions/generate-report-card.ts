@@ -5,6 +5,7 @@ import { eq, and, inArray } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { z } from "zod";
+import { getUserLabels, realNameOrNull } from "../server/lib/user-names.js";
 
 export default defineAction({
   description:
@@ -22,10 +23,48 @@ export default defineAction({
 
     const schoolConfig = (await getOrgSetting(orgId, "school-config")) as any;
 
-    // Student info
-    const userRow = (await db.get(
-      sql`SELECT name, email FROM "user" WHERE id = ${args.studentId} LIMIT 1`,
-    )) as { name: string; email: string } | undefined;
+    // Who this is.
+    //
+    // A learner has two ids: the student record and the account. This looked
+    // the student record id up in the user table, which matches nothing, so
+    // every report card came out with no name and no email on it — the one
+    // document that goes home to a parent. The record gives the account id;
+    // the account gives the name.
+    const [record] = await db
+      .select({ id: schema.students.id, userId: schema.students.userId })
+      .from(schema.students)
+      .where(
+        and(
+          eq(schema.students.id, args.studentId),
+          eq(schema.students.orgId, orgId),
+        ),
+      )
+      .limit(1);
+    // Tolerant of being handed the account id instead, since both are called
+    // "student id" in conversation.
+    const [byUser] = record
+      ? []
+      : await db
+          .select({ id: schema.students.id, userId: schema.students.userId })
+          .from(schema.students)
+          .where(
+            and(
+              eq(schema.students.userId, args.studentId),
+              eq(schema.students.orgId, orgId),
+            ),
+          )
+          .limit(1);
+    const studentUserId = (record ?? byUser)?.userId ?? null;
+    const labels = studentUserId ? await getUserLabels([studentUserId]) : {};
+    const userRow = studentUserId
+      ? {
+          name: realNameOrNull(
+            labels[studentUserId]?.name,
+            labels[studentUserId]?.email,
+          ),
+          email: labels[studentUserId]?.email ?? null,
+        }
+      : undefined;
 
     // Class + term info
     const [cls] = await db
