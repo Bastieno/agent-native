@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { LeavePrintView } from "@/components/layout/LeavePrintView";
 import { Markdown } from "@/components/Markdown";
 import { useSchoolConfig } from "@/hooks/use-school-config";
+import { paperFor } from "@shared/paper";
+import { formatSchoolDate } from "@shared/dates";
 
 /**
  * A document, on its own page, ready to print.
@@ -61,6 +63,8 @@ export default function PrintDocument() {
     (config as any)?.theme?.displayName ?? (config as any)?.name ?? null;
   const logoUrl = (config as any)?.theme?.logoUrl ?? null;
   const landscape = doc?.orientation === "landscape";
+  const paper = paperFor(config);
+  const sheetWidth = landscape ? paper.landscapeWidth : paper.width;
 
   if (isLoading) {
     return (
@@ -90,13 +94,14 @@ export default function PrintDocument() {
     <>
       {/* Page size belongs to the document, not the stylesheet: a term's worth
           of columns needs landscape, a class list does not. */}
-      <style>{`@page { size: A4 ${landscape ? "landscape" : "portrait"}; margin: 14mm; }`}</style>
+      <style>{`@page { size: ${paper.css} ${landscape ? "landscape" : "portrait"}; margin: ${paper.margin}; }`}</style>
 
       <div className="min-h-screen bg-muted/30 py-6 print:bg-white print:py-0">
         {/* Screen-only controls. */}
         <div
           data-print-hide
-          className="mx-auto mb-4 flex max-w-[210mm] items-center justify-between gap-3 px-4"
+          style={{ maxWidth: sheetWidth }}
+          className="mx-auto mb-4 flex items-center justify-between gap-3 px-4"
         >
           <div className="flex min-w-0 items-center gap-3">
             <LeavePrintView />
@@ -112,9 +117,8 @@ export default function PrintDocument() {
         </div>
 
         <article
-          className={`mx-auto bg-white p-[14mm] text-black shadow-sm print:p-0 print:shadow-none ${
-            landscape ? "max-w-[297mm]" : "max-w-[210mm]"
-          }`}
+          style={{ maxWidth: sheetWidth, padding: paper.margin }}
+          className="mx-auto bg-white text-black shadow-sm print:p-0 print:shadow-none"
         >
           <header className="mb-5 border-b border-neutral-300 pb-4">
             <div className="flex items-start gap-3">
@@ -143,7 +147,9 @@ export default function PrintDocument() {
               </div>
               {doc.createdAt ? (
                 <p className="shrink-0 text-xs text-neutral-500">
-                  {new Date(doc.createdAt).toLocaleDateString()}
+                  {formatSchoolDate(doc.createdAt, config as any, {
+                    dateStyle: "medium",
+                  })}
                 </p>
               ) : null}
             </div>
@@ -151,7 +157,7 @@ export default function PrintDocument() {
 
           {/* The same renderer the rest of the app uses, so a table written by
               the agent prints the way it reads on screen. */}
-          <Markdown className="print-body text-[13px] text-black">
+          <Markdown pageBreaks className="print-body text-[13px] text-black">
             {doc.body}
           </Markdown>
 

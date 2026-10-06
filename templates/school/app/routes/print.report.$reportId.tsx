@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { LeavePrintView } from "@/components/layout/LeavePrintView";
 import { Markdown } from "@/components/Markdown";
 import { useSchoolConfig } from "@/hooks/use-school-config";
+import { paperFor } from "@shared/paper";
+import { formatSchoolDate, formatSchoolDateTime } from "@shared/dates";
 
 /**
  * A report card, printed from what was stored.
@@ -46,6 +48,7 @@ export default function PrintReportCard() {
   const schoolName =
     (config as any)?.theme?.displayName ?? (config as any)?.name ?? null;
   const logoUrl = (config as any)?.theme?.logoUrl ?? null;
+  const paper = paperFor(config);
 
   if (isLoading) {
     return (
@@ -74,18 +77,19 @@ export default function PrintReportCard() {
 
   return (
     <>
-      <style>{`@page { size: A4 portrait; margin: 14mm; }`}</style>
+      <style>{`@page { size: ${paper.css} portrait; margin: ${paper.margin}; }`}</style>
 
       <div className="min-h-screen bg-muted/30 py-6 print:bg-white print:py-0">
         <div
           data-print-hide
-          className="mx-auto mb-4 flex max-w-[210mm] items-center justify-between gap-3 px-4"
+          style={{ maxWidth: paper.width }}
+          className="mx-auto mb-4 flex items-center justify-between gap-3 px-4"
         >
           <div className="flex min-w-0 items-center gap-3">
             <LeavePrintView />
             <p className="truncate text-xs text-muted-foreground">
-              Issued {new Date(report.issuedAt).toLocaleDateString()} · this is
-              the record as it was issued and will not change.
+              Issued {formatSchoolDate(report.issuedAt, config as any)} · this
+              is the record as it was issued and will not change.
             </p>
           </div>
           <Button size="sm" onClick={() => window.print()}>
@@ -94,7 +98,10 @@ export default function PrintReportCard() {
           </Button>
         </div>
 
-        <article className="mx-auto max-w-[210mm] bg-white p-[14mm] text-black shadow-sm print:p-0 print:shadow-none">
+        <article
+          style={{ maxWidth: paper.width, padding: paper.margin }}
+          className="mx-auto bg-white text-black shadow-sm print:p-0 print:shadow-none"
+        >
           <header className="mb-5 border-b border-neutral-300 pb-4">
             <div className="flex items-start gap-3">
               {logoUrl ? (
@@ -117,7 +124,7 @@ export default function PrintReportCard() {
               </div>
               <div className="shrink-0 text-right text-[11px] text-neutral-500">
                 {report.serial ? <p>{report.serial}</p> : null}
-                <p>{new Date(report.issuedAt).toLocaleDateString()}</p>
+                <p>{formatSchoolDate(report.issuedAt, config as any)}</p>
               </div>
             </div>
           </header>
@@ -128,7 +135,7 @@ export default function PrintReportCard() {
           </Markdown>
 
           <footer className="mt-8 border-t border-neutral-300 pt-3 text-[11px] text-neutral-500">
-            Issued {new Date(report.issuedAt).toLocaleString()}
+            Issued {formatSchoolDateTime(report.issuedAt, config as any)}
             {report.serial ? ` · reference ${report.serial}` : ""}. Quote this
             reference in any query about this report.
           </footer>

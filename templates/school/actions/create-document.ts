@@ -20,6 +20,11 @@ import { z } from "zod";
  * every other school's screen. A document lands on one desk and is then thrown
  * away.
  *
+ * It is for pages nobody has stored. Material the app already holds — a
+ * worksheet, a practical, a card deck — prints from its own blocks through
+ * the print-material route, because retyping it here is where the options of
+ * a multiple-choice question came to print as one run of prose.
+ *
  * The body is markdown, not HTML: the renderer already handles tables and
  * mathematics, and refuses raw markup, so a document can never inject anything
  * into the page it is displayed on. Documents are stored in per-user
@@ -28,7 +33,7 @@ import { z } from "zod";
  */
 export default defineAction({
   description:
-    "Compose a printable document from data you have already gathered — a term's marks on one page, a class list, a summary of missing work, anything a teacher asks to see or print. Read the data with the relevant action first, then write the document body as markdown (GitHub tables and $LaTeX$ are supported). Returns a path to open; the teacher prints it from there and it is thrown away. Prefer this over asking for a new screen.",
+    "Compose a printable document from data you have already gathered. NOT for material the app already holds: a worksheet, reading page, practical, problem set or card deck is printed from what is stored — navigate to print-material (everything set for one week, each piece on its own sheet) or print-activity (one of them). Use this only for a page nobody has stored — a term's marks on one page, a class list, a summary of missing work, anything a teacher asks to see or print. Read the data with the relevant action first, then write the document body as markdown (GitHub tables and $LaTeX$ are supported). Returns a path to open; the teacher prints it from there and it is thrown away. Prefer this over asking for a new screen.",
   schema: z.object({
     title: z
       .string()
@@ -38,7 +43,7 @@ export default defineAction({
     body: z
       .string()
       .describe(
-        "The document itself, in markdown. Use a table for anything tabular — it will print with borders. Keep it to what was asked for; a printed page has no scrollbar.",
+        "The document itself, in markdown. Use a table for anything tabular — it will print with borders. To start a new page, put a line reading ---page--- on its own; the print view honours it, so there is no need to check, and no reason to split one document into several to get a page break. Raw HTML is not rendered and will print as the text you typed, so never reach for a <div> or a style attribute. Keep it to what was asked for; a printed page has no scrollbar.",
       ),
     subtitle: z
       .string()

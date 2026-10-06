@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { remarkBindUnits } from "@/components/remark-bind-units";
 import "katex/dist/katex.min.css";
 import { cn } from "@/lib/utils";
 
@@ -11,14 +12,46 @@ import { cn } from "@/lib/utils";
  * Raw HTML is not rendered, so content written by the agent or users cannot
  * inject markup.
  */
+/**
+ * A line that means "start a new page here" when printing.
+ *
+ * Raw HTML is deliberately not rendered, so an agent asked to break pages
+ * reached for `<div style="break-before: page">` and the printed worksheet
+ * carried that text across the middle of it. Markdown has no page break, so
+ * the app gives it one: a line reading `---page---`, which prints as a break
+ * and shows as nothing on screen.
+ */
+const PAGE_BREAK = /^[ \t]*---page---[ \t]*$/m;
+
 export function Markdown({
   children,
   className,
+  pageBreaks = false,
 }: {
   children: string | null | undefined;
   className?: string;
+  /** Honour `---page---` as a page break. For print views. */
+  pageBreaks?: boolean;
 }) {
   if (!children) return null;
+
+  if (pageBreaks && PAGE_BREAK.test(children)) {
+    const pages = children.split(PAGE_BREAK);
+    return (
+      <>
+        {pages.map((page, i) => (
+          <div
+            key={i}
+            // Every page but the last ends with a break.
+            className={i < pages.length - 1 ? "break-after-page" : undefined}
+          >
+            <Markdown className={className}>{page.trim()}</Markdown>
+          </div>
+        ))}
+      </>
+    );
+  }
+
   return (
     <div
       className={cn(
@@ -40,7 +73,7 @@ export function Markdown({
       )}
     >
       <ReactMarkdown
-        remarkPlugins={[remarkGfm, remarkMath]}
+        remarkPlugins={[remarkGfm, remarkMath, remarkBindUnits]}
         rehypePlugins={[rehypeKatex]}
       >
         {children}
