@@ -8,6 +8,8 @@ import {
   putOrgSetting,
 } from "@agent-native/core/settings";
 import { nanoid } from "nanoid";
+import { putUserSetting } from "@agent-native/core/settings";
+import { realNameOrNull } from "../lib/user-names.js";
 import {
   assertClassAccess,
   assertAssessmentAccess,
@@ -78,6 +80,71 @@ async function getSchoolProfile(db: any, userId: string) {
 // ─── Session info (role detection) ───────────────────────────────────────────
 
 /**
+ * Put a newly activated person in the school's own org.
+ *
+ * The framework decides which org a request reads from by membership. Staff
+ * invitations always recorded one; student invitations did not, so a student
+ * who signed up was given a brand-new org of their own and every school read
+ * came back empty — no school name, no grading scale, no classes. The same
+ * happens to anyone who signed up before being invited, whatever their role.
+ *
+ * Making the membership at activation covers both, whether or not the
+ * invitation was ever recorded.
+ */
+async function ensureSchoolMembership(
+  db: any,
+  orgId: string,
+  email: string,
+): Promise<void> {
+  try {
+    const existing = await db.get(
+      sql`SELECT id FROM org_members WHERE org_id = ${orgId} AND LOWER(email) = ${email.toLowerCase()} LIMIT 1`,
+    );
+    if (!existing) {
+      await db.run(
+        sql`INSERT INTO org_members (id, org_id, email, role, joined_at) VALUES (${nanoid()}, ${orgId}, ${email.toLowerCase()}, 'member', ${Date.now()})`,
+      );
+    }
+    // Point them at the school, not at whatever org signing up made for them.
+    await putUserSetting(email.toLowerCase(), "active-org-id", { orgId });
+  } catch {
+    // Never block a sign-in over this; the profile is already created.
+  }
+}
+
+/**
+ * Give a newly activated person the name they were invited under.
+ *
+ * Signing up asks only for an email and password, so the framework fills the
+ * name in from the address: `teacher.maths@pilot.test` becomes
+ * "teacher.maths". The name the admin typed when inviting — "Ben Wood" —
+ * lived only in the pending invite and was thrown away on activation, so the
+ * staff list, the gradebook and a parent's report card all ended up reading
+ * "teacher.maths" and "student1".
+ *
+ * Only a derived name is replaced: one that matches the front of the address.
+ * A name someone chose themselves is never overwritten by an admin's typing.
+ */
+async function applyInvitedName(
+  db: any,
+  userId: string,
+  email: string,
+  invitedName: unknown,
+): Promise<void> {
+  const name = typeof invitedName === "string" ? invitedName.trim() : "";
+  if (!name) return;
+  try {
+    const row = (await db.get(
+      sql`SELECT name FROM "user" WHERE id = ${userId} LIMIT 1`,
+    )) as { name: string | null } | undefined;
+    if (realNameOrNull(row?.name, email)) return; // they named themselves
+    await db.run(sql`UPDATE "user" SET name = ${name} WHERE id = ${userId}`);
+  } catch {
+    // A name is worth having, not worth failing a sign-in for.
+  }
+}
+
+/**
  * When an invited staff member signs in for the first time they have no
  * school_profiles row yet.  Scan pending-staff-invites across all orgs and
  * auto-create the profile so they land in the right portal immediately
@@ -108,6 +175,8 @@ async function autoActivateInvitedStaff(
       schoolRole,
       status: "active",
     });
+    await ensureSchoolMembership(db, orgId, email);
+    await applyInvitedName(db, userId, email, match.name);
     // Remove from pending list so they no longer show under "Pending invitations"
     const remaining = invites.filter(
       (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
@@ -146,12 +215,21 @@ async function autoActivateInvitedStudents(
       schoolRole: "student",
       status: "active",
     });
-    // Create student academic record
+    await ensureSchoolMembership(db, orgId, email);
+    await applyInvitedName(db, userId, email, match.name);
+    // Create student academic record, carrying whatever the invitation knew.
+    //
+    // The record cannot exist before this moment — there is no account to
+    // attach it to — so an answer given at invitation had nowhere to live and
+    // was simply lost. Keeping it on the invite and writing it here means the
+    // admin answers once, when they know, rather than being asked to remember
+    // weeks later that a student they invited has no year group.
     await db.insert(schema.students).values({
       id: nanoid(),
       userId,
       schoolId: orgId,
-      customFieldsJson: "{}",
+      gradeLevelId: match.gradeLevelId ?? null,
+      customFieldsJson: JSON.stringify(match.fields ?? {}),
       status: "active",
       ownerEmail: email,
       orgId,
@@ -254,8 +332,23 @@ export const getSessionInfo = defineEventHandler(async (event) => {
     }
   }
 
+  // The session carries no name, so the portals had none to greet anyone by.
+  // It is read here rather than in each page: every portal wants it, and a
+  // name set at activation should show up without another round trip.
+  let name: string | null = (session as any).name ?? null;
+  if (!name && session.userId) {
+    try {
+      const row = (await db.get(
+        sql`SELECT name FROM "user" WHERE id = ${session.userId} LIMIT 1`,
+      )) as { name: string | null } | undefined;
+      name = row?.name ?? null;
+    } catch {
+      // A greeting is not worth failing the session over.
+    }
+  }
+
   return {
-    user: { id: session.userId, email: session.email, name: session.name },
+    user: { id: session.userId, email: session.email, name },
     schoolRole: profile?.schoolRole ?? null,
     schoolId: profile?.schoolId ?? null,
     accessDenied,
