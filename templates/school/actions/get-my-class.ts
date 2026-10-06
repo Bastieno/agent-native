@@ -60,7 +60,15 @@ export default defineAction({
       teacherName = t?.name ?? t?.email ?? null;
     }
 
-    const lessons = await db
+    // A week is open to the class when something has been published for it —
+    // a page to read, a card deck, a worksheet.
+    //
+    // This used to wait for the teacher's own lesson note to be marked ready.
+    // That made sense while the class read the note itself; now that the note
+    // is the teacher's private plan, it meant a teacher could publish a
+    // reading page and their class would still see no weeks at all, because
+    // the thing being waited on was one they will never read.
+    const allLessons = await db
       .select({
         id: schema.lessonNotes.id,
         title: schema.lessonNotes.title,
@@ -68,20 +76,56 @@ export default defineAction({
         lessonDate: schema.lessonNotes.lessonDate,
       })
       .from(schema.lessonNotes)
-      .where(
-        and(
-          eq(schema.lessonNotes.classId, rawArgs.classId),
-          eq(schema.lessonNotes.status, "finalized"),
-        ),
-      )
-      .orderBy(desc(schema.lessonNotes.createdAt))
-      .limit(20);
+      .where(eq(schema.lessonNotes.classId, rawArgs.classId))
+      .orderBy(asc(schema.lessonNotes.lessonDate));
+
+    const openWeeks = allLessons.length
+      ? await db
+          .select({
+            lessonNoteId: schema.assessments.lessonNoteId,
+            renderAs: schema.assessments.renderAs,
+            gradingMode: schema.assessments.gradingMode,
+            responseMode: schema.assessments.responseMode,
+          })
+          .from(schema.assessments)
+          .where(
+            and(
+              inArray(
+                schema.assessments.lessonNoteId,
+                allLessons.map((l: any) => l.id),
+              ),
+              eq(schema.assessments.status, "published"),
+            ),
+          )
+      : [];
+    const hasMaterial = new Set(
+      openWeeks.map((w: any) => w.lessonNoteId).filter(Boolean),
+    );
+    // What is in each week, by shape rather than by the school's format
+    // name — so a week can say "Reading · Cards" without the page having to
+    // know what "key terms" means.
+    const shapesByWeek = new Map<string, string[]>();
+    for (const w of openWeeks as any[]) {
+      if (!w.lessonNoteId) continue;
+      if (w.gradingMode !== "none" || w.responseMode !== "none") continue;
+      const list = shapesByWeek.get(w.lessonNoteId) ?? [];
+      list.push(w.renderAs ?? "prose");
+      shapesByWeek.set(w.lessonNoteId, list);
+    }
+    const lessons = allLessons
+      .filter((l: any) => hasMaterial.has(l.id))
+      .map((l: any) => ({ ...l, shapes: shapesByWeek.get(l.id) ?? [] }));
 
     const assessments = await db
       .select({
         id: schema.assessments.id,
         title: schema.assessments.title,
         assessmentType: schema.assessments.assessmentType,
+        lessonNoteId: schema.assessments.lessonNoteId,
+        format: schema.assessments.format,
+        gradingMode: schema.assessments.gradingMode,
+        responseMode: schema.assessments.responseMode,
+        durationMinutes: schema.assessments.durationMinutes,
         dueDate: schema.assessments.dueDate,
         status: schema.assessments.status,
       })
@@ -119,8 +163,16 @@ export default defineAction({
       lessons,
       assessments: assessments.map((a: any) => ({
         ...a,
+        // Something to read is not something to hand in. Counting the two
+        // together told a learner they owed seven pieces of work when they
+        // owed three.
+        isMaterial: a.gradingMode === "none" && a.responseMode === "none",
         submissionStatus: statusByAssessment[a.id] ?? "not_started",
       })),
+      // What is actually owed, for anything that wants to say a number.
+      workSet: assessments.filter(
+        (a: any) => !(a.gradingMode === "none" && a.responseMode === "none"),
+      ).length,
     };
   },
 });

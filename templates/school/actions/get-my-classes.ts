@@ -126,6 +126,8 @@ export default defineAction({
       .select({
         id: schema.assessments.id,
         classId: schema.assessments.classId,
+        gradingMode: schema.assessments.gradingMode,
+        responseMode: schema.assessments.responseMode,
       })
       .from(schema.assessments)
       .where(
@@ -163,8 +165,13 @@ export default defineAction({
       subjectName: r.subjectName ?? null,
       gradeLevelName: r.gradeLevelName ?? null,
       teacherName: labelFor(labels, r.cls.primaryTeacherUserId),
+      // Work owed, not everything published: a reading page and a card deck
+      // are never "due", and counting them made the badge mean nothing.
       pendingAssessments: assessments.filter(
-        (a: any) => a.classId === r.cls.id && !doneIds.has(a.id),
+        (a: any) =>
+          a.classId === r.cls.id &&
+          !doneIds.has(a.id) &&
+          !(a.gradingMode === "none" && a.responseMode === "none"),
       ).length,
     }));
   },

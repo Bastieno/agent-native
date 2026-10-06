@@ -58,6 +58,15 @@ export default defineAction({
     let totalGraded = 0;
     let totalAssigned = 0;
     let totalSubmitted = 0;
+    const now = new Date().toISOString();
+    // What is due next, so the page can show the one thing a learner can act
+    // on rather than three ways of saying "nothing yet".
+    let dueNext: {
+      assessmentId: string;
+      title: string;
+      className: string;
+      dueDate: string;
+    } | null = null;
 
     for (const enrollment of enrollments) {
       const [cls] = await db
@@ -66,7 +75,7 @@ export default defineAction({
         .where(eq(schema.classes.id, enrollment.classId))
         .limit(1);
 
-      const assessments = await db
+      const published = await db
         .select()
         .from(schema.assessments)
         .where(
@@ -75,7 +84,13 @@ export default defineAction({
             eq(schema.assessments.status, "published"),
           ),
         );
-      totalAssigned += assessments.length;
+      // Progress is about work. A page to read is neither handed in nor
+      // marked, so counting it here gave a learner who had read everything
+      // "handed in 0 of 7" — a score they can only fail.
+      const assessments = published.filter(
+        (a: any) => !(a.gradingMode === "none" && a.responseMode === "none"),
+      );
+      // Counted below, once work that has not opened yet is excluded.
 
       const grades = await db
         .select()
@@ -110,9 +125,35 @@ export default defineAction({
             inArray(schema.submissions.status, ["submitted", "graded"]),
           ),
         );
-      totalSubmitted += submitted.filter((s) =>
+      const submittedHere = submitted.filter((s) =>
         assessments.some((a) => a.id === s.assessmentId),
-      ).length;
+      );
+      totalSubmitted += submittedHere.length;
+
+      // Work that has not opened yet is not work the learner is behind on.
+      // Counting it made a learner who was completely up to date in week two
+      // read as 20% complete.
+      const setSoFar = assessments.filter(
+        (a: any) => !a.opensAt || a.opensAt <= now,
+      );
+      totalAssigned += setSoFar.length;
+
+      const outstanding = setSoFar
+        .filter((a: any) => !submittedHere.some((s) => s.assessmentId === a.id))
+        .map((a: any) => ({
+          assessmentId: a.id,
+          title: a.title,
+          className: cls?.name ?? enrollment.classId,
+          dueDate: a.dueDate ?? a.closesAt ?? null,
+        }))
+        .filter((a) => a.dueDate && a.dueDate >= now)
+        .sort((a, b) => (a.dueDate! < b.dueDate! ? -1 : 1));
+      if (
+        outstanding[0] &&
+        (!dueNext || outstanding[0].dueDate! < dueNext.dueDate)
+      ) {
+        dueNext = outstanding[0] as typeof dueNext;
+      }
 
       classSummaries.push({
         classId: enrollment.classId,
@@ -120,10 +161,15 @@ export default defineAction({
         averageScore: average !== null ? average.toFixed(1) : null,
         gradedCount: percentages.length,
         totalAssessments: assessments.length,
+        setSoFar: setSoFar.length,
+        submittedCount: submittedHere.length,
+        // This divided every submission the learner had made anywhere by this
+        // class's assessment count, so a learner in two classes could read
+        // over 100% in one of them.
         completionRate:
-          assessments.length > 0
-            ? ((submitted.length / assessments.length) * 100).toFixed(0)
-            : "0",
+          setSoFar.length > 0
+            ? ((submittedHere.length / setSoFar.length) * 100).toFixed(0)
+            : null,
         isStruggling: average !== null && average < passMark,
       });
     }
@@ -142,10 +188,13 @@ export default defineAction({
       overallAverage,
       assignmentsCompleted: totalSubmitted,
       assignmentsTotal: totalAssigned,
+      // Null, not "0": nothing set is not the same as nothing done.
       completionRate:
         totalAssigned > 0
           ? ((totalSubmitted / totalAssigned) * 100).toFixed(0)
-          : "0",
+          : null,
+      markedCount: totalGraded,
+      dueNext,
       classSummaries,
       strengthsAndWeaknesses: {
         strong: strongClasses.map((c) => (c as any).className ?? c.classId),

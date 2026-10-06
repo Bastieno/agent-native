@@ -8,7 +8,7 @@ import {
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
-import { agentNativePath } from "@agent-native/core/client";
+import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 
 const navItems = [
   {
@@ -66,6 +66,10 @@ export function StudentNav() {
           </NavLink>
         ))}
       </nav>
+      {/* The student portal has no sidebar, so this is where the agent is
+          opened and closed — the floating bubble only covers small screens.
+          Without it, closing the panel on a wide screen left no way back. */}
+      <AgentToggleButton className="hidden shrink-0 xl:inline-flex" />
       <button
         type="button"
         onClick={async () => {

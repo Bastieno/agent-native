@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { NO_TEACHER_LABEL } from "@shared/class-teacher";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
@@ -61,7 +62,8 @@ export default function StudentClasses() {
                   )}
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  {cls.subjectName ?? "—"} · {cls.teacherName ?? "—"}
+                  {cls.subjectName ?? "—"} ·{" "}
+                  {cls.teacherName ?? NO_TEACHER_LABEL}
                 </p>
               </div>
               <IconChevronRight
