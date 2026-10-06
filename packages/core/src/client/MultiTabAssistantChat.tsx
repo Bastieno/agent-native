@@ -762,6 +762,8 @@ export function MultiTabAssistantChat({
   if (activeThreadId) mountedTabsRef.current.add(activeThreadId);
   const chatRefs = useRef<Map<string, AssistantChatHandle>>(new Map());
   const pendingSends = useRef<Map<string, PendingSend>>(new Map());
+  /** Drafts waiting for a tab that has not mounted yet. */
+  const pendingDrafts = useRef<Map<string, string>>(new Map());
   const [runningThreads, setRunningThreads] = useState<Set<string>>(new Set());
   const [showHistory, setShowHistory] = useState(false);
   const newThreadIds = useRef<Set<string>>(new Set());
@@ -1278,6 +1280,10 @@ export function MultiTabAssistantChat({
       const tabId = event.data.data?.tabId;
       const requestedTabId = typeof tabId === "string" ? tabId : undefined;
       const background = event.data.data?.background as boolean | undefined;
+      // `submit: false` means "let them look at it first". It was read by
+      // nobody here, so every caller that asked for a draft silently started
+      // a run — and paid for one. Omitted still means send, as before.
+      const submit = event.data.data?.submit as boolean | undefined;
       const rawImages = event.data.data?.images;
       const images = Array.isArray(rawImages)
         ? rawImages.filter(
@@ -1300,6 +1306,19 @@ export function MultiTabAssistantChat({
         : message;
 
       const sendToTab = (threadId: string) => {
+        // A message to review goes into the composer and stops there. The
+        // context is left out: it is instructions for the model, not words
+        // to put in someone's mouth, and they are about to edit this.
+        if (submit === false) {
+          const ref = chatRefs.current.get(threadId);
+          if (ref) {
+            ref.prefillComposer(message);
+          } else {
+            pendingDrafts.current.set(threadId, message);
+          }
+          return;
+        }
+
         // If a model override was specified, apply it only if we recognize it
         if (model) {
           const matchedGroup = availableModels.find((g) =>
@@ -1364,6 +1383,13 @@ export function MultiTabAssistantChat({
       if (ref) {
         setTimeout(() => ref.sendMessage(pending.message, pending.images), 50);
         pendingSends.current.delete(tabId);
+      }
+    }
+    for (const [tabId, draft] of pendingDrafts.current) {
+      const ref = chatRefs.current.get(tabId);
+      if (ref) {
+        setTimeout(() => ref.prefillComposer(draft), 50);
+        pendingDrafts.current.delete(tabId);
       }
     }
   }, [openTabIds]);

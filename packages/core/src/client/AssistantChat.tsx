@@ -3217,6 +3217,8 @@ export interface AssistantChatHandle {
   isRunning(): boolean;
   /** Focus the composer input */
   focusComposer(): void;
+  /** Put a message in the composer for the user to review, without sending */
+  prefillComposer(text: string): void;
   /** Export the currently visible client-side thread for operations like fork. */
   exportThreadSnapshot(): ChatThreadSnapshot | null;
 }
@@ -4607,6 +4609,9 @@ const AssistantChatInner = forwardRef<
       },
       focusComposer() {
         tiptapRef.current?.focus();
+      },
+      prefillComposer(text: string) {
+        tiptapRef.current?.setDraft(text);
       },
       exportThreadSnapshot() {
         if (messages.length === 0) return null;
