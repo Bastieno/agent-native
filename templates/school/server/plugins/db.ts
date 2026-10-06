@@ -645,6 +645,183 @@ export default runMigrations(
       sql: `CREATE INDEX IF NOT EXISTS report_cards_student
         ON report_cards (org_id, student_id, term_id)`,
     },
+    // Which year groups take a subject. Null means the school has not said,
+    // which is different from "none" — a subject is not missing from a year
+    // group's plan until we know that year group takes it.
+    {
+      version: 57,
+      sql: `ALTER TABLE subjects ADD COLUMN grade_levels_json TEXT`,
+    },
+    // A unit's week-by-week plan: which objectives each week carries, and
+    // what a week is for when it carries none — a mid-term test, revision,
+    // a practical. Without it a committed unit knows only its first and last
+    // week, and the pacing an agent worked out with the school was discarded
+    // the moment it was committed.
+    {
+      version: 58,
+      sql: `ALTER TABLE units ADD COLUMN week_plan_json TEXT`,
+    },
+    // The shipped NERDC and WAEC libraries are samples — a couple of dozen
+    // objectives per subject, enough to show the shape. An agent that treats
+    // one as the whole syllabus plans a thin year from it, which is exactly
+    // what happened to JSS1 Basic Science.
+    {
+      version: 59,
+      sql: `ALTER TABLE curriculum_frameworks ADD COLUMN is_sample INTEGER NOT NULL DEFAULT 0`,
+    },
+    {
+      version: 60,
+      sql: `UPDATE curriculum_frameworks SET is_sample = 1 WHERE org_id IS NULL`,
+    },
+    // A school's own syllabus, on its way in from whatever they had — a PDF,
+    // a scan, photographs of paper. Extraction is not reliable enough to write
+    // straight into the library, so it lands here first and is reviewed.
+    {
+      version: 61,
+      sql: `CREATE TABLE IF NOT EXISTS syllabus_imports (
+        id TEXT PRIMARY KEY,
+        school_id TEXT NOT NULL,
+        title TEXT NOT NULL,
+        source TEXT,
+        state_json TEXT NOT NULL DEFAULT '{}',
+        status TEXT NOT NULL DEFAULT 'in_progress',
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+        owner_email TEXT,
+        org_id TEXT,
+        visibility TEXT NOT NULL DEFAULT 'org'
+      )`,
+    },
+    // Where an objective came from, and whether its code is the syllabus's own
+    // or one this app made up. A teacher asking "where does this come from?"
+    // deserves an answer, and a generated code must never be cited as official.
+    {
+      version: 62,
+      sql: `ALTER TABLE framework_objectives ADD COLUMN source_note TEXT`,
+    },
+    {
+      version: 63,
+      sql: `ALTER TABLE framework_objectives ADD COLUMN code_generated INTEGER NOT NULL DEFAULT 0`,
+    },
+    // Which import a school's library entry came from, so removing it can
+    // hand the import back for correcting rather than losing the reading.
+    {
+      version: 64,
+      sql: `ALTER TABLE curriculum_frameworks ADD COLUMN import_id TEXT`,
+    },
+    // An admin may write, edit and finalize a lesson note on a teacher's
+    // behalf — covering an absence, or setting a subject up before its
+    // teacher exists. The privilege is real, so it is attributed: a teacher
+    // opening a note they did not write can see who did.
+    {
+      version: 65,
+      sql: `ALTER TABLE lesson_notes ADD COLUMN finalized_by_user_id TEXT`,
+    },
+    {
+      version: 66,
+      sql: `ALTER TABLE lesson_notes ADD COLUMN finalized_at TEXT`,
+    },
+    {
+      version: 67,
+      sql: `ALTER TABLE lesson_notes ADD COLUMN last_edited_by_user_id TEXT`,
+    },
+    // Marking a note ready can be wrong — an admin who moved too early, a
+    // teacher who was not finished. Reopening it records who did that and
+    // keeps the earlier marking, so the disagreement is legible instead of
+    // silently overwritten.
+    {
+      version: 68,
+      sql: `ALTER TABLE lesson_notes ADD COLUMN reopened_by_user_id TEXT`,
+    },
+    {
+      version: 69,
+      sql: `ALTER TABLE lesson_notes ADD COLUMN reopened_at TEXT`,
+    },
+    // Which week's lesson an activity belongs to, so a learner can be shown
+    // "this week: read this, practise these, hand this in on Friday".
+    {
+      version: 70,
+      sql: `ALTER TABLE assessments ADD COLUMN lesson_note_id TEXT`,
+    },
+    // How a subject's questions are usually worded — WAEC, KCSE, a school's
+    // own habits. Data, never code: an app that knows no exam board by name
+    // works the same in Lagos and in Nairobi.
+    {
+      version: 71,
+      sql: `CREATE TABLE IF NOT EXISTS assessment_styles (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        subject TEXT,
+        region TEXT,
+        org_id TEXT,
+        is_sample INTEGER NOT NULL DEFAULT 0,
+        item_style_json TEXT NOT NULL DEFAULT '{}',
+        paper_shape_json TEXT,
+        derived_from TEXT,
+        questions_analysed INTEGER,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      )`,
+    },
+    {
+      version: 72,
+      sql: `ALTER TABLE subjects ADD COLUMN assessment_style_id TEXT`,
+    },
+    // Which style an activity's questions were written against — so "was this
+    // actually written WAEC-style?" has an answer months later.
+    {
+      version: 73,
+      sql: `ALTER TABLE assessments ADD COLUMN assessment_style_id TEXT`,
+    },
+    // A school's own past papers on their way to becoming a style.
+    {
+      version: 74,
+      sql: `CREATE TABLE IF NOT EXISTS style_imports (
+        id TEXT PRIMARY KEY,
+        school_id TEXT NOT NULL,
+        style_name TEXT NOT NULL,
+        subject TEXT,
+        source TEXT,
+        questions_json TEXT NOT NULL DEFAULT '[]',
+        status TEXT NOT NULL DEFAULT 'in_progress',
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+        owner_email TEXT,
+        org_id TEXT,
+        visibility TEXT NOT NULL DEFAULT 'private'
+      )`,
+    },
+    // A learner's own practice with a card, over time. Private to them:
+    // self-reports schedule their revision and never become a mark.
+    {
+      version: 75,
+      sql: `CREATE TABLE IF NOT EXISTS card_reviews (
+        id TEXT PRIMARY KEY,
+        student_id TEXT NOT NULL,
+        assessment_id TEXT NOT NULL,
+        card_key TEXT NOT NULL,
+        rating TEXT NOT NULL,
+        reviewed_at TEXT NOT NULL DEFAULT (datetime('now')),
+        org_id TEXT,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      )`,
+    },
+    {
+      version: 76,
+      sql: `CREATE INDEX IF NOT EXISTS card_reviews_student_card
+        ON card_reviews (student_id, assessment_id, card_key)`,
+    },
+    // Who gave this to the class, and when. An admin may publish to any class
+    // in the school — someone has to, when a teacher is absent or not yet
+    // appointed — but a teacher should never find work live to their class
+    // with nothing saying who put it there.
+    {
+      version: 77,
+      sql: `ALTER TABLE assessments ADD COLUMN published_by_user_id TEXT`,
+    },
+    {
+      version: 78,
+      sql: `ALTER TABLE assessments ADD COLUMN published_at TEXT`,
+    },
   ],
   { table: "school_migrations" },
 );

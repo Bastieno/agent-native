@@ -78,6 +78,11 @@ export const subjects = table("subjects", {
   iconName: text("icon_name"),
   position: integer("position").notNull().default(0),
   status: text("status").notNull().default("active"), // active | archived
+  // JSON array of grade level ids that take this subject; null = not stated.
+  gradeLevelsJson: text("grade_levels_json"),
+  // Which assessment style this subject's questions follow. Null = none, and
+  // questions are drafted without any house habits.
+  assessmentStyleId: text("assessment_style_id"),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),
@@ -107,6 +112,10 @@ export const units = table("units", {
   description: text("description"),
   weekStart: integer("week_start"),
   weekEnd: integer("week_end"),
+  // JSON array of { week, objectives[], note } — the pacing within the unit,
+  // as agreed with the school. Null when nobody has set one, in which case
+  // objectives are spread evenly across the unit's weeks.
+  weekPlanJson: text("week_plan_json"),
   sequence: integer("sequence").notNull().default(1),
   // JSON array of { framework, code, description } — e.g. Common Core, WAEC, IGCSE
   standardsJson: text("standards_json").notNull().default("[]"),
@@ -185,6 +194,17 @@ export const lessonNotes = table("lesson_notes", {
   summary: text("summary"),
   lessonDate: text("lesson_date"),
   status: text("status").notNull().default("draft"), // draft | finalized
+  // Who declared this ready, and who last changed it. An admin may do either
+  // on a teacher's behalf — that is a real privilege, and it is recorded
+  // rather than silent, so a teacher is never surprised by a note they did
+  // not write and "who said this was ready?" has an answer.
+  finalizedByUserId: text("finalized_by_user_id"),
+  finalizedAt: text("finalized_at"),
+  lastEditedByUserId: text("last_edited_by_user_id"),
+  // Reopening keeps the previous marking rather than erasing it: a note that
+  // was declared ready and then pulled back has a history worth reading.
+  reopenedByUserId: text("reopened_by_user_id"),
+  reopenedAt: text("reopened_at"),
   customFieldsJson: text("custom_fields_json").notNull().default("{}"),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
@@ -192,6 +212,33 @@ export const lessonNotes = table("lesson_notes", {
 });
 
 export const lessonNoteShares = createSharesTable("lesson_note_shares");
+
+/**
+ * One student's practice with one card, each time they look at it.
+ *
+ * Kept apart from `question_responses`, which records an answer to a
+ * question once. A card is met again and again, and what is recorded is not
+ * an answer but the learner's own verdict on themselves — which is a weaker
+ * thing entirely, and must never be read as attainment. It schedules their
+ * practice; it is not evidence of what they know, and no mark comes from it.
+ *
+ * Private to the learner. A teacher who could see "Ayomide said she did not
+ * know this" would change what gets pressed: the ratings would turn into
+ * performance and both the data and the practice would be lost. Staff see
+ * only how a whole class fares on a card.
+ */
+export const cardReviews = table("card_reviews", {
+  id: text("id").primaryKey(),
+  studentId: text("student_id").notNull(),
+  assessmentId: text("assessment_id").notNull(),
+  /** Identifies the card itself; see shared/card-key.ts. */
+  cardKey: text("card_key").notNull(),
+  /** The learner's own verdict: "got_it" | "missed". */
+  rating: text("rating").notNull(),
+  reviewedAt: text("reviewed_at").notNull().default(now()),
+  orgId: text("org_id"),
+  createdAt: text("created_at").notNull().default(now()),
+});
 
 export const lessonResources = table("lesson_resources", {
   id: text("id").primaryKey(),
@@ -211,6 +258,17 @@ export const assessments = table("assessments", {
   id: text("id").primaryKey(),
   classId: text("class_id").notNull(),
   unitId: text("unit_id"),
+  // The week this belongs to. A unit runs seven weeks and its id cannot say
+  // which of them a reading is for, so "what is this week's material?" had no
+  // answer. Null for work that belongs to the unit at large.
+  lessonNoteId: text("lesson_note_id"),
+  /** The style its questions were written against, when the subject had one. */
+  assessmentStyleId: text("assessment_style_id"),
+  // Who shared it with the class, and when. An admin may publish to any class
+  // in the school; the teacher whose class it is should be able to see that
+  // they did, rather than finding work live and having to ask.
+  publishedByUserId: text("published_by_user_id"),
+  publishedAt: text("published_at"),
   title: text("title").notNull(),
   description: text("description"),
   assessmentType: text("assessment_type").notNull().default("homework"), // homework | quiz | test | project | oral | practical | custom
@@ -250,6 +308,57 @@ export const assessments = table("assessments", {
 });
 
 export const assessmentShares = createSharesTable("assessment_shares");
+
+/**
+ * How a subject's questions are usually worded here.
+ *
+ * Not what is asked — the curriculum decides that — but the habits of the
+ * asking: four options rather than five, stems that open "Which of the
+ * following", one question in eight negated, answers spread evenly across the
+ * letters. A school preparing for WAEC wants its Friday exercise to sound
+ * like WAEC; a school in Nairobi wants KCSE. Neither is written into the app.
+ *
+ * `orgId` NULL is a sample shipped with the app, shared by every school and
+ * removable by none — the same arrangement the curriculum libraries use.
+ */
+/**
+ * A school's own papers, on their way to becoming a style.
+ *
+ * Reading them is the agent's job and counting them is the app's, so the
+ * questions arrive here in batches and the statistics are recomputed each
+ * time. Nothing reaches the library until somebody commits it, and what is
+ * kept at the end is the arithmetic, not the questions.
+ */
+export const styleImports = table("style_imports", {
+  id: text("id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  styleName: text("style_name").notNull(),
+  subject: text("subject"),
+  source: text("source"),
+  /** The questions read so far, as JSON. Discarded once committed. */
+  questionsJson: text("questions_json").notNull().default("[]"),
+  status: text("status").notNull().default("in_progress"), // in_progress | committed | discarded
+  createdAt: text("created_at").notNull().default(now()),
+  updatedAt: text("updated_at").notNull().default(now()),
+  ...ownableColumns(),
+});
+
+export const assessmentStyles = table("assessment_styles", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(), // "WAEC", "KCSE", "Our house style"
+  subject: text("subject"), // NULL = any subject
+  region: text("region"), // "Nigeria" — for telling samples apart
+  orgId: text("org_id"), // NULL = shipped sample; orgId = the school's own
+  isSample: integer("is_sample", { mode: "boolean" }).notNull().default(false),
+  /** How a single question is worded. Applies to any assessment, any length. */
+  itemStyleJson: text("item_style_json").notNull().default("{}"),
+  /** The shape of a full paper. Only used when someone asks for a mock. */
+  paperShapeJson: text("paper_shape_json"),
+  /** What it was read from, so a reader can judge how much to trust it. */
+  derivedFrom: text("derived_from"),
+  questionsAnalysed: integer("questions_analysed"),
+  createdAt: text("created_at").notNull().default(now()),
+});
 
 export const assessmentVariants = table("assessment_variants", {
   id: text("id").primaryKey(),
@@ -474,6 +583,11 @@ export const curriculumFrameworks = table("curriculum_frameworks", {
   version: text("version"), // "2024-2025 syllabus"
   sourceUrl: text("source_url"),
   orgId: text("org_id"), // NULL = built-in global; orgId = school-custom framework
+  // A shipped sample rather than a school's real syllabus: enough objectives
+  // to show the shape, nowhere near a term's worth of teaching.
+  isSample: integer("is_sample", { mode: "boolean" }).notNull().default(false),
+  /** The syllabus import this came from, when a school brought it in. */
+  importId: text("import_id"),
   createdAt: text("created_at").notNull().default(now()),
 });
 
@@ -487,7 +601,35 @@ export const frameworkObjectives = table("framework_objectives", {
   description: text("description").notNull(),
   gradeLevel: text("grade_level"), // "SS1-SS3", "Grade 8"
   sequence: integer("sequence").notNull().default(1),
+  // Where this objective came from — "Basic Science syllabus 2024, p.14".
+  sourceNote: text("source_note"),
+  // True when the app invented the code because the syllabus had none. Such a
+  // code orders the library; it is not a reference anyone should quote.
+  codeGenerated: integer("code_generated", { mode: "boolean" })
+    .notNull()
+    .default(false),
   createdAt: text("created_at").notNull().default(now()),
+});
+
+/**
+ * A school's own syllabus, being brought in from paper or a document.
+ *
+ * Extraction from a scan is never certain, so nothing reaches the standards
+ * library until someone at the school has read it back: the import holds the
+ * proposed framework, its objectives and whatever could not be read, and is
+ * committed as one act.
+ */
+export const syllabusImports = table("syllabus_imports", {
+  id: text("id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  title: text("title").notNull(),
+  /** What it was taken from, for the record. */
+  source: text("source"),
+  stateJson: text("state_json").notNull().default("{}"),
+  status: text("status").notNull().default("in_progress"), // in_progress | committed | discarded
+  createdAt: text("created_at").notNull().default(now()),
+  updatedAt: text("updated_at").notNull().default(now()),
+  ...ownableColumns(),
 });
 
 // ─── Layer 9: Communication ──────────────────────────────────────────────────
