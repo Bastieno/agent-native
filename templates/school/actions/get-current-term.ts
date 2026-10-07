@@ -1,7 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
-import { getDb, schema } from "../server/db/index.js";
-import { and, asc, eq } from "drizzle-orm";
+import { termContext } from "../server/lib/timetable.js";
 import { z } from "zod";
 
 /**
@@ -24,37 +23,15 @@ export default defineAction({
   run: async () => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
-    const db = getDb();
-
-    const [year] = await db
-      .select()
-      .from(schema.academicYears)
-      .where(
-        and(
-          eq(schema.academicYears.schoolId, orgId),
-          eq(schema.academicYears.status, "active"),
-        ),
-      )
-      .limit(1);
-    if (!year) {
+    const ctx = await termContext(orgId);
+    if (!ctx) {
       return {
         session: null,
         term: null,
         message: "No active academic session yet.",
       };
     }
-
-    const terms = await db
-      .select()
-      .from(schema.terms)
-      .where(eq(schema.terms.academicYearId, year.id))
-      .orderBy(asc(schema.terms.sequence));
-
-    const today = new Date().toISOString().slice(0, 10);
-    const current = terms.find(
-      (t: any) => t.startDate <= today && today <= t.endDate,
-    );
-    const next = terms.find((t: any) => t.startDate > today);
+    const { year, terms, current, next } = ctx;
 
     return {
       session: { id: year.id, name: year.name },
