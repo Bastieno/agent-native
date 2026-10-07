@@ -245,6 +245,30 @@ export async function teachDifferentiatedWeek(
     );
   }
 
+  // A teacher scanning the handed-in work sees the marks, not just who
+  // handed in — and sees each one out of the paper that learner sat.
+  const handedIn = asList(
+    await client.as(cls.teacher, "list-submissions", { assessmentId }),
+    "submissions",
+  ).filter((sub: any) => sub.status === "graded");
+  if (handedIn.length) {
+    findings.expect(
+      phase,
+      handedIn.every((sub: any) => typeof sub.percentage === "number"),
+      "a marked submission shows its mark in the list",
+      `${handedIn.filter((s: any) => typeof s.percentage !== "number").length} of ${handedIn.length} had none`,
+    );
+    const totals = new Set(
+      handedIn.map((sub: any) => sub.maxScore).filter(Boolean),
+    );
+    findings.expect(
+      phase,
+      totals.size > 1,
+      "learners are marked out of their own paper, not one total for the class",
+      `every mark was out of ${[...totals].join(", ")}`,
+    );
+  }
+
   // Learners were sorted into more than one group, or nothing was
   // differentiated and the three papers were decoration.
   findings.expect(
