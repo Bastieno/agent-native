@@ -12,6 +12,13 @@ import {
   type ClassWeek,
 } from "./school-term.js";
 import { asList } from "./shapes.js";
+import {
+  teachDifferentiatedWeek,
+  checkMovementBetweenGroups,
+  measureDifferentiationEffect,
+  snapshotGroups,
+  type DifferentiatedWeek,
+} from "./differentiation.js";
 import scenario from "../scenarios/nigeria-full-school.js";
 
 /**
@@ -52,10 +59,37 @@ console.log(`  curriculum took ${timings.curriculum.toFixed(1)}s\n`);
 
 console.log("· teaching the term");
 const weeks: ClassWeek[] = [];
+const differentiated: DifferentiatedWeek[] = [];
+// One class teaches the second half of the term at three standards, which is
+// what a teacher does once they have marks to group on. The rest carry on
+// undifferentiated, so both paths are exercised in one run.
+const differentiatedClass = run.classes[0];
+const differentiateFrom = 3;
+let groupsBefore = new Map<string, string>();
+
 await time("term", async () => {
   for (let weekIndex = 0; weekIndex < scenario.weeksTaught; weekIndex++) {
     const at = Date.now();
+    // Grouping is only meaningful once there are marks to group on, and the
+    // categories recorded here are what later movement is measured against.
+    if (weekIndex === differentiateFrom) {
+      groupsBefore = await snapshotGroups(client, differentiatedClass);
+      console.log(
+        `  grouping ${differentiatedClass.name} before differentiating: ${[...groupsBefore.values()].join(", ")}`,
+      );
+    }
     for (const cls of run.classes) {
+      if (cls.id === differentiatedClass.id && weekIndex >= differentiateFrom) {
+        const result = await teachDifferentiatedWeek(
+          client,
+          run,
+          cls,
+          weekIndex,
+          findings,
+        );
+        if (result) differentiated.push(result);
+        continue;
+      }
       const result = await teachClassWeek(
         client,
         run,
@@ -90,6 +124,36 @@ await time("term", async () => {
     }
   }
 });
+
+if (differentiated.length) {
+  const served = differentiated[differentiated.length - 1].served;
+  console.log(
+    `\n· ${differentiatedClass.name} ran ${differentiated.length} weeks at three standards; last week served ${JSON.stringify(served)}`,
+  );
+  const effect = await measureDifferentiationEffect(
+    client,
+    run,
+    differentiatedClass,
+    groupsBefore,
+    differentiateFrom,
+    findings,
+  );
+  if (effect.before !== null && effect.after !== null) {
+    console.log(
+      `  the group given the easier paper: ${effect.before}% on the common paper → ${effect.after}% on theirs`,
+    );
+  }
+  const movement = await checkMovementBetweenGroups(
+    client,
+    run,
+    differentiatedClass,
+    groupsBefore,
+    findings,
+  );
+  console.log(
+    `  after the term: ${movement.movedUp} moved up, ${movement.movedDown} moved down`,
+  );
+}
 
 console.log("\n· checking what one teacher can reach of another's class");
 await time("isolation", async () => {

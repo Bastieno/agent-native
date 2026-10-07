@@ -50,9 +50,21 @@ export function answerQuestion(
   block: QuestionBlock,
   ability: number,
   seed: number,
+  /**
+   * How hard this paper is, where 1 is the standard one. A foundational
+   * paper is easier for the same learner, which is the entire point of
+   * setting one — without this, differentiation changes who gets which
+   * sheet of paper and nothing else, and the simulation could not tell
+   * whether it helped.
+   */
+  difficulty = 1,
 ): SimAnswer {
   const random = rng(seed);
   const options = block.options ?? [];
+  // An easier paper lifts what a learner can do; a harder one stretches
+  // them. Kept gentle, so a weak learner on a foundational paper still
+  // misses things and a strong one on an advanced paper still scores well.
+  const effective = Math.min(0.98, Math.max(0.03, ability + (1 - difficulty)));
 
   if (options.length > 0) {
     const right = correctIndex(block);
@@ -60,7 +72,7 @@ export function answerQuestion(
     // weak learner scores something — which is what makes the app's own
     // grouping worth checking rather than trivially correct.
     const guessing = 1 / options.length;
-    const chance = guessing + (1 - guessing) * ability;
+    const chance = guessing + (1 - guessing) * effective;
     const correct = right !== null && random() < chance;
     const chosen = correct
       ? right!
@@ -78,7 +90,10 @@ export function answerQuestion(
   }
 
   // Open question: how much of the mark scheme they manage to say.
-  const coverage = Math.min(1, Math.max(0, ability + (random() - 0.5) * 0.25));
+  const coverage = Math.min(
+    1,
+    Math.max(0, effective + (random() - 0.5) * 0.25),
+  );
   const scheme = block.markScheme ?? "";
   const points = scheme
     .split(/[.;\n]/)

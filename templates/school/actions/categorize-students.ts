@@ -167,7 +167,16 @@ export default defineAction({
           category: cat.category,
           basis: "agent_assessed",
           assessedBy: userEmail ?? "agent",
-          notes: `Average: ${cat.average}%, based on ${cat.submissionCount} graded submission(s). Advanced from ${thresholds.advanced}%, developing from ${thresholds.developing}%, using ${thresholds.basis}.`,
+          // Says what the average rests on as well as what it is. Where
+          // missed work counts as a nought, a learner can be placed
+          // foundational for not handing work in rather than for finding it
+          // hard, and the two call for completely different responses — so
+          // the grouping has to say which it is looking at.
+          notes: `Average: ${cat.average}%, from ${cat.submissionCount} of ${cat.assessmentsSet} piece(s) of work${
+            cat.notHandedIn
+              ? ` (${cat.notHandedIn} not handed in, counted as ${policy === "zero" ? "nought" : "nothing"})`
+              : ""
+          }. Advanced from ${thresholds.advanced}%, developing from ${thresholds.developing}%, using ${thresholds.basis}.`,
         });
       }
     }

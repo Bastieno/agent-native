@@ -76,7 +76,27 @@ export default defineAction({
 
     const schoolConfig = (await getOrgSetting(orgId, "school-config")) as any;
     const levels: any[] = schoolConfig?.gradingScale?.levels ?? [];
-    const maxScore = assessment.totalPoints || 100;
+
+    // Each learner is marked out of the paper they were given.
+    //
+    // This used one maximum for the whole class — the assessment's — so a
+    // learner sitting a shorter foundational variant was scored against the
+    // full paper. A scaffolded sheet worth 2 of the 7 marks capped them at
+    // 29%: differentiation, the feature meant to give a struggling learner
+    // something they can do, was guaranteeing they failed. To a teacher it
+    // looked like the foundational group collapsing, not like a bug.
+    const variants = await db
+      .select({
+        id: schema.assessmentVariants.id,
+        totalPoints: schema.assessmentVariants.totalPoints,
+      })
+      .from(schema.assessmentVariants)
+      .where(eq(schema.assessmentVariants.assessmentId, args.assessmentId));
+    const maxByVariant = new Map<string, number>();
+    for (const v of variants as any[]) {
+      if (v.totalPoints) maxByVariant.set(v.id, Number(v.totalPoints));
+    }
+    const assessmentMax = assessment.totalPoints || 100;
     const now = new Date().toISOString();
 
     const compiled: any[] = [];
@@ -108,6 +128,11 @@ export default defineAction({
         (sum: number, r: any) => sum + (r.awardedPoints ?? 0),
         0,
       );
+      // Their variant's own total, falling back to the paper's when a
+      // variant carries none — a single-variant activity is the common case
+      // and behaves exactly as before.
+      const maxScore =
+        maxByVariant.get(submission.variantId ?? "") ?? assessmentMax;
       const percentage = maxScore > 0 ? (score / maxScore) * 100 : 0;
       // The school's own scale, not a letter of our choosing.
       const letterGrade =
