@@ -221,4 +221,33 @@ export async function checkArms(
     (await roll(client, run, optionId)).length === 0,
     "an option class starts with nobody on it; its learners are chosen",
   );
+
+  // Which arm a class is for decides who is enrolled: an admin's call.
+  const teacherClass = run.classes.find((c) => c.id === template.id)!;
+  findings.expect(
+    phase,
+    await refused(() =>
+      client.as(teacherClass.teacher, "update-class", {
+        id: classIds[0],
+        armId: armIds[1],
+      }),
+    ),
+    "a teacher cannot move a class to another arm",
+  );
+  const renamed = await refused(() =>
+    client.as(teacherClass.teacher, "update-class", {
+      id: template.id,
+      name: template.name,
+    }),
+  );
+  findings.expect(
+    phase,
+    !renamed,
+    "a teacher can still update other details of their own class",
+  );
+  findings.expect(
+    phase,
+    sameSet(await roll(client, run, classIds[0]), groups[0]),
+    "the refused change left the arm's class roll as it was",
+  );
 }

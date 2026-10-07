@@ -9,6 +9,7 @@ import {
   enrolArmInClass,
   setOptionArms,
 } from "../server/lib/arm-enrolment.js";
+import { getSchoolRole } from "../server/lib/student-access.js";
 import { isUnassignedTeacher } from "../shared/class-teacher.js";
 
 export default defineAction({
@@ -42,8 +43,18 @@ export default defineAction({
   }),
   http: { method: "POST" },
   run: async (args) => {
-    const { orgId } = currentAccess();
+    const { orgId, userEmail } = currentAccess();
     if (!orgId) throw new Error("No school context.");
+    // Moving a class between arms changes who is enrolled, which is the
+    // admin's call; a teacher may still change everything else.
+    if (args.armId !== undefined || args.optionArmIds !== undefined) {
+      const role = userEmail ? await getSchoolRole(userEmail) : null;
+      if (role !== "school_admin") {
+        throw new Error(
+          "Only an admin can change which arm a class belongs to.",
+        );
+      }
+    }
     const db = getDb();
     const now = new Date().toISOString();
 
