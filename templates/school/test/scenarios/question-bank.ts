@@ -10,6 +10,11 @@ import type { ScenarioQuestion } from "./nigeria-secondary.js";
  *
  * Deterministic and free: no model is called, and a run is identical every
  * time, so a mark that changes between runs is a change in the app.
+ *
+ * Numbers are written the way this school's learners see them in their own
+ * textbooks — 4,508, not the SI 4 508. A thousands separator written as a
+ * space reads to a child as two numbers, and a simulated paper that nobody
+ * would set is not testing much.
  */
 
 export type SubjectWeeks = {
@@ -34,7 +39,7 @@ const mathematics: SubjectWeeks = {
       ],
       questions: [
         {
-          prompt: "What is the place value of 7 in 4 783?",
+          prompt: "What is the place value of 7 in 4,783?",
           points: 1,
           options: ["Tens", "Hundreds", "Thousands", "Units"],
           answer: "B",
@@ -42,12 +47,12 @@ const mathematics: SubjectWeeks = {
         {
           prompt: "Which number is the largest?",
           points: 1,
-          options: ["9 087", "9 807", "9 078", "9 780"],
+          options: ["9,087", "9,807", "9,078", "9,780"],
           answer: "B",
         },
         {
           prompt:
-            "A trader counted 12 406 bags of rice. Say how you would read this number aloud, and what the 4 is worth.",
+            "A trader counted 12,406 bags of rice. Say how you would read this number aloud, and what the 4 is worth.",
           points: 3,
           answerSpace: "long",
           markScheme:
@@ -63,20 +68,20 @@ const mathematics: SubjectWeeks = {
       ],
       questions: [
         {
-          prompt: "Work out 4 508 + 2 697.",
+          prompt: "Work out 4,508 + 2,697.",
           points: 1,
-          options: ["7 105", "7 205", "6 195", "7 195"],
+          options: ["7,105", "7,205", "6,195", "7,195"],
           answer: "B",
         },
         {
-          prompt: "Work out 8 004 − 3 276.",
+          prompt: "Work out 8,004 − 3,276.",
           points: 1,
-          options: ["4 728", "5 728", "4 828", "4 738"],
+          options: ["4,728", "5,728", "4,828", "4,738"],
           answer: "A",
         },
         {
           prompt:
-            "A school had 1 250 exercise books, gave out 867 and received 400 more. How many has it now? Show your working.",
+            "A school had 1,250 exercise books, gave out 867 and received 400 more. How many has it now? Show your working.",
           points: 4,
           answerSpace: "long",
           markScheme:
@@ -94,11 +99,11 @@ const mathematics: SubjectWeeks = {
         {
           prompt: "Work out 236 × 14.",
           points: 1,
-          options: ["3 204", "3 304", "3 404", "2 304"],
+          options: ["3,204", "3,304", "3,404", "2,304"],
           answer: "B",
         },
         {
-          prompt: "Work out 1 505 ÷ 7.",
+          prompt: "Work out 1,505 ÷ 7.",
           points: 1,
           options: ["215", "205", "251", "225"],
           answer: "A",
@@ -189,7 +194,7 @@ const mathematics: SubjectWeeks = {
         },
         {
           prompt:
-            "A tank holds 2 400 litres. 3/8 is used on Monday and 1/4 on Tuesday. How much is left? Show your working.",
+            "A tank holds 2,400 litres. 3/8 is used on Monday and 1/4 on Tuesday. How much is left? Show your working.",
           points: 5,
           answerSpace: "long",
           markScheme:
