@@ -1,8 +1,8 @@
 # Timetable — design
 
 Follows [timetable-brief.md](./timetable-brief.md). Covers the school's week,
-rooms, arms, clash detection and the admin timetable. The learner's own week
-is a separate, later piece; it is easy once this exists.
+rooms, arms, clash detection, the admin timetable, and each learner's own
+week.
 
 ## What a school's week looks like (the problem)
 
@@ -32,7 +32,7 @@ it is written into the code.
 
 | Question                              | Answer                                                                                         |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Scope of this piece                   | School week, rooms, arms, clashes, admin grid. Learner week view follows separately            |
+| Scope of this piece                   | School week, rooms, arms, clashes, admin grid, a learner's own week                            |
 | Week shape                            | Any days (Saturday included), any number of periods, per-day bell times and breaks             |
 | Rotating (Week A / Week B) timetables | Not built. `cycleLength` is stored, always 1, so a rotation can be added without reshaping     |
 | Terms                                 | A timetable belongs to a term; "copy from last term" seeds a new one                           |
@@ -241,12 +241,43 @@ on every edit.
 - **Navigation.** `navigate --view=timetable [--termId] [--armId |
 --teacherUserId | --room]` and `--view=arms`.
 
+## A learner's own week
+
+What a learner opens on Sunday night: which lessons, where, with whom, on each
+day the school teaches.
+
+- **`get-my-week`** — audience EVERYONE, answering for whoever asks. A learner
+  gets the classes they are actively enrolled in; a member of staff gets the
+  classes they teach (primary or support). Arguments: optional `date`, which
+  picks the term (the current one; between terms, the next, and it says so).
+- Returns the school week in order — each day named in the school's locale,
+  each period and break with its bell times — and in each lesson period the
+  class, subject, teacher's name and resolved room. A free period is a period
+  with nothing in it, shown as such, not omitted.
+- **A learner sees only their own option.** In an option block, a learner
+  taking Further Mathematics sees Further Mathematics, not the block.
+- **Never shown to a learner:** clashes, other learners, other arms, or the
+  word "option block". If a learner's own week holds two lessons at once — a
+  clash nobody resolved — it shows both, plainly, and nothing more.
+- No school week set → "Your school hasn't set its timetable yet." No periods
+  for them → "Nothing is on your timetable yet."
+- **UI:** `/student/week`, "My week" in the learner's navigation
+  (`IconCalendarWeek`). A grid of days × periods on a wide screen; on a phone,
+  one day at a time, opening on today. Today is marked. The learner's
+  dashboard gains a one-line "Next: Physics, Physics Lab, 10:20" from the same
+  action.
+- **Agent:** `view-screen` on that page includes the week; `navigate
+--view=week` for a learner. In tutor mode the agent may answer "what do I
+  have tomorrow?" from it.
+
 ## Agent guide
 
 `AGENTS.md` gains, in Section A, how to set up a week and rooms from what a
 school says, how arms and option classes differ, building a timetable through
 the actions, and reading clashes back in plain words. B6 is updated for the
-new `get-my-schedule`. The navigation maps gain `timetable` and `arms`.
+new `get-my-schedule`; Section C gains "what do I have tomorrow?" from
+`get-my-week`. The navigation maps gain `timetable`, `arms`, and `week` for
+learners.
 
 ## Testing
 
@@ -264,6 +295,9 @@ new `get-my-schedule`. The navigation maps gain `timetable` and `arms`.
 6. Copy the term; check the copy has the same periods and the same clashes.
 7. Extend `checkTodaysSchedule`: slot times come from the bells, the day is
    named in the school's locale, a support teacher sees the class.
+8. A learner's week: an SS1A learner sees every SS1A whole-arm lesson and
+   only the one option they are enrolled in; no field in the reply names a
+   clash, another learner or another arm.
 
 A small pure test of `timetable-clashes.ts` is allowed for the overlap and
 option-block rules, which are the easiest place to be subtly wrong.
@@ -272,7 +306,6 @@ option-block rules, which are the easiest place to be subtly wrong.
 
 ## Not in this piece
 
-- The learner's own week.
 - Two-week rotations (`cycleLength > 1`).
 - Generating a timetable automatically, or "SS1A needs five Maths periods a
   week" requirements.
