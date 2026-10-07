@@ -6,6 +6,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
 import { loadTimetable, resolveTerm } from "../server/lib/timetable.js";
+import { getMyWeek } from "../server/lib/my-week.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 
 export default defineAction({
@@ -587,6 +588,14 @@ export default defineAction({
               : null;
             screen.submissionDraft = submissionDraft;
           }
+        } catch {
+          // continue
+        }
+      }
+
+      if (nav.view === "week" && schoolId) {
+        try {
+          screen.myWeek = await getMyWeek(schoolId, userEmail);
         } catch {
           // continue
         }

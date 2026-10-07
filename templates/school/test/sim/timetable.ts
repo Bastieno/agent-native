@@ -395,12 +395,34 @@ const noId = (text: unknown) =>
  * stop doing so the moment that term has rows of its own, so touching it
  * would change what everything else finds.
  */
+export type TimetableContext = {
+  termId: string;
+  /** A date inside the term. */
+  date: string;
+  /** The first arm, and the option slot placed for it. */
+  armId: string;
+  optionSlot: { day: number; periodNumber: number };
+  /** A learner of the first arm taking only Further Mathematics. */
+  onlyFurtherMaths: string;
+  /** A learner of the first arm taking only Technical Drawing. */
+  onlyTechnicalDrawing: string;
+  /** The deliberately double-enrolled learner. */
+  both: string;
+  furtherMathsName: string;
+  technicalDrawingName: string;
+  /** The first arm's whole-arm classes. */
+  armClassIds: string[];
+  /** A class of the first arm and its teacher's user id. */
+  teachingClassId: string;
+  teacherUserId: string;
+};
+
 export async function checkTimetable(
   client: Client,
   run: FullSchoolRun,
   arms: ArmsContext,
   findings: Findings,
-): Promise<void> {
+): Promise<TimetableContext> {
   const phase = "timetable";
   const admin = run.admin;
   const { armIds, classIds, groups, yearGroup } = arms;
@@ -496,8 +518,10 @@ export async function checkTimetable(
     }
     return id;
   };
+  // groups[0][3] takes Further Mathematics and nothing else in the slot.
   const furtherMaths = await makeOption("Further Mathematics", [
     groups[0][1],
+    groups[0][3],
     groups[1][2],
   ]);
   const technicalDrawing = await makeOption("Technical Drawing", [
@@ -814,6 +838,20 @@ export async function checkTimetable(
       .map((c: any) => `${c.kind}: ${c.message}`)
       .join("\n          "),
   );
+  return {
+    termId: T2,
+    date: "2027-01-11",
+    armId: armA,
+    optionSlot: { day: 2, periodNumber: 1 },
+    onlyFurtherMaths: groups[0][3],
+    onlyTechnicalDrawing: groups[0][2],
+    both: groups[0][1],
+    furtherMathsName: "Further Mathematics",
+    technicalDrawingName: "Technical Drawing",
+    armClassIds: [classA, extraA],
+    teachingClassId: classA,
+    teacherUserId,
+  };
 }
 
 /**
@@ -921,6 +959,146 @@ export async function checkScheduleReadsTheWeek(
       asList(schedule, "slots").some((s: any) => s.classId === target.id),
       `${helper.label}, added as support, sees ${target.name} on Monday`,
       JSON.stringify(schedule?.message ?? null),
+    );
+  }
+}
+
+/**
+ * A learner's own week, read from the second term, which holds the deliberate
+ * clashes. A learner sees their arm's lessons and only the option they take; a
+ * learner enrolled in both options sees both, plainly; nothing in the reply
+ * names a clash, another learner or an arm.
+ */
+export async function checkLearnerWeek(
+  client: Client,
+  run: FullSchoolRun,
+  arms: ArmsContext,
+  ctx: TimetableContext,
+  findings: Findings,
+): Promise<void> {
+  const phase = "learner's week";
+  const persona = (userId: string) =>
+    run.students.find((s) => s.userId === userId)!;
+  const weekOf = async (userId: string) => {
+    const reply: any = await client.as(persona(userId), "get-my-week", {
+      date: ctx.date,
+    });
+    return reply;
+  };
+  const slotLessons = (reply: any) =>
+    (reply.days ?? [])
+      .find((d: any) => d.day === ctx.optionSlot.day)
+      ?.periods?.find((p: any) => p.number === ctx.optionSlot.periodNumber)
+      ?.lessons?.map((l: any) => l.className) ?? [];
+
+  const admin: any = await client.as(run.admin, "get-timetable", {
+    termId: ctx.termId,
+  });
+  const armPeriods = admin.periods.filter((p: any) => p.armId === ctx.armId);
+
+  const fm = await weekOf(ctx.onlyFurtherMaths);
+  const found = armPeriods.filter((p: any) =>
+    fm.days
+      .find((d: any) => d.day === p.day)
+      ?.periods?.find((q: any) => q.number === p.periodNumber)
+      ?.lessons?.some((l: any) => l.classId === p.classId),
+  );
+  findings.expect(
+    phase,
+    armPeriods.length > 0 && found.length === armPeriods.length,
+    "a learner sees every whole-arm lesson placed for their arm",
+    `${found.length} of ${armPeriods.length}`,
+  );
+  const inSlot = slotLessons(fm);
+  findings.expect(
+    phase,
+    inSlot.length === 1 && inSlot[0] === ctx.furtherMathsName,
+    "a learner taking Further Mathematics sees it in the option slot, and not Technical Drawing",
+    JSON.stringify(inSlot),
+  );
+  const slot = fm.days
+    .find((d: any) => d.day === ctx.optionSlot.day)
+    ?.periods?.find((p: any) => p.number === ctx.optionSlot.periodNumber);
+  findings.expect(
+    phase,
+    slot?.start === "08:00" &&
+      slot?.end === "08:40" &&
+      fm.days.every((d: any) => typeof d.dayName === "string" && d.dayName) &&
+      fm.days.some((d: any) =>
+        d.periods.some((p: any) => p.kind === "break" && p.label),
+      ) &&
+      fm.days.some((d: any) =>
+        d.periods.some((p: any) => p.kind === "lesson" && !p.lessons.length),
+      ),
+    "the week carries bell times, day names, breaks, and free periods with nothing in them",
+    JSON.stringify(slot),
+  );
+  findings.expect(
+    phase,
+    fm.term?.name === "Second Term" &&
+      fm.termStatus === "current" &&
+      fm.next &&
+      typeof fm.next.className === "string",
+    "the week names its term and the next lesson",
+    JSON.stringify([fm.term, fm.termStatus, fm.next]),
+  );
+
+  const both = await weekOf(ctx.both);
+  const bothNames = slotLessons(both).sort();
+  findings.expect(
+    phase,
+    bothNames.length === 2 &&
+      bothNames.includes(ctx.furtherMathsName) &&
+      bothNames.includes(ctx.technicalDrawingName),
+    "a learner enrolled in both options sees both lessons in the slot",
+    JSON.stringify(bothNames),
+  );
+
+  // Privacy: nothing about anyone else, any arm, or a clash.
+  const others = run.students
+    .map((s) => s.userId!)
+    .filter((id) => id !== ctx.onlyFurtherMaths);
+  const text = JSON.stringify(fm);
+  findings.expect(
+    phase,
+    !others.some((id) => text.includes(id)) &&
+      !arms.armIds.some((id) => text.includes(id)) &&
+      !/clash/i.test(JSON.stringify([fm, both])),
+    "a learner's week names no other learner, no arm and no clash",
+  );
+
+  // A year group nothing has been placed for.
+  const other = run.students.find((s) => s.yearGroup !== arms.yearGroup);
+  if (other?.userId) {
+    const empty = await weekOf(other.userId);
+    findings.expect(
+      phase,
+      empty.message === "Nothing is on your timetable yet." &&
+        empty.next === null &&
+        empty.days.every((d: any) =>
+          d.periods.every((p: any) => p.lessons.length === 0),
+        ),
+      "a learner of a year group with nothing placed is told so",
+      empty.message,
+    );
+  }
+
+  // A teacher sees the class they teach.
+  const teacher = run.classes.find(
+    (c) => c.teacher.userId === ctx.teacherUserId,
+  )?.teacher;
+  if (teacher) {
+    const reply: any = await client.as(teacher, "get-my-week", {
+      date: ctx.date,
+    });
+    findings.expect(
+      phase,
+      reply.days.some((d: any) =>
+        d.periods.some((p: any) =>
+          p.lessons.some((l: any) => l.classId === ctx.teachingClassId),
+        ),
+      ),
+      "a teacher sees the class they teach in their week",
     );
   }
 }

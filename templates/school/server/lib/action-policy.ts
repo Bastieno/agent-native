@@ -217,6 +217,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "add-teacher-to-class": ADMIN,
   "create-class-schedule": STAFF,
   "get-my-schedule": STAFF,
+  "get-my-week": EVERYONE,
 
   // ── Lesson notes ──────────────────────────────────────────────────────
   "list-lesson-notes": STAFF,

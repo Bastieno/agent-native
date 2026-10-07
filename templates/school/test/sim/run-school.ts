@@ -15,6 +15,7 @@ import {
 import { asList } from "./shapes.js";
 import {
   checkArms,
+  checkLearnerWeek,
   checkScheduleReadsTheWeek,
   checkTimetable,
 } from "./timetable.js";
@@ -309,11 +310,14 @@ for (const student of [
 console.log("· arms within a year group");
 const arms = await time("timetable", () => checkArms(client, run, findings));
 console.log("· a term's timetable");
-await time("timetable clashes", () =>
+const timetable = await time("timetable clashes", () =>
   checkTimetable(client, run, arms, findings),
 );
 await time("schedule from the week", () =>
   checkScheduleReadsTheWeek(client, run, findings),
+);
+await time("learner's week", () =>
+  checkLearnerWeek(client, run, arms, timetable, findings),
 );
 
 // What the head teacher sees of the whole school.
