@@ -15,6 +15,8 @@ export interface AdminNav {
     | "staff"
     | "students"
     | "classes"
+    // The arms tab of the Classes page.
+    | "arms"
     // Lesson-note readiness across the school, and a single note opened from
     // it — an admin may write and mark ready on a teacher's behalf.
     | "lessons"
@@ -25,6 +27,8 @@ export interface AdminNav {
     | "settings"
     | "extensions";
   subjectId?: string;
+  /** Which tab of the Classes page is open. */
+  tab?: "classes" | "arms";
   /** The class whose lesson notes are open. */
   classId?: string;
   /** The year group open on a subject's curriculum page. */

@@ -2,7 +2,11 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { NO_TEACHER_LABEL } from "@shared/class-teacher";
+import { useSearchParams } from "react-router";
 import { useEffect, useMemo, useState } from "react";
+import { ArmsTab } from "@/components/timetable/ArmsTab";
+import { ClassesTabs } from "@/components/timetable/ClassesTabs";
+import { NewClassDialog } from "@/components/timetable/NewClassDialog";
 import { Badge } from "@/components/ui/badge";
 import { ListState } from "@/components/ListState";
 import { Button } from "@/components/ui/button";
@@ -53,6 +57,9 @@ const UNASSIGNED = "__unassigned__";
 export default function AdminClasses() {
   const { sync } = useNavigationState();
   const qc = useQueryClient();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tab = searchParams.get("tab") === "arms" ? "arms" : "classes";
+  const [newClassOpen, setNewClassOpen] = useState(false);
   const [gradeFilter, setGradeFilter] = useState("all");
   const [teacherFilter, setTeacherFilter] = useState("all");
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
@@ -93,11 +100,12 @@ export default function AdminClasses() {
     sync({
       role: "admin",
       view: "classes",
+      tab,
       classCount: classes.length,
       gradeFilter,
       teacherFilter,
     } as any);
-  }, [sync, classes.length, gradeFilter, teacherFilter]);
+  }, [sync, tab, classes.length, gradeFilter, teacherFilter]);
 
   const gradeLevels = useMemo(
     () =>
@@ -175,6 +183,16 @@ export default function AdminClasses() {
     (c: any) => c.status === "archived",
   ).length;
 
+  const tabs = (
+    <ClassesTabs
+      value={tab}
+      onChange={(t) =>
+        setSearchParams(t === "arms" ? { tab: "arms" } : {}, { replace: true })
+      }
+    />
+  );
+  if (tab === "arms") return <ArmsTab tabs={tabs} />;
+
   return (
     <div className="h-full overflow-auto flex flex-col">
       {/* Header */}
@@ -233,9 +251,14 @@ export default function AdminClasses() {
                 Clear
               </button>
             )}
+            <Button size="sm" onClick={() => setNewClassOpen(true)}>
+              New class
+            </Button>
           </div>
         </div>
+        {tabs}
       </div>
+      <NewClassDialog open={newClassOpen} onOpenChange={setNewClassOpen} />
 
       {/* Content */}
       <div className="flex-1 overflow-auto px-6 pb-6 space-y-3">

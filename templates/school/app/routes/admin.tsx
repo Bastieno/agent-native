@@ -55,6 +55,7 @@ export default function AdminLayout() {
       staff: "/admin/staff",
       students: "/admin/students",
       classes: "/admin/classes",
+      arms: "/admin/classes?tab=arms",
       // A note opens on its own; without one, how ready each class is.
       lessons: nav.lessonId
         ? `/admin/lessons/${nav.lessonId}`
