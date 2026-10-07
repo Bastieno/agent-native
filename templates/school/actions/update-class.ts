@@ -5,7 +5,9 @@ import { eq, and } from "drizzle-orm";
 import { z } from "zod";
 import { nanoid } from "nanoid";
 import {
+  armWord,
   armsInYearGroup,
+  withdrawArmFromClass,
   enrolArmInClass,
   setOptionArms,
 } from "../server/lib/arm-enrolment.js";
@@ -51,7 +53,7 @@ export default defineAction({
       const role = userEmail ? await getSchoolRole(userEmail) : null;
       if (role !== "school_admin") {
         throw new Error(
-          "Only an admin can change which arm a class belongs to.",
+          `Only an admin can change which ${await armWord(orgId)} a class belongs to.`,
         );
       }
     }
@@ -82,7 +84,7 @@ export default defineAction({
           ).map((r: any) => r.armId));
     if (nextArmId && nextOptions.length > 0) {
       throw new Error(
-        "A class is either for one whole arm or an option across several arms, not both.",
+        `A class is either for one whole ${await armWord(orgId)} or an option across several, not both.`,
       );
     }
     await armsInYearGroup(
@@ -109,8 +111,26 @@ export default defineAction({
         and(eq(schema.classes.id, args.id), eq(schema.classes.orgId, orgId)),
       );
 
+    // A whole-arm class has no option rows; a stale set would make it both.
     if (args.optionArmIds !== undefined) {
       await setOptionArms(args.id, args.optionArmIds);
+    } else if (args.armId) {
+      await setOptionArms(args.id, []);
+    }
+    // The class left its old arm (for another, or for none): that arm's
+    // learners come off it, except any who are in the new arm.
+    let withdrawn = 0;
+    if (
+      args.armId !== undefined &&
+      cls.armId &&
+      cls.armId !== (args.armId ?? null)
+    ) {
+      withdrawn = await withdrawArmFromClass(
+        orgId,
+        args.id,
+        cls.armId,
+        args.armId ?? null,
+      );
     }
     let enrolled = 0;
     if (args.armId)
@@ -142,12 +162,22 @@ export default defineAction({
       }
     }
 
+    const word = await armWord(orgId);
+    const count = (n: number) => `${n} ${n === 1 ? "learner" : "learners"}`;
+    const notes: string[] = [];
+    if (args.armId)
+      notes.push(`${count(enrolled)} from its ${word} newly enrolled`);
+    if (withdrawn > 0)
+      notes.push(
+        `${count(withdrawn)} of its old ${word} withdrawn (anyone already in the new ${word} stays)`,
+      );
     return {
       id: args.id,
       updated: true,
       enrolled,
-      message: args.armId
-        ? `Updated the class; ${enrolled} ${enrolled === 1 ? "learner" : "learners"} from its arm newly enrolled.`
+      withdrawn,
+      message: notes.length
+        ? `Updated the class; ${notes.join(", and ")}.`
         : "Updated the class.",
     };
   },

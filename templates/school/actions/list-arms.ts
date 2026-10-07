@@ -3,6 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { and, asc, eq } from "drizzle-orm";
 import { z } from "zod";
+import { armWord } from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
   description:
@@ -70,12 +71,13 @@ export default defineAction({
       .sort((x, y) => x._year - y._year || x._arm - y._arm)
       .map(({ _year, _arm, ...row }) => row);
 
+    const word = await armWord(orgId);
     return {
       arms: rows,
       message:
         rows.length === 0
-          ? "No arms have been set up yet."
-          : `${rows.length} ${rows.length === 1 ? "arm" : "arms"} found.`,
+          ? `No ${word}s have been set up yet.`
+          : `${rows.length} ${rows.length === 1 ? word : `${word}s`} found.`,
     };
   },
 });

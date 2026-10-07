@@ -3,7 +3,8 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
-import { moveLearnerArm } from "../server/lib/arm-enrolment.js";
+import { getUserLabels, labelFor } from "../server/lib/user-names.js";
+import { armWord, moveLearnerArm } from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
   description:
@@ -19,6 +20,7 @@ export default defineAction({
     const db = getDb();
     const userIds = [...new Set(args.studentUserIds)];
 
+    const word = await armWord(orgId);
     let armName: string | null = null;
     if (args.armId) {
       const [arm] = await db
@@ -28,7 +30,7 @@ export default defineAction({
           and(eq(schema.arms.id, args.armId), eq(schema.arms.orgId, orgId)),
         )
         .limit(1);
-      if (!arm) throw new Error("That arm is not in this school.");
+      if (!arm) throw new Error(`That ${word} is not in this school.`);
       armName = arm.name;
 
       // Check everyone before moving anyone, so a refusal changes nothing.
@@ -64,12 +66,22 @@ export default defineAction({
       withdrawn += result.withdrawn;
     }
 
-    const who = `${userIds.length} ${userIds.length === 1 ? "learner" : "learners"}`;
-    return {
-      moved,
-      enrolled,
-      withdrawn,
-      message: `${armName ? `Placed ${who} in ${armName}` : `Took ${who} out of their arm`}; ${enrolled} new class ${enrolled === 1 ? "place" : "places"} and ${withdrawn} withdrawn.`,
-    };
+    const classes = (n: number) => `${n} ${n === 1 ? "class" : "classes"}`;
+    const counts = `Enrolled in ${classes(enrolled)}, withdrawn from ${withdrawn}.`;
+    let message: string;
+    if (userIds.length === 1) {
+      const labels = await getUserLabels(userIds);
+      const name = labelFor(labels, userIds[0]) ?? "The learner";
+      message = armName
+        ? `${name} is now in ${armName}. ${counts}`
+        : `${name} is no longer in any ${word}. ${counts}`;
+    } else {
+      const n = `${userIds.length} learners`;
+      const lead = moved === userIds.length ? n : `${moved} of ${n}`;
+      message = armName
+        ? `${lead} moved to ${armName}. ${counts}`
+        : `${lead} taken out of their ${word}. ${counts}`;
+    }
+    return { moved, enrolled, withdrawn, message };
   },
 });

@@ -4,6 +4,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { armWord } from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
   description:
@@ -47,7 +48,9 @@ export default defineAction({
     if (
       siblings.some((a: any) => a.name.toLowerCase() === name.toLowerCase())
     ) {
-      throw new Error(`${level.name} already has an arm called ${name}.`);
+      throw new Error(
+        `${level.name} already has ${/^[aeiou]/.test(await armWord(orgId)) ? "an" : "a"} ${await armWord(orgId)} called ${name}.`,
+      );
     }
 
     const id = nanoid();

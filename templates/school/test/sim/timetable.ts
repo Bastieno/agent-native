@@ -24,13 +24,19 @@ const sameSet = (a: string[], b: string[]) =>
     ? b.every((x) => a.includes(x))
     : false;
 
-/** Did this call get refused? Anything that throws counts. */
-async function refused(work: () => Promise<unknown>): Promise<boolean> {
+/**
+ * Was this refused, and for the reason expected? A call that fails for any
+ * other reason (a typo in the arguments, a server error) is not a refusal.
+ */
+async function refused(
+  work: () => Promise<unknown>,
+  reason: RegExp,
+): Promise<boolean> {
   try {
     await work();
     return false;
-  } catch {
-    return true;
+  } catch (error) {
+    return reason.test(error instanceof Error ? error.message : String(error));
   }
 }
 
@@ -69,11 +75,13 @@ export async function checkArms(
     "each arm of the year group is created",
   );
 
-  const duplicate = await refused(() =>
-    client.as(run.admin, "create-arm", {
-      gradeLevelId,
-      name: `${yearGroup}A`,
-    }),
+  const duplicate = await refused(
+    () =>
+      client.as(run.admin, "create-arm", {
+        gradeLevelId,
+        name: `${yearGroup}A`,
+      }),
+    /already has/i,
   );
   findings.expect(
     phase,
@@ -180,15 +188,17 @@ export async function checkArms(
   // Refusals.
   findings.expect(
     phase,
-    await refused(() =>
-      client.as(run.admin, "create-class", {
-        subjectId: template.subjectId,
-        gradeLevelId,
-        academicYearId: run.academicYearId,
-        name: `${yearGroup} both kinds`,
-        armId: armIds[0],
-        optionArmIds: [armIds[1]],
-      }),
+    await refused(
+      () =>
+        client.as(run.admin, "create-class", {
+          subjectId: template.subjectId,
+          gradeLevelId,
+          academicYearId: run.academicYearId,
+          name: `${yearGroup} both kinds`,
+          armId: armIds[0],
+          optionArmIds: [armIds[1]],
+        }),
+      /either for one whole/i,
     ),
     "a class that is both for a whole arm and an option is refused",
   );
@@ -197,11 +207,13 @@ export async function checkArms(
   if (other) {
     findings.expect(
       phase,
-      await refused(() =>
-        client.as(run.admin, "set-learner-arm", {
-          armId: armIds[0],
-          studentUserIds: [other.userId!],
-        }),
+      await refused(
+        () =>
+          client.as(run.admin, "set-learner-arm", {
+            armId: armIds[0],
+            studentUserIds: [other.userId!],
+          }),
+        /not in the same year group/i,
       ),
       "a learner of another year group cannot be put in the arm",
     );
@@ -222,27 +234,98 @@ export async function checkArms(
     "an option class starts with nobody on it; its learners are chosen",
   );
 
+  // Healing: someone from another arm is on the roll by hand; asking for
+  // their own arm again takes them off the class that is not theirs.
+  const stray = groups[1][0];
+  await client.as(run.admin, "enroll-student", {
+    classId: classIds[0],
+    studentUserId: stray,
+  });
+  const heal = await client.as(run.admin, "set-learner-arm", {
+    armId: armIds[1],
+    studentUserIds: [stray],
+  });
+  findings.expect(
+    phase,
+    !(await roll(client, run, classIds[0])).includes(stray) &&
+      (await roll(client, run, classIds[1])).includes(stray),
+    "placing a learner in the arm they are already in still puts their classes right",
+    JSON.stringify(heal),
+  );
+
+  // A class changing arm: the old arm's learners come off it, the new
+  // arm's go on, and anyone already in the new arm simply stays.
+  await client.as(run.admin, "enroll-student", {
+    classId: classIds[0],
+    studentUserId: groups[1][1],
+  });
+  const swap = await client.as(run.admin, "update-class", {
+    id: classIds[0],
+    armId: armIds[1],
+  });
+  findings.expect(
+    phase,
+    sameSet(await roll(client, run, classIds[0]), groups[1]),
+    "a class moved to another arm holds that arm's learners and none of the old arm's",
+    JSON.stringify(swap),
+  );
+  findings.expect(
+    phase,
+    typeof swap?.message === "string" && /withdrawn/i.test(swap.message),
+    "the reply to moving a class says learners were withdrawn",
+    swap?.message,
+  );
+  await client.as(run.admin, "update-class", {
+    id: classIds[0],
+    armId: armIds[0],
+  });
+  findings.expect(
+    phase,
+    sameSet(await roll(client, run, classIds[0]), groups[0]),
+    "moving the class back restores the first arm's roll",
+  );
+
+  // Becoming whole-arm drops the option rows, so a class is never both.
+  await client.as(run.admin, "update-class", {
+    id: optionId,
+    armId: armIds[2],
+  });
+  const stale = await client.as(run.admin, "db-query", {
+    sql: "SELECT COUNT(*) AS n FROM class_arms WHERE class_id = ?",
+    args: [optionId],
+  });
+  findings.expect(
+    phase,
+    /\n-+\n0\s*$/.test(String(stale)),
+    "an option class made whole-arm no longer has option rows",
+    JSON.stringify(stale),
+  );
   // Which arm a class is for decides who is enrolled: an admin's call.
   const teacherClass = run.classes.find((c) => c.id === template.id)!;
   findings.expect(
     phase,
-    await refused(() =>
-      client.as(teacherClass.teacher, "update-class", {
-        id: classIds[0],
-        armId: armIds[1],
-      }),
+    await refused(
+      () =>
+        client.as(teacherClass.teacher, "update-class", {
+          id: template.id,
+          armId: armIds[1],
+        }),
+      /only an admin/i,
     ),
     "a teacher cannot move a class to another arm",
   );
-  const renamed = await refused(() =>
-    client.as(teacherClass.teacher, "update-class", {
+  let renamed = true;
+  try {
+    await client.as(teacherClass.teacher, "update-class", {
       id: template.id,
       name: template.name,
-    }),
-  );
+    });
+  } catch {
+    renamed = false;
+  }
   findings.expect(
     phase,
-    !renamed,
+    renamed,
     "a teacher can still update other details of their own class",
   );
   findings.expect(

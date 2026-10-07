@@ -8,6 +8,7 @@ import {
 } from "../shared/class-teacher.js";
 import { z } from "zod";
 import {
+  armWord,
   armsInYearGroup,
   enrolArmInClass,
   setOptionArms,
@@ -52,7 +53,7 @@ export default defineAction({
     const optionArmIds = args.optionArmIds ?? [];
     if (args.armId && optionArmIds.length > 0) {
       throw new Error(
-        "A class is either for one whole arm or an option across several arms, not both.",
+        `A class is either for one whole ${await armWord(orgId)} or an option across several, not both.`,
       );
     }
     await armsInYearGroup(
@@ -98,9 +99,15 @@ export default defineAction({
       name: args.name,
       enrolled,
       teacherAssigned: !unassigned,
-      message: unassigned
-        ? `Created ${args.name} with no teacher assigned. Assign one with update-class when the school has decided; work cannot be published from it until then.`
-        : `Created ${args.name}${args.armId ? `, with ${enrolled} ${enrolled === 1 ? "learner" : "learners"} from its arm enrolled` : ""}.`,
+      message: `${
+        unassigned
+          ? `Created ${args.name} with no teacher assigned. Assign one with update-class when the school has decided; work cannot be published from it until then.`
+          : `Created ${args.name}.`
+      }${
+        args.armId
+          ? ` ${enrolled} ${enrolled === 1 ? "learner" : "learners"} from its ${await armWord(orgId)} enrolled.`
+          : ""
+      }`,
     };
   },
 });

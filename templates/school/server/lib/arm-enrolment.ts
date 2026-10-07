@@ -1,5 +1,6 @@
-import { and, eq, inArray } from "drizzle-orm";
+import { and, eq, inArray, isNotNull } from "drizzle-orm";
 import { nanoid } from "nanoid";
+import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../db/index.js";
 
 /**
@@ -98,8 +99,24 @@ export async function enrolArmInClass(
 }
 
 /**
+ * What this school calls an arm, lower-cased for running text ("arm" unless
+ * the school's own words say otherwise).
+ */
+export async function armWord(orgId: string): Promise<string> {
+  const config = ((await getOrgSetting(orgId, "school-config")) ??
+    {}) as Record<string, any>;
+  const label = config.customLabels?.arm;
+  return typeof label === "string" && label.trim()
+    ? label.trim().toLowerCase()
+    : "arm";
+}
+
+/**
  * Move a learner to another arm (or to none), and make their whole-arm
- * classes agree: off the old arm's, on the new arm's.
+ * classes agree: off other arms', on the new arm's.
+ *
+ * Reconciles whether or not the arm changed, so a move that stopped halfway
+ * is healed by asking again, not stranded.
  */
 export async function moveLearnerArm(
   orgId: string,
@@ -120,51 +137,114 @@ export async function moveLearnerArm(
   if (!student) throw new Error("That learner is not in this school.");
 
   const fromArmId: string | null = student.armId ?? null;
-  if (fromArmId === toArmId) return { fromArmId, enrolled: 0, withdrawn: 0 };
+  if (fromArmId !== toArmId) {
+    await db
+      .update(schema.students)
+      .set({ armId: toArmId, updatedAt: new Date().toISOString() })
+      .where(
+        and(
+          eq(schema.students.orgId, orgId),
+          eq(schema.students.id, student.id),
+        ),
+      );
+  }
 
-  await db
-    .update(schema.students)
-    .set({ armId: toArmId, updatedAt: new Date().toISOString() })
+  // Every whole-arm class of the school, to tell the learner's own from the rest.
+  const wholeArm = await db
+    .select({ id: schema.classes.id, armId: schema.classes.armId })
+    .from(schema.classes)
     .where(
-      and(eq(schema.students.orgId, orgId), eq(schema.students.id, student.id)),
+      and(
+        eq(schema.classes.orgId, orgId),
+        eq(schema.classes.status, "active"),
+        isNotNull(schema.classes.armId),
+      ),
     );
+  const others = wholeArm
+    .filter((c: any) => c.armId !== toArmId)
+    .map((c: any) => c.id);
 
   let withdrawn = 0;
-  if (fromArmId) {
-    const leaving = await wholeArmClassIds(orgId, fromArmId);
-    if (leaving.length > 0) {
-      const active = await db
-        .select({ id: schema.classEnrollments.id })
-        .from(schema.classEnrollments)
+  if (others.length > 0) {
+    const active = await db
+      .select({ id: schema.classEnrollments.id })
+      .from(schema.classEnrollments)
+      .where(
+        and(
+          inArray(schema.classEnrollments.classId, others),
+          eq(schema.classEnrollments.studentUserId, studentUserId),
+          eq(schema.classEnrollments.status, "active"),
+        ),
+      );
+    if (active.length > 0) {
+      await db
+        .update(schema.classEnrollments)
+        .set({ status: "withdrawn" })
         .where(
-          and(
-            inArray(schema.classEnrollments.classId, leaving),
-            eq(schema.classEnrollments.studentUserId, studentUserId),
-            eq(schema.classEnrollments.status, "active"),
+          inArray(
+            schema.classEnrollments.id,
+            active.map((a: any) => a.id),
           ),
         );
-      if (active.length > 0) {
-        await db
-          .update(schema.classEnrollments)
-          .set({ status: "withdrawn" })
-          .where(
-            inArray(
-              schema.classEnrollments.id,
-              active.map((a: any) => a.id),
-            ),
-          );
-      }
-      withdrawn = active.length;
     }
+    withdrawn = active.length;
   }
 
   let enrolled = 0;
   if (toArmId) {
-    for (const classId of await wholeArmClassIds(orgId, toArmId)) {
-      enrolled += await enrol(classId, [studentUserId]);
+    for (const c of wholeArm.filter((c: any) => c.armId === toArmId)) {
+      enrolled += await enrol(c.id, [studentUserId]);
     }
   }
   return { fromArmId, enrolled, withdrawn };
+}
+
+/**
+ * A class stopped being for `oldArmId` (it moved to another arm, or is no
+ * longer whole-arm): withdraw that arm's learners from it. Learners already
+ * in the new arm stay; returns how many were withdrawn.
+ */
+export async function withdrawArmFromClass(
+  orgId: string,
+  classId: string,
+  oldArmId: string,
+  newArmId: string | null,
+): Promise<number> {
+  if (oldArmId === newArmId) return 0;
+  const db = getDb();
+  const learners = await db
+    .select({ userId: schema.students.userId })
+    .from(schema.students)
+    .where(
+      and(
+        eq(schema.students.orgId, orgId),
+        eq(schema.students.armId, oldArmId),
+      ),
+    );
+  const ids = learners.map((l: any) => l.userId);
+  if (ids.length === 0) return 0;
+  const active = await db
+    .select({ id: schema.classEnrollments.id })
+    .from(schema.classEnrollments)
+    .where(
+      and(
+        eq(schema.classEnrollments.classId, classId),
+        inArray(schema.classEnrollments.studentUserId, ids),
+        eq(schema.classEnrollments.status, "active"),
+      ),
+    );
+  if (active.length > 0) {
+    await db
+      .update(schema.classEnrollments)
+      .set({ status: "withdrawn" })
+      .where(
+        inArray(
+          schema.classEnrollments.id,
+          active.map((a: any) => a.id),
+        ),
+      );
+  }
+  return active.length;
 }
 
 /** The arms named, each checked to be this school's and in this year group. */
@@ -184,7 +264,9 @@ export async function armsInYearGroup(
     .from(schema.arms)
     .where(and(eq(schema.arms.orgId, orgId), inArray(schema.arms.id, ids)));
   if (rows.length !== ids.length) {
-    throw new Error("One of those arms is not in this school.");
+    throw new Error(
+      `One of those ${await armWord(orgId)}s is not in this school.`,
+    );
   }
   const wrong = rows.filter((r: any) => r.gradeLevelId !== gradeLevelId);
   if (wrong.length > 0) {

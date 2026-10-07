@@ -3,6 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
+import { armWord } from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
   description:
@@ -27,7 +28,8 @@ export default defineAction({
       .from(schema.arms)
       .where(and(eq(schema.arms.id, args.id), eq(schema.arms.orgId, orgId)))
       .limit(1);
-    if (!arm) throw new Error("That arm is not in this school.");
+    if (!arm)
+      throw new Error(`That ${await armWord(orgId)} is not in this school.`);
 
     const updates: Record<string, any> = {
       updatedAt: new Date().toISOString(),
@@ -49,7 +51,9 @@ export default defineAction({
             a.id !== arm.id && a.name.toLowerCase() === name.toLowerCase(),
         )
       ) {
-        throw new Error(`The year group already has an arm called ${name}.`);
+        throw new Error(
+          `The year group already has a ${await armWord(orgId)} called ${name}.`,
+        );
       }
       updates.name = name;
     }
