@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
+import { EmbeddedExtension } from "@agent-native/core/client/extensions";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
 import { IconPuzzle } from "@tabler/icons-react";
@@ -53,13 +54,19 @@ export default function AdminExtensions() {
                   {ext.description}
                 </p>
               )}
-              <iframe
-                src={agentNativePath(
-                  `/_agent-native/extensions/${ext.id}/render`,
-                )}
-                className="w-full h-48 rounded border bg-muted/20"
-                sandbox="allow-scripts allow-same-origin"
-                title={ext.name}
+              {/* The framework's own embed, not a bare iframe.
+                  An extension talks to the app by posting messages to its
+                  host, and the host listener lives in this component. Dropped
+                  into a plain iframe, every call an extension makes — reading
+                  classes, saving its own data, fetching an external API —
+                  waited thirty seconds and failed with "Extension host
+                  request timed out". Anything that only drew static HTML
+                  looked fine, which is why it survived. */}
+              <EmbeddedExtension
+                extensionId={ext.id}
+                slotId={`admin-extensions-${ext.id}`}
+                className="rounded border bg-muted/20"
+                initialHeight={192}
               />
             </div>
           ))}

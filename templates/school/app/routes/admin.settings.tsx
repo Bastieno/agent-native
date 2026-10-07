@@ -39,7 +39,7 @@ async function callAction(name: string, params: Record<string, unknown>) {
 export default function AdminSettings() {
   const { sync } = useNavigationState();
   const { config } = useSchoolConfig();
-  const { formatDateTime } = useSchoolDates();
+  const { formatDate, formatDateTime } = useSchoolDates();
   const qc = useQueryClient();
 
   // School Guide state
@@ -241,7 +241,10 @@ export default function AdminSettings() {
                         <div className="flex flex-wrap items-baseline gap-2">
                           <p className="text-sm font-medium">{year.name}</p>
                           <p className="text-xs text-muted-foreground">
-                            {year.startDate} – {year.endDate}
+                            {/* The school's own way of writing a date, not
+                                the way the database stores one. */}
+                            {formatDate(year.startDate)} –{" "}
+                            {formatDate(year.endDate)}
                           </p>
                           {year.status === "active" ? (
                             <Badge variant="secondary" className="text-[11px]">
@@ -269,7 +272,8 @@ export default function AdminSettings() {
                                 >
                                   <span className="text-sm">{term.name}</span>
                                   <span className="text-xs text-muted-foreground">
-                                    {term.startDate} – {term.endDate}
+                                    {formatDate(term.startDate)} –{" "}
+                                    {formatDate(term.endDate)}
                                   </span>
                                   {current ? (
                                     <Badge className="ml-auto text-[11px]">
