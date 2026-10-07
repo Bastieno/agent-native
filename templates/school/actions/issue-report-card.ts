@@ -7,6 +7,7 @@ import { nanoid } from "nanoid";
 import { z } from "zod";
 import { jsonish } from "../shared/zod-json.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
+import { missedWorkPolicy, summarise } from "../shared/missed-work.js";
 
 /**
  * Issue a report card, and freeze it.
@@ -147,31 +148,38 @@ export default defineAction({
       levels.find((l) => percentage >= l.min && percentage <= l.max)?.grade ??
       null;
 
-    // One row per subject.
+    // One row per subject, counted the school's way.
+    //
+    // What was set matters as much as what came back: a mark from two papers
+    // and a mark from six are not the same claim, and printing only the
+    // second number let an absentee's average outrank a learner who sat
+    // everything and struggled.
+    const policy = missedWorkPolicy(config);
     const subjects = classes
       .map((cls: any) => {
-        const forClass = assessments.filter((a: any) => a.classId === cls.id);
+        const forClass = assessments.filter(
+          (a: any) => a.classId === cls.id && a.status === "published",
+        );
         const mine = grades.filter((g: any) =>
           forClass.some((a: any) => a.id === g.assessmentId),
         );
-        if (mine.length === 0) {
-          return {
-            subject: cls.subjectName ?? cls.name,
-            assessmentsCounted: 0,
-            percentage: null,
-            grade: null,
-          };
-        }
-        const percentage =
-          mine.reduce(
-            (sum: number, g: any) => sum + parseFloat(g.percentage ?? "0"),
-            0,
-          ) / mine.length;
+        const summary = summarise(
+          mine.map((g: any) => parseFloat(g.percentage ?? "0")),
+          forClass.length,
+          policy,
+        );
+        // Graded on the figure that is printed, not on the one behind it.
+        // A school's bands are whole numbers, so an average of 59.6 printed
+        // as 60% fell in the gap between C5 (55–59) and C4 (60–64) and came
+        // out with no grade at all — on the document that goes home.
         return {
           subject: cls.subjectName ?? cls.name,
-          assessmentsCounted: mine.length,
-          percentage: Math.round(percentage),
-          grade: letterFor(percentage),
+          assessmentsCounted: summary.sat,
+          assessmentsSet: summary.set,
+          missed: Math.max(0, summary.set - summary.sat),
+          percentage: summary.percentage,
+          grade:
+            summary.percentage === null ? null : letterFor(summary.percentage),
         };
       })
       .sort((a, b) => a.subject.localeCompare(b.subject));
@@ -183,12 +191,71 @@ export default defineAction({
             counted.length,
         )
       : null;
+    const missedTotal = subjects.reduce((n, s) => n + (s.missed ?? 0), 0);
+
+    // Position in the year group, when the school asks for one.
+    //
+    // Ranking children is a real choice and schools differ, so it is off
+    // until someone turns it on. Where it is on, it is computed from the
+    // same gradebook figures as the scores above — not from a separate
+    // calculation that could disagree with the page it sits on.
+    let position: { place: number; outOf: number } | null = null;
+    if (config?.rankLearners && overall !== null) {
+      const cohort = await db
+        .select({
+          studentId: schema.gradebookEntries.studentId,
+          computedScore: schema.gradebookEntries.computedScore,
+        })
+        .from(schema.gradebookEntries)
+        .innerJoin(
+          schema.students,
+          eq(schema.students.id, schema.gradebookEntries.studentId),
+        )
+        .where(
+          and(
+            eq(schema.gradebookEntries.termId, args.termId),
+            eq(schema.gradebookEntries.orgId, orgId),
+            student?.gradeLevelId
+              ? eq(schema.students.gradeLevelId, student.gradeLevelId)
+              : eq(schema.students.schoolId, orgId),
+          ),
+        );
+
+      // A learner's standing is their average across subjects, so the
+      // gradebook's per-class rows are averaged per learner first.
+      const byStudent = new Map<string, number[]>();
+      for (const row of cohort as any[]) {
+        const value = Number(row.computedScore);
+        if (!Number.isFinite(value)) continue;
+        byStudent.set(row.studentId, [
+          ...(byStudent.get(row.studentId) ?? []),
+          value,
+        ]);
+      }
+      const averages = [...byStudent.entries()].map(([id, values]) => ({
+        id,
+        average: values.reduce((a, b) => a + b, 0) / values.length,
+      }));
+      if (averages.length > 1) {
+        const sorted = [...averages].sort((a, b) => b.average - a.average);
+        const index = sorted.findIndex((a) => a.id === args.studentId);
+        if (index >= 0) {
+          // Equal averages share a place, as a school would read them.
+          const place =
+            sorted.filter((a) => a.average > sorted[index].average).length + 1;
+          position = { place, outOf: sorted.length };
+        }
+      }
+    }
 
     const snapshot = {
       student: { id: args.studentId, name: studentName },
       term: { id: term.id, name: term.name, ends: term.endDate },
       subjects,
       overall,
+      missedTotal,
+      missedWorkPolicy: policy,
+      position,
       overallGrade: overall === null ? null : letterFor(overall),
       traits: args.traits ?? {},
       attendance: args.attendance ?? null,
@@ -266,11 +333,17 @@ function renderReportCard(s: any): string {
   lines.push(`**${s.student.name}** · ${s.term.name}`);
   lines.push("");
 
-  lines.push("| Subject | Assessments | Score | Grade |");
+  lines.push("| Subject | Work done | Score | Grade |");
   lines.push("| --- | --- | --- | --- |");
   for (const row of s.subjects) {
+    // "2 of 6" rather than "2": a parent reading a single number has no way
+    // of knowing the mark rests on a third of the term.
+    const done =
+      row.assessmentsSet === undefined
+        ? row.assessmentsCounted || "—"
+        : `${row.assessmentsCounted} of ${row.assessmentsSet}`;
     lines.push(
-      `| ${row.subject} | ${row.assessmentsCounted || "—"} | ${
+      `| ${row.subject} | ${done} | ${
         row.percentage === null ? "—" : `${row.percentage}%`
       } | ${row.grade ?? "—"} |`,
     );
@@ -281,6 +354,24 @@ function renderReportCard(s: any): string {
     );
   }
   lines.push("");
+
+  if (s.position) {
+    lines.push(
+      `**Position:** ${ordinal(s.position.place)} of ${s.position.outOf} in the year group`,
+    );
+    lines.push("");
+  }
+
+  // Said in words, not left in a column. A term with work missing is the
+  // thing a parent most needs to be told plainly.
+  if (s.missedTotal) {
+    lines.push(
+      s.missedWorkPolicy === "zero"
+        ? `**${s.missedTotal} piece(s) of work were not handed in**, and count as nought in the scores above.`
+        : `**${s.missedTotal} piece(s) of work were not handed in.** The scores above are based only on the work that was done.`,
+    );
+    lines.push("");
+  }
 
   if (s.attendance) {
     lines.push(
@@ -312,4 +403,12 @@ function renderReportCard(s: any): string {
   }
 
   return lines.join("\n");
+}
+
+/** 1st, 2nd, 3rd — as a report card writes a place. */
+function ordinal(place: number): string {
+  const tens = place % 100;
+  if (tens >= 11 && tens <= 13) return `${place}th`;
+  const ones = place % 10;
+  return `${place}${ones === 1 ? "st" : ones === 2 ? "nd" : ones === 3 ? "rd" : "th"}`;
 }

@@ -4,6 +4,7 @@ import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { z } from "zod";
+import { missedWorkPolicy, summarise } from "../shared/missed-work.js";
 
 export default defineAction({
   description:
@@ -44,6 +45,7 @@ export default defineAction({
         ),
       );
 
+    const policy = missedWorkPolicy(config);
     const struggling = [];
     for (const enrollment of enrollments) {
       const [student] = await db
@@ -53,9 +55,10 @@ export default defineAction({
         .limit(1);
       if (!student) continue;
 
-      let total = 0;
       let count = 0;
+      const scores: number[] = [];
       const weakAreas: string[] = [];
+      const notHandedIn: string[] = [];
 
       for (const assessment of assessments) {
         const [submission] = await db
@@ -68,7 +71,17 @@ export default defineAction({
             ),
           )
           .limit(1);
-        if (!submission) continue;
+        // A piece nobody handed in is not an absence of information: it is
+        // the information. Skipping it here is why a learner who had stopped
+        // working could not be flagged as struggling — they had no average,
+        // and the check below only looked at learners who had one.
+        if (
+          !submission ||
+          !["submitted", "graded"].includes(submission.status)
+        ) {
+          notHandedIn.push(assessment.title);
+          continue;
+        }
         const [grade] = await db
           .select()
           .from(schema.grades)
@@ -76,19 +89,37 @@ export default defineAction({
           .limit(1);
         if (grade?.percentage) {
           const pct = parseFloat(grade.percentage);
-          total += pct;
+          scores.push(pct);
           count++;
           if (pct < threshold) weakAreas.push(assessment.title);
         }
       }
-      const average = count > 0 ? total / count : null;
+
+      const summary = summarise(scores, assessments.length, policy);
+      const average = summary.percentage;
+      // Three different kinds of trouble, named rather than averaged into
+      // silence: nothing handed in at all, a lot missing, and low marks.
+      const missed = Math.max(0, summary.set - summary.sat);
+      const reasons: string[] = [];
+      if (summary.nothingHandedIn) {
+        reasons.push(`has handed in none of the ${summary.set} set`);
+      } else if (missed > 0 && missed >= summary.set / 2) {
+        reasons.push(`has handed in only ${summary.sat} of ${summary.set}`);
+      }
       if (average !== null && average < threshold) {
+        reasons.push(`averaging ${average.toFixed(0)}%`);
+      }
+
+      if (reasons.length > 0) {
         struggling.push({
           studentId: student.id,
           studentUserId: enrollment.studentUserId,
-          average: average.toFixed(1),
+          average: average === null ? null : average.toFixed(1),
           weakAreas,
           gradedAssessments: count,
+          assessmentsSet: summary.set,
+          notHandedIn: notHandedIn.length,
+          reason: reasons.join(", "),
         });
       }
     }

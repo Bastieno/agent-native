@@ -22,6 +22,10 @@ export interface SchoolConfig {
   /** The school's own word for one piece of work, and its plural. */
   assessmentTerminology: string;
   assessmentTerminologyPlural?: string;
+  /** Whether report cards show a position in the year group. */
+  rankLearners?: boolean;
+  /** What a missed piece of work counts for. Excluded until they say. */
+  missedWorkPolicy?: "zero" | "excluded";
   /** What the school prints on. A4 until they say otherwise. */
   paperSize?: "a4" | "letter";
   schoolTimezone: string;

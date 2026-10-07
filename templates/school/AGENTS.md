@@ -170,6 +170,16 @@ When an admin has a new/empty school, walk them through setup in this order:
     recorded and marks what it cannot know; show it, take their corrections,
     then save it with `update-school-resource`
 
+**Work nobody handed in is the school's decision, not yours.**
+`missedWorkPolicy` says whether a missed piece counts as a nought or is left
+out of the average; it is left out until a school says otherwise, and
+`check-school-setup` reports that. Whichever it is, every report card says
+how much of the work set was actually done — "3 of 6" — and names the total
+missing in words, because a mark from two papers and a mark from six are not
+the same claim. `rankLearners` decides whether a report card shows a position
+in the year group; it is off until a school asks, since plenty hold that
+ranking children does harm.
+
 **An answer in the guide is not a setting.** The guide is prose you read; the
 app computes with the settings. When someone answers one of the draft's
 questions with something structured — a grading scale, term dates, examination

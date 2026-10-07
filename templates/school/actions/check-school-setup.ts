@@ -111,6 +111,14 @@ export default defineAction({
         fix: 'update-school-config --reservedWeeks \'[{"week":7,"label":"Mid-term test"}]\'',
       });
     }
+    if (!config.missedWorkPolicy) {
+      gaps.push({
+        setting: "What a missed piece of work counts for",
+        meanwhile:
+          "Work nobody handed in is left out of the average, so a learner who sat two papers of six is marked on two. Report cards say how many were sat either way, but the average flatters whoever handed least in. Set it to zero if a missed piece counts as a nought here.",
+        fix: "update-school-config --missedWorkPolicy zero",
+      });
+    }
     if (!config.paperSize) {
       gaps.push({
         setting: "Paper size",

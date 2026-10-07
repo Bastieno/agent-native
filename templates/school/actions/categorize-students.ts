@@ -5,6 +5,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { missedWorkPolicy, summarise } from "../shared/missed-work.js";
 import {
   categoryFor,
   resolveCategoryThresholds,
@@ -65,6 +66,8 @@ export default defineAction({
       studentId: string;
       studentUserId: string;
       average: number | null;
+      assessmentsSet: number;
+      notHandedIn: number;
       category: "foundational" | "developing" | "advanced" | null;
       submissionCount: number;
     }> = [];
@@ -108,22 +111,24 @@ export default defineAction({
       grades.map((g: any) => [g.submissionId, g]),
     );
 
+    const policy = missedWorkPolicy(config);
     for (const enrollment of enrollments) {
       const student = studentByUserId.get(enrollment.studentUserId);
       if (!student) continue;
 
-      let totalPercentage = 0;
-      let gradedCount = 0;
+      const scores: number[] = [];
       for (const submission of submissions) {
         if (submission.studentId !== student.id) continue;
         const grade = gradeBySubmission.get(submission.id);
-        if (grade?.percentage) {
-          totalPercentage += parseFloat(grade.percentage);
-          gradedCount++;
-        }
+        if (grade?.percentage) scores.push(parseFloat(grade.percentage));
       }
 
-      const average = gradedCount > 0 ? totalPercentage / gradedCount : null;
+      // Counted the school's way, against everything that was set rather
+      // than only what came back — otherwise a learner who sat two papers of
+      // six is grouped on two, and lands above classmates who sat them all.
+      const summary = summarise(scores, assessmentIds.length, policy);
+      const gradedCount = summary.sat;
+      const average = summary.percentage;
       // Nobody with no marked work is "developing" — that is a guess dressed
       // up as an assessment. Leave them unplaced and say so.
       const category =
@@ -135,6 +140,8 @@ export default defineAction({
         average: average !== null ? Math.round(average) : null,
         category,
         submissionCount: gradedCount,
+        assessmentsSet: summary.set,
+        notHandedIn: Math.max(0, summary.set - summary.sat),
       });
     }
 

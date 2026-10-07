@@ -123,6 +123,18 @@ export default defineAction({
     )
       .optional()
       .describe("Per-school branding"),
+    rankLearners: z.coerce
+      .boolean()
+      .optional()
+      .describe(
+        "Whether a report card shows a learner's position in their year group. Many schools publish it; others hold that ranking children is harmful. Off until the school says.",
+      ),
+    missedWorkPolicy: z
+      .enum(["zero", "excluded"])
+      .optional()
+      .describe(
+        'What a piece of work nobody handed in counts for: "zero" marks it as a nought, "excluded" leaves it out of the average. Either way the report card shows how many of the pieces set were actually sat. Unset behaves as "excluded".',
+      ),
     paperSize: z
       .enum(["a4", "letter"])
       .optional()

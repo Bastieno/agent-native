@@ -139,6 +139,67 @@ export async function teachClassWeek(
 }
 
 /**
+ * Is the learner who has stopped working visible?
+ *
+ * The simulation deliberately contains learners who hand almost nothing in.
+ * A school's whole reason for asking "who is struggling?" is to find them,
+ * and before this they were the one group the question could not return:
+ * with no marks there was no average, and the check only looked at learners
+ * who had one.
+ */
+export async function checkMissedWorkIsVisible(
+  client: Client,
+  run: FullSchoolRun,
+  findings: Findings,
+): Promise<void> {
+  const phase = "missed work";
+  const cls = run.classes[0];
+
+  const struggling = await client.as(
+    cls.teacher,
+    "identify-struggling-students",
+    {
+      classId: cls.id,
+    },
+  );
+  const flagged = asList(struggling, "students");
+
+  // Who actually handed least in, by the app's own count.
+  const grouped = await client.as(cls.teacher, "categorize-students", {
+    classId: cls.id,
+    confirm: false,
+  });
+  const rows = asList(grouped, "categorizations");
+  const worst = [...rows].sort(
+    (a: any, b: any) => (b.notHandedIn ?? 0) - (a.notHandedIn ?? 0),
+  )[0];
+
+  if (worst && (worst.notHandedIn ?? 0) > 0) {
+    findings.expect(
+      phase,
+      flagged.some((f: any) => f.studentId === worst.studentId),
+      "the learner who handed least in is flagged as struggling",
+      `${worst.notHandedIn} of ${worst.assessmentsSet} not handed in, average ${worst.average}`,
+    );
+  }
+
+  findings.expect(
+    phase,
+    rows.every((r: any) => typeof r.assessmentsSet === "number"),
+    "grouping counts what was set, not only what came back",
+  );
+
+  const reasons = flagged.filter((f: any) => !!f.reason);
+  findings.expect(
+    phase,
+    reasons.length === flagged.length,
+    "every learner flagged as struggling says why",
+    `${reasons.length} of ${flagged.length} carried a reason`,
+    "wording",
+  );
+}
+
+/**
  * What one teacher can reach of another teacher's class.
  *
  * This is the question a school system has to get right and a single-class

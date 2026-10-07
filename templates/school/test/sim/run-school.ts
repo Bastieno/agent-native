@@ -8,6 +8,7 @@ import {
   checkTeacherIsolation,
   checkCohortIsolation,
   checkGroupingAcrossSchool,
+  checkMissedWorkIsVisible,
   type ClassWeek,
 } from "./school-term.js";
 import { asList } from "./shapes.js";
@@ -92,6 +93,7 @@ await time("term", async () => {
 
 console.log("\n· checking what one teacher can reach of another's class");
 await time("isolation", async () => {
+  await checkMissedWorkIsVisible(client, run, findings);
   await checkTeacherIsolation(client, run, findings);
   await checkCohortIsolation(client, run, weeks, findings);
 });
@@ -119,30 +121,106 @@ for (const student of [
   ranked[Math.floor(ranked.length / 2)],
   ranked[ranked.length - 1],
 ]) {
+  // The document that goes home is one sheet covering every subject, not a
+  // statement per class. The simulation was issuing five per learner and
+  // calling them report cards, which is how a per-subject view passed for
+  // the real thing without anyone noticing.
+  const issued = await client.as(run.admin, "issue-report-card", {
+    studentId: student.studentId,
+    termId: run.termId,
+    attendance: { present: 58, outOf: 62 },
+    comments: {
+      "Class teacher": "A steady term. Keep up the reading.",
+      Principal: "Well done.",
+    },
+    confirm: true,
+  });
+
+  // Issuing answers with a receipt; the document itself is read back, which
+  // is also the path a parent's reprint takes.
+  const stored = await client.as(run.admin, "get-report-card", {
+    id: issued.reportCardId,
+  });
+  const slug = student.profile.name.replace(/\s+/g, "-").toLowerCase();
+  await writeFile(
+    join(dir, `report-card-${slug}.json`),
+    JSON.stringify(stored, null, 2),
+  );
+  if (stored?.documentMarkdown) {
+    await writeFile(
+      join(dir, `report-card-${slug}.md`),
+      stored.documentMarkdown,
+    );
+  }
+
+  const snapshot = stored?.snapshot ?? {};
+  const rows = asList(snapshot?.subjects ?? []);
   const theirClasses = run.classes.filter(
     (c) => c.yearGroup === student.yearGroup,
   );
-  const cards = [];
-  for (const cls of theirClasses) {
-    cards.push(
-      await client.as(cls.teacher, "generate-report-card", {
-        studentId: student.studentId,
-        classId: cls.id,
-        termId: run.termId,
-      }),
-    );
-  }
   findings.expect(
     "report cards",
-    cards.every((c) => !!c?.student?.name),
-    `${student.profile.name}'s report cards all carry their name`,
+    rows.length === theirClasses.length,
+    `${student.profile.name}'s report covers every subject they take`,
+    `${rows.length} rows for ${theirClasses.length} classes`,
   );
-  await writeFile(
-    join(
-      dir,
-      `report-cards-${student.profile.name.replace(/\s+/g, "-").toLowerCase()}.json`,
-    ),
-    JSON.stringify(cards, null, 2),
+  findings.expect(
+    "report cards",
+    rows.every((r: any) => r.percentage !== null),
+    `every subject on ${student.profile.name}'s report carries a mark`,
+    rows
+      .filter((r: any) => r.percentage === null)
+      .map((r: any) => r.subject)
+      .join(", "),
+  );
+  // Every mark on the page must carry the grade the school's own scale gives
+  // it. A row showing a score and a dash is the thing a parent rings about.
+  const ungraded = rows.filter(
+    (r: any) => typeof r.percentage === "number" && !r.grade,
+  );
+  findings.expect(
+    "report cards",
+    ungraded.length === 0,
+    `every mark on ${student.profile.name}'s report has a grade beside it`,
+    ungraded.map((r: any) => `${r.subject} ${r.percentage}%`).join(", "),
+  );
+
+  // A mark from two papers and a mark from six are not the same claim, so
+  // the page has to say which it is.
+  findings.expect(
+    "report cards",
+    rows.every((r: any) => typeof r.assessmentsSet === "number"),
+    `${student.profile.name}'s report says how much work was set, not only how much was marked`,
+  );
+  const markdown = stored?.documentMarkdown ?? "";
+  const missedOnReport = rows.reduce(
+    (n: number, r: any) => n + (r.missed ?? 0),
+    0,
+  );
+  if (missedOnReport > 0) {
+    findings.expect(
+      "report cards",
+      /not handed in/i.test(markdown),
+      `${student.profile.name}'s report says plainly that work was missed`,
+      `${missedOnReport} pieces missing, and the document does not mention it`,
+    );
+  }
+
+  // The overall must be the subjects' own average, or a parent querying it
+  // gets a different answer from the one printed above it.
+  const marks = rows
+    .map((r: any) => r.percentage)
+    .filter((p: any) => typeof p === "number");
+  const expected = marks.length
+    ? Math.round(
+        marks.reduce((a: number, b: number) => a + b, 0) / marks.length,
+      )
+    : null;
+  findings.expect(
+    "report cards",
+    snapshot?.overall === expected,
+    `${student.profile.name}'s overall matches the subjects above it`,
+    `the report says ${snapshot?.overall}, the rows average ${expected}`,
   );
 }
 

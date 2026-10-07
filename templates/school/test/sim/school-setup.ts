@@ -83,6 +83,11 @@ export async function standUpFullSchool(
     locale: scenario.locale,
     schoolTimezone: scenario.timezone,
     paperSize: scenario.paperSize,
+    // The simulated school ranks its learners and counts a missed piece as a
+    // nought, so both settings are exercised rather than left on the
+    // fallback that every school would otherwise be tested on.
+    rankLearners: true,
+    missedWorkPolicy: "zero",
   });
 
   const levels = asList(
