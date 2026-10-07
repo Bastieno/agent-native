@@ -822,6 +822,51 @@ export default runMigrations(
       version: 78,
       sql: `ALTER TABLE assessments ADD COLUMN published_at TEXT`,
     },
+    // Arm-based class groupings and option classes for flexible timetabling.
+    {
+      version: 79,
+      sql: `CREATE TABLE IF NOT EXISTS arms (
+        id TEXT PRIMARY KEY,
+        school_id TEXT NOT NULL,
+        grade_level_id TEXT NOT NULL,
+        name TEXT NOT NULL,
+        stream TEXT,
+        home_room TEXT,
+        form_teacher_user_id TEXT,
+        sequence INTEGER NOT NULL DEFAULT 1,
+        status TEXT NOT NULL DEFAULT 'active',
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+        owner_email TEXT,
+        org_id TEXT,
+        visibility TEXT NOT NULL DEFAULT 'private'
+      )`,
+    },
+    {
+      version: 80,
+      sql: `ALTER TABLE students ADD COLUMN arm_id TEXT`,
+    },
+    {
+      version: 81,
+      sql: `ALTER TABLE classes ADD COLUMN arm_id TEXT`,
+    },
+    {
+      version: 82,
+      sql: `CREATE TABLE IF NOT EXISTS class_arms (
+        id TEXT PRIMARY KEY,
+        class_id TEXT NOT NULL,
+        arm_id TEXT NOT NULL,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      )`,
+    },
+    {
+      version: 83,
+      sql: `ALTER TABLE class_schedules ADD COLUMN term_id TEXT`,
+    },
+    {
+      version: 84,
+      sql: `CREATE INDEX IF NOT EXISTS class_schedules_term_day ON class_schedules (org_id, term_id, day_of_week)`,
+    },
   ],
   { table: "school_migrations" },
 );

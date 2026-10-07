@@ -67,6 +67,20 @@ export const gradeLevels = table("grade_levels", {
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),
 });
+export const arms = table("arms", {
+  id: text("id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  gradeLevelId: text("grade_level_id").notNull(),
+  name: text("name").notNull(),
+  stream: text("stream"),
+  homeRoom: text("home_room"),
+  formTeacherUserId: text("form_teacher_user_id"),
+  sequence: integer("sequence").notNull().default(1),
+  status: text("status").notNull().default("active"),
+  createdAt: text("created_at").notNull().default(now()),
+  updatedAt: text("updated_at").notNull().default(now()),
+  ...ownableColumns(),
+});
 
 export const subjects = table("subjects", {
   id: text("id").primaryKey(),
@@ -142,6 +156,9 @@ export const classes = table("classes", {
   gradeLevelId: text("grade_level_id").notNull(),
   academicYearId: text("academic_year_id").notNull(),
   termId: text("term_id"),
+  // Whole-arm, option, or unattached class. A class may not be both whole-arm
+  // (with an arm_id) and option (in class_arms join table).
+  armId: text("arm_id"),
   name: text("name").notNull(),
   primaryTeacherUserId: text("primary_teacher_user_id").notNull(),
   roomNumber: text("room_number"),
@@ -169,6 +186,13 @@ export const classEnrollments = table("class_enrollments", {
   createdAt: text("created_at").notNull().default(now()),
 });
 
+export const classArms = table("class_arms", {
+  id: text("id").primaryKey(),
+  classId: text("class_id").notNull(),
+  armId: text("arm_id").notNull(),
+  createdAt: text("created_at").notNull().default(now()),
+});
+
 export const classSchedules = table("class_schedules", {
   id: text("id").primaryKey(),
   classId: text("class_id").notNull(),
@@ -178,6 +202,7 @@ export const classSchedules = table("class_schedules", {
   startTime: text("start_time").notNull(), // "08:00" — 24-hour HH:MM
   endTime: text("end_time").notNull(), // "08:45"
   room: text("room"), // room override (falls back to class.roomNumber)
+  termId: text("term_id"),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),
@@ -402,6 +427,7 @@ export const students = table("students", {
   userId: text("user_id").notNull(),
   schoolId: text("school_id").notNull(),
   gradeLevelId: text("grade_level_id"),
+  armId: text("arm_id"),
   admissionNumber: text("admission_number"),
   customFieldsJson: text("custom_fields_json").notNull().default("{}"),
   enrolledAt: text("enrolled_at").notNull().default(now()),
