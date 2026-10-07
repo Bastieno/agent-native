@@ -815,3 +815,112 @@ export async function checkTimetable(
       .join("\n          "),
   );
 }
+
+/**
+ * A teacher's day once the school has a week. The run's own term is still
+ * served by the rows the school was set up with, which have no term and carry
+ * the times typed into them; where the week has a lesson at that period, its
+ * bells win. A break or a missing period keeps the typed times.
+ *
+ * Runs after `checkTimetable`, which is what set the week. Asks for a fixed
+ * Monday inside the run's term so the answer does not depend on the day the
+ * run happens.
+ */
+export async function checkScheduleReadsTheWeek(
+  client: Client,
+  run: FullSchoolRun,
+  findings: Findings,
+): Promise<void> {
+  const phase = "schedule from the week";
+  const admin = run.admin;
+  const config: any = await client.as(admin, "get-school-config", {});
+  const week = config?.schoolWeek;
+  const locale: string | undefined = config?.locale?.trim() || undefined;
+  const terms = asList(
+    await client.as(admin, "list-terms", {
+      academicYearId: run.academicYearId,
+    }),
+  );
+  const term = terms.find((t: any) => t.id === run.termId);
+  if (!term || !week) {
+    findings.expect(phase, false, "the run has a term and a week to read");
+    return;
+  }
+
+  // The first Monday inside the run's term.
+  const day = new Date(`${term.startDate}T12:00:00Z`);
+  while (day.getUTCDay() !== 1) day.setUTCDate(day.getUTCDate() + 1);
+  const date = day.toISOString().slice(0, 10);
+  if (date > term.endDate) {
+    findings.expect(phase, false, "the term has a Monday to ask about");
+    return;
+  }
+  const monday = run.classes.filter((_, index) => index % 5 === 0);
+  if (monday.length === 0) return;
+
+  const periodOf = (number: number) =>
+    week.days
+      ?.find((d: any) => d.day === 1)
+      ?.periods?.find((p: any) => p.number === number);
+
+  let checked = 0;
+  for (const cls of monday) {
+    const schedule: any = await client.as(cls.teacher, "get-my-schedule", {
+      date,
+    });
+    const slots = asList(schedule, "slots");
+    const slot = slots.find((s: any) => s.classId === cls.id);
+    findings.expect(
+      phase,
+      !!slot,
+      `${cls.teacher.label} has ${cls.name} on Monday ${date}`,
+      `${slots.length} slot(s) returned`,
+    );
+    if (!slot) continue;
+    const wk = periodOf(slot.periodNumber);
+    if (wk?.kind === "lesson") {
+      checked++;
+      findings.expect(
+        phase,
+        slot.startTime === wk.start && slot.endTime === wk.end,
+        `${cls.name} is read at its period's bells, not the typed times`,
+        `${slot.startTime}-${slot.endTime}, the week says ${wk.start}-${wk.end}`,
+      );
+    }
+    const expectedName = new Intl.DateTimeFormat(locale, {
+      weekday: "long",
+      timeZone: "UTC",
+    }).format(new Date(`${date}T12:00:00Z`));
+    findings.expect(
+      phase,
+      schedule.dayName === expectedName && schedule.dayOfWeek === 1,
+      "the day is named in the school's own locale",
+      `${schedule.dayName} vs ${expectedName}`,
+    );
+  }
+  findings.expect(
+    phase,
+    checked > 0,
+    "at least one Monday class falls on a lesson period of the week",
+  );
+
+  // A support teacher sees the class they support.
+  const target = monday[0];
+  const helper = run.classes.find(
+    (c, index) => index % 5 !== 0 && c.teacher.userId,
+  )?.teacher;
+  if (helper?.userId) {
+    await client.as(admin, "add-teacher-to-class", {
+      classId: target.id,
+      teacherUserId: helper.userId,
+      role: "support",
+    });
+    const schedule: any = await client.as(helper, "get-my-schedule", { date });
+    findings.expect(
+      phase,
+      asList(schedule, "slots").some((s: any) => s.classId === target.id),
+      `${helper.label}, added as support, sees ${target.name} on Monday`,
+      JSON.stringify(schedule?.message ?? null),
+    );
+  }
+}

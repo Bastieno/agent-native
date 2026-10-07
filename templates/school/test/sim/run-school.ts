@@ -13,7 +13,11 @@ import {
   type ClassWeek,
 } from "./school-term.js";
 import { asList } from "./shapes.js";
-import { checkArms, checkTimetable } from "./timetable.js";
+import {
+  checkArms,
+  checkScheduleReadsTheWeek,
+  checkTimetable,
+} from "./timetable.js";
 import {
   teachDifferentiatedWeek,
   checkMovementBetweenGroups,
@@ -307,6 +311,9 @@ const arms = await time("timetable", () => checkArms(client, run, findings));
 console.log("· a term's timetable");
 await time("timetable clashes", () =>
   checkTimetable(client, run, arms, findings),
+);
+await time("schedule from the week", () =>
+  checkScheduleReadsTheWeek(client, run, findings),
 );
 
 // What the head teacher sees of the whole school.

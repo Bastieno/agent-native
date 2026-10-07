@@ -1,19 +1,10 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and, sql } from "drizzle-orm";
+import { and, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-
-const DAY_NAMES = [
-  "",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
+import { loadTimetable, resolveTerm } from "../server/lib/timetable.js";
+import { schoolWeekdayName } from "../shared/school-week.js";
 
 export default defineAction({
   description:
@@ -45,89 +36,96 @@ export default defineAction({
     const jsDay = new Date(targetDate + "T12:00:00Z").getUTCDay(); // 0=Sun … 6=Sat
     const dayOfWeek = jsDay === 0 ? 7 : jsDay; // convert: Sun→7, Mon→1 … Sat→6
 
-    // Find all classes where this teacher is the primary teacher
-    const teacherClasses = await db
-      .select()
-      .from(schema.classes)
-      .where(
-        and(
-          eq(schema.classes.primaryTeacherUserId, teacherUserId),
-          eq(schema.classes.orgId, orgId),
-          eq(schema.classes.status, "active"),
-        ),
-      );
+    const term = await resolveTerm(orgId, targetDate);
+    const { week, locale, periods } = await loadTimetable(orgId, term.termId);
+    const dayName = schoolWeekdayName(dayOfWeek, locale);
 
-    if (teacherClasses.length === 0) {
+    if (periods.length === 0 && !week) {
       return {
         date: targetDate,
         dayOfWeek,
-        dayName: DAY_NAMES[dayOfWeek],
+        dayName,
         slots: [],
-        message: "No active classes assigned to you.",
+        unpreparedCount: 0,
+        message:
+          "Your school has not set up its week or placed any classes in a timetable yet.",
       };
     }
 
-    const classIds = teacherClasses.map((c) => c.id);
-
-    // Get schedule slots for today's day of week across all teacher's classes
-    const allSlots = await db
-      .select()
-      .from(schema.classSchedules)
-      .where(
-        and(
-          eq(schema.classSchedules.dayOfWeek, dayOfWeek),
-          eq(schema.classSchedules.orgId, orgId),
-        ),
-      );
-
-    const todaySlots = allSlots.filter((s) => classIds.includes(s.classId));
-
-    if (todaySlots.length === 0) {
-      return {
-        date: targetDate,
-        dayOfWeek,
-        dayName: DAY_NAMES[dayOfWeek],
-        slots: [],
-        message: `No classes scheduled for ${DAY_NAMES[dayOfWeek]}.`,
-      };
-    }
-
-    // Enrich slots with class details and check for prepared lesson notes
-    const enriched = await Promise.all(
-      todaySlots.map(async (slot) => {
-        const cls = teacherClasses.find((c) => c.id === slot.classId)!;
-
-        // Check if there's a lesson note prepared for today
-        const [recentLesson] = await db
-          .select({
-            id: schema.lessonNotes.id,
-            title: schema.lessonNotes.title,
-            status: schema.lessonNotes.status,
-          })
-          .from(schema.lessonNotes)
-          .where(
-            and(
-              eq(schema.lessonNotes.classId, slot.classId),
-              eq(schema.lessonNotes.lessonDate, targetDate),
-            ),
-          )
-          .limit(1);
-
-        return {
-          scheduleId: slot.id,
-          classId: cls.id,
-          className: cls.name,
-          subjectId: cls.subjectId,
-          gradeLevelId: cls.gradeLevelId,
-          periodNumber: slot.periodNumber,
-          startTime: slot.startTime,
-          endTime: slot.endTime,
-          room: slot.room ?? cls.roomNumber ?? null,
-          lessonPrepared: !!recentLesson,
-          lesson: recentLesson ?? null,
-        };
-      }),
+    // Periods today where this person teaches, as primary or support.
+    const mine = periods.filter(
+      (p) =>
+        p.day === dayOfWeek &&
+        p.teachers.some((t) => t.userId === teacherUserId),
     );
+
+    if (mine.length === 0) {
+      return {
+        date: targetDate,
+        dayOfWeek,
+        dayName,
+        slots: [],
+        unpreparedCount: 0,
+        message: `No classes scheduled for ${dayName}.`,
+      };
+    }
+
+    // Class details and prepared lesson notes, one query each for the whole day.
+    const classIds = [...new Set(mine.map((p) => p.classId))];
+    const [classRows, lessonRows] = await Promise.all([
+      db
+        .select({
+          id: schema.classes.id,
+          subjectId: schema.classes.subjectId,
+          gradeLevelId: schema.classes.gradeLevelId,
+        })
+        .from(schema.classes)
+        .where(
+          and(
+            eq(schema.classes.orgId, orgId),
+            inArray(schema.classes.id, classIds),
+          ),
+        ),
+      db
+        .select({
+          id: schema.lessonNotes.id,
+          classId: schema.lessonNotes.classId,
+          title: schema.lessonNotes.title,
+          status: schema.lessonNotes.status,
+        })
+        .from(schema.lessonNotes)
+        .where(
+          and(
+            inArray(schema.lessonNotes.classId, classIds),
+            eq(schema.lessonNotes.lessonDate, targetDate),
+          ),
+        ),
+    ]);
+    const classById = new Map(classRows.map((c) => [c.id, c]));
+    const lessonByClass = new Map<string, (typeof lessonRows)[number]>();
+    for (const l of lessonRows) {
+      if (!lessonByClass.has(l.classId)) lessonByClass.set(l.classId, l);
+    }
+
+    const enriched = mine.map((p) => {
+      const cls = classById.get(p.classId);
+      const recent = lessonByClass.get(p.classId);
+      return {
+        scheduleId: p.scheduleId,
+        classId: p.classId,
+        className: p.className,
+        subjectId: cls?.subjectId ?? null,
+        gradeLevelId: cls?.gradeLevelId ?? null,
+        periodNumber: p.periodNumber,
+        startTime: p.start,
+        endTime: p.end,
+        room: p.room,
+        lessonPrepared: !!recent,
+        lesson: recent
+          ? { id: recent.id, title: recent.title, status: recent.status }
+          : null,
+      };
+    });
 
     // Sort by start time
     enriched.sort((a, b) => a.startTime.localeCompare(b.startTime));
@@ -137,7 +135,7 @@ export default defineAction({
     return {
       date: targetDate,
       dayOfWeek,
-      dayName: DAY_NAMES[dayOfWeek],
+      dayName,
       slots: enriched,
       unpreparedCount: unprepared.length,
       message:

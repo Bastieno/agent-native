@@ -3,8 +3,9 @@ import { readAppState } from "@agent-native/core/application-state";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and, sql } from "drizzle-orm";
+import { eq, and, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
+import { loadTimetable, resolveTerm } from "../server/lib/timetable.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 
 export default defineAction({
@@ -413,50 +414,47 @@ export default defineAction({
             const jsDay = new Date().getDay(); // 0=Sun … 6=Sat
             const todayDow = jsDay === 0 ? 7 : jsDay;
             const todayStr = new Date().toISOString().slice(0, 10);
-            const classIds = myClasses.map((c) => c.id);
-            if (classIds.length > 0) {
-              const allSlots = await db
-                .select()
-                .from(schema.classSchedules)
-                .where(
-                  and(
-                    eq(schema.classSchedules.dayOfWeek, todayDow),
-                    eq(schema.classSchedules.orgId, schoolId!),
-                  ),
-                );
-              const todaySlots = allSlots
-                .filter((s) => classIds.includes(s.classId))
-                .sort((a, b) => a.startTime.localeCompare(b.startTime));
-
-              screen.todaySchedule = await Promise.all(
-                todaySlots.map(async (slot) => {
-                  const cls = myClasses.find((c) => c.id === slot.classId);
-                  const [lesson] = await db
+            // From the school's week, so the times match the timetable and a
+            // support teacher sees their classes too.
+            const term = await resolveTerm(schoolId!, todayStr);
+            const { periods } = await loadTimetable(schoolId!, term.termId);
+            const todayPeriods = periods
+              .filter(
+                (p) =>
+                  p.day === todayDow &&
+                  p.teachers.some((t) => t.userId === teacherUserId),
+              )
+              .sort((a, b) => a.start.localeCompare(b.start));
+            const todayIds = [...new Set(todayPeriods.map((p) => p.classId))];
+            const lessons =
+              todayIds.length > 0
+                ? await db
                     .select({
                       id: schema.lessonNotes.id,
+                      classId: schema.lessonNotes.classId,
                       title: schema.lessonNotes.title,
                     })
                     .from(schema.lessonNotes)
                     .where(
                       and(
-                        eq(schema.lessonNotes.classId, slot.classId),
+                        inArray(schema.lessonNotes.classId, todayIds),
                         eq(schema.lessonNotes.lessonDate, todayStr),
                       ),
                     )
-                    .limit(1);
-                  return {
-                    classId: slot.classId,
-                    className: cls?.name,
-                    startTime: slot.startTime,
-                    endTime: slot.endTime,
-                    periodNumber: slot.periodNumber,
-                    room: slot.room ?? cls?.roomNumber ?? null,
-                    lessonPrepared: !!lesson,
-                    lesson: lesson ?? null,
-                  };
-                }),
-              );
-            }
+                : [];
+            screen.todaySchedule = todayPeriods.map((p) => {
+              const lesson = lessons.find((l) => l.classId === p.classId);
+              return {
+                classId: p.classId,
+                className: p.className,
+                startTime: p.start,
+                endTime: p.end,
+                periodNumber: p.periodNumber,
+                room: p.room,
+                lessonPrepared: !!lesson,
+                lesson: lesson ? { id: lesson.id, title: lesson.title } : null,
+              };
+            });
           }
         } catch {
           // continue
