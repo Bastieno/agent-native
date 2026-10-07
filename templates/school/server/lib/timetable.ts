@@ -185,6 +185,8 @@ export async function loadTimetable(
   }
 
   const classIds = [...new Set(rows.map((r) => r.classId as string))];
+  // Deliberate: a term whose rows all belong to archived classes yields an empty
+  // timetable, with no fallback to untermed rows.
   const classRows = (await db
     .select()
     .from(schema.classes)
@@ -298,7 +300,7 @@ export async function loadTimetable(
       room: r.room ?? c.roomNumber ?? arm?.homeRoom ?? null,
       teachers: (teacherIds.get(c.id) ?? []).map((userId) => ({
         userId,
-        name: labelFor(labels, userId) ?? userId,
+        name: labelFor(labels, userId) ?? "A teacher",
       })),
       armId: c.armId ?? null,
       optionArmIds: optionArms.get(c.id) ?? [],
