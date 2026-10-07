@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
 import { IconSettings, IconDeviceFloppy } from "@tabler/icons-react";
+import { SchoolWeekEditor } from "@/components/timetable/SchoolWeekEditor";
+import { RoomsEditor } from "@/components/timetable/RoomsEditor";
 import { SchoolCrestField } from "@/components/SchoolCrestField";
 import { useSchoolDates } from "@/hooks/use-school-dates";
 import { describeField, entityPhrase } from "@shared/custom-field-words";
@@ -163,6 +165,8 @@ export default function AdminSettings() {
           <TabsList>
             <TabsTrigger value="grading">Grading</TabsTrigger>
             <TabsTrigger value="terms">Terms</TabsTrigger>
+            <TabsTrigger value="school-week">School week</TabsTrigger>
+            <TabsTrigger value="rooms">Rooms</TabsTrigger>
             <TabsTrigger value="custom-fields">Custom Fields</TabsTrigger>
             <TabsTrigger value="labels">Terminology</TabsTrigger>
             <TabsTrigger value="branding">Branding</TabsTrigger>
@@ -301,6 +305,14 @@ export default function AdminSettings() {
                 Ask the agent to add a year, add a term, or change dates.
               </p>
             </div>
+          </TabsContent>
+
+          <TabsContent value="school-week" className="mt-4">
+            <SchoolWeekEditor />
+          </TabsContent>
+
+          <TabsContent value="rooms" className="mt-4">
+            <RoomsEditor />
           </TabsContent>
 
           <TabsContent value="custom-fields" className="mt-4">
