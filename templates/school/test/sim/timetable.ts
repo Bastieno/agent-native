@@ -47,11 +47,23 @@ async function refused(
  * Runs last: it adds classes and enrolments to the first year group, which
  * would change what the earlier term checks find if it ran before them.
  */
+export type ArmsContext = {
+  yearGroup: string;
+  gradeLevelId: string;
+  /** The three arms, in order. */
+  armIds: string[];
+  /** The learners placed in each arm. */
+  groups: string[][];
+  /** The whole-arm class of each arm, in order. */
+  classIds: string[];
+  subjectId: string;
+};
+
 export async function checkArms(
   client: Client,
   run: FullSchoolRun,
   findings: Findings,
-): Promise<void> {
+): Promise<ArmsContext> {
   const phase = "timetable";
   const yearGroup = Object.keys(run.gradeLevelIds)[0];
   const gradeLevelId = run.gradeLevelIds[yearGroup];
@@ -332,5 +344,434 @@ export async function checkArms(
     phase,
     sameSet(await roll(client, run, classIds[0]), groups[0]),
     "the refused change left the arm's class roll as it was",
+  );
+  return {
+    yearGroup,
+    gradeLevelId,
+    armIds,
+    groups,
+    classIds,
+    subjectId: template.subjectId,
+  };
+}
+
+/** "08:00" plus a number of minutes. */
+function clock(start: string, plus: number): string {
+  const [h, m] = start.split(":").map(Number);
+  const t = h * 60 + m + plus;
+  return `${String(Math.floor(t / 60)).padStart(2, "0")}:${String(t % 60).padStart(2, "0")}`;
+}
+
+/** A day of back-to-back 40-minute lessons from 08:00, with breaks where asked. */
+function bells(count: number, breaks: number[] = []) {
+  let at = "08:00";
+  return Array.from({ length: count }, (_, i) => {
+    const number = i + 1;
+    const isBreak = breaks.includes(number);
+    const end = clock(at, isBreak ? 20 : 40);
+    const period = {
+      number,
+      start: at,
+      end,
+      kind: isBreak ? ("break" as const) : ("lesson" as const),
+      ...(isBreak ? { label: "Long break" } : {}),
+    };
+    at = end;
+    return period;
+  });
+}
+
+const noId = (text: unknown) =>
+  typeof text === "string" &&
+  text.length > 0 &&
+  !/[A-Za-z0-9_-]{15,}/.test(text);
+
+/**
+ * A term's timetable, built and checked the way an admin or the agent would:
+ * a week and rooms first, then classes placed, then each kind of clash.
+ *
+ * Works in two new terms of the run's year, never the run's own. The rows the
+ * school was set up with have no term and keep serving the current term; they
+ * stop doing so the moment that term has rows of its own, so touching it
+ * would change what everything else finds.
+ */
+export async function checkTimetable(
+  client: Client,
+  run: FullSchoolRun,
+  arms: ArmsContext,
+  findings: Findings,
+): Promise<void> {
+  const phase = "timetable";
+  const admin = run.admin;
+  const { armIds, classIds, groups, yearGroup } = arms;
+  const [armA, armB] = armIds;
+  const [classA, classB, classC] = classIds;
+
+  // ── Before the school has a week ────────────────────────────────────────
+  const makeTerm = async (
+    name: string,
+    start: string,
+    end: string,
+    n: number,
+  ) =>
+    idOf(
+      await client.as(admin, "create-term", {
+        academicYearId: run.academicYearId,
+        name,
+        startDate: start,
+        endDate: end,
+        sequence: n,
+      }),
+      "term",
+    )!;
+  const T2 = await makeTerm("Second Term", "2027-01-11", "2027-04-02", 2);
+  const T3 = await makeTerm("Third Term", "2027-04-26", "2027-07-23", 3);
+
+  const noWeekRefusal = await refused(
+    () =>
+      client.as(admin, "set-timetable-period", {
+        termId: T2,
+        classId: classA,
+        day: 1,
+        periodNumber: 1,
+      }),
+    /Settings → School week/,
+  );
+  findings.expect(
+    phase,
+    noWeekRefusal,
+    "placing a class before the school has set its week is refused, pointing at Settings → School week",
+  );
+  let before: any;
+  try {
+    before = await client.as(admin, "get-timetable", { termId: T2 });
+  } catch (error) {
+    findings.expect(
+      phase,
+      false,
+      "reading a timetable before the week is set does not throw",
+      String(error),
+    );
+  }
+  findings.expect(
+    phase,
+    before?.week === null &&
+      typeof before?.message === "string" &&
+      before.message.length > 0,
+    "a timetable read before the week is set says there is no week, in words",
+    JSON.stringify(before?.week),
+  );
+
+  // ── The school's week and rooms ─────────────────────────────────────────
+  const week = {
+    cycleLength: 1,
+    days: [
+      ...[1, 2, 3, 4].map((day) => ({ day, periods: bells(8, [4]) })),
+      { day: 5, periods: bells(6) },
+      { day: 6, periods: bells(3) },
+    ],
+  };
+  await client.as(admin, "update-school-config", {
+    schoolWeek: week,
+    rooms: [
+      { name: `${yearGroup}A classroom`, kind: "classroom" },
+      { name: `${yearGroup}B classroom`, kind: "classroom" },
+      { name: `${yearGroup}C classroom`, kind: "classroom" },
+      { name: "Physics Lab", kind: "special" },
+    ],
+  });
+
+  // ── Option classes ──────────────────────────────────────────────────────
+  const makeOption = async (name: string, learners: string[]) => {
+    const created = await client.as(admin, "create-class", {
+      subjectId: arms.subjectId,
+      gradeLevelId: arms.gradeLevelId,
+      academicYearId: run.academicYearId,
+      name,
+      optionArmIds: [armA, armB],
+    });
+    const id = idOf(created, "class")!;
+    for (const studentUserId of learners) {
+      await client.as(admin, "enroll-student", { classId: id, studentUserId });
+    }
+    return id;
+  };
+  const furtherMaths = await makeOption("Further Mathematics", [
+    groups[0][1],
+    groups[1][2],
+  ]);
+  const technicalDrawing = await makeOption("Technical Drawing", [
+    groups[0][2],
+    groups[1][3],
+  ]);
+  const extraA = idOf(
+    await client.as(admin, "create-class", {
+      subjectId: arms.subjectId,
+      gradeLevelId: arms.gradeLevelId,
+      academicYearId: run.academicYearId,
+      name: `${yearGroup}A Study Skills`,
+      armId: armA,
+    }),
+    "class",
+  )!;
+
+  const place = (
+    classId: string,
+    day: number,
+    periodNumber: number,
+    room?: string,
+  ) =>
+    client.as(admin, "set-timetable-period", {
+      termId: T2,
+      classId,
+      day,
+      periodNumber,
+      ...(room ? { room } : {}),
+    });
+  const clashesOf = async (termId: string) =>
+    (await client.as(admin, "get-timetable", { termId })) as any;
+
+  // ── A clean timetable, then an option block ─────────────────────────────
+  const first = await place(classA, 1, 1, ` ${yearGroup}a  CLASSROOM `);
+  await place(classB, 1, 2);
+  await place(classC, 1, 3);
+  findings.expect(
+    phase,
+    Array.isArray(first?.clashes) &&
+      first.clashes.length === 0 &&
+      noId(first?.message),
+    "placing a class says what was done, with no ids",
+    first?.message,
+  );
+  let view = await clashesOf(T2);
+  findings.expect(
+    phase,
+    view.periods.length === 3 && view.clashes.length === 0,
+    "a clean timetable for the three arms has no clashes",
+    JSON.stringify(view.clashes),
+  );
+  const placedA = view.periods.find((p: any) => p.classId === classA);
+  findings.expect(
+    phase,
+    placedA?.room === `${yearGroup}A classroom` &&
+      placedA?.start === "08:00" &&
+      placedA?.end === "08:40" &&
+      view.dayNames?.[1] &&
+      view.term?.id === T2,
+    "a placement takes its times from the week and its room as the room list spells it",
+    JSON.stringify(placedA),
+  );
+
+  await place(furtherMaths, 2, 1);
+  await place(technicalDrawing, 2, 1);
+  view = await clashesOf(T2);
+  findings.expect(
+    phase,
+    view.clashes.length === 0,
+    "two option classes in the same slot, with different learners, are a block and not a clash",
+    JSON.stringify(view.clashes),
+  );
+
+  // ── One of each deliberate clash ────────────────────────────────────────
+  const teacherUserId = run.classes[0].teacher.userId!;
+  for (const id of [classA, classB]) {
+    await client.as(admin, "update-class", {
+      id,
+      primaryTeacherUserId: teacherUserId,
+    });
+  }
+  await place(classA, 3, 1);
+  const teacherPlace = await place(classB, 3, 1);
+  await place(classB, 4, 1, "Physics Lab");
+  const roomPlace = await place(classC, 4, 1, "physics lab");
+  await place(classA, 5, 1);
+  const armPlace = await place(extraA, 5, 1);
+  // The learner who is in Further Mathematics joins Technical Drawing too.
+  await client.as(admin, "enroll-student", {
+    classId: technicalDrawing,
+    studentUserId: groups[0][1],
+  });
+
+  findings.expect(
+    phase,
+    teacherPlace?.clashes?.length === 1 &&
+      teacherPlace.clashes[0].kind === "teacher" &&
+      /clash/i.test(teacherPlace.message) &&
+      roomPlace?.clashes?.length === 1 &&
+      roomPlace.clashes[0].kind === "room" &&
+      armPlace?.clashes?.length === 1 &&
+      armPlace.clashes[0].kind === "arm",
+    "placing a class that clashes says so in the reply",
+    JSON.stringify([
+      teacherPlace?.clashes,
+      roomPlace?.clashes,
+      armPlace?.clashes,
+    ]),
+  );
+
+  view = await clashesOf(T2);
+  const kinds = view.clashes.map((c: any) => c.kind).sort();
+  findings.expect(
+    phase,
+    kinds.join() === "arm,learner,room,teacher",
+    "the timetable reports exactly four clashes: teacher, room, arm and learner",
+    kinds.join(),
+  );
+  findings.expect(
+    phase,
+    view.clashes.every((c: any) => noId(c.message)),
+    "each clash is a sentence with no id in it",
+    view.clashes.map((c: any) => c.message).join(" | "),
+  );
+  const narrowed = await client.as(admin, "get-timetable", {
+    termId: T2,
+    armId: armB,
+  });
+  findings.expect(
+    phase,
+    narrowed.periods.every(
+      (p: any) => p.armId === armB || p.optionArmIds.includes(armB),
+    ) &&
+      narrowed.periods.length > 0 &&
+      narrowed.clashes.length < view.clashes.length,
+    "narrowing to one arm keeps only that arm's periods and the clashes touching them",
+    `${narrowed.periods.length} periods, ${narrowed.clashes.length} clashes`,
+  );
+  const inLab = await client.as(admin, "get-timetable", {
+    termId: T2,
+    room: " PHYSICS   lab",
+  });
+  findings.expect(
+    phase,
+    inLab.periods.length === 2 && inLab.clashes.length === 1,
+    "narrowing to a room finds its periods however the name is spelled",
+    `${inLab.periods.length} periods`,
+  );
+
+  // ── Refusals ────────────────────────────────────────────────────────────
+  findings.expect(
+    phase,
+    await refused(() => place(classA, 1, 4), /period 4.*lesson periods/is),
+    "placing a class in a break period is refused, naming the lesson periods",
+  );
+  findings.expect(
+    phase,
+    await refused(() => place(classA, 7, 1), /doesn't teach/i),
+    "placing a class on a day the school does not teach is refused",
+  );
+  findings.expect(
+    phase,
+    await refused(() => place(classA, 1, 9), /lesson periods/i),
+    "placing a class in a period that does not exist is refused",
+  );
+  findings.expect(
+    phase,
+    await refused(() => place(classA, 1, 5, "Staff room"), /room list/i),
+    "a room that is not on the room list is refused",
+  );
+
+  // ── Moving and removing ─────────────────────────────────────────────────
+  const moved = await client.as(admin, "set-timetable-period", {
+    termId: T2,
+    classId: classC,
+    day: 6,
+    periodNumber: 2,
+    scheduleId: roomPlace.scheduleId,
+  });
+  view = await clashesOf(T2);
+  const movedRow = view.periods.find(
+    (p: any) => p.scheduleId === roomPlace.scheduleId,
+  );
+  findings.expect(
+    phase,
+    moved?.clashes?.length === 0 &&
+      movedRow?.day === 6 &&
+      movedRow?.periodNumber === 2 &&
+      view.clashes.length === 3,
+    "moving a placement clears the clash it was causing and keeps the row",
+    JSON.stringify(movedRow),
+  );
+  const periodsBefore = view.periods.length;
+  const removed = await client.as(admin, "remove-timetable-period", {
+    scheduleId: roomPlace.scheduleId,
+  });
+  view = await clashesOf(T2);
+  findings.expect(
+    phase,
+    removed?.removed === true &&
+      noId(removed?.message) &&
+      view.periods.length === periodsBefore - 1,
+    "removing a placement takes just that one out",
+    removed?.message,
+  );
+  // Put the clash back so the copy carries all four.
+  await place(classC, 4, 1, "Physics Lab");
+  view = await clashesOf(T2);
+  findings.expect(
+    phase,
+    view.clashes.length === 4,
+    "the four clashes are back before the copy",
+    String(view.clashes.length),
+  );
+
+  // ── Copying a term ──────────────────────────────────────────────────────
+  const preview = await client.as(admin, "copy-timetable", {
+    fromTermId: T2,
+    toTermId: T3,
+  });
+  findings.expect(
+    phase,
+    preview?.periods === view.periods.length &&
+      preview?.clashes === 4 &&
+      (await clashesOf(T3)).fromUntermedRows === true &&
+      noId(preview?.message),
+    "copying without confirming only says what would be copied",
+    JSON.stringify(preview),
+  );
+  const copied = await client.as(admin, "copy-timetable", {
+    fromTermId: T2,
+    toTermId: T3,
+    confirm: true,
+  });
+  const copy = await clashesOf(T3);
+  findings.expect(
+    phase,
+    copied?.periods === view.periods.length &&
+      copy.periods.length === view.periods.length &&
+      copy.clashes.length === 4 &&
+      copy.fromUntermedRows === false,
+    "a confirmed copy has the same periods and the same four clashes in the new term",
+    `${copy.periods.length} periods, ${copy.clashes.length} clashes`,
+  );
+  findings.expect(
+    phase,
+    await refused(
+      () =>
+        client.as(admin, "copy-timetable", {
+          fromTermId: T2,
+          toTermId: T3,
+          confirm: true,
+        }),
+      /already has periods/i,
+    ),
+    "copying onto a term that already has periods is refused",
+  );
+
+  // ── Setup gaps: the current term only ───────────────────────────────────
+  const setup = await client.as(admin, "check-school-setup", {});
+  const clashGaps = asList(setup, "gaps").filter((g: any) =>
+    /clash/i.test(g.setting),
+  );
+  findings.expect(
+    phase,
+    clashGaps.length === 0 && !/clash/i.test(String(setup?.message)),
+    "the setup check lists clashes only for the current term, so not the second term's",
+    clashGaps.map((g: any) => g.meanwhile).join(" | "),
+  );
+  console.log(
+    "  clashes:",
+    view.clashes
+      .map((c: any) => `${c.kind}: ${c.message}`)
+      .join("\n          "),
   );
 }

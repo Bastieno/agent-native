@@ -4,7 +4,7 @@ import { getDb, schema } from "../db/index.js";
 import { schoolLocale } from "../../shared/dates.js";
 import { isUnassignedTeacher } from "../../shared/class-teacher.js";
 import { findPeriod, type SchoolWeek } from "../../shared/school-week.js";
-import type { ResolvedPeriod } from "./timetable-clashes.js";
+import { findClashes, type ResolvedPeriod } from "./timetable-clashes.js";
 import { getUserLabels, labelFor } from "./user-names.js";
 
 /** The school's settings, or an empty object when it has set none. */
@@ -308,4 +308,30 @@ export async function loadTimetable(
     });
   }
   return { week, locale, periods, fromUntermedRows, armNames };
+}
+
+/** A term of this school, or null when the id is not one of its terms. */
+export async function findTerm(
+  orgId: string,
+  termId: string,
+): Promise<{ id: string; name: string } | null> {
+  const db = getDb();
+  const [term] = await db
+    .select()
+    .from(schema.terms)
+    .where(and(eq(schema.terms.id, termId), eq(schema.terms.schoolId, orgId)))
+    .limit(1);
+  return term ? { id: term.id, name: term.name } : null;
+}
+
+/** The clashes in a term's timetable, in the school's own words. */
+export async function clashesForTerm(orgId: string, termId: string | null) {
+  const loaded = await loadTimetable(orgId, termId);
+  return {
+    ...loaded,
+    clashes: findClashes(loaded.periods, {
+      locale: loaded.locale,
+      armNames: loaded.armNames,
+    }),
+  };
 }

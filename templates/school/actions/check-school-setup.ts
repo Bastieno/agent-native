@@ -5,6 +5,7 @@ import { resourceGetByPath, SHARED_OWNER } from "@agent-native/core/resources";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
+import { clashesForTerm, resolveTerm } from "../server/lib/timetable.js";
 import { parseGradeLevelIds } from "../server/lib/subject-year-groups.js";
 
 /**
@@ -134,6 +135,20 @@ export default defineAction({
           'Rooms are free text, so "Lab 1" and "lab 1" are two rooms and a double booking can go unnoticed.',
         fix: 'update-school-config --rooms \'[{"name":"Physics Lab","kind":"special"}]\'',
       });
+    }
+    // Only the current term: the one being taught now. A clash is not a missing
+    // setting, but it is the same kind of thing — the timetable quietly asking
+    // for something impossible — so it is named here, one sentence each.
+    const current = await resolveTerm(orgId);
+    if (current.termId) {
+      const { clashes } = await clashesForTerm(orgId, current.termId);
+      for (const clash of clashes) {
+        gaps.push({
+          setting: `Timetable clash in ${current.termName}`,
+          meanwhile: clash.message,
+          fix: "get-timetable to see it, then set-timetable-period to move one of the lessons",
+        });
+      }
     }
     if (!config.paperSize) {
       gaps.push({

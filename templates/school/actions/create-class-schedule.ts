@@ -4,6 +4,8 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { schoolWeekdayName } from "../shared/school-week.js";
+import { clashesForTerm, findTerm } from "../server/lib/timetable.js";
 
 export default defineAction({
   description:
@@ -37,6 +39,12 @@ export default defineAction({
       .describe(
         "Room override — defaults to the class's roomNumber if omitted",
       ),
+    termId: z
+      .string()
+      .optional()
+      .describe(
+        "The term this slot belongs to. Omit for a slot that applies until the term has its own timetable.",
+      ),
   }),
   http: { method: "POST" },
   run: async (args) => {
@@ -57,6 +65,10 @@ export default defineAction({
       .limit(1);
     if (!cls) throw new Error(`Class not found: ${args.classId}`);
 
+    if (args.termId && !(await findTerm(orgId, args.termId))) {
+      throw new Error("That term is not in this school.");
+    }
+
     const id = nanoid();
     await db.insert(schema.classSchedules).values({
       id,
@@ -67,31 +79,26 @@ export default defineAction({
       endTime: args.endTime,
       periodNumber: args.periodNumber ?? null,
       room: args.room ?? null,
+      termId: args.termId ?? null,
       ownerEmail: userEmail ?? "",
       orgId,
       visibility: "org" as const,
     });
 
-    const dayNames = [
-      "",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ];
+    const loaded = await clashesForTerm(orgId, args.termId ?? null);
+    const clashes = loaded.clashes.filter((c) => c.scheduleIds.includes(id));
+
     return {
       id,
       classId: args.classId,
       className: cls.name,
       dayOfWeek: args.dayOfWeek,
-      dayName: dayNames[args.dayOfWeek],
+      dayName: schoolWeekdayName(args.dayOfWeek, loaded.locale),
       startTime: args.startTime,
       endTime: args.endTime,
       periodNumber: args.periodNumber ?? null,
       room: args.room ?? cls.roomNumber ?? null,
+      clashes,
     };
   },
 });
