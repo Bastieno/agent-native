@@ -7,6 +7,11 @@ import {
   isUnassignedTeacher,
 } from "../shared/class-teacher.js";
 import { z } from "zod";
+import {
+  armsInYearGroup,
+  enrolArmInClass,
+  setOptionArms,
+} from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
   description:
@@ -25,12 +30,36 @@ export default defineAction({
       ),
     roomNumber: z.string().optional(),
     capacity: z.number().optional(),
+    armId: z
+      .string()
+      .nullable()
+      .optional()
+      .describe(
+        "Make this a whole-arm class: every learner of that arm is enrolled, and follows the arm when they move. Not together with optionArmIds.",
+      ),
+    optionArmIds: z
+      .array(z.string())
+      .optional()
+      .describe(
+        "Make this an option class drawing on these arms. Its roll is chosen, not automatic. Not together with armId.",
+      ),
   }),
   http: { method: "POST" },
   run: async (args) => {
     const { orgId, userEmail } = currentAccess();
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
+    const optionArmIds = args.optionArmIds ?? [];
+    if (args.armId && optionArmIds.length > 0) {
+      throw new Error(
+        "A class is either for one whole arm or an option across several arms, not both.",
+      );
+    }
+    await armsInYearGroup(
+      orgId,
+      args.gradeLevelId,
+      [args.armId, ...optionArmIds].filter((a): a is string => !!a),
+    );
     const id = nanoid();
     const teacherUserId = args.primaryTeacherUserId ?? UNASSIGNED_TEACHER_ID;
     const unassigned = isUnassignedTeacher(teacherUserId);
@@ -41,6 +70,7 @@ export default defineAction({
       gradeLevelId: args.gradeLevelId,
       academicYearId: args.academicYearId,
       termId: args.termId ?? null,
+      armId: args.armId ?? null,
       name: args.name,
       primaryTeacherUserId: teacherUserId,
       roomNumber: args.roomNumber ?? null,
@@ -59,13 +89,18 @@ export default defineAction({
         role: "primary",
       });
     }
+    if (optionArmIds.length > 0) await setOptionArms(id, optionArmIds);
+    const enrolled = args.armId
+      ? await enrolArmInClass(orgId, id, args.armId)
+      : 0;
     return {
       id,
       name: args.name,
+      enrolled,
       teacherAssigned: !unassigned,
       message: unassigned
         ? `Created ${args.name} with no teacher assigned. Assign one with update-class when the school has decided; work cannot be published from it until then.`
-        : `Created ${args.name}.`,
+        : `Created ${args.name}${args.armId ? `, with ${enrolled} ${enrolled === 1 ? "learner" : "learners"} from its arm enrolled` : ""}.`,
     };
   },
 });

@@ -13,6 +13,7 @@ import {
   type ClassWeek,
 } from "./school-term.js";
 import { asList } from "./shapes.js";
+import { checkArms } from "./timetable.js";
 import {
   teachDifferentiatedWeek,
   checkMovementBetweenGroups,
@@ -298,6 +299,11 @@ for (const student of [
     `the report says ${snapshot?.overall}, the rows average ${expected}`,
   );
 }
+
+// Last, because it adds classes to the first year group, and a report card
+// covers every class a learner is in.
+console.log("· arms within a year group");
+await time("timetable", () => checkArms(client, run, findings));
 
 // What the head teacher sees of the whole school.
 const analytics = await client.as(run.admin, "get-school-analytics", {});
