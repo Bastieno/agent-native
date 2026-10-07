@@ -842,14 +842,17 @@ export default runMigrations(
         visibility TEXT NOT NULL DEFAULT 'private'
       )`,
     },
+    // Which arm a student belongs to; null if unattached or school has no arms.
     {
       version: 80,
       sql: `ALTER TABLE students ADD COLUMN arm_id TEXT`,
     },
+    // Marks a class as whole-arm or null if option or unattached.
     {
       version: 81,
       sql: `ALTER TABLE classes ADD COLUMN arm_id TEXT`,
     },
+    // Option classes: many-to-many join of arms a class draws from.
     {
       version: 82,
       sql: `CREATE TABLE IF NOT EXISTS class_arms (
@@ -859,10 +862,12 @@ export default runMigrations(
         created_at TEXT NOT NULL DEFAULT (datetime('now'))
       )`,
     },
+    // Which term this timetable slot belongs to; null if permanent schedule.
     {
       version: 83,
       sql: `ALTER TABLE class_schedules ADD COLUMN term_id TEXT`,
     },
+    // Index for finding schedules by term and day, fast lookups when showing the timetable.
     {
       version: 84,
       sql: `CREATE INDEX IF NOT EXISTS class_schedules_term_day ON class_schedules (org_id, term_id, day_of_week)`,

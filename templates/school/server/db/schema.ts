@@ -156,8 +156,8 @@ export const classes = table("classes", {
   gradeLevelId: text("grade_level_id").notNull(),
   academicYearId: text("academic_year_id").notNull(),
   termId: text("term_id"),
-  // Whole-arm, option, or unattached class. A class may not be both whole-arm
-  // (with an arm_id) and option (in class_arms join table).
+  // Class type: whole-arm (arm_id set), option (rows in class_arms), or unattached (neither).
+  // Every class that existed before arms is unattached. A class may not be both whole-arm and option.
   armId: text("arm_id"),
   name: text("name").notNull(),
   primaryTeacherUserId: text("primary_teacher_user_id").notNull(),
@@ -186,6 +186,7 @@ export const classEnrollments = table("class_enrollments", {
   createdAt: text("created_at").notNull().default(now()),
 });
 
+// Option classes: many-to-many join, holding the arms an option class draws from.
 export const classArms = table("class_arms", {
   id: text("id").primaryKey(),
   classId: text("class_id").notNull(),
