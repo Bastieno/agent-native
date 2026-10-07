@@ -352,7 +352,17 @@ export default function StudentAssessment() {
               </p>
             </div>
           )}
+        {/* The questions, once.
+            A paper whose questions each have their own answer box below
+            was being shown twice over: every question and all four of its
+            options to read, then the whole set again to answer. On a
+            tablet that is double the scrolling and a real question for a
+            learner — "did I already answer this one?" — so where the
+            answer sheet carries the questions, this reading copy stands
+            down. Everything else — a reading page, a card deck, a table,
+            a practical — still shows here, since those have no sheet. */}
         {!oneAtATime &&
+          questionBlocks.length === 0 &&
           !needsToStart &&
           !timing?.notYetOpen &&
           (assessment?.variant?.content ||

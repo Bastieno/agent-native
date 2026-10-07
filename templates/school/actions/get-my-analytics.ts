@@ -2,7 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and, desc, asc, inArray, sql, count } from "drizzle-orm";
+import { eq, and, desc, asc, inArray, sql, count, ne } from "drizzle-orm";
 import { actorForEmail } from "../server/lib/class-access.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
@@ -57,7 +57,20 @@ export default defineAction({
         classId: schema.assessments.classId,
       })
       .from(schema.assessments)
-      .where(inArray(schema.assessments.classId, classIds));
+      // Only work that was actually set, and that expects something back.
+      //
+      // This counted every row: unpublished drafts nobody has been given,
+      // and reading pages with nothing to hand in. A teacher drafting next
+      // week's reading watched this class's completion fall, and the same
+      // class read 42% here and 78% on the admin's page — the admin counts
+      // published work, which is the honest denominator.
+      .where(
+        and(
+          inArray(schema.assessments.classId, classIds),
+          eq(schema.assessments.status, "published"),
+          ne(schema.assessments.responseMode, "none"),
+        ),
+      );
 
     const assessmentIds = assessments.map((a: any) => a.id);
 

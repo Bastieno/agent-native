@@ -1,7 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and, inArray } from "drizzle-orm";
+import { eq, and, inArray, ne } from "drizzle-orm";
 import { z } from "zod";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { isUnassignedTeacher } from "../shared/class-teacher.js";
@@ -81,6 +81,9 @@ export default defineAction({
               and(
                 inArray(schema.assessments.classId, classIds),
                 eq(schema.assessments.status, "published"),
+                // A page to read is not work anyone hands in, so counting
+                // it as outstanding makes every class look behind.
+                ne(schema.assessments.responseMode, "none"),
               ),
             )
         : [];
