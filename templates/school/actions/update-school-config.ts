@@ -6,6 +6,7 @@ import { looksUncountable, naivePlural } from "../shared/terminology.js";
 import { jsonish } from "../shared/zod-json.js";
 import { getDb, schema } from "../server/db/index.js";
 import { eq } from "drizzle-orm";
+import { roomProblems, weekProblems } from "../shared/school-week.js";
 import { reservedWeeksForTerm, termWeekCount } from "../shared/term-weeks.js";
 
 export default defineAction({
@@ -92,6 +93,61 @@ export default defineAction({
       .describe(
         "Weeks the school keeps for something other than new material, in the school's own words and at the school's own positions. Nothing is assumed: a school that holds no mid-term tests leaves this unset and no week is reserved. Exam weeks are counted separately from the end of term by examWeeksPerTerm.",
       ),
+    schoolWeek: jsonish(
+      z.object({
+        cycleLength: z
+          .literal(1)
+          .describe("The week repeats every week. Only 1 is supported."),
+        days: z.array(
+          z.object({
+            day: z
+              .number()
+              .int()
+              .min(1)
+              .max(7)
+              .describe("Which day, 1 = Monday … 7 = Sunday"),
+            periods: z.array(
+              z.object({
+                number: z
+                  .number()
+                  .describe(
+                    "The school's own numbering for that day. A break has a number like any period.",
+                  ),
+                start: z.string().describe('24-hour time, e.g. "08:00"'),
+                end: z.string().describe('24-hour time, e.g. "08:40"'),
+                kind: z.enum(["lesson", "break"]),
+                label: z
+                  .string()
+                  .optional()
+                  .describe(
+                    "What the school calls it — 'Long break', 'Assembly'",
+                  ),
+              }),
+            ),
+          }),
+        ),
+      }),
+    )
+      .optional()
+      .describe(
+        "The school's own week: the days it teaches and the periods and breaks in each, with times. Nothing is assumed — a day the school does not teach is left out, and a short Friday simply has fewer periods. Replaces the whole week when given.",
+      ),
+    rooms: jsonish(
+      z.array(
+        z.object({
+          name: z.string().describe('"SS1A classroom", "Physics Lab"'),
+          kind: z
+            .enum(["classroom", "special"])
+            .describe(
+              "A classroom is a form room; special is a lab, hall or field used by many classes",
+            ),
+        }),
+      ),
+    )
+      .optional()
+      .describe(
+        "The rooms the school has, in its own names. Nothing is assumed. Replaces the whole list when given; names that differ only in case or spacing count as one room.",
+      ),
     curriculumPacing: jsonish(
       z.object({
         maxUnitWeeks: z
@@ -169,6 +225,13 @@ export default defineAction({
         string,
         unknown
       > | null) ?? {};
+    const problems = [
+      ...(args.schoolWeek ? weekProblems(args.schoolWeek as any) : []),
+      ...(args.rooms ? roomProblems(args.rooms as any) : []),
+    ];
+    if (problems.length) {
+      throw new Error(`Nothing was saved. ${problems.join(" ")}`);
+    }
     const merged = { ...existing, ...args } as Record<string, unknown>;
     if (args.theme) {
       // Merge, so setting a logo does not clear a colour set earlier.

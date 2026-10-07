@@ -119,6 +119,22 @@ export default defineAction({
         fix: "update-school-config --missedWorkPolicy zero",
       });
     }
+    if (!config.schoolWeek) {
+      gaps.push({
+        setting: "School week",
+        meanwhile:
+          "Lessons show only the times typed against them; the timetable has no periods to offer.",
+        fix: 'update-school-config --schoolWeek \'{"cycleLength":1,"days":[{"day":1,"periods":[{"number":1,"start":"08:00","end":"08:40","kind":"lesson"}]}]}\'',
+      });
+    }
+    if (!config.rooms) {
+      gaps.push({
+        setting: "Rooms",
+        meanwhile:
+          'Rooms are free text, so "Lab 1" and "lab 1" are two rooms and a double booking can go unnoticed.',
+        fix: 'update-school-config --rooms \'[{"name":"Physics Lab","kind":"special"}]\'',
+      });
+    }
     if (!config.paperSize) {
       gaps.push({
         setting: "Paper size",
