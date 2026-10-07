@@ -59,6 +59,12 @@ portalled dialogs, `.click()` does not drive Radix tabs, and reads race the
 render. Sign in by POSTing to `/_agent-native/auth/login` with a simulated
 school's admin (`admin@<run>.sim.test`, password in `test/sim/client.ts`).
 
+## Not about the timetable
+
+Other things found and left undone are in [open-items.md](./open-items.md) —
+extensions having no affordances, a sweep for run-together text, the agent
+-behaviour test suite, and the dev server's hourly wedge.
+
 ## Where I would start
 
 A timetable is a grid: day × period × class. The useful first move is to
