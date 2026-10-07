@@ -13,6 +13,10 @@ import {
   type WeekPeriod,
   type Weekday,
 } from "../shared/school-week.js";
+import {
+  findClashes,
+  type ResolvedPeriod,
+} from "../server/lib/timetable-clashes.js";
 
 function check(name: string, fn: () => void) {
   try {
@@ -131,4 +135,135 @@ check("timesOverlap is half-open", () => {
 check("schoolWeekdayName comes from the locale", () => {
   assert.equal(schoolWeekdayName(1, "en-GB"), "Monday");
   assert.equal(schoolWeekdayName(6, "fr-FR"), "samedi");
+});
+
+function rp(id: string, over: Partial<ResolvedPeriod> = {}): ResolvedPeriod {
+  return {
+    scheduleId: id,
+    classId: `c-${id}`,
+    className: `Class ${id}`,
+    subjectName: "Subject",
+    termId: null,
+    day: 1,
+    periodNumber: 1,
+    start: "08:00",
+    end: "08:40",
+    room: null,
+    teachers: [],
+    armId: null,
+    optionArmIds: [],
+    learnerUserIds: [],
+    ...over,
+  };
+}
+const clashCtx = { locale: "en-GB", armNames: { A: "Year 7A", B: "Year 7B" } };
+const ada = { userId: "t1", name: "Ada Obi" };
+
+check("a shared teacher on overlapping periods is one teacher clash", () => {
+  const out = findClashes(
+    [rp("1", { teachers: [ada] }), rp("2", { teachers: [ada] })],
+    clashCtx,
+  );
+  assert.equal(out.length, 1);
+  assert.equal(out[0].kind, "teacher");
+  assert.match(out[0].message, /Ada Obi/);
+  assert.match(out[0].message, /Class 1/);
+  assert.match(out[0].message, /Class 2/);
+  assert.match(out[0].message, /Monday, period 1/);
+});
+
+check("touching periods do not clash", () => {
+  const out = findClashes(
+    [
+      rp("1", { teachers: [ada] }),
+      rp("2", { teachers: [ada], start: "08:40", end: "09:20" }),
+    ],
+    clashCtx,
+  );
+  assert.deepEqual(out, []);
+});
+
+check("rooms compare through roomKey", () => {
+  const out = findClashes(
+    [rp("1", { room: "Physics Lab" }), rp("2", { room: " physics lab" })],
+    clashCtx,
+  );
+  assert.equal(out.length, 1);
+  assert.equal(out[0].kind, "room");
+});
+
+check("two whole-arm classes clash once as arm, not learner", () => {
+  const out = findClashes(
+    [
+      rp("1", { armId: "A", learnerUserIds: ["u1"] }),
+      rp("2", { armId: "A", learnerUserIds: ["u1"] }),
+    ],
+    clashCtx,
+  );
+  assert.equal(out.length, 1);
+  assert.equal(out[0].kind, "arm");
+  assert.match(out[0].message, /Year 7A/);
+});
+
+check("a whole-arm class and an option class from that arm clash", () => {
+  const out = findClashes(
+    [rp("1", { armId: "A" }), rp("2", { optionArmIds: ["A", "B"] })],
+    clashCtx,
+  );
+  assert.deepEqual(
+    out.map((c) => c.kind),
+    ["arm"],
+  );
+});
+
+check("option classes sharing arms with disjoint learners are a block", () => {
+  const out = findClashes(
+    [
+      rp("1", { optionArmIds: ["A", "B"], learnerUserIds: ["u1"] }),
+      rp("2", { optionArmIds: ["A", "B"], learnerUserIds: ["u2"] }),
+    ],
+    clashCtx,
+  );
+  assert.deepEqual(out, []);
+});
+
+check("a shared learner is a learner clash with a count only", () => {
+  const out = findClashes(
+    [
+      rp("1", { optionArmIds: ["A", "B"], learnerUserIds: ["u-secret", "u2"] }),
+      rp("2", { optionArmIds: ["A", "B"], learnerUserIds: ["u-secret", "u3"] }),
+    ],
+    clashCtx,
+  );
+  assert.equal(out.length, 1);
+  assert.equal(out[0].kind, "learner");
+  assert.match(out[0].message, /^1 learner/);
+  assert.ok(!out[0].message.includes("u-secret"));
+});
+
+check("unassigned classes never clash on teacher", () => {
+  assert.deepEqual(findClashes([rp("1"), rp("2")], clashCtx), []);
+});
+
+check("different days never clash", () => {
+  const out = findClashes(
+    [
+      rp("1", { teachers: [ada], room: "Lab", armId: "A" }),
+      rp("2", { teachers: [ada], room: "Lab", armId: "A", day: 2 }),
+    ],
+    clashCtx,
+  );
+  assert.deepEqual(out, []);
+});
+
+check("one pair can clash on several kinds; null period uses the time", () => {
+  const out = findClashes(
+    [
+      rp("1", { teachers: [ada], room: "Lab", periodNumber: null }),
+      rp("2", { teachers: [ada], room: "lab", periodNumber: null }),
+    ],
+    clashCtx,
+  );
+  assert.deepEqual(out.map((c) => c.kind).sort(), ["room", "teacher"]);
+  assert.match(out[0].message, /at 08:00/);
 });
