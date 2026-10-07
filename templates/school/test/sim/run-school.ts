@@ -9,6 +9,7 @@ import {
   checkCohortIsolation,
   checkGroupingAcrossSchool,
   checkMissedWorkIsVisible,
+  checkTodaysSchedule,
   type ClassWeek,
 } from "./school-term.js";
 import { asList } from "./shapes.js";
@@ -167,6 +168,7 @@ if (differentiated.length) {
 console.log("\n· checking what one teacher can reach of another's class");
 await time("isolation", async () => {
   await checkMissedWorkIsVisible(client, run, findings);
+  await checkTodaysSchedule(client, run, findings);
   await checkTeacherIsolation(client, run, findings);
   await checkCohortIsolation(client, run, weeks, findings);
 });

@@ -242,10 +242,29 @@ export async function standUpFullSchool(
     });
   }
 
+  // ── A timetable ────────────────────────────────────────────────────────
+  //
+  // Without one, "what do I have today?" has nothing to answer with, and the
+  // whole path — the teacher's own schedule, whether each lesson has a note
+  // prepared — went untested while looking fine.
+  //
+  // Each class gets one period a week, spread across Monday to Friday, which
+  // is enough for the question to have a real answer on any given day.
+  for (const [index, cls] of classes.entries()) {
+    await client.as(admin, "create-class-schedule", {
+      classId: cls.id,
+      dayOfWeek: (index % 5) + 1,
+      startTime: `0${8 + Math.floor(index / 5)}:00`,
+      endTime: `0${8 + Math.floor(index / 5)}:45`,
+      periodNumber: Math.floor(index / 5) + 1,
+      room: `Room ${index + 1}`,
+    });
+  }
+
   console.log(
     `· ${classes.length} classes, ${students.length} learners, ${
       classes.length * (students.length / scenario.cohorts.length)
-    } enrolments`,
+    } enrolments, one period a week each`,
   );
 
   return {

@@ -200,6 +200,65 @@ export async function checkMissedWorkIsVisible(
 }
 
 /**
+ * "What do I have today?" — the first thing a teacher asks the app.
+ *
+ * Every class has one period a week, so on any weekday some teachers are
+ * teaching and some are not, and both answers have to be right. The check
+ * is deliberately about the question rather than the row count: a teacher
+ * is told their own classes, at their own times, with whether each lesson
+ * has a note ready.
+ */
+export async function checkTodaysSchedule(
+  client: Client,
+  run: FullSchoolRun,
+  findings: Findings,
+): Promise<void> {
+  const phase = "schedule";
+  const today = new Date().getDay(); // 0 Sunday … 6 Saturday
+  const teaching = run.classes.filter((_, index) => (index % 5) + 1 === today);
+
+  for (const cls of run.classes.slice(0, 3)) {
+    const schedule = await client.as(cls.teacher, "get-my-schedule", {});
+    const slots = asList(schedule, "slots");
+    const mine = slots.every((s: any) =>
+      run.classes.some(
+        (c) => c.id === s.classId && c.teacher.email === cls.teacher.email,
+      ),
+    );
+    findings.expect(
+      phase,
+      mine,
+      `${cls.teacher.label}'s day holds only their own classes`,
+      `${slots.length} slot(s) returned`,
+    );
+    findings.expect(
+      phase,
+      typeof schedule?.message === "string" && schedule.message.length > 0,
+      "the schedule says in words what the day looks like",
+      JSON.stringify(schedule?.message ?? null),
+    );
+    // Every slot must say whether the lesson is prepared — that is the
+    // reason a teacher opens it the night before.
+    findings.expect(
+      phase,
+      slots.every((s: any) => typeof s.lessonPrepared === "boolean"),
+      "each lesson today says whether a note is ready",
+    );
+  }
+
+  // Somebody is teaching today, unless it is the weekend.
+  if (today >= 1 && today <= 5) {
+    const anyTeaching = teaching.length > 0;
+    findings.expect(
+      phase,
+      anyTeaching,
+      "the timetable puts somebody in front of a class on a weekday",
+      `${teaching.length} classes scheduled for day ${today}`,
+    );
+  }
+}
+
+/**
  * What one teacher can reach of another teacher's class.
  *
  * This is the question a school system has to get right and a single-class

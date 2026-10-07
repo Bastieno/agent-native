@@ -207,14 +207,21 @@ function SubjectCurriculum({
                           <div key={unit.id} className="space-y-1">
                             <p className="text-sm">
                               {unit.title}
+                              {/* A real space, and the right word: this ran
+                                  together as "Whole numbers and place
+                                  valueWeeks 1" when read or copied, and a
+                                  unit covering one week is a week, not
+                                  weeks. */}
                               {unit.weekStart ? (
-                                <span className="ml-2 text-xs text-muted-foreground">
-                                  Weeks {unit.weekStart}
-                                  {unit.weekEnd &&
-                                  unit.weekEnd !== unit.weekStart
-                                    ? `–${unit.weekEnd}`
-                                    : ""}
-                                </span>
+                                <>
+                                  {" "}
+                                  <span className="text-xs text-muted-foreground">
+                                    {unit.weekEnd &&
+                                    unit.weekEnd !== unit.weekStart
+                                      ? `Weeks ${unit.weekStart}–${unit.weekEnd}`
+                                      : `Week ${unit.weekStart}`}
+                                  </span>
+                                </>
                               ) : null}
                             </p>
                             {unit.objectives?.length ? (

@@ -46,6 +46,7 @@ export default function TeacherDashboard() {
           Here's your overview.
         </p>
       </div>
+      <Today />
       <div>
         <h2 className="text-sm font-medium mb-3">My Classes</h2>
         {classes.length === 0 ? (
@@ -78,6 +79,94 @@ export default function TeacherDashboard() {
             ))}
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Today, for the teacher whose day it is.
+ *
+ * "What do I have today?" is the first thing a teacher asks the app, and
+ * the agent could answer it while the teacher's own dashboard could not —
+ * it listed their classes with no times and no sense of which of them is in
+ * an hour. The schedule already carries whether each lesson has a note
+ * prepared, which is the reason anyone opens this the night before.
+ *
+ * A school that has not built a timetable sees nothing rather than an empty
+ * heading: plenty run on a paper one, and nagging them about it on their
+ * own front page would be the app talking about itself.
+ */
+function Today() {
+  const { data: schedule } = useQuery<any>({
+    queryKey: ["my-schedule"],
+    queryFn: async () => {
+      // This action answers to POST, not GET: asked with the wrong verb it
+      // returns 405 and the page quietly shows nothing, which is how a
+      // missing timetable and a mistyped request look identical.
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-my-schedule"),
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: "{}",
+        },
+      );
+      if (!res.ok) return null;
+      return res.json();
+    },
+  });
+
+  const slots: any[] = schedule?.slots ?? [];
+  if (!schedule || slots.length === 0) return null;
+
+  return (
+    <div>
+      <h2 className="mb-3 text-sm font-medium">
+        Today · {schedule.dayName}
+        {/* A real space, not only a margin — read aloud or copied, "Wednesday"
+            and the count ran together. */}
+        {schedule.unpreparedCount > 0 ? " " : null}
+        {schedule.unpreparedCount > 0 ? (
+          <span className="text-xs font-normal text-muted-foreground">
+            {schedule.unpreparedCount} without a lesson note
+          </span>
+        ) : null}
+      </h2>
+      <div className="divide-y rounded-lg border">
+        {slots.map((slot: any) => (
+          <div
+            key={slot.scheduleId}
+            className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3"
+          >
+            <span className="text-sm tabular-nums text-muted-foreground">
+              {slot.startTime}
+              {slot.endTime ? `–${slot.endTime}` : ""}
+            </span>
+            <Link
+              to={`/teacher/classes/${slot.classId}`}
+              className="text-sm font-medium underline-offset-2 hover:underline"
+            >
+              {slot.className}
+            </Link>
+            {slot.room ? (
+              <span className="text-xs text-muted-foreground">{slot.room}</span>
+            ) : null}
+            {/* The one thing worth knowing before the bell. */}
+            {slot.lessonPrepared ? (
+              <Link
+                to={`/teacher/lessons/${slot.lesson?.id}`}
+                className="ml-auto text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+              >
+                Lesson note ready
+              </Link>
+            ) : (
+              <span className="ml-auto text-xs text-muted-foreground">
+                No lesson note for today
+              </span>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
