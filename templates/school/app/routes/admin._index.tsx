@@ -10,6 +10,7 @@ import {
   IconSchool,
   IconBook,
   IconMessageDots,
+  IconPointFilled,
 } from "@tabler/icons-react";
 
 function StatCard({
@@ -143,14 +144,131 @@ export default function AdminOverview() {
               />
             </Link>
           </div>
-          <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-sm font-medium mb-2">Quick Actions</h2>
-            <p className="text-sm text-muted-foreground">
-              Use the agent sidebar to configure your school, create subjects,
-              invite staff, or set up your academic year.
-            </p>
-          </div>
+          <NeedsAttention />
         </>
+      )}
+    </div>
+  );
+}
+
+/**
+ * What this school needs doing, on the page it opens on.
+ *
+ * The overview was four counters and a card telling the admin to use the
+ * agent — which is already in the sidebar beside it. Counting staff and
+ * subjects says nothing about whether the school is ready to teach on
+ * Monday, and everything that does was already computed on other pages: a
+ * class with no teacher cannot have work published to it, a class with no
+ * curriculum has nothing to write lesson notes from, and a learner with no
+ * year group is outside every plan the school makes.
+ *
+ * Each line is a count and the page that fixes it. Nothing new is computed
+ * here, and a school with nothing outstanding reads one quiet sentence
+ * rather than an empty dashboard.
+ */
+function NeedsAttention() {
+  const { data: coverage } = useQuery({
+    queryKey: ["admin-overview-coverage"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-lesson-note-coverage"),
+      );
+      if (!res.ok) return null;
+      return res.json();
+    },
+  });
+  const { data: records } = useQuery({
+    queryKey: ["admin-overview-records"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/check-student-records"),
+      );
+      if (!res.ok) return null;
+      return res.json();
+    },
+  });
+
+  const totals = coverage?.totals;
+  const term = coverage?.term?.name;
+  const plural = (n: number, one: string, many: string) =>
+    `${n} ${n === 1 ? one : many}`;
+
+  const items: { text: string; to: string }[] = [];
+  if (totals?.withoutTeacher) {
+    items.push({
+      text: `${plural(totals.withoutTeacher, "class has", "classes have")} no teacher, so no work can be published to ${totals.withoutTeacher === 1 ? "it" : "them"}`,
+      to: "/admin/classes",
+    });
+  }
+  if (totals?.noCurriculum) {
+    items.push({
+      text: `${plural(totals.noCurriculum, "class has", "classes have")} no curriculum for ${term ?? "this term"}`,
+      to: "/admin/curriculum",
+    });
+  }
+  const behind = (totals?.withGaps ?? 0) + (totals?.withNothing ?? 0);
+  if (behind > 0) {
+    items.push({
+      text: `${plural(behind, "class is", "classes are")} behind on lesson notes`,
+      to: "/admin/lessons",
+    });
+  }
+  // Written but not declared ready is its own state, and it is the one a
+  // head teacher is asking about on a Sunday: the notes exist, but nobody
+  // has said they are ready to teach.
+  const written = (totals?.classes ?? 0) - (totals?.noCurriculum ?? 0);
+  const notReady = Math.max(0, written - behind - (totals?.ready ?? 0));
+  if (notReady > 0) {
+    items.push({
+      text: `${plural(notReady, "class has", "classes have")} lesson notes written but not yet marked ready`,
+      to: "/admin/lessons",
+    });
+  }
+  if (records?.withoutYearGroup?.length) {
+    items.push({
+      text: `${plural(records.withoutYearGroup.length, "learner has", "learners have")} no year group`,
+      to: "/admin/students",
+    });
+  }
+  for (const field of records?.byField ?? []) {
+    if (field.missingCount > 0) {
+      items.push({
+        text: `${plural(field.missingCount, "learner has", "learners have")} no ${field.label}`,
+        to: "/admin/students",
+      });
+    }
+  }
+
+  // Still loading, and nothing to say yet.
+  if (!coverage && !records) return null;
+
+  return (
+    <div className="rounded-lg border bg-card p-6">
+      <h2 className="mb-3 text-sm font-medium">Needs attention</h2>
+      {items.length === 0 ? (
+        <p className="text-sm text-muted-foreground">
+          Nothing outstanding: every class has a teacher and a curriculum, the
+          lesson notes are written, and every learner&apos;s record is complete.
+        </p>
+      ) : (
+        <ul className="space-y-2">
+          {items.map((item) => (
+            <li key={item.text}>
+              <Link
+                to={item.to}
+                className="group flex items-start gap-2 text-sm text-muted-foreground hover:text-foreground"
+              >
+                <IconPointFilled
+                  size={14}
+                  className="mt-0.5 shrink-0 text-muted-foreground/60"
+                />
+                <span className="underline-offset-2 group-hover:underline">
+                  {item.text}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

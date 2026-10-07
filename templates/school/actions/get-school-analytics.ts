@@ -3,6 +3,8 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray } from "drizzle-orm";
 import { z } from "zod";
+import { getUserLabels, labelFor } from "../server/lib/user-names.js";
+import { isUnassignedTeacher } from "../shared/class-teacher.js";
 
 export default defineAction({
   description:
@@ -142,6 +144,13 @@ export default defineAction({
       doneByClass[classId] = (doneByClass[classId] ?? 0) + 1;
     }
 
+    // One lookup for every teacher in the school rather than one per class.
+    const teacherLabels = await getUserLabels(
+      classes
+        .map((c: any) => c.primaryTeacherUserId)
+        .filter((id: any): id is string => !!id),
+    );
+
     const classSummaries = classes.map((cls: any) => {
       const subject = subjects.find((s: any) => s.id === cls.subjectId);
       const gl = gradeLevels.find((g: any) => g.id === cls.gradeLevelId);
@@ -158,6 +167,12 @@ export default defineAction({
         className: cls.name,
         subjectName: subject?.name ?? "Unknown",
         gradeLevel: gl?.name ?? "Unknown",
+        // Whose class it is. A head teacher reading a weak subject asks
+        // which class next, and then who teaches it — without this the
+        // answer needed a second page.
+        teacherName: isUnassignedTeacher(cls.primaryTeacherUserId)
+          ? null
+          : (labelFor(teacherLabels, cls.primaryTeacherUserId) ?? null),
         assessmentCount: classAssessments.length,
         gradedCount: pcts.length,
         averageScore:
