@@ -9,7 +9,7 @@ export default defineAction({
     view: z
       .string()
       .describe(
-        "The view to navigate to. Admin: overview, curriculum, curriculum-setup, staff, students, classes, arms (the arms tab of the Classes page), lessons (lesson-note readiness; pass classId for one class or lessonId for one note), analytics, settings, extensions. Teacher: dashboard, classes, class, unit, lesson, assessment, gradebook, students, analytics. Student: dashboard, classes, class, assessment, submission, grades, progress. Any staff role: document (a printable made with create-activity's sibling, create-document) — pass documentId; print-material (a week's worksheets, reading and card decks printed from what is stored) — pass lessonId; print-activity (one of them) — pass assessmentId.",
+        "The view to navigate to. Admin: overview, curriculum, curriculum-setup, staff, students, classes, arms (the arms tab of the Classes page), timetable (pass termId, and one of armId, teacherUserId or room to show that arm's, teacher's or room's week; an arm is shown when none is given), lessons (lesson-note readiness; pass classId for one class or lessonId for one note), analytics, settings, extensions. Teacher: dashboard, classes, class, unit, lesson, assessment, gradebook, students, analytics. Student: dashboard, classes, class, assessment, submission, grades, progress. Any staff role: document (a printable made with create-activity's sibling, create-document) — pass documentId; print-material (a week's worksheets, reading and card decks printed from what is stored) — pass lessonId; print-activity (one of them) — pass assessmentId.",
       ),
     classId: z
       .string()
@@ -53,6 +53,24 @@ export default defineAction({
       .string()
       .optional()
       .describe("Curriculum draft ID for curriculum-setup view"),
+    termId: z
+      .string()
+      .optional()
+      .describe(
+        "Term to show on the timetable view; the current term if omitted",
+      ),
+    armId: z
+      .string()
+      .optional()
+      .describe("Timetable view: show this arm's week"),
+    teacherUserId: z
+      .string()
+      .optional()
+      .describe("Timetable view: show this teacher's week"),
+    room: z
+      .string()
+      .optional()
+      .describe("Timetable view: show this room's week"),
     submissionId: z
       .string()
       .optional()

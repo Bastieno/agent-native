@@ -4,13 +4,26 @@ import { and, eq, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
-import { clashesForTerm, findTerm } from "../server/lib/timetable.js";
+import {
+  clashesForTerm,
+  findTerm,
+  previousTerm,
+} from "../server/lib/timetable.js";
 
 export default defineAction({
   description:
-    "Copy one term's timetable to another: the same classes in the same days, periods, times and rooms. Shows what would be copied (and how many clashes it carries) until confirm is true. Refuses when the target term already has periods of its own. If the source term has none but the school's earlier, un-termed timetable exists, that is what is copied.",
+    "Copy one term's timetable to another: the same classes in the same days, periods, times and rooms. Shows what would be copied (and how many clashes it carries), and from where, until confirm is true. Refuses when the target term already has periods of its own. The source is fromTermId; or, with fromEarlier, the school's earlier timetable set before terms were used; or, with neither, the term before toTermId. If the source term has none but the school's earlier, un-termed timetable exists, that is what is copied.",
   schema: z.object({
-    fromTermId: z.string(),
+    fromTermId: z
+      .string()
+      .optional()
+      .describe("Copy from this term. Omit to copy from the term before"),
+    fromEarlier: z
+      .boolean()
+      .optional()
+      .describe(
+        "Copy the school's earlier timetable, set before terms were used, instead of a term's",
+      ),
     toTermId: z.string(),
     confirm: z
       .boolean()
@@ -23,12 +36,25 @@ export default defineAction({
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
 
-    if (args.fromTermId === args.toTermId) {
-      throw new Error("A timetable can't be copied onto itself.");
-    }
-    const from = await findTerm(orgId, args.fromTermId);
     const to = await findTerm(orgId, args.toTermId);
-    if (!from || !to) throw new Error("That term is not in this school.");
+    if (!to) throw new Error("That term is not in this school.");
+    let from: { id: string; name: string } | null = null;
+    if (!args.fromEarlier) {
+      if (args.fromTermId) {
+        from = await findTerm(orgId, args.fromTermId);
+        if (!from) throw new Error("That term is not in this school.");
+      } else {
+        from = await previousTerm(orgId, to.id);
+        if (!from) {
+          throw new Error(
+            `${to.name} has no term before it to copy a timetable from.`,
+          );
+        }
+      }
+      if (from.id === to.id) {
+        throw new Error("A timetable can't be copied onto itself.");
+      }
+    }
 
     const S = schema.classSchedules;
     const [existing] = await db
@@ -42,10 +68,12 @@ export default defineAction({
       );
     }
 
-    const source = await clashesForTerm(orgId, from.id);
+    const source = await clashesForTerm(orgId, from?.id ?? null);
     if (source.periods.length === 0) {
       throw new Error(
-        `${from.name} has no timetable to copy, and neither does the school's earlier one.`,
+        from
+          ? `${from.name} has no timetable to copy, and neither does the school's earlier one.`
+          : "The school has no earlier timetable to copy.",
       );
     }
     const ids = source.periods.map((p) => p.scheduleId);
@@ -54,9 +82,14 @@ export default defineAction({
       .from(S)
       .where(and(eq(S.schoolId, orgId), inArray(S.id, ids)));
 
-    const origin = source.fromUntermedRows
+    const earlier = !from || source.fromUntermedRows;
+    const origin = earlier
       ? "the school's earlier timetable (set before terms were used)"
-      : from.name;
+      : from!.name;
+    // What the source is called, for a button or a sentence.
+    const fromLabel = earlier
+      ? { termId: null, name: "the earlier timetable" }
+      : { termId: from!.id, name: from!.name };
     const clashNote = source.clashes.length
       ? `, ${source.clashes.length} of them clashing`
       : ", with no clashes";
@@ -66,6 +99,7 @@ export default defineAction({
       return {
         periods: rows.length,
         clashes: source.clashes.length,
+        from: fromLabel,
         message: `Copying would put ${summary} into ${to.name}${clashNote}. Nothing has been copied yet; confirm to do it.`,
       };
     }
@@ -94,6 +128,7 @@ export default defineAction({
       periods: rows.length,
       clashes: source.clashes.length,
       copied: true,
+      from: fromLabel,
       message: `Copied ${summary} into ${to.name}${clashNote}.`,
     };
   },

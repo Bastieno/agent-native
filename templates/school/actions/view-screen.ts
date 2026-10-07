@@ -7,6 +7,7 @@ import { eq, and, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
 import { loadTimetable, resolveTerm } from "../server/lib/timetable.js";
 import { getMyWeek } from "../server/lib/my-week.js";
+import { timetableView } from "../server/lib/timetable-view.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 
 export default defineAction({
@@ -106,6 +107,45 @@ export default defineAction({
           screen.terms = terms;
         } catch {
           // continue
+        }
+      }
+
+      // The timetable as the admin sees it: the same term and the same arm,
+      // teacher or room, so "this clash" means the one on their screen.
+      if (nav.view === "timetable" && schoolId) {
+        try {
+          const shown = await timetableView(schoolId, {
+            termId: nav.termId,
+            armId: nav.timetableView === "arm" ? nav.armId : undefined,
+            teacherUserId:
+              nav.timetableView === "teacher" ? nav.teacherUserId : undefined,
+            room: nav.timetableView === "room" ? nav.room : undefined,
+          });
+          screen.timetable = {
+            ...shown,
+            // Who sits in each lesson is not on the grid; a count is enough.
+            periods: shown.periods.map(({ learnerUserIds, ...p }) => ({
+              ...p,
+              learnerCount: learnerUserIds.length,
+            })),
+          };
+          screen.selectedCell = nav.selectedCell ?? null;
+          if (nav.selectedCell) {
+            screen.selectedCellPeriods = shown.periods
+              .filter(
+                (p) =>
+                  p.day === nav.selectedCell.day &&
+                  p.periodNumber === nav.selectedCell.periodNumber,
+              )
+              .map((p) => ({
+                scheduleId: p.scheduleId,
+                className: p.className,
+                room: p.room,
+                teachers: p.teachers.map((t) => t.name),
+              }));
+          }
+        } catch (e: any) {
+          screen.timetableError = e?.message ?? String(e);
         }
       }
 

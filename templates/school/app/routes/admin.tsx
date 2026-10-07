@@ -9,6 +9,17 @@ import { useRole } from "@/hooks/use-role";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { DefaultSpinner } from "@agent-native/core/client";
 
+/** The timetable page for a navigate command: its term and whose week. */
+function timetablePath(nav: Record<string, unknown>): string {
+  const params = new URLSearchParams();
+  for (const key of ["termId", "armId", "teacherUserId", "room"]) {
+    const value = nav[key];
+    if (typeof value === "string" && value) params.set(key, value);
+  }
+  const query = params.toString();
+  return query ? `/admin/timetable?${query}` : "/admin/timetable";
+}
+
 export default function AdminLayout() {
   const { role, isLoading, isAuthenticated, accessDenied } = useRole();
   const navigate = useNavigate();
@@ -56,6 +67,7 @@ export default function AdminLayout() {
       students: "/admin/students",
       classes: "/admin/classes",
       arms: "/admin/classes?tab=arms",
+      timetable: timetablePath(nav),
       // A note opens on its own; without one, how ready each class is.
       lessons: nav.lessonId
         ? `/admin/lessons/${nav.lessonId}`

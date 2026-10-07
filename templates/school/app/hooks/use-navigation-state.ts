@@ -25,8 +25,19 @@ export interface AdminNav {
     | "assessment"
     | "analytics"
     | "settings"
-    | "extensions";
+    | "extensions"
+    // The term's timetable on a grid, by arm, teacher or room.
+    | "timetable";
   subjectId?: string;
+  /** The term on the timetable page. */
+  termId?: string;
+  /** Whose week the timetable shows: an arm's, a teacher's or a room's. */
+  timetableView?: "arm" | "teacher" | "room";
+  armId?: string;
+  teacherUserId?: string;
+  room?: string;
+  /** The timetable cell open for editing. Day is 1 = Monday … 7 = Sunday. */
+  selectedCell?: { day: number; periodNumber: number };
   /** Which tab of the Classes page is open. */
   tab?: "classes" | "arms";
   /** The class whose lesson notes are open. */

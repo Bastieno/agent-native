@@ -11,6 +11,7 @@ import {
   IconPuzzle,
   IconLogout,
   IconBell,
+  IconCalendarTime,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
@@ -24,6 +25,7 @@ const navItems = [
   { href: "/admin/staff", label: "Staff", icon: IconUsers },
   { href: "/admin/students", label: "Students", icon: IconUsers },
   { href: "/admin/classes", label: "Classes", icon: IconSchool },
+  { href: "/admin/timetable", label: "Timetable", icon: IconCalendarTime },
   { href: "/admin/lessons", label: "Lesson notes", icon: IconNotebook },
   { href: "/admin/analytics", label: "Analytics", icon: IconChartBar },
   { href: "/admin/announcements", label: "Announcements", icon: IconBell },
