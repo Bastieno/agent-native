@@ -54,6 +54,15 @@ export function schoolWeekdayName(day: number, locale?: string): string {
   }).format(date);
 }
 
+/** The short form of a weekday's name ("Mon"), from the same fixed week. */
+export function schoolWeekdayShortName(day: number, locale?: string): string {
+  const date = new Date(Date.UTC(2024, 0, day)); // 2024-01-01 is a Monday
+  return new Intl.DateTimeFormat(locale, {
+    weekday: "short",
+    timeZone: "UTC",
+  }).format(date);
+}
+
 /** Whether two time ranges share any time. Half-open: touching is not overlap. */
 export function timesOverlap(
   aStart: string,

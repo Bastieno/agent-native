@@ -95,7 +95,8 @@ export interface StudentNav {
     | "assessment"
     | "submission"
     | "grades"
-    | "progress";
+    | "progress"
+    | "week";
   classId?: string;
   lessonId?: string;
   assessmentId?: string;

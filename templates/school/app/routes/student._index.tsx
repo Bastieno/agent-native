@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
 import { IconClipboardList } from "@tabler/icons-react";
+import { useMyWeek } from "@/hooks/use-my-week";
 import { useRole } from "@/hooks/use-role";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { firstNameOrNull } from "@shared/person-name";
@@ -14,6 +15,9 @@ export default function StudentDashboard() {
   const { sync } = useNavigationState();
   const { user } = useRole();
   const { config } = useSchoolConfig();
+  // Same query as the week page, so they share one cache entry.
+  const { data: week } = useMyWeek();
+  const next = week?.next ?? null;
 
   const { data: assessments = [] } = useQuery<any[]>({
     queryKey: ["my-assessments"],
@@ -65,6 +69,11 @@ export default function StudentDashboard() {
             ? `You have ${countOfWork(pending.length, config as any)} to hand in.`
             : `Nothing to hand in right now. Your ${work.many} appear here when a teacher sets them.`}
         </p>
+        {next ? (
+          <p className="mt-1 text-sm text-muted-foreground">
+            {`Next: ${[next.className, next.room, next.start].filter(Boolean).join(", ")}`}
+          </p>
+        ) : null}
       </div>
       <div>
         <h2 className="text-sm font-medium mb-3">

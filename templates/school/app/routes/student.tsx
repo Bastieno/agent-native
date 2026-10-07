@@ -29,6 +29,7 @@ export default function StudentLayout() {
       navigate(`/student/assessments/${nav.assessmentId}`);
     else if (nav.view === "grades") navigate("/student/grades");
     else if (nav.view === "progress") navigate("/student/progress");
+    else if (nav.view === "week") navigate("/student/week");
   }, [command.data, clearCommand, navigate]);
 
   useEffect(() => {

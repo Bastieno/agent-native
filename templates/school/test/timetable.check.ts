@@ -7,6 +7,7 @@ import {
   roomKey,
   roomProblems,
   schoolWeekdayName,
+  schoolWeekdayShortName,
   timesOverlap,
   weekProblems,
   type SchoolWeek,
@@ -135,6 +136,11 @@ check("timesOverlap is half-open", () => {
 check("schoolWeekdayName comes from the locale", () => {
   assert.equal(schoolWeekdayName(1, "en-GB"), "Monday");
   assert.equal(schoolWeekdayName(6, "fr-FR"), "samedi");
+});
+
+check("schoolWeekdayShortName comes from the locale", () => {
+  assert.equal(schoolWeekdayShortName(1, "en-GB"), "Mon");
+  assert.equal(schoolWeekdayShortName(6, "fr-FR"), "sam.");
 });
 
 function rp(id: string, over: Partial<ResolvedPeriod> = {}): ResolvedPeriod {
