@@ -43,8 +43,14 @@ export default defineAction({
     if (!row) throw new Error("Class not found.");
 
     const labels = await getUserLabels([row.cls.primaryTeacherUserId]);
+    const optionRows = await db
+      .select({ armId: schema.classArms.armId })
+      .from(schema.classArms)
+      .where(eq(schema.classArms.classId, row.cls.id));
     return {
       ...row.cls,
+      armId: row.cls.armId ?? null,
+      optionArmIds: optionRows.map((o: any) => o.armId),
       subjectName: row.subjectName ?? null,
       gradeLevelName: row.gradeLevelName ?? null,
       teacherName: labelFor(labels, row.cls.primaryTeacherUserId),

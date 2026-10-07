@@ -53,7 +53,18 @@ export function NewClassDialog({
     enabled: open,
   });
   const yearArms = arms.filter((a) => a.gradeLevelId === gradeLevelId);
-  const ready = !!(name.trim() && subjectId && gradeLevelId && term?.session);
+  // "Several arms" with none ticked would quietly make an unattached class.
+  const takerReady =
+    taker.kind === "none" ||
+    (taker.kind === "arm" && !!taker.armId) ||
+    (taker.kind === "option" && taker.armIds.length > 0);
+  const ready = !!(
+    name.trim() &&
+    subjectId &&
+    gradeLevelId &&
+    term?.session &&
+    takerReady
+  );
 
   function create() {
     const body: Record<string, unknown> = {

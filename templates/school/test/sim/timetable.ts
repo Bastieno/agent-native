@@ -246,6 +246,26 @@ export async function checkArms(
     "an option class starts with nobody on it; its learners are chosen",
   );
 
+  // The agent can tell the kinds of class apart from what it reads back.
+  const readOption: any = await client.as(run.admin, "get-class", {
+    classId: optionId,
+  });
+  const readWhole: any = await client.as(run.admin, "get-class", {
+    classId: classIds[2],
+  });
+  findings.expect(
+    phase,
+    sameSet(readOption?.optionArmIds ?? [], [armIds[0], armIds[1]]) &&
+      !readOption?.armId &&
+      readWhole?.armId === armIds[2] &&
+      (readWhole?.optionArmIds ?? []).length === 0,
+    "get-class returns optionArmIds for an option class and armId for a whole-arm class",
+    JSON.stringify({
+      option: readOption?.optionArmIds,
+      whole: readWhole?.armId,
+    }),
+  );
+
   // Healing: someone from another arm is on the roll by hand; asking for
   // their own arm again takes them off the class that is not theirs.
   const stray = groups[1][0];

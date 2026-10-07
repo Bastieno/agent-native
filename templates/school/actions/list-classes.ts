@@ -80,12 +80,28 @@ export default defineAction({
               ),
             )
         : [];
+    // The arms each option class draws on: one query for every class listed.
+    const optionRows =
+      classIds.length > 0
+        ? await db
+            .select({
+              classId: schema.classArms.classId,
+              armId: schema.classArms.armId,
+            })
+            .from(schema.classArms)
+            .where(inArray(schema.classArms.classId, classIds))
+        : [];
+    const optionsByClass: Record<string, string[]> = {};
+    for (const o of optionRows)
+      (optionsByClass[o.classId] ??= []).push(o.armId);
     const countByClass: Record<string, number> = {};
     for (const e of enrolled)
       countByClass[e.classId] = (countByClass[e.classId] ?? 0) + 1;
 
     return rows.map((r: any) => ({
       ...r.cls,
+      armId: r.cls.armId ?? null,
+      optionArmIds: optionsByClass[r.cls.id] ?? [],
       subjectName: r.subjectName ?? null,
       gradeLevelName: r.gradeLevelName ?? null,
       // Both spellings: `teacherName` is what the pages read, and
