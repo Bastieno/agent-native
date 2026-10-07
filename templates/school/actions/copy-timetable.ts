@@ -70,21 +70,25 @@ export default defineAction({
       };
     }
 
-    for (const row of rows) {
-      await db.insert(S).values({
-        id: nanoid(),
-        classId: row.classId,
-        schoolId: orgId,
-        termId: to.id,
-        dayOfWeek: row.dayOfWeek,
-        periodNumber: row.periodNumber,
-        startTime: row.startTime,
-        endTime: row.endTime,
-        room: row.room,
-        ownerEmail: userEmail ?? "",
-        orgId,
-        visibility: "org" as const,
-      });
+    // One insert, so a failure leaves the target with none of it rather than
+    // some, which a retry would then refuse.
+    if (rows.length > 0) {
+      await db.insert(S).values(
+        rows.map((row: any) => ({
+          id: nanoid(),
+          classId: row.classId,
+          schoolId: orgId,
+          termId: to.id,
+          dayOfWeek: row.dayOfWeek,
+          periodNumber: row.periodNumber,
+          startTime: row.startTime,
+          endTime: row.endTime,
+          room: row.room,
+          ownerEmail: userEmail ?? "",
+          orgId,
+          visibility: "org" as const,
+        })),
+      );
     }
     return {
       periods: rows.length,

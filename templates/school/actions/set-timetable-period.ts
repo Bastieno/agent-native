@@ -1,6 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
-import { and, eq } from "drizzle-orm";
+import { and, eq, isNull } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
@@ -64,6 +64,29 @@ export default defineAction({
         "The school hasn't set its week yet, so there are no periods to place a class in. Set it in Settings → School week.",
       );
     }
+    const S = schema.classSchedules;
+    // A term with no rows of its own shows the school's earlier timetable.
+    // The first row written would switch that off and hide every other lesson.
+    const [ownRow] = await db
+      .select({ id: S.id })
+      .from(S)
+      .where(and(eq(S.schoolId, orgId), eq(S.termId, term.id)))
+      .limit(1);
+    if (!ownRow) {
+      const [oldRow] = await db
+        .select({ id: S.id })
+        .from(S)
+        .where(and(eq(S.schoolId, orgId), isNull(S.termId)))
+        .limit(1);
+      if (oldRow) {
+        throw Object.assign(
+          new Error(
+            `${term.name} is still showing the school's earlier timetable. Copy it into ${term.name} first, then change it.`,
+          ),
+          { code: "copy-timetable-first" },
+        );
+      }
+    }
     const locale = schoolLocale(config);
     const dayName = schoolWeekdayName(args.day, locale);
     const weekDay = week.days.find((d: any) => d.day === args.day);
@@ -110,7 +133,6 @@ export default defineAction({
       }
     }
 
-    const S = schema.classSchedules;
     let scheduleId = args.scheduleId;
     if (scheduleId) {
       const [row] = await db
@@ -121,7 +143,9 @@ export default defineAction({
       if (!row) throw new Error("That placement is not in this school.");
       if (row.termId !== term.id) {
         throw new Error(
-          "That placement belongs to a different term's timetable.",
+          row.termId === null
+            ? "That placement is part of the school's earlier timetable, not this term's."
+            : "That placement belongs to a different term's timetable.",
         );
       }
       await db

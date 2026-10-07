@@ -515,6 +515,45 @@ export async function checkTimetable(
     "class",
   )!;
 
+  // A term showing the school's earlier timetable cannot be edited in place:
+  // the first row would hide the rest. Copy it in first.
+  const T4 = await makeTerm("Fourth Term", "2027-08-02", "2027-10-29", 4);
+  findings.expect(
+    phase,
+    await refused(
+      () =>
+        client.as(admin, "set-timetable-period", {
+          termId: T4,
+          classId: classA,
+          day: 1,
+          periodNumber: 1,
+        }),
+      /still showing the school's earlier timetable\. Copy it into Fourth Term first, then change it\./,
+    ),
+    "placing a class in a term that is only showing the earlier timetable is refused, offering the copy",
+  );
+  const intoT4 = await client.as(admin, "copy-timetable", {
+    fromTermId: T2,
+    toTermId: T4,
+    confirm: true,
+  });
+  findings.expect(
+    phase,
+    intoT4?.copied === true && intoT4.periods > 0,
+    "the earlier timetable can be copied into a term that was only showing it",
+    JSON.stringify(intoT4),
+  );
+  // Seed T2 the same way; the copied rows are cleared once the first class is
+  // down, so T2 holds only what this check places.
+  await client.as(admin, "copy-timetable", {
+    fromTermId: T4,
+    toTermId: T2,
+    confirm: true,
+  });
+  const seeded: string[] = (
+    (await client.as(admin, "get-timetable", { termId: T2 })) as any
+  ).periods.map((p: any) => p.scheduleId);
+
   const place = (
     classId: string,
     day: number,
@@ -533,13 +572,14 @@ export async function checkTimetable(
 
   // ── A clean timetable, then an option block ─────────────────────────────
   const first = await place(classA, 1, 1, ` ${yearGroup}a  CLASSROOM `);
+  for (const scheduleId of seeded) {
+    await client.as(admin, "remove-timetable-period", { scheduleId });
+  }
   await place(classB, 1, 2);
   await place(classC, 1, 3);
   findings.expect(
     phase,
-    Array.isArray(first?.clashes) &&
-      first.clashes.length === 0 &&
-      noId(first?.message),
+    Array.isArray(first?.clashes) && noId(first?.message),
     "placing a class says what was done, with no ids",
     first?.message,
   );
