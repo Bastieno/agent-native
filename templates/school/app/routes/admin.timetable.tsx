@@ -20,11 +20,7 @@ import { ListState } from "@/components/ListState";
 import { CopyTimetableAction } from "@/components/timetable/CopyTimetableAction";
 import { PeriodCellPopover } from "@/components/timetable/PeriodCellPopover";
 import { TimetableGrid } from "@/components/timetable/TimetableGrid";
-import {
-  callAction,
-  useArms,
-  useArmWord,
-} from "@/components/timetable/arms-shared";
+import { useArms, useArmWord } from "@/components/timetable/arms-shared";
 import {
   getAction,
   useTimetable,
@@ -116,18 +112,17 @@ export default function AdminTimetable() {
     setSelected(null);
   };
 
-  const { data: tt, isLoading } = useTimetable(filter, !termLoading);
+  const {
+    data: tt,
+    isLoading,
+    error: ttError,
+  } = useTimetable(filter, !termLoading);
   const { place, remove } = useTimetableEdits(filter);
 
-  // A term with nothing of its own: is there a term before it to copy?
-  const empty =
-    !!tt?.week && !!termId && !tt.fromUntermedRows && tt.periods.length === 0;
-  const { data: copyFrom } = useQuery<{ from: { name: string } } | null>({
-    queryKey: ["timetable-copy-preview", termId],
-    queryFn: () => callAction("copy-timetable", { toTermId: termId }),
-    enabled: empty,
-    retry: false,
-  });
+  // A term with nothing of its own offers the term before it, read from
+  // get-timetable. Never probed with copy-timetable: that is a write, and
+  // every write makes every page refetch, which would probe again.
+  const copyFrom = tt?.termEmpty ? tt.previousTerm : null;
 
   useEffect(() => {
     sync({
@@ -253,7 +248,15 @@ export default function AdminTimetable() {
 
   // ── Body ──────────────────────────────────────────────────────────────────
   let body: React.ReactNode;
-  if (termLoading || isLoading || !tt) {
+  if (ttError && !tt) {
+    body = (
+      <ListState
+        icon={IconCalendarTime}
+        title="This timetable can't be shown"
+        description={(ttError as Error).message}
+      />
+    );
+  } else if (termLoading || isLoading || !tt) {
     body = <ListState loading rows={4} title="" />;
   } else if (!tt.week) {
     body = (
@@ -274,15 +277,15 @@ export default function AdminTimetable() {
         description="Add this session's terms in Settings → Terms."
       />
     );
-  } else if (empty && copyFrom?.from) {
+  } else if (copyFrom) {
     body = (
       <div className="rounded-lg border border-dashed p-10 text-center space-y-3">
         <p className="text-sm text-muted-foreground">
           {termName} has no timetable yet.
         </p>
         <CopyTimetableAction
-          label={`Copy from ${copyFrom.from.name}`}
-          args={{ toTermId: termId! }}
+          label={`Copy from ${copyFrom.name}`}
+          args={{ toTermId: termId!, fromTermId: copyFrom.id }}
         />
       </div>
     );

@@ -1,5 +1,11 @@
 import { roomKey, schoolWeekdayName } from "../../shared/school-week.js";
-import { clashesForTerm, findTerm, resolveTerm } from "./timetable.js";
+import {
+  clashesForTerm,
+  findTerm,
+  loadTimetable,
+  previousTerm,
+  resolveTerm,
+} from "./timetable.js";
 
 export interface TimetableFilter {
   termId?: string;
@@ -78,6 +84,17 @@ export async function timetableView(orgId: string, args: TimetableFilter) {
       : "No clashes.",
   );
 
+  // Nothing of its own and no earlier timetable standing in: the term before,
+  // when it has a timetable, is what the page offers to copy. Read-only.
+  const termEmpty = !!term && !fromUntermedRows && loaded.periods.length === 0;
+  let before: { id: string; name: string } | null = null;
+  if (termEmpty) {
+    const prev = await previousTerm(orgId, term!.id);
+    if (prev && (await loadTimetable(orgId, prev.id)).periods.length > 0) {
+      before = prev;
+    }
+  }
+
   return {
     term,
     week,
@@ -85,6 +102,10 @@ export async function timetableView(orgId: string, args: TimetableFilter) {
     periods,
     clashes,
     fromUntermedRows,
+    /** The term has no periods of its own and none from an earlier timetable. */
+    termEmpty,
+    /** The term before, when this one is empty and that one has a timetable. */
+    previousTerm: before,
     message: parts.join(" "),
   };
 }

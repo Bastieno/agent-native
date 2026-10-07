@@ -19,6 +19,8 @@ export interface TimetableReply {
   periods: ResolvedPeriod[];
   clashes: Clash[];
   fromUntermedRows: boolean;
+  termEmpty: boolean;
+  previousTerm: { id: string; name: string } | null;
   message: string;
 }
 
@@ -74,6 +76,9 @@ export function useTimetable(filter: TimetableFilter, enabled: boolean) {
     queryFn: () =>
       getAction<TimetableReply>("get-timetable", { ...filter } as any),
     enabled,
+    // A refusal (a term not in this school) says the same thing on a retry,
+    // and backing off between retries left the page on a skeleton. Show it.
+    retry: false,
   });
 }
 
@@ -102,7 +107,9 @@ export function useTimetableEdits(filter: TimetableFilter) {
     await qc.cancelQueries({ queryKey: key });
     return qc.getQueryData<TimetableReply>(key);
   };
-  const settle = () => qc.invalidateQueries({ queryKey: ["timetable"] });
+  // No refetch of our own: a successful action already tells every open
+  // page to refetch, and a refused one changed nothing, so the rollback is
+  // the truth. Until then the reply's clashes stand.
 
   async function place(input: PlaceInput) {
     const before = await snapshot();
@@ -171,8 +178,6 @@ export function useTimetableEdits(filter: TimetableFilter) {
     } catch (e: any) {
       qc.setQueryData(key, before);
       toast.error(e?.message ?? "That couldn't be placed.");
-    } finally {
-      settle();
     }
   }
 
@@ -191,8 +196,6 @@ export function useTimetableEdits(filter: TimetableFilter) {
     } catch (e: any) {
       qc.setQueryData(key, before);
       toast.error(e?.message ?? "That couldn't be removed.");
-    } finally {
-      settle();
     }
   }
 
