@@ -39,12 +39,24 @@ export default function AdminAnalytics() {
         </p>
       </div>
 
-      {isLoading || !analytics ? (
+      {/* Nothing marked yet is not the same as nothing happening, and it
+          should not look like a broken page. Fifteen subjects showing "—%"
+          beside fifteen empty bars says less than one sentence does, and
+          leaves a head teacher wondering which of the dashes is a fault. */}
+      {isLoading || !analytics || !Number(analytics.gradedSubmissions ?? 0) ? (
         <ListState
           loading={isLoading}
           icon={IconChartBar}
-          title="No analytics data yet"
-          description="Analytics will populate once students start submitting work."
+          title={
+            isLoading || !analytics
+              ? "No analytics data yet"
+              : "Nothing has been marked yet"
+          }
+          description={
+            isLoading || !analytics
+              ? "Analytics will populate once students start submitting work."
+              : `${analytics?.activeStudents ?? 0} learner(s) across ${analytics?.totalClasses ?? 0} class(es). Averages appear here once work has been marked and the grades published — a mark a teacher has not published yet is not counted.`
+          }
         />
       ) : (
         <>

@@ -42,6 +42,14 @@ async function callAction(name: string, params: Record<string, unknown>) {
   return res.json();
 }
 
+/**
+ * What the teacher picker uses to mean "nobody yet".
+ *
+ * Not the empty string: a Radix select item may not use it, and the one that
+ * did crashed the portal rather than showing a menu.
+ */
+const UNASSIGNED = "__unassigned__";
+
 export default function AdminClasses() {
   const { sync } = useNavigationState();
   const qc = useQueryClient();
@@ -136,7 +144,11 @@ export default function AdminClasses() {
 
   function openClassDialog(cls: any) {
     setSelectedClass(cls);
-    setEditTeacher(cls.teacherUserId ?? "");
+    // The class carries `primaryTeacherUserId`; reading `teacherUserId` found
+    // nothing, so every class — including one with a teacher on the row
+    // behind the dialog — opened saying "Unassigned". An admin coming here to
+    // check who teaches something was told the opposite of the truth.
+    setEditTeacher(cls.primaryTeacherUserId ?? cls.teacherUserId ?? "");
     setEditStatus(cls.status ?? "active");
   }
 
@@ -159,6 +171,10 @@ export default function AdminClasses() {
     }
   }
 
+  const archivedCount = classes.filter(
+    (c: any) => c.status === "archived",
+  ).length;
+
   return (
     <div className="h-full overflow-auto flex flex-col">
       {/* Header */}
@@ -169,6 +185,14 @@ export default function AdminClasses() {
             <p className="text-sm text-muted-foreground mt-1">
               {filtered.length} class{filtered.length !== 1 ? "es" : ""}
               {hasFilters ? " matching filters" : " across the school"}
+              {/* This page lists archived classes too, while the overview
+                  counts only the ones being taught — so the two pages gave
+                  different totals for the same school with nothing to
+                  explain the difference. Saying how many are archived
+                  reconciles them on sight. */}
+              {!hasFilters && archivedCount > 0
+                ? `, including ${archivedCount} archived`
+                : ""}
             </p>
           </div>
           <div className="flex items-center gap-2 shrink-0">
@@ -354,12 +378,23 @@ export default function AdminClasses() {
             </div>
             <div className="space-y-1.5">
               <Label>Primary Teacher</Label>
-              <Select value={editTeacher} onValueChange={setEditTeacher}>
+              {/* "Unassigned" is a real choice here — a class can be planned
+                  before it is staffed — but it cannot be the empty string:
+                  Radix reserves that for clearing a selection and throws if
+                  an item uses it. The throw took the whole portal down to an
+                  error page the moment anyone opened a class, so this uses a
+                  sentinel and maps it back when saving. */}
+              <Select
+                value={editTeacher || UNASSIGNED}
+                onValueChange={(value) =>
+                  setEditTeacher(value === UNASSIGNED ? "" : value)
+                }
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Unassigned" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">Unassigned</SelectItem>
+                  <SelectItem value={UNASSIGNED}>Unassigned</SelectItem>
                   {staffList.map((s: any) => (
                     <SelectItem key={s.userId} value={s.userId}>
                       {s.name ?? s.email}

@@ -71,6 +71,7 @@ const ALL = "__all__";
 
 export default function AdminCalendar() {
   const { sync } = useNavigationState();
+  const { formatDate } = useSchoolDates();
   const [termId, setTermId] = useState("");
   const [gradeLevelId, setGradeLevelId] = useState("");
   const [subjectId, setSubjectId] = useState(ALL);
@@ -177,7 +178,10 @@ export default function AdminCalendar() {
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
             {calendar?.term?.name
-              ? `${calendar.term.name}: ${calendar.term.startDate} to ${calendar.term.endDate}`
+              ? // The term's dates as the school writes them. These printed
+                // as "2026-09-14 to 2026-12-11" — how the app stores a date,
+                // not how anyone reads one.
+                `${calendar.term.name}: ${formatDate(calendar.term.startDate)} to ${formatDate(calendar.term.endDate)}`
               : "What this year group covers, week by week."}
           </p>
         </div>
@@ -686,6 +690,9 @@ function UnplannedLine({
         <p>
           No plan yet for {gradeLevelName}:{" "}
           <span className="text-foreground">{visible.join(", ")}</span>
+          {/* A real space, not just a margin: copied or read by a screen
+              reader it ran together as "Civic Educationand 8 more". */}
+          {hidden > 0 ? " " : null}
           {hidden > 0 ? (
             <button
               type="button"
