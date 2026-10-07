@@ -14,8 +14,11 @@ export default defineAction({
   schema: z.object({
     name: z.string().describe("School name, e.g. 'Green Valley Academy'"),
     type: z
-      .enum(["primary", "secondary", "k12", "university", "other"])
-      .describe("School type"),
+      .string()
+      .min(1)
+      .describe(
+        'What kind of school this is, in its own words — "secondary", "middle school", "junior high", "collège", "sixth form college". Nothing branches on it; it is how the school describes itself.',
+      ),
     timezone: z
       .string()
       .optional()

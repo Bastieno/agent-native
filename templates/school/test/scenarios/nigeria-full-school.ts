@@ -22,6 +22,9 @@ export type FullSchool = Omit<
   /** Every subject each cohort takes, and who teaches it. */
   subjects: { name: string; code: string }[];
   weeksTaught: number;
+  /** Whether report cards show a position. Schools differ, so scenarios do. */
+  rankLearners?: boolean;
+  missedWorkPolicy?: "zero" | "excluded";
 };
 
 export const fullSchool: FullSchool = {
@@ -62,6 +65,8 @@ export const fullSchool: FullSchool = {
   ],
   subjects: SUBJECT_BANK.map((s) => ({ name: s.subject, code: s.code })),
   weeksTaught: 6,
+  rankLearners: true,
+  missedWorkPolicy: "zero",
 };
 
 export default fullSchool;

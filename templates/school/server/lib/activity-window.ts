@@ -48,6 +48,15 @@ export function activityWindow(
   timing: ActivityTiming,
   startedAt?: string | null,
   now: Date = new Date(),
+  /**
+   * How this school writes a date. The reason a learner reads — "this
+   * closed on …" — was formatted with no locale and no timezone, so it came
+   * out in whatever the server happened to be set to: a Lagos learner could
+   * be told their paper closed at an hour that was not the hour, written in
+   * an order they do not use. The school's own locale and timezone are
+   * passed in, and the month is spelled out so it cannot be misread.
+   */
+  school?: { locale?: string; timeZone?: string },
 ): ActivityWindow {
   const ms = now.getTime();
 
@@ -89,11 +98,11 @@ export function activityWindow(
   const reason = closedByTeacher
     ? "Your teacher has closed this."
     : pastClosingTime
-      ? `This closed on ${closesAt!.toLocaleString()}.`
+      ? `This closed on ${sayWhen(closesAt!, school)}.`
       : outOfTime
         ? "Your time for this has run out."
         : notYetOpen
-          ? `This opens on ${opensAt!.toLocaleString()}.`
+          ? `This opens on ${sayWhen(opensAt!, school)}.`
           : null;
 
   return {
@@ -124,5 +133,23 @@ export function closedMessage(title: string, w: ActivityWindow): string {
       return `Your time for "${title}" has run out, so it can no longer be handed in.`;
     default:
       return `"${title}" is not accepting work at the moment.`;
+  }
+}
+
+/** A moment, written the way this school writes one. */
+function sayWhen(
+  at: Date,
+  school?: { locale?: string; timeZone?: string },
+): string {
+  try {
+    return new Intl.DateTimeFormat(school?.locale || undefined, {
+      dateStyle: "long",
+      timeStyle: "short",
+      timeZone: school?.timeZone || undefined,
+    }).format(at);
+  } catch {
+    // An unusable locale or timezone must not stop a learner being told
+    // their paper has closed.
+    return at.toISOString();
   }
 }

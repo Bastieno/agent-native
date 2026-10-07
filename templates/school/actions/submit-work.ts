@@ -13,6 +13,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { schoolDateStyle } from "../server/lib/school-dates.js";
 import { jsonish } from "../shared/zod-json.js";
 import { parseActivityContent } from "../shared/activity-content.js";
 import { markAnswer, isAutoMarkable } from "../shared/mark-answer.js";
@@ -97,7 +98,12 @@ export default defineAction({
       .where(eq(schema.assessments.id, args.assessmentId))
       .limit(1);
     if (activity) {
-      const window = activityWindow(activity, existing?.startedAt);
+      const window = activityWindow(
+        activity,
+        existing?.startedAt,
+        undefined,
+        await schoolDateStyle(orgId),
+      );
       if (window.hasClosed) {
         throw new Error(closedMessage(activity.title, window));
       }

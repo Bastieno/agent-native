@@ -48,6 +48,12 @@ export type Call = {
   ok: boolean;
   ms: number;
   error?: string;
+  /**
+   * The sentence an action hands back to be read by a person. Kept because
+   * it is the app's own voice: comparing two schools' transcripts is how a
+   * phrase that should have been theirs and is really ours shows up.
+   */
+  message?: string;
 };
 
 export class Client {
@@ -147,7 +153,7 @@ export class Client {
     args: Record<string, unknown> = {},
   ): Promise<T> {
     const started = Date.now();
-    const record = (ok: boolean, error?: string) =>
+    const record = (ok: boolean, error?: string, message?: string) =>
       this.calls.push({
         at: new Date().toISOString(),
         persona: persona.label,
@@ -155,6 +161,7 @@ export class Client {
         ok,
         ms: Date.now() - started,
         error,
+        message,
       });
 
     const attempt = async (verb: Verb) => {
@@ -217,7 +224,11 @@ export class Client {
       record(false, message);
       throw new ActionError(message, res.status, action, persona.label);
     }
-    record(true);
+    record(
+      true,
+      undefined,
+      typeof body?.message === "string" ? body.message : undefined,
+    );
     return body as T;
   }
 

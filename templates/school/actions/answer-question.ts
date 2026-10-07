@@ -5,6 +5,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { schoolDateStyle } from "../server/lib/school-dates.js";
 import {
   activityWindow,
   closedMessage,
@@ -86,7 +87,12 @@ export default defineAction({
       throw new Error("Start the activity before answering.");
     }
 
-    const window = activityWindow(assessment, submission.startedAt);
+    const window = activityWindow(
+      assessment,
+      submission.startedAt,
+      undefined,
+      await schoolDateStyle(orgId),
+    );
     if (window.hasClosed) {
       throw new Error(closedMessage(assessment.title, window));
     }

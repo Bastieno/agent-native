@@ -7,6 +7,8 @@ import {
 } from "../server/lib/student-session.js";
 import { activityWindow } from "../server/lib/activity-window.js";
 import { z } from "zod";
+import { currentAccess } from "@agent-native/core/sharing";
+import { schoolDateStyle } from "../server/lib/school-dates.js";
 
 /**
  * Everything a student has been set, across the classes they are enrolled in.
@@ -39,6 +41,10 @@ export default defineAction({
       throw new Error("studentId is required — say which student you mean.");
     }
     const db = getDb();
+    const { orgId } = currentAccess();
+    // Resolved once: every activity in the list is written for the same
+    // school, and the window's wording is the only thing that needs it.
+    const dateStyle = await schoolDateStyle(orgId);
 
     // Enrolment is keyed by auth user id, while submissions and assignments are
     // keyed by the student record id. They are not the same value.
@@ -139,7 +145,12 @@ export default defineAction({
         instructions: mine?.instructions ?? null,
         submissionStatus: submission?.status ?? "not_started",
         submissionId: submission?.id ?? null,
-        window: activityWindow(activity, submission?.startedAt),
+        window: activityWindow(
+          activity,
+          submission?.startedAt,
+          undefined,
+          dateStyle,
+        ),
       };
     });
   },

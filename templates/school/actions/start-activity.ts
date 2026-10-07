@@ -5,6 +5,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { schoolDateStyle } from "../server/lib/school-dates.js";
 import {
   activityWindow,
   closedMessage,
@@ -71,7 +72,13 @@ export default defineAction({
 
     // Refuse to start something that is already over, rather than starting a
     // countdown the learner cannot possibly beat.
-    const before = activityWindow(activity, existing?.startedAt);
+    const dateStyle = await schoolDateStyle(orgId);
+    const before = activityWindow(
+      activity,
+      existing?.startedAt,
+      undefined,
+      dateStyle,
+    );
     if (before.hasClosed)
       throw new Error(closedMessage(activity.title, before));
     if (before.notYetOpen) {
@@ -124,7 +131,7 @@ export default defineAction({
       }
     }
 
-    const window = activityWindow(activity, startedAt);
+    const window = activityWindow(activity, startedAt, undefined, dateStyle);
     return {
       startedAt,
       alreadyStarted: !!existing?.startedAt,

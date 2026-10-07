@@ -14,7 +14,9 @@
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "journey": "tsx test/sim/run.ts",
-    "journey:school": "tsx test/sim/run-school.ts"
+    "journey:school": "tsx test/sim/run-school.ts",
+    "journey:compare": "tsx test/sim/compare.ts",
+    "journey:assumptions": "tsx test/sim/assumptions.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",

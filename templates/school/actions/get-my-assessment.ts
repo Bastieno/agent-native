@@ -8,6 +8,8 @@ import {
   parseActivityContent,
 } from "../shared/activity-content.js";
 import { z } from "zod";
+import { currentAccess } from "@agent-native/core/sharing";
+import { schoolDateStyle } from "../server/lib/school-dates.js";
 
 /**
  * An assessment as the assigned student sees it.
@@ -31,6 +33,7 @@ export default defineAction({
   http: { method: "GET" },
   run: async (rawArgs) => {
     const db = getDb();
+    const { orgId } = currentAccess();
     const studentId = await resolveStudentId(rawArgs.studentId);
     if (!studentId) {
       throw new Error("studentId is required — say which student you mean.");
@@ -123,7 +126,12 @@ export default defineAction({
 
     // The same computation the server uses to accept or refuse the work, so a
     // countdown on the tablet and the rule in `submit-work` never disagree.
-    const window = activityWindow(assessment, submission?.startedAt);
+    const window = activityWindow(
+      assessment,
+      submission?.startedAt,
+      undefined,
+      await schoolDateStyle(orgId),
+    );
 
     const [cls] = await db
       .select({ name: schema.classes.name })

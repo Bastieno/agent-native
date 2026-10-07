@@ -19,7 +19,16 @@ import {
   snapshotGroups,
   type DifferentiatedWeek,
 } from "./differentiation.js";
-import scenario from "../scenarios/nigeria-full-school.js";
+import nigeria from "../scenarios/nigeria-full-school.js";
+import usa from "../scenarios/usa-k12.js";
+
+// Which school this run is. The harness is the same either way; everything
+// that differs lives in the scenario file, which is the point.
+const scenarios = { "nigeria-full-school": nigeria, "usa-k12": usa };
+const scenario =
+  scenarios[
+    (process.env.SCENARIO ?? "nigeria-full-school") as keyof typeof scenarios
+  ] ?? nigeria;
 
 /**
  * Phase B: a whole school for a term.

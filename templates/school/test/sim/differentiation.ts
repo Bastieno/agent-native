@@ -328,16 +328,40 @@ export async function checkMovementBetweenGroups(
     else movedDown++;
   }
 
+  // Whether anyone crosses a band depends on the school's own scale: where a
+  // pass is 60 and "above average" is 80, a learner going from 30% to 45%
+  // has improved and stays where they are. So the check is not "somebody
+  // moved up" — that is a property of the cohort — but that the groups
+  // follow the marks the app itself recorded.
+  const thresholds: any = grouped?.thresholds ?? {};
+  const bandFor = (average: number) =>
+    average >= Number(thresholds.advanced ?? 75)
+      ? "advanced"
+      : average >= Number(thresholds.developing ?? 50)
+        ? "developing"
+        : "foundational";
+
+  let stale = 0;
+  for (const row of asList(grouped, "categorizations")) {
+    if (!row.category || typeof row.average !== "number") continue;
+    if (bandFor(row.average) !== row.category) stale++;
+  }
+  findings.expect(
+    "movement",
+    stale === 0,
+    "every learner's group matches the average the app recorded for them",
+    `${stale} sit in a band their own average does not put them in`,
+  );
+
   const improving = run.students.filter(
     (s) =>
       s.yearGroup === cls.yearGroup && s.profile.trajectory === "improving",
   );
-  findings.expect(
+  findings.add(
+    "note",
     "movement",
-    movedUp > 0,
-    "a learner who improves across the term is moved up a group",
-    `${improving.length} learners in this class are improving; the app moved ${movedUp} up and ${movedDown} down`,
-    "wrong",
+    `${movedUp} learners moved up a group and ${movedDown} moved down`,
+    `${improving.length} of this class are improving; this school's bands start at ${thresholds.developing ?? 50}% and ${thresholds.advanced ?? 75}%`,
   );
 
   return { movedUp, movedDown };

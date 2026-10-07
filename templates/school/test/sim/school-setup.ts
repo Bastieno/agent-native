@@ -65,7 +65,7 @@ export async function standUpFullSchool(
   const phase = "setup";
   const domain = `${runId}.sim.test`;
 
-  const admin = await client.signUp(`admin@${domain}`, "admin", "admin");
+  const admin = await client.signUp(`admin@${domain}`, "admin", "admin", true);
   const created = await client.as(admin, "setup-school", {
     name: `${scenario.schoolName} (${runId})`,
     type: scenario.schoolType,
@@ -86,8 +86,8 @@ export async function standUpFullSchool(
     // The simulated school ranks its learners and counts a missed piece as a
     // nought, so both settings are exercised rather than left on the
     // fallback that every school would otherwise be tested on.
-    rankLearners: true,
-    missedWorkPolicy: "zero",
+    rankLearners: scenario.rankLearners ?? true,
+    missedWorkPolicy: scenario.missedWorkPolicy ?? "zero",
   });
 
   const levels = asList(
@@ -194,7 +194,13 @@ export async function standUpFullSchool(
       ...p,
       // Two cohorts drawing from the same name list would collide on
       // addresses, and the second sign-up would land on the first account.
-      email: p.email.replace("@", `.${cohort.yearGroup.toLowerCase()}@`),
+      // A year group's name is the school's own — "JSS1", "Grade 6",
+      // "Première" — so it is slugged rather than dropped into an address
+      // as typed.
+      email: p.email.replace(
+        "@",
+        `.${cohort.yearGroup.toLowerCase().replace(/[^a-z0-9]+/gu, "")}@`,
+      ),
     }));
 
     const joined = await inPool(profiles, 6, async (profile) => {
