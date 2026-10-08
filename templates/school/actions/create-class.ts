@@ -12,6 +12,7 @@ import {
   armsInYearGroup,
   enrolArmInClass,
   setOptionArms,
+  untouchedNote,
 } from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
@@ -91,9 +92,9 @@ export default defineAction({
       });
     }
     if (optionArmIds.length > 0) await setOptionArms(id, optionArmIds);
-    const enrolled = args.armId
+    const { enrolled, untouched } = args.armId
       ? await enrolArmInClass(orgId, id, args.armId)
-      : 0;
+      : { enrolled: 0, untouched: null };
     return {
       id,
       name: args.name,
@@ -105,7 +106,9 @@ export default defineAction({
           : `Created ${args.name}.`
       }${
         args.armId
-          ? ` ${enrolled} ${enrolled === 1 ? "learner" : "learners"} from its ${await armWord(orgId)} enrolled.`
+          ? untouched
+            ? ` ${untouchedNote(untouched, await armWord(orgId))}`
+            : ` ${enrolled} ${enrolled === 1 ? "learner" : "learners"} from its ${await armWord(orgId)} enrolled.`
           : ""
       }`,
     };

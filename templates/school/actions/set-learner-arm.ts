@@ -4,11 +4,15 @@ import { getDb, schema } from "../server/db/index.js";
 import { and, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
-import { armWord, moveLearnerArm } from "../server/lib/arm-enrolment.js";
+import {
+  armWord,
+  moveLearnerArm,
+  untouchedNote,
+} from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
   description:
-    "Place learners in an arm (or take them out of any arm with armId null). Their whole-arm classes follow: they are enrolled in the new arm's classes and withdrawn from the old arm's. Option classes and unattached classes are left alone. A learner can only join an arm of their own year group.",
+    "Place learners in an arm (or take them out of any arm with armId null). Their whole-arm classes in the active academic year follow: they are enrolled in the new arm's classes and withdrawn from the old arm's. Earlier years' classes keep their rolls. Option classes and unattached classes are left alone. A learner can only join an arm of their own year group.",
   schema: z.object({
     armId: z.string().nullable().describe("The arm, or null for none"),
     studentUserIds: z.array(z.string()).min(1),
@@ -59,15 +63,20 @@ export default defineAction({
     let moved = 0;
     let enrolled = 0;
     let withdrawn = 0;
+    let noActiveYear = false;
     for (const userId of userIds) {
       const result = await moveLearnerArm(orgId, userId, args.armId);
       if (result.fromArmId !== args.armId) moved++;
       enrolled += result.enrolled;
       withdrawn += result.withdrawn;
+      if (result.untouched === "no-active-year") noActiveYear = true;
     }
 
     const classes = (n: number) => `${n} ${n === 1 ? "class" : "classes"}`;
-    const counts = `Enrolled in ${classes(enrolled)}, withdrawn from ${withdrawn}.`;
+    // Only this academic year's classes follow an arm; last year's rolls stay.
+    const counts = noActiveYear
+      ? untouchedNote("no-active-year", word)
+      : `Enrolled in ${classes(enrolled)} this academic year, withdrawn from ${withdrawn}.`;
     let message: string;
     if (userIds.length === 1) {
       const labels = await getUserLabels(userIds);

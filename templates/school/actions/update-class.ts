@@ -10,6 +10,8 @@ import {
   withdrawArmFromClass,
   enrolArmInClass,
   setOptionArms,
+  untouchedNote,
+  type RollUntouched,
 } from "../server/lib/arm-enrolment.js";
 import { getSchoolRole } from "../server/lib/student-access.js";
 import { isUnassignedTeacher } from "../shared/class-teacher.js";
@@ -133,8 +135,14 @@ export default defineAction({
       );
     }
     let enrolled = 0;
-    if (args.armId)
-      enrolled = await enrolArmInClass(orgId, args.id, args.armId);
+    let untouched: RollUntouched = null;
+    if (args.armId) {
+      ({ enrolled, untouched } = await enrolArmInClass(
+        orgId,
+        args.id,
+        args.armId,
+      ));
+    }
 
     // Assigning a teacher to an unassigned class has to reach the join table
     // too, or the class stays invisible in their own portal.
@@ -165,7 +173,7 @@ export default defineAction({
     const word = await armWord(orgId);
     const count = (n: number) => `${n} ${n === 1 ? "learner" : "learners"}`;
     const notes: string[] = [];
-    if (args.armId)
+    if (args.armId && !untouched)
       notes.push(`${count(enrolled)} from its ${word} newly enrolled`);
     if (withdrawn > 0)
       notes.push(
@@ -176,9 +184,11 @@ export default defineAction({
       updated: true,
       enrolled,
       withdrawn,
-      message: notes.length
-        ? `Updated the class; ${notes.join(", and ")}.`
-        : "Updated the class.",
+      message: `${
+        notes.length
+          ? `Updated the class; ${notes.join(", and ")}.`
+          : "Updated the class."
+      }${untouched ? ` ${untouchedNote(untouched, word)}` : ""}`,
     };
   },
 });
