@@ -541,7 +541,7 @@ pnpm action remove-timetable-period --scheduleId <id>
 pnpm action copy-timetable --toTermId <id> [--fromTermId <id> | --fromEarlier] [--confirm true]
 ```
 
-`--day` is 1 = Monday … 7 = Sunday; times come from the week, so do not type them. `set-timetable-period` refuses a day the school does not teach, a break, a period that does not exist (it names the ones that do) and a room that is not on the list; pass `--scheduleId` to move a lesson rather than add one. Work in the school's words: "SS1A Mathematics on Tuesday, period 3, in the Physics Lab", never ids.
+`--day` is 1 = Monday … 7 = Sunday; times come from the week, so do not type them. `set-timetable-period` refuses a day the school does not teach, a break, a period that does not exist (it names the ones that do) and, when the school keeps a room list, a room that is not on it; pass `--scheduleId` to move a lesson rather than add one. Work in the school's words: "SS1A Mathematics on Tuesday, period 3, in the Physics Lab", never ids.
 
 **A term with no periods of its own shows the school's earlier timetable, read-only.** Timetables set before terms existed carry no term, and a term that has none of its own displays those. `set-timetable-period` refuses to write into such a term, because the first row would hide all the rest. Copy it in first, then edit: "Term 2 is still showing last year's timetable. Shall I copy it into Term 2 so we can change it?" `copy-timetable` with no source copies from the term before; `--fromEarlier` copies the earlier, term-less timetable. **It only previews until `--confirm true`**: read the preview back ("48 periods from Term 1, 2 of them clashing") and ask before confirming. It refuses a term that already has periods.
 
@@ -1051,7 +1051,7 @@ The term comes from the date, so a teacher asking about next Tuesday gets the ti
 
 For the teacher's whole week, `get-my-week` returns every day the school teaches, with each period and break and the lessons they take.
 
-Teachers cannot place lessons; that is an admin's job (A2c). If a teacher says their timetable is wrong, tell them an admin can change it, and describe what looks wrong.
+Building or changing a term's timetable on the grid is an admin's job (A2c). A teacher can still add a single lesson to their own class with `create-class-schedule`, which also reports any clash it causes. If a teacher says their timetable is wrong, tell them an admin can change it, and describe what looks wrong.
 
 ### B7. Navigation Map (Teacher)
 
@@ -1261,17 +1261,17 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 
 ### Arms & Timetable (admin; reads for staff)
 
-| Action                    | Args                                                                                                                                           |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `list-arms`               | `[--gradeLevelId]` — arms by year group with learner counts (staff)                                                                            |
-| `create-arm`              | `--gradeLevelId --name [--stream] [--homeRoom] [--formTeacherUserId] [--sequence]`                                                             |
-| `update-arm`              | `--id [--name] [--stream] [--homeRoom] [--formTeacherUserId] [--sequence] [--status active\|archived]` — null clears stream, room, teacher     |
-| `set-learner-arm`         | `--armId <id\|null> --studentUserIds '[...]'` — whole-arm enrolment follows                                                                    |
-| `get-timetable`           | `[--termId] [--armId \| --teacherUserId \| --room]` — periods, clashes as sentences (staff)                                                    |
-| `set-timetable-period`    | `--termId --classId --day (1-7) --periodNumber [--room] [--scheduleId]` — refuses without a week, and in a term still on the earlier timetable |
-| `remove-timetable-period` | `--scheduleId`                                                                                                                                 |
-| `copy-timetable`          | `--toTermId [--fromTermId \| --fromEarlier] [--confirm true]` — previews until confirmed; refuses a term that has periods                      |
-| `get-my-week`             | `[--date YYYY-MM-DD]` — the signed-in learner's or teacher's own week (everyone)                                                               |
+| Action                    | Args                                                                                                                                                                                         |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `list-arms`               | `[--gradeLevelId]` — arms by year group with learner counts (staff)                                                                                                                          |
+| `create-arm`              | `--gradeLevelId --name [--stream] [--homeRoom] [--formTeacherUserId] [--sequence]`                                                                                                           |
+| `update-arm`              | `--id [--name] [--stream] [--homeRoom] [--formTeacherUserId] [--sequence] [--status active\|archived]` — null clears stream, room, teacher                                                   |
+| `set-learner-arm`         | `--armId <id\|null> --studentUserIds '[...]'` — whole-arm enrolment follows                                                                                                                  |
+| `get-timetable`           | `[--termId] [--armId \| --teacherUserId \| --room]` — periods, clashes as sentences (staff)                                                                                                  |
+| `set-timetable-period`    | `--termId --classId --day (1-7) --periodNumber [--room] [--scheduleId]` — refuses without a week, a room off the list (when the school keeps one), and a term still on the earlier timetable |
+| `remove-timetable-period` | `--scheduleId`                                                                                                                                                                               |
+| `copy-timetable`          | `--toTermId [--fromTermId \| --fromEarlier] [--confirm true]` — previews until confirmed; refuses a term that has periods                                                                    |
+| `get-my-week`             | `[--date YYYY-MM-DD]` — the signed-in learner's or teacher's own week (everyone)                                                                                                             |
 
 ### Lesson Notes (teacher + admin)
 
