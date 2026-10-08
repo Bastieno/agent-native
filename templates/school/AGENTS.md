@@ -522,7 +522,7 @@ pnpm action update-arm --id <id> [--name] [--stream] [--homeRoom] [--formTeacher
 pnpm action set-learner-arm --armId <id|null> --studentUserIds '[...]'
 ```
 
-Placing a learner in an arm enrols them in that arm's whole-arm classes and withdraws them from the ones they left (never deletes). Say what changed, in the action's own words: "Tolu is now in SS1B. Enrolled in 9 classes, withdrawn from 9." A learner can only join an arm of their own year group.
+Placing a learner in an arm enrols them in that arm's whole-arm classes and withdraws them from the ones they left (never deletes). Say what changed, in the action's own words: "Tolu is now in SS1B. Enrolled in 9 classes this academic year, withdrawn from 9." A learner can only join an arm of their own year group. **Only the active academic year's classes follow.** Last year's classes keep their rolls, because their gradebooks and report cards read them; so at promotion, move learners into their new arms after the new year is active and its classes exist. If no academic year is active, nothing is enrolled or withdrawn and the reply says so; offer to set one active.
 
 **The three kinds of class.** Ask which one it is when creating a class in a school that uses arms:
 
@@ -545,11 +545,15 @@ pnpm action copy-timetable --toTermId <id> [--fromTermId <id> | --fromEarlier] [
 
 **A term with no periods of its own shows the school's earlier timetable, read-only.** Timetables set before terms existed carry no term, and a term that has none of its own displays those. `set-timetable-period` refuses to write into such a term, because the first row would hide all the rest. Copy it in first, then edit: "Term 2 is still showing last year's timetable. Shall I copy it into Term 2 so we can change it?" `copy-timetable` with no source copies from the term before; `--fromEarlier` copies the earlier, term-less timetable. **It only previews until `--confirm true`**: read the preview back ("48 periods from Term 1, 2 of them clashing") and ask before confirming. It refuses a term that already has periods.
 
+**A new academic year starts with its own classes.** `copy-timetable` copies only classes of the target term's academic year; periods of last year's classes are left out, and the preview and reply name them ("12 periods of 4 classes from another academic year are left out: JSS1A Mathematics, …"). Read that part back too. If every period would be left out, it refuses and suggests starting empty. On the page, an empty term offers "Copy from <previous term>" and, quietly beneath it, "Start with an empty timetable", which simply opens the grid for that term; you can do the same by placing the first lesson with `set-timetable-period`.
+
+**Lessons not on this week's bells are listed under the grid.** A lesson whose period is a break, or that a changed week no longer has, sits where its stored times fall (the same rule a learner's and teacher's week use). One that fits no lesson period is listed under the grid as "Not on this week's bells", with its day, times, class and room, and Move and Remove. When the admin asks why a learner sees a lesson the grid lacks, look there.
+
 **Clashes are saved and flagged, never refused.** A timetable is built in passes, so a lesson that clashes is still placed. There are four kinds: a teacher in two places, a room booked twice, an arm in two lessons at once, and a learner enrolled in two lessons at once. `get-timetable`, `set-timetable-period`, `create-class-schedule` and `check-school-setup` all return each clash as a sentence in the school's words ("Mr Adeyemi is down for SS1A Mathematics and SS2B Physics on Tuesday, period 3."). **Read the sentence back as it is; do not paraphrase it into kind codes or ids.**
 
 **Never resolve a clash by moving someone's lesson without asking.** Moving a lesson changes a teacher's or a class's week. Name the clash, say which lessons could move and to where there is room, and let the admin choose: "Mr Adeyemi has two lessons on Tuesday, period 3. Period 5 is free for him and for SS2B. Shall I move SS2B Physics there?"
 
-`create-class-schedule --termId` still adds one lesson at explicit times (kept for free entry and older setups). Prefer `set-timetable-period` whenever the school has a week.
+`create-class-schedule` still adds one lesson at explicit times (kept for free entry and older setups). Prefer `set-timetable-period` whenever the school has a week. It follows the same rule as `set-timetable-period`: given a `--termId` that is still showing the earlier timetable, it refuses with the same sentence; copy the timetable in first. Without `--termId` the lesson goes into the current term when that term has a timetable of its own, otherwise into the school's earlier timetable; the reply names which, so say it back ("Added SS1A Mathematics on Tuesday 10:00–10:40 to First Term.").
 
 ### A3. Staff Management
 
@@ -1051,7 +1055,7 @@ The term comes from the date, so a teacher asking about next Tuesday gets the ti
 
 For the teacher's whole week, `get-my-week` returns every day the school teaches, with each period and break and the lessons they take.
 
-Building or changing a term's timetable on the grid is an admin's job (A2c). A teacher can still add a single lesson to their own class with `create-class-schedule`, which also reports any clash it causes. If a teacher says their timetable is wrong, tell them an admin can change it, and describe what looks wrong.
+Building or changing a term's timetable on the grid is an admin's job (A2c). A teacher can still add a single lesson to their own class with `create-class-schedule`, which also reports any clash it causes and says which term the lesson went into. If it refuses because the term is still showing the earlier timetable, an admin has to copy that timetable into the term first; say so rather than retrying without the term. If a teacher says their timetable is wrong, tell them an admin can change it, and describe what looks wrong.
 
 ### B7. Navigation Map (Teacher)
 
@@ -1246,18 +1250,18 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 
 ### Class Management (admin + teacher)
 
-| Action                  | Args                                                                                                                                                                                                           |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| `list-classes`          |                                                                                                                                                                                                                |
-| `create-class`          | `--subjectId --gradeLevelId --academicYearId --name [--primaryTeacherUserId] [--armId \| --optionArmIds '[...]']` (arm settings: admin only) — the teacher is optional; omit it for a class nobody teaches yet |     |
-| `update-class`          | `--id ...fields [--armId <id\|null>] [--optionArmIds '[...]']` (arm settings: admin only)                                                                                                                      |
-| `list-class-students`   | `--classId`                                                                                                                                                                                                    |
-| `enroll-student`        | `--classId --studentUserId`                                                                                                                                                                                    |
-| `bulk-enroll-students`  | `--classId --studentUserIds '[...]'`                                                                                                                                                                           |
-| `unenroll-student`      | `--classId --studentUserId`                                                                                                                                                                                    |
-| `add-teacher-to-class`  | `--classId --teacherUserId --role primary\|support\|observer`                                                                                                                                                  |
-| `create-class-schedule` | `--classId --dayOfWeek (1-7) --startTime "HH:MM" --endTime "HH:MM" [--periodNumber] [--room] [--termId]` — reports clashes it causes                                                                           |
-| `get-my-schedule`       | `[--date YYYY-MM-DD]` — defaults to today; term from the date, bells from the week, support teachers included; slots + lesson prep status                                                                      |
+| Action                  | Args                                                                                                                                                                                                                          |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `list-classes`          |                                                                                                                                                                                                                               |
+| `create-class`          | `--subjectId --gradeLevelId --academicYearId --name [--primaryTeacherUserId] [--armId \| --optionArmIds '[...]']` (arm settings: admin only) — the teacher is optional; omit it for a class nobody teaches yet                |     |
+| `update-class`          | `--id ...fields [--armId <id\|null>] [--optionArmIds '[...]']` (arm settings: admin only)                                                                                                                                     |
+| `list-class-students`   | `--classId`                                                                                                                                                                                                                   |
+| `enroll-student`        | `--classId --studentUserId`                                                                                                                                                                                                   |
+| `bulk-enroll-students`  | `--classId --studentUserIds '[...]'`                                                                                                                                                                                          |
+| `unenroll-student`      | `--classId --studentUserId`                                                                                                                                                                                                   |
+| `add-teacher-to-class`  | `--classId --teacherUserId --role primary\|support\|observer`                                                                                                                                                                 |
+| `create-class-schedule` | `--classId --dayOfWeek (1-7) --startTime "HH:MM" --endTime "HH:MM" [--periodNumber] [--room] [--termId]` — reports clashes it causes; refuses a term still on the earlier timetable; no term → current term if it has its own |
+| `get-my-schedule`       | `[--date YYYY-MM-DD]` — defaults to today; term from the date, bells from the week, support teachers included; slots + lesson prep status                                                                                     |
 
 ### Arms & Timetable (admin; reads for staff)
 
@@ -1266,11 +1270,11 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 | `list-arms`               | `[--gradeLevelId]` — arms by year group with learner counts (staff)                                                                                                                          |
 | `create-arm`              | `--gradeLevelId --name [--stream] [--homeRoom] [--formTeacherUserId] [--sequence]`                                                                                                           |
 | `update-arm`              | `--id [--name] [--stream] [--homeRoom] [--formTeacherUserId] [--sequence] [--status active\|archived]` — null clears stream, room, teacher                                                   |
-| `set-learner-arm`         | `--armId <id\|null> --studentUserIds '[...]'` — whole-arm enrolment follows                                                                                                                  |
+| `set-learner-arm`         | `--armId <id\|null> --studentUserIds '[...]'` — whole-arm enrolment follows, in the active academic year only                                                                                |
 | `get-timetable`           | `[--termId] [--armId \| --teacherUserId \| --room]` — periods, clashes as sentences (staff)                                                                                                  |
 | `set-timetable-period`    | `--termId --classId --day (1-7) --periodNumber [--room] [--scheduleId]` — refuses without a week, a room off the list (when the school keeps one), and a term still on the earlier timetable |
 | `remove-timetable-period` | `--scheduleId`                                                                                                                                                                               |
-| `copy-timetable`          | `--toTermId [--fromTermId \| --fromEarlier] [--confirm true]` — previews until confirmed; refuses a term that has periods                                                                    |
+| `copy-timetable`          | `--toTermId [--fromTermId \| --fromEarlier] [--confirm true]` — previews until confirmed; refuses a term that has periods; leaves out (and names) another academic year's classes            |
 | `get-my-week`             | `[--date YYYY-MM-DD]` — the signed-in learner's or teacher's own week (everyone)                                                                                                             |
 
 ### Lesson Notes (teacher + admin)

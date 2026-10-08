@@ -18,6 +18,7 @@ import {
   checkLearnerWeek,
   checkScheduleReadsTheWeek,
   checkTimetable,
+  checkTimetableBoundaries,
 } from "./timetable.js";
 import {
   teachDifferentiatedWeek,
@@ -330,6 +331,13 @@ const coverage = await client.as(run.admin, "get-lesson-note-coverage", {});
 await writeFile(
   join(dir, "lesson-note-coverage.json"),
   JSON.stringify(coverage, null, 2),
+);
+
+// Last of all: it gives the run's own term a timetable of its own and makes a
+// second academic year active, which would change everything read above.
+console.log("· the timetable at the edges of a term and a year");
+await time("timetable boundaries", () =>
+  checkTimetableBoundaries(client, run, arms, timetable, findings),
 );
 
 const seconds = (Date.now() - started) / 1000;

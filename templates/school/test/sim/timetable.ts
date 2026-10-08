@@ -417,6 +417,8 @@ const noId = (text: unknown) =>
  */
 export type TimetableContext = {
   termId: string;
+  /** The third term: a copy of the second, with rows of its own. */
+  copyTermId: string;
   /** A date inside the term. */
   date: string;
   /** The first arm, and the option slot placed for it. */
@@ -860,6 +862,7 @@ export async function checkTimetable(
   );
   return {
     termId: T2,
+    copyTermId: T3,
     date: "2027-01-11",
     armId: armA,
     optionSlot: { day: 2, periodNumber: 1 },
@@ -1121,4 +1124,237 @@ export async function checkLearnerWeek(
       "a teacher sees the class they teach in their week",
     );
   }
+}
+
+/**
+ * Where the timetable meets the edges of a term and of a year: the legacy
+ * one-lesson action keeps the earlier-timetable rule; a lesson added with no
+ * term lands where it will be seen; and a new academic year neither rewrites
+ * last year's rolls nor inherits last year's classes.
+ *
+ * Runs last of all: it gives the run's own term rows of its own and makes a
+ * second academic year the active one, which changes what everything
+ * before it would find.
+ */
+export async function checkTimetableBoundaries(
+  client: Client,
+  run: FullSchoolRun,
+  arms: ArmsContext,
+  ctx: TimetableContext,
+  findings: Findings,
+): Promise<void> {
+  const phase = "timetable boundaries";
+  const admin = run.admin;
+  const teaching = run.classes[0];
+  const teacher = teaching.teacher;
+  const [armA, armB] = arms.armIds;
+  const [classA, classB] = arms.classIds;
+
+  // ── The legacy action keeps the earlier-timetable rule ──────────────────
+  const T5 = idOf(
+    await client.as(admin, "create-term", {
+      academicYearId: run.academicYearId,
+      name: "Fifth Term",
+      startDate: "2027-11-08",
+      endDate: "2027-12-17",
+      sequence: 5,
+    }),
+    "term",
+  )!;
+  findings.expect(
+    phase,
+    await refused(
+      () =>
+        client.as(teacher, "create-class-schedule", {
+          classId: teaching.id,
+          dayOfWeek: 1,
+          startTime: "08:00",
+          endTime: "08:40",
+          termId: T5,
+        }),
+      /still showing the school's earlier timetable\. Copy it into Fifth Term first, then change it\./,
+    ),
+    "a teacher's single lesson into a term still showing the earlier timetable is refused, offering the copy",
+  );
+  const t5 = (await client.as(admin, "get-timetable", { termId: T5 })) as any;
+  findings.expect(
+    phase,
+    t5.fromUntermedRows === true && t5.periods.length > 0,
+    "after the refusal, that term still shows the whole earlier timetable",
+    `${t5.periods.length} periods, fromUntermedRows ${t5.fromUntermedRows}`,
+  );
+
+  // ── A lesson with no term goes where it will be seen ────────────────────
+  const loose = (await client.as(teacher, "create-class-schedule", {
+    classId: teaching.id,
+    dayOfWeek: 2,
+    startTime: "14:00",
+    endTime: "14:40",
+  })) as any;
+  findings.expect(
+    phase,
+    loose?.termId === null && /earlier timetable/.test(String(loose?.message)),
+    "with the current term still on the earlier timetable, a lesson with no term joins that timetable and says so",
+    loose?.message,
+  );
+  const current = (await client.as(admin, "get-current-term", {})) as any;
+  const currentName: string = current?.term?.name ?? "";
+  await client.as(admin, "copy-timetable", {
+    fromEarlier: true,
+    toTermId: run.termId,
+    confirm: true,
+  });
+  const placed = (await client.as(teacher, "create-class-schedule", {
+    classId: teaching.id,
+    dayOfWeek: 3,
+    startTime: "14:00",
+    endTime: "14:40",
+  })) as any;
+  const own = (await client.as(admin, "get-timetable", {
+    termId: run.termId,
+  })) as any;
+  findings.expect(
+    phase,
+    current?.term?.id === run.termId &&
+      placed?.termId === run.termId &&
+      placed?.termName === currentName &&
+      String(placed?.message).includes(currentName) &&
+      noId(placed?.message) &&
+      own.periods.some((p: any) => p.scheduleId === placed?.id),
+    "once the current term has its own timetable, a lesson with no term lands in it, and the reply names the term",
+    placed?.message,
+  );
+
+  // ── A new academic year ─────────────────────────────────────────────────
+  const rollA = await roll(client, run, classA);
+  const mover = rollA[0];
+  const rollBBefore = await roll(client, run, classB);
+  const Y2 = idOf(
+    await client.as(admin, "create-academic-year", {
+      name: "2027/2028",
+      startDate: "2027-09-13",
+      endDate: "2028-07-21",
+      setActive: true,
+    }),
+    "academicYear",
+  )!;
+  const makeY2Term = async (
+    name: string,
+    start: string,
+    end: string,
+    n: number,
+  ) =>
+    idOf(
+      await client.as(admin, "create-term", {
+        academicYearId: Y2,
+        name,
+        startDate: start,
+        endDate: end,
+        sequence: n,
+      }),
+      "term",
+    )!;
+  const Y2T1 = await makeY2Term("First Term", "2027-09-13", "2027-12-10", 1);
+  const Y2T2 = await makeY2Term("Second Term", "2028-01-10", "2028-04-07", 2);
+
+  const newYearClass = idOf(
+    await client.as(admin, "create-class", {
+      subjectId: arms.subjectId,
+      gradeLevelId: arms.gradeLevelId,
+      academicYearId: Y2,
+      name: `${arms.yearGroup}B Mathematics 2027/2028`,
+      armId: armB,
+    }),
+    "class",
+  )!;
+  const newRollBefore = await roll(client, run, newYearClass);
+
+  const moved = (await client.as(admin, "set-learner-arm", {
+    armId: armB,
+    studentUserIds: [mover],
+  })) as any;
+  const rollAAfter = await roll(client, run, classA);
+  const rollBAfter = await roll(client, run, classB);
+  const newRollAfter = await roll(client, run, newYearClass);
+  findings.expect(
+    phase,
+    !!mover &&
+      newRollBefore.length > 0 &&
+      rollAAfter.includes(mover) &&
+      sameSet(rollBAfter, rollBBefore) &&
+      newRollAfter.includes(mover) &&
+      moved?.withdrawn === 0 &&
+      /this academic year/.test(String(moved?.message)),
+    "moving a learner's arm in a new year changes only this year's rolls; last year's classes keep theirs",
+    moved?.message,
+  );
+  void armA;
+
+  const empty = (await client.as(admin, "get-timetable", {
+    termId: Y2T1,
+  })) as any;
+  findings.expect(
+    phase,
+    empty.termEmpty === true && empty.previousTerm === null,
+    "a new year's first term is not offered a copy that would bring only last year's classes",
+    JSON.stringify(empty.previousTerm),
+  );
+
+  // One lesson of this year's class in last year's third term, so a copy
+  // from it has one period to keep and the rest to leave out.
+  await client.as(admin, "create-class-schedule", {
+    classId: newYearClass,
+    termId: ctx.copyTermId,
+    dayOfWeek: 1,
+    startTime: "08:00",
+    endTime: "08:40",
+    periodNumber: 1,
+  });
+  const source = (await client.as(admin, "get-timetable", {
+    termId: ctx.copyTermId,
+  })) as any;
+  const preview = (await client.as(admin, "copy-timetable", {
+    fromTermId: ctx.copyTermId,
+    toTermId: Y2T1,
+  })) as any;
+  findings.expect(
+    phase,
+    preview?.periods === 1 &&
+      preview?.skipped?.periods === source.periods.length - 1 &&
+      preview.skipped.classNames.includes(ctx.furtherMathsName) &&
+      /another academic year are left out/.test(preview.message) &&
+      preview.message.includes(ctx.furtherMathsName) &&
+      noId(preview.message),
+    "a copy into a new year's term leaves out last year's classes and names them",
+    preview?.message,
+  );
+  const copied = (await client.as(admin, "copy-timetable", {
+    fromTermId: ctx.copyTermId,
+    toTermId: Y2T1,
+    confirm: true,
+  })) as any;
+  const after = (await client.as(admin, "get-timetable", {
+    termId: Y2T1,
+  })) as any;
+  findings.expect(
+    phase,
+    copied?.copied === true &&
+      /left out/.test(copied.message) &&
+      after.periods.length === 1 &&
+      after.periods[0].classId === newYearClass,
+    "the confirmed copy holds only this year's class, and the reply says what was left out",
+    copied?.message,
+  );
+  findings.expect(
+    phase,
+    await refused(
+      () =>
+        client.as(admin, "copy-timetable", {
+          fromTermId: ctx.termId,
+          toTermId: Y2T2,
+        }),
+      /another academic year.*empty timetable/s,
+    ),
+    "a copy that would bring nothing but last year's classes is refused, suggesting an empty start",
+  );
 }
