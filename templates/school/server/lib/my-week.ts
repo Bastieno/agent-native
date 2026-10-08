@@ -1,9 +1,5 @@
 import { schoolLocale, schoolTimeZone } from "../../shared/dates.js";
-import {
-  schoolWeekdayName,
-  timesOverlap,
-  type WeekPeriod,
-} from "../../shared/school-week.js";
+import { placementSlot, schoolWeekdayName } from "../../shared/school-week.js";
 import { getSchoolRole, getUserIdByEmail } from "./student-access.js";
 import { loadSchoolConfig, loadTimetable, resolveTerm } from "./timetable.js";
 import type { ResolvedPeriod } from "./timetable-clashes.js";
@@ -132,25 +128,17 @@ export async function getMyWeek(
 
   const now = reference(date, schoolTimeZone(config));
 
-  // Each of their rows goes to the week period with its number; a row whose
-  // number the week lacks (typed times, a missing period) goes to the lesson
-  // period its times overlap. A row that overlaps none is left out of the
-  // grid but still counts for "next".
+  // Each of their rows goes where the admin grid puts it (placementSlot): the
+  // lesson period with its number, else the lesson period its times overlap.
+  // A row that fits neither is left out of the grid but still counts for
+  // "next"; the admin sees it listed under the grid.
   const days = [...week.days]
     .sort((a, b) => a.day - b.day)
     .map((d) => {
       const slots = [...d.periods].sort((a, b) => a.number - b.number);
       const placed = new Map<number, ResolvedPeriod[]>();
       for (const p of mine.filter((m) => m.day === d.day)) {
-        const slot: WeekPeriod | undefined =
-          slots.find(
-            (s) => s.kind === "lesson" && s.number === p.periodNumber,
-          ) ??
-          slots.find(
-            (s) =>
-              s.kind === "lesson" &&
-              timesOverlap(s.start, s.end, p.start, p.end),
-          );
+        const slot = placementSlot(week, p);
         if (!slot) continue;
         placed.set(slot.number, [...(placed.get(slot.number) ?? []), p]);
       }

@@ -7,7 +7,7 @@ import {
 import { cn } from "@/lib/utils";
 import {
   findPeriod,
-  timesOverlap,
+  placementSlot,
   type SchoolWeek,
   type WeekPeriod,
 } from "@shared/school-week";
@@ -49,16 +49,6 @@ function rowsOf(week: SchoolWeek): Row[] {
     });
 }
 
-/** Which lesson period a placement sits in: its number, else by its times. */
-function slotOf(week: SchoolWeek, p: ResolvedPeriod): number | null {
-  if (p.periodNumber != null) return p.periodNumber;
-  const day = week.days.find((d) => d.day === p.day);
-  const hit = day?.periods.find(
-    (w) => w.kind === "lesson" && timesOverlap(w.start, w.end, p.start, p.end),
-  );
-  return hit?.number ?? null;
-}
-
 export function TimetableGrid({
   week,
   dayNames,
@@ -88,7 +78,8 @@ export function TimetableGrid({
   const bySlot = useMemo(() => {
     const m = new Map<string, ResolvedPeriod[]>();
     for (const p of periods) {
-      const n = slotOf(week, p);
+      // Rows on no lesson of the week are listed under the grid instead.
+      const n = placementSlot(week, p)?.number;
       if (n == null) continue;
       const k = `${p.day}:${n}`;
       m.set(k, [...(m.get(k) ?? []), p]);

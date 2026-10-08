@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select";
 import { ListState } from "@/components/ListState";
 import { CopyTimetableAction } from "@/components/timetable/CopyTimetableAction";
+import { OffBellsList } from "@/components/timetable/OffBellsList";
 import { PeriodCellPopover } from "@/components/timetable/PeriodCellPopover";
 import { TimetableGrid } from "@/components/timetable/TimetableGrid";
 import { useArms, useArmWord } from "@/components/timetable/arms-shared";
@@ -30,7 +31,12 @@ import {
 } from "@/components/timetable/use-timetable";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useSchoolConfig } from "@/hooks/use-school-config";
-import { findPeriod, roomKey, type Room } from "@shared/school-week";
+import {
+  findPeriod,
+  placementSlot,
+  roomKey,
+  type Room,
+} from "@shared/school-week";
 
 type View = "arm" | "teacher" | "room";
 type Cell = { day: number; periodNumber: number };
@@ -42,6 +48,9 @@ export default function AdminTimetable() {
   const { config } = useSchoolConfig();
   const rooms: Room[] = (config as any).rooms ?? [];
   const [selected, setSelected] = useState<Cell | null>(null);
+  // The empty term the admin chose to start blank: no server call, the grid
+  // simply opens for editing. Another term asks again.
+  const [blankTermId, setBlankTermId] = useState<string | null>(null);
 
   // ── What can be picked ────────────────────────────────────────────────────
   const { data: current, isLoading: termLoading } = useQuery<any>({
@@ -122,7 +131,8 @@ export default function AdminTimetable() {
   // A term with nothing of its own offers the term before it, read from
   // get-timetable. Never probed with copy-timetable: that is a write, and
   // every write makes every page refetch, which would probe again.
-  const copyFrom = tt?.termEmpty ? tt.previousTerm : null;
+  const copyFrom =
+    tt?.termEmpty && blankTermId !== termId ? tt.previousTerm : null;
 
   useEffect(() => {
     sync({
@@ -287,10 +297,36 @@ export default function AdminTimetable() {
           label={`Copy from ${copyFrom.name}`}
           args={{ toTermId: termId!, fromTermId: copyFrom.id }}
         />
+        <div>
+          <Button
+            variant="link"
+            size="sm"
+            className="text-muted-foreground"
+            onClick={() => setBlankTermId(termId!)}
+          >
+            Start with an empty timetable
+          </Button>
+        </div>
       </div>
     );
   } else {
     const week = tt.week;
+    // Lessons on no lesson period of the week: listed under the grid, the
+    // same rule a learner's week uses, so the admin sees all they see.
+    const offBells = tt.periods.filter((p) => !placementSlot(week, p));
+    const classFor = (p: (typeof tt.periods)[number]): ClassOption =>
+      classes.find((c) => c.id === p.classId) ??
+      ({
+        id: p.classId,
+        name: p.className,
+        subjectName: p.subjectName,
+        armId: p.armId,
+        optionArmIds: p.optionArmIds,
+        primaryTeacherUserId: p.teachers[0]?.userId ?? "",
+        teacherName: p.teachers[0]?.name ?? null,
+        teacherAssigned: p.teachers.length > 0,
+        roomNumber: null,
+      } as ClassOption);
     body = (
       <div className="space-y-3">
         {readOnly ? (
@@ -351,6 +387,24 @@ export default function AdminTimetable() {
                   );
                 }
           }
+        />
+        <OffBellsList
+          week={week}
+          dayNames={tt.dayNames}
+          periods={offBells}
+          editable={!readOnly}
+          onMove={(p, day, periodNumber) => {
+            const slot = findPeriod(week, day, periodNumber)!;
+            place({
+              cls: classFor(p),
+              day,
+              periodNumber,
+              start: slot.start,
+              end: slot.end,
+              scheduleId: p.scheduleId,
+            });
+          }}
+          onRemove={remove}
         />
       </div>
     );

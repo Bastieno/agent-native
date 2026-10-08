@@ -23,8 +23,12 @@ const OWN_ROOM = "__own__";
 
 export interface CellSave {
   classId: string;
-  /** A room from the list, or "" for the class's own room. */
-  room: string;
+  /**
+   * A room from the list, or "" for the class's own room. Absent when Room
+   * was not touched: a placement keeps the room it has, a new one takes its
+   * class's (or arm's) room.
+   */
+  room?: string;
   scheduleId?: string;
 }
 
@@ -61,6 +65,9 @@ export function PeriodCellPopover({
   const [editing, setEditing] = useState<string | null>(null);
   const [classId, setClassId] = useState("");
   const [room, setRoom] = useState(OWN_ROOM);
+  // Room shows what a placement resolves to; only a change is sent, so
+  // opening and saving never rewrites a custom or inherited room.
+  const [roomTouched, setRoomTouched] = useState(false);
 
   /** The listed room matching a name, compared the way the server does. */
   const listed = (name: string | null | undefined) =>
@@ -72,6 +79,8 @@ export function PeriodCellPopover({
     setEditing(entry?.scheduleId ?? null);
     setClassId(entry?.classId ?? "");
     setRoom(listed(entry ? entry.room : defaultRoom) ?? OWN_ROOM);
+    // In room view a new placement goes to the room in view.
+    setRoomTouched(!entry && !!listed(defaultRoom));
   };
 
   // Each time it opens: the one class there, ready to change; else a new one.
@@ -98,7 +107,7 @@ export function PeriodCellPopover({
     if (!classId) return;
     onSave({
       classId,
-      room: room === OWN_ROOM ? "" : room,
+      ...(roomTouched ? { room: room === OWN_ROOM ? "" : room } : {}),
       scheduleId: editing ?? undefined,
     });
     onOpenChange(false);
@@ -161,7 +170,13 @@ export function PeriodCellPopover({
         {rooms.length > 0 ? (
           <div className="space-y-1.5">
             <Label className="text-xs">Room</Label>
-            <Select value={room} onValueChange={setRoom}>
+            <Select
+              value={room}
+              onValueChange={(v) => {
+                setRoom(v);
+                setRoomTouched(true);
+              }}
+            >
               <SelectTrigger className="h-8 text-sm" aria-label="Room">
                 <SelectValue />
               </SelectTrigger>

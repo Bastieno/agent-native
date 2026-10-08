@@ -83,6 +83,38 @@ export function findPeriod(
   return found?.periods?.find((p) => p.number === number) ?? null;
 }
 
+/** What a placement needs for slotting: its day, number and stored times. */
+export interface Placement {
+  day: number;
+  periodNumber: number | null;
+  start: string;
+  end: string;
+}
+
+/**
+ * The lesson period of the week a placement sits in: the period with its
+ * number when that is a lesson on its day; else the lesson period its stored
+ * times overlap; else null — it is not on this week's bells. The one rule the
+ * admin grid and a learner's or teacher's week share.
+ */
+export function placementSlot(
+  week: SchoolWeek | null | undefined,
+  p: Placement,
+): WeekPeriod | null {
+  const day = week?.days?.find((d) => d.day === p.day);
+  if (!day) return null;
+  const lessons = (day.periods ?? [])
+    .filter((s) => s.kind === "lesson")
+    .sort((a, b) => minutes(a.start) - minutes(b.start));
+  if (p.periodNumber != null) {
+    const byNumber = lessons.find((s) => s.number === p.periodNumber);
+    if (byNumber) return byNumber;
+  }
+  return (
+    lessons.find((s) => timesOverlap(s.start, s.end, p.start, p.end)) ?? null
+  );
+}
+
 /** What makes a week unusable, one sentence each. An empty list means valid. */
 export function weekProblems(week: SchoolWeek): string[] {
   const problems: string[] = [];

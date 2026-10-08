@@ -4,6 +4,7 @@
 import assert from "node:assert/strict";
 import {
   findPeriod,
+  placementSlot,
   roomKey,
   roomProblems,
   schoolWeekdayName,
@@ -272,4 +273,75 @@ check("one pair can clash on several kinds; null period uses the time", () => {
   );
   assert.deepEqual(out.map((c) => c.kind).sort(), ["room", "teacher"]);
   assert.match(out[0].message, /at 08:00/);
+});
+
+// ── Slotting a placement into the week (grid and learner week share it) ──
+
+check("a placement goes to the lesson period with its number", () => {
+  const slot = placementSlot(validWeek(), {
+    day: 1,
+    periodNumber: 3,
+    start: "13:00",
+    end: "13:40",
+  });
+  assert.equal(slot?.number, 3);
+});
+
+check(
+  "a placement numbered as a break falls back to the lesson its times overlap",
+  () => {
+    // Period 4 is a break; the row's stored times sit in period 5.
+    const slot = placementSlot(validWeek(), {
+      day: 2,
+      periodNumber: 4,
+      start: "10:30",
+      end: "11:00",
+    });
+    assert.equal(slot?.number, 5);
+    assert.equal(slot?.kind, "lesson");
+  },
+);
+
+check("a placement with a number the day lacks falls back to overlap", () => {
+  const slot = placementSlot(validWeek(), {
+    day: 6,
+    periodNumber: 5,
+    start: "09:00",
+    end: "09:40",
+  });
+  assert.equal(slot?.number, 1);
+});
+
+check("a placement that fits no lesson is not on this week's bells", () => {
+  const week = validWeek();
+  // A break number, and times inside the break only.
+  assert.equal(
+    placementSlot(week, {
+      day: 1,
+      periodNumber: 4,
+      start: "10:00",
+      end: "10:20",
+    }),
+    null,
+  );
+  // A day the school does not teach.
+  assert.equal(
+    placementSlot(week, {
+      day: 7,
+      periodNumber: 1,
+      start: "08:00",
+      end: "08:40",
+    }),
+    null,
+  );
+  // After the last bell.
+  assert.equal(
+    placementSlot(week, {
+      day: 3,
+      periodNumber: null,
+      start: "15:00",
+      end: "15:40",
+    }),
+    null,
+  );
 });

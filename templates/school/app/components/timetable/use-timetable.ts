@@ -88,8 +88,11 @@ export interface PlaceInput {
   periodNumber: number;
   start: string;
   end: string;
-  /** A room from the list; "" for the class's own room. */
-  room: string;
+  /**
+   * A room from the list; "" for the class's own room. Omitted: a moved
+   * placement keeps its room, a new one takes its class's.
+   */
+  room?: string;
   /** The placement being changed, when not adding one. */
   scheduleId?: string;
 }
@@ -128,7 +131,10 @@ export function useTimetableEdits(filter: TimetableFilter) {
       start: input.start,
       end: input.end,
       // The server falls back to the arm's home room too; its refetch fills it.
-      room: input.room || cls.roomNumber || null,
+      room:
+        input.room === undefined && old
+          ? old.room
+          : input.room || cls.roomNumber || null,
       teachers:
         old && old.classId === cls.id
           ? old.teachers
@@ -156,8 +162,9 @@ export function useTimetableEdits(filter: TimetableFilter) {
         classId: cls.id,
         day: input.day,
         periodNumber: input.periodNumber,
-        // Omitted keeps a moved placement's room; "" means the class's own.
-        ...(input.room || input.scheduleId ? { room: input.room } : {}),
+        // Omitted keeps a moved placement's room (a new one takes its
+        // class's); "" means the class's own.
+        ...(input.room !== undefined ? { room: input.room } : {}),
         ...(input.scheduleId ? { scheduleId: input.scheduleId } : {}),
       });
       qc.setQueryData<TimetableReply>(key, (cur) => {
