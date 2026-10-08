@@ -26,6 +26,7 @@ export async function termContext(orgId: string, date?: string) {
     .from(schema.academicYears)
     .where(
       and(
+        eq(schema.academicYears.orgId, orgId),
         eq(schema.academicYears.schoolId, orgId),
         eq(schema.academicYears.status, "active"),
       ),
@@ -36,7 +37,12 @@ export async function termContext(orgId: string, date?: string) {
   const terms = await db
     .select()
     .from(schema.terms)
-    .where(eq(schema.terms.academicYearId, year.id))
+    .where(
+      and(
+        eq(schema.terms.orgId, orgId),
+        eq(schema.terms.academicYearId, year.id),
+      ),
+    )
     .orderBy(asc(schema.terms.sequence));
 
   const today = date ?? new Date().toISOString().slice(0, 10);
@@ -79,7 +85,13 @@ export async function previousTerm(
   const [term] = await db
     .select()
     .from(schema.terms)
-    .where(and(eq(schema.terms.id, termId), eq(schema.terms.schoolId, orgId)))
+    .where(
+      and(
+        eq(schema.terms.id, termId),
+        eq(schema.terms.orgId, orgId),
+        eq(schema.terms.schoolId, orgId),
+      ),
+    )
     .limit(1);
   if (!term) return null;
 
@@ -88,6 +100,7 @@ export async function previousTerm(
     .from(schema.terms)
     .where(
       and(
+        eq(schema.terms.orgId, orgId),
         eq(schema.terms.schoolId, orgId),
         eq(schema.terms.academicYearId, term.academicYearId),
       ),
@@ -102,6 +115,7 @@ export async function previousTerm(
     .where(
       and(
         eq(schema.academicYears.id, term.academicYearId),
+        eq(schema.academicYears.orgId, orgId),
         eq(schema.academicYears.schoolId, orgId),
       ),
     )
@@ -110,7 +124,12 @@ export async function previousTerm(
   const years = await db
     .select()
     .from(schema.academicYears)
-    .where(eq(schema.academicYears.schoolId, orgId));
+    .where(
+      and(
+        eq(schema.academicYears.orgId, orgId),
+        eq(schema.academicYears.schoolId, orgId),
+      ),
+    );
   const prevYear = years
     .filter((y: any) => y.startDate < thisYear.startDate)
     .sort((a: any, b: any) => b.startDate.localeCompare(a.startDate))[0];
@@ -120,6 +139,7 @@ export async function previousTerm(
     .from(schema.terms)
     .where(
       and(
+        eq(schema.terms.orgId, orgId),
         eq(schema.terms.schoolId, orgId),
         eq(schema.terms.academicYearId, prevYear.id),
       ),
@@ -135,7 +155,8 @@ export async function previousTerm(
  * table, joined in memory.
  *
  * Fallback is per school: if it has no rows for the term at all, its
- * un-termed rows are used instead and `fromUntermedRows` says so.
+ * un-termed rows (those of the term's academic year's classes) are used
+ * instead and `fromUntermedRows` says so.
  */
 export async function loadTimetable(
   orgId: string,
@@ -162,10 +183,7 @@ export async function loadTimetable(
       .where(and(eq(S.schoolId, orgId), eq(S.termId, termId)));
   }
   if (rows.length === 0) {
-    rows = await db
-      .select()
-      .from(S)
-      .where(and(eq(S.schoolId, orgId), isNull(S.termId)));
+    rows = await earlierRowsFor(orgId, termId);
     fromUntermedRows = !!termId && rows.length > 0;
   }
 
@@ -314,14 +332,104 @@ export async function loadTimetable(
 export async function findTerm(
   orgId: string,
   termId: string,
-): Promise<{ id: string; name: string } | null> {
+): Promise<{ id: string; name: string; academicYearId: string } | null> {
   const db = getDb();
   const [term] = await db
     .select()
     .from(schema.terms)
-    .where(and(eq(schema.terms.id, termId), eq(schema.terms.schoolId, orgId)))
+    .where(
+      and(
+        eq(schema.terms.id, termId),
+        eq(schema.terms.orgId, orgId),
+        eq(schema.terms.schoolId, orgId),
+      ),
+    )
     .limit(1);
-  return term ? { id: term.id, name: term.name } : null;
+  return term
+    ? { id: term.id, name: term.name, academicYearId: term.academicYearId }
+    : null;
+}
+
+/** Whether a term has timetable rows of its own. */
+export async function termHasOwnRows(
+  orgId: string,
+  termId: string,
+): Promise<boolean> {
+  const S = schema.classSchedules;
+  const [row] = await getDb()
+    .select({ id: S.id })
+    .from(S)
+    .where(and(eq(S.orgId, orgId), eq(S.schoolId, orgId), eq(S.termId, termId)))
+    .limit(1);
+  return !!row;
+}
+
+/**
+ * Refuse a term's first row of its own while the school's earlier, un-termed
+ * timetable stands in for it: that row would switch the fallback off and hide
+ * every other lesson from every learner, teacher and the admin grid.
+ * Shared by every action that adds a timetable row to a term.
+ */
+export async function assertTermCanTakeRow(
+  orgId: string,
+  term: { id: string; name: string },
+): Promise<void> {
+  if (await termHasOwnRows(orgId, term.id)) return;
+  if ((await earlierRowsFor(orgId, term.id)).length > 0) {
+    throw Object.assign(
+      new Error(
+        `${term.name} is still showing the school's earlier timetable. Copy it into ${term.name} first, then change it.`,
+      ),
+      { code: "copy-timetable-first" },
+    );
+  }
+}
+
+/**
+ * The school's earlier, un-termed timetable rows as a term would show them:
+ * only rows of the term's academic year's active classes, so a new year's
+ * term never stands in last year's lessons (and can be started empty). With
+ * no term, every un-termed row.
+ */
+export async function earlierRowsFor(
+  orgId: string,
+  termId: string | null,
+): Promise<any[]> {
+  const db = getDb();
+  const S = schema.classSchedules;
+  const rows = (await db
+    .select()
+    .from(S)
+    .where(
+      and(eq(S.orgId, orgId), eq(S.schoolId, orgId), isNull(S.termId)),
+    )) as any[];
+  if (!termId || rows.length === 0) return rows;
+  const [term] = await db
+    .select({ academicYearId: schema.terms.academicYearId })
+    .from(schema.terms)
+    .where(
+      and(
+        eq(schema.terms.id, termId),
+        eq(schema.terms.orgId, orgId),
+        eq(schema.terms.schoolId, orgId),
+      ),
+    )
+    .limit(1);
+  if (!term) return [];
+  const classIds = [...new Set(rows.map((r) => r.classId as string))];
+  const ofYear = await db
+    .select({ id: schema.classes.id })
+    .from(schema.classes)
+    .where(
+      and(
+        eq(schema.classes.orgId, orgId),
+        eq(schema.classes.academicYearId, term.academicYearId),
+        eq(schema.classes.status, "active"),
+        inArray(schema.classes.id, classIds),
+      ),
+    );
+  const keep = new Set(ofYear.map((c: any) => c.id as string));
+  return rows.filter((r) => keep.has(r.classId));
 }
 
 /** The clashes in a term's timetable, in the school's own words. */
@@ -334,4 +442,54 @@ export async function clashesForTerm(orgId: string, termId: string | null) {
       armNames: loaded.armNames,
     }),
   };
+}
+
+/**
+ * A timetable's periods split by whether their class belongs to an academic
+ * year: a copy into a term carries only that term's year's classes, never
+ * last year's. `skippedClasses` names what was left out, in order.
+ */
+export async function splitByAcademicYear(
+  orgId: string,
+  periods: ResolvedPeriod[],
+  academicYearId: string,
+): Promise<{
+  kept: ResolvedPeriod[];
+  skipped: ResolvedPeriod[];
+  skippedClasses: string[];
+}> {
+  const classIds = [...new Set(periods.map((p) => p.classId))];
+  if (classIds.length === 0)
+    return { kept: [], skipped: [], skippedClasses: [] };
+  const rows = await getDb()
+    .select({
+      id: schema.classes.id,
+      academicYearId: schema.classes.academicYearId,
+    })
+    .from(schema.classes)
+    .where(
+      and(
+        eq(schema.classes.orgId, orgId),
+        inArray(schema.classes.id, classIds),
+      ),
+    );
+  const yearOf = new Map(rows.map((r: any) => [r.id, r.academicYearId]));
+  const kept: ResolvedPeriod[] = [];
+  const skipped: ResolvedPeriod[] = [];
+  for (const p of periods) {
+    (yearOf.get(p.classId) === academicYearId ? kept : skipped).push(p);
+  }
+  const skippedClasses = [...new Set(skipped.map((p) => p.className))].sort(
+    (a, b) => a.localeCompare(b),
+  );
+  return { kept, skipped, skippedClasses };
+}
+
+/** Names in a sentence: "A, B and C", or the first few "and N more". */
+export function listInWords(names: string[], max = 6): string {
+  if (names.length <= 1) return names[0] ?? "";
+  const shown = names.slice(0, max);
+  const rest = names.length - shown.length;
+  if (rest > 0) return `${shown.join(", ")} and ${rest} more`;
+  return `${shown.slice(0, -1).join(", ")} and ${shown[shown.length - 1]}`;
 }

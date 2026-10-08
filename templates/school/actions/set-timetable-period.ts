@@ -1,6 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
-import { and, eq, isNull } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
@@ -11,6 +11,7 @@ import {
   type Room,
 } from "../shared/school-week.js";
 import {
+  assertTermCanTakeRow,
   clashesForTerm,
   findTerm,
   loadSchoolConfig,
@@ -65,28 +66,9 @@ export default defineAction({
       );
     }
     const S = schema.classSchedules;
-    // A term with no rows of its own shows the school's earlier timetable.
-    // The first row written would switch that off and hide every other lesson.
-    const [ownRow] = await db
-      .select({ id: S.id })
-      .from(S)
-      .where(and(eq(S.schoolId, orgId), eq(S.termId, term.id)))
-      .limit(1);
-    if (!ownRow) {
-      const [oldRow] = await db
-        .select({ id: S.id })
-        .from(S)
-        .where(and(eq(S.schoolId, orgId), isNull(S.termId)))
-        .limit(1);
-      if (oldRow) {
-        throw Object.assign(
-          new Error(
-            `${term.name} is still showing the school's earlier timetable. Copy it into ${term.name} first, then change it.`,
-          ),
-          { code: "copy-timetable-first" },
-        );
-      }
-    }
+    // A term with no rows of its own shows the school's earlier timetable;
+    // its first row would switch that off and hide every other lesson.
+    await assertTermCanTakeRow(orgId, term);
     const locale = schoolLocale(config);
     const dayName = schoolWeekdayName(args.day, locale);
     const weekDay = week.days.find((d: any) => d.day === args.day);

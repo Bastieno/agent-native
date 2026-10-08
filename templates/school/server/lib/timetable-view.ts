@@ -5,6 +5,7 @@ import {
   loadTimetable,
   previousTerm,
   resolveTerm,
+  splitByAcademicYear,
 } from "./timetable.js";
 
 export interface TimetableFilter {
@@ -20,16 +21,15 @@ export interface TimetableFilter {
  * of the timetable page.
  */
 export async function timetableView(orgId: string, args: TimetableFilter) {
-  let term: { id: string; name: string } | null = null;
+  let found: { id: string; name: string; academicYearId: string } | null = null;
   if (args.termId) {
-    term = await findTerm(orgId, args.termId);
-    if (!term) throw new Error("That term is not in this school.");
+    found = await findTerm(orgId, args.termId);
+    if (!found) throw new Error("That term is not in this school.");
   } else {
     const current = await resolveTerm(orgId);
-    if (current.termId) {
-      term = { id: current.termId, name: current.termName! };
-    }
+    if (current.termId) found = await findTerm(orgId, current.termId);
   }
+  const term = found ? { id: found.id, name: found.name } : null;
 
   const loaded = await clashesForTerm(orgId, term?.id ?? null);
   const { week, locale, fromUntermedRows } = loaded;
@@ -85,13 +85,20 @@ export async function timetableView(orgId: string, args: TimetableFilter) {
   );
 
   // Nothing of its own and no earlier timetable standing in: the term before,
-  // when it has a timetable, is what the page offers to copy. Read-only.
+  // when it has a timetable with classes of this term's year, is what the
+  // page offers to copy (last year's classes never carry over). Read-only.
   const termEmpty = !!term && !fromUntermedRows && loaded.periods.length === 0;
   let before: { id: string; name: string } | null = null;
   if (termEmpty) {
-    const prev = await previousTerm(orgId, term!.id);
-    if (prev && (await loadTimetable(orgId, prev.id)).periods.length > 0) {
-      before = prev;
+    const prev = await previousTerm(orgId, found!.id);
+    if (prev) {
+      const { periods: prevPeriods } = await loadTimetable(orgId, prev.id);
+      const { kept } = await splitByAcademicYear(
+        orgId,
+        prevPeriods,
+        found!.academicYearId,
+      );
+      if (kept.length > 0) before = prev;
     }
   }
 

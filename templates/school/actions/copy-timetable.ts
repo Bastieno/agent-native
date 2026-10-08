@@ -7,12 +7,15 @@ import { getDb, schema } from "../server/db/index.js";
 import {
   clashesForTerm,
   findTerm,
+  listInWords,
   previousTerm,
+  splitByAcademicYear,
 } from "../server/lib/timetable.js";
+import { findClashes } from "../server/lib/timetable-clashes.js";
 
 export default defineAction({
   description:
-    "Copy one term's timetable to another: the same classes in the same days, periods, times and rooms. Shows what would be copied (and how many clashes it carries), and from where, until confirm is true. Refuses when the target term already has periods of its own. The source is fromTermId; or, with fromEarlier, the school's earlier timetable set before terms were used; or, with neither, the term before toTermId. If the source term has none but the school's earlier, un-termed timetable exists, that is what is copied.",
+    "Copy one term's timetable to another: the same classes in the same days, periods, times and rooms. Shows what would be copied (and how many clashes it carries), and from where, until confirm is true. Refuses when the target term already has periods of its own. The source is fromTermId; or, with fromEarlier, the school's earlier timetable set before terms were used; or, with neither, the term before toTermId. If the source term has none but the school's earlier, un-termed timetable exists, that is what is copied. Only classes of the target term's academic year are copied: periods of another year's classes (last year's, at the start of a new one) are left out and named.",
   schema: z.object({
     fromTermId: z
       .string()
@@ -76,31 +79,61 @@ export default defineAction({
           : "The school has no earlier timetable to copy.",
       );
     }
-    const ids = source.periods.map((p) => p.scheduleId);
-    const rows = await db
-      .select()
-      .from(S)
-      .where(and(eq(S.schoolId, orgId), inArray(S.id, ids)));
-
     const earlier = !from || source.fromUntermedRows;
     const origin = earlier
       ? "the school's earlier timetable (set before terms were used)"
       : from!.name;
+
+    // Another academic year's classes stay behind: a new year's first term
+    // gets this year's classes, not last year's.
+    const { kept, skipped, skippedClasses } = await splitByAcademicYear(
+      orgId,
+      source.periods,
+      to.academicYearId,
+    );
+    const leftOut = skipped.length
+      ? `${skipped.length} period(s) of ${skippedClasses.length} class(es) from another academic year are left out: ${listInWords(skippedClasses)}.`
+      : "";
+    if (kept.length === 0) {
+      throw new Error(
+        `Every period in ${origin} belongs to a class from another academic year (${listInWords(skippedClasses)}), so there is nothing to copy into ${to.name}. Start ${to.name} with an empty timetable instead.`,
+      );
+    }
+    const clashes = findClashes(kept, {
+      locale: source.locale,
+      armNames: source.armNames,
+    });
+
+    const ids = kept.map((p) => p.scheduleId);
+    const rows = await db
+      .select()
+      .from(S)
+      .where(
+        and(eq(S.orgId, orgId), eq(S.schoolId, orgId), inArray(S.id, ids)),
+      );
+
     // What the source is called, for a button or a sentence.
     const fromLabel = earlier
       ? { termId: null, name: "the earlier timetable" }
       : { termId: from!.id, name: from!.name };
-    const clashNote = source.clashes.length
-      ? `, ${source.clashes.length} of them clashing`
+    const clashNote = clashes.length
+      ? `, ${clashes.length} of them clashing`
       : ", with no clashes";
     const summary = `${rows.length} period(s) from ${origin}`;
+    const skippedReply = {
+      periods: skipped.length,
+      classNames: skippedClasses,
+    };
 
     if (!args.confirm) {
       return {
         periods: rows.length,
-        clashes: source.clashes.length,
+        clashes: clashes.length,
+        skipped: skippedReply,
         from: fromLabel,
-        message: `Copying would put ${summary} into ${to.name}${clashNote}. Nothing has been copied yet; confirm to do it.`,
+        message: `Copying would put ${summary} into ${to.name}${clashNote}.${
+          leftOut ? ` ${leftOut}` : ""
+        } Nothing has been copied yet; confirm to do it.`,
       };
     }
 
@@ -126,10 +159,13 @@ export default defineAction({
     }
     return {
       periods: rows.length,
-      clashes: source.clashes.length,
+      clashes: clashes.length,
+      skipped: skippedReply,
       copied: true,
       from: fromLabel,
-      message: `Copied ${summary} into ${to.name}${clashNote}.`,
+      message: `Copied ${summary} into ${to.name}${clashNote}.${
+        leftOut ? ` ${leftOut}` : ""
+      }`,
     };
   },
 });
