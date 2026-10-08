@@ -15,21 +15,25 @@ works; this covers only the timetable.
 | One period per class, created by the simulation                                                | `test/sim/school-setup.ts`                        |
 | A run checks a teacher's day holds only their classes                                          | `test/sim/school-term.ts` → `checkTodaysSchedule` |
 
-## What is missing
+## What was missing, and what exists now
 
-- **No way to build a timetable in the app.** Periods can only be created one
-  action call at a time, by the agent. There is no admin screen, no grid, no
-  bulk entry.
-- **Nothing detects a clash.** A teacher can be put in two rooms at once, a
-  class can be given two subjects in one period, and a room can be
-  double-booked. Nothing complains.
-- **No learner view.** A student cannot see their own week; `get-my-schedule`
-  is staff-only.
-- **No notion of a school's own week.** Periods are free text times and a day
-  number. A school with eight periods, a different bell schedule, a Saturday
-  morning, or a two-week rotating timetable has nowhere to say so.
-- **Not term-aware.** A schedule row has no term, so last term's timetable and
-  this term's are the same rows.
+The design is in [timetable-design.md](./timetable-design.md).
+
+- **Building a timetable** is now an admin page (`/admin/timetable`) and the
+  actions `get-timetable`, `set-timetable-period`, `remove-timetable-period`
+  and `copy-timetable`.
+- **Clash detection** is `server/lib/timetable-clashes.ts`: teacher, room,
+  arm and learner clashes, saved and flagged, never refused. Option blocks are
+  not clashes.
+- **A learner's week** is `get-my-week` and `/student/week`. `get-my-schedule`
+  is still the teacher's day.
+- **The school's own week** is `schoolWeek` and `rooms` in the school config,
+  set with `update-school-config`. There is no default; `check-school-setup`
+  reports it. Rotating timetables are not built (`cycleLength` is always 1).
+- **Terms**: a timetable belongs to a term, and a term with none of its own
+  shows the earlier, term-less one until it is copied in.
+- **Arms** (`list-arms`, `create-arm`, `update-arm`, `set-learner-arm`) and the
+  agent's guide to all of it (AGENTS.md, A2c) were added with it.
 
 ## Rules that apply here
 
@@ -67,7 +71,5 @@ extensions having no affordances, a sweep for run-together text, the agent
 
 ## Where I would start
 
-A timetable is a grid: day × period × class. The useful first move is to
-decide what a school's week _is_ — periods and bell times as a setting —
-because every screen and every clash check depends on it. Build that, then
-the admin grid, then clash detection, then the learner's week.
+Read the design, then `AGENTS.md` A2c. Not built: rotating timetables,
+automatic generation, double periods as one object.

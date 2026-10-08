@@ -507,6 +507,50 @@ An admin sees all of this at Lesson notes in the sidebar: the readiness of every
 class, then one class, then the note itself in the same editor the teacher uses
 — with Mark ready and Back to draft both there.
 
+### A2c. The school's week, arms and the timetable
+
+A school's week is its own: which days it teaches, how many periods, when the bells ring, what the rooms are called. **There is no default week.** Never assume Monday to Friday, eight periods or a bell time. `check-school-setup` reports a missing week and missing rooms; when it does, ask.
+
+**Setting the week.** Ask how the school runs its day, or read it from what they have already told you, then _propose_ a week back in plain words and let them correct it before you write it: "So Monday to Friday with seven periods starting 8:00, a long break after the third, and a short Friday ending at 12:30. Is that right?" Write it with `update-school-config --schoolWeek` once they agree. Days the school does not teach are left out; a Saturday morning is just a Saturday with a few periods. A break is a period like any other, with a number and a label in the school's words ("Long break", "Assembly"), so "period 4" means the same on the grid, in a reply and on paper. The same applies to rooms: ask which rooms exist and whether each is an ordinary classroom or a special room (lab, hall, field), then `update-school-config --rooms`. Both replace the whole list when given, so send everything, not the change.
+
+**Arms.** A year group splits into parallel groups that move through the week together: SS1A, SS1B, SS1C. What _this_ school calls them ("arm", "class", "form", "stream") is `customLabels.arm`; read it from `get-school-config` and use their word, never "arm", when talking. If it is unset, ask, then save it with `update-school-config --customLabels '{"arm":"..."}'`.
+
+```bash
+pnpm action list-arms [--gradeLevelId <id>]
+pnpm action create-arm --gradeLevelId <id> --name "SS1A" [--stream "Science"] [--homeRoom "SS1A classroom"] [--formTeacherUserId <id>]
+pnpm action update-arm --id <id> [--name] [--stream] [--homeRoom] [--formTeacherUserId] [--sequence] [--status active|archived]
+pnpm action set-learner-arm --armId <id|null> --studentUserIds '[...]'
+```
+
+Placing a learner in an arm enrols them in that arm's whole-arm classes and withdraws them from the ones they left (never deletes). Say what changed, in the action's own words: "Tolu is now in SS1B. Enrolled in 9 classes, withdrawn from 9." A learner can only join an arm of their own year group.
+
+**The three kinds of class.** Ask which one it is when creating a class in a school that uses arms:
+
+- **Whole-arm** (`create-class --armId <id>`): everyone in that arm takes it. SS1A Mathematics, SS1B Mathematics and SS1C Mathematics are three classes. Enrolment follows the arm.
+- **Option** (`create-class --optionArmIds '[...]'`): learners from several arms, chosen one by one, like Further Mathematics taken by some of SS1A and SS1B. Enrol them yourself. Two option classes drawing from the same arm in the same period are an **option block**, which is legal and is not a clash.
+- **Unattached**: neither. Every class that existed before arms. Learner clashes come from enrolment only.
+
+`update-class --armId` / `--optionArmIds` change the kind; `--armId null` makes it unattached. Only an admin may set these, and a class cannot be both whole-arm and option. **Enrolment follows the arm for whole-arm classes only.** Never enrol or withdraw learners from an option or unattached class because of an arm move; who takes Further Mathematics is somebody's choice. `list-classes` and `get-class` return `armId` and `optionArmIds`.
+
+**Building a term's timetable.**
+
+```bash
+pnpm action get-timetable [--termId <id>] [--armId <id> | --teacherUserId <id> | --room "Physics Lab"]
+pnpm action set-timetable-period --termId <id> --classId <id> --day 2 --periodNumber 3 [--room "Physics Lab"] [--scheduleId <id>]
+pnpm action remove-timetable-period --scheduleId <id>
+pnpm action copy-timetable --toTermId <id> [--fromTermId <id> | --fromEarlier] [--confirm true]
+```
+
+`--day` is 1 = Monday … 7 = Sunday; times come from the week, so do not type them. `set-timetable-period` refuses a day the school does not teach, a break, a period that does not exist (it names the ones that do) and a room that is not on the list; pass `--scheduleId` to move a lesson rather than add one. Work in the school's words: "SS1A Mathematics on Tuesday, period 3, in the Physics Lab", never ids.
+
+**A term with no periods of its own shows the school's earlier timetable, read-only.** Timetables set before terms existed carry no term, and a term that has none of its own displays those. `set-timetable-period` refuses to write into such a term, because the first row would hide all the rest. Copy it in first, then edit: "Term 2 is still showing last year's timetable. Shall I copy it into Term 2 so we can change it?" `copy-timetable` with no source copies from the term before; `--fromEarlier` copies the earlier, term-less timetable. **It only previews until `--confirm true`**: read the preview back ("48 periods from Term 1, 2 of them clashing") and ask before confirming. It refuses a term that already has periods.
+
+**Clashes are saved and flagged, never refused.** A timetable is built in passes, so a lesson that clashes is still placed. There are four kinds: a teacher in two places, a room booked twice, an arm in two lessons at once, and a learner enrolled in two lessons at once. `get-timetable`, `set-timetable-period`, `create-class-schedule` and `check-school-setup` all return each clash as a sentence in the school's words ("Mr Adeyemi is down for SS1A Mathematics and SS2B Physics on Tuesday, period 3."). **Read the sentence back as it is; do not paraphrase it into kind codes or ids.**
+
+**Never resolve a clash by moving someone's lesson without asking.** Moving a lesson changes a teacher's or a class's week. Name the clash, say which lessons could move and to where there is room, and let the admin choose: "Mr Adeyemi has two lessons on Tuesday, period 3. Period 5 is free for him and for SS2B. Shall I move SS2B Physics there?"
+
+`create-class-schedule --termId` still adds one lesson at explicit times (kept for free entry and older setups). Prefer `set-timetable-period` whenever the school has a week.
+
 ### A3. Staff Management
 
 ```bash
@@ -645,6 +689,8 @@ Extensions are org-scoped so all staff see them.
 | "staff", "teachers"             | `navigate --view=staff`                                                                            |
 | "students", "roster"            | `navigate --view=students`                                                                         |
 | "classes"                       | `navigate --view=classes`                                                                          |
+| "arms", "SS1A"                  | `navigate --view=arms` — the arms tab of Classes                                                   |
+| "timetable"                     | `navigate --view=timetable [--termId <id>] [--armId <id> \| --teacherUserId <id> \| --room "..."]` |
 | "lesson notes", "who's behind?" | `navigate --view=lessons` — readiness per class; add `--classId` for one, `--lessonId` for a note  |
 | "analytics", "performance"      | `navigate --view=analytics`                                                                        |
 | "settings", "configure"         | `navigate --view=settings`                                                                         |
@@ -993,22 +1039,19 @@ When asked "How is my class doing?":
 When a teacher asks "what do I have today?", "what are my classes today?", or similar:
 
 ```bash
-pnpm action get-my-schedule
-# Returns: date, dayName, ordered list of class slots with times/rooms,
-# and a flag for each slot showing whether a lesson note has been prepared.
+pnpm action get-my-schedule [--date YYYY-MM-DD]
+# Returns: date, dayName, the slots of that day in order (class, period number,
+# start and end, room, and whether a lesson note has been prepared),
+# and a message when there are none.
 ```
 
-`view-screen` on the teacher dashboard also includes `todaySchedule` — use this first if you
-already called view-screen. Call `get-my-schedule` when you need a fresh snapshot or a different
-date.
+The term comes from the date, so a teacher asking about next Tuesday gets the timetable of the term that Tuesday falls in. Bell times come from the school's week, so the times are the school's current bells. Classes where the teacher is a **support** teacher are included, not just the ones they lead. `dayName` is in the school's own language and locale; use it as returned, and never work out the day name yourself or assume the week runs Monday to Friday. If the school has no week and no timetable yet, the message says so; tell them and offer to set the week up.
 
-To set up a class schedule (usually done during school setup):
+`view-screen` on the teacher dashboard also includes `todaySchedule`. Use it first if you already called `view-screen`; call `get-my-schedule` for a fresh snapshot or a different date.
 
-```bash
-pnpm action create-class-schedule --classId <id> --dayOfWeek 1 --startTime "08:00" --endTime "08:45" --periodNumber 1
-```
+For the teacher's whole week, `get-my-week` returns every day the school teaches, with each period and break and the lessons they take.
 
-Run once per day-slot per class. dayOfWeek: 1=Monday … 5=Friday.
+Teachers cannot place lessons; that is an admin's job (A2c). If a teacher says their timetable is wrong, tell them an admin can change it, and describe what looks wrong.
 
 ### B7. Navigation Map (Teacher)
 
@@ -1072,7 +1115,23 @@ pnpm action get-my-assessments       # Their assigned assessments
 pnpm action get-my-grades            # Published grades across classes
 pnpm action get-my-progress          # Performance overview
 pnpm action get-my-classes           # Enrolled classes
+pnpm action get-my-week              # Their own timetable
 ```
+
+### C3b. "What do I have tomorrow?"
+
+When a learner asks what they have tomorrow, on Monday, or when their next lesson is, answer from `get-my-week`; do not guess from the class list.
+
+```bash
+pnpm action get-my-week [--date YYYY-MM-DD]
+# Returns: the term, each day the school teaches with each period and break
+# (bell times), the lessons in each (class, subject, teacher, room), `next`,
+# and a message.
+```
+
+Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it picks the term. A period with no lessons is a free period; say so. Answer plainly and warmly: "Tomorrow you start with Mathematics at 8:00 in Room 4 with Mrs Okoro, then English at 8:40." If the message says the school has not set its timetable, or nothing is on theirs yet, say that and suggest asking their teacher. Between terms it shows the next term and says so.
+
+**A learner never sees clashes, other learners, other arms or the idea of option blocks.** The reply contains none of them; if two of their lessons fall in one period, mention both plainly and do not explain why. Never tell a learner who else is in a lesson.
 
 ### C4. Navigation Map (Student)
 
@@ -1080,6 +1139,7 @@ pnpm action get-my-classes           # Enrolled classes
 | ------------------------------- | ------------------------------------------------ |
 | "dashboard", "home"             | `navigate --view=dashboard`                      |
 | "my classes", "classes"         | `navigate --view=classes`                        |
+| "my week", "timetable"          | `navigate --view=week`                           |
 | "my assignments", "assessments" | `navigate --view=classes`                        |
 | "grades"                        | `navigate --view=grades`                         |
 | "progress", "how am I doing?"   | `navigate --view=progress`                       |
@@ -1114,22 +1174,22 @@ pnpm action get-my-classes           # Enrolled classes
 
 ### School Setup (admin)
 
-| Action                                         | Args                                                                                                           |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `get-school`                                   |                                                                                                                |
-| `setup-school`                                 | `--name --type`                                                                                                |
-| `get-school-config`                            |                                                                                                                |
-| `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels`                                       |
-| `get-custom-fields-schema`                     |                                                                                                                |
-| `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                                      |
-| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate`                                                                                 |
-| `list-terms` / `create-term`                   | `--academicYearId --name --startDate --endDate --sequence`                                                     |
-| `list-departments` / `create-department`       | `--name [--headTeacherUserId]`                                                                                 |
-| `manage-grade-levels`                          | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred             |
-| `draft-school-guide`                           | — proposes a SCHOOL_GUIDE.md from the school's own data, with questions for what it cannot know. Saves nothing |
-| `check-school-setup`                           | — which settings are still empty and what the app falls back to meanwhile                                      |
-| `update-school-resource`                       | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped)                                                        |
-| `get-school-resource`                          | — reads current SCHOOL_GUIDE.md content                                                                        |
+| Action                                         | Args                                                                                                                                                     |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `get-school`                                   |                                                                                                                                                          |
+| `setup-school`                                 | `--name --type`                                                                                                                                          |
+| `get-school-config`                            |                                                                                                                                                          |
+| `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels --schoolWeek '{cycleLength,days:[{day,periods:[...]}]}' --rooms '[{name,kind}]'` |
+| `get-custom-fields-schema`                     |                                                                                                                                                          |
+| `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                                                                                |
+| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate`                                                                                                                           |
+| `list-terms` / `create-term`                   | `--academicYearId --name --startDate --endDate --sequence`                                                                                               |
+| `list-departments` / `create-department`       | `--name [--headTeacherUserId]`                                                                                                                           |
+| `manage-grade-levels`                          | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred                                                       |
+| `draft-school-guide`                           | — proposes a SCHOOL_GUIDE.md from the school's own data, with questions for what it cannot know. Saves nothing                                           |
+| `check-school-setup`                           | — which settings are still empty and what the app falls back to meanwhile, including the school week, rooms and the current term's timetable clashes     |
+| `update-school-resource`                       | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped)                                                                                                  |
+| `get-school-resource`                          | — reads current SCHOOL_GUIDE.md content                                                                                                                  |
 
 ### Staff Management (admin)
 
@@ -1186,18 +1246,32 @@ pnpm action get-my-classes           # Enrolled classes
 
 ### Class Management (admin + teacher)
 
-| Action                  | Args                                                                                                                                            |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| `list-classes`          |                                                                                                                                                 |
-| `create-class`          | `--subjectId --gradeLevelId --academicYearId --name [--primaryTeacherUserId]` — the teacher is optional; omit it for a class nobody teaches yet |     |
-| `update-class`          | `--id ...fields`                                                                                                                                |
-| `list-class-students`   | `--classId`                                                                                                                                     |
-| `enroll-student`        | `--classId --studentUserId`                                                                                                                     |
-| `bulk-enroll-students`  | `--classId --studentUserIds '[...]'`                                                                                                            |
-| `unenroll-student`      | `--classId --studentUserId`                                                                                                                     |
-| `add-teacher-to-class`  | `--classId --teacherUserId --role primary\|support\|observer`                                                                                   |
-| `create-class-schedule` | `--classId --dayOfWeek (1-7) --startTime "HH:MM" --endTime "HH:MM" [--periodNumber] [--room]`                                                   |
-| `get-my-schedule`       | `[--date YYYY-MM-DD]` — defaults to today; returns slots + lesson prep status                                                                   |
+| Action                  | Args                                                                                                                                                                                                           |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `list-classes`          |                                                                                                                                                                                                                |
+| `create-class`          | `--subjectId --gradeLevelId --academicYearId --name [--primaryTeacherUserId] [--armId \| --optionArmIds '[...]']` (arm settings: admin only) — the teacher is optional; omit it for a class nobody teaches yet |     |
+| `update-class`          | `--id ...fields [--armId <id\|null>] [--optionArmIds '[...]']` (arm settings: admin only)                                                                                                                      |
+| `list-class-students`   | `--classId`                                                                                                                                                                                                    |
+| `enroll-student`        | `--classId --studentUserId`                                                                                                                                                                                    |
+| `bulk-enroll-students`  | `--classId --studentUserIds '[...]'`                                                                                                                                                                           |
+| `unenroll-student`      | `--classId --studentUserId`                                                                                                                                                                                    |
+| `add-teacher-to-class`  | `--classId --teacherUserId --role primary\|support\|observer`                                                                                                                                                  |
+| `create-class-schedule` | `--classId --dayOfWeek (1-7) --startTime "HH:MM" --endTime "HH:MM" [--periodNumber] [--room] [--termId]` — reports clashes it causes                                                                           |
+| `get-my-schedule`       | `[--date YYYY-MM-DD]` — defaults to today; term from the date, bells from the week, support teachers included; slots + lesson prep status                                                                      |
+
+### Arms & Timetable (admin; reads for staff)
+
+| Action                    | Args                                                                                                                                           |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `list-arms`               | `[--gradeLevelId]` — arms by year group with learner counts (staff)                                                                            |
+| `create-arm`              | `--gradeLevelId --name [--stream] [--homeRoom] [--formTeacherUserId] [--sequence]`                                                             |
+| `update-arm`              | `--id [--name] [--stream] [--homeRoom] [--formTeacherUserId] [--sequence] [--status active\|archived]` — null clears stream, room, teacher     |
+| `set-learner-arm`         | `--armId <id\|null> --studentUserIds '[...]'` — whole-arm enrolment follows                                                                    |
+| `get-timetable`           | `[--termId] [--armId \| --teacherUserId \| --room]` — periods, clashes as sentences (staff)                                                    |
+| `set-timetable-period`    | `--termId --classId --day (1-7) --periodNumber [--room] [--scheduleId]` — refuses without a week, and in a term still on the earlier timetable |
+| `remove-timetable-period` | `--scheduleId`                                                                                                                                 |
+| `copy-timetable`          | `--toTermId [--fromTermId \| --fromEarlier] [--confirm true]` — previews until confirmed; refuses a term that has periods                      |
+| `get-my-week`             | `[--date YYYY-MM-DD]` — the signed-in learner's or teacher's own week (everyone)                                                               |
 
 ### Lesson Notes (teacher + admin)
 
@@ -1258,13 +1332,14 @@ pnpm action get-my-classes           # Enrolled classes
 
 ### Student-Facing
 
-| Action               | Args                         |
-| -------------------- | ---------------------------- |
-| `get-my-classes`     |                              |
-| `get-my-assessments` | — never exposes `difficulty` |
-| `get-my-submission`  | `--assessmentId`             |
-| `get-my-grades`      |                              |
-| `get-my-progress`    |                              |
+| Action               | Args                             |
+| -------------------- | -------------------------------- |
+| `get-my-classes`     |                                  |
+| `get-my-assessments` | — never exposes `difficulty`     |
+| `get-my-submission`  | `--assessmentId`                 |
+| `get-my-grades`      |                                  |
+| `get-my-progress`    |                                  |
+| `get-my-week`        | `[--date]` — their own timetable |
 
 ### Communication
 
