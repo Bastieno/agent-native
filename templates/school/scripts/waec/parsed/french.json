@@ -1,0 +1,70 @@
+{
+  "found": true,
+  "subject": "French",
+  "subjectCode": "FRENCH",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Comprehension and Structure",
+      "abbreviation": "COMPREHSTR",
+      "subStrands": [
+        {
+          "name": "Reading Comprehension and Grammar",
+          "objectives": [
+            {
+              "code": "FRENCH-COMPREHSTR-1",
+              "description": "Comprehension: ability to read and understand standard written documents in French; two passages each of about 150 words with short questions."
+            },
+            {
+              "code": "FRENCH-COMPREHSTR-2",
+              "description": "Structure: parts of speech (grammatical categories); articles — definite, indefinite, partitive (gender and number); verbs — types (regular and irregular), common moods and tenses, standard expressions (avoir + noun, venir de + infinitive); nouns — complements, gender, number; pronouns — personal, possessive, indefinite, demonstrative, relative, impersonal; adjectives — possessive, demonstrative, indefinite, interrogative (agreement and position); adverbs — formation and position, special adverbs; negatives — negative expressions (ne…pas, ne…rien, ne…jamais, etc.); conjunctions in common use; prepositions; sentence patterns; voice — active/passive; direct speech/reported speech; compound and complex sentences; idiomatic expressions and proverbs; forms of writing (formal/informal); common figures of speech (similes, metaphors, hyperboles); structures of major actes de parole."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Writing",
+      "abbreviation": "WRITE",
+      "subStrands": [
+        {
+          "name": "Essay and Letter Writing",
+          "objectives": [
+            {
+              "code": "FRENCH-WRITE-1",
+              "description": "Essay: ability to write freely and correctly on topics of general interest using appropriate structures, registers and tenses (approximately 100 words)."
+            },
+            {
+              "code": "FRENCH-WRITE-2",
+              "description": "Letter writing: ability to write formal and informal letters in French using appropriate format and register."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oral Skills",
+      "abbreviation": "ORAL",
+      "subStrands": [
+        {
+          "name": "Listening Comprehension, Reading Aloud and Conversation",
+          "objectives": [
+            {
+              "code": "FRENCH-ORAL-1",
+              "description": "Listening comprehension: ability to listen to and understand a straightforward passage in French (about 200 words); answer 10 questions based on the passage read aloud by the examiner."
+            },
+            {
+              "code": "FRENCH-ORAL-2",
+              "description": "Reading: ability to read aloud a simple passage (about 100 words) with appropriate pronunciation and fluency."
+            },
+            {
+              "code": "FRENCH-ORAL-3",
+              "description": "Conversation: ability to express oneself freely in a dialogue (responding to a minimum of ten questions) and exposition (making a minimum of 5 sentences on a given topic); topics drawn from general and contemporary interests such as sports, health, leisure, education, politics, culture, etc."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

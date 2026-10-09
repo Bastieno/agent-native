@@ -1,0 +1,345 @@
+import { and, eq, inArray, isNotNull } from "drizzle-orm";
+import { nanoid } from "nanoid";
+import { getOrgSetting } from "@agent-native/core/settings";
+import { getDb, schema } from "../db/index.js";
+import { termContext } from "./timetable.js";
+
+/**
+ * Enrolment that follows a learner's arm.
+ *
+ * Only whole-arm classes (`classes.arm_id`) follow it. An option class draws
+ * learners from several arms and has its roll chosen; an unattached class is
+ * the school's own business. Neither is touched here.
+ *
+ * A learner leaving a class is marked withdrawn, never deleted, so coming
+ * back reactivates that row instead of adding a second one.
+ *
+ * Only the active academic year's classes follow: last year's rolls are the
+ * record of last year (gradebooks and report cards read them), so a move at
+ * promotion never rewrites them. With no active year, nothing is touched.
+ */
+
+/** The active academic year's id, by the same rule the timetable uses. */
+async function activeYearId(orgId: string): Promise<string | null> {
+  return (await termContext(orgId))?.year.id ?? null;
+}
+
+/** Why a class's roll was left alone, in words; null when it was not. */
+export type RollUntouched = "no-active-year" | "other-year" | null;
+
+/** The sentence for a roll left alone, naming what this school calls an arm. */
+export function untouchedNote(reason: RollUntouched, word: string): string {
+  if (reason === "no-active-year") {
+    return `No academic year is active, so no class rolls were changed for the ${word}.`;
+  }
+  if (reason === "other-year") {
+    return `The class is not in the active academic year, so its roll was left as it is.`;
+  }
+  return "";
+}
+
+/** Put these learners on a class's roll; returns how many were newly put on. */
+async function enrol(classId: string, userIds: string[]): Promise<number> {
+  if (userIds.length === 0) return 0;
+  const db = getDb();
+  const existing = await db
+    .select()
+    .from(schema.classEnrollments)
+    .where(
+      and(
+        eq(schema.classEnrollments.classId, classId),
+        inArray(schema.classEnrollments.studentUserId, userIds),
+      ),
+    );
+  const byUser = new Map<string, any>(
+    existing.map((e: any) => [e.studentUserId, e]),
+  );
+
+  const toInsert: string[] = [];
+  const toReactivate: string[] = [];
+  for (const userId of userIds) {
+    const row = byUser.get(userId);
+    if (!row) toInsert.push(userId);
+    else if (row.status === "withdrawn") toReactivate.push(row.id);
+    // active stays as it is; suspended is a decision someone made.
+  }
+  if (toInsert.length > 0) {
+    await db.insert(schema.classEnrollments).values(
+      toInsert.map((studentUserId) => ({
+        id: nanoid(),
+        classId,
+        studentUserId,
+        status: "active",
+      })),
+    );
+  }
+  if (toReactivate.length > 0) {
+    await db
+      .update(schema.classEnrollments)
+      .set({ status: "active" })
+      .where(inArray(schema.classEnrollments.id, toReactivate));
+  }
+  return toInsert.length + toReactivate.length;
+}
+
+/**
+ * The class's academic year against the active one: why its roll must be left
+ * alone, or null when it is this year's.
+ */
+async function rollUntouched(
+  orgId: string,
+  classId: string,
+): Promise<RollUntouched> {
+  const yearId = await activeYearId(orgId);
+  if (!yearId) return "no-active-year";
+  const [cls] = await getDb()
+    .select({ academicYearId: schema.classes.academicYearId })
+    .from(schema.classes)
+    .where(and(eq(schema.classes.orgId, orgId), eq(schema.classes.id, classId)))
+    .limit(1);
+  return cls && cls.academicYearId === yearId ? null : "other-year";
+}
+
+/**
+ * Enrol every active learner of an arm in a class made for that arm — when
+ * the class is in the active academic year; otherwise says why not.
+ */
+export async function enrolArmInClass(
+  orgId: string,
+  classId: string,
+  armId: string,
+): Promise<{ enrolled: number; untouched: RollUntouched }> {
+  const untouched = await rollUntouched(orgId, classId);
+  if (untouched) return { enrolled: 0, untouched };
+  const learners = await getDb()
+    .select({ userId: schema.students.userId })
+    .from(schema.students)
+    .where(
+      and(
+        eq(schema.students.orgId, orgId),
+        eq(schema.students.armId, armId),
+        eq(schema.students.status, "active"),
+      ),
+    );
+  const enrolled = await enrol(
+    classId,
+    learners.map((l: any) => l.userId),
+  );
+  return { enrolled, untouched: null };
+}
+
+/**
+ * What this school calls an arm, lower-cased for running text ("arm" unless
+ * the school's own words say otherwise).
+ */
+export async function armWord(orgId: string): Promise<string> {
+  const config = ((await getOrgSetting(orgId, "school-config")) ??
+    {}) as Record<string, any>;
+  const label = config.customLabels?.arm;
+  return typeof label === "string" && label.trim()
+    ? label.trim().toLowerCase()
+    : "arm";
+}
+
+/**
+ * Move a learner to another arm (or to none), and make their whole-arm
+ * classes agree: off other arms', on the new arm's.
+ *
+ * Reconciles whether or not the arm changed, so a move that stopped halfway
+ * is healed by asking again, not stranded.
+ */
+export async function moveLearnerArm(
+  orgId: string,
+  studentUserId: string,
+  toArmId: string | null,
+): Promise<{
+  fromArmId: string | null;
+  enrolled: number;
+  withdrawn: number;
+  untouched: RollUntouched;
+}> {
+  const db = getDb();
+  const [student] = await db
+    .select()
+    .from(schema.students)
+    .where(
+      and(
+        eq(schema.students.orgId, orgId),
+        eq(schema.students.userId, studentUserId),
+      ),
+    )
+    .limit(1);
+  if (!student) throw new Error("That learner is not in this school.");
+
+  const fromArmId: string | null = student.armId ?? null;
+  if (fromArmId !== toArmId) {
+    await db
+      .update(schema.students)
+      .set({ armId: toArmId, updatedAt: new Date().toISOString() })
+      .where(
+        and(
+          eq(schema.students.orgId, orgId),
+          eq(schema.students.id, student.id),
+        ),
+      );
+  }
+
+  // Every whole-arm class of this year, to tell the learner's own from the
+  // rest. Other years' rolls stay as they were.
+  const yearId = await activeYearId(orgId);
+  if (!yearId) {
+    return {
+      fromArmId,
+      enrolled: 0,
+      withdrawn: 0,
+      untouched: "no-active-year",
+    };
+  }
+  const wholeArm = await db
+    .select({ id: schema.classes.id, armId: schema.classes.armId })
+    .from(schema.classes)
+    .where(
+      and(
+        eq(schema.classes.orgId, orgId),
+        eq(schema.classes.academicYearId, yearId),
+        eq(schema.classes.status, "active"),
+        isNotNull(schema.classes.armId),
+      ),
+    );
+  const others = wholeArm
+    .filter((c: any) => c.armId !== toArmId)
+    .map((c: any) => c.id);
+
+  let withdrawn = 0;
+  if (others.length > 0) {
+    const active = await db
+      .select({ id: schema.classEnrollments.id })
+      .from(schema.classEnrollments)
+      .where(
+        and(
+          inArray(schema.classEnrollments.classId, others),
+          eq(schema.classEnrollments.studentUserId, studentUserId),
+          eq(schema.classEnrollments.status, "active"),
+        ),
+      );
+    if (active.length > 0) {
+      await db
+        .update(schema.classEnrollments)
+        .set({ status: "withdrawn" })
+        .where(
+          inArray(
+            schema.classEnrollments.id,
+            active.map((a: any) => a.id),
+          ),
+        );
+    }
+    withdrawn = active.length;
+  }
+
+  let enrolled = 0;
+  if (toArmId) {
+    for (const c of wholeArm.filter((c: any) => c.armId === toArmId)) {
+      enrolled += await enrol(c.id, [studentUserId]);
+    }
+  }
+  return { fromArmId, enrolled, withdrawn, untouched: null };
+}
+
+/**
+ * A class stopped being for `oldArmId` (it moved to another arm, or is no
+ * longer whole-arm): withdraw that arm's learners from it. Learners already
+ * in the new arm stay; returns how many were withdrawn.
+ */
+export async function withdrawArmFromClass(
+  orgId: string,
+  classId: string,
+  oldArmId: string,
+  newArmId: string | null,
+): Promise<number> {
+  if (oldArmId === newArmId) return 0;
+  if (await rollUntouched(orgId, classId)) return 0;
+  const db = getDb();
+  const learners = await db
+    .select({ userId: schema.students.userId })
+    .from(schema.students)
+    .where(
+      and(
+        eq(schema.students.orgId, orgId),
+        eq(schema.students.armId, oldArmId),
+      ),
+    );
+  const ids = learners.map((l: any) => l.userId);
+  if (ids.length === 0) return 0;
+  const active = await db
+    .select({ id: schema.classEnrollments.id })
+    .from(schema.classEnrollments)
+    .where(
+      and(
+        eq(schema.classEnrollments.classId, classId),
+        inArray(schema.classEnrollments.studentUserId, ids),
+        eq(schema.classEnrollments.status, "active"),
+      ),
+    );
+  if (active.length > 0) {
+    await db
+      .update(schema.classEnrollments)
+      .set({ status: "withdrawn" })
+      .where(
+        inArray(
+          schema.classEnrollments.id,
+          active.map((a: any) => a.id),
+        ),
+      );
+  }
+  return active.length;
+}
+
+/** The arms named, each checked to be this school's and in this year group. */
+export async function armsInYearGroup(
+  orgId: string,
+  gradeLevelId: string,
+  armIds: string[],
+): Promise<void> {
+  const ids = [...new Set(armIds)];
+  if (ids.length === 0) return;
+  const rows = await getDb()
+    .select({
+      id: schema.arms.id,
+      name: schema.arms.name,
+      gradeLevelId: schema.arms.gradeLevelId,
+    })
+    .from(schema.arms)
+    .where(and(eq(schema.arms.orgId, orgId), inArray(schema.arms.id, ids)));
+  if (rows.length !== ids.length) {
+    throw new Error(
+      `One of those ${await armWord(orgId)}s is not in this school.`,
+    );
+  }
+  const wrong = rows.filter((r: any) => r.gradeLevelId !== gradeLevelId);
+  if (wrong.length > 0) {
+    throw new Error(
+      `${wrong.map((r: any) => r.name).join(", ")} is not in this class's year group.`,
+    );
+  }
+}
+
+/** Make these the option class's arms, replacing whatever it had. */
+export async function setOptionArms(
+  classId: string,
+  armIds: string[],
+): Promise<void> {
+  const db = getDb();
+  await db
+    .delete(schema.classArms)
+    .where(eq(schema.classArms.classId, classId));
+  const ids = [...new Set(armIds)];
+  if (ids.length > 0) {
+    await db.insert(schema.classArms).values(
+      ids.map((armId) => ({
+        id: nanoid(),
+        classId,
+        armId,
+      })),
+    );
+  }
+}

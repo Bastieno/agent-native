@@ -1487,9 +1487,17 @@ function createAuthGuardFn(): (
     if (p === "/login" || p === "/signup") {
       const session = await getSession(event);
       if (session) {
+        const queryStr = queryStart >= 0 ? url.slice(queryStart + 1) : "";
+        const safeReturn = safeReturnPath(
+          new URLSearchParams(queryStr).get("return"),
+        );
+        const dest =
+          safeReturn && safeReturn !== "/login" && safeReturn !== "/signup"
+            ? safeReturn
+            : getAppBasePath() || "/";
         return new Response("", {
           status: 302,
-          headers: { Location: getAppBasePath() || "/" },
+          headers: { Location: dest },
         });
       }
       return new Response(loginHtml, {
@@ -1544,6 +1552,22 @@ function createAuthGuardFn(): (
     if (getMethod(event) === "GET") {
       const autoSession = await maybeAutoCreateDevSession(event, url);
       if (autoSession) return autoSession;
+    }
+
+    // Redirect page routes to /login?return=<path> so the URL bar shows /login
+    // while the user authenticates. After sign-in, __anGetReturnPath() in the
+    // login HTML reads the ?return= param and navigates back to the original URL.
+    // Fall back to inline login HTML for / itself to avoid a redirect loop.
+    const queryStr = queryStart >= 0 ? url.slice(queryStart) : "";
+    const fullReturnPath = rawPath + queryStr;
+    const safeReturn = safeReturnPath(fullReturnPath);
+    if (safeReturn && safeReturn !== "/" && safeReturn !== "/login" && safeReturn !== "/signup") {
+      return new Response("", {
+        status: 302,
+        headers: {
+          Location: `/login?return=${encodeURIComponent(safeReturn)}`,
+        },
+      });
     }
 
     return new Response(loginHtml, {

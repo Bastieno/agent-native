@@ -1,0 +1,70 @@
+{
+  "found": true,
+  "subject": "Livestock Farming",
+  "subjectCode": "LVSTK",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Introduction to Livestock Farming",
+      "abbreviation": "ILF",
+      "subStrands": [
+        {
+          "name": "Importance and Types of Livestock",
+          "objectives": [
+            {"code": "LVSTK-ILF-1", "description": "Explain the importance of livestock farming to food security, income generation, and the Nigerian economy"},
+            {"code": "LVSTK-ILF-2", "description": "Identify common livestock species farmed in Nigeria (cattle, goats, sheep, pigs, poultry, rabbits) and their uses"},
+            {"code": "LVSTK-ILF-3", "description": "Describe the characteristics and products of different livestock species"},
+            {"code": "LVSTK-ILF-4", "description": "Describe systems of livestock production: extensive, semi-intensive, and intensive farming systems"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Animal Husbandry Practices",
+      "abbreviation": "AHP",
+      "subStrands": [
+        {
+          "name": "Feeding, Housing, and Breeding",
+          "objectives": [
+            {"code": "LVSTK-AHP-1", "description": "Describe the nutritional requirements of common livestock and identify types of livestock feed and feeding methods"},
+            {"code": "LVSTK-AHP-2", "description": "Design and describe appropriate housing structures for different livestock species"},
+            {"code": "LVSTK-AHP-3", "description": "Explain principles of livestock breeding including selection, mating systems, and record keeping"},
+            {"code": "LVSTK-AHP-4", "description": "Describe the reproductive cycles and gestation periods of common farm animals"},
+            {"code": "LVSTK-AHP-5", "description": "Apply good husbandry practices including water provision, sanitation, and environmental management"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Animal Health Management",
+      "abbreviation": "AHM",
+      "subStrands": [
+        {
+          "name": "Disease Prevention and Veterinary Care",
+          "objectives": [
+            {"code": "LVSTK-AHM-1", "description": "Identify common livestock diseases (Newcastle disease, foot-and-mouth disease, coccidiosis) and their symptoms"},
+            {"code": "LVSTK-AHM-2", "description": "Describe methods of disease prevention including vaccination, biosecurity, and deworming schedules"},
+            {"code": "LVSTK-AHM-3", "description": "Apply basic first aid treatment for minor livestock injuries and describe when to seek veterinary assistance"},
+            {"code": "LVSTK-AHM-4", "description": "Describe ectoparasites and endoparasites affecting livestock and methods of control"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Livestock Business and Value Chain",
+      "abbreviation": "LBV",
+      "subStrands": [
+        {
+          "name": "Farm Management and Entrepreneurship",
+          "objectives": [
+            {"code": "LVSTK-LBV-1", "description": "Keep simple livestock farm records including production data, expenses, and income"},
+            {"code": "LVSTK-LBV-2", "description": "Describe the value chain in livestock farming from production to processing and marketing"},
+            {"code": "LVSTK-LBV-3", "description": "Identify business opportunities in livestock farming including poultry, snail farming, and fish farming"},
+            {"code": "LVSTK-LBV-4", "description": "Write a simple farm business plan for a small-scale livestock enterprise"}
+          ]
+        }
+      ]
+    }
+  ]
+}

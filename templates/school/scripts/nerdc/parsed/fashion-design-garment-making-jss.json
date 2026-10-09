@@ -1,0 +1,73 @@
+{
+  "found": true,
+  "subject": "Fashion Design and Garment Making",
+  "subjectCode": "FDGM",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Fashion Fundamentals",
+      "abbreviation": "FF",
+      "subStrands": [
+        {
+          "name": "Tools, Materials, and Basic Stitches",
+          "objectives": [
+            {"code": "FDGM-FF-1", "description": "Identify and safely use fashion tools and equipment including needles, scissors, tape measure, thimble, and sewing machine"},
+            {"code": "FDGM-FF-2", "description": "Identify types of fabrics, their properties, and appropriate uses in garment making"},
+            {"code": "FDGM-FF-3", "description": "Demonstrate basic hand stitches (running stitch, backstitch, hemming, oversewing) with correct technique"},
+            {"code": "FDGM-FF-4", "description": "Describe types and uses of seams and apply them in joining fabric pieces"},
+            {"code": "FDGM-FF-5", "description": "Describe garment care practices including correct washing, ironing, and storage of different fabric types"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pattern Drafting and Cutting",
+      "abbreviation": "PDC",
+      "subStrands": [
+        {
+          "name": "Measurements, Patterns, and Sketching",
+          "objectives": [
+            {"code": "FDGM-PDC-1", "description": "Take and record accurate body measurements for garment making using a tape measure"},
+            {"code": "FDGM-PDC-2", "description": "Draft simple flat patterns for basic garments (blouse, skirt, shorts, shirt) using measurements"},
+            {"code": "FDGM-PDC-3", "description": "Cut fabric accurately along pattern markings with appropriate seam allowances"},
+            {"code": "FDGM-PDC-4", "description": "Create basic fashion illustrations and sketches for simple garment designs"},
+            {"code": "FDGM-PDC-5", "description": "Describe Nigerian traditional fabrics (Ankara, Adire, Aso-oke) and their cultural significance"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Garment Construction",
+      "abbreviation": "GC",
+      "subStrands": [
+        {
+          "name": "Sewing Projects and Practical Skills",
+          "objectives": [
+            {"code": "FDGM-GC-1", "description": "Construct simple garments including a blouse, shirt, skirt, or shorts following given patterns and instructions"},
+            {"code": "FDGM-GC-2", "description": "Apply dressmaking techniques including tucks, darts, gathering, and pleats in garment construction"},
+            {"code": "FDGM-GC-3", "description": "Sew a simple traditional Nigerian garment or ceremonial outfit applying appropriate techniques"},
+            {"code": "FDGM-GC-4", "description": "Describe fashion accessories (beads, head ties, belts, bags) and their role in completing an outfit"},
+            {"code": "FDGM-GC-5", "description": "Design and create a complete school uniform applying all construction skills learned"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fashion Business and Entrepreneurship",
+      "abbreviation": "FBE",
+      "subStrands": [
+        {
+          "name": "Careers, Entrepreneurship, and Fashion Industry",
+          "objectives": [
+            {"code": "FDGM-FBE-1", "description": "Identify career paths in fashion including tailor, fashion designer, textile artist, and stylist"},
+            {"code": "FDGM-FBE-2", "description": "Describe the steps involved in starting a small-scale fashion business including sourcing, pricing, and marketing"},
+            {"code": "FDGM-FBE-3", "description": "Write a simple business plan for a small fashion enterprise"},
+            {"code": "FDGM-FBE-4", "description": "Explain the global relevance of Nigerian fashion and the export potential of Nigerian fabrics (Ankara, Adire, Aso-oke)"},
+            {"code": "FDGM-FBE-5", "description": "Organise and present garments in a school fashion show or exhibition demonstrating design and craftsmanship"}
+          ]
+        }
+      ]
+    }
+  ]
+}

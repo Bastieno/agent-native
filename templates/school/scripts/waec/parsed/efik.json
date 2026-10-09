@@ -1,0 +1,82 @@
+{
+  "found": true,
+  "subject": "Efik",
+  "subjectCode": "EFIK",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Language",
+      "abbreviation": "LANG",
+      "subStrands": [
+        {
+          "name": "Composition, Sound System and Grammar",
+          "objectives": [
+            {
+              "code": "EFIK-LANG-1",
+              "description": "Comprehension: reading and understanding two short passages in Efik."
+            },
+            {
+              "code": "EFIK-LANG-2",
+              "description": "Composition/letter writing: essay types including narrative, descriptive, argumentative, expository, dialogue, debate, letter writing (approximately 300 words)."
+            },
+            {
+              "code": "EFIK-LANG-3",
+              "description": "Sound system: vowels and consonants — production in terms of place and manner of articulation, basic phonetic and phonemic classifications; syllable structure — the way consonants and vowels combine in words; sound processes e.g. vowel harmony, assimilation, elision, deletion, etc.; distribution of sounds; adaptation of loanwords; tone and intonation — high tone, low tone, falling tone, rising tone."
+            },
+            {
+              "code": "EFIK-LANG-4",
+              "description": "Grammar: word structure and word formation — root, affixes (prefix, suffix), compounding, borrowing, reduplication, etc.; word classes — noun, verbs, adverbs, pronouns, adjectives, etc.; grammatical categories — number, person, tense, negation, etc.; phrases and clauses — types and functions; the structure and types of sentences."
+            },
+            {
+              "code": "EFIK-LANG-5",
+              "description": "Translation: translation exercises between Efik and English."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Literature",
+      "abbreviation": "LIT",
+      "subStrands": [
+        {
+          "name": "Oral Literature and Written Literature",
+          "objectives": [
+            {
+              "code": "EFIK-LIT-1",
+              "description": "Basic principles of literary appreciation."
+            },
+            {
+              "code": "EFIK-LIT-2",
+              "description": "Oral literature: prose (folktales, legends, proverbs, riddles, etc.), poetry (songs, ballads), drama (traditional drama) — set books covering different genres."
+            },
+            {
+              "code": "EFIK-LIT-3",
+              "description": "Written literature — prose, poetry, drama: set books covering different genres."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Culture",
+      "abbreviation": "CULT",
+      "subStrands": [
+        {
+          "name": "Customs and Institutions",
+          "objectives": [
+            {
+              "code": "EFIK-CULT-1",
+              "description": "Customs (Edu Uwem): occupational activities (fishing, weaving, market); good upbringing and its benefits; food preparation and serving etiquette; libation (uduọk mmịn)."
+            },
+            {
+              "code": "EFIK-CULT-2",
+              "description": "Institutions (Nsionsio nka): family (ubon/ekpuk) — family kinship systems; worship (edu ukpono/se ekponode) — Abasi, Ndem, Ibọk, Mbukpo; proverbs (mme nke); secret society (Ubọñ/mme ndedịbe nka ke Efik)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "found": true,
+  "subject": "Ibibio",
+  "subjectCode": "IBIBIO",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Language",
+      "abbreviation": "LANG",
+      "subStrands": [
+        {
+          "name": "Comprehension, Composition, Sound System, Grammar and Translation",
+          "objectives": [
+            {
+              "code": "IBIBIO-LANG-1",
+              "description": "Comprehension: answering questions on two short passages in Ibibio."
+            },
+            {
+              "code": "IBIBIO-LANG-2",
+              "description": "Composition/Letter Writing: writing essays in Ibibio — narrative, descriptive, argumentative, expository, dialogue and letter writing (approximately 300 words)."
+            },
+            {
+              "code": "IBIBIO-LANG-3",
+              "description": "Sound System: consonants, vowels and syllable structure; vowel length; tones (high, low, falling/rising tones); tone notation; sound processes (assimilation, elision, vowel harmony)."
+            },
+            {
+              "code": "IBIBIO-LANG-4",
+              "description": "Grammar: word structure and word formation (root, affix, prefix, infix, suffix); word classes (noun, verb, adjective, adverb, pronoun, conjunction, etc.); grammatical categories (tense, aspect, gender, number, etc.); phrases, clauses and sentence structure."
+            },
+            {
+              "code": "IBIBIO-LANG-5",
+              "description": "Translation: translation passages between Ibibio and English."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Literature",
+      "abbreviation": "LIT",
+      "subStrands": [
+        {
+          "name": "Oral and Written Literature — Prose, Poetry and Drama",
+          "objectives": [
+            {
+              "code": "IBIBIO-LIT-1",
+              "description": "Basic principles of literary appreciation: meaning of literature; genres; literary terms and devices."
+            },
+            {
+              "code": "IBIBIO-LIT-2",
+              "description": "Oral Literature: prose, poetry and drama — appreciation of oral literary texts including folktales, myths, legends, proverbs and oral poetry in Ibibio."
+            },
+            {
+              "code": "IBIBIO-LIT-3",
+              "description": "Written Literature: prose, poetry and drama — appreciation of set texts in Ibibio covering plot, character, theme, setting and style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Culture",
+      "abbreviation": "CULT",
+      "subStrands": [
+        {
+          "name": "Customs and Institutions",
+          "objectives": [
+            {
+              "code": "IBIBIO-CULT-1",
+              "description": "Customs: traditional practices, ceremonies and cultural activities of the Ibibio-speaking people — naming, marriage, funerals, festivals, food, clothing, games and non-verbal communication."
+            },
+            {
+              "code": "IBIBIO-CULT-2",
+              "description": "Institutions: traditional occupations, family structure, age grades, chieftaincy/Obaship, politics, child care, ancestors and traditional governance among the Ibibio-speaking people."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

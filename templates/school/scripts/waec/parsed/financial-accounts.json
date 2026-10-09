@@ -1,0 +1,128 @@
+{
+  "found": true,
+  "subject": "Financial Accounting",
+  "subjectCode": "FINACCTS",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction and Double Entry Principles",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Accounting History, Equation, Books and Trial Balance",
+          "objectives": [
+            {
+              "code": "FINACCTS-INTRO-1",
+              "description": "Introduction to financial accounting: history, nature and functions of accounting; users of accounting information; stages in the accounting process; characteristics of accounting information."
+            },
+            {
+              "code": "FINACCTS-INTRO-2",
+              "description": "The accounting equation and double entry principles: accounting equation; purpose and functions of source documents; subsidiary books; the ledger — classification of accounts; cash book (analytical cash book, including petty cash book); preparation of trial balance; bank reconciliation statements; correction of errors and suspense account."
+            },
+            {
+              "code": "FINACCTS-INTRO-3",
+              "description": "Accounting concepts: meaning, types, significance and limitations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Final Accounts and Adjustments",
+      "abbreviation": "FINAL",
+      "subStrands": [
+        {
+          "name": "Sole Trader, Provisions, Depreciation and Reserves",
+          "objectives": [
+            {
+              "code": "FINACCTS-FINAL-1",
+              "description": "The final accounts of a sole trader/proprietorship: trading, profit and loss accounts/income statement; balance sheet/statement of financial position; adjustments to final accounts."
+            },
+            {
+              "code": "FINACCTS-FINAL-2",
+              "description": "Provisions and reserves: provision for doubtful debts/allowance for doubtful debts; provision for discounts; depreciation — concepts, reasons for recording and methods (straight line, reducing balance, sum of the years digits, revaluation); accounting for depreciation; reserves — revenue and capital reserves."
+            },
+            {
+              "code": "FINACCTS-FINAL-3",
+              "description": "Manufacturing accounts: purpose of manufacturing accounts; cost classification in manufacturing accounts; preparation of final accounts of manufacturing concern."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Control Accounts, Incomplete Records and Non-Profit",
+      "abbreviation": "CONTROL",
+      "subStrands": [
+        {
+          "name": "Control Accounts, Single Entry, Non-Profit Organisations",
+          "objectives": [
+            {
+              "code": "FINACCTS-CONTROL-1",
+              "description": "Control accounts and self-balancing ledgers: meaning and uses of control accounts; types — sales ledger control and purchases ledger control; preparation and reconciliation of control accounts."
+            },
+            {
+              "code": "FINACCTS-CONTROL-2",
+              "description": "Single entry and incomplete records: meaning and limitations; computation of profit or loss from opening and closing balance sheets; conversion of single entry to double entry; preparation of final accounts from a set of incomplete records; mark-up and margin."
+            },
+            {
+              "code": "FINACCTS-CONTROL-3",
+              "description": "Accounts of not-for-profit making organizations: meaning and terminologies; receipts and payments accounts; subscriptions account; income and expenditure accounts; accumulated fund; balance sheet; profit or loss from income generating activities."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Partnership and Company Accounts",
+      "abbreviation": "PARTNER",
+      "subStrands": [
+        {
+          "name": "Partnership, Company Accounts and Interpretation",
+          "objectives": [
+            {
+              "code": "FINACCTS-PARTNER-1",
+              "description": "Partnership accounts: nature and formation of partnership; partnership agreements/deed; profit and loss appropriation accounts; partners' capital account and balance sheet; admission of a new partner; treatment of goodwill and revaluation of assets; dissolution of partnership."
+            },
+            {
+              "code": "FINACCTS-PARTNER-2",
+              "description": "Company accounts: nature and formation of a company; types of companies and shares; issue of shares; loan capital, debentures/loan notes and mortgages; final accounts of company for internal use only; interpretation of accounts using simple ratios; purchase of business account."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Specialised Accounts and Financial Systems (Nigeria)",
+      "abbreviation": "SPEC",
+      "subStrands": [
+        {
+          "name": "Departmental/Branch, Public Sector, IT, Miscellaneous and Financial System",
+          "objectives": [
+            {
+              "code": "FINACCTS-SPEC-1",
+              "description": "Departmental and branch accounts: meaning and importance; differences between a department and branch; preparation of departmental account; preparation of branch account excluding foreign branches; inter-branch transactions."
+            },
+            {
+              "code": "FINACCTS-SPEC-2",
+              "description": "Public sector accounting: meaning and difference between public sector and private sector accounts; sources of public revenue; capital and recurrent expenditures; preparation of simple government accounts."
+            },
+            {
+              "code": "FINACCTS-SPEC-3",
+              "description": "Information technology in accounting: manual and computerized accounting processing systems; processes involved in data processing; computer hardware and software; merits and demerits of manual and computerized accounting processing systems."
+            },
+            {
+              "code": "FINACCTS-SPEC-4",
+              "description": "Miscellaneous accounts: meaning, introduction, terminologies and preparation of simple joint venture accounts, consignment accounts, contract accounts and hire purchase accounts."
+            },
+            {
+              "code": "FINACCTS-SPEC-5",
+              "description": "Financial system (Nigeria, The Gambia, Sierra Leone, Liberia): meaning and components; meaning, functions and features of money market, capital market and insurance market; methods of raising funds from the capital market; requirements for accessing the capital market; benefits of capital market to investors, government, economy and individual company; types, features and reasons for regulation."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+import { useQuery } from "@tanstack/react-query";
+import { agentNativePath } from "@agent-native/core/client";
+
+export interface GradingLevel {
+  grade: string; // e.g. "A", "B", "C"
+  min: number;
+  max: number;
+  label?: string; // e.g. "Excellent"
+}
+
+export interface SchoolConfig {
+  gradingScale: {
+    type: "letter" | "percentage" | "points" | "proficiency";
+    levels: GradingLevel[];
+  };
+  termStructure: "semesters" | "terms" | "quarters";
+  gradePrefix: "Grade" | "Form" | "Year" | "Class" | string;
+  passMark: number;
+  lateSubmissionPolicy: "accepted" | "penalty" | "not_accepted";
+  /** Weeks each term keeps for examinations, if the school has said. */
+  examWeeksPerTerm?: number;
+  /** The school's own word for one piece of work, and its plural. */
+  assessmentTerminology: string;
+  assessmentTerminologyPlural?: string;
+  /** Whether report cards show a position in the year group. */
+  rankLearners?: boolean;
+  /** What a missed piece of work counts for. Excluded until they say. */
+  missedWorkPolicy?: "zero" | "excluded";
+  /** What the school prints on. A4 until they say otherwise. */
+  paperSize?: "a4" | "letter";
+  schoolTimezone: string;
+  locale: string;
+  customLabels: Record<string, string>;
+}
+
+const DEFAULT_CONFIG: SchoolConfig = {
+  gradingScale: {
+    type: "letter",
+    levels: [
+      { grade: "A", min: 70, max: 100, label: "Excellent" },
+      { grade: "B", min: 60, max: 69, label: "Good" },
+      { grade: "C", min: 50, max: 59, label: "Average" },
+      { grade: "D", min: 40, max: 49, label: "Below Average" },
+      { grade: "F", min: 0, max: 39, label: "Fail" },
+    ],
+  },
+  termStructure: "terms",
+  gradePrefix: "Grade",
+  passMark: 50,
+  lateSubmissionPolicy: "accepted",
+  assessmentTerminology: "assessment",
+  assessmentTerminologyPlural: "assessments",
+  schoolTimezone: "UTC",
+  locale: "en",
+  customLabels: {},
+};
+
+export function useSchoolConfig() {
+  const { data, isLoading } = useQuery<SchoolConfig>({
+    queryKey: ["school-config"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-school-config"),
+      );
+      // Returning the defaults here would cache them as the answer: a request
+      // that failed while the session was still settling left a student
+      // looking at "Student Portal" and A–F grades instead of their school's
+      // name and its own scale, for as long as the cache held. Throwing lets
+      // the query retry; the defaults are still what renders meanwhile.
+      if (!res.ok) throw new Error(`school config unavailable (${res.status})`);
+      const json = await res.json();
+      return { ...DEFAULT_CONFIG, ...json };
+    },
+    retry: 3,
+    staleTime: 5 * 60_000,
+  });
+
+  const config = data ?? DEFAULT_CONFIG;
+
+  const getLetterGrade = (percentage: number): string => {
+    if (config.gradingScale.type !== "letter") return `${percentage}%`;
+    const level = config.gradingScale.levels.find(
+      (l) => percentage >= l.min && percentage <= l.max,
+    );
+    return level?.grade ?? "F";
+  };
+
+  const label = (key: string, fallback: string): string => {
+    return config.customLabels[key] ?? fallback;
+  };
+
+  return { config, isLoading, getLetterGrade, label };
+}

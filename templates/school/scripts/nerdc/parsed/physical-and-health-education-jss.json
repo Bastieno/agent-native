@@ -1,0 +1,133 @@
+{
+  "found": true,
+  "subject": "Physical and Health Education",
+  "subjectCode": "PHE",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Physical Fitness and Athletics",
+      "abbreviation": "PFA",
+      "subStrands": [
+        {
+          "name": "Fitness, Posture, and Track and Field",
+          "objectives": [
+            {
+              "code": "PHE-PFA-1",
+              "description": "Define physical fitness and describe its components including cardiovascular endurance, strength, flexibility, and agility"
+            },
+            {
+              "code": "PHE-PFA-2",
+              "description": "Demonstrate correct posture and movement in standing, sitting, and walking activities"
+            },
+            {
+              "code": "PHE-PFA-3",
+              "description": "Perform basic track and field events including sprints, relays, and field events applying correct techniques"
+            },
+            {
+              "code": "PHE-PFA-4",
+              "description": "Conduct and participate in a physical fitness test and interpret results"
+            },
+            {
+              "code": "PHE-PFA-5",
+              "description": "Explain the relationship between regular exercise, nutrition, and physical well-being"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Games and Sports",
+      "abbreviation": "GS",
+      "subStrands": [
+        {
+          "name": "Ball Games and Contact Sports",
+          "objectives": [
+            {
+              "code": "PHE-GS-1",
+              "description": "Demonstrate basic skills in ball games including football, basketball, volleyball, and handball"
+            },
+            {
+              "code": "PHE-GS-2",
+              "description": "Distinguish between contact sports (football, boxing, rugby) and non-contact sports (tennis, badminton, athletics) with examples"
+            },
+            {
+              "code": "PHE-GS-3",
+              "description": "Apply basic skills and techniques in contact and non-contact sports including tackling, blocking, and passing"
+            },
+            {
+              "code": "PHE-GS-4",
+              "description": "Describe the benefits of participation in sports including physical fitness, teamwork, and social interaction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Health Education",
+      "abbreviation": "HE",
+      "subStrands": [
+        {
+          "name": "Personal, School, and Community Health",
+          "objectives": [
+            {
+              "code": "PHE-HE-1",
+              "description": "Explain personal hygiene practices and their role in preventing disease and maintaining well-being"
+            },
+            {
+              "code": "PHE-HE-2",
+              "description": "Describe the determinants of health including heredity, environment, lifestyle, and access to healthcare"
+            },
+            {
+              "code": "PHE-HE-3",
+              "description": "Identify and describe common communicable diseases, their modes of transmission, and prevention methods"
+            },
+            {
+              "code": "PHE-HE-4",
+              "description": "Describe non-communicable diseases, their risk factors, and strategies for prevention and management"
+            },
+            {
+              "code": "PHE-HE-5",
+              "description": "Explain the effects of drug use, misuse, and abuse and describe prevention and counselling strategies"
+            },
+            {
+              "code": "PHE-HE-6",
+              "description": "Describe sexually transmitted infections (STIs), their consequences, and prevention strategies"
+            },
+            {
+              "code": "PHE-HE-7",
+              "description": "Explain environmental pollution, its types, and measures to protect the school and community environment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Safety and First Aid",
+      "abbreviation": "SFA",
+      "subStrands": [
+        {
+          "name": "Injury Prevention and Emergency Response",
+          "objectives": [
+            {
+              "code": "PHE-SFA-1",
+              "description": "Identify common causes of accidents in home, school, and sports environments and describe safety precautions"
+            },
+            {
+              "code": "PHE-SFA-2",
+              "description": "Describe types and causes of sports injuries and apply appropriate first aid treatment"
+            },
+            {
+              "code": "PHE-SFA-3",
+              "description": "Demonstrate first aid procedures for common injuries including cuts, sprains, fractures, and burns"
+            },
+            {
+              "code": "PHE-SFA-4",
+              "description": "Describe the safe use of protective equipment in contact and non-contact sports"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

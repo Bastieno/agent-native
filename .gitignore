@@ -29,6 +29,8 @@ node-compile-cache/
 
 # SQLite databases (local data, never commit)
 **/data/*.db
+# Timestamped copies the test-plan wipe leaves behind (app.db.backup-<stamp>)
+**/data/*.backup*
 **/data/*.db-journal
 **/data/*.db-wal
 **/data/*.db-shm
@@ -87,3 +89,4 @@ templates/*/.env.local
 templates/*/.env.*.local
 test-reports/
 *.tsbuildinfo
+tsup.config.bundled_*.mjs

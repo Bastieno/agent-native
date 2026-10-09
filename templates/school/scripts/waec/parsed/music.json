@@ -1,0 +1,93 @@
+{
+  "found": true,
+  "subject": "Music",
+  "subjectCode": "MUSIC",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Theory and Composition",
+      "abbreviation": "THEORY",
+      "subStrands": [
+        {
+          "name": "Rudiments, Harmony, Counterpoint, Composition and Form",
+          "objectives": [
+            {
+              "code": "MUSIC-THEORY-1",
+              "description": "Rudiments of Music: notation (staff, clefs — C, G, F); scales (diatonic major and minor — natural, harmonic, melodic; chromatic); modes — African (pentatonic, hexatonic, heptatonic); keys and key signatures; time signatures (simple and compound); intervals; transcription (staff notation into solfa and vice versa); transposition; musical terms, signs, ornaments and abbreviations."
+            },
+            {
+              "code": "MUSIC-THEORY-2",
+              "description": "Elementary Harmony: chords/triads (primary — I/i, IV/iv, V and their inversions; secondary — ii, iii, vi; chord vii° and inversions; dominant 7th chord); chord progressions and cadences (perfect, plagal, interrupted, imperfect); use of primary and secondary triads in harmonising a given melody; six-four chords; non-harmonic tones; modulations to closely related keys; four-part harmony (SATB)."
+            },
+            {
+              "code": "MUSIC-THEORY-3",
+              "description": "Two-part free counterpoint — adding a part above or below a given melody."
+            },
+            {
+              "code": "MUSIC-THEORY-4",
+              "description": "Composition: continuing a given melodic phrase in major or minor key to form a melody of not less than 12 and not more than 16 bars; setting a given text in English to music."
+            },
+            {
+              "code": "MUSIC-THEORY-5",
+              "description": "Form and Analysis: simple forms (binary, ternary, rondo, etc.); extended forms (overture, oratorio, opera, cantata, suite, sonata, symphony, concerto, etc.); form in traditional African music (antiphony — call and response, cantor/chorus; repetitive/cyclic forms); form in contemporary African art music."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aural Tests",
+      "abbreviation": "AURAL",
+      "subStrands": [
+        {
+          "name": "Listening and Aural Recognition",
+          "objectives": [
+            {
+              "code": "MUSIC-AURAL-1",
+              "description": "Aural tests administered by CD/cassette: recognition and notation of melodic and rhythmic patterns; identification of intervals, chords and cadences; dictation exercises; recognition of musical forms and styles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Performance",
+      "abbreviation": "PERF",
+      "subStrands": [
+        {
+          "name": "Instrumental and Vocal Performance",
+          "objectives": [
+            {
+              "code": "MUSIC-PERF-1",
+              "description": "Performance test on an instrument of choice (voice, violin, pianoforte/electronic keyboard, flute, atenteben, recorder, B-flat trumpet, E-flat alto-saxophone); sight reading, technical exercises, scales and arpeggios."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "History and Literature of Music",
+      "abbreviation": "HIST",
+      "subStrands": [
+        {
+          "name": "Western Music, African Art Music, and Popular Music",
+          "objectives": [
+            {
+              "code": "MUSIC-HIST-1",
+              "description": "History and Literature of Western Music: general historical background, works and contributions of composers from the Baroque, Classical, Romantic and Modern periods."
+            },
+            {
+              "code": "MUSIC-HIST-2",
+              "description": "Traditional and Contemporary African Art Music: role of music in traditional African society; traditional music instruments; traditional music genres in Nigeria (bata, egwu amala, atilogwu, swange, apiiri, etc.); contemporary Nigerian art music composers (T.K.E. Phillips, Fela Sowande, Ayo Bankole, Laz Ekwueme, Akin Euba, Sam Akpabot, etc.)."
+            },
+            {
+              "code": "MUSIC-HIST-3",
+              "description": "Popular African Music and Black Music in the Diaspora: popular Nigerian musicians including highlife (Victor Olaiya, Rex Jim Lawson, Bobby Benson), juju (I.K. Dairo, King Sunny Ade), Afrobeat (Fela Anikulapo-Kuti), fuji (Sikiru Ayinde Barrister), and traditional oral music artists (Ezigbo Obiligbo, Dan Maraya, Haruna Ishola, etc.); Black music in the Diaspora — Blues, Jazz, Soul, Reggae and Rap."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

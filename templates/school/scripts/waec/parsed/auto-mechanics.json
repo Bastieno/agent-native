@@ -1,0 +1,276 @@
+{
+  "found": true,
+  "subject": "Auto Mechanics",
+  "subjectCode": "AUTOMECH",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Workshop Safety and Tools",
+      "abbreviation": "WKSAFE",
+      "subStrands": [
+        {
+          "name": "Safety, Basic Tools and Instruments",
+          "objectives": [
+            {
+              "code": "AUTOMECH-WKSAFE-1",
+              "description": "Workshop regulations and safety: instructions in basic safety rules relating to personnel, tools, equipment and environment; types of fire extinguishers — foam, dry powder, sand, water and wet-blanket types."
+            },
+            {
+              "code": "AUTOMECH-WKSAFE-2",
+              "description": "Basic hand tools and power tools: use of basic tools e.g. hand tools and power tools."
+            },
+            {
+              "code": "AUTOMECH-WKSAFE-3",
+              "description": "Use of measuring instruments."
+            },
+            {
+              "code": "AUTOMECH-WKSAFE-4",
+              "description": "Use of basic equipment e.g. jacks, hoist, air-compressors, etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layout of a Motor Vehicle",
+      "abbreviation": "LAYOUT",
+      "subStrands": [
+        {
+          "name": "Vehicle Layout and Drive Arrangements",
+          "objectives": [
+            {
+              "code": "AUTOMECH-LAYOUT-1",
+              "description": "Layout of a conventional motor vehicle: functions of the main components."
+            },
+            {
+              "code": "AUTOMECH-LAYOUT-2",
+              "description": "Drive arrangements: front engine rear wheel drive, rear engine rear wheel drive, front engine front wheel drive, four-wheel drive."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Engine",
+      "abbreviation": "ENGINE",
+      "subStrands": [
+        {
+          "name": "Engine Components, Operation, Types and Valve Mechanism",
+          "objectives": [
+            {
+              "code": "AUTOMECH-ENGINE-1",
+              "description": "Engine main components: classification of engine (petrol and diesel engine) and their main parts; arrangement and functions of the main components — cylinder head and cover, cylinder block, crankshaft, flywheel, connecting rod, piston and rings, spark plug (petrol), fuel injection pump and injector (diesel), valve, valve springs, oil seal, camshaft, push rod, rocker shaft/arms."
+            },
+            {
+              "code": "AUTOMECH-ENGINE-2",
+              "description": "Principles of operation: two stroke and four stroke cycle petrol and diesel engine."
+            },
+            {
+              "code": "AUTOMECH-ENGINE-3",
+              "description": "Types of engine: advantages and disadvantages of petrol and diesel engines; single and multi-cylinder engines."
+            },
+            {
+              "code": "AUTOMECH-ENGINE-4",
+              "description": "Crank arrangement and firing order: 2, 4 and 6 cylinder in-line engines; V-4, V-6 and 4-cylinder horizontally-opposed engines."
+            },
+            {
+              "code": "AUTOMECH-ENGINE-5",
+              "description": "Valve-operating mechanism: functions and operation of valve operating mechanisms; drives layout, main components, 4-cylinder 12-and 16-valve engine; valve timing including calculation of valve opening and closing periods."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fuel Supply Systems",
+      "abbreviation": "FUEL",
+      "subStrands": [
+        {
+          "name": "Fuels, Petrol and Diesel Supply Systems",
+          "objectives": [
+            {
+              "code": "AUTOMECH-FUEL-1",
+              "description": "Fuels and combustion: elements of combustion, air-fuel ratios, types and properties of fuel — petrol and diesel."
+            },
+            {
+              "code": "AUTOMECH-FUEL-2",
+              "description": "Petrol supply system: layout and operation of petrol supply system — gravity and force-feed systems; simple carburetor, multi-jet carburetor; air filters/cleaners; mechanical and electrical fuel pumps; advantages and disadvantages."
+            },
+            {
+              "code": "AUTOMECH-FUEL-3",
+              "description": "Petrol-injection system: merits and demerits; electronic fuel (petrol) injection (EFI)."
+            },
+            {
+              "code": "AUTOMECH-FUEL-4",
+              "description": "Diesel supply system: layout of a diesel supply system; elementary treatment of injection pumps and injectors; cold starting devices."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Exhaust, Lubrication and Cooling Systems",
+      "abbreviation": "SERVSYS",
+      "subStrands": [
+        {
+          "name": "Exhaust, Lubrication and Cooling",
+          "objectives": [
+            {
+              "code": "AUTOMECH-SERVSYS-1",
+              "description": "Exhaust system: purpose and layout of the system; types of silencers and manifolds."
+            },
+            {
+              "code": "AUTOMECH-SERVSYS-2",
+              "description": "Engine lubrication: reasons for lubrication and types — boundary layer and film lubrication; lubricated parts and components; types of feed — splash, forced and petroil (wet and dry); principle of operation of gear and rotor oil pumps; oil filters."
+            },
+            {
+              "code": "AUTOMECH-SERVSYS-3",
+              "description": "Lubricants: applications in engines, transmission, steering, suspension system and doors; viscosity rating, SAE numbers."
+            },
+            {
+              "code": "AUTOMECH-SERVSYS-4",
+              "description": "Water cooling system: purpose and layout of the system; functions of main components; thermo-syphon and pump assisted systems; elementary treatment of pressurized cooling system; thermostats — purpose and types (bellows and wax pellet)."
+            },
+            {
+              "code": "AUTOMECH-SERVSYS-5",
+              "description": "Air cooling system: layout and functions of the system; main components; comparison of the air and water cooled systems."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Transmission System",
+      "abbreviation": "TRANSM",
+      "subStrands": [
+        {
+          "name": "Clutch, Gearbox, Propeller Shaft and Rear Axle",
+          "objectives": [
+            {
+              "code": "AUTOMECH-TRANSM-1",
+              "description": "Layout of the transmission system: function and layout; types — manual and automatic; merits and demerits."
+            },
+            {
+              "code": "AUTOMECH-TRANSM-2",
+              "description": "Clutch assembly: functions of a clutch; types and operating principles of single plate and multiplate; methods of actuation — hydraulic and mechanical; simple calculations; introduction to automatic transmission; functions of torque converter and fluid flywheel."
+            },
+            {
+              "code": "AUTOMECH-TRANSM-3",
+              "description": "Gearbox: types, layout and operating principles of sliding-mesh, constant mesh and synchromesh gearboxes; main components and their functions; gear selector mechanism; simple calculations of gear ratios."
+            },
+            {
+              "code": "AUTOMECH-TRANSM-4",
+              "description": "Propeller shaft and universal joint: functions and types of the propeller shaft, universal joint and sliding joint."
+            },
+            {
+              "code": "AUTOMECH-TRANSM-5",
+              "description": "Rear axle: purpose of rear axle; arrangement and functions of main components — final drive, differential unit, half shaft, oil seal and hub bearings; methods of supporting axle shafts; advantages and disadvantages."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wheels, Tyres, Braking and Steering",
+      "abbreviation": "WTBS",
+      "subStrands": [
+        {
+          "name": "Wheels, Tyres, Brakes and Steering System",
+          "objectives": [
+            {
+              "code": "AUTOMECH-WTBS-1",
+              "description": "Wheels and tyres: types of wheel rims — pressed steel, disc and wire spoke wheels; hub attachments; tyre sizes and markings; tubed and tubeless tyre types and their advantages and disadvantages; wheel balancing."
+            },
+            {
+              "code": "AUTOMECH-WTBS-2",
+              "description": "Braking system: layout, functions and operation of braking system — drum and disc, mechanical and hydraulic; brake lining materials and methods of attachment; importance of servo-assisted brake; advantages and disadvantage of disc and drum brakes; brake faults."
+            },
+            {
+              "code": "AUTOMECH-WTBS-3",
+              "description": "Steering system: general layout and functions of the front axle and steering systems; steering geometry — Ackerman linkage, castor, camber, king pin inclination, toe-in and toe-out; types of steering gearboxes — rack and pinion, recalculating balls only; steering faults."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Suspension and Electrical Systems",
+      "abbreviation": "SUSELEC",
+      "subStrands": [
+        {
+          "name": "Suspension, Auto Wiring, Battery, Ignition, Starting, Charging, Lighting and Auxiliary",
+          "objectives": [
+            {
+              "code": "AUTOMECH-SUSELEC-1",
+              "description": "Suspension system: purpose of the suspension system; layout and types — rigid beam and independent; suspension (semi-elliptic and coil springs); advantages and disadvantages; dampers (shock absorbers)."
+            },
+            {
+              "code": "AUTOMECH-SUSELEC-2",
+              "description": "Fundamentals of auto electronics: basic electrical terms and symbols; A.C and D.C sources; simple circuits; Ohm's law and calculations involving series and parallel circuits; basic components and their functions — relays, resistors, lamps, fuses and switches."
+            },
+            {
+              "code": "AUTOMECH-SUSELEC-3",
+              "description": "Auto wiring system: wire gauges, colour coding; wiring system — earth and insulated returns; ways of joining cables — jointing, terminals, connectors and soldering."
+            },
+            {
+              "code": "AUTOMECH-SUSELEC-4",
+              "description": "Battery: purpose, construction and testing of lead-acid battery; electrolyte composition; battery care and maintenance."
+            },
+            {
+              "code": "AUTOMECH-SUSELEC-5",
+              "description": "Ignition system: layout of the coil ignition system; function and operation of the main components; introduction to computerized ignition system."
+            },
+            {
+              "code": "AUTOMECH-SUSELEC-6",
+              "description": "Starting system: layout and functions of the main components; types of starter motor."
+            },
+            {
+              "code": "AUTOMECH-SUSELEC-7",
+              "description": "Charging system: purpose and layout (dynamo and alternator); main components and their operation; comparison of d.c and a.c generators."
+            },
+            {
+              "code": "AUTOMECH-SUSELEC-8",
+              "description": "Lighting system: layout of the system; main components and their functions; fuses and bulbs — types and ratings."
+            },
+            {
+              "code": "AUTOMECH-SUSELEC-9",
+              "description": "Auxiliary units: layout and operations of the auxiliary units — instrument panel, horn, windscreen wiper; electrical faults."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electronics, Air Conditioning and Safe Motoring",
+      "abbreviation": "EACSAFE",
+      "subStrands": [
+        {
+          "name": "Electronics, EFI, Air Conditioning and Road Safety",
+          "objectives": [
+            {
+              "code": "AUTOMECH-EACSAFE-1",
+              "description": "Fundamentals of electronics: explanation of auto electronics; identification of electronic components — diodes, transistors, resistors, capacitors, LED, transducers, coil and motors; functions of components; symbols in a circuit."
+            },
+            {
+              "code": "AUTOMECH-EACSAFE-2",
+              "description": "Electronic ignition: operation of transistorized ignition system; types of transistorized and electronic ignition system — inductive and hall effect; merits and demerits."
+            },
+            {
+              "code": "AUTOMECH-EACSAFE-3",
+              "description": "Electronic fuel injection: purpose and type of systems (single-point and multi-point injections)."
+            },
+            {
+              "code": "AUTOMECH-EACSAFE-4",
+              "description": "Auto air-conditioning: purpose, layout and identification of major components (compressor, condenser, evaporator and dryer); principles of operation."
+            },
+            {
+              "code": "AUTOMECH-EACSAFE-5",
+              "description": "Safe motoring: main causes of accident, essentials of safe driving and application of highway code and safety devices."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

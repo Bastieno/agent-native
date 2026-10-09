@@ -1,0 +1,391 @@
+{
+  "found": true,
+  "subject": "Government",
+  "subjectCode": "GOVT",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Meaning and Scope of Government",
+      "abbreviation": "MEANING",
+      "subStrands": [
+        {
+          "name": "Government as Institution, Process and Field of Study",
+          "objectives": [
+            {
+              "code": "GOVT-MEANING-1",
+              "description": "Government as an institution of the state: definition of state, features, structure and functions."
+            },
+            {
+              "code": "GOVT-MEANING-2",
+              "description": "Government as a process or art of governing."
+            },
+            {
+              "code": "GOVT-MEANING-3",
+              "description": "Government as an academic field of study – reasons for studying government."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Basic Concepts and Principles of Government",
+      "abbreviation": "CONCEPTS",
+      "subStrands": [
+        {
+          "name": "Concepts and Principles",
+          "objectives": [
+            {
+              "code": "GOVT-CONCEPTS-1",
+              "description": "Basic concepts – State, Society, Nation, Power, Authority, Legitimacy, Sovereignty, Democracy, Political Culture and Socialization, Communalism, Feudalism and oligarchy, Liberalism, Socialism, Communism, Capitalism, Fascism, Aristocracy, Totalitarianism – meaning and features."
+            },
+            {
+              "code": "GOVT-CONCEPTS-2",
+              "description": "Basic principles – Rule of Law, Fundamental Human Rights, Separation of Powers/Checks and Balances, Constitutionalism, Political participation, Representative Government, Centralization and Decentralization (Delegated Legislation, Devolution and Decentralization)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Constitutions",
+      "abbreviation": "CONST",
+      "subStrands": [
+        {
+          "name": "Definition, Functions and Types",
+          "objectives": [
+            {
+              "code": "GOVT-CONST-1",
+              "description": "Definition and sources of constitutions."
+            },
+            {
+              "code": "GOVT-CONST-2",
+              "description": "Functions of constitutions."
+            },
+            {
+              "code": "GOVT-CONST-3",
+              "description": "Types and features of constitutions: Written and Unwritten, Rigid and Flexible."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Organs of Government",
+      "abbreviation": "ORGANS",
+      "subStrands": [
+        {
+          "name": "Executive, Legislature and Judiciary",
+          "objectives": [
+            {
+              "code": "GOVT-ORGANS-1",
+              "description": "The Executive – types, structure, composition/membership, functions, powers and limitations."
+            },
+            {
+              "code": "GOVT-ORGANS-2",
+              "description": "The Legislature – types, structure, composition/membership, functions, powers and limitations."
+            },
+            {
+              "code": "GOVT-ORGANS-3",
+              "description": "The Judiciary – types, structure, composition/membership, functions, powers and limitations; Judicial Independence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "State Structure and Characteristics of Government",
+      "abbreviation": "STRUCTURE",
+      "subStrands": [
+        {
+          "name": "Types of Government",
+          "objectives": [
+            {
+              "code": "GOVT-STRUCTURE-1",
+              "description": "Types of state structure and government – Unitary, Federal, Confederal, Presidential or Non-parliamentary, Parliamentary or Cabinet, Monarchical and Republican: meaning, types, features, merits and demerits."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Citizenship",
+      "abbreviation": "CITIZEN",
+      "subStrands": [
+        {
+          "name": "Rights and Duties of Citizens",
+          "objectives": [
+            {
+              "code": "GOVT-CITIZEN-1",
+              "description": "Citizenship: meaning, mode of acquisition, rights, duties and obligations of individuals in the state. Means of safeguarding rights of citizens."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Political Parties and Party Systems",
+      "abbreviation": "PARTIES",
+      "subStrands": [
+        {
+          "name": "Political Parties and Systems",
+          "objectives": [
+            {
+              "code": "GOVT-PARTIES-1",
+              "description": "Political Parties – definition, organization/structure, and functions."
+            },
+            {
+              "code": "GOVT-PARTIES-2",
+              "description": "Party Systems – definition, types, merits and demerits."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pressure Groups, Public Opinion and Mass Media",
+      "abbreviation": "PRESSURE",
+      "subStrands": [
+        {
+          "name": "Political Influence and Communication",
+          "objectives": [
+            {
+              "code": "GOVT-PRESSURE-1",
+              "description": "Pressure Groups – definition, types, mode of operation and functions."
+            },
+            {
+              "code": "GOVT-PRESSURE-2",
+              "description": "Public opinion – definition, formation, measurement and importance."
+            },
+            {
+              "code": "GOVT-PRESSURE-3",
+              "description": "Mass Media – definition, roles and impact."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electoral Systems, Processes and Electoral Management Body",
+      "abbreviation": "ELECTORAL",
+      "subStrands": [
+        {
+          "name": "Elections and Electoral Management",
+          "objectives": [
+            {
+              "code": "GOVT-ELECTORAL-1",
+              "description": "Election – meaning and purpose of elections."
+            },
+            {
+              "code": "GOVT-ELECTORAL-2",
+              "description": "Franchise – meaning and limitations."
+            },
+            {
+              "code": "GOVT-ELECTORAL-3",
+              "description": "Types, advantages and disadvantages of Electoral Systems."
+            },
+            {
+              "code": "GOVT-ELECTORAL-4",
+              "description": "Electoral Management Body – definition, function, problems/constraints."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Public/Civil Service Administration",
+      "abbreviation": "CIVIL",
+      "subStrands": [
+        {
+          "name": "Public Administration",
+          "objectives": [
+            {
+              "code": "GOVT-CIVIL-1",
+              "description": "Public/Civil Service – meaning, structure, characteristics and functions."
+            },
+            {
+              "code": "GOVT-CIVIL-2",
+              "description": "Public/Civil Service Commission – meaning and functions."
+            },
+            {
+              "code": "GOVT-CIVIL-3",
+              "description": "Public Corporations – definition, purposes, functions, control, challenges, need for commercialization and privatization."
+            },
+            {
+              "code": "GOVT-CIVIL-4",
+              "description": "Local Governments – meaning, structure, purposes, functions, sources of revenue, control and problems."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-Colonial Political Systems",
+      "abbreviation": "PRECOL",
+      "subStrands": [
+        {
+          "name": "Traditional Political Structures in Nigeria",
+          "objectives": [
+            {
+              "code": "GOVT-PRECOL-1",
+              "description": "The structural organization of pre-colonial political systems in Nigeria: Hausa/Fulani, the Yoruba and the Igbo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Colonial Administration",
+      "abbreviation": "COLONIAL",
+      "subStrands": [
+        {
+          "name": "British and French Colonial Policies",
+          "objectives": [
+            {
+              "code": "GOVT-COLONIAL-1",
+              "description": "The Policy and Structure of the British Colonial Administration – Crown Colony, Protectorate and Indirect Rule."
+            },
+            {
+              "code": "GOVT-COLONIAL-2",
+              "description": "The Policy of French Colonial Administration – Assimilation and Association (Loi Cadre)."
+            },
+            {
+              "code": "GOVT-COLONIAL-3",
+              "description": "Impact, advantages and disadvantages of Colonial Rule."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nationalism",
+      "abbreviation": "NATION",
+      "subStrands": [
+        {
+          "name": "Nationalist Movements and Leaders",
+          "objectives": [
+            {
+              "code": "GOVT-NATION-1",
+              "description": "Nationalism: meaning, factors and effects."
+            },
+            {
+              "code": "GOVT-NATION-2",
+              "description": "Key Nationalist leaders/movements and their contributions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Constitutional Developments",
+      "abbreviation": "CONSTDEV",
+      "subStrands": [
+        {
+          "name": "Pre-Independence Constitutions of Nigeria",
+          "objectives": [
+            {
+              "code": "GOVT-CONSTDEV-1",
+              "description": "Nigeria pre-independence constitutions (features): Clifford 1922, Richards 1946, Macpherson 1951, Littleton 1954."
+            }
+          ]
+        },
+        {
+          "name": "Post-Independence Constitutions of Nigeria",
+          "objectives": [
+            {
+              "code": "GOVT-CONSTDEV-2",
+              "description": "Nigeria post-independence constitutions (features): Independence Constitution 1960; Republican Constitution 1963; The 1979 and 1989 Constitutions; 1999 Constitution – origin, features, strength and weaknesses."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Development of Major Political Parties",
+      "abbreviation": "POLPART",
+      "subStrands": [
+        {
+          "name": "Political Party Development in Nigeria",
+          "objectives": [
+            {
+              "code": "GOVT-POLPART-1",
+              "description": "Development of major political parties in Nigeria: formation, objectives, sources of finance, achievements and failures."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Military Rule",
+      "abbreviation": "MILITARY",
+      "subStrands": [
+        {
+          "name": "Military Rule in West Africa",
+          "objectives": [
+            {
+              "code": "GOVT-MILITARY-1",
+              "description": "Military rule in Nigeria, Ghana, Sierra Leone, The Gambia and Liberia: causes, effects and various military regimes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Federal/Unitary Systems of Government in West Africa",
+      "abbreviation": "FEDERAL",
+      "subStrands": [
+        {
+          "name": "Federal and Unitary Systems",
+          "objectives": [
+            {
+              "code": "GOVT-FEDERAL-1",
+              "description": "Federal/Unitary systems of government in West Africa (Nigeria, Sierra Leone, The Gambia, Liberia): origin, factors, structure, features and problems."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Foreign Policies",
+      "abbreviation": "FOREIGN",
+      "subStrands": [
+        {
+          "name": "Foreign Policies of West African Countries",
+          "objectives": [
+            {
+              "code": "GOVT-FOREIGN-1",
+              "description": "Foreign policies of Nigeria, Ghana, Sierra Leone, The Gambia and Liberia: definitions, factors, objectives, advantages and disadvantages."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "International Organizations",
+      "abbreviation": "INTLORGS",
+      "subStrands": [
+        {
+          "name": "Major International and Regional Organizations",
+          "objectives": [
+            {
+              "code": "GOVT-INTLORGS-1",
+              "description": "The United Nations Organization (UNO) – origin, aims/objectives, achievements and problems."
+            },
+            {
+              "code": "GOVT-INTLORGS-2",
+              "description": "The Commonwealth of Nations – origin, aims/objectives, achievements and problems."
+            },
+            {
+              "code": "GOVT-INTLORGS-3",
+              "description": "African Union (AU) – NEPAD: origin, aims/objectives, achievements and problems."
+            },
+            {
+              "code": "GOVT-INTLORGS-4",
+              "description": "The Economic Community of West African States (ECOWAS) – origin, aims/objectives, achievements and problems."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

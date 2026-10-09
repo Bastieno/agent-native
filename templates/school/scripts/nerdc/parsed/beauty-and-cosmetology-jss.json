@@ -1,0 +1,71 @@
+{
+  "found": true,
+  "subject": "Beauty and Cosmetology",
+  "subjectCode": "BCOS",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Skin Care and Personal Grooming",
+      "abbreviation": "SPG",
+      "subStrands": [
+        {
+          "name": "Skin Types, Hygiene, and Basic Care",
+          "objectives": [
+            {"code": "BCOS-SPG-1", "description": "Identify different skin types (normal, oily, dry, combination, sensitive) and describe appropriate skincare routines"},
+            {"code": "BCOS-SPG-2", "description": "Explain personal hygiene practices for skin, hair, nails, and overall body care"},
+            {"code": "BCOS-SPG-3", "description": "Describe common skin conditions and identify appropriate treatments and prevention measures"},
+            {"code": "BCOS-SPG-4", "description": "Identify and safely use skincare products including cleansers, toners, moisturisers, and sunscreen"},
+            {"code": "BCOS-SPG-5", "description": "Perform a basic facial cleansing and moisturising routine following correct steps"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hair Care and Styling",
+      "abbreviation": "HCS",
+      "subStrands": [
+        {
+          "name": "Hair Types, Treatment, and Styling Techniques",
+          "objectives": [
+            {"code": "BCOS-HCS-1", "description": "Identify different hair types and textures and describe appropriate care and maintenance routines"},
+            {"code": "BCOS-HCS-2", "description": "Describe hair care treatments including shampooing, conditioning, deep conditioning, and scalp massage"},
+            {"code": "BCOS-HCS-3", "description": "Demonstrate basic hair styling techniques including braiding, threading, and styling natural African hair"},
+            {"code": "BCOS-HCS-4", "description": "Describe the safe use of hair tools (combs, brushes, dryers) and chemical treatments"},
+            {"code": "BCOS-HCS-5", "description": "Identify different types of wigs and hair extensions and describe how to apply and care for them"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Makeup and Beauty Treatments",
+      "abbreviation": "MBT",
+      "subStrands": [
+        {
+          "name": "Cosmetics, Nail Care, and Basic Beauty Services",
+          "objectives": [
+            {"code": "BCOS-MBT-1", "description": "Identify types of makeup products and their uses including foundation, powder, lipstick, and eye makeup"},
+            {"code": "BCOS-MBT-2", "description": "Apply basic makeup techniques for everyday, natural, and special occasion looks"},
+            {"code": "BCOS-MBT-3", "description": "Perform basic nail care including filing, buffing, cuticle care, and nail polish application"},
+            {"code": "BCOS-MBT-4", "description": "Describe the importance of hygiene and sterilisation of tools in beauty services to prevent infections"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Beauty Business and Entrepreneurship",
+      "abbreviation": "BBE",
+      "subStrands": [
+        {
+          "name": "Career Paths and Business Skills in Beauty",
+          "objectives": [
+            {"code": "BCOS-BBE-1", "description": "Identify career opportunities in the beauty industry including hairstylist, makeup artist, nail technician, and cosmetologist"},
+            {"code": "BCOS-BBE-2", "description": "Describe the requirements for setting up a small beauty salon including tools, products, and space"},
+            {"code": "BCOS-BBE-3", "description": "Apply basic customer service, communication, and record-keeping skills to a beauty business setting"},
+            {"code": "BCOS-BBE-4", "description": "Describe professional ethics in the beauty industry including confidentiality, hygiene, and fair pricing"}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,600 @@
+{
+  "found": true,
+  "subject": "General Mathematics",
+  "subjectCode": "GMATH",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Number and Numeration",
+      "abbreviation": "NUM",
+      "subStrands": [
+        {
+          "name": "Number Bases",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-1",
+              "description": "Conversion of numbers from one base to another: Conversion from one base to base 10 and vice versa. Conversion from one base to another base."
+            },
+            {
+              "code": "GMATH-NUM-2",
+              "description": "Basic operations on number bases: Addition, subtraction and multiplication of number bases."
+            }
+          ]
+        },
+        {
+          "name": "Modular Arithmetic",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-3",
+              "description": "Concept of Modulo Arithmetic: Interpretation of modulo arithmetic e.g. 6 + 4 = k(mod7), 3 x 5 = b(mod6), m = 2(mod 3), etc."
+            },
+            {
+              "code": "GMATH-NUM-4",
+              "description": "Addition, subtraction and multiplication operations in modulo arithmetic."
+            },
+            {
+              "code": "GMATH-NUM-5",
+              "description": "Application to daily life: Relate to market days, clock, shift duty, etc."
+            }
+          ]
+        },
+        {
+          "name": "Fractions, Decimals and Approximations",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-6",
+              "description": "Basic operations on fractions and decimals."
+            },
+            {
+              "code": "GMATH-NUM-7",
+              "description": "Approximations and significant figures. Approximations should be realistic e.g. a road is not measured correct to the nearest cm."
+            }
+          ]
+        },
+        {
+          "name": "Indices and Logarithms",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-8",
+              "description": "Laws of indices e.g. a^x x a^y = a^(x+y), a^x / a^y = a^(x-y), (a^x)^y = a^(xy), etc where x, y are real numbers and a ≠ 0. Include simple examples of negative and fractional indices."
+            },
+            {
+              "code": "GMATH-NUM-9",
+              "description": "Numbers in standard form (scientific notation): Expression of large and small numbers in standard form e.g. 375300000 = 3.753 x 10^8, 0.00000035 = 3.5 x 10^-7. Use of tables of squares, square roots and reciprocals is accepted."
+            },
+            {
+              "code": "GMATH-NUM-10",
+              "description": "Relationship between indices and logarithms e.g. y = 10^k implies log10y = k."
+            },
+            {
+              "code": "GMATH-NUM-11",
+              "description": "Basic rules of logarithms e.g. log10(pq) = log10p + log10q; log10(p/q) = log10p – log10q; log10p^n = nlog10p."
+            },
+            {
+              "code": "GMATH-NUM-12",
+              "description": "Use of tables of logarithms and antilogarithms: Calculations involving multiplication, division, powers and roots."
+            }
+          ]
+        },
+        {
+          "name": "Sequence and Series",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-13",
+              "description": "Patterns of sequences: Determine any term of a given sequence. The notation Un = the nth term of a sequence may be used."
+            },
+            {
+              "code": "GMATH-NUM-14",
+              "description": "Arithmetic progression (A.P.) and Geometric Progression (G.P.): Simple cases only, including word problems. Include sum for A.P. and exclude sum for G.P."
+            }
+          ]
+        },
+        {
+          "name": "Sets",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-15",
+              "description": "Idea of sets, universal sets, finite and infinite sets, subsets, empty sets and disjoint sets. Idea of and notation for union, intersection and complement of sets. Notations: ε, ⊂, ∪, ∩, { }, ∅, P' (the complement of P). Properties e.g. commutative, associative and distributive."
+            },
+            {
+              "code": "GMATH-NUM-16",
+              "description": "Solution of practical problems involving classification using Venn diagrams: Use of Venn diagrams restricted to at most 3 sets."
+            }
+          ]
+        },
+        {
+          "name": "Logical Reasoning",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-17",
+              "description": "Simple statements. True and false statements. Negation of statements, implications. Use of symbols: ⟹, ⇐; use of Venn diagrams."
+            }
+          ]
+        },
+        {
+          "name": "Integers, Rational Numbers and Surds",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-18",
+              "description": "Positive and negative integers, rational numbers: The four basic operations on rational numbers. Match rational numbers with points on the number line. Notation: Natural numbers (N), Integers (Z), Rational numbers (Q)."
+            },
+            {
+              "code": "GMATH-NUM-19",
+              "description": "Surds (Radicals): Simplification and rationalization of simple surds. Surds of the form a/√b, a√b and a ± √b where a is a rational number and b is a positive integer. Basic operations on surds (exclude surd of the form a/(b + c√d))."
+            }
+          ]
+        },
+        {
+          "name": "Matrices and Determinants",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-20",
+              "description": "Identification of order, notation and types of matrices: Not more than 3 x 3 matrices. Idea of columns and rows."
+            },
+            {
+              "code": "GMATH-NUM-21",
+              "description": "Addition, subtraction, scalar multiplication and multiplication of matrices: Restrict to 2 x 2 matrices."
+            },
+            {
+              "code": "GMATH-NUM-22",
+              "description": "Determinant of a matrix: Application to solving simultaneous linear equations in two variables. Restrict to 2 x 2 matrices."
+            }
+          ]
+        },
+        {
+          "name": "Ratio, Proportions, Rates and Percentages",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-23",
+              "description": "Ratio between two similar quantities. Proportion between two or more similar quantities. Financial partnerships, rates of work, costs, taxes, foreign exchange, density (e.g. population), mass, distance, time and speed. Relate to real life situations. Include average rates, taxes e.g. VAT, Withholding tax, etc."
+            },
+            {
+              "code": "GMATH-NUM-24",
+              "description": "Percentages: Simple interest, commission, discount, depreciation, profit and loss, compound interest, hire purchase and percentage error. Limit compound interest to a maximum of 3 years."
+            }
+          ]
+        },
+        {
+          "name": "Financial Arithmetic",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-25",
+              "description": "Depreciation/Amortization: Definition/meaning, calculation of depreciation on fixed assets, computation of amortization on capitalized assets."
+            },
+            {
+              "code": "GMATH-NUM-26",
+              "description": "Annuities: Definition/meaning, solve simple problems on annuities."
+            },
+            {
+              "code": "GMATH-NUM-27",
+              "description": "Capital Market Instruments: Shares/stocks, debentures, bonds, simple problems on interest on bonds and debentures."
+            }
+          ]
+        },
+        {
+          "name": "Variation",
+          "objectives": [
+            {
+              "code": "GMATH-NUM-28",
+              "description": "Direct, inverse, partial and joint variations: Expression of various types of variation in mathematical symbols e.g. direct (z ∝ n), inverse (z ∝ 1/n), etc. Application to simple practical problems."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Algebraic Processes",
+      "abbreviation": "ALG",
+      "subStrands": [
+        {
+          "name": "Algebraic Expressions and Operations",
+          "objectives": [
+            {
+              "code": "GMATH-ALG-1",
+              "description": "Formulating algebraic expressions from given situations e.g. find an expression for the cost C Naira of 4 pens at x Naira each and 3 oranges at y naira each."
+            },
+            {
+              "code": "GMATH-ALG-2",
+              "description": "Evaluation of algebraic expressions e.g. if x = 60 and y = 20, find C. C = 4(60) + 3(20) = 300 naira."
+            },
+            {
+              "code": "GMATH-ALG-3",
+              "description": "Expansion of algebraic expressions e.g. (a+b)(c+d), (a+3)(c-4), etc."
+            },
+            {
+              "code": "GMATH-ALG-4",
+              "description": "Factorization of expressions of the form ax + ay, a(b+c) + d(b+c), a^2 – b^2, ax^2 + bx + c where a, b, c are integers. Application of difference of two squares e.g. 49^2 – 47^2 = (49+47)(49–47) = 96 x 2 = 192."
+            },
+            {
+              "code": "GMATH-ALG-5",
+              "description": "Binary Operations: Carry out binary operations on real numbers such as: a*b = 2a + b – ab, etc."
+            }
+          ]
+        },
+        {
+          "name": "Equations and Inequalities",
+          "objectives": [
+            {
+              "code": "GMATH-ALG-6",
+              "description": "Solution of linear equations in one variable: Solving/finding the truth set (solution set) for linear equations in one variable."
+            },
+            {
+              "code": "GMATH-ALG-7",
+              "description": "Simultaneous linear equations in two variables: Solving/finding the truth set of simultaneous equations in two variables by elimination, substitution and graphical methods. Word problems involving one or two variables."
+            },
+            {
+              "code": "GMATH-ALG-8",
+              "description": "Change of subject of a formula/relation and substitution: e.g. if 1/f = 1/u + 1/v, find v. Finding the value of a variable e.g. evaluating v given the values of u and f."
+            },
+            {
+              "code": "GMATH-ALG-9",
+              "description": "Solution of quadratic equations: Using factorization i.e. ab = 0 ⟹ either a = 0 or b = 0. By completing the square and use of formula."
+            },
+            {
+              "code": "GMATH-ALG-10",
+              "description": "Forming quadratic equation with given roots: Simple rational roots only e.g. forming a quadratic equation whose roots are -3 and 5/2 ⟹ (x+3)(x - 5/2) = 0."
+            },
+            {
+              "code": "GMATH-ALG-11",
+              "description": "Application of solution of quadratic equation in practical problems."
+            },
+            {
+              "code": "GMATH-ALG-12",
+              "description": "Solution of linear inequalities in one variable and representation on the number line. Truth set is also required. Simple practical problems."
+            },
+            {
+              "code": "GMATH-ALG-13",
+              "description": "Graphical solution of linear inequalities in two variables. Graphical solution of simultaneous linear inequalities in two variables: Maximum and minimum values. Application to real life situations e.g. minimum cost, maximum profit, linear programming, etc."
+            }
+          ]
+        },
+        {
+          "name": "Graphs of Functions",
+          "objectives": [
+            {
+              "code": "GMATH-ALG-14",
+              "description": "Interpretation of graphs, coordinate of points, table of values, drawing quadratic graphs and obtaining roots from graphs. Finding: (i) the coordinates of maximum and minimum points on the graph. (ii) intercepts on the axes, identifying axis of symmetry, recognizing sketched graphs."
+            },
+            {
+              "code": "GMATH-ALG-15",
+              "description": "Graphical solution of a pair of equations of the form: y = ax^2 + bx + c and y = mx + k. Use of quadratic graphs to solve related equations e.g. graph of y = x^2 + 5x + 6 to solve x^2 + 5x + 4 = 0."
+            },
+            {
+              "code": "GMATH-ALG-16",
+              "description": "Drawing tangents to curves to determine the gradient at a given point: Determining the gradient by drawing relevant triangle."
+            }
+          ]
+        },
+        {
+          "name": "Algebraic Fractions and Functions",
+          "objectives": [
+            {
+              "code": "GMATH-ALG-17",
+              "description": "Operations on algebraic fractions with monomial denominators: Simple cases only e.g. 1/x + 1/y = (x+y)/xy (x≠0, y≠0)."
+            },
+            {
+              "code": "GMATH-ALG-18",
+              "description": "Operations on algebraic fractions with binomial denominators: Simple cases only. Values for which a fraction is undefined e.g. 1/(x+3) is not defined for x = -3."
+            },
+            {
+              "code": "GMATH-ALG-19",
+              "description": "Types of Functions: One-to-one, one-to-many, many-to-one, many-to-many. Functions as a mapping, determination of the rule of a given mapping/function."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mensuration",
+      "abbreviation": "MENS",
+      "subStrands": [
+        {
+          "name": "Lengths, Perimeters and Areas",
+          "objectives": [
+            {
+              "code": "GMATH-MENS-1",
+              "description": "Use of Pythagoras theorem, sine and cosine rules to determine lengths and distances. No formal proofs of the theorem and rules are required."
+            },
+            {
+              "code": "GMATH-MENS-2",
+              "description": "Lengths of arcs of circles, perimeters of sectors and segments."
+            },
+            {
+              "code": "GMATH-MENS-3",
+              "description": "Longitudes and Latitudes: Distances along latitudes and longitudes and their corresponding angles."
+            },
+            {
+              "code": "GMATH-MENS-4",
+              "description": "Areas of triangles and special quadrilaterals – rectangles, parallelograms and trapeziums: Areas of similar figures. Include area of triangle = ½ base x height and ½absinC. Areas of compound shapes."
+            },
+            {
+              "code": "GMATH-MENS-5",
+              "description": "Areas of circles, sectors and segments of circles: Relationship between the sector of a circle and the surface area of a cone."
+            },
+            {
+              "code": "GMATH-MENS-6",
+              "description": "Surface areas of cubes, cuboids, cylinder, pyramids, right triangular prisms, cones and spheres."
+            }
+          ]
+        },
+        {
+          "name": "Volumes",
+          "objectives": [
+            {
+              "code": "GMATH-MENS-7",
+              "description": "Volumes of cubes, cuboids, cylinders, cones, right pyramids and spheres. Include volumes of compound shapes."
+            },
+            {
+              "code": "GMATH-MENS-8",
+              "description": "Volumes of similar solids."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Plane Geometry",
+      "abbreviation": "GEOM",
+      "subStrands": [
+        {
+          "name": "Angles, Parallel Lines and Triangles",
+          "objectives": [
+            {
+              "code": "GMATH-GEOM-1",
+              "description": "Angles at a point add up to 360°. Adjacent angles on a straight line are supplementary. Vertically opposite angles are equal. The degree as a unit of measure. Consider acute, obtuse, reflex angles, etc."
+            },
+            {
+              "code": "GMATH-GEOM-2",
+              "description": "Angles and intercepts on parallel lines: Alternate angles are equal. Corresponding angles are equal. Interior opposite angles are supplementary. Intercept theorem: Application to proportional division of a line segment."
+            },
+            {
+              "code": "GMATH-GEOM-3",
+              "description": "Triangles and Polygons: The sum of the angles of a triangle is 2 right angles. The exterior angle of a triangle equals the sum of the two interior opposite angles. Congruent triangles: Conditions to be known but proofs not required e.g. SSS, SAS, etc."
+            },
+            {
+              "code": "GMATH-GEOM-4",
+              "description": "Properties of special triangles – Isosceles, equilateral, right-angled, etc. Use symmetry where applicable."
+            },
+            {
+              "code": "GMATH-GEOM-5",
+              "description": "Properties of special quadrilaterals – parallelogram, rhombus, square, rectangle, trapezium."
+            },
+            {
+              "code": "GMATH-GEOM-6",
+              "description": "Properties of similar triangles: Equiangular properties and ratio of sides and areas."
+            },
+            {
+              "code": "GMATH-GEOM-7",
+              "description": "The sum of the angles of a polygon: Sum of interior angles = (n-2)180° or (2n-4) right angles, where n is the number of sides."
+            },
+            {
+              "code": "GMATH-GEOM-8",
+              "description": "Property of exterior angles of a polygon."
+            },
+            {
+              "code": "GMATH-GEOM-9",
+              "description": "Parallelograms on the same base and between the same parallels are equal in area."
+            }
+          ]
+        },
+        {
+          "name": "Circles",
+          "objectives": [
+            {
+              "code": "GMATH-GEOM-10",
+              "description": "Chords: Angles subtended by chords in a circle and at the centre. Perpendicular bisectors of chords."
+            },
+            {
+              "code": "GMATH-GEOM-11",
+              "description": "The angle which an arc of a circle subtends at the centre of the circle is twice that which it subtends at any point on the remaining part of the circumference."
+            },
+            {
+              "code": "GMATH-GEOM-12",
+              "description": "Any angle subtended at the circumference by a diameter is a right angle."
+            },
+            {
+              "code": "GMATH-GEOM-13",
+              "description": "Angles in the same segment are equal. Angles in opposite segments are supplementary."
+            },
+            {
+              "code": "GMATH-GEOM-14",
+              "description": "Perpendicularity of tangent and radius."
+            },
+            {
+              "code": "GMATH-GEOM-15",
+              "description": "If a tangent is drawn to a circle and from the point of contact a chord is drawn, each angle which this chord makes with the tangent is equal to the angle in the alternate segment."
+            }
+          ]
+        },
+        {
+          "name": "Construction and Loci",
+          "objectives": [
+            {
+              "code": "GMATH-GEOM-16",
+              "description": "Construction of bisectors of angles and line segments. Lines parallel or perpendicular to a given line. Angles e.g. 90°, 60°, 45°, 30°, and an angle equal to a given angle; include combination of these angles e.g. 75°, 105°, 135°, etc. Triangles and quadrilaterals from sufficient data."
+            },
+            {
+              "code": "GMATH-GEOM-17",
+              "description": "Loci: Knowledge of loci and their intersections in 2 dimensions: (i) Points at a given distance from a given point. (ii) Points equidistant from two given points. (iii) Points equidistant from two given straight lines. (iv) Points at a given distance from a given straight line. Consider parallel and intersecting lines. Application to real life situations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coordinate Geometry of Straight Lines",
+      "abbreviation": "COORD",
+      "subStrands": [
+        {
+          "name": "The x-y Plane and Straight Lines",
+          "objectives": [
+            {
+              "code": "GMATH-COORD-1",
+              "description": "Concept of the x-y plane. Coordinates of points on the x-y plane."
+            },
+            {
+              "code": "GMATH-COORD-2",
+              "description": "Midpoint of two points. Distance between two points: |PQ| = √[(x2-x1)^2 + (y2-y1)^2], where P(x1,y1) and Q(x2,y2). Gradient (slope) of a line: m = (y2-y1)/(x2-x1). Equation of a line in the form y = mx + c and y – y1 = m(x – x1), where m is the gradient (slope) and c is a constant."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trigonometry",
+      "abbreviation": "TRIG",
+      "subStrands": [
+        {
+          "name": "Trigonometric Ratios and Graphs",
+          "objectives": [
+            {
+              "code": "GMATH-TRIG-1",
+              "description": "Sine, Cosine and Tangent of acute angles: Use of right angled triangles."
+            },
+            {
+              "code": "GMATH-TRIG-2",
+              "description": "Use of tables of trigonometric ratios."
+            },
+            {
+              "code": "GMATH-TRIG-3",
+              "description": "Trigonometric ratios of 30°, 45° and 60°: Without the use of tables."
+            },
+            {
+              "code": "GMATH-TRIG-4",
+              "description": "Sine, cosine and tangent of angles from 0° to 360°: Relate to the unit circle; 0° ≤ x ≤ 360°."
+            },
+            {
+              "code": "GMATH-TRIG-5",
+              "description": "Graphs of sine and cosine: e.g. y = a sin x, y = b cos x."
+            },
+            {
+              "code": "GMATH-TRIG-6",
+              "description": "Graphs of trigonometric ratios: Graphs of simultaneous linear and trigonometric equations, e.g. y = a sin x + b cos x, etc."
+            }
+          ]
+        },
+        {
+          "name": "Angles of Elevation, Depression and Bearings",
+          "objectives": [
+            {
+              "code": "GMATH-TRIG-7",
+              "description": "Angles of elevation and depression: Calculating angles of elevation and depression. Application to heights and distances. Simple problems only."
+            },
+            {
+              "code": "GMATH-TRIG-8",
+              "description": "Bearings: Bearing of one point from another. Calculation of distances and angles. Notation e.g. 035°, N35°E. Simple problems only. Use of diagram is required. Sine and cosine rules may be used."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Introductory Calculus",
+      "abbreviation": "CALC",
+      "subStrands": [
+        {
+          "name": "Differentiation and Integration",
+          "objectives": [
+            {
+              "code": "GMATH-CALC-1",
+              "description": "Differentiation of algebraic functions: Concept/meaning of differentiation/derived function, dy/dx, relationship between gradient of a curve at a point and the differential coefficient of the equation of the curve at that point. Standard derivatives of some basic functions e.g. if y = x^2, dy/dx = 2x. If s = 2t^3 + 4, ds/dt = v = 6t^2, where s = distance, t = time and v = velocity. Application to real life situations such as maximum and minimum values, rates of change etc."
+            },
+            {
+              "code": "GMATH-CALC-2",
+              "description": "Integration of simple algebraic functions: Meaning/concept of integration, evaluation of simple definite algebraic equations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Statistics and Probability",
+      "abbreviation": "STATS",
+      "subStrands": [
+        {
+          "name": "Statistics",
+          "objectives": [
+            {
+              "code": "GMATH-STATS-1",
+              "description": "Frequency distribution: Construction of frequency distribution tables, concept of class intervals, class mark and class boundary."
+            },
+            {
+              "code": "GMATH-STATS-2",
+              "description": "Pie charts, bar charts, histograms and frequency polygons: Reading and drawing simple inferences from graphs, interpretation of data in histograms. Exclude unequal class interval."
+            },
+            {
+              "code": "GMATH-STATS-3",
+              "description": "Mean, median and mode for both discrete and grouped data: Use of an assumed mean is acceptable but not required. For grouped data, the mode should be estimated from the histogram while the median, quartiles and percentiles are estimated from the cumulative frequency curve."
+            },
+            {
+              "code": "GMATH-STATS-4",
+              "description": "Cumulative frequency curve (Ogive): Application of the cumulative frequency curve to everyday life."
+            },
+            {
+              "code": "GMATH-STATS-5",
+              "description": "Measures of Dispersion: range, semi inter-quartile/inter-quartile range, variance, mean deviation and standard deviation. Definition of range, variance, standard deviation, inter-quartile range. Note that mean deviation is the mean of the absolute deviations from the mean and variance is the square of the standard deviation. Problems on range, variance, standard deviation etc. Standard deviation of grouped data."
+            }
+          ]
+        },
+        {
+          "name": "Probability",
+          "objectives": [
+            {
+              "code": "GMATH-STATS-6",
+              "description": "Experimental and theoretical probability: Include equally likely events e.g. probability of throwing a six with a fair die or a head when tossing a fair coin."
+            },
+            {
+              "code": "GMATH-STATS-7",
+              "description": "Addition of probabilities for mutually exclusive and independent events: With replacement and without replacement."
+            },
+            {
+              "code": "GMATH-STATS-8",
+              "description": "Multiplication of probabilities for independent events: Simple practical problems only. Interpretation of 'and' and 'or' in probability."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vectors and Transformation",
+      "abbreviation": "VEC",
+      "subStrands": [
+        {
+          "name": "Vectors in a Plane",
+          "objectives": [
+            {
+              "code": "GMATH-VEC-1",
+              "description": "Vectors as a directed line segment. Cartesian components of a vector e.g. (5, 060°)."
+            },
+            {
+              "code": "GMATH-VEC-2",
+              "description": "Magnitude of a vector, equal vectors, addition and subtraction of vectors, zero vector, parallel vectors, multiplication of a vector by scalar. Knowledge of graphical representation is necessary."
+            }
+          ]
+        },
+        {
+          "name": "Transformation in the Cartesian Plane",
+          "objectives": [
+            {
+              "code": "GMATH-VEC-3",
+              "description": "Reflection of points and shapes in the Cartesian Plane: Restrict plane to the x and y axes and in the lines x = k, y = x and y = kx, where k is an integer. Determination of mirror lines (symmetry)."
+            },
+            {
+              "code": "GMATH-VEC-4",
+              "description": "Rotation of points and shapes in the Cartesian Plane: Rotation about the origin and a point other than the origin. Determination of the angle of rotation (restrict angles of rotation to -180° to 180°)."
+            },
+            {
+              "code": "GMATH-VEC-5",
+              "description": "Translation of points and shapes in the Cartesian Plane: Translation using a translation vector."
+            },
+            {
+              "code": "GMATH-VEC-6",
+              "description": "Enlargement: Draw the images of plane figures under enlargement with a given centre for a given scale factor. Use given scales to enlarge or reduce plane figures."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

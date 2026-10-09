@@ -1,0 +1,47 @@
+{
+  "found": true,
+  "subject": "Shorthand",
+  "subjectCode": "SHORT",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Business Matters",
+      "abbreviation": "BIZ",
+      "subStrands": [
+        {
+          "name": "Business Dictation and Transcription",
+          "objectives": [
+            {
+              "code": "SHORT-BIZ-1",
+              "description": "Business dictation passage: taking shorthand notes at 80 words per minute from business-related material such as letters, memoranda, reports and related topics."
+            },
+            {
+              "code": "SHORT-BIZ-2",
+              "description": "Transcription of business passage on a typewriter within the allotted time, using correct English and shorthand dictionaries; attaching shorthand notes to the transcript."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Literary Matters",
+      "abbreviation": "LIT",
+      "subStrands": [
+        {
+          "name": "Literary Dictation and Transcription",
+          "objectives": [
+            {
+              "code": "SHORT-LIT-1",
+              "description": "Literary dictation passage: taking shorthand notes at 80 words per minute from literary passages within the experience of candidates (non-technical and non-controversial material)."
+            },
+            {
+              "code": "SHORT-LIT-2",
+              "description": "Transcription of literary passage on a typewriter within the allotted time, maintaining speed and accuracy (syllabic intensity 1.35–1.40)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

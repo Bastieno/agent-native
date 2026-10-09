@@ -1,0 +1,70 @@
+{
+  "found": true,
+  "subject": "Horticulture and Crop Production",
+  "subjectCode": "HCROP",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Introduction to Horticulture and Crop Science",
+      "abbreviation": "IHC",
+      "subStrands": [
+        {
+          "name": "Scope, Importance, and Crop Classification",
+          "objectives": [
+            {"code": "HCROP-IHC-1", "description": "Define horticulture and explain its importance to food production, nutrition, and income in Nigeria"},
+            {"code": "HCROP-IHC-2", "description": "Classify horticultural crops into fruits, vegetables, ornamentals, and herbs with examples from Nigeria"},
+            {"code": "HCROP-IHC-3", "description": "Describe the nutritional and economic value of horticultural crops to Nigerian households and the economy"},
+            {"code": "HCROP-IHC-4", "description": "Identify common farm tools and equipment used in crop production and describe their correct use and maintenance"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Soil Science and Land Preparation",
+      "abbreviation": "SLP",
+      "subStrands": [
+        {
+          "name": "Soil Properties, Fertility, and Tillage",
+          "objectives": [
+            {"code": "HCROP-SLP-1", "description": "Describe the composition of soil, soil types (sandy, clay, loam), and their suitability for different crops"},
+            {"code": "HCROP-SLP-2", "description": "Explain methods of improving soil fertility including the use of organic manure, compost, and inorganic fertilisers"},
+            {"code": "HCROP-SLP-3", "description": "Describe land preparation methods including clearing, ploughing, harrowing, and ridging"},
+            {"code": "HCROP-SLP-4", "description": "Explain erosion control and soil conservation practices including mulching, cover cropping, and terracing"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crop Production Practices",
+      "abbreviation": "CPP",
+      "subStrands": [
+        {
+          "name": "Planting, Irrigation, and Pest Management",
+          "objectives": [
+            {"code": "HCROP-CPP-1", "description": "Describe methods of crop propagation including seed planting, vegetative propagation, and transplanting seedlings"},
+            {"code": "HCROP-CPP-2", "description": "Apply basic irrigation methods (drip, sprinkler, furrow) and explain their advantages in dry conditions"},
+            {"code": "HCROP-CPP-3", "description": "Identify common pests and diseases affecting Nigerian crops and describe integrated pest management strategies"},
+            {"code": "HCROP-CPP-4", "description": "Apply weeding, mulching, and staking practices to support healthy crop growth"},
+            {"code": "HCROP-CPP-5", "description": "Grow a simple vegetable or herb garden applying correct planting, maintenance, and harvesting techniques"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Post-Harvest Handling and Agribusiness",
+      "abbreviation": "PHA",
+      "subStrands": [
+        {
+          "name": "Harvest, Storage, and Farm Entrepreneurship",
+          "objectives": [
+            {"code": "HCROP-PHA-1", "description": "Describe signs of crop maturity and apply appropriate harvesting methods for different horticultural crops"},
+            {"code": "HCROP-PHA-2", "description": "Describe post-harvest handling practices including sorting, grading, packaging, and storage to reduce losses"},
+            {"code": "HCROP-PHA-3", "description": "Identify value-addition opportunities in horticulture including processing, packaging, and marketing of farm produce"},
+            {"code": "HCROP-PHA-4", "description": "Write a simple crop production business plan for a small-scale horticultural enterprise"}
+          ]
+        }
+      ]
+    }
+  ]
+}

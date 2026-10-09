@@ -1,0 +1,72 @@
+{
+  "found": true,
+  "subject": "Computer Hardware and GSM Repairs",
+  "subjectCode": "CHGR",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Computer Hardware Fundamentals",
+      "abbreviation": "CHF",
+      "subStrands": [
+        {
+          "name": "Computer Components and Assembly",
+          "objectives": [
+            {"code": "CHGR-CHF-1", "description": "Identify internal and external computer components including motherboard, CPU, RAM, hard disk, and power supply unit"},
+            {"code": "CHGR-CHF-2", "description": "Describe the functions of computer storage devices including hard disk, SSD, flash drives, and memory cards"},
+            {"code": "CHGR-CHF-3", "description": "Assemble a basic computer system step by step following safe hardware procedures"},
+            {"code": "CHGR-CHF-4", "description": "Perform preventive maintenance on computers including cleaning, updates, and hardware checks"},
+            {"code": "CHGR-CHF-5", "description": "Troubleshoot common motherboard and hardware problems and describe appropriate solutions"},
+            {"code": "CHGR-CHF-6", "description": "Replace and upgrade RAM, hard disk, and other internal components following correct procedures"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GSM Technology and Repairs",
+      "abbreviation": "GTR",
+      "subStrands": [
+        {
+          "name": "Mobile Phone Systems and Fault Diagnosis",
+          "objectives": [
+            {"code": "CHGR-GTR-1", "description": "Describe GSM network generations (2G, 3G, 4G, 5G) and explain how mobile phones connect to networks"},
+            {"code": "CHGR-GTR-2", "description": "Identify common GSM phone faults including screen damage, battery failure, speaker and charging port issues"},
+            {"code": "CHGR-GTR-3", "description": "Safely replace GSM phone components including battery, screen, keypad, and charging port"},
+            {"code": "CHGR-GTR-4", "description": "Describe GSM operating systems (Android, iOS) and explain the process of software flashing and OS updates"},
+            {"code": "CHGR-GTR-5", "description": "Perform phone software upgrades, factory resets, and data backup and recovery operations"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Soldering and Electronics",
+      "abbreviation": "SE",
+      "subStrands": [
+        {
+          "name": "Soldering Skills and Circuit Maintenance",
+          "objectives": [
+            {"code": "CHGR-SE-1", "description": "Identify soldering tools and equipment and describe correct safety procedures for soldering"},
+            {"code": "CHGR-SE-2", "description": "Demonstrate soldering technique by joining simple circuit connections correctly"},
+            {"code": "CHGR-SE-3", "description": "Describe methods of power management in computers and mobile devices to preserve battery and device life"},
+            {"code": "CHGR-SE-4", "description": "Perform routine preventive maintenance on computers and GSM devices to extend their operational life"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Business Skills for Technicians",
+      "abbreviation": "BST",
+      "subStrands": [
+        {
+          "name": "Entrepreneurship and Professional Practice",
+          "objectives": [
+            {"code": "CHGR-BST-1", "description": "Apply basic bookkeeping to track income, expenses, and profit in a small repair business"},
+            {"code": "CHGR-BST-2", "description": "Describe marketing strategies for attracting and retaining customers in a computer and GSM repair business"},
+            {"code": "CHGR-BST-3", "description": "Demonstrate professional customer service skills including communication, transparency, and warranty practices"},
+            {"code": "CHGR-BST-4", "description": "Perform a complete phone or computer repair project demonstrating diagnosis, repair, testing, and handover skills"}
+          ]
+        }
+      ]
+    }
+  ]
+}

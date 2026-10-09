@@ -1,0 +1,194 @@
+{
+  "found": true,
+  "subject": "Business Management",
+  "subjectCode": "BIZMGT",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Nature of Management",
+      "abbreviation": "NATURE",
+      "subStrands": [
+        {
+          "name": "Management, Business Organizations and Society",
+          "objectives": [
+            {
+              "code": "BIZMGT-NATURE-1",
+              "description": "Meaning and process of management: meaning of management and administration; basic functions of management; levels of management; types and roles of managers; difference between administration and management."
+            },
+            {
+              "code": "BIZMGT-NATURE-2",
+              "description": "Forms of business organization: meaning of business organization; identification of major forms — sole proprietorship, partnership, limited liability company, public corporations, co-operative society; procedures for formation/characteristics, advantages and disadvantages of each form; causes of business failure."
+            },
+            {
+              "code": "BIZMGT-NATURE-3",
+              "description": "Business and society: meaning of business environment; forces in the business environment; ethical, legal and social responsibilities of businesses; primary and secondary stakeholders — meaning and differences; responsibilities of businesses towards stakeholders."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Functions of Management",
+      "abbreviation": "FUNCS",
+      "subStrands": [
+        {
+          "name": "Planning, Organizing, Directing and Controlling",
+          "objectives": [
+            {
+              "code": "BIZMGT-FUNCS-1",
+              "description": "Planning and decision making: meaning and importance of planning; steps in planning, types of planning, limitations to planning; meaning and importance of decision making; steps in the decision making process; types of decisions (programmed and non-programmed); levels of management decisions."
+            },
+            {
+              "code": "BIZMGT-FUNCS-2",
+              "description": "Organizing: meaning, importance and activities of organizing; principles of organizing, organizational structure and organizational chart; centralization and decentralization — meaning, differences, advantages and disadvantages; meaning and benefits of delegation; reasons why managers do not delegate; reasons why subordinates do not accept delegation; guidelines for delegation."
+            },
+            {
+              "code": "BIZMGT-FUNCS-3",
+              "description": "Directing: meaning and elements of directing; motivation — meaning, intrinsic and extrinsic factors; Maslow's hierarchy of needs; leadership — importance of good leadership; leadership styles and sources of power available to leaders; communication — meaning, importance, channel, formal and informal; the communication process; barriers to communication; guidelines to effective communication."
+            },
+            {
+              "code": "BIZMGT-FUNCS-4",
+              "description": "Controlling: meaning and reasons for controlling; steps in controlling; tools for controlling."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Management Information Technology",
+      "abbreviation": "ICT",
+      "subStrands": [
+        {
+          "name": "ICT, Data, Computers and Business Applications",
+          "objectives": [
+            {
+              "code": "BIZMGT-ICT-1",
+              "description": "Concept of ICT; data and information — meaning, differences and sources of business information; functions of the computer; applications of computers in business; advantages and challenges of the use of computers in business."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Legal Environment of Business",
+      "abbreviation": "LEGAL",
+      "subStrands": [
+        {
+          "name": "Contract, Agency and Negotiable Instruments",
+          "objectives": [
+            {
+              "code": "BIZMGT-LEGAL-1",
+              "description": "Law of contract: meaning and elements of contract; classification of contracts; vitiating factors (void and voidable contracts); ways of discharging a contract."
+            },
+            {
+              "code": "BIZMGT-LEGAL-2",
+              "description": "Principles of agency: creation of agency; rights and duties of a principal; rights and duties of an agent; termination of agency."
+            },
+            {
+              "code": "BIZMGT-LEGAL-3",
+              "description": "Negotiable instruments: meaning and characteristics of negotiable instruments; types — cheques, bills of exchange, promissory notes; cheques — class, types, advantages, disadvantages and ways of avoiding cheque frauds."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Finance and Financial Institutions",
+      "abbreviation": "FINANCE",
+      "subStrands": [
+        {
+          "name": "Money, Banking, Insurance and Stock Exchange",
+          "objectives": [
+            {
+              "code": "BIZMGT-FINANCE-1",
+              "description": "Money: meaning and characteristics of money; functions of money; meaning and causes of inflation."
+            },
+            {
+              "code": "BIZMGT-FINANCE-2",
+              "description": "Banking: types of banks; functions of the central bank; functions of commercial and other types of banks; types of bank accounts; tools of monetary control."
+            },
+            {
+              "code": "BIZMGT-FINANCE-3",
+              "description": "Risk management and insurance: meaning of risk and risk management; types of business risks; meaning and importance of insurance; principles of insurance; types of insurance and insurance policies."
+            },
+            {
+              "code": "BIZMGT-FINANCE-4",
+              "description": "Stock exchange: meaning and functions; types of securities."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Government, International Trade and Globalization",
+      "abbreviation": "GOVTINTL",
+      "subStrands": [
+        {
+          "name": "Government Role, International Trade and Economic Integration",
+          "objectives": [
+            {
+              "code": "BIZMGT-GOVTINTL-1",
+              "description": "Role of government in the economy: role of government in an economy; sources and types of government revenue; purpose of taxation; types of taxes and challenges of tax collection; types and items of government expenditure."
+            },
+            {
+              "code": "BIZMGT-GOVTINTL-2",
+              "description": "International trade: meaning of trade; difference between domestic and international trade; documents used in domestic and international trade; reasons for international trade; theories of absolute cost and comparative cost advantage; restrictions in international trade; balance of payments (BOP) and measures for correcting BOP deficit."
+            },
+            {
+              "code": "BIZMGT-GOVTINTL-3",
+              "description": "Developing economies: challenges of developing economies in relation to international trade; ways of improving developing economies by government; role of IMF, IBRD, and UNCTAD in international trade."
+            },
+            {
+              "code": "BIZMGT-GOVTINTL-4",
+              "description": "Globalization: meaning and causes of globalization; advantages and disadvantages of globalization."
+            },
+            {
+              "code": "BIZMGT-GOVTINTL-5",
+              "description": "Economic integration: meaning of economic integration; roles of ECOWAS, AU, EU, African European Pacific Countries, and ASEAN in economic integration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Functional Management and Entrepreneurship",
+      "abbreviation": "FUNC",
+      "subStrands": [
+        {
+          "name": "HR, Labour, Production, Marketing, Finance and Entrepreneurship",
+          "objectives": [
+            {
+              "code": "BIZMGT-FUNC-1",
+              "description": "Human resource management: meaning and functions of HRM; steps in the recruitment and selection process; sources of recruitment; types of training; job analysis (job description and job specification); performance appraisal — meaning and importance."
+            },
+            {
+              "code": "BIZMGT-FUNC-2",
+              "description": "Labour relations: meaning of labour relations, trade unions and industrial relations; functions of trade unions; employers' association — meaning and functions; collective bargaining — process, importance and rights of parties involved."
+            },
+            {
+              "code": "BIZMGT-FUNC-3",
+              "description": "Production management: meaning of production and production management; forms of production — extractive, manufacturing, construction, commercial and personal services; factors of production; meaning of specialization and exchange; advantages and disadvantages of specialization; types of production process — job, batch, flow; steps in production planning and control."
+            },
+            {
+              "code": "BIZMGT-FUNC-4",
+              "description": "Principles of marketing: meaning and activities of marketing; market segmentation — meaning and bases; elements of the marketing mix (product, price, promotion and place); steps in new product development; stages of product life cycle; functions of packaging and uses of branding; factors affecting pricing and pricing objectives; promotion — meaning, importance and types; channels of distribution; functions of wholesalers and retailers."
+            },
+            {
+              "code": "BIZMGT-FUNC-5",
+              "description": "Electronic commerce (e-commerce): meaning and importance; meaning of business finance; short-term and long-term sources of finance; government lending programmes; venture capital fund."
+            },
+            {
+              "code": "BIZMGT-FUNC-6",
+              "description": "Entrepreneurship: meaning of entrepreneurship; role of entrepreneurs; characteristics of an entrepreneur; content of business plan; reasons for business successes and failures; record keeping — meaning, importance and types; time management — meaning, importance and techniques."
+            },
+            {
+              "code": "BIZMGT-FUNC-7",
+              "description": "Small business: meaning and categories; procedures in the formation of small businesses; importance of small businesses in the economy; challenges of small businesses; role of government in promoting small businesses; ways of sustaining an established business."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

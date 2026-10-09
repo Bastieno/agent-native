@@ -1,0 +1,70 @@
+{
+  "found": true,
+  "subject": "Solar Photovoltaic Installation and Maintenance",
+  "subjectCode": "SOLPV",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Fundamentals of Solar Energy",
+      "abbreviation": "FSE",
+      "subStrands": [
+        {
+          "name": "Energy, Solar Resources, and Safety",
+          "objectives": [
+            {"code": "SOLPV-FSE-1", "description": "Explain the nature of solar energy, how the sun produces energy, and Nigeria's solar energy potential"},
+            {"code": "SOLPV-FSE-2", "description": "Describe renewable energy sources and compare solar energy with other energy sources (fossil fuels, wind, hydro)"},
+            {"code": "SOLPV-FSE-3", "description": "Identify electrical safety rules and apply them when working with solar equipment and live circuits"},
+            {"code": "SOLPV-FSE-4", "description": "Describe basic electrical concepts including voltage, current, resistance, and power relevant to solar systems"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Solar PV Components and Systems",
+      "abbreviation": "SPC",
+      "subStrands": [
+        {
+          "name": "System Components and Their Functions",
+          "objectives": [
+            {"code": "SOLPV-SPC-1", "description": "Identify the main components of a solar PV system: solar panels, charge controller, battery, and inverter"},
+            {"code": "SOLPV-SPC-2", "description": "Explain how a photovoltaic solar panel converts sunlight to electricity and describe types of PV panels"},
+            {"code": "SOLPV-SPC-3", "description": "Describe the function of a charge controller and explain how it protects batteries from overcharging"},
+            {"code": "SOLPV-SPC-4", "description": "Describe types of batteries used in solar systems, their maintenance needs, and safety precautions"},
+            {"code": "SOLPV-SPC-5", "description": "Explain the function of an inverter and distinguish between AC and DC electricity in solar systems"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Installation and Wiring",
+      "abbreviation": "IW",
+      "subStrands": [
+        {
+          "name": "Site Assessment, Mounting, and Wiring",
+          "objectives": [
+            {"code": "SOLPV-IW-1", "description": "Conduct a basic site assessment to determine the suitability of a location for solar panel installation"},
+            {"code": "SOLPV-IW-2", "description": "Mount solar panels correctly on a rooftop or ground frame at the appropriate tilt angle for Nigeria"},
+            {"code": "SOLPV-IW-3", "description": "Wire solar panels in series and parallel configurations and connect components of a basic solar system"},
+            {"code": "SOLPV-IW-4", "description": "Perform simple solar system installation for a small off-grid application (lighting, phone charging)"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Maintenance and Entrepreneurship",
+      "abbreviation": "ME",
+      "subStrands": [
+        {
+          "name": "System Maintenance and Business Skills",
+          "objectives": [
+            {"code": "SOLPV-ME-1", "description": "Perform routine maintenance on solar PV systems including panel cleaning, connection checks, and battery testing"},
+            {"code": "SOLPV-ME-2", "description": "Diagnose and troubleshoot common solar system faults including no output, low voltage, and battery drain"},
+            {"code": "SOLPV-ME-3", "description": "Describe the business opportunities in solar energy installation and maintenance in Nigeria"},
+            {"code": "SOLPV-ME-4", "description": "Calculate basic energy load requirements for a household and size a simple solar system to meet them"}
+          ]
+        }
+      ]
+    }
+  ]
+}

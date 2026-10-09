@@ -1,0 +1,129 @@
+{
+  "found": true,
+  "subject": "GSM Phones Maintenance and Repairs",
+  "subjectCode": "GSMPHONES",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction to Mobile Phones and Service Providers",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Terminologies, Types, Accessories and Service Providers",
+          "objectives": [
+            {
+              "code": "GSMPHONES-INTRO-1",
+              "description": "Mobile phones acronyms and terminologies: definition of mobile phones and terminologies including GSM, CDMA, mobile phones/cell phones/user equipment, MMS, SMS, call barring, call forwarding, BSI, DCT, FPS etc."
+            },
+            {
+              "code": "GSMPHONES-INTRO-2",
+              "description": "Mobile phone bands and their uses: single, double, tri and quad bands and their uses."
+            },
+            {
+              "code": "GSMPHONES-INTRO-3",
+              "description": "Types of mobile phones: straight, flip, slides etc. and their special maintenance needs."
+            },
+            {
+              "code": "GSMPHONES-INTRO-4",
+              "description": "Phone accessories and their functions: headsets/hands free, earpiece, external Bluetooth, batteries, chargers, cables etc. and their functions."
+            },
+            {
+              "code": "GSMPHONES-INTRO-5",
+              "description": "Types of menus and sub-menus: phone book, message, call, settings, applications etc. and their functions."
+            },
+            {
+              "code": "GSMPHONES-INTRO-6",
+              "description": "Service providers and their codes: major voice service providers and their service codes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Basic Computer and Internet Concepts",
+      "abbreviation": "COMP",
+      "subStrands": [
+        {
+          "name": "Computer Hardware, Software and Internet",
+          "objectives": [
+            {
+              "code": "GSMPHONES-COMP-1",
+              "description": "Introduction to computer: definition, identification and functions of various computer hardware (monitor, CPU, keyboard etc.) and software (operating and application) components."
+            },
+            {
+              "code": "GSMPHONES-COMP-2",
+              "description": "Introduction to internet: web access platforms including WAP/GPRS/EDGE/Wi-Fi/3G etc."
+            },
+            {
+              "code": "GSMPHONES-COMP-3",
+              "description": "Browsing the web: browsing activities like downloading, uploading etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Essential Components of Mobile Phones",
+      "abbreviation": "COMPON",
+      "subStrands": [
+        {
+          "name": "Structure, Hardware and Software Components",
+          "objectives": [
+            {
+              "code": "GSMPHONES-COMPON-1",
+              "description": "Structure of mobile phones: basic block diagram (power unit, memory unit and radio unit) and functions of each block."
+            },
+            {
+              "code": "GSMPHONES-COMPON-2",
+              "description": "Hardware components: identification, description and functions of various hardware components including CPU, SIM socket, earpiece, keypad, buzzer, vibrator etc."
+            },
+            {
+              "code": "GSMPHONES-COMPON-3",
+              "description": "Software components: various software components both operating and application software."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Maintenance and Repair",
+      "abbreviation": "MAINT",
+      "subStrands": [
+        {
+          "name": "Electronic Components, Preventive/Corrective Maintenance, Tools and Fault Finding",
+          "objectives": [
+            {
+              "code": "GSMPHONES-MAINT-1",
+              "description": "Electronic components in mobile phones: resistors, capacitors, diodes, transistors, IC, etc."
+            },
+            {
+              "code": "GSMPHONES-MAINT-2",
+              "description": "Preventive maintenance: definitions, functions, reason, advantages and procedures (cleaning, soldering, de-soldering, re-balling etc.)."
+            },
+            {
+              "code": "GSMPHONES-MAINT-3",
+              "description": "Corrective maintenance: procedures for corrective maintenance of mobile phones."
+            },
+            {
+              "code": "GSMPHONES-MAINT-4",
+              "description": "Common tools and equipment for hardware and software repairs: star, Allen key, lead, precision set, multi-meter, oscilloscope, computer set, soldering iron and sucker etc.; software tools for repair such as unlocking software, flashing software, firmware installation etc."
+            },
+            {
+              "code": "GSMPHONES-MAINT-5",
+              "description": "Safety in mobile phone workshop: safety rules and regulations; safe use of maintenance tools; basic safety facilities (first aid box, fire extinguishers etc.)."
+            },
+            {
+              "code": "GSMPHONES-MAINT-6",
+              "description": "Common hardware problems: identification of hardware problems such as damaged screen, charging ports, mouthpiece, earpiece, keyboard etc."
+            },
+            {
+              "code": "GSMPHONES-MAINT-7",
+              "description": "Common software problems: identification of software problems such as software corruption, virus attacks, firmware issues etc."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

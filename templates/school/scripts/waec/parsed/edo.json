@@ -1,0 +1,82 @@
+{
+  "found": true,
+  "subject": "Edo",
+  "subjectCode": "EDO",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Language",
+      "abbreviation": "LANG",
+      "subStrands": [
+        {
+          "name": "Composition, Sound System and Grammar",
+          "objectives": [
+            {
+              "code": "EDO-LANG-1",
+              "description": "Comprehension: reading and understanding two short passages in Edo."
+            },
+            {
+              "code": "EDO-LANG-2",
+              "description": "Composition: essay types including narrative, descriptive, argumentative, expository, dialogue, debate and letter writing (approximately 300 words)."
+            },
+            {
+              "code": "EDO-LANG-3",
+              "description": "Sound system: vowels, consonants and syllabic nasal — their production in terms of place and manner, basic phonetic and phonemic classification; syllable structure; sound processes e.g. vowel harmony, assimilation, elision; sound system aspect of the orthography; tones and tone notation."
+            },
+            {
+              "code": "EDO-LANG-4",
+              "description": "Grammar: word structure and word formation; numerals — basic and derived; word classes — nouns, verbs, adverbs, pronouns, adjectives, etc.; grammatical categories — subject, object, complement, predicate, number, person, tense, aspect, mood, etc.; phrases and clauses; the structure and type of sentences."
+            },
+            {
+              "code": "EDO-LANG-5",
+              "description": "Translation: translation between Edo and English."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Literature",
+      "abbreviation": "LIT",
+      "subStrands": [
+        {
+          "name": "Oral Literature and Written Literature",
+          "objectives": [
+            {
+              "code": "EDO-LIT-1",
+              "description": "Basic principles of literary appreciation."
+            },
+            {
+              "code": "EDO-LIT-2",
+              "description": "Oral literature — prose, poetry, drama: set books covering different genres."
+            },
+            {
+              "code": "EDO-LIT-3",
+              "description": "Written literature — prose, poetry, drama: set books covering different genres."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Culture",
+      "abbreviation": "CULT",
+      "subStrands": [
+        {
+          "name": "Customs and Institutions",
+          "objectives": [
+            {
+              "code": "EDO-CULT-1",
+              "description": "Customs: make-up and adornments; in-door and out-door games; pregnancy and its care; names/naming ceremonies; home training (greetings, respect for superiors, cleanliness, tolerance, integrity, hard work, etc.); Edo foods; non-verbal communication; funerals — traditional and modern methods; inheritance — traditional and modern methods."
+            },
+            {
+              "code": "EDO-CULT-2",
+              "description": "Institutions: traditional occupations; marriage; politics — family structure, age grades, chieftaincy, Obaship, etc.; child care; ancestors; Edo beliefs about Osalobua/Osanobua (God), deities/divinities, other invisible forces, etc.; modern religions — Islam, Christianity, etc.; economy — adverts, money lending, cooperative efforts, etc."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
