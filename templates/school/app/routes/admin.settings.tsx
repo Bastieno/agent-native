@@ -18,7 +18,13 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
-import { IconSettings, IconDeviceFloppy } from "@tabler/icons-react";
+import { IconSettings, IconDeviceFloppy, IconDots } from "@tabler/icons-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { SchoolWeekEditor } from "@/components/timetable/SchoolWeekEditor";
 import { RoomsEditor } from "@/components/timetable/RoomsEditor";
 import { SchoolCrestField } from "@/components/SchoolCrestField";
@@ -114,6 +120,30 @@ export default function AdminSettings() {
       return res.json();
     },
   });
+  // Promotion: next year, planned ahead, becomes the one the school is in.
+  // Asked for first, because the current year is archived by it.
+  const [promote, setPromote] = useState<any | null>(null);
+  function makeCurrent(year: any) {
+    setPromote(null);
+    const before = qc.getQueryData<any[]>(["academic-years"]);
+    qc.setQueryData<any[]>(["academic-years"], (old = []) =>
+      old.map((y) => ({
+        ...y,
+        status:
+          y.id === year.id
+            ? "active"
+            : y.status === "active"
+              ? "archived"
+              : y.status,
+      })),
+    );
+    callAction("set-active-academic-year", { id: year.id })
+      .then((r) => toast.success(r.message))
+      .catch((e) => {
+        qc.setQueryData(["academic-years"], before);
+        toast.error(e.message);
+      });
+  }
   const { data: terms = [] } = useQuery<any[]>({
     queryKey: ["terms"],
     queryFn: async () => {
@@ -254,6 +284,31 @@ export default function AdminSettings() {
                             <Badge variant="secondary" className="text-[11px]">
                               Current
                             </Badge>
+                          ) : year.status === "upcoming" ? (
+                            <Badge variant="outline" className="text-[11px]">
+                              Upcoming
+                            </Badge>
+                          ) : null}
+                          {year.status !== "active" ? (
+                            <DropdownMenu>
+                              <DropdownMenuTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  size="icon"
+                                  className="ml-auto h-6 w-6"
+                                  aria-label={`More for ${year.name}`}
+                                >
+                                  <IconDots className="h-4 w-4" />
+                                </Button>
+                              </DropdownMenuTrigger>
+                              <DropdownMenuContent align="end">
+                                <DropdownMenuItem
+                                  onSelect={() => setPromote(year)}
+                                >
+                                  Make current
+                                </DropdownMenuItem>
+                              </DropdownMenuContent>
+                            </DropdownMenu>
                           ) : null}
                         </div>
                         {mine.length === 0 ? (
@@ -305,6 +360,30 @@ export default function AdminSettings() {
                 Ask the agent to add a year, add a term, or change dates.
               </p>
             </div>
+            <AlertDialog
+              open={!!promote}
+              onOpenChange={(open) => !open && setPromote(null)}
+            >
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>
+                    Make {promote?.name} the current year?
+                  </AlertDialogTitle>
+                  <AlertDialogDescription>
+                    The year the school is in now is archived. Its classes,
+                    marks and report cards are kept as they are. Moving learners
+                    into their new arms afterwards enrols them in{" "}
+                    {promote?.name}'s classes.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Not yet</AlertDialogCancel>
+                  <AlertDialogAction onClick={() => makeCurrent(promote)}>
+                    Make current
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </TabsContent>
 
           <TabsContent value="school-week" className="mt-4">

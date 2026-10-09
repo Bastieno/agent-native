@@ -161,7 +161,13 @@ When an admin has a new/empty school, walk them through setup in this order:
    week one should get something shaped like this school's work, and
    `subjectsWithoutBlueprint` is how you know you have finished.
 7. **Curriculum** — `start-curriculum-draft` → multi-turn co-authoring → `commit-curriculum-draft`
-8. **Academic year + terms** — `create-academic-year` → `create-term`
+8. **Academic year + terms** — `create-academic-year` → `create-term`. A school's
+   first year is current from the start. A later year, planned ahead, is
+   **upcoming** until it is made current — pass `--setActive true` only when
+   the school is moving into it now, and at promotion use
+   `set-active-academic-year`, which archives the year it replaces (its
+   classes, marks and report cards are kept). Say which year is current
+   before you change it, and confirm first.
 9. **Scheme of work** — `generate-scheme-of-work` per subject and year group,
    so the year is laid out week by week. Lesson notes belong to a class, so
    create the classes first; for a curriculum that already exists, use
@@ -522,7 +528,7 @@ pnpm action update-arm --id <id> [--name] [--stream] [--homeRoom] [--formTeacher
 pnpm action set-learner-arm --armId <id|null> --studentUserIds '[...]'
 ```
 
-Placing a learner in an arm enrols them in that arm's whole-arm classes and withdraws them from the ones they left (never deletes). Say what changed, in the action's own words: "Tolu is now in SS1B. Enrolled in 9 classes this academic year, withdrawn from 9." A learner can only join an arm of their own year group. **Only the active academic year's classes follow.** Last year's classes keep their rolls, because their gradebooks and report cards read them; so at promotion, move learners into their new arms after the new year is active and its classes exist. If no academic year is active, nothing is enrolled or withdrawn and the reply says so; offer to set one active.
+Placing a learner in an arm enrols them in that arm's whole-arm classes and withdraws them from the ones they left (never deletes). Say what changed, in the action's own words: "Tolu is now in SS1B. Enrolled in 9 classes this academic year, withdrawn from 9." A learner can only join an arm of their own year group. **Only the active academic year's classes follow.** Last year's classes keep their rolls, because their gradebooks and report cards read them; so at promotion, move learners into their new arms after the new year is active and its classes exist. If no academic year is current, nothing is enrolled or withdrawn and the reply says so; offer to make one current. At promotion the order is: make next year current (`set-active-academic-year`, after confirming), then move learners into their new arms.
 
 **The three kinds of class.** Ask which one it is when creating a class in a school that uses arms:
 
@@ -1186,7 +1192,8 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 | `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels --schoolWeek '{cycleLength,days:[{day,periods:[...]}]}' --rooms '[{name,kind}]'` |
 | `get-custom-fields-schema`                     |                                                                                                                                                          |
 | `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                                                                                |
-| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate`                                                                                                                           |
+| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate [--setActive]` — upcoming unless `--setActive` or the school has no current year                                           |
+| `set-active-academic-year`                     | `--id` — make a year current at promotion; archives the one it replaces                                                                                  |
 | `list-terms` / `create-term`                   | `--academicYearId --name --startDate --endDate --sequence`                                                                                               |
 | `list-departments` / `create-department`       | `--name [--headTeacherUserId]`                                                                                                                           |
 | `manage-grade-levels`                          | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred                                                       |

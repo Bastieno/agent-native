@@ -1229,15 +1229,41 @@ export async function checkTimetableBoundaries(
   const rollA = await roll(client, run, classA);
   const mover = rollA[0];
   const rollBBefore = await roll(client, run, classB);
-  const Y2 = idOf(
-    await client.as(admin, "create-academic-year", {
-      name: "2027/2028",
-      startDate: "2027-09-13",
-      endDate: "2028-07-21",
-      setActive: true,
-    }),
-    "academicYear",
-  )!;
+  // Next year is planned while this one is taught: creating it must not
+  // take the school out of the year it is in.
+  const termBefore = await client.as(admin, "get-current-term", {});
+  const planned = await client.as(admin, "create-academic-year", {
+    name: "2027/2028",
+    startDate: "2027-09-13",
+    endDate: "2028-07-21",
+  });
+  const Y2 = idOf(planned, "academicYear")!;
+  const termAfter = await client.as(admin, "get-current-term", {});
+  findings.expect(
+    phase,
+    planned?.status === "upcoming" &&
+      termAfter?.session?.id === termBefore?.session?.id &&
+      termAfter?.term?.id === termBefore?.term?.id,
+    "a year created ahead of time is upcoming, and the school stays in the year it is in",
+    `${planned?.status}; session ${termBefore?.session?.name} → ${termAfter?.session?.name}`,
+  );
+  // Promotion: the planned year becomes current, and only it.
+  const promoted = await client.as(admin, "set-active-academic-year", {
+    id: Y2,
+  });
+  const years = asList(
+    await client.as(admin, "list-academic-years", {}),
+    "years",
+  );
+  findings.expect(
+    phase,
+    years.filter((y: any) => y.status === "active").map((y: any) => y.id)
+      .length === 1 &&
+      years.find((y: any) => y.id === Y2)?.status === "active" &&
+      noId(promoted?.message),
+    "making next year current leaves exactly one current year, and says so in words",
+    promoted?.message,
+  );
   const makeY2Term = async (
     name: string,
     start: string,

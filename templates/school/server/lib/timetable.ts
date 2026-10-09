@@ -21,7 +21,12 @@ export async function loadSchoolConfig(
  */
 export async function termContext(orgId: string, date?: string) {
   const db = getDb();
-  const [year] = await db
+  const today = date ?? new Date().toISOString().slice(0, 10);
+  // Normally one year is current. Schools created before
+  // `create-academic-year` stopped making every new year current can have
+  // two; then the one the date falls in wins, else the latest to have
+  // started, else the earliest — never whichever the database returns first.
+  const active = await db
     .select()
     .from(schema.academicYears)
     .where(
@@ -31,7 +36,11 @@ export async function termContext(orgId: string, date?: string) {
         eq(schema.academicYears.status, "active"),
       ),
     )
-    .limit(1);
+    .orderBy(asc(schema.academicYears.startDate));
+  const year =
+    active.find((y: any) => y.startDate <= today && today <= y.endDate) ??
+    [...active].reverse().find((y: any) => y.startDate <= today) ??
+    active[0];
   if (!year) return null;
 
   const terms = await db
@@ -45,7 +54,6 @@ export async function termContext(orgId: string, date?: string) {
     )
     .orderBy(asc(schema.terms.sequence));
 
-  const today = date ?? new Date().toISOString().slice(0, 10);
   const current = terms.find(
     (t: any) => t.startDate <= today && today <= t.endDate,
   );
