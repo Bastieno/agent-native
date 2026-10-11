@@ -44,7 +44,8 @@ function rowsOf(week: SchoolWeek): Row[] {
         start: p.start,
         end: p.end,
         isBreak,
-        label: isBreak ? (p.label ?? "Break") : (p.label ?? `${p.number}`),
+        // A break shows only its own name; with none, just its bell times.
+        label: isBreak ? (p.label ?? "") : (p.label ?? `${p.number}`),
       };
     });
 }
@@ -115,7 +116,8 @@ export function TimetableGrid({
                   colSpan={days.length + 1}
                   className="px-2 py-0.5 text-[11px] text-muted-foreground"
                 >
-                  {row.label} · {row.start}–{row.end}
+                  {row.label ? `${row.label} · ` : ""}
+                  {row.start}–{row.end}
                 </td>
               </tr>
             ) : (

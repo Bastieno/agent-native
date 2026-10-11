@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { IconCopy } from "@tabler/icons-react";
 import { toast } from "sonner";
 import {
@@ -27,6 +28,7 @@ export function CopyTimetableAction({
   /** `copy-timetable`'s source and target, without `confirm`. */
   args: { toTermId: string; fromTermId?: string; fromEarlier?: boolean };
 }) {
+  const qc = useQueryClient();
   const [open, setOpen] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
   const [copying, setCopying] = useState(false);
@@ -48,7 +50,8 @@ export function CopyTimetableAction({
       const r = await callAction("copy-timetable", { ...args, confirm: true });
       toast.success(r.message);
       setOpen(false);
-      // The write itself makes every open page refetch; nothing to do here.
+      // Only this term's timetable changed; refresh just that.
+      qc.invalidateQueries({ queryKey: ["timetable", args.toTermId] });
     } catch (e: any) {
       toast.error(e?.message ?? "That timetable couldn't be copied.");
     } finally {

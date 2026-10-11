@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { Icon } from "@tabler/icons-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -14,12 +15,15 @@ export function ListState({
   title,
   description,
   rows = 3,
+  action,
 }: {
   loading?: boolean;
   icon?: Icon;
   title: string;
   description?: string;
   rows?: number;
+  /** One next step, such as a retry. */
+  action?: ReactNode;
 }) {
   if (loading) {
     return (
@@ -40,6 +44,7 @@ export function ListState({
       {description ? (
         <p className="text-xs text-muted-foreground mt-1">{description}</p>
       ) : null}
+      {action ? <div className="mt-3">{action}</div> : null}
     </div>
   );
 }

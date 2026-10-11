@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
-import { IconCalendarTime } from "@tabler/icons-react";
+import { IconCalendarTime, IconRefresh } from "@tabler/icons-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -39,6 +39,8 @@ import {
 } from "@shared/school-week";
 
 type View = "arm" | "teacher" | "room";
+const isView = (v: string | null): v is View =>
+  v === "arm" || v === "teacher" || v === "room";
 type Cell = { day: number; periodNumber: number };
 
 export default function AdminTimetable() {
@@ -46,7 +48,7 @@ export default function AdminTimetable() {
   const [params, setParams] = useSearchParams();
   const { Arm } = useArmWord();
   const { config } = useSchoolConfig();
-  const rooms: Room[] = (config as any).rooms ?? [];
+  const rooms: Room[] = config.rooms ?? [];
   const [selected, setSelected] = useState<Cell | null>(null);
   // The empty term the admin chose to start blank: no server call, the grid
   // simply opens for editing. Another term asks again.
@@ -90,14 +92,16 @@ export default function AdminTimetable() {
     current?.term?.id ??
     current?.nextTerm?.id ??
     undefined;
-  const view: View =
-    (params.get("view") as View) ??
-    (params.get("teacherUserId")
+  const viewParam = params.get("view");
+  const view: View = isView(viewParam)
+    ? viewParam
+    : params.get("teacherUserId")
       ? "teacher"
       : params.get("room")
         ? "room"
-        : "arm");
-  const armId = params.get("armId") ?? arms[0]?.id;
+        : "arm";
+  const activeArms = arms.filter((a) => a.status !== "archived");
+  const armId = params.get("armId") ?? activeArms[0]?.id;
   const teacherUserId = params.get("teacherUserId") ?? teachers[0]?.userId;
   // A room named by the agent or a link matches the list however it is typed.
   const roomParam = params.get("room");
@@ -125,6 +129,8 @@ export default function AdminTimetable() {
     data: tt,
     isLoading,
     error: ttError,
+    refetch,
+    isFetching,
   } = useTimetable(filter, !termLoading);
   const { place, remove } = useTimetableEdits(filter);
 
@@ -153,13 +159,19 @@ export default function AdminTimetable() {
       );
     }
     if (view === "teacher" && teacherUserId) {
+      // As primary teacher, or as support on a lesson already placed.
+      const support = new Set(
+        (tt?.periods ?? [])
+          .filter((p) => p.teachers.some((t) => t.userId === teacherUserId))
+          .map((p) => p.classId),
+      );
       const theirs = classes.filter(
-        (c) => c.primaryTeacherUserId === teacherUserId,
+        (c) => c.primaryTeacherUserId === teacherUserId || support.has(c.id),
       );
       return theirs.length ? theirs : classes;
     }
     return classes;
-  }, [classes, view, armId, teacherUserId]);
+  }, [classes, view, armId, teacherUserId, tt]);
 
   const termName = tt?.term?.name ?? terms.find((t) => t.id === termId)?.name;
   const readOnly = !!tt?.fromUntermedRows;
@@ -168,7 +180,7 @@ export default function AdminTimetable() {
   // ── Header ────────────────────────────────────────────────────────────────
   const entityOptions: { value: string; label: string }[] =
     view === "arm"
-      ? arms.map((a) => ({ value: a.id, label: a.name }))
+      ? activeArms.map((a) => ({ value: a.id, label: a.name }))
       : view === "teacher"
         ? teachers.map((t) => ({ value: t.userId, label: t.name ?? t.email }))
         : rooms.map((r) => ({ value: r.name, label: r.name }));
@@ -264,6 +276,18 @@ export default function AdminTimetable() {
         icon={IconCalendarTime}
         title="This timetable can't be shown"
         description={(ttError as Error).message}
+        action={
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-1.5"
+            disabled={isFetching}
+            onClick={() => refetch()}
+          >
+            <IconRefresh size={14} />
+            Try again
+          </Button>
+        }
       />
     );
   } else if (termLoading || isLoading || !tt) {

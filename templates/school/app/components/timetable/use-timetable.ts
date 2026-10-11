@@ -110,16 +110,41 @@ export function useTimetableEdits(filter: TimetableFilter) {
     await qc.cancelQueries({ queryKey: key });
     return qc.getQueryData<TimetableReply>(key);
   };
+  /**
+   * Put back only the row a failed edit touched. Restoring the whole grid
+   * would also undo an edit made since, while this one was in flight.
+   */
+  const rollbackRow = (
+    id: string,
+    before: TimetableReply,
+    original: ResolvedPeriod | undefined,
+  ) =>
+    qc.setQueryData<TimetableReply>(key, (cur) => {
+      if (!cur) return cur;
+      const rest = cur.periods.filter((p) => p.scheduleId !== id);
+      return {
+        ...cur,
+        periods: original ? [...rest, original] : rest,
+        clashes: [
+          ...cur.clashes.filter((c) => !c.scheduleIds.includes(id)),
+          ...before.clashes.filter((c) => c.scheduleIds.includes(id)),
+        ],
+      };
+    });
+
   // No refetch of our own: a successful action already tells every open
   // page to refetch, and a refused one changed nothing, so the rollback is
   // the truth. Until then the reply's clashes stand.
 
   async function place(input: PlaceInput) {
     const before = await snapshot();
-    if (!before || !filter.termId) return;
+    if (!filter.termId) {
+      toast.error("Choose a term first.");
+      return;
+    }
     const { cls } = input;
     const id = input.scheduleId ?? `tmp-${nanoid()}`;
-    const old = before.periods.find((p) => p.scheduleId === input.scheduleId);
+    const old = before?.periods.find((p) => p.scheduleId === input.scheduleId);
     const draft: ResolvedPeriod = {
       scheduleId: id,
       classId: cls.id,
@@ -150,11 +175,14 @@ export function useTimetableEdits(filter: TimetableFilter) {
       optionArmIds: cls.optionArmIds,
       learnerUserIds: old?.learnerUserIds ?? [],
     };
-    qc.setQueryData<TimetableReply>(key, {
-      ...before,
-      periods: [...before.periods.filter((p) => p.scheduleId !== id), draft],
-      clashes: before.clashes.filter((c) => !c.scheduleIds.includes(id)),
-    });
+    // With nothing cached there is no grid to change yet; the call still goes
+    // and its reply is shown.
+    if (before)
+      qc.setQueryData<TimetableReply>(key, {
+        ...before,
+        periods: [...before.periods.filter((p) => p.scheduleId !== id), draft],
+        clashes: before.clashes.filter((c) => !c.scheduleIds.includes(id)),
+      });
 
     try {
       const reply = await callAction("set-timetable-period", {
@@ -182,26 +210,29 @@ export function useTimetableEdits(filter: TimetableFilter) {
         };
       });
       if (reply.clashes?.length) toast.warning(reply.message);
+      else if (!before && reply.message) toast.success(reply.message);
     } catch (e: any) {
-      qc.setQueryData(key, before);
+      if (before) rollbackRow(id, before, old);
       toast.error(e?.message ?? "That couldn't be placed.");
     }
   }
 
   async function remove(scheduleId: string) {
     const before = await snapshot();
-    if (!before) return;
-    qc.setQueryData<TimetableReply>(key, {
-      ...before,
-      periods: before.periods.filter((p) => p.scheduleId !== scheduleId),
-      clashes: before.clashes.filter(
-        (c) => !c.scheduleIds.includes(scheduleId),
-      ),
-    });
+    const original = before?.periods.find((p) => p.scheduleId === scheduleId);
+    if (before)
+      qc.setQueryData<TimetableReply>(key, {
+        ...before,
+        periods: before.periods.filter((p) => p.scheduleId !== scheduleId),
+        clashes: before.clashes.filter(
+          (c) => !c.scheduleIds.includes(scheduleId),
+        ),
+      });
     try {
-      await callAction("remove-timetable-period", { scheduleId });
+      const reply = await callAction("remove-timetable-period", { scheduleId });
+      if (!before && reply?.message) toast.success(reply.message);
     } catch (e: any) {
-      qc.setQueryData(key, before);
+      if (before) rollbackRow(scheduleId, before, original);
       toast.error(e?.message ?? "That couldn't be removed.");
     }
   }
