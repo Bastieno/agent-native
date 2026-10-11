@@ -197,6 +197,58 @@ export async function checkArms(
     "the class they left keeps them as withdrawn, once",
   );
 
+  // A whole arm moves to another and back in one call: every whole-arm
+  // class ends with exactly the roll it began with, and nobody is on a roll
+  // twice (reactivated rows, not duplicates).
+  // Two arms' learners (at least ten) move into the third in one call, then
+  // each goes home.
+  const wholeArm = [...groups[0], ...groups[1]];
+  const rollsOf = async () =>
+    Promise.all(
+      classIds.map(async (id) => (await roll(client, run, id)).sort()),
+    );
+  const rollsBefore = await rollsOf();
+  await client.as(run.admin, "set-learner-arm", {
+    armId: armIds[2],
+    studentUserIds: wholeArm,
+  });
+  const rollsAway = await rollsOf();
+  for (const home of [0, 1]) {
+    await client.as(run.admin, "set-learner-arm", {
+      armId: armIds[home],
+      studentUserIds: groups[home],
+    });
+  }
+  const rollsAfter = await rollsOf();
+  const everyRoll = [
+    ...(await Promise.all(
+      classIds.map((id) => roll(client, run, id, "active")),
+    )),
+    ...(await Promise.all(
+      classIds.map((id) => roll(client, run, id, "withdrawn")),
+    )),
+  ];
+  findings.expect(
+    phase,
+    wholeArm.length >= 10 &&
+      wholeArm.every(
+        (u) =>
+          rollsAway[2].includes(u) &&
+          !rollsAway[0].includes(u) &&
+          !rollsAway[1].includes(u),
+      ) &&
+      JSON.stringify(rollsAfter) === JSON.stringify(rollsBefore) &&
+      everyRoll.every((r) => new Set(r).size === r.length),
+    `moving ${wholeArm.length} learners from two arms into a third in one call and home again leaves every whole-arm class with the roll it had, and no one on a roll twice`,
+    JSON.stringify(
+      rollsBefore.map((r, i) => [
+        r.length,
+        rollsAway[i].length,
+        rollsAfter[i].length,
+      ]),
+    ),
+  );
+
   // Refusals.
   findings.expect(
     phase,

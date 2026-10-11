@@ -177,61 +177,118 @@ export async function assertActiveStaff(
   }
 }
 
-/**
- * Move a learner to another arm (or to none), and make their whole-arm
- * classes agree: off other arms', on the new arm's.
- *
- * Reconciles whether or not the arm changed, so a move that stopped halfway
- * is healed by asking again, not stranded.
- */
-export async function moveLearnerArm(
-  orgId: string,
-  studentUserId: string,
-  toArmId: string | null,
-): Promise<{
+/** Rows per `IN (...)` list, well under every database's bind-variable cap. */
+const CHUNK = 500;
+
+function chunks<T>(items: T[]): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += CHUNK) {
+    out.push(items.slice(i, i + CHUNK));
+  }
+  return out;
+}
+
+export type ArmMove = {
+  userId: string;
   fromArmId: string | null;
   enrolled: number;
   withdrawn: number;
-  untouched: RollUntouched;
-}> {
-  const db = getDb();
-  const [student] = await db
-    .select()
-    .from(schema.students)
-    .where(
-      and(
-        eq(schema.students.orgId, orgId),
-        eq(schema.students.userId, studentUserId),
-      ),
-    )
-    .limit(1);
-  if (!student) throw new Error("That learner is not in this school.");
+};
 
-  const fromArmId: string | null = student.armId ?? null;
-  if (fromArmId !== toArmId) {
+export type ArmMoveResult = {
+  moves: ArmMove[];
+  enrolled: number;
+  withdrawn: number;
+  untouched: RollUntouched;
+};
+
+/**
+ * Move learners to another arm (or to none), and make their whole-arm
+ * classes agree: off other arms', on the new arm's.
+ *
+ * Reconciles whether or not an arm changed, so a move that stopped halfway
+ * is healed by asking again, not stranded.
+ *
+ * Takes a fixed number of queries however many learners move: everything is
+ * read up front, worked out in memory, then written with bulk statements.
+ * There is no portable transaction across the databases this template runs
+ * on (D1 has none), so the writes are ordered learner row first and every
+ * step is idempotent: a call that dies halfway is finished by repeating it.
+ */
+export async function moveLearnersArm(
+  orgId: string,
+  studentUserIds: string[],
+  toArmId: string | null,
+): Promise<ArmMoveResult> {
+  const db = getDb();
+  const userIds = [...new Set(studentUserIds)];
+  const empty: ArmMoveResult = {
+    moves: [],
+    enrolled: 0,
+    withdrawn: 0,
+    untouched: null,
+  };
+  if (userIds.length === 0) return empty;
+
+  const students: any[] = [];
+  for (const ids of chunks(userIds)) {
+    students.push(
+      ...(await db
+        .select()
+        .from(schema.students)
+        .where(
+          and(
+            eq(schema.students.orgId, orgId),
+            inArray(schema.students.userId, ids),
+          ),
+        )),
+    );
+  }
+  const byUser = new Map<string, any>(students.map((s) => [s.userId, s]));
+  if (userIds.some((id) => !byUser.has(id))) {
+    throw new Error("That learner is not in this school.");
+  }
+
+  const moves = new Map<string, ArmMove>(
+    userIds.map((userId) => [
+      userId,
+      {
+        userId,
+        fromArmId: (byUser.get(userId).armId ?? null) as string | null,
+        enrolled: 0,
+        withdrawn: 0,
+      },
+    ]),
+  );
+
+  const changing = students.filter((s) => (s.armId ?? null) !== toArmId);
+  for (const group of chunks(changing)) {
     await db
       .update(schema.students)
       .set({ armId: toArmId, updatedAt: new Date().toISOString() })
       .where(
         and(
           eq(schema.students.orgId, orgId),
-          eq(schema.students.id, student.id),
+          inArray(
+            schema.students.id,
+            group.map((s) => s.id),
+          ),
         ),
       );
   }
 
-  // Every whole-arm class of this year, to tell the learner's own from the
+  // Every whole-arm class of this year, to tell the learners' own from the
   // rest. Other years' rolls stay as they were.
   const yearId = await activeYearId(orgId);
   if (!yearId) {
     return {
-      fromArmId,
+      moves: [...moves.values()],
       enrolled: 0,
       withdrawn: 0,
       untouched: "no-active-year",
     };
   }
-  const wholeArm = await db
+  const wholeArm: any[] = await db
     .select({ id: schema.classes.id, armId: schema.classes.armId })
     .from(schema.classes)
     .where(
@@ -242,43 +299,108 @@ export async function moveLearnerArm(
         isNotNull(schema.classes.armId),
       ),
     );
-  const others = wholeArm
-    .filter((c: any) => c.armId !== toArmId)
-    .map((c: any) => c.id);
+  const ownClasses = wholeArm.filter((c) => c.armId === toArmId);
+  const otherIds = new Set(
+    wholeArm.filter((c) => c.armId !== toArmId).map((c) => c.id),
+  );
+  const ownIds = new Set(ownClasses.map((c) => c.id));
 
-  let withdrawn = 0;
-  if (others.length > 0) {
-    const active = await db
-      .select({ id: schema.classEnrollments.id })
-      .from(schema.classEnrollments)
-      .where(
-        and(
-          inArray(schema.classEnrollments.classId, others),
-          eq(schema.classEnrollments.studentUserId, studentUserId),
-          eq(schema.classEnrollments.status, "active"),
-        ),
-      );
-    if (active.length > 0) {
-      await db
-        .update(schema.classEnrollments)
-        .set({ status: "withdrawn" })
-        .where(
-          inArray(
-            schema.classEnrollments.id,
-            active.map((a: any) => a.id),
+  let existing: any[] = [];
+  if (wholeArm.length > 0) {
+    const classIds = wholeArm.map((c) => c.id);
+    for (const ids of chunks(userIds)) {
+      existing = existing.concat(
+        await db
+          .select()
+          .from(schema.classEnrollments)
+          .where(
+            and(
+              inArray(schema.classEnrollments.classId, classIds),
+              inArray(schema.classEnrollments.studentUserId, ids),
+            ),
           ),
-        );
+      );
     }
-    withdrawn = active.length;
   }
 
-  let enrolled = 0;
-  if (toArmId) {
-    for (const c of wholeArm.filter((c: any) => c.armId === toArmId)) {
-      enrolled += await enrol(c.id, [studentUserId]);
+  const toWithdraw: string[] = [];
+  const toReactivate: string[] = [];
+  const have = new Set<string>(); // "classId|userId" with any row at all
+  for (const row of existing) {
+    const move = moves.get(row.studentUserId)!;
+    if (otherIds.has(row.classId)) {
+      if (row.status === "active") {
+        toWithdraw.push(row.id);
+        move.withdrawn++;
+      }
+    } else if (ownIds.has(row.classId)) {
+      have.add(`${row.classId}|${row.studentUserId}`);
+      if (row.status === "withdrawn") {
+        toReactivate.push(row.id);
+        move.enrolled++;
+      }
+      // active stays as it is; suspended is a decision someone made.
     }
   }
-  return { fromArmId, enrolled, withdrawn, untouched: null };
+  const toInsert: any[] = [];
+  for (const userId of userIds) {
+    for (const c of ownClasses) {
+      if (have.has(`${c.id}|${userId}`)) continue;
+      toInsert.push({
+        id: nanoid(),
+        classId: c.id,
+        studentUserId: userId,
+        status: "active",
+      });
+      moves.get(userId)!.enrolled++;
+    }
+  }
+
+  // Withdraw first, then enrol: a halfway stop never leaves a learner on two
+  // arms' rolls, and repeating the call finishes the job.
+  for (const ids of chunks(toWithdraw)) {
+    await db
+      .update(schema.classEnrollments)
+      .set({ status: "withdrawn" })
+      .where(inArray(schema.classEnrollments.id, ids));
+  }
+  for (const ids of chunks(toReactivate)) {
+    await db
+      .update(schema.classEnrollments)
+      .set({ status: "active" })
+      .where(inArray(schema.classEnrollments.id, ids));
+  }
+  for (const rows of chunks(toInsert)) {
+    await db.insert(schema.classEnrollments).values(rows);
+  }
+
+  return {
+    moves: [...moves.values()],
+    enrolled: toInsert.length + toReactivate.length,
+    withdrawn: toWithdraw.length,
+    untouched: null,
+  };
+}
+
+/** One learner: `moveLearnersArm` for a single id. */
+export async function moveLearnerArm(
+  orgId: string,
+  studentUserId: string,
+  toArmId: string | null,
+): Promise<{
+  fromArmId: string | null;
+  enrolled: number;
+  withdrawn: number;
+  untouched: RollUntouched;
+}> {
+  const result = await moveLearnersArm(orgId, [studentUserId], toArmId);
+  const move = result.moves[0];
+  return {
+    fromArmId: move.fromArmId,
+    enrolled: move.enrolled,
+    withdrawn: move.withdrawn,
+    untouched: result.untouched,
+  };
 }
 
 /**

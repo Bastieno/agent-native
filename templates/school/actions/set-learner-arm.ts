@@ -6,7 +6,7 @@ import { z } from "zod";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import {
   armWord,
-  moveLearnerArm,
+  moveLearnersArm,
   untouchedNote,
 } from "../server/lib/arm-enrolment.js";
 
@@ -74,17 +74,10 @@ export default defineAction({
       }
     }
 
-    let moved = 0;
-    let enrolled = 0;
-    let withdrawn = 0;
-    let noActiveYear = false;
-    for (const userId of userIds) {
-      const result = await moveLearnerArm(orgId, userId, args.armId);
-      if (result.fromArmId !== args.armId) moved++;
-      enrolled += result.enrolled;
-      withdrawn += result.withdrawn;
-      if (result.untouched === "no-active-year") noActiveYear = true;
-    }
+    const result = await moveLearnersArm(orgId, userIds, args.armId);
+    const moved = result.moves.filter((m) => m.fromArmId !== args.armId).length;
+    const { enrolled, withdrawn } = result;
+    const noActiveYear = result.untouched === "no-active-year";
 
     const classes = (n: number) => `${n} ${n === 1 ? "class" : "classes"}`;
     // Only this academic year's classes follow an arm; last year's rolls stay.
