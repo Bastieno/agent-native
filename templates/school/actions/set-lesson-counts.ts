@@ -3,7 +3,12 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { and, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
-import { armWord, armsInYearGroup } from "../server/lib/arm-enrolment.js";
+import {
+  armWord,
+  armsInYearGroup,
+  schoolWord,
+} from "../server/lib/arm-enrolment.js";
+import { resolveViewTerm } from "../server/lib/timetable-view.js";
 import {
   activeClassesOfYear,
   currentYearId,
@@ -26,7 +31,9 @@ export default defineAction({
     stream: z
       .string()
       .optional()
-      .describe("Only the classes of arms in this stream"),
+      .describe(
+        "Only the classes of arms in this stream (as the school calls it)",
+      ),
     periodsPerWeek: z
       .number()
       .int()
@@ -44,6 +51,12 @@ export default defineAction({
       .describe(
         "How many of the periods come as doubles; omit to leave as it is, null to clear",
       ),
+    termId: z
+      .string()
+      .optional()
+      .describe(
+        "A term of the academic year being planned; defaults to the current year",
+      ),
     confirm: z.boolean().optional().describe("Apply the change"),
   }),
   http: { method: "POST" },
@@ -52,6 +65,8 @@ export default defineAction({
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
     const word = await armWord(orgId);
+    const yearWord = await schoolWord(orgId, "yearGroup", "year group");
+    const streamWord = await schoolWord(orgId, "stream", "stream");
 
     const [subject] = await db
       .select()
@@ -74,14 +89,39 @@ export default defineAction({
         ),
       )
       .limit(1);
-    if (!level) throw new Error("That year group is not in this school.");
+    if (!level) throw new Error(`That ${yearWord} is not in this school.`);
     if (args.armId) {
       await armsInYearGroup(orgId, args.gradeLevelId, [args.armId], word);
     }
 
-    let classes = (
-      await activeClassesOfYear(orgId, await currentYearId(orgId))
-    ).filter(
+    // The academic year being planned: the viewed term's, else the current.
+    const current = await currentYearId(orgId);
+    const viewed = args.termId
+      ? await resolveViewTerm(orgId, args.termId)
+      : null;
+    const yearId = viewed?.academicYearId ?? current;
+    if (!yearId) {
+      throw new Error(
+        "The school has no current academic year, so there are no classes to count. Choose a term of the year being planned.",
+      );
+    }
+    const [yearRow] = await db
+      .select()
+      .from(schema.academicYears)
+      .where(
+        and(
+          eq(schema.academicYears.id, yearId),
+          eq(schema.academicYears.orgId, orgId),
+          eq(schema.academicYears.schoolId, orgId),
+        ),
+      )
+      .limit(1);
+    const yearNote =
+      yearId !== current && yearRow
+        ? ` in the academic year ${yearRow.name}`
+        : "";
+
+    let classes = (await activeClassesOfYear(orgId, yearId)).filter(
       (c) =>
         c.subjectId === args.subjectId && c.gradeLevelId === args.gradeLevelId,
     );
@@ -109,7 +149,7 @@ export default defineAction({
       );
       if (wantedStream && wanted.size === 0) {
         throw new Error(
-          `No ${word} in ${level.name} is in the stream "${args.stream}".`,
+          `No ${word} in ${level.name} is in the ${streamWord} "${args.stream}".`,
         );
       }
       classes = classes.filter((c) => c.armId && wanted.has(c.armId));
@@ -119,7 +159,7 @@ export default defineAction({
       return {
         applied: false,
         classes: [],
-        message: `No active ${subject.name} class in ${level.name} matches, so nothing was changed.`,
+        message: `No active ${subject.name} class in ${level.name}${yearNote} matches, so nothing was changed.`,
       };
     }
 
@@ -161,7 +201,7 @@ export default defineAction({
       return {
         applied: false,
         classes: changes,
-        message: `Nothing is changed yet. This would set ${subject.name} to ${target} for ${changes.length} ${changes.length === 1 ? "class" : "classes"}: ${names}.`,
+        message: `Nothing is changed yet. This would set ${subject.name} to ${target} for ${changes.length} ${changes.length === 1 ? "class" : "classes"}${yearNote}: ${names}.`,
       };
     }
 
@@ -188,7 +228,7 @@ export default defineAction({
     return {
       applied: true,
       classes: changes,
-      message: `Set ${subject.name} to ${target} for ${changes.length} ${changes.length === 1 ? "class" : "classes"}: ${names}.`,
+      message: `Set ${subject.name} to ${target} for ${changes.length} ${changes.length === 1 ? "class" : "classes"}${yearNote}: ${names}.`,
     };
   },
 });

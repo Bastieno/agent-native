@@ -1580,4 +1580,47 @@ export async function checkTimetableBoundaries(
     ),
     "a copy that would bring nothing but last year's classes is refused, suggesting an empty start",
   );
+
+  // ── Lesson counts reach the year being planned, and only it ─────────────
+  const countOf = async (id: string) =>
+    ((await client.as(admin, "get-class", { classId: id })) as any)
+      .periodsPerWeek ?? null;
+  const base = {
+    subjectId: arms.subjectId,
+    gradeLevelId: arms.gradeLevelId,
+    armId: armB,
+    confirm: true,
+  };
+  const lastYear = (await client.as(admin, "set-lesson-counts", {
+    ...base,
+    periodsPerWeek: 4,
+    termId: ctx.termId,
+  })) as any;
+  findings.expect(
+    phase,
+    lastYear?.applied === true &&
+      asList(lastYear, "classes")
+        .map((c: any) => c.classId)
+        .join() === classB &&
+      /academic year/.test(String(lastYear?.message)) &&
+      (await countOf(classB)) === 4 &&
+      (await countOf(newYearClass)) === null,
+    "counts set with a term of another academic year reach that year's classes and no others, and the reply names the year",
+    lastYear?.message,
+  );
+  const thisYear = (await client.as(admin, "set-lesson-counts", {
+    ...base,
+    periodsPerWeek: 3,
+  })) as any;
+  findings.expect(
+    phase,
+    asList(thisYear, "classes")
+      .map((c: any) => c.classId)
+      .join() === newYearClass &&
+      !/academic year/.test(String(thisYear?.message)) &&
+      (await countOf(newYearClass)) === 3 &&
+      (await countOf(classB)) === 4,
+    "counts set with no term reach the current year's classes only",
+    thisYear?.message,
+  );
 }

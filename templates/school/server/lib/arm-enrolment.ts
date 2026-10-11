@@ -133,12 +133,24 @@ export async function enrolArmInClass(
  * the school's own words say otherwise).
  */
 export async function armWord(orgId: string): Promise<string> {
+  return schoolWord(orgId, "arm", "arm");
+}
+
+/**
+ * The school's own word for something (`customLabels[key]`), lower-cased, or
+ * the plain fallback when it has chosen none.
+ */
+export async function schoolWord(
+  orgId: string,
+  key: string,
+  fallback: string,
+): Promise<string> {
   const config = ((await getOrgSetting(orgId, "school-config")) ??
     {}) as Record<string, any>;
-  const label = config.customLabels?.arm;
+  const label = config.customLabels?.[key];
   return typeof label === "string" && label.trim()
     ? label.trim().toLowerCase()
-    : "arm";
+    : fallback;
 }
 
 /** A word with its article: "an arm", "a house". */

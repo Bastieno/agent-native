@@ -148,6 +148,14 @@ export default function AdminTimetable() {
         return { ...c, placedNow: n, shortNow: c.required!.periods - n };
       });
   }, [coverage, tt]);
+  // A subject names its class; two of one subject in view go by class name.
+  const subjectCount = new Map<string, number>();
+  for (const c of coverageNow)
+    subjectCount.set(c.subjectName, (subjectCount.get(c.subjectName) ?? 0) + 1);
+  const label = (c: (typeof coverageNow)[number]) =>
+    c.subjectName && subjectCount.get(c.subjectName) === 1
+      ? c.subjectName
+      : c.className;
   const shortClasses = coverageNow.filter((c) => c.shortNow > 0);
 
   // A term with nothing of its own offers the term before it, read from
@@ -456,10 +464,7 @@ export default function AdminTimetable() {
             data-testid="coverage-line"
           >
             {coverageNow
-              .map(
-                (c) =>
-                  `${c.subjectName || c.className} ${c.placedNow}/${c.required!.periods}`,
-              )
+              .map((c) => `${label(c)} ${c.placedNow}/${c.required!.periods}`)
               .join(" · ")}
           </p>
         ) : null}

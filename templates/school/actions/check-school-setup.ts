@@ -179,7 +179,7 @@ export default defineAction({
     if (uncounted > 0) {
       gaps.push({
         setting: "Lesson counts",
-        meanwhile: `The timetable can't say what is still missing for ${uncounted} ${uncounted === 1 ? "class" : "classes"}.`,
+        meanwhile: `This academic year, the timetable can't say what is still missing for ${uncounted} ${uncounted === 1 ? "class" : "classes"}.`,
         fix: "set-lesson-counts for each subject in each year group (per stream where they differ)",
       });
     }
