@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
+import type { Room, SchoolWeek } from "@shared/school-week";
 
 export interface GradingLevel {
   grade: string; // e.g. "A", "B", "C"
@@ -31,6 +32,9 @@ export interface SchoolConfig {
   schoolTimezone: string;
   locale: string;
   customLabels: Record<string, string>;
+  /** The school's own bells and rooms, once they have set them. */
+  schoolWeek?: SchoolWeek | null;
+  rooms?: Room[];
 }
 
 const DEFAULT_CONFIG: SchoolConfig = {

@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
+import { useSyncedDraft } from "./useSyncedDraft";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -16,34 +17,19 @@ import { useSaveSchoolConfig } from "./useSaveSchoolConfig";
 export function RoomsEditor() {
   const { config } = useSchoolConfig();
   const save = useSaveSchoolConfig();
-  const saved: Room[] = (config as any).rooms ?? [];
-  const [rooms, setRooms] = useState<Room[]>(saved);
-
-  useEffect(() => {
-    setRooms((current) =>
-      JSON.stringify(current) === JSON.stringify(saved) ? current : saved,
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [JSON.stringify(saved)]);
-
-  const dirty = JSON.stringify(rooms) !== JSON.stringify(saved);
+  const [rooms, setRooms, dirty] = useSyncedDraft<Room[]>(config.rooms ?? []);
   const problems = useMemo(() => roomProblems(rooms), [rooms]);
 
   return (
     <div className="space-y-3">
       {rooms.length === 0 ? (
-        <div className="rounded-lg border border-dashed bg-card p-6 text-center">
-          <p className="text-sm font-medium">No rooms yet</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Add the rooms your school teaches in.
-          </p>
-        </div>
+        <p className="text-sm text-muted-foreground">No rooms yet.</p>
       ) : (
         <div className="rounded-lg border bg-card p-4 space-y-2">
           {rooms.map((room, i) => (
             <div key={i} className="flex items-center gap-2">
               <Input
-                aria-label="Room name"
+                aria-label={`Room name, row ${i + 1}`}
                 placeholder="Room name"
                 className="h-8 flex-1"
                 value={room.name}
@@ -65,7 +51,10 @@ export function RoomsEditor() {
                   )
                 }
               >
-                <SelectTrigger className="h-8 w-36">
+                <SelectTrigger
+                  className="h-8 w-36"
+                  aria-label={`Kind, ${room.name || `room ${i + 1}`}`}
+                >
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

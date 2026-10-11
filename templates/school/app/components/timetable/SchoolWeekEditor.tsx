@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useSyncedDraft } from "./useSyncedDraft";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -34,30 +35,99 @@ import { useSaveSchoolConfig } from "./useSaveSchoolConfig";
 
 const ALL_DAYS: Weekday[] = [1, 2, 3, 4, 5, 6, 7];
 
-function sameWeek(a: SchoolWeek | null, b: SchoolWeek | null) {
-  return JSON.stringify(a) === JSON.stringify(b);
+const EMPTY_WEEK: SchoolWeek = { cycleLength: 1, days: [] };
+
+/**
+ * One bell. The number box keeps what is typed, so it can be cleared and
+ * retyped; a number is committed as soon as the text is a valid one.
+ */
+function PeriodRow({
+  period: p,
+  dayName,
+  onChange,
+  onRemove,
+}: {
+  period: WeekPeriod;
+  dayName: string;
+  onChange: (patch: Partial<WeekPeriod>) => void;
+  onRemove: () => void;
+}) {
+  const [numberText, setNumberText] = useState(String(p.number));
+  useEffect(() => {
+    setNumberText((t) => (Number(t) === p.number ? t : String(p.number)));
+  }, [p.number]);
+  const where = `${dayName} period ${p.number}`;
+
+  return (
+    <div className="flex flex-wrap items-center gap-2">
+      <Input
+        type="number"
+        min={1}
+        aria-label={`Period number, ${dayName} period ${p.number}`}
+        className="h-8 w-16"
+        value={numberText}
+        onChange={(e) => {
+          setNumberText(e.target.value);
+          const n = Number(e.target.value);
+          if (e.target.value !== "" && Number.isInteger(n) && n >= 1)
+            onChange({ number: n });
+        }}
+        onBlur={() => setNumberText(String(p.number))}
+      />
+      <Input
+        type="time"
+        aria-label={`Start, ${where}`}
+        className="h-8 w-28"
+        value={p.start}
+        onChange={(e) => onChange({ start: e.target.value })}
+      />
+      <Input
+        type="time"
+        aria-label={`End, ${where}`}
+        className="h-8 w-28"
+        value={p.end}
+        onChange={(e) => onChange({ end: e.target.value })}
+      />
+      <Select
+        value={p.kind}
+        onValueChange={(v) => onChange({ kind: v as WeekPeriod["kind"] })}
+      >
+        <SelectTrigger className="h-8 w-28" aria-label={`Kind, ${where}`}>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="lesson">Lesson</SelectItem>
+          <SelectItem value="break">Break</SelectItem>
+        </SelectContent>
+      </Select>
+      <Input
+        aria-label={`Label, ${where}`}
+        placeholder="Label"
+        className="h-8 min-w-24 flex-1"
+        value={p.label ?? ""}
+        onChange={(e) => onChange({ label: e.target.value || undefined })}
+      />
+      <Button
+        variant="ghost"
+        size="icon"
+        className="h-8 w-8"
+        aria-label={`Remove ${where}`}
+        onClick={onRemove}
+      >
+        <IconTrash size={14} />
+      </Button>
+    </div>
+  );
 }
 
 export function SchoolWeekEditor() {
   const { config } = useSchoolConfig();
-  const locale = schoolLocale(config as any);
+  const locale = schoolLocale(config);
   const save = useSaveSchoolConfig();
-  const saved: SchoolWeek | null = (config as any).schoolWeek ?? null;
-  const [week, setWeek] = useState<SchoolWeek>(
-    saved ?? { cycleLength: 1, days: [] },
+  const [week, setWeek, dirty] = useSyncedDraft<SchoolWeek>(
+    config.schoolWeek ?? EMPTY_WEEK,
   );
 
-  // Follow the saved week until the admin starts editing.
-  useEffect(() => {
-    setWeek((current) =>
-      sameWeek(current, saved)
-        ? current
-        : (saved ?? { cycleLength: 1, days: [] }),
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [JSON.stringify(saved)]);
-
-  const dirty = !sameWeek(week, saved ?? { cycleLength: 1, days: [] });
   const problems = useMemo(() => weekProblems(week, locale), [week, locale]);
   const nameOf = (d: number) => schoolWeekdayName(d, locale);
   const usedDays = new Set(week.days.map((d) => d.day));
@@ -97,12 +167,7 @@ export function SchoolWeekEditor() {
   return (
     <div className="space-y-3">
       {week.days.length === 0 && (
-        <div className="rounded-lg border border-dashed bg-card p-6 text-center">
-          <p className="text-sm font-medium">No school week yet</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Add the first day your school teaches.
-          </p>
-        </div>
+        <p className="text-sm text-muted-foreground">No school week yet.</p>
       )}
 
       {week.days.map((d) => (
@@ -143,76 +208,25 @@ export function SchoolWeekEditor() {
           </div>
 
           <div className="space-y-2">
-            {d.periods.map((p, i) => {
-              const update = (patch: Partial<WeekPeriod>) =>
-                setPeriods(
-                  d.day,
-                  d.periods.map((x, j) => (j === i ? { ...x, ...patch } : x)),
-                );
-              return (
-                <div key={i} className="flex flex-wrap items-center gap-2">
-                  <Input
-                    type="number"
-                    min={1}
-                    aria-label="Period number"
-                    className="h-8 w-16"
-                    value={p.number}
-                    onChange={(e) => update({ number: Number(e.target.value) })}
-                  />
-                  <Input
-                    type="time"
-                    aria-label="Start"
-                    className="h-8 w-28"
-                    value={p.start}
-                    onChange={(e) => update({ start: e.target.value })}
-                  />
-                  <Input
-                    type="time"
-                    aria-label="End"
-                    className="h-8 w-28"
-                    value={p.end}
-                    onChange={(e) => update({ end: e.target.value })}
-                  />
-                  <Select
-                    value={p.kind}
-                    onValueChange={(v) =>
-                      update({ kind: v as WeekPeriod["kind"] })
-                    }
-                  >
-                    <SelectTrigger className="h-8 w-28">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="lesson">Lesson</SelectItem>
-                      <SelectItem value="break">Break</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Input
-                    aria-label="Label"
-                    placeholder="Label"
-                    className="h-8 min-w-24 flex-1"
-                    value={p.label ?? ""}
-                    onChange={(e) =>
-                      update({ label: e.target.value || undefined })
-                    }
-                  />
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8"
-                    aria-label={`Remove period ${p.number}`}
-                    onClick={() =>
-                      setPeriods(
-                        d.day,
-                        d.periods.filter((_, j) => j !== i),
-                      )
-                    }
-                  >
-                    <IconTrash size={14} />
-                  </Button>
-                </div>
-              );
-            })}
+            {d.periods.map((p, i) => (
+              <PeriodRow
+                key={i}
+                period={p}
+                dayName={nameOf(d.day)}
+                onChange={(patch) =>
+                  setPeriods(
+                    d.day,
+                    d.periods.map((x, j) => (j === i ? { ...x, ...patch } : x)),
+                  )
+                }
+                onRemove={() =>
+                  setPeriods(
+                    d.day,
+                    d.periods.filter((_, j) => j !== i),
+                  )
+                }
+              />
+            ))}
           </div>
 
           <Button
