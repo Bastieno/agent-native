@@ -19,6 +19,10 @@ export interface ResolvedPeriod {
   armId: string | null;
   optionArmIds: string[];
   learnerUserIds: string[]; // active enrolments
+  /** Shared by the two rows of a double; null for a single period. */
+  pairId: string | null;
+  /** The school's own name for this lesson; null for none. */
+  lessonLabel: string | null;
 }
 export type ClashKind = "teacher" | "room" | "arm" | "learner";
 export interface Clash {

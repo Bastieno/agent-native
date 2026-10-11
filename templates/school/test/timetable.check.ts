@@ -3,6 +3,7 @@
  */
 import assert from "node:assert/strict";
 import {
+  doubleSecondPeriod,
   findPeriod,
   placementSlot,
   roomKey,
@@ -171,6 +172,8 @@ function rp(id: string, over: Partial<ResolvedPeriod> = {}): ResolvedPeriod {
     armId: null,
     optionArmIds: [],
     learnerUserIds: [],
+    pairId: null,
+    lessonLabel: null,
     ...over,
   };
 }
@@ -502,4 +505,62 @@ check("counts that cannot stand are refused in words", () => {
   assert.match(countsProblem(null, 1) ?? "", /how many periods first/);
   assert.match(countsProblem(-1, null) ?? "", /whole number/);
   assert.match(countsProblem(2.5, null) ?? "", /whole number/);
+});
+
+// ── Doubles ────────────────────────────────────────────────────────────────
+const dayWithBreak: SchoolWeek = {
+  cycleLength: 1,
+  days: [
+    {
+      day: 2,
+      periods: [
+        // Listed out of order on purpose: the rule follows the bells.
+        lesson(2, "08:40", "09:20"),
+        lesson(1, "08:00", "08:40"),
+        { number: 3, start: "09:20", end: "09:40", kind: "break" },
+        lesson(4, "09:40", "10:20"),
+        lesson(5, "10:20", "11:00"),
+      ],
+    },
+  ],
+};
+
+check("a double takes the next lesson period of the day", () => {
+  const out = doubleSecondPeriod(dayWithBreak, 2, 1);
+  assert.equal(out.second?.number, 2);
+  assert.equal(out.blocker, null);
+});
+
+check("a break straight after means no double, and names the break", () => {
+  const out = doubleSecondPeriod(dayWithBreak, 2, 2);
+  assert.equal(out.second, null);
+  assert.equal(out.blocker?.number, 3);
+});
+
+check("the day's last period has no second half", () => {
+  const out = doubleSecondPeriod(dayWithBreak, 2, 5);
+  assert.equal(out.second, null);
+  assert.equal(out.blocker, null);
+  assert.equal(doubleSecondPeriod(dayWithBreak, 4, 1).second, null);
+});
+
+check("a pair counts as two periods and one double", () => {
+  const out = countCoverage(
+    [
+      rp("p1", { classId: "a", periodNumber: 1, pairId: "x" }),
+      rp("p2", { classId: "a", periodNumber: 2, pairId: "x" }),
+      row("a", 5),
+    ],
+    [cov("a", 5, 1)],
+  );
+  assert.deepEqual(out.classes[0].placed, { periods: 3, doubles: 1 });
+  assert.deepEqual(out.classes[0].short, { periods: 2, doubles: 0 });
+});
+
+check("one half on its own is not a double", () => {
+  const out = countCoverage(
+    [rp("p1", { classId: "a", pairId: "x" })],
+    [cov("a", 2, 1)],
+  );
+  assert.deepEqual(out.classes[0].placed, { periods: 1, doubles: 0 });
 });

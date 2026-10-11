@@ -16,7 +16,7 @@ import { findClashes } from "../server/lib/timetable-clashes.js";
 
 export default defineAction({
   description:
-    "Copy one term's timetable to another: the same classes in the same days, periods, times and rooms. Shows what would be copied (and how many clashes it carries), and from where, until confirm is true. Refuses when the target term already has periods of its own. The source is fromTermId; or, with fromEarlier, the school's earlier timetable set before terms were used; or, with neither, the term before toTermId. If the source term has none but the school's earlier, un-termed timetable exists, that is what is copied. Only classes of the target term's academic year are copied: periods of another year's classes (last year's, at the start of a new one) are left out and named.",
+    "Copy one term's timetable to another: the same classes in the same days, periods, times and rooms, doubles kept as doubles and lessons keeping their names. Shows what would be copied (and how many clashes it carries), and from where, until confirm is true. Refuses when the target term already has periods of its own. The source is fromTermId; or, with fromEarlier, the school's earlier timetable set before terms were used; or, with neither, the term before toTermId. If the source term has none but the school's earlier, un-termed timetable exists, that is what is copied. Only classes of the target term's academic year are copied: periods of another year's classes (last year's, at the start of a new one) are left out and named.",
   schema: z.object({
     fromTermId: z
       .string()
@@ -142,6 +142,13 @@ export default defineAction({
 
     // One insert, so a failure leaves the target with none of it rather than
     // some, which a retry would then refuse.
+    // Each double gets a fresh pair id in the target term, shared by its halves.
+    const pairs = new Map<string, string>();
+    const pairFor = (old: string | null) => {
+      if (!old) return null;
+      if (!pairs.has(old)) pairs.set(old, nanoid());
+      return pairs.get(old)!;
+    };
     if (rows.length > 0) {
       await db.insert(S).values(
         rows.map((row: any) => ({
@@ -154,6 +161,8 @@ export default defineAction({
           startTime: row.startTime,
           endTime: row.endTime,
           room: row.room,
+          pairId: pairFor(row.pairId ?? null),
+          lessonLabel: row.lessonLabel ?? null,
           ownerEmail: userEmail ?? "",
           orgId,
           visibility: "org" as const,

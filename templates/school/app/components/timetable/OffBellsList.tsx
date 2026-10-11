@@ -39,9 +39,21 @@ export function OffBellsList({
   onRemove: (scheduleId: string) => void;
 }) {
   if (periods.length === 0) return null;
-  const sorted = [...periods].sort(
+  const ordered = [...periods].sort(
     (a, b) => a.day - b.day || a.start.localeCompare(b.start),
   );
+  // A double is one entry, from its first start to its second end; moving or
+  // removing it moves or removes both halves.
+  const endOf = new Map<string, string>();
+  const seenPairs = new Set<string>();
+  const sorted = ordered.filter((p) => {
+    if (!p.pairId) return true;
+    if (seenPairs.has(p.pairId)) return false;
+    seenPairs.add(p.pairId);
+    const halves = ordered.filter((q) => q.pairId === p.pairId);
+    endOf.set(p.scheduleId, halves[halves.length - 1].end);
+    return true;
+  });
   return (
     <section className="space-y-2" data-testid="off-bells">
       <h2 className="text-sm font-medium">Not on this week's bells</h2>
@@ -54,8 +66,9 @@ export function OffBellsList({
             <span className="min-w-0">
               <span className="font-medium">{p.className}</span>
               <span className="text-muted-foreground">
-                {" "}
-                · {dayNames[p.day] ?? p.day} {p.start}–{p.end}
+                {p.lessonLabel ? ` · ${p.lessonLabel}` : ""} ·{" "}
+                {dayNames[p.day] ?? p.day} {p.start}–
+                {endOf.get(p.scheduleId) ?? p.end}
                 {p.room ? ` · ${p.room}` : ""}
               </span>
             </span>

@@ -208,6 +208,8 @@ export const classSchedules = table("class_schedules", {
   endTime: text("end_time").notNull(), // "08:45"
   room: text("room"), // room override (falls back to class.roomNumber)
   termId: text("term_id"),
+  pairId: text("pair_id"), // the two rows of a double share it; null = single
+  lessonLabel: text("lesson_label"), // the school's own name for the lesson
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),

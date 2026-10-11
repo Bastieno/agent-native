@@ -1,10 +1,11 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
-import { and, eq, ne } from "drizzle-orm";
+import { and, eq, inArray, notInArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
 import {
+  doubleSecondPeriod,
   findPeriod,
   roomKey,
   schoolWeekdayName,
@@ -20,7 +21,7 @@ import { schoolLocale } from "../shared/dates.js";
 
 export default defineAction({
   description:
-    "Put a class in a day and period of a term's timetable, optionally in a room. Pass scheduleId to move an existing placement instead of adding one. Times come from the school's week. Refuses a day the school doesn't teach, a period that doesn't exist or is a break, and a room that isn't on the room list. Returns any clash the placement causes.",
+    "Put a class in a day and period of a term's timetable, optionally in a room. Pass scheduleId to move an existing placement instead of adding one. Times come from the school's week. Refuses a day the school doesn't teach, a period that doesn't exist or is a break, and a room that isn't on the room list. With double: true it takes the next lesson period of that day too, as one double (refused when a break or the end of the day comes next); moving either half of a double moves both, and double: false splits it back to one period. lessonLabel is the school's own name for the lesson, free text. Returns any clash the placement causes.",
   schema: z.object({
     termId: z.string(),
     classId: z.string(),
@@ -36,6 +37,19 @@ export default defineAction({
       .string()
       .optional()
       .describe("Move this existing placement rather than adding a new one"),
+    double: z
+      .boolean()
+      .optional()
+      .describe(
+        "true: this period and the next lesson period of the day, as one double. false: one period (splits a double). Omit to keep what it is.",
+      ),
+    lessonLabel: z
+      .string()
+      .nullable()
+      .optional()
+      .describe(
+        "The school's own name for this lesson, as they write it; empty or null clears it. Omit to keep it.",
+      ),
   }),
   http: { method: "POST" },
   run: async (args) => {
@@ -126,6 +140,7 @@ export default defineAction({
 
     let scheduleId = args.scheduleId;
     let movedRow: any = null;
+    let partner: any = null;
     if (scheduleId) {
       const [row] = await db
         .select()
@@ -141,10 +156,44 @@ export default defineAction({
         );
       }
       movedRow = row;
+      if (row.pairId) {
+        [partner] = await db
+          .select()
+          .from(S)
+          .where(
+            and(
+              eq(S.schoolId, orgId),
+              eq(S.pairId, row.pairId),
+              notInArray(S.id, [row.id]),
+            ),
+          )
+          .limit(1);
+      }
+    }
+
+    // A double keeps being one unless asked otherwise; a new one is single.
+    const wantDouble = args.double ?? !!movedRow?.pairId;
+    let second: { number: number; start: string; end: string } | null = null;
+    if (wantDouble) {
+      const next = doubleSecondPeriod(week, args.day, args.periodNumber);
+      if (!next.second) {
+        throw new Error(
+          next.blocker
+            ? `Period ${args.periodNumber} is the last lesson before ${
+                next.blocker.label?.trim() || next.blocker.start
+              }, so a double can't start there.`
+            : `Period ${args.periodNumber} is the last lesson on ${dayName}, so a double can't start there.`,
+        );
+      }
+      second = next.second;
     }
 
     // The same class in the same term, day and period twice is never meant,
-    // whether it is being added or moved (a move excludes the row itself).
+    // whether it is being added or moved (a move excludes its own rows).
+    const own = [movedRow?.id, partner?.id].filter(Boolean) as string[];
+    const numbers = second
+      ? [args.periodNumber, second.number]
+      : [args.periodNumber];
     const [already] = await db
       .select()
       .from(S)
@@ -154,19 +203,48 @@ export default defineAction({
           eq(S.termId, term.id),
           eq(S.classId, cls.id),
           eq(S.dayOfWeek, args.day),
-          eq(S.periodNumber, args.periodNumber),
-          ...(scheduleId ? [ne(S.id, scheduleId)] : []),
+          inArray(S.periodNumber, numbers),
+          ...(own.length ? [notInArray(S.id, own)] : []),
         ),
       )
       .limit(1);
     if (already) {
       throw new Error(
-        `${cls.name} is already in period ${args.periodNumber} on ${dayName} in ${term.name}.`,
+        `${cls.name} is already in period ${already.periodNumber} on ${dayName} in ${term.name}.`,
       );
     }
 
+    // A double has one name: what is given, else what it had.
+    const lessonLabel =
+      args.lessonLabel === undefined
+        ? (movedRow?.lessonLabel ?? null)
+        : args.lessonLabel?.trim() || null;
+    const finalRoom = room === undefined ? (movedRow?.room ?? null) : room;
+    const pairId = second ? (movedRow?.pairId ?? nanoid()) : null;
+    const now = new Date().toISOString();
+    const fresh = (
+      id: string,
+      p: { number: number; start: string; end: string },
+    ) => ({
+      id,
+      classId: cls.id,
+      schoolId: orgId,
+      termId: term.id,
+      dayOfWeek: args.day,
+      periodNumber: p.number,
+      startTime: p.start,
+      endTime: p.end,
+      room: finalRoom,
+      pairId,
+      lessonLabel,
+      ownerEmail: userEmail ?? "",
+      orgId,
+      visibility: "org" as const,
+    });
+
+    let partnerId: string | null = null;
+    let split = false;
     if (movedRow) {
-      const row = movedRow;
       await db
         .update(S)
         .set({
@@ -175,35 +253,72 @@ export default defineAction({
           periodNumber: args.periodNumber,
           startTime: period.start,
           endTime: period.end,
-          room: room === undefined ? row.room : room,
-          updatedAt: new Date().toISOString(),
+          room: finalRoom,
+          pairId,
+          lessonLabel,
+          updatedAt: now,
         })
         .where(and(eq(S.id, scheduleId!), eq(S.schoolId, orgId)));
+      if (second && partner) {
+        partnerId = partner.id;
+        await db
+          .update(S)
+          .set({
+            classId: cls.id,
+            dayOfWeek: args.day,
+            periodNumber: second.number,
+            startTime: second.start,
+            endTime: second.end,
+            room: finalRoom,
+            pairId,
+            lessonLabel,
+            updatedAt: now,
+          })
+          .where(and(eq(S.id, partner.id), eq(S.schoolId, orgId)));
+      } else if (second) {
+        partnerId = nanoid();
+        await db.insert(S).values(fresh(partnerId, second));
+      } else if (partner) {
+        split = true;
+        await db
+          .delete(S)
+          .where(and(eq(S.id, partner.id), eq(S.schoolId, orgId)));
+      }
     } else {
       scheduleId = nanoid();
-      await db.insert(S).values({
-        id: scheduleId,
-        classId: cls.id,
-        schoolId: orgId,
-        termId: term.id,
-        dayOfWeek: args.day,
-        periodNumber: args.periodNumber,
-        startTime: period.start,
-        endTime: period.end,
-        room: room ?? null,
-        ownerEmail: userEmail ?? "",
-        orgId,
-        visibility: "org" as const,
-      });
+      const values = [fresh(scheduleId, period)];
+      if (second) {
+        partnerId = nanoid();
+        values.push(fresh(partnerId, second));
+      }
+      // One insert, so a double is both halves or neither.
+      await db.insert(S).values(values);
     }
 
+    const ids = [scheduleId!, ...(partnerId ? [partnerId] : [])];
     const { clashes: all } = await clashesForTerm(orgId, term.id);
-    const clashes = all.filter((c) => c.scheduleIds.includes(scheduleId!));
-    const placed = `${args.scheduleId ? "Moved" : "Put"} ${cls.name} ${
-      args.scheduleId ? "to" : "in"
-    } period ${args.periodNumber} on ${dayName} (${period.start}–${period.end}) in ${term.name}.`;
+    const clashes = all.filter((c) =>
+      c.scheduleIds.some((id) => ids.includes(id)),
+    );
+    const where = second
+      ? `periods ${args.periodNumber} and ${second.number} on ${dayName} (${period.start}–${second.end}), as a double,`
+      : `period ${args.periodNumber} on ${dayName} (${period.start}–${period.end})`;
+    const sentences = [
+      `${args.scheduleId ? "Moved" : "Put"} ${cls.name}${
+        lessonLabel ? ` (${lessonLabel})` : ""
+      } ${args.scheduleId ? "to" : "in"} ${where} in ${term.name}.`,
+    ];
+    if (split) {
+      sentences.push(
+        "It is a single period now; its second period has been taken out.",
+      );
+    }
+    const placed = sentences.join(" ");
     return {
       scheduleId,
+      partnerScheduleId: partnerId,
+      pairId,
+      lessonLabel,
       clashes,
       message: clashes.length
         ? `${placed} This causes ${clashes.length} clash(es): ${clashes

@@ -883,6 +883,16 @@ export default runMigrations(
       version: 86,
       sql: `ALTER TABLE classes ADD COLUMN doubles_per_week INTEGER`,
     },
+    // A double period: its two rows share a pair id. Null: a single period.
+    {
+      version: 87,
+      sql: `ALTER TABLE class_schedules ADD COLUMN pair_id TEXT`,
+    },
+    // The school's own name for this lesson, typed freely. Null: none.
+    {
+      version: 88,
+      sql: `ALTER TABLE class_schedules ADD COLUMN lesson_label TEXT`,
+    },
   ],
   { table: "school_migrations" },
 );

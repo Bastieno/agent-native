@@ -340,6 +340,8 @@ export async function loadTimetable(
       armId: c.armId ?? null,
       optionArmIds: optionArms.get(c.id) ?? [],
       learnerUserIds: learners.get(c.id) ?? [],
+      pairId: r.pairId ?? null,
+      lessonLabel: r.lessonLabel ?? null,
     });
   }
   return { week, locale, periods, fromUntermedRows, armNames };

@@ -158,6 +158,8 @@ export default defineAction({
                 className: p.className,
                 room: p.room,
                 teachers: p.teachers.map((t) => t.name),
+                pairId: p.pairId,
+                lessonLabel: p.lessonLabel,
               }));
           }
         } catch (e: any) {

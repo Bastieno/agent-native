@@ -2,7 +2,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { nanoid } from "nanoid";
 import { toast } from "sonner";
-import type { SchoolWeek } from "@shared/school-week";
+import { doubleSecondPeriod, type SchoolWeek } from "@shared/school-week";
 // Types only: erased at build, so nothing from the server reaches the client.
 import type {
   Clash,
@@ -137,6 +137,10 @@ export interface PlaceInput {
   room?: string;
   /** The placement being changed, when not adding one. */
   scheduleId?: string;
+  /** true: a double with the next lesson period; false: one period. Omitted keeps what it is. */
+  double?: boolean;
+  /** The lesson's own name; "" or null clears it. Omitted keeps it. */
+  lessonLabel?: string | null;
 }
 
 /**
@@ -153,23 +157,26 @@ export function useTimetableEdits(filter: TimetableFilter) {
     return qc.getQueryData<TimetableReply>(key);
   };
   /**
-   * Put back only the row a failed edit touched. Restoring the whole grid
+   * Put back only the rows a failed edit touched. Restoring the whole grid
    * would also undo an edit made since, while this one was in flight.
    */
-  const rollbackRow = (
-    id: string,
+  const rollbackRows = (
+    ids: string[],
     before: TimetableReply,
-    original: ResolvedPeriod | undefined,
+    originals: ResolvedPeriod[],
   ) =>
     qc.setQueryData<TimetableReply>(key, (cur) => {
       if (!cur) return cur;
-      const rest = cur.periods.filter((p) => p.scheduleId !== id);
+      const touched = (c: Clash) => c.scheduleIds.some((x) => ids.includes(x));
       return {
         ...cur,
-        periods: original ? [...rest, original] : rest,
+        periods: [
+          ...cur.periods.filter((p) => !ids.includes(p.scheduleId)),
+          ...originals,
+        ],
         clashes: [
-          ...cur.clashes.filter((c) => !c.scheduleIds.includes(id)),
-          ...before.clashes.filter((c) => c.scheduleIds.includes(id)),
+          ...cur.clashes.filter((c) => !touched(c)),
+          ...before.clashes.filter(touched),
         ],
       };
     });
@@ -187,6 +194,24 @@ export function useTimetableEdits(filter: TimetableFilter) {
     const { cls } = input;
     const id = input.scheduleId ?? `tmp-${nanoid()}`;
     const old = before?.periods.find((p) => p.scheduleId === input.scheduleId);
+    const oldPartner = old?.pairId
+      ? before?.periods.find(
+          (p) => p.pairId === old.pairId && p.scheduleId !== old.scheduleId,
+        )
+      : undefined;
+    // The draft writes both halves of a double, as the server will.
+    const wantDouble = input.double ?? !!old?.pairId;
+    const second = wantDouble
+      ? doubleSecondPeriod(before?.week, input.day, input.periodNumber).second
+      : null;
+    const partnerId = second
+      ? (oldPartner?.scheduleId ?? `tmp-${nanoid()}`)
+      : null;
+    const pairId = second ? (old?.pairId ?? `tmp-${nanoid()}`) : null;
+    const lessonLabel =
+      input.lessonLabel === undefined
+        ? (old?.lessonLabel ?? null)
+        : input.lessonLabel?.trim() || null;
     const draft: ResolvedPeriod = {
       scheduleId: id,
       classId: cls.id,
@@ -216,14 +241,40 @@ export function useTimetableEdits(filter: TimetableFilter) {
       armId: cls.armId,
       optionArmIds: cls.optionArmIds,
       learnerUserIds: old?.learnerUserIds ?? [],
+      pairId,
+      lessonLabel,
     };
+    const drafts: ResolvedPeriod[] = [draft];
+    if (second && partnerId) {
+      drafts.push({
+        ...draft,
+        scheduleId: partnerId,
+        periodNumber: second.number,
+        start: second.start,
+        end: second.end,
+      });
+    }
+    // Every row this edit touches: a split drops the old second half.
+    const touched = [
+      id,
+      ...(partnerId ? [partnerId] : []),
+      ...(oldPartner && oldPartner.scheduleId !== partnerId
+        ? [oldPartner.scheduleId]
+        : []),
+    ];
+    const originals = [old, oldPartner].filter(Boolean) as ResolvedPeriod[];
     // With nothing cached there is no grid to change yet; the call still goes
     // and its reply is shown.
     if (before)
       qc.setQueryData<TimetableReply>(key, {
         ...before,
-        periods: [...before.periods.filter((p) => p.scheduleId !== id), draft],
-        clashes: before.clashes.filter((c) => !c.scheduleIds.includes(id)),
+        periods: [
+          ...before.periods.filter((p) => !touched.includes(p.scheduleId)),
+          ...drafts,
+        ],
+        clashes: before.clashes.filter(
+          (c) => !c.scheduleIds.some((x) => touched.includes(x)),
+        ),
       });
 
     try {
@@ -236,17 +287,29 @@ export function useTimetableEdits(filter: TimetableFilter) {
         // class's); "" means the class's own.
         ...(input.room !== undefined ? { room: input.room } : {}),
         ...(input.scheduleId ? { scheduleId: input.scheduleId } : {}),
+        ...(input.double !== undefined ? { double: input.double } : {}),
+        ...(input.lessonLabel !== undefined
+          ? { lessonLabel: input.lessonLabel }
+          : {}),
       });
       qc.setQueryData<TimetableReply>(key, (cur) => {
         if (!cur) return cur;
         const real = reply.scheduleId as string;
+        const realPartner = (reply.partnerScheduleId as string | null) ?? null;
+        const realIds = [real, ...(realPartner ? [realPartner] : [])];
         return {
           ...cur,
           periods: cur.periods.map((p) =>
-            p.scheduleId === id ? { ...p, scheduleId: real } : p,
+            p.scheduleId === id
+              ? { ...p, scheduleId: real, pairId: reply.pairId ?? null }
+              : partnerId && p.scheduleId === partnerId && realPartner
+                ? { ...p, scheduleId: realPartner, pairId: reply.pairId }
+                : p,
           ),
           clashes: [
-            ...cur.clashes.filter((c) => !c.scheduleIds.includes(real)),
+            ...cur.clashes.filter(
+              (c) => !c.scheduleIds.some((x) => realIds.includes(x)),
+            ),
             ...((reply.clashes ?? []) as Clash[]),
           ],
         };
@@ -254,7 +317,7 @@ export function useTimetableEdits(filter: TimetableFilter) {
       if (reply.clashes?.length) toast.warning(reply.message);
       else if (!before && reply.message) toast.success(reply.message);
     } catch (e: any) {
-      if (before) rollbackRow(id, before, old);
+      if (before) rollbackRows(touched, before, originals);
       toast.error(e?.message ?? "That couldn't be placed.");
     }
   }
@@ -262,19 +325,28 @@ export function useTimetableEdits(filter: TimetableFilter) {
   async function remove(scheduleId: string) {
     const before = await snapshot();
     const original = before?.periods.find((p) => p.scheduleId === scheduleId);
+    // Either half of a double takes out both.
+    const originals = original?.pairId
+      ? before!.periods.filter((p) => p.pairId === original.pairId)
+      : original
+        ? [original]
+        : [];
+    const ids = originals.length
+      ? originals.map((p) => p.scheduleId)
+      : [scheduleId];
     if (before)
       qc.setQueryData<TimetableReply>(key, {
         ...before,
-        periods: before.periods.filter((p) => p.scheduleId !== scheduleId),
+        periods: before.periods.filter((p) => !ids.includes(p.scheduleId)),
         clashes: before.clashes.filter(
-          (c) => !c.scheduleIds.includes(scheduleId),
+          (c) => !c.scheduleIds.some((x) => ids.includes(x)),
         ),
       });
     try {
       const reply = await callAction("remove-timetable-period", { scheduleId });
       if (!before && reply?.message) toast.success(reply.message);
     } catch (e: any) {
-      if (before) rollbackRow(scheduleId, before, original);
+      if (before) rollbackRows(ids, before, originals);
       toast.error(e?.message ?? "That couldn't be removed.");
     }
   }

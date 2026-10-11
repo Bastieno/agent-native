@@ -30,11 +30,17 @@ export interface ClassCoverage {
 }
 
 /**
- * How many of a class's placed periods come as doubles. The one place the
- * pairing of neighbouring periods plugs in; until it does, none are counted.
+ * How many of a class's placed periods come as doubles: each pair whose two
+ * rows are both there is one. (Its two rows still count as two periods.)
  */
-export function placedDoubles(_rows: ResolvedPeriod[]): number {
-  return 0;
+export function placedDoubles(rows: ResolvedPeriod[]): number {
+  const halves = new Map<string, number>();
+  for (const r of rows) {
+    if (r.pairId) halves.set(r.pairId, (halves.get(r.pairId) ?? 0) + 1);
+  }
+  let doubles = 0;
+  for (const n of halves.values()) if (n >= 2) doubles++;
+  return doubles;
 }
 
 /**

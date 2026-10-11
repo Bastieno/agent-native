@@ -489,6 +489,8 @@ export type TimetableContext = {
   termId: string;
   /** The third term: a copy of the second, with rows of its own. */
   copyTermId: string;
+  /** The fourth term: a copy of the earlier timetable, free to plan in. */
+  planTermId: string;
   /** A date inside the term. */
   date: string;
   /** The first arm, and the option slot placed for it. */
@@ -1060,6 +1062,7 @@ export async function checkTimetable(
   return {
     termId: T2,
     copyTermId: T3,
+    planTermId: T4,
     date: "2027-01-11",
     armId: armA,
     optionSlot: { day: 2, periodNumber: 1 },
@@ -1622,5 +1625,287 @@ export async function checkTimetableBoundaries(
       (await countOf(classB)) === 4,
     "counts set with no term reach the current year's classes only",
     thisYear?.message,
+  );
+}
+
+/**
+ * Doubles and a lesson's own name, in the fourth term (a copy of the earlier
+ * timetable that nothing later reads): placing, refusing, moving, splitting,
+ * naming, reading back as a learner and a teacher, copying and removing.
+ * Then a timetable built before any teacher is given, which has no teacher
+ * clash until one teacher takes two of its classes.
+ */
+export async function checkDoubles(
+  client: Client,
+  run: FullSchoolRun,
+  arms: ArmsContext,
+  ctx: TimetableContext,
+  findings: Findings,
+): Promise<void> {
+  const phase = "timetable";
+  const admin = run.admin;
+  const T = ctx.planTermId;
+  const classA = ctx.teachingClassId;
+  const learner = run.students.find((s) => s.userId === ctx.onlyFurtherMaths)!;
+  const teacher = run.classes[0].teacher;
+  const set = (extra: Record<string, unknown>) =>
+    client.as(admin, "set-timetable-period", {
+      termId: T,
+      classId: classA,
+      ...extra,
+    }) as Promise<any>;
+  const rowsOf = async () =>
+    (
+      (await client.as(admin, "get-timetable", { termId: T })) as any
+    ).periods.filter((p: any) => p.classId === classA) as any[];
+  const coverage = async () =>
+    (
+      (await client.as(admin, "get-timetable-coverage", {
+        termId: T,
+        armId: ctx.armId,
+      })) as any
+    ).classes.find((c: any) => c.classId === classA)?.placed;
+
+  // 1. A double is two rows sharing a pair, counted as 2 periods / 1 double.
+  const before = await coverage();
+  const placed = await set({ day: 1, periodNumber: 5, double: true });
+  let rows = await rowsOf();
+  const after = await coverage();
+  findings.expect(
+    phase,
+    rows.length === 2 &&
+      !!rows[0].pairId &&
+      rows[0].pairId === rows[1].pairId &&
+      rows
+        .map((r: any) => r.periodNumber)
+        .sort()
+        .join() === "5,6" &&
+      after?.periods === (before?.periods ?? 0) + 2 &&
+      after?.doubles === (before?.doubles ?? 0) + 1 &&
+      noId(placed?.message),
+    "a double is two periods sharing one pair, counted as 2 periods and 1 double",
+    `${JSON.stringify(rows.map((r: any) => [r.periodNumber, r.pairId]))} ${JSON.stringify([before, after])} ${placed?.message}`,
+  );
+
+  // 2. Refusals: a break straight after, and the day's last lesson period.
+  findings.expect(
+    phase,
+    await refused(
+      () => set({ day: 1, periodNumber: 3, double: true }),
+      /^Period 3 is the last lesson before Long break, so a double can't start there\.$/,
+    ),
+    "a double that would run into a break is refused in a sentence naming the break",
+  );
+  findings.expect(
+    phase,
+    await refused(
+      () => set({ day: 1, periodNumber: 8, double: true }),
+      /^Period 8 is the last lesson on .+, so a double can't start there\.$/,
+    ),
+    "a double on the day's last lesson period is refused in a sentence",
+  );
+
+  // 3. Moving either half moves both; double: false splits it.
+  const second = rows.find((r: any) => r.periodNumber === 6)!;
+  await set({ day: 2, periodNumber: 5, scheduleId: second.scheduleId });
+  rows = await rowsOf();
+  findings.expect(
+    phase,
+    rows.length === 2 &&
+      rows.every((r: any) => r.day === 2) &&
+      rows
+        .map((r: any) => r.periodNumber)
+        .sort()
+        .join() === "5,6" &&
+      rows[0].pairId === rows[1].pairId &&
+      !!rows[0].pairId,
+    "moving one half of a double moves both, still paired",
+    JSON.stringify(rows.map((r: any) => [r.day, r.periodNumber, r.pairId])),
+  );
+  const first = rows.find((r: any) => r.periodNumber === 5)!;
+  const split = await set({
+    day: 2,
+    periodNumber: 5,
+    scheduleId: first.scheduleId,
+    double: false,
+  });
+  rows = await rowsOf();
+  findings.expect(
+    phase,
+    rows.length === 1 &&
+      rows[0].pairId === null &&
+      /single period now/.test(String(split?.message)),
+    "a double set to one period keeps one row, and the reply says its second period went",
+    split?.message,
+  );
+  await set({
+    day: 2,
+    periodNumber: 5,
+    scheduleId: first.scheduleId,
+    double: true,
+  });
+
+  // 5. One name for the double, read back by the learner and the teacher.
+  rows = await rowsOf();
+  const half = rows.find((r: any) => r.periodNumber === 6)!;
+  await set({
+    day: 2,
+    periodNumber: 5,
+    scheduleId: half.scheduleId,
+    lessonLabel: "  Own name 1 ",
+  });
+  rows = await rowsOf();
+  const week: any = await client.as(learner, "get-my-week", {
+    date: "2027-08-02",
+  });
+  const tuesday = (week.days ?? []).find((d: any) => d.day === 2);
+  const inWeek = [5, 6].map((n) =>
+    tuesday?.periods
+      ?.find((p: any) => p.number === n)
+      ?.lessons?.find((l: any) => l.classId === classA),
+  );
+  const schedule: any = await client.as(teacher, "get-my-schedule", {
+    date: "2027-08-03",
+  });
+  const slots = asList(schedule, "slots").filter(
+    (s: any) => s.classId === classA,
+  );
+  findings.expect(
+    phase,
+    rows.length === 2 &&
+      rows.every((r: any) => r.lessonLabel === "Own name 1") &&
+      inWeek.every((l: any) => l?.lessonLabel === "Own name 1") &&
+      !!inWeek[0]?.pairId &&
+      inWeek[0]?.pairId === inWeek[1]?.pairId,
+    "a name given to one half belongs to the whole double, and the learner's week shows it",
+    JSON.stringify([rows.map((r: any) => r.lessonLabel), inWeek]),
+  );
+  const period5 = tuesday?.periods?.find((p: any) => p.number === 5);
+  const period6 = tuesday?.periods?.find((p: any) => p.number === 6);
+  findings.expect(
+    phase,
+    slots.length === 1 &&
+      slots[0].periodCount === 2 &&
+      slots[0].periodNumber === 5 &&
+      slots[0].startTime === period5?.start &&
+      slots[0].endTime === period6?.end &&
+      slots[0].lessonLabel === "Own name 1",
+    "a teacher's day shows a double as one slot from its first start to its second end",
+    JSON.stringify(slots),
+  );
+
+  // 6. A copied double is still one double, with a new pair and its name.
+  const copyTerm = idOf(
+    await client.as(admin, "create-term", {
+      academicYearId: run.academicYearId,
+      name: "Planning Copy",
+      startDate: "2027-12-20",
+      endDate: "2027-12-31",
+      sequence: 6,
+    }),
+    "term",
+  )!;
+  await client.as(admin, "copy-timetable", {
+    fromTermId: T,
+    toTermId: copyTerm,
+    confirm: true,
+  });
+  const copied = (
+    (await client.as(admin, "get-timetable", { termId: copyTerm })) as any
+  ).periods.filter((p: any) => p.classId === classA);
+  findings.expect(
+    phase,
+    copied.length === 2 &&
+      !!copied[0].pairId &&
+      copied[0].pairId === copied[1].pairId &&
+      copied[0].pairId !== rows[0].pairId &&
+      copied.every((p: any) => p.lessonLabel === "Own name 1"),
+    "a copied term has the double as one pair of its own, with the same name",
+    JSON.stringify(
+      copied.map((p: any) => [p.periodNumber, p.pairId, p.lessonLabel]),
+    ),
+  );
+
+  // 4. Removing either half removes the double.
+  const removed: any = await client.as(admin, "remove-timetable-period", {
+    scheduleId: rows.find((r: any) => r.periodNumber === 6)!.scheduleId,
+  });
+  rows = await rowsOf();
+  findings.expect(
+    phase,
+    rows.length === 0 &&
+      /the double/.test(String(removed?.message)) &&
+      noId(removed?.message),
+    "removing either half of a double takes out both, and the reply says the double",
+    removed?.message,
+  );
+
+  // 7. A timetable can be built before teachers are given.
+  const make = async (name: string) =>
+    idOf(
+      await client.as(admin, "create-class", {
+        subjectId: arms.subjectId,
+        gradeLevelId: arms.gradeLevelId,
+        academicYearId: run.academicYearId,
+        name,
+      }),
+      "class",
+    )!;
+  const free1 = await make(`${arms.yearGroup} Unassigned One`);
+  const free2 = await make(`${arms.yearGroup} Unassigned Two`);
+  const a = (await client.as(admin, "set-timetable-period", {
+    termId: T,
+    classId: free1,
+    day: 3,
+    periodNumber: 6,
+    room: `${arms.yearGroup}B classroom`,
+  })) as any;
+  const b = (await client.as(admin, "set-timetable-period", {
+    termId: T,
+    classId: free2,
+    day: 3,
+    periodNumber: 6,
+    room: `${arms.yearGroup}C classroom`,
+  })) as any;
+  const pairClashes = async () =>
+    (
+      (await client.as(admin, "get-timetable", { termId: T })) as any
+    ).clashes.filter(
+      (c: any) =>
+        c.scheduleIds.includes(a.scheduleId) &&
+        c.scheduleIds.includes(b.scheduleId),
+    );
+  const beforeTeacher = await pairClashes();
+  const someone = run.classes[1].teacher.userId!;
+  for (const id of [free1, free2]) {
+    await client.as(admin, "update-class", {
+      id,
+      primaryTeacherUserId: someone,
+    });
+  }
+  const afterTeacher = await pairClashes();
+  findings.expect(
+    phase,
+    beforeTeacher.length === 0 &&
+      afterTeacher.length === 1 &&
+      afterTeacher[0].kind === "teacher",
+    "two classes with no teacher share a slot without a clash; giving both one teacher makes a teacher clash",
+    JSON.stringify([beforeTeacher, afterTeacher]),
+  );
+
+  // Lesson counts given a term that isn't the school's: refused in words.
+  findings.expect(
+    phase,
+    await refused(
+      () =>
+        client.as(admin, "set-lesson-counts", {
+          subjectId: arms.subjectId,
+          gradeLevelId: arms.gradeLevelId,
+          periodsPerWeek: 4,
+          termId: "no-such-term",
+        }),
+      /^That term is not in this school\.$/,
+    ),
+    "lesson counts given a term that is not the school's are refused in words",
   );
 }

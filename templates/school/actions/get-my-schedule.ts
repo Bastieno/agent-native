@@ -13,7 +13,7 @@ import { schoolWeekdayName } from "../shared/school-week.js";
 
 export default defineAction({
   description:
-    "Get the teaching schedule for today (or a specific date/day). Returns the teacher's classes sorted by start time, with room, subject, grade level, and whether a lesson note has been prepared. Defaults to today when no date is provided.",
+    "Get the teaching schedule for today (or a specific date/day). Returns the teacher's classes sorted by start time, with room, subject, grade level, the lesson's own name if the school gave it one, and whether a lesson note has been prepared. A double is one slot from its first start to its second end, with periodCount 2. Defaults to today when no date is provided.",
   schema: z.object({
     date: z
       .string()
@@ -123,7 +123,27 @@ export default defineAction({
       if (!lessonByClass.has(l.classId)) lessonByClass.set(l.classId, l);
     }
 
-    const enriched = mine.map((p) => {
+    // A double is one slot: from its first start to its second end.
+    const halves = new Map<string, typeof mine>();
+    for (const p of mine) {
+      if (!p.pairId) continue;
+      halves.set(p.pairId, [...(halves.get(p.pairId) ?? []), p]);
+    }
+    const joined = mine.flatMap((p) => {
+      const pair = p.pairId ? halves.get(p.pairId)! : [p];
+      if (pair.length < 2) return [{ first: p, last: p, count: 1 }];
+      const ordered = [...pair].sort((a, b) => a.start.localeCompare(b.start));
+      if (ordered[0] !== p) return [];
+      return [
+        {
+          first: p,
+          last: ordered[ordered.length - 1],
+          count: ordered.length,
+        },
+      ];
+    });
+
+    const enriched = joined.map(({ first: p, last, count }) => {
       const cls = classById.get(p.classId);
       const recent = lessonByClass.get(p.classId);
       return {
@@ -133,9 +153,11 @@ export default defineAction({
         subjectId: cls?.subjectId ?? null,
         gradeLevelId: cls?.gradeLevelId ?? null,
         periodNumber: p.periodNumber,
+        periodCount: count,
         startTime: p.start,
-        endTime: p.end,
+        endTime: last.end,
         room: p.room,
+        lessonLabel: p.lessonLabel,
         lessonPrepared: !!recent,
         lesson: recent
           ? { id: recent.id, title: recent.title, status: recent.status }

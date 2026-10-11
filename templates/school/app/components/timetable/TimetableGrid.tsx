@@ -76,17 +76,58 @@ export function TimetableGrid({
     [week],
   );
   const rows = useMemo(() => rowsOf(week), [week]);
-  const bySlot = useMemo(() => {
-    const m = new Map<string, ResolvedPeriod[]>();
+  const { bySlot, partnerOf, spans } = useMemo(() => {
+    const rowAt = new Map(rows.map((r, i) => [r.number, i]));
+    const slotOf = new Map<string, number>();
+    const halves = new Map<string, ResolvedPeriod[]>();
     for (const p of periods) {
       // Rows on no lesson of the week are listed under the grid instead.
       const n = placementSlot(week, p)?.number;
-      if (n == null) continue;
-      const k = `${p.day}:${n}`;
-      m.set(k, [...(m.get(k) ?? []), p]);
+      if (n != null) slotOf.set(p.scheduleId, n);
+      if (p.pairId) halves.set(p.pairId, [...(halves.get(p.pairId) ?? []), p]);
     }
-    return m;
-  }, [periods, week]);
+    // A double whose halves sit in neighbouring rows of one day is drawn as
+    // one tall cell: its second half lives in the first's cell.
+    const hidden = new Set<string>();
+    const partnerOf = new Map<string, string>();
+    const spans = new Set<string>();
+    for (const pair of halves.values()) {
+      if (pair.length !== 2 || pair[0].day !== pair[1].day) continue;
+      const [a, b] = [...pair].sort(
+        (x, y) =>
+          (rowAt.get(slotOf.get(x.scheduleId) ?? -1) ?? -1) -
+          (rowAt.get(slotOf.get(y.scheduleId) ?? -1) ?? -1),
+      );
+      const ra = rowAt.get(slotOf.get(a.scheduleId) ?? -1);
+      const rb = rowAt.get(slotOf.get(b.scheduleId) ?? -1);
+      if (ra == null || rb == null || rb !== ra + 1) continue;
+      hidden.add(b.scheduleId);
+      partnerOf.set(a.scheduleId, b.scheduleId);
+      spans.add(`${a.day}:${ra}`);
+    }
+    const bySlot = new Map<string, ResolvedPeriod[]>();
+    for (const p of periods) {
+      const n = slotOf.get(p.scheduleId);
+      if (n == null || hidden.has(p.scheduleId)) continue;
+      const k = `${p.day}:${n}`;
+      bySlot.set(k, [...(bySlot.get(k) ?? []), p]);
+    }
+    return { bySlot, partnerOf, spans };
+  }, [periods, week, rows]);
+
+  const cellFor = (day: number, number: number, tall = false) => (
+    <Cell
+      week={week}
+      day={day}
+      number={number}
+      entries={bySlot.get(`${day}:${number}`) ?? []}
+      partnerOf={partnerOf}
+      tall={tall}
+      clashes={clashes}
+      selected={selected?.day === day && selected.periodNumber === number}
+      renderCell={renderCell}
+    />
+  );
 
   return (
     // The grid scrolls sideways inside itself; the page never does.
@@ -109,7 +150,7 @@ export function TimetableGrid({
           </tr>
         </thead>
         <tbody>
-          {rows.map((row) =>
+          {rows.map((row, i) =>
             row.isBreak ? (
               <tr key={row.number} className="border-t bg-muted/30">
                 <td
@@ -128,22 +169,34 @@ export function TimetableGrid({
                     {row.start}
                   </span>
                 </th>
-                {days.map((d) => (
-                  <td key={d.day} className="border-l p-1 align-top">
-                    <Cell
-                      week={week}
-                      day={d.day}
-                      number={row.number}
-                      entries={bySlot.get(`${d.day}:${row.number}`) ?? []}
-                      clashes={clashes}
-                      selected={
-                        selected?.day === d.day &&
-                        selected.periodNumber === row.number
-                      }
-                      renderCell={renderCell}
-                    />
-                  </td>
-                ))}
+                {days.map((d) => {
+                  // The row below a double's first half belongs to its cell.
+                  if (spans.has(`${d.day}:${i - 1}`)) return null;
+                  if (!spans.has(`${d.day}:${i}`)) {
+                    return (
+                      <td key={d.day} className="border-l p-1 align-top">
+                        {cellFor(d.day, row.number)}
+                      </td>
+                    );
+                  }
+                  const below = rows[i + 1];
+                  const others = bySlot.get(`${d.day}:${below.number}`) ?? [];
+                  return (
+                    <td
+                      key={d.day}
+                      rowSpan={2}
+                      className="border-l p-1 align-top"
+                    >
+                      <div className="flex flex-col gap-1">
+                        {cellFor(d.day, row.number, others.length === 0)}
+                        {/* Other classes in the second period, e.g. an option block. */}
+                        {others.length > 0
+                          ? cellFor(d.day, below.number)
+                          : null}
+                      </div>
+                    </td>
+                  );
+                })}
               </tr>
             ),
           )}
@@ -158,6 +211,8 @@ function Cell({
   day,
   number,
   entries,
+  partnerOf,
+  tall,
   clashes,
   selected,
   renderCell,
@@ -166,6 +221,10 @@ function Cell({
   day: number;
   number: number;
   entries: ResolvedPeriod[];
+  /** A double's first half → its second half, drawn in the same cell. */
+  partnerOf: Map<string, string>;
+  /** Spans two period rows on its own. */
+  tall: boolean;
   clashes: Clash[];
   selected: boolean;
   renderCell?: (
@@ -185,7 +244,14 @@ function Cell({
     );
   }
 
-  const ids = new Set(entries.map((e) => e.scheduleId));
+  // A double clashes if either half does.
+  const ids = new Set(
+    entries.flatMap((e) => {
+      const partner = partnerOf.get(e.scheduleId);
+      return partner ? [e.scheduleId, partner] : [e.scheduleId];
+    }),
+  );
+  const doubled = entries.some((e) => partnerOf.has(e.scheduleId));
   const messages = clashes
     .filter((c) => c.scheduleIds.some((id) => ids.has(id)))
     .map((c) => c.message);
@@ -193,7 +259,7 @@ function Cell({
   const editable = !!renderCell;
 
   const body = (
-    <div className="flex gap-1">
+    <div className={cn("flex gap-1", tall && "min-h-[7rem]")}>
       {entries.map((e) => (
         <div
           key={e.scheduleId}
@@ -202,6 +268,9 @@ function Cell({
           <span className="block truncate text-xs font-medium">
             {e.className}
           </span>
+          {e.lessonLabel ? (
+            <span className="block truncate text-[11px]">{e.lessonLabel}</span>
+          ) : null}
           <span className="block truncate text-[11px] text-muted-foreground">
             {e.teachers.map((t) => t.name).join(", ") || "No teacher"}
           </span>
@@ -216,7 +285,8 @@ function Cell({
   );
 
   const className = cn(
-    "block min-h-14 w-full rounded-md p-1 text-left",
+    "block w-full rounded-md p-1 text-left",
+    tall ? "min-h-[7.5rem]" : "min-h-14",
     editable && "hover:bg-muted/50 focus-visible:outline-none",
     selected && "bg-muted",
     clashing && "outline outline-2 -outline-offset-2 outline-destructive",
@@ -225,6 +295,7 @@ function Cell({
     "data-day": day,
     "data-period": number,
     "data-clash": clashing ? "true" : undefined,
+    "data-double": doubled ? "true" : undefined,
     "aria-label": `${entries.map((e) => e.className).join(", ") || "Free"}`,
   };
   let cell: ReactElement = editable ? (

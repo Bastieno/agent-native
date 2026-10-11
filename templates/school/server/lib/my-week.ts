@@ -14,6 +14,10 @@ export interface MyWeekLesson {
   subjectName: string;
   teacherName: string | null;
   room: string | null;
+  /** Shared by the two periods of a double; null for a single period. */
+  pairId: string | null;
+  /** The school's own name for this lesson; null for none. */
+  lessonLabel: string | null;
 }
 
 export interface MyWeek {
@@ -179,6 +183,8 @@ export async function getMyWeek(
               // The loader puts the primary teacher first.
               teacherName: p.teachers[0]?.name ?? null,
               room: p.room,
+              pairId: p.pairId,
+              lessonLabel: p.lessonLabel,
             });
           }
           lessons.sort((a, b) => a.className.localeCompare(b.className));

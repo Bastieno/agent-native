@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type ReactElement } from "react";
 import { IconPlus } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Popover,
@@ -14,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import { roomKey, type Room } from "@shared/school-week";
 import type { ClassOption, ResolvedPeriod } from "./use-timetable";
@@ -30,6 +32,10 @@ export interface CellSave {
    */
   room?: string;
   scheduleId?: string;
+  /** One period, or this one and the next lesson period as a double. */
+  double: boolean;
+  /** The lesson's own name, sent only when changed; "" clears it. */
+  lessonLabel?: string;
 }
 
 /**
@@ -68,6 +74,9 @@ export function PeriodCellPopover({
   // Room shows what a placement resolves to; only a change is sent, so
   // opening and saving never rewrites a custom or inherited room.
   const [roomTouched, setRoomTouched] = useState(false);
+  const [double, setDouble] = useState(false);
+  const [lessonLabel, setLessonLabel] = useState("");
+  const [labelBefore, setLabelBefore] = useState("");
 
   /** The listed room matching a name, compared the way the server does. */
   const listed = (name: string | null | undefined) =>
@@ -81,6 +90,9 @@ export function PeriodCellPopover({
     setRoom(listed(entry ? entry.room : defaultRoom) ?? OWN_ROOM);
     // In room view a new placement goes to the room in view.
     setRoomTouched(!entry && !!listed(defaultRoom));
+    setDouble(!!entry?.pairId);
+    setLessonLabel(entry?.lessonLabel ?? "");
+    setLabelBefore(entry?.lessonLabel ?? "");
   };
 
   // Each time it opens: the one class there, ready to change; else a new one.
@@ -109,6 +121,10 @@ export function PeriodCellPopover({
       classId,
       ...(roomTouched ? { room: room === OWN_ROOM ? "" : room } : {}),
       scheduleId: editing ?? undefined,
+      double,
+      ...(lessonLabel.trim() !== labelBefore.trim()
+        ? { lessonLabel: lessonLabel.trim() }
+        : {}),
     });
     onOpenChange(false);
   };
@@ -132,6 +148,12 @@ export function PeriodCellPopover({
                 )}
               >
                 {e.className}
+                {e.lessonLabel ? (
+                  <span className="text-muted-foreground">
+                    {" "}
+                    · {e.lessonLabel}
+                  </span>
+                ) : null}
                 {e.room ? (
                   <span className="text-muted-foreground"> · {e.room}</span>
                 ) : null}
@@ -191,6 +213,32 @@ export function PeriodCellPopover({
             </Select>
           </div>
         ) : null}
+
+        <div className="space-y-1.5">
+          <Label htmlFor="cell-lesson-name" className="text-xs">
+            Lesson name
+          </Label>
+          <Input
+            id="cell-lesson-name"
+            className="h-8 text-sm"
+            value={lessonLabel}
+            onChange={(e) => setLessonLabel(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") save();
+            }}
+          />
+        </div>
+
+        <div className="flex items-center justify-between gap-2">
+          <Label htmlFor="cell-double" className="text-xs">
+            Double
+          </Label>
+          <Switch
+            id="cell-double"
+            checked={double}
+            onCheckedChange={setDouble}
+          />
+        </div>
 
         <div className="flex items-center justify-between gap-2 pt-1">
           {editing && !editing.startsWith("tmp-") ? (

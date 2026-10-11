@@ -149,6 +149,9 @@ function Today() {
             >
               {slot.className}
             </Link>
+            {slot.lessonLabel ? (
+              <span className="text-xs">{slot.lessonLabel}</span>
+            ) : null}
             {slot.room ? (
               <span className="text-xs text-muted-foreground">{slot.room}</span>
             ) : null}

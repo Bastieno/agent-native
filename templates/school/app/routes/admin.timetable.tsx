@@ -448,6 +448,8 @@ export default function AdminTimetable() {
                           end: slot.end,
                           room: s.room,
                           scheduleId: s.scheduleId,
+                          double: s.double,
+                          lessonLabel: s.lessonLabel,
                         });
                       }}
                       onRemove={remove}

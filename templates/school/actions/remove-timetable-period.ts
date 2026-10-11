@@ -9,7 +9,7 @@ import { schoolLocale } from "../shared/dates.js";
 
 export default defineAction({
   description:
-    "Take one class out of the timetable slot it was placed in. The class itself is not touched.",
+    "Take one class out of the timetable slot it was placed in. Either half of a double takes out the whole double. The class itself is not touched.",
   schema: z.object({
     scheduleId: z.string().describe("The placement, from get-timetable"),
   }),
@@ -38,6 +38,34 @@ export default defineAction({
       .limit(1);
     const locale = schoolLocale(await loadSchoolConfig(orgId));
 
+    const day = schoolWeekdayName(row.dayOfWeek, locale);
+    const name = cls?.name ?? "the class";
+    if (row.pairId) {
+      // A double is one lesson: either half takes out both.
+      const halves = await db
+        .select()
+        .from(S)
+        .where(and(eq(S.schoolId, orgId), eq(S.pairId, row.pairId)));
+      await db
+        .delete(S)
+        .where(and(eq(S.schoolId, orgId), eq(S.pairId, row.pairId)));
+      const numbers = (halves as any[])
+        .map((h) => h.periodNumber)
+        .filter((n) => n != null)
+        .sort((a, b) => a - b);
+      const where =
+        numbers.length === 2
+          ? `periods ${numbers[0]} and ${numbers[1]}`
+          : row.periodNumber != null
+            ? `period ${row.periodNumber}`
+            : row.startTime;
+      return {
+        removed: true,
+        removedCount: halves.length,
+        message: `Took the double of ${name} out of ${where} on ${day}.`,
+      };
+    }
+
     await db
       .delete(S)
       .where(and(eq(S.id, args.scheduleId), eq(S.schoolId, orgId)));
@@ -45,7 +73,8 @@ export default defineAction({
       row.periodNumber != null ? `period ${row.periodNumber}` : row.startTime;
     return {
       removed: true,
-      message: `Took ${cls?.name ?? "the class"} out of ${where} on ${schoolWeekdayName(row.dayOfWeek, locale)}.`,
+      removedCount: 1,
+      message: `Took ${name} out of ${where} on ${day}.`,
     };
   },
 });

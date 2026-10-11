@@ -83,6 +83,29 @@ export function findPeriod(
   return found?.periods?.find((p) => p.number === number) ?? null;
 }
 
+/**
+ * Where a double starting at a period would end: the next period in that
+ * day's order, when it is a lesson. Otherwise `second` is null and `blocker`
+ * is what stands in the way (a break or other non-lesson period), or null
+ * when the day has nothing after it. The one rule the server and the page's
+ * draft share.
+ */
+export function doubleSecondPeriod(
+  week: SchoolWeek | null | undefined,
+  day: number,
+  number: number,
+): { second: WeekPeriod | null; blocker: WeekPeriod | null } {
+  const found = week?.days?.find((d) => d.day === day);
+  const ordered = [...(found?.periods ?? [])].sort(
+    (a, b) => minutes(a.start) - minutes(b.start),
+  );
+  const at = ordered.findIndex((p) => p.number === number);
+  const after = at >= 0 ? ordered[at + 1] : undefined;
+  if (!after) return { second: null, blocker: null };
+  if (after.kind !== "lesson") return { second: null, blocker: after };
+  return { second: after, blocker: null };
+}
+
 /** What a placement needs for slotting: its day, number and stored times. */
 export interface Placement {
   day: number;
