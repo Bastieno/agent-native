@@ -11,6 +11,7 @@ import {
   type SchoolWeek,
   type WeekPeriod,
 } from "@shared/school-week";
+import { gridSpans } from "@shared/timetable-grid";
 import type { Clash, ResolvedPeriod } from "./use-timetable";
 
 interface Row {
@@ -77,37 +78,16 @@ export function TimetableGrid({
   );
   const rows = useMemo(() => rowsOf(week), [week]);
   const { bySlot, partnerOf, spans } = useMemo(() => {
-    const rowAt = new Map(rows.map((r, i) => [r.number, i]));
-    const slotOf = new Map<string, number>();
-    const halves = new Map<string, ResolvedPeriod[]>();
+    // Doubles drawn as one tall cell; the rule lives in gridSpans.
+    const { hidden, partnerOf, spans } = gridSpans(
+      week,
+      rows.map((r) => r.number),
+      periods,
+    );
+    const bySlot = new Map<string, ResolvedPeriod[]>();
     for (const p of periods) {
       // Rows on no lesson of the week are listed under the grid instead.
       const n = placementSlot(week, p)?.number;
-      if (n != null) slotOf.set(p.scheduleId, n);
-      if (p.pairId) halves.set(p.pairId, [...(halves.get(p.pairId) ?? []), p]);
-    }
-    // A double whose halves sit in neighbouring rows of one day is drawn as
-    // one tall cell: its second half lives in the first's cell.
-    const hidden = new Set<string>();
-    const partnerOf = new Map<string, string>();
-    const spans = new Set<string>();
-    for (const pair of halves.values()) {
-      if (pair.length !== 2 || pair[0].day !== pair[1].day) continue;
-      const [a, b] = [...pair].sort(
-        (x, y) =>
-          (rowAt.get(slotOf.get(x.scheduleId) ?? -1) ?? -1) -
-          (rowAt.get(slotOf.get(y.scheduleId) ?? -1) ?? -1),
-      );
-      const ra = rowAt.get(slotOf.get(a.scheduleId) ?? -1);
-      const rb = rowAt.get(slotOf.get(b.scheduleId) ?? -1);
-      if (ra == null || rb == null || rb !== ra + 1) continue;
-      hidden.add(b.scheduleId);
-      partnerOf.set(a.scheduleId, b.scheduleId);
-      spans.add(`${a.day}:${ra}`);
-    }
-    const bySlot = new Map<string, ResolvedPeriod[]>();
-    for (const p of periods) {
-      const n = slotOf.get(p.scheduleId);
       if (n == null || hidden.has(p.scheduleId)) continue;
       const k = `${p.day}:${n}`;
       bySlot.set(k, [...(bySlot.get(k) ?? []), p]);

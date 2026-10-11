@@ -2,6 +2,7 @@ import { and, eq, inArray } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
 import { listInWords, loadTimetable, termContext } from "./timetable.js";
 import type { ResolvedPeriod } from "./timetable-clashes.js";
+import { validPairs, type SchoolWeek } from "../../shared/school-week.js";
 import { resolveViewTerm } from "./timetable-view.js";
 
 export interface Tally {
@@ -30,17 +31,14 @@ export interface ClassCoverage {
 }
 
 /**
- * How many of a class's placed periods come as doubles: each pair whose two
- * rows are both there is one. (Its two rows still count as two periods.)
+ * How many of a class's placed periods come as doubles: each valid pair (see
+ * `validPairs`) is one. Its two rows still count as two periods.
  */
-export function placedDoubles(rows: ResolvedPeriod[]): number {
-  const halves = new Map<string, number>();
-  for (const r of rows) {
-    if (r.pairId) halves.set(r.pairId, (halves.get(r.pairId) ?? 0) + 1);
-  }
-  let doubles = 0;
-  for (const n of halves.values()) if (n >= 2) doubles++;
-  return doubles;
+export function placedDoubles(
+  week: SchoolWeek | null | undefined,
+  rows: ResolvedPeriod[],
+): number {
+  return validPairs(week, rows).size;
 }
 
 /**
@@ -52,6 +50,7 @@ export function placedDoubles(rows: ResolvedPeriod[]): number {
 export function countCoverage(
   periods: ResolvedPeriod[],
   classes: CoverageClass[],
+  week: SchoolWeek | null | undefined,
 ): { classes: ClassCoverage[]; unset: number } {
   const rowsOf = new Map<string, ResolvedPeriod[]>();
   for (const p of periods) {
@@ -64,7 +63,7 @@ export function countCoverage(
     const rows = rowsOf.get(c.classId) ?? [];
     const placed: Tally = {
       periods: rows.length,
-      doubles: placedDoubles(rows),
+      doubles: placedDoubles(week, rows),
     };
     if (c.periodsPerWeek == null) {
       unset++;
@@ -214,6 +213,7 @@ export async function coverageView(orgId: string, args: CoverageFilter) {
       periodsPerWeek: c.periodsPerWeek ?? null,
       doublesPerWeek: c.doublesPerWeek ?? null,
     })),
+    loaded.week,
   );
   counted.classes.sort((a, b) => a.className.localeCompare(b.className));
 

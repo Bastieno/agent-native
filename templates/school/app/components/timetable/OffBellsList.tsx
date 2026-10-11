@@ -44,16 +44,20 @@ export function OffBellsList({
   );
   // A double is one entry, from its first start to its second end; moving or
   // removing it moves or removes both halves.
+  // Off the bells there is no period order to check a double against, so
+  // two rows of one pair on one day are joined; anything else stays apart.
   const endOf = new Map<string, string>();
-  const seenPairs = new Set<string>();
-  const sorted = ordered.filter((p) => {
-    if (!p.pairId) return true;
-    if (seenPairs.has(p.pairId)) return false;
-    seenPairs.add(p.pairId);
+  const skip = new Set<string>();
+  for (const p of ordered) {
+    if (!p.pairId || skip.has(p.scheduleId) || endOf.has(p.scheduleId)) {
+      continue;
+    }
     const halves = ordered.filter((q) => q.pairId === p.pairId);
-    endOf.set(p.scheduleId, halves[halves.length - 1].end);
-    return true;
-  });
+    if (halves.length !== 2 || halves[0].day !== halves[1].day) continue;
+    endOf.set(halves[0].scheduleId, halves[1].end);
+    skip.add(halves[1].scheduleId);
+  }
+  const sorted = ordered.filter((p) => !skip.has(p.scheduleId));
   return (
     <section className="space-y-2" data-testid="off-bells">
       <h2 className="text-sm font-medium">Not on this week's bells</h2>

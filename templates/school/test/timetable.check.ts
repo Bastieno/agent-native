@@ -4,6 +4,7 @@
 import assert from "node:assert/strict";
 import {
   doubleSecondPeriod,
+  validPairs,
   findPeriod,
   placementSlot,
   roomKey,
@@ -18,6 +19,7 @@ import {
 } from "../shared/school-week.js";
 import { countsProblem } from "../shared/lesson-counts.js";
 import { countCoverage } from "../server/lib/timetable-coverage.js";
+import { gridSpans } from "../shared/timetable-grid.js";
 import {
   findClashes,
   type ResolvedPeriod,
@@ -471,6 +473,7 @@ check("coverage counts each class's placed rows against what it needs", () => {
   const out = countCoverage(
     [row("a", 1), row("a", 2), row("a", 3), row("b", 1)],
     [cov("a", 5), cov("b", 2, 1)],
+    null,
   );
   const [a, b] = out.classes;
   assert.deepEqual(a.required, { periods: 5, doubles: 0 });
@@ -482,7 +485,7 @@ check("coverage counts each class's placed rows against what it needs", () => {
 });
 
 check("a class with no counts is unset and short of nothing", () => {
-  const out = countCoverage([row("a", 1)], [cov("a", null), cov("b", 3)]);
+  const out = countCoverage([row("a", 1)], [cov("a", null), cov("b", 3)], null);
   assert.equal(out.unset, 1);
   assert.equal(out.classes[0].required, null);
   assert.deepEqual(out.classes[0].short, { periods: 0, doubles: 0 });
@@ -493,6 +496,7 @@ check("a shortfall is never negative", () => {
   const out = countCoverage(
     [row("a", 1), row("a", 2), row("a", 3)],
     [cov("a", 2), cov("b", 0)],
+    null,
   );
   assert.equal(out.classes[0].short.periods, 0);
   assert.equal(out.classes[1].short.periods, 0);
@@ -544,14 +548,23 @@ check("the day's last period has no second half", () => {
   assert.equal(doubleSecondPeriod(dayWithBreak, 4, 1).second, null);
 });
 
+const half = (id: string, n: number, pairId: string | null, day = 2) => {
+  const p = findPeriod(dayWithBreak, 2, n)!;
+  return rp(id, {
+    classId: "a",
+    day,
+    periodNumber: n,
+    start: p.start,
+    end: p.end,
+    pairId,
+  });
+};
+
 check("a pair counts as two periods and one double", () => {
   const out = countCoverage(
-    [
-      rp("p1", { classId: "a", periodNumber: 1, pairId: "x" }),
-      rp("p2", { classId: "a", periodNumber: 2, pairId: "x" }),
-      row("a", 5),
-    ],
+    [half("p1", 1, "x"), half("p2", 2, "x"), half("s", 5, null)],
     [cov("a", 5, 1)],
+    dayWithBreak,
   );
   assert.deepEqual(out.classes[0].placed, { periods: 3, doubles: 1 });
   assert.deepEqual(out.classes[0].short, { periods: 2, doubles: 0 });
@@ -559,8 +572,113 @@ check("a pair counts as two periods and one double", () => {
 
 check("one half on its own is not a double", () => {
   const out = countCoverage(
-    [rp("p1", { classId: "a", pairId: "x" })],
+    [half("p1", 1, "x")],
     [cov("a", 2, 1)],
+    dayWithBreak,
   );
   assert.deepEqual(out.classes[0].placed, { periods: 1, doubles: 0 });
+});
+
+check(
+  "only a real double is valid: two rows, one day, next lesson period",
+  () => {
+    const rows = [
+      half("ok1", 1, "ok"),
+      half("ok2", 2, "ok"),
+      // A gap: period 4 does not follow period 2 (a break sits between).
+      half("gap1", 2, "gap"),
+      half("gap2", 4, "gap"),
+      // Three rows of one pair, and a lone half.
+      half("t1", 4, "three"),
+      half("t2", 5, "three"),
+      half("t3", 5, "three"),
+      half("lone", 4, "lone"),
+    ];
+    const pairs = validPairs(dayWithBreak, rows);
+    assert.deepEqual([...pairs.keys()], ["ok"]);
+    assert.deepEqual(
+      pairs.get("ok")!.map((p) => p.scheduleId),
+      ["ok1", "ok2"],
+    );
+    const out = countCoverage(rows, [cov("a", 8, 1)], dayWithBreak);
+    assert.deepEqual(out.classes[0].placed, { periods: 8, doubles: 1 });
+  },
+);
+
+check("halves on different days are not a double", () => {
+  const rows = [half("d1", 1, "x", 2), half("d2", 2, "x", 3)];
+  assert.equal(validPairs(dayWithBreak, rows).size, 0);
+});
+
+// The admin grid's rows for dayWithBreak: 1, 2, break 3, 4, 5.
+const gridRows = [1, 2, 3, 4, 5];
+const gridWeek: SchoolWeek = {
+  cycleLength: 1,
+  days: [
+    {
+      day: 2,
+      periods: [
+        lesson(1, "08:00", "08:40"),
+        lesson(2, "08:40", "09:20"),
+        lesson(3, "09:20", "10:00"),
+        lesson(4, "10:00", "10:40"),
+      ],
+    },
+  ],
+};
+const g = (id: string, n: number, pairId: string | null) => {
+  const p = findPeriod(gridWeek, 2, n)!;
+  return rp(id, {
+    day: 2,
+    periodNumber: n,
+    start: p.start,
+    end: p.end,
+    pairId,
+  });
+};
+
+check("a double spans its two grid rows", () => {
+  const out = gridSpans(
+    gridWeek,
+    [1, 2, 3, 4],
+    [g("x1", 1, "x"), g("x2", 2, "x")],
+  );
+  assert.deepEqual([...out.spans], ["2:0"]);
+  assert.deepEqual([...out.hidden], ["x2"]);
+});
+
+check(
+  "staggered doubles: the second is drawn as two cells, every row kept",
+  () => {
+    // X in 1–2, Y in 2–3 (an option block, or a clash).
+    const out = gridSpans(
+      gridWeek,
+      [1, 2, 3, 4],
+      [g("x1", 1, "x"), g("x2", 2, "x"), g("y1", 2, "y"), g("y2", 3, "y")],
+    );
+    assert.deepEqual([...out.spans], ["2:0"]);
+    assert.deepEqual([...out.hidden], ["x2"]);
+    assert.equal(out.partnerOf.has("y1"), false);
+    // No row is covered by a span other than the one directly below a span's top.
+    const covered = [...out.spans].map((k) => Number(k.split(":")[1]) + 1);
+    assert.ok(!covered.some((r) => out.spans.has(`2:${r}`)));
+  },
+);
+
+check("two doubles over the same two rows share one span", () => {
+  const out = gridSpans(
+    gridWeek,
+    [1, 2, 3, 4],
+    [g("x1", 3, "x"), g("x2", 4, "x"), g("y1", 3, "y"), g("y2", 4, "y")],
+  );
+  assert.deepEqual([...out.spans], ["2:2"]);
+  assert.deepEqual([...out.hidden].sort(), ["x2", "y2"]);
+});
+
+check("a double split by a break row does not span", () => {
+  const out = gridSpans(dayWithBreak, gridRows, [
+    half("a1", 2, "a"),
+    half("a2", 4, "a"),
+  ]);
+  assert.equal(out.spans.size, 0);
 });

@@ -9,7 +9,7 @@ import {
   resolveTerm,
 } from "../server/lib/timetable.js";
 import { schoolToday } from "../shared/dates.js";
-import { schoolWeekdayName } from "../shared/school-week.js";
+import { schoolWeekdayName, validPairs } from "../shared/school-week.js";
 
 export default defineAction({
   description:
@@ -23,6 +23,8 @@ export default defineAction({
       ),
   }),
   http: { method: "POST" },
+  // Reads only: without this every call tells open pages to refetch.
+  readOnly: true,
   run: async (args) => {
     const { orgId, userEmail } = currentAccess();
     if (!orgId) throw new Error("No school context.");
@@ -123,24 +125,14 @@ export default defineAction({
       if (!lessonByClass.has(l.classId)) lessonByClass.set(l.classId, l);
     }
 
-    // A double is one slot: from its first start to its second end.
-    const halves = new Map<string, typeof mine>();
-    for (const p of mine) {
-      if (!p.pairId) continue;
-      halves.set(p.pairId, [...(halves.get(p.pairId) ?? []), p]);
-    }
+    // A double is one slot: from its first start to its second end. Only a
+    // valid pair joins; anything else reads as single periods.
+    const pairs = validPairs(week, mine);
     const joined = mine.flatMap((p) => {
-      const pair = p.pairId ? halves.get(p.pairId)! : [p];
-      if (pair.length < 2) return [{ first: p, last: p, count: 1 }];
-      const ordered = [...pair].sort((a, b) => a.start.localeCompare(b.start));
-      if (ordered[0] !== p) return [];
-      return [
-        {
-          first: p,
-          last: ordered[ordered.length - 1],
-          count: ordered.length,
-        },
-      ];
+      const pair = p.pairId ? pairs.get(p.pairId) : undefined;
+      if (!pair) return [{ first: p, last: p, count: 1 }];
+      if (pair[0] !== p) return [];
+      return [{ first: p, last: pair[1], count: 2 }];
     });
 
     const enriched = joined.map(({ first: p, last, count }) => {

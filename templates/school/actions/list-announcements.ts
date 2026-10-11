@@ -24,6 +24,8 @@ export default defineAction({
       .describe("Maximum number of results"),
   }),
   http: { method: "POST" },
+  // Reads only: without this every call tells open pages to refetch.
+  readOnly: true,
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");

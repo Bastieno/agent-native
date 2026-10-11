@@ -106,6 +106,46 @@ export function doubleSecondPeriod(
   return { second: after, blocker: null };
 }
 
+/** What a row needs for pairing: its id, pair, day, period and start. */
+export interface PairHalf {
+  scheduleId: string;
+  pairId: string | null;
+  day: number;
+  periodNumber: number | null;
+  start: string;
+}
+
+/**
+ * The doubles that really are doubles, by pair id, first half first: exactly
+ * two rows on one day, the second in the period `doubleSecondPeriod` gives
+ * for the first. Anything else (a half on its own, halves on different days
+ * or with a gap between, a week that has since changed) reads as single
+ * periods. Counting, joining and drawing all go through this.
+ */
+export function validPairs<T extends PairHalf>(
+  week: SchoolWeek | null | undefined,
+  rows: T[],
+): Map<string, [T, T]> {
+  const halves = new Map<string, T[]>();
+  for (const r of rows) {
+    if (r.pairId) halves.set(r.pairId, [...(halves.get(r.pairId) ?? []), r]);
+  }
+  const out = new Map<string, [T, T]>();
+  for (const [pairId, list] of halves) {
+    if (list.length !== 2) continue;
+    const [a, b] = [...list].sort(
+      (x, y) => minutes(x.start) - minutes(y.start),
+    );
+    if (a.day !== b.day || a.periodNumber == null || b.periodNumber == null) {
+      continue;
+    }
+    const second = doubleSecondPeriod(week, a.day, a.periodNumber).second;
+    if (second?.number !== b.periodNumber) continue;
+    out.set(pairId, [a, b]);
+  }
+  return out;
+}
+
 /** What a placement needs for slotting: its day, number and stored times. */
 export interface Placement {
   day: number;
