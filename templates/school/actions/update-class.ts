@@ -15,10 +15,11 @@ import {
 } from "../server/lib/arm-enrolment.js";
 import { getSchoolRole } from "../server/lib/student-access.js";
 import { isUnassignedTeacher } from "../shared/class-teacher.js";
+import { countsProblem } from "../shared/lesson-counts.js";
 
 export default defineAction({
   description:
-    "Update a class (name, status, room number, capacity, or primary teacher).",
+    "Update a class (name, status, room number, capacity, primary teacher, or the periods a week it needs and how many are doubles).",
   schema: z.object({
     id: z.string().describe("Class ID"),
     name: z.string().optional(),
@@ -31,6 +32,22 @@ export default defineAction({
       ),
     roomNumber: z.string().optional(),
     capacity: z.number().optional(),
+    periodsPerWeek: z
+      .number()
+      .int()
+      .min(0)
+      .max(100)
+      .nullable()
+      .optional()
+      .describe("Periods a week the class needs; null clears it"),
+    doublesPerWeek: z
+      .number()
+      .int()
+      .min(0)
+      .max(50)
+      .nullable()
+      .optional()
+      .describe("How many of those periods come as doubles (a double is 2)"),
     armId: z
       .string()
       .nullable()
@@ -52,11 +69,18 @@ export default defineAction({
     const word = await armWord(orgId);
     // Moving a class between arms changes who is enrolled, which is the
     // admin's call; a teacher may still change everything else.
-    if (args.armId !== undefined || args.optionArmIds !== undefined) {
+    if (
+      args.armId !== undefined ||
+      args.optionArmIds !== undefined ||
+      args.periodsPerWeek !== undefined ||
+      args.doublesPerWeek !== undefined
+    ) {
       const role = userEmail ? await getSchoolRole(userEmail) : null;
       if (role !== "school_admin") {
         throw new Error(
-          `Only an admin can change which ${word} a class belongs to.`,
+          args.periodsPerWeek !== undefined || args.doublesPerWeek !== undefined
+            ? "Only an admin can change how many lessons a class has a week."
+            : `Only an admin can change which ${word} a class belongs to.`,
         );
       }
     }
@@ -90,6 +114,19 @@ export default defineAction({
         `A class is either for one whole ${word} or an option across several, not both.`,
       );
     }
+    // The counts as they would stand: clearing the periods clears the doubles.
+    const nextPeriods =
+      args.periodsPerWeek !== undefined
+        ? args.periodsPerWeek
+        : (cls.periodsPerWeek ?? null);
+    const nextDoubles =
+      nextPeriods == null
+        ? null
+        : args.doublesPerWeek !== undefined
+          ? args.doublesPerWeek
+          : (cls.doublesPerWeek ?? null);
+    const countsIssue = countsProblem(nextPeriods, nextDoubles);
+    if (countsIssue) throw new Error(countsIssue);
     await armsInYearGroup(
       orgId,
       cls.gradeLevelId,
@@ -107,6 +144,13 @@ export default defineAction({
     if (args.roomNumber !== undefined) updates.roomNumber = args.roomNumber;
     if (args.capacity !== undefined) updates.capacity = args.capacity;
     if (args.armId !== undefined) updates.armId = args.armId;
+    if (
+      args.periodsPerWeek !== undefined ||
+      args.doublesPerWeek !== undefined
+    ) {
+      updates.periodsPerWeek = nextPeriods;
+      updates.doublesPerWeek = nextDoubles;
+    }
 
     await db
       .update(schema.classes)

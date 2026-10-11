@@ -16,19 +16,30 @@ export interface TimetableFilter {
 }
 
 /**
+ * The term a timetable read is about: the one asked for (which must be this
+ * school's), else the current or next one, else none. Shared by every read
+ * of a term's timetable so they all fall back the same way.
+ */
+export async function resolveViewTerm(
+  orgId: string,
+  termId?: string,
+): Promise<{ id: string; name: string; academicYearId: string } | null> {
+  if (termId) {
+    const found = await findTerm(orgId, termId);
+    if (!found) throw new Error("That term is not in this school.");
+    return found;
+  }
+  const current = await resolveTerm(orgId);
+  return current.termId ? findTerm(orgId, current.termId) : null;
+}
+
+/**
  * A term's timetable as a person reads it, narrowed to one arm, teacher or
  * room: what `get-timetable` returns, and what `view-screen` shows the agent
  * of the timetable page.
  */
 export async function timetableView(orgId: string, args: TimetableFilter) {
-  let found: { id: string; name: string; academicYearId: string } | null = null;
-  if (args.termId) {
-    found = await findTerm(orgId, args.termId);
-    if (!found) throw new Error("That term is not in this school.");
-  } else {
-    const current = await resolveTerm(orgId);
-    if (current.termId) found = await findTerm(orgId, current.termId);
-  }
+  const found = await resolveViewTerm(orgId, args.termId);
   const term = found ? { id: found.id, name: found.name } : null;
 
   const loaded = await clashesForTerm(orgId, term?.id ?? null);

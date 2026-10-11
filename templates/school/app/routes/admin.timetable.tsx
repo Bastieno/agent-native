@@ -24,6 +24,7 @@ import { TimetableGrid } from "@/components/timetable/TimetableGrid";
 import { useArms, useArmWord } from "@/components/timetable/arms-shared";
 import {
   getAction,
+  useCoverage,
   useTimetable,
   useTimetableEdits,
   type ClassOption,
@@ -133,6 +134,21 @@ export default function AdminTimetable() {
     isFetching,
   } = useTimetable(filter, !termLoading);
   const { place, remove } = useTimetableEdits(filter);
+  const { data: coverage } = useCoverage(filter, !termLoading);
+  // Placed comes from the grid itself, so a lesson placed or removed moves
+  // the counts on the click, ahead of the coverage refetch.
+  const coverageNow = useMemo(() => {
+    const placed = new Map<string, number>();
+    for (const p of tt?.periods ?? [])
+      placed.set(p.classId, (placed.get(p.classId) ?? 0) + 1);
+    return (coverage?.classes ?? [])
+      .filter((c) => c.required)
+      .map((c) => {
+        const n = tt ? (placed.get(c.classId) ?? 0) : c.placed.periods;
+        return { ...c, placedNow: n, shortNow: c.required!.periods - n };
+      });
+  }, [coverage, tt]);
+  const shortClasses = coverageNow.filter((c) => c.shortNow > 0);
 
   // A term with nothing of its own offers the term before it, read from
   // get-timetable. Never probed with copy-timetable: that is a write, and
@@ -261,6 +277,28 @@ export default function AdminTimetable() {
           <PopoverContent align="start" className="w-80 space-y-2 text-sm">
             {clashes.map((c, i) => (
               <p key={i}>{c.message}</p>
+            ))}
+          </PopoverContent>
+        </Popover>
+      ) : null}
+      {shortClasses.length > 0 ? (
+        <Popover>
+          <PopoverTrigger asChild>
+            <button type="button" aria-label="Lessons still missing">
+              <Badge variant="secondary" data-testid="short-count">
+                {shortClasses.length} short
+              </Badge>
+            </button>
+          </PopoverTrigger>
+          <PopoverContent
+            align="start"
+            className="w-80 space-y-1.5 text-sm"
+            data-testid="short-list"
+          >
+            {shortClasses.map((c) => (
+              <p key={c.classId}>
+                {c.className} — {c.placedNow} of {c.required!.periods}
+              </p>
             ))}
           </PopoverContent>
         </Popover>
@@ -412,6 +450,19 @@ export default function AdminTimetable() {
                 }
           }
         />
+        {view === "arm" && coverageNow.length > 0 ? (
+          <p
+            className="text-xs text-muted-foreground"
+            data-testid="coverage-line"
+          >
+            {coverageNow
+              .map(
+                (c) =>
+                  `${c.subjectName || c.className} ${c.placedNow}/${c.required!.periods}`,
+              )
+              .join(" · ")}
+          </p>
+        ) : null}
         <OffBellsList
           week={week}
           dayNames={tt.dayNames}

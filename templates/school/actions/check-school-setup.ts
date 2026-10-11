@@ -11,6 +11,10 @@ import {
   termContext,
 } from "../server/lib/timetable.js";
 import { formatSchoolDate } from "../shared/dates.js";
+import {
+  activeClassesOfYear,
+  currentYearId,
+} from "../server/lib/timetable-coverage.js";
 import { parseGradeLevelIds } from "../server/lib/subject-year-groups.js";
 
 /**
@@ -166,6 +170,18 @@ export default defineAction({
           fix: "get-timetable to see it, then set-timetable-period to move one of the lessons",
         });
       }
+    }
+    // Without counts the timetable can place lessons but can't say what is
+    // still missing.
+    const uncounted = (
+      await activeClassesOfYear(orgId, await currentYearId(orgId))
+    ).filter((c: any) => c.periodsPerWeek == null).length;
+    if (uncounted > 0) {
+      gaps.push({
+        setting: "Lesson counts",
+        meanwhile: `The timetable can't say what is still missing for ${uncounted} ${uncounted === 1 ? "class" : "classes"}.`,
+        fix: "set-lesson-counts for each subject in each year group (per stream where they differ)",
+      });
     }
     if (!config.paperSize) {
       gaps.push({

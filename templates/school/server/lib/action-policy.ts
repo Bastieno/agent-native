@@ -207,6 +207,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-arm": ADMIN,
   "set-learner-arm": ADMIN,
   "get-timetable": STAFF,
+  "get-timetable-coverage": STAFF,
+  "set-lesson-counts": ADMIN,
   "set-timetable-period": ADMIN,
   "remove-timetable-period": ADMIN,
   "copy-timetable": ADMIN,

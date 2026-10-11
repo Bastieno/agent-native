@@ -11,6 +11,7 @@ import { NewClassDialog } from "@/components/timetable/NewClassDialog";
 import { Badge } from "@/components/ui/badge";
 import { ListState } from "@/components/ListState";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Dialog,
@@ -33,6 +34,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
+import { countsProblem } from "@shared/lesson-counts";
 
 /**
  * What the teacher picker uses to mean "nobody yet".
@@ -57,6 +59,9 @@ export default function AdminClasses() {
   const [editTeacher, setEditTeacher] = useState("");
   const [editStatus, setEditStatus] = useState("");
   const [editLoading, setEditLoading] = useState(false);
+  // Typed as text so an empty box can mean "not said".
+  const [editPeriods, setEditPeriods] = useState("");
+  const [editDoubles, setEditDoubles] = useState("");
 
   const { data: staffData } = useQuery<{ active: any[] }>({
     queryKey: ["admin-staff"],
@@ -146,21 +151,55 @@ export default function AdminClasses() {
     // check who teaches something was told the opposite of the truth.
     setEditTeacher(cls.primaryTeacherUserId ?? cls.teacherUserId ?? "");
     setEditStatus(cls.status ?? "active");
+    setEditPeriods(cls.periodsPerWeek?.toString() ?? "");
+    setEditDoubles(cls.doublesPerWeek?.toString() ?? "");
   }
 
   async function handleSaveClass() {
     if (!selectedClass) return;
+    const periods = editPeriods.trim() === "" ? null : Number(editPeriods);
+    // Doubles are part of the periods; with no periods there are none.
+    const doubles =
+      periods == null || editDoubles.trim() === "" ? null : Number(editDoubles);
+    const countsChanged =
+      periods !== (selectedClass.periodsPerWeek ?? null) ||
+      doubles !== (selectedClass.doublesPerWeek ?? null);
+    const problem = countsChanged ? countsProblem(periods, doubles) : null;
+    if (problem) {
+      toast.error(problem);
+      return;
+    }
     setEditLoading(true);
+    // Show the new counts in the list at once; put the old ones back if the
+    // school's server says no.
+    const patchCounts = (p: number | null, d: number | null) =>
+      qc.setQueryData<any[]>(["admin-classes"], (rows) =>
+        rows?.map((r) =>
+          r.id === selectedClass.id
+            ? { ...r, periodsPerWeek: p, doublesPerWeek: d }
+            : r,
+        ),
+      );
+    if (countsChanged) patchCounts(periods, doubles);
     try {
       await callAction("update-class", {
         id: selectedClass.id,
         primaryTeacherUserId: editTeacher || undefined,
         status: editStatus,
+        ...(countsChanged
+          ? { periodsPerWeek: periods, doublesPerWeek: doubles }
+          : {}),
       });
       qc.invalidateQueries({ queryKey: ["admin-classes"] });
+      qc.invalidateQueries({ queryKey: ["timetable"] });
       toast.success("Class updated");
       setSelectedClass(null);
     } catch (e: any) {
+      if (countsChanged)
+        patchCounts(
+          selectedClass.periodsPerWeek ?? null,
+          selectedClass.doublesPerWeek ?? null,
+        );
       toast.error(e.message ?? "Failed to update class");
     } finally {
       setEditLoading(false);
@@ -413,6 +452,30 @@ export default function AdminClasses() {
                   ))}
                 </SelectContent>
               </Select>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="class-periods">Periods a week</Label>
+                <Input
+                  id="class-periods"
+                  type="number"
+                  min={0}
+                  inputMode="numeric"
+                  value={editPeriods}
+                  onChange={(e) => setEditPeriods(e.target.value)}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="class-doubles">Of which doubles</Label>
+                <Input
+                  id="class-doubles"
+                  type="number"
+                  min={0}
+                  inputMode="numeric"
+                  value={editDoubles}
+                  onChange={(e) => setEditDoubles(e.target.value)}
+                />
+              </div>
             </div>
             <div className="space-y-1.5">
               <Label>Status</Label>

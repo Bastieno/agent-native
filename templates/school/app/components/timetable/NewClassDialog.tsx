@@ -18,6 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { countsProblem } from "@shared/lesson-counts";
 import { WhoTakesIt, type Taker } from "./WhoTakesIt";
 import {
   callAction,
@@ -38,6 +39,8 @@ export function NewClassDialog({
   const [name, setName] = useState("");
   const [subjectId, setSubjectId] = useState("");
   const [gradeLevelId, setGradeLevelId] = useState("");
+  const [periods, setPeriods] = useState("");
+  const [doubles, setDoubles] = useState("");
   const [taker, setTaker] = useState<Taker>({ kind: "none" });
 
   const { data: levels = [] } = useGradeLevels();
@@ -61,7 +64,11 @@ export function NewClassDialog({
     taker.kind === "none" ||
     (taker.kind === "arm" && !!taker.armId) ||
     (taker.kind === "option" && taker.armIds.length > 0);
+  const periodsN = periods.trim() === "" ? null : Number(periods);
+  const doublesN = doubles.trim() === "" ? null : Number(doubles);
+  const countsIssue = countsProblem(periodsN, doublesN);
   const ready = !!(
+    !countsIssue &&
     name.trim() &&
     subjectId &&
     gradeLevelId &&
@@ -77,6 +84,8 @@ export function NewClassDialog({
       academicYearId: term.session.id,
       termId: classTerm?.id,
     };
+    if (periodsN != null) body.periodsPerWeek = periodsN;
+    if (doublesN != null) body.doublesPerWeek = doublesN;
     if (taker.kind === "arm" && taker.armId) body.armId = taker.armId;
     if (taker.kind === "option") body.optionArmIds = taker.armIds;
     // Close first; a refusal reopens nothing but says why.
@@ -95,6 +104,8 @@ export function NewClassDialog({
     setSubjectId("");
     setGradeLevelId("");
     setTaker({ kind: "none" });
+    setPeriods("");
+    setDoubles("");
   }
 
   function handleOpenChange(next: boolean) {
@@ -163,6 +174,33 @@ export function NewClassDialog({
           </div>
           {gradeLevelId && (
             <WhoTakesIt arms={yearArms} value={taker} onChange={setTaker} />
+          )}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="space-y-1.5">
+              <Label htmlFor="new-class-periods">Periods a week</Label>
+              <Input
+                id="new-class-periods"
+                type="number"
+                min={0}
+                inputMode="numeric"
+                value={periods}
+                onChange={(e) => setPeriods(e.target.value)}
+              />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="new-class-doubles">Of which doubles</Label>
+              <Input
+                id="new-class-doubles"
+                type="number"
+                min={0}
+                inputMode="numeric"
+                value={doubles}
+                onChange={(e) => setDoubles(e.target.value)}
+              />
+            </div>
+          </div>
+          {countsIssue && (
+            <p className="text-xs text-destructive">{countsIssue}</p>
           )}
         </div>
         <DialogFooter>

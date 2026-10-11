@@ -873,6 +873,16 @@ export default runMigrations(
       version: 84,
       sql: `CREATE INDEX IF NOT EXISTS class_schedules_term_day ON class_schedules (org_id, term_id, day_of_week)`,
     },
+    // How many periods a week a class needs, and how many of them come as
+    // doubles. Null: the school hasn't said.
+    {
+      version: 85,
+      sql: `ALTER TABLE classes ADD COLUMN periods_per_week INTEGER`,
+    },
+    {
+      version: 86,
+      sql: `ALTER TABLE classes ADD COLUMN doubles_per_week INTEGER`,
+    },
   ],
   { table: "school_migrations" },
 );

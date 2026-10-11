@@ -13,6 +13,7 @@ import {
 import { schoolToday } from "../shared/dates.js";
 import { getMyWeek } from "../server/lib/my-week.js";
 import { timetableView } from "../server/lib/timetable-view.js";
+import { coverageView } from "../server/lib/timetable-coverage.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 
 export default defineAction({
@@ -134,6 +135,16 @@ export default defineAction({
               learnerCount: learnerUserIds.length,
             })),
           };
+          // What is still missing for what is in view (not by room: a room
+          // has no classes of its own to count).
+          if (nav.timetableView !== "room") {
+            screen.timetableCoverage = await coverageView(schoolId, {
+              termId: nav.termId,
+              armId: nav.timetableView === "arm" ? nav.armId : undefined,
+              teacherUserId:
+                nav.timetableView === "teacher" ? nav.teacherUserId : undefined,
+            });
+          }
           screen.selectedCell = nav.selectedCell ?? null;
           if (nav.selectedCell) {
             screen.selectedCellPeriods = shown.periods

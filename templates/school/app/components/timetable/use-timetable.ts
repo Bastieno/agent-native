@@ -24,6 +24,23 @@ export interface TimetableReply {
   message: string;
 }
 
+export interface CoverageClass {
+  classId: string;
+  className: string;
+  subjectName: string;
+  armId: string | null;
+  required: { periods: number; doubles: number } | null;
+  placed: { periods: number; doubles: number };
+  short: { periods: number; doubles: number };
+}
+
+export interface CoverageReply {
+  term: { id: string; name: string } | null;
+  classes: CoverageClass[];
+  unset: number;
+  message: string;
+}
+
 export interface TimetableFilter {
   termId?: string;
   armId?: string;
@@ -78,6 +95,31 @@ export function useTimetable(filter: TimetableFilter, enabled: boolean) {
     enabled,
     // A refusal (a term not in this school) says the same thing on a retry,
     // and backing off between retries left the page on a skeleton. Show it.
+    retry: false,
+  });
+}
+
+/**
+ * What is still missing for what is in view. Keyed under the timetable's own
+ * ["timetable", termId] prefix, so whatever refreshes the grid refreshes this.
+ * Not asked for a room view: a room has no classes of its own to count.
+ */
+export function useCoverage(filter: TimetableFilter, enabled: boolean) {
+  return useQuery<CoverageReply>({
+    queryKey: [
+      "timetable",
+      filter.termId ?? null,
+      "coverage",
+      filter.armId ?? null,
+      filter.teacherUserId ?? null,
+    ],
+    queryFn: () =>
+      getAction<CoverageReply>("get-timetable-coverage", {
+        termId: filter.termId,
+        armId: filter.armId,
+        teacherUserId: filter.teacherUserId,
+      }),
+    enabled: enabled && filter.room === undefined,
     retry: false,
   });
 }

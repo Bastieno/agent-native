@@ -913,6 +913,133 @@ export async function checkTimetable(
     "copying onto a term that already has periods is refused",
   );
 
+  // ── Lesson counts, and what is still missing ────────────────────────────
+  const countArgs = {
+    subjectId: arms.subjectId,
+    gradeLevelId: arms.gradeLevelId,
+    armId: armA,
+    periodsPerWeek: 5,
+    doublesPerWeek: 1,
+  };
+  const coverageOf = async (extra: Record<string, unknown> = {}) =>
+    (await client.as(admin, "get-timetable-coverage", {
+      termId: T2,
+      armId: armA,
+      ...extra,
+    })) as any;
+  const countsPreview = (await client.as(
+    admin,
+    "set-lesson-counts",
+    countArgs,
+  )) as any;
+  const afterPreview = await coverageOf();
+  findings.expect(
+    phase,
+    countsPreview?.applied === false &&
+      asList(countsPreview, "classes").length >= 2 &&
+      noId(countsPreview?.message) &&
+      afterPreview.classes.every((c: any) => c.required === null) &&
+      afterPreview.unset === afterPreview.classes.length,
+    "setting lesson counts without confirming only previews them, in words, and changes nothing",
+    countsPreview?.message,
+  );
+  const countsApplied = (await client.as(admin, "set-lesson-counts", {
+    ...countArgs,
+    confirm: true,
+  })) as any;
+  const timetableNow = await clashesOf(T2);
+  const placedIn = (view: any, classId: string) =>
+    view.periods.filter((p: any) => p.classId === classId).length;
+  let covered = await coverageOf();
+  const armAClasses = covered.classes.filter((c: any) =>
+    (countsApplied?.classes ?? []).some((x: any) => x.classId === c.classId),
+  );
+  findings.expect(
+    phase,
+    countsApplied?.applied === true &&
+      armAClasses.length === asList(countsApplied, "classes").length &&
+      armAClasses.every(
+        (c: any) =>
+          c.required?.periods === 5 &&
+          c.required?.doubles === 1 &&
+          c.placed.periods === placedIn(timetableNow, c.classId) &&
+          c.short.periods === Math.max(0, 5 - c.placed.periods),
+      ),
+    "after confirming, each class's shortfall is what it needs less what is placed",
+    JSON.stringify(armAClasses.map((c: any) => [c.className, c.short])),
+  );
+  const target = armAClasses.find((c: any) => c.placed.periods < 5);
+  if (target) {
+    const extraPlace = (await place(target.classId, 5, 5)) as any;
+    const shortBefore = target.short.periods;
+    covered = await coverageOf();
+    const now = covered.classes.find((c: any) => c.classId === target.classId);
+    findings.expect(
+      phase,
+      now?.short.periods === shortBefore - 1 &&
+        now?.placed.periods === target.placed.periods + 1,
+      "placing one more period of a class drops its shortfall by one",
+      JSON.stringify(now),
+    );
+    await client.as(admin, "remove-timetable-period", {
+      scheduleId: extraPlace.scheduleId,
+    });
+  }
+  // A class the school has not given counts for is unset, not short.
+  await client.as(admin, "update-class", {
+    id: extraA,
+    periodsPerWeek: null,
+  });
+  covered = await coverageOf();
+  const unsetClass = covered.classes.find((c: any) => c.classId === extraA);
+  findings.expect(
+    phase,
+    unsetClass?.required === null &&
+      unsetClass?.short.periods === 0 &&
+      covered.unset >= 1 &&
+      /no lesson count/.test(String(covered.message)),
+    "a class with no counts shows as unset and is named as such in words",
+    covered.message,
+  );
+  findings.expect(
+    phase,
+    await refused(
+      () =>
+        client.as(admin, "update-class", {
+          id: classA,
+          periodsPerWeek: 3,
+          doublesPerWeek: 2,
+        }),
+      /more than the 3 a week/,
+    ),
+    "doubles that need more periods than the class has are refused, in words",
+  );
+  const noArmCover = (await client.as(admin, "get-timetable-coverage", {
+    termId: T2,
+  })) as any;
+  findings.expect(
+    phase,
+    noArmCover.classes.length > covered.classes.length,
+    "coverage with no arm in view counts the option classes drawing on other arms too",
+    `${noArmCover.classes.length} vs ${covered.classes.length}`,
+  );
+  const gapSetup = await client.as(admin, "check-school-setup", {});
+  const countsGap = asList(gapSetup, "gaps").find(
+    (g: any) => g.setting === "Lesson counts",
+  );
+  findings.expect(
+    phase,
+    !!countsGap &&
+      /can't say what is still missing for \d+ class/.test(countsGap.meanwhile),
+    "the setup check names the classes whose lesson counts are missing",
+    countsGap?.meanwhile,
+  );
+  await client.as(admin, "update-class", {
+    id: extraA,
+    periodsPerWeek: 5,
+    doublesPerWeek: 1,
+  });
+
   // ── Setup gaps: the current term only ───────────────────────────────────
   const setup = await client.as(admin, "check-school-setup", {});
   const clashGaps = asList(setup, "gaps").filter((g: any) =>

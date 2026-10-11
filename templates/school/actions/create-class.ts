@@ -7,6 +7,7 @@ import {
   isUnassignedTeacher,
 } from "../shared/class-teacher.js";
 import { z } from "zod";
+import { countsProblem } from "../shared/lesson-counts.js";
 import {
   armWord,
   armsInYearGroup,
@@ -32,6 +33,22 @@ export default defineAction({
       ),
     roomNumber: z.string().optional(),
     capacity: z.number().optional(),
+    periodsPerWeek: z
+      .number()
+      .int()
+      .min(0)
+      .max(100)
+      .nullable()
+      .optional()
+      .describe("Periods a week the class needs; omit when not said"),
+    doublesPerWeek: z
+      .number()
+      .int()
+      .min(0)
+      .max(50)
+      .nullable()
+      .optional()
+      .describe("How many of those periods come as doubles (a double is 2)"),
     armId: z
       .string()
       .nullable()
@@ -53,6 +70,8 @@ export default defineAction({
     const db = getDb();
     const optionArmIds = args.optionArmIds ?? [];
     const word = await armWord(orgId);
+    const countsIssue = countsProblem(args.periodsPerWeek, args.doublesPerWeek);
+    if (countsIssue) throw new Error(countsIssue);
     if (args.armId && optionArmIds.length > 0) {
       throw new Error(
         `A class is either for one whole ${word} or an option across several, not both.`,
@@ -79,6 +98,8 @@ export default defineAction({
       primaryTeacherUserId: teacherUserId,
       roomNumber: args.roomNumber ?? null,
       capacity: args.capacity ?? null,
+      periodsPerWeek: args.periodsPerWeek ?? null,
+      doublesPerWeek: args.doublesPerWeek ?? null,
       status: "active",
       ownerEmail: userEmail ?? "",
       orgId,

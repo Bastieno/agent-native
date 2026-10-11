@@ -164,6 +164,9 @@ export const classes = table("classes", {
   primaryTeacherUserId: text("primary_teacher_user_id").notNull(),
   roomNumber: text("room_number"),
   capacity: integer("capacity"),
+  // Periods a week the class needs, and how many come as doubles (a double is 2 periods). Null: not said.
+  periodsPerWeek: integer("periods_per_week"),
+  doublesPerWeek: integer("doubles_per_week"),
   status: text("status").notNull().default("active"), // active | archived
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),

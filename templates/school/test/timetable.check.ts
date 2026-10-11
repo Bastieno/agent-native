@@ -15,6 +15,8 @@ import {
   type WeekPeriod,
   type Weekday,
 } from "../shared/school-week.js";
+import { countsProblem } from "../shared/lesson-counts.js";
+import { countCoverage } from "../server/lib/timetable-coverage.js";
 import {
   findClashes,
   type ResolvedPeriod,
@@ -444,4 +446,60 @@ check("a placement that fits no lesson is not on this week's bells", () => {
     }),
     null,
   );
+});
+
+// ── Lesson counts and what is still missing ────────────────────────────────
+const cov = (
+  classId: string,
+  periodsPerWeek: number | null,
+  doublesPerWeek: number | null = null,
+) => ({
+  classId,
+  className: `Class ${classId}`,
+  subjectName: `Subject ${classId}`,
+  armId: null,
+  periodsPerWeek,
+  doublesPerWeek,
+});
+const row = (classId: string, n: number) =>
+  rp(`s${classId}${n}`, { classId, periodNumber: n });
+
+check("coverage counts each class's placed rows against what it needs", () => {
+  const out = countCoverage(
+    [row("a", 1), row("a", 2), row("a", 3), row("b", 1)],
+    [cov("a", 5), cov("b", 2, 1)],
+  );
+  const [a, b] = out.classes;
+  assert.deepEqual(a.required, { periods: 5, doubles: 0 });
+  assert.equal(a.placed.periods, 3);
+  assert.equal(a.short.periods, 2);
+  assert.deepEqual(b.required, { periods: 2, doubles: 1 });
+  assert.equal(b.short.periods, 1);
+  assert.equal(out.unset, 0);
+});
+
+check("a class with no counts is unset and short of nothing", () => {
+  const out = countCoverage([row("a", 1)], [cov("a", null), cov("b", 3)]);
+  assert.equal(out.unset, 1);
+  assert.equal(out.classes[0].required, null);
+  assert.deepEqual(out.classes[0].short, { periods: 0, doubles: 0 });
+  assert.equal(out.classes[1].short.periods, 3);
+});
+
+check("a shortfall is never negative", () => {
+  const out = countCoverage(
+    [row("a", 1), row("a", 2), row("a", 3)],
+    [cov("a", 2), cov("b", 0)],
+  );
+  assert.equal(out.classes[0].short.periods, 0);
+  assert.equal(out.classes[1].short.periods, 0);
+});
+
+check("counts that cannot stand are refused in words", () => {
+  assert.equal(countsProblem(5, 2), null);
+  assert.equal(countsProblem(null, null), null);
+  assert.match(countsProblem(3, 2) ?? "", /more than the 3 a week/);
+  assert.match(countsProblem(null, 1) ?? "", /how many periods first/);
+  assert.match(countsProblem(-1, null) ?? "", /whole number/);
+  assert.match(countsProblem(2.5, null) ?? "", /whole number/);
 });
