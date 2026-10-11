@@ -52,6 +52,9 @@ export function NewClassDialog({
     queryFn: async () => callAction("get-current-term", {}, "GET"),
     enabled: open,
   });
+  // Between terms the class belongs to the one that is coming.
+  const classTerm: { id: string; name: string } | null =
+    term?.term ?? term?.nextTerm ?? null;
   const yearArms = arms.filter((a) => a.gradeLevelId === gradeLevelId);
   // "Several arms" with none ticked would quietly make an unattached class.
   const takerReady =
@@ -72,7 +75,7 @@ export function NewClassDialog({
       subjectId,
       gradeLevelId,
       academicYearId: term.session.id,
-      termId: term.term?.id,
+      termId: classTerm?.id,
     };
     if (taker.kind === "arm" && taker.armId) body.armId = taker.armId;
     if (taker.kind === "option") body.optionArmIds = taker.armIds;
@@ -84,15 +87,32 @@ export function NewClassDialog({
         qc.invalidateQueries({ queryKey: ["admin-classes"] });
       })
       .catch((e: Error) => toast.error(e.message));
+    reset();
+  }
+
+  function reset() {
     setName("");
+    setSubjectId("");
+    setGradeLevelId("");
     setTaker({ kind: "none" });
   }
 
+  function handleOpenChange(next: boolean) {
+    if (!next) reset();
+    onOpenChange(next);
+  }
+
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>New class</DialogTitle>
+          {classTerm && (
+            <p className="text-sm text-muted-foreground">
+              {classTerm.name}
+              {term?.session?.name ? `, ${term.session.name}` : ""}
+            </p>
+          )}
         </DialogHeader>
         <div className="space-y-4 py-2">
           <div className="space-y-1.5">
@@ -146,7 +166,7 @@ export function NewClassDialog({
           )}
         </div>
         <DialogFooter>
-          <Button variant="outline" onClick={() => onOpenChange(false)}>
+          <Button variant="outline" onClick={() => handleOpenChange(false)}>
             Cancel
           </Button>
           <Button disabled={!ready} onClick={create}>

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useSchoolConfig } from "@/hooks/use-school-config";
+import { naivePlural } from "@shared/terminology";
 
 export interface Arm {
   id: string;
@@ -11,6 +12,7 @@ export interface Arm {
   homeRoom: string | null;
   formTeacherUserId: string | null;
   learnerCount: number;
+  status?: "active" | "archived";
 }
 
 export interface GradeLevel {
@@ -22,10 +24,10 @@ export interface GradeLevel {
 export function useArmWord() {
   const { config } = useSchoolConfig();
   const raw = (config.customLabels?.arm ?? "").trim() || "Arm";
-  return {
-    Arm: raw.charAt(0).toUpperCase() + raw.slice(1),
-    arm: raw.toLowerCase(),
-  };
+  const Arm = raw.charAt(0).toUpperCase() + raw.slice(1);
+  const arm = raw.toLowerCase();
+  // The school has no way to say a plural for this word, so it is the plain one.
+  return { Arm, arm, Arms: naivePlural(Arm), arms: naivePlural(arm) };
 }
 
 export async function callAction(

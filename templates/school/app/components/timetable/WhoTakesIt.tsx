@@ -26,7 +26,7 @@ export function WhoTakesIt({
   value: Taker;
   onChange: (next: Taker) => void;
 }) {
-  const { arm } = useArmWord();
+  const { arm, arms: armsWord } = useArmWord();
   return (
     <div className="space-y-2">
       <Label>Who takes it</Label>
@@ -35,7 +35,7 @@ export function WhoTakesIt({
         onValueChange={(kind) =>
           onChange(
             kind === "arm"
-              ? { kind: "arm", armId: arms[0]?.id ?? "" }
+              ? { kind: "arm", armId: "" }
               : kind === "option"
                 ? { kind: "option", armIds: [] }
                 : { kind: "none" },
@@ -72,7 +72,7 @@ export function WhoTakesIt({
             disabled={!arms.length}
           />
           <Label htmlFor="taker-option" className="font-normal">
-            Learners from several {arm}s
+            Learners from several {armsWord}
           </Label>
         </div>
         {value.kind === "option" && (

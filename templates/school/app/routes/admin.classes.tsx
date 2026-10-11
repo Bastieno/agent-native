@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router";
 import { useEffect, useMemo, useState } from "react";
 import { ArmsTab } from "@/components/timetable/ArmsTab";
 import { ClassesTabs } from "@/components/timetable/ClassesTabs";
+import { callAction } from "@/components/timetable/arms-shared";
 import { NewClassDialog } from "@/components/timetable/NewClassDialog";
 import { Badge } from "@/components/ui/badge";
 import { ListState } from "@/components/ListState";
@@ -32,19 +33,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-
-async function callAction(name: string, params: Record<string, unknown>) {
-  const res = await fetch(agentNativePath(`/_agent-native/actions/${name}`), {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(params),
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error((err as any).error ?? "Request failed");
-  }
-  return res.json();
-}
 
 /**
  * What the teacher picker uses to mean "nobody yet".

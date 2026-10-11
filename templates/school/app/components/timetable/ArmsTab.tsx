@@ -60,22 +60,23 @@ interface Learner {
   armId: string | null;
 }
 
-const STUDENTS_KEY = ["arm-learners"];
+/** One list per year group: an arm only ever deals with its own year's learners. */
+const studentsKey = (gradeLevelId: string) => ["arm-learners", gradeLevelId];
 
-function useLearners() {
+function useLearners(gradeLevelId: string) {
   return useQuery<Learner[]>({
-    queryKey: STUDENTS_KEY,
+    queryKey: studentsKey(gradeLevelId),
     queryFn: async () =>
       callAction(
         "list-students",
-        { status: "active", limit: 5000 },
+        { status: "active", gradeLevelId, limit: 5000 },
         "GET",
-      ).then((rows) => rows),
+      ),
   });
 }
 
 export function ArmsTab({ tabs }: { tabs: React.ReactNode }) {
-  const { Arm, arm } = useArmWord();
+  const { Arm, Arms, arm, arms: armsWord } = useArmWord();
   const { data: arms = [], isLoading } = useArms();
   const { data: levels = [] } = useGradeLevels();
   const [openId, setOpenId] = useState<string | null>(null);
@@ -101,7 +102,7 @@ export function ArmsTab({ tabs }: { tabs: React.ReactNode }) {
       <div className="px-6 pt-6 pb-4 space-y-4 shrink-0">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-xl font-semibold">{Arm}s</h1>
+            <h1 className="text-xl font-semibold">{Arms}</h1>
             <p className="text-sm text-muted-foreground mt-1">
               The groups each year group splits into.
             </p>
@@ -119,8 +120,8 @@ export function ArmsTab({ tabs }: { tabs: React.ReactNode }) {
           <ListState
             loading={isLoading}
             icon={IconUsers}
-            title={`No ${arm}s yet`}
-            description={`Add the ${arm}s each year group splits into.`}
+            title={`No ${armsWord} yet`}
+            description={`Add the ${armsWord} each year group splits into.`}
           />
         ) : (
           groups.map((g) => (
@@ -280,8 +281,10 @@ function ArmDetails({ arm: row }: { arm: Arm }) {
   const { arm: word } = useArmWord();
   const qc = useQueryClient();
   const { config } = useSchoolConfig();
-  const rooms: Room[] = (config as any).rooms ?? [];
-  const { data: learners = [] } = useLearners();
+  const rooms: Room[] = config.rooms ?? [];
+  const { data: learners = [] } = useLearners(row.gradeLevelId);
+  // A just-created arm has a placeholder id until the server answers.
+  const pending = row.id.startsWith("tmp-");
   const [name, setName] = useState(row.name);
   const [stream, setStream] = useState(row.stream ?? "");
   const [homeRoom, setHomeRoom] = useState(row.homeRoom ?? NO_ROOM);
@@ -311,6 +314,8 @@ function ArmDetails({ arm: row }: { arm: Arm }) {
       .catch((e: Error) => {
         qc.setQueryData(ARMS_KEY, previous);
         setName(row.name);
+        setStream(row.stream ?? "");
+        setHomeRoom(row.homeRoom ?? NO_ROOM);
         toast.error(e.message);
       })
       .finally(() => qc.invalidateQueries({ queryKey: ARMS_KEY }));
@@ -363,14 +368,23 @@ function ArmDetails({ arm: row }: { arm: Arm }) {
             </SelectContent>
           </Select>
         </div>
-        <Button size="sm" disabled={!dirty || !name.trim()} onClick={save}>
+        <Button
+          size="sm"
+          disabled={pending || !dirty || !name.trim()}
+          onClick={save}
+        >
           Save
         </Button>
 
         <div className="pt-2 border-t space-y-2">
           <div className="flex items-center justify-between">
             <span className="font-medium">Learners ({row.learnerCount})</span>
-            <Button variant="outline" size="sm" onClick={() => setMoving(true)}>
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={pending}
+              onClick={() => setMoving(true)}
+            >
               Move learners here
             </Button>
           </div>
@@ -414,6 +428,11 @@ function MoveLearnersDialog({
   const qc = useQueryClient();
   const { data: arms = [] } = useArms();
   const [picked, setPicked] = useState<string[]>([]);
+  const key = studentsKey(target.gradeLevelId);
+  const close = (o: boolean) => {
+    if (!o) setPicked([]);
+    onOpenChange(o);
+  };
   const armName = (id: string | null) => arms.find((a) => a.id === id)?.name;
   const candidates = learners.filter(
     (l) => l.gradeLevelId === target.gradeLevelId && l.armId !== target.id,
@@ -422,13 +441,13 @@ function MoveLearnersDialog({
   function move() {
     const ids = picked;
     const prevArms = qc.getQueryData<Arm[]>(ARMS_KEY);
-    const prevLearners = qc.getQueryData<Learner[]>(STUDENTS_KEY);
+    const prevLearners = qc.getQueryData<Learner[]>(key);
     const from = new Map(
       (prevLearners ?? [])
         .filter((l) => ids.includes(l.userId))
         .map((l) => [l.userId, l.armId]),
     );
-    qc.setQueryData<Learner[]>(STUDENTS_KEY, (old = []) =>
+    qc.setQueryData<Learner[]>(key, (old = []) =>
       old.map((l) => (ids.includes(l.userId) ? { ...l, armId: target.id } : l)),
     );
     qc.setQueryData<Arm[]>(ARMS_KEY, (old = []) =>
@@ -443,24 +462,23 @@ function MoveLearnersDialog({
             },
       ),
     );
-    onOpenChange(false);
-    setPicked([]);
+    close(false);
     callAction("set-learner-arm", { armId: target.id, studentUserIds: ids })
       .then((res) => toast.success(res.message))
       .catch((e: Error) => {
         qc.setQueryData(ARMS_KEY, prevArms);
-        qc.setQueryData(STUDENTS_KEY, prevLearners);
+        qc.setQueryData(key, prevLearners);
         toast.error(e.message);
       })
       .finally(() => {
         qc.invalidateQueries({ queryKey: ARMS_KEY });
-        qc.invalidateQueries({ queryKey: STUDENTS_KEY });
+        qc.invalidateQueries({ queryKey: key });
         qc.invalidateQueries({ queryKey: ["admin-classes"] });
       });
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={close}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Move learners to {target.name}</DialogTitle>
@@ -501,7 +519,7 @@ function MoveLearnersDialog({
           </CommandList>
         </Command>
         <DialogFooter>
-          <Button variant="outline" onClick={() => onOpenChange(false)}>
+          <Button variant="outline" onClick={() => close(false)}>
             Cancel
           </Button>
           <Button disabled={picked.length === 0} onClick={move}>
