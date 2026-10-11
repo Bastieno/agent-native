@@ -49,12 +49,15 @@ export default defineAction({
       await db
         .delete(S)
         .where(and(eq(S.schoolId, orgId), eq(S.pairId, row.pairId)));
+      // "The double" only when both halves really went; a lone half left by
+      // an unfinished edit is just a period.
+      const both = halves.length === 2;
       const numbers = (halves as any[])
         .map((h) => h.periodNumber)
         .filter((n) => n != null)
         .sort((a, b) => a - b);
       const where =
-        numbers.length === 2
+        both && numbers.length === 2
           ? `periods ${numbers[0]} and ${numbers[1]}`
           : row.periodNumber != null
             ? `period ${row.periodNumber}`
@@ -62,7 +65,9 @@ export default defineAction({
       return {
         removed: true,
         removedCount: halves.length,
-        message: `Took the double of ${name} out of ${where} on ${day}.`,
+        message: both
+          ? `Took the double of ${name} out of ${where} on ${day}.`
+          : `Took ${name} out of ${where} on ${day}.`,
       };
     }
 
