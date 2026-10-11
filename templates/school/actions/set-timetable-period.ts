@@ -1,6 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
-import { and, eq } from "drizzle-orm";
+import { and, eq, ne } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
@@ -57,6 +57,11 @@ export default defineAction({
       )
       .limit(1);
     if (!cls) throw new Error("That class is not in this school.");
+    if (cls.status === "archived") {
+      throw new Error(
+        `${cls.name} is archived, so it can't go on the timetable.`,
+      );
+    }
 
     const config = await loadSchoolConfig(orgId);
     const week = config.schoolWeek ?? null;
@@ -87,7 +92,11 @@ export default defineAction({
       throw new Error(
         `${dayName} has no lesson in period ${args.periodNumber}${
           period ? ` (it is ${period.label ?? "a break"})` : ""
-        }. Its lesson periods are ${lessons.join(", ")}.`,
+        }. ${
+          lessons.length
+            ? `Its lesson periods are ${lessons.join(", ")}.`
+            : "That day has no lesson periods."
+        }`,
       );
     }
 
@@ -116,6 +125,7 @@ export default defineAction({
     }
 
     let scheduleId = args.scheduleId;
+    let movedRow: any = null;
     if (scheduleId) {
       const [row] = await db
         .select()
@@ -130,6 +140,33 @@ export default defineAction({
             : "That placement belongs to a different term's timetable.",
         );
       }
+      movedRow = row;
+    }
+
+    // The same class in the same term, day and period twice is never meant,
+    // whether it is being added or moved (a move excludes the row itself).
+    const [already] = await db
+      .select()
+      .from(S)
+      .where(
+        and(
+          eq(S.schoolId, orgId),
+          eq(S.termId, term.id),
+          eq(S.classId, cls.id),
+          eq(S.dayOfWeek, args.day),
+          eq(S.periodNumber, args.periodNumber),
+          ...(scheduleId ? [ne(S.id, scheduleId)] : []),
+        ),
+      )
+      .limit(1);
+    if (already) {
+      throw new Error(
+        `${cls.name} is already in period ${args.periodNumber} on ${dayName} in ${term.name}.`,
+      );
+    }
+
+    if (movedRow) {
+      const row = movedRow;
       await db
         .update(S)
         .set({
@@ -141,26 +178,8 @@ export default defineAction({
           room: room === undefined ? row.room : room,
           updatedAt: new Date().toISOString(),
         })
-        .where(and(eq(S.id, scheduleId), eq(S.schoolId, orgId)));
+        .where(and(eq(S.id, scheduleId!), eq(S.schoolId, orgId)));
     } else {
-      const [already] = await db
-        .select()
-        .from(S)
-        .where(
-          and(
-            eq(S.schoolId, orgId),
-            eq(S.termId, term.id),
-            eq(S.classId, cls.id),
-            eq(S.dayOfWeek, args.day),
-            eq(S.periodNumber, args.periodNumber),
-          ),
-        )
-        .limit(1);
-      if (already) {
-        throw new Error(
-          `${cls.name} is already in period ${args.periodNumber} on ${dayName} in ${term.name}.`,
-        );
-      }
       scheduleId = nanoid();
       await db.insert(S).values({
         id: scheduleId,

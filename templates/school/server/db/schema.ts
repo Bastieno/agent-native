@@ -67,6 +67,7 @@ export const gradeLevels = table("grade_levels", {
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),
 });
+
 export const arms = table("arms", {
   id: text("id").primaryKey(),
   schoolId: text("school_id").notNull(),

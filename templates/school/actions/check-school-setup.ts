@@ -5,7 +5,12 @@ import { resourceGetByPath, SHARED_OWNER } from "@agent-native/core/resources";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import { clashesForTerm, resolveTerm } from "../server/lib/timetable.js";
+import {
+  clashesForTerm,
+  resolveTerm,
+  termContext,
+} from "../server/lib/timetable.js";
+import { formatSchoolDate } from "../shared/dates.js";
 import { parseGradeLevelIds } from "../server/lib/subject-year-groups.js";
 
 /**
@@ -120,7 +125,8 @@ export default defineAction({
         fix: "update-school-config --missedWorkPolicy zero",
       });
     }
-    if (!config.schoolWeek) {
+    // A week saved with no days is as good as none: there are no periods to offer.
+    if (!config.schoolWeek?.days?.length) {
       gaps.push({
         setting: "School week",
         meanwhile:
@@ -136,15 +142,26 @@ export default defineAction({
         fix: 'update-school-config --rooms \'[{"name":"Physics Lab","kind":"special"}]\'',
       });
     }
-    // Only the current term: the one being taught now. A clash is not a missing
+    // Only the term being taught now, or between terms the one coming next. A clash is not a missing
     // setting, but it is the same kind of thing — the timetable quietly asking
     // for something impossible — so it is named here, one sentence each.
     const current = await resolveTerm(orgId);
     if (current.termId) {
       const { clashes } = await clashesForTerm(orgId, current.termId);
+      // Between terms the clash is in the term that has not started: say so,
+      // with its start date, so it is not read as this term's.
+      let heading = `Timetable clash in ${current.termName}`;
+      if (current.status === "next") {
+        const upcoming = (await termContext(orgId))?.next;
+        heading = `Timetable clash in ${current.termName}${
+          upcoming?.startDate
+            ? ` (starts ${formatSchoolDate(upcoming.startDate, config)})`
+            : " (the next term)"
+        }`;
+      }
       for (const clash of clashes) {
         gaps.push({
-          setting: `Timetable clash in ${current.termName}`,
+          setting: heading,
           meanwhile: clash.message,
           fix: "get-timetable to see it, then set-timetable-period to move one of the lessons",
         });

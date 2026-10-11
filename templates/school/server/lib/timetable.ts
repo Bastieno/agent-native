@@ -1,17 +1,24 @@
 import { getOrgSetting } from "@agent-native/core/settings";
 import { and, asc, eq, inArray, isNull } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
-import { schoolLocale } from "../../shared/dates.js";
+import { schoolLocale, schoolToday } from "../../shared/dates.js";
 import { isUnassignedTeacher } from "../../shared/class-teacher.js";
 import { findPeriod, type SchoolWeek } from "../../shared/school-week.js";
 import { findClashes, type ResolvedPeriod } from "./timetable-clashes.js";
 import { getUserLabels, labelFor } from "./user-names.js";
 
+/** A stored setting as a record: an object as it is, anything else as empty. */
+function asRecord(value: unknown): Record<string, any> {
+  return value && typeof value === "object" && !Array.isArray(value)
+    ? (value as Record<string, any>)
+    : {};
+}
+
 /** The school's settings, or an empty object when it has set none. */
 export async function loadSchoolConfig(
   orgId: string,
 ): Promise<Record<string, any>> {
-  return ((await getOrgSetting(orgId, "school-config")) as any) ?? {};
+  return asRecord(await getOrgSetting(orgId, "school-config"));
 }
 
 /**
@@ -21,7 +28,8 @@ export async function loadSchoolConfig(
  */
 export async function termContext(orgId: string, date?: string) {
   const db = getDb();
-  const today = date ?? new Date().toISOString().slice(0, 10);
+  // "Today" is the school's today, not UTC's.
+  const today = date ?? schoolToday(await loadSchoolConfig(orgId));
   // Normally one year is current. Schools created before
   // `create-academic-year` stopped making every new year current can have
   // two; then the one the date falls in wins, else the latest to have
@@ -185,10 +193,7 @@ export async function loadTimetable(
   let fromUntermedRows = false;
   let rows: any[] = [];
   if (termId) {
-    rows = await db
-      .select()
-      .from(S)
-      .where(and(eq(S.schoolId, orgId), eq(S.termId, termId)));
+    rows = await ownRowsOfActiveClasses(orgId, termId);
   }
   if (rows.length === 0) {
     rows = await earlierRowsFor(orgId, termId);
@@ -211,8 +216,6 @@ export async function loadTimetable(
   }
 
   const classIds = [...new Set(rows.map((r) => r.classId as string))];
-  // Deliberate: a term whose rows all belong to archived classes yields an empty
-  // timetable, with no fallback to untermed rows.
   const classRows = (await db
     .select()
     .from(schema.classes)
@@ -288,7 +291,9 @@ export async function loadTimetable(
   );
 
   // Teachers per class: the class's own primary plus class_teachers rows,
-  // each person once, unassigned markers dropped.
+  // each person once, unassigned markers dropped. The primary teacher is
+  // always first (callers show `teachers[0]` as "the" teacher): the class's
+  // own primary, then class_teachers primaries, then support teachers.
   const teacherIds = new Map<string, string[]>();
   for (const c of classRows) {
     const ids = new Set<string>();
@@ -296,7 +301,11 @@ export async function loadTimetable(
       ids.add(c.primaryTeacherUserId);
     teacherIds.set(c.id, [...ids]);
   }
-  for (const t of teacherRows as any[]) {
+  const byRole = (r: any) => (r.role === "primary" ? 0 : 1);
+  const orderedTeacherRows = [...(teacherRows as any[])].sort(
+    (a, b) => byRole(a) - byRole(b),
+  );
+  for (const t of orderedTeacherRows) {
     if (isUnassignedTeacher(t.teacherUserId)) continue;
     const list = teacherIds.get(t.classId);
     if (list && !list.includes(t.teacherUserId)) list.push(t.teacherUserId);
@@ -358,18 +367,46 @@ export async function findTerm(
     : null;
 }
 
-/** Whether a term has timetable rows of its own. */
+/**
+ * A term's own timetable rows whose class is active. The one notion of "has
+ * rows of its own": a row of an archived class is not on any timetable, so it
+ * neither shows nor stops the school's earlier timetable standing in, nor
+ * blocks a copy. The loader, the page's copy offer, the first-row guard and
+ * `copy-timetable` all go through this.
+ */
+export async function ownRowsOfActiveClasses(
+  orgId: string,
+  termId: string,
+): Promise<any[]> {
+  const S = schema.classSchedules;
+  const rows = (await getDb()
+    .select()
+    .from(S)
+    .where(
+      and(eq(S.orgId, orgId), eq(S.schoolId, orgId), eq(S.termId, termId)),
+    )) as any[];
+  if (rows.length === 0) return rows;
+  const classIds = [...new Set(rows.map((r) => r.classId as string))];
+  const live = await getDb()
+    .select({ id: schema.classes.id })
+    .from(schema.classes)
+    .where(
+      and(
+        eq(schema.classes.orgId, orgId),
+        eq(schema.classes.status, "active"),
+        inArray(schema.classes.id, classIds),
+      ),
+    );
+  const keep = new Set(live.map((c: any) => c.id as string));
+  return rows.filter((r) => keep.has(r.classId));
+}
+
+/** Whether a term has timetable rows of its own (of active classes). */
 export async function termHasOwnRows(
   orgId: string,
   termId: string,
 ): Promise<boolean> {
-  const S = schema.classSchedules;
-  const [row] = await getDb()
-    .select({ id: S.id })
-    .from(S)
-    .where(and(eq(S.orgId, orgId), eq(S.schoolId, orgId), eq(S.termId, termId)))
-    .limit(1);
-  return !!row;
+  return (await ownRowsOfActiveClasses(orgId, termId)).length > 0;
 }
 
 /**

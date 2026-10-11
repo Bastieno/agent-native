@@ -10,6 +10,7 @@ import {
   listInWords,
   previousTerm,
   splitByAcademicYear,
+  termHasOwnRows,
 } from "../server/lib/timetable.js";
 import { findClashes } from "../server/lib/timetable-clashes.js";
 
@@ -41,6 +42,11 @@ export default defineAction({
 
     const to = await findTerm(orgId, args.toTermId);
     if (!to) throw new Error("That term is not in this school.");
+    if (args.fromEarlier && args.fromTermId) {
+      throw new Error(
+        "Choose one source: either a term (fromTermId) or the school's earlier timetable (fromEarlier), not both.",
+      );
+    }
     let from: { id: string; name: string } | null = null;
     if (!args.fromEarlier) {
       if (args.fromTermId) {
@@ -60,12 +66,9 @@ export default defineAction({
     }
 
     const S = schema.classSchedules;
-    const [existing] = await db
-      .select()
-      .from(S)
-      .where(and(eq(S.schoolId, orgId), eq(S.termId, to.id)))
-      .limit(1);
-    if (existing) {
+    // The same notion of "has periods" the page uses to offer a copy: rows of
+    // archived classes are on no timetable, so they don't block one.
+    if (await termHasOwnRows(orgId, to.id)) {
       throw new Error(
         `${to.name} already has periods placed. Remove them first, or edit that timetable directly.`,
       );

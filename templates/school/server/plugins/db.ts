@@ -862,7 +862,8 @@ export default runMigrations(
         created_at TEXT NOT NULL DEFAULT (datetime('now'))
       )`,
     },
-    // Which term this timetable slot belongs to; null if permanent schedule.
+    // Which term this timetable slot belongs to. A row with no term serves any
+    // term for which the school has no rows of its own.
     {
       version: 83,
       sql: `ALTER TABLE class_schedules ADD COLUMN term_id TEXT`,
