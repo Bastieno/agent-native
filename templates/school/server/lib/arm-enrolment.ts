@@ -177,7 +177,13 @@ export async function assertActiveStaff(
   }
 }
 
-/** Rows per `IN (...)` list, well under every database's bind-variable cap. */
+/**
+ * Rows per `IN (...)` list. This keeps one list under SQLite's and
+ * Postgres's bound-parameter caps (tens of thousands); it does not cover
+ * Cloudflare D1, which caps a statement at 100 bound parameters, so a D1
+ * deployment would need a smaller size here (and `classIds` chunked too,
+ * since it shares a statement with the learner ids).
+ */
 const CHUNK = 500;
 
 function chunks<T>(items: T[]): T[][] {
@@ -325,6 +331,7 @@ export async function moveLearnersArm(
 
   const toWithdraw: string[] = [];
   const toReactivate: string[] = [];
+  const ownRows = new Map<string, any[]>();
   const have = new Set<string>(); // "classId|userId" with any row at all
   for (const row of existing) {
     const move = moves.get(row.studentUserId)!;
@@ -334,13 +341,23 @@ export async function moveLearnersArm(
         move.withdrawn++;
       }
     } else if (ownIds.has(row.classId)) {
-      have.add(`${row.classId}|${row.studentUserId}`);
-      if (row.status === "withdrawn") {
-        toReactivate.push(row.id);
-        move.enrolled++;
-      }
-      // active stays as it is; suspended is a decision someone made.
+      const key = `${row.classId}|${row.studentUserId}`;
+      have.add(key);
+      const rows = ownRows.get(key) ?? [];
+      rows.push(row);
+      ownRows.set(key, rows);
     }
+  }
+  // Per learner and class: an active or suspended row means leave it be
+  // (suspended is a decision someone made). Otherwise reactivate only the
+  // most recent withdrawn row, so odd data never ends with two active rows.
+  for (const rows of ownRows.values()) {
+    if (rows.some((r) => r.status !== "withdrawn")) continue;
+    const latest = rows.reduce((a, b) =>
+      String(b.enrolledAt ?? "") > String(a.enrolledAt ?? "") ? b : a,
+    );
+    toReactivate.push(latest.id);
+    moves.get(latest.studentUserId)!.enrolled++;
   }
   const toInsert: any[] = [];
   for (const userId of userIds) {

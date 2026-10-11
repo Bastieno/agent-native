@@ -207,7 +207,14 @@ export async function checkArms(
     Promise.all(
       classIds.map(async (id) => (await roll(client, run, id)).sort()),
     );
+  const withdrawnOf = async () =>
+    Promise.all(
+      classIds.map(async (id) =>
+        (await roll(client, run, id, "withdrawn")).sort(),
+      ),
+    );
   const rollsBefore = await rollsOf();
+  const withdrawnBefore = await withdrawnOf();
   await client.as(run.admin, "set-learner-arm", {
     armId: armIds[2],
     studentUserIds: wholeArm,
@@ -220,6 +227,7 @@ export async function checkArms(
     });
   }
   const rollsAfter = await rollsOf();
+  const withdrawnAfter = await withdrawnOf();
   const everyRoll = [
     ...(await Promise.all(
       classIds.map((id) => roll(client, run, id, "active")),
@@ -238,6 +246,16 @@ export async function checkArms(
           !rollsAway[1].includes(u),
       ) &&
       JSON.stringify(rollsAfter) === JSON.stringify(rollsBefore) &&
+      // The home classes' withdrawn lists are untouched (a duplicate insert
+      // would leave one behind); the third class rightly gains those who left.
+      [0, 1].every(
+        (i) =>
+          JSON.stringify(withdrawnAfter[i]) ===
+          JSON.stringify(withdrawnBefore[i]),
+      ) &&
+      rollsAfter.every((a, i) =>
+        a.every((u) => !withdrawnAfter[i].includes(u)),
+      ) &&
       everyRoll.every((r) => new Set(r).size === r.length),
     `moving ${wholeArm.length} learners from two arms into a third in one call and home again leaves every whole-arm class with the roll it had, and no one on a roll twice`,
     JSON.stringify(
