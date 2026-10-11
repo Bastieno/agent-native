@@ -52,15 +52,17 @@ export default defineAction({
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
     const optionArmIds = args.optionArmIds ?? [];
+    const word = await armWord(orgId);
     if (args.armId && optionArmIds.length > 0) {
       throw new Error(
-        `A class is either for one whole ${await armWord(orgId)} or an option across several, not both.`,
+        `A class is either for one whole ${word} or an option across several, not both.`,
       );
     }
     await armsInYearGroup(
       orgId,
       args.gradeLevelId,
       [args.armId, ...optionArmIds].filter((a): a is string => !!a),
+      word,
     );
     const id = nanoid();
     const teacherUserId = args.primaryTeacherUserId ?? UNASSIGNED_TEACHER_ID;
@@ -107,8 +109,8 @@ export default defineAction({
       }${
         args.armId
           ? untouched
-            ? ` ${untouchedNote(untouched, await armWord(orgId))}`
-            : ` ${enrolled} ${enrolled === 1 ? "learner" : "learners"} from its ${await armWord(orgId)} enrolled.`
+            ? ` ${untouchedNote(untouched, word)}`
+            : ` ${enrolled} ${enrolled === 1 ? "learner" : "learners"} from its ${word} enrolled.`
           : ""
       }`,
     };

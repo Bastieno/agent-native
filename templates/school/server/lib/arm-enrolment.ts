@@ -141,6 +141,42 @@ export async function armWord(orgId: string): Promise<string> {
     : "arm";
 }
 
+/** A word with its article: "an arm", "a house". */
+export function withArticle(word: string): string {
+  return `${/^[aeiou]/i.test(word) ? "an" : "a"} ${word}`;
+}
+
+/**
+ * Refuse a form teacher who is not active staff of this school: an admin,
+ * coordinator or teacher whose profile here is active.
+ */
+export async function assertActiveStaff(
+  orgId: string,
+  userId: string,
+): Promise<void> {
+  const [profile] = await getDb()
+    .select({ id: schema.schoolProfiles.id })
+    .from(schema.schoolProfiles)
+    .where(
+      and(
+        eq(schema.schoolProfiles.schoolId, orgId),
+        eq(schema.schoolProfiles.userId, userId),
+        eq(schema.schoolProfiles.status, "active"),
+        inArray(schema.schoolProfiles.schoolRole, [
+          "school_admin",
+          "subject_coordinator",
+          "teacher",
+        ]),
+      ),
+    )
+    .limit(1);
+  if (!profile) {
+    throw new Error(
+      "That person is not an active member of this school's staff.",
+    );
+  }
+}
+
 /**
  * Move a learner to another arm (or to none), and make their whole-arm
  * classes agree: off other arms', on the new arm's.
@@ -299,20 +335,27 @@ export async function armsInYearGroup(
   orgId: string,
   gradeLevelId: string,
   armIds: string[],
+  word?: string,
 ): Promise<void> {
   const ids = [...new Set(armIds)];
   if (ids.length === 0) return;
+  word = word ?? (await armWord(orgId));
   const rows = await getDb()
     .select({
       id: schema.arms.id,
       name: schema.arms.name,
       gradeLevelId: schema.arms.gradeLevelId,
+      status: schema.arms.status,
     })
     .from(schema.arms)
     .where(and(eq(schema.arms.orgId, orgId), inArray(schema.arms.id, ids)));
   if (rows.length !== ids.length) {
+    throw new Error(`One of those ${word}s is not in this school.`);
+  }
+  const archived = rows.filter((r: any) => r.status === "archived");
+  if (archived.length > 0) {
     throw new Error(
-      `One of those ${await armWord(orgId)}s is not in this school.`,
+      `${archived.map((r: any) => r.name).join(", ")} ${archived.length === 1 ? "is" : "are"} archived.`,
     );
   }
   const wrong = rows.filter((r: any) => r.gradeLevelId !== gradeLevelId);

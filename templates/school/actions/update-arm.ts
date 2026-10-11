@@ -3,7 +3,11 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import { armWord } from "../server/lib/arm-enrolment.js";
+import {
+  armWord,
+  assertActiveStaff,
+  withArticle,
+} from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
   description:
@@ -22,14 +26,14 @@ export default defineAction({
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
+    const word = await armWord(orgId);
 
     const [arm] = await db
       .select()
       .from(schema.arms)
       .where(and(eq(schema.arms.id, args.id), eq(schema.arms.orgId, orgId)))
       .limit(1);
-    if (!arm)
-      throw new Error(`That ${await armWord(orgId)} is not in this school.`);
+    if (!arm) throw new Error(`That ${word} is not in this school.`);
 
     const updates: Record<string, any> = {
       updatedAt: new Date().toISOString(),
@@ -52,10 +56,13 @@ export default defineAction({
         )
       ) {
         throw new Error(
-          `The year group already has a ${await armWord(orgId)} called ${name}.`,
+          `The year group already has ${withArticle(word)} called ${name}.`,
         );
       }
       updates.name = name;
+    }
+    if (args.formTeacherUserId) {
+      await assertActiveStaff(orgId, args.formTeacherUserId);
     }
     if (args.stream !== undefined) updates.stream = args.stream;
     if (args.homeRoom !== undefined) updates.homeRoom = args.homeRoom;

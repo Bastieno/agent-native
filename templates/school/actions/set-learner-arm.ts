@@ -35,6 +35,8 @@ export default defineAction({
         )
         .limit(1);
       if (!arm) throw new Error(`That ${word} is not in this school.`);
+      if (arm.status === "archived")
+        throw new Error(`${arm.name} is archived.`);
       armName = arm.name;
 
       // Check everyone before moving anyone, so a refusal changes nothing.
@@ -49,6 +51,18 @@ export default defineAction({
         );
       if (learners.length !== userIds.length) {
         throw new Error("Some of those learners are not in this school.");
+      }
+      const inactive = learners.filter((l: any) => l.status !== "active");
+      if (inactive.length > 0) {
+        const labels = await getUserLabels(inactive.map((l: any) => l.userId));
+        throw new Error(
+          inactive
+            .map((l: any) => {
+              const name = labelFor(labels, l.userId) ?? "A learner";
+              return `${name} ${l.status === "graduated" ? "has graduated" : `is ${l.status}`}, so cannot join ${arm.name}.`;
+            })
+            .join(" "),
+        );
       }
       const wrongYear = learners.filter(
         (l: any) => l.gradeLevelId !== arm.gradeLevelId,

@@ -49,13 +49,14 @@ export default defineAction({
   run: async (args) => {
     const { orgId, userEmail } = currentAccess();
     if (!orgId) throw new Error("No school context.");
+    const word = await armWord(orgId);
     // Moving a class between arms changes who is enrolled, which is the
     // admin's call; a teacher may still change everything else.
     if (args.armId !== undefined || args.optionArmIds !== undefined) {
       const role = userEmail ? await getSchoolRole(userEmail) : null;
       if (role !== "school_admin") {
         throw new Error(
-          `Only an admin can change which ${await armWord(orgId)} a class belongs to.`,
+          `Only an admin can change which ${word} a class belongs to.`,
         );
       }
     }
@@ -86,7 +87,7 @@ export default defineAction({
           ).map((r: any) => r.armId));
     if (nextArmId && nextOptions.length > 0) {
       throw new Error(
-        `A class is either for one whole ${await armWord(orgId)} or an option across several, not both.`,
+        `A class is either for one whole ${word} or an option across several, not both.`,
       );
     }
     await armsInYearGroup(
@@ -95,6 +96,7 @@ export default defineAction({
       [args.armId, ...(args.optionArmIds ?? [])].filter(
         (a): a is string => !!a,
       ),
+      word,
     );
 
     const updates: Record<string, any> = { updatedAt: now };
@@ -170,7 +172,6 @@ export default defineAction({
       }
     }
 
-    const word = await armWord(orgId);
     const count = (n: number) => `${n} ${n === 1 ? "learner" : "learners"}`;
     const notes: string[] = [];
     if (args.armId && !untouched)

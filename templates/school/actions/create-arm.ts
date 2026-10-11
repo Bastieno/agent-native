@@ -4,7 +4,11 @@ import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
-import { armWord } from "../server/lib/arm-enrolment.js";
+import {
+  armWord,
+  assertActiveStaff,
+  withArticle,
+} from "../server/lib/arm-enrolment.js";
 
 export default defineAction({
   description:
@@ -22,6 +26,7 @@ export default defineAction({
     const { orgId, userEmail } = currentAccess();
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
+    const word = await armWord(orgId);
 
     const [level] = await db
       .select()
@@ -49,8 +54,11 @@ export default defineAction({
       siblings.some((a: any) => a.name.toLowerCase() === name.toLowerCase())
     ) {
       throw new Error(
-        `${level.name} already has ${/^[aeiou]/.test(await armWord(orgId)) ? "an" : "a"} ${await armWord(orgId)} called ${name}.`,
+        `${level.name} already has ${withArticle(word)} called ${name}.`,
       );
+    }
+    if (args.formTeacherUserId) {
+      await assertActiveStaff(orgId, args.formTeacherUserId);
     }
 
     const id = nanoid();

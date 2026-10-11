@@ -1,7 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
-import { and, asc, eq } from "drizzle-orm";
+import { and, asc, count, eq } from "drizzle-orm";
 import { z } from "zod";
 import { armWord } from "../server/lib/arm-enrolment.js";
 
@@ -19,6 +19,7 @@ export default defineAction({
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
+    const word = await armWord(orgId);
 
     const [arms, levels, learners] = await Promise.all([
       db
@@ -37,21 +38,26 @@ export default defineAction({
         .select()
         .from(schema.gradeLevels)
         .where(eq(schema.gradeLevels.orgId, orgId)),
+      // Counted by the database, one row per arm, not one per learner.
       db
-        .select({ armId: schema.students.armId })
+        .select({ armId: schema.students.armId, n: count() })
         .from(schema.students)
         .where(
           and(
             eq(schema.students.orgId, orgId),
             eq(schema.students.status, "active"),
+            args.gradeLevelId
+              ? eq(schema.students.gradeLevelId, args.gradeLevelId)
+              : undefined,
           ),
-        ),
+        )
+        .groupBy(schema.students.armId),
     ]);
 
     const level = new Map<string, any>(levels.map((l: any) => [l.id, l]));
     const counts = new Map<string, number>();
     for (const l of learners) {
-      if (l.armId) counts.set(l.armId, (counts.get(l.armId) ?? 0) + 1);
+      if (l.armId) counts.set(l.armId, Number(l.n));
     }
 
     const rows = arms
@@ -71,7 +77,6 @@ export default defineAction({
       .sort((x, y) => x._year - y._year || x._arm - y._arm)
       .map(({ _year, _arm, ...row }) => row);
 
-    const word = await armWord(orgId);
     return {
       arms: rows,
       message:
