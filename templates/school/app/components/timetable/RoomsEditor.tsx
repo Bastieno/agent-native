@@ -89,7 +89,7 @@ export function RoomsEditor() {
 
       {problems.map((p, n) => (
         <p key={n} className="text-sm text-destructive">
-          {p}
+          {p.message}
         </p>
       ))}
 

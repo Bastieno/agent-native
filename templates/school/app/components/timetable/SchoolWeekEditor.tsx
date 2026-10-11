@@ -58,7 +58,7 @@ export function SchoolWeekEditor() {
   }, [JSON.stringify(saved)]);
 
   const dirty = !sameWeek(week, saved ?? { cycleLength: 1, days: [] });
-  const problems = useMemo(() => weekProblems(week), [week]);
+  const problems = useMemo(() => weekProblems(week, locale), [week, locale]);
   const nameOf = (d: number) => schoolWeekdayName(d, locale);
   const usedDays = new Set(week.days.map((d) => d.day));
 
@@ -89,10 +89,10 @@ export function SchoolWeekEditor() {
   }
 
   const problemsFor = (day: Weekday) =>
-    problems.filter((p) => p.startsWith(schoolWeekdayName(day, "en")));
-  const otherProblems = problems.filter(
-    (p) => !week.days.some((d) => p.startsWith(schoolWeekdayName(d.day, "en"))),
-  );
+    problems.filter((p) => p.day === day).map((p) => p.message);
+  const otherProblems = problems
+    .filter((p) => !week.days.some((d) => d.day === p.day))
+    .map((p) => p.message);
 
   return (
     <div className="space-y-3">

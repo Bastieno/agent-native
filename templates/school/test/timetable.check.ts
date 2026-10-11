@@ -68,14 +68,19 @@ check("a period that ends before it starts names the day and number", () => {
   week.days[4].periods[2] = lesson(3, "09:00", "08:40");
   const problems = weekProblems(week);
   assert.equal(problems.length, 1);
-  assert.match(problems[0], /Friday/);
-  assert.match(problems[0], /period 3/);
+  assert.equal(problems[0].day, 5);
+  assert.match(problems[0].message, /Friday/);
+  assert.match(problems[0].message, /period 3/);
 });
 
 check("duplicate period numbers on a day are a problem", () => {
   const week = validWeek();
   week.days[0].periods[3].number = 3;
-  assert.ok(weekProblems(week).some((p) => /Monday/.test(p) && /3/.test(p)));
+  assert.ok(
+    weekProblems(week).some(
+      (p) => /Monday/.test(p.message) && /3/.test(p.message),
+    ),
+  );
 });
 
 check("overlapping periods are a problem", () => {
@@ -84,7 +89,7 @@ check("overlapping periods are a problem", () => {
     lesson(1, "08:00", "08:40"),
     lesson(2, "08:30", "09:10"),
   ];
-  assert.ok(weekProblems(week).some((p) => /Tuesday/.test(p)));
+  assert.ok(weekProblems(week).some((p) => /Tuesday/.test(p.message)));
 });
 
 check("a cycle length other than 1 is a problem", () => {
@@ -95,13 +100,17 @@ check("a cycle length other than 1 is a problem", () => {
 check("a malformed time is a problem", () => {
   const week = validWeek();
   week.days[0].periods[0] = lesson(1, "8am", "08:40");
-  assert.ok(weekProblems(week).some((p) => /Monday/.test(p)));
+  assert.ok(
+    weekProblems(week).some((p) => p.day === 1 && /Monday/.test(p.message)),
+  );
 });
 
 check("a day listed twice is a problem", () => {
   const week = validWeek();
   week.days.push({ day: 1, periods: [lesson(1, "08:00", "08:40")] });
-  assert.ok(weekProblems(week).some((p) => /Monday/.test(p)));
+  assert.ok(
+    weekProblems(week).some((p) => p.day === 1 && /Monday/.test(p.message)),
+  );
 });
 
 check("rooms differing only in case and spacing are one problem", () => {
@@ -261,6 +270,97 @@ check("different days never clash", () => {
     clashCtx,
   );
   assert.deepEqual(out, []);
+});
+
+check("input order does not matter: unsorted placements clash the same", () => {
+  const a = rp("1", { teachers: [ada], start: "09:00", end: "09:40" });
+  const b = rp("2", { teachers: [ada], start: "08:30", end: "09:10" });
+  const c = rp("3", { teachers: [ada], start: "10:00", end: "10:40" });
+  const forward = findClashes([a, b, c], clashCtx);
+  const backward = findClashes([c, b, a], clashCtx);
+  assert.equal(forward.length, 1);
+  assert.deepEqual(
+    forward.map((x) => x.kind),
+    backward.map((x) => x.kind),
+  );
+});
+
+check("equal start times clash", () => {
+  const out = findClashes(
+    [
+      rp("1", { teachers: [ada], end: "08:40" }),
+      rp("2", { teachers: [ada], end: "09:00" }),
+    ],
+    clashCtx,
+  );
+  assert.equal(out.length, 1);
+  assert.equal(out[0].kind, "teacher");
+});
+
+check("one long period clashes with each later period it overlaps", () => {
+  const out = findClashes(
+    [
+      rp("1", { teachers: [ada], start: "08:00", end: "10:00" }),
+      rp("2", { teachers: [ada], start: "08:30", end: "09:00" }),
+      rp("3", { teachers: [ada], start: "09:00", end: "09:30" }),
+      rp("4", { teachers: [ada], start: "09:40", end: "10:20" }),
+      rp("5", { teachers: [ada], start: "10:00", end: "10:40" }),
+    ],
+    clashCtx,
+  );
+  // 1 overlaps 2, 3 and 4; 4 overlaps 5. 1 and 5 only touch; 2 and 3 touch.
+  assert.equal(out.length, 4);
+});
+
+check("a whole-arm class clashes with an option class listed before it", () => {
+  const out = findClashes(
+    [rp("1", { optionArmIds: ["A", "B"] }), rp("2", { armId: "B" })],
+    clashCtx,
+  );
+  assert.deepEqual(
+    out.map((c) => c.kind),
+    ["arm"],
+  );
+});
+
+check("whole-arm classes of different arms do not clash", () => {
+  const out = findClashes(
+    [
+      rp("1", { armId: "A", learnerUserIds: ["u1"] }),
+      rp("2", { armId: "B", learnerUserIds: ["u2"] }),
+    ],
+    clashCtx,
+  );
+  assert.deepEqual(out, []);
+});
+
+check("a day outside 1 to 7 is a problem, not an exception", () => {
+  const week = validWeek();
+  week.days.push({ day: Number.NaN as Weekday, periods: [] });
+  week.days.push({ day: 9 as Weekday, periods: [] });
+  const problems = weekProblems(week);
+  assert.equal(problems.length, 2);
+  assert.ok(problems.every((p) => p.day === undefined));
+});
+
+check("a period number must be a whole number from 1", () => {
+  const week = validWeek();
+  week.days[0].periods[0].number = 0;
+  week.days[1].periods[0].number = 1.5;
+  week.days[2].periods[0].number = -2;
+  const problems = weekProblems(week);
+  assert.deepEqual(
+    problems.map((p) => p.day),
+    [1, 2, 3],
+  );
+});
+
+check("problems name days in the given locale", () => {
+  const week = validWeek();
+  week.days[0].periods[0] = lesson(1, "09:00", "08:40");
+  const [problem] = weekProblems(week, "fr");
+  assert.equal(problem.day, 1);
+  assert.match(problem.message, /lundi/);
 });
 
 check("one pair can clash on several kinds; null period uses the time", () => {

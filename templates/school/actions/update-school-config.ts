@@ -6,7 +6,13 @@ import { looksUncountable, naivePlural } from "../shared/terminology.js";
 import { jsonish } from "../shared/zod-json.js";
 import { getDb, schema } from "../server/db/index.js";
 import { eq } from "drizzle-orm";
-import { roomProblems, weekProblems } from "../shared/school-week.js";
+import {
+  roomProblems,
+  weekProblems,
+  type Room,
+  type SchoolWeek,
+} from "../shared/school-week.js";
+import { schoolLocale } from "../shared/dates.js";
 import { reservedWeeksForTerm, termWeekCount } from "../shared/term-weeks.js";
 
 export default defineAction({
@@ -110,6 +116,8 @@ export default defineAction({
               z.object({
                 number: z
                   .number()
+                  .int()
+                  .min(1)
                   .describe(
                     "The school's own numbering for that day. A break has a number like any period.",
                   ),
@@ -225,12 +233,20 @@ export default defineAction({
         string,
         unknown
       > | null) ?? {};
+    const schoolWeek = args.schoolWeek as SchoolWeek | undefined;
+    const rooms = args.rooms as Room[] | undefined;
+    const locale = schoolLocale({
+      ...(existing as Record<string, string>),
+      ...(typeof args.locale === "string" ? { locale: args.locale } : {}),
+    });
     const problems = [
-      ...(args.schoolWeek ? weekProblems(args.schoolWeek as any) : []),
-      ...(args.rooms ? roomProblems(args.rooms as any) : []),
+      ...(schoolWeek ? weekProblems(schoolWeek, locale) : []),
+      ...(rooms ? roomProblems(rooms) : []),
     ];
     if (problems.length) {
-      throw new Error(`Nothing was saved. ${problems.join(" ")}`);
+      throw new Error(
+        `Nothing was saved. ${problems.map((p) => p.message).join(" ")}`,
+      );
     }
     const merged = { ...existing, ...args } as Record<string, unknown>;
     if (args.theme) {

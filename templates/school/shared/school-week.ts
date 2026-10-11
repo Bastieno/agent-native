@@ -115,43 +115,61 @@ export function placementSlot(
   );
 }
 
-/** What makes a week unusable, one sentence each. An empty list means valid. */
-export function weekProblems(week: SchoolWeek): string[] {
-  const problems: string[] = [];
+/** One thing wrong, in a sentence; `day` is set when it is about one day. */
+export interface WeekProblem {
+  day?: number;
+  message: string;
+}
+
+/**
+ * What makes a week unusable, one sentence each, with day names in the
+ * school's own locale. An empty list means valid.
+ */
+export function weekProblems(week: SchoolWeek, locale?: string): WeekProblem[] {
+  const problems: WeekProblem[] = [];
   if ((week.cycleLength as number) !== 1) {
-    problems.push(
-      "The week must repeat every week (cycleLength 1); other cycle lengths are not supported yet.",
-    );
+    problems.push({
+      message:
+        "The week must repeat every week (cycleLength 1); other cycle lengths are not supported yet.",
+    });
   }
   const seenDays = new Set<number>();
   for (const day of week.days ?? []) {
-    const name = schoolWeekdayName(day.day, "en");
     if (!Number.isInteger(day.day) || day.day < 1 || day.day > 7) {
-      problems.push(`Day ${day.day} is not a day of the week (use 1 to 7).`);
+      problems.push({
+        message: `Day ${day.day} is not a day of the week (use 1 to 7).`,
+      });
       continue;
     }
+    const name = schoolWeekdayName(day.day, locale);
+    const add = (message: string) => problems.push({ day: day.day, message });
     if (seenDays.has(day.day)) {
-      problems.push(`${name} is listed more than once.`);
+      add(`${name} is listed more than once.`);
     }
     seenDays.add(day.day);
 
     const seenNumbers = new Set<number>();
     const timed: WeekPeriod[] = [];
     for (const p of day.periods ?? []) {
+      if (!Number.isInteger(p.number) || p.number < 1) {
+        add(
+          `${name} has a period numbered ${p.number}; period numbers are whole numbers from 1.`,
+        );
+      }
       if (seenNumbers.has(p.number)) {
-        problems.push(`${name} has more than one period ${p.number}.`);
+        add(`${name} has more than one period ${p.number}.`);
       }
       seenNumbers.add(p.number);
       const startOk = TIME.test(p.start);
       const endOk = TIME.test(p.end);
       if (!startOk || !endOk) {
-        problems.push(
+        add(
           `${name}, period ${p.number} needs its times as HH:MM, like 08:00.`,
         );
         continue;
       }
       if (minutes(p.end) <= minutes(p.start)) {
-        problems.push(`${name}, period ${p.number} ends before it starts.`);
+        add(`${name}, period ${p.number} ends before it starts.`);
         continue;
       }
       timed.push(p);
@@ -163,7 +181,7 @@ export function weekProblems(week: SchoolWeek): string[] {
       const a = ordered[i - 1];
       const b = ordered[i];
       if (timesOverlap(a.start, a.end, b.start, b.end)) {
-        problems.push(
+        add(
           `${name}, period ${a.number} (${a.start}-${a.end}) overlaps period ${b.number} (${b.start}-${b.end}).`,
         );
       }
@@ -178,20 +196,20 @@ export function roomKey(name: string): string {
 }
 
 /** What makes a list of rooms unusable, one sentence each. */
-export function roomProblems(rooms: Room[]): string[] {
-  const problems: string[] = [];
+export function roomProblems(rooms: Room[]): WeekProblem[] {
+  const problems: WeekProblem[] = [];
   const seen = new Map<string, string>();
   for (const room of rooms ?? []) {
     const key = roomKey(room.name ?? "");
     if (!key) {
-      problems.push("A room has no name.");
+      problems.push({ message: "A room has no name." });
       continue;
     }
     const first = seen.get(key);
     if (first !== undefined) {
-      problems.push(
-        `"${room.name.trim()}" and "${first}" are the same room written two ways.`,
-      );
+      problems.push({
+        message: `"${room.name.trim()}" and "${first}" are the same room written two ways.`,
+      });
     } else {
       seen.set(key, room.name.trim());
     }
