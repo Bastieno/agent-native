@@ -1,4 +1,8 @@
-import { schoolLocale, schoolTimeZone } from "../../shared/dates.js";
+import {
+  schoolLocale,
+  schoolTimeZone,
+  schoolToday,
+} from "../../shared/dates.js";
 import { placementSlot, schoolWeekdayName } from "../../shared/school-week.js";
 import { getSchoolRole, getUserIdByEmail } from "./student-access.js";
 import { loadSchoolConfig, loadTimetable, resolveTerm } from "./timetable.js";
@@ -30,6 +34,8 @@ export interface MyWeek {
   }>;
   next: {
     dayName: string;
+    /** Whether that lesson is later today, rather than another day. */
+    isToday: boolean;
     start: string;
     className: string;
     room: string | null;
@@ -48,7 +54,11 @@ const minutes = (time: string) => {
  * that day, so the answer does not depend on when it is asked. A timezone the
  * runtime does not know falls back to UTC.
  */
-function reference(date: string | undefined, timeZone: string | undefined) {
+function reference(
+  date: string | undefined,
+  timeZone: string | undefined,
+  today: string,
+) {
   let y: number, mo: number, d: number, at: number;
   if (date) {
     [y, mo, d] = date.split("-").map(Number);
@@ -72,9 +82,9 @@ function reference(date: string | undefined, timeZone: string | undefined) {
     }
     const get = (type: string) =>
       Number(list.find((p) => p.type === type)?.value ?? 0);
-    y = get("year");
-    mo = get("month");
-    d = get("day");
+    // The date is the school's today (one rule, shared); only the clock
+    // time comes from the zone here.
+    [y, mo, d] = today.split("-").map(Number);
     at = get("hour") * 60 + get("minute");
   }
   const js = new Date(Date.UTC(y, mo - 1, d, 12)).getUTCDay();
@@ -102,7 +112,8 @@ export async function getMyWeek(
 
   const config = await loadSchoolConfig(orgId);
   const locale = schoolLocale(config);
-  const term = await resolveTerm(orgId, date);
+  const today = schoolToday(config);
+  const term = await resolveTerm(orgId, date ?? today);
   const { week, periods } = await loadTimetable(orgId, term.termId);
 
   const termInfo =
@@ -120,13 +131,22 @@ export async function getMyWeek(
     };
   }
 
-  const mine: ResolvedPeriod[] = periods.filter((p) =>
-    role === "student"
-      ? p.learnerUserIds.includes(userId)
-      : p.teachers.some((t) => t.userId === userId),
-  );
+  // A learner has the classes they are enrolled in; staff the classes they
+  // teach; anyone else (no school profile, an unknown role) has no timetable.
+  let mine: ResolvedPeriod[];
+  if (role === "student") {
+    mine = periods.filter((p) => p.learnerUserIds.includes(userId));
+  } else if (
+    role === "school_admin" ||
+    role === "subject_coordinator" ||
+    role === "teacher"
+  ) {
+    mine = periods.filter((p) => p.teachers.some((t) => t.userId === userId));
+  } else {
+    mine = [];
+  }
 
-  const now = reference(date, schoolTimeZone(config));
+  const now = reference(date, schoolTimeZone(config), today);
 
   // Each of their rows goes where the admin grid puts it (placementSlot): the
   // lesson period with its number, else the lesson period its times overlap.
@@ -156,6 +176,7 @@ export async function getMyWeek(
               classId: p.classId,
               className: p.className,
               subjectName: p.subjectName,
+              // The loader puts the primary teacher first.
               teacherName: p.teachers[0]?.name ?? null,
               room: p.room,
             });
@@ -185,6 +206,7 @@ export async function getMyWeek(
       best = key;
       next = {
         dayName: schoolWeekdayName(p.day, locale),
+        isToday: ahead === 0,
         start: p.start,
         className: p.className,
         room: p.room,

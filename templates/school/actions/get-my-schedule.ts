@@ -3,7 +3,12 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { loadTimetable, resolveTerm } from "../server/lib/timetable.js";
+import {
+  loadSchoolConfig,
+  loadTimetable,
+  resolveTerm,
+} from "../server/lib/timetable.js";
+import { schoolToday } from "../shared/dates.js";
 import { schoolWeekdayName } from "../shared/school-week.js";
 
 export default defineAction({
@@ -32,7 +37,9 @@ export default defineAction({
     const teacherUserId = userRow.id;
 
     // Determine target date and day of week (1=Mon … 7=Sun)
-    const targetDate = args.date ?? new Date().toISOString().slice(0, 10);
+    // "Today" is the school's today, not UTC's.
+    const config = await loadSchoolConfig(orgId);
+    const targetDate = args.date ?? schoolToday(config);
     const jsDay = new Date(targetDate + "T12:00:00Z").getUTCDay(); // 0=Sun … 6=Sat
     const dayOfWeek = jsDay === 0 ? 7 : jsDay; // convert: Sun→7, Mon→1 … Sat→6
 
@@ -48,7 +55,7 @@ export default defineAction({
         slots: [],
         unpreparedCount: 0,
         message:
-          "Your school has not set up its week or placed any classes in a timetable yet.",
+          "Your school has not set up its week, and no lessons are placed yet.",
       };
     }
 
@@ -59,6 +66,13 @@ export default defineAction({
         p.teachers.some((t) => t.userId === teacherUserId),
     );
 
+    // Between terms the rows are the next term's: say so, and that it has not
+    // started, rather than "today".
+    const notStarted =
+      term.status === "next" && term.termName
+        ? `${term.termName} hasn't started yet`
+        : null;
+
     if (mine.length === 0) {
       return {
         date: targetDate,
@@ -66,7 +80,9 @@ export default defineAction({
         dayName,
         slots: [],
         unpreparedCount: 0,
-        message: `No classes scheduled for ${dayName}.`,
+        message: notStarted
+          ? `No classes scheduled for ${dayName} in ${term.termName}, which hasn't started yet.`
+          : `No classes scheduled for ${dayName}.`,
       };
     }
 
@@ -138,8 +154,9 @@ export default defineAction({
       dayName,
       slots: enriched,
       unpreparedCount: unprepared.length,
-      message:
-        unprepared.length > 0
+      message: notStarted
+        ? `This is your timetable for ${term.termName}, which hasn't started yet: ${enriched.length} class${enriched.length !== 1 ? "es" : ""} on ${dayName}.`
+        : unprepared.length > 0
           ? `You have ${enriched.length} class${enriched.length !== 1 ? "es" : ""} today. ${unprepared.length} ${unprepared.length === 1 ? "has" : "have"} no lesson note prepared for today.`
           : `You have ${enriched.length} class${enriched.length !== 1 ? "es" : ""} today — all have lesson notes prepared.`,
     };

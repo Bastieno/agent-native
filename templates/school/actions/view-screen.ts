@@ -5,7 +5,12 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { loadTimetable, resolveTerm } from "../server/lib/timetable.js";
+import {
+  loadSchoolConfig,
+  loadTimetable,
+  resolveTerm,
+} from "../server/lib/timetable.js";
+import { schoolToday } from "../shared/dates.js";
 import { getMyWeek } from "../server/lib/my-week.js";
 import { timetableView } from "../server/lib/timetable-view.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
@@ -452,9 +457,10 @@ export default defineAction({
             }));
 
             // Today's schedule — day of week 1=Mon … 7=Sun
-            const jsDay = new Date().getDay(); // 0=Sun … 6=Sat
+            // The school's today, not the server's or UTC's.
+            const todayStr = schoolToday(await loadSchoolConfig(schoolId!));
+            const jsDay = new Date(`${todayStr}T12:00:00Z`).getUTCDay(); // 0=Sun … 6=Sat
             const todayDow = jsDay === 0 ? 7 : jsDay;
-            const todayStr = new Date().toISOString().slice(0, 10);
             // From the school's week, so the times match the timetable and a
             // support teacher sees their classes too.
             const term = await resolveTerm(schoolId!, todayStr);

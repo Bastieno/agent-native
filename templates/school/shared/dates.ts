@@ -81,3 +81,29 @@ export function formatSchoolDateTime(
     timeZone: schoolTimeZone(config),
   }).format(date);
 }
+
+/**
+ * Today's date, YYYY-MM-DD, in the school's own timezone (UTC when it has set
+ * none, or set one that is not valid). The one place "today" is decided, so a
+ * term, a teacher's day and a learner's week never disagree about the date.
+ */
+export function schoolToday(
+  config: DateConfig,
+  now: Date = new Date(),
+): string {
+  const zone = schoolTimeZone(config);
+  if (zone) {
+    try {
+      // en-CA writes a date as YYYY-MM-DD.
+      return new Intl.DateTimeFormat("en-CA", {
+        timeZone: zone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(now);
+    } catch {
+      // An unknown timezone name: fall through to UTC.
+    }
+  }
+  return now.toISOString().slice(0, 10);
+}
