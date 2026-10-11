@@ -9,7 +9,7 @@ export function ClassesTabs({
   value: "classes" | "arms";
   onChange: (tab: "classes" | "arms") => void;
 }) {
-  const { Arm } = useArmWord();
+  const { Arms } = useArmWord();
   return (
     <Tabs
       value={value}
@@ -17,7 +17,7 @@ export function ClassesTabs({
     >
       <TabsList>
         <TabsTrigger value="classes">Classes</TabsTrigger>
-        <TabsTrigger value="arms">{Arm}s</TabsTrigger>
+        <TabsTrigger value="arms">{Arms}</TabsTrigger>
       </TabsList>
     </Tabs>
   );

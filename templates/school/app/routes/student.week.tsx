@@ -41,7 +41,8 @@ function Lessons({ period }: { period: Period }) {
 }
 
 const timeRange = (p: Period) => `${p.start}–${p.end}`;
-const breakLabel = (p: Period) => p.label || "Break";
+// A break shows its own name; with none, only its bell times.
+const breakLabel = (p: Period) => p.label || "";
 
 /** One day, top to bottom. Used on phones. */
 function DayList({ day }: { day: Day }) {
