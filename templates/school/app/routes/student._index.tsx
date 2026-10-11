@@ -71,7 +71,7 @@ export default function StudentDashboard() {
         </p>
         {next ? (
           <p className="mt-1 text-sm text-muted-foreground">
-            {`Next: ${[next.className, next.room, next.start].filter(Boolean).join(", ")}`}
+            {`Next: ${next.isToday ? "" : `${next.dayName} — `}${[next.className, next.room, next.start].filter(Boolean).join(", ")}`}
           </p>
         ) : null}
       </div>

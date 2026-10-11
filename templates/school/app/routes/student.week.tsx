@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { IconCalendarWeek } from "@tabler/icons-react";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -125,10 +125,13 @@ function WeekGrid({ days }: { days: Day[] }) {
           first.kind === "break" ? (
             <div
               key={key}
-              className="flex items-center gap-3 border-b bg-muted/40 px-3 py-1 text-xs text-muted-foreground last:border-b-0"
+              className="grid border-b bg-muted/40 last:border-b-0"
+              style={{ gridTemplateColumns: cols }}
             >
-              <span>{breakLabel(first)}</span>
-              <span>{timeRange(first)}</span>
+              <div className="col-span-full flex items-center gap-3 px-3 py-1 text-xs text-muted-foreground">
+                <span>{breakLabel(first)}</span>
+                <span>{timeRange(first)}</span>
+              </div>
             </div>
           ) : (
             <div
@@ -194,13 +197,13 @@ export default function StudentWeek() {
     days.every((d) => d.periods.every((p) => p.lessons.length === 0));
   const today = days.find((d) => d.isToday) ?? days[0];
   const activeDay = days.find((d) => String(d.day) === picked) ?? today;
-  const locale = (config as any)?.locale || undefined;
+  const locale = config.locale || undefined;
 
   return (
     <div className="space-y-4 p-4 sm:p-6">
       <div>
         <h1 className="text-xl font-semibold">My week</h1>
-        {data?.message ? (
+        {data?.message && !empty ? (
           <p className="mt-1 text-sm text-muted-foreground">{data.message}</p>
         ) : null}
       </div>
@@ -238,8 +241,12 @@ export default function StudentWeek() {
                   </TabsTrigger>
                 ))}
               </TabsList>
+              {days.map((d) => (
+                <TabsContent key={d.day} value={String(d.day)} className="mt-3">
+                  <DayList day={d} />
+                </TabsContent>
+              ))}
             </Tabs>
-            {activeDay ? <DayList day={activeDay} /> : null}
           </div>
         </>
       )}
