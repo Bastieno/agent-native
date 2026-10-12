@@ -98,7 +98,7 @@ export default defineAction({
           .join(", ")}.`,
       );
     }
-    const period = findPeriod(week, args.day, args.periodNumber);
+    let period = findPeriod(week, args.day, args.periodNumber);
     const lessons = weekDay.periods
       .filter((p: any) => p.kind === "lesson")
       .map((p: any) => p.number);
@@ -168,6 +168,29 @@ export default defineAction({
             ),
           )
           .limit(1);
+      }
+    }
+
+    // Either half of a double stands for the whole. Saving the later half at
+    // its own slot is "no move": anchor on the first half so the pair stays.
+    if (
+      movedRow &&
+      partner &&
+      partner.dayOfWeek === movedRow.dayOfWeek &&
+      doubleSecondPeriod(week, partner.dayOfWeek, partner.periodNumber).second
+        ?.number === movedRow.periodNumber
+    ) {
+      const later = movedRow;
+      movedRow = partner;
+      partner = later;
+      scheduleId = movedRow.id;
+      if (
+        args.day === later.dayOfWeek &&
+        args.periodNumber === later.periodNumber
+      ) {
+        args.periodNumber = movedRow.periodNumber;
+        period = findPeriod(week, args.day, args.periodNumber);
+        if (!period) throw new Error("That placement has no period any more.");
       }
     }
 
