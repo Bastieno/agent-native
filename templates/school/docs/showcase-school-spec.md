@@ -1,6 +1,6 @@
 # Showcase school — a whole Nigerian school, ten weeks in
 
-**Status:** draft for the owner to confirm (see "Questions to confirm" at the end) before any build.
+**Status:** questions answered by the owner on 2026-10-12 (see "Confirmed decisions" at the end).
 
 ## What this is for
 
@@ -21,7 +21,7 @@ Success means:
 
 Against the app running locally (the dev server and its database), so the
 owner can sign in straight afterwards. Putting the app online is a separate
-step — see "Questions to confirm".
+task and not part of this one.
 
 It is built as a new scenario of the existing simulation harness
 (`test/sim/`, `pnpm journey:school`). The harness drives the app through its
@@ -208,23 +208,19 @@ The run fails if any of these ends empty.
   language model in the loop, so it is fast, free and repeatable. Open-answer
   marking is done by the harness against mark schemes, as the simulation
   already does. The owner can talk to the agent inside the school afterwards.
-- **Report cards.** End-of-term report cards come after the exams are sat.
-  See "Questions to confirm".
+- **Report cards.** End-of-term report cards come after the exams are sat,
+  and the exams are left unsat.
 - **Second and Third Terms**, and attendance (the app has no attendance
   feature).
 
-## Questions to confirm
+## Confirmed decisions
 
-1. **JSS arms:** one arm per JSS year group (45 JSS learners), or two, which
-   would give 90?
-2. **Exams:** set and left unsat at week 12, as above? Or sat, marked and
-   report cards issued, so the end of term is visible too?
-3. **"Go live":** is local enough for this run? Or should the app also be
-   deployed (for example to Netlify with a Neon database) so others can sign
-   in? Deploying is its own task. The roster file must not be committed or
-   shared publicly if it holds a working password on a public site.
-4. **Name and place:** is "Crestfield College, Ibadan" fine, or do you have a
-   school name and city in mind?
-5. **The agent:** should a few things go through the real AI agent (e.g. it
-   drafting a scheme or marking a batch), so you can see it work? This costs
-   model usage and isn't repeatable.
+Answered by the owner on 2026-10-12.
+
+1. **JSS arms:** one arm per JSS year group (JSS1A, JSS2A, JSS3A), 45 JSS
+   learners and 180 in the school.
+2. **Exams:** set and published for week 12 and left unsat. No report cards.
+3. **Where it runs:** locally only. Deploying is a separate task.
+4. **Name and place:** Crestfield College, Ibadan.
+5. **The agent:** not used in the run. Everything goes through the app's
+   actions; the owner talks to the agent inside the school afterwards.
