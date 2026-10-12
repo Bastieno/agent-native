@@ -3,7 +3,11 @@ import {
   schoolTimeZone,
   schoolToday,
 } from "../../shared/dates.js";
-import { placementSlot, schoolWeekdayName } from "../../shared/school-week.js";
+import {
+  placementSlot,
+  schoolWeekdayName,
+  validPairs,
+} from "../../shared/school-week.js";
 import { getSchoolRole, getUserIdByEmail } from "./student-access.js";
 import { loadSchoolConfig, loadTimetable, resolveTerm } from "./timetable.js";
 import type { ResolvedPeriod } from "./timetable-clashes.js";
@@ -16,6 +20,12 @@ export interface MyWeekLesson {
   room: string | null;
   /** Shared by the two periods of a double; null for a single period. */
   pairId: string | null;
+  /**
+   * True on the first half of a real double (see `validPairs`): the next
+   * lesson period of the day carries its second half. A pair id alone does
+   * not say so.
+   */
+  doubleWithNext: boolean;
   /** The school's own name for this lesson; null for none. */
   lessonLabel: string | null;
 }
@@ -156,6 +166,11 @@ export async function getMyWeek(
   // lesson period with its number, else the lesson period its times overlap.
   // A row that fits neither is left out of the grid but still counts for
   // "next"; the admin sees it listed under the grid.
+  // First half of each real double, with the period its second half sits in.
+  const secondSlot = new Map<string, number | undefined>();
+  for (const [first, second] of validPairs(week, mine).values()) {
+    secondSlot.set(first.scheduleId, placementSlot(week, second)?.number);
+  }
   const days = [...week.days]
     .sort((a, b) => a.day - b.day)
     .map((d) => {
@@ -170,7 +185,7 @@ export async function getMyWeek(
         day: d.day as number,
         dayName: schoolWeekdayName(d.day, locale),
         isToday: d.day === now.weekday,
-        periods: slots.map((s) => {
+        periods: slots.map((s, at) => {
           const seen = new Set<string>();
           const lessons: MyWeekLesson[] = [];
           for (const p of placed.get(s.number) ?? []) {
@@ -184,6 +199,10 @@ export async function getMyWeek(
               teacherName: p.teachers[0]?.name ?? null,
               room: p.room,
               pairId: p.pairId,
+              // Only when the grid lists that period straight after this one.
+              doubleWithNext:
+                secondSlot.has(p.scheduleId) &&
+                secondSlot.get(p.scheduleId) === slots[at + 1]?.number,
               lessonLabel: p.lessonLabel,
             });
           }

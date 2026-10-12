@@ -11,6 +11,7 @@ import {
   resolveTerm,
 } from "../server/lib/timetable.js";
 import { schoolToday } from "../shared/dates.js";
+import { joinDoubles } from "../shared/school-week.js";
 import { getMyWeek } from "../server/lib/my-week.js";
 import { timetableView } from "../server/lib/timetable-view.js";
 import { coverageView } from "../server/lib/timetable-coverage.js";
@@ -477,7 +478,10 @@ export default defineAction({
             // From the school's week, so the times match the timetable and a
             // support teacher sees their classes too.
             const term = await resolveTerm(schoolId!, todayStr);
-            const { periods } = await loadTimetable(schoolId!, term.termId);
+            const { periods, week } = await loadTimetable(
+              schoolId!,
+              term.termId,
+            );
             const todayPeriods = periods
               .filter(
                 (p) =>
@@ -502,19 +506,25 @@ export default defineAction({
                       ),
                     )
                 : [];
-            screen.todaySchedule = todayPeriods.map((p) => {
-              const lesson = lessons.find((l) => l.classId === p.classId);
-              return {
-                classId: p.classId,
-                className: p.className,
-                startTime: p.start,
-                endTime: p.end,
-                periodNumber: p.periodNumber,
-                room: p.room,
-                lessonPrepared: !!lesson,
-                lesson: lesson ? { id: lesson.id, title: lesson.title } : null,
-              };
-            });
+            screen.todaySchedule = joinDoubles(week, todayPeriods).map(
+              ({ first: p, last, count }) => {
+                const lesson = lessons.find((l) => l.classId === p.classId);
+                return {
+                  classId: p.classId,
+                  className: p.className,
+                  startTime: p.start,
+                  endTime: last.end,
+                  periodNumber: p.periodNumber,
+                  periodCount: count,
+                  room: p.room,
+                  lessonLabel: p.lessonLabel,
+                  lessonPrepared: !!lesson,
+                  lesson: lesson
+                    ? { id: lesson.id, title: lesson.title }
+                    : null,
+                };
+              },
+            );
           }
         } catch {
           // continue

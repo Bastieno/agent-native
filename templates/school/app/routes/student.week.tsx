@@ -26,11 +26,13 @@ function continuesInto(period: Period, next: Period | undefined): boolean {
   if (!next || next.kind !== "lesson" || period.lessons.length === 0) {
     return false;
   }
-  const pairs = period.lessons.map((l) => l.pairId);
+  // The server says which lessons really go on (a valid pair); the page only
+  // checks the second half is in the next period it was given.
   const nextPairs = next.lessons.map((l) => l.pairId);
   return (
-    pairs.every((id) => !!id && nextPairs.includes(id)) &&
-    pairs.length === nextPairs.length
+    period.lessons.every(
+      (l) => l.doubleWithNext && !!l.pairId && nextPairs.includes(l.pairId),
+    ) && period.lessons.length === next.lessons.length
   );
 }
 

@@ -146,6 +146,24 @@ export function validPairs<T extends PairHalf>(
   return out;
 }
 
+/**
+ * A day's rows with each valid double as one entry: the first half, the last
+ * half and how many periods it covers. Anything not a valid pair reads as
+ * single periods. Keeps the order of the rows given.
+ */
+export function joinDoubles<T extends PairHalf>(
+  week: SchoolWeek | null | undefined,
+  rows: T[],
+): { first: T; last: T; count: number }[] {
+  const pairs = validPairs(week, rows);
+  return rows.flatMap((p) => {
+    const pair = p.pairId ? pairs.get(p.pairId) : undefined;
+    if (!pair) return [{ first: p, last: p, count: 1 }];
+    if (pair[0] !== p) return [];
+    return [{ first: p, last: pair[1], count: 2 }];
+  });
+}
+
 /** What a placement needs for slotting: its day, number and stored times. */
 export interface Placement {
   day: number;

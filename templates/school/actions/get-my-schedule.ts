@@ -9,7 +9,7 @@ import {
   resolveTerm,
 } from "../server/lib/timetable.js";
 import { schoolToday } from "../shared/dates.js";
-import { schoolWeekdayName, validPairs } from "../shared/school-week.js";
+import { schoolWeekdayName, joinDoubles } from "../shared/school-week.js";
 
 export default defineAction({
   description:
@@ -127,13 +127,7 @@ export default defineAction({
 
     // A double is one slot: from its first start to its second end. Only a
     // valid pair joins; anything else reads as single periods.
-    const pairs = validPairs(week, mine);
-    const joined = mine.flatMap((p) => {
-      const pair = p.pairId ? pairs.get(p.pairId) : undefined;
-      if (!pair) return [{ first: p, last: p, count: 1 }];
-      if (pair[0] !== p) return [];
-      return [{ first: p, last: pair[1], count: 2 }];
-    });
+    const joined = joinDoubles(week, mine);
 
     const enriched = joined.map(({ first: p, last, count }) => {
       const cls = classById.get(p.classId);
