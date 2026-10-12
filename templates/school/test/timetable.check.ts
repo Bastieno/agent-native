@@ -708,3 +708,105 @@ check("a double split by a break row does not span", () => {
   ]);
   assert.equal(out.spans.size, 0);
 });
+
+// ── timetable generator: units ──
+import {
+  buildUnits,
+  type GenClass,
+  type GenInput,
+} from "../server/lib/timetable-generator.js";
+
+function genClass(over: Partial<GenClass> & { classId: string }): GenClass {
+  return {
+    className: over.classId,
+    subjectName: "s",
+    armId: "arm-1",
+    optionArmIds: [],
+    teacherIds: ["t1"],
+    teacherNames: { t1: "T" },
+    room: null,
+    learnerUserIds: [],
+    required: { periods: 5, doubles: 1 },
+    placed: { periods: 0, doubles: 0 },
+    ...over,
+  };
+}
+function genInput(classes: GenClass[]): GenInput {
+  return { week: gridWeek, armNames: {}, fixed: [], classes };
+}
+const countKind = (u: { kind: string }[], k: string) =>
+  u.filter((x) => x.kind === k).length;
+
+check(
+  "units: a class short 5 periods with 1 double gives 1 double + 3 singles",
+  () => {
+    const out = buildUnits(genInput([genClass({ classId: "a" })]));
+    assert.equal(countKind(out.units, "double"), 1);
+    assert.equal(countKind(out.units, "single"), 3);
+    assert.deepEqual(
+      out.units.map((u) => u.id),
+      ["a:double:0", "a:single:0", "a:single:1", "a:single:2"],
+    );
+  },
+);
+
+check("units: one valid pair and one single placed leaves 2 singles", () => {
+  const out = buildUnits(
+    genInput([genClass({ classId: "a", placed: { periods: 3, doubles: 1 } })]),
+  );
+  assert.equal(countKind(out.units, "double"), 0);
+  assert.equal(countKind(out.units, "single"), 2);
+});
+
+check("units: required null gives no units and is not set", () => {
+  const out = buildUnits(
+    genInput([genClass({ classId: "a", required: null })]),
+  );
+  assert.equal(out.units.length, 0);
+  assert.deepEqual(out.notSet, ["a"]);
+});
+
+check("units: a block reserves the most-needing member's slots", () => {
+  const arms = ["x", "y"];
+  const out = buildUnits(
+    genInput([
+      genClass({ classId: "a", armId: null, optionArmIds: arms }),
+      genClass({
+        classId: "b",
+        armId: null,
+        optionArmIds: [...arms].reverse(),
+        required: { periods: 3, doubles: 0 },
+      }),
+    ]),
+  );
+  assert.equal(countKind(out.units, "double"), 1);
+  assert.equal(countKind(out.units, "single"), 3);
+  assert.ok(out.units.every((u) => u.blockKey === "x,y"));
+  let free = 0;
+  for (const u of out.units) {
+    const m = u.members.find((x) => x.classId === "b")!;
+    if (m.needs === "free") free += u.kind === "double" ? 2 : 1;
+  }
+  assert.equal(free, 2);
+});
+
+check("units: a class with no teachers and units is listed", () => {
+  const out = buildUnits(
+    genInput([
+      genClass({ classId: "a", teacherIds: [] }),
+      genClass({ classId: "b", teacherIds: [], required: null }),
+    ]),
+  );
+  assert.deepEqual(out.noTeacher, ["a"]);
+});
+
+check("units: the same input gives identical output", () => {
+  const input = genInput([
+    genClass({ classId: "b" }),
+    genClass({ classId: "a", required: { periods: 2, doubles: 0 } }),
+  ]);
+  assert.equal(
+    JSON.stringify(buildUnits(input)),
+    JSON.stringify(buildUnits(input)),
+  );
+});
