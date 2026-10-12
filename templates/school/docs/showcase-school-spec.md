@@ -64,8 +64,9 @@ can be changed before the build.
 
 **Grading.**
 
-- WAEC-style A1–F9 for SS.
-- A percentage-band scale for JSS.
+- WAEC-style A1–F9 for the whole school. The app holds one scale per school,
+  so JSS cannot have a percentage-band scale of its own (see "Confirmed
+  decisions").
 - Pass mark 40.
 - Missed work counts as zero.
 - Positions shown on report cards.
@@ -77,18 +78,22 @@ can be changed before the build.
 | JSS1, JSS2, JSS3 | one arm each: JSS1A, JSS2A, JSS3A                              |
 | SS1, SS2, SS3    | three streamed arms each: Science (A), Commercial (B), Art (C) |
 
-**Subjects.** Taken from the NERDC (JSS) and WAEC (SS) libraries already in the app.
+**Subjects.** Taken from the NERDC (JSS) and WAEC (SS) libraries already in
+the app, under the libraries' own names, so every scheme of work comes from a
+library and nothing is invented.
 
-- **JSS (all arms):**
-  - English Language, Mathematics, Basic Science, Basic Technology;
-  - Social Studies, Civic Education, CRS/IRS;
-  - Business Studies, Cultural & Creative Arts, Computer Studies;
-  - Physical & Health Education, Yoruba.
+- **JSS (all arms), the 2025 NERDC list:**
+  - English Studies, Mathematics, Intermediate Science, Digital Technologies;
+  - Social and Citizenship Studies, Nigerian History, Christian Religious Studies;
+  - Business Studies, Cultural and Creative Arts, Physical and Health Education;
+  - Yoruba, Livestock Farming.
 - **SS, every stream:** English Language, Mathematics, Civic Education, Data Processing.
 - **SS Science:** Physics, Chemistry, Biology, Agricultural Science.
 - **SS Commercial:** Economics, Commerce, Financial Accounting, Marketing.
-- **SS Art:** Literature in English, Government, CRS, History.
-- **One option block in SS1 and SS2:** Further Mathematics (Science and Commercial learners) alongside Technical Drawing. Each learner takes one.
+- **SS Art:** Literature in English, Government, Christian Religious Studies, History.
+- **One option block in SS1 and SS2:** Further Mathematics (Science and
+  Commercial learners only) alongside Geography. Each learner takes one; every
+  Art learner takes Geography.
 
 **People.**
 
@@ -127,7 +132,8 @@ learners sit and hand in.
      worksheets, reading, card decks, problem sets, practicals, and
      one-question-at-a-time quizzes with time limits.
    - Learners sit and hand in, according to their ability and diligence. Some
-     hand in late, some never. Handwritten working is used where a subject
+     never hand in. (The app records no lateness, only handed in or not, so
+     "late" is not modelled.) Handwritten working is used where a subject
      needs it.
    - Teachers mark:
      - closed questions mark themselves;
@@ -139,8 +145,9 @@ learners sit and hand in.
      2. three-level variants (advanced, developing, foundational) are set and
         assigned by group;
      3. movement between groups is tracked across the term.
-   - **Struggling learners** are identified each fortnight, per class and per
-     year group.
+   - **Struggling learners** are identified each fortnight, per class. The app
+     answers this per class only, so the year-group lists are the class lists
+     gathered by year group, and the run records that gap.
    - Announcements go out, school-wide and per class.
    - A few lesson notes are written by an admin on a teacher's behalf, and one
      is reopened, so that history shows up.
@@ -224,3 +231,11 @@ Answered by the owner on 2026-10-12.
 4. **Name and place:** Crestfield College, Ibadan.
 5. **The agent:** not used in the run. Everything goes through the app's
    actions; the owner talks to the agent inside the school afterwards.
+6. **JSS subjects:** the 2025 NERDC list as it stands in the app's library
+   (English Studies, Intermediate Science, Digital Technologies, Social and
+   Citizenship Studies, Nigerian History and Livestock Farming in place of the
+   older subject names).
+7. **Option block:** Geography beside Further Mathematics. The app has no WAEC
+   library for Technical Drawing.
+8. **Grading:** WAEC A1–F9 for the whole school. A separate JSS scale needs
+   per-year-group scales, which the app does not have yet.
