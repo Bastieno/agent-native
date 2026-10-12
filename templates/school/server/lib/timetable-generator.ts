@@ -5,6 +5,7 @@
 import {
   doubleSecondPeriod,
   roomKey,
+  schoolWeekdayName,
   timesOverlap,
   type SchoolWeek,
 } from "../../shared/school-week.js";
@@ -829,5 +830,207 @@ export function generateTimetable(
     notSet,
     noTeacher,
     elapsedMs: now() - t0,
+  };
+}
+
+// ── Saying in words why a lesson did not fit ──
+
+/** The school's own nouns, passed in; the code holds none. */
+export interface Words {
+  arm: string;
+  double: string;
+  doubles: string;
+}
+
+/** "A, B and C": names only, no ids; empty names are dropped. */
+function joinNames(names: string[]): string {
+  const list = names.map((n) => n.trim()).filter(Boolean);
+  if (list.length <= 1) return list[0] ?? "";
+  return `${list.slice(0, -1).join(", ")} and ${list[list.length - 1]}`;
+}
+
+const NUMBER_WORDS = [
+  "no",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+  "eleven",
+  "twelve",
+  "thirteen",
+  "fourteen",
+  "fifteen",
+  "sixteen",
+  "seventeen",
+  "eighteen",
+  "nineteen",
+  "twenty",
+];
+const inWords = (n: number) => NUMBER_WORDS[n] ?? String(n);
+const capital = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/** Most specific first; the first kind a unit carries gives its sentence. */
+const PRIMARY_ORDER: Blocker["kind"][] = [
+  "class-full",
+  "learners-busy",
+  "teacher-busy",
+  "block-teachers",
+  "room-busy",
+  "arm-full",
+  "no-consecutive",
+  "budget",
+];
+
+/**
+ * One plain sentence per unplaced unit, plus one sentence each for the
+ * classes with no lesson counts and the classes with no teacher. A unit can
+ * carry several blockers; the most specific kind (PRIMARY_ORDER) is the one
+ * said, and every blocker of that kind is named. Pure, and free of ids.
+ */
+export function explainUnplaced(
+  result: ReturnType<typeof generateTimetable>,
+  input: GenInput,
+  words: Words,
+): {
+  reasons: { classIds: string[]; message: string }[];
+  notSet: string[];
+  noTeacher: string[];
+} {
+  const classById = new Map(input.classes.map((c) => [c.classId, c]));
+  const nameOf = (id: string) => classById.get(id)?.className?.trim() ?? "";
+  const namesOf = (ids: string[]) => joinNames(ids.map(nameOf));
+  const day = (d: number) => schoolWeekdayName(d, input.locale);
+
+  const reasons = result.unplaced.map((u) => {
+    const teacherName = (id: string) => {
+      for (const cid of u.classIds) {
+        const n = classById.get(cid)?.teacherNames?.[id]?.trim();
+        if (n) return n;
+      }
+      for (const c of input.classes) {
+        const n = c.teacherNames?.[id]?.trim();
+        if (n) return n;
+      }
+      return "";
+    };
+    const names = namesOf(u.classIds);
+    const what = names || "a class";
+    const lead =
+      u.kind === "double"
+        ? `A ${words.double} for ${what}`
+        : `A lesson for ${what}`;
+    const rank = (b: Blocker) => PRIMARY_ORDER.indexOf(b.kind);
+    const primary = [...u.blockers].sort((a, b) => rank(a) - rank(b))[0];
+    const same = u.blockers.filter((b) => b.kind === primary?.kind);
+    let reason = "it could not be fitted in";
+
+    switch (primary?.kind) {
+      case "class-full": {
+        const own = namesOf(
+          same.flatMap((b) => (b.kind === "class-full" ? [b.classId] : [])),
+        );
+        reason = `${own || "its own"} lessons already fill every time it could go`;
+        break;
+      }
+      case "learners-busy": {
+        const b = primary;
+        const others = namesOf(b.classIds);
+        const inBlock =
+          b.classIds.length > 0 &&
+          b.classIds.every((id) => u.classIds.includes(id));
+        if (inBlock) {
+          reason =
+            b.count > 1
+              ? `${inWords(b.count)} learners are each in two of its options at once (${others}), so those options cannot share a time`
+              : `a learner is in two of its options at once (${others}), so those options cannot share a time`;
+        } else {
+          const who =
+            b.count > 0
+              ? `${capital(inWords(b.count))} ${b.count === 1 ? "learner is" : "learners are"}`
+              : "Some of its learners are";
+          reason = others
+            ? `${who} in another lesson (${others}) at every free time`
+            : `${who} in another lesson at every free time`;
+          reason = reason.charAt(0).toLowerCase() + reason.slice(1);
+        }
+        break;
+      }
+      case "teacher-busy": {
+        const parts = same.flatMap((b) => {
+          if (b.kind !== "teacher-busy") return [];
+          const who = teacherName(b.teacherId) || "a teacher";
+          const days = joinNames(b.days.map(day));
+          return [
+            `${who} is teaching at every free time${days ? ` on ${days}` : ""}`,
+          ];
+        });
+        reason = parts.join("; ");
+        break;
+      }
+      case "block-teachers": {
+        const ids = primary.teacherIds.filter((id) => teacherName(id));
+        const who = joinNames(ids.map(teacherName));
+        reason = who
+          ? `${who} ${ids.length === 1 ? "is" : "are"} teaching elsewhere at every time its ${words.arm} is free`
+          : `its teachers are teaching elsewhere at every time its ${words.arm} is free`;
+        break;
+      }
+      case "room-busy": {
+        const rooms = joinNames(
+          same.flatMap((b) => (b.kind === "room-busy" ? [b.room] : [])),
+        );
+        reason = rooms
+          ? `${rooms} is in use at every other free time`
+          : "its room is in use at every other free time";
+        break;
+      }
+      case "arm-full": {
+        const arms = joinNames(
+          primary.armIds.map((id) => input.armNames[id]?.trim() ?? ""),
+        );
+        reason = arms
+          ? `every free time is already taken for the ${words.arm} (${arms})`
+          : "it has no free time left";
+        break;
+      }
+      case "no-consecutive":
+        reason =
+          u.kind === "double"
+            ? `no two lessons in a row are free together for a ${words.double}`
+            : "no two lessons in a row are free together";
+        break;
+      case "budget":
+        reason = "time ran out before it could be tried";
+        break;
+    }
+    return {
+      classIds: [...u.classIds],
+      message: `${lead} could not be placed: ${reason}.`,
+    };
+  });
+
+  const list = (ids: string[], one: string, many: string) => {
+    const names = namesOf(ids);
+    if (!names) return [];
+    return [ids.length === 1 ? `${names} ${one}` : `${names} ${many}`];
+  };
+  return {
+    reasons,
+    notSet: list(
+      result.notSet,
+      "has no lesson counts set, so no lessons were generated for it.",
+      "have no lesson counts set, so no lessons were generated for them.",
+    ),
+    noTeacher: list(
+      result.noTeacher,
+      "has no teacher yet, so its lessons are placed without one; clashes may appear when a teacher is assigned.",
+      "have no teacher yet, so their lessons are placed without one; clashes may appear when teachers are assigned.",
+    ),
   };
 }

@@ -1560,3 +1560,185 @@ check("solver: a block's own members never appear in learners-busy", () => {
     ]);
   }
 });
+
+// ── timetable generator: saying why a lesson did not fit ──
+import {
+  explainUnplaced,
+  type Blocker,
+} from "../server/lib/timetable-generator.js";
+
+const words = { arm: "stream", double: "double", doubles: "doubles" };
+const explainIn = (
+  blockers: Blocker[],
+  over: {
+    classes?: GenClass[];
+    classIds?: string[];
+    kind?: "single" | "double";
+    locale?: string;
+    armNames?: Record<string, string>;
+  } = {},
+) => {
+  const classes = over.classes ?? [
+    genClass({
+      classId: "id-math",
+      className: "Maths 1",
+      teacherIds: ["id-t1"],
+      teacherNames: { "id-t1": "Mrs Okoro" },
+    }),
+  ];
+  const input: GenInput = {
+    week: solverWeek,
+    locale: over.locale,
+    armNames: over.armNames ?? { "id-armA": "1A" },
+    fixed: [],
+    classes,
+  };
+  const result = {
+    lessons: [],
+    unplaced: [
+      {
+        unitId: "u1",
+        classIds: over.classIds ?? ["id-math"],
+        kind: over.kind ?? ("single" as const),
+        blockers,
+      },
+    ],
+    notSet: [],
+    noTeacher: [],
+    elapsedMs: 0,
+  };
+  return explainUnplaced(result, input, words);
+};
+const msg = (blockers: Blocker[], over = {}) =>
+  explainIn(blockers, over).reasons[0].message;
+const noJunk = (m: string) =>
+  assert.ok(!/undefined|\bid-|\[object|  /.test(m) && !/(^| )[:,]/.test(m), m);
+
+check("explain: teacher-busy names class, teacher and a localised day", () => {
+  const b: Blocker[] = [
+    { kind: "teacher-busy", teacherId: "id-t1", days: [1] },
+  ];
+  const m = msg(b, { locale: "fr" });
+  assert.ok(m.includes("Maths 1") && m.includes("Mrs Okoro"), m);
+  assert.ok(m.includes("lundi"), m);
+  noJunk(m);
+});
+
+check("explain: arm-full names the arm with the school's word", () => {
+  const m = msg([{ kind: "arm-full", armIds: ["id-armA"] }]);
+  assert.ok(m.includes("1A") && m.includes("stream"), m);
+  noJunk(m);
+});
+
+check("explain: arm-full with no arms names none", () => {
+  const m = msg([{ kind: "arm-full", armIds: [] }]);
+  assert.ok(m.includes("Maths 1") && m.includes("no free time left"), m);
+  noJunk(m);
+});
+
+check("explain: no-consecutive uses the school's word for a double", () => {
+  const m = msg([{ kind: "no-consecutive", days: [1] }], { kind: "double" });
+  assert.ok(m.includes("double") && m.includes("Maths 1"), m);
+  noJunk(m);
+});
+
+check("explain: block-teachers names the teachers", () => {
+  const m = msg([{ kind: "block-teachers", teacherIds: ["id-t1"] }]);
+  assert.ok(m.includes("Mrs Okoro") && m.includes("stream"), m);
+  noJunk(m);
+});
+
+check("explain: room-busy names the room", () => {
+  const m = msg([{ kind: "room-busy", room: "Lab 2" }]);
+  assert.ok(m.includes("Lab 2") && m.includes("Maths 1"), m);
+  noJunk(m);
+});
+
+check("explain: learners-busy names the other class and the count", () => {
+  const classes = [
+    genClass({ classId: "id-math", className: "Maths 1" }),
+    genClass({ classId: "id-art", className: "Art 1" }),
+  ];
+  const m = msg([{ kind: "learners-busy", classIds: ["id-art"], count: 3 }], {
+    classes,
+  });
+  assert.ok(m.includes("Art 1") && m.includes("three learners"), m);
+  noJunk(m);
+});
+
+check("explain: learners-busy with no classes does not name any", () => {
+  const m = msg([{ kind: "learners-busy", classIds: [], count: 0 }]);
+  assert.ok(m.includes("Some of its learners"), m);
+  noJunk(m);
+});
+
+check("explain: learners-busy inside a block says two options at once", () => {
+  const classes = [
+    genClass({ classId: "id-o1", className: "French" }),
+    genClass({ classId: "id-o2", className: "Spanish" }),
+  ];
+  const m = msg(
+    [{ kind: "learners-busy", classIds: ["id-o1", "id-o2"], count: 1 }],
+    {
+      classes,
+      classIds: ["id-o1", "id-o2"],
+    },
+  );
+  assert.ok(m.includes("a learner is in two of its options at once"), m);
+  assert.ok(m.includes("French and Spanish"), m);
+  noJunk(m);
+});
+
+check("explain: class-full names the class", () => {
+  const m = msg([{ kind: "class-full", classId: "id-math" }]);
+  assert.ok(m.includes("Maths 1") && m.includes("fill every time"), m);
+  noJunk(m);
+});
+
+check("explain: budget gives a sentence", () => {
+  const m = msg([{ kind: "budget" }]);
+  assert.ok(m.includes("Maths 1") && m.includes("time ran out"), m);
+  noJunk(m);
+});
+
+check("explain: the most specific blocker gives the sentence", () => {
+  const m = msg([
+    { kind: "no-consecutive", days: [1] },
+    { kind: "teacher-busy", teacherId: "id-t1", days: [2] },
+  ]);
+  assert.ok(m.includes("Mrs Okoro") && !m.includes("in a row"), m);
+  const m2 = msg([
+    { kind: "arm-full", armIds: ["id-armA"] },
+    { kind: "learners-busy", classIds: [], count: 2 },
+  ]);
+  assert.ok(m2.includes("two learners"), m2);
+});
+
+check("explain: notSet and noTeacher sentences name the classes", () => {
+  const classes = [
+    genClass({ classId: "id-a", className: "Maths 1" }),
+    genClass({ classId: "id-b", className: "Art 1" }),
+  ];
+  const input: GenInput = {
+    week: solverWeek,
+    armNames: {},
+    fixed: [],
+    classes,
+  };
+  const out = explainUnplaced(
+    {
+      lessons: [],
+      unplaced: [],
+      notSet: ["id-a", "id-b"],
+      noTeacher: ["id-b"],
+      elapsedMs: 0,
+    },
+    input,
+    words,
+  );
+  assert.equal(out.notSet.length, 1);
+  assert.ok(out.notSet[0].includes("Maths 1 and Art 1"), out.notSet[0]);
+  assert.equal(out.noTeacher.length, 1);
+  assert.ok(out.noTeacher[0].includes("Art 1"), out.noTeacher[0]);
+  assert.ok(!out.noTeacher[0].includes("id-"));
+});
