@@ -162,11 +162,6 @@ export async function doubleWords(
   return { double, doubles: naivePlural(double) };
 }
 
-/** A word with its article: "an arm", "a house". */
-export function withArticle(word: string): string {
-  return `${/^[aeiou]/i.test(word) ? "an" : "a"} ${word}`;
-}
-
 /**
  * Refuse a form teacher who is not active staff of this school: an admin,
  * coordinator or teacher whose profile here is active.

@@ -8,8 +8,8 @@ import {
   armsInYearGroup,
   schoolWord,
   doubleWords,
-  withArticle,
 } from "../server/lib/arm-enrolment.js";
+import { withArticle } from "../shared/words.js";
 import { resolveViewTerm } from "../server/lib/timetable-view.js";
 import {
   activeClassesOfYear,

@@ -3,11 +3,8 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import {
-  armWord,
-  assertActiveStaff,
-  withArticle,
-} from "../server/lib/arm-enrolment.js";
+import { armWord, assertActiveStaff } from "../server/lib/arm-enrolment.js";
+import { withArticle } from "../shared/words.js";
 
 export default defineAction({
   description:

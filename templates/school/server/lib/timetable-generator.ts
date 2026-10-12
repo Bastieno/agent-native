@@ -9,6 +9,11 @@ import {
   timesOverlap,
   type SchoolWeek,
 } from "../../shared/school-week.js";
+import {
+  joinNames,
+  withArticle,
+  withArticleCapital,
+} from "../../shared/words.js";
 import type { ResolvedPeriod } from "./timetable-clashes.js";
 
 export interface GenSlot {
@@ -51,11 +56,22 @@ export interface GenUnit {
   blockKey: string | null; // sorted option arm ids joined, for blocks
 }
 
-function shortfall(c: GenClass): { doubles: number; singles: number } {
-  if (!c.required) return { doubles: 0, singles: 0 };
+function shortfall(c: GenClass): {
+  doubles: number;
+  singles: number;
+  droppedDoubles: number;
+} {
+  if (!c.required) return { doubles: 0, singles: 0, droppedDoubles: 0 };
   const periods = Math.max(0, c.required.periods - c.placed.periods);
-  const doubles = Math.max(0, c.required.doubles - c.placed.doubles);
-  return { doubles, singles: Math.max(0, periods - 2 * doubles) };
+  const wanted = Math.max(0, c.required.doubles - c.placed.doubles);
+  // A double the missing periods cannot hold would take the class past its
+  // count, so only as many as fit are placed.
+  const doubles = Math.min(wanted, Math.floor(periods / 2));
+  return {
+    doubles,
+    singles: periods - 2 * doubles,
+    droppedDoubles: wanted - doubles,
+  };
 }
 
 const byText = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
@@ -64,8 +80,10 @@ export function buildUnits(input: GenInput): {
   units: GenUnit[];
   notSet: string[];
   noTeacher: string[];
+  doublesAsSingles: string[];
 } {
   const notSet: string[] = [];
+  const doublesAsSingles: string[] = [];
   const groups = new Map<
     string,
     { blockKey: string | null; classes: GenClass[] }
@@ -92,6 +110,9 @@ export function buildUnits(input: GenInput): {
     const sorted = [...g.classes].sort((a, b) => byText(a.classId, b.classId));
     const key = g.blockKey ?? sorted[0].classId;
     const need = sorted.map((c) => ({ c, ...shortfall(c) }));
+    for (const n of need) {
+      if (n.droppedDoubles > 0) doublesAsSingles.push(n.c.classId);
+    }
     const doubleUnits = Math.max(0, ...need.map((n) => n.doubles));
     const maxPeriods = Math.max(
       0,
@@ -174,7 +195,8 @@ export function buildUnits(input: GenInput): {
     .map((c) => c.classId)
     .sort(byText);
   notSet.sort(byText);
-  return { units, notSet, noTeacher };
+  doublesAsSingles.sort(byText);
+  return { units, notSet, noTeacher, doublesAsSingles };
 }
 
 // ── The solver ──
@@ -365,6 +387,7 @@ export function generateTimetable(
   unplaced: UnplacedUnit[];
   notSet: string[];
   noTeacher: string[];
+  doublesAsSingles: string[];
   elapsedMs: number;
 } {
   const now = opts.now ?? Date.now;
@@ -372,7 +395,7 @@ export function generateTimetable(
   const t0 = now();
   const spent = () => now() - t0 >= budget;
 
-  const { units, notSet, noTeacher } = buildUnits(input);
+  const { units, notSet, noTeacher, doublesAsSingles } = buildUnits(input);
   const slots = buildSlots(input.week);
   const classes = new Map(input.classes.map((c) => [c.classId, c]));
   const party = new Map(
@@ -829,6 +852,7 @@ export function generateTimetable(
       })),
     notSet,
     noTeacher,
+    doublesAsSingles,
     elapsedMs: now() - t0,
   };
 }
@@ -843,22 +867,6 @@ export interface Words {
   learner: string;
   learners: string;
   teacher: string;
-}
-
-/** "A, B and C": names only, no ids; empty names are dropped. */
-function joinNames(names: string[], locale?: string): string {
-  const list = names.map((n) => n.trim()).filter(Boolean);
-  if (list.length <= 1) return list[0] ?? "";
-  // Intl.ListFormat is in every supported runtime but not in the ES2020 lib.
-  const ListFormat = (
-    Intl as unknown as {
-      ListFormat: new (
-        locale?: string,
-        options?: { type: "conjunction" },
-      ) => { format(list: string[]): string };
-    }
-  ).ListFormat;
-  return new ListFormat(locale, { type: "conjunction" }).format(list);
 }
 
 /** Most specific first; the first kind a unit carries gives its sentence. */
@@ -910,7 +918,7 @@ export function explainUnplaced(
     const what = names || "a class";
     const lead =
       u.kind === "double"
-        ? `A ${words.double} for ${what}`
+        ? `${withArticleCapital(words.double)} for ${what}`
         : `A lesson for ${what}`;
     const rank = (b: Blocker) => PRIMARY_ORDER.indexOf(b.kind);
     const primary = [...u.blockers].sort((a, b) => rank(a) - rank(b))[0];
@@ -935,7 +943,7 @@ export function explainUnplaced(
           reason =
             b.count > 1
               ? `${b.count} ${words.learners} are each in two of its options at once (${others}), so those options cannot share a time`
-              : `a ${words.learner} is in two of its options at once (${others}), so those options cannot share a time`;
+              : `${withArticle(words.learner)} is in two of its options at once (${others}), so those options cannot share a time`;
         } else {
           const who =
             b.count > 0
@@ -950,7 +958,7 @@ export function explainUnplaced(
       case "teacher-busy": {
         const parts = same.flatMap((b) => {
           if (b.kind !== "teacher-busy") return [];
-          const who = teacherName(b.teacherId) || `a ${words.teacher}`;
+          const who = teacherName(b.teacherId) || withArticle(words.teacher);
           const days = join(b.days.map(day));
           return [
             `${who} is teaching at every free time${days ? ` on ${days}` : ""}`,
@@ -989,7 +997,7 @@ export function explainUnplaced(
         // `days` only says where the unit could not be fitted as two lessons
         // in a row; it does not say why, so the sentence claims no more.
         const days = join(primary.days.map(day));
-        const need = u.kind === "double" ? `a ${words.double}` : "it";
+        const need = u.kind === "double" ? withArticle(words.double) : "it";
         reason = days
           ? `${need} needs two lessons in a row, and none could be fitted on ${days}`
           : `${need} needs two lessons in a row, and none could be fitted`;
@@ -1004,6 +1012,15 @@ export function explainUnplaced(
       message: `${lead} could not be placed: ${reason}.`,
     };
   });
+
+  // A double dropped because its lessons are already placed as single periods.
+  for (const id of result.doublesAsSingles) {
+    const name = nameOf(id) || "a class";
+    reasons.push({
+      classIds: [id],
+      message: `${withArticleCapital(words.double)} for ${name} was not added: its lessons are already placed as single periods, so another ${words.double} would go over its count. Two of them could be joined into ${withArticle(words.double)}.`,
+    });
+  }
 
   const list = (ids: string[], one: string, many: string) => {
     const names = namesOf(ids);

@@ -1627,6 +1627,7 @@ const explainIn = (
     ],
     notSet: [],
     noTeacher: [],
+    doublesAsSingles: [],
     elapsedMs: 0,
   };
   return explainUnplaced(result, input, words);
@@ -1753,6 +1754,7 @@ check("explain: notSet and noTeacher sentences name the classes", () => {
       unplaced: [],
       notSet: ["id-a", "id-b"],
       noTeacher: ["id-b"],
+      doublesAsSingles: [],
       elapsedMs: 0,
     },
     input,
@@ -1801,6 +1803,7 @@ check("explain: the school's own words replace learner and teacher", () => {
       ],
       notSet: [],
       noTeacher: ["id-math", "id-art"],
+      doublesAsSingles: [],
       elapsedMs: 0,
     },
     input,
@@ -1847,6 +1850,7 @@ check("explain: names are joined in the school's language", () => {
       unplaced: [],
       notSet: ["id-a", "id-b"],
       noTeacher: [],
+      doublesAsSingles: [],
       elapsedMs: 0,
     },
     input,
@@ -1932,4 +1936,86 @@ check("a first admin keeps the agent's view only until a school exists", () => {
   assert.equal(viewRoleFor("parent", false), null);
   // A learner whose navigation says admin is still a learner.
   assert.equal(viewRoleFor("student", true), "student");
+});
+
+// ── a double the missing periods cannot hold ──
+check(
+  "units: a class never goes past its count (5 required, 1 double + 4 singles placed)",
+  () => {
+    const c = genClass({
+      classId: "a",
+      required: { periods: 5, doubles: 2 },
+      placed: { periods: 5, doubles: 1 },
+    });
+    const out = buildUnits(genInput([c]));
+    assert.equal(out.units.length, 0);
+    assert.deepEqual(out.doublesAsSingles, ["a"]);
+  },
+);
+
+check(
+  "units: 4 required with 2 doubles and 3 singles placed ends at exactly 4",
+  () => {
+    const c = genClass({
+      classId: "a",
+      required: { periods: 4, doubles: 2 },
+      placed: { periods: 3, doubles: 0 },
+    });
+    const out = buildUnits(genInput([c]));
+    const added = out.units.reduce(
+      (n, u) => n + u.members.reduce((m, x) => m + x.periods, 0),
+      0,
+    );
+    assert.equal(3 + added, 4);
+    assert.equal(countKind(out.units, "double"), 0);
+    assert.deepEqual(out.doublesAsSingles, ["a"]);
+  },
+);
+
+check("units: a double that fits is still placed and not reported", () => {
+  const c = genClass({
+    classId: "a",
+    required: { periods: 5, doubles: 1 },
+    placed: { periods: 2, doubles: 0 },
+  });
+  const out = buildUnits(genInput([c]));
+  assert.equal(countKind(out.units, "double"), 1);
+  assert.deepEqual(out.doublesAsSingles, []);
+});
+
+check(
+  "explain: a dropped double is said in the school's word, with no ids",
+  () => {
+    const classes = [genClass({ classId: "id-a", className: "Maths 1" })];
+    const out = explainUnplaced(
+      {
+        lessons: [],
+        unplaced: [],
+        notSet: [],
+        noTeacher: [],
+        doublesAsSingles: ["id-a"],
+        elapsedMs: 0,
+      },
+      { week: solverWeek, armNames: {}, fixed: [], classes },
+      { ...words, double: "block", doubles: "blocks" },
+    );
+    assert.equal(out.reasons.length, 1);
+    const m = out.reasons[0].message;
+    assert.ok(m.includes("block") && m.includes("Maths 1"), m);
+    assert.ok(m.startsWith("A block"), m);
+    assert.ok(!/double|\bid-/.test(m), m);
+    assert.deepEqual(out.reasons[0].classIds, ["id-a"]);
+  },
+);
+
+import { withArticle, joinNames } from "../shared/words.js";
+check("words: articles and joining", () => {
+  assert.equal(withArticle("arm"), "an arm");
+  assert.equal(withArticle("house"), "a house");
+  assert.equal(
+    joinNames(["A", "B", "C"], "en"),
+    "A, B, and C".replace(", and", ", and"),
+  );
+  assert.equal(joinNames(["A", "B"], "fr"), "A et B");
+  assert.equal(joinNames([" ", "A"]), "A");
 });

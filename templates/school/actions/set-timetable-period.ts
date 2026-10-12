@@ -17,12 +17,13 @@ import {
   findTerm,
   loadSchoolConfig,
 } from "../server/lib/timetable.js";
-import { doubleWords, withArticle } from "../server/lib/arm-enrolment.js";
+import { doubleWords } from "../server/lib/arm-enrolment.js";
+import { withArticle } from "../shared/words.js";
 import { schoolLocale } from "../shared/dates.js";
 
 export default defineAction({
   description:
-    "Put a class in a day and period of a term's timetable, optionally in a room. Pass scheduleId to move an existing placement instead of adding one. Times come from the school's week. Refuses a day the school doesn't teach, a period that doesn't exist or is a break, and a room that isn't on the room list. With double: true it takes the next lesson period of that day too, as one double (refused when a break or the end of the day comes next); moving a double by either half places the double's first half at the target, and moves both, and double: false splits it back to one period. lessonLabel is the school's own name for the lesson, free text. Returns any clash the placement causes.",
+    "Put a class in a day and period of a term's timetable, optionally in a room. Pass scheduleId to move an existing placement instead of adding one. Times come from the school's week. Refuses a day the school doesn't teach, a period that doesn't exist or is a break, and a room that isn't on the room list. With double: true it takes the next lesson period of that day too, as one double (refused when a break or the end of the day comes next); moving either half of a double moves both and places the double's first half at the target; double: false splits it back to one period. lessonLabel is the school's own name for the lesson, free text. Returns any clash the placement causes.",
   schema: z.object({
     termId: z.string(),
     classId: z.string(),
