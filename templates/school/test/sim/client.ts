@@ -185,8 +185,35 @@ export class Client {
       });
     };
 
+    // A dev server under a whole school's load now and then drops a
+    // connection mid-request ("read ECONNRESET" from the Vite proxy). That
+    // says nothing about the app, so it is retried a few times rather than
+    // ending a run that has been going for twenty minutes. An action that
+    // genuinely fails answers with its own error and is never retried.
+    const transient = async (verb: Verb): Promise<Response> => {
+      for (let i = 0; ; i++) {
+        try {
+          const res = await attempt(verb);
+          if (
+            i < 4 &&
+            res.status >= 500 &&
+            /ECONNRESET|ECONNREFUSED|socket hang up|EPIPE/.test(
+              await res.clone().text(),
+            )
+          ) {
+            await new Promise((r) => setTimeout(r, 500 * 2 ** i));
+            continue;
+          }
+          return res;
+        } catch (error) {
+          if (i >= 4) throw error;
+          await new Promise((r) => setTimeout(r, 500 * 2 ** i));
+        }
+      }
+    };
+
     const known = this.verbs.get(action);
-    let res = await attempt(known ?? "POST");
+    let res = await transient(known ?? "POST");
     if (!known && res.status === 405) {
       // "Method not allowed. Use PUT." — the mount says which, so ask it
       // rather than guessing twice.
@@ -194,7 +221,7 @@ export class Client {
         await res.clone().text(),
       )?.[1] as Verb | undefined;
       const next: Verb = told ?? "GET";
-      res = await attempt(next);
+      res = await transient(next);
       this.verbs.set(action, next);
     } else if (!known) {
       this.verbs.set(action, "POST");
@@ -245,32 +272,47 @@ export class Client {
     args: Record<string, unknown>,
     record: (ok: boolean, error?: string) => void,
   ): Promise<T> {
-    const res = await fetch(`${this.baseUrl}/_agent-native/mcp`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json, text/event-stream",
-        "X-Agent-Native-Owner-Email": persona.email,
-        "x-agent-native-mcp-client": "claude-code",
-      },
-      body: JSON.stringify({
-        jsonrpc: "2.0",
-        id: 1,
-        method: "tools/call",
-        params: { name: action, arguments: args },
-      }),
-      signal: AbortSignal.timeout(120_000),
-    });
-    const text = await res.text();
-    const line = text
-      .split("\n")
-      .find((l) => l.startsWith("data:"))
-      ?.slice(5);
+    // Retried like the HTTP path when the server drops the request under
+    // load; an answer of any kind, error or not, is final.
+    let res: Response | null = null;
+    let text = "";
+    for (let i = 0; i < 5; i++) {
+      try {
+        res = await fetch(`${this.baseUrl}/_agent-native/mcp`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json, text/event-stream",
+            "X-Agent-Native-Owner-Email": persona.email,
+            "x-agent-native-mcp-client": "claude-code",
+          },
+          body: JSON.stringify({
+            jsonrpc: "2.0",
+            id: 1,
+            method: "tools/call",
+            params: { name: action, arguments: args },
+          }),
+          signal: AbortSignal.timeout(120_000),
+        });
+        text = await res.text();
+        if (res.status < 500) break;
+      } catch (error) {
+        if (i === 4) throw error;
+      }
+      await new Promise((r) => setTimeout(r, 500 * 2 ** i));
+    }
+    // The server answers as an event stream or as plain JSON; read either.
+    const line = text.trimStart().startsWith("{")
+      ? text
+      : text
+          .split("\n")
+          .find((l) => l.startsWith("data:"))
+          ?.slice(5);
     if (!line) {
-      record(false, `no MCP response (${res.status})`);
+      record(false, `no MCP response (${res?.status})`);
       throw new ActionError(
-        `${action}: no response over MCP (${res.status})`,
-        res.status,
+        `${action}: no response over MCP (${res?.status})`,
+        res?.status ?? 0,
         action,
         persona.label,
       );

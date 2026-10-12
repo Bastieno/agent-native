@@ -16,7 +16,8 @@
     "journey": "tsx test/sim/run.ts",
     "journey:school": "tsx test/sim/run-school.ts",
     "journey:compare": "tsx test/sim/compare.ts",
-    "journey:assumptions": "tsx test/sim/assumptions.ts"
+    "journey:assumptions": "tsx test/sim/assumptions.ts",
+    "showcase:school": "tsx test/sim/run-showcase.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",
