@@ -198,6 +198,7 @@ export type Blocker =
   | { kind: "no-consecutive"; days: number[] }
   | { kind: "block-teachers"; teacherIds: string[] }
   | { kind: "room-busy"; room: string }
+  | { kind: "learners-busy"; classIds: string[]; count: number }
   | { kind: "budget" };
 export interface UnplacedUnit {
   unitId: string;
@@ -231,7 +232,9 @@ interface Lesson {
   pairKey: string | null;
 }
 interface Fault {
-  arm: boolean; // arm, the class itself, or a learner is taken
+  arm: boolean; // a whole arm against something attached to it
+  self: boolean; // the class itself is already busy
+  learners: boolean; // a shared learner
   teachers: string[];
   room: boolean;
 }
@@ -282,14 +285,14 @@ class Occupancy {
     for (const l of p.learners) this.bump(`l:${l}`, d);
   }
   fault(p: Party, into: Fault) {
+    if (this.has(`c:${p.classId}`)) into.self = true;
     if (
-      this.has(`c:${p.classId}`) ||
       (p.armId !== null && this.has(`a:${p.armId}`)) ||
-      p.attached.some((a) => this.has(`w:${a}`)) ||
-      p.learners.some((l) => this.has(`l:${l}`))
+      p.attached.some((a) => this.has(`w:${a}`))
     ) {
       into.arm = true;
     }
+    if (p.learners.some((l) => this.has(`l:${l}`))) into.learners = true;
     for (const t of p.teachers) if (this.has(`t:${t}`)) into.teachers.push(t);
     if (p.room && this.has(`r:${p.room}`)) into.room = true;
   }
@@ -297,20 +300,27 @@ class Occupancy {
 
 /** The same rules between two lessons. */
 function pairFault(a: Party, b: Party, into: Fault) {
+  if (a.classId === b.classId) into.self = true;
   if (
-    a.classId === b.classId ||
     (a.armId !== null && b.attached.includes(a.armId)) ||
-    (b.armId !== null && a.attached.includes(b.armId)) ||
-    a.learners.some((l) => b.learners.includes(l))
+    (b.armId !== null && a.attached.includes(b.armId))
   ) {
     into.arm = true;
   }
+  if (a.learners.some((l) => b.learners.includes(l))) into.learners = true;
   for (const t of a.teachers) if (b.teachers.includes(t)) into.teachers.push(t);
   if (a.room && a.room === b.room) into.room = true;
 }
 
-const noFault = (): Fault => ({ arm: false, teachers: [], room: false });
-const faulty = (f: Fault) => f.arm || f.room || f.teachers.length > 0;
+const noFault = (): Fault => ({
+  arm: false,
+  self: false,
+  learners: false,
+  teachers: [],
+  room: false,
+});
+const faulty = (f: Fault) =>
+  f.arm || f.self || f.learners || f.room || f.teachers.length > 0;
 
 function buildSlots(week: SchoolWeek): Slot[] {
   const slots: Slot[] = [];
@@ -372,6 +382,7 @@ export function generateTimetable(
 
   // Fixed lessons, by time: each blocks every slot its stored times overlap.
   const fixed = slots.map(() => new Occupancy());
+  const fixedAt: Party[][] = slots.map(() => []);
   const load = new Map<string, number>(); // `${classId}:${day}` → lessons
   const loadKey = (classId: string, day: number) => `${classId}:${day}`;
   const bumpLoad = (classId: string, day: number, d: number) =>
@@ -389,6 +400,7 @@ export function generateTimetable(
     slots.forEach((s, i) => {
       if (s.day === f.day && timesOverlap(s.start, s.end, f.start, f.end)) {
         fixed[i].add(p, 1);
+        fixedAt[i].push(p);
       }
     });
     const group = f.pairId ? `${f.classId}:${f.day}:${f.pairId}` : null;
@@ -443,11 +455,19 @@ export function generateTimetable(
   const legal = (u: GenUnit, s: number, withGen = true) =>
     !faulty(faultOf(layout(u, s), withGen));
 
+  /** How much a member adds to its class's day load: a double counts once. */
+  const weight = (m: GenMember) => (m.use === "double" ? 1 : m.periods);
+
+  /**
+   * The day load a unit meets at a start, each member's load weighted by what
+   * it adds. Moving a unit to a strictly lower score lowers the sum of squared
+   * day loads, so the spread pass always ends.
+   */
   function score(u: GenUnit, s: number): number {
     const day = slots[s].day;
     let n = 0;
     for (const m of u.members) {
-      if (m.periods > 0) n += load.get(loadKey(m.classId, day)) ?? 0;
+      n += weight(m) * (load.get(loadKey(m.classId, day)) ?? 0);
     }
     return n;
   }
@@ -477,7 +497,7 @@ export function generateTimetable(
     }
     for (const m of u.members) {
       if (m.periods === 0) continue;
-      bumpLoad(m.classId, slots[s].day, m.use === "double" ? 1 : m.periods);
+      bumpLoad(m.classId, slots[s].day, weight(m));
     }
     placedAt[ui] = s;
   }
@@ -493,7 +513,7 @@ export function generateTimetable(
     }
     for (const m of u.members) {
       if (m.periods === 0) continue;
-      bumpLoad(m.classId, slots[s].day, m.use === "double" ? -1 : -m.periods);
+      bumpLoad(m.classId, slots[s].day, -weight(m));
     }
     placedAt[ui] = -1;
   }
@@ -523,6 +543,7 @@ export function generateTimetable(
     }
     options.sort((a, b) => a.blocking.length - b.blocking.length);
     for (const { s, blocking } of options) {
+      if (spent()) break;
       const was = blocking.map((b) => placedAt[b]);
       blocking.forEach(unplace);
       place(ui, s);
@@ -539,6 +560,41 @@ export function generateTimetable(
       blocking.forEach((b, i) => place(b, was[i]));
     }
     return false;
+  }
+
+  /**
+   * The other classes that hold the unit's learners at these starts, and how
+   * many of its learners they hold. A class already busy
+   * with its own lessons names itself.
+   */
+  function learnersBusy(u: GenUnit, at: number[]): Blocker {
+    const others = new Set<string>();
+    const shared = new Set<string>();
+    for (const s of at) {
+      const lessons = layout(u, s);
+      lessons.forEach((l, i) => {
+        const around = [
+          ...fixedAt[l.slot],
+          ...genAt[l.slot].map((g) => g.party),
+          ...lessons
+            .filter(
+              (o, j) => j !== i && slots[l.slot].overlaps.includes(o.slot),
+            )
+            .map((o) => o.party),
+        ];
+        for (const o of around) {
+          const mine = l.party.learners.filter((x) => o.learners.includes(x));
+          if (mine.length === 0 && o.classId !== l.party.classId) continue;
+          others.add(o.classId);
+          for (const x of mine) shared.add(x);
+        }
+      });
+    }
+    return {
+      kind: "learners-busy",
+      classIds: [...others].sort(byText),
+      count: shared.size,
+    };
   }
 
   /** Why a unit has nowhere to go, most telling reason first. */
@@ -558,20 +614,34 @@ export function generateTimetable(
       }
     }
     const faults = cands.map((s) => ({ s, f: faultOf(layout(u, s)) }));
-    const armFree = faults.filter((x) => !x.f.arm);
+    const armIds = uniq(
+      u.members
+        .filter((m) => m.periods > 0)
+        .flatMap((m) => party.get(m.classId)!.attached),
+    ).sort();
+    // A class busy with itself counts against its arm when it has one, and
+    // against its learners when it has none.
+    const armBlocked = (f: Fault) => f.arm || (f.self && armIds.length > 0);
+    const armFree = faults.filter((x) => !armBlocked(x.f));
     if (armFree.length === 0) {
-      const armIds = uniq(
-        u.members
-          .filter((m) => m.periods > 0)
-          .flatMap((m) => party.get(m.classId)!.attached),
-      ).sort();
+      // Only a unit with arms can be arm-blocked, so armIds is never empty.
       out.push({ kind: "arm-full", armIds });
       return out;
     }
-    const teacherFree = armFree.filter((x) => x.f.teachers.length === 0);
+    const learnerFree = armFree.filter((x) => !x.f.learners && !x.f.self);
+    if (learnerFree.length === 0) {
+      out.push(
+        learnersBusy(
+          u,
+          armFree.map((x) => x.s),
+        ),
+      );
+      return out;
+    }
+    const teacherFree = learnerFree.filter((x) => x.f.teachers.length === 0);
     if (teacherFree.length === 0) {
       const busy = new Map<string, Set<number>>();
-      for (const { s, f } of armFree) {
+      for (const { s, f } of learnerFree) {
         for (const t of f.teachers) {
           const set = busy.get(t) ?? new Set<number>();
           set.add(slots[s].day);
@@ -589,14 +659,14 @@ export function generateTimetable(
       }
       return out;
     }
+    // Every start left is blocked (the unit had no legal start), and only by
+    // a room, which needs a member with a room: so this names at least one.
     const rooms = uniq(
       u.members
-        .filter((m) => m.periods > 0)
-        .map((m) => classes.get(m.classId)!.room?.trim() ?? "")
-        .filter(Boolean),
+        .filter((m) => m.periods > 0 && party.get(m.classId)!.room)
+        .map((m) => classes.get(m.classId)!.room!.trim()),
     );
     for (const room of rooms) out.push({ kind: "room-busy", room });
-    if (out.length === 0) out.push({ kind: "arm-full", armIds: [] });
     return out;
   }
 

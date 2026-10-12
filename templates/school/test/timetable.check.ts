@@ -1384,3 +1384,104 @@ check("solver: ties go to the earliest day, then the earliest period", () => {
   const out = generateTimetable(input, { now: fixedNow });
   assert.deepEqual(slotsOf(out.lessons, "a"), ["1:1"]);
 });
+
+const twoPeriodDay: SchoolWeek = {
+  cycleLength: 1,
+  days: [
+    {
+      day: 1,
+      periods: [lesson(1, "08:00", "08:40"), lesson(2, "08:40", "09:20")],
+    },
+  ],
+};
+
+check("solver: an armless class blocked by learners says which classes", () => {
+  const at = (id: string, classId: string, n: number, ls: string[]) =>
+    rp(id, {
+      classId,
+      day: 1,
+      periodNumber: n,
+      start: n === 1 ? "08:00" : "08:40",
+      end: n === 1 ? "08:40" : "09:20",
+      learnerUserIds: ls,
+    });
+  const input: GenInput = {
+    week: twoPeriodDay,
+    armNames: {},
+    fixed: [
+      at("f1", "x", 1, ["L1", "L9"]),
+      at("f2", "y", 2, ["L2"]),
+      at("f3", "x", 2, ["L1"]),
+    ],
+    classes: [
+      genClass({
+        classId: "club",
+        armId: null,
+        learnerUserIds: ["L1", "L2", "L3"],
+        required: { periods: 1, doubles: 0 },
+      }),
+    ],
+  };
+  const out = generateTimetable(input, { now: fixedNow });
+  assert.deepEqual(out.unplaced[0].blockers, [
+    { kind: "learners-busy", classIds: ["x", "y"], count: 2 },
+  ]);
+});
+
+check(
+  "solver: overlapping option blocks give learners-busy, not arm-full",
+  () => {
+    const week: SchoolWeek = {
+      cycleLength: 1,
+      days: [{ day: 1, periods: [lesson(1, "08:00", "08:40")] }],
+    };
+    const input: GenInput = {
+      week,
+      armNames: {},
+      fixed: [],
+      classes: [
+        genClass({
+          classId: "o1",
+          armId: null,
+          optionArmIds: ["A", "B"],
+          teacherIds: ["t1"],
+          learnerUserIds: ["L1", "L2"],
+          required: { periods: 1, doubles: 0 },
+        }),
+        genClass({
+          classId: "o2",
+          armId: null,
+          optionArmIds: ["A", "C"],
+          teacherIds: ["t2"],
+          learnerUserIds: ["L1"],
+          required: { periods: 1, doubles: 0 },
+        }),
+      ],
+    };
+    const out = generateTimetable(input, { now: fixedNow });
+    assert.equal(out.unplaced.length, 1);
+    assert.deepEqual(out.unplaced[0].blockers, [
+      { kind: "learners-busy", classIds: ["o1"], count: 1 },
+    ]);
+  },
+);
+
+check("solver: arm-full always names its arms", () => {
+  let t = 0;
+  const now = () => (t += 1);
+  const classes = Array.from({ length: 8 }, (_, i) =>
+    genClass({
+      classId: `c${i}`,
+      armId: "A",
+      teacherIds: [`t${i}`],
+      learnerUserIds: ["L"],
+      required: { periods: 7, doubles: 1 },
+    }),
+  );
+  const out = generateTimetable(solverIn(classes), { now, budgetMs: 100000 });
+  const full = out.unplaced.flatMap((u) =>
+    u.blockers.filter((b) => b.kind === "arm-full"),
+  );
+  assert.ok(full.length > 0);
+  assert.ok(full.every((b) => b.kind === "arm-full" && b.armIds.length > 0));
+});
