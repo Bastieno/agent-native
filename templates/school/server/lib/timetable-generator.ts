@@ -199,6 +199,7 @@ export type Blocker =
   | { kind: "block-teachers"; teacherIds: string[] }
   | { kind: "room-busy"; room: string }
   | { kind: "learners-busy"; classIds: string[]; count: number }
+  | { kind: "class-full"; classId: string }
   | { kind: "budget" };
 export interface UnplacedUnit {
   unitId: string;
@@ -563,41 +564,74 @@ export function generateTimetable(
   }
 
   /**
-   * The other classes that hold the unit's learners at these starts, and how
-   * many of its learners they hold. A class already busy
-   * with its own lessons names itself.
+   * What blocks a unit at one start, by source. `outside` is every fault from
+   * a class outside the unit, plus teacher and room faults between its own
+   * members (a block's teachers). `learnerClasses` and `learners` are the
+   * outside classes sharing its learners and the learners shared. `own` is
+   * the unit's classes already busy there with their own lessons, and
+   * `sibling` the members sharing a learner with each other.
    */
-  function learnersBusy(u: GenUnit, at: number[]): Blocker {
-    const others = new Set<string>();
-    const shared = new Set<string>();
-    for (const s of at) {
-      const lessons = layout(u, s);
-      lessons.forEach((l, i) => {
-        const around = [
-          ...fixedAt[l.slot],
-          ...genAt[l.slot].map((g) => g.party),
-          ...lessons
-            .filter(
-              (o, j) => j !== i && slots[l.slot].overlaps.includes(o.slot),
-            )
-            .map((o) => o.party),
-        ];
-        for (const o of around) {
-          const mine = l.party.learners.filter((x) => o.learners.includes(x));
-          if (mine.length === 0 && o.classId !== l.party.classId) continue;
-          others.add(o.classId);
-          for (const x of mine) shared.add(x);
+  function blockersAt(u: GenUnit, s: number) {
+    const members = new Set(u.members.map((m) => m.classId));
+    const outside = noFault();
+    const learnerClasses = new Set<string>();
+    const learners = new Set<string>();
+    const own = new Set<string>();
+    const sibling = new Set<string>();
+    const siblingLearners = new Set<string>();
+    const lessons = layout(u, s);
+    lessons.forEach((l, i) => {
+      const around = [...fixedAt[l.slot], ...genAt[l.slot].map((g) => g.party)];
+      for (const o of around) {
+        if (members.has(o.classId)) {
+          // The unit's own lessons still hold its arm: a whole-arm class whose
+          // arm is filled by its own lessons is arm-full, not class-full.
+          const f = noFault();
+          pairFault(l.party, o, f);
+          if (f.arm) outside.arm = true;
+          else if (o.classId === l.party.classId) own.add(o.classId);
+          continue;
         }
-      });
-    }
+        pairFault(l.party, o, outside);
+        const mine = l.party.learners.filter((x) => o.learners.includes(x));
+        if (mine.length === 0) continue;
+        learnerClasses.add(o.classId);
+        for (const x of mine) learners.add(x);
+      }
+      for (let j = i + 1; j < lessons.length; j++) {
+        const o = lessons[j];
+        if (o.party.classId === l.party.classId) continue;
+        if (!slots[l.slot].overlaps.includes(o.slot)) continue;
+        const f = noFault();
+        pairFault(l.party, o.party, f);
+        outside.teachers.push(...f.teachers);
+        if (f.room) outside.room = true;
+        if (f.learners) {
+          sibling.add(l.party.classId);
+          sibling.add(o.party.classId);
+          for (const x of l.party.learners) {
+            if (o.party.learners.includes(x)) siblingLearners.add(x);
+          }
+        }
+      }
+    });
+    outside.teachers = uniq(outside.teachers);
     return {
-      kind: "learners-busy",
-      classIds: [...others].sort(byText),
-      count: shared.size,
+      s,
+      outside,
+      learnerClasses,
+      learners,
+      own,
+      sibling,
+      siblingLearners,
     };
   }
 
-  /** Why a unit has nowhere to go, most telling reason first. */
+  /**
+   * Why a unit has nowhere to go, most telling reason first. Starts are
+   * sifted arm, learners, teacher, room, then the unit's own lessons: the
+   * first reason that blocks every start still left is the one given.
+   */
   function explain(u: GenUnit): Blocker[] {
     const out: Blocker[] = [];
     const days = uniq(slots.map((s) => s.day));
@@ -613,36 +647,45 @@ export function generateTimetable(
         out.push({ kind: "no-consecutive", days: singleFits });
       }
     }
-    const faults = cands.map((s) => ({ s, f: faultOf(layout(u, s)) }));
-    const armIds = uniq(
-      u.members
-        .filter((m) => m.periods > 0)
-        .flatMap((m) => party.get(m.classId)!.attached),
-    ).sort();
-    // A class busy with itself counts against its arm when it has one, and
-    // against its learners when it has none.
-    const armBlocked = (f: Fault) => f.arm || (f.self && armIds.length > 0);
-    const armFree = faults.filter((x) => !armBlocked(x.f));
-    if (armFree.length === 0) {
-      // Only a unit with arms can be arm-blocked, so armIds is never empty.
+    let rest = cands.map((s) => blockersAt(u, s));
+    type At = (typeof rest)[number];
+    /** True when `has` blocks every start left; else drops those it blocks. */
+    const sift = (has: (x: At) => boolean) => {
+      if (rest.every(has)) return true;
+      rest = rest.filter((x) => !has(x));
+      return false;
+    };
+
+    // Only a unit with arms can be arm-blocked, so armIds is never empty.
+    if (sift((x) => x.outside.arm)) {
+      const armIds = uniq(
+        u.members
+          .filter((m) => m.periods > 0)
+          .flatMap((m) => party.get(m.classId)!.attached),
+      ).sort();
       out.push({ kind: "arm-full", armIds });
       return out;
     }
-    const learnerFree = armFree.filter((x) => !x.f.learners && !x.f.self);
-    if (learnerFree.length === 0) {
-      out.push(
-        learnersBusy(
-          u,
-          armFree.map((x) => x.s),
-        ),
-      );
+    // An outside learner fault always comes with the class that holds them.
+    if (sift((x) => x.learnerClasses.size > 0)) {
+      const classIds = new Set<string>();
+      const learners = new Set<string>();
+      for (const x of rest) {
+        x.learnerClasses.forEach((c) => classIds.add(c));
+        x.learners.forEach((l) => learners.add(l));
+      }
+      out.push({
+        kind: "learners-busy",
+        classIds: [...classIds].sort(byText),
+        count: learners.size,
+      });
       return out;
     }
-    const teacherFree = learnerFree.filter((x) => x.f.teachers.length === 0);
-    if (teacherFree.length === 0) {
+    const teacherRest = rest;
+    if (sift((x) => x.outside.teachers.length > 0)) {
       const busy = new Map<string, Set<number>>();
-      for (const { s, f } of learnerFree) {
-        for (const t of f.teachers) {
+      for (const { s, outside } of teacherRest) {
+        for (const t of outside.teachers) {
           const set = busy.get(t) ?? new Set<number>();
           set.add(slots[s].day);
           busy.set(t, set);
@@ -659,14 +702,37 @@ export function generateTimetable(
       }
       return out;
     }
-    // Every start left is blocked (the unit had no legal start), and only by
-    // a room, which needs a member with a room: so this names at least one.
-    const rooms = uniq(
-      u.members
-        .filter((m) => m.periods > 0 && party.get(m.classId)!.room)
-        .map((m) => classes.get(m.classId)!.room!.trim()),
-    );
-    for (const room of rooms) out.push({ kind: "room-busy", room });
+    // A room fault needs a member with a room, so this names at least one.
+    if (sift((x) => x.outside.room)) {
+      const rooms = uniq(
+        u.members
+          .filter((m) => m.periods > 0 && party.get(m.classId)!.room)
+          .map((m) => classes.get(m.classId)!.room!.trim()),
+      );
+      for (const room of rooms) out.push({ kind: "room-busy", room });
+      return out;
+    }
+    if (sift((x) => x.own.size > 0)) {
+      const own = new Set<string>();
+      for (const x of rest) x.own.forEach((c) => own.add(c));
+      for (const classId of [...own].sort(byText)) {
+        out.push({ kind: "class-full", classId });
+      }
+      return out;
+    }
+    // What is left can only be members of one unit sharing a learner, which
+    // no slot can fix: name them, as that is the true reason.
+    const sibling = new Set<string>();
+    const shared = new Set<string>();
+    for (const x of rest) {
+      x.sibling.forEach((c) => sibling.add(c));
+      x.siblingLearners.forEach((l) => shared.add(l));
+    }
+    out.push({
+      kind: "learners-busy",
+      classIds: [...sibling].sort(byText),
+      count: shared.size,
+    });
     return out;
   }
 

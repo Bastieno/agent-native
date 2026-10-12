@@ -1485,3 +1485,78 @@ check("solver: arm-full always names its arms", () => {
   assert.ok(full.length > 0);
   assert.ok(full.every((b) => b.kind === "arm-full" && b.armIds.length > 0));
 });
+
+const inTwoPeriodDay = (
+  id: string,
+  classId: string,
+  n: number,
+  over: Partial<ResolvedPeriod> = {},
+) =>
+  rp(id, {
+    classId,
+    day: 1,
+    periodNumber: n,
+    start: n === 1 ? "08:00" : "08:40",
+    end: n === 1 ? "08:40" : "09:20",
+    ...over,
+  });
+
+check("solver: a class blocked only by its own lessons is class-full", () => {
+  const own = {
+    learnerUserIds: ["L1"],
+    teachers: [{ userId: "t1", name: "T" }],
+  };
+  const input: GenInput = {
+    week: twoPeriodDay,
+    armNames: {},
+    fixed: [
+      inTwoPeriodDay("f1", "club", 1, own),
+      inTwoPeriodDay("f2", "club", 2, own),
+    ],
+    classes: [
+      genClass({
+        classId: "club",
+        armId: null,
+        teacherIds: ["t1"],
+        learnerUserIds: ["L1"],
+        placed: { periods: 2, doubles: 0 },
+        required: { periods: 3, doubles: 0 },
+      }),
+    ],
+  };
+  const out = generateTimetable(input, { now: fixedNow });
+  assert.deepEqual(out.unplaced[0].blockers, [
+    { kind: "class-full", classId: "club" },
+  ]);
+});
+
+check("solver: a block's own members never appear in learners-busy", () => {
+  const member = (id: string, l: string, t: string) =>
+    genClass({
+      classId: id,
+      armId: null,
+      optionArmIds: ["A", "B"],
+      teacherIds: [t],
+      learnerUserIds: [l],
+      required: { periods: 3, doubles: 0 },
+    });
+  const input: GenInput = {
+    week: twoPeriodDay,
+    armNames: {},
+    fixed: [inTwoPeriodDay("f", "x", 2, { learnerUserIds: ["L1"] })],
+    classes: [member("o1", "L1", "t1"), member("o2", "L2", "t2")],
+  };
+  const out = generateTimetable(input, { now: fixedNow });
+  assert.equal(out.unplaced.length, 2);
+  for (const u of out.unplaced) {
+    for (const b of u.blockers) {
+      if (b.kind === "learners-busy") {
+        assert.ok(!b.classIds.includes("o1") && !b.classIds.includes("o2"));
+      }
+    }
+    assert.deepEqual(u.blockers, [
+      { kind: "class-full", classId: "o1" },
+      { kind: "class-full", classId: "o2" },
+    ]);
+  }
+});
