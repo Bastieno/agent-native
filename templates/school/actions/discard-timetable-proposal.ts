@@ -23,7 +23,12 @@ export default defineAction({
     if (row.status !== "open") {
       throw new Error("That draft isn't waiting any more.");
     }
-    await db.update(P).set({ status: "discarded" }).where(eq(P.id, row.id));
+    await db
+      .update(P)
+      .set({ status: "discarded" })
+      .where(
+        and(eq(P.id, row.id), eq(P.schoolId, orgId), eq(P.status, "open")),
+      );
     return { discarded: true, message: "The draft is thrown away." };
   },
 });

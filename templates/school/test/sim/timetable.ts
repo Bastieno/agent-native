@@ -2177,6 +2177,26 @@ export async function checkGeneration(
     `after accepting, ${shortClasses.length} classes are still short, all explained`,
   );
 
+  // Accepted lessons follow their class's room rather than freezing one.
+  const roomClass = after.periods.find(
+    (p: any) => p.scheduleId !== hand.scheduleId,
+  )?.classId;
+  if (roomClass) {
+    await client.as(admin, "update-class", {
+      id: roomClass,
+      roomNumber: "Generated Room",
+    });
+    const moved = (await timetable()).periods.filter(
+      (p: any) => p.classId === roomClass && p.scheduleId !== hand.scheduleId,
+    );
+    findings.expect(
+      phase,
+      moved.length > 0 && moved.every((p: any) => p.room === "Generated Room"),
+      "accepted lessons show the class's room after it is changed",
+      JSON.stringify(moved.map((p: any) => p.room)),
+    );
+  }
+
   // 5. A lesson removed after drafting makes the draft stale.
   const generated = after.periods.filter(
     (p: any) => p.scheduleId !== hand.scheduleId,

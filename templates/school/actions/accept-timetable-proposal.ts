@@ -11,6 +11,7 @@ import {
   loadSchoolConfig,
 } from "../server/lib/timetable.js";
 import {
+  PROPOSAL_STALE,
   staleReason,
   termFingerprint,
 } from "../server/lib/timetable-generation.js";
@@ -38,64 +39,109 @@ export default defineAction({
     const term = await findTerm(orgId, row.termId);
     if (!term) throw new Error("That term is not in this school.");
 
-    const lessons: ProposedLesson[] = JSON.parse(row.lessonsJson);
-    const classIds = [...new Set(lessons.map((l) => l.classId))];
-    const live = classIds.length
-      ? await db
-          .select({ id: schema.classes.id })
-          .from(schema.classes)
-          .where(
-            and(
-              eq(schema.classes.orgId, orgId),
-              eq(schema.classes.status, "active"),
-              inArray(schema.classes.id, classIds),
-            ),
-          )
-      : [];
-    const stale = staleReason(
-      { baseFingerprint: row.baseFingerprint, classIds },
-      live.map((c: any) => c.id as string),
-      await termFingerprint(orgId, row.termId),
-    );
-    if (stale) throw new Error(stale);
-
-    const config = await loadSchoolConfig(orgId);
-    if (!config.schoolWeek) {
-      throw new Error(
-        "The school hasn't set its week yet, so there are no periods to place lessons in. Set it in Settings → School week.",
-      );
+    // Claim it first, so two accepts at once cannot both add the lessons.
+    const claimed = await db
+      .update(P)
+      .set({ status: "accepted" })
+      .where(and(eq(P.id, row.id), eq(P.schoolId, orgId), eq(P.status, "open")))
+      .returning({ id: P.id });
+    if (claimed.length !== 1) {
+      throw new Error("This proposal has already been accepted or discarded.");
     }
-    if (lessons.length > 0) await assertTermCanTakeRow(orgId, term);
 
-    // A fresh pair id per double, shared by its two rows.
+    let rows: any[] = [];
     const pairs = new Map<string, string>();
-    const pairFor = (key: string | null) => {
-      if (!key) return null;
-      if (!pairs.has(key)) pairs.set(key, nanoid());
-      return pairs.get(key)!;
-    };
-    const rows = lessons.map((l) => {
-      const slot = findPeriod(config.schoolWeek, l.day, l.periodNumber);
-      const fromWeek = slot && slot.kind === "lesson" ? slot : null;
-      return {
-        id: nanoid(),
-        classId: l.classId,
-        schoolId: orgId,
-        termId: row.termId,
-        dayOfWeek: l.day,
-        periodNumber: l.periodNumber,
-        startTime: fromWeek ? fromWeek.start : l.start,
-        endTime: fromWeek ? fromWeek.end : l.end,
-        room: l.room,
-        pairId: pairFor(l.pairKey),
-        ownerEmail: userEmail ?? "",
-        orgId,
-        visibility: "org" as const,
+    try {
+      const lessons: ProposedLesson[] = JSON.parse(row.lessonsJson);
+      const classIds = [...new Set(lessons.map((l) => l.classId))];
+      const live = classIds.length
+        ? await db
+            .select({
+              id: schema.classes.id,
+              roomNumber: schema.classes.roomNumber,
+              armId: schema.classes.armId,
+            })
+            .from(schema.classes)
+            .where(
+              and(
+                eq(schema.classes.orgId, orgId),
+                eq(schema.classes.status, "active"),
+                inArray(schema.classes.id, classIds),
+              ),
+            )
+        : [];
+      const stale = staleReason(
+        { baseFingerprint: row.baseFingerprint, classIds },
+        live.map((c: any) => c.id as string),
+        await termFingerprint(orgId, row.termId),
+      );
+      if (stale) throw new Error(stale);
+
+      const config = await loadSchoolConfig(orgId);
+      if (!config.schoolWeek) {
+        throw new Error(
+          "The school hasn't set its week yet, so there are no periods to place lessons in. Set it in Settings → School week.",
+        );
+      }
+      if (lessons.length > 0) await assertTermCanTakeRow(orgId, term);
+
+      // A room is written only when it differs from the class's own (or its
+      // arm's home room), so a later change to either still carries through.
+      const homeRoom = new Map(
+        (
+          await db
+            .select({ id: schema.arms.id, homeRoom: schema.arms.homeRoom })
+            .from(schema.arms)
+            .where(eq(schema.arms.schoolId, orgId))
+        ).map((a: any) => [
+          a.id as string,
+          (a.homeRoom ?? null) as string | null,
+        ]),
+      );
+      const defaultRoom = new Map(
+        live.map((c: any) => [
+          c.id as string,
+          (c.roomNumber ?? (c.armId ? homeRoom.get(c.armId) : null) ?? null) as
+            | string
+            | null,
+        ]),
+      );
+
+      // A fresh pair id per double, shared by its two rows.
+      const pairFor = (key: string | null) => {
+        if (!key) return null;
+        if (!pairs.has(key)) pairs.set(key, nanoid());
+        return pairs.get(key)!;
       };
-    });
-    // One insert, so a failure leaves the term with none of it.
-    if (rows.length > 0) await db.insert(schema.classSchedules).values(rows);
-    await db.update(P).set({ status: "accepted" }).where(eq(P.id, row.id));
+      rows = lessons.map((l) => {
+        const slot = findPeriod(config.schoolWeek, l.day, l.periodNumber);
+        // The week moved on since the draft: its slot is not a lesson now.
+        if (!slot || slot.kind !== "lesson") throw new Error(PROPOSAL_STALE);
+        return {
+          id: nanoid(),
+          classId: l.classId,
+          schoolId: orgId,
+          termId: row.termId,
+          dayOfWeek: l.day,
+          periodNumber: l.periodNumber,
+          startTime: slot.start,
+          endTime: slot.end,
+          room: l.room && l.room === defaultRoom.get(l.classId) ? null : l.room,
+          pairId: pairFor(l.pairKey),
+          ownerEmail: userEmail ?? "",
+          orgId,
+          visibility: "org" as const,
+        };
+      });
+      // One insert, so a failure leaves the term with none of it.
+      if (rows.length > 0) await db.insert(schema.classSchedules).values(rows);
+    } catch (error) {
+      await db
+        .update(P)
+        .set({ status: "open" })
+        .where(and(eq(P.id, row.id), eq(P.schoolId, orgId)));
+      throw error;
+    }
 
     const doubles = pairs.size;
     return {

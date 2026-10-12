@@ -56,7 +56,7 @@ export default defineAction({
           elapsedMs: summary.elapsedMs ?? 0,
         },
       },
-      message: `${lessons.length} lesson(s) drafted for ${term.name}, waiting to be accepted.`,
+      message: `${lessons.length} ${lessons.length === 1 ? "lesson is" : "lessons are"} drafted for ${term.name}, waiting to be accepted.`,
     };
   },
 });
