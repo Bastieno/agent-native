@@ -12,7 +12,7 @@ import {
   type WeekPeriod,
 } from "@shared/school-week";
 import { gridSpans } from "@shared/timetable-grid";
-import type { Clash, ResolvedPeriod } from "./use-timetable";
+import { isProposed, type Clash, type ResolvedPeriod } from "./use-timetable";
 
 interface Row {
   number: number;
@@ -54,7 +54,8 @@ function rowsOf(week: SchoolWeek): Row[] {
 export function TimetableGrid({
   week,
   dayNames,
-  periods,
+  periods: placed,
+  proposed = [],
   clashes,
   selected,
   renderCell,
@@ -62,6 +63,8 @@ export function TimetableGrid({
   week: SchoolWeek;
   dayNames: Record<number, string>;
   periods: ResolvedPeriod[];
+  /** Drafted lessons, drawn dashed beside the real ones and never editable. */
+  proposed?: ResolvedPeriod[];
   clashes: Clash[];
   selected?: { day: number; periodNumber: number } | null;
   /** Wraps an editable lesson cell (e.g. in its editor). Omit for read-only. */
@@ -77,6 +80,7 @@ export function TimetableGrid({
     [week],
   );
   const rows = useMemo(() => rowsOf(week), [week]);
+  const periods = useMemo(() => [...placed, ...proposed], [placed, proposed]);
   const { bySlot, partnerOf, spans } = useMemo(() => {
     // Doubles drawn as one tall cell; the rule lives in gridSpans.
     const { hidden, partnerOf, spans } = gridSpans(
@@ -236,14 +240,23 @@ function Cell({
     .filter((c) => c.scheduleIds.some((id) => ids.has(id)))
     .map((c) => c.message);
   const clashing = messages.length > 0;
-  const editable = !!renderCell;
+  // Only drafted lessons here: nothing to open an editor on.
+  const draftOnly =
+    entries.length > 0 && entries.every((e) => isProposed(e.scheduleId));
+  const editable = !!renderCell && !draftOnly;
 
   const body = (
     <div className={cn("flex gap-1", tall && "min-h-[7rem]")}>
       {entries.map((e) => (
         <div
           key={e.scheduleId}
-          className="min-w-0 flex-1 rounded bg-primary/10 px-1.5 py-1"
+          data-proposed={isProposed(e.scheduleId) ? "true" : undefined}
+          className={cn(
+            "min-w-0 flex-1 rounded px-1.5 py-1",
+            isProposed(e.scheduleId)
+              ? "border border-dashed border-primary/60 bg-primary/5"
+              : "bg-primary/10",
+          )}
         >
           <span className="block truncate text-xs font-medium">
             {e.className}
@@ -291,7 +304,15 @@ function Cell({
   // The hover card's trigger sits inside the editor's, so both reach the
   // same element: hover explains the clash, click opens the editor.
   if (clashing) cell = <HoverCardTrigger asChild>{cell}</HoverCardTrigger>;
-  const wrapped = renderCell ? renderCell(day, number, entries, cell) : cell;
+  // The editor sees only the real lessons of the cell.
+  const wrapped = editable
+    ? renderCell!(
+        day,
+        number,
+        entries.filter((e) => !isProposed(e.scheduleId)),
+        cell,
+      )
+    : cell;
   if (!clashing) return <>{wrapped}</>;
   return (
     <HoverCard openDelay={150}>

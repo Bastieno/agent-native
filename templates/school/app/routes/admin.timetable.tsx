@@ -18,13 +18,19 @@ import {
 } from "@/components/ui/select";
 import { ListState } from "@/components/ListState";
 import { CopyTimetableAction } from "@/components/timetable/CopyTimetableAction";
+import {
+  GenerateButton,
+  ProposalBar,
+} from "@/components/timetable/ProposalBar";
 import { OffBellsList } from "@/components/timetable/OffBellsList";
 import { PeriodCellPopover } from "@/components/timetable/PeriodCellPopover";
 import { TimetableGrid } from "@/components/timetable/TimetableGrid";
 import { useArms, useArmWord } from "@/components/timetable/arms-shared";
 import {
   getAction,
+  proposedRows,
   useCoverage,
+  useProposal,
   useTimetable,
   useTimetableEdits,
   type ClassOption,
@@ -135,6 +141,17 @@ export default function AdminTimetable() {
     isFetching,
   } = useTimetable(filter, !termLoading);
   const { place, remove } = useTimetableEdits(filter);
+  const { data: proposal = null } = useProposal(termId, !termLoading);
+  const proposed = useMemo(
+    () =>
+      proposedRows(
+        proposal,
+        filter,
+        (a, b) => a != null && roomKey(a) === roomKey(b),
+      ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [proposal, termId, armId, teacherUserId, room, view],
+  );
   const { data: coverage } = useCoverage(filter, !termLoading);
   // Placed comes from the grid itself, so a lesson placed or removed moves
   // the counts on the click, ahead of the coverage refetch.
@@ -185,7 +202,9 @@ export default function AdminTimetable() {
   // get-timetable. Never probed with copy-timetable: that is a write, and
   // every write makes every page refetch, which would probe again.
   const copyFrom =
-    tt?.termEmpty && blankTermId !== termId ? tt.previousTerm : null;
+    tt?.termEmpty && blankTermId !== termId && !proposal
+      ? tt.previousTerm
+      : null;
 
   useEffect(() => {
     sync({
@@ -295,6 +314,9 @@ export default function AdminTimetable() {
             ))}
           </SelectContent>
         </Select>
+      ) : null}
+      {tt?.week && tt.term && !readOnly && termId ? (
+        <GenerateButton termId={termId} />
       ) : null}
       {clashes.length > 0 ? (
         <Popover>
@@ -434,8 +456,12 @@ export default function AdminTimetable() {
             />
           </div>
         ) : null}
+        {proposal && termId ? (
+          <ProposalBar termId={termId} proposal={proposal} />
+        ) : null}
         <TimetableGrid
           week={week}
+          proposed={proposed}
           dayNames={tt.dayNames}
           periods={tt.periods}
           clashes={clashes}

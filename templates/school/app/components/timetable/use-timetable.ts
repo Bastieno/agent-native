@@ -41,6 +41,32 @@ export interface CoverageReply {
   message: string;
 }
 
+/** A lesson of the drafted timetable, as `get-timetable-proposal` returns it. */
+export interface ProposedLessonRow {
+  classId: string;
+  className: string;
+  subjectName: string;
+  armId: string | null;
+  optionArmIds: string[];
+  teachers: { userId: string; name: string }[];
+  day: number;
+  periodNumber: number;
+  start: string;
+  end: string;
+  room: string | null;
+  pairKey: string | null;
+}
+
+export interface Proposal {
+  id: string;
+  createdAt: string;
+  lessons: ProposedLessonRow[];
+  reasons: { classIds: string[]; message: string }[];
+  notSet: string[];
+  noTeacher: string[];
+  summary: { lessons: number; notFitted: number; elapsedMs: number };
+}
+
 export interface TimetableFilter {
   termId?: string;
   armId?: string;
@@ -122,6 +148,74 @@ export function useCoverage(filter: TimetableFilter, enabled: boolean) {
     enabled: enabled && filter.room === undefined,
     retry: false,
   });
+}
+
+/**
+ * The draft waiting for the term, or null. A GET action, keyed under the
+ * term's own ["timetable", termId] prefix so generating, accepting or
+ * discarding refreshes it with the grid.
+ */
+export function useProposal(termId: string | undefined, enabled: boolean) {
+  return useQuery<Proposal | null>({
+    queryKey: ["timetable", termId ?? null, "proposal"],
+    queryFn: async () =>
+      (
+        await getAction<{ proposal: Proposal | null }>(
+          "get-timetable-proposal",
+          { termId },
+        )
+      ).proposal,
+    enabled: enabled && !!termId,
+    retry: false,
+  });
+}
+
+export const PROPOSED_PREFIX = "proposal:";
+export const isProposed = (scheduleId: string) =>
+  scheduleId.startsWith(PROPOSED_PREFIX);
+
+/**
+ * The draft's lessons for what is in view, shaped as grid rows so the grid
+ * draws them (and their doubles) as it does real ones. Ids are prefixed, so
+ * they can never be mistaken for a placement.
+ */
+export function proposedRows(
+  proposal: Proposal | null | undefined,
+  filter: TimetableFilter,
+  roomMatches: (a: string | null, b: string) => boolean,
+): ResolvedPeriod[] {
+  if (!proposal || !filter.termId) return [];
+  return proposal.lessons
+    .map(
+      (l, i): ResolvedPeriod => ({
+        scheduleId: `${PROPOSED_PREFIX}${i}`,
+        classId: l.classId,
+        className: l.className,
+        subjectName: l.subjectName,
+        termId: filter.termId!,
+        day: l.day,
+        periodNumber: l.periodNumber,
+        start: l.start,
+        end: l.end,
+        room: l.room,
+        teachers: l.teachers,
+        armId: l.armId,
+        optionArmIds: l.optionArmIds,
+        learnerUserIds: [],
+        pairId: l.pairKey ? `${PROPOSED_PREFIX}${l.pairKey}` : null,
+        lessonLabel: null,
+      }),
+    )
+    .filter((p) => {
+      if (filter.armId)
+        return (
+          p.armId === filter.armId || p.optionArmIds.includes(filter.armId)
+        );
+      if (filter.teacherUserId)
+        return p.teachers.some((t) => t.userId === filter.teacherUserId);
+      if (filter.room !== undefined) return roomMatches(p.room, filter.room);
+      return true;
+    });
 }
 
 export interface PlaceInput {

@@ -14,6 +14,7 @@ import { schoolToday } from "../shared/dates.js";
 import { joinDoubles } from "../shared/school-week.js";
 import { getMyWeek } from "../server/lib/my-week.js";
 import { timetableView } from "../server/lib/timetable-view.js";
+import getTimetableProposal from "./get-timetable-proposal.js";
 import { coverageView } from "../server/lib/timetable-coverage.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 
@@ -146,6 +147,19 @@ export default defineAction({
                 nav.timetableView === "teacher" ? nav.teacherUserId : undefined,
             });
           }
+          // The draft waiting for this term, as the bar over the grid shows it.
+          const drafted = nav.termId
+            ? ((await getTimetableProposal.run({ termId: nav.termId })) as any)
+                .proposal
+            : null;
+          screen.proposal = drafted
+            ? {
+                summary: drafted.summary,
+                reasons: drafted.reasons,
+                notSet: drafted.notSet,
+                noTeacher: drafted.noTeacher,
+              }
+            : null;
           screen.selectedCell = nav.selectedCell ?? null;
           if (nav.selectedCell) {
             screen.selectedCellPeriods = shown.periods
