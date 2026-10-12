@@ -5,9 +5,11 @@ import { nanoid } from "nanoid";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
 import { doubleWords } from "../server/lib/arm-enrolment.js";
+import { withArticle } from "../shared/words.js";
 import { findPeriod } from "../shared/school-week.js";
 import {
   assertTermCanTakeRow,
+  clashesForTerm,
   findTerm,
   loadSchoolConfig,
 } from "../server/lib/timetable.js";
@@ -146,14 +148,27 @@ export default defineAction({
 
     const doubles = pairs.size;
     const dw = await doubleWords(orgId);
+    // Say what is clashing now, as set-timetable-period does; nothing is refused.
+    const ids = new Set(rows.map((r) => r.id));
+    const { clashes: all } =
+      rows.length > 0
+        ? await clashesForTerm(orgId, term.id)
+        : { clashes: [] as { scheduleIds: string[]; message: string }[] };
+    const clashes = all.filter((c) => c.scheduleIds.some((id) => ids.has(id)));
+    const added =
+      rows.length === 0
+        ? `The draft had no lessons to add to ${term.name}; it is closed.`
+        : `Added ${rows.length} ${rows.length === 1 ? "lesson" : "lessons"} to ${term.name}${doubles ? `, ${doubles} of them as ${doubles === 1 ? withArticle(dw.double) : dw.doubles}` : ""}.`;
     return {
       accepted: true,
       lessons: rows.length,
       doubles,
-      message:
-        rows.length === 0
-          ? `The draft had no lessons to add to ${term.name}; it is closed.`
-          : `Added ${rows.length} ${rows.length === 1 ? "lesson" : "lessons"} to ${term.name}${doubles ? `, ${doubles} of them as ${doubles === 1 ? `a ${dw.double}` : dw.doubles}` : ""}.`,
+      clashes,
+      message: clashes.length
+        ? `${added} This causes ${clashes.length} clash(es): ${clashes
+            .map((c) => c.message)
+            .join(" ")}`
+        : added,
     };
   },
 });

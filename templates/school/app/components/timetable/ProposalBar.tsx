@@ -44,6 +44,7 @@ export function GenerateButton({ termId }: { termId: string }) {
       }
       setAsk(null);
       toast.success(r.message);
+      if (!r.proposalId) return; // nothing was drafted, so no bar to show
       qc.invalidateQueries({ queryKey: ["timetable", termId] });
     } catch (e: any) {
       setAsk(null);
@@ -101,14 +102,14 @@ export function ProposalBar({
   const [confirming, setConfirming] = useState(false);
   const [accepting, setAccepting] = useState(false);
   const [discarding, setDiscarding] = useState(false);
-  const { lessons, notFitted } = proposal.summary;
-  // What the popover lists: lessons that did not fit, plus the classes left out.
-  const review = notFitted + proposal.notSet.length + proposal.noTeacher.length;
+  const { lessons } = proposal.summary;
   const sentences = [
     ...proposal.reasons.map((r) => r.message),
     ...proposal.notSet,
     ...proposal.noTeacher,
   ];
+  // What the popover lists, counted as the sentences it shows.
+  const review = sentences.length;
 
   const finish = async (name: string, onDone?: () => void) => {
     try {
@@ -179,6 +180,7 @@ export function ProposalBar({
         <Button
           size="sm"
           className="h-8 text-xs"
+          disabled={discarding || accepting}
           onClick={() => setConfirming(true)}
         >
           Accept

@@ -3,6 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { and, eq, sql } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { joinNames } from "../shared/words.js";
 import { getDb, schema } from "../server/db/index.js";
 import {
   buildGeneratorInput,
@@ -17,7 +18,6 @@ import {
 import {
   assertTermCanTakeRow,
   findTerm,
-  listInWords,
   loadSchoolConfig,
 } from "../server/lib/timetable.js";
 
@@ -50,8 +50,11 @@ export default defineAction({
         "The school hasn't set its week yet, so there are no periods to place lessons in. Set it in Settings → School week.",
       );
     }
+    // Taken before the solve, so a lesson edited meanwhile makes accept refuse
+    // the draft instead of passing it.
+    const baseFingerprint = await termFingerprint(orgId, term.id);
     const input = await buildGeneratorInput(orgId, term.id);
-    if (!input.classes.some((c) => c.required)) {
+    if (!input.classes.some((c) => (c.required?.periods ?? 0) > 0)) {
       throw new Error(
         "No class has a lesson count yet, so there is nothing to place. Say how many periods a week each subject needs first.",
       );
@@ -60,12 +63,21 @@ export default defineAction({
 
     const nameOf = new Map(input.classes.map((c) => [c.classId, c.className]));
     const planned = buildUnits(input);
+    if (planned.units.length === 0) {
+      return {
+        lessons: 0,
+        notFitted: 0,
+        notSet: planned.notSet.length,
+        noTeacher: 0,
+        message: `Every class with a lesson count already has its lessons in ${term.name}, so there is nothing to draft.`,
+      };
+    }
     if (planned.noTeacher.length > 0 && !args.confirm) {
       const names = planned.noTeacher.map((id) => nameOf.get(id) ?? "a class");
       return {
         needsConfirm: true,
         noTeacher: names,
-        message: `${count(names.length, "class has", "classes have")} no teacher yet: ${listInWords(names)}. Their lessons can still be placed, but they won't be checked against any teacher's time, so clashes may appear once one is assigned. Shall I go ahead?`,
+        message: `${count(names.length, "class has", "classes have")} no teacher yet: ${joinNames(names, input.locale)}. Their lessons can still be placed, but they won't be checked against any teacher's time, so clashes may appear once one is assigned. Shall I go ahead?`,
       };
     }
 
@@ -104,7 +116,7 @@ export default defineAction({
       schoolId: orgId,
       termId: term.id,
       createdByUserId: userRow?.id ?? null,
-      baseFingerprint: await termFingerprint(orgId, term.id),
+      baseFingerprint,
       lessonsJson: JSON.stringify(result.lessons),
       unplacedJson: JSON.stringify(explained.reasons),
       summaryJson: JSON.stringify({

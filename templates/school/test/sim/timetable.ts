@@ -2208,6 +2208,47 @@ export async function checkGeneration(
     );
   }
 
+  // 4b. With nothing to place, nothing is stored and the reply says so.
+  const counted: any[] = (
+    (await client.as(admin, "get-timetable-coverage", { termId: T })) as any
+  ).classes.filter((c: any) => c.required);
+  const setCounts = async (pick: (c: any) => [number, number]) => {
+    for (const c of counted) {
+      const [periods, doubles] = pick(c);
+      await client.as(admin, "update-class", {
+        id: c.classId,
+        periodsPerWeek: periods,
+        doublesPerWeek: doubles,
+      });
+    }
+  };
+  await setCounts(() => [0, 0]);
+  const zeroRefused = await refused(
+    () => client.as(admin, "generate-timetable", { termId: T }),
+    /no class has a lesson count/i,
+  );
+  await setCounts((c) => [c.placed.periods, 0]);
+  const nothing: any = await client.as(admin, "generate-timetable", {
+    termId: T,
+  });
+  const nothingStored = (await proposal()) === null;
+  await setCounts((c) => [c.required.periods, c.required.doubles]);
+  findings.expect(
+    phase,
+    zeroRefused,
+    "a term whose classes all have counts of zero is refused, not drafted empty",
+  );
+  findings.expect(
+    phase,
+    !nothing?.proposalId &&
+      nothing?.lessons === 0 &&
+      nothingStored &&
+      /already has its lessons/.test(nothing?.message ?? "") &&
+      noId(nothing?.message),
+    "when every class already has its lessons, no draft is stored and the reply says so",
+    JSON.stringify(nothing),
+  );
+
   // 5. A lesson removed after drafting makes the draft stale.
   const generated = after.periods.filter(
     (p: any) => p.scheduleId !== hand.scheduleId,
