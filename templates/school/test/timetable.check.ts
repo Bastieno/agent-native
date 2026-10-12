@@ -911,3 +911,476 @@ check(
     );
   },
 );
+
+// ── timetable generator: the solver ──
+import {
+  generateTimetable,
+  type ProposedLesson,
+} from "../server/lib/timetable-generator.js";
+
+/** Five lessons a day around one break, on days 1 to 5. */
+const solverDay = (): WeekPeriod[] => [
+  lesson(1, "08:00", "08:40"),
+  lesson(2, "08:40", "09:20"),
+  { number: 3, start: "09:20", end: "09:40", kind: "break" },
+  lesson(4, "09:40", "10:20"),
+  lesson(5, "10:20", "11:00"),
+  lesson(6, "11:00", "11:40"),
+];
+const solverWeek: SchoolWeek = {
+  cycleLength: 1,
+  days: ([1, 2, 3, 4, 5] as Weekday[]).map((day) => ({
+    day,
+    periods: solverDay(),
+  })),
+};
+const fixedNow = () => 1000;
+const solverIn = (classes: GenClass[], fixed: ResolvedPeriod[] = []) => ({
+  week: solverWeek,
+  armNames: {},
+  fixed,
+  classes,
+});
+
+/** Proposed lessons as the clash finder reads them, ids `gen-<n>`. */
+function asResolved(
+  lessons: ProposedLesson[],
+  input: GenInput,
+): ResolvedPeriod[] {
+  const byId = new Map(input.classes.map((c) => [c.classId, c]));
+  return lessons.map((l, i) => {
+    const c = byId.get(l.classId)!;
+    return {
+      scheduleId: `gen-${i}`,
+      classId: c.classId,
+      className: c.className,
+      subjectName: c.subjectName,
+      termId: null,
+      day: l.day,
+      periodNumber: l.periodNumber,
+      start: l.start,
+      end: l.end,
+      room: l.room,
+      teachers: c.teacherIds.map((id) => ({
+        userId: id,
+        name: c.teacherNames[id] ?? id,
+      })),
+      armId: c.armId,
+      optionArmIds: c.optionArmIds,
+      learnerUserIds: c.learnerUserIds,
+      pairId: l.pairKey,
+      lessonLabel: null,
+    };
+  });
+}
+const newClashes = (input: GenInput, lessons: ProposedLesson[]) =>
+  findClashes([...input.fixed, ...asResolved(lessons, input)], {
+    armNames: {},
+  }).filter((c) => c.scheduleIds.some((id) => id.startsWith("gen-")));
+const fixedAt = (
+  id: string,
+  classId: string,
+  day: number,
+  n: number,
+  over: Partial<ResolvedPeriod> = {},
+) => {
+  const p = findPeriod(solverWeek, day, n)!;
+  return rp(id, {
+    classId,
+    day,
+    periodNumber: n,
+    start: p.start,
+    end: p.end,
+    ...over,
+  });
+};
+const learners = (prefix: string, n: number) =>
+  Array.from({ length: n }, (_, i) => `${prefix}${i}`);
+
+function twoArmSchool(): GenInput {
+  const armA = learners("la", 6);
+  const armB = learners("lb", 6);
+  return solverIn(
+    [
+      genClass({
+        classId: "a1",
+        armId: "A",
+        teacherIds: ["t1"],
+        room: "Lab",
+        learnerUserIds: armA,
+        placed: { periods: 1, doubles: 0 },
+        required: { periods: 5, doubles: 1 },
+      }),
+      genClass({
+        classId: "a2",
+        armId: "A",
+        teacherIds: ["t2"],
+        learnerUserIds: armA,
+        required: { periods: 4, doubles: 0 },
+      }),
+      genClass({
+        classId: "b1",
+        armId: "B",
+        teacherIds: ["t1"],
+        room: " lab ",
+        learnerUserIds: armB,
+        required: { periods: 5, doubles: 1 },
+      }),
+      genClass({
+        classId: "b2",
+        armId: "B",
+        teacherIds: ["t3", "t2"],
+        learnerUserIds: armB,
+        required: { periods: 4, doubles: 1 },
+      }),
+      genClass({
+        classId: "o1",
+        armId: null,
+        optionArmIds: ["A", "B"],
+        teacherIds: ["t4"],
+        learnerUserIds: [...armA.slice(0, 3), ...armB.slice(0, 3)],
+        required: { periods: 3, doubles: 1 },
+      }),
+      genClass({
+        classId: "o2",
+        armId: null,
+        optionArmIds: ["B", "A"],
+        teacherIds: ["t5"],
+        learnerUserIds: [...armA.slice(3), ...armB.slice(3)],
+        required: { periods: 3, doubles: 0 },
+      }),
+    ],
+    [
+      fixedAt("f1", "a1", 1, 1, {
+        armId: "A",
+        teachers: [{ userId: "t1", name: "T" }],
+        room: "Lab",
+        learnerUserIds: armA,
+      }),
+      fixedAt("f2", "x", 2, 4, {
+        teachers: [{ userId: "t2", name: "T" }],
+      }),
+    ],
+  );
+}
+const periodsOf = (lessons: ProposedLesson[], classId: string) =>
+  lessons.filter((l) => l.classId === classId);
+const slotsOf = (lessons: ProposedLesson[], classId: string) =>
+  periodsOf(lessons, classId)
+    .map((l) => `${l.day}:${l.periodNumber}`)
+    .sort();
+
+check(
+  "solver: a feasible two-arm school is fully placed without clashes",
+  () => {
+    const input = twoArmSchool();
+    const out = generateTimetable(input, { now: fixedNow });
+    assert.deepEqual(out.unplaced, []);
+    assert.deepEqual(newClashes(input, out.lessons), []);
+    const want: Record<string, [number, number]> = {
+      a1: [4, 1],
+      a2: [4, 0],
+      b1: [5, 1],
+      b2: [4, 1],
+      o1: [3, 1],
+      o2: [3, 0],
+    };
+    for (const [id, [periods, doubles]] of Object.entries(want)) {
+      const mine = periodsOf(out.lessons, id);
+      assert.equal(mine.length, periods, `${id} periods`);
+      const pairs = new Set(mine.map((l) => l.pairKey).filter(Boolean));
+      assert.equal(pairs.size, doubles, `${id} doubles`);
+    }
+  },
+);
+
+check(
+  "solver: fixed lessons are unchanged and nothing is placed on them",
+  () => {
+    const input = twoArmSchool();
+    const before = JSON.stringify(input.fixed);
+    const out = generateTimetable(input, { now: fixedNow });
+    assert.equal(JSON.stringify(input.fixed), before);
+    assert.ok(
+      !out.lessons.some(
+        (l) => l.classId === "a1" && l.day === 1 && l.periodNumber === 1,
+      ),
+    );
+    assert.ok(
+      !out.lessons.some(
+        (l) =>
+          ["a2", "b2"].includes(l.classId) &&
+          l.day === 2 &&
+          l.periodNumber === 4,
+      ),
+    );
+  },
+);
+
+check("solver: a double never straddles a break", () => {
+  const input = twoArmSchool();
+  const out = generateTimetable(input, { now: fixedNow });
+  const rows = asResolved(out.lessons, input);
+  const keys = new Set(out.lessons.map((l) => l.pairKey).filter(Boolean));
+  assert.ok(keys.size > 0);
+  assert.equal(validPairs(solverWeek, rows).size, keys.size);
+});
+
+check("solver: a block's members share every slot they use", () => {
+  const input = twoArmSchool();
+  const out = generateTimetable(input, { now: fixedNow });
+  assert.deepEqual(slotsOf(out.lessons, "o1"), slotsOf(out.lessons, "o2"));
+});
+
+check(
+  "solver: R3 — a member's singles in a double slot take its periods",
+  () => {
+    const input = solverIn([
+      blockOf("a", { periods: 4, doubles: 2 }),
+      blockOf("b", { periods: 4, doubles: 0 }),
+      genClass({
+        classId: "c",
+        armId: null,
+        optionArmIds: ["p", "q"],
+        teacherIds: ["tc"],
+        required: { periods: 2, doubles: 1 },
+      }),
+      genClass({
+        classId: "d",
+        armId: null,
+        optionArmIds: ["p", "q"],
+        teacherIds: ["td"],
+        required: { periods: 1, doubles: 0 },
+      }),
+    ]).classes;
+    for (const c of input) if (c.classId === "b") c.teacherIds = ["tb"];
+    const gi = solverIn(input);
+    const out = generateTimetable(gi, { now: fixedNow });
+    assert.deepEqual(out.unplaced, []);
+    const b = periodsOf(out.lessons, "b");
+    assert.equal(b.length, 4);
+    assert.ok(b.every((l) => l.pairKey === null));
+    assert.deepEqual(slotsOf(out.lessons, "b"), slotsOf(out.lessons, "a"));
+    const c = periodsOf(out.lessons, "c");
+    const d = periodsOf(out.lessons, "d");
+    assert.equal(d.length, 1);
+    assert.equal(d[0].pairKey, null);
+    const first = [...c].sort((x, y) => x.start.localeCompare(y.start))[0];
+    assert.equal(
+      `${d[0].day}:${d[0].periodNumber}`,
+      `${first.day}:${first.periodNumber}`,
+    );
+    assert.deepEqual(newClashes(gi, out.lessons), []);
+  },
+);
+
+check("solver: five singles over a five-day week land on five days", () => {
+  const input = solverIn([
+    genClass({ classId: "a", required: { periods: 5, doubles: 0 } }),
+  ]);
+  const out = generateTimetable(input, { now: fixedNow });
+  assert.equal(new Set(out.lessons.map((l) => l.day)).size, 5);
+});
+
+check("solver: fixed lessons that already clash add no new clash", () => {
+  const t = [{ userId: "t1", name: "T" }];
+  const input = solverIn(
+    [
+      genClass({
+        classId: "a",
+        armId: "A",
+        required: { periods: 5, doubles: 1 },
+      }),
+    ],
+    [
+      fixedAt("f1", "x", 1, 1, { teachers: t, armId: "A" }),
+      fixedAt("f2", "y", 1, 1, { teachers: t, armId: "A" }),
+    ],
+  );
+  const out = generateTimetable(input, { now: fixedNow });
+  const all = findClashes([...input.fixed, ...asResolved(out.lessons, input)], {
+    armNames: {},
+  });
+  assert.ok(all.length > 0);
+  assert.deepEqual(newClashes(input, out.lessons), []);
+  assert.deepEqual(out.unplaced, []);
+});
+
+check(
+  "solver: a day with no consecutive lessons leaves doubles unplaced",
+  () => {
+    const week: SchoolWeek = {
+      cycleLength: 1,
+      days: [
+        {
+          day: 3,
+          periods: [
+            lesson(1, "08:00", "08:40"),
+            { number: 2, start: "08:40", end: "09:00", kind: "break" },
+            lesson(3, "09:00", "09:40"),
+            { number: 4, start: "09:40", end: "10:00", kind: "break" },
+            lesson(5, "10:00", "10:40"),
+          ],
+        },
+      ],
+    };
+    const input: GenInput = {
+      week,
+      armNames: {},
+      fixed: [],
+      classes: [
+        genClass({ classId: "a", required: { periods: 3, doubles: 1 } }),
+      ],
+    };
+    const out = generateTimetable(input, { now: fixedNow });
+    const dbl = out.unplaced.find((u) => u.kind === "double")!;
+    assert.ok(dbl);
+    assert.deepEqual(dbl.blockers[0], { kind: "no-consecutive", days: [3] });
+    assert.equal(out.lessons.length, 1);
+  },
+);
+
+check(
+  "solver: more periods than the week has returns within the budget",
+  () => {
+    let t = 0;
+    const now = () => (t += 1);
+    const classes = Array.from({ length: 8 }, (_, i) =>
+      genClass({
+        classId: `c${i}`,
+        armId: "A",
+        teacherIds: [`t${i}`],
+        required: { periods: 7, doubles: 1 },
+      }),
+    );
+    const out = generateTimetable(solverIn(classes), { now, budgetMs: 200 });
+    assert.ok(out.unplaced.length > 0);
+    assert.ok(out.elapsedMs >= 0);
+    assert.ok(
+      out.unplaced.every((u) =>
+        u.blockers.some((b) => b.kind === "arm-full" || b.kind === "budget"),
+      ),
+    );
+  },
+);
+
+check(
+  "solver: an off-bell fixed lesson blocks both periods it overlaps",
+  () => {
+    const week: SchoolWeek = {
+      cycleLength: 1,
+      days: [
+        {
+          day: 1,
+          periods: [
+            lesson(1, "08:00", "08:40"),
+            lesson(2, "08:40", "09:20"),
+            lesson(3, "09:20", "10:00"),
+          ],
+        },
+      ],
+    };
+    const input: GenInput = {
+      week,
+      armNames: {},
+      fixed: [
+        rp("f", {
+          classId: "x",
+          day: 1,
+          periodNumber: null,
+          start: "08:20",
+          end: "09:00",
+          teachers: [{ userId: "t1", name: "T" }],
+        }),
+      ],
+      classes: [
+        genClass({
+          classId: "a",
+          armId: "A",
+          required: { periods: 1, doubles: 0 },
+        }),
+      ],
+    };
+    const out = generateTimetable(input, { now: fixedNow });
+    assert.deepEqual(
+      out.lessons.map((l) => l.periodNumber),
+      [3],
+    );
+    assert.deepEqual(newClashes(input, out.lessons), []);
+  },
+);
+
+check("solver: a passed budget leaves every unit unplaced as budget", () => {
+  let calls = 0;
+  const now = () => (calls++ === 0 ? 0 : 1e9);
+  const out = generateTimetable(twoArmSchool(), { now });
+  assert.equal(out.lessons.length, 0);
+  assert.ok(out.unplaced.length > 0);
+  assert.ok(
+    out.unplaced.every(
+      (u) => u.blockers.length === 1 && u.blockers[0].kind === "budget",
+    ),
+  );
+});
+
+check("solver: repair takes back a blocking unit and re-places it", () => {
+  const week: SchoolWeek = {
+    cycleLength: 1,
+    days: [
+      {
+        day: 1,
+        periods: [
+          lesson(1, "08:00", "08:40"),
+          lesson(2, "08:40", "09:20"),
+          lesson(3, "09:20", "10:00"),
+        ],
+      },
+    ],
+  };
+  const input: GenInput = {
+    week,
+    armNames: {},
+    fixed: [
+      rp("f", {
+        classId: "x",
+        day: 1,
+        periodNumber: 3,
+        start: "09:20",
+        end: "10:00",
+        teachers: [{ userId: "t2", name: "T" }],
+      }),
+    ],
+    classes: [
+      genClass({
+        classId: "p",
+        armId: "A",
+        teacherIds: ["t1"],
+        required: { periods: 2, doubles: 1 },
+      }),
+      genClass({
+        classId: "q",
+        armId: "A",
+        teacherIds: ["t2"],
+        required: { periods: 1, doubles: 0 },
+      }),
+    ],
+  };
+  const out = generateTimetable(input, { now: fixedNow });
+  assert.deepEqual(out.unplaced, []);
+  assert.deepEqual(slotsOf(out.lessons, "p"), ["1:2", "1:3"]);
+  assert.deepEqual(slotsOf(out.lessons, "q"), ["1:1"]);
+});
+
+check("solver: two runs give identical output", () => {
+  const a = generateTimetable(twoArmSchool(), { now: fixedNow });
+  const b = generateTimetable(twoArmSchool(), { now: fixedNow });
+  assert.equal(JSON.stringify(a), JSON.stringify(b));
+});
+
+check("solver: ties go to the earliest day, then the earliest period", () => {
+  const input = solverIn([
+    genClass({ classId: "a", required: { periods: 1, doubles: 0 } }),
+  ]);
+  const out = generateTimetable(input, { now: fixedNow });
+  assert.deepEqual(slotsOf(out.lessons, "a"), ["1:1"]);
+});
