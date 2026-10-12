@@ -1668,7 +1668,7 @@ check("explain: learners-busy names the other class and the count", () => {
 
 check("explain: learners-busy with no classes does not name any", () => {
   const m = msg([{ kind: "learners-busy", classIds: [], count: 0 }]);
-  assert.ok(m.includes("Some of its learners"), m);
+  assert.ok(m.includes("some of its learners"), m);
   noJunk(m);
 });
 
