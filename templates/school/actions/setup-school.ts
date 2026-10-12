@@ -7,6 +7,8 @@ import { eq, and } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { sql } from "drizzle-orm";
 import { z } from "zod";
+import { withOrgSettingLock } from "../server/lib/org-setting-lock.js";
+import { applyInvitedName } from "../server/lib/user-names.js";
 
 export default defineAction({
   description:
@@ -100,6 +102,24 @@ export default defineAction({
         })
         .where(eq(schema.schoolProfiles.id, existing[0].id));
     }
+
+    // A school we provisioned holds an invitation for its head. Setting up
+    // over MCP never passes through the sign-in that would use it up, so use
+    // it here: take the name it carries, and stop listing the head as pending.
+    await withOrgSettingLock(`${orgId}:pending-staff-invites`, async () => {
+      const pending = ((await getOrgSetting(orgId, "pending-staff-invites")) ??
+        []) as Array<{ email?: string; name?: string }>;
+      const mine = pending.find(
+        (inv) => inv.email?.toLowerCase() === userEmail.toLowerCase(),
+      );
+      if (!mine) return;
+      await applyInvitedName(db, userId, userEmail, mine.name);
+      await putOrgSetting(
+        orgId,
+        "pending-staff-invites",
+        pending.filter((inv) => inv !== mine) as any,
+      );
+    });
 
     // Save school identity config
     const existingConfig =

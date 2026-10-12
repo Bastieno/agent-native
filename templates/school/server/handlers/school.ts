@@ -9,7 +9,7 @@ import {
 } from "@agent-native/core/settings";
 import { nanoid } from "nanoid";
 import { putUserSetting } from "@agent-native/core/settings";
-import { realNameOrNull } from "../lib/user-names.js";
+import { applyInvitedName } from "../lib/user-names.js";
 import { withOrgSettingLock } from "../lib/org-setting-lock.js";
 import {
   assertClassAccess,
@@ -110,38 +110,6 @@ async function ensureSchoolMembership(
     await putUserSetting(email.toLowerCase(), "active-org-id", { orgId });
   } catch {
     // Never block a sign-in over this; the profile is already created.
-  }
-}
-
-/**
- * Give a newly activated person the name they were invited under.
- *
- * Signing up asks only for an email and password, so the framework fills the
- * name in from the address: `teacher.maths@pilot.test` becomes
- * "teacher.maths". The name the admin typed when inviting — "Ben Wood" —
- * lived only in the pending invite and was thrown away on activation, so the
- * staff list, the gradebook and a parent's report card all ended up reading
- * "teacher.maths" and "student1".
- *
- * Only a derived name is replaced: one that matches the front of the address.
- * A name someone chose themselves is never overwritten by an admin's typing.
- */
-async function applyInvitedName(
-  db: any,
-  userId: string,
-  email: string,
-  invitedName: unknown,
-): Promise<void> {
-  const name = typeof invitedName === "string" ? invitedName.trim() : "";
-  if (!name) return;
-  try {
-    const row = (await db.get(
-      sql`SELECT name FROM "user" WHERE id = ${userId} LIMIT 1`,
-    )) as { name: string | null } | undefined;
-    if (realNameOrNull(row?.name, email)) return; // they named themselves
-    await db.run(sql`UPDATE "user" SET name = ${name} WHERE id = ${userId}`);
-  } catch {
-    // A name is worth having, not worth failing a sign-in for.
   }
 }
 

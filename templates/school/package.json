@@ -17,7 +17,9 @@
     "journey:school": "tsx test/sim/run-school.ts",
     "journey:compare": "tsx test/sim/compare.ts",
     "journey:assumptions": "tsx test/sim/assumptions.ts",
-    "showcase:school": "tsx test/sim/run-showcase.ts"
+    "journey:mcp-setup": "tsx test/sim/run-mcp-setup.ts",
+    "showcase:school": "tsx test/sim/run-showcase.ts",
+    "provision:school": "tsx ops/provision-school.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",

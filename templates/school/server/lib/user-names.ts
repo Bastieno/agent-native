@@ -1,5 +1,6 @@
 import { sql } from "drizzle-orm";
 import { getDb } from "../db/index.js";
+import { realNameOrNull } from "../../shared/person-name.js";
 
 export interface UserLabel {
   name: string | null;
@@ -45,7 +46,7 @@ export function labelFor(
 
 // The rule itself is shared with the UI, which greets people by name and must
 // not greet anyone as "student1".
-export { realNameOrNull } from "../../shared/person-name.js";
+export { realNameOrNull };
 
 /** The name and email of one user, by email address. */
 export async function userByEmail(
@@ -55,4 +56,36 @@ export async function userByEmail(
     sql`SELECT name, email FROM "user" WHERE LOWER(email) = ${email.toLowerCase()} LIMIT 1`,
   )) as { name: string | null; email: string } | undefined;
   return row ?? null;
+}
+
+/**
+ * Give a newly activated person the name they were invited under.
+ *
+ * Signing up asks only for an email and password, so the framework fills the
+ * name in from the address: `teacher.maths@pilot.test` becomes
+ * "teacher.maths". The name the admin typed when inviting — "Ben Wood" —
+ * lived only in the pending invite and was thrown away on activation, so the
+ * staff list, the gradebook and a parent's report card all ended up reading
+ * "teacher.maths" and "student1".
+ *
+ * Only a derived name is replaced: one that matches the front of the address.
+ * A name someone chose themselves is never overwritten by an admin's typing.
+ */
+export async function applyInvitedName(
+  db: any,
+  userId: string,
+  email: string,
+  invitedName: unknown,
+): Promise<void> {
+  const name = typeof invitedName === "string" ? invitedName.trim() : "";
+  if (!name) return;
+  try {
+    const row = (await db.get(
+      sql`SELECT name FROM "user" WHERE id = ${userId} LIMIT 1`,
+    )) as { name: string | null } | undefined;
+    if (realNameOrNull(row?.name, email)) return; // they named themselves
+    await db.run(sql`UPDATE "user" SET name = ${name} WHERE id = ${userId}`);
+  } catch {
+    // A name is worth having, not worth failing a sign-in for.
+  }
 }
