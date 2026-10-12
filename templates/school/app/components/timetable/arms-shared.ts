@@ -30,6 +30,20 @@ export function useArmWord() {
   return { Arm, arm, Arms: naivePlural(Arm), arms: naivePlural(arm) };
 }
 
+/** The school's word for a double: "double" until they have chosen another. */
+export function useDoubleWord() {
+  const { config } = useSchoolConfig();
+  const raw = (config.customLabels?.double ?? "").trim() || "Double";
+  const Double = raw.charAt(0).toUpperCase() + raw.slice(1);
+  const double = raw.toLowerCase();
+  return {
+    Double,
+    double,
+    Doubles: naivePlural(Double),
+    doubles: naivePlural(double),
+  };
+}
+
 export async function callAction(
   name: string,
   params: Record<string, unknown>,

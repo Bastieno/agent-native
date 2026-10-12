@@ -7,6 +7,8 @@ import {
   armWord,
   armsInYearGroup,
   schoolWord,
+  doubleWords,
+  withArticle,
 } from "../server/lib/arm-enrolment.js";
 import { resolveViewTerm } from "../server/lib/timetable-view.js";
 import {
@@ -16,10 +18,14 @@ import {
 import { listInWords } from "../server/lib/timetable.js";
 import { countsProblem } from "../shared/lesson-counts.js";
 
-const said = (periods: number | null, doubles: number | null) =>
+const said = (
+  periods: number | null,
+  doubles: number | null,
+  words: { double: string; doubles: string },
+) =>
   periods == null
     ? "not set"
-    : `${periods} a week${doubles ? `, ${doubles} as ${doubles === 1 ? "a double" : "doubles"}` : ""}`;
+    : `${periods} a week${doubles ? `, ${doubles} as ${doubles === 1 ? withArticle(words.double) : words.doubles}` : ""}`;
 
 export default defineAction({
   description:
@@ -65,6 +71,7 @@ export default defineAction({
     if (!orgId) throw new Error("No school context.");
     const db = getDb();
     const word = await armWord(orgId);
+    const dw = await doubleWords(orgId);
     const yearWord = await schoolWord(orgId, "yearGroup", "year group");
     const streamWord = await schoolWord(orgId, "stream", "stream");
 
@@ -197,8 +204,8 @@ export default defineAction({
       args.periodsPerWeek == null
         ? "cleared"
         : args.doublesPerWeek === undefined
-          ? `${args.periodsPerWeek} a week, each class keeping the doubles it has`
-          : said(args.periodsPerWeek, args.doublesPerWeek);
+          ? `${args.periodsPerWeek} a week, each class keeping the ${dw.doubles} it has`
+          : said(args.periodsPerWeek, args.doublesPerWeek, dw);
     if (!args.confirm) {
       return {
         applied: false,

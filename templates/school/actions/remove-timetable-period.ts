@@ -4,6 +4,7 @@ import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
 import { schoolWeekdayName } from "../shared/school-week.js";
+import { doubleWords } from "../server/lib/arm-enrolment.js";
 import { loadSchoolConfig } from "../server/lib/timetable.js";
 import { schoolLocale } from "../shared/dates.js";
 
@@ -66,7 +67,7 @@ export default defineAction({
         removed: true,
         removedCount: halves.length,
         message: both
-          ? `Took the double of ${name} out of ${where} on ${day}.`
+          ? `Took the ${(await doubleWords(orgId)).double} of ${name} out of ${where} on ${day}.`
           : `Took ${name} out of ${where} on ${day}.`,
       };
     }

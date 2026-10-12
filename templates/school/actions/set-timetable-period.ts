@@ -17,11 +17,12 @@ import {
   findTerm,
   loadSchoolConfig,
 } from "../server/lib/timetable.js";
+import { doubleWords, withArticle } from "../server/lib/arm-enrolment.js";
 import { schoolLocale } from "../shared/dates.js";
 
 export default defineAction({
   description:
-    "Put a class in a day and period of a term's timetable, optionally in a room. Pass scheduleId to move an existing placement instead of adding one. Times come from the school's week. Refuses a day the school doesn't teach, a period that doesn't exist or is a break, and a room that isn't on the room list. With double: true it takes the next lesson period of that day too, as one double (refused when a break or the end of the day comes next); moving either half of a double moves both, and double: false splits it back to one period. lessonLabel is the school's own name for the lesson, free text. Returns any clash the placement causes.",
+    "Put a class in a day and period of a term's timetable, optionally in a room. Pass scheduleId to move an existing placement instead of adding one. Times come from the school's week. Refuses a day the school doesn't teach, a period that doesn't exist or is a break, and a room that isn't on the room list. With double: true it takes the next lesson period of that day too, as one double (refused when a break or the end of the day comes next); moving a double by either half places the double's first half at the target, and moves both, and double: false splits it back to one period. lessonLabel is the school's own name for the lesson, free text. Returns any clash the placement causes.",
   schema: z.object({
     termId: z.string(),
     classId: z.string(),
@@ -197,6 +198,7 @@ export default defineAction({
     // A double keeps being one unless asked otherwise; a new one is single.
     const wantDouble = args.double ?? !!movedRow?.pairId;
     let second: { number: number; start: string; end: string } | null = null;
+    const dw = await doubleWords(orgId);
     if (wantDouble) {
       const next = doubleSecondPeriod(week, args.day, args.periodNumber);
       if (!next.second) {
@@ -204,8 +206,8 @@ export default defineAction({
           next.blocker
             ? `Period ${args.periodNumber} is the last lesson before ${
                 next.blocker.label?.trim() || next.blocker.start
-              }, so a double can't start there.`
-            : `Period ${args.periodNumber} is the last lesson on ${dayName}, so a double can't start there.`,
+              }, so ${withArticle(dw.double)} can't start there.`
+            : `Period ${args.periodNumber} is the last lesson on ${dayName}, so ${withArticle(dw.double)} can't start there.`,
         );
       }
       second = next.second;
@@ -324,7 +326,7 @@ export default defineAction({
       c.scheduleIds.some((id) => ids.includes(id)),
     );
     const where = second
-      ? `periods ${args.periodNumber} and ${second.number} on ${dayName} (${period.start}–${second.end}), as a double,`
+      ? `periods ${args.periodNumber} and ${second.number} on ${dayName} (${period.start}–${second.end}), as ${withArticle(dw.double)},`
       : `period ${args.periodNumber} on ${dayName} (${period.start}–${period.end})`;
     const sentences = [
       `${args.scheduleId ? "Moved" : "Put"} ${cls.name}${

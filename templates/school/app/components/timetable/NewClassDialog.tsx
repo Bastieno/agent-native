@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { countsProblem } from "@shared/lesson-counts";
+import { useDoubleWord } from "./arms-shared";
 import { WhoTakesIt, type Taker } from "./WhoTakesIt";
 import {
   callAction,
@@ -40,6 +41,7 @@ export function NewClassDialog({
   const [subjectId, setSubjectId] = useState("");
   const [gradeLevelId, setGradeLevelId] = useState("");
   const [periods, setPeriods] = useState("");
+  const { Doubles } = useDoubleWord();
   const [doubles, setDoubles] = useState("");
   const [taker, setTaker] = useState<Taker>({ kind: "none" });
 
@@ -188,7 +190,9 @@ export function NewClassDialog({
               />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="new-class-doubles">Of which doubles</Label>
+              <Label htmlFor="new-class-doubles">
+                Of which {Doubles.toLowerCase()}
+              </Label>
               <Input
                 id="new-class-doubles"
                 type="number"

@@ -4,6 +4,7 @@ import { and, eq, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
+import { doubleWords } from "../server/lib/arm-enrolment.js";
 import { findPeriod } from "../shared/school-week.js";
 import {
   assertTermCanTakeRow,
@@ -144,6 +145,7 @@ export default defineAction({
     }
 
     const doubles = pairs.size;
+    const dw = await doubleWords(orgId);
     return {
       accepted: true,
       lessons: rows.length,
@@ -151,7 +153,7 @@ export default defineAction({
       message:
         rows.length === 0
           ? `The draft had no lessons to add to ${term.name}; it is closed.`
-          : `Added ${rows.length} ${rows.length === 1 ? "lesson" : "lessons"} to ${term.name}${doubles ? `, ${doubles} of them as ${doubles === 1 ? "a double" : "doubles"}` : ""}.`,
+          : `Added ${rows.length} ${rows.length === 1 ? "lesson" : "lessons"} to ${term.name}${doubles ? `, ${doubles} of them as ${doubles === 1 ? `a ${dw.double}` : dw.doubles}` : ""}.`,
     };
   },
 });

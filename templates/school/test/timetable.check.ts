@@ -585,6 +585,19 @@ check("four singles are short of 4 periods with 1 double, in words", () => {
   assert.equal(shortInWords(c.required!, c.placed), "4 of 4, 0 of 1 double");
 });
 
+check("a school's own word for a double is used in the sentence", () => {
+  const out = countCoverage(
+    [1, 2, 4, 5].map((n) => half(`s${n}`, n, null)),
+    [cov("a", 4, 1)],
+    dayWithBreak,
+  );
+  const c = out.classes[0];
+  assert.equal(
+    shortInWords(c.required!, c.placed, { double: "bloc", doubles: "blocs" }),
+    "4 of 4, 0 of 1 bloc",
+  );
+});
+
 check("a class with every period and double is not short", () => {
   const out = countCoverage(
     [half("p1", 1, "x"), half("p2", 2, "x"), half("s", 5, null)],

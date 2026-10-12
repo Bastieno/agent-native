@@ -2,6 +2,7 @@ import { and, eq, inArray } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
 import { listInWords, loadTimetable, termContext } from "./timetable.js";
 import { resolveViewTerm } from "./timetable-view.js";
+import { doubleWords } from "./arm-enrolment.js";
 
 export {
   countCoverage,
@@ -138,6 +139,7 @@ export async function coverageView(orgId: string, args: CoverageFilter) {
   );
   counted.classes.sort((a, b) => a.className.localeCompare(b.className));
 
+  const words = await doubleWords(orgId);
   const short = counted.classes.filter(isShort);
   const parts: string[] = [];
   if (counted.classes.length === 0) {
@@ -147,7 +149,8 @@ export async function coverageView(orgId: string, args: CoverageFilter) {
       short.length
         ? `${short.length} ${short.length === 1 ? "class is" : "classes are"} short of the lessons ${short.length === 1 ? "it needs" : "they need"}: ${listInWords(
             short.map(
-              (c) => `${c.className} (${shortInWords(c.required!, c.placed)})`,
+              (c) =>
+                `${c.className} (${shortInWords(c.required!, c.placed, words)})`,
             ),
           )}.`
         : counted.unset < counted.classes.length

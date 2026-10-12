@@ -104,9 +104,16 @@ export function isShort(c: ClassCoverage): boolean {
  * "4 of 5" or, when the class needs doubles, "4 of 5, 0 of 1 double". Takes
  * the class's tallies, so the page can pass a fresher placed count.
  */
-export function shortInWords(required: Tally, placed: Tally): string {
+export function shortInWords(
+  required: Tally,
+  placed: Tally,
+  words: { double: string; doubles: string } = {
+    double: "double",
+    doubles: "doubles",
+  },
+): string {
   const base = `${placed.periods} of ${required.periods}`;
   return required.doubles > 0
-    ? `${base}, ${placed.doubles} of ${required.doubles} ${required.doubles === 1 ? "double" : "doubles"}`
+    ? `${base}, ${placed.doubles} of ${required.doubles} ${required.doubles === 1 ? words.double : words.doubles}`
     : base;
 }

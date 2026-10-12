@@ -18,6 +18,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import { roomKey, type Room } from "@shared/school-week";
+import { useDoubleWord } from "./arms-shared";
 import type { ClassOption, ResolvedPeriod } from "./use-timetable";
 
 /** "The class's own room": a Radix item may not use "". */
@@ -74,6 +75,7 @@ export function PeriodCellPopover({
   // Room shows what a placement resolves to; only a change is sent, so
   // opening and saving never rewrites a custom or inherited room.
   const [roomTouched, setRoomTouched] = useState(false);
+  const { Double } = useDoubleWord();
   const [double, setDouble] = useState(false);
   const [lessonLabel, setLessonLabel] = useState("");
   const [labelBefore, setLabelBefore] = useState("");
@@ -231,7 +233,7 @@ export function PeriodCellPopover({
 
         <div className="flex items-center justify-between gap-2">
           <Label htmlFor="cell-double" className="text-xs">
-            Double
+            {Double}
           </Label>
           <Switch
             id="cell-double"

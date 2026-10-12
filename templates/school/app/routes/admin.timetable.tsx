@@ -25,7 +25,11 @@ import {
 import { OffBellsList } from "@/components/timetable/OffBellsList";
 import { PeriodCellPopover } from "@/components/timetable/PeriodCellPopover";
 import { TimetableGrid } from "@/components/timetable/TimetableGrid";
-import { useArms, useArmWord } from "@/components/timetable/arms-shared";
+import {
+  useArms,
+  useArmWord,
+  useDoubleWord,
+} from "@/components/timetable/arms-shared";
 import {
   getAction,
   proposedRows,
@@ -55,6 +59,7 @@ export default function AdminTimetable() {
   const { sync } = useNavigationState();
   const [params, setParams] = useSearchParams();
   const { Arm } = useArmWord();
+  const doubleWords = useDoubleWord();
   const { config } = useSchoolConfig();
   const rooms: Room[] = config.rooms ?? [];
   const [selected, setSelected] = useState<Cell | null>(null);
@@ -182,7 +187,7 @@ export default function AdminTimetable() {
           ...c,
           placedNow: placedNow.placed,
           shortNow: placedNow.short,
-          words: shortInWords(c.required!, placedNow.placed),
+          words: shortInWords(c.required!, placedNow.placed, doubleWords),
         };
       });
   }, [coverage, tt]);
@@ -520,7 +525,7 @@ export default function AdminTimetable() {
                 const missing = Math.max(0, r.doubles - c.placedNow.doubles);
                 return `${label(c)} ${c.placedNow.periods}/${r.periods}${
                   r.doubles > 0 && missing > 0
-                    ? ` · ${c.placedNow.doubles}/${r.doubles} ${r.doubles === 1 ? "double" : "doubles"}`
+                    ? ` · ${c.placedNow.doubles}/${r.doubles} ${r.doubles === 1 ? doubleWords.double : doubleWords.doubles}`
                     : ""
                 }`;
               })

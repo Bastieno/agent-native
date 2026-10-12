@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../db/index.js";
 import { termContext } from "./timetable.js";
+import { naivePlural } from "../../shared/terminology.js";
 
 /**
  * Enrolment that follows a learner's arm.
@@ -151,6 +152,14 @@ export async function schoolWord(
   return typeof label === "string" && label.trim()
     ? label.trim().toLowerCase()
     : fallback;
+}
+
+/** The school's word for a double, with its plural: "double" / "doubles". */
+export async function doubleWords(
+  orgId: string,
+): Promise<{ double: string; doubles: string }> {
+  const double = await schoolWord(orgId, "double", "double");
+  return { double, doubles: naivePlural(double) };
 }
 
 /** A word with its article: "an arm", "a house". */

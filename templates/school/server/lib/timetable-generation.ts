@@ -1,3 +1,4 @@
+// guard:allow-unscoped — subjects and arms are the school's own reference data, read by schoolId (orgId from the admin-gated action context); they carry no per-user ownership.
 /**
  * Automatic timetable generation, the database side: gathering a term's
  * classes into the solver's input, fingerprinting a term's lessons, and

@@ -35,6 +35,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { countsProblem } from "@shared/lesson-counts";
+import { useDoubleWord } from "@/components/timetable/arms-shared";
 
 /**
  * What the teacher picker uses to mean "nobody yet".
@@ -61,6 +62,7 @@ export default function AdminClasses() {
   const [editLoading, setEditLoading] = useState(false);
   // Typed as text so an empty box can mean "not said".
   const [editPeriods, setEditPeriods] = useState("");
+  const doubleWords = useDoubleWord();
   const [editDoubles, setEditDoubles] = useState("");
 
   const { data: staffData } = useQuery<{ active: any[] }>({
@@ -470,7 +472,9 @@ export default function AdminClasses() {
                 />
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="class-doubles">Of which doubles</Label>
+                <Label htmlFor="class-doubles">
+                  Of which {doubleWords.doubles}
+                </Label>
                 <Input
                   id="class-doubles"
                   type="number"
