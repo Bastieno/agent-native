@@ -1,4 +1,3 @@
-// guard:allow-unscoped — subjects and arms are the school's own reference data, read by schoolId (orgId from the admin-gated action context); they carry no per-user ownership.
 /**
  * Automatic timetable generation, the database side: gathering a term's
  * classes into the solver's input, fingerprinting a term's lessons, and
@@ -87,8 +86,18 @@ export async function buildGeneratorInput(
       db
         .select()
         .from(schema.subjects)
-        .where(eq(schema.subjects.schoolId, orgId)),
-      db.select().from(schema.arms).where(eq(schema.arms.schoolId, orgId)),
+        .where(
+          and(
+            eq(schema.subjects.orgId, orgId),
+            eq(schema.subjects.schoolId, orgId),
+          ),
+        ),
+      db
+        .select()
+        .from(schema.arms)
+        .where(
+          and(eq(schema.arms.orgId, orgId), eq(schema.arms.schoolId, orgId)),
+        ),
       ids.length
         ? db
             .select()
