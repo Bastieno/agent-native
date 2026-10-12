@@ -840,6 +840,9 @@ export interface Words {
   arm: string;
   double: string;
   doubles: string;
+  learner: string;
+  learners: string;
+  teacher: string;
 }
 
 /** "A, B and C": names only, no ids; empty names are dropped. */
@@ -848,32 +851,6 @@ function joinNames(names: string[]): string {
   if (list.length <= 1) return list[0] ?? "";
   return `${list.slice(0, -1).join(", ")} and ${list[list.length - 1]}`;
 }
-
-const NUMBER_WORDS = [
-  "no",
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-  "ten",
-  "eleven",
-  "twelve",
-  "thirteen",
-  "fourteen",
-  "fifteen",
-  "sixteen",
-  "seventeen",
-  "eighteen",
-  "nineteen",
-  "twenty",
-];
-const inWords = (n: number) => NUMBER_WORDS[n] ?? String(n);
-const capital = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 /** Most specific first; the first kind a unit carries gives its sentence. */
 const PRIMARY_ORDER: Blocker["kind"][] = [
@@ -947,24 +924,23 @@ export function explainUnplaced(
         if (inBlock) {
           reason =
             b.count > 1
-              ? `${inWords(b.count)} learners are each in two of its options at once (${others}), so those options cannot share a time`
-              : `a learner is in two of its options at once (${others}), so those options cannot share a time`;
+              ? `${b.count} ${words.learners} are each in two of its options at once (${others}), so those options cannot share a time`
+              : `a ${words.learner} is in two of its options at once (${others}), so those options cannot share a time`;
         } else {
           const who =
             b.count > 0
-              ? `${capital(inWords(b.count))} ${b.count === 1 ? "learner is" : "learners are"}`
-              : "Some of its learners are";
+              ? `${b.count} ${b.count === 1 ? `${words.learner} is` : `${words.learners} are`}`
+              : `some of its ${words.learners} are`;
           reason = others
             ? `${who} in another lesson (${others}) at every free time`
             : `${who} in another lesson at every free time`;
-          reason = reason.charAt(0).toLowerCase() + reason.slice(1);
         }
         break;
       }
       case "teacher-busy": {
         const parts = same.flatMap((b) => {
           if (b.kind !== "teacher-busy") return [];
-          const who = teacherName(b.teacherId) || "a teacher";
+          const who = teacherName(b.teacherId) || `a ${words.teacher}`;
           const days = joinNames(b.days.map(day));
           return [
             `${who} is teaching at every free time${days ? ` on ${days}` : ""}`,
@@ -978,7 +954,7 @@ export function explainUnplaced(
         const who = joinNames(ids.map(teacherName));
         reason = who
           ? `${who} ${ids.length === 1 ? "is" : "are"} teaching elsewhere at every time its ${words.arm} is free`
-          : `its teachers are teaching elsewhere at every time its ${words.arm} is free`;
+          : `the ${words.teacher} of its options is teaching elsewhere at every time its ${words.arm} is free`;
         break;
       }
       case "room-busy": {
@@ -999,12 +975,15 @@ export function explainUnplaced(
           : "it has no free time left";
         break;
       }
-      case "no-consecutive":
-        reason =
-          u.kind === "double"
-            ? `no two lessons in a row are free together for a ${words.double}`
-            : "no two lessons in a row are free together";
+      case "no-consecutive": {
+        const days = joinNames(primary.days.map(day));
+        const need =
+          u.kind === "double" ? `a ${words.double}` : "two lessons in a row";
+        reason = days
+          ? `no two lessons in a row are free together on ${days}, which ${need} needs`
+          : `no two lessons in a row are free together for ${need}`;
         break;
+      }
       case "budget":
         reason = "time ran out before it could be tried";
         break;
@@ -1029,8 +1008,8 @@ export function explainUnplaced(
     ),
     noTeacher: list(
       result.noTeacher,
-      "has no teacher yet, so its lessons are placed without one; clashes may appear when a teacher is assigned.",
-      "have no teacher yet, so their lessons are placed without one; clashes may appear when teachers are assigned.",
+      `has no ${words.teacher} yet, so its lessons are placed without one; clashes may appear when one is assigned.`,
+      `have no ${words.teacher} yet, so their lessons are placed without one; clashes may appear when one is assigned.`,
     ),
   };
 }

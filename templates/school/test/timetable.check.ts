@@ -1567,7 +1567,14 @@ import {
   type Blocker,
 } from "../server/lib/timetable-generator.js";
 
-const words = { arm: "stream", double: "double", doubles: "doubles" };
+const words = {
+  arm: "stream",
+  double: "double",
+  doubles: "doubles",
+  learner: "learner",
+  learners: "learners",
+  teacher: "teacher",
+};
 const explainIn = (
   blockers: Blocker[],
   over: {
@@ -1662,7 +1669,7 @@ check("explain: learners-busy names the other class and the count", () => {
   const m = msg([{ kind: "learners-busy", classIds: ["id-art"], count: 3 }], {
     classes,
   });
-  assert.ok(m.includes("Art 1") && m.includes("three learners"), m);
+  assert.ok(m.includes("Art 1") && m.includes("3 learners"), m);
   noJunk(m);
 });
 
@@ -1711,7 +1718,7 @@ check("explain: the most specific blocker gives the sentence", () => {
     { kind: "arm-full", armIds: ["id-armA"] },
     { kind: "learners-busy", classIds: [], count: 2 },
   ]);
-  assert.ok(m2.includes("two learners"), m2);
+  assert.ok(m2.includes("2 learners"), m2);
 });
 
 check("explain: notSet and noTeacher sentences name the classes", () => {
@@ -1741,4 +1748,63 @@ check("explain: notSet and noTeacher sentences name the classes", () => {
   assert.equal(out.noTeacher.length, 1);
   assert.ok(out.noTeacher[0].includes("Art 1"), out.noTeacher[0]);
   assert.ok(!out.noTeacher[0].includes("id-"));
+});
+
+check("explain: the school's own words replace learner and teacher", () => {
+  const w = {
+    arm: "stream",
+    double: "double",
+    doubles: "doubles",
+    learner: "pupil",
+    learners: "pupils",
+    teacher: "tutor",
+  };
+  const classes = [
+    genClass({ classId: "id-math", className: "Maths 1" }),
+    genClass({ classId: "id-art", className: "Art 1" }),
+  ];
+  const input: GenInput = {
+    week: solverWeek,
+    armNames: {},
+    fixed: [],
+    classes,
+  };
+  const unit = (blockers: Blocker[]) => ({
+    unitId: "u",
+    classIds: ["id-math"],
+    kind: "single" as const,
+    blockers,
+  });
+  const out = explainUnplaced(
+    {
+      lessons: [],
+      unplaced: [
+        unit([{ kind: "learners-busy", classIds: ["id-art"], count: 2 }]),
+        unit([{ kind: "learners-busy", classIds: [], count: 0 }]),
+        unit([{ kind: "teacher-busy", teacherId: "id-x", days: [] }]),
+        unit([{ kind: "block-teachers", teacherIds: [] }]),
+      ],
+      notSet: [],
+      noTeacher: ["id-math", "id-art"],
+      elapsedMs: 0,
+    },
+    input,
+    w,
+  );
+  const all = [...out.reasons.map((r) => r.message), ...out.noTeacher].join(
+    " ",
+  );
+  assert.ok(all.includes("2 pupils") && all.includes("tutor"), all);
+  assert.ok(all.includes("some of its pupils"), all);
+  assert.ok(!/learner|teacher/.test(all), all);
+});
+
+check("explain: no-consecutive on some days names them", () => {
+  const m = msg([{ kind: "no-consecutive", days: [1, 3] }], {
+    kind: "double",
+    locale: "fr",
+  });
+  assert.ok(m.includes("lundi") && m.includes("mercredi"), m);
+  assert.ok(m.includes("double"), m);
+  noJunk(m);
 });
