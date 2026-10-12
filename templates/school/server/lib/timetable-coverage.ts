@@ -1,101 +1,18 @@
 import { and, eq, inArray } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
 import { listInWords, loadTimetable, termContext } from "./timetable.js";
-import type { ResolvedPeriod } from "./timetable-clashes.js";
-import { validPairs, type SchoolWeek } from "../../shared/school-week.js";
 import { resolveViewTerm } from "./timetable-view.js";
 
-export interface Tally {
-  periods: number;
-  doubles: number;
-}
-
-/** A class as coverage needs to see it. */
-export interface CoverageClass {
-  classId: string;
-  className: string;
-  subjectName: string;
-  armId: string | null;
-  periodsPerWeek: number | null;
-  doublesPerWeek: number | null;
-}
-
-export interface ClassCoverage {
-  classId: string;
-  className: string;
-  subjectName: string;
-  armId: string | null;
-  required: Tally | null;
-  placed: Tally;
-  short: Tally;
-}
-
-/**
- * How many of a class's placed periods come as doubles: each valid pair (see
- * `validPairs`) is one. Its two rows still count as two periods.
- */
-export function placedDoubles(
-  week: SchoolWeek | null | undefined,
-  rows: ResolvedPeriod[],
-): number {
-  return validPairs(week, rows).size;
-}
-
-/**
- * What each class needs a week against what the timetable holds for it.
- * Pure. Every row of a class counts, including those off the bells. A class
- * the school hasn't given counts shows `required: null` and is not short of
- * anything; shortfalls are never negative.
- */
-export function countCoverage(
-  periods: ResolvedPeriod[],
-  classes: CoverageClass[],
-  week: SchoolWeek | null | undefined,
-): { classes: ClassCoverage[]; unset: number } {
-  const rowsOf = new Map<string, ResolvedPeriod[]>();
-  for (const p of periods) {
-    const list = rowsOf.get(p.classId) ?? [];
-    list.push(p);
-    rowsOf.set(p.classId, list);
-  }
-  let unset = 0;
-  const out: ClassCoverage[] = classes.map((c) => {
-    const rows = rowsOf.get(c.classId) ?? [];
-    const placed: Tally = {
-      periods: rows.length,
-      doubles: placedDoubles(week, rows),
-    };
-    if (c.periodsPerWeek == null) {
-      unset++;
-      return {
-        classId: c.classId,
-        className: c.className,
-        subjectName: c.subjectName,
-        armId: c.armId,
-        required: null,
-        placed,
-        short: { periods: 0, doubles: 0 },
-      };
-    }
-    const required: Tally = {
-      periods: c.periodsPerWeek,
-      doubles: c.doublesPerWeek ?? 0,
-    };
-    return {
-      classId: c.classId,
-      className: c.className,
-      subjectName: c.subjectName,
-      armId: c.armId,
-      required,
-      placed,
-      short: {
-        periods: Math.max(0, required.periods - placed.periods),
-        doubles: Math.max(0, required.doubles - placed.doubles),
-      },
-    };
-  });
-  return { classes: out, unset };
-}
+export {
+  countCoverage,
+  placedDoubles,
+  isShort,
+  shortInWords,
+  type ClassCoverage,
+  type CoverageClass,
+  type Tally,
+} from "../../shared/timetable-coverage.js";
+import { countCoverage, isShort, shortInWords } from "../../shared/timetable-coverage.js";
 
 /** The active classes of an academic year (every active class with no year). */
 export async function activeClassesOfYear(
@@ -217,7 +134,7 @@ export async function coverageView(orgId: string, args: CoverageFilter) {
   );
   counted.classes.sort((a, b) => a.className.localeCompare(b.className));
 
-  const short = counted.classes.filter((c) => c.short.periods > 0);
+  const short = counted.classes.filter(isShort);
   const parts: string[] = [];
   if (counted.classes.length === 0) {
     parts.push("There are no classes to count.");
@@ -227,7 +144,7 @@ export async function coverageView(orgId: string, args: CoverageFilter) {
         ? `${short.length} ${short.length === 1 ? "class is" : "classes are"} short of the lessons ${short.length === 1 ? "it needs" : "they need"}: ${listInWords(
             short.map(
               (c) =>
-                `${c.className} (${c.placed.periods} of ${c.required!.periods})`,
+                `${c.className} (${shortInWords(c.required!, c.placed)})`,
             ),
           )}.`
         : counted.unset < counted.classes.length

@@ -38,6 +38,7 @@ import {
   roomKey,
   type Room,
 } from "@shared/school-week";
+import { countCoverage, shortInWords } from "@shared/timetable-coverage";
 
 type View = "arm" | "teacher" | "room";
 const isView = (v: string | null): v is View =>
@@ -138,14 +139,34 @@ export default function AdminTimetable() {
   // Placed comes from the grid itself, so a lesson placed or removed moves
   // the counts on the click, ahead of the coverage refetch.
   const coverageNow = useMemo(() => {
-    const placed = new Map<string, number>();
-    for (const p of tt?.periods ?? [])
-      placed.set(p.classId, (placed.get(p.classId) ?? 0) + 1);
+    const rows = tt?.periods ?? [];
     return (coverage?.classes ?? [])
       .filter((c) => c.required)
       .map((c) => {
-        const n = tt ? (placed.get(c.classId) ?? 0) : c.placed.periods;
-        return { ...c, placedNow: n, shortNow: c.required!.periods - n };
+        // The shared rule, on the grid's own rows; the coverage reply's
+        // tally stands in until the grid has loaded.
+        const placedNow = tt
+          ? countCoverage(
+              rows.filter((p) => p.classId === c.classId),
+              [
+                {
+                  classId: c.classId,
+                  className: c.className,
+                  subjectName: c.subjectName,
+                  armId: c.armId,
+                  periodsPerWeek: c.required!.periods,
+                  doublesPerWeek: c.required!.doubles,
+                },
+              ],
+              tt.week,
+            ).classes[0]
+          : c;
+        return {
+          ...c,
+          placedNow: placedNow.placed,
+          shortNow: placedNow.short,
+          words: shortInWords(c.required!, placedNow.placed),
+        };
       });
   }, [coverage, tt]);
   // A subject names its class; two of one subject in view go by class name.
@@ -156,7 +177,9 @@ export default function AdminTimetable() {
     c.subjectName && subjectCount.get(c.subjectName) === 1
       ? c.subjectName
       : c.className;
-  const shortClasses = coverageNow.filter((c) => c.shortNow > 0);
+  const shortClasses = coverageNow.filter(
+    (c) => c.shortNow.periods > 0 || c.shortNow.doubles > 0,
+  );
 
   // A term with nothing of its own offers the term before it, read from
   // get-timetable. Never probed with copy-timetable: that is a write, and
@@ -305,7 +328,7 @@ export default function AdminTimetable() {
           >
             {shortClasses.map((c) => (
               <p key={c.classId}>
-                {c.className} — {c.placedNow} of {c.required!.periods}
+                {c.className} — {c.words}
               </p>
             ))}
           </PopoverContent>
@@ -466,7 +489,15 @@ export default function AdminTimetable() {
             data-testid="coverage-line"
           >
             {coverageNow
-              .map((c) => `${label(c)} ${c.placedNow}/${c.required!.periods}`)
+              .map((c) => {
+                const r = c.required!;
+                const missing = Math.max(0, r.doubles - c.placedNow.doubles);
+                return `${label(c)} ${c.placedNow.periods}/${r.periods}${
+                  r.doubles > 0 && missing > 0
+                    ? ` · ${c.placedNow.doubles}/${r.doubles} ${r.doubles === 1 ? "double" : "doubles"}`
+                    : ""
+                }`;
+              })
               .join(" · ")}
           </p>
         ) : null}
