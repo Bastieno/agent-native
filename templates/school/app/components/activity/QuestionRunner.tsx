@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -67,33 +67,45 @@ export function QuestionRunner({
     text: string | null;
   } | null>(null);
 
-  const {
-    data: served,
-    isLoading,
-    error,
-  } = useQuery<Served | null>({
-    queryKey: ["served-question", assessmentId, index],
-    queryFn: async () => {
-      const res = await fetch(
-        agentNativePath("/_agent-native/actions/serve-question"),
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(
-            index === null ? { assessmentId } : { assessmentId, index },
-          ),
-        },
-      );
-      const body = await res.json().catch(() => null);
-      if (!res.ok) throw new Error((body as any)?.error ?? "Failed");
-      return body as Served;
-    },
-    // A question's clock starts when it is served, so never re-fetch behind
-    // the learner's back.
-    staleTime: Infinity,
-    refetchOnWindowFocus: false,
-    retry: false,
-  });
+  // Serving a question is a write — it starts that question's clock — so it
+  // is asked for once per question, here, and never through a query. A query
+  // would be refetched whenever the app syncs after any change, re-serving
+  // the question behind the learner's back; on a one-way paper the re-serve
+  // of an answered question is refused, and the learner reading their
+  // feedback would be shown an error instead.
+  const [served, setServed] = useState<Served | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+  const requested = useRef<string | null>(null);
+
+  useEffect(() => {
+    const key = `${assessmentId}:${index ?? "next"}`;
+    if (requested.current === key) return;
+    requested.current = key;
+    // Only the answer for the question still wanted is kept; a late reply
+    // for one the learner has moved past is dropped.
+    const stale = () => requested.current !== key;
+    setIsLoading(true);
+    setError(null);
+    fetch(agentNativePath("/_agent-native/actions/serve-question"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(
+        index === null ? { assessmentId } : { assessmentId, index },
+      ),
+    })
+      .then(async (res) => {
+        const body = await res.json().catch(() => null);
+        if (!res.ok) throw new Error((body as any)?.error ?? "Failed");
+        if (!stale()) setServed(body as Served);
+      })
+      .catch((e: Error) => {
+        if (!stale()) setError(e);
+      })
+      .finally(() => {
+        if (!stale()) setIsLoading(false);
+      });
+  }, [assessmentId, index]);
 
   // Restore whatever they had typed if they come back to a question.
   useEffect(() => {
