@@ -3,6 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq, inArray } from "drizzle-orm";
+import { isMarkedWork } from "../server/lib/gradebook.js";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { jsonish } from "../shared/zod-json.js";
@@ -158,7 +159,8 @@ export default defineAction({
     const subjects = classes
       .map((cls: any) => {
         const forClass = assessments.filter(
-          (a: any) => a.classId === cls.id && a.status === "published",
+          (a: any) =>
+            a.classId === cls.id && a.status === "published" && isMarkedWork(a),
         );
         const mine = grades.filter((g: any) =>
           forClass.some((a: any) => a.id === g.assessmentId),

@@ -1,4 +1,4 @@
-import { and, eq, inArray } from "drizzle-orm";
+import { and, eq, inArray, isNull, ne, or } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../db/index.js";
@@ -19,6 +19,23 @@ import { missedWorkPolicy, summarise } from "../../shared/missed-work.js";
  * nobody handed in counts as a nought or is left out, as the school has
  * said.
  */
+/**
+ * Work that carries marks: everything but a page to read or a card deck
+ * (gradingMode "none"), which nobody hands in. Counting those as set made
+ * every learner look as if they had missed most of their work, so grouping,
+ * "who is struggling?" and report cards all have to leave them out.
+ * Older activities with no grading mode carry marks.
+ */
+export const carriesMarks = () =>
+  or(
+    isNull(schema.assessments.gradingMode),
+    ne(schema.assessments.gradingMode, "none"),
+  );
+
+/** The same, for an activity row already read. */
+export const isMarkedWork = (a: { gradingMode?: string | null }) =>
+  a.gradingMode !== "none";
+
 export async function recomputeGradebook(
   classId: string,
   orgId: string,
@@ -39,6 +56,7 @@ export async function recomputeGradebook(
       and(
         eq(schema.assessments.classId, classId),
         eq(schema.assessments.status, "published"),
+        carriesMarks(),
       ),
     );
   if (published.length === 0) return 0;

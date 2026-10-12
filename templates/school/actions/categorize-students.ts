@@ -3,6 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray } from "drizzle-orm";
+import { carriesMarks } from "../server/lib/gradebook.js";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { missedWorkPolicy, summarise } from "../shared/missed-work.js";
@@ -57,6 +58,7 @@ export default defineAction({
         and(
           eq(schema.assessments.classId, args.classId),
           eq(schema.assessments.status, "published"),
+          carriesMarks(),
         ),
       );
     const assessmentIds = assessments.map((a) => a.id);
