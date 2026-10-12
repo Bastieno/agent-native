@@ -107,6 +107,16 @@ export function recallQuestion(
         .filter((t) => !terms.includes(t)),
     ),
   ];
+  if (pool.length < 3) {
+    pool.push(
+      ...new Set(
+        others
+          .filter((o) => o.code !== objective.code)
+          .flatMap((o) => keyTerms(o.description))
+          .filter((t) => !terms.includes(t) && !pool.includes(t)),
+      ),
+    );
+  }
   if (pool.length < 3) return null;
   const wrong: string[] = [];
   while (wrong.length < 3) {
@@ -309,8 +319,12 @@ export function questionsFor(
     const objective = week[i % week.length];
     const q =
       recallQuestion(objective, all, seed + i * 31) ??
-      (numerate ? calculation(subject, seed + i * 19) : null);
-    if (q) out.push(q);
+      (numerate
+        ? calculation(subject, seed + i * 19)
+        : // A topic too small for four distinct options gets a one-mark
+          // short answer instead, so no paper is ever set empty.
+          { ...openQuestion(objective, 1), answerSpace: "short" as const });
+    out.push(q);
   }
   for (let i = 0; i < open; i++) {
     out.push(

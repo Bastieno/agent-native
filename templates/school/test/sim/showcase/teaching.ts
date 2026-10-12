@@ -448,6 +448,11 @@ export async function teachClassWeek(
         : kind === "practical"
           ? []
           : questionsFor(cls.subject.name, objectives, all, seed, 3, 1);
+  findings.expect(
+    "teaching",
+    kind === "practical" || questions.length > 0,
+    `${cls.name}'s week ${week} ${kind} has questions in it`,
+  );
   const assessmentId = await setPiece(
     run,
     cls,

@@ -10,12 +10,25 @@ import type { ShowcaseClass, ShowcaseRun } from "./context.js";
  * moved into its lab as a named practical.
  */
 
+const DAYS = [
+  "",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
 type Period = {
   scheduleId: string;
   classId: string;
   className: string;
   day: number;
   periodNumber: number | null;
+  start: string;
+  end: string;
   room: string | null;
   teachers: { userId: string }[];
   armId: string | null;
@@ -159,7 +172,7 @@ export async function buildTimetable(run: ShowcaseRun): Promise<void> {
       lessonLabel: "Practical",
     });
     practicals.push(
-      `${cls.name}, day ${first.day} periods ${first.periodNumber}–${(first.periodNumber ?? 0) + 1}, ${cls.subject.lab}`,
+      `${cls.name}, ${DAYS[first.day]} ${first.start}–${double[double.length - 1].end}, ${cls.subject.lab}`,
     );
   }
   decisions.add(

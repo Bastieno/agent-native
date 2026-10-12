@@ -261,6 +261,7 @@ export async function checklist(
       classId: cls.id,
     });
     const marks = asList(perf?.assessmentStats ?? [])
+      .filter((a: any) => a.averageScore != null)
       .map((a: any) => Number(a.averageScore))
       .filter((n: number) => Number.isFinite(n));
     if (marks.length) classAverages.push(mean(marks));
@@ -313,14 +314,21 @@ export async function checklist(
   );
 
   // Announcements
-  const announcements = asList(
-    await client.as(admin, "list-announcements", {}),
+  // Asked per scope, with room for a term of them: the default page is 20.
+  const schoolWide = asList(
+    await client.as(admin, "list-announcements", {
+      scope: "school",
+      limit: 200,
+    }),
     "announcements",
-  );
-  const schoolWide = announcements.filter(
-    (a: any) => a.scope === "school",
   ).length;
-  const perClass = announcements.filter((a: any) => a.scope === "class").length;
+  const perClass = asList(
+    await client.as(admin, "list-announcements", {
+      scope: "class",
+      limit: 500,
+    }),
+    "announcements",
+  ).length;
   row(
     "Announcements",
     "School-wide and per class",
