@@ -114,12 +114,7 @@ export default function AdminCurriculumLibrary() {
     queryKey: ["grade-levels"],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath("/_agent-native/actions/manage-grade-levels"),
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ action: "list" }),
-        },
+        agentNativePath("/_agent-native/actions/list-grade-levels"),
       );
       if (!res.ok) return [];
       const json = await res.json();

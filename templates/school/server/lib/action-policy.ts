@@ -105,6 +105,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "get-custom-fields-schema": STAFF,
   "update-custom-fields-schema": ADMIN,
   "manage-grade-levels": ADMIN,
+  // Read-only list of the year groups, so pages need not poll the writer.
+  "list-grade-levels": STAFF,
   "list-academic-years": STAFF,
   "create-academic-year": ADMIN,
   "set-active-academic-year": ADMIN,

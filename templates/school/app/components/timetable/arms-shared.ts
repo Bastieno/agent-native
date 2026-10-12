@@ -59,7 +59,7 @@ export function useArms() {
 export function useGradeLevels() {
   return useQuery<GradeLevel[]>({
     queryKey: ["grade-levels"],
-    queryFn: async () => callAction("manage-grade-levels", { action: "list" }),
+    queryFn: async () => callAction("list-grade-levels", {}, "GET"),
     staleTime: 60_000,
   });
 }
