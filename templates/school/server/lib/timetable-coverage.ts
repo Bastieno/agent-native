@@ -12,7 +12,11 @@ export {
   type CoverageClass,
   type Tally,
 } from "../../shared/timetable-coverage.js";
-import { countCoverage, isShort, shortInWords } from "../../shared/timetable-coverage.js";
+import {
+  countCoverage,
+  isShort,
+  shortInWords,
+} from "../../shared/timetable-coverage.js";
 
 /** The active classes of an academic year (every active class with no year). */
 export async function activeClassesOfYear(
@@ -143,8 +147,7 @@ export async function coverageView(orgId: string, args: CoverageFilter) {
       short.length
         ? `${short.length} ${short.length === 1 ? "class is" : "classes are"} short of the lessons ${short.length === 1 ? "it needs" : "they need"}: ${listInWords(
             short.map(
-              (c) =>
-                `${c.className} (${shortInWords(c.required!, c.placed)})`,
+              (c) => `${c.className} (${shortInWords(c.required!, c.placed)})`,
             ),
           )}.`
         : counted.unset < counted.classes.length
