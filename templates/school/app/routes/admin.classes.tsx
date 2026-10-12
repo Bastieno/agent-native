@@ -158,13 +158,17 @@ export default function AdminClasses() {
   async function handleSaveClass() {
     if (!selectedClass) return;
     const periods = editPeriods.trim() === "" ? null : Number(editPeriods);
-    // Doubles are part of the periods; with no periods there are none.
-    const doubles =
-      periods == null || editDoubles.trim() === "" ? null : Number(editDoubles);
+    // Doubles are part of the periods; with no periods there are none, and a
+    // typed number is said so rather than dropped.
+    const typedDoubles = editDoubles.trim() === "" ? null : Number(editDoubles);
+    const doubles = periods == null ? null : typedDoubles;
     const countsChanged =
       periods !== (selectedClass.periodsPerWeek ?? null) ||
       doubles !== (selectedClass.doublesPerWeek ?? null);
-    const problem = countsChanged ? countsProblem(periods, doubles) : null;
+    const problem =
+      countsChanged || (periods == null && typedDoubles != null)
+        ? countsProblem(periods, typedDoubles)
+        : null;
     if (problem) {
       toast.error(problem);
       return;

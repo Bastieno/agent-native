@@ -196,7 +196,9 @@ export default defineAction({
     const target =
       args.periodsPerWeek == null
         ? "cleared"
-        : said(args.periodsPerWeek, args.doublesPerWeek ?? null);
+        : args.doublesPerWeek === undefined
+          ? `${args.periodsPerWeek} a week, each class keeping the doubles it has`
+          : said(args.periodsPerWeek, args.doublesPerWeek);
     if (!args.confirm) {
       return {
         applied: false,

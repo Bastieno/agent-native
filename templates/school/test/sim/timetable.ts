@@ -1776,6 +1776,8 @@ export async function checkDoubles(
       rows.every((r: any) => r.lessonLabel === "Own name 1") &&
       inWeek.every((l: any) => l?.lessonLabel === "Own name 1") &&
       !!inWeek[0]?.pairId &&
+      inWeek[0]?.doubleWithNext === true &&
+      inWeek[1]?.doubleWithNext === false &&
       inWeek[0]?.pairId === inWeek[1]?.pairId,
     "a name given to one half belongs to the whole double, and the learner's week shows it",
     JSON.stringify([rows.map((r: any) => r.lessonLabel), inWeek]),
@@ -1793,6 +1795,88 @@ export async function checkDoubles(
     "a teacher's day shows a double as one slot from its first start to its second end",
     JSON.stringify(slots),
   );
+
+  // 5b. Saving the later half at its own slot is "no move": the double stays
+  // where it is and only the name changes.
+  rows = await rowsOf();
+  const later = rows.find((r: any) => r.periodNumber === 6)!;
+  const viaSecond = await set({
+    day: 2,
+    periodNumber: 6,
+    scheduleId: later.scheduleId,
+    lessonLabel: "Renamed via second",
+  });
+  rows = await rowsOf();
+  findings.expect(
+    phase,
+    rows.length === 2 &&
+      rows
+        .map((r: any) => r.periodNumber)
+        .sort()
+        .join() === "5,6" &&
+      rows.every((r: any) => r.day === 2) &&
+      rows[0].pairId === rows[1].pairId &&
+      rows.every((r: any) => r.lessonLabel === "Renamed via second") &&
+      noId(viaSecond?.message),
+    "renaming a double through its second half at its own period leaves it where it was",
+    JSON.stringify(
+      rows.map((r: any) => [r.day, r.periodNumber, r.lessonLabel]),
+    ),
+  );
+  await set({
+    day: 2,
+    periodNumber: 5,
+    scheduleId: rows.find((r: any) => r.periodNumber === 5)!.scheduleId,
+    lessonLabel: "Own name 1",
+  });
+  rows = await rowsOf();
+
+  // 5c. Five single periods do not make up "5 with 1 double".
+  const needy = idOf(
+    await client.as(admin, "create-class", {
+      subjectId: arms.subjectId,
+      gradeLevelId: arms.gradeLevelId,
+      academicYearId: run.academicYearId,
+      name: `${arms.yearGroup} Needs A Double`,
+      periodsPerWeek: 5,
+      doublesPerWeek: 1,
+    }),
+    "class",
+  )!;
+  const singles: string[] = [];
+  for (const [day, periodNumber] of [
+    [4, 1],
+    [4, 2],
+    [4, 3],
+    [5, 1],
+    [5, 2],
+  ]) {
+    const r: any = await client.as(admin, "set-timetable-period", {
+      termId: T,
+      classId: needy,
+      day,
+      periodNumber,
+    });
+    singles.push(r.scheduleId);
+  }
+  const needyCover: any = await client.as(admin, "get-timetable-coverage", {
+    termId: T,
+  });
+  const needyRow = needyCover.classes.find((c: any) => c.classId === needy);
+  findings.expect(
+    phase,
+    needyRow?.placed.periods === 5 &&
+      needyRow?.short.periods === 0 &&
+      needyRow?.short.doubles === 1 &&
+      /Needs A Double \(5 of 5, 0 of 1 double\)/.test(
+        String(needyCover.message),
+      ),
+    "five singles against 5 periods with 1 double still count as short, and the message says the double",
+    `${JSON.stringify(needyRow)} ${needyCover.message}`,
+  );
+  for (const id of singles) {
+    await client.as(admin, "remove-timetable-period", { scheduleId: id });
+  }
 
   // 6. A copied double is still one double, with a new pair and its name.
   const copyTerm = idOf(

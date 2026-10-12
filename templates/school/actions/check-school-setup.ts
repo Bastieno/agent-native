@@ -16,6 +16,7 @@ import {
   currentYearId,
 } from "../server/lib/timetable-coverage.js";
 import { parseGradeLevelIds } from "../server/lib/subject-year-groups.js";
+import { schoolWord } from "../server/lib/arm-enrolment.js";
 
 /**
  * Which of the school's settings are still empty, and what the app does
@@ -173,6 +174,8 @@ export default defineAction({
     }
     // Without counts the timetable can place lessons but can't say what is
     // still missing.
+    const yearWord = await schoolWord(orgId, "yearGroup", "year group");
+    const streamWord = await schoolWord(orgId, "stream", "stream");
     const uncounted = (
       await activeClassesOfYear(orgId, await currentYearId(orgId))
     ).filter((c: any) => c.periodsPerWeek == null).length;
@@ -180,7 +183,7 @@ export default defineAction({
       gaps.push({
         setting: "Lesson counts",
         meanwhile: `This academic year, the timetable can't say what is still missing for ${uncounted} ${uncounted === 1 ? "class" : "classes"}.`,
-        fix: "set-lesson-counts for each subject in each year group (per stream where they differ)",
+        fix: `set-lesson-counts for each subject in each ${yearWord} (per ${streamWord} where they differ)`,
       });
     }
     if (!config.paperSize) {

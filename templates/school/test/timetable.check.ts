@@ -19,6 +19,7 @@ import {
 } from "../shared/school-week.js";
 import { countsProblem } from "../shared/lesson-counts.js";
 import { countCoverage } from "../server/lib/timetable-coverage.js";
+import { isShort, shortInWords } from "../shared/timetable-coverage.js";
 import { gridSpans } from "../shared/timetable-grid.js";
 import {
   findClashes,
@@ -568,6 +569,31 @@ check("a pair counts as two periods and one double", () => {
   );
   assert.deepEqual(out.classes[0].placed, { periods: 3, doubles: 1 });
   assert.deepEqual(out.classes[0].short, { periods: 2, doubles: 0 });
+});
+
+check("four singles are short of 4 periods with 1 double, in words", () => {
+  const out = countCoverage(
+    [1, 2, 4, 5].map((n) => half(`s${n}`, n, null)),
+    [cov("a", 4, 1)],
+    dayWithBreak,
+  );
+  const c = out.classes[0];
+  assert.equal(isShort(c), true);
+  assert.deepEqual(c.short, { periods: 0, doubles: 1 });
+  assert.equal(shortInWords(c.required!, c.placed), "4 of 4, 0 of 1 double");
+});
+
+check("a class with every period and double is not short", () => {
+  const out = countCoverage(
+    [half("p1", 1, "x"), half("p2", 2, "x"), half("s", 5, null)],
+    [cov("a", 3, 1)],
+    dayWithBreak,
+  );
+  assert.equal(isShort(out.classes[0]), false);
+  assert.equal(
+    shortInWords(out.classes[0].required!, out.classes[0].placed),
+    "3 of 3, 1 of 1 double",
+  );
 });
 
 check("one half on its own is not a double", () => {
