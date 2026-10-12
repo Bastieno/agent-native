@@ -22,6 +22,7 @@ import { countCoverage } from "../server/lib/timetable-coverage.js";
 import { isShort, shortInWords } from "../shared/timetable-coverage.js";
 import { PROPOSAL_STALE, staleReason } from "../shared/timetable-proposal.js";
 import { gridSpans } from "../shared/timetable-grid.js";
+import { viewRoleOf } from "../shared/view-role.js";
 import {
   findClashes,
   type ResolvedPeriod,
@@ -1900,3 +1901,14 @@ check(
     );
   },
 );
+
+check("the agent's screen follows the role a person really holds", () => {
+  assert.equal(viewRoleOf("school_admin"), "admin");
+  assert.equal(viewRoleOf("teacher"), "teacher");
+  assert.equal(viewRoleOf("subject_coordinator"), "teacher");
+  assert.equal(viewRoleOf("student"), "student");
+  // No profile, or a role that is not one of these: no branch to show.
+  assert.equal(viewRoleOf(null), null);
+  assert.equal(viewRoleOf(undefined), null);
+  assert.equal(viewRoleOf("parent"), null);
+});

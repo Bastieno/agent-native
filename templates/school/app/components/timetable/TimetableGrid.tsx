@@ -254,7 +254,7 @@ function Cell({
           className={cn(
             "min-w-0 flex-1 rounded px-1.5 py-1",
             isProposed(e.scheduleId)
-              ? "border border-dashed border-primary/60 bg-primary/5"
+              ? "pointer-events-none border border-dashed border-primary/60 bg-primary/5"
               : "bg-primary/10",
           )}
         >

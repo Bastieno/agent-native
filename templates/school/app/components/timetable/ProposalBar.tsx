@@ -100,7 +100,10 @@ export function ProposalBar({
   const qc = useQueryClient();
   const [confirming, setConfirming] = useState(false);
   const [accepting, setAccepting] = useState(false);
+  const [discarding, setDiscarding] = useState(false);
   const { lessons, notFitted } = proposal.summary;
+  // What the popover lists: lessons that did not fit, plus the classes left out.
+  const review = notFitted + proposal.notSet.length + proposal.noTeacher.length;
   const sentences = [
     ...proposal.reasons.map((r) => r.message),
     ...proposal.notSet,
@@ -130,7 +133,7 @@ export function ProposalBar({
           {" · "}
           {lessons} {lessons === 1 ? "lesson" : "lessons"}
         </span>
-        {notFitted > 0 || sentences.length > 0 ? (
+        {review > 0 ? (
           <>
             <span className="text-muted-foreground">{" · "}</span>
             <Popover>
@@ -140,7 +143,7 @@ export function ProposalBar({
                   className="text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground"
                   data-testid="proposal-not-fitted"
                 >
-                  {notFitted} not fitted
+                  {review} to review
                 </button>
               </PopoverTrigger>
               <PopoverContent
@@ -148,11 +151,9 @@ export function ProposalBar({
                 className="max-h-80 w-96 space-y-1.5 overflow-y-auto text-sm"
                 data-testid="proposal-reasons"
               >
-                {sentences.length ? (
-                  sentences.map((m, i) => <p key={i}>{m}</p>)
-                ) : (
-                  <p>Every lesson found a place.</p>
-                )}
+                {sentences.map((m, i) => (
+                  <p key={i}>{m}</p>
+                ))}
               </PopoverContent>
             </Popover>
           </>
@@ -163,7 +164,12 @@ export function ProposalBar({
           variant="ghost"
           size="sm"
           className="h-8 text-xs"
-          onClick={() => finish("discard-timetable-proposal")}
+          disabled={discarding || accepting}
+          onClick={async () => {
+            setDiscarding(true);
+            await finish("discard-timetable-proposal");
+            setDiscarding(false);
+          }}
         >
           Discard
         </Button>

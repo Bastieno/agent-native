@@ -9,7 +9,12 @@ import { isUnassignedTeacher } from "../../shared/class-teacher.js";
 import { schoolWord } from "./arm-enrolment.js";
 import { naivePlural } from "../../shared/terminology.js";
 import { countCoverage } from "../../shared/timetable-coverage.js";
-import type { GenClass, GenInput, Words } from "./timetable-generator.js";
+import type {
+  GenClass,
+  GenInput,
+  ProposedLesson,
+  Words,
+} from "./timetable-generator.js";
 import {
   findTerm,
   loadTimetable,
@@ -245,4 +250,144 @@ export async function openProposal(
     .orderBy(desc(P.createdAt))
     .limit(1);
   return (row as ProposalRow | undefined) ?? null;
+}
+
+export interface ProposalView {
+  id: string;
+  createdAt: string;
+  lessons: (ProposedLesson & {
+    className: string;
+    subjectName: string;
+    armId: string | null;
+    optionArmIds: string[];
+    teachers: { userId: string; name: string }[];
+  })[];
+  reasons: { classIds: string[]; message: string }[];
+  notSet: string[];
+  noTeacher: string[];
+  summary: { lessons: number; notFitted: number; elapsedMs: number };
+}
+
+/**
+ * The draft waiting for a term, shaped for reading: each lesson with its
+ * class, arm, subject and teachers (no learner ids). Null when the term is not
+ * this school's or nothing is waiting. The one reader, for the action and for
+ * view-screen.
+ */
+export async function proposalView(
+  orgId: string,
+  termId: string,
+): Promise<ProposalView | null> {
+  const term = await findTerm(orgId, termId);
+  if (!term) return null;
+  const row = await openProposal(orgId, term.id);
+  if (!row) return null;
+  const lessons: ProposedLesson[] = JSON.parse(row.lessonsJson);
+  const ids = [...new Set(lessons.map((l) => l.classId))];
+  type Info = {
+    className: string;
+    subjectName: string;
+    armId: string | null;
+    optionArmIds: string[];
+    teachers: { userId: string; name: string }[];
+  };
+  const info = new Map<string, Info>();
+  if (ids.length) {
+    const db = getDb();
+    const [classRows, optionRows, teacherRows] = await Promise.all([
+      db
+        .select()
+        .from(schema.classes)
+        .where(
+          and(eq(schema.classes.orgId, orgId), inArray(schema.classes.id, ids)),
+        ),
+      db
+        .select()
+        .from(schema.classArms)
+        .where(inArray(schema.classArms.classId, ids)),
+      db
+        .select()
+        .from(schema.classTeachers)
+        .where(
+          and(
+            inArray(schema.classTeachers.classId, ids),
+            inArray(schema.classTeachers.role, ["primary", "support"]),
+          ),
+        ),
+    ]);
+    const subjectIds = [
+      ...new Set((classRows as any[]).map((c) => c.subjectId as string)),
+    ];
+    const subjectRows = subjectIds.length
+      ? await db
+          .select()
+          .from(schema.subjects)
+          .where(
+            and(
+              eq(schema.subjects.schoolId, orgId),
+              inArray(schema.subjects.id, subjectIds),
+            ),
+          )
+      : [];
+    const subjectName = new Map(
+      (subjectRows as any[]).map((s) => [s.id as string, s.name as string]),
+    );
+    // Primary first, then support; each person once, no unassigned marker.
+    const teacherIds = new Map<string, string[]>();
+    for (const c of classRows as any[]) {
+      teacherIds.set(
+        c.id,
+        isUnassignedTeacher(c.primaryTeacherUserId)
+          ? []
+          : [c.primaryTeacherUserId],
+      );
+    }
+    const rank = (r: any) => (r.role === "primary" ? 0 : 1);
+    for (const t of [...(teacherRows as any[])].sort(
+      (a, b) => rank(a) - rank(b),
+    )) {
+      if (isUnassignedTeacher(t.teacherUserId)) continue;
+      const list = teacherIds.get(t.classId);
+      if (list && !list.includes(t.teacherUserId)) list.push(t.teacherUserId);
+    }
+    const labels = await getUserLabels([...teacherIds.values()].flat());
+    for (const c of classRows as any[]) {
+      info.set(c.id, {
+        className: c.name,
+        subjectName: subjectName.get(c.subjectId) ?? "",
+        armId: c.armId ?? null,
+        optionArmIds: (optionRows as any[])
+          .filter((o) => o.classId === c.id)
+          .map((o) => o.armId as string),
+        teachers: (teacherIds.get(c.id) ?? []).map((userId) => ({
+          userId,
+          name: labelFor(labels, userId) ?? "",
+        })),
+      });
+    }
+  }
+  const summary = JSON.parse(row.summaryJson) as Record<string, any>;
+  return {
+    id: row.id,
+    createdAt: row.createdAt,
+    lessons: lessons.map((l) => {
+      const c = info.get(l.classId);
+      return {
+        ...l,
+        className: c?.className ?? "",
+        subjectName: c?.subjectName ?? "",
+        armId: c?.armId ?? null,
+        optionArmIds: c?.optionArmIds ?? [],
+        teachers: c?.teachers ?? [],
+      };
+    }),
+    reasons: JSON.parse(row.unplacedJson),
+    notSet: summary.notSet ?? [],
+    noTeacher: summary.noTeacher ?? [],
+    summary: {
+      lessons: summary.lessons ?? lessons.length,
+      notFitted: summary.notFitted ?? 0,
+      elapsedMs: summary.elapsedMs ?? 0,
+    },
+  };
 }

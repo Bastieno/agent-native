@@ -14,13 +14,15 @@ import { schoolToday } from "../shared/dates.js";
 import { joinDoubles } from "../shared/school-week.js";
 import { getMyWeek } from "../server/lib/my-week.js";
 import { timetableView } from "../server/lib/timetable-view.js";
-import getTimetableProposal from "./get-timetable-proposal.js";
+import { getSchoolRole } from "../server/lib/student-access.js";
+import { viewRoleOf } from "../shared/view-role.js";
+import { proposalView } from "../server/lib/timetable-generation.js";
 import { coverageView } from "../server/lib/timetable-coverage.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 
 export default defineAction({
   description:
-    "See what the user is currently looking at on screen. Role-aware: returns admin, teacher, or student context based on navigation.role.",
+    "See what the user is currently looking at on screen. Role-aware: returns admin, teacher, or student context for the role the signed-in person really holds, shown where they are in the app.",
   schema: z.object({}),
   http: false,
   run: async () => {
@@ -33,11 +35,13 @@ export default defineAction({
 
     const db = getDb();
     const screen: Record<string, unknown> = { navigation: nav };
-    const role = nav.role;
 
     // Resolve school context from the authenticated session (not from nav state,
     // which does not carry schoolId or userId).
     const { orgId: schoolId, userEmail } = currentAccess();
+    // The branch follows the role the person really holds. Navigation state is
+    // written by the page, so a learner could claim "admin" there.
+    const role = viewRoleOf(userEmail ? await getSchoolRole(userEmail) : null);
 
     // ─── Admin views ─────────────────────────────────────────────────────────
     if (role === "admin") {
@@ -149,8 +153,7 @@ export default defineAction({
           }
           // The draft waiting for this term, as the bar over the grid shows it.
           const drafted = nav.termId
-            ? ((await getTimetableProposal.run({ termId: nav.termId })) as any)
-                .proposal
+            ? await proposalView(schoolId, nav.termId)
             : null;
           screen.proposal = drafted
             ? {

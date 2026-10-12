@@ -2050,6 +2050,17 @@ export async function checkGeneration(
     ),
     "a teacher cannot draft a timetable",
   );
+  // A learner reads no draft: the agent's screen view shares that reader and
+  // picks its branch from the real role, not the one a page writes (view-screen
+  // has no HTTP route, so the role rule itself is checked in timetable.check.ts).
+  findings.expect(
+    phase,
+    await refused(
+      () => client.as(run.students[0], "get-timetable-proposal", { termId: T }),
+      /not something a (student|learner)/i,
+    ),
+    "a learner cannot read a drafted timetable",
+  );
 
   // 3. One lesson by hand; everything else the copy brought is cleared.
   await client.as(admin, "copy-timetable", {
