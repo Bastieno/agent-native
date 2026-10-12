@@ -785,7 +785,7 @@ check("units: a block reserves the most-needing member's slots", () => {
   let free = 0;
   for (const u of out.units) {
     const m = u.members.find((x) => x.classId === "b")!;
-    if (m.needs === "free") free += u.kind === "double" ? 2 : 1;
+    free += (u.kind === "double" ? 2 : 1) - m.periods;
   }
   assert.equal(free, 2);
 });
@@ -810,3 +810,104 @@ check("units: the same input gives identical output", () => {
     JSON.stringify(buildUnits(input)),
   );
 });
+
+function memberTotals(
+  units: ReturnType<typeof buildUnits>["units"],
+  classId: string,
+) {
+  let periods = 0;
+  let doubles = 0;
+  for (const u of units)
+    for (const m of u.members)
+      if (m.classId === classId) {
+        periods += m.periods;
+        if (m.use === "double") doubles++;
+      }
+  return { periods, doubles };
+}
+const blockArms = ["x", "y"];
+const blockOf = (id: string, req: { periods: number; doubles: number }) =>
+  genClass({
+    classId: id,
+    armId: null,
+    optionArmIds: blockArms,
+    required: req,
+  });
+
+check("units: block A(4,2)+B(4,0) represents all of B", () => {
+  const out = buildUnits(
+    genInput([
+      blockOf("a", { periods: 4, doubles: 2 }),
+      blockOf("b", { periods: 4, doubles: 0 }),
+    ]),
+  );
+  assert.deepEqual(memberTotals(out.units, "b"), { periods: 4, doubles: 0 });
+  assert.deepEqual(memberTotals(out.units, "a"), { periods: 4, doubles: 2 });
+});
+
+check("units: block A(2,1)+B(2,0) represents all of B", () => {
+  const out = buildUnits(
+    genInput([
+      blockOf("a", { periods: 2, doubles: 1 }),
+      blockOf("b", { periods: 2, doubles: 0 }),
+    ]),
+  );
+  assert.deepEqual(memberTotals(out.units, "b"), { periods: 2, doubles: 0 });
+});
+
+check("units: a covered block member is free throughout", () => {
+  const out = buildUnits(
+    genInput([
+      blockOf("a", { periods: 3, doubles: 0 }),
+      {
+        ...blockOf("b", { periods: 3, doubles: 0 }),
+        placed: { periods: 3, doubles: 0 },
+      },
+    ]),
+  );
+  assert.ok(out.units.length > 0);
+  for (const u of out.units)
+    assert.deepEqual(
+      u.members.find((m) => m.classId === "b"),
+      {
+        classId: "b",
+        use: "free",
+        periods: 0,
+      },
+    );
+});
+
+check("units: block members with different doubles are all represented", () => {
+  const out = buildUnits(
+    genInput([
+      blockOf("a", { periods: 6, doubles: 3 }),
+      blockOf("b", { periods: 5, doubles: 1 }),
+      blockOf("c", { periods: 4, doubles: 2 }),
+    ]),
+  );
+  assert.deepEqual(memberTotals(out.units, "a"), { periods: 6, doubles: 3 });
+  assert.deepEqual(memberTotals(out.units, "b"), { periods: 5, doubles: 1 });
+  assert.deepEqual(memberTotals(out.units, "c"), { periods: 4, doubles: 2 });
+});
+
+check(
+  "units: (5,1)+(3,0) gives B three single periods and a free double",
+  () => {
+    const out = buildUnits(
+      genInput([
+        blockOf("a", { periods: 5, doubles: 1 }),
+        blockOf("b", { periods: 3, doubles: 0 }),
+      ]),
+    );
+    assert.deepEqual(memberTotals(out.units, "b"), { periods: 3, doubles: 0 });
+    const d = out.units.find((u) => u.kind === "double")!;
+    assert.deepEqual(
+      d.members.find((m) => m.classId === "a"),
+      {
+        classId: "a",
+        use: "double",
+        periods: 2,
+      },
+    );
+  },
+);

@@ -32,10 +32,16 @@ export interface GenInput {
   classes: GenClass[];
 }
 export type UnitKind = "single" | "double";
+/** How a member uses a unit: its double, its singles (1 or 2 periods), or free. */
+export interface GenMember {
+  classId: string;
+  use: "double" | "singles" | "free";
+  periods: 0 | 1 | 2;
+}
 export interface GenUnit {
   id: string; // deterministic: `${blockKey|classId}:${kind}:${n}`
   kind: UnitKind;
-  members: { classId: string; needs: "lesson" | "free" }[]; // one member unless a block
+  members: GenMember[]; // one member unless a block
   blockKey: string | null; // sorted option arm ids joined, for blocks
 }
 
@@ -99,30 +105,48 @@ export function buildUnits(input: GenInput): {
       make("single", n),
     );
     for (const m of need) {
-      let singlesLeft = m.singles;
-      // Doubles first: a member's own doubles go into double units.
-      doubles.forEach((u, i) => {
-        u.members.push({
-          classId: m.c.classId,
-          needs: i < m.doubles ? "lesson" : "free",
-        });
-      });
-      // Singles fill single units, then spare double units (one period each).
-      for (const u of singles) {
-        const lesson = singlesLeft > 0;
-        if (lesson) singlesLeft--;
-        u.members.push({
-          classId: m.c.classId,
-          needs: lesson ? "lesson" : "free",
-        });
-      }
-      doubles.forEach((u, i) => {
-        const mem = u.members.find((x) => x.classId === m.c.classId)!;
-        if (i >= m.doubles && singlesLeft > 0) {
-          mem.needs = "lesson";
-          singlesLeft--;
+      let left = m.singles;
+      let periods = 0;
+      let dbl = 0;
+      for (let i = 0; i < doubles.length; i++) {
+        if (i < m.doubles) {
+          doubles[i].members.push({
+            classId: m.c.classId,
+            use: "double",
+            periods: 2,
+          });
+          periods += 2;
+          dbl++;
         }
-      });
+      }
+      for (const u of singles) {
+        if (left > 0) {
+          left--;
+          periods++;
+          u.members.push({ classId: m.c.classId, use: "singles", periods: 1 });
+        } else {
+          u.members.push({ classId: m.c.classId, use: "free", periods: 0 });
+        }
+      }
+      for (let i = m.doubles; i < doubles.length; i++) {
+        const take = Math.min(2, left) as 0 | 1 | 2;
+        left -= take;
+        periods += take;
+        doubles[i].members.push(
+          take > 0
+            ? { classId: m.c.classId, use: "singles", periods: take }
+            : { classId: m.c.classId, use: "free", periods: 0 },
+        );
+      }
+      if (
+        left !== 0 ||
+        periods !== m.singles + 2 * m.doubles ||
+        dbl !== m.doubles
+      ) {
+        throw new Error(
+          `timetable units lose lessons for class ${m.c.classId}`,
+        );
+      }
       if (m.doubles > 0 || m.singles > 0) withUnits.add(m.c.classId);
     }
     for (const u of [...doubles, ...singles]) {
