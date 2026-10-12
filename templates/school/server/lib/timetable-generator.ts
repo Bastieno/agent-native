@@ -846,10 +846,19 @@ export interface Words {
 }
 
 /** "A, B and C": names only, no ids; empty names are dropped. */
-function joinNames(names: string[]): string {
+function joinNames(names: string[], locale?: string): string {
   const list = names.map((n) => n.trim()).filter(Boolean);
   if (list.length <= 1) return list[0] ?? "";
-  return `${list.slice(0, -1).join(", ")} and ${list[list.length - 1]}`;
+  // Intl.ListFormat is in every supported runtime but not in the ES2020 lib.
+  const ListFormat = (
+    Intl as unknown as {
+      ListFormat: new (
+        locale?: string,
+        options?: { type: "conjunction" },
+      ) => { format(list: string[]): string };
+    }
+  ).ListFormat;
+  return new ListFormat(locale, { type: "conjunction" }).format(list);
 }
 
 /** Most specific first; the first kind a unit carries gives its sentence. */
@@ -881,7 +890,8 @@ export function explainUnplaced(
 } {
   const classById = new Map(input.classes.map((c) => [c.classId, c]));
   const nameOf = (id: string) => classById.get(id)?.className?.trim() ?? "";
-  const namesOf = (ids: string[]) => joinNames(ids.map(nameOf));
+  const join = (names: string[]) => joinNames(names, input.locale);
+  const namesOf = (ids: string[]) => join(ids.map(nameOf));
   const day = (d: number) => schoolWeekdayName(d, input.locale);
 
   const reasons = result.unplaced.map((u) => {
@@ -941,7 +951,7 @@ export function explainUnplaced(
         const parts = same.flatMap((b) => {
           if (b.kind !== "teacher-busy") return [];
           const who = teacherName(b.teacherId) || `a ${words.teacher}`;
-          const days = joinNames(b.days.map(day));
+          const days = join(b.days.map(day));
           return [
             `${who} is teaching at every free time${days ? ` on ${days}` : ""}`,
           ];
@@ -951,14 +961,14 @@ export function explainUnplaced(
       }
       case "block-teachers": {
         const ids = primary.teacherIds.filter((id) => teacherName(id));
-        const who = joinNames(ids.map(teacherName));
+        const who = join(ids.map(teacherName));
         reason = who
           ? `${who} ${ids.length === 1 ? "is" : "are"} teaching elsewhere at every time its ${words.arm} is free`
           : `the ${words.teacher} of its options is teaching elsewhere at every time its ${words.arm} is free`;
         break;
       }
       case "room-busy": {
-        const rooms = joinNames(
+        const rooms = join(
           same.flatMap((b) => (b.kind === "room-busy" ? [b.room] : [])),
         );
         reason = rooms
@@ -967,7 +977,7 @@ export function explainUnplaced(
         break;
       }
       case "arm-full": {
-        const arms = joinNames(
+        const arms = join(
           primary.armIds.map((id) => input.armNames[id]?.trim() ?? ""),
         );
         reason = arms
@@ -976,12 +986,13 @@ export function explainUnplaced(
         break;
       }
       case "no-consecutive": {
-        const days = joinNames(primary.days.map(day));
-        const need =
-          u.kind === "double" ? `a ${words.double}` : "two lessons in a row";
+        // `days` only says where the unit could not be fitted as two lessons
+        // in a row; it does not say why, so the sentence claims no more.
+        const days = join(primary.days.map(day));
+        const need = u.kind === "double" ? `a ${words.double}` : "it";
         reason = days
-          ? `no two lessons in a row are free together on ${days}, which ${need} needs`
-          : `no two lessons in a row are free together for ${need}`;
+          ? `${need} needs two lessons in a row, and none could be fitted on ${days}`
+          : `${need} needs two lessons in a row, and none could be fitted`;
         break;
       }
       case "budget":

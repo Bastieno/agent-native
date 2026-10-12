@@ -1808,3 +1808,79 @@ check("explain: no-consecutive on some days names them", () => {
   assert.ok(m.includes("double"), m);
   noJunk(m);
 });
+
+check("explain: names are joined in the school's language", () => {
+  const m = msg([{ kind: "no-consecutive", days: [1, 3] }], {
+    kind: "double",
+    locale: "fr",
+  });
+  assert.ok(m.includes("lundi et mercredi") && !m.includes("lundi and"), m);
+  const classes = [
+    genClass({ classId: "id-a", className: "Maths 1" }),
+    genClass({ classId: "id-b", className: "Art 1" }),
+  ];
+  const input: GenInput = {
+    week: solverWeek,
+    locale: "fr",
+    armNames: {},
+    fixed: [],
+    classes,
+  };
+  const out = explainUnplaced(
+    {
+      lessons: [],
+      unplaced: [],
+      notSet: ["id-a", "id-b"],
+      noTeacher: [],
+      elapsedMs: 0,
+    },
+    input,
+    words,
+  );
+  assert.ok(out.notSet[0].includes("Maths 1 et Art 1"), out.notSet[0]);
+});
+
+check(
+  "explain: no-consecutive does not claim the periods were not free",
+  () => {
+    // Two lessons in a row exist, but a teacher is busy in the second period.
+    const week: SchoolWeek = {
+      cycleLength: 1,
+      days: [
+        {
+          day: 1,
+          periods: [lesson(1, "08:00", "08:40"), lesson(2, "08:40", "09:20")],
+        },
+      ],
+    };
+    const input: GenInput = {
+      week,
+      armNames: {},
+      fixed: [
+        rp("f", {
+          classId: "x",
+          day: 1,
+          periodNumber: 2,
+          start: "08:40",
+          end: "09:20",
+          teachers: [{ userId: "t1", name: "Mrs Okoro" }],
+        }),
+      ],
+      classes: [
+        genClass({
+          classId: "a",
+          className: "Maths 1",
+          teacherIds: ["t1"],
+          teacherNames: { t1: "Mrs Okoro" },
+          required: { periods: 2, doubles: 1 },
+        }),
+      ],
+    };
+    const out = generateTimetable(input, { now: fixedNow });
+    const text = explainUnplaced(out, input, words)
+      .reasons.map((r) => r.message)
+      .join(" ");
+    assert.ok(out.unplaced.length > 0, "the double should not fit");
+    assert.ok(!/not free|no two lessons/i.test(text), text);
+  },
+);
