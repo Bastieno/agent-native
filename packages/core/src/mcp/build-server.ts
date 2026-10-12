@@ -1038,7 +1038,7 @@ export async function createMCPServerForRequest(
   // in that case we run with no userEmail/orgId, which makes downstream
   // tools that require per-user scope return empty results rather than
   // cross-tenant data (the safe default).
-  const orgIdPromise = resolveOrgIdFromDomain(effectiveIdentity?.orgDomain);
+  const orgIdPromise = resolveCallerOrgId(effectiveIdentity);
 
   /**
    * Wrap a callback in
@@ -1642,6 +1642,33 @@ export async function verifyAuth(
   }
 
   return { authed: false };
+}
+
+/**
+ * The org a verified MCP caller acts in.
+ *
+ * The token's `org_domain` wins, as before. When it names no org — the org
+ * has no `allowed_domain`, as with anyone signing in from a Gmail address —
+ * a standard OAuth caller falls back to their own membership, the same way
+ * the web app picks their org. Resolved per request, so an org created after
+ * the client connected is used from the next call.
+ *
+ * Only OAuth identities get the fallback: we minted that token after the
+ * person signed in, so its email is proven. A static-token caller's email
+ * comes from a header the caller writes, and must not unlock anyone's org.
+ */
+export async function resolveCallerOrgId(
+  identity: MCPCallerIdentity | undefined,
+): Promise<string | undefined> {
+  const fromDomain = await resolveOrgIdFromDomain(identity?.orgDomain);
+  if (fromDomain) return fromDomain;
+  if (!identity?.oauthClientId || !identity.userEmail) return undefined;
+  try {
+    const { resolveOrgIdForEmail } = await import("../org/context.js");
+    return (await resolveOrgIdForEmail(identity.userEmail)) ?? undefined;
+  } catch {
+    return undefined;
+  }
 }
 
 export async function resolveOrgIdFromDomain(
