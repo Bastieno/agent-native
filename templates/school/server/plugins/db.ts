@@ -893,6 +893,11 @@ export default runMigrations(
       version: 88,
       sql: `ALTER TABLE class_schedules ADD COLUMN lesson_label TEXT`,
     },
+    // A drafted timetable for a term, kept until it is accepted or discarded.
+    {
+      version: 89,
+      sql: `CREATE TABLE IF NOT EXISTS timetable_proposals (id TEXT PRIMARY KEY, school_id TEXT NOT NULL, term_id TEXT NOT NULL, created_by_user_id TEXT, created_at TEXT NOT NULL DEFAULT (datetime('now')), base_fingerprint TEXT NOT NULL, lessons_json TEXT NOT NULL DEFAULT '[]', unplaced_json TEXT NOT NULL DEFAULT '[]', summary_json TEXT NOT NULL DEFAULT '{}', status TEXT NOT NULL DEFAULT 'open', owner_email TEXT, org_id TEXT, visibility TEXT NOT NULL DEFAULT 'private')`,
+    },
   ],
   { table: "school_migrations" },
 );

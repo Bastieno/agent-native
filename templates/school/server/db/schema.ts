@@ -215,6 +215,25 @@ export const classSchedules = table("class_schedules", {
   ...ownableColumns(),
 });
 
+/**
+ * A drafted timetable for a term, waiting to be accepted or discarded. The
+ * fingerprint is the term's lessons when it was drafted: accepting refuses a
+ * draft the timetable has moved on from.
+ */
+export const timetableProposals = table("timetable_proposals", {
+  id: text("id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  termId: text("term_id").notNull(),
+  createdByUserId: text("created_by_user_id"),
+  createdAt: text("created_at").notNull().default(now()),
+  baseFingerprint: text("base_fingerprint").notNull(),
+  lessonsJson: text("lessons_json").notNull().default("[]"),
+  unplacedJson: text("unplaced_json").notNull().default("[]"),
+  summaryJson: text("summary_json").notNull().default("{}"),
+  status: text("status").notNull().default("open"), // open | accepted | discarded
+  ...ownableColumns(),
+});
+
 // ─── Layer 5: Content ────────────────────────────────────────────────────────
 
 export const lessonNotes = table("lesson_notes", {

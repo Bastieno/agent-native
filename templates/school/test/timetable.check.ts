@@ -20,6 +20,7 @@ import {
 import { countsProblem } from "../shared/lesson-counts.js";
 import { countCoverage } from "../server/lib/timetable-coverage.js";
 import { isShort, shortInWords } from "../shared/timetable-coverage.js";
+import { PROPOSAL_STALE, staleReason } from "../shared/timetable-proposal.js";
 import { gridSpans } from "../shared/timetable-grid.js";
 import {
   findClashes,
@@ -1882,5 +1883,20 @@ check(
       .join(" ");
     assert.ok(out.unplaced.length > 0, "the double should not fit");
     assert.ok(!/not free|no two lessons/i.test(text), text);
+  },
+);
+
+check(
+  "a draft is stale when the term's lessons changed or a class left",
+  () => {
+    const draft = { baseFingerprint: "abc", classIds: ["a", "b"] };
+    assert.equal(staleReason(draft, ["a", "b", "c"], "abc"), null);
+    assert.equal(staleReason(draft, ["a", "b"], "xyz"), PROPOSAL_STALE);
+    assert.equal(staleReason(draft, ["a", "c"], "abc"), PROPOSAL_STALE);
+    assert.equal(staleReason({ ...draft, classIds: [] }, [], "abc"), null);
+    assert.match(
+      PROPOSAL_STALE,
+      /^The timetable changed after this was proposed/,
+    );
   },
 );

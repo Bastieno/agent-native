@@ -16,6 +16,7 @@ import { asList } from "./shapes.js";
 import {
   checkArms,
   checkDoubles,
+  checkGeneration,
   checkLearnerWeek,
   checkScheduleReadsTheWeek,
   checkTimetable,
@@ -323,6 +324,9 @@ await time("learner's week", () =>
 );
 await time("doubles", () =>
   checkDoubles(client, run, arms, timetable, findings),
+);
+await time("drafting a timetable", () =>
+  checkGeneration(client, run, arms, timetable, findings),
 );
 
 // What the head teacher sees of the whole school.

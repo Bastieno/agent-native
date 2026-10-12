@@ -1993,3 +1993,291 @@ export async function checkDoubles(
     "lesson counts given a term that is not the school's are refused in words",
   );
 }
+
+/**
+ * Drafting a term's timetable: the draft keeps what is there, can be read,
+ * accepted or discarded, and goes stale when the term moves on. Works in two
+ * new terms of the run's year.
+ */
+export async function checkGeneration(
+  client: Client,
+  run: FullSchoolRun,
+  arms: ArmsContext,
+  ctx: TimetableContext,
+  findings: Findings,
+): Promise<void> {
+  const phase = "timetable";
+  const admin = run.admin;
+  const makeTerm = async (name: string, from: string, to: string, n: number) =>
+    idOf(
+      await client.as(admin, "create-term", {
+        academicYearId: run.academicYearId,
+        name,
+        startDate: from,
+        endDate: to,
+        sequence: n,
+      }),
+      "term",
+    )!;
+  const T = await makeTerm("Generated Term", "2028-01-10", "2028-04-01", 7);
+  const bare = await makeTerm("Plain Term", "2028-04-24", "2028-07-14", 8);
+
+  // 1. Lesson counts for the first year group's classes of the subject.
+  await client.as(admin, "set-lesson-counts", {
+    subjectId: arms.subjectId,
+    gradeLevelId: arms.gradeLevelId,
+    periodsPerWeek: 3,
+    doublesPerWeek: 1,
+    termId: T,
+    confirm: true,
+  });
+
+  // 2. A term still showing the earlier timetable is refused, in words.
+  findings.expect(
+    phase,
+    await refused(
+      () => client.as(admin, "generate-timetable", { termId: bare }),
+      /still showing the school's earlier timetable\. Copy it into Plain Term first/,
+    ),
+    "drafting a term that is only showing the earlier timetable is refused, offering the copy",
+  );
+  findings.expect(
+    phase,
+    await refused(
+      () =>
+        client.as(run.classes[0].teacher, "generate-timetable", { termId: T }),
+      /not something a teacher can do/i,
+    ),
+    "a teacher cannot draft a timetable",
+  );
+
+  // 3. One lesson by hand; everything else the copy brought is cleared.
+  await client.as(admin, "copy-timetable", {
+    fromEarlier: true,
+    toTermId: T,
+    confirm: true,
+  });
+  const seeded: string[] = (
+    (await client.as(admin, "get-timetable", { termId: T })) as any
+  ).periods.map((p: any) => p.scheduleId);
+  const classA = ctx.teachingClassId;
+  const hand: any = await client.as(admin, "set-timetable-period", {
+    termId: T,
+    classId: classA,
+    day: 1,
+    periodNumber: 1,
+  });
+  for (const scheduleId of seeded) {
+    await client.as(admin, "remove-timetable-period", { scheduleId });
+  }
+  const timetable = async () =>
+    (await client.as(admin, "get-timetable", { termId: T })) as any;
+  const handRow = (await timetable()).periods.find(
+    (p: any) => p.scheduleId === hand.scheduleId,
+  );
+
+  const generate = async (): Promise<any> => {
+    const first: any = await client.as(admin, "generate-timetable", {
+      termId: T,
+    });
+    if (!first?.needsConfirm) return first;
+    return client.as(admin, "generate-timetable", { termId: T, confirm: true });
+  };
+  const proposal = async (): Promise<any> =>
+    ((await client.as(admin, "get-timetable-proposal", { termId: T })) as any)
+      .proposal;
+
+  // 4. Draft, read it back, accept it.
+  const drafted = await generate();
+  const read = await proposal();
+  findings.expect(
+    phase,
+    !!drafted?.proposalId &&
+      read?.id === drafted.proposalId &&
+      read.lessons.length === drafted.lessons &&
+      read.lessons.every((l: any) => !!l.className) &&
+      noId(drafted.message),
+    "a drafted timetable is read back with its lessons and class names, and the reply has no ids",
+    JSON.stringify({ drafted, lessons: read?.lessons?.length }),
+  );
+  findings.add(
+    "note",
+    phase,
+    `drafting took ${drafted?.elapsedMs} ms: ${drafted?.lessons} lessons proposed, ${drafted?.notFitted} not fitted, ${drafted?.notSet} classes without counts, ${drafted?.noTeacher} without a teacher`,
+  );
+  const reasons: { classIds: string[]; message: string }[] =
+    read?.reasons ?? [];
+  findings.expect(
+    phase,
+    reasons.every((r) => noId(r.message)),
+    "every reason a lesson did not fit is a sentence with no ids",
+    JSON.stringify(reasons.filter((r) => !noId(r.message))),
+  );
+  const untouched = await timetable();
+  findings.expect(
+    phase,
+    untouched.periods.length === 1,
+    "drafting leaves the timetable as it was",
+    String(untouched.periods.length),
+  );
+
+  const accepted: any = await client.as(admin, "accept-timetable-proposal", {
+    proposalId: drafted.proposalId,
+  });
+  const after = await timetable();
+  const handAfter = after.periods.find(
+    (p: any) => p.scheduleId === hand.scheduleId,
+  );
+  findings.expect(
+    phase,
+    accepted?.lessons === drafted.lessons &&
+      after.periods.length === 1 + drafted.lessons &&
+      after.clashes.length === 0 &&
+      handAfter?.day === handRow?.day &&
+      handAfter?.periodNumber === handRow?.periodNumber &&
+      noId(accepted?.message) &&
+      (await proposal()) === null,
+    "accepting adds exactly the drafted lessons, with no clashes, and the hand-placed lesson stays where it was",
+    JSON.stringify({
+      accepted,
+      periods: after.periods.length,
+      clashes: after.clashes.map((c: any) => c.message),
+    }),
+  );
+  const pairs = new Map<string, number>();
+  for (const p of after.periods) {
+    if (p.pairId) pairs.set(p.pairId, (pairs.get(p.pairId) ?? 0) + 1);
+  }
+  findings.expect(
+    phase,
+    [...pairs.values()].every((n) => n === 2),
+    "every double the draft placed is two rows sharing one pair",
+    JSON.stringify([...pairs.values()]),
+  );
+
+  // Every class still short is explained by the draft that was accepted.
+  const coverage: any = await client.as(admin, "get-timetable-coverage", {
+    termId: T,
+  });
+  const shortClasses = coverage.classes.filter(
+    (c: any) => c.short.periods > 0 || c.short.doubles > 0,
+  );
+  const unexplained = shortClasses.filter(
+    (c: any) => !reasons.some((r) => r.classIds.includes(c.classId)),
+  );
+  findings.expect(
+    phase,
+    unexplained.length === 0,
+    "every class still short after accepting appears in a reason the draft gave",
+    JSON.stringify(unexplained.map((c: any) => c.className)),
+  );
+  findings.add(
+    "note",
+    phase,
+    `after accepting, ${shortClasses.length} classes are still short, all explained`,
+  );
+
+  // 5. A lesson removed after drafting makes the draft stale.
+  const generated = after.periods.filter(
+    (p: any) => p.scheduleId !== hand.scheduleId,
+  );
+  if (generated.length >= 2) {
+    await client.as(admin, "remove-timetable-period", {
+      scheduleId: generated[0].scheduleId,
+    });
+    const again = await generate();
+    const current = await timetable();
+    const victim = current.periods.find(
+      (p: any) => p.scheduleId !== hand.scheduleId,
+    );
+    await client.as(admin, "remove-timetable-period", {
+      scheduleId: victim.scheduleId,
+    });
+    const before = (await timetable()).periods.length;
+    findings.expect(
+      phase,
+      await refused(
+        () =>
+          client.as(admin, "accept-timetable-proposal", {
+            proposalId: again.proposalId,
+          }),
+        /^The timetable changed after this was proposed — generate again\.$/,
+      ),
+      "a draft is refused once a lesson is removed from the term",
+    );
+    findings.expect(
+      phase,
+      (await timetable()).periods.length === before,
+      "a refused draft adds nothing",
+    );
+  } else {
+    findings.add(
+      "note",
+      phase,
+      "too few lessons drafted to test a stale draft",
+    );
+  }
+
+  // 6. A class archived after drafting makes the draft stale, though none of
+  // its lessons were on the term.
+  const archived = arms.classIds[1];
+  for (const p of (await timetable()).periods.filter(
+    (p: any) => p.classId === archived,
+  )) {
+    try {
+      await client.as(admin, "remove-timetable-period", {
+        scheduleId: p.scheduleId,
+      });
+    } catch {
+      // the other half of a double went with it
+    }
+  }
+  const forArchive = await generate();
+  const placesArchived = (await proposal())?.lessons.some(
+    (l: any) => l.classId === archived,
+  );
+  if (placesArchived) {
+    await client.as(admin, "update-class", {
+      id: archived,
+      status: "archived",
+    });
+    const refusedArchived = await refused(
+      () =>
+        client.as(admin, "accept-timetable-proposal", {
+          proposalId: forArchive.proposalId,
+        }),
+      /^The timetable changed after this was proposed — generate again\.$/,
+    );
+    await client.as(admin, "update-class", { id: archived, status: "active" });
+    findings.expect(
+      phase,
+      refusedArchived,
+      "a draft is refused once a class it places lessons for is archived",
+    );
+  } else {
+    findings.add(
+      "note",
+      phase,
+      "the draft placed no lessons for the class to archive",
+    );
+  }
+
+  // 7. A draft can be thrown away, and then there is none.
+  const toDiscard = await generate();
+  const discarded: any = await client.as(admin, "discard-timetable-proposal", {
+    proposalId: toDiscard.proposalId,
+  });
+  findings.expect(
+    phase,
+    discarded?.discarded === true &&
+      (await proposal()) === null &&
+      (await refused(
+        () =>
+          client.as(admin, "accept-timetable-proposal", {
+            proposalId: toDiscard.proposalId,
+          }),
+        /isn't waiting any more/,
+      )),
+    "a discarded draft is gone and cannot be accepted",
+  );
+}
