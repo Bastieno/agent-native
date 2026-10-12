@@ -1,6 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { readAppState } from "@agent-native/core/application-state";
-import { getOrgSetting } from "@agent-native/core/settings";
+import { getAllSettings, getOrgSetting } from "@agent-native/core/settings";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray, sql } from "drizzle-orm";
@@ -15,7 +15,7 @@ import { joinDoubles } from "../shared/school-week.js";
 import { getMyWeek } from "../server/lib/my-week.js";
 import { timetableView } from "../server/lib/timetable-view.js";
 import { getSchoolRole } from "../server/lib/student-access.js";
-import { viewRoleOf } from "../shared/view-role.js";
+import { viewRoleFor } from "../shared/view-role.js";
 import { proposalView } from "../server/lib/timetable-generation.js";
 import { coverageView } from "../server/lib/timetable-coverage.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
@@ -41,7 +41,15 @@ export default defineAction({
     const { orgId: schoolId, userEmail } = currentAccess();
     // The branch follows the role the person really holds. Navigation state is
     // written by the page, so a learner could claim "admin" there.
-    const role = viewRoleOf(userEmail ? await getSchoolRole(userEmail) : null);
+    const schoolRole = userEmail ? await getSchoolRole(userEmail) : null;
+    // No profile yet: the school's first admin, set up in the wizard, while no
+    // school exists (as /api/school/session decides); otherwise no branch.
+    const schoolExists = schoolRole
+      ? true
+      : Object.keys(await getAllSettings()).some((k) =>
+          /^o:[^:]+:school-config$/.test(k),
+        );
+    const role = viewRoleFor(schoolRole, schoolExists);
 
     // ─── Admin views ─────────────────────────────────────────────────────────
     if (role === "admin") {

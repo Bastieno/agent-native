@@ -22,7 +22,7 @@ import { countCoverage } from "../server/lib/timetable-coverage.js";
 import { isShort, shortInWords } from "../shared/timetable-coverage.js";
 import { PROPOSAL_STALE, staleReason } from "../shared/timetable-proposal.js";
 import { gridSpans } from "../shared/timetable-grid.js";
-import { viewRoleOf } from "../shared/view-role.js";
+import { viewRoleFor, viewRoleOf } from "../shared/view-role.js";
 import {
   findClashes,
   type ResolvedPeriod,
@@ -1911,4 +1911,12 @@ check("the agent's screen follows the role a person really holds", () => {
   assert.equal(viewRoleOf(null), null);
   assert.equal(viewRoleOf(undefined), null);
   assert.equal(viewRoleOf("parent"), null);
+});
+
+check("a first admin keeps the agent's view only until a school exists", () => {
+  assert.equal(viewRoleFor(null, false), "admin");
+  assert.equal(viewRoleFor(null, true), null);
+  assert.equal(viewRoleFor("parent", false), null);
+  // A learner whose navigation says admin is still a learner.
+  assert.equal(viewRoleFor("student", true), "student");
 });

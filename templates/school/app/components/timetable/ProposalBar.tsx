@@ -167,8 +167,11 @@ export function ProposalBar({
           disabled={discarding || accepting}
           onClick={async () => {
             setDiscarding(true);
-            await finish("discard-timetable-proposal");
-            setDiscarding(false);
+            try {
+              await finish("discard-timetable-proposal");
+            } finally {
+              setDiscarding(false);
+            }
           }}
         >
           Discard
