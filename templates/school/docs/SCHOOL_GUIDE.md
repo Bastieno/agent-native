@@ -21,14 +21,14 @@ school guide to note …"
 
 ## Grade Structure
 
-| School stage | Nigerian label | Approx. US equivalent |
-|---|---|---|
-| Junior Secondary 1 | JSS 1 | Grade 7 |
-| Junior Secondary 2 | JSS 2 | Grade 8 |
-| Junior Secondary 3 | JSS 3 | Grade 9 |
-| Senior Secondary 1 | SS1 / SSS1 | Grade 10 |
-| Senior Secondary 2 | SS2 / SSS2 | Grade 11 |
-| Senior Secondary 3 | SS3 / SSS3 | Grade 12 |
+| School stage       | Nigerian label | Approx. US equivalent |
+| ------------------ | -------------- | --------------------- |
+| Junior Secondary 1 | JSS 1          | Grade 7               |
+| Junior Secondary 2 | JSS 2          | Grade 8               |
+| Junior Secondary 3 | JSS 3          | Grade 9               |
+| Senior Secondary 1 | SS1 / SSS1     | Grade 10              |
+| Senior Secondary 2 | SS2 / SSS2     | Grade 11              |
+| Senior Secondary 3 | SS3 / SSS3     | Grade 12              |
 
 JSS3 students sit the Basic Education Certificate Examination (BECE / Junior WAEC).
 SSS3 students sit the West African Senior School Certificate Examination (WASSCE).
@@ -39,20 +39,20 @@ SSS3 students sit the West African Senior School Certificate Examination (WASSCE
 
 3 terms per academic year. Each term is approximately 13 weeks.
 
-| Term | Typical dates |
-|---|---|
+| Term   | Typical dates        |
+| ------ | -------------------- |
 | Term 1 | September – December |
-| Term 2 | January – April |
-| Term 3 | April – July |
+| Term 2 | January – April      |
+| Term 3 | April – July         |
 
 ---
 
 ## Curriculum Frameworks
 
-| Stage | Framework | Exam | Database query |
-| --- | --- | --- | --- |
-| JSS1–JSS3 | NERDC | BECE (Junior WAEC) | `list-framework-objectives --framework "NERDC"` |
-| SS1–SS3 | WAEC | WASSCE | `list-framework-objectives --framework "WAEC"` |
+| Stage     | Framework | Exam               | Database query                                  |
+| --------- | --------- | ------------------ | ----------------------------------------------- |
+| JSS1–JSS3 | NERDC     | BECE (Junior WAEC) | `list-framework-objectives --framework "NERDC"` |
+| SS1–SS3   | WAEC      | WASSCE             | `list-framework-objectives --framework "WAEC"`  |
 
 - **JSS curriculum**: Governed by the NERDC (National Educational Research and Development Council)
   basic education curriculum. 22 subjects seeded covering all JSS levels.
@@ -71,17 +71,17 @@ SSS3 students sit the West African Senior School Certificate Examination (WASSCE
 9-term structure across JSS1–JSS3. Distribute NERDC objectives in this proportion.
 **Never assign new objectives to JSS3 Term 2 or JSS3 Term 3.**
 
-| Term | Grade | Focus | New syllabus coverage |
-| --- | --- | --- | --- |
-| 1 | JSS1 | Foundational basics | ~10% |
-| 2 | JSS1 | Core concepts phase 1 | ~15% |
-| 3 | JSS1 | Intermediate concepts | ~15% |
-| 4 | JSS2 | Advanced core (heaviest term) | ~20% |
-| 5 | JSS2 | Practical and applied skills | ~15% |
-| 6 | JSS2 | High-weight exam topics | ~15% |
-| 7 | JSS3 | Syllabus wrap-up (final 10%) | ~10% |
-| 8 | JSS3 | BECE mock exams and past questions | 0% new topics |
-| 9 | JSS3 | BECE examinations (Junior WAEC) | No classes |
+| Term | Grade | Focus                              | New syllabus coverage |
+| ---- | ----- | ---------------------------------- | --------------------- |
+| 1    | JSS1  | Foundational basics                | ~10%                  |
+| 2    | JSS1  | Core concepts phase 1              | ~15%                  |
+| 3    | JSS1  | Intermediate concepts              | ~15%                  |
+| 4    | JSS2  | Advanced core (heaviest term)      | ~20%                  |
+| 5    | JSS2  | Practical and applied skills       | ~15%                  |
+| 6    | JSS2  | High-weight exam topics            | ~15%                  |
+| 7    | JSS3  | Syllabus wrap-up (final 10%)       | ~10%                  |
+| 8    | JSS3  | BECE mock exams and past questions | 0% new topics         |
+| 9    | JSS3  | BECE examinations (Junior WAEC)    | No classes            |
 
 **JSS3 Term 2** units are revision units — BECE past-question walkthroughs, topic summaries,
 exam technique. They reference previously taught objectives, not new ones.
@@ -96,17 +96,17 @@ Examination (BECE / Junior WAEC).
 9-term structure across SS1–SS3. Distribute WAEC objectives in this proportion.
 **Never assign new objectives to SS3 Term 2 or SS3 Term 3.**
 
-| Term | Grade | Focus | New syllabus coverage |
-|---|---|---|---|
-| 1 | SS1 | Foundational basics | ~10% |
-| 2 | SS1 | Core concepts phase 1 | ~15% |
-| 3 | SS1 | Intermediate concepts | ~15% |
-| 4 | SS2 | Advanced core (heaviest term) | ~20% |
-| 5 | SS2 | Practical and deep theory | ~15% |
-| 6 | SS2 | High-weight exam topics | ~15% |
-| 7 | SS3 | Syllabus wrap-up (final 10%) | ~10% |
-| 8 | SS3 | Mock exams and past questions | 0% new topics |
-| 9 | SS3 | WASSCE examinations | No classes |
+| Term | Grade | Focus                         | New syllabus coverage |
+| ---- | ----- | ----------------------------- | --------------------- |
+| 1    | SS1   | Foundational basics           | ~10%                  |
+| 2    | SS1   | Core concepts phase 1         | ~15%                  |
+| 3    | SS1   | Intermediate concepts         | ~15%                  |
+| 4    | SS2   | Advanced core (heaviest term) | ~20%                  |
+| 5    | SS2   | Practical and deep theory     | ~15%                  |
+| 6    | SS2   | High-weight exam topics       | ~15%                  |
+| 7    | SS3   | Syllabus wrap-up (final 10%)  | ~10%                  |
+| 8    | SS3   | Mock exams and past questions | 0% new topics         |
+| 9    | SS3   | WASSCE examinations           | No classes            |
 
 **SS3 Term 2** units are revision units — past-question walkthroughs, topic summaries, exam
 technique. They reference previously taught objectives, not new ones.
@@ -117,17 +117,17 @@ technique. They reference previously taught objectives, not new ones.
 
 ## Grading Convention
 
-| Grade | Range | Meaning |
-|---|---|---|
-| A1 | 75–100 | Excellent |
-| B2 | 70–74 | Very good |
-| B3 | 65–69 | Good |
-| C4 | 60–64 | Credit |
-| C5 | 55–59 | Credit |
-| C6 | 50–54 | Credit |
-| D7 | 45–49 | Pass |
-| E8 | 40–44 | Pass |
-| F9 | 0–39 | Fail |
+| Grade | Range  | Meaning   |
+| ----- | ------ | --------- |
+| A1    | 75–100 | Excellent |
+| B2    | 70–74  | Very good |
+| B3    | 65–69  | Good      |
+| C4    | 60–64  | Credit    |
+| C5    | 55–59  | Credit    |
+| C6    | 50–54  | Credit    |
+| D7    | 45–49  | Pass      |
+| E8    | 40–44  | Pass      |
+| F9    | 0–39   | Fail      |
 
 Minimum pass mark for internal assessments: **40%**.
 WAEC requires C6 (50%) or above for university entry in most subjects.
@@ -187,10 +187,10 @@ Add any subject-specific context here as you build out the curriculum. Examples:
 
 ## School-Specific Terminology
 
-| Standard term | This school's label |
-|---|---|
-| Class | [e.g. "Set" or "Stream"] |
-| Term | [e.g. "Semester"] |
-| Grade | [e.g. "Score"] |
+| Standard term | This school's label      |
+| ------------- | ------------------------ |
+| Class         | [e.g. "Set" or "Stream"] |
+| Term          | [e.g. "Semester"]        |
+| Grade         | [e.g. "Score"]           |
 
 Leave blank if the standard terms apply.

@@ -122,11 +122,22 @@ The draft `stateJson` structure expected by `commit-curriculum-draft`:
               "weekEnd": 6,
               "sequence": 1,
               "standards": [
-                { "framework": "Common Core", "code": "8.EE.C.7", "description": "Solve linear equations" },
-                { "framework": "WAEC", "code": "MATH-ALG-2.1", "description": "Linear equations" }
+                {
+                  "framework": "Common Core",
+                  "code": "8.EE.C.7",
+                  "description": "Solve linear equations"
+                },
+                {
+                  "framework": "WAEC",
+                  "code": "MATH-ALG-2.1",
+                  "description": "Linear equations"
+                }
               ],
               "objectives": [
-                { "description": "Solve linear equations in one variable", "bloomsLevel": "apply" }
+                {
+                  "description": "Solve linear equations in one variable",
+                  "bloomsLevel": "apply"
+                }
               ]
             }
           ]
@@ -169,8 +180,16 @@ educational framework (Common Core, WAEC, NECO, IGCSE, NERDC, NGSS, etc.).
 
 ```json
 [
-  { "framework": "Common Core", "code": "8.EE.C.7", "description": "Solve linear equations in one variable" },
-  { "framework": "WAEC", "code": "MATH-ALG-2.1", "description": "Linear equations and inequalities" }
+  {
+    "framework": "Common Core",
+    "code": "8.EE.C.7",
+    "description": "Solve linear equations in one variable"
+  },
+  {
+    "framework": "WAEC",
+    "code": "MATH-ALG-2.1",
+    "description": "Linear equations and inequalities"
+  }
 ]
 ```
 
@@ -178,13 +197,13 @@ educational framework (Common Core, WAEC, NECO, IGCSE, NERDC, NGSS, etc.).
 
 The agent's standards knowledge comes entirely from its training data. Reliability varies by framework:
 
-| Framework | Agent reliability | Notes |
-| --- | --- | --- |
-| Common Core (US Math/ELA) | High | Widely published online; Sonnet/Opus know specific codes accurately |
-| NGSS (US Science) | Medium-high | Well-documented publicly |
-| Cambridge IGCSE | Medium-high | Cambridge publishes syllabuses publicly |
-| WAEC / NECO | Medium on topics; low on codes | Agent knows general exam structure and topic areas, but specific internal code numbering (e.g. `MATH-ALG-2.1`) is unreliable — those codes in this doc were illustrative, not real WAEC codes |
-| NERDC (Nigerian national) | Low | Limited internet coverage; changes periodically |
+| Framework                 | Agent reliability              | Notes                                                                                                                                                                                         |
+| ------------------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Common Core (US Math/ELA) | High                           | Widely published online; Sonnet/Opus know specific codes accurately                                                                                                                           |
+| NGSS (US Science)         | Medium-high                    | Well-documented publicly                                                                                                                                                                      |
+| Cambridge IGCSE           | Medium-high                    | Cambridge publishes syllabuses publicly                                                                                                                                                       |
+| WAEC / NECO               | Medium on topics; low on codes | Agent knows general exam structure and topic areas, but specific internal code numbering (e.g. `MATH-ALG-2.1`) is unreliable — those codes in this doc were illustrative, not real WAEC codes |
+| NERDC (Nigerian national) | Low                            | Limited internet coverage; changes periodically                                                                                                                                               |
 
 ### What works today (with `standardsJson` implemented)
 
@@ -288,6 +307,7 @@ The admin pastes the relevant syllabus sections directly into SCHOOL_GUIDE.md. F
 
 ```markdown
 ## WAEC Mathematics Objectives (Paper 1: Algebra)
+
 - ALG-1: Number and Numeration
 - ALG-2: Algebraic Processes
   - ALG-2.1: Linear equations in one variable
@@ -374,10 +394,10 @@ built for reference if new frameworks need to be added.
 
 ### What was seeded
 
-| Framework | Stage | Subjects | Objectives | Source |
-| --- | --- | --- | --- | --- |
-| WAEC | SS1–SS3 | 61 | ~3,000+ | Official WAEC PDFs |
-| NERDC | JSS1–JSS3 | 22 | ~430 | Official NERDC PDFs |
+| Framework | Stage     | Subjects | Objectives | Source              |
+| --------- | --------- | -------- | ---------- | ------------------- |
+| WAEC      | SS1–SS3   | 61       | ~3,000+    | Official WAEC PDFs  |
+| NERDC     | JSS1–JSS3 | 22       | ~430       | Official NERDC PDFs |
 
 All objectives live in `curriculum_frameworks` + `framework_objectives`. `orgId = null` means
 available to all schools (global reference data, not per-school). `grade_level` spans the full
@@ -421,7 +441,10 @@ The 61 WAEC JSON files live in `scripts/waec/parsed/`. The 22 NERDC JSON files l
         {
           "name": "Linear Equations",
           "objectives": [
-            { "code": "MATH-ALG-1", "description": "Solve linear equations in one variable" }
+            {
+              "code": "MATH-ALG-1",
+              "description": "Solve linear equations in one variable"
+            }
           ]
         }
       ]
@@ -452,17 +475,17 @@ pacing should be recorded in `SCHOOL_GUIDE.md` so the agent applies it automatic
 9-term structure across SS1–SS3. Distribute WAEC objectives in this proportion.
 Never assign new objectives to SS3 Term 2 or SS3 Term 3.
 
-| Term | Grade | Focus                          | New syllabus coverage |
-| ---- | ----- | ------------------------------ | --------------------- |
-| 1    | SS1   | Foundational basics            | ~10%                  |
-| 2    | SS1   | Core concepts phase 1          | ~15%                  |
-| 3    | SS1   | Intermediate concepts          | ~15%                  |
-| 4    | SS2   | Advanced core (heaviest term)  | ~20%                  |
-| 5    | SS2   | Practical & deep theory        | ~15%                  |
-| 6    | SS2   | High-weight exam topics        | ~15%                  |
-| 7    | SS3   | Syllabus wrap-up (last 10%)    | ~10%                  |
-| 8    | SS3   | Mock exams & past questions    | 0% new topics         |
-| 9    | SS3   | WASSCE examinations            | No classes            |
+| Term | Grade | Focus                         | New syllabus coverage |
+| ---- | ----- | ----------------------------- | --------------------- |
+| 1    | SS1   | Foundational basics           | ~10%                  |
+| 2    | SS1   | Core concepts phase 1         | ~15%                  |
+| 3    | SS1   | Intermediate concepts         | ~15%                  |
+| 4    | SS2   | Advanced core (heaviest term) | ~20%                  |
+| 5    | SS2   | Practical & deep theory       | ~15%                  |
+| 6    | SS2   | High-weight exam topics       | ~15%                  |
+| 7    | SS3   | Syllabus wrap-up (last 10%)   | ~10%                  |
+| 8    | SS3   | Mock exams & past questions   | 0% new topics         |
+| 9    | SS3   | WASSCE examinations           | No classes            |
 
 SS3 Term 2 units are revision units referencing previously taught objectives.
 SS3 Term 3 has no curriculum units at all.
@@ -543,10 +566,10 @@ After completing this workflow for one subject, confirm:
 
 ## Implementation Log
 
-| Session | What was built | Key files |
-|---|---|---|
-| 1 | SSR setup (React Router v7 + Nitro) | `ssr-entry.ts`, `vite.config.ts` |
-| 2 | Auth flow, staff invite auto-activation, portal polish | Multiple |
-| 3 | G1–G10 gap fixes: progress names, layout guards, reactivate actions, analytics, announcements, student IDs | `get-my-progress.ts`, `teacher.tsx`, `student.tsx`, `reactivate-staff.ts`, `reactivate-student.ts`, `school.ts`, `admin.announcements.tsx`, `view-screen.ts` |
-| 4 | Agent-first optimizations: pre-injected nav context, improved suggestions, sendToAgentChat for destructive actions, unversioned model alias | `agent-chat.ts`, `school-suggestions.ts`, `admin.staff.tsx`, `AGENTS.md` |
-| 5 | Fixed update-school-resource, added get-school-resource, class_schedules schema (migrations v30–v31), standardsJson on units, create-class-schedule, get-my-schedule, School Guide tab in settings, todaySchedule in view-screen, standards in commit-curriculum-draft, design doc | `update-school-resource.ts`, `get-school-resource.ts`, `create-class-schedule.ts`, `get-my-schedule.ts`, `schema.ts`, `db.ts`, `admin.settings.tsx`, `view-screen.ts`, `commit-curriculum-draft.ts`, `AGENTS.md`, `docs/design-decisions.md` |
+| Session | What was built                                                                                                                                                                                                                                                                     | Key files                                                                                                                                                                                                                                    |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1       | SSR setup (React Router v7 + Nitro)                                                                                                                                                                                                                                                | `ssr-entry.ts`, `vite.config.ts`                                                                                                                                                                                                             |
+| 2       | Auth flow, staff invite auto-activation, portal polish                                                                                                                                                                                                                             | Multiple                                                                                                                                                                                                                                     |
+| 3       | G1–G10 gap fixes: progress names, layout guards, reactivate actions, analytics, announcements, student IDs                                                                                                                                                                         | `get-my-progress.ts`, `teacher.tsx`, `student.tsx`, `reactivate-staff.ts`, `reactivate-student.ts`, `school.ts`, `admin.announcements.tsx`, `view-screen.ts`                                                                                 |
+| 4       | Agent-first optimizations: pre-injected nav context, improved suggestions, sendToAgentChat for destructive actions, unversioned model alias                                                                                                                                        | `agent-chat.ts`, `school-suggestions.ts`, `admin.staff.tsx`, `AGENTS.md`                                                                                                                                                                     |
+| 5       | Fixed update-school-resource, added get-school-resource, class_schedules schema (migrations v30–v31), standardsJson on units, create-class-schedule, get-my-schedule, School Guide tab in settings, todaySchedule in view-screen, standards in commit-curriculum-draft, design doc | `update-school-resource.ts`, `get-school-resource.ts`, `create-class-schedule.ts`, `get-my-schedule.ts`, `schema.ts`, `db.ts`, `admin.settings.tsx`, `view-screen.ts`, `commit-curriculum-draft.ts`, `AGENTS.md`, `docs/design-decisions.md` |

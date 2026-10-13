@@ -132,13 +132,13 @@ You will see the workspace UI open in the browser.
 The agent works through all 98 WAEC Mathematics objectives and assigns them to units across
 9 terms following the pacing percentages in `SCHOOL_GUIDE.md`:
 
-| Terms | Coverage |
-| --- | --- |
+| Terms     | Coverage                                               |
+| --------- | ------------------------------------------------------ |
 | SS1 T1–T3 | ~40% of objectives (foundational through intermediate) |
-| SS2 T1–T3 | ~50% of objectives (advanced, heavy exam topics) |
-| SS3 T1 | ~10% of objectives (syllabus wrap-up) |
-| SS3 T2 | Revision units only (no new objectives) |
-| SS3 T3 | No units |
+| SS2 T1–T3 | ~50% of objectives (advanced, heavy exam topics)       |
+| SS3 T1    | ~10% of objectives (syllabus wrap-up)                  |
+| SS3 T2    | Revision units only (no new objectives)                |
+| SS3 T3    | No units                                               |
 
 Each unit gets:
 
