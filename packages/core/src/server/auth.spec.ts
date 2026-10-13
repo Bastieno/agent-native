@@ -413,6 +413,28 @@ describe("server/auth", () => {
       expect(html).toContain("The token was accepted, but the browser");
     });
 
+    it("redirects a signed-out page request to the mounted app's own login", async () => {
+      vi.stubEnv("NODE_ENV", "production");
+      vi.stubEnv("ACCESS_TOKEN", "my-secret");
+      vi.stubEnv("APP_BASE_PATH", "/demo");
+      const { autoMountAuth } = await import("./auth.js");
+
+      const app = createMockApp();
+      await autoMountAuth(app);
+
+      const guard = app.use.mock.calls
+        .map((call: any[]) => call[0])
+        .find((arg: unknown) => typeof arg === "function");
+
+      const result = await guard(
+        createMockEvent({ path: "/demo/classes?term=2" }),
+      );
+      expect((result as Response).status).toBe(302);
+      expect((result as Response).headers.get("location")).toBe(
+        `/demo/login?return=${encodeURIComponent("/demo/classes?term=2")}`,
+      );
+    });
+
     it("infers mounted workspace auth paths when APP_BASE_PATH is absent", async () => {
       vi.stubEnv("NODE_ENV", "production");
       vi.stubEnv("ACCESS_TOKEN", "my-secret");
