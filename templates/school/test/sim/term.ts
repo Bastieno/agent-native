@@ -129,6 +129,7 @@ export async function teachWeek(
 
   // ── The class does it ──────────────────────────────────────────────────
   let submitted = 0;
+  let firstToHandIn: (typeof school.students)[number] | undefined;
   for (const student of school.students) {
     const ability = abilityInWeek(student.profile, week.week);
     if (
@@ -176,6 +177,7 @@ export async function teachWeek(
     }
     await client.as(student, "submit-work", { assessmentId });
     submitted++;
+    firstToHandIn ??= student;
   }
 
   // ── The teacher marks what cannot mark itself ──────────────────────────
@@ -206,6 +208,59 @@ export async function teachWeek(
     assessmentId,
   });
   await client.as(school.teacher, "publish-grades", { assessmentId });
+
+  // ── The paper comes back ───────────────────────────────────────────────
+  // A grade on its own teaches nothing: the learner gets their questions and
+  // answers back with it, then the right answers once the class is done.
+  if (firstToHandIn) {
+    const back = await client.as(firstToHandIn, "get-my-assessment", {
+      assessmentId,
+    });
+    const reviewed = asList(back?.review, "questions");
+    findings.expect(
+      phase,
+      reviewed.length === week.questions.length,
+      "a marked paper comes back with its questions",
+      `${reviewed.length} of ${week.questions.length} questions came back`,
+    );
+    findings.expect(
+      phase,
+      reviewed.some((q: any) => (q?.answer ?? "") !== "") &&
+        reviewed.every((q: any) => "awardedPoints" in q),
+      "with the learner's own answers and a mark for each",
+    );
+    findings.expect(
+      phase,
+      reviewed.every((q: any) => q?.correctAnswer === undefined),
+      "the right answers stay hidden while the paper is still open",
+      `${reviewed.filter((q: any) => q?.correctAnswer !== undefined).length} revealed early`,
+    );
+
+    // Closing the first week is what a teacher does once it is marked; the
+    // later weeks stay open, so the rest of the term is unaffected.
+    if (week.week === 1) {
+      await client.as(school.teacher, "close-assessment", { id: assessmentId });
+      const closed = await client.as(firstToHandIn, "get-my-assessment", {
+        assessmentId,
+      });
+      const revealed = asList(closed?.review, "questions");
+      const closedKeys = week.questions.filter(
+        (q: any) => q?.answer !== undefined && q?.answer !== null,
+      ).length;
+      findings.expect(
+        phase,
+        revealed.filter((q: any) => q?.correctAnswer !== undefined).length ===
+          closedKeys,
+        "once closed, every closed question shows its right answer",
+        `${revealed.filter((q: any) => q?.correctAnswer !== undefined).length} of ${closedKeys}`,
+      );
+      findings.expect(
+        phase,
+        !JSON.stringify(closed).includes("markScheme"),
+        "a mark scheme never reaches the learner",
+      );
+    }
+  }
 
   const analytics = await client.as(
     school.teacher,

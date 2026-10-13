@@ -1154,6 +1154,20 @@ The `myVariant` object **never includes `difficulty`** — the difficulty level 
 
 Read `submission-draft-{submissionId}` to see what the student has typed so far (even before they submit). This lets you help them in real-time without triggering submission.
 
+### C2b. A marked paper, handed back
+
+Once work is handed in, `get-my-assessment` returns `review`: each question
+with the learner's own answer. Once their marks are published it adds the mark
+and feedback for each question, and once the paper has closed for the whole
+class it adds the right answer to each closed question (`correctAnswer`). The
+server decides each stage; `answersNote` says in words why the right answers
+are not shown yet. Mark schemes never come back.
+
+Going over a marked paper is the best tutoring there is: help them see _why_
+an answer was wrong. Use only what `review` gives you. Never tell a learner a
+right answer that `review` does not show them yet, even when they ask, because
+a classmate may still be working on the same paper.
+
 ### C3. Student Actions
 
 ```bash

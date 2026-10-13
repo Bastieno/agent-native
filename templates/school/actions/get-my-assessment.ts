@@ -10,6 +10,7 @@ import {
 import { z } from "zod";
 import { currentAccess } from "@agent-native/core/sharing";
 import { schoolDateStyle } from "../server/lib/school-dates.js";
+import { buildPaperReview } from "../server/lib/paper-review.js";
 
 /**
  * An assessment as the assigned student sees it.
@@ -126,12 +127,56 @@ export default defineAction({
 
     // The same computation the server uses to accept or refuse the work, so a
     // countdown on the tablet and the rule in `submit-work` never disagree.
+    const dateStyle = await schoolDateStyle(orgId);
     const window = activityWindow(
       assessment,
       submission?.startedAt,
       undefined,
-      await schoolDateStyle(orgId),
+      dateStyle,
     );
+
+    // Their own paper back, once handed in — see server/lib/paper-review.ts
+    // for what is shown when. Built from the full content and stripped there,
+    // so nothing of the answer key leaves the server before it should.
+    let review = null;
+    if (
+      mine &&
+      assessment.renderAs === "questions" &&
+      submission &&
+      ["submitted", "graded", "resubmission_requested"].includes(
+        submission.status,
+      )
+    ) {
+      const responses = await db
+        .select({
+          blockIndex: schema.questionResponses.blockIndex,
+          answer: schema.questionResponses.answer,
+          isCorrect: schema.questionResponses.isCorrect,
+          awardedPoints: schema.questionResponses.awardedPoints,
+          feedback: schema.questionResponses.feedback,
+        })
+        .from(schema.questionResponses)
+        .where(
+          and(
+            eq(schema.questionResponses.submissionId, submission.id),
+            eq(schema.questionResponses.studentId, studentId),
+          ),
+        );
+      review = buildPaperReview({
+        content: parseActivityContent(mine.contentJson, assessment.renderAs),
+        responses,
+        marksPublished: !!grade,
+        // Closed for everyone, not just for them: the class's window, with no
+        // personal clock in it.
+        closedForClass: activityWindow(
+          assessment,
+          undefined,
+          undefined,
+          dateStyle,
+        ).hasClosed,
+        resubmissionRequested: submission.status === "resubmission_requested",
+      });
+    }
 
     const [cls] = await db
       .select({ name: schema.classes.name })
@@ -164,6 +209,7 @@ export default defineAction({
         : null,
       submission: submission ? { ...submission, grade } : null,
       submissionId: submission?.id ?? null,
+      review,
     };
   },
 });

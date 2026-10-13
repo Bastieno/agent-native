@@ -19,6 +19,7 @@ import {
 import { ActivityCountdown } from "@/components/ActivityCountdown";
 import { QuestionRunner } from "@/components/activity/QuestionRunner";
 import { AnswerSheet } from "@/components/activity/AnswerSheet";
+import { PaperReview } from "@/components/activity/PaperReview";
 import { parseActivityContent } from "@shared/activity-content";
 
 export default function StudentAssessment() {
@@ -363,6 +364,8 @@ export default function StudentAssessment() {
             a practical — still shows here, since those have no sheet. */}
         {!oneAtATime &&
           questionBlocks.length === 0 &&
+          // A handed-in paper is shown as their own paper below instead.
+          !assessment?.review &&
           !needsToStart &&
           !timing?.notYetOpen &&
           (assessment?.variant?.content ||
@@ -449,6 +452,11 @@ export default function StudentAssessment() {
             </p>
           </div>
         )}
+        {/* The paper comes back with the grade: their questions and answers,
+            then marks, feedback and the right answers as the server allows. */}
+        {isSubmitted && assessment?.review ? (
+          <PaperReview review={assessment.review} />
+        ) : null}
       </div>
     </div>
   );
