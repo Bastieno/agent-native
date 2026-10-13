@@ -88,6 +88,27 @@ export interface MCPConfig {
    * a constrained / locked-down mount.
    */
   builtinCrossAppTools?: boolean;
+  /**
+   * Server instructions sent to the client in the `initialize` result. Hosts
+   * that honour them (e.g. Claude) add them to the model's context. A function
+   * is evaluated once per MCP request, inside the caller's request context.
+   */
+  instructions?: string | (() => string | Promise<string>);
+  /**
+   * Decide whether a tool is listed for the current caller. Evaluated inside
+   * the caller's request context (`getRequestUserEmail()` / `getRequestOrgId()`
+   * resolve to the verified caller) for `tools/list`, after OAuth-scope and
+   * compact-catalog filtering, for both the compact and the full catalog.
+   * Builtins such as `ask_app` and the `ask-agent` meta-tool go through it
+   * too. UI resources of unlisted actions are not advertised either.
+   *
+   * This filters the listing only. `tools/call` is unchanged, so actions must
+   * still enforce their own permissions.
+   */
+  isToolListedForCaller?: (
+    name: string,
+    entry: ActionEntry,
+  ) => boolean | Promise<boolean>;
 }
 
 /**
@@ -1014,25 +1035,6 @@ export async function createMCPServerForRequest(
     Object.values(advertisedActions).some((entry) =>
       Boolean(entry.mcpApp?.resource),
     );
-  const server = new Server(
-    { name: config.name, version: config.version ?? "1.0.0" },
-    {
-      capabilities: {
-        tools: {},
-        ...(supportsMcpApps
-          ? {
-              resources: {},
-              extensions: {
-                [MCP_APP_EXTENSION_ID]: {
-                  mimeTypes: [MCP_APP_MIME_TYPE],
-                },
-              },
-            }
-          : {}),
-      },
-    },
-  );
-
   // Resolve orgId once per request (DB lookup) so subsequent wraps are
   // synchronous. The caller identity may be undefined for true dev-open —
   // in that case we run with no userEmail/orgId, which makes downstream
@@ -1063,13 +1065,68 @@ export async function createMCPServerForRequest(
     ) as Promise<T>;
   }
 
+  /**
+   * Apply `config.isToolListedForCaller` to a set of actions. Must run inside
+   * `withCallerContext`. A filter that throws hides the tool (fail closed).
+   */
+  async function filterListedForCaller(
+    entries: Record<string, ActionEntry>,
+  ): Promise<Record<string, ActionEntry>> {
+    const filter = config.isToolListedForCaller;
+    if (!filter) return entries;
+    const decisions = await Promise.all(
+      Object.entries(entries).map(async ([name, entry]) => {
+        try {
+          return (await filter(name, entry)) === true;
+        } catch (err) {
+          console.error(`[mcp] isToolListedForCaller failed for ${name}:`, err);
+          return false;
+        }
+      }),
+    );
+    return Object.fromEntries(
+      Object.entries(entries).filter((_, index) => decisions[index]),
+    );
+  }
+
+  const instructions =
+    typeof config.instructions === "function"
+      ? await withCallerContext(async () =>
+          (config.instructions as () => string | Promise<string>)(),
+        ).catch((err) => {
+          console.error("[mcp] Failed to build server instructions:", err);
+          return undefined;
+        })
+      : config.instructions;
+
+  const server = new Server(
+    { name: config.name, version: config.version ?? "1.0.0" },
+    {
+      ...(instructions ? { instructions } : {}),
+      capabilities: {
+        tools: {},
+        ...(supportsMcpApps
+          ? {
+              resources: {},
+              extensions: {
+                [MCP_APP_EXTENSION_ID]: {
+                  mimeTypes: [MCP_APP_MIME_TYPE],
+                },
+              },
+            }
+          : {}),
+      },
+    },
+  );
+
   // tools/list — return all actions + ask-agent meta-tool. Wrapped in the
   // request context so per-user MCP visibility (mcp-client/visibility.ts)
   // applies to the listing too.
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     return withCallerContext(async () => {
+      const listedActions = await filterListedForCaller(advertisedActions);
       const tools = await Promise.all(
-        Object.entries(advertisedActions).map(async ([name, entry]) => {
+        Object.entries(listedActions).map(async ([name, entry]) => {
           const hasLink = typeof entry.link === "function";
           const mcpAppResource = await resolveMcpAppResourceSafely(
             config,
@@ -1119,27 +1176,43 @@ export async function createMCPServerForRequest(
         }),
       );
 
+      const askAgentTool = {
+        name: "ask-agent",
+        description:
+          "Send a natural-language message to the app's AI agent and get a response. " +
+          "Use this for complex, multi-step tasks that require the agent's reasoning " +
+          "and full context about the app.",
+        inputSchema: {
+          type: "object" as const,
+          properties: {
+            message: {
+              type: "string",
+              description: "The message to send to the agent",
+            },
+          },
+          required: ["message"],
+        },
+      };
+      const askAgent = config.askAgent;
       if (
         !compactMcpAppCatalog &&
-        config.askAgent &&
-        hasMcpOAuthScope(effectiveIdentity?.oauthScopes, "mcp:write")
+        askAgent &&
+        hasMcpOAuthScope(effectiveIdentity?.oauthScopes, "mcp:write") &&
+        Object.keys(
+          await filterListedForCaller({
+            "ask-agent": {
+              tool: {
+                description: askAgentTool.description,
+                parameters: askAgentTool.inputSchema,
+              },
+              run: (args: Record<string, string>) =>
+                askAgent(args.message ?? ""),
+            },
+          }),
+        ).length > 0
       ) {
         tools.push({
-          name: "ask-agent",
-          description:
-            "Send a natural-language message to the app's AI agent and get a response. " +
-            "Use this for complex, multi-step tasks that require the agent's reasoning " +
-            "and full context about the app.",
-          inputSchema: {
-            type: "object" as const,
-            properties: {
-              message: {
-                type: "string",
-                description: "The message to send to the agent",
-              },
-            },
-            required: ["message"],
-          },
+          ...askAgentTool,
           annotations: {
             readOnlyHint: false,
             destructiveHint: false,
@@ -1280,7 +1353,7 @@ export async function createMCPServerForRequest(
       return withCallerContext(async () => {
         const mcpAppResources = await getMcpAppResources(
           config,
-          advertisedActions,
+          await filterListedForCaller(advertisedActions),
           requestMeta,
         );
         return {
@@ -1302,7 +1375,7 @@ export async function createMCPServerForRequest(
       return withCallerContext(async () => {
         const mcpAppResources = await getMcpAppResources(
           config,
-          advertisedActions,
+          await filterListedForCaller(advertisedActions),
           requestMeta,
         );
         return {

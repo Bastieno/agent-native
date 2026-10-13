@@ -23,6 +23,12 @@ import {
   type ActionEntry,
 } from "../agent/production-agent.js";
 import { runAgentLoopDirectWithSoftTimeout } from "../agent/run-loop-with-resume.js";
+import {
+  A2A_USAGE_LABEL,
+  MCP_ASK_APP_USAGE_LABEL,
+  recordExternalAgentUsage,
+  resolveCallerAgentEngine,
+} from "./external-agent-run.js";
 import type { AgentEngine, EngineMessage } from "../agent/engine/types.js";
 import {
   resolveEngine,
@@ -2002,6 +2008,23 @@ export interface AgentChatPluginOptions {
    * Return a message to complete the A2A task without invoking the LLM, or
    * null/undefined to continue through the normal agent loop.
    */
+  /**
+   * Server instructions sent to MCP clients on `initialize` (see
+   * `MCPConfig.instructions`). A function is evaluated per MCP request inside
+   * the caller's request context.
+   */
+  mcpInstructions?: string | (() => string | Promise<string>);
+  /**
+   * Per-caller filter for the MCP `tools/list` (see
+   * `MCPConfig.isToolListedForCaller`). Runs inside the caller's request
+   * context, for the compact chat-app catalog and the full catalog alike,
+   * builtins included. It only hides tools from the listing; actions must
+   * still enforce their own permissions when called.
+   */
+  mcpToolFilter?: (
+    name: string,
+    entry: ActionEntry,
+  ) => boolean | Promise<boolean>;
   a2aMessageFallback?: (details: {
     message: import("../a2a/types.js").Message;
     text: string;
@@ -3777,7 +3800,7 @@ export function createAgentChatPlugin(
             `[A2A] Starting agent loop: ${a2aTools.length} tools, prompt ${systemPrompt.length} chars`,
           );
 
-          await runAgentLoopDirectWithSoftTimeout(
+          const a2aUsage = await runAgentLoopDirectWithSoftTimeout(
             {
               engine: a2aEngine,
               model,
@@ -3829,6 +3852,12 @@ export function createAgentChatPlugin(
             },
             options?.runSoftTimeoutMs,
           );
+
+          await recordExternalAgentUsage(a2aUsage, {
+            ownerEmail: userEmail,
+            label: A2A_USAGE_LABEL,
+            app: options?.appId,
+          });
 
           const { responseText, finalText } = assembleA2AFinalResponse(
             a2aEvents,
@@ -3904,11 +3933,22 @@ export function createAgentChatPlugin(
         description: `Agent-native ${options?.appId ?? "app"} agent`,
         actions: allScripts,
         productionActions: mcpFullActions,
+        ...(options?.mcpInstructions !== undefined
+          ? { instructions: options.mcpInstructions }
+          : {}),
+        ...(options?.mcpToolFilter
+          ? { isToolListedForCaller: options.mcpToolFilter }
+          : {}),
         askAgent: async (message: string) => {
-          const mcpEngine = await resolveEngine({
+          // Runs inside the MCP caller's request context (build-server wraps
+          // tools/call), so the caller's user/org key resolves here, exactly
+          // as it would for their web chat turn.
+          const callerEmail = getRequestUserEmail();
+          const mcpEngine = await resolveCallerAgentEngine({
             engineOption: options?.engine,
-            apiKey: options?.apiKey,
+            pluginApiKey: options?.apiKey,
             appId: options?.appId,
+            callerEmail,
           });
           const model =
             options?.model ??
@@ -3980,7 +4020,7 @@ export function createAgentChatPlugin(
           let accumulatedText = "";
           const controller = new AbortController();
 
-          await runAgentLoopDirectWithSoftTimeout(
+          const mcpUsage = await runAgentLoopDirectWithSoftTimeout(
             {
               engine: mcpEngine,
               model,
@@ -3997,6 +4037,12 @@ export function createAgentChatPlugin(
             },
             options?.runSoftTimeoutMs,
           );
+
+          await recordExternalAgentUsage(mcpUsage, {
+            ownerEmail: callerEmail,
+            label: MCP_ASK_APP_USAGE_LABEL,
+            app: options?.appId,
+          });
 
           return accumulatedText || "(no response)";
         },
