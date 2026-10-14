@@ -19,9 +19,19 @@ Success means:
 
 ## Where it runs
 
-Against the app running locally (the dev server and its database), so the
-owner can sign in straight afterwards. Putting the app online is a separate
-task and not part of this one.
+Against its own local server and database, `pnpm dev:showcase` (port 8131,
+`data/showcase.db`), so simulated schools never pile into the dev database
+beside the pilot, and the owner can sign in straight afterwards. A run on a
+database that already holds Crestfield is refused: stop the server, run
+`pnpm showcase:reset`, start it again. Journeys have their own too,
+`pnpm dev:journeys` (port 8132, `data/journeys.db`). Putting the app online
+is a separate task and not part of this one.
+
+The teaching content (questions, mark schemes, model answers, what learners
+of each ability write and the feedback they get, lesson notes, readings,
+cards and practicals) is written by hand, one file per subject and year
+group, in `test/fixtures/showcase/`. See the README there. A week with no
+written content falls back to the generator.
 
 It is built as a new scenario of the existing simulation harness
 (`test/sim/`, `pnpm journey:school`). The harness drives the app through its
@@ -153,8 +163,14 @@ learners sit and hand in.
      is reopened, so that history shows up.
 7. **Week 11.** Revision material is published.
 8. **Week 12.** Examinations are set and published, with a timetable of exam
-   papers and the school's own exam style (WAEC style for SS). Learners have
-   not sat them yet, so the owner can see an exam from both sides.
+   papers, drawn from the term's written questions. Every learner sits them,
+   and they are marked and published.
+9. **Week 13.** Every learner's report card is issued, with the form
+   teacher's remark and the principal's, both written from the learner's own
+   results.
+10. **One class's last piece is left open** (JSS2A Mathematics, week 10):
+    some have handed it in, some have started, some have not, and none of it
+    is marked, so learners' status words and a teacher's waiting work show.
 
 ## What the owner gets
 
@@ -207,7 +223,9 @@ The run fails if any of these ends empty.
 | Analytics           | School, class, learner and paper insights with real spread                        |
 | Gradebook           | Ten weeks of marks per class                                                      |
 | Announcements       | School-wide and per class                                                         |
-| Exams               | Set and published for week 12, unsat                                              |
+| Exams               | Sat, marked and published for week 12                                             |
+| Report cards        | One issued for every learner                                                      |
+| Work left open      | One class's last piece handed in by some, started by some, unmarked               |
 
 ## Not in this
 
@@ -215,8 +233,6 @@ The run fails if any of these ends empty.
   language model in the loop, so it is fast, free and repeatable. Open-answer
   marking is done by the harness against mark schemes, as the simulation
   already does. The owner can talk to the agent inside the school afterwards.
-- **Report cards.** End-of-term report cards come after the exams are sat,
-  and the exams are left unsat.
 - **Second and Third Terms**, and attendance (the app has no attendance
   feature).
 
@@ -227,6 +243,9 @@ Answered by the owner on 2026-10-12.
 1. **JSS arms:** one arm per JSS year group (JSS1A, JSS2A, JSS3A), 45 JSS
    learners and 180 in the school.
 2. **Exams:** set and published for week 12 and left unsat. No report cards.
+   _Revised 2026-10-14:_ exams are sat and marked and report cards issued;
+   term dates stay fixed (the papers carry no opening time, so they can be
+   sat now).
 3. **Where it runs:** locally only. Deploying is a separate task.
 4. **Name and place:** Crestfield College, Ibadan.
 5. **The agent:** not used in the run. Everything goes through the app's
