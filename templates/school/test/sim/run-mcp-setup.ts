@@ -1,7 +1,7 @@
 /**
  * A head sets up a provisioned school from an MCP client.
  *
- *   SCHOOL_URL=http://localhost:8130 pnpm journey:mcp-setup
+ *   SCHOOL_URL=http://localhost:8132 pnpm journey:mcp-setup
  *
  * Plays the parts a real head's AI app plays: provisions a school as an
  * operator would, signs the head up, connects over remote MCP with OAuth —
@@ -17,7 +17,7 @@ import { spawnSync } from "node:child_process";
 import { createHash, randomBytes } from "node:crypto";
 import { TEST_PASSWORD } from "./client.js";
 
-const BASE = process.env.SCHOOL_URL ?? "http://localhost:8130";
+const BASE = process.env.SCHOOL_URL ?? "http://localhost:8132";
 const MCP_URL = `${BASE}/_agent-native/mcp`;
 const REDIRECT_URI = "http://localhost:9/callback";
 

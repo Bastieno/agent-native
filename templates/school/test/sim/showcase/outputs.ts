@@ -371,7 +371,7 @@ function roster(run: ShowcaseRun) {
   md.push(`# ${run.scenario.schoolName}, ${run.scenario.city} — who is who`);
   md.push("");
   md.push(
-    `Run \`${run.runId}\`. Everyone signs in at http://localhost:8130 with their email and the shared password **${TEST_PASSWORD}**.`,
+    `Run \`${run.runId}\`. Everyone signs in at ${run.client.baseUrl} with their email and the shared password **${TEST_PASSWORD}**.`,
   );
   md.push("");
   md.push(

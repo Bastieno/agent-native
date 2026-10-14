@@ -26,12 +26,35 @@ import { checklist, writeOutputs } from "./showcase/outputs.js";
  */
 const runId = process.env.RUN_ID ?? `c${Date.now().toString(36)}`;
 const stopAfter = process.env.SHOWCASE_STOP_AFTER;
-const client = new Client();
+// The showcase has its own server and database (`pnpm dev:showcase`,
+// data/showcase.db), so it never lands in the dev database beside the pilot.
+const client = new Client(process.env.SCHOOL_URL ?? "http://localhost:8131");
 const findings = new Findings();
 
-if (!(await client.healthy())) {
-  console.error("The dev server is not answering on", client.baseUrl);
+if (new URL(client.baseUrl).port === "8130") {
+  console.error(
+    "That is the dev server, whose database holds the pilot. Start the showcase's own with `pnpm dev:showcase` (port 8131).",
+  );
   process.exit(1);
+}
+if (!(await client.healthy())) {
+  console.error(
+    "The showcase server is not answering on",
+    client.baseUrl,
+    "— start it with `pnpm dev:showcase`.",
+  );
+  process.exit(1);
+}
+// Addresses are the same every run, so a second run would build on top of
+// the first. Refuse, and say how to start clean.
+try {
+  await client.signIn("principal@crestfield.test", "principal", "admin");
+  console.error(
+    "Crestfield is already built in this database. Stop the showcase server, run `pnpm showcase:reset`, start it again with `pnpm dev:showcase`, then run this.",
+  );
+  process.exit(1);
+} catch {
+  // No principal yet: an empty database, as wanted.
 }
 
 console.log(

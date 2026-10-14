@@ -12,7 +12,12 @@
  * a real school starts.
  */
 
-const BASE = process.env.SCHOOL_URL ?? "http://localhost:8130";
+/**
+ * Journeys run against their own server and database (`pnpm dev:journeys`,
+ * data/journeys.db), never the dev database: a hundred simulated schools in
+ * data/app.db is what slowed the dev server to a crawl.
+ */
+const BASE = process.env.SCHOOL_URL ?? "http://localhost:8132";
 
 /** Local test accounts for a local dev server; never a real credential. */
 export const TEST_PASSWORD = "SimTest!2026pass";

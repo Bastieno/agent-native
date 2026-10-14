@@ -75,7 +75,9 @@ export async function buildSchool(
   runId: string,
 ): Promise<ShowcaseRun> {
   const decisions = new Decisions();
-  const domain = `${runId}.crestfield.test`;
+  // The same addresses every run, so the owner can keep them; the showcase
+  // database is emptied between runs instead (`pnpm showcase:reset`).
+  const domain = "crestfield.test";
 
   // ── The school and its settings ────────────────────────────────────────
   console.log("· the school and its settings");
