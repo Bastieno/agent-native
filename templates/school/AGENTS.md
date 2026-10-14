@@ -812,6 +812,11 @@ timing, marking — and create it only once they agree.
 - Write rubric criteria **against the objectives**, in the objectives' own
   words. Marking, feedback and the report comment then say the same thing, and
   a parent asking "why this grade?" gets a straight answer.
+- Give every open question a `modelAnswer` as well as a `markScheme`. The
+  scheme is for whoever marks it; the model answer is for the learner, written
+  the way a good answer at their level would read, and they get it back on
+  their marked paper once the paper closes. Keep it to what full marks need,
+  not an essay beyond the question.
 - Not everything is marked. Reading and practice can carry `gradingMode: none`
   — say so rather than inventing points.
 - Time-limit only what genuinely needs it. A 30-minute quiz, yes; a week's
@@ -1001,6 +1006,11 @@ the scheme it satisfies and the learner's own words that satisfied it. A
 teacher then verifies in seconds instead of re-marking — which is the only
 reason marking this fast is safe.
 
+**The model answer is not the standard.** An open question may carry a
+`modelAnswer`; it is for the learner to read afterwards, not for you to mark
+against, and the marking queue does not include it. A different answer that
+meets the scheme earns the same marks.
+
 **Partial credit is the normal case.** An incomplete answer earns the criteria
 it evidenced. Never take a mark off twice for one mistake, and never withhold a
 mark because the answer is shorter than you expected.
@@ -1159,7 +1169,8 @@ Read `submission-draft-{submissionId}` to see what the student has typed so far 
 Once work is handed in, `get-my-assessment` returns `review`: each question
 with the learner's own answer. Once their marks are published it adds the mark
 and feedback for each question, and once the paper has closed for the whole
-class it adds the right answer to each closed question (`correctAnswer`). The
+class it adds the right answer to each closed question (`correctAnswer`) and
+the model answer to each open one that has one (`modelAnswer`). The
 server decides each stage; `answersNote` says in words why the right answers
 are not shown yet. Mark schemes never come back.
 

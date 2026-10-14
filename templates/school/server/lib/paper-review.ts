@@ -27,7 +27,8 @@ import type {
  * The mark scheme of an open question never comes back. It is written for the
  * person marking — "1 mark for naming the cause, 1 for the effect" — and what
  * the learner gets instead is what it said about their answer: the points they
- * earned and the feedback.
+ * earned and the feedback, and, once the paper closes, the question's model
+ * answer where the teacher wrote one — a full-mark answer in a learner's words.
  */
 
 export type ReviewResponse = {
@@ -55,6 +56,11 @@ export type ReviewQuestion = {
    * open question, which has no single right answer.
    */
   correctAnswer?: string;
+  /**
+   * Only once the paper has closed for the class: a full-mark answer to an
+   * open question, written for the learner, where the teacher gave one.
+   */
+  modelAnswer?: string;
 };
 
 export type PaperReview = {
@@ -120,6 +126,9 @@ export function buildPaperReview(opts: {
     if (answersRevealed) {
       const correct = correctAnswerFor(block);
       if (correct) question.correctAnswer = correct;
+      else if (block.modelAnswer?.trim()) {
+        question.modelAnswer = block.modelAnswer.trim();
+      }
     }
     return question;
   });

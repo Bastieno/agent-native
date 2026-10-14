@@ -117,7 +117,7 @@ export default defineAction({
     blocks: jsonish(z.array(z.record(z.string(), z.any())))
       .optional()
       .describe(
-        "The structured body, matching renderAs. questions: {prompt, points?, hint?, options?, answerSpace?, durationSeconds?, answer?, acceptableAnswers?, markScheme?} — `answer` makes a question mark itself (the option index/letter for a choice, or the value); `markScheme` says what earns each mark on an open question and is never shown to a learner. cards: {front, back, hint?}. steps: {text, note?}. table: {cells:[...]} with `columns` set. criteria: {description, maxPoints?}. Also write `content` as markdown — it is the fallback and the print view.",
+        "The structured body, matching renderAs. questions: {prompt, points?, hint?, options?, answerSpace?, durationSeconds?, answer?, acceptableAnswers?, markScheme?, modelAnswer?} — `answer` makes a question mark itself (the option index/letter for a choice, or the value); `markScheme` says what earns each mark on an open question and is never shown to a learner; `modelAnswer` is a full-mark answer to an open question written for the learner, in the words a good answer at their level would use, shown on their returned paper once it closes. Give every open question both. cards: {front, back, hint?}. steps: {text, note?}. table: {cells:[...]} with `columns` set. criteria: {description, maxPoints?}. Also write `content` as markdown — it is the fallback and the print view.",
       ),
     columns: jsonish(z.array(z.string()))
       .optional()

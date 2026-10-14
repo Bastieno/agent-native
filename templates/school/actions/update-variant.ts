@@ -54,7 +54,7 @@ export default defineAction({
     )
       .optional()
       .describe(
-        'Merge fields into named blocks: [{ "index": 7, "markScheme": "..." }]. Anything not named is left alone.',
+        'Merge fields into named blocks: [{ "index": 7, "markScheme": "..." }] or [{ "index": 7, "modelAnswer": "..." }]. Anything not named is left alone.',
       ),
   }),
   http: { method: "PUT" },

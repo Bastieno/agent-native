@@ -11,6 +11,7 @@ type ReviewQuestion = {
   awardedPoints?: number | null;
   feedback?: string | null;
   correctAnswer?: string;
+  modelAnswer?: string;
 };
 
 export type PaperReviewData = {
@@ -182,6 +183,14 @@ function WrittenAnswer({ q }: { q: ReviewQuestion }) {
           <span className="text-muted-foreground">Correct answer: </span>
           <span className="font-medium">{q.correctAnswer}</span>
         </p>
+      ) : null}
+      {q.modelAnswer ? (
+        <div className="rounded-md border border-emerald-600/40 bg-emerald-600/5 p-2">
+          <p className="mb-1 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+            A full-mark answer
+          </p>
+          <Markdown className="text-sm">{q.modelAnswer}</Markdown>
+        </div>
       ) : null}
     </div>
   );

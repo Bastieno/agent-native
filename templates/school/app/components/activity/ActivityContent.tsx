@@ -213,7 +213,12 @@ function Marking({ block }: { block: QuestionBlock }) {
     block.answer !== undefined && block.answer !== null
       ? String(block.answer)
       : null;
-  if (!answer && !block.markScheme && !block.acceptableAnswers?.length) {
+  if (
+    !answer &&
+    !block.markScheme &&
+    !block.modelAnswer &&
+    !block.acceptableAnswers?.length
+  ) {
     return null;
   }
   return (
@@ -234,6 +239,14 @@ function Marking({ block }: { block: QuestionBlock }) {
         <Markdown className="text-xs text-muted-foreground">
           {block.markScheme}
         </Markdown>
+      ) : null}
+      {block.modelAnswer ? (
+        <div className="text-xs">
+          <span className="text-muted-foreground">
+            Model answer, given back once the paper closes:{" "}
+          </span>
+          <Markdown className="text-xs">{block.modelAnswer}</Markdown>
+        </div>
       ) : null}
     </div>
   );

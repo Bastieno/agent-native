@@ -18,6 +18,8 @@ export type ScenarioQuestion = {
   /** The right option's letter, or the expected value. */
   answer?: string;
   markScheme?: string;
+  /** A full-mark answer for the learner, given back once the paper closes. */
+  modelAnswer?: string;
   answerSpace?: "short" | "long";
 };
 
@@ -116,6 +118,7 @@ export const scenario: Scenario = {
           answerSpace: "short",
           markScheme:
             "1 mark for sixty-five thousand. 1 mark for and forty, with no extra hundreds named.",
+          modelAnswer: "Sixty-five thousand and forty.",
         },
         {
           prompt: "Which number is the largest?",
@@ -130,6 +133,8 @@ export const scenario: Scenario = {
           answerSpace: "long",
           markScheme:
             "1 mark for twelve thousand four hundred and six. 1 mark for identifying 4 as the hundreds digit. 1 mark for stating its value as 400.",
+          modelAnswer:
+            "I would read it as twelve thousand, four hundred and six. The 4 is in the hundreds place, so it is worth 400.",
         },
       ],
     },

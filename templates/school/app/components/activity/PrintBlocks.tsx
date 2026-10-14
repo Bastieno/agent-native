@@ -136,7 +136,8 @@ function Question({
   const hasMarking =
     block.answer !== undefined ||
     (block.acceptableAnswers?.length ?? 0) > 0 ||
-    !!block.markScheme;
+    !!block.markScheme ||
+    !!block.modelAnswer;
 
   return (
     <div className="flex gap-2">
@@ -191,6 +192,12 @@ function Question({
               <p className="whitespace-pre-line">
                 <span className="font-medium">Mark scheme:</span>{" "}
                 {block.markScheme}
+              </p>
+            ) : null}
+            {block.modelAnswer ? (
+              <p className="whitespace-pre-line">
+                <span className="font-medium">Model answer:</span>{" "}
+                {block.modelAnswer}
               </p>
             ) : null}
           </div>

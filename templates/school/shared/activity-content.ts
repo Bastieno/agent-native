@@ -79,6 +79,15 @@ export type QuestionBlock = {
    * question so the teacher can correct it before anyone sits the paper.
    */
   markScheme?: string;
+  /**
+   * What a full-mark answer to an open question looks like, written for the
+   * learner. Not the mark scheme, which is written for whoever marks it: this
+   * is shown to the class on their returned paper once the paper has closed,
+   * so they can see what they could have written. Never used to mark: an
+   * answer in the learner's own words that meets the scheme earns the marks
+   * however unlike this it reads.
+   */
+  modelAnswer?: string;
 };
 
 /** Two-sided practice: term/definition, question/answer, word/translation. */
@@ -137,7 +146,14 @@ export type ActivityContent = {
 };
 
 /** Fields on a block that would give the answer away. */
-const MARKING_FIELDS = ["answer", "acceptableAnswers", "markScheme"] as const;
+const MARKING_FIELDS = [
+  "answer",
+  "acceptableAnswers",
+  "markScheme",
+  // Given back on the returned paper once it closes (server/lib/paper-review),
+  // never while a classmate could still be answering.
+  "modelAnswer",
+] as const;
 
 /**
  * The same content, with everything that gives the answer away removed.

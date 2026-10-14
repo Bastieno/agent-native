@@ -90,6 +90,7 @@ export async function teachWeek(
     ...(q.options ? { options: q.options } : {}),
     ...(q.answer ? { answer: q.answer } : {}),
     ...(q.markScheme ? { markScheme: q.markScheme } : {}),
+    ...(q.modelAnswer ? { modelAnswer: q.modelAnswer } : {}),
     ...(q.answerSpace ? { answerSpace: q.answerSpace } : {}),
   }));
   const totalPoints = week.questions.reduce((sum, q) => sum + q.points, 0);
@@ -154,7 +155,10 @@ export async function teachWeek(
     const questions = asList(parsed?.blocks ?? paper?.blocks ?? []);
     // What a learner is served must never carry the answers.
     const leaked = questions.filter(
-      (q: any) => q?.answer !== undefined || q?.markScheme !== undefined,
+      (q: any) =>
+        q?.answer !== undefined ||
+        q?.markScheme !== undefined ||
+        q?.modelAnswer !== undefined,
     );
     findings.expect(
       phase,
@@ -231,7 +235,10 @@ export async function teachWeek(
     );
     findings.expect(
       phase,
-      reviewed.every((q: any) => q?.correctAnswer === undefined),
+      reviewed.every(
+        (q: any) =>
+          q?.correctAnswer === undefined && q?.modelAnswer === undefined,
+      ),
       "the right answers stay hidden while the paper is still open",
       `${reviewed.filter((q: any) => q?.correctAnswer !== undefined).length} revealed early`,
     );
@@ -253,6 +260,15 @@ export async function teachWeek(
           closedKeys,
         "once closed, every closed question shows its right answer",
         `${revealed.filter((q: any) => q?.correctAnswer !== undefined).length} of ${closedKeys}`,
+      );
+      const withModel = week.questions.filter(
+        (q: any) => q?.modelAnswer,
+      ).length;
+      findings.expect(
+        phase,
+        revealed.filter((q: any) => q?.modelAnswer).length === withModel,
+        "once closed, every open question with a model answer shows it",
+        `${revealed.filter((q: any) => q?.modelAnswer).length} of ${withModel}`,
       );
       findings.expect(
         phase,
