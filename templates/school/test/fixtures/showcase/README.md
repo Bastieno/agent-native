@@ -40,7 +40,11 @@ It must report no problems before the file is committed.
       "cards": [{ "front": "...", "back": "..." }], // 6–10
       "closed": [
         // 5, each with 4 options; "answer" is the right option's letter
-        { "prompt": "...", "options": ["...", "...", "...", "..."], "answer": "B" },
+        {
+          "prompt": "...",
+          "options": ["...", "...", "...", "..."],
+          "answer": "B",
+        },
       ],
       "open": [
         // 2
@@ -53,7 +57,12 @@ It must report no problems before the file is committed.
             {
               "tier": "partial",
               "text": "the learner's own answer",
-              "meets": [{ "point": 0, "quote": "exact words from text that earn point 0" }],
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "exact words from text that earn point 0",
+                },
+              ],
               "feedback": "what the teacher writes back to this learner",
               "unsure": true, // optional: a marker would want a second look
             },
@@ -68,7 +77,12 @@ It must report no problems before the file is committed.
         "rubric": [{ "description": "...", "maxPoints": 4 }], // 2–4 criteria
         "writeUps": [
           // 6: two per tier
-          { "tier": "full", "text": "method, results, conclusion", "scores": [4, 2, 4], "feedback": "..." },
+          {
+            "tier": "full",
+            "text": "method, results, conclusion",
+            "scores": [4, 2, 4],
+            "feedback": "...",
+          },
         ],
       },
     },

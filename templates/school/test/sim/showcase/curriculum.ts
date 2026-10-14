@@ -265,6 +265,7 @@ export async function prepareWeek(
     if (written)
       await run.client.as(cls.teacher, "update-lesson-note", {
         id,
+        title: written.topic,
         content: written.lessonNote,
       });
     await run.client.as(cls.teacher, "finalize-lesson-note", { id });

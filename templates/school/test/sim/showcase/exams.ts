@@ -11,7 +11,6 @@ import {
 } from "./content.js";
 import { learnersOf } from "./context.js";
 import { markOpenAnswers, sit } from "./teaching.js";
-import { asList } from "../shapes.js";
 import { abilityInWeek } from "../population.js";
 
 /**
@@ -347,14 +346,19 @@ export async function reportCards(run: ShowcaseRun): Promise<void> {
       studentId: learner.studentId,
       termId,
     });
-    const rows = asList(preview?.snapshot?.subjects ?? preview?.subjects ?? []);
-    const scored = rows
-      .map((r: any) => ({
-        subject: String(r.subject ?? r.subjectName ?? r.className ?? ""),
-        score: Number(r.percentage ?? r.average ?? r.score ?? NaN),
-      }))
-      .filter((r) => r.subject && Number.isFinite(r.score))
+    // The preview hands back the card as it would print; its subject table
+    // and its count of missed work are what the remarks are written from.
+    const markdown = String(preview?.markdown ?? "");
+    const scored = [
+      ...markdown.matchAll(
+        /^\| ([^|*]+?) \| \d+ of \d+ \| (\d+)% \| \w+ \|$/gm,
+      ),
+    ]
+      .map((m) => ({ subject: m[1].trim(), score: Number(m[2]) }))
       .sort((a, b) => b.score - a.score);
+    const missed = Number(
+      markdown.match(/(\d+) piece\(s\) of work were not handed in/)?.[1] ?? 0,
+    );
     const form = run.arms.find((a) => a.name === learner.arm)?.formTeacher
       ?.name;
     const ability = abilityInWeek(learner.profile, 10);
@@ -365,7 +369,7 @@ export async function reportCards(run: ShowcaseRun): Promise<void> {
         [`Form teacher${form ? ` (${form})` : ""}`]: formRemark(
           learner.profile.name.split(" ")[0],
           scored,
-          learner.profile.diligence,
+          missed,
         ),
         Principal: principalRemark(ability),
       },
@@ -396,7 +400,7 @@ export async function reportCards(run: ShowcaseRun): Promise<void> {
 function formRemark(
   first: string,
   scored: { subject: string; score: number }[],
-  diligence: number,
+  missed: number,
 ): string {
   const best = scored.slice(0, 2).map((r) => r.subject);
   const weakest = scored[scored.length - 1];
@@ -408,13 +412,13 @@ function formRemark(
       `${weakest.subject} needs steady work over the holiday; a page of practice a day would make a difference.`,
     );
   else if (weakest)
-    parts.push(`Every subject is at a pass or better, which is good to see.`);
+    parts.push("Every subject is at a pass or better, which is good to see.");
   parts.push(
-    diligence >= 0.85
-      ? "Work is handed in on time, every time."
-      : diligence >= 0.65
-        ? "A few pieces of class work were missed; handing everything in would lift the average."
-        : "Too much class work was not handed in, and it cost marks. This must change next term.",
+    missed === 0
+      ? "Every piece of class work was handed in."
+      : missed <= 4
+        ? `${missed} piece${missed === 1 ? " was" : "s were"} missed; handing everything in would lift the average.`
+        : `${missed} pieces of class work were not handed in, and each counted as nought. This must change next term.`,
   );
   return parts.join(" ");
 }

@@ -1,0 +1,2455 @@
+{
+  "subject": "Physics",
+  "yearGroup": "SS1",
+  "weeks": {
+    "1": {
+      "topic": "Matter, the kinetic theory and units",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the arrangement and motion of particles in solids, liquids and gases;\n2. use the kinetic theory to explain gas pressure, evaporation and boiling;\n3. distinguish between crystalline and amorphous solids;\n4. distinguish between fundamental and derived quantities and give their SI units.\n\n## Materials\n\nA beaker of water, potassium permanganate crystals, a bottle of perfume, a piece of glass and a lump of common salt, a chart of SI units.\n\n## Starter (5 minutes)\n\nSpray perfume at the front of the class. Ask students to raise a hand when they smell it. Ask: how did the smell reach the back of the room?\n\n## Development\n\n1. Drop a crystal of potassium permanganate into still water. Let the class watch the colour spread and link it to particles in random motion.\n2. Draw the particle diagrams of a solid, a liquid and a gas on the board. Students copy them.\n3. State the kinetic theory. Use it to explain gas pressure (particles hitting the walls), evaporation (fast particles escaping from the surface) and boiling.\n4. Pass round the salt and the glass. Explain crystalline (regular arrangement) and amorphous (no regular arrangement).\n5. Use the chart to list the seven fundamental quantities with their units, then build speed, density and volume from them.\n\n## Class activity\n\nIn pairs, students sort a list of twelve quantities into fundamental and derived and write the SI unit of each.\n\n## Evaluation\n\n1. Why does a gas exert pressure on its container?\n2. Give two derived quantities and their SI units.\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "What matter is made of, and how we measure it",
+        "content": "# What matter is made of\n\nEverything around you, the desk, the air in the classroom and the water in your bottle, is **matter**. Matter is anything that has mass and occupies space. All matter is made of tiny particles: atoms and molecules.\n\n## The three states of matter\n\n- In a **solid**, the particles are packed closely in fixed positions. They vibrate but do not move from place to place, so a solid has a fixed shape and volume.\n- In a **liquid**, the particles are close together but can slide past one another. A liquid has a fixed volume but takes the shape of its container.\n- In a **gas**, the particles are far apart and move freely at high speed in all directions. A gas fills any container it is put in.\n\n## The kinetic theory\n\nThe kinetic theory says that the particles of matter are always in motion, and that they move faster when they are heated. In 1827 Robert Brown saw pollen grains in water moving in a zigzag way under a microscope. The grains were being knocked about by invisible water molecules. This **Brownian motion** is evidence that the particles of matter are moving.\n\nThe theory explains many things you see every day:\n\n- **Gas pressure.** The particles of a gas hit the walls of their container all the time. Each collision pushes on the wall, and the force on each unit area of the wall is the pressure.\n- **Evaporation.** Wet clothes on a line dry because the fastest particles at the surface of the water escape into the air.\n- **Boiling.** When water is heated to 100 degrees Celsius, particles escape from all through the liquid, not just its surface.\n\n## Crystalline and amorphous solids\n\nIn a **crystalline** solid, such as common salt, the particles are arranged in a regular, repeating pattern. In an **amorphous** solid, such as glass or candle wax, there is no regular arrangement.\n\n## Fundamental and derived quantities\n\nA **fundamental quantity** does not depend on any other quantity. There are seven, each with its SI unit:\n\n| Quantity | SI unit |\n| --- | --- |\n| Length | metre (m) |\n| Mass | kilogram (kg) |\n| Time | second (s) |\n| Electric current | ampere (A) |\n| Thermodynamic temperature | kelvin (K) |\n| Luminous intensity | candela (cd) |\n| Amount of substance | mole (mol) |\n\nA **derived quantity** is obtained by combining fundamental quantities. For example:\n\n- speed = distance / time, so its unit is m/s (m s⁻¹);\n- density = mass / volume, so its unit is kg/m³ (kg m⁻³);\n- volume = length × length × length, so its unit is m³.\n\n**Worked example.** A danfo travels 1,200 m in 60 s. Its speed is 1,200 / 60 = 20 m/s. Speed is a derived quantity because it is made from length and time."
+      },
+      "cards": [
+        {
+          "front": "Matter",
+          "back": "Anything that has mass and occupies space."
+        },
+        {
+          "front": "Kinetic theory",
+          "back": "The particles of matter are always moving, and move faster when heated."
+        },
+        {
+          "front": "Brownian motion",
+          "back": "The zigzag movement of tiny particles, such as pollen grains in water, caused by molecules hitting them. Evidence that particles move."
+        },
+        {
+          "front": "Crystalline solid",
+          "back": "A solid whose particles are in a regular, repeating pattern, such as common salt."
+        },
+        {
+          "front": "Amorphous solid",
+          "back": "A solid with no regular arrangement of particles, such as glass."
+        },
+        {
+          "front": "Fundamental quantity",
+          "back": "A quantity that does not depend on any other, such as mass, length or time."
+        },
+        {
+          "front": "Derived quantity",
+          "back": "A quantity made by combining fundamental quantities, such as speed or density."
+        },
+        {
+          "front": "SI unit of temperature",
+          "back": "The kelvin (K)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In which state of matter are the particles close together but free to slide past one another?",
+          "options": ["Solid", "Liquid", "Gas", "Crystal"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the SI unit of thermodynamic temperature?",
+          "options": ["Degree Celsius", "Joule", "Kelvin", "Degree Fahrenheit"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a derived quantity?",
+          "options": ["Density", "Mass", "Length", "Electric current"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Pollen grains in water, seen under a microscope, move about in a zigzag way. What does this show?",
+          "options": [
+            "Pollen grains are alive",
+            "Water molecules are in constant random motion",
+            "Water is heavier than pollen",
+            "The microscope is shaking"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Glass is described as amorphous because",
+          "options": [
+            "it is transparent",
+            "it breaks easily",
+            "it melts at a fixed temperature",
+            "its particles have no regular arrangement"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Using the kinetic theory, explain why the gas in a closed tin exerts pressure on the walls of the tin.",
+          "markScheme": [
+            "States that the gas particles are in constant random motion",
+            "States that the particles collide with the walls of the tin",
+            "States that each collision exerts a force on the wall, and the force per unit area is the pressure"
+          ],
+          "modelAnswer": "The particles of the gas are always moving about randomly at high speed. As they move, they keep hitting the walls of the tin. Each collision pushes on the wall with a small force, and the total force on each unit area of the wall is the pressure of the gas.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Gas particles are moving randomly all the time with high speed. They keep colliding with the walls of the tin. Every time a particle hits the wall it exerts a force on it, and the force acting on each area of the wall is what we call pressure.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Gas particles are moving randomly all the time"
+                },
+                {
+                  "point": 1,
+                  "quote": "They keep colliding with the walls of the tin"
+                },
+                {
+                  "point": 2,
+                  "quote": "the force acting on each area of the wall is what we call pressure"
+                }
+              ],
+              "feedback": "You explained all three steps, from the random motion to the force on each area of the wall. Well done."
+            },
+            {
+              "tier": "full",
+              "text": "According to the kinetic theory the molecules of a gas are in continuous random motion. They bombard the inner walls of the tin. The bombardment produces a force on the walls and pressure = force/area, so the gas exerts pressure.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the molecules of a gas are in continuous random motion"
+                },
+                {
+                  "point": 1,
+                  "quote": "They bombard the inner walls of the tin"
+                },
+                {
+                  "point": 2,
+                  "quote": "The bombardment produces a force on the walls and pressure = force/area"
+                }
+              ],
+              "feedback": "Clear and complete. Linking the collisions to pressure = force/area was a good touch."
+            },
+            {
+              "tier": "partial",
+              "text": "The gas particles move about randomly and they hit the walls of the tin, that is why there is pressure.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The gas particles move about randomly"
+                },
+                {
+                  "point": 1,
+                  "quote": "they hit the walls of the tin"
+                }
+              ],
+              "feedback": "You have the random motion and the collisions. For the last mark, say that each collision exerts a force on the wall, and the force on each unit area is the pressure."
+            },
+            {
+              "tier": "partial",
+              "text": "Gas particles are always moving. When the tin is closed they cannot escape so they push on the wall with force which is the pressure.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Gas particles are always moving"
+                }
+              ],
+              "feedback": "You said the particles move and push on the wall, but not that they collide with it. The pressure comes from particles hitting the walls; say that, and that pressure is the force on each unit area.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Pressure is caused because the tin is closed and the gas wants to come out, so it pushes the tin.",
+              "meets": [],
+              "feedback": "The gas does not want to come out. Think about what its particles are doing: moving all the time and hitting the walls. Read the kinetic theory section of this week's reading again."
+            },
+            {
+              "tier": "weak",
+              "text": "The particles of the gas are very far apart and they expand when heated so they need more space and press on the tin.",
+              "meets": [],
+              "feedback": "Being far apart does not cause pressure by itself. The pressure comes from the particles moving and colliding with the walls. Try the question again using those two ideas."
+            }
+          ]
+        },
+        {
+          "prompt": "Distinguish between fundamental and derived quantities. Give two examples of each, with their SI units.",
+          "markScheme": [
+            "Fundamental quantities are basic quantities that do not depend on any other quantity",
+            "Derived quantities are obtained by combining fundamental quantities",
+            "Two correct fundamental quantities, each with its correct SI unit (e.g. mass, kg; length, m)",
+            "Two correct derived quantities, each with its correct SI unit (e.g. density, kg m⁻³; speed, m s⁻¹)"
+          ],
+          "modelAnswer": "A fundamental quantity is a basic quantity that is not defined in terms of any other quantity, for example mass, measured in kilograms (kg), and time, measured in seconds (s). A derived quantity is obtained by combining fundamental quantities, for example speed, which is distance divided by time and is measured in metres per second (m s⁻¹), and density, which is mass divided by volume and is measured in kilograms per cubic metre (kg m⁻³).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Fundamental quantities are the basic quantities which cannot be got from other quantities, e.g. length (metre, m) and time (second, s). Derived quantities are got by combining fundamental quantities, e.g. volume (m³) and speed (m/s).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fundamental quantities are the basic quantities which cannot be got from other quantities"
+                },
+                {
+                  "point": 1,
+                  "quote": "Derived quantities are got by combining fundamental quantities"
+                },
+                {
+                  "point": 2,
+                  "quote": "length (metre, m) and time (second, s)"
+                },
+                {
+                  "point": 3,
+                  "quote": "volume (m³) and speed (m/s)"
+                }
+              ],
+              "feedback": "All four points, with every unit written correctly. Excellent."
+            },
+            {
+              "tier": "full",
+              "text": "A fundamental quantity does not depend on any other quantity. Examples are mass in kg and electric current in ampere (A). A derived quantity is made from two or more fundamental quantities, for example density = mass/volume in kg/m³ and area in m².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A fundamental quantity does not depend on any other quantity"
+                },
+                {
+                  "point": 1,
+                  "quote": "A derived quantity is made from two or more fundamental quantities"
+                },
+                {
+                  "point": 2,
+                  "quote": "mass in kg and electric current in ampere (A)"
+                },
+                {
+                  "point": 3,
+                  "quote": "density = mass/volume in kg/m³ and area in m²"
+                }
+              ],
+              "feedback": "Complete and accurate. Writing density as mass/volume showed exactly what makes a quantity derived."
+            },
+            {
+              "tier": "partial",
+              "text": "Fundamental quantities are basic quantities like mass and length. Derived quantities come from fundamental quantities like speed and density.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fundamental quantities are basic quantities"
+                },
+                {
+                  "point": 1,
+                  "quote": "Derived quantities come from fundamental quantities"
+                }
+              ],
+              "feedback": "Your definitions are right, but the question asks for SI units too. Write mass (kg), length (m), speed (m/s) and density (kg/m³) to earn the other two marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Fundamental quantities: length (m), mass (kg). Derived quantities: speed (m/s), weight (kg).",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "length (m), mass (kg)"
+                }
+              ],
+              "feedback": "Your fundamental quantities and units are right. Weight is measured in newtons (N), not kilograms, and you also need to say what makes a quantity fundamental or derived."
+            },
+            {
+              "tier": "weak",
+              "text": "Fundamental quantities are the important ones like temperature in degree celcius and derived are the ones we derive.",
+              "meets": [],
+              "feedback": "Saying derived quantities are the ones we derive does not explain them. A derived quantity is made by combining fundamental ones, as speed is distance divided by time. The SI unit of temperature is the kelvin, not the degree Celsius."
+            },
+            {
+              "tier": "weak",
+              "text": "Fundamental quantity is length, mass and time. Derived quantity is speed and volume.",
+              "meets": [],
+              "feedback": "You named the right quantities, but each mark needs more. Say what makes a quantity fundamental, and give each example with its SI unit, such as length in metres (m)."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Position, distance and displacement",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. locate a point using x and y axes;\n2. measure lengths with a metre rule, vernier calipers and a micrometer screw gauge, stating the accuracy of each;\n3. distinguish between distance and displacement;\n4. distinguish between instruments that measure mass and weight.\n\n## Materials\n\nMetre rules, two sets of vernier calipers, two micrometer screw gauges, a beam balance, a spring balance, a magnetic compass, graph paper, a thin copper wire and a sheet of paper.\n\n## Starter (5 minutes)\n\nAsk a student to walk from the door to the window and back. Ask: how far did they walk, and how far are they from where they started?\n\n## Development\n\n1. Draw x and y axes on the board. Plot the positions of three desks. Show how to write a position as (x, y).\n2. Demonstrate the metre rule, the vernier calipers and the micrometer. Read each one aloud on the board and write its accuracy: 0.1 cm, 0.01 cm, 0.001 cm.\n3. Define distance and displacement. Return to the starter: the walk was a distance of about 16 m but a displacement of zero.\n4. Use the compass to give directions. Work an example: 4 m east, then 3 m north, gives a displacement of 5 m.\n5. Compare the beam balance (mass, in kg) with the spring balance (weight, in N).\n\n## Class activity\n\nIn groups of four, students measure the length of a pencil, the diameter of a test tube and the diameter of a copper wire, choosing the right instrument for each, and record the readings with their accuracy.\n\n## Evaluation\n\n1. Which instrument would you use to measure the diameter of a wire? Why?\n2. A girl walks 6 m north and 8 m east. What is her displacement?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Where things are, and how far they go",
+        "content": "# Position, distance and displacement\n\n## Describing position\n\nTo say exactly where something is, we use **axes**. On a flat surface we use two: the x-axis across and the y-axis up. A point 3 units along and 4 units up is written (3, 4). In space we add a third axis, z, for height.\n\n## Measuring length\n\nThe SI unit of length is the **metre (m)**. Which instrument we use depends on how small the length is:\n\n| Instrument | Use it for | Reads to |\n| --- | --- | --- |\n| Metre rule | the length of a desk or a book | 0.1 cm (1 mm) |\n| Vernier calipers | the diameter of a test tube or a pipe | 0.01 cm (0.1 mm) |\n| Micrometer screw gauge | the diameter of a wire, the thickness of paper | 0.001 cm (0.01 mm) |\n\nWhen reading a metre rule, keep your eye directly above the mark to avoid **parallax error**.\n\n## Distance and displacement\n\n**Distance** is the total length of the path travelled. It has size only, so it is a **scalar**.\n\n**Displacement** is the distance moved from the starting point in a stated direction. It has size and direction, so it is a **vector**.\n\n**Worked example 1.** Tola walks 40 m from the classroom to the library and 40 m back. The distance is 40 + 40 = 80 m. She ends where she started, so her displacement is 0 m.\n\n**Worked example 2.** A trader walks 4 m east and then 3 m north across Bodija market. The distance is 4 + 3 = 7 m. The displacement is the straight line from start to finish. By Pythagoras' theorem, it is the square root of (4² + 3²) = the square root of 25 = 5 m, in a direction north of east.\n\nA compass and a protractor let us state the direction of a displacement exactly.\n\n## Mass and weight\n\n**Mass** is the quantity of matter in a body, measured in kilograms with a beam balance, lever balance or electronic balance. **Weight** is the pull of gravity on a body, measured in newtons with a spring balance. Your mass is the same in Lagos and on the Moon; your weight is not."
+      },
+      "cards": [
+        {
+          "front": "Position (x, y)",
+          "back": "How far along the x-axis and how far up the y-axis a point is."
+        },
+        {
+          "front": "Metre rule",
+          "back": "Measures lengths to 0.1 cm (1 mm)."
+        },
+        {
+          "front": "Vernier calipers",
+          "back": "Measures small lengths, such as the diameter of a test tube, to 0.01 cm (0.1 mm)."
+        },
+        {
+          "front": "Micrometer screw gauge",
+          "back": "Measures very small lengths, such as the diameter of a wire, to 0.001 cm (0.01 mm)."
+        },
+        {
+          "front": "Distance",
+          "back": "The total length of the path travelled. A scalar."
+        },
+        {
+          "front": "Displacement",
+          "back": "The distance moved in a stated direction from the start. A vector."
+        },
+        {
+          "front": "Parallax error",
+          "back": "A wrong reading caused by not looking straight at the scale."
+        },
+        {
+          "front": "Spring balance",
+          "back": "Measures weight, in newtons."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "To what accuracy can a pair of vernier calipers measure length?",
+          "options": ["1 cm", "0.1 cm", "0.01 cm", "0.001 cm"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which instrument is best for measuring the diameter of a thin copper wire?",
+          "options": [
+            "Metre rule",
+            "Measuring tape",
+            "Vernier calipers",
+            "Micrometer screw gauge"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A boy walks 4 m east and then 3 m north. What is the size of his displacement from where he started?",
+          "options": ["7 m", "5 m", "1 m", "12 m"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these instruments measures weight rather than mass?",
+          "options": [
+            "Spring balance",
+            "Beam balance",
+            "Lever balance",
+            "Chemical balance"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A point lies 3 units along the x-axis and 4 units up the y-axis. How is its position written?",
+          "options": ["(4, 3)", "(7, 0)", "(3, 4)", "(-3, 4)"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between distance and displacement. A student walks 40 m from the classroom to the library and then 40 m back. State the distance covered and the displacement.",
+          "markScheme": [
+            "Distance is the length of the path covered, with size only (a scalar)",
+            "Displacement is the distance moved in a stated direction (a vector)",
+            "Distance covered = 80 m",
+            "Displacement = 0 m, because the student ends where they started"
+          ],
+          "modelAnswer": "Distance is the total length of the path travelled; it has size but no direction, so it is a scalar. Displacement is the distance moved from the starting point in a stated direction, so it is a vector. The student covers a distance of 40 + 40 = 80 m, but ends where they started, so the displacement is 0 m.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Distance is how long the path you travelled is and it has no direction. Displacement is the distance in a particular direction from where you started. The distance covered is 80 m and the displacement is zero because the student came back to the classroom.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Distance is how long the path you travelled is and it has no direction"
+                },
+                {
+                  "point": 1,
+                  "quote": "Displacement is the distance in a particular direction from where you started"
+                },
+                {
+                  "point": 2,
+                  "quote": "The distance covered is 80 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "the displacement is zero because the student came back to the classroom"
+                }
+              ],
+              "feedback": "All four marks: clear definitions and the right answer for both, with the reason for zero."
+            },
+            {
+              "tier": "full",
+              "text": "Distance is a scalar, it is the total length covered. Displacement is a vector, i.e. distance moved in a specified direction. Distance = 40 m + 40 m = 80 m. Displacement = 0 m since the final position is the same as the starting point.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Distance is a scalar, it is the total length covered"
+                },
+                {
+                  "point": 1,
+                  "quote": "Displacement is a vector, i.e. distance moved in a specified direction"
+                },
+                {
+                  "point": 2,
+                  "quote": "Distance = 40 m + 40 m = 80 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "Displacement = 0 m since the final position is the same as the starting point"
+                }
+              ],
+              "feedback": "Excellent. Calling them a scalar and a vector is exactly the distinction an examiner looks for."
+            },
+            {
+              "tier": "partial",
+              "text": "Distance is the total length covered. Displacement is the shortest distance between two points. Distance is 80 m and displacement is 40 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Distance is the total length covered"
+                },
+                {
+                  "point": 2,
+                  "quote": "Distance is 80 m"
+                }
+              ],
+              "feedback": "Your distance is right. Displacement needs a direction, and it is measured from the start to the finish: the student ends at the classroom, so the displacement is 0 m, not 40 m."
+            },
+            {
+              "tier": "partial",
+              "text": "Distance has no direction but displacement has direction. The distance is 80 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Distance has no direction"
+                },
+                {
+                  "point": 1,
+                  "quote": "displacement has direction"
+                },
+                {
+                  "point": 2,
+                  "quote": "The distance is 80 m"
+                }
+              ],
+              "feedback": "Good definitions and the right distance. You left out the displacement: the student is back where they started, so it is 0 m."
+            },
+            {
+              "tier": "weak",
+              "text": "Distance and displacement are the same thing, they both measure how far you go. The answer is 80 m.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The answer is 80 m"
+                }
+              ],
+              "feedback": "They are not the same. Displacement has a direction and is measured from the start to the finish, so here it is 0 m even though the distance is 80 m."
+            },
+            {
+              "tier": "weak",
+              "text": "Displacement is when something is moved from its place. The student moved 40 m.",
+              "meets": [],
+              "feedback": "Read the definitions again. Distance is the whole length of the path, 80 m here. Displacement is how far, and in which direction, the student ends up from the start, which is 0 m."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain why a micrometer screw gauge, and not a metre rule, is used to measure the thickness of a sheet of paper. State the accuracy of each instrument.",
+          "markScheme": [
+            "The paper is thinner than the smallest division on a metre rule (1 mm)",
+            "A metre rule reads to 0.1 cm (1 mm)",
+            "A micrometer screw gauge reads to 0.001 cm (0.01 mm), so it can measure very small lengths"
+          ],
+          "modelAnswer": "A sheet of paper is only about 0.1 mm thick, which is much smaller than the smallest division on a metre rule. A metre rule can only read to 1 mm (0.1 cm), so it cannot measure the paper. A micrometer screw gauge reads to 0.01 mm (0.001 cm), so it can measure such a small thickness accurately.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The paper is too thin to measure with a metre rule because its smallest division is 1 mm and the paper is less than that. A metre rule is accurate to 0.1 cm but a micrometer screw gauge is accurate to 0.001 cm, so the micrometer can measure the small thickness.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "its smallest division is 1 mm and the paper is less than that"
+                },
+                {
+                  "point": 1,
+                  "quote": "A metre rule is accurate to 0.1 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "a micrometer screw gauge is accurate to 0.001 cm"
+                }
+              ],
+              "feedback": "Full marks. You explained why the metre rule fails, not just that it does."
+            },
+            {
+              "tier": "full",
+              "text": "A sheet of paper is about 0.1 mm thick, which is smaller than the 1 mm divisions on a metre rule, so the metre rule cannot read it. Metre rule: accuracy 1 mm. Micrometer screw gauge: accuracy 0.01 mm, so it can measure very small lengths like this.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "which is smaller than the 1 mm divisions on a metre rule"
+                },
+                {
+                  "point": 1,
+                  "quote": "Metre rule: accuracy 1 mm"
+                },
+                {
+                  "point": 2,
+                  "quote": "Micrometer screw gauge: accuracy 0.01 mm"
+                }
+              ],
+              "feedback": "Clear and exact. Estimating the paper's thickness made the comparison convincing."
+            },
+            {
+              "tier": "partial",
+              "text": "The micrometer screw gauge is more accurate than the metre rule. The metre rule reads to 1 mm.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The metre rule reads to 1 mm"
+                }
+              ],
+              "feedback": "Right about the metre rule. Now say why that is not enough, because the paper is thinner than 1 mm, and give the micrometer's accuracy, 0.01 mm."
+            },
+            {
+              "tier": "partial",
+              "text": "Paper is very thin so the metre rule cannot measure it. The micrometer screw gauge is accurate to 0.1 mm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Paper is very thin so the metre rule cannot measure it"
+                }
+              ],
+              "feedback": "You have the idea that the paper is too thin, but say why: it is thinner than the 1 mm divisions on the rule. A micrometer reads to 0.01 mm; 0.1 mm is the vernier calipers.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "We use micrometer screw gauge because it is the best instrument and the metre rule is for long things.",
+              "meets": [],
+              "feedback": "Best is not a reason. Compare how finely each one reads: a metre rule to 1 mm, a micrometer to 0.01 mm, and a sheet of paper is about 0.1 mm thick."
+            },
+            {
+              "tier": "weak",
+              "text": "A metre rule measures in metres while micrometer measures in micrometers so it is used for small things.",
+              "meets": [],
+              "feedback": "A micrometer screw gauge does not measure in micrometres. It reads to 0.01 mm, while a metre rule reads to 1 mm, and that difference is why it can measure the paper."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Mass, weight, density and pressure in fluids",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish between mass and weight and give their units;\n2. determine the density of a solid and a liquid by experiment;\n3. explain how pressure in a liquid depends on depth, and state Pascal's principle;\n4. state Archimedes' principle and the law of flotation, and use them in simple calculations.\n\n## Materials\n\nA beam balance, a spring balance, a measuring cylinder, a eureka can, a stone tied to a thread, a block of wood, a tall tin with three holes punched at different heights, a basin of water.\n\n## Starter (5 minutes)\n\nFill the tin with holes and let the class watch the jets. Ask: why does the lowest jet go furthest?\n\n## Development\n\n1. Revise mass and weight. Weigh the stone on the beam balance and the spring balance and compare the units.\n2. Find the stone's volume by displacement in the measuring cylinder. Work out its density on the board: density = mass / volume.\n3. Return to the tin. Explain that pressure in a liquid increases with depth (P = hρg). State Pascal's principle and show how a hydraulic press and car brakes use it.\n4. Hang the stone from the spring balance and lower it into water. Note the loss of weight. State Archimedes' principle.\n5. Float the wood block. State the law of flotation and link it to ships and the hydrometer.\n\n## Class activity\n\nGroups find the density of a stone, then its upthrust in water, and check that the upthrust equals the weight of water collected from the eureka can.\n\n## Evaluation\n\n1. Why do dams have thicker walls at the bottom?\n2. A block of mass 600 g has a volume of 200 cm³. Find its density.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Mass, weight and the push of fluids",
+        "content": "# Mass, weight and the push of fluids\n\n## Mass and weight\n\n**Mass** is the quantity of matter in a body. It is measured in kilograms (kg) and does not change from place to place.\n\n**Weight** is the force of gravity on a body. It is measured in newtons (N):\n\nW = mg, where g is about 10 N/kg on Earth.\n\nA 50 kg bag of rice weighs 50 × 10 = 500 N in Ibadan. On the Moon, where g is about 1.6 N/kg, its mass is still 50 kg but it weighs only about 80 N.\n\n## Density\n\nDensity is mass per unit volume:\n\ndensity = mass / volume\n\nIts SI unit is kg/m³; in the laboratory we often use g/cm³. Water has a density of 1 g/cm³ (1,000 kg/m³).\n\n**Worked example.** A stone has a mass of 600 g. Lowered into a measuring cylinder, it raises the water from 50 cm³ to 250 cm³. Its volume is 200 cm³, so its density is 600 / 200 = 3 g/cm³.\n\n**Relative density** compares a substance with water: relative density = density of substance / density of water. It has no unit.\n\n## Pressure\n\nPressure is force per unit area: P = F / A, measured in pascals (Pa).\n\nIn a liquid, pressure **increases with depth**: P = hρg. This is why water spurts furthest from the lowest hole in a tin, and why a dam is built thicker at the bottom. The atmosphere also presses on us, which is how a drinking straw, a syringe and a siphon work.\n\n**Pascal's principle** says that pressure applied to an enclosed liquid is passed on equally in all directions. A hydraulic press and the brakes of a car both use it: a small push on a small piston gives a large force on a large one.\n\n## Upthrust and floating\n\nA body in a fluid is pushed up by a force called **upthrust**.\n\n**Archimedes' principle:** when a body is wholly or partly immersed in a fluid, it experiences an upthrust equal to the weight of fluid it displaces.\n\n**The law of flotation:** a floating body displaces its own weight of the fluid it floats in.\n\n**Worked example.** A block of wood floats with 0.0015 m³ of it under water. The water displaced weighs 1,000 × 0.0015 × 10 = 15 N, so the upthrust is 15 N. Because the block floats, its weight is also 15 N.\n\nShips, submarines, balloons and the hydrometer all depend on these ideas."
+      },
+      "cards": [
+        {
+          "front": "Mass",
+          "back": "The quantity of matter in a body, in kilograms. The same everywhere."
+        },
+        {
+          "front": "Weight",
+          "back": "The force of gravity on a body, in newtons. W = mg."
+        },
+        {
+          "front": "Density",
+          "back": "Mass per unit volume, in kg/m³ or g/cm³."
+        },
+        {
+          "front": "Pressure in a liquid",
+          "back": "Increases with depth: P = hρg."
+        },
+        {
+          "front": "Pascal's principle",
+          "back": "Pressure applied to an enclosed liquid is passed on equally in all directions."
+        },
+        {
+          "front": "Archimedes' principle",
+          "back": "The upthrust on a body in a fluid equals the weight of fluid it displaces."
+        },
+        {
+          "front": "Law of flotation",
+          "back": "A floating body displaces its own weight of the fluid it floats in."
+        },
+        {
+          "front": "Relative density",
+          "back": "Density of a substance divided by the density of water. No unit."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A block has a mass of 600 g and a volume of 200 cm³. What is its density?",
+          "options": ["0.33 g/cm³", "3 g/cm³", "800 g/cm³", "120,000 g/cm³"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The pressure at a point in a liquid",
+          "options": [
+            "increases as the depth increases",
+            "decreases as the depth increases",
+            "is the same at every depth",
+            "depends only on the shape of the container"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "What is the weight of a 50 kg bag of rice? (Take g = 10 N/kg.)",
+          "options": ["5 N", "50 N", "500 N", "60 N"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A body floats in water when",
+          "options": [
+            "its weight is greater than the upthrust on it",
+            "its volume is less than 1 m³",
+            "it is made of wood",
+            "its weight equals the weight of water it displaces"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The hydraulic press works on",
+          "options": [
+            "Hooke's law",
+            "Archimedes' principle",
+            "Pascal's principle",
+            "the law of flotation"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State the difference between mass and weight, and give the SI unit of each.",
+          "markScheme": [
+            "Mass is the quantity of matter in a body",
+            "Weight is the force of gravity acting on a body",
+            "Mass is measured in kilograms (kg) and weight in newtons (N)"
+          ],
+          "modelAnswer": "Mass is the quantity of matter in a body, and it stays the same wherever the body is. Weight is the force with which gravity pulls the body, so it changes from place to place; on the Moon it is about a sixth of its value on Earth. Mass is measured in kilograms (kg) and weight in newtons (N).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Mass is the amount of matter in a body and it is the same everywhere. Weight is the pull of gravity on the body, it can change, for example it is less on the moon. Mass is in kg and weight is in newton (N).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mass is the amount of matter in a body"
+                },
+                {
+                  "point": 1,
+                  "quote": "Weight is the pull of gravity on the body"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mass is in kg and weight is in newton (N)"
+                }
+              ],
+              "feedback": "Full marks, and the Moon example shows you understand why the two differ."
+            },
+            {
+              "tier": "full",
+              "text": "Mass = quantity of matter, constant. Weight = force due to gravity (W = mg), varies with g. Units: mass kg, weight N.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mass = quantity of matter"
+                },
+                {
+                  "point": 1,
+                  "quote": "Weight = force due to gravity (W = mg)"
+                },
+                {
+                  "point": 2,
+                  "quote": "Units: mass kg, weight N"
+                }
+              ],
+              "feedback": "Short but complete. Writing W = mg shows exactly why weight changes from place to place."
+            },
+            {
+              "tier": "partial",
+              "text": "Mass is the quantity of matter in a body while weight is the force of gravity on it. Mass is measured in kg and weight is also measured in kg.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mass is the quantity of matter in a body"
+                },
+                {
+                  "point": 1,
+                  "quote": "weight is the force of gravity on it"
+                }
+              ],
+              "feedback": "Your definitions are right, but weight is a force, so it is measured in newtons (N), not kilograms."
+            },
+            {
+              "tier": "partial",
+              "text": "Mass does not change but weight changes when you go to the moon. Mass is in kg and weight in N.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Mass is in kg and weight in N"
+                }
+              ],
+              "feedback": "Your units are right, and you know weight changes on the Moon. The question wants what each one is: mass is the quantity of matter, weight is the pull of gravity on it.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Mass and weight are the same, they are both how heavy something is, and they are measured in kg.",
+              "meets": [],
+              "feedback": "They are not the same. Mass is the quantity of matter, in kilograms; weight is the force of gravity on it, in newtons. A bag of rice has the same mass on the Moon but weighs less."
+            },
+            {
+              "tier": "weak",
+              "text": "Weight is the mass of a body. It is measured with a beam balance in kilograms.",
+              "meets": [],
+              "feedback": "A beam balance measures mass, not weight. Weight is the pull of gravity on a body, measured in newtons with a spring balance."
+            }
+          ]
+        },
+        {
+          "prompt": "A block of wood of volume 0.002 m³ floats in water with 0.0015 m³ of it under the surface. (Density of water = 1,000 kg/m³; g = 10 N/kg.) (a) Calculate the upthrust on the block. (b) What is the weight of the block? Give a reason.",
+          "markScheme": [
+            "Uses the volume under the water, 0.0015 m³, as the volume displaced",
+            "Uses upthrust = weight of water displaced = density × volume × g",
+            "Upthrust = 15 N",
+            "Weight of block = 15 N, because a floating body displaces its own weight of fluid (equal to the upthrust)"
+          ],
+          "modelAnswer": "The block displaces 0.0015 m³ of water, the volume under the surface. By Archimedes' principle, upthrust = weight of water displaced = density × volume × g = 1,000 × 0.0015 × 10 = 15 N. The block floats, and by the law of flotation a floating body displaces its own weight of fluid, so the weight of the block is also 15 N.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Volume displaced = 0.0015 m³. Upthrust = weight of water displaced = ρVg = 1000 × 0.0015 × 10 = 15 N. Weight of block = 15 N because it is floating, so its weight equals the upthrust.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Volume displaced = 0.0015 m³"
+                },
+                {
+                  "point": 1,
+                  "quote": "Upthrust = weight of water displaced = ρVg"
+                },
+                {
+                  "point": 2,
+                  "quote": "1000 × 0.0015 × 10 = 15 N"
+                },
+                {
+                  "point": 3,
+                  "quote": "Weight of block = 15 N because it is floating, so its weight equals the upthrust"
+                }
+              ],
+              "feedback": "Every step shown and every unit given. This is how to set out a calculation."
+            },
+            {
+              "tier": "full",
+              "text": "Mass of water displaced = 1000 × 0.0015 = 1.5 kg, so weight of water displaced = 1.5 × 10 = 15 N. By Archimedes principle the upthrust is 15 N. Since the wood floats, its weight is equal to the weight of water it displaces, which is 15 N.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1000 × 0.0015 = 1.5 kg"
+                },
+                {
+                  "point": 1,
+                  "quote": "weight of water displaced = 1.5 × 10"
+                },
+                {
+                  "point": 2,
+                  "quote": "the upthrust is 15 N"
+                },
+                {
+                  "point": 3,
+                  "quote": "Since the wood floats, its weight is equal to the weight of water it displaces"
+                }
+              ],
+              "feedback": "Full marks. Working out the mass of water first is a sound way through."
+            },
+            {
+              "tier": "partial",
+              "text": "Upthrust = 1000 × 0.002 × 10 = 20 N. The weight is 20 N because the block floats.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Upthrust = 1000 × 0.002 × 10"
+                },
+                {
+                  "point": 3,
+                  "quote": "The weight is 20 N because the block floats"
+                }
+              ],
+              "feedback": "Your method and your reason are right, but only the part under the water displaces water. Use 0.0015 m³, which gives 15 N for both answers."
+            },
+            {
+              "tier": "partial",
+              "text": "Upthrust = 1000 × 0.0015 × 10 = 15 N.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "0.0015"
+                },
+                {
+                  "point": 1,
+                  "quote": "Upthrust = 1000 × 0.0015 × 10"
+                },
+                {
+                  "point": 2,
+                  "quote": "15 N"
+                }
+              ],
+              "feedback": "Part (a) is right. For (b), the block floats, so its weight equals the upthrust: 15 N."
+            },
+            {
+              "tier": "weak",
+              "text": "Upthrust = 0.002 - 0.0015 = 0.0005 N. The weight is 0.0005 N.",
+              "meets": [],
+              "feedback": "Upthrust is a force, the weight of the water displaced. Multiply the volume under the water by the density of water and by g: 1,000 × 0.0015 × 10 = 15 N."
+            },
+            {
+              "tier": "weak",
+              "text": "The block floats because wood is lighter than water. Weight = mg = 0.002 × 10 = 0.02 N.",
+              "meets": [],
+              "feedback": "0.002 m³ is a volume, not a mass. Use Archimedes' principle: the upthrust is the weight of water displaced, 15 N, and a floating block weighs the same as the water it displaces."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Motion, force and friction",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name and give examples of the types of motion;\n2. explain that force is the cause of motion, and distinguish contact from non-contact forces;\n3. distinguish static from dynamic friction and calculate the coefficient of limiting friction;\n4. state the advantages and disadvantages of friction and ways of reducing it.\n\n## Materials\n\nA ceiling fan (or a picture of one), a simple pendulum, a magnet and pins, a wooden block with a hook, a spring balance, sandpaper, a few round pencils to act as rollers, a little cooking oil.\n\n## Starter (5 minutes)\n\nAsk three students to show a type of motion with their hands. List what the class sees: going round, going to and fro, moving in a straight line.\n\n## Development\n\n1. Name the types of motion: random, rectilinear (translational), rotational, circular, orbital, spin, oscillatory. Students give a Nigerian example of each.\n2. Explain force as a push or a pull that causes motion. Show contact forces (a push, tension, friction) and non-contact forces (magnetic, electric, gravitational).\n3. Pull the block with the spring balance. Record the reading just as it starts to move (limiting friction) and while it moves steadily (dynamic friction).\n4. Define the coefficient of limiting friction, μ = F / R. Work an example on the board.\n5. Repeat on sandpaper, on the pencil rollers and on an oiled surface. Discuss advantages and disadvantages of friction and ways to reduce it.\n\n## Class activity\n\nGroups find μ for the block on the bench, then add a 1 kg mass and find it again. Does μ change?\n\n## Evaluation\n\n1. Give an example of oscillatory motion.\n2. A force of 12 N just starts a 40 N box moving. Find μ.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Why things move, and what slows them down",
+        "content": "# Motion, force and friction\n\n## Types of motion\n\n| Type | What it is | Example |\n| --- | --- | --- |\n| Random | Moving in no fixed direction | Smoke particles, a crowd at a market |\n| Rectilinear (translational) | Moving in a straight line | A danfo on a straight road |\n| Rotational | Turning about an axis | A ceiling fan |\n| Circular | Moving round a circle | A stone whirled on a string |\n| Orbital | Moving round another body | The Moon round the Earth |\n| Spin | Turning about its own axis | A spinning top |\n| Oscillatory | Moving to and fro | A pendulum, a swing |\n\n## Force\n\nA **force** is a push or a pull. It is what makes a body start moving, stop, speed up, slow down or change direction. Its unit is the newton (N).\n\n- **Contact forces** act when bodies touch: a push, a pull, tension in a rope, friction.\n- **Non-contact (field) forces** act at a distance: gravitational pull, magnetic attraction and repulsion, electric attraction and repulsion.\n\n## Friction\n\nFriction is the force that opposes motion between two surfaces in contact.\n\n- **Static friction** acts before a body moves. Its largest value, just before the body starts to move, is **limiting friction**.\n- **Dynamic (kinetic) friction** acts while the body is moving, and is a little less than limiting friction.\n\nThe **coefficient of limiting friction** is\n\nμ = F / R\n\nwhere F is the limiting friction and R is the normal reaction (on a level floor, R equals the weight).\n\n**Worked example.** A box of weight 200 N rests on a floor, and μ = 0.4. The force needed to start it moving is F = μR = 0.4 × 200 = 80 N.\n\n### Advantages of friction\n\n- We can walk without slipping.\n- Brakes stop cars, bicycles and okadas.\n- Belts drive machines such as grinding machines in the market.\n- A matchstick lights when struck.\n\n### Disadvantages of friction\n\n- It wears out moving parts of machines.\n- It turns useful energy into heat, which lowers efficiency.\n\n### Reducing friction\n\nUse ball bearings and rollers, lubricate with oil or grease, make surfaces smoother, and streamline vehicles so air slows them less."
+      },
+      "cards": [
+        {
+          "front": "Oscillatory motion",
+          "back": "Moving to and fro about a fixed point, like a pendulum."
+        },
+        {
+          "front": "Rotational motion",
+          "back": "Turning about an axis, like a ceiling fan."
+        },
+        {
+          "front": "Force",
+          "back": "A push or a pull that changes a body's motion. Unit: newton (N)."
+        },
+        {
+          "front": "Non-contact force",
+          "back": "A force that acts at a distance: gravitational, magnetic or electric."
+        },
+        {
+          "front": "Friction",
+          "back": "The force that opposes motion between two surfaces in contact."
+        },
+        {
+          "front": "Limiting friction",
+          "back": "The largest static friction, just before a body starts to move."
+        },
+        {
+          "front": "Coefficient of limiting friction",
+          "back": "μ = F / R, limiting friction divided by normal reaction. No unit."
+        },
+        {
+          "front": "Lubrication",
+          "back": "Putting oil or grease between surfaces to reduce friction."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The motion of the blades of a ceiling fan is",
+          "options": ["random", "rotational", "translational", "oscillatory"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is a non-contact force?",
+          "options": [
+            "Friction",
+            "Tension in a rope",
+            "Gravitational pull",
+            "The push of a hand"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A pendulum swinging to and fro is an example of",
+          "options": [
+            "oscillatory motion",
+            "rectilinear motion",
+            "random motion",
+            "orbital motion"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these reduces friction in a machine?",
+          "options": [
+            "Roughening the surfaces",
+            "Increasing the load",
+            "Removing the oil",
+            "Using ball bearings"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A force of 12 N is needed just to start a box of weight 40 N moving on a level floor. What is the coefficient of limiting friction?",
+          "options": ["0.3", "3.3", "52", "480"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State two advantages and one disadvantage of friction.",
+          "markScheme": [
+            "One correct advantage (e.g. allows us to walk without slipping)",
+            "A second, different advantage (e.g. brakes stop vehicles; belts drive machines; striking a match)",
+            "One correct disadvantage (e.g. wears out machine parts; wastes energy as heat; reduces efficiency)"
+          ],
+          "modelAnswer": "Friction lets us walk without slipping, because our feet grip the ground. It also lets the brakes of a car or bicycle stop it. A disadvantage is that it wears away the moving parts of machines and wastes energy as heat, which lowers their efficiency.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Advantages: it helps us to walk without sliding, and it makes the brakes of a car to stop the car. Disadvantage: it causes wear and tear of machine parts.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "it helps us to walk without sliding"
+                },
+                {
+                  "point": 1,
+                  "quote": "it makes the brakes of a car to stop the car"
+                },
+                {
+                  "point": 2,
+                  "quote": "it causes wear and tear of machine parts"
+                }
+              ],
+              "feedback": "All three correct and clearly set out."
+            },
+            {
+              "tier": "full",
+              "text": "Friction allows a belt to drive the grinding machine in the market and it allows us to strike a match. But it produces heat in engines which wastes energy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Friction allows a belt to drive the grinding machine in the market"
+                },
+                {
+                  "point": 1,
+                  "quote": "it allows us to strike a match"
+                },
+                {
+                  "point": 2,
+                  "quote": "it produces heat in engines which wastes energy"
+                }
+              ],
+              "feedback": "Good examples from everyday life, and all three are correct."
+            },
+            {
+              "tier": "partial",
+              "text": "Friction helps us to walk. Friction makes things to wear out.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Friction helps us to walk"
+                },
+                {
+                  "point": 2,
+                  "quote": "Friction makes things to wear out"
+                }
+              ],
+              "feedback": "One advantage and a good disadvantage. You need a second advantage, such as brakes stopping a vehicle or tyres gripping the road."
+            },
+            {
+              "tier": "partial",
+              "text": "Advantage: it helps us to walk. Disadvantage: it makes us to fall down when the floor is rough. Disadvantage: it makes the car slow.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "it helps us to walk"
+                }
+              ],
+              "feedback": "Walking is a good advantage. Friction does not make us fall; too little friction does, on a wet floor. For a disadvantage, say it wears out moving parts or wastes energy as heat.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Friction is a force that opposes motion. It is good and bad.",
+              "meets": [],
+              "feedback": "That is a correct definition, but the question asks for examples. Name two ways friction helps us, such as walking and braking, and one way it causes trouble."
+            },
+            {
+              "tier": "weak",
+              "text": "Advantage of friction is that it makes things move faster. Disadvantage is it causes rust.",
+              "meets": [],
+              "feedback": "Friction opposes motion, so it does not make things move faster, and rust is caused by air and water, not friction. Think of walking, brakes and machine parts wearing out."
+            }
+          ]
+        },
+        {
+          "prompt": "A wooden box of weight 200 N rests on a level floor. The coefficient of limiting friction between the box and the floor is 0.4. (a) What is the smallest horizontal force needed to start the box moving? (b) State two ways of reducing the friction between the box and the floor.",
+          "markScheme": [
+            "Uses F = μR with R = 200 N (the normal reaction equals the weight)",
+            "Force = 0.4 × 200 = 80 N",
+            "First correct way of reducing the friction (e.g. putting rollers under the box)",
+            "Second, different way (e.g. lubricating the floor; making the surfaces smoother; using a trolley with wheels)"
+          ],
+          "modelAnswer": "The normal reaction equals the weight, 200 N. Limiting friction F = μR = 0.4 × 200 = 80 N, so a horizontal force of just over 80 N will start the box moving. The friction can be reduced by putting rollers or round pipes under the box, or by pouring oil or soapy water on the floor to lubricate it.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "F = μR = 0.4 × 200 = 80 N. So the force needed is 80 N. Ways: put rollers under the box, or pour oil on the floor to lubricate it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "F = μR = 0.4 × 200"
+                },
+                {
+                  "point": 1,
+                  "quote": "So the force needed is 80 N"
+                },
+                {
+                  "point": 2,
+                  "quote": "put rollers under the box"
+                },
+                {
+                  "point": 3,
+                  "quote": "pour oil on the floor to lubricate it"
+                }
+              ],
+              "feedback": "Full marks: the right formula, the right answer with its unit, and two sensible ways."
+            },
+            {
+              "tier": "full",
+              "text": "Normal reaction R = weight = 200 N. μ = F/R, so F = 0.4 × 200 = 80 N. To reduce the friction we can place the box on a trolley with wheels or smooth the floor and put soap water on it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Normal reaction R = weight = 200 N"
+                },
+                {
+                  "point": 1,
+                  "quote": "F = 0.4 × 200 = 80 N"
+                },
+                {
+                  "point": 2,
+                  "quote": "place the box on a trolley with wheels"
+                },
+                {
+                  "point": 3,
+                  "quote": "smooth the floor and put soap water on it"
+                }
+              ],
+              "feedback": "Excellent. Saying first that the normal reaction equals the weight is exactly the step examiners look for."
+            },
+            {
+              "tier": "partial",
+              "text": "F = 0.4 × 200 = 80 N. We can push it harder.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "F = 0.4 × 200"
+                },
+                {
+                  "point": 1,
+                  "quote": "80 N"
+                }
+              ],
+              "feedback": "Part (a) is right. Pushing harder does not reduce friction; rollers under the box or oil on the floor would."
+            },
+            {
+              "tier": "partial",
+              "text": "μ = F/R so F = μ/R = 0.4/200 = 0.002 N. Friction can be reduced by using rollers and by lubrication.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "using rollers"
+                },
+                {
+                  "point": 3,
+                  "quote": "by lubrication"
+                }
+              ],
+              "feedback": "Your ways of reducing friction are right. Rearranging μ = F/R gives F = μ × R, not μ / R: 0.4 × 200 = 80 N."
+            },
+            {
+              "tier": "weak",
+              "text": "The force needed is 200 N because that is the weight of the box. Use ball bearings.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Use ball bearings"
+                }
+              ],
+              "feedback": "You do not have to lift the box, only overcome friction: F = μR = 0.4 × 200 = 80 N. Ball bearings suit machines; for a box, rollers under it do the same job.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Force = 200 - 0.4 = 199.6 N.",
+              "meets": [],
+              "feedback": "Friction is μ times the normal reaction, not the weight minus μ. Multiply: 0.4 × 200 = 80 N. Then give two ways to reduce it, such as rollers and oil."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Speed, velocity and acceleration",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish between speed and velocity, and calculate average speed;\n2. define acceleration and calculate it from changes in velocity;\n3. find velocity from the slope of a displacement-time graph, and acceleration and distance from a velocity-time graph;\n4. describe viscosity, terminal velocity and simple circular motion.\n\n## Materials\n\nA ticker-timer and tape (or a stopwatch and a measuring tape), graph paper, a tall measuring cylinder of engine oil, a ball bearing, a stone tied to a string.\n\n## Starter (5 minutes)\n\nAsk: an okada and a danfo both travel from Mokola to Dugbe. Which is faster? How would we find out?\n\n## Development\n\n1. Define speed (distance per unit time) and velocity (displacement per unit time). Work the cyclist example on the board, converting minutes to seconds.\n2. Define acceleration as change in velocity per unit time, unit m/s². Work an example of a car accelerating from rest.\n3. Draw a velocity-time graph for a danfo that speeds up, then moves steadily. Show that the slope is the acceleration and the area under the graph is the distance.\n4. Drop the ball bearing into the oil. Students see it speed up and then fall at a steady speed. Explain viscosity and terminal velocity.\n5. Whirl the stone on the string (outside, carefully). Explain that a force towards the centre keeps it in the circle, and that banked roads help vehicles round bends.\n\n## Class activity\n\nPairs draw the velocity-time graph for a danfo: rest to 15 m/s in 5 s, then 15 m/s for 10 s. They find the acceleration and the total distance.\n\n## Evaluation\n\n1. What does the area under a velocity-time graph give?\n2. A car goes from rest to 20 m/s in 5 s. Find its acceleration.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "How fast, which way, and speeding up",
+        "content": "# Speed, velocity and acceleration\n\n## Speed and velocity\n\n**Speed** is the distance travelled per unit time. It is a scalar.\n\nspeed = distance / time\n\n**Velocity** is the displacement per unit time: speed in a stated direction. It is a vector.\n\nBoth are measured in metres per second (m/s).\n\n**Worked example.** A cyclist rides 3,000 m in 10 minutes. First change the time to seconds: 10 × 60 = 600 s. Average speed = 3,000 / 600 = 5 m/s.\n\nIf speed stays the same, it is **uniform**. If it changes, it is **non-uniform**, and the speed at one moment is the **instantaneous speed**.\n\n## Acceleration\n\n**Acceleration** is the rate of change of velocity:\n\nacceleration = (final velocity − initial velocity) / time, or a = (v − u) / t\n\nIts unit is m/s². A body slowing down has a negative acceleration, called a **deceleration** or **retardation**.\n\n**Worked example.** A danfo starts from rest and reaches 15 m/s in 5 s. a = (15 − 0) / 5 = 3 m/s².\n\n## Reading motion graphs\n\n- On a **displacement-time graph**, the slope is the velocity.\n- On a **velocity-time graph**, the slope is the acceleration, and the **area under the graph is the distance travelled**.\n\n**Worked example.** The danfo above then moves at 15 m/s for 10 s more. Under its velocity-time graph is a triangle and a rectangle. Triangle: ½ × 5 × 15 = 37.5 m. Rectangle: 15 × 10 = 150 m. Total distance: 187.5 m.\n\n## Friction in fluids\n\n**Viscosity** is friction in a liquid or gas. Honey and engine oil are very viscous. A ball bearing dropped into oil speeds up at first, but the drag of the oil grows with its speed until it balances the weight. The ball then falls at a steady speed called its **terminal velocity**. A raindrop and a parachutist reach a terminal velocity too.\n\n## Moving in a circle\n\nA stone whirled on a string changes direction all the time, so it is accelerating even at a steady speed. The pull of the string towards the centre, the **centripetal force**, keeps it in the circle. Roads are **banked** at bends so that vehicles can turn without depending only on the friction of their tyres."
+      },
+      "cards": [
+        {
+          "front": "Speed",
+          "back": "Distance travelled per unit time. A scalar, in m/s."
+        },
+        {
+          "front": "Velocity",
+          "back": "Displacement per unit time; speed in a stated direction. A vector."
+        },
+        {
+          "front": "Acceleration",
+          "back": "Rate of change of velocity: a = (v − u) / t, in m/s²."
+        },
+        {
+          "front": "Slope of a displacement-time graph",
+          "back": "The velocity."
+        },
+        {
+          "front": "Area under a velocity-time graph",
+          "back": "The distance travelled."
+        },
+        {
+          "front": "Viscosity",
+          "back": "Friction in a fluid, such as oil or honey."
+        },
+        {
+          "front": "Terminal velocity",
+          "back": "The steady speed reached when the drag of a fluid balances a body's weight."
+        },
+        {
+          "front": "Centripetal force",
+          "back": "The force towards the centre that keeps a body moving in a circle."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A car moves from rest to 20 m/s in 5 s. What is its acceleration?",
+          "options": ["100 m/s²", "4 m/s²", "0.25 m/s²", "25 m/s²"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The slope of a displacement-time graph gives the",
+          "options": ["acceleration", "distance", "velocity", "force"],
+          "answer": "C"
+        },
+        {
+          "prompt": "The area under a velocity-time graph gives the",
+          "options": [
+            "distance travelled",
+            "acceleration",
+            "speed",
+            "time taken"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A ball bearing dropped into a cylinder of oil soon falls at a steady speed. What is this steady speed called?",
+          "options": [
+            "Average speed",
+            "Initial velocity",
+            "Acceleration",
+            "Terminal velocity"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A stone tied to a string is whirled in a horizontal circle. In which direction does the force that keeps it in the circle act?",
+          "options": [
+            "Away from the centre",
+            "Towards the centre",
+            "Along the direction of motion",
+            "Vertically upwards"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between speed and velocity. A cyclist rides 3,000 m in 10 minutes. Calculate the cyclist's average speed in m/s.",
+          "markScheme": [
+            "Speed is the rate of change of distance, with no direction (a scalar)",
+            "Velocity is the rate of change of displacement, speed in a stated direction (a vector)",
+            "Average speed = 3,000 / 600 = 5 m/s, with the time changed to seconds"
+          ],
+          "modelAnswer": "Speed is the distance travelled per unit time and has no direction, so it is a scalar. Velocity is the displacement per unit time, that is speed in a stated direction, so it is a vector. Ten minutes is 600 s, so the average speed is 3,000 / 600 = 5 m/s.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Speed is distance covered per unit time and has no direction. Velocity is displacement per unit time, so it has direction. Time = 10 × 60 = 600 s. Speed = 3000/600 = 5 m/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Speed is distance covered per unit time and has no direction"
+                },
+                {
+                  "point": 1,
+                  "quote": "Velocity is displacement per unit time, so it has direction"
+                },
+                {
+                  "point": 2,
+                  "quote": "Speed = 3000/600 = 5 m/s"
+                }
+              ],
+              "feedback": "All three marks, and you remembered to change the minutes to seconds."
+            },
+            {
+              "tier": "full",
+              "text": "Speed is a scalar (rate of change of distance) while velocity is a vector (rate of change of displacement). Average speed = total distance / total time = 3000 m / 600 s = 5 m/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Speed is a scalar (rate of change of distance)"
+                },
+                {
+                  "point": 1,
+                  "quote": "velocity is a vector (rate of change of displacement)"
+                },
+                {
+                  "point": 2,
+                  "quote": "3000 m / 600 s = 5 m/s"
+                }
+              ],
+              "feedback": "Precise definitions and a neat calculation with units at every step."
+            },
+            {
+              "tier": "partial",
+              "text": "Speed has no direction but velocity has direction. Speed = 3000/10 = 300 m/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Speed has no direction"
+                },
+                {
+                  "point": 1,
+                  "quote": "velocity has direction"
+                }
+              ],
+              "feedback": "Your distinction is right, but the time must be in seconds: 10 minutes is 600 s, so the speed is 3,000 / 600 = 5 m/s."
+            },
+            {
+              "tier": "partial",
+              "text": "Speed = distance/time = 3000/600 = 5 m/s. Velocity is the same as speed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Speed = distance/time"
+                },
+                {
+                  "point": 2,
+                  "quote": "3000/600 = 5 m/s"
+                }
+              ],
+              "feedback": "The calculation is right. Velocity is not the same as speed: it is speed in a stated direction, so it is a vector."
+            },
+            {
+              "tier": "weak",
+              "text": "Speed is how fast something moves and velocity is how fast it accelerate. 3000 × 10 = 30,000 m/s.",
+              "meets": [],
+              "feedback": "Velocity is speed in a given direction, not acceleration. Speed is distance divided by time, with the time in seconds: 3,000 / 600 = 5 m/s."
+            },
+            {
+              "tier": "weak",
+              "text": "Velocity is faster than speed. Speed = 10/3000 = 0.003.",
+              "meets": [],
+              "feedback": "Velocity is not faster than speed; it is speed with a direction. Divide the distance by the time, not the other way round, and change 10 minutes to 600 s first."
+            }
+          ]
+        },
+        {
+          "prompt": "A danfo starts from rest and accelerates uniformly to 15 m/s in 5 s. It then moves at this speed for 10 s more. (a) Calculate its acceleration in the first 5 s. (b) Using the area under its velocity-time graph, calculate the total distance it travels in the 15 s.",
+          "markScheme": [
+            "Acceleration = (15 − 0) / 5",
+            "Acceleration = 3 m/s²",
+            "Distance in the first 5 s = ½ × 5 × 15 = 37.5 m",
+            "Distance in the next 10 s = 15 × 10 = 150 m, total 187.5 m"
+          ],
+          "modelAnswer": "Acceleration = change in velocity / time = (15 − 0) / 5 = 3 m/s². The area under the velocity-time graph is a triangle and a rectangle. The triangle gives ½ × 5 × 15 = 37.5 m and the rectangle gives 15 × 10 = 150 m, so the total distance is 37.5 + 150 = 187.5 m.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "a = (v − u)/t = (15 − 0)/5 = 3 m/s². Area of triangle = ½ × 5 × 15 = 37.5 m. Area of rectangle = 10 × 15 = 150 m. Total distance = 187.5 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a = (v − u)/t = (15 − 0)/5"
+                },
+                {
+                  "point": 1,
+                  "quote": "3 m/s²"
+                },
+                {
+                  "point": 2,
+                  "quote": "Area of triangle = ½ × 5 × 15 = 37.5 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "Area of rectangle = 10 × 15 = 150 m. Total distance = 187.5 m"
+                }
+              ],
+              "feedback": "Full marks, with every area named. Very clear."
+            },
+            {
+              "tier": "full",
+              "text": "Acceleration = 15/5 = 3 m/s². First part: average speed 7.5 m/s × 5 s = 37.5 m. Second part: 15 × 10 = 150 m. Total = 187.5 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Acceleration = 15/5"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 3 m/s²"
+                },
+                {
+                  "point": 2,
+                  "quote": "average speed 7.5 m/s × 5 s = 37.5 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "Second part: 15 × 10 = 150 m. Total = 187.5 m"
+                }
+              ],
+              "feedback": "Full marks. Using the average speed for the first part is a correct alternative to the area of the triangle."
+            },
+            {
+              "tier": "partial",
+              "text": "a = 15/5 = 3 m/s². Distance = 15 × 15 = 225 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a = 15/5"
+                },
+                {
+                  "point": 1,
+                  "quote": "3 m/s²"
+                }
+              ],
+              "feedback": "Your acceleration is right. The danfo was not at 15 m/s for the whole 15 s: the first 5 s is a triangle, ½ × 5 × 15 = 37.5 m, then add 15 × 10 = 150 m."
+            },
+            {
+              "tier": "partial",
+              "text": "Acceleration = 5/15 = 0.33 m/s². Area = ½ × 5 × 15 + 15 × 10 = 37.5 + 150 = 187.5 m.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "½ × 5 × 15"
+                },
+                {
+                  "point": 3,
+                  "quote": "15 × 10 = 37.5 + 150 = 187.5 m"
+                }
+              ],
+              "feedback": "Your distance is right. Acceleration is change in velocity divided by time: 15 / 5 = 3 m/s², not 5 / 15."
+            },
+            {
+              "tier": "weak",
+              "text": "a = v × t = 15 × 5 = 75 m/s². Distance = 75 × 15 = 1125 m.",
+              "meets": [],
+              "feedback": "Acceleration is velocity divided by time, not multiplied: 15 / 5 = 3 m/s². Then find the distance from the area under the graph, a triangle and a rectangle."
+            },
+            {
+              "tier": "weak",
+              "text": "The danfo moved at 15 m/s for 15 s so the distance is 225 m and the acceleration is 15 m/s².",
+              "meets": [],
+              "feedback": "The danfo started from rest, so it was not at 15 m/s all the time. Draw the velocity-time graph: the slope of the first part is the acceleration, and the area under it is the distance."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Equations of motion, scalars and vectors",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the equations of uniformly accelerated motion, including motion under gravity;\n2. distinguish between scalars and vectors and give examples;\n3. add two vectors at right angles, and find the resultant of two forces with a force board;\n4. resolve a vector into horizontal and vertical components.\n\n## Materials\n\nA force board with two spring balances and pulleys, slotted masses, string, protractors, a tennis ball.\n\n## Starter (5 minutes)\n\nThrow the tennis ball straight up and catch it. Ask: what is its speed at the very top? How long did it take to get there?\n\n## Development\n\n1. Write the three equations of motion: v = u + at, s = ut + ½at², v² = u² + 2as. Show that for a body thrown up, a = −g.\n2. Work two examples: a stone dropped from a building for 3 s, and a ball thrown up at 20 m/s.\n3. Sort quantities into scalars and vectors with the class.\n4. On the force board, hang three loads and find where the strings settle. Draw the parallelogram of forces to find the resultant.\n5. Add 3 N and 4 N at right angles by Pythagoras. Resolve a 10 N force at 60° into components: 10 cos 60° = 5 N and 10 sin 60° = 8.7 N.\n\n## Class activity\n\nGroups use the force board to find the resultant of two forces, then check it by drawing to scale.\n\n## Evaluation\n\n1. Give two vectors and two scalars.\n2. A stone is dropped from rest. What is its speed after 3 s?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "The equations of motion, and quantities with direction",
+        "content": "# Equations of motion, scalars and vectors\n\n## The equations of motion\n\nWhen a body moves with **constant acceleration**, its motion follows three equations. Here u is the initial velocity, v the final velocity, a the acceleration, t the time and s the displacement.\n\n1. v = u + at\n2. s = ut + ½at²\n3. v² = u² + 2as\n\n## Motion under gravity\n\nNear the Earth's surface, a falling body accelerates downwards at about **g = 10 m/s²** (ignoring air resistance). For a body thrown **upwards**, the acceleration is −g, because gravity slows it down.\n\n**Worked example 1.** A stone is dropped from rest from the top of a building and lands after 3 s. v = u + gt = 0 + 10 × 3 = 30 m/s.\n\n**Worked example 2.** A ball is thrown straight up at 20 m/s. At its highest point it stops for an instant, so v = 0.\n\n- Time to the top: 0 = 20 − 10t, so t = 2 s.\n- Maximum height: 0 = 20² − 2 × 10 × h, so h = 400 / 20 = 20 m.\n\n## Scalars and vectors\n\nA **scalar** has size (magnitude) only: mass, distance, speed, time, energy.\n\nA **vector** has size and direction: displacement, velocity, acceleration, force, weight.\n\nA vector is drawn as an arrow. Its length shows its size and its direction shows its direction.\n\n## Adding vectors\n\nTwo vectors can be added with the **parallelogram law**: draw them from the same point, complete the parallelogram, and the diagonal is the **resultant**. A force board does this with real forces.\n\nWhen two vectors are at **right angles**, use Pythagoras' theorem.\n\n**Worked example.** Forces of 3 N and 4 N act at right angles. Resultant = the square root of (3² + 4²) = 5 N.\n\n## Resolving a vector\n\nA vector can be split into two parts at right angles, its **components**. A force F at an angle θ to the horizontal has:\n\n- horizontal component F cos θ;\n- vertical component F sin θ.\n\n**Worked example.** A boy pulls a cart with a force of 10 N along a rope at 60° to the ground. The horizontal part, which moves the cart forward, is 10 cos 60° = 5 N."
+      },
+      "cards": [
+        {
+          "front": "v = u + at",
+          "back": "Final velocity from initial velocity, acceleration and time."
+        },
+        {
+          "front": "s = ut + ½at²",
+          "back": "Displacement from initial velocity, time and acceleration."
+        },
+        {
+          "front": "v² = u² + 2as",
+          "back": "Links velocities, acceleration and displacement without time."
+        },
+        {
+          "front": "g",
+          "back": "Acceleration due to gravity, about 10 m/s² near the Earth's surface."
+        },
+        {
+          "front": "Scalar",
+          "back": "A quantity with size only, such as mass, speed or time."
+        },
+        {
+          "front": "Vector",
+          "back": "A quantity with size and direction, such as force, velocity or displacement."
+        },
+        {
+          "front": "Resultant",
+          "back": "The single vector with the same effect as two or more vectors together."
+        },
+        {
+          "front": "Horizontal component of F at angle θ",
+          "back": "F cos θ."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a vector quantity?",
+          "options": ["Mass", "Speed", "Time", "Displacement"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A stone is dropped from rest from the top of a building and hits the ground after 3 s. What is its speed as it hits the ground? (Take g = 10 m/s².)",
+          "options": ["3.3 m/s", "13 m/s", "30 m/s", "90 m/s"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Two forces of 3 N and 4 N act at right angles on a body. What is the size of their resultant?",
+          "options": ["1 N", "5 N", "7 N", "12 N"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which equation links final velocity v, initial velocity u, acceleration a and time t?",
+          "options": ["v = u + at", "v = u − at²", "s = vt", "v² = u + 2a"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A force of 10 N acts at 60° to the horizontal. What is its horizontal component?",
+          "options": ["10 N", "8.7 N", "5 N", "0 N"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between a scalar quantity and a vector quantity, and give two examples of each.",
+          "markScheme": [
+            "A scalar has magnitude (size) only; a vector has both magnitude and direction",
+            "Two correct scalars (e.g. mass, distance, speed, time)",
+            "Two correct vectors (e.g. weight, displacement, velocity, acceleration, force)"
+          ],
+          "modelAnswer": "A scalar quantity has size (magnitude) only, while a vector quantity has both size and direction. Mass and speed are scalars. Displacement and velocity are vectors.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A scalar has only magnitude but a vector has both magnitude and direction. Examples of scalars are mass and time. Examples of vectors are force and velocity.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A scalar has only magnitude but a vector has both magnitude and direction"
+                },
+                {
+                  "point": 1,
+                  "quote": "Examples of scalars are mass and time"
+                },
+                {
+                  "point": 2,
+                  "quote": "Examples of vectors are force and velocity"
+                }
+              ],
+              "feedback": "Full marks: a clear definition and correct examples of each."
+            },
+            {
+              "tier": "full",
+              "text": "Scalar quantities are described by size alone, e.g. distance and speed. Vector quantities need size and direction to describe them, e.g. displacement and weight.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Vector quantities need size and direction to describe them"
+                },
+                {
+                  "point": 1,
+                  "quote": "e.g. distance and speed"
+                },
+                {
+                  "point": 2,
+                  "quote": "e.g. displacement and weight"
+                }
+              ],
+              "feedback": "Well put. Pairing distance with displacement shows you know exactly where the difference lies."
+            },
+            {
+              "tier": "partial",
+              "text": "A vector has direction but a scalar does not. Scalars: speed, velocity. Vectors: force, acceleration.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A vector has direction but a scalar does not"
+                },
+                {
+                  "point": 2,
+                  "quote": "Vectors: force, acceleration"
+                }
+              ],
+              "feedback": "Your definition and vectors are right, but velocity is a vector: it is speed in a direction. Give mass or time as your second scalar."
+            },
+            {
+              "tier": "partial",
+              "text": "Scalars are mass, distance. Vectors are weight, displacement.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Scalars are mass, distance"
+                },
+                {
+                  "point": 2,
+                  "quote": "Vectors are weight, displacement"
+                }
+              ],
+              "feedback": "Your examples are all right. Add what makes the difference: a vector has a direction as well as a size."
+            },
+            {
+              "tier": "weak",
+              "text": "Scalar quantity is a quantity that can be measured with a scale, like mass. Vector is a quantity that moves.",
+              "meets": [],
+              "feedback": "Scalars are not about scales. A scalar has size only; a vector has size and direction. Mass and time are scalars, while force and velocity are vectors."
+            },
+            {
+              "tier": "weak",
+              "text": "Vectors are big quantities like speed and acceleration and scalars are small ones like mass and length.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "scalars are small ones like mass and length"
+                }
+              ],
+              "feedback": "Size has nothing to do with it. A vector has a direction and a scalar does not, which is why speed is a scalar and velocity is a vector.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "A ball is thrown vertically upwards from the ground with a velocity of 20 m/s. (Take g = 10 m/s².) (a) How long does it take to reach its highest point? (b) What is the maximum height it reaches?",
+          "markScheme": [
+            "Velocity at the highest point is 0, and uses v = u − gt",
+            "Time = 20 / 10 = 2 s",
+            "Uses v² = u² − 2gh (or s = ut − ½gt²)",
+            "Maximum height = 20 m"
+          ],
+          "modelAnswer": "At the highest point the ball stops for an instant, so v = 0. From v = u − gt, 0 = 20 − 10t, so t = 2 s. From v² = u² − 2gh, 0 = 20² − 2 × 10 × h, so h = 400 / 20 = 20 m.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "At max height v = 0. Using v = u − gt, 0 = 20 − 10t, so t = 2 s. Using v² = u² − 2gh, 0 = 400 − 20h, so h = 20 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "At max height v = 0. Using v = u − gt"
+                },
+                {
+                  "point": 1,
+                  "quote": "so t = 2 s"
+                },
+                {
+                  "point": 2,
+                  "quote": "Using v² = u² − 2gh"
+                },
+                {
+                  "point": 3,
+                  "quote": "so h = 20 m"
+                }
+              ],
+              "feedback": "Full marks. Starting from v = 0 at the top is the key, and you said it first."
+            },
+            {
+              "tier": "full",
+              "text": "Time to top: t = u/g = 20/10 = 2 s, because the velocity at the top is zero. Height: s = ut − ½gt² = 20 × 2 − ½ × 10 × 2² = 40 − 20 = 20 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "because the velocity at the top is zero"
+                },
+                {
+                  "point": 1,
+                  "quote": "t = u/g = 20/10 = 2 s"
+                },
+                {
+                  "point": 2,
+                  "quote": "s = ut − ½gt²"
+                },
+                {
+                  "point": 3,
+                  "quote": "40 − 20 = 20 m"
+                }
+              ],
+              "feedback": "Full marks. Using your time from (a) in s = ut − ½gt² is a sound route to the height."
+            },
+            {
+              "tier": "partial",
+              "text": "t = 20/10 = 2 s. h = ut = 20 × 2 = 40 m.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "t = 20/10 = 2 s"
+                }
+              ],
+              "feedback": "Your time is right. The ball slows down on the way up, so h = ut overestimates. Use v² = u² − 2gh with v = 0, which gives 20 m."
+            },
+            {
+              "tier": "partial",
+              "text": "v = 0 at the top. v² = u² − 2gh, 0 = 400 − 20h, h = 20 m. t = 10/20 = 0.5 s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "v = 0 at the top"
+                },
+                {
+                  "point": 2,
+                  "quote": "v² = u² − 2gh"
+                },
+                {
+                  "point": 3,
+                  "quote": "h = 20 m"
+                }
+              ],
+              "feedback": "Your height is right. For the time, use v = u − gt: 0 = 20 − 10t, so t = 2 s, not 0.5 s."
+            },
+            {
+              "tier": "weak",
+              "text": "t = 20 × 10 = 200 s. Height = 20 m/s.",
+              "meets": [],
+              "feedback": "Speed divided by acceleration gives the time: 20 / 10 = 2 s. A height is a distance in metres, not m/s; use v² = u² − 2gh with v = 0 at the top."
+            },
+            {
+              "tier": "weak",
+              "text": "The ball goes up until gravity stops it. The height is 20 × 10 = 200 m.",
+              "meets": [],
+              "feedback": "You are right that gravity stops it, so v = 0 at the top. Put that into the equations of motion: the time is 2 s and the height is 20 m."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Moments, equilibrium and stability",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define the moment of a force and calculate it;\n2. state the principle of moments and the conditions for equilibrium, and use them to balance a metre rule;\n3. describe stable, unstable and neutral equilibrium and explain what makes a body stable;\n4. describe simple harmonic motion and define period, frequency and amplitude.\n\n## Materials\n\nA metre rule, a knife-edge, slotted masses with string loops, a retort stand, a cardboard sheet with three holes and a plumb line, a cone, a simple pendulum, a stopwatch.\n\n## Starter (5 minutes)\n\nAsk a student to push a door open first near the handle, then near the hinges. Ask: which was easier, and why?\n\n## Development\n\n1. Define the moment of a force: force × perpendicular distance from the pivot, in N m. Link to the starter, a water tap and a steering wheel (a couple).\n2. Balance the metre rule on the knife-edge with masses on both sides. Read off the distances and show that clockwise moments equal anticlockwise moments.\n3. State the two conditions for equilibrium: the forces balance, and the moments balance.\n4. Find the centre of gravity of the cardboard sheet with the plumb line. Stand the cone on its base, its point and its side to show stable, unstable and neutral equilibrium.\n5. Set the pendulum swinging. Define amplitude, period and frequency, and time 20 oscillations to find the period.\n\n## Class activity\n\nGroups balance the metre rule with a 40 g mass at the 20 cm mark and find where a 60 g mass must go, then check by calculation.\n\n## Evaluation\n\n1. Why is a door handle fixed far from the hinges?\n2. Why are buses built with heavy parts low down?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Turning forces and keeping steady",
+        "content": "# Moments, equilibrium and stability\n\n## The moment of a force\n\nA force can make a body turn about a point, called the **pivot** or **fulcrum**. The turning effect is the **moment** of the force:\n\nmoment = force × perpendicular distance from the pivot\n\nIts unit is the newton metre (N m).\n\n**Worked example.** A girl pushes a door with a force of 20 N at right angles to it, 0.3 m from the hinges. The moment is 20 × 0.3 = 6 N m. Pushing at the handle, further from the hinges, gives a bigger moment for the same force, which is why handles are put there.\n\nTwo equal and opposite forces that turn a body form a **couple**, as when you turn a water tap, a corkscrew or a steering wheel.\n\n## The principle of moments\n\nWhen a body is in equilibrium, **the sum of the clockwise moments about any point equals the sum of the anticlockwise moments about that point.**\n\n**Worked example.** A metre rule balances at its 50 cm mark. A 40 g mass hangs at the 20 cm mark, 30 cm from the pivot: its moment is 40 × 30 = 1,200 g cm. To balance it, a 60 g mass must give the same moment on the other side: 60 × d = 1,200, so d = 20 cm. It hangs at the 70 cm mark.\n\nFor a body to be in **equilibrium** under parallel forces:\n\n1. the forces upwards equal the forces downwards;\n2. the clockwise moments equal the anticlockwise moments.\n\n## Centre of gravity and stability\n\nThe **centre of gravity** of a body is the point where its whole weight seems to act.\n\n- **Stable equilibrium:** tilted slightly, the body returns to its position (a cone on its base).\n- **Unstable equilibrium:** tilted slightly, the body falls over (a cone on its point).\n- **Neutral equilibrium:** tilted slightly, the body stays where it is put (a cone on its side).\n\nA body is more stable when its centre of gravity is **low** and its **base is wide**. This is why buses and lorries carry heavy loads low down, and why a racing car is built low and wide.\n\n## Simple harmonic motion\n\nA pendulum swinging to and fro, a mass bouncing on a spring and a loaded test tube bobbing in water all move with **simple harmonic motion (S.H.M.)**.\n\n- **Amplitude:** the largest distance from the rest position.\n- **Period (T):** the time for one complete oscillation, in seconds.\n- **Frequency (f):** the number of oscillations per second, in hertz (Hz). f = 1 / T.\n\nA pendulum that makes 20 oscillations in 40 s has a period of 2 s and a frequency of 0.5 Hz."
+      },
+      "cards": [
+        {
+          "front": "Moment of a force",
+          "back": "Force × perpendicular distance from the pivot, in N m."
+        },
+        {
+          "front": "Principle of moments",
+          "back": "In equilibrium, clockwise moments about a point equal anticlockwise moments about it."
+        },
+        {
+          "front": "Couple",
+          "back": "Two equal, opposite, parallel forces that turn a body, as on a steering wheel."
+        },
+        {
+          "front": "Centre of gravity",
+          "back": "The point where the whole weight of a body seems to act."
+        },
+        {
+          "front": "Stable equilibrium",
+          "back": "Tilted slightly, the body returns to its position."
+        },
+        {
+          "front": "What makes a body stable",
+          "back": "A low centre of gravity and a wide base."
+        },
+        {
+          "front": "Period (T)",
+          "back": "The time for one complete oscillation, in seconds."
+        },
+        {
+          "front": "Frequency",
+          "back": "The number of oscillations per second, in hertz. f = 1 / T."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The moment of a force about a point is",
+          "options": [
+            "force × perpendicular distance from the point",
+            "force ÷ distance from the point",
+            "mass × acceleration",
+            "force × time"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A force of 20 N is applied at right angles to a door, 0.3 m from its hinges. What is the moment of the force?",
+          "options": ["66.7 N m", "20.3 N m", "0.015 N m", "6 N m"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A body is in stable equilibrium if, when it is tilted slightly, it",
+          "options": [
+            "falls over",
+            "stays in its new position",
+            "returns to its original position",
+            "starts to spin"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these makes a body more stable?",
+          "options": [
+            "Raising its centre of gravity",
+            "Lowering its centre of gravity",
+            "Making its base narrower",
+            "Putting a heavy load on top"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The time taken for one complete oscillation of a pendulum is called its",
+          "options": ["period", "frequency", "amplitude", "displacement"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State the principle of moments, and explain why the handle of a door is fixed far from its hinges.",
+          "markScheme": [
+            "For a body in equilibrium, the sum of the clockwise moments about a point equals the sum of the anticlockwise moments about the same point",
+            "Moment = force × perpendicular distance from the hinge (pivot)",
+            "A larger distance gives a larger turning effect for the same force, so the door opens with less effort"
+          ],
+          "modelAnswer": "The principle of moments states that when a body is in equilibrium, the sum of the clockwise moments about any point equals the sum of the anticlockwise moments about that point. The moment of a force is the force multiplied by its perpendicular distance from the pivot. Putting the handle far from the hinges makes that distance large, so a small force gives a large turning effect and the door opens easily.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "When a body is in equilibrium, the sum of clockwise moments about a point is equal to the sum of anticlockwise moments about the same point. Moment = force × distance from the hinge, so when the handle is far from the hinge, a small force will give a big moment and the door opens easily.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "When a body is in equilibrium, the sum of clockwise moments about a point is equal to the sum of anticlockwise moments about the same point"
+                },
+                {
+                  "point": 1,
+                  "quote": "Moment = force × distance from the hinge"
+                },
+                {
+                  "point": 2,
+                  "quote": "when the handle is far from the hinge, a small force will give a big moment and the door opens easily"
+                }
+              ],
+              "feedback": "Full marks: an exact statement of the principle, and a clear reason for the handle."
+            },
+            {
+              "tier": "full",
+              "text": "Principle of moments: for a system in equilibrium, total clockwise moment = total anticlockwise moment about any point. The turning effect of a force is the force times its perpendicular distance from the pivot. The longer the distance, the less force is needed to turn the door, so the handle is put far from the hinges.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "for a system in equilibrium, total clockwise moment = total anticlockwise moment about any point"
+                },
+                {
+                  "point": 1,
+                  "quote": "The turning effect of a force is the force times its perpendicular distance from the pivot"
+                },
+                {
+                  "point": 2,
+                  "quote": "The longer the distance, the less force is needed to turn the door"
+                }
+              ],
+              "feedback": "Excellent. Mentioning the perpendicular distance is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "Clockwise moment = anticlockwise moment. The handle is far so that it will be easy to open the door.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Clockwise moment = anticlockwise moment"
+                }
+              ],
+              "feedback": "You have the idea of the principle, but say it holds when the body is in equilibrium. For the door, explain why it is easier: moment = force × distance, so a bigger distance gives a bigger moment for the same force.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "The moment of a force is force × perpendicular distance. If the handle is near the hinge you will need a bigger force to open the door, so it is put far away.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The moment of a force is force × perpendicular distance"
+                },
+                {
+                  "point": 2,
+                  "quote": "If the handle is near the hinge you will need a bigger force to open the door, so it is put far away"
+                }
+              ],
+              "feedback": "The door part is well explained. You did not state the principle of moments: in equilibrium, the sum of clockwise moments about a point equals the sum of anticlockwise moments."
+            },
+            {
+              "tier": "weak",
+              "text": "The principle of moments says that a force can turn a body. The handle is far because that is where the lock is.",
+              "meets": [],
+              "feedback": "That is what a moment is, not the principle. The principle says clockwise and anticlockwise moments balance in equilibrium. The handle is far from the hinges because a bigger distance gives a bigger turning effect."
+            },
+            {
+              "tier": "weak",
+              "text": "Moments = mass × acceleration. The door is heavy near the hinge.",
+              "meets": [],
+              "feedback": "Mass × acceleration is force, not moment. A moment is force × perpendicular distance from the pivot, which is why pushing far from the hinges needs less force."
+            }
+          ]
+        },
+        {
+          "prompt": "A uniform metre rule balances on a knife-edge at its 50 cm mark. A mass of 40 g hangs from the 20 cm mark. Where must a mass of 60 g be hung to balance the rule again? Show your working.",
+          "markScheme": [
+            "Anticlockwise moment = 40 × (50 − 20) = 1,200 g cm",
+            "Takes moments about the pivot: clockwise moment = anticlockwise moment",
+            "60 × d = 1,200, so d = 20 cm from the pivot",
+            "The mass hangs at the 70 cm mark"
+          ],
+          "modelAnswer": "Take moments about the pivot at 50 cm. The 40 g mass is 30 cm from the pivot, so its moment is 40 × 30 = 1,200 g cm anticlockwise. For balance, the clockwise moment must equal this: 60 × d = 1,200, so d = 20 cm. The 60 g mass must hang 20 cm on the other side of the pivot, at the 70 cm mark.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Taking moments about the pivot. Anticlockwise moment = 40 × 30 = 1200 g cm. Clockwise moment = 60 × d. For balance 60d = 1200, d = 20 cm. So the 60 g mass is at 50 + 20 = 70 cm mark.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Anticlockwise moment = 40 × 30 = 1200 g cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "Taking moments about the pivot"
+                },
+                {
+                  "point": 2,
+                  "quote": "60d = 1200, d = 20 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "50 + 20 = 70 cm mark"
+                }
+              ],
+              "feedback": "Full marks, set out step by step. Adding the 20 cm to the 50 cm mark is the step many forget."
+            },
+            {
+              "tier": "full",
+              "text": "Sum of clockwise moments = sum of anticlockwise moments. 60 × x = 40 × (50 − 20) = 1,200, x = 1,200/60 = 20 cm. Position = 70 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "40 × (50 − 20) = 1,200"
+                },
+                {
+                  "point": 1,
+                  "quote": "Sum of clockwise moments = sum of anticlockwise moments"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 1,200/60 = 20 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "Position = 70 cm"
+                }
+              ],
+              "feedback": "Full marks. Starting from the principle of moments makes the working easy to follow."
+            },
+            {
+              "tier": "partial",
+              "text": "40 × 30 = 60 × d. 1200 = 60d. d = 20 cm. The mass is at the 20 cm mark.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "40 × 30"
+                },
+                {
+                  "point": 1,
+                  "quote": "40 × 30 = 60 × d"
+                },
+                {
+                  "point": 2,
+                  "quote": "d = 20 cm"
+                }
+              ],
+              "feedback": "Your working is right: the mass is 20 cm from the pivot. But that is on the other side of the 50 cm mark, so it hangs at the 70 cm mark, not the 20 cm mark."
+            },
+            {
+              "tier": "partial",
+              "text": "Moment of 40 g = 40 × 20 = 800. 60 × d = 800, d = 13.3 cm. Position = 63.3 cm.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "60 × d = 800"
+                }
+              ],
+              "feedback": "Your method of balancing the moments is right, but the distance must be measured from the pivot: the 40 g mass is 50 − 20 = 30 cm away, so its moment is 1,200 g cm. That puts the 60 g mass at the 70 cm mark."
+            },
+            {
+              "tier": "weak",
+              "text": "Because 60 g is heavier than 40 g it should be nearer the middle, at 40 cm.",
+              "meets": [],
+              "feedback": "You are right that the heavier mass goes nearer the pivot, but it must be on the other side to balance. Work it out: 40 × 30 = 60 × d, so d = 20 cm, which is the 70 cm mark."
+            },
+            {
+              "tier": "weak",
+              "text": "40 + 60 = 100 so the mass should be at 100 cm.",
+              "meets": [],
+              "feedback": "Adding the masses does not balance a rule; the moments must balance. Multiply each mass by its distance from the pivot: 40 × 30 = 60 × d, so d = 20 cm, at the 70 cm mark."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Newton's laws of motion and momentum",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state Newton's three laws of motion and give everyday examples of each;\n2. explain inertia, and how it differs from weight;\n3. define momentum and impulse, and use F = ma;\n4. state the principle of conservation of linear momentum and use it for a collision;\n5. describe the energy of S.H.M., forced vibration and resonance.\n\n## Materials\n\nA glass, a stiff card and a coin; two trolleys with a pin and cork so they stick together; a ruler; a balloon; two pendulums on one string (Barton's pendulums, or two bottles hanging from a rope).\n\n## Starter (5 minutes)\n\nPut the card on the glass and the coin on the card. Flick the card away. Ask: why does the coin drop into the glass instead of flying off with the card?\n\n## Development\n\n1. State the first law. Explain inertia with the coin and with passengers jerking forward when a danfo brakes.\n2. Define momentum (mass × velocity). State the second law and derive F = ma. Work the 1,000 kg car example.\n3. State the third law. Let a balloon go to show action and reaction; discuss the recoil of a gun and rockets.\n4. Run the trolley collision. State the principle of conservation of linear momentum and work the 2 kg and 1 kg trolley example on the board.\n5. Swing one pendulum and watch the other of the same length begin to swing. Explain forced vibration and resonance, and why soldiers break step on a bridge.\n\n## Class activity\n\nPairs answer the problem set, showing all working by hand.\n\n## Evaluation\n\n1. Why should passengers wear seat belts?\n2. Find the momentum of a 0.5 kg ball moving at 8 m/s.\n\n## Assignment\n\nProblem set on the app, due Friday.",
+      "reading": {
+        "title": "Newton's laws, and pushes that last",
+        "content": "# Newton's laws of motion\n\n## The first law and inertia\n\n**Newton's first law:** a body stays at rest, or keeps moving in a straight line at a steady speed, unless an external force acts on it.\n\nThe reluctance of a body to change its state of rest or motion is its **inertia**. The more mass a body has, the more inertia it has. When a danfo brakes suddenly, the passengers keep moving forward because of their inertia. Seat belts provide the force that stops them.\n\nInertia depends on mass, not weight: a loaded wheelbarrow is just as hard to start moving on the Moon as on Earth.\n\n## The second law\n\n**Momentum** is mass × velocity, measured in kg m/s. It is a vector.\n\n**Newton's second law:** the rate of change of momentum of a body is proportional to the force applied, and takes place in the direction of the force. With the units we use, this gives\n\nF = ma\n\n**Worked example.** What force gives a 1,000 kg car an acceleration of 2 m/s²? F = 1,000 × 2 = 2,000 N.\n\nThe **impulse** of a force is force × time, and it equals the change in momentum it causes. A goalkeeper pulls the hands back when catching a ball to make the stopping time longer and the force smaller.\n\n## The third law\n\n**Newton's third law:** to every action there is an equal and opposite reaction.\n\nWhen a gun fires a bullet forward, the gun recoils backwards. A rocket pushes hot gas out of its back, and the gas pushes the rocket forward.\n\n## Conservation of momentum\n\nWhen bodies collide and no outside force acts, **the total momentum before the collision equals the total momentum after it.**\n\n**Worked example.** A 2 kg trolley moving at 3 m/s hits a stationary 1 kg trolley, and they move off together. Momentum before = 2 × 3 + 1 × 0 = 6 kg m/s. Momentum after = (2 + 1) × v. So 3v = 6 and v = 2 m/s.\n\n## Energy in S.H.M., and resonance\n\nIn simple harmonic motion, energy changes between potential and kinetic energy. A swinging pendulum has the most kinetic energy at the bottom of its swing and the most potential energy at each end.\n\nA body made to vibrate by a repeated push undergoes **forced vibration**. When the push matches the body's own natural frequency, it swings with a very large amplitude. This is **resonance**. It is why soldiers break step when marching across a bridge."
+      },
+      "cards": [
+        {
+          "front": "Newton's first law",
+          "back": "A body stays at rest or in uniform motion in a straight line unless an external force acts on it."
+        },
+        {
+          "front": "Inertia",
+          "back": "The reluctance of a body to change its state of rest or motion. Depends on mass."
+        },
+        {
+          "front": "Momentum",
+          "back": "Mass × velocity, in kg m/s. A vector."
+        },
+        {
+          "front": "Newton's second law",
+          "back": "Rate of change of momentum is proportional to the force, in the force's direction. F = ma."
+        },
+        {
+          "front": "Newton's third law",
+          "back": "To every action there is an equal and opposite reaction."
+        },
+        {
+          "front": "Impulse",
+          "back": "Force × time; equal to the change in momentum."
+        },
+        {
+          "front": "Conservation of linear momentum",
+          "back": "With no external force, total momentum before a collision equals total momentum after."
+        },
+        {
+          "front": "Resonance",
+          "back": "A very large vibration when a repeated push matches a body's natural frequency."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Passengers in a danfo jerk forward when the driver brakes suddenly. Which law explains this?",
+          "options": [
+            "Newton's first law",
+            "Newton's third law",
+            "The principle of moments",
+            "Archimedes' principle"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "What force is needed to give a 1,000 kg car an acceleration of 2 m/s²?",
+          "options": ["500 N", "2,000 N", "1,002 N", "0.002 N"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The recoil of a gun when it is fired is explained by",
+          "options": [
+            "Newton's first law",
+            "Newton's second law",
+            "Newton's third law",
+            "the law of flotation"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "What is the momentum of a 0.5 kg ball moving at 8 m/s?",
+          "options": ["16 kg m/s", "8.5 kg m/s", "0.0625 kg m/s", "4 kg m/s"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Soldiers break step when marching across a bridge because marching in step could cause",
+          "options": ["friction", "inertia", "resonance", "terminal velocity"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State Newton's second law of motion. A force of 50 N acts on a body of mass 10 kg. Calculate its acceleration.",
+          "markScheme": [
+            "The rate of change of momentum of a body is proportional to the force applied",
+            "and takes place in the direction of the force",
+            "a = F / m = 50 / 10 = 5 m/s²"
+          ],
+          "modelAnswer": "Newton's second law states that the rate of change of momentum of a body is directly proportional to the force applied, and takes place in the direction of the force. From F = ma, a = F / m = 50 / 10 = 5 m/s².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The rate of change of momentum of a body is directly proportional to the applied force and takes place in the direction of the force. F = ma, so a = F/m = 50/10 = 5 m/s².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The rate of change of momentum of a body is directly proportional to the applied force"
+                },
+                {
+                  "point": 1,
+                  "quote": "takes place in the direction of the force"
+                },
+                {
+                  "point": 2,
+                  "quote": "a = F/m = 50/10 = 5 m/s²"
+                }
+              ],
+              "feedback": "Full marks: the law stated exactly and the calculation correct with its unit."
+            },
+            {
+              "tier": "full",
+              "text": "Newton's second law states that the rate of change of momentum is proportional to the force acting, and the change happens in the direction the force acts. Acceleration = 50 ÷ 10 = 5 m/s².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the rate of change of momentum is proportional to the force acting"
+                },
+                {
+                  "point": 1,
+                  "quote": "the change happens in the direction the force acts"
+                },
+                {
+                  "point": 2,
+                  "quote": "Acceleration = 50 ÷ 10 = 5 m/s²"
+                }
+              ],
+              "feedback": "Full marks. Both parts of the law are there, in your own words."
+            },
+            {
+              "tier": "partial",
+              "text": "Force is equal to mass times acceleration, F = ma. a = 50/10 = 5 m/s².",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "a = 50/10 = 5 m/s²"
+                }
+              ],
+              "feedback": "The calculation is right. F = ma comes from the law but is not the law itself: state that the rate of change of momentum is proportional to the force and in its direction."
+            },
+            {
+              "tier": "partial",
+              "text": "The rate of change of momentum is proportional to the force. a = 10/50 = 0.2 m/s².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The rate of change of momentum is proportional to the force"
+                }
+              ],
+              "feedback": "Good start on the law; add that the change is in the direction of the force. For the acceleration, divide force by mass: 50 / 10 = 5 m/s²."
+            },
+            {
+              "tier": "weak",
+              "text": "Every action has an equal and opposite reaction. a = 50 × 10 = 500 m/s².",
+              "meets": [],
+              "feedback": "That is the third law. The second law is about the rate of change of momentum and force. From F = ma, a = F / m = 50 / 10 = 5 m/s²."
+            },
+            {
+              "tier": "weak",
+              "text": "A body will continue in its state of rest unless a force acts on it. The acceleration is 50 m/s².",
+              "meets": [],
+              "feedback": "That is the first law. The second law links force to the rate of change of momentum, and gives F = ma, so a = 50 / 10 = 5 m/s²."
+            }
+          ]
+        },
+        {
+          "prompt": "A 2 kg trolley moving at 3 m/s collides with a stationary 1 kg trolley, and the two move off together. (a) State the principle of conservation of linear momentum. (b) Calculate their common velocity after the collision.",
+          "markScheme": [
+            "When no external force acts, the total momentum before a collision equals the total momentum after it",
+            "Momentum before = 2 × 3 + 1 × 0 = 6 kg m/s",
+            "Momentum after = (2 + 1) × v",
+            "v = 6 / 3 = 2 m/s"
+          ],
+          "modelAnswer": "The principle of conservation of linear momentum states that when no external force acts on a system of colliding bodies, the total momentum before the collision equals the total momentum after it. Momentum before = 2 × 3 + 1 × 0 = 6 kg m/s. After the collision both move together, so momentum after = (2 + 1) × v = 3v. So 3v = 6 and v = 2 m/s.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "If no external force acts, the total momentum before collision is equal to the total momentum after collision. Before: 2 × 3 + 1 × 0 = 6 kg m/s. After: (2 + 1)v = 3v. 3v = 6, v = 2 m/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "If no external force acts, the total momentum before collision is equal to the total momentum after collision"
+                },
+                {
+                  "point": 1,
+                  "quote": "Before: 2 × 3 + 1 × 0 = 6 kg m/s"
+                },
+                {
+                  "point": 2,
+                  "quote": "After: (2 + 1)v = 3v"
+                },
+                {
+                  "point": 3,
+                  "quote": "v = 2 m/s"
+                }
+              ],
+              "feedback": "Full marks. Including the stationary trolley as 1 × 0 shows you understand the whole system."
+            },
+            {
+              "tier": "full",
+              "text": "In a closed system the total momentum is conserved, meaning the momentum before the collision equals the momentum after. m1u1 + m2u2 = (m1 + m2)v, 6 + 0 = 3v, so v = 2 m/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In a closed system the total momentum is conserved, meaning the momentum before the collision equals the momentum after"
+                },
+                {
+                  "point": 1,
+                  "quote": "6 + 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "m1u1 + m2u2 = (m1 + m2)v"
+                },
+                {
+                  "point": 3,
+                  "quote": "so v = 2 m/s"
+                }
+              ],
+              "feedback": "Full marks, and writing the general equation first is a good habit."
+            },
+            {
+              "tier": "partial",
+              "text": "Momentum before = momentum after. 2 × 3 = 6. 6 = 2 × v, v = 3 m/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Momentum before = momentum after"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 × 3 = 6"
+                }
+              ],
+              "feedback": "The momentum before is right. After the collision both trolleys move together, so the mass is 2 + 1 = 3 kg: 6 = 3v, and v = 2 m/s.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Total momentum before = 6 kg m/s. After, the mass is 3 kg, so v = 6/3 = 2 m/s.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Total momentum before = 6 kg m/s"
+                },
+                {
+                  "point": 2,
+                  "quote": "After, the mass is 3 kg"
+                },
+                {
+                  "point": 3,
+                  "quote": "v = 6/3 = 2 m/s"
+                }
+              ],
+              "feedback": "The calculation is right. Part (a) asks you to state the principle: with no external force, total momentum before a collision equals total momentum after."
+            },
+            {
+              "tier": "weak",
+              "text": "Momentum is mass times velocity. The 2 kg trolley will stop and the 1 kg trolley will move at 3 m/s.",
+              "meets": [],
+              "feedback": "The trolleys stick together, so they move off with one velocity. Use the principle: total momentum before (6 kg m/s) equals total momentum after, (2 + 1) × v, so v = 2 m/s."
+            },
+            {
+              "tier": "weak",
+              "text": "v = 3 + 0 = 3 m/s because velocity is conserved.",
+              "meets": [],
+              "feedback": "Momentum, not velocity, is conserved. Multiply each mass by its velocity: 2 × 3 = 6 kg m/s before, and 3 kg × v after, so v = 2 m/s."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Energy, work and energy resources",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the forms of energy and give examples of energy changes;\n2. classify energy resources as renewable or non-renewable;\n3. state the principle of conservation of energy and use it to explain energy changes;\n4. define work and calculate it, and calculate electrical energy in kilowatt-hours.\n\n## Materials\n\nA torch, a small solar panel and a bulb (if available), a ball, a recent electricity bill, a spring balance and a block.\n\n## Starter (5 minutes)\n\nShow the electricity bill. Ask: what exactly is the family paying for? What does one unit mean?\n\n## Development\n\n1. List forms of energy with the class: mechanical (potential and kinetic), heat, chemical, electrical, light, sound, nuclear.\n2. Switch on the torch: chemical to electrical to light and heat. Drop the ball: potential to kinetic to sound and heat.\n3. State the principle of conservation of energy.\n4. Sort energy resources into renewable (solar, wind, hydro, tides, waves, biomass) and non-renewable (petroleum, coal, natural gas, nuclear). Discuss Kainji Dam and solar panels on roofs in Ibadan.\n5. Define work as force × distance moved in the direction of the force, unit joule. Pull the block with the spring balance and calculate the work done.\n6. Explain the kilowatt-hour. Work the pressing-iron example on the board.\n\n## Class activity\n\nGroups list five appliances at home, their power ratings and hours of use a day, and estimate the family's daily energy use in kWh.\n\n## Evaluation\n\n1. Name two renewable sources of energy used in Nigeria.\n2. A man pushes a wheelbarrow with a force of 100 N through 15 m. How much work does he do?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Energy: where it comes from and where it goes",
+        "content": "# Energy, work and energy resources\n\n## What energy is\n\n**Energy** is the capacity to do work. Its SI unit is the **joule (J)**. It comes in many forms:\n\n- **Mechanical energy:** potential energy (stored because of position, like water behind a dam) and kinetic energy (energy of motion);\n- **Chemical energy:** stored in food, fuel and batteries;\n- **Heat, light and sound energy;**\n- **Electrical energy;**\n- **Nuclear energy:** stored in the nucleus of an atom.\n\n## Energy changes\n\nEnergy is always changing from one form to another:\n\n- A torch: chemical → electrical → light (and some heat).\n- A ripe mango falling from a tree: potential → kinetic; on hitting the ground, kinetic → sound and heat.\n- A generator: chemical (petrol) → mechanical → electrical.\n\n**The principle of conservation of energy:** energy can neither be created nor destroyed, but it can be changed from one form to another. The total amount stays the same.\n\n## Work\n\nWork is done when a force moves its point of application in the direction of the force:\n\nwork = force × distance moved in the direction of the force\n\n**Worked example.** A man pushes a wheelbarrow with a force of 100 N through 15 m. Work done = 100 × 15 = 1,500 J. Work is a measure of the energy transferred.\n\n## Paying for electrical energy\n\nElectricity companies measure energy in **kilowatt-hours (kWh)**, called units. One kilowatt-hour is the energy used by a 1 kW appliance in one hour.\n\nenergy (kWh) = power (kW) × time (h)\n\n**Worked example.** A 2 kW pressing iron is used for 30 minutes a day. Each day it uses 2 × 0.5 = 1 kWh. In 30 days it uses 30 kWh. At ₦200 a unit, that costs 30 × 200 = ₦6,000.\n\n## Energy resources\n\n**Renewable resources** are replaced naturally and will not run out: solar, wind, hydro (Kainji and Jebba dams), tides, ocean waves and biomass.\n\n**Non-renewable resources** will run out because they took millions of years to form: petroleum, coal (from Enugu), natural gas and nuclear fuel.\n\nNigeria depends heavily on petroleum and gas. Solar panels and solar street lights are becoming common because sunshine is plentiful and free."
+      },
+      "cards": [
+        {
+          "front": "Energy",
+          "back": "The capacity to do work, measured in joules (J)."
+        },
+        {
+          "front": "Potential energy",
+          "back": "Energy stored because of position, like water behind a dam."
+        },
+        {
+          "front": "Kinetic energy",
+          "back": "Energy a body has because it is moving."
+        },
+        {
+          "front": "Conservation of energy",
+          "back": "Energy can neither be created nor destroyed, only changed from one form to another."
+        },
+        {
+          "front": "Work",
+          "back": "Force × distance moved in the direction of the force, in joules."
+        },
+        {
+          "front": "Kilowatt-hour (kWh)",
+          "back": "The energy used by a 1 kW appliance in one hour; one unit on an electricity bill."
+        },
+        {
+          "front": "Renewable resources",
+          "back": "Solar, wind, hydro, tides, waves, biomass. They do not run out."
+        },
+        {
+          "front": "Non-renewable resources",
+          "back": "Petroleum, coal, natural gas, nuclear fuel. They will run out."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a renewable source of energy?",
+          "options": ["Solar", "Coal", "Petroleum", "Natural gas"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The SI unit of work and energy is the",
+          "options": ["watt", "newton", "joule", "pascal"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A man pushes a wheelbarrow with a force of 100 N through a distance of 15 m. How much work does he do?",
+          "options": ["115 J", "1,500 J", "6.7 J", "85 J"],
+          "answer": "B"
+        },
+        {
+          "prompt": "As a ripe mango falls from a tree to the ground, its",
+          "options": [
+            "kinetic energy changes to potential energy",
+            "chemical energy changes to sound energy",
+            "heat energy changes to potential energy",
+            "potential energy changes to kinetic energy"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Electrical energy used in homes is paid for in",
+          "options": ["joules", "kilowatt-hours", "newtons", "volts"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State the principle of conservation of energy. Describe the energy changes that take place when a ripe orange falls from a tree and hits the ground.",
+          "markScheme": [
+            "Energy can neither be created nor destroyed, but can be changed from one form to another",
+            "As the orange falls, its potential energy changes to kinetic energy",
+            "On hitting the ground, the kinetic energy changes to sound and heat energy"
+          ],
+          "modelAnswer": "The principle of conservation of energy states that energy can neither be created nor destroyed, but can be changed from one form to another. As the orange falls, its potential energy changes into kinetic energy, so it moves faster and faster. When it hits the ground, its kinetic energy changes into sound energy and heat energy.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Energy cannot be created or destroyed but can be converted from one form to another. When the orange is falling, its potential energy is changing to kinetic energy. When it hits the ground the kinetic energy is changed to sound and heat.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Energy cannot be created or destroyed but can be converted from one form to another"
+                },
+                {
+                  "point": 1,
+                  "quote": "its potential energy is changing to kinetic energy"
+                },
+                {
+                  "point": 2,
+                  "quote": "When it hits the ground the kinetic energy is changed to sound and heat"
+                }
+              ],
+              "feedback": "Full marks: the principle stated exactly and every energy change in the right order."
+            },
+            {
+              "tier": "full",
+              "text": "Principle: energy is neither created nor destroyed, it only changes form. On the tree the orange has P.E. As it falls the P.E. becomes K.E. On impact the K.E. becomes sound energy (thud) and heat energy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "energy is neither created nor destroyed, it only changes form"
+                },
+                {
+                  "point": 1,
+                  "quote": "As it falls the P.E. becomes K.E."
+                },
+                {
+                  "point": 2,
+                  "quote": "On impact the K.E. becomes sound energy (thud) and heat energy"
+                }
+              ],
+              "feedback": "Clear and complete. Starting with the potential energy on the tree makes the chain easy to follow."
+            },
+            {
+              "tier": "partial",
+              "text": "Energy cannot be destroyed. The orange has kinetic energy when it is falling and it makes a sound when it lands.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "it makes a sound when it lands"
+                }
+              ],
+              "feedback": "Say the whole principle: energy cannot be created or destroyed, only changed in form. Then show the change: potential energy on the tree becomes kinetic energy as it falls.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Energy can neither be created nor destroyed but can be changed from one form to another. The potential energy changes to kinetic energy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Energy can neither be created nor destroyed but can be changed from one form to another"
+                },
+                {
+                  "point": 1,
+                  "quote": "The potential energy changes to kinetic energy"
+                }
+              ],
+              "feedback": "Good statement and the first change is right. Finish the story: when the orange hits the ground, its kinetic energy becomes sound and heat."
+            },
+            {
+              "tier": "weak",
+              "text": "Energy is the ability to do work. The orange loses its energy when it falls.",
+              "meets": [],
+              "feedback": "That is a definition of energy, not the principle. Energy is never lost: it changes from potential to kinetic as the orange falls, and to sound and heat when it lands."
+            },
+            {
+              "tier": "weak",
+              "text": "The orange has kinetic energy on the tree and it changes to potential energy as it falls.",
+              "meets": [],
+              "feedback": "You have it the wrong way round. On the tree the orange has potential energy because of its height; as it falls this becomes kinetic energy, the energy of motion."
+            }
+          ]
+        },
+        {
+          "prompt": "A family in Ibadan uses a 2 kW pressing iron for 30 minutes every day. (a) How much electrical energy does the iron use in one day, in kWh? (b) If one unit (1 kWh) costs ₦200, how much does it cost to use the iron for 30 days? (c) Name two renewable sources from which this electricity could be generated.",
+          "markScheme": [
+            "Energy per day = 2 kW × 0.5 h = 1 kWh",
+            "Energy for 30 days = 30 kWh",
+            "Cost = 30 × ₦200 = ₦6,000",
+            "Two correct renewable sources (e.g. solar, wind, hydro)"
+          ],
+          "modelAnswer": "Thirty minutes is 0.5 h, so the energy used in one day is 2 kW × 0.5 h = 1 kWh. In 30 days the iron uses 30 × 1 = 30 kWh, which costs 30 × ₦200 = ₦6,000. The electricity could be generated from renewable sources such as the sun (solar panels) or flowing water (hydroelectric power, as at Kainji Dam).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Energy = 2 × 0.5 = 1 kWh. (b) 30 days = 30 kWh, cost = 30 × 200 = ₦6,000. (c) Solar energy and hydro energy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Energy = 2 × 0.5 = 1 kWh"
+                },
+                {
+                  "point": 1,
+                  "quote": "30 days = 30 kWh"
+                },
+                {
+                  "point": 2,
+                  "quote": "cost = 30 × 200 = ₦6,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Solar energy and hydro energy"
+                }
+              ],
+              "feedback": "Full marks, and you changed 30 minutes to 0.5 hours without being told."
+            },
+            {
+              "tier": "full",
+              "text": "Time = 30 min = 0.5 h. Energy per day = P × t = 2 kW × 0.5 h = 1 kWh. In 30 days = 30 × 1 = 30 kWh. Cost = 30 kWh × ₦200 = ₦6,000. Renewable sources: wind and the sun.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Energy per day = P × t = 2 kW × 0.5 h = 1 kWh"
+                },
+                {
+                  "point": 1,
+                  "quote": "In 30 days = 30 × 1 = 30 kWh"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cost = 30 kWh × ₦200 = ₦6,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Renewable sources: wind and the sun"
+                }
+              ],
+              "feedback": "Excellent working, with units kept all the way through."
+            },
+            {
+              "tier": "partial",
+              "text": "Energy = 2 × 30 = 60 kWh per day. For 30 days, 60 × 30 = 1800 kWh. Cost = 1800 × 200 = ₦360,000. Solar and wind.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Solar and wind"
+                }
+              ],
+              "feedback": "Your renewable sources are right. The time must be in hours: 30 minutes is 0.5 h, so the iron uses 1 kWh a day, 30 kWh in 30 days, costing ₦6,000."
+            },
+            {
+              "tier": "partial",
+              "text": "Energy in one day = 1 kWh. In 30 days = 30 kWh. Cost = ₦6,000. Petrol and solar.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Energy in one day = 1 kWh"
+                },
+                {
+                  "point": 1,
+                  "quote": "In 30 days = 30 kWh"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cost = ₦6,000"
+                }
+              ],
+              "feedback": "All your calculations are right. Petrol is not renewable: it will run out. Give a second renewable source, such as wind or hydro."
+            },
+            {
+              "tier": "weak",
+              "text": "The iron uses 2 kW. Cost = 2 × 200 = ₦400.",
+              "meets": [],
+              "feedback": "Power is not energy. Multiply the power by the time in hours: 2 kW × 0.5 h = 1 kWh a day. Then multiply by 30 days and by ₦200 a unit."
+            },
+            {
+              "tier": "weak",
+              "text": "Energy = 2 ÷ 30 = 0.07 kWh. Renewable sources are petrol and gas.",
+              "meets": [],
+              "feedback": "Energy is power × time, with the time in hours: 2 × 0.5 = 1 kWh. Petrol and gas will run out, so they are non-renewable; solar and wind are renewable."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
