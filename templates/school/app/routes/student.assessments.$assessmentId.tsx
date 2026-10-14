@@ -21,6 +21,7 @@ import { QuestionRunner } from "@/components/activity/QuestionRunner";
 import { AnswerSheet } from "@/components/activity/AnswerSheet";
 import { PaperReview } from "@/components/activity/PaperReview";
 import { parseActivityContent } from "@shared/activity-content";
+import { submissionStatusWord } from "@/lib/submission-status";
 
 export default function StudentAssessment() {
   const { assessmentId } = useParams();
@@ -249,9 +250,9 @@ export default function StudentAssessment() {
           {assessment?.submission?.status && (
             <Badge
               variant={isSubmitted ? "default" : "secondary"}
-              className="text-xs capitalize"
+              className="text-xs"
             >
-              {assessment.submission.status.replace("_", " ")}
+              {submissionStatusWord(assessment.submission.status)}
             </Badge>
           )}
           {!isSubmitted &&
@@ -342,8 +343,11 @@ export default function StudentAssessment() {
           />
         ) : null}
 
+        {/* Instructions are for doing the work; once it is handed in they
+            only push the marks and the paper further down the page. */}
         {!oneAtATime &&
           !needsToStart &&
+          !isSubmitted &&
           !timing?.notYetOpen &&
           assessment?.variant?.instructions && (
             <div className="rounded-lg bg-muted/50 border p-4">

@@ -12,6 +12,7 @@ import {
   IconClipboard,
   IconChevronLeft,
 } from "@tabler/icons-react";
+import { submissionStatusWord } from "@/lib/submission-status";
 
 /**
  * What each state is called to the person it is about.
@@ -47,13 +48,6 @@ function describeShapes(shapes: string[]): string {
     })
     .join(" · ");
 }
-
-const STATUS_WORDS: Record<string, string> = {
-  not_started: "Not started",
-  draft: "Started",
-  submitted: "Handed in",
-  graded: "Marked",
-};
 
 export default function StudentClassDetail() {
   const { classId } = useParams<{ classId: string }>();
@@ -166,7 +160,7 @@ export default function StudentClassDetail() {
                     {a.status === "closed" &&
                     !["submitted", "graded"].includes(a.submissionStatus)
                       ? "Closed"
-                      : (STATUS_WORDS[a.submissionStatus] ?? "Not started")}
+                      : submissionStatusWord(a.submissionStatus)}
                   </Badge>
                   <IconChevronRight
                     size={14}

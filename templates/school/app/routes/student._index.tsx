@@ -10,6 +10,7 @@ import { useRole } from "@/hooks/use-role";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { firstNameOrNull } from "@shared/person-name";
 import { countOfWork, workWords } from "@shared/terminology";
+import { submissionStatusWord } from "@/lib/submission-status";
 
 export default function StudentDashboard() {
   const { sync } = useNavigationState();
@@ -118,9 +119,9 @@ export default function StudentDashboard() {
                       ? "secondary"
                       : "outline"
                   }
-                  className="text-xs capitalize"
+                  className="text-xs"
                 >
-                  {assessment.submissionStatus.replace("_", " ")}
+                  {submissionStatusWord(assessment.submissionStatus)}
                 </Badge>
               </Link>
             ))}
