@@ -77,6 +77,14 @@ export function PaperReview({ review }: { review: PaperReviewData }) {
                   {q.feedback}
                 </p>
               ) : null}
+              {q.modelAnswer ? (
+                <div className="mt-2 rounded-md border border-emerald-600/40 bg-emerald-600/5 p-2">
+                  <p className="mb-1 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                    A full-mark answer
+                  </p>
+                  <Markdown className="text-sm">{q.modelAnswer}</Markdown>
+                </div>
+              ) : null}
             </div>
           </li>
         ))}
@@ -147,7 +155,7 @@ function ChoiceAnswer({
             <span className="min-w-0 flex-1">{option}</span>
             {isChosen ? (
               <span className="shrink-0 text-xs text-muted-foreground">
-                Your answer
+                {isRight ? "Your answer, correct" : "Your answer"}
               </span>
             ) : isRight ? (
               <span className="shrink-0 text-xs text-emerald-600">
@@ -183,14 +191,6 @@ function WrittenAnswer({ q }: { q: ReviewQuestion }) {
           <span className="text-muted-foreground">Correct answer: </span>
           <span className="font-medium">{q.correctAnswer}</span>
         </p>
-      ) : null}
-      {q.modelAnswer ? (
-        <div className="rounded-md border border-emerald-600/40 bg-emerald-600/5 p-2">
-          <p className="mb-1 text-xs font-medium text-emerald-700 dark:text-emerald-400">
-            A full-mark answer
-          </p>
-          <Markdown className="text-sm">{q.modelAnswer}</Markdown>
-        </div>
       ) : null}
     </div>
   );

@@ -57,6 +57,8 @@ const mathematics: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for twelve thousand four hundred and six. 1 mark for identifying 4 as the hundreds digit. 1 mark for stating its value as 400.",
+          modelAnswer:
+            "I would read it as twelve thousand, four hundred and six. The 4 is in the hundreds place. So the 4 is worth 400.",
         },
       ],
     },
@@ -86,6 +88,8 @@ const mathematics: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for 1250 minus 867. 1 mark for 383. 1 mark for adding 400. 1 mark for 783 with the unit named.",
+          modelAnswer:
+            "First I take away the books given out: 1,250 − 867. That leaves 383 books. Then I add the 400 that came in: 383 + 400. The school now has 783 exercise books.",
         },
       ],
     },
@@ -115,6 +119,8 @@ const mathematics: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for 300 divided by 48 giving 6 remainder 12. 1 mark for 7 buses. 1 mark for explaining that part of a bus cannot be used, so it is rounded up.",
+          modelAnswer:
+            "300 ÷ 48 = 6 remainder 12. So 7 buses are needed. The answer cannot be a decimal because you cannot use part of a bus, so the 12 people left over still need a whole bus and we round up.",
         },
       ],
     },
@@ -144,6 +150,8 @@ const mathematics: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for a common denominator of 20. 1 mark for 8/20 and 5/20. 1 mark for 13/20 eaten. 1 mark for 7/20 left.",
+          modelAnswer:
+            "The common denominator of 5 and 4 is 20. 2/5 = 8/20 and 1/4 = 5/20. Together they ate 8/20 + 5/20 = 13/20 of the loaf. So 20/20 − 13/20 = 7/20 of the loaf is left.",
         },
       ],
     },
@@ -173,6 +181,8 @@ const mathematics: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for 7.8 m. 1 mark for naming the digit dropped. 1 mark for explaining that the true value lies between 7.75 and 7.85.",
+          modelAnswer:
+            "To one decimal place it is 7.8 m. The digits 4 and 6 after the first decimal place are dropped. Rounding loses precision: the true length could be anything from 7.75 m up to 7.85 m.",
         },
       ],
     },
@@ -199,6 +209,8 @@ const mathematics: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for 900 litres on Monday. 1 mark for 600 litres on Tuesday. 1 mark for 1500 used. 1 mark for 900 left. 1 mark for the unit given throughout.",
+          modelAnswer:
+            "On Monday 3/8 of 2,400 = 900 litres were used. On Tuesday 1/4 of 2,400 = 600 litres were used. Altogether 900 + 600 = 1,500 litres were used. So 2,400 − 1,500 = 900 litres are left. Every answer is in litres.",
         },
       ],
     },
@@ -236,6 +248,8 @@ const english: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for a complete sentence. 1 mark for naming the adjective correctly. 1 mark for naming the adverb correctly.",
+          modelAnswer:
+            'Our big school bell rings loudly every morning. The adjective is "big". The adverb is "loudly".',
         },
       ],
     },
@@ -270,6 +284,8 @@ const english: SubjectWeeks = {
           answerSpace: "short",
           markScheme:
             "1 mark for a correctly punctuated question. 1 mark for a command with the verb first.",
+          modelAnswer:
+            "As a question: Have you finished your homework? As a command: Finish your homework.",
         },
       ],
     },
@@ -299,6 +315,8 @@ const english: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for quoting 'arrived wet'. 1 mark for the inference that rain fell during the journey. 1 mark for rejecting what the passage does not say.",
+          modelAnswer:
+            'The passage says she "arrived wet". So the rain must have started while she was still on her way. It does not say she got wet at home or that she had no umbrella, so I did not guess those.',
         },
       ],
     },
@@ -333,6 +351,8 @@ const english: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "2 marks for two correct past-tense sentences. 2 marks for both rewritten consistently in the future.",
+          modelAnswer:
+            "Last weekend I visited my grandmother. We cooked jollof rice together. Next weekend I will visit my grandmother. We will cook jollof rice together.",
         },
       ],
     },
@@ -356,6 +376,8 @@ const english: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for an informal greeting. 1 mark for an informal closing. 1 mark for matching the tone to a friend rather than an official.",
+          modelAnswer:
+            'I would open with "Dear Tolu,". I would close with "Your friend, Ada". I chose that closing because Tolu is my friend, so the letter should sound warm and not formal like a letter to a principal.',
         },
       ],
     },
@@ -382,6 +404,8 @@ const english: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "3 marks for three complete sentences. 1 mark for consistent tense. 1 mark for correct punctuation throughout.",
+          modelAnswer:
+            "I leave home at seven o'clock every morning. I walk to the junction with my brother. From there, we take a bus to school.",
         },
       ],
     },
@@ -423,6 +447,8 @@ const basicScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for naming parallax error. 1 mark for saying the reading is too high or too low. 1 mark for reading at eye level from the bottom of the meniscus.",
+          modelAnswer:
+            "Reading from above causes parallax error. The reading comes out higher than the true volume. To avoid it, put your eye level with the liquid and read from the bottom of the meniscus.",
         },
       ],
     },
@@ -457,6 +483,8 @@ const basicScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for energy being absorbed. 1 mark for particles vibrating more and breaking from fixed positions. 1 mark for the particles moving past one another while staying close.",
+          modelAnswer:
+            "The ice absorbs heat energy from around it. Its particles vibrate faster until they break free from their fixed positions. The particles can now move past one another but stay close together, so the ice becomes liquid water.",
         },
       ],
     },
@@ -480,6 +508,8 @@ const basicScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for naming movement and energy use as shared features. 1 mark for naming a characteristic it lacks, such as reproduction or growth. 1 mark for concluding that all characteristics must be present.",
+          modelAnswer:
+            "A car moves and uses energy from fuel, like living things move and use food. But a car cannot grow or reproduce. A living thing must show all the characteristics of life, so a car is not living.",
         },
       ],
     },
@@ -514,6 +544,8 @@ const basicScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for chemical energy in the body. 1 mark for kinetic energy while climbing. 1 mark for potential energy at the top. 1 mark for potential changing to kinetic on the way down.",
+          modelAnswer:
+            "The boy uses chemical energy stored in his body from food. As he climbs, it changes to kinetic energy. At the top he has potential energy because he is high up. As he slides down, the potential energy changes back into kinetic energy.",
         },
       ],
     },
@@ -548,6 +580,8 @@ const basicScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark per organ correctly named with its function, in order, to a maximum of 3.",
+          modelAnswer:
+            "In the mouth, the teeth chew the bread and saliva starts to digest it. In the stomach, it is churned and mixed with digestive juices. In the small intestine, the food is digested fully and absorbed into the blood.",
         },
       ],
     },
@@ -574,6 +608,8 @@ const basicScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for saying it is not alive. 1 mark for accepting the two features named. 2 marks for naming features it lacks, such as reproduction and response to stimuli. 1 mark for the rule that all characteristics must be present.",
+          modelAnswer:
+            "The student is wrong: a flame is not alive. It is true that a flame grows and needs air. But a flame cannot reproduce on its own. It also cannot respond to stimuli the way living things do. A living thing must have all the characteristics of life, not just two of them.",
         },
       ],
     },
@@ -604,6 +640,8 @@ const socialStudies: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark per support named, to a maximum of 2. 1 mark for a reasonable difficulty such as cost or crowding.",
+          modelAnswer:
+            "Grandparents can look after the child when the parents are at work. Uncles and aunts can help to pay school fees. A difficulty is that a large family can make the house crowded and expensive to feed.",
         },
       ],
     },
@@ -627,6 +665,8 @@ const socialStudies: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for naming a value. 1 mark for an explanation tied to community life. 1 mark for an example.",
+          modelAnswer:
+            "One value taught in my community is respect for elders. It matters because elders settle quarrels and pass on our history, so the community stays united. For example, we greet elders first and do not interrupt them when they speak.",
         },
       ],
     },
@@ -650,6 +690,8 @@ const socialStudies: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "2 marks per method described with a reason it works, to a maximum of 4.",
+          modelAnswer:
+            "They can ask the village head or an elder to judge between them, because both sides respect the elder's decision. They can also have a surveyor measure the land, because the measurement shows clearly where the boundary is.",
         },
       ],
     },
@@ -673,6 +715,8 @@ const socialStudies: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for linking rights to resources. 1 mark for naming a duty that provides them, such as tax. 1 mark for the conclusion that rights depend on duties being done.",
+          modelAnswer:
+            "A right to education needs schools, teachers and books, and these cost money. That money comes from people doing their duty, such as paying tax. If nobody does their duty, there are no schools, so the right means nothing.",
         },
       ],
     },
@@ -696,6 +740,8 @@ const socialStudies: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for naming the problem. 1 mark for its effect. 2 marks for two realistic school-level actions.",
+          modelAnswer:
+            "One social problem is drug abuse. It damages young people's health and makes them drop out of school. A school could invite health workers to talk to students about the dangers. It could also start clubs and sports so students are kept busy and supported.",
         },
       ],
     },
@@ -732,6 +778,8 @@ const socialStudies: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for defining tolerance. 2 marks for explaining its effect on daily life. 2 marks for a worked example from a mixed community.",
+          modelAnswer:
+            "Tolerance means accepting people who are different from you. It lets people of different languages trade and work together without quarrelling. It also helps neighbours share festivals instead of fighting over them. For example, in Lagos markets Yoruba, Igbo and Hausa traders sell side by side. They learn a few words of each other's languages and help one another.",
         },
       ],
     },
@@ -762,6 +810,8 @@ const agriculturalScience: SubjectWeeks = {
           answerSpace: "short",
           markScheme:
             "1 mark each for employment, raw materials, export earnings or similar, to a maximum of 2.",
+          modelAnswer:
+            "It gives employment to many people. It provides raw materials, such as cotton for textile factories.",
         },
       ],
     },
@@ -785,6 +835,8 @@ const agriculturalScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for rusting of the metal. 1 mark for rotting or loosening of the handle. 2 marks for prevention such as cleaning, oiling and storing under shelter.",
+          modelAnswer:
+            "The metal blade rusts. The wooden handle rots or becomes loose. To prevent this, clean and dry the hoe after use and oil the blade. Store it in a shed out of the rain.",
         },
       ],
     },
@@ -814,6 +866,8 @@ const agriculturalScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for poor drainage or waterlogging. 1 mark for roots lacking air. 1 mark for a remedy such as adding organic matter or making ridges.",
+          modelAnswer:
+            "Heavy clay drains poorly, so the soil becomes waterlogged. The roots then lack air and cannot grow well. The farmer could add manure or compost, or make ridges, so water drains away.",
         },
       ],
     },
@@ -837,6 +891,8 @@ const agriculturalScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for competition for nutrients, water or light. 1 mark for reduced yield. 1 mark for pests or disease harboured by weeds.",
+          modelAnswer:
+            "The weeds compete with the crop for nutrients, water and light. So the crop grows poorly and the yield is low. Weeds also harbour pests and diseases that attack the crop.",
         },
       ],
     },
@@ -860,6 +916,8 @@ const agriculturalScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark each for feed, clean water and shelter or ventilation. 1 mark for a stated consequence such as reduced laying or disease.",
+          modelAnswer:
+            "The farmer must provide feed, clean water and a well-ventilated shelter. If one is missing, for example clean water, the birds fall sick and lay fewer eggs.",
         },
       ],
     },
@@ -896,6 +954,8 @@ const agriculturalScience: SubjectWeeks = {
           answerSpace: "long",
           markScheme:
             "1 mark for predicting a low yield. 2 marks for weed competition explained. 2 marks for nutrient depletion explained.",
+          modelAnswer:
+            "The yield will be low. Weeds will grow and compete with the maize. They take the water, light and nutrients the maize needs. Without manure, the soil's nutrients are used up. So the maize plants become weak and produce small cobs.",
         },
       ],
     },

@@ -5,7 +5,7 @@ import { SUBJECT_BANK } from "../scenarios/question-bank.js";
 import type { Findings } from "./findings.js";
 import { asList, idOf } from "./shapes.js";
 import { abilityInWeek, trueBand } from "./population.js";
-import { answerQuestion, handsIn } from "./answers.js";
+import { answerQuestion, handsIn, simCoverageOf } from "./answers.js";
 import { inPool } from "./pool.js";
 
 /** One week in one class, from setting the work to publishing the marks. */
@@ -37,6 +37,7 @@ export async function teachClassWeek(
     ...(q.options ? { options: q.options } : {}),
     ...(q.answer ? { answer: q.answer } : {}),
     ...(q.markScheme ? { markScheme: q.markScheme } : {}),
+    ...(q.modelAnswer ? { modelAnswer: q.modelAnswer } : {}),
     ...(q.answerSpace ? { answerSpace: q.answerSpace } : {}),
   }));
   const totalPoints = week.questions.reduce((sum, q) => sum + q.points, 0);
@@ -100,11 +101,7 @@ export async function teachClassWeek(
   await inPool(items, 8, async (item: any) => {
     const maxPoints = Number(item.maxPoints ?? 1);
     const text = String(item.answer ?? "");
-    const coverage = text.includes("not sure")
-      ? 0.35
-      : text.includes("did not show every step")
-        ? 0.7
-        : 0.95;
+    const coverage = simCoverageOf(text);
     await client.as(cls.teacher, "record-answer-mark", {
       responseId: item.responseId,
       awardedPoints: Math.round(maxPoints * coverage),

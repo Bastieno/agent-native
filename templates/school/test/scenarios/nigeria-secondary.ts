@@ -165,6 +165,8 @@ export const scenario: Scenario = {
           answerSpace: "long",
           markScheme:
             "1 mark for 1250 minus 867. 1 mark for 383. 1 mark for adding 400. 1 mark for 783 with the unit named.",
+          modelAnswer:
+            "First I take away the books given out: 1,250 − 867. That leaves 383 books. Then I add the 400 that came in: 383 + 400. The school now has 783 exercise books.",
         },
       ],
     },
@@ -195,6 +197,8 @@ export const scenario: Scenario = {
           answerSpace: "long",
           markScheme:
             "1 mark for 300 divided by 48 giving 6 remainder 12. 1 mark for 7 buses. 1 mark for explaining that a part of a bus cannot be used, so the answer is rounded up.",
+          modelAnswer:
+            "300 ÷ 48 = 6 remainder 12. So 7 buses are needed. The answer cannot be a decimal because you cannot use part of a bus, so the 12 people left over still need a whole bus and we round up.",
         },
       ],
     },
@@ -225,6 +229,8 @@ export const scenario: Scenario = {
           answerSpace: "long",
           markScheme:
             "1 mark for a common denominator of 20. 1 mark for 8/20 and 5/20. 1 mark for 13/20 eaten. 1 mark for 7/20 left.",
+          modelAnswer:
+            "The common denominator of 5 and 4 is 20. 2/5 = 8/20 and 1/4 = 5/20. Together they ate 8/20 + 5/20 = 13/20 of the loaf. So 20/20 − 13/20 = 7/20 of the loaf is left.",
         },
       ],
     },
@@ -255,6 +261,8 @@ export const scenario: Scenario = {
           answerSpace: "long",
           markScheme:
             "1 mark for 7.8 m. 1 mark for naming the digit dropped. 1 mark for explaining that precision is lost and the true value lies between 7.75 and 7.85.",
+          modelAnswer:
+            "To one decimal place it is 7.8 m. The digits 4 and 6 after the first decimal place are dropped. Rounding loses precision: the true length could be anything from 7.75 m up to 7.85 m.",
         },
       ],
     },
@@ -288,6 +296,8 @@ export const scenario: Scenario = {
           answerSpace: "long",
           markScheme:
             "1 mark for 900 litres on Monday. 1 mark for 600 litres on Tuesday. 1 mark for 1500 used. 1 mark for 900 left. 1 mark for the unit given throughout.",
+          modelAnswer:
+            "On Monday 3/8 of 2,400 = 900 litres were used. On Tuesday 1/4 of 2,400 = 600 litres were used. Altogether 900 + 600 = 1,500 litres were used. So 2,400 − 1,500 = 900 litres are left. Every answer is in litres.",
         },
       ],
     },

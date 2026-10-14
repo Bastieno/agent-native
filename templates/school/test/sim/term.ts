@@ -4,7 +4,7 @@ import type { Scenario, ScenarioWeek } from "../scenarios/nigeria-secondary.js";
 import type { Findings } from "./findings.js";
 import { asList, idOf } from "./shapes.js";
 import { abilityInWeek, trueBand } from "./population.js";
-import { answerQuestion, handsIn } from "./answers.js";
+import { answerQuestion, handsIn, simCoverageOf } from "./answers.js";
 
 /**
  * A term, taught.
@@ -195,11 +195,7 @@ export async function teachWeek(
     // Marked against how much of the scheme the answer covered — the same
     // judgement a teacher makes, made mechanically so it is repeatable.
     const text: string = String(item.answer ?? item.response ?? "");
-    const coverage = text.includes("not sure")
-      ? 0.35
-      : text.includes("did not show every step")
-        ? 0.7
-        : 0.95;
+    const coverage = simCoverageOf(text);
     await client.as(school.teacher, "record-answer-mark", {
       responseId: item.responseId,
       awardedPoints: Math.round(maxPoints * coverage),
