@@ -1,6 +1,7 @@
 import { asList } from "../shapes.js";
 import { inPool } from "../pool.js";
 import type { ShowcaseClass, ShowcaseRun } from "./context.js";
+import { weekContent } from "./content.js";
 
 /**
  * A First Term scheme of work for every subject and year group, from the
@@ -259,6 +260,13 @@ export async function prepareWeek(
       week >= behind.fromWeek
     )
       return;
+    // The teacher writes the week's note in full before marking it ready.
+    const written = weekContent(cls.subject.name, cls.yearGroup, week);
+    if (written)
+      await run.client.as(cls.teacher, "update-lesson-note", {
+        id,
+        content: written.lessonNote,
+      });
     await run.client.as(cls.teacher, "finalize-lesson-note", { id });
   });
 }
@@ -277,9 +285,10 @@ export async function lessonNoteHistory(run: ShowcaseRun): Promise<void> {
   for (const week of weeksCovered) {
     const id = run.notes.get(covered.id)!.get(week)!;
     const before = await client.as(admin, "get-lesson-note", { id });
+    const written = weekContent(covered.subject.name, covered.yearGroup, week);
     await client.as(admin, "update-lesson-note", {
       id,
-      content: `${before?.content ?? before?.lessonNote?.content ?? ""}\n\n**Cover note from the principal:** the class revisits last week's practice questions before the new topic.`,
+      content: `${written?.lessonNote ?? before?.content ?? before?.lessonNote?.content ?? ""}\n\n**Cover note from the principal:** the class revisits last week's practice questions before the new topic.`,
     });
     await client.as(admin, "finalize-lesson-note", { id });
   }

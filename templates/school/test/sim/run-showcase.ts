@@ -10,8 +10,14 @@ import {
   teachSchoolWeek,
   type PieceResult,
 } from "./showcase/teaching.js";
-import { examWeek, revisionWeek } from "./showcase/exams.js";
+import {
+  examWeek,
+  reportCards,
+  revisionWeek,
+  sitExams,
+} from "./showcase/exams.js";
 import { checklist, writeOutputs } from "./showcase/outputs.js";
+import { exportPlan } from "./showcase/plan.js";
 
 /**
  * The showcase school: a whole Nigerian secondary school built, staffed,
@@ -88,6 +94,7 @@ const stop = (label: string) => {
 stop("build");
 
 await phase("curriculum", () => buildCurricula(run));
+if (process.env.SHOWCASE_EXPORT_PLAN) await exportPlan(run);
 stop("curriculum");
 await phase("timetable", () => buildTimetable(run));
 stop("timetable");
@@ -128,11 +135,14 @@ await phase("teaching", async () => {
 run.record.pieces = pieces;
 stop("teaching");
 
-// ── Weeks 11 and 12 ──────────────────────────────────────────────────────
+// ── Weeks 11 to 13 ───────────────────────────────────────────────────────
 await phase("revision and exams", async () => {
   await revisionWeek(run);
-  await examWeek(run);
+  const papers = await examWeek(run);
+  await sitExams(run, papers);
 });
+stop("exams");
+await phase("report cards", () => reportCards(run));
 
 // What was deliberately left out, so nobody mistakes it for something missed.
 const unset: [string, string][] = [
@@ -152,12 +162,15 @@ const unset: [string, string][] = [
     "Year-group struggling lists",
     'the app answers "who is struggling?" per class only; the year-group lists here are the learners flagged in at least a third of their classes',
   ],
-  [
-    "Report cards",
-    "end-of-term report cards come after the examinations are sat, and the examinations are left unsat",
-  ],
   ["Second and Third Terms", "dates only; nothing is taught in them"],
-  ["Attendance", "the app has no attendance feature"],
+  [
+    "Attendance",
+    "the app has no attendance feature, so report cards carry none",
+  ],
+  [
+    "Exam opening times",
+    "the papers are sat now, but the term's dates put week 12 in December, so they carry no opening time; their dates are on the examination timetable",
+  ],
   [
     "Lateness of lesson notes by teachers",
     `the ${scenario.behindOnNotes.arms.join(" and ")} classes stop marking notes ready from week ${scenario.behindOnNotes.fromWeek}, on purpose, so "who hasn't prepared?" has an answer`,

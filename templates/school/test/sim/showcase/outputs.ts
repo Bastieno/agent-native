@@ -336,25 +336,46 @@ export async function checklist(
     `${schoolWide} school-wide, ${perClass} to a class`,
   );
 
-  // Exams: set, published, and not yet sat.
+  // Exams: set, sat, marked and published.
   const papers = (run.record.examPapers ?? []) as {
     className: string;
     assessmentId: string;
   }[];
   const learner = run.learners.find((l) => l.yearGroup === "SS2")!;
-  const mine = asList(
-    await client.as(learner, "get-my-assessments", {}),
-    "assessments",
-  ).filter((a: any) => /Examination/.test(a.title ?? ""));
-  const sat = mine.filter(
-    (a: any) =>
-      a.submission?.status === "submitted" || a.status === "submitted",
-  ).length;
+  const grades = asList(
+    await client.as(learner, "get-my-grades", {}),
+    "grades",
+  ).filter((g: any) => /Examination/.test(g.assessmentTitle ?? ""));
   row(
     "Exams",
-    "Set and published for week 12, unsat",
-    papers.length === run.classes.length && mine.length > 0 && sat === 0,
-    `${papers.length} papers; ${learner.profile.name} sees ${mine.length}, none sat`,
+    "Sat, marked and published for week 12",
+    papers.length === run.classes.length && grades.length > 0,
+    `${papers.length} papers; ${learner.profile.name} has ${grades.length} examination marks`,
+  );
+
+  const cards = Number(run.record.reportCards ?? 0);
+  row(
+    "Report cards",
+    "One issued for every learner",
+    cards === run.learners.length,
+    `${cards} of ${run.learners.length}`,
+  );
+
+  const open = run.record.leftOpen as
+    | {
+        className: string;
+        handedIn: number;
+        started: number;
+        notStarted: number;
+      }
+    | undefined;
+  row(
+    "Work left open",
+    "One class's last piece handed in by some, started by some, not opened by others, unmarked",
+    !!open && open.handedIn > 0 && open.started > 0 && open.notStarted > 0,
+    open
+      ? `${open.className}: ${open.handedIn} handed in, ${open.started} started, ${open.notStarted} not started`
+      : "none",
   );
 
   return rows;
@@ -501,6 +522,16 @@ function decisionsFile(run: ShowcaseRun) {
   return lines.join("\n");
 }
 
+/** Someone's sign-in address, from the people the run made. */
+function emailOf(run: ShowcaseRun, name: string): string {
+  if (name === run.scenario.principal) return run.admin.email;
+  return (
+    run.staff.find((s) => s.name === name)?.email ??
+    run.learners.find((l) => l.profile.name === name)?.email ??
+    ""
+  );
+}
+
 function whereToLook(run: ShowcaseRun) {
   const struggling = (run.record.struggling as any[])?.at(-1);
   const strugglingClass = struggling
@@ -529,6 +560,20 @@ function whereToLook(run: ShowcaseRun) {
     (l) => l.yearGroup === "SS2" && l.option === "Further Mathematics",
   )!;
   const history = run.record.lessonNoteHistory as any;
+  const byAbility = (arm: string) =>
+    run.learners
+      .filter((l) => l.arm === arm)
+      .sort((a, b) => b.profile.ability - a.profile.ability);
+  const strongSs1 = byAbility("SS1A")[0];
+  const jss2 = byAbility(run.scenario.leftOpen.arm);
+  const middling = jss2[Math.floor(jss2.length / 2)];
+  const ss2b = byAbility("SS2B");
+  const struggler = ss2b[ss2b.length - 1];
+  const openClass = run.classes.find(
+    (c) =>
+      c.arm?.name === run.scenario.leftOpen.arm &&
+      c.subject.name === run.scenario.leftOpen.subject,
+  )!;
   const t = (name: string) => `**${name}**`;
   const rows: [string, string, string][] = [
     [
@@ -615,19 +660,98 @@ function whereToLook(run: ShowcaseRun) {
       "Announcements; the exam timetable is the latest school-wide one",
     ],
     [
-      "An examination paper, unsat",
+      "An examination, sat and marked",
       `${t(physics.teacher.name)}, then ${t(ss2.profile.name)}`,
-      'the class\'s "First Term Examination"; it opens in week 12',
+      "the class's \"First Term Examination\": marking on the teacher's side, the returned paper on the learner's",
+    ],
+    [
+      "Report cards",
+      t(run.scenario.principal),
+      "a learner's record (/admin/students) → their First Term report card",
+    ],
+    [
+      "Work still open",
+      `${t(openClass.teacher.name)}, then ${t(middling.profile.name)}`,
+      `${openClass.name}, week ${run.scenario.leftOpen.week}: handed in, started and not started, none of it marked`,
+    ],
+  ];
+  const sciences = run.staff.find((s) => s.heads === "Sciences");
+  const people: [string, string, string][] = [
+    [
+      "Principal (admin)",
+      run.scenario.principal,
+      "settings, staff, arms, timetable, lesson-note readiness, school analytics, report cards",
+    ],
+    [
+      "Sciences coordinator",
+      sciences?.name ?? "",
+      "curriculum and coverage for the department, notes behind",
+    ],
+    [
+      `${physics.name} teacher`,
+      physics.teacher.name,
+      "day and week, lessons, marking with flagged marks, gradebook, class analytics",
+    ],
+    [
+      `${diff.name} teacher`,
+      diff.teacher.name,
+      "groups, three-level papers, movement between groups, struggling list",
+    ],
+    [
+      `${behind.name} teacher`,
+      behind.teacher.name,
+      "notes left in draft, the principal's cover note",
+    ],
+    [
+      `Strong learner, ${strongSs1.arm}`,
+      strongSs1.profile.name,
+      "full marks, model answers, a strong report card",
+    ],
+    [
+      `Middling learner, ${middling.arm}`,
+      middling.profile.name,
+      "partial answers and feedback, work still open",
+    ],
+    [
+      `Struggling learner, ${struggler.arm}`,
+      struggler.profile.name,
+      "low marks, work missed and counted as zero",
+    ],
+    [
+      `Further Mathematics learner, ${ss2.arm}`,
+      ss2.profile.name,
+      "the option block in their week",
     ],
   ];
   return [
     `# Where to look — ${run.scenario.schoolName}`,
     "",
-    `Sign in at http://localhost:8130 with the email in school-roster.md and the shared password. Run \`${run.runId}\`.`,
+    `Sign in at ${run.client.baseUrl} with the email in school-roster.md and the shared password **${TEST_PASSWORD}**. Run \`${run.runId}\`.`,
+    "",
+    "## Who to sign in as",
+    "",
+    "The same people every run.",
+    "",
+    "| Who | Name | Email | Shows |",
+    "| --- | --- | --- | --- |",
+    ...people.map(
+      ([who, name, shows]) =>
+        `| ${who} | ${name} | ${emailOf(run, name)} | ${shows} |`,
+    ),
+    "",
+    "## Where each feature is",
     "",
     "| To see | Sign in as | Open |",
     "| --- | --- | --- |",
     ...rows.map((r) => `| ${r.join(" | ")} |`),
+    "",
+    "## Review checklist",
+    "",
+    "- [ ] Principal: settings, staff, arms, timetable (by arm, teacher and room), lesson-note readiness, school analytics, announcements, report cards",
+    "- [ ] Coordinator: curriculum coverage, notes behind",
+    "- [ ] Teacher: today, the week, a lesson note, a reading, a quiz, a practical, marking with flagged marks, a gradebook, class analytics, groups and three-level papers",
+    "- [ ] Learner, each ability: dashboard, My week, work still open, a returned paper with answers, marks, feedback and model answers, My Grades",
+    "- [ ] An examination from both sides, and a report card",
   ].join("\n");
 }
 

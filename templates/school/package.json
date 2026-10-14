@@ -21,6 +21,7 @@
     "journey:assumptions": "tsx test/sim/assumptions.ts",
     "journey:mcp-setup": "tsx test/sim/run-mcp-setup.ts",
     "showcase:school": "tsx test/sim/run-showcase.ts",
+    "showcase:check-content": "tsx test/sim/showcase/check-content.ts",
     "showcase:reset": "rm -f data/showcase.db data/showcase.db-wal data/showcase.db-shm",
     "journeys:reset": "rm -f data/journeys.db data/journeys.db-wal data/journeys.db-shm",
     "provision:school": "tsx ops/provision-school.ts"

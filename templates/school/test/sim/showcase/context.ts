@@ -100,6 +100,7 @@ export const DECISION_AREAS = [
   "Activity mix per subject",
   "Differentiation classes",
   "Exams",
+  "Report cards",
   "Left unset, and why",
 ] as const;
 export type DecisionArea = (typeof DECISION_AREAS)[number];

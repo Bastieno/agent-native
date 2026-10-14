@@ -774,6 +774,13 @@ export const showcase = {
   strugglingWeeks: [2, 4, 6, 9, 10],
   /** Lesson notes left in draft from this week on, in these arms' classes. */
   behindOnNotes: { arms: ["JSS3A", "SS2C"], fromWeek: 8 },
+  /**
+   * One class's last piece of the term is left open: some have handed it
+   * in, some have started, some have not, and nothing is marked yet — so the
+   * learners' status words and the teacher's waiting work have something to
+   * show.
+   */
+  leftOpen: { arm: "JSS2A", subject: "Mathematics", week: 10 },
   /** Exam days of week 12: Monday 30 November to Friday 4 December 2026. */
   examDays: [
     "2026-11-30",

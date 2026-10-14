@@ -2,6 +2,7 @@ import type { Client } from "../client.js";
 import type { Findings } from "../findings.js";
 import { asList, idOf } from "../shapes.js";
 import { inPool } from "../pool.js";
+import { seedLibraries } from "../seed-libraries.js";
 import type {
   Showcase,
   SubjectPlan,
@@ -92,6 +93,8 @@ export async function buildSchool(
     country: scenario.country,
   });
   await client.as(admin, "update-person-name", { name: scenario.principal });
+  // A fresh showcase database has no syllabus libraries or exam styles yet.
+  seedLibraries(process.env.SHOWCASE_DATABASE_URL ?? "file:./data/showcase.db");
   decisions.add("Identity", "Name", `${scenario.schoolName}, ${scenario.city}`);
   decisions.add("Identity", "Type", scenario.schoolType);
   decisions.add(

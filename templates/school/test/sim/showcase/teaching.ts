@@ -17,6 +17,20 @@ import {
   writeOpenAnswer,
   type Question,
 } from "./questions.js";
+import {
+  markFor,
+  openByPrompt,
+  paperFrom,
+  schemeText,
+  weekContent,
+  writeUpFor,
+  writeUpMark,
+  writtenAnswer,
+  type OpenQuestion,
+  type PaperKind,
+  type Practical,
+  type WeekContent,
+} from "./content.js";
 
 /**
  * A teaching week across the whole school: each class gets its reading, a
@@ -144,7 +158,8 @@ async function setPiece(
   objectives: LibraryObjective[],
 ): Promise<string> {
   const noteId = run.notes.get(cls.id)?.get(week);
-  const topic = objectives[0]?.subStrand ?? cls.subject.name;
+  const written = weekContent(cls.subject.name, cls.yearGroup, week);
+  const topic = written?.topic ?? objectives[0]?.subStrand ?? cls.subject.name;
   const base = {
     classId: cls.id,
     ...(noteId ? { lessonNoteId: noteId } : {}),
@@ -153,6 +168,23 @@ async function setPiece(
     confirm: true,
     publish: true,
   };
+  if (kind === "practical" && written?.practical) {
+    const p = written.practical;
+    const created = await run.client.as(cls.teacher, "create-activity", {
+      ...base,
+      title: `Week ${week} practical: ${p.title}`,
+      format: "practical",
+      renderAs: "steps",
+      instructions: p.instructions,
+      blocks: p.steps,
+      content: p.steps.map((s, i) => `${i + 1}. ${s.text}`).join("\n"),
+      responseMode: "typed",
+      gradingMode: "rubric",
+      rubric: p.rubric,
+      totalPoints: p.rubric.reduce((n, r) => n + r.maxPoints, 0),
+    });
+    return created?.assessmentId ?? idOf(created, "assessment")!;
+  }
   if (kind === "practical") {
     const steps = practicalSteps(objectives[0]);
     const created = await run.client.as(cls.teacher, "create-activity", {
@@ -211,7 +243,7 @@ async function setPiece(
 
 // ── Sitting it ───────────────────────────────────────────────────────────
 
-async function sit(
+export async function sit(
   run: ShowcaseRun,
   learner: Learner,
   assessmentId: string,
@@ -220,6 +252,8 @@ async function sit(
   week: number,
   handwritten: boolean,
   difficulty = 1,
+  /** The weeks the questions were written for, so open answers can be found. */
+  written: WeekContent | (WeekContent | null)[] | null = null,
 ): Promise<void> {
   const { client } = run;
   const ability = Math.min(
@@ -229,6 +263,14 @@ async function sit(
   const seed = learner.profile.index * 9973 + week * 101;
   await client.as(learner, "start-activity", { assessmentId });
 
+  if (kind === "practical" && !Array.isArray(written) && written?.practical) {
+    const p: Practical = written.practical;
+    await client.as(learner, "submit-work", {
+      assessmentId,
+      content: writeUpFor(p, ability, seed)?.text ?? "",
+    });
+    return;
+  }
   if (kind === "practical") {
     const covered = Math.round(ability * 4);
     const parts = [
@@ -253,10 +295,16 @@ async function sit(
     return;
   }
 
-  const answer = (q: Question, i: number) =>
-    q.options
-      ? answerQuestion(q as any, ability, seed + i).text
-      : writeOpenAnswer(q, ability, seed + i).text;
+  const open: Map<string, OpenQuestion> = openByPrompt(
+    Array.isArray(written) ? written : [written],
+  );
+  const answer = (q: Question, i: number) => {
+    if (q.options) return answerQuestion(q as any, ability, seed + i).text;
+    const fromContent = open.get(q.prompt);
+    if (fromContent)
+      return writtenAnswer(fromContent, ability, seed + i)?.text ?? "";
+    return writeOpenAnswer(q, ability, seed + i).text;
+  };
 
   if (kind === "quiz") {
     for (const [i, q] of questions.entries()) {
@@ -297,7 +345,7 @@ async function sit(
  * actually wrote, quoting their words. A partial answer that hedges is
  * marked with low confidence, which puts it in front of the teacher.
  */
-async function markOpenAnswers(
+export async function markOpenAnswers(
   run: ShowcaseRun,
   cls: ShowcaseClass,
   assessmentId: string,
@@ -311,6 +359,31 @@ async function markOpenAnswers(
   await inPool(items, 6, async (item: any) => {
     const max = Number(item.maxPoints ?? 1);
     const text = String(item.answer ?? "");
+    const written = markFor(String(item.prompt ?? ""), text);
+    if (written) {
+      // Written content says which points the answer earns and with what
+      // words, so the marks, the quotes and the feedback all agree.
+      const scheme = String(item.markScheme ?? "").split(";");
+      const awarded = Math.min(max, written.meets.length);
+      const confidence = written.unsure
+        ? "low"
+        : awarded === max || awarded === 0
+          ? "high"
+          : "medium";
+      if (confidence === "low") flagged++;
+      await client.as(cls.teacher, "record-answer-mark", {
+        responseId: item.responseId,
+        awardedPoints: awarded,
+        evidence: written.meets.slice(0, max).map((m) => ({
+          criterion: (scheme[m.point] ?? "").trim(),
+          points: 1,
+          quote: m.quote,
+        })),
+        confidence,
+        feedback: written.feedback,
+      });
+      return;
+    }
     const parts = String(item.markScheme ?? "")
       .split(";")
       .map((p) => p.trim())
@@ -368,6 +441,7 @@ async function markPractical(
   run: ShowcaseRun,
   cls: ShowcaseClass,
   assessmentId: string,
+  practicalTitle?: string,
 ) {
   const { client } = run;
   const subs = asList(
@@ -379,6 +453,17 @@ async function markPractical(
       id: sub.id,
     });
     const text = String(detail?.content ?? detail?.submission?.content ?? "");
+    const written = practicalTitle
+      ? writeUpMark(practicalTitle, text)
+      : undefined;
+    if (written) {
+      await client.as(cls.teacher, "grade-submission", {
+        submissionId: sub.id,
+        score: written.scores.reduce((a, b) => a + b, 0),
+        feedback: written.feedback,
+      });
+      return;
+    }
     const score =
       (text.includes("readings are in the table") ? 4 : 1) +
       (text.includes("Precaution") ? 2 : 0) +
@@ -409,21 +494,41 @@ export async function teachClassWeek(
   const { objectives, all } = weekObjectives(run, cls, week);
   const teachingIndex = run.scenario.teachingWeeks.indexOf(week);
   const seed = run.classes.indexOf(cls) * 7919 + week * 131;
+  const written = weekContent(cls.subject.name, cls.yearGroup, week);
+  const topic = written?.topic ?? objectives[0]?.subStrand ?? cls.subject.name;
 
-  // The week's reading, drafted beside the lesson note, goes out to the class.
+  // The week's reading, drafted beside the lesson note, goes out to the
+  // class — with the written page in place of the planner's scaffold.
   const readingId = readings.get(cls.id)?.get(week);
+  if (readingId && written) {
+    const variants = asList(
+      await client.as(cls.teacher, "list-variants", {
+        assessmentId: readingId,
+      }),
+      "variants",
+    );
+    if (variants[0])
+      await client.as(cls.teacher, "update-variant", {
+        id: variants[0].id,
+        content: written.reading.content,
+      });
+    await client.as(cls.teacher, "update-assessment", {
+      id: readingId,
+      title: `Week ${week} reading: ${written.reading.title}`,
+    });
+  }
   if (readingId)
     await client.as(cls.teacher, "publish-assessment", { id: readingId });
 
   // A card deck every other week, with nothing to hand in.
   if (teachingIndex % 2 === 1) {
-    const cards = cardDeck(objectives);
+    const cards = written?.cards ?? cardDeck(objectives);
     if (cards.length) {
       const noteId = run.notes.get(cls.id)?.get(week);
       await client.as(cls.teacher, "create-activity", {
         classId: cls.id,
         ...(noteId ? { lessonNoteId: noteId } : {}),
-        title: `Week ${week} cards: ${objectives[0]?.subStrand ?? cls.subject.name}`,
+        title: `Week ${week} cards: ${topic}`,
         format: "card deck",
         renderAs: "cards",
         blocks: cards,
@@ -437,11 +542,14 @@ export async function teachClassWeek(
   }
 
   if (differentiate)
-    return differentiatedWeek(run, cls, week, objectives, all, seed);
+    return differentiatedWeek(run, cls, week, objectives, all, seed, written);
 
   const kind = kindFor(run, cls, week);
-  const questions =
-    kind === "quiz"
+  const questions = written
+    ? kind === "practical"
+      ? []
+      : paperFrom(written, kind as PaperKind)
+    : kind === "quiz"
       ? questionsFor(cls.subject.name, objectives, all, seed, 5, 0)
       : kind === "problem set"
         ? questionsFor(cls.subject.name, objectives, all, seed, 2, 2)
@@ -463,6 +571,13 @@ export async function teachClassWeek(
   );
 
   const learners = learnersOf(run, cls);
+  const leftOpen = run.scenario.leftOpen;
+  if (
+    cls.arm?.name === leftOpen.arm &&
+    cls.subject.name === leftOpen.subject &&
+    week === leftOpen.week
+  )
+    return leaveOpen(run, cls, week, kind, questions, assessmentId, written);
   const sat = await inPool(learners, 6, async (learner) => {
     if (
       !handsIn(
@@ -479,6 +594,8 @@ export async function teachClassWeek(
       questions,
       week,
       !!cls.subject.handwritten,
+      1,
+      written,
     );
     return true;
   });
@@ -486,7 +603,7 @@ export async function teachClassWeek(
 
   const marking =
     kind === "practical"
-      ? await markPractical(run, cls, assessmentId)
+      ? await markPractical(run, cls, assessmentId, written?.practical?.title)
       : await markOpenAnswers(run, cls, assessmentId);
   if (kind !== "practical")
     await client.as(cls.teacher, "compile-submission-grade", { assessmentId });
@@ -512,6 +629,72 @@ export async function teachClassWeek(
   };
 }
 
+/**
+ * The term's last piece in one class, left as a real class leaves it on the
+ * day it is due: a third have handed it in, a third have started, a third
+ * have not opened it, and the teacher has marked none of it yet.
+ */
+async function leaveOpen(
+  run: ShowcaseRun,
+  cls: ShowcaseClass,
+  week: number,
+  kind: Kind,
+  questions: Question[],
+  assessmentId: string,
+  written: WeekContent | null,
+): Promise<PieceResult> {
+  const learners = learnersOf(run, cls);
+  const states = await inPool(learners, 6, async (learner, i) => {
+    if (i % 3 === 0) {
+      await sit(
+        run,
+        learner,
+        assessmentId,
+        kind,
+        questions,
+        week,
+        false,
+        1,
+        written,
+      );
+      return "handed in";
+    }
+    if (i % 3 === 1) {
+      await run.client.as(learner, "start-activity", { assessmentId });
+      if (questions[0])
+        await run.client.as(learner, "answer-question", {
+          assessmentId,
+          index: 0,
+          answer: questions[0].options
+            ? answerQuestion(questions[0] as any, 0.6, i).text
+            : "I have started this and will finish it tonight.",
+        });
+      return "started";
+    }
+    return "not started";
+  });
+  run.record.leftOpen = {
+    className: cls.name,
+    week,
+    assessmentId,
+    handedIn: states.filter((s) => s === "handed in").length,
+    started: states.filter((s) => s === "started").length,
+    notStarted: states.filter((s) => s === "not started").length,
+  };
+  return {
+    classId: cls.id,
+    className: cls.name,
+    week,
+    kind,
+    assessmentId,
+    set: learners.length,
+    handedIn: states.filter((s) => s === "handed in").length,
+    marked: 0,
+    flagged: 0,
+    average: null,
+  };
+}
+
 /** The same week's work at three standards, served by the class's own groups. */
 async function differentiatedWeek(
   run: ShowcaseRun,
@@ -520,6 +703,7 @@ async function differentiatedWeek(
   objectives: LibraryObjective[],
   all: LibraryObjective[],
   seed: number,
+  written: WeekContent | null = null,
 ): Promise<PieceResult> {
   const { client, findings } = run;
   // Group the class from its marks so far, and keep the grouping.
@@ -537,29 +721,16 @@ async function differentiatedWeek(
   >;
   (history[cls.name] ??= []).push({ week, groups });
 
-  const foundational = questionsFor(
-    cls.subject.name,
-    objectives,
-    all,
-    seed,
-    4,
-    0,
+  const paper = (kind: PaperKind, generated: () => Question[]) =>
+    written ? paperFrom(written, kind) : generated();
+  const foundational = paper("foundational", () =>
+    questionsFor(cls.subject.name, objectives, all, seed, 4, 0),
   );
-  const developing = questionsFor(
-    cls.subject.name,
-    objectives,
-    all,
-    seed,
-    3,
-    1,
+  const developing = paper("developing", () =>
+    questionsFor(cls.subject.name, objectives, all, seed, 3, 1),
   );
-  const advanced = questionsFor(
-    cls.subject.name,
-    objectives,
-    all,
-    seed + 1,
-    3,
-    2,
+  const advanced = paper("advanced", () =>
+    questionsFor(cls.subject.name, objectives, all, seed + 1, 3, 2),
   );
   const variant = (label: string, difficulty: string, qs: Question[]) => ({
     label,
@@ -572,7 +743,7 @@ async function differentiatedWeek(
   const created = await client.as(cls.teacher, "create-activity", {
     classId: cls.id,
     ...(noteId ? { lessonNoteId: noteId } : {}),
-    title: `Week ${week} worksheet: ${objectives[0]?.subStrand ?? cls.subject.name}`,
+    title: `Week ${week} worksheet: ${written?.topic ?? objectives[0]?.subStrand ?? cls.subject.name}`,
     format: "worksheet",
     renderAs: "questions",
     objectives: objectives.map((o) => o.description),
@@ -639,6 +810,7 @@ async function differentiatedWeek(
       week,
       false,
       difficulty,
+      written,
     );
     return true;
   });
