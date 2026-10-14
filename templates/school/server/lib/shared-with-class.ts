@@ -12,7 +12,7 @@ import { schema } from "../db/index.js";
  * question is "what has this class been set?". Keep `published` alone only
  * where the question is "what is still open?", such as work still owed.
  */
-export const SHARED_STATUSES = ["published", "closed"] as const;
+export const SHARED_STATUSES: readonly string[] = ["published", "closed"];
 
 export function sharedWithClass() {
   return inArray(schema.assessments.status, [...SHARED_STATUSES]);

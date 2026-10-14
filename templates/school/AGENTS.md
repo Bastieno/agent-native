@@ -849,10 +849,16 @@ box entirely and tells the learner there is nothing to hand in.
 
 **Timing has three separate clocks — set only the ones you mean:**
 
-| Field             | Applies to   | Use it for                                |
-| ----------------- | ------------ | ----------------------------------------- |
-| `opensAt`         | everyone     | work scheduled for a later lesson         |
-| `closesAt`        | everyone     | a hard deadline for the whole class       |
+| Field      | Applies to | Use it for                          |
+| ---------- | ---------- | ----------------------------------- |
+| `opensAt`  | everyone   | work scheduled for a later lesson   |
+| `closesAt` | everyone   | a hard deadline for the whole class |
+
+**Ask for a closing date on anything handed in.** Work closes by itself when
+its marks are published, but learners see the right answers on their returned
+paper only once it closes, so work that is never marked, or marked late, needs
+a date. `create-activity`'s preview says when one is missing (`closingNote`);
+put the question to the teacher rather than choosing a date for them.
 | `durationMinutes` | each learner | time allowed once **that learner** begins |
 
 `durationMinutes` starts when the learner presses begin, not when you create the
@@ -952,6 +958,12 @@ pnpm action update-variant --id <variantId> --content "..."
 ```
 
 ### B3. Grading
+
+**Publishing closes the work.** `publish-grades` publishes every mark and closes
+the assessment in the same step: nobody can hand it in afterwards, and each
+learner's returned paper then shows the right answers. Say both when you
+confirm before publishing: "This shows the class their marks and closes the
+work, so anyone who hasn't handed in can't now. Go ahead?"
 
 **Single submission**:
 

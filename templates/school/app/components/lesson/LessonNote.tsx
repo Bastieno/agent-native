@@ -435,7 +435,8 @@ export function LessonNote({
                         // to be noticed: an admin may share work with any
                         // class, and the teacher whose class it is should read
                         // that they did, not discover it.
-                        m.status === "published" && m.publishedBy
+                        (m.status === "published" || m.status === "closed") &&
+                        m.publishedBy
                           ? `shared by ${m.publishedBy}${
                               m.publishedAt
                                 ? `, ${formatDate(m.publishedAt, {
@@ -461,7 +462,14 @@ export function LessonNote({
                     >
                       Read it
                     </Link>
-                    {m.status === "published" ? (
+                    {/* Closed: marked and on the record. Offering to share
+                        it again would quietly reopen it. */}
+                    {m.status === "closed" ? (
+                      <span className="ml-2 flex items-center gap-1.5 text-xs text-muted-foreground">
+                        <IconCheck size={12} />
+                        Closed
+                      </span>
+                    ) : m.status === "published" ? (
                       <>
                         <span className="ml-2 flex items-center gap-1.5 text-xs text-muted-foreground">
                           <IconCheck size={12} />

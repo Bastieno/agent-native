@@ -247,9 +247,14 @@ export function AssessmentDetail({
   async function handlePublishGrades() {
     setPublishLoading(true);
     try {
-      await callAction("publish-grades", { assessmentId });
+      const result: any = await callAction("publish-grades", { assessmentId });
       qc.invalidateQueries({ queryKey: ["submissions", assessmentId] });
-      toast.success("Grades published — students can now see their scores");
+      qc.invalidateQueries({ queryKey: ["assessment", assessmentId] });
+      toast.success(
+        result?.closed
+          ? "Grades published and the work closed — students can see their marks and the answers"
+          : "Grades published — students can now see their scores",
+      );
       setPublishOpen(false);
     } catch (e: any) {
       toast.error(e.message ?? "Failed to publish grades");
@@ -321,7 +326,9 @@ export function AssessmentDetail({
                 assessment?.format,
                 // An admin may share work with any class; the teacher reads
                 // who did it here rather than finding out from a learner.
-                assessment?.status === "published" && assessment?.publishedBy
+                (assessment?.status === "published" ||
+                  assessment?.status === "closed") &&
+                assessment?.publishedBy
                   ? `Shared by ${assessment.publishedBy}${
                       assessment.publishedAt
                         ? ` on ${formatDateTime(assessment.publishedAt, {
@@ -636,7 +643,9 @@ export function AssessmentDetail({
               <AlertDialogDescription>
                 All {gradedCount} graded submission
                 {gradedCount !== 1 ? "s" : ""} will become visible to students
-                immediately.
+                immediately, and this work will close: nobody can hand it in
+                after this, and learners will see the right answers on their
+                returned papers.
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>

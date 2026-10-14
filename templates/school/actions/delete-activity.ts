@@ -3,6 +3,7 @@ import { writeAppState } from "@agent-native/core/application-state";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq, inArray, ne } from "drizzle-orm";
 import { z } from "zod";
+import { SHARED_STATUSES } from "../server/lib/shared-with-class.js";
 
 /**
  * Remove an activity that should never have existed.
@@ -44,7 +45,8 @@ export default defineAction({
       .limit(1);
     if (!activity) throw new Error("Activity not found.");
 
-    if (activity.status === "published") {
+    // Closed work is still the class's: its marks are on the record.
+    if (SHARED_STATUSES.includes(activity.status)) {
       throw new Error(
         `"${activity.title}" is shared with the class. Stop sharing it first, then delete it — that way nobody loses it from under them.`,
       );

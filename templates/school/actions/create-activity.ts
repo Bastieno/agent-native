@@ -204,7 +204,9 @@ export default defineAction({
     closesAt: z
       .string()
       .optional()
-      .describe("ISO date/time after which work can no longer be handed in"),
+      .describe(
+        "ISO date/time after which work can no longer be handed in. Ask the teacher for one on anything handed in. The work also closes by itself when its marks are published; a closing date matters for work that is not marked, or whose marks come late, since learners only see the right answers once it closes.",
+      ),
     dueDate: z.string().optional().describe("YYYY-MM-DD shown to learners"),
     publish: z
       .boolean()
@@ -327,6 +329,11 @@ export default defineAction({
       durationMinutes: args.durationMinutes ?? null,
       opensAt: args.opensAt ?? null,
       closesAt: args.closesAt ?? null,
+      // Said in the preview, so the teacher is asked before it is set.
+      closingNote:
+        args.closesAt || responseMode === "none"
+          ? null
+          : "No closing date: it stays open until its marks are published (which closes it) or the teacher closes it. Learners see the right answers only once it closes.",
       dueDate: args.dueDate ?? null,
       willPublish: !!args.publish,
       // Named for what it is: this school's answer, not the app's.

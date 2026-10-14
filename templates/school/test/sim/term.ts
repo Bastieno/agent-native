@@ -207,11 +207,45 @@ export async function teachWeek(
   const compiled = await client.as(school.teacher, "compile-submission-grade", {
     assessmentId,
   });
-  await client.as(school.teacher, "publish-grades", { assessmentId });
-
   // ── The paper comes back ───────────────────────────────────────────────
-  // A grade on its own teaches nothing: the learner gets their questions and
-  // answers back with it, then the right answers once the class is done.
+  // A grade on its own teaches nothing. Handed in, the learner has their
+  // paper back; marks and right answers wait for the marks to be published,
+  // which also closes the work.
+  if (firstToHandIn) {
+    const before = asList(
+      (await client.as(firstToHandIn, "get-my-assessment", { assessmentId }))
+        ?.review,
+      "questions",
+    );
+    findings.expect(
+      phase,
+      before.length === week.questions.length &&
+        before.some((q: any) => (q?.answer ?? "") !== ""),
+      "a handed-in paper comes back with its questions and the learner's answers",
+      `${before.length} of ${week.questions.length} questions came back`,
+    );
+    findings.expect(
+      phase,
+      before.every(
+        (q: any) =>
+          !("awardedPoints" in q) &&
+          q?.correctAnswer === undefined &&
+          q?.modelAnswer === undefined,
+      ),
+      "no marks or right answers before the marks are published",
+    );
+  }
+
+  const published = await client.as(school.teacher, "publish-grades", {
+    assessmentId,
+  });
+  findings.expect(
+    phase,
+    published?.closed === true,
+    "publishing the marks closes the work",
+    JSON.stringify(published).slice(0, 200),
+  );
+
   if (firstToHandIn) {
     const back = await client.as(firstToHandIn, "get-my-assessment", {
       assessmentId,
@@ -219,79 +253,49 @@ export async function teachWeek(
     const reviewed = asList(back?.review, "questions");
     findings.expect(
       phase,
-      reviewed.length === week.questions.length,
-      "a marked paper comes back with its questions",
-      `${reviewed.length} of ${week.questions.length} questions came back`,
+      reviewed.every((q: any) => "awardedPoints" in q),
+      "once published, every question carries its mark",
+    );
+    const closedKeys = week.questions.filter(
+      (q: any) => q?.answer !== undefined && q?.answer !== null,
+    ).length;
+    findings.expect(
+      phase,
+      reviewed.filter((q: any) => q?.correctAnswer !== undefined).length ===
+        closedKeys,
+      "every closed question shows its right answer",
+      `${reviewed.filter((q: any) => q?.correctAnswer !== undefined).length} of ${closedKeys}`,
+    );
+    const withModel = week.questions.filter((q: any) => q?.modelAnswer).length;
+    findings.expect(
+      phase,
+      reviewed.filter((q: any) => q?.modelAnswer).length === withModel,
+      "every open question with a model answer shows it",
+      `${reviewed.filter((q: any) => q?.modelAnswer).length} of ${withModel}`,
     );
     findings.expect(
       phase,
-      reviewed.some((q: any) => (q?.answer ?? "") !== "") &&
-        reviewed.every((q: any) => "awardedPoints" in q),
-      "with the learner's own answers and a mark for each",
+      !JSON.stringify(back).includes("markScheme"),
+      "a mark scheme never reaches the learner",
+    );
+
+    // Closed is not gone: it stays in the learner's list and the gradebook.
+    const theirs = asList(
+      await client.as(firstToHandIn, "get-my-assessments", {}),
     );
     findings.expect(
       phase,
-      reviewed.every(
-        (q: any) =>
-          q?.correctAnswer === undefined && q?.modelAnswer === undefined,
-      ),
-      "the right answers stay hidden while the paper is still open",
-      `${reviewed.filter((q: any) => q?.correctAnswer !== undefined).length} revealed early`,
+      theirs.some((a: any) => a?.assessmentId === assessmentId),
+      "a closed paper stays in the learner's own list",
     );
-
-    // Closing the first week is what a teacher does once it is marked; the
-    // later weeks stay open, so the rest of the term is unaffected.
-    if (week.week === 1) {
-      await client.as(school.teacher, "close-assessment", { id: assessmentId });
-      const closed = await client.as(firstToHandIn, "get-my-assessment", {
-        assessmentId,
-      });
-      const revealed = asList(closed?.review, "questions");
-      const closedKeys = week.questions.filter(
-        (q: any) => q?.answer !== undefined && q?.answer !== null,
-      ).length;
-      findings.expect(
-        phase,
-        revealed.filter((q: any) => q?.correctAnswer !== undefined).length ===
-          closedKeys,
-        "once closed, every closed question shows its right answer",
-        `${revealed.filter((q: any) => q?.correctAnswer !== undefined).length} of ${closedKeys}`,
-      );
-      const withModel = week.questions.filter(
-        (q: any) => q?.modelAnswer,
-      ).length;
-      findings.expect(
-        phase,
-        revealed.filter((q: any) => q?.modelAnswer).length === withModel,
-        "once closed, every open question with a model answer shows it",
-        `${revealed.filter((q: any) => q?.modelAnswer).length} of ${withModel}`,
-      );
-      findings.expect(
-        phase,
-        !JSON.stringify(closed).includes("markScheme"),
-        "a mark scheme never reaches the learner",
-      );
-
-      // Closing stops new answers; it does not take the work back. Every
-      // read that filtered on "published" alone used to drop it here — from
-      // the learner's list, the gradebook and the report card.
-      const theirs = asList(
-        await client.as(firstToHandIn, "get-my-assessments", {}),
-      );
-      findings.expect(
-        phase,
-        theirs.some((a: any) => a?.assessmentId === assessmentId),
-        "a closed paper stays in the learner's own list",
-      );
-      const book = await client.as(school.teacher, "get-gradebook", {
-        classId: school.classId,
-      });
-      findings.expect(
-        phase,
-        JSON.stringify(book).includes(assessmentId!),
-        "a closed paper stays in the gradebook",
-      );
-    }
+    const book = await client.as(school.teacher, "get-gradebook", {
+      classId: school.classId,
+    });
+    findings.expect(
+      phase,
+      JSON.stringify(book).includes(assessmentId!),
+      "a closed paper stays in the gradebook",
+    );
   }
 
   const analytics = await client.as(

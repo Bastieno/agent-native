@@ -48,6 +48,16 @@ export default defineAction({
       .limit(1);
     if (!activity) throw new Error("Activity not found.");
 
+    // Closed work stays with the class: its marks are published and on the
+    // record, and taking it back would take them off every learner's screen.
+    if (activity.status === "closed") {
+      return {
+        success: false,
+        id: args.id,
+        status: activity.status,
+        message: `"${activity.title}" is closed and its marks are part of the record, so it stays with the class.`,
+      };
+    }
     if (activity.status !== "published") {
       return {
         success: true,

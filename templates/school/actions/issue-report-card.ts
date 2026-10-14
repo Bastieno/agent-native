@@ -9,6 +9,7 @@ import { z } from "zod";
 import { jsonish } from "../shared/zod-json.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { missedWorkPolicy, summarise } from "../shared/missed-work.js";
+import { SHARED_STATUSES } from "../server/lib/shared-with-class.js";
 
 /**
  * Issue a report card, and freeze it.
@@ -160,7 +161,9 @@ export default defineAction({
       .map((cls: any) => {
         const forClass = assessments.filter(
           (a: any) =>
-            a.classId === cls.id && a.status === "published" && isMarkedWork(a),
+            a.classId === cls.id &&
+            SHARED_STATUSES.includes(a.status) &&
+            isMarkedWork(a),
         );
         const mine = grades.filter((g: any) =>
           forClass.some((a: any) => a.id === g.assessmentId),

@@ -66,6 +66,15 @@ export default defineAction({
       .limit(1);
     if (!row) throw new Error("Activity not found.");
 
+    // Closed work has had its marks published and its answers shown to the
+    // class. Publishing it again would reopen it for hand-ins with the answers
+    // already out, so it is refused rather than done quietly.
+    if (row.status === "closed") {
+      throw new Error(
+        `"${row.title}" is closed: its marks are out and the class can see the answers, so it cannot be opened again for hand-ins.`,
+      );
+    }
+
     // A class can be planned before it is staffed, but work cannot be set
     // from one: nobody would be answerable for marking it or for the learners
     // who ask about it.
