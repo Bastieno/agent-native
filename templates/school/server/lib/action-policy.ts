@@ -327,6 +327,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "get-my-submission": EVERYONE,
   "get-my-grades": EVERYONE,
   "get-my-progress": EVERYONE,
+  "get-my-term-grades": EVERYONE,
 
   // ── Communication ─────────────────────────────────────────────────────
   "list-announcements": EVERYONE,

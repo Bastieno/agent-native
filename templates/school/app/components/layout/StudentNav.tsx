@@ -3,7 +3,6 @@ import {
   IconLayoutDashboard,
   IconBook,
   IconCalendarWeek,
-  IconChartBar,
   IconTrophy,
   IconLogout,
 } from "@tabler/icons-react";
@@ -21,7 +20,6 @@ const navItems = [
   { href: "/student/week", label: "My week", icon: IconCalendarWeek },
   { href: "/student/classes", label: "My Classes", icon: IconBook },
   { href: "/student/grades", label: "Grades", icon: IconTrophy },
-  { href: "/student/progress", label: "Progress", icon: IconChartBar },
 ];
 
 export function StudentNav() {

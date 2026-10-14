@@ -27,8 +27,9 @@ export default function StudentLayout() {
       navigate(`/student/classes/${nav.classId}`);
     else if (nav.view === "assessment" && nav.assessmentId)
       navigate(`/student/assessments/${nav.assessmentId}`);
-    else if (nav.view === "grades") navigate("/student/grades");
-    else if (nav.view === "progress") navigate("/student/progress");
+    // Progress is part of My Grades now.
+    else if (nav.view === "grades" || nav.view === "progress")
+      navigate("/student/grades");
     else if (nav.view === "week") navigate("/student/week");
   }, [command.data, clearCommand, navigate]);
 

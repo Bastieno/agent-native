@@ -1195,7 +1195,8 @@ a classmate may still be working on the same paper.
 
 ```bash
 pnpm action get-my-assessments       # Their assigned assessments
-pnpm action get-my-grades            # Published grades across classes
+pnpm action get-my-term-grades       # The term at a glance: average, handed in, recent marks, each subject's work
+pnpm action get-my-grades            # Published grades across classes, as a flat list
 pnpm action get-my-progress          # Performance overview
 pnpm action get-my-classes           # Enrolled classes
 pnpm action get-my-week              # Their own timetable
@@ -1218,15 +1219,14 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 
 ### C4. Navigation Map (Student)
 
-| User says                       | Navigate to                                      |
-| ------------------------------- | ------------------------------------------------ |
-| "dashboard", "home"             | `navigate --view=dashboard`                      |
-| "my classes", "classes"         | `navigate --view=classes`                        |
-| "my week", "timetable"          | `navigate --view=week`                           |
-| "my assignments", "assessments" | `navigate --view=classes`                        |
-| "grades"                        | `navigate --view=grades`                         |
-| "progress", "how am I doing?"   | `navigate --view=progress`                       |
-| "open [assignment name]"        | `navigate --view=assessment --assessmentId <id>` |
+| User says                               | Navigate to                                                                                                                  |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| "dashboard", "home"                     | `navigate --view=dashboard`                                                                                                  |
+| "my classes", "classes"                 | `navigate --view=classes`                                                                                                    |
+| "my week", "timetable"                  | `navigate --view=week`                                                                                                       |
+| "my assignments", "assessments"         | `navigate --view=classes`                                                                                                    |
+| "grades", "progress", "how am I doing?" | `navigate --view=grades` — My Grades: the term average, what was marked last, and each subject, which opens to show its work |
+| "open [assignment name]"                | `navigate --view=assessment --assessmentId <id>`                                                                             |
 
 ---
 
@@ -1423,14 +1423,15 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 
 ### Student-Facing
 
-| Action               | Args                             |
-| -------------------- | -------------------------------- |
-| `get-my-classes`     |                                  |
-| `get-my-assessments` | — never exposes `difficulty`     |
-| `get-my-submission`  | `--assessmentId`                 |
-| `get-my-grades`      |                                  |
-| `get-my-progress`    |                                  |
-| `get-my-week`        | `[--date]` — their own timetable |
+| Action               | Args                                                           |
+| -------------------- | -------------------------------------------------------------- |
+| `get-my-classes`     |                                                                |
+| `get-my-assessments` | — never exposes `difficulty`                                   |
+| `get-my-submission`  | `--assessmentId`                                               |
+| `get-my-term-grades` | — the term at a glance, counted the way the report card counts |
+| `get-my-grades`      |                                                                |
+| `get-my-progress`    |                                                                |
+| `get-my-week`        | `[--date]` — their own timetable                               |
 
 ### Communication
 
