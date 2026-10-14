@@ -8,6 +8,7 @@ import {
   resolveUserId,
 } from "../server/lib/student-session.js";
 import { z } from "zod";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
@@ -81,7 +82,7 @@ export default defineAction({
         .where(
           and(
             eq(schema.assessments.classId, enrollment.classId),
-            eq(schema.assessments.status, "published"),
+            sharedWithClass(),
           ),
         );
       // Progress is about work. A page to read is neither handed in nor

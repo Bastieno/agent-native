@@ -11,6 +11,7 @@ import {
   categoryFor,
   resolveCategoryThresholds,
 } from "../shared/student-levels.js";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
@@ -57,7 +58,7 @@ export default defineAction({
       .where(
         and(
           eq(schema.assessments.classId, args.classId),
-          eq(schema.assessments.status, "published"),
+          sharedWithClass(),
           carriesMarks(),
         ),
       );

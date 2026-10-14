@@ -34,9 +34,12 @@ export default function StudentDashboard() {
   // marked, so counting them here told a learner they owed seven pieces of
   // work when they owed three — and a number a child cannot verify is a
   // number they stop believing.
+  // Closed work is no longer owed: it cannot be handed in, so listing it here
+  // would ask a child to do something the app will refuse.
   const pending = assessments.filter(
     (a: any) =>
       !a.isMaterial &&
+      !a.window?.hasClosed &&
       (a.submissionStatus === "not_started" || a.submissionStatus === "draft"),
   );
   /** Published to read or practise with, not owed. */

@@ -4,6 +4,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, desc, asc, inArray, sql } from "drizzle-orm";
 import { resolveStudentId } from "../server/lib/student-session.js";
 import { z } from "zod";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 /**
  * A class as a learner sees it: what it is, who teaches it, the material that
@@ -94,7 +95,7 @@ export default defineAction({
                 schema.assessments.lessonNoteId,
                 allLessons.map((l: any) => l.id),
               ),
-              eq(schema.assessments.status, "published"),
+              sharedWithClass(),
             ),
           )
       : [];
@@ -131,10 +132,7 @@ export default defineAction({
       })
       .from(schema.assessments)
       .where(
-        and(
-          eq(schema.assessments.classId, rawArgs.classId),
-          eq(schema.assessments.status, "published"),
-        ),
+        and(eq(schema.assessments.classId, rawArgs.classId), sharedWithClass()),
       )
       .orderBy(asc(schema.assessments.dueDate));
 

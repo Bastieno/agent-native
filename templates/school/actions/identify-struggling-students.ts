@@ -6,6 +6,7 @@ import { eq, and } from "drizzle-orm";
 import { carriesMarks } from "../server/lib/gradebook.js";
 import { z } from "zod";
 import { missedWorkPolicy, summarise } from "../shared/missed-work.js";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
@@ -42,7 +43,7 @@ export default defineAction({
       .where(
         and(
           eq(schema.assessments.classId, args.classId),
-          eq(schema.assessments.status, "published"),
+          sharedWithClass(),
           carriesMarks(),
         ),
       );

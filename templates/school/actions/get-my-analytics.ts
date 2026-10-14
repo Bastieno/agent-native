@@ -6,6 +6,7 @@ import { eq, and, desc, asc, inArray, sql, count, ne } from "drizzle-orm";
 import { actorForEmail } from "../server/lib/class-access.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
@@ -67,7 +68,7 @@ export default defineAction({
       .where(
         and(
           inArray(schema.assessments.classId, classIds),
-          eq(schema.assessments.status, "published"),
+          sharedWithClass(),
           ne(schema.assessments.responseMode, "none"),
         ),
       );

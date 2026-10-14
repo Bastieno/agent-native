@@ -3,6 +3,7 @@ import { and, eq, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import type { WrittenNote } from "./lesson-note-writer.js";
 import { actorLabel, describeActors } from "./lesson-attribution.js";
+import { sharedWithClass } from "./shared-with-class.js";
 
 /**
  * What the class reads, written beside what the teacher plans.
@@ -145,7 +146,7 @@ export async function materialForLesson(
   const db = getDb();
   const conditions = [eq(schema.assessments.lessonNoteId, lessonNoteId)];
   if (opts.publishedOnly) {
-    conditions.push(eq(schema.assessments.status, "published"));
+    conditions.push(sharedWithClass());
   }
   const rows = await db
     .select({

@@ -9,6 +9,7 @@ import { activityWindow } from "../server/lib/activity-window.js";
 import { z } from "zod";
 import { currentAccess } from "@agent-native/core/sharing";
 import { schoolDateStyle } from "../server/lib/school-dates.js";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 /**
  * Everything a student has been set, across the classes they are enrolled in.
@@ -76,10 +77,7 @@ export default defineAction({
       .select()
       .from(schema.assessments)
       .where(
-        and(
-          inArray(schema.assessments.classId, classIds),
-          eq(schema.assessments.status, "published"),
-        ),
+        and(inArray(schema.assessments.classId, classIds), sharedWithClass()),
       );
     if (activities.length === 0) return [];
 

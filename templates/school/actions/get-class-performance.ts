@@ -2,6 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { z } from "zod";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
@@ -17,10 +18,7 @@ export default defineAction({
       .select()
       .from(schema.assessments)
       .where(
-        and(
-          eq(schema.assessments.classId, args.classId),
-          eq(schema.assessments.status, "published"),
-        ),
+        and(eq(schema.assessments.classId, args.classId), sharedWithClass()),
       );
 
     const enrollments = await db

@@ -6,6 +6,7 @@ import { sql } from "drizzle-orm";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { z } from "zod";
 import { getUserLabels, realNameOrNull } from "../server/lib/user-names.js";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
@@ -96,10 +97,7 @@ export default defineAction({
       })
       .from(schema.assessments)
       .where(
-        and(
-          eq(schema.assessments.classId, args.classId),
-          eq(schema.assessments.status, "published"),
-        ),
+        and(eq(schema.assessments.classId, args.classId), sharedWithClass()),
       );
 
     const assessmentIds = assessments.map((a: any) => a.id);

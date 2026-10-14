@@ -161,7 +161,12 @@ export default function StudentClassDetail() {
                     }
                     className="text-xs capitalize"
                   >
-                    {STATUS_WORDS[a.submissionStatus] ?? "Not started"}
+                    {/* Closed and never handed in: "Not started" would read
+                        as something they can still do. */}
+                    {a.status === "closed" &&
+                    !["submitted", "graded"].includes(a.submissionStatus)
+                      ? "Closed"
+                      : (STATUS_WORDS[a.submissionStatus] ?? "Not started")}
                   </Badge>
                   <IconChevronRight
                     size={14}

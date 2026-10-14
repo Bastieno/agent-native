@@ -5,6 +5,7 @@ import { eq, and, inArray, ne } from "drizzle-orm";
 import { z } from "zod";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { isUnassignedTeacher } from "../shared/class-teacher.js";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
@@ -80,7 +81,7 @@ export default defineAction({
             .where(
               and(
                 inArray(schema.assessments.classId, classIds),
-                eq(schema.assessments.status, "published"),
+                sharedWithClass(),
                 // A page to read is not work anyone hands in, so counting
                 // it as outstanding makes every class look behind.
                 ne(schema.assessments.responseMode, "none"),

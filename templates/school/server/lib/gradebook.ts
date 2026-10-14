@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../db/index.js";
 import { missedWorkPolicy, summarise } from "../../shared/missed-work.js";
+import { sharedWithClass } from "./shared-with-class.js";
 
 /**
  * The class's standing for the term, kept up to date by the app.
@@ -55,7 +56,7 @@ export async function recomputeGradebook(
     .where(
       and(
         eq(schema.assessments.classId, classId),
-        eq(schema.assessments.status, "published"),
+        sharedWithClass(),
         carriesMarks(),
       ),
     );

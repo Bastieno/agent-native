@@ -19,6 +19,7 @@ import { viewRoleFor } from "../shared/view-role.js";
 import { proposalView } from "../server/lib/timetable-generation.js";
 import { coverageView } from "../server/lib/timetable-coverage.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
+import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
@@ -600,7 +601,7 @@ export default defineAction({
             .where(
               and(
                 eq(schema.assessments.id, nav.assessmentId),
-                eq(schema.assessments.status, "published"),
+                sharedWithClass(),
               ),
             )
             .limit(1);

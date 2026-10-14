@@ -259,6 +259,26 @@ export async function teachWeek(
         !JSON.stringify(closed).includes("markScheme"),
         "a mark scheme never reaches the learner",
       );
+
+      // Closing stops new answers; it does not take the work back. Every
+      // read that filtered on "published" alone used to drop it here — from
+      // the learner's list, the gradebook and the report card.
+      const theirs = asList(
+        await client.as(firstToHandIn, "get-my-assessments", {}),
+      );
+      findings.expect(
+        phase,
+        theirs.some((a: any) => a?.assessmentId === assessmentId),
+        "a closed paper stays in the learner's own list",
+      );
+      const book = await client.as(school.teacher, "get-gradebook", {
+        classId: school.classId,
+      });
+      findings.expect(
+        phase,
+        JSON.stringify(book).includes(assessmentId!),
+        "a closed paper stays in the gradebook",
+      );
     }
   }
 
