@@ -1,0 +1,2637 @@
+{
+  "subject": "Mathematics",
+  "yearGroup": "JSS3",
+  "weeks": {
+    "1": {
+      "topic": "Constructing triangles and bisecting angles",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. construct a perpendicular from a point to a line, and angles of 90° and 45°;\n2. construct a triangle given two angles and the side between them;\n3. bisect the angles of a triangle to find the centre of its inscribed circle;\n4. measure the sides and angles of a constructed triangle to the nearest millimetre and degree.\n\n## Materials\n\nMathematical sets, plain paper, a board compass and ruler, and cardboard triangles for demonstration.\n\n## Starter (5 minutes)\n\nRevise from JSS2: each learner bisects an angle of about 100° and checks it with a protractor. Ask a learner to explain why the two arcs from the arms must have the same radius.\n\n## Development\n\n1. Constructing 90° at a point on a line: arcs either side of the point, then equal arcs above from those points; join. Bisect 90° to get 45°.\n2. Perpendicular from a point P to a line: an arc from P cutting the line twice, then equal arcs below the line from those two points; join P to the crossing.\n3. Triangle from two angles and a side: AB = 8 cm, angle A = 45° and angle B = 60°. Construct each angle at its end of AB and extend the arms to meet at C. Learners measure AC (about 7.2 cm) and BC (about 5.9 cm) and check angle C = 75°.\n4. The inscribed circle: in any triangle, bisect two of the angles; the bisectors meet at the incentre I. Draw the perpendicular from I to a side to find the radius, then draw the circle touching all three sides.\n5. Worked case: a triangle with sides 6 cm, 8 cm and 10 cm has a right angle and an inscribed circle of radius 2 cm.\n\n## Class activity\n\nPairs construct the 6, 8, 10 cm triangle, find the incentre, and draw the inscribed circle. Partners measure the radius; it should be 2 cm to within 1 mm.\n\n## Evaluation\n\n1. Construct an angle of 45° at a point on a line.\n2. Construct triangle PQR with QR = 7 cm, angle Q = 60° and angle R = 45°, and measure PQ.\n\n## Assignment\n\nWorksheet on the app, due Wednesday. Bring the constructions to class.",
+      "reading": {
+        "title": "Building triangles from instructions",
+        "content": "# Constructing triangles and bisecting angles\n\nIn JSS2 you bisected angles and built triangles from three sides. This term we construct more angles and use bisectors to find special points of a triangle.\n\n## Constructing 90° and 45°\n\nTo construct 90° at a point A on a line, draw arcs of the same radius on either side of A, cutting the line. From those two points, draw equal arcs above the line that cross. Join A to the crossing point.\n\nTo get **45°**, bisect the 90° angle.\n\n## A perpendicular from a point to a line\n\nWith the point P as centre, draw an arc that cuts the line at two points. From each of these points, draw equal arcs on the other side of the line. Join P to where they cross. This is the shortest distance from P to the line.\n\n## A triangle from two angles and a side\n\n**Worked example 1.** Construct triangle ABC with AB = 8 cm, angle CAB = 45° and angle ABC = 60°.\n\n1. Draw AB = 8 cm.\n2. At A, construct 90° and bisect it to get 45°.\n3. At B, construct 60° (an arc from B, then the same radius from where it cuts BA).\n4. Extend the two arms until they meet at C.\n\nAngle C should measure 180° − 45° − 60° = 75°. AC measures about 7.2 cm and BC about 5.9 cm.\n\n## The inscribed circle\n\nThe **inscribed circle** (incircle) touches all three sides of a triangle from the inside. Its centre, the **incentre**, is where the angle bisectors meet.\n\n**Worked example 2.** Triangle PQR has PQ = 6 cm, QR = 8 cm and PR = 10 cm.\n\n1. Construct the triangle from its three sides. Since 6² + 8² = 10², angle Q is 90°.\n2. Bisect angle P and angle Q. Call the meeting point I.\n3. Draw a perpendicular from I to QR. The distance from I to QR is the radius.\n4. With centre I, draw the circle. It touches all three sides.\n\nThe radius measures 2 cm.\n\n## Good habits\n\n- Use a sharp pencil and keep the compass hinge firm.\n- Leave every arc showing.\n- Check angles with a protractor only after constructing them."
+      },
+      "cards": [
+        {
+          "front": "How do you construct 45°?",
+          "back": "Construct 90° and bisect it."
+        },
+        {
+          "front": "Perpendicular from a point to a line",
+          "back": "An arc from the point cuts the line twice; equal arcs from those points cross; join the point to the crossing."
+        },
+        {
+          "front": "Incentre",
+          "back": "The point where the angle bisectors of a triangle meet; the centre of the inscribed circle."
+        },
+        {
+          "front": "Inscribed circle",
+          "back": "A circle inside a triangle that touches all three sides."
+        },
+        {
+          "front": "How do you find the radius of the inscribed circle?",
+          "back": "Measure the perpendicular distance from the incentre to any side."
+        },
+        {
+          "front": "Triangle with angles 45° and 60°: third angle",
+          "back": "180° − 45° − 60° = 75°"
+        },
+        {
+          "front": "A triangle with sides 6, 8 and 10 cm",
+          "back": "Right-angled, because 6² + 8² = 10²."
+        },
+        {
+          "front": "Why leave arcs on a construction?",
+          "back": "They show how it was constructed."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "How is an angle of 45° constructed with ruler and compasses?",
+          "options": [
+            "Construct 90° and bisect it",
+            "Construct 60° and bisect it",
+            "Construct 30° and add 15°",
+            "Bisect a straight line twice"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The bisectors of the three angles of a triangle meet at a point. What is this point the centre of?",
+          "options": [
+            "The circle through the three vertices",
+            "The inscribed circle",
+            "The longest side",
+            "The base"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A learner constructs a triangle with base angles of 45° and 60°. What should the third angle measure?",
+          "options": ["105°", "15°", "75°", "90°"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A triangle is constructed with sides 5 cm, 12 cm and 13 cm. What is the angle opposite the 13 cm side?",
+          "options": ["60°", "45°", "120°", "90°"],
+          "answer": "D"
+        },
+        {
+          "prompt": "What is the first step in constructing the perpendicular from a point P to a line?",
+          "options": [
+            "Draw a line from P at 60° to the line",
+            "With centre P, draw an arc cutting the line at two points",
+            "Bisect the line",
+            "Measure 90° with a protractor"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe how to construct triangle ABC with AB = 8 cm, angle CAB = 45° and angle ABC = 60°, using only a ruler and compasses. State the length of AC you would expect to measure.",
+          "markScheme": [
+            "Draws AB = 8 cm",
+            "Constructs 45° at A by constructing 90° and bisecting it",
+            "Constructs 60° at B",
+            "Extends the arms to meet at C",
+            "AC is about 7.2 cm"
+          ],
+          "modelAnswer": "I draw AB = 8 cm. At A, I construct a right angle and bisect it to give 45°. At B, I draw an arc cutting BA, then with the same radius an arc from that point; joining B to the crossing gives 60°. I extend both arms until they meet at C. Angle C is 75°, and AC measures about 7.2 cm.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1. Draw AB = 8 cm.\n2. At A construct 90° then bisect it to get 45°.\n3. At B construct 60° with the equal-arcs method.\n4. Produce the lines from A and B until they meet at C.\nAC measured 7.2 cm and angle C was 75°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw AB = 8 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "At A construct 90° then bisect it to get 45°"
+                },
+                {
+                  "point": 2,
+                  "quote": "At B construct 60° with the equal-arcs method"
+                },
+                {
+                  "point": 3,
+                  "quote": "Produce the lines from A and B until they meet at C"
+                },
+                {
+                  "point": 4,
+                  "quote": "AC measured 7.2 cm"
+                }
+              ],
+              "feedback": "Full marks. Checking that angle C is 75° confirms the construction is accurate."
+            },
+            {
+              "tier": "full",
+              "text": "Draw an 8 cm line AB. For 45° at A, first make a perpendicular at A and then cut the right angle in half with arcs. For 60° at B, draw an arc from B and use the same radius from where it cuts the line. Where the two slanting lines cross is C. AC is about 7.2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw an 8 cm line AB"
+                },
+                {
+                  "point": 1,
+                  "quote": "For 45° at A, first make a perpendicular at A and then cut the right angle in half with arcs"
+                },
+                {
+                  "point": 2,
+                  "quote": "For 60° at B, draw an arc from B and use the same radius from where it cuts the line"
+                },
+                {
+                  "point": 3,
+                  "quote": "Where the two slanting lines cross is C"
+                },
+                {
+                  "point": 4,
+                  "quote": "AC is about 7.2 cm"
+                }
+              ],
+              "feedback": "All five marks, clearly explained in your own words."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw AB 8 cm. Construct 60° at B. At A construct 60° and bisect it to get 45°. Join to meet at C. AC = 6.2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw AB 8 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "Construct 60° at B"
+                },
+                {
+                  "point": 3,
+                  "quote": "Join to meet at C"
+                }
+              ],
+              "feedback": "Bisecting 60° gives 30°, not 45°. Construct 90° at A and bisect that. With the right angle at A, AC comes out at about 7.2 cm."
+            },
+            {
+              "tier": "partial",
+              "text": "AB = 8 cm. Use a protractor to draw 45° at A and 60° at B. Where they meet is C. AC = 7.2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "AB = 8 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "Where they meet is C"
+                },
+                {
+                  "point": 4,
+                  "quote": "AC = 7.2 cm"
+                }
+              ],
+              "feedback": "The triangle is correct, but the question says ruler and compasses only. Construct 60° with equal arcs, and 45° by bisecting a constructed right angle.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Draw AB 8 cm, then AC 45 cm and BC 60 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw AB 8 cm"
+                }
+              ],
+              "feedback": "45° and 60° are angles, not lengths. Construct each angle at its end of AB, then extend the arms until they meet at C."
+            },
+            {
+              "tier": "weak",
+              "text": "Make a triangle with all angles 60° because that is easy to construct, then AC is 8 cm.",
+              "meets": [],
+              "feedback": "That is an equilateral triangle, not the one asked for. Angle A must be 45°: construct 90° at A and bisect it."
+            }
+          ]
+        },
+        {
+          "prompt": "Triangle PQR has PQ = 6 cm, QR = 8 cm and PR = 10 cm. Describe how to construct the triangle and its inscribed circle, and state the radius you would expect.",
+          "markScheme": [
+            "Constructs the triangle from its three sides with compass arcs",
+            "Bisects two of the angles",
+            "Marks the incentre I where the bisectors meet",
+            "Draws a perpendicular from I to a side to find the radius, and draws the circle",
+            "Radius is about 2 cm"
+          ],
+          "modelAnswer": "I draw QR = 8 cm. With centre Q and radius 6 cm I draw an arc, and with centre R and radius 10 cm another arc; they cross at P, and I join PQ and PR. I bisect angle Q and angle R; the bisectors meet at the incentre I. I construct the perpendicular from I to QR; its length is the radius. With centre I and that radius I draw the circle, which touches all three sides. The radius is about 2 cm.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Draw QR = 8 cm. Arc of 6 cm from Q and arc of 10 cm from R cross at P; join PQ and PR. Bisect angle Q and angle R, they meet at I. Drop a perpendicular from I to QR and use that as the radius. Draw the circle with centre I; it touches all the sides. The radius is 2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Arc of 6 cm from Q and arc of 10 cm from R cross at P; join PQ and PR"
+                },
+                {
+                  "point": 1,
+                  "quote": "Bisect angle Q and angle R"
+                },
+                {
+                  "point": 2,
+                  "quote": "they meet at I"
+                },
+                {
+                  "point": 3,
+                  "quote": "Drop a perpendicular from I to QR and use that as the radius. Draw the circle with centre I"
+                },
+                {
+                  "point": 4,
+                  "quote": "The radius is 2 cm"
+                }
+              ],
+              "feedback": "Full marks, every step in the right order."
+            },
+            {
+              "tier": "full",
+              "text": "Construct the triangle using compass arcs for 6 cm and 10 cm from the ends of the 8 cm base. It has a right angle at Q because 36 + 64 = 100. Bisect any two angles; where the bisectors cross is the centre of the inscribed circle. The radius is the perpendicular from that centre to a side, and it measures 2 cm. Then draw the circle.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Construct the triangle using compass arcs for 6 cm and 10 cm from the ends of the 8 cm base"
+                },
+                {
+                  "point": 1,
+                  "quote": "Bisect any two angles"
+                },
+                {
+                  "point": 2,
+                  "quote": "where the bisectors cross is the centre of the inscribed circle"
+                },
+                {
+                  "point": 3,
+                  "quote": "The radius is the perpendicular from that centre to a side"
+                },
+                {
+                  "point": 4,
+                  "quote": "it measures 2 cm"
+                }
+              ],
+              "feedback": "All five marks. Spotting the right angle from 36 + 64 = 100 is a strong check on your construction."
+            },
+            {
+              "tier": "partial",
+              "text": "Construct the triangle with arcs. Bisect the three sides and where the bisectors meet is the centre. Draw the circle through P, Q and R.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Construct the triangle with arcs"
+                }
+              ],
+              "feedback": "Bisecting the sides gives the circle through the corners, not the inscribed circle. Bisect two of the angles instead; they meet at the incentre, and the circle drawn from there touches the sides."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw QR 8 cm, arcs 6 cm from Q and 10 cm from R to get P. Bisect angle Q and angle R to meet at I. Draw a circle from I to Q. Radius about 2.8 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw QR 8 cm, arcs 6 cm from Q and 10 cm from R to get P"
+                },
+                {
+                  "point": 1,
+                  "quote": "Bisect angle Q and angle R"
+                },
+                {
+                  "point": 2,
+                  "quote": "to meet at I"
+                }
+              ],
+              "feedback": "Correct as far as the incentre. The radius is the perpendicular distance from I to a side, not the distance to a corner; a circle through Q crosses the sides. The radius should be 2 cm."
+            },
+            {
+              "tier": "weak",
+              "text": "Draw the triangle and draw a circle in the middle that fits inside it.",
+              "meets": [],
+              "feedback": "A circle drawn by eye will not touch all three sides exactly. Bisect two angles to find the centre, then use the perpendicular to a side as the radius."
+            },
+            {
+              "tier": "weak",
+              "text": "The radius is half of the shortest side so 3 cm. Draw the triangle and the circle with radius 3 cm.",
+              "meets": [],
+              "feedback": "The radius does not come from halving a side. Find the incentre by bisecting two angles, then measure the perpendicular from it to a side; here that is 2 cm."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Trigonometry: heights and distances",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the sine, cosine and tangent ratios and choose the right one for a problem;\n2. solve problems on angles of elevation, allowing for the observer's eye height;\n3. solve problems on angles of depression, using alternate angles;\n4. solve two-step problems involving two angles from the same point.\n\n## Materials\n\nA clinometer, a measuring tape, four-figure tables of sine, cosine and tangent, and graph paper for checking by scale drawing.\n\n## Starter (5 minutes)\n\nRevise from JSS2: a tree is 20 m away and its top is at 45°. How tall is it? Then ask: does it matter that the learner's eyes are 1.5 m above the ground?\n\n## Development\n\n1. SOH CAH TOA: sin θ = opposite ÷ hypotenuse; cos θ = adjacent ÷ hypotenuse; tan θ = opposite ÷ adjacent. Label the sides from the angle being used.\n2. Ladder: a 10 m ladder at 60° to the ground reaches 10 sin 60° = 8.66 m up the wall.\n3. Eye height: the right-angled triangle starts at eye level. Height above eyes = 25 tan 50° = 29.8 m; add 1.6 m to get 31.4 m.\n4. Depression: from a window 12 m up, a car is seen at 25° below the horizontal. The angle at the car is 25°, so the distance is 12 ÷ tan 25° = 25.7 m.\n5. Two boats: from an 80 m cliff, boats at 45° and 30°. Find each distance separately (80 m and 138.6 m), then subtract.\n6. Encourage a rough sketch with the right angle and the given angle marked before any calculation.\n\n## Class activity\n\nGroups measure the angle of elevation of the top of the school block from two different distances, calculate its height both times, and compare.\n\n## Evaluation\n\n1. A kite string 50 m long makes 40° with the ground. How high is the kite?\n2. From the top of a 30 m tower, a well is seen at an angle of depression of 35°. How far is the well from the tower?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Using sine, cosine and tangent",
+        "content": "# Trigonometry: heights and distances\n\n## The three ratios\n\nIn a right-angled triangle, name the sides from the angle θ you are using: the **hypotenuse** is opposite the right angle, the **opposite** side faces θ, and the **adjacent** side is next to θ.\n\n- sin θ = opposite ÷ hypotenuse\n- cos θ = adjacent ÷ hypotenuse\n- tan θ = opposite ÷ adjacent\n\nMany learners remember SOH CAH TOA.\n\n**Worked example 1.** A ladder 10 m long leans against a wall and makes 60° with the ground. The height it reaches is opposite the angle and the ladder is the hypotenuse, so height = 10 × sin 60° = 10 × 0.8660 = 8.66 m.\n\n## Eye height\n\nAn observer's eyes are above the ground, so the horizontal line in the triangle is at eye level.\n\n**Worked example 2.** A learner whose eyes are 1.6 m above the ground stands 25 m from a tree. The angle of elevation of the top is 50°.\n\n- Height above eye level = 25 × tan 50° = 25 × 1.1918 = 29.8 m.\n- Height of the tree = 29.8 + 1.6 = 31.4 m.\n\nForgetting to add the eye height is the most common mistake.\n\n## Angles of depression\n\nThe angle of depression from the top equals the angle of elevation from the bottom (alternate angles), so put it at the bottom of the triangle.\n\n**Worked example 3.** From a window 12 m above the ground, the angle of depression of a parked car is 25°. Distance = 12 ÷ tan 25° = 12 ÷ 0.4663 = 25.7 m.\n\n## Two-step problems\n\n**Worked example 4.** From the top of a cliff 80 m high, two boats due east are seen at angles of depression of 45° and 30°.\n\n- Near boat: 80 ÷ tan 45° = 80 ÷ 1 = 80 m from the cliff.\n- Far boat: 80 ÷ tan 30° = 80 ÷ 0.5774 = 138.6 m.\n- Distance between the boats = 138.6 − 80 = 58.6 m.\n\nThe smaller angle belongs to the boat that is further away.\n\n## Useful values\n\n| θ | sin θ | cos θ | tan θ |\n| --- | --- | --- | --- |\n| 25° | 0.4226 | 0.9063 | 0.4663 |\n| 30° | 0.5000 | 0.8660 | 0.5774 |\n| 40° | 0.6428 | 0.7660 | 0.8391 |\n| 45° | 0.7071 | 0.7071 | 1.0000 |\n| 50° | 0.7660 | 0.6428 | 1.1918 |\n| 60° | 0.8660 | 0.5000 | 1.7321 |"
+      },
+      "cards": [
+        {
+          "front": "sin θ",
+          "back": "Opposite ÷ hypotenuse."
+        },
+        {
+          "front": "cos θ",
+          "back": "Adjacent ÷ hypotenuse."
+        },
+        {
+          "front": "tan θ",
+          "back": "Opposite ÷ adjacent."
+        },
+        {
+          "front": "Hypotenuse",
+          "back": "The longest side, opposite the right angle."
+        },
+        {
+          "front": "Eye height in elevation problems",
+          "back": "Work out the height above eye level, then add the eye height."
+        },
+        {
+          "front": "Where does the angle of depression go in the triangle?",
+          "back": "At the bottom, as an equal angle of elevation (alternate angles)."
+        },
+        {
+          "front": "Two boats seen from a cliff",
+          "back": "Find each boat's distance separately, then subtract."
+        },
+        {
+          "front": "10 m ladder at 60° to the ground: height reached",
+          "back": "10 sin 60° = 8.66 m"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In a right-angled triangle, which ratio gives sin θ?",
+          "options": [
+            "Opposite ÷ hypotenuse",
+            "Adjacent ÷ hypotenuse",
+            "Opposite ÷ adjacent",
+            "Hypotenuse ÷ adjacent"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A ladder 10 m long leans against a wall, making an angle of 60° with the ground. How high up the wall does it reach? (sin 60° = 0.8660)",
+          "options": ["5 m", "8.66 m", "17.32 m", "11.55 m"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A learner whose eyes are 1.5 m above the ground stands 20 m from a flagpole. The angle of elevation of its top is 35°. How tall is the flagpole? (tan 35° = 0.7002)",
+          "options": ["14.0 m", "12.5 m", "15.5 m", "11.5 m"],
+          "answer": "C"
+        },
+        {
+          "prompt": "From a window 12 m above the ground, the angle of depression of a parked car is 25°. How far is the car from the foot of the building? (tan 25° = 0.4663)",
+          "options": ["5.6 m", "13.2 m", "28.4 m", "25.7 m"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A kite string is 50 m long and makes an angle of 40° with the level ground. How high is the kite? (sin 40° = 0.6428, cos 40° = 0.7660)",
+          "options": ["32.1 m", "38.3 m", "42.0 m", "59.6 m"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A learner whose eyes are 1.6 m above the ground stands 25 m from the foot of a tree on level ground. The angle of elevation of the top of the tree is 50°. Find the height of the tree. (tan 50° = 1.1918)",
+          "markScheme": [
+            "Uses a right-angled triangle at eye level with adjacent side 25 m",
+            "tan 50° = h ÷ 25",
+            "h = 25 × 1.1918 = 29.8 m",
+            "Adds the eye height: 29.8 + 1.6 = 31.4 m"
+          ],
+          "modelAnswer": "The horizontal line from the learner's eyes to the tree is 25 m, and the angle of elevation is 50°. Let h be the height of the tree above eye level. tan 50° = h ÷ 25, so h = 25 × 1.1918 = 29.8 m. The tree's height is 29.8 + 1.6 = 31.4 m.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The triangle is from eye level: adjacent = 25 m, angle 50°.\ntan 50° = h/25\nh = 25 × 1.1918 = 29.8 m\nHeight of tree = 29.8 + 1.6 = 31.4 m",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The triangle is from eye level: adjacent = 25 m, angle 50°."
+                },
+                {
+                  "point": 1,
+                  "quote": "tan 50° = h/25"
+                },
+                {
+                  "point": 2,
+                  "quote": "h = 25 × 1.1918 = 29.8 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "Height of tree = 29.8 + 1.6 = 31.4 m"
+                }
+              ],
+              "feedback": "Full marks. Saying that the triangle starts at eye level shows exactly why the 1.6 m is added."
+            },
+            {
+              "tier": "full",
+              "text": "Opposite is the part of the tree above my eyes, adjacent is the 25 m along the level from my eyes to the tree. tan 50 = opposite/25 so opposite = 29.795 ≈ 29.8 m. I add my eye height of 1.6 m: the tree is 31.4 m tall.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "adjacent is the 25 m along the level from my eyes to the tree"
+                },
+                {
+                  "point": 1,
+                  "quote": "tan 50 = opposite/25"
+                },
+                {
+                  "point": 2,
+                  "quote": "opposite = 29.795 ≈ 29.8 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "I add my eye height of 1.6 m: the tree is 31.4 m tall"
+                }
+              ],
+              "feedback": "All four marks, with each side named before using the ratio."
+            },
+            {
+              "tier": "partial",
+              "text": "tan 50° = h/25, h = 25 × 1.1918 = 29.8 m. The tree is 29.8 m tall.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "tan 50° = h/25"
+                },
+                {
+                  "point": 2,
+                  "quote": "h = 25 × 1.1918 = 29.8 m"
+                }
+              ],
+              "feedback": "Your trigonometry is right, but 29.8 m is the height above the learner's eyes. Add the 1.6 m eye height: the tree is 31.4 m tall."
+            },
+            {
+              "tier": "partial",
+              "text": "Adjacent is 25 m. tan 50° = 25/h, h = 25 ÷ 1.1918 = 21.0 m. Add 1.6 to get 22.6 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Adjacent is 25 m"
+                }
+              ],
+              "feedback": "You named the adjacent side and remembered the eye height. But tan is opposite ÷ adjacent, so tan 50° = h ÷ 25 and h = 25 × 1.1918 = 29.8 m, giving 31.4 m. At an angle above 45°, the tree must be taller than the 25 m distance.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "sin 50° = h/25 so h = 25 × 0.7660 = 19.2 m.",
+              "meets": [],
+              "feedback": "Sine uses the hypotenuse, which you do not know here. You know the adjacent side (25 m) and want the opposite, so use tan 50° = h ÷ 25, then add the 1.6 m eye height."
+            },
+            {
+              "tier": "weak",
+              "text": "The tree is 25 + 1.6 = 26.6 m because I am standing 25 m away.",
+              "meets": [],
+              "feedback": "The distance away is not the height; that is only true at 45°. Use tan 50° = h ÷ 25 to find the height above your eyes, then add 1.6 m."
+            }
+          ]
+        },
+        {
+          "prompt": "From the top of a cliff 80 m high, two boats due east of the cliff are seen at angles of depression of 45° and 30°. Find the distance between the two boats, correct to one decimal place. (tan 45° = 1, tan 30° = 0.5774)",
+          "markScheme": [
+            "Places each angle at the boat (alternate angles) with the 80 m height opposite",
+            "Near boat: 80 ÷ tan 45° = 80 m from the cliff",
+            "Far boat: 80 ÷ tan 30° = 138.6 m from the cliff",
+            "Distance between the boats = 138.6 − 80 = 58.6 m"
+          ],
+          "modelAnswer": "The angles of depression equal the angles of elevation from the boats, so each boat makes a right-angled triangle with the cliff, with the 80 m height opposite the angle. The nearer boat is at 45°: its distance is 80 ÷ tan 45° = 80 m. The further boat is at 30°: its distance is 80 ÷ 0.5774 = 138.6 m. The boats are 138.6 − 80 = 58.6 m apart.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Angles at the boats are 45° and 30° (alternate angles). Opposite = 80 m.\nNear boat: d₁ = 80 ÷ tan 45° = 80 m\nFar boat: d₂ = 80 ÷ tan 30° = 80 ÷ 0.5774 = 138.6 m\nDistance apart = 138.6 − 80 = 58.6 m",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Angles at the boats are 45° and 30° (alternate angles). Opposite = 80 m."
+                },
+                {
+                  "point": 1,
+                  "quote": "d₁ = 80 ÷ tan 45° = 80 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "d₂ = 80 ÷ tan 30° = 80 ÷ 0.5774 = 138.6 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "Distance apart = 138.6 − 80 = 58.6 m"
+                }
+              ],
+              "feedback": "Full marks. Treating the two boats as two separate triangles is the clearest way to do this."
+            },
+            {
+              "tier": "full",
+              "text": "The 45° boat is nearer because the angle is bigger. tan 45 = 80/x so x = 80 m. For the 30° boat, tan 30 = 80/y, y = 80/0.5774 = 138.55 m, about 138.6 m. Both triangles have the angle at the boat because of alternate angles with the horizontal. So the boats are 58.6 m apart.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Both triangles have the angle at the boat because of alternate angles with the horizontal"
+                },
+                {
+                  "point": 1,
+                  "quote": "tan 45 = 80/x so x = 80 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "y = 80/0.5774 = 138.55 m, about 138.6 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "So the boats are 58.6 m apart"
+                }
+              ],
+              "feedback": "All four marks. Explaining which boat is nearer before calculating is good thinking."
+            },
+            {
+              "tier": "partial",
+              "text": "Near boat = 80 ÷ tan 45° = 80 m. Far boat = 80 ÷ tan 30° = 138.6 m. The boats are 138.6 m apart.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Near boat = 80 ÷ tan 45° = 80 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "Far boat = 80 ÷ tan 30° = 138.6 m"
+                }
+              ],
+              "feedback": "Both distances from the cliff are right. The question asks how far apart the boats are, so subtract: 138.6 − 80 = 58.6 m. Also say why the angles sit at the boats (alternate angles)."
+            },
+            {
+              "tier": "partial",
+              "text": "The angles at the boats are 45° and 30°. Near boat: 80 × tan 45° = 80 m. Far boat: 80 × tan 30° = 46.2 m. Difference = 33.8 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The angles at the boats are 45° and 30°"
+                }
+              ],
+              "feedback": "The angles are placed correctly, and the near boat is 80 m away by luck, because tan 45° = 1. For the far boat, the 80 m is opposite the 30° angle, so divide: 80 ÷ 0.5774 = 138.6 m. Then the boats are 58.6 m apart."
+            },
+            {
+              "tier": "weak",
+              "text": "45 − 30 = 15° so the distance is 80 × tan 15°.",
+              "meets": [],
+              "feedback": "Subtracting the angles does not give a right-angled triangle. Find each boat's distance from the cliff separately, using 80 ÷ tan 45° and 80 ÷ tan 30°, then subtract the distances."
+            },
+            {
+              "tier": "weak",
+              "text": "The boats are 80 m apart because the cliff is 80 m high.",
+              "meets": [],
+              "feedback": "80 m is only the near boat's distance from the cliff. The far boat is 80 ÷ tan 30° = 138.6 m away, so the boats are 58.6 m apart."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Bearings and distances",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. give directions using the cardinal and intercardinal points (N, NE, E, SE, S, SW, W, NW);\n2. write a direction as a three-figure bearing measured clockwise from north;\n3. find a back bearing by adding or subtracting 180°;\n4. solve problems on bearings and distances by scale drawing and by Pythagoras' theorem and trigonometry.\n\n## Materials\n\nA magnetic compass, protractors, graph paper, a map of south-west Nigeria, and a large compass rose drawn on the floor of the school field.\n\n## Starter (5 minutes)\n\nTake the class to the compass rose on the field. Ask learners to face north, then turn to face the school gate. Ask: how far did you turn, and in which direction?\n\n## Development\n\n1. The eight points of the compass, with the angles between them (45°).\n2. Three-figure bearings: always from north, always clockwise, always three digits: east is 090°, south-west is 225°.\n3. Back bearings: if B is on a bearing of 060° from A, then A is on a bearing of 060° + 180° = 240° from B.\n4. Scale drawing: draw a north line at each point. A cyclist rides 8 km on 090° and then 6 km on 180°. With 1 cm to 1 km, draw and measure.\n5. Calculation: when the turn is a right angle, use Pythagoras for the distance (10 km) and tan for the angle (36.9°), then turn the angle into a bearing (126.9°).\n6. A ship's journey with two legs: find the angle between the legs from the back bearing first.\n\n## Class activity\n\nGroups take bearings and pace distances between three landmarks on the school field, then make a scale drawing of the route.\n\n## Evaluation\n\n1. Write NW as a three-figure bearing.\n2. The bearing of X from Y is 125°. Find the bearing of Y from X.\n3. A man walks 3 km north and then 4 km east. How far is he from his start?\n\n## Assignment\n\nProblem set on the app, due Tuesday.",
+      "reading": {
+        "title": "Finding your way with bearings",
+        "content": "# Bearings and distances\n\n## Cardinal points\n\nThe four **cardinal points** are north, east, south and west. Between them are north-east (NE), south-east (SE), south-west (SW) and north-west (NW).\n\n## Three-figure bearings\n\nA **bearing** gives a direction as an angle:\n\n- measured from **north**,\n- turning **clockwise**,\n- written with **three figures**.\n\n| Direction | Bearing |\n| --- | --- |\n| North | 000° |\n| North-east | 045° |\n| East | 090° |\n| South-east | 135° |\n| South | 180° |\n| South-west | 225° |\n| West | 270° |\n| North-west | 315° |\n\n## Back bearings\n\nIf B is on a bearing of 060° from A, then A is on a bearing of 060° + 180° = 240° from B. If the bearing is more than 180°, subtract 180° instead: the back bearing of 300° is 120°.\n\n## Solving bearing problems\n\nAlways draw a sketch with a **north line** at every point.\n\n**Worked example 1.** A cyclist rides 8 km from village P on a bearing of 090° and then 6 km on a bearing of 180° to Q. How far and on what bearing is Q from P?\n\nThe route turns through a right angle, so:\n\n- PQ² = 8² + 6² = 64 + 36 = 100, so PQ = 10 km.\n- The angle between east and PQ: tan θ = 6 ÷ 8 = 0.75, so θ = 36.9°.\n- Bearing of Q from P = 090° + 36.9° = 126.9°.\n\n**By scale drawing**, with 1 cm to 1 km: draw 8 cm east and 6 cm south, measure PQ (10 cm, so 10 km) and the bearing with a protractor from the north line at P.\n\n**Worked example 2.** A ship sails from L on a bearing of 040° for 50 km to A, then on 130° for 120 km to B.\n\nAt A, the back bearing to L is 040° + 180° = 220°. The angle between the legs is 220° − 130° = 90°. So LB = √(50² + 120²) = √16,900 = 130 km.\n\n## Watch out\n\n- Measure from north, not from the line you just travelled along.\n- Do not mix up 'the bearing of A from B' (stand at B) with 'the bearing of B from A' (stand at A)."
+      },
+      "cards": [
+        {
+          "front": "Three-figure bearing",
+          "back": "An angle measured clockwise from north, written with three digits."
+        },
+        {
+          "front": "Bearing of east",
+          "back": "090°"
+        },
+        {
+          "front": "Bearing of south-west",
+          "back": "225°"
+        },
+        {
+          "front": "Back bearing of 060°",
+          "back": "060° + 180° = 240°"
+        },
+        {
+          "front": "Back bearing of 300°",
+          "back": "300° − 180° = 120°"
+        },
+        {
+          "front": "What must every point in a bearing sketch have?",
+          "back": "Its own north line."
+        },
+        {
+          "front": "3 km north then 4 km east: distance from start",
+          "back": "5 km (Pythagoras)."
+        },
+        {
+          "front": "Bearing of B from A",
+          "back": "Stand at A, face north, turn clockwise to face B."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the three-figure bearing of due east?",
+          "options": ["090°", "270°", "180°", "045°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The bearing of A from B is 060°. What is the bearing of B from A?",
+          "options": ["060°", "120°", "240°", "300°"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Write south-west as a three-figure bearing.",
+          "options": ["045°", "135°", "315°", "225°"],
+          "answer": "D"
+        },
+        {
+          "prompt": "On a map, 1 cm represents 2 km. Two towns are 6.5 cm apart on the map. How far apart are they?",
+          "options": ["3.25 km", "13 km", "8.5 km", "130 km"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A man walks 3 km due north and then 4 km due east. How far is he from his starting point?",
+          "options": ["7 km", "1 km", "5 km", "12 km"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A cyclist rides 8 km from village P on a bearing of 090°, then 6 km on a bearing of 180° to village Q. (a) How far is Q from P? (b) Find the bearing of Q from P, to the nearest degree. (tan 36.9° = 0.75)",
+          "markScheme": [
+            "Recognises a right angle between the two legs (east then south)",
+            "PQ² = 8² + 6² = 100",
+            "PQ = 10 km",
+            "Angle between east and PQ: tan θ = 6 ÷ 8, θ = 36.9°",
+            "Bearing = 090° + 36.9° = 127°"
+          ],
+          "modelAnswer": "The cyclist goes east and then south, so the two legs meet at a right angle. (a) PQ² = 8² + 6² = 64 + 36 = 100, so PQ = 10 km. (b) At P, the angle between due east and the line PQ is θ, where tan θ = 6 ÷ 8 = 0.75, so θ = 36.9°. The bearing is measured from north, so it is 090° + 36.9° = 126.9°, which is 127° to the nearest degree.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "East then south makes a right angle.\n(a) PQ² = 8² + 6² = 64 + 36 = 100, PQ = 10 km\n(b) tan θ = 6/8 = 0.75, θ = 36.9°. Bearing = 90 + 36.9 = 126.9° ≈ 127°",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "East then south makes a right angle."
+                },
+                {
+                  "point": 1,
+                  "quote": "PQ² = 8² + 6² = 64 + 36 = 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "PQ = 10 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "tan θ = 6/8 = 0.75, θ = 36.9°"
+                },
+                {
+                  "point": 4,
+                  "quote": "Bearing = 90 + 36.9 = 126.9° ≈ 127°"
+                }
+              ],
+              "feedback": "Full marks. Adding the 90° to turn your angle into a bearing from north is the step most people miss."
+            },
+            {
+              "tier": "full",
+              "text": "My sketch: P, go 8 km right (east), then 6 km down (south), the corner is 90°. Distance = √(64 + 36) = √100 = 10 km. The angle below the east line is 36.9° because tan = 6 ÷ 8 = 0.75. From north, clockwise, that is 90° + 36.9° so the bearing of Q from P is 127°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the corner is 90°"
+                },
+                {
+                  "point": 1,
+                  "quote": "√(64 + 36) = √100"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 10 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "The angle below the east line is 36.9° because tan = 6 ÷ 8 = 0.75"
+                },
+                {
+                  "point": 4,
+                  "quote": "the bearing of Q from P is 127°"
+                }
+              ],
+              "feedback": "All five marks. Describing your sketch shows clearly where each angle sits."
+            },
+            {
+              "tier": "partial",
+              "text": "PQ² = 8² + 6² = 100, PQ = 10 km. tan θ = 6/8, θ = 36.9°. Bearing = 036.9°.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "PQ² = 8² + 6² = 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "PQ = 10 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "tan θ = 6/8, θ = 36.9°"
+                }
+              ],
+              "feedback": "The distance and the angle are right. But 36.9° is measured from east, not north. A bearing starts at north, so add 90°: 126.9°, or 127°. A bearing of 037° would point north-east, but Q is south-east of P."
+            },
+            {
+              "tier": "partial",
+              "text": "PQ = √(8² + 6²) = √100 = 10 km. Q is south-east of P so the bearing is 135°.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "√(8² + 6²) = √100"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 10 km"
+                }
+              ],
+              "feedback": "The distance is right. Q is not exactly south-east, because the two legs are not equal: find the angle with tan θ = 6 ÷ 8 = 0.75 (θ = 36.9°), then add it to 090° to get 127°."
+            },
+            {
+              "tier": "weak",
+              "text": "Q is 2 km from P because 8 − 6 = 2. Bearing 180°.",
+              "meets": [],
+              "feedback": "The two rides are at right angles, so the distances are not subtracted. Draw a sketch: 8 km east, then 6 km south, and use Pythagoras to find PQ."
+            },
+            {
+              "tier": "weak",
+              "text": "The bearing is 090° + 180° = 270°.",
+              "meets": [],
+              "feedback": "Adding the two bearings does not give the direction of Q. Sketch the journey, with a north line at P, and find the angle with tan θ = 6 ÷ 8; then add it to 090°."
+            }
+          ]
+        },
+        {
+          "prompt": "A ship leaves port L and sails 50 km on a bearing of 040° to point A. It then sails 120 km on a bearing of 130° to point B. (a) Show that angle LAB is 90°. (b) Find the distance LB. (c) Find the bearing of B from L, to the nearest degree. (tan 67.4° = 2.4)",
+          "markScheme": [
+            "Back bearing of L from A is 040° + 180° = 220°",
+            "Angle LAB = 220° − 130° = 90°",
+            "LB² = 50² + 120², so LB = 130 km",
+            "Angle ALB: tan = 120 ÷ 50 = 2.4, so angle ALB = 67.4°",
+            "Bearing of B from L = 040° + 67.4° = 107°"
+          ],
+          "modelAnswer": "(a) At A, the bearing back to L is 040° + 180° = 220°. The ship leaves A on 130°, so angle LAB = 220° − 130° = 90°. (b) LB² = 50² + 120² = 2,500 + 14,400 = 16,900, so LB = 130 km. (c) In the right-angled triangle, tan(angle ALB) = 120 ÷ 50 = 2.4, so angle ALB = 67.4°. The bearing of B from L is 040° + 67.4° = 107.4°, which is 107°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Back bearing at A = 040 + 180 = 220°. Angle LAB = 220 − 130 = 90°.\n(b) LB² = 50² + 120² = 2500 + 14400 = 16900, LB = 130 km.\n(c) tan ALB = 120/50 = 2.4, angle ALB = 67.4°. Bearing = 040 + 67.4 = 107.4° ≈ 107°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Back bearing at A = 040 + 180 = 220°"
+                },
+                {
+                  "point": 1,
+                  "quote": "Angle LAB = 220 − 130 = 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "LB² = 50² + 120² = 2500 + 14400 = 16900, LB = 130 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "tan ALB = 120/50 = 2.4, angle ALB = 67.4°"
+                },
+                {
+                  "point": 4,
+                  "quote": "Bearing = 040 + 67.4 = 107.4° ≈ 107°"
+                }
+              ],
+              "feedback": "Full marks. Using the back bearing to prove the right angle was exactly the intended method."
+            },
+            {
+              "tier": "full",
+              "text": "At A I draw a north line. L is behind me on 220° (40 + 180). B is on 130°. The angle between them is 220 − 130 = 90°, so LAB is a right angle. Then LB = √(50² + 120²) = √16900 = 130 km. At L, angle between LA and LB is 67.4° since tan = 120/50 = 2.4. LA is already at 040° so B is on 040 + 67.4 = 107° from L.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "L is behind me on 220° (40 + 180)"
+                },
+                {
+                  "point": 1,
+                  "quote": "The angle between them is 220 − 130 = 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "LB = √(50² + 120²) = √16900 = 130 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "angle between LA and LB is 67.4° since tan = 120/50 = 2.4"
+                },
+                {
+                  "point": 4,
+                  "quote": "B is on 040 + 67.4 = 107° from L"
+                }
+              ],
+              "feedback": "All five marks, and your explanation of where each angle comes from is clear.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Angle LAB = 130 − 40 = 90°. LB = √(50² + 120²) = 130 km. Bearing = 67.4°.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "LB = √(50² + 120²) = 130 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "67.4°"
+                }
+              ],
+              "feedback": "The distance is right, and so is the angle at L. Your 90° came out right by chance: show it with the back bearing, 040° + 180° = 220°, then 220° − 130° = 90°. A bearing is measured from north, so add the 040° of the first leg: 107°."
+            },
+            {
+              "tier": "partial",
+              "text": "Back bearing = 220°. Angle LAB = 220 − 130 = 90°. LB = 50 + 120 = 170 km.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Back bearing = 220°"
+                },
+                {
+                  "point": 1,
+                  "quote": "Angle LAB = 220 − 130 = 90°"
+                }
+              ],
+              "feedback": "Part (a) is fully correct. Since LAB is a right angle, use Pythagoras for LB: √(50² + 120²) = 130 km. Then find angle ALB with tan = 120 ÷ 50 and add it to 040° for the bearing."
+            },
+            {
+              "tier": "weak",
+              "text": "LB = 120 − 50 = 70 km and the bearing is 130°.",
+              "meets": [],
+              "feedback": "The legs are at right angles, so the distances are not subtracted; use Pythagoras. The bearing of B from L is measured at L, not at A, so it is not 130°."
+            },
+            {
+              "tier": "weak",
+              "text": "Angle LAB = 40 + 130 = 170°, LB = 170 km.",
+              "meets": [],
+              "feedback": "Adding the bearings does not give the angle at A. Find the back bearing of L from A (220°) and subtract the new bearing (130°): the angle is 90°."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Constructing special angles and copying angles",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. construct angles of 60° and 120° by stepping a fixed radius round an arc;\n2. construct 90°, and obtain 30° and 45° by bisecting 60° and 90°;\n3. copy any given angle onto a new line using compasses only;\n4. use these constructions to build a triangle containing a 120° angle.\n\n## Materials\n\nMathematical sets, plain paper, board instruments, and an angle drawn on a card for each pair to copy.\n\n## Starter (5 minutes)\n\nAsk: which angles can we already construct without a protractor? Collect 60°, 90° and the halves we get by bisecting. Ask whether 50° can be constructed exactly (it cannot with these methods).\n\n## Development\n\n1. 60°: an arc from the vertex cuts the line at P; with the same radius from P, cut the arc at Q. The three points form an equilateral triangle.\n2. 120°: step the same radius once more round the arc from Q to R. Angle PAR is 120°.\n3. 30°: bisect 60°. 90°: bisect the straight angle (or bisect between 60° and 120°). 45°: bisect 90°.\n4. Copying an angle XYZ at Q: an arc from Y cutting the arms at M and N; the same arc from Q cutting the new line at S; set the compasses to MN and, from S, cut the arc at T; join QT.\n5. Explain why copying works: the two triangles have three equal sides, so the angles are equal.\n6. Use 120° to construct triangle ABC with AB = 6 cm, angle B = 120°, BC = 4 cm; AC measures about 8.7 cm.\n\n## Class activity\n\nEach pair copies the angle on their card, then swaps with another pair who check it with a protractor. Fast finishers construct 30°, 45°, 60°, 90° and 120° on one line.\n\n## Evaluation\n\n1. Construct an angle of 30° and check it.\n2. Copy the angle drawn on the board at point Q.\n\n## Assignment\n\nWorksheet on the app, due Thursday.",
+      "reading": {
+        "title": "Angles without a protractor",
+        "content": "# Constructing special angles and copying angles\n\nWith a ruler and compasses you can construct some angles exactly. The protractor is only for checking.\n\n## 60° and 120°\n\nThe key is that the radius steps round a circle exactly six times, making six equilateral triangles.\n\n1. With centre A, draw a large arc cutting the line at P.\n2. With the **same radius** and centre P, cut the arc at Q. Join AQ: angle PAQ = 60°.\n3. With the same radius and centre Q, cut the arc again at R. Join AR: angle PAR = 120°.\n\n## 90°, 45° and 30°\n\n- **90°:** bisect a straight angle (180°), or bisect the angle between 60° and 120°.\n- **45°:** bisect 90°.\n- **30°:** bisect 60°.\n\nBisecting again gives 22.5° and 15°. But angles such as 50° cannot be constructed exactly by these methods.\n\n## Copying an angle\n\n**Worked example.** Copy angle XYZ at the point Q on line QR.\n\n1. With centre Y, draw an arc cutting YX at M and YZ at N.\n2. With the **same radius** and centre Q, draw an arc cutting QR at S.\n3. Set the compasses to the distance MN.\n4. With centre S, draw an arc cutting the first arc at T.\n5. Join QT. Angle TQS equals angle XYZ.\n\nIt works because triangles YMN and QTS have the same three sides, so their angles are the same.\n\n## Using the constructions\n\nTo construct triangle ABC with AB = 6 cm, angle ABC = 120° and BC = 4 cm:\n\n1. Draw AB = 6 cm.\n2. At B, construct 120° from the line BA, stepping the radius twice.\n3. With centre B and radius 4 cm, mark C on the 120° arm.\n4. Join AC. It measures about 8.7 cm.\n\nThe 120° angle is the largest angle, so AC is the longest side.\n\n## Checklist\n\n- Keep the radius fixed when stepping round an arc.\n- Leave all arcs showing.\n- Label points so your steps can be followed."
+      },
+      "cards": [
+        {
+          "front": "Constructing 60°",
+          "back": "Arc from the vertex; same radius from where it cuts the line; join to the crossing."
+        },
+        {
+          "front": "Constructing 120°",
+          "back": "Step the same radius twice round the arc from the line."
+        },
+        {
+          "front": "Constructing 30°",
+          "back": "Construct 60° and bisect it."
+        },
+        {
+          "front": "Constructing 45°",
+          "back": "Construct 90° and bisect it."
+        },
+        {
+          "front": "Why does stepping the radius give 60°?",
+          "back": "It makes an equilateral triangle, whose angles are all 60°."
+        },
+        {
+          "front": "Copying an angle: which distance is transferred?",
+          "back": "The distance between the points where the first arc cuts the two arms."
+        },
+        {
+          "front": "Why does copying an angle work?",
+          "back": "The two triangles have three equal sides, so their angles are equal."
+        },
+        {
+          "front": "Can 50° be constructed exactly with ruler and compasses?",
+          "back": "No, not by these methods; it must be measured."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "How is an angle of 30° constructed?",
+          "options": [
+            "Construct 90° and bisect it",
+            "Construct 120° and bisect it",
+            "Construct 60° and bisect it",
+            "Construct 45° and bisect it"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A learner draws an arc from A cutting the line at P, then steps the same radius twice round the arc to R. What is angle PAR?",
+          "options": ["120°", "60°", "90°", "180°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "When copying angle XYZ onto a new line, the first arc cuts the arms of XYZ at M and N. Which distance is set on the compasses next?",
+          "options": ["YM", "XZ", "YN", "MN"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these angles cannot be constructed exactly with ruler and compasses using the methods in this topic?",
+          "options": ["30°", "50°", "45°", "120°"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A learner constructs 90° and then bisects it twice. What is the size of the smallest angle made?",
+          "options": ["45°", "30°", "22.5°", "15°"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Angle XYZ is drawn on the board. Describe how to copy it exactly at point Q on a line QR, using only a ruler and a pair of compasses.",
+          "markScheme": [
+            "With centre Y, draws an arc cutting YX and YZ (at M and N)",
+            "With the same radius and centre Q, draws an arc cutting QR (at S)",
+            "Sets the compasses to the distance MN",
+            "With centre S, cuts the arc at T",
+            "Joins QT, so angle TQS equals angle XYZ"
+          ],
+          "modelAnswer": "With centre Y, I draw an arc cutting YX at M and YZ at N. Keeping the same radius, I put the point on Q and draw an arc cutting QR at S. I then open the compasses to the distance MN. With centre S, I draw an arc cutting the first arc at T. I join QT, and angle TQS is a copy of angle XYZ.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1. Compass on Y, draw an arc cutting the arms at M and N.\n2. Same radius, compass on Q, draw an arc cutting QR at S.\n3. Open the compass to the length MN.\n4. Put it on S and cut the arc at T.\n5. Join Q to T. Angle TQS = angle XYZ.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Compass on Y, draw an arc cutting the arms at M and N"
+                },
+                {
+                  "point": 1,
+                  "quote": "Same radius, compass on Q, draw an arc cutting QR at S"
+                },
+                {
+                  "point": 2,
+                  "quote": "Open the compass to the length MN"
+                },
+                {
+                  "point": 3,
+                  "quote": "Put it on S and cut the arc at T"
+                },
+                {
+                  "point": 4,
+                  "quote": "Join Q to T. Angle TQS = angle XYZ."
+                }
+              ],
+              "feedback": "Full marks. Labelling every point makes your method easy to follow and check."
+            },
+            {
+              "tier": "full",
+              "text": "Draw an arc from the corner Y across both arms and call the points M and N. Without changing the compass, draw the same arc from Q across the line QR, it meets the line at S. Now measure the gap between M and N with the compass and from S mark that gap on the new arc, call it T. The line from Q through T makes the same angle, because triangle YMN and triangle QST have equal sides.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw an arc from the corner Y across both arms and call the points M and N"
+                },
+                {
+                  "point": 1,
+                  "quote": "Without changing the compass, draw the same arc from Q across the line QR, it meets the line at S"
+                },
+                {
+                  "point": 2,
+                  "quote": "measure the gap between M and N with the compass"
+                },
+                {
+                  "point": 3,
+                  "quote": "from S mark that gap on the new arc, call it T"
+                },
+                {
+                  "point": 4,
+                  "quote": "The line from Q through T makes the same angle"
+                }
+              ],
+              "feedback": "All five marks, and you explained why it works with the equal triangles. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw an arc from Y cutting the arms at M and N. Draw an arc from Q cutting QR at S. From S draw an arc with the same radius to cut at T. Join QT.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw an arc from Y cutting the arms at M and N"
+                },
+                {
+                  "point": 1,
+                  "quote": "Draw an arc from Q cutting QR at S"
+                }
+              ],
+              "feedback": "The first arcs are right. From S you must use the distance MN, not the same radius again; using the same radius always gives 60°, whatever angle you started with.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Draw an arc from Y cutting the arms at M and N. Then at Q measure the same angle with a protractor and draw the arm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw an arc from Y cutting the arms at M and N"
+                }
+              ],
+              "feedback": "Your first arc is right, but the protractor is for checking only. Draw the same arc from Q, set the compasses to the distance MN, mark it off from where the arc cuts QR, and join Q to that point."
+            },
+            {
+              "tier": "weak",
+              "text": "Put the compass on Y and open it to X, then on Q draw a circle and the angle is copied.",
+              "meets": [],
+              "feedback": "A circle alone does not fix the angle. You need two arcs: one from Y cutting both arms at M and N, and the matching one from Q, then the distance MN is marked off from S."
+            },
+            {
+              "tier": "weak",
+              "text": "Draw the same lines at Q by looking at the angle on the board.",
+              "meets": [],
+              "feedback": "Copying by eye will not be exact. Use the compasses: the same arc at Y and at Q, then transfer the distance between the points where the arc cuts the arms."
+            }
+          ]
+        },
+        {
+          "prompt": "Describe how to construct triangle ABC with AB = 6 cm, angle ABC = 120° and BC = 4 cm, using only a ruler and a pair of compasses. State the length of AC you would expect to measure.",
+          "markScheme": [
+            "Draws AB = 6 cm",
+            "Constructs 120° at B by stepping the same radius twice round an arc from BA",
+            "Marks C on the 120° arm with an arc of radius 4 cm from B",
+            "Joins A to C",
+            "AC is about 8.7 cm"
+          ],
+          "modelAnswer": "I draw AB = 6 cm. With centre B I draw a large arc cutting BA at P. With the same radius I step from P to Q and then from Q to R on the arc; joining BR gives angle ABR = 120°. I set the compasses to 4 cm and, with centre B, mark C on BR. I join AC, which measures about 8.7 cm.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Draw AB = 6 cm. With B as centre draw an arc cutting BA at P. Same radius: from P cut the arc at Q, from Q cut it at R. Join BR, angle ABR = 120°. Mark C 4 cm from B on BR with the compass. Join AC. AC = 8.7 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw AB = 6 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "Same radius: from P cut the arc at Q, from Q cut it at R. Join BR, angle ABR = 120°"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mark C 4 cm from B on BR with the compass"
+                },
+                {
+                  "point": 3,
+                  "quote": "Join AC"
+                },
+                {
+                  "point": 4,
+                  "quote": "AC = 8.7 cm"
+                }
+              ],
+              "feedback": "Full marks. Your 8.7 cm shows the construction was accurate."
+            },
+            {
+              "tier": "full",
+              "text": "First the 6 cm line AB. At B I make 120° by drawing an arc and walking the radius round it two times starting from the side BA, then join B to the second mark. On that arm I open the compass to 4 cm and mark C. Joining A to C, it measured 8.7 cm, the longest side as expected because it faces the 120°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First the 6 cm line AB"
+                },
+                {
+                  "point": 1,
+                  "quote": "At B I make 120° by drawing an arc and walking the radius round it two times starting from the side BA, then join B to the second mark"
+                },
+                {
+                  "point": 2,
+                  "quote": "I open the compass to 4 cm and mark C"
+                },
+                {
+                  "point": 3,
+                  "quote": "Joining A to C"
+                },
+                {
+                  "point": 4,
+                  "quote": "it measured 8.7 cm"
+                }
+              ],
+              "feedback": "All five marks. Noticing that AC must be the longest side is a good check."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw AB 6 cm. At B construct 60° by one step of the radius. Mark C 4 cm along it. Join AC = 5.3 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw AB 6 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "Join AC"
+                }
+              ],
+              "feedback": "One step of the radius gives 60°. For 120° step the same radius twice round the arc, starting from BA. AC will then be about 8.7 cm."
+            },
+            {
+              "tier": "partial",
+              "text": "AB = 6 cm. At B step the radius two times to make 120° and draw the arm. Then draw BC 4 cm and AC. I did not measure AC.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "AB = 6 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "At B step the radius two times to make 120° and draw the arm"
+                },
+                {
+                  "point": 2,
+                  "quote": "Then draw BC 4 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "and AC"
+                }
+              ],
+              "feedback": "Your construction steps are right. The question also asks for AC: measure it, and you should get about 8.7 cm."
+            },
+            {
+              "tier": "weak",
+              "text": "Construct 60° at A and 60° at B and they meet at C, then BC is 4 cm.",
+              "meets": [],
+              "feedback": "That makes an equilateral triangle with all sides 6 cm. The 120° angle must be at B, and BC is marked as 4 cm along that arm."
+            },
+            {
+              "tier": "weak",
+              "text": "Draw AB 6 cm and BC 4 cm and AC is 10 cm because 6 + 4 = 10.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw AB 6 cm"
+                }
+              ],
+              "feedback": "If AC were 10 cm, the triangle would be flat. Construct the 120° angle at B first, mark C 4 cm along it, then measure AC; it is about 8.7 cm."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Collecting and presenting data",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. collect data with a tally and organise it in a frequency table;\n2. draw and read bar charts with labelled axes and equal-width bars;\n3. calculate the angles of a pie chart and draw it;\n4. draw and read line graphs for data that changes over time, and choose a suitable chart for a set of data.\n\n## Materials\n\nGraph paper, protractors, compasses, coloured pencils, and a week of Kano temperature readings from a newspaper weather column.\n\n## Starter (5 minutes)\n\nAsk every learner for the number of people in their household. Write the raw numbers on the board and ask: what can we say about this list as it is? Agree that it is hard to read.\n\n## Development\n\n1. Tally the household sizes, grouping strokes in fives, then write the frequency table. Check that the frequencies add up to the number of learners.\n2. Bar chart: household size on the horizontal axis, frequency on the vertical; equal-width bars with equal gaps; a title and labels.\n3. Pie chart: the whole circle is 360°. For 36 learners, each learner is 360 ÷ 36 = 10°. Work the angles for favourite fruits and check they add to 360°.\n4. Reading a pie chart: a sector of 72° out of 60 learners stands for 72/360 × 60 = 12 learners.\n5. Line graph: plot the Kano temperatures against the days and join the points. Use it to describe a trend.\n6. Choosing a chart: bar charts compare categories, pie charts show shares of a whole, line graphs show change over time.\n\n## Class activity\n\nGroups survey another class about favourite fruits, draw a frequency table and a pie chart, and present one statement the chart shows.\n\n## Evaluation\n\n1. 40 learners were asked their favourite food; 10 chose jollof rice. What angle is this on a pie chart?\n2. Which chart would you use to show a baby's weight each month?\n\n## Assignment\n\nWorksheet on the app, due Wednesday.",
+      "reading": {
+        "title": "Making data easy to read",
+        "content": "# Collecting and presenting data\n\n## Tallies and frequency tables\n\nRaw data is a list of results. A **tally** counts them in groups of five (four strokes and a fifth across). The **frequency** is how many times each value occurs.\n\n**Worked example 1.** The number of people in the households of 20 learners: 4, 6, 5, 3, 7, 5, 4, 6, 5, 8, 5, 4, 6, 3, 5, 7, 4, 5, 6, 5.\n\n| People | Frequency |\n| --- | --- |\n| 3 | 2 |\n| 4 | 4 |\n| 5 | 7 |\n| 6 | 4 |\n| 7 | 2 |\n| 8 | 1 |\n| Total | 20 |\n\nAlways check that the total equals the number of results.\n\n## Bar charts\n\nA bar chart compares groups. Put the categories on the horizontal axis and the frequency on the vertical axis. Bars have **equal widths** and equal gaps. Give the chart a title and label both axes.\n\n## Pie charts\n\nA pie chart shows how a whole is shared. The whole circle is 360°.\n\nAngle of a sector = (frequency ÷ total) × 360°.\n\n**Worked example 2.** 36 learners in JSS3A chose their favourite fruit: mango 12, orange 9, banana 6, pawpaw 4, pineapple 5. Each learner is 360° ÷ 36 = 10°.\n\n| Fruit | Learners | Angle |\n| --- | --- | --- |\n| Mango | 12 | 120° |\n| Orange | 9 | 90° |\n| Banana | 6 | 60° |\n| Pawpaw | 4 | 40° |\n| Pineapple | 5 | 50° |\n| Total | 36 | 360° |\n\nTo **read** a pie chart, reverse the formula: a 72° sector out of 60 learners is 72/360 × 60 = 12 learners.\n\n## Line graphs\n\nA line graph shows how something **changes over time**, such as the temperature in Kano each day of a week during harmattan. Time goes on the horizontal axis. Plot each value and join the points with straight lines.\n\n## Choosing a chart\n\n- Comparing categories: bar chart.\n- Shares of a whole: pie chart.\n- Change over time: line graph."
+      },
+      "cards": [
+        {
+          "front": "Frequency",
+          "back": "The number of times a value occurs."
+        },
+        {
+          "front": "Tally",
+          "back": "Strokes counted in groups of five."
+        },
+        {
+          "front": "Angle of a pie chart sector",
+          "back": "(frequency ÷ total) × 360°"
+        },
+        {
+          "front": "36 learners on a pie chart: angle for one learner",
+          "back": "360° ÷ 36 = 10°"
+        },
+        {
+          "front": "A 72° sector out of 60 learners",
+          "back": "72/360 × 60 = 12 learners"
+        },
+        {
+          "front": "Best chart for change over time",
+          "back": "Line graph."
+        },
+        {
+          "front": "Best chart for shares of a whole",
+          "back": "Pie chart."
+        },
+        {
+          "front": "Rules for a bar chart",
+          "back": "Equal-width bars, labelled axes, a title."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "40 learners were asked their favourite food, and 10 chose jollof rice. What is the angle of the jollof rice sector on a pie chart?",
+          "options": ["10°", "36°", "90°", "25°"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A tally shows four complete groups of five and then three more strokes. What is the frequency?",
+          "options": ["23", "7", "43", "20"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which chart is best for showing the temperature in Kano each day for a week?",
+          "options": [
+            "Pie chart",
+            "Frequency table",
+            "Bar chart with categories",
+            "Line graph"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "In a pie chart of 60 learners, a sector has an angle of 72°. How many learners does it represent?",
+          "options": ["72", "12", "20", "6"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A frequency table shows scores of 1, 2, 3 and 4 with frequencies 3, 5, 8 and 4. How many learners are recorded?",
+          "options": ["20", "10", "4", "8"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "36 learners in JSS3A chose their favourite fruit: mango 12, orange 9, banana 6, pawpaw 4 and pineapple 5. Calculate the angle of each sector for a pie chart, and show that the angles are correct.",
+          "markScheme": [
+            "Finds the angle for one learner: 360° ÷ 36 = 10°",
+            "Mango 120° and orange 90°",
+            "Banana 60°, pawpaw 40° and pineapple 50°",
+            "Checks that the angles add up to 360°"
+          ],
+          "modelAnswer": "There are 36 learners, so each learner is 360° ÷ 36 = 10°. Mango: 12 × 10° = 120°. Orange: 9 × 10° = 90°. Banana: 6 × 10° = 60°. Pawpaw: 4 × 10° = 40°. Pineapple: 5 × 10° = 50°. Check: 120 + 90 + 60 + 40 + 50 = 360°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "360 ÷ 36 = 10° for each learner.\nMango 12 × 10 = 120°\nOrange 9 × 10 = 90°\nBanana 6 × 10 = 60°\nPawpaw 4 × 10 = 40°\nPineapple 5 × 10 = 50°\nTotal = 120 + 90 + 60 + 40 + 50 = 360° correct.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "360 ÷ 36 = 10° for each learner."
+                },
+                {
+                  "point": 1,
+                  "quote": "Mango 12 × 10 = 120°\nOrange 9 × 10 = 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "Banana 6 × 10 = 60°\nPawpaw 4 × 10 = 40°\nPineapple 5 × 10 = 50°"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total = 120 + 90 + 60 + 40 + 50 = 360° correct."
+                }
+              ],
+              "feedback": "Full marks, with a check at the end. A neat, complete answer."
+            },
+            {
+              "tier": "full",
+              "text": "Using angle = frequency/total × 360: mango 12/36 × 360 = 120°, orange 9/36 × 360 = 90°, banana 60°, pawpaw 40°, pineapple 50°. These add up to 360° so they are right. (Each learner is worth 10° since 360/36 = 10.)",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Each learner is worth 10° since 360/36 = 10."
+                },
+                {
+                  "point": 1,
+                  "quote": "mango 12/36 × 360 = 120°, orange 9/36 × 360 = 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "banana 60°, pawpaw 40°, pineapple 50°"
+                },
+                {
+                  "point": 3,
+                  "quote": "These add up to 360° so they are right."
+                }
+              ],
+              "feedback": "All four marks. Using the formula and then spotting the 10° per learner shows you understand it two ways."
+            },
+            {
+              "tier": "partial",
+              "text": "Mango = 12/36 × 360 = 120°, orange = 9/36 × 360 = 90°, banana = 6/36 × 360 = 60°, pawpaw = 4/36 × 360 = 40°, pineapple = 5/36 × 360 = 50°.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Mango = 12/36 × 360 = 120°, orange = 9/36 × 360 = 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "banana = 6/36 × 360 = 60°, pawpaw = 4/36 × 360 = 40°, pineapple = 5/36 × 360 = 50°"
+                }
+              ],
+              "feedback": "Every angle is correct. The question asks you to show they are correct: add them to check they make 360°. Noting that each learner is 10° would also make the working quicker.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Each learner is 360 ÷ 36 = 10°. Mango 120°, orange 90°, banana 60°, pawpaw 4°, pineapple 5°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Each learner is 360 ÷ 36 = 10°"
+                },
+                {
+                  "point": 1,
+                  "quote": "Mango 120°, orange 90°"
+                }
+              ],
+              "feedback": "Good start, but you stopped multiplying for the last two: pawpaw is 4 × 10° = 40° and pineapple 5 × 10° = 50°. Adding your angles gives 279°, not 360°, which would have shown the slip."
+            },
+            {
+              "tier": "weak",
+              "text": "Mango 12°, orange 9°, banana 6°, pawpaw 4°, pineapple 5°.",
+              "meets": [],
+              "feedback": "These are the numbers of learners, not angles. The whole circle is 360°, so each of the 36 learners is 10°: mango is 12 × 10° = 120°."
+            },
+            {
+              "tier": "weak",
+              "text": "There are 5 fruits so each one gets 360 ÷ 5 = 72°.",
+              "meets": [],
+              "feedback": "Sectors are not equal; each depends on how many learners chose that fruit. Find the angle for one learner (360° ÷ 36 = 10°) and multiply."
+            }
+          ]
+        },
+        {
+          "prompt": "The number of people in the households of 20 learners are: 4, 6, 5, 3, 7, 5, 4, 6, 5, 8, 5, 4, 6, 3, 5, 7, 4, 5, 6, 5. (a) Make a frequency table. (b) Describe how you would draw a bar chart of the data. (c) Which household size is most common? (d) What percentage of the households have more than 5 people?",
+          "markScheme": [
+            "Correct frequencies: 3 → 2, 4 → 4, 5 → 7, 6 → 4, 7 → 2, 8 → 1",
+            "Checks the total is 20",
+            "Bar chart: household size on the horizontal axis, frequency on the vertical axis, equal-width bars with heights equal to the frequencies",
+            "Most common size is 5 people",
+            "More than 5 people: 4 + 2 + 1 = 7 households, 7/20 × 100 = 35%"
+          ],
+          "modelAnswer": "(a) Size 3: 2; size 4: 4; size 5: 7; size 6: 4; size 7: 2; size 8: 1. Total = 2 + 4 + 7 + 4 + 2 + 1 = 20. (b) I would put household size (3 to 8) on the horizontal axis and frequency (0 to 8) on the vertical axis, with a title, and draw bars of equal width whose heights are the frequencies. (c) The most common size is 5 people. (d) Households with more than 5 people: 4 + 2 + 1 = 7. 7/20 × 100 = 35%.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 3: 2, 4: 4, 5: 7, 6: 4, 7: 2, 8: 1. Total 20.\n(b) Horizontal axis: number of people 3 to 8. Vertical axis: frequency. Bars of the same width with gaps, heights 2, 4, 7, 4, 2, 1, and a title.\n(c) 5 people.\n(d) 4 + 2 + 1 = 7 households. 7/20 × 100 = 35%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3: 2, 4: 4, 5: 7, 6: 4, 7: 2, 8: 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "Total 20."
+                },
+                {
+                  "point": 2,
+                  "quote": "Horizontal axis: number of people 3 to 8. Vertical axis: frequency. Bars of the same width with gaps, heights 2, 4, 7, 4, 2, 1, and a title."
+                },
+                {
+                  "point": 3,
+                  "quote": "(c) 5 people."
+                },
+                {
+                  "point": 4,
+                  "quote": "4 + 2 + 1 = 7 households. 7/20 × 100 = 35%."
+                }
+              ],
+              "feedback": "Full marks. Checking the total is 20 before drawing anything is a very good habit."
+            },
+            {
+              "tier": "full",
+              "text": "Using tally marks I got: 3 people twice, 4 people four times, 5 people seven times, 6 people four times, 7 people twice, 8 people once, which adds to 20 learners. The bar chart has the number of people along the bottom and how many households up the side, each bar the same width and as tall as its frequency. The tallest bar is 5, so 5 is the most common. 7 households have 6, 7 or 8 people, which is 35% of 20.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3 people twice, 4 people four times, 5 people seven times, 6 people four times, 7 people twice, 8 people once"
+                },
+                {
+                  "point": 1,
+                  "quote": "which adds to 20 learners"
+                },
+                {
+                  "point": 2,
+                  "quote": "The bar chart has the number of people along the bottom and how many households up the side, each bar the same width and as tall as its frequency"
+                },
+                {
+                  "point": 3,
+                  "quote": "The tallest bar is 5, so 5 is the most common"
+                },
+                {
+                  "point": 4,
+                  "quote": "7 households have 6, 7 or 8 people, which is 35% of 20"
+                }
+              ],
+              "feedback": "All five marks. Show the calculation 7/20 × 100 next time so the 35% can be followed."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3: 2, 4: 4, 5: 6, 6: 4, 7: 2, 8: 1. (c) 5. (d) 7/20 = 35%.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "(c) 5."
+                },
+                {
+                  "point": 4,
+                  "quote": "7/20 = 35%"
+                }
+              ],
+              "feedback": "Parts (c) and (d) are right. Recount the 5s: there are seven, not six. Your table adds to 19, so checking the total against 20 would have caught it. Part (b) also needs a description of the bar chart."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3: 2, 4: 4, 5: 7, 6: 4, 7: 2, 8: 1 = 20. (b) Draw bars for each size. (c) 7. (d) 2 + 1 = 3 households, 15%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3: 2, 4: 4, 5: 7, 6: 4, 7: 2, 8: 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 20"
+                }
+              ],
+              "feedback": "Your table is correct and checked. In (c), 7 is the frequency; the most common size is 5 people. In (d), more than 5 includes 6, so it is 4 + 2 + 1 = 7 households, 35%. For (b), say what goes on each axis and that bars have equal widths."
+            },
+            {
+              "tier": "weak",
+              "text": "The biggest household is 8 people so that is the most common.",
+              "meets": [],
+              "feedback": "The largest value is not the most common. Make a frequency table first; 5 people occurs 7 times, more than any other size."
+            },
+            {
+              "tier": "weak",
+              "text": "4 + 6 + 5 + 3 + 7 + 5 + 4 + 6 + 5 + 8 + 5 + 4 + 6 + 3 + 5 + 7 + 4 + 5 + 6 + 5 = 103. The answer is 103 people.",
+              "meets": [],
+              "feedback": "Adding all the values gives the total number of people, which the question did not ask for. Count how many times each household size appears to make a frequency table."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Mean, median, mode and range",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the mean, median, mode and range of a list of data;\n2. find the median of an even number of values;\n3. find the mean, median and mode from a frequency table;\n4. explain what each measure tells us about the data.\n\n## Materials\n\nCards with learners' test scores, a frequency table of the school team's goals per match, and calculators for checking.\n\n## Starter (5 minutes)\n\nAsk five learners how many siblings they have. Ask: what is a typical number for this group? Collect different answers and note that there is more than one sensible way to say 'typical'.\n\n## Development\n\n1. Mean: add all values and divide by how many. 4, 7, 9, 10, 5: total 35, mean 7.\n2. Median: arrange in order first, then take the middle value. For an even number of values, take the mean of the middle two: 2, 4, 6, 7, 9, 10 gives (6 + 7) ÷ 2 = 6.5.\n3. Mode: the most frequent value. A set can have no mode or more than one.\n4. Range: highest minus lowest. It measures spread, not a typical value.\n5. Frequency tables: multiply each value by its frequency (fx), add, and divide by the total frequency. Find the median position with (n + 1) ÷ 2 and a running total.\n6. Warn against the common slips: finding the median without ordering, and dividing Σfx by the number of rows instead of Σf.\n\n## Class activity\n\nEach group receives ten test scores on cards, arranges them, and finds all four measures. Groups compare which measure best describes their class.\n\n## Evaluation\n\n1. Find the median of 3, 8, 5, 12, 6.\n2. Find the range of 15, 22, 9, 30, 18.\n3. Find the mean of the goals table.\n\n## Assignment\n\nWorksheet on the app, due Thursday.",
+      "reading": {
+        "title": "Finding the typical value",
+        "content": "# Mean, median, mode and range\n\nThe mean, median and mode are **measures of central tendency**: each gives one number that is typical of the data. The range measures how **spread out** the data is.\n\n## The four measures\n\n- **Mean**: add all the values and divide by how many there are.\n- **Median**: arrange the values in order; the median is the middle one.\n- **Mode**: the value that occurs most often.\n- **Range**: the highest value minus the lowest value.\n\n**Worked example 1.** Ten learners scored these marks out of 20: 12, 15, 8, 15, 18, 10, 15, 9, 14, 14.\n\n- Mean: total = 130, so mean = 130 ÷ 10 = 13.\n- Median: in order, 8, 9, 10, 12, 14, 14, 15, 15, 15, 18. There are 10 values, so the median is halfway between the 5th and 6th: (14 + 14) ÷ 2 = 14.\n- Mode: 15 appears three times, so the mode is 15.\n- Range: 18 − 8 = 10.\n\nNever find the median without putting the values in order first.\n\n## From a frequency table\n\n**Worked example 2.** The goals scored by the school team in 20 matches:\n\n| Goals (x) | Matches (f) | fx |\n| --- | --- | --- |\n| 0 | 3 | 0 |\n| 1 | 5 | 5 |\n| 2 | 6 | 12 |\n| 3 | 4 | 12 |\n| 4 | 2 | 8 |\n| Total | 20 | 37 |\n\n- Mean = Σfx ÷ Σf = 37 ÷ 20 = 1.85 goals.\n- Median: the middle of 20 values is between the 10th and 11th. Running totals: 3, 8, 14. The 9th to 14th values are all 2, so the median is 2.\n- Mode: 2 goals (frequency 6).\n\nA common mistake is to divide 37 by 5, the number of rows, instead of by 20, the number of matches.\n\n## Which measure?\n\nThe mean uses every value but is pulled by a very large or very small one. The median is not affected by extreme values. The mode suits data such as shoe sizes or favourite colours."
+      },
+      "cards": [
+        {
+          "front": "Mean",
+          "back": "The sum of the values divided by how many values there are."
+        },
+        {
+          "front": "Median",
+          "back": "The middle value when the data is arranged in order."
+        },
+        {
+          "front": "Mode",
+          "back": "The value that occurs most often."
+        },
+        {
+          "front": "Range",
+          "back": "Highest value minus lowest value; a measure of spread."
+        },
+        {
+          "front": "Median of an even number of values",
+          "back": "The mean of the two middle values."
+        },
+        {
+          "front": "Mean from a frequency table",
+          "back": "Σfx ÷ Σf"
+        },
+        {
+          "front": "What must you do before finding the median?",
+          "back": "Arrange the values in order."
+        },
+        {
+          "front": "Which measure is not affected by one very large value?",
+          "back": "The median."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the mean of 4, 7, 9, 10 and 5.",
+          "options": ["7", "9", "35", "6"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the median of 3, 8, 5, 12 and 6.",
+          "options": ["5", "6", "8", "6.8"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find the mode of 2, 3, 3, 5, 7, 3, 5.",
+          "options": ["5", "7", "3", "4"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Find the range of 15, 22, 9, 30 and 18.",
+          "options": ["30", "9", "18.8", "21"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Find the median of 4, 9, 2, 7, 6 and 10.",
+          "options": ["6", "6.5", "7", "6.3"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Ten learners scored these marks in a test out of 20: 12, 15, 8, 15, 18, 10, 15, 9, 14, 14. Find the mean, median, mode and range.",
+          "markScheme": [
+            "Mean = 130 ÷ 10 = 13",
+            "Median = 14, after arranging the marks in order",
+            "Mode = 15",
+            "Range = 18 − 8 = 10"
+          ],
+          "modelAnswer": "The total is 12 + 15 + 8 + 15 + 18 + 10 + 15 + 9 + 14 + 14 = 130, so the mean is 130 ÷ 10 = 13. In order: 8, 9, 10, 12, 14, 14, 15, 15, 15, 18. The median is between the 5th and 6th values: (14 + 14) ÷ 2 = 14. The mode is 15, which appears three times. The range is 18 − 8 = 10.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Sum = 130, mean = 130 ÷ 10 = 13.\nOrder: 8, 9, 10, 12, 14, 14, 15, 15, 15, 18. Median = (14 + 14) ÷ 2 = 14.\nMode = 15.\nRange = 18 − 8 = 10.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "mean = 130 ÷ 10 = 13"
+                },
+                {
+                  "point": 1,
+                  "quote": "Order: 8, 9, 10, 12, 14, 14, 15, 15, 15, 18. Median = (14 + 14) ÷ 2 = 14."
+                },
+                {
+                  "point": 2,
+                  "quote": "Mode = 15."
+                },
+                {
+                  "point": 3,
+                  "quote": "Range = 18 − 8 = 10."
+                }
+              ],
+              "feedback": "Full marks. Writing the ordered list out first is what makes the median reliable."
+            },
+            {
+              "tier": "full",
+              "text": "Mean: I added them and got 130, divided by 10 learners gives 13. Arranged: 8 9 10 12 14 14 15 15 15 18, the two in the middle are both 14 so median is 14. 15 comes three times so the mode is 15. Highest 18, lowest 8, range is 10.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "divided by 10 learners gives 13"
+                },
+                {
+                  "point": 1,
+                  "quote": "the two in the middle are both 14 so median is 14"
+                },
+                {
+                  "point": 2,
+                  "quote": "15 comes three times so the mode is 15"
+                },
+                {
+                  "point": 3,
+                  "quote": "Highest 18, lowest 8, range is 10"
+                }
+              ],
+              "feedback": "All four marks, each one explained in your own words."
+            },
+            {
+              "tier": "partial",
+              "text": "Mean = 130 ÷ 10 = 13. Median = 18 and 10 so (18 + 10) ÷ 2 = 14. Mode = 15. Range = 10.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 130 ÷ 10 = 13"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mode = 15"
+                },
+                {
+                  "point": 3,
+                  "quote": "Range = 10"
+                }
+              ],
+              "feedback": "Mean, mode and range are right. You took the middle two marks from the unordered list (18 and 10) and got 14 by luck. Arrange the marks in order first: the middle two are 14 and 14.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Mean = 130 ÷ 10 = 13. Mode = 15. Median = 15 because it is in the middle of the list. Range = 18.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 130 ÷ 10 = 13"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mode = 15"
+                }
+              ],
+              "feedback": "Your mean and mode are right. The median comes from the ordered list: 8, 9, 10, 12, 14, 14, ... so it is 14. The range is the highest minus the lowest, 18 − 8 = 10, not the highest mark alone."
+            },
+            {
+              "tier": "weak",
+              "text": "The mean is 15 because most people got 15.",
+              "meets": [],
+              "feedback": "The most common mark is the mode, not the mean. For the mean, add all ten marks (130) and divide by 10."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = 130. Median = 10. Mode = 3. Range = 20.",
+              "meets": [],
+              "feedback": "130 is the total; divide it by 10 to get the mean. The mode is the mark that appears most (15), not how many times it appears, and the range is 18 − 8 = 10."
+            }
+          ]
+        },
+        {
+          "prompt": "The table shows the number of goals scored by the school football team in 20 matches. Goals: 0, 1, 2, 3, 4. Number of matches: 3, 5, 6, 4, 2. Find the mean, median and mode number of goals.",
+          "markScheme": [
+            "Finds fx for each row: 0, 5, 12, 12, 8",
+            "Σf = 20 and Σfx = 37",
+            "Mean = 37 ÷ 20 = 1.85 goals",
+            "Median = 2, from the 10th and 11th values",
+            "Mode = 2 goals"
+          ],
+          "modelAnswer": "Multiplying goals by matches: 0 × 3 = 0, 1 × 5 = 5, 2 × 6 = 12, 3 × 4 = 12, 4 × 2 = 8. Σfx = 37 and Σf = 20, so the mean is 37 ÷ 20 = 1.85 goals. The median lies between the 10th and 11th values. The running totals are 3, 8, 14, so the 9th to the 14th values are all 2: the median is 2. The mode is 2 goals, which happened in 6 matches.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "fx: 0, 5, 12, 12, 8. Σfx = 37, Σf = 20.\nMean = 37 ÷ 20 = 1.85\nMedian: 10th and 11th values. Cumulative 3, 8, 14 so both are 2. Median = 2.\nMode = 2 (6 matches).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "fx: 0, 5, 12, 12, 8"
+                },
+                {
+                  "point": 1,
+                  "quote": "Σfx = 37, Σf = 20"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mean = 37 ÷ 20 = 1.85"
+                },
+                {
+                  "point": 3,
+                  "quote": "Median: 10th and 11th values. Cumulative 3, 8, 14 so both are 2. Median = 2."
+                },
+                {
+                  "point": 4,
+                  "quote": "Mode = 2 (6 matches)."
+                }
+              ],
+              "feedback": "Full marks. Using running totals to place the 10th and 11th values is exactly the right method."
+            },
+            {
+              "tier": "full",
+              "text": "Total goals = 0×3 + 1×5 + 2×6 + 3×4 + 4×2 = 0 + 5 + 12 + 12 + 8 = 37 in 20 matches. Mean = 1.85 goals per match. If I list the 20 results in order, the first 3 are 0, the next 5 are 1 (up to the 8th), then six 2s (9th to 14th). The middle two, the 10th and 11th, are 2, so the median is 2. The mode is also 2 because 6 is the highest frequency.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "0×3 + 1×5 + 2×6 + 3×4 + 4×2 = 0 + 5 + 12 + 12 + 8"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 37 in 20 matches"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mean = 1.85 goals per match"
+                },
+                {
+                  "point": 3,
+                  "quote": "The middle two, the 10th and 11th, are 2, so the median is 2"
+                },
+                {
+                  "point": 4,
+                  "quote": "The mode is also 2 because 6 is the highest frequency"
+                }
+              ],
+              "feedback": "All five marks. Imagining the 20 results in a line makes the median very clear."
+            },
+            {
+              "tier": "partial",
+              "text": "fx = 0, 5, 12, 12, 8. Total 37. Mean = 37 ÷ 5 = 7.4. Mode = 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "fx = 0, 5, 12, 12, 8"
+                },
+                {
+                  "point": 4,
+                  "quote": "Mode = 2"
+                }
+              ],
+              "feedback": "The fx column and the mode are right. Divide by the number of matches, Σf = 20, not by the 5 rows: the mean is 37 ÷ 20 = 1.85 goals. A mean of 7.4 is more than the team ever scored. You also need the median."
+            },
+            {
+              "tier": "partial",
+              "text": "Σfx = 37 and Σf = 20 so mean = 1.85. Median = 2 (the middle of 0, 1, 2, 3, 4). Mode = 6.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Σfx = 37 and Σf = 20"
+                },
+                {
+                  "point": 2,
+                  "quote": "mean = 1.85"
+                }
+              ],
+              "feedback": "Your mean is correct. The median comes from the 20 results, not the 5 goal values: the 10th and 11th results are both 2. The mode is the number of goals (2), not its frequency (6)."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = (0 + 1 + 2 + 3 + 4) ÷ 5 = 2.",
+              "meets": [],
+              "feedback": "That treats each number of goals as if it happened once. Multiply each by how many matches it happened in (fx), add to get 37, and divide by the 20 matches."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = (3 + 5 + 6 + 4 + 2) ÷ 5 = 4. Mode = 4.",
+              "meets": [],
+              "feedback": "You averaged the frequencies, which only tells you the average number of matches per row. Use fx: Σfx ÷ Σf = 37 ÷ 20 = 1.85 goals. The mode is the goals value with the highest frequency, 2."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Using averages in real life",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the mean to find a total or a missing value;\n2. choose the most suitable average (mean, median or mode) for a real situation and give a reason;\n3. use the range to compare how consistent two sets of data are;\n4. write a clear sentence or two reporting what the data shows.\n\n## Materials\n\nA newspaper job advert quoting an \"average salary\", the class's last two test results, and a shoe seller's sales list.\n\n## Starter (5 minutes)\n\nRead out an advert: \"Join our bakery, average pay ₦90,000 a month!\" Ask: would every worker earn about ₦90,000? How could we find out?\n\n## Development\n\n1. Using the mean backwards: total = mean × number of values. Five traders with mean sales of ₦8,000 sold ₦40,000 altogether.\n2. Missing values: eight learners have a mean of 60 (total 480). A ninth joins and the mean becomes 62 (total 558), so the ninth scored 78.\n3. Choosing an average: the mean uses every value but is pulled by extremes; the median is the middle and ignores extremes; the mode is the most common and suits sizes or choices.\n4. Bakery pay: ₦40,000, ₦45,000, ₦50,000, ₦50,000, ₦55,000 and a manager on ₦300,000. Mean ₦90,000, median and mode ₦50,000. Discuss why the advert is misleading.\n5. Comparing classes: same mean, different ranges. The smaller range shows the more consistent class.\n6. Communicating: state the average used, its value, and what it means in context.\n\n## Class activity\n\nGroups compare the two most recent class test results using the mean, median and range, and write a two-sentence report for the form teacher.\n\n## Evaluation\n\n1. A learner's mean over 4 tests is 65. What must they score in the fifth test to raise the mean to 68?\n2. Which average should a shoe seller use to decide which size to stock most?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Which average tells the truth?",
+        "content": "# Using averages in real life\n\n## Working backwards from the mean\n\nSince mean = total ÷ number of values, we also have **total = mean × number of values**.\n\n**Worked example 1.** A learner's mean mark over 4 tests is 65, so the total is 4 × 65 = 260. To raise the mean to 68 over 5 tests, the total must be 5 × 68 = 340. The fifth mark must be 340 − 260 = 80.\n\n**Worked example 2.** Eight members of the debate team have a mean score of 60 (total 480). A ninth member joins and the mean rises to 62, so the new total is 9 × 62 = 558. The new member scored 558 − 480 = 78.\n\n## Choosing the right average\n\n| Average | Best when | Weakness |\n| --- | --- | --- |\n| Mean | values are fairly close together | pulled by a very large or small value |\n| Median | there are extreme values | ignores most of the values |\n| Mode | the data is sizes or choices | there may be no mode, or several |\n\n**Worked example 3.** A bakery in Ibadan pays its six staff ₦40,000, ₦45,000, ₦50,000, ₦50,000, ₦55,000 and ₦300,000 (the manager).\n\n- Mean = ₦540,000 ÷ 6 = ₦90,000.\n- Median = (₦50,000 + ₦50,000) ÷ 2 = ₦50,000.\n- Mode = ₦50,000.\n\nAn advert saying \"average pay ₦90,000\" is true for the mean but misleading: five of the six staff earn far less. The manager's pay pulls the mean up. The median, ₦50,000, describes a typical worker better.\n\n## Comparing with the range\n\nTwo classes both have a mean of 60. Class A's marks range from 35 to 75 (range 40); Class B's from 55 to 65 (range 10). Class B is more **consistent**: its marks are closer together.\n\n## Communicating findings\n\nA good report says which measure was used, gives the value, and explains it in context:\n\n\"The median pay at the bakery is ₦50,000 a month. The mean, ₦90,000, is raised by the manager's salary and does not describe a typical worker.\""
+      },
+      "cards": [
+        {
+          "front": "Total from a mean",
+          "back": "Total = mean × number of values."
+        },
+        {
+          "front": "Five traders with mean sales of ₦8,000",
+          "back": "Total sales = 5 × 8,000 = ₦40,000."
+        },
+        {
+          "front": "Average to use when there is one very large value",
+          "back": "The median."
+        },
+        {
+          "front": "Average a shoe seller uses to decide which size to stock",
+          "back": "The mode."
+        },
+        {
+          "front": "Same mean, smaller range",
+          "back": "The data is more consistent."
+        },
+        {
+          "front": "Mean of 4 tests is 65; mark needed for a mean of 68 over 5",
+          "back": "5 × 68 − 4 × 65 = 80"
+        },
+        {
+          "front": "A good data report",
+          "back": "Names the measure, gives its value, and explains it in context."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Five traders at Bodija market had mean daily sales of ₦8,000. What were their total sales?",
+          "options": ["₦1,600", "₦40,000", "₦8,005", "₦13,000"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Five workers earn ₦50,000, ₦55,000, ₦52,000, ₦48,000 and ₦600,000 a month. Which average best describes a typical worker's pay?",
+          "options": ["The mean", "The range", "The median", "The total"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A shoe seller wants to know which size to order most of. Which measure should she use?",
+          "options": ["The mode", "The mean", "The range", "The median"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A learner's mean mark in 4 tests is 65. What must the learner score in the fifth test to make the mean 68?",
+          "options": ["71", "68", "3", "80"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Class A and Class B both have a mean mark of 60. Class A's range is 40 and Class B's range is 10. Which statement is correct?",
+          "options": [
+            "Class A is more consistent because its range is bigger",
+            "Class B is more consistent because its range is smaller",
+            "Both are equally consistent because the means are equal",
+            "Class A did better because its range is bigger"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The mean score of 8 members of the school debate team is 60. A ninth member joins, and the mean score of all 9 becomes 62. What did the new member score? Explain why the mean went up.",
+          "markScheme": [
+            "Total for 8 members = 8 × 60 = 480",
+            "Total for 9 members = 9 × 62 = 558",
+            "New member's score = 558 − 480 = 78",
+            "Explains that 78 is above the old mean of 60, so it pulls the mean up"
+          ],
+          "modelAnswer": "The total for the first 8 members is 8 × 60 = 480. With 9 members and a mean of 62, the total is 9 × 62 = 558. So the new member scored 558 − 480 = 78. The mean went up because 78 is higher than the old mean of 60, so adding it raises the average.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Total of 8 = 8 × 60 = 480. Total of 9 = 9 × 62 = 558. New score = 558 − 480 = 78. The mean rose because 78 is more than 60, so it pulled the average up.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total of 8 = 8 × 60 = 480"
+                },
+                {
+                  "point": 1,
+                  "quote": "Total of 9 = 9 × 62 = 558"
+                },
+                {
+                  "point": 2,
+                  "quote": "New score = 558 − 480 = 78"
+                },
+                {
+                  "point": 3,
+                  "quote": "The mean rose because 78 is more than 60, so it pulled the average up"
+                }
+              ],
+              "feedback": "Full marks, with a clear explanation in context."
+            },
+            {
+              "tier": "full",
+              "text": "Before: 480 marks in total (60 × 8). After: 558 marks in total (62 × 9). The new member brought 78 marks. 78 is well above the team's old average of 60, and any score above the mean makes the mean go up.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Before: 480 marks in total (60 × 8)"
+                },
+                {
+                  "point": 1,
+                  "quote": "After: 558 marks in total (62 × 9)"
+                },
+                {
+                  "point": 2,
+                  "quote": "The new member brought 78 marks"
+                },
+                {
+                  "point": 3,
+                  "quote": "78 is well above the team's old average of 60, and any score above the mean makes the mean go up"
+                }
+              ],
+              "feedback": "All four marks. Your general rule at the end is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "8 × 60 = 480 marks before. The mean went up to 62, so the new member scored 62.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8 × 60 = 480"
+                }
+              ],
+              "feedback": "The old total is right. If the new member scored only 62, the mean would barely move. Find the new total, 9 × 62 = 558, and subtract 480: the new member scored 78, which is above 60 and pulls the mean up."
+            },
+            {
+              "tier": "partial",
+              "text": "8 × 60 = 480. 9 × 62 = 558. 558 − 480 = 78.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8 × 60 = 480"
+                },
+                {
+                  "point": 1,
+                  "quote": "9 × 62 = 558"
+                },
+                {
+                  "point": 2,
+                  "quote": "558 − 480 = 78"
+                }
+              ],
+              "feedback": "Your calculation is right. You did not explain why the mean went up: because 78 is above the old mean of 60, it raises the average."
+            },
+            {
+              "tier": "weak",
+              "text": "(60 + 62) ÷ 2 = 61.",
+              "meets": [],
+              "feedback": "Averaging the two means does not give the new member's score. Find the total marks before (8 × 60) and after (9 × 62), then subtract."
+            },
+            {
+              "tier": "weak",
+              "text": "8 × 60 = 480. The new member scored 480 ÷ 9 = 53.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8 × 60 = 480"
+                }
+              ],
+              "feedback": "The old total, 480, is right. Now find the new total, 9 × 62 = 558, and subtract: the new member scored 78."
+            }
+          ]
+        },
+        {
+          "prompt": "A bakery in Ibadan pays its six staff these monthly wages: ₦40,000, ₦45,000, ₦50,000, ₦50,000, ₦55,000 and ₦300,000 (the manager). The owner advertises: \"Average pay ₦90,000 a month.\" (a) Find the mean, median and mode wage. (b) Is the advert fair? Explain which average best describes a typical worker's pay.",
+          "markScheme": [
+            "Mean = ₦540,000 ÷ 6 = ₦90,000",
+            "Median = (₦50,000 + ₦50,000) ÷ 2 = ₦50,000",
+            "Mode = ₦50,000",
+            "Explains that the manager's ₦300,000 pulls the mean up, so five of the six staff earn less than ₦90,000",
+            "Concludes the advert is misleading and the median (or mode), ₦50,000, better describes a typical worker"
+          ],
+          "modelAnswer": "(a) The total is ₦540,000, so the mean is ₦540,000 ÷ 6 = ₦90,000. In order the wages are 40, 45, 50, 50, 55 and 300 thousand naira; the middle two are both ₦50,000, so the median is ₦50,000. The mode is also ₦50,000. (b) The advert uses the mean, which is true but misleading. The manager's ₦300,000 pulls the mean up, and five of the six staff earn less than ₦90,000. The median, ₦50,000, better describes what a typical worker earns.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Total = 540,000. Mean = 540,000 ÷ 6 = ₦90,000. Median = (50,000 + 50,000) ÷ 2 = ₦50,000. Mode = ₦50,000.\n(b) Not fair. The manager's ₦300,000 makes the mean high; five out of six people earn below ₦90,000. The median ₦50,000 is a better picture of a normal worker's pay.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 540,000 ÷ 6 = ₦90,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Median = (50,000 + 50,000) ÷ 2 = ₦50,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mode = ₦50,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "The manager's ₦300,000 makes the mean high; five out of six people earn below ₦90,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "The median ₦50,000 is a better picture of a normal worker's pay"
+                }
+              ],
+              "feedback": "Full marks. You backed up your judgement with the fact that five of six earn below the mean, which is a strong argument."
+            },
+            {
+              "tier": "full",
+              "text": "Mean is ₦90,000 (540,000 shared by 6). The median is ₦50,000 because the two middle wages are both 50,000, and the mode is ₦50,000 too. The advert is misleading. Only the manager earns more than ₦90,000; one very big wage raises the mean. A worker who joins should expect about ₦50,000, which is the median.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean is ₦90,000 (540,000 shared by 6)"
+                },
+                {
+                  "point": 1,
+                  "quote": "The median is ₦50,000 because the two middle wages are both 50,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "the mode is ₦50,000 too"
+                },
+                {
+                  "point": 3,
+                  "quote": "Only the manager earns more than ₦90,000; one very big wage raises the mean"
+                },
+                {
+                  "point": 4,
+                  "quote": "A worker who joins should expect about ₦50,000, which is the median"
+                }
+              ],
+              "feedback": "All five marks. Saying what a new worker should actually expect is excellent communication of the finding."
+            },
+            {
+              "tier": "partial",
+              "text": "Mean = ₦90,000, median = ₦50,000, mode = ₦50,000. The advert is fair because the mean really is ₦90,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = ₦90,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "median = ₦50,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "mode = ₦50,000"
+                }
+              ],
+              "feedback": "All three averages are right. The mean is correct, but it is pulled up by the manager's ₦300,000: five of six staff earn less than ₦90,000. So the advert misleads, and the median, ₦50,000, describes a typical worker better.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Mean = 540,000 ÷ 6 = 90,000. Median = 50,000. Not fair, because the manager earns a lot more than the others and makes the average high.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 540,000 ÷ 6 = 90,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Median = 50,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "the manager earns a lot more than the others and makes the average high"
+                }
+              ],
+              "feedback": "Good reasoning. You left out the mode (₦50,000), and you should finish by saying which average is better: the median, ₦50,000, is what a typical worker earns."
+            },
+            {
+              "tier": "weak",
+              "text": "The advert is fair because ₦90,000 is the average.",
+              "meets": [],
+              "feedback": "Work out all three averages first: the mean is ₦90,000 but the median and mode are ₦50,000. Then ask how many of the staff actually earn about ₦90,000."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = (40,000 + 300,000) ÷ 2 = ₦170,000. The advert is lying.",
+              "meets": [],
+              "feedback": "The mean uses all six wages, not only the lowest and highest: ₦540,000 ÷ 6 = ₦90,000. Then compare it with the median, ₦50,000, to judge the advert."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Probability as a measure of chance",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe probability as a number from 0 (impossible) to 1 (certain);\n2. calculate the probability of a simple event with equally likely outcomes;\n3. use P(not A) = 1 − P(A);\n4. find an experimental probability from recorded results and use it to estimate.\n\n## Materials\n\nA bag of coloured sweets (4 red, 6 green, 2 yellow), dice, coins, drawing pins, and a probability scale from 0 to 1 drawn on the board.\n\n## Starter (5 minutes)\n\nRead out statements and let learners place them on the probability scale: \"The sun will rise tomorrow.\" \"A coin will land heads.\" \"It will snow in Lagos today.\" \"Our next teacher will be a woman.\"\n\n## Development\n\n1. Probability measures chance on a scale from 0 to 1. Impossible = 0; certain = 1; evens = 1/2.\n2. For equally likely outcomes: P(event) = number of favourable outcomes ÷ total number of outcomes. With the sweets: P(green) = 6/12 = 1/2.\n3. A die: P(more than 4) = 2/6 = 1/3. List the outcomes to count them.\n4. Complements: P(not red) = 1 − 4/12 = 2/3. P(no rain) = 1 − 0.3 = 0.7.\n5. Experimental probability = number of times the event happened ÷ number of trials. Toss a coin 50 times as a class: 28 heads gives 28/50 = 0.56.\n6. Some events cannot be worked out by counting, such as a drawing pin landing point up, because the outcomes are not equally likely. Experiment, then estimate: expected number = probability × number of trials.\n\n## Class activity\n\nPairs drop a drawing pin 50 times and record point up or point down. The class combines its results into one table and calculates the experimental probability.\n\n## Evaluation\n\n1. A bag has 3 red and 5 blue balls. Find P(red).\n2. The probability of rain is 0.3. What is the probability of no rain?\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "How likely is it?",
+        "content": "# Probability\n\n## The probability scale\n\n**Probability** measures how likely something is to happen. It is a number from 0 to 1.\n\n- 0 means **impossible**: picking a blue sweet from a bag with no blue sweets.\n- 1 means **certain**: the sun rising tomorrow.\n- 1/2 means **evens**: a fair coin landing heads.\n\nA probability can be written as a fraction, a decimal or a percentage, but it can never be more than 1 or less than 0.\n\n## Equally likely outcomes\n\nWhen every outcome is equally likely:\n\nP(event) = number of favourable outcomes ÷ total number of possible outcomes\n\n**Worked example 1.** A bag contains 4 red, 6 green and 2 yellow sweets, 12 in all. One is picked without looking.\n\n- P(green) = 6/12 = 1/2\n- P(red or yellow) = (4 + 2)/12 = 6/12 = 1/2\n- P(blue) = 0/12 = 0, impossible\n\n**Worked example 2.** A fair die has outcomes 1, 2, 3, 4, 5, 6. P(a number greater than 4) = 2/6 = 1/3, because only 5 and 6 are greater than 4.\n\n## The probability of 'not'\n\nAn event either happens or it does not, so:\n\nP(not A) = 1 − P(A)\n\nIf P(red) = 4/12 = 1/3, then P(not red) = 1 − 1/3 = 2/3. If the probability of rain is 0.3, the probability of no rain is 0.7.\n\n## Experimental probability\n\nSometimes we cannot count equally likely outcomes. A drawing pin can land point up or point down, but these are not equally likely. We find out by experiment:\n\nExperimental probability = number of times the event happens ÷ number of trials\n\n**Worked example 3.** A drawing pin dropped 200 times landed point up 76 times. P(point up) ≈ 76/200 = 0.38. In 500 drops we would expect about 0.38 × 500 = 190 point up.\n\nThe more trials you do, the more reliable the experimental probability becomes."
+      },
+      "cards": [
+        {
+          "front": "Probability",
+          "back": "A number from 0 to 1 that measures how likely an event is."
+        },
+        {
+          "front": "Probability of an impossible event",
+          "back": "0"
+        },
+        {
+          "front": "Probability of a certain event",
+          "back": "1"
+        },
+        {
+          "front": "P(event) with equally likely outcomes",
+          "back": "Favourable outcomes ÷ total outcomes."
+        },
+        {
+          "front": "P(not A)",
+          "back": "1 − P(A)"
+        },
+        {
+          "front": "Experimental probability",
+          "back": "Number of times the event happened ÷ number of trials."
+        },
+        {
+          "front": "Expected number of times",
+          "back": "Probability × number of trials."
+        },
+        {
+          "front": "P(greater than 4) on a fair die",
+          "back": "2/6 = 1/3"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the probability of an event that is impossible?",
+          "options": ["1", "0", "1/2", "−1"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A bag contains 3 red balls and 5 blue balls. One ball is picked at random. What is the probability that it is red?",
+          "options": ["3/8", "3/5", "5/8", "1/3"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A fair die is thrown. What is the probability of getting a number greater than 4?",
+          "options": ["1/6", "2/3", "1/3", "4/6"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A coin is tossed 50 times and lands heads 28 times. What is the experimental probability of a head?",
+          "options": ["1/2", "28/100", "22/50", "14/25"],
+          "answer": "D"
+        },
+        {
+          "prompt": "The probability that it will rain in Ibadan tomorrow is 0.3. What is the probability that it will not rain?",
+          "options": ["0.3", "0.7", "1.3", "0"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A bag contains 4 red, 6 green and 2 yellow sweets. One sweet is picked at random. Find the probability that it is (a) green, (b) not red, (c) red or yellow, (d) blue.",
+          "markScheme": [
+            "Total number of sweets = 12",
+            "P(green) = 6/12 = 1/2",
+            "P(not red) = 8/12 = 2/3",
+            "P(red or yellow) = 6/12 = 1/2",
+            "P(blue) = 0, because there are no blue sweets"
+          ],
+          "modelAnswer": "There are 4 + 6 + 2 = 12 sweets. (a) P(green) = 6/12 = 1/2. (b) 8 sweets are not red, so P(not red) = 8/12 = 2/3 (or 1 − 4/12). (c) 4 + 2 = 6 are red or yellow, so P(red or yellow) = 6/12 = 1/2. (d) There are no blue sweets, so P(blue) = 0: it is impossible.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Total = 4 + 6 + 2 = 12.\n(a) 6/12 = 1/2\n(b) 1 − 4/12 = 8/12 = 2/3\n(c) (4 + 2)/12 = 6/12 = 1/2\n(d) 0 because there is no blue sweet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total = 4 + 6 + 2 = 12."
+                },
+                {
+                  "point": 1,
+                  "quote": "(a) 6/12 = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "(b) 1 − 4/12 = 8/12 = 2/3"
+                },
+                {
+                  "point": 3,
+                  "quote": "(c) (4 + 2)/12 = 6/12 = 1/2"
+                },
+                {
+                  "point": 4,
+                  "quote": "(d) 0 because there is no blue sweet."
+                }
+              ],
+              "feedback": "Full marks. Using 1 − P(red) in part (b) is a neat shortcut."
+            },
+            {
+              "tier": "full",
+              "text": "There are 12 sweets altogether. Green: 6 out of 12 = 1/2. Not red means green or yellow = 8 out of 12 = 2/3. Red or yellow = 6 out of 12 = 1/2. Blue is impossible so the probability is 0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "There are 12 sweets altogether"
+                },
+                {
+                  "point": 1,
+                  "quote": "Green: 6 out of 12 = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "Not red means green or yellow = 8 out of 12 = 2/3"
+                },
+                {
+                  "point": 3,
+                  "quote": "Red or yellow = 6 out of 12 = 1/2"
+                },
+                {
+                  "point": 4,
+                  "quote": "Blue is impossible so the probability is 0"
+                }
+              ],
+              "feedback": "All five marks, with each answer simplified."
+            },
+            {
+              "tier": "partial",
+              "text": "Total 12. (a) 6/12. (b) 4/12. (c) 6/12. (d) There is no blue so no answer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "(a) 6/12"
+                },
+                {
+                  "point": 3,
+                  "quote": "(c) 6/12"
+                }
+              ],
+              "feedback": "Parts (a) and (c) are right; simplify them to 1/2. In (b), 4/12 is the probability of red; not red is the other 8 sweets, 8/12 = 2/3. In (d), an impossible event has probability 0."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 6/6 = 1. (b) 8/12. (c) 4/12 + 2/12 = 6/12. (d) 0.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "(b) 8/12"
+                },
+                {
+                  "point": 3,
+                  "quote": "(c) 4/12 + 2/12 = 6/12"
+                },
+                {
+                  "point": 4,
+                  "quote": "(d) 0"
+                }
+              ],
+              "feedback": "Parts (b), (c) and (d) are right. In (a) divide by all 12 sweets, not just the 6 green ones: P(green) = 6/12 = 1/2. A probability of 1 would mean you are certain to pick green.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 6 (b) 8 (c) 6 (d) 0",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "(d) 0"
+                }
+              ],
+              "feedback": "Part (d) is right. The others are numbers of sweets, not probabilities: divide each by the total, 12. So P(green) = 6/12 = 1/2."
+            },
+            {
+              "tier": "weak",
+              "text": "There are 3 colours so each one has probability 1/3, blue is 1/4.",
+              "meets": [],
+              "feedback": "The colours are not equally likely because there are different numbers of each. Count the sweets: 6 of the 12 are green, so P(green) = 6/12. There are no blue sweets, so P(blue) = 0."
+            }
+          ]
+        },
+        {
+          "prompt": "A learner drops a drawing pin 200 times. It lands point up 76 times. (a) Find the experimental probability that it lands point up. (b) Find the probability that it lands point down. (c) Estimate how many times it would land point up in 500 drops. (d) Explain why the probability cannot be found by counting outcomes, as with a coin.",
+          "markScheme": [
+            "P(point up) = 76/200 = 0.38",
+            "P(point down) = 1 − 0.38 = 0.62",
+            "Expected point up in 500 drops = 0.38 × 500 = 190",
+            "Explains that point up and point down are not equally likely, so an experiment is needed"
+          ],
+          "modelAnswer": "(a) P(point up) = 76 ÷ 200 = 0.38. (b) P(point down) = 1 − 0.38 = 0.62 (or 124/200). (c) In 500 drops we would expect about 0.38 × 500 = 190 point up. (d) A coin's two outcomes are equally likely, so each has probability 1/2. A drawing pin's two outcomes are not equally likely, because of its shape, so we cannot just count outcomes; we have to experiment.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 76/200 = 0.38\n(b) 1 − 0.38 = 0.62\n(c) 0.38 × 500 = 190 times\n(d) A pin is not like a coin, point up and point down are not equally likely because of its shape, so we must test it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 76/200 = 0.38"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) 1 − 0.38 = 0.62"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) 0.38 × 500 = 190 times"
+                },
+                {
+                  "point": 3,
+                  "quote": "point up and point down are not equally likely because of its shape, so we must test it"
+                }
+              ],
+              "feedback": "Full marks, with a clear reason in (d)."
+            },
+            {
+              "tier": "full",
+              "text": "Point up: 76 out of 200, which is 0.38. Point down: 124 out of 200 = 0.62. In 500 drops I expect 500 × 0.38 = 190 point up. With a coin, heads and tails have the same chance, but the pin is heavier on one side, so the two ways it lands are not equally likely and only an experiment can tell us.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Point up: 76 out of 200, which is 0.38"
+                },
+                {
+                  "point": 1,
+                  "quote": "Point down: 124 out of 200 = 0.62"
+                },
+                {
+                  "point": 2,
+                  "quote": "In 500 drops I expect 500 × 0.38 = 190 point up"
+                },
+                {
+                  "point": 3,
+                  "quote": "the two ways it lands are not equally likely and only an experiment can tell us"
+                }
+              ],
+              "feedback": "All four marks. Comparing directly with the coin makes your explanation in (d) convincing."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 76/200 = 0.38. (b) 124/200 = 0.62. (c) 76 + 300 = 376. (d) Because it is a pin.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 76/200 = 0.38"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) 124/200 = 0.62"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. For (c), multiply the probability by the number of drops: 0.38 × 500 = 190. For (d), say why: point up and point down are not equally likely, unlike heads and tails."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 0.38. (b) 0.62. (c) 0.38 × 500 = 190. (d) You can, it is 1/2 because there are two ways it can land.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 0.38"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) 0.62"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) 0.38 × 500 = 190"
+                }
+              ],
+              "feedback": "Your calculations are all correct. In (d), two outcomes only give 1/2 each when they are equally likely; your own result, 0.38, shows the pin's outcomes are not, so an experiment is needed."
+            },
+            {
+              "tier": "weak",
+              "text": "The probability is 1/2 because it is either up or down. In 500 drops it would land up 250 times.",
+              "meets": [],
+              "feedback": "Two outcomes do not always mean 1/2 each. The experiment showed point up only 76 times in 200, so P(point up) = 0.38, and in 500 drops we expect about 190."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 76. (b) 200 − 76 = 124. (c) 76 × 500 = 38,000.",
+              "meets": [],
+              "feedback": "76 and 124 are counts, not probabilities: divide by the 200 trials to get 0.38 and 0.62. Then 0.38 × 500 = 190 is the estimate for 500 drops."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Probability experiments: coins, dice and ludo",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. plan and carry out a simple probability experiment with coins, dice or a ludo die;\n2. record outcomes in a tally and frequency table;\n3. calculate experimental probabilities and compare them with theoretical ones;\n4. list the outcomes of tossing two coins and explain why some combined results are more likely than others.\n\n## Materials\n\nCoins and dice (one per pair), the dice from the class ludo set, tally sheets, and a chart for the class's combined results.\n\n## Starter (5 minutes)\n\nAsk: in ludo you need a 6 to bring out a counter. Does it feel like it takes forever? How many throws, on average, should it take? Collect guesses.\n\n## Development\n\n1. Outcomes: a coin has 2, a die has 6. The theoretical probability of a 6 is 1/6, so in 60 throws we expect about 10 sixes.\n2. Pairs throw a die 60 times and tally the results. Each pair works out the experimental probability of each number.\n3. Compare with 1/6: results are close but not exact. Combine the whole class's results and see them move closer to 1/6.\n4. Two coins: list the outcomes HH, HT, TH, TT. One head and one tail can happen in two ways, so P = 2/4 = 1/2; two heads only one way, P = 1/4.\n5. Pairs toss two coins 40 times and record HH, one of each, and TT. Compare with 1/4, 1/2, 1/4.\n6. Discuss: a few trials can give surprising results, such as 9 sixes in 30 throws. That alone does not prove a die is unfair; more trials are needed.\n\n## Class activity\n\nThe class combines all the pairs' die results on the board and calculates the experimental probability of a 6 from several hundred throws.\n\n## Evaluation\n\n1. A die is rolled 60 times. How many 4s do you expect?\n2. List the outcomes when two coins are tossed.\n\n## Assignment\n\nWorksheet on the app, due Thursday. Bring your tally sheet.",
+      "reading": {
+        "title": "Testing chance with experiments",
+        "content": "# Probability experiments\n\n## Outcomes\n\nAn **outcome** is one possible result of an experiment.\n\n- Tossing a coin: 2 outcomes, head (H) or tail (T).\n- Rolling a die, as in ludo: 6 outcomes, 1 to 6.\n\nFor a fair coin P(H) = 1/2. For a fair die P(6) = 1/6.\n\n## Recording an experiment\n\nUse a tally and a frequency table, and always check that the frequencies add up to the number of trials.\n\n**Worked example 1.** A learner rolls a die 60 times.\n\n| Number | 1 | 2 | 3 | 4 | 5 | 6 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Frequency | 8 | 11 | 9 | 12 | 10 | 10 |\n\nTotal: 8 + 11 + 9 + 12 + 10 + 10 = 60.\n\n- Experimental P(4) = 12/60 = 1/5 = 0.2.\n- Theoretical P(4) = 1/6 ≈ 0.17.\n- Expected number of 4s in 60 rolls = 1/6 × 60 = 10.\n\nThe experiment gave 12, a little more than 10. That is normal: chance means results vary. The more times you roll, the closer the experimental probability usually gets to 1/6.\n\n## Two coins\n\nWhen two coins are tossed, there are 4 equally likely outcomes: HH, HT, TH, TT.\n\n- P(two heads) = 1/4\n- P(two tails) = 1/4\n- P(one head and one tail) = 2/4 = 1/2, because HT and TH both count.\n\nMany people think the three results (two heads, one of each, two tails) are equally likely. They are not: one of each happens twice as often.\n\n**Worked example 2.** Two coins tossed 40 times gave HH 9 times, one of each 22 times, and TT 9 times. The experimental probabilities are 9/40 = 0.225, 22/40 = 0.55 and 0.225, close to 1/4, 1/2 and 1/4.\n\n## Is the die fair?\n\nIf a die gives 9 sixes in 30 rolls (0.3 instead of about 0.17), do not decide at once that it is unfair. Thirty rolls is a small number of trials. Roll it many more times; if sixes still come up far too often, then you have evidence."
+      },
+      "cards": [
+        {
+          "front": "Outcome",
+          "back": "One possible result of an experiment."
+        },
+        {
+          "front": "Outcomes when two coins are tossed",
+          "back": "HH, HT, TH, TT"
+        },
+        {
+          "front": "P(one head and one tail) with two coins",
+          "back": "2/4 = 1/2"
+        },
+        {
+          "front": "P(getting a 6 to start in ludo)",
+          "back": "1/6"
+        },
+        {
+          "front": "Expected number of 6s in 60 rolls",
+          "back": "1/6 × 60 = 10"
+        },
+        {
+          "front": "Why do experimental and theoretical probabilities differ?",
+          "back": "Chance: results vary, especially with few trials."
+        },
+        {
+          "front": "How do you make an experimental probability more reliable?",
+          "back": "Do more trials."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "How many possible outcomes are there when one coin is tossed?",
+          "options": ["1", "2", "6", "4"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A fair die is rolled 60 times. About how many times would you expect to get a 6?",
+          "options": ["6", "60", "10", "1"],
+          "answer": "C"
+        },
+        {
+          "prompt": "In ludo, a player needs a 6 to bring out a counter. What is the probability of throwing a 6 with a fair die?",
+          "options": ["1/6", "1/2", "6", "5/6"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Two fair coins are tossed. What is the probability of getting exactly one head?",
+          "options": ["1/4", "1/3", "3/4", "1/2"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A die is rolled 30 times and shows 6 nine times. Which statement is most sensible?",
+          "options": [
+            "The die must be loaded",
+            "The theory that P(6) = 1/6 is wrong",
+            "Thirty rolls is a small number of trials, so roll many more before deciding",
+            "The probability of a 6 is now 9"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A learner rolls a die 60 times and records: 1 came up 8 times, 2 came up 11 times, 3 came up 9 times, 4 came up 12 times, 5 came up 10 times and 6 came up 10 times. (a) Find the experimental probability of rolling a 4. (b) How many 4s would you expect in 60 rolls of a fair die? (c) Does the result show that the die is unfair? Explain.",
+          "markScheme": [
+            "Experimental P(4) = 12/60 = 1/5 (0.2)",
+            "Uses theoretical P(4) = 1/6",
+            "Expected number of 4s = 1/6 × 60 = 10",
+            "Explains that 12 is close to 10 and the difference is due to chance, so it does not show the die is unfair (more rolls would test it)"
+          ],
+          "modelAnswer": "(a) A 4 came up 12 times in 60 rolls, so the experimental probability is 12/60 = 1/5 = 0.2. (b) For a fair die P(4) = 1/6, so we expect 1/6 × 60 = 10 fours. (c) No. 12 is close to 10, and results always vary by chance in a small number of rolls. To test the die properly, roll it many more times.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 12/60 = 1/5 = 0.2\n(b) P(4) = 1/6, so 1/6 × 60 = 10 fours\n(c) No. 12 is near 10. Results change because of chance, and 60 rolls is not many. You would need to roll more to be sure.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 12/60 = 1/5 = 0.2"
+                },
+                {
+                  "point": 1,
+                  "quote": "P(4) = 1/6"
+                },
+                {
+                  "point": 2,
+                  "quote": "1/6 × 60 = 10 fours"
+                },
+                {
+                  "point": 3,
+                  "quote": "No. 12 is near 10. Results change because of chance, and 60 rolls is not many."
+                }
+              ],
+              "feedback": "Full marks. Your answer to (c) is exactly the right judgement, with a reason."
+            },
+            {
+              "tier": "full",
+              "text": "Experimental probability of 4 = 12 ÷ 60 = 0.2. A fair die has P(4) = 1/6 which is about 0.17, so in 60 rolls we expect 10. Getting 12 instead of 10 is a small difference, the kind you get by chance, so it does not prove the die is unfair; all the other numbers are close to 10 too.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Experimental probability of 4 = 12 ÷ 60 = 0.2"
+                },
+                {
+                  "point": 1,
+                  "quote": "A fair die has P(4) = 1/6"
+                },
+                {
+                  "point": 2,
+                  "quote": "so in 60 rolls we expect 10"
+                },
+                {
+                  "point": 3,
+                  "quote": "Getting 12 instead of 10 is a small difference, the kind you get by chance, so it does not prove the die is unfair"
+                }
+              ],
+              "feedback": "All four marks. Noticing that every number came up close to 10 strengthens your conclusion."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 12/60 = 0.2. (b) 10. (c) Yes it is unfair because 4 came up more than the others.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 12/60 = 0.2"
+                },
+                {
+                  "point": 2,
+                  "quote": "(b) 10"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right; show 1/6 × 60 for (b). In (c), 12 is only slightly more than 10, which is normal by chance in 60 rolls. One number coming up a little more often does not prove the die is unfair.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 12/60 = 1/5. (b) P(4) = 1/6 so 1/6 × 12 = 2. (c) Not unfair, it is just luck.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 12/60 = 1/5"
+                },
+                {
+                  "point": 1,
+                  "quote": "P(4) = 1/6"
+                },
+                {
+                  "point": 3,
+                  "quote": "Not unfair, it is just luck"
+                }
+              ],
+              "feedback": "Parts (a) and (c) are right, and so is P(4) = 1/6. The expected number uses all 60 rolls: 1/6 × 60 = 10, not 1/6 × 12."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 4/6. (b) 4. (c) Yes.",
+              "meets": [],
+              "feedback": "The experimental probability uses your results: 12 fours out of 60 rolls, so 12/60 = 0.2. For a fair die P(4) = 1/6, so expect 10 fours in 60 rolls."
+            },
+            {
+              "tier": "weak",
+              "text": "Each number should come up exactly 10 times. 4 came up 12 times, so the die is not fair.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Each number should come up exactly 10 times"
+                }
+              ],
+              "feedback": "You are right that about 10 fours are expected, but chance means the results will rarely be exactly 10. A difference of 2 does not prove the die is unfair. You also need part (a): 12/60 = 0.2."
+            }
+          ]
+        },
+        {
+          "prompt": "Two coins are tossed together 40 times. The results are: two heads 9 times, one head and one tail 22 times, two tails 9 times. (a) List all the possible outcomes for the two coins. (b) Find the theoretical probability of each result. (c) Find the experimental probability of each result. (d) Explain why one head and one tail happens about twice as often as two heads.",
+          "markScheme": [
+            "Lists the four outcomes: HH, HT, TH, TT",
+            "Theoretical: P(HH) = 1/4, P(one of each) = 2/4 = 1/2, P(TT) = 1/4",
+            "Experimental: 9/40 = 0.225, 22/40 = 0.55, 9/40 = 0.225",
+            "Explains that one head and one tail can happen in two ways (HT and TH), but two heads in only one way (HH)"
+          ],
+          "modelAnswer": "(a) The outcomes are HH, HT, TH and TT. (b) Each is equally likely, so P(two heads) = 1/4, P(one head and one tail) = 2/4 = 1/2, and P(two tails) = 1/4. (c) Experimental: two heads 9/40 = 0.225, one of each 22/40 = 0.55, two tails 9/40 = 0.225. These are close to the theoretical values. (d) One head and one tail can happen in two ways, HT and TH, while two heads can only happen as HH. So one of each is twice as likely.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) HH, HT, TH, TT\n(b) P(HH) = 1/4, P(HT or TH) = 2/4 = 1/2, P(TT) = 1/4\n(c) HH: 9/40 = 0.225, one of each: 22/40 = 0.55, TT: 9/40 = 0.225\n(d) One of each can come as HT or TH, two ways, but two heads only as HH, one way.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) HH, HT, TH, TT"
+                },
+                {
+                  "point": 1,
+                  "quote": "P(HH) = 1/4, P(HT or TH) = 2/4 = 1/2, P(TT) = 1/4"
+                },
+                {
+                  "point": 2,
+                  "quote": "HH: 9/40 = 0.225, one of each: 22/40 = 0.55, TT: 9/40 = 0.225"
+                },
+                {
+                  "point": 3,
+                  "quote": "One of each can come as HT or TH, two ways, but two heads only as HH, one way."
+                }
+              ],
+              "feedback": "Full marks. Your listing in (a) is exactly what explains the answer in (d)."
+            },
+            {
+              "tier": "full",
+              "text": "Coin 1 can be H or T and coin 2 can be H or T, so the outcomes are HH, HT, TH and TT. Theory: two heads 1/4, two tails 1/4, mixed 1/2. Experiment: 9 ÷ 40 = 0.225 for each of two heads and two tails, and 22 ÷ 40 = 0.55 for mixed, close to theory. Mixed is twice as likely because the first coin could be the head or the second coin could be.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the outcomes are HH, HT, TH and TT"
+                },
+                {
+                  "point": 1,
+                  "quote": "Theory: two heads 1/4, two tails 1/4, mixed 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "Experiment: 9 ÷ 40 = 0.225 for each of two heads and two tails, and 22 ÷ 40 = 0.55 for mixed"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mixed is twice as likely because the first coin could be the head or the second coin could be"
+                }
+              ],
+              "feedback": "All four marks. Thinking about which coin shows the head is a clear way to explain the two ways."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) HH, HT, TT. (b) Each is 1/3. (c) 9/40, 22/40, 9/40. (d) Because it is luck.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "(c) 9/40, 22/40, 9/40"
+                }
+              ],
+              "feedback": "Your experimental probabilities are right. But HT and TH are different outcomes (first coin head or second coin head), so there are four: HH, HT, TH, TT. That makes one of each 2/4 = 1/2, and explains (d)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) HH, HT, TH, TT. (b) HH = 1/4, mixed = 1/2, TT = 1/4. (c) 0.225, 0.55, 0.225.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) HH, HT, TH, TT"
+                },
+                {
+                  "point": 1,
+                  "quote": "HH = 1/4, mixed = 1/2, TT = 1/4"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) 0.225, 0.55, 0.225"
+                }
+              ],
+              "feedback": "Parts (a) to (c) are all correct. Finish with (d): one of each can happen in two ways, HT and TH, but two heads in only one way."
+            },
+            {
+              "tier": "weak",
+              "text": "There are three results so each one has a probability of 1/3. The experiment is wrong because 22 is too big.",
+              "meets": [],
+              "feedback": "The three results are not equally likely. List the outcomes for each coin: HH, HT, TH, TT. One of each appears twice, so its probability is 1/2, and 22 out of 40 fits that."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) H and T. (b) 1/2. (c) 22/40.",
+              "meets": [],
+              "feedback": "With two coins you must list both coins together: HH, HT, TH, TT. Then find a probability for each result, from theory (1/4, 1/2, 1/4) and from the experiment (9/40, 22/40, 9/40)."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

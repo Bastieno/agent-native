@@ -1,0 +1,2812 @@
+{
+  "subject": "Mathematics",
+  "yearGroup": "SS3",
+  "weeks": {
+    "1": {
+      "topic": "Chords and angles in a circle",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the facts that the perpendicular from the centre bisects a chord, and that the line from the centre to the midpoint of a chord is perpendicular to it;\n2. use the theorem that the angle an arc subtends at the centre is twice the angle it subtends at the circumference;\n3. use the fact that the angle in a semicircle is a right angle;\n4. use the facts that angles in the same segment are equal and that opposite angles of a cyclic quadrilateral are supplementary.\n\n## Materials\n\nCompasses, protractors, a large circle drawn on manila card with movable pins, past WASSCE circle-theorem questions.\n\n## Starter (5 minutes)\n\nPin a chord AB on the manila circle. Move a third pin C round the circumference and measure ∠ACB each time. Learners notice it does not change while C stays on the same side of AB.\n\n## Development\n\n1. Chords: draw OM from the centre to the midpoint of chord AB. Measure ∠OMA = 90°. Work: chord 24 cm, radius 13 cm gives OM = 5 cm by Pythagoras.\n2. Angle at the centre: mark ∠AOB and ∠ACB on the same arc. Measure: the centre angle is twice the other. Work: centre angle 130° gives 65° at the circumference.\n3. Angle in a semicircle: when AB is a diameter, ∠AOB = 180°, so ∠ACB = 90°.\n4. Same segment: return to the starter. Angles standing on the same arc and on the same side are equal.\n5. Cyclic quadrilateral: opposite angles add up to 180°, since together their arcs make the whole circle (360° at the centre).\n6. Always write the reason in brackets after each angle.\n\n## Class activity\n\nEach pair draws a circle, marks a cyclic quadrilateral, measures its four angles and checks that opposite angles add to 180°.\n\n## Evaluation\n\n1. A chord 16 cm long is in a circle of radius 10 cm. How far is it from the centre?\n2. An arc subtends 76° at the circumference. What does it subtend at the centre?\n3. ABCD is cyclic and ∠A = 85°. Find ∠C.\n\n## Assignment\n\nWorksheet on the app, due Thursday.",
+      "reading": {
+        "title": "The circle theorems you will use all year",
+        "content": "# Chords and angles in a circle\n\n## Chords\n\nA **chord** is a straight line joining two points on a circle. Two facts:\n\n- The perpendicular from the centre to a chord **bisects** the chord.\n- The line from the centre to the midpoint of a chord is **perpendicular** to the chord.\n\nThis gives a right-angled triangle to use with Pythagoras.\n\n**Worked example 1.** A chord AB is 24 cm long in a circle of radius 13 cm. M is its midpoint, so AM = 12 cm and ∠OMA = 90°. OM = √(13² − 12²) = √25 = 5 cm.\n\n## Angle at the centre\n\nThe angle an arc subtends at the **centre** is **twice** the angle it subtends at any point on the remaining part of the circumference.\n\nIf ∠AOB = 130°, then ∠ACB = 65°.\n\n## Angle in a semicircle\n\nIf AB is a **diameter**, the angle at the centre is 180°, so any angle ACB at the circumference is **90°**.\n\n**Worked example 2.** AB is a diameter and ∠BAC = 35°. Since ∠ACB = 90°, ∠ABC = 180° − 90° − 35° = 55°.\n\n## Angles in the same segment\n\nAngles at the circumference standing on the **same arc**, on the same side of the chord, are **equal**.\n\n## Cyclic quadrilaterals\n\nA quadrilateral with all four vertices on a circle is **cyclic**. Its opposite angles are **supplementary** (add up to 180°). Angles in opposite segments are supplementary.\n\n**Worked example 3.** ABCD is a cyclic quadrilateral and AC is a diameter. ∠BAC = 28° and ∠CAD = 40°.\n\n- ∠ABC = 90° (angle in a semicircle)\n- ∠BCA = 180° − 90° − 28° = 62° (angles in a triangle)\n- ∠BDA = ∠BCA = 62° (angles in the same segment)\n- ∠BAD = 68°, so ∠BCD = 180° − 68° = 112° (opposite angles of a cyclic quadrilateral)\n- ∠BOC = 2 × ∠BAC = 56° (angle at the centre)\n\n## Writing reasons\n\nIn WASSCE, an angle with no reason often earns only half the marks. Learn the short forms: (∠ in semicircle), (∠s in same segment), (opp. ∠s of cyclic quad.), (∠ at centre = 2 × ∠ at circumference)."
+      },
+      "cards": [
+        {
+          "front": "Line from the centre to the midpoint of a chord",
+          "back": "Is perpendicular to the chord."
+        },
+        {
+          "front": "Angle at the centre",
+          "back": "Twice the angle at the circumference on the same arc."
+        },
+        {
+          "front": "Angle in a semicircle",
+          "back": "90°"
+        },
+        {
+          "front": "Angles in the same segment",
+          "back": "Are equal."
+        },
+        {
+          "front": "Opposite angles of a cyclic quadrilateral",
+          "back": "Add up to 180°."
+        },
+        {
+          "front": "Chord 16 cm in a circle of radius 10 cm: distance from centre",
+          "back": "√(10² − 8²) = 6 cm"
+        },
+        {
+          "front": "Centre angle 130°: angle at the circumference",
+          "back": "65°"
+        },
+        {
+          "front": "Cyclic quadrilateral",
+          "back": "A quadrilateral whose four vertices all lie on a circle."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A chord 16 cm long is drawn in a circle of radius 10 cm. How far is the chord from the centre of the circle?",
+          "options": ["6 cm", "8 cm", "12.8 cm", "2 cm"],
+          "answer": "A"
+        },
+        {
+          "prompt": "An arc of a circle subtends an angle of 130° at the centre. What angle does it subtend at a point on the remaining part of the circumference?",
+          "options": ["130°", "260°", "65°", "50°"],
+          "answer": "C"
+        },
+        {
+          "prompt": "AB is a diameter of a circle and C is a point on the circle. If ∠BAC = 35°, find ∠ABC.",
+          "options": ["35°", "55°", "90°", "145°"],
+          "answer": "B"
+        },
+        {
+          "prompt": "PQRS is a cyclic quadrilateral in which ∠PQR = 110°. Find ∠PSR.",
+          "options": ["110°", "250°", "55°", "70°"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A, B, C and D lie on a circle, with C and D on the same side of the chord AB. If ∠ACB = 42°, find ∠ADB.",
+          "options": ["84°", "42°", "138°", "21°"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "AB is a chord 24 cm long in a circle with centre O and radius 13 cm. M is the midpoint of AB. (a) Explain why OM is perpendicular to AB. (b) Find the length of OM. (c) Find ∠AOB, correct to the nearest degree.",
+          "markScheme": [
+            "(a) The line from the centre to the midpoint of a chord is perpendicular to the chord",
+            "AM = 12 cm and OM² = 13² − 12²",
+            "(b) OM = 5 cm",
+            "sin ∠AOM = 12/13 (or tan ∠AOM = 12/5), so ∠AOM = 67.4°",
+            "(c) ∠AOB = 2 × 67.4° = 135°"
+          ],
+          "modelAnswer": "(a) The line joining the centre of a circle to the midpoint of a chord is perpendicular to the chord, so ∠OMA = 90°. (b) AM = 12 cm. OM² = 13² − 12² = 169 − 144 = 25, so OM = 5 cm. (c) sin ∠AOM = 12/13 = 0.9231, so ∠AOM = 67.4°. ∠AOB = 2 × 67.4° = 134.8°, which is 135° to the nearest degree.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The line joining the centre to the midpoint of a chord is perpendicular to the chord. (b) AM = 12 cm. OM² = 13² − 12² = 169 − 144 = 25, OM = 5 cm. (c) sin ∠AOM = 12/13 = 0.9231, ∠AOM = 67.4°. ∠AOB = 2 x 67.4 = 134.8 = 135°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The line joining the centre to the midpoint of a chord is perpendicular to the chord"
+                },
+                {
+                  "point": 1,
+                  "quote": "AM = 12 cm. OM² = 13² − 12²"
+                },
+                {
+                  "point": 2,
+                  "quote": "OM = 5 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "sin ∠AOM = 12/13 = 0.9231, ∠AOM = 67.4°"
+                },
+                {
+                  "point": 4,
+                  "quote": "∠AOB = 2 x 67.4 = 134.8 = 135°"
+                }
+              ],
+              "feedback": "All five marks. Doubling ∠AOM at the end is the step that is easiest to forget, and you did it."
+            },
+            {
+              "tier": "full",
+              "text": "(a) OA = OB (radii), so triangle OAB is isosceles and the line from O to the midpoint of AB is its line of symmetry, so OM ⊥ AB. (b) OM = √(13² − 12²) = √25 = 5 cm. (c) tan ∠AOM = 12/5 = 2.4, ∠AOM = 67.38°, so ∠AOB = 134.76° ≈ 135°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the line from O to the midpoint of AB is its line of symmetry, so OM ⊥ AB"
+                },
+                {
+                  "point": 1,
+                  "quote": "OM = √(13² − 12²)"
+                },
+                {
+                  "point": 2,
+                  "quote": "= √25 = 5 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "tan ∠AOM = 12/5 = 2.4, ∠AOM = 67.38°"
+                },
+                {
+                  "point": 4,
+                  "quote": "∠AOB = 134.76° ≈ 135°"
+                }
+              ],
+              "feedback": "Full marks. Explaining (a) through the isosceles triangle shows you know why the theorem is true."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A line from the centre to the midpoint of a chord makes a right angle with it. (b) OM² = 13² − 12² = 25, OM = 5 cm. (c) sin ∠AOM = 5/13, ∠AOM = 22.6°, ∠AOB = 45°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A line from the centre to the midpoint of a chord makes a right angle with it"
+                },
+                {
+                  "point": 1,
+                  "quote": "OM² = 13² − 12²"
+                },
+                {
+                  "point": 2,
+                  "quote": "OM = 5 cm"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. In triangle AOM, the side opposite ∠AOM is AM = 12, not OM, so sin ∠AOM = 12/13 and ∠AOM = 67.4°. That makes ∠AOB = 135°."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Because M is in the middle. (b) AM = 12, OM² = 169 − 144 = 25, OM = 5. (c) sin ∠AOM = 12/13, ∠AOM = 67.4°, so ∠AOB = 67°.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "AM = 12, OM² = 169 − 144"
+                },
+                {
+                  "point": 2,
+                  "quote": "OM = 5"
+                },
+                {
+                  "point": 3,
+                  "quote": "sin ∠AOM = 12/13, ∠AOM = 67.4°"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are nearly all right: ∠AOM is only half of ∠AOB, so double it to get 135°. For (a), state the theorem: the line from the centre to the midpoint of a chord is perpendicular to it."
+            },
+            {
+              "tier": "weak",
+              "text": "OM = 13 − 12 = 1 cm. ∠AOB = 90° because OM is perpendicular.",
+              "meets": [],
+              "feedback": "The lengths form a right-angled triangle, so use Pythagoras: OM = √(13² − 12²) = 5 cm. The 90° is at M, not at O."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) OM is perpendicular because the line from the centre to the middle of a chord meets it at a right angle. (b) OM = 24 − 13 = 11 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the line from the centre to the middle of a chord meets it at a right angle"
+                }
+              ],
+              "feedback": "Your reason in (a) is right. Use it: triangle OMA has a right angle at M, with OA = 13 and AM = 12, so OM = √(169 − 144) = 5 cm."
+            }
+          ]
+        },
+        {
+          "prompt": "A, B, C and D lie in that order on a circle with centre O, and AC is a diameter. ∠BAC = 28° and ∠CAD = 40°. Find, giving a reason for each, (a) ∠ABC, (b) ∠BCA, (c) ∠BDA, (d) ∠BCD, (e) ∠BOC.",
+          "markScheme": [
+            "(a) ∠ABC = 90° (angle in a semicircle)",
+            "(b) ∠BCA = 180° − 90° − 28° = 62° (angles in a triangle)",
+            "(c) ∠BDA = 62° (angles in the same segment)",
+            "(d) ∠BCD = 180° − 68° = 112° (opposite angles of a cyclic quadrilateral)",
+            "(e) ∠BOC = 2 × 28° = 56° (angle at the centre is twice the angle at the circumference)"
+          ],
+          "modelAnswer": "(a) ∠ABC = 90°, because the angle in a semicircle is a right angle. (b) ∠BCA = 180° − 90° − 28° = 62° (angles in a triangle add up to 180°). (c) ∠BDA = ∠BCA = 62° (angles in the same segment, on chord AB). (d) ∠BAD = 28° + 40° = 68°, so ∠BCD = 180° − 68° = 112° (opposite angles of a cyclic quadrilateral). (e) ∠BOC = 2 × ∠BAC = 56° (angle at the centre is twice the angle at the circumference).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) ∠ABC = 90° (angle in a semicircle). (b) ∠BCA = 180 − 90 − 28 = 62° (angles in a triangle). (c) ∠BDA = ∠BCA = 62° (angles in the same segment). (d) ∠BAD = 28 + 40 = 68°, ∠BCD = 180 − 68 = 112° (opposite angles of a cyclic quadrilateral). (e) ∠BOC = 2 x ∠BAC = 56° (angle at centre is twice angle at circumference).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "∠ABC = 90° (angle in a semicircle)"
+                },
+                {
+                  "point": 1,
+                  "quote": "∠BCA = 180 − 90 − 28 = 62° (angles in a triangle)"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠BDA = ∠BCA = 62° (angles in the same segment)"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠BCD = 180 − 68 = 112° (opposite angles of a cyclic quadrilateral)"
+                },
+                {
+                  "point": 4,
+                  "quote": "∠BOC = 2 x ∠BAC = 56° (angle at centre is twice angle at circumference)"
+                }
+              ],
+              "feedback": "All five marks, each with the right theorem. This is the standard of answer that earns full marks in WASSCE."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 90° (∠ in semicircle, AC diameter). (b) 62° (sum of ∠s in Δ ABC = 180°). (c) 62°, same as ∠BCA (∠s in same segment on AB). (d) 112°, since ∠BAD = 68° and opp. ∠s of cyclic quad. add to 180°. (e) 56° (∠ at centre = 2 × ∠ at circumference, both on arc BC).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 90° (∠ in semicircle, AC diameter)"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) 62° (sum of ∠s in Δ ABC = 180°)"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) 62°, same as ∠BCA (∠s in same segment on AB)"
+                },
+                {
+                  "point": 3,
+                  "quote": "(d) 112°, since ∠BAD = 68° and opp. ∠s of cyclic quad. add to 180°"
+                },
+                {
+                  "point": 4,
+                  "quote": "(e) 56° (∠ at centre = 2 × ∠ at circumference, both on arc BC)"
+                }
+              ],
+              "feedback": "Full marks. Naming the arc or chord each pair of angles stands on makes your reasons exact."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 90° (angle in a semicircle). (b) 62° (angles in a triangle). (c) ∠BDA = 28° because it is equal to ∠BAC. (d) ∠BCD = 68° because opposite angles are equal. (e) ∠BOC = 56° (angle at centre is twice angle at circumference).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 90° (angle in a semicircle)"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) 62° (angles in a triangle)"
+                },
+                {
+                  "point": 4,
+                  "quote": "∠BOC = 56° (angle at centre is twice angle at circumference)"
+                }
+              ],
+              "feedback": "Parts (a), (b) and (e) are right. ∠BDA stands on chord AB, as ∠BCA does, so it is 62°. Opposite angles of a cyclic quadrilateral add to 180°; they are only equal in a parallelogram, so ∠BCD = 112°."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) ∠ABC = 90° (angle in semicircle). (b) ∠BCA = 62° (angle sum of triangle). (c) ∠BDA = 62° (same segment). (d) ∠BCD = 180 − 40 = 140°. (e) ∠BOC = 28 ÷ 2 = 14°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "∠ABC = 90° (angle in semicircle)"
+                },
+                {
+                  "point": 1,
+                  "quote": "∠BCA = 62° (angle sum of triangle)"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠BDA = 62° (same segment)"
+                }
+              ],
+              "feedback": "Parts (a) to (c) are right. The angle opposite ∠BCD is the whole of ∠BAD, 28° + 40° = 68°, so ∠BCD = 112°. The angle at the centre is twice, not half, the angle at the circumference: 56°."
+            },
+            {
+              "tier": "weak",
+              "text": "All the angles in a circle are equal, so ∠ABC = ∠BCA = ∠BDA = 28° and ∠BCD = 40°.",
+              "meets": [],
+              "feedback": "Only angles standing on the same arc are equal. Start with ∠ABC: AC is a diameter, so the angle in a semicircle is 90°."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) ∠ABC = 90° because AC is a diameter. (b) ∠BCA = 180 − 28 = 152°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "∠ABC = 90° because AC is a diameter"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b) there are three angles in triangle ABC, so take away both: 180° − 90° − 28° = 62°. Then use same-segment and cyclic-quadrilateral facts for the rest."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Tangents, constructions and loci",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the fact that a tangent is perpendicular to the radius at the point of contact, and that tangents from an external point are equal;\n2. use the alternate segment theorem;\n3. construct bisectors of lines and angles, perpendicular and parallel lines, angles of 90°, 60°, 45°, 30° and combinations such as 75°, 105° and 135°, and triangles and quadrilaterals from given data;\n4. describe and construct the four basic loci and their intersections, and apply them to real situations.\n\n## Materials\n\nA pair of compasses, a ruler and a sharp pencil for every learner, a board compass, a map of the school compound.\n\n## Starter (5 minutes)\n\nAsk: the school wants to sink a new borehole the same distance from the two existing ones. Where could it go? Learners mark guesses on the map and notice they lie on a straight line.\n\n## Development\n\n1. Tangent and radius: draw a tangent at T; measure ∠OTP = 90°. Work: radius 6 cm, OP = 10 cm gives PT = 8 cm. Two tangents from P are equal and symmetrical about OP.\n2. Alternate segment: the angle between a tangent and a chord equals the angle in the alternate segment. Work: 65° between tangent and chord gives 65° at C.\n3. Constructions: bisect a line and an angle; construct 60° (equilateral arc), 90° (perpendicular), 30° and 45° (bisect). Combine: 75° = 60° + 15°, 105° = 90° + 15°, 135° = 90° + 45°. Construct a triangle from two sides and the included angle.\n4. Loci: (i) points a fixed distance from a point: a circle; (ii) equidistant from two points: the perpendicular bisector; (iii) equidistant from two lines: the angle bisectors; (iv) a fixed distance from a line: a pair of parallel lines.\n5. Intersections: return to the borehole. Add the rule 'within 500 m of A' and find where the perpendicular bisector lies inside the circle.\n\n## Class activity\n\nEach learner constructs angles of 75° and 135° with ruler and compasses only, then checks them with a protractor.\n\n## Evaluation\n\n1. From P, a tangent touches a circle of radius 5 cm at T and OP = 13 cm. Find PT.\n2. Describe the locus of points 2 cm from a straight line.\n3. Which two constructions give 105°?\n\n## Assignment\n\nQuiz on the app, due Monday.",
+      "reading": {
+        "title": "Tangents, and where a point can be",
+        "content": "# Tangents, constructions and loci\n\n## Tangents\n\nA **tangent** touches a circle at exactly one point, the **point of contact**.\n\n- The tangent is **perpendicular to the radius** at the point of contact.\n- The two tangents from an external point P are **equal in length**, and OP bisects the angle between them.\n\n**Worked example 1.** A tangent from P touches a circle of radius 6 cm at T, and OP = 10 cm. Since ∠OTP = 90°, PT = √(10² − 6²) = 8 cm. cos ∠TOP = 6/10, so ∠TOP = 53.1° and ∠TPO = 36.9°. The angle between the two tangents is 2 × 36.9° = 73.7°.\n\n## The alternate segment theorem\n\nThe angle between a tangent and a chord through the point of contact equals the angle in the **alternate segment**. If the tangent at A makes 65° with the chord AB, then any angle ACB in the other segment is also 65°.\n\n## Constructions\n\nWith a ruler and a pair of compasses only:\n\n- **Bisect a line:** arcs from each end above and below; join the crossings.\n- **Bisect an angle:** an arc across both arms, then equal arcs from those points.\n- **60°:** an arc from the vertex, then the same radius from where it cuts the line.\n- **90°:** construct the perpendicular. **30°** and **45°** come from bisecting 60° and 90°.\n- Combine them: 75° = 60° + 15°, 105° = 90° + 15°, 135° = 90° + 45°.\n\n## Loci\n\nA **locus** is the set of all points that obey a rule.\n\n| Rule | Locus |\n| --- | --- |\n| A fixed distance from a point | A circle |\n| Equidistant from two points A and B | The perpendicular bisector of AB |\n| Equidistant from two intersecting lines | The bisectors of the angles between them |\n| A fixed distance from a line | Two lines parallel to it |\n\nWhen there are two rules, the point must lie where the loci **intersect** or overlap.\n\n**Worked example 2.** On a map (1 cm to 100 m), boreholes A and B are 8 cm apart. A well W must be equidistant from A and B and within 500 m of A. W lies on the perpendicular bisector of AB, inside the circle centre A, radius 5 cm. The bisector meets AB at M, 4 cm from A, and cuts the circle √(5² − 4²) = 3 cm from M. So W can be at most 300 m from the line AB."
+      },
+      "cards": [
+        {
+          "front": "Tangent and radius",
+          "back": "The tangent is perpendicular to the radius at the point of contact."
+        },
+        {
+          "front": "Two tangents from an external point",
+          "back": "Are equal in length and symmetrical about the line to the centre."
+        },
+        {
+          "front": "Alternate segment theorem",
+          "back": "The angle between a tangent and a chord equals the angle in the alternate segment."
+        },
+        {
+          "front": "Locus of points equidistant from A and B",
+          "back": "The perpendicular bisector of AB."
+        },
+        {
+          "front": "Locus of points a fixed distance from a point",
+          "back": "A circle centred on the point."
+        },
+        {
+          "front": "Locus of points equidistant from two intersecting lines",
+          "back": "The bisectors of the angles between the lines."
+        },
+        {
+          "front": "Locus of points a fixed distance from a line",
+          "back": "A pair of lines parallel to it."
+        },
+        {
+          "front": "Constructing 75°",
+          "back": "Construct 60°, then bisect the 30° next to it to add 15°."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A tangent from P touches a circle, centre O and radius 5 cm, at T. If OP = 13 cm, find the length of PT.",
+          "options": ["8 cm", "12 cm", "13.9 cm", "18 cm"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The tangent to a circle at A makes an angle of 65° with the chord AB. C is a point on the major arc AB. Find ∠ACB.",
+          "options": ["65°", "25°", "115°", "130°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "What is the locus of points that are equidistant from two fixed points A and B?",
+          "options": [
+            "A circle with its centre at the midpoint of AB",
+            "The line AB itself",
+            "The perpendicular bisector of AB",
+            "A line parallel to AB"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Using only a ruler and a pair of compasses, which two angles would you combine to construct an angle of 75°?",
+          "options": [
+            "30° and 30°",
+            "90° and 30°",
+            "45° and 45°",
+            "60° and 15°"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Two tangents PA and PB are drawn from P to a circle with centre O. If ∠APB = 50°, find ∠AOB.",
+          "options": ["50°", "100°", "130°", "25°"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "PT and PS are tangents from P to a circle with centre O and radius 6 cm, touching it at T and S. OP = 10 cm. (a) Why is ∠OTP = 90°? (b) Find PT. (c) Find ∠TOP and ∠TPS, correct to 1 decimal place.",
+          "markScheme": [
+            "(a) A tangent is perpendicular to the radius at the point of contact",
+            "(b) PT = √(10² − 6²) = 8 cm",
+            "cos ∠TOP = 6/10, so ∠TOP = 53.1°",
+            "∠TPO = 36.9°, so ∠TPS = 2 × 36.9° = 73.7° (accept 73.8°), as the tangents are symmetrical about OP"
+          ],
+          "modelAnswer": "(a) The tangent to a circle is perpendicular to the radius at the point of contact, so ∠OTP = 90°. (b) PT² = 10² − 6² = 64, so PT = 8 cm. (c) cos ∠TOP = 6/10 = 0.6, so ∠TOP = 53.1°. Then ∠TPO = 90° − 53.1° = 36.9°. OP bisects the angle between the tangents, so ∠TPS = 2 × 36.87° = 73.7°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The tangent to a circle is perpendicular to the radius at the point of contact. (b) PT² = 10² − 6² = 64, PT = 8 cm. (c) cos ∠TOP = 6/10 = 0.6, ∠TOP = 53.1°. ∠TPO = 90 − 53.1 = 36.9°. The tangents are symmetrical about OP, so ∠TPS = 2 x 36.9 = 73.8°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The tangent to a circle is perpendicular to the radius at the point of contact"
+                },
+                {
+                  "point": 1,
+                  "quote": "PT² = 10² − 6² = 64, PT = 8 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "cos ∠TOP = 6/10 = 0.6, ∠TOP = 53.1°"
+                },
+                {
+                  "point": 3,
+                  "quote": "The tangents are symmetrical about OP, so ∠TPS = 2 x 36.9 = 73.8°"
+                }
+              ],
+              "feedback": "All four marks. Keep more decimals before doubling (36.87°) and you will get 73.7° exactly."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Radius ⊥ tangent at the point where it touches. (b) PT = √(100 − 36) = √64 = 8 cm. (c) sin ∠TPO = 6/10, ∠TPO = 36.87°, so ∠TOP = 90° − 36.87° = 53.13° ≈ 53.1°. ∠TPS = 2 × 36.87° = 73.74° ≈ 73.7° because OP bisects ∠TPS.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Radius ⊥ tangent at the point where it touches"
+                },
+                {
+                  "point": 1,
+                  "quote": "PT = √(100 − 36) = √64 = 8 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠TOP = 90° − 36.87° = 53.13° ≈ 53.1°"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠TPS = 2 × 36.87° = 73.74° ≈ 73.7° because OP bisects ∠TPS"
+                }
+              ],
+              "feedback": "Full marks. Keeping two decimal places until the end gave you exact answers."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The radius is perpendicular to the tangent at the point of contact. (b) PT = √(10² + 6²) = 11.66 cm. (c) cos ∠TOP = 6/10, ∠TOP = 53.1°. ∠TPS = 36.9°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The radius is perpendicular to the tangent at the point of contact"
+                },
+                {
+                  "point": 2,
+                  "quote": "cos ∠TOP = 6/10, ∠TOP = 53.1°"
+                }
+              ],
+              "feedback": "Parts (a) and ∠TOP are right. OP is the hypotenuse, so subtract: PT = √(100 − 36) = 8 cm. And 36.9° is only ∠TPO; the angle between both tangents is twice that, 73.7°."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Because PT is a tangent. (b) PT = √(10² − 6²) = 8 cm. (c) ∠TOP = cos⁻¹ 0.6 = 53.1°, ∠TPO = 36.9°, ∠TPS = 73.7°.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "PT = √(10² − 6²) = 8 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠TOP = cos⁻¹ 0.6 = 53.1°"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠TPO = 36.9°, ∠TPS = 73.7°"
+                }
+              ],
+              "feedback": "Your calculations are all right. In (a), being a tangent is not the reason by itself: state the theorem, that a tangent is perpendicular to the radius at the point of contact."
+            },
+            {
+              "tier": "weak",
+              "text": "PT = 10 − 6 = 4 cm. ∠TOP = 90° because it is a tangent.",
+              "meets": [],
+              "feedback": "The right angle is at T, between the radius and the tangent, not at O. That makes OTP a right-angled triangle with hypotenuse OP, so PT = √(10² − 6²) = 8 cm."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A tangent meets the radius at 90°. (b) PT = 10 + 6 = 16 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A tangent meets the radius at 90°"
+                }
+              ],
+              "feedback": "Your reason in (a) is right. Use it: triangle OTP has a right angle at T, so PT² = OP² − OT² = 100 − 36 and PT = 8 cm."
+            }
+          ]
+        },
+        {
+          "prompt": "On a map drawn to a scale of 1 cm to 100 m, two boreholes A and B are 8 cm apart. A new well W is to be equidistant from A and B, and not more than 500 m from A. (a) Describe the locus of W for each condition. (b) Describe where W may be placed. (c) Calculate the greatest distance, in metres, that W can be from the line AB.",
+          "markScheme": [
+            "Equidistant from A and B: the perpendicular bisector of AB",
+            "Not more than 500 m from A: on or inside a circle, centre A, radius 5 cm",
+            "(b) W lies on the part of the perpendicular bisector inside the circle",
+            "Distance from the midpoint M: √(5² − 4²) = 3 cm",
+            "(c) Greatest distance = 3 cm on the map = 300 m"
+          ],
+          "modelAnswer": "(a) Points equidistant from A and B lie on the perpendicular bisector of AB. Points not more than 500 m from A lie on or inside a circle with centre A and radius 5 cm. (b) W must be on the part of the perpendicular bisector that lies inside this circle. (c) The bisector meets AB at M, 4 cm from A. It cuts the circle where AW = 5 cm, so MW = √(5² − 4²) = 3 cm. On the ground this is 3 × 100 = 300 m from AB.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Equidistant from A and B: the perpendicular bisector of AB. Not more than 500 m from A: on or inside the circle with centre A and radius 5 cm. (b) W must be on the part of the perpendicular bisector that is inside the circle. (c) The bisector meets AB at M, 4 cm from A. The furthest point is where it cuts the circle: MW = √(5² − 4²) = 3 cm, which is 300 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Equidistant from A and B: the perpendicular bisector of AB"
+                },
+                {
+                  "point": 1,
+                  "quote": "on or inside the circle with centre A and radius 5 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "W must be on the part of the perpendicular bisector that is inside the circle"
+                },
+                {
+                  "point": 3,
+                  "quote": "MW = √(5² − 4²) = 3 cm"
+                },
+                {
+                  "point": 4,
+                  "quote": "which is 300 m"
+                }
+              ],
+              "feedback": "All five marks. Changing the 500 m to 5 cm before working on the map was the right first step."
+            },
+            {
+              "tier": "full",
+              "text": "Rule 1 gives the perpendicular bisector of AB. Rule 2 gives a circle of radius 5 cm (500 m) round A, including its inside. W can be anywhere on the bisector between the two points where it crosses the circle. The bisector is 4 cm from A, so by Pythagoras the crossing points are √(25 − 16) = 3 cm from AB, i.e. 300 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Rule 1 gives the perpendicular bisector of AB"
+                },
+                {
+                  "point": 1,
+                  "quote": "Rule 2 gives a circle of radius 5 cm (500 m) round A, including its inside"
+                },
+                {
+                  "point": 2,
+                  "quote": "W can be anywhere on the bisector between the two points where it crosses the circle"
+                },
+                {
+                  "point": 3,
+                  "quote": "√(25 − 16) = 3 cm from AB"
+                },
+                {
+                  "point": 4,
+                  "quote": "i.e. 300 m"
+                }
+              ],
+              "feedback": "Full marks. Describing the allowed part as the stretch between the two crossing points is very precise."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The perpendicular bisector of AB, and a circle centre A of radius 5 cm. (b) W is at the midpoint of AB.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The perpendicular bisector of AB"
+                },
+                {
+                  "point": 1,
+                  "quote": "a circle centre A of radius 5 cm"
+                }
+              ],
+              "feedback": "Both loci are right. The midpoint is only one allowed position: W can be anywhere on the bisector inside the circle. Use Pythagoras with 5 cm and 4 cm to find how far up the bisector it can go."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A circle of radius 5 cm round A, and the line through A and B. (c) √(5² − 4²) = 3 cm, so 300 m.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A circle of radius 5 cm round A"
+                },
+                {
+                  "point": 3,
+                  "quote": "√(5² − 4²) = 3 cm"
+                },
+                {
+                  "point": 4,
+                  "quote": "so 300 m"
+                }
+              ],
+              "feedback": "Your circle and your calculation are right. Points equidistant from A and B lie on the perpendicular bisector of AB, not on the line AB, and that is where W must be.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "W should be in the middle of A and B, 4 cm from each, which is 400 m.",
+              "meets": [],
+              "feedback": "The midpoint is equidistant from A and B, but so is every point on the perpendicular bisector of AB. Draw that line and the circle of radius 5 cm round A, and look at where they overlap."
+            },
+            {
+              "tier": "weak",
+              "text": "W is on the perpendicular bisector of AB. The greatest distance is 500 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "W is on the perpendicular bisector of AB"
+                }
+              ],
+              "feedback": "Your first locus is right. 500 m is the distance from A, not from the line AB. The bisector is 4 cm from A, so the furthest point is √(5² − 4²) = 3 cm, 300 m, from AB."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Coordinate geometry of straight lines and trigonometric ratios",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. plot and read the coordinates of points on the x-y plane;\n2. find the midpoint of two points, the distance between them, and the gradient of the line joining them;\n3. find the equation of a line in the forms y = mx + c and y − y₁ = m(x − x₁);\n4. find the sine, cosine and tangent of acute angles in right-angled triangles and use them to find sides and angles.\n\n## Materials\n\nGraph boards, a large x-y grid on the floor (taped), four-figure tables or calculators, a plank and a block for the ramp demonstration.\n\n## Starter (5 minutes)\n\nTwo learners stand on the floor grid at (1, 5) and (7, −3). Ask a third to stand exactly halfway between them. The class reads the position, (4, 1), and guesses a rule.\n\n## Development\n\n1. Midpoint: ((x₁ + x₂)/2, (y₁ + y₂)/2). For P(1, 5) and Q(7, −3), (4, 1).\n2. Distance: draw the right-angled triangle under PQ. |PQ| = √[(x₂ − x₁)² + (y₂ − y₁)²] = √(36 + 64) = 10.\n3. Gradient m = (y₂ − y₁)/(x₂ − x₁) = −8/6 = −4/3. A line falling from left to right has a negative gradient.\n4. Equations: y − 5 = −4/3(x − 1) gives 4x + 3y = 19. Also y = mx + c: through (2, 3) with m = 2 gives y = 2x − 1.\n5. Trigonometric ratios: label opposite, adjacent and hypotenuse from the angle. SOH CAH TOA. In a 3-4-5 triangle, sin θ = 3/5, cos θ = 4/5, tan θ = 3/4.\n6. Ramp: rise 1.2 m over 5 m gives tan θ = 0.24, θ = 13.5°.\n\n## Class activity\n\nPairs measure the rise and run of the plank ramp at three heights, find each angle with tan, and check one with a protractor.\n\n## Evaluation\n\n1. Find the distance between (−2, 1) and (4, 9).\n2. Find the equation of the line through (0, 4) with gradient −3.\n3. In triangle ABC, ∠B = 90°, AB = 5 cm and BC = 12 cm. Find sin A.\n\n## Assignment\n\nProblem set on the app, due Wednesday.",
+      "reading": {
+        "title": "Lines on a grid, and the ratios in a right-angled triangle",
+        "content": "# Straight lines and trigonometric ratios\n\n## The x-y plane\n\nA point is fixed by its **coordinates** (x, y): x across from the origin, y up. Points to the left of the origin have negative x; points below it have negative y.\n\n## Midpoint, distance and gradient\n\nFor P(x₁, y₁) and Q(x₂, y₂):\n\n- **Midpoint** = ((x₁ + x₂)/2, (y₁ + y₂)/2)\n- **Distance** |PQ| = √[(x₂ − x₁)² + (y₂ − y₁)²]\n- **Gradient** m = (y₂ − y₁)/(x₂ − x₁)\n\n**Worked example 1.** P(1, 5) and Q(7, −3).\n\n- Midpoint = ((1 + 7)/2, (5 − 3)/2) = (4, 1)\n- |PQ| = √(6² + (−8)²) = √100 = 10 units\n- m = (−3 − 5)/(7 − 1) = −8/6 = −4/3\n\n## Equation of a line\n\n- **y = mx + c**, where m is the gradient and c is where the line cuts the y-axis.\n- **y − y₁ = m(x − x₁)**, when you know the gradient and one point.\n\n**Worked example 2.** The line PQ: y − 5 = −4/3(x − 1). Multiply by 3: 3y − 15 = −4x + 4, so 4x + 3y = 19. Check with Q: 4(7) + 3(−3) = 19. Correct.\n\n**Worked example 3.** Through (2, 3) with gradient 2: y = 2x + c, and 3 = 4 + c, so c = −1. The line is y = 2x − 1.\n\n## Sine, cosine and tangent\n\nIn a right-angled triangle, name the sides from the angle θ: the **opposite**, the **adjacent** (next to θ), and the **hypotenuse** (opposite the right angle).\n\n- sin θ = opposite/hypotenuse\n- cos θ = adjacent/hypotenuse\n- tan θ = opposite/adjacent\n\nMany learners remember **SOH CAH TOA**.\n\n**Worked example 4.** A ramp at a hospital rises 1.2 m over a horizontal distance of 5 m. tan θ = 1.2/5 = 0.24, so θ = 13.5°. The ramp's length is √(5² + 1.2²) = √26.44 = 5.14 m.\n\n**Worked example 5.** To find a side, choose the ratio that links it to what you know. If the angle is 35° and the adjacent side is 10 m, the opposite side is 10 × tan 35° = 10 × 0.7002 = 7.0 m."
+      },
+      "cards": [
+        {
+          "front": "Midpoint of (x₁, y₁) and (x₂, y₂)",
+          "back": "((x₁ + x₂)/2, (y₁ + y₂)/2)"
+        },
+        {
+          "front": "Distance between two points",
+          "back": "√[(x₂ − x₁)² + (y₂ − y₁)²]"
+        },
+        {
+          "front": "Gradient of a line",
+          "back": "(y₂ − y₁)/(x₂ − x₁)"
+        },
+        {
+          "front": "Equation of a line through (x₁, y₁) with gradient m",
+          "back": "y − y₁ = m(x − x₁)"
+        },
+        {
+          "front": "In y = mx + c, what is c?",
+          "back": "The y-intercept: where the line cuts the y-axis."
+        },
+        {
+          "front": "sin θ",
+          "back": "Opposite ÷ hypotenuse"
+        },
+        {
+          "front": "cos θ",
+          "back": "Adjacent ÷ hypotenuse"
+        },
+        {
+          "front": "tan θ",
+          "back": "Opposite ÷ adjacent"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the midpoint of P(1, 5) and Q(7, −3).",
+          "options": ["(3, 4)", "(4, 1)", "(8, 2)", "(3, −4)"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find the distance between the points P(1, 5) and Q(7, −3).",
+          "options": ["10", "√20", "14", "100"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the gradient of the line joining (1, 5) and (7, −3).",
+          "options": ["4/3", "−3/4", "−4/3", "3/4"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Find the equation of the line which passes through (2, 3) and has gradient 2.",
+          "options": ["y = 2x + 3", "y = 3x + 2", "y = 2x + 1", "y = 2x − 1"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A right-angled triangle has sides 3 cm, 4 cm and 5 cm. What is the sine of the angle opposite the 3 cm side?",
+          "options": ["3/4", "4/5", "3/5", "5/3"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "P is the point (1, 5) and Q is the point (7, −3). Find (a) the midpoint of PQ, (b) the length |PQ|, (c) the gradient of PQ, (d) the equation of the line PQ in the form ax + by = c.",
+          "markScheme": [
+            "(a) Midpoint = (4, 1)",
+            "(b) |PQ| = √(6² + (−8)²) = 10",
+            "(c) Gradient = (−3 − 5)/(7 − 1) = −4/3",
+            "Uses y − 5 = −4/3(x − 1), or y = mx + c with a point, to form the equation",
+            "(d) 4x + 3y = 19"
+          ],
+          "modelAnswer": "(a) Midpoint = ((1 + 7)/2, (5 − 3)/2) = (4, 1). (b) |PQ| = √[(7 − 1)² + (−3 − 5)²] = √(36 + 64) = 10 units. (c) Gradient = (−3 − 5)/(7 − 1) = −8/6 = −4/3. (d) y − 5 = −4/3(x − 1), so 3y − 15 = −4x + 4, which gives 4x + 3y = 19.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Midpoint = ((1 + 7)/2, (5 + (−3))/2) = (4, 1). (b) |PQ| = √((7 − 1)² + (−3 − 5)²) = √(36 + 64) = √100 = 10 units. (c) m = (−3 − 5)/(7 − 1) = −8/6 = −4/3. (d) y − 5 = −4/3(x − 1), 3y − 15 = −4x + 4, 4x + 3y = 19.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "= (4, 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "√(36 + 64) = √100 = 10 units"
+                },
+                {
+                  "point": 2,
+                  "quote": "m = (−3 − 5)/(7 − 1) = −8/6 = −4/3"
+                },
+                {
+                  "point": 3,
+                  "quote": "y − 5 = −4/3(x − 1)"
+                },
+                {
+                  "point": 4,
+                  "quote": "4x + 3y = 19"
+                }
+              ],
+              "feedback": "All five marks. Putting −3 in brackets kept every sign right."
+            },
+            {
+              "tier": "full",
+              "text": "(a) (4, 1). (b) Distance = √(6² + 8²) = 10. (c) Gradient = −8/6 = −4/3. (d) y = −4/3 x + c. At (1, 5): 5 = −4/3 + c, c = 19/3. So y = −4/3 x + 19/3, 3y = −4x + 19, 4x + 3y = 19.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) (4, 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Distance = √(6² + 8²) = 10"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gradient = −8/6 = −4/3"
+                },
+                {
+                  "point": 3,
+                  "quote": "y = −4/3 x + c. At (1, 5): 5 = −4/3 + c, c = 19/3"
+                },
+                {
+                  "point": 4,
+                  "quote": "4x + 3y = 19"
+                }
+              ],
+              "feedback": "Full marks using y = mx + c. Checking the answer with Q, 28 − 9 = 19, would make it certain."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) ((7 − 1)/2, (−3 − 5)/2) = (3, −4). (b) √(6² + 8²) = 10. (c) m = −8/6 = −4/3. (d) y − 5 = −4/3(x − 1), 4x + 3y = 19.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "√(6² + 8²) = 10"
+                },
+                {
+                  "point": 2,
+                  "quote": "m = −8/6 = −4/3"
+                },
+                {
+                  "point": 3,
+                  "quote": "y − 5 = −4/3(x − 1)"
+                },
+                {
+                  "point": 4,
+                  "quote": "4x + 3y = 19"
+                }
+              ],
+              "feedback": "Parts (b) to (d) are right. The midpoint is the average of the coordinates, so you add them before halving: ((1 + 7)/2, (5 − 3)/2) = (4, 1)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) (4, 1). (b) |PQ| = √(36 + 64) = 10. (c) m = (7 − 1)/(−3 − 5) = −3/4. (d) y − 5 = −3/4(x − 1), 4y − 20 = −3x + 3, 3x + 4y = 23.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) (4, 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "|PQ| = √(36 + 64) = 10"
+                }
+              ],
+              "feedback": "Your midpoint and distance are right. The gradient is the change in y over the change in x: (−3 − 5)/(7 − 1) = −4/3. With that, the line is 4x + 3y = 19."
+            },
+            {
+              "tier": "weak",
+              "text": "Midpoint = (7 − 1, −3 − 5) = (6, −8). Distance = 6 + 8 = 14.",
+              "meets": [],
+              "feedback": "Subtracting gives the steps between the points, not the midpoint; add and halve instead. The distance is the hypotenuse of a right-angled triangle, so use Pythagoras: √(6² + 8²) = 10."
+            },
+            {
+              "tier": "weak",
+              "text": "Midpoint (4, 1). Gradient = 7 − 1 / −3 − 5 = −3/4. I do not remember the equation formula.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Midpoint (4, 1)"
+                }
+              ],
+              "feedback": "Your midpoint is right. The gradient puts y on top: (−3 − 5)/(7 − 1) = −4/3. Then use y − y₁ = m(x − x₁) with the point (1, 5)."
+            }
+          ]
+        },
+        {
+          "prompt": "A wheelchair ramp at a hospital in Enugu rises 1.2 m over a horizontal distance of 5 m. (a) Find, to 1 decimal place, the angle the ramp makes with the ground. (b) Find the length of the ramp, to 2 decimal places. (c) A new ramp must rise the same 1.2 m at an angle of only 8°. Find the horizontal distance it needs, to 2 decimal places.",
+          "markScheme": [
+            "tan θ = 1.2/5 = 0.24",
+            "(a) θ = 13.5°",
+            "(b) Length = √(5² + 1.2²), or 5 ÷ cos 13.5°, = 5.14 m",
+            "tan 8° = 1.2/d",
+            "(c) d = 1.2 ÷ 0.1405 = 8.54 m"
+          ],
+          "modelAnswer": "(a) tan θ = opposite/adjacent = 1.2/5 = 0.24, so θ = 13.5°. (b) Length = √(5² + 1.2²) = √26.44 = 5.14 m. (c) For the new ramp, tan 8° = 1.2/d, so d = 1.2 ÷ tan 8° = 1.2 ÷ 0.1405 = 8.54 m.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) tan θ = opposite/adjacent = 1.2/5 = 0.24, θ = tan⁻¹ 0.24 = 13.5°. (b) Length² = 5² + 1.2² = 26.44, length = 5.14 m. (c) tan 8° = 1.2/d, d = 1.2/0.1405 = 8.54 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tan θ = opposite/adjacent = 1.2/5 = 0.24"
+                },
+                {
+                  "point": 1,
+                  "quote": "θ = tan⁻¹ 0.24 = 13.5°"
+                },
+                {
+                  "point": 2,
+                  "quote": "Length² = 5² + 1.2² = 26.44, length = 5.14 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "tan 8° = 1.2/d"
+                },
+                {
+                  "point": 4,
+                  "quote": "d = 1.2/0.1405 = 8.54 m"
+                }
+              ],
+              "feedback": "All five marks. Writing 'opposite/adjacent' first shows exactly why you chose tan."
+            },
+            {
+              "tier": "full",
+              "text": "(a) TOA: tan θ = 1.2 ÷ 5 = 0.24 so θ = 13.5°. (b) cos 13.5° = 5/L, L = 5 ÷ cos 13.5° = 5 ÷ 0.9724 = 5.14 m. (c) tan 8° = 1.2/d so d = 1.2 ÷ tan 8° = 8.54 m. The new ramp needs 8.54 m of ground.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tan θ = 1.2 ÷ 5 = 0.24"
+                },
+                {
+                  "point": 1,
+                  "quote": "θ = 13.5°"
+                },
+                {
+                  "point": 2,
+                  "quote": "L = 5 ÷ cos 13.5° = 5 ÷ 0.9724 = 5.14 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "tan 8° = 1.2/d"
+                },
+                {
+                  "point": 4,
+                  "quote": "d = 1.2 ÷ tan 8° = 8.54 m"
+                }
+              ],
+              "feedback": "Full marks. Using cos for the length is as good as Pythagoras; you could check one method with the other."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) sin θ = 1.2/5 = 0.24, θ = 13.9°. (b) √(25 + 1.44) = 5.14 m. (c) tan 8° = 1.2/d, d = 8.54 m.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "√(25 + 1.44) = 5.14 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "tan 8° = 1.2/d"
+                },
+                {
+                  "point": 4,
+                  "quote": "d = 8.54 m"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are right. In (a), 5 m is the horizontal distance, the side next to the angle, not the hypotenuse, so use tan θ = 1.2/5, which gives 13.5°."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) tan θ = 1.2/5 = 0.24, θ = 13.5°. (b) Length = 5 + 1.2 = 6.2 m. (c) d = 1.2 × tan 8° = 0.17 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tan θ = 1.2/5 = 0.24"
+                },
+                {
+                  "point": 1,
+                  "quote": "θ = 13.5°"
+                }
+              ],
+              "feedback": "Part (a) is right. The ramp is the hypotenuse, so use Pythagoras, not addition. In (c), tan 8° = 1.2/d, so d = 1.2 ÷ tan 8°; a gentler ramp must be longer, not 0.17 m."
+            },
+            {
+              "tier": "weak",
+              "text": "The angle is 1.2 x 5 = 6°. The ramp is 6.2 m long.",
+              "meets": [],
+              "feedback": "Lengths cannot be multiplied to give an angle. Label the triangle: rise 1.2 m is opposite the angle and 5 m is adjacent, so tan θ = 1.2/5."
+            },
+            {
+              "tier": "weak",
+              "text": "tan θ = 1.2/5 = 0.24. I could not find the angle and the other parts.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tan θ = 1.2/5 = 0.24"
+                }
+              ],
+              "feedback": "Your ratio is right. Use the tan tables (or tan⁻¹ on a calculator) to find the angle whose tan is 0.24, which is 13.5°. Then use Pythagoras for the length."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Trigonometric ratios from 0° to 360° and their graphs",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. read sines, cosines and tangents from four-figure tables;\n2. state the exact values of sin, cos and tan of 30°, 45° and 60° and use them without tables;\n3. find the sine, cosine and tangent of any angle from 0° to 360° using the unit circle;\n4. draw the graphs of y = a sin x and y = b cos x and read solutions from them.\n\n## Materials\n\nFour-figure tables, a unit circle drawn on manila card with a rotating arm, graph books, an equilateral triangle of side 2 units and a right-angled isosceles triangle with equal sides 1 unit, both cut from cardboard.\n\n## Starter (5 minutes)\n\nCut the equilateral triangle in half. Ask for the length of the height (√3) and the angles (30°, 60°, 90°). Learners write sin 30° = 1/2 from the half triangle without tables.\n\n## Development\n\n1. Tables: find sin 37.5° = 0.6088 and cos 52° = 0.6157; find the angle whose tangent is 0.24 (13.5°).\n2. Exact values: from the half triangle, sin 30° = 1/2, cos 30° = √3/2, tan 30° = 1/√3; from the isosceles triangle, sin 45° = cos 45° = 1/√2, tan 45° = 1. Work sin 60° cos 30° + cos 60° sin 30° = 3/4 + 1/4 = 1.\n3. Unit circle: rotate the arm through θ; the x-coordinate is cos θ, the y-coordinate is sin θ. Show the signs in each quadrant (All, Sin, Tan, Cos). Find cos 120° = −cos 60° = −1/2, sin 210° = −1/2.\n4. Solve sin x = −0.5 for 0° ≤ x ≤ 360°: the basic angle is 30°, and sine is negative in the third and fourth quadrants, so x = 210° or 330°.\n5. Graphs: tabulate y = 2 sin x every 30° and plot. Note the maximum 2 at 90°, the minimum −2 at 270°. Compare y = 3 cos x, with maximum 3 at 0° and 360°.\n\n## Class activity\n\nHalf the class plots y = 2 sin x and half plots y = 2 cos x on the same scale; they place their graphs side by side and describe how one is the other shifted.\n\n## Evaluation\n\n1. Without tables, find tan 60° − tan 30°.\n2. Find sin 300°.\n3. State the maximum and minimum values of y = 4 sin x.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Sines and cosines all the way round",
+        "content": "# Trigonometric ratios from 0° to 360° and their graphs\n\n## Exact values\n\nHalf of an equilateral triangle with side 2 has sides 1, √3 and 2 and angles 30°, 60° and 90°. A right-angled isosceles triangle with equal sides 1 has hypotenuse √2. From them:\n\n| | 30° | 45° | 60° |\n| --- | --- | --- | --- |\n| sin | 1/2 | 1/√2 | √3/2 |\n| cos | √3/2 | 1/√2 | 1/2 |\n| tan | 1/√3 | 1 | √3 |\n\n**Worked example 1.** sin 60° cos 30° + cos 60° sin 30° = (√3/2)(√3/2) + (1/2)(1/2) = 3/4 + 1/4 = 1.\n\n## Using tables\n\nFour-figure tables give the ratios of acute angles to four decimal places: sin 37.5° = 0.6088. To find an angle from a ratio, read the table backwards: if tan θ = 0.24, θ = 13.5°.\n\n## Angles from 0° to 360°\n\nOn a **unit circle** (radius 1), an arm turned through θ from the positive x-axis ends at the point (cos θ, sin θ). The signs depend on the quadrant:\n\n- 0° to 90°: all ratios positive\n- 90° to 180°: only sin positive\n- 180° to 270°: only tan positive\n- 270° to 360°: only cos positive\n\nFind the **basic angle** (the acute angle to the x-axis) and attach the sign.\n\n- cos 120° = −cos 60° = −1/2\n- sin 150° = sin 30° = 1/2\n- tan 225° = tan 45° = 1\n\n**Worked example 2.** Solve sin x = −0.5 for 0° ≤ x ≤ 360°. The basic angle is 30°. Sine is negative in the third and fourth quadrants, so x = 180° + 30° = 210° or x = 360° − 30° = 330°.\n\n## Graphs of sine and cosine\n\n**Worked example 3.** y = 2 sin x.\n\n| x | 0° | 30° | 60° | 90° | 120° | 150° | 180° | 210° | 240° | 270° | 300° | 330° | 360° |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| y | 0 | 1 | 1.73 | 2 | 1.73 | 1 | 0 | −1 | −1.73 | −2 | −1.73 | −1 | 0 |\n\nThe graph is a smooth wave with maximum 2 at 90° and minimum −2 at 270°. In y = a sin x, the number a sets the height of the wave.\n\nThe graph of y = b cos x has the same shape, but starts at its maximum: y = 3 cos x has maximum 3 at 0° and 360° and minimum −3 at 180°.\n\nTo solve 2 sin x = −1 from the graph, draw the line y = −1 and read the x-values where it cuts the curve: 210° and 330°."
+      },
+      "cards": [
+        {
+          "front": "sin 30°, cos 30°, tan 30°",
+          "back": "1/2, √3/2, 1/√3"
+        },
+        {
+          "front": "sin 45°, cos 45°, tan 45°",
+          "back": "1/√2, 1/√2, 1"
+        },
+        {
+          "front": "sin 60°, cos 60°, tan 60°",
+          "back": "√3/2, 1/2, √3"
+        },
+        {
+          "front": "Point on the unit circle at angle θ",
+          "back": "(cos θ, sin θ)"
+        },
+        {
+          "front": "Which ratio is positive between 90° and 180°?",
+          "back": "Only sine."
+        },
+        {
+          "front": "cos 120°",
+          "back": "−cos 60° = −1/2"
+        },
+        {
+          "front": "Solve sin x = −0.5, 0° ≤ x ≤ 360°",
+          "back": "x = 210° or 330°"
+        },
+        {
+          "front": "Maximum and minimum of y = 2 sin x",
+          "back": "2 at x = 90°, −2 at x = 270°"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Without using tables, evaluate sin 60° cos 30° + cos 60° sin 30°.",
+          "options": ["1", "√3/2", "3/4", "1/2"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the value of cos 120°.",
+          "options": ["1/2", "−√3/2", "−1/2", "√3/2"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Solve sin x = −0.5 for 0° ≤ x ≤ 360°.",
+          "options": [
+            "30° and 150°",
+            "210° and 330°",
+            "150° and 210°",
+            "30° and 330°"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the maximum value of y = 3 cos x for 0° ≤ x ≤ 360°, and at which value of x does it first occur?",
+          "options": [
+            "3 at x = 90°",
+            "1 at x = 0°",
+            "−3 at x = 180°",
+            "3 at x = 0°"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Express tan 30° in surd form with a rational denominator.",
+          "options": ["√3", "√3/3", "1/2", "√3/2"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Without using tables, evaluate (a) sin 60° cos 30° − cos 60° sin 30°, (b) (tan 60° − tan 30°) ÷ (1 + tan 60° tan 30°), leaving your answer in surd form with a rational denominator.",
+          "markScheme": [
+            "Uses sin 60° = cos 30° = √3/2 and cos 60° = sin 30° = 1/2",
+            "(a) 3/4 − 1/4 = 1/2",
+            "Uses tan 60° = √3 and tan 30° = 1/√3",
+            "Numerator √3 − 1/√3 = 2/√3; denominator 1 + 1 = 2",
+            "(b) 1/√3 = √3/3"
+          ],
+          "modelAnswer": "(a) sin 60° = cos 30° = √3/2 and cos 60° = sin 30° = 1/2. So the expression is (√3/2)(√3/2) − (1/2)(1/2) = 3/4 − 1/4 = 1/2. (b) tan 60° = √3 and tan 30° = 1/√3. The numerator is √3 − 1/√3 = (3 − 1)/√3 = 2/√3, and the denominator is 1 + √3 × 1/√3 = 2. So the value is (2/√3) ÷ 2 = 1/√3 = √3/3.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) sin 60 = √3/2, cos 30 = √3/2, cos 60 = 1/2, sin 30 = 1/2. √3/2 x √3/2 − 1/2 x 1/2 = 3/4 − 1/4 = 1/2. (b) tan 60 = √3, tan 30 = 1/√3. Top = √3 − 1/√3 = (3 − 1)/√3 = 2/√3. Bottom = 1 + √3 x 1/√3 = 2. So (2/√3) ÷ 2 = 1/√3 = √3/3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sin 60 = √3/2, cos 30 = √3/2, cos 60 = 1/2, sin 30 = 1/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 3/4 − 1/4 = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "tan 60 = √3, tan 30 = 1/√3"
+                },
+                {
+                  "point": 3,
+                  "quote": "Top = √3 − 1/√3 = (3 − 1)/√3 = 2/√3. Bottom = 1 + √3 x 1/√3 = 2"
+                },
+                {
+                  "point": 4,
+                  "quote": "1/√3 = √3/3"
+                }
+              ],
+              "feedback": "All five marks. Writing every exact value first, then substituting, is the safest way through these questions."
+            },
+            {
+              "tier": "full",
+              "text": "From the 30-60-90 triangle with sides 1, √3, 2: sin 60° = √3/2 = cos 30° and cos 60° = 1/2 = sin 30°. (a) 3/4 − 1/4 = 2/4 = 1/2. (b) tan 60° = √3/1 = √3 and tan 30° = 1/√3. (√3 − 1/√3) = 2/√3 and 1 + (√3)(1/√3) = 2. Answer = 1/√3 × √3/√3 = √3/3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sin 60° = √3/2 = cos 30° and cos 60° = 1/2 = sin 30°"
+                },
+                {
+                  "point": 1,
+                  "quote": "(a) 3/4 − 1/4 = 2/4 = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "tan 60° = √3/1 = √3 and tan 30° = 1/√3"
+                },
+                {
+                  "point": 3,
+                  "quote": "(√3 − 1/√3) = 2/√3 and 1 + (√3)(1/√3) = 2"
+                },
+                {
+                  "point": 4,
+                  "quote": "Answer = 1/√3 × √3/√3 = √3/3"
+                }
+              ],
+              "feedback": "Full marks. Getting the values from the triangle means you never need to rely on memory alone."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 1/2 × 1/2 − √3/2 × √3/2 = 1/4 − 3/4 = −1/2. (b) tan 60 = √3, tan 30 = 1/√3. (√3 − 1/√3) = 2/√3, 1 + 1 = 2, answer 1/√3 = √3/3.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "tan 60 = √3, tan 30 = 1/√3"
+                },
+                {
+                  "point": 3,
+                  "quote": "(√3 − 1/√3) = 2/√3, 1 + 1 = 2"
+                },
+                {
+                  "point": 4,
+                  "quote": "answer 1/√3 = √3/3"
+                }
+              ],
+              "feedback": "Part (b) is fully right. In (a) you swapped the values: sin 60° and cos 30° are √3/2, while cos 60° and sin 30° are 1/2. That gives 3/4 − 1/4 = 1/2."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) sin 60 = √3/2, cos 30 = √3/2, cos 60 = 1/2, sin 30 = 1/2, so 3/4 − 1/4 = 1/2. (b) tan 60 = √3, tan 30 = 1/√3. (√3 − 1/√3)/2 = (√3 − 1)/(2√3).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sin 60 = √3/2, cos 30 = √3/2, cos 60 = 1/2, sin 30 = 1/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "3/4 − 1/4 = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "tan 60 = √3, tan 30 = 1/√3"
+                }
+              ],
+              "feedback": "Part (a) and your tan values are right. √3 − 1/√3 needs a common denominator: (3 − 1)/√3 = 2/√3. Then divide by 2 and rationalise to get √3/3."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) sin 60 cos 30 is the same as sin 30 cos 60 so the answer is 0. (b) 60 − 30 = 30 so it is tan 30 = 0.5774.",
+              "meets": [],
+              "feedback": "sin 60° cos 30° and cos 60° sin 30° are different products: put in the exact values, √3/2 and 1/2. The question asks for no tables, so work with surds, not decimals."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) √3/2 × √3/2 − 1/2 × 1/2 = √3/4 − 1/4 = (√3 − 1)/4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "√3/2 × √3/2 − 1/2 × 1/2"
+                }
+              ],
+              "feedback": "Your values are right, but √3 × √3 = 3, not √3, so the first product is 3/4 and the answer is 1/2. Then try (b) with tan 60° = √3 and tan 30° = 1/√3."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Copy and complete a table of values for y = 2 sin x for x = 0°, 30°, 60°, …, 360°. (b) From your table or graph, state the maximum and minimum values of y and where they occur. (c) Use your graph to solve the equation 2 sin x = −1 for 0° ≤ x ≤ 360°.",
+          "markScheme": [
+            "Table: 0, 1, 1.73, 2, 1.73, 1, 0, −1, −1.73, −2, −1.73, −1, 0",
+            "Maximum value 2, at x = 90°",
+            "Minimum value −2, at x = 270°",
+            "Draws the line y = −1 (or reads where y = −1)",
+            "(c) x = 210° and x = 330°"
+          ],
+          "modelAnswer": "(a) For x = 0°, 30°, 60°, …, 360° the values of y are 0, 1, 1.73, 2, 1.73, 1, 0, −1, −1.73, −2, −1.73, −1, 0. (b) The maximum value is 2, at x = 90°, and the minimum value is −2, at x = 270°. (c) Draw the line y = −1. It cuts the curve at x = 210° and x = 330°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) y = 0, 1, 1.73, 2, 1.73, 1, 0, −1, −1.73, −2, −1.73, −1, 0. (b) Maximum is 2 when x = 90°. Minimum is −2 at x = 270°. (c) Drawing the line y = −1, it cuts the curve at x = 210° and x = 330°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "y = 0, 1, 1.73, 2, 1.73, 1, 0, −1, −1.73, −2, −1.73, −1, 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "Maximum is 2 when x = 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "Minimum is −2 at x = 270°"
+                },
+                {
+                  "point": 3,
+                  "quote": "Drawing the line y = −1"
+                },
+                {
+                  "point": 4,
+                  "quote": "it cuts the curve at x = 210° and x = 330°"
+                }
+              ],
+              "feedback": "All five marks. Saying which line you drew to solve the equation is exactly what the examiner looks for."
+            },
+            {
+              "tier": "full",
+              "text": "Table: x = 0 → 0, 30 → 1, 60 → 1.73, 90 → 2, 120 → 1.73, 150 → 1, 180 → 0, 210 → −1, 240 → −1.73, 270 → −2, 300 → −1.73, 330 → −1, 360 → 0. Greatest value 2 at 90°, least value −2 at 270°. 2 sin x = −1 means the curve meets y = −1, which happens at 210° and 330°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x = 0 → 0, 30 → 1, 60 → 1.73, 90 → 2, 120 → 1.73, 150 → 1, 180 → 0, 210 → −1, 240 → −1.73, 270 → −2, 300 → −1.73, 330 → −1, 360 → 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "Greatest value 2 at 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "least value −2 at 270°"
+                },
+                {
+                  "point": 3,
+                  "quote": "the curve meets y = −1"
+                },
+                {
+                  "point": 4,
+                  "quote": "which happens at 210° and 330°"
+                }
+              ],
+              "feedback": "Full marks. Pairing each x with its y makes your table impossible to misread."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 0, 1, 1.73, 2, 1.73, 1, 0, −1, −1.73, −2, −1.73, −1, 0. (b) Max = 2 at 90°, min = −2 at 270°. (c) I drew y = −2 and it touches the curve at 270°, so x = 270°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "0, 1, 1.73, 2, 1.73, 1, 0, −1, −1.73, −2, −1.73, −1, 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "Max = 2 at 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "min = −2 at 270°"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. The equation 2 sin x = −1 means y = −1, so draw the line y = −1, not y = −2. It cuts the curve twice, at 210° and 330°."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 0, 1, 1.73, 2, 1.73, 1, 0, −1, −1.73, −2, −1.73, −1, 0. (b) Maximum 2 at x = 90°, minimum −2 at x = 180°. (c) The line y = −1 cuts the curve at 210° and 330°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "0, 1, 1.73, 2, 1.73, 1, 0, −1, −1.73, −2, −1.73, −1, 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "Maximum 2 at x = 90°"
+                },
+                {
+                  "point": 3,
+                  "quote": "The line y = −1"
+                },
+                {
+                  "point": 4,
+                  "quote": "cuts the curve at 210° and 330°"
+                }
+              ],
+              "feedback": "Nearly all right. Look at your own table: at 180° y is 0, and the value −2 comes at 270°, so the minimum is at x = 270°."
+            },
+            {
+              "tier": "weak",
+              "text": "y = 2 sin x: when x = 30, y = 2 x 30 = 60; when x = 60, y = 120. The graph is a straight line.",
+              "meets": [],
+              "feedback": "2 sin x means 2 times the sine of x, not 2 times x. sin 30° = 0.5, so y = 1 when x = 30°. Work out each value this way and the graph becomes a wave."
+            },
+            {
+              "tier": "weak",
+              "text": "The maximum is 2 at 90° because sin 90° = 1. I did not finish the table.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The maximum is 2 at 90°"
+                }
+              ],
+              "feedback": "Your maximum is right and so is your reason. Use the same idea for every value: y = 2 × sin x. Then draw the curve and the line y = −1 to answer (c)."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Angles of elevation and depression, and bearings",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. draw and read graphs of the form y = a sin x + b cos x;\n2. calculate heights and distances using angles of elevation and depression;\n3. state bearings in three-figure (035°) and compass (N35°E) notation, find back bearings, and calculate distances and bearings with the help of a diagram, using the sine and cosine rules where needed.\n\n## Materials\n\nA home-made clinometer (a protractor, a straw and a thread with a stone), a magnetic compass, measuring tape, graph books, four-figure tables.\n\n## Starter (5 minutes)\n\nTake the class to the flagpole. A learner sights the top through the clinometer straw while another measures 30 m from its foot. Ask: how can we find the height without climbing?\n\n## Development\n\n1. Graph: tabulate y = sin x + cos x every 45°. The maximum is about 1.41 at 45°, the minimum about −1.41 at 225°.\n2. Elevation is measured upwards from the horizontal; depression downwards from the horizontal. Always draw the horizontal line first. The angle of depression from A to B equals the angle of elevation from B to A (alternate angles).\n3. Work: 50 m from a mast, elevation 32°: height = 50 tan 32° = 31.2 m. From a 40 m cliff, depression 25°: distance = 40 ÷ tan 25° = 85.8 m.\n4. Bearings are measured clockwise from north, written with three figures: N35°E = 035°, S20°W = 200°. The back bearing differs by 180°: if Q is 060° from P, P is 240° from Q.\n5. Work a two-stage journey: 8 km on 060°, then 6 km on 150°. The angle at the turn is 90°, so the direct distance is 10 km and the bearing is 060° + 36.9° = 096.9°.\n\n## Class activity\n\nGroups use the clinometer to measure the angle of elevation of the top of the school building from two distances and calculate its height each time, then compare.\n\n## Evaluation\n\n1. From 20 m away, the angle of elevation of a tree top is 40°. Find the height of the tree.\n2. Write the bearing S40°E as a three-figure bearing.\n3. The bearing of X from Y is 125°. Find the bearing of Y from X.\n\n## Assignment\n\nQuiz on the app, due Tuesday.",
+      "reading": {
+        "title": "Looking up, looking down, and finding the way",
+        "content": "# Angles of elevation and depression, and bearings\n\n## Graphs of y = a sin x + b cos x\n\nAdd the values of the two parts at each x. For y = sin x + cos x: at 0° y = 1, at 45° y = 1.41, at 90° y = 1, at 135° y = 0, at 225° y = −1.41, at 315° y = 0. The graph is a wave like the sine curve, but higher and shifted: its maximum is about 1.41, at x = 45°.\n\n## Angles of elevation and depression\n\n- The **angle of elevation** is the angle **above the horizontal** through which you look up at an object.\n- The **angle of depression** is the angle **below the horizontal** through which you look down.\n\nThe angle of depression from A to B equals the angle of elevation from B to A, because they are alternate angles between parallel horizontal lines.\n\n**Worked example 1.** A surveyor 30 m from a building in Lagos finds the angle of elevation of the bottom of a flagpole on the roof to be 25°, and of its top 40°.\n\n- Height of building = 30 tan 25° = 30 × 0.4663 = 14.0 m\n- Height to the top of the pole = 30 tan 40° = 30 × 0.8391 = 25.2 m\n- Length of the flagpole = 25.2 − 14.0 = 11.2 m\n\n**Worked example 2.** From the top of a 40 m cliff, the angle of depression of a boat is 25°. The angle at the boat is also 25°, so the distance from the foot of the cliff is 40 ÷ tan 25° = 85.8 m.\n\n## Bearings\n\nA **bearing** is measured **clockwise from north** and written with three figures.\n\n- N35°E is 035°; S40°E is 140°; S20°W is 200°; N50°W is 310°.\n- The **back bearing** (from the second point to the first) differs by 180°: if Q is on a bearing of 060° from P, then P is on 240° from Q.\n\n**Worked example 3.** A boat sails 8 km from A on a bearing of 060° to B, then 6 km on a bearing of 150° to C.\n\nAt B, the bearing back to A is 240°, so ∠ABC = 240° − 150° = 90°. Then AC = √(8² + 6²) = 10 km. tan ∠BAC = 6/8, so ∠BAC = 36.9°, and the bearing of C from A is 060° + 36.9° = 096.9°.\n\nAlways draw a clear diagram with a north line at every point. When the angle at the turn is not 90°, use the cosine rule for the distance and the sine rule for the angle."
+      },
+      "cards": [
+        {
+          "front": "Angle of elevation",
+          "back": "The angle above the horizontal when looking up at an object."
+        },
+        {
+          "front": "Angle of depression",
+          "back": "The angle below the horizontal when looking down at an object."
+        },
+        {
+          "front": "Depression from A to B and elevation from B to A",
+          "back": "Are equal (alternate angles)."
+        },
+        {
+          "front": "Bearing",
+          "back": "An angle measured clockwise from north, written with three figures."
+        },
+        {
+          "front": "N35°E as a three-figure bearing",
+          "back": "035°"
+        },
+        {
+          "front": "S20°W as a three-figure bearing",
+          "back": "200°"
+        },
+        {
+          "front": "Back bearing",
+          "back": "The bearing ± 180°. If Q is 060° from P, P is 240° from Q."
+        },
+        {
+          "front": "Maximum of y = sin x + cos x",
+          "back": "About 1.41 (√2), at x = 45°."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "From a point 50 m from the foot of a mast, the angle of elevation of the top of the mast is 32°. Find the height of the mast, to the nearest metre.",
+          "options": ["26 m", "31 m", "42 m", "80 m"],
+          "answer": "B"
+        },
+        {
+          "prompt": "From the top of a cliff 40 m high, the angle of depression of a boat is 25°. How far is the boat from the foot of the cliff, to the nearest metre?",
+          "options": ["19 m", "95 m", "86 m", "44 m"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Write the bearing N35°E as a three-figure bearing.",
+          "options": ["035°", "325°", "055°", "145°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The bearing of Q from P is 060°. What is the bearing of P from Q?",
+          "options": ["060°", "120°", "300°", "240°"],
+          "answer": "D"
+        },
+        {
+          "prompt": "What is the maximum value of y = sin x + cos x for 0° ≤ x ≤ 360°, to 2 decimal places?",
+          "options": ["2", "1", "1.41", "0"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A surveyor stands 30 m from the foot of a building in Lagos. The angle of elevation of the bottom of a flagpole on the roof is 25°, and the angle of elevation of the top of the flagpole is 40°. Find, correct to 1 decimal place, (a) the height of the building, (b) the length of the flagpole.",
+          "markScheme": [
+            "Height of building: tan 25° = h/30, so h = 30 tan 25°",
+            "(a) Height of building = 14.0 m",
+            "Height to the top of the flagpole = 30 tan 40° = 25.2 m",
+            "(b) Flagpole = 25.2 − 14.0 = 11.2 m"
+          ],
+          "modelAnswer": "(a) tan 25° = h/30, so h = 30 tan 25° = 30 × 0.4663 = 14.0 m. (b) The height to the top of the flagpole is 30 tan 40° = 30 × 0.8391 = 25.2 m. So the flagpole is 25.2 − 14.0 = 11.2 m long.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) tan 25° = h/30, h = 30 x 0.4663 = 13.99 = 14.0 m. (b) tan 40° = H/30, H = 30 x 0.8391 = 25.17 m. Flagpole = 25.17 − 13.99 = 11.18 = 11.2 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tan 25° = h/30"
+                },
+                {
+                  "point": 1,
+                  "quote": "h = 30 x 0.4663 = 13.99 = 14.0 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "H = 30 x 0.8391 = 25.17 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "Flagpole = 25.17 − 13.99 = 11.18 = 11.2 m"
+                }
+              ],
+              "feedback": "All four marks. Keeping two decimals until the subtraction stopped rounding errors from creeping in."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Building = 30 tan 25° = 14.0 m. (b) Building + pole = 30 tan 40° = 25.2 m, so pole = 30(tan 40° − tan 25°) = 30(0.8391 − 0.4663) = 30 × 0.3728 = 11.2 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Building = 30 tan 25°"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 14.0 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "Building + pole = 30 tan 40° = 25.2 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "pole = 30(tan 40° − tan 25°) = 30(0.8391 − 0.4663) = 30 × 0.3728 = 11.2 m"
+                }
+              ],
+              "feedback": "Full marks. Factorising out the 30 was a tidy way to find the pole in one step."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) h = 30 tan 25° = 14.0 m. (b) The pole makes 40 − 25 = 15°, so pole = 30 tan 15° = 8.0 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "h = 30 tan 25°"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 14.0 m"
+                }
+              ],
+              "feedback": "Part (a) is right. The 15° is not an angle in a right-angled triangle with the 30 m side. Find the height to the top of the pole, 30 tan 40° = 25.2 m, and subtract the building."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) tan 25° = h/30, h = 14.0 m. (b) tan 40° = x/30, x = 25.2 m. The flagpole is 25.2 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tan 25° = h/30"
+                },
+                {
+                  "point": 1,
+                  "quote": "h = 14.0 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "tan 40° = x/30, x = 25.2 m"
+                }
+              ],
+              "feedback": "Both heights are right. The 25.2 m is measured from the ground, so it includes the building. Take away 14.0 m to leave the flagpole: 11.2 m."
+            },
+            {
+              "tier": "weak",
+              "text": "Flagpole = 40 − 25 = 15 m.",
+              "meets": [],
+              "feedback": "Angles are not lengths. Each angle of elevation gives a right-angled triangle with the 30 m base: the building is 30 tan 25° and the top of the pole is 30 tan 40°."
+            },
+            {
+              "tier": "weak",
+              "text": "tan 25° = h/30, so h = 30/0.4663 = 64.3 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tan 25° = h/30"
+                }
+              ],
+              "feedback": "Your equation is right, but to get h on its own you multiply both sides by 30: h = 30 × 0.4663 = 14.0 m. Then do the same with 40° for the top of the pole."
+            }
+          ]
+        },
+        {
+          "prompt": "A boat leaves a jetty A and sails 8 km on a bearing of 060° to B. It then sails 6 km on a bearing of 150° to C. (a) Show that ∠ABC = 90°. (b) Find the distance AC. (c) Find the bearing of C from A, to the nearest degree.",
+          "markScheme": [
+            "(a) Bearing of A from B is 240°, so ∠ABC = 240° − 150° = 90° (or an equivalent argument with the north lines)",
+            "(b) AC = √(8² + 6²) = 10 km",
+            "tan ∠BAC = 6/8, so ∠BAC = 36.9°",
+            "(c) Bearing of C from A = 060° + 36.9° = 097°"
+          ],
+          "modelAnswer": "(a) The bearing of A from B is 060° + 180° = 240°, and the bearing of C from B is 150°, so ∠ABC = 240° − 150° = 90°. (b) AC = √(8² + 6²) = √100 = 10 km. (c) tan ∠BAC = 6/8 = 0.75, so ∠BAC = 36.9°. The bearing of C from A is 060° + 36.9° = 096.9°, which is 097° to the nearest degree.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The bearing of A from B is 060 + 180 = 240°. So ∠ABC = 240 − 150 = 90°. (b) AC² = 8² + 6² = 100, AC = 10 km. (c) tan ∠BAC = 6/8 = 0.75, ∠BAC = 36.9°. Bearing of C from A = 60 + 36.9 = 096.9° = 097°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The bearing of A from B is 060 + 180 = 240°. So ∠ABC = 240 − 150 = 90°"
+                },
+                {
+                  "point": 1,
+                  "quote": "AC² = 8² + 6² = 100, AC = 10 km"
+                },
+                {
+                  "point": 2,
+                  "quote": "tan ∠BAC = 6/8 = 0.75, ∠BAC = 36.9°"
+                },
+                {
+                  "point": 3,
+                  "quote": "Bearing of C from A = 60 + 36.9 = 096.9° = 097°"
+                }
+              ],
+              "feedback": "All four marks. Using the back bearing to find the angle at B is the cleanest method."
+            },
+            {
+              "tier": "full",
+              "text": "(a) At B, BA makes 60° with the south line (alternate angles with the north line at A), and BC makes 180° − 150° = 30° with south. So ∠ABC = 60° + 30° = 90°. (b) Pythagoras: AC = √(64 + 36) = 10 km. (c) ∠BAC = tan⁻¹(6/8) = 36.87°, bearing = 060° + 36.87° ≈ 097°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "BA makes 60° with the south line (alternate angles with the north line at A), and BC makes 180° − 150° = 30° with south. So ∠ABC = 60° + 30° = 90°"
+                },
+                {
+                  "point": 1,
+                  "quote": "AC = √(64 + 36) = 10 km"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠BAC = tan⁻¹(6/8) = 36.87°"
+                },
+                {
+                  "point": 3,
+                  "quote": "bearing = 060° + 36.87° ≈ 097°"
+                }
+              ],
+              "feedback": "Full marks. Your use of alternate angles with the north lines is a careful proof of the right angle."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) ∠ABC = 150 − 60 = 90°. (b) AC = √(8² + 6²) = 10 km. (c) tan ∠BAC = 6/8, ∠BAC = 36.9°, so the bearing is 037°.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "AC = √(8² + 6²) = 10 km"
+                },
+                {
+                  "point": 2,
+                  "quote": "tan ∠BAC = 6/8, ∠BAC = 36.9°"
+                }
+              ],
+              "feedback": "Parts (b) and the angle BAC are right. Subtracting the two bearings gives 90° here only by chance; use the back bearing, 240°, to show it. A bearing is measured from north, so add the 60° that AB already makes: 097°.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Back bearing of A from B = 240°, ∠ABC = 240 − 150 = 90°. (b) AC = 8 + 6 = 14 km. (c) tan ∠BAC = 6/8, ∠BAC = 36.9°, bearing = 060 + 36.9 = 096.9°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Back bearing of A from B = 240°, ∠ABC = 240 − 150 = 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "tan ∠BAC = 6/8, ∠BAC = 36.9°"
+                },
+                {
+                  "point": 3,
+                  "quote": "bearing = 060 + 36.9 = 096.9°"
+                }
+              ],
+              "feedback": "Parts (a) and (c) are right. The boat turned, so AC is not 8 + 6. You proved ∠ABC = 90°, so use Pythagoras: AC = √(8² + 6²) = 10 km."
+            },
+            {
+              "tier": "weak",
+              "text": "AC = 8 + 6 = 14 km. The bearing is 060 + 150 = 210°.",
+              "meets": [],
+              "feedback": "Draw the journey with a north line at A and at B. The path turns at B, so AC is the third side of a triangle, not the sum of the two legs, and bearings are not added together."
+            },
+            {
+              "tier": "weak",
+              "text": "AC = √(64 + 36) = 10 km.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "AC = √(64 + 36) = 10 km"
+                }
+              ],
+              "feedback": "Your distance is right, but you needed to show first why the angle at B is 90°: the back bearing of A from B is 240°. Then find ∠BAC with tan and add 060° for the bearing."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Differentiation, integration and presenting data",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the derived function dy/dx as the gradient of a curve at a point, differentiate simple algebraic functions, and apply this to rates of change and to maximum and minimum values;\n2. integrate simple algebraic functions and evaluate simple definite integrals;\n3. construct a grouped frequency table, stating class intervals, class marks and class boundaries;\n4. read and draw simple inferences from pie charts, bar charts, histograms (equal class intervals) and frequency polygons.\n\n## Materials\n\nGraph books, last term's graph of y = x² with tangents drawn, a list of the masses of 40 learners from the school clinic, protractors and compasses.\n\n## Starter (5 minutes)\n\nShow the tangents drawn on y = x² at x = 1, 2 and 3. The gradients were 2, 4 and 6. Ask for a rule. Learners suggest 2x: this is the derivative of x².\n\n## Development\n\n1. Rule: if y = axⁿ, dy/dx = naxⁿ⁻¹; the derivative of a constant is 0. Work: y = 3x² − 4x + 5 gives dy/dx = 6x − 4, so the gradient at x = 2 is 8.\n2. Rates of change: if s = 2t³ + 4, then v = ds/dt = 6t², so at t = 3, v = 54 m/s.\n3. Maximum and minimum: set dy/dx = 0. Work the farmer's pen: A = 40x − 2x², dA/dx = 40 − 4x = 0, so x = 10 m and the largest area is 200 m².\n4. Integration reverses differentiation: ∫axⁿ dx = axⁿ⁺¹/(n + 1) + c. Evaluate ∫₁³ (2x + 1) dx = [x² + x]₁³ = 12 − 2 = 10.\n5. Frequency tables: group the 40 masses into classes 40–44, 45–49, …; class mark is the middle value; class boundaries are halfway between classes (49.5 and 54.5).\n6. Charts: pie-chart angle = frequency/total × 360°; a histogram with equal class widths has bar heights equal to the frequencies; join the midpoints of the tops for the frequency polygon.\n\n## Class activity\n\nGroups draw a histogram and frequency polygon of the 40 masses and write two sentences about what the graphs show.\n\n## Evaluation\n\n1. Differentiate y = 5x³ − 2x.\n2. Evaluate ∫₀² 3x² dx.\n3. State the class mark of the class 20–29.\n\n## Assignment\n\nProblem set on the app, due Thursday.",
+      "reading": {
+        "title": "Rates of change, areas under curves, and reading the data",
+        "content": "# Differentiation, integration and presenting data\n\n## Differentiation\n\nThe **derived function** dy/dx gives the gradient of the curve y = f(x) at any point: the gradient of the tangent there.\n\n**Rule:** if y = axⁿ, then dy/dx = naxⁿ⁻¹. The derivative of a constant is 0.\n\n**Worked example 1.** y = 3x² − 4x + 5, so dy/dx = 6x − 4. At x = 2, the gradient is 6(2) − 4 = 8.\n\n**Rates of change.** If s is the distance in metres after t seconds, the velocity is v = ds/dt. For s = 2t³ + 4, v = 6t², so at t = 3, v = 54 m/s.\n\n**Maximum and minimum.** At a turning point the gradient is zero, so solve dy/dx = 0.\n\n**Worked example 2.** A farmer in Kwara has 40 m of fencing to make a rectangular pen against a straight wall. With width x m, the side along the wall is (40 − 2x) m, so the area is A = 40x − 2x². Then dA/dx = 40 − 4x = 0 gives x = 10. The pen is 10 m by 20 m, with the largest area, 200 m².\n\n## Integration\n\nIntegration reverses differentiation: ∫axⁿ dx = axⁿ⁺¹/(n + 1) + c, where c is a constant. So ∫(3x² + 2x) dx = x³ + x² + c.\n\nA **definite integral** has limits: work out the integral at the top limit, then subtract its value at the bottom limit.\n\n**Worked example 3.** ∫₁³ (2x + 1) dx = [x² + x]₁³ = (9 + 3) − (1 + 1) = 10.\n\n## Frequency distributions\n\nLarge sets of data are grouped into **classes**. For the class 50–54 (kg):\n\n- the **class mark** (midpoint) is (50 + 54)/2 = 52;\n- the **class boundaries** are 49.5 and 54.5, halfway to the next classes;\n- the **class width** is 54.5 − 49.5 = 5.\n\n## Charts\n\n- **Pie chart:** angle = frequency ÷ total × 360°. A family that spends ₦24 000 of ₦60 000 on food gives food 144°.\n- **Bar chart:** separate bars for separate categories.\n- **Histogram:** bars touching, drawn between class boundaries; with equal class widths, the height is the frequency. The tallest bar shows the **modal class**.\n- **Frequency polygon:** join the midpoints of the tops of the histogram bars with straight lines."
+      },
+      "cards": [
+        {
+          "front": "Derivative of axⁿ",
+          "back": "naxⁿ⁻¹"
+        },
+        {
+          "front": "dy/dx at a point",
+          "back": "The gradient of the curve (of its tangent) at that point."
+        },
+        {
+          "front": "Velocity from distance s(t)",
+          "back": "v = ds/dt"
+        },
+        {
+          "front": "Finding a maximum or minimum",
+          "back": "Solve dy/dx = 0."
+        },
+        {
+          "front": "∫axⁿ dx",
+          "back": "axⁿ⁺¹/(n + 1) + c"
+        },
+        {
+          "front": "Class boundaries of 10–19",
+          "back": "9.5 and 19.5"
+        },
+        {
+          "front": "Class mark",
+          "back": "The midpoint of the class: (lower + upper) ÷ 2."
+        },
+        {
+          "front": "Pie-chart angle",
+          "back": "Frequency ÷ total × 360°"
+        },
+        {
+          "front": "Frequency polygon",
+          "back": "Join the midpoints of the tops of the histogram bars."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "If y = 3x² − 4x + 5, find dy/dx.",
+          "options": ["6x − 4", "3x − 4", "6x + 1", "x³ − 2x² + 5x"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The distance s metres travelled by a body in t seconds is s = 2t³ + 4. Find its velocity when t = 3.",
+          "options": ["58 m/s", "54 m/s", "18 m/s", "36 m/s"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Evaluate ∫₁³ (2x + 1) dx.",
+          "options": ["12", "8", "10", "14"],
+          "answer": "C"
+        },
+        {
+          "prompt": "What are the class boundaries of the class 10–19?",
+          "options": ["10 and 19", "10 and 20", "9 and 20", "9.5 and 19.5"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A family spends ₦24 000 of its monthly income of ₦60 000 on food. What angle should food take on a pie chart of the family's spending?",
+          "options": ["40°", "144°", "24°", "150°"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A farmer in Kwara has 40 m of fencing to make a rectangular pen against a long straight wall, so only three sides need fencing. The two sides perpendicular to the wall are each x m long. (a) Show that the area is A = 40x − 2x². (b) Find dA/dx. (c) Find the value of x that gives the largest area, and the largest area.",
+          "markScheme": [
+            "Side along the wall = 40 − 2x, so A = x(40 − 2x) = 40x − 2x²",
+            "(b) dA/dx = 40 − 4x",
+            "Sets 40 − 4x = 0, so x = 10 m",
+            "(c) Largest area = 10 × 20 = 200 m²"
+          ],
+          "modelAnswer": "(a) The two sides of length x use 2x m of fencing, so the side along the wall is (40 − 2x) m. Area A = x(40 − 2x) = 40x − 2x². (b) dA/dx = 40 − 4x. (c) At the maximum, dA/dx = 0: 40 − 4x = 0, so x = 10 m. The side along the wall is then 20 m, and the largest area is 10 × 20 = 200 m².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The two widths use 2x, so the length is 40 − 2x. A = x(40 − 2x) = 40x − 2x². (b) dA/dx = 40 − 4x. (c) For maximum, dA/dx = 0: 40 − 4x = 0, x = 10 m. Length = 20 m, area = 10 x 20 = 200 m².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the length is 40 − 2x. A = x(40 − 2x) = 40x − 2x²"
+                },
+                {
+                  "point": 1,
+                  "quote": "dA/dx = 40 − 4x"
+                },
+                {
+                  "point": 2,
+                  "quote": "40 − 4x = 0, x = 10 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "area = 10 x 20 = 200 m²"
+                }
+              ],
+              "feedback": "All four marks. Explaining where 40 − 2x comes from is what turns (a) into a proper 'show that'."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Fencing used: x + x + L = 40, so L = 40 − 2x and A = xL = 40x − 2x². (b) dA/dx = 40 − 4x. (c) At a turning point dA/dx = 0, so x = 10. A = 40(10) − 2(10)² = 400 − 200 = 200 m². (d²A/dx² = −4, so it is a maximum.)",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + x + L = 40, so L = 40 − 2x and A = xL = 40x − 2x²"
+                },
+                {
+                  "point": 1,
+                  "quote": "dA/dx = 40 − 4x"
+                },
+                {
+                  "point": 2,
+                  "quote": "At a turning point dA/dx = 0, so x = 10"
+                },
+                {
+                  "point": 3,
+                  "quote": "A = 40(10) − 2(10)² = 400 − 200 = 200 m²"
+                }
+              ],
+              "feedback": "Full marks. Checking that it is a maximum goes beyond what was asked, and it is right."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Length = 40 − 2x, A = x(40 − 2x) = 40x − 2x². (b) dA/dx = 40 − 4x. (c) 40 − 4x = 0, x = 10. Area = 10 x 30 = 300 m².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Length = 40 − 2x, A = x(40 − 2x) = 40x − 2x²"
+                },
+                {
+                  "point": 1,
+                  "quote": "dA/dx = 40 − 4x"
+                },
+                {
+                  "point": 2,
+                  "quote": "40 − 4x = 0, x = 10"
+                }
+              ],
+              "feedback": "Everything is right until the area. The side along the wall is 40 − 2x, which is 20 m when x = 10, so the area is 200 m², not 300 m²."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A = 40x − 2x². (b) 40 − 4x. (c) 40 − 4x = 0, x = 10, A = 40(10) − 2(100) = 200 m².",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) 40 − 4x"
+                },
+                {
+                  "point": 2,
+                  "quote": "40 − 4x = 0, x = 10"
+                },
+                {
+                  "point": 3,
+                  "quote": "A = 40(10) − 2(100) = 200 m²"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are right. In (a) you only copied the formula: show where it comes from, that the side along the wall is 40 − 2x, so A = x(40 − 2x)."
+            },
+            {
+              "tier": "weak",
+              "text": "Perimeter 2x + 2y = 40 so y = 20 − x. A = 20x − x². dA/dx = 20 − 2x = 0, x = 10, A = 100 m².",
+              "meets": [],
+              "feedback": "The wall forms the fourth side, so only three sides are fenced: x + x + (40 − 2x). That gives A = 40x − 2x², and the method you used then gives 200 m²."
+            },
+            {
+              "tier": "weak",
+              "text": "dA/dx = 40 − 4x. The biggest area is when x = 40.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "dA/dx = 40 − 4x"
+                }
+              ],
+              "feedback": "Your derivative is right. The largest area is where the gradient is zero, so solve 40 − 4x = 0. With x = 40 the side along the wall would be negative."
+            }
+          ]
+        },
+        {
+          "prompt": "The masses (kg) of 40 learners at a school clinic are grouped as follows: 40–44: 4, 45–49: 9, 50–54: 14, 55–59: 8, 60–64: 5. (a) State the class boundaries and the class mark of the class 50–54. (b) Which is the modal class? Give a reason. (c) Find the angle of the sector for the class 50–54 on a pie chart. (d) What percentage of the learners have a mass of 55 kg or more?",
+          "markScheme": [
+            "(a) Class boundaries 49.5 and 54.5",
+            "(a) Class mark = 52",
+            "(b) Modal class 50–54, because it has the highest frequency (14)",
+            "(c) Angle = 14/40 × 360° = 126°",
+            "(d) (8 + 5)/40 × 100 = 32.5%"
+          ],
+          "modelAnswer": "(a) The class boundaries of 50–54 are 49.5 and 54.5, and the class mark is (50 + 54)/2 = 52. (b) The modal class is 50–54, since it has the highest frequency, 14. (c) The angle is 14/40 × 360° = 126°. (d) 8 + 5 = 13 learners have a mass of 55 kg or more, which is 13/40 × 100 = 32.5%.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Class boundaries 49.5 and 54.5, class mark = (50 + 54)/2 = 52. (b) Modal class is 50–54 because it has the highest frequency, 14. (c) Angle = 14/40 x 360 = 126°. (d) 8 + 5 = 13, 13/40 x 100 = 32.5%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Class boundaries 49.5 and 54.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "class mark = (50 + 54)/2 = 52"
+                },
+                {
+                  "point": 2,
+                  "quote": "Modal class is 50–54 because it has the highest frequency, 14"
+                },
+                {
+                  "point": 3,
+                  "quote": "Angle = 14/40 x 360 = 126°"
+                },
+                {
+                  "point": 4,
+                  "quote": "13/40 x 100 = 32.5%"
+                }
+              ],
+              "feedback": "All five marks. You gave the reason for the modal class, not just the class."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Lower boundary 49.5, upper boundary 54.5. Midpoint 52. (b) 50–54 is the modal class as 14 is the greatest frequency. (c) 14 out of 40 is 0.35 of the circle, 0.35 × 360° = 126°. (d) 13 learners out of 40 = 32.5%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Lower boundary 49.5, upper boundary 54.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "Midpoint 52"
+                },
+                {
+                  "point": 2,
+                  "quote": "50–54 is the modal class as 14 is the greatest frequency"
+                },
+                {
+                  "point": 3,
+                  "quote": "0.35 × 360° = 126°"
+                },
+                {
+                  "point": 4,
+                  "quote": "13 learners out of 40 = 32.5%"
+                }
+              ],
+              "feedback": "Full marks. Turning 14 out of 40 into 0.35 of the circle is a neat way to find the angle."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Boundaries 50 and 54, class mark 52. (b) 50–54 because it has the highest frequency. (c) 14/40 × 360 = 126°. (d) 13/40 × 100 = 32.5%.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "class mark 52"
+                },
+                {
+                  "point": 2,
+                  "quote": "50–54 because it has the highest frequency"
+                },
+                {
+                  "point": 3,
+                  "quote": "14/40 × 360 = 126°"
+                },
+                {
+                  "point": 4,
+                  "quote": "13/40 × 100 = 32.5%"
+                }
+              ],
+              "feedback": "Nearly all right. 50 and 54 are the class limits. The boundaries lie halfway to the next classes, 49.5 and 54.5, so the classes touch with no gaps."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 49.5 and 54.5, class mark 52. (b) 60–64 because it is the highest class. (c) 14 × 360/100 = 50.4°. (d) 5/40 × 100 = 12.5%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "49.5 and 54.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "class mark 52"
+                }
+              ],
+              "feedback": "Part (a) is right. The modal class has the highest frequency, not the highest masses: 50–54 with 14. The pie chart shares 360° among 40 learners, not 100, and 55 kg or more includes 55–59 as well."
+            },
+            {
+              "tier": "weak",
+              "text": "The modal class is 14 because it is the biggest number. The angle is 14°.",
+              "meets": [],
+              "feedback": "14 is the frequency; the modal class is the class it belongs to, 50–54. For the angle, find the fraction of all 40 learners and multiply by 360°: 14/40 × 360° = 126°."
+            },
+            {
+              "tier": "weak",
+              "text": "Class mark of 50–54 = 52. The pie chart angle is 14/360 = 0.04°.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Class mark of 50–54 = 52"
+                }
+              ],
+              "feedback": "Your class mark is right. A sector's angle is its share of the 40 learners, times 360°: 14/40 × 360° = 126°."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Averages, the ogive and measures of spread",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the mean, median and mode of discrete and grouped data;\n2. draw a cumulative frequency curve (ogive) and estimate the median, quartiles and percentiles from it;\n3. find the range, inter-quartile and semi-inter-quartile range, mean deviation, variance and standard deviation, including the standard deviation of grouped data.\n\n## Materials\n\nGraph books, calculators or tables of squares and square roots, a record of the hours of electricity supply in a street over a week, last term's test scores of an anonymous class of 50.\n\n## Starter (5 minutes)\n\nWrite the hours of light supply for five days: 3, 5, 6, 7, 9. Ask: what is a typical day? How much do the days differ? Learners find the mean, 6, and argue about how to measure the spread.\n\n## Development\n\n1. Discrete data: mean = Σx/n, median the middle value when arranged, mode the most frequent. For 4, 7, 5, 9, 5, 6, 8: mean 6.29, median 6, mode 5.\n2. Spread: range = largest − smallest. Mean deviation = mean of the absolute deviations from the mean. Variance = Σ(x − x̄)²/n; standard deviation = √variance. For 3, 5, 6, 7, 9: MD = 1.6, variance 4, SD 2.\n3. Grouped data: use class marks. For the 50 scores, Σfx = 1 445 and the mean is 28.9. Grouped SD: Σf(x − x̄)²/Σf = 128.64, SD = 11.3.\n4. Ogive: plot cumulative frequency against upper class boundaries (9.5, 19.5, …) and join with a smooth curve. Median at n/2 = 25th (29.5), Q1 at 12.5th (about 21.2), Q3 at 37.5th (about 37.8). IQR = Q3 − Q1 ≈ 16.7; semi-IQR ≈ 8.3.\n5. Mode of grouped data: estimate from the histogram by drawing the crossed lines inside the tallest bar.\n6. Everyday use: a school can use the ogive to find the mark above which the top 10% of learners lie (the 90th percentile).\n\n## Class activity\n\nGroups draw the ogive of the 50 scores, read the median and quartiles, and compare readings between groups.\n\n## Evaluation\n\n1. Find the mean and median of 2, 9, 4, 7, 4, 10.\n2. Find the standard deviation of 1, 3, 5.\n3. On an ogive for 80 learners, at what cumulative frequency is the upper quartile read?\n\n## Assignment\n\nWorksheet on the app, due Monday.",
+      "reading": {
+        "title": "Typical values and how spread out the data are",
+        "content": "# Averages, the ogive and measures of spread\n\n## Averages of discrete data\n\n- **Mean** = sum of the values ÷ number of values.\n- **Median** = the middle value when the data are arranged in order (the mean of the two middle values if n is even).\n- **Mode** = the most frequent value.\n\nFor 4, 7, 5, 9, 5, 6, 8: arranged, 4, 5, 5, 6, 7, 8, 9. The mean is 44/7 = 6.29, the median is 6 and the mode is 5.\n\n## Measures of spread\n\n- **Range** = largest − smallest.\n- **Mean deviation** = the mean of the absolute deviations |x − x̄|.\n- **Variance** = Σ(x − x̄)²/n, and the **standard deviation** is its square root.\n\n**Worked example 1.** Hours of light supply on five days in a street in Ibadan: 3, 5, 6, 7, 9.\n\n| x | x − x̄ | (x − x̄)² |\n| --- | --- | --- |\n| 3 | −3 | 9 |\n| 5 | −1 | 1 |\n| 6 | 0 | 0 |\n| 7 | 1 | 1 |\n| 9 | 3 | 9 |\n\nMean = 30/5 = 6. Mean deviation = (3 + 1 + 0 + 1 + 3)/5 = 1.6. Variance = 20/5 = 4. Standard deviation = 2 hours.\n\n## Grouped data\n\nUse the **class mark** x of each class.\n\n**Worked example 2.** Scores of 50 learners.\n\n| Class | f | x | fx | Cumulative f |\n| --- | --- | --- | --- | --- |\n| 0–9 | 3 | 4.5 | 13.5 | 3 |\n| 10–19 | 7 | 14.5 | 101.5 | 10 |\n| 20–29 | 15 | 24.5 | 367.5 | 25 |\n| 30–39 | 15 | 34.5 | 517.5 | 40 |\n| 40–49 | 10 | 44.5 | 445 | 50 |\n\nMean = 1 445/50 = 28.9. The standard deviation is √[Σf(x − x̄)²/Σf] = √128.64 = 11.3.\n\n## The ogive\n\nPlot each cumulative frequency against the **upper class boundary** (9.5, 19.5, 29.5, …) and join with a smooth S-shaped curve.\n\n- Median: read at n/2 = 25th, giving 29.5.\n- Lower quartile Q1: at n/4 = 12.5th, about 21.2.\n- Upper quartile Q3: at 3n/4 = 37.5th, about 37.8.\n- Inter-quartile range = Q3 − Q1 ≈ 16.7; semi-inter-quartile range ≈ 8.3.\n\nPercentiles work the same way: the 90th percentile is read at 45. The **mode** of grouped data is estimated from the histogram, inside the tallest bar."
+      },
+      "cards": [
+        {
+          "front": "Median",
+          "back": "The middle value when the data are in order."
+        },
+        {
+          "front": "Mean deviation",
+          "back": "The mean of the absolute deviations from the mean."
+        },
+        {
+          "front": "Variance",
+          "back": "Σ(x − x̄)²/n, the square of the standard deviation."
+        },
+        {
+          "front": "Standard deviation",
+          "back": "√[Σ(x − x̄)²/n]"
+        },
+        {
+          "front": "Ogive",
+          "back": "Cumulative frequency plotted against upper class boundaries."
+        },
+        {
+          "front": "Reading the median from an ogive",
+          "back": "At cumulative frequency n/2."
+        },
+        {
+          "front": "Inter-quartile range",
+          "back": "Q3 − Q1. Half of it is the semi-inter-quartile range."
+        },
+        {
+          "front": "Mode of grouped data",
+          "back": "Estimated from the histogram, in the tallest bar."
+        },
+        {
+          "front": "Mean of grouped data",
+          "back": "Σfx ÷ Σf, using class marks."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the median of 4, 7, 5, 9, 5, 6, 8.",
+          "options": ["5", "6", "9", "6.29"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The numbers 3, 5, 6, 7 and 9 have a mean of 6. Find their standard deviation.",
+          "options": ["2", "4", "1.6", "20"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the mean deviation of 3, 5, 6, 7 and 9.",
+          "options": ["0", "2", "1.6", "8"],
+          "answer": "C"
+        },
+        {
+          "prompt": "An ogive is drawn for the scores of 50 learners. At what cumulative frequency should the median be read?",
+          "options": ["50", "12.5", "37.5", "25"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Scores of 50 learners are grouped as 0–9: 3, 10–19: 7, 20–29: 15, 30–39: 15, 40–49: 10. Using class marks, find the mean score.",
+          "options": ["28.9", "25", "24.5", "30.0"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The numbers of hours of electricity supply on five days in a street in Ibadan were 3, 5, 6, 7 and 9. Find (a) the mean, (b) the range, (c) the mean deviation, (d) the variance and the standard deviation.",
+          "markScheme": [
+            "(a) Mean = 30/5 = 6",
+            "(b) Range = 9 − 3 = 6",
+            "(c) Mean deviation = (3 + 1 + 0 + 1 + 3)/5 = 1.6",
+            "Variance = (9 + 1 + 0 + 1 + 9)/5 = 4",
+            "(d) Standard deviation = √4 = 2"
+          ],
+          "modelAnswer": "(a) Mean = (3 + 5 + 6 + 7 + 9)/5 = 30/5 = 6 hours. (b) Range = 9 − 3 = 6 hours. (c) The absolute deviations from 6 are 3, 1, 0, 1, 3, so the mean deviation = 8/5 = 1.6 hours. (d) The squared deviations are 9, 1, 0, 1, 9, so the variance = 20/5 = 4, and the standard deviation = √4 = 2 hours.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Mean = (3 + 5 + 6 + 7 + 9)/5 = 30/5 = 6 hours. (b) Range = 9 − 3 = 6. (c) Deviations: 3, 1, 0, 1, 3. MD = 8/5 = 1.6. (d) Squares: 9, 1, 0, 1, 9 = 20. Variance = 20/5 = 4. SD = √4 = 2 hours.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "30/5 = 6 hours"
+                },
+                {
+                  "point": 1,
+                  "quote": "Range = 9 − 3 = 6"
+                },
+                {
+                  "point": 2,
+                  "quote": "MD = 8/5 = 1.6"
+                },
+                {
+                  "point": 3,
+                  "quote": "Variance = 20/5 = 4"
+                },
+                {
+                  "point": 4,
+                  "quote": "SD = √4 = 2 hours"
+                }
+              ],
+              "feedback": "All five marks. Listing the deviations and their squares makes every step easy to check."
+            },
+            {
+              "tier": "full",
+              "text": "x̄ = 6. Range = 6. |x − x̄| = 3, 1, 0, 1, 3, total 8, so mean deviation = 1.6. (x − x̄)² = 9, 1, 0, 1, 9, total 20, so variance = 20 ÷ 5 = 4 and standard deviation = 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x̄ = 6"
+                },
+                {
+                  "point": 1,
+                  "quote": "Range = 6"
+                },
+                {
+                  "point": 2,
+                  "quote": "|x − x̄| = 3, 1, 0, 1, 3, total 8, so mean deviation = 1.6"
+                },
+                {
+                  "point": 3,
+                  "quote": "variance = 20 ÷ 5 = 4"
+                },
+                {
+                  "point": 4,
+                  "quote": "standard deviation = 2"
+                }
+              ],
+              "feedback": "Full marks. Using |x − x̄| for the mean deviation shows you know why the signs are dropped."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 6. (b) 9 − 3 = 6. (c) Deviations −3, −1, 0, 1, 3, total 0, so mean deviation = 0. (d) Variance = (9 + 1 + 0 + 1 + 9)/5 = 4, SD = 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 6"
+                },
+                {
+                  "point": 1,
+                  "quote": "9 − 3 = 6"
+                },
+                {
+                  "point": 3,
+                  "quote": "Variance = (9 + 1 + 0 + 1 + 9)/5 = 4"
+                },
+                {
+                  "point": 4,
+                  "quote": "SD = 2"
+                }
+              ],
+              "feedback": "Everything is right except the mean deviation. The signed deviations always add to 0, which is why we use their absolute values: (3 + 1 + 0 + 1 + 3)/5 = 1.6."
+            },
+            {
+              "tier": "partial",
+              "text": "Mean = 30 ÷ 5 = 6. Range = 6. Mean deviation = 8 ÷ 5 = 1.6. Variance = 9 + 1 + 0 + 1 + 9 = 20, SD = √20 = 4.47.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 30 ÷ 5 = 6"
+                },
+                {
+                  "point": 1,
+                  "quote": "Range = 6"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mean deviation = 8 ÷ 5 = 1.6"
+                }
+              ],
+              "feedback": "Your mean, range and mean deviation are right. The variance is the mean of the squared deviations, so divide 20 by 5 to get 4; then the standard deviation is 2."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = 3 + 5 + 6 + 7 + 9 = 30. Range is 9.",
+              "meets": [],
+              "feedback": "30 is the total; divide by the 5 days to get the mean, 6. The range is the largest minus the smallest, 9 − 3 = 6."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = 6. The standard deviation is 9 − 3 = 6.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 6"
+                }
+              ],
+              "feedback": "Your mean is right. 9 − 3 is the range. The standard deviation comes from squaring each deviation from 6, finding their mean (the variance) and taking the square root."
+            }
+          ]
+        },
+        {
+          "prompt": "The scores of 50 learners in a test were grouped as follows: 0–9: 3, 10–19: 7, 20–29: 15, 30–39: 15, 40–49: 10. (a) Using class marks, calculate the mean score. (b) Write down the cumulative frequencies. (c) Estimate the median and the inter-quartile range, from an ogive or by calculation.",
+          "markScheme": [
+            "Σfx = 1 445, using class marks 4.5, 14.5, 24.5, 34.5, 44.5",
+            "(a) Mean = 1 445 ÷ 50 = 28.9",
+            "(b) Cumulative frequencies 3, 10, 25, 40, 50",
+            "Median (25th score) = 29.5",
+            "Q1 ≈ 21.2 and Q3 ≈ 37.8, so IQR ≈ 16.7 (ogive readings within 1 mark accepted)"
+          ],
+          "modelAnswer": "(a) The class marks are 4.5, 14.5, 24.5, 34.5 and 44.5, and fx = 13.5, 101.5, 367.5, 517.5, 445, so Σfx = 1 445 and the mean = 1 445 ÷ 50 = 28.9. (b) The cumulative frequencies are 3, 10, 25, 40, 50. (c) The median is the 25th score, at the upper boundary of 20–29: 29.5. Q1 is the 12.5th score: 19.5 + (2.5/15) × 10 = 21.2. Q3 is the 37.5th score: 29.5 + (12.5/15) × 10 = 37.8. IQR = 37.8 − 21.2 = 16.7 (using unrounded values, 16.67).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) fx: 13.5, 101.5, 367.5, 517.5, 445. Σfx = 1445. Mean = 1445/50 = 28.9. (b) Cumulative frequency: 3, 10, 25, 40, 50. (c) The median is the 25th score, at the end of 20–29, so median = 29.5. Q1 = 12.5th: 19.5 + (2.5/15) x 10 = 21.17. Q3 = 37.5th: 29.5 + (12.5/15) x 10 = 37.83. IQR = 37.83 − 21.17 = 16.66.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "fx: 13.5, 101.5, 367.5, 517.5, 445. Σfx = 1445"
+                },
+                {
+                  "point": 1,
+                  "quote": "Mean = 1445/50 = 28.9"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cumulative frequency: 3, 10, 25, 40, 50"
+                },
+                {
+                  "point": 3,
+                  "quote": "median = 29.5"
+                },
+                {
+                  "point": 4,
+                  "quote": "Q1 = 12.5th: 19.5 + (2.5/15) x 10 = 21.17. Q3 = 37.5th: 29.5 + (12.5/15) x 10 = 37.83. IQR = 37.83 − 21.17 = 16.66"
+                }
+              ],
+              "feedback": "All five marks. Interpolating inside the class gives sharper quartiles than reading a hand-drawn ogive."
+            },
+            {
+              "tier": "full",
+              "text": "Class marks 4.5, 14.5, 24.5, 34.5, 44.5 give Σfx = 1 445, mean 28.9. c.f. = 3, 10, 25, 40, 50. I plotted these against 9.5, 19.5, 29.5, 39.5, 49.5. From my ogive: median at 25 is 29.5, Q1 at 12.5 is about 21, Q3 at 37.5 is about 38, so IQR is about 17.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Class marks 4.5, 14.5, 24.5, 34.5, 44.5 give Σfx = 1 445"
+                },
+                {
+                  "point": 1,
+                  "quote": "mean 28.9"
+                },
+                {
+                  "point": 2,
+                  "quote": "c.f. = 3, 10, 25, 40, 50"
+                },
+                {
+                  "point": 3,
+                  "quote": "median at 25 is 29.5"
+                },
+                {
+                  "point": 4,
+                  "quote": "Q1 at 12.5 is about 21, Q3 at 37.5 is about 38, so IQR is about 17"
+                }
+              ],
+              "feedback": "Full marks. Plotting against the upper class boundaries, not the class marks, is the detail that makes an ogive right."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Using 0, 10, 20, 30, 40: Σfx = 0 + 70 + 300 + 450 + 400 = 1220, mean = 24.4. (b) 3, 10, 25, 40, 50. (c) Median = 29.5. Q1 ≈ 21.2, Q3 ≈ 37.8, IQR ≈ 16.7.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "(b) 3, 10, 25, 40, 50"
+                },
+                {
+                  "point": 3,
+                  "quote": "Median = 29.5"
+                },
+                {
+                  "point": 4,
+                  "quote": "Q1 ≈ 21.2, Q3 ≈ 37.8, IQR ≈ 16.7"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are right. For the mean, each class is represented by its middle value, the class mark: 4.5, 14.5, …, which gives Σfx = 1 445 and a mean of 28.9."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Σfx = 1445, mean = 28.9. (b) 3, 10, 25, 40, 50. (c) The median class is 20–29 so the median is its class mark, 24.5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Σfx = 1445"
+                },
+                {
+                  "point": 1,
+                  "quote": "mean = 28.9"
+                },
+                {
+                  "point": 2,
+                  "quote": "3, 10, 25, 40, 50"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. The 25th score is at the very top of 20–29, so the median is the upper boundary, 29.5, not the class mark. Find Q1 and Q3 the same way, at the 12.5th and 37.5th scores."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = (3 + 7 + 15 + 15 + 10)/5 = 10.",
+              "meets": [],
+              "feedback": "That is the mean of the frequencies, not of the scores. Multiply each class mark by its frequency, add, and divide by 50."
+            },
+            {
+              "tier": "weak",
+              "text": "Cumulative frequency is 3, 10, 25, 40, 50. Median = 25.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Cumulative frequency is 3, 10, 25, 40, 50"
+                }
+              ],
+              "feedback": "Your cumulative frequencies are right. 25 tells you which learner is in the middle; the median is that learner's score, read across on the ogive: 29.5."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Probability and vectors as directed line segments",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish experimental from theoretical probability and calculate probabilities of equally likely events;\n2. add probabilities of mutually exclusive events and multiply probabilities of independent events;\n3. solve problems on selection with and without replacement, interpreting 'and' and 'or';\n4. represent a vector as a directed line segment and write its Cartesian components from a magnitude and bearing, e.g. (5, 060°).\n\n## Materials\n\nA fair die, a coin, a bag with 4 red, 3 green and 3 blue sweets, a protractor, graph paper.\n\n## Starter (5 minutes)\n\nToss a coin 20 times as a class and record the heads. Compare the result with 10 out of 20. Introduce experimental and theoretical probability: why the two are close but not equal.\n\n## Development\n\n1. P(event) = number of favourable outcomes ÷ total number of outcomes. A fair die: P(prime) = 3/6 = 1/2. Probabilities lie from 0 to 1, and P(not A) = 1 − P(A).\n2. Mutually exclusive events cannot happen together: P(A or B) = P(A) + P(B). Work P(a 2 or a 5) = 1/6 + 1/6 = 1/3.\n3. Independent events do not affect each other: P(A and B) = P(A) × P(B). A coin and a die: P(head and a 6) = 1/2 × 1/6 = 1/12.\n4. Without replacement: from the bag of 10 sweets, P(two red) = 4/10 × 3/9 = 2/15. Contrast with replacement: 4/10 × 4/10 = 4/25.\n5. A vector has size and direction; draw it as an arrow. Write (5, 060°) for 5 units on a bearing of 060°. Its components are x = 5 sin 60° ≈ 4.33 east and y = 5 cos 60° = 2.5 north.\n\n## Class activity\n\nGroups draw tree diagrams for two draws from the bag, with and without replacement, and compare the answers for 'two sweets of the same colour'.\n\n## Evaluation\n\n1. A fair die is thrown once. Find P(a number greater than 4).\n2. P(A) = 0.4 and P(B) = 0.5, independent. Find P(A and B).\n3. Express (10, 090°) in components.\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Chance, and quantities with direction",
+        "content": "# Probability and vectors\n\n## Probability\n\nThe **probability** of an event is how likely it is, on a scale from 0 (impossible) to 1 (certain).\n\nP(event) = number of favourable outcomes ÷ total number of equally likely outcomes.\n\nA fair die is thrown. The prime numbers are 2, 3 and 5, so P(prime) = 3/6 = 1/2. The probability that an event does not happen is 1 − P(event).\n\n**Experimental probability** comes from doing the trial many times: relative frequency = number of times it happened ÷ number of trials. **Theoretical probability** comes from counting equally likely outcomes. With many trials the two get close.\n\n## 'Or' and 'and'\n\n- Events that cannot happen together are **mutually exclusive**. Then P(A or B) = P(A) + P(B).\n- Events that do not affect each other are **independent**. Then P(A and B) = P(A) × P(B).\n\n**Worked example 1.** P(Ade passes) = 3/4 and P(Bola passes) = 2/3, independently. P(both pass) = 3/4 × 2/3 = 1/2.\n\n## With and without replacement\n\nA bag has 4 red, 3 green and 3 blue sweets. Two are taken one after the other.\n\n- **With replacement:** the first sweet is put back, so the second draw is again out of 10. P(two red) = 4/10 × 4/10 = 4/25.\n- **Without replacement:** the first is kept, so only 9 remain and 3 are red. P(two red) = 4/10 × 3/9 = 12/90 = 2/15.\n\n## Vectors\n\nA **vector** has both size (magnitude) and direction. We draw it as a **directed line segment**, an arrow whose length shows the size. A vector can be given as (magnitude, bearing), such as (5, 060°). Its Cartesian components are:\n\n- x = magnitude × sin (bearing)\n- y = magnitude × cos (bearing)\n\nFor (5, 060°): x = 5 sin 60° ≈ 4.33 and y = 5 cos 60° = 2.5."
+      },
+      "cards": [
+        {
+          "front": "Probability of an event",
+          "back": "Number of favourable outcomes ÷ total number of equally likely outcomes."
+        },
+        {
+          "front": "P(not A)",
+          "back": "1 − P(A)"
+        },
+        {
+          "front": "Mutually exclusive events",
+          "back": "Cannot happen together. P(A or B) = P(A) + P(B)."
+        },
+        {
+          "front": "Independent events",
+          "back": "One does not affect the other. P(A and B) = P(A) × P(B)."
+        },
+        {
+          "front": "Without replacement",
+          "back": "The item is kept out, so the second draw has one fewer item in the total."
+        },
+        {
+          "front": "Experimental probability",
+          "back": "Relative frequency from doing the trial many times."
+        },
+        {
+          "front": "Vector",
+          "back": "A quantity with both magnitude and direction."
+        },
+        {
+          "front": "Components of (5, 060°)",
+          "back": "x = 5 sin 60° ≈ 4.33, y = 5 cos 60° = 2.5"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A fair die is thrown once. What is the probability of obtaining a prime number?",
+          "options": ["1/3", "2/3", "1/2", "5/6"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A bag contains 5 red and 3 blue marbles. Two are taken one after the other without replacement. What is the probability that both are red?",
+          "options": ["25/64", "5/14", "5/8", "5/16"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A and B are independent events with P(A) = 0.3 and P(B) = 0.5. Find P(A and B).",
+          "options": ["0.8", "0.2", "0.15", "0.65"],
+          "answer": "C"
+        },
+        {
+          "prompt": "X and Y are mutually exclusive events with P(X) = 0.2 and P(Y) = 0.35. Find P(X or Y).",
+          "options": ["0.07", "0.55", "0.15", "0.45"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A vector has magnitude 5 units on a bearing of 060°. What are its components (east, north) to 2 decimal places?",
+          "options": [
+            "(2.50, 4.33)",
+            "(5.00, 3.00)",
+            "(4.33, 2.50)",
+            "(2.50, 5.00)"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A bag holds 4 red, 3 green and 3 blue sweets. Two sweets are taken from the bag one after the other, without replacement. Find the probability that (a) both are red, (b) both are the same colour, (c) they are of different colours.",
+          "markScheme": [
+            "Total of 10 sweets, then 9 after the first is taken: P(both red) = 4/10 × 3/9",
+            "(a) = 2/15",
+            "Adds P(RR), P(GG) and P(BB): (12 + 6 + 6)/90",
+            "(b) = 4/15",
+            "(c) = 1 − 4/15 = 11/15"
+          ],
+          "modelAnswer": "There are 10 sweets. (a) P(both red) = 4/10 × 3/9 = 12/90 = 2/15. (b) P(GG) = 3/10 × 2/9 = 6/90 and P(BB) = 3/10 × 2/9 = 6/90. Same colour = 12/90 + 6/90 + 6/90 = 24/90 = 4/15. (c) Different colours is the opposite of same colour, so P = 1 − 4/15 = 11/15.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Total sweets = 10. (a) P(RR) = 4/10 x 3/9 = 12/90 = 2/15. (b) P(GG) = 3/10 x 2/9 = 6/90, P(BB) = 6/90. Same colour = 12/90 + 6/90 + 6/90 = 24/90 = 4/15. (c) Different = 1 − 4/15 = 11/15.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "P(RR) = 4/10 x 3/9"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 12/90 = 2/15"
+                },
+                {
+                  "point": 2,
+                  "quote": "Same colour = 12/90 + 6/90 + 6/90"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 24/90 = 4/15"
+                },
+                {
+                  "point": 4,
+                  "quote": "Different = 1 − 4/15 = 11/15"
+                }
+              ],
+              "feedback": "All five marks. Using 1 − P(same colour) for part (c) saves you from listing six cases."
+            },
+            {
+              "tier": "full",
+              "text": "(a) First red 4/10, second red 3/9, so 4/10 × 3/9 = 2/15. (b) RR = 12/90, GG = 3/10 × 2/9 = 6/90, BB = 6/90. Total = 24/90 = 4/15. (c) 1 − 4/15 = 11/15 since 'different' is the complement of 'same'.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First red 4/10, second red 3/9, so 4/10 × 3/9"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 2/15"
+                },
+                {
+                  "point": 2,
+                  "quote": "RR = 12/90, GG = 3/10 × 2/9 = 6/90, BB = 6/90"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total = 24/90 = 4/15"
+                },
+                {
+                  "point": 4,
+                  "quote": "1 − 4/15 = 11/15 since 'different' is the complement of 'same'"
+                }
+              ],
+              "feedback": "Full marks. Saying why the complement works shows that you understand it, not only the arithmetic."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 4/10 × 3/9 = 2/15. (b) RR + GG + BB = 2/15 + 3/10 × 2/9 + 3/10 × 2/9 = 2/15 + 1/15 + 1/15 = 4/15. (c) 4/15 is the same so different is 4/15 × 2 = 8/15.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4/10 × 3/9"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 2/15"
+                },
+                {
+                  "point": 2,
+                  "quote": "RR + GG + BB = 2/15 + 3/10 × 2/9 + 3/10 × 2/9"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 4/15"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. In (c), 'different' is everything that is not 'same', so subtract from 1: 1 − 4/15 = 11/15. Doubling does not work."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 4/10 × 4/10 = 16/100 = 4/25. (b) P(GG) = 3/10 × 3/10 = 9/100, P(BB) = 9/100. Same = 16/100 + 9/100 + 9/100 = 34/100. (c) 1 − 34/100 = 66/100 = 33/50.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "1 − 34/100"
+                }
+              ],
+              "feedback": "You treated the draws as with replacement, but the question says without replacement: after taking one sweet only 9 remain, so (a) is 4/10 × 3/9 = 2/15. Your idea of subtracting from 1 for (c) is correct."
+            },
+            {
+              "tier": "weak",
+              "text": "P(red) = 4/10. Two reds = 4/10 + 4/10 = 8/10. Same colour = 3 colours so 1/3.",
+              "meets": [],
+              "feedback": "'Both' means 'and', so the probabilities are multiplied, not added: 4/10 × 3/9. Same colour is not 1/3, because the colours are not equally likely; work out each colour separately."
+            },
+            {
+              "tier": "weak",
+              "text": "There are 10 sweets so the probability of red is 1/10. For (a) it is 2/10.",
+              "meets": [],
+              "feedback": "There are 4 red sweets, so the first draw is 4/10, not 1/10. For both red, multiply by the chance the second is red as well, 3 out of the 9 left."
+            }
+          ]
+        },
+        {
+          "prompt": "The probability that Ade passes a Mathematics test is 3/4 and the probability that Bola passes is 2/3. The two results are independent. Find the probability that (a) both pass, (b) neither passes, (c) at least one of them passes, (d) exactly one of them passes.",
+          "markScheme": [
+            "P(both pass) = 3/4 × 2/3 = 1/2",
+            "P(neither) = 1/4 × 1/3 = 1/12",
+            "P(at least one) = 1 − 1/12 = 11/12",
+            "P(Ade only) = 3/4 × 1/3 = 1/4 and P(Bola only) = 1/4 × 2/3 = 1/6",
+            "P(exactly one) = 1/4 + 1/6 = 5/12"
+          ],
+          "modelAnswer": "(a) P(both) = 3/4 × 2/3 = 6/12 = 1/2. (b) P(Ade fails) = 1/4 and P(Bola fails) = 1/3, so P(neither) = 1/4 × 1/3 = 1/12. (c) At least one passes is the opposite of neither, so P = 1 − 1/12 = 11/12. (d) Ade only: 3/4 × 1/3 = 1/4. Bola only: 1/4 × 2/3 = 1/6. Exactly one = 1/4 + 1/6 = 3/12 + 2/12 = 5/12.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 3/4 × 2/3 = 6/12 = 1/2. (b) Fail: Ade 1/4, Bola 1/3. 1/4 × 1/3 = 1/12. (c) 1 − 1/12 = 11/12. (d) Ade only = 3/4 × 1/3 = 1/4, Bola only = 1/4 × 2/3 = 1/6. 1/4 + 1/6 = 5/12.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3/4 × 2/3 = 6/12 = 1/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "1/4 × 1/3 = 1/12"
+                },
+                {
+                  "point": 2,
+                  "quote": "1 − 1/12 = 11/12"
+                },
+                {
+                  "point": 3,
+                  "quote": "Ade only = 3/4 × 1/3 = 1/4, Bola only = 1/4 × 2/3 = 1/6"
+                },
+                {
+                  "point": 4,
+                  "quote": "1/4 + 1/6 = 5/12"
+                }
+              ],
+              "feedback": "All five marks. You listed the two ways of 'exactly one' separately and then added them, which is exactly the method."
+            },
+            {
+              "tier": "full",
+              "text": "Both = 3/4 x 2/3 = 1/2. Neither = (1 − 3/4)(1 − 2/3) = 1/4 x 1/3 = 1/12. At least one = 1 − P(neither) = 11/12. Exactly one = P(Ade passes, Bola fails) + P(Ade fails, Bola passes) = 3/4 x 1/3 + 1/4 x 2/3 = 1/4 + 1/6 = 5/12.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Both = 3/4 x 2/3 = 1/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "Neither = (1 − 3/4)(1 − 2/3) = 1/4 x 1/3 = 1/12"
+                },
+                {
+                  "point": 2,
+                  "quote": "At least one = 1 − P(neither) = 11/12"
+                },
+                {
+                  "point": 3,
+                  "quote": "3/4 x 1/3 + 1/4 x 2/3 = 1/4 + 1/6"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 5/12"
+                }
+              ],
+              "feedback": "Full marks. Check: both + neither + exactly one = 6/12 + 1/12 + 5/12 = 1, as it must."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3/4 × 2/3 = 1/2. (b) 1/4 × 1/3 = 1/12. (c) 3/4 + 2/3 = 17/12. (d) 3/4 × 1/3 + 1/4 × 2/3 = 5/12.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3/4 × 2/3 = 1/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "1/4 × 1/3 = 1/12"
+                },
+                {
+                  "point": 3,
+                  "quote": "3/4 × 1/3 + 1/4 × 2/3"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 5/12"
+                }
+              ],
+              "feedback": "Your answers to (a), (b) and (d) are right. A probability cannot be more than 1, and 17/12 is. The events can both happen, so you cannot just add; use 1 − P(neither) = 11/12."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3/4 x 2/3 = 1/2. (b) 1/4 x 1/3 = 1/12. (c) 1 − 1/12 = 11/12. (d) 3/4 + 2/3 = 17/12.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3/4 x 2/3 = 1/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "1/4 x 1/3 = 1/12"
+                },
+                {
+                  "point": 2,
+                  "quote": "1 − 1/12 = 11/12"
+                }
+              ],
+              "feedback": "Parts (a) to (c) are right. For exactly one, Ade passes and Bola fails, or Ade fails and Bola passes: 3/4 × 1/3 + 1/4 × 2/3 = 5/12. Adding 3/4 and 2/3 counts the 'both' case twice."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 3/4 + 2/3 = 17/12 which is more than 1 so it is 1. (b) 0. (c) 1. (d) 1/2.",
+              "meets": [],
+              "feedback": "A probability above 1 means you used the wrong rule. 'Both' needs 'and', so multiply: 3/4 × 2/3. For 'neither', multiply the chances of failing: 1/4 × 1/3."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 3/4 x 2/3 = 6/12. (b) 1/4 + 1/3 = 7/12. (c) 3/4 + 2/3 − 7/12 = 10/12.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3/4 x 2/3 = 6/12"
+                }
+              ],
+              "feedback": "Part (a) is right (6/12 = 1/2). For 'neither', both must fail, so multiply: 1/4 × 1/3 = 1/12. Then 'at least one' is 1 − 1/12."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Vectors, reflection and rotation",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the magnitude of a vector and add, subtract and multiply vectors by a scalar, including parallel vectors;\n2. reflect points and shapes in the x-axis, y-axis and the lines x = k, y = x and y = kx, and find a mirror line;\n3. rotate points and shapes about the origin and about another point, giving the angle of rotation between −180° and 180°.\n\n## Materials\n\nGraph paper, rulers, tracing paper, a small mirror, a protractor.\n\n## Starter (5 minutes)\n\nStand a learner in front of the class mirror. Ask where their image appears and how far behind the mirror it is. Link to a point and its image being equal distances from the mirror line.\n\n## Development\n\n1. Column vectors: a = (3, 4) has magnitude |a| = √(3² + 4²) = 5. Add and subtract component by component. 2a − b where a = (2, 3) and b = (−1, 5): (4 + 1, 6 − 5) = (5, 1).\n2. Parallel vectors are scalar multiples: (6, −5) is parallel to (12, −10) because (12, −10) = 2(6, −5).\n3. Reflection: in the x-axis, (x, y) → (x, −y); in the y-axis, (x, y) → (−x, y); in y = x, (x, y) → (y, x). Reflect (3, 2) in each.\n4. Mirror line: the line is the perpendicular bisector of the line joining a point and its image.\n5. Rotation: about the origin by 90° anticlockwise, (x, y) → (−y, x). Clockwise by 90°, (x, y) → (y, −x). Half turn: (x, y) → (−x, −y). A rotation needs a centre, an angle and a direction.\n6. Combine: reflect a triangle in the y-axis, then rotate it 90° clockwise, and describe the single transformation.\n\n## Class activity\n\nIn pairs, one learner draws a triangle and its image after a transformation; the other finds the mirror line or the centre and angle.\n\n## Evaluation\n\n1. Reflect (4, −3) in the x-axis.\n2. Rotate (2, 1) through 90° anticlockwise about the origin.\n3. Find |(5, 12)|.\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "Moving shapes about the plane",
+        "content": "# Vectors, reflection and rotation\n\n## Column vectors\n\nA vector can be written as a column (x, y) meaning x units across and y units up. Its **magnitude** is √(x² + y²). For a = (3, 4), |a| = √(9 + 16) = 5.\n\nTo add or subtract vectors, work component by component. To multiply by a scalar, multiply both components.\n\n**Worked example 1.** a = (2, 3) and b = (−1, 5). Then 2a − b = (4, 6) − (−1, 5) = (5, 1).\n\nTwo vectors are **parallel** if one is a scalar multiple of the other. (12, −10) = 2(6, −5), so they are parallel. The **zero vector** (0, 0) has no size.\n\n## Reflection\n\nA reflection turns a shape into its mirror image. Every point and its image are the same distance from the **mirror line**, on opposite sides.\n\n| Mirror line | (x, y) goes to |\n| --- | --- |\n| x-axis | (x, −y) |\n| y-axis | (−x, y) |\n| y = x | (y, x) |\n| x = k | (2k − x, y) |\n\n**Worked example 2.** Reflect A(3, 2) in the line x = 5. The point is 2 units to the left of the line, so the image is 2 units to the right: (7, 2).\n\n## Rotation\n\nA rotation has three things: a **centre**, an **angle** and a **direction**. About the origin:\n\n- 90° anticlockwise: (x, y) → (−y, x)\n- 90° clockwise: (x, y) → (y, −x)\n- 180°: (x, y) → (−x, −y)\n\n**Worked example 3.** Rotate (2, 1) through 90° anticlockwise about the origin: (−1, 2).\n\nTo describe a rotation, find the centre where the perpendicular bisectors of the lines joining points to their images meet. Give angles between −180° and 180°, with anticlockwise positive."
+      },
+      "cards": [
+        {
+          "front": "Magnitude of (x, y)",
+          "back": "√(x² + y²)"
+        },
+        {
+          "front": "Parallel vectors",
+          "back": "One is a scalar multiple of the other."
+        },
+        {
+          "front": "Reflection in the x-axis",
+          "back": "(x, y) → (x, −y)"
+        },
+        {
+          "front": "Reflection in y = x",
+          "back": "(x, y) → (y, x)"
+        },
+        {
+          "front": "Reflection in the y-axis",
+          "back": "(x, y) → (−x, y)"
+        },
+        {
+          "front": "Rotation 90° anticlockwise about the origin",
+          "back": "(x, y) → (−y, x)"
+        },
+        {
+          "front": "Rotation through 180°",
+          "back": "(x, y) → (−x, −y)"
+        },
+        {
+          "front": "What a rotation needs",
+          "back": "A centre, an angle and a direction."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the magnitude of the vector a = (3, 4).",
+          "options": ["7", "12", "25", "5"],
+          "answer": "D"
+        },
+        {
+          "prompt": "If a = (2, 3) and b = (−1, 5), find 2a − b.",
+          "options": ["(3, −1)", "(5, 1)", "(3, 11)", "(5, 11)"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the image of the point (3, 2) after reflection in the y-axis?",
+          "options": ["(3, −2)", "(2, 3)", "(−3, 2)", "(−3, −2)"],
+          "answer": "C"
+        },
+        {
+          "prompt": "What is the image of the point (4, 1) after reflection in the line y = x?",
+          "options": ["(1, 4)", "(−4, 1)", "(4, −1)", "(−1, −4)"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The point (2, 1) is rotated through 90° anticlockwise about the origin. What is its image?",
+          "options": ["(1, −2)", "(−1, 2)", "(2, −1)", "(−2, −1)"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Given that p = (5, −2) and q = (−2, 6), find (a) p + q, (b) |p + q|, (c) 2p − q, (d) the value of k if (k, −5) is parallel to 2p − q.",
+          "markScheme": [
+            "(a) p + q = (3, 4)",
+            "(b) |p + q| = √(3² + 4²) = 5",
+            "(c) 2p − q = (12, −10)",
+            "Recognises that (k, −5) is a scalar multiple of (12, −10), e.g. the scalar is 1/2",
+            "(d) k = 6"
+          ],
+          "modelAnswer": "(a) p + q = (5 − 2, −2 + 6) = (3, 4). (b) |p + q| = √(3² + 4²) = √25 = 5. (c) 2p − q = (10, −4) − (−2, 6) = (12, −10). (d) Parallel vectors are scalar multiples. −5 = (1/2) × (−10), so k = (1/2) × 12 = 6.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) (5 + (−2), −2 + 6) = (3, 4). (b) √(3² + 4²) = √25 = 5. (c) 2p = (10, −4), 2p − q = (10 + 2, −4 − 6) = (12, −10). (d) (k, −5) = ½(12, −10) because −5 is half of −10, so k = 6.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(5 + (−2), −2 + 6) = (3, 4)"
+                },
+                {
+                  "point": 1,
+                  "quote": "√(3² + 4²) = √25 = 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "2p − q = (10 + 2, −4 − 6) = (12, −10)"
+                },
+                {
+                  "point": 3,
+                  "quote": "(k, −5) = ½(12, −10) because −5 is half of −10"
+                },
+                {
+                  "point": 4,
+                  "quote": "so k = 6"
+                }
+              ],
+              "feedback": "All five marks. Every step is shown, and you explained the scalar in (d) instead of just writing k."
+            },
+            {
+              "tier": "full",
+              "text": "p + q = (3, 4). Magnitude = 5 (3-4-5 triangle). 2p − q = (10, −4) − (−2, 6) = (12, −10). For parallel, k/12 = −5/−10 = ½ so k = 6.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "p + q = (3, 4)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Magnitude = 5 (3-4-5 triangle)"
+                },
+                {
+                  "point": 2,
+                  "quote": "2p − q = (10, −4) − (−2, 6) = (12, −10)"
+                },
+                {
+                  "point": 3,
+                  "quote": "k/12 = −5/−10 = ½"
+                },
+                {
+                  "point": 4,
+                  "quote": "k = 6"
+                }
+              ],
+              "feedback": "Full marks. Setting equal ratios of the components is the standard way to show two vectors are parallel."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) (3, 4). (b) 3 + 4 = 7. (c) 2p = (10, −4), minus q gives (12, −10). (d) k = 6 since 12 ÷ 2 = 6.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(3, 4)"
+                },
+                {
+                  "point": 2,
+                  "quote": "minus q gives (12, −10)"
+                },
+                {
+                  "point": 4,
+                  "quote": "k = 6"
+                }
+              ],
+              "feedback": "The magnitude is not 3 + 4: square each component, add, then take the root, √(9 + 16) = 5. Your k = 6 is right; state why: (k, −5) is ½ of (12, −10)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) (3, 4). (b) √(3² + 4²) = 5. (c) 2p − q = (10, −4) − (−2, 6) = (8, −10). (d) k/8 = −5/−10, k = 4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(3, 4)"
+                },
+                {
+                  "point": 1,
+                  "quote": "√(3² + 4²) = 5"
+                },
+                {
+                  "point": 3,
+                  "quote": "k/8 = −5/−10"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right, and your method in (d) is right. In (c), subtracting −2 gives 10 + 2 = 12, not 8. With (12, −10), k = 6."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 5 − 2 = 3 and −2 + 6 = 4 so 7. (b) 7. (c) 2 × 5 − 2 × 6 = −2. (d) k = −5.",
+              "meets": [],
+              "feedback": "A vector keeps its two components: p + q = (3, 4), not 7. Work the top and bottom separately each time. The magnitude is √(3² + 4²) = 5."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) p + q = (3, 4). (b) √7. (c) 2(5, −2) − (−2, 6) = (8, −10). (d) k = 5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "p + q = (3, 4)"
+                }
+              ],
+              "feedback": "Part (a) is right. For the magnitude, square the components before adding: 3² + 4² = 25, so the magnitude is 5. In (c), minus (−2) becomes +2, giving 12."
+            }
+          ]
+        },
+        {
+          "prompt": "Triangle ABC has vertices A(1, 1), B(4, 1) and C(4, 3). (a) Triangle ABC is reflected in the y-axis to give A′B′C′. Write down the coordinates of A′, B′ and C′. (b) A′B′C′ is rotated through 90° clockwise about the origin to give A″B″C″. Write down the coordinates of A″, B″ and C″. (c) Describe fully the single transformation that maps ABC onto A″B″C″.",
+          "markScheme": [
+            "A′(−1, 1), B′(−4, 1), C′(−4, 3)",
+            "Uses the rule (x, y) → (y, −x) for 90° clockwise",
+            "A″(1, 1), B″(1, 4), C″(3, 4)",
+            "Compares ABC and A″B″C″: each point has its x and y swapped",
+            "A reflection in the line y = x"
+          ],
+          "modelAnswer": "(a) Reflection in the y-axis changes the sign of x: A′(−1, 1), B′(−4, 1), C′(−4, 3). (b) A rotation of 90° clockwise about the origin sends (x, y) to (y, −x): A″(1, 1), B″(1, 4), C″(3, 4). (c) Compare ABC with A″B″C″: B(4, 1) goes to (1, 4) and C(4, 3) goes to (3, 4), so each point has its coordinates swapped, and A(1, 1) stays where it is. The single transformation is a reflection in the line y = x.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A′(−1, 1), B′(−4, 1), C′(−4, 3). (b) 90° clockwise: (x, y) → (y, −x). A″(1, 1), B″(1, 4), C″(3, 4). (c) B(4, 1) → B″(1, 4) and C(4, 3) → C″(3, 4), the coordinates have swapped, and A(1, 1) does not move. It is a reflection in the line y = x.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A′(−1, 1), B′(−4, 1), C′(−4, 3)"
+                },
+                {
+                  "point": 1,
+                  "quote": "90° clockwise: (x, y) → (y, −x)"
+                },
+                {
+                  "point": 2,
+                  "quote": "A″(1, 1), B″(1, 4), C″(3, 4)"
+                },
+                {
+                  "point": 3,
+                  "quote": "the coordinates have swapped, and A(1, 1) does not move"
+                },
+                {
+                  "point": 4,
+                  "quote": "It is a reflection in the line y = x"
+                }
+              ],
+              "feedback": "All five marks. Noticing that A did not move is what points to a reflection with A on the mirror line."
+            },
+            {
+              "tier": "full",
+              "text": "A′ = (−1, 1), B′ = (−4, 1), C′ = (−4, 3). Rotating clockwise 90°, the point (x, y) becomes (y, −x), so A″ = (1, 1), B″ = (1, 4), C″ = (3, 4). Each point of ABC has its x and y exchanged, so the transformation is a reflection and the mirror line is y = x.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A′ = (−1, 1), B′ = (−4, 1), C′ = (−4, 3)"
+                },
+                {
+                  "point": 1,
+                  "quote": "the point (x, y) becomes (y, −x)"
+                },
+                {
+                  "point": 2,
+                  "quote": "A″ = (1, 1), B″ = (1, 4), C″ = (3, 4)"
+                },
+                {
+                  "point": 3,
+                  "quote": "Each point of ABC has its x and y exchanged"
+                },
+                {
+                  "point": 4,
+                  "quote": "the transformation is a reflection and the mirror line is y = x"
+                }
+              ],
+              "feedback": "Full marks. You gave both the type of transformation and the mirror line, which is what 'describe fully' needs."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A′(−1, 1), B′(−4, 1), C′(−4, 3). (b) A″(1, 1), B″(1, 4), C″(3, 4). (c) It is a reflection.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A′(−1, 1), B′(−4, 1), C′(−4, 3)"
+                },
+                {
+                  "point": 2,
+                  "quote": "A″(1, 1), B″(1, 4), C″(3, 4)"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. In (c) 'reflection' is not a full description: a reflection needs its mirror line. Here every point has its x and y swapped, so the mirror line is y = x."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A′(−1, 1), B′(−4, 1), C′(−4, 3). (b) A″(1, −1), B″(1, −4), C″(3, −4). (c) A rotation through 90° about the origin.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A′(−1, 1), B′(−4, 1), C′(−4, 3)"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b), the rule for 90° clockwise is (x, y) → (y, −x), so A′(−1, 1) goes to (1, 1). With the correct images, ABC and A″B″C″ are mirror images, not a rotation.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A′(1, −1), B′(4, −1), C′(4, −3). (b) A″(−1, 1), B″(−1, 4), C″(−3, 4). (c) Rotation.",
+              "meets": [],
+              "feedback": "Reflecting in the y-axis changes the sign of x, not y: A′ is (−1, 1). Do each transformation one at a time, using the rules from the reading, and 'rotation' needs a centre and an angle as well."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A′(−1, 1), B′(−4, 1), C′(−4, 3). (b) It turns clockwise so the triangle moves to the right. (c) Translation.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A′(−1, 1), B′(−4, 1), C′(−4, 3)"
+                }
+              ],
+              "feedback": "Part (a) is right. A rotation turns a shape about a point; it does not slide it. Use (x, y) → (y, −x) on each of A′, B′ and C′ to get the coordinates."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

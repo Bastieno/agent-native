@@ -1,0 +1,2698 @@
+{
+  "subject": "Mathematics",
+  "yearGroup": "SS1",
+  "weeks": {
+    "1": {
+      "topic": "Number bases and modulo arithmetic",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. convert a number in any base to base ten, and a base ten number to any base;\n2. convert from one base to another through base ten;\n3. add, subtract and multiply numbers in a given base;\n4. interpret statements such as 6 + 4 = k (mod 7) and carry out addition, subtraction and multiplication in modulo arithmetic.\n\n## Materials\n\nBundles of broomsticks (tied in fives), a chart of place values for bases 2, 5 and 8, a large clock face with the numbers 0 to 6 marked round it.\n\n## Starter (5 minutes)\n\nHold up two bundles of five broomsticks and three loose ones. Ask: how many sticks? Then ask how we would write this if we counted only in fives. Lead to 23 in base five meaning 2 fives and 3 ones.\n\n## Development\n\n1. Write the place values of base two (16, 8, 4, 2, 1) and base five (125, 25, 5, 1). Convert 110101₂ and 234₅ to base ten by expanding.\n2. Convert 47 to base two by repeated division, writing the remainders down the side and reading them from the bottom up. Stress that reading from the top is the commonest mistake.\n3. Convert 234₅ to base eight through base ten (234₅ = 69 = 105₈).\n4. Add 213₄ + 132₄ in columns, carrying a 4 each time a column reaches 4. Subtract 43₅ − 24₅, borrowing 5. Multiply 23₄ × 3₄.\n5. Use the clock face for modulo 7: count 6 then 4 more and land on 3, so 6 + 4 = 3 (mod 7). Show the rule: divide by 7 and keep the remainder. Work 3 × 5 (mod 6) = 3 and 2 − 5 (mod 7) = 4.\n\n## Class activity\n\nIn pairs, students convert their ages and the number of learners in the class into base two and base five, then swap and check each other's work by converting back.\n\n## Evaluation\n\n1. Convert 101101₂ to base ten.\n2. Find k if 5 + 6 = k (mod 8).\n3. Multiply 12₃ by 2₃.\n\n## Assignment\n\nWorksheet on the app, due Thursday.",
+      "reading": {
+        "title": "Counting in other bases, and arithmetic that goes round in circles",
+        "content": "# Number bases and modulo arithmetic\n\n## What a base is\n\nWe count in **base ten** because we have ten fingers. The digits are 0 to 9 and each place is worth ten times the place to its right. A number can be written in any base. In **base two** (binary) the digits are only 0 and 1, and the places are worth 1, 2, 4, 8, 16 and so on. In **base five** the digits are 0 to 4 and the places are worth 1, 5, 25, 125.\n\nWe show the base with a small number at the bottom: 234₅ means 234 in base five.\n\n## Converting to base ten\n\nMultiply each digit by its place value and add.\n\n**Worked example 1.** 234₅ = 2 × 5² + 3 × 5 + 4 × 1 = 50 + 15 + 4 = 69.\n\n## Converting from base ten\n\nDivide repeatedly by the new base, writing down each remainder. Read the remainders **from the bottom up**.\n\n**Worked example 2.** Write 69 in base eight.\n\n- 69 ÷ 8 = 8 remainder 5\n- 8 ÷ 8 = 1 remainder 0\n- 1 ÷ 8 = 0 remainder 1\n\nReading up: 69 = 105₈. So 234₅ = 105₈. To change from one base to another, always pass through base ten.\n\n## Adding and subtracting in a base\n\nWork in columns as usual, but carry or borrow the base, not ten. In base four, 3 + 2 = 5 = 11₄, so write 1 and carry 1. So 213₄ + 132₄ = 1011₄.\n\n## Modulo arithmetic\n\nOn a clock the numbers go round and start again. **Modulo arithmetic** works the same way. In modulo 7 we only use 0, 1, 2, 3, 4, 5, 6. To find a number in modulo 7, divide by 7 and keep the **remainder**.\n\n- 6 + 4 = 10 = 7 + 3, so 6 + 4 = 3 (mod 7).\n- 3 × 5 = 15 = 2 × 6 + 3, so 3 × 5 = 3 (mod 6).\n- 2 − 5 = −3. Add 7 to get 4, so 2 − 5 = 4 (mod 7).\n\nWhen we write m = 2 (mod 3), m can be any number that leaves remainder 2 when divided by 3: 2, 5, 8, 11 and so on."
+      },
+      "cards": [
+        {
+          "front": "Base of a number",
+          "back": "How many digits the system uses, and what each place is worth times the place to its right."
+        },
+        {
+          "front": "Place values in base two",
+          "back": "1, 2, 4, 8, 16, 32, 64 and so on, from the right."
+        },
+        {
+          "front": "Convert 1101₂ to base ten",
+          "back": "8 + 4 + 0 + 1 = 13"
+        },
+        {
+          "front": "How to convert base ten to another base",
+          "back": "Divide repeatedly by the base and read the remainders from the bottom up."
+        },
+        {
+          "front": "Convert from base five to base eight",
+          "back": "Go through base ten: change to base ten first, then to base eight."
+        },
+        {
+          "front": "Carrying in base four",
+          "back": "Carry 1 each time a column reaches 4, not 10."
+        },
+        {
+          "front": "Meaning of 6 + 4 = 3 (mod 7)",
+          "back": "10 divided by 7 leaves remainder 3."
+        },
+        {
+          "front": "2 − 5 in modulo 7",
+          "back": "−3; add 7 to get 4."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Convert 110101₂ to a number in base ten.",
+          "options": ["35", "43", "53", "106"],
+          "answer": "C"
+        },
+        {
+          "prompt": "What is 25 (base ten) written in base two?",
+          "options": ["10011", "11001", "11010", "10101"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find the value of k if 6 + 4 = k (mod 7).",
+          "options": ["10", "1", "17", "3"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Evaluate 3 × 5 (mod 6).",
+          "options": ["3", "2", "15", "9"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Add 213₄ and 132₄, giving your answer in base four.",
+          "options": ["345", "1101", "1011", "3011"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Convert 234₅ to a number in base ten. Hence write the number in base eight.",
+          "markScheme": [
+            "Expands with the place values of base five: 2 × 5² + 3 × 5 + 4",
+            "234₅ = 69 in base ten",
+            "Divides 69 repeatedly by 8, getting remainders 5, 0 and 1",
+            "Reads the remainders from the bottom: 105₈"
+          ],
+          "modelAnswer": "234₅ = 2 × 5² + 3 × 5 + 4 × 1 = 50 + 15 + 4 = 69. Now divide by 8: 69 ÷ 8 = 8 remainder 5, 8 ÷ 8 = 1 remainder 0, 1 ÷ 8 = 0 remainder 1. Reading the remainders from the bottom, 69 = 105₈, so 234₅ = 105₈.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "2 x 5² + 3 x 5¹ + 4 x 5⁰ = 50 + 15 + 4 = 69 in base ten. Then 8 into 69 = 8 rem 5, 8 into 8 = 1 rem 0, 8 into 1 = 0 rem 1. Reading upwards the answer is 105 base 8.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 x 5² + 3 x 5¹ + 4 x 5⁰"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 69 in base ten"
+                },
+                {
+                  "point": 2,
+                  "quote": "8 into 69 = 8 rem 5, 8 into 8 = 1 rem 0, 8 into 1 = 0 rem 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "the answer is 105 base 8"
+                }
+              ],
+              "feedback": "All four marks. Writing 5¹ and 5⁰ shows you know exactly what each place is worth."
+            },
+            {
+              "tier": "full",
+              "text": "234₅ = (2 × 25) + (3 × 5) + (4 × 1) = 69₁₀. 69 ÷ 8 = 8 r 5, 8 ÷ 8 = 1 r 0, 1 ÷ 8 = 0 r 1. So 69₁₀ = 105₈.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(2 × 25) + (3 × 5) + (4 × 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 69₁₀"
+                },
+                {
+                  "point": 2,
+                  "quote": "69 ÷ 8 = 8 r 5, 8 ÷ 8 = 1 r 0, 1 ÷ 8 = 0 r 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "69₁₀ = 105₈"
+                }
+              ],
+              "feedback": "Full marks, and neatly set out. Labelling 69₁₀ makes it clear which base each number is in."
+            },
+            {
+              "tier": "partial",
+              "text": "2 x 25 + 3 x 5 + 4 = 69. 69 ÷ 8 = 8 r 5, 8 ÷ 8 = 1 r 0, 1 ÷ 8 = 0 r 1. Answer = 501₈.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 x 25 + 3 x 5 + 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 69"
+                },
+                {
+                  "point": 2,
+                  "quote": "69 ÷ 8 = 8 r 5, 8 ÷ 8 = 1 r 0, 1 ÷ 8 = 0 r 1"
+                }
+              ],
+              "feedback": "Your conversion to base ten and your division are right. You read the remainders from the top: read them from the bottom up, which gives 105₈."
+            },
+            {
+              "tier": "partial",
+              "text": "2 x 5 x 5 = 50, 3 x 5 = 15, 4 x 1 = 4. 50 + 15 + 4 = 59. 59 ÷ 8 = 7 r 3 so it is 73 in base 8.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 x 5 x 5 = 50, 3 x 5 = 15, 4 x 1 = 4"
+                }
+              ],
+              "feedback": "Your expansion is right, but 50 + 15 + 4 is 69, not 59, so everything after it is off. Check the addition, then keep dividing by 8 until you reach 0: 69 gives 105₈."
+            },
+            {
+              "tier": "weak",
+              "text": "234 ÷ 8 = 29 r 2, 29 ÷ 8 = 3 r 5, 3 ÷ 8 = 0 r 3. So it is 352 base 8.",
+              "meets": [],
+              "feedback": "You divided 234 by 8 as if it were already a base ten number. First change 234₅ to base ten: 2 × 25 + 3 × 5 + 4 = 69, and then divide 69 by 8."
+            },
+            {
+              "tier": "weak",
+              "text": "In base ten it is 2 + 3 + 4 = 9 x 5 = 45. In base 8 it is 45 x 8 = 360.",
+              "meets": [],
+              "feedback": "Each digit is multiplied by its own place value, not added and then multiplied: 2 × 25 + 3 × 5 + 4 = 69. To change to base eight you divide by 8, you do not multiply."
+            }
+          ]
+        },
+        {
+          "prompt": "Working in modulo 7, (a) evaluate 5 × 6, (b) evaluate 2 − 5, and (c) find x if 3x = 2 (mod 7).",
+          "markScheme": [
+            "5 × 6 = 30 = 4 × 7 + 2, so 5 × 6 = 2 (mod 7)",
+            "2 − 5 = −3, and adding 7 gives 4 (mod 7)",
+            "Method for (c): tries values of x and finds 3 × 3 = 9 = 2 (mod 7)",
+            "x = 3"
+          ],
+          "modelAnswer": "(a) 5 × 6 = 30. 30 ÷ 7 = 4 remainder 2, so 5 × 6 = 2 (mod 7). (b) 2 − 5 = −3. Add 7: −3 + 7 = 4, so 2 − 5 = 4 (mod 7). (c) Try x = 0 to 6: 3 × 1 = 3, 3 × 2 = 6, 3 × 3 = 9 = 2 (mod 7). So x = 3.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 5 x 6 = 30, 30 ÷ 7 = 4 rem 2 so the answer is 2. (b) 2 - 5 = -3, -3 + 7 = 4. (c) 3 x 1 = 3, 3 x 2 = 6, 3 x 3 = 9 and 9 ÷ 7 leaves 2 so x = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5 x 6 = 30, 30 ÷ 7 = 4 rem 2 so the answer is 2"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 - 5 = -3, -3 + 7 = 4"
+                },
+                {
+                  "point": 2,
+                  "quote": "3 x 3 = 9 and 9 ÷ 7 leaves 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = 3"
+                }
+              ],
+              "feedback": "All four marks. Trying x = 1, 2, 3 in order is exactly the right method for (c)."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 30 = 28 + 2, so 5 × 6 = 2 (mod 7). (b) 2 − 5: count back 5 from 2 on the mod 7 clock: 1, 0, 6, 5, 4. Answer 4. (c) I made a table of 3x: 0, 3, 6, 2, 5, 1, 4 for x = 0 to 6. 3x = 2 when x = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "30 = 28 + 2, so 5 × 6 = 2 (mod 7)"
+                },
+                {
+                  "point": 1,
+                  "quote": "count back 5 from 2 on the mod 7 clock: 1, 0, 6, 5, 4. Answer 4"
+                },
+                {
+                  "point": 2,
+                  "quote": "I made a table of 3x: 0, 3, 6, 2, 5, 1, 4 for x = 0 to 6"
+                },
+                {
+                  "point": 3,
+                  "quote": "3x = 2 when x = 3"
+                }
+              ],
+              "feedback": "Full marks. Counting back on the clock and making a table of 3x are both sound methods, and you showed them clearly."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 5 x 6 = 30 = 2 (mod 7). (b) 2 - 5 = -3 (mod 7). (c) 3x = 2 so x = 2/3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5 x 6 = 30 = 2 (mod 7)"
+                }
+              ],
+              "feedback": "Part (a) is right. In modulo 7 the answer must be one of 0 to 6, so add 7 to −3 to get 4. Fractions are not used either: try x = 0, 1, 2, ... until 3x leaves remainder 2, which happens at x = 3."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 30 ÷ 7 = 4 r 2 so 2. (b) 2 - 5 = -3, + 7 = 4. (c) 3 x 2 = 6, 3 x 3 = 9, 3 x 4 = 12 = 5. x = 4",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "30 ÷ 7 = 4 r 2 so 2"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 - 5 = -3, + 7 = 4"
+                },
+                {
+                  "point": 2,
+                  "quote": "3 x 3 = 9"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right and you tried values in (c), but you went past the answer. 3 × 3 = 9, and 9 leaves remainder 2 when divided by 7, so x = 3."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 5 x 6 = 30 = 2 (mod 7) (b) 2 - 5 = 3 (c) 3x = 2 so x = 2 ÷ 3 = 0.67",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5 x 6 = 30 = 2 (mod 7)"
+                }
+              ],
+              "feedback": "Part (a) is right. 2 − 5 is −3, not 3; add 7 to get 4. Modulo arithmetic has no decimals: try x = 0, 1, 2, ... until 3x leaves remainder 2 when divided by 7."
+            },
+            {
+              "tier": "weak",
+              "text": "In mod 7 you divide by 7. (a) 30 ÷ 7 = 4. (b) 3 ÷ 7 = 0. (c) x = 7",
+              "meets": [],
+              "feedback": "In modulo arithmetic you keep the remainder, not the quotient. 30 ÷ 7 is 4 remainder 2, so the answer to (a) is 2. Use the remainder the same way in (b) and (c)."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Modulo arithmetic in daily life, approximation and indices",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use modulo arithmetic to solve problems on market days, the clock and shift duty;\n2. add, subtract, multiply and divide fractions and decimals;\n3. round numbers to a given number of decimal places and significant figures, and choose a sensible degree of accuracy;\n4. apply the laws of indices, including negative and fractional indices.\n\n## Materials\n\nA calendar for this term, a wall clock, a chart of the four Igbo market days (Eke, Orie, Afo, Nkwo), a chart of the laws of indices.\n\n## Starter (5 minutes)\n\nAsk: if today is Monday, what day will it be in 100 days? Let students guess, then show that only the remainder 100 ÷ 7 = 14 remainder 2 matters. The answer is Wednesday.\n\n## Development\n\n1. Number the market days Eke = 0, Orie = 1, Afo = 2, Nkwo = 3. Work: today is Orie, what day in 30 days? 1 + 30 = 31 = 3 (mod 4), so Nkwo. Do a clock example: 9 o'clock + 7 hours = 16 = 4 (mod 12). Do a shift example with a nurse who works every third night.\n2. Revise fractions: 2¾ + 1⅔ = 53/12 = 4 5/12 and 3½ ÷ 1¾ = 2. Revise multiplying decimals: 0.25 × 0.4 = 0.1.\n3. Round 34 567 to 3 significant figures (34 600) and 0.004572 to 2 significant figures (0.0046). Discuss sensible accuracy: the distance from Ibadan to Lagos is about 130 km, not 128 463 m.\n4. State the laws of indices with examples: 2³ × 2⁴ = 2⁷, a⁵ ÷ a² = a³, (a²)³ = a⁶, a⁰ = 1, a⁻ⁿ = 1/aⁿ, a^(1/n) is the nth root of a. Work 27^(2/3) = 9 and 16^(−1/2) = 1/4.\n\n## Class activity\n\nIn groups, students find the day of the week of their next birthday from today's date using modulo 7, and check with the calendar.\n\n## Evaluation\n\n1. A clock shows 10 o'clock. What will it show 27 hours later?\n2. Write 0.07049 correct to 3 significant figures.\n3. Evaluate 8^(−2/3).\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "Cycles, rounding and powers",
+        "content": "# Modulo arithmetic in daily life, approximation and indices\n\n## Things that go round\n\nMany things in daily life repeat in a cycle: the seven days of the week, the twelve hours on a clock, the four market days of an Igbo town (Eke, Orie, Afo, Nkwo). To find where you land after many steps, you only need the **remainder** after dividing by the length of the cycle.\n\n**Worked example 1.** Today is Orie. What market day will it be in 30 days?\n\nNumber the days Eke = 0, Orie = 1, Afo = 2, Nkwo = 3. Then 1 + 30 = 31, and 31 ÷ 4 = 7 remainder 3. Day 3 is **Nkwo**.\n\n**Worked example 2.** A clock shows 9 o'clock. What will it show 7 hours later? 9 + 7 = 16 = 4 (mod 12), so it shows **4 o'clock**.\n\n## Fractions and decimals\n\nTo add fractions, change them to the same denominator: 2¾ + 1⅔ = 11/4 + 5/3 = 33/12 + 20/12 = 53/12 = 4 5/12. To divide, turn the second fraction upside down and multiply: 3½ ÷ 1¾ = 7/2 × 4/7 = 2.\n\n## Approximation\n\nTo round to **significant figures**, count from the first non-zero digit.\n\n- 34 567 to 3 s.f. is 34 600.\n- 0.004572 to 2 s.f. is 0.0046 (the zeros at the front do not count).\n\nChoose a sensible accuracy. A road is measured to the nearest metre or kilometre, not the nearest centimetre; a bag of rice to the nearest kilogram.\n\n## Laws of indices\n\n- aˣ × aʸ = aˣ⁺ʸ\n- aˣ ÷ aʸ = aˣ⁻ʸ\n- (aˣ)ʸ = aˣʸ\n- a⁰ = 1\n- a⁻ⁿ = 1/aⁿ, so 2⁻³ = 1/8\n- a^(1/n) is the nth root of a, and a^(m/n) is that root raised to the power m.\n\n**Worked example 3.** 27^(2/3): the cube root of 27 is 3, and 3² = 9.\n\n**Worked example 4.** 16^(−1/2) = 1/16^(1/2) = 1/4. A negative index makes a fraction; it does not make the answer negative."
+      },
+      "cards": [
+        {
+          "front": "Today is Monday. What day is it in 100 days?",
+          "back": "100 = 14 × 7 + 2, so 2 days on: Wednesday."
+        },
+        {
+          "front": "9 o'clock + 7 hours",
+          "back": "16 = 4 (mod 12), so 4 o'clock."
+        },
+        {
+          "front": "Significant figures",
+          "back": "Counted from the first non-zero digit. 0.004572 to 2 s.f. is 0.0046."
+        },
+        {
+          "front": "Dividing fractions",
+          "back": "Turn the second fraction upside down and multiply."
+        },
+        {
+          "front": "aˣ × aʸ",
+          "back": "aˣ⁺ʸ: add the indices when multiplying powers of the same base."
+        },
+        {
+          "front": "(aˣ)ʸ",
+          "back": "aˣʸ: multiply the indices."
+        },
+        {
+          "front": "a⁻ⁿ",
+          "back": "1/aⁿ. A negative index gives a reciprocal, not a negative number."
+        },
+        {
+          "front": "a^(m/n)",
+          "back": "Take the nth root of a, then raise it to the power m."
+        },
+        {
+          "front": "a⁰",
+          "back": "1, for any a that is not zero."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The market days in an Igbo town follow the order Eke, Orie, Afo, Nkwo and then Eke again. Today is Eke. Which market day will it be in 15 days' time?",
+          "options": ["Orie", "Afo", "Nkwo", "Eke"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Simplify 2¾ + 1⅔.",
+          "options": ["3 5/7", "4 5/12", "4 1/12", "3 5/12"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Write 0.004572 correct to 2 significant figures.",
+          "options": ["0.00", "0.0045", "0.46", "0.0046"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Evaluate 27^(2/3).",
+          "options": ["9", "18", "6", "3"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Evaluate 16^(−1/2).",
+          "options": ["−8", "−4", "1/4", "4"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "In a town in Anambra State, market days come in the order Eke, Orie, Afo, Nkwo, and then Eke again. Today is Orie. Using modulo arithmetic, find the market day (a) 30 days from today, (b) 19 days ago.",
+          "markScheme": [
+            "Numbers the days 0 to 3 (or 1 to 4), or states that the days repeat every 4",
+            "Reduces 30 days in modulo 4: 30 = 2 (mod 4), or 1 + 30 = 31 = 3 (mod 4)",
+            "(a) Nkwo",
+            "Reduces 19 to 3 days back (19 = 3 mod 4) and gets (b) Afo"
+          ],
+          "modelAnswer": "The days repeat every 4 days, so work in modulo 4 with Eke = 0, Orie = 1, Afo = 2, Nkwo = 3. (a) 1 + 30 = 31, and 31 ÷ 4 = 7 remainder 3, so the day is Nkwo. (b) 19 ÷ 4 = 4 remainder 3, so 19 days ago is 3 days back from Orie: Eke, Nkwo, Afo. The day was Afo.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Let Eke = 0, Orie = 1, Afo = 2, Nkwo = 3. (a) 1 + 30 = 31, 31 ÷ 4 = 7 rem 3 so it is Nkwo. (b) 19 ÷ 4 = 4 rem 3 so I go back 3 days from Orie: Eke, Nkwo, Afo. It is Afo.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Let Eke = 0, Orie = 1, Afo = 2, Nkwo = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "1 + 30 = 31, 31 ÷ 4 = 7 rem 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "so it is Nkwo"
+                },
+                {
+                  "point": 3,
+                  "quote": "19 ÷ 4 = 4 rem 3 so I go back 3 days from Orie: Eke, Nkwo, Afo. It is Afo"
+                }
+              ],
+              "feedback": "All four marks. Listing the days as you counted back in (b) shows the examiner you did not guess."
+            },
+            {
+              "tier": "full",
+              "text": "The market repeats every 4 days so I work in mod 4. 30 = 28 + 2, so 30 days from Orie is the same as 2 days from Orie, which is Nkwo. 19 = 16 + 3 so 19 days ago is 3 days back from Orie which gives Afo.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The market repeats every 4 days so I work in mod 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "30 = 28 + 2, so 30 days from Orie is the same as 2 days from Orie"
+                },
+                {
+                  "point": 2,
+                  "quote": "which is Nkwo"
+                },
+                {
+                  "point": 3,
+                  "quote": "19 = 16 + 3 so 19 days ago is 3 days back from Orie which gives Afo"
+                }
+              ],
+              "feedback": "Full marks. Taking away whole cycles of 4 is a quick and clear way to reduce the days."
+            },
+            {
+              "tier": "partial",
+              "text": "Eke = 1, Orie = 2, Afo = 3, Nkwo = 4. (a) 2 + 30 = 32, 32 ÷ 4 = 8 rem 0 and 0 is the same as 4 so Nkwo. (b) 2 - 19 = -17, -17 ÷ 4 = -4 rem 1 so Eke.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Eke = 1, Orie = 2, Afo = 3, Nkwo = 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 + 30 = 32, 32 ÷ 4 = 8 rem 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "so Nkwo"
+                }
+              ],
+              "feedback": "Part (a) is right, and seeing that remainder 0 means day 4 was careful. In (b), −17 + 20 = 3, which is Afo; it is safer to say 19 = 3 (mod 4) and count 3 days back from Orie."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 30 ÷ 4 = 7 rem 2. Two days after Orie is Nkwo. (b) 19 ÷ 4 = 4 rem 3. Three days after Orie is Eke.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "30 ÷ 4 = 7 rem 2. Two days after Orie"
+                },
+                {
+                  "point": 2,
+                  "quote": "is Nkwo"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b) the days are in the past, so count 3 days back from Orie, not forward: Eke, Nkwo, Afo. The answer is Afo."
+            },
+            {
+              "tier": "weak",
+              "text": "Market day comes every 4 days. (a) 30 + 1 = 31 days so it is Eke. (b) 19 days ago was also Orie.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Market day comes every 4 days"
+                }
+              ],
+              "feedback": "You saw that the days repeat every 4. Now divide by 4 and use the remainder: 30 = 7 × 4 + 2, so move 2 days on from Orie to Nkwo."
+            },
+            {
+              "tier": "weak",
+              "text": "Count 30 days from Orie. 30 is an even number so it will be Afo. 19 is odd so it is Orie.",
+              "meets": [],
+              "feedback": "Whether a number is even or odd does not decide the day. The days repeat every 4, so divide by 4 and keep the remainder: 30 leaves 2, so count 2 days on from Orie."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Without using tables, evaluate 8^(2/3) × 4^(−1/2) ÷ 2^(−3). (b) Solve the equation 3^(2x − 1) = 27.",
+          "markScheme": [
+            "8^(2/3) = 4",
+            "4^(−1/2) = 1/2",
+            "Dividing by 2^(−3) = 1/8 is multiplying by 8: answer 16",
+            "Writes 27 as 3³ and equates indices: 2x − 1 = 3",
+            "x = 2"
+          ],
+          "modelAnswer": "(a) 8^(2/3) = (cube root of 8)² = 2² = 4. 4^(−1/2) = 1/√4 = 1/2. 2^(−3) = 1/8. So 4 × 1/2 ÷ 1/8 = 2 × 8 = 16. (b) 27 = 3³, so 3^(2x − 1) = 3³. Equating the indices, 2x − 1 = 3, so 2x = 4 and x = 2.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 8^(2/3) = (∛8)² = 2² = 4. 4^(-1/2) = 1/√4 = 1/2. 2^(-3) = 1/8. 4 x 1/2 ÷ 1/8 = 2 x 8 = 16. (b) 3^(2x-1) = 3³ so 2x - 1 = 3, 2x = 4, x = 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8^(2/3) = (∛8)² = 2² = 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "4^(-1/2) = 1/√4 = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "4 x 1/2 ÷ 1/8 = 2 x 8 = 16"
+                },
+                {
+                  "point": 3,
+                  "quote": "3^(2x-1) = 3³ so 2x - 1 = 3"
+                },
+                {
+                  "point": 4,
+                  "quote": "x = 2"
+                }
+              ],
+              "feedback": "All five marks, with every step shown. Turning ÷ 1/8 into × 8 is the step many learners miss."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Put everything in base 2. 8^(2/3) = (2³)^(2/3) = 2² = 4 and 4^(-1/2) = (2²)^(-1/2) = 2^(-1) = 1/2. 2² x 2^(-1) ÷ 2^(-3) = 2^(2 - 1 + 3) = 2⁴ = 16. (b) 27 = 3³. Indices are equal: 2x − 1 = 3. Therefore x = 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8^(2/3) = (2³)^(2/3) = 2² = 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "4^(-1/2) = (2²)^(-1/2) = 2^(-1) = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "2² x 2^(-1) ÷ 2^(-3) = 2^(2 - 1 + 3) = 2⁴ = 16"
+                },
+                {
+                  "point": 3,
+                  "quote": "27 = 3³. Indices are equal: 2x − 1 = 3"
+                },
+                {
+                  "point": 4,
+                  "quote": "x = 2"
+                }
+              ],
+              "feedback": "Full marks. Writing every term as a power of 2 and using the laws of indices is an elegant method."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 8^(2/3) = 4, 4^(-1/2) = -2, 2^(-3) = -8. 4 x -2 ÷ -8 = 1. (b) 27 = 3³ so 2x - 1 = 3, x = 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8^(2/3) = 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "27 = 3³ so 2x - 1 = 3"
+                },
+                {
+                  "point": 4,
+                  "quote": "x = 2"
+                }
+              ],
+              "feedback": "Part (b) is fully right and 8^(2/3) = 4 is right. A negative index gives a reciprocal, not a negative number: 4^(−1/2) = 1/2 and 2^(−3) = 1/8, which makes the answer 16."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 8^(2/3) = 4 and 4^(-1/2) = 1/2 so 4 x 1/2 = 2. Then 2 ÷ 2^(-3) = 2 ÷ (-6) = -1/3. (b) 3^(2x-1) = 27, 2x - 1 = 27 ÷ 3 = 9, x = 5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8^(2/3) = 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "4^(-1/2) = 1/2"
+                }
+              ],
+              "feedback": "The first two powers are right. 2^(−3) means 1/2³ = 1/8, not 2 × −3, so the answer is 2 × 8 = 16. In (b), write 27 as 3³ so you can set 2x − 1 = 3."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 8 x 4 = 32 and 2/3 + -1/2 = 1/6 so it is 32^(1/6) ÷ 2^(-3) = 16^(1/2) = 4. (b) 2x - 1 = 27, 2x = 28, x = 14.",
+              "meets": [],
+              "feedback": "You can only add indices when the bases are the same, and 8 and 4 are different. Work each power out first: 8^(2/3) = 4 and 4^(−1/2) = 1/2. In (b), write 27 as 3³ before comparing the indices."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 8^(2/3) = 8 x 2/3 = 5.3, 4^(-1/2) = -2, 5.3 x -2 = -10.6 ÷ -6 = 1.8. (b) By trial x = 2.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "x = 2"
+                }
+              ],
+              "feedback": "Your x = 2 is right. An index is not a multiplier: 8^(2/3) means the cube root of 8, squared, which is 4. Learn the meaning of fractional and negative indices again from the reading."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Standard form and the rules of logarithms",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. express large and small numbers in standard form, A × 10ⁿ with 1 ≤ A < 10;\n2. multiply and divide numbers in standard form;\n3. state the relationship between indices and logarithms: y = 10ᵏ means log₁₀ y = k;\n4. use the rules log pq = log p + log q, log (p/q) = log p − log q and log pⁿ = n log p.\n\n## Materials\n\nA newspaper cutting giving Nigeria's population, four-figure tables, a chart of the laws of indices from last week.\n\n## Starter (5 minutes)\n\nWrite Nigeria's population, 218 500 000, on the board and the diameter of a human hair, 0.00007 m. Ask which one is easier to write. Show that 2.185 × 10⁸ and 7 × 10⁻⁵ are shorter and easier to compare.\n\n## Development\n\n1. Standard form: move the decimal point until one non-zero digit is in front of it; count the moves. Large numbers get a positive power, small numbers a negative power. Work 375 300 000 = 3.753 × 10⁸ and 0.00000035 = 3.5 × 10⁻⁷.\n2. Multiply in standard form: (4 × 10³) × (6 × 10⁵) = 24 × 10⁸ = 2.4 × 10⁹. Point out that 24 × 10⁸ is not yet in standard form.\n3. Show 100 = 10², so log 100 = 2. A logarithm is the index. Build a table: log 1 = 0, log 10 = 1, log 1000 = 3, log 0.01 = −2.\n4. Derive the three rules from the laws of indices. Work: log 8 + log 5 − log 4 = log 10 = 1; 2 log 5 + log 36 − log 9 = log 100 = 2.\n5. Given log 2 = 0.3010 and log 3 = 0.4771, find log 18 = log 2 + 2 log 3 = 1.2552.\n\n## Class activity\n\nEach group gets five cards with numbers from science and the news (distance to the sun, mass of an electron, a bank's profit). They write each in standard form and arrange them in order of size.\n\n## Evaluation\n\n1. Express 0.000 4060 in standard form.\n2. Find k if 10ᵏ = 0.001.\n3. Simplify 3 log 2 + log 125.\n\n## Assignment\n\nWorksheet on the app, due Wednesday.",
+      "reading": {
+        "title": "Writing very big and very small numbers, and what a logarithm is",
+        "content": "# Standard form and the rules of logarithms\n\n## Standard form\n\nA number is in **standard form** when it is written as A × 10ⁿ, where A is at least 1 but less than 10, and n is a whole number.\n\n- 375 300 000 = 3.753 × 10⁸ (the point moves 8 places left)\n- 0.000 000 35 = 3.5 × 10⁻⁷ (the point moves 7 places right)\n\nBig numbers have a positive power of ten; numbers smaller than 1 have a negative power.\n\n**Worked example 1.** (4 × 10³) × (6 × 10⁵) = (4 × 6) × 10³⁺⁵ = 24 × 10⁸. Since 24 is not less than 10, write it as 2.4 × 10¹, so the answer is 2.4 × 10⁹.\n\n## Indices and logarithms\n\nSince 1000 = 10³, we say the **logarithm** of 1000 to base 10 is 3. In general,\n\n> if y = 10ᵏ, then log₁₀ y = k.\n\nA logarithm is just an index. So log 10 = 1, log 1 = 0 and log 0.01 = −2 because 0.01 = 10⁻². When no base is written, base 10 is meant.\n\n## The rules of logarithms\n\nThey come straight from the laws of indices.\n\n1. log (pq) = log p + log q\n2. log (p/q) = log p − log q\n3. log pⁿ = n log p\n\n**Worked example 2.** Simplify 2 log 5 + log 36 − log 9.\n\n2 log 5 = log 25, so the expression is log (25 × 36 ÷ 9) = log 100 = 2.\n\n**Worked example 3.** Given that log 2 = 0.3010 and log 3 = 0.4771, find log 18.\n\n18 = 2 × 3², so log 18 = log 2 + 2 log 3 = 0.3010 + 0.9542 = 1.2552.\n\n## A common mistake\n\nlog (p + q) is **not** log p + log q. The rule is for a product, not a sum."
+      },
+      "cards": [
+        {
+          "front": "Standard form",
+          "back": "A × 10ⁿ where 1 ≤ A < 10 and n is a whole number."
+        },
+        {
+          "front": "375 300 000 in standard form",
+          "back": "3.753 × 10⁸"
+        },
+        {
+          "front": "0.000 000 35 in standard form",
+          "back": "3.5 × 10⁻⁷"
+        },
+        {
+          "front": "If y = 10ᵏ, then …",
+          "back": "log₁₀ y = k. A logarithm is an index."
+        },
+        {
+          "front": "log (pq)",
+          "back": "log p + log q"
+        },
+        {
+          "front": "log (p/q)",
+          "back": "log p − log q"
+        },
+        {
+          "front": "log pⁿ",
+          "back": "n log p"
+        },
+        {
+          "front": "log 1",
+          "back": "0, because 10⁰ = 1."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Express 0.000 000 35 in standard form.",
+          "options": ["3.5 × 10⁷", "35 × 10⁻⁸", "3.5 × 10⁻⁷", "3.5 × 10⁻⁶"],
+          "answer": "C"
+        },
+        {
+          "prompt": "If 10ᵏ = 0.001, find the value of k.",
+          "options": ["3", "−3", "−2", "0.3"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Simplify log 8 + log 5 − log 4, where the logarithms are to base 10.",
+          "options": ["log 9", "10", "log 36", "1"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Evaluate (4 × 10³) × (6 × 10⁵), leaving your answer in standard form.",
+          "options": ["2.4 × 10⁹", "24 × 10⁸", "2.4 × 10⁸", "10 × 10⁸"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Given that log 2 = 0.3010 and log 3 = 0.4771, find log 18.",
+          "options": ["0.7781", "1.2552", "1.4313", "0.1436"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Nigeria's population is estimated at 218 500 000 and its land area at 910 800 km². (a) Write each number in standard form. (b) Calculate the population density in people per km², correct to 3 significant figures.",
+          "markScheme": [
+            "218 500 000 = 2.185 × 10⁸",
+            "910 800 = 9.108 × 10⁵",
+            "Divides population by area: (2.185 ÷ 9.108) × 10³ or 218 500 000 ÷ 910 800",
+            "Density = 240 people per km² (3 s.f.)"
+          ],
+          "modelAnswer": "(a) 218 500 000 = 2.185 × 10⁸ and 910 800 = 9.108 × 10⁵. (b) Density = population ÷ area = (2.185 × 10⁸) ÷ (9.108 × 10⁵) = 0.2399 × 10³ = 239.9, which is 240 people per km² to 3 significant figures.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 218 500 000 = 2.185 x 10⁸ and 910 800 = 9.108 x 10⁵. (b) density = 2.185 x 10⁸ ÷ 9.108 x 10⁵ = 0.2399 x 10³ = 239.9 = 240 people per km² to 3 s.f.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "218 500 000 = 2.185 x 10⁸"
+                },
+                {
+                  "point": 1,
+                  "quote": "910 800 = 9.108 x 10⁵"
+                },
+                {
+                  "point": 2,
+                  "quote": "2.185 x 10⁸ ÷ 9.108 x 10⁵ = 0.2399 x 10³"
+                },
+                {
+                  "point": 3,
+                  "quote": "240 people per km² to 3 s.f."
+                }
+              ],
+              "feedback": "All four marks, and you kept the answer in standard form until the last step, which keeps the powers of ten under control."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Population = 2.185 × 10^8, area = 9.108 × 10^5 km². (b) 218500000 ÷ 910800 = 239.899 ≈ 240 per km².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Population = 2.185 × 10^8"
+                },
+                {
+                  "point": 1,
+                  "quote": "area = 9.108 × 10^5 km²"
+                },
+                {
+                  "point": 2,
+                  "quote": "218500000 ÷ 910800 = 239.899"
+                },
+                {
+                  "point": 3,
+                  "quote": "≈ 240 per km²"
+                }
+              ],
+              "feedback": "Full marks. Write 'to 3 s.f.' beside your rounded answer so the examiner sees you rounded on purpose."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 2185 × 10⁵ and 9108 × 10². (b) 2185 ÷ 9108 = 0.2399 × 10³ = 240 people per km².",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "2185 ÷ 9108 = 0.2399 × 10³"
+                },
+                {
+                  "point": 3,
+                  "quote": "240 people per km²"
+                }
+              ],
+              "feedback": "Your density is right. In standard form the number in front must be between 1 and 10, so write 2.185 × 10⁸ and 9.108 × 10⁵."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 2.185 × 10⁸ and 9.108 × 10⁵. (b) 9.108 × 10⁵ ÷ 2.185 × 10⁸ = 4.17 × 10⁻³ people per km².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2.185 × 10⁸"
+                },
+                {
+                  "point": 1,
+                  "quote": "9.108 × 10⁵"
+                }
+              ],
+              "feedback": "Your standard forms are right. Density is people divided by area, so put the population on top: 2.185 × 10⁸ ÷ 9.108 × 10⁵ gives 240 people per km². A tiny answer should have warned you."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 21.85 × 10⁷ and 91.08 × 10⁴. (b) 218 500 000 − 910 800 = 217 589 200 people.",
+              "meets": [],
+              "feedback": "In standard form there is only one digit before the point, so 2.185 × 10⁸. Population density means people per km², so divide the population by the area; do not subtract."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 2.185 × 10⁸. (b) I multiplied 218500000 by 910800 and it is too big so the density is about two hundred thousand.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2.185 × 10⁸"
+                }
+              ],
+              "feedback": "Your first standard form is right. Write the area as 9.108 × 10⁵ too, and divide, not multiply: people ÷ area gives about 240 people per km²."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Without using tables, simplify 2 log 5 + log 36 − log 9. (b) Given that log 2 = 0.3010 and log 3 = 0.4771, evaluate log 1.2 without using tables.",
+          "markScheme": [
+            "Uses the power rule: 2 log 5 = log 25",
+            "Combines the logs: log (25 × 36 ÷ 9) = log 100",
+            "= 2",
+            "Writes 1.2 as 2² × 3 ÷ 10, so log 1.2 = 2 log 2 + log 3 − log 10",
+            "= 0.6020 + 0.4771 − 1 = 0.0791"
+          ],
+          "modelAnswer": "(a) 2 log 5 = log 5² = log 25. So 2 log 5 + log 36 − log 9 = log (25 × 36 ÷ 9) = log 100 = log 10² = 2. (b) 1.2 = 12/10 = (2² × 3)/10. So log 1.2 = 2 log 2 + log 3 − log 10 = 2(0.3010) + 0.4771 − 1 = 0.6020 + 0.4771 − 1 = 0.0791.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 2 log 5 = log 5² = log 25. log 25 + log 36 - log 9 = log (25 x 36 / 9) = log 100 = 2. (b) 1.2 = 12/10 = (2 x 2 x 3)/10, log 1.2 = 2 log 2 + log 3 - log 10 = 0.6020 + 0.4771 - 1 = 0.0791.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 log 5 = log 5² = log 25"
+                },
+                {
+                  "point": 1,
+                  "quote": "log (25 x 36 / 9) = log 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "log 1.2 = 2 log 2 + log 3 - log 10"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 0.6020 + 0.4771 - 1 = 0.0791"
+                }
+              ],
+              "feedback": "All five marks. Breaking 1.2 into 2 × 2 × 3 over 10 was exactly the right move."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 2 log 5 becomes log 25 by the power rule. log 25 + log 36 − log 9 = log (900 ÷ 9) = log 100 = log 10² = 2. (b) log 1.2 = log (4 × 3 ÷ 10) = 2 log 2 + log 3 − log 10 = 2(0.3010) + 0.4771 − 1 = 1.0791 − 1 = 0.0791",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 log 5 becomes log 25 by the power rule"
+                },
+                {
+                  "point": 1,
+                  "quote": "log (900 ÷ 9) = log 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "= log 10² = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "log (4 × 3 ÷ 10) = 2 log 2 + log 3 − log 10"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 2(0.3010) + 0.4771 − 1 = 1.0791 − 1 = 0.0791"
+                }
+              ],
+              "feedback": "Full marks. Naming the power rule as you used it makes your working easy to follow."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 2 log 5 = log 10. log 10 + log 36 − log 9 = log (10 × 36 ÷ 9) = log 40. (b) 1.2 = 4 × 3 ÷ 10 so log 1.2 = 2 log 2 + log 3 − log 10 = 0.6020 + 0.4771 − 1 = 0.0791.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "log 1.2 = 2 log 2 + log 3 − log 10"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 0.6020 + 0.4771 − 1 = 0.0791"
+                }
+              ],
+              "feedback": "Part (b) is fully right. In (a), the 2 in front is a power, not a multiplier inside the log: 2 log 5 = log 5² = log 25, which leads to log 100 = 2."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 2 log 5 = log 25 so log 25 + log 36 − log 9 = log 100 = 2. (b) log 1.2 = log 12 ÷ log 10 = 1.0791 ÷ 1 = 1.0791",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 log 5 = log 25"
+                },
+                {
+                  "point": 1,
+                  "quote": "log 25 + log 36 − log 9 = log 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 2"
+                }
+              ],
+              "feedback": "Part (a) is fully right. In (b), log (12/10) is log 12 − log 10, not log 12 ÷ log 10, so subtract: 1.0791 − 1 = 0.0791."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 2 log 5 + log 36 - log 9 = log (10 + 36 - 9) = log 37 = 1.5682. (b) log 1.2 = 0.3010 + 0.4771 = 0.7781",
+              "meets": [],
+              "feedback": "Adding logs means multiplying the numbers, not adding them, and 2 log 5 is log 25. Start again with log (25 × 36 ÷ 9). In (b), write 1.2 as 2 × 2 × 3 ÷ 10 first."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 2 log 5 = log 25. I cannot finish without tables. (b) log 1.2 = 1.2 x log 2 = 1.2 x 0.3010 = 0.3612",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 log 5 = log 25"
+                }
+              ],
+              "feedback": "Your first step is right, and you do not need tables after it: log 25 + log 36 − log 9 = log (25 × 36 ÷ 9) = log 100 = 2. In (b), 1.2 is not a power, so split it as 2 × 2 × 3 ÷ 10."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Logarithm tables, sequences and the idea of sets",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use tables of logarithms and antilogarithms to multiply, divide, and find powers and roots;\n2. find any term of a sequence from its nth term, Uₙ;\n3. find the nth term of an A.P. and of a G.P., and the sum of an A.P.;\n4. describe sets using the notation ε, ⊂, ∪, ∩, { }, ∅ and P′.\n\n## Materials\n\nFour-figure tables (one per pair), a chart of the A.P. and G.P. formulas, coloured chalk for Venn diagrams.\n\n## Starter (5 minutes)\n\nWrite 3, 7, 11, 15, … and 2, 6, 18, 54, … on the board. Ask the class for the next two terms of each and how they found them. One adds 4 each time; the other multiplies by 3.\n\n## Development\n\n1. Log tables: find log 34.56 (1.5386) and log 2.18 (0.3385). Add them (1.8771) and take the antilog to get 75.35, so 34.56 × 2.18 ≈ 75.35. For a number less than 1 such as 0.2564, the characteristic is 1̄ (bar one), so log 0.2564 = 1̄.4089.\n2. Roots: ∛81.2: log 81.2 = 1.9096; divide by 3 to get 0.6365; antilog 4.330.\n3. Sequences: if Uₙ = 3n + 2, then U₁₀ = 32.\n4. A.P.: Uₙ = a + (n − 1)d and Sₙ = n/2 [2a + (n − 1)d]. For 3, 7, 11, …: U₂₀ = 79 and S₂₀ = 820.\n5. G.P.: Uₙ = arⁿ⁻¹. For 2, 6, 18, …: U₆ = 2 × 3⁵ = 486.\n6. Sets: ε = {1, 2, …, 10}, P = even numbers, Q = {1, 2, 3, 4, 5}. Find P ∪ Q, P ∩ Q, Q′. Explain subsets, the empty set ∅, finite and infinite sets, and disjoint sets.\n\n## Class activity\n\nPairs list the set of learners in the class who walk to school and the set who come by okada, and decide whether the two sets are disjoint.\n\n## Evaluation\n\n1. Find the 15th term of 5, 8, 11, …\n2. Use tables to evaluate 4.56 × 12.3.\n3. List the subsets of {a, b}.\n\n## Assignment\n\nProblem set on the app, due Tuesday.",
+      "reading": {
+        "title": "Tables, patterns and collections",
+        "content": "# Logarithm tables, sequences and sets\n\n## Using tables of logarithms\n\nLogs turn multiplication into addition and division into subtraction.\n\n**Worked example 1.** Evaluate 34.56 × 2.18.\n\n| Number | Log |\n| --- | --- |\n| 34.56 | 1.5386 |\n| 2.18 | 0.3385 |\n| Sum | 1.8771 |\n\nThe antilog of 0.8771 is 7.535; the characteristic 1 places the point after two digits. Answer: 75.35.\n\nThe **characteristic** (the whole-number part) tells you the size of the number: 1 for numbers from 10 to 99, 0 for 1 to 9, and 1̄ (bar one, meaning −1) for 0.1 to 0.99. So log 0.2564 = 1̄.4089. To find a root, divide the log by the root: ∛81.2 has log 1.9096 ÷ 3 = 0.6365, antilog 4.330.\n\n## Sequences\n\nA sequence is a list of numbers following a rule. Uₙ means the nth term. If Uₙ = 3n + 2, then U₁ = 5, U₂ = 8 and U₁₀ = 32.\n\n## Arithmetic and geometric progressions\n\nIn an **A.P.** we add the same **common difference** d each time.\n\n- Uₙ = a + (n − 1)d\n- Sₙ = n/2 [2a + (n − 1)d]\n\n**Worked example 2.** For 3, 7, 11, …, a = 3 and d = 4. U₂₀ = 3 + 19 × 4 = 79 and S₂₀ = 10(6 + 76) = 820.\n\nIn a **G.P.** we multiply by the same **common ratio** r each time: Uₙ = arⁿ⁻¹. For 2, 6, 18, …, U₆ = 2 × 3⁵ = 486.\n\n## Sets\n\nA **set** is a well-defined collection. The **universal set** ε holds everything under discussion. P ⊂ Q means P is a **subset** of Q. The **empty set** ∅ or { } has no members. A finite set can be counted; an infinite set, like the natural numbers, cannot.\n\n- P ∪ Q (union): members in P or Q or both.\n- P ∩ Q (intersection): members in both.\n- P′ (complement): members of ε not in P.\n\nTwo sets are **disjoint** if P ∩ Q = ∅. Union and intersection are commutative (P ∪ Q = Q ∪ P) and associative."
+      },
+      "cards": [
+        {
+          "front": "Characteristic of log 0.2564",
+          "back": "1̄ (bar one), so log 0.2564 = 1̄.4089."
+        },
+        {
+          "front": "To multiply using logs",
+          "back": "Add the logs, then take the antilog."
+        },
+        {
+          "front": "nth term of an A.P.",
+          "back": "Uₙ = a + (n − 1)d"
+        },
+        {
+          "front": "Sum of an A.P.",
+          "back": "Sₙ = n/2 [2a + (n − 1)d], or n/2 (first term + last term)."
+        },
+        {
+          "front": "nth term of a G.P.",
+          "back": "Uₙ = arⁿ⁻¹"
+        },
+        {
+          "front": "P ∩ Q",
+          "back": "The intersection: members in both P and Q."
+        },
+        {
+          "front": "P′",
+          "back": "The complement: members of the universal set that are not in P."
+        },
+        {
+          "front": "Disjoint sets",
+          "back": "Sets with no members in common: P ∩ Q = ∅."
+        },
+        {
+          "front": "Empty set",
+          "back": "A set with no members, written ∅ or { }."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The nth term of a sequence is Uₙ = 3n + 2. Find U₁₀.",
+          "options": ["32", "50", "36", "15"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the 20th term of the A.P. 3, 7, 11, 15, …",
+          "options": ["83", "80", "79", "76"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Find the 6th term of the G.P. 2, 6, 18, …",
+          "options": ["1458", "36", "162", "486"],
+          "answer": "D"
+        },
+        {
+          "prompt": "From the tables, log 3.456 = 0.5386. What is log 345.6?",
+          "options": ["0.5386", "2.5386", "3.5386", "1.5386"],
+          "answer": "B"
+        },
+        {
+          "prompt": "ε = {1, 2, 3, …, 10}, P = {2, 4, 6, 8, 10} and Q = {1, 2, 3, 4, 5}. Find P ∩ Q′.",
+          "options": ["{6, 8, 10}", "{2, 4}", "{1, 3, 5}", "{6, 7, 8, 9, 10}"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A trader at Bodija market saves ₦500 in the first week, ₦700 in the second week and ₦900 in the third week, adding ₦200 more each week. (a) How much does the trader save in the 12th week? (b) How much has the trader saved altogether after 12 weeks?",
+          "markScheme": [
+            "Identifies a = 500 and d = 200",
+            "U₁₂ = 500 + 11 × 200",
+            "= ₦2 700",
+            "S₁₂ = 12/2 (2 × 500 + 11 × 200), or 12/2 (500 + 2 700)",
+            "= ₦19 200"
+          ],
+          "modelAnswer": "The savings form an A.P. with a = 500 and d = 200. (a) U₁₂ = a + 11d = 500 + 11 × 200 = 500 + 2 200 = ₦2 700. (b) S₁₂ = 12/2 [2 × 500 + 11 × 200] = 6 × (1 000 + 2 200) = 6 × 3 200 = ₦19 200.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "a = 500, d = 700 - 500 = 200. U12 = a + 11d = 500 + 11(200) = 500 + 2200 = ₦2700. S12 = n/2(2a + (n-1)d) = 6(1000 + 2200) = 6 x 3200 = ₦19 200.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a = 500, d = 700 - 500 = 200"
+                },
+                {
+                  "point": 1,
+                  "quote": "U12 = a + 11d = 500 + 11(200)"
+                },
+                {
+                  "point": 2,
+                  "quote": "= ₦2700"
+                },
+                {
+                  "point": 3,
+                  "quote": "S12 = n/2(2a + (n-1)d) = 6(1000 + 2200)"
+                },
+                {
+                  "point": 4,
+                  "quote": "= ₦19 200"
+                }
+              ],
+              "feedback": "All five marks. Writing the formula before substituting is exactly how to set out an A.P. question."
+            },
+            {
+              "tier": "full",
+              "text": "First term is 500 and common difference is 200. 12th week: 500 + (12 − 1) × 200 = 2700 naira. Total = 12/2 × (first + last) = 6 × (500 + 2700) = 6 × 3200 = 19 200 naira.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First term is 500 and common difference is 200"
+                },
+                {
+                  "point": 1,
+                  "quote": "500 + (12 − 1) × 200"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 2700 naira"
+                },
+                {
+                  "point": 3,
+                  "quote": "12/2 × (first + last) = 6 × (500 + 2700)"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 19 200 naira"
+                }
+              ],
+              "feedback": "Full marks. Using first term plus last term for the sum was quick, since you had already found the last term."
+            },
+            {
+              "tier": "partial",
+              "text": "a = 500, d = 200. U12 = 500 + 12 x 200 = 2900. S12 = 12/2 (500 + 2900) = 6 x 3400 = 20 400.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a = 500, d = 200"
+                },
+                {
+                  "point": 3,
+                  "quote": "S12 = 12/2 (500 + 2900)"
+                }
+              ],
+              "feedback": "Your a, d and sum method are right. The 12th term adds the difference only 11 times, since the first week already has ₦500: U₁₂ = 500 + 11 × 200 = ₦2 700, and that makes the total ₦19 200."
+            },
+            {
+              "tier": "partial",
+              "text": "U12 = 500 + 11 x 200 = 2700 naira. Total saved = 2700 x 12 = 32 400 naira.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "U12 = 500 + 11 x 200"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 2700 naira"
+                }
+              ],
+              "feedback": "Your 12th week is right. The trader did not save ₦2 700 every week, so the total is not 12 × 2 700. Use Sₙ = n/2 (first + last) = 6 × (500 + 2 700) = ₦19 200."
+            },
+            {
+              "tier": "weak",
+              "text": "500 + 700 + 900 = 2100 for 3 weeks so 12 weeks is 2100 x 4 = 8400 naira.",
+              "meets": [],
+              "feedback": "The amounts keep growing, so the next three weeks are not ₦2 100 again. This is an A.P. with a = 500 and d = 200: find U₁₂ = a + 11d first, then use the sum formula."
+            },
+            {
+              "tier": "weak",
+              "text": "a = 500 and d = 200. 12th week = 12 x 200 = 2400. Total = 2400 x 12 = 28 800.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a = 500 and d = 200"
+                }
+              ],
+              "feedback": "You found a and d. Now use them: the 12th term is a + 11d = 500 + 2 200 = ₦2 700, and the total is 12/2 (500 + 2 700) = ₦19 200."
+            }
+          ]
+        },
+        {
+          "prompt": "Use tables of logarithms to evaluate (43.17 × 0.2564) ÷ 6.891, giving your answer to 4 significant figures.",
+          "markScheme": [
+            "Correct logs: 1.6352, 1̄.4089 and 0.8383",
+            "Adds the logs of the numerator: 1.6352 + 1̄.4089 = 1.0441",
+            "Subtracts the log of the denominator: 1.0441 − 0.8383 = 0.2058",
+            "Antilog of 0.2058 = 1.606"
+          ],
+          "modelAnswer": "log 43.17 = 1.6352, log 0.2564 = 1̄.4089 and log 6.891 = 0.8383. Numerator: 1.6352 + 1̄.4089 = 1.0441 (the 1 carried from the decimals cancels the bar 1). Divide by subtracting: 1.0441 − 0.8383 = 0.2058. The antilog of 0.2058 is 1.606, so the answer is 1.606.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "43.17 log 1.6352, 0.2564 log 1̄.4089, add = 1.0441. 6.891 log 0.8383. 1.0441 − 0.8383 = 0.2058. Antilog of 0.2058 = 1.606. Answer 1.606",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "43.17 log 1.6352, 0.2564 log 1̄.4089"
+                },
+                {
+                  "point": 1,
+                  "quote": "add = 1.0441"
+                },
+                {
+                  "point": 2,
+                  "quote": "1.0441 − 0.8383 = 0.2058"
+                },
+                {
+                  "point": 3,
+                  "quote": "Antilog of 0.2058 = 1.606"
+                }
+              ],
+              "feedback": "All four marks. Next time set it out in a No. and Log table; examiners find it quicker to mark."
+            },
+            {
+              "tier": "full",
+              "text": "log 43.17 = 1.6352, log 0.2564 = bar 1.4089, log 6.891 = 0.8383. Numerator: 1.6352 + bar 1.4089, decimals give 1.0441 and 1 + bar 1 + 1 carried = 1, so 1.0441. Then 1.0441 - 0.8383 = 0.2058. Antilog 0.2058 = 1.606.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "log 43.17 = 1.6352, log 0.2564 = bar 1.4089, log 6.891 = 0.8383"
+                },
+                {
+                  "point": 1,
+                  "quote": "1 + bar 1 + 1 carried = 1, so 1.0441"
+                },
+                {
+                  "point": 2,
+                  "quote": "1.0441 - 0.8383 = 0.2058"
+                },
+                {
+                  "point": 3,
+                  "quote": "Antilog 0.2058 = 1.606"
+                }
+              ],
+              "feedback": "Full marks. Explaining how the bar characteristic cancels with the carried 1 shows real understanding."
+            },
+            {
+              "tier": "partial",
+              "text": "Logs: 1.6352, bar 1.4089, 0.8383. 1.6352 + bar 1.4089 = 1.0441. 1.0441 − 0.8383 = 0.2058. Antilog = 16.06",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Logs: 1.6352, bar 1.4089, 0.8383"
+                },
+                {
+                  "point": 1,
+                  "quote": "1.6352 + bar 1.4089 = 1.0441"
+                },
+                {
+                  "point": 2,
+                  "quote": "1.0441 − 0.8383 = 0.2058"
+                }
+              ],
+              "feedback": "Every step is right until the last. The characteristic of 0.2058 is 0, so the answer has one digit before the point: 1.606, not 16.06."
+            },
+            {
+              "tier": "partial",
+              "text": "log 43.17 = 1.6352, log 0.2564 = bar 1.4089, log 6.891 = 0.8383. 1.6352 + bar 1.4089 = 1.0441. 1.0441 + 0.8383 = 1.8824. Antilog = 76.29",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "log 43.17 = 1.6352, log 0.2564 = bar 1.4089, log 6.891 = 0.8383"
+                },
+                {
+                  "point": 1,
+                  "quote": "1.6352 + bar 1.4089 = 1.0441"
+                }
+              ],
+              "feedback": "Your logs and the numerator are right. Dividing by 6.891 means subtracting its log, not adding it: 1.0441 − 0.8383 = 0.2058, which gives 1.606."
+            },
+            {
+              "tier": "weak",
+              "text": "log 43.17 = 1.6352, log 0.2564 = 0.4089, log 6.891 = 0.8383. 1.6352 + 0.4089 = 2.0441, 2.0441 − 0.8383 = 1.2058, antilog = 16.06",
+              "meets": [],
+              "feedback": "0.2564 is less than 1, so its log has characteristic bar 1: 1̄.4089, not 0.4089. That one slip changed every line after it; redo the sum with 1̄.4089."
+            },
+            {
+              "tier": "weak",
+              "text": "43.17 x 0.2564 = 11.07 and 11.07 ÷ 6.891 = 1.606.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "11.07 ÷ 6.891 = 1.606"
+                }
+              ],
+              "feedback": "Your final value is right, but the question asks for tables. Show the logs, add those of the numerator, subtract the log of 6.891 and take the antilog."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Venn diagrams, logical statements and rational numbers",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. solve practical problems on classification using Venn diagrams of two and three sets;\n2. tell true statements from false ones, write the negation of a statement, and use the symbols ⟹ and ⟸;\n3. carry out the four operations on rational numbers and place them on the number line;\n4. use the notation N, Z and Q.\n\n## Materials\n\nTwo hula hoops (or circles of rope) on the floor, name cards, a number line from −5 to 5 drawn on manila card.\n\n## Starter (5 minutes)\n\nLay two overlapping hoops on the floor, one labelled Football and one Table tennis. Learners stand in the region that fits them. Count each region. Ask: where do learners who play neither stand?\n\n## Development\n\n1. Two sets: in a class of 40, 25 offer Agricultural Science, 18 offer Commerce and 7 offer neither. Let x offer both. Write each region in terms of x: (25 − x) + x + (18 − x) + 7 = 40, so x = 10.\n2. Three sets: start filling from the centre (all three), then the two-set regions, then the one-set regions. Work a survey of 50 learners and find how many like none of the three subjects.\n3. Statements: a statement is either true or false. 'Lagos is in Nigeria' is true; 'Close the door' is not a statement. The negation of 'All SS1 learners wear sandals' is 'Not all SS1 learners wear sandals'.\n4. Implication: p ⟹ q means 'if p then q'. x = 3 ⟹ x² = 9 is true, but x² = 9 ⟹ x = 3 is false because x could be −3.\n5. Rational numbers: show N ⊂ Z ⊂ Q. Mark −3/4, 0.5 and 1⅓ on the number line. Work −2/3 + 5/6 ÷ (−1/2) = −7/3, doing the division first.\n\n## Class activity\n\nGroups survey their own class on three things (owns a phone, walks to school, has a younger sibling) and draw a three-set Venn diagram of the results.\n\n## Evaluation\n\n1. 30 learners: 18 like rice, 15 like beans, 6 like both. How many like neither?\n2. Write the negation of 'The tap is running'.\n3. Is √2 a rational number? Give a reason.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Sorting things out with Venn diagrams and logic",
+        "content": "# Venn diagrams, logical statements and rational numbers\n\n## Venn diagrams\n\nA **Venn diagram** shows sets as circles inside a rectangle, the universal set. Overlapping circles show members that belong to more than one set.\n\nFor two sets, n(A ∪ B) = n(A) + n(B) − n(A ∩ B).\n\n**Worked example 1.** In a class of 40, 25 offer Agricultural Science, 18 offer Commerce and 7 offer neither. How many offer both?\n\nLet x offer both. Then 25 − x offer Agric only and 18 − x offer Commerce only.\n\n(25 − x) + x + (18 − x) + 7 = 40\n\n50 − x = 40, so x = 10. Ten learners offer both, and 15 offer Agric only.\n\n**Three sets.** Always fill the diagram from the middle outwards. Put the number in all three sets first. Then for each pair, take that number away to get the region for those two only. Then work out each set alone. Add every region and compare with the total to find those in none.\n\n## Statements and logic\n\nA **statement** is a sentence that is either true or false. 'Abuja is the capital of Nigeria' is a true statement. 'Come here' is not a statement at all.\n\nThe **negation** of a statement p, written ~p, says that p is not true. The negation of 'All the taps are running' is 'Not all the taps are running', not 'No tap is running'.\n\nAn **implication** p ⟹ q reads 'if p, then q'. q ⟸ p means the same thing.\n\n- x = 3 ⟹ x² = 9 is true.\n- x² = 9 ⟹ x = 3 is false, because x could be −3.\n\n## Rational numbers\n\n- **N**, the natural numbers: 1, 2, 3, …\n- **Z**, the integers: …, −2, −1, 0, 1, 2, …\n- **Q**, the rational numbers: any number that can be written as p/q, where p and q are integers and q ≠ 0, such as −3/4, 0.25 and 5.\n\nNumbers like √2 and π cannot be written as a fraction, so they are not rational.\n\n**Worked example 2.** −2/3 + 5/6 ÷ (−1/2). Divide first: 5/6 × (−2) = −5/3. Then −2/3 − 5/3 = −7/3."
+      },
+      "cards": [
+        {
+          "front": "n(A ∪ B)",
+          "back": "n(A) + n(B) − n(A ∩ B)"
+        },
+        {
+          "front": "Filling a three-set Venn diagram",
+          "back": "Start with the region in all three sets and work outwards."
+        },
+        {
+          "front": "Statement",
+          "back": "A sentence that is either true or false."
+        },
+        {
+          "front": "Negation of 'All SS1 learners wear sandals'",
+          "back": "Not all SS1 learners wear sandals."
+        },
+        {
+          "front": "p ⟹ q",
+          "back": "If p, then q."
+        },
+        {
+          "front": "Is x² = 9 ⟹ x = 3 true?",
+          "back": "No. x could also be −3."
+        },
+        {
+          "front": "Rational number",
+          "back": "A number that can be written as p/q with p, q integers and q ≠ 0."
+        },
+        {
+          "front": "N, Z and Q",
+          "back": "Natural numbers, integers and rational numbers: N ⊂ Z ⊂ Q."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In a class, 20 learners play football, 15 play table tennis and 8 play both. How many learners play at least one of the two games?",
+          "options": ["35", "27", "43", "19"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the negation of the statement 'All SS1 learners wear sandals'?",
+          "options": [
+            "No SS1 learner wears sandals",
+            "All SS1 learners wear shoes",
+            "Not all SS1 learners wear sandals",
+            "Some SS1 learners wear sandals"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "p is the statement 'x = 3' and q is the statement 'x² = 9'. Which of these is true?",
+          "options": ["p ⟹ q", "q ⟹ p", "p ⟺ q", "q ⟹ ~p"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is NOT a rational number?",
+          "options": ["−3/4", "0.25", "√2", "5"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Evaluate −2/3 + 5/6 ÷ (−1/2).",
+          "options": ["1/3", "−1/3", "7/3", "−7/3"],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "In SS1A there are 40 learners. 25 offer Agricultural Science, 18 offer Commerce and 7 offer neither subject. Using a Venn diagram, find (a) how many learners offer both subjects, (b) how many offer Agricultural Science only.",
+          "markScheme": [
+            "Venn diagram with regions 25 − x, x, 18 − x and 7 (or uses 40 − 7 = 33 for the union)",
+            "Forms the equation (25 − x) + x + (18 − x) + 7 = 40, or 33 = 25 + 18 − n(A ∩ C)",
+            "(a) x = 10 offer both",
+            "(b) Agricultural Science only = 15"
+          ],
+          "modelAnswer": "Let x learners offer both. In the Venn diagram, Agric only is 25 − x, both is x, Commerce only is 18 − x and 7 are outside. So (25 − x) + x + (18 − x) + 7 = 40, which gives 50 − x = 40 and x = 10. (a) 10 learners offer both. (b) Agric only = 25 − 10 = 15.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Let x be those who offer both. Agric only = 25 − x, Commerce only = 18 − x, neither = 7. (25 − x) + x + (18 − x) + 7 = 40, 50 − x = 40, x = 10. So 10 offer both. Agric only = 25 − 10 = 15.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Agric only = 25 − x, Commerce only = 18 − x, neither = 7"
+                },
+                {
+                  "point": 1,
+                  "quote": "(25 − x) + x + (18 − x) + 7 = 40"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 10. So 10 offer both"
+                },
+                {
+                  "point": 3,
+                  "quote": "Agric only = 25 − 10 = 15"
+                }
+              ],
+              "feedback": "All four marks. Labelling every region in terms of x before writing the equation is the method to use every time."
+            },
+            {
+              "tier": "full",
+              "text": "40 − 7 = 33 offer at least one subject. n(A ∪ C) = n(A) + n(C) − n(A ∩ C) so 33 = 25 + 18 − n(A ∩ C) and n(A ∩ C) = 43 − 33 = 10. My Venn diagram has A only 15, both 10, C only 8 and 7 outside. Agric only is 15.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "40 − 7 = 33 offer at least one subject"
+                },
+                {
+                  "point": 1,
+                  "quote": "33 = 25 + 18 − n(A ∩ C)"
+                },
+                {
+                  "point": 2,
+                  "quote": "n(A ∩ C) = 43 − 33 = 10"
+                },
+                {
+                  "point": 3,
+                  "quote": "Agric only is 15"
+                }
+              ],
+              "feedback": "Full marks. Using the formula for n(A ∪ C) is a sound method, and checking it on the diagram is good practice."
+            },
+            {
+              "tier": "partial",
+              "text": "25 + 18 + 7 = 50. 50 − 40 = 10 so 10 offer both. Agric only = 25.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "25 + 18 + 7 = 50. 50 − 40"
+                },
+                {
+                  "point": 2,
+                  "quote": "10 offer both"
+                }
+              ],
+              "feedback": "Your number for both is right. The 25 who offer Agric include the 10 who also offer Commerce, so Agric only is 25 − 10 = 15. Draw the diagram so you can see the regions.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Venn: Agric only 25 − x, both x, Commerce only 18 − x, outside 7. 25 − x + 18 − x + 7 = 40, 50 − 2x = 40, x = 5. Agric only = 20.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Agric only 25 − x, both x, Commerce only 18 − x, outside 7"
+                }
+              ],
+              "feedback": "Your regions are right, but your equation leaves out the middle region, x. Add all four regions: (25 − x) + x + (18 − x) + 7 = 40, which gives x = 10 and Agric only 15."
+            },
+            {
+              "tier": "weak",
+              "text": "Both = 25 − 18 = 7. Agric only = 25.",
+              "meets": [],
+              "feedback": "Taking one subject from the other does not give the overlap. Let x offer both, write each region in terms of x, and add all the regions to make 40."
+            },
+            {
+              "tier": "weak",
+              "text": "25 + 18 = 43 which is more than 40 so 3 people offer both. Agric only is 22.",
+              "meets": [],
+              "feedback": "You noticed the numbers add to more than the class, which is the right instinct. But the 7 who offer neither are also in the 40, so only 33 offer a subject, and 43 − 33 = 10 offer both."
+            }
+          ]
+        },
+        {
+          "prompt": "In a survey of 50 learners in a school in Owerri, 28 like Mathematics (M), 22 like English (E) and 20 like Biology (B). 10 like M and E, 8 like M and B, 6 like E and B, and 3 like all three subjects. Draw a Venn diagram to show this information and find how many learners (a) like Mathematics only, (b) like none of the three subjects.",
+          "markScheme": [
+            "Puts 3 in the region for all three subjects",
+            "Two-subject-only regions: M and E only 7, M and B only 5, E and B only 3",
+            "(a) Mathematics only = 28 − 7 − 5 − 3 = 13",
+            "Total in the circles = 49",
+            "(b) None = 50 − 49 = 1"
+          ],
+          "modelAnswer": "Start in the middle: 3 like all three. Then M and E only = 10 − 3 = 7, M and B only = 8 − 3 = 5, E and B only = 6 − 3 = 3. M only = 28 − 7 − 5 − 3 = 13, E only = 22 − 7 − 3 − 3 = 9, B only = 20 − 5 − 3 − 3 = 9. (a) 13 like Mathematics only. Total in the circles = 13 + 9 + 9 + 7 + 5 + 3 + 3 = 49. (b) 50 − 49 = 1 learner likes none.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Centre = 3. M and E only = 10 − 3 = 7, M and B only = 8 − 3 = 5, E and B only = 6 − 3 = 3. Maths only = 28 − 7 − 5 − 3 = 13. English only = 22 − 7 − 3 − 3 = 9, Biology only = 20 − 5 − 3 − 3 = 9. Total = 13 + 9 + 9 + 7 + 5 + 3 + 3 = 49. None = 50 − 49 = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Centre = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "M and E only = 10 − 3 = 7, M and B only = 8 − 3 = 5, E and B only = 6 − 3 = 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "Maths only = 28 − 7 − 5 − 3 = 13"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total = 13 + 9 + 9 + 7 + 5 + 3 + 3 = 49"
+                },
+                {
+                  "point": 4,
+                  "quote": "None = 50 − 49 = 1"
+                }
+              ],
+              "feedback": "All five marks. Working from the centre outwards is exactly the right order, and you showed every region."
+            },
+            {
+              "tier": "full",
+              "text": "n(M ∪ E ∪ B) = 28 + 22 + 20 − 10 − 8 − 6 + 3 = 49 so none = 1. In my diagram the middle is 3, then 7 for M and E only, 5 for M and B only and 3 for E and B only. Maths only = 28 − 15 = 13.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the middle is 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "7 for M and E only, 5 for M and B only and 3 for E and B only"
+                },
+                {
+                  "point": 2,
+                  "quote": "Maths only = 28 − 15 = 13"
+                },
+                {
+                  "point": 3,
+                  "quote": "n(M ∪ E ∪ B) = 28 + 22 + 20 − 10 − 8 − 6 + 3 = 49"
+                },
+                {
+                  "point": 4,
+                  "quote": "so none = 1"
+                }
+              ],
+              "feedback": "Full marks. Using the three-set formula as a check on your diagram is a strong habit for WASSCE."
+            },
+            {
+              "tier": "partial",
+              "text": "Middle = 3. M and E only 7, M and B only 5, E and B only 3. Maths only = 28 − 7 − 5 − 3 = 13, English only = 9, Biology only = 9. Total = 13 + 9 + 9 + 7 + 5 + 3 = 46. None = 50 − 46 = 4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Middle = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "M and E only 7, M and B only 5, E and B only 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "Maths only = 28 − 7 − 5 − 3 = 13"
+                }
+              ],
+              "feedback": "Your diagram and Maths only are right. Your total leaves out the 3 in the middle: 46 + 3 = 49, so only 1 learner likes none."
+            },
+            {
+              "tier": "partial",
+              "text": "All three = 3. M and E = 10, M and B = 8, E and B = 6. Maths only = 28 − 10 − 8 − 3 = 7. English only = 22 − 10 − 6 − 3 = 3. Biology only = 20 − 8 − 6 − 3 = 3. Total = 7 + 3 + 3 + 10 + 8 + 6 + 3 = 40, none = 10.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "All three = 3"
+                }
+              ],
+              "feedback": "You started in the middle, which is right. The 10 who like M and E include the 3 who like all three, so M and E only is 10 − 3 = 7. Take the 3 off each pair first, and Maths only becomes 13."
+            },
+            {
+              "tier": "weak",
+              "text": "28 + 22 + 20 = 70. 70 − 50 = 20 like none. Maths only = 28 − 10 = 18.",
+              "meets": [],
+              "feedback": "Adding the three subjects counts some learners two or three times, so it cannot give those who like none. Draw the diagram, put 3 in the middle, and fill outwards."
+            },
+            {
+              "tier": "weak",
+              "text": "3 like all three. Maths only is 28 − 3 = 25. None = 50 − 28 − 22 − 20 which is negative so none = 0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3 like all three"
+                }
+              ],
+              "feedback": "The centre is right. Maths only must also leave out those in M and E only (7) and M and B only (5): 28 − 7 − 5 − 3 = 13. A negative answer told you the subtraction was double counting."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Surds, matrices and determinants",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. simplify surds such as √50 and add, subtract and multiply them;\n2. rationalise the denominator of a surd of the form a/√b;\n3. state the order of a matrix (up to 3 × 3) and name types of matrices;\n4. add, subtract and multiply 2 × 2 matrices, and multiply them by a scalar;\n5. find the determinant of a 2 × 2 matrix and use it to solve two simultaneous linear equations.\n\n## Materials\n\nA chart of perfect squares from 1 to 144, a class timetable (as an example of rows and columns), cardboard grids for matrices.\n\n## Starter (5 minutes)\n\nAsk: what is √49? What is √50? Learners see that √50 is not a whole number. Show that √50 = √25 × √2 = 5√2, an exact answer.\n\n## Development\n\n1. Surds: take out the largest perfect square. √12 + √27 − √3 = 2√3 + 3√3 − √3 = 4√3. Expand (3 − √2)² = 11 − 6√2.\n2. Rationalise: 6/√3 × √3/√3 = 6√3/3 = 2√3.\n3. Matrices: show the timetable as an array of rows and columns. A matrix with m rows and n columns has order m × n. Name row, column, square, zero and identity matrices.\n4. Add and subtract by corresponding entries. Multiply row by column: for A = (2 1 / 3 4) and B = (1 −2 / 0 5), AB = (2 1 / 3 14). Show that BA is different.\n5. Determinant of (a b / c d) = ad − bc. Solve 2x + 3y = 13 and 4x − y = 5: |A| = −14, x = −28/−14 = 2, y = −42/−14 = 3.\n\n## Class activity\n\nPairs make up two 2 × 2 matrices, find AB and BA, and report whether they are equal.\n\n## Evaluation\n\n1. Simplify √75 − √12.\n2. Rationalise 4/√2.\n3. Find the determinant of (5 2 / 3 1).\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "Exact roots and arrays of numbers",
+        "content": "# Surds, matrices and determinants\n\n## Surds\n\nA **surd** is a root that cannot be written exactly as a whole number or fraction, such as √2 or √50. We keep surds as they are so that our answers stay exact.\n\nTo simplify a surd, take out the largest perfect square factor:\n\n- √50 = √(25 × 2) = 5√2\n- √12 = √(4 × 3) = 2√3\n\nLike surds can be added and subtracted, the way we add like terms: √12 + √27 − √3 = 2√3 + 3√3 − √3 = 4√3.\n\nTo **rationalise** a denominator, multiply the top and bottom by the surd:\n\n**Worked example 1.** 6/√3 = (6 × √3)/(√3 × √3) = 6√3/3 = 2√3.\n\nExpand brackets as usual, remembering √2 × √2 = 2: (3 − √2)² = 9 − 6√2 + 2 = 11 − 6√2.\n\n## Matrices\n\nA **matrix** is a rectangular arrangement of numbers in rows and columns. A matrix with m rows and n columns has **order** m × n. A 2 × 2 matrix is a **square matrix**.\n\nWe add or subtract matrices of the same order entry by entry. To multiply by a scalar, multiply every entry. To multiply two matrices, multiply each **row** of the first by each **column** of the second.\n\n**Worked example 2.** A = (2 1 / 3 4), B = (1 −2 / 0 5).\n\nAB = (2×1 + 1×0, 2×(−2) + 1×5 / 3×1 + 4×0, 3×(−2) + 4×5) = (2 1 / 3 14).\n\nIn general AB ≠ BA.\n\n## Determinants\n\nThe **determinant** of (a b / c d) is ad − bc.\n\n**Worked example 3.** Solve 2x + 3y = 13 and 4x − y = 5.\n\n|A| = 2(−1) − 3(4) = −14.\n\nx = (13 × (−1) − 3 × 5) ÷ (−14) = −28 ÷ (−14) = 2\n\ny = (2 × 5 − 13 × 4) ÷ (−14) = −42 ÷ (−14) = 3\n\nCheck in the first equation: 2(2) + 3(3) = 13. Correct."
+      },
+      "cards": [
+        {
+          "front": "Surd",
+          "back": "A root that cannot be written exactly as a whole number or fraction, such as √2."
+        },
+        {
+          "front": "Simplify √50",
+          "back": "√(25 × 2) = 5√2"
+        },
+        {
+          "front": "Rationalise 6/√3",
+          "back": "Multiply top and bottom by √3: 6√3/3 = 2√3."
+        },
+        {
+          "front": "√a × √a",
+          "back": "a"
+        },
+        {
+          "front": "Order of a matrix",
+          "back": "rows × columns, e.g. 2 × 3 for 2 rows and 3 columns."
+        },
+        {
+          "front": "Multiplying matrices",
+          "back": "Each row of the first times each column of the second."
+        },
+        {
+          "front": "Determinant of (a b / c d)",
+          "back": "ad − bc"
+        },
+        {
+          "front": "Is AB always equal to BA?",
+          "back": "No. Matrix multiplication is not commutative."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Simplify √12 + √27 − √3.",
+          "options": ["√36", "4√3", "5√3", "6√3"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Rationalise the denominator of 6/√3.",
+          "options": ["2√3", "6√3", "2", "√2"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A matrix has 2 rows and 3 columns. What is its order?",
+          "options": ["3 × 2", "6", "2 × 3", "5"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Find the determinant of the matrix with rows (3, 5) and (2, 4).",
+          "options": ["22", "−2", "7", "2"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A has rows (2, 1) and (3, 4). B has rows (1, −2) and (0, 5). Find AB.",
+          "options": [
+            "rows (2, −2) and (0, 20)",
+            "rows (−4, −7) and (15, 20)",
+            "rows (3, −1) and (3, 9)",
+            "rows (2, 1) and (3, 14)"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Simplify √50 − √18 + √8. (b) Rationalise and simplify 10/√5. (c) Expand and simplify (3 − √2)².",
+          "markScheme": [
+            "√50 = 5√2, √18 = 3√2 and √8 = 2√2",
+            "(a) 4√2",
+            "Multiplies top and bottom by √5: 10√5/5",
+            "(b) 2√5",
+            "(c) 9 − 6√2 + 2 = 11 − 6√2"
+          ],
+          "modelAnswer": "(a) √50 = 5√2, √18 = 3√2 and √8 = 2√2, so 5√2 − 3√2 + 2√2 = 4√2. (b) 10/√5 × √5/√5 = 10√5/5 = 2√5. (c) (3 − √2)² = 9 − 3√2 − 3√2 + 2 = 11 − 6√2.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) √50 = √25 x √2 = 5√2, √18 = 3√2, √8 = 2√2. 5√2 − 3√2 + 2√2 = 4√2. (b) 10/√5 x √5/√5 = 10√5/5 = 2√5. (c) (3 − √2)(3 − √2) = 9 − 3√2 − 3√2 + 2 = 11 − 6√2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "√50 = √25 x √2 = 5√2, √18 = 3√2, √8 = 2√2"
+                },
+                {
+                  "point": 1,
+                  "quote": "5√2 − 3√2 + 2√2 = 4√2"
+                },
+                {
+                  "point": 2,
+                  "quote": "10/√5 x √5/√5 = 10√5/5"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 2√5"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 9 − 3√2 − 3√2 + 2 = 11 − 6√2"
+                }
+              ],
+              "feedback": "All five marks. Writing the bracket out twice in (c) is why you did not forget the middle term."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 5√2 − 3√2 + 2√2 since 50 = 25 × 2, 18 = 9 × 2, 8 = 4 × 2. Answer 4√2. (b) Multiply by √5 over √5 to get 10√5 over 5 which is 2√5. (c) 3² − 2(3)(√2) + (√2)² = 9 − 6√2 + 2 = 11 − 6√2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5√2 − 3√2 + 2√2 since 50 = 25 × 2, 18 = 9 × 2, 8 = 4 × 2"
+                },
+                {
+                  "point": 1,
+                  "quote": "Answer 4√2"
+                },
+                {
+                  "point": 2,
+                  "quote": "Multiply by √5 over √5 to get 10√5 over 5"
+                },
+                {
+                  "point": 3,
+                  "quote": "which is 2√5"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 9 − 6√2 + 2 = 11 − 6√2"
+                }
+              ],
+              "feedback": "Full marks. Using (a − b)² = a² − 2ab + b² in (c) was neat and accurate."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) √50 − √18 + √8 = √40 = 2√10. (b) 10/√5 × √5/√5 = 10√5/5 = 2√5. (c) 9 + 2 = 11.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "10/√5 × √5/√5 = 10√5/5"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 2√5"
+                }
+              ],
+              "feedback": "Part (b) is right. Surds cannot be combined under one root sign; simplify each first (5√2, 3√2, 2√2), then collect them. In (c) you dropped the middle term, −6√2."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 5√2 − 3√2 + 2√2 = 4√2. (b) 10/√5 = 2√5 because 10 ÷ 5 = 2. (c) (3 − √2)² = 9 − 2 = 7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5√2 − 3√2 + 2√2"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 4√2"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b), show the rationalising step: multiply top and bottom by √5. In (c), a squared bracket has a middle term: (3 − √2)² = 9 − 6√2 + 2 = 11 − 6√2."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) √(50 − 18 + 8) = √40. (b) 10/√5 = 10/2.236 = 4.47. (c) 9 − 2 = 7.",
+              "meets": [],
+              "feedback": "You cannot subtract the numbers under the root signs. Simplify each surd first: √50 = 5√2. Leave answers as surds, not decimals, because surds are exact."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) √50 − √18 + √8 cannot be simplified because they are different surds. (b) 10/√5 = 10√5/5. (c) 3² − (√2)² = 7.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "10/√5 = 10√5/5"
+                }
+              ],
+              "feedback": "Your rationalising in (b) is right; finish it to 2√5. In (a) the surds look different but all simplify to multiples of √2: 5√2, 3√2 and 2√2."
+            }
+          ]
+        },
+        {
+          "prompt": "Use the determinant method to solve the simultaneous equations 2x + 3y = 13 and 4x − y = 5.",
+          "markScheme": [
+            "Writes the coefficient matrix (2 3 / 4 −1), or the matrix equation",
+            "|A| = 2(−1) − 3(4) = −14",
+            "x = (13 × (−1) − 3 × 5) ÷ (−14) = 2",
+            "y = (2 × 5 − 13 × 4) ÷ (−14) = 3"
+          ],
+          "modelAnswer": "In matrix form, (2 3 / 4 −1)(x / y) = (13 / 5). The determinant is |A| = 2(−1) − 3(4) = −2 − 12 = −14. Then x = (13 × (−1) − 3 × 5) ÷ (−14) = −28 ÷ (−14) = 2 and y = (2 × 5 − 13 × 4) ÷ (−14) = −42 ÷ (−14) = 3. So x = 2 and y = 3.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Matrix form: (2 3 / 4 −1)(x / y) = (13 / 5). Determinant = 2(−1) − 3(4) = −2 − 12 = −14. x = (13(−1) − 3(5)) ÷ −14 = −28 ÷ −14 = 2. y = (2(5) − 13(4)) ÷ −14 = −42 ÷ −14 = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Matrix form: (2 3 / 4 −1)(x / y) = (13 / 5)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Determinant = 2(−1) − 3(4) = −2 − 12 = −14"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = (13(−1) − 3(5)) ÷ −14 = −28 ÷ −14 = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "y = (2(5) − 13(4)) ÷ −14 = −42 ÷ −14 = 3"
+                }
+              ],
+              "feedback": "All four marks, and your signs are handled carefully throughout. Checking in 4x − y = 5 would finish it off."
+            },
+            {
+              "tier": "full",
+              "text": "A = (2 3 / 4 −1), |A| = −2 − 12 = −14. A⁻¹ = −1/14 (−1 −3 / −4 2). So x = −1/14 (−13 − 15) = −1/14 × −28 = 2 and y = −1/14 (−52 + 10) = −1/14 × −42 = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = (2 3 / 4 −1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "|A| = −2 − 12 = −14"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = −1/14 (−13 − 15) = −1/14 × −28 = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "y = −1/14 (−52 + 10) = −1/14 × −42 = 3"
+                }
+              ],
+              "feedback": "Full marks. Using the inverse matrix is the same method in another form, and you applied it correctly."
+            },
+            {
+              "tier": "partial",
+              "text": "(2 3 / 4 −1). |A| = 2 × −1 − 3 × 4 = −14. x = −28 ÷ −14 = 2. Then 2(2) + 3y = 13, 3y = 9, y = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(2 3 / 4 −1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "|A| = 2 × −1 − 3 × 4 = −14"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = −28 ÷ −14 = 2"
+                }
+              ],
+              "feedback": "Your determinant and x are right, and y = 3 is correct. The question asks for the determinant method for both, so find y as (2 × 5 − 13 × 4) ÷ (−14) = 3.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Matrix (2 3 / 4 −1). |A| = −2 + 12 = 10. x = (−13 − 15) ÷ 10 = −2.8, y = (10 − 52) ÷ 10 = −4.2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Matrix (2 3 / 4 −1)"
+                }
+              ],
+              "feedback": "Your matrix and your two top lines are right. The determinant is ad − bc = −2 − 12 = −14, not −2 + 12. With −14, x = 2 and y = 3; always check your answers in one of the equations."
+            },
+            {
+              "tier": "weak",
+              "text": "Determinant = 2 × 3 − 4 × −1 = 10. x = 13/10 and y = 5/10.",
+              "meets": [],
+              "feedback": "The determinant multiplies across the diagonals: 2 × (−1) − 3 × 4 = −14. Then x and y each come from replacing one column with 13 and 5, not from dividing 13 and 5 alone."
+            },
+            {
+              "tier": "weak",
+              "text": "Determinant = (2 x −1) − (3 x 4) = −14. So x = 13 ÷ −14 and y = 5 ÷ −14.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Determinant = (2 x −1) − (3 x 4) = −14"
+                }
+              ],
+              "feedback": "Your determinant is right. For x, replace the x-column with 13 and 5: (13 × (−1) − 3 × 5) ÷ (−14) = 2. Do the same for y with the y-column."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Ratio, rates, percentages and depreciation",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. share quantities in a given ratio, including profits in a partnership, and solve problems on rates: speed, density, foreign exchange and taxes such as VAT;\n2. calculate simple and compound interest (up to 3 years), commission, discount, profit and loss, hire purchase and percentage error;\n3. calculate depreciation of fixed assets by the straight-line and reducing-balance methods, and the yearly amortisation of a capitalised asset.\n\n## Materials\n\nA receipt from a supermarket showing VAT, a newspaper page with the day's exchange rate, a bank's savings leaflet, a hire-purchase advert for a television.\n\n## Starter (5 minutes)\n\nPass round the supermarket receipt. Ask: what is the 7.5% at the bottom? How was it worked out? Learners find 7.5% of the subtotal and check the receipt.\n\n## Development\n\n1. Ratio: two traders invest ₦200 000 and ₦300 000 and share ₦150 000 profit in the ratio 2 : 3, getting ₦60 000 and ₦90 000.\n2. Rates: a danfo goes 45 km in 1½ hours, so its speed is 30 km/h. At ₦1 500 to $1, $250 costs ₦375 000. VAT at 7.5% on ₦12 000 is ₦900.\n3. Simple interest I = PRT/100. Compound interest year by year, or A = P(1 + R/100)ⁿ: ₦200 000 at 10% for 3 years gives ₦266 200.\n4. Discount, commission, profit and loss as percentages of the cost or marked price. Hire purchase: compare total paid with the cash price. Percentage error = error ÷ actual value × 100.\n5. Depreciation: straight line = (cost − residual value) ÷ useful life; reducing balance takes the same percentage off the new value each year. Amortisation spreads the cost of an intangible asset, such as a 10-year licence, equally over its life.\n\n## Class activity\n\nGroups take the hire-purchase advert, work out the total cost on hire purchase and the extra paid over the cash price, and decide which option a family should choose.\n\n## Evaluation\n\n1. Share ₦45 000 in the ratio 4 : 5.\n2. Find the compound interest on ₦100 000 at 5% for 2 years.\n3. A machine worth ₦500 000 depreciates by 10% a year. Find its value after 2 years.\n\n## Assignment\n\nProblem set on the app, due Thursday.",
+      "reading": {
+        "title": "Money, shares and rates",
+        "content": "# Ratio, rates, percentages and depreciation\n\n## Ratio and proportion\n\nTo share in a ratio, add the parts and find each share as a fraction of the whole.\n\n**Worked example 1.** Two traders invest ₦200 000 and ₦300 000 and share a profit of ₦150 000 in the ratio of their investments, 2 : 3. There are 5 parts. The first gets 2/5 × 150 000 = ₦60 000; the second gets ₦90 000.\n\n## Rates\n\nA rate compares two different quantities: speed in km/h, population density in people per km², an exchange rate in naira per dollar. **VAT** in Nigeria is 7.5% of the price: on ₦12 000 it is ₦900, so the customer pays ₦12 900.\n\n## Percentages\n\n- **Simple interest:** I = PRT/100. On ₦50 000 at 8% for 3 years, I = ₦12 000.\n- **Compound interest:** interest is added each year and earns interest itself. A = P(1 + R/100)ⁿ.\n- **Profit %** = profit ÷ cost price × 100. **Discount** is taken off the marked price.\n- **Hire purchase:** a deposit plus instalments, usually costing more than the cash price.\n- **Percentage error** = error ÷ actual value × 100. Weighing 4.8 kg for 5 kg is an error of 0.2 ÷ 5 × 100 = 4%.\n\n**Worked example 2.** ₦200 000 is saved at 10% compound interest for 3 years.\n\n- Year 1: 200 000 + 20 000 = 220 000\n- Year 2: 220 000 + 22 000 = 242 000\n- Year 3: 242 000 + 24 200 = 266 200\n\nThe compound interest is ₦66 200. Simple interest would have been only ₦60 000.\n\n## Depreciation and amortisation\n\nMachines and vehicles lose value as they are used. This loss is **depreciation**.\n\n- **Straight-line method:** the same amount each year, (cost − residual value) ÷ useful life.\n- **Reducing-balance method:** the same percentage of the value left each year, so the value after n years is cost × (1 − r/100)ⁿ.\n\n**Worked example 3.** A grinding machine bought for ₦800 000 depreciates by 15% a year on the reducing balance. After 2 years it is worth 800 000 × 0.85² = ₦578 000.\n\n**Amortisation** is the same idea for things you cannot touch, such as a licence or a patent: a 10-year licence that cost ₦5 000 000 is amortised at ₦500 000 a year."
+      },
+      "cards": [
+        {
+          "front": "Share ₦150 000 in the ratio 2 : 3",
+          "back": "₦60 000 and ₦90 000"
+        },
+        {
+          "front": "VAT in Nigeria",
+          "back": "7.5% of the price, added to the bill."
+        },
+        {
+          "front": "Simple interest formula",
+          "back": "I = PRT/100"
+        },
+        {
+          "front": "Compound interest amount",
+          "back": "A = P(1 + R/100)ⁿ"
+        },
+        {
+          "front": "Percentage error",
+          "back": "Error ÷ actual value × 100"
+        },
+        {
+          "front": "Straight-line depreciation",
+          "back": "(Cost − residual value) ÷ useful life, the same each year."
+        },
+        {
+          "front": "Reducing-balance depreciation",
+          "back": "The same percentage of the remaining value each year."
+        },
+        {
+          "front": "Amortisation",
+          "back": "Spreading the cost of an intangible asset, such as a licence, over its useful life."
+        },
+        {
+          "front": "Hire purchase",
+          "back": "Buying with a deposit and instalments; the total is usually more than the cash price."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Two traders invest ₦200 000 and ₦300 000 in a business and share a profit of ₦150 000 in the ratio of their investments. How much does the trader who invested ₦200 000 receive?",
+          "options": ["₦75 000", "₦90 000", "₦60 000", "₦50 000"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A shop charges VAT at 7.5% on a phone priced at ₦12 000. What does the customer pay in total?",
+          "options": ["₦12 075", "₦12 900", "₦13 200", "₦900"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find the simple interest on ₦50 000 for 3 years at 8% per annum.",
+          "options": ["₦12 000", "₦4 000", "₦62 000", "₦1 200"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A danfo covers 45 km in 1 hour 30 minutes. What is its average speed?",
+          "options": ["34.6 km/h", "67.5 km/h", "45 km/h", "30 km/h"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A bag of beans is weighed as 4.8 kg, but its actual mass is 5 kg. What is the percentage error?",
+          "options": ["0.2%", "4%", "4.17%", "96%"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A woman deposits ₦200 000 in a microfinance bank at 10% per annum compound interest. (a) Find the amount in the account after 3 years. (b) Find the compound interest. (c) How much more is this than the simple interest at the same rate for the same time?",
+          "markScheme": [
+            "After year 1: ₦220 000 (or uses A = P(1 + R/100)ⁿ)",
+            "(a) Amount after 3 years = ₦266 200",
+            "(b) Compound interest = ₦66 200",
+            "Simple interest = 200 000 × 10 × 3 ÷ 100 = ₦60 000",
+            "(c) Difference = ₦6 200"
+          ],
+          "modelAnswer": "(a) Year 1: 200 000 + 20 000 = 220 000. Year 2: 220 000 + 22 000 = 242 000. Year 3: 242 000 + 24 200 = ₦266 200. (b) Compound interest = 266 200 − 200 000 = ₦66 200. (c) Simple interest = 200 000 × 10 × 3 ÷ 100 = ₦60 000, so the compound interest is 66 200 − 60 000 = ₦6 200 more.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Year 1: 10% of 200 000 = 20 000, amount = 220 000. Year 2: 10% of 220 000 = 22 000, amount = 242 000. Year 3: 24 200, amount = ₦266 200. CI = 266 200 − 200 000 = ₦66 200. SI = 200 000 x 10 x 3 / 100 = ₦60 000. Difference = 66 200 − 60 000 = ₦6 200.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Year 1: 10% of 200 000 = 20 000, amount = 220 000"
+                },
+                {
+                  "point": 1,
+                  "quote": "amount = ₦266 200"
+                },
+                {
+                  "point": 2,
+                  "quote": "CI = 266 200 − 200 000 = ₦66 200"
+                },
+                {
+                  "point": 3,
+                  "quote": "SI = 200 000 x 10 x 3 / 100 = ₦60 000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Difference = 66 200 − 60 000 = ₦6 200"
+                }
+              ],
+              "feedback": "All five marks. Working year by year shows clearly how the interest itself earns interest."
+            },
+            {
+              "tier": "full",
+              "text": "A = 200 000(1.1)³ = 200 000 × 1.331 = ₦266 200. C.I. = ₦66 200. S.I. = PRT/100 = 60 000. CI is ₦6 200 more.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = 200 000(1.1)³"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 200 000 × 1.331 = ₦266 200"
+                },
+                {
+                  "point": 2,
+                  "quote": "C.I. = ₦66 200"
+                },
+                {
+                  "point": 3,
+                  "quote": "S.I. = PRT/100 = 60 000"
+                },
+                {
+                  "point": 4,
+                  "quote": "CI is ₦6 200 more"
+                }
+              ],
+              "feedback": "Full marks with the formula. Show the substitution into PRT/100 as well, so the simple interest line can be checked."
+            },
+            {
+              "tier": "partial",
+              "text": "Year 1: 200 000 + 20 000 = 220 000. Year 2: 220 000 + 20 000 = 240 000. Year 3: 260 000. CI = 60 000. SI = 200 000 x 10 x 3 / 100 = 60 000. Difference = 0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Year 1: 200 000 + 20 000 = 220 000"
+                },
+                {
+                  "point": 3,
+                  "quote": "SI = 200 000 x 10 x 3 / 100 = 60 000"
+                }
+              ],
+              "feedback": "Year 1 and the simple interest are right. In year 2 the interest is 10% of ₦220 000, which is ₦22 000, not ₦20 000. That growing interest is what makes compound interest bigger."
+            },
+            {
+              "tier": "partial",
+              "text": "A = 200 000 (1 + 10/100)³ = 200 000 x 1.331 = 266 200. Interest = 266 200 - 200 000 = 66 200.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = 200 000 (1 + 10/100)³"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 200 000 x 1.331 = 266 200"
+                },
+                {
+                  "point": 2,
+                  "quote": "Interest = 266 200 - 200 000 = 66 200"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. You did not answer (c): find the simple interest, 200 000 × 10 × 3 ÷ 100 = ₦60 000, and subtract it from ₦66 200."
+            },
+            {
+              "tier": "weak",
+              "text": "CI = 200 000 x 10 x 3 / 100 = 60 000. Amount = 260 000.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "200 000 x 10 x 3 / 100 = 60 000"
+                }
+              ],
+              "feedback": "What you worked out is the simple interest, which is part (c). Compound interest is worked out year by year on the new amount: 220 000, then 242 000, then 266 200."
+            },
+            {
+              "tier": "weak",
+              "text": "Compound interest is when you multiply everything. 200 000 x 10% x 3 x 3 = 180 000.",
+              "meets": [],
+              "feedback": "Compound interest adds each year's interest to the amount, and the next year's interest is worked on the new amount. Start with 10% of 200 000 = 20 000, so after year 1 there is ₦220 000."
+            }
+          ]
+        },
+        {
+          "prompt": "A bakery in Ibadan buys an oven for ₦1 200 000. (a) Using the straight-line method, with a residual value of ₦200 000 after 5 years, find the yearly depreciation. (b) If instead the oven depreciates by 20% a year on the reducing balance, find its value after 3 years and the total depreciation over the 3 years.",
+          "markScheme": [
+            "Straight line: (1 200 000 − 200 000) ÷ 5",
+            "(a) = ₦200 000 per year",
+            "Reducing balance: 1 200 000 × 0.8³, or year by year 960 000, 768 000",
+            "Value after 3 years = ₦614 400",
+            "Total depreciation = ₦585 600"
+          ],
+          "modelAnswer": "(a) Yearly depreciation = (cost − residual value) ÷ useful life = (1 200 000 − 200 000) ÷ 5 = ₦200 000. (b) Each year the value is 80% of the year before: 1 200 000 × 0.8 = 960 000, then 768 000, then 614 400. So the value after 3 years is ₦614 400 and the total depreciation is 1 200 000 − 614 400 = ₦585 600.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) (1 200 000 − 200 000) ÷ 5 = 1 000 000 ÷ 5 = ₦200 000 per year. (b) Year 1: 1 200 000 x 0.8 = 960 000. Year 2: 960 000 x 0.8 = 768 000. Year 3: 768 000 x 0.8 = ₦614 400. Total depreciation = 1 200 000 − 614 400 = ₦585 600.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(1 200 000 − 200 000) ÷ 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 1 000 000 ÷ 5 = ₦200 000 per year"
+                },
+                {
+                  "point": 2,
+                  "quote": "Year 1: 1 200 000 x 0.8 = 960 000. Year 2: 960 000 x 0.8 = 768 000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Year 3: 768 000 x 0.8 = ₦614 400"
+                },
+                {
+                  "point": 4,
+                  "quote": "Total depreciation = 1 200 000 − 614 400 = ₦585 600"
+                }
+              ],
+              "feedback": "All five marks. Multiplying by 0.8 each year is the quickest way to take off 20% of the remaining value."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Depreciation = (cost − residual value) / life = 1 000 000 / 5 = 200 000 naira yearly. (b) Value = 1 200 000(1 − 0.2)³ = 1 200 000 × 0.512 = 614 400 naira. Depreciation = 585 600 naira.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(cost − residual value) / life = 1 000 000 / 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 200 000 naira yearly"
+                },
+                {
+                  "point": 2,
+                  "quote": "1 200 000(1 − 0.2)³"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 1 200 000 × 0.512 = 614 400 naira"
+                },
+                {
+                  "point": 4,
+                  "quote": "Depreciation = 585 600 naira"
+                }
+              ],
+              "feedback": "Full marks. Writing the general formula first, then substituting, makes your method easy to follow."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 1 200 000 − 200 000 = 1 000 000 ÷ 5 = 200 000. (b) 20% of 1 200 000 = 240 000 each year so after 3 years value = 1 200 000 − 720 000 = 480 000, depreciation = 720 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1 200 000 − 200 000 = 1 000 000 ÷ 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 200 000"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b) you used straight-line again. Reducing balance takes 20% of what is left each year: 960 000, then 768 000, then 614 400."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 1 200 000 ÷ 5 = 240 000 per year. (b) 960 000, 768 000, 614 400. Value is ₦614 400.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "960 000, 768 000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Value is ₦614 400"
+                }
+              ],
+              "feedback": "Your reducing-balance values are right; now find the total depreciation, 1 200 000 − 614 400 = ₦585 600. In (a), take off the residual value first: (1 200 000 − 200 000) ÷ 5 = ₦200 000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 200 000 ÷ 5 = 40 000. (b) 1 200 000 x 20 x 3 / 100 = 720 000.",
+              "meets": [],
+              "feedback": "The amount that is lost over 5 years is cost minus residual value, ₦1 000 000, so the yearly depreciation is ₦200 000. In (b), the 20% is taken from the new value each year, not from the cost."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 1 200 000 ÷ 5 = 240 000. (b) 1 200 000 x 0.2 = 240 000, x 0.2 = 48 000, x 0.2 = 9 600. Value = 9 600.",
+              "meets": [],
+              "feedback": "Multiplying by 0.2 finds the depreciation, not what is left. What is left is 80%, so multiply by 0.8 each time: 960 000, 768 000, 614 400."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Annuities, the capital market and variation",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain what an annuity is and find the amount of a simple annuity;\n2. describe shares, debentures and bonds and calculate dividends and interest on them;\n3. express direct, inverse, partial and joint variation in symbols and solve practical problems on them;\n4. form algebraic expressions from given situations.\n\n## Materials\n\nA business page of a newspaper showing share prices on the Nigerian Exchange, a printed FGN savings bond advert, a chart of the four types of variation.\n\n## Starter (5 minutes)\n\nAsk: if one plate of jollof rice costs ₦1 500, what do 4 plates cost? If 6 bricklayers take 10 days to build a fence, will 12 bricklayers take more or less time? Learners sense the difference between direct and inverse variation.\n\n## Development\n\n1. Annuity: a fixed sum paid at regular intervals. ₦50 000 paid at the end of each year for 3 years at 10% compound interest grows to 50 000 × (1.1² + 1.1 + 1) = ₦165 500.\n2. Capital market: shares give part ownership and a dividend; debentures and bonds are loans to a company or government that pay a fixed interest. ₦500 000 of 8% debentures earns ₦40 000 a year.\n3. Variation: direct y = kx; inverse y = k/x; joint, e.g. T = kV/n; partial, e.g. C = a + bn. Find k from one pair of values, then use the formula.\n4. Work the printing problem: 100 copies cost ₦7 000 and 300 copies cost ₦12 000, giving C = 4 500 + 25n.\n5. Expressions: the cost of 4 pens at x naira and 3 oranges at y naira is C = 4x + 3y.\n\n## Class activity\n\nGroups list three situations from home or the market for each type of variation, for example the cost of fuel and the number of litres.\n\n## Evaluation\n\n1. P varies inversely as Q. P = 6 when Q = 4. Find P when Q = 8.\n2. Write an expression for the total age of three sisters if the eldest is x years and each is 2 years younger than the one before.\n3. Find the yearly interest on a ₦200 000 bond at 12%.\n\n## Assignment\n\nWorksheet on the app, due Wednesday.",
+      "reading": {
+        "title": "Investing money, and quantities that change together",
+        "content": "# Annuities, the capital market and variation\n\n## Annuities\n\nAn **annuity** is a fixed sum of money paid at regular intervals, such as every year, for a stated period. Pensions and some savings plans are annuities.\n\n**Worked example 1.** ₦50 000 is paid into an account at the end of each year for 3 years, at 10% compound interest. The first payment earns interest for 2 years, the second for 1 year, the last for none:\n\n50 000 × 1.1² + 50 000 × 1.1 + 50 000 = 60 500 + 55 000 + 50 000 = ₦165 500.\n\n## The capital market\n\n- **Shares (stocks):** part ownership of a company. The owner may receive a **dividend** from the profits. 4 000 shares with a dividend of 20 kobo each earn ₦800.\n- **Debentures:** loans to a company at a fixed rate of interest. ₦500 000 of 8% debentures earn ₦40 000 a year.\n- **Bonds:** loans to a government or company. A ₦100 000 FGN bond at 12% pays ₦12 000 a year.\n\n## Variation\n\n| Type | In words | In symbols |\n| --- | --- | --- |\n| Direct | y varies as x | y = kx |\n| Inverse | y varies inversely as x | y = k/x |\n| Joint | T varies as V and inversely as n | T = kV/n |\n| Partial | C is partly fixed and partly varies as n | C = a + bn |\n\nAlways find the constant first, then write the formula, then use it.\n\n**Worked example 2.** Six bricklayers take 10 days to build a fence. Time varies inversely as the number of workers, so T = k/w. 10 = k/6 gives k = 60. With 15 bricklayers, T = 60/15 = 4 days.\n\n**Worked example 3.** Printing costs ₦7 000 for 100 copies and ₦12 000 for 300 copies. C = a + bn, so a + 100b = 7 000 and a + 300b = 12 000. Subtracting, 200b = 5 000, b = 25 and a = 4 500. So C = 4 500 + 25n.\n\n## Forming expressions\n\nTurn words into symbols step by step. The cost of 4 pens at x naira each and 3 oranges at y naira each is C = 4x + 3y. If x = 60 and y = 20, C = 240 + 60 = ₦300."
+      },
+      "cards": [
+        {
+          "front": "Annuity",
+          "back": "A fixed sum paid at regular intervals for a stated period."
+        },
+        {
+          "front": "Dividend",
+          "back": "The share of a company's profit paid to its shareholders."
+        },
+        {
+          "front": "Debenture",
+          "back": "A loan to a company that earns a fixed rate of interest."
+        },
+        {
+          "front": "Direct variation",
+          "back": "y = kx"
+        },
+        {
+          "front": "Inverse variation",
+          "back": "y = k/x"
+        },
+        {
+          "front": "Partial variation",
+          "back": "Partly constant and partly varying, e.g. C = a + bn."
+        },
+        {
+          "front": "Joint variation",
+          "back": "Varies with two or more quantities at once, e.g. T = kV/n."
+        },
+        {
+          "front": "Cost of 4 pens at x naira and 3 oranges at y naira",
+          "back": "C = 4x + 3y"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "y varies directly as x, and y = 12 when x = 4. Find y when x = 7.",
+          "options": ["21", "28", "15", "48/7"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Six bricklayers take 10 days to build a fence. Working at the same rate, how many days would 15 bricklayers take?",
+          "options": ["25", "4", "9", "11"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Write an expression for the cost C, in naira, of 4 pens at x naira each and 3 oranges at y naira each.",
+          "options": ["C = 7xy", "C = 3x + 4y", "C = 4x + 3y", "C = 12xy"],
+          "answer": "C"
+        },
+        {
+          "prompt": "An investor holds ₦500 000 of 8% debentures in a company. How much interest does the investor receive each year?",
+          "options": ["₦4 000", "₦62 500", "₦540 000", "₦40 000"],
+          "answer": "D"
+        },
+        {
+          "prompt": "₦50 000 is paid into an account at the end of each year for 2 years at 10% compound interest. How much is in the account just after the second payment?",
+          "options": ["₦100 000", "₦110 000", "₦105 000", "₦110 500"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The cost C naira of printing a school magazine at a press in Aba is partly constant and partly varies as the number of copies n. 100 copies cost ₦7 000 and 300 copies cost ₦12 000. (a) Find the formula connecting C and n. (b) Find the cost of printing 500 copies.",
+          "markScheme": [
+            "Writes C = a + bn",
+            "Forms a + 100b = 7 000 and a + 300b = 12 000",
+            "b = 25 and a = 4 500",
+            "(a) C = 4 500 + 25n",
+            "(b) 500 copies cost ₦17 000"
+          ],
+          "modelAnswer": "Let C = a + bn. Then a + 100b = 7 000 and a + 300b = 12 000. Subtracting, 200b = 5 000, so b = 25, and a = 7 000 − 2 500 = 4 500. (a) C = 4 500 + 25n. (b) When n = 500, C = 4 500 + 25 × 500 = 4 500 + 12 500 = ₦17 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "C = a + bn. 7000 = a + 100b (1), 12000 = a + 300b (2). (2) − (1): 5000 = 200b, b = 25. a = 7000 − 2500 = 4500. So C = 4500 + 25n. When n = 500, C = 4500 + 12500 = ₦17 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "C = a + bn"
+                },
+                {
+                  "point": 1,
+                  "quote": "7000 = a + 100b (1), 12000 = a + 300b (2)"
+                },
+                {
+                  "point": 2,
+                  "quote": "b = 25. a = 7000 − 2500 = 4500"
+                },
+                {
+                  "point": 3,
+                  "quote": "So C = 4500 + 25n"
+                },
+                {
+                  "point": 4,
+                  "quote": "C = 4500 + 12500 = ₦17 000"
+                }
+              ],
+              "feedback": "All five marks. Numbering your equations and saying which you subtracted makes the working easy to check."
+            },
+            {
+              "tier": "full",
+              "text": "Let C = k + mn. k + 100m = 7 000 and k + 300m = 12 000. Subtracting, 200m = 5 000 so m = 25, then k = 4 500. Formula: C = 4 500 + 25n. For 500 copies: 4 500 + 25(500) = 17 000 naira.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Let C = k + mn"
+                },
+                {
+                  "point": 1,
+                  "quote": "k + 100m = 7 000 and k + 300m = 12 000"
+                },
+                {
+                  "point": 2,
+                  "quote": "m = 25, then k = 4 500"
+                },
+                {
+                  "point": 3,
+                  "quote": "Formula: C = 4 500 + 25n"
+                },
+                {
+                  "point": 4,
+                  "quote": "4 500 + 25(500) = 17 000 naira"
+                }
+              ],
+              "feedback": "Full marks. Using your own letters for the constants is fine as long as, like you, you define them."
+            },
+            {
+              "tier": "partial",
+              "text": "C = a + bn. a + 100b = 7000, a + 300b = 12000. 200b = 5000, b = 25, a = 4500. Cost of 500 copies = 25 × 500 = ₦12 500.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "C = a + bn"
+                },
+                {
+                  "point": 1,
+                  "quote": "a + 100b = 7000, a + 300b = 12000"
+                },
+                {
+                  "point": 2,
+                  "quote": "b = 25, a = 4500"
+                }
+              ],
+              "feedback": "You found a and b correctly. Write the formula C = 4 500 + 25n, and use all of it: the fixed ₦4 500 is paid whatever the number of copies, so 500 copies cost ₦17 000."
+            },
+            {
+              "tier": "partial",
+              "text": "C = a + bn. a + 100b = 7000 and a + 300b = 12000. 200b = 5000, b = 250, a = 7000 − 25000 = −18000. C = −18000 + 250n. 500 copies cost 107 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "C = a + bn"
+                },
+                {
+                  "point": 1,
+                  "quote": "a + 100b = 7000 and a + 300b = 12000"
+                }
+              ],
+              "feedback": "Your method is right up to 200b = 5 000. Then b = 5 000 ÷ 200 = 25, not 250. A negative fixed cost should have told you something was wrong."
+            },
+            {
+              "tier": "weak",
+              "text": "C = kn, 7000 = 100k, k = 70. C = 70n. 500 copies = 70 × 500 = ₦35 000.",
+              "meets": [],
+              "feedback": "This is partial variation, so there is a fixed part as well: C = a + bn. Check your formula with the second pair: 70 × 300 = 21 000, not 12 000."
+            },
+            {
+              "tier": "weak",
+              "text": "C = a + bn but I do not know a and b. 100 copies is 7000 so 500 copies is 35 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "C = a + bn"
+                }
+              ],
+              "feedback": "Your formula is the right start. Put in both pairs of values: a + 100b = 7 000 and a + 300b = 12 000, then subtract to find b."
+            }
+          ]
+        },
+        {
+          "prompt": "The time T minutes taken to fill a water tank varies directly as the volume V litres of the tank and inversely as the number n of taps used. A 2 000-litre tank is filled in 40 minutes using 2 taps. (a) Find the formula connecting T, V and n. (b) How long will a 3 000-litre tank take with 4 taps? (c) How many taps are needed to fill a 6 000-litre tank in 30 minutes?",
+          "markScheme": [
+            "Writes T = kV/n",
+            "40 = k × 2 000 ÷ 2, so k = 1/25 (or 0.04)",
+            "(a) T = V/(25n), or T = 0.04V/n",
+            "(b) T = 3 000 ÷ (25 × 4) = 30 minutes",
+            "(c) 30 = 6 000 ÷ 25n, so n = 8 taps"
+          ],
+          "modelAnswer": "T = kV/n. When V = 2 000, n = 2 and T = 40: 40 = k × 2 000 ÷ 2 = 1 000k, so k = 0.04 = 1/25. (a) T = V/(25n). (b) T = 3 000 ÷ (25 × 4) = 3 000 ÷ 100 = 30 minutes. (c) 30 = 6 000 ÷ 25n, so 750n = 6 000 and n = 8 taps.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "T ∝ V/n so T = kV/n. 40 = k x 2000/2 = 1000k, k = 0.04. T = 0.04V/n. (b) T = 0.04 x 3000/4 = 120/4 = 30 minutes. (c) 30 = 0.04 x 6000/n = 240/n, n = 8 taps.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "T = kV/n"
+                },
+                {
+                  "point": 1,
+                  "quote": "40 = k x 2000/2 = 1000k, k = 0.04"
+                },
+                {
+                  "point": 2,
+                  "quote": "T = 0.04V/n"
+                },
+                {
+                  "point": 3,
+                  "quote": "T = 0.04 x 3000/4 = 120/4 = 30 minutes"
+                },
+                {
+                  "point": 4,
+                  "quote": "30 = 0.04 x 6000/n = 240/n, n = 8 taps"
+                }
+              ],
+              "feedback": "All five marks. Starting from T ∝ V/n shows you read both parts of the variation correctly."
+            },
+            {
+              "tier": "full",
+              "text": "T = kV/n. When V = 2000, n = 2, T = 40: k = 40 × 2 ÷ 2000 = 1/25. So T = V/25n. (b) 3000/(25 × 4) = 3000/100 = 30 min. (c) 30 = 6000/25n gives 750n = 6000, n = 8.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "T = kV/n"
+                },
+                {
+                  "point": 1,
+                  "quote": "k = 40 × 2 ÷ 2000 = 1/25"
+                },
+                {
+                  "point": 2,
+                  "quote": "So T = V/25n"
+                },
+                {
+                  "point": 3,
+                  "quote": "3000/(25 × 4) = 3000/100 = 30 min"
+                },
+                {
+                  "point": 4,
+                  "quote": "30 = 6000/25n gives 750n = 6000, n = 8"
+                }
+              ],
+              "feedback": "Full marks. Keeping k as the fraction 1/25 gave you tidy numbers all the way through."
+            },
+            {
+              "tier": "partial",
+              "text": "T = kV/n. 40 = 2000k/2, k = 0.04. T = 0.04V/n. (b) 0.04 × 3000 ÷ 4 = 30 minutes. (c) 30 = 240/n so n = 30 ÷ 240 = 0.125 taps.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "T = kV/n"
+                },
+                {
+                  "point": 1,
+                  "quote": "40 = 2000k/2, k = 0.04"
+                },
+                {
+                  "point": 2,
+                  "quote": "T = 0.04V/n"
+                },
+                {
+                  "point": 3,
+                  "quote": "0.04 × 3000 ÷ 4 = 30 minutes"
+                }
+              ],
+              "feedback": "Everything is right until the last line. From 30 = 240/n, multiply both sides by n: 30n = 240, so n = 8. A fraction of a tap should have told you to check."
+            },
+            {
+              "tier": "partial",
+              "text": "T = kV/n. 40 = k x 2000 ÷ 2 so k = 40 ÷ 1000 = 0.04. (b) T = 0.04 x 3000 x 4 = 480 minutes. (c) 30 = 0.04 x 6000 x n, n = 0.125.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "T = kV/n"
+                },
+                {
+                  "point": 1,
+                  "quote": "40 = k x 2000 ÷ 2 so k = 40 ÷ 1000 = 0.04"
+                }
+              ],
+              "feedback": "Your formula and k are right, but then you multiplied by n instead of dividing. More taps fill the tank faster, so n goes underneath: T = 0.04 × 3 000 ÷ 4 = 30 minutes."
+            },
+            {
+              "tier": "weak",
+              "text": "T = kVn. 40 = k x 2000 x 2, k = 0.01. (b) T = 0.01 x 3000 x 4 = 120 minutes. (c) 30 = 0.01 x 6000 x n, n = 0.5.",
+              "meets": [],
+              "feedback": "T varies inversely as n, so n goes in the denominator: T = kV/n. With your formula, more taps would take longer, which cannot be right."
+            },
+            {
+              "tier": "weak",
+              "text": "T = kV/n. More taps means less time. 3000 litres takes 60 minutes so with 4 taps it takes 15 minutes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "T = kV/n"
+                }
+              ],
+              "feedback": "Your formula is right, so use it. Put in V = 2 000, n = 2 and T = 40 to find k = 0.04, then substitute V = 3 000 and n = 4 to get 30 minutes."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Evaluating, expanding and factorising expressions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. evaluate algebraic expressions by substituting values, including negative numbers;\n2. expand products such as (a + b)(c + d) and (a + 3)(c − 4);\n3. factorise expressions of the form ax + ay, a(b + c) + d(b + c), a² − b² and ax² + bx + c;\n4. use the difference of two squares to simplify calculations such as 49² − 47².\n\n## Materials\n\nA rectangle of cardboard cut into four pieces to show (a + b)(c + d), a chart of the steps for factorising a quadratic.\n\n## Starter (5 minutes)\n\nAsk: 4 pens at ₦60 and 3 oranges at ₦20, what is the cost? Write C = 4x + 3y and show that x = 60, y = 20 gives C = 300. Then ask for the cost if pens become ₦75.\n\n## Development\n\n1. Substitution: put each value in brackets. If x = −3, 2x² = 2(−3)² = 18, not −18.\n2. Expansion: use the cardboard rectangle to show (a + b)(c + d) = ac + ad + bc + bd. Work (a + 3)(c − 4) = ac − 4a + 3c − 12 and (2x + 3)(x − 5) = 2x² − 7x − 15.\n3. Factorising by a common factor and by grouping: ax + ay − 2bx − 2by = a(x + y) − 2b(x + y) = (x + y)(a − 2b).\n4. Quadratics: for 6x² + x − 12, find two numbers whose product is 6 × (−12) = −72 and whose sum is 1: 9 and −8. Split and group: (2x + 3)(3x − 4).\n5. Difference of two squares: a² − b² = (a + b)(a − b). 49² − 47² = 96 × 2 = 192. Factorise completely: 2x² − 18 = 2(x + 3)(x − 3).\n\n## Class activity\n\nPairs write three quadratics by expanding brackets of their own choice, swap, and factorise each other's.\n\n## Evaluation\n\n1. Evaluate 3a² − b when a = −2 and b = 5.\n2. Expand (x − 4)(x + 7).\n3. Factorise 4y² − 25.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Working with brackets",
+        "content": "# Evaluating, expanding and factorising\n\n## Evaluating expressions\n\nTo **evaluate** an expression, replace each letter with its value, in brackets, and work it out in the right order.\n\n**Worked example 1.** If x = 60 and y = 20, C = 4x + 3y = 4(60) + 3(20) = 240 + 60 = 300 naira.\n\nTake care with negative values: if a = −3, then a² = (−3)² = 9.\n\n## Expanding brackets\n\nMultiply every term in the first bracket by every term in the second.\n\n(a + b)(c + d) = ac + ad + bc + bd\n\n**Worked example 2.** (2x + 3)(x − 5) = 2x² − 10x + 3x − 15 = 2x² − 7x − 15.\n\nWhen a bracket has a minus sign in front, every sign inside changes: −x(x − 1) = −x² + x.\n\n## Factorising\n\nFactorising is the reverse of expanding.\n\n- **Common factor:** ax + ay = a(x + y).\n- **Grouping:** a(b + c) + d(b + c) = (a + d)(b + c). So ax + ay − 2bx − 2by = a(x + y) − 2b(x + y) = (x + y)(a − 2b).\n- **Difference of two squares:** a² − b² = (a + b)(a − b). So 4y² − 25 = (2y + 5)(2y − 5).\n- **Quadratics** ax² + bx + c: find two numbers whose product is ac and whose sum is b, split the middle term, and group.\n\n**Worked example 3.** Factorise 6x² + x − 12.\n\nProduct ac = 6 × (−12) = −72; sum = 1. The numbers are 9 and −8.\n\n6x² + 9x − 8x − 12 = 3x(2x + 3) − 4(2x + 3) = (3x − 4)(2x + 3).\n\nAlways check by expanding your answer.\n\n## Using the difference of two squares\n\nIt makes some sums easy without a calculator.\n\n**Worked example 4.** 49² − 47² = (49 + 47)(49 − 47) = 96 × 2 = 192.\n\nAlways factorise **completely**: 2x² − 18 = 2(x² − 9) = 2(x + 3)(x − 3)."
+      },
+      "cards": [
+        {
+          "front": "Evaluate 4x + 3y when x = 60, y = 20",
+          "back": "4(60) + 3(20) = 300"
+        },
+        {
+          "front": "(a + b)(c + d)",
+          "back": "ac + ad + bc + bd"
+        },
+        {
+          "front": "(−3)²",
+          "back": "9. The square of a negative number is positive."
+        },
+        {
+          "front": "a² − b²",
+          "back": "(a + b)(a − b)"
+        },
+        {
+          "front": "Factorise by grouping: a(b + c) + d(b + c)",
+          "back": "(a + d)(b + c)"
+        },
+        {
+          "front": "Factorising ax² + bx + c",
+          "back": "Find two numbers with product ac and sum b; split the middle term and group."
+        },
+        {
+          "front": "49² − 47²",
+          "back": "(49 + 47)(49 − 47) = 192"
+        },
+        {
+          "front": "Factorise 2x² − 18 completely",
+          "back": "2(x + 3)(x − 3)"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "If x = 60 and y = 20, evaluate C = 4x + 3y.",
+          "options": ["260", "300", "80", "1 200"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Expand and simplify (2x + 3)(x − 5).",
+          "options": [
+            "2x² − 15",
+            "2x² + 7x − 15",
+            "2x² − 7x − 15",
+            "2x² − 13x − 15"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Factorise x² − 5x + 6.",
+          "options": [
+            "(x − 2)(x − 3)",
+            "(x + 2)(x + 3)",
+            "(x − 1)(x − 6)",
+            "(x + 2)(x − 3)"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Use the difference of two squares to evaluate 49² − 47².",
+          "options": ["4", "96", "2 304", "192"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Factorise 2x² − 18 completely.",
+          "options": [
+            "2(x − 3)²",
+            "2(x − 3)(x + 3)",
+            "(2x − 3)(x + 6)",
+            "2(x² − 9)"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Expand and simplify (3x − 2)(x + 4) − x(x − 1). (b) Find the value of your answer when x = −3.",
+          "markScheme": [
+            "(3x − 2)(x + 4) = 3x² + 12x − 2x − 8",
+            "−x(x − 1) = −x² + x",
+            "(a) 2x² + 11x − 8",
+            "Substitutes x = −3 into the expanded expression (or the original)",
+            "(b) −23"
+          ],
+          "modelAnswer": "(a) (3x − 2)(x + 4) = 3x² + 12x − 2x − 8 = 3x² + 10x − 8, and −x(x − 1) = −x² + x. So the expression is 3x² + 10x − 8 − x² + x = 2x² + 11x − 8. (b) When x = −3: 2(−3)² + 11(−3) − 8 = 18 − 33 − 8 = −23.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) (3x − 2)(x + 4) = 3x² + 12x − 2x − 8 = 3x² + 10x − 8. Then take away x(x − 1): 3x² + 10x − 8 − x² + x = 2x² + 11x − 8. (b) 2(−3)² + 11(−3) − 8 = 18 − 33 − 8 = −23.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(3x − 2)(x + 4) = 3x² + 12x − 2x − 8"
+                },
+                {
+                  "point": 1,
+                  "quote": "3x² + 10x − 8 − x² + x"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 2x² + 11x − 8"
+                },
+                {
+                  "point": 3,
+                  "quote": "2(−3)² + 11(−3) − 8"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 18 − 33 − 8 = −23"
+                }
+              ],
+              "feedback": "All five marks. Putting −3 in brackets before squaring is what kept your 18 positive."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 3x² + 12x − 2x − 8 − x² + x = 2x² + 11x − 8. (b) When x = −3: 2 × 9 − 33 − 8 = −23. Check in the question: (−11)(1) − (−3)(−4) = −11 − 12 = −23.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x² + 12x − 2x − 8"
+                },
+                {
+                  "point": 1,
+                  "quote": "− x² + x"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 2x² + 11x − 8"
+                },
+                {
+                  "point": 3,
+                  "quote": "When x = −3: 2 × 9 − 33 − 8"
+                },
+                {
+                  "point": 4,
+                  "quote": "−11 − 12 = −23"
+                }
+              ],
+              "feedback": "Full marks, and checking with the original expression is an excellent habit. It proves your expansion is right."
+            },
+            {
+              "tier": "partial",
+              "text": "3x² + 12x − 2x − 8 − x² − x = 2x² + 9x − 8. (b) 2(9) + 9(−3) − 8 = 18 − 27 − 8 = −17.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x² + 12x − 2x − 8"
+                },
+                {
+                  "point": 3,
+                  "quote": "2(9) + 9(−3) − 8"
+                }
+              ],
+              "feedback": "Your first bracket and your substitution are right. The minus in front of x(x − 1) changes both signs: −x² + x, not −x² − x. That gives 2x² + 11x − 8 and −23."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3x² + 12x − 2x − 8 = 3x² + 10x − 8, minus x² + x gives 2x² + 11x − 8. (b) 2(−3)² = −18, −18 − 33 − 8 = −59.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x² + 12x − 2x − 8"
+                },
+                {
+                  "point": 1,
+                  "quote": "minus x² + x"
+                },
+                {
+                  "point": 2,
+                  "quote": "gives 2x² + 11x − 8"
+                },
+                {
+                  "point": 3,
+                  "quote": "2(−3)²"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b), (−3)² = 9 because a negative times a negative is positive, so 2(−3)² = 18 and the answer is −23."
+            },
+            {
+              "tier": "weak",
+              "text": "(3x − 2)(x + 4) = 3x² − 8. x(x − 1) = x² − 1. Answer 2x² − 7. (b) 2(−3)² − 7 = 11.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "2(−3)² − 7"
+                }
+              ],
+              "feedback": "You substituted correctly, but the expansion multiplied only the first terms and the last terms. Every term must multiply every term: (3x − 2)(x + 4) = 3x² + 12x − 2x − 8."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 3x times x = 3x² and −2 times 4 = −8 so 3x² − 8 − x² − 1 = 2x² − 9. (b) I could not do it.",
+              "meets": [],
+              "feedback": "You missed the middle terms, 3x × 4 and −2 × x. Draw arrows from each term in the first bracket to each term in the second, then put x = −3 into your answer for (b)."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Factorise 6x² + x − 12. (b) Factorise ax + ay − 2bx − 2by. (c) Use the difference of two squares to evaluate 0.75² − 0.25².",
+          "markScheme": [
+            "Finds the pair 9 and −8 (product −72, sum 1), or equivalent working",
+            "(a) (2x + 3)(3x − 4)",
+            "Groups: a(x + y) − 2b(x + y)",
+            "(b) (x + y)(a − 2b)",
+            "(c) (0.75 + 0.25)(0.75 − 0.25) = 1 × 0.5 = 0.5"
+          ],
+          "modelAnswer": "(a) 6 × (−12) = −72, and 9 and −8 multiply to −72 and add to 1. So 6x² + 9x − 8x − 12 = 3x(2x + 3) − 4(2x + 3) = (2x + 3)(3x − 4). (b) ax + ay − 2bx − 2by = a(x + y) − 2b(x + y) = (x + y)(a − 2b). (c) 0.75² − 0.25² = (0.75 + 0.25)(0.75 − 0.25) = 1 × 0.5 = 0.5.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 6 x −12 = −72. 9 and −8 give −72 and add to 1. 6x² + 9x − 8x − 12 = 3x(2x + 3) − 4(2x + 3) = (3x − 4)(2x + 3). (b) a(x + y) − 2b(x + y) = (a − 2b)(x + y). (c) (0.75 + 0.25)(0.75 − 0.25) = 1 x 0.5 = 0.5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "9 and −8 give −72 and add to 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "= (3x − 4)(2x + 3)"
+                },
+                {
+                  "point": 2,
+                  "quote": "a(x + y) − 2b(x + y)"
+                },
+                {
+                  "point": 3,
+                  "quote": "= (a − 2b)(x + y)"
+                },
+                {
+                  "point": 4,
+                  "quote": "(0.75 + 0.25)(0.75 − 0.25) = 1 x 0.5 = 0.5"
+                }
+              ],
+              "feedback": "All five marks. Writing the product and sum before splitting the middle term made (a) easy to follow."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Product −72, sum +1, so the numbers are +9 and −8. 6x² − 8x + 9x − 12 = 2x(3x − 4) + 3(3x − 4), answer (3x − 4)(2x + 3). (b) Group in pairs: a(x + y) − 2b(x + y), answer (x + y)(a − 2b). (c) a² − b² = (a + b)(a − b) = (1)(0.5) = 0.5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Product −72, sum +1, so the numbers are +9 and −8"
+                },
+                {
+                  "point": 1,
+                  "quote": "answer (3x − 4)(2x + 3)"
+                },
+                {
+                  "point": 2,
+                  "quote": "Group in pairs: a(x + y) − 2b(x + y)"
+                },
+                {
+                  "point": 3,
+                  "quote": "answer (x + y)(a − 2b)"
+                },
+                {
+                  "point": 4,
+                  "quote": "a² − b² = (a + b)(a − b) = (1)(0.5) = 0.5"
+                }
+              ],
+              "feedback": "Full marks. Splitting the middle term in the other order still works, as you showed, and gives the same brackets."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) −72, 9 and −8. 3x(2x + 3) − 4(2x + 3) = (3x − 4)(2x + 3). (b) a(x + y) − 2b(x − y), I cannot go further. (c) (0.75 + 0.25)(0.75 − 0.25) = 0.5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "−72, 9 and −8"
+                },
+                {
+                  "point": 1,
+                  "quote": "= (3x − 4)(2x + 3)"
+                },
+                {
+                  "point": 4,
+                  "quote": "(0.75 + 0.25)(0.75 − 0.25) = 0.5"
+                }
+              ],
+              "feedback": "Parts (a) and (c) are right. In (b), taking −2b out of −2bx − 2by leaves (x + y), not (x − y). Then both groups share (x + y), so the answer is (x + y)(a − 2b)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) (2x − 3)(3x + 4). (b) a(x + y) − 2b(x + y) = (x + y)(a − 2b). (c) 0.75² = 0.5625 and 0.25² = 0.0625, 0.5625 − 0.0625 = 0.5.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "a(x + y) − 2b(x + y)"
+                },
+                {
+                  "point": 3,
+                  "quote": "= (x + y)(a − 2b)"
+                }
+              ],
+              "feedback": "Part (b) is right. Expand your answer to (a) to check it: it gives 6x² − x − 12, so the signs are the wrong way round. In (c) the question asks for the difference of two squares: (0.75 + 0.25)(0.75 − 0.25)."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 6x² + x − 12 = x(6x + 1) − 12. (b) a(x + y) − 2b(x + y). (c) 0.75² − 0.25² = 0.5² = 0.25.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "a(x + y) − 2b(x + y)"
+                }
+              ],
+              "feedback": "Your grouping in (b) is right; finish it by taking out (x + y). a² − b² is not (a − b)²: it is (a + b)(a − b), which gives 1 × 0.5 = 0.5."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) (6x − 3)(x + 4). (b) It cannot be factorised. (c) 0.5",
+              "meets": [],
+              "feedback": "Expand (6x − 3)(x + 4) and you get 6x² + 21x − 12, not the question. Find two numbers whose product is −72 and whose sum is 1, and show the working for (c) with (a + b)(a − b)."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

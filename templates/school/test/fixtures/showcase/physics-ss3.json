@@ -1,0 +1,2749 @@
+{
+  "subject": "Physics",
+  "yearGroup": "SS3",
+  "weeks": {
+    "1": {
+      "topic": "Electric field, capacitance, cells and Ohm's law",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate electric field intensity and electric potential of simple systems;\n2. state the factors affecting the capacitance of a parallel-plate capacitor and calculate capacitors in series and parallel;\n3. describe a simple cell, its defects, and name common primary and secondary cells;\n4. state and verify Ohm's law, and distinguish ohmic from non-ohmic conductors;\n5. find the lost volts and internal resistance of a battery in a circuit.\n\n## Materials\n\nA parallel-plate capacitor kit, zinc and copper plates in dilute acid, a lead-acid accumulator, a battery, an ammeter, a voltmeter, resistors, a rheostat.\n\n## Starter (5 minutes)\n\nAsk: a phone charger is rated 5 V, 2 A. Why does the phone need both numbers, not just one?\n\n## Development\n\n1. Define electric field intensity E = F/q and electric potential V = W/q. Work a short example.\n2. Define capacitance C = Q/V, unit farad (F). State that capacitance increases with plate area and permittivity and decreases with the gap between plates. Derive C total for capacitors in series and in parallel.\n3. Build the simple cell. Explain local action and polarisation as its defects. Describe the Daniell cell, the accumulator and the alkaline cell.\n4. Set up the circuit to verify Ohm's law: vary the p.d. across a resistor, record the current, and plot V against I to get a straight line through the origin.\n5. Introduce internal resistance r and lost volts: E = V + Ir, or E = IR + Ir. Work an example with a battery driving a bulb.\n6. Classify ohmic conductors (metals) and non-ohmic conductors (semiconductors, filament lamps at high current).\n\n## Class activity\n\nIn groups, students measure current for five different p.d. values across a resistor and plot the graph to find its resistance.\n\n## Evaluation\n\n1. A 10 μF capacitor is charged to 50 V. What charge does it store?\n2. Give one defect of the simple cell.\n\n## Assignment\n\nWorksheet questions, due Monday.",
+      "reading": {
+        "title": "Electric fields, capacitors, cells and Ohm's law",
+        "content": "# Electric field intensity and potential\n\nThe **electric field intensity** E at a point is the force per unit positive charge placed there: E = F/q, in N/C or V/m. The **electric potential** V at a point is the work done in bringing a unit positive charge from infinity to that point: V = W/q, in volts.\n\n## Capacitance\n\nA **capacitor** stores charge. Its capacitance is C = Q/V, where Q is the charge stored and V the potential difference across it. The unit is the **farad** (F); in practice, microfarads (μF) are common.\n\nFor a parallel-plate capacitor, capacitance increases with the area of the plates and the permittivity of the material between them, and decreases as the gap between the plates increases.\n\n- Capacitors in **parallel**: C = C₁ + C₂ + C₃ + ...\n- Capacitors in **series**: 1/C = 1/C₁ + 1/C₂ + 1/C₃ + ...\n\nEnergy stored, W = ½QV = ½CV². Capacitors are used to tune radio receivers and to smooth the output of a television's power supply.\n\n**Worked example.** A 47 μF capacitor in a radio is charged to 9 V. Q = CV = 47 × 10⁻⁶ × 9 = 4.23 × 10⁻⁴ C.\n\n## Cells\n\nA **simple cell** has a zinc rod and a copper rod in dilute sulphuric acid. It has two defects: **local action**, where impurities in the zinc set up tiny cells that waste the zinc even when the cell is not in use, and **polarisation**, where hydrogen bubbles collect on the copper plate and increase the internal resistance.\n\nThe **Daniell cell** uses copper sulphate round the copper plate to prevent polarisation. The **Leclanché cell** (the ordinary dry battery) is a primary cell; the **lead-acid accumulator** in a car and the **alkaline-cadmium cell** are secondary cells, which can be recharged.\n\nThe **e.m.f.** of a cell is the total energy it gives to each unit charge, measured in volts.\n\n## Ohm's law and internal resistance\n\n**Ohm's law**: the current through a metallic conductor is directly proportional to the potential difference across it, provided its temperature stays constant: V = IR. A graph of V against I for an ohmic conductor is a straight line through the origin.\n\nA real battery has **internal resistance**, r. As current flows, some e.m.f. is used up driving the current through the battery itself: E = IR + Ir, so the terminal voltage V = E − Ir is less than the e.m.f. The quantity Ir is the **lost volt**.\n\n**Worked example.** A battery of e.m.f. 9 V and internal resistance 1 Ω drives a current of 1.5 A through a resistor. Lost volt = Ir = 1.5 × 1 = 1.5 V. Terminal voltage = 9 − 1.5 = 7.5 V.\n\n**Ohmic conductors**, such as metals, obey Ohm's law. **Non-ohmic conductors**, such as semiconductor diodes and a filament lamp at high current, do not: their resistance changes with current."
+      },
+      "cards": [
+        {
+          "front": "Electric field intensity",
+          "back": "Force per unit positive charge at a point, E = F/q."
+        },
+        {
+          "front": "Electric potential",
+          "back": "Work done in bringing a unit positive charge from infinity to a point, V = W/q."
+        },
+        {
+          "front": "Capacitance",
+          "back": "C = Q/V, measured in farads (F)."
+        },
+        {
+          "front": "Capacitors in series",
+          "back": "1/C = 1/C₁ + 1/C₂ + 1/C₃, so the combined capacitance is less than the smallest one."
+        },
+        {
+          "front": "Local action",
+          "back": "Wasting of zinc in a simple cell caused by impurities setting up tiny local cells."
+        },
+        {
+          "front": "Polarisation",
+          "back": "Hydrogen bubbles collecting on the copper plate of a simple cell, raising its internal resistance."
+        },
+        {
+          "front": "Ohm's law",
+          "back": "V = IR, provided the temperature of the conductor stays constant."
+        },
+        {
+          "front": "Internal resistance and lost volt",
+          "back": "E = IR + Ir; the lost volt Ir is the e.m.f. used up inside the battery."
+        },
+        {
+          "front": "Ohmic conductor",
+          "back": "A conductor, such as a metal, that obeys Ohm's law."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A capacitor of 20 μF is charged to a potential difference of 12 V. What charge does it store?",
+          "options": ["2.4 × 10⁻⁴ C", "240 C", "1.67 × 10⁻⁶ C", "0.6 C"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Two capacitors of 4 μF and 6 μF are connected in series. What is their combined capacitance?",
+          "options": ["10 μF", "2.4 μF", "24 μF", "0.42 μF"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A simple cell loses its zinc plate gradually even when no current is being drawn from it. This is because of",
+          "options": [
+            "polarisation",
+            "the e.m.f. of the cell",
+            "internal resistance",
+            "local action"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A battery of e.m.f. 6 V and internal resistance 0.5 Ω drives a current of 2 A through a lamp. What is the terminal voltage of the battery?",
+          "options": ["6 V", "1 V", "5 V", "7 V"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a non-ohmic conductor?",
+          "options": [
+            "A copper wire",
+            "A nichrome resistance wire",
+            "A semiconductor diode",
+            "An iron rod"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State Ohm's law. Describe how you would verify it in the laboratory, and state what graph you would plot and what it shows.",
+          "markScheme": [
+            "States Ohm's law: current through a metallic conductor is directly proportional to the potential difference across it, at constant temperature",
+            "Describes the circuit: a battery, the conductor under test, an ammeter in series and a voltmeter across the conductor, with a rheostat to vary the current",
+            "States that readings of current and corresponding p.d. are taken for several settings of the rheostat",
+            "States that a graph of V against I is plotted, and that a straight line through the origin verifies the law"
+          ],
+          "modelAnswer": "Ohm's law states that the current flowing through a metallic conductor is directly proportional to the potential difference across it, provided the temperature of the conductor stays constant. To verify it, connect the conductor in series with a battery, an ammeter and a rheostat, and connect a voltmeter across the conductor. Adjust the rheostat to several settings and record the current and corresponding potential difference each time. Plot a graph of V against I. A straight line through the origin shows that V is proportional to I, verifying Ohm's law.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Ohm's law says the current through a conductor is directly proportional to the p.d. across it if the temperature is constant. To test it, connect a resistor in series with a battery, rheostat and ammeter, with a voltmeter connected across the resistor. Change the rheostat to get different currents and note the p.d. each time. Plot V against I. If it is a straight line through the origin, the law is verified.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the current through a conductor is directly proportional to the p.d. across it if the temperature is constant"
+                },
+                {
+                  "point": 1,
+                  "quote": "connect a resistor in series with a battery, rheostat and ammeter, with a voltmeter connected across the resistor"
+                },
+                {
+                  "point": 2,
+                  "quote": "Change the rheostat to get different currents and note the p.d. each time"
+                },
+                {
+                  "point": 3,
+                  "quote": "Plot V against I. If it is a straight line through the origin, the law is verified"
+                }
+              ],
+              "feedback": "A complete, clearly ordered answer with every part of the circuit named. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Ohm's law: the p.d. across a metallic conductor is proportional to the current flowing through it, so long as its temperature does not change. Circuit: battery, rheostat and ammeter in series with the test wire, voltmeter in parallel with the wire. Readings of I and V are taken for about six rheostat settings. A graph of V (y-axis) against I (x-axis) is drawn; a straight line passing through the origin confirms Ohm's law.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the p.d. across a metallic conductor is proportional to the current flowing through it, so long as its temperature does not change"
+                },
+                {
+                  "point": 1,
+                  "quote": "battery, rheostat and ammeter in series with the test wire, voltmeter in parallel with the wire"
+                },
+                {
+                  "point": 2,
+                  "quote": "Readings of I and V are taken for about six rheostat settings"
+                },
+                {
+                  "point": 3,
+                  "quote": "a straight line passing through the origin confirms Ohm's law"
+                }
+              ],
+              "feedback": "Precise and complete, with the voltmeter correctly placed in parallel. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Ohm's law states that V = IR. Connect a battery, ammeter and resistor and read the current and voltage. Plot a graph of V against I.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Connect a battery, ammeter and resistor"
+                },
+                {
+                  "point": 3,
+                  "quote": "Plot a graph of V against I"
+                }
+              ],
+              "feedback": "Your circuit and graph are on the right track. State the law in words (current proportional to p.d. at constant temperature), add the voltmeter and rheostat, and say what a straight line through the origin shows.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "The law says current is proportional to voltage. I would use an ammeter and voltmeter with a resistor, change the voltage and record the current each time, and plot the graph.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "current is proportional to voltage"
+                },
+                {
+                  "point": 2,
+                  "quote": "change the voltage and record the current each time"
+                }
+              ],
+              "feedback": "Your statement and method of taking readings are right. Say that temperature must stay constant, name the full circuit including the rheostat, and say what the straight-line graph through the origin shows."
+            },
+            {
+              "tier": "weak",
+              "text": "Ohm's law is V = I x R where V is voltage, I is current and R is resistance. You use a multimeter to measure them.",
+              "meets": [],
+              "feedback": "V = IR is the formula, but the law itself is about proportionality at constant temperature. Describe the actual experiment: battery, rheostat, ammeter and voltmeter, with several readings and a graph."
+            },
+            {
+              "tier": "weak",
+              "text": "Verify by connecting the circuit and reading the ammeter. If the ammeter reading is correct the law is true.",
+              "meets": [],
+              "feedback": "A single reading cannot verify a proportionality. Take several readings of current and p.d. by changing the rheostat, and plot V against I; a straight line through the origin verifies the law."
+            }
+          ]
+        },
+        {
+          "prompt": "A battery of e.m.f. 12 V and internal resistance 0.4 Ω is connected to a resistor of 5.6 Ω. Calculate the current flowing, the lost volt and the terminal voltage of the battery.",
+          "markScheme": [
+            "Correct substitution: I = E ÷ (R + r) = 12 ÷ (5.6 + 0.4)",
+            "I = 2 A, with unit",
+            "Lost volt = Ir = 2 × 0.4 = 0.8 V",
+            "Terminal voltage = E − Ir = 12 − 0.8 = 11.2 V"
+          ],
+          "modelAnswer": "I = E ÷ (R + r) = 12 ÷ (5.6 + 0.4) = 12 ÷ 6 = 2 A. Lost volt = Ir = 2 × 0.4 = 0.8 V. Terminal voltage = E − Ir = 12 − 0.8 = 11.2 V.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I = E/(R+r) = 12/(5.6+0.4) = 12/6 = 2 A\nLost volt = Ir = 2 x 0.4 = 0.8 V\nTerminal voltage = 12 - 0.8 = 11.2 V",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I = E/(R+r) = 12/(5.6+0.4)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 2 A"
+                },
+                {
+                  "point": 2,
+                  "quote": "Lost volt = Ir = 2 x 0.4 = 0.8 V"
+                },
+                {
+                  "point": 3,
+                  "quote": "Terminal voltage = 12 - 0.8 = 11.2 V"
+                }
+              ],
+              "feedback": "Every step correct, with units throughout. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Total resistance = 5.6 + 0.4 = 6 Ω. Current I = 12 ÷ 6 = 2 A. The lost volt is the current times the internal resistance: 2 × 0.4 = 0.8 V. So the terminal voltage, which is what the resistor actually gets, is 12 − 0.8 = 11.2 V.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Current I = 12 ÷ 6 = 2 A"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 A"
+                },
+                {
+                  "point": 2,
+                  "quote": "2 × 0.4 = 0.8 V"
+                },
+                {
+                  "point": 3,
+                  "quote": "the terminal voltage, which is what the resistor actually gets, is 12 − 0.8 = 11.2 V"
+                }
+              ],
+              "feedback": "Correct, and explaining what the terminal voltage means in practice shows good understanding. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "I = 12/(5.6 + 0.4) = 2. Lost volt = 2 x 0.4 = 0.8 V. Terminal voltage = 12 + 0.8 = 12.8 V",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I = 12/(5.6 + 0.4)"
+                },
+                {
+                  "point": 2,
+                  "quote": "Lost volt = 2 x 0.4 = 0.8 V"
+                }
+              ],
+              "feedback": "Your working for the current and the lost volt is right, but write the current with its unit, 2 A. The lost volt is used up inside the battery, so subtract it: 12 − 0.8 = 11.2 V."
+            },
+            {
+              "tier": "partial",
+              "text": "I = 12/(5.6+0.4) = 2 A. Lost volt = I x R = 2 x 5.6 = 11.2 V. Terminal voltage = 12 - 11.2 = 0.8 V",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I = 12/(5.6+0.4) = 2 A"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 A"
+                }
+              ],
+              "feedback": "Your current is right. The lost volt is the current times the internal resistance r, not R: Ir = 2 × 0.4 = 0.8 V. That makes the terminal voltage 12 − 0.8 = 11.2 V."
+            },
+            {
+              "tier": "weak",
+              "text": "E = V so the terminal voltage is 12 V. The lost volt is 0 because there is no resistance inside a battery.",
+              "meets": [],
+              "feedback": "Every real battery has some internal resistance, which uses up part of the e.m.f. as current flows. Find the current first using I = E ÷ (R + r), then the lost volt Ir."
+            },
+            {
+              "tier": "weak",
+              "text": "I = E - r = 12 - 0.4 = 11.6 A. Lost volt = 11.6 x 5.6 = 64.96 V.",
+              "meets": [],
+              "feedback": "Current is not found by subtracting the resistance from the e.m.f. Use I = E ÷ (R + r), where R and r are added together in the denominator."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Electric energy and power, resistivity, and measuring instruments",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate electrical energy and power and relate them to the heating effect of a current;\n2. explain the use of a shunt and a multiplier to convert a galvanometer;\n3. define resistivity and state the factors affecting the resistance of a wire;\n4. describe the use of the ammeter, voltmeter and the Wheatstone bridge to measure resistance;\n5. describe the properties of soft iron and steel as magnetic materials.\n\n## Materials\n\nAn electric iron, a moving-coil galvanometer, a metre bridge, resistance wires, a micrometer screw gauge, a battery, an ammeter, a voltmeter, soft iron and steel bars, a magnet.\n\n## Starter (5 minutes)\n\nAsk: why does a NEPA (now disco) bill show the number of units (kWh) used, rather than only the current?\n\n## Development\n\n1. Define electrical energy W = IVt = I²Rt and power P = IV = I²R = V²/R. Link to the heating effect in an iron and the kWh as a commercial unit.\n2. Explain that a galvanometer needs a shunt (low resistance in parallel) to become an ammeter, and a multiplier (high resistance in series) to become a voltmeter.\n3. Define resistivity ρ = RA/l. List the factors affecting resistance: length, cross-sectional area, material and temperature.\n4. Set up the metre bridge to find an unknown resistance by comparison with a known one, using the balance point.\n5. Magnetise a soft iron bar and a steel bar and compare how well each keeps its magnetism.\n\n## Class activity\n\nGroups use the metre bridge to find the resistance of an unknown wire and compare it with a value calculated from ρ = RA/l.\n\n## Evaluation\n\n1. A 100 W bulb is used for 8 hours. How many kWh of energy does it use?\n2. Why is soft iron used for an electromagnet core and steel for a permanent magnet?\n\n## Assignment\n\nComplete the practical write-up, due Wednesday.",
+      "reading": {
+        "title": "Electrical energy, resistivity and measuring resistance",
+        "content": "# Electrical energy and power\n\nWhen a current I flows through a p.d. V for a time t, the electrical energy converted is W = IVt. Using V = IR, this can also be written W = I²Rt. The **power** is the energy converted per second: P = IV = I²R = V²/R, measured in watts.\n\nThe heating effect of a current (I²R) is used in an electric iron, a kettle and a bulb's filament. It is also wasted as heat in transmission cables, which is why power companies use high voltages to reduce the current and the loss.\n\nElectricity bills are based on the **kilowatt-hour (kWh)**, the energy used by a 1 kW appliance running for 1 hour.\n\n**Worked example.** A 1.5 kW electric iron is used for 2 hours. Energy = 1.5 kW × 2 h = 3.0 kWh.\n\n## Shunt and multiplier\n\nA moving-coil **galvanometer** detects small currents. To use it as an **ammeter**, a low-resistance **shunt** is connected in parallel with it, so most of the current bypasses the delicate coil. To use it as a **voltmeter**, a high-resistance **multiplier** is connected in series with it, so only a small current flows through the coil even at a large p.d.\n\n## Resistivity\n\nThe resistance of a wire depends on its length l, cross-sectional area A, the material it is made of, and its temperature. The **resistivity** ρ of the material is defined by\n\nR = ρl/A, so ρ = RA/l,\n\nmeasured in ohm-metres (Ω m). A longer wire has more resistance; a thicker wire has less. Resistance generally increases with temperature for metals.\n\n**Worked example.** A copper wire 5.0 m long has a cross-sectional area of 2 × 10⁻⁶ m² and a resistance of 0.0425 Ω. ρ = RA/l = (0.0425 × 2 × 10⁻⁶) ÷ 5.0 = 1.7 × 10⁻⁸ Ω m.\n\n## Measuring current, p.d. and resistance\n\nAn **ammeter** (low resistance) is always connected in series; a **voltmeter** (high resistance) is always connected in parallel. The **Wheatstone bridge** (and its simplified laboratory form, the **metre bridge**) finds an unknown resistance by balancing it against a known resistance, so that no current flows through a galvanometer connected between the two arms.\n\n## Soft iron and steel\n\n**Soft iron** magnetises and demagnetises easily, so it is used for the cores of electromagnets, which must switch their magnetism on and off. **Steel** is harder to magnetise but keeps its magnetism once magnetised, so it is used for permanent magnets, such as compass needles."
+      },
+      "cards": [
+        {
+          "front": "Electrical power",
+          "back": "P = IV = I²R = V²/R."
+        },
+        {
+          "front": "Kilowatt-hour (kWh)",
+          "back": "The energy used by a 1 kW appliance running for 1 hour; the unit of commercial electricity billing."
+        },
+        {
+          "front": "Shunt",
+          "back": "A low resistance connected in parallel with a galvanometer to convert it into an ammeter."
+        },
+        {
+          "front": "Multiplier",
+          "back": "A high resistance connected in series with a galvanometer to convert it into a voltmeter."
+        },
+        {
+          "front": "Resistivity",
+          "back": "ρ = RA/l, a property of the material, measured in Ω m."
+        },
+        {
+          "front": "Factors affecting resistance",
+          "back": "Length, cross-sectional area, material (resistivity) and temperature."
+        },
+        {
+          "front": "How an ammeter is connected",
+          "back": "In series, so it has a low resistance."
+        },
+        {
+          "front": "How a voltmeter is connected",
+          "back": "In parallel, so it has a high resistance."
+        },
+        {
+          "front": "Soft iron vs steel",
+          "back": "Soft iron magnetises and demagnetises easily (electromagnet cores); steel keeps its magnetism (permanent magnets)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A 60 W bulb is left on for 5 hours. How much energy, in kWh, does it use?",
+          "options": ["0.3 kWh", "300 kWh", "12 kWh", "3 kWh"],
+          "answer": "A"
+        },
+        {
+          "prompt": "To convert a moving-coil galvanometer into an ammeter, you connect",
+          "options": [
+            "a high resistance in series with it",
+            "a high resistance in parallel with it",
+            "a low resistance in series with it",
+            "a low resistance in parallel with it"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A nichrome wire 2.0 m long has a cross-sectional area of 5 × 10⁻⁷ m² and a resistance of 11 Ω. What is the resistivity of nichrome?",
+          "options": [
+            "2.75 × 10⁻⁶ Ω m",
+            "4.4 Ω m",
+            "1.1 × 10⁻⁵ Ω m",
+            "27.5 Ω m"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "An electromagnet in a scrapyard crane must lose its magnetism as soon as the current is switched off. What material should its core be made of?",
+          "options": ["Steel", "Soft iron", "Copper", "Aluminium"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A voltmeter is always connected",
+          "options": [
+            "in series, because it has low resistance",
+            "in parallel, because it has high resistance",
+            "in series, because it has high resistance",
+            "in parallel, because it has low resistance"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain why a galvanometer needs a shunt to be used as an ammeter and a multiplier to be used as a voltmeter. State where each is connected.",
+          "markScheme": [
+            "A galvanometer coil is delicate and can carry only a very small current, so a shunt (low resistance) is connected in parallel so most of the current bypasses the coil",
+            "States that the shunt is connected in parallel with the galvanometer",
+            "To use it as a voltmeter, a high resistance (multiplier) is connected in series so that only a small, safe current flows through the coil even at a large p.d.",
+            "States that the multiplier is connected in series with the galvanometer"
+          ],
+          "modelAnswer": "A galvanometer's coil is delicate and would be damaged by a large current, so to measure a large current as an ammeter, a low-resistance shunt is connected in parallel with it. Most of the current flows through the shunt and only a small, safe fraction through the coil. To use it as a voltmeter for a large p.d., a high-resistance multiplier is connected in series with it, so that only a small current flows through the coil even when the p.d. is large.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A galvanometer coil can only take a small current before it is damaged. A shunt is a low resistance connected in parallel with the galvanometer so most of the current passes through the shunt instead of the coil, letting it read larger currents as an ammeter. A multiplier is a high resistance connected in series with the galvanometer so that only a small current flows through the coil, letting it read large p.d.s as a voltmeter.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A galvanometer coil can only take a small current before it is damaged"
+                },
+                {
+                  "point": 1,
+                  "quote": "A shunt is a low resistance connected in parallel with the galvanometer"
+                },
+                {
+                  "point": 2,
+                  "quote": "a high resistance connected in series with the galvanometer so that only a small current flows through the coil"
+                },
+                {
+                  "point": 3,
+                  "quote": "A multiplier is a high resistance connected in series with the galvanometer"
+                }
+              ],
+              "feedback": "All four points, clearly explained with the reasoning for each. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The coil of the galvanometer is wound with fine wire and would burn out if a large current passed through it directly. Connecting a low-resistance shunt in parallel diverts most of the current away from the coil, so the instrument can be used as an ammeter for bigger currents. For a voltmeter, a high-resistance multiplier in series limits the current through the coil to a safe small value even though the p.d. across the whole combination is large.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "would burn out if a large current passed through it directly"
+                },
+                {
+                  "point": 1,
+                  "quote": "Connecting a low-resistance shunt in parallel diverts most of the current away from the coil"
+                },
+                {
+                  "point": 2,
+                  "quote": "a high-resistance multiplier in series limits the current through the coil to a safe small value"
+                },
+                {
+                  "point": 3,
+                  "quote": "a high-resistance multiplier in series"
+                }
+              ],
+              "feedback": "Thorough and correct, with a clear reason for each conversion. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "A shunt is used to make the galvanometer an ammeter and it is connected in parallel. A multiplier is used to make it a voltmeter and it is connected in series.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A shunt is used to make the galvanometer an ammeter and it is connected in parallel"
+                },
+                {
+                  "point": 3,
+                  "quote": "A multiplier is used to make it a voltmeter and it is connected in series"
+                }
+              ],
+              "feedback": "Your connections are both right. Explain why each is needed: the shunt protects the coil from a large current, and the multiplier limits the current through the coil for a large p.d.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "The galvanometer coil is too sensitive for big currents, so you add a shunt resistance so it can measure as an ammeter. A multiplier makes it able to measure voltage, connected in parallel with the coil.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The galvanometer coil is too sensitive for big currents, so you add a shunt resistance so it can measure as an ammeter"
+                }
+              ],
+              "feedback": "Your reason for the shunt is right, but you did not say it goes in parallel. The multiplier goes in series, not parallel, with the coil."
+            },
+            {
+              "tier": "weak",
+              "text": "A shunt and a multiplier are both resistors added to a galvanometer to make it stronger so it does not break.",
+              "meets": [],
+              "feedback": "Say exactly what each does: a shunt, in parallel, carries most of the current so the galvanometer becomes an ammeter; a multiplier, in series, limits the current so it becomes a voltmeter."
+            },
+            {
+              "tier": "weak",
+              "text": "A shunt is connected in series to reduce the voltage and a multiplier is connected in parallel to increase the current.",
+              "meets": [],
+              "feedback": "Both connections are swapped round. A shunt is in parallel (for an ammeter) and a multiplier is in series (for a voltmeter). Read the reading again and check each one."
+            }
+          ]
+        },
+        {
+          "prompt": "A nichrome resistance wire has a length of 3.0 m, a cross-sectional area of 4.0 × 10⁻⁷ m² and a resistivity of 1.1 × 10⁻⁶ Ω m. Calculate its resistance. A current of 0.5 A flows through it; calculate the power dissipated in the wire.",
+          "markScheme": [
+            "Correct substitution: R = ρl/A = (1.1 × 10⁻⁶ × 3.0) ÷ (4.0 × 10⁻⁷)",
+            "R = 8.25 Ω, with unit",
+            "Correct substitution for power: P = I²R = 0.5² × 8.25",
+            "P = 2.06 W, with unit"
+          ],
+          "modelAnswer": "R = ρl/A = (1.1 × 10⁻⁶ × 3.0) ÷ (4.0 × 10⁻⁷) = 3.3 × 10⁻⁶ ÷ 4.0 × 10⁻⁷ = 8.25 Ω. Power = I²R = 0.5² × 8.25 = 0.25 × 8.25 = 2.06 W.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "R = ρl/A = (1.1 x 10^-6 x 3.0)/(4.0 x 10^-7) = 8.25 Ω\nP = I²R = 0.5² x 8.25 = 0.25 x 8.25 = 2.06 W",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "R = ρl/A = (1.1 x 10^-6 x 3.0)/(4.0 x 10^-7)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 8.25 Ω"
+                },
+                {
+                  "point": 2,
+                  "quote": "P = I²R = 0.5² x 8.25"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 0.25 x 8.25 = 2.06 W"
+                }
+              ],
+              "feedback": "Both parts correct and clearly set out. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Resistance = resistivity x length / area = (1.1 x 10⁻⁶ x 3.0) ÷ (4.0 x 10⁻⁷) = 3.3 x 10⁻⁶ ÷ 4.0 x 10⁻⁷ = 8.25 Ω. Power = I² x R = (0.5)² x 8.25 = 2.0625 W, about 2.06 W.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(1.1 x 10⁻⁶ x 3.0) ÷ (4.0 x 10⁻⁷)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 8.25 Ω"
+                },
+                {
+                  "point": 2,
+                  "quote": "Power = I² x R = (0.5)² x 8.25"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 2.0625 W, about 2.06 W"
+                }
+              ],
+              "feedback": "Correct throughout, with the calculation shown clearly. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "R = ρA/l = (1.1 x 10^-6 x 4.0 x 10^-7)/3.0 = 1.47 x 10^-13 Ω. P = I²R = 0.5² x 1.47 x 10^-13 = 3.7 x 10^-14 W",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "P = I²R = 0.5²"
+                }
+              ],
+              "feedback": "Your power method, I²R, is right. The resistance formula is R = ρl/A, length over area, not area over length: (1.1 × 10⁻⁶ × 3.0) ÷ (4.0 × 10⁻⁷) = 8.25 Ω. Then the power is 2.06 W.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "R = ρl/A = (1.1 x 10^-6 x 3.0)/(4.0 x 10^-7) = 8.25 Ω. P = IR = 0.5 x 8.25 = 4.125 W",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "R = ρl/A = (1.1 x 10^-6 x 3.0)/(4.0 x 10^-7)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 8.25 Ω"
+                }
+              ],
+              "feedback": "Your resistance is correct. Power dissipated in a resistor is I²R, not IR; square the current first: 0.5² × 8.25 = 2.06 W."
+            },
+            {
+              "tier": "weak",
+              "text": "R = ρ x l x A = 1.1 x 10^-6 x 3.0 x 4.0 x 10^-7 = very small number. P = V x I",
+              "meets": [],
+              "feedback": "Resistivity, length and area are not simply multiplied together; divide ρl by A. Then use the resistance you find with P = I²R, since you are given the current, not the voltage."
+            },
+            {
+              "tier": "weak",
+              "text": "Power = I x V = 0.5 x 3 = 1.5 W, using the length as the voltage.",
+              "meets": [],
+              "feedback": "The length of the wire, 3.0 m, is not a voltage. First find the resistance from R = ρl/A, then find the power using P = I²R with the given current."
+            }
+          ]
+        }
+      ],
+      "practical": {
+        "title": "Finding the resistance of a wire with a metre bridge",
+        "instructions": "You are to find the resistance of an unknown wire using a metre bridge, by balancing it against a known resistance, and then calculate the resistivity of the wire's material.",
+        "steps": [
+          {
+            "text": "Set up the metre bridge. Connect the unknown wire in one gap and a resistance box in the other gap, with a battery, key and galvanometer completing the circuit as shown on the board."
+          },
+          {
+            "text": "Set the resistance box to a small value, close the key briefly, and tap the jockey along the bridge wire to find the balance point where the galvanometer shows no deflection.",
+            "note": "Never leave the key closed for long; it drains the battery and heats the wires."
+          },
+          {
+            "text": "Read the balance length l₁ from one end and l₂ = 100 − l₁ from the other end."
+          },
+          {
+            "text": "Use the metre bridge equation: unknown resistance ÷ known resistance = l₁ ÷ l₂, and calculate the unknown resistance."
+          },
+          {
+            "text": "Repeat with two more values of the resistance box and find the average unknown resistance."
+          },
+          {
+            "text": "Measure the length of the wire with a metre rule and its diameter with a micrometer screw gauge at three places, and calculate its cross-sectional area."
+          },
+          {
+            "text": "Calculate the resistivity, ρ = RA/l, and state two precautions you took."
+          }
+        ],
+        "rubric": [
+          {
+            "description": "Method and set-up: correct metre bridge circuit, balance point found correctly for at least three resistance box settings",
+            "maxPoints": 4
+          },
+          {
+            "description": "Results and calculations: resistance found correctly each time, length and diameter measured, resistivity calculated correctly",
+            "maxPoints": 4
+          },
+          {
+            "description": "Conclusion and precautions: average resistivity stated and compared with a known value, two precautions given",
+            "maxPoints": 2
+          }
+        ],
+        "writeUps": [
+          {
+            "tier": "full",
+            "text": "Method: the unknown wire was put in the left gap of the metre bridge and a resistance box in the right gap, with a battery, key and galvanometer in the circuit. For resistance box settings of 2, 3 and 4 Ω, the balance lengths l1 were 59.8, 50.2 and 43.0 cm.\nResults: X = R x l1/l2 = 2 x 59.8/40.2 = 2.98 Ω; 3 x 50.2/49.8 = 3.02 Ω; 4 x 43.0/57.0 = 3.02 Ω. Average X = 3.01 Ω.\nWire length = 0.54 m. Diameter = 0.50 mm (mean of three readings), so area = π(0.25 x 10⁻³)² = 1.96 x 10⁻⁷ m².\nResistivity = XA/l = 3.01 x 1.96 x 10⁻⁷ / 0.54 = 1.09 x 10⁻⁶ Ω m.\nPrecautions: the key was closed only briefly for each reading, and the jockey was tapped, not dragged, along the wire.",
+            "scores": [4, 4, 1],
+            "feedback": "Careful readings that agree closely, and correct working throughout. Compare your resistivity with a table value to say what the wire is made of; it matches nichrome."
+          },
+          {
+            "tier": "full",
+            "text": "The unknown wire and a resistance box were connected in the two gaps of the bridge, with a battery and key in series and a galvanometer joined to the jockey.\nBox 1 Ω: l1 = 75.1 cm. Box 2 Ω: l1 = 60.1 cm. Box 5 Ω: l1 = 37.4 cm.\nX = R x l1/(100 - l1): 1 x 75.1/24.9 = 3.02 Ω; 2 x 60.1/39.9 = 3.01 Ω; 5 x 37.4/62.6 = 2.99 Ω. Mean X = 3.01 Ω.\nLength 0.54 m, diameter 0.50 mm, area 1.96 x 10⁻⁷ m². ρ = 3.01 x 1.96 x 10⁻⁷ / 0.54 = 1.09 x 10⁻⁶ Ω m, close to the value for nichrome, 1.1 x 10⁻⁶ Ω m.\nPrecautions: I checked the micrometer for zero error first, and read the bridge scale directly above the jockey to avoid parallax.",
+            "scores": [4, 4, 2],
+            "feedback": "Excellent. Spreading your box values so the balance points fall across the wire, and naming nichrome from the result, show real care."
+          },
+          {
+            "tier": "partial",
+            "text": "We connected the wire and resistance box to the metre bridge and found the balance point for 2 Ω at 38 cm. R = 2 x 38/62 = 1.23 Ω. The wire was 0.5 m long and the area was found with a micrometer. Resistivity = RA/l.",
+            "scores": [2, 2, 1],
+            "feedback": "Your method and one reading are correct. Take at least two more resistance box settings to get a reliable average, and show the area and final resistivity number, not just the formula."
+          },
+          {
+            "tier": "partial",
+            "text": "Method: metre bridge with unknown wire and resistance box. Balance length for 4 Ω was 50 cm so R = 4 Ω because the bridge was balanced in the middle. Area was measured with a ruler as 1 mm. Resistivity = R x l / A = 4 x 0.5 / 0.001 = 2000.",
+            "scores": [2, 1, 1],
+            "feedback": "A balance at exactly 50 cm does mean the two resistances are equal, so R = 4 Ω here is right by coincidence, but you should still show the formula R = known × l1/l2. Use a micrometer screw gauge for the diameter, not a ruler, since wires are far thinner than a millimetre."
+          },
+          {
+            "tier": "weak",
+            "text": "We used the metre bridge to find the resistance of the wire. We put the wire and the resistance box in the gaps, moved the jockey and found the balance point. The resistance of the wire is 5 Ω. The resistivity is high because nichrome is a good conductor.",
+            "scores": [1, 0, 0],
+            "feedback": "Show your resistance box value and the balance length, and the formula R = known resistance × l1/l2, so the 5 Ω can be checked. Nichrome actually has a high resistivity for a metal, which is why it is used in heating elements, not because it is a good conductor."
+          },
+          {
+            "tier": "weak",
+            "text": "Aim: to find the resistivity of a wire. Apparatus: metre bridge, wire, resistance box, battery, key, galvanometer, jockey. We connected the circuit as the teacher showed us and got a reading on the bridge. The resistivity of the wire is 1.1 x 10^-6 Ω m from the textbook.",
+            "scores": [1, 0, 0],
+            "feedback": "No balance length, resistance box value or calculation is shown, and the resistivity must come from your own readings, not a textbook figure. Record the balance length for at least three resistance box settings and work through R = ρl/A."
+          }
+        ]
+      }
+    },
+    "3": {
+      "topic": "Magnetic fields, electromagnets and moving charges",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. magnetise and demagnetise a bar and compare iron and steel as magnetic materials;\n2. plot the magnetic field around a magnet, a wire and a solenoid, and locate a neutral point;\n3. describe the force on a current-carrying conductor in a magnetic field and its use in a motor and galvanometer;\n4. explain the use of electromagnets and the earth's magnetic field, including angles of dip and declination;\n5. calculate the force on a moving charged particle using F = qvB sin θ.\n\n## Materials\n\nA bar magnet, a soft iron nail, a steel needle, iron filings, plotting compasses, a battery, a switch, a solenoid, an electric bell.\n\n## Starter (5 minutes)\n\nAsk: why does a compass needle always settle pointing roughly north-south, even far from any magnet?\n\n## Development\n\n1. Magnetise the steel needle and the iron nail by stroking; compare how well each keeps its magnetism.\n2. Sprinkle filings round a bar magnet and around a current-carrying wire; use compasses to trace the field and find any neutral point where two fields cancel.\n3. Pass a current through a wire between the poles of a horseshoe magnet and show the force (Fleming's left-hand rule). Link this to the electric motor and the moving-coil galvanometer.\n4. Wind a coil round the iron nail and pick up pins with it; open the switch and the pins drop. Show the electric bell.\n5. Explain the earth's magnetic field, the angle of dip and the angle of declination, and the mariner's compass.\n6. State F = qvB sin θ for a charge moving in a magnetic field and work an example.\n\n## Class activity\n\nIn pairs, students plot the magnetic field pattern of two bar magnets placed with like poles facing, locating the neutral point.\n\n## Evaluation\n\n1. Why does an electric bell need soft iron, not steel, for its core?\n2. When is the force on a moving charge in a magnetic field zero?\n\n## Assignment\n\nWorksheet questions, due Tuesday.",
+      "reading": {
+        "title": "Magnets, magnetic fields and the forces they exert",
+        "content": "# Magnetisation\n\nA magnet can be made by stroking a piece of iron or steel with another magnet, or by placing it inside a current-carrying solenoid. **Steel** is hard to magnetise but, once magnetised, keeps its magnetism well, so it makes good permanent magnets, such as compass needles. **Soft iron** magnetises very easily but loses its magnetism as soon as the magnetising influence is removed, so it is used where magnetism must be switched on and off, as in an electromagnet.\n\n## Magnetic fields\n\nA **magnetic field** is the region around a magnet, a current-carrying wire or a solenoid where a magnetic force can be felt. **Magnetic flux** is the total number of field lines; **magnetic flux density**, B, is the flux per unit area, measured in **tesla** (T). Field lines run from the north pole to the south pole outside the magnet, and they never cross. Where two fields exactly cancel, there is a **neutral point**.\n\n## Force on a current-carrying conductor\n\nA wire carrying a current in a magnetic field experiences a force (unless the current is parallel to the field). Its direction is given by **Fleming's left-hand rule**: the First finger points along the Field, the seCond finger along the Current, and the thuMb gives the direction of the Motion (force). Two parallel wires carrying currents in the same direction attract; in opposite directions they repel.\n\nThis force drives the **electric motor**, which turns electrical energy into mechanical energy, and deflects the coil of a **moving-coil galvanometer**.\n\n## Electromagnets\n\nAn **electromagnet** is a coil of wire wound round a soft iron core; it is magnetic only while current flows. Electromagnets are used in electric bells, telephone earpieces, cranes for lifting scrap metal, and relays.\n\n## The earth's magnetic field\n\nThe earth behaves like a huge magnet, which is why a compass needle settles along a roughly north-south line. The **angle of declination** is the angle between the geographic north and the direction a compass points (magnetic north). The **angle of dip** is the angle the earth's field makes with the horizontal; it is zero at the magnetic equator and 90° at the magnetic poles. A **mariner's compass** uses this field for navigation at sea.\n\n## Force on a moving charge\n\nA charge q moving with velocity v at an angle θ to a magnetic field B experiences a force\n\nF = qvB sin θ.\n\nThe force is greatest when the charge moves at right angles to the field (θ = 90°) and zero when it moves along the field (θ = 0°).\n\n**Worked example.** An electron (charge 1.6 × 10⁻¹⁹ C) moves at 4 × 10⁶ m/s at right angles to a field of 0.25 T. F = qvB sin 90° = 1.6 × 10⁻¹⁹ × 4 × 10⁶ × 0.25 × 1 = 1.6 × 10⁻¹³ N."
+      },
+      "cards": [
+        {
+          "front": "Why steel is used for permanent magnets",
+          "back": "It is hard to magnetise but keeps its magnetism well once magnetised."
+        },
+        {
+          "front": "Why soft iron is used for electromagnets",
+          "back": "It magnetises easily but loses its magnetism as soon as the current stops."
+        },
+        {
+          "front": "Magnetic flux density (B)",
+          "back": "The magnetic flux per unit area, measured in tesla (T)."
+        },
+        {
+          "front": "Neutral point",
+          "back": "A point where two magnetic fields exactly cancel, so there is no resultant field."
+        },
+        {
+          "front": "Fleming's left-hand rule",
+          "back": "First finger: Field. seCond finger: Current. thuMb: Motion (force)."
+        },
+        {
+          "front": "Electromagnet",
+          "back": "A coil wound round a soft iron core, magnetic only while current flows."
+        },
+        {
+          "front": "Angle of declination",
+          "back": "The angle between geographic north and the direction a compass points."
+        },
+        {
+          "front": "Angle of dip",
+          "back": "The angle the earth's magnetic field makes with the horizontal."
+        },
+        {
+          "front": "Force on a moving charge",
+          "back": "F = qvB sin θ, where θ is the angle between v and B."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Why is soft iron, rather than steel, used for the core of an electric bell's electromagnet?",
+          "options": [
+            "Soft iron is cheaper than steel",
+            "Soft iron is a better conductor of electricity than steel",
+            "Soft iron magnetises and demagnetises easily, so the hammer is released as soon as the current stops",
+            "Steel would melt from the heat of the coil"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A charge of 2 × 10⁻⁶ C moves at 3 × 10⁵ m/s at right angles to a magnetic field of flux density 0.5 T. What force acts on the charge?",
+          "options": ["0.3 N", "3.0 × 10⁻⁶ N", "3 × 10⁵ N", "1.5 × 10⁻⁶ N"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Two long straight wires carry current in the same direction and are placed close together. What happens between them?",
+          "options": [
+            "They attract each other",
+            "They repel each other",
+            "No force acts between them",
+            "They become permanently magnetised"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The angle between the direction a compass needle points and the true geographic north is called the angle of",
+          "options": ["dip", "deviation", "inclination", "declination"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A current-carrying wire lies parallel to a magnetic field. What force acts on the wire because of the field?",
+          "options": [
+            "A maximum force",
+            "Zero force",
+            "A force at 90° to the wire",
+            "A force equal to qvB"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe how you would magnetise a steel bar using a bar magnet, and how you would test that it has become a magnet. State one way in which soft iron behaves differently from steel when both are magnetised and then the magnetising influence is removed.",
+          "markScheme": [
+            "Describes the stroking method: one pole of the magnet is stroked repeatedly along the steel bar in one direction, lifting it clear after each stroke",
+            "States that this is repeated several times (always starting from the same end and lifting away each time)",
+            "States a valid test: bring a known pole of another magnet near each end of the bar; like poles repel, unlike poles attract, or the bar attracts iron filings/pins",
+            "States that steel keeps (retains) its magnetism after the magnet is removed, while soft iron loses its magnetism almost immediately"
+          ],
+          "modelAnswer": "Stroke one pole of the bar magnet firmly along the length of the steel bar from one end to the other, then lift the magnet well clear before bringing it back to the starting end for the next stroke; repeat this several times in the same direction. To test whether the bar is now a magnet, bring the known pole of another magnet near each end: if a pole repels one end and attracts the other, the bar is magnetised, or it should now attract pins or iron filings. If this were done to a soft iron bar instead, the iron would lose its magnetism almost as soon as the magnet is taken away, while the steel bar keeps its magnetism.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Hold the steel bar on the table and stroke one pole of the magnet from one end to the other along its length, always in the same direction, then lift the magnet away from the bar before bringing it back to start the next stroke. Repeat this ten or more times. To test it, bring a compass or a known pole near each end; one end repels and the other attracts, showing it is now a magnet, or it will pick up pins. If the bar had been soft iron instead, it would lose its magnetism as soon as the magnet was removed, but steel keeps it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "stroke one pole of the magnet from one end to the other along its length, always in the same direction"
+                },
+                {
+                  "point": 1,
+                  "quote": "lift the magnet away from the bar before bringing it back to start the next stroke"
+                },
+                {
+                  "point": 2,
+                  "quote": "bring a compass or a known pole near each end; one end repels and the other attracts, showing it is now a magnet, or it will pick up pins"
+                },
+                {
+                  "point": 3,
+                  "quote": "it would lose its magnetism as soon as the magnet was removed, but steel keeps it"
+                }
+              ],
+              "feedback": "Every step and both tests are described well, and the comparison with soft iron is exactly right. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Place the steel bar flat and run one pole of the bar magnet along it from end to end several times, lifting the magnet clear each time before returning to the start so you always stroke in the same direction. After several strokes, test the bar by holding it near iron filings or pins; a magnetised bar will attract them, or it will repel one pole of a known magnet and attract the other. Steel retains its magnetism after this, whereas soft iron would lose almost all of it the moment the stroking magnet is taken away.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "run one pole of the bar magnet along it from end to end several times"
+                },
+                {
+                  "point": 1,
+                  "quote": "lifting the magnet clear each time before returning to the start so you always stroke in the same direction"
+                },
+                {
+                  "point": 2,
+                  "quote": "test the bar by holding it near iron filings or pins; a magnetised bar will attract them, or it will repel one pole of a known magnet and attract the other"
+                },
+                {
+                  "point": 3,
+                  "quote": "Steel retains its magnetism after this, whereas soft iron would lose almost all of it the moment the stroking magnet is taken away"
+                }
+              ],
+              "feedback": "A full, correctly ordered description, and the comparison with soft iron is precise. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Stroke the steel with the magnet many times in the same direction. Test it by seeing if it attracts pins. Soft iron does not stay magnetised but steel does.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Stroke the steel with the magnet many times in the same direction"
+                },
+                {
+                  "point": 2,
+                  "quote": "Test it by seeing if it attracts pins"
+                },
+                {
+                  "point": 3,
+                  "quote": "Soft iron does not stay magnetised but steel does"
+                }
+              ],
+              "feedback": "Your method, test and comparison are all on the right lines. Add that the magnet must be lifted clear after each stroke, always starting from the same end, so the strokes do not cancel out.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "You rub the bar magnet on the steel bar repeatedly. Then check with a compass near it to see if it moves. Soft iron is a weaker magnet than steel.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "You rub the bar magnet on the steel bar repeatedly"
+                }
+              ],
+              "feedback": "Rubbing repeatedly is right, but you must lift the magnet away between strokes and always go in the same direction, or the strokes cancel. Soft iron is not simply weaker; it loses its magnetism almost completely once the magnet is removed, while steel keeps its."
+            },
+            {
+              "tier": "weak",
+              "text": "Hold the steel bar near the magnet and it becomes magnetised by induction. Test by putting it in water to see if it floats towards north.",
+              "meets": [],
+              "feedback": "Simply holding the bar near the magnet gives only a weak, temporary effect. Stroking one pole of the magnet repeatedly along the bar, always the same way, magnetises it properly; then test it with pins or another magnet's pole."
+            },
+            {
+              "tier": "weak",
+              "text": "Heat the steel bar and let it cool next to the magnet. This magnetises it permanently. Soft iron and steel behave the same way.",
+              "meets": [],
+              "feedback": "Magnetising is done by stroking (or by a solenoid), not by heating and cooling. Also, soft iron and steel behave very differently: soft iron loses its magnetism almost at once, while steel keeps it."
+            }
+          ]
+        },
+        {
+          "prompt": "An alpha particle of charge 3.2 × 10⁻¹⁹ C moves at 2.0 × 10⁶ m/s through a magnetic field of flux density 0.8 T, at an angle of 30° to the field. Calculate the force on the particle.",
+          "markScheme": [
+            "Correct substitution: F = qvB sin θ = 3.2 × 10⁻¹⁹ × 2.0 × 10⁶ × 0.8 × sin 30°",
+            "Correct value of sin 30° (0.5) used",
+            "Correct arithmetic: F = 3.2 × 10⁻¹⁹ × 2.0 × 10⁶ × 0.8 × 0.5",
+            "F = 2.56 × 10⁻¹³ N, with unit"
+          ],
+          "modelAnswer": "F = qvB sin θ = 3.2 × 10⁻¹⁹ × 2.0 × 10⁶ × 0.8 × sin 30° = 3.2 × 10⁻¹⁹ × 2.0 × 10⁶ × 0.8 × 0.5 = 2.56 × 10⁻¹³ N.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "F = qvB sinθ = 3.2x10^-19 x 2.0x10^6 x 0.8 x sin30\nsin30 = 0.5\nF = 3.2x10^-19 x 2.0x10^6 x 0.8 x 0.5 = 2.56x10^-13 N",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "F = qvB sinθ = 3.2x10^-19 x 2.0x10^6 x 0.8 x sin30"
+                },
+                {
+                  "point": 1,
+                  "quote": "sin30 = 0.5"
+                },
+                {
+                  "point": 2,
+                  "quote": "F = 3.2x10^-19 x 2.0x10^6 x 0.8 x 0.5"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 2.56x10^-13 N"
+                }
+              ],
+              "feedback": "Correct throughout, with each step shown clearly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Using F = qvB sin θ, with q = 3.2 × 10⁻¹⁹ C, v = 2.0 × 10⁶ m/s, B = 0.8 T and sin 30° = 0.5: F = 3.2 × 10⁻¹⁹ × 2.0 × 10⁶ × 0.8 × 0.5. Multiplying the numbers gives 2.56, and the powers of ten give 10⁻¹³, so F = 2.56 × 10⁻¹³ N.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "F = qvB sin θ, with q = 3.2 × 10⁻¹⁹ C, v = 2.0 × 10⁶ m/s, B = 0.8 T and sin 30° = 0.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "sin 30° = 0.5"
+                },
+                {
+                  "point": 2,
+                  "quote": "F = 3.2 × 10⁻¹⁹ × 2.0 × 10⁶ × 0.8 × 0.5"
+                },
+                {
+                  "point": 3,
+                  "quote": "F = 2.56 × 10⁻¹³ N"
+                }
+              ],
+              "feedback": "Correct, and showing the powers of ten separately made the arithmetic easy to check. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "F = qvB sin θ and sin 30 = 0.5. F = 3.2x10^-19 x 2.0x10^6 x 0.5 = 3.2x10^-13 N",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "sin 30 = 0.5"
+                }
+              ],
+              "feedback": "You used sin 30° = 0.5 correctly, but left the flux density out of the product. Multiply by B = 0.8 T as well: F = 3.2 × 10⁻¹⁹ × 2.0 × 10⁶ × 0.8 × 0.5 = 2.56 × 10⁻¹³ N."
+            },
+            {
+              "tier": "partial",
+              "text": "F = qvB sinθ = 3.2x10^-19 x 2.0x10^6 x 0.8 x sin30 where sin30 = 30. F = 3.2x10^-19 x 2.0x10^6 x 0.8 x 30 = 1.536x10^-11 N",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "F = qvB sinθ = 3.2x10^-19 x 2.0x10^6 x 0.8 x sin30"
+                }
+              ],
+              "feedback": "Your formula and substitution are set up correctly. sin 30° is 0.5, not the angle itself, 30; use 0.5 to get the final force."
+            },
+            {
+              "tier": "weak",
+              "text": "F = q + v + B = 3.2x10^-19 + 2.0x10^6 + 0.8 = about 2.0x10^6 N",
+              "meets": [],
+              "feedback": "The quantities in F = qvB sin θ are multiplied, not added. Substitute each value and multiply them together, including sin 30° = 0.5."
+            },
+            {
+              "tier": "weak",
+              "text": "Since the angle is 30 degrees and not 90 degrees, there is no force on the particle. F = 0 N.",
+              "meets": [],
+              "feedback": "The force is zero only when the particle moves along the field (θ = 0°). At 30° there is still a force, reduced by the factor sin 30° = 0.5, not zero."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Electromagnetic induction, inductance and power transmission",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use Fleming's left-hand rule to identify directions in an electromagnetic field;\n2. state Faraday's and Lenz's laws and explain the generator and transformer;\n3. explain self and mutual inductance qualitatively;\n4. explain eddy currents and how their losses are reduced;\n5. explain why electricity is transmitted at high voltage and describe household wiring.\n\n## Materials\n\nA bar magnet, a coil and a centre-zero galvanometer, a model generator, a demonstration transformer, solid and laminated cores, a chart of household wiring.\n\n## Starter (5 minutes)\n\nAsk: a transformer changes a.c. voltage up or down with no moving parts and no fuel. Where does the energy come from?\n\n## Development\n\n1. Push a magnet in and out of a coil connected to a galvanometer; note the deflection and its direction reversing. State Faraday's law (induced e.m.f. is proportional to the rate of change of flux) and Lenz's law (the induced current opposes the change producing it).\n2. Explain the a.c. and d.c. generator using the rotating coil, and derive E = E₀ sin ωt. Explain the transformer: changing flux in the primary induces an e.m.f. in the secondary.\n3. Explain self-inductance (a changing current in a coil induces an opposing e.m.f. in itself) and mutual inductance (a changing current in one coil induces an e.m.f. in a neighbouring coil). State the unit, the henry (H).\n4. Explain eddy currents, and why a laminated core wastes less energy than a solid one.\n5. Explain that transmitting power at high voltage and low current reduces I²R losses in the cables. Describe the live, neutral and earth wires in household wiring.\n\n## Class activity\n\nIn pairs, students use the right-hand or left-hand rule to predict the direction of induced current as a magnet is pushed into a coil from each end.\n\n## Evaluation\n\n1. State Lenz's law.\n2. Why is a transformer's core laminated rather than solid?\n\n## Assignment\n\nRevise for Thursday's quiz.",
+      "reading": {
+        "title": "Electromagnetic induction and getting power to your house",
+        "content": "# Electromagnetic induction\n\nWhen a magnet is pushed into a coil, or a coil is moved near a magnet, an e.m.f. is induced in the coil. This is **electromagnetic induction**.\n\n**Faraday's law**: the induced e.m.f. is proportional to the rate of change of magnetic flux linking the circuit.\n\n**Lenz's law**: the direction of the induced current is always such as to oppose the change producing it. This is why you feel a resistance pushing a magnet into a coil; the induced current's own field pushes back.\n\n## Generators and transformers\n\nAn **a.c. generator** rotates a coil in a magnetic field, giving an e.m.f. that varies as E = E₀ sin ωt, where ω = 2πf. A **d.c. generator** uses a split-ring commutator to make the output flow one way.\n\nA **transformer** has a primary and a secondary coil wound on a common iron core. A changing current in the primary produces a changing flux, which induces an e.m.f. in the secondary. A **step-up** transformer has more turns on the secondary and raises the voltage; a **step-down** transformer lowers it.\n\n## Inductance\n\n**Self-inductance** is the property of a coil by which a changing current in it induces an opposing e.m.f. in the same coil. **Mutual inductance** is the property by which a changing current in one coil induces an e.m.f. in a neighbouring coil, as happens between the primary and secondary of a transformer. The unit of inductance is the **henry (H)**. The energy stored in an inductor is E = ½LI².\n\n## Eddy currents\n\nWhen a solid metal core moves in, or is linked to, a changing magnetic field, currents called **eddy currents** are induced inside the metal itself. They waste energy as heat. Laminating the core, splitting it into thin sheets insulated from one another, breaks up these current paths and reduces the loss. Eddy currents are also used usefully, for example to damp the swing of a speedometer needle.\n\n## Power transmission\n\nTransmitting power P = IV at a high voltage means a smaller current is needed for the same power, and since the power lost as heat in the cables is I²R, a smaller current greatly reduces this loss. Power lines therefore carry electricity at very high voltage, and step-down transformers reduce it to a safe level before it reaches homes.\n\nIn a Nigerian home, the wiring has a **live** wire (carries the current), a **neutral** wire (completes the circuit back to the supply) and an **earth** wire (connects the metal case of an appliance to the ground as a safety path).\n\n**Worked example.** A transformer has 400 turns on its primary and 1600 turns on its secondary, with 220 V applied to the primary. Secondary voltage = 220 × (1600/400) = 880 V, a step-up transformer."
+      },
+      "cards": [
+        {
+          "front": "Faraday's law",
+          "back": "Induced e.m.f. is proportional to the rate of change of magnetic flux linking the circuit."
+        },
+        {
+          "front": "Lenz's law",
+          "back": "The induced current flows in the direction that opposes the change producing it."
+        },
+        {
+          "front": "Self-inductance",
+          "back": "A changing current in a coil induces an opposing e.m.f. in the same coil."
+        },
+        {
+          "front": "Mutual inductance",
+          "back": "A changing current in one coil induces an e.m.f. in a neighbouring coil."
+        },
+        {
+          "front": "Unit of inductance",
+          "back": "The henry (H)."
+        },
+        {
+          "front": "Eddy currents",
+          "back": "Currents induced inside a solid metal core by a changing flux, which waste energy as heat."
+        },
+        {
+          "front": "Why cores are laminated",
+          "back": "To break up the paths of eddy currents and reduce energy loss."
+        },
+        {
+          "front": "Why power is transmitted at high voltage",
+          "back": "A smaller current is needed for the same power, which reduces the I²R loss in the cables."
+        },
+        {
+          "front": "Household wiring",
+          "back": "Live (carries current), neutral (completes circuit) and earth (safety path to ground)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A bar magnet is pushed into a coil connected to a galvanometer. According to Lenz's law, the direction of the induced current is such that",
+          "options": [
+            "it has no particular direction",
+            "it flows in the same direction as the current that made the magnet",
+            "it opposes the motion of the magnet into the coil",
+            "it always flows from north to south inside the coil"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A transformer has 100 turns on its primary coil and 500 turns on its secondary coil. If 240 V is applied to the primary, what is the secondary voltage?",
+          "options": ["48 V", "1200 V", "240 V", "740 V"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why are transformer cores made of laminated iron sheets rather than a solid block?",
+          "options": [
+            "To reduce eddy currents and the energy they waste as heat",
+            "To make the transformer lighter",
+            "To increase the core's electrical resistance to current flow",
+            "To make the core cheaper to produce"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Why is electrical power transmitted over long distances at very high voltage?",
+          "options": [
+            "High voltage makes the current flow faster along the cables",
+            "Transformers only work at high voltage",
+            "High voltage prevents the cables from overheating in the sun",
+            "A high voltage means a smaller current is needed, which reduces I²R power loss in the cables"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "In household wiring, what is the purpose of the earth wire?",
+          "options": [
+            "It carries the current that operates the appliance",
+            "It completes the circuit back to the supply",
+            "It provides a safe path to ground if the live wire touches the metal case",
+            "It stores extra charge during a power surge"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State Faraday's law and Lenz's law of electromagnetic induction. Use them to explain what happens when the north pole of a magnet is pushed quickly into a coil connected to a centre-zero galvanometer.",
+          "markScheme": [
+            "Faraday's law: the induced e.m.f. is proportional to the rate of change of magnetic flux linking the circuit",
+            "Lenz's law: the induced current flows in a direction that opposes the change producing it",
+            "Explains that pushing the magnet in increases the flux through the coil, inducing an e.m.f./current (deflecting the galvanometer)",
+            "Explains that, by Lenz's law, the induced current creates a field that opposes the incoming magnet (repels it), and pushing faster gives a bigger deflection (Faraday's law)"
+          ],
+          "modelAnswer": "Faraday's law states that the e.m.f. induced in a coil is proportional to the rate of change of magnetic flux linking it. Lenz's law states that the induced current always flows in a direction that opposes the change that produced it. As the north pole is pushed into the coil, the flux through the coil increases, inducing a current, which the galvanometer shows as a deflection. By Lenz's law, this induced current sets up a field in the coil that repels the incoming magnet, opposing its motion; pushing the magnet in faster increases the rate of change of flux, giving a bigger deflection, as Faraday's law predicts.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Faraday's law: the e.m.f. induced is proportional to the rate of change of flux. Lenz's law: the induced current opposes the change that caused it. When the north pole is pushed in, the flux through the coil increases and a current is induced, shown by the galvanometer deflecting. By Lenz's law the current makes the near face of the coil act like a north pole too, so it repels the magnet and opposes it being pushed in further.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the e.m.f. induced is proportional to the rate of change of flux"
+                },
+                {
+                  "point": 1,
+                  "quote": "the induced current opposes the change that caused it"
+                },
+                {
+                  "point": 2,
+                  "quote": "When the north pole is pushed in, the flux through the coil increases and a current is induced, shown by the galvanometer deflecting"
+                },
+                {
+                  "point": 3,
+                  "quote": "the current makes the near face of the coil act like a north pole too, so it repels the magnet and opposes it being pushed in further"
+                }
+              ],
+              "feedback": "Both laws stated precisely, and the explanation of the repelling face is exactly right. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Faraday's law says the induced e.m.f. depends on how fast the flux through the coil is changing. Lenz's law says the induced current's direction always opposes whatever caused it. Pushing the north pole in makes the flux through the coil increase, which induces a current and deflects the galvanometer. This current's magnetic effect opposes the magnet's entry, by Lenz's law, and a faster push gives a larger deflection because the flux is changing more quickly, by Faraday's law.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the induced e.m.f. depends on how fast the flux through the coil is changing"
+                },
+                {
+                  "point": 1,
+                  "quote": "the induced current's direction always opposes whatever caused it"
+                },
+                {
+                  "point": 2,
+                  "quote": "Pushing the north pole in makes the flux through the coil increase, which induces a current and deflects the galvanometer"
+                },
+                {
+                  "point": 3,
+                  "quote": "a faster push gives a larger deflection because the flux is changing more quickly, by Faraday's law"
+                }
+              ],
+              "feedback": "Clear and complete, with both laws linked to the actual experiment. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Lenz's law says the induced current opposes the change producing it. When you push the magnet in, the galvanometer deflects because current is induced, and this current opposes the magnet going in further.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "the induced current opposes the change producing it"
+                },
+                {
+                  "point": 2,
+                  "quote": "the galvanometer deflects because current is induced"
+                },
+                {
+                  "point": 3,
+                  "quote": "this current opposes the magnet going in further"
+                }
+              ],
+              "feedback": "Lenz's law and the explanation are both right. You also need Faraday's law: that the size of the e.m.f. depends on how fast the flux is changing.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Faraday's law says a changing magnetic field induces an e.m.f. Pushing the magnet into the coil changes the field, so a current flows and the galvanometer moves.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a changing magnetic field induces an e.m.f."
+                },
+                {
+                  "point": 2,
+                  "quote": "Pushing the magnet into the coil changes the field, so a current flows and the galvanometer moves"
+                }
+              ],
+              "feedback": "Faraday's law and your description of the deflection are correct. State Lenz's law too, and say that the induced current opposes the magnet's motion into the coil."
+            },
+            {
+              "tier": "weak",
+              "text": "The magnet makes the coil magnetic and the galvanometer shows this because electricity and magnetism are related.",
+              "meets": [],
+              "feedback": "Say exactly what happens: the changing flux induces a current (Faraday), and that current opposes the magnet's motion (Lenz). Name both laws and apply them to this experiment."
+            },
+            {
+              "tier": "weak",
+              "text": "Faraday's law is about generators and Lenz's law is about motors. The magnet going into the coil is a motor effect.",
+              "meets": [],
+              "feedback": "This is induction, where a moving magnet creates current, not a motor, where current creates motion. State what each law actually says, and explain the galvanometer's deflection and the opposing force."
+            }
+          ]
+        },
+        {
+          "prompt": "A transformer is to supply 12 V to a security light from the 240 V mains. If the primary coil has 2000 turns, calculate the number of turns needed on the secondary coil. State whether this is a step-up or step-down transformer.",
+          "markScheme": [
+            "Correct relation used: Ns/Np = Vs/Vp",
+            "Correct substitution: Ns = 2000 × (12/240)",
+            "Ns = 100 turns",
+            "States it is a step-down transformer, because the secondary voltage (12 V) is less than the primary voltage (240 V)"
+          ],
+          "modelAnswer": "Ns/Np = Vs/Vp, so Ns = Np × (Vs/Vp) = 2000 × (12/240) = 100 turns. This is a step-down transformer, because it reduces the voltage from 240 V to 12 V.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Ns/Np = Vs/Vp\nNs = 2000 x 12/240 = 100 turns\nIt is a step-down transformer because the output voltage is lower than the input.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ns/Np = Vs/Vp"
+                },
+                {
+                  "point": 1,
+                  "quote": "Ns = 2000 x 12/240"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 100 turns"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is a step-down transformer because the output voltage is lower than the input"
+                }
+              ],
+              "feedback": "Correct and complete, with a clear reason for calling it step-down. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Using Vs/Vp = Ns/Np: 12/240 = Ns/2000, so Ns = 2000 × 12 ÷ 240 = 100. Since the secondary has fewer turns and gives a lower voltage than the primary, it is a step-down transformer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Vs/Vp = Ns/Np"
+                },
+                {
+                  "point": 1,
+                  "quote": "Ns = 2000 × 12 ÷ 240"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 100"
+                },
+                {
+                  "point": 3,
+                  "quote": "Since the secondary has fewer turns and gives a lower voltage than the primary, it is a step-down transformer"
+                }
+              ],
+              "feedback": "All correct, and you linked the turns ratio to the step-down description. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Ns/Np = Vs/Vp, so Ns = 2000 x 240/12 = 40000 turns. It is a step-up transformer because it has more turns.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ns/Np = Vs/Vp"
+                }
+              ],
+              "feedback": "Your ratio is right, but you substituted the voltages upside down: Ns = 2000 × 12/240 = 100 turns. Since 12 V is less than 240 V, it is a step-down transformer."
+            },
+            {
+              "tier": "partial",
+              "text": "Ns = 2000 x 12/240 = 100 turns. It is a step-up transformer because it has 2000 turns which is more than 100.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ns = 2000 x 12/240"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 100 turns"
+                }
+              ],
+              "feedback": "Your turns calculation is correct. A transformer is called step-up or step-down by what happens to the voltage, not the turns count on its own; since 12 V is less than 240 V, this is a step-down transformer."
+            },
+            {
+              "tier": "weak",
+              "text": "Ns = Np - Vp + Vs = 2000 - 240 + 12 = 1772 turns. Step-up transformer.",
+              "meets": [],
+              "feedback": "Turns and voltages are related by a ratio, Ns/Np = Vs/Vp, not by adding and subtracting them. Rearrange that ratio to find Ns, and compare 12 V with 240 V to decide step-up or step-down."
+            },
+            {
+              "tier": "weak",
+              "text": "The secondary needs 2000 turns too because transformers must have equal turns on both sides.",
+              "meets": [],
+              "feedback": "A transformer's two coils usually have different numbers of turns; the ratio of turns gives the ratio of voltages. Use Ns/Np = Vs/Vp to find the secondary turns."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "A.C. circuits: peak and r.m.s. values, reactance and resonance",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. sketch the graphs of I = I₀ sin ωt and E = E₀ sin ωt and read off peak values;\n2. relate r.m.s. values to peak values;\n3. state the phase relationship between voltage and current in a resistor, an inductor and a capacitor;\n4. calculate reactance and impedance in a series a.c. circuit and draw its vector diagram;\n5. explain resonance and its use in tuning a radio.\n\n## Materials\n\nAn oscilloscope (or a chart of a.c. waveforms), a signal generator, a resistor, an inductor, a capacitor, a radio with a tuning dial, graph paper.\n\n## Starter (5 minutes)\n\nAsk: the mains supply is rated 230 V. Is that the highest voltage it ever reaches?\n\n## Development\n\n1. Draw I = I₀ sin ωt on the board, marking the peak value and the period, with ω = 2πf.\n2. Define the r.m.s. value as the steady current with the same heating effect: Irms = I₀/√2. Show that 230 V r.m.s. has a peak of about 325 V.\n3. State the phase relationships: in phase for R; V leads I by 90° for L; I leads V by 90° for C.\n4. Define XL = 2πfL and XC = 1/(2πfC). Show how XL rises and XC falls as frequency rises.\n5. Draw the vector diagram of a series R-L-C circuit and obtain Z = √(R² + (XL − XC)²). Work an example.\n6. Show that when XL = XC, Z = R and the current is a maximum: resonance. Turn the radio dial to show tuning.\n\n## Class activity\n\nIn groups, students calculate XL and XC for a 0.5 H coil and a 10 μF capacitor at 50 Hz and 200 Hz and say which is larger at each frequency.\n\n## Evaluation\n\n1. A current has a peak value of 2.8 A. What is its r.m.s. value?\n2. In which circuit element does the current lead the voltage by 90°?\n\n## Assignment\n\nProblem set questions, due Friday.",
+      "reading": {
+        "title": "Alternating current: peaks, r.m.s. values and resonance",
+        "content": "# Graphs of alternating current\n\nIn an a.c. circuit, the current and the e.m.f. vary sinusoidally with time:\n\nI = I₀ sin ωt and E = E₀ sin ωt,\n\nwhere I₀ and E₀ are the **peak** values and ω = 2πf. The Nigerian mains supply has f = 50 Hz.\n\n## R.m.s. values\n\nThe **root-mean-square (r.m.s.)** value of an alternating current is the steady direct current that would produce the same heating effect in a resistor:\n\nIrms = I₀/√2 and Vrms = V₀/√2.\n\nMeters and appliance labels give r.m.s. values. The mains is rated 230 V r.m.s., so its peak is 230 × √2 ≈ 325 V.\n\n## Phase\n\n- In a **resistor**, current and voltage rise and fall together: they are **in phase**.\n- In an **inductor**, the voltage **leads** the current by 90°.\n- In a **capacitor**, the current **leads** the voltage by 90°.\n\n## Reactance and impedance\n\nInductors and capacitors oppose a.c. by their **reactance**, measured in ohms:\n\n- inductive reactance, XL = 2πfL, which rises with frequency;\n- capacitive reactance, XC = 1/(2πfC), which falls with frequency.\n\nIn a series circuit, the vector diagram draws R along one axis and (XL − XC) at right angles to it. The resultant is the **impedance**:\n\nZ = √(R² + (XL − XC)²), and I = V/Z.\n\n**Worked example.** A coil of inductance 0.4 H is connected to the 50 Hz mains. XL = 2 × 3.14 × 50 × 0.4 = 125.6 Ω.\n\n## Resonance\n\nAt one frequency, XL = XC. The reactances cancel, Z = R, its smallest value, and the current is a maximum. This is **resonance**, and it happens at f₀ = 1/(2π√(LC)).\n\nA radio's tuning circuit is a coil and a variable capacitor. Turning the dial changes C until the circuit resonates at the frequency of the station you want; that station's signal produces a large current, while stations on other frequencies produce very little. A television tuner works the same way."
+      },
+      "cards": [
+        {
+          "front": "R.m.s. value of a.c.",
+          "back": "The steady d.c. that gives the same heating effect; Irms = I₀/√2."
+        },
+        {
+          "front": "Peak voltage of 230 V r.m.s. mains",
+          "back": "230 × √2 ≈ 325 V."
+        },
+        {
+          "front": "Phase in a pure resistor",
+          "back": "Voltage and current are in phase."
+        },
+        {
+          "front": "Phase in a pure inductor",
+          "back": "Voltage leads current by 90°."
+        },
+        {
+          "front": "Phase in a pure capacitor",
+          "back": "Current leads voltage by 90°."
+        },
+        {
+          "front": "Inductive reactance",
+          "back": "XL = 2πfL; it rises with frequency."
+        },
+        {
+          "front": "Capacitive reactance",
+          "back": "XC = 1/(2πfC); it falls as frequency rises."
+        },
+        {
+          "front": "Impedance of a series R-L-C circuit",
+          "back": "Z = √(R² + (XL − XC)²)."
+        },
+        {
+          "front": "Resonance",
+          "back": "XL = XC, so Z = R and the current is a maximum; used to tune radios."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The mains supply is rated at 230 V r.m.s. What is its peak voltage?",
+          "options": ["115 V", "163 V", "about 325 V", "460 V"],
+          "answer": "C"
+        },
+        {
+          "prompt": "In a pure inductor connected to an a.c. supply,",
+          "options": [
+            "voltage and current are in phase",
+            "the voltage leads the current by 90°",
+            "the current leads the voltage by 90°",
+            "the voltage leads the current by 180°"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A coil of inductance 0.2 H is connected to the 50 Hz mains. What is its inductive reactance? (Take π = 3.14)",
+          "options": ["62.8 Ω", "10 Ω", "0.016 Ω", "31.4 Ω"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A series circuit has R = 30 Ω, XL = 60 Ω and XC = 20 Ω. What is its impedance?",
+          "options": ["110 Ω", "70 Ω", "10 Ω", "50 Ω"],
+          "answer": "D"
+        },
+        {
+          "prompt": "When a radio is tuned to a station, its tuning circuit is at resonance. At resonance in a series R-L-C circuit,",
+          "options": [
+            "the impedance is a maximum and the current a minimum",
+            "the impedance equals R and the current is a maximum",
+            "the inductive reactance is zero",
+            "the current is zero"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "An a.c. supply has a peak voltage of 325 V. Calculate its r.m.s. voltage. Then explain why a radio tuning circuit picks out one station when its capacitor is adjusted so that XL = XC at that station's frequency.",
+          "markScheme": [
+            "Correct substitution: Vrms = V₀/√2 = 325/√2",
+            "Vrms ≈ 230 V, with unit",
+            "When XL = XC, the reactances cancel and the impedance falls to its minimum, Z = R, so the current is a maximum (resonance)",
+            "This happens only at that one frequency, so that station gives a large current while stations on other frequencies give very little"
+          ],
+          "modelAnswer": "Vrms = V₀/√2 = 325 ÷ 1.414 ≈ 230 V. In the tuning circuit, the coil and the capacitor have reactances that depend on frequency. At the frequency where XL = XC they cancel, so the impedance falls to its smallest value, Z = R, and the current is a maximum: the circuit resonates. Because this happens only at that one frequency, the chosen station produces a large current while other stations, on different frequencies, produce very little.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Vrms = V0/√2 = 325/1.414 = 230 V. In the tuning circuit XL and XC both depend on frequency. When they are equal the impedance Z = √(R² + (XL - XC)²) becomes just R, its lowest value, so the current is highest at that frequency. Since XL = XC only at the station's own frequency, only that station comes in strongly and the others are weak.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Vrms = V0/√2 = 325/1.414"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 230 V"
+                },
+                {
+                  "point": 2,
+                  "quote": "When they are equal the impedance Z = √(R² + (XL - XC)²) becomes just R, its lowest value, so the current is highest at that frequency"
+                },
+                {
+                  "point": 3,
+                  "quote": "Since XL = XC only at the station's own frequency, only that station comes in strongly and the others are weak"
+                }
+              ],
+              "feedback": "Both parts complete and accurate, and you used the impedance formula to show why resonance gives the biggest current. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Vrms = 325 ÷ √2 ≈ 230 V. At resonance the (XL − XC) term vanishes and the impedance is only the resistance, the least it can be, so the current is greatest. Other stations broadcast on other frequencies where XL and XC are not equal, so the impedance is large for them and their signals hardly produce any current.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Vrms = 325 ÷ √2"
+                },
+                {
+                  "point": 1,
+                  "quote": "≈ 230 V"
+                },
+                {
+                  "point": 2,
+                  "quote": "At resonance the (XL − XC) term vanishes and the impedance is only the resistance, the least it can be, so the current is greatest"
+                },
+                {
+                  "point": 3,
+                  "quote": "Other stations broadcast on other frequencies where XL and XC are not equal, so the impedance is large for them"
+                }
+              ],
+              "feedback": "Correct, and explaining why the other stations are rejected was a strong finish. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Vrms = 325 x √2 = 459.6 V. At resonance XL = XC so the impedance is lowest and the current is highest, so the radio picks the station.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "At resonance XL = XC so the impedance is lowest and the current is highest"
+                }
+              ],
+              "feedback": "Your explanation of resonance is right. To go from peak to r.m.s. you divide by √2: 325 ÷ √2 ≈ 230 V. Also say why other stations are rejected: XL and XC are not equal at their frequencies."
+            },
+            {
+              "tier": "partial",
+              "text": "Vrms = 325/√2 = 230 V. When XL = XC the coil and capacitor cancel out completely so there is no opposition to current at all, and the station is very loud.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Vrms = 325/√2"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 230 V"
+                }
+              ],
+              "feedback": "Your r.m.s. value is correct. The reactances cancel at resonance but the resistance remains, so Z = R, a minimum, not zero. Say also that this happens only at the one station's frequency.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The r.m.s. value is the resistance of the circuit, about 230 ohms. Tuning works because the capacitor blocks the other stations.",
+              "meets": [],
+              "feedback": "The r.m.s. value is a voltage, found from Vrms = V₀/√2. For tuning, explain what happens when XL = XC: the impedance falls to R and the current is a maximum at that one frequency."
+            },
+            {
+              "tier": "weak",
+              "text": "Vrms = 325 - 90 = 235 V because the voltage and current are 90 degrees out of phase. The tuning circuit is a resonance so it picks the station.",
+              "meets": [],
+              "feedback": "The phase angle has nothing to do with the r.m.s. value; divide the peak by √2. Saying the circuit is at resonance is not enough: explain that XL = XC makes the impedance a minimum and the current a maximum."
+            }
+          ]
+        },
+        {
+          "prompt": "A coil of inductance 0.5 H and negligible resistance is connected in series with a 2 μF capacitor and a 300 Ω resistor across a 100 Hz supply. Calculate the inductive reactance, the capacitive reactance and the impedance of the circuit. (Take π = 3.14)",
+          "markScheme": [
+            "XL = 2πfL = 2 × 3.14 × 100 × 0.5 = 314 Ω",
+            "XC = 1/(2πfC) = 1/(2 × 3.14 × 100 × 2 × 10⁻⁶) ≈ 796 Ω",
+            "Correct substitution: Z = √(300² + (314 − 796)²)",
+            "Z ≈ 568 Ω, with unit"
+          ],
+          "modelAnswer": "XL = 2πfL = 2 × 3.14 × 100 × 0.5 = 314 Ω. XC = 1/(2πfC) = 1 ÷ (2 × 3.14 × 100 × 2 × 10⁻⁶) = 1 ÷ 0.001256 ≈ 796 Ω. Z = √(R² + (XL − XC)²) = √(300² + (−482)²) = √(90 000 + 232 324) = √322 324 ≈ 568 Ω.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "XL = 2πfL = 2 x 3.14 x 100 x 0.5 = 314 Ω\nXC = 1/(2πfC) = 1/(2 x 3.14 x 100 x 2x10^-6) = 1/0.001256 = 796 Ω\nZ = √(R² + (XL - XC)²) = √(300² + (314 - 796)²) = √(90000 + 232324) = 568 Ω",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "XL = 2πfL = 2 x 3.14 x 100 x 0.5 = 314 Ω"
+                },
+                {
+                  "point": 1,
+                  "quote": "XC = 1/(2πfC) = 1/(2 x 3.14 x 100 x 2x10^-6) = 1/0.001256 = 796 Ω"
+                },
+                {
+                  "point": 2,
+                  "quote": "√(300² + (314 - 796)²)"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 568 Ω"
+                }
+              ],
+              "feedback": "Every value correct and every step shown. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "XL = 2 × 3.14 × 100 × 0.5 = 314 Ω. XC = 1 ÷ (2 × 3.14 × 100 × 2 × 10⁻⁶) ≈ 796 Ω. The net reactance is 796 − 314 = 482 Ω (capacitive). Z = √(300² + 482²) = √322 324 ≈ 568 Ω.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "XL = 2 × 3.14 × 100 × 0.5 = 314 Ω"
+                },
+                {
+                  "point": 1,
+                  "quote": "XC = 1 ÷ (2 × 3.14 × 100 × 2 × 10⁻⁶) ≈ 796 Ω"
+                },
+                {
+                  "point": 2,
+                  "quote": "Z = √(300² + 482²)"
+                },
+                {
+                  "point": 3,
+                  "quote": "≈ 568 Ω"
+                }
+              ],
+              "feedback": "Correct throughout, and noting that the net reactance is capacitive shows you understand the vector diagram. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "XL = 2πfL = 2 x 3.14 x 100 x 0.5 = 314 Ω. XC = 2πfC = 2 x 3.14 x 100 x 2x10^-6 = 0.0013 Ω. Z = √(300² + (314 - 0.0013)²) = 434 Ω",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "XL = 2πfL = 2 x 3.14 x 100 x 0.5 = 314 Ω"
+                }
+              ],
+              "feedback": "Your inductive reactance is right. Capacitive reactance is the reciprocal, XC = 1/(2πfC), which is about 796 Ω, not 0.0013 Ω. Redo Z with that value."
+            },
+            {
+              "tier": "partial",
+              "text": "XL = 2 x 3.14 x 100 x 0.5 = 314 Ω. XC = 1/(2 x 3.14 x 100 x 2x10^-6) = 796 Ω. Z = R + XL + XC = 300 + 314 + 796 = 1410 Ω",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "XL = 2 x 3.14 x 100 x 0.5 = 314 Ω"
+                },
+                {
+                  "point": 1,
+                  "quote": "XC = 1/(2 x 3.14 x 100 x 2x10^-6) = 796 Ω"
+                }
+              ],
+              "feedback": "Both reactances are correct. In a.c. they are not simply added to R: XL and XC act in opposite directions and at right angles to R, so Z = √(R² + (XL − XC)²) ≈ 568 Ω."
+            },
+            {
+              "tier": "weak",
+              "text": "XL = L/f = 0.5/100 = 0.005 Ω. XC = C/f = 2x10^-6/100. So Z is about 300 Ω because the reactances are tiny.",
+              "meets": [],
+              "feedback": "Reactance is not inductance or capacitance divided by frequency. Use XL = 2πfL and XC = 1/(2πfC); both turn out to be hundreds of ohms here."
+            },
+            {
+              "tier": "weak",
+              "text": "Impedance is the same as resistance, so Z = 300 Ω. The coil has no resistance so it does nothing.",
+              "meets": [],
+              "feedback": "A coil with no resistance still opposes a.c. through its reactance, and so does the capacitor. Find XL and XC first, then combine them with R in Z = √(R² + (XL − XC)²)."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "A.C. power, models of the atom and the photoelectric effect",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate the power in an a.c. circuit and explain why a pure capacitor or inductor uses no average power;\n2. describe the Thomson, Rutherford, Bohr and electron-cloud models of the atom and a limitation of each;\n3. explain energy levels and line spectra, and calculate the energy of a photon emitted in a transition;\n4. explain the photoelectric effect and use Einstein's equation;\n5. explain thermionic emission and give its uses.\n\n## Materials\n\nCharts of the four atomic models, a diagram of Rutherford's scattering experiment, a hand spectroscope, a sodium or neon discharge lamp (or a street light outside), a gold-leaf electroscope, a zinc plate, an ultraviolet lamp.\n\n## Starter (5 minutes)\n\nAsk: why does a sodium street lamp give yellow light while a neon sign gives red?\n\n## Development\n\n1. State P = Vrms Irms cos φ. Show that for a pure resistor φ = 0, while for a pure L or C, φ = 90° and the average power is zero.\n2. Describe Thomson's plum pudding model and Rutherford's scattering results. Explain why Rutherford's orbiting electrons should spiral into the nucleus, and how Bohr's fixed orbits, with quantised angular momentum mvr = nh/2π, solve this. Mention the electron-cloud model.\n3. Draw the energy levels of hydrogen. Show that a photon of energy hf = E₂ − E₁ is emitted when an electron falls a level. View the discharge lamp through the spectroscope. Mention Franck-Hertz.\n4. Charge the zinc plate negatively on the electroscope and shine ultraviolet on it: the leaves collapse. Explain work function, threshold frequency and hf = W + ½mv²max.\n5. Explain thermionic emission from a heated filament and its use in the cathode-ray tube and X-ray tube.\n\n## Class activity\n\nIn pairs, students calculate the photon energies for three transitions in hydrogen and say which falls in the visible range.\n\n## Evaluation\n\n1. Why does bright red light not release electrons from zinc, while dim ultraviolet does?\n2. State one limitation of Rutherford's model.\n\n## Assignment\n\nWorksheet questions, due Monday.",
+      "reading": {
+        "title": "Inside the atom, and light that knocks out electrons",
+        "content": "# Power in an a.c. circuit\n\nThe average power in an a.c. circuit is P = Vrms Irms cos φ, where φ is the phase angle between voltage and current. In a pure resistor φ = 0 and P = Vrms Irms. In a pure inductor or capacitor φ = 90° and cos 90° = 0: energy is stored and returned each cycle, so no average power is used.\n\n# Models of the atom\n\n- **Thomson**: a ball of positive charge with electrons scattered in it, like seeds in a pawpaw. It could not explain Rutherford's results.\n- **Rutherford**: alpha particles fired at thin gold foil mostly passed straight through, but a few were deflected through large angles and a very few bounced back. So the atom is mostly empty space, with its positive charge and almost all its mass in a tiny **nucleus**, and electrons orbiting round it. Its weakness: an orbiting electron should radiate energy and spiral into the nucleus.\n- **Bohr**: electrons move only in certain allowed orbits without radiating. Their angular momentum is **quantised**: mvr = nh/2π. An electron gives out or takes in energy only when it jumps between orbits. The model works well for hydrogen but not for larger atoms.\n- **Electron cloud** (wave-mechanical): electrons are not on fixed paths; we can only give the probability of finding an electron in a region round the nucleus.\n\n## Energy levels and spectra\n\nAn electron can only have certain energies, its **energy levels**. When it falls from a higher level E₂ to a lower level E₁, it emits a photon of frequency f given by\n\nhf = E₂ − E₁.\n\nEach element has its own set of levels, so each gives its own **line spectrum**. Sodium lamps glow yellow and neon signs red for this reason. A cool gas absorbs the same frequencies, giving dark lines in an **absorption spectrum**. The **Franck-Hertz experiment** showed that atoms absorb energy from colliding electrons only in fixed amounts.\n\n**Worked example.** In hydrogen, an electron falls from −1.5 eV to −3.4 eV. The photon energy is 1.9 eV, which is red light.\n\n## The photoelectric effect\n\nWhen light of high enough frequency falls on a metal, electrons are emitted. Light behaves as particles (**photons**) of energy hf. Each photon gives all its energy to one electron. The least energy needed to free an electron is the **work function**, W, and the lowest frequency that can do it is the **threshold frequency**, f₀ = W/h. Einstein's equation is\n\nhf = W + ½mv²max.\n\nBelow f₀, no electrons are emitted however bright the light. Photocells use the effect in cameras, burglar alarms and automatic doors.\n\n## Thermionic emission\n\nA metal heated strongly emits electrons from its surface. This **thermionic emission** supplies the electrons in cathode-ray tubes and X-ray tubes."
+      },
+      "cards": [
+        {
+          "front": "Average power in an a.c. circuit",
+          "back": "P = Vrms Irms cos φ."
+        },
+        {
+          "front": "Rutherford's conclusion from alpha scattering",
+          "back": "The atom is mostly empty space with a tiny, dense, positive nucleus."
+        },
+        {
+          "front": "Limitation of Rutherford's model",
+          "back": "An orbiting electron should radiate energy and spiral into the nucleus."
+        },
+        {
+          "front": "Bohr's quantisation of angular momentum",
+          "back": "mvr = nh/2π, so only certain orbits are allowed."
+        },
+        {
+          "front": "Photon emitted in a transition",
+          "back": "hf = E₂ − E₁."
+        },
+        {
+          "front": "Work function",
+          "back": "The least energy needed to free an electron from a metal surface."
+        },
+        {
+          "front": "Threshold frequency",
+          "back": "The lowest frequency of light that releases electrons from a metal; f₀ = W/h."
+        },
+        {
+          "front": "Einstein's photoelectric equation",
+          "back": "hf = W + ½mv²max."
+        },
+        {
+          "front": "Thermionic emission",
+          "back": "The emission of electrons from a strongly heated metal surface."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What average power is used by a pure capacitor connected to an a.c. supply?",
+          "options": ["Vrms × Irms", "V₀ × I₀", "Half of Vrms × Irms", "Zero"],
+          "answer": "D"
+        },
+        {
+          "prompt": "In Rutherford's experiment, most alpha particles passed straight through the gold foil. What did this show?",
+          "options": [
+            "The atom is mostly empty space",
+            "The nucleus is negatively charged",
+            "Electrons are spread through a ball of positive charge",
+            "Gold atoms have no nucleus"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "An electron in a hydrogen atom falls from the energy level −3.4 eV to the level −13.6 eV. What is the energy of the photon emitted?",
+          "options": ["17.0 eV", "10.2 eV", "3.4 eV", "13.6 eV"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Light whose photons each carry 3.5 eV falls on a metal of work function 2.0 eV. What is the maximum kinetic energy of the emitted electrons?",
+          "options": [
+            "5.5 eV",
+            "1.75 eV",
+            "1.5 eV",
+            "0 eV, because 3.5 eV is too little"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A metal has a work function of 3.3 × 10⁻¹⁹ J. What is its threshold frequency? (h = 6.6 × 10⁻³⁴ J s)",
+          "options": [
+            "2.0 × 10⁻¹⁵ Hz",
+            "5.0 × 10¹⁴ Hz",
+            "2.2 × 10⁻⁵² Hz",
+            "5.0 × 10¹⁵ Hz"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the results of Rutherford's alpha-particle scattering experiment and state what each result showed about the atom. Give one limitation of Rutherford's model and say how Bohr overcame it.",
+          "markScheme": [
+            "Most alpha particles passed straight through the foil, showing the atom is mostly empty space",
+            "A few were deflected through large angles (and very few bounced back), showing a small, concentrated positive nucleus that holds most of the mass",
+            "Limitation: an electron orbiting the nucleus should radiate energy continuously and spiral into the nucleus, so the atom would not be stable",
+            "Bohr: electrons move only in certain allowed orbits (with quantised angular momentum) in which they do not radiate; they emit or absorb energy only when they jump between orbits"
+          ],
+          "modelAnswer": "When alpha particles were fired at thin gold foil, most passed straight through, showing that the atom is mostly empty space. A few were deflected through large angles and a very few bounced straight back, showing that the positive charge and nearly all the mass are packed into a tiny nucleus. The weakness of the model is that an electron moving round the nucleus should keep radiating energy and spiral into it, so the atom could not be stable. Bohr overcame this by proposing that electrons move only in certain allowed orbits, with angular momentum nh/2π, in which they do not radiate; they give out or take in energy only when they jump from one orbit to another.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Most of the alpha particles went straight through the gold foil, which shows that most of the atom is empty space. A few were deflected at big angles and a very small number came straight back, which shows there is a small positive nucleus where nearly all the mass is. The problem is that electrons going round the nucleus should lose energy by radiation and fall into the nucleus. Bohr said electrons can only move in fixed orbits where they do not radiate, and they only give out energy when they jump down from one orbit to another.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Most of the alpha particles went straight through the gold foil, which shows that most of the atom is empty space"
+                },
+                {
+                  "point": 1,
+                  "quote": "A few were deflected at big angles and a very small number came straight back, which shows there is a small positive nucleus where nearly all the mass is"
+                },
+                {
+                  "point": 2,
+                  "quote": "electrons going round the nucleus should lose energy by radiation and fall into the nucleus"
+                },
+                {
+                  "point": 3,
+                  "quote": "Bohr said electrons can only move in fixed orbits where they do not radiate, and they only give out energy when they jump down from one orbit to another"
+                }
+              ],
+              "feedback": "Each result is matched to what it shows, and the link from Rutherford's weakness to Bohr's orbits is clear. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Results: (1) the majority of alpha particles were undeflected, so the atom is largely empty; (2) a small fraction were scattered through large angles, some through more than 90°, so the positive charge and mass are concentrated in a very small nucleus. Limitation: by classical theory the accelerating orbiting electron would radiate, lose energy and collapse into the nucleus. Bohr's answer was stationary orbits in which the angular momentum is a whole number of h/2π and no energy is radiated.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the majority of alpha particles were undeflected, so the atom is largely empty"
+                },
+                {
+                  "point": 1,
+                  "quote": "a small fraction were scattered through large angles, some through more than 90°, so the positive charge and mass are concentrated in a very small nucleus"
+                },
+                {
+                  "point": 2,
+                  "quote": "the accelerating orbiting electron would radiate, lose energy and collapse into the nucleus"
+                },
+                {
+                  "point": 3,
+                  "quote": "stationary orbits in which the angular momentum is a whole number of h/2π and no energy is radiated"
+                }
+              ],
+              "feedback": "Precise and complete, and bringing in the quantised angular momentum shows WASSCE-level understanding. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Most alpha particles passed through so the atom is mostly empty space. Some bounced back because they hit the nucleus. Rutherford's model could not explain the spectrum of hydrogen.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Most alpha particles passed through so the atom is mostly empty space"
+                }
+              ],
+              "feedback": "Your first result is right. Say what the large deflections show: a tiny, dense, positive nucleus. The main weakness is that orbiting electrons should radiate and spiral in; then explain Bohr's allowed orbits."
+            },
+            {
+              "tier": "partial",
+              "text": "Most went straight through showing empty space, and a few were deflected through large angles showing a small heavy positive nucleus. Bohr improved the model by putting the electrons in shells.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Most went straight through showing empty space"
+                },
+                {
+                  "point": 1,
+                  "quote": "a few were deflected through large angles showing a small heavy positive nucleus"
+                }
+              ],
+              "feedback": "Both results are correctly explained. State the limitation (an orbiting electron should radiate and spiral into the nucleus), and say Bohr's orbits are ones in which the electron does not radiate.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Rutherford found that the atom is like a plum pudding with electrons inside a positive ball. Bohr said the electrons move round the nucleus.",
+              "meets": [],
+              "feedback": "The plum pudding was Thomson's model, which Rutherford's experiment disproved. Describe what happened to the alpha particles and what each result showed."
+            },
+            {
+              "tier": "weak",
+              "text": "The alpha particles were all stopped by the gold foil because the gold atoms are solid. This showed the nucleus is very big.",
+              "meets": [],
+              "feedback": "In fact most alpha particles went straight through, which is why the atom must be mostly empty space with a tiny nucleus. Read the Rutherford part of the reading again."
+            }
+          ]
+        },
+        {
+          "prompt": "Light of wavelength 400 nm falls on a metal surface whose work function is 2.0 eV. Calculate the energy of each photon in joules, the maximum kinetic energy of the emitted electrons, and the threshold frequency of the metal. (h = 6.6 × 10⁻³⁴ J s, c = 3.0 × 10⁸ m/s, 1 eV = 1.6 × 10⁻¹⁹ J)",
+          "markScheme": [
+            "Correct substitution: E = hc/λ = (6.6 × 10⁻³⁴ × 3.0 × 10⁸) ÷ (4.0 × 10⁻⁷)",
+            "E = 4.95 × 10⁻¹⁹ J",
+            "Work function = 2.0 × 1.6 × 10⁻¹⁹ = 3.2 × 10⁻¹⁹ J, so KEmax = 4.95 × 10⁻¹⁹ − 3.2 × 10⁻¹⁹ = 1.75 × 10⁻¹⁹ J",
+            "f₀ = W/h = 3.2 × 10⁻¹⁹ ÷ 6.6 × 10⁻³⁴ ≈ 4.85 × 10¹⁴ Hz"
+          ],
+          "modelAnswer": "E = hc/λ = (6.6 × 10⁻³⁴ × 3.0 × 10⁸) ÷ (4.0 × 10⁻⁷) = 4.95 × 10⁻¹⁹ J. The work function is 2.0 × 1.6 × 10⁻¹⁹ = 3.2 × 10⁻¹⁹ J, so KEmax = hf − W = 4.95 × 10⁻¹⁹ − 3.2 × 10⁻¹⁹ = 1.75 × 10⁻¹⁹ J. The threshold frequency is f₀ = W/h = 3.2 × 10⁻¹⁹ ÷ 6.6 × 10⁻³⁴ = 4.85 × 10¹⁴ Hz.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "E = hc/λ = (6.6x10^-34 x 3.0x10^8)/(4.0x10^-7) = 4.95x10^-19 J\nW = 2.0 x 1.6x10^-19 = 3.2x10^-19 J\nKEmax = 4.95x10^-19 - 3.2x10^-19 = 1.75x10^-19 J\nf0 = W/h = 3.2x10^-19/6.6x10^-34 = 4.85x10^14 Hz",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "E = hc/λ = (6.6x10^-34 x 3.0x10^8)/(4.0x10^-7)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 4.95x10^-19 J"
+                },
+                {
+                  "point": 2,
+                  "quote": "KEmax = 4.95x10^-19 - 3.2x10^-19 = 1.75x10^-19 J"
+                },
+                {
+                  "point": 3,
+                  "quote": "f0 = W/h = 3.2x10^-19/6.6x10^-34 = 4.85x10^14 Hz"
+                }
+              ],
+              "feedback": "Every part correct, and you converted the work function to joules before subtracting. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Photon energy = hc/λ = 6.6 × 10⁻³⁴ × 3.0 × 10⁸ ÷ 4.0 × 10⁻⁷ = 4.95 × 10⁻¹⁹ J, which is about 3.1 eV. The electrons leave with at most 3.1 − 2.0 = 1.1 eV, i.e. 1.1 × 1.6 × 10⁻¹⁹ ≈ 1.75 × 10⁻¹⁹ J. Threshold frequency = (2.0 × 1.6 × 10⁻¹⁹) ÷ (6.6 × 10⁻³⁴) = 4.85 × 10¹⁴ Hz.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Photon energy = hc/λ = 6.6 × 10⁻³⁴ × 3.0 × 10⁸ ÷ 4.0 × 10⁻⁷"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 4.95 × 10⁻¹⁹ J"
+                },
+                {
+                  "point": 2,
+                  "quote": "1.1 × 1.6 × 10⁻¹⁹ ≈ 1.75 × 10⁻¹⁹ J"
+                },
+                {
+                  "point": 3,
+                  "quote": "Threshold frequency = (2.0 × 1.6 × 10⁻¹⁹) ÷ (6.6 × 10⁻³⁴) = 4.85 × 10¹⁴ Hz"
+                }
+              ],
+              "feedback": "Correct, and working in electronvolts first is a sensible check. Keep more figures in the 3.1 eV so the joule value is exact (3.09 eV gives 1.75 × 10⁻¹⁹ J).",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "E = hc/λ = (6.6x10^-34 x 3x10^8)/(400x10^-9) = 4.95x10^-19 J. KE = E - W = 4.95x10^-19 - 2.0 = -2.0 J. So no electrons are emitted.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "E = hc/λ = (6.6x10^-34 x 3x10^8)/(400x10^-9)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 4.95x10^-19 J"
+                }
+              ],
+              "feedback": "Your photon energy is correct. You cannot subtract 2.0 eV from an energy in joules; change it first, 2.0 × 1.6 × 10⁻¹⁹ = 3.2 × 10⁻¹⁹ J, which gives KEmax = 1.75 × 10⁻¹⁹ J. Then find f₀ = W/h."
+            },
+            {
+              "tier": "partial",
+              "text": "E = hc/λ = 4.95x10^-19 J. W = 3.2x10^-19 J. KE = 4.95x10^-19 + 3.2x10^-19 = 8.15x10^-19 J. f0 = c/λ = 3x10^8/4x10^-7 = 7.5x10^14 Hz.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "E = hc/λ = 4.95x10^-19 J"
+                }
+              ],
+              "feedback": "Your photon energy is right. Part of that energy is used to escape, so subtract the work function: KE = hf − W. The threshold frequency is W/h, not the frequency of the light you used."
+            },
+            {
+              "tier": "weak",
+              "text": "E = hf = 6.6x10^-34 x 400 = 2.64x10^-31 J. KE = E - W.",
+              "meets": [],
+              "feedback": "400 nm is a wavelength, not a frequency. Use E = hc/λ with λ = 4.0 × 10⁻⁷ m, then subtract the work function in joules."
+            },
+            {
+              "tier": "weak",
+              "text": "Brighter light gives more energy to the electrons, so the kinetic energy depends on the intensity, not the wavelength. KE = 2.0 eV.",
+              "meets": [],
+              "feedback": "Intensity changes how many electrons are emitted, not their maximum energy. That depends on the photon energy hf = hc/λ minus the work function."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "X-rays, the nucleus, radioactivity and nuclear energy",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe how X-rays are produced and give their uses, hazards and safety precautions;\n2. use A = Z + N and nuclide notation, and explain isotopes;\n3. compare alpha, beta and gamma radiation and explain half-life;\n4. distinguish nuclear fission from fusion and use E = Δmc²;\n5. describe electron diffraction as evidence that matter behaves as waves;\n6. recall the fundamental quantities and their SI units.\n\n## Materials\n\nA chart of an X-ray tube, a chart of the three radiations passing through paper, aluminium and lead, 100 dice (from Ludo sets), a tray, graph paper, a chart of the SI base units.\n\n## Starter (5 minutes)\n\nAsk: an X-ray at the hospital shows your bones but not your flesh. Why do the radiographer and the nurse leave the room when the picture is taken?\n\n## Development\n\n1. Draw the X-ray tube: thermionic electrons from a hot filament, accelerated by a high p.d., strike a tungsten target. List uses (bone pictures, airport baggage checks, crack detection) and hazards; give the precautions (lead aprons, short exposures).\n2. Write ²³⁸₉₂U on the board. Show A = Z + N. Define isotopes with carbon-12 and carbon-14.\n3. Compare alpha, beta and gamma: nature, charge, penetration, ionising power. Mention the G-M counter. Show alpha and beta decay equations.\n4. Define half-life and decay constant. Work a half-life example. List uses in medicine, agriculture, industry and carbon dating.\n5. Distinguish fission (a heavy nucleus splits) from fusion (light nuclei join). Explain mass defect and E = Δmc² with an example.\n6. State that electrons passed through graphite give a diffraction pattern, so matter behaves as waves, just as light behaves as particles.\n7. Recall the seven base quantities and their units.\n\n## Class activity\n\nThe practical: modelling radioactive decay with dice.\n\n## Evaluation\n\n1. How many neutrons are in ¹⁴₆C?\n2. A source has a half-life of 2 hours. What fraction remains after 6 hours?\n\n## Assignment\n\nComplete the practical write-up, due Wednesday.",
+      "reading": {
+        "title": "The nucleus, radioactivity and nuclear energy",
+        "content": "# X-rays\n\nIn an **X-ray tube**, electrons from a heated filament are accelerated across a very high voltage and strike a tungsten target. Most of their energy becomes heat, but a little becomes **X-rays**: high-energy electromagnetic waves that pass through flesh but are stopped by bone and metal. They are used to photograph bones, inspect luggage and find cracks in metal. They damage living cells, so radiographers wear lead aprons, stand behind lead screens and keep exposures short.\n\n# The nucleus\n\nThe nucleus contains **protons** and **neutrons**, together called nucleons. The **nucleon number** A, **proton number** Z and **neutron number** N are related by A = Z + N. A nuclide is written ᴬ_Z X; uranium-238 is ²³⁸₉₂U, with 238 − 92 = 146 neutrons. **Isotopes** are atoms of the same element with different numbers of neutrons, like carbon-12 and carbon-14.\n\n## Radioactivity\n\nUnstable nuclei break down and emit radiation:\n\n| Radiation | Nature | Stopped by | Ionising power |\n| --- | --- | --- | --- |\n| Alpha (α) | helium nucleus, ⁴₂He | paper | strong |\n| Beta (β) | fast electron | a few mm of aluminium | moderate |\n| Gamma (γ) | electromagnetic wave | thick lead (reduced only) | weak |\n\nIn alpha decay, A falls by 4 and Z by 2. In beta decay, A stays the same and Z rises by 1. Radiation is detected with a **G-M counter** or photographic film.\n\nThe **half-life** is the time for half the nuclei in a sample to decay. The decay constant λ is related to it by T½ = 0.693/λ.\n\n**Worked example.** Cobalt-60 has a half-life of about 5 years. A 40 g source becomes 20 g after 5 years, 10 g after 10 years and 5 g after 15 years.\n\nRadioisotopes kill cancer cells, trace fertiliser uptake in crops, check the thickness of paper and metal sheet, and date old wood and bone by carbon-14.\n\n## Fission and fusion\n\nIn **fission**, a heavy nucleus such as uranium-235 absorbs a neutron and splits into two lighter nuclei, releasing more neutrons and energy. A controlled chain reaction runs a nuclear reactor; an uncontrolled one is an atomic bomb. In **fusion**, light nuclei such as hydrogen join to form a heavier one; this powers the sun.\n\nIn both, the products have slightly less mass than the starting nuclei. This **mass defect** Δm becomes energy: E = Δmc².\n\n**Worked example.** A reaction has a mass defect of 3.0 × 10⁻²⁸ kg. E = 3.0 × 10⁻²⁸ × (3.0 × 10⁸)² = 2.7 × 10⁻¹¹ J.\n\n## Waves and particles\n\nElectrons fired through thin graphite form a diffraction pattern, as waves do. So matter, like light, has a dual nature.\n\n## Fundamental quantities\n\nLength (m), mass (kg), time (s), electric current (A), temperature (K), amount of substance (mol) and luminous intensity (cd)."
+      },
+      "cards": [
+        {
+          "front": "How X-rays are produced",
+          "back": "Fast electrons from a hot filament strike a heavy metal target such as tungsten."
+        },
+        {
+          "front": "A = Z + N",
+          "back": "Nucleon number = proton number + neutron number."
+        },
+        {
+          "front": "Isotopes",
+          "back": "Atoms of the same element with the same proton number but different neutron numbers."
+        },
+        {
+          "front": "Alpha particle",
+          "back": "A helium nucleus; strongly ionising, stopped by paper."
+        },
+        {
+          "front": "Gamma radiation",
+          "back": "Electromagnetic radiation from the nucleus; most penetrating, not deflected by fields."
+        },
+        {
+          "front": "Half-life",
+          "back": "The time taken for half the nuclei in a radioactive sample to decay."
+        },
+        {
+          "front": "Nuclear fission",
+          "back": "A heavy nucleus splits into lighter nuclei, releasing energy and neutrons."
+        },
+        {
+          "front": "Nuclear fusion",
+          "back": "Light nuclei combine to form a heavier nucleus, releasing energy, as in the sun."
+        },
+        {
+          "front": "Mass-energy equation",
+          "back": "E = Δmc², where Δm is the mass defect."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A laboratory has 80 g of a radioactive substance with a half-life of 5 days. How much of it remains undecayed after 15 days?",
+          "options": ["40 g", "26.7 g", "10 g", "0 g"],
+          "answer": "C"
+        },
+        {
+          "prompt": "How many neutrons are in a nucleus of radium, ²²⁶₈₈Ra?",
+          "options": ["88", "226", "314", "138"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which radiation is the most penetrating and is not deflected by a magnetic field?",
+          "options": [
+            "Alpha particles",
+            "Beta particles",
+            "Gamma rays",
+            "Protons"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Uranium-238 (²³⁸₉₂U) decays by emitting an alpha particle. What are the nucleon number and proton number of the new nucleus?",
+          "options": ["234 and 90", "238 and 90", "234 and 92", "238 and 93"],
+          "answer": "A"
+        },
+        {
+          "prompt": "In an X-ray tube, X-rays are produced when",
+          "options": [
+            "the filament is heated until it glows",
+            "fast-moving electrons strike a metal target",
+            "a high voltage ionises the gas in the tube",
+            "the target absorbs ultraviolet light"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between nuclear fission and nuclear fusion, giving an example of where each takes place. Explain where the energy released in both comes from.",
+          "markScheme": [
+            "Fission: a heavy nucleus (e.g. uranium-235) splits into two lighter nuclei",
+            "Correct example of fission: a nuclear reactor or an atomic bomb",
+            "Fusion: light nuclei (e.g. hydrogen) combine to form a heavier nucleus",
+            "Correct example of fusion: the sun (or stars, or the hydrogen bomb)",
+            "The products have less mass than the reactants; this mass defect is converted to energy by E = Δmc²"
+          ],
+          "modelAnswer": "In nuclear fission, a heavy nucleus such as uranium-235 splits into two lighter nuclei, giving out neutrons and energy; this happens in a nuclear reactor and in an atomic bomb. In nuclear fusion, light nuclei such as hydrogen combine to form a heavier nucleus such as helium; this is what powers the sun. In both reactions the total mass of the products is slightly less than the mass of the starting nuclei, and this mass defect is converted into energy according to E = Δmc².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Fission is when a heavy nucleus like uranium-235 breaks into two smaller nuclei. It is used in nuclear power stations. Fusion is when two light nuclei like hydrogen join together to make a heavier one, which happens in the sun. In both cases the mass of the products is less than the mass at the start, and the missing mass changes to energy using E = mc².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fission is when a heavy nucleus like uranium-235 breaks into two smaller nuclei"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is used in nuclear power stations"
+                },
+                {
+                  "point": 2,
+                  "quote": "Fusion is when two light nuclei like hydrogen join together to make a heavier one"
+                },
+                {
+                  "point": 3,
+                  "quote": "which happens in the sun"
+                },
+                {
+                  "point": 4,
+                  "quote": "the mass of the products is less than the mass at the start, and the missing mass changes to energy using E = mc²"
+                }
+              ],
+              "feedback": "All five points, each in your own words. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Fission: splitting of a heavy nucleus into lighter ones, for example in an atomic bomb or a reactor where U-235 absorbs a neutron and splits. Fusion: joining of light nuclei into a heavier nucleus, as in the sun where hydrogen nuclei fuse into helium. Energy: there is a mass defect Δm, and E = Δmc² gives the energy released.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fission: splitting of a heavy nucleus into lighter ones"
+                },
+                {
+                  "point": 1,
+                  "quote": "for example in an atomic bomb or a reactor"
+                },
+                {
+                  "point": 2,
+                  "quote": "Fusion: joining of light nuclei into a heavier nucleus"
+                },
+                {
+                  "point": 3,
+                  "quote": "as in the sun where hydrogen nuclei fuse into helium"
+                },
+                {
+                  "point": 4,
+                  "quote": "there is a mass defect Δm, and E = Δmc² gives the energy released"
+                }
+              ],
+              "feedback": "Concise and complete, with every point in its place. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Fission is splitting of a heavy nucleus, used in nuclear reactors. Fusion is joining of light nuclei, which happens in the sun. The energy comes from the heat of the reaction.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fission is splitting of a heavy nucleus"
+                },
+                {
+                  "point": 1,
+                  "quote": "used in nuclear reactors"
+                },
+                {
+                  "point": 2,
+                  "quote": "Fusion is joining of light nuclei"
+                },
+                {
+                  "point": 3,
+                  "quote": "which happens in the sun"
+                }
+              ],
+              "feedback": "Both definitions and examples are right. The energy does not come from heat; it comes from a loss of mass. Say the products have less mass, and the mass defect becomes energy by E = Δmc²."
+            },
+            {
+              "tier": "partial",
+              "text": "In fusion a heavy nucleus splits into two, as in the atomic bomb. In fission light nuclei join, as in the sun. Mass is lost and turned into energy by E = Δmc².",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "Mass is lost and turned into energy by E = Δmc²"
+                }
+              ],
+              "feedback": "Your energy explanation is right, but you swapped the two names. Fission is splitting, as in the atomic bomb and reactor; fusion is joining, as in the sun. Because each name sits on the wrong process, the definitions and examples cannot earn their marks.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Fission and fusion are both types of radioactivity where alpha, beta and gamma rays are given out from the nucleus.",
+              "meets": [],
+              "feedback": "Fission and fusion are nuclear reactions, not the same as radioactive decay. Fission splits a heavy nucleus; fusion joins light nuclei. Give an example of each and explain the mass defect."
+            },
+            {
+              "tier": "weak",
+              "text": "Fusion is joining of nuclei. Fission is when the atom burns like fuel and gives a lot of heat, which is why it is used in power stations.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Fusion is joining of nuclei"
+                }
+              ],
+              "feedback": "Your fusion definition is a start. Fission is not burning; a heavy nucleus splits into two lighter nuclei. The energy comes from a mass defect, E = Δmc², not from combustion."
+            }
+          ]
+        },
+        {
+          "prompt": "A hospital in Ibadan receives 64 mg of iodine-131, which has a half-life of 8 days. Calculate (a) the mass remaining after 32 days, (b) how long it takes for only 2 mg to remain, and (c) the fraction of the original sample that has decayed after 24 days.",
+          "markScheme": [
+            "32 days = 4 half-lives",
+            "Mass remaining after 32 days = 64 ÷ 2⁴ = 4 mg",
+            "2 mg remains after 5 half-lives: 5 × 8 = 40 days",
+            "After 24 days (3 half-lives), 1/8 remains, so 7/8 has decayed"
+          ],
+          "modelAnswer": "(a) 32 days ÷ 8 days = 4 half-lives, so the mass remaining is 64 → 32 → 16 → 8 → 4 mg. (b) 64 mg halves to 2 mg after 5 half-lives (64 → 32 → 16 → 8 → 4 → 2), which is 5 × 8 = 40 days. (c) 24 days is 3 half-lives, so (½)³ = 1/8 remains, 8 mg. The fraction decayed is 1 − 1/8 = 7/8.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Number of half-lives = 32/8 = 4. Mass left = 64 x (1/2)^4 = 64/16 = 4 mg.\n(b) 64 → 32 → 16 → 8 → 4 → 2 is 5 half-lives, so time = 5 x 8 = 40 days.\n(c) 24/8 = 3 half-lives, so 1/8 remains. Fraction decayed = 7/8.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Number of half-lives = 32/8 = 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "Mass left = 64 x (1/2)^4 = 64/16 = 4 mg"
+                },
+                {
+                  "point": 2,
+                  "quote": "time = 5 x 8 = 40 days"
+                },
+                {
+                  "point": 3,
+                  "quote": "Fraction decayed = 7/8"
+                }
+              ],
+              "feedback": "All three parts correct and clearly worked. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "After 8 days 32 mg, 16 days 16 mg, 24 days 8 mg, 32 days 4 mg. So 32 days is four half-lives and 4 mg remains. Halving again gives 2 mg at 40 days. At 24 days 8 mg is left out of 64, which is one-eighth, so seven-eighths have decayed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "32 days is four half-lives"
+                },
+                {
+                  "point": 1,
+                  "quote": "4 mg remains"
+                },
+                {
+                  "point": 2,
+                  "quote": "Halving again gives 2 mg at 40 days"
+                },
+                {
+                  "point": 3,
+                  "quote": "seven-eighths have decayed"
+                }
+              ],
+              "feedback": "Building the table day by day made every answer easy to check. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 32/8 = 4 half-lives. 64/4 = 16 mg. (b) 2 mg will remain after 5 half-lives = 40 days. (c) After 24 days 8 mg remains.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "32/8 = 4 half-lives"
+                },
+                {
+                  "point": 2,
+                  "quote": "2 mg will remain after 5 half-lives = 40 days"
+                }
+              ],
+              "feedback": "You counted the half-lives correctly. After 4 half-lives you halve four times, dividing by 2⁴ = 16, not by 4, giving 4 mg. For (c), 8 mg remains, so the fraction decayed is 56/64 = 7/8."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 64 - (4 x 8) = 32 mg. (b) 2 mg after 40 days. (c) 3 half-lives so 1/8 remains and 7/8 has decayed.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "2 mg after 40 days"
+                },
+                {
+                  "point": 3,
+                  "quote": "1/8 remains and 7/8 has decayed"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are right. In (a), radioactive decay halves the mass each half-life; it does not subtract a fixed amount. 32 days is 4 half-lives, so 64 ÷ 16 = 4 mg."
+            },
+            {
+              "tier": "weak",
+              "text": "After 32 days all of it has decayed because 32 days is much longer than 8 days.",
+              "meets": [],
+              "feedback": "A radioactive sample never quite runs out; it halves every half-life. 32 days is 4 half-lives, so halve 64 mg four times."
+            },
+            {
+              "tier": "weak",
+              "text": "The half-life is 8 days so after 32 days the mass is 64 ÷ 32 x 8 = 16 mg. For 2 mg it takes 64 ÷ 2 = 32 days.",
+              "meets": [],
+              "feedback": "Find the number of half-lives first (32 ÷ 8 = 4), then halve the mass that many times. For 2 mg, count how many halvings take 64 to 2, then multiply by 8 days."
+            }
+          ]
+        }
+      ],
+      "practical": {
+        "title": "Modelling radioactive decay with dice",
+        "instructions": "Each die stands for an unstable nucleus. A die that shows a six has 'decayed' and is removed. You will throw the dice repeatedly, record how many are left each time, plot a decay curve and read the half-life from it.",
+        "steps": [
+          {
+            "text": "Count out 100 dice and put them in the tray. Record 100 in your table against throw number 0."
+          },
+          {
+            "text": "Shake the tray and tip the dice gently onto the bench. Remove every die showing a six and set it aside.",
+            "note": "Tip the dice inside the tray or onto a cloth so none roll off the bench."
+          },
+          {
+            "text": "Count the dice that remain and record the number against throw number 1."
+          },
+          {
+            "text": "Return the remaining dice to the tray and repeat until you have recorded eight throws."
+          },
+          {
+            "text": "Plot a graph of the number of dice remaining (y-axis) against throw number (x-axis) and draw a smooth curve."
+          },
+          {
+            "text": "From the graph, find how many throws it takes for the number to fall from 100 to 50, and from 50 to 25. This is the half-life in throws."
+          },
+          {
+            "text": "Explain how this model is like radioactive decay and state one way in which it is different."
+          }
+        ],
+        "rubric": [
+          {
+            "description": "Method and readings: dice thrown correctly, sixes removed each time, eight throws recorded in a table",
+            "maxPoints": 4
+          },
+          {
+            "description": "Graph and half-life: smooth decay curve with labelled axes, half-life read twice and agreeing",
+            "maxPoints": 4
+          },
+          {
+            "description": "Conclusion: links the model to random decay and constant half-life, and gives one limitation",
+            "maxPoints": 2
+          }
+        ],
+        "writeUps": [
+          {
+            "tier": "full",
+            "text": "Method: 100 dice were tipped from the tray eight times, and those showing six were removed after each throw.\nResults (throw: dice left): 0: 100, 1: 84, 2: 70, 3: 57, 4: 49, 5: 41, 6: 34, 7: 28, 8: 24.\nGraph: a smooth curve falling steeply at first and then more slowly. It reaches 50 at 3.9 throws and 25 at 7.7 throws, so each halving takes about 3.8 throws. Half-life = 3.8 throws.\nConclusion: like nuclei, each die has a fixed chance of 'decaying' each throw, so the number left halves in equal intervals whatever the starting number. The model is different because real samples contain billions of nuclei, so their curve is much smoother.",
+            "scores": [4, 4, 2],
+            "feedback": "An excellent write-up. Reading two halvings and getting the same 3.8 throws shows the half-life is constant, and your limitation is exactly right."
+          },
+          {
+            "tier": "full",
+            "text": "We threw 100 dice eight times, removing the sixes each time. Numbers left: 100, 82, 68, 58, 47, 40, 33, 27, 23.\nOn the graph of dice left against throw number the curve crosses 50 at about 3.8 throws and 25 at about 7.6 throws. Half-life is about 3.8 throws.\nThe decay is random: we could not say which die would show six, but about one-sixth went each time. This is like radioactive nuclei, where we cannot say which will decay but the half-life is fixed.\nLimitation: a die decays only when we throw it, but real nuclei can decay at any instant.",
+            "scores": [4, 3, 2],
+            "feedback": "Good readings and a thoughtful conclusion. Label your graph axes with the quantities to earn the last graph mark."
+          },
+          {
+            "tier": "partial",
+            "text": "We threw the 100 dice from the tray and took away the sixes each time. Results: 100, 85, 71, 60, 50, 42, 35, 29, 25. The graph is a curve going down. The number reached 50 after 4 throws so the half-life is 4 throws.",
+            "scores": [3, 2, 0],
+            "feedback": "Good readings and a sensible half-life. Read a second halving (50 to 25) to show it is constant, and explain how the model is like radioactive decay."
+          },
+          {
+            "tier": "partial",
+            "text": "Method: 100 dice, remove sixes, repeat eight times. Results: 100, 83, 69, 57, 48, 40, 33, 28, 23. I drew a straight line through the points and found the half-life is 8 throws because after 8 throws about a quarter is left. This is like radioactivity because the dice decay.",
+            "scores": [4, 1, 1],
+            "feedback": "Your readings are careful. The points lie on a curve, not a straight line. Half-life is the time to fall to half, not a quarter, so read where the curve crosses 50: about 3.8 throws."
+          },
+          {
+            "tier": "weak",
+            "text": "We used dice to show radioactivity. We put the dice in the tray and threw them many times. Every time we threw them, half of the dice were removed, so the half-life is 1 throw. The graph goes down and the dice finished after a few throws.",
+            "scores": [1, 0, 0],
+            "feedback": "Only dice showing a six are removed, about one in six each throw, not half. Record how many remain after each throw, plot them, and read off where the number falls to 50."
+          },
+          {
+            "tier": "weak",
+            "text": "Aim: to model radioactive decay. Apparatus: dice, tray, graph paper. We threw the dice many times and removed some of them each time. Radioactive substances lose half their mass in the half-life. The half-life of the dice is the same as the half-life of uranium.",
+            "scores": [1, 0, 0],
+            "feedback": "No readings are shown, and the dice cannot share uranium's half-life. Record the number left after each of eight throws, draw the curve and read the half-life in throws."
+          }
+        ]
+      }
+    },
+    "9": {
+      "topic": "Dimensions, projectiles, satellites and elasticity",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. give the units of derived quantities and express them in dimensions of M, L and T;\n2. use dimensions to check an equation and to obtain units;\n3. calculate the time of flight, maximum height and range of a projectile;\n4. describe natural and artificial satellites and the geostationary orbit;\n5. apply Hooke's law, calculate Young's modulus and the work done in stretching a wire.\n\n## Materials\n\nA football, a metre rule, a spring with a pointer, slotted masses and hanger, a retort stand, a picture of a DStv dish pointing at a satellite, graph paper.\n\n## Starter (5 minutes)\n\nAsk: a satellite dish on a roof in Enugu never moves, yet the satellite it receives from is travelling at about 3 km/s. How can that be?\n\n## Development\n\n1. Revise derived units: volume (m³), density (kg m⁻³), speed (m s⁻¹). Write the dimensions of velocity (LT⁻¹), acceleration (LT⁻²) and force (MLT⁻²).\n2. Check that v = u + at is dimensionally correct. Show how dimensions give the unit of a constant.\n3. Resolve a projectile's velocity into u cos θ and u sin θ. Derive time of flight T = 2u sin θ/g, maximum height H = u² sin²θ/2g and range R = u² sin 2θ/g. Show that range is greatest at 45°.\n4. Compare the moon with an artificial satellite. Explain the geostationary orbit, period 24 hours, and uses: television, weather, GPS, Nigeria's NigComSat.\n5. Hang masses on the spring and plot load against extension. Mark the elastic limit and yield point. Define stress, strain and Young's modulus. Work out the energy stored, ½Fe.\n\n## Class activity\n\nGroups load the spring in steps of 1 N up to 6 N, plot the graph and find the spring constant from the slope.\n\n## Evaluation\n\n1. What are the dimensions of pressure?\n2. At what angle should a ball be kicked for the greatest range?\n\n## Assignment\n\nWorksheet questions, due Thursday.",
+      "reading": {
+        "title": "Checking equations, flying objects and stretching wires",
+        "content": "# Dimensions\n\nEvery derived quantity can be written in terms of the fundamental quantities mass [M], length [L] and time [T]. These are its **dimensions**.\n\n| Quantity | Unit | Dimensions |\n| --- | --- | --- |\n| Velocity | m s⁻¹ | LT⁻¹ |\n| Acceleration | m s⁻² | LT⁻² |\n| Force | N = kg m s⁻² | MLT⁻² |\n| Density | kg m⁻³ | ML⁻³ |\n| Energy | J = kg m² s⁻² | ML²T⁻² |\n\nIn a correct equation, every term has the same dimensions. In v = u + at, v and u are LT⁻¹, and at is (LT⁻²)(T) = LT⁻¹, so the equation is dimensionally consistent. Pure numbers, such as ½ or 2, have no dimensions, so dimensions cannot show whether a numerical factor is right.\n\n# Projectiles\n\nA **projectile** is a body thrown into the air and then moving under gravity alone: a football, a javelin, a shell from a gun. If it is launched at speed u at angle θ to the horizontal, its horizontal velocity u cos θ stays constant and its vertical velocity u sin θ is changed by gravity.\n\n- Time of flight: T = 2u sin θ / g\n- Maximum height: H = u² sin²θ / 2g\n- Range: R = u² sin 2θ / g, greatest when θ = 45°\n\n**Worked example.** A footballer kicks a ball at 20 m/s at 45°. Take g = 10 m/s². T = 2 × 20 × 0.707 ÷ 10 = 2.83 s; H = 400 × 0.5 ÷ 20 = 10 m; R = 400 × 1 ÷ 10 = 40 m.\n\n# Satellites\n\nA **satellite** is a body that orbits a planet. The moon is a natural satellite; NigComSat-1R is an artificial one. Gravity provides the force that keeps it in orbit. A **geostationary** (parking) satellite orbits above the equator once every 24 hours, the same time the earth takes to turn, so it stays above one spot. That is why a satellite dish can be fixed. Satellites are used for television, weather forecasts, navigation and communication; rockets carry them into orbit.\n\n# Elasticity\n\n**Hooke's law**: the extension of a spring or wire is proportional to the load, provided the elastic limit is not exceeded: F = ke.\n\n**Worked example.** A load of 12 N stretches a spring by 3 cm. k = 12 ÷ 0.03 = 400 N/m.\n\nBeyond the **elastic limit** the wire does not return to its length when unloaded; at the **yield point** it stretches suddenly; then it breaks.\n\nFor a wire, **stress** = F/A, **strain** = e/l and **Young's modulus** E = stress ÷ strain, in N m⁻² (Pa). The work done in stretching is W = ½Fe."
+      },
+      "cards": [
+        {
+          "front": "Dimensions of force",
+          "back": "MLT⁻²."
+        },
+        {
+          "front": "Dimensions of density",
+          "back": "ML⁻³."
+        },
+        {
+          "front": "Dimensionally consistent equation",
+          "back": "One in which every term has the same dimensions."
+        },
+        {
+          "front": "Time of flight of a projectile",
+          "back": "T = 2u sin θ / g."
+        },
+        {
+          "front": "Range of a projectile",
+          "back": "R = u² sin 2θ / g, greatest at θ = 45°."
+        },
+        {
+          "front": "Geostationary satellite",
+          "back": "Orbits above the equator with a period of 24 hours, so it stays above one point on earth."
+        },
+        {
+          "front": "Hooke's law",
+          "back": "Extension is proportional to load up to the elastic limit: F = ke."
+        },
+        {
+          "front": "Young's modulus",
+          "back": "Stress ÷ strain = (F/A) ÷ (e/l), in N m⁻²."
+        },
+        {
+          "front": "Work done in stretching a spring",
+          "back": "W = ½Fe = ½ke²."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What are the dimensions of force?",
+          "options": ["MLT⁻¹", "ML²T⁻²", "MLT⁻²", "ML⁻¹T⁻²"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A ball is kicked at 20 m/s at an angle of 30° to the ground. What is its time of flight? (g = 10 m/s²)",
+          "options": ["2 s", "4 s", "1 s", "3.46 s"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A load of 20 N stretches a spring by 4 cm. What is the spring constant?",
+          "options": ["5 N/m", "80 N/m", "0.002 N/m", "500 N/m"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A communication satellite stays above the same point on the equator. What is its period of revolution?",
+          "options": ["1 hour", "12 hours", "24 hours", "365 days"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is the SI unit of density?",
+          "options": ["kg m⁻³", "g cm³", "kg m³", "N m⁻³"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Use the method of dimensions to show that the equation v² = u² + 2as is dimensionally correct. Explain why this method cannot tell you whether the number 2 in the equation is right.",
+          "markScheme": [
+            "Dimensions of v² and of u² are (LT⁻¹)² = L²T⁻²",
+            "Dimensions of as are (LT⁻²)(L) = L²T⁻²",
+            "States that every term has the same dimensions, so the equation is dimensionally consistent",
+            "States that pure numbers such as 2 have no dimensions, so the method cannot check them"
+          ],
+          "modelAnswer": "Velocity has dimensions LT⁻¹, so v² and u² both have dimensions L²T⁻². Acceleration has dimensions LT⁻² and displacement L, so as has dimensions LT⁻² × L = L²T⁻². Every term in the equation has the same dimensions, L²T⁻², so the equation is dimensionally correct. The number 2 is a pure number with no dimensions, so the method of dimensions cannot show whether it should be 2 or some other number.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "v² = (LT⁻¹)² = L²T⁻² and u² = L²T⁻². a = LT⁻² and s = L, so as = L²T⁻². All the terms have dimensions L²T⁻², so the equation is dimensionally correct. The 2 is just a number with no dimension, so dimensions cannot tell if it should be 2 or 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "v² = (LT⁻¹)² = L²T⁻² and u² = L²T⁻²"
+                },
+                {
+                  "point": 1,
+                  "quote": "a = LT⁻² and s = L, so as = L²T⁻²"
+                },
+                {
+                  "point": 2,
+                  "quote": "All the terms have dimensions L²T⁻², so the equation is dimensionally correct"
+                },
+                {
+                  "point": 3,
+                  "quote": "The 2 is just a number with no dimension, so dimensions cannot tell if it should be 2 or 3"
+                }
+              ],
+              "feedback": "Every term checked and the limitation explained clearly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Left side: [v²] = [LT⁻¹]² = L²T⁻². Right side: [u²] = L²T⁻², [2as] = [LT⁻²][L] = L²T⁻². Since the left and right sides and each term have identical dimensions, the equation is homogeneous. Dimensionless constants like 2 or ½ disappear in this method, so it cannot confirm their values.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "[v²] = [LT⁻¹]² = L²T⁻². Right side: [u²] = L²T⁻²"
+                },
+                {
+                  "point": 1,
+                  "quote": "[2as] = [LT⁻²][L] = L²T⁻²"
+                },
+                {
+                  "point": 2,
+                  "quote": "Since the left and right sides and each term have identical dimensions, the equation is homogeneous"
+                },
+                {
+                  "point": 3,
+                  "quote": "Dimensionless constants like 2 or ½ disappear in this method, so it cannot confirm their values"
+                }
+              ],
+              "feedback": "Clear and correct, and calling the equation homogeneous is exactly the right word. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "v² = L²T⁻². u² = L²T⁻². as = LT⁻² x L = L²T⁻². So the equation is correct.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "v² = L²T⁻². u² = L²T⁻²"
+                },
+                {
+                  "point": 1,
+                  "quote": "as = LT⁻² x L = L²T⁻²"
+                },
+                {
+                  "point": 2,
+                  "quote": "So the equation is correct"
+                }
+              ],
+              "feedback": "Your dimensional check is right. The question also asks about the 2: explain that pure numbers have no dimensions, so this method cannot check them.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "v is m/s so v² is m²/s². a is m/s² and s is m so 2as is 2m²/s², which is different because of the 2. So the equation is not dimensionally correct.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "a is m/s² and s is m"
+                }
+              ],
+              "feedback": "Your units for a and s are right. The 2 has no dimensions, so 2as has the same dimensions as as, L²T⁻². All three terms match, so the equation is dimensionally correct."
+            },
+            {
+              "tier": "weak",
+              "text": "The equation is correct because it is one of the equations of motion we learnt in SS1.",
+              "meets": [],
+              "feedback": "The question asks you to prove it with dimensions. Write the dimensions of v², u² and as in terms of L and T, and show they are all the same."
+            },
+            {
+              "tier": "weak",
+              "text": "v = LT, u = LT, a = LT², s = L. v² = L²T², 2as = 2L²T². So it balances.",
+              "meets": [],
+              "feedback": "Velocity is length divided by time, so its dimensions are LT⁻¹, not LT; acceleration is LT⁻². Redo the check with the negative powers of T."
+            }
+          ]
+        },
+        {
+          "prompt": "A steel wire 2.0 m long with a cross-sectional area of 1.0 × 10⁻⁶ m² is stretched by 1.0 mm when a load of 100 N hangs from it. Calculate the stress, the strain, the Young's modulus of steel and the work done in stretching the wire.",
+          "markScheme": [
+            "Stress = F/A = 100 ÷ 1.0 × 10⁻⁶ = 1.0 × 10⁸ N m⁻²",
+            "Strain = e/l = 1.0 × 10⁻³ ÷ 2.0 = 5.0 × 10⁻⁴",
+            "Young's modulus = stress ÷ strain = 2.0 × 10¹¹ N m⁻²",
+            "Work done = ½Fe = ½ × 100 × 1.0 × 10⁻³ = 0.05 J"
+          ],
+          "modelAnswer": "Stress = F/A = 100 ÷ (1.0 × 10⁻⁶) = 1.0 × 10⁸ N m⁻². Strain = e/l = (1.0 × 10⁻³) ÷ 2.0 = 5.0 × 10⁻⁴, with no unit. Young's modulus = stress ÷ strain = (1.0 × 10⁸) ÷ (5.0 × 10⁻⁴) = 2.0 × 10¹¹ N m⁻². Work done = ½Fe = ½ × 100 × 1.0 × 10⁻³ = 0.05 J.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Stress = F/A = 100/1.0x10^-6 = 1.0x10^8 N/m²\nStrain = e/l = 0.001/2.0 = 5.0x10^-4\nE = stress/strain = 1.0x10^8 / 5.0x10^-4 = 2.0x10^11 N/m²\nWork = ½Fe = 0.5 x 100 x 0.001 = 0.05 J",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Stress = F/A = 100/1.0x10^-6 = 1.0x10^8 N/m²"
+                },
+                {
+                  "point": 1,
+                  "quote": "Strain = e/l = 0.001/2.0 = 5.0x10^-4"
+                },
+                {
+                  "point": 2,
+                  "quote": "E = stress/strain = 1.0x10^8 / 5.0x10^-4 = 2.0x10^11 N/m²"
+                },
+                {
+                  "point": 3,
+                  "quote": "Work = ½Fe = 0.5 x 100 x 0.001 = 0.05 J"
+                }
+              ],
+              "feedback": "All four parts correct, with the extension changed to metres. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The stress is 100 ÷ 0.000001 = 100 000 000 Pa (1 × 10⁸ Pa). The extension is 1 mm = 0.001 m, so strain = 0.001 ÷ 2 = 0.0005. Young's modulus = 1 × 10⁸ ÷ 0.0005 = 2 × 10¹¹ Pa, a typical value for steel. Energy stored = ½ × 100 × 0.001 = 0.05 J.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The stress is 100 ÷ 0.000001 = 100 000 000 Pa (1 × 10⁸ Pa)"
+                },
+                {
+                  "point": 1,
+                  "quote": "strain = 0.001 ÷ 2 = 0.0005"
+                },
+                {
+                  "point": 2,
+                  "quote": "Young's modulus = 1 × 10⁸ ÷ 0.0005 = 2 × 10¹¹ Pa"
+                },
+                {
+                  "point": 3,
+                  "quote": "Energy stored = ½ × 100 × 0.001 = 0.05 J"
+                }
+              ],
+              "feedback": "Correct throughout, and checking your answer against a typical value for steel is good practice. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Stress = 100/1.0x10^-6 = 1.0x10^8 N/m². Strain = 1.0/2.0 = 0.5. E = 1.0x10^8/0.5 = 2.0x10^8 N/m². Work = 100 x 1.0 = 100 J",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Stress = 100/1.0x10^-6 = 1.0x10^8 N/m²"
+                }
+              ],
+              "feedback": "Your stress is right. Change the extension to metres before using it: 1.0 mm = 1.0 × 10⁻³ m, so the strain is 5.0 × 10⁻⁴. The work done is ½Fe, not Fe, because the force grows from zero as the wire stretches."
+            },
+            {
+              "tier": "partial",
+              "text": "Stress = F/A = 1.0x10^8 Pa. Strain = e/l = 0.001/2 = 5x10^-4. E = strain/stress = 5x10^-4/1x10^8 = 5x10^-12 Pa.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Stress = F/A = 1.0x10^8 Pa"
+                },
+                {
+                  "point": 1,
+                  "quote": "Strain = e/l = 0.001/2 = 5x10^-4"
+                }
+              ],
+              "feedback": "Stress and strain are both right. Young's modulus is stress divided by strain, not the other way round: 2.0 × 10¹¹ Pa. Then find the work done, ½Fe."
+            },
+            {
+              "tier": "weak",
+              "text": "Young's modulus = F x l / A = 100 x 2 / 1x10^-6 = 2x10^8.",
+              "meets": [],
+              "feedback": "The extension is missing from your formula. E = Fl/(Ae), so divide also by e = 1.0 × 10⁻³ m. Work out the stress and strain separately first."
+            },
+            {
+              "tier": "weak",
+              "text": "Stress is the force, 100 N. Strain is the extension, 1 mm. E = 100 x 1 = 100.",
+              "meets": [],
+              "feedback": "Stress is force per unit area, F/A, and strain is extension per unit length, e/l. Young's modulus is stress divided by strain. Try each step again."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Solar energy, fibre optics, lasers and semiconductors",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe a solar collector and explain black-body radiation and how its intensity varies with wavelength and temperature;\n2. explain how light travels along an optical fibre and give its uses;\n3. state the meaning of LASER, name its types, uses and dangers;\n4. distinguish conductors, semiconductors and insulators by band theory;\n5. explain n-type and p-type semiconductors, the junction diode and rectification.\n\n## Materials\n\nA picture of a solar water heater on a roof, a black-body radiation curve chart, an optical fibre lamp (or a curved plastic rod and torch), a laser pointer, a junction diode, a battery, a bulb, a chart of half-wave and full-wave rectifier outputs.\n\n## Starter (5 minutes)\n\nAsk: why are the pipes in a solar water heater painted black, and why does a mobile phone charger need a diode?\n\n## Development\n\n1. Describe the solar collector: blackened copper pipes under glass. Define a black body and sketch intensity against wavelength at three temperatures; the peak moves to shorter wavelengths as temperature rises.\n2. Shine the torch into the curved rod and show the light following it. Explain total internal reflection along the fibre and its uses in internet cables, endoscopes and sensors.\n3. Expand LASER. Name solid-state, gas, liquid and semiconductor lasers, and give uses and dangers. Warn the class never to point a laser at anyone's eyes.\n4. Draw the energy bands for a conductor, a semiconductor and an insulator.\n5. Explain intrinsic silicon, then doping to make n-type and p-type. Connect the diode to the battery and bulb both ways: forward bias lights the bulb, reverse bias does not.\n6. Show the outputs of half-wave and full-wave rectifiers.\n\n## Class activity\n\nIn pairs, students sketch the output of a half-wave and a full-wave rectifier for the same a.c. input and label which half-cycles pass.\n\n## Evaluation\n\n1. What does the letter S in LASER stand for?\n2. Name one impurity that makes p-type silicon.\n\n## Assignment\n\nRevise for Friday's quiz.",
+      "reading": {
+        "title": "From sunlight to semiconductors",
+        "content": "# Solar energy and black bodies\n\nA **solar water heater** has copper pipes painted dull black under a sheet of glass. Black surfaces absorb radiation best; the glass lets sunlight in but traps the heat. Water in the pipes warms and rises by convection to a tank. Solar panels of photocells change sunlight directly into electricity.\n\nA **black body** absorbs all the radiation falling on it and is also the best emitter. As its temperature rises, it radiates more energy at every wavelength, and the peak of its radiation curve moves to **shorter wavelengths**. That is why a heated iron rod glows red, then orange, then white.\n\n# Fibre optics\n\nAn **optical fibre** is a thin glass strand with a core of higher refractive index than its cladding. Light entering one end strikes the boundary at more than the critical angle and is **totally internally reflected** again and again, so it travels to the other end even round bends. Fibres carry internet and telephone signals (including local area networks), let doctors see inside the body with an endoscope, and are used in sensors and to carry laser beams.\n\n# Lasers\n\n**LASER** stands for Light Amplification by Stimulated Emission of Radiation. Laser light is of one colour, its waves are in step, and it travels as a narrow beam. Types: solid-state (ruby), gas (helium-neon), liquid (dye) and semiconductor (in CD players and laser pointers). Lasers are used in eye surgery, cutting metal, barcode readers, fibre communication, holograms, research and military range-finding. They can burn the retina and cause blindness, so never look into one or point it at anyone.\n\n# Magnetic materials\n\nFerromagnetic materials such as iron, nickel and cobalt are strongly magnetic. They are used in motors, transformers, loudspeakers, computer hard disks and magnetic door catches.\n\n# Semiconductors\n\nIn **band theory**, electrons occupy a valence band and can conduct only in the conduction band above it.\n\n- In a **conductor** the bands overlap, so electrons flow freely.\n- In a **semiconductor** the gap between them is small, about 1 eV; heat lifts some electrons across.\n- In an **insulator** the gap is large, so almost no electrons cross.\n\nPure silicon or germanium is an **intrinsic** semiconductor: heat frees electrons, each leaving a **hole**, so electrons and holes are equal in number. **Doping** adds impurities. A pentavalent impurity such as phosphorus gives spare electrons: **n-type**. A trivalent impurity such as boron gives extra holes: **p-type**.\n\nA **junction diode** joins p-type to n-type. It conducts when **forward biased** (p-side to the positive terminal) and hardly at all when **reverse biased**. So it can **rectify** a.c.: one diode passes only the positive half-cycles (half-wave); a bridge of four diodes uses both halves (full-wave), giving a steadier d.c. output."
+      },
+      "cards": [
+        {
+          "front": "Black body",
+          "back": "A body that absorbs all radiation falling on it; also the best emitter."
+        },
+        {
+          "front": "Effect of temperature on black-body radiation",
+          "back": "More energy at every wavelength, and the peak moves to shorter wavelengths."
+        },
+        {
+          "front": "How light travels in an optical fibre",
+          "back": "By repeated total internal reflection at the core-cladding boundary."
+        },
+        {
+          "front": "LASER",
+          "back": "Light Amplification by Stimulated Emission of Radiation."
+        },
+        {
+          "front": "Band gap of an insulator",
+          "back": "Large, so almost no electrons reach the conduction band."
+        },
+        {
+          "front": "Intrinsic semiconductor",
+          "back": "Pure silicon or germanium, with equal numbers of free electrons and holes."
+        },
+        {
+          "front": "n-type semiconductor",
+          "back": "Doped with a pentavalent impurity such as phosphorus; electrons are the majority carriers."
+        },
+        {
+          "front": "p-type semiconductor",
+          "back": "Doped with a trivalent impurity such as boron; holes are the majority carriers."
+        },
+        {
+          "front": "Forward bias",
+          "back": "The p-side of a diode connected to the positive terminal, so the diode conducts."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Pure silicon is doped with a small amount of phosphorus, which has five valence electrons. What type of semiconductor is produced?",
+          "options": ["p-type", "n-type", "Intrinsic", "An insulator"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A junction diode conducts when",
+          "options": [
+            "its n-side is connected to the positive terminal",
+            "it is reverse biased",
+            "its p-side is connected to the positive terminal",
+            "it is heated strongly"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "According to band theory, what is true of the gap between the valence band and the conduction band in an insulator?",
+          "options": [
+            "It is zero",
+            "It is small, about 1 eV",
+            "The bands overlap",
+            "It is large"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "As the temperature of a black body rises, the peak of its radiation curve",
+          "options": [
+            "moves to shorter wavelengths",
+            "moves to longer wavelengths",
+            "stays at the same wavelength but gets lower",
+            "disappears"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Light travels along an optical fibre carrying internet signals under the sea because of",
+          "options": [
+            "refraction only",
+            "diffraction",
+            "total internal reflection",
+            "dispersion"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what is meant by an intrinsic semiconductor. Describe how n-type and p-type semiconductors are produced from it, and name the majority charge carriers in each.",
+          "markScheme": [
+            "Intrinsic semiconductor: pure silicon or germanium, in which heat frees electrons, leaving holes, so electrons and holes are equal in number",
+            "n-type: doped with a pentavalent impurity (e.g. phosphorus or arsenic)",
+            "In n-type the majority carriers are electrons",
+            "p-type: doped with a trivalent impurity (e.g. boron or indium), and the majority carriers are holes"
+          ],
+          "modelAnswer": "An intrinsic semiconductor is a pure semiconductor such as silicon or germanium. At room temperature heat frees a few electrons from their bonds, and each leaves behind a hole, so the free electrons and holes are equal in number. An n-type semiconductor is made by doping it with a pentavalent impurity such as phosphorus; each impurity atom gives a spare electron, so electrons are the majority carriers. A p-type semiconductor is made by doping with a trivalent impurity such as boron; each impurity atom leaves a hole, so holes are the majority carriers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "An intrinsic semiconductor is a pure one like silicon or germanium. Heat breaks some bonds so electrons become free and leave holes behind, and the number of electrons and holes is the same. If we add a pentavalent impurity like phosphorus we get n-type, where the majority carriers are electrons. If we add a trivalent impurity like boron we get p-type, where the majority carriers are holes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Heat breaks some bonds so electrons become free and leave holes behind, and the number of electrons and holes is the same"
+                },
+                {
+                  "point": 1,
+                  "quote": "If we add a pentavalent impurity like phosphorus we get n-type"
+                },
+                {
+                  "point": 2,
+                  "quote": "where the majority carriers are electrons"
+                },
+                {
+                  "point": 3,
+                  "quote": "If we add a trivalent impurity like boron we get p-type, where the majority carriers are holes"
+                }
+              ],
+              "feedback": "Clear and complete, with an example impurity for each type. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Intrinsic means pure: germanium or silicon with no impurities, where thermal energy creates electron-hole pairs, so the carriers are equal in number. Doping with arsenic (group 5) gives each impurity atom one spare electron: an n-type material with electrons as majority carriers. Doping with indium (group 3) leaves one bond short, creating a hole: a p-type material with holes as majority carriers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "germanium or silicon with no impurities, where thermal energy creates electron-hole pairs, so the carriers are equal in number"
+                },
+                {
+                  "point": 1,
+                  "quote": "Doping with arsenic (group 5)"
+                },
+                {
+                  "point": 2,
+                  "quote": "an n-type material with electrons as majority carriers"
+                },
+                {
+                  "point": 3,
+                  "quote": "Doping with indium (group 3) leaves one bond short, creating a hole: a p-type material with holes as majority carriers"
+                }
+              ],
+              "feedback": "Precise, and explaining why each impurity gives an electron or a hole shows real understanding. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Intrinsic semiconductor is pure silicon. n-type is made by adding phosphorus and has extra electrons. p-type is made by adding boron and has extra holes.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "n-type is made by adding phosphorus"
+                },
+                {
+                  "point": 2,
+                  "quote": "has extra electrons"
+                },
+                {
+                  "point": 3,
+                  "quote": "p-type is made by adding boron and has extra holes"
+                }
+              ],
+              "feedback": "Your doping is all correct. Say what happens in the pure semiconductor: heat frees electrons, leaving holes, so the two are equal in number.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "An intrinsic semiconductor is pure silicon where electrons and holes are equal. n-type has positive holes as the majority carriers and p-type has negative electrons as the majority carriers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "pure silicon where electrons and holes are equal"
+                }
+              ],
+              "feedback": "Your intrinsic definition is right, but the carriers are swapped: n stands for negative, so n-type has electrons, and p-type has holes. Also name the impurity used for each."
+            },
+            {
+              "tier": "weak",
+              "text": "Intrinsic semiconductor is one that conducts well like copper. n-type is negative and p-type is positive.",
+              "meets": [],
+              "feedback": "Copper is a conductor, not a semiconductor. An intrinsic semiconductor is pure silicon or germanium. Explain how adding phosphorus or boron produces each type, and what the majority carriers are."
+            },
+            {
+              "tier": "weak",
+              "text": "n-type and p-type are made by heating silicon to different temperatures. The majority carriers are protons.",
+              "meets": [],
+              "feedback": "They are made by doping, adding small amounts of impurity, not by heating. Protons never move in a solid; the carriers are electrons and holes."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain how a single junction diode can be used to change alternating current into direct current. Describe the output, and state one way in which a full-wave bridge rectifier gives a better output.",
+          "markScheme": [
+            "The diode conducts only when it is forward biased (p-side positive)",
+            "So current flows only during one half of each a.c. cycle; the other half is blocked (half-wave rectification)",
+            "The output is a one-way (direct) but pulsating current, with gaps where the blocked half-cycles were",
+            "A full-wave bridge of four diodes uses both half-cycles, so the output has no gaps and is steadier (and is easier to smooth with a capacitor)"
+          ],
+          "modelAnswer": "A junction diode conducts only when it is forward biased, with its p-side positive, and blocks current when it is reverse biased. When an a.c. supply is connected through a diode to a load, current flows during the half-cycles that forward bias the diode and is stopped during the other half-cycles. This is half-wave rectification. The output flows in one direction only, so it is direct current, but it is pulsating, with gaps where the blocked half-cycles were. A full-wave bridge rectifier of four diodes turns both halves of each cycle into current in the same direction, so there are no gaps, the output is steadier and it is easier to smooth with a capacitor.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A diode only lets current pass when it is forward biased, that is when the p side is positive. With a.c., the voltage keeps reversing, so the diode lets current through in the positive half-cycles and blocks it in the negative half-cycles. The output only flows one way, so it is d.c., but it comes in pulses with gaps in between. A full-wave bridge rectifier with four diodes makes use of both half-cycles, so the output has no gaps and is smoother.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A diode only lets current pass when it is forward biased, that is when the p side is positive"
+                },
+                {
+                  "point": 1,
+                  "quote": "the diode lets current through in the positive half-cycles and blocks it in the negative half-cycles"
+                },
+                {
+                  "point": 2,
+                  "quote": "The output only flows one way, so it is d.c., but it comes in pulses with gaps in between"
+                },
+                {
+                  "point": 3,
+                  "quote": "A full-wave bridge rectifier with four diodes makes use of both half-cycles, so the output has no gaps and is smoother"
+                }
+              ],
+              "feedback": "A complete explanation in a clear order. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The diode has low resistance in forward bias and very high resistance in reverse bias. In half-wave rectification it conducts only for the half-cycle that makes its p-side positive, so the load gets current one way for half the time and none for the other half. The output is unidirectional but pulsating. A bridge of four diodes conducts on both half-cycles, steering current the same way through the load each time, so the output is full-wave and much easier to smooth with a capacitor.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The diode has low resistance in forward bias and very high resistance in reverse bias"
+                },
+                {
+                  "point": 1,
+                  "quote": "it conducts only for the half-cycle that makes its p-side positive, so the load gets current one way for half the time and none for the other half"
+                },
+                {
+                  "point": 2,
+                  "quote": "The output is unidirectional but pulsating"
+                },
+                {
+                  "point": 3,
+                  "quote": "A bridge of four diodes conducts on both half-cycles, steering current the same way through the load each time, so the output is full-wave and much easier to smooth with a capacitor"
+                }
+              ],
+              "feedback": "Accurate throughout, and mentioning smoothing with a capacitor shows you know how a real power supply works. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "The diode allows current in one direction only, so it removes the negative half of the a.c. and the output is d.c. A full-wave rectifier is better because it uses four diodes.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "it removes the negative half of the a.c."
+                }
+              ],
+              "feedback": "You have the idea that one half-cycle is removed. Say the diode conducts only when forward biased, describe the output as pulsating d.c. with gaps, and say why four diodes help: they use both half-cycles."
+            },
+            {
+              "tier": "partial",
+              "text": "The diode conducts when forward biased and blocks when reverse biased, so only half of each cycle passes. The output is smooth d.c. like a battery. A bridge rectifier uses both halves of the cycle.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The diode conducts when forward biased and blocks when reverse biased"
+                },
+                {
+                  "point": 1,
+                  "quote": "so only half of each cycle passes"
+                },
+                {
+                  "point": 3,
+                  "quote": "A bridge rectifier uses both halves of the cycle"
+                }
+              ],
+              "feedback": "Most of this is right. The half-wave output is not smooth like a battery's; it is pulsating, with gaps where the blocked half-cycles were. A capacitor is needed to smooth it."
+            },
+            {
+              "tier": "weak",
+              "text": "The diode changes a.c. to d.c. by storing the charge like a capacitor and releasing it slowly.",
+              "meets": [],
+              "feedback": "Storing charge is what a smoothing capacitor does. A diode rectifies by letting current through in one direction only, so it blocks one half of each cycle."
+            },
+            {
+              "tier": "weak",
+              "text": "The diode reverses the negative half-cycles so they become positive. The output is perfect d.c.",
+              "meets": [],
+              "feedback": "A single diode cannot reverse a half-cycle; it simply blocks it, so the output is pulsating with gaps. Only a bridge of four diodes uses both halves."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

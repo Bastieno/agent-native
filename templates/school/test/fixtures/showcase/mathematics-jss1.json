@@ -1,0 +1,2526 @@
+{
+  "subject": "Mathematics",
+  "yearGroup": "JSS1",
+  "weeks": {
+    "1": {
+      "topic": "Number bases: binary, octal and decimal",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the digits used in base two, base eight and base ten;\n2. convert a base ten number to base two or base eight by repeated division;\n3. convert a base two or base eight number to base ten using place values.\n\n## Materials\n\nBundles of broomsticks tied in tens, bottle tops, a place-value chart drawn on cardboard, and a calculator for checking.\n\n## Starter (5 minutes)\n\nHold up 23 bottle tops. Ask: how do we write this number? Group them into two bundles of ten and three loose ones. Ask why we group in tens. Then ask what would happen if we could only group in twos.\n\n## Development\n\n1. Revise place value in base ten: units, tens, hundreds (1, 10, 100). Show that 23 means 2 tens and 3 units.\n2. Introduce base two (binary) with digits 0 and 1, and place values 1, 2, 4, 8, 16, 32. Introduce base eight (octal) with digits 0 to 7, and place values 1, 8, 64.\n3. Base ten to another base: divide repeatedly by the base, write each remainder, and read the remainders from the bottom up. Work 13 = 1101₂ and 30 = 36₈ on the board.\n4. Another base to base ten: multiply each digit by its place value and add. Work 1101₂ = 8 + 4 + 1 = 13 and 25₈ = 2 × 8 + 5 = 21.\n5. Point out the two usual mistakes: reading the remainders from the top down, and using a digit the base does not have (no 2 in base two, no 8 in base eight).\n\n## Class activity\n\nIn pairs, students convert their ages and the number of learners in the class to base two, then swap and convert their partner's answers back to base ten.\n\n## Evaluation\n\n1. Convert 19 to base two.\n2. Convert 43₈ to base ten.\n3. Why is 182₈ not a base eight number?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Counting in twos, eights and tens",
+        "content": "# Number bases\n\n## Why base ten?\n\nWe count in tens, probably because we have ten fingers. Our number system is called **base ten** or **decimal**. It uses ten digits, 0 to 9, and each place is worth ten times the place on its right: units, tens, hundreds, thousands.\n\nSo 345 means 3 hundreds + 4 tens + 5 units.\n\n## Other bases\n\nWe can group in any number. Computers use **base two (binary)**, with only the digits 0 and 1. **Base eight (octal)** uses the digits 0 to 7.\n\n| Base | Digits used | Place values (right to left) |\n| --- | --- | --- |\n| Two | 0, 1 | 1, 2, 4, 8, 16, 32, 64 |\n| Eight | 0 to 7 | 1, 8, 64, 512 |\n| Ten | 0 to 9 | 1, 10, 100, 1000 |\n\nWe write the base small at the bottom: 1101₂ is a base two number.\n\n## Changing base ten to another base\n\nDivide by the new base again and again, writing down the remainder each time, until you reach 0. Then read the remainders **from the bottom up**.\n\n**Worked example 1.** Convert 13 to base two.\n\n- 13 ÷ 2 = 6 remainder 1\n- 6 ÷ 2 = 3 remainder 0\n- 3 ÷ 2 = 1 remainder 1\n- 1 ÷ 2 = 0 remainder 1\n\nReading upwards: 13 = 1101₂.\n\n## Changing another base to base ten\n\nMultiply each digit by its place value and add.\n\n**Worked example 2.** Convert 1101₂ to base ten.\n\n1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 8 + 4 + 0 + 1 = 13. This checks example 1.\n\n**Worked example 3.** Convert 25₈ to base ten.\n\n2 × 8 + 5 × 1 = 16 + 5 = 21.\n\n## Watch out\n\n- Read the remainders from the bottom up, not the top down.\n- A base two number can only contain 0 and 1. A base eight number can never contain 8 or 9.\n- Always check your answer by converting it back."
+      },
+      "cards": [
+        {
+          "front": "Base ten (decimal)",
+          "back": "Uses the digits 0 to 9. Place values 1, 10, 100, 1000."
+        },
+        {
+          "front": "Base two (binary)",
+          "back": "Uses only 0 and 1. Place values 1, 2, 4, 8, 16, 32."
+        },
+        {
+          "front": "Base eight (octal)",
+          "back": "Uses the digits 0 to 7. Place values 1, 8, 64, 512."
+        },
+        {
+          "front": "How do you change base ten to base two?",
+          "back": "Divide by 2 again and again, then read the remainders from the bottom up."
+        },
+        {
+          "front": "How do you change a base two number to base ten?",
+          "back": "Multiply each digit by its place value and add the results."
+        },
+        {
+          "front": "1101₂ in base ten",
+          "back": "8 + 4 + 0 + 1 = 13"
+        },
+        {
+          "front": "25₈ in base ten",
+          "back": "2 × 8 + 5 = 21"
+        },
+        {
+          "front": "Why is 182₈ not a base eight number?",
+          "back": "Base eight has no digit 8; it only uses 0 to 7."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Convert 13 (base ten) to base two.",
+          "options": ["1011₂", "1101₂", "1110₂", "111₂"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is 101₂ in base ten?",
+          "options": ["101", "2", "5", "4"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which digits can be used to write a number in base eight?",
+          "options": ["0 to 8", "1 to 8", "0 and 1 only", "0 to 7"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Emeka writes the number 25₈. What is it in base ten?",
+          "options": ["21", "25", "7", "16"],
+          "answer": "A"
+        },
+        {
+          "prompt": "There are 30 learners in JSS1A. Write 30 in base eight.",
+          "options": ["63₈", "30₈", "46₈", "36₈"],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Convert 37 (base ten) to base two by repeated division. Check your answer by converting it back to base ten.",
+          "markScheme": [
+            "Divides by 2 repeatedly with the correct remainders (1, 0, 1, 0, 0, 1)",
+            "Reads the remainders from the bottom up",
+            "States 37 = 100101₂",
+            "Checks by place values: 32 + 4 + 1 = 37"
+          ],
+          "modelAnswer": "37 ÷ 2 = 18 r 1, 18 ÷ 2 = 9 r 0, 9 ÷ 2 = 4 r 1, 4 ÷ 2 = 2 r 0, 2 ÷ 2 = 1 r 0, 1 ÷ 2 = 0 r 1. Reading the remainders from the bottom up gives 37 = 100101₂. Check: 1 × 32 + 0 × 16 + 0 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 32 + 4 + 1 = 37.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "37 ÷ 2 = 18 rem 1\n18 ÷ 2 = 9 rem 0\n9 ÷ 2 = 4 rem 1\n4 ÷ 2 = 2 rem 0\n2 ÷ 2 = 1 rem 0\n1 ÷ 2 = 0 rem 1\nI read the remainders from the bottom to the top so 37 = 100101 base two. Check: 32 + 0 + 0 + 4 + 0 + 1 = 37 it is correct.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "37 ÷ 2 = 18 rem 1\n18 ÷ 2 = 9 rem 0\n9 ÷ 2 = 4 rem 1\n4 ÷ 2 = 2 rem 0\n2 ÷ 2 = 1 rem 0\n1 ÷ 2 = 0 rem 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "I read the remainders from the bottom to the top"
+                },
+                {
+                  "point": 2,
+                  "quote": "37 = 100101 base two"
+                },
+                {
+                  "point": 3,
+                  "quote": "Check: 32 + 0 + 0 + 4 + 0 + 1 = 37"
+                }
+              ],
+              "feedback": "Full marks. Every division is right, you read the remainders upwards, and your check proves the answer."
+            },
+            {
+              "tier": "full",
+              "text": "2 | 37 remainder 1, 2 | 18 remainder 0, 2 | 9 remainder 1, 2 | 4 remainder 0, 2 | 2 remainder 0, 2 | 1 remainder 1. Reading upwards the answer is 100101₂. To check, the place values are 32 16 8 4 2 1, so 1×32 + 1×4 + 1×1 = 37.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 | 37 remainder 1, 2 | 18 remainder 0, 2 | 9 remainder 1, 2 | 4 remainder 0, 2 | 2 remainder 0, 2 | 1 remainder 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "Reading upwards"
+                },
+                {
+                  "point": 2,
+                  "quote": "the answer is 100101₂"
+                },
+                {
+                  "point": 3,
+                  "quote": "1×32 + 1×4 + 1×1 = 37"
+                }
+              ],
+              "feedback": "All four marks. Writing the place values out before checking is a neat habit; keep it."
+            },
+            {
+              "tier": "partial",
+              "text": "37 ÷ 2 = 18 r 1, 18 ÷ 2 = 9 r 0, 9 ÷ 2 = 4 r 1, 4 ÷ 2 = 2 r 0, 2 ÷ 2 = 1 r 0, 1 ÷ 2 = 0 r 1. So 37 = 101001₂. Check 32 + 8 + 1 = 41.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "37 ÷ 2 = 18 r 1, 18 ÷ 2 = 9 r 0, 9 ÷ 2 = 4 r 1, 4 ÷ 2 = 2 r 0, 2 ÷ 2 = 1 r 0, 1 ÷ 2 = 0 r 1"
+                }
+              ],
+              "feedback": "Your divisions are all correct, but you read the remainders from the top down. Read them from the bottom up to get 100101₂. Your own check gave 41, not 37, which was the clue that something was wrong."
+            },
+            {
+              "tier": "partial",
+              "text": "37 ÷ 2 = 18 r 1, 18 ÷ 2 = 9 r 0, 9 ÷ 2 = 4 r 1, 4 ÷ 2 = 2 r 0, 2 ÷ 2 = 1 r 0, 1 ÷ 2 = 0 r 1, reading from down to up I got 100101 in base 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "37 ÷ 2 = 18 r 1, 18 ÷ 2 = 9 r 0, 9 ÷ 2 = 4 r 1, 4 ÷ 2 = 2 r 0, 2 ÷ 2 = 1 r 0, 1 ÷ 2 = 0 r 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "reading from down to up"
+                },
+                {
+                  "point": 2,
+                  "quote": "I got 100101 in base 2"
+                }
+              ],
+              "feedback": "The conversion is correct. You did not do the check the question asked for: multiply each digit by 32, 16, 8, 4, 2, 1 and add to get back 37."
+            },
+            {
+              "tier": "weak",
+              "text": "3 in base two is 11 and 7 in base two is 111 so 37 is 11111 in base two.",
+              "meets": [],
+              "feedback": "You cannot change each digit on its own, because the 3 in 37 means 3 tens. Divide the whole number 37 by 2 again and again and read the remainders from the bottom up."
+            },
+            {
+              "tier": "weak",
+              "text": "37 ÷ 2 = 18 remainder 1 so the answer is 181₂.",
+              "meets": [],
+              "feedback": "Keep dividing: 18 ÷ 2, then 9 ÷ 2, and so on until you reach 0. Also, 8 can never appear in a base two number, which only uses 0 and 1."
+            }
+          ]
+        },
+        {
+          "prompt": "A computer teacher writes the code 157₈ on the board. Convert 157₈ to base ten, then convert your answer to base two.",
+          "markScheme": [
+            "Uses the place values 64, 8 and 1 for base eight",
+            "1 × 64 + 5 × 8 + 7 × 1 = 111",
+            "Divides 111 repeatedly by 2 with the correct remainders",
+            "States 157₈ = 1101111₂"
+          ],
+          "modelAnswer": "In base eight the place values are 64, 8 and 1. So 157₈ = 1 × 64 + 5 × 8 + 7 × 1 = 64 + 40 + 7 = 111. Now divide by 2: 111 ÷ 2 = 55 r 1, 55 ÷ 2 = 27 r 1, 27 ÷ 2 = 13 r 1, 13 ÷ 2 = 6 r 1, 6 ÷ 2 = 3 r 0, 3 ÷ 2 = 1 r 1, 1 ÷ 2 = 0 r 1. Reading from the bottom up, 111 = 1101111₂, so 157₈ = 1101111₂.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Place values in base 8 are 64, 8, 1. 1×64 + 5×8 + 7×1 = 64 + 40 + 7 = 111. Then 111 ÷ 2 = 55 r1, 55 ÷ 2 = 27 r1, 27 ÷ 2 = 13 r1, 13 ÷ 2 = 6 r1, 6 ÷ 2 = 3 r0, 3 ÷ 2 = 1 r1, 1 ÷ 2 = 0 r1. Answer 1101111₂.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Place values in base 8 are 64, 8, 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "1×64 + 5×8 + 7×1 = 64 + 40 + 7 = 111"
+                },
+                {
+                  "point": 2,
+                  "quote": "111 ÷ 2 = 55 r1, 55 ÷ 2 = 27 r1, 27 ÷ 2 = 13 r1, 13 ÷ 2 = 6 r1, 6 ÷ 2 = 3 r0, 3 ÷ 2 = 1 r1, 1 ÷ 2 = 0 r1"
+                },
+                {
+                  "point": 3,
+                  "quote": "Answer 1101111₂"
+                }
+              ],
+              "feedback": "Full marks. Both steps are set out clearly and every remainder is correct."
+            },
+            {
+              "tier": "full",
+              "text": "157 base eight = (1 × 8²) + (5 × 8) + (7 × 1) = 64 + 40 + 7 = 111 in base ten. Dividing 111 by 2 again and again the remainders are 1, 1, 1, 1, 0, 1, 1 (111, 55, 27, 13, 6, 3, 1). From the bottom up that is 1101111 base two.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(1 × 8²) + (5 × 8) + (7 × 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 64 + 40 + 7 = 111 in base ten"
+                },
+                {
+                  "point": 2,
+                  "quote": "Dividing 111 by 2 again and again the remainders are 1, 1, 1, 1, 0, 1, 1 (111, 55, 27, 13, 6, 3, 1)"
+                },
+                {
+                  "point": 3,
+                  "quote": "From the bottom up that is 1101111 base two"
+                }
+              ],
+              "feedback": "All four marks. Listing the numbers you divided next to the remainders makes your working easy to follow.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "157₈ = 1 × 64 + 5 × 8 + 7 × 1 = 111. 111 ÷ 2 = 55 r 1, 55 ÷ 2 = 27 r 1, 27 ÷ 2 = 13 r 1, 13 ÷ 2 = 6 r 1, 6 ÷ 2 = 3 r 0, 3 ÷ 2 = 1 r 1, 1 ÷ 2 = 0 r 1. So the answer is 1111011₂.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1 × 64 + 5 × 8 + 7 × 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 111"
+                },
+                {
+                  "point": 2,
+                  "quote": "111 ÷ 2 = 55 r 1, 55 ÷ 2 = 27 r 1, 27 ÷ 2 = 13 r 1, 13 ÷ 2 = 6 r 1, 6 ÷ 2 = 3 r 0, 3 ÷ 2 = 1 r 1, 1 ÷ 2 = 0 r 1"
+                }
+              ],
+              "feedback": "Your base ten answer, 111, and all your divisions are right. You read the remainders from the top down; read them from the bottom up to get 1101111₂."
+            },
+            {
+              "tier": "partial",
+              "text": "1 × 16 + 5 × 8 + 7 × 1 = 16 + 40 + 7 = 63. 63 ÷ 2 = 31 r 1, 31 ÷ 2 = 15 r 1, 15 ÷ 2 = 7 r 1, 7 ÷ 2 = 3 r 1, 3 ÷ 2 = 1 r 1, 1 ÷ 2 = 0 r 1. So it is 111111₂.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "63 ÷ 2 = 31 r 1, 31 ÷ 2 = 15 r 1, 15 ÷ 2 = 7 r 1, 7 ÷ 2 = 3 r 1, 3 ÷ 2 = 1 r 1, 1 ÷ 2 = 0 r 1"
+                }
+              ],
+              "feedback": "Your division by 2 is done correctly. The mistake is the first place value: 8² is 8 × 8 = 64, not 16, so 157₈ is 111 in base ten, which gives 1101111₂."
+            },
+            {
+              "tier": "weak",
+              "text": "157 ÷ 8 = 19 r 5, 19 ÷ 8 = 2 r 3, 2 ÷ 8 = 0 r 2. So it is 235.",
+              "meets": [],
+              "feedback": "You changed 157 from base ten into base eight, but 157 is already in base eight. Multiply each digit by its place value (64, 8, 1) and add to get it into base ten first."
+            },
+            {
+              "tier": "weak",
+              "text": "In base two there is only 0 and 1, so 157 becomes 1 0 1 because 5 and 7 are not allowed.",
+              "meets": [],
+              "feedback": "You are right that base two only uses 0 and 1, but you cannot just remove digits. Change 157₈ to base ten with place values 64, 8, 1, then divide by 2 repeatedly."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Factors, multiples, LCM and HCF",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. list the factors and multiples of a whole number;\n2. identify prime numbers and write a number as a product of prime factors;\n3. find the HCF and LCM of two or three numbers using prime factorisation;\n4. decide whether a word problem needs the HCF or the LCM.\n\n## Materials\n\nA 1 to 100 number chart, counters or bottle tops, and a factor tree drawn on cardboard.\n\n## Starter (5 minutes)\n\nGive a group 12 bottle tops. Ask in how many ways they can arrange them in equal rows (1 × 12, 2 × 6, 3 × 4). Write the factors of 12 on the board.\n\n## Development\n\n1. Define factor and multiple. List the factors of 18 and the first five multiples of 6.\n2. Define a prime number. Shade the primes up to 50 on the number chart and note that 1 is not prime.\n3. Draw the factor tree for 36 and write 36 = 2² × 3². Repeat with 60 using repeated division by primes.\n4. HCF: write two numbers in prime factors and take the common primes with the lowest powers. Work HCF of 24 and 36 = 2² × 3 = 12.\n5. LCM: take every prime that appears, with the highest power. Work LCM of 12 and 18 = 2² × 3² = 36.\n6. Word problems: sharing into the largest equal groups needs the HCF; things happening together again needs the LCM.\n\n## Class activity\n\nGroups find the HCF and LCM of 18 and 30, then solve: two church bells ring every 6 and 8 minutes; when do they next ring together?\n\n## Evaluation\n\n1. Write 72 as a product of prime factors.\n2. Find the HCF and LCM of 20 and 30.\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "Breaking numbers into primes",
+        "content": "# Factors, multiples, LCM and HCF\n\n## Factors and multiples\n\nA **factor** of a number divides it exactly, with no remainder. The factors of 12 are 1, 2, 3, 4, 6 and 12.\n\nA **multiple** of a number is in its times table. The multiples of 4 are 4, 8, 12, 16, 20, and so on.\n\n## Prime numbers\n\nA **prime number** has exactly two factors: 1 and itself. The first primes are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29. The number 1 is not prime, because it has only one factor. 2 is the only even prime.\n\n## Prime factorisation\n\nAny whole number can be written as a product of primes. Divide by the smallest prime that goes in, again and again.\n\n**Worked example 1.** 60 ÷ 2 = 30, 30 ÷ 2 = 15, 15 ÷ 3 = 5, 5 ÷ 5 = 1. So 60 = 2 × 2 × 3 × 5 = 2² × 3 × 5.\n\n## HCF: highest common factor\n\nThe HCF is the biggest number that divides all the numbers. Write each in prime factors, then multiply the primes they **share**, using the **lowest** power.\n\n**Worked example 2.** 24 = 2³ × 3 and 36 = 2² × 3². Both have 2 and 3. The lowest powers are 2² and 3. HCF = 2² × 3 = 12.\n\n## LCM: lowest common multiple\n\nThe LCM is the smallest number that all the numbers divide into. Multiply **every** prime that appears, using the **highest** power.\n\n**Worked example 3.** 12 = 2² × 3 and 18 = 2 × 3². LCM = 2² × 3² = 36.\n\n## Which one do I need?\n\n- **Sharing into the largest equal groups** with nothing left over: HCF. A trader at Bodija market with 24 tomatoes and 36 peppers can make at most 12 identical heaps.\n- **Things that repeat and meet again**: LCM. Two danfo buses leaving Ojota every 12 and 18 minutes leave together again after 36 minutes."
+      },
+      "cards": [
+        {
+          "front": "Factor",
+          "back": "A number that divides another exactly, with no remainder."
+        },
+        {
+          "front": "Multiple",
+          "back": "A number in another number's times table, such as 8 for 4."
+        },
+        {
+          "front": "Prime number",
+          "back": "A number with exactly two factors, 1 and itself, such as 2, 3, 5, 7."
+        },
+        {
+          "front": "Is 1 a prime number?",
+          "back": "No. It has only one factor."
+        },
+        {
+          "front": "60 as a product of primes",
+          "back": "2² × 3 × 5"
+        },
+        {
+          "front": "HCF",
+          "back": "Highest common factor: multiply the shared primes, lowest powers."
+        },
+        {
+          "front": "LCM",
+          "back": "Lowest common multiple: multiply every prime, highest powers."
+        },
+        {
+          "front": "Sharing into the largest equal groups",
+          "back": "Use the HCF."
+        },
+        {
+          "front": "Two things happening together again",
+          "back": "Use the LCM."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Write 36 as a product of prime factors.",
+          "options": ["2² × 3²", "2 × 18", "4 × 9", "2³ × 3"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the HCF of 24 and 36.",
+          "options": ["6", "4", "72", "12"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Find the LCM of 6 and 8.",
+          "options": ["48", "24", "2", "14"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these numbers is prime?",
+          "options": ["29", "21", "27", "33"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Two danfo buses leave Ojota park together. One leaves every 12 minutes and the other every 18 minutes. After how many minutes will they next leave together?",
+          "options": ["6", "216", "36", "30"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Express 60 and 84 as products of prime factors. Hence find the HCF of 60 and 84.",
+          "markScheme": [
+            "60 = 2² × 3 × 5",
+            "84 = 2² × 3 × 7",
+            "Takes the common primes with the lowest powers, 2² × 3",
+            "HCF = 12"
+          ],
+          "modelAnswer": "60 = 2 × 2 × 3 × 5 = 2² × 3 × 5. 84 = 2 × 2 × 3 × 7 = 2² × 3 × 7. The primes they share are 2² and 3, so HCF = 2² × 3 = 4 × 3 = 12.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "60 ÷ 2 = 30, 30 ÷ 2 = 15, 15 ÷ 3 = 5, 5 ÷ 5 = 1 so 60 = 2² × 3 × 5. 84 ÷ 2 = 42, 42 ÷ 2 = 21, 21 ÷ 3 = 7, 7 ÷ 7 = 1 so 84 = 2² × 3 × 7. Common ones are 2² and 3 so HCF = 2² × 3 = 12.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "60 = 2² × 3 × 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "84 = 2² × 3 × 7"
+                },
+                {
+                  "point": 2,
+                  "quote": "Common ones are 2² and 3"
+                },
+                {
+                  "point": 3,
+                  "quote": "HCF = 2² × 3 = 12"
+                }
+              ],
+              "feedback": "Full marks. Showing the division by primes for each number makes the factorisation easy to check."
+            },
+            {
+              "tier": "full",
+              "text": "60 = 2 × 2 × 3 × 5\n84 = 2 × 2 × 3 × 7\nBoth have 2 × 2 × 3 in them, the 5 and 7 are not common.\nHCF = 2 × 2 × 3 = 12",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "60 = 2 × 2 × 3 × 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "84 = 2 × 2 × 3 × 7"
+                },
+                {
+                  "point": 2,
+                  "quote": "Both have 2 × 2 × 3 in them, the 5 and 7 are not common."
+                },
+                {
+                  "point": 3,
+                  "quote": "HCF = 2 × 2 × 3 = 12"
+                }
+              ],
+              "feedback": "All four marks. You explained why the 5 and the 7 are left out, which is exactly the idea of the HCF."
+            },
+            {
+              "tier": "partial",
+              "text": "60 = 2² × 3 × 5 and 84 = 2² × 3 × 7. HCF = 2 × 3 = 6.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "60 = 2² × 3 × 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "84 = 2² × 3 × 7"
+                }
+              ],
+              "feedback": "Both factorisations are right. Both numbers contain 2², not just 2, so the HCF is 2² × 3 = 12. Check: 12 divides 60 and 84, and is bigger than 6."
+            },
+            {
+              "tier": "partial",
+              "text": "60 = 2² × 3 × 5, 84 = 2² × 3 × 7. I multiply all of them: 2² × 3 × 5 × 7 = 420 so the HCF is 420.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "60 = 2² × 3 × 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "84 = 2² × 3 × 7"
+                }
+              ],
+              "feedback": "Your prime factors are correct, but multiplying every prime gives the LCM, 420. For the HCF use only the primes both numbers share: 2² × 3 = 12. The HCF can never be bigger than the numbers."
+            },
+            {
+              "tier": "weak",
+              "text": "Factors of 60 are 2, 3, 5, 6, 10 and factors of 84 are 2, 3, 4, 7. The HCF is 2 because it is the first common one.",
+              "meets": [],
+              "feedback": "The HCF is the highest common factor, not the first. Write 60 = 2² × 3 × 5 and 84 = 2² × 3 × 7, then multiply what they share: 2² × 3 = 12."
+            },
+            {
+              "tier": "weak",
+              "text": "60 = 6 × 10 and 84 = 4 × 21. HCF = 60 ÷ 84.",
+              "meets": [],
+              "feedback": "6, 10, 4 and 21 are not all prime. Keep breaking down until every factor is prime, for example 60 = 2 × 2 × 3 × 5, then pick the primes both numbers share."
+            }
+          ]
+        },
+        {
+          "prompt": "Mrs Adeyemi has 48 oranges and 72 mangoes. She wants to pack them into identical bags, with no fruit left over. Using prime factors, find the largest number of bags she can pack, and how many oranges and mangoes go in each bag.",
+          "markScheme": [
+            "Recognises that the HCF is needed",
+            "48 = 2⁴ × 3",
+            "72 = 2³ × 3²",
+            "HCF = 2³ × 3 = 24 bags",
+            "Each bag has 2 oranges and 3 mangoes"
+          ],
+          "modelAnswer": "To share into the largest number of identical bags with nothing left over, I need the HCF of 48 and 72. 48 = 2⁴ × 3 and 72 = 2³ × 3². HCF = 2³ × 3 = 24, so she can pack 24 bags. Each bag has 48 ÷ 24 = 2 oranges and 72 ÷ 24 = 3 mangoes.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Since we are sharing equally we need the HCF. 48 = 2 × 2 × 2 × 2 × 3 = 2⁴ × 3. 72 = 2 × 2 × 2 × 3 × 3 = 2³ × 3². HCF = 2³ × 3 = 24. She can pack 24 bags. Oranges in each bag = 48 ÷ 24 = 2, mangoes = 72 ÷ 24 = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Since we are sharing equally we need the HCF"
+                },
+                {
+                  "point": 1,
+                  "quote": "48 = 2 × 2 × 2 × 2 × 3 = 2⁴ × 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "72 = 2 × 2 × 2 × 3 × 3 = 2³ × 3²"
+                },
+                {
+                  "point": 3,
+                  "quote": "HCF = 2³ × 3 = 24. She can pack 24 bags"
+                },
+                {
+                  "point": 4,
+                  "quote": "Oranges in each bag = 48 ÷ 24 = 2, mangoes = 72 ÷ 24 = 3"
+                }
+              ],
+              "feedback": "Full marks. You said why the HCF was needed before you worked it out, which is what makes the method convincing."
+            },
+            {
+              "tier": "full",
+              "text": "The biggest number that divides both 48 and 72 is the HCF. 48 = 2⁴ × 3, 72 = 2³ × 3². Common part 2³ × 3 = 8 × 3 = 24 so 24 bags, and each bag gets 2 oranges and 3 mangoes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The biggest number that divides both 48 and 72 is the HCF"
+                },
+                {
+                  "point": 1,
+                  "quote": "48 = 2⁴ × 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "72 = 2³ × 3²"
+                },
+                {
+                  "point": 3,
+                  "quote": "Common part 2³ × 3 = 8 × 3 = 24 so 24 bags"
+                },
+                {
+                  "point": 4,
+                  "quote": "each bag gets 2 oranges and 3 mangoes"
+                }
+              ],
+              "feedback": "All five marks, clearly and briefly. You could show 48 ÷ 24 and 72 ÷ 24 so the reader sees where 2 and 3 come from."
+            },
+            {
+              "tier": "partial",
+              "text": "We need the HCF. 48 = 2⁴ × 3 and 72 = 2³ × 3². HCF = 2³ × 3² = 72. So she packs 72 bags.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "We need the HCF"
+                },
+                {
+                  "point": 1,
+                  "quote": "48 = 2⁴ × 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "72 = 2³ × 3²"
+                }
+              ],
+              "feedback": "Good start: right method and both factorisations. For the HCF take the lowest power of each shared prime: 3 appears only once in 48, so HCF = 2³ × 3 = 24 bags, with 2 oranges and 3 mangoes in each.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "48 = 2⁴ × 3, 72 = 2³ × 3². HCF = 24. 24 bags.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "48 = 2⁴ × 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "72 = 2³ × 3²"
+                },
+                {
+                  "point": 3,
+                  "quote": "HCF = 24. 24 bags"
+                }
+              ],
+              "feedback": "Correct working to 24 bags. Say why the HCF is the right tool, and finish the question: 48 ÷ 24 = 2 oranges and 72 ÷ 24 = 3 mangoes in each bag."
+            },
+            {
+              "tier": "weak",
+              "text": "We find the LCM of 48 and 72. 48 = 2⁴ × 3 and LCM = 2⁴ × 3² = 144 so she can make 144 bags.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "48 = 2⁴ × 3"
+                }
+              ],
+              "feedback": "She only has 120 fruits, so 144 bags cannot be right. Sharing into the largest equal groups needs the HCF, which here is 2³ × 3 = 24."
+            },
+            {
+              "tier": "weak",
+              "text": "48 + 72 = 120 fruits. 120 ÷ 2 = 60 bags with 2 fruits each.",
+              "meets": [],
+              "feedback": "Every bag must be identical, with the same number of oranges and of mangoes. Find the HCF of 48 and 72 using prime factors; it is 24 bags of 2 oranges and 3 mangoes."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Working with fractions and decimals",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. add and subtract fractions and mixed numbers using a common denominator;\n2. multiply and divide fractions and mixed numbers;\n3. convert fractions to decimals and decimals to fractions in lowest terms;\n4. solve word problems involving fractions of quantities.\n\n## Materials\n\nPaper strips for folding, a fraction wall chart, an orange cut into quarters, and naira price cards.\n\n## Starter (5 minutes)\n\nCut an orange into four. Give one quarter to one learner and two quarters to another. Ask: what fraction have they got together? Write 1/4 + 2/4 = 3/4 and ask why we do not add the 4s.\n\n## Development\n\n1. Equivalent fractions: fold strips to show 1/2 = 2/4 = 4/8.\n2. Adding and subtracting: find the LCM of the denominators. Work 2/3 + 1/4 = 8/12 + 3/12 = 11/12. Warn against adding tops and bottoms (3/7).\n3. Mixed numbers: change to improper fractions first. Work 2 1/3 + 1 3/4 = 28/12 + 21/12 = 49/12 = 4 1/12.\n4. Multiplying: multiply tops and bottoms, cancelling first. Work 3/4 of ₦2,000 = ₦1,500.\n5. Dividing: turn the second fraction upside down and multiply. Work 2 1/2 ÷ 1/4 = 5/2 × 4 = 10.\n6. Fractions to decimals: divide the top by the bottom, 3/8 = 0.375. Decimals to fractions: use place value, 0.45 = 45/100 = 9/20.\n\n## Class activity\n\nDifferentiated cards: core groups add and convert simple fractions; extension groups solve two-step word problems about a farm and a market stall.\n\n## Evaluation\n\n1. 5/6 − 1/4\n2. 1 1/2 × 2/3\n3. Write 0.6 as a fraction in its lowest terms.\n\n## Assignment\n\nDifferentiated worksheet on the app, due Thursday.",
+      "reading": {
+        "title": "Fractions, step by step",
+        "content": "# Fractions and decimals\n\n## Adding and subtracting\n\nYou can only add or subtract fractions when the bottom numbers (**denominators**) are the same. Find the LCM of the denominators and change each fraction.\n\n**Worked example 1.** 2/3 + 1/4. The LCM of 3 and 4 is 12. 2/3 = 8/12 and 1/4 = 3/12, so 2/3 + 1/4 = 11/12.\n\nNever add the tops and the bottoms: 2/3 + 1/4 is not 3/7.\n\nFor **mixed numbers**, change them to improper fractions first: 2 1/3 = 7/3, because 2 × 3 + 1 = 7.\n\n## Multiplying\n\nMultiply the tops and multiply the bottoms. Cancel first if you can. \"Of\" means multiply.\n\n**Worked example 2.** A trader at Bodija market sells 3/4 of a ₦2,000 bag of garri. 3/4 × 2,000 = 6,000 ÷ 4 = ₦1,500.\n\n## Dividing\n\nKeep the first fraction, turn the second upside down, and multiply.\n\n**Worked example 3.** How many quarter-metre pieces can be cut from 2 1/2 m of cloth? 2 1/2 ÷ 1/4 = 5/2 × 4/1 = 20/2 = 10 pieces.\n\n## Fractions and decimals\n\nTo change a fraction to a decimal, divide the top by the bottom: 3/8 = 3 ÷ 8 = 0.375.\n\nTo change a decimal to a fraction, use place value and simplify: 0.45 = 45/100 = 9/20.\n\n| Fraction | Decimal |\n| --- | --- |\n| 1/2 | 0.5 |\n| 1/4 | 0.25 |\n| 3/4 | 0.75 |\n| 1/5 | 0.2 |\n| 1/8 | 0.125 |\n\n## Fractions of a remainder\n\nRead word problems carefully. \"3/4 of the remainder\" means 3/4 of what is left, not of the whole. Work out what is left first, then take the fraction of it."
+      },
+      "cards": [
+        {
+          "front": "Denominator",
+          "back": "The bottom number of a fraction; it says how many equal parts the whole is cut into."
+        },
+        {
+          "front": "Numerator",
+          "back": "The top number of a fraction; it says how many parts are taken."
+        },
+        {
+          "front": "2/3 + 1/4",
+          "back": "8/12 + 3/12 = 11/12"
+        },
+        {
+          "front": "Change 2 1/3 to an improper fraction",
+          "back": "2 × 3 + 1 = 7, so 7/3."
+        },
+        {
+          "front": "What does 'of' mean in 3/4 of ₦2,000?",
+          "back": "Multiply: 3/4 × 2,000 = ₦1,500."
+        },
+        {
+          "front": "How do you divide by a fraction?",
+          "back": "Turn the second fraction upside down and multiply."
+        },
+        {
+          "front": "3/8 as a decimal",
+          "back": "3 ÷ 8 = 0.375"
+        },
+        {
+          "front": "0.45 as a fraction in lowest terms",
+          "back": "45/100 = 9/20"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Simplify 2/3 + 1/4.",
+          "options": ["3/7", "3/12", "11/12", "2/7"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Mama Tunde spends 3/4 of ₦2,000 on tomatoes. How much does she spend?",
+          "options": ["₦500", "₦750", "₦1,500", "₦2,667"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Write 3/8 as a decimal.",
+          "options": ["0.375", "0.3", "3.8", "0.83"],
+          "answer": "A"
+        },
+        {
+          "prompt": "How many pieces of cloth, each 1/4 m long, can be cut from 2 1/2 m?",
+          "options": ["5/8", "2 1/8", "1/10", "10"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Write 0.45 as a fraction in its lowest terms.",
+          "options": ["45/10", "9/20", "4/5", "9/2"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Simplify 2 1/3 + 1 3/4 − 5/6. Show your working.",
+          "markScheme": [
+            "Uses a common denominator of 12",
+            "Converts each fraction correctly (28/12 + 21/12 − 10/12, or 2 + 1 with 4/12 + 9/12 − 10/12)",
+            "Gets 39/12 or 3 3/12",
+            "Simplifies to 3 1/4"
+          ],
+          "modelAnswer": "Change to improper fractions: 2 1/3 = 7/3 and 1 3/4 = 7/4. The LCM of 3, 4 and 6 is 12. So 7/3 + 7/4 − 5/6 = 28/12 + 21/12 − 10/12 = 39/12. 39/12 = 3 3/12 = 3 1/4.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "2 1/3 = 7/3 and 1 3/4 = 7/4. LCM of 3, 4, 6 is 12. 7/3 = 28/12, 7/4 = 21/12, 5/6 = 10/12. 28/12 + 21/12 − 10/12 = 39/12 = 3 3/12 = 3 1/4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "LCM of 3, 4, 6 is 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "7/3 = 28/12, 7/4 = 21/12, 5/6 = 10/12"
+                },
+                {
+                  "point": 2,
+                  "quote": "28/12 + 21/12 − 10/12 = 39/12"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 3 3/12 = 3 1/4"
+                }
+              ],
+              "feedback": "Full marks, with every step shown. Well done for reducing 3/12 to 1/4 at the end."
+            },
+            {
+              "tier": "full",
+              "text": "I add the whole numbers first, 2 + 1 = 3. Then the fractions over 12: 1/3 + 3/4 − 5/6 = 4/12 + 9/12 − 10/12 = 3/12. So the answer is 3 3/12 which is 3 1/4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the fractions over 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "1/3 + 3/4 − 5/6 = 4/12 + 9/12 − 10/12"
+                },
+                {
+                  "point": 2,
+                  "quote": "3 3/12"
+                },
+                {
+                  "point": 3,
+                  "quote": "which is 3 1/4"
+                }
+              ],
+              "feedback": "All four marks. Handling the whole numbers separately is a good shortcut, and it worked here because the fractions part did not go below zero."
+            },
+            {
+              "tier": "partial",
+              "text": "7/3 + 7/4 − 5/6 = 28/12 + 21/12 − 10/12 = 39/12",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "28/12 + 21/12 − 10/12"
+                },
+                {
+                  "point": 1,
+                  "quote": "7/3 + 7/4 − 5/6 = 28/12 + 21/12 − 10/12"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 39/12"
+                }
+              ],
+              "feedback": "Your working is correct as far as 39/12. Always finish by simplifying: 39/12 = 3 3/12 = 3 1/4.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "2 + 1 = 3. 1/3 + 3/4 = 4/12 + 9/12 = 13/12. 13/12 − 5/6 = 8/6 = 1 2/6. Answer 3 + 1 2/6 = 4 1/3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4/12 + 9/12"
+                }
+              ],
+              "feedback": "You started well with twelfths. Then you took 5 from 13 and 6 from 12, which is not allowed: change 5/6 to 10/12 first, so 13/12 − 10/12 = 3/12, and the answer is 3 1/4."
+            },
+            {
+              "tier": "weak",
+              "text": "2 1/3 + 1 3/4 = 3 4/7. 3 4/7 − 5/6 = 3 −1/1 = 2.",
+              "meets": [],
+              "feedback": "You added the tops and the bottoms, so 1/3 + 3/4 became 4/7. The denominators must be the same before you add: use twelfths, then 1/3 = 4/12 and 3/4 = 9/12."
+            },
+            {
+              "tier": "weak",
+              "text": "LCM is 12. 2 1/3 = 2/12, 1 3/4 = 3/12, 5/6 = 5/12. 2/12 + 3/12 − 5/12 = 0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "LCM is 12"
+                }
+              ],
+              "feedback": "Twelve is the right common denominator, but you only changed the bottoms. Multiply the top by the same number: 1/3 = 4/12 because 3 × 4 = 12, so 1 × 4 = 4. Change the mixed numbers to improper fractions first."
+            }
+          ]
+        },
+        {
+          "prompt": "A farmer in Oyo has 12 1/2 hectares of land. She plants maize on 2/5 of the land and cassava on 3/4 of the remainder. (a) How many hectares of maize does she plant? (b) How many hectares of cassava? (c) What fraction of the whole farm is left unplanted? Give it as a fraction and as a decimal.",
+          "markScheme": [
+            "Maize = 2/5 × 12 1/2 = 5 hectares",
+            "Remainder = 12 1/2 − 5 = 7 1/2 hectares",
+            "Cassava = 3/4 × 7 1/2 = 5 5/8 hectares",
+            "Unplanted = 7 1/2 − 5 5/8 = 1 7/8 hectares",
+            "Fraction of the farm unplanted = 1 7/8 ÷ 12 1/2 = 3/20 = 0.15"
+          ],
+          "modelAnswer": "(a) Maize = 2/5 × 25/2 = 50/10 = 5 hectares. (b) The remainder is 12 1/2 − 5 = 7 1/2 hectares. Cassava = 3/4 × 15/2 = 45/8 = 5 5/8 hectares. (c) Unplanted = 7 1/2 − 5 5/8 = 60/8 − 45/8 = 15/8 = 1 7/8 hectares. As a fraction of the farm: 15/8 ÷ 25/2 = 15/8 × 2/25 = 30/200 = 3/20, which is 0.15.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 2/5 × 25/2 = 5 hectares of maize.\n(b) Left = 12 1/2 − 5 = 7 1/2. Cassava = 3/4 × 15/2 = 45/8 = 5 5/8 hectares.\n(c) Unplanted = 15/2 − 45/8 = 60/8 − 45/8 = 15/8 = 1 7/8 hectares. Fraction = 15/8 ÷ 25/2 = 15/8 × 2/25 = 3/20 = 0.15.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2/5 × 25/2 = 5 hectares of maize"
+                },
+                {
+                  "point": 1,
+                  "quote": "Left = 12 1/2 − 5 = 7 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cassava = 3/4 × 15/2 = 45/8 = 5 5/8 hectares"
+                },
+                {
+                  "point": 3,
+                  "quote": "15/8 = 1 7/8 hectares"
+                },
+                {
+                  "point": 4,
+                  "quote": "Fraction = 15/8 ÷ 25/2 = 15/8 × 2/25 = 3/20 = 0.15"
+                }
+              ],
+              "feedback": "Full marks. You worked out the remainder before taking 3/4 of it, which is the step most people miss."
+            },
+            {
+              "tier": "full",
+              "text": "Maize is 2/5 of 12.5 = 5 ha. Remaining land is 7.5 ha. Cassava is 3/4 of 7.5 = 5.625 ha. Land not planted = 7.5 − 5.625 = 1.875 ha. Fraction of farm = 1.875/12.5 = 0.15 = 15/100 = 3/20.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Maize is 2/5 of 12.5 = 5 ha"
+                },
+                {
+                  "point": 1,
+                  "quote": "Remaining land is 7.5 ha"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cassava is 3/4 of 7.5 = 5.625 ha"
+                },
+                {
+                  "point": 3,
+                  "quote": "Land not planted = 7.5 − 5.625 = 1.875 ha"
+                },
+                {
+                  "point": 4,
+                  "quote": "Fraction of farm = 1.875/12.5 = 0.15 = 15/100 = 3/20"
+                }
+              ],
+              "feedback": "All five marks. Working in decimals is fine here; 5.625 is the same as 5 5/8, and you still gave the final fraction in lowest terms."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 2/5 × 25/2 = 5 hectares. (b) 3/4 × 25/2 = 75/8 = 9 3/8 hectares. (c) 5 + 9 3/8 = 14 3/8 so nothing is left.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2/5 × 25/2 = 5 hectares"
+                }
+              ],
+              "feedback": "Part (a) is right. The cassava is 3/4 of the remainder, not of the whole farm. Your total came to more than 12 1/2 hectares, which was a sign: take 3/4 of the 7 1/2 hectares that are left."
+            },
+            {
+              "tier": "partial",
+              "text": "Maize = 2/5 × 12 1/2 = 5. Remainder = 7 1/2. Cassava = 3/4 × 7 1/2 = 21/8 = 2 5/8. Unplanted = 7 1/2 − 2 5/8 = 4 7/8.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Maize = 2/5 × 12 1/2 = 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "Remainder = 7 1/2"
+                }
+              ],
+              "feedback": "Right method all the way, but 7 1/2 is 15/2, not 7/2: 3/4 × 15/2 = 45/8 = 5 5/8 hectares of cassava. You also need part (c): the unplanted land as a fraction of the whole farm."
+            },
+            {
+              "tier": "weak",
+              "text": "2/5 + 3/4 = 5/9 is planted. So 4/9 is unplanted = 0.49.",
+              "meets": [],
+              "feedback": "You cannot add the tops and the bottoms, and the 3/4 is of the remainder, not the whole. Start by finding 2/5 of 12 1/2 hectares, which is 5 hectares of maize."
+            },
+            {
+              "tier": "weak",
+              "text": "Maize = 12 1/2 ÷ 2/5 = 31 1/4 hectares.",
+              "meets": [],
+              "feedback": "\"2/5 of\" means multiply, not divide. 2/5 × 12 1/2 = 5 hectares; dividing gave more land than the farm has."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Percentages, ratio and proportion",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. change fractions and decimals to percentages and back;\n2. find a percentage of a quantity, and a percentage increase or decrease;\n3. share a quantity in a given ratio;\n4. solve direct proportion problems by the unitary method;\n5. calculate profit or loss as a percentage of the cost price.\n\n## Materials\n\nPrice tags from a provision shop, a 100-square grid, and receipts from a market purchase.\n\n## Starter (5 minutes)\n\nShade 25 squares of a 100-square grid. Ask: what fraction is shaded? What percentage? Link 25/100, 1/4 and 25%.\n\n## Development\n\n1. Per cent means out of 100. Change 3/5 to a percentage: 3/5 × 100 = 60%.\n2. Percentage of a quantity: 15% of ₦4,000 = 15/100 × 4,000 = ₦600.\n3. Increase and decrease: a ₦5,000 shirt goes up by 20%: 20% of 5,000 = 1,000, so the new price is ₦6,000.\n4. Ratio: share ₦1,200 in the ratio 2 : 3. Add the parts (5), find one part (₦240), then multiply: ₦480 and ₦720.\n5. Unitary method: 4 exercise books cost ₦600, so 1 costs ₦150 and 7 cost ₦1,050.\n6. Profit and loss: profit = selling price − cost price; profit % = profit ÷ cost price × 100. Stress that the percentage is always of the cost price.\n\n## Class activity\n\nGroups are given a market receipt and work out the total, the percentage spent on each item, and the profit a trader makes if she sells everything at the marked prices.\n\n## Evaluation\n\n1. Find 35% of ₦2,400.\n2. Share 60 oranges between two sisters in the ratio 1 : 4.\n3. A bag of rice bought for ₦50,000 is sold for ₦55,000. Find the profit per cent.\n\n## Assignment\n\nWorksheet on the app, due Wednesday.",
+      "reading": {
+        "title": "Out of every hundred",
+        "content": "# Percentages, ratio and proportion\n\n## Percentages\n\n**Per cent** means out of 100. So 60% means 60/100.\n\n- Fraction to percentage: multiply by 100. 3/5 × 100 = 60%.\n- Percentage to fraction: put it over 100 and simplify. 45% = 45/100 = 9/20.\n- Decimal to percentage: multiply by 100. 0.35 = 35%.\n\n**Worked example 1.** A school fee of ₦40,000 has a 15% discount. The discount is 15/100 × 40,000 = ₦6,000, so the fee becomes 40,000 − 6,000 = ₦34,000.\n\n## Ratio\n\nA **ratio** compares two quantities of the same kind. If a class has 18 boys and 12 girls, the ratio of boys to girls is 18 : 12 = 3 : 2.\n\nTo **share in a ratio**, add the parts, find what one part is worth, then multiply.\n\n**Worked example 2.** Share ₦1,200 between Ada and Bola in the ratio 2 : 3. Total parts = 5. One part = 1,200 ÷ 5 = ₦240. Ada gets 2 × 240 = ₦480; Bola gets 3 × 240 = ₦720. Check: 480 + 720 = 1,200.\n\n## Direct proportion\n\nWhen one quantity doubles and the other doubles too, they are in **direct proportion**. Use the **unitary method**: find the value of one, then multiply.\n\n**Worked example 3.** 4 exercise books cost ₦600. One costs 600 ÷ 4 = ₦150. Seven cost 7 × 150 = ₦1,050.\n\n## Profit and loss\n\n- Profit = selling price − cost price.\n- Loss = cost price − selling price.\n- Profit % = profit ÷ cost price × 100.\n\nThe percentage is always worked out on the **cost price**, the money the trader paid.\n\n**Worked example 4.** A trader buys a bag of rice for ₦50,000 and sells it for ₦55,000. Profit = ₦5,000. Profit % = 5,000 ÷ 50,000 × 100 = 10%."
+      },
+      "cards": [
+        {
+          "front": "Per cent",
+          "back": "Out of 100. 60% means 60/100."
+        },
+        {
+          "front": "3/5 as a percentage",
+          "back": "3/5 × 100 = 60%"
+        },
+        {
+          "front": "15% of ₦4,000",
+          "back": "15/100 × 4,000 = ₦600"
+        },
+        {
+          "front": "Ratio",
+          "back": "A comparison of two quantities of the same kind, such as 3 : 2."
+        },
+        {
+          "front": "How do you share in the ratio 2 : 3?",
+          "back": "Add the parts (5), find one part, then multiply by 2 and by 3."
+        },
+        {
+          "front": "Unitary method",
+          "back": "Find the value of one item first, then multiply."
+        },
+        {
+          "front": "Profit",
+          "back": "Selling price minus cost price."
+        },
+        {
+          "front": "Profit per cent",
+          "back": "Profit ÷ cost price × 100."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find 15% of ₦4,000.",
+          "options": ["₦60", "₦600", "₦6,000", "₦3,400"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Ada and Bola share ₦1,200 in the ratio 2 : 3. How much does Ada get?",
+          "options": ["₦480", "₦400", "₦600", "₦720"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Write 3/5 as a percentage.",
+          "options": ["35%", "53%", "0.6%", "60%"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Four exercise books cost ₦600. How much do seven of the same books cost?",
+          "options": ["₦4,200", "₦1,050", "₦603", "₦850"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A shirt cost ₦5,000. Its price goes up by 20%. What is the new price?",
+          "options": ["₦5,020", "₦1,000", "₦6,000", "₦4,000"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Crestfield College has 480 learners in JSS1. The ratio of boys to girls is 3 : 2. (a) How many boys and how many girls are there? (b) What percentage of the learners are girls?",
+          "markScheme": [
+            "Total number of parts = 3 + 2 = 5",
+            "One part = 480 ÷ 5 = 96",
+            "Boys = 288 and girls = 192",
+            "Girls = 192 ÷ 480 × 100 = 40%"
+          ],
+          "modelAnswer": "(a) Total parts = 3 + 2 = 5. One part = 480 ÷ 5 = 96. Boys = 3 × 96 = 288 and girls = 2 × 96 = 192. Check: 288 + 192 = 480. (b) Percentage of girls = 192 ÷ 480 × 100 = 40%.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 3 + 2 = 5 parts. 480 ÷ 5 = 96. Boys = 3 × 96 = 288, girls = 2 × 96 = 192. (b) 192/480 × 100 = 40% are girls.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3 + 2 = 5 parts"
+                },
+                {
+                  "point": 1,
+                  "quote": "480 ÷ 5 = 96"
+                },
+                {
+                  "point": 2,
+                  "quote": "Boys = 3 × 96 = 288, girls = 2 × 96 = 192"
+                },
+                {
+                  "point": 3,
+                  "quote": "192/480 × 100 = 40% are girls"
+                }
+              ],
+              "feedback": "Full marks, set out step by step. A quick check that 288 + 192 = 480 would make it complete."
+            },
+            {
+              "tier": "full",
+              "text": "Girls are 2 out of every 5 parts. 2/5 of 480 = 192 girls and the boys are 480 − 192 = 288. As a percentage the girls are 2/5 × 100 = 40%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Girls are 2 out of every 5 parts"
+                },
+                {
+                  "point": 1,
+                  "quote": "2/5 of 480 = 192 girls"
+                },
+                {
+                  "point": 2,
+                  "quote": "the boys are 480 − 192 = 288"
+                },
+                {
+                  "point": 3,
+                  "quote": "As a percentage the girls are 2/5 × 100 = 40%"
+                }
+              ],
+              "feedback": "All four marks. Turning the ratio into the fraction 2/5 is a quick, correct method.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3 + 2 = 5, 480 ÷ 5 = 96. Boys 288, girls 192. (b) 192/288 × 100 = 66.7%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3 + 2 = 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "480 ÷ 5 = 96"
+                },
+                {
+                  "point": 2,
+                  "quote": "Boys 288, girls 192"
+                }
+              ],
+              "feedback": "Part (a) is all correct. In (b) you compared the girls with the boys; the question asks for the girls as a percentage of all 480 learners: 192 ÷ 480 × 100 = 40%."
+            },
+            {
+              "tier": "partial",
+              "text": "3 + 2 = 5. 480 ÷ 5 = 96. Boys = 96 × 3 = 288. Girls = 96. So the girls are 96/480 × 100 = 20%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3 + 2 = 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "480 ÷ 5 = 96"
+                }
+              ],
+              "feedback": "You found one part correctly and the boys are right. The girls are 2 parts, so 2 × 96 = 192, which is 40% of 480. Check that boys and girls add up to 480."
+            },
+            {
+              "tier": "weak",
+              "text": "The boys are 3 and the girls are 2 so the girls are 2%.",
+              "meets": [],
+              "feedback": "The ratio 3 : 2 tells you how the 480 learners are split, not how many there are. Add the parts (5), find one part (480 ÷ 5 = 96), then multiply."
+            },
+            {
+              "tier": "weak",
+              "text": "480 ÷ 2 = 240 boys and 240 girls, so the girls are half which is 50%.",
+              "meets": [],
+              "feedback": "Halving would only be right for a ratio of 1 : 1. With 3 : 2 there are 5 parts, so one part is 96, and the girls are 2 parts: 192, which is 40%."
+            }
+          ]
+        },
+        {
+          "prompt": "A trader at Bodija market buys a basket of 50 tomatoes for ₦4,000. She sells 40 of them at ₦120 each; the rest are spoilt and thrown away. (a) How much money does she receive? (b) Does she make a profit or a loss, and how much? (c) Find the profit or loss as a percentage of the cost price.",
+          "markScheme": [
+            "Money received = 40 × ₦120 = ₦4,800",
+            "States a profit of ₦4,800 − ₦4,000 = ₦800",
+            "Divides the profit by the cost price: 800 ÷ 4,000 × 100",
+            "Profit = 20%"
+          ],
+          "modelAnswer": "(a) She sells 40 tomatoes at ₦120 each, so she receives 40 × 120 = ₦4,800. (b) She paid ₦4,000 and received ₦4,800, so she makes a profit of 4,800 − 4,000 = ₦800. (c) Profit % = profit ÷ cost price × 100 = 800 ÷ 4,000 × 100 = 20%.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 40 × 120 = ₦4,800. (b) She makes profit because 4,800 is more than 4,000. Profit = ₦800. (c) Profit % = 800/4000 × 100 = 20%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "40 × 120 = ₦4,800"
+                },
+                {
+                  "point": 1,
+                  "quote": "She makes profit because 4,800 is more than 4,000. Profit = ₦800"
+                },
+                {
+                  "point": 2,
+                  "quote": "800/4000 × 100"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 20%"
+                }
+              ],
+              "feedback": "Full marks. You used the cost price for the percentage, which is the part most people get wrong."
+            },
+            {
+              "tier": "full",
+              "text": "She receives ₦120 × 40 = ₦4,800. Cost price is ₦4,000 so she gained ₦800 even with 10 spoilt. Percentage profit = (800 ÷ 4,000) × 100% = 20% profit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "₦120 × 40 = ₦4,800"
+                },
+                {
+                  "point": 1,
+                  "quote": "she gained ₦800"
+                },
+                {
+                  "point": 2,
+                  "quote": "(800 ÷ 4,000) × 100%"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 20% profit"
+                }
+              ],
+              "feedback": "All four marks, and noting that she still gains despite the spoilt tomatoes shows you understood the problem."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 40 × 120 = 4,800. (b) Profit = 4,800 − 4,000 = ₦800. (c) 800/4,800 × 100 = 16.7%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "40 × 120 = 4,800"
+                },
+                {
+                  "point": 1,
+                  "quote": "Profit = 4,800 − 4,000 = ₦800"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are correct. Profit per cent is always worked out on the cost price, the ₦4,000 she paid: 800 ÷ 4,000 × 100 = 20%."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 4,800 naira. (b) profit of 800 naira. (c) 800 ÷ 100 = 8%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4,800 naira"
+                },
+                {
+                  "point": 1,
+                  "quote": "profit of 800 naira"
+                }
+              ],
+              "feedback": "Your money received and profit are right, though you should show 40 × 120. For the percentage divide the profit by the cost price, then multiply by 100: 800 ÷ 4,000 × 100 = 20%."
+            },
+            {
+              "tier": "weak",
+              "text": "50 × 120 = 6,000. Profit = 6,000 − 4,000 = 2,000. 2,000/4,000 × 100 = 50%.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "2,000/4,000 × 100"
+                }
+              ],
+              "feedback": "You divided by the cost price correctly, but only 40 tomatoes were sold; 10 were spoilt. She receives 40 × 120 = ₦4,800, so the profit is ₦800, which is 20%."
+            },
+            {
+              "tier": "weak",
+              "text": "She made a loss because 10 tomatoes spoilt. 10/50 × 100 = 20% loss.",
+              "meets": [],
+              "feedback": "Losing some tomatoes does not mean a loss of money. Work out what she received, 40 × 120 = ₦4,800, and compare it with the ₦4,000 she paid: that is a profit of ₦800."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Indices and standard form",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. write repeated multiplication in index form and find its value;\n2. apply the laws of indices for multiplication, division and the zero index;\n3. write very large and very small numbers in standard form, A × 10ⁿ with 1 ≤ A < 10;\n4. multiply and divide numbers in standard form.\n\n## Materials\n\nA place-value chart from millions to thousandths, cards showing large numbers (the population of Nigeria, the distance from Lagos to Abuja in metres), and a calculator for checking.\n\n## Starter (5 minutes)\n\nWrite 2 × 2 × 2 × 2 × 2 on the board. Ask for a shorter way to write it. Introduce 2⁵, base 2 and index 5, and its value 32.\n\n## Development\n\n1. Multiplication law: 2³ × 2⁴ = (2 × 2 × 2) × (2 × 2 × 2 × 2) = 2⁷. Add the indices when the bases are the same.\n2. Division law: 3⁵ ÷ 3² = 3³. Subtract the indices.\n3. Zero index: 5³ ÷ 5³ = 5⁰, but anything divided by itself is 1, so 5⁰ = 1.\n4. Standard form for large numbers: 45,000 = 4.5 × 10 000 = 4.5 × 10⁴. Count how many places the point moves.\n5. Small numbers: 0.0036 = 3.6 × 10⁻³; the point moves 3 places to the right, so the index is negative.\n6. Calculating: (6 × 10⁵) × (2 × 10³) = 12 × 10⁸ = 1.2 × 10⁹. Stress that the final answer must have A between 1 and 10.\n\n## Class activity\n\nCore groups write the populations of five Nigerian cities in standard form. Extension groups also work out how many times bigger one city is than another.\n\n## Evaluation\n\n1. Simplify 7⁶ ÷ 7².\n2. Write 0.00052 in standard form.\n3. Find (4 × 10³) × (3 × 10⁴) in standard form.\n\n## Assignment\n\nDifferentiated worksheet on the app, due Tuesday.",
+      "reading": {
+        "title": "Writing big and small numbers shortly",
+        "content": "# Indices and standard form\n\n## Index notation\n\n2 × 2 × 2 × 2 × 2 can be written as **2⁵**. The 2 is the **base** and the small 5 is the **index** (or power). Its value is 32.\n\n## Laws of indices\n\nThese only work when the bases are the same.\n\n| Law | Rule | Example |\n| --- | --- | --- |\n| Multiplication | add the indices | 2³ × 2⁴ = 2⁷ |\n| Division | subtract the indices | 3⁵ ÷ 3² = 3³ |\n| Zero index | any number to the power 0 is 1 | 5⁰ = 1 |\n\nA common mistake is to multiply the indices: 2³ × 2⁴ is **not** 2¹².\n\n**Worked example 1.** Simplify (3⁵ × 3²) ÷ 3⁴. First 3⁵ × 3² = 3⁷. Then 3⁷ ÷ 3⁴ = 3³ = 27.\n\n## Standard form\n\nScientists write very large and very small numbers in **standard form**: A × 10ⁿ, where A is at least 1 but less than 10, and n is a whole number.\n\n**Large numbers.** Move the decimal point to the left until one digit is in front of it. Count the moves.\n\n- 45,000 = 4.5 × 10⁴ (four moves)\n- The population of Lagos, about 15,000,000 = 1.5 × 10⁷\n\n**Small numbers.** Move the point to the right; the index is negative.\n\n- 0.0036 = 3.6 × 10⁻³ (three moves)\n\n## Calculating in standard form\n\nMultiply (or divide) the numbers, then use the laws of indices on the powers of 10.\n\n**Worked example 2.** Light travels 300,000 km in one second. The Sun is about 150,000,000 km away. How long does sunlight take to reach us?\n\nTime = (1.5 × 10⁸) ÷ (3 × 10⁵) = 0.5 × 10³. But 0.5 is less than 1, so rewrite it: 0.5 × 10³ = 5 × 10² = 500 seconds, a little over 8 minutes.\n\nAlways check that A is between 1 and 10 at the end."
+      },
+      "cards": [
+        {
+          "front": "Index (power)",
+          "back": "The small number that shows how many times the base is multiplied by itself."
+        },
+        {
+          "front": "aᵐ × aⁿ",
+          "back": "aᵐ⁺ⁿ: add the indices."
+        },
+        {
+          "front": "aᵐ ÷ aⁿ",
+          "back": "aᵐ⁻ⁿ: subtract the indices."
+        },
+        {
+          "front": "a⁰",
+          "back": "1, for any non-zero number a."
+        },
+        {
+          "front": "Standard form",
+          "back": "A × 10ⁿ, where 1 ≤ A < 10 and n is a whole number."
+        },
+        {
+          "front": "45,000 in standard form",
+          "back": "4.5 × 10⁴"
+        },
+        {
+          "front": "0.0036 in standard form",
+          "back": "3.6 × 10⁻³"
+        },
+        {
+          "front": "Is 12 × 10⁸ in standard form?",
+          "back": "No; 12 is bigger than 10. It is 1.2 × 10⁹."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Simplify 2³ × 2⁴.",
+          "options": ["2¹²", "4⁷", "2¹", "2⁷"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A stadium in Abuja holds 45,000 people. Write 45,000 in standard form.",
+          "options": ["45 × 10³", "4.5 × 10⁴", "4.5 × 10³", "0.45 × 10⁵"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the value of 5⁰?",
+          "options": ["1", "0", "5", "50"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The thickness of a sheet of paper is 0.0036 m. Write this in standard form.",
+          "options": ["3.6 × 10³", "36 × 10⁻⁴", "3.6 × 10⁻³", "3.6 × 10⁻²"],
+          "answer": "C"
+        },
+        {
+          "prompt": "The population of Lagos is about 15,000,000. Write this in standard form.",
+          "options": ["1.5 × 10⁷", "15 × 10⁶", "1.5 × 10⁶", "1.5 × 10⁸"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Simplify (3⁵ × 3²) ÷ 3⁴, leaving your answer in index form, and then find its value.",
+          "markScheme": [
+            "Adds the indices: 3⁵ × 3² = 3⁷",
+            "Subtracts the indices: 3⁷ ÷ 3⁴ = 3³",
+            "Value = 27"
+          ],
+          "modelAnswer": "When multiplying, add the indices: 3⁵ × 3² = 3⁷. When dividing, subtract them: 3⁷ ÷ 3⁴ = 3³. The value is 3 × 3 × 3 = 27.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "3⁵ × 3² = 3⁵⁺² = 3⁷. 3⁷ ÷ 3⁴ = 3⁷⁻⁴ = 3³. 3³ = 3 × 3 × 3 = 27.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3⁵ × 3² = 3⁵⁺² = 3⁷"
+                },
+                {
+                  "point": 1,
+                  "quote": "3⁷ ÷ 3⁴ = 3⁷⁻⁴ = 3³"
+                },
+                {
+                  "point": 2,
+                  "quote": "3³ = 3 × 3 × 3 = 27"
+                }
+              ],
+              "feedback": "Full marks. Writing the added and subtracted indices out shows clearly which law you used."
+            },
+            {
+              "tier": "full",
+              "text": "Top is 3 to power 7 because we add 5 and 2. Then dividing by 3 to power 4 we take away 7 − 4 = 3 so it is 3 to power 3 which is 27.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Top is 3 to power 7 because we add 5 and 2"
+                },
+                {
+                  "point": 1,
+                  "quote": "we take away 7 − 4 = 3 so it is 3 to power 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "which is 27"
+                }
+              ],
+              "feedback": "All three marks. Next time write it with symbols, 3⁷ ÷ 3⁴ = 3³; it is quicker to write and to check."
+            },
+            {
+              "tier": "partial",
+              "text": "3⁵ × 3² = 3¹⁰. 3¹⁰ ÷ 3⁴ = 3⁶ = 729.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "3¹⁰ ÷ 3⁴ = 3⁶"
+                }
+              ],
+              "feedback": "Your division step is right. When multiplying, add the indices, do not multiply them: 3⁵ × 3² = 3⁷, which gives 3³ = 27."
+            },
+            {
+              "tier": "partial",
+              "text": "3⁵ × 3² = 3⁷, 3⁷ ÷ 3⁴ = 3³ = 9.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3⁵ × 3² = 3⁷"
+                },
+                {
+                  "point": 1,
+                  "quote": "3⁷ ÷ 3⁴ = 3³"
+                }
+              ],
+              "feedback": "Both laws are used correctly. 3³ means 3 × 3 × 3 = 27; you worked out 3 × 3 = 9, which is 3²."
+            },
+            {
+              "tier": "weak",
+              "text": "3⁵ × 3² = 9⁷ and 9⁷ ÷ 3⁴ = 3³.",
+              "meets": [],
+              "feedback": "When the bases are the same, keep the base and add the indices: 3⁵ × 3² = 3⁷, not 9⁷. Then subtract for the division: 3⁷ ÷ 3⁴ = 3³ = 27."
+            },
+            {
+              "tier": "weak",
+              "text": "3⁵ = 15 and 3² = 6 and 3⁴ = 12. 15 × 6 = 90, 90 ÷ 12 = 7.5",
+              "meets": [],
+              "feedback": "3⁵ does not mean 3 × 5; it means 3 × 3 × 3 × 3 × 3 = 243. Use the laws instead: add indices to multiply, subtract to divide, so the answer is 3³ = 27."
+            }
+          ]
+        },
+        {
+          "prompt": "The Sun is about 150,000,000 km from the Earth, and light travels 300,000 km in one second. (a) Write both numbers in standard form. (b) Find, in standard form, how many seconds sunlight takes to reach the Earth.",
+          "markScheme": [
+            "150,000,000 = 1.5 × 10⁸",
+            "300,000 = 3 × 10⁵",
+            "Divides the numbers and subtracts the indices: 0.5 × 10³",
+            "Writes the answer in standard form: 5 × 10² seconds"
+          ],
+          "modelAnswer": "(a) 150,000,000 km = 1.5 × 10⁸ km and 300,000 km = 3 × 10⁵ km. (b) Time = distance ÷ speed = (1.5 × 10⁸) ÷ (3 × 10⁵) = (1.5 ÷ 3) × 10⁸⁻⁵ = 0.5 × 10³. Since 0.5 is less than 1, this is 5 × 10² seconds, which is 500 seconds.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 150,000,000 = 1.5 × 10⁸ and 300,000 = 3 × 10⁵. (b) 1.5 × 10⁸ ÷ 3 × 10⁵ = 0.5 × 10⁸⁻⁵ = 0.5 × 10³. 0.5 is not between 1 and 10 so it becomes 5 × 10² seconds.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "150,000,000 = 1.5 × 10⁸"
+                },
+                {
+                  "point": 1,
+                  "quote": "300,000 = 3 × 10⁵"
+                },
+                {
+                  "point": 2,
+                  "quote": "1.5 × 10⁸ ÷ 3 × 10⁵ = 0.5 × 10⁸⁻⁵ = 0.5 × 10³"
+                },
+                {
+                  "point": 3,
+                  "quote": "it becomes 5 × 10² seconds"
+                }
+              ],
+              "feedback": "Full marks. You noticed 0.5 × 10³ was not yet in standard form and fixed it, which is the step that earns the last mark."
+            },
+            {
+              "tier": "full",
+              "text": "Distance = 1.5 × 10⁸ km. Speed = 3.0 × 10⁵ km per second. Time = 1.5/3 × 10³ = 0.5 × 10³ = 500 s = 5 × 10² s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Distance = 1.5 × 10⁸ km"
+                },
+                {
+                  "point": 1,
+                  "quote": "Speed = 3.0 × 10⁵ km per second"
+                },
+                {
+                  "point": 2,
+                  "quote": "Time = 1.5/3 × 10³ = 0.5 × 10³"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 500 s = 5 × 10² s"
+                }
+              ],
+              "feedback": "All four marks. Giving the answer as 500 s as well makes it easy to see it is about 8 minutes."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 1.5 × 10⁸ and 3 × 10⁵. (b) 1.5 ÷ 3 = 0.5 and 10⁸ ÷ 10⁵ = 10³ so the answer is 0.5 × 10³ seconds.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1.5 × 10⁸"
+                },
+                {
+                  "point": 1,
+                  "quote": "3 × 10⁵"
+                },
+                {
+                  "point": 2,
+                  "quote": "1.5 ÷ 3 = 0.5 and 10⁸ ÷ 10⁵ = 10³"
+                }
+              ],
+              "feedback": "Correct working all the way. 0.5 × 10³ is not standard form, because 0.5 is less than 1: rewrite it as 5 × 10² seconds.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 150,000,000 = 1.5 × 10⁷ and 300,000 = 3 × 10⁵. (b) 1.5 × 10⁷ ÷ 3 × 10⁵ = 0.5 × 10² = 5 × 10¹ seconds.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "300,000 = 3 × 10⁵"
+                }
+              ],
+              "feedback": "Your method in (b) is right, but count the places again: the point moves 8 places in 150,000,000, so it is 1.5 × 10⁸. That gives 5 × 10² seconds."
+            },
+            {
+              "tier": "weak",
+              "text": "150,000,000 = 15 × 10⁷. Time = 150,000,000 × 300,000 which is too big.",
+              "meets": [],
+              "feedback": "15 is bigger than 10, so 15 × 10⁷ is not standard form; it is 1.5 × 10⁸. Time is distance divided by speed, not multiplied."
+            },
+            {
+              "tier": "weak",
+              "text": "300,000 = 3 × 10⁵. The light takes 3 × 10⁵ seconds.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "300,000 = 3 × 10⁵"
+                }
+              ],
+              "feedback": "300,000 is how far light goes in one second, not the time. Divide the distance by it: (1.5 × 10⁸) ÷ (3 × 10⁵) = 5 × 10² seconds."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Using logarithms to multiply and divide",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain that the common logarithm of a number is the power to which 10 is raised to give it;\n2. state the characteristic of the log of a number from its standard form;\n3. multiply numbers by adding their logs and divide by subtracting them;\n4. find the antilog and place the decimal point correctly.\n\n## Materials\n\nFour-figure log and antilog tables (one between two), the place-value chart from last week, and a calculator for the teacher to check answers.\n\n## Starter (5 minutes)\n\nWrite 10² = 100, 10³ = 1000. Ask: what power of 10 gives 10,000? Then ask: what power of 10 gives 50? Learners will see it lies between 1 and 2. That number is the logarithm of 50.\n\n## Development\n\n1. Define log: if 10ˣ = N then log N = x. So log 100 = 2 and log 1000 = 3.\n2. Link to indices: multiplying powers of 10 means adding indices, so multiplying numbers means adding their logs; dividing means subtracting.\n3. The characteristic: write the number in standard form; the power of 10 is the characteristic. 345 = 3.45 × 10², so log 345 = 2.5378.\n4. Read the mantissa from the table. Show how to read log 2.34 = 0.3692.\n5. Work 23.4 × 5.6 in a table with columns No. and Log: 1.3692 + 0.7482 = 2.1174; antilog of 0.1174 is 1.310; characteristic 2 means 131.0.\n6. Work a division: 84 ÷ 2.1 by subtracting logs, giving 40.\n\n## Class activity\n\nPairs use their log tables to work out 12.5 × 3.6 and 84 ÷ 2.1, then check each answer on the teacher's calculator and discuss any difference in the last figure.\n\n## Evaluation\n\n1. What is log 10,000?\n2. State the characteristic of log 0.5 and of log 5000.\n3. Use logs to evaluate 3.2 × 15.\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Logarithms: powers of ten at work",
+        "content": "# Common logarithms\n\n## What is a logarithm?\n\nWe know that 10² = 100 and 10³ = 1000. The **common logarithm** (log) of a number is the power of 10 that gives that number.\n\n- log 100 = 2, because 10² = 100\n- log 1000 = 3, because 10³ = 1000\n- log 10 = 1 and log 1 = 0\n\nFor numbers that are not whole powers of 10, we read the log from **four-figure tables**. For example, 10 raised to 0.3010 is 2, so log 2 = 0.3010.\n\n## Characteristic and mantissa\n\nA log has two parts. Take log 345 = 2.5378.\n\n- The whole-number part, 2, is the **characteristic**. Write the number in standard form: 345 = 3.45 × 10². The power of 10 is the characteristic.\n- The decimal part, 0.5378, is the **mantissa**. It comes from the table for 3.45.\n\nSo log 3.45 = 0.5378, log 34.5 = 1.5378 and log 345 = 2.5378. Only the characteristic changes.\n\n## Why logs help\n\nMultiplying powers of 10 means adding indices. So:\n\n- to **multiply** numbers, **add** their logs;\n- to **divide** numbers, **subtract** their logs;\n- then find the **antilog** of the answer to get back the number.\n\n## Worked example\n\nEvaluate 23.4 × 5.6.\n\n| No. | Log |\n| --- | --- |\n| 23.4 | 1.3692 |\n| 5.6 | 0.7482 |\n| Answer | 2.1174 |\n\nThe antilog of the mantissa 0.1174 is 1.310. The characteristic 2 means multiply by 10², so the answer is 131.0. A calculator gives 131.04, so the logs were accurate to four figures.\n\n## Checking your answer\n\nAlways estimate first: 23.4 × 5.6 is roughly 20 × 6 = 120. An answer of 13.1 or 1310 would tell you the characteristic or the decimal point is wrong."
+      },
+      "cards": [
+        {
+          "front": "Common logarithm",
+          "back": "The power to which 10 must be raised to give the number."
+        },
+        {
+          "front": "log 1000",
+          "back": "3, because 10³ = 1000."
+        },
+        {
+          "front": "log 1",
+          "back": "0, because 10⁰ = 1."
+        },
+        {
+          "front": "Characteristic",
+          "back": "The whole-number part of a log; the power of 10 when the number is in standard form."
+        },
+        {
+          "front": "Mantissa",
+          "back": "The decimal part of a log, read from the tables."
+        },
+        {
+          "front": "To multiply using logs",
+          "back": "Add the logs, then find the antilog."
+        },
+        {
+          "front": "To divide using logs",
+          "back": "Subtract the logs, then find the antilog."
+        },
+        {
+          "front": "Characteristic of log 345",
+          "back": "2, because 345 = 3.45 × 10²."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is log 1000?",
+          "options": ["100", "30", "3", "0.001"],
+          "answer": "C"
+        },
+        {
+          "prompt": "How do you multiply two numbers using logarithms?",
+          "options": [
+            "Add their logs, then find the antilog",
+            "Multiply their logs, then find the antilog",
+            "Subtract their logs, then find the antilog",
+            "Divide their logs, then find the antilog"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Given that log 2 = 0.3010 and log 3 = 0.4771, find log 6.",
+          "options": ["0.1436", "0.7781", "0.1761", "1.5851"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Given that log 8 = 0.9031 and log 2 = 0.3010, find log 4 by using 4 = 8 ÷ 2.",
+          "options": ["0.6021", "1.2041", "0.2718", "3.0003"],
+          "answer": "A"
+        },
+        {
+          "prompt": "What is the characteristic of log 345?",
+          "options": ["3", "0", "2", "345"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Use logarithms to evaluate 23.4 × 5.6. You may use: log 2.34 = 0.3692, log 5.6 = 0.7482, and the antilog of 0.1174 is 1.310. Show your working in a table.",
+          "markScheme": [
+            "log 23.4 = 1.3692 (characteristic 1)",
+            "log 5.6 = 0.7482",
+            "Adds the logs: 2.1174",
+            "Antilog with the point placed correctly: 131.0"
+          ],
+          "modelAnswer": "23.4 = 2.34 × 10¹, so log 23.4 = 1.3692. log 5.6 = 0.7482. To multiply, add the logs: 1.3692 + 0.7482 = 2.1174. The antilog of 0.1174 is 1.310, and the characteristic 2 means × 10², so 23.4 × 5.6 = 131.0.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "No. | Log\n23.4 | 1.3692\n5.6 | 0.7482\nadd | 2.1174\nAntilog of 0.1174 = 1.310, characteristic is 2 so the answer is 1.310 × 10² = 131.0",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "23.4 | 1.3692"
+                },
+                {
+                  "point": 1,
+                  "quote": "5.6 | 0.7482"
+                },
+                {
+                  "point": 2,
+                  "quote": "add | 2.1174"
+                },
+                {
+                  "point": 3,
+                  "quote": "the answer is 1.310 × 10² = 131.0"
+                }
+              ],
+              "feedback": "Full marks, laid out exactly as the table should be. Estimating 20 × 6 = 120 first would confirm 131 is sensible."
+            },
+            {
+              "tier": "full",
+              "text": "23.4 is 2.34 × 10 so its log is 1.3692. log 5.6 = 0.7482. Adding them gives 2.1174. The antilog of .1174 is 1.310 and I move the point 2 places because of the 2, so the answer is 131.0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "23.4 is 2.34 × 10 so its log is 1.3692"
+                },
+                {
+                  "point": 1,
+                  "quote": "log 5.6 = 0.7482"
+                },
+                {
+                  "point": 2,
+                  "quote": "Adding them gives 2.1174"
+                },
+                {
+                  "point": 3,
+                  "quote": "I move the point 2 places because of the 2, so the answer is 131.0"
+                }
+              ],
+              "feedback": "All four marks. You explained where the characteristic comes from and what it does, which is the heart of this topic."
+            },
+            {
+              "tier": "partial",
+              "text": "log 23.4 = 0.3692, log 5.6 = 0.7482. 0.3692 + 0.7482 = 1.1174. Answer = 13.10",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "log 5.6 = 0.7482"
+                }
+              ],
+              "feedback": "You added the logs correctly, but 23.4 = 2.34 × 10¹, so its characteristic is 1 and its log is 1.3692. That makes the total 2.1174 and the answer 131.0. An estimate, 20 × 6 = 120, would have shown 13.1 was too small."
+            },
+            {
+              "tier": "partial",
+              "text": "No. Log\n23.4 1.3692\n5.6 0.7482\n1.3692 + 0.7482 = 2.1174\nAntilog = 1.310",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "23.4 1.3692"
+                },
+                {
+                  "point": 1,
+                  "quote": "5.6 0.7482"
+                },
+                {
+                  "point": 2,
+                  "quote": "1.3692 + 0.7482 = 2.1174"
+                }
+              ],
+              "feedback": "Your table and your addition are right. The antilog of the mantissa is 1.310, but the characteristic 2 means you must multiply by 10²: the answer is 131.0.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "1.3692 × 0.7482 = 1.0244 so the answer is 10.24",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1.3692"
+                }
+              ],
+              "feedback": "You found log 23.4 correctly. To multiply the numbers you add their logs, you do not multiply them: 1.3692 + 0.7482 = 2.1174, giving 131.0."
+            },
+            {
+              "tier": "weak",
+              "text": "23.4 × 5.6 = 131.04",
+              "meets": [],
+              "feedback": "That is the right value, but the question asks you to use logarithms and show the table. Write log 23.4 = 1.3692 and log 5.6 = 0.7482, add them, and find the antilog."
+            }
+          ]
+        },
+        {
+          "prompt": "Use logarithms to evaluate (48.6 × 3.2) ÷ 7.5, correct to 4 significant figures. You may use: log 4.86 = 0.6866, log 3.2 = 0.5051, log 7.5 = 0.8751, and the antilog of 0.3166 is 2.073.",
+          "markScheme": [
+            "Writes log 48.6 = 1.6866 (characteristic 1)",
+            "Adds the logs of the numerator: 1.6866 + 0.5051 = 2.1917",
+            "Subtracts log 7.5: 2.1917 − 0.8751 = 1.3166",
+            "Finds the antilog with the point placed correctly: 20.73"
+          ],
+          "modelAnswer": "48.6 = 4.86 × 10¹, so log 48.6 = 1.6866. log 3.2 = 0.5051 and log 7.5 = 0.8751. Numerator: 1.6866 + 0.5051 = 2.1917. Divide by subtracting: 2.1917 − 0.8751 = 1.3166. The antilog of 0.3166 is 2.073, and the characteristic 1 means × 10¹, so the answer is 20.73.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "No. | Log\n48.6 | 1.6866\n3.2 | 0.5051\nnumerator | 2.1917\n7.5 | 0.8751\nsubtract | 1.3166\nantilog = 2.073 × 10¹ = 20.73",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "48.6 | 1.6866"
+                },
+                {
+                  "point": 1,
+                  "quote": "numerator | 2.1917"
+                },
+                {
+                  "point": 2,
+                  "quote": "subtract | 1.3166"
+                },
+                {
+                  "point": 3,
+                  "quote": "antilog = 2.073 × 10¹ = 20.73"
+                }
+              ],
+              "feedback": "Full marks. Labelling the numerator line and the subtract line makes the table very clear."
+            },
+            {
+              "tier": "full",
+              "text": "log 48.6 = 1.6866 because 48.6 = 4.86 × 10. Top: 1.6866 + 0.5051 = 2.1917. Divide by 7.5 so subtract 0.8751: 2.1917 − 0.8751 = 1.3166. Characteristic 1 so the answer is 20.73. Check: 50 × 3 ÷ 7.5 = 20, close.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "log 48.6 = 1.6866 because 48.6 = 4.86 × 10"
+                },
+                {
+                  "point": 1,
+                  "quote": "1.6866 + 0.5051 = 2.1917"
+                },
+                {
+                  "point": 2,
+                  "quote": "2.1917 − 0.8751 = 1.3166"
+                },
+                {
+                  "point": 3,
+                  "quote": "Characteristic 1 so the answer is 20.73"
+                }
+              ],
+              "feedback": "All four marks, and your estimate of 20 is a good habit that catches a misplaced point."
+            },
+            {
+              "tier": "partial",
+              "text": "1.6866 + 0.5051 = 2.1917. 2.1917 + 0.8751 = 3.0668. Antilog = 1166",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1.6866"
+                },
+                {
+                  "point": 1,
+                  "quote": "1.6866 + 0.5051 = 2.1917"
+                }
+              ],
+              "feedback": "The numerator is right. Dividing by 7.5 means subtracting its log, not adding: 2.1917 − 0.8751 = 1.3166, which gives 20.73."
+            },
+            {
+              "tier": "partial",
+              "text": "log 48.6 = 1.6866, log 3.2 = 0.5051, add = 2.1917. Minus log 7.5 = 0.8751 gives 1.3166. Antilog 0.3166 = 2.073 so answer is 207.3",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "log 48.6 = 1.6866"
+                },
+                {
+                  "point": 1,
+                  "quote": "add = 2.1917"
+                },
+                {
+                  "point": 2,
+                  "quote": "Minus log 7.5 = 0.8751 gives 1.3166"
+                }
+              ],
+              "feedback": "All your logs and the adding and subtracting are right. The characteristic of 1.3166 is 1, so multiply 2.073 by 10¹: the answer is 20.73, not 207.3."
+            },
+            {
+              "tier": "weak",
+              "text": "0.6866 + 0.5051 − 0.8751 = 0.3166 so the answer is 0.3166",
+              "meets": [],
+              "feedback": "You added and subtracted in the right places, but 48.6 is 4.86 × 10¹, so its log is 1.6866, not 0.6866. You also need to find the antilog at the end; the log itself is not the answer."
+            },
+            {
+              "tier": "weak",
+              "text": "log 48.6 × log 3.2 = 0.6866 × 0.5051 = 0.3468. 0.3468 ÷ 0.8751 = 0.3963",
+              "meets": [],
+              "feedback": "With logs you add to multiply and subtract to divide, you do not multiply or divide the logs. Start with log 48.6 = 1.6866, add log 3.2, then subtract log 7.5."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Solving linear equations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. solve one-variable linear equations by doing the same thing to both sides;\n2. solve equations with the unknown on both sides, with brackets and with fractions;\n3. check a solution by substituting it back;\n4. show the solution of an equation on a number line.\n\n## Materials\n\nA simple beam balance (or a ruler balanced on a pencil) with bottle tops, a number line from −10 to 10 drawn on cardboard, and chalk in two colours.\n\n## Starter (5 minutes)\n\nPut a closed matchbox and 3 bottle tops on one side of the balance and 8 bottle tops on the other. Ask: how many bottle tops must be in the box? Take 3 from each side to show the box holds 5.\n\n## Development\n\n1. An equation is a balance. Whatever we do to one side, we do to the other. Solve x + 7 = 12 by subtracting 7 from both sides.\n2. Two steps: 3x − 4 = 14. Add 4 to both sides (3x = 18), then divide by 3 (x = 6).\n3. Unknown on both sides: 5x − 3 = 2x + 9. Subtract 2x, add 3: 3x = 12, x = 4. Warn about signs when terms change sides.\n4. Brackets: expand first. Fractions: multiply both sides by the LCM of the denominators.\n5. Check by substituting: 5(4) − 3 = 17 and 2(4) + 9 = 17.\n6. Show x = 4 as a solid dot at 4 on the number line.\n\n## Class activity\n\nThink-of-a-number game: one learner gives a rule (\"I multiply by 4 and add 5 and get 33\"); the class writes and solves the equation and marks the answer on the number line.\n\n## Evaluation\n\n1. Solve 2x + 9 = 3.\n2. Solve 4(x − 1) = 2x + 6.\n3. Show your answer to question 1 on a number line.\n\n## Assignment\n\nDifferentiated worksheet on the app, due Tuesday.",
+      "reading": {
+        "title": "Keeping the balance",
+        "content": "# Linear equations\n\n## What is an equation?\n\nAn **equation** says two things are equal, for example x + 7 = 12. The letter stands for an unknown number. **Solving** the equation means finding that number.\n\nThink of a balance. If both pans are level and you take 7 from one pan, you must take 7 from the other to keep it level.\n\n## One and two steps\n\n**Worked example 1.** Solve x + 7 = 12. Subtract 7 from both sides: x = 5.\n\n**Worked example 2.** Solve 3x − 4 = 14. Add 4 to both sides: 3x = 18. Divide both sides by 3: x = 6.\n\n## The unknown on both sides\n\nCollect the letters on one side and the numbers on the other. When a term crosses the equals sign, its sign changes, because you are really adding or subtracting it on both sides.\n\n**Worked example 3.** Solve 5x − 3 = 2x + 9.\n\n- Subtract 2x from both sides: 3x − 3 = 9.\n- Add 3 to both sides: 3x = 12.\n- Divide by 3: x = 4.\n\n**Check:** 5 × 4 − 3 = 17 and 2 × 4 + 9 = 17. Both sides agree.\n\n## Brackets and fractions\n\nExpand brackets first. With fractions, multiply every term by the LCM of the denominators.\n\n**Worked example 4.** Solve (x + 3)/2 = (2x − 1)/3. Multiply both sides by 6: 3(x + 3) = 2(2x − 1). Expand: 3x + 9 = 4x − 2. So 9 + 2 = 4x − 3x, giving x = 11.\n\n## Showing the answer on a number line\n\nDraw a line with whole numbers marked, negative numbers on the left. Mark the solution with a solid dot. For x = −3, the dot sits three places to the left of 0.\n\n## Word problems\n\nBisi thinks of a number, multiplies it by 4 and adds 5. The answer is 33. Let the number be n: 4n + 5 = 33, so 4n = 28 and n = 7."
+      },
+      "cards": [
+        {
+          "front": "Equation",
+          "back": "A statement that two expressions are equal, such as x + 7 = 12."
+        },
+        {
+          "front": "The balance rule",
+          "back": "Whatever you do to one side of an equation, do the same to the other side."
+        },
+        {
+          "front": "Solve 3x − 4 = 14",
+          "back": "Add 4: 3x = 18. Divide by 3: x = 6."
+        },
+        {
+          "front": "What happens to a term's sign when it moves across the equals sign?",
+          "back": "It changes: + becomes −, and − becomes +."
+        },
+        {
+          "front": "How do you clear fractions from an equation?",
+          "back": "Multiply every term by the LCM of the denominators."
+        },
+        {
+          "front": "How do you check a solution?",
+          "back": "Substitute it into both sides; they must give the same value."
+        },
+        {
+          "front": "How is x = 4 shown on a number line?",
+          "back": "A solid dot at 4."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Solve x + 7 = 12.",
+          "options": ["19", "5", "−5", "7/12"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Solve 3x − 4 = 14.",
+          "options": ["6", "10/3", "18", "3"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Solve x/4 = 3.",
+          "options": ["3/4", "7", "12", "−1"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A solid dot is marked at −3 on a number line. Which equation has −3 as its solution?",
+          "options": ["x − 5 = 2", "2x = 6", "x + 3 = 3", "x + 5 = 2"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Bisi thinks of a number, multiplies it by 4 and adds 5. The answer is 33. What was the number?",
+          "options": ["9.5", "152", "7", "8"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Solve 5x − 3 = 2x + 9. Check your answer, and describe how you would show it on a number line.",
+          "markScheme": [
+            "Collects the x terms: 5x − 2x = 3x",
+            "Collects the numbers: 9 + 3 = 12",
+            "x = 4",
+            "Shows x = 4 as a dot at 4 on a number line"
+          ],
+          "modelAnswer": "Subtract 2x from both sides: 3x − 3 = 9. Add 3 to both sides: 3x = 12. Divide by 3: x = 4. Check: 5 × 4 − 3 = 17 and 2 × 4 + 9 = 17. On a number line from 0 to 6, I put a solid dot at 4.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "5x − 2x = 9 + 3\n3x = 12\nx = 4\nCheck: 20 − 3 = 17, 8 + 9 = 17 correct.\nNumber line: I draw a line from 0 to 5 and put a thick dot on 4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5x − 2x"
+                },
+                {
+                  "point": 1,
+                  "quote": "9 + 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "I draw a line from 0 to 5 and put a thick dot on 4"
+                }
+              ],
+              "feedback": "Full marks, and the check shows both sides give 17. Clear and complete."
+            },
+            {
+              "tier": "full",
+              "text": "Taking 2x from both sides gives 3x − 3 = 9. Adding 3 to both sides gives 3x = 12 so x = 12 ÷ 3 = 4. When x = 4 both sides are 17. On the number line the answer is a dot at 4, four steps to the right of zero.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Taking 2x from both sides gives 3x − 3 = 9"
+                },
+                {
+                  "point": 1,
+                  "quote": "Adding 3 to both sides gives 3x = 12"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 12 ÷ 3 = 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "On the number line the answer is a dot at 4, four steps to the right of zero"
+                }
+              ],
+              "feedback": "All four marks. Saying what you do to both sides at each step is exactly the balance method."
+            },
+            {
+              "tier": "partial",
+              "text": "5x − 2x = 9 − 3\n3x = 6\nx = 2\nOn the number line put a dot at 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5x − 2x"
+                }
+              ],
+              "feedback": "You collected the x terms correctly. When −3 moves to the other side it becomes +3, so the right side is 9 + 3 = 12 and x = 4. Checking would have caught this: 5 × 2 − 3 = 7 but 2 × 2 + 9 = 13."
+            },
+            {
+              "tier": "partial",
+              "text": "5x − 2x = 3x and 9 + 3 = 12. 3x = 12 so x = 4. Check 17 = 17.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5x − 2x = 3x"
+                },
+                {
+                  "point": 1,
+                  "quote": "9 + 3 = 12"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 4"
+                }
+              ],
+              "feedback": "Correct solution and check. You did not say how to show it on a number line: a solid dot at 4."
+            },
+            {
+              "tier": "weak",
+              "text": "5x + 2x = 9 − 3\n7x = 6\nx = 6/7",
+              "meets": [],
+              "feedback": "Both signs changed the wrong way. Take 2x from both sides, giving 3x, and add 3 to both sides, giving 12. Then x = 4."
+            },
+            {
+              "tier": "weak",
+              "text": "5x − 3 = 2x + 9 so 2x = 6 and 5x = 12. x = 3.",
+              "meets": [],
+              "feedback": "Each side of an equation cannot be solved on its own. Bring the x terms together first: 5x − 2x = 3x, and the numbers: 9 + 3 = 12. So 3x = 12 and x = 4."
+            }
+          ]
+        },
+        {
+          "prompt": "Solve (x + 3)/2 = (2x − 1)/3, and check your answer.",
+          "markScheme": [
+            "Multiplies both sides by 6 (or cross-multiplies): 3(x + 3) = 2(2x − 1)",
+            "Expands correctly: 3x + 9 = 4x − 2",
+            "Collects terms to get x = 11",
+            "Checks: both sides equal 7 when x = 11"
+          ],
+          "modelAnswer": "Multiply both sides by 6, the LCM of 2 and 3: 3(x + 3) = 2(2x − 1). Expand: 3x + 9 = 4x − 2. Subtract 3x and add 2 to both sides: 11 = x, so x = 11. Check: (11 + 3)/2 = 14/2 = 7 and (22 − 1)/3 = 21/3 = 7.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Cross multiply: 3(x + 3) = 2(2x − 1). 3x + 9 = 4x − 2. 9 + 2 = 4x − 3x. x = 11. Check: 14 ÷ 2 = 7 and 21 ÷ 3 = 7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cross multiply: 3(x + 3) = 2(2x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "3x + 9 = 4x − 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "9 + 2 = 4x − 3x. x = 11"
+                },
+                {
+                  "point": 3,
+                  "quote": "Check: 14 ÷ 2 = 7 and 21 ÷ 3 = 7"
+                }
+              ],
+              "feedback": "Full marks. Keeping x on the side where it stays positive was a smart choice."
+            },
+            {
+              "tier": "full",
+              "text": "LCM of 2 and 3 is 6. Multiply everything by 6: 3(x + 3) = 2(2x − 1), so 3x + 9 = 4x − 2. Then 3x − 4x = −2 − 9, −x = −11, x = 11. When x = 11 the left side is 7 and the right side is 7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Multiply everything by 6: 3(x + 3) = 2(2x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "3x + 9 = 4x − 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "−x = −11, x = 11"
+                },
+                {
+                  "point": 3,
+                  "quote": "When x = 11 the left side is 7 and the right side is 7"
+                }
+              ],
+              "feedback": "All four marks. You handled −x = −11 correctly, which many learners get wrong."
+            },
+            {
+              "tier": "partial",
+              "text": "3(x + 3) = 2(2x − 1)\n3x + 9 = 4x − 1\n9 + 1 = 4x − 3x\nx = 10",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3(x + 3) = 2(2x − 1)"
+                }
+              ],
+              "feedback": "Good first step. When you expand 2(2x − 1), multiply both terms by 2: it is 4x − 2, not 4x − 1. That gives x = 11, and a check would show both sides equal 7."
+            },
+            {
+              "tier": "partial",
+              "text": "3(x + 3) = 2(2x − 1)\n3x + 9 = 4x − 2\n3x − 4x = −2 − 9\n−x = −11\nx = −11",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3(x + 3) = 2(2x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "3x + 9 = 4x − 2"
+                }
+              ],
+              "feedback": "All correct up to −x = −11. Dividing both sides by −1 gives x = 11, not −11. Substitute your answer to check: both sides should be 7.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "2(x + 3) = 3(2x − 1). 2x + 6 = 6x − 3. 4x = 9, x = 2.25",
+              "meets": [],
+              "feedback": "You multiplied each side by its own denominator instead of the other one. Multiply both sides by 6: the left becomes 3(x + 3) and the right becomes 2(2x − 1)."
+            },
+            {
+              "tier": "weak",
+              "text": "x + 3 = 2x − 1 so x = 4.",
+              "meets": [],
+              "feedback": "You cannot just drop the 2 and the 3, because they are different. Multiply both sides by 6 first: 3(x + 3) = 2(2x − 1). Check x = 4: 7/2 is not 7/3, so 4 does not work."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Simplifying and evaluating expressions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. identify like and unlike terms;\n2. simplify expressions by collecting like terms and expanding brackets;\n3. substitute positive and negative values into expressions and evaluate them;\n4. write expressions for real situations such as fares and perimeters.\n\n## Materials\n\nCards with terms written on them (3a, −a, 5b, 2b, 4ab), a chart of the rules for multiplying signs, and the price list of a school tuck shop.\n\n## Starter (5 minutes)\n\nWrite on the board: 3 mangoes + 5 oranges − 1 mango + 2 oranges. Ask how many of each fruit there are. Replace the fruits with a and b: 3a + 5b − a + 2b = 2a + 7b.\n\n## Development\n\n1. Like terms have the same letters with the same powers: 3a and −a are like; a and a² are not; ab and ba are like.\n2. Collect like terms: 4x + 3y − x + 2y = 3x + 5y. Stress that 2a + 7b cannot be simplified further.\n3. Expanding brackets: 4(2m − 3) = 8m − 12. With a negative outside, every sign inside changes: −2(x − 4y) = −2x + 8y.\n4. Multiplying and dividing terms: 3a × 2b = 6ab; 6p²q ÷ 2pq = 3p.\n5. Substitution: if x = 3 and y = −2, 2x + 3y = 6 + (−6) = 0. Use brackets around negative numbers.\n6. Forming expressions: a danfo charges ₦200 per passenger and ₦50 per bag, so n passengers with b bags cost 200n + 50b naira.\n\n## Class activity\n\nIn pairs, learners write an expression for the cost of buying p pencils at ₦50 and e erasers at ₦30 from the tuck shop, then evaluate it for their partner's choices.\n\n## Evaluation\n\n1. Simplify 7m − 2n − 3m + 5n.\n2. Expand and simplify 2(a + 3) − 3(a − 1).\n3. Find the value of x² − 3x when x = −2.\n\n## Assignment\n\nWorksheet on the app, due Thursday.",
+      "reading": {
+        "title": "Letters that stand for numbers",
+        "content": "# Simplifying and evaluating expressions\n\n## Terms and expressions\n\nAn **expression** is made of **terms** joined by + and − signs, such as 3a + 5b − 2. A letter stands for a number we do not yet know, or one that can change.\n\n**Like terms** have exactly the same letters with the same powers. 3a and −a are like terms. 2x and 2x² are not. Only like terms can be added or subtracted.\n\n## Collecting like terms\n\n**Worked example 1.** Simplify 3a + 5b − a + 2b. The a terms: 3a − a = 2a. The b terms: 5b + 2b = 7b. Answer: 2a + 7b. We stop here; 2a and 7b are unlike terms.\n\n## Expanding brackets\n\nMultiply every term inside the bracket by the term outside.\n\n**Worked example 2.** Simplify 3(2x − y) − 2(x − 4y).\n\n- 3(2x − y) = 6x − 3y\n- −2(x − 4y) = −2x + 8y (a negative times a negative is positive)\n- Collect: 6x − 2x − 3y + 8y = 4x + 5y\n\nThe most common mistake is to forget to change the sign of the second term: −2(x − 4y) is **not** −2x − 8y.\n\n## Substitution\n\nTo **evaluate** an expression, replace each letter with its value. Put negative numbers in brackets.\n\n**Worked example 3.** Find 4x + 5y when x = 2 and y = −1. 4(2) + 5(−1) = 8 − 5 = 3.\n\n**Worked example 4.** Find x² − 3x when x = −2. (−2)² − 3(−2) = 4 + 6 = 10.\n\n## Expressions from real life\n\nA rectangular plot of land has length (3x + 2) m and width (x − 1) m. Its perimeter is 2(3x + 2) + 2(x − 1) = 6x + 4 + 2x − 2 = 8x + 2 metres. If x = 5, the perimeter is 8(5) + 2 = 42 m.\n\nSimplify first, then substitute: it is quicker and there are fewer chances to slip."
+      },
+      "cards": [
+        {
+          "front": "Like terms",
+          "back": "Terms with exactly the same letters and powers, such as 3a and −a."
+        },
+        {
+          "front": "Simplify 3a + 5b − a + 2b",
+          "back": "2a + 7b"
+        },
+        {
+          "front": "Expand 4(2m − 3)",
+          "back": "8m − 12"
+        },
+        {
+          "front": "Expand −2(x − 4y)",
+          "back": "−2x + 8y"
+        },
+        {
+          "front": "(−) × (−)",
+          "back": "Positive (+)."
+        },
+        {
+          "front": "6p²q ÷ 2pq",
+          "back": "3p"
+        },
+        {
+          "front": "Evaluate x² − 3x when x = −2",
+          "back": "4 + 6 = 10"
+        },
+        {
+          "front": "Substitution",
+          "back": "Replacing each letter with its number value."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Simplify 3a + 5b − a + 2b.",
+          "options": ["9ab", "2a + 7b", "4a + 7b", "2a + 3b"],
+          "answer": "B"
+        },
+        {
+          "prompt": "If x = 3 and y = −2, find the value of 2x + 3y.",
+          "options": ["0", "12", "−12", "1"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Expand 4(2m − 3).",
+          "options": ["8m − 3", "6m − 7", "8m − 12", "8m + 12"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Simplify 6p²q ÷ 2pq.",
+          "options": ["3p", "3pq", "4p", "3p²"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A danfo charges ₦200 for each passenger and ₦50 for each bag. How much does it cost for 3 passengers with 2 bags?",
+          "options": ["₦250", "₦700", "₦1,250", "₦500"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Simplify 3(2x − y) − 2(x − 4y). Hence find its value when x = 2 and y = −1.",
+          "markScheme": [
+            "Expands 3(2x − y) = 6x − 3y",
+            "Expands −2(x − 4y) = −2x + 8y",
+            "Collects like terms: 4x + 5y",
+            "Substitutes correctly: 4(2) + 5(−1) = 3"
+          ],
+          "modelAnswer": "3(2x − y) = 6x − 3y and −2(x − 4y) = −2x + 8y. Collecting like terms: 6x − 2x − 3y + 8y = 4x + 5y. When x = 2 and y = −1: 4(2) + 5(−1) = 8 − 5 = 3.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "6x − 3y − 2x + 8y = 4x + 5y. When x = 2 and y = −1, 4(2) + 5(−1) = 8 − 5 = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "6x − 3y"
+                },
+                {
+                  "point": 1,
+                  "quote": "− 2x + 8y"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 4x + 5y"
+                },
+                {
+                  "point": 3,
+                  "quote": "4(2) + 5(−1) = 8 − 5 = 3"
+                }
+              ],
+              "feedback": "Full marks. You remembered that minus times minus gives +8y, which is the step that catches most people."
+            },
+            {
+              "tier": "full",
+              "text": "3 × 2x = 6x, 3 × −y = −3y. −2 × x = −2x, −2 × −4y = +8y. So it is 6x − 2x − 3y + 8y which is 4x + 5y. Putting x = 2 and y = −1 gives 8 + (−5) = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3 × 2x = 6x, 3 × −y = −3y"
+                },
+                {
+                  "point": 1,
+                  "quote": "−2 × x = −2x, −2 × −4y = +8y"
+                },
+                {
+                  "point": 2,
+                  "quote": "which is 4x + 5y"
+                },
+                {
+                  "point": 3,
+                  "quote": "Putting x = 2 and y = −1 gives 8 + (−5) = 3"
+                }
+              ],
+              "feedback": "All four marks. Writing each multiplication separately makes your signs easy to check."
+            },
+            {
+              "tier": "partial",
+              "text": "6x − 3y − 2x − 8y = 4x − 11y. 4(2) − 11(−1) = 8 + 11 = 19.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "6x − 3y"
+                }
+              ],
+              "feedback": "The first bracket is right and your substitution is careful. But −2 × −4y = +8y, not −8y; that gives 4x + 5y, and the value 3."
+            },
+            {
+              "tier": "partial",
+              "text": "6x − 3y − 2x + 8y = 4x + 5y = 9xy",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "6x − 3y"
+                },
+                {
+                  "point": 1,
+                  "quote": "− 2x + 8y"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 4x + 5y"
+                }
+              ],
+              "feedback": "Your expansion is correct, but 4x and 5y are unlike terms, so 4x + 5y is as simple as it gets; they cannot become 9xy. You also need the value: 4(2) + 5(−1) = 3.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "3(2x − y) − 2(x − 4y) = 6x − y − 2x − 4y = 4x − 5y = 8 + 5 = 13",
+              "meets": [],
+              "feedback": "Multiply every term inside the bracket by the number outside: 3 × −y = −3y and −2 × −4y = +8y. That gives 4x + 5y, which is 3 when x = 2 and y = −1."
+            },
+            {
+              "tier": "weak",
+              "text": "Put x = 2 and y = −1 first: 3(4 − 1) − 2(2 − 4) = 9 − (−4) = 13.",
+              "meets": [],
+              "feedback": "Substituting first can work, but take care with y = −1: 2x − y = 4 − (−1) = 5 and x − 4y = 2 − (−4) = 6, so the value is 15 − 12 = 3. The question also asked you to simplify first, which gives 4x + 5y."
+            }
+          ]
+        },
+        {
+          "prompt": "A rectangular plot of land in Ibadan has length (3x + 2) m and width (x − 1) m. (a) Write an expression for its perimeter and simplify it. (b) When x = 5, find the perimeter and the area of the plot.",
+          "markScheme": [
+            "Perimeter = 2(3x + 2) + 2(x − 1)",
+            "Simplifies to 8x + 2",
+            "Perimeter when x = 5 is 42 m",
+            "Length = 17 m and width = 4 m",
+            "Area = 17 × 4 = 68 m²"
+          ],
+          "modelAnswer": "(a) Perimeter = 2 × length + 2 × width = 2(3x + 2) + 2(x − 1) = 6x + 4 + 2x − 2 = 8x + 2 metres. (b) When x = 5, perimeter = 8(5) + 2 = 42 m. The length is 3(5) + 2 = 17 m and the width is 5 − 1 = 4 m, so the area is 17 × 4 = 68 m².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) P = 2(3x + 2) + 2(x − 1) = 6x + 4 + 2x − 2 = 8x + 2.\n(b) P = 8 × 5 + 2 = 42 m. Length = 15 + 2 = 17 m, width = 5 − 1 = 4 m. Area = 17 × 4 = 68 m².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "P = 2(3x + 2) + 2(x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 8x + 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "P = 8 × 5 + 2 = 42 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "Length = 15 + 2 = 17 m, width = 5 − 1 = 4 m"
+                },
+                {
+                  "point": 4,
+                  "quote": "Area = 17 × 4 = 68 m²"
+                }
+              ],
+              "feedback": "Full marks, with units on every answer. Very well set out."
+            },
+            {
+              "tier": "full",
+              "text": "Perimeter is all four sides: (3x + 2) + (x − 1) + (3x + 2) + (x − 1) = 8x + 2. When x is 5 the length is 17 and width is 4, so perimeter 17 + 4 + 17 + 4 = 42 m, same as 8(5) + 2. Area is length times width, 17 × 4 = 68 square metres.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(3x + 2) + (x − 1) + (3x + 2) + (x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 8x + 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "perimeter 17 + 4 + 17 + 4 = 42 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "the length is 17 and width is 4"
+                },
+                {
+                  "point": 4,
+                  "quote": "17 × 4 = 68 square metres"
+                }
+              ],
+              "feedback": "All five marks. Checking your 42 m two ways is exactly what a careful mathematician does."
+            },
+            {
+              "tier": "partial",
+              "text": "Perimeter = (3x + 2) + (x − 1) = 4x + 1. When x = 5, perimeter = 21 m. Length = 17, width = 4, area = 68 m².",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Length = 17, width = 4"
+                },
+                {
+                  "point": 4,
+                  "quote": "area = 68 m²"
+                }
+              ],
+              "feedback": "Your area is right. The perimeter goes all the way round, so there are two lengths and two widths: 2(3x + 2) + 2(x − 1) = 8x + 2, which is 42 m."
+            },
+            {
+              "tier": "partial",
+              "text": "P = 2(3x + 2) + 2(x − 1) = 6x + 4 + 2x − 2 = 8x + 2. When x = 5 it is 42 m. Area = 17 + 4 = 21 m².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "P = 2(3x + 2) + 2(x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 8x + 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "When x = 5 it is 42 m"
+                }
+              ],
+              "feedback": "The perimeter work is all correct. Area is length times width, not plus: 17 × 4 = 68 m². You should also show how you got 17 and 4."
+            },
+            {
+              "tier": "weak",
+              "text": "Perimeter = (3x + 2)(x − 1) = 3x² − 1. When x = 5 it is 74.",
+              "meets": [],
+              "feedback": "Multiplying length by width gives the area, not the perimeter. The perimeter adds the four sides: 2(3x + 2) + 2(x − 1) = 8x + 2."
+            },
+            {
+              "tier": "weak",
+              "text": "3x + 2 + x − 1 = 4x + 1 = 5x. x = 5 so perimeter = 25 m.",
+              "meets": [],
+              "feedback": "4x and 1 are unlike terms, so 4x + 1 cannot become 5x. Also, the perimeter needs both lengths and both widths: 8x + 2, which is 42 m when x = 5."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Simultaneous linear equations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain that the solution of a pair of simultaneous equations satisfies both equations;\n2. solve a pair of linear equations by substitution;\n3. solve a pair of linear equations by elimination, multiplying first where needed;\n4. form and solve simultaneous equations from word problems on prices.\n\n## Materials\n\nTwo price lists from the school canteen, cards with pairs of equations, and a chart showing the steps of each method.\n\n## Starter (5 minutes)\n\nSay: I am thinking of two numbers. They add up to 10 and their difference is 4. What are they? Let learners guess (7 and 3), then write x + y = 10 and x − y = 4.\n\n## Development\n\n1. Simultaneous equations are true at the same time. Check that x = 7, y = 3 fits both starter equations.\n2. Elimination by adding: (x + y) + (x − y) = 10 + 4 gives 2x = 14, so x = 7 and y = 3.\n3. Elimination by subtracting: when the coefficients of one letter are the same with the same sign, subtract. 2p + q = 250 and p + q = 150 give p = 100.\n4. Multiplying first: in 3r + 2w = 1,900 and 2r + 5w = 2,000, multiply by 2 and by 3 to make the r terms 6r, then subtract.\n5. Substitution: when one equation gives y = ..., put it into the other. y = 2x − 1 and 3x + 2y = 12 give 3x + 2(2x − 1) = 12, so x = 2 and y = 3.\n6. Always substitute both answers back into both equations to check.\n\n## Class activity\n\nGroups take a canteen price list and write two equations from two learners' orders, then swap with another group, who solve them to find the price of each item.\n\n## Evaluation\n\n1. Solve x + 2y = 8 and x − y = 2.\n2. Solve y = 3x and 2x + y = 15.\n\n## Assignment\n\nDifferentiated worksheet on the app, due Friday.",
+      "reading": {
+        "title": "Two equations, two unknowns",
+        "content": "# Simultaneous linear equations\n\n## What are they?\n\nOne equation with two unknowns, such as x + y = 10, has many solutions: 5 and 5, 7 and 3, 1 and 9. A second equation, such as x − y = 4, narrows it down. **Simultaneous equations** are a pair of equations that are both true at the same time. Here only x = 7, y = 3 works for both.\n\n## Method 1: elimination\n\nAdd or subtract the equations so that one letter disappears.\n\n**Worked example 1.** Two pens and one pencil cost ₦250. One pen and one pencil cost ₦150. Find the cost of a pen.\n\n- 2p + q = 250 ... (1)\n- p + q = 150 ... (2)\n- (1) − (2): p = 100. A pen costs ₦100.\n- In (2): 100 + q = 150, so q = 50. A pencil costs ₦50.\n\nIf the signs of the matching terms are the **same**, subtract. If they are **different**, add.\n\nSometimes you must multiply first. **Worked example 2.** 3r + 2w = 1,900 and 2r + 5w = 2,000.\n\n- Multiply the first by 2: 6r + 4w = 3,800.\n- Multiply the second by 3: 6r + 15w = 6,000.\n- Subtract: 11w = 2,200, so w = 200.\n- Then 3r + 400 = 1,900, so 3r = 1,500 and r = 500.\n\n## Method 2: substitution\n\nUse this when one equation already says what one letter equals.\n\n**Worked example 3.** y = 2x − 1 and 3x + 2y = 12.\n\n- Replace y in the second equation: 3x + 2(2x − 1) = 12.\n- Expand: 3x + 4x − 2 = 12, so 7x = 14 and x = 2.\n- Then y = 2(2) − 1 = 3.\n\n## Always check\n\nPut both values into **both** equations. For example 3: 3(2) + 2(3) = 12, and 2(2) − 1 = 3. Both work."
+      },
+      "cards": [
+        {
+          "front": "Simultaneous equations",
+          "back": "Two equations that are both true for the same values of the unknowns."
+        },
+        {
+          "front": "Elimination",
+          "back": "Add or subtract the equations so that one unknown disappears."
+        },
+        {
+          "front": "When do you add the equations?",
+          "back": "When the matching terms have opposite signs, such as +3y and −3y."
+        },
+        {
+          "front": "When do you subtract the equations?",
+          "back": "When the matching terms have the same sign, such as +q and +q."
+        },
+        {
+          "front": "Substitution",
+          "back": "Replace one unknown with what it equals in the other equation."
+        },
+        {
+          "front": "Solve x + y = 10 and x − y = 4",
+          "back": "Add: 2x = 14, so x = 7 and y = 3."
+        },
+        {
+          "front": "How do you check your solution?",
+          "back": "Put both values into both equations; each must be true."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Solve x + y = 10 and x − y = 4.",
+          "options": [
+            "x = 7, y = 3",
+            "x = 3, y = 7",
+            "x = 6, y = 4",
+            "x = 14, y = −4"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Given that y = 2x and x + y = 12, find x.",
+          "options": ["6", "12", "4", "8"],
+          "answer": "C"
+        },
+        {
+          "prompt": "To eliminate y from 2x + 3y = 12 and 4x − 3y = 6, what should you do?",
+          "options": [
+            "Subtract the second equation from the first",
+            "Add the two equations",
+            "Multiply the first equation by 3",
+            "Divide the second equation by 4"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Two pens and one pencil cost ₦250. One pen and one pencil cost ₦150. How much does one pen cost?",
+          "options": ["₦50", "₦125", "₦200", "₦100"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which pair of values satisfies both 3x + y = 11 and x − y = 1?",
+          "options": [
+            "x = 2, y = 3",
+            "x = 4, y = 1",
+            "x = 3, y = 2",
+            "x = 1, y = 3"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Solve the simultaneous equations y = 2x − 1 and 3x + 2y = 12 by substitution.",
+          "markScheme": [
+            "Substitutes: 3x + 2(2x − 1) = 12",
+            "Expands correctly: 3x + 4x − 2 = 12",
+            "x = 2",
+            "y = 3"
+          ],
+          "modelAnswer": "Put y = 2x − 1 into the second equation: 3x + 2(2x − 1) = 12. Expand: 3x + 4x − 2 = 12, so 7x = 14 and x = 2. Then y = 2(2) − 1 = 3. Check: 3(2) + 2(3) = 6 + 6 = 12.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "3x + 2(2x − 1) = 12\n3x + 4x − 2 = 12\n7x = 14\nx = 2\ny = 2(2) − 1 = 3\nCheck 6 + 6 = 12",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x + 2(2x − 1) = 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "3x + 4x − 2 = 12"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "y = 2(2) − 1 = 3"
+                }
+              ],
+              "feedback": "Full marks, and the check proves both values work."
+            },
+            {
+              "tier": "full",
+              "text": "Since y is 2x − 1, I replace y in 3x + 2y = 12 to get 3x + 2(2x − 1) = 12. That is 3x + 4x − 2 = 12, 7x = 12 + 2 = 14, so x is 2. y = 4 − 1 = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x + 2(2x − 1) = 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "That is 3x + 4x − 2 = 12"
+                },
+                {
+                  "point": 2,
+                  "quote": "so x is 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "y = 4 − 1 = 3"
+                }
+              ],
+              "feedback": "All four marks, with each step explained. Add a check by substituting both values back."
+            },
+            {
+              "tier": "partial",
+              "text": "3x + 2(2x − 1) = 12\n3x + 4x − 1 = 12\n7x = 13\nx = 13/7",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x + 2(2x − 1) = 12"
+                }
+              ],
+              "feedback": "You substituted correctly. When expanding, the 2 multiplies both terms: 2(2x − 1) = 4x − 2. Then 7x = 14 and x = 2, y = 3."
+            },
+            {
+              "tier": "partial",
+              "text": "3x + 2(2x − 1) = 12, 7x − 2 = 12, 7x = 14, x = 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x + 2(2x − 1) = 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "7x − 2 = 12"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 2"
+                }
+              ],
+              "feedback": "Correct to x = 2. Finish the question: put x = 2 into y = 2x − 1 to get y = 3."
+            },
+            {
+              "tier": "weak",
+              "text": "y = 2x − 1 so y = 1x. 3x + 2x = 12, 5x = 12, x = 2.4",
+              "meets": [],
+              "feedback": "2x − 1 cannot be simplified to 1x, because 2x and 1 are unlike terms. Replace y with the whole of (2x − 1): 3x + 2(2x − 1) = 12."
+            },
+            {
+              "tier": "weak",
+              "text": "If x = 1, y = 1 and 3 + 2 = 5. If x = 3, y = 5 and 9 + 10 = 19. So x = 2, y = 3.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "So x = 2"
+                }
+              ],
+              "feedback": "Trying values happened to work here, but the question asks for substitution. Put y = 2x − 1 into the second equation: 3x + 2(2x − 1) = 12, then solve.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "At the school canteen, 3 plates of rice and 2 bottles of water cost ₦1,900. 2 plates of rice and 5 bottles of water cost ₦2,000. Form two equations and solve them by elimination to find the price of a plate of rice and of a bottle of water.",
+          "markScheme": [
+            "Forms the equations 3r + 2w = 1,900 and 2r + 5w = 2,000",
+            "Multiplies to match a coefficient (6r + 4w = 3,800 and 6r + 15w = 6,000, or equivalent)",
+            "Eliminates to find w = ₦200",
+            "Finds r = ₦500"
+          ],
+          "modelAnswer": "Let a plate of rice cost r naira and a bottle of water w naira. 3r + 2w = 1,900 ... (1) and 2r + 5w = 2,000 ... (2). Multiply (1) by 2: 6r + 4w = 3,800. Multiply (2) by 3: 6r + 15w = 6,000. Subtract: 11w = 2,200, so w = 200. In (1): 3r + 400 = 1,900, so 3r = 1,500 and r = 500. Rice is ₦500 a plate and water is ₦200 a bottle.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Let rice = r and water = w.\n3r + 2w = 1900 (1)\n2r + 5w = 2000 (2)\n(1) × 2: 6r + 4w = 3800\n(2) × 3: 6r + 15w = 6000\nSubtract: 11w = 2200, w = 200\n3r + 400 = 1900, 3r = 1500, r = 500\nRice ₦500, water ₦200.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3r + 2w = 1900 (1)\n2r + 5w = 2000 (2)"
+                },
+                {
+                  "point": 1,
+                  "quote": "(1) × 2: 6r + 4w = 3800\n(2) × 3: 6r + 15w = 6000"
+                },
+                {
+                  "point": 2,
+                  "quote": "11w = 2200, w = 200"
+                },
+                {
+                  "point": 3,
+                  "quote": "r = 500"
+                }
+              ],
+              "feedback": "Full marks. Numbering the equations and saying what you multiplied each by makes the method easy to follow."
+            },
+            {
+              "tier": "full",
+              "text": "3r + 2w = 1,900 and 2r + 5w = 2,000. I want to remove w so I multiply the first by 5 and the second by 2: 15r + 10w = 9,500 and 4r + 10w = 4,000. Subtracting, 11r = 5,500 so r = 500. Then 1,500 + 2w = 1,900, 2w = 400, w = 200. A plate of rice is ₦500 and water is ₦200.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3r + 2w = 1,900 and 2r + 5w = 2,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "15r + 10w = 9,500 and 4r + 10w = 4,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "2w = 400, w = 200"
+                },
+                {
+                  "point": 3,
+                  "quote": "11r = 5,500 so r = 500"
+                }
+              ],
+              "feedback": "All four marks. Eliminating w first works just as well; you chose the multipliers correctly."
+            },
+            {
+              "tier": "partial",
+              "text": "3r + 2w = 1900, 2r + 5w = 2000. Subtract: r − 3w = −100.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3r + 2w = 1900, 2r + 5w = 2000"
+                }
+              ],
+              "feedback": "Your equations are right, but subtracting straight away removes neither letter. Multiply first so one letter has the same number in front: 6r + 4w = 3,800 and 6r + 15w = 6,000, then subtract."
+            },
+            {
+              "tier": "partial",
+              "text": "3r + 2w = 1900\n2r + 5w = 2000\n× 2: 6r + 4w = 3800\n× 3: 6r + 15w = 6000\n11w = 2200\nw = 200",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3r + 2w = 1900\n2r + 5w = 2000"
+                },
+                {
+                  "point": 1,
+                  "quote": "× 2: 6r + 4w = 3800\n× 3: 6r + 15w = 6000"
+                },
+                {
+                  "point": 2,
+                  "quote": "w = 200"
+                }
+              ],
+              "feedback": "Correct elimination to w = 200. You stopped there: put w = 200 into 3r + 2w = 1,900 to find r = 500."
+            },
+            {
+              "tier": "weak",
+              "text": "5 plates and 7 bottles cost ₦3,900. 3,900 ÷ 12 = ₦325 each.",
+              "meets": [],
+              "feedback": "Adding the orders mixes rice and water together, and they do not cost the same. Use one letter for each, r and w, and write an equation for each order."
+            },
+            {
+              "tier": "weak",
+              "text": "3r + 2w = 1900 so r = 1900 ÷ 3 = 633 and w = 1900 ÷ 2 = 950.",
+              "meets": [],
+              "feedback": "You started the first equation correctly, but one equation cannot be split like that. Write the second, 2r + 5w = 2,000, and eliminate one letter. Check: your prices would make 3 rice and 2 water cost far more than ₦1,900."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

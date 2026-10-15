@@ -1,0 +1,2748 @@
+{
+  "subject": "Mathematics",
+  "yearGroup": "SS2",
+  "weeks": {
+    "1": {
+      "topic": "Binary operations, linear equations and change of subject",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. evaluate binary operations defined on real numbers, such as a * b = 2a + b − ab, and test them for commutativity;\n2. solve linear equations in one variable, including those with fractions;\n3. solve simultaneous linear equations in two variables by elimination, substitution and graphs, and solve word problems with them;\n4. change the subject of a formula and use it to find a value.\n\n## Materials\n\nGraph boards, a chart of the steps for elimination and substitution, a price list from the school canteen.\n\n## Starter (5 minutes)\n\nWrite 'a * b means double a, add b, take away a times b' on the board. Ask the class to find 3 * 4 and then 4 * 3. They get −2 and −1, and see that the order matters.\n\n## Development\n\n1. Binary operations: work (2 * 3) * 1, always doing the bracket first. Define commutative (a * b = b * a) and show one counter-example is enough to disprove it.\n2. Linear equations with fractions: multiply through by the LCM. (x + 1)/2 + (x − 2)/3 = 4 becomes 3(x + 1) + 2(x − 2) = 24, so x = 5.\n3. Simultaneous equations: solve 3x + 2y = 12 and 5x − 2y = 4 by elimination (x = 2, y = 3), then by substitution, then show the two lines crossing at (2, 3) on a graph.\n4. Word problems: canteen prices. 2 plates of rice and 3 bottles of water cost ₦4 200; 1 plate and 2 bottles cost ₦2 400. Form and solve the equations.\n5. Change of subject: from 1/f = 1/u + 1/v, get 1/v = 1/f − 1/u = (u − f)/uf, so v = uf/(u − f). With u = 30, f = 10, v = 15.\n\n## Class activity\n\nPairs write their own word problem from the canteen price list, swap with another pair, and solve it by two methods.\n\n## Evaluation\n\n1. If a * b = a + b + 2ab, find 2 * (−1).\n2. Solve x/3 − 2 = (x − 4)/5.\n3. Make r the subject of A = πr².\n\n## Assignment\n\nWorksheet on the app, due Thursday.",
+      "reading": {
+        "title": "Operations, equations and rearranging formulas",
+        "content": "# Binary operations, equations and change of subject\n\n## Binary operations\n\nA **binary operation** combines two numbers to give one, following a stated rule. If a * b = 2a + b − ab, then\n\n3 * 4 = 2(3) + 4 − 3(4) = 6 + 4 − 12 = −2.\n\nWith brackets, work the bracket first: (2 * 3) * 1 = 1 * 1 = 2 + 1 − 1 = 2.\n\nAn operation is **commutative** if a * b = b * a for all a and b. Here 4 * 3 = −1, which is not −2, so * is not commutative. One counter-example is enough to show this.\n\n## Linear equations in one variable\n\nClear fractions by multiplying every term by the LCM of the denominators.\n\n**Worked example 1.** (x + 1)/2 + (x − 2)/3 = 4. Multiply by 6: 3(x + 1) + 2(x − 2) = 24, so 5x − 1 = 24 and x = 5. The truth set is {5}.\n\n## Simultaneous equations\n\n- **Elimination:** make the coefficients of one letter equal, then add or subtract.\n- **Substitution:** make one letter the subject of one equation and put it into the other.\n- **Graphs:** draw both lines; the solution is where they cross.\n\n**Worked example 2.** 3x + 2y = 12 and 5x − 2y = 4. Adding, 8x = 16, so x = 2. Then 6 + 2y = 12, so y = 3.\n\n**Worked example 3.** At a canteen, 2 plates of rice and 3 bottles of water cost ₦4 200; 1 plate and 2 bottles cost ₦2 400. Let r and w be the prices: 2r + 3w = 4 200 and r + 2w = 2 400. Doubling the second, 2r + 4w = 4 800; subtracting, w = 600, so r = 1 200.\n\n## Change of subject\n\nTo make a letter the subject, undo what has been done to it, step by step, doing the same to both sides.\n\n**Worked example 4.** Make v the subject of 1/f = 1/u + 1/v.\n\n1/v = 1/f − 1/u = (u − f)/uf, so v = uf/(u − f).\n\nWhen u = 30 and f = 10, v = 300 ÷ 20 = 15."
+      },
+      "cards": [
+        {
+          "front": "Binary operation",
+          "back": "A rule that combines two numbers to give one, e.g. a * b = 2a + b − ab."
+        },
+        {
+          "front": "Commutative operation",
+          "back": "a * b = b * a for all a and b."
+        },
+        {
+          "front": "Clearing fractions in an equation",
+          "back": "Multiply every term by the LCM of the denominators."
+        },
+        {
+          "front": "Elimination method",
+          "back": "Make the coefficients of one letter equal, then add or subtract the equations."
+        },
+        {
+          "front": "Substitution method",
+          "back": "Make one letter the subject of one equation and put it into the other."
+        },
+        {
+          "front": "Graphical solution of two linear equations",
+          "back": "The point where the two lines cross."
+        },
+        {
+          "front": "Make v the subject of 1/f = 1/u + 1/v",
+          "back": "v = uf/(u − f)"
+        },
+        {
+          "front": "Truth set",
+          "back": "The set of values that make an equation true."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A binary operation * is defined on the real numbers by a * b = 2a + b − ab. Evaluate 3 * 4.",
+          "options": ["22", "−2", "10", "−1"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Solve the equation (x + 1)/2 + (x − 2)/3 = 4.",
+          "options": ["5", "23/5", "4", "7"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Solve the simultaneous equations 3x + 2y = 12 and 5x − 2y = 4.",
+          "options": [
+            "x = 3, y = 2",
+            "x = 4, y = 0",
+            "x = 2, y = −3",
+            "x = 2, y = 3"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Make v the subject of the formula 1/f = 1/u + 1/v.",
+          "options": [
+            "v = f − u",
+            "v = uf/(f − u)",
+            "v = uf/(u − f)",
+            "v = u − f"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "If 1/f = 1/u + 1/v, find v when u = 30 and f = 10.",
+          "options": ["20", "15", "−15", "3/10"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "At a school canteen in Kaduna, 2 plates of rice and 3 bottles of water cost ₦4 200, while 1 plate of rice and 2 bottles of water cost ₦2 400. Find the cost of a plate of rice and the cost of a bottle of water.",
+          "markScheme": [
+            "Forms 2r + 3w = 4 200",
+            "Forms r + 2w = 2 400",
+            "Eliminates or substitutes correctly: a bottle of water costs ₦600",
+            "A plate of rice costs ₦1 200"
+          ],
+          "modelAnswer": "Let a plate of rice cost r naira and a bottle of water cost w naira. Then 2r + 3w = 4 200 and r + 2w = 2 400. Doubling the second equation gives 2r + 4w = 4 800. Subtracting the first, w = 600. Then r + 1 200 = 2 400, so r = 1 200. A plate of rice costs ₦1 200 and a bottle of water costs ₦600.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Let rice = r and water = w. 2r + 3w = 4200 (1), r + 2w = 2400 (2). (2) x 2: 2r + 4w = 4800. Subtract (1): w = 600. Put in (2): r + 1200 = 2400, r = 1200. Rice is ₦1 200 and water is ₦600.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2r + 3w = 4200"
+                },
+                {
+                  "point": 1,
+                  "quote": "r + 2w = 2400"
+                },
+                {
+                  "point": 2,
+                  "quote": "Subtract (1): w = 600"
+                },
+                {
+                  "point": 3,
+                  "quote": "Rice is ₦1 200"
+                }
+              ],
+              "feedback": "All four marks. Saying which equation you doubled and which you subtracted makes your elimination easy to follow."
+            },
+            {
+              "tier": "full",
+              "text": "Let x = cost of rice and y = cost of water. 2x + 3y = 4 200 and x + 2y = 2 400. From the second, x = 2 400 − 2y. So 2(2 400 − 2y) + 3y = 4 200, 4 800 − y = 4 200, y = 600. x = 2 400 − 1 200 = 1 200. A plate of rice costs ₦1 200, a bottle of water ₦600.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2x + 3y = 4 200"
+                },
+                {
+                  "point": 1,
+                  "quote": "x + 2y = 2 400"
+                },
+                {
+                  "point": 2,
+                  "quote": "4 800 − y = 4 200, y = 600"
+                },
+                {
+                  "point": 3,
+                  "quote": "A plate of rice costs ₦1 200"
+                }
+              ],
+              "feedback": "Full marks by substitution. Defining x and y in words at the start is exactly what examiners want to see."
+            },
+            {
+              "tier": "partial",
+              "text": "2r + 3w = 4200 and r + 2w = 2400. Subtracting gives r + w = 1800. So rice is 1200 and water is 600 because they add up to 1800.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2r + 3w = 4200"
+                },
+                {
+                  "point": 1,
+                  "quote": "r + 2w = 2400"
+                }
+              ],
+              "feedback": "Your equations are right and so are your prices, but r + w = 1 800 has many answers, so 1 200 and 600 was a guess. Double the second equation and subtract to find w exactly.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "2r + 3w = 4200, r + 2w = 2400. Multiply the second by 2: 2r + 4w = 4800. Subtract: w = 600. r + 2(600) = 2400, r = 1800.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2r + 3w = 4200"
+                },
+                {
+                  "point": 1,
+                  "quote": "r + 2w = 2400"
+                },
+                {
+                  "point": 2,
+                  "quote": "Subtract: w = 600"
+                }
+              ],
+              "feedback": "Your method is right and w = 600 is right. In the last line, 2 × 600 = 1 200, so r = 2 400 − 1 200 = 1 200. Check your answer in the first equation before you finish."
+            },
+            {
+              "tier": "weak",
+              "text": "2 plates and 3 bottles are 5 things for 4200 so each thing is 4200 ÷ 5 = 840.",
+              "meets": [],
+              "feedback": "Rice and water have different prices, so you need a letter for each: 2r + 3w = 4 200 and r + 2w = 2 400. Then solve the two equations together."
+            },
+            {
+              "tier": "weak",
+              "text": "2r + 3w = 4200. 4200 − 2400 = 1800 so a plate of rice is ₦1 800.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2r + 3w = 4200"
+                }
+              ],
+              "feedback": "Your first equation is right. Write the second one too, r + 2w = 2 400. Taking 2 400 from 4 200 removes one plate and one bottle, not just a plate."
+            }
+          ]
+        },
+        {
+          "prompt": "A binary operation * is defined on the set of real numbers by a * b = 2a + b − ab. (a) Evaluate (2 * 3) * 1. (b) Find x if x * 3 = 7. (c) Is * commutative? Give a reason for your answer.",
+          "markScheme": [
+            "2 * 3 = 4 + 3 − 6 = 1",
+            "(a) (2 * 3) * 1 = 1 * 1 = 2 + 1 − 1 = 2",
+            "Forms x * 3 = 2x + 3 − 3x = 7",
+            "(b) x = −4",
+            "(c) Not commutative, with a counter-example such as 3 * 4 = −2 but 4 * 3 = −1"
+          ],
+          "modelAnswer": "(a) 2 * 3 = 2(2) + 3 − 2(3) = 4 + 3 − 6 = 1. Then (2 * 3) * 1 = 1 * 1 = 2(1) + 1 − 1(1) = 2. (b) x * 3 = 2x + 3 − 3x = 3 − x. So 3 − x = 7 and x = −4. (c) No. 3 * 4 = 6 + 4 − 12 = −2, but 4 * 3 = 8 + 3 − 12 = −1. Since 3 * 4 ≠ 4 * 3, the operation is not commutative.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 2 * 3 = 2(2) + 3 − 2(3) = 4 + 3 − 6 = 1. Then 1 * 1 = 2 + 1 − 1 = 2. (b) x * 3 = 2x + 3 − 3x = 7, 3 − x = 7, x = −4. (c) No. 3 * 4 = 6 + 4 − 12 = −2 but 4 * 3 = 8 + 3 − 12 = −1, so a * b ≠ b * a.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 * 3 = 2(2) + 3 − 2(3) = 4 + 3 − 6 = 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "1 * 1 = 2 + 1 − 1 = 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "x * 3 = 2x + 3 − 3x = 7"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = −4"
+                },
+                {
+                  "point": 4,
+                  "quote": "No. 3 * 4 = 6 + 4 − 12 = −2 but 4 * 3 = 8 + 3 − 12 = −1"
+                }
+              ],
+              "feedback": "All five marks. A single counter-example is all (c) needs, and yours is clear."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 2 * 3 = 4 + 3 − 6 = 1, so (2 * 3) * 1 = 1 * 1 = 2 + 1 − 1 = 2. (b) 2x + 3 − 3x = 7 so −x = 4 and x = −4. (c) b * a = 2b + a − ab, which is not the same as 2a + b − ab. For example 1 * 2 = 2 + 2 − 2 = 2 but 2 * 1 = 4 + 1 − 2 = 3. So * is not commutative.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 * 3 = 4 + 3 − 6 = 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "1 * 1 = 2 + 1 − 1 = 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "2x + 3 − 3x = 7"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = −4"
+                },
+                {
+                  "point": 4,
+                  "quote": "For example 1 * 2 = 2 + 2 − 2 = 2 but 2 * 1 = 4 + 1 − 2 = 3. So * is not commutative"
+                }
+              ],
+              "feedback": "Full marks. Writing out b * a in general and then giving numbers is a thorough answer to (c)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3 * 1 = 6 + 1 − 3 = 4, then 2 * 4 = 4 + 4 − 8 = 0. (b) 2x + 3 − 3x = 7, −x = 4, x = −4. (c) Yes it is commutative because ab = ba.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "2x + 3 − 3x = 7"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = −4"
+                }
+              ],
+              "feedback": "Part (b) is right. In (a) the bracket comes first: 2 * 3 = 1, then 1 * 1 = 2. In (c), ab = ba, but 2a + b is not 2b + a: try 3 * 4 and 4 * 3."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 2 * 3 = 4 + 3 − 6 = 1, 1 * 1 = 2 + 1 − 1 = 2. (b) 2x + 3 − 3x = 7, −x = 4, x = 4. (c) It is not commutative.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 * 3 = 4 + 3 − 6 = 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "1 * 1 = 2 + 1 − 1 = 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "2x + 3 − 3x = 7"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b), −x = 4 means x = −4; divide both sides by −1. In (c) you must give a reason: show two numbers where a * b ≠ b * a."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 2 * 3 = 2 x 3 = 6 and 6 * 1 = 6. (b) x * 3 = 3x = 7, x = 7/3. (c) Yes because multiplication is commutative.",
+              "meets": [],
+              "feedback": "The * here is not ordinary multiplication; it follows the rule 2a + b − ab. So 2 * 3 = 2(2) + 3 − 2(3) = 1. Use the rule for every part."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 2 * 3 = 4 + 3 − 6 = 1, then 1 * 1 = 1. (b) x = 7 − 3 = 4. (c) No.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2 * 3 = 4 + 3 − 6 = 1"
+                }
+              ],
+              "feedback": "Your first step is right. Use the rule again for 1 * 1: 2(1) + 1 − 1 = 2. In (b), put x into the rule: 2x + 3 − 3x = 7. In (c), a reason is needed, not just No."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Quadratic equations and linear inequalities",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. solve quadratic equations by factorisation, by completing the square and by the formula;\n2. form a quadratic equation with given rational roots;\n3. solve practical problems that lead to quadratic equations;\n4. solve linear inequalities in one variable, show the truth set on a number line, and solve simple practical problems.\n\n## Materials\n\nA rope 26 m long for the starter, a chart of the quadratic formula, number lines drawn on manila card.\n\n## Starter (5 minutes)\n\nAsk: a rectangular vegetable bed is 3 m longer than it is wide and has an area of 40 m². How wide is it? Let learners guess and test; most reach 5 m by trial. Then show the equation w(w + 3) = 40.\n\n## Development\n\n1. Factorisation: if ab = 0, then a = 0 or b = 0. Solve x² − 5x − 14 = 0 → (x − 7)(x + 2) = 0 → x = 7 or −2. Then 2x² + 5x − 3 = 0 → x = 1/2 or −3.\n2. Completing the square: x² + 6x − 7 = 0 → x² + 6x + 9 = 16 → (x + 3)² = 16 → x = 1 or −7. Stress the ± when taking square roots.\n3. Formula: x = [−b ± √(b² − 4ac)]/2a. Solve 3x² − 4x − 2 = 0 to get x = 1.72 or −0.39.\n4. Forming equations: roots −3 and 5/2 give (x + 3)(2x − 5) = 0, that is 2x² + x − 15 = 0.\n5. Practical: solve the starter problem and reject the negative root.\n6. Inequalities: solve like equations, but reverse the sign when multiplying or dividing by a negative number. 5 − 2x > 11 gives x < −3. Show it on a number line with an open circle at −3.\n\n## Class activity\n\nGroups are given a pair of roots each and must form the quadratic equation, then pass it on for another group to solve and check.\n\n## Evaluation\n\n1. Solve x² − 9x + 20 = 0.\n2. Form the equation whose roots are 2/3 and −1.\n3. Solve 2(x − 3) ≤ 5x + 6 and show the truth set on a number line.\n\n## Assignment\n\nQuiz on the app, due Tuesday.",
+      "reading": {
+        "title": "Solving quadratics three ways",
+        "content": "# Quadratic equations and linear inequalities\n\nA **quadratic equation** has the form ax² + bx + c = 0, with a ≠ 0. It usually has two roots.\n\n## By factorisation\n\nIf two numbers multiply to give 0, one of them must be 0.\n\n**Worked example 1.** x² − 5x − 14 = 0. Two numbers with product −14 and sum −5 are −7 and 2, so (x − 7)(x + 2) = 0, giving x = 7 or x = −2.\n\n## By completing the square\n\nAdd the square of half the coefficient of x to both sides.\n\n**Worked example 2.** x² + 6x − 7 = 0. So x² + 6x = 7. Half of 6 is 3, and 3² = 9: x² + 6x + 9 = 16, so (x + 3)² = 16. Then x + 3 = ±4, giving x = 1 or x = −7.\n\n## By the formula\n\nx = [−b ± √(b² − 4ac)] / 2a\n\n**Worked example 3.** 3x² − 4x − 2 = 0. Here a = 3, b = −4, c = −2. x = [4 ± √(16 + 24)]/6 = (4 ± 6.325)/6, so x = 1.72 or x = −0.39 (2 d.p.).\n\n## Forming an equation from its roots\n\nIf the roots are −3 and 5/2, then x + 3 = 0 and 2x − 5 = 0, so (x + 3)(2x − 5) = 0, that is 2x² + x − 15 = 0.\n\n## Practical problems\n\nLet the unknown be a letter, form the equation, solve, and reject any root that makes no sense. A vegetable bed with width w and length w + 3 and area 40 m² gives w² + 3w − 40 = 0, so (w + 8)(w − 5) = 0. A width cannot be −8, so it is 5 m.\n\n## Linear inequalities\n\nSolve an inequality as you would an equation, with one rule: **multiplying or dividing by a negative number reverses the sign**.\n\n**Worked example 4.** 5 − 2x > 11. So −2x > 6. Dividing by −2 and reversing, x < −3.\n\nOn a number line, an **open circle** shows a value not included (< or >); a **filled circle** shows a value included (≤ or ≥)."
+      },
+      "cards": [
+        {
+          "front": "If ab = 0",
+          "back": "Then a = 0 or b = 0."
+        },
+        {
+          "front": "Quadratic formula",
+          "back": "x = [−b ± √(b² − 4ac)] / 2a"
+        },
+        {
+          "front": "Completing the square for x² + 6x",
+          "back": "Add (6 ÷ 2)² = 9 to make (x + 3)²."
+        },
+        {
+          "front": "Equation with roots −3 and 5/2",
+          "back": "(x + 3)(2x − 5) = 0, i.e. 2x² + x − 15 = 0"
+        },
+        {
+          "front": "Dividing an inequality by a negative number",
+          "back": "Reverse the inequality sign."
+        },
+        {
+          "front": "Open circle on a number line",
+          "back": "The end value is not included (< or >)."
+        },
+        {
+          "front": "Filled circle on a number line",
+          "back": "The end value is included (≤ or ≥)."
+        },
+        {
+          "front": "Taking the square root of both sides",
+          "back": "Remember ±: (x + 3)² = 16 gives x + 3 = 4 or −4."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Solve the equation x² − 5x − 14 = 0.",
+          "options": [
+            "x = 7 or x = −2",
+            "x = −7 or x = 2",
+            "x = 14 or x = −1",
+            "x = 7 or x = 2"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Form the quadratic equation whose roots are −3 and 5/2.",
+          "options": [
+            "2x² − x − 15 = 0",
+            "2x² + x − 15 = 0",
+            "2x² + x + 15 = 0",
+            "x² + 3x − 5/2 = 0"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Solve the inequality 5 − 2x > 11.",
+          "options": ["x > −3", "x > 3", "x < −3", "x < 3"],
+          "answer": "C"
+        },
+        {
+          "prompt": "What must be added to x² + 6x to make it a perfect square?",
+          "options": ["36", "3", "12", "9"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Solve the equation 2x² + 5x − 3 = 0.",
+          "options": [
+            "x = −1/2 or x = 3",
+            "x = 1/2 or x = −3",
+            "x = 2 or x = −3",
+            "x = 1 or x = −3/2"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A farmer in Oyo marks out a rectangular vegetable bed whose length is 3 m more than its width. The area of the bed is 40 m². Form an equation and solve it to find the width and the length of the bed.",
+          "markScheme": [
+            "Forms w(w + 3) = 40 (or an equivalent with the length as the unknown)",
+            "Rearranges to w² + 3w − 40 = 0",
+            "Factorises: (w + 8)(w − 5) = 0",
+            "Rejects w = −8 because a width cannot be negative",
+            "Width = 5 m and length = 8 m"
+          ],
+          "modelAnswer": "Let the width be w m, so the length is (w + 3) m. Then w(w + 3) = 40, so w² + 3w − 40 = 0. Factorising, (w + 8)(w − 5) = 0, so w = −8 or w = 5. A width cannot be negative, so w = 5. The bed is 5 m wide and 8 m long.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Let width = w m, length = (w + 3) m. w(w + 3) = 40, w² + 3w − 40 = 0, (w + 8)(w − 5) = 0, w = −8 or 5. Width cannot be negative so w = 5. Width = 5 m, length = 8 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "w(w + 3) = 40"
+                },
+                {
+                  "point": 1,
+                  "quote": "w² + 3w − 40 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "(w + 8)(w − 5) = 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "Width cannot be negative so w = 5"
+                },
+                {
+                  "point": 4,
+                  "quote": "Width = 5 m, length = 8 m"
+                }
+              ],
+              "feedback": "All five marks. Saying why you rejected −8 is the step many learners leave out."
+            },
+            {
+              "tier": "full",
+              "text": "Let the length be x m, so the width is (x − 3) m. x(x − 3) = 40, x² − 3x − 40 = 0, (x − 8)(x + 5) = 0. x = 8 because x = −5 is impossible for a length. So the length is 8 m and the width is 5 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x(x − 3) = 40"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² − 3x − 40 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "(x − 8)(x + 5) = 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = −5 is impossible for a length"
+                },
+                {
+                  "point": 4,
+                  "quote": "the length is 8 m and the width is 5 m"
+                }
+              ],
+              "feedback": "Full marks. Choosing the length as the unknown works just as well, and you stated clearly what x stands for."
+            },
+            {
+              "tier": "partial",
+              "text": "w(w + 3) = 40. I tried numbers: 5 x 8 = 40. So width = 5 m and length = 8 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "w(w + 3) = 40"
+                },
+                {
+                  "point": 4,
+                  "quote": "width = 5 m and length = 8 m"
+                }
+              ],
+              "feedback": "Your equation and answer are right, but the question asks you to solve it. Rearrange to w² + 3w − 40 = 0, factorise, and explain why you reject the negative root."
+            },
+            {
+              "tier": "partial",
+              "text": "w(w + 3) = 40, w² + 3w − 40 = 0, (w − 8)(w + 5) = 0, w = 8 or −5. Width = 8 m and length = 11 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "w(w + 3) = 40"
+                },
+                {
+                  "point": 1,
+                  "quote": "w² + 3w − 40 = 0"
+                }
+              ],
+              "feedback": "Your equation is right. Check the factors by expanding: (w − 8)(w + 5) gives −3w, not +3w. The factors are (w + 8)(w − 5), so the width is 5 m; and 8 × 11 is 88, not 40."
+            },
+            {
+              "tier": "weak",
+              "text": "40 ÷ 2 = 20 so width + length = 20. Length is 3 more, so width = 8.5 m and length = 11.5 m.",
+              "meets": [],
+              "feedback": "40 m² is the area, so width × length = 40, not width + length. Let the width be w; then w(w + 3) = 40."
+            },
+            {
+              "tier": "weak",
+              "text": "Area = w(w + 3) = 40 so w = 40 − 3 = 37 m and the length is 40 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Area = w(w + 3) = 40"
+                }
+              ],
+              "feedback": "Your equation is right, but you cannot just subtract 3. Expand it to w² + 3w − 40 = 0 and factorise. Check: 37 × 40 is far more than 40 m²."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Solve x² + 6x − 7 = 0 by completing the square. (b) Use the quadratic formula to solve 3x² − 4x − 2 = 0, giving your answers correct to 2 decimal places.",
+          "markScheme": [
+            "Adds 9 to both sides: (x + 3)² = 16",
+            "x + 3 = ±4, so (a) x = 1 or x = −7",
+            "Substitutes a = 3, b = −4, c = −2: x = [4 ± √(16 + 24)]/6",
+            "Evaluates √40 = 6.325: x = (4 ± 6.325)/6",
+            "(b) x = 1.72 or x = −0.39"
+          ],
+          "modelAnswer": "(a) x² + 6x = 7. Add 9 to both sides: x² + 6x + 9 = 16, so (x + 3)² = 16. Then x + 3 = ±4, so x = 1 or x = −7. (b) a = 3, b = −4, c = −2. x = [4 ± √(16 + 24)]/6 = (4 ± √40)/6 = (4 ± 6.325)/6. So x = 10.325/6 = 1.72 or x = −2.325/6 = −0.39.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) x² + 6x = 7. Add 9: x² + 6x + 9 = 16, (x + 3)² = 16, x + 3 = ±4, x = 1 or x = −7. (b) a = 3, b = −4, c = −2. x = (4 ± √(16 + 24))/6 = (4 ± √40)/6 = (4 ± 6.325)/6. x = 10.325/6 = 1.72 or x = −2.325/6 = −0.39.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(x + 3)² = 16"
+                },
+                {
+                  "point": 1,
+                  "quote": "x + 3 = ±4, x = 1 or x = −7"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = (4 ± √(16 + 24))/6"
+                },
+                {
+                  "point": 3,
+                  "quote": "= (4 ± 6.325)/6"
+                },
+                {
+                  "point": 4,
+                  "quote": "x = 10.325/6 = 1.72 or x = −2.325/6 = −0.39"
+                }
+              ],
+              "feedback": "All five marks. Writing out a, b and c before substituting is why your signs came out right."
+            },
+            {
+              "tier": "full",
+              "text": "(a) (x + 3)² − 9 − 7 = 0, so (x + 3)² = 16. Square root: x + 3 = 4 or −4, giving x = 1 or −7. (b) x = [−(−4) ± √((−4)² − 4(3)(−2))] / 2(3) = [4 ± √40]/6. √40 = 6.325 so x = (4 + 6.325)/6 or (4 − 6.325)/6, x = 1.72 or −0.39 to 2 d.p.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "so (x + 3)² = 16"
+                },
+                {
+                  "point": 1,
+                  "quote": "x + 3 = 4 or −4, giving x = 1 or −7"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = [−(−4) ± √((−4)² − 4(3)(−2))] / 2(3)"
+                },
+                {
+                  "point": 3,
+                  "quote": "√40 = 6.325 so x = (4 + 6.325)/6 or (4 − 6.325)/6"
+                },
+                {
+                  "point": 4,
+                  "quote": "x = 1.72 or −0.39 to 2 d.p."
+                }
+              ],
+              "feedback": "Full marks. Putting −4 in brackets inside the formula is the safest way to keep the signs right."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) x² + 6x + 9 = 7 + 9, (x + 3)² = 16, x + 3 = 4, x = 1. (b) x = (4 ± √(16 + 24))/6 = (4 ± 6.325)/6, x = 1.72 or −0.39.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(x + 3)² = 16"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = (4 ± √(16 + 24))/6"
+                },
+                {
+                  "point": 3,
+                  "quote": "= (4 ± 6.325)/6"
+                },
+                {
+                  "point": 4,
+                  "quote": "x = 1.72 or −0.39"
+                }
+              ],
+              "feedback": "Part (b) is fully right. In (a) a square root has two values: x + 3 = 4 or x + 3 = −4, so the second root, x = −7, is missing."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) x² + 6x = 7, x² + 6x + 9 = 16, (x + 3)² = 16, x + 3 = ±4, x = 1 or −7. (b) x = (−4 ± √(16 − 24))/6 = (−4 ± √−8)/6. You cannot find the root of a negative number so there is no answer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(x + 3)² = 16"
+                },
+                {
+                  "point": 1,
+                  "quote": "x + 3 = ±4, x = 1 or −7"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b), b = −4, so −b = +4, and −4ac = −4(3)(−2) = +24. The square root is of 16 + 24 = 40, which is positive."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) x² + 6x = 7, x(x + 6) = 7, so x = 7 or x + 6 = 7, x = 1. (b) x = (−4 ± √(16 − 24))/6 has no answer.",
+              "meets": [],
+              "feedback": "x(x + 6) = 7 does not mean x = 7; that rule only works when the product is 0. Add 9 to both sides to complete the square. In (b), −b is +4 and b² − 4ac = 16 + 24."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Add 36: (x + 6)² = 43, x = 0.56. (b) x = (4 ± √(16 + 24))/6 = 4 ± 6.325/6 = 4 ± 1.05, so x = 5.05 or 2.95.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "x = (4 ± √(16 + 24))/6"
+                }
+              ],
+              "feedback": "Your substitution in (b) is right, but the whole of 4 ± 6.325 is divided by 6, giving 1.72 or −0.39. In (a), add the square of half of 6, which is 9, not 36."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Linear programming and quadratic graphs",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. show the solution of linear inequalities in two variables on a graph and find maximum and minimum values in the feasible region;\n2. draw a quadratic graph from a table of values and read off its roots, turning point, intercepts and axis of symmetry;\n3. solve a quadratic equation and a linear equation together from their graphs;\n4. use one quadratic graph to solve a related equation.\n\n## Materials\n\nGraph books, rulers, a large graph board, a price list from a small chin-chin business.\n\n## Starter (5 minutes)\n\nAsk: a caterer can make at most 8 trays a day. Puff-puff earns ₦3 000 a tray, chin-chin ₦4 000. Should she make only chin-chin? Learners discover that the flour limit (puff-puff 1 bag, chin-chin 2 bags, at most 12 bags) stops that.\n\n## Development\n\n1. Inequalities: draw x + y = 8 and x + 2y = 12. Shade away the unwanted side of each line, leaving the feasible region with corners (0, 0), (8, 0), (4, 4) and (0, 6).\n2. Linear programming: test P = 3 000x + 4 000y at each corner. The maximum is ₦28 000 at (4, 4).\n3. Quadratic graph: make a table for y = x² − 2x − 3 from x = −2 to 4. Plot and join with a smooth curve. Read the roots x = −1 and 3, the minimum point (1, −4), the y-intercept −3 and the axis of symmetry x = 1.\n4. Line and curve: draw y = x + 1 on the same axes. They meet at (−1, 0) and (4, 5), which solve x² − 2x − 3 = x + 1.\n5. Related equations: to solve x² + 5x + 4 = 0 from the graph of y = x² + 5x + 6, rewrite as x² + 5x + 6 = 2 and draw y = 2.\n\n## Class activity\n\nEach group plots y = 3 + 2x − x² and reports its maximum point, roots and axis of symmetry.\n\n## Evaluation\n\n1. Shade the region x ≥ 1, y ≥ 0, x + y ≤ 5.\n2. What line would you draw on the graph of y = x² − 4 to solve x² − 4 = 3?\n3. State the axis of symmetry of y = x² − 6x + 5.\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "Reading answers off graphs",
+        "content": "# Linear programming and quadratic graphs\n\n## Inequalities in two variables\n\nThe line x + y = 8 divides the graph into two regions. Points such as (2, 3), where x + y < 8, lie on one side. To show x + y ≤ 8, draw the line and shade the side you do **not** want. With several inequalities, the unshaded region left over is the **feasible region**.\n\n## Linear programming\n\nThe greatest or least value of an expression such as P = 3 000x + 4 000y over the feasible region is always found at a **corner** of the region.\n\n**Worked example 1.** A caterer makes x trays of puff-puff and y trays of chin-chin a day, with x + y ≤ 8 and x + 2y ≤ 12 (bags of flour), x ≥ 0, y ≥ 0. The corners are (0, 0), (8, 0), (0, 6), and (4, 4), where the two lines cross.\n\n| Corner | P = 3 000x + 4 000y |\n| --- | --- |\n| (8, 0) | 24 000 |\n| (4, 4) | 28 000 |\n| (0, 6) | 24 000 |\n\nThe maximum profit is ₦28 000, from 4 trays of each.\n\n## Quadratic graphs\n\nThe graph of y = ax² + bx + c is a smooth curve. If a > 0 it has a **minimum** point; if a < 0, a **maximum**.\n\n**Worked example 2.** y = x² − 2x − 3.\n\n| x | −2 | −1 | 0 | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| y | 5 | 0 | −3 | −4 | −3 | 0 | 5 |\n\n- The **roots** of x² − 2x − 3 = 0 are where the curve cuts the x-axis: x = −1 and x = 3.\n- The **y-intercept** is −3.\n- The **minimum point** is (1, −4).\n- The **axis of symmetry** is the line x = 1, halfway between the roots.\n\n## Solving with a line\n\nWhere y = x² − 2x − 3 meets y = x + 1, both equations hold, so x² − 2x − 3 = x + 1. The graphs cross at (−1, 0) and (4, 5).\n\n## Solving a related equation\n\nGiven the graph of y = x² + 5x + 6, we can solve x² + 5x + 4 = 0 by rewriting it as x² + 5x + 6 = 2. Draw y = 2 and read where it cuts the curve: x = −4 and x = −1."
+      },
+      "cards": [
+        {
+          "front": "Feasible region",
+          "back": "The region of a graph that satisfies all the inequalities at once."
+        },
+        {
+          "front": "Where is the maximum of P in linear programming?",
+          "back": "At a corner (vertex) of the feasible region."
+        },
+        {
+          "front": "Roots from a quadratic graph",
+          "back": "The x-values where the curve cuts the x-axis."
+        },
+        {
+          "front": "Axis of symmetry of y = x² − 2x − 3",
+          "back": "x = 1, halfway between the roots −1 and 3."
+        },
+        {
+          "front": "Minimum point of y = x² − 2x − 3",
+          "back": "(1, −4)"
+        },
+        {
+          "front": "Graph of y = ax² + bx + c with a < 0",
+          "back": "Has a maximum point; the curve opens downwards."
+        },
+        {
+          "front": "Solving x² + 5x + 4 = 0 using the graph of y = x² + 5x + 6",
+          "back": "Draw the line y = 2."
+        },
+        {
+          "front": "Where a line meets a curve",
+          "back": "The x-values solve the two equations together."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the equation of the axis of symmetry of the graph of y = x² − 2x − 3?",
+          "options": ["x = −1", "x = 1", "x = 3", "y = −4"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What are the coordinates of the minimum point of the graph of y = x² − 2x − 3?",
+          "options": ["(1, −4)", "(−1, 0)", "(0, −3)", "(1, 4)"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The graph of y = x² + 5x + 6 has been drawn. Which line should be drawn on the same axes to solve x² + 5x + 4 = 0?",
+          "options": ["y = 4", "y = −2", "y = 2", "y = 10"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these points lies in the region x + y ≤ 8, x + 2y ≤ 12, x ≥ 0, y ≥ 0?",
+          "options": ["(5, 4)", "(7, 2)", "(0, 7)", "(3, 4)"],
+          "answer": "D"
+        },
+        {
+          "prompt": "At which values of x does the graph of y = x² − 2x − 3 cut the x-axis?",
+          "options": [
+            "x = 1 and x = −3",
+            "x = −1 and x = 3",
+            "x = 0 and x = −3",
+            "x = 2 and x = 3"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Make a table of values for y = x² − 2x − 3 for x = −2, −1, 0, 1, 2, 3, 4. Using your table (or your graph), state (a) the roots of x² − 2x − 3 = 0, (b) the coordinates of the minimum point, (c) the equation of the axis of symmetry.",
+          "markScheme": [
+            "Correct table: y = 5, 0, −3, −4, −3, 0, 5",
+            "(a) Roots x = −1 and x = 3, where y = 0",
+            "(b) Minimum point (1, −4)",
+            "(c) Axis of symmetry x = 1"
+          ],
+          "modelAnswer": "For x = −2, −1, 0, 1, 2, 3, 4 the values of y are 5, 0, −3, −4, −3, 0, 5. (a) The curve cuts the x-axis where y = 0, so the roots are x = −1 and x = 3. (b) The lowest value is y = −4 at x = 1, so the minimum point is (1, −4). (c) The curve is symmetrical about the line through the minimum point, x = 1.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "x: −2, −1, 0, 1, 2, 3, 4. y: 5, 0, −3, −4, −3, 0, 5. (a) The roots are where y = 0: x = −1 and x = 3. (b) Minimum point is (1, −4). (c) Axis of symmetry is x = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "y: 5, 0, −3, −4, −3, 0, 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "The roots are where y = 0: x = −1 and x = 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "Minimum point is (1, −4)"
+                },
+                {
+                  "point": 3,
+                  "quote": "Axis of symmetry is x = 1"
+                }
+              ],
+              "feedback": "All four marks. Saying that the roots are where y = 0 shows you know why, not just where."
+            },
+            {
+              "tier": "full",
+              "text": "When x = −2, y = 4 + 4 − 3 = 5; x = −1, y = 0; x = 0, y = −3; x = 1, y = −4; x = 2, y = −3; x = 3, y = 0; x = 4, y = 5. The curve cuts the x-axis at −1 and 3, so those are the roots. The lowest point is at x = 1, y = −4. The curve is symmetrical about the line x = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "When x = −2, y = 4 + 4 − 3 = 5; x = −1, y = 0; x = 0, y = −3; x = 1, y = −4; x = 2, y = −3; x = 3, y = 0; x = 4, y = 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "The curve cuts the x-axis at −1 and 3, so those are the roots"
+                },
+                {
+                  "point": 2,
+                  "quote": "The lowest point is at x = 1, y = −4"
+                },
+                {
+                  "point": 3,
+                  "quote": "symmetrical about the line x = 1"
+                }
+              ],
+              "feedback": "Full marks. Write the minimum as coordinates, (1, −4), as the question asks; examiners expect that form."
+            },
+            {
+              "tier": "partial",
+              "text": "y = 5, 0, −3, −4, −3, 0, 5. (a) x = −1 and 3. (b) Minimum (1, −4). (c) The axis of symmetry is y = −4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "y = 5, 0, −3, −4, −3, 0, 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "x = −1 and 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "Minimum (1, −4)"
+                }
+              ],
+              "feedback": "Your table, roots and minimum are right. The axis of symmetry is a vertical line through the minimum point, so it is x = 1, not y = −4."
+            },
+            {
+              "tier": "partial",
+              "text": "x = −2: −4 + 4 − 3 = −3. x = −1: −1 + 2 − 3 = −2. x = 0: −3, x = 1: −4, x = 2: −3, x = 3: 0, x = 4: 5. (a) The root is x = 3. (b) The minimum is (1, −4). (c) x = 0.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The minimum is (1, −4)"
+                }
+              ],
+              "feedback": "Your minimum point is right. (−2)² is +4 and (−1)² is +1, not negative; with those fixed, y = 5 and 0, the curve becomes symmetrical about x = 1 and it has a second root, x = −1."
+            },
+            {
+              "tier": "weak",
+              "text": "When x = 0, y = −3. The roots are 2 and −3 because those are the numbers in the equation.",
+              "meets": [],
+              "feedback": "The roots are not read from the numbers in the equation. Work out y for each x in the table; the roots are the x-values where y = 0."
+            },
+            {
+              "tier": "weak",
+              "text": "x² − 2x − 3 = (x + 1)(x − 3) so the roots are x = −1 and x = 3.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "the roots are x = −1 and x = 3"
+                }
+              ],
+              "feedback": "Your roots are right by factorising. The question also needs the table of values, the minimum point (1, −4) and the axis of symmetry x = 1, so work out y for each x."
+            }
+          ]
+        },
+        {
+          "prompt": "A caterer in Abeokuta makes x trays of puff-puff and y trays of chin-chin each day. At most 8 trays can be made in a day. A tray of puff-puff uses 1 bag of flour and a tray of chin-chin uses 2 bags, and there are at most 12 bags a day. The profit is ₦3 000 on a tray of puff-puff and ₦4 000 on a tray of chin-chin. Write down the inequalities, find the corners of the feasible region, and find the maximum daily profit.",
+          "markScheme": [
+            "Forms x + y ≤ 8 and x + 2y ≤ 12 (with x ≥ 0, y ≥ 0)",
+            "Identifies the corners of the feasible region: (0, 0), (8, 0), (4, 4) and (0, 6)",
+            "Finds (4, 4) by solving x + y = 8 and x + 2y = 12 (or reads it from the graph)",
+            "Tests P = 3 000x + 4 000y at the corners: 24 000, 28 000, 24 000",
+            "Maximum profit ₦28 000, from 4 trays of each"
+          ],
+          "modelAnswer": "The inequalities are x + y ≤ 8, x + 2y ≤ 12, x ≥ 0, y ≥ 0. The lines x + y = 8 and x + 2y = 12 meet where y = 4 and x = 4. So the corners of the feasible region are (0, 0), (8, 0), (4, 4) and (0, 6). The profit P = 3 000x + 4 000y is 24 000 at (8, 0), 28 000 at (4, 4) and 24 000 at (0, 6). The maximum profit is ₦28 000, from 4 trays of puff-puff and 4 trays of chin-chin.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "x + y ≤ 8, x + 2y ≤ 12, x ≥ 0, y ≥ 0. Corners of the region: (0, 0), (8, 0), (0, 6) and (4, 4), where x + y = 8 meets x + 2y = 12: subtracting, y = 4 and x = 4. P = 3000x + 4000y: (8, 0) gives 24 000, (4, 4) gives 12 000 + 16 000 = 28 000, (0, 6) gives 24 000. Maximum profit is ₦28 000 when 4 trays of each are made.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + y ≤ 8, x + 2y ≤ 12, x ≥ 0, y ≥ 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "Corners of the region: (0, 0), (8, 0), (0, 6) and (4, 4)"
+                },
+                {
+                  "point": 2,
+                  "quote": "subtracting, y = 4 and x = 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "(8, 0) gives 24 000, (4, 4) gives 12 000 + 16 000 = 28 000, (0, 6) gives 24 000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Maximum profit is ₦28 000 when 4 trays of each are made"
+                }
+              ],
+              "feedback": "All five marks. Testing every corner, not just the one that looks best, is exactly the right method."
+            },
+            {
+              "tier": "full",
+              "text": "Trays: x + y ≤ 8. Flour: x + 2y ≤ 12. Also x, y ≥ 0. From my graph the region has vertices (0, 0), (8, 0), (4, 4), (0, 6). The lines cross at (4, 4) since 8 − y + 2y = 12 gives y = 4. Profit at (8, 0) = 24 000, at (4, 4) = 28 000, at (0, 6) = 24 000. Best is 4 puff-puff and 4 chin-chin for ₦28 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Trays: x + y ≤ 8. Flour: x + 2y ≤ 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "vertices (0, 0), (8, 0), (4, 4), (0, 6)"
+                },
+                {
+                  "point": 2,
+                  "quote": "8 − y + 2y = 12 gives y = 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "Profit at (8, 0) = 24 000, at (4, 4) = 28 000, at (0, 6) = 24 000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Best is 4 puff-puff and 4 chin-chin for ₦28 000"
+                }
+              ],
+              "feedback": "Full marks. Labelling each inequality with what it stands for, trays and flour, makes your answer very clear."
+            },
+            {
+              "tier": "partial",
+              "text": "x + y ≤ 8, x + 2y ≤ 12, x ≥ 0, y ≥ 0. Corners (0, 0), (8, 0), (4, 4), (0, 6). The lines meet when y = 4, x = 4. P = 4000x + 3000y: (8, 0) = 32 000, (4, 4) = 28 000, (0, 6) = 18 000. Maximum ₦32 000 with 8 trays of puff-puff.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + y ≤ 8, x + 2y ≤ 12, x ≥ 0, y ≥ 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "Corners (0, 0), (8, 0), (4, 4), (0, 6)"
+                },
+                {
+                  "point": 2,
+                  "quote": "The lines meet when y = 4, x = 4"
+                }
+              ],
+              "feedback": "Your region and corners are right. The profit is ₦3 000 on puff-puff (x) and ₦4 000 on chin-chin (y), so P = 3 000x + 4 000y. With that, the best corner is (4, 4) with ₦28 000."
+            },
+            {
+              "tier": "partial",
+              "text": "x + y ≤ 8 and x + 2y ≤ 12. If all puff-puff, x = 8, profit = 24 000. If all chin-chin, y = 6, profit = 24 000. So the maximum is ₦24 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + y ≤ 8 and x + 2y ≤ 12"
+                }
+              ],
+              "feedback": "Your inequalities are right, but you only tested two corners. The two lines also cross at (4, 4), which is a corner of the region, and there the profit is ₦28 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Chin-chin makes more profit so make 8 trays of chin-chin: 8 x 4000 = ₦32 000.",
+              "meets": [],
+              "feedback": "8 trays of chin-chin would need 16 bags of flour, but only 12 are available. Write the two inequalities first and test the corners of the region they make."
+            },
+            {
+              "tier": "weak",
+              "text": "x + y ≤ 8 and x + 2y ≤ 12. Maximum profit = 3000(8) + 4000(12) = ₦72 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + y ≤ 8 and x + 2y ≤ 12"
+                }
+              ],
+              "feedback": "Your inequalities are right, but 8 and 12 are limits, not the numbers of trays. Draw the lines, find the corners of the region, and work out the profit at each corner."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Gradients of curves, algebraic fractions and functions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. draw a tangent to a curve and find the gradient at a point using a right-angled triangle;\n2. add and subtract algebraic fractions with monomial denominators;\n3. add, subtract and simplify algebraic fractions with binomial denominators, and state the values for which a fraction is undefined;\n4. describe a mapping as one-to-one, one-to-many, many-to-one or many-to-many, and find the rule of a given mapping.\n\n## Materials\n\nGraph books, a transparent ruler, last week's graph of y = x² − 2x − 3, arrow-diagram cards for mappings.\n\n## Starter (5 minutes)\n\nOn the board's graph of a curve, place a ruler so that it just touches the curve at one point. Ask: how steep is the curve here? Learners see that the ruler shows the steepness at that one point.\n\n## Development\n\n1. Tangent: draw the tangent to y = x² − 2x at x = 2. Pick two points on it, e.g. (2, 0) and (3, 2), draw the triangle, and work out rise ÷ run = 2 ÷ 1 = 2.\n2. Monomial denominators: 1/x + 1/y = (x + y)/xy, and 2/(3x) − 1/(2x) = (4 − 3)/(6x) = 1/(6x).\n3. Binomial denominators: 3/(x + 2) − 2/(x − 1) = [3(x − 1) − 2(x + 2)]/[(x + 2)(x − 1)] = (x − 7)/[(x + 2)(x − 1)]. Stress the bracket after the minus sign.\n4. Undefined values: a fraction is undefined when its denominator is 0; 1/(x + 3) is undefined at x = −3.\n5. Functions: show arrow diagrams. 1 → 3, 2 → 5, 3 → 7 has rule f(x) = 2x + 1 and is one-to-one. f(x) = x² sends 2 and −2 to 4, so it is many-to-one. One-to-many is a mapping but not a function.\n\n## Class activity\n\nPairs draw an arrow diagram from learners in their row to their birth months, and decide what type of mapping it is.\n\n## Evaluation\n\n1. Simplify 1/a − 1/b.\n2. For what values of x is (x + 5)/(x² − 9) undefined?\n3. Find the rule of the mapping 0 → 1, 1 → 4, 2 → 7.\n\n## Assignment\n\nWorksheet on the app, due Wednesday.",
+      "reading": {
+        "title": "Steepness, fractions with letters, and mappings",
+        "content": "# Gradients of curves, algebraic fractions and functions\n\n## The gradient of a curve\n\nA straight line has the same gradient everywhere; a curve does not. The gradient of a curve at a point is the gradient of the **tangent** there: the straight line that just touches the curve at that point.\n\nTo find it, draw the tangent carefully, mark two points on it far apart, and draw a right-angled triangle.\n\ngradient = vertical change ÷ horizontal change\n\n**Worked example 1.** The tangent to y = x² − 2x at x = 2 passes through (2, 0) and (3, 2). Gradient = (2 − 0) ÷ (3 − 2) = 2. The curve is rising there.\n\n## Fractions with monomial denominators\n\nUse the LCM of the denominators, just as with numbers.\n\n- 1/x + 1/y = (y + x)/xy, for x ≠ 0, y ≠ 0\n- 2/(3x) − 1/(2x) = 4/(6x) − 3/(6x) = 1/(6x)\n\n## Fractions with binomial denominators\n\n**Worked example 2.** Simplify 3/(x + 2) − 2/(x − 1).\n\nThe common denominator is (x + 2)(x − 1).\n\n[3(x − 1) − 2(x + 2)] / [(x + 2)(x − 1)] = (3x − 3 − 2x − 4) / [(x + 2)(x − 1)] = (x − 7) / [(x + 2)(x − 1)]\n\nThe minus sign multiplies **everything** in the second bracket: −2(x + 2) = −2x − 4.\n\nFactorise before cancelling: (x² − 4)/(x² + x − 6) = (x − 2)(x + 2)/[(x + 3)(x − 2)] = (x + 2)/(x + 3).\n\n## When is a fraction undefined?\n\nDivision by zero has no meaning, so a fraction is **undefined** when its denominator is zero. 1/(x + 3) is undefined at x = −3, and (x − 7)/[(x + 2)(x − 1)] is undefined at x = −2 and x = 1.\n\n## Types of mapping\n\n- **One-to-one:** each element has its own image. 1 → 3, 2 → 5, 3 → 7 (rule f(x) = 2x + 1).\n- **Many-to-one:** different elements share an image. f(x) = x² sends 2 and −2 to 4.\n- **One-to-many:** an element has more than one image, such as a number mapped to its square roots.\n- **Many-to-many:** both happen.\n\nA **function** is a mapping in which every element has exactly one image, so one-to-one and many-to-one mappings are functions."
+      },
+      "cards": [
+        {
+          "front": "Gradient of a curve at a point",
+          "back": "The gradient of the tangent drawn at that point."
+        },
+        {
+          "front": "Gradient from a triangle",
+          "back": "Vertical change ÷ horizontal change."
+        },
+        {
+          "front": "1/x + 1/y",
+          "back": "(x + y)/xy, for x ≠ 0 and y ≠ 0"
+        },
+        {
+          "front": "When is a fraction undefined?",
+          "back": "When its denominator is zero."
+        },
+        {
+          "front": "Where is 1/(x + 3) undefined?",
+          "back": "At x = −3."
+        },
+        {
+          "front": "Many-to-one mapping",
+          "back": "Two or more elements have the same image, e.g. f(x) = x²."
+        },
+        {
+          "front": "Function",
+          "back": "A mapping in which every element has exactly one image."
+        },
+        {
+          "front": "Is a one-to-many mapping a function?",
+          "back": "No, because an element has more than one image."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Simplify 2/(3x) − 1/(2x).",
+          "options": ["1/x", "1/(6x)", "1/(6x²)", "1/(5x)"],
+          "answer": "B"
+        },
+        {
+          "prompt": "For what value of x is the fraction 1/(x + 3) not defined?",
+          "options": ["−3", "3", "0", "1/3"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A mapping takes 1 → 3, 2 → 5, 3 → 7 and 4 → 9. What is its rule?",
+          "options": [
+            "f(x) = x + 2",
+            "f(x) = 3x",
+            "f(x) = 2x + 1",
+            "f(x) = x + 5"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The function f(x) = x² maps both 2 and −2 to 4. What type of mapping is it?",
+          "options": [
+            "One-to-one",
+            "One-to-many",
+            "Many-to-many",
+            "Many-to-one"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A tangent is drawn to a curve at the point P. The tangent passes through (1, 0) and (3, 8). What is the gradient of the curve at P?",
+          "options": ["4", "1/4", "8", "−4"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Simplify 3/(x + 2) − 2/(x − 1). (b) For what values of x is your answer undefined?",
+          "markScheme": [
+            "Uses the common denominator (x + 2)(x − 1)",
+            "Numerator 3(x − 1) − 2(x + 2)",
+            "(a) (x − 7)/[(x + 2)(x − 1)]",
+            "(b) Undefined when x = −2 or x = 1"
+          ],
+          "modelAnswer": "(a) The common denominator is (x + 2)(x − 1). So the expression is [3(x − 1) − 2(x + 2)]/[(x + 2)(x − 1)] = (3x − 3 − 2x − 4)/[(x + 2)(x − 1)] = (x − 7)/[(x + 2)(x − 1)]. (b) It is undefined when the denominator is zero: x + 2 = 0 or x − 1 = 0, so x = −2 or x = 1.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) LCM = (x + 2)(x − 1). [3(x − 1) − 2(x + 2)] / (x + 2)(x − 1) = (3x − 3 − 2x − 4)/(x + 2)(x − 1) = (x − 7)/(x + 2)(x − 1). (b) It is undefined when the denominator is 0: x = −2 or x = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "LCM = (x + 2)(x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "[3(x − 1) − 2(x + 2)]"
+                },
+                {
+                  "point": 2,
+                  "quote": "= (x − 7)/(x + 2)(x − 1)"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is undefined when the denominator is 0: x = −2 or x = 1"
+                }
+              ],
+              "feedback": "All four marks. You opened −2(x + 2) correctly to −2x − 4, which is where most learners slip."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Multiply each fraction to get the denominator (x + 2)(x − 1): 3(x − 1)/(x + 2)(x − 1) − 2(x + 2)/(x + 2)(x − 1). Top: 3x − 3 − 2x − 4 = x − 7. Answer (x − 7) over (x + 2)(x − 1). (b) x + 2 = 0 gives x = −2 and x − 1 = 0 gives x = 1, so it is not defined at −2 and 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "get the denominator (x + 2)(x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "3(x − 1)/(x + 2)(x − 1) − 2(x + 2)/(x + 2)(x − 1)"
+                },
+                {
+                  "point": 2,
+                  "quote": "Answer (x − 7) over (x + 2)(x − 1)"
+                },
+                {
+                  "point": 3,
+                  "quote": "it is not defined at −2 and 1"
+                }
+              ],
+              "feedback": "Full marks. Showing each fraction over the common denominator first makes the numerator easy to check."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3(x − 1) − 2(x + 2) over (x + 2)(x − 1) = (3x − 3 − 2x + 4)/(x + 2)(x − 1) = (x + 1)/(x + 2)(x − 1). (b) x = −2 and x = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "over (x + 2)(x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "3(x − 1) − 2(x + 2)"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = −2 and x = 1"
+                }
+              ],
+              "feedback": "Your method and part (b) are right. The minus sign multiplies both terms: −2(x + 2) = −2x − 4, not −2x + 4. That gives x − 7 on top."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) [3(x − 1) − 2(x + 2)] / (x + 2)(x − 1) = (x − 7)/(x + 2)(x − 1). (b) It is undefined when x = 7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "/ (x + 2)(x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "[3(x − 1) − 2(x + 2)]"
+                },
+                {
+                  "point": 2,
+                  "quote": "= (x − 7)/(x + 2)(x − 1)"
+                }
+              ],
+              "feedback": "Part (a) is right. At x = 7 the fraction equals 0, which is fine. It is undefined when the denominator is 0, at x = −2 and x = 1."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Subtract the tops and the bottoms: (3 − 2)/(x + 2 − x + 1) = 1/3. (b) It is never undefined.",
+              "meets": [],
+              "feedback": "Fractions are never subtracted by taking tops from tops and bottoms from bottoms. Put both over the common denominator (x + 2)(x − 1) first, as you would with numbers."
+            },
+            {
+              "tier": "weak",
+              "text": "Common denominator is (x + 2)(x − 1). Answer = (3 − 2)/(x + 2)(x − 1) = 1/(x + 2)(x − 1).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Common denominator is (x + 2)(x − 1)"
+                }
+              ],
+              "feedback": "Your denominator is right. Each numerator must be multiplied by the bracket it is missing: 3(x − 1) − 2(x + 2). Then answer (b): where is the denominator zero?"
+            }
+          ]
+        },
+        {
+          "prompt": "The function f(x) = x² − 2x is defined on the domain {−1, 0, 1, 2, 3}. (a) Find the image of each element. (b) What type of mapping is f? Give a reason. (c) The tangent to the graph of y = x² − 2x at x = 2 passes through (2, 0) and (3, 2). Find the gradient of the curve at x = 2 and say what it tells you.",
+          "markScheme": [
+            "Images: f(−1) = 3, f(0) = 0, f(1) = −1, f(2) = 0, f(3) = 3",
+            "Many-to-one",
+            "Reason: two elements share an image, e.g. 0 and 2 both map to 0",
+            "Gradient = (2 − 0)/(3 − 2) = 2",
+            "Interprets: at x = 2 the curve is rising, y increasing by 2 for each unit increase in x"
+          ],
+          "modelAnswer": "(a) f(−1) = 1 + 2 = 3, f(0) = 0, f(1) = 1 − 2 = −1, f(2) = 4 − 4 = 0, f(3) = 9 − 6 = 3. (b) f is many-to-one, because different elements have the same image: 0 and 2 both map to 0, and −1 and 3 both map to 3. (c) Gradient = (2 − 0) ÷ (3 − 2) = 2. At x = 2 the curve is rising: y increases by about 2 for each unit increase in x.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) f(−1) = 1 + 2 = 3, f(0) = 0, f(1) = 1 − 2 = −1, f(2) = 4 − 4 = 0, f(3) = 9 − 6 = 3. (b) Many-to-one, because 0 and 2 both map to 0. (c) Gradient = (2 − 0)/(3 − 2) = 2. At x = 2 the curve is going up: y increases by 2 for every 1 increase in x.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f(−1) = 1 + 2 = 3, f(0) = 0, f(1) = 1 − 2 = −1, f(2) = 4 − 4 = 0, f(3) = 9 − 6 = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "Many-to-one"
+                },
+                {
+                  "point": 2,
+                  "quote": "0 and 2 both map to 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "Gradient = (2 − 0)/(3 − 2) = 2"
+                },
+                {
+                  "point": 4,
+                  "quote": "y increases by 2 for every 1 increase in x"
+                }
+              ],
+              "feedback": "All five marks. You explained what the gradient means, not just its value, which is what part (c) asks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) −1 → 3, 0 → 0, 1 → −1, 2 → 0, 3 → 3. (b) It is many-to-one since −1 and 3 have the same image 3. (c) Rise = 2, run = 1, gradient = 2. A positive gradient means the curve is increasing at x = 2, by 2 units of y per unit of x.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "−1 → 3, 0 → 0, 1 → −1, 2 → 0, 3 → 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is many-to-one"
+                },
+                {
+                  "point": 2,
+                  "quote": "−1 and 3 have the same image 3"
+                },
+                {
+                  "point": 3,
+                  "quote": "Rise = 2, run = 1, gradient = 2"
+                },
+                {
+                  "point": 4,
+                  "quote": "A positive gradient means the curve is increasing at x = 2, by 2 units of y per unit of x"
+                }
+              ],
+              "feedback": "Full marks. An arrow list is a clear way to show the images, and your reason for many-to-one is exact."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) f(−1) = −1 + 2 = 1, f(0) = 0, f(1) = −1, f(2) = 0, f(3) = 3. (b) Many-to-one because 0 and 2 both go to 0. (c) Gradient = 2/1 = 2.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Many-to-one"
+                },
+                {
+                  "point": 2,
+                  "quote": "0 and 2 both go to 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "Gradient = 2/1 = 2"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are right. (−1)² = +1, so f(−1) = 1 + 2 = 3. In (c), also say what the gradient tells you: the curve is rising at x = 2."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3, 0, −1, 0, 3. (b) It is many-to-one. (c) Gradient = (3 − 2)/(2 − 0) = 1/2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3, 0, −1, 0, 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is many-to-one"
+                }
+              ],
+              "feedback": "Your images and the type are right; give the reason, that 0 and 2 share the image 0. For the gradient, subtract the y-values over the x-values: (2 − 0)/(3 − 2) = 2."
+            },
+            {
+              "tier": "weak",
+              "text": "f(x) = x² − 2x is one-to-many because x² gives two answers. Gradient = 2/3.",
+              "meets": [],
+              "feedback": "Each x gives exactly one value of f(x), so it is not one-to-many. Work out each image first; you will find two elements share an image, which makes it many-to-one."
+            },
+            {
+              "tier": "weak",
+              "text": "Images are 3, 0, −1, 0, 3. It is a function. The gradient is 0 because the tangent touches the x-axis at (2, 0).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Images are 3, 0, −1, 0, 3"
+                }
+              ],
+              "feedback": "Your images are right. Name the type: two elements share an image, so it is many-to-one. The tangent passes through (2, 0) but is not the x-axis; use rise ÷ run from (2, 0) to (3, 2)."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Lengths, arcs, and distances on the Earth",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use Pythagoras' theorem, the sine rule and the cosine rule to find lengths and distances;\n2. find the length of an arc and the perimeters of sectors and segments;\n3. find distances along lines of latitude and longitude from the angles between places.\n\n## Materials\n\nA globe, a ladder (or a picture of one) for the starter, protractors, compasses, four-figure trigonometric tables, a string and a ball to show a circle of latitude.\n\n## Starter (5 minutes)\n\nLean a 17 m ladder (on the board) against a wall with its foot 8 m out. Ask how high it reaches. Learners recall Pythagoras: √(17² − 8²) = 15 m.\n\n## Development\n\n1. Sine rule a/sin A = b/sin B = c/sin C, for two angles and a side. Work: A = 40°, B = 65°, a = 10 cm gives b = 14.1 cm.\n2. Cosine rule a² = b² + c² − 2bc cos A, for two sides and the angle between them. Work: b = 7, c = 9, A = 60° gives a = √67 = 8.2 cm.\n3. Arcs: arc length = θ/360 × 2πr. For r = 7 cm and θ = 120°, arc = 14.67 cm. Sector perimeter adds two radii (28.67 cm). Segment perimeter adds the chord instead (26.79 cm).\n4. On the globe, show the equator, lines of latitude (parallels) and longitude (meridians). Along a meridian, distance = θ/360 × 2πR, with R = 6 400 km.\n5. Along a parallel at latitude α, the circle has radius R cos α, so distance = θ/360 × 2πR cos α, where θ is the difference in longitude.\n\n## Class activity\n\nGroups use an atlas to find the latitude and longitude of Lagos and of one other town, and estimate the distance between them along a meridian or parallel where possible.\n\n## Evaluation\n\n1. Find the hypotenuse of a right-angled triangle with sides 5 cm and 12 cm.\n2. Find the perimeter of a sector of radius 14 cm and angle 45° (π = 22/7).\n3. Find the radius of the circle of latitude 30°N (R = 6 400 km).\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Measuring lengths you cannot reach",
+        "content": "# Lengths, arcs and distances on the Earth\n\n## Triangles\n\n**Pythagoras' theorem** works in right-angled triangles: hypotenuse² = sum of the squares of the other two sides. A 17 m ladder with its foot 8 m from a wall reaches √(289 − 64) = √225 = 15 m up.\n\nFor triangles without a right angle:\n\n- **Sine rule:** a/sin A = b/sin B = c/sin C. Use it when you know two angles and a side.\n- **Cosine rule:** a² = b² + c² − 2bc cos A. Use it when you know two sides and the angle between them.\n\n**Worked example 1.** In triangle ABC, b = 7 cm, c = 9 cm and A = 60°. a² = 49 + 81 − 2(7)(9)(0.5) = 67, so a = 8.2 cm.\n\n**Worked example 2.** A = 40°, B = 65° and a = 10 cm. b = 10 × sin 65° ÷ sin 40° = 10 × 0.9063 ÷ 0.6428 = 14.1 cm.\n\n## Arcs, sectors and segments\n\nAn **arc** that subtends θ at the centre of a circle of radius r has length\n\narc = θ/360 × 2πr.\n\n**Worked example 3.** r = 7 cm, θ = 120°, π = 22/7. Arc = 1/3 × 2 × 22/7 × 7 = 14.67 cm.\n\n- **Perimeter of the sector** = arc + 2 radii = 14.67 + 14 = 28.67 cm.\n- **Perimeter of the segment** = arc + chord. The chord is 2 × 7 × sin 60° = 12.12 cm, so the perimeter is 26.79 cm.\n\n## Latitude and longitude\n\nWe treat the Earth as a sphere of radius R = 6 400 km.\n\n- **Lines of longitude (meridians)** run from pole to pole. Each is half of a great circle of radius R.\n- **Lines of latitude (parallels)** run east–west. The parallel at latitude α is a smaller circle of radius **R cos α**.\n\n**Along a meridian**, if the latitudes differ by θ: distance = θ/360 × 2πR. Two towns at 15°N and 35°N on the same meridian are 20/360 × 2 × 22/7 × 6 400 = 2 235 km apart. If one town is north and one south of the equator, add their latitudes.\n\n**Along a parallel**, if the longitudes differ by θ: distance = θ/360 × 2πR cos α.\n\n**Worked example 4.** P(60°N, 10°E) and Q(60°N, 40°E). The radius of the parallel is 6 400 cos 60° = 3 200 km. The longitudes differ by 30°, so PQ = 30/360 × 2 × 22/7 × 3 200 = 1 676 km."
+      },
+      "cards": [
+        {
+          "front": "Cosine rule",
+          "back": "a² = b² + c² − 2bc cos A"
+        },
+        {
+          "front": "Sine rule",
+          "back": "a/sin A = b/sin B = c/sin C"
+        },
+        {
+          "front": "Length of an arc",
+          "back": "θ/360 × 2πr"
+        },
+        {
+          "front": "Perimeter of a sector",
+          "back": "Arc length + 2 radii"
+        },
+        {
+          "front": "Perimeter of a segment",
+          "back": "Arc length + the chord"
+        },
+        {
+          "front": "Radius of the circle of latitude α",
+          "back": "R cos α, with R = 6 400 km"
+        },
+        {
+          "front": "Distance along a meridian",
+          "back": "θ/360 × 2πR, θ the difference in latitude"
+        },
+        {
+          "front": "Distance along a parallel",
+          "back": "θ/360 × 2πR cos α, θ the difference in longitude"
+        },
+        {
+          "front": "Towns at 20°N and 15°S on the same meridian",
+          "back": "Angle between them is 20° + 15° = 35°."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A ladder 17 m long leans against a wall with its foot 8 m from the wall. How high up the wall does it reach?",
+          "options": ["9 m", "15 m", "18.8 m", "25 m"],
+          "answer": "B"
+        },
+        {
+          "prompt": "In triangle ABC, b = 7 cm, c = 9 cm and angle A = 60°. Find a, correct to 1 decimal place.",
+          "options": ["8.2 cm", "11.4 cm", "16.0 cm", "4.0 cm"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the length of an arc of a circle of radius 7 cm which subtends an angle of 120° at the centre. (Take π = 22/7.)",
+          "options": ["44 cm", "28.67 cm", "14.67 cm", "51.33 cm"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Two towns lie on the same line of longitude, at latitudes 15°N and 35°N. Taking R = 6 400 km and π = 22/7, find the distance between them along the line of longitude, to the nearest km.",
+          "options": ["5 587 km", "1 118 km", "6 400 km", "2 235 km"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Taking the radius of the Earth as 6 400 km, find the radius of the circle of latitude 60°N.",
+          "options": ["5 543 km", "3 200 km", "6 400 km", "12 800 km"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A sector of a circle of radius 7 cm has an angle of 120° at the centre. Taking π = 22/7, find (a) the length of the arc, (b) the perimeter of the sector, (c) the perimeter of the segment cut off by the chord. Give your answers correct to 2 decimal places.",
+          "markScheme": [
+            "Arc = 120/360 × 2 × 22/7 × 7",
+            "(a) Arc = 14.67 cm",
+            "(b) Perimeter of sector = 14.67 + 7 + 7 = 28.67 cm",
+            "Chord = 2 × 7 × sin 60° = 12.12 cm (or by the cosine rule, √147)",
+            "(c) Perimeter of segment = 14.67 + 12.12 = 26.79 cm"
+          ],
+          "modelAnswer": "(a) Arc = 120/360 × 2 × 22/7 × 7 = 44/3 = 14.67 cm. (b) Perimeter of sector = arc + 2 radii = 14.67 + 14 = 28.67 cm. (c) The chord is 2 × 7 × sin 60° = 12.12 cm, so the perimeter of the segment = arc + chord = 14.67 + 12.12 = 26.79 cm.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Arc = 120/360 x 2 x 22/7 x 7 = 44/3 = 14.67 cm. (b) Perimeter of sector = 14.67 + 7 + 7 = 28.67 cm. (c) Chord = 2 x 7 x sin 60° = 14 x 0.866 = 12.12 cm. Perimeter of segment = 14.67 + 12.12 = 26.79 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Arc = 120/360 x 2 x 22/7 x 7"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 44/3 = 14.67 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "Perimeter of sector = 14.67 + 7 + 7 = 28.67 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "Chord = 2 x 7 x sin 60° = 14 x 0.866 = 12.12 cm"
+                },
+                {
+                  "point": 4,
+                  "quote": "Perimeter of segment = 14.67 + 12.12 = 26.79 cm"
+                }
+              ],
+              "feedback": "All five marks. Halving the triangle to find the chord with sin 60° was a neat method."
+            },
+            {
+              "tier": "full",
+              "text": "(a) θ/360 × 2πr = 1/3 × 2 × 22/7 × 7 = 14.67 cm. (b) 14.67 + 2(7) = 28.67 cm. (c) By the cosine rule, chord² = 7² + 7² − 2(7)(7)cos 120° = 49 + 49 + 49 = 147, chord = 12.12 cm. Segment perimeter = 14.67 + 12.12 = 26.79 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "θ/360 × 2πr = 1/3 × 2 × 22/7 × 7"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 14.67 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "14.67 + 2(7) = 28.67 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "chord² = 7² + 7² − 2(7)(7)cos 120° = 49 + 49 + 49 = 147, chord = 12.12 cm"
+                },
+                {
+                  "point": 4,
+                  "quote": "Segment perimeter = 14.67 + 12.12 = 26.79 cm"
+                }
+              ],
+              "feedback": "Full marks. Using the cosine rule with cos 120° = −0.5 is a good check that you know why the third term became +49."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 120/360 x 2 x 22/7 x 7 = 14.67 cm. (b) 14.67 + 7 + 7 = 28.67 cm. (c) Perimeter of segment = 28.67 cm, the same as the sector.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "120/360 x 2 x 22/7 x 7"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 14.67 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "14.67 + 7 + 7 = 28.67 cm"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. The segment is bounded by the arc and the chord, not the two radii. Find the chord (2 × 7 × sin 60° = 12.12 cm) and add it to the arc."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Arc = 120/360 x 22/7 x 7 x 7 = 51.33 cm. (b) 51.33 + 14 = 65.33 cm. (c) Chord = 2 x 7 x sin 60° = 12.12 cm, so 51.33 + 12.12 = 63.45 cm.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Chord = 2 x 7 x sin 60° = 12.12 cm"
+                }
+              ],
+              "feedback": "Your chord is right. 120/360 × πr² is the area of the sector, not the arc. The arc uses the circumference: 120/360 × 2πr = 14.67 cm. Redo (b) and (c) with that."
+            },
+            {
+              "tier": "weak",
+              "text": "Arc = 2 x 22/7 x 7 = 44 cm. Perimeter = 44 + 7 = 51 cm.",
+              "meets": [],
+              "feedback": "44 cm is the whole circumference. The sector has only 120° of the 360°, so take 120/360 of it: 14.67 cm. Then add both radii for the sector."
+            },
+            {
+              "tier": "weak",
+              "text": "Arc length = 120/360 x 2 x 22/7 x 7. Perimeter of sector = arc + radius. I do not know the segment.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Arc length = 120/360 x 2 x 22/7 x 7"
+                }
+              ],
+              "feedback": "Your arc method is right; work it out to 14.67 cm. A sector has two radii, so add 14 cm. A segment is the arc plus the chord."
+            }
+          ]
+        },
+        {
+          "prompt": "P(60°N, 10°E) and Q(60°N, 40°E) are two places on the Earth's surface. Taking R = 6 400 km and π = 22/7, find (a) the radius of the circle of latitude 60°N, (b) the distance from P to Q along the parallel of latitude, to the nearest km. (c) S is the place at 30°S on the same meridian as Q. Find the distance from Q to S along the meridian.",
+          "markScheme": [
+            "Radius of the parallel r = 6 400 cos 60° = 3 200 km",
+            "Difference in longitude = 40° − 10° = 30°",
+            "PQ = 30/360 × 2 × 22/7 × 3 200 = 1 676 km",
+            "Angle between Q and S = 60° + 30° = 90°",
+            "QS = 90/360 × 2 × 22/7 × 6 400 = 10 057 km"
+          ],
+          "modelAnswer": "(a) r = R cos 60° = 6 400 × 0.5 = 3 200 km. (b) The longitudes differ by 40° − 10° = 30°, so PQ = 30/360 × 2 × 22/7 × 3 200 = 1 676 km. (c) Q is 60° north and S is 30° south of the equator, so they are 60° + 30° = 90° apart along the meridian, which has radius R. QS = 90/360 × 2 × 22/7 × 6 400 = 10 057 km.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) r = 6400 cos 60° = 6400 x 0.5 = 3200 km. (b) Difference in longitude = 40 − 10 = 30°. PQ = 30/360 x 2 x 22/7 x 3200 = 1676 km. (c) Q is 60°N and S is 30°S so the angle is 60 + 30 = 90°. QS = 90/360 x 2 x 22/7 x 6400 = 10 057 km.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "r = 6400 cos 60° = 6400 x 0.5 = 3200 km"
+                },
+                {
+                  "point": 1,
+                  "quote": "Difference in longitude = 40 − 10 = 30°"
+                },
+                {
+                  "point": 2,
+                  "quote": "PQ = 30/360 x 2 x 22/7 x 3200 = 1676 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "the angle is 60 + 30 = 90°"
+                },
+                {
+                  "point": 4,
+                  "quote": "QS = 90/360 x 2 x 22/7 x 6400 = 10 057 km"
+                }
+              ],
+              "feedback": "All five marks. You used the small radius along the parallel and the full radius along the meridian, which is the key idea."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Radius of parallel = R cos α = 6 400 × cos 60° = 3 200 km. (b) θ = 30°, distance = θ/360 × 2πR cos α = 30/360 × 2 × 22/7 × 3 200 = 1 676 km. (c) One is north and one is south, so add: θ = 90°. Distance = 90/360 × 2 × 22/7 × 6 400 = 10 057 km.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Radius of parallel = R cos α = 6 400 × cos 60° = 3 200 km"
+                },
+                {
+                  "point": 1,
+                  "quote": "θ = 30°"
+                },
+                {
+                  "point": 2,
+                  "quote": "30/360 × 2 × 22/7 × 3 200 = 1 676 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "One is north and one is south, so add: θ = 90°"
+                },
+                {
+                  "point": 4,
+                  "quote": "90/360 × 2 × 22/7 × 6 400 = 10 057 km"
+                }
+              ],
+              "feedback": "Full marks. Writing the general formula before substituting makes your method plain to the examiner."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) r = 6400 cos 60 = 3200 km. (b) 30/360 x 2 x 22/7 x 3200 = 1676 km. (c) 60 − 30 = 30°, QS = 30/360 x 2 x 22/7 x 6400 = 3352 km.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "r = 6400 cos 60 = 3200 km"
+                },
+                {
+                  "point": 1,
+                  "quote": "30/360"
+                },
+                {
+                  "point": 2,
+                  "quote": "30/360 x 2 x 22/7 x 3200 = 1676 km"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. In (c), Q is north of the equator and S is south, so the angle between them is 60° + 30° = 90°, not 60° − 30°."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 6400 sin 60° = 5543 km. (b) Longitude difference = 30°. PQ = 30/360 x 2 x 22/7 x 5543 = 2903 km. (c) 90°, QS = 90/360 x 2 x 22/7 x 6400 = 10 057 km.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Longitude difference = 30°"
+                },
+                {
+                  "point": 3,
+                  "quote": "(c) 90°"
+                },
+                {
+                  "point": 4,
+                  "quote": "QS = 90/360 x 2 x 22/7 x 6400 = 10 057 km"
+                }
+              ],
+              "feedback": "Part (c) is right. The radius of a parallel is R cos α, not R sin α: at 60°N it is 3 200 km. Picture it: near the pole the circles get smaller, and cos gets smaller as the angle grows."
+            },
+            {
+              "tier": "weak",
+              "text": "PQ = 30/360 x 2 x 22/7 x 6400 = 3352 km. QS = 30/360 x 2 x 22/7 x 6400 = 3352 km.",
+              "meets": [],
+              "feedback": "Along a parallel the radius is R cos 60° = 3 200 km, not 6 400 km. And S is south of the equator, so the angle from Q is 60° + 30° = 90°."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The radius is 6400 km because all of the Earth has the same radius. (b) 40 − 10 = 30° so PQ = 30 km.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "40 − 10 = 30°"
+                }
+              ],
+              "feedback": "Your 30° is right. The circle of latitude is smaller than the equator, with radius 6 400 cos 60° = 3 200 km, and degrees must be changed to km with θ/360 × 2πr."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Areas, surface areas and volumes",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the areas of triangles (including ½ab sin C), parallelograms, trapeziums, compound shapes and similar figures;\n2. find the areas of circles, sectors and segments, and relate the sector of a circle to the curved surface of a cone;\n3. find the surface areas of cubes, cuboids, cylinders, pyramids, prisms, cones and spheres;\n4. find the volumes of these solids, including compound solids.\n\n## Materials\n\nA tin of milk, a party hat (cone), a football, a carton, a paper sector of radius 14 cm and angle 180°, a chart of formulas.\n\n## Starter (5 minutes)\n\nHold up the tin of milk and ask: how much paper is needed for the label, and how much milk does it hold? Learners see the difference between surface area and volume.\n\n## Development\n\n1. Triangles: ½ × base × height and ½ab sin C. A triangle with sides 8 cm, 5 cm and included angle 30° has area 10 cm². Similar figures: if the sides are in the ratio 2 : 3, the areas are in the ratio 4 : 9.\n2. Sectors: area = θ/360 × πr². Segment = sector − triangle. For r = 7 cm, θ = 90°: 38.5 − 24.5 = 14 cm².\n3. Fold the paper sector (radius 14 cm, angle 180°) into a cone. Its arc, 44 cm, becomes the base circumference, so the base radius is 7 cm; the radius of the sector becomes the slant height.\n4. Surface areas: cylinder 2πr² + 2πrh, cone πrl + πr², sphere 4πr². Volumes: cylinder πr²h, cone and pyramid ⅓ × base area × height, sphere 4/3 πr³.\n5. Compound solid: a cylinder (r = 7 cm, h = 10 cm) with a hemisphere on top has volume 1 540 + 718.67 = 2 258.67 cm³.\n\n## Class activity\n\nGroups measure the tin of milk, then calculate the area of its label and its volume, and compare the volume with the mass printed on the tin.\n\n## Evaluation\n\n1. Find the area of a trapezium with parallel sides 6 cm and 10 cm, 4 cm apart.\n2. Find the volume of a cone of radius 3 cm and height 4 cm (leave in terms of π).\n3. Find the surface area of a cuboid 5 cm by 4 cm by 3 cm.\n\n## Assignment\n\nQuiz on the app, due Thursday.",
+      "reading": {
+        "title": "How much covers it, and how much it holds",
+        "content": "# Areas, surface areas and volumes\n\n## Areas of plane shapes\n\n| Shape | Area |\n| --- | --- |\n| Triangle | ½ × base × height, or ½ab sin C |\n| Parallelogram | base × height |\n| Trapezium | ½(a + b) × h |\n| Circle | πr² |\n| Sector | θ/360 × πr² |\n\nFor **similar figures**, if the lengths are in the ratio a : b, the areas are in the ratio a² : b². Two similar triangles with sides 2 cm and 3 cm have areas in the ratio 4 : 9, so if the smaller is 20 cm², the larger is 45 cm².\n\n**Worked example 1.** A chord subtends 90° at the centre of a circle of radius 7 cm. The sector has area ¼ × 22/7 × 49 = 38.5 cm². The triangle has area ½ × 7 × 7 = 24.5 cm². The **segment** has area 38.5 − 24.5 = 14 cm².\n\n## From sector to cone\n\nWhen a sector is folded into a cone, the arc becomes the circumference of the base and the radius of the sector becomes the **slant height** l. A sector of radius 14 cm and angle 180° has arc 44 cm, so the cone's base radius is 7 cm. The curved surface of the cone, πrl = 22/7 × 7 × 14 = 308 cm², equals the area of the sector.\n\n## Surface areas and volumes\n\n| Solid | Surface area | Volume |\n| --- | --- | --- |\n| Cuboid | 2(lb + bh + lh) | lbh |\n| Cylinder | 2πr² + 2πrh | πr²h |\n| Cone | πrl + πr² | ⅓πr²h |\n| Pyramid | sum of the faces | ⅓ × base × height |\n| Sphere | 4πr² | 4/3 πr³ |\n\n**Worked example 2.** A closed cylinder with r = 7 cm and h = 10 cm has surface area 2 × 22/7 × 49 + 2 × 22/7 × 7 × 10 = 308 + 440 = 748 cm² and volume 22/7 × 49 × 10 = 1 540 cm³.\n\n## Compound solids\n\nBreak the solid into parts, find each, and add. Only count the surfaces you can see.\n\n**Worked example 3.** A cylinder (r = 7 cm, h = 10 cm) with a hemisphere on top.\n\n- Volume = 1 540 + ⅔ × 22/7 × 343 = 1 540 + 718.67 = 2 258.67 cm³.\n- Surface = base 154 + curved cylinder 440 + curved hemisphere 2πr² = 308, total 902 cm². The top of the cylinder is hidden under the hemisphere, so it is not counted."
+      },
+      "cards": [
+        {
+          "front": "Area of a triangle using an angle",
+          "back": "½ab sin C"
+        },
+        {
+          "front": "Area of a trapezium",
+          "back": "½(a + b) × h"
+        },
+        {
+          "front": "Area of a sector",
+          "back": "θ/360 × πr²"
+        },
+        {
+          "front": "Area of a segment",
+          "back": "Area of sector − area of triangle"
+        },
+        {
+          "front": "Similar figures with sides in the ratio a : b",
+          "back": "Areas in the ratio a² : b²"
+        },
+        {
+          "front": "Folding a sector into a cone",
+          "back": "The arc becomes the base circumference; the sector radius becomes the slant height."
+        },
+        {
+          "front": "Total surface area of a closed cylinder",
+          "back": "2πr² + 2πrh"
+        },
+        {
+          "front": "Volume of a cone or pyramid",
+          "back": "⅓ × base area × height"
+        },
+        {
+          "front": "Volume and surface area of a sphere",
+          "back": "4/3 πr³ and 4πr²"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the area of a triangle in which two sides are 8 cm and 5 cm and the angle between them is 30°.",
+          "options": ["20 cm²", "10 cm²", "40 cm²", "17.3 cm²"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Two similar triangles have corresponding sides of 2 cm and 3 cm. The smaller triangle has an area of 20 cm². Find the area of the larger triangle.",
+          "options": ["45 cm²", "30 cm²", "67.5 cm²", "180 cm²"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the total surface area of a closed cylinder of radius 7 cm and height 10 cm. (Take π = 22/7.)",
+          "options": ["440 cm²", "594 cm²", "748 cm²", "1 540 cm²"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A sector of radius 14 cm and angle 180° is folded to form a cone. What is the radius of the base of the cone?",
+          "options": ["14 cm", "3.5 cm", "22 cm", "7 cm"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Find the volume of a right pyramid with a square base of side 6 cm and a height of 4 cm.",
+          "options": ["144 cm³", "48 cm³", "72 cm³", "24 cm³"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A chord AB subtends an angle of 90° at the centre O of a circle of radius 7 cm. Taking π = 22/7, find (a) the area of the sector AOB, (b) the area of triangle AOB, (c) the area of the minor segment cut off by AB.",
+          "markScheme": [
+            "Sector = 90/360 × 22/7 × 7²",
+            "(a) = 38.5 cm²",
+            "(b) Triangle = ½ × 7 × 7 (× sin 90°) = 24.5 cm²",
+            "(c) Segment = 38.5 − 24.5 = 14 cm²"
+          ],
+          "modelAnswer": "(a) Area of sector = 90/360 × 22/7 × 7 × 7 = 38.5 cm². (b) Area of triangle AOB = ½ × 7 × 7 × sin 90° = 24.5 cm². (c) Area of the minor segment = sector − triangle = 38.5 − 24.5 = 14 cm².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Sector = 90/360 x 22/7 x 7 x 7 = 38.5 cm². (b) Triangle AOB = ½ x 7 x 7 x sin 90° = 24.5 cm². (c) Segment = 38.5 − 24.5 = 14 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sector = 90/360 x 22/7 x 7 x 7"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 38.5 cm²"
+                },
+                {
+                  "point": 2,
+                  "quote": "Triangle AOB = ½ x 7 x 7 x sin 90° = 24.5 cm²"
+                },
+                {
+                  "point": 3,
+                  "quote": "Segment = 38.5 − 24.5 = 14 cm²"
+                }
+              ],
+              "feedback": "All four marks. Using ½ab sin C for the triangle works for any angle, not just 90°."
+            },
+            {
+              "tier": "full",
+              "text": "The sector is a quarter of the circle: ¼ × 22/7 × 49 = 38.5 cm². The triangle is right-angled at O so its area is ½ × 7 × 7 = 24.5 cm². Minor segment = sector − triangle = 14 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "¼ × 22/7 × 49"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 38.5 cm²"
+                },
+                {
+                  "point": 2,
+                  "quote": "its area is ½ × 7 × 7 = 24.5 cm²"
+                },
+                {
+                  "point": 3,
+                  "quote": "Minor segment = sector − triangle = 14 cm²"
+                }
+              ],
+              "feedback": "Full marks. Seeing that 90° makes a quarter circle and a right-angled triangle saved you time."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 90/360 x 2 x 22/7 x 7 = 11 cm². (b) ½ x 7 x 7 = 24.5 cm². (c) 24.5 − 11 = 13.5 cm².",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "½ x 7 x 7 = 24.5 cm²"
+                }
+              ],
+              "feedback": "Your triangle is right. In (a) you found the arc length; the sector's area uses πr², not 2πr: 90/360 × 22/7 × 49 = 38.5 cm². Then the segment is the sector minus the triangle."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) ¼ × 22/7 × 7² = 38.5 cm². (b) 7 × 7 = 49 cm². (c) 49 − 38.5 = 10.5 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "¼ × 22/7 × 7²"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 38.5 cm²"
+                }
+              ],
+              "feedback": "Your sector is right. A triangle's area is half of base × height, so it is 24.5 cm², not 49. The segment is the sector minus the triangle: 38.5 − 24.5 = 14 cm²."
+            },
+            {
+              "tier": "weak",
+              "text": "The segment is half of the circle so the area = ½ x 22/7 x 49 = 77 cm².",
+              "meets": [],
+              "feedback": "A chord at 90° cuts off much less than half the circle. Find the quarter-circle sector, 38.5 cm², and take away triangle AOB, 24.5 cm²."
+            },
+            {
+              "tier": "weak",
+              "text": "Area of sector = 90/360 x 22/7 x 7 x 7. Triangle = 7 + 7 + 9.9 = 23.9.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Area of sector = 90/360 x 22/7 x 7 x 7"
+                }
+              ],
+              "feedback": "Your sector method is right; work it out to 38.5 cm². Adding the sides gives the perimeter, not the area: the triangle's area is ½ × 7 × 7 = 24.5 cm²."
+            }
+          ]
+        },
+        {
+          "prompt": "A maize storage bin on a farm in Benue is modelled as a solid cylinder of radius 7 cm and height 10 cm with a hemisphere of the same radius on top. Taking π = 22/7, find (a) the volume of the solid, (b) its total surface area.",
+          "markScheme": [
+            "Cylinder volume = 22/7 × 7² × 10 = 1 540 cm³",
+            "Hemisphere volume = ⅔ × 22/7 × 7³ = 718.67 cm³",
+            "(a) Total volume = 2 258.67 cm³",
+            "Surface parts: base 154 + curved surface of cylinder 440 + curved hemisphere 308",
+            "(b) Total surface area = 902 cm²"
+          ],
+          "modelAnswer": "(a) Cylinder: πr²h = 22/7 × 49 × 10 = 1 540 cm³. Hemisphere: ⅔πr³ = ⅔ × 22/7 × 343 = 718.67 cm³. Total volume = 2 258.67 cm³. (b) The base is a circle, πr² = 154 cm². The curved surface of the cylinder is 2πrh = 440 cm². The curved surface of the hemisphere is 2πr² = 308 cm². The top of the cylinder is covered, so the total surface area = 154 + 440 + 308 = 902 cm².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Cylinder: πr²h = 22/7 x 49 x 10 = 1540 cm³. Hemisphere: ⅔πr³ = ⅔ x 22/7 x 343 = 718.67 cm³. Total = 2258.67 cm³. (b) Base = πr² = 154, curved cylinder = 2πrh = 440, hemisphere = 2πr² = 308. Total = 154 + 440 + 308 = 902 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "πr²h = 22/7 x 49 x 10 = 1540 cm³"
+                },
+                {
+                  "point": 1,
+                  "quote": "⅔πr³ = ⅔ x 22/7 x 343 = 718.67 cm³"
+                },
+                {
+                  "point": 2,
+                  "quote": "Total = 2258.67 cm³"
+                },
+                {
+                  "point": 3,
+                  "quote": "Base = πr² = 154, curved cylinder = 2πrh = 440, hemisphere = 2πr² = 308"
+                },
+                {
+                  "point": 4,
+                  "quote": "Total = 154 + 440 + 308 = 902 cm²"
+                }
+              ],
+              "feedback": "All five marks. You left out the hidden top of the cylinder, which is the trap in this question."
+            },
+            {
+              "tier": "full",
+              "text": "(a) V = 22/7 × 7² × 10 + ½ × 4/3 × 22/7 × 7³ = 1 540 + 718.67 = 2 258.67 cm³. (b) Only the outside counts: circle at the bottom 22/7 × 49 = 154, side of cylinder 2 × 22/7 × 7 × 10 = 440, half of a sphere's surface ½ × 4 × 22/7 × 49 = 308. TSA = 902 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "22/7 × 7² × 10"
+                },
+                {
+                  "point": 1,
+                  "quote": "½ × 4/3 × 22/7 × 7³"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 1 540 + 718.67 = 2 258.67 cm³"
+                },
+                {
+                  "point": 3,
+                  "quote": "circle at the bottom 22/7 × 49 = 154, side of cylinder 2 × 22/7 × 7 × 10 = 440, half of a sphere's surface ½ × 4 × 22/7 × 49 = 308"
+                },
+                {
+                  "point": 4,
+                  "quote": "TSA = 902 cm²"
+                }
+              ],
+              "feedback": "Full marks. Building the hemisphere from half a sphere shows you understand where the formulas come from."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 1540 + 718.67 = 2258.67 cm³ (cylinder 22/7 x 49 x 10 and hemisphere ⅔ x 22/7 x 343). (b) Top 154 + base 154 + side 440 + hemisphere 308 = 1056 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "cylinder 22/7 x 49 x 10"
+                },
+                {
+                  "point": 1,
+                  "quote": "hemisphere ⅔ x 22/7 x 343"
+                },
+                {
+                  "point": 2,
+                  "quote": "2258.67 cm³"
+                }
+              ],
+              "feedback": "Your volume is right. In (b), the top of the cylinder is covered by the hemisphere, so it is not on the surface. Leave out that 154 cm² to get 902 cm²."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Cylinder = 22/7 x 7 x 7 x 10 = 1540. Hemisphere = 4/3 x 22/7 x 343 = 1437.33. Volume = 2977.33 cm³. (b) 154 + 440 + 616 = 1210 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cylinder = 22/7 x 7 x 7 x 10 = 1540"
+                }
+              ],
+              "feedback": "The cylinder is right. A hemisphere is half a sphere, so its volume is ⅔πr³ = 718.67 cm³ and its curved surface is 2πr² = 308 cm², not the whole sphere's."
+            },
+            {
+              "tier": "weak",
+              "text": "Volume = 22/7 x 7 x 10 = 220 cm³. Surface area = 22/7 x 7 x 7 = 154 cm².",
+              "meets": [],
+              "feedback": "The volume of a cylinder uses r², so 22/7 × 7² × 10 = 1 540 cm³, and the hemisphere must be added. The surface has three parts: the base, the side of the cylinder and the curved hemisphere."
+            },
+            {
+              "tier": "weak",
+              "text": "Volume of cylinder = 22/7 x 7 x 7 x 10 = 1540 cm³. Add 7 cm for the hemisphere so 1547 cm³.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Volume of cylinder = 22/7 x 7 x 7 x 10 = 1540 cm³"
+                }
+              ],
+              "feedback": "Your cylinder is right. The hemisphere is a solid with its own volume, ⅔πr³ = 718.67 cm³; you cannot add a length to a volume."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Similar solids, angles and parallel lines",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the ratios of lengths, areas and volumes of similar solids;\n2. use the facts that angles at a point add up to 360°, adjacent angles on a straight line are supplementary and vertically opposite angles are equal, and name acute, obtuse and reflex angles;\n3. use alternate, corresponding and interior angles on parallel lines;\n4. apply the intercept theorem to divide a line segment in a given ratio.\n\n## Materials\n\nTwo similar tins (a small and a large tin of tomato paste), a protractor, rulers, set squares, a sheet of ruled exercise-book paper.\n\n## Starter (5 minutes)\n\nShow the two tins. The large one is 1½ times as tall. Ask: does it hold 1½ times as much? Learners guess, then see that the volume ratio is (3/2)³ = 27/8, more than three times.\n\n## Development\n\n1. Similar solids: lengths a : b, areas a² : b², volumes a³ : b³. Work: two tins 6 cm and 9 cm tall; the small holds 400 ml, so the large holds 400 × 27/8 = 1 350 ml. Masses of solids of the same material follow volume.\n2. Angles at a point (360°), on a straight line (180°), vertically opposite (equal). Name acute (less than 90°), obtuse (between 90° and 180°) and reflex (between 180° and 360°).\n3. Parallel lines: draw a transversal. Alternate angles are equal (Z shape), corresponding angles are equal (F shape), interior angles on the same side add to 180° (C shape). Work: 3x − 20 = 2x + 30 for alternate angles gives x = 50.\n4. Intercept theorem: parallel lines that cut equal (or proportional) parts on one transversal cut proportional parts on any other. Use ruled paper to divide a 10 cm strip in the ratio 2 : 3.\n\n## Class activity\n\nPairs place a ruler across the lines of their exercise book and measure the segments cut off on two different slanted rulers, then compare the ratios.\n\n## Evaluation\n\n1. Two similar cones have heights 4 cm and 12 cm. Find the ratio of their volumes.\n2. Angles on a straight line are (2x + 30)° and (3x − 20)°. Find x.\n3. Name the pair of angles in a C shape between parallel lines and state their sum.\n\n## Assignment\n\nProblem set on the app, due Tuesday.",
+      "reading": {
+        "title": "Scaling up solids, and the angles that parallel lines make",
+        "content": "# Similar solids, angles and parallel lines\n\n## Similar solids\n\nTwo solids are **similar** if one is an exact enlargement of the other. If their lengths are in the ratio a : b, then\n\n- their **areas** are in the ratio a² : b²\n- their **volumes** (and masses, if made of the same material) are in the ratio a³ : b³.\n\n**Worked example 1.** Two similar tins are 6 cm and 9 cm tall. The length ratio is 2 : 3, so the volume ratio is 8 : 27. If the small tin holds 400 ml, the large one holds 400 × 27/8 = 1 350 ml.\n\n**Worked example 2.** Two similar statues have masses 16 kg and 54 kg. The volume ratio is 8 : 27, so the length ratio is ∛8 : ∛27 = 2 : 3 and the area ratio is 4 : 9.\n\n## Angles\n\n- **Acute:** less than 90°. **Obtuse:** between 90° and 180°. **Reflex:** between 180° and 360°.\n- Angles at a point add up to **360°**.\n- Adjacent angles on a straight line add up to **180°** (they are supplementary).\n- **Vertically opposite** angles are equal.\n\n**Worked example 3.** Angles at a point are 3x, 2x, 4x and 90°. Then 9x + 90 = 360, so x = 30°.\n\n## Parallel lines\n\nWhen a straight line (a **transversal**) crosses two parallel lines:\n\n- **alternate** angles are equal (they make a Z shape);\n- **corresponding** angles are equal (an F shape);\n- **interior** angles on the same side add up to 180° (a C or U shape).\n\n**Worked example 4.** AB ∥ CD and a transversal cuts them at P and Q. Alternate angles ∠APQ = (3x − 20)° and ∠PQD = (2x + 30)° are equal, so 3x − 20 = 2x + 30 and x = 50. Then ∠APQ = 130°, and ∠BPQ = 180° − 130° = 50° (angles on a straight line).\n\nAlways give the **reason** for each step: examiners award marks for it.\n\n## The intercept theorem\n\nIf parallel lines cut off segments on one transversal, they cut off segments **in the same ratio** on any other transversal. If they cut 4 cm and 6 cm on one line, and the first segment on another line is 6 cm, the second is 6 × 6/4 = 9 cm.\n\nThis lets us divide a line in any ratio with a ruler and set square: to divide AB in the ratio 2 : 3, draw a line from A, mark 5 equal steps on it, join the last mark to B, and draw a parallel through the second mark."
+      },
+      "cards": [
+        {
+          "front": "Lengths in the ratio a : b",
+          "back": "Areas a² : b², volumes a³ : b³"
+        },
+        {
+          "front": "Angles at a point",
+          "back": "Add up to 360°."
+        },
+        {
+          "front": "Adjacent angles on a straight line",
+          "back": "Add up to 180° (supplementary)."
+        },
+        {
+          "front": "Vertically opposite angles",
+          "back": "Are equal."
+        },
+        {
+          "front": "Alternate angles (Z shape)",
+          "back": "Are equal when the lines are parallel."
+        },
+        {
+          "front": "Corresponding angles (F shape)",
+          "back": "Are equal when the lines are parallel."
+        },
+        {
+          "front": "Interior angles on the same side (C shape)",
+          "back": "Add up to 180°."
+        },
+        {
+          "front": "Reflex angle",
+          "back": "Between 180° and 360°."
+        },
+        {
+          "front": "Intercept theorem",
+          "back": "Parallel lines cut off segments in the same ratio on every transversal."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Two similar tins have heights 6 cm and 9 cm. The smaller tin holds 400 ml. How much does the larger tin hold?",
+          "options": ["600 ml", "900 ml", "1 350 ml", "1 200 ml"],
+          "answer": "C"
+        },
+        {
+          "prompt": "The angles at a point are 3x, 2x, 4x and 90°. Find x.",
+          "options": ["30°", "40°", "20°", "10°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Two parallel lines are cut by a transversal. One of the interior angles on the same side of the transversal is 65°. What is the other?",
+          "options": ["65°", "115°", "25°", "295°"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these angles is a reflex angle?",
+          "options": ["95°", "180°", "175°", "210°"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Three parallel lines cut two transversals. On the first transversal they cut off segments of 4 cm and 6 cm. On the second, the first segment is 6 cm. How long is the second segment?",
+          "options": ["8 cm", "4 cm", "9 cm", "12 cm"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "AB and CD are parallel lines. A transversal cuts AB at P and CD at Q. The alternate angles ∠APQ = (3x − 20)° and ∠PQD = (2x + 30)°. (a) Find x. (b) Find ∠APQ. (c) Find ∠BPQ. Give a reason for each step.",
+          "markScheme": [
+            "Alternate angles are equal: 3x − 20 = 2x + 30",
+            "(a) x = 50",
+            "(b) ∠APQ = 130°",
+            "(c) ∠BPQ = 180° − 130° = 50°, because angles on a straight line add to 180°"
+          ],
+          "modelAnswer": "(a) ∠APQ and ∠PQD are alternate angles, so they are equal: 3x − 20 = 2x + 30, which gives x = 50. (b) ∠APQ = 3(50) − 20 = 130°. (c) ∠APQ and ∠BPQ lie on the straight line AB, so ∠BPQ = 180° − 130° = 50°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) ∠APQ and ∠PQD are alternate angles so they are equal: 3x − 20 = 2x + 30, x = 50. (b) ∠APQ = 3(50) − 20 = 130°. (c) ∠BPQ = 180° − 130° = 50° because angles on a straight line add up to 180°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "alternate angles so they are equal: 3x − 20 = 2x + 30"
+                },
+                {
+                  "point": 1,
+                  "quote": "x = 50"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠APQ = 3(50) − 20 = 130°"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠BPQ = 180° − 130° = 50° because angles on a straight line add up to 180°"
+                }
+              ],
+              "feedback": "All four marks, with a reason for every step, which is what earns the marks in geometry."
+            },
+            {
+              "tier": "full",
+              "text": "3x − 20 = 2x + 30 (alt. ∠s, AB ∥ CD). x = 50. ∠APQ = 150 − 20 = 130°. ∠BPQ + ∠APQ = 180° (∠s on a str. line), so ∠BPQ = 50°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x − 20 = 2x + 30 (alt. ∠s, AB ∥ CD)"
+                },
+                {
+                  "point": 1,
+                  "quote": "x = 50"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠APQ = 150 − 20 = 130°"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠BPQ + ∠APQ = 180° (∠s on a str. line), so ∠BPQ = 50°"
+                }
+              ],
+              "feedback": "Full marks. Your short reasons in brackets are the standard way to write them, and they are all correct."
+            },
+            {
+              "tier": "partial",
+              "text": "Alternate angles are equal so 3x − 20 = 2x + 30, x = 50. ∠APQ = 130°. ∠BPQ = 130° because they are vertically opposite.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Alternate angles are equal so 3x − 20 = 2x + 30"
+                },
+                {
+                  "point": 1,
+                  "quote": "x = 50"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠APQ = 130°"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. ∠APQ and ∠BPQ are next to each other on the line AB, not opposite, so they add to 180°: ∠BPQ = 50°."
+            },
+            {
+              "tier": "partial",
+              "text": "x = 50 (I tried values until both angles were equal). ∠APQ = 130°. ∠BPQ = 50° (angles on a straight line).",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "x = 50"
+                },
+                {
+                  "point": 2,
+                  "quote": "∠APQ = 130°"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠BPQ = 50° (angles on a straight line)"
+                }
+              ],
+              "feedback": "Your answers are right. For (a), state the reason and the equation: alternate angles are equal, so 3x − 20 = 2x + 30. Trial and error does not earn the method mark."
+            },
+            {
+              "tier": "weak",
+              "text": "Alternate angles add up to 180°. 3x − 20 + 2x + 30 = 180, 5x = 170, x = 34. ∠APQ = 82°.",
+              "meets": [],
+              "feedback": "Alternate angles are equal; it is interior angles on the same side that add to 180°. Set 3x − 20 = 2x + 30 instead."
+            },
+            {
+              "tier": "weak",
+              "text": "3x − 20 = 2x + 30 because they are alternate. x = 30 − 20 = 10. ∠APQ = 10°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x − 20 = 2x + 30 because they are alternate"
+                }
+              ],
+              "feedback": "Your equation and reason are right. When moving terms across, the signs change: 3x − 2x = 30 + 20, so x = 50, and ∠APQ = 130°."
+            }
+          ]
+        },
+        {
+          "prompt": "Two similar solid brass statues have masses 16 kg and 54 kg. (a) Find the ratio of their volumes. (b) Find the ratio of their heights. (c) The smaller statue is 20 cm tall. How tall is the larger? (d) The larger statue has a surface area of 450 cm². Find the surface area of the smaller statue.",
+          "markScheme": [
+            "(a) Ratio of volumes = 16 : 54 = 8 : 27",
+            "(b) Ratio of heights = ∛8 : ∛27 = 2 : 3",
+            "(c) Height of larger = 20 × 3/2 = 30 cm",
+            "Ratio of areas = 2² : 3² = 4 : 9",
+            "(d) Surface area of smaller = 450 × 4/9 = 200 cm²"
+          ],
+          "modelAnswer": "(a) The statues are the same material, so the volumes are in the same ratio as the masses: 16 : 54 = 8 : 27. (b) Heights are in the ratio of the cube roots: ∛8 : ∛27 = 2 : 3. (c) Larger height = 20 × 3/2 = 30 cm. (d) Areas are in the ratio 2² : 3² = 4 : 9, so the smaller surface area = 450 × 4/9 = 200 cm².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Volume ratio = mass ratio = 16 : 54 = 8 : 27. (b) Height ratio = ∛8 : ∛27 = 2 : 3. (c) Larger height = 20 x 3/2 = 30 cm. (d) Area ratio = 2² : 3² = 4 : 9. Smaller area = 450 x 4/9 = 200 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Volume ratio = mass ratio = 16 : 54 = 8 : 27"
+                },
+                {
+                  "point": 1,
+                  "quote": "Height ratio = ∛8 : ∛27 = 2 : 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "Larger height = 20 x 3/2 = 30 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "Area ratio = 2² : 3² = 4 : 9"
+                },
+                {
+                  "point": 4,
+                  "quote": "Smaller area = 450 x 4/9 = 200 cm²"
+                }
+              ],
+              "feedback": "All five marks. Going from volume back to length with a cube root, then forward to area with a square, is exactly the chain this question tests."
+            },
+            {
+              "tier": "full",
+              "text": "Same material so V₁ : V₂ = 16 : 54 = 8 : 27. Lengths: 2 : 3 since 2³ = 8 and 3³ = 27. Taller one: 20 ÷ 2 × 3 = 30 cm. Areas go as the squares, 4 : 9, so the small one has 450 ÷ 9 × 4 = 200 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "V₁ : V₂ = 16 : 54 = 8 : 27"
+                },
+                {
+                  "point": 1,
+                  "quote": "Lengths: 2 : 3 since 2³ = 8 and 3³ = 27"
+                },
+                {
+                  "point": 2,
+                  "quote": "Taller one: 20 ÷ 2 × 3 = 30 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "Areas go as the squares, 4 : 9"
+                },
+                {
+                  "point": 4,
+                  "quote": "450 ÷ 9 × 4 = 200 cm²"
+                }
+              ],
+              "feedback": "Full marks. Explaining why the volume ratio equals the mass ratio, same material, is a good touch."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 16 : 54 = 8 : 27. (b) Heights are also 8 : 27. (c) 20 × 27/8 = 67.5 cm. (d) 450 × 8/27 = 133.3 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "16 : 54 = 8 : 27"
+                }
+              ],
+              "feedback": "Your volume ratio is right. Lengths are in the ratio of the cube roots of the volumes, 2 : 3, and areas in the ratio of the squares of the lengths, 4 : 9. Redo (c) and (d) with those."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 8 : 27. (b) Cube root: 2 : 3. (c) 20 × 3/2 = 30 cm. (d) 450 × 2/3 = 300 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 8 : 27"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cube root: 2 : 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "20 × 3/2 = 30 cm"
+                }
+              ],
+              "feedback": "Parts (a) to (c) are right. Areas are in the ratio of the squares of the lengths, 4 : 9, not 2 : 3. Also, the smaller statue must have the smaller area, so 300 cm² should have looked too big."
+            },
+            {
+              "tier": "weak",
+              "text": "54 − 16 = 38 kg more, so the larger statue is 38 cm taller, 58 cm.",
+              "meets": [],
+              "feedback": "Kilograms cannot be turned straight into centimetres. Write the masses as a ratio, 8 : 27, which is the ratio of the volumes, then take cube roots to compare heights."
+            },
+            {
+              "tier": "weak",
+              "text": "Volume ratio is 16 : 54. The heights are 16 : 54 too so the larger is 20 × 54/16 = 67.5 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Volume ratio is 16 : 54"
+                }
+              ],
+              "feedback": "Your volume ratio is right; simplify it to 8 : 27. Heights are not in the same ratio as volumes: take cube roots to get 2 : 3, so the larger is 30 cm."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Triangles, quadrilaterals and similar triangles",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the facts that the angles of a triangle add up to 180° and that an exterior angle equals the sum of the two interior opposite angles;\n2. state the conditions for congruent triangles (SSS, SAS, ASA, RHS);\n3. use the properties of isosceles, equilateral and right-angled triangles and of the parallelogram, rhombus, square, rectangle and trapezium;\n4. use similar triangles to find unknown sides and areas.\n\n## Materials\n\nCardboard triangles (some congruent, some similar), a geoboard or pins and rubber bands, cut-out quadrilaterals, scissors.\n\n## Starter (5 minutes)\n\nEach learner tears the three corners off a paper triangle and places them together on a straight line. Ask: what do the three angles make? They always make 180°.\n\n## Development\n\n1. Exterior angle: extend one side. Show that the exterior angle equals the sum of the two interior opposite angles. Work: exterior 115°, one opposite angle 48°, so the other is 67°.\n2. Congruence: two triangles are congruent if SSS, SAS, ASA (or AAS) or RHS holds. AAA only shows the same shape, not the same size.\n3. Special triangles: an isosceles triangle has equal base angles; an equilateral triangle has every angle 60°. Use the fold line of symmetry.\n4. Quadrilaterals: list the properties of each in a table: sides, angles, diagonals. The diagonals of a rhombus bisect each other at right angles, so diagonals 12 cm and 16 cm give a side of 10 cm.\n5. Similar triangles: equal angles, sides in the same ratio, areas in the ratio of the squares. With DE ∥ BC, AD = 4 cm, AB = 6 cm and DE = 6 cm, BC = 9 cm.\n\n## Class activity\n\nGroups sort the cardboard triangles into pairs that are congruent and pairs that are only similar, and name the condition they used.\n\n## Evaluation\n\n1. Two angles of a triangle are 52° and 71°. Find the exterior angle at the third vertex.\n2. State two properties of the diagonals of a rectangle.\n3. Two similar triangles have sides 3 cm and 5 cm. Find the ratio of their areas.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "What triangles and quadrilaterals always do",
+        "content": "# Triangles, quadrilaterals and similar triangles\n\n## Angles of a triangle\n\nThe three angles of any triangle add up to **180°** (two right angles). If one side is extended, the **exterior angle** formed equals the sum of the two **interior opposite** angles.\n\n**Worked example 1.** In triangle ABC, the exterior angle at C is 115° and ∠A = 48°. Then ∠B = 115° − 48° = 67°.\n\n## Special triangles\n\n- **Isosceles:** two equal sides, and the angles opposite them (the base angles) are equal. It has one line of symmetry.\n- **Equilateral:** three equal sides; every angle is 60°.\n- **Right-angled:** one angle of 90°; Pythagoras' theorem applies.\n\n**Worked example 2.** PQ = PR and ∠QPR = 40°. The base angles are (180° − 40°) ÷ 2 = 70° each. If QR is extended to S, the exterior angle ∠PRS = 40° + 70° = 110°.\n\n## Congruent triangles\n\nTwo triangles are **congruent** (same shape and size) if one of these holds:\n\n- **SSS:** three sides equal;\n- **SAS:** two sides and the angle between them;\n- **ASA** (or AAS): two angles and a corresponding side;\n- **RHS:** right angle, hypotenuse and one side.\n\nThree equal angles (AAA) are **not** enough: the triangles could be different sizes.\n\n## Special quadrilaterals\n\n| Shape | Key properties |\n| --- | --- |\n| Parallelogram | Opposite sides equal and parallel; opposite angles equal; diagonals bisect each other |\n| Rectangle | A parallelogram with right angles; diagonals equal |\n| Rhombus | All sides equal; diagonals bisect each other at right angles |\n| Square | A rhombus with right angles |\n| Trapezium | One pair of parallel sides |\n\n## Similar triangles\n\nTriangles are **similar** if their angles are equal (equiangular). Then corresponding sides are in the same ratio, and their areas are in the ratio of the **squares** of the sides.\n\n**Worked example 3.** In triangle ABC, DE ∥ BC with D on AB and E on AC. ∠ADE = ∠ABC (corresponding angles) and ∠A is common, so ΔADE ~ ΔABC. If AD = 4 cm, AB = 6 cm and DE = 6 cm, then 4/6 = 6/BC, so BC = 9 cm. The areas are in the ratio 4² : 6² = 4 : 9."
+      },
+      "cards": [
+        {
+          "front": "Sum of the angles of a triangle",
+          "back": "180° (two right angles)"
+        },
+        {
+          "front": "Exterior angle of a triangle",
+          "back": "Equals the sum of the two interior opposite angles."
+        },
+        {
+          "front": "Base angles of an isosceles triangle",
+          "back": "Are equal."
+        },
+        {
+          "front": "Conditions for congruent triangles",
+          "back": "SSS, SAS, ASA (or AAS), RHS"
+        },
+        {
+          "front": "Does AAA prove congruence?",
+          "back": "No. It proves similarity only."
+        },
+        {
+          "front": "Diagonals of a rhombus",
+          "back": "Bisect each other at right angles."
+        },
+        {
+          "front": "Similar triangles with sides in the ratio a : b",
+          "back": "Areas in the ratio a² : b²"
+        },
+        {
+          "front": "Rectangle compared with parallelogram",
+          "back": "A rectangle is a parallelogram with right angles and equal diagonals."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In triangle ABC, the exterior angle at C is 115° and ∠A = 48°. Find ∠B.",
+          "options": ["67°", "17°", "65°", "132°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "In an isosceles triangle, the angle between the two equal sides is 40°. Find each base angle.",
+          "options": ["40°", "140°", "70°", "50°"],
+          "answer": "C"
+        },
+        {
+          "prompt": "The diagonals of a rhombus are 12 cm and 16 cm long. Find the length of a side of the rhombus.",
+          "options": ["20 cm", "14 cm", "28 cm", "10 cm"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these conditions does NOT prove that two triangles are congruent?",
+          "options": ["SSS", "SAS", "AAA", "RHS"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Triangles ABC and PQR are similar, with AB = 6 cm and PQ = 9 cm. The area of triangle ABC is 24 cm². Find the area of triangle PQR.",
+          "options": ["36 cm²", "54 cm²", "81 cm²", "16 cm²"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "In triangle PQR, PQ = PR and ∠QPR = 40°. The side QR is produced to S. Find (a) ∠PQR, (b) ∠PRS, giving a reason for each step.",
+          "markScheme": [
+            "States that the base angles of an isosceles triangle are equal: ∠PQR = ∠PRQ",
+            "(a) ∠PQR = (180° − 40°) ÷ 2 = 70°",
+            "Uses the exterior angle property, or angles on a straight line, for ∠PRS",
+            "(b) ∠PRS = 110°"
+          ],
+          "modelAnswer": "(a) PQ = PR, so the base angles are equal: ∠PQR = ∠PRQ. The angles of the triangle add up to 180°, so ∠PQR = (180° − 40°) ÷ 2 = 70°. (b) ∠PRS is an exterior angle of the triangle, so it equals the sum of the interior opposite angles: ∠PRS = 40° + 70° = 110°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) PQ = PR so the base angles are equal, ∠PQR = ∠PRQ. ∠PQR = (180 − 40)/2 = 70°. (b) The exterior angle equals the sum of the two interior opposite angles, so ∠PRS = 40 + 70 = 110°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "PQ = PR so the base angles are equal, ∠PQR = ∠PRQ"
+                },
+                {
+                  "point": 1,
+                  "quote": "∠PQR = (180 − 40)/2 = 70°"
+                },
+                {
+                  "point": 2,
+                  "quote": "The exterior angle equals the sum of the two interior opposite angles"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠PRS = 40 + 70 = 110°"
+                }
+              ],
+              "feedback": "All four marks, with every reason stated in full. That is exactly how geometry answers should look."
+            },
+            {
+              "tier": "full",
+              "text": "∠PQR = ∠PRQ (base ∠s of isos. Δ). 2∠PQR = 180° − 40° = 140°, so ∠PQR = 70°. ∠PRS = 180° − ∠PRQ = 180° − 70° = 110° (∠s on a str. line).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "∠PQR = ∠PRQ (base ∠s of isos. Δ)"
+                },
+                {
+                  "point": 1,
+                  "quote": "2∠PQR = 180° − 40° = 140°, so ∠PQR = 70°"
+                },
+                {
+                  "point": 2,
+                  "quote": "(∠s on a str. line)"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠PRS = 180° − ∠PRQ = 180° − 70° = 110°"
+                }
+              ],
+              "feedback": "Full marks. Angles on a straight line is just as valid a route to ∠PRS as the exterior angle property."
+            },
+            {
+              "tier": "partial",
+              "text": "PQ = PR so ∠PQR = ∠PRQ. ∠PQR = (180 − 40) ÷ 2 = 70°. ∠PRS = 70° because it is vertically opposite ∠PRQ.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "PQ = PR so ∠PQR = ∠PRQ"
+                },
+                {
+                  "point": 1,
+                  "quote": "∠PQR = (180 − 40) ÷ 2 = 70°"
+                }
+              ],
+              "feedback": "Part (a) is right with its reason. ∠PRS and ∠PRQ lie side by side on the straight line QS, so they add to 180°: ∠PRS = 110°."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) ∠PQR = 70°. (b) ∠PRS = 110°.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "∠PQR = 70°"
+                },
+                {
+                  "point": 3,
+                  "quote": "∠PRS = 110°"
+                }
+              ],
+              "feedback": "Both angles are right, but the question asks for reasons. Say the base angles of an isosceles triangle are equal, and that an exterior angle equals the sum of the interior opposite angles."
+            },
+            {
+              "tier": "weak",
+              "text": "∠PQR = 180 − 40 = 140°. ∠PRS = 180 − 140 = 40°.",
+              "meets": [],
+              "feedback": "180° − 40° is shared between the two equal base angles, so each is 70°, not 140°. A triangle cannot have an angle of 140° and another of 40° as well as a third."
+            },
+            {
+              "tier": "weak",
+              "text": "∠PQR = 40° because the sides are equal. ∠PRS is an exterior angle so it equals ∠PQR + ∠QPR = 40 + 40 = 80°.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "∠PRS is an exterior angle so it equals ∠PQR + ∠QPR"
+                }
+              ],
+              "feedback": "You used the exterior angle property correctly. The 40° is the angle between the equal sides; the base angles are the equal ones, (180° − 40°) ÷ 2 = 70° each."
+            }
+          ]
+        },
+        {
+          "prompt": "In triangle ABC, D is on AB and E is on AC so that DE is parallel to BC. AD = 4 cm, DB = 2 cm and DE = 6 cm. (a) Explain why triangles ADE and ABC are similar. (b) Find BC. (c) The area of triangle ADE is 20 cm². Find the area of the trapezium DBCE.",
+          "markScheme": [
+            "Similar because the angles are equal: ∠ADE = ∠ABC and ∠AED = ∠ACB (corresponding angles), ∠A common",
+            "Uses AD/AB = DE/BC with AB = 6 cm: 4/6 = 6/BC",
+            "(b) BC = 9 cm",
+            "Area ratio = (4/6)² = 4 : 9, so the area of triangle ABC = 45 cm²",
+            "(c) Area of DBCE = 45 − 20 = 25 cm²"
+          ],
+          "modelAnswer": "(a) Since DE ∥ BC, ∠ADE = ∠ABC and ∠AED = ∠ACB (corresponding angles), and ∠A is common to both triangles. So the triangles are equiangular, and therefore similar. (b) AB = 4 + 2 = 6 cm. AD/AB = DE/BC, so 4/6 = 6/BC and BC = 9 cm. (c) The areas are in the ratio (4/6)² = 4 : 9. Area of ABC = 20 × 9/4 = 45 cm², so the area of DBCE = 45 − 20 = 25 cm².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) DE ∥ BC so ∠ADE = ∠ABC and ∠AED = ∠ACB (corresponding angles), and ∠A is common, so the triangles are equiangular and similar. (b) AB = 4 + 2 = 6. AD/AB = DE/BC, 4/6 = 6/BC, BC = 36/4 = 9 cm. (c) Area ratio = (4/6)² = 16/36 = 4/9. Area ABC = 20 x 9/4 = 45 cm². Area DBCE = 45 − 20 = 25 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "∠ADE = ∠ABC and ∠AED = ∠ACB (corresponding angles), and ∠A is common"
+                },
+                {
+                  "point": 1,
+                  "quote": "4/6 = 6/BC"
+                },
+                {
+                  "point": 2,
+                  "quote": "BC = 36/4 = 9 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "Area ABC = 20 x 9/4 = 45 cm²"
+                },
+                {
+                  "point": 4,
+                  "quote": "Area DBCE = 45 − 20 = 25 cm²"
+                }
+              ],
+              "feedback": "All five marks. You remembered that AB is 4 + 2 = 6, which is the step most learners miss."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Corresponding angles on parallel lines are equal, so ΔADE and ΔABC have the same angles (they also share angle A). (b) Scale factor = AB/AD = 6/4 = 1.5, so BC = 6 × 1.5 = 9 cm. (c) Area scale factor = 1.5² = 2.25. ΔABC = 20 × 2.25 = 45 cm². Trapezium = 45 − 20 = 25 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Corresponding angles on parallel lines are equal, so ΔADE and ΔABC have the same angles (they also share angle A)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Scale factor = AB/AD = 6/4 = 1.5"
+                },
+                {
+                  "point": 2,
+                  "quote": "BC = 6 × 1.5 = 9 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "Area scale factor = 1.5² = 2.25. ΔABC = 20 × 2.25 = 45 cm²"
+                },
+                {
+                  "point": 4,
+                  "quote": "Trapezium = 45 − 20 = 25 cm²"
+                }
+              ],
+              "feedback": "Full marks. Using a scale factor of 1.5 for lengths and 1.5² for areas is a clear way to work."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) ∠ADE = ∠ABC (corresponding), ∠A common, so similar. (b) AD/DB = DE/BC, 4/2 = 6/BC, BC = 3 cm. (c) Area ratio = 4 : 9, ABC = 45 cm², DBCE = 45 − 20 = 25 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "∠ADE = ∠ABC (corresponding), ∠A common, so similar"
+                },
+                {
+                  "point": 3,
+                  "quote": "Area ratio = 4 : 9, ABC = 45 cm²"
+                },
+                {
+                  "point": 4,
+                  "quote": "DBCE = 45 − 20 = 25 cm²"
+                }
+              ],
+              "feedback": "Parts (a) and (c) are right. In (b), compare whole sides of the two triangles: AD with AB (6 cm), not with DB. Then 4/6 = 6/BC gives BC = 9 cm; BC cannot be shorter than DE.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The angles are equal: ∠ADE = ∠ABC and ∠AED = ∠ACB as corresponding angles, and ∠A is shared. (b) 4/6 = 6/BC so BC = 9 cm. (c) ABC = 20 × 6/4 = 30 cm², so DBCE = 30 − 20 = 10 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "∠ADE = ∠ABC and ∠AED = ∠ACB as corresponding angles, and ∠A is shared"
+                },
+                {
+                  "point": 1,
+                  "quote": "4/6 = 6/BC"
+                },
+                {
+                  "point": 2,
+                  "quote": "BC = 9 cm"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. Areas grow by the square of the length ratio: (6/4)² = 9/4, so ΔABC is 45 cm² and the trapezium is 25 cm²."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They look like the same shape. (b) BC = 6 + 2 = 8 cm. (c) 20 x 2 = 40 cm².",
+              "meets": [],
+              "feedback": "Looking alike is not a reason; name the equal angles and why they are equal (DE ∥ BC). Then use the ratio of sides, AD/AB = DE/BC, to find BC."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) DE ∥ BC so ∠ADE = ∠ABC and ∠A is common, so they are similar. (b) BC = DE + DB = 8 cm. (c) 20 x 2 = 40 cm².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "DE ∥ BC so ∠ADE = ∠ABC and ∠A is common, so they are similar"
+                }
+              ],
+              "feedback": "Part (a) is right. Similar triangles have sides in the same ratio, so 4/6 = 6/BC, and areas in the square of that ratio. Adding lengths does not give BC."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Angles of polygons and areas between parallels",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the sum of the interior angles of a polygon using (n − 2) × 180°, or (2n − 4) right angles;\n2. use the fact that the exterior angles of any convex polygon add up to 360° to find angles and numbers of sides of regular polygons;\n3. use the theorem that parallelograms on the same base and between the same parallels are equal in area, and that a triangle on the same base is half of the parallelogram.\n\n## Materials\n\nCut-out polygons (pentagon, hexagon, octagon), a picture of a honeycomb, a geoboard or two rulers taped parallel, scissors.\n\n## Starter (5 minutes)\n\nShow the honeycomb. Ask: why do bees use hexagons? Lead to: the angles of regular hexagons fit together exactly at a point (3 × 120° = 360°).\n\n## Development\n\n1. Draw diagonals from one vertex of a pentagon: it splits into 3 triangles, so the angle sum is 3 × 180° = 540°. Generalise: an n-sided polygon makes n − 2 triangles, so its angles add up to (n − 2) × 180°.\n2. Work: a pentagon with angles (x + 20)°, (x + 30)°, 2x°, 100° and 110° gives 4x + 260 = 540, so x = 70.\n3. Exterior angles: walk round the polygon; you turn through one full turn, 360°. For a regular polygon, each exterior angle = 360° ÷ n, and interior + exterior = 180°. Work: an interior angle of 156° gives exterior 24° and n = 15.\n4. Show that no regular polygon has an interior angle of 130°, since 360 ÷ 50 is not whole.\n5. Parallelograms: on the geoboard, slide the top side of a parallelogram along between the parallel rulers. The base and height do not change, so the area does not change. A triangle on the same base between the same parallels has half that area.\n\n## Class activity\n\nGroups measure the interior angles of their cut-out polygons with a protractor, add them, and compare with (n − 2) × 180°.\n\n## Evaluation\n\n1. Find the sum of the interior angles of an octagon.\n2. How many sides has a regular polygon whose exterior angle is 40°?\n3. Parallelogram PQRS has area 60 cm². T is on SR. Find the area of triangle PQT.\n\n## Assignment\n\nWorksheet on the app, due Wednesday.",
+      "reading": {
+        "title": "Polygons and the angles they make",
+        "content": "# Angles of polygons and areas between parallels\n\n## Interior angles\n\nA polygon with n sides can be cut into n − 2 triangles by drawing diagonals from one corner. Each triangle has angles adding up to 180°, so\n\n**sum of interior angles = (n − 2) × 180°**, or (2n − 4) right angles.\n\n| Polygon | Sides | Sum of interior angles |\n| --- | --- | --- |\n| Triangle | 3 | 180° |\n| Quadrilateral | 4 | 360° |\n| Pentagon | 5 | 540° |\n| Hexagon | 6 | 720° |\n| Octagon | 8 | 1 080° |\n\n**Worked example 1.** A pentagon has angles (x + 20)°, (x + 30)°, 2x°, 100° and 110°. Then 4x + 260 = 540, so 4x = 280 and x = 70. The angles are 90°, 100°, 140°, 100° and 110°; the largest is 140°.\n\n## Exterior angles\n\nThe **exterior angles** of any convex polygon add up to **360°**, however many sides it has. At each vertex, interior angle + exterior angle = 180°.\n\nIn a **regular** polygon all the exterior angles are equal, so\n\nexterior angle = 360° ÷ n, and n = 360° ÷ exterior angle.\n\n**Worked example 2.** Each interior angle of a regular polygon is 156°. The exterior angle is 180° − 156° = 24°, so n = 360 ÷ 24 = 15. The interior angles add up to (15 − 2) × 180° = 2 340°.\n\n**Worked example 3.** Can a regular polygon have interior angles of 130°? The exterior angle would be 50°, and 360 ÷ 50 = 7.2. A polygon cannot have 7.2 sides, so the answer is no.\n\n## Parallelograms between the same parallels\n\nThe area of a parallelogram is base × perpendicular height. If two parallelograms stand on the **same base** and lie **between the same parallel lines**, they have the same base and the same height, so they are **equal in area**, however slanted they are.\n\nA triangle on the same base and between the same parallels has **half** the area of the parallelogram.\n\n**Worked example 4.** ABCD is a parallelogram of area 48 cm² and E is any point on DC. Triangle ABE has base AB and the same height, so its area is 24 cm²."
+      },
+      "cards": [
+        {
+          "front": "Sum of the interior angles of an n-sided polygon",
+          "back": "(n − 2) × 180°, or (2n − 4) right angles"
+        },
+        {
+          "front": "Sum of the interior angles of a hexagon",
+          "back": "720°"
+        },
+        {
+          "front": "Sum of the exterior angles of a polygon",
+          "back": "360°"
+        },
+        {
+          "front": "Exterior angle of a regular n-sided polygon",
+          "back": "360° ÷ n"
+        },
+        {
+          "front": "Interior + exterior angle at a vertex",
+          "back": "180°"
+        },
+        {
+          "front": "Regular polygon with exterior angle 24°",
+          "back": "360 ÷ 24 = 15 sides"
+        },
+        {
+          "front": "Parallelograms on the same base and between the same parallels",
+          "back": "Are equal in area."
+        },
+        {
+          "front": "Triangle on the same base as a parallelogram, between the same parallels",
+          "back": "Has half the area of the parallelogram."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the sum of the interior angles of a hexagon.",
+          "options": ["1 080°", "720°", "540°", "360°"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Each exterior angle of a regular polygon is 24°. How many sides does the polygon have?",
+          "options": ["15", "24", "12", "8"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The interior angles of a pentagon are x, 2x, 100°, 110° and 120°. Find x.",
+          "options": ["50°", "90°", "70°", "40°"],
+          "answer": "C"
+        },
+        {
+          "prompt": "ABCD is a parallelogram of area 48 cm². E is a point on DC. Find the area of triangle ABE.",
+          "options": ["48 cm²", "12 cm²", "96 cm²", "24 cm²"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Each interior angle of a regular polygon is 5 times its exterior angle. How many sides does the polygon have?",
+          "options": ["10", "12", "6", "36"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The interior angles of a pentagon are (x + 20)°, (x + 30)°, 2x°, 100° and 110°. Find x and hence the size of the largest angle.",
+          "markScheme": [
+            "Sum of interior angles of a pentagon = (5 − 2) × 180° = 540°",
+            "Forms the equation 4x + 260 = 540",
+            "x = 70",
+            "Largest angle = 2x = 140°"
+          ],
+          "modelAnswer": "The angles of a pentagon add up to (5 − 2) × 180° = 540°. So (x + 20) + (x + 30) + 2x + 100 + 110 = 540, which gives 4x + 260 = 540, 4x = 280 and x = 70. The angles are 90°, 100°, 140°, 100° and 110°, so the largest is 2x = 140°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A pentagon has (5 − 2) x 180 = 540°. x + 20 + x + 30 + 2x + 100 + 110 = 540, 4x + 260 = 540, 4x = 280, x = 70. The angles are 90, 100, 140, 100, 110 so the largest is 140°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(5 − 2) x 180 = 540°"
+                },
+                {
+                  "point": 1,
+                  "quote": "4x + 260 = 540"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 70"
+                },
+                {
+                  "point": 3,
+                  "quote": "the largest is 140°"
+                }
+              ],
+              "feedback": "All four marks. Listing all five angles let you check that they add up to 540° and pick the largest."
+            },
+            {
+              "tier": "full",
+              "text": "Sum = (2n − 4) right angles = 6 × 90° = 540°. Collecting terms: 4x + 260 = 540 so x = 70. The biggest angle is 2x = 140°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sum = (2n − 4) right angles = 6 × 90° = 540°"
+                },
+                {
+                  "point": 1,
+                  "quote": "4x + 260 = 540"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 70"
+                },
+                {
+                  "point": 3,
+                  "quote": "The biggest angle is 2x = 140°"
+                }
+              ],
+              "feedback": "Full marks. Using (2n − 4) right angles is just as good as (n − 2) × 180°."
+            },
+            {
+              "tier": "partial",
+              "text": "Sum of angles = 540°. 4x + 260 = 540, 4x = 300, x = 75. Largest = 2x = 150°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sum of angles = 540°"
+                },
+                {
+                  "point": 1,
+                  "quote": "4x + 260 = 540"
+                }
+              ],
+              "feedback": "Your angle sum and equation are right. 540 − 260 is 280, not 300, so x = 70 and the largest angle is 140°. Check by adding your five angles."
+            },
+            {
+              "tier": "partial",
+              "text": "(5 − 2) x 180 = 540. 4x + 260 = 540, x = 70. The largest angle is x + 30 = 100°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(5 − 2) x 180 = 540"
+                },
+                {
+                  "point": 1,
+                  "quote": "4x + 260 = 540"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 70"
+                }
+              ],
+              "feedback": "Your x is right. Now work out all five angles: 2x = 140° is bigger than x + 30 = 100°, so the largest angle is 140°."
+            },
+            {
+              "tier": "weak",
+              "text": "The angles of a shape add up to 360°. 4x + 260 = 360, x = 25. Largest angle = 110°.",
+              "meets": [],
+              "feedback": "Only a quadrilateral's angles add up to 360°. A pentagon makes three triangles, so its angles add up to 3 × 180° = 540°."
+            },
+            {
+              "tier": "weak",
+              "text": "Pentagon: (n − 2) x 180 = 540. The largest angle is 110° because that is the biggest number given.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(n − 2) x 180 = 540"
+                }
+              ],
+              "feedback": "Your angle sum is right. Add all five angles and set the total equal to 540 to find x; one of the angles with x in it turns out to be larger than 110°."
+            }
+          ]
+        },
+        {
+          "prompt": "Each interior angle of a regular polygon is 156°. (a) Find the size of each exterior angle. (b) Find the number of sides. (c) Find the sum of the interior angles. (d) Show that no regular polygon can have an interior angle of 130°.",
+          "markScheme": [
+            "(a) Exterior angle = 180° − 156° = 24°",
+            "(b) n = 360 ÷ 24 = 15",
+            "(c) Sum = (15 − 2) × 180° = 2 340°",
+            "For 130°: exterior angle = 50°, and 360 ÷ 50 = 7.2",
+            "(d) 7.2 is not a whole number, so no such regular polygon exists"
+          ],
+          "modelAnswer": "(a) Exterior angle = 180° − 156° = 24°. (b) The exterior angles add up to 360°, so n = 360 ÷ 24 = 15. (c) Sum of interior angles = (15 − 2) × 180° = 2 340°. (d) An interior angle of 130° would need an exterior angle of 50°, giving n = 360 ÷ 50 = 7.2. The number of sides must be a whole number, so no regular polygon has an interior angle of 130°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Exterior = 180 − 156 = 24°. (b) n = 360/24 = 15 sides. (c) Sum = (15 − 2) x 180 = 2340°. (d) If the interior angle were 130°, the exterior would be 50° and n = 360/50 = 7.2. A polygon cannot have 7.2 sides, so it is impossible.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Exterior = 180 − 156 = 24°"
+                },
+                {
+                  "point": 1,
+                  "quote": "n = 360/24 = 15 sides"
+                },
+                {
+                  "point": 2,
+                  "quote": "Sum = (15 − 2) x 180 = 2340°"
+                },
+                {
+                  "point": 3,
+                  "quote": "the exterior would be 50° and n = 360/50 = 7.2"
+                },
+                {
+                  "point": 4,
+                  "quote": "A polygon cannot have 7.2 sides, so it is impossible"
+                }
+              ],
+              "feedback": "All five marks. Your answer to (d) is a proper argument, ending with why 7.2 cannot happen."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 180° − 156° = 24°. (b) Number of sides = 360° ÷ 24° = 15. (c) 15 angles of 156° each: 15 × 156° = 2 340°. (d) 180° − 130° = 50° would be the exterior angle. 360 ÷ 50 = 7.2, which is not a whole number of sides, so there is no such polygon.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "180° − 156° = 24°"
+                },
+                {
+                  "point": 1,
+                  "quote": "Number of sides = 360° ÷ 24° = 15"
+                },
+                {
+                  "point": 2,
+                  "quote": "15 × 156° = 2 340°"
+                },
+                {
+                  "point": 3,
+                  "quote": "180° − 130° = 50° would be the exterior angle. 360 ÷ 50 = 7.2"
+                },
+                {
+                  "point": 4,
+                  "quote": "which is not a whole number of sides, so there is no such polygon"
+                }
+              ],
+              "feedback": "Full marks. Multiplying 15 by 156° is a quick check on (n − 2) × 180°, and it agrees."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 24°. (b) 15. (c) 15 × 180 = 2700°. (d) 360 ÷ 130 = 2.77, not a whole number, so it is impossible.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 24°"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) 15"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. The angle sum is (n − 2) × 180°, so (15 − 2) × 180° = 2 340°. In (d), divide 360 by the exterior angle, 50°, not by the interior angle."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 180 − 156 = 24°. (b) 360 ÷ 24 = 15. (c) (15 − 2) × 180 = 2340°. (d) Exterior angle = 50°, 360 ÷ 50 = 7.2, so the polygon has 7 sides.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "180 − 156 = 24°"
+                },
+                {
+                  "point": 1,
+                  "quote": "360 ÷ 24 = 15"
+                },
+                {
+                  "point": 2,
+                  "quote": "(15 − 2) × 180 = 2340°"
+                },
+                {
+                  "point": 3,
+                  "quote": "Exterior angle = 50°, 360 ÷ 50 = 7.2"
+                }
+              ],
+              "feedback": "Parts (a) to (c) are right and so is your working in (d). But 7.2 cannot be rounded: a regular 7-sided polygon has exterior angles of 51.4°, not 50°. The point is that no polygon fits, so it is impossible."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Exterior = 360 − 156 = 204°. (b) n = 360 ÷ 204 = 1.8. (c) 156 x 2 = 312°.",
+              "meets": [],
+              "feedback": "Interior and exterior angles at a vertex lie on a straight line, so they add to 180°, not 360°. The exterior angle is 24°, and then n = 360 ÷ 24."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 180 − 156 = 24°. (b) The polygon has 24 sides.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "180 − 156 = 24°"
+                }
+              ],
+              "feedback": "Your exterior angle is right. The exterior angles add up to 360°, so the number of sides is 360 ÷ 24 = 15, not 24."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
