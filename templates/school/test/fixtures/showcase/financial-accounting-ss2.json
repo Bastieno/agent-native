@@ -1,0 +1,2715 @@
+{
+  "subject": "Financial Accounting",
+  "yearGroup": "SS2",
+  "weeks": {
+    "1": {
+      "topic": "Manufacturing accounts: from raw materials to net profit",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the purpose of a manufacturing account;\n2. classify costs as direct materials, direct wages, direct expenses (such as royalties), factory overheads, and administration or distribution costs;\n3. prepare a manufacturing account to the cost of production, allowing for work in progress;\n4. find the cost per unit;\n5. carry the cost of production into the trading and profit and loss accounts and find the gross and net profit.\n\n## Materials\n\nPackaging and photographs from a bakery in Ibadan, cost cards, calculators, ruled paper.\n\n## Starter (5 minutes)\n\nA baker spends money on flour, on the oven operators, on electricity for the oven, on the shop counter and on delivery vans. Ask learners to sort the five costs into those of making bread and those of selling it.\n\n## Development\n\n1. Revise the layout: raw materials consumed, prime cost, factory cost, cost of production.\n2. Direct expenses: a royalty paid per bag produced is a direct expense and is part of prime cost.\n3. Work in progress: add the opening and take away the closing.\n4. Cost per unit = cost of production ÷ units produced.\n5. Final accounts: the cost of production replaces purchases in the trading account; finished goods stocks are adjusted; administration and distribution costs go to the profit and loss account.\n6. Common mistakes: counting an overhead in prime cost, reversing the WIP adjustment, putting office costs in the factory.\n\n## Class activity\n\nPairs get a set of cost cards for Sunrise Bakery and build the whole account on a large sheet, then check the totals against the board.\n\n## Evaluation\n\n1. Name two items of prime cost and two overheads.\n2. What is the cost per bag if 2 800 bags cost ₦700 000 to make?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Costing the loaf: the manufacturing account of Sunrise Bakery",
+        "content": "# Manufacturing accounts: from raw materials to net profit\n\nA manufacturer must know what it costs to make its goods. The **manufacturing account** collects the costs of production, and the result, the **cost of production**, takes the place of purchases in the trading account.\n\n## Classifying costs\n\n| Class | Examples |\n| --- | --- |\n| Direct materials | Flour, sugar |\n| Direct wages | Wages of bakers |\n| Direct expenses | Royalty paid for each bag made |\n| Factory overheads | Supervisor's salary, factory electricity, plant depreciation, factory insurance |\n| Administration costs | Office salaries, stationery |\n| Distribution costs | Delivery van running costs, advertising |\n\nDirect materials, direct wages and direct expenses make up **prime cost**.\n\n## Worked example: Sunrise Bakery, Ibadan\n\nRaw materials: opening ₦45 000; purchases ₦380 000; returns outwards ₦12 000; closing ₦52 000. Direct wages ₦190 000. Royalties ₦18 000. Overheads: supervisor ₦42 000, electricity ₦36 000, plant depreciation ₦28 000, insurance ₦14 000. Work in progress: opening ₦30 000, closing ₦19 000.\n\n- Raw materials consumed = 45 000 + 380 000 − 12 000 − 52 000 = **₦361 000**\n- Prime cost = 361 000 + 190 000 + 18 000 = **₦569 000**\n- Factory overheads = 42 000 + 36 000 + 28 000 + 14 000 = ₦120 000\n- Factory cost = 569 000 + 120 000 = ₦689 000\n- Cost of production = 689 000 + 30 000 − 19 000 = **₦700 000**\n\nIf 2 800 bags were produced, the cost per bag is 700 000 ÷ 2 800 = **₦250**.\n\n## Final accounts\n\nSales ₦1 150 000. Finished goods: opening ₦70 000, closing ₦85 000.\n\nCost of goods sold = 70 000 + 700 000 − 85 000 = ₦685 000.\nGross profit = 1 150 000 − 685 000 = **₦465 000**.\n\nAdministration costs ₦80 000 and distribution costs ₦55 000 are deducted in the profit and loss account: net profit = 465 000 − 135 000 = **₦330 000**."
+      },
+      "cards": [
+        {
+          "front": "Royalty paid per unit produced",
+          "back": "A direct expense; part of prime cost."
+        },
+        {
+          "front": "Prime cost",
+          "back": "Direct materials + direct wages + direct expenses."
+        },
+        {
+          "front": "Factory cost",
+          "back": "Prime cost + factory overheads."
+        },
+        {
+          "front": "Cost of production",
+          "back": "Factory cost + opening WIP − closing WIP."
+        },
+        {
+          "front": "Cost per unit",
+          "back": "Cost of production ÷ number of units produced."
+        },
+        {
+          "front": "Where is depreciation of delivery vans charged?",
+          "back": "In the profit and loss account, as a distribution cost."
+        },
+        {
+          "front": "Office salaries in a manufacturing business",
+          "back": "Administration costs, in the profit and loss account."
+        },
+        {
+          "front": "Opening finished goods in a manufacturer's trading account",
+          "back": "Added to the cost of production, then closing finished goods is deducted."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A bakery pays the owner of a recipe ₦6 for every bag produced. How is this royalty treated in the accounts?",
+          "options": [
+            "A factory overhead",
+            "A direct expense, part of prime cost",
+            "A distribution cost",
+            "An administration cost"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A bakery's raw materials stock at the start was ₦45 000, purchases ₦380 000, returns outwards ₦12 000 and closing stock ₦52 000. What is the cost of raw materials consumed?",
+          "options": [
+            "₦373 000",
+            "₦485 000",
+            "₦361 000",
+            "₦337 000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The cost of production of a bakery is ₦700 000 and 2 800 bags were produced. What is the cost of one bag?",
+          "options": [
+            "₦250",
+            "₦280",
+            "₦2 500",
+            "₦25"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Depreciation of a bakery's delivery van is charged in the",
+          "options": [
+            "manufacturing account, as a factory overhead",
+            "trading account, with purchases",
+            "manufacturing account, as part of prime cost",
+            "profit and loss account, as a distribution cost"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Factory cost is ₦689 000. Opening work in progress is ₦30 000 and closing work in progress is ₦19 000. What is the cost of production?",
+          "options": [
+            "₦678 000",
+            "₦700 000",
+            "₦738 000",
+            "₦640 000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Sunrise Bakery's figures for the year: raw materials opening stock ₦45 000, purchases ₦380 000, returns outwards ₦12 000, closing stock ₦52 000; direct wages ₦190 000; royalties ₦18 000; factory supervisor's salary ₦42 000; factory electricity ₦36 000; plant depreciation ₦28 000; factory insurance ₦14 000; work in progress opening ₦30 000, closing ₦19 000. Prepare the manufacturing account, showing the cost of raw materials consumed, prime cost, factory cost and cost of production.",
+          "markScheme": [
+            "Raw materials consumed: 45 000 + 380 000 − 12 000 − 52 000 = ₦361 000",
+            "Prime cost: 361 000 + 190 000 + 18 000 (royalties) = ₦569 000",
+            "Factory cost: 569 000 + overheads 120 000 = ₦689 000",
+            "Cost of production: 689 000 + 30 000 − 19 000 = ₦700 000"
+          ],
+          "modelAnswer": "Raw materials consumed = 45 000 + 380 000 − 12 000 − 52 000 = ₦361 000. Prime cost = 361 000 + direct wages 190 000 + royalties 18 000 = ₦569 000. Factory overheads = 42 000 + 36 000 + 28 000 + 14 000 = 120 000, so factory cost = ₦689 000. Cost of production = 689 000 + opening WIP 30 000 − closing WIP 19 000 = ₦700 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Manufacturing account for the year. Raw materials: 45 000 + 380 000 − 12 000 − 52 000 = 361 000. Prime cost: 361 000 + wages 190 000 + royalties 18 000 = 569 000. Overheads: 42 000 + 36 000 + 28 000 + 14 000 = 120 000. Factory cost = 569 000 + 120 000 = 689 000. Cost of production = 689 000 + 30 000 − 19 000 = ₦700 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Raw materials: 45 000 + 380 000 − 12 000 − 52 000 = 361 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Prime cost: 361 000 + wages 190 000 + royalties 18 000 = 569 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Factory cost = 569 000 + 120 000 = 689 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Cost of production = 689 000 + 30 000 − 19 000 = ₦700 000."
+                }
+              ],
+              "feedback": "Full marks. You treated the royalty as a direct expense in prime cost, which many learners put among the overheads."
+            },
+            {
+              "tier": "full",
+              "text": "The materials used are 45 000 + (380 000 − 12 000) − 52 000 = ₦361 000. The royalty is paid because of the number of bags made, so it joins the direct wages in the prime cost: 361 000 + 190 000 + 18 000 = ₦569 000. The four overheads come to 120 000, so factory cost is ₦689 000. Opening WIP 30 000 is added and closing 19 000 deducted, giving ₦700 000 cost of production.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The materials used are 45 000 + (380 000 − 12 000) − 52 000 = ₦361 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "The royalty is paid because of the number of bags made, so it joins the direct wages in the prime cost: 361 000 + 190 000 + 18 000 = ₦569 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "The four overheads come to 120 000, so factory cost is ₦689 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Opening WIP 30 000 is added and closing 19 000 deducted, giving ₦700 000 cost of production."
+                }
+              ],
+              "feedback": "Four marks, and your reason for the royalty shows you understand the classification."
+            },
+            {
+              "tier": "partial",
+              "text": "Raw materials consumed = 45 000 + 380 000 − 12 000 − 52 000 = 361 000. Prime cost = 361 000 + 190 000 = 551 000. Factory cost = 551 000 + 18 000 + 120 000 = 689 000. Cost of production = 689 000 + 30 000 − 19 000 = 700 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Raw materials consumed = 45 000 + 380 000 − 12 000 − 52 000 = 361 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Factory cost = 551 000 + 18 000 + 120 000 = 689 000."
+                }
+              ],
+              "feedback": "The royalty is a direct expense, so it belongs in prime cost, which should be 569 000. Your factory cost is right, but the prime cost line is missing the royalty."
+            },
+            {
+              "tier": "partial",
+              "text": "45 000 + 380 000 − 12 000 − 52 000 = 361 000. 361 000 + 190 000 + 18 000 = 569 000 prime cost. Factory cost = 569 000 + 120 000 = 689 000. Cost of production = 689 000 − 30 000 + 19 000 = 678 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "45 000 + 380 000 − 12 000 − 52 000 = 361 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "361 000 + 190 000 + 18 000 = 569 000 prime cost."
+                }
+              ],
+              "feedback": "The first two parts are correct. Opening work in progress is added and closing work in progress is deducted: 689 000 + 30 000 − 19 000 = 700 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Raw materials = 380 000 − 12 000 = 368 000. Prime cost = 368 000 + 190 000 = 558 000. Factory cost = 558 000 + 120 000 = 678 000. Cost of production = 678 000.",
+              "meets": [],
+              "feedback": "You left out the opening and closing stock of raw materials, the royalty, and the WIP adjustment. Raw materials consumed is 361 000, prime cost 569 000 and cost of production 700 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Raw materials consumed = 45 000 + 380 000 − 12 000 − 52 000 = 361 000. Then all the other costs are added: 190 000 + 18 000 + 42 000 + 36 000 + 28 000 + 14 000 = 328 000, so the account comes to 689 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Raw materials consumed = 45 000 + 380 000 − 12 000 − 52 000 = 361 000."
+                }
+              ],
+              "feedback": "You added everything in one go, so the prime cost and factory cost are not shown, and the WIP adjustment is missing. Show prime cost 569 000, then factory cost 689 000, then cost of production 700 000."
+            }
+          ]
+        },
+        {
+          "prompt": "Sunrise Bakery's cost of production for the year was ₦700 000 (2 800 bags). Sales were ₦1 150 000. Finished goods stock was ₦70 000 at the start and ₦85 000 at the end. Administration costs were ₦80 000 and distribution costs ₦55 000. Calculate (a) the cost of goods sold, (b) the gross profit, (c) the net profit, (d) the cost of production of one bag.",
+          "markScheme": [
+            "Cost of goods sold: 70 000 + 700 000 − 85 000 = ₦685 000",
+            "Gross profit: 1 150 000 − 685 000 = ₦465 000",
+            "Net profit: 465 000 − (80 000 + 55 000) = ₦330 000",
+            "Cost of one bag: 700 000 ÷ 2 800 = ₦250"
+          ],
+          "modelAnswer": "(a) Cost of goods sold = opening finished goods 70 000 + cost of production 700 000 − closing finished goods 85 000 = ₦685 000. (b) Gross profit = 1 150 000 − 685 000 = ₦465 000. (c) Administration and distribution costs total 135 000, so the net profit is 465 000 − 135 000 = ₦330 000. (d) Cost per bag = 700 000 ÷ 2 800 = ₦250.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 70 000 + 700 000 − 85 000 = ₦685 000. (b) 1 150 000 − 685 000 = ₦465 000. (c) Expenses 80 000 + 55 000 = 135 000, so net profit = 465 000 − 135 000 = ₦330 000. (d) 700 000 ÷ 2 800 = ₦250 a bag.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "70 000 + 700 000 − 85 000 = ₦685 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "1 150 000 − 685 000 = ₦465 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Expenses 80 000 + 55 000 = 135 000, so net profit = 465 000 − 135 000 = ₦330 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "700 000 ÷ 2 800 = ₦250 a bag."
+                }
+              ],
+              "feedback": "Full marks. The cost of production replaced purchases in your trading account, as it should."
+            },
+            {
+              "tier": "full",
+              "text": "The goods available to sell cost 70 000 + 700 000 = 770 000. With 85 000 of finished bread left, the cost of goods sold is ₦685 000. Gross profit is the sales 1 150 000 less 685 000, which is ₦465 000. After the administration and distribution costs of 135 000 the net profit is ₦330 000. Each bag costs 700 000/2 800 = ₦250.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "With 85 000 of finished bread left, the cost of goods sold is ₦685 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Gross profit is the sales 1 150 000 less 685 000, which is ₦465 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "After the administration and distribution costs of 135 000 the net profit is ₦330 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Each bag costs 700 000/2 800 = ₦250."
+                }
+              ],
+              "feedback": "Four marks. Adding the opening stock to the cost of production before taking the closing stock is the clearest way to see it."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 70 000 + 700 000 + 85 000 = 855 000. (b) 1 150 000 − 855 000 = 295 000. (c) Net profit = 295 000 − 135 000 = 160 000. (d) 700 000 ÷ 2 800 = 250.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "(d) 700 000 ÷ 2 800 = 250."
+                }
+              ],
+              "feedback": "Closing finished goods are deducted, not added: 70 000 + 700 000 − 85 000 = 685 000. That makes the gross profit 465 000 and the net profit 330 000. Part (d) is correct."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Cost of goods sold = 70 000 + 700 000 − 85 000 = 685 000. (b) Gross profit = 1 150 000 − 685 000 = 465 000. (c) Net profit = 465 000 − 80 000 = 385 000. (d) 700 000 ÷ 2 800 = 25.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cost of goods sold = 70 000 + 700 000 − 85 000 = 685 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Gross profit = 1 150 000 − 685 000 = 465 000."
+                }
+              ],
+              "feedback": "Two parts are right. Net profit needs both the administration costs and the distribution costs deducted, giving 330 000. Check the division in (d): it is ₦250, not ₦25.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 700 000. (b) 1 150 000 − 700 000 = 450 000. (c) 450 000 − 80 000 − 55 000 = 315 000. (d) 2 800 ÷ 700 000 = 0.004.",
+              "meets": [],
+              "feedback": "You used the cost of production as the cost of goods sold, and left out the finished goods stocks. The cost per bag is the cost divided by the number of bags, 700 000 ÷ 2 800 = 250."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 70 000 + 85 000 = 155 000. (b) 1 150 000 + 155 000 = 1 305 000. (c) 1 305 000 − 135 000 = 1 170 000. (d) ₦250.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "₦250"
+                }
+              ],
+              "feedback": "Cost of goods sold uses the cost of production and the two finished goods stocks. Gross profit is a profit on sales, so it is sales less 685 000, which is 465 000 and the net profit is 330 000."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Control accounts with contra entries, and reconciling to the ledger",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the uses of control accounts and self-balancing ledgers;\n2. prepare sales ledger and purchases ledger control accounts, including contra entries and interest charged;\n3. name the book from which each total comes;\n4. reconcile the control account with the list of personal balances and correct the list;\n5. say how a control account helps to detect fraud and errors.\n\n## Materials\n\nA textile wholesaler's day book totals from Balogun market (prepared by the teacher), ruled T-account sheets, calculators.\n\n## Starter (5 minutes)\n\nAsk: Alhaja Kudi buys cloth from Mr Yusuf and also sells cloth to him. At the end of the month she and Mr Yusuf agree to set off what each owes. What happens to the two accounts? Introduce the contra.\n\n## Development\n\n1. Revise the layout of the two control accounts and the source of each total: sales day book, purchases day book, returns books, cash book, journal.\n2. Contra entries: debit the purchases ledger control account and credit the sales ledger control account for the same amount.\n3. Interest charged on an overdue debtor is debited; bad debts written off are credited.\n4. Reconciliation: compare the closing balance with the list of balances. Look for omitted entries, entries on the wrong side and additions.\n5. Uses: locating errors by section of the ledger, deterring fraud by dividing duties, and quick figures for debtors and creditors.\n\n## Class activity\n\nEach group prepares a control account and finds why its closing balance differs from a list of debtors' balances given by the teacher.\n\n## Evaluation\n\n1. A contra of ₦9 000 is made. Which side of each control account?\n2. Is the control account or the personal ledger corrected when a difference is found?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Control accounts: contras, interest and the search for the difference",
+        "content": "# Control accounts with contra entries\n\nA **control account** gives the total of many personal accounts in one place. The totals come from the books of original entry:\n\n- credit sales from the **sales day book**;\n- credit purchases from the **purchases day book**;\n- returns from the **returns books**;\n- cash, cheques and discounts from the **cash book**;\n- contras, interest and bad debts from the **journal**.\n\n## Contra entries\n\nIf a customer is also a supplier, the two debts can be set off. The same amount is credited in the sales ledger control account and debited in the purchases ledger control account.\n\n## Worked example: Alhaja Kudi, Balogun market\n\n**Sales ledger control account**\n\n| Debit | ₦ | Credit | ₦ |\n| --- | --- | --- | --- |\n| Balance b/d | 240 000 | Cheques received | 620 000 |\n| Credit sales | 785 000 | Discount allowed | 14 000 |\n| Interest charged | 3 000 | Sales returns | 31 000 |\n| | | Bad debts written off | 11 000 |\n| | | Contra (purchases ledger) | 9 000 |\n| | | Balance c/d | 343 000 |\n| | 1 028 000 | | 1 028 000 |\n\n**Purchases ledger control account**\n\n| Debit | ₦ | Credit | ₦ |\n| --- | --- | --- | --- |\n| Payments | 455 000 | Balance b/d | 160 000 |\n| Discount received | 9 000 | Credit purchases | 520 000 |\n| Returns outwards | 24 000 | | |\n| Contra (sales ledger) | 9 000 | | |\n| Balance c/d | 183 000 | | |\n| | 680 000 | | 680 000 |\n\n## Reconciling to the ledger\n\nThe list of balances taken from the personal accounts should equal the closing control balance. If it does not, the control account is usually right, because it is built from totals, and the error is in the personal ledger.\n\n**Example.** The creditors' control balance is ₦183 000 but the list of balances adds up to ₦186 000. A payment of ₦3 000 was never posted to the supplier's personal account. Posting it (a debit) reduces the list to ₦183 000.\n\n## Why keep control accounts?\n\n- Errors are traced to one section of the ledger.\n- Fraud is harder, because the person who keeps the control account is not the one who keeps the personal accounts.\n- Totals for debtors and creditors are ready at any time for the balance sheet."
+      },
+      "cards": [
+        {
+          "front": "Contra entry in the sales ledger control account",
+          "back": "Credit side: the amount set off against what the debtor, who is also a supplier, is owed."
+        },
+        {
+          "front": "Contra entry in the purchases ledger control account",
+          "back": "Debit side: the same amount."
+        },
+        {
+          "front": "Interest charged to a debtor",
+          "back": "Debit side of the sales ledger control account."
+        },
+        {
+          "front": "Source of credit sales total",
+          "back": "The sales day book."
+        },
+        {
+          "front": "Source of cash received from debtors",
+          "back": "The cash book."
+        },
+        {
+          "front": "If the control balance and the list of balances differ",
+          "back": "Look first for the error in the personal ledger."
+        },
+        {
+          "front": "Self-balancing ledger",
+          "back": "A ledger with its own control account, so that it can prove its own arithmetic."
+        },
+        {
+          "front": "Bad debts written off",
+          "back": "Credit side of the sales ledger control account."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Mr Yusuf owes Alhaja Kudi ₦9 000 for cloth, and she owes him ₦9 000 for supplies. The two debts are set off. In the sales ledger control account the contra entry is",
+          "options": [
+            "a debit of ₦9 000",
+            "a credit of ₦9 000 in the purchases ledger control account only",
+            "a credit of ₦9 000",
+            "not entered, because no cash moved"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Interest of ₦3 000 is charged to a customer whose account is overdue. In the sales ledger control account it is entered",
+          "options": [
+            "on the credit side",
+            "on the debit side",
+            "on the debit side of the purchases ledger control account",
+            "on neither, because it is not a credit sale"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The debtors of a shop were ₦180 000 at the start of the month. In the month, credit sales were ₦520 000, returns ₦20 000, cash received ₦400 000, discount allowed ₦8 000 and bad debts written off ₦12 000. What is the closing balance of the sales ledger control account?",
+          "options": [
+            "₦280 000",
+            "₦240 000",
+            "₦300 000",
+            "₦260 000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The total of credit purchases entered in a purchases ledger control account is taken from the",
+          "options": [
+            "cash book",
+            "journal",
+            "purchases day book",
+            "sales day book"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "An invoice for ₦5 000 was entered in the sales day book but not posted to the debtor's personal account. When the list of debtors' balances is compared with the control account,",
+          "options": [
+            "the list is ₦5 000 less than the control account",
+            "the list is ₦5 000 more than the control account",
+            "the list agrees with the control account",
+            "the control account is ₦5 000 more on the credit side"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Alhaja Kudi's debtors at the start of the month were ₦240 000. During the month: credit sales ₦785 000; cheques received ₦620 000; discount allowed ₦14 000; sales returns ₦31 000; bad debts written off ₦11 000; interest charged to an overdue customer ₦3 000; ₦9 000 set off against amounts owed to a debtor who is also a supplier (contra). Prepare the sales ledger control account and find the closing balance.",
+          "markScheme": [
+            "Debit side correct: opening 240 000, credit sales 785 000 and interest 3 000, a total of ₦1 028 000",
+            "Credit side items correct: cheques 620 000, discount 14 000, returns 31 000, bad debts 11 000",
+            "Contra of ₦9 000 placed on the credit side",
+            "Closing balance of ₦343 000, with both sides totalling ₦1 028 000"
+          ],
+          "modelAnswer": "Debit side: balance b/d 240 000, credit sales 785 000, interest charged 3 000, total 1 028 000. Credit side: cheques 620 000, discount allowed 14 000, sales returns 31 000, bad debts 11 000, contra 9 000, a total of 685 000. The closing balance is 1 028 000 − 685 000 = ₦343 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Sales ledger control account. Dr: balance b/d 240 000, credit sales 785 000, interest 3 000 = 1 028 000. Cr: cheques 620 000, discount 14 000, returns 31 000, bad debts 11 000, contra 9 000, balance c/d 343 000, total 1 028 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Dr: balance b/d 240 000, credit sales 785 000, interest 3 000 = 1 028 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Cr: cheques 620 000, discount 14 000, returns 31 000, bad debts 11 000,"
+                },
+                {
+                  "point": 2,
+                  "quote": "contra 9 000,"
+                },
+                {
+                  "point": 3,
+                  "quote": "balance c/d 343 000, total 1 028 000."
+                }
+              ],
+              "feedback": "Full marks. The interest on the debit side and the contra on the credit side are the two items most learners get wrong."
+            },
+            {
+              "tier": "full",
+              "text": "On the debit side the debtors owe more: 240 000 + 785 000 + 3 000 interest = ₦1 028 000. On the credit side they owe less: cheques 620 000, discount allowed 14 000, returns 31 000, bad debts 11 000. The contra of 9 000 also reduces what the debtor owes, so it is a credit. The balance carried down is 1 028 000 − 685 000 = 343 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "On the debit side the debtors owe more: 240 000 + 785 000 + 3 000 interest = ₦1 028 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "On the credit side they owe less: cheques 620 000, discount allowed 14 000, returns 31 000, bad debts 11 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "The contra of 9 000 also reduces what the debtor owes, so it is a credit."
+                },
+                {
+                  "point": 3,
+                  "quote": "The balance carried down is 1 028 000 − 685 000 = 343 000."
+                }
+              ],
+              "feedback": "Four marks. Your reason for each side, 'owe more' or 'owe less', is a good test to use in the exam."
+            },
+            {
+              "tier": "partial",
+              "text": "Dr: balance b/d 240 000, sales 785 000, interest 3 000, total 1 028 000. Cr: cheques 620 000, discount 14 000, returns 31 000, bad debts 11 000. Contra 9 000 on the debit side. Balance c/d 361 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Dr: balance b/d 240 000, sales 785 000, interest 3 000, total 1 028 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Cr: cheques 620 000, discount 14 000, returns 31 000, bad debts 11 000."
+                }
+              ],
+              "feedback": "The contra must be on the credit side, since the debtor now owes 9 000 less. With it credited, the closing balance is 343 000 and both sides total 1 028 000."
+            },
+            {
+              "tier": "partial",
+              "text": "240 000 + 785 000 + 3 000 = 1 028 000 on the debit side. Credit: 620 000 + 14 000 + 31 000 + 11 000 + 9 000 = 685 000. Balance = 1 028 000 − 685 000 = 363 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "240 000 + 785 000 + 3 000 = 1 028 000 on the debit side."
+                }
+              ],
+              "feedback": "The items are in the right places, but the subtraction is wrong: 1 028 000 − 685 000 = 343 000. Always check that both sides add to the same total, 1 028 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Debit: cheques 620 000, discount 14 000, returns 31 000, bad debts 11 000. Credit: balance b/d 240 000, sales 785 000. Interest and contra are not needed. Balance c/d 343 000.",
+              "meets": [],
+              "feedback": "You have the sides the wrong way, which is the pattern of the creditors' control account. Interest and the contra are needed here: the interest is a debit and the contra is a credit."
+            },
+            {
+              "tier": "weak",
+              "text": "Dr balance b/d 240 000, credit sales 785 000, interest 3 000. The credit is cash sales 620 000. The balance is 408 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Dr balance b/d 240 000, credit sales 785 000, interest 3 000."
+                }
+              ],
+              "feedback": "The 620 000 is cheques from debtors, not cash sales, and the discount, returns, bad debts and contra are missing from the credit side. These bring the closing balance to 343 000."
+            }
+          ]
+        },
+        {
+          "prompt": "A trader's purchases ledger control account for the month shows: creditors at the start ₦160 000; credit purchases ₦520 000; payments to suppliers ₦455 000; discount received ₦9 000; returns outwards ₦24 000; contra with the sales ledger ₦9 000. (a) Find the closing balance. (b) The list of balances taken from the creditors' personal accounts adds up to ₦186 000. A payment of ₦3 000 was never posted to a supplier's account. Show how this explains the difference.",
+          "markScheme": [
+            "Credit side: opening creditors 160 000 + credit purchases 520 000 = ₦680 000",
+            "Debit items: payments 455 000, discount 9 000, returns 24 000 and contra 9 000, a total of ₦497 000",
+            "Closing balance: 680 000 − 497 000 = ₦183 000",
+            "The unposted payment of ₦3 000 must be debited to the supplier's account, reducing the list from 186 000 to ₦183 000 so that it agrees"
+          ],
+          "modelAnswer": "(a) Credit side: 160 000 + 520 000 = 680 000. Debit side: payments 455 000 + discount 9 000 + returns 24 000 + contra 9 000 = 497 000. Closing balance = 680 000 − 497 000 = ₦183 000. (b) The list of balances is ₦186 000, which is ₦3 000 too much. The payment of ₦3 000 was not debited to the supplier's account, so his balance is overstated. Debiting it reduces the list to ₦183 000, which agrees with the control account.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 160 000 + 520 000 = 680 000. Payments 455 000 + discount 9 000 + returns 24 000 + contra 9 000 = 497 000. Closing balance = 680 000 − 497 000 = ₦183 000. (b) The list is 186 000, which is 3 000 more than the control account. The payment of 3 000 should be debited to the supplier's account; then the list is 183 000 and agrees.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "160 000 + 520 000 = 680 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Payments 455 000 + discount 9 000 + returns 24 000 + contra 9 000 = 497 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Closing balance = 680 000 − 497 000 = ₦183 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The list is 186 000, which is 3 000 more than the control account. The payment of 3 000 should be debited to the supplier's account; then the list is 183 000 and agrees."
+                }
+              ],
+              "feedback": "Full marks. You corrected the personal ledger and left the control account alone, which is right."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The credit side is opening creditors 160 000 and purchases on credit 520 000, which is ₦680 000. Reductions are 455 000, 9 000, 24 000 and the contra 9 000, a total of ₦497 000. So the creditors at the end are ₦183 000. (b) Because the 3 000 payment was not posted, that supplier's account still shows too much owing, so the list is 186 000. After debiting his account with 3 000 the list becomes 183 000, equal to the control account.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The credit side is opening creditors 160 000 and purchases on credit 520 000, which is ₦680 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Reductions are 455 000, 9 000, 24 000 and the contra 9 000, a total of ₦497 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "So the creditors at the end are ₦183 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Because the 3 000 payment was not posted, that supplier's account still shows too much owing, so the list is 186 000. After debiting his account with 3 000 the list becomes 183 000, equal to the control account."
+                }
+              ],
+              "feedback": "Four marks. Explaining why the supplier's balance was too high shows you understand the error, not just the arithmetic."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Opening 160 000 + purchases 520 000 = 680 000. Then 680 000 − 455 000 − 9 000 − 24 000 = 192 000. (b) The difference is 192 000 − 186 000 = 6 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Opening 160 000 + purchases 520 000 = 680 000."
+                }
+              ],
+              "feedback": "You left out the contra of 9 000 in the reductions, so your closing balance is 192 000 instead of 183 000. The difference with the list would then be only 3 000, matching the unposted payment."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Closing balance is ₦183 000. (b) The list of 186 000 is more than 183 000 by 3 000. The control account should be increased by 3 000 to agree with the list.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Closing balance is ₦183 000."
+                }
+              ],
+              "feedback": "The closing balance is right. The control account is built from totals and the error is in the personal ledger, so the payment of 3 000 should be debited to the supplier's account to bring the list down to 183 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 455 000 + 9 000 + 24 000 + 9 000 = 497 000. (b) 497 000 − 186 000 = 311 000.",
+              "meets": [],
+              "feedback": "The 497 000 is only what reduces the creditors. You must put it against the opening creditors and purchases, 680 000, to get a closing balance of 183 000, and then compare that with 186 000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 160 000 + 520 000 + 455 000 + 9 000 + 24 000 + 9 000 = 1 177 000. (b) The difference of 3 000 is a mistake.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "(b) The difference of 3 000 is a mistake."
+                }
+              ],
+              "feedback": "Payments, discount, returns and contra reduce what is owed, so they are taken away, not added. The closing balance is 183 000. The 3 000 is a payment not posted to the supplier's account."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Incomplete records: total accounts, mark-up and margin",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the meaning and limitations of single entry and incomplete records;\n2. prepare a statement of affairs and find profit from the change in capital;\n3. prepare total accounts for debtors, creditors and cash and bank to find missing figures;\n4. prepare a trading and profit and loss account from incomplete records;\n5. use mark-up and margin to find missing sales, cost of sales or gross profit.\n\n## Materials\n\nA summary of receipts and payments from a provision store in Ogbomosho (prepared by the teacher), calculators.\n\n## Starter (5 minutes)\n\nAsk: a shop owner kept only a bank statement and her list of debtors. How can she still find sales for the year? Lead to the total accounts.\n\n## Development\n\n1. Revise the statement of affairs and the profit formula.\n2. Total debtors account: opening + credit sales − cash received = closing. Make credit sales the balancing figure.\n3. Total creditors account gives credit purchases. Add cash purchases if there are any.\n4. Cash and bank summary: opening + receipts − payments = closing. If a figure is missing it is the balancing figure.\n5. Final accounts: sales, purchases, cost of goods sold, gross profit, expenses adjusted for depreciation, net profit.\n6. Cross-check: the profit from the final accounts should equal the profit from the change in capital. If the cost of goods sold is missing, find it from the mark-up or margin.\n\n## Class activity\n\nGroups work through Mrs Folake's year, once by the change-in-capital method and once by the final accounts, and compare profits.\n\n## Evaluation\n\n1. Cost of sales is ₦350 000 and the mark-up is 40%. What are the sales?\n2. Why can the two profit methods be used as a check on each other?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Mrs Folake's year: two ways to find the profit",
+        "content": "# Incomplete records: total accounts, mark-up and margin\n\nMany small traders keep no ledger. Records may consist of a cash and bank statement, a list of debtors and creditors, and paid invoices. Such **incomplete records** (single entry) have limitations: there is no trial balance, so errors cannot be detected; profit cannot be proved; and expenses are not analysed.\n\n## Method 1: profit from the change in capital\n\nProfit = Closing capital − Opening capital + Drawings − Capital introduced\n\n## Method 2: final accounts from total accounts\n\n**Worked example: Mrs Folake Adeyemi's provision store, Ogbomosho.**\n\nAt 1 January: cash and bank ₦165 000, stock ₦210 000, debtors ₦60 000, fittings ₦200 000, creditors ₦75 000.\nCapital = assets less liabilities: 165 000 + 210 000 + 60 000 + 200 000 = 635 000, less 75 000 = **₦560 000**.\n\nFor the year: receipts from debtors ₦480 000, cash sales ₦300 000; payments to creditors ₦520 000, rent ₦60 000, wages ₦84 000, drawings ₦72 000.\n\nAt 31 December: stock ₦230 000, debtors ₦70 000, creditors ₦90 000; fittings are depreciated by 10% of cost (₦20 000).\n\n**Cash and bank:** 165 000 + 780 000 − 736 000 = ₦209 000.\n\n**Credit sales** = 70 000 + 480 000 − 60 000 = ₦490 000. **Total sales** = 490 000 + 300 000 = **₦790 000**.\n\n**Purchases** = 90 000 + 520 000 − 75 000 = **₦535 000**.\n\n**Cost of goods sold** = 210 000 + 535 000 − 230 000 = ₦515 000.\n**Gross profit** = 790 000 − 515 000 = **₦275 000**.\n**Expenses** = rent 60 000 + wages 84 000 + depreciation 20 000 = ₦164 000.\n**Net profit** = 275 000 − 164 000 = **₦111 000**.\n\n**Check with Method 1.** Closing assets: 209 000 + 230 000 + 70 000 + 180 000 = 689 000, less creditors 90 000 = ₦599 000 capital. Profit = 599 000 − 560 000 + 72 000 = **₦111 000**. The methods agree.\n\n## Mark-up and margin\n\nMark-up is profit as a percentage of cost; margin is profit as a percentage of sales. If cost of sales is ₦350 000 and the mark-up is 40%, the profit is ₦140 000 and sales are ₦490 000. If sales are ₦480 000 with a margin of 25%, the cost of sales is 75% of sales, ₦360 000."
+      },
+      "cards": [
+        {
+          "front": "Incomplete records",
+          "back": "Records which do not form a full double-entry system, so a trial balance cannot be taken."
+        },
+        {
+          "front": "Profit from capital",
+          "back": "Closing capital − opening capital + drawings − capital introduced."
+        },
+        {
+          "front": "Credit sales from debtors",
+          "back": "Closing debtors + cash received from debtors − opening debtors."
+        },
+        {
+          "front": "Credit purchases from creditors",
+          "back": "Closing creditors + payments to creditors − opening creditors."
+        },
+        {
+          "front": "Cash and bank total account",
+          "back": "Opening balance + receipts − payments = closing balance."
+        },
+        {
+          "front": "Mark-up",
+          "back": "Profit as a percentage of cost."
+        },
+        {
+          "front": "Margin",
+          "back": "Profit as a percentage of sales."
+        },
+        {
+          "front": "Statement of affairs",
+          "back": "A list of assets and liabilities at a date; the balancing figure is capital."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A shop's cost of sales for the year was ₦350 000 and it adds a mark-up of 40% on cost. What were its sales?",
+          "options": [
+            "₦140 000",
+            "₦390 000",
+            "₦490 000",
+            "₦590 000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A trader's sales were ₦480 000 and her gross margin was 25%. What was the cost of sales?",
+          "options": [
+            "₦360 000",
+            "₦120 000",
+            "₦600 000",
+            "₦384 000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A shop's creditors were ₦40 000 at the start and ₦55 000 at the end of the year. It paid ₦320 000 to creditors. What were the credit purchases?",
+          "options": [
+            "₦305 000",
+            "₦335 000",
+            "₦375 000",
+            "₦320 000"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A statement of affairs differs from a balance sheet because it",
+          "options": [
+            "is a ledger account of the owner",
+            "is prepared from a trial balance",
+            "gives the profit and loss for the year",
+            "is prepared from incomplete records and shows the capital as a balancing figure"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trader started the year with cash and bank of ₦40 000. Receipts were ₦310 000 and payments ₦285 000. What was the cash and bank balance at the end?",
+          "options": [
+            "₦35 000",
+            "₦65 000",
+            "₦635 000",
+            "₦15 000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Mrs Folake Adeyemi did not keep a ledger. At 1 January her cash and bank were ₦165 000, stock ₦210 000, debtors ₦60 000, fittings ₦200 000 and creditors ₦75 000. At 31 December her cash and bank were ₦209 000, stock ₦230 000, debtors ₦70 000, fittings ₦180 000 (after depreciation) and creditors ₦90 000. She took ₦72 000 for her own use and introduced no new capital. Find her opening capital, her closing capital and the profit for the year.",
+          "markScheme": [
+            "Opening capital: 635 000 − 75 000 = ₦560 000",
+            "Closing capital: 689 000 − 90 000 = ₦599 000",
+            "Profit: 599 000 − 560 000 + 72 000 = ₦111 000"
+          ],
+          "modelAnswer": "Opening assets are 165 000 + 210 000 + 60 000 + 200 000 = 635 000, so opening capital is 635 000 − 75 000 = ₦560 000. Closing assets are 209 000 + 230 000 + 70 000 + 180 000 = 689 000, so closing capital is 689 000 − 90 000 = ₦599 000. Profit = 599 000 − 560 000 + 72 000 = ₦111 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Opening assets 635 000 less creditors 75 000 gives capital of ₦560 000. Closing assets 689 000 less creditors 90 000 gives ₦599 000. Profit = 599 000 − 560 000 + 72 000 drawings = ₦111 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Opening assets 635 000 less creditors 75 000 gives capital of ₦560 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Closing assets 689 000 less creditors 90 000 gives ₦599 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Profit = 599 000 − 560 000 + 72 000 drawings = ₦111 000."
+                }
+              ],
+              "feedback": "Full marks. Adding back the drawings is the step that the examiners look for."
+            },
+            {
+              "tier": "full",
+              "text": "At the start: 165 000 + 210 000 + 60 000 + 200 000 = 635 000, and after the creditors of 75 000 the capital is 560 000. At the end: 209 000 + 230 000 + 70 000 + 180 000 = 689 000, and after the creditors of 90 000 the capital is 599 000. The capital rose by 39 000 but she took out 72 000, so the profit must be 39 000 + 72 000 = 111 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "At the start: 165 000 + 210 000 + 60 000 + 200 000 = 635 000, and after the creditors of 75 000 the capital is 560 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "At the end: 209 000 + 230 000 + 70 000 + 180 000 = 689 000, and after the creditors of 90 000 the capital is 599 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "The capital rose by 39 000 but she took out 72 000, so the profit must be 39 000 + 72 000 = 111 000."
+                }
+              ],
+              "feedback": "Three marks. Your reasoning, 'she took out 72 000', is the idea behind the formula."
+            },
+            {
+              "tier": "partial",
+              "text": "Opening capital = 635 000 − 75 000 = 560 000. Closing capital = 689 000 − 90 000 = 599 000. Profit = 599 000 − 560 000 − 72 000 = −33 000, a loss.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Opening capital = 635 000 − 75 000 = 560 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Closing capital = 689 000 − 90 000 = 599 000."
+                }
+              ],
+              "feedback": "Both capitals are correct. Drawings are taken out of the business, so they must be added back to the increase in capital, not deducted: 39 000 + 72 000 = 111 000 profit."
+            },
+            {
+              "tier": "partial",
+              "text": "Opening capital is 560 000. Closing assets are 209 000 + 230 000 + 70 000 + 180 000 = 689 000 and closing capital is 689 000. Profit = 689 000 − 560 000 + 72 000 = 201 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Opening capital is 560 000."
+                }
+              ],
+              "feedback": "You forgot to take the creditors of 90 000 off the closing assets. Closing capital is 599 000, and the profit is 599 000 − 560 000 + 72 000 = 111 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Opening capital = 75 000, the creditors. Closing capital = 90 000. Profit = 90 000 − 75 000 = 15 000.",
+              "meets": [],
+              "feedback": "Creditors are liabilities, not capital. Capital is assets less liabilities: 560 000 at the start and 599 000 at the end. The profit then comes to 111 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Capital is 635 000 − 75 000 = 560 000. The profit is the stock increase, 230 000 − 210 000 = 20 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Capital is 635 000 − 75 000 = 560 000."
+                }
+              ],
+              "feedback": "You found the opening capital. Profit is not just the change in stock: use the change in capital, adjusted for drawings, which is 599 000 − 560 000 + 72 000 = 111 000."
+            }
+          ]
+        },
+        {
+          "prompt": "For the year, Mrs Folake received ₦480 000 from debtors and ₦300 000 from cash sales. She paid ₦520 000 to creditors, ₦60 000 for rent and ₦84 000 for wages. Debtors were ₦60 000 at the start and ₦70 000 at the end; creditors were ₦75 000 at the start and ₦90 000 at the end; stock was ₦210 000 at the start and ₦230 000 at the end. Fittings costing ₦200 000 are depreciated by 10%. Calculate (a) total sales, (b) purchases, (c) gross profit, (d) net profit.",
+          "markScheme": [
+            "Credit sales 70 000 + 480 000 − 60 000 = 490 000; total sales with cash sales = ₦790 000",
+            "Purchases: 90 000 + 520 000 − 75 000 = ₦535 000",
+            "Cost of goods sold 210 000 + 535 000 − 230 000 = 515 000; gross profit = ₦275 000",
+            "Expenses 60 000 + 84 000 + 20 000 depreciation = 164 000; net profit = ₦111 000"
+          ],
+          "modelAnswer": "(a) Credit sales = 70 000 + 480 000 − 60 000 = 490 000. Total sales = 490 000 + 300 000 = ₦790 000. (b) Purchases = 90 000 + 520 000 − 75 000 = ₦535 000. (c) Cost of goods sold = 210 000 + 535 000 − 230 000 = 515 000; gross profit = 790 000 − 515 000 = ₦275 000. (d) Expenses = 60 000 + 84 000 + 20 000 = 164 000; net profit = 275 000 − 164 000 = ₦111 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Credit sales = 70 000 + 480 000 − 60 000 = 490 000, and with the cash sales of 300 000 total sales are ₦790 000. (b) Purchases = 90 000 + 520 000 − 75 000 = ₦535 000. (c) Cost of goods sold = 210 000 + 535 000 − 230 000 = 515 000, so gross profit = 790 000 − 515 000 = ₦275 000. (d) Expenses are 60 000 + 84 000 + depreciation 20 000 = 164 000, so net profit is 275 000 − 164 000 = ₦111 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Credit sales = 70 000 + 480 000 − 60 000 = 490 000, and with the cash sales of 300 000 total sales are ₦790 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Purchases = 90 000 + 520 000 − 75 000 = ₦535 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Cost of goods sold = 210 000 + 535 000 − 230 000 = 515 000, so gross profit = 790 000 − 515 000 = ₦275 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Expenses are 60 000 + 84 000 + depreciation 20 000 = 164 000, so net profit is 275 000 − 164 000 = ₦111 000."
+                }
+              ],
+              "feedback": "Full marks. You remembered both the cash sales and the depreciation, and your profit matches the change-in-capital method."
+            },
+            {
+              "tier": "full",
+              "text": "The debtors' account: they owed 60 000, paid 480 000 and still owe 70 000, so credit sales were 490 000; adding 300 000 cash sales gives 790 000. The creditors' account: she paid 520 000 and owes 15 000 more than before, so purchases were 535 000. The goods she sold cost 210 000 + 535 000 − 230 000 = 515 000, leaving a gross profit of 275 000. Taking off rent 60 000, wages 84 000 and 20 000 depreciation (10% of 200 000), the net profit is 111 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "they owed 60 000, paid 480 000 and still owe 70 000, so credit sales were 490 000; adding 300 000 cash sales gives 790 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "she paid 520 000 and owes 15 000 more than before, so purchases were 535 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "The goods she sold cost 210 000 + 535 000 − 230 000 = 515 000, leaving a gross profit of 275 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Taking off rent 60 000, wages 84 000 and 20 000 depreciation (10% of 200 000), the net profit is 111 000."
+                }
+              ],
+              "feedback": "Four marks, with clear reasoning in each total account."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Sales = 480 000 + 300 000 = 780 000. (b) Purchases = 90 000 + 520 000 − 75 000 = 535 000. (c) Cost of goods sold = 210 000 + 535 000 − 230 000 = 515 000. Gross profit = 780 000 − 515 000 = 265 000. (d) Net profit = 265 000 − 144 000 = 121 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Purchases = 90 000 + 520 000 − 75 000 = 535 000."
+                }
+              ],
+              "feedback": "Your purchases are correct. Cash received from debtors is not the credit sales: adjust for the debtors, 70 000 + 480 000 − 60 000 = 490 000. You also forgot depreciation of 20 000 in expenses."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Credit sales = 490 000, so total sales are 790 000. (b) Purchases = 520 000 + 75 000 − 90 000 = 505 000. (c) Cost of goods sold = 210 000 + 505 000 − 230 000 = 485 000; gross profit = 305 000. (d) Net profit = 305 000 − 164 000 = 141 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) Credit sales = 490 000, so total sales are 790 000."
+                }
+              ],
+              "feedback": "Sales are correct. For purchases you reversed the opening and closing creditors: 90 000 + 520 000 − 75 000 = 535 000. The gross profit is then 275 000 and the net profit is 111 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 480 000. (b) 520 000. (c) 480 000 − 520 000 = −40 000. (d) a loss of 40 000.",
+              "meets": [],
+              "feedback": "Cash received and paid are not the sales and purchases. The debtors and creditors must be taken into account, and stock too. Her sales were 790 000 and she made a profit of 111 000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Sales = 490 000 + 300 000 = 790 000. (b) She spent 60 000 + 84 000 = 144 000. (c) Gross profit = 790 000 − 144 000 = 646 000. (d) 646 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) Sales = 490 000 + 300 000 = 790 000."
+                }
+              ],
+              "feedback": "One mark for the sales. Rent and wages are not the cost of the goods sold. Find purchases (535 000), then the cost of goods sold (515 000); gross profit is 275 000."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Club accounts: income and expenditure, and the accumulated fund",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain terms used by not-for-profit organisations: subscriptions, entrance fees, donations, accumulated fund, surplus and deficit;\n2. read a receipts and payments account and extract the figures needed for the year;\n3. adjust subscriptions and expenses for amounts owing and paid in advance;\n4. find the profit or loss on an income-generating event such as a dinner dance;\n5. prepare an income and expenditure account and a balance sheet with the accumulated fund.\n\n## Materials\n\nA summary of the cash book of a football club in Agege, ruled paper, a model balance sheet.\n\n## Starter (5 minutes)\n\nA club collected ₦420 000 in subscriptions this year, but ₦18 000 of it is for next year. Ask: should the whole ₦420 000 be counted as this year's income? Let pairs argue.\n\n## Development\n\n1. Revise the receipts and payments account and why it is not enough to show the club's performance.\n2. Income and expenditure account: only income and expenses that belong to the year.\n3. Subscriptions for the year: received − advance + arrears at the end − arrears at the start.\n4. Rent prepaid and wages owing: adjust the expense for the year.\n5. Income-generating events: the profit (receipts less costs) is shown as income; a loss as expenditure.\n6. Capital expenditure (kit) is not an expense; only depreciation is charged.\n7. Balance sheet: the accumulated fund = opening fund + surplus (or − deficit).\n\n## Class activity\n\nGroups prepare the club's income and expenditure account and balance sheet from the receipts and payments account and the notes, then check that the balance sheet balances.\n\n## Evaluation\n\n1. Where does the dinner dance appear in the accounts?\n2. Why is the kit not charged in full?\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "The accounts of Agege Youth Football Club",
+        "content": "# Club accounts: income and expenditure, and the accumulated fund\n\nA club's treasurer prepares a **receipts and payments account**: a summary of the cash book. But this does not show whether the club is better off. For that, the club prepares an **income and expenditure account**, in which income and expenses belong to the year, whether or not cash has changed hands.\n\n## Worked example: Agege Youth Football Club, year ended 31 December\n\n**Receipts and payments account**\n\n| Receipts | ₦ | Payments | ₦ |\n| --- | --- | --- | --- |\n| Balance b/d | 48 000 | Dinner dance expenses | 120 000 |\n| Subscriptions | 420 000 | Pitch rent | 96 000 |\n| Entrance fees | 30 000 | Kit purchased | 150 000 |\n| Donations | 100 000 | Coach's allowance | 144 000 |\n| Dinner dance receipts | 180 000 | Printing | 12 000 |\n| | | Balance c/d | 256 000 |\n| | 778 000 | | 778 000 |\n\n**Notes.** Subscriptions in arrears: ₦25 000 at 1 January, ₦40 000 at 31 December; subscriptions in advance ₦18 000 at 31 December. Pitch rent includes ₦12 000 for next year. Coach's allowance owing ₦12 000. Kit is depreciated by 20%; old kit was valued at ₦90 000 on 1 January. At 1 January the club's assets were cash ₦48 000, arrears ₦25 000 and old kit ₦90 000.\n\n## Working\n\n- **Subscriptions** = 420 000 − 18 000 + 40 000 − 25 000 = **₦417 000**\n- **Dinner dance profit** = 180 000 − 120 000 = **₦60 000**\n- **Pitch rent** = 96 000 − 12 000 = ₦84 000\n- **Coach's allowance** = 144 000 + 12 000 = ₦156 000\n- **Depreciation** = 20% × (90 000 + 150 000) = ₦48 000\n\n## Income and expenditure account\n\nIncome: subscriptions 417 000 + entrance fees 30 000 + donations 100 000 + dinner dance profit 60 000 = **₦607 000**.\nExpenditure: rent 84 000 + coach 156 000 + printing 12 000 + depreciation 48 000 = **₦300 000**.\n**Surplus** = 607 000 − 300 000 = **₦307 000**.\n\n## The accumulated fund\n\nOpening fund = 48 000 + 25 000 + 90 000 = ₦163 000. Closing fund = 163 000 + 307 000 = **₦470 000**.\n\nThe balance sheet shows kit ₦192 000, subscriptions owing ₦40 000, rent prepaid ₦12 000 and cash ₦256 000, a total of ₦500 000. It owes the coach ₦12 000 and members ₦18 000 (advance subscriptions); 500 000 − 30 000 = ₦470 000."
+      },
+      "cards": [
+        {
+          "front": "Entrance fee",
+          "back": "A fee paid once by a new member on joining."
+        },
+        {
+          "front": "Subscriptions in advance",
+          "back": "Received for next year; deducted from the cash received and shown as a current liability."
+        },
+        {
+          "front": "Subscriptions in arrears",
+          "back": "Owed for this year but not yet received; added to income and shown as a current asset."
+        },
+        {
+          "front": "Profit on a dinner dance",
+          "back": "Receipts less expenses; shown as income in the income and expenditure account."
+        },
+        {
+          "front": "Is the purchase of kit an expense?",
+          "back": "No. It is capital expenditure; only depreciation is charged."
+        },
+        {
+          "front": "Opening accumulated fund",
+          "back": "The opening assets less the opening liabilities."
+        },
+        {
+          "front": "Closing accumulated fund",
+          "back": "Opening fund + surplus (or − deficit)."
+        },
+        {
+          "front": "Receipts and payments account",
+          "back": "A summary of the cash book; it includes capital items and ignores owing or prepaid."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A club received ₦150 000 in subscriptions, including ₦6 000 paid in advance. Subscriptions in arrears were ₦9 000 at the start and ₦14 000 at the end of the year. What is the subscriptions income for the year?",
+          "options": [
+            "₦149 000",
+            "₦151 000",
+            "₦139 000",
+            "₦161 000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A club's dance brought in ₦75 000 and cost ₦52 000 to hold. In the income and expenditure account it is shown as",
+          "options": [
+            "an expense of ₦52 000",
+            "income of ₦75 000",
+            "income of ₦23 000, the profit on the dance",
+            "a loss of ₦23 000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which statement about a receipts and payments account is correct?",
+          "options": [
+            "It shows only the income of the year, whether or not it was received",
+            "It is a summary of the cash book, and includes capital receipts and payments",
+            "It includes depreciation and amounts owing",
+            "It shows the club's assets and liabilities"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A club has assets of ₦340 000 and liabilities of ₦45 000. What is its accumulated fund?",
+          "options": [
+            "₦385 000",
+            "₦340 000",
+            "₦45 000",
+            "₦295 000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A club buys a pool table for ₦150 000 and depreciates it by 20% a year. What is charged to the income and expenditure account in the first year, and at what value is the table in the balance sheet?",
+          "options": [
+            "₦150 000 and nil",
+            "₦30 000 and ₦120 000",
+            "₦120 000 and ₦30 000",
+            "₦30 000 and ₦150 000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Using the receipts and payments account and notes of Agege Youth Football Club: subscriptions received ₦420 000, of which ₦18 000 is for next year; arrears ₦25 000 at 1 January and ₦40 000 at 31 December; pitch rent paid ₦96 000, including ₦12 000 for next year; coach's allowance paid ₦144 000 with ₦12 000 still owing; dinner dance receipts ₦180 000 and expenses ₦120 000. Calculate for the income and expenditure account (a) subscriptions, (b) pitch rent, (c) coach's allowance, (d) the profit on the dinner dance.",
+          "markScheme": [
+            "Subscriptions: 420 000 − 18 000 + 40 000 − 25 000 = ₦417 000",
+            "Pitch rent: 96 000 − 12 000 = ₦84 000",
+            "Coach's allowance: 144 000 + 12 000 = ₦156 000",
+            "Dinner dance profit: 180 000 − 120 000 = ₦60 000"
+          ],
+          "modelAnswer": "(a) Subscriptions = 420 000 − 18 000 (advance) + 40 000 (arrears at end) − 25 000 (arrears at start) = ₦417 000. (b) The ₦12 000 prepaid belongs to next year, so rent = 96 000 − 12 000 = ₦84 000. (c) The ₦12 000 owing belongs to this year, so allowance = 144 000 + 12 000 = ₦156 000. (d) Profit on the dance = 180 000 − 120 000 = ₦60 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 420 000 − 18 000 + 40 000 − 25 000 = ₦417 000. (b) 96 000 − 12 000 prepaid = ₦84 000. (c) 144 000 + 12 000 owing = ₦156 000. (d) 180 000 − 120 000 = ₦60 000 profit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "420 000 − 18 000 + 40 000 − 25 000 = ₦417 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "96 000 − 12 000 prepaid = ₦84 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "144 000 + 12 000 owing = ₦156 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "180 000 − 120 000 = ₦60 000 profit."
+                }
+              ],
+              "feedback": "Full marks. Each adjustment goes in the right direction, and you labelled the owing and prepaid amounts."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Cash 420 000 less the 18 000 for next year is 402 000; add arrears at the end 40 000 and take away arrears at the start 25 000, giving ₦417 000. (b) The rent for this year is 84 000, because 12 000 is for next year. (c) The coach is owed 12 000 for this year, so the expense is 156 000. (d) The dinner dance made a profit of 60 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cash 420 000 less the 18 000 for next year is 402 000; add arrears at the end 40 000 and take away arrears at the start 25 000, giving ₦417 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "The rent for this year is 84 000, because 12 000 is for next year."
+                },
+                {
+                  "point": 2,
+                  "quote": "The coach is owed 12 000 for this year, so the expense is 156 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The dinner dance made a profit of 60 000."
+                }
+              ],
+              "feedback": "Four marks. Showing 402 000 as an intermediate figure makes your marker's job easy."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 420 000 − 18 000 + 40 000 − 25 000 = 417 000. (b) 96 000 + 12 000 = 108 000. (c) 144 000 − 12 000 = 132 000. (d) The profit is 180 000 − 120 000 = 60 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "420 000 − 18 000 + 40 000 − 25 000 = 417 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The profit is 180 000 − 120 000 = 60 000."
+                }
+              ],
+              "feedback": "Parts (a) and (d) are correct. In (b) and (c) you reversed the adjustments: prepaid rent is deducted (84 000) and the owing allowance is added (156 000)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 420 000 + 18 000 − 40 000 + 25 000 = 423 000. (b) 96 000 − 12 000 = 84 000. (c) 144 000 + 12 000 = 156 000. (d) 180 000 − 120 000 = 60 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) 96 000 − 12 000 = 84 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) 144 000 + 12 000 = 156 000."
+                }
+              ],
+              "feedback": "You earned marks for (b) and (c). In (a), the advance and the opening arrears are deducted and the closing arrears added: 420 000 − 18 000 + 40 000 − 25 000 = 417 000. Part (d) is correct as well.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 420 000. (b) 96 000. (c) 144 000. (d) 180 000.",
+              "meets": [],
+              "feedback": "These are the cash figures from the receipts and payments account. The income and expenditure account needs the amounts that belong to the year, so adjust for advance, arrears, prepaid and owing, and use the profit of the dance, 60 000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 420 000 + 40 000 + 25 000 + 18 000 = 503 000. (b) 96 000 − 12 000 = 84 000. (c) 144 000. (d) 180 000 + 120 000 = 300 000.",
+              "meets": [],
+              "feedback": "One mark for the rent. For the dance, profit is receipts less expenses, 60 000, and the allowance needs the 12 000 owing added. Subscriptions are 417 000."
+            }
+          ]
+        },
+        {
+          "prompt": "Agege Youth Football Club's figures for the year ended 31 December: subscriptions ₦417 000; entrance fees ₦30 000; donations ₦100 000; profit on the dinner dance ₦60 000; pitch rent ₦84 000; coach's allowance ₦156 000; printing ₦12 000. Kit is to be depreciated by 20%; the old kit was valued at ₦90 000 at 1 January and new kit costing ₦150 000 was bought in the year. The accumulated fund at 1 January was ₦163 000. Prepare the income and expenditure account, state the surplus, and calculate the accumulated fund at 31 December.",
+          "markScheme": [
+            "Total income: 417 000 + 30 000 + 100 000 + 60 000 = ₦607 000",
+            "Depreciation: 20% × (90 000 + 150 000) = ₦48 000",
+            "Total expenditure: 84 000 + 156 000 + 12 000 + 48 000 = ₦300 000, without charging the ₦150 000 purchase of kit",
+            "Surplus: 607 000 − 300 000 = ₦307 000",
+            "Accumulated fund at 31 December: 163 000 + 307 000 = ₦470 000"
+          ],
+          "modelAnswer": "Income: 417 000 + 30 000 + 100 000 + 60 000 = ₦607 000. Depreciation = 20% of (90 000 + 150 000) = ₦48 000. Expenditure: rent 84 000 + coach 156 000 + printing 12 000 + depreciation 48 000 = ₦300 000. The cost of the new kit is capital expenditure and is not charged. Surplus = 607 000 − 300 000 = ₦307 000. Accumulated fund = 163 000 + 307 000 = ₦470 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Income: 417 000 + 30 000 + 100 000 + 60 000 = 607 000. Depreciation = 20/100 × (90 000 + 150 000) = 48 000. Expenditure: 84 000 + 156 000 + 12 000 + 48 000 = 300 000. The 150 000 for the new kit is not charged. Surplus = 607 000 − 300 000 = ₦307 000. Accumulated fund = 163 000 + 307 000 = ₦470 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Income: 417 000 + 30 000 + 100 000 + 60 000 = 607 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Depreciation = 20/100 × (90 000 + 150 000) = 48 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Expenditure: 84 000 + 156 000 + 12 000 + 48 000 = 300 000. The 150 000 for the new kit is not charged."
+                },
+                {
+                  "point": 3,
+                  "quote": "Surplus = 607 000 − 300 000 = ₦307 000."
+                },
+                {
+                  "point": 4,
+                  "quote": "Accumulated fund = 163 000 + 307 000 = ₦470 000."
+                }
+              ],
+              "feedback": "Full marks. You depreciated the old and the new kit together, which is what the question asked for."
+            },
+            {
+              "tier": "full",
+              "text": "The club earned 607 000 in all: 417 000, 30 000, 100 000 and the 60 000 profit from the dinner dance. The kit lost 20% of 240 000, which is 48 000 in value. All the expenses, with the depreciation, come to 300 000; the 150 000 spent on kit is not an expense because the kit lasts for years. So the club has a surplus of 307 000. The fund grows from 163 000 to 470 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "607 000 in all: 417 000, 30 000, 100 000 and the 60 000 profit from the dinner dance."
+                },
+                {
+                  "point": 1,
+                  "quote": "The kit lost 20% of 240 000, which is 48 000 in value."
+                },
+                {
+                  "point": 2,
+                  "quote": "All the expenses, with the depreciation, come to 300 000; the 150 000 spent on kit is not an expense because the kit lasts for years."
+                },
+                {
+                  "point": 3,
+                  "quote": "So the club has a surplus of 307 000."
+                },
+                {
+                  "point": 4,
+                  "quote": "The fund grows from 163 000 to 470 000."
+                }
+              ],
+              "feedback": "Five marks. You gave a reason for not charging the 150 000, which is the idea the question tests."
+            },
+            {
+              "tier": "partial",
+              "text": "Income = 607 000. Expenditure: 84 000 + 156 000 + 12 000 + 150 000 kit = 402 000. Surplus = 205 000. Fund = 163 000 + 205 000 = 368 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Income = 607 000."
+                }
+              ],
+              "feedback": "Income is right. The kit is capital expenditure, so charge only the depreciation of 20% × 240 000 = 48 000. Expenditure is then 300 000, the surplus 307 000 and the fund 470 000."
+            },
+            {
+              "tier": "partial",
+              "text": "Income is 417 000 + 30 000 + 100 000 + 60 000 = 607 000. Depreciation = 20% × 150 000 = 30 000. Expenditure is 84 000 + 156 000 + 12 000 + 48 000 = 300 000 Surplus = 607 000 − 282 000 = 325 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Income is 417 000 + 30 000 + 100 000 + 60 000 = 607 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Expenditure is 84 000 + 156 000 + 12 000 + 48 000 = 300 000"
+                }
+              ],
+              "feedback": "Income is right, and the expenditure total of 300 000 is correct, but it does not match your 30 000 depreciation. The old kit also counts: 20% × 240 000 = 48 000, and the surplus is 307 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Income 607 000. Expenditure 84 000 + 156 000 + 12 000 = 252 000. Surplus 355 000. Accumulated fund 355 000.",
+              "meets": [],
+              "feedback": "You forgot depreciation, and the accumulated fund is not the surplus alone: it is the opening fund of 163 000 plus the surplus (307 000), which is 470 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Surplus is 307 000. Then 163 000 − 307 000 = −144 000 for the accumulated fund.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Surplus is 307 000."
+                }
+              ],
+              "feedback": "The surplus is right but there is no working. A surplus is added to the fund: 163 000 + 307 000 = 470 000, not deducted."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Partnership accounts: appropriation, goodwill and admission of a partner",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the nature and formation of a partnership and the contents of a partnership deed;\n2. state what the Partnership Act provides when there is no agreement;\n3. prepare a profit and loss appropriation account with interest on capital, salaries and interest on drawings;\n4. prepare partners' capital and current accounts and a balance sheet;\n5. treat goodwill when a new partner is admitted;\n6. explain the main steps in the dissolution of a partnership.\n\n## Materials\n\nA sample partnership deed (names changed), ruled capital and current account sheets, calculators.\n\n## Starter (5 minutes)\n\nAde and Bola open a fabric shop at Oje market with different capital. Ask: should they share profit equally? What could they agree on so that neither feels cheated?\n\n## Development\n\n1. Partnership: two to twenty persons carrying on a business together to make profit. The deed fixes capital, profit-sharing ratio, interest on capital, salaries, interest on drawings.\n2. No deed: profits are shared equally; no interest on capital, no salaries.\n3. Appropriation: start with the net profit, add interest charged on drawings, deduct interest on capital and salaries, and share the residual in the profit-sharing ratio.\n4. Capital accounts are fixed; current accounts carry interest, salary, share of profit and drawings.\n5. Goodwill: the value of the firm above its net assets. When a new partner is admitted, goodwill is credited to the old partners in the old ratio and written off in the new ratio.\n6. Dissolution: assets are sold through a realisation account, debts are paid, and the cash left is shared according to capital balances.\n\n## Class activity\n\nPairs complete the appropriation account for Ade and Bola and check that the shares add up to the net profit.\n\n## Evaluation\n\n1. How is profit shared if there is no partnership deed?\n2. Which partner gains and which sacrifices when the ratio changes from 3:2 to 2:2:1?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Sharing the profits of a partnership",
+        "content": "# Partnership accounts\n\nA **partnership** is a business owned by two or more people who share its profits. The terms are set out in a **partnership deed**: the capital each puts in, the profit-sharing ratio, interest on capital, salaries and interest on drawings.\n\nIf there is **no agreement**, the Partnership Act says that profits and losses are shared equally and there is no interest on capital and no salary. For example, a net profit of ₦90 000 is ₦45 000 each for two partners.\n\n## The appropriation account\n\nAfter the profit and loss account, the net profit is shared in the **appropriation account**.\n\n**Worked example.** Ade and Bola, cloth traders. Net profit ₦480 000. Capitals: Ade ₦600 000, Bola ₦400 000. Terms: interest on capital 10%; salary to Bola ₦60 000; profit shared 3:2; interest on drawings: Ade ₦5 000, Bola ₦3 000.\n\n| | ₦ |\n| --- | --- |\n| Net profit | 480 000 |\n| Add interest on drawings (5 000 + 3 000) | 8 000 |\n| | 488 000 |\n| Less interest on capital: Ade 60 000, Bola 40 000 | (100 000) |\n| Less salary: Bola | (60 000) |\n| **Residual profit** | **328 000** |\n\nShared 3:2: Ade 196 800 and Bola 131 200.\n\n| Partner | Interest | Salary | Share | Less interest on drawings | Total |\n| --- | --- | --- | --- | --- | --- |\n| Ade | 60 000 | 0 | 196 800 | (5 000) | 251 800 |\n| Bola | 40 000 | 60 000 | 131 200 | (3 000) | 228 200 |\n\nThe totals, 251 800 + 228 200, equal the net profit, ₦480 000. Each amount goes to the partner's current account.\n\n## Goodwill and a new partner\n\n**Goodwill** is the value of a business over the value of its assets, from its name and customers. When Chuka joins, goodwill of ₦150 000 is valued.\n\n1. Credit the old partners in the old ratio (3:2): Ade 90 000, Bola 60 000.\n2. Write it off in the new ratio (2:2:1): Ade 60 000, Bola 60 000, Chuka 30 000.\n\nNet effect: Ade is credited 30 000, Bola nil, Chuka debited 30 000. Ade gave up part of his share, so he is paid by Chuka.\n\n## Dissolution\n\nThe assets are sold through a **realisation account**; a profit or loss on realisation is shared in the profit-sharing ratio. Outside debts are paid, and the cash left is paid to the partners according to their capital accounts."
+      },
+      "cards": [
+        {
+          "front": "Partnership deed",
+          "back": "The written agreement of the partners on capital, profit ratio, interest and salaries."
+        },
+        {
+          "front": "If there is no partnership agreement",
+          "back": "Profits are shared equally; no interest on capital; no salaries."
+        },
+        {
+          "front": "Appropriation account",
+          "back": "The account in which the net profit is shared between the partners."
+        },
+        {
+          "front": "Interest on drawings",
+          "back": "Charged to partners; it increases the profit to be shared."
+        },
+        {
+          "front": "Residual profit",
+          "back": "The profit left to share in the profit-sharing ratio after interest and salaries."
+        },
+        {
+          "front": "Goodwill",
+          "back": "The value of a business above its net assets, from reputation and customers."
+        },
+        {
+          "front": "Treatment of goodwill on admission",
+          "back": "Credit the old partners in the old ratio; write it off in the new ratio."
+        },
+        {
+          "front": "Realisation account",
+          "back": "Used on dissolution to sell the assets and find the profit or loss."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Ade and Bola are partners with no written agreement. Their net profit is ₦90 000. How is it shared?",
+          "options": [
+            "Ade ₦60 000 and Bola ₦30 000 because Ade started first",
+            "In proportion to their capital",
+            "₦45 000 each, equally",
+            "Bola takes interest first and shares the rest"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A partner's capital is ₦350 000 and the partnership agreement allows interest on capital at 8%. What is the interest for the year?",
+          "options": [
+            "₦2 800",
+            "₦28 000",
+            "₦280 000",
+            "₦43 750"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "After interest and salaries, a residual profit of ₦250 000 is shared between two partners in the ratio 3:2. What does each partner receive?",
+          "options": [
+            "₦125 000 each",
+            "₦100 000 and ₦150 000",
+            "₦200 000 and ₦50 000",
+            "₦150 000 and ₦100 000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Goodwill of a partnership is best described as",
+          "options": [
+            "the cash held in the bank",
+            "the extra value of a business from its reputation and customers",
+            "the value of the stock at cost",
+            "the capital that the partners put in"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A partnership is dissolved. The assets realise ₦30 000 less than their book value. Partners share profits in the ratio 3:2. How is the loss treated?",
+          "options": [
+            "It is shared by debiting the capital accounts ₦18 000 and ₦12 000",
+            "It is added to the stock of the firm",
+            "It is shared equally by debiting each partner ₦15 000",
+            "It is credited to the partner who bought the assets"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Ade and Bola's net profit for the year was ₦480 000. Capitals: Ade ₦600 000, Bola ₦400 000. Under the deed: interest on capital 10%; a salary of ₦60 000 to Bola; profits shared 3:2; interest charged on drawings: Ade ₦5 000, Bola ₦3 000. Prepare the appropriation account and show the total due to each partner.",
+          "markScheme": [
+            "Interest on capital (Ade 60 000, Bola 40 000) and Bola's salary 60 000 deducted",
+            "Interest on drawings of ₦8 000 added, giving a residual profit of ₦328 000",
+            "Residual shared 3:2: Ade ₦196 800, Bola ₦131 200",
+            "Totals due: Ade ₦251 800 and Bola ₦228 200, which add up to ₦480 000"
+          ],
+          "modelAnswer": "Net profit 480 000 plus interest on drawings 8 000 = 488 000. Less interest on capital (Ade 60 000, Bola 40 000) and salary 60 000 = 160 000, leaving a residual profit of 328 000. Shared 3:2, Ade gets 196 800 and Bola 131 200. Total due to Ade: 60 000 + 196 800 − 5 000 = 251 800. Total due to Bola: 40 000 + 60 000 + 131 200 − 3 000 = 228 200. Together they equal the net profit of ₦480 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Interest on capital: Ade 10% of 600 000 = 60 000 and Bola 10% of 400 000 = 40 000. Salary to Bola 60 000. Net profit 480 000 + interest on drawings 8 000 = 488 000, less 160 000 = residual profit 328 000. Ade 3/5 × 328 000 = 196 800; Bola 2/5 × 328 000 = 131 200. Ade total = 60 000 + 196 800 − 5 000 = 251 800; Bola total = 40 000 + 60 000 + 131 200 − 3 000 = 228 200; the two together are 480 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Interest on capital: Ade 10% of 600 000 = 60 000 and Bola 10% of 400 000 = 40 000. Salary to Bola 60 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Net profit 480 000 + interest on drawings 8 000 = 488 000, less 160 000 = residual profit 328 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Ade 3/5 × 328 000 = 196 800; Bola 2/5 × 328 000 = 131 200."
+                },
+                {
+                  "point": 3,
+                  "quote": "Ade total = 60 000 + 196 800 − 5 000 = 251 800; Bola total = 40 000 + 60 000 + 131 200 − 3 000 = 228 200; the two together are 480 000."
+                }
+              ],
+              "feedback": "Full marks. Checking that the totals equal the net profit is a good habit."
+            },
+            {
+              "tier": "full",
+              "text": "I deduct the interest on capital, 60 000 for Ade and 40 000 for Bola, and the salary of 60 000 for Bola. The partners were charged 8 000 for drawing early, so that is added to the profit, and the profit left to share is 328 000. Ade takes three parts out of five, 196 800, and Bola two parts, 131 200. Ade receives 251 800 in all and Bola 228 200, and 251 800 + 228 200 = 480 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I deduct the interest on capital, 60 000 for Ade and 40 000 for Bola, and the salary of 60 000 for Bola."
+                },
+                {
+                  "point": 1,
+                  "quote": "The partners were charged 8 000 for drawing early, so that is added to the profit, and the profit left to share is 328 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Ade takes three parts out of five, 196 800, and Bola two parts, 131 200."
+                },
+                {
+                  "point": 3,
+                  "quote": "Ade receives 251 800 in all and Bola 228 200, and 251 800 + 228 200 = 480 000."
+                }
+              ],
+              "feedback": "Four marks. You explained why interest on drawings is added, which many learners simply copy."
+            },
+            {
+              "tier": "partial",
+              "text": "Interest on capital: Ade 60 000, Bola 40 000. Salary 60 000. Residual = 480 000 − 160 000 = 320 000. Ade 3/5 = 192 000, Bola 2/5 = 128 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Interest on capital: Ade 60 000, Bola 40 000. Salary 60 000."
+                }
+              ],
+              "feedback": "Your interest and salary are correct. Interest charged on drawings, 8 000, is added to the profit before sharing, so the residual is 328 000, and the shares are 196 800 and 131 200."
+            },
+            {
+              "tier": "partial",
+              "text": "Net profit 480 000 + 8 000 interest on drawings − 160 000 = 328 000 residual. Ade 3/5 = 196 800, Bola 2/5 = 131 200, so Ade gets 196 800 and Bola 131 200.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Net profit 480 000 + 8 000 interest on drawings − 160 000 = 328 000 residual."
+                }
+              ],
+              "feedback": "You found the residual profit. Each partner also gets interest on capital and Bola's salary, and pays interest on drawings, so Ade's total is 251 800 and Bola's 228 200.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Ade 480 000 ÷ 2 = 240 000 and Bola 240 000 since they are partners.",
+              "meets": [],
+              "feedback": "Equal sharing applies only when there is no agreement. Here the deed gives interest, a salary and a 3:2 ratio, so the totals are 251 800 and 228 200."
+            },
+            {
+              "tier": "weak",
+              "text": "Interest on capital 60 000 and 40 000, salary 60 000. Then Ade's total is 600 000 + 60 000 = 660 000 and Bola's is 400 000 + 40 000 + 60 000 = 500 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Interest on capital 60 000 and 40 000, salary 60 000."
+                }
+              ],
+              "feedback": "Capital is not part of the profit. After deducting 160 000 and adding 8 000 you share 328 000 in the ratio 3:2, and then add each partner's interest and salary."
+            }
+          ]
+        },
+        {
+          "prompt": "Ade and Bola share profits 3:2. Chuka is admitted and the new profit-sharing ratio is Ade 2, Bola 2, Chuka 1. Goodwill is valued at ₦150 000 and is not to remain in the books. Show the goodwill entries in the capital accounts and say which partner gains and which sacrifices.",
+          "markScheme": [
+            "Goodwill created and credited in the old ratio: Ade ₦90 000, Bola ₦60 000",
+            "Goodwill written off in the new ratio 2:2:1: Ade ₦60 000, Bola ₦60 000, Chuka ₦30 000",
+            "Net effect: Ade credited ₦30 000, Bola no change, Chuka debited ₦30 000",
+            "States that Ade sacrifices (his share falls from 3/5 to 2/5) and Chuka pays for the share he gains"
+          ],
+          "modelAnswer": "Goodwill of 150 000 is credited to the old partners in the old ratio 3:2: Ade 90 000 and Bola 60 000. It is then written off in the new ratio 2:2:1: Ade 60 000, Bola 60 000, Chuka 30 000 debited. The net effect is that Ade is credited 30 000, Bola nothing, and Chuka debited 30 000. Ade sacrifices because his share falls from 3/5 to 2/5, Bola keeps 2/5, and Chuka, who gains a share, pays for it through his capital account.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Goodwill credited in the old ratio 3:2: Ade 90 000, Bola 60 000. Written off in the new ratio 2:2:1: Ade 60 000, Bola 60 000, Chuka 30 000. Net: Ade +30 000, Bola 0, Chuka −30 000. Ade is the one who sacrifices, since his share falls from 3/5 to 2/5. Chuka pays for his share, so his capital is debited.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Goodwill credited in the old ratio 3:2: Ade 90 000, Bola 60 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Written off in the new ratio 2:2:1: Ade 60 000, Bola 60 000, Chuka 30 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Net: Ade +30 000, Bola 0, Chuka −30 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Ade is the one who sacrifices, since his share falls from 3/5 to 2/5. Chuka pays for his share, so his capital is debited."
+                }
+              ],
+              "feedback": "Full marks. The net effect line shows the idea behind both entries."
+            },
+            {
+              "tier": "full",
+              "text": "The old partners get the goodwill first. Ade gets 3/5 of 150 000 = 90 000 and Bola gets 2/5 = 60 000. Then the goodwill is removed from the books by the new ratio: Ade 2/5 = 60 000, Bola 2/5 = 60 000 and Chuka 1/5 = 30 000. So Ade is left with 30 000 more, Bola is the same and Chuka has 30 000 less. Ade sacrifices because his share is reduced from 3/5 to 2/5, and Chuka pays him for it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ade gets 3/5 of 150 000 = 90 000 and Bola gets 2/5 = 60 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Ade 2/5 = 60 000, Bola 2/5 = 60 000 and Chuka 1/5 = 30 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "So Ade is left with 30 000 more, Bola is the same and Chuka has 30 000 less."
+                },
+                {
+                  "point": 3,
+                  "quote": "Ade sacrifices because his share is reduced from 3/5 to 2/5, and Chuka pays him for it."
+                }
+              ],
+              "feedback": "Four marks. A clear explanation of who pays and who gets paid."
+            },
+            {
+              "tier": "partial",
+              "text": "Credit Ade 90 000 and Bola 60 000. Write off in the old ratio: Ade 90 000, Bola 60 000. So there is no change in the capital accounts and no one gains or loses.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Credit Ade 90 000 and Bola 60 000."
+                }
+              ],
+              "feedback": "The first step is right. The write-off must use the new ratio, 2:2:1, so Ade loses 60 000, Bola 60 000 and Chuka 30 000. Then Ade gains 30 000, because he gives up part of his share."
+            },
+            {
+              "tier": "partial",
+              "text": "Written off in the new ratio: Ade 60 000, Bola 60 000, Chuka 30 000. Chuka has to pay for the share of goodwill he gets. I do not know how the old partners get their money.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Written off in the new ratio: Ade 60 000, Bola 60 000, Chuka 30 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Chuka has to pay for the share of goodwill he gets."
+                }
+              ],
+              "feedback": "You earned marks for the write-off and for the idea that Chuka pays. First credit the old partners in the old ratio, Ade 90 000 and Bola 60 000. Then the net effect is Ade +30 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Goodwill is shared equally: 150 000 ÷ 3 = 50 000 each. Ade, Bola and Chuka are each credited 50 000.",
+              "meets": [],
+              "feedback": "The new partner does not get goodwill credited. It is first credited to the old partners in their old ratio (90 000 and 60 000), and then written off in the new ratio, which debits Chuka 30 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Ade is credited 90 000 and Bola 60 000. Bola loses because he is not in a big ratio, and Chuka gains 150 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ade is credited 90 000 and Bola 60 000."
+                }
+              ],
+              "feedback": "You started with the old partners' credits. Chuka does not gain goodwill, he pays for his share: his capital is debited 30 000. Bola's share stays at 2/5, so he neither gains nor loses."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Company accounts: share issues, dividends and simple ratios",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe how a company is formed and distinguish private from public companies;\n2. distinguish ordinary from preference shares, and shares from debentures and mortgages;\n3. record the issue of shares, including a premium and over-subscription;\n4. prepare the appropriation account of a company and find retained profit;\n5. calculate and comment on simple ratios;\n6. calculate goodwill in a purchase of business account.\n\n## Materials\n\nA prospectus extract from a Nigerian company (blanked out), calculators, ruled paper.\n\n## Starter (5 minutes)\n\nFifty farmers in Ogbomosho want to start a company to process cassava. Ask: how do they raise the capital without one person owning everything? Introduce shares.\n\n## Development\n\n1. Formation: memorandum and articles, registration with the Corporate Affairs Commission, a certificate of incorporation. Private and public companies; limited liability.\n2. Shares: ordinary (variable dividend, vote) and preference (fixed dividend, paid first). Debentures and loan notes carry interest, not a dividend; a mortgage is a loan secured on property.\n3. Issue of shares: application, allotment, calls; premium; over-subscription and refunds.\n4. Final accounts for internal use: profit after tax, transfer to reserve, preference dividend, ordinary dividend, retained profit.\n5. Ratios: gross profit percentage, current ratio and acid test ratio.\n6. Purchase of business: purchase price less net assets taken over is goodwill.\n\n## Class activity\n\nGroups act as the directors of Ibadan Foods Ltd, record the share issue and decide a dividend.\n\n## Evaluation\n\n1. Why is a preference dividend paid before an ordinary dividend?\n2. What is the current ratio if current assets are ₦600 000 and current liabilities ₦400 000?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Shares, dividends and ratios in a limited company",
+        "content": "# Company accounts\n\nA **company** is a separate legal person, formed by registration with the Corporate Affairs Commission. Its owners, the **shareholders**, have **limited liability**: they can lose only what they paid for their shares. A **private company** may not offer shares to the public; a **public company** may.\n\n## Types of capital\n\n- **Ordinary shares**: the owners' risk capital; dividend varies with profit.\n- **Preference shares**: a fixed dividend paid before the ordinary dividend.\n- **Debentures (loan notes)**: loans to the company, paid fixed interest whether or not profit is made. The interest is an expense, not a dividend.\n- **Mortgage**: a loan secured on land or buildings.\n\n## Issue of shares\n\n**Worked example.** Ibadan Foods Ltd offers 200 000 ordinary shares of ₦1 each at ₦1.20. The premium of ₦0.20 is a payment above the nominal value. Application is ₦0.50 a share; allotment is ₦0.70 (including the premium).\n\nApplications are received for 260 000 shares (**over-subscribed**). Cash with applications = 260 000 × 0.50 = ₦130 000. Only 200 000 shares are allotted, so the 60 000 shares not allotted are refunded: 60 000 × 0.50 = **₦30 000**. The company keeps 100 000 for the 200 000 shares and receives ₦140 000 at allotment.\n\nTotal cash = 100 000 + 140 000 = ₦240 000. **Share capital** = ₦200 000. **Share premium** = ₦40 000.\n\n## Appropriation account of a company\n\n| | ₦ |\n| --- | --- |\n| Net profit after tax | 650 000 |\n| Transfer to general reserve | (100 000) |\n| Preference dividend, 8% of ₦500 000 | (40 000) |\n| Ordinary dividend, 15% of ₦2 000 000 | (300 000) |\n| **Retained profit for the year** | **210 000** |\n| Balance brought forward | 90 000 |\n| **Balance carried forward** | **300 000** |\n\n## Simple ratios\n\n- Gross profit percentage = gross profit ÷ sales × 100.\n- **Current ratio** = current assets ÷ current liabilities.\n- **Acid test ratio** = (current assets − stock) ÷ current liabilities.\n\nIf current assets are ₦840 000, stock ₦336 000 and current liabilities ₦420 000, the current ratio is 2:1 and the acid test is (840 000 − 336 000) ÷ 420 000 = **1.2:1**.\n\n## Purchase of a business\n\nIf a company buys Mr Obi's business for ₦1 250 000 and takes over assets of ₦1 200 000 and creditors of ₦100 000, net assets are ₦1 100 000 and **goodwill** is 1 250 000 − 1 100 000 = **₦150 000**."
+      },
+      "cards": [
+        {
+          "front": "Limited liability",
+          "back": "Shareholders can lose only the amount they paid or agreed to pay for their shares."
+        },
+        {
+          "front": "Ordinary share",
+          "back": "The risk share of a company; its dividend depends on profit."
+        },
+        {
+          "front": "Preference share",
+          "back": "A share with a fixed dividend paid before the ordinary dividend."
+        },
+        {
+          "front": "Debenture",
+          "back": "A loan to a company which earns interest, not a dividend."
+        },
+        {
+          "front": "Share premium",
+          "back": "The amount paid for a share above its nominal value."
+        },
+        {
+          "front": "Over-subscription",
+          "back": "More shares are applied for than are on offer; the excess application money is refunded."
+        },
+        {
+          "front": "Retained profit",
+          "back": "The profit left in the company after reserves and dividends."
+        },
+        {
+          "front": "Current ratio",
+          "back": "Current assets ÷ current liabilities."
+        },
+        {
+          "front": "Acid test ratio",
+          "back": "(Current assets − stock) ÷ current liabilities."
+        },
+        {
+          "front": "Goodwill on purchase of a business",
+          "back": "Purchase price less the net assets taken over."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A company issues 150 000 ordinary shares of ₦2 each at ₦2.50. What amount is credited to the share premium account?",
+          "options": [
+            "₦300 000",
+            "₦75 000",
+            "₦375 000",
+            "₦150 000"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A company has 500 000 preference shares of ₦1 each with a dividend of 10%. What is the preference dividend for the year?",
+          "options": [
+            "₦50 000",
+            "₦5 000",
+            "₦500 000",
+            "₦10 000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is a difference between a private company and a public company?",
+          "options": [
+            "Only a private company has limited liability",
+            "A public company cannot issue debentures",
+            "A private company must have more than twenty shareholders",
+            "A public company may invite the public to buy its shares"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "How is the interest on debentures treated in the final accounts of a company?",
+          "options": [
+            "As a dividend paid out of profit",
+            "As an addition to share capital",
+            "As an expense charged against profit",
+            "As a reserve"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A company has current assets of ₦600 000 and current liabilities of ₦400 000. What is its current ratio?",
+          "options": [
+            "1:1.5",
+            "0.67:1",
+            "2.5:1",
+            "1.5:1"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Ibadan Foods Ltd offered 200 000 ordinary shares of ₦1 each at ₦1.20. Application ₦0.50 a share; allotment ₦0.70 (including the premium). Applications were received for 260 000 shares, and 200 000 shares were allotted, with the money for the rest refunded. Calculate (a) the cash received with the applications, (b) the refund, (c) the cash received at allotment, (d) the share capital and share premium.",
+          "markScheme": [
+            "Cash with applications: 260 000 × ₦0.50 = ₦130 000",
+            "Refund for the 60 000 shares not allotted: 60 000 × ₦0.50 = ₦30 000",
+            "Allotment: 200 000 × ₦0.70 = ₦140 000",
+            "Share capital ₦200 000 and share premium 200 000 × ₦0.20 = ₦40 000"
+          ],
+          "modelAnswer": "(a) Application money = 260 000 × 0.50 = ₦130 000. (b) The 60 000 shares not allotted are refunded: 60 000 × 0.50 = ₦30 000. (c) Allotment = 200 000 × 0.70 = ₦140 000. (d) Share capital = 200 000 × ₦1 = ₦200 000, and share premium = 200 000 × ₦0.20 = ₦40 000. Check: 130 000 − 30 000 + 140 000 = 240 000 = 200 000 + 40 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 260 000 × 0.50 = ₦130 000. (b) 60 000 shares were refused, so the refund is 60 000 × 0.50 = ₦30 000. (c) 200 000 × 0.70 = ₦140 000. (d) Share capital is 200 000 × 1 = ₦200 000 and share premium is 200 000 × 0.20 = ₦40 000. Check: 130 000 − 30 000 + 140 000 = 240 000, which equals 200 000 + 40 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "260 000 × 0.50 = ₦130 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "60 000 shares were refused, so the refund is 60 000 × 0.50 = ₦30 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "200 000 × 0.70 = ₦140 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Share capital is 200 000 × 1 = ₦200 000 and share premium is 200 000 × 0.20 = ₦40 000."
+                }
+              ],
+              "feedback": "Full marks. The check at the end proves the issue balances."
+            },
+            {
+              "tier": "full",
+              "text": "The applicants paid 50 kobo on 260 000 shares, which is ₦130 000. The company refunds those who got nothing, 60 000 shares at 50 kobo, ₦30 000. At allotment the 200 000 shares pay 70 kobo each, ₦140 000. The nominal value is ₦200 000 for share capital and the extra 20 kobo on each share, ₦40 000, is the share premium.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The applicants paid 50 kobo on 260 000 shares, which is ₦130 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "The company refunds those who got nothing, 60 000 shares at 50 kobo, ₦30 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "At allotment the 200 000 shares pay 70 kobo each, ₦140 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The nominal value is ₦200 000 for share capital and the extra 20 kobo on each share, ₦40 000, is the share premium."
+                }
+              ],
+              "feedback": "Four marks. Converting to kobo and back is a good way to avoid slips."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 260 000 × 0.50 = 130 000. (b) No refund is needed, since the company keeps all the money. (c) 200 000 × 0.70 = 140 000. (d) Share capital is 260 000 and the premium is 40 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "260 000 × 0.50 = 130 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "200 000 × 0.70 = 140 000."
+                }
+              ],
+              "feedback": "Parts (a) and (c) are right. The company may issue only 200 000 shares, so the money for 60 000 shares is refunded (30 000), and share capital is 200 000, not 260 000."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Applications 200 000 × 0.50 = 100 000. (b) The refund is 60 000 × 0.50 = 30 000. (c) 200 000 × 0.70 = 140 000. (d) Share capital is 200 000 and premium 40 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The refund is 60 000 × 0.50 = 30 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "200 000 × 0.70 = 140 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Share capital is 200 000 and premium 40 000."
+                }
+              ],
+              "feedback": "You earned three marks. In (a), applications were received for 260 000 shares, so the cash was 130 000, of which 100 000 is kept and 30 000 refunded.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 200 000 × 1.20 = 240 000. (b) None. (c) 240 000. (d) Share capital 240 000.",
+              "meets": [],
+              "feedback": "The shares are paid for in two parts, and the price of ₦1.20 includes a premium of ₦0.20 that is not share capital. Application is 130 000, allotment 140 000, and share capital 200 000."
+            },
+            {
+              "tier": "weak",
+              "text": "(b) Refund is 60 000 × 0.50 = 30 000. (a) 130 000 − 30 000 = 100 000. (c) 0.70 × 260 000 = 182 000. (d) Capital is 100 000 and premium 182 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) Refund is 60 000 × 0.50 = 30 000."
+                }
+              ],
+              "feedback": "You earned the refund mark. Allotment applies only to the 200 000 shares allotted, 140 000, and the capital is 200 000 at nominal value; the premium is 40 000."
+            }
+          ]
+        },
+        {
+          "prompt": "In its first year, Ibadan Foods Ltd made a net profit after tax of ₦650 000. The directors transferred ₦100 000 to general reserve and paid a preference dividend of 8% on ₦500 000 of preference shares and an ordinary dividend of 15% on ₦2 000 000 of ordinary shares. The balance of retained profit brought forward was ₦90 000. Prepare the appropriation account and state the retained profit carried forward.",
+          "markScheme": [
+            "Preference dividend: 8% × 500 000 = ₦40 000",
+            "Ordinary dividend: 15% × 2 000 000 = ₦300 000",
+            "Retained profit for the year: 650 000 − 100 000 − 40 000 − 300 000 = ₦210 000",
+            "Balance carried forward: 210 000 + 90 000 = ₦300 000"
+          ],
+          "modelAnswer": "Preference dividend = 8% × 500 000 = ₦40 000. Ordinary dividend = 15% × 2 000 000 = ₦300 000. Retained profit for the year = 650 000 − 100 000 − 40 000 − 300 000 = ₦210 000. Added to the balance brought forward of 90 000, the balance carried forward is ₦300 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Preference dividend = 8/100 × 500 000 = 40 000. Ordinary dividend = 15/100 × 2 000 000 = 300 000. Retained profit for the year = 650 000 − 100 000 − 40 000 − 300 000 = 210 000. Plus brought forward 90 000 = ₦300 000 carried forward.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Preference dividend = 8/100 × 500 000 = 40 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Ordinary dividend = 15/100 × 2 000 000 = 300 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Retained profit for the year = 650 000 − 100 000 − 40 000 − 300 000 = 210 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Plus brought forward 90 000 = ₦300 000 carried forward."
+                }
+              ],
+              "feedback": "Full marks. A tidy account with the reserve, both dividends and the balance carried forward."
+            },
+            {
+              "tier": "full",
+              "text": "The preference shareholders are paid first: 8% of 500 000 is 40 000. The ordinary dividend is 15% of 2 000 000, which is 300 000. What remains from the 650 000 after the reserve of 100 000 and the dividends is 210 000. The company already had 90 000 kept in the past, so it now carries forward 300 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8% of 500 000 is 40 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "The ordinary dividend is 15% of 2 000 000, which is 300 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "What remains from the 650 000 after the reserve of 100 000 and the dividends is 210 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The company already had 90 000 kept in the past, so it now carries forward 300 000."
+                }
+              ],
+              "feedback": "Four marks. 'Preference shareholders are paid first' is the reason the order matters."
+            },
+            {
+              "tier": "partial",
+              "text": "Preference dividend 40 000. Ordinary dividend = 15% × 500 000 = 75 000. Retained profit = 650 000 − 100 000 − 40 000 − 75 000 = 435 000. Carried forward 525 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Preference dividend 40 000."
+                }
+              ],
+              "feedback": "The preference dividend is right. The ordinary dividend is on the ordinary share capital, 2 000 000, giving 300 000. Then the retained profit is 210 000 and the balance carried forward 300 000."
+            },
+            {
+              "tier": "partial",
+              "text": "Preference dividend is 40 000. Ordinary dividend is 300 000. Retained profit = 650 000 − 40 000 − 300 000 = 310 000. Carried forward = 310 000 + 90 000 = 400 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Preference dividend is 40 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Ordinary dividend is 300 000."
+                }
+              ],
+              "feedback": "The dividends are correct. You forgot to deduct the transfer to general reserve of 100 000, which gives retained profit of 210 000 and a balance carried forward of 300 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Dividend = 8% + 15% = 23% of 650 000 = 149 500. Carried forward = 650 000 − 149 500 = 500 500.",
+              "meets": [],
+              "feedback": "Dividends are percentages of the share capital, not of the profit. 8% of 500 000 is 40 000 and 15% of 2 000 000 is 300 000. The retained profit is 210 000."
+            },
+            {
+              "tier": "weak",
+              "text": "The preference dividend is 8% of 500 000 = 40 000. The profit is shared between the shareholders so nothing is left and nothing is carried forward.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The preference dividend is 8% of 500 000 = 40 000."
+                }
+              ],
+              "feedback": "The preference dividend is right. A company keeps the profit that is not paid out as retained profit: 210 000 for the year, and 300 000 with last year's 90 000."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Departmental and branch accounts",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the meaning and importance of departmental and branch accounts;\n2. distinguish a department from a branch;\n3. prepare departmental trading and profit and loss accounts, apportioning expenses on a fair basis;\n4. prepare a branch account when goods are sent at cost, using the stock and debtors system;\n5. explain how inter-branch transactions are recorded through the head office.\n\n## Materials\n\nA floor plan of an electronics shop in Alaba market with the phones section and the accessories section marked, calculators.\n\n## Starter (5 minutes)\n\nAsk: the shop has a phones corner and an accessories corner. The owner earns ₦326 000 in all. Which corner should she expand? Why does she need separate figures?\n\n## Development\n\n1. Meaning and importance: the owner sees which section earns most, controls each manager and decides where to spend.\n2. A department is a section of the same business in the same premises; a branch is in a different place and may keep its own records.\n3. Departmental accounts: separate trading accounts, then common expenses shared on a fair basis (floor area for rent, sales for advertising, equally for electricity).\n4. Departmental net profit = gross profit − share of expenses.\n5. Branch account in the head office books: goods sent, expenses paid, opening and closing stock and debtors; the balance is the branch profit or loss.\n6. Inter-branch transfers: the head office debits the branch that receives and credits the branch that sends.\n\n## Class activity\n\nGroups prepare a departmental account for the two corners and recommend where to put the next ₦100 000.\n\n## Evaluation\n\n1. What basis is used to share rent among departments?\n2. Name one difference between a department and a branch.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Knowing which part of the business earns the money",
+        "content": "# Departmental and branch accounts\n\nA business that sells different kinds of goods may keep separate accounts for each **department**, so the owner can see which one makes profit. A **branch** is a part of the business at a different location.\n\n## Importance\n\n- It shows which department or branch is profitable.\n- It lets the owner control managers.\n- It helps in decisions on stock, staff and expansion.\n\n## Department or branch?\n\nA **department** is in the same premises (the phones corner and the accessories corner). A **branch** is in a different town or area, such as an Ilorin branch of an Ibadan firm.\n\n## Departmental accounts\n\n**Worked example: Alaba Electronics.**\n\n| | Phones ₦ | Accessories ₦ |\n| --- | --- | --- |\n| Sales | 900 000 | 300 000 |\n| Opening stock | 120 000 | 40 000 |\n| Purchases | 600 000 | 170 000 |\n| Closing stock | 150 000 | 30 000 |\n| Cost of goods sold | 570 000 | 180 000 |\n| **Gross profit** | **330 000** | **120 000** |\n\nExpenses are shared on a fair basis: rent ₦60 000 on floor area (3:1), advertising ₦40 000 on sales (3:1), electricity ₦24 000 equally.\n\n| | Phones | Accessories |\n| --- | --- | --- |\n| Rent | 45 000 | 15 000 |\n| Advertising | 30 000 | 10 000 |\n| Electricity | 12 000 | 12 000 |\n| Total | 87 000 | 37 000 |\n| **Net profit** | **243 000** | **83 000** |\n\nThe total net profit is ₦326 000.\n\n## Branch accounts\n\nThe head office keeps a **branch account**. Goods sent to the branch at cost are debited to the branch account. Expenses paid by the head office are also debited.\n\n**Worked example: Ilorin branch.** Opening stock ₦80 000; opening debtors ₦40 000; goods from head office ₦500 000; rent ₦30 000 and wages ₦50 000 paid by head office; credit sales ₦250 000; cash sales ₦350 000 sent to head office; cash from debtors ₦235 000; closing stock ₦100 000.\n\nClosing debtors = 40 000 + 250 000 − 235 000 = ₦55 000.\n\nDebit side: 80 000 + 40 000 + 500 000 + 30 000 + 50 000 = ₦700 000.\nCredit side: cash sales 350 000 + cash from debtors 235 000 + closing stock 100 000 + closing debtors 55 000 = ₦740 000.\n\nThe difference, **₦40 000**, is the branch profit.\n\n## Inter-branch transactions\n\nIf Branch A sends goods worth ₦20 000 at cost to Branch B on the head office's instruction, the head office debits Branch B's account and credits Branch A's account."
+      },
+      "cards": [
+        {
+          "front": "Department",
+          "back": "A section of a business in the same premises, with its own trading figures."
+        },
+        {
+          "front": "Branch",
+          "back": "A part of the business at a different location from the head office."
+        },
+        {
+          "front": "Basis for sharing rent",
+          "back": "Floor area."
+        },
+        {
+          "front": "Basis for sharing advertising",
+          "back": "Sales of each department."
+        },
+        {
+          "front": "Net profit of a department",
+          "back": "Gross profit less its share of the expenses."
+        },
+        {
+          "front": "Goods sent to a branch at cost",
+          "back": "Debit the branch account; credit goods sent to branch (or purchases)."
+        },
+        {
+          "front": "Closing debtors of a branch",
+          "back": "Opening debtors + credit sales − cash from debtors."
+        },
+        {
+          "front": "Transfer of goods between two branches",
+          "back": "Head office debits the receiving branch and credits the sending branch."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which statement correctly describes the difference between a department and a branch?",
+          "options": [
+            "A branch is always owned by someone else",
+            "A department must keep its own bank account",
+            "A branch is in a different location from the head office, while a department is in the same premises",
+            "A department sells only for cash"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A shop's rent of ₦60 000 is shared between two departments by floor area, which is in the ratio 3:1. What is the share of the larger department?",
+          "options": [
+            "₦45 000",
+            "₦30 000",
+            "₦20 000",
+            "₦15 000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A department has a gross profit of ₦96 000 and its share of the expenses is ₦31 000. What is its net profit?",
+          "options": [
+            "₦127 000",
+            "₦96 000",
+            "₦31 000",
+            "₦65 000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Goods costing ₦500 000 are sent by the head office to its branch at cost. In the head office books the entry is",
+          "options": [
+            "debit goods sent to branch, credit branch account",
+            "debit branch account, credit goods sent to branch",
+            "debit sales, credit branch account",
+            "debit branch account, credit cash"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "On the head office's instruction, Branch A sends goods costing ₦20 000 to Branch B. In the head office books",
+          "options": [
+            "Branch A is debited and Branch B is credited",
+            "both are debited",
+            "Branch B is debited and Branch A is credited",
+            "no entry is needed"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Alaba Electronics has two departments. Phones: sales ₦900 000, opening stock ₦120 000, purchases ₦600 000, closing stock ₦150 000. Accessories: sales ₦300 000, opening stock ₦40 000, purchases ₦170 000, closing stock ₦30 000. Calculate for each department the cost of goods sold and the gross profit.",
+          "markScheme": [
+            "Phones cost of goods sold: 120 000 + 600 000 − 150 000 = ₦570 000",
+            "Phones gross profit: 900 000 − 570 000 = ₦330 000",
+            "Accessories cost of goods sold: 40 000 + 170 000 − 30 000 = ₦180 000",
+            "Accessories gross profit: 300 000 − 180 000 = ₦120 000"
+          ],
+          "modelAnswer": "Phones: cost of goods sold = 120 000 + 600 000 − 150 000 = ₦570 000, so gross profit = 900 000 − 570 000 = ₦330 000. Accessories: cost of goods sold = 40 000 + 170 000 − 30 000 = ₦180 000, so gross profit = 300 000 − 180 000 = ₦120 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Phones: 120 000 + 600 000 − 150 000 = 570 000 cost of goods sold. 900 000 − 570 000 = 330 000 gross profit. Accessories: 40 000 + 170 000 − 30 000 = 180 000 cost of goods sold. 300 000 − 180 000 = 120 000 gross profit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "120 000 + 600 000 − 150 000 = 570 000 cost of goods sold."
+                },
+                {
+                  "point": 1,
+                  "quote": "900 000 − 570 000 = 330 000 gross profit."
+                },
+                {
+                  "point": 2,
+                  "quote": "40 000 + 170 000 − 30 000 = 180 000 cost of goods sold."
+                },
+                {
+                  "point": 3,
+                  "quote": "300 000 − 180 000 = 120 000 gross profit."
+                }
+              ],
+              "feedback": "Full marks. Each department has its own trading account and its own stocks."
+            },
+            {
+              "tier": "full",
+              "text": "The phones sold had cost 120 000 + 600 000 = 720 000 less the 150 000 left, which is ₦570 000. The gross profit on phones is 900 000 − 570 000 = ₦330 000. For accessories, 40 000 + 170 000 = 210 000 less 30 000 left gives ₦180 000. The gross profit there is 300 000 − 180 000 = ₦120 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The phones sold had cost 120 000 + 600 000 = 720 000 less the 150 000 left, which is ₦570 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "The gross profit on phones is 900 000 − 570 000 = ₦330 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "For accessories, 40 000 + 170 000 = 210 000 less 30 000 left gives ₦180 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The gross profit there is 300 000 − 180 000 = ₦120 000."
+                }
+              ],
+              "feedback": "Four marks. Adding the opening stock and purchases first, then deducting the closing stock, is a clear method."
+            },
+            {
+              "tier": "partial",
+              "text": "Phones: 120 000 + 600 000 − 150 000 = 570 000. Gross profit 900 000 − 570 000 = 330 000. Accessories: 40 000 + 170 000 + 30 000 = 240 000. Gross profit 300 000 − 240 000 = 60 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Phones: 120 000 + 600 000 − 150 000 = 570 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Gross profit 900 000 − 570 000 = 330 000."
+                }
+              ],
+              "feedback": "Phones are correct. For accessories the closing stock is deducted, not added: 210 000 − 30 000 = 180 000, and the gross profit is 120 000."
+            },
+            {
+              "tier": "partial",
+              "text": "Phones: 600 000 − 150 000 = 450 000. Gross profit 900 000 − 450 000 = 450 000. Accessories: 40 000 + 170 000 − 30 000 = 180 000. Gross profit 300 000 − 180 000 = 120 000.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Accessories: 40 000 + 170 000 − 30 000 = 180 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Gross profit 300 000 − 180 000 = 120 000."
+                }
+              ],
+              "feedback": "Accessories are correct. For phones you left out the opening stock of 120 000, so the cost of goods sold is 570 000 and the gross profit is 330 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Phones gross profit = 900 000 − 600 000 = 300 000. Accessories gross profit = 300 000 − 170 000 = 130 000.",
+              "meets": [],
+              "feedback": "You used purchases as the cost of goods sold. The stocks must be included: opening stock + purchases − closing stock. The gross profits are 330 000 and 120 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Total sales 1 200 000. Total purchases 770 000. Gross profit 430 000 for the shop, so 215 000 each.",
+              "meets": [],
+              "feedback": "The point of departmental accounts is to keep the departments apart. Work out each one's cost of goods sold with its own stocks: gross profits of 330 000 and 120 000, not equal halves."
+            }
+          ]
+        },
+        {
+          "prompt": "The Ilorin branch of Alaba Stores is controlled from the head office in Ibadan. Opening stock ₦80 000; opening debtors ₦40 000; goods sent from head office at cost ₦500 000; rent ₦30 000 and wages ₦50 000 paid by head office; credit sales ₦250 000; cash sales ₦350 000 sent to head office; cash received from debtors ₦235 000; closing stock ₦100 000. Prepare the branch account in the head office books and find the profit of the branch.",
+          "markScheme": [
+            "Closing debtors: 40 000 + 250 000 − 235 000 = ₦55 000",
+            "Debit side before profit: 80 000 + 40 000 + 500 000 + 30 000 + 50 000 = ₦700 000",
+            "Credit side: cash sales 350 000, cash from debtors 235 000, closing stock 100 000 and closing debtors 55 000 = ₦740 000",
+            "Branch profit: 740 000 − 700 000 = ₦40 000"
+          ],
+          "modelAnswer": "Closing debtors = 40 000 + 250 000 − 235 000 = ₦55 000. Debit side: opening stock 80 000, opening debtors 40 000, goods from head office 500 000, rent 30 000, wages 50 000, a total of ₦700 000. Credit side: cash sales 350 000, cash from debtors 235 000, closing stock 100 000, closing debtors 55 000, a total of ₦740 000. The balancing figure, ₦40 000, is the branch profit.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Closing debtors = 40 000 + 250 000 − 235 000 = 55 000. Debit: stock 80 000, debtors 40 000, goods 500 000, rent 30 000, wages 50 000 = 700 000. Credit: cash sales 350 000, cash from debtors 235 000, closing stock 100 000, closing debtors 55 000 = 740 000. The balancing figure on the debit side is the profit, 40 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Closing debtors = 40 000 + 250 000 − 235 000 = 55 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Debit: stock 80 000, debtors 40 000, goods 500 000, rent 30 000, wages 50 000 = 700 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Credit: cash sales 350 000, cash from debtors 235 000, closing stock 100 000, closing debtors 55 000 = 740 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The balancing figure on the debit side is the profit, 40 000."
+                }
+              ],
+              "feedback": "Full marks. You worked out the closing debtors first, which the rest of the account needs."
+            },
+            {
+              "tier": "full",
+              "text": "The debtors owed 40 000, bought on credit 250 000 and paid 235 000, so 55 000 are still owing. The debit side comes to 700 000: the stock and debtors at the start, goods from head office and the two expenses. The credit side comes to 740 000 with the cash sales, the cash from debtors, and the stock and debtors at the end. The credit side is 40 000 bigger, which is the profit of the branch.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The debtors owed 40 000, bought on credit 250 000 and paid 235 000, so 55 000 are still owing."
+                },
+                {
+                  "point": 1,
+                  "quote": "The debit side comes to 700 000: the stock and debtors at the start, goods from head office and the two expenses."
+                },
+                {
+                  "point": 2,
+                  "quote": "The credit side comes to 740 000 with the cash sales, the cash from debtors, and the stock and debtors at the end."
+                },
+                {
+                  "point": 3,
+                  "quote": "The credit side is 40 000 bigger, which is the profit of the branch."
+                }
+              ],
+              "feedback": "Four marks. Explaining why the credit side is larger and what the difference means shows understanding."
+            },
+            {
+              "tier": "partial",
+              "text": "Debit: 80 000 + 40 000 + 500 000 + 30 000 + 50 000 = 700 000. Credit: cash sales 350 000, cash from debtors 235 000, closing stock 100 000 = 685 000. Loss = 15 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Debit: 80 000 + 40 000 + 500 000 + 30 000 + 50 000 = 700 000."
+                }
+              ],
+              "feedback": "The debit side is correct. You left out the closing debtors, 55 000 (40 000 + 250 000 − 235 000), which are an asset of the branch. With them the credit side is 740 000 and there is a profit of 40 000."
+            },
+            {
+              "tier": "partial",
+              "text": "Closing debtors = 40 000 + 250 000 − 235 000 = 55 000. Credit: 350 000 + 235 000 + 100 000 + 55 000 = 740 000. Debit: 80 000 + 500 000 + 30 000 + 50 000 = 660 000. Profit = 80 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Closing debtors = 40 000 + 250 000 − 235 000 = 55 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Credit: 350 000 + 235 000 + 100 000 + 55 000 = 740 000."
+                }
+              ],
+              "feedback": "Your credit side and closing debtors are right. The debit side should include the opening debtors of 40 000, making it 700 000 and the profit 40 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Sales = 250 000 + 350 000 = 600 000. Profit = 600 000 − 500 000 = 100 000.",
+              "meets": [],
+              "feedback": "The expenses and the stocks and debtors are missing. The branch profit takes the stock into account (cost of goods sold = 480 000) and the expenses of 80 000, giving 40 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Closing debtors are 55 000. The profit is 500 000 because that is the goods sent to the branch.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Closing debtors are 55 000."
+                }
+              ],
+              "feedback": "Goods sent to the branch are a cost, not a profit. Put all the items on both sides of the branch account; the credit side is 40 000 more than the debit side, so the profit is 40 000."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Public sector accounting: revenue, expenditure and government accounts",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the meaning of public sector accounting and how it differs from private sector accounting;\n2. name the sources of public revenue;\n3. distinguish capital expenditure from recurrent expenditure;\n4. say what a budget is and why it is important;\n5. prepare a simple statement of revenue and expenditure for a local government.\n\n## Materials\n\nA newspaper cutting on a state budget, a list of local government items on cards, calculators.\n\n## Starter (5 minutes)\n\nAsk: the local government builds a borehole and pays its staff. Where did the money come from, and how can citizens know it was spent well? Link to public accountability.\n\n## Development\n\n1. Meaning: the recording, reporting and control of money collected and spent by governments and their agencies.\n2. Differences: purpose (service, not profit), the budget as the guide, the cash basis, accountability to the legislature and the public, laws and financial regulations.\n3. Sources of revenue: statutory allocation from the Federation Account, taxes (company income tax, VAT, PAYE), customs duties, fees, fines, rates, grants, loans.\n4. Expenditure: recurrent (salaries, overheads, running costs) and capital (roads, schools, boreholes).\n5. Budget: an estimate of revenue and expenditure for a year.\n6. Simple government account: revenue less recurrent and capital expenditure gives a surplus or deficit.\n\n## Class activity\n\nGroups sort cards into recurrent and capital and compute a local government's surplus.\n\n## Evaluation\n\n1. Why is a government not judged by profit?\n2. Is the salary of a nurse capital or recurrent expenditure?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "How governments account for public money",
+        "content": "# Public sector accounting\n\n**Public sector accounting** deals with the money of governments and their agencies: federal, state and local governments, ministries and public schools. The money belongs to the public, so the aim is **service and accountability**, not profit.\n\n## How it differs from private sector accounting\n\n| | Public sector | Private sector |\n| --- | --- | --- |\n| Aim | Provide services | Make profit |\n| Guide | The approved budget | The owner's plans |\n| Basis | Mostly cash | Accruals |\n| Accountable to | The legislature and the public | The owners |\n| Controlled by | Financial regulations and Acts | Companies law and owners' rules |\n\n## Sources of public revenue\n\n- **Statutory allocation** from the Federation Account (oil revenue and other collections).\n- **Taxes**: company income tax, value added tax (VAT), personal income tax (PAYE).\n- **Customs and excise duties.**\n- **Rates, fees and fines**: tenement rates, market stall fees, licence fees.\n- **Grants and loans.**\n\n## Capital and recurrent expenditure\n\n**Recurrent expenditure** is for the day-to-day running of government: salaries, stationery, electricity. **Capital expenditure** buys or builds assets that serve for many years: roads, schools, boreholes.\n\n## The budget\n\nA **budget** is an estimate of what government expects to collect and spend in a year. It is approved by the legislature, and actual figures are compared with it.\n\n## Worked example: Ibadan North Local Government (₦ million)\n\nRevenue: statutory allocation 120; tenement rates 18; market stall fees 12; fines 2. Total revenue = **152**.\n\nRecurrent expenditure: salaries 70; overheads 30. Total = **100**.\nCapital expenditure: borehole 25; road repairs 15. Total = **40**.\n\nTotal expenditure = 140. **Surplus** = 152 − 140 = **₦12 million**.\n\nA surplus may be kept for the next year; a deficit has to be met from loans or reserves."
+      },
+      "cards": [
+        {
+          "front": "Public sector accounting",
+          "back": "The accounting of the money of governments and their agencies."
+        },
+        {
+          "front": "Main aim of public sector accounts",
+          "back": "To account for public money and provide services, not to make profit."
+        },
+        {
+          "front": "Statutory allocation",
+          "back": "Money paid to each level of government from the Federation Account."
+        },
+        {
+          "front": "Recurrent expenditure",
+          "back": "Spending on the day-to-day running of government, e.g. salaries."
+        },
+        {
+          "front": "Capital expenditure",
+          "back": "Spending on assets that last many years, e.g. a road or a borehole."
+        },
+        {
+          "front": "Budget",
+          "back": "An estimate of revenue and expenditure for a future period, approved by the legislature."
+        },
+        {
+          "front": "Tenement rates",
+          "back": "Local government charges on property."
+        },
+        {
+          "front": "Surplus of a government account",
+          "back": "Total revenue less total expenditure when revenue is bigger."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a main difference between public sector and private sector accounts?",
+          "options": [
+            "The public sector aims at service to the public, while the private sector aims at profit",
+            "The private sector keeps no records",
+            "The public sector pays no salaries",
+            "The public sector never uses cash"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is capital expenditure of a local government?",
+          "options": [
+            "Payment of teachers' salaries",
+            "Building a new health centre",
+            "Paying the electricity bill of the council office",
+            "Buying stationery"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following is a source of government revenue?",
+          "options": [
+            "Staff salaries",
+            "Purchase of vehicles",
+            "Value added tax",
+            "Repayment of a loan"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A local government collected ₦90 million. It spent ₦55 million on recurrent items and ₦28 million on capital items. What was the surplus?",
+          "options": [
+            "₦35 million",
+            "₦27 million",
+            "₦62 million",
+            "₦7 million"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A budget is best described as",
+          "options": [
+            "an estimate of revenue and expenditure for a future period",
+            "a report of the profit made last year",
+            "a list of the debts of the government",
+            "the cash in the treasury"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State three differences between public sector accounting and private sector accounting, and explain each in one sentence.",
+          "markScheme": [
+            "States that the aim of public sector accounts is service to the public while the private sector aims at profit",
+            "States that public sector accounts follow an approved budget and are mostly on the cash basis, while the private sector uses accruals",
+            "States that the public sector is accountable to the legislature and the public, while the private sector is accountable to its owners"
+          ],
+          "modelAnswer": "First, the public sector aims to provide services to the public, but the private sector aims at making profit. Second, the public sector follows a budget approved by the legislature and mostly records cash received and paid, while the private sector uses accruals. Third, the public sector is accountable to the legislature and the public, whereas the private sector answers to its owners.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Public sector accounts are meant to show how money was used to provide services, but private business accounts are meant to show the profit. Public bodies follow an approved budget and mostly record cash, but private firms use the accruals basis. A government must answer to the legislature and to the citizens who gave the money, but a private firm answers to its owners.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Public sector accounts are meant to show how money was used to provide services, but private business accounts are meant to show the profit."
+                },
+                {
+                  "point": 1,
+                  "quote": "Public bodies follow an approved budget and mostly record cash, but private firms use the accruals basis."
+                },
+                {
+                  "point": 2,
+                  "quote": "A government must answer to the legislature and to the citizens who gave the money, but a private firm answers to its owners."
+                }
+              ],
+              "feedback": "Full marks. Each difference is stated for both sectors, not only one."
+            },
+            {
+              "tier": "full",
+              "text": "The aim of a ministry is to serve people, but the aim of a trader is to earn profit. A ministry cannot spend more than its approved budget, and its records are kept mostly on cash, but a company records income when it is earned and expense when incurred. The government is accountable to the public through the National Assembly or the State Assembly, but a company is accountable to its shareholders.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The aim of a ministry is to serve people, but the aim of a trader is to earn profit."
+                },
+                {
+                  "point": 1,
+                  "quote": "A ministry cannot spend more than its approved budget, and its records are kept mostly on cash, but a company records income when it is earned and expense when incurred."
+                },
+                {
+                  "point": 2,
+                  "quote": "The government is accountable to the public through the National Assembly or the State Assembly, but a company is accountable to its shareholders."
+                }
+              ],
+              "feedback": "Three marks. Your example of the legislature shows you know who the accountability is to."
+            },
+            {
+              "tier": "partial",
+              "text": "The private sector makes profit but the public sector gives service to the people. The public sector has more money. The private sector has more workers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The private sector makes profit but the public sector gives service to the people."
+                }
+              ],
+              "feedback": "You earned a mark for the aim. The other two differences are not about accounting: the public sector uses a budget and the cash basis, and it is accountable to the legislature and the public."
+            },
+            {
+              "tier": "partial",
+              "text": "The government accounts are checked by the Auditor-General for the public, but private accounts are for the owner. Public sector uses taxes and private sector uses profit.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The government accounts are checked by the Auditor-General for the public, but private accounts are for the owner."
+                }
+              ],
+              "feedback": "You have the accountability point. Add the aim (service, not profit) and the budget and cash basis. 'Uses taxes and profit' describes sources of money, not a difference in accounting.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The public sector is big and the private sector is small. The public sector is for the government and the private sector is for people.",
+              "meets": [],
+              "feedback": "Size is not a difference in accounting. Compare their aims (service or profit), their guide (a budget or the owner's plans) and who they answer to (the public or the owners)."
+            },
+            {
+              "tier": "weak",
+              "text": "The private sector makes profit. The public sector does not make any money at all so it has no accounts.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The private sector makes profit."
+                }
+              ],
+              "feedback": "The public sector does have accounts: it collects taxes and fees and spends them. The difference is that its aim is service, it follows a budget and it is accountable to the public."
+            }
+          ]
+        },
+        {
+          "prompt": "The Ibadan North Local Government received the following in the year (₦ million): statutory allocation 120; tenement rates 18; market stall fees 12; fines 2. It spent: salaries 70; overheads 30; a borehole 25; road repairs 15. Prepare a statement of revenue and expenditure, showing the total revenue, the recurrent expenditure, the capital expenditure and the surplus.",
+          "markScheme": [
+            "Total revenue: 120 + 18 + 12 + 2 = ₦152 million",
+            "Recurrent expenditure: salaries 70 + overheads 30 = ₦100 million",
+            "Capital expenditure: borehole 25 + road repairs 15 = ₦40 million",
+            "Surplus: 152 − (100 + 40) = ₦12 million"
+          ],
+          "modelAnswer": "Total revenue = 120 + 18 + 12 + 2 = ₦152 million. Recurrent expenditure (salaries and overheads) = 70 + 30 = ₦100 million. Capital expenditure (borehole and road repairs) = 25 + 15 = ₦40 million. Total expenditure = ₦140 million. Surplus = 152 − 140 = ₦12 million.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Revenue: 120 + 18 + 12 + 2 = ₦152 million. Recurrent expenditure: salaries 70 + overheads 30 = ₦100 million. Capital expenditure: borehole 25 + road repairs 15 = ₦40 million. Total expenditure 140. Surplus = 152 − 140 = ₦12 million.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "120 + 18 + 12 + 2 = ₦152 million."
+                },
+                {
+                  "point": 1,
+                  "quote": "salaries 70 + overheads 30 = ₦100 million."
+                },
+                {
+                  "point": 2,
+                  "quote": "borehole 25 + road repairs 15 = ₦40 million."
+                },
+                {
+                  "point": 3,
+                  "quote": "Total expenditure 140. Surplus = 152 − 140 = ₦12 million."
+                }
+              ],
+              "feedback": "Full marks. You kept recurrent and capital expenditure apart, as the question wanted."
+            },
+            {
+              "tier": "full",
+              "text": "The money coming in is 120 + 18 + 12 + 2 = 152 million naira. Salaries and overheads are day-to-day, so recurrent expenditure is 70 + 30 = 100 million. A borehole and a road last many years, so capital expenditure is 25 + 15 = 40 million. The council spent 140 million out of 152 million, so it has a surplus of 12 million.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "120 + 18 + 12 + 2 = 152 million naira."
+                },
+                {
+                  "point": 1,
+                  "quote": "recurrent expenditure is 70 + 30 = 100 million."
+                },
+                {
+                  "point": 2,
+                  "quote": "capital expenditure is 25 + 15 = 40 million."
+                },
+                {
+                  "point": 3,
+                  "quote": "The council spent 140 million out of 152 million, so it has a surplus of 12 million."
+                }
+              ],
+              "feedback": "Four marks. Your reason for each heading shows you can classify expenditure, not only add."
+            },
+            {
+              "tier": "partial",
+              "text": "Revenue is 152 million. Recurrent expenditure is 70 + 30 = 100 million. Capital expenditure is 25 million. Surplus = 152 − 125 = 27 million.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Revenue is 152 million."
+                },
+                {
+                  "point": 1,
+                  "quote": "Recurrent expenditure is 70 + 30 = 100 million."
+                }
+              ],
+              "feedback": "Revenue and recurrent expenditure are right. Capital expenditure includes the road repairs as well as the borehole: 25 + 15 = 40 million, so the surplus is 12 million."
+            },
+            {
+              "tier": "partial",
+              "text": "Total revenue = 152 million. Recurrent expenditure = 70 + 25 = 95 million. Capital expenditure = 30 + 15 = 45 million. Surplus = 152 − 140 = 12 million.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total revenue = 152 million."
+                },
+                {
+                  "point": 3,
+                  "quote": "Surplus = 152 − 140 = 12 million."
+                }
+              ],
+              "feedback": "The totals are right but you put the overheads of 30 with capital and the borehole of 25 with recurrent. Overheads are day-to-day (recurrent 100) and the borehole is capital (40).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Revenue is 120 million, the allocation. Expenditure is 70 + 30 + 25 + 15 = 140 million. There is a deficit of 20 million.",
+              "meets": [],
+              "feedback": "Revenue is not only the allocation: add the rates, fees and fines, 152 in all. Then the council has a surplus of 12 million, not a deficit."
+            },
+            {
+              "tier": "weak",
+              "text": "Total revenue = 152 million. The government makes profit, so profit = 152 million, because it does not pay anything.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total revenue = 152 million."
+                }
+              ],
+              "feedback": "The government does spend: 100 million recurrent and 40 million capital. The balance, 12 million, is a surplus, not profit."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Information technology in accounting",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish manual from computerised accounting processing systems;\n2. describe the processes of data processing: input, processing, storage and output;\n3. identify computer hardware and software used in accounting, and tell system from application software;\n4. state the merits and demerits of manual and computerised systems;\n5. compare the two systems in a Nigerian business setting.\n\n## Materials\n\nA computer or projector with a spreadsheet, a sample printout from an accounting package, a sales ledger on paper, flash cards of hardware and software items.\n\n## Starter (5 minutes)\n\nShow a page from a hand-written ledger next to a printed customer statement. Ask: which was faster to produce and which is easier to correct if a figure is wrong?\n\n## Development\n\n1. Manual system: books, pens and calculators; the accountant writes every entry.\n2. Computerised system: an accounting package that records, posts, balances and reports.\n3. Data processing: input (entering the invoice), processing (posting, calculating), storage (saving the record), output (reports and statements).\n4. Hardware: keyboard, mouse, scanner (input); printer, monitor (output); hard disk, flash drive (storage). Software: system software (operating system) and application software (accounting package, spreadsheet).\n5. Merits of computerised accounting: speed, accuracy, easy retrieval, neat reports. Demerits: cost, training, power failure, loss of data and fraud if there is no control.\n6. Merits of manual accounting: cheap, no power needed. Demerits: slow, prone to errors, bulky storage.\n\n## Class activity\n\nLearners time themselves posting twenty entries by hand and into a spreadsheet, then compare.\n\n## Evaluation\n\n1. Name two input devices and two output devices.\n2. Why should a computerised business keep a backup?\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "Accounting by hand and by computer",
+        "content": "# Information technology in accounting\n\nAccounting can be done **manually** or by **computer**. A manual system uses books and a calculator; a **computerised system** uses a computer and an accounting package.\n\n## Data processing\n\nWhichever system is used, accounting data passes through four stages.\n\n1. **Input**: the data is collected and entered, for example sales invoices typed into the computer, or invoices written in the day book.\n2. **Processing**: the data is posted, sorted and calculated; totals and balances are found.\n3. **Storage**: the results are saved, in a ledger book or on a hard disk or flash drive.\n4. **Output**: the information is produced as reports such as statements, a trial balance and final accounts.\n\n## Hardware and software\n\n**Hardware** is the physical equipment.\n\n- Input: keyboard, mouse, scanner.\n- Output: monitor, printer.\n- Storage: hard disk, flash drive.\n\n**Software** is the set of programs.\n\n- **System software**, such as the operating system, runs the computer.\n- **Application software**, such as an accounting package or spreadsheet, does a particular job.\n\n## Merits and demerits\n\n| | Manual | Computerised |\n| --- | --- | --- |\n| Merits | Cheap to start; needs no electricity; easy to learn | Fast; accurate; easy to find a record; neat reports; saves storage space |\n| Demerits | Slow; errors are common; bulky; records are easily lost in a fire | Costly to buy and train staff; fails when power fails; data can be lost or stolen without backup |\n\n## Worked example\n\nAn accounts clerk at a pharmacy in Sabo, Kano, posts 25 entries an hour by hand. With a package the same clerk can post 150 entries an hour. For 600 entries:\n\n- Manual: 600 ÷ 25 = **24 hours**.\n- Computer: 600 ÷ 150 = **4 hours**.\n- Time saved = 24 − 4 = **20 hours**.\n\nYet a business in an area with frequent power cuts must keep **backups** and a power source, or it will lose the advantage."
+      },
+      "cards": [
+        {
+          "front": "Four stages of data processing",
+          "back": "Input, processing, storage and output."
+        },
+        {
+          "front": "Hardware",
+          "back": "The physical parts of a computer, such as a keyboard or printer."
+        },
+        {
+          "front": "Software",
+          "back": "The programs that make a computer work."
+        },
+        {
+          "front": "System software",
+          "back": "Programs that run the computer, such as an operating system."
+        },
+        {
+          "front": "Application software",
+          "back": "Programs for a particular job, such as an accounting package."
+        },
+        {
+          "front": "Examples of output devices",
+          "back": "Monitor and printer."
+        },
+        {
+          "front": "A merit of computerised accounting",
+          "back": "Speed and accuracy in posting and producing reports."
+        },
+        {
+          "front": "A demerit of computerised accounting",
+          "back": "Cost, power failure, and loss or theft of data without backup."
+        },
+        {
+          "front": "Why keep a backup?",
+          "back": "So that records are not lost if the computer fails or is stolen."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is an example of application software used by accountants?",
+          "options": [
+            "An operating system",
+            "A printer driver",
+            "An accounting package",
+            "A memory card"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is an output device?",
+          "options": [
+            "Keyboard",
+            "Scanner",
+            "Mouse",
+            "Printer"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A clerk types the details of a sales invoice into an accounting package. In which stage of data processing is this?",
+          "options": [
+            "Input",
+            "Processing",
+            "Storage",
+            "Output"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A clerk posts 25 entries an hour by hand. With an accounting package she can post 150 entries an hour. How many hours are saved in posting 600 entries?",
+          "options": [
+            "24 hours",
+            "20 hours",
+            "4 hours",
+            "6 hours"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is a disadvantage of a computerised accounting system?",
+          "options": [
+            "It is slower than posting by hand",
+            "It cannot produce a trial balance",
+            "Records can be lost if power fails and no backup is kept",
+            "It cannot store customer records"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Alhaji Sule's pharmacy in Sabo, Kano, has bought a computer for its accounts. Describe the four stages of data processing, using the pharmacy's daily sales as an example for each stage.",
+          "markScheme": [
+            "Input: the details of each sale or invoice are entered into the computer",
+            "Processing: the sales are posted, sorted and totalled",
+            "Storage: the records are saved on the hard disk or a flash drive",
+            "Output: reports such as the sales summary or a statement are printed or displayed"
+          ],
+          "modelAnswer": "Input: the details of each sale, such as the drug sold and the price, are typed into the computer from the receipt. Processing: the computer posts the sales to the accounts, sorts them and works out the totals. Storage: the records are saved on the hard disk or a flash drive. Output: reports, such as the daily sales summary and customers' statements, are displayed or printed.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Input is when the cashier or clerk types the drug and price of each sale into the computer. Processing is when the computer adds the sales, posts them to the accounts and finds the total for the day. Storage is when the records are saved on the hard disk, or on a flash drive as a backup. Output is when the sales summary or a customer statement is shown on the screen or printed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input is when the cashier or clerk types the drug and price of each sale into the computer."
+                },
+                {
+                  "point": 1,
+                  "quote": "Processing is when the computer adds the sales, posts them to the accounts and finds the total for the day."
+                },
+                {
+                  "point": 2,
+                  "quote": "Storage is when the records are saved on the hard disk, or on a flash drive as a backup."
+                },
+                {
+                  "point": 3,
+                  "quote": "Output is when the sales summary or a customer statement is shown on the screen or printed."
+                }
+              ],
+              "feedback": "Full marks. Each stage has a pharmacy example, which is what the question asked."
+            },
+            {
+              "tier": "full",
+              "text": "The data is fed in: the receipts for the day are entered with the keyboard. Then it is processed: the package calculates the totals and updates the ledgers. Next it is stored: the saved files stay on the disk so that Alhaji Sule can look at them next month. Finally the output is the printed daily sales report and the customers' statements.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The data is fed in: the receipts for the day are entered with the keyboard."
+                },
+                {
+                  "point": 1,
+                  "quote": "Then it is processed: the package calculates the totals and updates the ledgers."
+                },
+                {
+                  "point": 2,
+                  "quote": "Next it is stored: the saved files stay on the disk so that Alhaji Sule can look at them next month."
+                },
+                {
+                  "point": 3,
+                  "quote": "Finally the output is the printed daily sales report and the customers' statements."
+                }
+              ],
+              "feedback": "Four marks. 'So that he can look at them next month' is a good reason for storage."
+            },
+            {
+              "tier": "partial",
+              "text": "Input is typing the daily sales into the computer. Output is printing the daily report. Processing is the computer and storage is the computer too.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input is typing the daily sales into the computer."
+                },
+                {
+                  "point": 3,
+                  "quote": "Output is printing the daily report."
+                }
+              ],
+              "feedback": "You have input and output. Processing is what the computer does with the data (posting and totalling), and storage is saving the records on a disk so they are not lost."
+            },
+            {
+              "tier": "partial",
+              "text": "Processing is when the computer calculates the total of the sales and posts to the ledger. Storage is saving the file to the hard disk. Input is the printout and output is the keyboard.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Processing is when the computer calculates the total of the sales and posts to the ledger."
+                },
+                {
+                  "point": 2,
+                  "quote": "Storage is saving the file to the hard disk."
+                }
+              ],
+              "feedback": "Your processing and storage are right. You swapped input and output: input is what you enter (the keyboard) and output is the result (the printout).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The four stages are buying, selling, profit and stock. The pharmacy buys drugs, sells drugs, makes profit and keeps stock.",
+              "meets": [],
+              "feedback": "Those are stages of trading, not data processing. The four stages are input, processing, storage and output, and each deals with the sales information."
+            },
+            {
+              "tier": "weak",
+              "text": "Input is typing the sales. Processing, storage and output are the computer working so the pharmacy gets money.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input is typing the sales."
+                }
+              ],
+              "feedback": "You have input. Processing is calculating and posting, storage is saving the records, and output is the report: statements and the daily sales summary."
+            }
+          ]
+        },
+        {
+          "prompt": "A supermarket in Lekki is changing from manual books to a computerised accounting package. State two merits and two demerits of the computerised system that the owner should expect.",
+          "markScheme": [
+            "First merit, e.g. speed in posting and producing reports",
+            "Second merit, e.g. accuracy, easy retrieval of records or neat statements",
+            "First demerit, e.g. the cost of buying equipment and training staff",
+            "Second demerit, e.g. power failure, or loss and theft of data without a backup"
+          ],
+          "modelAnswer": "Merits: the package posts entries and produces trial balances and statements much faster than writing by hand, and it is more accurate, because the computer does the arithmetic and any record can be found in seconds. Demerits: the equipment, software and staff training cost money, and the system stops when there is a power cut, and records can be lost or stolen if no backup is kept.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "It is faster, because the package can post entries and print the trial balance in minutes. It is more accurate, since the computer does the adding and a record can be found at once. It is costly to buy the computers and train the staff. The shop is in Lekki where NEPA takes light, and if the files are not backed up they can be lost.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is faster, because the package can post entries and print the trial balance in minutes."
+                },
+                {
+                  "point": 1,
+                  "quote": "It is more accurate, since the computer does the adding and a record can be found at once."
+                },
+                {
+                  "point": 2,
+                  "quote": "It is costly to buy the computers and train the staff."
+                },
+                {
+                  "point": 3,
+                  "quote": "The shop is in Lekki where NEPA takes light, and if the files are not backed up they can be lost."
+                }
+              ],
+              "feedback": "Full marks. Linking the power cut to a backup shows the demerit in the context of the shop."
+            },
+            {
+              "tier": "full",
+              "text": "Merits: work is done quickly, so the accountant has the sales report at closing time. Mistakes in addition are rare and the information is neat. Demerits: the computers, the software and the training are an expense. If hackers or staff get into the data, or the hard disk fails, the shop can lose its records.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "work is done quickly, so the accountant has the sales report at closing time."
+                },
+                {
+                  "point": 1,
+                  "quote": "Mistakes in addition are rare and the information is neat."
+                },
+                {
+                  "point": 2,
+                  "quote": "the computers, the software and the training are an expense."
+                },
+                {
+                  "point": 3,
+                  "quote": "If hackers or staff get into the data, or the hard disk fails, the shop can lose its records."
+                }
+              ],
+              "feedback": "Four marks. Your demerits are specific to computers."
+            },
+            {
+              "tier": "partial",
+              "text": "It is fast. The records are accurate. The demerits are that it is modern and that it is not good.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is fast."
+                },
+                {
+                  "point": 1,
+                  "quote": "The records are accurate."
+                }
+              ],
+              "feedback": "Your two merits are correct. A demerit must be a real disadvantage: the cost of equipment and training, and the risk of power failure or lost data."
+            },
+            {
+              "tier": "partial",
+              "text": "It is costly to buy. If the computer spoils, you will lose all your records. The merits are that the supermarket will be big and the owner will be proud.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "It is costly to buy."
+                },
+                {
+                  "point": 3,
+                  "quote": "If the computer spoils, you will lose all your records."
+                }
+              ],
+              "feedback": "You gave two real demerits. The merits must be benefits of the system: for example it is faster, and it is more accurate and easier to retrieve records.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Merit: it is computer. Demerit: it is not manual. The owner should not use it.",
+              "meets": [],
+              "feedback": "A merit or demerit must say what the computer does better or worse: it posts faster and more accurately, but it costs money and fails when power fails."
+            },
+            {
+              "tier": "weak",
+              "text": "It is faster. It is also faster and fast again. The demerit is that it is faster and so the clerks will not have work.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is faster."
+                }
+              ],
+              "feedback": "You have one merit. The second merit could be accuracy or easy retrieval. For demerits, think of the cost, training, power failure and loss of data, not speed."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
