@@ -1,0 +1,2668 @@
+{
+  "subject": "Digital Technologies",
+  "yearGroup": "JSS2",
+  "weeks": {
+    "1": {
+      "topic": "Spreadsheet layout, number formats and file types",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. use alignment, wrap text and merge and centre to lay out a spreadsheet;\n2. apply number formats (currency, percentage, decimals) correctly;\n3. save a spreadsheet in a suitable file type (.xlsx, .csv, .pdf);\n4. retrieve a saved file and name versions sensibly.\n\n## Materials\n\nComputers with Excel or an equivalent, a projector, and a printed school fees record with five learners.\n\n## Starter (5 minutes)\n\nShow a fees table where the title is squeezed in one cell, the numbers are left-aligned and a long heading is cut off. Ask the class to say what they would change.\n\n## Development\n\n1. Revise selecting cells and formatting the heading row.\n2. Alignment: text to the left, numbers to the right so the digits line up.\n3. Wrap Text makes a long heading fit in a cell by using more than one line.\n4. Merge and Centre joins several cells into one, used for a table title.\n5. Decimal places and currency: 250 typed in a cell can be shown as ₦250.00.\n6. Percentage: 0.4 shows as 40%. Explain that the cell still holds 0.4.\n7. File types: .xlsx keeps formulas and formatting; .csv is plain text with commas and loses formatting; .pdf is for printing and reading only.\n8. Version names: Fees_JSS2, Fees_JSS2_v2.\n\n## Class activity\n\nPupils lay out the fees record, apply formats and save it as .xlsx and as .pdf. They compare the two files.\n\n## Evaluation\n\n1. When would you save as .csv instead of .xlsx?\n2. Why is 0.4 shown as 40%?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Laying out a spreadsheet and choosing the file type",
+        "content": "# Spreadsheet layout, number formats and file types\n\nIn JSS1 you learned to make a spreadsheet and to format a heading row. A spreadsheet that other people read must also be **laid out well**, show numbers in the **right format**, and be **saved in the right file type**.\n\n## Layout\n\n**Alignment.** Text is normally on the left. Numbers are best on the **right**, so that units line up under units and tens under tens. This makes a column of money easy to compare.\n\n**Wrap Text.** A long heading such as *Amount paid for the term* can be cut off. Wrap Text breaks it into two or more lines inside the cell, so the whole heading can be read.\n\n**Merge and Centre.** This joins several cells into one big cell and centres the words in it. It is used for the **title** at the top of a table.\n\n## Number formats\n\nThe format changes the way a number is shown, not the number itself.\n\n| Value in cell | Format | Shown |\n|---|---|---|\n| 250 | Currency | ₦250.00 |\n| 3.5 | Number, 0 decimals | 4 (rounded for display) |\n| 0.4 | Percentage | 40% |\n| 12 × 250 | Currency | ₦3,000.00 |\n\nNote that 0.4 means 40 out of 100. The percentage format multiplies it by 100 and adds the % sign.\n\n## File types\n\nWhen you save, choose a file type that suits the job.\n\n- **.xlsx (Excel Workbook)**: keeps your formulas, formats and charts. Use this while you are still working.\n- **.csv (comma separated values)**: plain text with commas between the entries. It keeps the data only, no colours or formulas. Many programs can read it, so it is used for moving data from one program to another.\n- **.pdf**: a fixed copy for reading and printing. The reader cannot easily change it. Send this when you only want someone to read.\n\n## Naming versions\n\nName files so that you know which is newest: *Fees_JSS2.xlsx*, then *Fees_JSS2_v2.xlsx*. Do not call every file *Book1*.\n\n## Worked example\n\nA tuckshop sells 12 bags of pure water at ₦250 each. In B2 put 12 and in C2 put 250. In D2 type **=B2*C2**, which gives 3000. Select D2 and choose Currency, and it shows **₦3,000.00**. The title in row 1 is merged across A1 to D1 and centred."
+      },
+      "cards": [
+        {
+          "front": "Alignment",
+          "back": "Where the content sits in the cell: left, centre or right. Numbers are best on the right."
+        },
+        {
+          "front": "Wrap Text",
+          "back": "Breaks a long entry into lines inside the cell so that it can all be read."
+        },
+        {
+          "front": "Merge and Centre",
+          "back": "Joins several cells into one and centres the content, used for a title."
+        },
+        {
+          "front": "Percentage format",
+          "back": "Shows 0.4 as 40%. The value in the cell is still 0.4."
+        },
+        {
+          "front": "Does a number format change the value?",
+          "back": "No. It changes only how the number is shown."
+        },
+        {
+          "front": ".xlsx",
+          "back": "Excel workbook: keeps formulas, formats and charts."
+        },
+        {
+          "front": ".csv",
+          "back": "Plain text with commas. Keeps data only, and many programs can read it."
+        },
+        {
+          "front": ".pdf",
+          "back": "A fixed copy for reading and printing."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "You want a long heading to fit inside a cell on two lines. Which button do you use?",
+          "options": [
+            "Wrap Text",
+            "Merge and Centre",
+            "Borders",
+            "Currency"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which file type keeps formulas and formatting in Excel?",
+          "options": [
+            ".csv",
+            ".pdf",
+            ".xlsx",
+            ".txt"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A cell holds 0.65. The percentage format will show",
+          "options": [
+            "0.65%",
+            "6.5%",
+            "650%",
+            "65%"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A teacher wants to send the fees table to parents who must only read it, not change it. Which file type is best?",
+          "options": [
+            ".xlsx",
+            ".pdf",
+            ".csv",
+            ".docx"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A tuckshop sells 18 bags of pure water at ₦250 each. The formula in D2 is =B2*C2. What does D2 show in Currency format?",
+          "options": [
+            "₦268.00",
+            "₦450.00",
+            "₦4,500.00",
+            "₦4,050.00"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A school clerk typed a fees table. The title is in one cell and cut off, the long heading 'Amount paid for the term' is cut off, and the amounts are on the left. Explain what she should do to fix each of these three problems.",
+          "markScheme": [
+            "Uses Merge and Centre for the title",
+            "Uses Wrap Text for the long heading",
+            "Aligns the amounts to the right",
+            "Formats the amounts as currency or with decimals, or states why each fix helps"
+          ],
+          "modelAnswer": "She should select the cells across the top and use Merge and Centre so the title sits in the middle of the table. She should turn on Wrap Text for the long heading so that it shows on more than one line. She should select the amounts and align them to the right so the digits line up, and she can use the Currency format to show the naira sign.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "For the title she selects the cells across the top and clicks Merge and Centre. For the long heading she turns on Wrap Text so it shows in two lines. For the amounts she aligns them to the right, so that the digits line up. She can also use Currency to put the naira sign.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "clicks Merge and Centre"
+                },
+                {
+                  "point": 1,
+                  "quote": "turns on Wrap Text so it shows in two lines"
+                },
+                {
+                  "point": 2,
+                  "quote": "aligns them to the right, so that the digits line up"
+                },
+                {
+                  "point": 3,
+                  "quote": "She can also use Currency to put the naira sign"
+                }
+              ],
+              "feedback": "All four marks. You said why each fix helps, not only which button."
+            },
+            {
+              "tier": "full",
+              "text": "The title should be merged and centred over the table. The heading should wrap text, so all the words can be read. The money should be right aligned so the units are under the units. Then she formats it as currency.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The title should be merged and centred over the table"
+                },
+                {
+                  "point": 1,
+                  "quote": "The heading should wrap text, so all the words can be read"
+                },
+                {
+                  "point": 2,
+                  "quote": "The money should be right aligned so the units are under the units"
+                },
+                {
+                  "point": 3,
+                  "quote": "Then she formats it as currency"
+                }
+              ],
+              "feedback": "Full marks. 'Units under the units' is the exact reason numbers are right aligned."
+            },
+            {
+              "tier": "partial",
+              "text": "She will merge and centre the title and wrap the text of the heading.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "merge and centre the title"
+                },
+                {
+                  "point": 1,
+                  "quote": "wrap the text of the heading"
+                }
+              ],
+              "feedback": "These two fixes are right. The third problem was the amounts on the left: align them to the right so the digits line up. You can add Currency format as well."
+            },
+            {
+              "tier": "partial",
+              "text": "The title should be centred and the amounts should be on the right. The heading she should make smaller.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the amounts should be on the right"
+                }
+              ],
+              "feedback": "Right-aligning the amounts is correct, and you should say why (digits line up). 'Centred' for the title should be Merge and Centre, because the title is in one cell. Making the heading smaller does not solve it; use Wrap Text."
+            },
+            {
+              "tier": "weak",
+              "text": "She should delete the table and start again with bigger cells for everything.",
+              "meets": [],
+              "feedback": "Starting again is not needed. Use Merge and Centre for the title, Wrap Text for the heading and right alignment for the amounts."
+            },
+            {
+              "tier": "weak",
+              "text": "She should change the file to .csv and the cells will be corrected by themselves.",
+              "meets": [],
+              "feedback": "A file type does not fix the layout. A .csv would remove the formatting altogether. Use Merge and Centre, Wrap Text and right alignment."
+            }
+          ]
+        },
+        {
+          "prompt": "Dayo has a fees spreadsheet with formulas and a chart. (a) He must send a copy to the principal to read only. (b) He must give the data to another program that cannot open Excel files. For each one, name the best file type and give a reason. State what he would lose by using the second type.",
+          "markScheme": [
+            "(a) names .pdf",
+            "(a) gives a reason: it is a fixed copy for reading and cannot easily be changed",
+            "(b) names .csv",
+            "(b) says that .csv keeps only the data, losing formulas, formatting or the chart"
+          ],
+          "modelAnswer": "For (a) he should save a PDF, because it is a fixed copy that the principal can read but cannot easily change. For (b) he should save a CSV file, because it is plain text that many programs can read. The CSV keeps only the data, so he would lose the formulas, the formatting and the chart.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) PDF, because it is a fixed copy for reading and the principal cannot easily change it. (b) CSV, since it is plain text and many programs can read it. With CSV he will lose the formulas, the colours and the chart because it keeps only the data.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) PDF"
+                },
+                {
+                  "point": 1,
+                  "quote": "it is a fixed copy for reading and the principal cannot easily change it"
+                },
+                {
+                  "point": 2,
+                  "quote": "(b) CSV"
+                },
+                {
+                  "point": 3,
+                  "quote": "he will lose the formulas, the colours and the chart because it keeps only the data"
+                }
+              ],
+              "feedback": "All four marks. You named both file types and what is lost."
+            },
+            {
+              "tier": "full",
+              "text": "For the principal I will save as a pdf because he can only read it and nobody can change the figures. The program that cannot open Excel will get a .csv file because it is simple text with commas. The loss is that the chart and the formatting and the formulas will not be there.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I will save as a pdf"
+                },
+                {
+                  "point": 1,
+                  "quote": "he can only read it and nobody can change the figures"
+                },
+                {
+                  "point": 2,
+                  "quote": "a .csv file because it is simple text with commas"
+                },
+                {
+                  "point": 3,
+                  "quote": "the chart and the formatting and the formulas will not be there"
+                }
+              ],
+              "feedback": "Full marks. Clear reasons and the loss is stated."
+            },
+            {
+              "tier": "partial",
+              "text": "The principal should get a PDF because it is for reading. The other one is CSV.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a PDF"
+                },
+                {
+                  "point": 2,
+                  "quote": "The other one is CSV"
+                }
+              ],
+              "feedback": "Both file types are right. Add a reason for CSV (plain text that other programs can read) and say what Dayo loses: the formulas, formatting and chart."
+            },
+            {
+              "tier": "partial",
+              "text": "PDF for the principal because it cannot be changed easily. For the other program he will use a simple text file, and he will lose the formulas.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "PDF for the principal"
+                },
+                {
+                  "point": 1,
+                  "quote": "it cannot be changed easily"
+                },
+                {
+                  "point": 3,
+                  "quote": "he will lose the formulas"
+                }
+              ],
+              "feedback": "The PDF choice with its reason, and the loss, are right. For the second need, name the file type: CSV, plain text that many programs can read."
+            },
+            {
+              "tier": "weak",
+              "text": "Both should be .xlsx because it is Excel and Excel is the best for all.",
+              "meets": [],
+              "feedback": "The other program cannot open Excel files, and the principal should not be able to change the figures. Use a PDF for reading and a CSV for moving the data."
+            },
+            {
+              "tier": "weak",
+              "text": "PDF for the second one because PDF means program data file, and CSV for the principal.",
+              "meets": [],
+              "feedback": "PDF is a fixed copy for reading, so it suits the principal. CSV is plain data that other programs can read, so it suits the second need. PDF does not mean program data file."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Planning and designing a presentation",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. plan a presentation with a storyboard before opening the software;\n2. use a theme and layouts so that all slides look the same;\n3. add and arrange slides, and use speaker notes;\n4. judge a slide and say how to improve it.\n\n## Materials\n\nComputers with PowerPoint or an equivalent, a projector, plain paper for storyboards, and two printed example slides (one good, one poor).\n\n## Starter (5 minutes)\n\nShow a poor slide with 80 words in small size, red text on a green background. Ask pupils to count what is wrong with it.\n\n## Development\n\n1. Plan first: purpose, audience, number of slides. Draw a storyboard with a box for each slide.\n2. Choose one theme. The theme sets colours and fonts for all slides, so the presentation looks tidy.\n3. Choose a layout for each slide to suit its content: Title, Title and Content, Two Content, Blank.\n4. Slide Sorter view: drag slides to change the order, duplicate a slide, delete a slide.\n5. Speaker notes: type what you will say in the notes area. The audience does not see them.\n6. Improve a poor slide: cut words, increase letter size, change colours, split one slide into two.\n\n## Class activity\n\nPupils draw a five-slide storyboard on \"Road safety in my town\" and then build it in the software.\n\n## Evaluation\n\n1. What does a storyboard help you to do?\n2. How do speaker notes help the presenter?\n\n## Assignment\n\nQuiz on the app.",
+      "reading": {
+        "title": "From a plan to a tidy presentation",
+        "content": "# Planning and designing a presentation\n\nIn JSS1 you made simple slides. Now we learn to make a presentation that a visitor would enjoy, by **planning before you open the computer**.\n\n## Step 1: Plan\n\nAsk three questions.\n\n1. What is the **purpose**? (To teach, to persuade, to report?)\n2. Who is the **audience**? (Classmates, parents, the principal?)\n3. How many **slides** do I need? Do not make a slide for every sentence. Five to eight slides is enough for a short talk.\n\nThen draw a **storyboard**. This is a row of boxes on paper, one for each slide, with a note about what each slide will contain. A storyboard helps you see the order of your ideas and saves time at the computer.\n\n## Step 2: Choose a theme and layouts\n\nA **theme** gives all the slides the same colours and fonts. Use **one** theme so the presentation looks like one piece of work. Pick a **layout** for each slide.\n\n- **Title Slide** for the first slide.\n- **Title and Content** for points.\n- **Two Content** for comparing two things.\n- **Blank** or **Picture** when a picture says more than words.\n\n## Step 3: Arrange and edit\n\nIn **Slide Sorter** view you see all the slides in small boxes. Drag a slide to move it, copy a slide to **duplicate** it, or delete a slide you do not need.\n\n## Step 4: Speaker notes\n\nUnder each slide is a notes area. You can type what you want to say. The audience does not see it. It helps you remember facts, so you do not need to put everything on the slide.\n\n## Step 5: Check the design\n\nA good slide has:\n- a **clear heading**;\n- **3 to 5 short points** (key words);\n- **letters of size 24 or above**;\n- **contrast** between the text and the background.\n\n## Worked example: improving a slide\n\nA pupil's slide on *Road safety* has 80 words in size 12, in red letters on a green background.\n\nTo improve it: split it into two slides, keep 4 short points on each (for example *Look left and right*, *Use the zebra crossing*), change the letters to size 28, and use dark letters on a light background. Move the extra facts into the speaker notes."
+      },
+      "cards": [
+        {
+          "front": "Storyboard",
+          "back": "A row of boxes on paper that plans what each slide will contain."
+        },
+        {
+          "front": "Purpose of a presentation",
+          "back": "What it is for, such as to teach, to persuade or to report."
+        },
+        {
+          "front": "Audience",
+          "back": "The people who will watch and listen to the presentation."
+        },
+        {
+          "front": "Theme",
+          "back": "One set of colours and fonts that makes all the slides look the same."
+        },
+        {
+          "front": "Slide Sorter view",
+          "back": "Shows all slides as small boxes so you can move, copy or delete them."
+        },
+        {
+          "front": "Speaker notes",
+          "back": "Notes under a slide that only the presenter sees."
+        },
+        {
+          "front": "Duplicate slide",
+          "back": "Makes a copy of a slide so you can change it."
+        },
+        {
+          "front": "Contrast",
+          "back": "A clear difference between the colour of text and its background."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the main use of a storyboard?",
+          "options": [
+            "To print the slides",
+            "To plan the order and content of the slides before building them",
+            "To add animations",
+            "To save the file"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Where should the extra facts you want to say go?",
+          "options": [
+            "Into the speaker notes",
+            "Crowded onto the slide in small letters",
+            "Into the file name",
+            "Onto the title slide"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which view is best for changing the order of the slides?",
+          "options": [
+            "Notes only",
+            "Slide Show",
+            "Print Preview",
+            "Slide Sorter"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A slide has a whole paragraph in size 14 and the audience cannot read it. What is the best fix?",
+          "options": [
+            "Change the font to a decorative one",
+            "Make the paragraph bold",
+            "Keep a few short points in bigger letters and move the rest into notes",
+            "Add a picture of a lion"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Why do we use one theme for the whole presentation?",
+          "options": [
+            "So that the file is smaller",
+            "Because themes can only be used once",
+            "So that animation can run",
+            "So that the slides look like one piece of work"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Obinna is making a presentation for his class on 'Road safety in my town'. Describe how he should plan it before opening the software, and say what he should do about extra facts he wants to mention.",
+          "markScheme": [
+            "Decides the purpose and the audience",
+            "Decides how many slides / draws a storyboard",
+            "Chooses one theme and suitable layouts (or says what goes on each slide)",
+            "Puts extra facts in the speaker notes, not on the slides"
+          ],
+          "modelAnswer": "Obinna should decide the purpose, which is to teach his class about road safety, and the audience, who are his classmates. He should decide how many slides he needs and draw a storyboard on paper. He should then use one theme with layouts that fit each slide. Extra facts should go into the speaker notes, not on the slide.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "He should know his purpose, to teach the class road safety, and the audience, his classmates. Then he draws a storyboard with a box for each slide so he knows the number of slides. In the software he should use one theme and the right layout for each slide. Any extra facts go into the speaker notes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "He should know his purpose, to teach the class road safety, and the audience, his classmates"
+                },
+                {
+                  "point": 1,
+                  "quote": "Then he draws a storyboard with a box for each slide so he knows the number of slides"
+                },
+                {
+                  "point": 2,
+                  "quote": "In the software he should use one theme and the right layout for each slide"
+                },
+                {
+                  "point": 3,
+                  "quote": "Any extra facts go into the speaker notes"
+                }
+              ],
+              "feedback": "All four marks. Planning on paper first is what a good presenter does."
+            },
+            {
+              "tier": "full",
+              "text": "First, think of the aim and who will watch. Second, decide five or six slides and draw them on paper as a storyboard. Third, pick one theme and the layout like Title and Content. The extra things to say he writes in the notes under the slide so the slide will not be crowded.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First, think of the aim and who will watch"
+                },
+                {
+                  "point": 1,
+                  "quote": "decide five or six slides and draw them on paper as a storyboard"
+                },
+                {
+                  "point": 2,
+                  "quote": "pick one theme and the layout like Title and Content"
+                },
+                {
+                  "point": 3,
+                  "quote": "The extra things to say he writes in the notes under the slide so the slide will not be crowded"
+                }
+              ],
+              "feedback": "Full marks. You gave the reason for the notes, which is to avoid crowding the slide."
+            },
+            {
+              "tier": "partial",
+              "text": "He should draw a storyboard on paper to plan the slides. The extra facts go in the notes.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "draw a storyboard on paper to plan the slides"
+                },
+                {
+                  "point": 3,
+                  "quote": "The extra facts go in the notes"
+                }
+              ],
+              "feedback": "Good on the storyboard and the notes. Add the purpose and audience, and say he will use one theme with suitable layouts."
+            },
+            {
+              "tier": "partial",
+              "text": "He should know who will watch it and why. Then he should use the same theme for every slide.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "know who will watch it and why"
+                },
+                {
+                  "point": 2,
+                  "quote": "use the same theme for every slide"
+                }
+              ],
+              "feedback": "Purpose, audience and theme are right. You did not say how many slides he needs or mention a storyboard, or say what to do with the extra facts (speaker notes)."
+            },
+            {
+              "tier": "weak",
+              "text": "He should start typing everything he knows about road safety on the slides and then reduce it later.",
+              "meets": [],
+              "feedback": "Planning comes first. Decide the purpose and audience, draw a storyboard, then build the slides with short points. Extra facts go in the speaker notes."
+            },
+            {
+              "tier": "weak",
+              "text": "He should make the slides very colourful with different themes so the class will not sleep.",
+              "meets": [],
+              "feedback": "Different themes on each slide make the presentation untidy. Use one theme, and plan the slides on paper first. Keep extra facts for the speaker notes."
+            }
+          ]
+        },
+        {
+          "prompt": "This is a slide called 'Road Safety': it has 85 words in size 12, in red letters on a green background, with no heading. Say four things that are wrong and how you would improve each.",
+          "markScheme": [
+            "Too many words: cut to a few short points / split into more slides",
+            "Letters too small: increase to 24 or more",
+            "Poor colour contrast: use dark text on a light background or the reverse",
+            "No heading: add a clear title"
+          ],
+          "modelAnswer": "There are too many words, so I would cut them to four short points and split the rest into another slide or the notes. The letters are too small, so I would raise them to size 24 or more. Red on green has poor contrast, so I would use dark letters on a light background. There is no heading, so I would add a clear title such as Road Safety Rules.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "There are too many words, so I will cut to four short points and put the rest in the notes. The letters are too small, so I will make them size 28. Red on green is hard to see, so I will use black on white. There is no heading, so I will add a clear title.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "There are too many words, so I will cut to four short points and put the rest in the notes"
+                },
+                {
+                  "point": 1,
+                  "quote": "The letters are too small, so I will make them size 28"
+                },
+                {
+                  "point": 2,
+                  "quote": "Red on green is hard to see, so I will use black on white"
+                },
+                {
+                  "point": 3,
+                  "quote": "There is no heading, so I will add a clear title"
+                }
+              ],
+              "feedback": "All four marks. Each fault has a fix."
+            },
+            {
+              "tier": "full",
+              "text": "Too many words: split into two slides with short points. Size 12 is small: change to 24 or bigger. The colours do not have contrast: put dark letters on light background. No title: add Road Safety Rules as the heading.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Too many words: split into two slides with short points"
+                },
+                {
+                  "point": 1,
+                  "quote": "Size 12 is small: change to 24 or bigger"
+                },
+                {
+                  "point": 2,
+                  "quote": "put dark letters on light background"
+                },
+                {
+                  "point": 3,
+                  "quote": "No title: add Road Safety Rules as the heading"
+                }
+              ],
+              "feedback": "Full marks. A real title as the example shows you understood the fault."
+            },
+            {
+              "tier": "partial",
+              "text": "The words are too many. I will make them few. The letters are small, I will make them big.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The words are too many. I will make them few"
+                },
+                {
+                  "point": 1,
+                  "quote": "The letters are small, I will make them big"
+                }
+              ],
+              "feedback": "The first two faults are found. Say how big (24 or more), then find the colour problem (red on green has poor contrast) and the missing heading."
+            },
+            {
+              "tier": "partial",
+              "text": "The red and green colours are not good so I will use black and white. There is no heading so I will add one.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "I will use black and white"
+                },
+                {
+                  "point": 3,
+                  "quote": "There is no heading so I will add one"
+                }
+              ],
+              "feedback": "You found the colour and heading faults. The two main faults are the 85 words and the size 12 letters. Cut the words to a few short points and raise the size to 24 or more."
+            },
+            {
+              "tier": "weak",
+              "text": "The slide is good but it needs a picture of a car to make it nice.",
+              "meets": [],
+              "feedback": "A picture will not fix the faults. There are too many words, the letters are too small, the red on green has poor contrast and there is no heading."
+            },
+            {
+              "tier": "weak",
+              "text": "The slide is all right. They should print it in colour so the red and green will show.",
+              "meets": [],
+              "feedback": "Printing in colour will not help. Red on green is hard to read, and 85 words in size 12 are too many and too small. Cut the words, raise the size, change the colours and add a heading."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Pictures, sound, video, transitions and animations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. insert, resize and crop a picture on a slide;\n2. add audio and a video clip to a slide;\n3. tell a transition from an animation and apply each;\n4. use effects in a way that helps, not distracts, the audience.\n\n## Materials\n\nComputers with PowerPoint or an equivalent, a folder with pictures, a short audio clip and a short video clip, and a projector.\n\n## Starter (5 minutes)\n\nShow a slide with only words, and the same slide with one clear picture. Ask which helps the audience understand faster.\n\n## Development\n\n1. Insert, then Pictures, then choose a file. Resize by dragging a corner handle; dragging a side handle stretches the picture and spoils its shape.\n2. Crop to remove parts you do not need.\n3. Insert, then Audio, to add music or a recorded voice. Choose whether it plays automatically or on click. Video is added in the same way.\n4. Keep the pictures, audio and video in the same folder as the presentation. If you move the file to another computer without them, they may not play.\n5. A transition is the effect when one slide changes to the next (Fade, Push, Wipe). An animation is the effect on an object inside a slide, such as a bullet flying in.\n6. Rules: use few effects, the same transition throughout, short clips, and animations only to show points one at a time.\n\n## Class activity\n\nPupils add two pictures, one audio clip and one transition to a slide about \"My school\", and animate the bullet points to appear one by one.\n\n## Evaluation\n\n1. What is the difference between a transition and an animation?\n2. Why must you drag a corner handle to resize a picture?\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Making slides come alive, without making a mess",
+        "content": "# Pictures, sound, video, transitions and animations\n\nPictures and sound can make a presentation clearer and more interesting. But too many effects can annoy the audience and hide the message. This lesson shows how to use them well.\n\n## Pictures\n\nTo add a picture, click **Insert**, then **Pictures**, and choose the file.\n\n- To **resize** a picture, drag one of the **corner handles**. This keeps the shape. If you drag a handle on the **side**, the picture is stretched and looks wrong.\n- To **crop**, use the Crop tool to cut away the part you do not need.\n- Choose a picture that **supports** the point. A picture of a pot of jollof rice helps a slide about food, but not a slide about the school library.\n\n## Audio and video\n\nClick **Insert**, then **Audio** or **Video**. You can add a recorded voice, music or a short clip. You choose whether it plays **automatically** or **when you click**.\n\nImportant: the file is not always stored inside the presentation. Keep the audio and video in the **same folder** as the presentation. If you copy only the presentation to another computer, the sound or video may not play.\n\n## Transitions\n\nA **transition** is the effect shown when one slide **changes to the next**. Examples are *Fade*, *Push* and *Wipe*. Choose one calm transition and use it on all slides.\n\n## Animations\n\nAn **animation** is an effect on **an object inside one slide**, such as a picture, a heading or a bullet point. For example, you can make the bullet points *Fly in* one after the other, so the audience listens to one point at a time.\n\n| | Transition | Animation |\n|---|---|---|\n| Happens | between two slides | inside one slide |\n| Acts on | the whole slide | one object, such as a bullet |\n| Example | Fade | Fly in |\n\n## Good practice\n\n- Use **few effects**; use the same transition on every slide.\n- Keep clips **short**. A long video eats the time of your talk.\n- Do not let the effect hide the words.\n- Remember the file becomes **bigger** when it has many pictures and videos. It may be too large to send by email.\n\n## Worked example\n\nA pupil's slide on *Our school garden* has a photo, resized from a corner so it is not stretched; the three bullets *Plant seeds*, *Water daily*, *Pick vegetables* appear one by one with *Fly in*; and every slide changes with *Fade*."
+      },
+      "cards": [
+        {
+          "front": "Resize a picture",
+          "back": "Drag a corner handle so the shape stays correct."
+        },
+        {
+          "front": "Crop",
+          "back": "Cut away the part of a picture you do not need."
+        },
+        {
+          "front": "Transition",
+          "back": "The effect when one slide changes to the next, such as Fade."
+        },
+        {
+          "front": "Animation",
+          "back": "An effect on an object inside one slide, such as a bullet flying in."
+        },
+        {
+          "front": "Why keep media in the same folder?",
+          "back": "The presentation may not find the audio or video if it is moved alone to another computer."
+        },
+        {
+          "front": "Good use of effects",
+          "back": "Few effects, the same transition throughout, short clips."
+        },
+        {
+          "front": "Why is a stretched picture wrong?",
+          "back": "Dragging a side handle changes its shape and makes it look wrong."
+        },
+        {
+          "front": "Large presentation file",
+          "back": "Many pictures and videos make the file big, so it may be hard to send."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which effect is a transition?",
+          "options": [
+            "A bullet point flying in",
+            "A heading spinning",
+            "A picture getting bigger",
+            "Fade when one slide changes to the next"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Zainab drags the right-hand middle handle of a picture and it looks fat and stretched. What should she have done?",
+          "options": [
+            "Change the theme",
+            "Delete it",
+            "Drag a corner handle",
+            "Add a transition"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A pupil's video played on the school computer but not on her teacher's laptop. A likely reason is that",
+          "options": [
+            "the video file was not in the folder with the presentation on the laptop",
+            "videos only work on Fridays",
+            "the slides had a theme",
+            "the teacher used a mouse"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which statement about animations is correct?",
+          "options": [
+            "They happen only between slides",
+            "They act on one object inside a slide",
+            "They cannot be used with text",
+            "They must be used on every word"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which is the best use of effects in a presentation?",
+          "options": [
+            "One calm transition on all slides and bullets that appear one by one",
+            "Many videos of five minutes each",
+            "A different loud effect on every slide",
+            "Rotating letters so nobody can read them"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between a transition and an animation. Give an example of each.",
+          "markScheme": [
+            "Transition happens when one slide changes to the next",
+            "A correct example of a transition, e.g. Fade, Push, Wipe",
+            "Animation is an effect on an object inside a slide",
+            "A correct example of an animation, e.g. bullet points fly in one by one"
+          ],
+          "modelAnswer": "A transition is the effect when one slide changes to the next, for example Fade. An animation is an effect on an object inside a slide, for example making the bullet points fly in one by one.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Transition is what happens when one slide changes to the next one, for example Fade. Animation is the effect on something inside one slide, like making bullet points fly in one by one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Transition is what happens when one slide changes to the next one"
+                },
+                {
+                  "point": 1,
+                  "quote": "for example Fade"
+                },
+                {
+                  "point": 2,
+                  "quote": "Animation is the effect on something inside one slide"
+                },
+                {
+                  "point": 3,
+                  "quote": "making bullet points fly in one by one"
+                }
+              ],
+              "feedback": "All four marks. You gave the place where each one happens and an example."
+            },
+            {
+              "tier": "full",
+              "text": "A transition is the movement between two slides, like Push or Wipe. An animation is the movement of an object in a slide, like a picture that comes from the left side or a heading that appears.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A transition is the movement between two slides"
+                },
+                {
+                  "point": 1,
+                  "quote": "like Push or Wipe"
+                },
+                {
+                  "point": 2,
+                  "quote": "An animation is the movement of an object in a slide"
+                },
+                {
+                  "point": 3,
+                  "quote": "a picture that comes from the left side"
+                }
+              ],
+              "feedback": "Full marks. The examples are both correct."
+            },
+            {
+              "tier": "partial",
+              "text": "A transition is when the slide changes to another slide, like Fade. An animation is a nice effect.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A transition is when the slide changes to another slide"
+                },
+                {
+                  "point": 1,
+                  "quote": "like Fade"
+                }
+              ],
+              "feedback": "Your transition answer is complete. For animation, say what it acts on (an object inside one slide) and give an example such as bullets that fly in."
+            },
+            {
+              "tier": "partial",
+              "text": "Animation is when a bullet point comes in on the slide. Transition is an effect.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Animation is when a bullet point comes in on the slide"
+                }
+              ],
+              "feedback": "The animation example is right. For transition, say when it happens: when one slide changes to the next, with an example such as Fade."
+            },
+            {
+              "tier": "weak",
+              "text": "Transition is changing the font and animation is changing the colour of the slide.",
+              "meets": [],
+              "feedback": "Neither is about fonts or colours. A transition is the effect between two slides and an animation is an effect on an object inside one slide."
+            },
+            {
+              "tier": "weak",
+              "text": "They are the same, because they both make the slide move.",
+              "meets": [],
+              "feedback": "They both are effects, but they differ in where they happen. A transition happens between two slides, such as Fade. An animation happens inside one slide, on an object such as a bullet."
+            }
+          ]
+        },
+        {
+          "prompt": "Kemi made a slide with a video, three pictures, a spinning heading and a different loud transition on each of the eight slides. When she shows it to the class, the audience cannot follow the lesson, and on her teacher's laptop the video does not play. Give three pieces of advice that would improve the show and one that would fix the video problem.",
+          "markScheme": [
+            "Use few effects / do not overuse them",
+            "Use the same simple transition on all slides",
+            "Do not use effects that hide the words (e.g. spinning heading) or keep clips short",
+            "Keep the video file in the same folder as the presentation when moving it"
+          ],
+          "modelAnswer": "She should use few effects so that the audience can follow the lesson. She should use one simple transition, such as Fade, on all the slides. She should remove the spinning heading, because it hides the words, and keep clips short. To fix the video problem, she should copy the video into the same folder as the presentation and move them together to the teacher's laptop.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "She should use few effects so that the class can follow the lesson. She should use the same calm transition like Fade on every slide. She should remove the spinning heading because it makes the words hard to read. To make the video play, she should keep the video in the same folder as the presentation and carry the two together.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "She should use few effects so that the class can follow the lesson"
+                },
+                {
+                  "point": 1,
+                  "quote": "She should use the same calm transition like Fade on every slide"
+                },
+                {
+                  "point": 2,
+                  "quote": "remove the spinning heading because it makes the words hard to read"
+                },
+                {
+                  "point": 3,
+                  "quote": "keep the video in the same folder as the presentation and carry the two together"
+                }
+              ],
+              "feedback": "All four marks. Your advice would clearly help the audience."
+            },
+            {
+              "tier": "full",
+              "text": "Too many effects spoil the show, so use less. Choose one transition for all the slides. Make the heading stay still and use short videos so that they do not waste time. For the video, put it in the same folder with the presentation before copying them to the laptop.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Too many effects spoil the show, so use less"
+                },
+                {
+                  "point": 1,
+                  "quote": "Choose one transition for all the slides"
+                },
+                {
+                  "point": 2,
+                  "quote": "Make the heading stay still and use short videos"
+                },
+                {
+                  "point": 3,
+                  "quote": "put it in the same folder with the presentation before copying them to the laptop"
+                }
+              ],
+              "feedback": "Full marks. You dealt with every problem Kemi had."
+            },
+            {
+              "tier": "partial",
+              "text": "She should use fewer effects and one transition for all the slides.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "use fewer effects"
+                },
+                {
+                  "point": 1,
+                  "quote": "one transition for all the slides"
+                }
+              ],
+              "feedback": "These two pieces of advice are right. Add a third, such as stopping the spinning heading, and the fix for the video: keep it in the same folder as the presentation."
+            },
+            {
+              "tier": "partial",
+              "text": "She should keep the video in the same folder as the slides. She should use short videos.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "keep the video in the same folder as the slides"
+                },
+                {
+                  "point": 2,
+                  "quote": "use short videos"
+                }
+              ],
+              "feedback": "The video fix is right, and short videos is a good tip. For the class not to be confused she needs fewer effects and the same transition on every slide."
+            },
+            {
+              "tier": "weak",
+              "text": "She should add more music and more pictures so the class will enjoy it more.",
+              "meets": [],
+              "feedback": "More effects will make the problem worse. Use fewer effects, one calm transition, a still heading, and keep the video in the same folder as the slides."
+            },
+            {
+              "tier": "weak",
+              "text": "The laptop of the teacher is spoilt and she should buy a new laptop for the teacher.",
+              "meets": [],
+              "feedback": "The laptop is probably fine. The video most likely was not copied with the presentation. Keep the video in the same folder as the slides, and use fewer effects."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Printing and saving documents and presentations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. use Print Preview and choose print settings (copies, page range, orientation, colour);\n2. print slides as handouts to save paper;\n3. choose a suitable file format when saving (.docx, .pptx, .pdf);\n4. work out how many sheets a print job needs.\n\n## Materials\n\nComputers connected to a printer (or a printer dialog on screen), a printed handout sample, a projector, and a document of five pages.\n\n## Starter (5 minutes)\n\nAsk: \"The class needs 30 copies of a 5-page notice. How many sheets of paper is that?\" Collect answers and say that today we learn to print without waste.\n\n## Development\n\n1. Open the Print screen (Ctrl+P). The right side shows Print Preview.\n2. Copies: how many sets. Page range: all pages, one page (3), a range (2-4) or separate pages (1,5).\n3. Orientation: portrait (tall) for letters; landscape (wide) for wide tables and slides.\n4. Colour or black and white: black and white saves ink.\n5. Handouts: print 3 or 6 slides on one sheet instead of one slide per sheet.\n6. File formats: .docx for documents you still edit; .pptx for presentations you still edit; .pdf for a fixed copy to read, print or send. Save As lets you choose.\n7. Check the preview before you press Print, because every mistake wastes paper.\n\n## Class activity\n\nPupils open their JSS2 presentation, print preview it as a 6-slide handout, and use Save As to make a PDF.\n\n## Evaluation\n\n1. What does the page range 2-4 print?\n2. Why might you save a document as PDF?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Print smart and save in the right format",
+        "content": "# Printing and saving documents and presentations\n\nA printer uses paper, ink and electricity. A careful user prints only what is needed, and in the right way. Saving in the right file format makes sure that your work can be opened by the person who needs it.\n\n## The Print screen\n\nPress **Ctrl+P** to open the Print screen. On the right is the **Print Preview**, which shows how each page will look on paper. Always check it before you print. A mistake you see in the preview costs nothing; a mistake on paper wastes a sheet.\n\n## Print settings\n\n**Copies.** The number of complete sets you want.\n\n**Page range.** Which pages to print.\n- *All pages*\n- *A single page*: type 3\n- *A range*: type 2-4 to print pages 2, 3 and 4 (three pages)\n- *Separate pages*: type 1,5 to print page 1 and page 5\n\n**Orientation.**\n- *Portrait* is tall. It suits letters and essays.\n- *Landscape* is wide. It suits wide tables and slides.\n\n**Colour.** Black and white uses less ink and costs less.\n\n## Handouts\n\nA presentation of 12 slides printed one slide per page uses 12 sheets. As **handouts** you can print 3 or 6 slides on one sheet. With 6 per page, 12 slides need only 12 ÷ 6 = **2 sheets**. Pupils can write notes beside the slides on the 3-per-page handout.\n\n## Choosing a file format\n\n| Format | Ending | Use it when |\n|---|---|---|\n| Word document | .docx | you still want to edit the document |\n| PowerPoint presentation | .pptx | you still want to edit or present the slides |\n| PDF | .pdf | you want a fixed copy that looks the same on any device, to read, print or send |\n\nTo make a PDF, choose **Save As** and pick PDF as the type, or choose Print and select *Save as PDF*.\n\n## Worked example\n\nA teacher needs 30 copies of a 5-page notice. The paper needed is 5 × 30 = **150 sheets**. If she prints on both sides, she uses 150 ÷ 2 = **75 sheets**. If one sheet costs ₦10, the cost drops from ₦1,500 to ₦750.\n\nBefore sending the notice to parents by WhatsApp, she saves it as **PDF**, so the layout does not change on their phones."
+      },
+      "cards": [
+        {
+          "front": "Print Preview",
+          "back": "A view that shows how the pages will look on paper before you print."
+        },
+        {
+          "front": "Page range 2-4",
+          "back": "Prints pages 2, 3 and 4."
+        },
+        {
+          "front": "Portrait",
+          "back": "A tall page, good for letters and essays."
+        },
+        {
+          "front": "Landscape",
+          "back": "A wide page, good for wide tables and slides."
+        },
+        {
+          "front": "Handout",
+          "back": "A print of several slides on one sheet to save paper."
+        },
+        {
+          "front": ".pdf",
+          "back": "A fixed copy that looks the same on any device. Good to send and read."
+        },
+        {
+          "front": ".docx and .pptx",
+          "back": "Word and PowerPoint files that can still be edited."
+        },
+        {
+          "front": "Why print in black and white?",
+          "back": "It uses less ink and costs less."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "You want to print only pages 3, 4 and 5 of a 10-page document. What do you type for the page range?",
+          "options": [
+            "3,5",
+            "3+5",
+            "3-5",
+            "3 to"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A table has many columns and does not fit across the page. Which orientation should you try?",
+          "options": [
+            "Portrait",
+            "Handout",
+            "Colour",
+            "Landscape"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A presentation has 18 slides. Printed as handouts with 6 slides on a sheet, how many sheets are needed for one copy?",
+          "options": [
+            "18",
+            "3",
+            "6",
+            "12"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why do we use Print Preview before printing?",
+          "options": [
+            "To see mistakes on the screen before wasting paper",
+            "To save the file as PDF",
+            "To make the printer faster",
+            "To delete pages"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A teacher wants parents to see her notice exactly as she wrote it, on any phone, and not to change it. The best format is",
+          "options": [
+            ".docx",
+            ".pptx",
+            ".pdf",
+            ".xlsx"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A school secretary needs 40 copies of a 3-page circular. (a) How many sheets of paper does she need if she prints on one side only? (b) Give two ways she can save paper or ink when printing.",
+          "markScheme": [
+            "Calculates 3 × 40 = 120 sheets",
+            "Gives one correct way to save paper, e.g. print on both sides or use handouts",
+            "Gives a second correct way, e.g. black and white, or Print Preview to avoid mistakes",
+            "Shows a correct working or reasoning"
+          ],
+          "modelAnswer": "One copy uses 3 sheets, so 40 copies need 3 × 40 = 120 sheets. She can save paper by printing on both sides, which would need only 60 sheets. She can save ink by printing in black and white, and use Print Preview to avoid mistakes.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "For one copy it is 3 sheets, so 40 copies is 3 × 40 = 120 sheets. She can print on both sides of the paper, and use black and white to save ink. She should also use print preview so she will not print wrong pages.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "3 × 40 = 120 sheets"
+                },
+                {
+                  "point": 0,
+                  "quote": "For one copy it is 3 sheets, so 40 copies is 3 × 40 = 120 sheets"
+                },
+                {
+                  "point": 1,
+                  "quote": "She can print on both sides of the paper"
+                },
+                {
+                  "point": 2,
+                  "quote": "use black and white to save ink"
+                }
+              ],
+              "feedback": "All four marks. You showed the multiplication and gave two ways to save."
+            },
+            {
+              "tier": "full",
+              "text": "3 pages × 40 copies = 120 sheets. To save, she can print on both sides and then she will use only 60 sheets. She can also print in black and white because colour uses more ink.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "3 pages × 40 copies"
+                },
+                {
+                  "point": 0,
+                  "quote": "= 120 sheets"
+                },
+                {
+                  "point": 1,
+                  "quote": "print on both sides and then she will use only 60 sheets"
+                },
+                {
+                  "point": 2,
+                  "quote": "print in black and white because colour uses more ink"
+                }
+              ],
+              "feedback": "Full marks. Saying that both sides needs only 60 sheets is a good extra."
+            },
+            {
+              "tier": "partial",
+              "text": "120 sheets. She can print on both sides.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "120 sheets"
+                },
+                {
+                  "point": 1,
+                  "quote": "print on both sides"
+                }
+              ],
+              "feedback": "The answer and the first way to save are right. Show your working (3 × 40) and give a second way, such as black and white or checking Print Preview."
+            },
+            {
+              "tier": "partial",
+              "text": "She can use black and white and use Print Preview. The sheets will be 43.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "use black and white and use Print Preview"
+                }
+              ],
+              "feedback": "Your two savings are fine. The sheets are not 3 + 40: each of the 40 copies has 3 pages, so multiply: 3 × 40 = 120. Remember to show your working."
+            },
+            {
+              "tier": "weak",
+              "text": "It is 40 sheets because she needs 40 copies. She can save paper by not printing.",
+              "meets": [],
+              "feedback": "Each copy has 3 pages, so one copy needs 3 sheets (printing on one side): 3 × 40 = 120 sheets. She does need to print, so say how to print smartly: both sides, black and white, Print Preview."
+            },
+            {
+              "tier": "weak",
+              "text": "The sheets are 3 + 40 = 43. To save she can print the pages smaller.",
+              "meets": [],
+              "feedback": "Each copy has 3 sheets, so multiply 3 × 40 = 120. Making print smaller can make it hard to read; save by printing on both sides or in black and white."
+            }
+          ]
+        },
+        {
+          "prompt": "Lilian's class prepared a 12-slide presentation that is saved as a .pptx file. The teacher wants (a) a paper copy for each pupil on as few sheets as possible and (b) a copy she can send to parents' phones that will look the same on every phone. Say what Lilian should do for each, and explain why .pdf is suitable for (b).",
+          "markScheme": [
+            "For (a) chooses handouts with several slides per page (e.g. 6 per page, 2 sheets)",
+            "For (a) works out or states the saving, e.g. 12 slides at 6 per page need 2 sheets",
+            "For (b) saves or prints as PDF",
+            "Explains that PDF looks the same on any device / cannot be easily changed"
+          ],
+          "modelAnswer": "For the paper copy she should print handouts with 6 slides on a sheet, so the 12 slides need only 12 ÷ 6 = 2 sheets. For the parents she should use Save As and choose PDF. A PDF looks the same on every phone, and it cannot be changed easily.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "For the paper copy she should print handouts with 6 slides on one sheet. So 12 slides will need 2 sheets only. For the parents she saves it as a PDF using Save As. PDF will look the same on every phone and nobody can easily change it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "she should print handouts with 6 slides on one sheet"
+                },
+                {
+                  "point": 1,
+                  "quote": "12 slides will need 2 sheets only"
+                },
+                {
+                  "point": 2,
+                  "quote": "she saves it as a PDF using Save As"
+                },
+                {
+                  "point": 3,
+                  "quote": "PDF will look the same on every phone and nobody can easily change it"
+                }
+              ],
+              "feedback": "All four marks. Handouts and PDF are the two correct choices."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Print handouts, 6 slides per page, 12 ÷ 6 = 2 sheets for each pupil. (b) Save As PDF. A PDF shows the same layout on every device, but a pptx may change on a phone that has no PowerPoint.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Print handouts, 6 slides per page"
+                },
+                {
+                  "point": 1,
+                  "quote": "12 ÷ 6 = 2 sheets for each pupil"
+                },
+                {
+                  "point": 2,
+                  "quote": "Save As PDF"
+                },
+                {
+                  "point": 3,
+                  "quote": "A PDF shows the same layout on every device"
+                }
+              ],
+              "feedback": "Full marks. You also gave the reason why a .pptx might fail on a phone."
+            },
+            {
+              "tier": "partial",
+              "text": "She should print handouts for the pupils and save as PDF for the parents.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "print handouts for the pupils"
+                },
+                {
+                  "point": 2,
+                  "quote": "save as PDF for the parents"
+                }
+              ],
+              "feedback": "Both choices are right. Add how many slides per sheet and the number of sheets (6 per sheet gives 2 sheets), and explain why PDF suits phones.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "She should print handouts, 6 slides on a page, so it is 2 sheets. For the parents she should send the pptx.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "print handouts, 6 slides on a page"
+                },
+                {
+                  "point": 1,
+                  "quote": "so it is 2 sheets"
+                }
+              ],
+              "feedback": "The handout part is complete. For the parents a .pptx may not open or may change on a phone, so use Save As to make a PDF."
+            },
+            {
+              "tier": "weak",
+              "text": "She should print every slide on its own paper so that it will be big, and send the same paper by WhatsApp.",
+              "meets": [],
+              "feedback": "That would use 12 sheets and you cannot send paper by WhatsApp. Print handouts with several slides per sheet, and save a PDF to send."
+            },
+            {
+              "tier": "weak",
+              "text": "She should send the pptx to the parents and the PDF to the printer because PDF is the printer's own file.",
+              "meets": [],
+              "feedback": "It is the other way round. Print handouts for the pupils, and save a PDF to send to the parents because it looks the same on any phone."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "The internet, browsers and search engines",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. say what the internet is and how a device connects to it;\n2. list the uses of the internet;\n3. tell a web browser from a search engine;\n4. read the parts of a web address (URL).\n\n## Materials\n\nA computer with internet access (or screenshots), a projector, and a card with the parts of a URL.\n\n## Starter (5 minutes)\n\nAsk: \"What did you last do on a phone that needed data?\" List answers (video, WhatsApp, a school website) and tell the class they were all using the internet.\n\n## Development\n\n1. The internet is a worldwide network of networks joined together so computers can share information.\n2. To connect you need a device, a connection from an Internet Service Provider (ISP) such as MTN, Airtel, Glo or a fibre company, and data or Wi-Fi.\n3. Uses: communication (email, messages, video calls), research and learning, entertainment, shopping, banking, news.\n4. The World Wide Web (WWW) is the collection of web pages on the internet. The internet is the network; the web is one service that runs on it. Email is another.\n5. A web browser is software for viewing web pages: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari.\n6. A search engine is a website that helps you find pages: Google, Bing, DuckDuckGo. You type in a search engine inside a browser.\n7. A URL is a web address: https://www.example.com.ng/page. Show protocol, domain name, and the ending (.com, .org, .gov.ng, .edu.ng).\n\n## Class activity\n\nPupils open a browser, go to a search engine, search for \"Nigerian National Library\", and write down the URL of the first result and the type of ending.\n\n## Evaluation\n\n1. What is the difference between a browser and a search engine?\n2. Name two uses of the internet in your life.\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "What the internet is, and how we use it",
+        "content": "# The internet, browsers and search engines\n\n## What is the internet?\n\nThe **internet** is a huge network of computer networks joined together all over the world. Because they are joined, a computer in Ibadan can fetch information from a computer in another country in a few seconds.\n\n## How do we connect?\n\nYou need three things:\n\n1. A **device**: a phone, tablet or computer.\n2. A **connection** from an **Internet Service Provider (ISP)**. In Nigeria, mobile data from companies such as MTN, Airtel or Glo, or a fibre or Wi-Fi line.\n3. **Data** or a Wi-Fi password so that the device is allowed to use that connection.\n\n## Uses of the internet\n\n- **Communication**: email, messages and video calls.\n- **Research and learning**: finding facts, watching lessons, reading books.\n- **Entertainment**: music, films, games.\n- **Business**: shopping online, mobile banking, advertising.\n- **News**: reading about what is happening now.\n\n## The internet and the web\n\nPeople often say \"internet\" when they mean the \"web\". They are not the same. The **internet** is the network. The **World Wide Web** (WWW) is a collection of web pages that are carried on the internet. Email and video calls also use the internet, but they are not web pages.\n\n## Browser and search engine\n\nA **web browser** is a program on your device that **opens and shows web pages**. Examples are Google Chrome, Mozilla Firefox, Microsoft Edge and Safari.\n\nA **search engine** is a **website that helps you find** pages on a topic. Examples are Google, Bing and DuckDuckGo. You open a browser first, then go to a search engine, type your question and read the results.\n\n| | Web browser | Search engine |\n|---|---|---|\n| What it is | A program | A website |\n| What it does | Opens web pages | Finds web pages |\n| Example | Chrome | Google |\n\n## The web address (URL)\n\nEvery page has an address called a **URL**. Look at **https://www.unilag.edu.ng/admissions**.\n\n- **https** is the protocol, and the **s** means the connection is secure.\n- **www.unilag.edu.ng** is the domain name, the name of the website.\n- **.edu.ng** ends the name: *edu* is for education and *ng* is for Nigeria.\n- **/admissions** is the page inside the website.\n\nOther endings are **.gov.ng** (Nigerian government), **.org** (organisations) and **.com** (business)."
+      },
+      "cards": [
+        {
+          "front": "Internet",
+          "back": "A worldwide network of computer networks joined together."
+        },
+        {
+          "front": "ISP",
+          "back": "Internet Service Provider: a company that gives you a connection, such as MTN or Airtel."
+        },
+        {
+          "front": "World Wide Web",
+          "back": "The collection of web pages carried on the internet."
+        },
+        {
+          "front": "Web browser",
+          "back": "A program that opens web pages, such as Chrome or Firefox."
+        },
+        {
+          "front": "Search engine",
+          "back": "A website that helps you find pages, such as Google or Bing."
+        },
+        {
+          "front": "URL",
+          "back": "The address of a web page."
+        },
+        {
+          "front": "https",
+          "back": "The start of a web address. The s shows the connection is secure."
+        },
+        {
+          "front": "Uses of the internet",
+          "back": "Communication, research and learning, entertainment, business, news."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a web browser?",
+          "options": [
+            "Chrome",
+            "Bing",
+            "Google",
+            "DuckDuckGo"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which statement is correct?",
+          "options": [
+            "A search engine is a program that you install to open pages",
+            "A search engine is a website that helps you find pages",
+            "The internet and the web are exactly the same",
+            "A browser is a website for finding facts"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which part of https://www.unilag.edu.ng/admissions shows that the website is a Nigerian education site?",
+          "options": [
+            "/admissions",
+            "https",
+            "www",
+            ".edu.ng"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Ugochukwu has a phone and a Wi-Fi password but his phone has no ISP connection behind the Wi-Fi. What will happen?",
+          "options": [
+            "He can use the internet normally",
+            "He will receive free data",
+            "He cannot reach the internet, because the Wi-Fi has no ISP connection",
+            "The phone will become a browser"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a use of the internet?",
+          "options": [
+            "Using a calculator that has no data",
+            "Sending an email",
+            "Typing on a keyboard",
+            "Printing from a USB stick"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A pupil says 'Google is my browser.' Explain whether she is correct, and state the difference between a web browser and a search engine, with one example of each.",
+          "markScheme": [
+            "States that she is not correct / Google is a search engine",
+            "A browser opens/displays web pages",
+            "A search engine finds pages on a topic",
+            "Gives a correct example of each, e.g. Chrome and Google"
+          ],
+          "modelAnswer": "She is not correct. Google is a search engine, not a browser. A web browser is a program that opens and shows web pages, for example Chrome. A search engine is a website that helps you find pages, for example Google.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "She is not correct because Google is a search engine. A browser is a program that opens web pages. A search engine is a website we use to find pages. Chrome is a browser and Google is a search engine.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "She is not correct because Google is a search engine"
+                },
+                {
+                  "point": 1,
+                  "quote": "A browser is a program that opens web pages"
+                },
+                {
+                  "point": 2,
+                  "quote": "A search engine is a website we use to find pages"
+                },
+                {
+                  "point": 3,
+                  "quote": "Chrome is a browser and Google is a search engine"
+                }
+              ],
+              "feedback": "All four marks. You corrected the idea and gave both examples."
+            },
+            {
+              "tier": "full",
+              "text": "No, Google is not a browser. It is a search engine which helps us look for information. A browser like Firefox is the program that shows the web pages on your phone or computer. You open the browser first before you go to Google.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "No, Google is not a browser"
+                },
+                {
+                  "point": 2,
+                  "quote": "search engine which helps us look for information"
+                },
+                {
+                  "point": 1,
+                  "quote": "the program that shows the web pages on your phone or computer"
+                },
+                {
+                  "point": 3,
+                  "quote": "A browser like Firefox"
+                }
+              ],
+              "feedback": "Full marks. You explained that you open the browser first, then go to the search engine."
+            },
+            {
+              "tier": "partial",
+              "text": "Google is a search engine and Chrome is a browser.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Google is a search engine"
+                },
+                {
+                  "point": 3,
+                  "quote": "Chrome is a browser"
+                }
+              ],
+              "feedback": "The two examples are right. You also need to say what each one does: a browser opens and shows pages, and a search engine helps you find them."
+            },
+            {
+              "tier": "partial",
+              "text": "She is not correct. A browser is the program that opens web pages.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "She is not correct"
+                },
+                {
+                  "point": 1,
+                  "quote": "A browser is the program that opens web pages"
+                }
+              ],
+              "feedback": "Good. To finish, say what a search engine is (a website that finds pages) and give an example of each."
+            },
+            {
+              "tier": "weak",
+              "text": "She is correct because Google is the internet and everything on the phone.",
+              "meets": [],
+              "feedback": "Google is not the internet. It is a search engine, a website that finds pages. The browser, such as Chrome, is the program that opens them."
+            },
+            {
+              "tier": "weak",
+              "text": "Browser and search engine are the same, they are both for browsing. The example is Google.",
+              "meets": [],
+              "feedback": "They are different. A browser is a program that opens pages (Chrome). A search engine is a website that helps you find pages (Google)."
+            }
+          ]
+        },
+        {
+          "prompt": "Read this address: https://www.nigerianschools.org/news/exams. Name its three parts, say what the https and the .org tell you, and give two uses of the internet in a school.",
+          "markScheme": [
+            "Identifies the domain name / website name (www.nigerianschools.org) and the page (/news/exams)",
+            "States that https means a secure connection",
+            "States that .org shows it is an organisation",
+            "Gives two correct uses of the internet in a school"
+          ],
+          "modelAnswer": "The address has the protocol https, the domain name www.nigerianschools.org, and the page /news/exams inside the website. The s in https shows the connection is secure. The .org ending shows it belongs to an organisation. In a school the internet is used for research and for sending email.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The parts are https, the domain name which is www.nigerianschools.org, and the page /news/exams. The s in https shows it is secure. The .org shows it is an organisation. A school can use the internet for research and for email.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the domain name which is www.nigerianschools.org, and the page /news/exams"
+                },
+                {
+                  "point": 1,
+                  "quote": "The s in https shows it is secure"
+                },
+                {
+                  "point": 2,
+                  "quote": "The .org shows it is an organisation"
+                },
+                {
+                  "point": 3,
+                  "quote": "A school can use the internet for research and for email"
+                }
+              ],
+              "feedback": "All four marks. Every part is correct."
+            },
+            {
+              "tier": "full",
+              "text": "https is how it connects and the s means safe connection. www.nigerianschools.org is the website name, and .org tells us it is for an organisation. /news/exams is the page inside the site. In school pupils search for information and teachers send emails to parents.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "the s means safe connection"
+                },
+                {
+                  "point": 0,
+                  "quote": "www.nigerianschools.org is the website name"
+                },
+                {
+                  "point": 2,
+                  "quote": ".org tells us it is for an organisation"
+                },
+                {
+                  "point": 3,
+                  "quote": "pupils search for information and teachers send emails to parents"
+                }
+              ],
+              "feedback": "Full marks. Good example uses of the internet in school."
+            },
+            {
+              "tier": "partial",
+              "text": "The s in https means it is secure. The .org means an organisation.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The s in https means it is secure"
+                },
+                {
+                  "point": 2,
+                  "quote": "The .org means an organisation"
+                }
+              ],
+              "feedback": "Both meanings are right. You were also asked for the three parts (https, the website name, the page) and two uses of the internet in a school."
+            },
+            {
+              "tier": "partial",
+              "text": "https, www.nigerianschools.org, and the page. The internet is used for research and email.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "www.nigerianschools.org, and the page"
+                },
+                {
+                  "point": 3,
+                  "quote": "The internet is used for research and email"
+                }
+              ],
+              "feedback": "You named the parts and two uses. Now say what https and .org tell us: https shows a secure connection, and .org shows an organisation."
+            },
+            {
+              "tier": "weak",
+              "text": "The parts are the news, the exams and the org. https is the name of the school.",
+              "meets": [],
+              "feedback": "https is not a name of a school. The parts are the protocol (https), the website name (www.nigerianschools.org) and the page (/news/exams). The s means secure, and .org means an organisation."
+            },
+            {
+              "tier": "weak",
+              "text": "The .org means the address is from the government of Nigeria and the https means the website is hot.",
+              "meets": [],
+              "feedback": "The government of Nigeria ends with .gov.ng; .org is for organisations. The s in https means the connection is secure."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Searching well, judging sources and citing",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. choose good keywords and use quotation marks to search;\n2. judge whether a source can be trusted;\n3. write a simple citation for a source they use;\n4. avoid copying and pasting without credit.\n\n## Materials\n\nA computer with internet access, a projector, and a printout of two web pages on the same topic (one reliable, one poor).\n\n## Starter (5 minutes)\n\nWrite on the board two searches for the same thing: \"tell me please what are the causes of floods in Lagos state\" and \"causes of flooding Lagos\". Ask which will give a better answer and why.\n\n## Development\n\n1. Think first: what exactly do I want to know?\n2. Use keywords, not whole sentences. Remove small words like \"please\", \"the\", \"what\".\n3. Use quotation marks to search for an exact phrase, for example \"harmattan dust\".\n4. Add a word to narrow a search (flood Lagos causes). Change the words if the results are poor.\n5. Judge the source with four questions: Who wrote it? When was it written? Why was it written (to inform, to sell, to persuade)? Do other good sources agree?\n6. Signs of a reliable source: a named author or organisation, a recent date, endings such as .gov.ng or .edu.ng, facts that other sources support. Signs of a poor source: no author, no date, too many adverts, shocking claims.\n7. Cite the source: author or website, title, website name, date and URL. Never copy and paste without credit.\n\n## Class activity\n\nGroups search for causes of flooding in a city, choose two sources, judge them with the four questions and write a citation for the best one.\n\n## Evaluation\n\n1. Rewrite a long question as keywords.\n2. Why must we cite our sources?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Finding good information and giving credit",
+        "content": "# Searching well, judging sources and citing\n\nAnyone can find thousands of pages on a topic in seconds. The skill is to find the **right** ones, decide which to **trust**, and **give credit** to the people whose work you use.\n\n## Searching well\n\n**Think first.** Ask yourself what exactly you want to know.\n\n**Use keywords, not long sentences.** A search engine reads your words and looks for pages with them. Small words add noise.\n\n- Weak search: *please tell me what are the causes of floods in Lagos state*\n- Better search: *causes of flooding Lagos*\n\n**Quotation marks** make the engine look for the **exact phrase**. Searching for *\"harmattan dust\"* finds pages with those two words together, in that order.\n\n**Narrow or change.** Too many pages? Add a word, like *causes of flooding Lagos drainage*. Too few? Use a simpler or different word, such as *flood* instead of *deluge*.\n\n## Judging a source\n\nNot everything online is true. Ask four questions:\n\n| Question | Why it matters |\n|---|---|\n| **Who** wrote it? | A named expert or organisation is more reliable than \"Anonymous\". |\n| **When** was it written? | Old pages may be out of date. |\n| **Why** was it written? | To inform, to sell something or to persuade? |\n| **Do others agree?** | Check the facts in at least two good sources. |\n\nSigns of a **reliable** source: a named author, a recent date, a trusted ending such as *.gov.ng* or *.edu.ng*, and facts that other sources support.\n\nSigns of a **poor** source: no author, no date, many adverts, and a shocking claim with no proof.\n\n## Citing sources\n\nTo **cite** is to say where your information came from. This is fair to the writer, and it lets your teacher check your facts. A simple citation gives:\n\n- the author or website,\n- the title of the page,\n- the website name,\n- the date, and\n- the web address (URL).\n\n**Example:** Nigerian Meteorological Agency. *Seasonal climate outlook.* NiMet website, 2025. https://nimet.gov.ng.\n\n## Copy and paste\n\nCopying a writer's sentences and presenting them as your own is **plagiarism**. Read, understand, and write in your own words, and cite where you found it.\n\n## Worked example\n\nA pupil searching for causes of flooding in Lagos finds two pages. One is from a state environment ministry, with a named author and a date from last year. The other has no author, a date from nine years ago, and many adverts. She chooses the first one and cites it."
+      },
+      "cards": [
+        {
+          "front": "Keywords",
+          "back": "The main words of a search, without small words, such as: causes of flooding Lagos."
+        },
+        {
+          "front": "Quotation marks in a search",
+          "back": "Make the engine look for the exact phrase."
+        },
+        {
+          "front": "Four questions for a source",
+          "back": "Who wrote it? When? Why? Do others agree?"
+        },
+        {
+          "front": "A sign of a reliable source",
+          "back": "A named author or organisation, a recent date, and facts other sources support."
+        },
+        {
+          "front": "A sign of a poor source",
+          "back": "No author, no date, many adverts, or a shocking claim with no proof."
+        },
+        {
+          "front": "Cite",
+          "back": "To say where your information came from."
+        },
+        {
+          "front": "What a citation gives",
+          "back": "Author or website, title, website name, date and URL."
+        },
+        {
+          "front": "Plagiarism",
+          "back": "Presenting someone else's work as your own."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which search is best for finding the causes of malaria in Nigeria?",
+          "options": [
+            "please tell me what causes malaria in Nigeria thank you",
+            "what is the cause of malaria that happens in Nigeria and why",
+            "malaria",
+            "causes malaria Nigeria"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Why do you put a phrase in quotation marks when searching?",
+          "options": [
+            "To find pages with that exact phrase",
+            "To remove all adverts",
+            "To search only in pictures",
+            "To make the search faster"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which web page is most likely to be reliable?",
+          "options": [
+            "A page with no author and no date",
+            "A page with many adverts and a shocking claim",
+            "A page from a government agency with a named author and a recent date",
+            "A page that says 'Trust me, I know'"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Amaka copies three paragraphs from a website into her homework and writes nothing about where they came from. This is",
+          "options": [
+            "research",
+            "plagiarism",
+            "citation",
+            "searching"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is NOT needed in a simple citation?",
+          "options": [
+            "The date",
+            "The title of the page",
+            "The URL",
+            "The colour of the website"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Rewrite this search so it will work better: 'please can you tell me what are the reasons why the price of tomatoes goes up in Nigeria'. Then say three questions you would ask to decide whether a page you find is reliable.",
+          "markScheme": [
+            "Rewrites it as keywords, e.g. tomato price increase Nigeria causes",
+            "Asks who wrote it (author)",
+            "Asks when it was written (date)",
+            "Asks why it was written, or whether other sources agree"
+          ],
+          "modelAnswer": "A better search is: tomato price increase Nigeria causes. To decide whether a page is reliable I ask who wrote it, when it was written, and whether other good sources agree with it.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I will search: tomato price increase Nigeria causes. I will ask who wrote the page. I will ask when it was written, so I know it is not old. I will also ask if other good websites say the same thing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tomato price increase Nigeria causes"
+                },
+                {
+                  "point": 1,
+                  "quote": "I will ask who wrote the page"
+                },
+                {
+                  "point": 2,
+                  "quote": "I will ask when it was written, so I know it is not old"
+                },
+                {
+                  "point": 3,
+                  "quote": "I will also ask if other good websites say the same thing"
+                }
+              ],
+              "feedback": "All four marks. You made keywords and gave a reason for the date."
+            },
+            {
+              "tier": "full",
+              "text": "Keywords: tomatoes price rise Nigeria reasons. Questions: Who is the writer, is he an expert? What is the date of the page? Why did they write it, is it to sell something?",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tomatoes price rise Nigeria reasons"
+                },
+                {
+                  "point": 1,
+                  "quote": "Who is the writer, is he an expert?"
+                },
+                {
+                  "point": 2,
+                  "quote": "What is the date of the page?"
+                },
+                {
+                  "point": 3,
+                  "quote": "Why did they write it, is it to sell something?"
+                }
+              ],
+              "feedback": "Full marks. 'Is it to sell something' is a very good question to ask about a page."
+            },
+            {
+              "tier": "partial",
+              "text": "Search: tomato price Nigeria. I will ask who wrote the page and the date.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tomato price Nigeria"
+                },
+                {
+                  "point": 1,
+                  "quote": "I will ask who wrote the page"
+                },
+                {
+                  "point": 2,
+                  "quote": "the date"
+                }
+              ],
+              "feedback": "Your keywords are good, but they leave out 'increase' or 'causes' which is what the question is about. Add a fourth question: why it was written, or whether other sources agree."
+            },
+            {
+              "tier": "partial",
+              "text": "I will check if other pages say the same thing. The search is why tomatoes price goes up.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "I will check if other pages say the same thing"
+                }
+              ],
+              "feedback": "Checking other sources is a good idea. Your search is still a sentence; reduce it to keywords such as tomato price increase Nigeria. Also ask who wrote the page and when."
+            },
+            {
+              "tier": "weak",
+              "text": "I will search the same sentence and click the first page, because the first one is always correct.",
+              "meets": [],
+              "feedback": "The first result is not always correct. Search with keywords such as tomato price increase Nigeria, then ask who wrote the page, when, and whether other sources agree."
+            },
+            {
+              "tier": "weak",
+              "text": "To check I will look at how beautiful the page is and the number of pictures it has.",
+              "meets": [],
+              "feedback": "A beautiful page is not always true. Ask who wrote it, when it was written and why, and whether other sources agree."
+            }
+          ]
+        },
+        {
+          "prompt": "Tobi found a fact for his homework on a website called Nigerian Children's Museum, on a page titled 'The history of Nigerian currency', dated 12 May 2024, at the address https://example.org/currency. (a) Write a simple citation. (b) Explain why he should cite instead of copying and pasting the page.",
+          "markScheme": [
+            "Citation includes the website/author and the title",
+            "Citation includes the date",
+            "Citation includes the URL",
+            "Explains that copying without credit is plagiarism / cites to give credit and let others check"
+          ],
+          "modelAnswer": "Nigerian Children's Museum. The history of Nigerian currency. Nigerian Children's Museum website, 12 May 2024. https://example.org/currency. He should cite because copying and pasting without credit is plagiarism, and a citation gives credit to the writer and lets the teacher check the fact.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Nigerian Children's Museum. The history of Nigerian currency. 12 May 2024. https://example.org/currency. He should cite because copying and pasting without saying where it came from is plagiarism, and it is fair to give credit to the writer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Nigerian Children's Museum. The history of Nigerian currency"
+                },
+                {
+                  "point": 1,
+                  "quote": "12 May 2024"
+                },
+                {
+                  "point": 2,
+                  "quote": "https://example.org/currency"
+                },
+                {
+                  "point": 3,
+                  "quote": "copying and pasting without saying where it came from is plagiarism"
+                }
+              ],
+              "feedback": "All four marks. Your citation has every part."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The history of Nigerian currency, Nigerian Children's Museum website, 12 May 2024, https://example.org/currency. (b) A citation shows the real writer so he gets credit, and my teacher can go and check if the fact is true. Copying and pasting is stealing the work.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The history of Nigerian currency, Nigerian Children's Museum website"
+                },
+                {
+                  "point": 1,
+                  "quote": "12 May 2024"
+                },
+                {
+                  "point": 2,
+                  "quote": "https://example.org/currency"
+                },
+                {
+                  "point": 3,
+                  "quote": "A citation shows the real writer so he gets credit, and my teacher can go and check if the fact is true"
+                }
+              ],
+              "feedback": "Full marks. Saying the teacher can check the fact is a very good reason."
+            },
+            {
+              "tier": "partial",
+              "text": "The history of Nigerian currency, Nigerian Children's Museum, https://example.org/currency.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The history of Nigerian currency, Nigerian Children's Museum"
+                },
+                {
+                  "point": 2,
+                  "quote": "https://example.org/currency"
+                }
+              ],
+              "feedback": "The title, the website and the URL are there. The date, 12 May 2024, is missing, and you did not answer (b): explain why citing is better than copying."
+            },
+            {
+              "tier": "partial",
+              "text": "He should cite so that it will not be plagiarism. The date is 12 May 2024.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The date is 12 May 2024"
+                },
+                {
+                  "point": 3,
+                  "quote": "He should cite so that it will not be plagiarism"
+                }
+              ],
+              "feedback": "Your reason is right and you gave the date. The citation also needs the title and website name and the URL."
+            },
+            {
+              "tier": "weak",
+              "text": "He can write 'I got it from the internet' because the internet is the writer.",
+              "meets": [],
+              "feedback": "The internet is not the writer. A citation must give the website or author, the title of the page, the date and the URL. This lets the teacher find the page and gives credit to the writer."
+            },
+            {
+              "tier": "weak",
+              "text": "Cite means to copy it exactly. He should paste the page and write his name at the top.",
+              "meets": [],
+              "feedback": "Writing your name on someone's work is plagiarism. To cite means to say where the information came from: the website, title, date and URL. Write the ideas in your own words."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Email: composing, sending and managing",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. say what email is and read an email address;\n2. compose and send an email with To, Cc, Bcc, Subject, body and attachment;\n3. reply, reply all and forward correctly;\n4. manage a mailbox (inbox, sent, drafts, spam) and write politely.\n\n## Materials\n\nComputers with internet access, a class email account (or a mock email screen on a projector), and a printed sample email.\n\n## Starter (5 minutes)\n\nAsk: \"How many of you have seen a parent or older person use email? What do they use it for?\" Then ask how an email differs from a text message.\n\n## Development\n\n1. Email (electronic mail) is a message sent over the internet. Address format: name@domain, for example ngozi.okeke@example.com. The @ sign separates the user name from the mail provider.\n2. Parts of a new email: To (main receiver), Cc (a copy that others can see), Bcc (a hidden copy), Subject (short title), body (the message), attachment (a file sent along).\n3. Reply answers the sender only. Reply All answers everyone on the message. Forward sends it to someone new.\n4. Mailbox folders: Inbox (received), Sent, Drafts (not yet sent), Spam (unwanted or dangerous), Trash.\n5. Good email manners: a clear subject, a greeting, short polite sentences, correct spelling, a sign-off with your name. Do not use all capital letters.\n6. Safety: do not open attachments or links from people you do not know.\n\n## Class activity\n\nPupils write an email to the class teacher asking for the date of the quiz, including a subject, greeting, message, sign-off and an attached file, and send it.\n\n## Evaluation\n\n1. What is the difference between Cc and Bcc?\n2. When should you use Reply All?\n\n## Assignment\n\nQuiz on the app.",
+      "reading": {
+        "title": "Sending a good email",
+        "content": "# Email: composing, sending and managing\n\n**Email** is short for **electronic mail**. It is a message you send over the internet to another person's mailbox. It arrives in seconds, even if the person is in another country. Schools, banks and businesses use email for official messages.\n\n## The email address\n\nAn email address looks like **ngozi.okeke@example.com**.\n\n- **ngozi.okeke** is the user name.\n- **@** is read as \"at\".\n- **example.com** is the mail provider.\n\nAn address has no spaces and uses only one @. Choose a sensible user name, because it will be seen by teachers and employers.\n\n## Parts of a new email\n\n| Part | What it is for |\n|---|---|\n| **To** | The main person who must receive the message |\n| **Cc** | Carbon copy: a copy for someone who should know. Everyone can see who is in Cc. |\n| **Bcc** | Blind carbon copy: a hidden copy. Others cannot see who is in Bcc. |\n| **Subject** | A short title that tells what the message is about |\n| **Body** | The message itself |\n| **Attachment** | A file such as a document or picture sent with the email |\n\n## Reply, Reply All and Forward\n\n- **Reply** goes back to the sender only.\n- **Reply All** goes to the sender and everyone else on the message. Use it only when everyone needs your answer. Using it by mistake can send private replies to many people.\n- **Forward** sends the message to someone new.\n\n## The mailbox\n\n- **Inbox**: messages you receive.\n- **Sent**: messages you have sent.\n- **Drafts**: messages you started but have not sent.\n- **Spam**: unwanted or suspicious messages. Do not click on links in them.\n- **Trash**: deleted messages.\n\n## Writing a good email\n\n1. Write a **clear subject**, such as *Date of the JSS2 quiz*, not *Hello* or no subject.\n2. Begin with a **greeting**: *Dear Mr Bello,*\n3. Keep the message **short and polite**, with correct spelling.\n4. End with a **sign-off**: *Yours faithfully, Chioma Eze, JSS2A*.\n5. Do not WRITE IN CAPITAL LETTERS, because it looks like shouting.\n6. Mention the attachment, and attach it before you press Send.\n\n## Safety\n\nDo not open an attachment or click a link from someone you do not know. It may carry a virus.\n\n## Worked example\n\n**To:** mr.bello@example.com\n**Subject:** Date of the JSS2 quiz\n**Body:** Dear Mr Bello, Please could you tell me the date of the JSS2 Digital Technologies quiz? I have attached my revision notes. Thank you. Chioma Eze, JSS2A."
+      },
+      "cards": [
+        {
+          "front": "Email",
+          "back": "A message sent over the internet to someone's mailbox."
+        },
+        {
+          "front": "@",
+          "back": "In an email address, it separates the user name from the mail provider."
+        },
+        {
+          "front": "Cc",
+          "back": "Carbon copy: a copy for someone who should know. Everyone can see it."
+        },
+        {
+          "front": "Bcc",
+          "back": "Blind carbon copy: a hidden copy. Others cannot see it."
+        },
+        {
+          "front": "Subject",
+          "back": "A short title that tells what the email is about."
+        },
+        {
+          "front": "Attachment",
+          "back": "A file sent along with an email."
+        },
+        {
+          "front": "Reply All",
+          "back": "Sends your answer to the sender and everyone else on the message."
+        },
+        {
+          "front": "Spam",
+          "back": "Unwanted or suspicious email."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which part of an email address is the user name in tolu.ade@example.com?",
+          "options": [
+            "example.com",
+            "tolu.ade",
+            "@",
+            "com"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Chinedu wants a copy of his email to go to his mother, but he does not want the other receivers to see her address. He should put her address in",
+          "options": [
+            "To",
+            "Cc",
+            "Subject",
+            "Bcc"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A teacher sends a class message to 40 parents. One parent writes a private complaint using Reply All. What is the problem?",
+          "options": [
+            "All 40 parents see the private complaint",
+            "The message goes only to the teacher",
+            "The message is deleted",
+            "The parent's email address changes"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Where do you find an email you started to write but did not send?",
+          "options": [
+            "Inbox",
+            "Spam",
+            "Drafts",
+            "Sent"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "You receive an email from someone you do not know. It has an attachment and says 'You have won a prize, open now!'. What should you do?",
+          "options": [
+            "Not open it, and tell an adult or delete it",
+            "Forward it to all your friends",
+            "Open the attachment quickly",
+            "Reply with your name and address"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between Cc and Bcc, and between Reply and Reply All. Say when you would use each of Bcc and Reply All.",
+          "markScheme": [
+            "Cc copies are visible to everyone, Bcc hidden",
+            "Gives a use of Bcc, e.g. to hide addresses or protect privacy",
+            "Reply goes to the sender only, Reply All goes to everyone",
+            "Gives a sensible use of Reply All, e.g. when everyone needs the answer"
+          ],
+          "modelAnswer": "Everybody can see who is in Cc, but nobody can see who is in Bcc. I would use Bcc to keep email addresses private when I send to many people. Reply goes only to the sender, but Reply All goes to everyone on the message. I would use Reply All only when everybody needs my answer.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Everyone can see the people in Cc, but the people in Bcc are hidden. I will use Bcc when I send to many people so their addresses are private. Reply sends only to the person who sent, and Reply All sends to everyone. I will use Reply All only when everyone must read my answer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Everyone can see the people in Cc, but the people in Bcc are hidden"
+                },
+                {
+                  "point": 1,
+                  "quote": "I will use Bcc when I send to many people so their addresses are private"
+                },
+                {
+                  "point": 2,
+                  "quote": "Reply sends only to the person who sent, and Reply All sends to everyone"
+                },
+                {
+                  "point": 3,
+                  "quote": "I will use Reply All only when everyone must read my answer"
+                }
+              ],
+              "feedback": "All four marks. You gave a difference and a use for each."
+            },
+            {
+              "tier": "full",
+              "text": "Cc is a copy that all the receivers can see. Bcc is a secret copy, they cannot see. Bcc is good for a list of parents so they cannot see each other's emails. Reply is only for the sender. Reply All is for all the people in the email, like when I tell my group when we will meet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cc is a copy that all the receivers can see. Bcc is a secret copy, they cannot see"
+                },
+                {
+                  "point": 1,
+                  "quote": "Bcc is good for a list of parents so they cannot see each other's emails"
+                },
+                {
+                  "point": 2,
+                  "quote": "Reply is only for the sender. Reply All is for all the people in the email"
+                },
+                {
+                  "point": 3,
+                  "quote": "like when I tell my group when we will meet"
+                }
+              ],
+              "feedback": "Full marks. The group meeting is a good example for Reply All."
+            },
+            {
+              "tier": "partial",
+              "text": "In Cc people can see who is copied but in Bcc they cannot. Reply is to the sender only.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In Cc people can see who is copied but in Bcc they cannot"
+                },
+                {
+                  "point": 2,
+                  "quote": "Reply is to the sender only"
+                }
+              ],
+              "feedback": "These two points are right. Add what Reply All does and when you would use it, and give a use of Bcc such as keeping many addresses private."
+            },
+            {
+              "tier": "partial",
+              "text": "Reply All is for everyone in the message and I use it when everyone needs my answer. Bcc is a copy.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Reply All is for everyone in the message"
+                },
+                {
+                  "point": 3,
+                  "quote": "I use it when everyone needs my answer"
+                }
+              ],
+              "feedback": "Your Reply All answer is good. You must say what makes Bcc different from Cc (it is hidden) and what plain Reply does."
+            },
+            {
+              "tier": "weak",
+              "text": "Cc and Bcc are the same because both are copies. Reply and Reply All are both for replying.",
+              "meets": [],
+              "feedback": "They are not the same. Everyone can see Cc, but Bcc is hidden. Reply goes to the sender only; Reply All goes to everyone on the message."
+            },
+            {
+              "tier": "weak",
+              "text": "Bcc means big copy and it is for big messages. Reply All is the best to use always.",
+              "meets": [],
+              "feedback": "Bcc means blind carbon copy: a hidden copy. Reply All should not be used always, because private replies can reach many people. Use it only when everyone needs the answer."
+            }
+          ]
+        },
+        {
+          "prompt": "Write an email from a JSS2 pupil to the school librarian, Mrs Adeola, asking if a book on Nigerian history can be reserved. Show the To, Subject and body, and mention one thing in the email that shows good manners.",
+          "markScheme": [
+            "Has a suitable To address and a clear subject",
+            "Has a greeting",
+            "The body states the request clearly and politely",
+            "Has a sign-off with the pupil's name and class, or another correct sign of good manners"
+          ],
+          "modelAnswer": "To: mrs.adeola@example.com. Subject: Request to reserve a Nigerian history book. Dear Mrs Adeola, Please could you reserve a book on Nigerian history for me? I would like to collect it on Monday. Thank you. Yours faithfully, Femi Ojo, JSS2B.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "To: mrs.adeola@example.com\nSubject: Reserving a book on Nigerian history\nDear Mrs Adeola,\nPlease can you reserve a book on Nigerian history for me? I will come to the library on Monday to collect it.\nThank you.\nYours faithfully,\nA pupil of JSS2B",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Subject: Reserving a book on Nigerian history"
+                },
+                {
+                  "point": 1,
+                  "quote": "Dear Mrs Adeola,"
+                },
+                {
+                  "point": 2,
+                  "quote": "Please can you reserve a book on Nigerian history for me? I will come to the library on Monday to collect it."
+                },
+                {
+                  "point": 3,
+                  "quote": "Yours faithfully,\nA pupil of JSS2B"
+                }
+              ],
+              "feedback": "All four marks. You were polite, clear and gave a day to collect the book."
+            },
+            {
+              "tier": "full",
+              "text": "To: mrs.adeola@example.com\nSubject: Book reservation\nGood afternoon Mrs Adeola,\nI am in JSS2A. I would like to reserve a Nigerian history book for the weekend if it is available. Thank you for your help.\nRegards,\nJSS2A pupil",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Subject: Book reservation"
+                },
+                {
+                  "point": 1,
+                  "quote": "Good afternoon Mrs Adeola,"
+                },
+                {
+                  "point": 2,
+                  "quote": "I would like to reserve a Nigerian history book for the weekend if it is available"
+                },
+                {
+                  "point": 3,
+                  "quote": "Thank you for your help."
+                }
+              ],
+              "feedback": "Full marks. Thanking the librarian is a good sign of manners."
+            },
+            {
+              "tier": "partial",
+              "text": "To: mrs.adeola@example.com\nSubject: Book\nDear Mrs Adeola, Please reserve a Nigerian history book for me. Thank you.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "To: mrs.adeola@example.com"
+                },
+                {
+                  "point": 1,
+                  "quote": "Dear Mrs Adeola,"
+                },
+                {
+                  "point": 2,
+                  "quote": "Please reserve a Nigerian history book for me."
+                }
+              ],
+              "feedback": "Your email is polite and the request is clear. 'Book' is too short for a subject: say what it is about, such as Request to reserve a Nigerian history book. A sign-off with your name and class would earn the last mark.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Subject: Request for a history book\nDear Mrs Adeola,\nI want a book on Nigerian history. Please reserve it.\nYours faithfully,\nAde, JSS2C",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Subject: Request for a history book"
+                },
+                {
+                  "point": 1,
+                  "quote": "Dear Mrs Adeola,"
+                },
+                {
+                  "point": 3,
+                  "quote": "Yours faithfully,\nAde, JSS2C"
+                }
+              ],
+              "feedback": "The subject, greeting and sign-off are good. 'I want' sounds like a demand; say 'Please could you reserve' and 'Thank you' so the request is polite. Also write the To address of the librarian."
+            },
+            {
+              "tier": "weak",
+              "text": "hello i want book of history of Nigeria please give me now by Ade",
+              "meets": [],
+              "feedback": "Begin with a greeting that names her (Dear Mrs Adeola), write a subject line, use capital letters and full stops, and ask politely. 'Give me now' is rude."
+            },
+            {
+              "tier": "weak",
+              "text": "TO MRS ADEOLA: I NEED THE BOOK ON NIGERIAN HISTORY BECAUSE I AM WAITING.",
+              "meets": [],
+              "feedback": "Capital letters look like shouting. Write in normal letters, add a subject, a greeting, a polite request such as Please could you reserve it, and a sign-off with your name and class."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Staying safe online: passwords, bullying and malware",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. make and keep a strong password;\n2. say what cyberbullying is and what to do about it;\n3. name types of malware and how they spread;\n4. list ways to protect a device from malware.\n\n## Materials\n\nA projector, cards with sample passwords (weak and strong), and a short role-play script about an unkind message in a class group chat.\n\n## Starter (5 minutes)\n\nAsk: \"Would you give a stranger the key to your house? Then why do people give their passwords to friends?\" Take a few answers.\n\n## Development\n\n1. A password protects your account. Strong password: at least 12 characters, mixing capital and small letters, numbers and symbols, and not a name, a birthday or \"password123\". A passphrase of several unrelated words is easy to remember and strong.\n2. Keep it safe: do not share it, use a different password for each account, do not write it where others can see it, and use two-step verification if the site offers it.\n3. Cyberbullying is using phones or the internet to hurt, shame or frighten someone. If it happens: do not reply, save the messages as proof, block the person, and tell a trusted adult. If you see it happening to another, do not join in or forward it.\n4. Malware is harmful software. Virus (attaches to files and spreads), worm (spreads itself over a network), trojan (looks useful but is harmful), spyware (secretly watches), ransomware (locks files and demands money).\n5. Protection: antivirus, updates, do not open unknown attachments, avoid pirated software, scan flash drives, back up files.\n\n## Class activity\n\nPupils rate five sample passwords and fix the weak ones, then act out what to do when a rude message arrives in a group chat.\n\n## Evaluation\n\n1. Give two features of a strong password.\n2. Name two ways a virus can reach a computer.\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Keeping yourself and your device safe",
+        "content": "# Staying safe online: passwords, bullying and malware\n\nThe internet is useful, but it also has people and programs that want to harm you. A few good habits will keep you and your device safe.\n\n## Passwords\n\nA **password** is a secret word that proves you are the owner of an account. If someone else knows it, they can read your messages and pretend to be you.\n\n**A strong password:**\n- has **at least 12 characters**;\n- mixes **capital and small letters, numbers and symbols**;\n- is **not** a name, date of birth, phone number, or something easy like *password123* or *12345678*;\n- is **different** for each account. If one account is hacked, the others stay safe.\n\nAn easy way is a **passphrase**: several unrelated words and a number, such as *Mango!Drum7Window*.\n\n**Keep it secret.** Do not share it with friends, do not leave it on paper where others can see it, and use **two-step verification** when it is offered. With two-step verification, a code is sent to your phone as well, so a thief with only your password cannot get in.\n\n## Cyberbullying\n\n**Cyberbullying** is using phones, social media or messages to hurt, shame or frighten another person. It can be rude messages, spreading rumours, sharing embarrassing photos or leaving someone out on purpose. Words online can hurt as much as words said face to face, and they can spread quickly.\n\n**If it happens to you:**\n1. Do **not** reply in anger.\n2. **Save** the messages or take screenshots as proof.\n3. **Block** the person.\n4. **Tell** a trusted adult: a parent, a teacher or the school counsellor.\n\n**If you see it happening to another person,** do not join in, do not forward the message, and tell an adult.\n\n## Malware\n\n**Malware** is software made to do harm. Common types:\n\n| Type | What it does |\n|---|---|\n| **Virus** | Attaches to a file or program and spreads when that file is opened or shared |\n| **Worm** | Spreads by itself across a network |\n| **Trojan** | Looks like a useful program, but does harm once it is installed |\n| **Spyware** | Secretly watches what you do and collects your information |\n| **Ransomware** | Locks your files and demands money to open them |\n\nMalware spreads through **email attachments, unknown links, pirated software, infected flash drives** and fake websites.\n\n## Protecting a device\n\n- Install **antivirus** software and keep it up to date.\n- Install **updates** to the system and the apps.\n- Do **not** open attachments or click links from people you do not know.\n- **Scan** a flash drive before opening it.\n- **Back up** important files, so a loss does not destroy your work.\n\n## Worked example\n\nChidera receives a message: *Your phone has a virus! Click here to clean it now.* This is likely a trick. She does not click. She tells her mother, and her phone's own antivirus app is used to check it."
+      },
+      "cards": [
+        {
+          "front": "Strong password",
+          "back": "At least 12 characters, with capital and small letters, numbers and symbols, and not a name or birthday."
+        },
+        {
+          "front": "Two-step verification",
+          "back": "A second proof, such as a code sent to your phone, in addition to the password."
+        },
+        {
+          "front": "Cyberbullying",
+          "back": "Using phones or the internet to hurt, shame or frighten someone."
+        },
+        {
+          "front": "What to do about cyberbullying",
+          "back": "Do not reply, save proof, block the person, and tell a trusted adult."
+        },
+        {
+          "front": "Malware",
+          "back": "Software made to do harm."
+        },
+        {
+          "front": "Virus",
+          "back": "Malware that attaches to files and spreads when they are opened or shared."
+        },
+        {
+          "front": "Trojan",
+          "back": "Malware that looks like a useful program but does harm."
+        },
+        {
+          "front": "Ransomware",
+          "back": "Malware that locks your files and asks for money."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is the strongest password?",
+          "options": [
+            "chidera2012",
+            "password123",
+            "Mango!Drum7Window",
+            "12345678"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Somebody keeps sending Bola insulting messages on his phone. What should he NOT do?",
+          "options": [
+            "Reply with insults and send them to others",
+            "Tell a trusted adult",
+            "Block the sender",
+            "Save the messages"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A program that looks like a free game but secretly harms your computer is a",
+          "options": [
+            "worm",
+            "trojan",
+            "firewall",
+            "browser"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why is it better to use a different password for each account?",
+          "options": [
+            "It is easier to remember",
+            "Websites need different letters",
+            "Passwords expire every day",
+            "If one account is hacked, the others stay safe"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these helps most to protect a computer from malware?",
+          "options": [
+            "Opening every attachment to check it",
+            "Keeping antivirus and updates current",
+            "Installing pirated software",
+            "Sharing your password"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Dami's password is 'dami2013', her name and birth year. Say why this is a weak password, and tell her how to make a strong one. Give two other things she should do to keep the account safe.",
+          "markScheme": [
+            "States that it is weak because it uses her name / birth year, so it is easy to guess",
+            "Advises a longer password (about 12 or more characters)",
+            "Advises a mix of capital and small letters, numbers and symbols (or a passphrase)",
+            "Gives two other safety practices, e.g. do not share it, different password for each account, two-step verification"
+          ],
+          "modelAnswer": "The password is weak because it uses her name and birth year, which people can easily guess. A strong password has at least 12 characters and mixes capital and small letters, numbers and symbols. A passphrase such as Mango!Drum7Window is a good choice. She should also not share it with anyone, and use a different password for each account.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "It is weak because it is her name and the year she was born so people can guess it. She should make it long, at least 12 characters. It should have capital letters, small letters, numbers and symbols. She should not tell anybody the password and she should use different passwords for different accounts.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is weak because it is her name and the year she was born so people can guess it"
+                },
+                {
+                  "point": 1,
+                  "quote": "She should make it long, at least 12 characters"
+                },
+                {
+                  "point": 2,
+                  "quote": "It should have capital letters, small letters, numbers and symbols"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should not tell anybody the password and she should use different passwords for different accounts"
+                }
+              ],
+              "feedback": "All four marks. You gave the reason and the fix."
+            },
+            {
+              "tier": "full",
+              "text": "Someone who knows her can guess dami2013 easily. A better one is a passphrase with different words like Mango!Drum7Window, which is long and has symbols and numbers. She must not share it and she can turn on two-step verification so that a code is sent to her phone.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Someone who knows her can guess dami2013 easily"
+                },
+                {
+                  "point": 1,
+                  "quote": "which is long"
+                },
+                {
+                  "point": 2,
+                  "quote": "A better one is a passphrase with different words like Mango!Drum7Window"
+                },
+                {
+                  "point": 3,
+                  "quote": "She must not share it and she can turn on two-step verification"
+                }
+              ],
+              "feedback": "Full marks. Two-step verification is an extra layer that many people forget."
+            },
+            {
+              "tier": "partial",
+              "text": "The password is weak because it is her name and year, anybody can guess it. She should use a longer one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The password is weak because it is her name and year, anybody can guess it"
+                },
+                {
+                  "point": 1,
+                  "quote": "She should use a longer one"
+                }
+              ],
+              "feedback": "The reason and the length are right. Say what a strong one contains (capitals, small letters, numbers, symbols) and give two other habits, such as not sharing it and using a different password for each account."
+            },
+            {
+              "tier": "partial",
+              "text": "She should add capital letters, numbers and symbols. She should not tell her friends the password.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "She should add capital letters, numbers and symbols"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should not tell her friends the password"
+                }
+              ],
+              "feedback": "These are good tips. Explain why the old password is weak (her name and birth year are easy to guess) and say how long a strong one should be."
+            },
+            {
+              "tier": "weak",
+              "text": "The password is good because she can remember it. She only needs to add her school name too.",
+              "meets": [],
+              "feedback": "A password that is easy to remember because it is your name is easy for others to guess. Use a longer password mixing letters, numbers and symbols, and do not use your own details."
+            },
+            {
+              "tier": "weak",
+              "text": "It is weak because it has numbers. A strong one has only letters so that it will not confuse.",
+              "meets": [],
+              "feedback": "Numbers make a password stronger. Dami's password is weak because it is her name and birth year. Use 12 or more characters mixing capital and small letters, numbers and symbols."
+            }
+          ]
+        },
+        {
+          "prompt": "A pupil in JSS2 finds that classmates have started a group chat where they post embarrassing photos of another pupil. (a) Say what this is called. (b) Give three things the pupil who sees it should do, and one thing the pupil should not do. (c) Name one type of malware and say one way it can reach a phone.",
+          "markScheme": [
+            "(a) names it cyberbullying",
+            "(b) gives two correct actions, e.g. do not join, save proof, tell a trusted adult, support the victim",
+            "(b) says what not to do, e.g. do not forward the photos or reply with insults",
+            "(c) names a malware type and a correct way it spreads"
+          ],
+          "modelAnswer": "This is cyberbullying. The pupil should not join in, should save the messages as proof, and should tell a teacher or a parent. The pupil should not forward the photos. One type of malware is a trojan, which can reach a phone when someone installs a free game from an unknown website.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) It is cyberbullying. (b) The pupil must not join in, should save the pictures as proof and should tell a teacher or parent. The pupil must not forward the photos to others. (c) A virus is a malware and it can come to a phone through an attachment from an unknown person.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is cyberbullying"
+                },
+                {
+                  "point": 1,
+                  "quote": "should save the pictures as proof and should tell a teacher or parent"
+                },
+                {
+                  "point": 2,
+                  "quote": "The pupil must not forward the photos to others"
+                },
+                {
+                  "point": 3,
+                  "quote": "A virus is a malware and it can come to a phone through an attachment from an unknown person"
+                }
+              ],
+              "feedback": "All four marks. Each part of the question is answered."
+            },
+            {
+              "tier": "full",
+              "text": "This is called cyberbullying. If I see it I will not laugh or join the chat, I will keep a screenshot, tell my class teacher, and I will not share the pictures. A trojan is malware that looks like a free game and when you install it from a bad website, it does harm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "This is called cyberbullying"
+                },
+                {
+                  "point": 1,
+                  "quote": "I will keep a screenshot, tell my class teacher"
+                },
+                {
+                  "point": 2,
+                  "quote": "I will not share the pictures"
+                },
+                {
+                  "point": 3,
+                  "quote": "A trojan is malware that looks like a free game and when you install it from a bad website, it does harm"
+                }
+              ],
+              "feedback": "Full marks. Screenshots and telling a teacher are the correct steps."
+            },
+            {
+              "tier": "partial",
+              "text": "It is cyberbullying. The pupil should tell a teacher and not join them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is cyberbullying"
+                },
+                {
+                  "point": 1,
+                  "quote": "The pupil should tell a teacher and not join them"
+                }
+              ],
+              "feedback": "These points are right. Add something the pupil should not do (forward the photos), and answer (c): name a type of malware, such as a virus, and say how it spreads."
+            },
+            {
+              "tier": "partial",
+              "text": "The pupil should not send the photos to anyone. A worm spreads by itself on a network.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The pupil should not send the photos to anyone"
+                },
+                {
+                  "point": 3,
+                  "quote": "A worm spreads by itself on a network"
+                }
+              ],
+              "feedback": "Your 'what not to do' and the malware are right. You did not name what this is called (cyberbullying), nor say what the pupil should do, such as save proof and tell a trusted adult."
+            },
+            {
+              "tier": "weak",
+              "text": "It is called a joke. The pupil should post a funny photo too and laugh.",
+              "meets": [],
+              "feedback": "This is cyberbullying, not a joke. The pupil should not join in. Save proof, tell a trusted adult, and do not forward the photos."
+            },
+            {
+              "tier": "weak",
+              "text": "It is called hacking. The pupil should reply to the chat with a curse and delete the app.",
+              "meets": [],
+              "feedback": "Hacking is breaking into a device. Hurting a person with online messages is cyberbullying. Do not reply with insults; save proof and tell a trusted adult."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Digital ethics: copyright, plagiarism and social media",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. say what intellectual property and copyright are;\n2. explain plagiarism and how to avoid it;\n3. describe responsible use of social media;\n4. judge whether an online action is right or wrong and give a reason.\n\n## Materials\n\nA projector, a short original paragraph and a copied version of it, and cards with online situations.\n\n## Starter (5 minutes)\n\nAsk: \"If a pupil sells a song that a musician made, and keeps all the money, is that fair?\" Let the class talk briefly.\n\n## Development\n\n1. Ethics are ideas about what is right and wrong. Digital ethics apply them to computers and the internet.\n2. Intellectual property is something a person created with the mind: a song, a story, a drawing, a program. The owner has rights over it.\n3. Copyright is the legal right of the creator to control copying and use. Using someone's work without permission can be stealing and against the law. Pirating films, music and software is an example.\n4. Some work may be used with permission or credit. Some authors share work freely under licences such as Creative Commons. Check what is allowed and give credit.\n5. Plagiarism is presenting another person's work or ideas as your own. Avoid it by writing in your own words and citing the source.\n6. Responsible social media use: think before posting; do not post private information; ask before posting photos of others; check a story before sharing it; be kind; do not impersonate others.\n\n## Class activity\n\nGroups receive situation cards (copying a classmate's homework from a phone, sharing a rumour, posting a friend's photo) and decide if each is right or wrong, with a reason.\n\n## Evaluation\n\n1. What is plagiarism?\n2. Give two rules for responsible social media use.\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "Right and wrong in the digital world",
+        "content": "# Digital ethics: copyright, plagiarism and social media\n\n**Ethics** are ideas about what is right and what is wrong. **Digital ethics** apply those ideas to computers, phones and the internet. Something being easy to do online does not make it right.\n\n## Intellectual property and copyright\n\n**Intellectual property** is something a person has created with their mind: a song, a story, a photograph, a drawing, a computer program. The creator owns it, just as you own your school bag.\n\n**Copyright** is the legal right of the creator to say who can copy, sell or share the work. If you copy and share a musician's song or a film without permission, you take away the money the creator should earn. This is called **piracy**, and it is against the law in Nigeria and many countries.\n\nSome creators allow others to use their work for free if they follow certain rules. For example, a photograph may carry a **Creative Commons** licence that lets you use it if you give credit to the photographer. Always check what the owner allows.\n\n## Plagiarism\n\n**Plagiarism** is presenting another person's work or ideas as your own. It may be copying sentences from a website, copying a friend's homework, or buying an essay.\n\nTo avoid plagiarism:\n1. Read and understand the source.\n2. Write the idea **in your own words**.\n3. **Cite** the source.\n4. If you use the exact words, put them in quotation marks and name the writer.\n\nPlagiarism is a kind of cheating. It also stops you from learning.\n\n## Using social media responsibly\n\nSocial media can spread kindness and knowledge, but also harm.\n\n- **Think before you post.** A post can be seen by many people and may stay online for a long time.\n- **Keep private information private**: your address, phone number and school timetable.\n- **Ask permission** before posting a photo or video of another person.\n- **Check before you share.** Fake news spreads quickly. Look at who wrote it and whether trusted sources say the same.\n- **Be kind.** Do not insult, bully or mock others.\n- **Be honest.** Do not pretend to be someone else.\n\n## Worked example\n\nA pupil finds a drawing of a lion on a website and puts it in her project, saying she drew it. This is wrong because it is someone else's work, presented as hers. The right way is to say who drew it and where she found it, or to draw her own."
+      },
+      "cards": [
+        {
+          "front": "Ethics",
+          "back": "Ideas about what is right and what is wrong."
+        },
+        {
+          "front": "Intellectual property",
+          "back": "Something a person created with their mind, such as a song, a story or a program."
+        },
+        {
+          "front": "Copyright",
+          "back": "The legal right of the creator to control copying and sharing of the work."
+        },
+        {
+          "front": "Piracy",
+          "back": "Copying and sharing music, films or software without permission."
+        },
+        {
+          "front": "Plagiarism",
+          "back": "Presenting another person's work or ideas as your own."
+        },
+        {
+          "front": "How to avoid plagiarism",
+          "back": "Use your own words and cite the source."
+        },
+        {
+          "front": "Creative Commons",
+          "back": "A licence that lets others use a work under stated rules, such as giving credit."
+        },
+        {
+          "front": "Responsible social media use",
+          "back": "Think before posting, protect private information, ask permission, check before sharing, be kind."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A pupil downloads a new film from a pirate website and shares it with her friends. This is",
+          "options": [
+            "fair use for school",
+            "safe because it is free",
+            "good citation",
+            "a breach of copyright"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which action is plagiarism?",
+          "options": [
+            "Writing a fact in your own words and naming the website",
+            "Copying a paragraph from a website and saying you wrote it",
+            "Quoting one sentence in quotation marks with the writer's name",
+            "Making a drawing yourself"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Before posting a photo of your friend on social media, you should",
+          "options": [
+            "add a funny caption first",
+            "tag everyone in the school",
+            "ask for permission",
+            "post it quickly before others do"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "You read a shocking story in a WhatsApp group that says schools will close for two months. Before sharing you should",
+          "options": [
+            "check whether trusted sources say the same",
+            "share it at once to warn others",
+            "add more details to make it interesting",
+            "delete your phone"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is the owner of the intellectual property?",
+          "options": [
+            "The person who bought a CD",
+            "The person who downloaded it",
+            "The person who played it on a radio",
+            "The person who made the song"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define plagiarism. Then describe three things a pupil should do to avoid it when writing a project from information found online.",
+          "markScheme": [
+            "Defines plagiarism: presenting someone else's work or ideas as your own",
+            "Says to write in your own words",
+            "Says to cite / name the source",
+            "Says to put exact words in quotation marks, or to read and understand the source first"
+          ],
+          "modelAnswer": "Plagiarism is presenting someone else's work or ideas as if they were your own. To avoid it, I should read the source and write the ideas in my own words. I should cite the source to say where the information came from. If I use exact words, I should put them in quotation marks.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Plagiarism is when you take someone else's work or ideas and say that they are yours. To avoid it I write the idea in my own words. I also say where I got the information, by citing the website. When I use their exact words I put them in quotation marks.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Plagiarism is when you take someone else's work or ideas and say that they are yours"
+                },
+                {
+                  "point": 1,
+                  "quote": "I write the idea in my own words"
+                },
+                {
+                  "point": 2,
+                  "quote": "I also say where I got the information, by citing the website"
+                },
+                {
+                  "point": 3,
+                  "quote": "When I use their exact words I put them in quotation marks"
+                }
+              ],
+              "feedback": "All four marks. You defined it and gave three habits."
+            },
+            {
+              "tier": "full",
+              "text": "Plagiarism means using another person's work and pretending you did it yourself. A pupil should first read and understand it, then write it in her own words. She should write the name of the website or writer. Any words copied exactly must be in quotation marks.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Plagiarism means using another person's work and pretending you did it yourself"
+                },
+                {
+                  "point": 3,
+                  "quote": "A pupil should first read and understand it"
+                },
+                {
+                  "point": 1,
+                  "quote": "then write it in her own words"
+                },
+                {
+                  "point": 2,
+                  "quote": "She should write the name of the website or writer"
+                }
+              ],
+              "feedback": "Full marks. Your steps follow the right order: understand, rewrite and credit."
+            },
+            {
+              "tier": "partial",
+              "text": "Plagiarism is to copy another person's work and say it is yours. You should write in your own words.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Plagiarism is to copy another person's work and say it is yours"
+                },
+                {
+                  "point": 1,
+                  "quote": "You should write in your own words"
+                }
+              ],
+              "feedback": "Your definition and first habit are right. Add naming the source (citing), and using quotation marks for exact words."
+            },
+            {
+              "tier": "partial",
+              "text": "You should cite the website and use your own words. Plagiarism is a bad thing in school.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "use your own words"
+                },
+                {
+                  "point": 2,
+                  "quote": "cite the website"
+                }
+              ],
+              "feedback": "Two good habits. 'A bad thing' is not a definition: say that plagiarism is presenting another person's work or ideas as your own."
+            },
+            {
+              "tier": "weak",
+              "text": "Plagiarism is when you use the internet for your project. To avoid it you should not use the internet.",
+              "meets": [],
+              "feedback": "Using the internet for research is fine. Plagiarism is presenting someone else's work as your own. Avoid it by using your own words and citing the source."
+            },
+            {
+              "tier": "weak",
+              "text": "Plagiarism is when two pupils write the same thing by luck. To avoid it, sit far from your friend.",
+              "meets": [],
+              "feedback": "Plagiarism is deliberately presenting another person's work as your own. Write in your own words, cite your sources and put exact words in quotation marks."
+            }
+          ]
+        },
+        {
+          "prompt": "Seyi shares a message in the school group saying 'The exam has been cancelled!' without checking it. He then posts a photo of a classmate sleeping in class with a funny caption, without asking her. Say what Seyi did wrong in each case and what he should have done.",
+          "markScheme": [
+            "Fake news: he shared without checking the message",
+            "He should have checked a trusted source before sharing",
+            "Posted a photo of the classmate without permission / unkind",
+            "He should have asked permission or not posted a photo to embarrass her"
+          ],
+          "modelAnswer": "Seyi shared a message without checking if it was true, which can spread fake news and cause confusion. He should have checked with a teacher or another trusted source first. He also posted a photo of his classmate without her permission and in a way that could embarrass her. He should have asked her permission, or not posted it at all.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Seyi shared a message without checking if it was true, so it can be fake news and people will be confused. He should check with a teacher or the school notice before sharing it. Then he posted a classmate's photo without permission and it may shame her. He should have asked her first or not posted it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Seyi shared a message without checking if it was true"
+                },
+                {
+                  "point": 1,
+                  "quote": "He should check with a teacher or the school notice before sharing it"
+                },
+                {
+                  "point": 2,
+                  "quote": "posted a classmate's photo without permission and it may shame her"
+                },
+                {
+                  "point": 3,
+                  "quote": "He should have asked her first or not posted it"
+                }
+              ],
+              "feedback": "All four marks. You dealt with both actions and gave the correct fix."
+            },
+            {
+              "tier": "full",
+              "text": "He did not check the story before sharing, it could be false and cause trouble. He should have asked a teacher if it was true. The photo was wrong because the girl did not allow it and it is mocking her. He must ask permission and be kind, so he should not post things that embarrass people.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "He did not check the story before sharing, it could be false and cause trouble"
+                },
+                {
+                  "point": 1,
+                  "quote": "He should have asked a teacher if it was true"
+                },
+                {
+                  "point": 2,
+                  "quote": "The photo was wrong because the girl did not allow it and it is mocking her"
+                },
+                {
+                  "point": 3,
+                  "quote": "He must ask permission and be kind"
+                }
+              ],
+              "feedback": "Full marks. Both mistakes are correctly named."
+            },
+            {
+              "tier": "partial",
+              "text": "He shared a message without checking. He should have checked first.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "He shared a message without checking"
+                },
+                {
+                  "point": 1,
+                  "quote": "He should have checked first"
+                }
+              ],
+              "feedback": "The first mistake is right. You did not deal with the second: posting the classmate's photo without permission and mocking her. Say what he should have done there."
+            },
+            {
+              "tier": "partial",
+              "text": "He posted the girl's photo without asking her. That is not kind.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "He posted the girl's photo without asking her"
+                }
+              ],
+              "feedback": "This mistake is right. Say what he should have done (asked permission or not posted it), and deal with the first mistake: sharing 'The exam has been cancelled' without checking it."
+            },
+            {
+              "tier": "weak",
+              "text": "Seyi did nothing wrong because it was just a joke and everybody saw it.",
+              "meets": [],
+              "feedback": "Sharing an unchecked message can spread fake news, and posting a photo of a classmate without asking can shame her. Check before sharing and ask permission before posting a photo."
+            },
+            {
+              "tier": "weak",
+              "text": "Seyi was wrong to use social media in school. He should delete the group.",
+              "meets": [],
+              "feedback": "Using social media is not the problem; how he used it was. He should have checked the news before sharing and asked permission before posting the photo."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
