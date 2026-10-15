@@ -1,0 +1,2833 @@
+{
+  "subject": "Geography",
+  "yearGroup": "SS1",
+  "weeks": {
+    "1": {
+      "topic": "Reading maps: scale, distance, bearing and gradient",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state what a map is and name the main types of map;\n2. use a scale to change a distance on a map to a distance on the ground;\n3. give the direction of one place from another as a compass point and as a bearing;\n4. recognise spurs and valleys from contour lines, and work out a gradient;\n5. explain what inter-visibility means.\n\n## Materials\n\nContoured topographical map extract of a part of Nigeria (Ibadan or Jos sheet), rulers, protractors, string, graph paper, pencils.\n\n## Starter (5 minutes)\n\nAsk: how would you describe the way from our school gate to the market to a stranger? Collect the words used (turn left, 200 m, towards the river) and link them to scale, distance and direction.\n\n## Development\n\n1. Define a map and list types: topographical, atlas, wall, sketch, thematic.\n2. Teach the three ways of writing scale: statement, representative fraction, line scale. Convert 1:50,000 to 'one centimetre to half a kilometre'.\n3. Measure a straight and a winding road with a ruler and with string.\n4. Draw the eight compass points, then teach bearing as an angle measured clockwise from north.\n5. Show contour lines. Draw a spur and a valley and ask students how to tell them apart.\n6. Gradient = vertical interval / horizontal distance, both in metres. Work one example on the board.\n7. Introduce inter-visibility and draw a cross profile.\n\n## Class activity\n\nIn pairs, students measure the distance between two named places on the map extract, give the bearing of one from the other and calculate the gradient between two spot heights.\n\n## Evaluation\n\n1. A map has a scale of 1:25,000. What does 4 cm on the map stand for on the ground?\n2. What is the bearing of south-east?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Reading a map properly",
+        "content": "# Reading maps: scale, distance, bearing and gradient\n\n## What is a map?\n\nA **map** is a drawing of the earth's surface, or part of it, as seen from above and reduced to a smaller size. Maps are used to find the way, plan roads and towns, locate farmland and settle boundary disputes. Common types are the **topographical map**, which shows natural and man-made features, the **atlas map**, the **sketch map** and **thematic maps**, such as a rainfall map.\n\n## Scale\n\nScale compares a distance on the map with the real distance on the ground. It is written in three ways:\n\n- a **statement**: 1 cm to 2 km;\n- a **representative fraction (R.F.)**: 1:50,000;\n- a **line scale**, a ruled line marked in kilometres.\n\n**Worked example.** On a map of scale 1:50,000, two villages are 6.4 cm apart. The ground distance is 6.4 x 50,000 = 320,000 cm. Dividing by 100 gives 3,200 m, which is 3.2 km.\n\nFor a winding road, lay a piece of string along the road, then straighten the string against the line scale.\n\n## Direction and bearing\n\nThe eight compass points are N, NE, E, SE, S, SW, W and NW. A **bearing** is an angle measured **clockwise from north**, written with three figures. East is 090 degrees, south is 180 degrees and south-west is 225 degrees.\n\n## Relief and gradient\n\nA **contour** joins places of equal height. Contours close together mean a steep slope; contours wide apart mean a gentle slope. A **valley** is shown by V-shaped contours pointing towards higher ground. A **spur** is a ridge of high land shown by V-shaped contours pointing towards lower ground.\n\n**Gradient** = vertical interval divided by horizontal distance, in the same units. A rise of 80 m over 2 km (2,000 m) gives 80/2000 = 1/25, which we write as a gradient of 1 in 25.\n\n## Cultural features and inter-visibility\n\nCultural features are made by people: settlements, roads, railways, bridges and walls. Two points are **inter-visible** if you can see one from the other. They are not if higher ground lies between them. A **cross profile** drawn along the line joining them shows whether it does."
+      },
+      "cards": [
+        {
+          "front": "Map",
+          "back": "A drawing of the earth's surface, or part of it, as seen from above and reduced in size."
+        },
+        {
+          "front": "Representative fraction",
+          "back": "Scale written as a ratio, such as 1:50,000: 1 unit on the map is 50,000 of the same unit on the ground."
+        },
+        {
+          "front": "Bearing",
+          "back": "An angle measured clockwise from north, written with three figures, for example 225 degrees."
+        },
+        {
+          "front": "Contour",
+          "back": "A line on a map joining places of the same height above sea level."
+        },
+        {
+          "front": "Valley on a contour map",
+          "back": "V-shaped contours pointing towards higher ground."
+        },
+        {
+          "front": "Spur",
+          "back": "A ridge of high land jutting out; V-shaped contours pointing towards lower ground."
+        },
+        {
+          "front": "Gradient",
+          "back": "Vertical interval divided by horizontal distance, both in metres."
+        },
+        {
+          "front": "Inter-visibility",
+          "back": "Whether one point can be seen from another, or whether higher ground blocks the view."
+        },
+        {
+          "front": "Cultural feature",
+          "back": "A feature made by people, such as a road, bridge or settlement."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "On a map of scale 1:50,000, two villages are 6.4 cm apart. What is the distance between them on the ground?",
+          "options": [
+            "0.32 km",
+            "3.2 km",
+            "32 km",
+            "320 km"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A scale of 1 cm to 2 km is written as a representative fraction as",
+          "options": [
+            "1:2,000",
+            "1:20,000",
+            "1:200,000",
+            "1:2,000,000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Town B lies exactly south-west of Town A. What is the bearing of B from A?",
+          "options": [
+            "045 degrees",
+            "135 degrees",
+            "225 degrees",
+            "315 degrees"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A road climbs 80 m over a horizontal distance of 2 km. What is its gradient?",
+          "options": [
+            "1 in 25",
+            "1 in 40",
+            "1 in 250",
+            "1 in 2.5"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "On a contour map, contour lines form V-shapes that point towards higher ground. The feature shown is a",
+          "options": [
+            "spur",
+            "valley",
+            "plateau",
+            "conical hill"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The distance between a farm settlement and a market on a map is 8 cm. The scale of the map is 1:25,000. Calculate the distance between them on the ground in kilometres.",
+          "markScheme": [
+            "States that 1 cm on the map stands for 25,000 cm on the ground",
+            "Correct multiplication: 8 x 25,000 = 200,000 cm",
+            "Converts correctly to kilometres: 2 km"
+          ],
+          "modelAnswer": "The scale 1:25,000 means 1 cm on the map is 25,000 cm on the ground. So 8 cm stands for 8 x 25,000 = 200,000 cm. There are 100,000 cm in a kilometre, so the distance is 200,000 / 100,000 = 2 km.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1:25,000 means 1 cm on the map is 25,000 cm on the land. So 8 cm is 8 x 25,000 = 200,000 cm. 100,000 cm is 1 km so the distance is 2 km.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1 cm on the map is 25,000 cm on the land"
+                },
+                {
+                  "point": 1,
+                  "quote": "8 x 25,000 = 200,000 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "the distance is 2 km"
+                }
+              ],
+              "feedback": "Full marks. You said what the scale means before you multiplied, which is how to start every scale question."
+            },
+            {
+              "tier": "full",
+              "text": "Ground distance = map distance x scale factor. Scale factor is 25,000. 8 x 25,000 = 200,000 cm. Dividing by 100 gives 2,000 m, which is 2 km. The scale says 1 cm to 25,000 cm, so each centimetre is 250 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The scale says 1 cm to 25,000 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "8 x 25,000 = 200,000 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "which is 2 km"
+                }
+              ],
+              "feedback": "Correct and complete. Checking that each centimetre is 250 m is a good way to test your answer."
+            },
+            {
+              "tier": "partial",
+              "text": "I multiply 8 by 25,000 which is 200,000. So the distance is 200,000 km.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "multiply 8 by 25,000 which is 200,000"
+                }
+              ],
+              "feedback": "Your multiplication is right, but 200,000 is in centimetres because the scale compares centimetres. Divide by 100,000 to change it to kilometres: 2 km."
+            },
+            {
+              "tier": "partial",
+              "text": "The scale is 1 cm to 25,000 cm. 8 x 25,000 = 20,000 cm which is 0.2 km.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The scale is 1 cm to 25,000 cm"
+                }
+              ],
+              "feedback": "You understood the scale, but 8 x 25,000 is 200,000, not 20,000. Check your multiplication and you will get 2 km."
+            },
+            {
+              "tier": "weak",
+              "text": "Scale 1:25,000 so I divide 8 by 25,000 and the answer is 0.00032 km.",
+              "meets": [],
+              "feedback": "The ground is bigger than the map, so you multiply, not divide. 8 x 25,000 = 200,000 cm, which is 2 km."
+            },
+            {
+              "tier": "weak",
+              "text": "1 cm is 25,000 cm so 8 cm is 8 km.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1 cm is 25,000 cm"
+                }
+              ],
+              "feedback": "You started well by stating the scale. Then multiply 8 by 25,000 to get 200,000 cm and convert to kilometres by dividing by 100,000. The answer is 2 km."
+            }
+          ]
+        },
+        {
+          "prompt": "Point X on a contoured map is 120 m above sea level and point Y is 200 m above sea level. They are 1.6 km apart on the ground. (a) Calculate the gradient from X to Y, giving your answer as 1 in n. (b) Say what is meant by inter-visibility and how you would find out whether X and Y are inter-visible.",
+          "markScheme": [
+            "Vertical interval = 200 - 120 = 80 m",
+            "Horizontal distance changed to metres: 1.6 km = 1,600 m",
+            "Gradient = 80/1,600 = 1 in 20",
+            "Inter-visibility means whether one point can be seen from the other",
+            "Draws a cross profile between X and Y and checks if higher ground blocks the line of sight"
+          ],
+          "modelAnswer": "(a) The vertical interval is 200 - 120 = 80 m. The horizontal distance is 1.6 km = 1,600 m. Gradient = 80/1,600 = 1/20, so the gradient is 1 in 20. (b) Inter-visibility is whether you can see one point from the other. I would draw a cross profile along the line from X to Y and see if any higher ground lies between them and blocks the line of sight.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The vertical interval is 200 - 120 = 80 m. 1.6 km is 1,600 m. Gradient = 80/1,600 = 1 in 20. Inter-visibility is when two places can see each other. To check, I draw a cross profile between X and Y and see if a hill is between them blocking the view.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The vertical interval is 200 - 120 = 80 m"
+                },
+                {
+                  "point": 1,
+                  "quote": "1.6 km is 1,600 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gradient = 80/1,600 = 1 in 20"
+                },
+                {
+                  "point": 3,
+                  "quote": "Inter-visibility is when two places can see each other"
+                },
+                {
+                  "point": 4,
+                  "quote": "I draw a cross profile between X and Y and see if a hill is between them blocking the view"
+                }
+              ],
+              "feedback": "Full marks. You changed the kilometres to metres before dividing, which is the step most people forget."
+            },
+            {
+              "tier": "full",
+              "text": "Rise = 200 m - 120 m = 80 m. Distance = 1.6 x 1000 = 1,600 m. Gradient = 80 over 1,600 = 1/20, so 1 in 20. Two points are inter-visible if one can be seen from the other. I would plot a cross profile of the ground from X to Y; if any part of the land rises above the line joining them, they are not inter-visible.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Rise = 200 m - 120 m = 80 m"
+                },
+                {
+                  "point": 1,
+                  "quote": "Distance = 1.6 x 1000 = 1,600 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gradient = 80 over 1,600 = 1/20, so 1 in 20"
+                },
+                {
+                  "point": 3,
+                  "quote": "Two points are inter-visible if one can be seen from the other"
+                },
+                {
+                  "point": 4,
+                  "quote": "I would plot a cross profile of the ground from X to Y"
+                }
+              ],
+              "feedback": "Excellent. Stating the test for not being inter-visible, land rising above the line of sight, makes the answer complete."
+            },
+            {
+              "tier": "partial",
+              "text": "The vertical interval is 200 - 120 = 80 m. The gradient is 80/1.6 = 50, so 1 in 50. Inter-visibility is when you can see from one point to another.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The vertical interval is 200 - 120 = 80 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "Inter-visibility is when you can see from one point to another"
+                }
+              ],
+              "feedback": "You found the vertical interval and defined inter-visibility. For the gradient, change 1.6 km to 1,600 m first; then 80/1,600 gives 1 in 20. You also need to say how to check, by drawing a cross profile."
+            },
+            {
+              "tier": "partial",
+              "text": "Gradient is 80 divided by 1,600 which is 1 in 20 because 1.6 km is 1,600 m. Inter-visibility is how two points look from each other on the map.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "because 1.6 km is 1,600 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "80 divided by 1,600 which is 1 in 20"
+                }
+              ],
+              "feedback": "Your gradient is correct. Show where the 80 m comes from (200 - 120). Inter-visibility is whether one point can be seen from the other, and a cross profile is how you test it.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Gradient is 200 divided by 120 which is about 1.7. Inter-visibility means the two places are very near.",
+              "meets": [],
+              "feedback": "Gradient uses the difference in height, 200 - 120 = 80 m, divided by the ground distance in metres, 1,600 m. Inter-visibility is about whether one place can be seen from the other, not how near they are."
+            },
+            {
+              "tier": "weak",
+              "text": "The gradient is 1.6 km divided by 80 m. Inter-visibility is when X and Y can be seen from each other if there is a cross profile.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Inter-visibility is when X and Y can be seen from each other"
+                }
+              ],
+              "feedback": "Your meaning of inter-visibility is right. For the gradient, the rise (80 m) goes on top and the distance (1,600 m) at the bottom, with both in metres: 1 in 20. A cross profile is how you test inter-visibility."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Drainage, settlement and land use on maps; introduction to GIS",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the drainage pattern shown on a map and give a reason for it;\n2. describe the pattern of settlement, roads and land use on a map extract;\n3. define GIS and name its five components;\n4. list sources of GIS data, its uses and its problems.\n\n## Materials\n\nTopographical map extract, tracing paper, coloured pencils, a laptop or phone showing an online map, a printed satellite image of the school area.\n\n## Starter (5 minutes)\n\nShow a phone map of the school's area. Ask: where does this picture come from, and who made it?\n\n## Development\n\n1. Trace the rivers from the extract. Name the main river, tributaries and source. Show dendritic, radial, trellis and parallel patterns on the board.\n2. Describe settlement: nucleated, linear and dispersed. Match each to a cause (a road, a river, a market, a farm).\n3. Describe how roads follow valleys and avoid steep slopes, and how land use (farming, forest, built-up) changes with height and nearness to water.\n4. Define GIS. List the components: hardware, software, data, procedures and experts.\n5. Sources of data: land surveying, remote sensing, map digitizing, map scanning, field investigation, tables.\n6. Uses: defence, agriculture, urban development, mapping, surveying, transport, census. Problems: power supply, trained staff, money.\n\n## Class activity\n\nGroups trace the drainage of the map extract, label the pattern, and write three sentences on where the settlements are and why.\n\n## Evaluation\n\n1. Name two sources of GIS data.\n2. Why do many villages lie in a line along a road?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Rivers, settlements and an introduction to GIS",
+        "content": "# Drainage, settlement and land use on maps; introduction to GIS\n\n## Drainage patterns\n\nDrainage is the system of rivers and streams that drains an area. On a map, we describe the **main river**, its **tributaries** and where each begins (the source). The shape the rivers make is the **drainage pattern**:\n\n- **Dendritic**: tributaries join the main river like the branches of a tree. It forms where the rock is of the same hardness everywhere, as in much of the Niger-Benue basin.\n- **Radial**: rivers flow outwards from a high point, such as the Jos Plateau.\n- **Trellis**: tributaries join the main river at right angles, on land with alternating hard and soft rock.\n- **Parallel**: rivers run side by side down a steep, uniform slope.\n\n## Settlement, communication and land use\n\nSettlements may be **nucleated** (houses grouped close together), **linear** (houses in a line along a road or river) or **dispersed** (houses scattered, as on farmsteads). Roads and railways follow valleys and gentle slopes because it costs less to build there. Towns grow where roads meet.\n\nLand use depends on relief, soil and water. Flat land near rivers is farmed; steep slopes stay under forest or grass.\n\n## Geographic Information System (GIS)\n\nA **GIS** is a computer-based system for capturing, storing, analysing and displaying geographical information. It has five components:\n\n1. **hardware**: computers, scanners, plotters, GPS receivers;\n2. **software**: programmes that handle the maps;\n3. **data**: the information, such as roads, rivers, population;\n4. **procedures**: the rules and methods for using the data;\n5. **experts**: trained people to run the system.\n\n**Sources of data** are land surveying, remote sensing (satellites and aerial photographs), digitizing and scanning maps, field investigation and tables of figures.\n\n**Uses** include defence, farming, planning towns, mapping, transport and the census. **Problems** are unstable electricity, shortage of trained staff and the high cost of equipment."
+      },
+      "cards": [
+        {
+          "front": "Dendritic drainage",
+          "back": "A pattern in which tributaries join the main river like the branches of a tree."
+        },
+        {
+          "front": "Tributary",
+          "back": "A smaller river that joins a larger one."
+        },
+        {
+          "front": "Nucleated settlement",
+          "back": "Houses grouped closely around a centre, such as a market or a shrine."
+        },
+        {
+          "front": "Linear settlement",
+          "back": "Houses built in a line along a road, a river or a railway."
+        },
+        {
+          "front": "GIS",
+          "back": "A computer system that captures, stores, analyses and displays geographical data."
+        },
+        {
+          "front": "Components of GIS",
+          "back": "Hardware, software, data, procedures and experts."
+        },
+        {
+          "front": "Remote sensing",
+          "back": "Collecting data about the earth from a distance, for example by satellite or aerial photograph."
+        },
+        {
+          "front": "Digitizing",
+          "back": "Changing the features on a paper map into computer data by tracing them."
+        },
+        {
+          "front": "A problem of GIS in Nigeria",
+          "back": "Irregular electricity, few trained personnel and the high cost of equipment."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Streams on a map join the main river like the branches of a tree. This drainage pattern is called",
+          "options": [
+            "radial",
+            "dendritic",
+            "trellis",
+            "parallel"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A string of houses stretches along the Ibadan-Lagos expressway for several kilometres. This pattern of settlement is",
+          "options": [
+            "linear",
+            "nucleated",
+            "dispersed",
+            "planned"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is a hardware component of a GIS?",
+          "options": [
+            "a trained cartographer",
+            "a mapping programme installed on the computer",
+            "a table of census figures",
+            "a scanner connected to a computer"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a source of data for a GIS?",
+          "options": [
+            "a bank statement",
+            "a weather forecast read on radio",
+            "satellite images from remote sensing",
+            "a history textbook"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a problem of using GIS in many Nigerian local government offices?",
+          "options": [
+            "the maps are too accurate to understand",
+            "unstable electricity and shortage of trained staff",
+            "GIS can only be used in cities",
+            "satellites do not pass over Nigeria"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A map shows a main river with many tributaries joining it in the shape of the branches of a tree. (a) Name this drainage pattern. (b) State the kind of rock under the area that produces this pattern. (c) State how the tributaries join the main river.",
+          "markScheme": [
+            "Dendritic",
+            "Rock of the same hardness (uniform or homogeneous) throughout the area",
+            "The tributaries join the main river at acute angles, pointing downstream"
+          ],
+          "modelAnswer": "(a) The pattern is dendritic. (b) It forms on rock that is of the same hardness all over the area, so the rivers are not turned aside by harder or softer bands. (c) The tributaries join the main river at acute angles, pointing in the direction in which the river flows.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "It is a dendritic drainage pattern. It forms where the rock is the same in hardness everywhere so the streams are not forced to follow any bands of weak rock. The tributaries meet the main river at acute angles in the direction of flow.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is a dendritic drainage pattern"
+                },
+                {
+                  "point": 1,
+                  "quote": "the rock is the same in hardness everywhere"
+                },
+                {
+                  "point": 2,
+                  "quote": "meet the main river at acute angles in the direction of flow"
+                }
+              ],
+              "feedback": "Full marks. You gave the reason for the pattern and the angle of the joins, not only its name."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Dendritic. (b) A uniform, homogeneous rock, for example clay or granite across the whole area. (c) They join at acute angles, like a Y shape pointing downstream.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Dendritic"
+                },
+                {
+                  "point": 1,
+                  "quote": "A uniform, homogeneous rock"
+                },
+                {
+                  "point": 2,
+                  "quote": "They join at acute angles, like a Y shape pointing downstream"
+                }
+              ],
+              "feedback": "Correct. The Y shape pointing downstream is a good way to remember how the tributaries join."
+            },
+            {
+              "tier": "partial",
+              "text": "The pattern is dendritic. It happens on land with hard rock and soft rock that take turns. The streams join the river like branches.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The pattern is dendritic"
+                }
+              ],
+              "feedback": "The name is right. Alternating hard and soft rock produces the trellis pattern; dendritic needs rock of the same hardness throughout. Also say that the tributaries join at acute angles."
+            },
+            {
+              "tier": "partial",
+              "text": "It is dendritic and the rocks are the same all through the area. The tributaries just join the main river.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is dendritic"
+                },
+                {
+                  "point": 1,
+                  "quote": "the rocks are the same all through the area"
+                }
+              ],
+              "feedback": "Name and rock are right. Say how the tributaries join: at acute angles, pointing downstream, not at right angles."
+            },
+            {
+              "tier": "weak",
+              "text": "It is radial pattern because the rivers are many. They come from a hill and join the sea.",
+              "meets": [],
+              "feedback": "Radial rivers flow outwards from a high point like spokes of a wheel. Rivers that join like branches of a tree are dendritic, and they form on rock of the same hardness."
+            },
+            {
+              "tier": "weak",
+              "text": "The pattern is dendritic. It is found in the desert where there is no water and the rivers join at right angles.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The pattern is dendritic"
+                }
+              ],
+              "feedback": "You named the pattern correctly. The rest needs correcting: it forms on rock of the same hardness, and the tributaries join at acute angles. Right-angle joins belong to the trellis pattern."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) What is a Geographic Information System (GIS)? (b) Name two of its components. (c) Give one source of GIS data. (d) State one use of GIS in a Nigerian town and one problem of using it.",
+          "markScheme": [
+            "A computer-based system for capturing, storing, analysing and displaying geographical data",
+            "Any two of: hardware, software, data, procedures, experts",
+            "A source of data, for example remote sensing, map digitizing, land surveying or field investigation",
+            "A use, for example urban planning, mapping, agriculture, defence or census",
+            "A problem, for example power supply, shortage of trained personnel or high cost"
+          ],
+          "modelAnswer": "(a) A GIS is a computer system for capturing, storing, analysing and displaying geographical data. (b) Two components are hardware and software. (c) One source of data is remote sensing, using satellite images. (d) It can be used in urban planning, for example to show where new roads and houses can be built. A problem is unstable electricity supply, which interrupts the work.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "GIS is a computer system used to collect, store, analyse and show geographical data. Its components are hardware and trained experts. Data can come from satellite images by remote sensing. It is used in urban planning, for example to decide where to put a new road. A problem is lack of constant electricity.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "GIS is a computer system used to collect, store, analyse and show geographical data"
+                },
+                {
+                  "point": 1,
+                  "quote": "Its components are hardware and trained experts"
+                },
+                {
+                  "point": 2,
+                  "quote": "Data can come from satellite images by remote sensing"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is used in urban planning"
+                },
+                {
+                  "point": 4,
+                  "quote": "A problem is lack of constant electricity"
+                }
+              ],
+              "feedback": "Full marks. Every part is answered and your example of a new road makes the use clear."
+            },
+            {
+              "tier": "full",
+              "text": "(a) A computer based system for capturing, storing, analysing and displaying data about places on the earth. (b) Software and data. (c) Map digitizing. (d) It is used by the census office to plan enumeration areas. One problem is shortage of personnel who know how to use it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A computer based system for capturing, storing, analysing and displaying data about places on the earth"
+                },
+                {
+                  "point": 1,
+                  "quote": "Software and data"
+                },
+                {
+                  "point": 2,
+                  "quote": "Map digitizing"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is used by the census office to plan enumeration areas"
+                },
+                {
+                  "point": 4,
+                  "quote": "shortage of personnel who know how to use it"
+                }
+              ],
+              "feedback": "Excellent. You tied the use to a real office and the problem to the people, which the syllabus expects."
+            },
+            {
+              "tier": "partial",
+              "text": "GIS is a system on computer for storing and analysing information about the earth. The components are hardware and software. It is used in agriculture.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "GIS is a system on computer for storing and analysing information about the earth"
+                },
+                {
+                  "point": 1,
+                  "quote": "The components are hardware and software"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is used in agriculture"
+                }
+              ],
+              "feedback": "Your definition, components and use are correct. You have not given a source of data (such as remote sensing) or a problem (such as power supply or lack of trained staff)."
+            },
+            {
+              "tier": "partial",
+              "text": "The parts of GIS are hardware and data. Satellite images are a source. Its problem is that it is costly to buy the equipment.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The parts of GIS are hardware and data"
+                },
+                {
+                  "point": 2,
+                  "quote": "Satellite images are a source"
+                },
+                {
+                  "point": 4,
+                  "quote": "it is costly to buy the equipment"
+                }
+              ],
+              "feedback": "Components, source and problem are correct. Begin by defining GIS, as a computer system that captures, stores, analyses and displays geographical data, and add a use such as town planning."
+            },
+            {
+              "tier": "weak",
+              "text": "GIS is a book of maps that shows all the places in the world. The components are the pages and the cover. It is used by students.",
+              "meets": [],
+              "feedback": "GIS is not a book. It is a computer system for handling geographical data, with hardware, software, data, procedures and experts as its components."
+            },
+            {
+              "tier": "weak",
+              "text": "GIS means Geographical Information System. It is used in defence. The components are laptop and phone.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "It is used in defence"
+                }
+              ],
+              "feedback": "Defence is a correct use. Saying only what the letters stand for does not define it: explain that it captures, stores, analyses and displays data, and name components as hardware, software, data, procedures or experts."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Showing statistics: graphs, dot maps, proportional circles and isopleths",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. choose a bar graph, line graph, flow map, dot map, proportional circle or isopleth map to suit a set of data;\n2. draw a simple bar graph and a line graph with a proper scale, title and labelled axes;\n3. work out the number of dots or the radius of a circle for a given figure;\n4. read information from each kind of diagram.\n\n## Materials\n\nGraph paper, rulers, compasses, calculators, an outline map of Nigeria, a table of the population and area of six states, monthly rainfall and temperature figures for Ibadan.\n\n## Starter (5 minutes)\n\nWrite the figures 1,200 and 300 on the board. Ask which is easier to understand when drawn, and why we draw data at all.\n\n## Development\n\n1. Bar graph: separate bars for amounts such as monthly rainfall. Work through scale, labels and title.\n2. Line graph: points joined by a line for something that changes continuously, such as temperature through the year.\n3. Flow map: lines whose width shows the size of a movement, for example traffic on roads.\n4. Dot map: one dot stands for a fixed number of people. Work out the number of dots from the figures.\n5. Proportional circles: the area of the circle is in proportion to the figure, so the radius uses a square root.\n6. Density and isopleth maps: density = population / area; isopleths join places of equal value (isohyets for rainfall, isotherms for temperature).\n\n## Class activity\n\nStudents choose the best diagram for each of four sets of data and draw one of them.\n\n## Evaluation\n\n1. A state has 2,400 km2 and 1,200,000 people. What is the density?\n2. Which diagram shows volume of movement?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Putting numbers on a page",
+        "content": "# Statistical maps and diagrams\n\nFigures in a table are hard to compare. Geographers draw them so that patterns can be seen at once.\n\n## Graphs\n\nA **bar graph** uses separate bars of equal width, with height in proportion to the amount. It suits data such as monthly rainfall or the production of cocoa by year. A **line graph** joins plotted points and suits something that changes continuously, such as the monthly temperature of a town. Every graph needs a **title**, labelled axes with units and an even **scale**.\n\n## Statistical maps\n\nA **flow map** (or flow chart) uses lines whose thickness shows the size of a movement, such as the number of vehicles on roads or the tonnes of goods carried by rail.\n\nA **dot map** uses one dot for a fixed number of things. If 1 dot = 10,000 people and a state has 350,000 people, we draw 350,000 / 10,000 = 35 dots, placed where the people live.\n\nA **proportional circle** map uses circles whose **areas** are in proportion to the figures. Since area = pi x r squared, the radius is in proportion to the square root of the figure. If town A has 400,000 people and a circle of radius 4 cm, town B with 100,000 people (a quarter) has an area one quarter as big, so a radius half as big: 2 cm.\n\nA **density map** shades areas by how crowded they are. **Population density** = population divided by area. A state with 1,200,000 people in 4,000 square kilometres has a density of 1,200,000 / 4,000 = 300 persons per square kilometre.\n\nAn **isopleth map** uses lines that join places with equal values. The best known are **isohyets** (equal rainfall), **isotherms** (equal temperature) and **isobars** (equal air pressure).\n\n## Choosing a diagram\n\nBar graph for amounts, line graph for change, dot map for distribution, circles for totals in places, flow map for movement, isopleths for values that change smoothly across a region."
+      },
+      "cards": [
+        {
+          "front": "Bar graph",
+          "back": "Separate bars whose heights show amounts, such as monthly rainfall."
+        },
+        {
+          "front": "Line graph",
+          "back": "Plotted points joined by a line to show change, such as temperature through the year."
+        },
+        {
+          "front": "Dot map",
+          "back": "A map in which each dot stands for a fixed number of people or things."
+        },
+        {
+          "front": "Proportional circle",
+          "back": "A circle whose area is in proportion to the figure it represents."
+        },
+        {
+          "front": "Flow map",
+          "back": "A map using lines of different thickness to show the size of movement."
+        },
+        {
+          "front": "Population density",
+          "back": "Population divided by area, for example persons per square kilometre."
+        },
+        {
+          "front": "Isopleth map",
+          "back": "A map with lines joining places of equal value."
+        },
+        {
+          "front": "Isohyet",
+          "back": "A line joining places with equal rainfall."
+        },
+        {
+          "front": "Isotherm",
+          "back": "A line joining places with equal temperature."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "On a dot map, 1 dot stands for 10,000 people. How many dots are drawn for a state with 350,000 people?",
+          "options": [
+            "3",
+            "7",
+            "35",
+            "350"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which diagram best shows the amount of traffic on the roads leaving Lagos?",
+          "options": [
+            "Dot map",
+            "Flow map",
+            "Isopleth map",
+            "Proportional circle"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which diagram best shows how the temperature of Kano changes from January to December?",
+          "options": [
+            "Pie chart",
+            "Dot map",
+            "Bar chart with the bars apart",
+            "Line graph"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Lines drawn on a map to join places that receive equal rainfall are called",
+          "options": [
+            "isohyets",
+            "isotherms",
+            "isobars",
+            "contours"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A state has a population of 1,200,000 and an area of 4,000 km2. What is its population density?",
+          "options": [
+            "30 persons per km2",
+            "300 persons per km2",
+            "3,000 persons per km2",
+            "4,800,000,000 persons per km2"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe how you would draw a dot map to show the population of five states on an outline map of Nigeria. State one advantage and one weakness of a dot map.",
+          "markScheme": [
+            "Choose a suitable value for one dot and give it in a key",
+            "Divide each state's population by the value of a dot to get its number of dots",
+            "Place the dots on the outline map in the places where people live",
+            "Advantage: shows at once where people are concentrated or sparse",
+            "Weakness: the exact positions are guessed, or the dots are hard to count when crowded"
+          ],
+          "modelAnswer": "First choose a value for one dot, such as 1 dot = 10,000 people, and write it in the key. Divide the population of each state by 10,000 to get the number of dots for that state. Draw the dots on the outline map in the parts where people actually live, closer together where it is crowded. A dot map shows clearly where people are concentrated and where they are few. Its weakness is that the exact position of each dot is only a guess, and where many dots fall together they are hard to count.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I will decide that one dot is 20,000 people and write it in the key. Then I divide the population of each state by 20,000 and that is the number of dots for the state. I draw the dots on the map in the towns and farming areas where people stay. A dot map shows where the people are many and where they are few. A weakness is that when the dots are too many they join and you cannot count them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "one dot is 20,000 people and write it in the key"
+                },
+                {
+                  "point": 1,
+                  "quote": "divide the population of each state by 20,000 and that is the number of dots for the state"
+                },
+                {
+                  "point": 2,
+                  "quote": "I draw the dots on the map in the towns and farming areas where people stay"
+                },
+                {
+                  "point": 3,
+                  "quote": "shows where the people are many and where they are few"
+                },
+                {
+                  "point": 4,
+                  "quote": "when the dots are too many they join and you cannot count them"
+                }
+              ],
+              "feedback": "Full marks. The method is in the right order and you chose a value that suits large populations."
+            },
+            {
+              "tier": "full",
+              "text": "Choose the value of a dot, say 1 dot = 50,000 people, and put it in the key. Number of dots = population of the state divided by 50,000. Put the dots where the settlements are, not evenly. Advantage: the distribution of people can be seen quickly. Disadvantage: the dots are placed by estimate so the exact places are not accurate.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1 dot = 50,000 people, and put it in the key"
+                },
+                {
+                  "point": 1,
+                  "quote": "Number of dots = population of the state divided by 50,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Put the dots where the settlements are, not evenly"
+                },
+                {
+                  "point": 3,
+                  "quote": "the distribution of people can be seen quickly"
+                },
+                {
+                  "point": 4,
+                  "quote": "the dots are placed by estimate so the exact places are not accurate"
+                }
+              ],
+              "feedback": "Very good. Saying the dots go where the settlements are, not evenly, is the point many learners miss."
+            },
+            {
+              "tier": "partial",
+              "text": "I will choose what one dot stands for, like 1 dot is 10,000 people, and divide the population by it to get the dots. Then I draw them in the state. A dot map is good because it shows the distribution.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1 dot is 10,000 people"
+                },
+                {
+                  "point": 1,
+                  "quote": "divide the population by it to get the dots"
+                },
+                {
+                  "point": 3,
+                  "quote": "it shows the distribution"
+                }
+              ],
+              "feedback": "Good method and advantage. Say that the dots go where people actually live, not just anywhere in the state, and give one weakness, such as dots being hard to count when they crowd together."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw an outline map and put the dots in the places where people live. A weakness is that if there are too many people the dots will be too many to count.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "put the dots in the places where people live"
+                },
+                {
+                  "point": 4,
+                  "quote": "the dots will be too many to count"
+                }
+              ],
+              "feedback": "You know where the dots go and one weakness. Before that, you must decide what one dot stands for, give it in a key and divide each population by it to find the number of dots."
+            },
+            {
+              "tier": "weak",
+              "text": "I will draw a circle for each state and make it big if the state has many people. The dot map is for showing rainfall.",
+              "meets": [],
+              "feedback": "Circles belong to a proportional circle map. A dot map uses dots, each standing for a fixed number of people, placed where the people live. Dot maps can also be used for population, not rainfall."
+            },
+            {
+              "tier": "weak",
+              "text": "Put one dot for each person in the state. The advantage is that it is correct.",
+              "meets": [],
+              "feedback": "Millions of dots are not possible. Let one dot stand for a large number such as 10,000 people, write that in the key and divide each state's population by it."
+            }
+          ]
+        },
+        {
+          "prompt": "Town A has a population of 400,000 and Town B has a population of 100,000. They are to be shown by proportional circles. The circle for Town A has a radius of 4 cm. Calculate the radius of the circle for Town B, and show how you got it.",
+          "markScheme": [
+            "States that the area of each circle is in proportion to the population",
+            "Town B has one quarter of the population, so its circle has one quarter of the area",
+            "The radius is in proportion to the square root of the area, so radius B = 4 x the square root of one quarter",
+            "Radius of Town B = 2 cm"
+          ],
+          "modelAnswer": "On proportional circles the area is in proportion to the population. Town B has 100,000 / 400,000 = one quarter of the population, so its circle has one quarter of the area. Area depends on the square of the radius, so the radius of B is 4 x the square root of 1/4 = 4 x 1/2 = 2 cm.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The area of the circles is in proportion to the population. B has a quarter of A's population so its area is a quarter of A's. Radius is in proportion to the square root of the area so radius B = 4 x square root of 1/4 = 4 x 1/2. The radius of B is 2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The area of the circles is in proportion to the population"
+                },
+                {
+                  "point": 1,
+                  "quote": "B has a quarter of A's population so its area is a quarter of A's"
+                },
+                {
+                  "point": 2,
+                  "quote": "radius B = 4 x square root of 1/4"
+                },
+                {
+                  "point": 3,
+                  "quote": "The radius of B is 2 cm"
+                }
+              ],
+              "feedback": "Full marks. You took the square root of the area ratio, which is the step that matters."
+            },
+            {
+              "tier": "full",
+              "text": "Area is proportional to population: pi x r squared is in the ratio 400,000 to 100,000, which is 4 to 1. So r squared for A is 4 times r squared for B. 4 squared is 16, so r squared for B is 16/4 = 4, and the radius of B is the square root of 4. Radius B = 2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Area is proportional to population"
+                },
+                {
+                  "point": 1,
+                  "quote": "400,000 to 100,000, which is 4 to 1"
+                },
+                {
+                  "point": 2,
+                  "quote": "r squared for B is 16/4 = 4, and the radius of B is the square root of 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "Radius B = 2 cm"
+                }
+              ],
+              "feedback": "Correct, by a different route. Working from pi x r squared shows you understand why the square root is needed."
+            },
+            {
+              "tier": "partial",
+              "text": "B has a quarter of the population of A so its circle is smaller. The area is in proportion to the population. A quarter of 4 cm is 1 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The area is in proportion to the population"
+                },
+                {
+                  "point": 1,
+                  "quote": "B has a quarter of the population of A"
+                }
+              ],
+              "feedback": "You found the quarter. But a quarter of the area is not a quarter of the radius. Take the square root of one quarter, which is a half, and 4 x 1/2 = 2 cm."
+            },
+            {
+              "tier": "partial",
+              "text": "The population of B is a quarter of A. The square root of 1/4 is 1/2 so the radius of B is 1/2 of 4 cm, 2 cm.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The population of B is a quarter of A"
+                },
+                {
+                  "point": 2,
+                  "quote": "The square root of 1/4 is 1/2 so the radius of B is 1/2 of 4 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "2 cm"
+                }
+              ],
+              "feedback": "Your working and answer are right. To earn the first mark, say why a square root is used: the area of the circle, not its radius, is in proportion to the population.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Town A is 4 times Town B, so B is 4 cm x 4 = 16 cm.",
+              "meets": [],
+              "feedback": "Town B is smaller, so its circle must be smaller than 4 cm. B has a quarter of A's population, so a quarter of the area, and a radius of half: 2 cm."
+            },
+            {
+              "tier": "weak",
+              "text": "Radius is population divided by 100,000. So A is 4 and B is 1 cm.",
+              "meets": [],
+              "feedback": "Here the radius is not in proportion to the population. The area is, so the radius follows the square root: A, 4 cm; B, 4 x the square root of one quarter = 2 cm."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "The earth in space, longitude and time, and the three families of rock",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the earth's shape, rotation and revolution and state their effects;\n2. locate places by latitude and longitude;\n3. calculate the difference in local time between two places from their longitudes;\n4. name the layers of the earth's structure;\n5. classify rocks into igneous, sedimentary and metamorphic, with examples, formation and uses.\n\n## Materials\n\nGlobe, torch, orange or ball, chart of the earth's layers, rock samples (granite, sandstone, limestone, marble if available), atlas.\n\n## Starter (5 minutes)\n\nWhen it is morning in Lagos, is it morning in London and in Dubai? Collect guesses and use them to set up the lesson.\n\n## Development\n\n1. With the globe and torch, show rotation (24 hours, west to east, day and night) and revolution (365 1/4 days, seasons, leap year).\n2. Define latitude (distance north or south of the equator, 0 to 90) and longitude (distance east or west of the Prime Meridian at Greenwich, 0 to 180).\n3. Teach: 360 degrees in 24 hours, so 15 degrees = 1 hour and 1 degree = 4 minutes. East is ahead, west is behind. Work two examples.\n4. Draw the structure: crust, mantle, outer core, inner core.\n5. Show the rock samples. Igneous: cooled magma. Sedimentary: deposited layers, compressed. Metamorphic: changed by heat and pressure.\n\n## Class activity\n\nStudents solve four time problems, then sort six rock samples into the three families with one reason each.\n\n## Evaluation\n\n1. When it is 12 noon at Greenwich, what is the time at 45 degrees East?\n2. Name a metamorphic rock.\n\n## Assignment\n\nProblem set on the app, due Friday.",
+      "reading": {
+        "title": "Spinning, orbiting and the rocks beneath",
+        "content": "# The earth, longitude and time, and rocks\n\n## Rotation and revolution\n\nThe earth is shaped like a ball, slightly flattened at the poles. It **rotates** on its axis from west to east once in about 24 hours, which gives day and night and makes the sun seem to rise in the east. It also **revolves** around the sun once in about 365 1/4 days; this, together with the tilt of its axis, causes the seasons. The extra quarter day each year is why we add a day to February every fourth year.\n\n## Latitude and longitude\n\n**Latitude** is the distance north or south of the equator, measured in degrees from 0 to 90. **Longitude** is the distance east or west of the **Prime Meridian**, the line through Greenwich, London, measured from 0 to 180.\n\n## Longitude and time\n\nThe earth turns 360 degrees in 24 hours, so it turns 15 degrees in 1 hour. Every 15 degrees of longitude therefore make 1 hour of difference. Places to the **east** are **ahead** in time, places to the west are behind.\n\n**Worked example.** When it is 12 noon at Greenwich, what is the time at 45 degrees East? Difference = 45 / 15 = 3 hours. East is ahead, so the time is 3:00 pm.\n\n**Second example.** Places at 30 degrees East and 45 degrees West are 30 + 45 = 75 degrees apart, which is 5 hours.\n\n## Structure of the earth\n\nThe earth has four layers: the thin **crust**, the **mantle** of hot, partly molten rock, the liquid **outer core** and the solid **inner core**, made mainly of iron and nickel.\n\n## Rocks\n\n- **Igneous rocks** form when magma or lava cools and hardens, such as granite and basalt. They are used for building and road stone.\n- **Sedimentary rocks** form when sand, mud and shell pieces are laid down in layers and squeezed and cemented over a long time. Examples are sandstone, limestone and clay. Limestone is used to make cement.\n- **Metamorphic rocks** are igneous or sedimentary rocks changed by great heat and pressure. Limestone becomes marble and shale becomes slate."
+      },
+      "cards": [
+        {
+          "front": "Rotation",
+          "back": "The spinning of the earth on its axis from west to east, once in about 24 hours; it causes day and night."
+        },
+        {
+          "front": "Revolution",
+          "back": "The movement of the earth around the sun once in about 365 1/4 days."
+        },
+        {
+          "front": "Prime Meridian",
+          "back": "The line of longitude 0 degrees, passing through Greenwich."
+        },
+        {
+          "front": "15 degrees of longitude",
+          "back": "Equals 1 hour of time difference; places to the east are ahead."
+        },
+        {
+          "front": "Crust",
+          "back": "The thin, solid outer layer of the earth."
+        },
+        {
+          "front": "Mantle",
+          "back": "The thick layer of hot rock between the crust and the core."
+        },
+        {
+          "front": "Igneous rock",
+          "back": "A rock formed when magma or lava cools and hardens, such as granite."
+        },
+        {
+          "front": "Sedimentary rock",
+          "back": "A rock formed from layers of deposited material that are compressed and cemented, such as limestone."
+        },
+        {
+          "front": "Metamorphic rock",
+          "back": "A rock changed by heat and pressure, such as marble or slate."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The rotation of the earth on its axis causes",
+          "options": [
+            "day and night",
+            "the four seasons",
+            "a leap year",
+            "the tides in the Sahara"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The earth takes about how long to revolve once around the sun?",
+          "options": [
+            "24 hours",
+            "30 days",
+            "365 1/4 days",
+            "12 years"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "When it is 12 noon at Greenwich, what is the local time at longitude 45 degrees East?",
+          "options": [
+            "9:00 am",
+            "12:45 pm",
+            "4:30 pm",
+            "3:00 pm"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The layer of the earth that lies between the crust and the outer core is the",
+          "options": [
+            "inner core",
+            "mantle",
+            "atmosphere",
+            "lithosphere"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Sandstone and limestone are examples of",
+          "options": [
+            "igneous rocks",
+            "metamorphic rocks",
+            "sedimentary rocks",
+            "volcanic rocks"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Town X lies on longitude 60 degrees East and Town Y lies on longitude 30 degrees West. When the time in Town Y is 9:00 am, what is the time in Town X? Show your working.",
+          "markScheme": [
+            "Difference in longitude = 60 + 30 = 90 degrees (the places are on opposite sides of Greenwich)",
+            "Time difference = 90 / 15 = 6 hours",
+            "Town X is east of Town Y, so it is ahead in time",
+            "Time at Town X = 3:00 pm"
+          ],
+          "modelAnswer": "X is east of Greenwich and Y is west of it, so the difference in longitude is 60 + 30 = 90 degrees. The earth turns 15 degrees in an hour, so the time difference is 90 / 15 = 6 hours. X is east of Y, so its time is ahead. The time in X is 9:00 am + 6 hours = 3:00 pm.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "One is east and the other is west, so I add: 60 + 30 = 90 degrees. 90 / 15 = 6 hours. The east is ahead, so X is 6 hours ahead of Y. 9:00 am + 6 hours = 3:00 pm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I add: 60 + 30 = 90 degrees"
+                },
+                {
+                  "point": 1,
+                  "quote": "90 / 15 = 6 hours"
+                },
+                {
+                  "point": 2,
+                  "quote": "The east is ahead, so X is 6 hours ahead of Y"
+                },
+                {
+                  "point": 3,
+                  "quote": "9:00 am + 6 hours = 3:00 pm"
+                }
+              ],
+              "feedback": "Full marks. You added the two longitudes because they are on opposite sides of Greenwich, and you said why X is ahead."
+            },
+            {
+              "tier": "full",
+              "text": "Longitude difference = 60 degrees E + 30 degrees W = 90 degrees. Every 15 degrees is 1 hour so 90 degrees is 6 hours. X is further east so its time is ahead of Y. So the time at X is 15:00 hours, which is 3 pm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Longitude difference = 60 degrees E + 30 degrees W = 90 degrees"
+                },
+                {
+                  "point": 1,
+                  "quote": "90 degrees is 6 hours"
+                },
+                {
+                  "point": 2,
+                  "quote": "X is further east so its time is ahead of Y"
+                },
+                {
+                  "point": 3,
+                  "quote": "15:00 hours, which is 3 pm"
+                }
+              ],
+              "feedback": "Correct and clearly set out. Using the 24-hour clock as a check on 3 pm is a good habit."
+            },
+            {
+              "tier": "partial",
+              "text": "60 - 30 = 30 degrees. 30 / 15 = 2 hours. East is ahead so X is 2 hours ahead and the time is 11:00 am.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "30 / 15 = 2 hours"
+                },
+                {
+                  "point": 2,
+                  "quote": "East is ahead so X is 2 hours ahead"
+                }
+              ],
+              "feedback": "Your method for turning degrees into hours and for deciding who is ahead is right. But 60 East and 30 West are on opposite sides of Greenwich, so you add them: 90 degrees, 6 hours, 3:00 pm."
+            },
+            {
+              "tier": "partial",
+              "text": "The difference is 60 + 30 = 90 degrees and 90 / 15 = 6 hours. So the time at X is 9:00 am - 6 hours = 3:00 am.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The difference is 60 + 30 = 90 degrees"
+                },
+                {
+                  "point": 1,
+                  "quote": "90 / 15 = 6 hours"
+                }
+              ],
+              "feedback": "Your difference and hours are correct. X is east of Y, and east is ahead, so you add 6 hours to 9:00 am to get 3:00 pm, not subtract."
+            },
+            {
+              "tier": "weak",
+              "text": "Divide 60 by 30 which is 2, so 9:00 am + 2 = 11:00 am.",
+              "meets": [],
+              "feedback": "The longitudes are not divided by each other. Add them (60 + 30 = 90 degrees) because they are on opposite sides of Greenwich, then divide by 15 to get the hours: 6."
+            },
+            {
+              "tier": "weak",
+              "text": "Every 1 degree is 1 hour so 90 hours. The time in X is 3:00 pm.",
+              "meets": [],
+              "feedback": "The earth turns 15 degrees, not 1 degree, in one hour. 90 / 15 = 6 hours. Your final time of 3:00 pm happens to be right, but the working is wrong."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain how sedimentary rocks are formed. Name one example of a sedimentary rock and state one use of it.",
+          "markScheme": [
+            "Rocks are broken down by weathering and erosion into fragments (sediments)",
+            "The sediments are carried by water, wind or ice and deposited in layers in lakes, rivers or the sea",
+            "Over a long time, the layers are compressed and cemented into solid rock",
+            "An example: sandstone, limestone, shale or clay",
+            "A use, for example limestone for making cement or sandstone as building stone"
+          ],
+          "modelAnswer": "Rocks are broken into small pieces by weathering and erosion. These sediments are carried by rivers, wind or ice and deposited in layers, usually in lakes or the sea. Over a long time the layers pile up, are pressed together by the weight above and are cemented to form solid rock. Limestone is an example; it is used for making cement.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Old rocks are weathered and broken into small pieces. Rivers carry the pieces and drop them in layers at the bottom of lakes and seas. As more layers pile up, the weight presses the lower layers and they stick together to become rock. An example is limestone, and it is used to make cement.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Old rocks are weathered and broken into small pieces"
+                },
+                {
+                  "point": 1,
+                  "quote": "Rivers carry the pieces and drop them in layers at the bottom of lakes and seas"
+                },
+                {
+                  "point": 2,
+                  "quote": "the weight presses the lower layers and they stick together to become rock"
+                },
+                {
+                  "point": 3,
+                  "quote": "An example is limestone"
+                },
+                {
+                  "point": 4,
+                  "quote": "it is used to make cement"
+                }
+              ],
+              "feedback": "Full marks. You followed the whole sequence from weathering to rock, and a use at Ewekoro or Obajana would fit your example well."
+            },
+            {
+              "tier": "full",
+              "text": "Sedimentary rocks are formed by erosion of existing rocks into sediments. Wind and water transport and deposit the sediments in strata. Compaction and cementation over millions of years turn them into rock. Sandstone is an example and it is used as a building stone.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "formed by erosion of existing rocks into sediments"
+                },
+                {
+                  "point": 1,
+                  "quote": "Wind and water transport and deposit the sediments in strata"
+                },
+                {
+                  "point": 2,
+                  "quote": "Compaction and cementation over millions of years turn them into rock"
+                },
+                {
+                  "point": 3,
+                  "quote": "Sandstone is an example"
+                },
+                {
+                  "point": 4,
+                  "quote": "used as a building stone"
+                }
+              ],
+              "feedback": "Excellent. You used the correct terms: sediments, strata, compaction and cementation."
+            },
+            {
+              "tier": "partial",
+              "text": "Sediments are deposited in layers in the sea and they become rock after many years. An example is sandstone.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Sediments are deposited in layers in the sea"
+                },
+                {
+                  "point": 3,
+                  "quote": "An example is sandstone"
+                }
+              ],
+              "feedback": "Good start. Where do the sediments come from? Say that older rocks are weathered and eroded. Explain how layers become rock (pressed and cemented), and add a use of sandstone."
+            },
+            {
+              "tier": "partial",
+              "text": "Sedimentary rocks are formed when the rocks are broken into small pieces and the pieces are compressed and cemented together. Limestone is an example and it is used for cement.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the rocks are broken into small pieces"
+                },
+                {
+                  "point": 2,
+                  "quote": "the pieces are compressed and cemented together"
+                },
+                {
+                  "point": 3,
+                  "quote": "Limestone is an example"
+                },
+                {
+                  "point": 4,
+                  "quote": "it is used for cement"
+                }
+              ],
+              "feedback": "You have the breaking down, the compressing and cementing, the example and the use. What is missing is the transport and deposit of the pieces in layers by water, wind or ice."
+            },
+            {
+              "tier": "weak",
+              "text": "Sedimentary rocks are formed when magma comes out from the volcano and cools. An example is granite.",
+              "meets": [],
+              "feedback": "Magma that cools makes igneous rocks such as granite. Sedimentary rocks are made from layers of deposited fragments of older rocks, pressed and cemented over a long time."
+            },
+            {
+              "tier": "weak",
+              "text": "It is formed by heat and pressure that change old rocks. An example is marble. It is used for floor tiles.",
+              "meets": [],
+              "feedback": "Rocks changed by heat and pressure are metamorphic, and marble is one. Sedimentary rocks form from deposited, compressed and cemented sediments; limestone is an example."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Volcanoes, earthquakes and the landforms they build",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define vulcanicity and name the main extrusive and intrusive features;\n2. explain what an earthquake is and use the words focus, epicentre and seismograph;\n3. describe how fold mountains, block mountains and rift valleys are formed;\n4. describe karst scenery in limestone areas and name simple coastal landforms;\n5. state why such landforms are important to people.\n\n## Materials\n\nWorld map showing plate boundaries, a sheet of cloth or folded paper, two wooden blocks, a piece of chalk (limestone), vinegar, pictures of Mount Cameroon, the Alps, the East African Rift and limestone caves.\n\n## Starter (5 minutes)\n\nPush the two ends of a cloth towards each other on a desk. Ask students what they see and which mountain range it might model.\n\n## Development\n\n1. Vulcanicity: magma rising through the crust. Extrusive: volcano, lava plateau. Intrusive: dyke, sill, batholith.\n2. Earthquakes: sudden shaking caused by movement along faults. Focus, epicentre, seismograph.\n3. Fold mountains by compression; block mountains and rift valleys by faulting.\n4. Drop vinegar on chalk to show how weak acid dissolves limestone. Link to caves, stalactites and stalagmites.\n5. Coastal landforms: cliffs, beaches, spits and bays. Importance: farming, tourism, minerals and water.\n\n## Class activity\n\nIn groups, students draw a labelled diagram of a rift valley and a fold mountain and write two lines about the formation of each.\n\n## Evaluation\n\n1. What is the epicentre of an earthquake?\n2. Why is limestone land often dry on the surface?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "How the earth builds its mountains and valleys",
+        "content": "# Tectonic processes and landforms\n\nThe earth's crust is broken into large moving plates. Where they push, pull or slide past each other, rock is folded, broken and melted. These movements are called **tectonic processes**.\n\n## Vulcanicity\n\n**Vulcanicity** is the movement of molten rock (magma) from inside the earth towards or onto the surface. When it reaches the surface it is called lava. Features that form on the surface are **extrusive**: volcanoes, such as Mount Cameroon, and lava plateaus. Features that cool beneath the surface are **intrusive**: dykes, sills and batholiths.\n\n## Earthquakes\n\nAn **earthquake** is a sudden shaking of the ground, usually caused by rock breaking and slipping along a crack called a fault. The point underground where it begins is the **focus**; the point on the surface directly above the focus is the **epicentre**. A **seismograph** records the shaking. Earthquakes can destroy buildings and bring tsunamis.\n\n## Mountains and valleys\n\n- **Fold mountains** form when two plates push together and squeeze layers of rock into folds. The Alps, the Himalayas and the Atlas are examples.\n- **Block mountains** form when land between faults is lifted, or the land beside it drops.\n- A **rift valley** forms when the land between two parallel faults sinks. The East African Rift Valley is the largest example.\n- **Plains** are wide, flat lands, such as the Sokoto plains and the Niger delta, built by rivers or by lava.\n\n## Karst scenery\n\nRainwater absorbs carbon dioxide and becomes a weak acid. It dissolves **limestone** along joints, forming swallow holes, underground rivers and caves. In caves, dripping water leaves lime that builds **stalactites** hanging from the roof and **stalagmites** growing up from the floor. This kind of limestone country is called **karst**. Its surface is often dry because water sinks underground.\n\n## Coastal landforms\n\nWaves cut **cliffs** and build **beaches**, **spits** and sand bars, which shelter lagoons like the Lagos lagoon.\n\n## Importance\n\nVolcanic soils are fertile, mountains give water and minerals, rift lakes give fish, and cliffs, caves and beaches attract tourists."
+      },
+      "cards": [
+        {
+          "front": "Vulcanicity",
+          "back": "The movement of molten rock (magma) from inside the earth into or onto the crust."
+        },
+        {
+          "front": "Epicentre",
+          "back": "The point on the earth's surface directly above the focus of an earthquake."
+        },
+        {
+          "front": "Focus",
+          "back": "The point underground where an earthquake begins."
+        },
+        {
+          "front": "Seismograph",
+          "back": "An instrument that records earthquake vibrations."
+        },
+        {
+          "front": "Fold mountain",
+          "back": "A mountain formed when layers of rock are squeezed into folds by compression, such as the Alps."
+        },
+        {
+          "front": "Rift valley",
+          "back": "A long valley formed when the land between two parallel faults sinks."
+        },
+        {
+          "front": "Karst",
+          "back": "Limestone country with caves, swallow holes and underground drainage."
+        },
+        {
+          "front": "Stalactite",
+          "back": "A column of lime hanging down from the roof of a cave."
+        },
+        {
+          "front": "Stalagmite",
+          "back": "A column of lime growing up from the floor of a cave."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a range of fold mountains?",
+          "options": [
+            "Mount Cameroon",
+            "The Atlas Mountains",
+            "The Jos Plateau",
+            "The Niger Delta"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The point on the earth's surface directly above the place where an earthquake begins is the",
+          "options": [
+            "focus",
+            "fault",
+            "crater",
+            "epicentre"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "An instrument for recording earthquake shocks is called a",
+          "options": [
+            "seismograph",
+            "barograph",
+            "hygrometer",
+            "anemometer"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Caves, swallow holes and underground rivers are typical of land made of",
+          "options": [
+            "granite",
+            "sandstone",
+            "limestone",
+            "basalt"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A rift valley is formed when",
+          "options": [
+            "land between two parallel faults is pushed upward",
+            "a river cuts a deep valley into a plateau",
+            "lava piles up around a vent",
+            "land between two parallel faults sinks"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe how fold mountains are formed. Name one example.",
+          "markScheme": [
+            "Two plates move towards each other, producing compressional forces",
+            "The layers of rock between them are squeezed and bent",
+            "They form upfolds (anticlines) and downfolds (synclines) that rise as mountains",
+            "A named example, such as the Alps, Himalayas, Rockies or Atlas Mountains"
+          ],
+          "modelAnswer": "Fold mountains form where two plates move towards each other and produce compression. The layers of rock between them are squeezed and bent, with the upfolds (anticlines) forming the ridges and the downfolds (synclines) the troughs, so the land rises as a mountain range. The Alps and the Himalayas are examples.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Two plates push towards each other. The great pressure squeezes the layers of rock so they bend. The folds go up as anticlines and down as synclines, and the land is lifted into mountains. The Himalayas is an example.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Two plates push towards each other"
+                },
+                {
+                  "point": 1,
+                  "quote": "The great pressure squeezes the layers of rock so they bend"
+                },
+                {
+                  "point": 2,
+                  "quote": "The folds go up as anticlines and down as synclines"
+                },
+                {
+                  "point": 3,
+                  "quote": "The Himalayas is an example"
+                }
+              ],
+              "feedback": "Full marks. Naming the anticlines and synclines shows you know the shape of a fold, not just that rock bends."
+            },
+            {
+              "tier": "full",
+              "text": "Fold mountains are formed by compressional forces when plates move towards each other. The rocks in between are bent and crumpled into folds, with the upfolds forming the mountains and the downfolds forming the valleys. The Atlas Mountains in North Africa are an example.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "compressional forces when plates move towards each other"
+                },
+                {
+                  "point": 1,
+                  "quote": "The rocks in between are bent and crumpled into folds"
+                },
+                {
+                  "point": 2,
+                  "quote": "the upfolds forming the mountains and the downfolds forming the valleys"
+                },
+                {
+                  "point": 3,
+                  "quote": "The Atlas Mountains in North Africa are an example"
+                }
+              ],
+              "feedback": "Excellent. Choosing an African example keeps your answer close to home."
+            },
+            {
+              "tier": "partial",
+              "text": "Fold mountains are formed when the rocks are pushed and bend into folds. The Alps are an example.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "the rocks are pushed and bend into folds"
+                },
+                {
+                  "point": 3,
+                  "quote": "The Alps are an example"
+                }
+              ],
+              "feedback": "You have the bending and a good example. Say what does the pushing: two plates moving towards each other. Also name the upfolds and downfolds and say that the upfolds rise into the mountain."
+            },
+            {
+              "tier": "partial",
+              "text": "The earth plates move towards each other and press the rock between them. The Rocky Mountains are an example.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The earth plates move towards each other"
+                },
+                {
+                  "point": 3,
+                  "quote": "The Rocky Mountains are an example"
+                }
+              ],
+              "feedback": "Plates and example are correct. Now say what happens to the rock layers: they are squeezed and bent into upfolds and downfolds, and the upfolds rise as mountains."
+            },
+            {
+              "tier": "weak",
+              "text": "Fold mountains are formed when a volcano erupts and the lava piles up and cools to form a mountain. Mount Cameroon is an example.",
+              "meets": [],
+              "feedback": "That describes a volcanic mountain. Fold mountains are formed when two plates push together and squeeze the layers of rock into folds, as in the Alps."
+            },
+            {
+              "tier": "weak",
+              "text": "Fold mountains are formed when the land is folded like a cloth. An example is the Himalayas.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "An example is the Himalayas"
+                }
+              ],
+              "feedback": "The Himalayas are a good example, and the cloth picture is a start. Explain what does the folding: plates moving together produce compression that bends the rock layers."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain how caves, stalactites and stalagmites are formed in a limestone region.",
+          "markScheme": [
+            "Rainwater takes in carbon dioxide and becomes a weak acid (carbonic acid)",
+            "The acid dissolves limestone along its joints and bedding planes",
+            "This widens the openings into swallow holes and underground caves",
+            "Water dripping from the cave roof deposits lime, which builds downwards as stalactites",
+            "Drops falling on the floor deposit lime that builds upwards as stalagmites"
+          ],
+          "modelAnswer": "Rainwater absorbs carbon dioxide from the air and soil and becomes a weak acid. This dissolves limestone along its joints and bedding planes and widens them into swallow holes and underground caves. Water dripping from the cave roof leaves behind lime, which builds downwards as stalactites. Where the drops land on the floor, lime builds upwards as stalagmites.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Rain takes carbon dioxide from the air and turns into a weak acid. The acid dissolves the limestone along the joints. The joints become wider and form swallow holes and caves under the ground. Water drips from the roof of the cave and leaves lime that hangs down as stalactites. The drops fall on the floor and the lime builds up as stalagmites.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Rain takes carbon dioxide from the air and turns into a weak acid"
+                },
+                {
+                  "point": 1,
+                  "quote": "The acid dissolves the limestone along the joints"
+                },
+                {
+                  "point": 2,
+                  "quote": "form swallow holes and caves under the ground"
+                },
+                {
+                  "point": 3,
+                  "quote": "leaves lime that hangs down as stalactites"
+                },
+                {
+                  "point": 4,
+                  "quote": "the lime builds up as stalagmites"
+                }
+              ],
+              "feedback": "Full marks. You gave the chemistry, the dissolving, the cave and both deposits in order."
+            },
+            {
+              "tier": "full",
+              "text": "Rainwater combines with CO2 to form carbonic acid, which is a weak acid. Carbonic acid dissolves limestone through the joints and bedding planes. Over many years this creates swallow holes and large caves. Dripping water in the cave deposits calcium carbonate from the roof downwards as stalactites. The part that drops to the floor builds upwards to form stalagmites.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Rainwater combines with CO2 to form carbonic acid, which is a weak acid"
+                },
+                {
+                  "point": 1,
+                  "quote": "Carbonic acid dissolves limestone through the joints and bedding planes"
+                },
+                {
+                  "point": 2,
+                  "quote": "this creates swallow holes and large caves"
+                },
+                {
+                  "point": 3,
+                  "quote": "deposits calcium carbonate from the roof downwards as stalactites"
+                },
+                {
+                  "point": 4,
+                  "quote": "builds upwards to form stalagmites"
+                }
+              ],
+              "feedback": "Excellent. Naming carbonic acid and calcium carbonate is exact."
+            },
+            {
+              "tier": "partial",
+              "text": "Rain water dissolves the limestone and makes caves under the ground. Stalactites hang from the roof of the cave.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "makes caves under the ground"
+                },
+                {
+                  "point": 3,
+                  "quote": "Stalactites hang from the roof of the cave"
+                }
+              ],
+              "feedback": "Say why the rain can dissolve limestone: it has taken in carbon dioxide and become a weak acid. Also explain how stalactites form (dripping water leaves lime) and give the stalagmites that grow up from the floor."
+            },
+            {
+              "tier": "partial",
+              "text": "The rain becomes weak acid because of carbon dioxide and it dissolves the limestone along the joints. The stalagmites grow from the floor of the cave when the water drips down.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The rain becomes weak acid because of carbon dioxide"
+                },
+                {
+                  "point": 1,
+                  "quote": "it dissolves the limestone along the joints"
+                },
+                {
+                  "point": 4,
+                  "quote": "The stalagmites grow from the floor of the cave when the water drips down"
+                }
+              ],
+              "feedback": "Good on the acid and the dissolving. You still need to say how the cave itself forms, and how stalactites form from the roof. Say that the lime in the dripping water is left behind."
+            },
+            {
+              "tier": "weak",
+              "text": "Caves are formed by wind blowing the rock away. Stalactites are the ones on the floor and stalagmites are the ones on the roof.",
+              "meets": [],
+              "feedback": "In limestone regions, caves are formed by water, not wind. Stalactites hang from the roof (remember that they hold tight to the ceiling) and stalagmites grow up from the floor."
+            },
+            {
+              "tier": "weak",
+              "text": "The limestone is dissolved by the rain and that is how caves form. The rain is hot.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The limestone is dissolved by the rain"
+                }
+              ],
+              "feedback": "You have the dissolving, which is the heart of it. The rain is not hot: it is a weak acid because it has absorbed carbon dioxide. Add how stalactites and stalagmites form from dripping water."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Wearing down the land, and observing the weather",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish between physical and chemical weathering and give examples;\n2. describe mass movement (soil creep, landslide) and the work of running water;\n3. state how wind, waves and underground water modify the land;\n4. describe a Stevenson's screen and explain why it is built the way it is;\n5. name the basic weather instruments and say what each measures.\n\n## Materials\n\nPhotographs of exfoliated rock, gullies and a river gorge, a rain gauge, a thermometer, a wind vane, a barometer or its picture, a model or picture of a Stevenson's screen.\n\n## Starter (5 minutes)\n\nTake students to look at the school drain after rain. Ask: where did the soil come from and where is it going?\n\n## Development\n\n1. Define denudation as the wearing down of the land. Agents: weathering, mass movement, water, wind, waves and ice.\n2. Physical weathering: temperature changes (exfoliation), frost. Chemical: rain with dissolved gases acting on rock.\n3. Mass movement: soil creep, landslide, mudflow. Link to heavy rain and steep slopes.\n4. Running water: hydraulic action, abrasion, attrition, solution.\n5. Wind in deserts, waves on the coast and underground water in limestone areas, briefly.\n6. Take the class to the school weather station. Describe the Stevenson's screen and each instrument.\n\n## Class activity\n\nStudents record the temperature and wind direction at the weather station for three days and sketch the screen with labels.\n\n## Evaluation\n\n1. What is soil creep?\n2. Why is the Stevenson's screen painted white?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "How the land is worn down and how we watch the weather",
+        "content": "# Denudation and simple weather study\n\n## Weathering\n\n**Denudation** is the wearing down of the earth's surface. It begins with **weathering**, the breaking down of rock where it lies, with no transport.\n\n- **Physical (mechanical) weathering** breaks rock into pieces without changing what it is made of. In hot deserts, rock is heated by day and cooled at night. It expands and contracts until the outer layers peel off like the skin of an onion. This is **exfoliation**.\n- **Chemical weathering** changes the rock itself. Rainwater containing carbon dioxide slowly dissolves limestone.\n\n## Mass movement\n\nWeathered material moves downhill under gravity. **Soil creep** is the very slow downhill movement of soil, shown by tilted fence posts. A **landslide** is a sudden fall of earth and rock, common on steep slopes after heavy rain.\n\n## Running water\n\nRivers erode by **hydraulic action** (the force of the water), **abrasion** (the load scraping the bed and banks), **attrition** (pieces of the load knocking against each other and becoming smaller and rounder) and **solution** (dissolving soluble rocks such as limestone). Gully erosion in the south-east of Nigeria is an example of the work of running water.\n\n**Wind** carries sand in deserts and sharpens rocks by abrasion. **Waves** cut cliffs and build beaches. **Underground water** dissolves limestone to form caves.\n\n## Simple weather study\n\nWeather instruments are kept in a **Stevenson's screen**, a white wooden box with louvred (slatted) sides, standing on legs about 1.25 m above short grass in an open place.\n\n- It is painted **white** to reflect the sun's heat.\n- It has **louvres** so that air flows through but direct sunlight and rain do not enter.\n- It stands on **legs** so that heat from the ground does not affect the readings.\n\nInside are the maximum and minimum thermometers and the wet and dry bulb thermometers. Outside are the **rain gauge** (measures rainfall in millimetres), the **barometer** (air pressure), the **wind vane** (the direction the wind is blowing **from**) and the **anemometer** (wind speed)."
+      },
+      "cards": [
+        {
+          "front": "Denudation",
+          "back": "The wearing down of the land surface by weathering, erosion and mass movement."
+        },
+        {
+          "front": "Exfoliation",
+          "back": "The peeling off of outer layers of rock caused by repeated heating and cooling, common in deserts."
+        },
+        {
+          "front": "Soil creep",
+          "back": "The very slow movement of soil down a slope under gravity."
+        },
+        {
+          "front": "Abrasion",
+          "back": "Wearing away of a river bed and banks by the load the river carries."
+        },
+        {
+          "front": "Attrition",
+          "back": "Pieces of a river's load knocking against each other so that they become smaller and rounder."
+        },
+        {
+          "front": "Stevenson's screen",
+          "back": "A white, louvred wooden box on legs which houses thermometers."
+        },
+        {
+          "front": "Rain gauge",
+          "back": "An instrument that collects and measures rainfall, in millimetres."
+        },
+        {
+          "front": "Barometer",
+          "back": "An instrument that measures atmospheric pressure."
+        },
+        {
+          "front": "Wind vane",
+          "back": "An instrument showing the direction from which the wind blows."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In hot deserts, rocks crack and peel because of repeated heating by day and cooling by night. This is an example of",
+          "options": [
+            "chemical weathering",
+            "physical weathering",
+            "mass movement",
+            "river erosion"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why is a Stevenson's screen painted white?",
+          "options": [
+            "to make it easy for pilots to see",
+            "to attract the heat from the sun",
+            "to reflect the sun's heat away from the instruments",
+            "to keep termites away"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which instrument is used to measure atmospheric pressure?",
+          "options": [
+            "Barometer",
+            "Anemometer",
+            "Hygrometer",
+            "Rain gauge"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The slow movement of soil down a gentle slope is known as",
+          "options": [
+            "landslide",
+            "rock fall",
+            "mudflow",
+            "soil creep"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A wind vane points towards the south-west. The wind is blowing from the",
+          "options": [
+            "north-east",
+            "south-west",
+            "south-east",
+            "north-west"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe three features of a Stevenson's screen and explain the reason for each.",
+          "markScheme": [
+            "It is painted white, so that it reflects the sun's heat and the instruments are not warmed",
+            "The sides are louvred, so that air can pass through freely but sun and rain cannot get in",
+            "It stands on legs about 1.25 m above the ground, so that heat from the ground does not affect the readings",
+            "It is placed in an open space away from trees and buildings, so that shade and walls do not affect the readings"
+          ],
+          "modelAnswer": "A Stevenson's screen is painted white so that it reflects the sun's heat and the thermometers inside are not warmed. Its sides are louvred so that air flows through freely, while sunlight and rain are kept out. It stands on legs about 1.25 m above the ground so that heat from the ground does not affect the readings. It is also placed in an open place away from trees and buildings so that they do not shade it or give off heat.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The screen is painted white because white reflects the sun's rays, so the thermometers inside do not become hot. The sides have louvres, which let air flow in but keep out rain and direct sunlight. It stands on legs about 1.25 m high so that the hot ground will not change the temperature reading. It is also built in an open place, away from buildings, so that walls do not give out heat.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "white because white reflects the sun's rays, so the thermometers inside do not become hot"
+                },
+                {
+                  "point": 1,
+                  "quote": "louvres, which let air flow in but keep out rain and direct sunlight"
+                },
+                {
+                  "point": 2,
+                  "quote": "legs about 1.25 m high so that the hot ground will not change the temperature reading"
+                },
+                {
+                  "point": 3,
+                  "quote": "open place, away from buildings, so that walls do not give out heat"
+                }
+              ],
+              "feedback": "Full marks. Each feature has its own reason, and you gave a fourth feature on siting as well."
+            },
+            {
+              "tier": "full",
+              "text": "1. White paint: it reflects heat from the sun. 2. Louvred sides: they allow free circulation of air but prevent rain and sunshine from entering. 3. Raised on legs: this keeps it away from the heat radiated by the ground. 4. Placed in the open, away from trees: shade from trees would give wrong temperatures.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "White paint: it reflects heat from the sun"
+                },
+                {
+                  "point": 1,
+                  "quote": "they allow free circulation of air but prevent rain and sunshine from entering"
+                },
+                {
+                  "point": 2,
+                  "quote": "Raised on legs: this keeps it away from the heat radiated by the ground"
+                },
+                {
+                  "point": 3,
+                  "quote": "Placed in the open, away from trees: shade from trees would give wrong temperatures"
+                }
+              ],
+              "feedback": "Excellent. A numbered list with the reason beside each feature is exactly what the question asks for."
+            },
+            {
+              "tier": "partial",
+              "text": "The Stevenson's screen is painted white to reflect heat and it has louvres. It is on legs. These things help it to give correct readings.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "painted white to reflect heat"
+                }
+              ],
+              "feedback": "You explained the white paint. For the louvres and the legs, say why: louvres let air in but keep rain and sun out; legs keep the screen away from the hot ground."
+            },
+            {
+              "tier": "partial",
+              "text": "It is white to reflect sunlight. It has louvres so that air can enter and rain cannot. It has legs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is white to reflect sunlight"
+                },
+                {
+                  "point": 1,
+                  "quote": "It has louvres so that air can enter and rain cannot"
+                }
+              ],
+              "feedback": "Two features are well explained. You mention the legs but not why: they lift the screen about 1.25 m so that heat from the ground does not affect the readings."
+            },
+            {
+              "tier": "weak",
+              "text": "It is made of wood because wood is cheap. It is painted black so that it looks good. It has a door.",
+              "meets": [],
+              "feedback": "A black screen would absorb heat and give wrong temperatures. It is painted white to reflect the sun's heat. Learn the other features too: louvred sides and legs, each with a reason."
+            },
+            {
+              "tier": "weak",
+              "text": "The Stevenson's screen is white so that it reflects heat. It is where the weather men sit and read the instruments.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "white so that it reflects heat"
+                }
+              ],
+              "feedback": "The white paint is explained correctly. The screen is a box that holds the instruments, not a place to sit. Add the louvres and the legs, each with its reason."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain the following ways in which a river erodes its bed and banks: (a) abrasion, (b) attrition, (c) hydraulic action and (d) solution.",
+          "markScheme": [
+            "Abrasion: the stones and sand carried by the river scrape and wear away the bed and banks",
+            "Attrition: the pieces of load knock against each other and become smaller and rounder",
+            "Hydraulic action: the force of the moving water alone presses into cracks and breaks off rock",
+            "Solution: soluble rocks, such as limestone, are dissolved by the river water"
+          ],
+          "modelAnswer": "Abrasion is the scraping and wearing away of the bed and banks by the stones and sand the river carries. Attrition is when the pieces of the load knock against each other and become smaller and rounder. Hydraulic action is the force of the moving water itself pressing into cracks and breaking off pieces of rock. Solution is the dissolving of soluble rocks, such as limestone, by the river water.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Abrasion is when the stones the river is carrying rub and scrape the bed and the banks and wear them away. Attrition is when the stones hit one another and break into smaller, rounder pieces. Hydraulic action is the force of the water pushing into cracks in the bank and breaking the rock. Solution is when the water dissolves rock like limestone.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Abrasion is when the stones the river is carrying rub and scrape the bed and the banks and wear them away"
+                },
+                {
+                  "point": 1,
+                  "quote": "Attrition is when the stones hit one another and break into smaller, rounder pieces"
+                },
+                {
+                  "point": 2,
+                  "quote": "Hydraulic action is the force of the water pushing into cracks in the bank and breaking the rock"
+                },
+                {
+                  "point": 3,
+                  "quote": "Solution is when the water dissolves rock like limestone"
+                }
+              ],
+              "feedback": "Full marks. The load is the agent in abrasion and attrition, and the water itself in the other two, and you made that clear."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Abrasion: the sand and pebbles carried by the river grind against the river bed and banks. (b) Attrition: the load particles collide with each other and are worn smaller and smoother. (c) Hydraulic action: moving water forces air and water into cracks, which weakens and breaks the banks. (d) Solution: acids in the water dissolve soluble minerals in rocks such as limestone.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the sand and pebbles carried by the river grind against the river bed and banks"
+                },
+                {
+                  "point": 1,
+                  "quote": "the load particles collide with each other and are worn smaller and smoother"
+                },
+                {
+                  "point": 2,
+                  "quote": "moving water forces air and water into cracks, which weakens and breaks the banks"
+                },
+                {
+                  "point": 3,
+                  "quote": "acids in the water dissolve soluble minerals in rocks such as limestone"
+                }
+              ],
+              "feedback": "Excellent. Accurate on all four, with the right detail on how hydraulic action works."
+            },
+            {
+              "tier": "partial",
+              "text": "Abrasion is the river wearing away its banks with its load. Attrition is when the stones are broken into smaller pieces by hitting each other. Hydraulic action and solution are also ways the river erodes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Abrasion is the river wearing away its banks with its load"
+                },
+                {
+                  "point": 1,
+                  "quote": "Attrition is when the stones are broken into smaller pieces by hitting each other"
+                }
+              ],
+              "feedback": "Abrasion and attrition are well explained. You must explain hydraulic action (the force of water in cracks) and solution (dissolving of rocks such as limestone), not just name them."
+            },
+            {
+              "tier": "partial",
+              "text": "Hydraulic action is the force of the water hitting the bank. Solution is when the water dissolves some kinds of rock. Abrasion and attrition are the same thing and they both wear the stones.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Hydraulic action is the force of the water hitting the bank"
+                },
+                {
+                  "point": 3,
+                  "quote": "Solution is when the water dissolves some kinds of rock"
+                }
+              ],
+              "feedback": "Hydraulic action and solution are correct. Abrasion and attrition are different: in abrasion the load wears the bed and banks, in attrition the pieces of load wear each other and become rounder."
+            },
+            {
+              "tier": "weak",
+              "text": "Abrasion is when the river takes away the soil and attrition is when the river is flooded. Hydraulic action is the power plant.",
+              "meets": [],
+              "feedback": "Each term has a precise meaning. Abrasion is the load scraping the bed and banks; attrition is the load pieces colliding with each other; hydraulic action is the force of the water itself, not an electric power plant."
+            },
+            {
+              "tier": "weak",
+              "text": "Attrition means the stones hit each other and become small. Abrasion, hydraulic action and solution mean that the river cuts the land.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Attrition means the stones hit each other and become small"
+                }
+              ],
+              "feedback": "Attrition is correct. The other three are different processes: abrasion (load scraping the banks), hydraulic action (force of water in cracks) and solution (dissolving of rocks like limestone)."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Elements of climate and what controls them",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the elements of climate and the instrument that measures each;\n2. explain how altitude, latitude, ocean currents, land and sea breezes, continentality and aspect affect climate;\n3. calculate the mean temperature and the annual range from a table;\n4. read a climatic chart showing temperature and rainfall.\n\n## Materials\n\nTemperature and rainfall tables for Lagos, Kano and Jos, graph paper, a globe, pictures of land and sea breeze diagrams, calculators.\n\n## Starter (5 minutes)\n\nAsk: why is Jos cooler than Lagos at night, and why is Kano hotter than Lagos before the rains? Write the guesses on the board and return to them at the end.\n\n## Development\n\n1. Weather and climate: weather is the state of the atmosphere at a time, climate is the average over at least 30 years.\n2. Elements: temperature, rainfall, humidity, air pressure, wind, sunshine, cloud.\n3. Factors: latitude, altitude (6.5 degrees C per 1,000 m), ocean currents, land and sea breezes, continentality, aspect.\n4. Calculate mean and range with the Kano table, then compare with Lagos.\n5. Read a climatic chart: months across, temperature as a line and rainfall as bars.\n\n## Class activity\n\nStudents work in pairs on a table of monthly temperature and rainfall for Lagos and Kano, calculate the annual range of each and say what factor explains the difference.\n\n## Evaluation\n\n1. Define annual range of temperature.\n2. Why is a sea breeze cooler than a land breeze?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "What makes climate what it is",
+        "content": "# Elements of climate and the factors that affect them\n\n**Weather** is the condition of the atmosphere at a place at a particular time. **Climate** is the average weather of a place over a long period, usually 30 years or more.\n\n## Elements of climate\n\nTemperature (measured with a thermometer), rainfall (rain gauge), humidity (hygrometer), air pressure (barometer), wind (wind vane and anemometer), sunshine and cloud.\n\n## Factors affecting climate\n\n- **Latitude.** Near the equator the sun is nearly overhead and the temperature is high. Towards the poles the sun's rays are slanting and spread over a larger area, so it is cooler.\n- **Altitude.** Temperature falls with height at about 6.5 degrees C for every 1,000 m (about 1 degree for every 150 m). A station at sea level with 30 degrees C would have 30 - 6.5 = 23.5 degrees C at 1,000 m. The Jos Plateau is cooler than the plains around it.\n- **Ocean currents.** Warm currents warm the coasts they pass; cold currents cool them. The cold Benguela current makes the coast of Namibia very dry.\n- **Land and sea breezes.** By day land warms faster than the sea, so air blows from sea to land (sea breeze). At night the land cools faster and the wind blows from land to sea (land breeze).\n- **Continentality.** Land heats and cools faster than water. Places far from the sea, such as Kano, have hot days, cooler nights and a **large annual range** of temperature. Lagos by the sea has a small range.\n- **Aspect.** The direction a slope faces. In the northern hemisphere, slopes facing south receive more sunshine.\n\n## Reading climatic data\n\n**Mean annual temperature** = total of the 12 monthly means divided by 12. **Annual range** = hottest month's mean minus coolest month's mean.\n\n**Worked example.** The monthly mean temperatures of a town are 26, 27, 28, 28, 27, 25, 24, 24, 25, 26, 26 and 26 degrees C. The total is 312, so the mean is 312 / 12 = 26 degrees C. The annual range is 28 - 24 = 4 degrees C.\n\nOn a climatic chart, temperature is drawn as a line and rainfall as bars."
+      },
+      "cards": [
+        {
+          "front": "Weather",
+          "back": "The state of the atmosphere at a place at a particular time."
+        },
+        {
+          "front": "Climate",
+          "back": "The average weather of a place over a long period, usually 30 years or more."
+        },
+        {
+          "front": "Annual range of temperature",
+          "back": "The mean temperature of the hottest month minus that of the coolest month."
+        },
+        {
+          "front": "Lapse rate",
+          "back": "The fall of temperature with height: about 6.5 degrees C for every 1,000 m."
+        },
+        {
+          "front": "Continentality",
+          "back": "The effect of distance from the sea: hotter summers, cooler winters, and a large annual range."
+        },
+        {
+          "front": "Sea breeze",
+          "back": "A wind that blows from the sea to the land in the daytime."
+        },
+        {
+          "front": "Land breeze",
+          "back": "A wind that blows from the land to the sea at night."
+        },
+        {
+          "front": "Aspect",
+          "back": "The direction a slope faces, which decides how much sunshine it gets."
+        },
+        {
+          "front": "Hygrometer",
+          "back": "An instrument for measuring humidity."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A weather station at sea level has a temperature of 30 degrees C. What temperature would you expect at a place 1,000 m above it, using a fall of 6.5 degrees C per 1,000 m?",
+          "options": [
+            "30 degrees C",
+            "36.5 degrees C",
+            "6.5 degrees C",
+            "23.5 degrees C"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "At night, along the coast, the wind usually blows",
+          "options": [
+            "from the land to the sea",
+            "from the sea to the land",
+            "from the north to the south",
+            "in a circle"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Kano has a bigger annual range of temperature than Lagos mainly because Kano",
+          "options": [
+            "is nearer the equator",
+            "has more rainfall",
+            "is far from the sea",
+            "is at sea level"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which type of cloud usually brings thunderstorms in Nigeria's rainy season?",
+          "options": [
+            "Cirrus",
+            "Cumulonimbus",
+            "Stratus",
+            "Altocumulus"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The hottest month of a town has a mean temperature of 31 degrees C and the coolest month 24 degrees C. What is the annual range?",
+          "options": [
+            "7 degrees C",
+            "27.5 degrees C",
+            "55 degrees C",
+            "13 degrees C"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The mean monthly temperatures (degrees C) of a town from January to December are: 26, 27, 28, 28, 27, 25, 24, 24, 25, 26, 26, 26. (a) Calculate the annual range of temperature. (b) Calculate the mean annual temperature. (c) Give one reason why the range is so small.",
+          "markScheme": [
+            "Annual range = 28 - 24 = 4 degrees C",
+            "Total of the monthly temperatures = 312",
+            "Mean annual temperature = 312 / 12 = 26 degrees C",
+            "A reason, for example that the sun is high all year near the equator, or that the town is near the sea"
+          ],
+          "modelAnswer": "(a) The hottest month is 28 degrees C and the coolest is 24 degrees C, so the annual range is 28 - 24 = 4 degrees C. (b) The total of the twelve monthly figures is 312, so the mean annual temperature is 312 / 12 = 26 degrees C. (c) The range is small because the sun is high in the sky all year round near the equator, so there is little change from month to month.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Highest is 28 and lowest is 24, so the range is 28 - 24 = 4 degrees C. (b) Adding all the temperatures gives 312. The mean is 312 / 12 = 26 degrees C. (c) The town is near the equator so the sun is high all year and the temperature does not change much.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the range is 28 - 24 = 4 degrees C"
+                },
+                {
+                  "point": 1,
+                  "quote": "Adding all the temperatures gives 312"
+                },
+                {
+                  "point": 2,
+                  "quote": "The mean is 312 / 12 = 26 degrees C"
+                },
+                {
+                  "point": 3,
+                  "quote": "The town is near the equator so the sun is high all year"
+                }
+              ],
+              "feedback": "Full marks. The total is shown before the division, so the examiner can see how you reached the mean."
+            },
+            {
+              "tier": "full",
+              "text": "Range = 28 - 24 = 4 degrees C. Sum of the 12 months = 26 + 27 + 28 + 28 + 27 + 25 + 24 + 24 + 25 + 26 + 26 + 26 = 312. Mean = 312 / 12 = 26 degrees C. The range is small because the town is close to the sea and water heats and cools slowly.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Range = 28 - 24 = 4 degrees C"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 312"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mean = 312 / 12 = 26 degrees C"
+                },
+                {
+                  "point": 3,
+                  "quote": "the town is close to the sea and water heats and cools slowly"
+                }
+              ],
+              "feedback": "Excellent. Listing every month in the sum lets you check the total, and the sea is also a good reason."
+            },
+            {
+              "tier": "partial",
+              "text": "The range is 28 - 24 = 4 degrees C. The mean is 28 + 24 divided by 2 which is 26 degrees C. It is small because the town is near the sea.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The range is 28 - 24 = 4 degrees C"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is small because the town is near the sea"
+                }
+              ],
+              "feedback": "Range and reason are correct. The mean needs all twelve months added (312) and divided by 12. Using only the hottest and coolest months gives the answer by luck here, but it is not the method."
+            },
+            {
+              "tier": "partial",
+              "text": "Adding all the temperatures I got 312 and dividing by 12 gives 26. The range is 26 - 24 = 2 degrees C.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Adding all the temperatures I got 312"
+                },
+                {
+                  "point": 2,
+                  "quote": "dividing by 12 gives 26"
+                }
+              ],
+              "feedback": "Your mean is correct. The range uses the hottest month, 28, and not the mean: 28 - 24 = 4 degrees C. Also give a reason why it is small."
+            },
+            {
+              "tier": "weak",
+              "text": "The range is 24 to 28 degrees C. The mean is 24 + 28 = 52 degrees C. The temperature is small because it is cold.",
+              "meets": [],
+              "feedback": "Range is a single number: highest minus lowest, 28 - 24 = 4 degrees C. The mean is the total of the twelve months (312) divided by 12, which is 26 degrees C. A temperature near 26 degrees C is warm, not cold."
+            },
+            {
+              "tier": "weak",
+              "text": "Range is 28 + 24 = 52. The mean is 312 / 12 = 26 degrees C.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The mean is 312 / 12 = 26 degrees C"
+                }
+              ],
+              "feedback": "Your mean is correct. The range is found by subtracting: 28 - 24 = 4 degrees C. Remember to give a reason for the small range as well."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain how altitude and distance from the sea each affect the temperature of a place. Use examples from Nigeria.",
+          "markScheme": [
+            "Temperature falls with height, by about 6.5 degrees C for every 1,000 m",
+            "An example: the Jos Plateau is cooler than the lowlands around it",
+            "Land heats and cools faster than the sea, so places far from the sea have a large annual range of temperature",
+            "An example: Kano, far from the sea, has a bigger range than Lagos on the coast"
+          ],
+          "modelAnswer": "Temperature falls as height increases, by about 6.5 degrees C for every 1,000 m, so high places such as the Jos Plateau are cooler than the lowlands around them. Land heats and cools faster than water, so a place far from the sea has hot days, cooler nights and a large annual range of temperature; Kano, which is far inland, has a bigger range than Lagos on the coast, where the sea keeps the temperature steady.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The higher a place is, the cooler it is, by about 6.5 degrees C in every 1,000 m. That is why Jos on the plateau is cooler than Lagos. Land gets hot and cold quickly but the sea is slow, so places far from the sea like Kano have a large range of temperature, while Lagos by the sea has a small range.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The higher a place is, the cooler it is, by about 6.5 degrees C in every 1,000 m"
+                },
+                {
+                  "point": 1,
+                  "quote": "Jos on the plateau is cooler than Lagos"
+                },
+                {
+                  "point": 2,
+                  "quote": "Land gets hot and cold quickly but the sea is slow, so places far from the sea"
+                },
+                {
+                  "point": 3,
+                  "quote": "like Kano have a large range of temperature, while Lagos by the sea has a small range"
+                }
+              ],
+              "feedback": "Full marks. Each factor has a reason and a Nigerian place."
+            },
+            {
+              "tier": "full",
+              "text": "Temperature decreases with altitude at about 6.5 degrees C per 1,000 m, so the Mambilla Plateau is cooler than the Niger valley. Continentality: land heats up and cools down more quickly than the sea so inland areas have a high annual range. Maiduguri has a larger range than Port Harcourt, which is near the sea.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Temperature decreases with altitude at about 6.5 degrees C per 1,000 m"
+                },
+                {
+                  "point": 1,
+                  "quote": "the Mambilla Plateau is cooler than the Niger valley"
+                },
+                {
+                  "point": 2,
+                  "quote": "land heats up and cools down more quickly than the sea so inland areas have a high annual range"
+                },
+                {
+                  "point": 3,
+                  "quote": "Maiduguri has a larger range than Port Harcourt, which is near the sea"
+                }
+              ],
+              "feedback": "Excellent. You used different examples from the textbook ones and they are correct."
+            },
+            {
+              "tier": "partial",
+              "text": "Temperature gets lower as you go up. For example Jos is cooler than Lagos. Near the sea, the weather is wet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Temperature gets lower as you go up"
+                },
+                {
+                  "point": 1,
+                  "quote": "Jos is cooler than Lagos"
+                }
+              ],
+              "feedback": "Altitude is well covered; add the rate of 6.5 degrees C per 1,000 m. For distance from the sea, say what it does to temperature: land heats and cools faster than sea, so inland places have a large range."
+            },
+            {
+              "tier": "partial",
+              "text": "Places far from the sea have large annual range because land heats and cools faster than the sea. Kano has a larger range than Lagos. Altitude also changes temperature.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Places far from the sea have large annual range because land heats and cools faster than the sea"
+                },
+                {
+                  "point": 3,
+                  "quote": "Kano has a larger range than Lagos"
+                }
+              ],
+              "feedback": "The continentality part is complete. Say how altitude changes temperature: it falls by about 6.5 degrees C per 1,000 m, so Jos is cooler than the plains."
+            },
+            {
+              "tier": "weak",
+              "text": "The higher you climb the hotter it is because you are nearer to the sun. Near the sea it is cooler because of the water.",
+              "meets": [],
+              "feedback": "It gets cooler with height, not hotter: about 6.5 degrees C for every 1,000 m. Being nearer to the sun does not matter; the air higher up is thin and warmed from the ground below. Sea does cool coasts, but say it reduces the annual range."
+            },
+            {
+              "tier": "weak",
+              "text": "Altitude is how high a place is above sea level, and a high place like Jos is cold. Distance from the sea is how far.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "a high place like Jos is cold"
+                }
+              ],
+              "feedback": "Jos is a good example. But the question asks how: temperature falls by about 6.5 degrees C per 1,000 m, and distance from the sea gives a large annual range because land heats and cools faster than water."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Types of climate, classifying them, and climate change",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the equatorial, tropical continental and desert climates;\n2. name the warm and cool temperate climates;\n3. explain the Greek and Koppen ways of classifying climate;\n4. define climate change and state its causes, effects and remedies.\n\n## Materials\n\nWorld map of climatic regions, climatic graphs for Warri, Kano and Timbuktu, a globe, news pictures of flooding along Nigerian coasts, a chart of the greenhouse effect.\n\n## Starter (5 minutes)\n\nAsk: why do people in Kano wear different clothes in January from those in Warri? Use the answers to introduce climate types.\n\n## Development\n\n1. Equatorial climate: rain all year, high temperature, small range, forests.\n2. Tropical continental: distinct wet and dry seasons, harmattan, savanna.\n3. Hot desert: very little rain, very hot days and cold nights.\n4. Temperate: warm temperate (Mediterranean) and cool temperate (British type), briefly.\n5. Greek classification: torrid, temperate and frigid zones by latitude. Koppen: temperature, rainfall and natural vegetation, with letters A to E.\n6. Climate change: meaning, causes (burning fossil fuels, gas flaring, deforestation), effects (rising sea level, floods, drought) and remedies (planting trees, clean energy).\n\n## Class activity\n\nMatch four unlabelled climatic graphs to Warri, Kano, Timbuktu and Lagos and give two reasons for each match.\n\n## Evaluation\n\n1. Which climate has a long dry season and a short wet season?\n2. Name two causes of climate change.\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Climates of the world and a warming planet",
+        "content": "# Major climate types and climate change\n\n## Hot climates\n\n**Equatorial climate** is found within about 5 degrees of the equator, as in the Niger Delta and the Congo basin. It has high temperature all year (about 27 degrees C), a very small annual range (about 2 degrees C) and heavy rainfall in every month, mostly convectional, falling in the afternoons. Natural vegetation is tropical rainforest.\n\n**Tropical continental climate**, also called the Sudan or savanna type, has a long dry season and a wet season. The wet season is shorter the farther north you go. Temperature is high, the annual range is bigger than in the equatorial climate, and the dry-season air from the Sahara, the dusty **harmattan**, is cool at night. The vegetation is savanna grassland, as around Kano and Kaduna.\n\n**Hot desert climate** has very little rain (under 250 mm a year), very hot days, cold nights and a large daily range, as in the Sahara.\n\n## Temperate climates\n\n**Warm temperate** (Mediterranean) areas have hot dry summers and mild wet winters. **Cool temperate** (British type) areas have cool summers, cold winters and rain all year.\n\n## Classifying climate\n\nThe **Greek** classification divides the world into three zones by latitude: the **torrid zone** between the Tropics of Cancer and Capricorn, the **temperate zones** between the tropics and the Arctic and Antarctic Circles, and the **frigid zones** near the poles.\n\nThe German scientist **Koppen** classified climate by average temperature, rainfall and natural vegetation, using letters: A tropical, B dry, C warm temperate, D cold and E polar.\n\n## Climate change\n\n**Climate change** is a long-term change in the average weather of the earth, mostly the rise in temperature known as **global warming**.\n\n- **Causes**: burning of fossil fuels, gas flaring and bush burning release carbon dioxide and other greenhouse gases that trap heat; cutting down forests removes the trees that absorb carbon dioxide.\n- **Effects**: melting ice raises sea level and floods low coasts such as Lagos; rainfall patterns change; drought and desert encroachment grow in the north.\n- **Remedies**: planting trees, ending gas flaring, using solar and other clean energy, and international agreements to cut emissions."
+      },
+      "cards": [
+        {
+          "front": "Equatorial climate",
+          "back": "High temperature and heavy rain all year, with a very small annual range."
+        },
+        {
+          "front": "Tropical continental climate",
+          "back": "A hot climate with distinct wet and dry seasons; savanna vegetation."
+        },
+        {
+          "front": "Harmattan",
+          "back": "A cool, dry, dusty wind from the Sahara that blows over West Africa in the dry season."
+        },
+        {
+          "front": "Hot desert climate",
+          "back": "Very little rain, very hot days and cold nights."
+        },
+        {
+          "front": "Greek classification",
+          "back": "Divides the world by latitude into the torrid, temperate and frigid zones."
+        },
+        {
+          "front": "Koppen classification",
+          "back": "Classifies climate by average temperature, rainfall and natural vegetation."
+        },
+        {
+          "front": "Climate change",
+          "back": "A long-term change in the average weather conditions of the earth."
+        },
+        {
+          "front": "Greenhouse gas",
+          "back": "A gas, such as carbon dioxide, that traps heat in the atmosphere."
+        },
+        {
+          "front": "A remedy for climate change",
+          "back": "Planting trees, stopping gas flaring and using clean energy."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which climate has high temperature and rain in every month of the year, with a very small annual range?",
+          "options": [
+            "Hot desert",
+            "Tropical continental",
+            "Equatorial",
+            "Warm temperate"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The harmattan is a dry, dusty wind that blows over Nigeria from the",
+          "options": [
+            "Sahara in the north-east",
+            "Atlantic Ocean in the south-west",
+            "Gulf of Guinea in the south",
+            "Indian Ocean in the east"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "In the Greek classification of climate, the region between the Tropic of Cancer and the Tropic of Capricorn is called the",
+          "options": [
+            "frigid zone",
+            "torrid zone",
+            "temperate zone",
+            "polar zone"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Koppen's classification of climate is based mainly on",
+          "options": [
+            "latitude alone",
+            "the distance of a place from the sea",
+            "the number of people living in the region",
+            "average temperature, rainfall and natural vegetation"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which activity in the Niger Delta most directly adds greenhouse gases to the atmosphere?",
+          "options": [
+            "Planting mangrove trees",
+            "Fishing with canoes",
+            "Flaring of natural gas at oil wells",
+            "Building jetties"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the main features of the tropical continental (savanna) climate in northern Nigeria.",
+          "markScheme": [
+            "There are two distinct seasons, a wet season and a long dry season",
+            "Rainfall is moderate and decreases northwards, with the wet season getting shorter",
+            "Temperatures are high throughout the year, with a larger annual range than in the equatorial climate",
+            "The dry season brings the harmattan, a dry, dusty wind from the Sahara"
+          ],
+          "modelAnswer": "The tropical continental climate has a wet season and a long dry season. Rainfall is moderate and falls as one moves northwards, with the wet season becoming shorter. Temperatures are high all year and the annual range is larger than in the equatorial climate. During the dry season the harmattan, a dry and dusty wind from the Sahara, blows across the region.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "There are two seasons, the rainy season and a long dry season. The rain is not as heavy as in the south and it reduces as one goes north, and the rainy season becomes shorter. It is hot all year but the range of temperature is bigger than in the south. In the dry season the harmattan blows with dust from the Sahara.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "There are two seasons, the rainy season and a long dry season"
+                },
+                {
+                  "point": 1,
+                  "quote": "it reduces as one goes north, and the rainy season becomes shorter"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is hot all year but the range of temperature is bigger than in the south"
+                },
+                {
+                  "point": 3,
+                  "quote": "the harmattan blows with dust from the Sahara"
+                }
+              ],
+              "feedback": "Full marks. You compared the rainfall and the temperature range with the south, which makes each feature clear."
+            },
+            {
+              "tier": "full",
+              "text": "The climate has distinct wet and dry seasons. Annual rainfall is moderate and it decreases from south to north. The temperature is high all year, with a higher annual range than the equatorial region, and the nights in the dry season can be cool. The tropical continental air mass brings the harmattan, which is dry and dusty.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The climate has distinct wet and dry seasons"
+                },
+                {
+                  "point": 1,
+                  "quote": "Annual rainfall is moderate and it decreases from south to north"
+                },
+                {
+                  "point": 2,
+                  "quote": "The temperature is high all year, with a higher annual range than the equatorial region"
+                },
+                {
+                  "point": 3,
+                  "quote": "The tropical continental air mass brings the harmattan, which is dry and dusty"
+                }
+              ],
+              "feedback": "Excellent. Naming the air mass that brings the harmattan is a detail examiners like."
+            },
+            {
+              "tier": "partial",
+              "text": "The climate has a wet season and a dry season. The temperature is high. The vegetation is savanna.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The climate has a wet season and a dry season"
+                }
+              ],
+              "feedback": "You have the two seasons. Say more about the features asked: how rainfall changes northwards, that the annual range of temperature is large, and the harmattan in the dry season. Vegetation is not a feature of the climate itself."
+            },
+            {
+              "tier": "partial",
+              "text": "It is hot throughout the year and the range of temperature is large. In the dry season the harmattan blows from the Sahara and it is dusty.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "It is hot throughout the year and the range of temperature is large"
+                },
+                {
+                  "point": 3,
+                  "quote": "the harmattan blows from the Sahara and it is dusty"
+                }
+              ],
+              "feedback": "Temperature and harmattan are well described. Add the distinct wet and long dry seasons, and the rainfall that is moderate and decreases northwards."
+            },
+            {
+              "tier": "weak",
+              "text": "It rains throughout the year in this climate and the forest is thick. It is very hot.",
+              "meets": [],
+              "feedback": "Rain all year and thick forest describe the equatorial climate. The tropical continental climate has a long dry season and a shorter wet season, with savanna grass."
+            },
+            {
+              "tier": "weak",
+              "text": "This climate has harmattan. The harmattan is a wet wind that blows from the Atlantic Ocean.",
+              "meets": [],
+              "feedback": "The harmattan is dry and dusty, and blows from the Sahara in the north-east, not from the Atlantic. Add the two seasons, the northward decrease in rainfall and the high temperatures."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) What is climate change? (b) State two human causes of climate change. (c) State one effect of climate change on Nigeria. (d) Suggest one way of reducing it.",
+          "markScheme": [
+            "A long-term change in the average weather conditions of the earth, especially global warming",
+            "Cause: burning fossil fuels, gas flaring or bush burning adds carbon dioxide and other greenhouse gases that trap heat",
+            "Cause: deforestation, because fewer trees are left to absorb carbon dioxide",
+            "Effect, for example rising sea level flooding the Lagos coast, or drought and desert encroachment in the north",
+            "Remedy, for example afforestation, ending gas flaring or using solar energy"
+          ],
+          "modelAnswer": "(a) Climate change is a long-term change in the average weather of the earth, especially the rise in temperature called global warming. (b) One cause is the burning of fossil fuels and the flaring of gas, which add greenhouse gases that trap heat; another is deforestation, since fewer trees remain to absorb carbon dioxide. (c) Rising sea level can flood low coasts such as Lagos, and drought and desert encroachment are growing in the north. (d) It can be reduced by planting trees and by using solar energy instead of fossil fuels.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Climate change is a long-term change in the average weather of the earth, such as global warming. Burning of fuels like petrol and coal, and gas flaring, put carbon dioxide into the air which traps heat. Cutting down forests means fewer trees to take in carbon dioxide. The sea level is rising and the coast of Lagos is flooding. We can plant more trees.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Climate change is a long-term change in the average weather of the earth, such as global warming"
+                },
+                {
+                  "point": 1,
+                  "quote": "Burning of fuels like petrol and coal, and gas flaring, put carbon dioxide into the air which traps heat"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cutting down forests means fewer trees to take in carbon dioxide"
+                },
+                {
+                  "point": 3,
+                  "quote": "The sea level is rising and the coast of Lagos is flooding"
+                },
+                {
+                  "point": 4,
+                  "quote": "We can plant more trees"
+                }
+              ],
+              "feedback": "Full marks. Each cause comes with its reason, so it is more than a list."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It is a change in the usual weather of the earth over many years, mainly rise in temperature. (b) Burning fossil fuels in vehicles and generators releases greenhouse gases. Deforestation reduces the trees that absorb carbon dioxide. (c) Drought and desertification are getting worse in the northern states. (d) Using solar power in place of generators.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is a change in the usual weather of the earth over many years, mainly rise in temperature"
+                },
+                {
+                  "point": 1,
+                  "quote": "Burning fossil fuels in vehicles and generators releases greenhouse gases"
+                },
+                {
+                  "point": 2,
+                  "quote": "Deforestation reduces the trees that absorb carbon dioxide"
+                },
+                {
+                  "point": 3,
+                  "quote": "Drought and desertification are getting worse in the northern states"
+                },
+                {
+                  "point": 4,
+                  "quote": "Using solar power in place of generators"
+                }
+              ],
+              "feedback": "Excellent. Using generators as an example links the cause to daily life, and the remedy matches it."
+            },
+            {
+              "tier": "partial",
+              "text": "Climate change is when the average weather of the earth changes for a long time. A cause is burning of fossil fuels. An effect is flooding of the coast.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Climate change is when the average weather of the earth changes for a long time"
+                },
+                {
+                  "point": 1,
+                  "quote": "A cause is burning of fossil fuels"
+                },
+                {
+                  "point": 3,
+                  "quote": "An effect is flooding of the coast"
+                }
+              ],
+              "feedback": "Definition, one cause and one effect are right. The question wants two causes, so add deforestation, and a way of reducing climate change, such as planting trees."
+            },
+            {
+              "tier": "partial",
+              "text": "The causes are gas flaring and cutting down of trees. The effect is that there will be drought in the north. It can be stopped by planting trees.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The causes are gas flaring"
+                },
+                {
+                  "point": 2,
+                  "quote": "cutting down of trees"
+                },
+                {
+                  "point": 3,
+                  "quote": "there will be drought in the north"
+                },
+                {
+                  "point": 4,
+                  "quote": "It can be stopped by planting trees"
+                }
+              ],
+              "feedback": "Causes, effect and remedy are right. You did not say what climate change is, which earns one mark: a long-term change in the average weather of the earth."
+            },
+            {
+              "tier": "weak",
+              "text": "Climate change is when the weather changes from rain to sun in one day. It is caused by the sun getting too close to the earth. We should wear light clothes.",
+              "meets": [],
+              "feedback": "Weather changing in a day is just weather. Climate change is a long-term change in average conditions, with human causes such as burning fuel and cutting forests. Remedies are things we can do, such as planting trees."
+            },
+            {
+              "tier": "weak",
+              "text": "Climate change means change in climate. The cause is the ozone layer and pollution. It reduces by planting trees.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "It reduces by planting trees"
+                }
+              ],
+              "feedback": "Planting trees is a good remedy. A definition cannot repeat the term: say a long-term change in the earth's average weather. Name the causes exactly: burning fossil fuels, gas flaring and deforestation."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Environmental resources: renewable and non-renewable",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define an environmental resource;\n2. classify resources as renewable or non-renewable, with examples;\n3. name the types of resource: vegetation, water, mineral and atmospheric;\n4. state the importance of each type to people and to Nigeria.\n\n## Materials\n\nSamples or pictures of timber, limestone, tin ore, crude oil, a bottle of water, a small solar lamp, a map of Nigeria showing Kainji Dam, the Niger Delta oil fields and the Jos tin fields.\n\n## Starter (5 minutes)\n\nSwitch on the solar lamp and show a candle. Ask: which will last longer if we use it every day, and why?\n\n## Development\n\n1. Define a resource as anything in the environment that people use to meet their needs.\n2. Renewable resources are replaced naturally within a short time (sunlight, wind, water, forests and fish if well managed). Non-renewable resources are used up and take millions of years to form (oil, coal, tin).\n3. Types: vegetation (timber, fuelwood, food), water (drinking, farming, electricity, fishing), minerals (building, industry, energy) and atmospheric (air for breathing, wind and sun for power).\n4. Importance of each, with Nigerian examples: Kainji and Jebba dams, Ewekoro limestone, Niger Delta oil, Katsina wind farm.\n5. Wise use: conservation, replanting and recycling.\n\n## Class activity\n\nStudents sort twelve resource cards into renewable and non-renewable, then write one sentence on how Nigeria uses each.\n\n## Evaluation\n\n1. Why is fish a renewable resource, but only if it is well managed?\n2. Name two uses of limestone.\n\n## Assignment\n\nProblem set on the app, due Friday.",
+      "reading": {
+        "title": "What the environment gives us",
+        "content": "# Environmental resources\n\nAn **environmental resource** is anything in the natural environment that people use to meet their needs. Examples are soil, water, forests, minerals, air and sunshine.\n\n## Renewable and non-renewable resources\n\n**Renewable resources** are replaced by nature within a short time, so they do not run out if used with care. Sunlight, wind and rain are renewable. Forests and fish are renewable too, but only if people plant new trees and do not catch more fish than can breed.\n\n**Non-renewable resources** cannot be replaced in a human lifetime because they took millions of years to form. Once used, they are gone. Crude oil, natural gas, coal and metallic ores such as tin and iron are non-renewable.\n\n## Types of resource\n\n**Vegetation.** Forests give timber for building and furniture, fuelwood, fruit, medicine and raw materials like rubber. Roots hold soil together and prevent erosion, and leaves take in carbon dioxide and give out oxygen. Grassland feeds cattle.\n\n**Water.** Rivers, lakes, seas and underground water give drinking water, water for irrigation and fish, and a means of transport. Falling water turns turbines to give hydroelectric power at Kainji, Jebba and Shiroro.\n\n**Minerals.** Limestone is used in cement at Ewekoro and Obajana, tin and columbite come from the Jos Plateau, and crude oil from the Niger Delta earns most of Nigeria's foreign exchange.\n\n**Atmospheric resources.** Air gives oxygen to breathe. Wind can drive turbines, as at the wind farm in Katsina State, and sunshine gives solar power and dries crops and salt.\n\n## Using resources wisely\n\nBecause some resources run out, people practise **conservation**: planting trees to replace those cut, setting limits on fishing, recycling metals and using solar and wind power instead of oil."
+      },
+      "cards": [
+        {
+          "front": "Environmental resource",
+          "back": "Anything in the natural environment that people use to meet their needs."
+        },
+        {
+          "front": "Renewable resource",
+          "back": "A resource that nature replaces within a short time, such as sunlight, wind or well-managed forests."
+        },
+        {
+          "front": "Non-renewable resource",
+          "back": "A resource that cannot be replaced once used, because it took millions of years to form, such as crude oil."
+        },
+        {
+          "front": "Vegetation resource",
+          "back": "Natural plant cover such as forest and grassland, giving timber, fuelwood and food."
+        },
+        {
+          "front": "Mineral resource",
+          "back": "A useful substance dug from the earth, such as tin, limestone and crude oil."
+        },
+        {
+          "front": "Atmospheric resource",
+          "back": "A resource from the air, such as oxygen, wind and sunshine."
+        },
+        {
+          "front": "Hydroelectric power",
+          "back": "Electricity made by falling water turning turbines, as at Kainji Dam."
+        },
+        {
+          "front": "Conservation",
+          "back": "Using resources carefully so that they last, for example by replanting trees."
+        },
+        {
+          "front": "Limestone",
+          "back": "A mineral used to make cement."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a non-renewable resource?",
+          "options": [
+            "Wind",
+            "Crude oil",
+            "Rainfall",
+            "Sunshine"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these can be replaced naturally within a short time if it is well managed?",
+          "options": [
+            "Natural gas",
+            "Iron ore",
+            "Tin",
+            "Fish in a river"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which mineral is the main raw material for making cement in Ewekoro?",
+          "options": [
+            "Limestone",
+            "Columbite",
+            "Coal",
+            "Bauxite"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is an atmospheric resource?",
+          "options": [
+            "Timber",
+            "Tin ore",
+            "Wind",
+            "Underground water"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The Kainji Dam on the River Niger mainly makes use of which type of resource?",
+          "options": [
+            "Mineral",
+            "Vegetation",
+            "Atmospheric",
+            "Water"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between renewable and non-renewable resources, giving two examples of each. Why must non-renewable resources be used carefully?",
+          "markScheme": [
+            "Renewable resources are replaced naturally within a short time",
+            "Two examples of renewable resources, such as sunlight, wind, water or forests",
+            "Non-renewable resources cannot be replaced once used, because they took millions of years to form",
+            "Two examples of non-renewable resources, such as crude oil, coal, tin or iron ore",
+            "They must be used carefully because they will run out and future generations will not have them"
+          ],
+          "modelAnswer": "Renewable resources are replaced by nature within a short time, for example sunlight and wind. Non-renewable resources cannot be replaced once they are used, because they took millions of years to form; crude oil and tin are examples. Non-renewable resources must be used carefully because they will run out, and then the next generation will not have them.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A renewable resource is one that nature can replace in a short time, like sunshine and wind. A non-renewable resource cannot be replaced after it is used because it took millions of years to form, like crude oil and coal. We must use non-renewable ones carefully because they will finish and the children after us will not have any.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A renewable resource is one that nature can replace in a short time"
+                },
+                {
+                  "point": 1,
+                  "quote": "like sunshine and wind"
+                },
+                {
+                  "point": 2,
+                  "quote": "cannot be replaced after it is used because it took millions of years to form"
+                },
+                {
+                  "point": 3,
+                  "quote": "like crude oil and coal"
+                },
+                {
+                  "point": 4,
+                  "quote": "they will finish and the children after us will not have any"
+                }
+              ],
+              "feedback": "Full marks. You included the reason non-renewable resources cannot be replaced, which is the heart of the distinction."
+            },
+            {
+              "tier": "full",
+              "text": "Renewable resources are naturally replenished in a short period of time, for example water and well-managed forests. Non-renewable resources are those that cannot be regenerated once consumed, for example tin and iron ore. They have to be conserved since the reserves are limited and will be exhausted, leaving nothing for future generations.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Renewable resources are naturally replenished in a short period of time"
+                },
+                {
+                  "point": 1,
+                  "quote": "for example water and well-managed forests"
+                },
+                {
+                  "point": 2,
+                  "quote": "cannot be regenerated once consumed"
+                },
+                {
+                  "point": 3,
+                  "quote": "for example tin and iron ore"
+                },
+                {
+                  "point": 4,
+                  "quote": "the reserves are limited and will be exhausted, leaving nothing for future generations"
+                }
+              ],
+              "feedback": "Excellent. Putting 'well-managed' before forests shows you understand that renewable does not mean unlimited."
+            },
+            {
+              "tier": "partial",
+              "text": "Renewable resources are those that can be used again and again like wind and the sun. Non-renewable resources are like crude oil and coal. They are important so we must use them carefully.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "like wind and the sun"
+                },
+                {
+                  "point": 3,
+                  "quote": "like crude oil and coal"
+                }
+              ],
+              "feedback": "Your examples are right. A renewable resource is one that nature replaces within a short time. A non-renewable resource cannot be replaced after use. Also say why they must be used carefully: they will run out."
+            },
+            {
+              "tier": "partial",
+              "text": "A non-renewable resource cannot be replaced once it is used. An example is petroleum. A renewable resource can be replaced, like trees.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "A non-renewable resource cannot be replaced once it is used"
+                },
+                {
+                  "point": 3,
+                  "quote": "An example is petroleum"
+                }
+              ],
+              "feedback": "Non-renewable is well done. For renewable, say it is replaced naturally in a short time, and give two examples. Then say why non-renewable ones must be used carefully."
+            },
+            {
+              "tier": "weak",
+              "text": "Renewable resources are the ones that renew themselves like crude oil because oil comes again from the ground. Non-renewable ones are finished like trees.",
+              "meets": [],
+              "feedback": "These are the wrong way round. Crude oil is non-renewable because it took millions of years to form. Trees and forests can be replaced if we plant new ones, so they are renewable."
+            },
+            {
+              "tier": "weak",
+              "text": "Non-renewable resources are things that cannot be seen like air. Renewable are the ones we can see, for example timber.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "for example timber"
+                }
+              ],
+              "feedback": "Timber is a good example of a renewable resource if trees are replanted. But the difference is not whether we can see it: renewable resources are replaced naturally in a short time and non-renewable ones, like oil, cannot be replaced once used."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain four ways in which forest vegetation is important to Nigeria.",
+          "markScheme": [
+            "Gives timber for building, furniture and export, which earns income",
+            "Gives fuelwood, food, fruits and medicines to rural people",
+            "Roots and leaf cover protect the soil from erosion",
+            "Trees take in carbon dioxide and give out oxygen, and help to bring rain"
+          ],
+          "modelAnswer": "Forests give timber such as iroko and mahogany, which is used for building and furniture and exported to earn income. They give fuelwood, food, fruits and medicines to people in rural areas. The roots hold the soil and the leaves cover it from rain, so erosion is reduced. Trees take in carbon dioxide and give out oxygen, which keeps the air fresh, and they help to bring rain.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Forests give us timber like iroko which is used to build houses and make furniture and it is sold abroad to bring money to the country. People in villages get firewood, fruits and herbs for medicine from the forest. The roots of the trees hold the soil together and the leaves cover the soil so that rain does not wash it away. The trees take in carbon dioxide and give out oxygen, and they help rain to fall.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "timber like iroko which is used to build houses and make furniture and it is sold abroad to bring money to the country"
+                },
+                {
+                  "point": 1,
+                  "quote": "People in villages get firewood, fruits and herbs for medicine from the forest"
+                },
+                {
+                  "point": 2,
+                  "quote": "The roots of the trees hold the soil together and the leaves cover the soil so that rain does not wash it away"
+                },
+                {
+                  "point": 3,
+                  "quote": "The trees take in carbon dioxide and give out oxygen, and they help rain to fall"
+                }
+              ],
+              "feedback": "Full marks. Four distinct points, each explained in a sentence."
+            },
+            {
+              "tier": "full",
+              "text": "(1) Forests supply timber for construction and for export, which earns foreign exchange. (2) They provide food, fuelwood and traditional medicine for rural communities. (3) Vegetation cover reduces soil erosion because roots bind the soil and leaves reduce the impact of raindrops. (4) They absorb carbon dioxide and release oxygen, and they add moisture to the air for rainfall.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Forests supply timber for construction and for export, which earns foreign exchange"
+                },
+                {
+                  "point": 1,
+                  "quote": "They provide food, fuelwood and traditional medicine for rural communities"
+                },
+                {
+                  "point": 2,
+                  "quote": "roots bind the soil and leaves reduce the impact of raindrops"
+                },
+                {
+                  "point": 3,
+                  "quote": "They absorb carbon dioxide and release oxygen, and they add moisture to the air for rainfall"
+                }
+              ],
+              "feedback": "Excellent. The raindrop impact is a precise reason for why leaves prevent erosion."
+            },
+            {
+              "tier": "partial",
+              "text": "Forests give timber for building houses. They give food and firewood for the people. They are important to Nigeria.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Forests give timber for building houses"
+                },
+                {
+                  "point": 1,
+                  "quote": "They give food and firewood for the people"
+                }
+              ],
+              "feedback": "Two ways are well made. The question asks for four. Add that roots protect the soil from erosion and that trees take in carbon dioxide and give oxygen."
+            },
+            {
+              "tier": "partial",
+              "text": "The trees protect the soil from erosion because the roots hold it. They also give oxygen to the air. The animals live in the forest and people hunt them for meat.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The trees protect the soil from erosion because the roots hold it"
+                },
+                {
+                  "point": 3,
+                  "quote": "They also give oxygen to the air"
+                }
+              ],
+              "feedback": "Erosion and oxygen are well made. Hunting is not quite the point: say that the forest gives timber, fuelwood and food, which people use and sell."
+            },
+            {
+              "tier": "weak",
+              "text": "Forests are important because they are green and beautiful. They make people happy. They have many trees.",
+              "meets": [],
+              "feedback": "Describing the forest is not enough. Give what it does: timber to sell, firewood and food, protection of the soil from erosion, and oxygen for the air."
+            },
+            {
+              "tier": "weak",
+              "text": "Forests are important because we use them to make bricks and tin. They also give crude oil.",
+              "meets": [],
+              "feedback": "Bricks, tin and crude oil are not forest products; they are made from clay or dug from the earth. Think about what trees give us: timber, fuelwood, fruits, protection for the soil and oxygen."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
