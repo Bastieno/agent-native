@@ -1,0 +1,2665 @@
+{
+  "subject": "Cultural and Creative Arts",
+  "yearGroup": "JSS2",
+  "weeks": {
+    "1": {
+      "topic": "Building major scales and singing in rounds",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. build a major scale on G using the tone and semitone pattern;\n2. explain why F must be sharpened in G major;\n3. use movable-do solfa on a new starting note;\n4. sing a simple round, and learn a long song such as the National Anthem phrase by phrase.\n\n## Materials\n\nA keyboard or a picture of a piano keyboard, a solfa ladder, copies of a simple round, copies of the words of the National Anthem.\n\n## Starter\n\nSing the C major scale in solfa. Ask: what if we begin on a different note? Will the same pattern still work?\n\n## Development\n\n1. Revise the pattern: tone, tone, semitone, tone, tone, tone, semitone.\n2. Build the scale on G: G A B C D E F# G. Test each step. E to F natural is only a semitone, but the pattern needs a tone, so F must be raised to F sharp. F# to G is then the semitone.\n3. Movable do: the first note of any major scale is called do. In G major, do = G, re = A, mi = B, fa = C, sol = D, la = E, ti = F#.\n4. Intervals: do to mi is a third; do to sol is a fifth.\n5. Rounds: the same melody begins in groups one after another. Teach the class to keep their own part.\n6. Learning a long song: learn the words, then the tune phrase by phrase, then join the phrases.\n\n## Class activity\n\nLearners write the G major scale in letters and solfa, mark the semitones, then sing a short round in three groups.\n\n## Evaluation\n\n1. Which note must be sharpened in G major?\n2. If do is G, what is sol?\n3. What is a round?\n\n## Assignment\n\nWorksheet on the app. Write the G major scale and mark the semitones.",
+      "reading": {
+        "title": "The scale on another note",
+        "content": "# Building major scales and singing in rounds\n\n## The pattern works on any note\n\nIn JSS 1 you learned the C major scale. A major scale can begin on any note, and it always follows the same pattern:\n\n**tone, tone, semitone, tone, tone, tone, semitone**\n\nOn the white keys, C major fits this pattern with no sharps or flats. To start on another note, we may have to **sharpen** (raise by a semitone) or **flatten** (lower by a semitone) one note to keep the pattern.\n\n## G major\n\nStart on G and count the steps:\n\n| Step | From | To | Size |\n| --- | --- | --- | --- |\n| 1 | G | A | tone |\n| 2 | A | B | tone |\n| 3 | B | C | semitone |\n| 4 | C | D | tone |\n| 5 | D | E | tone |\n| 6 | E | F# | tone |\n| 7 | F# | G | semitone |\n\nThe natural F is only a semitone above E. The pattern needs a **tone** there, so F is raised to **F sharp (F#)**. The scale of G major is:\n\n**G A B C D E F# G**\n\nThe semitones are between **B and C** and between **F# and G**.\n\n## Movable-do solfa\n\nIn solfa, do is always the first note of the scale, wherever that note is. In G major:\n\n| do | re | mi | fa | sol | la | ti | do |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| G | A | B | C | D | E | F# | G |\n\nSo the tune sung to solfa can be sung in any key.\n\n## Intervals in solfa\n\n- do to mi is a **third**.\n- do to sol is a **fifth**.\n- do to the upper do is an **octave**.\n\n## Singing in a round\n\nA **round** is a song in which every group sings the same melody but begins one after another. The teacher divides the class into groups. Group 1 starts. Group 2 begins when group 1 reaches the second line, and group 3 when group 2 reaches the second line. Each group keeps to a steady beat and sings its own part without following the others. At the end, the groups finish one after another, or stop together on the teacher's sign.\n\n## Learning a long song\n\nFor a long song such as the National Anthem, learn the words, then the tune, **phrase by phrase**, and join the phrases at the end. Breathe at the ends of phrases and finish each line together."
+      },
+      "cards": [
+        {
+          "front": "Pattern of a major scale",
+          "back": "Tone, tone, semitone, tone, tone, tone, semitone."
+        },
+        {
+          "front": "G major scale",
+          "back": "G A B C D E F# G."
+        },
+        {
+          "front": "Sharp",
+          "back": "A sign that raises a note by a semitone."
+        },
+        {
+          "front": "Movable do",
+          "back": "In solfa, do is always the first note of whichever scale you are in."
+        },
+        {
+          "front": "do to sol",
+          "back": "An interval of a fifth."
+        },
+        {
+          "front": "Round",
+          "back": "A song in which groups sing the same melody, starting one after another."
+        },
+        {
+          "front": "Learning a long song",
+          "back": "Learn it phrase by phrase, then join the phrases."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "If do is G, what note is sol?",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "C"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "To make a major scale starting on G, one note must be sharpened. Which one?",
+          "options": [
+            "F",
+            "C",
+            "D",
+            "B"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The interval from do to sol is a",
+          "options": [
+            "second",
+            "fifth",
+            "octave",
+            "unison"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "In a round, the groups",
+          "options": [
+            "sing different tunes",
+            "all sing the same note",
+            "stop after one line",
+            "sing the same tune but begin one after another"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which is a good way to learn a long song such as the National Anthem?",
+          "options": [
+            "Learn the whole song at once without stopping",
+            "Sing the last line only",
+            "Learn it phrase by phrase, then join the phrases",
+            "Hum it without the words"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Build the scale of G major using the pattern of tones and semitones. Write the notes, say which note must be sharpened and why, and mark where the semitones are.",
+          "markScheme": [
+            "Writes the scale as G A B C D E F# G",
+            "Says that F must be sharpened to F#",
+            "Gives the reason, that E to F natural is only a semitone and the pattern needs a tone",
+            "Says the semitones are between B and C and between F# and G"
+          ],
+          "modelAnswer": "The scale is G A B C D E F# G. F must be sharpened to F#, because E to F natural is only a semitone and the pattern needs a tone there. The semitones are between B and C and between F# and G.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Pattern: tone, tone, semitone, tone, tone, tone, semitone. Starting on G: G A B C D E F# G. The note F must be sharpened to F#, because E to F natural is only a semitone, and we need a tone there. The semitones are B to C and F# to G.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "G A B C D E F# G"
+                },
+                {
+                  "point": 1,
+                  "quote": "The note F must be sharpened to F#"
+                },
+                {
+                  "point": 2,
+                  "quote": "because E to F natural is only a semitone, and we need a tone there"
+                },
+                {
+                  "point": 3,
+                  "quote": "The semitones are B to C and F# to G"
+                }
+              ],
+              "feedback": "Full marks. Your reason shows that you checked each step against the pattern."
+            },
+            {
+              "tier": "full",
+              "text": "G major goes G, A, B, C, D, E, F sharp, G. I count tone, tone, semitone, tone, tone, tone, semitone. F has to be sharp so that the step from E is a whole tone and the step to the top G is a semitone. The two semitones are B to C and F sharp to G.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "G, A, B, C, D, E, F sharp, G"
+                },
+                {
+                  "point": 1,
+                  "quote": "F has to be sharp"
+                },
+                {
+                  "point": 2,
+                  "quote": "so that the step from E is a whole tone and the step to the top G is a semitone"
+                },
+                {
+                  "point": 3,
+                  "quote": "The two semitones are B to C and F sharp to G"
+                }
+              ],
+              "feedback": "All four marks. Writing 'F sharp' in words is fine; the F# sign is the usual way."
+            },
+            {
+              "tier": "partial",
+              "text": "G A B C D E F# G. The semitones are between E and F and between B and C.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "G A B C D E F# G"
+                }
+              ],
+              "feedback": "The scale is right, but you have not said that F is sharpened or why. In this scale the semitones are B to C and F# to G, not E to F."
+            },
+            {
+              "tier": "partial",
+              "text": "The scale of G needs a sharp on F. The semitones are B to C and F# to G.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The scale of G needs a sharp on F"
+                },
+                {
+                  "point": 3,
+                  "quote": "The semitones are B to C and F# to G"
+                }
+              ],
+              "feedback": "The sharp and the semitones are right. Write out the whole scale and say why: E to F natural is only a semitone but the pattern needs a tone."
+            },
+            {
+              "tier": "weak",
+              "text": "G major has all the same notes as C major, just starting from G.",
+              "meets": [],
+              "feedback": "Then the pattern would be wrong: E to F is a semitone and F to G is a tone. To keep tone, tone, semitone, tone, tone, tone, semitone, F must be raised to F#."
+            },
+            {
+              "tier": "weak",
+              "text": "Start on G and count seven keys on the piano and you get the scale.",
+              "meets": [],
+              "feedback": "Counting keys does not give the scale. Apply the pattern of tones and semitones step by step to find each note."
+            }
+          ]
+        },
+        {
+          "prompt": "Your class will sing a round in three groups. Explain what a round is, how the teacher should organise the groups, and two things each singer must remember.",
+          "markScheme": [
+            "Explains that in a round groups sing the same melody starting one after another",
+            "Describes how the groups enter, for example group two starts when group one reaches the second line",
+            "Says that each singer must keep to a steady beat and keep their own part",
+            "Says how the round ends, for example one group after another or all stopping together on the teacher's sign"
+          ],
+          "modelAnswer": "A round is a song in which groups sing the same melody but begin one after another. The teacher divides the class into three groups; group two begins when group one reaches the second line, and group three when group two does. Each singer must keep to the beat and sing their own part without following another group. The round ends with the groups finishing in turn or stopping together on the teacher's sign.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A round is a song in which every group sings the same tune but they begin one after another. For a round in three groups, the teacher divides the class into three groups. Group one starts, and group two enters after the first line, and group three after the second line. Each group must keep a steady beat and keep singing its own part, without following the others. At the end the groups stop one after another when they finish the last line, or all stop together on a signal from the teacher.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A round is a song in which every group sings the same tune but they begin one after another"
+                },
+                {
+                  "point": 1,
+                  "quote": "Group one starts, and group two enters after the first line, and group three after the second line"
+                },
+                {
+                  "point": 2,
+                  "quote": "keep a steady beat and keep singing its own part, without following the others"
+                },
+                {
+                  "point": 3,
+                  "quote": "the groups stop one after another when they finish the last line, or all stop together on a signal from the teacher"
+                }
+              ],
+              "feedback": "Full marks. You described the entries and the ending as well as the idea."
+            },
+            {
+              "tier": "full",
+              "text": "A round is when singers sing the same melody but start at different times, so the tune overlaps itself. The teacher splits the class into three groups, and the second group starts when the first group reaches the second line, the third when the second group begins. We must keep in time and listen only to our own group so we do not get confused. At the end the teacher gives a sign and everybody stops together.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "singers sing the same melody but start at different times"
+                },
+                {
+                  "point": 1,
+                  "quote": "the second group starts when the first group reaches the second line, the third when the second group begins"
+                },
+                {
+                  "point": 2,
+                  "quote": "keep in time and listen only to our own group so we do not get confused"
+                },
+                {
+                  "point": 3,
+                  "quote": "the teacher gives a sign and everybody stops together"
+                }
+              ],
+              "feedback": "All four marks. Keeping to your own group is the hardest part of a round and you named it."
+            },
+            {
+              "tier": "partial",
+              "text": "A round is when people sing the same tune but at different times. The teacher divides the class into groups.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sing the same tune but at different times"
+                }
+              ],
+              "feedback": "You have the meaning. Say exactly when each group enters, what singers must remember, and how the round ends."
+            },
+            {
+              "tier": "partial",
+              "text": "In a round group two starts after group one has sung the first line. Everybody must keep to the beat. A round is a song that goes round and round.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "group two starts after group one has sung the first line"
+                },
+                {
+                  "point": 2,
+                  "quote": "Everybody must keep to the beat"
+                }
+              ],
+              "feedback": "Entries and beat are right. A round is more exact than 'goes round and round': the same melody is sung by groups that begin one after another. Add how it ends.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A round is a circle of people singing facing each other and holding hands.",
+              "meets": [],
+              "feedback": "A round is not about standing in a circle. It is a song in which groups sing the same melody starting one after another."
+            },
+            {
+              "tier": "weak",
+              "text": "A round is when all the groups sing different songs together.",
+              "meets": [],
+              "feedback": "In a round every group sings the same melody; they just begin at different times."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Voice range, choir parts, warming up and diction",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain vocal range and the changing voice;\n2. place singers in SATB parts according to their voices;\n3. perform a safe vocal warm-up;\n4. explain diction and why it matters in singing.\n\n## Materials\n\nA keyboard or the teacher's voice, a list of the class's voices, a marker board.\n\n## Starter\n\nAsk each learner to hum their highest and lowest comfortable notes. Discuss why the class has different ranges.\n\n## Development\n\n1. Range is the span from the lowest to the highest note a singer can sing comfortably.\n2. Voice change: in the early teens, boys' voices deepen and may crack; take care not to strain them.\n3. Choir parts: soprano, alto, tenor and bass. Place singers by comfortable range, not by height or friendship.\n4. Warm-up: relax neck and shoulders, slow deep breaths, gentle humming, easy scales on 'ah'.\n5. Diction is clear pronunciation of words in singing. Practise consonants at the ends of words and open vowels.\n\n## Class activity\n\nThe class is divided into SATB parts using each learner's range and sings a short hymn with the warm-up first.\n\n## Evaluation\n\n1. What is vocal range?\n2. Why do singers warm up?\n3. What is diction?\n\n## Assignment\n\nQuiz on the app. Try the warm-up at home and write down your highest and lowest notes.",
+      "reading": {
+        "title": "Taking care of a singing voice",
+        "content": "# Voice range, choir parts, warm-ups and diction\n\n## Vocal range\n\nA singer's **range** is the span from the lowest to the highest note they can sing comfortably. Two people of the same age can have different ranges. A choir master listens to each singer and places them where the notes fit.\n\n## Changing voices\n\nIn the early teens, a boy's voice becomes deeper. This is called the **voice breaking** or the voice changing. The voice may crack or slip between high and low. It is not a problem. Boys going through it should sing in the range they can manage and not force high notes. Girls' voices also deepen slightly, but less.\n\n## SATB parts\n\nA mixed choir has four parts:\n\n- **Soprano:** high female or child voices.\n- **Alto:** lower female voices (and some boys).\n- **Tenor:** higher male voices.\n- **Bass:** lower male voices.\n\nThe choir master places singers by **comfortable range**, not by height or friendship. When each part sings its own notes at the same time, the choir makes **harmony**.\n\n## Warming up\n\nSingers warm up before singing, just as footballers warm up before a match, so the voice is ready and does not strain. A simple warm-up:\n\n1. Roll the shoulders and relax the neck.\n2. Take slow, deep breaths with the belly moving out.\n3. Hum gently, starting low and moving higher.\n4. Sing easy scales on \"ah\", up and down.\n\n## Diction\n\n**Diction** means clear pronunciation of the words in a song. A song with unclear diction cannot be understood by the listener, however beautiful the tune.\n\nTips for good diction:\n\n- Open the mouth enough for the vowels.\n- Pronounce the consonants at the ends of words, such as the t in \"night\".\n- Sing the words as you would say them.\n- Learn the meaning of the words, so you sing them with feeling.\n\n## Tone and care\n\nSing in the voice that is natural to you, not a copy of someone else's. Drink water, rest tired voices and do not shout."
+      },
+      "cards": [
+        {
+          "front": "Vocal range",
+          "back": "The span from the lowest to the highest note a singer can sing comfortably."
+        },
+        {
+          "front": "Voice breaking",
+          "back": "The deepening of a boy's voice in the early teens."
+        },
+        {
+          "front": "SATB",
+          "back": "The four parts of a mixed choir: soprano, alto, tenor, bass."
+        },
+        {
+          "front": "Warm-up",
+          "back": "Gentle exercises done before singing to prepare the voice."
+        },
+        {
+          "front": "Diction",
+          "back": "Clear pronunciation of the words in a song."
+        },
+        {
+          "front": "How a choir master places singers",
+          "back": "By comfortable range, not by height or friendship."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A boy's voice becomes deeper in his early teens. This is called",
+          "options": [
+            "tuning",
+            "the voice breaking",
+            "harmony",
+            "echo"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A singer's range is",
+          "options": [
+            "how loudly she can sing",
+            "how fast she can sing",
+            "the number of songs she knows",
+            "the span from her lowest to her highest comfortable note"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Why do singers warm up before singing?",
+          "options": [
+            "To prepare the voice and avoid strain",
+            "To make the audience clap",
+            "To make the song shorter",
+            "To change their voice type"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Clear pronunciation of the words in a song is called",
+          "options": [
+            "pitch",
+            "tempo",
+            "diction",
+            "harmony"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "In an SATB choir, which part usually sings the highest notes?",
+          "options": [
+            "Bass",
+            "Soprano",
+            "Tenor",
+            "Alto"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe three things a singer should do to warm up before singing.",
+          "markScheme": [
+            "Describes a first warm-up activity, such as relaxing the body or neck",
+            "Describes a second activity, such as slow deep breathing",
+            "Describes a third activity, such as gentle humming or easy scales"
+          ],
+          "modelAnswer": "A singer should stretch and relax the neck and shoulders, take slow deep breaths with the belly moving out, and hum gently or sing easy scales up and down before singing the song at full voice.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A singer should first stretch and stand straight so that the body is relaxed. Then do some slow breathing to prepare the lungs. Then hum gently up and down a few notes, starting low and going higher, before singing the song at full voice.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "stretch and stand straight so that the body is relaxed"
+                },
+                {
+                  "point": 1,
+                  "quote": "do some slow breathing to prepare the lungs"
+                },
+                {
+                  "point": 2,
+                  "quote": "hum gently up and down a few notes"
+                }
+              ],
+              "feedback": "Full marks. Your three steps move from body to breath to voice, which is the right order."
+            },
+            {
+              "tier": "full",
+              "text": "Relax the neck and shoulders by rolling them. Take deep breaths with the belly moving out. Sing easy scales on 'ah', going up and down slowly. This warms up the voice so it does not get strained.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Relax the neck and shoulders by rolling them"
+                },
+                {
+                  "point": 1,
+                  "quote": "Take deep breaths with the belly moving out"
+                },
+                {
+                  "point": 2,
+                  "quote": "Sing easy scales on 'ah', going up and down slowly"
+                }
+              ],
+              "feedback": "All three marks. You also gave the reason for warming up."
+            },
+            {
+              "tier": "partial",
+              "text": "A singer should drink water. Also hum before singing.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "hum before singing"
+                }
+              ],
+              "feedback": "Humming is a good warm-up. Water helps the voice but is not a warm-up exercise. Add relaxing the body and slow deep breathing."
+            },
+            {
+              "tier": "partial",
+              "text": "Stand straight and breathe deeply. Then start singing the hardest part of the song.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Stand straight"
+                },
+                {
+                  "point": 1,
+                  "quote": "breathe deeply"
+                }
+              ],
+              "feedback": "Posture and breathing are good. Never begin with the hardest part: hum gently and sing easy scales first to warm the voice."
+            },
+            {
+              "tier": "weak",
+              "text": "A singer warms up by running around the field.",
+              "meets": [],
+              "feedback": "Running warms the body, but a singer needs to warm up the voice with relaxing, deep breathing and gentle humming."
+            },
+            {
+              "tier": "weak",
+              "text": "A singer should shout loudly so that the voice will be strong.",
+              "meets": [],
+              "feedback": "Shouting strains the voice. A warm-up is gentle: relax, breathe slowly and hum."
+            }
+          ]
+        },
+        {
+          "prompt": "A choir of 40 pupils has 16 girls with high voices, 10 girls with lower voices, 8 boys with higher voices and 6 boys with deep voices. Explain which SATB part each group should sing, and why a choir is divided into parts.",
+          "markScheme": [
+            "Says the 16 girls with high voices sing soprano",
+            "Says the 10 girls with lower voices sing alto",
+            "Says the 8 boys with higher voices sing tenor",
+            "Says the 6 boys with deep voices sing bass",
+            "Explains that each part sings different notes at the same time, which makes harmony"
+          ],
+          "modelAnswer": "The 16 high girls sing soprano, the 10 lower girls sing alto, the 8 boys with higher voices sing tenor and the 6 deep-voiced boys sing bass. A choir is divided into parts because each part sings different notes at the same time, which makes harmony.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The 16 girls with high voices should sing soprano. The 10 girls with lower voices should sing alto. The 8 boys should sing tenor, because they have the higher male voices. The 6 boys with deep voices should sing bass. In this way each part has its own notes and together they make harmony, and the parts are fairly balanced.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The 16 girls with high voices should sing soprano"
+                },
+                {
+                  "point": 1,
+                  "quote": "The 10 girls with lower voices should sing alto"
+                },
+                {
+                  "point": 2,
+                  "quote": "The 8 boys should sing tenor"
+                },
+                {
+                  "point": 3,
+                  "quote": "The 6 boys with deep voices should sing bass"
+                },
+                {
+                  "point": 4,
+                  "quote": "each part has its own notes and together they make harmony"
+                }
+              ],
+              "feedback": "Full marks. You gave each group a part and a reason, and noticed that the parts are balanced."
+            },
+            {
+              "tier": "full",
+              "text": "Sopranos: the 16 girls with high voices. Altos: the 10 girls with lower voices. Tenors: the 8 boys who can sing higher. Basses: the 6 boys with deep voices. 16 + 10 + 8 + 6 = 40, so all pupils have a part. The reason for the parts is that when each part sings different notes at the same time, the choir produces harmony.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sopranos: the 16 girls with high voices"
+                },
+                {
+                  "point": 1,
+                  "quote": "Altos: the 10 girls with lower voices"
+                },
+                {
+                  "point": 2,
+                  "quote": "Tenors: the 8 boys who can sing higher"
+                },
+                {
+                  "point": 3,
+                  "quote": "Basses: the 6 boys with deep voices"
+                },
+                {
+                  "point": 4,
+                  "quote": "when each part sings different notes at the same time, the choir produces harmony"
+                }
+              ],
+              "feedback": "All five marks. Adding the numbers to check that all 40 pupils are placed is a good habit."
+            },
+            {
+              "tier": "partial",
+              "text": "The high girls are soprano and the lower girls are alto. The boys sing tenor and bass.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The high girls are soprano"
+                },
+                {
+                  "point": 1,
+                  "quote": "the lower girls are alto"
+                }
+              ],
+              "feedback": "The girls are right. Say which boys sing which part: the 8 higher voices are tenors and the 6 deep voices are basses. Also say why the choir is in parts."
+            },
+            {
+              "tier": "partial",
+              "text": "16 girls are sopranos, 10 girls are altos, 8 boys are basses and 6 boys are tenors.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "16 girls are sopranos"
+                },
+                {
+                  "point": 1,
+                  "quote": "10 girls are altos"
+                }
+              ],
+              "feedback": "The girls are right. The boys with higher voices (8) sing tenor and the deep-voiced boys (6) sing bass. Also explain why a choir has parts."
+            },
+            {
+              "tier": "weak",
+              "text": "All the pupils should sing together the same notes, so the choir will be loud.",
+              "meets": [],
+              "feedback": "A choir is divided into parts, each with its own notes, to make harmony. Place each group by voice: soprano, alto, tenor or bass."
+            },
+            {
+              "tier": "weak",
+              "text": "The tallest pupils should be basses and the short pupils should be sopranos.",
+              "meets": [],
+              "feedback": "Parts are chosen by the voice, not height. The choir master places a singer where the notes fit their range."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Traditional Nigerian music: instruments, styles and their uses",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name traditional instruments of the Yoruba, Igbo and Hausa and say how they are played;\n2. group instruments as membranophones, idiophones, aerophones and chordophones;\n3. describe the occasions on which traditional music is used;\n4. explain call-and-response singing.\n\n## Materials\n\nRecordings or live demonstrations of a talking drum, ogene, udu, kakaki and goge (or pictures), a chart of instrument groups.\n\n## Starter\n\nPlay a short clip of a talking drum. Ask what the drum is 'saying' and why people understand it.\n\n## Development\n\n1. Instrument groups: membranophones (stretched skin: drums such as dundun, bata, gangan), idiophones (the body of the instrument vibrates: ogene gong, udu clay pot, sekere gourd rattle, ekwe slit drum), aerophones (air: kakaki long trumpet, algaita, flutes) and chordophones (strings: goge one-string fiddle).\n2. Yoruba: dundun and bata drums, sekere. Igbo: ogene, udu, ekwe. Hausa: kakaki, algaita, goge, gangan.\n3. Occasions: royal courts, festivals, weddings, funerals, farming, masquerades and storytelling.\n4. Features: call and response, repetition, improvisation, and drums that imitate the tones of spoken language.\n5. Modern popular styles grew from traditional ones.\n\n## Class activity\n\nGroups sort picture cards of instruments into the four groups and match each to its people. Then the class practises a call-and-response song.\n\n## Evaluation\n\n1. Which group does an udu belong to?\n2. Name an aerophone.\n3. What is call and response?\n\n## Assignment\n\nProblem set on the app. Find out which traditional instruments are used in your family's hometown.",
+      "reading": {
+        "title": "The sounds of home",
+        "content": "# Traditional Nigerian music\n\nNigeria has hundreds of ethnic groups and many traditions of music. Music is part of daily life: it is played when a king is installed, when a baby is named, when a farmer clears the field and when a person is buried.\n\n## Instruments and their groups\n\nInstruments are grouped by how they make their sound.\n\n**Membranophones** make sound from a stretched skin.\n\n- The **dundun**, a Yoruba talking drum, is held under the arm and struck with a curved stick. The drummer squeezes the cords to change the pitch, so the drum can imitate the tones of Yoruba speech.\n- The **bata** is a double-headed Yoruba drum.\n- The **gangan** is the Hausa talking drum.\n\n**Idiophones** make sound from the body of the instrument itself.\n\n- The **ogene** is an Igbo metal gong, struck with a stick.\n- The **udu** is a clay pot with a hole. The player strikes it with the palm to make deep sounds.\n- The **sekere** is a gourd covered with a net of beads, shaken or struck against the palm.\n- The **ekwe** is a wooden slit drum.\n\n**Aerophones** make sound from moving air.\n\n- The **kakaki** is a very long trumpet blown at the Hausa emir's court to announce him.\n- The **algaita** is a Hausa double-reed horn, like an oboe.\n\n**Chordophones** make sound from strings.\n\n- The **goge** is a Hausa one-string fiddle played with a bow.\n\n## Occasions\n\n- **Royal courts:** praise singers recall the history of the ruler and his family.\n- **Festivals and weddings:** drumming and dance bring the whole village together.\n- **Funerals:** songs of mourning and remembrance.\n- **Farming:** work songs keep people in time as they hoe and harvest.\n- **Masquerades:** drums and songs call the masks.\n\n## Features of traditional music\n\n**Call and response.** A leader sings a line (the call) and the group answers with a fixed reply. It suits communal events because everyone can join in, even if they do not know all the words, and it keeps workers in the same rhythm.\n\n**Repetition and improvisation.** A short line is repeated while the leader adds new words or phrases.\n\n**Talking drums.** Languages like Yoruba use tone (high, middle, low), so a drum that copies the tones can send messages.\n\n## Today\n\nHighlife, juju, fuji and afrobeats grew out of traditional rhythms and instruments, mixed with new ones. Knowing the old styles helps us understand the new ones."
+      },
+      "cards": [
+        {
+          "front": "Membranophone",
+          "back": "An instrument that makes sound from a stretched skin, such as a drum."
+        },
+        {
+          "front": "Idiophone",
+          "back": "An instrument whose own body vibrates, such as a gong or clay pot drum."
+        },
+        {
+          "front": "Aerophone",
+          "back": "An instrument that makes sound with moving air, such as a trumpet."
+        },
+        {
+          "front": "Chordophone",
+          "back": "An instrument with strings, such as a one-string fiddle."
+        },
+        {
+          "front": "Dundun",
+          "back": "A Yoruba talking drum."
+        },
+        {
+          "front": "Ogene",
+          "back": "An Igbo metal gong."
+        },
+        {
+          "front": "Kakaki",
+          "back": "A very long Hausa trumpet."
+        },
+        {
+          "front": "Call and response",
+          "back": "A leader sings a line and the group answers."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The dundun is a drum of the",
+          "options": [
+            "Hausa people only",
+            "Igbo people only",
+            "Yoruba people, and it can imitate the tones of speech",
+            "Tiv people only"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The udu is a",
+          "options": [
+            "long trumpet",
+            "one-string fiddle",
+            "slit drum",
+            "clay pot drum"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a membranophone, an instrument that makes sound from a stretched skin?",
+          "options": [
+            "Ogene gong",
+            "Bata drum",
+            "Sekere rattle",
+            "Wooden clapper"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A song in which a leader sings a line and the group answers is called",
+          "options": [
+            "call and response",
+            "a round",
+            "a solo only",
+            "a lullaby"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Praise singers at a Hausa emir's court sing mainly to",
+          "options": [
+            "sell goods",
+            "teach arithmetic",
+            "praise the ruler and recall history",
+            "announce football results"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Name one traditional instrument from each of three Nigerian groups (for example the Yoruba, the Igbo and the Hausa) and say how each one is played.",
+          "markScheme": [
+            "Names a first group's instrument",
+            "Says how it is played",
+            "Names a second group's instrument",
+            "Says how it is played",
+            "Names a third group's instrument",
+            "Says how it is played"
+          ],
+          "modelAnswer": "The Yoruba play the dundun, a talking drum held under the arm and struck with a curved stick. The Igbo play the ogene, a metal gong that is struck with a stick. The Hausa play the kakaki, a very long trumpet that is blown to announce the emir.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The Yoruba play the dundun, a talking drum held under the arm and struck with a curved stick, and pressing the cords changes the pitch. The Igbo play the ogene, a metal gong that is struck with a stick. The Hausa play the kakaki, a very long trumpet, blown to announce the emir.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dundun"
+                },
+                {
+                  "point": 1,
+                  "quote": "talking drum held under the arm and struck with a curved stick"
+                },
+                {
+                  "point": 2,
+                  "quote": "ogene"
+                },
+                {
+                  "point": 3,
+                  "quote": "metal gong that is struck with a stick"
+                },
+                {
+                  "point": 4,
+                  "quote": "kakaki"
+                },
+                {
+                  "point": 5,
+                  "quote": "very long trumpet, blown to announce the emir"
+                }
+              ],
+              "feedback": "Full marks. For each instrument you gave its group and how the player makes a sound."
+            },
+            {
+              "tier": "full",
+              "text": "Igbo: the udu is a clay pot with a hole, and the player hits the hole and body with the palm to make deep sounds. Yoruba: the sekere is a gourd covered with a net of beads, and it is shaken or struck against the palm. Hausa: the goge is a one-string fiddle played with a bow.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the udu is a clay pot with a hole"
+                },
+                {
+                  "point": 3,
+                  "quote": "the player hits the hole and body with the palm to make deep sounds"
+                },
+                {
+                  "point": 0,
+                  "quote": "the sekere is a gourd covered with a net of beads"
+                },
+                {
+                  "point": 1,
+                  "quote": "it is shaken or struck against the palm"
+                },
+                {
+                  "point": 4,
+                  "quote": "the goge is a one-string fiddle"
+                },
+                {
+                  "point": 5,
+                  "quote": "played with a bow"
+                }
+              ],
+              "feedback": "All six marks. You chose instruments from three different groups of instruments: clay, gourd and string."
+            },
+            {
+              "tier": "partial",
+              "text": "The Yoruba have the dundun and the Igbo have the ogene. The dundun is a drum that talks.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The Yoruba have the dundun"
+                },
+                {
+                  "point": 2,
+                  "quote": "the Igbo have the ogene"
+                }
+              ],
+              "feedback": "Two correct instruments. For each, say how it is played (the dundun is held under the arm and struck with a curved stick; the ogene is struck with a stick) and add a Hausa instrument."
+            },
+            {
+              "tier": "partial",
+              "text": "The Hausa have the kakaki, a long trumpet blown by the royal trumpeter. The Yoruba have bata, a drum that is beaten.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "The Hausa have the kakaki"
+                },
+                {
+                  "point": 5,
+                  "quote": "a long trumpet blown by the royal trumpeter"
+                },
+                {
+                  "point": 0,
+                  "quote": "The Yoruba have bata"
+                }
+              ],
+              "feedback": "The kakaki is well done. For the bata say how it is played (a double-headed drum struck with the hands or a stick) and add an Igbo instrument with how it is played.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Traditional instruments are guitar, keyboard and drum set.",
+              "meets": [],
+              "feedback": "Those are modern instruments. Traditional ones include the dundun, ogene and kakaki."
+            },
+            {
+              "tier": "weak",
+              "text": "The Hausa play the dundun, the Yoruba play the kakaki and the Igbo play the goge.",
+              "meets": [],
+              "feedback": "The names are mixed up. The dundun is Yoruba, the kakaki and goge are Hausa and the ogene is Igbo."
+            }
+          ]
+        },
+        {
+          "prompt": "Describe call-and-response singing and explain why it suits communal events such as farming or festivals.",
+          "markScheme": [
+            "Describes call and response: a leader sings a line and the group answers",
+            "Gives a setting where it is used, such as farm work or a festival",
+            "Says that it suits communal events because everyone can join in",
+            "Says that it keeps people in the same rhythm or builds unity"
+          ],
+          "modelAnswer": "In call and response a leader sings a line and the group answers with a reply. It is used when farmers work together or at festivals. It suits communal events because everyone can join in, even those who do not know all the words, and it keeps people in the same rhythm and builds togetherness.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "In call and response a leader sings a line, the call, and the group answers with a fixed reply or a repeated line. Farmers use it when working together in the field, with a leader calling out the song and the others answering as they hoe. It suits communal events because everybody can join in, even those who do not know all the words. It also keeps the workers moving in the same rhythm and strengthens their togetherness.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a leader sings a line, the call, and the group answers with a fixed reply or a repeated line"
+                },
+                {
+                  "point": 1,
+                  "quote": "Farmers use it when working together in the field"
+                },
+                {
+                  "point": 2,
+                  "quote": "everybody can join in, even those who do not know all the words"
+                },
+                {
+                  "point": 3,
+                  "quote": "keeps the workers moving in the same rhythm and strengthens their togetherness"
+                }
+              ],
+              "feedback": "Full marks. Your example from the farm shows why the style came about."
+            },
+            {
+              "tier": "full",
+              "text": "Call and response is when a soloist sings and the chorus answers. At a festival or wedding the crowd answers the lead singer, so the whole village takes part. It is easy to learn since the answer is short and repeated. It also builds unity, because the community is making the music together.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a soloist sings and the chorus answers"
+                },
+                {
+                  "point": 1,
+                  "quote": "At a festival or wedding the crowd answers the lead singer"
+                },
+                {
+                  "point": 2,
+                  "quote": "easy to learn since the answer is short and repeated"
+                },
+                {
+                  "point": 3,
+                  "quote": "builds unity, because the community is making the music together"
+                }
+              ],
+              "feedback": "All four marks. Saying that the answer is short and repeated explains why anyone can join."
+            },
+            {
+              "tier": "partial",
+              "text": "Call and response is when one person sings and the others reply. It is used in the church.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "one person sings and the others reply"
+                },
+                {
+                  "point": 1,
+                  "quote": "used in the church"
+                }
+              ],
+              "feedback": "The description and a setting are right. Explain why it suits communal events: everyone can join in, and it keeps them together in rhythm."
+            },
+            {
+              "tier": "partial",
+              "text": "It helps people to work together in the farm and keeps them in the same rhythm. Call and response is a type of drum.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "work together in the farm"
+                },
+                {
+                  "point": 3,
+                  "quote": "keeps them in the same rhythm"
+                }
+              ],
+              "feedback": "Your reasons are right. Call and response is a singing style, not a drum. A leader sings a line and the group answers."
+            },
+            {
+              "tier": "weak",
+              "text": "Call and response is when you call somebody on the phone and they respond.",
+              "meets": [],
+              "feedback": "In music, call and response is a singing pattern: a leader sings and the group answers with a reply."
+            },
+            {
+              "tier": "weak",
+              "text": "Call and response is a song where everyone sings the same words at the same time.",
+              "meets": [],
+              "feedback": "In call and response the leader sings first and the group answers. They do not sing together all the time."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Playing the recorder: holding, breathing, and the notes B, A and G",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the parts of the recorder and hold it correctly;\n2. blow with a gentle, steady breath and tongue each note;\n3. play B, A and G with the correct fingers;\n4. read B, A and G on the staff and play a simple tune.\n\n## Materials\n\nA recorder for each learner (or one per pair, cleaned between users), a staff on the board with B, A and G, a chart of finger positions.\n\n## Starter\n\nPlay a short tune on a recorder. Ask: how do you think a recorder makes its sound? Take answers, then show the mouthpiece and the holes.\n\n## Development\n\n1. Parts: the mouthpiece (beak), the body with seven holes at the front and a thumb hole at the back, and the foot.\n2. Holding: left hand on top, right hand below. Left thumb covers the back hole. Cover each hole with the soft pad of the finger so that no air leaks.\n3. Breathing: place the beak lightly between the lips, not the teeth. Blow gently and steadily as if saying a soft 'tu'.\n4. Fingering: B is the thumb and the first finger of the left hand. A adds the second finger. G adds the third finger.\n5. Reading: B is on the middle line of the staff, A in the second space, G on the second line. Practise B A G, then a simple tune.\n6. Care: do not blow hard, wipe away moisture, keep it in its bag and clean the mouthpiece before sharing.\n\n## Class activity\n\nLearners play B, A, G slowly four times each, then play 'B A G, B A G, G G G G, A A A A, B A G' from the board, counting the beats.\n\n## Evaluation\n\n1. Which fingers play G?\n2. What causes a squeaky sound?\n3. Where is B on the staff?\n\n## Assignment\n\nWorksheet on the app. Practise the three notes for five minutes each day and write which note you find hardest.",
+      "reading": {
+        "title": "Learning the recorder",
+        "content": "# Playing the recorder\n\n## Parts of the recorder\n\nThe soprano recorder has three parts: the **mouthpiece** (or beak), the **body**, which has **seven finger holes at the front and a thumb hole at the back**, and the **foot**. It is held in a straight line in front of you, pointing down.\n\n## Holding it\n\n- Left hand at the top, right hand below.\n- Left thumb covers the hole at the back.\n- Cover the holes with the **soft pads** of the fingers, not the tips. If a hole is not fully covered, air leaks and the note squeaks.\n\n## Breathing and tonguing\n\n- Rest the beak **lightly between the lips**, not between the teeth.\n- Blow **gently and steadily**, as though you were saying a quiet \"tu\" to start each note.\n- Blowing hard makes a shrill, squeaky sound and the note goes out of tune.\n\n## The notes B, A and G\n\nAll three use the left hand only.\n\n| Note | Fingers |\n| --- | --- |\n| B | Thumb and first finger |\n| A | Thumb, first and second fingers |\n| G | Thumb, first, second and third fingers |\n\nTo move from B to A, **add** the second finger. To move from A to G, **add** the third finger. The other fingers stay down.\n\n## Reading the notes\n\nOn the staff in the treble clef:\n\n- **B** is on the middle (third) line.\n- **A** is in the second space from the bottom.\n- **G** is on the second line from the bottom.\n\n## A first tune\n\n\"B A G, B A G, G G G G, A A A A, B A G\" is a simple tune you can play with these three notes. Count the beats: each note is a crotchet, one beat. Where there are two notes in a beat, play them quickly.\n\n## Care of the recorder\n\n1. Do not blow too hard.\n2. After playing, shake out and wipe away moisture.\n3. Keep it in its bag or case, out of the sun.\n4. If it is shared, clean the mouthpiece with a cloth and a little disinfectant first."
+      },
+      "cards": [
+        {
+          "front": "Recorder holes",
+          "back": "Seven finger holes at the front and one thumb hole at the back."
+        },
+        {
+          "front": "How to hold a recorder",
+          "back": "Left hand on top, right hand below, left thumb on the back hole."
+        },
+        {
+          "front": "Tonguing",
+          "back": "Starting each note with a soft 'tu'."
+        },
+        {
+          "front": "Fingering for B",
+          "back": "Left thumb and first finger."
+        },
+        {
+          "front": "Fingering for A",
+          "back": "Left thumb, first and second fingers."
+        },
+        {
+          "front": "Fingering for G",
+          "back": "Left thumb, first, second and third fingers."
+        },
+        {
+          "front": "Cause of squeaking",
+          "back": "Blowing too hard, or a hole not fully covered."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which note is played by covering the thumb hole and three fingers of the left hand?",
+          "options": [
+            "A",
+            "G",
+            "B",
+            "C"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "How should you blow into a recorder?",
+          "options": [
+            "Gently and steadily, as if saying a soft 'tu'",
+            "As hard as possible",
+            "With puffed cheeks",
+            "Very quickly and in bursts"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "What should you do with the recorder after you have played it?",
+          "options": [
+            "Put it away wet",
+            "Leave it in the sun",
+            "Share it without cleaning the mouthpiece",
+            "Wipe away the moisture and keep it in its bag"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A crotchet on the recorder is played for",
+          "options": [
+            "half a beat",
+            "two beats",
+            "one beat",
+            "four beats"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "If a recorder gives a squeaky, shrill sound, the most likely cause is",
+          "options": [
+            "blowing too gently",
+            "blowing too hard",
+            "holding it in the left hand",
+            "playing the note G"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the correct way to hold a recorder and to blow into it.",
+          "markScheme": [
+            "Says the left hand is on top and the right hand below",
+            "Says the fingers cover the holes with the pads, and the left thumb covers the back hole",
+            "Says the beak rests lightly between the lips, not the teeth",
+            "Says to blow gently and steadily"
+          ],
+          "modelAnswer": "The left hand is at the top and the right hand below it. The left thumb covers the hole at the back and the fingers cover the front holes with the soft pads. The beak rests lightly between the lips and not the teeth. Blow gently and steadily, starting each note with a soft 'tu'.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The left hand is placed at the top and the right hand below it. The thumb of the left hand covers the hole at the back and the fingers cover the holes at the front with the soft pads, not the tips. The mouthpiece rests lightly between the lips and not between the teeth. Blow gently and steadily while starting each note with a soft 'tu'.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The left hand is placed at the top and the right hand below it"
+                },
+                {
+                  "point": 1,
+                  "quote": "fingers cover the holes at the front with the soft pads, not the tips"
+                },
+                {
+                  "point": 2,
+                  "quote": "mouthpiece rests lightly between the lips and not between the teeth"
+                },
+                {
+                  "point": 3,
+                  "quote": "Blow gently and steadily while starting each note with a soft 'tu'"
+                }
+              ],
+              "feedback": "Full marks. You included the pads of the fingers, which many learners forget."
+            },
+            {
+              "tier": "full",
+              "text": "Hold the recorder with the left hand above the right hand. The left thumb goes on the back hole and the fingers cover the front holes properly so there is no air leaking. Put the beak of the recorder in the mouth just past the lips. Breathe out softly and say 'tu' to start every note.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "left hand above the right hand"
+                },
+                {
+                  "point": 1,
+                  "quote": "fingers cover the front holes properly so there is no air leaking"
+                },
+                {
+                  "point": 2,
+                  "quote": "beak of the recorder in the mouth just past the lips"
+                },
+                {
+                  "point": 3,
+                  "quote": "Breathe out softly and say 'tu' to start every note"
+                }
+              ],
+              "feedback": "All four marks. Explaining that leaking air spoils the note shows why the holes must be covered fully."
+            },
+            {
+              "tier": "partial",
+              "text": "The left hand is on top and the right hand is below. You blow gently.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The left hand is on top and the right hand is below"
+                },
+                {
+                  "point": 3,
+                  "quote": "blow gently"
+                }
+              ],
+              "feedback": "Good. Also say where the thumb goes (the back hole), that the finger pads cover the holes, and that the beak rests lightly between the lips."
+            },
+            {
+              "tier": "partial",
+              "text": "Cover the holes with the fingers and put the thumb at the back. Blow hard so that the sound comes out well.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Cover the holes with the fingers and put the thumb at the back"
+                }
+              ],
+              "feedback": "The finger and thumb positions are right. Blowing hard makes a squeaky, shrill sound; blow gently and steadily instead. Also say which hand is on top and where the beak goes."
+            },
+            {
+              "tier": "weak",
+              "text": "You hold the recorder like a flute sideways and blow across the end.",
+              "meets": [],
+              "feedback": "A recorder is held pointing down in front of you, and you blow into the mouthpiece. A flute is held sideways."
+            },
+            {
+              "tier": "weak",
+              "text": "You chew the mouthpiece to make it soft so that it will blow well.",
+              "meets": [],
+              "feedback": "The beak rests lightly between the lips. Chewing damages the recorder and is not hygienic."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain how to play the notes B, A and G on the recorder, and how to change from one to the next smoothly.",
+          "markScheme": [
+            "Says B is played with the left thumb and first finger",
+            "Says A is played by adding the second finger",
+            "Says G is played by adding the third finger",
+            "Says the holes must be covered completely",
+            "Describes smooth changing, such as adding one finger at a time, a steady breath and counting the beats"
+          ],
+          "modelAnswer": "B is played with the left thumb and first finger. For A, keep those and add the second finger. For G, add the third finger as well. The holes must be fully covered. To change smoothly, add one finger at a time, keep a steady breath and count the beats so each note lasts its full length.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "For B I cover the thumb hole and the first finger of the left hand. For A I keep those and add the second finger. For G I add the third finger as well, so the thumb and three fingers of the left hand are down. The fingers must cover the holes fully. When I change from B to A to G I put down the new finger without lifting the others, and I keep blowing gently and steadily, counting the beat so each note lasts its full length.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "For B I cover the thumb hole and the first finger of the left hand"
+                },
+                {
+                  "point": 1,
+                  "quote": "For A I keep those and add the second finger"
+                },
+                {
+                  "point": 2,
+                  "quote": "For G I add the third finger as well"
+                },
+                {
+                  "point": 3,
+                  "quote": "The fingers must cover the holes fully"
+                },
+                {
+                  "point": 4,
+                  "quote": "put down the new finger without lifting the others, and I keep blowing gently and steadily"
+                }
+              ],
+              "feedback": "Full marks. Your description of keeping the other fingers down is exactly how to change smoothly."
+            },
+            {
+              "tier": "full",
+              "text": "B: left thumb and left first finger. A: left thumb, first and second fingers. G: left thumb and first, second and third fingers. All the covered holes must be sealed completely, otherwise the note squeaks. To move smoothly I only add one finger each time, keep the same soft breath and count in my head so that each note is on the beat.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "B: left thumb and left first finger"
+                },
+                {
+                  "point": 1,
+                  "quote": "A: left thumb, first and second fingers"
+                },
+                {
+                  "point": 2,
+                  "quote": "G: left thumb and first, second and third fingers"
+                },
+                {
+                  "point": 3,
+                  "quote": "All the covered holes must be sealed completely, otherwise the note squeaks"
+                },
+                {
+                  "point": 4,
+                  "quote": "I only add one finger each time, keep the same soft breath and count in my head"
+                }
+              ],
+              "feedback": "All five marks. Your answer is accurate and well organised."
+            },
+            {
+              "tier": "partial",
+              "text": "B needs the thumb and the first finger. A needs the thumb, first finger and second finger. G needs three fingers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "B needs the thumb and the first finger"
+                },
+                {
+                  "point": 1,
+                  "quote": "A needs the thumb, first finger and second finger"
+                }
+              ],
+              "feedback": "B and A are right. G uses the thumb as well as the first, second and third fingers. Also say that the holes must be fully covered and how to change smoothly."
+            },
+            {
+              "tier": "partial",
+              "text": "To play B, A, G you add one finger each time. You must keep the breath steady.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "you add one finger each time"
+                }
+              ],
+              "feedback": "That is how to change smoothly. Say which fingers play each note (B: thumb and first; A: add second; G: add third) and that all the holes must be fully covered.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "B is the first hole, A is the second hole and G is the third hole.",
+              "meets": [],
+              "feedback": "Each note uses the thumb hole and a group of fingers: B has the thumb and first finger, A adds the second finger and G adds the third."
+            },
+            {
+              "tier": "weak",
+              "text": "You blow harder for G because it is a low note.",
+              "meets": [],
+              "feedback": "The lowest notes need the gentlest breath. Blowing harder on G makes a squeak. Use the same soft, steady breath for all three notes."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Drama and theatre: origins, forms, elements and the people who make a play",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain how drama began in worship and community celebration;\n2. describe the forms of drama: tragedy, comedy, melodrama and farce;\n3. name the elements of drama;\n4. name the people in a theatre production and say what each does.\n\n## Materials\n\nPictures of an Egungun masquerade, a Greek theatre and a Nigerian stage production; two short scripts (one funny, one sad) read by learners; a marker board.\n\n## Starter\n\nAsk two learners to act a short quarrel over a lost pen, with no script. Ask the class: what makes it drama?\n\n## Development\n\n1. Drama began as ritual: people acted, danced and sang to honour gods and ancestors, and to tell stories of the community. In Greece, festivals for Dionysus grew into tragedy and comedy. In Nigeria, masquerades such as Egungun, and the Tiv Kwagh-hir with puppets and masks, are traditions of performance.\n2. Alarinjo is a Yoruba travelling theatre that grew out of the Egungun masquerade tradition.\n3. Forms: tragedy (serious, ends in sorrow), comedy (light, ends happily), melodrama (exaggerated emotion, clear heroes and villains), farce (silly, fast, absurd situations), musical drama.\n4. Elements: plot, character, theme, dialogue, setting, music and spectacle.\n5. People: playwright, director, actors, producer, stage manager, designers (set, costume, lighting), prompter.\n\n## Class activity\n\nGroups read a short scene, decide whether it is tragedy or comedy, and list the elements and the people needed to put it on.\n\n## Evaluation\n\n1. Where did Greek drama begin?\n2. What is the difference between a tragedy and a comedy?\n3. What does a stage manager do?\n\n## Assignment\n\nWorksheet on the app. Watch or recall a play and list its plot, characters and theme.",
+      "reading": {
+        "title": "Where drama comes from",
+        "content": "# Drama and theatre\n\n**Drama** is a story told by people who act it out in front of an audience. **Theatre** is the place and the art of presenting drama.\n\n## How drama began\n\nDrama began as part of **worship and community celebration**. People put on masks, danced, sang and acted to honour gods and ancestors and to remember their history.\n\n- In ancient **Greece**, festivals honouring the god **Dionysus** grew into the first plays, the tragedies and comedies that are still studied today.\n- In **Nigeria** and much of Africa, masquerade performances, such as the **Egungun** of the Yoruba, used costume, drumming, dance and story. The Yoruba **Alarinjo** travelling theatre grew from this tradition.\n- The **Tiv** of central Nigeria have the **Kwagh-hir**, a performance with puppets, masks and songs that tells stories to the community.\n\n## Forms of drama\n\n- **Tragedy:** a serious story that ends in sorrow or disaster.\n- **Comedy:** a light story that ends happily and makes people laugh.\n- **Melodrama:** exaggerated emotion with clear heroes and villains.\n- **Farce:** a fast, silly story with absurd situations.\n- **Musical drama:** a play with songs and dances.\n\n## Elements of drama\n\n- **Plot:** the events, with a beginning, middle and end.\n- **Characters:** the people in the story.\n- **Theme:** the main idea or message.\n- **Dialogue:** what the characters say.\n- **Setting:** where and when the story takes place.\n- **Music and sound.**\n- **Spectacle:** what the audience sees, such as costumes and sets.\n\n## The people who make a play\n\n| Person | Job |\n| --- | --- |\n| Playwright | Writes the script |\n| Director | Guides the actors and shapes the production |\n| Actors | Play the characters |\n| Producer | Finds the money and organises the production |\n| Stage manager | Runs everything backstage during the show |\n| Designers | Plan the costumes, set and lighting |\n| Prompter | Helps an actor who forgets a line |\n\nA play is the work of many people. The audience sees only the actors, but the show cannot happen without the rest."
+      },
+      "cards": [
+        {
+          "front": "Drama",
+          "back": "A story told by people acting it out in front of an audience."
+        },
+        {
+          "front": "Tragedy",
+          "back": "A serious play that ends in sorrow or disaster."
+        },
+        {
+          "front": "Comedy",
+          "back": "A light play that ends happily and makes people laugh."
+        },
+        {
+          "front": "Plot",
+          "back": "The events of a play, with a beginning, middle and end."
+        },
+        {
+          "front": "Theme",
+          "back": "The main idea or message of a play."
+        },
+        {
+          "front": "Playwright",
+          "back": "The person who writes the play."
+        },
+        {
+          "front": "Alarinjo",
+          "back": "A Yoruba travelling theatre that grew from Egungun masquerade performances."
+        },
+        {
+          "front": "Stage manager",
+          "back": "The person who runs everything backstage during a show."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Drama in ancient Greece began as part of festivals honouring",
+          "options": [
+            "Zeus the king",
+            "the harvest moon",
+            "Dionysus, a god of wine and festivals",
+            "the sea"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A play with a serious story that ends in sorrow or disaster is a",
+          "options": [
+            "comedy",
+            "tragedy",
+            "farce",
+            "musical"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The person who writes the play is the",
+          "options": [
+            "director",
+            "prompter",
+            "stage manager",
+            "playwright"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Alarinjo is",
+          "options": [
+            "a travelling Yoruba theatre that grew from Egungun masquerade performances",
+            "a Greek tragedy",
+            "a Hausa fiddle",
+            "an Igbo gong"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The series of events in a play, with a beginning, middle and end, is the",
+          "options": [
+            "theme",
+            "setting",
+            "plot",
+            "costume"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Name four people involved in a theatre production and say what each of them does.",
+          "markScheme": [
+            "Names a person in a theatre production and states their duty correctly",
+            "Names a second person and states their duty correctly",
+            "Names a third person and states their duty correctly",
+            "Names a fourth person and states their duty correctly"
+          ],
+          "modelAnswer": "The playwright writes the script. The director guides the actors and shapes how the play looks and sounds. The actors play the characters. The stage manager makes sure everything backstage runs on time during the show.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The playwright writes the script. The director guides the actors and decides how the play will look and sound. The actors play the characters. The stage manager makes sure that everything backstage runs on time during the show.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The playwright writes the script"
+                },
+                {
+                  "point": 1,
+                  "quote": "The director guides the actors and decides how the play will look and sound"
+                },
+                {
+                  "point": 2,
+                  "quote": "The actors play the characters"
+                },
+                {
+                  "point": 3,
+                  "quote": "The stage manager makes sure that everything backstage runs on time during the show"
+                }
+              ],
+              "feedback": "Full marks. Four people, each with a clear and separate job."
+            },
+            {
+              "tier": "full",
+              "text": "A producer finds the money and organises the whole production. A costume designer makes or chooses the clothes the actors wear. The lighting technician controls the lights. The prompter sits near the stage and helps an actor who forgets a line.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A producer finds the money and organises the whole production"
+                },
+                {
+                  "point": 1,
+                  "quote": "A costume designer makes or chooses the clothes the actors wear"
+                },
+                {
+                  "point": 2,
+                  "quote": "The lighting technician controls the lights"
+                },
+                {
+                  "point": 3,
+                  "quote": "The prompter sits near the stage and helps an actor who forgets a line"
+                }
+              ],
+              "feedback": "All four marks. You chose people from behind the scenes, who are easy to forget."
+            },
+            {
+              "tier": "partial",
+              "text": "The actor acts the part. The director directs. The playwright writes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The actor acts the part"
+                },
+                {
+                  "point": 1,
+                  "quote": "The playwright writes"
+                }
+              ],
+              "feedback": "Actor and playwright are right but 'writes' should say what: the script. 'The director directs' only repeats the word; say that the director guides the actors and shapes the production."
+            },
+            {
+              "tier": "partial",
+              "text": "The stage manager is the person who writes the play. The costume designer makes the dresses of the actors.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The costume designer makes the dresses of the actors"
+                }
+              ],
+              "feedback": "The costume designer is correct. The playwright writes the play; the stage manager runs everything backstage during the show."
+            },
+            {
+              "tier": "weak",
+              "text": "People in the theatre are the audience, who clap and cheer when the play is good.",
+              "meets": [],
+              "feedback": "The audience watches the play but does not make it. Name people who put it on, such as the playwright, director, actors and stage manager."
+            },
+            {
+              "tier": "weak",
+              "text": "The director is the person who owns the theatre and collects the money.",
+              "meets": [],
+              "feedback": "The director guides the actors and shapes the production. The producer organises the money."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain how drama began in worship and community celebration. Use one Greek and one Nigerian example.",
+          "markScheme": [
+            "States that drama began in worship, ritual or community celebration",
+            "Gives the Greek example: festivals honouring Dionysus grew into tragedy and comedy",
+            "Gives a Nigerian example, such as Egungun masquerades leading to Alarinjo, or the Tiv Kwagh-hir",
+            "Says that the performers used costume, music and movement to tell a story to the community"
+          ],
+          "modelAnswer": "Drama began in worship and community celebrations, when people acted, danced and sang to honour gods and tell stories. In Greece, festivals honouring Dionysus grew into tragedy and comedy. In Nigeria, Yoruba Egungun masquerades developed into the travelling theatre called Alarinjo. In both, the performers used costume, music and movement to tell a story to the community.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Drama began in worship and community celebrations, when people used acting, dance and song to honour gods and tell stories. In ancient Greece festivals to honour the god Dionysus grew into tragedy and comedy plays. In Nigeria, Yoruba masquerade performances such as Egungun, with costumes, drumming and dance, later developed into the travelling theatre called Alarinjo. In both cases the performers used costume, music and movement to tell a story to the whole community.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Drama began in worship and community celebrations"
+                },
+                {
+                  "point": 1,
+                  "quote": "festivals to honour the god Dionysus grew into tragedy and comedy plays"
+                },
+                {
+                  "point": 2,
+                  "quote": "Yoruba masquerade performances such as Egungun, with costumes, drumming and dance, later developed into the travelling theatre called Alarinjo"
+                },
+                {
+                  "point": 3,
+                  "quote": "the performers used costume, music and movement to tell a story to the whole community"
+                }
+              ],
+              "feedback": "Full marks. You showed the same pattern in Greece and in Nigeria."
+            },
+            {
+              "tier": "full",
+              "text": "At first people acted out religious rituals and harvest festivals, so drama came from religion and community life. The Greeks performed songs and stories at festivals of Dionysus, and from this came tragedy and comedy. In Nigeria the Tiv have the Kwagh-hir, a performance with puppets, masks and songs that tells stories to the community. All these performances use dressing up, music and dance to make a story come alive.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "drama came from religion and community life"
+                },
+                {
+                  "point": 1,
+                  "quote": "The Greeks performed songs and stories at festivals of Dionysus, and from this came tragedy and comedy"
+                },
+                {
+                  "point": 2,
+                  "quote": "the Tiv have the Kwagh-hir, a performance with puppets, masks and songs that tells stories to the community"
+                },
+                {
+                  "point": 3,
+                  "quote": "use dressing up, music and dance to make a story come alive"
+                }
+              ],
+              "feedback": "All four marks. Using the Tiv example shows you know Nigerian traditions beyond the Yoruba."
+            },
+            {
+              "tier": "partial",
+              "text": "Drama began in the festivals of the Greeks to honour their gods. It later became tragedy and comedy.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "festivals of the Greeks to honour their gods"
+                }
+              ],
+              "feedback": "The Greek example is right. Say that drama began in worship and community celebration, give a Nigerian example such as Egungun, and say that costume, music and movement were used."
+            },
+            {
+              "tier": "partial",
+              "text": "In Nigeria drama began with masquerades like Egungun. The masquerade dances and the people watch.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "drama began with masquerades like Egungun"
+                }
+              ],
+              "feedback": "Egungun is a good Nigerian example. Say that drama came from worship and community celebration, add the Greek example, and say that the performers used costume, music and movement to tell a story."
+            },
+            {
+              "tier": "weak",
+              "text": "Drama began when a man wrote a book and the people acted it in school.",
+              "meets": [],
+              "feedback": "Drama is much older than schools and books. It began with people acting and dancing in worship and festivals."
+            },
+            {
+              "tier": "weak",
+              "text": "Drama began in the cinema in Lagos when the first film was shown.",
+              "meets": [],
+              "feedback": "Drama began long before film. People acted in religious ceremonies and festivals, in Greece, Nigeria and elsewhere."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "The director: coordinating a stage production",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the duties of a director before and during a production;\n2. explain blocking, casting, notes and rehearsal;\n3. describe how the director works with actors, designers and the stage manager;\n4. plan how to stage a short scene.\n\n## Materials\n\nA short scene on paper (a king and a messenger), chairs to make a stage, a marker board.\n\n## Starter\n\nTwo learners read a scene flatly. The class says what is missing. Introduce the idea that a director shapes the scene.\n\n## Development\n\n1. The director studies the script and decides the main message of the play and how to show it.\n2. Casting: choosing actors through auditions. Rehearsal: practice in stages, from reading the script to full runs.\n3. Blocking: deciding where actors stand and move on stage. Status can be shown by position: a king stands higher or at the centre.\n4. The director coaches voice, movement and feeling, and gives notes after each rehearsal.\n5. The director works with the set, costume, lighting and sound designers so that everything matches one vision, and with the stage manager, who keeps the plan running.\n6. The director makes sure the show is ready for opening night.\n\n## Class activity\n\nGroups stage the king and messenger scene twice: first without a director's plan, then with blocking and voice notes, and compare.\n\n## Evaluation\n\n1. What is blocking?\n2. What are notes?\n3. Name two people the director works with.\n\n## Assignment\n\nWorksheet on the app. Write a plan for staging a scene you know, giving the blocking and one note for each actor.",
+      "reading": {
+        "title": "Behind the stage: the director",
+        "content": "# The director\n\nA play has a script, actors, costumes and lights. The **director** is the person who brings all of these together so that the audience sees one clear and moving story.\n\n## The director's duties\n\n1. **Study the script.** The director reads the play closely, decides what the main message is and how to show it.\n2. **Cast the actors.** Through **auditions**, in which actors read or perform, the director chooses who plays each role.\n3. **Plan the staging.** The director decides where actors stand and move. This is called **blocking**. Position tells the audience about the characters: a king may stand high and in the centre, a frightened servant lower and to the side.\n4. **Rehearse.** The director leads rehearsals from the first reading to the full run-through, and coaches voice, movement and feeling.\n5. **Give notes.** After a rehearsal, the director gives each actor **notes**, which are comments on what to change.\n6. **Coordinate the designers.** The director works with the people who plan the set, the costumes, the lighting and the sound, so that they all serve one vision.\n7. **Work with the stage manager.** The stage manager keeps the schedule and runs the show once it begins.\n8. **Get the show ready.** The director makes sure everything is ready for opening night.\n\n## Example: staging a scene\n\nScene: an angry king and a messenger who brings bad news.\n\n- **Understand:** the king wants to punish someone; the messenger wants to survive.\n- **Blocking:** the king stands upstage on a platform, in the centre. The messenger kneels downstage, to the side.\n- **Movement:** as the king grows angrier he steps forward. The messenger backs away.\n- **Voice:** the king speaks slowly and loudly. The messenger's voice is quick and shaky.\n- **Rehearse:** run the scene many times, giving notes after each.\n\n## Qualities of a good director\n\nA good director listens, communicates clearly, plans carefully, stays calm under pressure and respects every person in the production."
+      },
+      "cards": [
+        {
+          "front": "Director",
+          "back": "The person who brings together the script, actors, designers and crew into one production."
+        },
+        {
+          "front": "Audition",
+          "back": "A try-out in which an actor reads or performs to be chosen for a role."
+        },
+        {
+          "front": "Casting",
+          "back": "Choosing which actor plays each role."
+        },
+        {
+          "front": "Blocking",
+          "back": "Deciding where actors stand and move on stage."
+        },
+        {
+          "front": "Notes",
+          "back": "The director's comments to actors after a rehearsal."
+        },
+        {
+          "front": "Rehearsal",
+          "back": "Practice of a play before it is shown to an audience."
+        },
+        {
+          "front": "Upstage and downstage",
+          "back": "Upstage is the back of the stage; downstage is the front, near the audience."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The person in charge of the vision of a production, who guides the actors, is the",
+          "options": [
+            "stage manager",
+            "prompter",
+            "producer",
+            "director"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Deciding where actors stand and move on stage is called",
+          "options": [
+            "blocking",
+            "casting",
+            "tempo",
+            "cueing"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Choosing which actor plays which role is called",
+          "options": [
+            "rehearsal",
+            "casting",
+            "editing",
+            "costuming"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "After a rehearsal the director gives the actors",
+          "options": [
+            "tickets",
+            "costumes",
+            "notes",
+            "the script"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Why does the director work closely with the designers?",
+          "options": [
+            "To reduce the number of actors",
+            "To avoid rehearsals",
+            "To stop the play",
+            "So that the costumes, lights and set all fit one vision of the play"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State four duties of a director in preparing a play for opening night.",
+          "markScheme": [
+            "States that the director studies the script",
+            "States that the director holds auditions and chooses the cast",
+            "States that the director plans the movement and leads rehearsals",
+            "States that the director works with designers and the stage manager so the production is ready"
+          ],
+          "modelAnswer": "The director reads and studies the script to understand the play. The director holds auditions and chooses the cast. The director plans the actors' movement and leads the rehearsals. The director also works with the designers so that the costumes, lights and set match one idea for the play.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A director reads and studies the script to understand the play. He holds auditions and chooses the cast. He plans the movement of the actors on stage and leads the rehearsals. He also works with the designers so that costumes, lights and set match his idea for the play.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "reads and studies the script to understand the play"
+                },
+                {
+                  "point": 1,
+                  "quote": "holds auditions and chooses the cast"
+                },
+                {
+                  "point": 2,
+                  "quote": "plans the movement of the actors on stage and leads the rehearsals"
+                },
+                {
+                  "point": 3,
+                  "quote": "works with the designers so that costumes, lights and set match his idea for the play"
+                }
+              ],
+              "feedback": "Full marks. Four separate duties, in the order a director does them."
+            },
+            {
+              "tier": "full",
+              "text": "The director analyses the play and decides what message to bring out. The director casts the actors for each character. The director rehearses the scenes, tells the actors where to stand and how to speak their lines, and gives notes after each rehearsal. The director also sees that the lights, sound and costumes are ready before the opening night.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "analyses the play and decides what message to bring out"
+                },
+                {
+                  "point": 1,
+                  "quote": "casts the actors for each character"
+                },
+                {
+                  "point": 2,
+                  "quote": "rehearses the scenes, tells the actors where to stand and how to speak their lines, and gives notes after each rehearsal"
+                },
+                {
+                  "point": 3,
+                  "quote": "sees that the lights, sound and costumes are ready before the opening night"
+                }
+              ],
+              "feedback": "All four marks. You included the giving of notes, which is an important part of rehearsal."
+            },
+            {
+              "tier": "partial",
+              "text": "The director chooses the actors and he rehearses the actors.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "chooses the actors"
+                },
+                {
+                  "point": 2,
+                  "quote": "rehearses the actors"
+                }
+              ],
+              "feedback": "Two duties are right. Add studying the script, and working with the designers so that the costumes, lights and set fit the plan. Also say how he guides the actors in rehearsal."
+            },
+            {
+              "tier": "partial",
+              "text": "The director reads the script. He also sells the tickets and cleans the hall.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "reads the script"
+                }
+              ],
+              "feedback": "Reading the script is the first duty. Selling tickets and cleaning are not the director's job. Think of casting, rehearsing and working with the designers."
+            },
+            {
+              "tier": "weak",
+              "text": "The director is the actor who plays the main part and the others follow him.",
+              "meets": [],
+              "feedback": "The director does not usually act in the play. The director guides the actors and shapes the whole production."
+            },
+            {
+              "tier": "weak",
+              "text": "A director directs the audience to their seats.",
+              "meets": [],
+              "feedback": "That is the work of an usher. A director guides the actors and designers who prepare the play."
+            }
+          ]
+        },
+        {
+          "prompt": "A scene shows an angry king and a messenger who has brought bad news. Explain how a director would stage the scene: what to tell the actors, where to place them, how they should move and speak, and how to improve it.",
+          "markScheme": [
+            "Says to explain to the actors what each character wants or feels",
+            "Says where to place the actors, such as the king high and central and the messenger lower and to the side",
+            "Says how they should move, such as the king stepping forward and the messenger backing away",
+            "Says how they should use their voices",
+            "Says to rehearse several times and give notes after each"
+          ],
+          "modelAnswer": "I would tell the actors what each character wants: the king wants to punish, the messenger wants to survive. I would place the king high and in the centre and the messenger lower and to the side. As the king grows angrier he steps forward and the messenger backs away. The king should speak slowly and loudly, the messenger quickly in a shaky voice. We would rehearse several times and I would give notes after each run.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First I would study the scene and tell the actors what each character wants: the king wants to punish the messenger and the messenger wants to survive. I would place the king high on a platform in the centre, because that position shows power, and the messenger lower and to the side. As the king gets angry he moves forward and the messenger moves back to show fear. I would tell the king to speak slowly and loudly, and the messenger to speak quickly in a shaky voice. Then we would rehearse several times, and after each rehearsal I would give notes to improve it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tell the actors what each character wants"
+                },
+                {
+                  "point": 1,
+                  "quote": "place the king high on a platform in the centre, because that position shows power"
+                },
+                {
+                  "point": 2,
+                  "quote": "As the king gets angry he moves forward and the messenger moves back to show fear"
+                },
+                {
+                  "point": 3,
+                  "quote": "tell the king to speak slowly and loudly, and the messenger to speak quickly in a shaky voice"
+                },
+                {
+                  "point": 4,
+                  "quote": "rehearse several times, and after each rehearsal I would give notes"
+                }
+              ],
+              "feedback": "Full marks. You linked position to power and voice to feeling, which is exactly what directors do."
+            },
+            {
+              "tier": "full",
+              "text": "I would begin by helping the actors understand their characters' feelings in the scene. For blocking, the king stands upstage centre and the messenger kneels downstage so the audience sees the difference in status. The king takes steps towards the messenger while the messenger backs away. For voices, the king shouts with anger but not too fast, and the messenger's voice shakes and breaks. We would practise it again and again, and I would give notes about what to change.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "helping the actors understand their characters' feelings in the scene"
+                },
+                {
+                  "point": 1,
+                  "quote": "the king stands upstage centre and the messenger kneels downstage so the audience sees the difference in status"
+                },
+                {
+                  "point": 2,
+                  "quote": "The king takes steps towards the messenger while the messenger backs away"
+                },
+                {
+                  "point": 3,
+                  "quote": "the king shouts with anger but not too fast, and the messenger's voice shakes and breaks"
+                },
+                {
+                  "point": 4,
+                  "quote": "practise it again and again, and I would give notes about what to change"
+                }
+              ],
+              "feedback": "All five marks. Using stage language such as upstage and downstage is correct."
+            },
+            {
+              "tier": "partial",
+              "text": "I would put the king in the centre and the messenger at the side. The king shouts and the messenger looks afraid.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "put the king in the centre and the messenger at the side"
+                },
+                {
+                  "point": 3,
+                  "quote": "The king shouts and the messenger looks afraid"
+                }
+              ],
+              "feedback": "Placement and mood are right. Say how they move (the king steps forward, the messenger backs away), how the voices differ, what you tell the actors first, and that you rehearse and give notes."
+            },
+            {
+              "tier": "partial",
+              "text": "I will rehearse the scene many times and give notes. The actors must know what they are saying.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "rehearse the scene many times and give notes"
+                }
+              ],
+              "feedback": "Rehearsing and giving notes are right. Say what you would tell the actors about their characters, where to place them, how they move and how they use their voices."
+            },
+            {
+              "tier": "weak",
+              "text": "I would do the scene myself first and the actors will copy exactly.",
+              "meets": [],
+              "feedback": "A director guides actors to find their own performance rather than asking them to copy. Explain the characters' feelings, place them, and coach voice and movement."
+            },
+            {
+              "tier": "weak",
+              "text": "The king and the messenger should fight with real sticks so that the audience will believe.",
+              "meets": [],
+              "feedback": "Real fighting is dangerous and unnecessary. A director uses position, movement and voice to show anger and fear safely."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Theatre design: costume, lighting and set",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the functions of costume, makeup, lighting and set design;\n2. name common design terms: flats, backdrop, props, spotlight, floodlight, gel and dimmer;\n3. plan the design of a short scene.\n\n## Materials\n\nPictures of stage sets and costumes, a torch and coloured cellophane (to show gels), cardboard for a model set, a marker board.\n\n## Starter\n\nShine a torch on a learner's face from below, then from the side. Ask: how does the face seem to change? Introduce lighting as a tool.\n\n## Development\n\n1. Costume: shows who the character is (job, age, wealth), when and where the story takes place, and helps actors move. Makeup changes the look of the face. Colour carries meaning.\n2. Lighting: lets the audience see; creates mood (red for danger, dim blue for night); shows time of day; focuses attention. Spotlight: narrow bright beam. Floodlight: wide wash. Gel: coloured plastic sheet in front of a lamp. Dimmer: raises or lowers the brightness.\n3. Set: the scenery that shows the place. Flats are painted frames that make walls; a backdrop is a painted cloth hung at the back. Props are objects used by actors.\n4. The designers work from the director's idea and the script, and must keep actors safe.\n5. Draw a ground plan for a small scene.\n\n## Class activity\n\nGroups plan the costume, lighting and set for a market scene at midday and then at night, and draw a simple model.\n\n## Evaluation\n\n1. What is a gel?\n2. Name one function of lighting.\n3. What are props?\n\n## Assignment\n\nQuiz on the app. Design a costume for a king in a Nigerian folktale, drawing it and labelling the colours.",
+      "reading": {
+        "title": "How a stage looks, sounds and feels",
+        "content": "# Theatre design\n\nWhen the curtain opens, the audience sees a world: clothes, colours, lights and a place. All of this is **design**. Designers work from the script and the director's idea.\n\n## Costume and makeup\n\nA **costume** tells the audience about a character. It can show:\n\n- the character's **job or position**: a chief's robe, a nurse's uniform;\n- **age and wealth**: rich cloth or old patched clothes;\n- **time and place**: clothes of long ago or of today;\n- **feelings**, through **colour**: red for anger or danger, white for purity, black for grief or evil.\n\nCostumes must also be comfortable and safe so that the actor can move and speak freely. **Makeup** changes the face to suit the role: ageing, scars, or a bold design for a masquerade character.\n\n## Lighting\n\nLighting does several jobs:\n\n1. **Lets the audience see** the actors.\n2. **Creates mood**: red light for danger or anger, soft blue for night or sadness.\n3. **Shows time of day**: bright yellow-white for midday, orange for sunset.\n4. **Focuses attention**: the audience looks at what is bright.\n\nTerms to know:\n\n- **Spotlight:** a lamp with a narrow, bright beam that lights one actor or one area.\n- **Floodlight:** a lamp that lights a wide area softly.\n- **Gel:** a thin sheet of coloured plastic in front of a lamp to change its colour.\n- **Dimmer:** a control that raises or lowers the brightness.\n\n## Set design\n\nThe **set** is the scenery that shows the place. A set designer plans it from the script and draws a **ground plan**.\n\n- **Flats** are painted wooden or cloth frames that stand like walls.\n- A **backdrop** is a large painted cloth hung at the back of the stage.\n- **Props** (short for properties) are objects the actors use, such as a calabash, a walking stick or a stool.\n\nA set may be **realistic**, looking like the real place, or **symbolic**, using a few shapes to suggest it, such as a single tree for a forest. A simple set is often better than a crowded one, because actors need room to move.\n\n## Safety\n\nReal fire is not safe on a stage. Use battery lamps for lanterns, and secure every piece of set so that nothing falls on an actor."
+      },
+      "cards": [
+        {
+          "front": "Costume",
+          "back": "The clothes worn by actors that show who the character is."
+        },
+        {
+          "front": "Spotlight",
+          "back": "A lamp with a narrow, bright beam for lighting one actor or area."
+        },
+        {
+          "front": "Floodlight",
+          "back": "A lamp that lights a wide area softly."
+        },
+        {
+          "front": "Gel",
+          "back": "A coloured plastic sheet put in front of a light to change its colour."
+        },
+        {
+          "front": "Dimmer",
+          "back": "A control that raises or lowers the brightness of lights."
+        },
+        {
+          "front": "Flats",
+          "back": "Painted frames that stand like the walls of a set."
+        },
+        {
+          "front": "Backdrop",
+          "back": "A large painted cloth hung at the back of the stage."
+        },
+        {
+          "front": "Props",
+          "back": "Objects that actors carry or use on stage."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A designer chooses clothes for actors to show who the characters are and when the story takes place. This is",
+          "options": [
+            "costume design",
+            "lighting design",
+            "sound design",
+            "stage management"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which lamp gives a narrow, bright beam to light one actor?",
+          "options": [
+            "Floodlight",
+            "Candle",
+            "Gel",
+            "Spotlight"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Coloured plastic sheets placed in front of a light to change its colour are called",
+          "options": [
+            "flats",
+            "props",
+            "gels",
+            "cues"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Painted frames that form the walls of a set are called",
+          "options": [
+            "gels",
+            "flats",
+            "props",
+            "dimmers"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Small objects that actors carry or use, such as a calabash or walking stick, are",
+          "options": [
+            "props",
+            "flats",
+            "gels",
+            "cues"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain two functions of stage lighting.",
+          "markScheme": [
+            "States a first function of lighting",
+            "Explains it or gives an example",
+            "States a second function of lighting",
+            "Explains it or gives an example"
+          ],
+          "modelAnswer": "One function of lighting is to let the audience see the actors, so an important actor is lit by a spotlight. Another is to create mood, for example red light for danger or anger and dim blue for night.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "One function of lighting is to let the audience see the actors, so the important actor is lit by a spotlight. Another function is to create mood, for example red light for anger or danger and dim blue for night and sadness.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to let the audience see the actors"
+                },
+                {
+                  "point": 1,
+                  "quote": "the important actor is lit by a spotlight"
+                },
+                {
+                  "point": 2,
+                  "quote": "to create mood"
+                },
+                {
+                  "point": 3,
+                  "quote": "red light for anger or danger and dim blue for night and sadness"
+                }
+              ],
+              "feedback": "Full marks. Each function has its own example."
+            },
+            {
+              "tier": "full",
+              "text": "Lighting shows the time of day: bright yellow light means daytime and dark blue means night. Lighting also directs attention, because the audience looks at the bright part of the stage, so the lights can focus on the actor who is speaking.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Lighting shows the time of day"
+                },
+                {
+                  "point": 1,
+                  "quote": "bright yellow light means daytime and dark blue means night"
+                },
+                {
+                  "point": 2,
+                  "quote": "Lighting also directs attention"
+                },
+                {
+                  "point": 3,
+                  "quote": "the lights can focus on the actor who is speaking"
+                }
+              ],
+              "feedback": "All four marks. Directing attention is a function many learners forget."
+            },
+            {
+              "tier": "partial",
+              "text": "Lighting makes the stage bright. Lighting also shows the time.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Lighting makes the stage bright"
+                },
+                {
+                  "point": 2,
+                  "quote": "Lighting also shows the time"
+                }
+              ],
+              "feedback": "Two functions named. Explain each with an example: the lights let the audience see the actors, and a colour or brightness change can show day or night."
+            },
+            {
+              "tier": "partial",
+              "text": "Lighting creates mood, because if the light is red the audience feels the danger.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Lighting creates mood"
+                },
+                {
+                  "point": 1,
+                  "quote": "if the light is red the audience feels the danger"
+                }
+              ],
+              "feedback": "Mood is well explained. You need a second function, such as letting the audience see, showing the time of day or focusing attention."
+            },
+            {
+              "tier": "weak",
+              "text": "Lights are used so that the actors will not fall off the stage and the audience will not sleep.",
+              "meets": [],
+              "feedback": "Lights help the audience see and set the mood and time. Think of what they add to a scene."
+            },
+            {
+              "tier": "weak",
+              "text": "Lighting is the electricity bill the school pays for the theatre.",
+              "meets": [],
+              "feedback": "Lighting means the lamps and the way they are used to show the scene: mood, time of day and focus."
+            }
+          ]
+        },
+        {
+          "prompt": "A class is staging a village market scene at midday, followed by the same market at night. Explain how the set, costumes and lighting can show the market and the change from day to night.",
+          "markScheme": [
+            "Describes a set that shows a market, such as stalls and a painted backdrop",
+            "Describes costumes that fit market people",
+            "Describes the lighting for midday",
+            "Describes the lighting for night",
+            "Says how the change is made, such as fading the lights with a dimmer while the stalls are packed up"
+          ],
+          "modelAnswer": "For the set I would build stalls and paint flats and a backdrop of a market. The traders would wear wrappers and caps. In the daytime the lights would be bright and warm. At night they would be dim blue with a few lanterns. The change is made by fading the lights with a dimmer while the actors pack up the goods.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "For the set, I would paint flats to look like market stalls and hang a backdrop of a market, and place baskets and mats on the floor. For costumes the traders would wear wrappers, caps and buba, so the audience knows they are market people. In the daytime scene the lights would be bright and warm to show the midday sun. For night, I would dim the lights to a deep blue and light a few lanterns. To change from day to night, the lights fade slowly with a dimmer while the actors remove goods from the stalls.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "paint flats to look like market stalls and hang a backdrop of a market"
+                },
+                {
+                  "point": 1,
+                  "quote": "the traders would wear wrappers, caps and buba"
+                },
+                {
+                  "point": 2,
+                  "quote": "the lights would be bright and warm to show the midday sun"
+                },
+                {
+                  "point": 3,
+                  "quote": "dim the lights to a deep blue and light a few lanterns"
+                },
+                {
+                  "point": 4,
+                  "quote": "the lights fade slowly with a dimmer while the actors remove goods from the stalls"
+                }
+              ],
+              "feedback": "Full marks. You covered all three kinds of design and the change from day to night."
+            },
+            {
+              "tier": "full",
+              "text": "The set designer can build stalls from wood and cloth and use painted flats for shops behind them, with props like tomatoes, pots and scales on the stalls. The costume designer dresses sellers in wrappers and headties and buyers in everyday clothes. Daytime lighting is strong and yellow-white. At night we use a blue gel and a few small lamps. We can change the time by slowly lowering the lights with the dimmer and letting the stall owners pack up.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "build stalls from wood and cloth and use painted flats for shops behind them"
+                },
+                {
+                  "point": 1,
+                  "quote": "dresses sellers in wrappers and headties and buyers in everyday clothes"
+                },
+                {
+                  "point": 2,
+                  "quote": "Daytime lighting is strong and yellow-white"
+                },
+                {
+                  "point": 3,
+                  "quote": "At night we use a blue gel and a few small lamps"
+                },
+                {
+                  "point": 4,
+                  "quote": "slowly lowering the lights with the dimmer and letting the stall owners pack up"
+                }
+              ],
+              "feedback": "All five marks. Using a gel and props shows you know the terms."
+            },
+            {
+              "tier": "partial",
+              "text": "I would build stalls for the market. The traders will wear wrapper and caps. In the night the lights will be dim.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "build stalls for the market"
+                },
+                {
+                  "point": 1,
+                  "quote": "wrapper and caps"
+                },
+                {
+                  "point": 3,
+                  "quote": "In the night the lights will be dim"
+                }
+              ],
+              "feedback": "Good set, costume and night lights. Say how the daytime lighting differs (bright and warm) and how the change from day to night is made, for example with a dimmer."
+            },
+            {
+              "tier": "partial",
+              "text": "The lighting will be bright in the day and dark at night. A dimmer can change it slowly.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "bright in the day"
+                },
+                {
+                  "point": 4,
+                  "quote": "A dimmer can change it slowly"
+                }
+              ],
+              "feedback": "Lighting is well done. The question also asks about the set (stalls, backdrop) and the costumes of the market people. Also say what colour or mood the night light has."
+            },
+            {
+              "tier": "weak",
+              "text": "I would use real fire at night to make it look real and I would use real goats in the market.",
+              "meets": [],
+              "feedback": "Real fire and animals are unsafe on a stage. Use battery lanterns and props, and a dimmer to show the night."
+            },
+            {
+              "tier": "weak",
+              "text": "Day and night will be shown by changing the seats of the audience.",
+              "meets": [],
+              "feedback": "Day and night are shown on the stage with lighting, set changes and costumes, not by moving the audience."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Improvisation and dramatising a story",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain improvisation and the rules that make it work;\n2. improvise a short scene from a situation;\n3. turn a folktale into a short play with scenes, characters, dialogue and stage directions;\n4. perform the scene with voice and movement.\n\n## Materials\n\nSituation cards (for example: two traders quarrel over a stall; a pupil arrives late and must explain), a copy of a short folktale, paper for scripts.\n\n## Starter\n\nPlay 'yes, and': a pair builds a story by each adding a sentence that begins 'Yes, and...'. Discuss what happened when someone said 'no'.\n\n## Development\n\n1. Improvisation is acting without a script: the actors make up the words and actions as they go.\n2. Rules: agree on who, where and what; accept and build on your partner's ideas; listen; stay in character; keep the scene moving.\n3. Practise in pairs with situation cards, then in groups of four.\n4. Dramatising a story: choose the main events, divide them into scenes, assign characters (and a narrator), write short dialogue, add stage directions, rehearse.\n5. Use the tortoise-and-birds folktale as a model: the invitation, the borrowed feathers, the feast, the fall.\n\n## Class activity\n\nGroups improvise one situation card, then plan and perform a three-scene dramatisation of the tortoise folktale using a narrator.\n\n## Evaluation\n\n1. What is improvisation?\n2. What should you do when your partner introduces a new idea?\n3. What are stage directions?\n\n## Assignment\n\nProblem set on the app. Choose a folktale you know and write a short plan for three scenes.",
+      "reading": {
+        "title": "Acting without a script, and bringing stories to life",
+        "content": "# Improvisation and dramatising a story\n\n## What is improvisation?\n\n**Improvisation** is acting without a script. The actors make up the words and the actions on the spot, as the scene goes along. Improvisation trains actors to think fast, listen to each other and be confident.\n\n## Rules of improvisation\n\n1. **Agree on the basics:** who you are, where you are and what is happening.\n2. **Accept and build.** If your partner says there is a snake in the room, react to it; do not say there is none. This is the \"yes, and\" rule.\n3. **Listen** so that what you say fits what was just said.\n4. **Stay in character** until the scene ends.\n5. **Keep the scene going.** Do not stop to laugh or to argue.\n6. **Support your partners.** A good improviser makes the other actor look good.\n\n## Dramatising a story\n\nTo **dramatise** a story is to turn it into a play. You can dramatise a folktale, a poem or a chapter of a book.\n\n1. **Choose the main events** and divide them into scenes.\n2. **Assign the characters** and, if needed, a **narrator** who tells the audience what happens between scenes.\n3. **Write short dialogue** for each scene. Keep it simple and let each character sound different.\n4. **Add stage directions.** These are instructions, usually in brackets, about how a character moves or speaks: *(Tortoise flaps his arms like wings.)*\n5. **Rehearse**, using voice and movement, and add simple costumes and props.\n\n## Example: the tortoise and the birds\n\nA folktale tells how the birds invite each other to a feast in the sky. The tortoise, who cannot fly, borrows a feather from each bird, gives himself the name \"All of you\" and, when the food is served for \"all of you\", eats everything himself. The angry birds take back their feathers, and the tortoise falls to earth and cracks his shell.\n\nScenes: 1. the invitation; 2. the borrowing of feathers; 3. the feast; 4. the fall.\n\n## Using voice and movement\n\nThe tortoise can speak boastfully with a high, sly voice and move with small, clever steps. The birds fly with arms spread and speak sharply. A narrator speaks clearly and slowly to keep the story together."
+      },
+      "cards": [
+        {
+          "front": "Improvisation",
+          "back": "Acting without a script, making up the words and actions on the spot."
+        },
+        {
+          "front": "Yes, and",
+          "back": "The rule of accepting your partner's idea and adding to it."
+        },
+        {
+          "front": "Dramatise",
+          "back": "Turn a story into a play."
+        },
+        {
+          "front": "Narrator",
+          "back": "A speaker who tells the audience what happens between scenes."
+        },
+        {
+          "front": "Stage directions",
+          "back": "Instructions about how a character moves or speaks, usually in brackets."
+        },
+        {
+          "front": "Dialogue",
+          "back": "The words the characters say."
+        },
+        {
+          "front": "In character",
+          "back": "Acting and speaking as the character would, until the scene ends."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Improvisation is",
+          "options": [
+            "acting from a memorised script",
+            "copying another actor",
+            "acting without a script, making up words and actions on the spot",
+            "reading a play aloud"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "In improvisation, the best way to respond to your partner's new idea is to",
+          "options": [
+            "say no and change the scene",
+            "accept it and build on it",
+            "stop acting",
+            "ignore it"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Before improvising a scene, actors should agree on",
+          "options": [
+            "the final words",
+            "the price of tickets",
+            "the colour of the curtains",
+            "who they are, where they are and what is happening"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "To dramatise a folktale, a group first",
+          "options": [
+            "chooses the main events and decides who plays each character",
+            "writes the whole story again as an essay",
+            "draws pictures of the characters only",
+            "memorises the story word for word from the book"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "In a script, instructions in brackets about how a character moves or speaks are called",
+          "options": [
+            "dialogue",
+            "plot",
+            "stage directions",
+            "themes"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what improvisation is and state three rules that make an improvised scene work.",
+          "markScheme": [
+            "Explains that improvisation is acting without a script, making up words and actions",
+            "States a first rule",
+            "States a second rule",
+            "States a third rule"
+          ],
+          "modelAnswer": "Improvisation is acting without a script, when the actors make up the words and actions as they go along. One rule is to accept your partner's idea and build on it. Another is to stay in character until the scene ends. A third is to listen carefully so that your lines fit what was said.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Improvisation is acting without a script, when the actors make up the words and actions as they go along. A rule is to accept your partner's idea and build on it instead of saying no. Another rule is to stay in character until the scene ends. A third rule is to listen carefully so that your lines fit what was just said.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "acting without a script, when the actors make up the words and actions as they go along"
+                },
+                {
+                  "point": 1,
+                  "quote": "accept your partner's idea and build on it instead of saying no"
+                },
+                {
+                  "point": 2,
+                  "quote": "stay in character until the scene ends"
+                },
+                {
+                  "point": 3,
+                  "quote": "listen carefully so that your lines fit what was just said"
+                }
+              ],
+              "feedback": "Full marks. The three rules are different and each one is explained."
+            },
+            {
+              "tier": "full",
+              "text": "In an improvisation the actors create the scene on the spot, with no written lines. First, agree on who you are, where you are and what is happening. Then keep the scene going and do not stop to laugh or stop to argue. Always support the others, so if your partner says there is a snake in the room, you react and do not say there is none.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the actors create the scene on the spot, with no written lines"
+                },
+                {
+                  "point": 1,
+                  "quote": "agree on who you are, where you are and what is happening"
+                },
+                {
+                  "point": 2,
+                  "quote": "keep the scene going and do not stop to laugh or stop to argue"
+                },
+                {
+                  "point": 3,
+                  "quote": "if your partner says there is a snake in the room, you react and do not say there is none"
+                }
+              ],
+              "feedback": "All four marks. The snake example shows the 'yes, and' rule very clearly."
+            },
+            {
+              "tier": "partial",
+              "text": "Improvisation is when you act without a script. You must listen to your partner.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "when you act without a script"
+                },
+                {
+                  "point": 3,
+                  "quote": "You must listen to your partner"
+                }
+              ],
+              "feedback": "Good. Add two more rules, such as accepting and building on your partner's idea, and staying in character."
+            },
+            {
+              "tier": "partial",
+              "text": "You should say no to your partner's idea if you do not like it, so the scene is better. Improvisation is acting what you have not prepared.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "acting what you have not prepared"
+                }
+              ],
+              "feedback": "That definition is fair but needs more: no script, and the actors make up words and actions. Saying no stops the scene; the rule is to accept the idea and build on it.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Improvisation is when the actor forgets his lines and runs away from the stage.",
+              "meets": [],
+              "feedback": "In improvisation there are no lines to forget. Actors make up the words and actions on the spot, and stay in the scene."
+            },
+            {
+              "tier": "weak",
+              "text": "Improvisation is a type of music that is sung in church.",
+              "meets": [],
+              "feedback": "Improvisation in drama is acting without a script. Actors make up the scene as they go."
+            }
+          ]
+        },
+        {
+          "prompt": "Your group will dramatise the folktale in which the tortoise borrows the birds' feathers to go to a feast in the sky and falls when the birds take them back. Explain how your group will turn the story into a short play and prepare it for performance.",
+          "markScheme": [
+            "Says to choose the main events and divide them into scenes",
+            "Says to assign the characters, including a narrator",
+            "Says to write short dialogue for the scenes",
+            "Says to add stage directions and a narrator to link the scenes",
+            "Says to rehearse, using voice, movement and simple costumes or props"
+          ],
+          "modelAnswer": "We will choose the main events: the invitation, the borrowed feathers, the feast and the fall. We will give parts to the tortoise, the birds, the host and a narrator. We will write short dialogue for each scene and add stage directions. We will rehearse with voice and movement and use simple costumes such as feathers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First we choose the main events: the tortoise hears about the feast, he borrows feathers and gets the name 'All of you', he eats all the food, and the birds take back their feathers so he falls. Then we decide who plays the tortoise, the birds, the host and a narrator. We write short dialogue for each scene, for example the tortoise says 'My name is All of you' and the host serves the food to him. Stage directions such as '(Tortoise flaps his arms)' show the movement, and the narrator links the scenes. We rehearse, using voices and movement for each character and simple costumes such as feathers or masks.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "choose the main events: the tortoise hears about the feast, he borrows feathers and gets the name 'All of you', he eats all the food, and the birds take back their feathers so he falls"
+                },
+                {
+                  "point": 1,
+                  "quote": "decide who plays the tortoise, the birds, the host and a narrator"
+                },
+                {
+                  "point": 2,
+                  "quote": "write short dialogue for each scene, for example the tortoise says 'My name is All of you'"
+                },
+                {
+                  "point": 3,
+                  "quote": "Stage directions such as '(Tortoise flaps his arms)' show the movement, and the narrator links the scenes"
+                },
+                {
+                  "point": 4,
+                  "quote": "rehearse, using voices and movement for each character and simple costumes such as feathers or masks"
+                }
+              ],
+              "feedback": "Full marks. Your plan covers every step and uses the story itself for examples."
+            },
+            {
+              "tier": "full",
+              "text": "We divide the story into scenes: the invitation, the borrowing of the feathers, the feast and the fall. Every pupil gets a part: tortoise, several birds, the host and a narrator. We write the lines the characters will speak, keeping them short and in the voice of each character, for example the greedy tortoise speaks boastfully. We add stage directions telling the actors how to move, and the narrator tells the audience what happens between scenes. Then we rehearse and add simple props like cloth feathers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "divide the story into scenes: the invitation, the borrowing of the feathers, the feast and the fall"
+                },
+                {
+                  "point": 1,
+                  "quote": "Every pupil gets a part: tortoise, several birds, the host and a narrator"
+                },
+                {
+                  "point": 2,
+                  "quote": "write the lines the characters will speak, keeping them short"
+                },
+                {
+                  "point": 3,
+                  "quote": "add stage directions telling the actors how to move, and the narrator tells the audience what happens between scenes"
+                },
+                {
+                  "point": 4,
+                  "quote": "rehearse and add simple props like cloth feathers"
+                }
+              ],
+              "feedback": "All five marks. Giving every pupil a part is a good practical detail."
+            },
+            {
+              "tier": "partial",
+              "text": "We choose the main scenes of the story. Then we choose who will be the tortoise and the birds.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "choose the main scenes of the story"
+                },
+                {
+                  "point": 1,
+                  "quote": "choose who will be the tortoise and the birds"
+                }
+              ],
+              "feedback": "A good start. Add writing short dialogue, stage directions, a narrator, and rehearsing with voice, movement and simple costumes."
+            },
+            {
+              "tier": "partial",
+              "text": "We write the dialogue for the tortoise and the birds. We should rehearse well before the show.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "write the dialogue for the tortoise and the birds"
+                },
+                {
+                  "point": 4,
+                  "quote": "rehearse well before the show"
+                }
+              ],
+              "feedback": "Dialogue and rehearsal are right. First choose the main events and scenes and give out the characters, and add stage directions and a narrator."
+            },
+            {
+              "tier": "weak",
+              "text": "We read the story aloud in the class and the teacher gives marks.",
+              "meets": [],
+              "feedback": "Reading aloud is not dramatising. Dramatising turns the story into scenes with characters, dialogue and movement."
+            },
+            {
+              "tier": "weak",
+              "text": "The actors will not need lines because the story is old, they can just stand and look at the audience.",
+              "meets": [],
+              "feedback": "A play needs action and words. Plan the scenes, write short dialogue and decide how the actors will move."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Careers in drama, film and the Nigerian stage",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name careers in drama and film and say what each person does;\n2. describe the place of theatre and Nollywood in Nigeria;\n3. state skills and training that help a person pursue a career in drama.\n\n## Materials\n\nPictures of a stage play, a film set, the National Theatre in Lagos and a Nollywood poster; a chart of careers; a marker board.\n\n## Starter\n\nAsk: who has watched a Nigerian film recently? Name three people who worked on it besides the actors you saw.\n\n## Development\n\n1. Careers: actor, director, playwright or scriptwriter, producer, costume designer, set designer, makeup artist, lighting and sound technician, cinematographer (camera), film editor, stage manager, casting director, theatre critic, drama teacher.\n2. Nigeria has a lively tradition of stage drama, in English, Yoruba and Pidgin, and a huge film industry known as Nollywood, which is among the largest in the world by number of films made.\n3. Nigerian dramatists have written plays that comment on politics, tradition and daily life. Some have won international recognition.\n4. How to prepare: join the school drama club, read plays, watch with attention, study Theatre Arts or film at university or film school, and gain experience through community and school productions.\n5. Skills: creativity, confidence, discipline, teamwork and communication.\n\n## Class activity\n\nLearners interview a partner as if they were applying for a job in a film production: which role, why, and what skills they bring.\n\n## Evaluation\n\n1. What does a cinematographer do?\n2. What is Nollywood?\n3. Name two skills a drama student needs.\n\n## Assignment\n\nWorksheet on the app. Write a paragraph on the career in drama that interests you most, and say how you will prepare for it.",
+      "reading": {
+        "title": "Making a living from drama",
+        "content": "# Careers in drama\n\nDrama is not only a school subject. It is a profession that supports thousands of Nigerians.\n\n## Careers in the theatre and in film\n\n| Career | What the person does |\n| --- | --- |\n| Actor | Plays a character on stage, film or television |\n| Director | Guides the actors and the whole production |\n| Playwright or scriptwriter | Writes the script |\n| Producer | Finds the money and organises the production |\n| Costume designer | Makes or chooses the clothes the characters wear |\n| Set designer | Plans and builds the scenery |\n| Makeup artist | Prepares the faces of the actors to suit their roles |\n| Lighting and sound technician | Operates lights and sound |\n| Cinematographer | Operates the camera and decides how scenes are filmed |\n| Film editor | Cuts and joins the shots to make the final film |\n| Stage manager | Runs everything backstage during a show |\n| Casting director | Chooses actors for the roles |\n| Theatre critic | Watches plays and writes what he or she thinks of them |\n| Drama teacher | Trains learners in acting and stagecraft |\n\n## Drama in Nigeria\n\nNigeria has a long tradition of stage drama, from the Yoruba travelling theatre to plays performed at university theatres and at the National Theatre in Lagos. Nigerian dramatists have written in English, Yoruba, Pidgin and other languages. Their plays often discuss politics, tradition and modern life, and some have won international attention.\n\nNigeria also has a huge film industry called **Nollywood**, which is among the largest in the world by the number of films made. Nollywood creates work for actors, camera crews, writers, makeup artists, caterers, drivers and many others, and its films show Nigerian life to audiences across Africa and the world.\n\n## How drama helps society\n\n1. It gives **jobs**.\n2. It **entertains** and **preserves culture**: dress, food, music and languages.\n3. It **educates**, by showing problems and moral lessons.\n4. It **builds confidence and teamwork** in those who take part.\n\n## Preparing for a career\n\n- Join the school drama club and take part in productions.\n- Read plays and watch good drama with attention.\n- Study Theatre Arts or film at a university or film school.\n- Gain experience in community and school shows.\n\nThe skills you need are **creativity** (new ideas), **confidence** (to perform), **discipline** (to learn lines and come to rehearsals on time), **teamwork** and **clear communication**."
+      },
+      "cards": [
+        {
+          "front": "Nollywood",
+          "back": "The name of Nigeria's film industry."
+        },
+        {
+          "front": "Playwright",
+          "back": "A person who writes plays."
+        },
+        {
+          "front": "Cinematographer",
+          "back": "The person who operates the camera and decides how scenes are filmed."
+        },
+        {
+          "front": "Film editor",
+          "back": "The person who cuts and joins shots to make the finished film."
+        },
+        {
+          "front": "Theatre critic",
+          "back": "A person who watches plays and writes what they think."
+        },
+        {
+          "front": "Casting director",
+          "back": "The person who chooses actors for the roles."
+        },
+        {
+          "front": "Skills for drama",
+          "back": "Creativity, confidence, discipline, teamwork and communication."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Nigeria's film industry is popularly called",
+          "options": [
+            "Bollywood",
+            "Nollywood",
+            "Hollywood",
+            "Kanywood"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A person who writes the scripts for plays or films is a",
+          "options": [
+            "cinematographer",
+            "prompter",
+            "film editor",
+            "playwright or scriptwriter"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A person who watches plays and films and writes opinions about them is a",
+          "options": [
+            "makeup artist",
+            "producer",
+            "critic",
+            "stage manager"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which career needs skill with lights and sound equipment?",
+          "options": [
+            "Technician",
+            "Costume designer",
+            "Casting director",
+            "Playwright"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which is a good way to prepare for a career in drama?",
+          "options": [
+            "Avoid reading plays",
+            "Join the school drama club and later study Theatre Arts or film",
+            "Stay away from rehearsals",
+            "Only watch films without thinking about them"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Name four careers in drama and film and say what each person does.",
+          "markScheme": [
+            "Names a career in drama or film and states what the person does",
+            "Names a second career and states what the person does",
+            "Names a third career and states what the person does",
+            "Names a fourth career and states what the person does"
+          ],
+          "modelAnswer": "An actor plays a character in a play or film. A playwright writes the script. A costume designer makes the clothes for the characters. A film editor cuts and joins the shots to make the finished film.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "An actor plays a character in a play or film. A playwright writes the script. A costume designer makes the clothes for the characters. A film editor cuts and joins the shots to make the final film.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "An actor plays a character in a play or film"
+                },
+                {
+                  "point": 1,
+                  "quote": "A playwright writes the script"
+                },
+                {
+                  "point": 2,
+                  "quote": "A costume designer makes the clothes for the characters"
+                },
+                {
+                  "point": 3,
+                  "quote": "A film editor cuts and joins the shots to make the final film"
+                }
+              ],
+              "feedback": "Full marks. Four different careers, each with a correct duty."
+            },
+            {
+              "tier": "full",
+              "text": "A director guides the actors and the whole production. A cinematographer operates the camera and decides how the scenes are filmed. A makeup artist prepares the faces of the actors to suit their roles. A drama teacher trains learners in acting and stagecraft.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A director guides the actors and the whole production"
+                },
+                {
+                  "point": 1,
+                  "quote": "A cinematographer operates the camera and decides how the scenes are filmed"
+                },
+                {
+                  "point": 2,
+                  "quote": "A makeup artist prepares the faces of the actors to suit their roles"
+                },
+                {
+                  "point": 3,
+                  "quote": "A drama teacher trains learners in acting and stagecraft"
+                }
+              ],
+              "feedback": "All four marks. Drama teacher is a career that many learners overlook."
+            },
+            {
+              "tier": "partial",
+              "text": "An actor acts in films. A producer finds the money for the film. A critic is a person who does not like plays.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "An actor acts in films"
+                },
+                {
+                  "point": 1,
+                  "quote": "A producer finds the money for the film"
+                }
+              ],
+              "feedback": "Actor and producer are right. A critic watches plays and writes what he or she thinks of them, good or bad. You need a fourth career, such as director or editor."
+            },
+            {
+              "tier": "partial",
+              "text": "A lighting technician controls the lights. A writer writes. A director directs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A lighting technician controls the lights"
+                }
+              ],
+              "feedback": "The lighting technician is correct. 'A writer writes' and 'a director directs' repeat the title: say that a playwright writes the script and a director guides the actors."
+            },
+            {
+              "tier": "weak",
+              "text": "Careers in drama are doctor, lawyer and engineer.",
+              "meets": [],
+              "feedback": "Those are other professions. Careers in drama and film include actor, director, playwright and film editor."
+            },
+            {
+              "tier": "weak",
+              "text": "People in drama do not have careers, it is only for fun after school.",
+              "meets": [],
+              "feedback": "Drama and film provide many full-time jobs in Nigeria, in theatre, television and Nollywood."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain three ways in which drama and Nollywood help Nigerian society, and name two skills a young person needs to pursue a career in drama, saying why each is needed.",
+          "markScheme": [
+            "States that drama and film provide jobs",
+            "States that they show Nigerian stories and culture",
+            "States that they educate or comment on social issues",
+            "Names a skill and explains why it is needed",
+            "Names a second skill and explains why it is needed"
+          ],
+          "modelAnswer": "Drama and Nollywood give jobs to actors, camera crews and many others. They tell Nigerian stories and show our culture to the world. They also educate by showing the problems of society. A young person needs creativity to think of new stories, and teamwork because plays and films are made by many people together.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Drama and Nollywood give jobs to many people, such as actors, camera crew, makeup artists, caterers and drivers. They tell Nigerian stories in our own languages and show our culture to people all over the world. They also educate, because a film or play can show the problems of society, such as corruption, so that people think about them. A young person needs creativity, to think of new stories and ideas, and also teamwork, because a film or play is made by many people working together.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "give jobs to many people, such as actors, camera crew, makeup artists, caterers and drivers"
+                },
+                {
+                  "point": 1,
+                  "quote": "tell Nigerian stories in our own languages and show our culture to people all over the world"
+                },
+                {
+                  "point": 2,
+                  "quote": "show the problems of society, such as corruption, so that people think about them"
+                },
+                {
+                  "point": 3,
+                  "quote": "creativity, to think of new stories and ideas"
+                },
+                {
+                  "point": 4,
+                  "quote": "teamwork, because a film or play is made by many people working together"
+                }
+              ],
+              "feedback": "Full marks. Every part of the question is answered with a reason."
+            },
+            {
+              "tier": "full",
+              "text": "They create employment, since every production needs many workers. They bring entertainment and preserve culture by showing Nigerian dress, food, music and languages. They also teach moral lessons, for example a play about honesty. Skills needed are confidence, so that an actor can perform in front of people, and discipline, so that you come to rehearsals on time and learn your lines.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "They create employment, since every production needs many workers"
+                },
+                {
+                  "point": 1,
+                  "quote": "preserve culture by showing Nigerian dress, food, music and languages"
+                },
+                {
+                  "point": 2,
+                  "quote": "They also teach moral lessons, for example a play about honesty"
+                },
+                {
+                  "point": 3,
+                  "quote": "confidence, so that an actor can perform in front of people"
+                },
+                {
+                  "point": 4,
+                  "quote": "discipline, so that you come to rehearsals on time and learn your lines"
+                }
+              ],
+              "feedback": "All five marks. Your two skills are different and each has a reason."
+            },
+            {
+              "tier": "partial",
+              "text": "Drama gives jobs to people. It also entertains them. A young person needs to be confident.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Drama gives jobs to people"
+                }
+              ],
+              "feedback": "Jobs are right. Add that drama shows Nigerian culture and teaches about society, and say why confidence is needed (to perform in front of people). A second skill with its reason is also needed."
+            },
+            {
+              "tier": "partial",
+              "text": "Nollywood shows Nigerian culture to the whole world. A young person needs discipline because actors must learn their lines.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Nollywood shows Nigerian culture to the whole world"
+                },
+                {
+                  "point": 4,
+                  "quote": "discipline because actors must learn their lines"
+                }
+              ],
+              "feedback": "Culture and discipline are well done. Add that drama gives jobs and educates, and a second skill with a reason, such as creativity or teamwork."
+            },
+            {
+              "tier": "weak",
+              "text": "Drama helps society because actors become rich and buy big cars.",
+              "meets": [],
+              "feedback": "Some actors earn a lot, but society gains in other ways: jobs for many people, culture shown to the world and lessons about life."
+            },
+            {
+              "tier": "weak",
+              "text": "Drama is not useful for society because it is only pretending.",
+              "meets": [],
+              "feedback": "Drama is useful: it gives jobs, shows our culture and makes people think about real problems."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

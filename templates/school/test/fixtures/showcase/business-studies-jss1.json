@@ -1,0 +1,2826 @@
+{
+  "subject": "Business Studies",
+  "yearGroup": "JSS1",
+  "weeks": {
+    "1": {
+      "topic": "What business is: meaning, scope and types of activity",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state what business means and why people do it;\n2. name the three groups of business activity: industry, commerce and direct services;\n3. classify everyday jobs into those groups;\n4. work out simple profit.\n\n## Materials\n\nPictures of a farmer, a baker, a market trader and a hairdresser; three cards labelled Industry, Commerce and Direct services; a marker board.\n\n## Starter\n\nAsk the class who sold something to them this week (bread, sachet water, recharge cards). Collect the answers on the board and ask why each seller does it.\n\n## Development\n\n1. Define business as an activity that provides goods or services people want, done to make a profit. Cooking for your own family is not business; cooking to sell is.\n2. Industry: taking things from nature (farming, fishing, mining) or making goods from raw materials (baking, weaving). Mention construction briefly.\n3. Commerce: buying and selling goods, with the traders who move goods from the maker to the buyer.\n4. Direct services: work done for people where no new goods are made, such as hairdressing, teaching and repairs.\n5. Work profit on the board: selling price minus cost price.\n\n## Class activity\n\nGroups sort twelve picture cards onto the three headings, then each group invents one new business for their street and says which group it belongs to.\n\n## Evaluation\n\n1. What is business?\n2. Name one example each of industry, commerce and a direct service.\n3. A trader buys a carton of noodles for ₦6,500 and sells it for ₦7,200. What is the profit?\n\n## Assignment\n\nProblem set on the app. Visit one shop or stall near your home and write down what it sells and which group it belongs to.",
+      "reading": {
+        "title": "Business all around us",
+        "content": "# What business is\n\n## Meaning\n\n**Business** is any activity that provides goods or services that people want, and is done to make a **profit**. Profit is the money left after you take away what you spent.\n\nIf Chidi cooks jollof rice for his family's dinner, that is not business. If Mama Tunde cooks the same rice and sells it to workers by the roadside, that is business, because she is serving customers and hoping to earn more than she spent.\n\n## Profit\n\nProfit = selling price - cost price.\n\n**Worked example.** A trader buys a bag of beans for ₦40,000 and sells it for ₦46,500. Profit = 46,500 - 40,000 = ₦6,500.\n\n## The three groups of business activity\n\n**1. Industry.** Industry produces goods. It has three parts:\n\n- **Extractive industry** takes things from nature: farming, fishing, mining, cutting timber.\n- **Manufacturing** changes raw materials into finished goods: cotton into cloth, cocoa into chocolate, flour into bread.\n- **Construction** builds houses, roads and bridges.\n\n**2. Commerce.** Commerce is the buying and selling of goods. It carries goods from the people who make them to the people who use them. The yam seller in the market, the wholesaler and the shopkeeper are all in commerce.\n\n**3. Direct services.** A direct service is work done for a person, where no new goods are made. Examples are a hairdresser, a teacher, a driver, a doctor and a phone repairer.\n\n## Why it matters\n\nBusinesses give people jobs, supply what we need and pay taxes that help build schools and roads. Every group depends on the others: the farmer grows, the factory processes, the trader sells and the driver delivers."
+      },
+      "cards": [
+        {
+          "front": "Business",
+          "back": "An activity that provides goods or services that people want, done to make a profit."
+        },
+        {
+          "front": "Profit",
+          "back": "The money left after the cost is taken from the selling price."
+        },
+        {
+          "front": "Industry",
+          "back": "The group of business that produces goods, by extracting them or making them."
+        },
+        {
+          "front": "Extractive industry",
+          "back": "Taking things from nature, such as farming, fishing and mining."
+        },
+        {
+          "front": "Manufacturing",
+          "back": "Changing raw materials into finished goods, such as cotton into cloth."
+        },
+        {
+          "front": "Commerce",
+          "back": "The buying and selling of goods."
+        },
+        {
+          "front": "Direct service",
+          "back": "Work done for people where no new goods are made, such as hairdressing."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a business activity?",
+          "options": [
+            "Chidi cooks jollof rice for his family's dinner",
+            "Mama Tunde cooks jollof rice and sells it to workers at the roadside",
+            "Ada buys a new dress for a party",
+            "A pupil copies notes in class"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Fishermen on the Ogun river catch fish and bring them to the market. Which kind of industry is this?",
+          "options": [
+            "Manufacturing",
+            "Construction",
+            "Extractive industry",
+            "Direct service"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A factory in Kaduna turns cotton into cloth. This is",
+          "options": [
+            "manufacturing",
+            "extractive industry",
+            "commerce",
+            "a direct service"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Mr Bello buys yams from farmers in Benue and sells them to shops in Lagos. His business is",
+          "options": [
+            "extractive industry",
+            "manufacturing",
+            "a direct service",
+            "commerce"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Mama Chinwe buys a bag of rice for ₦48,000 and sells it for ₦54,000. What is her profit on the bag?",
+          "options": [
+            "₦48,000",
+            "₦6,000",
+            "₦54,000",
+            "₦102,000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "What is business? Give two examples of business activity in your community.",
+          "markScheme": [
+            "States that business is an activity that provides goods or services people want",
+            "States that business is done to make a profit",
+            "Gives one correct example of a business activity",
+            "Gives a second correct example"
+          ],
+          "modelAnswer": "Business is any activity that provides goods or services that people want, and it is done to make a profit. Examples are a baker who makes and sells bread, and a tailor who sews clothes for customers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Business is when a person or a company provides goods or services that people need so as to earn profit. In my street Mama Ngozi sells akara and Mr Femi repairs phones.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "provides goods or services that people need"
+                },
+                {
+                  "point": 1,
+                  "quote": "so as to earn profit"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mama Ngozi sells akara"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mr Femi repairs phones"
+                }
+              ],
+              "feedback": "Full marks. You gave goods and services, the reason of profit, and two examples from your own street."
+            },
+            {
+              "tier": "full",
+              "text": "A business is any work that people do to give customers what they want and make profit from it. Examples are a farmer who sells tomatoes at the market and a barber who cuts hair.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "give customers what they want"
+                },
+                {
+                  "point": 1,
+                  "quote": "make profit from it"
+                },
+                {
+                  "point": 2,
+                  "quote": "a farmer who sells tomatoes at the market"
+                },
+                {
+                  "point": 3,
+                  "quote": "a barber who cuts hair"
+                }
+              ],
+              "feedback": "All four marks. Your examples include one seller of goods and one provider of a service, which is a good spread."
+            },
+            {
+              "tier": "partial",
+              "text": "Business is something people do to make profit. Like selling bread.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "to make profit"
+                },
+                {
+                  "point": 2,
+                  "quote": "selling bread"
+                }
+              ],
+              "feedback": "You have profit and one example. You did not say that business provides goods or services that people want, and you need a second example."
+            },
+            {
+              "tier": "partial",
+              "text": "Business is providing services and goods to people who need them. Examples are a tailor and a hairdresser.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "providing services and goods to people who need them"
+                },
+                {
+                  "point": 2,
+                  "quote": "a tailor"
+                },
+                {
+                  "point": 3,
+                  "quote": "a hairdresser"
+                }
+              ],
+              "feedback": "Three marks. The idea you left out is profit: people do business in order to earn more than they spend.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Business is when you go to the market and buy things for your house.",
+              "meets": [],
+              "feedback": "Buying things for your own house is shopping, not business. Business means providing goods or services to other people so as to make a profit."
+            },
+            {
+              "tier": "weak",
+              "text": "Business is a big company with a factory and many workers. A small shop is not business.",
+              "meets": [],
+              "feedback": "A small shop is a business too, because it sells goods for profit. Size does not decide it. Name two small businesses near you."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain the three groups of business activity: industry, commerce and direct services. Give one example of each.",
+          "markScheme": [
+            "States that industry produces goods by taking them from nature or making them",
+            "Gives a correct example of industry",
+            "States that commerce is the buying and selling of goods",
+            "Gives a correct example of commerce",
+            "States that a direct service is work done for people with no goods made",
+            "Gives a correct example of a direct service"
+          ],
+          "modelAnswer": "Industry produces goods, either by taking them from nature or by making them from raw materials, for example a farmer or a soap factory. Commerce is the buying and selling of goods, for example a shopkeeper. A direct service is work done for people where no goods are made, for example a barber.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Industry is getting things from nature or making goods in a factory, for example a company that makes soap. Commerce is buying and selling goods, like a shopkeeper in Bodija market. Direct service is when somebody does work for you instead of giving you a thing, like a nurse or a barber.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "getting things from nature or making goods in a factory"
+                },
+                {
+                  "point": 1,
+                  "quote": "a company that makes soap"
+                },
+                {
+                  "point": 2,
+                  "quote": "buying and selling goods"
+                },
+                {
+                  "point": 3,
+                  "quote": "a shopkeeper in Bodija market"
+                },
+                {
+                  "point": 4,
+                  "quote": "somebody does work for you instead of giving you a thing"
+                },
+                {
+                  "point": 5,
+                  "quote": "a nurse or a barber"
+                }
+              ],
+              "feedback": "Full marks. Each group has a meaning and an example, and your direct service explanation says what makes it different from the other two."
+            },
+            {
+              "tier": "full",
+              "text": "Industry: this is producing goods, either by digging or farming or by making things from raw materials. Example is a miner.\nCommerce: it is the buying and selling of goods so that goods reach the consumers. Example is a wholesaler in Lagos.\nDirect services: these are jobs where a person helps others by doing work and no goods are made. Example is a mechanic repairing cars.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "producing goods, either by digging or farming or by making things from raw materials"
+                },
+                {
+                  "point": 1,
+                  "quote": "a miner"
+                },
+                {
+                  "point": 2,
+                  "quote": "the buying and selling of goods"
+                },
+                {
+                  "point": 3,
+                  "quote": "a wholesaler in Lagos"
+                },
+                {
+                  "point": 4,
+                  "quote": "a person helps others by doing work and no goods are made"
+                },
+                {
+                  "point": 5,
+                  "quote": "a mechanic repairing cars"
+                }
+              ],
+              "feedback": "All six marks, and well set out. Saying that commerce makes goods reach the consumer shows you understand its purpose."
+            },
+            {
+              "tier": "partial",
+              "text": "Industry means making goods like bread. Commerce means buying and selling. Direct service is like a doctor.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Industry means making goods"
+                },
+                {
+                  "point": 1,
+                  "quote": "like bread"
+                },
+                {
+                  "point": 2,
+                  "quote": "Commerce means buying and selling"
+                },
+                {
+                  "point": 5,
+                  "quote": "a doctor"
+                }
+              ],
+              "feedback": "Good for industry and commerce. You did not give an example of commerce, and for direct service you need to say what it is: work done for people where no goods are made."
+            },
+            {
+              "tier": "partial",
+              "text": "Industry is when people produce things, example a baker. Commerce is selling things, example a farmer who is selling yams.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "people produce things"
+                },
+                {
+                  "point": 1,
+                  "quote": "a baker"
+                },
+                {
+                  "point": 2,
+                  "quote": "selling things"
+                }
+              ],
+              "feedback": "A farmer who grows yams is in industry (extractive). The person who buys yams from the farmer and sells them is in commerce. You also left out direct services."
+            },
+            {
+              "tier": "weak",
+              "text": "Industry is the place where we work. Commerce is a place for trade. Services is when you serve food.",
+              "meets": [],
+              "feedback": "Industry is not a place. It is the group of business that produces goods. Learn the three meanings, then give a real example of each."
+            },
+            {
+              "tier": "weak",
+              "text": "The three groups are small, medium and big business. Industry is big business.",
+              "meets": [],
+              "feedback": "Small, medium and big describe size. The three groups of business activity are industry, commerce and direct services, and each has its own meaning."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Occupations and what they give to society",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define occupation and name the main types;\n2. tell self-employed people from paid employees;\n3. explain how occupations help families, communities and the country.\n\n## Materials\n\nA chart of Nigerian occupations, cut-out cards of ten jobs, a marker board.\n\n## Starter\n\nAsk: what do your parents or guardians do each day? List five answers on the board and ask which ones need special training.\n\n## Development\n\n1. Define an occupation as work a person does regularly to earn a living.\n2. Teach the types: extractive (farmer, miner), manufacturing (baker, weaver), commercial (trader, banker, transporter) and professional (doctor, lawyer, engineer, teacher).\n3. Self-employed people run their own work and live on the profit. Employees work for an employer and receive wages or salary.\n4. Discuss what occupations give: income, goods and services, jobs, taxes and skills.\n\n## Class activity\n\nPairs sort ten job cards into the four types, then mark each as usually self-employed or employed. Pairs defend any card that could go in two places.\n\n## Evaluation\n\n1. What is an occupation?\n2. Is a market trader self-employed or an employee? Explain.\n3. Give two ways an occupation helps a community.\n\n## Assignment\n\nWorksheet on the app. Interview one adult about their work and write three lines on what it gives their family.",
+      "reading": {
+        "title": "The work people do",
+        "content": "# Occupations\n\n## What is an occupation?\n\nAn **occupation** is the work a person does regularly to earn a living. A hobby, like playing draughts, is done for fun. A person who plays draughts every day because they are paid for it has made it an occupation.\n\n## Types of occupation\n\n- **Extractive occupations** take things from nature: farmers, fishermen, miners and loggers.\n- **Manufacturing occupations** make goods: bakers, tailors, welders and factory workers.\n- **Commercial occupations** move and sell goods: traders, bankers, drivers and insurance agents.\n- **Professional occupations** need long training and often a licence: doctors, nurses, lawyers, engineers and teachers.\n\n## Self-employed or employed?\n\nA **self-employed** person owns and runs the work. Mama Bisi, who sells pepper at Bodija market, is her own boss. What she earns is the profit left after she has paid her costs, so her income can go up and down.\n\nAn **employee** works for someone else, an employer, and is paid a **wage** (paid by the day or week) or a **salary** (paid every month). A bank cashier and a factory driver are employees. Their income is more steady, but they must follow the employer's rules.\n\n## What occupations give us\n\n1. **Income.** Workers feed their families, pay school fees and save.\n2. **Goods and services.** Farmers give food, tailors give clothes, nurses give care.\n3. **Jobs.** When a business grows it employs more people, so fewer people are without work.\n4. **Taxes.** Workers and businesses pay tax, and the government uses it for roads, schools and hospitals.\n5. **Skills.** People learn trades that they can teach others.\n\nA country in which many people have useful work is stronger and its people live better."
+      },
+      "cards": [
+        {
+          "front": "Occupation",
+          "back": "Work a person does regularly to earn a living."
+        },
+        {
+          "front": "Self-employed",
+          "back": "A person who owns and runs their own work and lives on its profit."
+        },
+        {
+          "front": "Employee",
+          "back": "A person who works for an employer and is paid a wage or salary."
+        },
+        {
+          "front": "Wage and salary",
+          "back": "A wage is paid by the day or week; a salary is paid monthly."
+        },
+        {
+          "front": "Professional occupation",
+          "back": "Work that needs long training and often a licence, such as a doctor or lawyer."
+        },
+        {
+          "front": "Commercial occupation",
+          "back": "Work that buys, sells or moves goods, such as a trader or driver."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these best describes an occupation?",
+          "options": [
+            "A hobby you do for fun at weekends",
+            "Any work you do for your parents at home",
+            "Work a person does regularly to earn a living",
+            "A job that only needs a university degree"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Mrs Ogunleye is a lawyer. Her occupation is",
+          "options": [
+            "professional",
+            "extractive",
+            "commercial",
+            "manufacturing"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Tolu sews dresses and sells them in a shop she owns. She is",
+          "options": [
+            "an employee of the government",
+            "a paid worker in a factory",
+            "a professional only",
+            "self-employed"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a commercial occupation?",
+          "options": [
+            "A miner in Jos",
+            "A trader selling provisions at Ariaria market",
+            "A carpenter making chairs",
+            "A farmer in Kano"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A factory in Aba employs 300 workers. What is the main benefit to its community?",
+          "options": [
+            "The workers must travel far",
+            "Goods become scarce",
+            "The workers earn income and spend it in local markets",
+            "Children stay out of school"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between a self-employed person and an employee. Give one example of each.",
+          "markScheme": [
+            "Says a self-employed person owns and runs their own work",
+            "Says the self-employed person's income is the profit of the business",
+            "Says an employee works for an employer and is paid a wage or salary",
+            "Gives a correct example of a self-employed person",
+            "Gives a correct example of an employee"
+          ],
+          "modelAnswer": "A self-employed person owns and runs their own work, and their income is the profit the business makes. An employee works for an employer and is paid a wage or salary. A tailor with her own shop is self-employed; a teacher in a government school is an employee.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A self-employed person has his own work and he is the boss, like a woman who owns a pepper stall. What she earns is the profit she makes. An employee works for somebody else and gets paid salary every month, like a bank cashier.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "has his own work and he is the boss"
+                },
+                {
+                  "point": 1,
+                  "quote": "What she earns is the profit she makes"
+                },
+                {
+                  "point": 2,
+                  "quote": "works for somebody else and gets paid salary every month"
+                },
+                {
+                  "point": 3,
+                  "quote": "a woman who owns a pepper stall"
+                },
+                {
+                  "point": 4,
+                  "quote": "a bank cashier"
+                }
+              ],
+              "feedback": "Full marks. You linked the self-employed person's pay to profit and the employee's pay to a salary, which is the heart of the difference."
+            },
+            {
+              "tier": "full",
+              "text": "Self-employed people run their own business and keep the profit, for example a barber with his own shop. Employees work for an employer, who pays them wages or salary, for example a driver in a company.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "run their own business"
+                },
+                {
+                  "point": 1,
+                  "quote": "keep the profit"
+                },
+                {
+                  "point": 2,
+                  "quote": "work for an employer, who pays them wages or salary"
+                },
+                {
+                  "point": 3,
+                  "quote": "a barber with his own shop"
+                },
+                {
+                  "point": 4,
+                  "quote": "a driver in a company"
+                }
+              ],
+              "feedback": "All five marks. Your answer is short and every part of it earns something."
+            },
+            {
+              "tier": "partial",
+              "text": "Self-employed person has his own business, for example a trader. An employee works for another person, for example a nurse in a hospital.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "has his own business"
+                },
+                {
+                  "point": 3,
+                  "quote": "a trader"
+                },
+                {
+                  "point": 4,
+                  "quote": "a nurse in a hospital"
+                }
+              ],
+              "feedback": "Good definitions and examples. Say how each one is paid: the self-employed person lives on profit, the employee receives a wage or salary."
+            },
+            {
+              "tier": "partial",
+              "text": "Employee is a person who is paid by the company he works in, like a factory worker. Self-employed people are people who do not have job.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "paid by the company he works in"
+                },
+                {
+                  "point": 4,
+                  "quote": "a factory worker"
+                }
+              ],
+              "feedback": "Your employee answer is right. A self-employed person does have a job: they run their own business and live on its profit. Having no job is being unemployed."
+            },
+            {
+              "tier": "weak",
+              "text": "Self-employed means you are working alone without friends. Employee means you are working with friends.",
+              "meets": [],
+              "feedback": "The difference is not about friends. A self-employed person owns the work and earns its profit; an employee works for an employer and is paid a wage or salary."
+            },
+            {
+              "tier": "weak",
+              "text": "A self-employed person is a rich person and an employee is a poor person. A rich person is self-employed because he has money.",
+              "meets": [],
+              "feedback": "Being self-employed does not mean being rich. Many market traders are self-employed with little money. Think about who owns the work and how each is paid."
+            }
+          ]
+        },
+        {
+          "prompt": "Name three ways in which occupations help a community or a country. Explain each way.",
+          "markScheme": [
+            "Names income as a way occupations help",
+            "Explains that workers use the income to feed families, pay fees or spend in the market",
+            "Names the provision of goods and services",
+            "Explains that people can then buy what they need",
+            "Names another correct way (jobs, taxes or skills)",
+            "Explains that way correctly"
+          ],
+          "modelAnswer": "Occupations give people income, which they use to feed their families and pay school fees. They provide goods and services, so people can buy food, clothes and medical care. They also pay tax, which the government uses to build roads and schools.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First, occupations give people income. A worker uses the salary to feed the family and pay school fees. Second, they provide goods and services, so people can buy food, clothes and get treated in the hospital. Third, occupations pay tax, and the government uses the tax to build roads and schools.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "occupations give people income"
+                },
+                {
+                  "point": 1,
+                  "quote": "uses the salary to feed the family and pay school fees"
+                },
+                {
+                  "point": 2,
+                  "quote": "they provide goods and services"
+                },
+                {
+                  "point": 3,
+                  "quote": "people can buy food, clothes and get treated in the hospital"
+                },
+                {
+                  "point": 4,
+                  "quote": "occupations pay tax"
+                },
+                {
+                  "point": 5,
+                  "quote": "the government uses the tax to build roads and schools"
+                }
+              ],
+              "feedback": "Full marks. Each way is named and then explained with what it is used for."
+            },
+            {
+              "tier": "full",
+              "text": "One, they create jobs. When a baker's business grows she employs more people, so fewer people are without work. Two, they bring income into homes and the money is spent in the market, which helps other traders. Three, they supply the things we need like medicine, transport and bread.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "they create jobs"
+                },
+                {
+                  "point": 5,
+                  "quote": "she employs more people, so fewer people are without work"
+                },
+                {
+                  "point": 0,
+                  "quote": "they bring income into homes"
+                },
+                {
+                  "point": 1,
+                  "quote": "the money is spent in the market, which helps other traders"
+                },
+                {
+                  "point": 2,
+                  "quote": "they supply the things we need"
+                },
+                {
+                  "point": 3,
+                  "quote": "like medicine, transport and bread"
+                }
+              ],
+              "feedback": "All six marks. Your point that spending helps other traders shows you see how one job supports others."
+            },
+            {
+              "tier": "partial",
+              "text": "Occupations give money to workers. They also give tax to the government.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "give money to workers"
+                },
+                {
+                  "point": 4,
+                  "quote": "give tax to the government"
+                }
+              ],
+              "feedback": "Two good ways, but you only named them. Say what the workers do with the money and what the government does with the tax, and add goods and services as a third."
+            },
+            {
+              "tier": "partial",
+              "text": "They provide goods and services. They also give people skills. Occupations make a country develop.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "They provide goods and services"
+                },
+                {
+                  "point": 4,
+                  "quote": "give people skills"
+                }
+              ],
+              "feedback": "You named goods and services and skills. Explain them: for example, because tailors and farmers provide goods, people can buy clothes and food. Also say how skills help."
+            },
+            {
+              "tier": "weak",
+              "text": "Occupations help because everybody must work. Work is good.",
+              "meets": [],
+              "feedback": "Work is good, but the question asks how occupations help. Name ways such as giving income or providing goods, then explain each."
+            },
+            {
+              "tier": "weak",
+              "text": "Occupations help the country because they make people to be busy and not stealing.",
+              "meets": [],
+              "feedback": "Keeping people busy is a fair point, but it is not what the scheme looks for. Give clear ways: income for families, goods and services, jobs and taxes."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Commerce: home trade, foreign trade and aids to trade",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. divide commerce into trade and aids to trade;\n2. distinguish wholesale from retail and home from foreign trade;\n3. name the aids to trade and say how each helps traders.\n\n## Materials\n\nPictures of Mile 12 market, Apapa port and a warehouse; a flow chart from maker to buyer; a marker board.\n\n## Starter\n\nHold up a packet of biscuits. Ask: how did it get from the factory to this classroom? List every person and service involved.\n\n## Development\n\n1. Draw commerce as two branches: trade (buying and selling) and aids to trade (services that make trade easier).\n2. Home trade happens inside the country and has two levels: wholesale (selling large quantities) and retail (selling small quantities to final buyers).\n3. Foreign trade happens between countries: import (buying from abroad), export (selling abroad) and entrepot (importing to export again).\n4. Aids to trade: banking, insurance, transport, communication, advertising and warehousing. Link each one to a problem a trader would have without it.\n\n## Class activity\n\nGroups trace a tin of tomato paste from a factory to a customer and list which aids to trade it needs on the way.\n\n## Evaluation\n\n1. Give one difference between a wholesaler and a retailer.\n2. Which is an export: Nigeria sells cocoa or Nigeria buys rice?\n3. Name two aids to trade.\n\n## Assignment\n\nWorksheet on the app. List five things in your house that were imported and five made in Nigeria.",
+      "reading": {
+        "title": "Trade and the services behind it",
+        "content": "# Commerce\n\n**Commerce** is all the activities that help goods move from producers to consumers. It has two parts: **trade** and **aids to trade**.\n\n## Trade\n\n### Home trade\n\nHome trade means buying and selling inside one country. It has two levels:\n\n- A **wholesaler** buys goods in large quantities from the manufacturer and sells to retailers, usually in bulk. A wholesaler in Aba may sell cartons of shoes to shops in Abuja.\n- A **retailer** buys from the wholesaler and sells in small quantities to the people who will use the goods. Mama Sade, who sells provisions in her street, is a retailer.\n\n### Foreign trade\n\nForeign trade means buying and selling between countries.\n\n- **Import**: buying goods from another country, such as a company in Lagos buying cars from Japan.\n- **Export**: selling goods to another country. Nigeria exports crude oil, cocoa and sesame seed.\n- **Entrepot trade**: importing goods in order to export them again.\n\n## Aids to trade\n\nThese are services that make trade easier.\n\n| Aid | How it helps |\n| --- | --- |\n| Banking | Keeps money safe and lends money to traders |\n| Insurance | Pays the trader when goods are lost by fire or theft |\n| Transport | Carries goods from the maker to the buyer |\n| Communication | Lets traders take orders and agree prices over distance |\n| Advertising | Tells customers what is for sale |\n| Warehousing | Stores goods safely until they are needed |\n\nWithout these aids, a trader in Sokoto could not easily sell to a buyer in Calabar. Each aid solves one problem, and together they let trade grow."
+      },
+      "cards": [
+        {
+          "front": "Commerce",
+          "back": "All the activities that help goods move from producers to consumers: trade and aids to trade."
+        },
+        {
+          "front": "Wholesaler",
+          "back": "Buys in large quantities and sells to retailers."
+        },
+        {
+          "front": "Retailer",
+          "back": "Buys from a wholesaler and sells in small quantities to final buyers."
+        },
+        {
+          "front": "Home trade",
+          "back": "Buying and selling inside one country."
+        },
+        {
+          "front": "Export",
+          "back": "Selling goods to another country."
+        },
+        {
+          "front": "Import",
+          "back": "Buying goods from another country."
+        },
+        {
+          "front": "Aids to trade",
+          "back": "Banking, insurance, transport, communication, advertising and warehousing."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Mama Sade sells provisions to people in her street in small quantities. She is a",
+          "options": [
+            "wholesaler",
+            "exporter",
+            "importer",
+            "retailer"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Nigeria sells cocoa and crude oil to other countries. This is",
+          "options": [
+            "import",
+            "export",
+            "home trade",
+            "retail trade"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is an aid to trade?",
+          "options": [
+            "Banking",
+            "Mining",
+            "Farming",
+            "Baking"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Trade between a seller in Kano and a buyer in Enugu is called",
+          "options": [
+            "foreign trade",
+            "entrepot trade",
+            "home trade",
+            "export trade"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which aid to trade pays a trader when goods are lost in a fire or stolen?",
+          "options": [
+            "Advertising",
+            "Transport",
+            "Warehousing",
+            "Insurance"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between home trade and foreign trade. Give one example of each.",
+          "markScheme": [
+            "States that home trade is buying and selling within one country",
+            "Gives a correct example of home trade",
+            "States that foreign trade is buying and selling between countries",
+            "Gives a correct example of foreign trade"
+          ],
+          "modelAnswer": "Home trade is buying and selling inside the same country, such as a yam seller in Oyo selling to a retailer in Lagos. Foreign trade is buying and selling between countries, such as Nigeria exporting cocoa to another country.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Home trade is trading inside the same country, like a yam seller in Oyo selling to a retailer in Lagos. Foreign trade is trading between different countries, like Nigeria exporting cocoa to another country.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "trading inside the same country"
+                },
+                {
+                  "point": 1,
+                  "quote": "a yam seller in Oyo selling to a retailer in Lagos"
+                },
+                {
+                  "point": 2,
+                  "quote": "trading between different countries"
+                },
+                {
+                  "point": 3,
+                  "quote": "Nigeria exporting cocoa to another country"
+                }
+              ],
+              "feedback": "Full marks. Each type has a clear meaning and a different example."
+            },
+            {
+              "tier": "full",
+              "text": "When traders buy and sell within Nigeria it is home trade, for example a wholesaler in Aba who sells shoes to a shop in Abuja. When the buying and selling is across the border to other countries it is foreign trade, for example a company that imports cars from Japan.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "buy and sell within Nigeria"
+                },
+                {
+                  "point": 1,
+                  "quote": "a wholesaler in Aba who sells shoes to a shop in Abuja"
+                },
+                {
+                  "point": 2,
+                  "quote": "across the border to other countries"
+                },
+                {
+                  "point": 3,
+                  "quote": "a company that imports cars from Japan"
+                }
+              ],
+              "feedback": "All four marks. Your foreign trade example is an import, which shows foreign trade is buying as well as selling."
+            },
+            {
+              "tier": "partial",
+              "text": "Home trade is trade in your home country. Foreign trade is when we sell to other countries, like selling palm oil to Ghana.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "trade in your home country"
+                },
+                {
+                  "point": 3,
+                  "quote": "selling palm oil to Ghana"
+                }
+              ],
+              "feedback": "Foreign trade also includes buying from other countries, which is import. You also need an example of home trade, such as a retailer buying from a wholesaler in Nigeria."
+            },
+            {
+              "tier": "partial",
+              "text": "Foreign trade is trade between countries, for example importing rice. Home trade is when people buy and sell things.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "trade between countries"
+                },
+                {
+                  "point": 3,
+                  "quote": "importing rice"
+                }
+              ],
+              "feedback": "Foreign trade is correct. Home trade must say where: buying and selling inside one country. Add an example, such as a trader in Kano selling to a shop in Enugu.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Home trade is trade you do at home and foreign trade is trade you do outside.",
+              "meets": [],
+              "feedback": "Home and foreign refer to countries, not to the house. Home trade is inside Nigeria; foreign trade crosses into other countries."
+            },
+            {
+              "tier": "weak",
+              "text": "Home trade is selling to your family. Foreign trade is selling to strangers.",
+              "meets": [],
+              "feedback": "Trade is not decided by whether the buyer is family. Home trade is within your country and foreign trade is between countries, even with strangers on both sides."
+            }
+          ]
+        },
+        {
+          "prompt": "Name three aids to trade and explain how each one helps a trader.",
+          "markScheme": [
+            "Names a first aid to trade correctly",
+            "Explains how it helps traders",
+            "Names a second aid to trade",
+            "Explains how it helps traders",
+            "Names a third aid to trade",
+            "Explains how it helps traders"
+          ],
+          "modelAnswer": "Banking helps traders keep their money safe and borrow money to grow. Transport carries goods from the factory to the market so buyers can get them. Advertising tells customers about the goods so that they will buy.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Banking helps traders to keep their money safe and to borrow money to expand. Transport carries goods from the factory to the market so that buyers can get them. Advertising tells customers about the goods so they will buy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Banking"
+                },
+                {
+                  "point": 1,
+                  "quote": "keep their money safe and to borrow money to expand"
+                },
+                {
+                  "point": 2,
+                  "quote": "Transport"
+                },
+                {
+                  "point": 3,
+                  "quote": "carries goods from the factory to the market so that buyers can get them"
+                },
+                {
+                  "point": 4,
+                  "quote": "Advertising"
+                },
+                {
+                  "point": 5,
+                  "quote": "tells customers about the goods so they will buy"
+                }
+              ],
+              "feedback": "Full marks. For each aid you named the problem it solves, which is exactly what the question asks."
+            },
+            {
+              "tier": "full",
+              "text": "Insurance: if a shop burns down or goods are stolen the trader gets money back from the insurance company. Warehousing: a trader can store goods in a warehouse until they are needed, so goods do not spoil or get stolen. Communication: traders use phone calls and messages to take orders from customers far away.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Insurance"
+                },
+                {
+                  "point": 1,
+                  "quote": "the trader gets money back from the insurance company"
+                },
+                {
+                  "point": 2,
+                  "quote": "Warehousing"
+                },
+                {
+                  "point": 3,
+                  "quote": "store goods in a warehouse until they are needed"
+                },
+                {
+                  "point": 4,
+                  "quote": "Communication"
+                },
+                {
+                  "point": 5,
+                  "quote": "take orders from customers far away"
+                }
+              ],
+              "feedback": "All six marks. You picked three different aids and explained each in its own words."
+            },
+            {
+              "tier": "partial",
+              "text": "Banking is an aid to trade. Transport is also an aid to trade because it carries goods. Advertising is the third one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Banking"
+                },
+                {
+                  "point": 2,
+                  "quote": "Transport"
+                },
+                {
+                  "point": 3,
+                  "quote": "it carries goods"
+                },
+                {
+                  "point": 4,
+                  "quote": "Advertising"
+                }
+              ],
+              "feedback": "Three correct aids and a good reason for transport. For banking and advertising say how they help: banking keeps money safe and lends, advertising tells customers what is for sale."
+            },
+            {
+              "tier": "partial",
+              "text": "Insurance helps the trader when there is loss. Warehouse is where goods are kept. Bank.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Insurance"
+                },
+                {
+                  "point": 1,
+                  "quote": "helps the trader when there is loss"
+                },
+                {
+                  "point": 2,
+                  "quote": "Warehouse"
+                },
+                {
+                  "point": 4,
+                  "quote": "Bank"
+                }
+              ],
+              "feedback": "Insurance is well done. A warehouse does not only keep goods; it protects them until they are needed. 'Bank' alone earns the name but not the explanation: say what a bank does for a trader."
+            },
+            {
+              "tier": "weak",
+              "text": "Aids to trade are things that help you to trade like money and shop and customers.",
+              "meets": [],
+              "feedback": "Money, shops and customers are not the aids to trade. The aids are services such as banking, insurance, transport, communication, advertising and warehousing."
+            },
+            {
+              "tier": "weak",
+              "text": "Aids to trade are the people who sell goods in the market, they are called aids.",
+              "meets": [],
+              "feedback": "People who sell goods are wholesalers and retailers, which is trade. Aids to trade are services that support them, for example transport and banking."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Forms of business ownership",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the four main forms of business ownership;\n2. state the advantages and disadvantages of each;\n3. choose a suitable form for a given situation;\n4. share profit between partners.\n\n## Materials\n\nFour cards describing one business of each type; sample partnership agreement; a marker board.\n\n## Starter\n\nAsk: if you and two friends wanted to open a snack shop together, who would own it and who would take the profit? Take three answers.\n\n## Development\n\n1. Sole proprietorship: owned and run by one person. Easy to start, owner keeps all profit and decides alone, but capital is small and the owner is personally responsible for all debts.\n2. Partnership: two to twenty people run it together under an agreement. More capital and skills, but disagreements and shared liability.\n3. Cooperative society: members pool money for a shared aim such as saving, buying or selling together. One member, one vote.\n4. Limited liability company: a separate legal person owned by shareholders who buy shares. The shareholders lose only what they put in. Private companies sell shares privately; public companies sell shares to the public.\n5. Work the sharing of profit in the ratio of capital.\n\n## Class activity\n\nGroups receive a case card (for example, a young tailor with little money, or a school-leaver with a big idea and no capital) and recommend a form with two reasons.\n\n## Evaluation\n\n1. Name two disadvantages of sole proprietorship.\n2. Who owns a limited liability company?\n3. Two partners put in ₦400,000 and ₦100,000 and share profit in that ratio. Share a profit of ₦50,000.\n\n## Assignment\n\nWorksheet on the app. Find a business near you and decide which form it is.",
+      "reading": {
+        "title": "Who owns the business?",
+        "content": "# Forms of business ownership\n\nWhen someone starts a business, they must decide who will own it. There are four main forms.\n\n## 1. Sole proprietorship\n\nOne person owns and runs the business. Mr Kolade's provisions store is an example.\n\n- **Advantages:** easy and cheap to start, the owner takes all the profit, decisions are quick.\n- **Disadvantages:** small capital, the owner carries all the risk, and if the business has debts the owner may have to pay them from personal property. This is called **unlimited liability**.\n\n## 2. Partnership\n\nTwo to twenty people own the business together. They sign a **partnership agreement** that says how much each puts in and how profit is shared.\n\n- **Advantages:** more capital, more skills, the work and risk are shared.\n- **Disadvantages:** partners may quarrel, each partner can be made to pay the business's debts, and the business may end if a partner leaves.\n\n**Worked example.** Ada and Bola open a restaurant. Ada puts in ₦300,000 and Bola ₦200,000. They agree to share profit in the ratio of their capital, 3 : 2. The profit is ₦150,000. Ada gets 3/5 of ₦150,000 = ₦90,000 and Bola gets 2/5 of ₦150,000 = ₦60,000.\n\n## 3. Cooperative society\n\nA group of people with a common aim join together and each puts in a small amount. Farmers in Ikorodu may buy fertiliser together and sell their produce together. Every member has one vote, however much they put in.\n\n## 4. Limited liability company\n\nA company is a **separate legal person**. It is owned by **shareholders** who buy shares.\n\n- A **private company** has a few shareholders and cannot sell shares to the public.\n- A **public company** can sell shares to the public and raise very large capital.\n\nThe shareholders have **limited liability**: if the company fails, they lose only the money they put in, not their houses or personal property."
+      },
+      "cards": [
+        {
+          "front": "Sole proprietorship",
+          "back": "A business owned and run by one person."
+        },
+        {
+          "front": "Partnership",
+          "back": "A business owned by two to twenty people under an agreement."
+        },
+        {
+          "front": "Cooperative society",
+          "back": "A group that pools money for a shared aim, with one member one vote."
+        },
+        {
+          "front": "Limited liability company",
+          "back": "A business owned by shareholders; it is a separate legal person."
+        },
+        {
+          "front": "Unlimited liability",
+          "back": "The owner must pay the business's debts from personal property."
+        },
+        {
+          "front": "Limited liability",
+          "back": "Owners lose only the money they put in."
+        },
+        {
+          "front": "Shareholder",
+          "back": "A person who owns part of a company by buying shares."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Mr Kolade owns and runs a provisions store alone and takes all the profit. This is a",
+          "options": [
+            "partnership",
+            "sole proprietorship",
+            "cooperative society",
+            "limited liability company"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Farmers in Ikorodu join together to buy fertiliser cheaply and sell their produce together. This is a",
+          "options": [
+            "sole proprietorship",
+            "partnership",
+            "public company",
+            "cooperative society"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "One disadvantage of sole proprietorship is that",
+          "options": [
+            "it is easy to start",
+            "the owner keeps all the profit",
+            "the owner is personally responsible for the debts",
+            "decisions can be made quickly"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which form of business can sell shares to the public and is a separate legal person from its owners?",
+          "options": [
+            "A public limited company",
+            "A sole proprietorship",
+            "A partnership",
+            "A cooperative society"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Two partners put in ₦300,000 and ₦200,000 and share profit in the ratio of their capital. The profit is ₦150,000. The partner who put in ₦300,000 receives",
+          "options": [
+            "₦75,000",
+            "₦90,000",
+            "₦60,000",
+            "₦150,000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State two advantages and one disadvantage of a partnership.",
+          "markScheme": [
+            "States that a partnership has more capital than a sole proprietorship",
+            "States a second advantage, such as more skills or shared work and risk",
+            "States a correct disadvantage, such as quarrels, shared debts or profit being shared"
+          ],
+          "modelAnswer": "A partnership has more capital because several people put money in. It also brings together different skills, and the work and risk are shared. A disadvantage is that partners may quarrel and each can be made to pay the business's debts.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "One advantage is that there is more money to start with because every partner puts in. Another is that the partners can share the work and use their different skills. A disadvantage is that partners can quarrel over how to run it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "there is more money to start with because every partner puts in"
+                },
+                {
+                  "point": 1,
+                  "quote": "the partners can share the work and use their different skills"
+                },
+                {
+                  "point": 2,
+                  "quote": "partners can quarrel over how to run it"
+                }
+              ],
+              "feedback": "Full marks. Your two advantages are clearly different from each other."
+            },
+            {
+              "tier": "full",
+              "text": "Partnership has more capital than one person can bring. The risk is shared among the partners. But the disadvantage is that the profit must be divided and if the business has debts a partner may have to pay.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "more capital than one person can bring"
+                },
+                {
+                  "point": 1,
+                  "quote": "The risk is shared among the partners"
+                },
+                {
+                  "point": 2,
+                  "quote": "if the business has debts a partner may have to pay"
+                }
+              ],
+              "feedback": "All three marks. The shared-debts point is an important one that many learners forget."
+            },
+            {
+              "tier": "partial",
+              "text": "Partnership has more money. It is also easy to start. The disadvantage is nothing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Partnership has more money"
+                }
+              ],
+              "feedback": "More money is a good advantage. Partnerships are not always easy to start because an agreement is needed. They do have disadvantages, such as quarrels and shared debts."
+            },
+            {
+              "tier": "partial",
+              "text": "An advantage is that the partners bring different skills to the business. The disadvantage is that the partners may disagree. A partnership is better than a company.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "the partners bring different skills to the business"
+                },
+                {
+                  "point": 2,
+                  "quote": "the partners may disagree"
+                }
+              ],
+              "feedback": "You have a skills advantage and a disadvantage. You still need a second advantage, such as more capital, and the last sentence is an opinion that needs a reason.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Partnership is when two people are friends. The advantage is friendship and the disadvantage is that they can fight.",
+              "meets": [],
+              "feedback": "Partners do not need to be friends. They are people who agree to run a business together. Name business advantages such as more capital or more skills."
+            },
+            {
+              "tier": "weak",
+              "text": "A partnership has only one owner so he does not share the profit. The disadvantage is that it is small.",
+              "meets": [],
+              "feedback": "A partnership has at least two owners, and they do share profit. Having one owner is a sole proprietorship. Try again with more capital, shared skills and shared risk."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain the difference between a sole proprietorship and a limited liability company. Which would you advise a person to choose who wants to raise a lot of money to start a big business? Give a reason.",
+          "markScheme": [
+            "States that a sole proprietorship is owned and run by one person",
+            "States that a company is owned by shareholders who buy shares",
+            "States that a sole proprietor has unlimited liability for the debts",
+            "States that shareholders' liability is limited to what they put in",
+            "Advises a company and gives a reason, such as shares can raise large capital"
+          ],
+          "modelAnswer": "A sole proprietorship is owned and run by one person, who must pay the business's debts from personal property. A limited liability company is owned by shareholders who buy shares, and they lose only what they put in. I would advise a company because selling shares can raise a lot of money.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A sole proprietorship has one owner who runs it. If the business owes money the owner can lose his own house, because he has unlimited liability. A limited liability company is owned by shareholders who buy shares and they can only lose the money they paid for the shares. I would advise a company, because many people can buy shares and so a lot of capital is raised.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "has one owner who runs it"
+                },
+                {
+                  "point": 2,
+                  "quote": "the owner can lose his own house, because he has unlimited liability"
+                },
+                {
+                  "point": 1,
+                  "quote": "owned by shareholders who buy shares"
+                },
+                {
+                  "point": 3,
+                  "quote": "they can only lose the money they paid for the shares"
+                },
+                {
+                  "point": 4,
+                  "quote": "I would advise a company, because many people can buy shares and so a lot of capital is raised"
+                }
+              ],
+              "feedback": "Full marks. Using the example of losing a house made unlimited liability easy to understand."
+            },
+            {
+              "tier": "full",
+              "text": "A sole proprietor owns and runs the business alone and must pay all the debts from his own pocket. A company belongs to its shareholders, and if it fails they lose only what they invested. For a big business I advise the company form because shares can be sold to the public to raise plenty of money.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "owns and runs the business alone"
+                },
+                {
+                  "point": 2,
+                  "quote": "must pay all the debts from his own pocket"
+                },
+                {
+                  "point": 1,
+                  "quote": "belongs to its shareholders"
+                },
+                {
+                  "point": 3,
+                  "quote": "they lose only what they invested"
+                },
+                {
+                  "point": 4,
+                  "quote": "I advise the company form because shares can be sold to the public to raise plenty of money"
+                }
+              ],
+              "feedback": "All five marks. A tidy answer that covers every part of the question."
+            },
+            {
+              "tier": "partial",
+              "text": "A sole proprietorship is owned by one person. A limited liability company is owned by shareholders. I would advise the company because it has limited liability.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "owned by one person"
+                },
+                {
+                  "point": 1,
+                  "quote": "owned by shareholders"
+                }
+              ],
+              "feedback": "The two owners are correct. Explain what limited liability means (the owners lose only what they put in), what the sole proprietor risks, and say that shares raise large capital."
+            },
+            {
+              "tier": "partial",
+              "text": "In a sole proprietorship if the business has debts the owner must pay with his personal property. In a company the shareholders only lose the money they put in. I advise sole proprietorship because the owner takes all the profit.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the owner must pay with his personal property"
+                },
+                {
+                  "point": 3,
+                  "quote": "the shareholders only lose the money they put in"
+                }
+              ],
+              "feedback": "You understand liability well. The question asks about raising a lot of money, and one person alone cannot raise much, so the advice should be the company. Also say who owns each business.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Sole proprietorship is for one person and company is for many people so the company is bigger. I advise company because it is big.",
+              "meets": [],
+              "feedback": "'Many people' is a start, but say who they are (shareholders who buy shares). Bigger is not a reason; the reason is that shares raise a lot of money."
+            },
+            {
+              "tier": "weak",
+              "text": "A company is owned by the government and sole proprietorship is owned by a private person. A person who wants to raise money should go to the government.",
+              "meets": [],
+              "feedback": "A company can be owned by private shareholders, not only the government. Raising money for a business means selling shares, not asking the government."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Business transactions and business documents",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. tell a cash transaction from a credit transaction;\n2. name the common business documents and say what each is for;\n3. follow the documents from an order to a payment.\n\n## Materials\n\nReal or sample order form, invoice, receipt and cheque (blank copies from a shop or bank); a marker board.\n\n## Starter\n\nShow a supermarket receipt. Ask what information is on it and why the shop gave it.\n\n## Development\n\n1. A transaction is any exchange of goods or services for money. A cash transaction is paid for at once; a credit transaction is paid for later.\n2. Order form: the buyer asks for goods, with quantity and description.\n3. Invoice: the seller lists goods supplied, price and total to be paid.\n4. Receipt: the seller's proof that payment was received.\n5. Cheque: a written order to a bank to pay a stated sum from the writer's account.\n6. Trace one credit sale through the four documents on the board.\n\n## Class activity\n\nPairs act out a buyer and a seller. The buyer writes an order, the seller writes an invoice, the buyer pays and the seller writes a receipt.\n\n## Evaluation\n\n1. Which document asks for goods?\n2. Which document proves payment?\n3. A buyer takes 8 packets at ₦250 on credit. What total is on the invoice?\n\n## Assignment\n\nQuiz on the app. Collect a receipt from any purchase and bring it to class.",
+      "reading": {
+        "title": "Orders, invoices, receipts and cheques",
+        "content": "# Business transactions and documents\n\n## Transactions\n\nA **transaction** is an exchange of goods or services for money.\n\n- In a **cash transaction** the buyer pays at once. When you buy a sachet of water from a hawker, that is a cash transaction.\n- In a **credit transaction** the buyer takes the goods now and pays later. The buyer becomes a **debtor** and the seller a **creditor**.\n\n## Business documents\n\nBusinesses keep written records so that there are no quarrels about what was ordered, supplied or paid.\n\n1. **Order form.** The buyer writes what is wanted, the quantity and any special terms, then sends it to the seller.\n2. **Invoice.** The seller sends it with the goods. It lists what was supplied, the price of each and the total to be paid.\n3. **Receipt.** When the buyer pays, the seller gives a receipt. It is proof that the payment was made.\n4. **Cheque.** A cheque is a written order to a bank to pay a stated amount of money from the writer's account to the person named.\n\n## Worked example\n\nMrs Okafor, who has a shop in Enugu, wants 12 packets of biscuits.\n\n1. She writes an **order form** for 12 packets.\n2. The wholesaler sends the biscuits with an **invoice**: 12 packets at ₦350 each = 12 x 350 = ₦4,200.\n3. Mrs Okafor writes a **cheque** for ₦4,200.\n4. The wholesaler gives her a **receipt** for ₦4,200.\n\nEach person keeps a copy. If the wholesaler later says she has not paid, Mrs Okafor shows the receipt. If she says she received only 10 packets, the invoice and order form show what was agreed."
+      },
+      "cards": [
+        {
+          "front": "Cash transaction",
+          "back": "Goods are paid for at once."
+        },
+        {
+          "front": "Credit transaction",
+          "back": "The buyer takes the goods now and pays later."
+        },
+        {
+          "front": "Order form",
+          "back": "A document in which the buyer asks the seller for goods."
+        },
+        {
+          "front": "Invoice",
+          "back": "A document from the seller listing goods supplied, their prices and the total to pay."
+        },
+        {
+          "front": "Receipt",
+          "back": "The seller's proof that payment was received."
+        },
+        {
+          "front": "Cheque",
+          "back": "A written order to a bank to pay money from the writer's account."
+        },
+        {
+          "front": "Debtor",
+          "back": "A person who owes money."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which document does a buyer send to a seller to ask for goods?",
+          "options": [
+            "Order form",
+            "Receipt",
+            "Cheque",
+            "Invoice"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which document tells a buyer how much to pay for goods supplied on credit?",
+          "options": [
+            "Receipt",
+            "Order form",
+            "Cheque",
+            "Invoice"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Mrs Bello pays cash for goods and the seller gives her written proof of payment. This is a",
+          "options": [
+            "invoice",
+            "order form",
+            "receipt",
+            "cheque"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A cheque is",
+          "options": [
+            "proof that goods were delivered",
+            "a written order to a bank to pay money from an account",
+            "a list of goods a seller has",
+            "a loan from a bank"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A shopkeeper buys 12 packets of biscuits at ₦350 each on credit. The total on the invoice is",
+          "options": [
+            "₦4,200",
+            "₦3,600",
+            "₦362",
+            "₦4,800"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between a cash transaction and a credit transaction. Give an example of each.",
+          "markScheme": [
+            "States that in a cash transaction payment is made at once",
+            "Gives a correct example of a cash transaction",
+            "States that in a credit transaction goods are taken now and paid for later",
+            "Gives a correct example of a credit transaction"
+          ],
+          "modelAnswer": "In a cash transaction the buyer pays at once, for example buying bread from a baker and paying on the spot. In a credit transaction the buyer takes the goods now and pays later, for example a shopkeeper who takes goods from a wholesaler and pays at the end of the month.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A cash transaction is when you pay for the goods immediately you collect them, like buying pure water from a hawker. A credit transaction is when you take the goods first and pay after some days, like a shop owner who collects cartons of noodles from a wholesaler and pays next week.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "pay for the goods immediately you collect them"
+                },
+                {
+                  "point": 1,
+                  "quote": "buying pure water from a hawker"
+                },
+                {
+                  "point": 2,
+                  "quote": "take the goods first and pay after some days"
+                },
+                {
+                  "point": 3,
+                  "quote": "collects cartons of noodles from a wholesaler and pays next week"
+                }
+              ],
+              "feedback": "Full marks. The word 'first' and 'after' show clearly when the payment is made in each case."
+            },
+            {
+              "tier": "full",
+              "text": "Cash transaction means the buyer gives the money right now. For example I buy a pencil at the school shop and pay. Credit transaction means the seller allows the buyer to pay later, for example a farmer takes fertiliser and pays after harvest.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the buyer gives the money right now"
+                },
+                {
+                  "point": 1,
+                  "quote": "I buy a pencil at the school shop and pay"
+                },
+                {
+                  "point": 2,
+                  "quote": "the seller allows the buyer to pay later"
+                },
+                {
+                  "point": 3,
+                  "quote": "a farmer takes fertiliser and pays after harvest"
+                }
+              ],
+              "feedback": "All four marks. Your credit example fits real life in a farming community."
+            },
+            {
+              "tier": "partial",
+              "text": "Cash transaction is when you pay at once, like buying bread. Credit transaction is when you buy things in a big shop.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "pay at once"
+                },
+                {
+                  "point": 1,
+                  "quote": "buying bread"
+                }
+              ],
+              "feedback": "Cash is right. Credit is not about the size of the shop. It means taking the goods now and paying later. Add an example of that."
+            },
+            {
+              "tier": "partial",
+              "text": "Credit transaction is where you take goods now and pay later, like when a customer owes a shopkeeper. Cash transaction is when you use cash and credit is when you use ATM card.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "take goods now and pay later"
+                },
+                {
+                  "point": 3,
+                  "quote": "a customer owes a shopkeeper"
+                }
+              ],
+              "feedback": "Your credit explanation is good. Cash transaction is about paying at once, not only about notes: paying with an ATM card at the till is also paying at once. Add an example.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Cash transaction is when you buy things with big money and credit is when you buy with small money.",
+              "meets": [],
+              "feedback": "The size of the money does not decide it. Cash means paying at once. Credit means taking now and paying later."
+            },
+            {
+              "tier": "weak",
+              "text": "Credit means the thing is free. You take it and you do not pay. Cash means you pay.",
+              "meets": [],
+              "feedback": "On credit you still have to pay; you only pay later. Goods that are free are a gift, not a credit transaction."
+            }
+          ]
+        },
+        {
+          "prompt": "Mrs Okafor, a shopkeeper, orders 20 tins of milk from a wholesaler on credit. Describe the documents that pass between them until she has paid, and say what each one does.",
+          "markScheme": [
+            "Says Mrs Okafor sends an order form asking for the milk",
+            "Says the wholesaler sends an invoice showing the quantity, price and total",
+            "Says Mrs Okafor pays, for example by cash or cheque",
+            "Says the wholesaler gives a receipt as proof of payment",
+            "Says each person keeps a copy as a record"
+          ],
+          "modelAnswer": "Mrs Okafor first sends an order form asking for 20 tins of milk. The wholesaler sends the milk with an invoice that shows the quantity, price and total to be paid. She pays, by cash or by cheque, and the wholesaler gives her a receipt as proof of payment. Both keep copies as a record.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First Mrs Okafor writes an order form to ask for 20 tins of milk. The wholesaler sends the tins with an invoice that shows how many, the price of one and the total. Then she pays with cash or a cheque. The wholesaler gives her a receipt to prove she has paid. Both of them keep a copy for their records.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "writes an order form to ask for 20 tins of milk"
+                },
+                {
+                  "point": 1,
+                  "quote": "an invoice that shows how many, the price of one and the total"
+                },
+                {
+                  "point": 2,
+                  "quote": "pays with cash or a cheque"
+                },
+                {
+                  "point": 3,
+                  "quote": "gives her a receipt to prove she has paid"
+                },
+                {
+                  "point": 4,
+                  "quote": "Both of them keep a copy for their records"
+                }
+              ],
+              "feedback": "Full marks. Your steps are in order and each document has its job."
+            },
+            {
+              "tier": "full",
+              "text": "Order form goes from Mrs Okafor to the wholesaler to request the milk. The invoice comes back with the goods and tells her the total amount she owes. When she settles the amount, by cheque for example, she gets a receipt which is the proof. The copies are kept as records.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Order form goes from Mrs Okafor to the wholesaler to request the milk"
+                },
+                {
+                  "point": 1,
+                  "quote": "The invoice comes back with the goods and tells her the total amount she owes"
+                },
+                {
+                  "point": 2,
+                  "quote": "by cheque for example"
+                },
+                {
+                  "point": 3,
+                  "quote": "she gets a receipt which is the proof"
+                },
+                {
+                  "point": 4,
+                  "quote": "The copies are kept as records"
+                }
+              ],
+              "feedback": "All five marks. Saying which way each document travels was a clear way to show you understand."
+            },
+            {
+              "tier": "partial",
+              "text": "Mrs Okafor sends an order form. The wholesaler sends an invoice. Then she pays and gets a receipt.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sends an order form"
+                },
+                {
+                  "point": 1,
+                  "quote": "sends an invoice"
+                },
+                {
+                  "point": 3,
+                  "quote": "gets a receipt"
+                }
+              ],
+              "feedback": "The sequence is correct. Say what the invoice shows (quantity, price and total), how she pays, and that copies are kept as records."
+            },
+            {
+              "tier": "partial",
+              "text": "She writes an invoice to ask for the milk. The wholesaler sends the goods. She pays by cheque and he gives a receipt as proof.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "pays by cheque"
+                },
+                {
+                  "point": 3,
+                  "quote": "gives a receipt as proof"
+                }
+              ],
+              "feedback": "Payment and receipt are correct. The buyer writes an order form, not an invoice. The invoice is written by the wholesaler to show what she must pay."
+            },
+            {
+              "tier": "weak",
+              "text": "She goes to the wholesaler and takes the milk then she pays him the money.",
+              "meets": [],
+              "feedback": "That is the buying but the question asks for the documents. Start with the order form, then the invoice, and finish with the receipt."
+            },
+            {
+              "tier": "weak",
+              "text": "The wholesaler writes a cheque and gives it to Mrs Okafor so she can buy the milk.",
+              "meets": [],
+              "feedback": "A cheque is written by the person who pays, here Mrs Okafor. Learn the order: order form, invoice, payment, receipt."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Commercial banks: functions and services",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state what a commercial bank is and its main functions;\n2. tell a savings account from a current account;\n3. work out simple interest on savings and loans.\n\n## Materials\n\nSample account-opening form, ATM card picture, a poster of a bank statement, a marker board.\n\n## Starter\n\nAsk: where would you keep ₦20,000 you have saved? Why not under the mattress? Collect the reasons.\n\n## Development\n\n1. A commercial bank is a business that takes deposits and lends money to earn interest. The Central Bank of Nigeria regulates banks; the NDIC insures customers' deposits.\n2. Functions: accepting deposits, lending money, transferring money, safe keeping of valuables, changing foreign money.\n3. Accounts: savings (earns interest, for keeping money) and current (for cheques and daily business).\n4. Services: ATM, POS, transfers, mobile banking and bank statements.\n5. Simple interest: interest = principal x rate x time. Work ₦50,000 at 4% for one year, and ₦200,000 borrowed at 10% for one year.\n\n## Class activity\n\nLearners role-play opening an account. One is the bank officer who explains which account suits a trader and which suits a pupil.\n\n## Evaluation\n\n1. Name three services a bank provides.\n2. Which account allows cheques?\n3. Find the interest on ₦30,000 at 5% for one year.\n\n## Assignment\n\nProblem set on the app. Ask an adult how they pay for goods without carrying cash.",
+      "reading": {
+        "title": "How a bank helps you",
+        "content": "# Commercial banks\n\nA **commercial bank** is a business that keeps people's money safe and lends money to others. It earns by charging more interest on loans than it pays on savings. Banks in Nigeria are supervised by the Central Bank of Nigeria (CBN), and the Nigeria Deposit Insurance Corporation (NDIC) protects customers' deposits up to a stated limit.\n\n## Functions of a commercial bank\n\n1. **Accepting deposits.** Customers keep money in the bank. It is safe from fire and thieves.\n2. **Giving loans and overdrafts.** Businesses borrow to buy stock or machines and repay with interest.\n3. **Transferring money.** A trader in Onitsha can pay a supplier in Kano by bank transfer, without travelling with cash.\n4. **Keeping valuables.** Documents and jewellery can be stored in safe deposit boxes.\n5. **Foreign exchange.** Banks change naira to other currencies for people who travel or import goods.\n\n## Types of account\n\n- A **savings account** is for keeping money and earning interest. A pupil saving for school fees uses it.\n- A **current account** is for daily business and allows the customer to write cheques. A trader who pays suppliers often uses it.\n\n## Banking services\n\nATM cards to withdraw money, POS machines to pay in shops, mobile banking and USSD codes, and bank statements that show every deposit and withdrawal.\n\n## Simple interest\n\nInterest = principal x rate x time.\n\n**Example 1.** Ngozi saves ₦50,000 at 4% a year. Interest for one year = 50,000 x 4/100 = ₦2,000.\n\n**Example 2.** A trader borrows ₦200,000 at 10% for one year. Interest = ₦20,000. She repays 200,000 + 20,000 = ₦220,000."
+      },
+      "cards": [
+        {
+          "front": "Commercial bank",
+          "back": "A business that keeps deposits and lends money to earn interest."
+        },
+        {
+          "front": "Deposit",
+          "back": "Money paid into a bank account."
+        },
+        {
+          "front": "Savings account",
+          "back": "An account for keeping money and earning interest."
+        },
+        {
+          "front": "Current account",
+          "back": "An account for daily business that allows cheques."
+        },
+        {
+          "front": "Interest",
+          "back": "The payment made for using money: earned on savings, paid on loans."
+        },
+        {
+          "front": "Overdraft",
+          "back": "Permission to take out more money than is in a current account."
+        },
+        {
+          "front": "Central Bank of Nigeria",
+          "back": "The bank that supervises all the other banks in Nigeria."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which account is best for a pupil who is saving for school fees?",
+          "options": [
+            "Current account",
+            "Savings account",
+            "Overdraft",
+            "Foreign account"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which account is mainly used by a trader who writes cheques every day?",
+          "options": [
+            "Current account",
+            "Savings account",
+            "Fixed deposit account",
+            "Child's account"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which body supervises banks in Nigeria?",
+          "options": [
+            "NAFDAC",
+            "SON",
+            "NIPOST",
+            "Central Bank of Nigeria"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Ngozi saves ₦50,000 in an account paying 4% a year. How much interest does she earn in one year?",
+          "options": [
+            "₦200",
+            "₦20,000",
+            "₦2,000",
+            "₦54,000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A trader borrows ₦200,000 from a bank at 10% a year for one year. How much must she repay altogether?",
+          "options": [
+            "₦210,000",
+            "₦220,000",
+            "₦20,000",
+            "₦200,000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State three functions of a commercial bank.",
+          "markScheme": [
+            "States one correct function of a commercial bank",
+            "States a second correct function",
+            "States a third correct function"
+          ],
+          "modelAnswer": "A commercial bank accepts deposits from customers, gives loans to individuals and businesses, and transfers money from one person to another.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A bank keeps people's money safe when they deposit it. It lends money to people and businesses who need to borrow. It also helps customers to send money to other people by transfer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "keeps people's money safe when they deposit it"
+                },
+                {
+                  "point": 1,
+                  "quote": "lends money to people and businesses who need to borrow"
+                },
+                {
+                  "point": 2,
+                  "quote": "send money to other people by transfer"
+                }
+              ],
+              "feedback": "Full marks. Each function is different and in your own words."
+            },
+            {
+              "tier": "full",
+              "text": "One function is to accept deposits from customers. Another is to give out loans and overdrafts. Another is to exchange foreign money for people who are travelling.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "accept deposits from customers"
+                },
+                {
+                  "point": 1,
+                  "quote": "give out loans and overdrafts"
+                },
+                {
+                  "point": 2,
+                  "quote": "exchange foreign money for people who are travelling"
+                }
+              ],
+              "feedback": "All three marks. Foreign exchange is a function many learners forget."
+            },
+            {
+              "tier": "partial",
+              "text": "A bank keeps money for people. A bank also gives loans.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "keeps money for people"
+                },
+                {
+                  "point": 1,
+                  "quote": "gives loans"
+                }
+              ],
+              "feedback": "Two correct functions. You need a third, such as transferring money, keeping valuables or changing foreign money."
+            },
+            {
+              "tier": "partial",
+              "text": "A bank gives out loans. It also sells things to people and pays salary to teachers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "gives out loans"
+                }
+              ],
+              "feedback": "Loans are correct. A bank does not sell goods, and paying teachers' salaries is the job of their employer. Add accepting deposits and transferring money."
+            },
+            {
+              "tier": "weak",
+              "text": "A bank is where money is made. They print the money there.",
+              "meets": [],
+              "feedback": "Money is printed by the Central Bank, not by commercial banks. Commercial banks keep deposits, give loans and transfer money."
+            },
+            {
+              "tier": "weak",
+              "text": "A bank is a very big building with security men and a lot of money inside.",
+              "meets": [],
+              "feedback": "That describes what a bank looks like, not what it does. Say what customers use a bank for, such as saving, borrowing and transferring."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Eze is a trader in Onitsha who keeps all his money at home. Advise him to use a bank, giving reasons and services he would gain.",
+          "markScheme": [
+            "Says his money would be safe from theft or fire",
+            "Says he would earn interest on savings",
+            "Says he could transfer or pay money without carrying cash",
+            "Says he could borrow a loan or overdraft to expand",
+            "Says the bank statement helps him keep a record"
+          ],
+          "modelAnswer": "Money kept in a bank is safe from thieves and fire, and a savings account earns interest. Mr Eze could transfer money to suppliers without carrying cash, and borrow a loan to expand. His bank statement would also be a record of his deposits and payments.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Mr Eze, your money at home can be stolen or burnt, but in a bank it is safe. If you put it in a savings account you earn interest. You can also pay your suppliers by transfer so you do not carry cash on the road. If you want to enlarge the shop the bank can give you a loan. The bank statement will show everything you paid and received.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "your money at home can be stolen or burnt, but in a bank it is safe"
+                },
+                {
+                  "point": 1,
+                  "quote": "you put it in a savings account you earn interest"
+                },
+                {
+                  "point": 2,
+                  "quote": "pay your suppliers by transfer so you do not carry cash on the road"
+                },
+                {
+                  "point": 3,
+                  "quote": "the bank can give you a loan"
+                },
+                {
+                  "point": 4,
+                  "quote": "The bank statement will show everything you paid and received"
+                }
+              ],
+              "feedback": "Full marks. You covered safety, interest, transfers, loans and records, and wrote it as advice to Mr Eze."
+            },
+            {
+              "tier": "full",
+              "text": "He should open a bank account because thieves cannot steal from it and it will not burn. The money in a savings account grows with interest. With a transfer he can pay a supplier in Kano without travelling with cash. If he needs more capital he can ask for a loan or overdraft. His statement works as a record of his business.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "thieves cannot steal from it and it will not burn"
+                },
+                {
+                  "point": 1,
+                  "quote": "grows with interest"
+                },
+                {
+                  "point": 2,
+                  "quote": "pay a supplier in Kano without travelling with cash"
+                },
+                {
+                  "point": 3,
+                  "quote": "ask for a loan or overdraft"
+                },
+                {
+                  "point": 4,
+                  "quote": "His statement works as a record of his business"
+                }
+              ],
+              "feedback": "All five marks. Your answer is a proper piece of advice with a reason for each service."
+            },
+            {
+              "tier": "partial",
+              "text": "He should use a bank because his money will be safe. He can also collect interest.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "his money will be safe"
+                },
+                {
+                  "point": 1,
+                  "quote": "collect interest"
+                }
+              ],
+              "feedback": "Two good reasons. Add services he would gain: transfers instead of carrying cash, loans to expand, and statements for records."
+            },
+            {
+              "tier": "partial",
+              "text": "The bank will give him a loan and he can send money by transfer. He will not have to carry money to Kano.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "send money by transfer"
+                },
+                {
+                  "point": 3,
+                  "quote": "give him a loan"
+                }
+              ],
+              "feedback": "Loans and transfers are good. You did not say that his money will also be safe from thieves and fire, and that savings earn interest."
+            },
+            {
+              "tier": "weak",
+              "text": "He should use the bank so that he will be rich. Everyone who uses the bank is rich.",
+              "meets": [],
+              "feedback": "Using a bank does not make someone rich. It makes money safe and gives services such as savings, loans and transfers. Name those."
+            },
+            {
+              "tier": "weak",
+              "text": "He should keep the money at home because it is free. A bank takes your money.",
+              "meets": [],
+              "feedback": "A bank does not take your money; it keeps it safe and returns it with interest on savings. At home, money can be stolen or burnt."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Insurance: types and benefits",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain insurance, premium, policy and claim;\n2. name common types of insurance;\n3. explain how insurance benefits a business.\n\n## Materials\n\nA sample insurance policy, a picture of a market fire, a picture of a car with third-party sticker, a marker board.\n\n## Starter\n\nShow a picture of a market after a fire. Ask: how can a trader start again? What could they have done before?\n\n## Development\n\n1. Insurance is an agreement in which the insurer promises to pay for a loss in return for regular payments called premiums. The person protected is the insured.\n2. The agreement is written in a policy. When a loss happens the insured makes a claim.\n3. Types: fire, motor (third party is compulsory in Nigeria), marine (goods on ships), burglary, life, accident and fidelity guarantee.\n4. Benefits to business: protects against loss, gives peace of mind, helps in getting loans and lets owners take sensible risks.\n5. Many people pay premiums; only a few suffer loss, so the insurer can pay them.\n\n## Class activity\n\nGroups match six risk cards (a goods lorry, a shop, a ship, a driver, a cashier, a factory) to the insurance that covers each.\n\n## Evaluation\n\n1. Define premium and claim.\n2. Which insurance is compulsory for vehicles?\n3. Name two benefits of insurance to a business.\n\n## Assignment\n\nWorksheet on the app. Ask an adult if they have any insurance, and what it covers.",
+      "reading": {
+        "title": "Insurance: sharing risk",
+        "content": "# Insurance\n\n## What is insurance?\n\nSome bad things happen by chance: a shop burns down, a lorry crashes, goods are stolen. A trader cannot know whether it will happen to them. **Insurance** is a way of sharing that risk.\n\nA person or a business, called the **insured**, pays a small regular amount called a **premium** to an **insurance company**, called the **insurer**. In return the insurer promises to pay for the loss if it happens. The agreement is written in a **policy**. If a loss happens, the insured makes a **claim**.\n\n## How it works\n\nThousands of people pay premiums, but only a few suffer loss in any year. The premiums of the many are used to pay the claims of the few.\n\n## Types of insurance\n\n- **Fire insurance** covers buildings and stock destroyed by fire.\n- **Motor insurance** covers vehicles. Third-party motor insurance, which pays for damage to other people and their property, is compulsory in Nigeria.\n- **Marine insurance** covers ships and goods carried on them.\n- **Burglary insurance** covers goods stolen from a shop or house.\n- **Life insurance** pays money to the family if the insured dies.\n- **Accident insurance** pays when the insured is hurt.\n- **Fidelity guarantee** protects an employer if a worker steals the business's money.\n\n## Benefits to a business\n\n1. **Protection from loss.** After a fire the trader can claim and start again.\n2. **Peace of mind.** The owner can work without fearing disaster.\n3. **Help to borrow.** Banks lend more readily to a business whose stock is insured.\n4. **Encourages enterprise.** Owners are willing to try new ideas when disaster will not ruin them.\n\nInsurance has a rule: you can only insure something you would lose money by losing. A person cannot insure a neighbour's house."
+      },
+      "cards": [
+        {
+          "front": "Insurance",
+          "back": "An agreement in which an insurer pays for a loss in return for premiums."
+        },
+        {
+          "front": "Premium",
+          "back": "The money the insured pays regularly to the insurer."
+        },
+        {
+          "front": "Policy",
+          "back": "The written agreement between insurer and insured."
+        },
+        {
+          "front": "Claim",
+          "back": "A request for payment after a loss."
+        },
+        {
+          "front": "Insured",
+          "back": "The person or business protected by the policy."
+        },
+        {
+          "front": "Third-party motor insurance",
+          "back": "Insurance for damage to other people and their property; compulsory in Nigeria."
+        },
+        {
+          "front": "Marine insurance",
+          "back": "Insurance for ships and goods carried on them."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The money paid regularly to an insurance company is called the",
+          "options": [
+            "claim",
+            "policy",
+            "premium",
+            "interest"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The written agreement between the insurer and the person insured is the",
+          "options": [
+            "receipt",
+            "cheque",
+            "invoice",
+            "policy"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trader's shop is burnt down. To get money from the insurance company, the trader makes a",
+          "options": [
+            "claim",
+            "premium",
+            "deposit",
+            "withdrawal"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which insurance must every vehicle owner have by law in Nigeria?",
+          "options": [
+            "Life insurance",
+            "Third-party motor insurance",
+            "Fire insurance",
+            "Marine insurance"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which type of insurance covers goods carried on ships?",
+          "options": [
+            "Life",
+            "Fire",
+            "Marine",
+            "Burglary"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "What is insurance? Explain the words premium and claim.",
+          "markScheme": [
+            "States that insurance is an agreement in which the insurer pays for a loss",
+            "States that the insured pays for it with a premium",
+            "States that a premium is the regular payment to the insurer",
+            "States that a claim is a request for payment after a loss"
+          ],
+          "modelAnswer": "Insurance is an agreement in which an insurance company promises to pay for a loss if it happens, in return for a payment. The premium is the money the insured pays regularly to the insurer. A claim is the request for payment that the insured makes after a loss.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Insurance is when a person pays an insurance company so that the company will pay for the loss if something bad happens. The money the person pays is the premium and it is paid regularly. If a loss happens, the person makes a claim, which means asking the company to pay.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the company will pay for the loss if something bad happens"
+                },
+                {
+                  "point": 1,
+                  "quote": "pays an insurance company"
+                },
+                {
+                  "point": 2,
+                  "quote": "the premium and it is paid regularly"
+                },
+                {
+                  "point": 3,
+                  "quote": "makes a claim, which means asking the company to pay"
+                }
+              ],
+              "feedback": "Full marks. You covered the agreement, premium and claim in plain words."
+            },
+            {
+              "tier": "full",
+              "text": "Insurance is an agreement where the insurer promises to pay if the insured loses something. In return the insured pays a premium, that is the money paid to the insurer on a regular basis. After a loss, the insured sends a claim to get the payment.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the insurer promises to pay if the insured loses something"
+                },
+                {
+                  "point": 1,
+                  "quote": "In return the insured pays a premium"
+                },
+                {
+                  "point": 2,
+                  "quote": "the money paid to the insurer on a regular basis"
+                },
+                {
+                  "point": 3,
+                  "quote": "the insured sends a claim to get the payment"
+                }
+              ],
+              "feedback": "All four marks. Your answer uses the correct words, insurer and insured, in the right places."
+            },
+            {
+              "tier": "partial",
+              "text": "Insurance is when a company will pay you if you lose your property. Premium is the money you pay to the company.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a company will pay you if you lose your property"
+                },
+                {
+                  "point": 2,
+                  "quote": "Premium is the money you pay to the company"
+                }
+              ],
+              "feedback": "Good. Say that the premium is paid in return for the promise, and explain claim: the request for payment after a loss."
+            },
+            {
+              "tier": "partial",
+              "text": "Insurance is a way of protecting your things. A claim is when you ask the insurance company for money after a loss. Premium is the money the insurance company gives you.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "ask the insurance company for money after a loss"
+                }
+              ],
+              "feedback": "Your claim is correct. A premium is the money you pay to the insurer, not what it gives you. The payment you receive after a loss is the claim payment.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Insurance is when you save your money in the bank so you can use it later.",
+              "meets": [],
+              "feedback": "That is saving. Insurance is an agreement in which a company pays for a loss in return for premiums."
+            },
+            {
+              "tier": "weak",
+              "text": "A premium is the best thing and a claim is a complaint you make when you are not happy.",
+              "meets": [],
+              "feedback": "A premium is the regular payment you make to the insurer. A claim is a request for payment after a loss, not a complaint."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain three ways in which insurance benefits a business.",
+          "markScheme": [
+            "States that insurance protects the business from loss",
+            "Explains it, such as the owner can claim and start again after a fire or theft",
+            "States a second benefit, such as peace of mind or help to borrow",
+            "Explains that benefit correctly",
+            "States a third benefit",
+            "Explains that benefit correctly"
+          ],
+          "modelAnswer": "Insurance protects a business from loss, because after a fire or theft the owner can claim and start again. It gives the owner peace of mind to work without fear of disaster. It also helps the business to borrow, because banks lend more readily to a business whose stock is insured.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "One benefit is that insurance protects the business from loss. If a fire destroys the shop the owner can claim and buy new goods. Second, it gives peace of mind, so the owner can work without worrying all the time. Third, it helps the business to borrow because the bank knows the stock is insured.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "insurance protects the business from loss"
+                },
+                {
+                  "point": 1,
+                  "quote": "the owner can claim and buy new goods"
+                },
+                {
+                  "point": 2,
+                  "quote": "it gives peace of mind"
+                },
+                {
+                  "point": 3,
+                  "quote": "the owner can work without worrying all the time"
+                },
+                {
+                  "point": 4,
+                  "quote": "it helps the business to borrow"
+                },
+                {
+                  "point": 5,
+                  "quote": "the bank knows the stock is insured"
+                }
+              ],
+              "feedback": "Full marks. For each benefit you gave the reason it helps."
+            },
+            {
+              "tier": "full",
+              "text": "It protects the business against loss, for example when thieves steal goods the insurer pays for them. It makes the owner free to try new things, since a disaster will not ruin him. It also helps to get a bank loan because the bank sees the goods are safe.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "protects the business against loss"
+                },
+                {
+                  "point": 1,
+                  "quote": "when thieves steal goods the insurer pays for them"
+                },
+                {
+                  "point": 2,
+                  "quote": "free to try new things"
+                },
+                {
+                  "point": 3,
+                  "quote": "a disaster will not ruin him"
+                },
+                {
+                  "point": 4,
+                  "quote": "helps to get a bank loan"
+                },
+                {
+                  "point": 5,
+                  "quote": "the bank sees the goods are safe"
+                }
+              ],
+              "feedback": "All six marks. Your point about trying new things shows good understanding of enterprise."
+            },
+            {
+              "tier": "partial",
+              "text": "Insurance protects the business from loss. It also gives peace of mind.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "protects the business from loss"
+                },
+                {
+                  "point": 2,
+                  "quote": "gives peace of mind"
+                }
+              ],
+              "feedback": "Two benefits named. Explain each one, for example how a claim lets the owner start again, and add a third benefit such as help to borrow."
+            },
+            {
+              "tier": "partial",
+              "text": "The first benefit is that the owner can claim money after a fire and start again. The second is that insurance helps in getting a loan.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "the owner can claim money after a fire and start again"
+                },
+                {
+                  "point": 4,
+                  "quote": "insurance helps in getting a loan"
+                }
+              ],
+              "feedback": "Your explanation of claiming is good. Name the benefit (protection from loss), and say why a bank lends more readily when stock is insured."
+            },
+            {
+              "tier": "weak",
+              "text": "Insurance benefits a business because it makes the business big and gives it more customers.",
+              "meets": [],
+              "feedback": "Insurance does not bring customers. Its benefits are protection from loss, peace of mind and help in borrowing."
+            },
+            {
+              "tier": "weak",
+              "text": "The business gets its premium back every year with interest like savings.",
+              "meets": [],
+              "feedback": "Premiums are not returned like savings. They pay for the protection. The benefit is that the insurer pays when a loss happens."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Transport and trade in Nigeria",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain why transport is an aid to trade;\n2. name the modes of transport used in Nigeria;\n3. match a mode of transport to a simple trading need.\n\n## Materials\n\nPictures of a lorry, a train, a ferry, a plane and an oil pipeline; a map of Nigeria showing Apapa port and the rail line; a marker board.\n\n## Starter\n\nHold up a tin of tomato paste. Ask where the tomatoes were grown and how they got to the shop. Write the journey on the board.\n\n## Development\n\n1. Transport moves goods and people from one place to another. Without it, goods would stay where they are made.\n2. Road: lorries, vans, buses and motorcycles. It reaches almost everywhere and is the most used mode in Nigeria.\n3. Rail: carries heavy goods and passengers on fixed lines. Water: ferries, barges and ships, using ports like Apapa and Lekki. Air: fast, used for light and urgent goods. Pipeline: carries oil, gas and water.\n4. Roles of transport: brings goods to markets, widens the market, makes goods available all year, creates jobs.\n5. Match the mode to the need: heavy and cheap (rail or water), fast (air), door to door (road).\n\n## Class activity\n\nGroups get five cards (cement, fresh fish, crude oil, urgent medicine, a container of imported cars) and choose a mode for each with a reason.\n\n## Evaluation\n\n1. Name three modes of transport.\n2. Which mode carries crude oil underground?\n3. Give two ways transport helps trade.\n\n## Assignment\n\nWorksheet on the app. Write down how three items in your kitchen travelled to you.",
+      "reading": {
+        "title": "How goods travel",
+        "content": "# Transport and trade\n\n## Why transport matters\n\n**Transport** is the movement of goods and people from one place to another. Farmers in Benue grow yams, but the people who buy them live in Lagos, a day's journey away. Transport joins the two. It is called an **aid to trade** because trade cannot grow without it.\n\n## Modes of transport in Nigeria\n\n**Road.** Lorries, trucks, vans, buses, danfo and motorcycles. Road transport can deliver from the farm gate to the shop door, so it is used the most. Its weakness is that bad roads cause delays and accidents.\n\n**Rail.** The Nigerian Railway Corporation runs trains on fixed lines, including Lagos to Ibadan and Abuja to Kaduna. Rail carries heavy goods and many passengers cheaply, but only along the lines.\n\n**Water.** Ferries and barges move goods on rivers and the lagoon. Big ships bring imports and carry exports through the ports at Apapa, Tin Can and Lekki. Water is cheap for heavy goods but slow.\n\n**Air.** Planes are fast and are used for urgent or valuable goods like medicine and documents. They are the most costly.\n\n**Pipeline.** Pipes carry crude oil, petrol and gas over long distances without lorries.\n\n## How transport helps trade\n\n1. It brings goods from where they are made to where they are needed.\n2. It widens the market, because a seller can reach buyers far away.\n3. It makes goods available at all times, not only in the place and season they are produced.\n4. It gives jobs to drivers, loaders, mechanics and many others.\n\n## Choosing a mode\n\nA trader chooses by thinking about the goods, the distance, the cost and the speed. Fresh tomatoes spoil quickly, so they need a fast mode. Cement is heavy and does not spoil, so a cheaper, slower mode will do."
+      },
+      "cards": [
+        {
+          "front": "Transport",
+          "back": "The movement of goods and people from one place to another."
+        },
+        {
+          "front": "Mode of transport",
+          "back": "A way of moving: road, rail, water, air or pipeline."
+        },
+        {
+          "front": "Road transport",
+          "back": "Used the most in Nigeria because it can reach almost anywhere, door to door."
+        },
+        {
+          "front": "Rail transport",
+          "back": "Carries heavy goods cheaply along fixed lines."
+        },
+        {
+          "front": "Pipeline",
+          "back": "Carries oil, gas or water over long distances underground."
+        },
+        {
+          "front": "Air transport",
+          "back": "Fast but costly; used for urgent and valuable goods."
+        },
+        {
+          "front": "Port",
+          "back": "A place where ships load and unload, such as Apapa and Lekki."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which mode of transport carries crude oil and gas over long distances in pipes?",
+          "options": [
+            "Rail",
+            "Road",
+            "Air",
+            "Pipeline"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trader in Ibadan wants to move many cartons of goods to a village that has no railway. The most suitable mode is",
+          "options": [
+            "road",
+            "air",
+            "pipeline",
+            "water"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which mode is fastest for carrying urgent medicine over a long distance?",
+          "options": [
+            "Road",
+            "Water",
+            "Air",
+            "Rail"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Heavy containers of imported goods arrive in Nigeria by ship at",
+          "options": [
+            "Kaduna airport",
+            "Apapa port",
+            "Ibadan station",
+            "Jebba bridge"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "How does transport help trade?",
+          "options": [
+            "It makes goods scarce in the markets",
+            "It stops goods from reaching buyers",
+            "It reduces the number of buyers",
+            "It carries goods from where they are made to where they are needed"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Name three modes of transport used in Nigeria and give one good use of each.",
+          "markScheme": [
+            "Names a first mode of transport",
+            "Gives a correct use of it",
+            "Names a second mode of transport",
+            "Gives a correct use of it",
+            "Names a third mode of transport",
+            "Gives a correct use of it"
+          ],
+          "modelAnswer": "Road transport is used for carrying goods from the farm to the shop door. Rail carries heavy goods cheaply, for example along the Lagos to Ibadan line. Air transport is used for urgent goods such as medicine.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Road transport: lorries carry yams from the farm to the market. Water transport: big ships carry imported goods and crude oil through Apapa port. Pipeline: petrol is moved through pipes to depots far from the refinery.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Road transport"
+                },
+                {
+                  "point": 1,
+                  "quote": "lorries carry yams from the farm to the market"
+                },
+                {
+                  "point": 2,
+                  "quote": "Water transport"
+                },
+                {
+                  "point": 3,
+                  "quote": "big ships carry imported goods and crude oil through Apapa port"
+                },
+                {
+                  "point": 4,
+                  "quote": "Pipeline"
+                },
+                {
+                  "point": 5,
+                  "quote": "petrol is moved through pipes to depots far from the refinery"
+                }
+              ],
+              "feedback": "Full marks. Each mode has a use that fits it."
+            },
+            {
+              "tier": "full",
+              "text": "Rail is good for carrying heavy goods like cement for a long way at a low cost. Air is used when goods are urgent, for example sending blood or medicine to a hospital. Road is used the most because a lorry can go from the farm gate to the shop door.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Rail"
+                },
+                {
+                  "point": 1,
+                  "quote": "carrying heavy goods like cement for a long way at a low cost"
+                },
+                {
+                  "point": 2,
+                  "quote": "Air"
+                },
+                {
+                  "point": 3,
+                  "quote": "goods are urgent, for example sending blood or medicine to a hospital"
+                },
+                {
+                  "point": 4,
+                  "quote": "Road"
+                },
+                {
+                  "point": 5,
+                  "quote": "a lorry can go from the farm gate to the shop door"
+                }
+              ],
+              "feedback": "All six marks. You gave the reason each mode suits its use, which is better than just naming it."
+            },
+            {
+              "tier": "partial",
+              "text": "Road is one mode, air is another mode and rail is also a mode. Road transport carries goods in lorries.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Road"
+                },
+                {
+                  "point": 1,
+                  "quote": "Road transport carries goods in lorries"
+                },
+                {
+                  "point": 2,
+                  "quote": "air"
+                },
+                {
+                  "point": 4,
+                  "quote": "rail"
+                }
+              ],
+              "feedback": "You named three modes correctly and gave a use for road. Give a use for air (urgent goods) and for rail (heavy goods) as well."
+            },
+            {
+              "tier": "partial",
+              "text": "Air transport carries goods quickly. Water transport also carries goods. A pipeline is used to carry crude oil.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Air transport"
+                },
+                {
+                  "point": 1,
+                  "quote": "carries goods quickly"
+                },
+                {
+                  "point": 2,
+                  "quote": "Water transport"
+                },
+                {
+                  "point": 4,
+                  "quote": "A pipeline"
+                },
+                {
+                  "point": 5,
+                  "quote": "carry crude oil"
+                }
+              ],
+              "feedback": "Air and pipeline are well done. For water, say what it is good for, for example heavy imports on ships.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The modes are okada, danfo and keke. They carry people to work.",
+              "meets": [],
+              "feedback": "These are vehicles on the road, which is only one mode. The question asks for different modes, such as road, rail, water and air, and how goods use them."
+            },
+            {
+              "tier": "weak",
+              "text": "Transport is a driver who carries goods in his motor.",
+              "meets": [],
+              "feedback": "Transport is the movement of goods and people, not only a driver. Name the modes, such as road and rail, and say what each is good for."
+            }
+          ]
+        },
+        {
+          "prompt": "A farmer in Kano wants to sell tomatoes in Lagos. Suggest the mode of transport he should use, explain your choice and name one problem he may meet.",
+          "markScheme": [
+            "Suggests road transport (or another suitable mode)",
+            "Gives a reason, such as it reaches the farm and the market door to door",
+            "Notes that tomatoes spoil quickly so a fast journey matters",
+            "Names one problem, such as bad roads, delay, cost or accidents",
+            "Says transport lets him reach a bigger market and earn more"
+          ],
+          "modelAnswer": "He should use road transport, because a lorry can collect the tomatoes at the farm and deliver them to the market in Lagos. Tomatoes spoil quickly, so the journey must be fast. A problem he may meet is bad roads that cause delay. With transport he can sell in a bigger market and earn more.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "He should send the tomatoes by lorry. A lorry can collect them at his farm and take them straight to the market in Lagos, so he does not need to load them many times. Tomatoes get spoilt quickly, so they must reach Lagos fast. The problem may be bad roads or breakdown, which make the journey longer. But because of transport he can sell in Lagos where there are many buyers, and earn more than in Kano.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "He should send the tomatoes by lorry"
+                },
+                {
+                  "point": 1,
+                  "quote": "collect them at his farm and take them straight to the market in Lagos"
+                },
+                {
+                  "point": 2,
+                  "quote": "Tomatoes get spoilt quickly, so they must reach Lagos fast"
+                },
+                {
+                  "point": 3,
+                  "quote": "The problem may be bad roads or breakdown"
+                },
+                {
+                  "point": 4,
+                  "quote": "he can sell in Lagos where there are many buyers, and earn more than in Kano"
+                }
+              ],
+              "feedback": "Full marks. You tied your choice to what tomatoes are like, and you named both a problem and a benefit."
+            },
+            {
+              "tier": "full",
+              "text": "Road transport is the best choice. The truck will go from the farm to the market without changing, and it is cheaper than air. Because tomatoes rot quickly the truck should travel fast, and the farmer should pack them well. A problem is that accidents or traffic can delay the journey and the tomatoes may spoil. Transport helps him get a bigger market in Lagos so he will earn more money.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Road transport is the best choice"
+                },
+                {
+                  "point": 1,
+                  "quote": "The truck will go from the farm to the market without changing"
+                },
+                {
+                  "point": 2,
+                  "quote": "Because tomatoes rot quickly the truck should travel fast"
+                },
+                {
+                  "point": 3,
+                  "quote": "accidents or traffic can delay the journey and the tomatoes may spoil"
+                },
+                {
+                  "point": 4,
+                  "quote": "a bigger market in Lagos so he will earn more money"
+                }
+              ],
+              "feedback": "All five marks. You compared road with air on cost, which shows careful thinking."
+            },
+            {
+              "tier": "partial",
+              "text": "He should use road transport because it goes from the farm to the market. A problem is bad roads.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "road transport"
+                },
+                {
+                  "point": 1,
+                  "quote": "it goes from the farm to the market"
+                },
+                {
+                  "point": 3,
+                  "quote": "bad roads"
+                }
+              ],
+              "feedback": "Good choice and problem. Think about tomatoes: they spoil quickly, so speed matters. Also say how reaching Lagos helps him earn more."
+            },
+            {
+              "tier": "partial",
+              "text": "The tomatoes can spoil on the way so he should use a fast mode, so he should use air. Air is the fastest.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "tomatoes can spoil on the way so he should use a fast mode"
+                }
+              ],
+              "feedback": "You noticed that tomatoes spoil. But air is very costly for cheap, bulky goods like tomatoes, and may not pay. Road is faster than you think door to door. Name a problem and the benefit of a bigger market.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "He should use a train because a train is long and can carry a lot. The tomatoes will be happy.",
+              "meets": [],
+              "feedback": "A train can carry a lot, but name the reason that matters here: tomatoes spoil, and a train only runs on fixed lines that may not reach the farm."
+            },
+            {
+              "tier": "weak",
+              "text": "The farmer should walk to Lagos with the tomatoes on his head.",
+              "meets": [],
+              "feedback": "Walking from Kano to Lagos would take weeks and the tomatoes would rot. The farmer needs a mode that is fast enough and can carry a large load."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Communication in business",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define communication in business;\n2. name oral, written and electronic methods;\n3. explain why communication is important to trade.\n\n## Materials\n\nA telephone, a sample business letter, a screenshot of an order sent by message, a poster advert; a marker board.\n\n## Starter\n\nAsk two learners to pass a message across the class, one by whispering through three people and one by writing it. Compare the results.\n\n## Development\n\n1. Business communication is passing information between people in business so that action can follow.\n2. Oral methods: face to face, telephone calls, radio and television. Written methods: letters, memos, invoices, email and text messages.\n3. Visual methods: posters, signboards and charts.\n4. NIPOST delivers letters and parcels. Mobile phones, WhatsApp and email have made communication faster.\n5. Importance: taking orders, agreeing prices, advertising, giving instructions and keeping records.\n\n## Class activity\n\nPairs choose the best method for four situations (an urgent order, a legal agreement, a sale announcement, a complaint) and give a reason.\n\n## Evaluation\n\n1. Give two examples of written communication.\n2. Why should an order be confirmed in writing?\n3. Name one method that reaches many customers quickly.\n\n## Assignment\n\nWorksheet on the app. Write a short message a shopkeeper could send customers to announce a new product.",
+      "reading": {
+        "title": "Getting the message across",
+        "content": "# Communication in business\n\n**Communication** is passing information from one person to another so that it is understood. In business, communication is how orders are taken, prices agreed, customers told about goods and workers given instructions.\n\n## Methods of business communication\n\n**1. Oral (spoken).** Face-to-face talk, telephone calls, voice notes, radio and television. It is quick and lets people ask questions at once. Its weakness is that there is no record unless it is written down.\n\n**2. Written.** Letters, memos, invoices, emails and text messages. Written messages can be kept as proof. A letter sent through NIPOST, the Nigerian Postal Service, takes days; an email arrives in seconds.\n\n**3. Visual.** Posters, signboards, charts and pictures. A signboard at a shop tells passers-by what is sold.\n\n**4. Electronic.** Telephone, mobile phone messages, WhatsApp, email, radio and television. Mobile phones have changed trade in Nigeria: a trader in Aba can take an order from a buyer in Maiduguri in one minute.\n\n## Why communication is important to trade\n\n1. **Takes orders.** Buyers and sellers agree on goods and prices without meeting.\n2. **Advertising.** Radio, television and SMS tell many customers about goods at once.\n3. **Instructions.** An owner can direct workers, drivers and suppliers.\n4. **Record keeping.** Written messages prove what was agreed and avoid quarrels.\n5. **Quick response.** A customer's complaint can be answered at once, which builds trust.\n\n## A good rule\n\nUse speech for speed and writing for proof. A phone call may take an order, but the trader should confirm the details by message so that both sides can check them later."
+      },
+      "cards": [
+        {
+          "front": "Communication",
+          "back": "Passing information from one person to another so that it is understood."
+        },
+        {
+          "front": "Oral communication",
+          "back": "Spoken messages: talk, telephone calls, radio and television."
+        },
+        {
+          "front": "Written communication",
+          "back": "Letters, memos, emails and text messages."
+        },
+        {
+          "front": "Visual communication",
+          "back": "Posters, signboards, charts and pictures."
+        },
+        {
+          "front": "NIPOST",
+          "back": "The Nigerian Postal Service, which delivers letters and parcels."
+        },
+        {
+          "front": "Why confirm an order in writing?",
+          "back": "It gives a record that both sides can check."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A customer in Jos phones a supplier in Lagos to place an order. This is",
+          "options": [
+            "oral communication",
+            "written communication",
+            "visual communication",
+            "not communication"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is a written method of business communication?",
+          "options": [
+            "A phone call",
+            "A radio jingle",
+            "A letter",
+            "A face-to-face talk"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which Nigerian organisation delivers letters and parcels?",
+          "options": [
+            "FRSC",
+            "NIPOST",
+            "CBN",
+            "NDIC"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why is it good for a trader to confirm an order in writing?",
+          "options": [
+            "It makes the order cost more",
+            "It makes the buyer forget",
+            "It makes delivery slower",
+            "It gives a record that both sides can check"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which is the quickest way to tell hundreds of customers about a sale on the same day?",
+          "options": [
+            "A radio announcement or a bulk text message",
+            "A letter sent by post",
+            "A messenger on foot to each customer",
+            "A notice inside the shop only"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "What is communication in business? Give two methods.",
+          "markScheme": [
+            "States that communication is passing information between people",
+            "States that it is used in business to take orders, advertise or give instructions",
+            "Names a first correct method",
+            "Names a second correct method"
+          ],
+          "modelAnswer": "Communication is passing information from one person to another so that it is understood. In business it is used to take orders, advertise and give instructions. Two methods are telephone calls and letters.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Communication is passing a message from one person to another so that the person understands. In business we use it to take orders from customers and to tell them about goods. Two methods are telephone calls and text messages.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "passing a message from one person to another so that the person understands"
+                },
+                {
+                  "point": 1,
+                  "quote": "take orders from customers and to tell them about goods"
+                },
+                {
+                  "point": 2,
+                  "quote": "telephone calls"
+                },
+                {
+                  "point": 3,
+                  "quote": "text messages"
+                }
+              ],
+              "feedback": "Full marks. You gave the meaning, the use in business and two clear methods."
+            },
+            {
+              "tier": "full",
+              "text": "Business communication is sharing information between a seller and a buyer or between workers. It helps to give instructions and to advertise. Examples are a letter and a radio advertisement.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sharing information between a seller and a buyer or between workers"
+                },
+                {
+                  "point": 1,
+                  "quote": "give instructions and to advertise"
+                },
+                {
+                  "point": 2,
+                  "quote": "a letter"
+                },
+                {
+                  "point": 3,
+                  "quote": "a radio advertisement"
+                }
+              ],
+              "feedback": "All four marks. A letter is written and a radio advert is oral, so your two methods are different kinds."
+            },
+            {
+              "tier": "partial",
+              "text": "Communication is when people pass information. The methods are phone and letter.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "people pass information"
+                },
+                {
+                  "point": 2,
+                  "quote": "phone"
+                },
+                {
+                  "point": 3,
+                  "quote": "letter"
+                }
+              ],
+              "feedback": "Good meaning and two methods. Add how business uses it, for example to take orders or advertise."
+            },
+            {
+              "tier": "partial",
+              "text": "In business we use communication to advertise our goods and take orders. The methods are radio and television.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "advertise our goods and take orders"
+                },
+                {
+                  "point": 2,
+                  "quote": "radio"
+                },
+                {
+                  "point": 3,
+                  "quote": "television"
+                }
+              ],
+              "feedback": "The uses and methods are right. You did not say what communication is: passing information from one person to another so that it is understood.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Communication is talking too much in the market so that people will buy.",
+              "meets": [],
+              "feedback": "Talking is one method. Communication is passing information so that it is understood, and it includes writing and signs."
+            },
+            {
+              "tier": "weak",
+              "text": "Communication is the road between two towns. A trader uses it to travel.",
+              "meets": [],
+              "feedback": "That describes transport, not communication. Communication is passing information, for example by phone or letter."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Ade sells building materials in Abeokuta. Explain how he can use two methods of communication to help his business.",
+          "markScheme": [
+            "Names a first method of communication",
+            "Explains how he can use it, such as taking orders by phone",
+            "Names a second method",
+            "Explains how he can use it, such as advertising on radio",
+            "Says what the business gains, such as more customers or faster service"
+          ],
+          "modelAnswer": "Mr Ade can use the telephone to take orders from builders, so they do not need to come to the shop. He can use radio adverts to tell people in Abeokuta about his cement and roofing sheets. This brings more customers and makes his service faster.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "He can use the telephone. Builders can call him to order cement and he can tell them the price at once. He can also use a signboard and radio advert to tell people in Abeokuta what he sells. In this way more customers will know about his shop and he will sell more.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "He can use the telephone"
+                },
+                {
+                  "point": 1,
+                  "quote": "Builders can call him to order cement and he can tell them the price at once"
+                },
+                {
+                  "point": 2,
+                  "quote": "a signboard"
+                },
+                {
+                  "point": 3,
+                  "quote": "radio advert to tell people in Abeokuta what he sells"
+                },
+                {
+                  "point": 4,
+                  "quote": "more customers will know about his shop and he will sell more"
+                }
+              ],
+              "feedback": "Full marks. Each method has a clear job and you finished with what the business gains."
+            },
+            {
+              "tier": "full",
+              "text": "One method is text messages. He can send a message to old customers when new roofing sheets arrive. The second is writing invoices and letters so that every order is recorded. The customers get service faster and there are fewer quarrels about what was ordered.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "text messages"
+                },
+                {
+                  "point": 1,
+                  "quote": "send a message to old customers when new roofing sheets arrive"
+                },
+                {
+                  "point": 2,
+                  "quote": "writing invoices and letters"
+                },
+                {
+                  "point": 3,
+                  "quote": "every order is recorded"
+                },
+                {
+                  "point": 4,
+                  "quote": "customers get service faster and there are fewer quarrels"
+                }
+              ],
+              "feedback": "All five marks. You picked one method for reaching customers and one for keeping records, which is a smart pair."
+            },
+            {
+              "tier": "partial",
+              "text": "He can use phone and radio. With phone people can order. With radio people hear about his shop.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "phone"
+                },
+                {
+                  "point": 1,
+                  "quote": "With phone people can order"
+                },
+                {
+                  "point": 2,
+                  "quote": "radio"
+                },
+                {
+                  "point": 3,
+                  "quote": "With radio people hear about his shop"
+                }
+              ],
+              "feedback": "Both methods and their uses are right. Finish by saying what Mr Ade gains, such as more customers or faster service."
+            },
+            {
+              "tier": "partial",
+              "text": "Mr Ade should use the telephone to take orders from customers. This will make his business grow and give him more money.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "use the telephone to take orders from customers"
+                },
+                {
+                  "point": 4,
+                  "quote": "make his business grow and give him more money"
+                }
+              ],
+              "feedback": "Your telephone point is good, but you need to name it as a method and add a second method with its use, such as radio for advertising.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "He can use his motor to carry the building materials to customers.",
+              "meets": [],
+              "feedback": "Carrying goods is transport. The question is about communication, which is passing information, for example by phone or radio."
+            },
+            {
+              "tier": "weak",
+              "text": "Mr Ade should shout at his workers so that they will work hard.",
+              "meets": [],
+              "feedback": "Shouting does not make a good method of communication. Think of methods that pass information to customers, such as the telephone or advertisements."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
