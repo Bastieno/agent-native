@@ -1,0 +1,2706 @@
+{
+  "subject": "Livestock Farming",
+  "yearGroup": "JSS2",
+  "weeks": {
+    "1": {
+      "topic": "Planning and designing livestock houses",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. compare deep litter and battery cage poultry houses;\n2. calculate floor space for a given number of animals;\n3. explain design features such as orientation, roof, ventilation and floor;\n4. draw a simple plan of a goat house with measurements.\n\n## Materials\n\nGraph paper, rulers, a measuring tape, pictures of deep litter and battery cage houses, a sample plan, a calculator, a table of floor space per animal.\n\n## Starter (5 minutes)\n\nAsk: if you have 200 chickens, how big should the house be? Let learners guess; then show that the answer can be calculated from how much space each bird needs.\n\n## Development\n\n1. Recap: housing protects animals and improves their health. Now look at design.\n2. Poultry systems: deep litter (birds move freely on a floor covered with wood shavings 5 to 10 cm deep, about 4 adult layers per square metre) and battery cage (birds in small wire cages, fewer eggs broken, easy droppings removal, but costly). Compare cost, labour, egg cleanliness and bird welfare.\n3. Floor space guide: layers in deep litter about 4 birds per m²; goats about 1.5 m² each; growing pigs about 1 m² each; cattle about 3.5 m² each under a shed.\n4. Calculate: 200 layers ÷ 4 per m² = 50 m², so a house 10 m long and 5 m wide. 12 goats × 1.5 = 18 m², so 6 m × 3 m.\n5. Design features: long side east–west to avoid the midday sun; roof with an overhang of 0.5 to 1 m; sides of wire mesh above a low wall for airflow; a floor of concrete (poultry, pigs) or raised slats (goats); a roof of zinc or thatch; feeders and drinkers at back height.\n6. Learners draw a plan of a goat house to scale using graph paper.\n\n## Class activity\n\nGroups design a house for a chosen species and number of animals, showing the floor area calculation and a labelled sketch.\n\n## Evaluation\n\n1. How many square metres are needed for 120 layers in deep litter at 4 birds per m²?\n2. Why should the roof have an overhang?\n3. Give one advantage of a battery cage.\n\n## Assignment\n\nCalculate the floor space for 8 goats and 60 layers and draw one of the houses to scale. Submit on the app.",
+      "reading": {
+        "title": "Designing a livestock house",
+        "content": "# Designing a livestock house\n\nA good house is planned before it is built. The farmer must know how many animals will live in it, how much room each needs, and what the weather is like.\n\n## Poultry houses\n\n**Deep litter.** The floor is covered with 5 to 10 cm of dry wood shavings or rice husk. The birds move about freely. It costs less than cages and is welfare friendly, but the litter must be kept dry and turned, and eggs may get dirty.\n\n**Battery cage.** Birds live in small wire cages in rows. The eggs roll out and stay clean, the droppings fall through, and it is easy to keep records, but the house costs more to build and the birds have little freedom.\n\n## How much space?\n\n| Animal | Space needed (about) |\n| --- | --- |\n| Layer (deep litter) | 4 birds per m² (0.25 m² each) |\n| Goat | 1.5 m² each |\n| Growing pig | 1 m² each |\n| Cow (shed) | 3.5 m² each |\n\n**Worked example 1.** Mr Okafor keeps 200 layers in a deep litter house. Floor area = 200 ÷ 4 = 50 m². A house 10 m long and 5 m wide has an area of 10 × 5 = 50 m², which is enough.\n\n**Worked example 2.** A farmer keeps 12 goats. Floor area = 12 × 1.5 = 18 m², so a house of 6 m × 3 m is enough.\n\nIf the animals are crowded, they become stressed, fight, pass on disease quickly and grow slowly.\n\n## Design features\n\n- **Orientation:** build the long side east to west so that the morning and afternoon sun do not shine directly inside at midday.\n- **Roof:** a roof of zinc or good thatch with an overhang of 0.5 to 1 m keeps rain from blowing in and gives shade.\n- **Walls:** a low solid wall with wire mesh above gives plenty of air but keeps out predators.\n- **Floor:** concrete for pigs and poultry, so it can be washed; slatted and raised for goats.\n- **Feeders and drinkers:** placed at the height of the animals' backs so they do not spill or get dirty.\n- **Drainage:** a slope towards the outside so that wash water runs away."
+      },
+      "cards": [
+        {
+          "front": "Deep litter",
+          "back": "A poultry system with birds on a floor covered with shavings."
+        },
+        {
+          "front": "Battery cage",
+          "back": "A poultry system with birds in rows of wire cages."
+        },
+        {
+          "front": "Floor space for a goat",
+          "back": "About 1.5 m² per goat."
+        },
+        {
+          "front": "Floor space for a layer in deep litter",
+          "back": "About 0.25 m², or 4 birds per m²."
+        },
+        {
+          "front": "Roof overhang",
+          "back": "The part of the roof that goes past the wall, giving shade and keeping rain out."
+        },
+        {
+          "front": "Orientation",
+          "back": "The direction a house faces; poultry houses are built east to west."
+        },
+        {
+          "front": "Why avoid overcrowding?",
+          "back": "It causes stress, fighting, fast spread of disease and slow growth."
+        },
+        {
+          "front": "Area of a rectangle",
+          "back": "Length × width"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A farmer has 120 layers in a deep litter house at 4 birds per m². What floor area does he need?",
+          "options": [
+            "30 m²",
+            "12 m²",
+            "124 m²",
+            "480 m²"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A pen is 6 m long and 3 m wide. At 1.5 m² per goat, how many goats can it hold?",
+          "options": [
+            "6",
+            "9",
+            "12",
+            "18"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Why is a poultry house built with its long side facing east to west?",
+          "options": [
+            "To make the roof lighter",
+            "To keep out the direct sun at midday",
+            "To make the birds face the wind",
+            "To make more room"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which is an advantage of the battery cage over deep litter?",
+          "options": [
+            "Birds move freely",
+            "It needs no feeders",
+            "It costs less",
+            "Eggs stay clean and droppings drop through"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Feeders in a poultry house should be placed at the height of the birds' backs so that",
+          "options": [
+            "it is harder to clean",
+            "it looks neat",
+            "the feed does not spill or get dirty",
+            "the birds cannot reach it"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Compare the deep litter system and the battery cage system for layers. Give two features of each.",
+          "markScheme": [
+            "Deep litter: birds move freely on shavings (or cheaper to build)",
+            "Deep litter: litter must be kept dry and turned, or eggs may get dirty",
+            "Battery cage: eggs stay clean and droppings fall through",
+            "Battery cage: costs more to build or birds have little freedom"
+          ],
+          "modelAnswer": "In the deep litter system the birds move freely on a floor covered with shavings, and it costs less to build. The litter must be kept dry and eggs may get dirty. In the battery cage system the birds are in wire cages, the eggs stay clean and the droppings fall through, but it costs more to build and the birds have little freedom.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "In deep litter the birds walk freely on wood shavings and it is cheaper to build. But the litter has to be kept dry and turned and the eggs can become dirty. In the battery cage the birds are in wire cages so the eggs stay clean and the droppings fall through. But the cages cost a lot and the birds cannot move much.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the birds walk freely on wood shavings and it is cheaper to build"
+                },
+                {
+                  "point": 1,
+                  "quote": "the litter has to be kept dry and turned and the eggs can become dirty"
+                },
+                {
+                  "point": 2,
+                  "quote": "the eggs stay clean and the droppings fall through"
+                },
+                {
+                  "point": 3,
+                  "quote": "the cages cost a lot and the birds cannot move much"
+                }
+              ],
+              "feedback": "Two features for each system, clearly compared."
+            },
+            {
+              "tier": "full",
+              "text": "Deep litter: the birds are free on the floor of shavings and the cost is lower. The farmer must keep the shavings dry. Battery cage: the eggs roll out and are clean, and the droppings drop down, but the house is expensive and the birds are confined.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the birds are free on the floor of shavings and the cost is lower"
+                },
+                {
+                  "point": 1,
+                  "quote": "The farmer must keep the shavings dry"
+                },
+                {
+                  "point": 2,
+                  "quote": "the eggs roll out and are clean, and the droppings drop down"
+                },
+                {
+                  "point": 3,
+                  "quote": "the house is expensive and the birds are confined"
+                }
+              ],
+              "feedback": "Complete, with both strengths and weaknesses of each."
+            },
+            {
+              "tier": "partial",
+              "text": "Deep litter is cheaper and the birds are free. Battery cage is expensive.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Deep litter is cheaper and the birds are free"
+                },
+                {
+                  "point": 3,
+                  "quote": "Battery cage is expensive"
+                }
+              ],
+              "feedback": "You have the cost and freedom points. Add that the litter must be kept dry in deep litter, and that cages keep the eggs clean and let droppings fall through."
+            },
+            {
+              "tier": "partial",
+              "text": "In the battery cage the eggs are clean and the droppings fall down. In deep litter the birds are on the floor.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the eggs are clean and the droppings fall down"
+                }
+              ],
+              "feedback": "The battery cage point is correct. For deep litter say what the floor is covered with (shavings), that it costs less, and that it must be kept dry."
+            },
+            {
+              "tier": "weak",
+              "text": "Deep litter is the one with deep water and battery cage has batteries to make electricity.",
+              "meets": [],
+              "feedback": "These names do not refer to water or batteries. Deep litter has a thick layer of shavings on the floor, and a battery cage is a row of wire cages."
+            },
+            {
+              "tier": "weak",
+              "text": "The two are the same and they are for pigs.",
+              "meets": [],
+              "feedback": "They are two different systems for poultry. In deep litter birds are free on shavings; in battery cages they are in wire cages."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Danladi has 12 goats and wants to build a goat house on a slope in Jos. (a) Using 1.5 m² per goat, calculate the floor area needed. (b) Give a length and width for a house with this area. (c) Suggest three design features and say why each is useful.",
+          "markScheme": [
+            "Floor area = 12 × 1.5 = 18 m²",
+            "Gives dimensions such as 6 m × 3 m (area 18 m²)",
+            "Gives a first feature with a reason (e.g. raised slatted floor keeps the floor dry)",
+            "Gives a second and third feature with reasons (roof overhang, wire mesh walls for ventilation, east–west orientation, drainage)"
+          ],
+          "modelAnswer": "(a) 12 × 1.5 = 18 m². (b) 6 m long and 3 m wide gives 6 × 3 = 18 m². (c) A raised slatted floor lets droppings fall through, so the floor stays dry. A roof with an overhang keeps off rain and gives shade. Wire mesh walls give good ventilation and keep out predators.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 12 × 1.5 = 18 m². (b) The house can be 6 m long and 3 m wide because 6 × 3 = 18 m². (c) A raised slatted floor so droppings fall through and the floor is dry. A roof with an overhang to keep out the rain and give shade. Wire mesh on the sides to let air in and keep out predators.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "12 × 1.5 = 18 m²"
+                },
+                {
+                  "point": 1,
+                  "quote": "6 m long and 3 m wide because 6 × 3 = 18 m²"
+                },
+                {
+                  "point": 2,
+                  "quote": "A raised slatted floor so droppings fall through and the floor is dry"
+                },
+                {
+                  "point": 3,
+                  "quote": "Wire mesh on the sides to let air in and keep out predators"
+                }
+              ],
+              "feedback": "Everything is correct and you checked the dimensions against the area."
+            },
+            {
+              "tier": "full",
+              "text": "The area is 12 goats times 1.5 m² which is 18 m². A house of 9 m by 2 m also gives 18 m² but 6 m by 3 m is better. I would use a slatted floor to keep it dry, a roof with an overhang for rain and shade, and the long side east to west so there is no direct sun at midday.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "12 goats times 1.5 m² which is 18 m²"
+                },
+                {
+                  "point": 1,
+                  "quote": "6 m by 3 m is better"
+                },
+                {
+                  "point": 2,
+                  "quote": "a slatted floor to keep it dry"
+                },
+                {
+                  "point": 3,
+                  "quote": "the long side east to west so there is no direct sun at midday"
+                }
+              ],
+              "feedback": "Full marks. You noticed that more than one size would give the same area."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 12 × 1.5 = 18 m². (b) 6 m by 3 m. (c) A roof and a door.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "12 × 1.5 = 18 m²"
+                },
+                {
+                  "point": 1,
+                  "quote": "6 m by 3 m"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. In (c) give features with reasons: a slatted floor keeps it dry, an overhang gives shade, and mesh walls let in air."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 12 + 1.5 = 13.5 m². (b) 9 m by 1.5 m. (c) A slatted floor so the floor will be dry, and wire mesh for air.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "A slatted floor so the floor will be dry"
+                },
+                {
+                  "point": 3,
+                  "quote": "wire mesh for air"
+                }
+              ],
+              "feedback": "Your features are good. For the area, multiply: 12 × 1.5 = 18 m², and the dimensions must multiply to the same area, such as 6 m × 3 m."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 12 m². (b) 12 m wide. (c) A television and a bed.",
+              "meets": [],
+              "feedback": "Multiply the number of goats by the space each needs: 12 × 1.5 = 18 m². A goat house needs features like a raised floor, a roof and ventilation."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 1.5 m² (b) 1.5 m by 1.5 m (c) A swimming pool.",
+              "meets": [],
+              "feedback": "1.5 m² is the space for one goat; for 12 goats the area is 18 m². Useful features include a slatted floor, a roof overhang and wire mesh walls."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Breeding in practice: AI, records and picking the best parents",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe artificial insemination, its advantages and limits;\n2. use breeding records to choose the best breeding animals;\n3. compute simple averages from records;\n4. explain how crossing improves local stock.\n\n## Materials\n\nA sample breeding register, a chart of the steps of artificial insemination, pictures of White Fulani and exotic dairy cattle, a calculator.\n\n## Starter (5 minutes)\n\nShow a record of three sows with the number of piglets in each litter. Ask: which sow would you keep for breeding, and what did you use to decide?\n\n## Development\n\n1. Natural mating and its limits: one male serves a small number of females, and it can spread disease or cause injury. Mating must be timed with heat.\n2. Artificial insemination (AI): semen is collected from a selected male, tested, stored and placed in the female at the right time of heat by a trained person. Advantages: one good male can father many young, the best males can be used on distant farms, there is less risk of injury and disease, and it is cheaper than keeping many males. Limits: needs skilled people, equipment and good heat detection.\n3. Crossbreeding: mating two breeds, for example the hardy local White Fulani with an exotic milk breed, to combine heat tolerance and milk yield. The offspring may show hybrid vigour, but need good feed and care.\n4. Records for selection: litter size, birth weight, weaning weight, growth rate, milk yield or egg number, and health history. Compare animals using averages: average litter = total piglets ÷ number of litters.\n5. Example: Sow A had litters of 10, 12 and 11; sow B had 8, 9 and 7; sow C had 13, 12 and 14. Averages are 11, 8 and 13 respectively. Keep sow C; cull sow B.\n6. Discuss a breeding register and what to write in it.\n\n## Class activity\n\nLearners use a table of records for five animals, work out the average for each and choose the best two for breeding.\n\n## Evaluation\n\n1. What is an advantage of artificial insemination?\n2. Find the average of 10, 12 and 11.\n3. Why do we cull the poorest animals?\n\n## Assignment\n\nMake up a record table for three hens or goats with figures for five months. Work out the average and say which you would keep.",
+      "reading": {
+        "title": "Better breeding with records and AI",
+        "content": "# Better breeding with records and AI\n\n## Artificial insemination (AI)\n\nIn **artificial insemination**, a trained technician collects semen from a chosen male, tests and stores it, and places it in the female when she is on heat. No mating takes place.\n\n**Advantages:**\n\n- One very good bull or boar can father many young ones, even on farms far away.\n- Farmers do not have to keep and feed many males.\n- There is less danger of injury and of passing diseases between animals.\n- Semen from top breeds can be used on local animals to improve them.\n\n**Limits:** AI needs trained staff, special equipment and careful watching for heat. If the time is wrong, the female will not become pregnant.\n\n## Crossbreeding\n\nWhen two breeds are crossed, the young may combine the best points of both. A cross between a hardy local cow and an exotic milk breed can give calves that are suited to heat and give more milk. They may also show **hybrid vigour**. But the young of crosses may need better feed and care than the local animals.\n\n## Using records to choose\n\nA good farmer does not guess which animals to breed from. Records show the facts. For a sow, the record may include litter size, birth weight and weaning weight. For a hen, the number of eggs per month. For a cow, the milk per day.\n\nTo compare animals, use the **average**.\n\n**Average = total ÷ number of records**\n\n**Worked example.** The records for three sows are:\n\n| Sow | Litter 1 | Litter 2 | Litter 3 | Total | Average |\n| --- | --- | --- | --- | --- | --- |\n| A | 10 | 12 | 11 | 33 | 11 |\n| B | 8 | 9 | 7 | 24 | 8 |\n| C | 13 | 12 | 14 | 39 | 13 |\n\nSow C has the highest average (13 piglets per litter) and is the best to keep for breeding. Sow B has the lowest and should be culled.\n\n## The breeding register\n\nThe register has columns for the animal's number, the date of mating, the male used, the expected date of birth, the actual date of birth, the number born, number weaned and remarks. It is the farmer's memory."
+      },
+      "cards": [
+        {
+          "front": "Artificial insemination",
+          "back": "Placing the semen of a chosen male into the female by a trained person."
+        },
+        {
+          "front": "Hybrid vigour",
+          "back": "The extra strength of the young of a cross."
+        },
+        {
+          "front": "Average",
+          "back": "Total of the figures divided by the number of figures."
+        },
+        {
+          "front": "Breeding register",
+          "back": "A farm record of matings, births and the number of young."
+        },
+        {
+          "front": "Culling",
+          "back": "Removing poor animals from the herd."
+        },
+        {
+          "front": "Limits of AI",
+          "back": "Needs trained people, equipment and good heat detection."
+        },
+        {
+          "front": "Advantage of AI",
+          "back": "One good male can father many young on many farms."
+        },
+        {
+          "front": "Average of 8, 9 and 7",
+          "back": "(8 + 9 + 7) ÷ 3 = 8"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A dairy farmer in Kwara uses artificial insemination instead of keeping a bull. What is one advantage of this?",
+          "options": [
+            "It does not need a heat check",
+            "It works at any time",
+            "It needs no trained person",
+            "A good male can father young on many farms"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A sow had litters of 9, 11 and 10 piglets. What is her average litter size?",
+          "options": [
+            "9",
+            "10",
+            "11",
+            "30"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A farmer wants to improve the milk of his local cows with the hardy White Fulani. The best method is",
+          "options": [
+            "crossing with an exotic dairy breed or using AI",
+            "feeding less",
+            "keeping no records",
+            "culling all of the cows"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which record would help a farmer choose the best layer to breed from?",
+          "options": [
+            "Name of the farm worker",
+            "Size of the cage",
+            "Number of eggs laid in a year",
+            "Colour of feathers"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Why is it important to time AI with the heat of the female?",
+          "options": [
+            "It makes her calmer",
+            "She will only become pregnant if it is done at the right time",
+            "It is cheaper",
+            "She will eat more"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Explain what artificial insemination is. (b) Give two advantages and one limit of AI.",
+          "markScheme": [
+            "Says semen from a chosen male is placed in the female by a trained person",
+            "Gives one advantage (e.g. one male can father many young)",
+            "Gives a second advantage (e.g. less injury or disease, cheaper than keeping males)",
+            "Gives a limit (needs trained people, equipment or good heat detection)"
+          ],
+          "modelAnswer": "(a) AI is the placing of semen from a chosen male into a female by a trained person, without mating. (b) One good male can father many young, even on distant farms, and there is less risk of injury or disease. A limit is that it needs trained people and good heat detection.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) It is when a trained person takes semen from a chosen male and puts it into the female without the two mating. (b) A single good bull can father many calves on different farms, and there is no fighting or disease passing between them. A limit is that it needs trained people and equipment, and the heat must be noticed at the right time.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a trained person takes semen from a chosen male and puts it into the female"
+                },
+                {
+                  "point": 1,
+                  "quote": "A single good bull can father many calves on different farms"
+                },
+                {
+                  "point": 2,
+                  "quote": "there is no fighting or disease passing between them"
+                },
+                {
+                  "point": 3,
+                  "quote": "it needs trained people and equipment"
+                }
+              ],
+              "feedback": "All parts are right. You explained the limits as well as the benefits."
+            },
+            {
+              "tier": "full",
+              "text": "Artificial insemination means a technician places semen of a chosen male inside the female at the right time of heat. Advantages: the best male can be used by many farmers, and the farmer does not need to feed and keep a male, which is cheaper. Limit: it needs skilled people and if the heat is missed the animal will not get pregnant.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a technician places semen of a chosen male inside the female at the right time of heat"
+                },
+                {
+                  "point": 1,
+                  "quote": "the best male can be used by many farmers"
+                },
+                {
+                  "point": 2,
+                  "quote": "the farmer does not need to feed and keep a male, which is cheaper"
+                },
+                {
+                  "point": 3,
+                  "quote": "it needs skilled people and if the heat is missed the animal will not get pregnant"
+                }
+              ],
+              "feedback": "A complete answer, with benefits and a limit."
+            },
+            {
+              "tier": "partial",
+              "text": "AI is when the semen of a male is put inside a female. It helps one male to father many young.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the semen of a male is put inside a female"
+                },
+                {
+                  "point": 1,
+                  "quote": "one male to father many young"
+                }
+              ],
+              "feedback": "You explained AI and one advantage. Add a second advantage and one limit, such as the need for trained people."
+            },
+            {
+              "tier": "partial",
+              "text": "One limit of AI is that it needs trained people. An advantage is less disease and no injury.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "less disease and no injury"
+                },
+                {
+                  "point": 3,
+                  "quote": "it needs trained people"
+                }
+              ],
+              "feedback": "Good on the limit and an advantage. Say what AI is (semen from a chosen male placed in the female) and add that one male can father many young."
+            },
+            {
+              "tier": "weak",
+              "text": "AI is the machine that does the work of the farmer.",
+              "meets": [],
+              "feedback": "AI stands for artificial insemination: putting semen from a chosen male into the female, done by a trained person; it is not a machine."
+            },
+            {
+              "tier": "weak",
+              "text": "It is a pill that makes animals fatter.",
+              "meets": [],
+              "feedback": "AI is a breeding method, not a pill. Semen from a chosen male is placed in the female by a trained person."
+            }
+          ]
+        },
+        {
+          "prompt": "A pig farmer in Ogun State keeps these records of litter sizes. Sow A: 10, 12, 11. Sow B: 8, 9, 7. Sow C: 13, 12, 14. (a) Calculate the average litter size of each sow. (b) Which sow should he keep for breeding and which should he cull? Give a reason. (c) Name one other record besides litter size that would help him choose.",
+          "markScheme": [
+            "Sow A: (10 + 12 + 11) ÷ 3 = 11",
+            "Sow B: 8, and sow C: (13 + 12 + 14) ÷ 3 = 13",
+            "Keep sow C because it has the highest average; cull sow B which has the lowest",
+            "Names another useful record (e.g. birth weight, weaning weight, health, growth rate)"
+          ],
+          "modelAnswer": "(a) Sow A: (10 + 12 + 11) ÷ 3 = 33 ÷ 3 = 11. Sow B: (8 + 9 + 7) ÷ 3 = 24 ÷ 3 = 8. Sow C: (13 + 12 + 14) ÷ 3 = 39 ÷ 3 = 13. (b) He should keep sow C because she has the highest average of 13 and cull sow B, who has the lowest average of 8. (c) Weaning weight of the piglets, or birth weight or health records.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Sow A: 10 + 12 + 11 = 33 and 33 ÷ 3 = 11. Sow B: 8 + 9 + 7 = 24 and 24 ÷ 3 = 8. Sow C: 13 + 12 + 14 = 39 and 39 ÷ 3 = 13. (b) Keep sow C because she has the highest average, and cull sow B because she has the lowest. (c) The weight of the piglets at weaning.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "33 ÷ 3 = 11"
+                },
+                {
+                  "point": 1,
+                  "quote": "24 ÷ 3 = 8"
+                },
+                {
+                  "point": 2,
+                  "quote": "Keep sow C because she has the highest average, and cull sow B because she has the lowest"
+                },
+                {
+                  "point": 3,
+                  "quote": "The weight of the piglets at weaning"
+                }
+              ],
+              "feedback": "All three averages are correct and the decision is justified."
+            },
+            {
+              "tier": "full",
+              "text": "The averages are 11 for sow A, 8 for sow B and 13 for sow C, because I add each sow's litters and divide by 3. The best sow to keep is C, with 13 piglets on average, and sow B should be culled with only 8. I would also look at the health of the piglets and their weight.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "11 for sow A"
+                },
+                {
+                  "point": 1,
+                  "quote": "8 for sow B and 13 for sow C"
+                },
+                {
+                  "point": 2,
+                  "quote": "The best sow to keep is C, with 13 piglets on average, and sow B should be culled"
+                },
+                {
+                  "point": 3,
+                  "quote": "I would also look at the health of the piglets and their weight"
+                }
+              ],
+              "feedback": "Full marks. Adding health and weight to the records is a sound idea."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A is 11, B is 8 and C is 13. (b) Keep C. (c) Weight.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A is 11"
+                },
+                {
+                  "point": 1,
+                  "quote": "B is 8 and C is 13"
+                }
+              ],
+              "feedback": "Your averages are correct. In (b), say why (highest average) and also which sow to cull (B). In (c), say whose weight: the piglets'."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A is 33, B is 24 and C is 39. (b) Keep C because it is highest. Cull B. (c) Birth weight.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Keep C because it is highest. Cull B"
+                },
+                {
+                  "point": 3,
+                  "quote": "Birth weight"
+                }
+              ],
+              "feedback": "The decision and the extra record are good. 33, 24 and 39 are totals; divide by 3 for the average: 11, 8 and 13."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 10 + 12 + 11 = 33 for all. (b) Keep all the sows. (c) The colour.",
+              "meets": [],
+              "feedback": "Find each sow's average by dividing her total by 3: 11, 8 and 13. Choose the highest and cull the lowest. Colour is not useful; weaning weight is."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 13 (b) Keep B because it is small. (c) Nothing.",
+              "meets": [],
+              "feedback": "Work out all three averages (11, 8 and 13). Sow B has the lowest average and is the sow to cull. Another useful record is weight of the piglets."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Reproduction in farm animals: from mating to birth and hatching",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe signs of pregnancy and the care of the pregnant animal;\n2. describe the care of a newborn animal;\n3. explain egg formation and incubation;\n4. calculate expected dates and hatchability.\n\n## Materials\n\nA calendar, a chart of the parts of an egg, a candler (torch) and eggs, an incubator or a picture of one, a sample breeding register, iodine and cotton wool (demonstration only).\n\n## Starter (5 minutes)\n\nAsk: what do you do for a pregnant woman to keep her and her baby well? Move to what a farmer should do for a pregnant cow or goat.\n\n## Development\n\n1. Signs of pregnancy: no return to heat after 21 days, the belly slowly gets bigger, the udder gets fuller as birth nears, and the animal becomes calm. A vet can confirm it.\n2. Care of the pregnant animal: good feed with extra protein and minerals, clean water, exercise, a clean dry quiet place for birth, and deworming and vaccination as advised.\n3. Birth (parturition): the animal becomes restless, separates from the herd and the water bag appears. Do not disturb unless it takes too long; call the vet if the labour lasts too long.\n4. Care of newborn: make sure the young one breathes, dip the navel in iodine, and ensure it drinks colostrum (the first milk) within the first hours, because it protects against disease. Keep it warm and dry.\n5. Eggs: the hen's egg has the yolk, white, shell membranes and shell. The fertile egg needs 21 days at about 37.5 °C and humidity in an incubator or under a broody hen. Candle the eggs after 7 days to remove infertile ones.\n6. Work out: eggs set on 3 October hatch on 24 October. Hatchability = chicks hatched ÷ eggs set × 100. 90 eggs set and 72 chicks hatch: 72 ÷ 90 × 100 = 80%. A cow served on 1 February with a gestation of 283 days is due on 11 November.\n\n## Class activity\n\nLearners candle eggs (demonstration), work out dates for five animals and write a care plan for the days around the birth of a goat.\n\n## Evaluation\n\n1. What is colostrum and why is it important?\n2. Eggs are set on 3 October. When will they hatch?\n3. Calculate the hatchability when 50 chicks hatch from 60 eggs.\n\n## Assignment\n\nWrite a care plan for a pregnant goat from mating to the birth of the kids, in seven points. Submit on the app.",
+      "reading": {
+        "title": "Pregnancy, birth and hatching",
+        "content": "# Pregnancy, birth and hatching\n\n## Signs of pregnancy\n\nHow does a farmer know that a goat or cow is pregnant?\n\n- She does not come on heat again after 21 days.\n- Her belly slowly gets bigger.\n- Near the time of birth, her udder becomes full and firm.\n- She becomes calmer and eats more.\n\nA veterinary officer can confirm the pregnancy.\n\n## Care of the pregnant animal\n\n- Give **good feed** with extra protein and minerals.\n- Give plenty of **clean water**.\n- Let her **walk** a little every day, but avoid rough handling.\n- Follow the advice of the vet on **vaccination** and **deworming**.\n- Prepare a **clean, dry and quiet pen** for the birth.\n\n## The birth\n\nNear birth, the animal is restless and may stay away from the group. Let her give birth by herself if all is going well. Call the vet if labour goes on for too long or if only part of the young one is visible for a long time.\n\n## Care of the newborn\n\n1. Clear the nose and mouth if the young one is not breathing well.\n2. Dip the navel cord in iodine to prevent infection.\n3. Help the baby to drink **colostrum**, the thick, yellow first milk, in the first few hours. It contains substances that protect against disease.\n4. Keep the young one warm and dry.\n\n## Eggs and incubation\n\nA hen's egg has a **yolk**, a **white** and a **shell**. If it is fertilised, a chick develops after **21 days** of **incubation** at about 37.5 °C with the right moisture, under a hen or in an incubator. After 7 days, you can shine a bright torch through the egg (**candling**) to find the eggs that are not developing and remove them.\n\n## Working out dates and hatchability\n\n**Example 1.** Eggs are set on 3 October. They hatch after 21 days, on 24 October.\n\n**Example 2.** A cow is served on 1 February. The gestation is 283 days, so she is due on 11 November.\n\n**Hatchability = chicks hatched ÷ eggs set × 100**\n\n**Example 3.** 90 eggs were set and 72 chicks hatched. Hatchability = 72 ÷ 90 × 100 = 80%."
+      },
+      "cards": [
+        {
+          "front": "Colostrum",
+          "back": "The first milk, which protects the newborn against disease."
+        },
+        {
+          "front": "Parturition",
+          "back": "The act of giving birth."
+        },
+        {
+          "front": "Incubation period of chicken eggs",
+          "back": "21 days."
+        },
+        {
+          "front": "Candling",
+          "back": "Shining a light through an egg to see if a chick is growing."
+        },
+        {
+          "front": "Hatchability",
+          "back": "Chicks hatched ÷ eggs set × 100."
+        },
+        {
+          "front": "Why dip the navel in iodine?",
+          "back": "To prevent infection."
+        },
+        {
+          "front": "A sign of pregnancy in a cow",
+          "back": "She does not return to heat after 21 days and her belly enlarges."
+        },
+        {
+          "front": "Egg parts",
+          "back": "Yolk, white and shell."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A newborn calf should drink colostrum in the first few hours because it",
+          "options": [
+            "makes the calf bigger",
+            "has a sweet taste",
+            "protects the calf against disease",
+            "makes the calf sleep"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Eggs are set in an incubator on 3 October. On what date will the chicks hatch?",
+          "options": [
+            "24 October",
+            "3 November",
+            "1 November",
+            "21 October"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "90 eggs were set and 72 chicks hatched. What is the hatchability?",
+          "options": [
+            "72%",
+            "18%",
+            "90%",
+            "80%"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Why do we dip the navel cord of a newborn in iodine?",
+          "options": [
+            "To make it fall off",
+            "To prevent infection",
+            "To dry the milk",
+            "To keep the animal warm"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is a sign that a goat is pregnant?",
+          "options": [
+            "She does not come on heat again",
+            "She eats less and gets thinner",
+            "She makes more noise",
+            "She stops drinking"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe how you would care for (a) a pregnant goat and (b) her newborn kid. Give at least two points for each.",
+          "markScheme": [
+            "Pregnant goat: gives good feed with extra protein and minerals, and clean water",
+            "Pregnant goat: a clean dry pen and vaccination or deworming as advised",
+            "Newborn: makes sure it drinks colostrum in the first hours",
+            "Newborn: dips the navel in iodine and keeps it warm and dry"
+          ],
+          "modelAnswer": "(a) The pregnant goat should get good feed with extra protein and minerals and plenty of clean water. She should have a clean, dry pen and be vaccinated and dewormed as the vet advises. (b) The kid should drink colostrum in the first hours, because it protects against disease. The navel should be dipped in iodine and the kid kept warm and dry.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A pregnant goat needs good feed with extra protein and minerals and clean water to drink. I will keep her in a clean dry quiet pen and ask the vet about deworming. (b) The kid must drink colostrum in the first few hours, because it protects it from diseases. I will put iodine on the navel cord and keep the kid warm and dry.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "good feed with extra protein and minerals and clean water to drink"
+                },
+                {
+                  "point": 1,
+                  "quote": "clean dry quiet pen and ask the vet about deworming"
+                },
+                {
+                  "point": 2,
+                  "quote": "The kid must drink colostrum in the first few hours"
+                },
+                {
+                  "point": 3,
+                  "quote": "put iodine on the navel cord and keep the kid warm and dry"
+                }
+              ],
+              "feedback": "All four points are made, each in the right place."
+            },
+            {
+              "tier": "full",
+              "text": "For the pregnant goat I give her extra protein feed, minerals, and plenty of water. I also vaccinate and deworm her if the vet says so and prepare a clean pen. For the kid, I make sure it has the first milk (colostrum) quickly because that protects against disease, and I dip the navel in iodine to prevent infection.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "extra protein feed, minerals, and plenty of water"
+                },
+                {
+                  "point": 1,
+                  "quote": "vaccinate and deworm her if the vet says so and prepare a clean pen"
+                },
+                {
+                  "point": 2,
+                  "quote": "I make sure it has the first milk (colostrum) quickly because that protects against disease"
+                },
+                {
+                  "point": 3,
+                  "quote": "I dip the navel in iodine to prevent infection"
+                }
+              ],
+              "feedback": "Complete, with the reason for colostrum."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Give her good feed and clean water. (b) The kid must drink colostrum.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Give her good feed and clean water"
+                },
+                {
+                  "point": 2,
+                  "quote": "The kid must drink colostrum"
+                }
+              ],
+              "feedback": "One good point for each. Add a clean dry pen for the goat and, for the kid, the navel care with iodine and warmth."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) She needs a clean, dry pen and vaccination. (b) Dip the navel in iodine and keep the kid warm.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "She needs a clean, dry pen and vaccination"
+                },
+                {
+                  "point": 3,
+                  "quote": "Dip the navel in iodine and keep the kid warm"
+                }
+              ],
+              "feedback": "Good. Add feed and water for the pregnant goat, and say that the kid must have colostrum."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Let her do any work. (b) Give the kid cold water.",
+              "meets": [],
+              "feedback": "A pregnant goat needs good feed, clean water and a clean pen, not heavy work. A newborn kid needs colostrum and warmth, not cold water."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Do not feed her so she does not get fat. (b) Leave the kid on the ground.",
+              "meets": [],
+              "feedback": "Do not starve a pregnant goat; she needs extra protein and minerals. A newborn kid needs colostrum, a clean navel and warmth."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Ade runs a small poultry and cattle farm. (a) He sets 90 eggs in an incubator on 3 October and 72 chicks hatch. On what date did they hatch and what is the hatchability? (b) A cow was served on 1 February. Using 283 days, when is she due? (February has 28 days; 283 days after 1 February is 11 November.) Say how he will know if she is pregnant before then. (c) Suggest why some eggs may fail to hatch.",
+          "markScheme": [
+            "Hatching date 24 October (21 days after 3 October)",
+            "Hatchability = 72 ÷ 90 × 100 = 80%",
+            "Cow is due on 11 November and a sign is that she does not return to heat",
+            "Gives a sensible reason for failure to hatch (infertile eggs, wrong temperature, dirty or cracked eggs, old eggs)"
+          ],
+          "modelAnswer": "(a) The chicks hatch after 21 days, on 24 October. Hatchability = 72 ÷ 90 × 100 = 80%. (b) She is due on 11 November. If she does not come on heat again after 21 days and her belly gets bigger, she is pregnant. (c) Some eggs may not hatch because they were not fertilised, the temperature was wrong, or the eggs were cracked or dirty.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 3 October + 21 days = 24 October. Hatchability is 72 ÷ 90 × 100 = 80%. (b) She is due on 11 November. If she does not come on heat again and her belly grows, she is pregnant. (c) Some eggs may not be fertilised, or the incubator was too hot or too cold.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3 October + 21 days = 24 October"
+                },
+                {
+                  "point": 1,
+                  "quote": "72 ÷ 90 × 100 = 80%"
+                },
+                {
+                  "point": 2,
+                  "quote": "due on 11 November"
+                },
+                {
+                  "point": 3,
+                  "quote": "Some eggs may not be fertilised, or the incubator was too hot or too cold"
+                }
+              ],
+              "feedback": "Every part is correct and your working is shown."
+            },
+            {
+              "tier": "full",
+              "text": "The chicks hatch on 24 October because the incubation is 21 days. The hatchability is 72 out of 90 times 100, which is 80%. The cow is due on 11 November, and we know she is pregnant when she does not show heat again after 21 days. Eggs can fail if they are cracked or old, or if the temperature is wrong.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The chicks hatch on 24 October because the incubation is 21 days"
+                },
+                {
+                  "point": 1,
+                  "quote": "72 out of 90 times 100, which is 80%"
+                },
+                {
+                  "point": 2,
+                  "quote": "The cow is due on 11 November"
+                },
+                {
+                  "point": 3,
+                  "quote": "Eggs can fail if they are cracked or old, or if the temperature is wrong"
+                }
+              ],
+              "feedback": "Full marks. Your reasons for failure are sensible."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 24 October and 72%. (b) 11 November. (c) Some eggs are bad.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "24 October"
+                },
+                {
+                  "point": 2,
+                  "quote": "11 November"
+                }
+              ],
+              "feedback": "The hatching date and the cow's due date are right, but hatchability is 72 ÷ 90 × 100 = 80%, not 72%. In (c) be specific: unfertilised eggs, wrong temperature or cracked eggs."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 24 October, and 80%. (b) She will have a big belly and not come on heat. (c) Wrong temperature.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "24 October"
+                },
+                {
+                  "point": 1,
+                  "quote": "80%"
+                },
+                {
+                  "point": 3,
+                  "quote": "Wrong temperature"
+                }
+              ],
+              "feedback": "You have the dates and hatchability. Add the date the cow is due, 11 November (283 days after 1 February), and say she is pregnant if she does not return to heat."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 3 October and 18%. (b) 1 February. (c) The hen is tired.",
+              "meets": [],
+              "feedback": "Eggs hatch after 21 days, so 24 October. Hatchability is chicks hatched ÷ eggs set × 100 = 80%. The cow is due on 11 November."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 3 November. (b) 283 February. (c) God knows.",
+              "meets": [],
+              "feedback": "Count 21 days from 3 October to get 24 October. Count 283 days from 1 February to get 11 November. Eggs may not hatch because they are infertile or the temperature was wrong."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Managing heat, manure and pests on the farm",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. recognise signs of heat stress and say how to reduce it;\n2. calculate the manure a flock produces and describe how to use it safely;\n3. describe control of flies and rats;\n4. plan a daily routine for a small farm.\n\n## Materials\n\nA chart of the signs of heat stress, a thermometer, a sample daily routine chart, a compost heap picture, rat traps and a covered feed bin as examples.\n\n## Starter (5 minutes)\n\nAsk: what do you do when the weather is very hot? Then ask what a chicken or a pig does. Show a picture of hens panting with open beaks.\n\n## Development\n\n1. Heat stress: animals cannot sweat much. Signs: panting, spread wings in birds, drinking more, eating less, lower egg or milk production, and in severe heat, death. Reduce it by shade, ventilation, cool clean water, feeding in the cool morning and evening, wetting the roof or sprinkling pigs, and avoiding crowding.\n2. Manure management: droppings are a good fertiliser, but if left they produce smell, ammonia and flies. Heap manure for composting, use on crops, keep away from wells. Calculate: 200 layers each produce about 0.1 kg of droppings a day = 20 kg a day, 600 kg in 30 days.\n3. Pests: flies breed in wet droppings and spread disease; control by keeping the litter dry, covering manure heaps and removing spilled feed. Rats eat feed and carry disease; control by storing feed in closed bins, repairing holes, cleaning around the house and using traps.\n4. Daily routine: morning, check animals for sickness, provide water and feed, collect eggs or milk; midday, check shade and water; evening, feed again, close the house, record production. Weekly: clean drinkers, disinfect the footbath.\n5. Link to records: write daily deaths, feed used and production.\n\n## Class activity\n\nLearners prepare a daily and weekly routine chart for a small farm with goats and poultry, including a heat plan for the hot season.\n\n## Evaluation\n\n1. Give two signs that birds are suffering from heat stress.\n2. How much manure do 100 layers produce in 10 days at 0.1 kg per bird per day?\n3. Name two ways to control rats on a farm.\n\n## Assignment\n\nWrite a plan for how you would protect poultry from the extreme heat of March in northern Nigeria. List five actions.",
+      "reading": {
+        "title": "Heat, manure and pests",
+        "content": "# Heat, manure and pests\n\n## Heat stress\n\nBirds and pigs cannot sweat like people. In very hot weather, as in March in the north, they suffer from **heat stress**.\n\n**Signs:** panting with open beak, wings spread away from the body, drinking more but eating less, a drop in egg or milk production, and sometimes sudden death.\n\n**How to reduce it:**\n\n- provide good **shade** and a roof with an overhang;\n- open the sides of the house for **air**;\n- give plenty of **cool, clean water** in the shade;\n- feed in the **cool of the morning and evening**;\n- do not **overcrowd**;\n- sprinkle water on the roof or on pigs, and give a wallow.\n\n## Manure\n\nDroppings and bedding are a valuable **manure**. But a heap of wet droppings smells, breeds flies and may pollute water.\n\n**Worked example.** A layer produces about 0.1 kg of droppings a day. 200 layers produce 200 × 0.1 = 20 kg a day. In 30 days, that is 20 × 30 = 600 kg.\n\nGood use of manure:\n\n1. Collect it and heap it in a dry place with a roof or cover.\n2. Turn it and let it **compost** for some weeks so that it rots and the germs die.\n3. Spread it on the crops; do not heap it near a well, stream or the house.\n\n## Pests\n\n**Flies** breed in wet droppings and spread disease. Keep the litter dry, cover the manure heap and clear spilled feed.\n\n**Rats** eat large amounts of feed and carry germs. Control them by:\n\n- storing feed in **closed bins**, off the floor;\n- repairing **holes** in walls and floors;\n- keeping the compound **clean** and free of rubbish and bush;\n- using **traps** or baits carefully, away from children and animals.\n\n## A daily routine\n\n**Morning:** check every animal, give water and feed, collect eggs or milk.\n**Midday:** check shade, water and the temperature.\n**Evening:** feed, collect the eggs, close the house, write down the records.\n**Weekly:** wash the drinkers, change the footbath, clean the house."
+      },
+      "cards": [
+        {
+          "front": "Heat stress",
+          "back": "Harm caused to animals by very hot weather."
+        },
+        {
+          "front": "Panting",
+          "back": "Fast breathing with an open mouth to lose heat."
+        },
+        {
+          "front": "Compost",
+          "back": "Manure left to rot until it is safe to use on crops."
+        },
+        {
+          "front": "Why are flies a problem?",
+          "back": "They breed in wet droppings and carry diseases."
+        },
+        {
+          "front": "Control of rats",
+          "back": "Keep feed in closed bins, repair holes, keep the compound clean and use traps."
+        },
+        {
+          "front": "Droppings of a layer per day",
+          "back": "About 0.1 kg."
+        },
+        {
+          "front": "When to feed in hot weather",
+          "back": "In the cool of the morning and evening."
+        },
+        {
+          "front": "Why must manure be kept away from wells?",
+          "back": "It can pollute drinking water."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a sign of heat stress in chickens?",
+          "options": [
+            "Eating more feed",
+            "Panting with wings spread out",
+            "Sleeping a lot",
+            "Laying more eggs"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "100 layers each produce 0.1 kg of droppings a day. How much do they produce in 10 days?",
+          "options": [
+            "1 kg",
+            "1,000 kg",
+            "10 kg",
+            "100 kg"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these will help to keep flies away from a poultry house?",
+          "options": [
+            "Wetting the litter",
+            "Leaving the droppings in the house",
+            "Keeping the litter dry",
+            "Leaving feed on the floor"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The best time to feed birds in very hot weather is",
+          "options": [
+            "early morning and evening",
+            "only at night",
+            "just after the water is finished",
+            "noon"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A farmer stores layer feed in an open sack on the floor. What is the problem?",
+          "options": [
+            "The feed will get cold",
+            "The birds will not be able to see it",
+            "It will become heavier",
+            "Rats and insects can reach it"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe two signs of heat stress in poultry. Give three actions a farmer can take to reduce heat stress in a hot season.",
+          "markScheme": [
+            "Names a first sign (e.g. panting, wings spread)",
+            "Names a second sign (e.g. drinks more but eats less, fall in eggs)",
+            "Gives two correct actions (shade, ventilation, cool water, feeding in cool times)",
+            "Gives a third correct action"
+          ],
+          "modelAnswer": "Birds under heat stress pant with open beaks and hold their wings away from the body, and they drink more but eat less, so egg production falls. The farmer can give shade and open the sides of the house for air, provide cool clean water, and feed in the cool morning and evening.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The birds pant with their beaks open and spread their wings. They also eat less and lay fewer eggs. The farmer can build a roof with an overhang for shade, give cool clean water in the shade, and feed the birds early in the morning and in the evening when it is cool.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The birds pant with their beaks open and spread their wings"
+                },
+                {
+                  "point": 1,
+                  "quote": "They also eat less and lay fewer eggs"
+                },
+                {
+                  "point": 2,
+                  "quote": "build a roof with an overhang for shade, give cool clean water in the shade"
+                },
+                {
+                  "point": 3,
+                  "quote": "feed the birds early in the morning and in the evening when it is cool"
+                }
+              ],
+              "feedback": "Two signs and three actions, all correct."
+            },
+            {
+              "tier": "full",
+              "text": "Two signs are that the hens gasp for air and that they drink a lot of water but do not eat. To help, the farmer can open the house for more air, give cool water often, and not keep too many birds in the same house.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the hens gasp for air"
+                },
+                {
+                  "point": 1,
+                  "quote": "they drink a lot of water but do not eat"
+                },
+                {
+                  "point": 2,
+                  "quote": "open the house for more air, give cool water often"
+                },
+                {
+                  "point": 3,
+                  "quote": "not keep too many birds in the same house"
+                }
+              ],
+              "feedback": "Correct. Avoiding overcrowding is an easy action many farmers forget."
+            },
+            {
+              "tier": "partial",
+              "text": "The birds pant and the farmer can give shade.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The birds pant"
+                },
+                {
+                  "point": 2,
+                  "quote": "give shade"
+                }
+              ],
+              "feedback": "You gave one sign and one action. Add a second sign, such as eating less or laying fewer eggs, and two more actions."
+            },
+            {
+              "tier": "partial",
+              "text": "They eat less and the egg production drops. The farmer should feed them in the morning and give water.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "They eat less and the egg production drops"
+                },
+                {
+                  "point": 3,
+                  "quote": "feed them in the morning"
+                }
+              ],
+              "feedback": "The sign is right. Give the other sign (panting) and say actions that cool the house, such as shade and ventilation. Give cool, clean water."
+            },
+            {
+              "tier": "weak",
+              "text": "The birds are cold and they sleep. The farmer should switch on a heater.",
+              "meets": [],
+              "feedback": "Heat stress is caused by hot weather, not cold. Signs are panting and eating less. A heater would make things worse; use shade, air and cool water."
+            },
+            {
+              "tier": "weak",
+              "text": "The birds sing very well. The farmer should paint the house red.",
+              "meets": [],
+              "feedback": "Signs of heat stress are panting and spread wings. Red paint would not help; use shade, ventilation and cool water."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Ibrahim has 200 layers in Kano. Each bird produces about 0.1 kg of droppings a day. (a) How much droppings does the flock produce in one day and in 30 days? (b) Describe how he can use the droppings safely on his vegetable farm. (c) Droppings left in the house attract flies and rats are eating his feed. Suggest one way to control each.",
+          "markScheme": [
+            "200 × 0.1 = 20 kg a day",
+            "20 × 30 = 600 kg in 30 days",
+            "Composts the droppings in a covered heap and uses on crops, away from wells",
+            "Controls flies by keeping litter dry or covering the heap; controls rats with closed feed bins, repairing holes or traps"
+          ],
+          "modelAnswer": "(a) 200 × 0.1 = 20 kg a day, and 20 × 30 = 600 kg in 30 days. (b) He should heap the droppings in a dry, covered place and turn them until they compost, then spread them on the crops, away from wells and streams. (c) For flies, keep the litter dry and cover the manure heap. For rats, store feed in closed bins and block holes.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 200 × 0.1 = 20 kg a day, and in 30 days it is 20 × 30 = 600 kg. (b) He should put the droppings in a covered heap to compost for some weeks and then spread them on the vegetables, but not near a well. (c) To control flies he keeps the litter dry, and to control rats he stores the feed in a closed bin.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "200 × 0.1 = 20 kg a day"
+                },
+                {
+                  "point": 1,
+                  "quote": "20 × 30 = 600 kg"
+                },
+                {
+                  "point": 2,
+                  "quote": "put the droppings in a covered heap to compost for some weeks and then spread them on the vegetables, but not near a well"
+                },
+                {
+                  "point": 3,
+                  "quote": "he keeps the litter dry, and to control rats he stores the feed in a closed bin"
+                }
+              ],
+              "feedback": "All parts correct. Composting first makes the droppings safer."
+            },
+            {
+              "tier": "full",
+              "text": "In one day the layers give 20 kg, because 200 times 0.1 is 20. In 30 days that is 600 kg. He can compost the droppings in a heap with a cover and put it on the crops, and keep the heap far from the well. Flies are controlled by keeping the house dry and rats by closing the feed bin and mending holes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "20 kg, because 200 times 0.1 is 20"
+                },
+                {
+                  "point": 1,
+                  "quote": "In 30 days that is 600 kg"
+                },
+                {
+                  "point": 2,
+                  "quote": "compost the droppings in a heap with a cover and put it on the crops, and keep the heap far from the well"
+                },
+                {
+                  "point": 3,
+                  "quote": "Flies are controlled by keeping the house dry and rats by closing the feed bin and mending holes"
+                }
+              ],
+              "feedback": "Full marks, and the amounts for a day and a month agree."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 20 kg a day and 60 kg in 30 days. (b) He can put it on the vegetables. (c) Close the feed bin.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "20 kg a day"
+                },
+                {
+                  "point": 3,
+                  "quote": "Close the feed bin"
+                }
+              ],
+              "feedback": "The daily amount is right. For 30 days, multiply 20 × 30 = 600 kg. In (b), say that he should compost it first and keep it away from the well; in (c) add the control of flies."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 200 × 0.1 = 20 kg and 20 × 30 = 600 kg. (b) Throw it in the river. (c) Keep the litter dry for flies.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "200 × 0.1 = 20 kg"
+                },
+                {
+                  "point": 1,
+                  "quote": "20 × 30 = 600 kg"
+                },
+                {
+                  "point": 3,
+                  "quote": "Keep the litter dry for flies"
+                }
+              ],
+              "feedback": "Your sums and the fly control are good. Throwing droppings in a river pollutes the water: compost and use on the crops instead. Add a way to control rats."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 200 + 0.1 = 200.1 kg. (b) Burn it. (c) Pray.",
+              "meets": [],
+              "feedback": "Multiply the number of birds by the droppings per bird: 200 × 0.1 = 20 kg a day. Droppings are valuable as manure. Control flies by keeping litter dry and rats by closing the feed bin."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 0.1 kg. (b) Eat it. (c) Buy a cat for the flies.",
+              "meets": [],
+              "feedback": "The flock produces 20 kg a day, and 600 kg in 30 days. Droppings must be composted and used on crops, not eaten. A cat does not help with flies."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Newcastle disease, foot-and-mouth disease and coccidiosis",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the cause and main symptoms of Newcastle disease, foot-and-mouth disease and coccidiosis;\n2. say which animals each disease affects;\n3. match symptoms to the correct disease;\n4. state how each disease spreads and the first action to take.\n\n## Materials\n\nA chart of the three diseases with pictures, flash cards of symptoms, a poultry house diagram, a sample sick-animal record sheet.\n\n## Starter (5 minutes)\n\nDescribe a farm story in which hens die suddenly within three days. Ask what the farmer should do. Introduce the importance of knowing the disease.\n\n## Development\n\n1. Newcastle disease (ND): caused by a virus, affects chickens and other birds, spreads by contact, droppings, shared equipment and visitors. Symptoms: gasping and coughing, greenish watery droppings, twisted neck and paralysis, drop in eggs, and sudden deaths. No cure: prevent with vaccination.\n2. Foot-and-mouth disease (FMD): caused by a virus, affects cattle, sheep, goats and pigs (cloven-hoofed animals). It spreads quickly by contact, air, and on people and vehicles. Symptoms: fever, blisters in the mouth and between the hooves, drooling saliva, lameness, loss of appetite and a fall in milk. Few animals die, but production drops badly.\n3. Coccidiosis: caused by a tiny parasite (protozoan, Eimeria) that lives in the gut, especially of young chicks in wet litter. Symptoms: bloody droppings, huddling, ruffled feathers, weakness and weight loss. Treat with a coccidiostat from a vet, and prevent by keeping the litter dry and clean.\n4. First action when a disease is suspected: separate sick animals, stop movement of animals and visitors, call a vet or an animal health officer, and do not sell or eat animals that died of unknown disease.\n5. Compare the three using a table of cause, animals, symptoms and prevention.\n\n## Class activity\n\nLearners use symptom cards to decide on the disease and say what the farmer should do first.\n\n## Evaluation\n\n1. Which disease causes bloody droppings in chicks?\n2. What are two signs of foot-and-mouth disease?\n3. Why is vaccination needed for Newcastle disease?\n\n## Assignment\n\nMake a table of the three diseases with columns for cause, animals, symptoms and prevention. Submit on the app.",
+      "reading": {
+        "title": "Three common livestock diseases",
+        "content": "# Three common livestock diseases\n\nA sick animal gives less meat, milk or eggs and may die. A farmer must be able to recognise the main diseases early.\n\n## Newcastle disease\n\n- **Cause:** a **virus**.\n- **Animals:** chickens, turkeys and other birds.\n- **Spread:** by contact with sick birds, by their droppings, by shared equipment and by visitors.\n- **Symptoms:** coughing and gasping for air, greenish watery droppings, twisted neck, weak legs, a drop in egg production and many sudden deaths.\n- **Control:** there is no cure, so **vaccinate** every bird on time and keep out visitors.\n\n## Foot-and-mouth disease (FMD)\n\n- **Cause:** a **virus**.\n- **Animals:** cattle, sheep, goats and pigs, those with a split hoof.\n- **Spread:** very quickly by contact, through the air, by contaminated water, vehicles and people.\n- **Symptoms:** fever, **blisters** in the mouth and between the hooves, drooling of saliva, limping and loss of appetite. The milk yield falls and the animals lose weight.\n- **Control:** vaccination, quarantine of new animals, and reporting to the veterinary officer. Move no animals out of an infected herd.\n\n## Coccidiosis\n\n- **Cause:** a tiny **parasite** (a protozoan called Eimeria) in the gut.\n- **Animals:** mainly young chicks, especially in wet litter.\n- **Symptoms:** **bloody droppings**, chicks huddle together with ruffled feathers, weakness and loss of weight.\n- **Control:** keep the litter **dry** and clean, avoid overcrowding, and give medicine (an anticoccidial) as the vet advises.\n\n## What to do first\n\n1. Separate the sick animals.\n2. Keep visitors out and do not move animals to other farms.\n3. Call a vet or animal health officer.\n4. Never sell or eat animals that died of an unknown illness.\n\n**Worked example.** A chick farmer in Oyo notices bloody droppings and ruffled feathers among 3-week-old chicks in a damp pen. This points to **coccidiosis**. He should dry the litter, separate the sick chicks and ask the vet for a coccidiostat."
+      },
+      "cards": [
+        {
+          "front": "Newcastle disease",
+          "back": "A virus disease of poultry causing gasping, greenish droppings and twisted necks."
+        },
+        {
+          "front": "Foot-and-mouth disease",
+          "back": "A virus disease of cattle, sheep, goats and pigs with blisters on the mouth and feet."
+        },
+        {
+          "front": "Coccidiosis",
+          "back": "A disease of chicks caused by a gut parasite, causing bloody droppings."
+        },
+        {
+          "front": "Symptom",
+          "back": "A sign that an animal is sick."
+        },
+        {
+          "front": "Vaccination",
+          "back": "Giving an animal a vaccine to protect it against a disease."
+        },
+        {
+          "front": "Cloven hoof",
+          "back": "A hoof split in two, as in cattle, goats and pigs."
+        },
+        {
+          "front": "Main way to prevent coccidiosis",
+          "back": "Keep the litter dry and clean."
+        },
+        {
+          "front": "First action on suspecting a disease",
+          "back": "Separate the sick animals and call a vet."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Chicks in a wet pen have bloody droppings and huddle together. The likely disease is",
+          "options": [
+            "coccidiosis",
+            "foot-and-mouth disease",
+            "a vitamin shortage",
+            "Newcastle disease"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Blisters in the mouth and on the hooves of cattle are a sign of",
+          "options": [
+            "bloat",
+            "coccidiosis",
+            "foot-and-mouth disease",
+            "Newcastle disease"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these animals can catch foot-and-mouth disease?",
+          "options": [
+            "Rabbits",
+            "Goats",
+            "Ducks",
+            "Chickens"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Newcastle disease in poultry is best controlled by",
+          "options": [
+            "antibiotics after the birds are sick",
+            "giving more feed",
+            "painting the house",
+            "vaccination"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A farmer notices that several hens have twisted necks and greenish droppings. His first action should be to",
+          "options": [
+            "eat the dead birds",
+            "do nothing",
+            "separate the sick birds and call a vet",
+            "sell all the birds quickly"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Name the cause and two symptoms of Newcastle disease. Say how it can be prevented.",
+          "markScheme": [
+            "States that it is caused by a virus",
+            "Gives one symptom (e.g. gasping, greenish droppings, twisted neck)",
+            "Gives a second symptom",
+            "States prevention by vaccination (or keeping out visitors/biosecurity)"
+          ],
+          "modelAnswer": "Newcastle disease is caused by a virus. Symptoms include gasping for air, greenish watery droppings and twisted necks. It is prevented by vaccinating the birds on time and keeping out visitors.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Newcastle disease is caused by a virus. The birds gasp and cough and their droppings are green and watery. The best way to prevent it is to vaccinate the birds on time and not allow visitors into the pen.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "caused by a virus"
+                },
+                {
+                  "point": 1,
+                  "quote": "The birds gasp and cough"
+                },
+                {
+                  "point": 2,
+                  "quote": "their droppings are green and watery"
+                },
+                {
+                  "point": 3,
+                  "quote": "vaccinate the birds on time and not allow visitors into the pen"
+                }
+              ],
+              "feedback": "Cause, two symptoms and prevention are all correct."
+            },
+            {
+              "tier": "full",
+              "text": "The cause is a virus. Two signs are a twisted neck and sudden death of many birds. We prevent it by giving the vaccine to the chicks and by keeping the house clean and closed to visitors.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The cause is a virus"
+                },
+                {
+                  "point": 1,
+                  "quote": "a twisted neck"
+                },
+                {
+                  "point": 2,
+                  "quote": "sudden death of many birds"
+                },
+                {
+                  "point": 3,
+                  "quote": "giving the vaccine to the chicks and by keeping the house clean and closed to visitors"
+                }
+              ],
+              "feedback": "Complete, with two sound signs and two ways to prevent it."
+            },
+            {
+              "tier": "partial",
+              "text": "It is caused by a virus and the birds have a twisted neck.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "caused by a virus"
+                },
+                {
+                  "point": 1,
+                  "quote": "the birds have a twisted neck"
+                }
+              ],
+              "feedback": "The cause and one symptom are right. Add a second symptom and say how it is prevented (vaccination)."
+            },
+            {
+              "tier": "partial",
+              "text": "The birds gasp and the droppings are green. It can be prevented by vaccination.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The birds gasp"
+                },
+                {
+                  "point": 2,
+                  "quote": "the droppings are green"
+                },
+                {
+                  "point": 3,
+                  "quote": "prevented by vaccination"
+                }
+              ],
+              "feedback": "Two symptoms and prevention are right. You must also say the cause: a virus."
+            },
+            {
+              "tier": "weak",
+              "text": "It is caused by bad feed and the birds have bloody droppings.",
+              "meets": [],
+              "feedback": "Newcastle disease is caused by a virus, not bad feed. Bloody droppings point to coccidiosis. For Newcastle disease, look for gasping and twisted necks."
+            },
+            {
+              "tier": "weak",
+              "text": "It is caused by the rain and the birds are too fat.",
+              "meets": [],
+              "feedback": "The cause is a virus. The birds gasp, have green droppings and sometimes twisted necks. Vaccination prevents it."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Yusuf keeps chicks and some cattle. (a) His three-week-old chicks have bloody droppings, huddle together and have ruffled feathers; the litter in the pen is wet. What is the disease, its cause, and what should he do? (b) Some of his cattle have blisters between the hooves and in the mouth and are drooling and limping. Name this disease and say how it spreads. (c) Give two things he should do straight away to stop it from reaching neighbouring farms.",
+          "markScheme": [
+            "Coccidiosis, caused by a parasite (Eimeria) in wet litter",
+            "Dries the litter and gets a coccidiostat from the vet",
+            "Foot-and-mouth disease, which spreads by contact, air, vehicles and people",
+            "Separates the sick animals and stops all movement/visitors and calls the vet"
+          ],
+          "modelAnswer": "(a) The chicks have coccidiosis, caused by a tiny parasite in the gut that thrives in wet litter. He should dry the litter, separate the sick chicks and get a coccidiostat from the vet. (b) The cattle have foot-and-mouth disease. It spreads quickly by contact, through the air, and on vehicles and people. (c) He should separate the sick cattle, stop moving animals and visitors on and off the farm, and call the vet or animal health officer.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) It is coccidiosis caused by a parasite that lives in the gut and grows in wet litter. He should dry the litter, isolate the sick chicks and ask the vet for a coccidiostat. (b) It is foot-and-mouth disease and it spreads quickly through contact, air and on vehicles and people. (c) He should separate the sick cattle and not let animals or visitors move in or out, and call the vet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "coccidiosis caused by a parasite that lives in the gut and grows in wet litter"
+                },
+                {
+                  "point": 1,
+                  "quote": "dry the litter, isolate the sick chicks and ask the vet for a coccidiostat"
+                },
+                {
+                  "point": 2,
+                  "quote": "foot-and-mouth disease and it spreads quickly through contact, air and on vehicles and people"
+                },
+                {
+                  "point": 3,
+                  "quote": "separate the sick cattle and not let animals or visitors move in or out, and call the vet"
+                }
+              ],
+              "feedback": "All four points, with practical steps."
+            },
+            {
+              "tier": "full",
+              "text": "The chicks have coccidiosis, a disease caused by a protozoan parasite, and the wet litter makes it worse. He must keep the litter dry and get the medicine from the vet. The cattle have foot-and-mouth disease which spreads by contact, in the air, by vehicles and by people. He must separate the sick animals, stop visitors and animals coming in or going out, and call the veterinary officer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "coccidiosis, a disease caused by a protozoan parasite, and the wet litter makes it worse"
+                },
+                {
+                  "point": 1,
+                  "quote": "keep the litter dry and get the medicine from the vet"
+                },
+                {
+                  "point": 2,
+                  "quote": "foot-and-mouth disease which spreads by contact, in the air, by vehicles and by people"
+                },
+                {
+                  "point": 3,
+                  "quote": "separate the sick animals, stop visitors and animals coming in or going out, and call the veterinary officer"
+                }
+              ],
+              "feedback": "Complete. Every disease is named, explained and followed by an action."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Coccidiosis, caused by a parasite. He should dry the litter. (b) Foot-and-mouth disease. (c) Call the vet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Coccidiosis, caused by a parasite"
+                },
+                {
+                  "point": 1,
+                  "quote": "dry the litter"
+                },
+                {
+                  "point": 2,
+                  "quote": "Foot-and-mouth disease"
+                }
+              ],
+              "feedback": "Diseases are correctly named. Add how FMD spreads (contact, air, vehicles, people), and in (c) a second action: separate the sick cattle and stop movement."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Newcastle disease. He should vaccinate. (b) Foot-and-mouth disease which spreads by contact and in the air. (c) Separate the sick cattle and tell the vet.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Foot-and-mouth disease which spreads by contact and in the air"
+                },
+                {
+                  "point": 3,
+                  "quote": "Separate the sick cattle and tell the vet"
+                }
+              ],
+              "feedback": "Part (b) and (c) are right. Bloody droppings in chicks in wet litter mean coccidiosis, not Newcastle disease; dry the litter and get a coccidiostat."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The chicks are cold. (b) The cattle have a wound. (c) Sell them quickly.",
+              "meets": [],
+              "feedback": "Bloody droppings in chicks in damp litter are a sign of coccidiosis. Blisters on the mouth and hooves are foot-and-mouth disease. Selling sick animals spreads disease; isolate them and call the vet."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The disease is malaria. (b) The cattle are fighting. (c) Move the cattle to a friend's farm.",
+              "meets": [],
+              "feedback": "Name the animal diseases: coccidiosis and foot-and-mouth disease. Moving sick cattle to another farm spreads the disease; separate them and call the vet."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Preventing disease: vaccination, biosecurity and deworming",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain how vaccination protects animals and follow a vaccination schedule;\n2. describe biosecurity measures on a farm;\n3. plan a deworming schedule;\n4. calculate dates and doses for vaccination and deworming.\n\n## Materials\n\nA sample vaccination chart, a vaccine vial and syringe (empty, for show), a footbath, a poster of biosecurity rules, a calendar, a weighing scale.\n\n## Starter (5 minutes)\n\nAsk: why do babies go to the clinic for injections even if they are healthy? Lead to vaccines. Relate to chicks being vaccinated against Newcastle disease.\n\n## Development\n\n1. Vaccination: a vaccine contains a weak or dead germ that teaches the body to fight the real disease. It protects only if given before the animal gets the disease. Follow the schedule and keep the vaccine cold (cold chain). Example for poultry: Newcastle disease (Lasota) vaccine at 7 days and again at 21 days of age.\n2. Schedule worked out: chicks hatched on 1 November are vaccinated at 7 days on 8 November and at 21 days on 22 November.\n3. Biosecurity: keep disease out by a fence and gate, a footbath at the door, limiting visitors, quarantining new animals for two weeks, not sharing equipment, controlling rats and wild birds, and disposing of dead animals properly.\n4. Deworming: internal worms steal food and cause weight loss, so give a dewormer regularly, for example every three months, and when worms are seen in droppings. Give the right dose by weight, e.g. 1 ml per 10 kg body weight: 30 kg goat → 3 ml; 45 kg goat → 4.5 ml.\n5. A schedule beginning on 15 January with deworming every three months gives 15 April, 15 July and 15 October.\n6. Keep records of each treatment in the animal's record.\n\n## Class activity\n\nLearners write a vaccination and deworming calendar for 500 broilers and 20 goats for one term, with dates and doses.\n\n## Evaluation\n\n1. Why must vaccines be kept cold?\n2. Chicks hatched on 5 March are vaccinated at 7 days. What is the date?\n3. Why is a footbath useful?\n\n## Assignment\n\nCreate a poster of five biosecurity rules for a small farm. Submit a photo on the app.",
+      "reading": {
+        "title": "Prevention is better than cure",
+        "content": "# Prevention is better than cure\n\nTreating a sick animal costs more than keeping it healthy. Farmers use three main ways to prevent disease.\n\n## 1. Vaccination\n\nA **vaccine** contains a weak or dead germ. When it is given to a healthy animal, the body learns to fight that germ and the animal is **protected** if the real disease arrives. A vaccine cannot cure an animal that is already sick.\n\nRules for vaccinating:\n\n- Follow the **schedule** from the vet.\n- Keep the vaccine **cold** until it is used, with ice in a flask.\n- Use clean needles and give the right dose.\n- Vaccinate only healthy animals.\n- Write the date in the record.\n\n**Worked example 1.** Chicks hatched on 1 November are given Newcastle disease vaccine at 7 days and again at 21 days. First vaccination: 1 + 7 = 8 November. Second: 1 + 21 = 22 November.\n\n## 2. Biosecurity\n\n**Biosecurity** means keeping germs out of the farm.\n\n- Put a **fence and a gate** around the farm.\n- Place a **footbath** with disinfectant at the door of each house.\n- Allow only **necessary visitors**, and let them wear clean boots.\n- **Quarantine** new animals for two weeks before joining the others.\n- Never **share equipment** with other farms without cleaning it.\n- Control **rats and wild birds**.\n- **Bury or burn** dead animals.\n\n## 3. Deworming\n\nWorms in the gut take food from the animal. It grows slowly, loses weight and may die. Give a **dewormer** regularly, for example every three months, following the vet's advice. The dose depends on body weight.\n\n**Worked example 2.** A dewormer is given at 1 ml per 10 kg. A goat of 30 kg gets 30 ÷ 10 × 1 = 3 ml. A goat of 45 kg gets 4.5 ml.\n\n**Worked example 3.** A first deworming on 15 January and then every three months means the other dates are 15 April, 15 July and 15 October."
+      },
+      "cards": [
+        {
+          "front": "Vaccine",
+          "back": "A weak or dead germ given to teach the body to fight a disease."
+        },
+        {
+          "front": "Biosecurity",
+          "back": "Measures to keep germs out of the farm."
+        },
+        {
+          "front": "Quarantine",
+          "back": "Keeping new animals apart for some time before joining the others."
+        },
+        {
+          "front": "Deworming",
+          "back": "Giving medicine to kill worms in the gut."
+        },
+        {
+          "front": "Footbath",
+          "back": "Tray of disinfectant at the house door to clean footwear."
+        },
+        {
+          "front": "Cold chain",
+          "back": "Keeping vaccine cold from the shop to the farm."
+        },
+        {
+          "front": "Newcastle disease vaccination ages",
+          "back": "7 days and 21 days."
+        },
+        {
+          "front": "Dose of dewormer used in lessons",
+          "back": "1 ml per 10 kg body weight."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Why must vaccines be kept cold?",
+          "options": [
+            "The animals prefer cold injections",
+            "Cold vaccine tastes better",
+            "It makes the needle clean",
+            "Heat can spoil the vaccine so it will not protect"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Chicks hatched on 5 March are given the first Newcastle vaccine at 7 days. On what date?",
+          "options": [
+            "7 March",
+            "12 March",
+            "28 March",
+            "5 April"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A dewormer dose is 1 ml per 10 kg. How many ml should a 40 kg goat get?",
+          "options": [
+            "4 ml",
+            "40 ml",
+            "10 ml",
+            "0.4 ml"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "What is the purpose of quarantine for new animals?",
+          "options": [
+            "To teach them to eat",
+            "To make them tame",
+            "To make sure they are not carrying a disease before joining the herd",
+            "To fatten them"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which action is part of biosecurity?",
+          "options": [
+            "Letting every visitor walk through the pens",
+            "Using a footbath at the door",
+            "Sharing unwashed feeders with neighbours",
+            "Leaving dead birds in the open"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain how vaccination protects an animal from disease. State three things the farmer must do when vaccinating.",
+          "markScheme": [
+            "The vaccine contains a weak or dead germ and teaches the body to fight the real disease",
+            "Protects only if given before the disease and cannot cure a sick animal",
+            "Names one correct rule (keep the vaccine cold or follow the schedule)",
+            "Names two more correct rules (clean needle, right dose, vaccinate healthy animals, record the date)"
+          ],
+          "modelAnswer": "A vaccine contains a weak or dead germ, which teaches the body how to fight the real disease. It protects only if given before the animal gets the disease; it cannot cure a sick animal. The farmer must keep the vaccine cold, follow the schedule, use clean needles and the right dose, and write the date in the record.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A vaccine has a weak or dead germ that makes the animal's body learn to fight the real disease. It works only before the animal gets sick and it cannot cure a sick animal. The farmer must keep the vaccine cold, follow the schedule from the vet, and use a clean needle with the right dose.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a weak or dead germ that makes the animal's body learn to fight the real disease"
+                },
+                {
+                  "point": 1,
+                  "quote": "It works only before the animal gets sick and it cannot cure a sick animal"
+                },
+                {
+                  "point": 2,
+                  "quote": "keep the vaccine cold"
+                },
+                {
+                  "point": 3,
+                  "quote": "follow the schedule from the vet, and use a clean needle with the right dose"
+                }
+              ],
+              "feedback": "A full explanation and three correct rules."
+            },
+            {
+              "tier": "full",
+              "text": "The vaccine contains a dead or weak germ and the body learns to recognise it so if the real disease comes the animal is protected. It must be given to healthy animals before the disease. The farmer should keep the vaccine in the cold, give the correct dose and write the date in the record.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The vaccine contains a dead or weak germ and the body learns to recognise it"
+                },
+                {
+                  "point": 1,
+                  "quote": "It must be given to healthy animals before the disease"
+                },
+                {
+                  "point": 2,
+                  "quote": "keep the vaccine in the cold"
+                },
+                {
+                  "point": 3,
+                  "quote": "give the correct dose and write the date in the record"
+                }
+              ],
+              "feedback": "Complete, and you put the idea of protection well."
+            },
+            {
+              "tier": "partial",
+              "text": "A vaccine protects the animal from disease. The farmer must keep the vaccine cold.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "keep the vaccine cold"
+                }
+              ],
+              "feedback": "Explain how it protects: it has a weak or dead germ that teaches the body to fight the real one. Add two more rules, such as the right dose and a clean needle."
+            },
+            {
+              "tier": "partial",
+              "text": "A vaccine has a weak germ so the body learns to fight the disease. It can cure a sick bird.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A vaccine has a weak germ so the body learns to fight the disease"
+                }
+              ],
+              "feedback": "The first idea is correct. A vaccine cannot cure a sick animal; it only protects healthy ones. Add the rules the farmer must follow."
+            },
+            {
+              "tier": "weak",
+              "text": "A vaccine is a food that makes the animals fat and strong.",
+              "meets": [],
+              "feedback": "A vaccine is not food. It contains a weak or dead germ and teaches the animal's body to fight a disease."
+            },
+            {
+              "tier": "weak",
+              "text": "A vaccine kills all the germs in the animal's body so it will never be sick again.",
+              "meets": [],
+              "feedback": "A vaccine does not kill germs; it helps the body to learn how to fight a particular disease. The animal can still get other diseases."
+            }
+          ]
+        },
+        {
+          "prompt": "Chinwe hatches 300 chicks on 1 November and has 20 goats. (a) On what dates should she give the Newcastle disease vaccine at 7 days and 21 days? (b) A goat weighs 35 kg. The dewormer dose is 1 ml per 10 kg. How much does it get? (c) She plans to deworm the goats first on 15 January and then every three months. Write the other three dates. (d) Give two biosecurity rules she should follow at the poultry house.",
+          "markScheme": [
+            "Vaccination dates 8 November and 22 November",
+            "Dose = 35 ÷ 10 × 1 = 3.5 ml",
+            "Deworming dates 15 April, 15 July, 15 October",
+            "Two biosecurity rules (footbath, limiting visitors, quarantine, closed gate, no shared equipment)"
+          ],
+          "modelAnswer": "(a) First vaccination on 8 November (1 + 7) and second on 22 November (1 + 21). (b) 35 ÷ 10 × 1 = 3.5 ml. (c) 15 April, 15 July and 15 October. (d) She should place a footbath at the door and allow only necessary visitors.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 1 November + 7 days is 8 November and + 21 days is 22 November. (b) 35 ÷ 10 = 3.5 so the dose is 3.5 ml. (c) 15 April, 15 July and 15 October. (d) She should have a footbath at the door and allow only the necessary visitors in.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8 November and + 21 days is 22 November"
+                },
+                {
+                  "point": 1,
+                  "quote": "35 ÷ 10 = 3.5 so the dose is 3.5 ml"
+                },
+                {
+                  "point": 2,
+                  "quote": "15 April, 15 July and 15 October"
+                },
+                {
+                  "point": 3,
+                  "quote": "a footbath at the door and allow only the necessary visitors in"
+                }
+              ],
+              "feedback": "All four parts are correct and clearly worked."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The first vaccine is on 8 November and the second one is on 22 November. (b) 3.5 ml for the 35 kg goat. (c) The next dates are 15 April, 15 July and 15 October. (d) Quarantine new birds for two weeks and do not share equipment with other farms.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The first vaccine is on 8 November and the second one is on 22 November"
+                },
+                {
+                  "point": 1,
+                  "quote": "3.5 ml for the 35 kg goat"
+                },
+                {
+                  "point": 2,
+                  "quote": "15 April, 15 July and 15 October"
+                },
+                {
+                  "point": 3,
+                  "quote": "Quarantine new birds for two weeks and do not share equipment with other farms"
+                }
+              ],
+              "feedback": "Full marks, and every date and dose is right."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 8 November and 22 November. (b) 3.5 ml. (c) April, July, October. (d) Visitors.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8 November and 22 November"
+                },
+                {
+                  "point": 1,
+                  "quote": "3.5 ml"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. In (c) give the exact dates (15 April, 15 July, 15 October) and in (d) name the rules, for example a footbath and limiting visitors."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 7 November and 21 November. (b) 3.5 ml. (c) 15 April, 15 July, 15 October. (d) Use a footbath.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "3.5 ml"
+                },
+                {
+                  "point": 2,
+                  "quote": "15 April, 15 July, 15 October"
+                },
+                {
+                  "point": 3,
+                  "quote": "Use a footbath"
+                }
+              ],
+              "feedback": "Parts (b) to (d) are right; add a second biosecurity rule. For the vaccine, 7 days after 1 November is 8 November, not 7 November, and 21 days after is 22 November."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 1 November. (b) 35 ml. (c) January. (d) Close the door.",
+              "meets": [],
+              "feedback": "Count 7 and 21 days from 1 November to get 8 and 22 November. The dose is 35 ÷ 10 = 3.5 ml. Deworm every three months: 15 April, 15 July, 15 October."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) After the chicks die. (b) 1 ml. (c) Every day. (d) Do nothing.",
+              "meets": [],
+              "feedback": "Vaccines are given before the birds are sick, at 7 and 21 days. Use 3.5 ml for a 35 kg goat. Biosecurity needs action: use a footbath and limit visitors."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "First aid for farm animals and when to call the vet",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. give first aid for small cuts, bleeding, sprains and heat stress;\n2. take and read an animal's temperature;\n3. list the contents of a farm first-aid kit;\n4. decide when an injury or sickness needs a veterinary officer.\n\n## Materials\n\nA first-aid box (antiseptic, cotton wool, bandage, gauze, scissors, gloves, a thermometer, iodine), a chart of normal temperatures, pictures of a bloated goat and a wounded cow.\n\n## Starter (5 minutes)\n\nAsk: what do you do when you cut your hand? Then ask what a farmer can do when a goat is cut by a wire fence. Compare the answers.\n\n## Development\n\n1. First aid is the quick help given before the vet arrives. Its aims are to stop bleeding, keep the wound clean, stop pain and prevent the injury from getting worse.\n2. Steps for a minor wound: calm the animal, wash the wound with clean water, apply a mild antiseptic such as iodine solution, cover or use a fly repellent, keep the animal in a clean place, and check daily.\n3. Bleeding: press a clean cloth firmly on the wound for several minutes. If blood keeps flowing, call the vet.\n4. Sprain or broken limb: do not make the animal walk; keep it still and support the leg; call the vet.\n5. Heat stress: move to shade, give cool water, and wet the body with water.\n6. Normal body temperatures: cattle about 38.5 °C, goats and sheep 39 to 40 °C, chickens about 41 °C. A goat at 41.2 °C has a fever.\n7. Call the vet at once for: deep wounds, bleeding that will not stop, a broken bone, bloat (a swollen left side), a difficult birth, fever or not eating for a day, or when many animals are sick at the same time.\n8. First-aid kit: antiseptic, iodine, cotton wool, gauze and bandage, scissors, gloves, a clinical thermometer and the vet's phone number.\n\n## Class activity\n\nLearners treat a model with a mock wound step by step and decide for five situations whether to treat or call the vet.\n\n## Evaluation\n\n1. What is the first thing to do when an animal has a small cut?\n2. What is a goat's normal body temperature?\n3. Name two situations when you should call the vet immediately.\n\n## Assignment\n\nPrepare a list of items for a first-aid box for a small goat farm and say what each is used for. Submit on the app.",
+      "reading": {
+        "title": "First aid on the farm",
+        "content": "# First aid on the farm\n\nAccidents and sickness happen on every farm. Quick, correct first aid can save an animal's life and limit the damage. But it does not replace the vet.\n\n## Treating a small wound\n\nA goat gets a small cut on the leg from a wire fence.\n\n1. **Stay calm** and hold the animal gently. A frightened animal may kick.\n2. **Wash** the wound with clean water to remove dirt.\n3. Put on **iodine** or a mild **antiseptic**.\n4. **Cover** the wound with clean gauze, or use fly repellent so that flies do not lay eggs in it.\n5. Put the animal in a **clean, dry pen** and look at the wound every day.\n\n## Bleeding\n\nPress a **clean cloth** firmly over the wound for several minutes. If the blood still flows or spurts, call the vet at once.\n\n## Sprains and broken bones\n\nDo not make the animal walk. Keep it still on soft bedding, support the leg if you can, and call the vet.\n\n## Heat stress\n\nMove the animal to **shade**, give **cool water** and wet its body with water.\n\n## Taking the temperature\n\nUse a **clinical thermometer** gently in the rectum for one minute. Normal temperatures are:\n\n| Animal | Normal temperature |\n| --- | --- |\n| Cattle | about 38.5 °C |\n| Goat and sheep | 39 to 40 °C |\n| Chicken | about 41 °C |\n\n**Worked example.** A goat's temperature is 41.2 °C. The normal is 39 to 40 °C, so she has a **fever** and may be sick. The farmer should isolate her and call the vet.\n\n## When to call the vet\n\n- Deep wounds or bleeding that does not stop.\n- A broken bone.\n- **Bloat**: the left side swells like a drum after eating wet green feed.\n- Difficulty in giving birth.\n- Fever, or not eating for a whole day.\n- Many animals sick at the same time.\n\n## First-aid kit\n\nAntiseptic, iodine, cotton wool, gauze, bandage, scissors, gloves, a thermometer and the vet's telephone number."
+      },
+      "cards": [
+        {
+          "front": "First aid",
+          "back": "Quick help given to an injured or sick animal before the vet arrives."
+        },
+        {
+          "front": "Antiseptic",
+          "back": "A substance that kills germs on a wound."
+        },
+        {
+          "front": "Normal temperature of a goat",
+          "back": "39 to 40 °C."
+        },
+        {
+          "front": "Fever",
+          "back": "A body temperature higher than normal."
+        },
+        {
+          "front": "Bloat",
+          "back": "A swelling of the left side caused by gas in the stomach; the vet should be called at once."
+        },
+        {
+          "front": "What to do for bleeding",
+          "back": "Press a clean cloth firmly on the wound."
+        },
+        {
+          "front": "Why use fly repellent on wounds?",
+          "back": "So flies do not lay eggs in them."
+        },
+        {
+          "front": "Clinical thermometer",
+          "back": "An instrument used to take body temperature."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the first step for a small cut on a goat's leg?",
+          "options": [
+            "Rub soil on it",
+            "Stay calm and wash the wound with clean water",
+            "Tie the leg with a rope",
+            "Leave it alone"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A goat's temperature is 41.2 °C. This means the goat",
+          "options": [
+            "is cold",
+            "is too thin",
+            "is normal",
+            "has a fever"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these needs a vet immediately?",
+          "options": [
+            "A tired hen",
+            "A very small scratch",
+            "A swollen left side (bloat) after eating wet grass",
+            "A dirty drinker"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A farmer wants to stop bleeding from a cut. He should",
+          "options": [
+            "press a clean cloth firmly on the wound",
+            "leave it open to the sun",
+            "pour sand on it",
+            "wash it with dirty water"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which item does NOT belong in a farm first-aid kit?",
+          "options": [
+            "Iodine",
+            "Gauze and bandage",
+            "A clinical thermometer",
+            "Cement"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A goat has a small cut on its leg after pushing against a wire fence. Describe the first aid the farmer should give, in order.",
+          "markScheme": [
+            "Calms and holds the animal gently",
+            "Washes the wound with clean water",
+            "Applies iodine or antiseptic and covers it or applies fly repellent",
+            "Puts the animal in a clean, dry pen and checks the wound daily"
+          ],
+          "modelAnswer": "The farmer should calm the goat and hold it gently. He should wash the wound with clean water, then apply iodine or an antiseptic and cover it with gauze or use fly repellent. The goat should be kept in a clean, dry pen and the wound checked every day.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First I calm the goat and hold it gently. Then I wash the cut with clean water. I put iodine on it and cover it with gauze, or I use fly repellent. Then I keep the goat in a clean dry pen and check the cut every day.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I calm the goat and hold it gently"
+                },
+                {
+                  "point": 1,
+                  "quote": "I wash the cut with clean water"
+                },
+                {
+                  "point": 2,
+                  "quote": "I put iodine on it and cover it with gauze, or I use fly repellent"
+                },
+                {
+                  "point": 3,
+                  "quote": "I keep the goat in a clean dry pen and check the cut every day"
+                }
+              ],
+              "feedback": "All four steps are in the correct order."
+            },
+            {
+              "tier": "full",
+              "text": "He should first hold the goat quietly so that it does not kick. He then cleans the wound with clean water. He puts an antiseptic on it and covers it so that flies do not lay eggs there. He keeps the goat in a clean place and looks at the wound daily to see if it is healing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "hold the goat quietly so that it does not kick"
+                },
+                {
+                  "point": 1,
+                  "quote": "cleans the wound with clean water"
+                },
+                {
+                  "point": 2,
+                  "quote": "puts an antiseptic on it and covers it so that flies do not lay eggs there"
+                },
+                {
+                  "point": 3,
+                  "quote": "keeps the goat in a clean place and looks at the wound daily"
+                }
+              ],
+              "feedback": "Complete. You said why the wound must be covered."
+            },
+            {
+              "tier": "partial",
+              "text": "Wash the wound with water and put iodine. Keep the goat in a clean pen.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Wash the wound with water"
+                },
+                {
+                  "point": 2,
+                  "quote": "put iodine"
+                },
+                {
+                  "point": 3,
+                  "quote": "Keep the goat in a clean pen"
+                }
+              ],
+              "feedback": "These steps are right. Begin by calming and holding the goat, cover the wound or use fly repellent, and check the wound daily."
+            },
+            {
+              "tier": "partial",
+              "text": "Hold the goat quietly and then put iodine on the cut. Look at it every day.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Hold the goat quietly"
+                },
+                {
+                  "point": 2,
+                  "quote": "put iodine on the cut"
+                },
+                {
+                  "point": 3,
+                  "quote": "Look at it every day"
+                }
+              ],
+              "feedback": "Good, but wash the wound with clean water before applying iodine, and cover it or use fly repellent."
+            },
+            {
+              "tier": "weak",
+              "text": "Put soil on the wound so it stops bleeding, and let the goat go.",
+              "meets": [],
+              "feedback": "Soil carries germs and can cause infection. Wash the cut with clean water, apply iodine, cover it and keep the goat in a clean pen."
+            },
+            {
+              "tier": "weak",
+              "text": "Do nothing because goats heal themselves.",
+              "meets": [],
+              "feedback": "A wound that is left open can get infected or have flies lay eggs in it. Wash it, put on an antiseptic, cover it and check it daily."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Sule has a goat farm. (a) A goat has a temperature of 41.2 °C. The normal is 39 to 40 °C. What is wrong, and what should he do? (b) Another goat has a swollen left side after eating wet green feed. What is it called and what must he do? (c) A third has a cut that is bleeding. How can he stop the bleeding? (d) Name two other situations when he must call the vet at once.",
+          "markScheme": [
+            "The goat has a fever, so isolate it and call the vet",
+            "Bloat; call the vet at once",
+            "Press a clean cloth firmly on the cut",
+            "Names two other situations (broken bone, deep wound, difficult birth, not eating for a day, many sick)"
+          ],
+          "modelAnswer": "(a) The goat has a fever because its temperature is above the normal 39 to 40 °C. He should separate her and call the vet. (b) It is bloat, and he must call the vet at once. (c) He should press a clean cloth firmly on the cut for several minutes. (d) He must call the vet for a broken bone, a difficult birth, a deep wound, or when many animals are sick.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) She has a fever because 41.2 °C is higher than the normal of 39 to 40 °C. He should separate her and call the vet. (b) It is bloat and he must call the vet at once. (c) He should press a clean cloth firmly on the cut. (d) A broken bone and a goat that is having difficulty giving birth.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "She has a fever because 41.2 °C is higher than the normal of 39 to 40 °C"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is bloat and he must call the vet at once"
+                },
+                {
+                  "point": 2,
+                  "quote": "press a clean cloth firmly on the cut"
+                },
+                {
+                  "point": 3,
+                  "quote": "A broken bone and a goat that is having difficulty giving birth"
+                }
+              ],
+              "feedback": "Every part is right, and in (a) you compared the reading with the normal range."
+            },
+            {
+              "tier": "full",
+              "text": "The goat with 41.2 °C has a fever, so I isolate it and call the vet. The swelling on the left side is bloat, which is dangerous, so I call the vet immediately. For the bleeding I press a clean cloth on the cut for some minutes. I also call the vet if a goat has a deep wound or if a goat has not eaten for a whole day.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "has a fever, so I isolate it and call the vet"
+                },
+                {
+                  "point": 1,
+                  "quote": "is bloat, which is dangerous, so I call the vet immediately"
+                },
+                {
+                  "point": 2,
+                  "quote": "press a clean cloth on the cut for some minutes"
+                },
+                {
+                  "point": 3,
+                  "quote": "a goat has a deep wound or if a goat has not eaten for a whole day"
+                }
+              ],
+              "feedback": "Complete, and your reasons are correct throughout."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Fever and the vet. (b) Bloat. (c) Tie it with a rope. (d) A broken bone.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fever and the vet"
+                },
+                {
+                  "point": 3,
+                  "quote": "A broken bone"
+                }
+              ],
+              "feedback": "Part (a) is right; give the reason (41.2 °C is above 39 to 40 °C). Say that bloat needs the vet at once. To stop bleeding, press a clean cloth firmly on the cut; do not tie with rope."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The goat is sick, because its temperature is high. (b) Bloat, call the vet. (c) Press the cut with a clean cloth. (d) Deep wound.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Bloat, call the vet"
+                },
+                {
+                  "point": 2,
+                  "quote": "Press the cut with a clean cloth"
+                },
+                {
+                  "point": 3,
+                  "quote": "Deep wound"
+                }
+              ],
+              "feedback": "Three are right. In (a) say what is wrong (a fever, above 39 to 40 °C) and what to do: separate the goat and call the vet."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The goat is hot because of the sun. (b) It is fat. (c) Let it bleed. (d) None.",
+              "meets": [],
+              "feedback": "A temperature of 41.2 °C is a fever, not just sun. A swollen left side is bloat and needs the vet. Bleeding must be stopped by pressing a clean cloth on the wound."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 41.2 °C is normal. (b) Give it more green feed. (c) Wash the cut with oil. (d) Never call the vet.",
+              "meets": [],
+              "feedback": "The normal temperature of a goat is 39 to 40 °C, so 41.2 °C is a fever. More wet green feed causes bloat. Press a cloth on a bleeding cut, and call the vet in serious cases."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Parasites of livestock and how to control them",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish ectoparasites from endoparasites and give examples;\n2. describe the harm that parasites do;\n3. describe methods of controlling external and internal parasites;\n4. plan a dipping and deworming programme.\n\n## Materials\n\nPictures of a tick, louse, mite, tsetse fly, roundworm, tapeworm and liver fluke, a cattle dip tank or a diagram, a hand sprayer, a sample of a dewormer label, a calendar.\n\n## Starter (5 minutes)\n\nShow a picture of a cow covered with ticks. Ask: what are they doing to the cow? Then ask what might be living inside the cow where we cannot see.\n\n## Development\n\n1. Ectoparasites live on the outside of the animal: ticks, lice, mites, fleas and biting flies such as the tsetse fly. They suck blood and cause itching, anaemia and spread diseases. Ticks spread heartwater and tick fever; tsetse flies spread trypanosomiasis (nagana) in cattle.\n2. Endoparasites live inside the animal: roundworms and tapeworms in the gut, and liver flukes in the liver (spread by snails). They take food, damage organs, and cause weight loss, diarrhoea and poor growth.\n3. Signs of heavy parasites: scratching, hair loss, rough coat, pale gums (anaemia), diarrhoea, pot belly in young animals, loss of weight and fall in milk or egg production.\n4. Control of ectoparasites: dipping or spraying with an acaricide (every 7 days in the rainy season), hand picking ticks, cleaning pens, keeping animals away from bush, and treating bedding.\n5. Control of endoparasites: regular deworming, clean feed and water, rotating pastures (moving animals to a new field), drying wet grazing areas, and controlling snails near water for liver fluke.\n6. Programme: dip every 7 days for 4 weeks = 4 dips; deworm every 3 months.\n\n## Class activity\n\nGroups sort picture cards into ectoparasites and endoparasites, and draw a table showing the parasite, the harm it does and the control.\n\n## Evaluation\n\n1. Name two ectoparasites and two endoparasites.\n2. Why are ticks dangerous to cattle?\n3. What is meant by pasture rotation and why does it help?\n\n## Assignment\n\nLook at the animals around you or draw an animal and mark where five parasites could be found, naming each. Submit on the app.",
+      "reading": {
+        "title": "Parasites on and in farm animals",
+        "content": "# Parasites on and in farm animals\n\nA **parasite** is a living thing that lives on or inside another living thing (the **host**) and gets food from it, harming the host.\n\n## Ectoparasites (outside)\n\nThey live on the skin or hair.\n\n- **Ticks** suck blood and spread diseases such as heartwater and tick fever.\n- **Lice** and **mites** cause itching, scratching, hair loss and scabs.\n- **Fleas** bite and irritate dogs, rabbits and poultry.\n- **Tsetse flies** bite cattle and spread **trypanosomiasis** (called *nagana*), which causes fever, weakness and weight loss.\n\n## Endoparasites (inside)\n\nThey live inside the body.\n\n- **Roundworms** and **tapeworms** live in the gut and take away the food that the animal has eaten.\n- **Liver flukes** live in the liver. Their young live in snails in wet places, and animals pick them up from grass near water.\n\n## What parasites do\n\n- They take **blood** and **food** from the animal, causing **anaemia** (pale gums) and weight loss.\n- They cause **itching**, restlessness and damaged skin.\n- They **spread** other diseases.\n- Animals grow slowly and give less milk or fewer eggs.\n\n## Control\n\n**Ectoparasites**\n\n- **Dip** or **spray** the animals with an acaricide. In the rainy season this is repeated every 7 days.\n- Pick off ticks by hand and burn them.\n- Keep the pens clean and burn old bedding.\n\n**Endoparasites**\n\n- **Deworm** regularly, for example every three months.\n- Give clean feed and water.\n- Use **pasture rotation**: move the animals to a new field so that the worm eggs on the old field die before they return.\n- Keep animals away from marshy ground to avoid snails.\n\n**Worked example.** A farmer dips his cattle every 7 days for 4 weeks in the rainy season. The number of dips = 28 ÷ 7 = 4 dips. He also deworms them every 3 months, which is 4 times a year."
+      },
+      "cards": [
+        {
+          "front": "Parasite",
+          "back": "A living thing that lives on or in another and harms it."
+        },
+        {
+          "front": "Ectoparasite",
+          "back": "A parasite on the outside of the host, such as a tick."
+        },
+        {
+          "front": "Endoparasite",
+          "back": "A parasite inside the host, such as a roundworm."
+        },
+        {
+          "front": "Anaemia",
+          "back": "A shortage of blood, shown by pale gums."
+        },
+        {
+          "front": "Dipping",
+          "back": "Passing animals through an acaricide bath to kill ticks."
+        },
+        {
+          "front": "Pasture rotation",
+          "back": "Moving animals to a new field so parasite eggs on the old one die."
+        },
+        {
+          "front": "Trypanosomiasis (nagana)",
+          "back": "A disease spread by tsetse flies."
+        },
+        {
+          "front": "Liver fluke",
+          "back": "A flat worm in the liver, picked up from snails in wet places."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is an ectoparasite?",
+          "options": [
+            "Tick",
+            "Tapeworm",
+            "Liver fluke",
+            "Roundworm"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Pale gums in a cow may show",
+          "options": [
+            "a shortage of water",
+            "a broken leg",
+            "anaemia due to blood loss",
+            "a healthy animal"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A farmer dips his cattle every 7 days for 4 weeks. How many dips is this?",
+          "options": [
+            "7",
+            "4",
+            "28",
+            "3"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which is a good way to control roundworms in a herd?",
+          "options": [
+            "Feeding only grass",
+            "Keeping the animals in a wet field",
+            "Using a bigger pen",
+            "Deworming regularly and rotating the pasture"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Tsetse flies spread",
+          "options": [
+            "coccidiosis",
+            "foot-and-mouth disease",
+            "trypanosomiasis (nagana)",
+            "Newcastle disease"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between an ectoparasite and an endoparasite. Give two examples of each and one harm that each kind causes.",
+          "markScheme": [
+            "Ectoparasite lives on the outside and endoparasite inside the host",
+            "Gives two ectoparasite examples (tick, louse, mite, flea, tsetse fly)",
+            "Gives two endoparasite examples (roundworm, tapeworm, liver fluke)",
+            "Gives a harm done, such as blood loss, anaemia, itching or weight loss"
+          ],
+          "modelAnswer": "An ectoparasite lives on the outside of the animal, such as a tick or a louse, and sucks blood, causing anaemia and itching. An endoparasite lives inside the animal, such as a roundworm or tapeworm, and takes food from the animal so that it loses weight.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "An ectoparasite lives on the outside of the animal, like a tick or a louse, and sucks blood and causes itching. An endoparasite lives inside the animal like a roundworm or a tapeworm and takes the food so the animal loses weight.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "An ectoparasite lives on the outside of the animal"
+                },
+                {
+                  "point": 1,
+                  "quote": "like a tick or a louse"
+                },
+                {
+                  "point": 2,
+                  "quote": "like a roundworm or a tapeworm"
+                },
+                {
+                  "point": 3,
+                  "quote": "takes the food so the animal loses weight"
+                }
+              ],
+              "feedback": "A clear difference, with examples and harm for each."
+            },
+            {
+              "tier": "full",
+              "text": "Ectoparasites are parasites that live on the skin, for example mites and fleas. They cause itching and take blood. Endoparasites live inside the body, for example liver flukes and tapeworms, and they damage organs and make the animal thin.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ectoparasites are parasites that live on the skin"
+                },
+                {
+                  "point": 1,
+                  "quote": "mites and fleas"
+                },
+                {
+                  "point": 2,
+                  "quote": "liver flukes and tapeworms"
+                },
+                {
+                  "point": 3,
+                  "quote": "they damage organs and make the animal thin"
+                }
+              ],
+              "feedback": "Full marks. You gave harm for each type."
+            },
+            {
+              "tier": "partial",
+              "text": "An ectoparasite is outside the animal such as a tick and an endoparasite is inside the animal such as a worm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "An ectoparasite is outside the animal"
+                },
+                {
+                  "point": 1,
+                  "quote": "such as a tick"
+                },
+                {
+                  "point": 2,
+                  "quote": "an endoparasite is inside the animal such as a worm"
+                }
+              ],
+              "feedback": "The difference is correct. Add a second example for each, and say what harm each does, for example anaemia or weight loss."
+            },
+            {
+              "tier": "partial",
+              "text": "Ticks and lice are ectoparasites and they suck blood. Tapeworms and roundworms are endoparasites.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Ticks and lice are ectoparasites"
+                },
+                {
+                  "point": 2,
+                  "quote": "Tapeworms and roundworms are endoparasites"
+                },
+                {
+                  "point": 3,
+                  "quote": "they suck blood"
+                }
+              ],
+              "feedback": "The examples are right. State the difference in position: ectoparasites live on the outside and endoparasites inside the host."
+            },
+            {
+              "tier": "weak",
+              "text": "Ectoparasite is a pest of crops and endoparasite is a pest of rain.",
+              "meets": [],
+              "feedback": "These are parasites of animals. An ectoparasite lives on the outside of the animal; an endoparasite lives inside it."
+            },
+            {
+              "tier": "weak",
+              "text": "They are the same, both are animals that help the farmer.",
+              "meets": [],
+              "feedback": "Parasites harm the animal. Ectoparasites such as ticks live outside; endoparasites such as roundworms live inside."
+            }
+          ]
+        },
+        {
+          "prompt": "A farmer in Adamawa finds many ticks on his cattle in the rainy season. The cattle are thin and have pale gums. (a) Name the problem that the pale gums show and say what causes it. (b) Describe two ways to control the ticks. (c) The farmer also finds roundworm eggs in the dung. Say how he can control roundworms. (d) He dips every 7 days for 4 weeks. How many dips is this?",
+          "markScheme": [
+            "Pale gums show anaemia, caused by blood loss to ticks",
+            "Controls ticks by dipping or spraying (and hand picking or clean pens)",
+            "Controls roundworms by regular deworming and pasture rotation",
+            "4 dips (28 ÷ 7)"
+          ],
+          "modelAnswer": "(a) Pale gums show anaemia, because the ticks have sucked a lot of blood. (b) He can dip or spray the cattle with an acaricide every 7 days and pick off ticks by hand and burn them. (c) He can deworm the cattle regularly and rotate the pasture. (d) 28 ÷ 7 = 4 dips.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Anaemia, because the ticks suck a lot of blood. (b) He can dip the cattle with an acaricide every week and pick the ticks by hand and burn them. (c) He should deworm the cattle every three months and move them to new pasture so the eggs die. (d) 28 ÷ 7 = 4 dips.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Anaemia, because the ticks suck a lot of blood"
+                },
+                {
+                  "point": 1,
+                  "quote": "dip the cattle with an acaricide every week and pick the ticks by hand and burn them"
+                },
+                {
+                  "point": 2,
+                  "quote": "deworm the cattle every three months and move them to new pasture so the eggs die"
+                },
+                {
+                  "point": 3,
+                  "quote": "28 ÷ 7 = 4 dips"
+                }
+              ],
+              "feedback": "All four correct, with the reason for pasture rotation."
+            },
+            {
+              "tier": "full",
+              "text": "The pale gums mean anaemia, which is shortage of blood caused by the ticks feeding on the cattle. He can spray the cattle with an acaricide every 7 days and keep the pens clean. For roundworms he should give a dewormer regularly and rotate the pasture. Four weeks has 28 days and 28 divided by 7 is 4 dips.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "anaemia, which is shortage of blood caused by the ticks feeding on the cattle"
+                },
+                {
+                  "point": 1,
+                  "quote": "spray the cattle with an acaricide every 7 days and keep the pens clean"
+                },
+                {
+                  "point": 2,
+                  "quote": "give a dewormer regularly and rotate the pasture"
+                },
+                {
+                  "point": 3,
+                  "quote": "28 divided by 7 is 4 dips"
+                }
+              ],
+              "feedback": "Full marks. Every part has a reason or working."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Anaemia. (b) Dip them. (c) Deworming. (d) 4 dips.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Anaemia"
+                },
+                {
+                  "point": 3,
+                  "quote": "4 dips"
+                }
+              ],
+              "feedback": "Part (a) is right, but give the cause: ticks suck blood. Say what you dip in (an acaricide), give two methods for the ticks, and add pasture rotation for roundworms."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The cattle have no water. (b) Spray them with acaricide every 7 days and burn the ticks. (c) Deworm them. (d) 4 dips.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Spray them with acaricide every 7 days and burn the ticks"
+                },
+                {
+                  "point": 2,
+                  "quote": "Deworm them"
+                },
+                {
+                  "point": 3,
+                  "quote": "4 dips"
+                }
+              ],
+              "feedback": "Parts (b) to (d) are correct. Pale gums show anaemia from blood loss to the ticks, not lack of water."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The cattle are old. (b) Kill them. (c) Buy more cattle. (d) 28 dips.",
+              "meets": [],
+              "feedback": "Pale gums show anaemia caused by ticks sucking blood. Control the ticks by dipping. For 28 days, dipping every 7 days gives 4 dips."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is because of the rain. (b) Pray. (c) Feed them more. (d) 7 dips.",
+              "meets": [],
+              "feedback": "Pale gums are a sign of anaemia from tick bites. Dip or spray the cattle every 7 days and deworm regularly. Four weeks of weekly dips is 4 dips."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Keeping simple farm records",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the kinds of records a livestock farmer keeps;\n2. record production, expenses and income in a table;\n3. calculate total income, total expenses and profit from records;\n4. explain why records help the farmer make decisions.\n\n## Materials\n\nA sample record book with columns, blank record sheets, a calculator, a price list of feed and eggs, a pen and ruler for ruling tables.\n\n## Starter (5 minutes)\n\nAsk learners: if a farmer is asked at the end of the month whether he made a profit, how can he know? Take answers and introduce the idea of records.\n\n## Development\n\n1. Records are written information about what happens on the farm. Types: production records (eggs collected, milk, weights, births and deaths), health records (vaccination, treatments), feed records (feed used per day), expense records (money spent on feed, drugs, labour, water) and income records (money from sales).\n2. How to keep records: use a notebook with ruled columns, write every day, write the date, use the same units, and keep the records safe.\n3. Calculate with a month's records of 100 layers: eggs laid 2,400 = 80 crates of 30; at ₦5,400 a crate, income = 80 × 5,400 = ₦432,000.\n4. Expenses: feed 15 bags at ₦18,000 = ₦270,000; drugs ₦15,000; labour ₦40,000. Total expenses = ₦325,000.\n5. Profit = total income − total expenses = 432,000 − 325,000 = ₦107,000. A negative answer would be a loss.\n6. Use of records: to see if the farm makes profit, to find the best animals, to find where money is wasted, to plan, and to show the bank when asking for a loan.\n\n## Class activity\n\nLearners fill a month of records for a pretend flock and calculate the profit, then discuss where costs could be reduced.\n\n## Evaluation\n\n1. What is profit?\n2. Name two types of record a poultry farmer should keep.\n3. Total income is ₦250,000 and expenses are ₦180,000. What is the profit?\n\n## Assignment\n\nKeep a simple record for one week of something at home (for example water used or eggs collected) and show it in a table. Submit on the app.",
+      "reading": {
+        "title": "Writing it down: farm records",
+        "content": "# Writing it down: farm records\n\n## Why keep records?\n\nA farmer who does not write things down cannot say whether the farm is making money. Records help him to:\n\n- know the **profit** or **loss**;\n- find which animals produce best;\n- see where he is wasting money;\n- plan for the next season;\n- show a bank or a buyer the facts.\n\n## Kinds of records\n\n| Record | What is written |\n| --- | --- |\n| Production | Eggs collected, milk, weight gain, births, deaths |\n| Feed | Quantity of feed used each day |\n| Health | Vaccinations, treatments, illness |\n| Expenses | Money spent on feed, drugs, labour, water |\n| Income | Money from sales of animals, eggs, milk or manure |\n\n## How to keep them\n\n- Use a **notebook with ruled columns**.\n- Write **every day** and put the **date**.\n- Use the same **units** (kg, litres, naira).\n- Keep the book **safe and dry**.\n\n## Calculating profit\n\n**Profit = total income − total expenses**\n\n**Worked example.** Mr Bello keeps 100 layers. In one month his records show:\n\n- Eggs laid: 2,400, which is 80 crates of 30 eggs.\n- Income: 80 × ₦5,400 = ₦432,000.\n- Expenses: feed (15 bags at ₦18,000) = ₦270,000; drugs = ₦15,000; labour = ₦40,000.\n- Total expenses = 270,000 + 15,000 + 40,000 = ₦325,000.\n- Profit = 432,000 − 325,000 = **₦107,000**.\n\nIf the expenses had been greater than the income, the answer would be negative and the farmer would have made a **loss**.\n\n## Using the records\n\nBello sees that feed is 83% of his expenses (270,000 ÷ 325,000). He decides to look for a cheaper feed supplier or to mix part of the feed himself. Without records he would not have noticed."
+      },
+      "cards": [
+        {
+          "front": "Record",
+          "back": "Written information about the farm's work and money."
+        },
+        {
+          "front": "Profit",
+          "back": "Total income minus total expenses."
+        },
+        {
+          "front": "Loss",
+          "back": "What is left when expenses are greater than income."
+        },
+        {
+          "front": "Production record",
+          "back": "A record of eggs, milk, weight or births."
+        },
+        {
+          "front": "Expense",
+          "back": "Money spent on running the farm."
+        },
+        {
+          "front": "Income",
+          "back": "Money received from selling products or animals."
+        },
+        {
+          "front": "Profit formula",
+          "back": "Total income − total expenses"
+        },
+        {
+          "front": "One reason for keeping records",
+          "back": "To know whether the farm is making a profit."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A farmer's income in a month is ₦250,000 and his expenses are ₦180,000. What is his profit?",
+          "options": [
+            "₦180,000",
+            "₦250,000",
+            "₦430,000",
+            "₦70,000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is an expense of a poultry farm?",
+          "options": [
+            "Money from selling eggs",
+            "Money paid for feed",
+            "Eggs collected",
+            "Number of birds sold"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A farmer collects 2,400 eggs in a month. How many crates of 30 eggs is this?",
+          "options": [
+            "80",
+            "240",
+            "8",
+            "72"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Why does a farmer write the date in every record?",
+          "options": [
+            "So that the animals can read",
+            "To use a lot of paper",
+            "To know when each thing happened",
+            "To make it look nice"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A farm's expenses are ₦300,000 and its income is ₦250,000. This farm has made",
+          "options": [
+            "a profit of ₦50,000",
+            "a loss of ₦50,000",
+            "a profit of ₦550,000",
+            "no money"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain why a livestock farmer should keep records. Give three reasons and name two kinds of record.",
+          "markScheme": [
+            "Gives one correct reason (know profit or loss)",
+            "Gives a second correct reason (find the best animals, find waste, plan)",
+            "Gives a third correct reason",
+            "Names two kinds of record (production, feed, health, expenses, income)"
+          ],
+          "modelAnswer": "Records show whether the farm makes a profit or a loss. They help the farmer find the best animals and see where money is wasted, and they help him plan for the next season. Two kinds of record are production records and expense records.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Records tell the farmer if he is making profit or loss. They help him find the animals that are the best and where he wastes money. They also help him to plan for the next season. Two records are the production record and the expense record.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tell the farmer if he is making profit or loss"
+                },
+                {
+                  "point": 1,
+                  "quote": "find the animals that are the best"
+                },
+                {
+                  "point": 2,
+                  "quote": "help him to plan for the next season"
+                },
+                {
+                  "point": 3,
+                  "quote": "the production record and the expense record"
+                }
+              ],
+              "feedback": "Three reasons and two kinds of record, all correct."
+            },
+            {
+              "tier": "full",
+              "text": "A farmer keeps records to know his profit, to find where he is spending too much money, and to show the bank when he wants a loan. The records he keeps include income records and feed records.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to know his profit"
+                },
+                {
+                  "point": 1,
+                  "quote": "to find where he is spending too much money"
+                },
+                {
+                  "point": 2,
+                  "quote": "to show the bank when he wants a loan"
+                },
+                {
+                  "point": 3,
+                  "quote": "income records and feed records"
+                }
+              ],
+              "feedback": "Complete. Mentioning a bank loan is a practical reason."
+            },
+            {
+              "tier": "partial",
+              "text": "To know the profit. The records are production and health.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "To know the profit"
+                },
+                {
+                  "point": 3,
+                  "quote": "production and health"
+                }
+              ],
+              "feedback": "One reason and two records are right. Add two more reasons, for example finding wasted money and planning for the next season."
+            },
+            {
+              "tier": "partial",
+              "text": "They help to find the best animals and to plan for next season. They are written in a book.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "find the best animals"
+                },
+                {
+                  "point": 2,
+                  "quote": "plan for next season"
+                }
+              ],
+              "feedback": "Two reasons are right. Add that records show profit or loss, and name two kinds of record."
+            },
+            {
+              "tier": "weak",
+              "text": "Records are kept so that the farmer will have something to read in the evening.",
+              "meets": [],
+              "feedback": "Records have a purpose: they show profit or loss, the best animals and where money is wasted."
+            },
+            {
+              "tier": "weak",
+              "text": "A farmer does not need records because he knows his animals.",
+              "meets": [],
+              "feedback": "Memory is not reliable for numbers. Records give facts about money, production and health, and help the farmer to decide."
+            }
+          ]
+        },
+        {
+          "prompt": "Mrs Okonkwo keeps 100 layers. In one month her records show: eggs laid 2,400; each crate has 30 eggs and sells for ₦5,400; feed cost ₦270,000, drugs ₦15,000 and labour ₦40,000. (a) How many crates did she sell? (b) What was her total income? (c) What were her total expenses? (d) What was her profit or loss? (e) Which expense is the biggest, and what could she do about it?",
+          "markScheme": [
+            "2,400 ÷ 30 = 80 crates",
+            "Income = 80 × 5,400 = ₦432,000",
+            "Expenses = 270,000 + 15,000 + 40,000 = ₦325,000",
+            "Profit = 432,000 − 325,000 = ₦107,000, and feed is the biggest expense (suggests reducing feed cost)"
+          ],
+          "modelAnswer": "(a) 2,400 ÷ 30 = 80 crates. (b) Income = 80 × 5,400 = ₦432,000. (c) Expenses = 270,000 + 15,000 + 40,000 = ₦325,000. (d) Profit = 432,000 − 325,000 = ₦107,000. (e) Feed is the biggest expense, so she could look for a cheaper supplier or reduce waste of feed.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 2,400 ÷ 30 = 80 crates. (b) 80 × 5,400 = ₦432,000. (c) 270,000 + 15,000 + 40,000 = ₦325,000. (d) 432,000 − 325,000 = ₦107,000 profit. (e) The feed is the biggest expense, so she can look for a cheaper supplier or stop feed from being wasted.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2,400 ÷ 30 = 80 crates"
+                },
+                {
+                  "point": 1,
+                  "quote": "80 × 5,400 = ₦432,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "270,000 + 15,000 + 40,000 = ₦325,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "432,000 − 325,000 = ₦107,000 profit"
+                }
+              ],
+              "feedback": "Every step is correct and each answer has its unit."
+            },
+            {
+              "tier": "full",
+              "text": "She sold 2,400 divided by 30 which is 80 crates. Her income is 80 times ₦5,400 which is ₦432,000. Her expenses are ₦270,000 plus ₦15,000 plus ₦40,000 which is ₦325,000. Her profit is ₦432,000 minus ₦325,000 which is ₦107,000. Feed is the biggest expense and she can try to buy it cheaper.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2,400 divided by 30 which is 80 crates"
+                },
+                {
+                  "point": 1,
+                  "quote": "80 times ₦5,400 which is ₦432,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "₦270,000 plus ₦15,000 plus ₦40,000 which is ₦325,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "₦432,000 minus ₦325,000 which is ₦107,000"
+                }
+              ],
+              "feedback": "Full marks, and you found the biggest expense too."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 80 crates. (b) ₦432,000. (c) ₦325,000. (d) ₦757,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "80 crates"
+                },
+                {
+                  "point": 1,
+                  "quote": "₦432,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "₦325,000"
+                }
+              ],
+              "feedback": "The first three are right. Profit is income minus expenses, not plus: 432,000 − 325,000 = ₦107,000. Also say which expense is the biggest."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 80 crates. (b) 80 × 5,400 = ₦432,000. (c) ₦270,000. (d) ₦162,000 profit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "80 crates"
+                },
+                {
+                  "point": 1,
+                  "quote": "80 × 5,400 = ₦432,000"
+                }
+              ],
+              "feedback": "The crates and income are right. The total expenses must include drugs and labour: 270,000 + 15,000 + 40,000 = ₦325,000, so the profit is ₦107,000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 2,400 crates. (b) ₦5,400. (c) ₦40,000. (d) A loss.",
+              "meets": [],
+              "feedback": "Divide the eggs by 30 to get crates: 80. Multiply by the price for the income. Add all the expenses, then subtract from income to find the profit of ₦107,000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 30 crates. (b) ₦270,000. (c) ₦432,000. (d) Profit of ₦100.",
+              "meets": [],
+              "feedback": "You mixed up the income and expenses. Income is the money from the eggs (₦432,000) and expenses are what she spent (₦325,000)."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
