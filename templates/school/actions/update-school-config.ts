@@ -14,10 +14,25 @@ import {
 } from "../shared/school-week.js";
 import { schoolLocale } from "../shared/dates.js";
 import { reservedWeeksForTerm, termWeekCount } from "../shared/term-weeks.js";
+import { AGENT_AUDIENCES } from "../shared/agent-settings.js";
+import { ensureAgentSettings } from "../server/lib/agent-settings-store.js";
+import {
+  agentModelChoices,
+  isAgentModelChoice,
+} from "../server/lib/agent-models.js";
+
+const perAudience = <T extends z.ZodTypeAny>(v: T) =>
+  z
+    .object({
+      learner: v.optional(),
+      teacher: v.optional(),
+      admin: v.optional(),
+    })
+    .optional();
 
 export default defineAction({
   description:
-    "Update the school's configuration: grading scale, term structure, grade prefix, pass mark, assessment terminology, timezone, locale, or custom label overrides. Pass only the fields you want to change — others are merged.",
+    "Update the school's configuration: grading scale, term structure, grade prefix, pass mark, assessment terminology, timezone, locale, custom label overrides, or the assistant's settings (`agent`: learners on/off school-wide and per year group, model and daily message limit per role). Pass only the fields you want to change — others are merged.",
   schema: z.object({
     gradingScale: jsonish(
       z.object({
@@ -217,6 +232,32 @@ export default defineAction({
       .describe(
         'How dates and numbers are written — a BCP 47 tag such as "en-NG", "en-GB", "fr-CI". Months are always spelled out, so this decides the order, not whether a date can be misread.',
       ),
+    agent: jsonish(
+      z.object({
+        learnerAgentEnabled: z
+          .boolean()
+          .optional()
+          .describe("The assistant for learners, school-wide."),
+        learnerAgentByYearGroup: z
+          .record(z.string(), z.boolean().nullable())
+          .optional()
+          .describe(
+            "Year groups that differ from the school-wide switch, by grade level id → true/false. null removes an override so that year group follows the switch again. Merged with what is set.",
+          ),
+        models: perAudience(z.string()).describe(
+          "The model for each of learner, teacher and admin — one of agentModelChoices from get-school-config.",
+        ),
+        dailyMessageLimits: perAudience(
+          z.number().int().min(0).nullable(),
+        ).describe(
+          "Messages a person may send the assistant in a school day, per learner/teacher/admin. null is no limit.",
+        ),
+      }),
+    )
+      .optional()
+      .describe(
+        "The school's assistant: whether learners have it (school-wide and per year group), which model each role uses, and a daily message limit per role. Pass only what changes; the rest is kept. A learner sitting a timed paper never has it, whatever is set here.",
+      ),
     customLabels: jsonish(z.record(z.string(), z.string()))
       .optional()
       .describe(
@@ -254,6 +295,37 @@ export default defineAction({
       merged.theme = {
         ...((existing.theme as Record<string, unknown>) ?? {}),
         ...args.theme,
+      };
+    }
+    if (args.agent) {
+      const before = await ensureAgentSettings(orgId);
+      const patch = args.agent as any;
+      for (const who of AGENT_AUDIENCES) {
+        const m = patch.models?.[who];
+        if (m !== undefined && !isAgentModelChoice(m)) {
+          throw new Error(
+            `Nothing was saved. "${m}" is not one of the models the school can use: ${agentModelChoices()
+              .map((c) => c.id)
+              .join(", ")}.`,
+          );
+        }
+      }
+      const byYear = { ...before.learnerAgentByYearGroup };
+      for (const [id, on] of Object.entries(
+        (patch.learnerAgentByYearGroup ?? {}) as Record<string, boolean | null>,
+      )) {
+        if (on === null) delete byYear[id];
+        else byYear[id] = on;
+      }
+      merged.agent = {
+        learnerAgentEnabled:
+          patch.learnerAgentEnabled ?? before.learnerAgentEnabled,
+        learnerAgentByYearGroup: byYear,
+        models: { ...before.models, ...stripUndefined(patch.models) },
+        dailyMessageLimits: {
+          ...before.dailyMessageLimits,
+          ...stripUndefined(patch.dailyMessageLimits),
+        },
       };
     }
     if (args.customLabels) {
@@ -336,3 +408,13 @@ export default defineAction({
     };
   },
 });
+
+function stripUndefined<T extends Record<string, unknown>>(
+  o: T | undefined,
+): Partial<T> {
+  const out: Partial<T> = {};
+  for (const [k, v] of Object.entries(o ?? {})) {
+    if (v !== undefined) (out as any)[k] = v;
+  }
+  return out;
+}

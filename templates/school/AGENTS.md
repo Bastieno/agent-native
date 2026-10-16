@@ -675,6 +675,43 @@ When asked "How is Grade 9 performing?":
 3. `identify-struggling-students --gradeLevel "Grade 9" --threshold 0.5`
 4. Present structured report with class averages, distribution, weak units, at-risk students, and recommendation
 
+### A4b. The assistant's settings
+
+The admin decides who has you, on which model, and how many messages a day.
+It lives in the school config under `agent`, read with `get-school-config`
+(plus `agentModelChoices`) and changed with
+`update-school-config --agent '{...}'`, admin only. An admin finds it at
+Settings → Assistant: the learner switch first, year groups, models and
+limits under Advanced.
+
+```bash
+pnpm action update-school-config --agent '{"learnerAgentEnabled":false}'
+pnpm action update-school-config --agent '{"learnerAgentByYearGroup":{"<gradeLevelId>":true}}'  # null removes it
+pnpm action update-school-config --agent '{"models":{"learner":"claude-haiku-4-5"},"dailyMessageLimits":{"learner":30,"admin":null}}'
+pnpm action get-my-agent-access   # whether the signed-in person has you now, and why not
+```
+
+- **Learners on or off**, school-wide, with a year group allowed to differ. A
+  learner with it off does not see you at all; their messages are refused on
+  the server.
+- **Never while sitting a paper.** A learner who has started a timed paper and
+  not handed it in gets a short reply instead of you, whatever is set; you are
+  back once they submit or the time runs out. Untimed work is not affected.
+- **Model per role** (learner, teacher, admin), from `agentModelChoices` only.
+  Defaults: Haiku for learners, Sonnet for staff. The server forces it; a
+  learner's model picker changes nothing.
+- **Every value is the school's own.** The defaults below are written into
+  the school's config once — at setup, or the first time an older school's
+  settings are read — and from then on only the stored values are enforced.
+  No limit is a stored `null`.
+- **Daily limit per role**, counted per person per school day in the
+  school's timezone (Africa/Lagos when unset). Defaults: learner 30, teacher
+  200, admin none. Past it the person gets a calm reply in the chat.
+
+When an admin asks to change any of this, say what learners will notice ("JSS1
+will lose the assistant from their next message"), confirm, then set it. The
+refusals are the app's, not yours: you never see a refused message.
+
 ### A5. School Customization
 
 #### Adding custom fields
@@ -725,22 +762,22 @@ Extensions are org-scoped so all staff see them.
 
 ### A6. Navigation Map (Admin)
 
-| User says                       | Navigate to                                                                                        |
-| ------------------------------- | -------------------------------------------------------------------------------------------------- |
-| "overview", "home", "dashboard" | `navigate --view=overview`                                                                         |
-| "curriculum"                    | `navigate --view=curriculum`                                                                       |
-| "what's missing for JSS1?"      | `navigate --view=curriculum --gradeLevelId <id>` — only that year group's subjects, counted for it |
-| "show me the Maths curriculum"  | `navigate --view=curriculum --subjectId <id> [--gradeLevelId <id>]`                                |
-| "set up curriculum"             | `navigate --view=curriculum-setup`                                                                 |
-| "staff", "teachers"             | `navigate --view=staff`                                                                            |
-| "students", "roster"            | `navigate --view=students`                                                                         |
-| "classes"                       | `navigate --view=classes`                                                                          |
-| "arms", "SS1A"                  | `navigate --view=arms` — the arms tab of Classes                                                   |
-| "timetable"                     | `navigate --view=timetable [--termId <id>] [--armId <id> \| --teacherUserId <id> \| --room "..."]` |
-| "lesson notes", "who's behind?" | `navigate --view=lessons` — readiness per class; add `--classId` for one, `--lessonId` for a note  |
-| "analytics", "performance"      | `navigate --view=analytics`                                                                        |
-| "settings", "configure"         | `navigate --view=settings`                                                                         |
-| "extensions", "widgets"         | `navigate --view=extensions`                                                                       |
+| User says                       | Navigate to                                                                                         |
+| ------------------------------- | --------------------------------------------------------------------------------------------------- |
+| "overview", "home", "dashboard" | `navigate --view=overview`                                                                          |
+| "curriculum"                    | `navigate --view=curriculum`                                                                        |
+| "what's missing for JSS1?"      | `navigate --view=curriculum --gradeLevelId <id>` — only that year group's subjects, counted for it  |
+| "show me the Maths curriculum"  | `navigate --view=curriculum --subjectId <id> [--gradeLevelId <id>]`                                 |
+| "set up curriculum"             | `navigate --view=curriculum-setup`                                                                  |
+| "staff", "teachers"             | `navigate --view=staff`                                                                             |
+| "students", "roster"            | `navigate --view=students`                                                                          |
+| "classes"                       | `navigate --view=classes`                                                                           |
+| "arms", "SS1A"                  | `navigate --view=arms` — the arms tab of Classes                                                    |
+| "timetable"                     | `navigate --view=timetable [--termId <id>] [--armId <id> \| --teacherUserId <id> \| --room "..."]`  |
+| "lesson notes", "who's behind?" | `navigate --view=lessons` — readiness per class; add `--classId` for one, `--lessonId` for a note   |
+| "analytics", "performance"      | `navigate --view=analytics`                                                                         |
+| "settings", "configure"         | `navigate --view=settings` (`settingsTab: assistant` in `<current-screen>` means the Assistant tab) |
+| "extensions", "widgets"         | `navigate --view=extensions`                                                                        |
 
 ---
 
@@ -1263,6 +1300,7 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 | `setup-school`                                 | `--name --type`                                                                                                                                          |
 | `get-school-config`                            |                                                                                                                                                          |
 | `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels --schoolWeek '{cycleLength,days:[{day,periods:[...]}]}' --rooms '[{name,kind}]'` |
+| `get-my-agent-access`                          | — whether the signed-in person has the assistant now; `blocked` is off, sitting or limit, with messages used and the day's limit                         |
 | `get-custom-fields-schema`                     |                                                                                                                                                          |
 | `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                                                                                |
 | `list-academic-years` / `create-academic-year` | `--name --startDate --endDate [--setActive]` — upcoming unless `--setActive` or the school has no current year                                           |

@@ -1,6 +1,12 @@
 import { Outlet, useNavigate } from "react-router";
-import { useEffect } from "react";
-import { AgentSidebar, AgentToggleButton } from "@agent-native/core/client";
+import { useEffect, type ReactNode } from "react";
+import { useQuery } from "@tanstack/react-query";
+import {
+  AgentSidebar,
+  AgentToggleButton,
+  agentNativePath,
+} from "@agent-native/core/client";
+import { setAgentWatching } from "@/lib/agent-availability";
 import { getSchoolSuggestions } from "@/lib/school-suggestions";
 import { SchoolTheme } from "@/components/SchoolTheme";
 import { StudentNav } from "@/components/layout/StudentNav";
@@ -32,13 +38,40 @@ export default function StudentLayout() {
     else if (nav.view === "week") navigate("/student/week");
   }, [command.data, clearCommand, navigate]);
 
+  // Whether the school gives this learner the assistant. Until the answer is
+  // in, nothing agent-shaped mounts: a learner whose year group has it
+  // switched off must not see it flash up, nor start its background polling.
+  // A paper being sat or a used-up day still mounts it — the server answers
+  // those calmly in the chat, and unmounting mid-paper would reload the page
+  // around the learner's answers.
+  const { data: access, isPending: accessPending } = useQuery<{
+    available: boolean;
+    blocked: "off" | "sitting" | "limit" | null;
+  }>({
+    queryKey: ["my-agent-access"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-my-agent-access"),
+      );
+      if (!res.ok) throw new Error(`agent access unavailable (${res.status})`);
+      return res.json();
+    },
+    enabled: role === "student",
+    staleTime: 60_000,
+  });
+  const agentOn = !!access && access.blocked !== "off";
+  useEffect(() => {
+    setAgentWatching(agentOn);
+    return () => setAgentWatching(true);
+  }, [agentOn]);
+
   useEffect(() => {
     if (!isLoading && role !== "student") {
       navigate("/");
     }
   }, [isLoading, role, navigate]);
 
-  if (isLoading) {
+  if (isLoading || (role === "student" && accessPending)) {
     return (
       <div className="flex h-screen items-center justify-center">
         <DefaultSpinner />
@@ -49,21 +82,11 @@ export default function StudentLayout() {
     return null;
   }
 
-  return (
-    <AgentSidebar
-      emptyStateText="Ask me for help with your assignments!"
-      dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
-      // Side by side only on a large desktop. On a tablet the panel would
-      // take half the screen before the student has asked anything, leaving
-      // too little room to read a question or write an answer.
-      overlayBreakpointPx={1279}
-      defaultOpen={
-        typeof window !== "undefined" ? window.innerWidth >= 1280 : false
-      }
-    >
+  const page = (
+    <>
       <SchoolTheme />
       <div className="flex h-screen flex-col overflow-hidden bg-background">
-        <StudentNav />
+        <StudentNav agent={agentOn} />
         {/* A measure, not the whole window.
             
             Every student page ran the full width of the screen, so a question
@@ -79,8 +102,31 @@ export default function StudentLayout() {
         </main>
         {/* Small screens only. Above xl the nav bar carries the toggle, the
             way the admin and teacher sidebars do. */}
-        <AgentToggleButton className="fixed bottom-6 right-6 z-30 h-12 w-12 rounded-full border bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:text-primary-foreground xl:hidden" />
+        {agentOn ? (
+          <AgentToggleButton className="fixed bottom-6 right-6 z-30 h-12 w-12 rounded-full border bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:text-primary-foreground xl:hidden" />
+        ) : null}
       </div>
+    </>
+  );
+
+  if (!agentOn) return page;
+  return <StudentAgent>{page}</StudentAgent>;
+}
+
+function StudentAgent({ children }: { children: ReactNode }) {
+  return (
+    <AgentSidebar
+      emptyStateText="Ask me for help with your assignments!"
+      dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
+      // Side by side only on a large desktop. On a tablet the panel would
+      // take half the screen before the student has asked anything, leaving
+      // too little room to read a question or write an answer.
+      overlayBreakpointPx={1279}
+      defaultOpen={
+        typeof window !== "undefined" ? window.innerWidth >= 1280 : false
+      }
+    >
+      {children}
     </AgentSidebar>
   );
 }

@@ -6,6 +6,7 @@ import { getOrgContext } from "@agent-native/core/org";
 import { appStateGet } from "@agent-native/core/application-state";
 import actionsRegistry from "../../.generated/actions-registry.js";
 import { guardActions } from "../lib/guard-actions.js";
+import { gateAgentMessage } from "../lib/agent-gate.js";
 
 export default createAgentChatPlugin({
   // Every action is role-checked. This map backs both the agent's tools and
@@ -13,6 +14,20 @@ export default createAgentChatPlugin({
   actions: guardActions(loadActionsFromStaticRegistry(actionsRegistry)),
   appId: "school",
   model: "claude-haiku-4-5",
+  // The admin decides who has the assistant, on which model and how many
+  // messages a day (Settings → Assistant). Enforced here, per message, so a
+  // learner cannot get round it by picking a model or calling the endpoint
+  // directly: a switched-off learner, one sitting a paper and one over the
+  // day's limit get a calm reply and no model is called.
+  prepareRequest: async ({ event, ownerEmail, internalContinuation }) => {
+    let orgId: string | null = null;
+    try {
+      orgId = (await getOrgContext(event)).orgId ?? null;
+    } catch {
+      // The person's own school profile names the school anyway.
+    }
+    return gateAgentMessage({ ownerEmail, orgId, internalContinuation });
+  },
   // A school org holds every student, teacher and grade. The framework's SQL
   // tools are org-scoped, which would let any signed-in student read the whole
   // school. Data access goes through role-checked actions only.
@@ -28,6 +43,7 @@ export default createAgentChatPlugin({
       const lines: string[] = ["<current-screen>"];
       if (nav.role) lines.push(`role: ${nav.role}`);
       if (nav.view) lines.push(`view: ${nav.view}`);
+      if (nav.settingsTab) lines.push(`settingsTab: ${nav.settingsTab}`);
       if (nav.classId) lines.push(`classId: ${nav.classId}`);
       if (nav.className) lines.push(`className: ${nav.className}`);
       if (nav.lessonId) lines.push(`lessonId: ${nav.lessonId}`);

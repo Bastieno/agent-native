@@ -898,6 +898,13 @@ export default runMigrations(
       version: 89,
       sql: `CREATE TABLE IF NOT EXISTS timetable_proposals (id TEXT PRIMARY KEY, school_id TEXT NOT NULL, term_id TEXT NOT NULL, created_by_user_id TEXT, created_at TEXT NOT NULL DEFAULT (datetime('now')), base_fingerprint TEXT NOT NULL, lessons_json TEXT NOT NULL DEFAULT '[]', unplaced_json TEXT NOT NULL DEFAULT '[]', summary_json TEXT NOT NULL DEFAULT '{}', status TEXT NOT NULL DEFAULT 'open', owner_email TEXT, org_id TEXT, visibility TEXT NOT NULL DEFAULT 'private')`,
     },
+    // How many messages each person sent the assistant on a school day, so
+    // the admin's daily limit holds across devices and restarts. One row per
+    // person per day; the id is "<userId>:<YYYY-MM-DD>".
+    {
+      version: 90,
+      sql: `CREATE TABLE IF NOT EXISTS agent_message_usage (id TEXT PRIMARY KEY, school_id TEXT NOT NULL, user_id TEXT NOT NULL, day TEXT NOT NULL, count INTEGER NOT NULL DEFAULT 0, updated_at TEXT NOT NULL)`,
+    },
   ],
   { table: "school_migrations" },
 );

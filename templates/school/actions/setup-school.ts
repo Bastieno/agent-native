@@ -7,6 +7,7 @@ import { eq, and } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { sql } from "drizzle-orm";
 import { z } from "zod";
+import { ensureAgentSettings } from "../server/lib/agent-settings-store.js";
 import { withOrgSettingLock } from "../server/lib/org-setting-lock.js";
 import { applyInvitedName } from "../server/lib/user-names.js";
 
@@ -135,6 +136,10 @@ export default defineAction({
       timezone: args.timezone ?? "UTC",
       country: args.country ?? "",
     });
+
+    // The assistant's settings start as the defaults, written into the
+    // school's own config so the admin edits the values that are enforced.
+    await ensureAgentSettings(orgId);
 
     // Invalidate all UI caches so the admin overview reflects the new school immediately
     await writeAppState("refresh-signal", { ts: Date.now() });

@@ -1928,6 +1928,12 @@ export interface AgentChatPluginOptions {
    * Optional per-template request normalizer. Runs after authentication and
    * before the model sees the message, so apps can translate chat attachments
    * into template-native file handles while preserving the user's visible text.
+   *
+   * It may also return `model` to run the turn on a model of the app's
+   * choosing — the client's model and engine picks are then ignored, which is
+   * how an app keeps a role on a cheaper model — or `reply` to answer with a
+   * fixed message without calling a model (a switched-off agent, a used-up
+   * allowance).
    */
   prepareRequest?: (details: {
     event: any;
@@ -1945,11 +1951,17 @@ export interface AgentChatPluginOptions {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        /** Run this turn on this model, whatever the client picked. */
+        model?: string;
+        /** Answer with this text and do not run the model at all. */
+        reply?: string;
       }
     | Promise<void | {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        model?: string;
+        reply?: string;
       }>;
   /**
    * Use ONLY the template's `systemPrompt` and the actions list — skip the

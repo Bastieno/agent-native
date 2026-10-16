@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import type { Room, SchoolWeek } from "@shared/school-week";
+import type { AgentSettings } from "@shared/agent-settings";
 
 export interface GradingLevel {
   grade: string; // e.g. "A", "B", "C"
@@ -35,6 +36,10 @@ export interface SchoolConfig {
   /** The school's own bells and rooms, once they have set them. */
   schoolWeek?: SchoolWeek | null;
   rooms?: Room[];
+  /** The assistant's settings, defaults filled in by the server. */
+  agent?: AgentSettings;
+  /** The models an admin may choose for the assistant. */
+  agentModelChoices?: Array<{ id: string; label: string; note: string }>;
 }
 
 const DEFAULT_CONFIG: SchoolConfig = {

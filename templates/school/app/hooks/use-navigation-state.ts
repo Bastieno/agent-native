@@ -2,6 +2,7 @@ import { useRef, useCallback } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { TAB_ID } from "@/lib/tab-id";
+import { useAgentWatching } from "@/lib/agent-availability";
 
 // ─── Navigation state shapes per role ────────────────────────────────────────
 
@@ -40,6 +41,8 @@ export interface AdminNav {
   selectedCell?: { day: number; periodNumber: number };
   /** Which tab of the Classes page is open. */
   tab?: "classes" | "arms";
+  /** Which tab of Settings is open — "assistant" for the assistant's settings. */
+  settingsTab?: string;
   /** The class whose lesson notes are open. */
   classId?: string;
   /** The year group open on a subject's curriculum page. */
@@ -124,6 +127,7 @@ async function apiFetch<T>(url: string, options?: RequestInit): Promise<T> {
 export function useNavigationState() {
   const qc = useQueryClient();
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const agentWatching = useAgentWatching();
 
   // Write-only: UI syncs its current state so the agent can read it
   const putMutation = useMutation({
@@ -166,6 +170,8 @@ export function useNavigationState() {
       return null;
     },
     refetchInterval: 2_000,
+    // No assistant, no commands to wait for.
+    enabled: agentWatching,
     structuralSharing: false,
   });
 

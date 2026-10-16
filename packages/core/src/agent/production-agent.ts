@@ -556,6 +556,12 @@ export interface ProductionAgentOptions {
    * Optional per-template request normalizer. Runs after owner resolution and
    * before system/context assembly so templates can materialize uploaded chat
    * attachments or append app-specific, non-visible instructions.
+   *
+   * It may also return `model` to run the turn on a model of the app's
+   * choosing — the client's model and engine picks are then ignored, which is
+   * how an app keeps a role on a cheaper model — or `reply` to answer with a
+   * fixed message without calling a model (a switched-off agent, a used-up
+   * allowance).
    */
   prepareRequest?: (details: {
     event: any;
@@ -573,11 +579,17 @@ export interface ProductionAgentOptions {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        /** Run this turn on this model, whatever the client picked. */
+        model?: string;
+        /** Answer with this text and do not run the model at all. */
+        reply?: string;
       }
     | Promise<void | {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        model?: string;
+        reply?: string;
       }>;
   /** Optional per-app agent run chunk budget in milliseconds. Defaults to
    *  AGENT_RUN_SOFT_TIMEOUT_MS when set, otherwise no framework-imposed
@@ -1973,7 +1985,7 @@ export function createProductionAgentHandler(
       displayMessage,
       internalContinuation,
       model: requestModel,
-      engine: requestEngine,
+      engine: clientRequestEngine,
       effort: requestEffort,
       browserTabId,
       scope,
@@ -2027,6 +2039,35 @@ export function createProductionAgentHandler(
         requestAttachments = preparedRequest.attachments;
       }
     }
+    const preparedReply = preparedRequest ? preparedRequest.reply : undefined;
+    if (typeof preparedReply === "string" && preparedReply.trim().length > 0) {
+      const reply = preparedReply;
+      setResponseHeader(event, "Content-Type", "text/event-stream");
+      setResponseHeader(event, "Cache-Control", "no-cache");
+      setResponseHeader(event, "Connection", "keep-alive");
+      const encoder = new TextEncoder();
+      return new ReadableStream({
+        start(controller) {
+          controller.enqueue(
+            encoder.encode(
+              `data: ${JSON.stringify({ type: "text", text: reply })}\n\n`,
+            ),
+          );
+          controller.enqueue(
+            encoder.encode(`data: ${JSON.stringify({ type: "done" })}\n\n`),
+          );
+          controller.close();
+        },
+      });
+    }
+    // An app-forced model also pins the engine to the app's own, so a client
+    // cannot route around it by picking another provider.
+    const preparedModel = preparedRequest ? preparedRequest.model : undefined;
+    const forcedModel =
+      typeof preparedModel === "string" && preparedModel
+        ? preparedModel
+        : undefined;
+    const requestEngine = forcedModel ? undefined : clientRequestEngine;
 
     // Pre-upload chat image attachments through the framework file-upload
     // provider (Builder.io by default). The model still sees the base64
@@ -2091,7 +2132,7 @@ export function createProductionAgentHandler(
       engine = await resolveEngine({
         engineOption: requestEngine ?? options.engine,
         apiKey: effectiveApiKey,
-        model: configuredModel,
+        model: forcedModel ?? configuredModel,
         appId: options.appId,
       });
     } catch {
@@ -2107,6 +2148,7 @@ export function createProductionAgentHandler(
     // dropdown change in the UI takes effect without a server restart. Skip
     // the DB read entirely when a higher-precedence value is set.
     const model =
+      forcedModel ??
       requestModel ??
       configuredModel ??
       (await getStoredModelForEngine(engine, { appId: options.appId })) ??
@@ -2119,6 +2161,9 @@ export function createProductionAgentHandler(
     );
 
     options.onEngineResolved?.(engine, model);
+    // Which model this turn runs on, for whoever is checking that an app's
+    // model policy held (the client's pick may have been overridden).
+    setResponseHeader(event, "X-Agent-Model", model);
 
     // One-line per-turn resolution log so it's obvious in dev which engine
     // is actually handling the request. `requestEngine` is what the client

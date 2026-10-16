@@ -28,6 +28,7 @@ import {
 import { SchoolWeekEditor } from "@/components/timetable/SchoolWeekEditor";
 import { RoomsEditor } from "@/components/timetable/RoomsEditor";
 import { SchoolCrestField } from "@/components/SchoolCrestField";
+import { AssistantSettings } from "@/components/settings/AssistantSettings";
 import { useSchoolDates } from "@/hooks/use-school-dates";
 import { describeField, entityPhrase } from "@shared/custom-field-words";
 
@@ -54,9 +55,11 @@ export default function AdminSettings() {
   const [guideContent, setGuideContent] = useState("");
   const [guideSaving, setGuideSaving] = useState(false);
 
+  // Which tab is open is part of what the agent can see.
+  const [tab, setTab] = useState("grading");
   useEffect(() => {
-    sync({ role: "admin", view: "settings" });
-  }, [sync]);
+    sync({ role: "admin", view: "settings", settingsTab: tab });
+  }, [sync, tab]);
 
   const { data: guideData } = useQuery<{
     content: string | null;
@@ -191,7 +194,7 @@ export default function AdminSettings() {
             Configure your school's grading system, terminology, and structure.
           </p>
         </div>
-        <Tabs defaultValue="grading">
+        <Tabs value={tab} onValueChange={setTab}>
           <TabsList>
             <TabsTrigger value="grading">Grading</TabsTrigger>
             <TabsTrigger value="terms">Terms</TabsTrigger>
@@ -201,7 +204,12 @@ export default function AdminSettings() {
             <TabsTrigger value="labels">Terminology</TabsTrigger>
             <TabsTrigger value="branding">Branding</TabsTrigger>
             <TabsTrigger value="guide">School Guide</TabsTrigger>
+            <TabsTrigger value="assistant">Assistant</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="assistant" className="mt-4">
+            <AssistantSettings />
+          </TabsContent>
 
           <TabsContent value="branding" className="mt-4 space-y-4">
             <div className="space-y-3 rounded-lg border bg-card p-4">

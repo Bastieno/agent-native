@@ -20,6 +20,7 @@
     "journey:compare": "tsx test/sim/compare.ts",
     "journey:assumptions": "tsx test/sim/assumptions.ts",
     "journey:mcp-setup": "tsx test/sim/run-mcp-setup.ts",
+    "journey:agent-access": "tsx test/sim/run-agent-access.ts",
     "showcase:school": "tsx test/sim/run-showcase.ts",
     "showcase:check-content": "tsx test/sim/showcase/check-content.ts",
     "showcase:reset": "rm -f data/showcase.db data/showcase.db-wal data/showcase.db-shm",

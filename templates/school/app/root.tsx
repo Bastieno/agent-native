@@ -101,6 +101,8 @@ function DbSyncSetup() {
       "my-progress",
       "gradebook",
       "announcements",
+      // The admin switching the assistant off reaches a learner's open tab.
+      "my-agent-access",
     ],
     ignoreSource: TAB_ID,
   });

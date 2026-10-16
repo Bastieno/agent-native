@@ -24,7 +24,7 @@ const navItems = [
   { href: "/student/progress", label: "Progress", icon: IconChartBar },
 ];
 
-export function StudentNav() {
+export function StudentNav({ agent = true }: { agent?: boolean }) {
   const { config } = useSchoolConfig();
   const schoolName =
     (config as any)?.theme?.displayName ??
@@ -71,7 +71,9 @@ export function StudentNav() {
       {/* The student portal has no sidebar, so this is where the agent is
           opened and closed — the floating bubble only covers small screens.
           Without it, closing the panel on a wide screen left no way back. */}
-      <AgentToggleButton className="hidden shrink-0 xl:inline-flex" />
+      {agent ? (
+        <AgentToggleButton className="hidden shrink-0 xl:inline-flex" />
+      ) : null}
       <button
         type="button"
         onClick={async () => {
