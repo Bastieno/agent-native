@@ -1,0 +1,2907 @@
+{
+  "subject": "Commerce",
+  "yearGroup": "SS2",
+  "weeks": {
+    "1": {
+      "topic": "Price quotations, discounts and ways of paying",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain trade, cash and quantity discounts and calculate with them;\n2. interpret price quotation terms: COD, CWO, CIF, FOB, E & OE, ex-works, loco, FAS, FOR and franco;\n3. distinguish cash (spot) payment, purchase on credit and deferred payment;\n4. describe the means of payment: legal tender, cheque, standing order, bank draft, postal order, money order, bill of exchange, promissory note, mail transfer, traveller's cheque, telegraphic transfer and e-payment.\n\n## Materials\n\nA real cheque (cancelled), a postal order form, a printed price list, calculators, flash cards with the quotation terms.\n\n## Starter (5 minutes)\n\nAsk: a shop in Alaba says a television costs N180,000 but you pay N171,000. How? Draw out the idea of discount.\n\n## Development\n\n1. A price quotation tells the buyer the price and the terms of sale. It can include the cost of carriage, insurance and loading.\n2. Discounts: trade discount (from the list price, for traders), quantity discount (for large orders), cash discount (for prompt payment).\n3. Terms: CWO and COD; ex-works (buyer collects at the factory); loco (at the place of production); FOR (free on rail); FAS (free alongside ship); FOB (free on board, seller pays until loaded); CIF (cost, insurance and freight to the port of destination); franco (carriage-paid delivery); E & OE (errors and omissions excepted).\n4. Terms of payment: cash, credit, deferred (instalments, hire purchase).\n5. Means of payment: go through each, say who issues it and how it is used.\n\n## Class activity\n\nPairs prepare a quotation for 50 bags of cement, applying a trade discount of 10% and a cash discount of 2%.\n\n## Evaluation\n\n1. A price list says N80,000 less 15% trade discount. Find the price.\n2. What does FOB mean?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Quoting a price and settling the bill",
+        "content": "# Price quotations and payment\n\n## The price quotation\n\nA **quotation** is a seller's statement of the price and terms on which he will supply goods. It may contain **discounts** and terms about who pays for carriage and insurance.\n\n## Discounts\n\n- **Trade discount**: a reduction from the list (catalogue) price given to traders buying for resale.\n- **Quantity discount**: an extra reduction for buying a large amount.\n- **Cash discount**: a reduction for paying promptly, within a stated period.\n\n**Worked example.** A list price of N60,000 with a trade discount of 25% gives 60,000 - 15,000 = N45,000. A cash discount of 5% for payment within 14 days is 5% of 45,000 = N2,250, so the buyer pays 45,000 - 2,250 = N42,750.\n\n## Terms in quotations\n\n| Term | Meaning |\n| --- | --- |\n| CWO | Cash with order: the buyer pays when ordering |\n| COD | Cash on delivery: the buyer pays when goods arrive |\n| Ex-works | Price at the factory; the buyer pays carriage |\n| Loco | Price at the place where the goods are located |\n| FOR | Free on rail: seller pays to put goods on the train |\n| FAS | Free alongside ship: seller pays to bring goods beside the ship |\n| FOB | Free on board: seller pays until the goods are loaded on the ship |\n| CIF | Cost, insurance and freight: seller pays all costs to the destination port |\n| Franco | The price includes delivery to the buyer's premises |\n| E & OE | Errors and omissions excepted: the seller may correct mistakes in the quotation |\n\n## Terms of payment\n\n**Cash (spot)** payment is made at once. **Purchase on credit** means paying later at an agreed date. **Deferred payment** means paying in instalments, as in hire purchase.\n\n## Means of payment\n\n- **Legal tender**: notes and coins which must be accepted for debts.\n- **Cheque**: a written order to a bank to pay a stated sum to a named person.\n- **Standing order**: an instruction to a bank to pay a fixed amount regularly.\n- **Bank draft**: a cheque drawn by a bank on itself.\n- **Postal orders and money orders**: bought at the post office and sent to the payee.\n- **Bill of exchange and promissory note**: written promises to pay a sum on a future date.\n- **Mail transfer and telegraphic transfer**: a bank instructs another bank by letter or electronic message to pay.\n- **Traveller's cheque**: used abroad, safer than cash.\n- **E-payment**: payment by card, mobile app or internet transfer."
+      },
+      "cards": [
+        {
+          "front": "Trade discount",
+          "back": "A reduction from the list price given to traders who buy for resale."
+        },
+        {
+          "front": "Cash discount",
+          "back": "A reduction for paying promptly."
+        },
+        {
+          "front": "Quantity discount",
+          "back": "A reduction for buying a large amount."
+        },
+        {
+          "front": "CWO",
+          "back": "Cash with order: payment made when the order is placed."
+        },
+        {
+          "front": "COD",
+          "back": "Cash on delivery: payment made when the goods arrive."
+        },
+        {
+          "front": "FOB",
+          "back": "Free on board: the seller pays until the goods are loaded on the ship."
+        },
+        {
+          "front": "CIF",
+          "back": "Cost, insurance and freight: the seller pays these to the destination port."
+        },
+        {
+          "front": "E & OE",
+          "back": "Errors and omissions excepted: the seller may correct mistakes."
+        },
+        {
+          "front": "Standing order",
+          "back": "An instruction to a bank to pay a fixed sum regularly."
+        },
+        {
+          "front": "Bank draft",
+          "back": "A cheque drawn by a bank on itself."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A wholesaler lists goods at N60,000 and allows a trade discount of 25%. The amount on the invoice is",
+          "options": [
+            "N15,000",
+            "N35,000",
+            "N60,000",
+            "N45,000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A buyer owes N45,000 and is allowed a cash discount of 5% for payment within 14 days. How much does he pay if he pays on time?",
+          "options": [
+            "N42,750",
+            "N2,250",
+            "N47,250",
+            "N40,500"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A Lagos importer is quoted a price 'CIF Apapa'. This means the price includes",
+          "options": [
+            "only the cost of goods",
+            "the cost of goods loaded on the ship only",
+            "the cost of goods, insurance and freight to Apapa",
+            "the cost of clearing at Apapa"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A price is quoted 'FOB Port Harcourt'. The seller's responsibility ends when",
+          "options": [
+            "the goods arrive in the buyer's store",
+            "the goods are loaded on the ship at Port Harcourt",
+            "the goods are paid for",
+            "the buyer has cleared the goods at the destination"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A tenant instructs her bank to pay N30,000 to her landlord on the first day of every month. This is a",
+          "options": [
+            "bank draft",
+            "money order",
+            "standing order",
+            "promissory note"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Distinguish between CWO and COD. (b) Define (i) trade discount and (ii) cash discount.",
+          "markScheme": [
+            "CWO means the buyer pays when he places the order",
+            "COD means the buyer pays when the goods are delivered",
+            "Trade discount is a reduction from the list price given to traders who buy for resale",
+            "Cash discount is a reduction given for paying promptly"
+          ],
+          "modelAnswer": "(a) With CWO (cash with order) the buyer pays when he places the order. With COD (cash on delivery) the buyer pays when the goods arrive. (b) A trade discount is a reduction from the list price given to traders who buy for resale. A cash discount is a reduction given to a buyer who pays promptly.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) CWO is when the buyer pays at the time of ordering the goods, COD is when he pays when the goods are delivered. (b) Trade discount is a reduction from the catalogue price that the seller allows to traders who will resell, cash discount is the reduction for paying quickly in cash.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "CWO is when the buyer pays at the time of ordering the goods"
+                },
+                {
+                  "point": 1,
+                  "quote": "COD is when he pays when the goods are delivered"
+                },
+                {
+                  "point": 2,
+                  "quote": "Trade discount is a reduction from the catalogue price that the seller allows to traders who will resell"
+                },
+                {
+                  "point": 3,
+                  "quote": "cash discount is the reduction for paying quickly in cash"
+                }
+              ],
+              "feedback": "All four marks. Both pairs are clearly distinguished."
+            },
+            {
+              "tier": "full",
+              "text": "(a) In CWO, payment is made with the order, before the goods are sent. In COD, the buyer pays the carrier or seller when the goods arrive. (b) Trade discount is allowed to retailers off the list price. Cash discount is given to encourage prompt payment.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In CWO, payment is made with the order, before the goods are sent"
+                },
+                {
+                  "point": 1,
+                  "quote": "In COD, the buyer pays the carrier or seller when the goods arrive"
+                },
+                {
+                  "point": 2,
+                  "quote": "Trade discount is allowed to retailers off the list price"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cash discount is given to encourage prompt payment"
+                }
+              ],
+              "feedback": "Full marks. Saying that CWO is paid before the goods are sent shows why it is safer for the seller."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) CWO is when you pay at the time of the order and COD is when you pay. (b) Trade discount is the reduction given to traders. Cash discount is a reduction given to a customer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "CWO is when you pay at the time of the order"
+                },
+                {
+                  "point": 2,
+                  "quote": "Trade discount is the reduction given to traders"
+                }
+              ],
+              "feedback": "Your CWO and trade discount answers are right. COD is payment on delivery of the goods, and cash discount is given for prompt payment; say what the reduction is for."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) CWO is paying cash and COD is paying with a cheque. (b) Trade discount is a discount on trade. Cash discount is a reduction for paying promptly.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Cash discount is a reduction for paying promptly"
+                }
+              ],
+              "feedback": "Your cash discount is right. CWO is paying with the order and COD paying on delivery, not the means of payment. A trade discount is a reduction from list price given to traders who buy for resale."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) CWO is when a customer comes to work and COD is when he does it later. (b) Trade discount is when goods are cheap.",
+              "meets": [],
+              "feedback": "CWO and COD are terms of payment: cash with order and cash on delivery. Discounts are reductions: trade discount from list price for traders, and cash discount for prompt payment."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) COD is cash on delivery. CWO means credit with order. (b) Trade discount is the amount deducted from the profit.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "COD is cash on delivery"
+                }
+              ],
+              "feedback": "Your COD is correct. CWO means cash with order, not credit. A trade discount is deducted from the list price, not from the profit.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "A Kano rice dealer buys 200 bags of rice at a list price of N30,000 per bag. A trade discount of 10% is allowed. A quantity discount of 5% is allowed on the amount after trade discount, and a cash discount of 2% is allowed on the amount after both, for payment within 10 days. Calculate (a) the total list price, (b) the amount after trade discount, (c) the amount after quantity discount, (d) the amount paid if he pays within 10 days.",
+          "markScheme": [
+            "Total list price = 200 x 30,000 = N6,000,000",
+            "After trade discount: 6,000,000 - 600,000 = N5,400,000",
+            "After quantity discount: 5,400,000 - 270,000 = N5,130,000",
+            "After cash discount: 5,130,000 - 102,600 = N5,027,400"
+          ],
+          "modelAnswer": "(a) 200 x N30,000 = N6,000,000. (b) Trade discount = 10% of 6,000,000 = 600,000, so the amount is 6,000,000 - 600,000 = N5,400,000. (c) Quantity discount = 5% of 5,400,000 = 270,000, so the amount is N5,130,000. (d) Cash discount = 2% of 5,130,000 = 102,600, so he pays 5,130,000 - 102,600 = N5,027,400.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 200 x 30,000 = N6,000,000. (b) 10% of 6,000,000 = 600,000. 6,000,000 - 600,000 = N5,400,000. (c) 5% of 5,400,000 = 270,000. 5,400,000 - 270,000 = N5,130,000. (d) 2% of 5,130,000 = 102,600. 5,130,000 - 102,600 = N5,027,400.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "200 x 30,000 = N6,000,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "6,000,000 - 600,000 = N5,400,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "5,400,000 - 270,000 = N5,130,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "5,130,000 - 102,600 = N5,027,400"
+                }
+              ],
+              "feedback": "All four marks. Showing each discount before subtracting made your method easy to follow."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Total list price = 200 x N30,000 = N6,000,000. (b) Trade discount 600,000, so he owes N5,400,000. (c) Quantity discount is 5% of 5.4 million = 270,000, so N5,130,000. (d) Cash discount 2% = 102,600, so he pays N5,027,400.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total list price = 200 x N30,000 = N6,000,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Trade discount 600,000, so he owes N5,400,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Quantity discount is 5% of 5.4 million = 270,000, so N5,130,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cash discount 2% = 102,600, so he pays N5,027,400"
+                }
+              ],
+              "feedback": "Full marks. You applied each discount to the right base amount."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 200 x 30,000 = N6,000,000. (b) 6,000,000 - 600,000 = N5,400,000. (c) 5% of 6,000,000 = 300,000, so 5,400,000 - 300,000 = N5,100,000. (d) 2% of 5,100,000 = 102,000, so N4,998,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "200 x 30,000 = N6,000,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "6,000,000 - 600,000 = N5,400,000"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. The quantity discount is 5% of the amount after trade discount (5,400,000), which is 270,000. The cash discount is then 2% of 5,130,000."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Total = N6,000,000. (b) 10% + 5% + 2% = 17% of 6,000,000 = 1,020,000. (c) 6,000,000 - 1,020,000 = 4,980,000. (d) N4,980,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total = N6,000,000"
+                }
+              ],
+              "feedback": "The total is right. You added the three percentages, but each is calculated on the amount left after the earlier one: 10% of 6,000,000, then 5% of 5,400,000, then 2% of 5,130,000. The final figure is N5,027,400."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 200 + 30,000 = N30,200. (b) 10 x 30,200 = N302,000. (c) N5. (d) N2.",
+              "meets": [],
+              "feedback": "Multiply the bags by the price: 200 x 30,000 = N6,000,000. Then work out 10% of that and subtract, and repeat for the other discounts."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 200 x 30,000 = N6,000,000. (b) The discounts are 10, 5 and 2. (c) N6,000,000 - 17 = N5,999,983. (d) N5,999,983.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "200 x 30,000 = N6,000,000"
+                }
+              ],
+              "feedback": "Your total is right. Percentages must be changed to amounts: 10% of 6,000,000 = 600,000, not 10. Subtract each discount in turn from the amount that remains.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Money: history, forms, qualities and functions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define money and trace its development from barter to electronic money;\n2. name the forms of money in use;\n3. state the qualities of good money;\n4. explain the functions of money.\n\n## Materials\n\nA naira note and coin, a cowrie shell, a brass bangle (or picture), a debit card, a picture of salt blocks or manilla, chart paper.\n\n## Starter (5 minutes)\n\nOffer to swap a pen for a student's biscuit. Ask the class what would happen if you wanted a banana instead and the person with bananas wanted a notebook. This brings out the problem with barter.\n\n## Development\n\n1. Define money as anything generally accepted as a medium of exchange and a measure of value.\n2. History: barter; commodity money (cowries, salt, cattle, brass rods, manilla in West Africa); metallic money (coins); paper money; bank (cheque) money; plastic and electronic money.\n3. Forms of money today: coins and notes (legal tender), bank deposits, cheques, cards, mobile money.\n4. Qualities: acceptability, durability, portability, divisibility, uniformity, scarcity (limited supply), stability of value.\n5. Functions: medium of exchange, measure of value (unit of account), store of value, standard of deferred payment.\n6. Link each function to an everyday example from the market.\n\n## Class activity\n\nIn groups, students judge how well yam tubers, gold, naira notes and mobile money meet each quality of money.\n\n## Evaluation\n\n1. Why is it hard to use cattle as money?\n2. Name the function performed by money when a trader saves N50,000 for next month.\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "What is money and what does it do?",
+        "content": "# Money\n\n## What is money?\n\n**Money** is anything that people generally accept in payment for goods and services and for the settlement of debts. It is a **medium of exchange** and a **measure of value**.\n\n## The history of money\n\n1. **Barter.** Goods were swapped for goods. It needed a *double coincidence of wants*, gave no common measure of value, and many goods could not be divided or stored.\n2. **Commodity money.** Useful or valued goods such as cowries, salt, cattle, beads and brass rods were used. Early West African communities used cowries and manillas.\n3. **Metallic money.** Coins of gold, silver and copper replaced bulky goods.\n4. **Paper money.** Notes, first receipts for gold, later issued by central banks.\n5. **Bank money and plastic or electronic money.** Cheques, debit cards, transfers and mobile money move value without cash.\n\n## Forms of money today\n\nCoins and notes, called **legal tender**, must be accepted for debts. **Bank deposits** are money in current and savings accounts. A cheque or card transfers it. **Electronic money** includes card payments at POS terminals, bank apps and mobile wallets.\n\n## Qualities of good money\n\n- **Acceptability**: everyone is willing to take it.\n- **Durability**: it does not wear out or spoil. Yams rot, so they cannot be money.\n- **Portability**: it can be carried easily.\n- **Divisibility**: it can be split into small units, as N1,000 into N500 notes.\n- **Uniformity**: units of the same value look alike.\n- **Scarcity**: its supply is limited, so it keeps its value.\n- **Stability of value**: its buying power does not change quickly.\n\n## Functions of money\n\n- **Medium of exchange**: used to buy and sell, removing the problem of barter.\n- **Measure of value (unit of account)**: all prices are stated in naira, so goods can be compared.\n- **Store of value**: a farmer can sell cocoa now and keep the money to buy a tractor next year.\n- **Standard of deferred payment**: debts and loans are expressed and repaid in money later."
+      },
+      "cards": [
+        {
+          "front": "Money",
+          "back": "Anything generally accepted as a medium of exchange and a measure of value."
+        },
+        {
+          "front": "Barter",
+          "back": "The direct exchange of goods for goods."
+        },
+        {
+          "front": "Commodity money",
+          "back": "Useful goods used as money, such as cowries and salt."
+        },
+        {
+          "front": "Legal tender",
+          "back": "Money that the law says must be accepted for debts."
+        },
+        {
+          "front": "Medium of exchange",
+          "back": "Money used to buy and sell goods and services."
+        },
+        {
+          "front": "Measure of value",
+          "back": "Money used to state the price of goods so they can be compared."
+        },
+        {
+          "front": "Store of value",
+          "back": "Money kept to be spent later."
+        },
+        {
+          "front": "Durability",
+          "back": "The quality of money which means it does not easily wear out or spoil."
+        },
+        {
+          "front": "Divisibility",
+          "back": "The ability of money to be split into smaller units."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Prices in a Bodija shop are all written in naira, so a buyer can compare the cost of rice and beans. Money here is acting as",
+          "options": [
+            "a store of value",
+            "a measure of value",
+            "a standard of deferred payment",
+            "a medium of exchange"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A farmer sells cocoa in December and keeps the money in his bank to buy a tractor next year. This is the function of money as",
+          "options": [
+            "a measure of value",
+            "a medium of exchange",
+            "legal tender",
+            "a store of value"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Yam tubers cannot serve well as money mainly because they lack",
+          "options": [
+            "acceptability",
+            "uniformity of colour",
+            "scarcity",
+            "durability"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Cowries, salt and brass rods were used in West Africa before coins. This stage in the development of money is called",
+          "options": [
+            "paper money",
+            "electronic money",
+            "commodity money",
+            "bank money"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A customer taps a debit card at a POS terminal in Bodija market and the shop's account is credited. The money used is",
+          "options": [
+            "electronic money",
+            "commodity money",
+            "a metal coin",
+            "a barter good"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) What is money? (b) State three functions of money.",
+          "markScheme": [
+            "Money is anything generally accepted as a medium of exchange",
+            "First function, for example medium of exchange",
+            "Second function, for example measure of value",
+            "Third function, for example store of value or standard of deferred payment"
+          ],
+          "modelAnswer": "(a) Money is anything that is generally accepted in payment for goods and services and in settlement of debts. (b) It is a medium of exchange, a measure of value so that prices can be compared, and a store of value so that a person can keep purchasing power for later.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Money is anything that people generally accept as payment for goods and services. (b) It is a medium of exchange used for buying and selling, a measure of value because prices are written in naira and a store of value because I can keep it to spend later.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Money is anything that people generally accept as payment for goods and services"
+                },
+                {
+                  "point": 1,
+                  "quote": "a medium of exchange used for buying and selling"
+                },
+                {
+                  "point": 2,
+                  "quote": "a measure of value because prices are written in naira"
+                },
+                {
+                  "point": 3,
+                  "quote": "a store of value because I can keep it to spend later"
+                }
+              ],
+              "feedback": "All four marks. Each function is tied to an example."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Money is anything generally accepted as a means of exchange. (b) It makes buying and selling easy; it shows the value of every good; debts can be paid later in money, so it is a standard of deferred payment.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Money is anything generally accepted as a means of exchange"
+                },
+                {
+                  "point": 1,
+                  "quote": "It makes buying and selling easy"
+                },
+                {
+                  "point": 2,
+                  "quote": "it shows the value of every good"
+                },
+                {
+                  "point": 3,
+                  "quote": "debts can be paid later in money, so it is a standard of deferred payment"
+                }
+              ],
+              "feedback": "Full marks. The standard of deferred payment is the function many learners leave out."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Money is something accepted for payment of goods. (b) Medium of exchange. It is used to pay tax. It makes people rich.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Money is something accepted for payment of goods"
+                },
+                {
+                  "point": 1,
+                  "quote": "Medium of exchange"
+                }
+              ],
+              "feedback": "The definition and medium of exchange are right. Paying tax is a use, not one of the four functions, and money does not make people rich by itself. Add measure of value and store of value."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Money is notes and coins. (b) Measure of value and store of value. Medium of trade.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Measure of value"
+                },
+                {
+                  "point": 3,
+                  "quote": "store of value"
+                }
+              ],
+              "feedback": "Two functions are right. Money is more than notes and coins: bank deposits and electronic money are money too, so define it as anything generally accepted in payment. Medium of exchange is the usual name for your third."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Money is paper that the government prints. (b) It is for banks, for saving and for school fees.",
+              "meets": [],
+              "feedback": "Money need not be paper; cowries and electronic money also served. Define it by what it does: it is accepted in payment. The functions are medium of exchange, measure of value, store of value and deferred payment."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Money is wealth. (b) Medium of exchange. Money is power. Money is life.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Medium of exchange"
+                }
+              ],
+              "feedback": "Medium of exchange is correct. Money is not the same as wealth: a farm is wealth but not money. 'Power' and 'life' are not functions; add measure of value and store of value.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) State two problems of barter which led to the use of money. (b) State two qualities of good money. (c) Why were yam tubers not a good form of money?",
+          "markScheme": [
+            "First problem of barter, for example the double coincidence of wants",
+            "Second problem, for example no common measure of value or difficulty in dividing or storing goods",
+            "Two qualities of good money, for example acceptability and divisibility",
+            "Yams rot, so they lack durability (or are bulky and not portable or not uniform)"
+          ],
+          "modelAnswer": "(a) Barter needed a double coincidence of wants, and it had no common measure of value, so it was difficult to compare goods. (b) Good money must be acceptable and divisible. (c) Yams rot, so they lack durability, and they are bulky and differ in size, so they lack portability and uniformity.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) In barter you must find someone who has what you want and wants what you have, the double coincidence of wants. There was also no common measure of value, so you could not tell how many fish equal a goat. (b) Money must be acceptable to everybody and be divisible into small units. (c) Yams rot after some weeks, so they are not durable, and they are bulky to carry.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In barter you must find someone who has what you want and wants what you have, the double coincidence of wants"
+                },
+                {
+                  "point": 1,
+                  "quote": "There was also no common measure of value, so you could not tell how many fish equal a goat"
+                },
+                {
+                  "point": 2,
+                  "quote": "Money must be acceptable to everybody and be divisible into small units"
+                },
+                {
+                  "point": 3,
+                  "quote": "Yams rot after some weeks, so they are not durable, and they are bulky to carry"
+                }
+              ],
+              "feedback": "All four marks. The fish and goat example makes the second problem concrete."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The need for a double coincidence of wants; goods could not be stored or divided easily, for example a live goat. (b) Durability and portability. (c) A yam is not durable because it spoils and its size is not uniform.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The need for a double coincidence of wants"
+                },
+                {
+                  "point": 1,
+                  "quote": "goods could not be stored or divided easily, for example a live goat"
+                },
+                {
+                  "point": 2,
+                  "quote": "Durability and portability"
+                },
+                {
+                  "point": 3,
+                  "quote": "A yam is not durable because it spoils and its size is not uniform"
+                }
+              ],
+              "feedback": "Full marks. Durability and portability are both valid qualities and your reason for yams is correct."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The double coincidence of wants. Barter was too slow. (b) Acceptability and durability. (c) Because yams are cheap.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The double coincidence of wants"
+                },
+                {
+                  "point": 2,
+                  "quote": "Acceptability and durability"
+                }
+              ],
+              "feedback": "The first problem and the qualities are right. Slowness is not a precise problem; name the missing common measure of value. Yams fail because they spoil (not durable), not because they are cheap."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) There was no common measure of value. Barter was a bad business. (b) Scarcity and fun. (c) Yams can rot, so they are not durable.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "There was no common measure of value"
+                },
+                {
+                  "point": 3,
+                  "quote": "Yams can rot, so they are not durable"
+                }
+              ],
+              "feedback": "The measure of value and the reason about yams are right. 'Bad business' is not a problem; the double coincidence of wants is. Scarcity is a quality; 'fun' is not."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Money was easier to count. (b) Gold and silver. (c) They are not eaten.",
+              "meets": [],
+              "feedback": "Gold and silver are forms of money, not qualities. Qualities are things like acceptability and durability. Yams fail as money because they rot; they are in fact eaten, which is what makes them a commodity."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Barter had no banks. (b) Durability. (c) Yams are heavy for the market women.",
+              "meets": [],
+              "feedback": "Durability is a correct quality, but two are needed for the mark; add one such as divisibility. Barter's problems were the double coincidence of wants and no common measure of value. Bulk is a reason yams fail, but the key reason is that they rot.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Banks and banking services",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish the central bank, commercial banks and specialized banks (development bank, mortgage bank, building society, micro-finance institutions);\n2. state the functions of the central bank and of commercial banks;\n3. explain the functions of a bureau de change and the forms of e-banking;\n4. distinguish current, savings and fixed deposit accounts.\n\n## Materials\n\nAccount opening form, a cheque book, an ATM card (expired) and a POS receipt, a sample bank statement, chart paper.\n\n## Starter (5 minutes)\n\nAsk: where does your parent keep money that is not needed this month? Where does the trader in the market keep the daily sales? List answers and introduce banks as safe keepers of money.\n\n## Development\n\n1. A bank accepts deposits and lends money. Types: central bank, commercial banks, and specialized banks.\n2. Central bank functions: issues notes and coins, banker to government and to other banks, lender of last resort, controls credit and manages foreign reserves.\n3. Commercial bank functions: accepting deposits, giving loans and overdrafts, cashing cheques, transferring money, keeping valuables, foreign exchange and advice.\n4. Specialized banks: development bank (long-term finance for industry and agriculture), mortgage bank (housing loans), building society (savings used for buying houses), micro-finance bank (small loans for petty traders and farmers).\n5. Bureau de change: buys and sells foreign currencies.\n6. E-banking: ATM, internet and mobile transfer, POS and online payment.\n7. Accounts: current, savings and fixed deposit; compare using a table.\n\n## Class activity\n\nGroups choose the best account for a market trader, a student and a company with idle money.\n\n## Evaluation\n\n1. Name two functions of a commercial bank that a bureau de change does not perform.\n2. State one difference between a savings account and a fixed deposit.\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Where money rests and moves",
+        "content": "# Banks and banking services\n\nA **bank** is an institution that accepts money from the public for safe keeping and lends to people who need funds.\n\n## The central bank\n\nEach country has one central bank; in Nigeria it is the Central Bank of Nigeria (CBN). It: issues notes and coins (legal tender); acts as banker to the government and to other banks; is the **lender of last resort**; controls the supply of money and credit; manages the country's foreign reserves; and supervises other banks. It does not deal with the public in ordinary banking.\n\n## Commercial banks\n\nCommercial banks serve the public and make profit. Functions: accepting deposits; granting loans and overdrafts; paying and collecting cheques; transferring money; keeping valuables safe; dealing in foreign exchange; and giving financial advice.\n\n## Specialized banks\n\n- **Development bank**: gives long-term loans for industry and agriculture.\n- **Mortgage bank**: lends to people to buy or build houses, with the house as security.\n- **Building society**: collects savings and lends to members to buy houses.\n- **Micro-finance institutions**: give small loans to petty traders, artisans and farmers who cannot borrow from big banks.\n\n## Bureau de change\n\nA **bureau de change** buys and sells foreign currency over the counter, mainly for travellers and small businesses.\n\n## E-banking\n\n**E-banking** is banking done by electronic means. Forms include the **ATM** (cash withdrawal and balance checks at any hour), **money transfer** and **online transfer** through a bank app or website, **POS terminals** in shops, and other e-payment. Benefits: convenience, speed and fewer queues. Drawbacks: fraud, network failure and charges.\n\n## Types of account\n\n| Account | Features |\n| --- | --- |\n| Current | Withdraw any time by cheque or card; usually no interest; often used by traders and companies |\n| Savings | Pays interest; some limits on withdrawals; suited to individuals |\n| Fixed deposit | Money is left for a fixed time, such as 6 or 12 months; higher interest; early withdrawal penalized |"
+      },
+      "cards": [
+        {
+          "front": "Central bank",
+          "back": "The bank that issues currency and controls the banking system of a country."
+        },
+        {
+          "front": "Commercial bank",
+          "back": "A bank that takes deposits and lends to the public to make profit."
+        },
+        {
+          "front": "Lender of last resort",
+          "back": "The central bank, which lends to commercial banks when they cannot get funds elsewhere."
+        },
+        {
+          "front": "Mortgage bank",
+          "back": "A bank that lends for building or buying houses, with the house as security."
+        },
+        {
+          "front": "Micro-finance bank",
+          "back": "A bank that gives small loans to petty traders and farmers."
+        },
+        {
+          "front": "Bureau de change",
+          "back": "A place that buys and sells foreign currency."
+        },
+        {
+          "front": "ATM",
+          "back": "A machine that lets a bank customer withdraw cash and check balances at any time."
+        },
+        {
+          "front": "Current account",
+          "back": "An account operated by cheque, usually with no interest."
+        },
+        {
+          "front": "Fixed deposit",
+          "back": "An account in which money is left for an agreed period to earn higher interest."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these functions is performed only by the central bank?",
+          "options": [
+            "Issuing naira notes and coins",
+            "Accepting deposits from the public",
+            "Granting loans to traders",
+            "Exchanging foreign currency for travellers"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "An account which allows withdrawals by cheque at any time and usually pays no interest is a",
+          "options": [
+            "savings account",
+            "current account",
+            "fixed deposit account",
+            "mortgage account"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Mrs Bello places N2,000,000 in a bank for 12 months at an agreed rate of interest and cannot withdraw it early without a penalty. This is a",
+          "options": [
+            "current account",
+            "savings account",
+            "domestic account",
+            "fixed deposit account"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A civil servant wants to borrow money to build a house, with the house itself as security. The institution best suited to give the loan is a",
+          "options": [
+            "bureau de change",
+            "central bank",
+            "mortgage bank",
+            "commodity exchange"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A student travelling to Accra wants to exchange naira for cedis. She should go to a",
+          "options": [
+            "development bank",
+            "building society",
+            "mortgage bank",
+            "bureau de change"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) State three functions of a commercial bank. (b) State one difference between a savings account and a current account.",
+          "markScheme": [
+            "First function of a commercial bank, for example accepts deposits",
+            "Second function, for example grants loans and overdrafts",
+            "Third function, for example pays and collects cheques or transfers money",
+            "A savings account pays interest and has limits on withdrawals, whereas a current account is operated by cheque and usually pays no interest"
+          ],
+          "modelAnswer": "(a) A commercial bank accepts deposits from the public, grants loans and overdrafts, and transfers money for customers. (b) A savings account pays interest, while a current account is operated by cheque and usually pays no interest.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A commercial bank collects deposits from people, it lends money to customers as loans and overdrafts and it transfers money from one person to another. (b) A savings account earns interest but a current account is for cheques and does not earn interest.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A commercial bank collects deposits from people"
+                },
+                {
+                  "point": 1,
+                  "quote": "it lends money to customers as loans and overdrafts"
+                },
+                {
+                  "point": 2,
+                  "quote": "it transfers money from one person to another"
+                },
+                {
+                  "point": 3,
+                  "quote": "A savings account earns interest but a current account is for cheques and does not earn interest"
+                }
+              ],
+              "feedback": "All four marks. Three clear functions and a correct difference."
+            },
+            {
+              "tier": "full",
+              "text": "(a) They keep customers' money safely as deposits; they give loans to businessmen; they pay cheques presented by other people. (b) Savings account pays interest and has limits on withdrawal, but current account allows many withdrawals by cheque and usually has no interest.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "They keep customers' money safely as deposits"
+                },
+                {
+                  "point": 1,
+                  "quote": "they give loans to businessmen"
+                },
+                {
+                  "point": 2,
+                  "quote": "they pay cheques presented by other people"
+                },
+                {
+                  "point": 3,
+                  "quote": "Savings account pays interest and has limits on withdrawal, but current account allows many withdrawals by cheque and usually has no interest"
+                }
+              ],
+              "feedback": "Full marks. Mentioning the limit on withdrawals gives a second reason the accounts differ."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) They accept deposits and they give loans. They print money. (b) A savings account is for saving.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "They accept deposits"
+                },
+                {
+                  "point": 1,
+                  "quote": "they give loans"
+                }
+              ],
+              "feedback": "Deposits and loans are correct. Commercial banks do not print money; the central bank does. For the difference, say a savings account pays interest, while a current account usually does not."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) They look after the government money. They transfer money for customers. (b) A current account is used with cheque and has no interest while a savings account earns interest.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "They transfer money for customers"
+                },
+                {
+                  "point": 3,
+                  "quote": "A current account is used with cheque and has no interest while a savings account earns interest"
+                }
+              ],
+              "feedback": "The transfer function and the account difference are right. Looking after government money is a central bank function. Add accepting deposits and giving loans."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They give foreign exchange to government and print the naira. (b) Current account is for the current year.",
+              "meets": [],
+              "feedback": "Printing the naira is a central bank function. Commercial banks accept deposits, give loans and transfer money. A current account is not 'for the year'; it is operated by cheque."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They accept deposits. They sell goods. They build houses. (b) Savings account is very small.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "They accept deposits"
+                }
+              ],
+              "feedback": "Accepting deposits earns the mark; banks do not sell goods or build houses. Add loans and transfers. A savings account pays interest, while a current account is operated by cheque.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) What is e-banking? (b) Describe two forms of e-banking. (c) State two advantages and one disadvantage of e-banking to customers.",
+          "markScheme": [
+            "E-banking is the carrying out of banking transactions by electronic means",
+            "First form described, for example ATM allows cash withdrawal at any time",
+            "Second form described, for example online or mobile transfer of money by app",
+            "First advantage, for example saves time or avoids queues",
+            "Second advantage, for example available at any hour",
+            "One disadvantage, for example fraud, network failure or charges"
+          ],
+          "modelAnswer": "(a) E-banking is the use of electronic means such as machines, the internet and phones to carry out banking transactions. (b) The ATM lets a customer withdraw cash and check balances at any hour, and online or mobile transfer lets a customer send money to another account by app. (c) E-banking saves time since there are no queues, and it is available at any hour. A disadvantage is that customers may fall victim to fraud or fail to complete transactions when the network is down.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) E-banking is doing banking with electronic means like the internet and phone. (b) An ATM allows a customer to withdraw cash at any time of the day. Online transfer lets a customer send money from his phone to another account. (c) It saves time because there is no queue in the bank, it is open all hours. One disadvantage is that criminals can steal a customer's details.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "E-banking is doing banking with electronic means like the internet and phone"
+                },
+                {
+                  "point": 1,
+                  "quote": "An ATM allows a customer to withdraw cash at any time of the day"
+                },
+                {
+                  "point": 2,
+                  "quote": "Online transfer lets a customer send money from his phone to another account"
+                },
+                {
+                  "point": 3,
+                  "quote": "It saves time because there is no queue in the bank"
+                },
+                {
+                  "point": 4,
+                  "quote": "it is open all hours"
+                },
+                {
+                  "point": 5,
+                  "quote": "One disadvantage is that criminals can steal a customer's details"
+                }
+              ],
+              "feedback": "All six marks. Your disadvantage is a real risk and you described the forms rather than naming them only."
+            },
+            {
+              "tier": "full",
+              "text": "(a) E-banking is the use of electronic channels to carry out banking transactions. (b) ATM is a machine from which a customer withdraws cash with his card. Mobile transfer is sending money through a bank app. (c) Customers do not need to spend hours at the bank; they can bank at night or on Sunday. The network may fail in the middle of a transfer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "E-banking is the use of electronic channels to carry out banking transactions"
+                },
+                {
+                  "point": 1,
+                  "quote": "ATM is a machine from which a customer withdraws cash with his card"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mobile transfer is sending money through a bank app"
+                },
+                {
+                  "point": 3,
+                  "quote": "Customers do not need to spend hours at the bank"
+                },
+                {
+                  "point": 4,
+                  "quote": "they can bank at night or on Sunday"
+                },
+                {
+                  "point": 5,
+                  "quote": "The network may fail in the middle of a transfer"
+                }
+              ],
+              "feedback": "Full marks. Network failure is a common disadvantage that Nigerian customers will recognise."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) E-banking is banking through electronic means. (b) ATM lets you withdraw money anytime. POS. (c) Saves time. Fraud.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "E-banking is banking through electronic means"
+                },
+                {
+                  "point": 1,
+                  "quote": "ATM lets you withdraw money anytime"
+                },
+                {
+                  "point": 3,
+                  "quote": "Saves time"
+                },
+                {
+                  "point": 5,
+                  "quote": "Fraud"
+                }
+              ],
+              "feedback": "The definition, ATM and a disadvantage are right. A form such as POS must be described to earn a mark, and a second advantage such as all-hours banking is needed."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) E-banking is when a bank has a computer. (b) Online transfer sends money through the internet. ATM. (c) Banking can be done at any time. Fraud.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Online transfer sends money through the internet"
+                },
+                {
+                  "point": 4,
+                  "quote": "Banking can be done at any time"
+                },
+                {
+                  "point": 5,
+                  "quote": "Fraud"
+                }
+              ],
+              "feedback": "Your transfer description, all-hours advantage and disadvantage are right. A bank having a computer is not e-banking: it means customers do transactions electronically. Describe the ATM too."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) E-banking is the banking of electronics. (b) Phone and computer. (c) It is fast. It is slow.",
+              "meets": [],
+              "feedback": "E-banking is banking transactions by electronic means. Phones and computers are tools, not forms: describe an ATM or online transfer. 'Fast' and 'slow' contradict each other; give a clear advantage and a clear risk."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is when you use the ATM. (b) ATM gives money at any time. (c) It is expensive.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "ATM gives money at any time"
+                }
+              ],
+              "feedback": "The ATM description earns a mark. An ATM is one form of e-banking, not its definition: e-banking is any banking done electronically. State advantages like saving time, and a disadvantage like fraud."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Insurance",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define insurance and state its basic principles: utmost good faith, insurable interest, indemnity and subrogation, contribution and proximate cause;\n2. describe life and non-life insurance (motor vehicle, fire, fidelity, burglary and theft, accident, consequential loss, marine);\n3. distinguish insurable from uninsurable risks and state the importance of insurance;\n4. outline the procedure for taking out a policy, and explain underwriting and re-insurance;\n5. apply indemnity and contribution to simple cases.\n\n## Materials\n\nA sample proposal form, a policy document, a premium receipt, and cards describing six cases for the group task.\n\n## Starter (5 minutes)\n\nTell this story: a trader in Ariaria market lost all his stock in a fire at night. Ask: what could have saved him from complete ruin? Introduce insurance as a way of sharing risk.\n\n## Development\n\n1. Insurance is an arrangement in which a person pays a small sum (premium) to an insurer, who promises to compensate him for a stated loss.\n2. Principles. Utmost good faith: all material facts must be disclosed. Insurable interest: the insured must stand to lose if the property is lost. Indemnity: the insured is paid only the actual loss and no more. Subrogation: after paying, the insurer takes over the insured's rights against whoever caused the loss. Contribution: when two insurers cover the same risk, each pays a share. Proximate cause: the nearest effective cause of the loss must be an insured risk.\n3. Types of policy, risks (insurable and uninsurable), and importance.\n4. Procedure: proposal form, premium, issue of the policy, claim form and assessment, payment.\n5. Underwriting and re-insurance.\n6. Work two calculations.\n\n## Class activity\n\nGroup task: each group receives a case card and decides which principle applies.\n\n## Evaluation\n\n1. A shop worth N2m is insured for N3m. How much will be paid after total loss? Why?\n2. Which principle prevents double compensation?\n\n## Assignment\n\nQuiz on the app.",
+      "reading": {
+        "title": "Sharing the risk",
+        "content": "# Insurance\n\n## What is insurance?\n\n**Insurance** is an arrangement under which a person (the **insured**) pays a small sum called a **premium** to an **insurer**, who promises to pay compensation if a stated loss occurs. By pooling premiums from many people, the insurer can pay the few who suffer losses.\n\n## Principles of insurance\n\n1. **Utmost good faith**: both sides must disclose every material fact. A driver who hides an earlier accident breaks this principle.\n2. **Insurable interest**: the insured must stand to lose if the thing is lost or damaged. A person cannot insure a neighbour's shop.\n3. **Indemnity**: the insured is restored to the position before the loss, no better. If stock worth N4,000,000 is insured for N5,000,000 and burns, the insurer pays N4,000,000.\n4. **Subrogation**: after paying, the insurer takes over the insured's right to claim from anyone who caused the loss.\n5. **Contribution**: if the same risk is insured with two or more insurers, each pays its share of the loss in proportion to the sum it insured.\n6. **Proximate cause**: the loss must be caused directly by an insured risk.\n\n**Worked example (contribution).** A bus worth N2,000,000 is insured with A for N1,200,000 and with B for N800,000. A fire causes N500,000 damage. A pays 1,200,000/2,000,000 x 500,000 = N300,000, and B pays 800,000/2,000,000 x 500,000 = N200,000.\n\n## Types of insurance\n\n**Life insurance**: whole life assurance and endowment pay a sum at death or after a term.\n\n**Non-life insurance**: motor vehicle, fire, **fidelity** (loss by dishonest employees), burglary, robbery and theft, accident, **consequential loss** (profit lost after a fire), and **marine** (ships and cargo).\n\n## Risks\n\nAn **insurable risk** can be measured and is pure (there is only loss or no loss), such as fire or theft. An **uninsurable risk** is a speculative risk with a chance of gain, such as the loss from poor demand for a new product.\n\n## Procedure\n\nThe proposer fills in a **proposal form**, the insurer assesses the risk and fixes the premium, the premium is paid, and the **policy** is issued. After a loss, the insured fills a **claim form**, the loss is assessed and compensation paid.\n\n## Underwriting and re-insurance\n\n**Underwriting** is the acceptance of risk by the insurer for a premium. When a risk is too large, the insurer shares it with another insurer; this is **re-insurance**.\n\n## Importance\n\nInsurance gives security, encourages investment, provides savings, and helps firms recover from losses."
+      },
+      "cards": [
+        {
+          "front": "Insurance",
+          "back": "An arrangement to pay a premium so that the insurer compensates a stated loss."
+        },
+        {
+          "front": "Premium",
+          "back": "The sum the insured pays to the insurer."
+        },
+        {
+          "front": "Utmost good faith",
+          "back": "All material facts must be truthfully disclosed."
+        },
+        {
+          "front": "Insurable interest",
+          "back": "The insured must stand to suffer loss if the property is lost."
+        },
+        {
+          "front": "Indemnity",
+          "back": "The insured is compensated for the actual loss only, no more."
+        },
+        {
+          "front": "Subrogation",
+          "back": "After paying, the insurer takes over the insured's right to claim from the party who caused the loss."
+        },
+        {
+          "front": "Contribution",
+          "back": "Where two insurers cover the same risk, each pays a share of the loss."
+        },
+        {
+          "front": "Proximate cause",
+          "back": "The direct cause of the loss, which must be an insured risk."
+        },
+        {
+          "front": "Re-insurance",
+          "back": "An insurer passes part of a large risk to another insurer."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A man hides the fact that he had a serious accident last year when applying for motor insurance. Which principle of insurance has he broken?",
+          "options": [
+            "Indemnity",
+            "Utmost good faith",
+            "Contribution",
+            "Subrogation"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Tunde insures his neighbour's shop in Ikeja against fire though he has no stake in the shop. The policy is invalid because he lacks",
+          "options": [
+            "a proposal form",
+            "a premium",
+            "an agent",
+            "insurable interest"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trader's stock worth N4,000,000 is insured for N5,000,000 and is totally destroyed by fire. The insurer will pay",
+          "options": [
+            "N5,000,000",
+            "N1,000,000",
+            "N4,000,000",
+            "N9,000,000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "After paying for a car damaged by another driver's careless driving, an insurer claims the cost from that driver. This is the principle of",
+          "options": [
+            "subrogation",
+            "contribution",
+            "proximate cause",
+            "utmost good faith"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of the following is an uninsurable risk?",
+          "options": [
+            "Fire in a warehouse",
+            "Loss from poor demand for a new product",
+            "Theft of goods in transit",
+            "Accident to a company's driver"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) State the principle of indemnity. (b) A Lagos trader insures goods for N3,500,000. Goods worth N3,000,000 are destroyed in a fire. How much can he claim, and why?",
+          "markScheme": [
+            "Indemnity means the insured is restored to his position before the loss and no better",
+            "He can claim N3,000,000",
+            "Because the insured cannot claim more than the actual loss"
+          ],
+          "modelAnswer": "(a) Indemnity means that the insured is compensated for the actual loss and is put back in the position he was in before the loss, but no better off. (b) He can claim N3,000,000, the value of the goods lost, because he cannot receive more than his actual loss even though the policy was for N3,500,000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Indemnity means the insurance only puts the insured back in the position he was in before the loss and does not let him gain. (b) He can claim N3,000,000, because he cannot get more than the loss he really suffered.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Indemnity means the insurance only puts the insured back in the position he was in before the loss and does not let him gain"
+                },
+                {
+                  "point": 1,
+                  "quote": "He can claim N3,000,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "because he cannot get more than the loss he really suffered"
+                }
+              ],
+              "feedback": "All three marks. You explained why the extra N500,000 is not paid."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Indemnity is the principle that the insured must be restored to his former position, not better off. (b) The claim is N3,000,000. The insurer pays the actual loss, not the sum insured, to avoid profit from a loss.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Indemnity is the principle that the insured must be restored to his former position, not better off"
+                },
+                {
+                  "point": 1,
+                  "quote": "The claim is N3,000,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "The insurer pays the actual loss, not the sum insured, to avoid profit from a loss"
+                }
+              ],
+              "feedback": "Full marks. Mentioning profit from loss is the idea behind the rule."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Indemnity means compensation that puts the insured back in the position he was in. (b) He can claim N3,500,000 because that was the sum he insured.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Indemnity means compensation that puts the insured back in the position he was in"
+                }
+              ],
+              "feedback": "The principle is right. The claim is limited to the actual loss of N3,000,000, not the sum insured; otherwise he would profit from the fire."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Indemnity is paying the insurer. (b) He can claim N3,000,000 because that is what he lost.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "He can claim N3,000,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "because that is what he lost"
+                }
+              ],
+              "feedback": "Your claim and reason are right. The principle is that the insured is compensated for loss to restore him to his former position; he does not pay the insurer under indemnity."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is the principle of being honest. (b) N500,000.",
+              "meets": [],
+              "feedback": "Honesty is utmost good faith. Indemnity limits compensation to the actual loss. The trader claims the value of what he lost, N3,000,000; N500,000 is the over-insured amount."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Indemnity is when two insurers share a loss. (b) N3,000,000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "N3,000,000"
+                }
+              ],
+              "feedback": "Your claim figure is correct. Two insurers sharing a loss is contribution; indemnity means the insured is restored to his former position, no better, and so he claims only his actual loss.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Okafor insures his bus, worth N2,000,000, with Insurer A for N1,200,000 and with Insurer B for N800,000. Fire damages the bus, and the loss is N500,000. (a) Name the principle that decides how the loss is shared. (b) How much does each insurer pay? (c) Define insurable interest.",
+          "markScheme": [
+            "Contribution",
+            "Insurer A pays 1,200,000/2,000,000 x 500,000 = N300,000",
+            "Insurer B pays 800,000/2,000,000 x 500,000 = N200,000",
+            "Insurable interest is the financial stake that the insured has in the property, so that he suffers loss if it is damaged or lost"
+          ],
+          "modelAnswer": "(a) The principle of contribution. (b) A insured 1,200,000 of the total 2,000,000 so pays 1,200,000/2,000,000 x 500,000 = N300,000. B pays 800,000/2,000,000 x 500,000 = N200,000. (c) Insurable interest is the financial stake the insured has in the property, so that he would suffer a loss if it were damaged or destroyed.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Contribution. (b) A pays 1,200,000/2,000,000 x 500,000 = N300,000 and B pays 800,000/2,000,000 x 500,000 = N200,000. (c) Insurable interest is when the insured stands to suffer a financial loss if the property is destroyed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Contribution"
+                },
+                {
+                  "point": 1,
+                  "quote": "A pays 1,200,000/2,000,000 x 500,000 = N300,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "B pays 800,000/2,000,000 x 500,000 = N200,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Insurable interest is when the insured stands to suffer a financial loss if the property is destroyed"
+                }
+              ],
+              "feedback": "All four marks. Your two shares add up to the N500,000 loss."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The principle of contribution. (b) A's share is 60% of the total cover, so A pays N300,000; B's share is 40%, so B pays N200,000. (c) It is the right of a person to insure a property because he will lose money if it is damaged.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The principle of contribution"
+                },
+                {
+                  "point": 1,
+                  "quote": "A pays N300,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "B pays N200,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is the right of a person to insure a property because he will lose money if it is damaged"
+                }
+              ],
+              "feedback": "Full marks. Working in percentages is a clear alternative method."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Contribution. (b) A pays N500,000 and B pays nothing because A has the bigger cover. (c) It is the interest a person has in a property so that he will suffer a loss if it is destroyed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Contribution"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is the interest a person has in a property so that he will suffer a loss if it is destroyed"
+                }
+              ],
+              "feedback": "The principle and definition are right. The loss is shared in proportion to the sum each insured: A pays 1,200,000/2,000,000 x 500,000 = N300,000 and B pays N200,000."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Indemnity. (b) A pays 1,200,000/2,000,000 x 500,000 = N300,000. B pays 200,000. (c) Insurable interest is the stake the insured has in the property.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A pays 1,200,000/2,000,000 x 500,000 = N300,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Insurable interest is the stake the insured has in the property"
+                }
+              ],
+              "feedback": "Your A share, B share and definition are right. The principle is contribution, because two insurers cover the same risk; indemnity is the general limit on compensation."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Utmost good faith. (b) A pays N1,200,000 and B pays N800,000. (c) The interest the bank charges.",
+              "meets": [],
+              "feedback": "Utmost good faith concerns disclosure. Two insurers sharing a loss is contribution. Each pays a share of the N500,000 loss, not the sum insured. Insurable interest is the stake the insured has in the property."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Subrogation. (b) They share equally, N250,000 each. (c) It means the insured has a stake in the property.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "It means the insured has a stake in the property"
+                }
+              ],
+              "feedback": "Your definition earns a mark. Subrogation is the insurer's right to claim from the party that caused the loss; sharing between insurers is contribution, and the shares are in proportion to the sums insured: N300,000 and N200,000.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "The capital market and the stock exchange",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define the capital market and state its functions;\n2. explain the methods by which companies raise funds: offer for sale, offer for subscription, rights issue, private placement and issue by tender;\n3. explain the second-tier securities market;\n4. state the functions and importance of the stock exchange and the types of speculator;\n5. distinguish shares, stock, bonds, gilt-edged securities and debentures, and calculate dividends and yields.\n\n## Materials\n\nA sample share certificate, a newspaper page of share prices, a chart of securities, calculators.\n\n## Starter (5 minutes)\n\nAsk: a factory owner in Kano needs N500 million to build a new plant and cannot raise it from a bank. How else can he get it? Take answers and lead to shares and bonds.\n\n## Development\n\n1. The capital market deals in long-term funds (more than one year). Contrast with the money market, which deals in short-term funds.\n2. Functions: mobilizes savings, finances industry and government, provides a place for investors, and encourages ownership.\n3. Methods of raising funds: offer for sale (a bank buys the shares and sells them on), offer for subscription (the company asks the public directly), rights issue (existing shareholders have first claim), private placement (shares sold to selected investors), issue by tender (buyers bid).\n4. Second-tier securities market: for small and medium-sized firms that cannot meet main-board rules.\n5. Stock exchange: market where existing securities are bought and sold through stockbrokers. Functions: liquidity, price information, encouraging savings and acting as an economic indicator.\n6. Speculators: bull (buys hoping the price will rise), bear (sells hoping the price will fall), stag (applies for new shares to sell at once) and lame duck.\n7. Securities: ordinary and preference shares, stock, bonds, gilt-edged securities, debentures.\n\n## Class activity\n\nEach pair receives N100,000 of imaginary money and a price list, builds a portfolio and works out dividend and yield.\n\n## Evaluation\n\n1. Why do investors prefer the stock exchange to keeping money at home?\n2. Distinguish an ordinary share from a preference share.\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Where companies find long-term money",
+        "content": "# The capital market and the stock exchange\n\n## The capital market\n\nThe **capital market** is the market for long-term funds, those lent or invested for more than a year. Companies and governments raise money there for factories, roads and equipment. Its functions include collecting the savings of the public, channelling them to industry, giving investors a place to buy and sell, and helping new firms to grow.\n\n## Methods of raising funds\n\n- **Offer for sale**: the company sells shares to an issuing house, which sells them to the public at a higher price.\n- **Offer for subscription**: the company invites the public to buy shares directly.\n- **Rights issue**: new shares are offered first to existing shareholders in proportion to their holdings, often at a price below the market price.\n- **Private placement**: shares are sold to a few selected investors.\n- **Issue by tender**: investors bid for shares and the shares go to the highest bidders.\n\nThe **second-tier securities market** is a section of the stock exchange with easier rules for smaller and growing firms.\n\n## The stock exchange\n\nThe **stock exchange** is a market where existing securities are bought and sold through licensed stockbrokers. In Nigeria it is in Lagos. Its functions: it makes securities easy to sell again (liquidity), shows prices, encourages saving and investment, and lets firms raise new capital.\n\n**Speculators** buy and sell hoping to gain from price changes. A **bull** buys hoping the price will rise. A **bear** sells shares he does not yet own, hoping to buy them back cheaper. A **stag** applies for new shares hoping to sell them quickly at a profit. A **lame duck** is a speculator who cannot meet his debts.\n\n## Types of security\n\n- **Ordinary shares**: owners share in profit through a dividend that varies and carry voting rights.\n- **Preference shares**: a fixed rate of dividend, paid before ordinary shareholders.\n- **Stock**: a bundle of shares joined together, which can be bought in any amount.\n- **Bonds** and **gilt-edged securities**: loans to government or large companies, very safe, paying fixed interest.\n- **Debentures**: loans to a company, with fixed interest, and secured on its assets. Debenture holders are **creditors**, not owners.\n\n## Dividend and yield\n\nA dividend is a share of profit. If a company pays 40 kobo per share and the share costs N2.50, the **dividend yield** = 0.40 / 2.50 x 100 = 16%. A man with 2,000 shares gets 2,000 x N0.40 = N800."
+      },
+      "cards": [
+        {
+          "front": "Capital market",
+          "back": "The market for long-term funds."
+        },
+        {
+          "front": "Stock exchange",
+          "back": "A market where existing securities are bought and sold through stockbrokers."
+        },
+        {
+          "front": "Rights issue",
+          "back": "New shares offered first to existing shareholders in proportion to their holdings."
+        },
+        {
+          "front": "Private placement",
+          "back": "Shares sold to a few selected investors."
+        },
+        {
+          "front": "Bull",
+          "back": "A speculator who buys expecting the price to rise."
+        },
+        {
+          "front": "Bear",
+          "back": "A speculator who sells expecting the price to fall."
+        },
+        {
+          "front": "Stag",
+          "back": "A speculator who applies for new shares to sell them at once at a profit."
+        },
+        {
+          "front": "Preference share",
+          "back": "A share with a fixed dividend paid before ordinary shareholders."
+        },
+        {
+          "front": "Debenture",
+          "back": "A loan to a company with fixed interest, usually secured on assets."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A company offers new shares to its existing shareholders in proportion to their holdings, at a price below the market price. This method is called",
+          "options": [
+            "offer for sale",
+            "private placement",
+            "issue by tender",
+            "rights issue"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A speculator buys shares of a public company expecting the price to rise so that he can sell at a profit. He is called a",
+          "options": [
+            "bear",
+            "bull",
+            "stag",
+            "lame duck"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which security carries a fixed rate of dividend and is paid before ordinary shareholders?",
+          "options": [
+            "Preference share",
+            "Ordinary share",
+            "Debenture",
+            "Treasury bill"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Debenture holders differ from shareholders in that debenture holders are",
+          "options": [
+            "creditors of the company",
+            "owners of the company",
+            "directors of the company",
+            "entitled to vote at meetings"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A share costs N2.50 and the company pays a dividend of 40 kobo per share. The dividend yield is",
+          "options": [
+            "40%",
+            "62.5%",
+            "16%",
+            "6.25%"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between (a) an offer for sale and an offer for subscription, and (b) a rights issue and a private placement.",
+          "markScheme": [
+            "In an offer for sale, the company sells shares to an issuing house, which sells them to the public",
+            "In an offer for subscription, the company invites the public to buy shares directly",
+            "In a rights issue, shares are offered first to existing shareholders",
+            "In a private placement, shares are sold to a few selected investors"
+          ],
+          "modelAnswer": "(a) In an offer for sale the company sells its shares to an issuing house, which then sells them to the public. In an offer for subscription the company invites the public to buy shares directly. (b) In a rights issue, new shares are offered first to existing shareholders in proportion to what they hold. In a private placement, shares are sold to a few selected investors instead of the public.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) In an offer for sale the company sells the shares to an issuing house and the house sells them to the public. In an offer for subscription the company itself asks the public to buy the shares. (b) A rights issue gives the first chance to buy new shares to the present shareholders. A private placement sells the shares to a few chosen investors.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In an offer for sale the company sells the shares to an issuing house and the house sells them to the public"
+                },
+                {
+                  "point": 1,
+                  "quote": "In an offer for subscription the company itself asks the public to buy the shares"
+                },
+                {
+                  "point": 2,
+                  "quote": "A rights issue gives the first chance to buy new shares to the present shareholders"
+                },
+                {
+                  "point": 3,
+                  "quote": "A private placement sells the shares to a few chosen investors"
+                }
+              ],
+              "feedback": "All four marks. Each of the four methods is described exactly."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Offer for sale is through an issuing house which buys and resells to the public, but offer for subscription is direct from the company to the public. (b) Rights issue is to existing shareholders in proportion to their shares; private placement is to a small group of selected buyers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Offer for sale is through an issuing house which buys and resells to the public"
+                },
+                {
+                  "point": 1,
+                  "quote": "offer for subscription is direct from the company to the public"
+                },
+                {
+                  "point": 2,
+                  "quote": "Rights issue is to existing shareholders in proportion to their shares"
+                },
+                {
+                  "point": 3,
+                  "quote": "private placement is to a small group of selected buyers"
+                }
+              ],
+              "feedback": "Full marks. The word 'direct' makes the difference clear."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) An offer for subscription is when the company invites the public to buy the shares. An offer for sale is also when the public buys. (b) Rights issue is for existing shareholders. Private placement is for the rich.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "An offer for subscription is when the company invites the public to buy the shares"
+                },
+                {
+                  "point": 2,
+                  "quote": "Rights issue is for existing shareholders"
+                }
+              ],
+              "feedback": "Your subscription and rights issue answers are right. An offer for sale goes through an issuing house, and a private placement is to a few selected investors, not necessarily the rich."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Offer for sale is selling shares. Offer for subscription is also selling shares. (b) Rights issue is the first offer to the old shareholders. Private placement is selling to a few chosen persons.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Rights issue is the first offer to the old shareholders"
+                },
+                {
+                  "point": 3,
+                  "quote": "Private placement is selling to a few chosen persons"
+                }
+              ],
+              "feedback": "Part (b) is right. For (a), the offer for sale goes through an issuing house, which resells to the public, whereas the company itself invites the public in an offer for subscription."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Offer for sale is selling goods in the market and offer for subscription is paying monthly. (b) Rights issue is the rights of workers.",
+              "meets": [],
+              "feedback": "These are methods of raising capital by selling shares. An offer for sale uses an issuing house; an offer for subscription goes directly to the public. A rights issue gives existing shareholders first claim."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They are the same. (b) Private placement is selling shares to selected people.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Private placement is selling shares to selected people"
+                }
+              ],
+              "feedback": "Your private placement description is correct. An offer for sale goes through an issuing house while the subscription goes directly to the public; they are different. A rights issue is for existing shareholders.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Adewale buys 5,000 ordinary shares at N3.20 each. During the year the company pays a dividend of 48 kobo per share. At the end of the year he sells all his shares at N3.80 each. Calculate (a) the cost of the shares, (b) the dividend he receives, (c) his gain on the sale, (d) his total return. (e) State one function of the stock exchange.",
+          "markScheme": [
+            "Cost = 5,000 x 3.20 = N16,000",
+            "Dividend = 5,000 x 0.48 = N2,400",
+            "Gain on sale = 5,000 x (3.80 - 3.20) = N3,000",
+            "Total return = 2,400 + 3,000 = N5,400",
+            "A function of the stock exchange, for example provides a market for buying and selling securities (liquidity)"
+          ],
+          "modelAnswer": "(a) 5,000 x N3.20 = N16,000. (b) 5,000 x N0.48 = N2,400. (c) He sells for 5,000 x N3.80 = N19,000, so the gain is 19,000 - 16,000 = N3,000. (d) Total return = N2,400 + N3,000 = N5,400. (e) The stock exchange provides a ready market in which investors can buy and sell securities.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 5,000 x 3.20 = N16,000. (b) 5,000 x 0.48 = N2,400. (c) Selling price = 5,000 x 3.80 = N19,000. Gain = 19,000 - 16,000 = N3,000. (d) Total return = 2,400 + 3,000 = N5,400. (e) It provides a market where investors can buy and sell shares easily.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5,000 x 3.20 = N16,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "5,000 x 0.48 = N2,400"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gain = 19,000 - 16,000 = N3,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total return = 2,400 + 3,000 = N5,400"
+                },
+                {
+                  "point": 4,
+                  "quote": "It provides a market where investors can buy and sell shares easily"
+                }
+              ],
+              "feedback": "All five marks. Finding the selling price before the gain made your working clear."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Cost = N16,000 (5,000 x N3.20). (b) Dividend = 5,000 x N0.48 = N2,400. (c) Gain per share is 3.80 - 3.20 = 0.60, so 5,000 x 0.60 = N3,000. (d) Total return N2,400 + N3,000 = N5,400. (e) It makes securities liquid, so holders can sell when they need cash.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cost = N16,000 (5,000 x N3.20)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Dividend = 5,000 x N0.48 = N2,400"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gain per share is 3.80 - 3.20 = 0.60, so 5,000 x 0.60 = N3,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total return N2,400 + N3,000 = N5,400"
+                },
+                {
+                  "point": 4,
+                  "quote": "It makes securities liquid, so holders can sell when they need cash"
+                }
+              ],
+              "feedback": "Full marks. Working per share first is a good, quick method."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 5,000 x 3.20 = N16,000. (b) 5,000 x 0.48 = N2,400. (c) 5,000 x 3.80 = N19,000. (d) 16,000 + 2,400 = N18,400. (e) It is a bank.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5,000 x 3.20 = N16,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "5,000 x 0.48 = N2,400"
+                }
+              ],
+              "feedback": "The cost and dividend are right. The gain is the selling price minus the cost, 19,000 - 16,000 = N3,000, and the total return adds the dividend: N5,400. The stock exchange is a market, not a bank."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 5,000 x 3.20 = N1,600. (b) 5,000 x 0.48 = N2,400. (c) 5,000 x 0.60 = N3,000 gain. (d) 2,400 + 3,000 = N5,400. (e) It helps the nation.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "5,000 x 0.48 = N2,400"
+                },
+                {
+                  "point": 2,
+                  "quote": "5,000 x 0.60 = N3,000 gain"
+                },
+                {
+                  "point": 3,
+                  "quote": "2,400 + 3,000 = N5,400"
+                }
+              ],
+              "feedback": "Your dividend, gain and total are right, though (a) has a slip: 5,000 x 3.20 = N16,000. In (e), say what the stock exchange does: it gives a market for buying and selling securities."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 5,000 + 3.20 = N5,003.20. (b) 5,000 x 48 = N240,000. (c) 3.80 - 3.20 = N0.60. (d) N0.60. (e) It sells shares.",
+              "meets": [],
+              "feedback": "Multiply the number of shares by each price: 5,000 x 3.20 = N16,000. The dividend is 48 kobo = N0.48 per share, so 5,000 x 0.48 = N2,400. The gain is per share 0.60 x 5,000 = N3,000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The cost is N1,600. (b) The dividend is 48%. (c) The gain is N3.80. (d) N19,800. (e) It is a market for shares.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "It is a market for shares"
+                }
+              ],
+              "feedback": "Your stock exchange answer earns a mark. The cost is 5,000 x 3.20 = N16,000, not N1,600. The dividend is 48 kobo per share, N2,400 in all, and the gain is N3,000.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "The commodity exchange",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a commodity exchange and name the commodities that are traded;\n2. state the requirements for trading: grading, standardizing, warehousing and a clearing system;\n3. describe open outcry and electronic methods of trading;\n4. state the benefits of a commodity exchange to farmers, traders and the nation.\n\n## Materials\n\nSamples of graded grains (rice, beans, maize) in labelled bags, a picture of a trading floor and of an electronic trading screen, a warehouse receipt sample.\n\n## Starter (5 minutes)\n\nShow two bags of beans of different quality. Ask: if you were buying 100 tonnes of beans from a farmer in Zaria without seeing them, what would worry you? Draw out the problems of quality, delivery and trust.\n\n## Development\n\n1. A commodity exchange is an organized market where standard, graded raw materials and farm produce, such as cocoa, groundnuts, sesame, maize and cotton, are bought and sold, often for future delivery.\n2. Which commodities: those which are produced in large amounts, can be graded and stored without spoiling, and are traded in standard units.\n3. Requirements: grading (sorting into classes of quality); standardizing (agreed weights and measures); warehousing (certified stores; the receipt acts as proof of ownership); a clearing system (a clearing house that ensures both sides keep to the deal).\n4. Methods: open outcry (traders shout bids on the floor with hand signals) and electronic trading (buyers and sellers use computers).\n5. Benefits: fair price information, ready market for farmers, reduction of losses, stable prices, and a source of foreign exchange.\n\n## Class activity\n\nRole play: groups of farmers, buyers, a warehouse keeper and a clearing house officer trade 10 imaginary bags of sesame.\n\n## Evaluation\n\n1. Why must a commodity be graded before it is traded?\n2. Name one advantage of electronic over open outcry trading.\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "A market for farm produce and raw materials",
+        "content": "# The commodity exchange\n\n## What is it?\n\nA **commodity exchange** is an organized market in which standard, graded raw materials and farm produce are bought and sold, often by contract for delivery at a later date. It brings together farmers, processors, exporters and investors under rules that all trust.\n\n## Which commodities are traded?\n\nThose that are produced in large quantities, can be graded to a standard quality and can be stored for a time. Examples: cocoa, groundnuts, sesame seed, cotton, maize, rice, soya beans, coffee, and minerals such as gold and tin. A tailor-made suit or a second-hand car cannot be traded because each item is different.\n\n## Requirements for trading\n\n- **Grading**: sorting produce by quality, such as Grade 1 and Grade 2 cocoa, so a buyer can trust the quality without inspecting each bag.\n- **Standardizing**: agreeing fixed weights, measures and units, such as a tonne or a 50 kg bag.\n- **Warehousing**: certified warehouses store produce safely. The warehouse issues a receipt as proof that the goods exist and who owns them.\n- **Clearing system**: a clearing house acts as the middle party in every deal, making sure the seller delivers and the buyer pays.\n\n## Methods of trading\n\nIn **open outcry**, traders stand on the trading floor and shout offers and bids, using hand signals. In **electronic trading**, buyers and sellers use computers or phones to place orders in the market from anywhere, and the system matches them.\n\n## Benefits\n\n- Farmers find a ready market and a fair price.\n- Prices are public and cannot be hidden by one buyer.\n- Quality is guaranteed by grading, which helps exports.\n- Storage in warehouses reduces post-harvest losses.\n- Farmers and buyers can agree on prices in advance and so reduce risk.\n- Foreign exchange is earned when the produce is exported."
+      },
+      "cards": [
+        {
+          "front": "Commodity exchange",
+          "back": "An organized market for buying and selling graded raw materials and farm produce."
+        },
+        {
+          "front": "Grading",
+          "back": "Sorting produce into classes of quality."
+        },
+        {
+          "front": "Standardizing",
+          "back": "Fixing agreed weights, measures and units."
+        },
+        {
+          "front": "Warehousing",
+          "back": "Storing goods safely in certified stores."
+        },
+        {
+          "front": "Clearing house",
+          "back": "The body that ensures both sides in a trade keep to the deal."
+        },
+        {
+          "front": "Open outcry",
+          "back": "Trading by shouting bids and offers on a trading floor."
+        },
+        {
+          "front": "Electronic trading",
+          "back": "Trading by computer, with orders matched by a system."
+        },
+        {
+          "front": "Warehouse receipt",
+          "back": "A document that proves goods are stored and who owns them."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these goods is suitable for trading on a commodity exchange?",
+          "options": [
+            "A tailor-made agbada",
+            "A second-hand car",
+            "A wedding cake",
+            "Graded cocoa beans"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Sorting cocoa into Grade 1 and Grade 2 so that buyers know the quality without inspecting every bag is called",
+          "options": [
+            "grading",
+            "clearing",
+            "warehousing",
+            "speculation"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Traders gather on the floor, shouting bids and offers and using hand signals. This method of trading is",
+          "options": [
+            "electronic trading",
+            "hire purchase",
+            "barter",
+            "open outcry"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The main job of the clearing house in a commodity exchange is to",
+          "options": [
+            "grade the goods",
+            "make sure both buyer and seller keep to the deal",
+            "store the goods",
+            "advertise the goods"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A groundnut farmer in Kano sells through a commodity exchange instead of to a local buyer. Which is the main benefit to him?",
+          "options": [
+            "He pays no tax",
+            "The government buys all his produce",
+            "Prices are public, so he is more likely to get a fair price",
+            "He does not need to grow quality groundnuts"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) What is a commodity exchange? (b) State two requirements for trading a commodity on the exchange. (c) Name two commodities that are traded.",
+          "markScheme": [
+            "A commodity exchange is an organized market for buying and selling graded raw materials and farm produce",
+            "First requirement, for example grading",
+            "Second requirement, for example warehousing or standardizing",
+            "Two examples of commodities, for example cocoa and groundnuts"
+          ],
+          "modelAnswer": "(a) A commodity exchange is an organized market where graded raw materials and farm produce are bought and sold. (b) The commodity must be graded, and it must be stored in certified warehouses. (c) Cocoa and groundnuts are traded.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A commodity exchange is an organized market where graded raw materials and farm produce are bought and sold. (b) The commodity must be graded and it must be stored in a certified warehouse. (c) Cocoa and sesame seed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A commodity exchange is an organized market where graded raw materials and farm produce are bought and sold"
+                },
+                {
+                  "point": 1,
+                  "quote": "The commodity must be graded"
+                },
+                {
+                  "point": 2,
+                  "quote": "it must be stored in a certified warehouse"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cocoa and sesame seed"
+                }
+              ],
+              "feedback": "All four marks. Complete and accurate."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It is a market where farm produce and other raw materials of standard quality are traded. (b) Standardizing the weights and measures and having a clearing system. (c) Maize and cotton.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is a market where farm produce and other raw materials of standard quality are traded"
+                },
+                {
+                  "point": 1,
+                  "quote": "Standardizing the weights and measures"
+                },
+                {
+                  "point": 2,
+                  "quote": "having a clearing system"
+                },
+                {
+                  "point": 3,
+                  "quote": "Maize and cotton"
+                }
+              ],
+              "feedback": "Full marks. Clearing system and standardizing are both on the list of requirements."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A commodity exchange is an organized market for raw materials and farm produce. (b) Advertising and grading. (c) Cocoa.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A commodity exchange is an organized market for raw materials and farm produce"
+                },
+                {
+                  "point": 1,
+                  "quote": "grading"
+                }
+              ],
+              "feedback": "The definition and grading are right. Advertising is not a requirement; try warehousing or the clearing system. Name two commodities, such as cocoa and groundnuts."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) It is where traders meet. (b) Grading and warehousing. (c) Cocoa and maize.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Grading"
+                },
+                {
+                  "point": 2,
+                  "quote": "warehousing"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cocoa and maize"
+                }
+              ],
+              "feedback": "Your requirements and commodities are right. A commodity exchange is not simply where traders meet; it is an organized market for graded raw materials and farm produce."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A commodity exchange is where people exchange their commodities for other commodities. (b) Money and transport. (c) Shoes and bags.",
+              "meets": [],
+              "feedback": "That describes barter. A commodity exchange is an organized market for graded raw materials and farm produce. Requirements include grading and warehousing, and shoes and bags are not standardized."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is a bank for commodities. (b) Grading. (c) Cars.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Grading"
+                }
+              ],
+              "feedback": "Grading is a correct requirement. A commodity exchange is a market, not a bank, and cars are not standard commodities. Cocoa and groundnuts are better examples.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "A cocoa farmers' co-operative in Ondo decides to sell 20 tonnes through a commodity exchange rather than to a local buyer. (a) Explain how grading helps the farmers. (b) Explain how warehousing helps them. (c) State two benefits of the exchange to the farmers. (d) State one difference between open outcry and electronic trading.",
+          "markScheme": [
+            "Grading lets buyers trust the quality, so good cocoa earns a higher price",
+            "Warehousing keeps the cocoa safe and gives a receipt as proof of ownership, reducing losses",
+            "First benefit, for example a ready market or fair price",
+            "Second benefit, for example public prices or reduced risk",
+            "Open outcry takes place on the trading floor with shouting and signals, but electronic trading uses computers from any place"
+          ],
+          "modelAnswer": "(a) Grading sorts the cocoa into classes of quality, so buyers can trust it without inspecting each bag, and good-quality cocoa earns a higher price. (b) Warehousing keeps the cocoa safe from damage and theft, and the warehouse issues a receipt which proves ownership. (c) The farmers find a ready market and a fair price, because prices are public. (d) In open outcry, traders shout offers and bids on a trading floor, whereas in electronic trading buyers and sellers use computers from any place.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Grading means buyers know the quality of the cocoa without opening every bag, so better cocoa earns a higher price. (b) Warehousing protects the cocoa from rain and thieves, and the receipt proves who owns it. (c) The farmers get a ready market for the 20 tonnes and the prices are public so the buyer cannot cheat them. (d) Open outcry is on the floor with shouting while electronic trading is done on computers from anywhere.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Grading means buyers know the quality of the cocoa without opening every bag, so better cocoa earns a higher price"
+                },
+                {
+                  "point": 1,
+                  "quote": "Warehousing protects the cocoa from rain and thieves, and the receipt proves who owns it"
+                },
+                {
+                  "point": 2,
+                  "quote": "The farmers get a ready market for the 20 tonnes"
+                },
+                {
+                  "point": 3,
+                  "quote": "the prices are public so the buyer cannot cheat them"
+                },
+                {
+                  "point": 4,
+                  "quote": "Open outcry is on the floor with shouting while electronic trading is done on computers from anywhere"
+                }
+              ],
+              "feedback": "All five marks. Each answer is applied to the cocoa farmers, which is what the question asks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Grading builds trust, since the quality is certified, so the price is higher for good grades. (b) Cocoa is stored in a safe warehouse, which reduces losses, and the receipt shows ownership. (c) They have a guaranteed market; they receive a fair price known to everyone. (d) Open outcry is done face to face on the floor, but electronic trading is done with computers and the internet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Grading builds trust, since the quality is certified, so the price is higher for good grades"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cocoa is stored in a safe warehouse, which reduces losses, and the receipt shows ownership"
+                },
+                {
+                  "point": 2,
+                  "quote": "They have a guaranteed market"
+                },
+                {
+                  "point": 3,
+                  "quote": "they receive a fair price known to everyone"
+                },
+                {
+                  "point": 4,
+                  "quote": "Open outcry is done face to face on the floor, but electronic trading is done with computers and the internet"
+                }
+              ],
+              "feedback": "Full marks. Your link between grading, trust and price is excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Grading tells buyers the quality of the cocoa so good cocoa earns more. (b) Warehousing is for keeping cocoa. (c) They find a ready market. They get money. (d) Open outcry is shouting and electronic is by computer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Grading tells buyers the quality of the cocoa so good cocoa earns more"
+                },
+                {
+                  "point": 2,
+                  "quote": "They find a ready market"
+                },
+                {
+                  "point": 4,
+                  "quote": "Open outcry is shouting and electronic is by computer"
+                }
+              ],
+              "feedback": "Parts (a), (c) and (d) are right. For warehousing, add what it gives them: safe storage and a receipt which proves ownership. 'They get money' is not a benefit of the exchange in particular; add fair, public prices."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Grading makes the cocoa look nice. (b) Warehousing keeps the cocoa safe and the receipt proves who owns it. (c) Prices are public so there is a fair price. (d) Open outcry is shouting on the floor but electronic trading uses computers.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Warehousing keeps the cocoa safe and the receipt proves who owns it"
+                },
+                {
+                  "point": 3,
+                  "quote": "Prices are public so there is a fair price"
+                },
+                {
+                  "point": 4,
+                  "quote": "Open outcry is shouting on the floor but electronic trading uses computers"
+                }
+              ],
+              "feedback": "Warehousing, public prices and the trading methods are right. Grading is not about appearance: it sorts cocoa by quality so that buyers trust the grade, and a ready market is a second benefit."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It makes the cocoa sweet. (b) It makes it cold. (c) They will have a lot of cocoa. (d) Open outcry is outside and electronic is inside.",
+              "meets": [],
+              "feedback": "Grading sorts goods by quality and warehousing stores them safely. Benefits include a ready market and fair prices. Open outcry and electronic trading differ by how bids are made: shouting on a floor, or by computers."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Grading is the certificate of the school. (b) Warehousing is where the cocoa is kept. (c) A ready market. (d) Same thing.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "A ready market"
+                }
+              ],
+              "feedback": "Your ready market benefit earns a mark. Grading is sorting by quality, not a school certificate. Warehousing needs a reason: it keeps cocoa safe and the receipt proves ownership. The trading methods are different.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Transport",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define transport and state its importance in trade;\n2. list the factors that influence the choice of transport;\n3. describe land, water, air and pipeline transport, with the advantages and disadvantages of each;\n4. state the purpose of transport documents: waybill, consignment note, ticket and manifest.\n\n## Materials\n\nPictures of a lorry, a train, a river barge, a cargo ship, an aeroplane and a pipeline; samples of a bus ticket and a waybill; a map of Nigeria showing rivers, railways and ports.\n\n## Starter (5 minutes)\n\nAsk: the cement used to build your classroom came from a factory far away. In how many ways could it have travelled? Which would be cheapest? Which fastest? Write the answers in two columns.\n\n## Development\n\n1. Transport is the movement of people and goods from one place to another. It creates place utility and widens markets.\n2. Importance: makes trade possible, gives jobs, links towns and villages, brings raw materials to factories, allows specialization.\n3. Choice of transport: nature of the goods, distance, speed needed, cost, safety, availability and size of the consignment.\n4. Forms: land (road, rail), water (inland waterways, sea, ocean), air and pipeline. Compare using a table.\n5. Documents: waybill (accompanies the goods and shows the sender, receiver and goods), consignment note (issued by the carrier to the sender as acknowledgement), ticket (passenger's evidence of payment) and manifest (list of cargo or passengers on a vessel or aircraft).\n\n## Class activity\n\nStudents are given five transport problems: fresh flowers to Abuja, cement to Kano, crude oil to the refinery, a passenger to London, timber from Calabar. They choose the best mode and explain.\n\n## Evaluation\n\n1. Why do exporters prefer to move heavy cargo by sea?\n2. What is a manifest?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Moving people and goods",
+        "content": "# Transport\n\n**Transport** is the movement of people and goods from one place to another. It adds *place utility*: tomatoes in Kano are worth more in Lagos where buyers are. Without transport, trade would stay in the village.\n\n## Importance of transport\n\nTransport makes trade possible and widens markets, brings raw materials to factories and finished goods to consumers, lets regions specialize, creates employment, and joins towns and villages together.\n\n## Choosing a mode of transport\n\nThe factors are the **nature of the goods** (fresh fish or fragile goods need speed and care), the **distance**, the **speed** required, the **cost**, the **safety** of the goods, the size of the consignment, and what is available.\n\n## Forms of transport\n\n| Form | Advantages | Disadvantages |\n| --- | --- | --- |\n| **Road** | Door-to-door service; flexible; good for short distances | Accidents; bad roads; limited load; traffic hold-ups |\n| **Rail** | Cheap for heavy goods over long distances; safe | Fixed routes; stations may be far from customers; slow loading |\n| **Water** (rivers, sea) | Cheapest for bulky goods; carries very large loads, especially by sea | Slow; limited to places on the water; affected by weather |\n| **Air** | Fastest; good for perishable or valuable goods and long journeys | Very costly; small loads; weather delays |\n| **Pipeline** | Low running cost; continuous flow of oil, gas and water; safe | Heavy initial cost; only for liquids and gases; leaks and vandalism |\n\n## Transport documents\n\n- **Waybill**: travels with the goods and gives details of the sender, the receiver and the goods.\n- **Consignment note**: given by the carrier to the sender as proof that the goods were accepted for carriage; it states terms of carriage.\n- **Ticket**: a passenger's evidence that fare has been paid.\n- **Manifest**: a list of all the cargo (or passengers) carried by a ship or aircraft, prepared by the carrier and used by customs.\n\n## Worked example\n\nA trader in Onitsha sends 300 bags of rice to Maiduguri. By road, the lorry reaches the buyer's shop in two days. By rail, the cost is lower but the bags must be collected from the station and moved again, which adds time and handling. The trader chooses road for speed and door-to-door delivery."
+      },
+      "cards": [
+        {
+          "front": "Transport",
+          "back": "The movement of people and goods from one place to another."
+        },
+        {
+          "front": "Place utility",
+          "back": "The extra value goods gain when they are moved to where they are needed."
+        },
+        {
+          "front": "Road transport",
+          "back": "Land transport with door-to-door service, but limited loads."
+        },
+        {
+          "front": "Pipeline",
+          "back": "Transport of oil, gas or water through underground or surface pipes."
+        },
+        {
+          "front": "Air transport",
+          "back": "The fastest form of transport but also very costly."
+        },
+        {
+          "front": "Waybill",
+          "back": "A document that goes with goods and gives details of sender, receiver and goods."
+        },
+        {
+          "front": "Consignment note",
+          "back": "A document the carrier gives the sender as proof of acceptance of the goods."
+        },
+        {
+          "front": "Manifest",
+          "back": "A list of the cargo or passengers carried by a ship or aircraft."
+        },
+        {
+          "front": "Ticket",
+          "back": "A passenger's evidence of paying a fare."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which form of transport is most suitable for moving crude oil over long distances at low running cost?",
+          "options": [
+            "Road",
+            "Rail",
+            "Pipeline",
+            "Air"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A florist in Lagos must deliver fresh flowers to Abuja on the same day. The most suitable mode of transport is",
+          "options": [
+            "rail",
+            "air",
+            "water",
+            "pipeline"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The list of all the cargo carried on a ship, which customs use to check the goods, is called a",
+          "options": [
+            "ticket",
+            "waybill",
+            "consignment note",
+            "manifest"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A document that travels with goods carried by road and shows the sender, the receiver and what is being carried is a",
+          "options": [
+            "manifest",
+            "bill of exchange",
+            "ticket",
+            "waybill"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A major disadvantage of moving goods by inland waterway, such as the River Niger, is that it is",
+          "options": [
+            "slow and limited to places on the water",
+            "too costly for bulky goods",
+            "unsafe for heavy cargo",
+            "unable to carry timber"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) State three factors that influence the choice of a mode of transport. (b) What document does a passenger receive as evidence of paying the fare?",
+          "markScheme": [
+            "First factor, for example nature of the goods",
+            "Second factor, for example cost",
+            "Third factor, for example speed or distance",
+            "A ticket"
+          ],
+          "modelAnswer": "(a) The choice of a mode of transport depends on the nature of the goods, the cost, and the speed needed. (b) A passenger receives a ticket.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The nature of the goods, for example fresh fish needs quick transport, the cost of the transport and the distance to be covered. (b) A ticket.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The nature of the goods, for example fresh fish needs quick transport"
+                },
+                {
+                  "point": 1,
+                  "quote": "the cost of the transport"
+                },
+                {
+                  "point": 2,
+                  "quote": "the distance to be covered"
+                },
+                {
+                  "point": 3,
+                  "quote": "A ticket"
+                }
+              ],
+              "feedback": "All four marks. The fresh fish example shows you understand why the factor matters."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The type of goods to be carried, the cost, how fast the goods must reach the buyer. (b) Ticket.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The type of goods to be carried"
+                },
+                {
+                  "point": 1,
+                  "quote": "the cost"
+                },
+                {
+                  "point": 2,
+                  "quote": "how fast the goods must reach the buyer"
+                },
+                {
+                  "point": 3,
+                  "quote": "Ticket"
+                }
+              ],
+              "feedback": "Full marks. Each factor is a different one."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Cost and speed. The colour of the vehicle. (b) A ticket.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Cost"
+                },
+                {
+                  "point": 2,
+                  "quote": "speed"
+                },
+                {
+                  "point": 3,
+                  "quote": "A ticket"
+                }
+              ],
+              "feedback": "Cost, speed and the ticket are right. Colour of the vehicle is not a factor; try the nature of the goods or the distance."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The nature of the goods. The weather in the market. (b) Receipt.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The nature of the goods"
+                }
+              ],
+              "feedback": "The nature of the goods is right. Weather can matter but is not a main factor; add cost and speed. The passenger's proof of payment is called a ticket."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The driver, the road, the vehicle. (b) A manifest.",
+              "meets": [],
+              "feedback": "Those are things you need for road transport, not factors that influence the choice. Think of cost and speed. A manifest is a list of cargo or passengers; the passenger holds a ticket."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The goods, the buyer and the seller. (b) Ticket.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Ticket"
+                }
+              ],
+              "feedback": "The ticket earns a mark. 'The goods' alone is vague; say the nature of the goods, and add cost or speed as factors.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "A trader in Onitsha sends 300 bags of rice to Maiduguri. (a) State two advantages of sending the rice by road. (b) State two advantages of sending it by rail. (c) Name the document that goes with the rice on the journey.",
+          "markScheme": [
+            "First advantage of road, for example door-to-door service",
+            "Second advantage of road, for example flexible or faster for short and medium distances",
+            "First advantage of rail, for example cheap for heavy goods over long distances",
+            "Second advantage of rail, for example safer or can carry large loads",
+            "Waybill (or consignment note)"
+          ],
+          "modelAnswer": "(a) Road transport gives a door-to-door service, so the rice reaches the buyer's shop with no extra handling, and it is flexible, since the lorry can go by any route. (b) Rail is cheaper for heavy goods over a long distance such as Onitsha to Maiduguri, and it can carry a large load in one train. (c) A waybill goes with the rice and shows the sender, the receiver and the goods.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Road gives door-to-door service so the rice reaches the buyer's shop directly and the lorry can use any route, so it is flexible. (b) Rail is cheaper for heavy goods over long distances and a train can carry a very large load at once. (c) A waybill.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Road gives door-to-door service so the rice reaches the buyer's shop directly"
+                },
+                {
+                  "point": 1,
+                  "quote": "the lorry can use any route, so it is flexible"
+                },
+                {
+                  "point": 2,
+                  "quote": "Rail is cheaper for heavy goods over long distances"
+                },
+                {
+                  "point": 3,
+                  "quote": "a train can carry a very large load at once"
+                },
+                {
+                  "point": 4,
+                  "quote": "A waybill"
+                }
+              ],
+              "feedback": "All five marks. Good use of the Onitsha to Maiduguri journey."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Goods are delivered from the warehouse to the shop door; it is quicker and flexible for the trader. (b) Cost per bag is lower over a long distance; rail is safe from road accidents and can carry many bags. (c) Consignment note and waybill.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Goods are delivered from the warehouse to the shop door"
+                },
+                {
+                  "point": 1,
+                  "quote": "it is quicker and flexible for the trader"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cost per bag is lower over a long distance"
+                },
+                {
+                  "point": 3,
+                  "quote": "rail is safe from road accidents and can carry many bags"
+                },
+                {
+                  "point": 4,
+                  "quote": "Consignment note and waybill"
+                }
+              ],
+              "feedback": "Full marks. Naming both documents is correct; either would have earned the mark."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Door to door delivery. Road is faster than the other types. (b) Rail is cheaper for heavy goods. Rail has no accidents. (c) Waybill.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Door to door delivery"
+                },
+                {
+                  "point": 2,
+                  "quote": "Rail is cheaper for heavy goods"
+                },
+                {
+                  "point": 4,
+                  "quote": "Waybill"
+                }
+              ],
+              "feedback": "Door-to-door, cost and the waybill are right. Road is not always faster than air, and rail still has accidents; say rail is safer than road for heavy loads. Name a second road advantage, such as flexible routes."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Road is flexible, the lorry can go to any town. (b) Rail carries large loads. Rail is cheap for lorries. (c) Ticket.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Road is flexible, the lorry can go to any town"
+                },
+                {
+                  "point": 3,
+                  "quote": "Rail carries large loads"
+                }
+              ],
+              "feedback": "Flexibility and large loads are right. The document for goods is a waybill, not a ticket. Add door-to-door delivery for road and low cost over long distances for rail."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The driver can sleep. (b) It has a long engine. (c) A bill.",
+              "meets": [],
+              "feedback": "Think about what the trader gains. Road: door-to-door delivery, flexibility. Rail: low cost for heavy goods over long distances, large loads. The document is a waybill."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Road is cheaper than all. (b) Trains can carry many bags at once. (c) Visa.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Trains can carry many bags at once"
+                }
+              ],
+              "feedback": "Your rail answer earns a mark. Road is not cheaper than all: for long distances rail is cheaper per bag. A visa is for travel; goods travel with a waybill or consignment note.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Communication and the computer",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define communication and classify it as oral, written, visual, non-verbal, non-visual or traditional;\n2. state the advantages and disadvantages of each type;\n3. describe the services of the post office and of courier agencies;\n4. describe the telephone system, satellite services and the internet and email;\n5. name the component parts of a computer and state its advantages and disadvantages in business.\n\n## Materials\n\nA gong or drum, a letter, a mobile phone, a picture of a satellite dish, a desktop computer (or pictures of its parts), registered post slip.\n\n## Starter (5 minutes)\n\nBeat a drum or ring a bell. Ask the class what message it sends. Link to the village crier, the town drum and the school bell as traditional communication. Then ask how the class would send a message to Lagos today.\n\n## Development\n\n1. Communication is the exchange of information between people. A trader who cannot receive orders, prices and complaints cannot do business.\n2. Types: oral (spoken, face to face or by phone), written (letters, memos, emails), visual (charts, pictures, signs), non-verbal (gestures, facial expressions), non-visual (sound only, such as radio), and traditional (drums, gongs, town criers).\n3. Post office services: ordinary and registered letters, parcels, express mail, money orders, postal orders, post office boxes. Courier agencies: fast, door-to-door, trackable and more costly.\n4. Other agencies: telephone and mobile networks, satellite services (television, internet, data links), the internet and email.\n5. The computer: input (keyboard, mouse), the central processing unit and memory, storage, and output (monitor, printer). Advantages: speed, accuracy, storage. Disadvantages: cost, virus, job loss, power failure.\n\n## Class activity\n\nEach group is given a message (an urgent order, a birthday greeting, a complaint) and chooses the best means of communication, giving reasons.\n\n## Evaluation\n\n1. Why might a business prefer written communication for a contract?\n2. What is the work of the central processing unit?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Getting the message across",
+        "content": "# Communication and the computer\n\n**Communication** is the sending and receiving of information, ideas and messages. Business needs it for orders, prices, payments and complaints.\n\n## Types of communication\n\n| Type | Meaning | Example |\n| --- | --- | --- |\n| Oral | Spoken words | A phone call, a meeting |\n| Written | Words on paper or screen | A letter, an email, a memo |\n| Visual | Seen through pictures or signs | A chart, a poster, a road sign |\n| Non-verbal | Body language | A smile, a nod, a wave |\n| Non-visual | Heard but not seen | A radio announcement |\n| Traditional | Methods used by local communities | Talking drum, gong, town crier |\n\nOral communication is quick and personal, but there is no permanent record. Written communication gives a **permanent record** and can be used as evidence, but is slower and may be misread.\n\n## The post office\n\nThe post office carries letters and parcels, sells stamps, and offers **registered post** (proof of posting and compensation if lost), **express mail**, **post office boxes** and money orders.\n\n## Courier agencies\n\nCourier agencies collect and deliver letters and parcels door-to-door, fast, often with tracking. They cost more than the post office but are quicker and more reliable for important documents.\n\n## Telephone, satellite and the internet\n\nThe mobile and fixed telephone network allows instant two-way conversation. **Satellites** relay signals for television, telephone and internet over long distances, including across the Atlantic. The **internet** links computers around the world; **email** sends written messages in seconds, with attachments. Problems include cost of data, viruses, hacking and poor network.\n\n## Computer appreciation\n\nA **computer** is an electronic machine that accepts data, processes it by instructions and gives results. Its parts:\n\n- **Input devices**: keyboard, mouse, scanner.\n- **Central processing unit (CPU)**: carries out instructions.\n- **Memory and storage**: hold programs and data.\n- **Output devices**: monitor, printer, speakers.\n\n**Advantages in business:** speed, accuracy, storage of large records, easy copies, and communication. **Disadvantages:** high cost, power failure, viruses and hacking, need for trained staff and possible loss of jobs."
+      },
+      "cards": [
+        {
+          "front": "Communication",
+          "back": "The sending and receiving of information or messages."
+        },
+        {
+          "front": "Oral communication",
+          "back": "Communication by spoken words."
+        },
+        {
+          "front": "Written communication",
+          "back": "Communication in writing, which gives a permanent record."
+        },
+        {
+          "front": "Traditional communication",
+          "back": "Local methods such as drums, gongs and the town crier."
+        },
+        {
+          "front": "Registered post",
+          "back": "A post office service giving proof of posting and compensation if lost."
+        },
+        {
+          "front": "Courier agency",
+          "back": "A private firm that delivers parcels door-to-door quickly."
+        },
+        {
+          "front": "Email",
+          "back": "Written messages sent through the internet."
+        },
+        {
+          "front": "CPU",
+          "back": "The central processing unit: the part of a computer that carries out instructions."
+        },
+        {
+          "front": "Input device",
+          "back": "A device, such as a keyboard or mouse, that puts data into a computer."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A town crier beating a gong to announce a market-day meeting is an example of",
+          "options": [
+            "written communication",
+            "non-visual communication only",
+            "traditional communication",
+            "visual communication"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is an advantage of written communication over oral communication in business?",
+          "options": [
+            "It gives a permanent record that can be used as evidence",
+            "It is always faster",
+            "It needs no equipment",
+            "It is never misunderstood"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A firm in Abuja needs a signed contract to reach Port Harcourt by next morning, with tracking. The best service is a",
+          "options": [
+            "village crier",
+            "ordinary post",
+            "radio announcement",
+            "courier agency"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A keyboard and a mouse are examples of computer",
+          "options": [
+            "output devices",
+            "input devices",
+            "storage devices",
+            "processors"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A sender wants proof that a parcel was posted and compensation if it is lost. She should use",
+          "options": [
+            "an ordinary stamp",
+            "a telephone call",
+            "registered post",
+            "a notice board"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Distinguish between oral and written communication. (b) State one advantage and one disadvantage of email.",
+          "markScheme": [
+            "Oral communication uses spoken words",
+            "Written communication uses writing and gives a permanent record",
+            "One advantage of email, for example it is sent and received in seconds",
+            "One disadvantage of email, for example the receiver may not have internet, or viruses and hacking"
+          ],
+          "modelAnswer": "(a) Oral communication uses spoken words, for example a phone call. Written communication uses writing, for example a letter or email, and gives a permanent record. (b) Email is delivered in seconds, even to another country. A disadvantage is that it needs internet access, and the message may carry a virus.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Oral communication is made by spoken words. Written communication is by writing and leaves a record that can be kept. (b) An email reaches the other person in seconds but it needs the internet and may carry a virus.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Oral communication is made by spoken words"
+                },
+                {
+                  "point": 1,
+                  "quote": "Written communication is by writing and leaves a record that can be kept"
+                },
+                {
+                  "point": 2,
+                  "quote": "An email reaches the other person in seconds"
+                },
+                {
+                  "point": 3,
+                  "quote": "it needs the internet and may carry a virus"
+                }
+              ],
+              "feedback": "All four marks. Mentioning that written communication can be kept is the key distinction."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Oral is when we talk to each other, face to face or on the phone. Written is in the form of letters, memos or email and it can be kept as proof. (b) Email is fast and cheap to send. A disadvantage is that criminals can hack it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Oral is when we talk to each other, face to face or on the phone"
+                },
+                {
+                  "point": 1,
+                  "quote": "Written is in the form of letters, memos or email and it can be kept as proof"
+                },
+                {
+                  "point": 2,
+                  "quote": "Email is fast and cheap to send"
+                },
+                {
+                  "point": 3,
+                  "quote": "A disadvantage is that criminals can hack it"
+                }
+              ],
+              "feedback": "Full marks. Hacking is a real disadvantage, along with viruses."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Oral is spoken. Written is by writing. (b) Email is quick. Email is good.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Oral is spoken"
+                },
+                {
+                  "point": 2,
+                  "quote": "Email is quick"
+                }
+              ],
+              "feedback": "Oral is right. For written communication, add that it gives a permanent record. For the disadvantage, name something real, such as needing the internet or the risk of viruses."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Oral is by phone and written is by letter. (b) Email is fast. A disadvantage is that you must have internet to use it.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "A disadvantage is that you must have internet to use it"
+                }
+              ],
+              "feedback": "Your disadvantage is right. Oral and written are defined by spoken or written words, not by equipment, since a phone call can be recorded and a letter can be read aloud. Email's speed (seconds) earns the advantage mark if stated clearly."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Oral is for old people and written is for students. (b) Email is a letter in a box.",
+              "meets": [],
+              "feedback": "The difference is spoken versus written words. Email is a message typed and sent through the internet, delivered within seconds, but it needs the internet and can carry viruses."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Written communication gives a record. Oral is also giving a record. (b) It is cheap. It is not cheap.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Written communication gives a record"
+                }
+              ],
+              "feedback": "Your point about written communication earns the mark. Oral communication has no permanent record unless recorded. Choose one clear advantage, such as speed, and one disadvantage, such as viruses.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Name two component parts of a computer and state the function of each. (b) State two advantages of using a computer in business. (c) State two disadvantages.",
+          "markScheme": [
+            "First component and its function, for example input device (keyboard) puts data into the computer",
+            "Second component and its function, for example CPU carries out instructions, or monitor displays results",
+            "First advantage, for example speed",
+            "Second advantage, for example stores large records",
+            "First disadvantage, for example high cost or power failure",
+            "Second disadvantage, for example viruses and hacking"
+          ],
+          "modelAnswer": "(a) The keyboard is an input device that puts data into the computer. The central processing unit carries out the instructions on the data. (b) A computer works very fast, and it can store large records in a small space. (c) A computer is costly and it needs power, which may fail, and it can be damaged by viruses or hacked.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The keyboard is an input device used to enter data into the computer. The CPU is the part that processes the data by carrying out instructions. (b) A computer works very fast and it can store a large number of records. (c) A computer is expensive and needs electricity, which may fail and viruses and hackers can destroy or steal the data.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The keyboard is an input device used to enter data into the computer"
+                },
+                {
+                  "point": 1,
+                  "quote": "The CPU is the part that processes the data by carrying out instructions"
+                },
+                {
+                  "point": 2,
+                  "quote": "A computer works very fast"
+                },
+                {
+                  "point": 3,
+                  "quote": "it can store a large number of records"
+                },
+                {
+                  "point": 4,
+                  "quote": "A computer is expensive and needs electricity, which may fail"
+                },
+                {
+                  "point": 5,
+                  "quote": "viruses and hackers can destroy or steal the data"
+                }
+              ],
+              "feedback": "All six marks. Each part is complete."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Mouse and keyboard are input devices that send data into the computer. The monitor is an output device that shows the result to the user. (b) It is faster than doing the work by hand; it keeps records safe and in small space. (c) It is costly to buy and repair; it can be attacked by viruses.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mouse and keyboard are input devices that send data into the computer"
+                },
+                {
+                  "point": 1,
+                  "quote": "The monitor is an output device that shows the result to the user"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is faster than doing the work by hand"
+                },
+                {
+                  "point": 3,
+                  "quote": "it keeps records safe and in small space"
+                },
+                {
+                  "point": 4,
+                  "quote": "It is costly to buy and repair"
+                },
+                {
+                  "point": 5,
+                  "quote": "it can be attacked by viruses"
+                }
+              ],
+              "feedback": "Full marks. Naming a monitor for output and a keyboard for input gives a good spread of parts."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Keyboard is an input device that enters data. Monitor is for watching. (b) It is fast and it stores a lot. (c) It is a very big machine.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Keyboard is an input device that enters data"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is fast"
+                },
+                {
+                  "point": 3,
+                  "quote": "it stores a lot"
+                }
+              ],
+              "feedback": "Input and both advantages are right. For the monitor, say it displays the results (output). A computer is not necessarily big; its disadvantages include cost, power failure and viruses."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The CPU processes the data. Printer. (b) Speed and accuracy. (c) It is costly. Hackers can steal information.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The CPU processes the data"
+                },
+                {
+                  "point": 2,
+                  "quote": "Speed"
+                },
+                {
+                  "point": 4,
+                  "quote": "It is costly"
+                },
+                {
+                  "point": 5,
+                  "quote": "Hackers can steal information"
+                }
+              ],
+              "feedback": "The CPU, speed and both disadvantages are right. Printer needs its function (it gives output on paper), and accuracy needs to be explained to earn a mark as a second advantage unless you state that it stores records."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Computer parts are the screen and the table. (b) It makes the business look big. (c) It breaks.",
+              "meets": [],
+              "feedback": "Name parts with their functions, for example a keyboard to enter data, a CPU to process it. Advantages: speed, storage. Disadvantages: cost, power failure, viruses. 'Looks big' is not an advantage."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The keyboard is used to type and put data into the computer. Windows. (b) It saves paper. (c) It makes workers lazy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The keyboard is used to type and put data into the computer"
+                }
+              ],
+              "feedback": "The keyboard answer earns a mark. Windows is a program, not a part; give another physical part like the CPU. Saving paper is a minor benefit; give speed or storage. For the disadvantage, give cost or viruses.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Tourism",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define tourism and tourist;\n2. state the importance and functions of tourism;\n3. distinguish the types of tourism: domestic, international, business, religious, cultural and leisure;\n4. state the advantages of tourism and the problems that hold it back in Nigeria.\n\n## Materials\n\nPictures of Yankari Game Reserve, Obudu Mountain Resort, Olumo Rock, Zuma Rock, the Argungu fishing festival and the Calabar Carnival; a map of Nigeria; a sample hotel booking form.\n\n## Starter (5 minutes)\n\nAsk the class: who has travelled to another town in the holidays only to see a place, not to work or live? Where did they go, and who earned money from their visit? List the people: transporter, hotel owner, food seller, guide.\n\n## Development\n\n1. Tourism is the movement of people to places outside their normal home for leisure, business or other purposes, staying for a time. A tourist is a person who travels in this way and stays at least a night.\n2. Types: domestic (within one's own country), international (across borders, inbound and outbound), and by purpose: leisure, business, religious (pilgrimage), cultural and sport.\n3. Attractions in Nigeria: natural (Yankari, Obudu, Zuma Rock, Erin Ijesha waterfalls), cultural (Argungu festival, Calabar Carnival, Osun-Osogbo festival), and historic (Olumo Rock).\n4. Importance and functions: foreign exchange, jobs, income for hotels and transporters, development of roads and airports, preservation of culture, and international understanding.\n5. Problems: insecurity, poor roads, inadequate hotels, poor power, weak publicity and visa delays.\n\n## Class activity\n\nStudents plan a three-day tour of Nigeria for a visiting family, choosing places, transport and hotels.\n\n## Evaluation\n\n1. Why does a trade fair in Abuja help hotel owners?\n2. State two problems facing tourism in Nigeria.\n\n## Assignment\n\nQuiz on the app.",
+      "reading": {
+        "title": "Travelling to see and to do",
+        "content": "# Tourism\n\n**Tourism** is the travelling of people to places outside their usual homes for pleasure, business, religion or culture, staying there for a while. A **tourist** is a person who does this and stays at least one night.\n\n## Types of tourism\n\n- **Domestic tourism**: within one's own country, such as a Lagos family visiting Yankari Game Reserve in Bauchi State.\n- **International tourism**: across national borders. **Inbound** tourism means visitors coming into a country; **outbound** means citizens going abroad.\n- **Leisure tourism**: for holiday and recreation.\n- **Business tourism**: for trade fairs, conferences and meetings.\n- **Religious tourism (pilgrimage)**: to holy places, such as Muslims to Mecca or Christians to Jerusalem.\n- **Cultural tourism**: to festivals and heritage sites, such as the Argungu fishing festival, Osun-Osogbo festival and the Calabar Carnival.\n\n## Attractions in Nigeria\n\nNatural: Yankari Game Reserve, Obudu Mountain Resort, Zuma Rock, Erin Ijesha waterfalls, Lekki beaches. Historic: Olumo Rock in Abeokuta. Cultural: the festivals above, and the arts and crafts of Benin and Nupe.\n\n## Importance and functions\n\n- It earns **foreign exchange** when foreigners spend money.\n- It creates **jobs** for guides, hotel staff, drivers, traders and craftsmen.\n- It raises incomes of hotels, restaurants, transporters and local traders.\n- It helps develop roads, airports and utilities.\n- It preserves culture and historic sites.\n- It promotes understanding between peoples.\n\n## Problems\n\nInsecurity, poor roads and power supply, too few good hotels, poor maintenance of attractions, weak publicity and delays in obtaining visas discourage tourists.\n\n## Advantages summarized\n\nTourism is a source of income that does not use up the natural resource: a waterfall can earn money from visitors for a very long time."
+      },
+      "cards": [
+        {
+          "front": "Tourism",
+          "back": "The travelling of people to places outside their homes for leisure, business or culture."
+        },
+        {
+          "front": "Tourist",
+          "back": "A person who travels and stays at least one night away from home."
+        },
+        {
+          "front": "Domestic tourism",
+          "back": "Tourism within one's own country."
+        },
+        {
+          "front": "Inbound tourism",
+          "back": "Foreign visitors coming into a country."
+        },
+        {
+          "front": "Business tourism",
+          "back": "Travel to attend conferences, trade fairs and meetings."
+        },
+        {
+          "front": "Religious tourism",
+          "back": "Travel to holy places, called pilgrimage."
+        },
+        {
+          "front": "Cultural tourism",
+          "back": "Travel to festivals and heritage sites."
+        },
+        {
+          "front": "Foreign exchange",
+          "back": "Money in another country's currency, earned when visitors spend in Nigeria."
+        },
+        {
+          "front": "Yankari Game Reserve",
+          "back": "A natural attraction in Bauchi State known for its wildlife and warm springs."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A Lagos family spends a holiday at Yankari Game Reserve in Bauchi State. This is an example of",
+          "options": [
+            "inbound international tourism",
+            "domestic tourism",
+            "outbound tourism",
+            "religious tourism"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A visitor from Ghana attends the Calabar Carnival. From Nigeria's point of view, this is",
+          "options": [
+            "domestic tourism",
+            "inbound tourism",
+            "outbound tourism",
+            "business tourism"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is an economic benefit of tourism to a country?",
+          "options": [
+            "It earns foreign exchange",
+            "It increases the population",
+            "It reduces the need for roads",
+            "It lowers the price of imports"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Delegates travel to Abuja for a three-day conference on trade. This is an example of",
+          "options": [
+            "religious tourism",
+            "cultural tourism",
+            "domestic leisure only",
+            "business tourism"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a major obstacle to the growth of tourism in Nigeria?",
+          "options": [
+            "Too many hotels",
+            "Too many attractions",
+            "Insecurity and poor infrastructure",
+            "Low prices of air tickets"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Define tourism. (b) Name three tourist attractions in Nigeria.",
+          "markScheme": [
+            "Tourism is the travelling of people to places outside their homes for leisure, business or culture",
+            "First attraction, for example Yankari Game Reserve",
+            "Second attraction, for example Olumo Rock",
+            "Third attraction, for example Obudu Mountain Resort or the Argungu festival"
+          ],
+          "modelAnswer": "(a) Tourism is the travelling of people to places away from their homes, for pleasure, business, religion or culture, and staying there for a time. (b) Attractions in Nigeria include Yankari Game Reserve, Olumo Rock and the Obudu Mountain Resort.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Tourism is when people travel to a place away from their home for pleasure or business and stay for some time. (b) Yankari Game Reserve, Olumo Rock and Zuma Rock.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Tourism is when people travel to a place away from their home for pleasure or business and stay for some time"
+                },
+                {
+                  "point": 1,
+                  "quote": "Yankari Game Reserve"
+                },
+                {
+                  "point": 2,
+                  "quote": "Olumo Rock"
+                },
+                {
+                  "point": 3,
+                  "quote": "Zuma Rock"
+                }
+              ],
+              "feedback": "All four marks. Three valid attractions, each correct."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Tourism is the movement of people to places outside their normal home for leisure, business or culture. (b) Obudu Mountain Resort, the Argungu fishing festival and Erin Ijesha waterfalls.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Tourism is the movement of people to places outside their normal home for leisure, business or culture"
+                },
+                {
+                  "point": 1,
+                  "quote": "Obudu Mountain Resort"
+                },
+                {
+                  "point": 2,
+                  "quote": "the Argungu fishing festival"
+                },
+                {
+                  "point": 3,
+                  "quote": "Erin Ijesha waterfalls"
+                }
+              ],
+              "feedback": "Full marks. Mixing a resort, a festival and a waterfall shows you know several kinds of attraction."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Tourism is travelling for pleasure to another place. (b) Yankari and Eyo Plaza in the market.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Tourism is travelling for pleasure to another place"
+                },
+                {
+                  "point": 1,
+                  "quote": "Yankari"
+                }
+              ],
+              "feedback": "The definition and Yankari are right. Name a second and third attraction that you are sure of, such as Olumo Rock or Obudu; the market is not a tourist attraction by itself."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Tourism is when you go to school far away. (b) Olumo Rock and the Calabar Carnival.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Olumo Rock"
+                },
+                {
+                  "point": 3,
+                  "quote": "the Calabar Carnival"
+                }
+              ],
+              "feedback": "Your attractions are right. Going to school is not tourism; tourism is travelling away from home for pleasure, business or culture. Add one more attraction, such as Yankari."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Tourism is the money that government collects. (b) Lagos, Abuja and Kano.",
+              "meets": [],
+              "feedback": "Tourism is the travelling of people to places for pleasure or business, not tax. Lagos, Abuja and Kano are cities, not attractions; name places like Yankari or Olumo Rock."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Tourism is the selling of goods to foreigners. (b) Yankari.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Yankari"
+                }
+              ],
+              "feedback": "Yankari is a correct attraction. Selling goods to foreigners is export. Tourism is people travelling away from home for pleasure, business or culture.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Explain three ways in which tourism benefits the Nigerian economy. (b) State two problems that hold back tourism in Nigeria.",
+          "markScheme": [
+            "Tourism earns foreign exchange when visitors spend money",
+            "Tourism creates jobs, for example for hotel staff, guides and drivers",
+            "Tourism raises incomes of local businesses or leads to development of roads and airports",
+            "First problem, for example insecurity",
+            "Second problem, for example poor roads or power supply, or too few good hotels"
+          ],
+          "modelAnswer": "(a) Tourism earns foreign exchange when foreign visitors spend money. It creates jobs for hotel workers, guides and drivers. It raises the incomes of local traders and hotels, and leads to better roads and airports. (b) Insecurity discourages visitors, and poor roads and power supply make travel and stay difficult.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Tourists from abroad spend dollars and pounds in Nigeria, which earns the country foreign exchange. Tourism creates jobs for hotel workers, guides, drivers and traders. Roads and airports are improved to carry the visitors, and local traders earn more. (b) Insecurity makes people afraid to travel and poor roads and electricity make the stay uncomfortable.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Tourists from abroad spend dollars and pounds in Nigeria, which earns the country foreign exchange"
+                },
+                {
+                  "point": 1,
+                  "quote": "Tourism creates jobs for hotel workers, guides, drivers and traders"
+                },
+                {
+                  "point": 2,
+                  "quote": "Roads and airports are improved to carry the visitors, and local traders earn more"
+                },
+                {
+                  "point": 3,
+                  "quote": "Insecurity makes people afraid to travel"
+                },
+                {
+                  "point": 4,
+                  "quote": "poor roads and electricity make the stay uncomfortable"
+                }
+              ],
+              "feedback": "All five marks. Each benefit is explained rather than listed."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It brings in foreign exchange from the money foreigners spend; it gives employment to many young people in hotels and restaurants; local businesses such as craft sellers earn more income. (b) Kidnapping and robbery on the roads; there are not enough good hotels near the attractions.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It brings in foreign exchange from the money foreigners spend"
+                },
+                {
+                  "point": 1,
+                  "quote": "it gives employment to many young people in hotels and restaurants"
+                },
+                {
+                  "point": 2,
+                  "quote": "local businesses such as craft sellers earn more income"
+                },
+                {
+                  "point": 3,
+                  "quote": "Kidnapping and robbery on the roads"
+                },
+                {
+                  "point": 4,
+                  "quote": "there are not enough good hotels near the attractions"
+                }
+              ],
+              "feedback": "Full marks. Your problems are specific to Nigeria."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) It earns foreign exchange. It gives jobs. It makes people happy. (b) Insecurity.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It earns foreign exchange"
+                },
+                {
+                  "point": 1,
+                  "quote": "It gives jobs"
+                },
+                {
+                  "point": 3,
+                  "quote": "Insecurity"
+                }
+              ],
+              "feedback": "Foreign exchange, jobs and insecurity are right. Happiness is not an economic benefit; add the raising of local incomes or better roads. A second problem is also needed, such as poor roads or power."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Jobs for hotel workers. It reduces crime. Local traders sell more. (b) Poor roads. Too much rain.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Jobs for hotel workers"
+                },
+                {
+                  "point": 2,
+                  "quote": "Local traders sell more"
+                },
+                {
+                  "point": 4,
+                  "quote": "Poor roads"
+                }
+              ],
+              "feedback": "Jobs, local traders and poor roads are right. Tourism does not by itself reduce crime; the key missing benefit is foreign exchange. Rain is not usually a main problem; insecurity is."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It makes Nigeria famous. It is fun. It is cold. (b) Tourists are rude.",
+              "meets": [],
+              "feedback": "These are not economic benefits. Explain how tourism brings foreign exchange, creates jobs and raises incomes. Problems should be things like insecurity and poor infrastructure."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Tourists pay tax. It helps schools. (b) Insecurity.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Insecurity"
+                }
+              ],
+              "feedback": "Insecurity is a correct problem. Tourists do not pay a special tax, and 'helps schools' is too vague. Say that tourism earns foreign exchange and creates jobs.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
