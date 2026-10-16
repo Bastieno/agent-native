@@ -6,7 +6,8 @@ import { getDb, schema } from "../db/index.js";
 import { actorForEmail } from "./class-access.js";
 import { activityWindow } from "./activity-window.js";
 import { ensureAgentSettings } from "./agent-settings-store.js";
-import { learnerMayUseTool } from "./learner-tools.js";
+import { toolFilterForRole } from "./role-tools.js";
+import type { SchoolRole } from "./action-policy.js";
 import {
   audienceForRole,
   DEFAULT_SCHOOL_TIMEZONE,
@@ -226,7 +227,7 @@ export async function agentAccessFor(
 
 /**
  * The chat plugin's gate: refuse with a calm reply, or count the message,
- * pin the model and, for a learner, narrow the tools (learner-tools.ts).
+ * pin the model and narrow the tools to the person's role (role-tools.ts).
  * A continuation the framework sends on its own to finish a long answer is
  * not a new message and is not counted.
  */
@@ -250,6 +251,10 @@ export async function gateAgentMessage(details: {
   }
   return {
     ...(access.model ? { model: access.model } : {}),
-    ...(access.audience === "learner" ? { toolFilter: learnerMayUseTool } : {}),
+    // Someone with no school profile yet is setting a school up; the role
+    // guard still applies to them, but their tools are not narrowed.
+    ...(access.who.userId && access.who.role
+      ? { toolFilter: toolFilterForRole(access.who.role as SchoolRole) }
+      : {}),
   };
 }

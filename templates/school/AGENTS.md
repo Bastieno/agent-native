@@ -716,12 +716,16 @@ personal workspace files and MCP servers and any use of the engine action
 (`server/middleware/learner-limits.ts`). Teachers have no settings gear.
 Changing or disconnecting the AI engine is for org owners and admins only.
 
-**A learner's assistant has a short tool list.** It gets the school actions
-the policy lets a student run, plus moving their own screen and tool search
-(`server/lib/learner-tools.ts`). No memory, workspace files, sub-agents,
-automations, jobs, web requests, browser control or extensions: those would
-let a learner rewrite their tutor, or run models outside the daily limit and
-the admin's model choice. Staff keep the full set.
+**Each role's assistant has its own tool list** (`server/lib/role-tools.ts`):
+the school actions its policy allows, plus moving its own screen and tool
+search. Staff also get memory and workspace files, sub-agents, automations,
+jobs, notifications, progress, web requests and any MCP server they
+connected; admins also get extensions. Learners get none of those: they
+would let a learner rewrite their tutor or run models outside the daily
+limit. Nobody gets browser or computer control, Builder connect, docs
+search, call-agent, chat search or the engine and loop settings (an admin
+changes those in Settings). If something you need is missing, it is not on
+the list — say so rather than looking for a way round it.
 
 **Every run counts, not just chat messages.** Sub-agents, automations,
 scheduled jobs, integrations and agent-to-agent or MCP calls pass the same
