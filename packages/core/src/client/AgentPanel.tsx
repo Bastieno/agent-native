@@ -355,6 +355,11 @@ export interface AgentPanelProps extends Omit<
 > {
   /** Initial mode. Default: "chat" */
   defaultMode?: "chat" | "cli";
+  /**
+   * Show the model picker in the chat composer. Default: true. Set false
+   * when the app chooses the model on the server.
+   */
+  showModelSelector?: boolean;
   /** CSS class for the outer container */
   className?: string;
   /** Called when the user clicks the collapse button. If provided, a collapse button appears in the header. */
@@ -2013,6 +2018,12 @@ export interface AgentSidebarProps {
   scope?: import("./use-chat-threads.js").ChatThreadScope | null;
   /** Stable browser tab id used for tab-scoped app-state context. */
   browserTabId?: string;
+  /**
+   * Show the model picker in the chat composer. Default: true. Set false
+   * when the app chooses the model on the server — for example per role —
+   * so nobody is offered a choice the server would not honour.
+   */
+  showModelSelector?: boolean;
 }
 
 /**
@@ -2032,6 +2043,7 @@ export function AgentSidebar({
   overlayBreakpointPx,
   scope,
   browserTabId,
+  showModelSelector,
 }: AgentSidebarProps) {
   const initialWidth = defaultSidebarWidth ?? sidebarWidth ?? 380;
   const [open, setOpen] = useState(() =>
@@ -2492,6 +2504,7 @@ export function AgentSidebar({
           onToggleFullscreen={isMobile ? undefined : toggleFullscreen}
           scope={scope}
           browserTabId={browserTabId}
+          showModelSelector={showModelSelector}
         />
       </div>
       {showResizeHandle && isLeft && (

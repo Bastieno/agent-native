@@ -118,6 +118,10 @@ function StudentAgent({ children }: { children: ReactNode }) {
     <AgentSidebar
       emptyStateText="Ask me for help with your assignments!"
       dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
+      // The admin sets each role's model (Settings → Assistant) and the server
+      // enforces it, so a picker here would offer a choice it cannot honour.
+      // Someone who needs a stronger model asks the admin.
+      showModelSelector={false}
       // Side by side only on a large desktop. On a tablet the panel would
       // take half the screen before the student has asked anything, leaving
       // too little room to read a question or write an answer.

@@ -698,8 +698,10 @@ pnpm action get-my-agent-access   # whether the signed-in person has you now, an
   not handed it in gets a short reply instead of you, whatever is set; you are
   back once they submit or the time runs out. Untimed work is not affected.
 - **Model per role** (learner, teacher, admin), from `agentModelChoices` only.
-  Defaults: Haiku for learners, Sonnet for staff. The server forces it; a
-  learner's model picker changes nothing.
+  Defaults: Haiku for learners, Sonnet for staff. The server forces it for
+  everyone, and the chat has no model picker in any portal. When a teacher
+  asks for a stronger model, say it is the admin's choice and they can ask
+  for it; when an admin asks, offer to change their role's model.
 - **Every value is the school's own.** The defaults below are written into
   the school's config once — at setup, or the first time an older school's
   settings are read — and from then on only the stored values are enforced.
