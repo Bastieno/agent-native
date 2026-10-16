@@ -6,6 +6,7 @@ import { getDb, schema } from "../db/index.js";
 import { actorForEmail } from "./class-access.js";
 import { activityWindow } from "./activity-window.js";
 import { ensureAgentSettings } from "./agent-settings-store.js";
+import { learnerMayUseTool } from "./learner-tools.js";
 import {
   audienceForRole,
   DEFAULT_SCHOOL_TIMEZONE,
@@ -224,15 +225,18 @@ export async function agentAccessFor(
 }
 
 /**
- * The chat plugin's gate: refuse with a calm reply, or count the message and
- * pin the model. A continuation the framework sends on its own to finish a
- * long answer is not a new message and is not counted.
+ * The chat plugin's gate: refuse with a calm reply, or count the message,
+ * pin the model and, for a learner, narrow the tools (learner-tools.ts).
+ * A continuation the framework sends on its own to finish a long answer is
+ * not a new message and is not counted.
  */
 export async function gateAgentMessage(details: {
   ownerEmail: string | null;
   orgId?: string | null;
   internalContinuation?: boolean;
-}): Promise<{ model?: string } | { reply: string }> {
+}): Promise<
+  { model?: string; toolFilter?: (name: string) => boolean } | { reply: string }
+> {
   const access = await agentAccessFor(details.ownerEmail, details.orgId);
   if (access.blocked && access.message) {
     // A continuation of an answer already under way finishes on the model,
@@ -244,5 +248,8 @@ export async function gateAgentMessage(details: {
   if (!details.internalContinuation) {
     await countMessage(access.who, access.day);
   }
-  return access.model ? { model: access.model } : {};
+  return {
+    ...(access.model ? { model: access.model } : {}),
+    ...(access.audience === "learner" ? { toolFilter: learnerMayUseTool } : {}),
+  };
 }

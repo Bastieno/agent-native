@@ -9,3 +9,5 @@ Agent chat responses now carry an `X-Agent-Model` header naming the model the tu
 `AgentSidebar` and `AgentPanel` take `showModelSelector` (default true). When false, the composer shows no model picker, the model list is not fetched, and no model is sent with a message — for apps that choose the model on the server.
 
 `AgentSidebar` and `AgentPanel` also take `showWorkspace` and `showSettings` (default true) to hide the Workspace tab and the settings gear; a saved or requested mode for a hidden area falls back to the chat. Setting the global agent engine (`manage-agent-engine` action "set") and `POST /_agent-native/agent-engine/disconnect` now require an org owner or admin when called by a signed-in user; previously any member could change or remove the engine for the whole deployment.
+
+`prepareRequest` can also return `toolFilter(name)` to narrow a request's tools (e.g. by role): a filtered-out tool is neither offered to the model nor run if named, and `tool-search` is rebuilt over the remaining tools so it cannot surface it.

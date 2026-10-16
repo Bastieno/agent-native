@@ -561,7 +561,9 @@ export interface ProductionAgentOptions {
    * choosing — the client's model and engine picks are then ignored, which is
    * how an app keeps a role on a cheaper model — or `reply` to answer with a
    * fixed message without calling a model (a switched-off agent, a used-up
-   * allowance).
+   * allowance), or `toolFilter` to narrow the tools for this request (e.g. by
+   * role): a filtered-out tool is neither offered nor run, and tool-search
+   * cannot surface it.
    */
   prepareRequest?: (details: {
     event: any;
@@ -583,6 +585,8 @@ export interface ProductionAgentOptions {
         model?: string;
         /** Answer with this text and do not run the model at all. */
         reply?: string;
+        /** Only the tools this returns true for are offered or run. */
+        toolFilter?: (name: string) => boolean;
       }
     | Promise<void | {
         message?: string;
@@ -590,6 +594,7 @@ export interface ProductionAgentOptions {
         attachments?: AgentChatAttachment[];
         model?: string;
         reply?: string;
+        toolFilter?: (name: string) => boolean;
       }>;
   /** Optional per-app agent run chunk budget in milliseconds. Defaults to
    *  AGENT_RUN_SOFT_TIMEOUT_MS when set, otherwise no framework-imposed
@@ -1934,6 +1939,20 @@ export async function runAgentLoop(opts: {
   return usage;
 }
 
+export function filterRequestActions(
+  actions: Record<string, ActionEntry>,
+  allow: (name: string) => boolean,
+): Record<string, ActionEntry> {
+  const filtered: Record<string, ActionEntry> = {};
+  for (const [name, entry] of Object.entries(actions)) {
+    if (allow(name)) filtered[name] = entry;
+  }
+  if (filtered[TOOL_SEARCH_ACTION_NAME]) {
+    filtered[TOOL_SEARCH_ACTION_NAME] = createToolSearchEntry(() => filtered);
+  }
+  return filtered;
+}
+
 export function createProductionAgentHandler(
   options: ProductionAgentOptions,
 ): H3EventHandler {
@@ -2063,6 +2082,10 @@ export function createProductionAgentHandler(
     // An app-forced model also pins the engine to the app's own, so a client
     // cannot route around it by picking another provider.
     const preparedModel = preparedRequest ? preparedRequest.model : undefined;
+    const preparedToolFilter =
+      preparedRequest && typeof preparedRequest.toolFilter === "function"
+        ? preparedRequest.toolFilter
+        : undefined;
     const forcedModel =
       typeof preparedModel === "string" && preparedModel
         ? preparedModel
@@ -2427,10 +2450,16 @@ export function createProductionAgentHandler(
       });
     }
     const screenContext = screenBlock + urlBlock + selectionBlock;
-    const requestActions =
+    const modeActions =
       requestMode === "plan"
         ? createPlanModeActionRegistry(resolvedActions)
         : resolvedActions;
+    // An app may narrow the tools for this request (e.g. by role). What is
+    // filtered out is neither offered to the model nor run if named, and
+    // tool-search is rebuilt over what remains so it cannot surface it.
+    const requestActions = preparedToolFilter
+      ? filterRequestActions(modeActions, preparedToolFilter)
+      : modeActions;
     const requestTools = getEngineTools(requestActions);
     const requestSystemPrompt =
       requestMode === "plan"

@@ -1933,7 +1933,9 @@ export interface AgentChatPluginOptions {
    * choosing — the client's model and engine picks are then ignored, which is
    * how an app keeps a role on a cheaper model — or `reply` to answer with a
    * fixed message without calling a model (a switched-off agent, a used-up
-   * allowance).
+   * allowance), or `toolFilter` to narrow the tools for this request (e.g. by
+   * role): a filtered-out tool is neither offered nor run, and tool-search
+   * cannot surface it.
    */
   prepareRequest?: (details: {
     event: any;
@@ -1955,6 +1957,8 @@ export interface AgentChatPluginOptions {
         model?: string;
         /** Answer with this text and do not run the model at all. */
         reply?: string;
+        /** Only the tools this returns true for are offered or run. */
+        toolFilter?: (name: string) => boolean;
       }
     | Promise<void | {
         message?: string;
@@ -1962,6 +1966,7 @@ export interface AgentChatPluginOptions {
         attachments?: AgentChatAttachment[];
         model?: string;
         reply?: string;
+        toolFilter?: (name: string) => boolean;
       }>;
   /**
    * Use ONLY the template's `systemPrompt` and the actions list — skip the

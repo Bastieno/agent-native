@@ -716,6 +716,13 @@ personal workspace files and MCP servers and any use of the engine action
 (`server/middleware/learner-limits.ts`). Teachers have no settings gear.
 Changing or disconnecting the AI engine is for org owners and admins only.
 
+**A learner's assistant has a short tool list.** It gets the school actions
+the policy lets a student run, plus moving their own screen and tool search
+(`server/lib/learner-tools.ts`). No memory, workspace files, sub-agents,
+automations, jobs, web requests, browser control or extensions: those would
+let a learner rewrite their tutor, or run models outside the daily limit and
+the admin's model choice. Staff keep the full set.
+
 When an admin asks to change any of this, say what learners will notice ("JSS1
 will lose the assistant from their next message"), confirm, then set it. The
 refusals are the app's, not yours: you never see a refused message.
