@@ -66,6 +66,8 @@ export default function TeacherLayout() {
       // enforces it, so a picker here would offer a choice it cannot honour.
       // Someone who needs a stronger model asks the admin.
       showModelSelector={false}
+      // Engine, keys and limits are the admin's to set, not a teacher's.
+      showSettings={false}
       overlayBreakpointPx={1279}
       defaultOpen={
         typeof window !== "undefined" ? window.innerWidth >= 1280 : false

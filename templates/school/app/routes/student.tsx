@@ -122,6 +122,12 @@ function StudentAgent({ children }: { children: ReactNode }) {
       // enforces it, so a picker here would offer a choice it cannot honour.
       // Someone who needs a stronger model asks the admin.
       showModelSelector={false}
+      // A learner's panel is the chat alone. Workspace files would be read
+      // into their own assistant's instructions, and settings hold the
+      // school's engine and keys; the server refuses both as well
+      // (server/middleware/learner-limits.ts).
+      showWorkspace={false}
+      showSettings={false}
       // Side by side only on a large desktop. On a tablet the panel would
       // take half the screen before the student has asked anything, leaving
       // too little room to read a question or write an answer.

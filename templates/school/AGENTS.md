@@ -710,6 +710,12 @@ pnpm action get-my-agent-access   # whether the signed-in person has you now, an
   school's timezone (Africa/Lagos when unset). Defaults: learner 30, teacher
   200, admin none. Past it the person gets a calm reply in the chat.
 
+**The chat panel differs by role.** Learners get the chat alone: no
+Workspace tab and no settings, and the server refuses a learner's writes to
+personal workspace files and MCP servers and any use of the engine action
+(`server/middleware/learner-limits.ts`). Teachers have no settings gear.
+Changing or disconnecting the AI engine is for org owners and admins only.
+
 When an admin asks to change any of this, say what learners will notice ("JSS1
 will lose the assistant from their next message"), confirm, then set it. The
 refusals are the app's, not yours: you never see a refused message.

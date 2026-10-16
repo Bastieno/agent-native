@@ -394,6 +394,28 @@ export class Client {
     }
   }
 
+  /** A framework route the action helper does not cover, as someone. */
+  async raw(
+    persona: Persona,
+    method: Verb,
+    path: string,
+    body?: unknown,
+  ): Promise<{ status: number; body: any }> {
+    const res = await fetch(`${this.baseUrl}${path}`, {
+      method,
+      headers: { "Content-Type": "application/json", cookie: persona.cookie },
+      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+    });
+    const text = await res.text();
+    let parsed: any = text;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      // Not JSON; keep the text.
+    }
+    return { status: res.status, body: parsed };
+  }
+
   async refused(
     persona: Persona,
     action: string,
