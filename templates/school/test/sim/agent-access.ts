@@ -2,6 +2,7 @@ import type { Client } from "./client.js";
 import type { Findings } from "./findings.js";
 import type { School } from "./setup.js";
 import { idOf } from "./shapes.js";
+import { connect, mcp, tool } from "./mcp-client.js";
 
 /**
  * Who has the assistant, on which model, and how often.
@@ -101,6 +102,22 @@ export async function checkAgentAccess(
     "with the switch off, the learner's page is told so (and mounts no assistant)",
     JSON.stringify(offAccess),
   );
+  // Not only the chat panel: a learner's own AI app, connected over MCP,
+  // asks the school's agent through ask_app. That run passes the same gate.
+  const token = await connect(learner.cookie, "Claude");
+  await mcp(token, "initialize", {
+    protocolVersion: "2025-06-18",
+    capabilities: {},
+    clientInfo: { name: "journey", version: "1" },
+  });
+  const viaMcp = await tool(token, "ask_app", { message: "Hello?" });
+  findings.expect(
+    phase,
+    /switched the assistant off/.test(viaMcp.text),
+    "a switched-off learner asking through their own AI app (MCP) gets the same calm reply, and no model runs",
+    viaMcp.text.slice(0, 200),
+  );
+
   const staffWhileOff = await client.chat(teacher, "Still there?");
   findings.expect(
     phase,
@@ -272,16 +289,21 @@ export async function checkAgentAccess(
     "a learner cannot write files into their own assistant's instructions",
     `status ${file.status}`,
   );
-  const mcp = await client.raw(learner, "POST", "/_agent-native/mcp/servers", {
-    scope: "user",
-    name: "mine",
-    url: "http://127.0.0.1:9/mcp",
-  });
+  const mcpServer = await client.raw(
+    learner,
+    "POST",
+    "/_agent-native/mcp/servers",
+    {
+      scope: "user",
+      name: "mine",
+      url: "http://127.0.0.1:9/mcp",
+    },
+  );
   findings.expect(
     phase,
-    mcp.status === 403,
+    mcpServer.status === 403,
     "a learner cannot point the server at an MCP server of their own",
-    `status ${mcp.status}`,
+    `status ${mcpServer.status}`,
   );
   const adminEngine = await client.raw(
     admin,

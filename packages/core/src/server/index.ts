@@ -93,6 +93,12 @@ export {
   getOwnerActiveApiKey,
   runAgentLoop,
 } from "../agent/production-agent.js";
+export type {
+  AgentRunGate,
+  AgentRunGateDecision,
+  AgentRunGateDetails,
+  AgentRunSource,
+} from "../agent/run-gate.js";
 export {
   getStoredModelForEngine,
   resolveEngine,

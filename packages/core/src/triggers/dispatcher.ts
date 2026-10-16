@@ -414,6 +414,7 @@ ${body}`;
 
         try {
           await runAgentLoop({
+            runSource: "automation",
             engine,
             model,
             systemPrompt,

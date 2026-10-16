@@ -23,6 +23,7 @@ import {
   type ActionEntry,
 } from "../agent/production-agent.js";
 import { runAgentLoopDirectWithSoftTimeout } from "../agent/run-loop-with-resume.js";
+import { setAgentRunGate } from "../agent/run-gate.js";
 import {
   A2A_USAGE_LABEL,
   MCP_ASK_APP_USAGE_LABEL,
@@ -1900,6 +1901,14 @@ export interface AgentChatPluginOptions {
    */
   disableDbDataTools?: boolean;
   /**
+   * Gate for agent runs that are not chat messages — sub-agents, automations,
+   * scheduled jobs, integrations, agent-to-agent and MCP calls. Each asks it
+   * first, with the person and what started the run, and it may refuse with a
+   * reply, force the model or narrow the tools, as `prepareRequest` does for a
+   * chat message. Without it those runs skip whatever an app enforces there.
+   */
+  runGate?: import("../agent/run-gate.js").AgentRunGate;
+  /**
    * Optional callback to append template-specific context to the system
    * prompt on each request. Runs after AGENTS.md / skills / memory are
    * loaded and before the schema block — use it to inject dynamic SQL
@@ -3212,6 +3221,7 @@ export function createAgentChatPlugin(
       // so the agent can only touch data through the app's own actions, where
       // per-role and per-row rules live. `db-schema` is kept: it exposes table
       // shapes, not rows.
+      setAgentRunGate(options?.runGate ?? null);
       const dbScripts = options?.disableDbDataTools
         ? Object.fromEntries(
             Object.entries(allDbScripts).filter(
@@ -3819,6 +3829,7 @@ export function createAgentChatPlugin(
 
           const a2aUsage = await runAgentLoopDirectWithSoftTimeout(
             {
+              runSource: "a2a",
               engine: a2aEngine,
               model,
               systemPrompt,
@@ -4039,6 +4050,7 @@ export function createAgentChatPlugin(
 
           const mcpUsage = await runAgentLoopDirectWithSoftTimeout(
             {
+              runSource: "mcp",
               engine: mcpEngine,
               model,
               systemPrompt,

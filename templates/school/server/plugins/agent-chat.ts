@@ -28,6 +28,13 @@ export default createAgentChatPlugin({
     }
     return gateAgentMessage({ ownerEmail, orgId, internalContinuation });
   },
+  // Everything else that runs the agent for someone — sub-agents a teacher's
+  // chat starts, automations, scheduled jobs, integrations, agent-to-agent
+  // and MCP calls — passes the same gate: each run counts as a message
+  // against that person's daily limit, runs on their role's model and, for a
+  // learner, has the learner's tools only.
+  runGate: async ({ ownerEmail, orgId }) =>
+    gateAgentMessage({ ownerEmail, orgId }),
   // A school org holds every student, teacher and grade. The framework's SQL
   // tools are org-scoped, which would let any signed-in student read the whole
   // school. Data access goes through role-checked actions only.

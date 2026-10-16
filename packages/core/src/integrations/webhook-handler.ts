@@ -564,6 +564,7 @@ async function processIncomingMessage(
               engine.defaultModel;
 
             return runAgentLoop({
+              runSource: "integration",
               engine,
               model: resolvedModel,
               systemPrompt: effectiveSystemPrompt,

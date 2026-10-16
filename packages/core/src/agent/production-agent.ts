@@ -59,6 +59,11 @@ import {
 import { isMcpToolAllowedForRequest } from "../mcp-client/visibility.js";
 import { isMcpActionResult } from "../mcp-client/app-result.js";
 import {
+  getAgentRunGate,
+  type AgentRunGateDecision,
+  type AgentRunSource,
+} from "./run-gate.js";
+import {
   createToolSearchEntry,
   TOOL_SEARCH_ACTION_NAME,
 } from "./tool-search.js";
@@ -1381,7 +1386,7 @@ function toolInputSchemaErrorResult(
  * Decoupled from HTTP transport so it can run in the background.
  * Returns accumulated token usage for cost tracking.
  */
-export async function runAgentLoop(opts: {
+export interface AgentLoopRunOptions {
   engine: AgentEngine;
   model: string;
   systemPrompt: string;
@@ -1397,7 +1402,64 @@ export async function runAgentLoop(opts: {
   executionMode?: AgentExecutionMode;
   maxIterations?: number;
   finalResponseGuard?: AgentLoopFinalResponseGuard;
-}): Promise<AgentLoopUsage> {
+  /** What started this run, for the app's run gate. */
+  runSource?: AgentRunSource;
+  /**
+   * The run was already gated — a chat message by `prepareRequest`, or a
+   * continuation of a run that was gated when it began.
+   */
+  skipRunGate?: boolean;
+}
+
+/**
+ * Ask the app's run gate about a run (see run-gate.ts). Returns the options
+ * to run with — model and tools as the gate decided, marked as gated — or the
+ * reply to give instead of running.
+ */
+export async function applyAgentRunGate(
+  opts: AgentLoopRunOptions,
+): Promise<{ opts: AgentLoopRunOptions; reply?: string }> {
+  const gate = getAgentRunGate();
+  if (!gate || opts.skipRunGate) return { opts };
+  const decision: AgentRunGateDecision =
+    (await gate({
+      ownerEmail: opts.ownerEmail ?? getRequestUserEmail() ?? null,
+      orgId: opts.orgId ?? getRequestOrgId() ?? null,
+      source: opts.runSource ?? "other",
+    })) || {};
+  if (typeof decision.reply === "string" && decision.reply) {
+    return { opts, reply: decision.reply };
+  }
+  const next: AgentLoopRunOptions = { ...opts, skipRunGate: true };
+  if (decision.model) next.model = decision.model;
+  const allow = decision.toolFilter;
+  if (allow) {
+    next.actions = filterRequestActions(opts.actions, allow);
+    next.tools = opts.tools.filter((t) => allow(t.name));
+  }
+  return { opts: next };
+}
+
+function emptyUsage(model: string): AgentLoopUsage {
+  return {
+    inputTokens: 0,
+    outputTokens: 0,
+    cacheReadTokens: 0,
+    cacheWriteTokens: 0,
+    model,
+  };
+}
+
+export async function runAgentLoop(
+  rawOpts: AgentLoopRunOptions,
+): Promise<AgentLoopUsage> {
+  const gated = await applyAgentRunGate(rawOpts);
+  if (gated.reply !== undefined) {
+    rawOpts.send({ type: "text", text: gated.reply });
+    rawOpts.send({ type: "done" });
+    return emptyUsage(rawOpts.model);
+  }
+  const opts = gated.opts;
   const {
     engine,
     model,
@@ -2564,7 +2626,10 @@ export function createProductionAgentHandler(
                 let responseText = "";
                 const subUsage = await runAgentLoop({
                   engine,
-                  model: profile.model ?? model,
+                  // An app-forced model holds for a custom agent too.
+                  model: forcedModel ?? profile.model ?? model,
+                  // Part of this chat message, which prepareRequest gated.
+                  skipRunGate: true,
                   systemPrompt: profilePrompt,
                   tools: requestTools,
                   messages: [
@@ -2793,7 +2858,8 @@ export function createProductionAgentHandler(
           }
           const expConfig = await resolveActiveExperimentConfig(ownerEmail);
           if (expConfig) {
-            if (typeof expConfig.configs.model === "string") {
+            // An app-forced model is a policy, not a variant to test.
+            if (typeof expConfig.configs.model === "string" && !forcedModel) {
               effectiveModel = expConfig.configs.model;
             }
           }
@@ -2817,6 +2883,8 @@ export function createProductionAgentHandler(
           executionMode: requestMode,
           maxIterations: loopSettings.maxIterations,
           finalResponseGuard: options.finalResponseGuard,
+          // A chat message is gated by prepareRequest, before this point.
+          skipRunGate: true,
         };
 
         send({ type: "activity", label: "Contacting model" });
