@@ -47,22 +47,22 @@
         {
           "prompt": "Which of the following should be left out of a summary on the reasons for the fall in fish catches?",
           "options": [
-            "Oil spills have killed young fish.",
-            "Sand-filling has pushed fish away from the shore.",
             "Mr Kuti has fished for forty years.",
+            "Sand-filling has pushed fish away from the shore.",
+            "Oil spills have killed young fish.",
             "The cost of fuel has doubled."
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Which is the best concise version of: \"The boat, which was old and leaking badly, had to be pulled ashore by the tired fishermen\"?",
           "options": [
             "The old boat was pulled ashore.",
-            "The fishermen were tired.",
+            "The leaking boat was pulled ashore by tired fishermen.",
             "A boat leaked.",
-            "The leaking boat was pulled ashore by tired fishermen."
+            "The fishermen were tired."
           ],
-          "answer": "D"
+          "answer": "B"
         },
         {
           "prompt": "The question asks for \"three reasons\". A candidate writes five. What is the likely result?",
@@ -78,21 +78,21 @@
           "prompt": "A candidate writes: \"The community's difficulties are not yet over, because the cages need clean water, and the sand-filling is continuing.\" What is the main fault if this is copied word for word from the passage?",
           "options": [
             "It is too short",
-            "It is lifted from the passage",
+            "It contains an opinion",
             "It has no verbs",
-            "It contains an opinion"
+            "It is lifted from the passage"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "Which of these is a redundant (repeated) expression?",
           "options": [
-            "The fishermen caught fewer fish.",
             "The price rose and increased.",
+            "The fishermen caught fewer fish.",
             "The catch has fallen.",
             "Fuel costs more now."
           ],
-          "answer": "B"
+          "answer": "A"
         }
       ],
       "open": [
@@ -326,12 +326,12 @@
         {
           "prompt": "Question: \"Summarise the benefits of the solar plant.\" Which of the following belongs in the answer?",
           "options": [
-            "Children coughed because of kerosene smoke.",
-            "Dust on the panels reduces the power in the harmattan.",
             "The clinic can store vaccines in a refrigerator.",
+            "Dust on the panels reduces the power in the harmattan.",
+            "Children coughed because of kerosene smoke.",
             "Each household agreed to pay 800 naira a month."
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Question: \"State the problems the villagers still face.\" Which sentence from the passage gives a relevant point?",
@@ -346,22 +346,22 @@
         {
           "prompt": "Which word in a passage is most likely to introduce a reason?",
           "options": [
-            "because",
-            "however",
             "finally",
+            "however",
+            "because",
             "meanwhile"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "A candidate answering a question on the problems of the village before the plant also writes about the benefits. What is the likely result?",
           "options": [
             "The extra points earn extra marks",
-            "The candidate loses marks for irrelevant points",
+            "The answer is graded as perfect",
             "The examiner ignores the first half",
-            "The answer is graded as perfect"
+            "The candidate loses marks for irrelevant points"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "Which sentence is the best summary of what the villagers did to make the plant possible?",
@@ -620,30 +620,30 @@
           "options": [
             "tuck",
             "pit",
-            "duck",
-            "fan"
+            "fan",
+            "duck"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "Choose the word that has the same consonant sound at the beginning as \"think\".",
           "options": [
-            "thin",
-            "then",
             "they",
+            "then",
+            "thin",
             "that"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "Which pair of words is a minimal pair that differs in the first consonant sound only?",
           "options": [
-            "ship and sheep",
             "fan and van",
+            "ship and sheep",
             "bat and bait",
             "cut and cart"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "In which word does the letter s represent the sound /z/?",
@@ -906,51 +906,51 @@
           "prompt": "How many consonant sounds are there in the initial cluster of the word \"string\"?",
           "options": [
             "One",
-            "Two",
             "Three",
+            "Two",
             "Four"
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "Which of the following pairs of words differs only in an initial consonant cluster?",
           "options": [
             "nest and next",
-            "play and pray",
             "felt and felled",
+            "play and pray",
             "sit and set"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "A candidate pronounces \"next\" as \"nex\". What is the error?",
           "options": [
             "A vowel is inserted into the cluster",
-            "The final cluster is shortened by dropping /t/",
+            "The vowel is lengthened",
             "/n/ is replaced by /m/",
-            "The vowel is lengthened"
+            "The final cluster is shortened by dropping /t/"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "Which word has the final cluster /ld/?",
           "options": [
-            "felt",
             "felled",
+            "felt",
             "fell",
             "film"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "Which word does not begin with a consonant cluster?",
           "options": [
             "blue",
-            "string",
             "knight",
+            "string",
             "scream"
           ],
-          "answer": "C"
+          "answer": "B"
         }
       ],
       "open": [
@@ -1195,32 +1195,32 @@
         {
           "prompt": "Which pair of words is distinguished by a short and a long vowel?",
           "options": [
-            "peck and pack",
             "sit and seat",
+            "peck and pack",
             "pack and back",
             "cat and cap"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "Which word has the same vowel sound as \"love\"?",
           "options": [
-            "cut",
+            "put",
             "move",
             "go",
-            "put"
+            "cut"
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "In the word \"teacher\", the vowel sound in the last syllable is",
           "options": [
             "/i:/",
-            "/e/",
             "/ə/",
+            "/e/",
             "/ɜ:/"
           ],
-          "answer": "C"
+          "answer": "B"
         }
       ],
       "open": [
@@ -1469,32 +1469,32 @@
         {
           "prompt": "Which pair of words differs by a diphthong and a pure vowel?",
           "options": [
-            "cheer and chair",
             "load and lord",
+            "cheer and chair",
             "late and gate",
             "high and hi"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "The word \"hour\" is an example of",
           "options": [
             "a pure vowel",
             "a diphthong",
-            "a triphthong",
-            "a consonant cluster"
+            "a consonant cluster",
+            "a triphthong"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "Which word has the vowel /ɔɪ/?",
           "options": [
             "bow",
-            "boy",
             "bay",
+            "boy",
             "bee"
           ],
-          "answer": "B"
+          "answer": "C"
         }
       ],
       "open": [
@@ -1724,11 +1724,11 @@
           "prompt": "Which word has its stress on the second syllable when used as a verb?",
           "options": [
             "table",
-            "record",
+            "market",
             "teacher",
-            "market"
+            "record"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "How many syllables are in the word \"education\"?",
@@ -1753,22 +1753,22 @@
         {
           "prompt": "In which word does the stress fall on the third syllable?",
           "options": [
-            "'photograph",
-            "pho'tography",
             "photo'graphic",
+            "pho'tography",
+            "'photograph",
             "'photographer"
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Why does the vowel in the first syllable of \"photography\" differ from that in \"photograph\"?",
           "options": [
             "The spelling is different",
-            "The stress has moved, so the first vowel is reduced",
+            "The letter o has changed",
             "Photography is a verb",
-            "The letter o has changed"
+            "The stress has moved, so the first vowel is reduced"
           ],
-          "answer": "B"
+          "answer": "D"
         }
       ],
       "open": [
@@ -1995,50 +1995,50 @@
           "options": [
             "the",
             "of",
-            "market",
-            "and"
+            "and",
+            "market"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "In the sentence \"The farmer sold the yams at the market\", which set of words is stressed?",
           "options": [
-            "The, sold, at, the",
             "farmer, sold, yams, market",
+            "The, sold, at, the",
             "The, farmer, the, market",
             "farmer, the, at, market"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "A language in which stressed syllables occur at roughly equal intervals of time is called",
           "options": [
             "syllable-timed",
-            "stress-timed",
             "tone-timed",
+            "stress-timed",
             "word-timed"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Which of these is a function word?",
           "options": [
             "bought",
-            "beautiful",
             "them",
+            "beautiful",
             "quickly"
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "In the sentence \"Why did the bus leave early?\", which words carry the main stress?",
           "options": [
             "Why, did, the, early",
-            "Why, bus, leave, early",
+            "the, bus, leave, early",
             "did, the, bus, leave",
-            "the, bus, leave, early"
+            "Why, bus, leave, early"
           ],
-          "answer": "B"
+          "answer": "D"
         }
       ],
       "open": [
@@ -2274,10 +2274,10 @@
           "options": [
             "No",
             "she",
-            "is",
-            "teacher"
+            "teacher",
+            "is"
           ],
-          "answer": "D"
+          "answer": "C"
         },
         {
           "prompt": "A: \"Did Musa travel to Kano on Monday?\" B: \"No, he travelled to Kano on Tuesday.\" Which word in B's reply carries the emphatic stress?",
@@ -2304,20 +2304,20 @@
           "options": [
             "A louder, stronger voice",
             "A marked change in pitch on the syllable",
-            "Speaking every word with equal force",
-            "A longer vowel in the stressed syllable"
+            "A longer vowel in the stressed syllable",
+            "Speaking every word with equal force"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "A: \"Did you say you saw the car in the garage?\" B: \"No, I said I saw it in the street.\" Where does the emphatic stress fall in B's reply?",
           "options": [
             "said",
             "saw",
-            "car",
-            "street"
+            "street",
+            "car"
           ],
-          "answer": "D"
+          "answer": "C"
         }
       ],
       "open": [

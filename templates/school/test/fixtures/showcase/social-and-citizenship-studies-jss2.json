@@ -49,20 +49,20 @@
           "options": [
             "Paying tax",
             "Giving evidence when summoned",
-            "Helping an old neighbour carry water",
-            "Having a driver's licence"
+            "Having a driver's licence",
+            "Helping an old neighbour carry water"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "A crowd beats a suspected thief to death. Which principle of the rule of law has been broken?",
           "options": [
-            "Nobody should be punished without a fair hearing",
-            "The law is the same for everyone",
             "Citizens must pay tax",
+            "The law is the same for everyone",
+            "Nobody should be punished without a fair hearing",
             "Elections must be free"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "'Nobody is above the law' means",
@@ -341,51 +341,51 @@
           "prompt": "A man is held for six months without trial and he is too poor to pay for a lawyer. The institution most suited to help him first is",
           "options": [
             "an NGO that plants trees",
-            "the Legal Aid Council",
             "the NHRC's public education unit",
+            "the Legal Aid Council",
             "a newspaper"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Which of these can a court do that an NGO cannot?",
           "options": [
-            "Order that a person unlawfully held be released",
+            "Teach people their rights",
             "Give advice to victims",
             "Collect evidence of abuse",
-            "Teach people their rights"
+            "Order that a person unlawfully held be released"
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "Which statement about the NHRC is correct?",
           "options": [
             "It charges a fee for every complaint",
-            "It can order the police to hang a person",
             "It investigates complaints free of charge but cannot sentence people to prison",
+            "It can order the police to hang a person",
             "It is only for children"
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "What is a limit of an NGO?",
           "options": [
-            "It is always a government office",
+            "It has no power to arrest or punish and depends on donors",
             "It cannot give advice",
             "It is illegal in Nigeria",
-            "It has no power to arrest or punish and depends on donors"
+            "It is always a government office"
           ],
-          "answer": "D"
+          "answer": "A"
         },
         {
           "prompt": "A child is made to work in a quarry when she should be at school. The most suitable first step is to report to",
           "options": [
-            "the social welfare office or a child rights NGO",
-            "the airport authority",
             "a football club",
+            "the airport authority",
+            "the social welfare office or a child rights NGO",
             "the tax office"
           ],
-          "answer": "A"
+          "answer": "C"
         }
       ],
       "open": [
@@ -650,31 +650,31 @@
           "prompt": "Which of these is a peoples' right under the Charter?",
           "options": [
             "The right of one person to a lawyer",
-            "The right of a driver to a licence",
             "The right of a people to use and control its natural resources",
+            "The right of a driver to a licence",
             "The right of a student to a uniform"
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "What is special about the African Charter compared with the Universal Declaration of Human Rights?",
           "options": [
             "It ignores individual rights",
-            "It includes peoples' rights and the duties of individuals",
+            "It applies only to children",
             "It was written by the police",
-            "It applies only to children"
+            "It includes peoples' rights and the duties of individuals"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "A community says that spilled oil has destroyed its farmland and streams. Which right under the Charter is it most likely to claim?",
           "options": [
-            "The right to a satisfactory environment",
-            "The right to marry freely",
             "The right to a driver's licence",
+            "The right to marry freely",
+            "The right to a satisfactory environment",
             "The right to choose a surname"
           ],
-          "answer": "A"
+          "answer": "C"
         }
       ],
       "open": [
@@ -926,51 +926,51 @@
           "prompt": "Which of these is a principle of democracy?",
           "options": [
             "Rule by one family for ever",
-            "Regular elections",
             "Punishing all critics",
+            "Regular elections",
             "Secret decisions by the army"
-          ],
-          "answer": "B"
-        },
-        {
-          "prompt": "Which arm of government interprets the law and settles disputes?",
-          "options": [
-            "The judiciary",
-            "The legislature",
-            "The executive",
-            "The civil service"
-          ],
-          "answer": "A"
-        },
-        {
-          "prompt": "Why is the separation of powers important?",
-          "options": [
-            "It makes government cheaper",
-            "It stops people from voting",
-            "It stops one arm from controlling everything",
-            "It removes the need for law"
           ],
           "answer": "C"
         },
         {
+          "prompt": "Which arm of government interprets the law and settles disputes?",
+          "options": [
+            "The civil service",
+            "The legislature",
+            "The executive",
+            "The judiciary"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Why is the separation of powers important?",
+          "options": [
+            "It stops one arm from controlling everything",
+            "It stops people from voting",
+            "It makes government cheaper",
+            "It removes the need for law"
+          ],
+          "answer": "A"
+        },
+        {
           "prompt": "Which of these makes an election unfair?",
           "options": [
-            "A party giving money to voters on election day",
             "Voting in secret",
+            "A party giving money to voters on election day",
             "Counting votes in public",
             "Voters showing their cards"
           ],
-          "answer": "A"
+          "answer": "B"
         },
         {
           "prompt": "INEC is responsible for",
           "options": [
             "making the national budget",
             "trying criminals",
-            "controlling the police",
-            "registering voters and conducting elections"
+            "registering voters and conducting elections",
+            "controlling the police"
           ],
-          "answer": "D"
+          "answer": "C"
         }
       ],
       "open": [
@@ -1217,52 +1217,52 @@
         {
           "prompt": "Which of these is a quality of a good leader?",
           "options": [
-            "Favouring close friends",
+            "Fairness to all members",
             "Hiding the accounts",
             "Refusing advice",
-            "Fairness to all members"
+            "Favouring close friends"
           ],
-          "answer": "D"
+          "answer": "A"
         },
         {
           "prompt": "A head prefect punishes strangers for lateness but excuses his friends. He is showing",
           "options": [
-            "favouritism, which is a mark of poor leadership",
-            "courage",
             "vision",
+            "courage",
+            "favouritism, which is a mark of poor leadership",
             "accountability"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "A market chairperson shows the traders the accounts of the levy at each monthly meeting. This is",
           "options": [
             "selfishness",
-            "accountability",
+            "laziness",
             "favouritism",
-            "laziness"
+            "accountability"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "A leader who knows where the school should be in five years, and plans for it, has",
           "options": [
-            "vision",
             "fear",
+            "vision",
             "humility only",
             "good looks"
           ],
-          "answer": "A"
+          "answer": "B"
         },
         {
           "prompt": "Which of these is NOT a kind of leader?",
           "options": [
-            "A class captain",
-            "A village head",
             "A passenger on a bus",
+            "A village head",
+            "A class captain",
             "A head of a family"
           ],
-          "answer": "C"
+          "answer": "A"
         }
       ],
       "open": [
@@ -1511,11 +1511,11 @@
           "prompt": "A school clerk keeps part of the fees that parents paid to her. Which kind of corruption is this?",
           "options": [
             "Examination malpractice",
-            "Embezzlement",
+            "Bribery",
             "Favouritism",
-            "Bribery"
+            "Embezzlement"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "A road contractor lists the cost of building a road as N80 million when the real cost is N50 million. This is",
@@ -1541,21 +1541,21 @@
           "prompt": "Which body was set up in 2003 to deal with financial crimes such as fraud and money laundering?",
           "options": [
             "The ICPC",
-            "INEC",
+            "The EFCC",
             "The NHRC",
-            "The EFCC"
+            "INEC"
           ],
-          "answer": "D"
+          "answer": "B"
         },
         {
           "prompt": "A pupil says, 'Bribery in exams helps me, so no one is harmed.' This is wrong because",
           "options": [
-            "honest pupils lose chances, and the pupil does not truly learn",
+            "exams are not important",
             "nobody notices it",
             "the school gains",
-            "exams are not important"
+            "honest pupils lose chances, and the pupil does not truly learn"
           ],
-          "answer": "A"
+          "answer": "D"
         }
       ],
       "open": [
@@ -1799,22 +1799,22 @@
         {
           "prompt": "Peace means",
           "options": [
-            "only the absence of noise",
+            "people living together safely and fairly, settling differences without violence",
             "a time when there are no laws",
             "that conflict never occurs",
-            "people living together safely and fairly, settling differences without violence"
+            "only the absence of noise"
           ],
-          "answer": "D"
+          "answer": "A"
         },
         {
           "prompt": "In mediation, who decides the solution?",
           "options": [
-            "The two sides, helped by a neutral person",
+            "The stronger side",
             "The neutral person alone",
             "The police alone",
-            "The stronger side"
+            "The two sides, helped by a neutral person"
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "Which of these is a way of preventing conflict?",
@@ -2107,21 +2107,21 @@
           "prompt": "Which of these is volunteering?",
           "options": [
             "Collecting a salary as a teacher",
-            "Teaching younger children to read on Saturdays without payment",
             "Selling pure water",
+            "Teaching younger children to read on Saturdays without payment",
             "Paying school fees"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "A group of residents sign a letter asking the local government to repair a bridge. This is a",
           "options": [
             "census",
-            "crime",
             "petition",
+            "crime",
             "strike"
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "Which of these is NOT a responsible way of expressing public opinion?",
@@ -2410,31 +2410,31 @@
           "prompt": "A country earns a lot of money from oil, but most people cannot read and have no clean water. This shows that",
           "options": [
             "the country is fully developed",
-            "high income does not alone mean development",
+            "oil makes everyone rich",
             "literacy is not important",
-            "oil makes everyone rich"
+            "high income does not alone mean development"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "Which action by a citizen helps national development?",
           "options": [
             "Dodging tax",
-            "Vandalising a transformer",
+            "Paying tax honestly",
             "Selling a vote",
-            "Paying tax honestly"
+            "Vandalising a transformer"
           ],
-          "answer": "D"
+          "answer": "B"
         },
         {
           "prompt": "Which of these is infrastructure?",
           "options": [
             "A song",
-            "A tarred road",
             "A proverb",
+            "A tarred road",
             "A festival"
           ],
-          "answer": "B"
+          "answer": "C"
         }
       ],
       "open": [

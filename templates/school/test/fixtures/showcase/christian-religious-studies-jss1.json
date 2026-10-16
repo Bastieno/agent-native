@@ -48,11 +48,11 @@
           "prompt": "How many days did God work before He rested, according to Genesis 1?",
           "options": [
             "Five",
-            "Six",
+            "Ten",
             "Seven",
-            "Ten"
+            "Six"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "What was the only tree Adam and Eve were told not to eat from?",
@@ -67,12 +67,12 @@
         {
           "prompt": "What does it mean that humans were made in the image of God?",
           "options": [
-            "We look exactly like God",
-            "We are the same as animals",
             "God made us to be like Him in some ways, able to know Him and care for His creation",
+            "We are the same as animals",
+            "We look exactly like God",
             "We can never make mistakes"
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "When God asked Adam about the fruit, Adam",
@@ -88,11 +88,11 @@
           "prompt": "Which lesson best fits the story of the fall?",
           "options": [
             "Small rules do not matter",
-            "Doubting God's word can lead us into sin",
+            "Excuses remove our guilt",
             "Only older people can be tempted",
-            "Excuses remove our guilt"
+            "Doubting God's word can lead us into sin"
           ],
-          "answer": "B"
+          "answer": "D"
         }
       ],
       "open": [
@@ -349,41 +349,41 @@
           "prompt": "Who were the two sons of Adam and Eve mentioned in Genesis 4?",
           "options": [
             "Cain and Seth",
-            "Cain and Abel",
             "Abel and Noah",
+            "Cain and Abel",
             "Esau and Jacob"
-          ],
-          "answer": "B"
-        },
-        {
-          "prompt": "Why did God send the flood?",
-          "options": [
-            "Because Noah asked for it",
-            "Because the earth had run out of water",
-            "Because the people on the earth had become wicked",
-            "Because the animals were fighting"
           ],
           "answer": "C"
         },
         {
+          "prompt": "Why did God send the flood?",
+          "options": [
+            "Because the people on the earth had become wicked",
+            "Because the earth had run out of water",
+            "Because Noah asked for it",
+            "Because the animals were fighting"
+          ],
+          "answer": "A"
+        },
+        {
           "prompt": "Which of these shows that Noah obeyed God?",
           "options": [
-            "He built the ark exactly as he was told",
             "He asked God for a bigger boat",
+            "He built the ark exactly as he was told",
             "He left the animals outside",
             "He waited for the rain to stop before building"
           ],
-          "answer": "A"
+          "answer": "B"
         },
         {
           "prompt": "After the flood, God gave a sign that He would never again destroy the earth with water. The sign was",
           "options": [
             "a dove",
-            "a rainbow",
+            "a cloud of fire",
             "an olive branch",
-            "a cloud of fire"
+            "a rainbow"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "When God asked Cain where Abel was, Cain",
@@ -634,21 +634,21 @@
           "prompt": "God told Abram to leave his country and go to",
           "options": [
             "Egypt",
-            "a land God would show him",
             "Babylon",
+            "a land God would show him",
             "Mount Sinai"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "What name did God give to Abram?",
           "options": [
-            "Israel",
-            "Isaac",
             "Abraham",
+            "Isaac",
+            "Israel",
             "Ishmael"
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "What caused the quarrel between Abraham's and Lot's herdsmen?",
@@ -674,11 +674,11 @@
           "prompt": "What does Abraham's choice to let Lot choose first teach?",
           "options": [
             "Older people should never choose first",
-            "We should be ready to give way to keep peace",
             "Land is not important",
+            "We should be ready to give way to keep peace",
             "We should always follow our relatives"
           ],
-          "answer": "B"
+          "answer": "C"
         }
       ],
       "open": [
@@ -936,41 +936,41 @@
           "prompt": "Who were the twin sons of Isaac and Rebekah?",
           "options": [
             "Cain and Abel",
-            "Joseph and Benjamin",
+            "Esau and Jacob",
             "Ishmael and Isaac",
-            "Esau and Jacob"
+            "Joseph and Benjamin"
           ],
-          "answer": "D"
+          "answer": "B"
         },
         {
           "prompt": "Why did Joseph's brothers hate him?",
           "options": [
-            "His father loved him more and he told them his dreams",
-            "He refused to work",
             "He had stolen their food",
+            "He refused to work",
+            "His father loved him more and he told them his dreams",
             "He was older than they were"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "How did Joseph become a ruler in Egypt?",
           "options": [
             "By fighting a war",
             "By marrying Pharaoh's daughter",
-            "By explaining Pharaoh's dreams and advising him",
-            "By buying the throne"
+            "By buying the throne",
+            "By explaining Pharaoh's dreams and advising him"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "What did Esau give away for a bowl of stew?",
           "options": [
-            "His blessing",
+            "His birthright",
             "His hunting bow",
             "His sheep",
-            "His birthright"
+            "His blessing"
           ],
-          "answer": "D"
+          "answer": "A"
         },
         {
           "prompt": "When Joseph met his brothers again in Egypt, he",
@@ -1246,51 +1246,51 @@
           "prompt": "Where did God first speak to Moses?",
           "options": [
             "On Mount Sinai",
-            "From a burning bush at Horeb",
             "At the Red Sea",
+            "From a burning bush at Horeb",
             "In Pharaoh's palace"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Which of the Ten Commandments concerns how we treat our parents?",
           "options": [
             "The fourth",
             "The sixth",
-            "The fifth",
-            "The eighth"
-          ],
-          "answer": "C"
-        },
-        {
-          "prompt": "The Israelites wandered for forty years in the wilderness because",
-          "options": [
-            "Moses lost the map",
-            "Pharaoh's army blocked the road",
-            "they were building a temple",
-            "they refused to trust God and enter Canaan"
+            "The eighth",
+            "The fifth"
           ],
           "answer": "D"
         },
         {
+          "prompt": "The Israelites wandered for forty years in the wilderness because",
+          "options": [
+            "they refused to trust God and enter Canaan",
+            "Pharaoh's army blocked the road",
+            "they were building a temple",
+            "Moses lost the map"
+          ],
+          "answer": "A"
+        },
+        {
           "prompt": "Who led the Israelites into the Promised Land?",
           "options": [
-            "Joshua",
             "Aaron",
+            "Joshua",
             "Caleb",
             "Moses"
           ],
-          "answer": "A"
+          "answer": "B"
         },
         {
           "prompt": "Which of these is one of the Ten Commandments?",
           "options": [
             "Love your enemies",
-            "You shall not steal",
             "Build an ark",
+            "You shall not steal",
             "Pay a tenth of your income"
           ],
-          "answer": "B"
+          "answer": "C"
         }
       ],
       "open": [
@@ -1550,11 +1550,11 @@
           "prompt": "Which judge was a woman who sat under a palm tree?",
           "options": [
             "Delilah",
-            "Deborah",
+            "Hannah",
             "Ruth",
-            "Hannah"
+            "Deborah"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "Gideon defeated the Midianites with",
@@ -1579,12 +1579,12 @@
         {
           "prompt": "What usually happened in Israel after a judge died?",
           "options": [
-            "The people kept serving the Lord faithfully",
-            "They chose a king at once",
             "They returned to worshipping idols",
+            "They chose a king at once",
+            "The people kept serving the Lord faithfully",
             "They moved to Egypt"
           ],
-          "answer": "C"
+          "answer": "A"
         }
       ],
       "open": [
@@ -1838,21 +1838,21 @@
           "prompt": "Who were the parents of John the Baptist?",
           "options": [
             "Joseph and Mary",
-            "Zechariah and Elizabeth",
             "Joachim and Anna",
+            "Zechariah and Elizabeth",
             "Simeon and Anna"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Why was Zechariah unable to speak for a time?",
           "options": [
             "He had a sickness",
-            "He was afraid of the Romans",
             "He doubted the angel's message",
+            "He was afraid of the Romans",
             "He was punished for stealing"
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "What did the angel Gabriel tell Mary to name her child?",
@@ -1878,11 +1878,11 @@
           "prompt": "Who first heard the news of Jesus' birth from the angel?",
           "options": [
             "The king",
-            "Shepherds watching their sheep",
             "The priests in the temple",
+            "Shepherds watching their sheep",
             "Roman soldiers"
           ],
-          "answer": "B"
+          "answer": "C"
         }
       ],
       "open": [
@@ -2146,11 +2146,11 @@
           "prompt": "What did the voice from heaven say at the baptism of Jesus?",
           "options": [
             "You must repent",
-            "This is my Son, whom I love; with him I am well pleased",
+            "Peace be with you",
             "Follow me",
-            "Peace be with you"
+            "This is my Son, whom I love; with him I am well pleased"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "What was the devil's first temptation to Jesus?",
@@ -2165,12 +2165,12 @@
         {
           "prompt": "What was Jesus' first miracle, according to John 2?",
           "options": [
-            "Healing a blind man",
             "Turning water into wine at Cana",
+            "Healing a blind man",
             "Walking on water",
             "Feeding five thousand"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "What does Jesus' use of Scripture against the devil teach us?",
@@ -2436,32 +2436,32 @@
         {
           "prompt": "Where did Jesus teach the Sermon on the Mount?",
           "options": [
-            "In the temple",
             "On a mountainside",
+            "In the temple",
             "In a boat",
             "In a synagogue at Nazareth"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "According to Jesus, those who are merciful will",
           "options": [
             "be rich",
-            "be shown mercy",
             "see God",
+            "be shown mercy",
             "inherit the earth"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "In the story of the two builders, what is the rock?",
           "options": [
-            "Hearing Jesus' words and doing them",
+            "Having a lot of money",
             "Hearing Jesus' words only",
             "A house made of stone",
-            "Having a lot of money"
+            "Hearing Jesus' words and doing them"
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "When Jesus said \"You are the light of the world,\" He meant that His followers should",

@@ -47,52 +47,52 @@
         {
           "prompt": "Kí ni a máa ń sọ fún ẹni tí ó ń ṣiṣẹ́?",
           "options": [
-            "Ẹ kú iṣẹ́",
             "Ẹ káàbọ̀",
+            "Ẹ kú iṣẹ́",
             "Ó dàárọ̀",
             "Ẹ kú ọdún"
           ],
-          "answer": "A"
+          "answer": "B"
         },
         {
           "prompt": "Ní aago méje àárọ̀, ọmọ kan pàdé olùkọ́ rẹ̀ ní ẹnu-ọ̀nà ilé ìwé. Kí ni ó yẹ kí ó sọ?",
           "options": [
             "Ẹ kú ọ̀sán",
             "Ó dàárọ̀",
-            "Ẹ káàárọ̀",
-            "Ẹ kú ìrọ̀lẹ́"
+            "Ẹ kú ìrọ̀lẹ́",
+            "Ẹ káàárọ̀"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "Ẹ̀gbọ́n rẹ dé láti ìrìn-àjò. Kí ni o máa sọ fún un?",
           "options": [
             "Ẹ jọ̀ọ́",
-            "Ẹ kú àbọ̀",
             "Ó dàárọ̀",
+            "Ẹ kú àbọ̀",
             "Ẹ má bínú"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Ọmọ kan fẹ́ gba ìwé lọ́wọ́ olùkọ́. Ọ̀rọ̀ wo ni ó yẹ kí ó lò ní ìbẹ̀rẹ̀?",
           "options": [
-            "Ẹ pẹ̀lẹ́",
+            "Ẹ jọ̀ọ́",
             "Ẹ kú ilé",
             "Ẹ káàbọ̀",
-            "Ẹ jọ̀ọ́"
+            "Ẹ pẹ̀lẹ́"
           ],
-          "answer": "D"
+          "answer": "A"
         },
         {
           "prompt": "Báwo ni ọmọkùnrin Yorùbá ṣe máa ń kí àgbà ní ìbílẹ̀?",
           "options": [
-            "Ó máa ń dọ̀bálẹ̀",
             "Ó máa ń kúnlẹ̀",
+            "Ó máa ń dọ̀bálẹ̀",
             "Ó máa ń juwọ́ nìkan",
             "Ó máa ń dákẹ́ láì sọ nǹkan"
           ],
-          "answer": "A"
+          "answer": "B"
         }
       ],
       "open": [
@@ -366,22 +366,22 @@
         {
           "prompt": "Ohùn mélòó ni ó wà nínú èdè Yorùbá?",
           "options": [
-            "Méjì",
-            "Mẹ́rin",
             "Mẹ́ta",
+            "Mẹ́rin",
+            "Méjì",
             "Márùn-ún"
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Èwo nínú àwọn ọ̀rọ̀ wọ̀nyí ni ó túmọ̀ sí \"hoe\"?",
           "options": [
-            "ọkọ́",
-            "ọkọ̀",
             "ọkọ",
+            "ọkọ̀",
+            "ọkọ́",
             "ọ̀kọ̀"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "Èwo nínú àwọn ọ̀rọ̀ wọ̀nyí ni ó túmọ̀ sí \"hand\"?",
@@ -683,51 +683,51 @@
           "prompt": "Kí ni o máa sọ láti fi orúkọ rẹ hàn?",
           "options": [
             "Orúkọ rẹ ni Ayọ̀.",
-            "Orúkọ mi ni Ayọ̀.",
             "Èmi orúkọ Ayọ̀.",
+            "Orúkọ mi ni Ayọ̀.",
             "Ayọ̀ ni ẹ̀gbọ́n mi."
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Ní ọjà, ọmọ kan fẹ́ mọ iye owó tòmátì. Kí ni ó yẹ kí ó béèrè?",
           "options": [
-            "Èló ni?",
             "Báwo ni?",
+            "Èló ni?",
             "Níbo ni?",
             "Ta ni?"
           ],
-          "answer": "A"
+          "answer": "B"
         },
         {
           "prompt": "Olùkọ́ sọ pé, \"Ẹ jókòó.\" Kí ni àwọn ọmọ yóò ṣe?",
           "options": [
-            "Wọ́n yóò jókòó",
+            "Wọ́n yóò kọrin",
             "Wọ́n yóò dìde",
             "Wọ́n yóò jáde",
-            "Wọ́n yóò kọrin"
+            "Wọ́n yóò jókòó"
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "Èwo nínú àwọn ìdáhùn wọ̀nyí ni ó bá ìbéèrè \"Ṣé àlàáfíà ni?\" mu?",
           "options": [
-            "Ẹ káàárọ̀.",
-            "Èló ni?",
             "Àlàáfíà ni.",
+            "Èló ni?",
+            "Ẹ káàárọ̀.",
             "Ẹ jókòó."
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Oníbàárà sọ pé, \"Ó wọ́n jù.\" Kí ni ó ń sọ?",
           "options": [
             "Ó tutù jù",
             "Ó tóbi jù",
-            "Ó dùn jù",
-            "Owó rẹ̀ pọ̀ jù"
+            "Owó rẹ̀ pọ̀ jù",
+            "Ó dùn jù"
           ],
-          "answer": "D"
+          "answer": "C"
         }
       ],
       "open": [
@@ -1012,42 +1012,42 @@
         {
           "prompt": "Òwe wo ni ó ń kọ́ni pé iṣẹ́ ṣíṣe ló ń mú ọ̀nà kúrò nínú òṣì?",
           "options": [
-            "Iṣẹ́ ni oògùn ìṣẹ́",
+            "Òwe lẹ́ṣin ọ̀rọ̀",
             "Ọmọ tí a kò kọ́ ni yóò gbé ilé tà",
             "Àgbà kì í wà lọ́jà kí orí ọmọ titun wọ́",
-            "Òwe lẹ́ṣin ọ̀rọ̀"
+            "Iṣẹ́ ni oògùn ìṣẹ́"
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "Kí ni òwe \"Ọmọ tí a kò kọ́ ni yóò gbé ilé tà\" ń kọ́ wa?",
           "options": [
-            "Ọmọ gbọ́dọ̀ tà ilé",
-            "Ọmọ kò gbọ́dọ̀ lọ sí ilé ìwé",
             "Ọmọ gbọ́dọ̀ gba ẹ̀kọ́ ilé tí ó dára, bí kò bá ṣe bẹ́ẹ̀ yóò ba ohun ìní ẹbí jẹ́",
+            "Ọmọ kò gbọ́dọ̀ lọ sí ilé ìwé",
+            "Ọmọ gbọ́dọ̀ tà ilé",
             "Ilé gbọ́dọ̀ ní ìlẹ̀kùn tí ó dára"
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Èwo nínú àwọn wọ̀nyí ni ọdẹ máa ń yin nínú ìjálá?",
           "options": [
             "Olókun",
             "Ọbàtálá",
-            "Ọ̀sanyìn",
-            "Ògún"
+            "Ògún",
+            "Ọ̀sanyìn"
           ],
-          "answer": "D"
+          "answer": "C"
         },
         {
           "prompt": "Èwo nínú àwọn wọ̀nyí kì í ṣe ewì?",
           "options": [
-            "Ìwé ìṣirò",
             "Ìjálá",
+            "Ìwé ìṣirò",
             "Rárà",
             "Oríkì"
           ],
-          "answer": "A"
+          "answer": "B"
         }
       ],
       "open": [
@@ -1317,52 +1317,52 @@
         {
           "prompt": "Ta ni ó jẹ́ olórí ẹni inú ìtàn \"Ìjàpá àti iṣu\"?",
           "options": [
-            "Àgbẹ̀",
+            "Ìjàpá",
             "Ọba",
             "Ajá",
-            "Ìjàpá"
+            "Àgbẹ̀"
           ],
-          "answer": "D"
+          "answer": "A"
         },
         {
           "prompt": "Kí ni ìdí tí Ìjàpá fi lọ sí oko?",
           "options": [
-            "Ebi ń pa á",
-            "Ó fẹ́ ṣeré",
             "Ó fẹ́ rí ọba",
+            "Ó fẹ́ ṣeré",
+            "Ebi ń pa á",
             "Ó ń wá ilé"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "Kí ni àgbẹ̀ ṣe nígbà tí ó rí Ìjàpá?",
           "options": [
-            "Ó kígbe pé, \"Ẹ mú olè!\"",
+            "Ó lọ sùn",
             "Ó fún un ní iṣu",
             "Ó bá a jẹun",
-            "Ó lọ sùn"
+            "Ó kígbe pé, \"Ẹ mú olè!\""
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "Kí ni ẹ̀kọ́ tí ìtàn náà kọ́ wa?",
           "options": [
             "Iṣu dùn ju gbogbo oúnjẹ lọ",
-            "Ìjàpá yára ju gbogbo ẹranko lọ",
             "Olè jíjà kò dára",
+            "Ìjàpá yára ju gbogbo ẹranko lọ",
             "Ìjàpá ní ọ̀rẹ́ púpọ̀"
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "Kí ni ìdáhùn sí àlọ́ yìí: \"Ó ní ojú ṣùgbọ́n kò lè ríran\"?",
           "options": [
-            "Òkúta",
             "Abẹ́rẹ́",
+            "Òkúta",
             "Ẹja",
             "Fìtílà"
           ],
-          "answer": "B"
+          "answer": "A"
         }
       ],
       "open": [
@@ -1921,41 +1921,41 @@
           "prompt": "Èwo nínú àwọn gbólóhùn wọ̀nyí ni gbólóhùn kúkúrú?",
           "options": [
             "Mo lọ sí ọjà, mo sì ra iṣu.",
-            "Mo dé ilé nítorí pé òjò ń rọ̀.",
+            "Ọmọ náà ń kàwé.",
             "Bí òjò bá rọ̀, a kò ní ṣeré.",
-            "Ọmọ náà ń kàwé."
+            "Mo dé ilé nítorí pé òjò ń rọ̀."
           ],
-          "answer": "D"
+          "answer": "B"
         },
         {
           "prompt": "Ọ̀rọ̀ wo ni a lè lò láti so gbólóhùn méjì pọ̀, tí ó túmọ̀ sí \"but\"?",
           "options": [
-            "ṣùgbọ́n",
-            "àti",
             "tàbí",
+            "àti",
+            "ṣùgbọ́n",
             "nítorí pé"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "Èwo ni a tò ní ọ̀nà tí ó tọ́?",
           "options": [
-            "Ọmọ náà jẹ ẹ̀bà.",
+            "Ọmọ ẹ̀bà náà jẹ.",
             "Jẹ ọmọ náà ẹ̀bà.",
             "Ẹ̀bà jẹ ọmọ náà.",
-            "Ọmọ ẹ̀bà náà jẹ."
+            "Ọmọ náà jẹ ẹ̀bà."
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "Irú gbólóhùn wo ni \"Mo dé ilé nítorí pé òjò ń rọ̀\"?",
           "options": [
-            "Simple sentence",
-            "Compound sentence",
             "Complex sentence",
+            "Compound sentence",
+            "Simple sentence",
             "Gbólóhùn ìbéèrè (question)"
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Èwo ni ọ̀nà tí ó tọ́ láti sọ \"I did not eat\"?",
@@ -2230,52 +2230,52 @@
         {
           "prompt": "Èwo nínú àwọn ọ̀rọ̀ wọ̀nyí ni orúkọ?",
           "options": [
-            "ilé",
+            "mo",
             "lọ",
             "pupa",
-            "mo"
+            "ilé"
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "Èwo nínú àwọn ọ̀rọ̀ wọ̀nyí ni arọ́pò-orúkọ?",
           "options": [
-            "ìwé",
-            "sáré",
             "wọ́n",
+            "sáré",
+            "ìwé",
             "ńlá"
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Nínú gbólóhùn \"Ọmọ náà ń sáré\", èwo ni ọ̀rọ̀-ìṣe?",
           "options": [
             "Ọmọ",
-            "sáré",
             "náà",
+            "sáré",
             "ń"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Báwo ni a ṣe ń kọ \"red cloth\" ní Yorùbá?",
           "options": [
             "pupa aṣọ",
-            "aṣọ ni pupa",
+            "aṣọ pupa",
             "pupa ni aṣọ",
-            "aṣọ pupa"
+            "aṣọ ni pupa"
           ],
-          "answer": "D"
+          "answer": "B"
         },
         {
           "prompt": "Arọ́pò-orúkọ wo ni o máa lò dípò \"èmi àti ẹ̀gbọ́n mi\"?",
           "options": [
-            "a",
+            "ẹ",
             "wọ́n",
             "ó",
-            "ẹ"
+            "a"
           ],
-          "answer": "A"
+          "answer": "D"
         }
       ],
       "open": [
@@ -2571,12 +2571,12 @@
         {
           "prompt": "Ọjọ́ wo ni ọjọ́ tí ọ̀pọ̀ ènìyàn kì í lọ sí ilé ìwé tí wọ́n sì máa ń lọ sí ṣọ́ọ̀ṣì?",
           "options": [
-            "Ọjọ́ Àìkú",
-            "Ọjọ́ Ajé",
             "Ọjọ́rú",
+            "Ọjọ́ Ajé",
+            "Ọjọ́ Àìkú",
             "Ọjọ́ Ẹtì"
           ],
-          "answer": "A"
+          "answer": "C"
         }
       ],
       "open": [

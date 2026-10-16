@@ -69,10 +69,10 @@
           "options": [
             "A summary of the main argument",
             "A final recommendation",
-            "A completely new argument",
-            "A closing thought"
+            "A closing thought",
+            "A completely new argument"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "Which is the most economical way to say \"Due to the fact that it was raining\"?",
@@ -348,41 +348,41 @@
           "prompt": "Which sentence is punctuated correctly?",
           "options": [
             "The farmer sold his goats, he bought a motorcycle.",
-            "The farmer sold his goats, and he bought a motorcycle.",
             "The farmer sold his goat's and he bought a motorcycle.",
+            "The farmer sold his goats, and he bought a motorcycle.",
             "The farmer, sold his goats and he bought, a motorcycle."
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Choose the correct spelling to fill the gap: The ______ announced the results on Friday.",
           "options": [
             "goverment",
-            "government",
+            "governmant",
             "govenment",
-            "governmant"
+            "government"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "Which of these uses the apostrophe correctly?",
           "options": [
             "The womens' meeting was held at noon.",
-            "The woman's meeting was held by all the women of the village.",
             "The women's meeting was held at noon.",
+            "The woman's meeting was held by all the women of the village.",
             "The womens meeting was held at noon."
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "Choose the correct word: The ______ gave the students good advice.",
           "options": [
-            "principle",
             "principal",
+            "principle",
             "principel",
             "princepal"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "Which sentence uses it's or its correctly?",
@@ -661,12 +661,12 @@
         {
           "prompt": "\"Baba Sule was a man of meagre means.\" The word meagre means",
           "options": [
-            "famous",
             "small",
+            "famous",
             "generous",
             "dishonest"
           ],
-          "answer": "B"
+          "answer": "A"
         },
         {
           "prompt": "\"When a trader once offered him double the money to sell water from the stream, he declined at once.\" Declined means",
@@ -682,31 +682,31 @@
           "prompt": "\"Yet he was meticulous about his work. He rinsed each jerrycan twice.\" The word meticulous means",
           "options": [
             "careless",
-            "very careful about details",
+            "quick",
             "proud",
-            "quick"
+            "very careful about details"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "\"The residents ... haggled with him over the price, though he never changed it.\" Which phrase best replaces haggled?",
           "options": [
             "thanked him",
-            "bargained with him",
             "paid him in advance",
+            "bargained with him",
             "complained to the police"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "A student wrote \"stubbornness\" as the meaning of the word \"stubborn\" in a sentence. What is wrong with this answer?",
           "options": [
-            "It is spelt wrongly",
             "It is a noun, but the original word is an adjective",
+            "It is spelt wrongly",
             "It is too short",
             "It is a phrase"
           ],
-          "answer": "B"
+          "answer": "A"
         }
       ],
       "open": [
@@ -942,31 +942,31 @@
           "prompt": "\"After one year the fund had grown enough to buy a second-hand grating machine and a hydraulic press.\" What did the women buy?",
           "options": [
             "A new frying pan and a bag of cassava",
-            "A used grating machine and a hydraulic press",
             "A van to carry garri to Abeokuta",
+            "A used grating machine and a hydraulic press",
             "A new processing house"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "Which of these statements from a news report is a fact rather than an opinion?",
           "options": [
-            "The cooperative is the best in Ogun State.",
-            "The garri tastes better when fried over wood.",
             "The cooperative sells its garri in bags of twenty-five kilograms.",
+            "The garri tastes better when fried over wood.",
+            "The cooperative is the best in Ogun State.",
             "The women are the happiest farmers in Nigeria."
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "A question begins \"Why did the women sell for less than their garri was worth before the cooperative?\" What is it asking for?",
           "options": [
             "A place",
             "A number",
-            "A reason",
-            "A person"
+            "A person",
+            "A reason"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "The passage says that machines do in three hours what once took a whole day. If a day's work took eight hours, the machines save",
@@ -1202,31 +1202,31 @@
           "prompt": "Read: \"The conductor shrugged and turned away.\" What can you infer about the conductor?",
           "options": [
             "He was angry with Tunde",
-            "He did not mind whether Tunde travelled or not",
+            "He was afraid of the driver",
             "He wanted to help Tunde",
-            "He was afraid of the driver"
+            "He did not mind whether Tunde travelled or not"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "\"The motor park was nearly empty when Tunde arrived. The loudspeaker had fallen silent.\" What can you infer from this?",
           "options": [
-            "It was late in the day",
-            "It was the start of the week",
             "The bus was broken",
+            "It was the start of the week",
+            "It was late in the day",
             "Tunde was the driver"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "Which of these is an inference rather than a stated fact in the passage?",
           "options": [
-            "Tunde carried a sack of yams.",
-            "The fare to Ilorin was two thousand naira.",
             "The old driver was a kind man.",
+            "The fare to Ilorin was two thousand naira.",
+            "Tunde carried a sack of yams.",
             "The conductor called out Ilorin."
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "Tunde \"counted the notes in his pocket for the third time.\" This suggests that he",
@@ -1243,10 +1243,10 @@
           "options": [
             "a good inference",
             "a fact in the passage",
-            "a guess with no support",
-            "a figure of speech"
+            "a figure of speech",
+            "a guess with no support"
           ],
-          "answer": "C"
+          "answer": "D"
         }
       ],
       "open": [
@@ -1477,22 +1477,22 @@
         {
           "prompt": "\"We shall never forget the kindness of the women who fed us when the flood took everything.\" The feeling expressed is",
           "options": [
-            "gratitude",
-            "scorn",
             "anxiety",
+            "scorn",
+            "gratitude",
             "indifference"
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "\"They have taken our land, they have cut our trees, and now they want us to thank them!\" Which word best describes the attitude?",
           "options": [
             "Resigned",
             "Amused",
-            "Indignant",
-            "Nostalgic"
+            "Nostalgic",
+            "Indignant"
           ],
-          "answer": "C"
+          "answer": "D"
         },
         {
           "prompt": "\"There is nothing we can do about it. The decision is made and the road will be closed.\" The speaker sounds",
@@ -1734,51 +1734,51 @@
           "prompt": "\"The boy who won the prize is my cousin.\" The group of words \"who won the prize\" is",
           "options": [
             "a noun clause",
-            "an adjective clause",
+            "a prepositional phrase",
             "an adverb clause of time",
-            "a prepositional phrase"
+            "an adjective clause"
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "\"She sang beautifully at the end of the programme.\" The phrase \"at the end of the programme\" is",
           "options": [
             "an adjective phrase",
-            "a noun clause",
             "an adverb phrase of time",
+            "a noun clause",
             "a verb phrase"
-          ],
-          "answer": "C"
-        },
-        {
-          "prompt": "\"We were late because the bus broke down.\" The clause \"because the bus broke down\" tells us",
-          "options": [
-            "when we were late",
-            "why we were late",
-            "where we were late",
-            "who was late"
           ],
           "answer": "B"
         },
         {
-          "prompt": "\"What the principal said surprised the parents.\" The clause \"What the principal said\" is",
+          "prompt": "\"We were late because the bus broke down.\" The clause \"because the bus broke down\" tells us",
           "options": [
-            "the subject of the sentence",
-            "an adverb of manner",
-            "an adjective qualifying parents",
-            "a conjunction"
+            "why we were late",
+            "when we were late",
+            "where we were late",
+            "who was late"
           ],
           "answer": "A"
+        },
+        {
+          "prompt": "\"What the principal said surprised the parents.\" The clause \"What the principal said\" is",
+          "options": [
+            "an adjective qualifying parents",
+            "an adverb of manner",
+            "the subject of the sentence",
+            "a conjunction"
+          ],
+          "answer": "C"
         },
         {
           "prompt": "\"Although the road was bad, the driver arrived early.\" The subordinate clause expresses",
           "options": [
             "reason",
             "condition",
-            "concession (contrast)",
-            "time"
+            "time",
+            "concession (contrast)"
           ],
-          "answer": "C"
+          "answer": "D"
         }
       ],
       "open": [
@@ -2021,42 +2021,42 @@
         {
           "prompt": "\"Her smile was a bitter sweet one.\" The expression bitter sweet is an example of",
           "options": [
-            "alliteration",
-            "personification",
             "oxymoron",
+            "personification",
+            "alliteration",
             "hyperbole"
           ],
-          "answer": "C"
+          "answer": "A"
         },
         {
           "prompt": "A fire station burns down because nobody was on duty. This is an example of",
           "options": [
-            "situational irony",
+            "simile",
             "alliteration",
             "proverb",
-            "simile"
+            "situational irony"
           ],
-          "answer": "A"
+          "answer": "D"
         },
         {
           "prompt": "\"The sun hung in the sky like a coin.\" This is a",
           "options": [
             "metaphor",
-            "simile",
             "proverb",
+            "simile",
             "symbol"
           ],
-          "answer": "B"
+          "answer": "C"
         },
         {
           "prompt": "\"A tree does not make a forest.\" Which term describes this sentence?",
           "options": [
             "Alliteration",
-            "Oxymoron",
             "Proverb",
+            "Oxymoron",
             "Imagery"
           ],
-          "answer": "C"
+          "answer": "B"
         }
       ],
       "open": [
@@ -2295,51 +2295,51 @@
           "prompt": "Change to the passive: \"The cook will prepare the rice.\"",
           "options": [
             "The rice was prepared by the cook.",
-            "The rice is being prepared by the cook.",
             "The rice will be prepared by the cook.",
+            "The rice is being prepared by the cook.",
             "The cook will be prepared by the rice."
           ],
-          "answer": "C"
+          "answer": "B"
         },
         {
           "prompt": "\"I will pay the fees tomorrow,\" said Obi. Which is the correct indirect speech?",
           "options": [
-            "Obi said that he will pay the fees tomorrow.",
+            "Obi said that he would pay the fees the next day.",
             "Obi said that I would pay the fees tomorrow.",
             "Obi said he paid the fees the next day.",
-            "Obi said that he would pay the fees the next day."
+            "Obi said that he will pay the fees tomorrow."
           ],
-          "answer": "D"
+          "answer": "A"
         },
         {
           "prompt": "Which sentence has the same meaning as: \"Although it was raining, the match continued.\"",
           "options": [
-            "In spite of the rain, the match continued.",
-            "Because of the rain, the match continued.",
             "The rain continued because of the match.",
+            "Because of the rain, the match continued.",
+            "In spite of the rain, the match continued.",
             "The match stopped because of the rain."
           ],
-          "answer": "A"
+          "answer": "C"
         },
         {
           "prompt": "\"Do you know the way to the market?\" she asked. The correct reported form is:",
           "options": [
             "She asked if I know the way to the market?",
-            "She asked whether I knew the way to the market.",
+            "She asked that I knew the way to the market.",
             "She asked do I know the way to the market.",
-            "She asked that I knew the way to the market."
+            "She asked whether I knew the way to the market."
           ],
-          "answer": "B"
+          "answer": "D"
         },
         {
           "prompt": "Which sentence is in the passive voice?",
           "options": [
-            "The scripts were marked by the teacher.",
             "The teacher marked the scripts.",
+            "The scripts were marked by the teacher.",
             "The scripts marked well.",
             "The teacher is marking the scripts."
           ],
-          "answer": "A"
+          "answer": "B"
         }
       ],
       "open": [
