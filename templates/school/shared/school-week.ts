@@ -1,0 +1,299 @@
+/**
+ * The school's own week and rooms.
+ *
+ * Nothing here assumes which days a school teaches, how many periods it has,
+ * or what it calls them. A week is whatever the school set; a day it does not
+ * teach is simply absent. Day names are never written in code — they are
+ * rendered from the day number and a locale.
+ */
+
+export type Weekday = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+
+export interface WeekPeriod {
+  number: number;
+  start: string;
+  end: string;
+  kind: "lesson" | "break";
+  label?: string;
+}
+
+export interface WeekDay {
+  day: Weekday;
+  periods: WeekPeriod[];
+}
+
+export interface SchoolWeek {
+  cycleLength: 1;
+  days: WeekDay[];
+}
+
+export type RoomKind = "classroom" | "special";
+
+export interface Room {
+  name: string;
+  kind: RoomKind;
+}
+
+const TIME = /^([01]\d|2[0-3]):[0-5]\d$/;
+
+function minutes(time: string): number {
+  const [h, m] = time.split(":").map(Number);
+  return h * 60 + m;
+}
+
+/**
+ * The name of a weekday in a locale, from its ISO number (1 = Monday).
+ * Rendered against a fixed week that starts on a Monday, in UTC, so neither
+ * the host's timezone nor its locale can shift the day.
+ */
+export function schoolWeekdayName(day: number, locale?: string): string {
+  const date = new Date(Date.UTC(2024, 0, day)); // 2024-01-01 is a Monday
+  return new Intl.DateTimeFormat(locale, {
+    weekday: "long",
+    timeZone: "UTC",
+  }).format(date);
+}
+
+/** The short form of a weekday's name ("Mon"), from the same fixed week. */
+export function schoolWeekdayShortName(day: number, locale?: string): string {
+  const date = new Date(Date.UTC(2024, 0, day)); // 2024-01-01 is a Monday
+  return new Intl.DateTimeFormat(locale, {
+    weekday: "short",
+    timeZone: "UTC",
+  }).format(date);
+}
+
+/** Whether two time ranges share any time. Half-open: touching is not overlap. */
+export function timesOverlap(
+  aStart: string,
+  aEnd: string,
+  bStart: string,
+  bEnd: string,
+): boolean {
+  return minutes(aStart) < minutes(bEnd) && minutes(bStart) < minutes(aEnd);
+}
+
+/** The period with this number on this day, or null if the school has none. */
+export function findPeriod(
+  week: SchoolWeek | null | undefined,
+  day: number,
+  number: number,
+): WeekPeriod | null {
+  const found = week?.days?.find((d) => d.day === day);
+  return found?.periods?.find((p) => p.number === number) ?? null;
+}
+
+/**
+ * Where a double starting at a period would end: the next period in that
+ * day's order, when it is a lesson. Otherwise `second` is null and `blocker`
+ * is what stands in the way (a break or other non-lesson period), or null
+ * when the day has nothing after it. The one rule the server and the page's
+ * draft share.
+ */
+export function doubleSecondPeriod(
+  week: SchoolWeek | null | undefined,
+  day: number,
+  number: number,
+): { second: WeekPeriod | null; blocker: WeekPeriod | null } {
+  const found = week?.days?.find((d) => d.day === day);
+  const ordered = [...(found?.periods ?? [])].sort(
+    (a, b) => minutes(a.start) - minutes(b.start),
+  );
+  const at = ordered.findIndex((p) => p.number === number);
+  const after = at >= 0 ? ordered[at + 1] : undefined;
+  if (!after) return { second: null, blocker: null };
+  if (after.kind !== "lesson") return { second: null, blocker: after };
+  return { second: after, blocker: null };
+}
+
+/** What a row needs for pairing: its id, pair, day, period and start. */
+export interface PairHalf {
+  scheduleId: string;
+  pairId: string | null;
+  day: number;
+  periodNumber: number | null;
+  start: string;
+}
+
+/**
+ * The doubles that really are doubles, by pair id, first half first: exactly
+ * two rows on one day, the second in the period `doubleSecondPeriod` gives
+ * for the first. Anything else (a half on its own, halves on different days
+ * or with a gap between, a week that has since changed) reads as single
+ * periods. Counting, joining and drawing all go through this.
+ */
+export function validPairs<T extends PairHalf>(
+  week: SchoolWeek | null | undefined,
+  rows: T[],
+): Map<string, [T, T]> {
+  const halves = new Map<string, T[]>();
+  for (const r of rows) {
+    if (r.pairId) halves.set(r.pairId, [...(halves.get(r.pairId) ?? []), r]);
+  }
+  const out = new Map<string, [T, T]>();
+  for (const [pairId, list] of halves) {
+    if (list.length !== 2) continue;
+    const [a, b] = [...list].sort(
+      (x, y) => minutes(x.start) - minutes(y.start),
+    );
+    if (a.day !== b.day || a.periodNumber == null || b.periodNumber == null) {
+      continue;
+    }
+    const second = doubleSecondPeriod(week, a.day, a.periodNumber).second;
+    if (second?.number !== b.periodNumber) continue;
+    out.set(pairId, [a, b]);
+  }
+  return out;
+}
+
+/**
+ * A day's rows with each valid double as one entry: the first half, the last
+ * half and how many periods it covers. Anything not a valid pair reads as
+ * single periods. Keeps the order of the rows given.
+ */
+export function joinDoubles<T extends PairHalf>(
+  week: SchoolWeek | null | undefined,
+  rows: T[],
+): { first: T; last: T; count: number }[] {
+  const pairs = validPairs(week, rows);
+  return rows.flatMap((p) => {
+    const pair = p.pairId ? pairs.get(p.pairId) : undefined;
+    if (!pair) return [{ first: p, last: p, count: 1 }];
+    if (pair[0] !== p) return [];
+    return [{ first: p, last: pair[1], count: 2 }];
+  });
+}
+
+/** What a placement needs for slotting: its day, number and stored times. */
+export interface Placement {
+  day: number;
+  periodNumber: number | null;
+  start: string;
+  end: string;
+}
+
+/**
+ * The lesson period of the week a placement sits in: the period with its
+ * number when that is a lesson on its day; else the lesson period its stored
+ * times overlap; else null — it is not on this week's bells. The one rule the
+ * admin grid and a learner's or teacher's week share.
+ */
+export function placementSlot(
+  week: SchoolWeek | null | undefined,
+  p: Placement,
+): WeekPeriod | null {
+  const day = week?.days?.find((d) => d.day === p.day);
+  if (!day) return null;
+  const lessons = (day.periods ?? [])
+    .filter((s) => s.kind === "lesson")
+    .sort((a, b) => minutes(a.start) - minutes(b.start));
+  if (p.periodNumber != null) {
+    const byNumber = lessons.find((s) => s.number === p.periodNumber);
+    if (byNumber) return byNumber;
+  }
+  return (
+    lessons.find((s) => timesOverlap(s.start, s.end, p.start, p.end)) ?? null
+  );
+}
+
+/** One thing wrong, in a sentence; `day` is set when it is about one day. */
+export interface WeekProblem {
+  day?: number;
+  message: string;
+}
+
+/**
+ * What makes a week unusable, one sentence each, with day names in the
+ * school's own locale. An empty list means valid.
+ */
+export function weekProblems(week: SchoolWeek, locale?: string): WeekProblem[] {
+  const problems: WeekProblem[] = [];
+  if ((week.cycleLength as number) !== 1) {
+    problems.push({
+      message:
+        "The week must repeat every week (cycleLength 1); other cycle lengths are not supported yet.",
+    });
+  }
+  const seenDays = new Set<number>();
+  for (const day of week.days ?? []) {
+    if (!Number.isInteger(day.day) || day.day < 1 || day.day > 7) {
+      problems.push({
+        message: `Day ${day.day} is not a day of the week (use 1 to 7).`,
+      });
+      continue;
+    }
+    const name = schoolWeekdayName(day.day, locale);
+    const add = (message: string) => problems.push({ day: day.day, message });
+    if (seenDays.has(day.day)) {
+      add(`${name} is listed more than once.`);
+    }
+    seenDays.add(day.day);
+
+    const seenNumbers = new Set<number>();
+    const timed: WeekPeriod[] = [];
+    for (const p of day.periods ?? []) {
+      if (!Number.isInteger(p.number) || p.number < 1) {
+        add(
+          `${name} has a period numbered ${p.number}; period numbers are whole numbers from 1.`,
+        );
+      }
+      if (seenNumbers.has(p.number)) {
+        add(`${name} has more than one period ${p.number}.`);
+      }
+      seenNumbers.add(p.number);
+      const startOk = TIME.test(p.start);
+      const endOk = TIME.test(p.end);
+      if (!startOk || !endOk) {
+        add(
+          `${name}, period ${p.number} needs its times as HH:MM, like 08:00.`,
+        );
+        continue;
+      }
+      if (minutes(p.end) <= minutes(p.start)) {
+        add(`${name}, period ${p.number} ends before it starts.`);
+        continue;
+      }
+      timed.push(p);
+    }
+    const ordered = [...timed].sort(
+      (a, b) => minutes(a.start) - minutes(b.start),
+    );
+    for (let i = 1; i < ordered.length; i++) {
+      const a = ordered[i - 1];
+      const b = ordered[i];
+      if (timesOverlap(a.start, a.end, b.start, b.end)) {
+        add(
+          `${name}, period ${a.number} (${a.start}-${a.end}) overlaps period ${b.number} (${b.start}-${b.end}).`,
+        );
+      }
+    }
+  }
+  return problems;
+}
+
+/** A room's name as it is compared: trimmed, spaces collapsed, lowercase. */
+export function roomKey(name: string): string {
+  return name.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+/** What makes a list of rooms unusable, one sentence each. */
+export function roomProblems(rooms: Room[]): WeekProblem[] {
+  const problems: WeekProblem[] = [];
+  const seen = new Map<string, string>();
+  for (const room of rooms ?? []) {
+    const key = roomKey(room.name ?? "");
+    if (!key) {
+      problems.push({ message: "A room has no name." });
+      continue;
+    }
+    const first = seen.get(key);
+    if (first !== undefined) {
+      problems.push({
+        message: `"${room.name.trim()}" and "${first}" are the same room written two ways.`,
+      });
+    } else {
+      seen.set(key, room.name.trim());
+    }
+  }
+  return problems;
+}

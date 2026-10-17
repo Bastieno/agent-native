@@ -1,0 +1,211 @@
+{
+  "found": true,
+  "subject": "Insurance",
+  "subjectCode": "INS",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction to Insurance",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Meaning, History, Contracts, Risk, Hazards, Functions and Perils",
+          "objectives": [
+            {
+              "code": "INS-INTRO-1",
+              "description": "Meaning of insurance; historical development — pre and post independence era and legislations."
+            },
+            {
+              "code": "INS-INTRO-2",
+              "description": "Insurance contracts: parties to insurance contract; essential features of insurance contract."
+            },
+            {
+              "code": "INS-INTRO-3",
+              "description": "Risks: meaning; effect of risks on the society; classification of risks; insurable and un-insurable risk."
+            },
+            {
+              "code": "INS-INTRO-4",
+              "description": "Hazards: meaning; types."
+            },
+            {
+              "code": "INS-INTRO-5",
+              "description": "Functions of insurance: primary functions; secondary functions; benefits of insurance."
+            },
+            {
+              "code": "INS-INTRO-6",
+              "description": "Perils: meaning; differences among perils, risks and hazards."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Principles of Insurance",
+      "abbreviation": "PRINCIP",
+      "subStrands": [
+        {
+          "name": "Six Fundamental Principles",
+          "objectives": [
+            {
+              "code": "INS-PRINCIP-1",
+              "description": "Insurable Interest: meaning; essential features; application in life assurance and property insurance."
+            },
+            {
+              "code": "INS-PRINCIP-2",
+              "description": "Utmost Good Faith: meaning; insured and insurer's duty of disclosure; breaches and effects."
+            },
+            {
+              "code": "INS-PRINCIP-3",
+              "description": "Proximate Cause: meaning; application of proximate cause on claims."
+            },
+            {
+              "code": "INS-PRINCIP-4",
+              "description": "Indemnity: meaning; methods of providing indemnity by insurer; application in property and liability insurance."
+            },
+            {
+              "code": "INS-PRINCIP-5",
+              "description": "Subrogation: meaning; insurer's right under subrogation; insured's duty under subrogation."
+            },
+            {
+              "code": "INS-PRINCIP-6",
+              "description": "Contribution: meaning; application; conditions necessary for contribution."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Insurance Documents",
+      "abbreviation": "DOCS",
+      "subStrands": [
+        {
+          "name": "Proposal Forms, Cover Notes, Certificates and Policy",
+          "objectives": [
+            {
+              "code": "INS-DOCS-1",
+              "description": "Proposal Forms: meaning; functions and uses; contracts where proposal forms are used."
+            },
+            {
+              "code": "INS-DOCS-2",
+              "description": "Cover Notes: meaning; contents; functions and uses; contracts where cover notes are issued."
+            },
+            {
+              "code": "INS-DOCS-3",
+              "description": "Certificate of Insurance: meaning; certificate of insurance in motor, marine, and employer's liability."
+            },
+            {
+              "code": "INS-DOCS-4",
+              "description": "Policy: meaning; component parts of a policy; parties to a policy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Insurance Practice",
+      "abbreviation": "PRACT",
+      "subStrands": [
+        {
+          "name": "Re-insurance, Renewals, Claims and Premium",
+          "objectives": [
+            {
+              "code": "INS-PRACT-1",
+              "description": "Re-insurance: meaning; forms (facultative and treaty); functions; uses."
+            },
+            {
+              "code": "INS-PRACT-2",
+              "description": "Insurance Renewals: meaning of renewal notice; renewal procedure; legal status of renewal notice; no claim discount (NCD); long term agreement (LTA)."
+            },
+            {
+              "code": "INS-PRACT-3",
+              "description": "Insurance Claims: meaning; claim procedure — notification, documentation, investigation, discharge voucher, payment; duties of the insured and the underwriter in claims; functions of loss assessors and loss adjusters."
+            },
+            {
+              "code": "INS-PRACT-4",
+              "description": "Insurance Premium: meaning; factors to be considered when determining a premium; factors responsible for loading premium; return premium — partial and full return."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Non-Life Insurance Products",
+      "abbreviation": "NLPROD",
+      "subStrands": [
+        {
+          "name": "Types of Insurance Products",
+          "objectives": [
+            {
+              "code": "INS-NLPROD-1",
+              "description": "Motor Insurance: meaning; types of policies (private car, commercial vehicle, motorcycle, agricultural and forestry vehicle, special types); scope of cover — act only, third party only, third party fire and theft, comprehensive; ECOWAS Brown Card."
+            },
+            {
+              "code": "INS-NLPROD-2",
+              "description": "Fire Insurance: meaning; standard fire policy cover; special perils (earthquake, flood, riot and strike); properties covered; buyers of fire insurance."
+            },
+            {
+              "code": "INS-NLPROD-3",
+              "description": "Theft Insurance and Burglary Insurance: meaning; properties covered; coverage in business and private premises; differences between theft insurance and burglary insurance."
+            },
+            {
+              "code": "INS-NLPROD-4",
+              "description": "Money Insurance: meaning; what constitutes money (cash, cheque, postal order); types of cover — in transit only, in safe after business hours, in custody of a staff."
+            },
+            {
+              "code": "INS-NLPROD-5",
+              "description": "Fidelity Guarantee Insurance: meaning; types of policies (named, position, blanket); bond meaning."
+            },
+            {
+              "code": "INS-NLPROD-6",
+              "description": "Engineering Insurance; Marine Insurance; Aviation Insurance: meaning, types of policies, risks covered, international regulations."
+            },
+            {
+              "code": "INS-NLPROD-7",
+              "description": "Employer's Liability Insurance: meaning; policy covered (employees compensation policy); level of benefits; perils covered."
+            },
+            {
+              "code": "INS-NLPROD-8",
+              "description": "Public Liability Insurance: meaning; types (personal liability policy, product liability policy)."
+            },
+            {
+              "code": "INS-NLPROD-9",
+              "description": "Professional Indemnity: meaning; professionals that require professional indemnity (doctors, lawyers, insurance brokers, accountants, architects)."
+            },
+            {
+              "code": "INS-NLPROD-10",
+              "description": "Business Interruption Insurance (Consequential Loss): meaning; causes of business interruption."
+            },
+            {
+              "code": "INS-NLPROD-11",
+              "description": "Personal Accident Insurance: meaning; risks covered (death, bodily injury, permanent disability, total temporary disability, medical expenses); forms (personal and group); benefits."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Insurance Market and Regulation",
+      "abbreviation": "MKTREGL",
+      "subStrands": [
+        {
+          "name": "Operators, Regulators and Terminologies",
+          "objectives": [
+            {
+              "code": "INS-MKTREGL-1",
+              "description": "Insurance Market Operators: meaning; market operators — insurance companies, reinsurance companies, insurance intermediaries (brokers and agents), insurance buyers (individual and corporate), insurance sellers, supporting services (assessors and loss adjusters)."
+            },
+            {
+              "code": "INS-MKTREGL-2",
+              "description": "Insurance Regulators: Nigerian Insurance Association (NIA); Nigerian Council of Registered Insurance Brokers (NCRIB); Institute of Loss Adjusters of Nigeria (ILAN); National Insurance Commission (NAICOM); Chartered Insurance Institute of Nigeria (CIIN) — meaning, role/functions, purpose, membership."
+            },
+            {
+              "code": "INS-MKTREGL-3",
+              "description": "Common Insurance Terminologies: hazards, perils, concealment, disclosure, days of grace, ex-gratia payment, extra-premium, endorsement, excepted perils, subject matter of insurance, under insurance, return premium, surrender value, cover note."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

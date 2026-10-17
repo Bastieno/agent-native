@@ -24,7 +24,7 @@ describe("open_app MCP App metadata", () => {
       "https://calendar.agent-native.com",
     ]);
 
-    const cspBuilder = openAppAction.mcpApp?.resource.csp;
+    const cspBuilder = openAppAction.mcpApp?.resource?.csp;
     expect(typeof cspBuilder).toBe("function");
 
     const csp = await (cspBuilder as any)({
@@ -59,7 +59,7 @@ describe("open_app MCP App metadata", () => {
       "https://calendar.agent-native.com",
     ]);
 
-    const cspBuilder = openAppAction.mcpApp?.resource.csp;
+    const cspBuilder = openAppAction.mcpApp?.resource?.csp;
     const csp = await (cspBuilder as any)({
       actionName: "open_app",
       appId: "dispatch",

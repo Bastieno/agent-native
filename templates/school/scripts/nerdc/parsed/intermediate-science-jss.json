@@ -1,0 +1,153 @@
+{
+  "found": true,
+  "subject": "Intermediate Science",
+  "subjectCode": "INTSC",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Nature of Science and Matter",
+      "abbreviation": "NSM",
+      "subStrands": [
+        {
+          "name": "Scientific Method and Classification of Matter",
+          "objectives": [
+            {
+              "code": "INTSC-NSM-1",
+              "description": "Describe the nature and importance of science and apply the scientific method to simple investigations"
+            },
+            {
+              "code": "INTSC-NSM-2",
+              "description": "Measure physical quantities (length, mass, volume, time) using appropriate instruments and SI units"
+            },
+            {
+              "code": "INTSC-NSM-3",
+              "description": "Classify matter into solids, liquids, and gases based on observable properties and explain changes of state"
+            },
+            {
+              "code": "INTSC-NSM-4",
+              "description": "Distinguish between elements, compounds, and mixtures and describe their properties"
+            },
+            {
+              "code": "INTSC-NSM-5",
+              "description": "Describe atoms and molecules as the basic building blocks of matter and use chemical symbols"
+            },
+            {
+              "code": "INTSC-NSM-6",
+              "description": "Separate mixtures using appropriate methods (filtration, evaporation, distillation, sieving)"
+            },
+            {
+              "code": "INTSC-NSM-7",
+              "description": "Identify the properties and uses of acids, bases, and salts in everyday life"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Living Systems",
+      "abbreviation": "LS",
+      "subStrands": [
+        {
+          "name": "Biology of Living Things",
+          "objectives": [
+            {
+              "code": "INTSC-LS-1",
+              "description": "Distinguish between living and non-living things using observable characteristics"
+            },
+            {
+              "code": "INTSC-LS-2",
+              "description": "Describe the cell as the basic unit of life and identify the parts of plant and animal cells"
+            },
+            {
+              "code": "INTSC-LS-3",
+              "description": "Explain the functions of the respiratory, digestive, and circulatory systems in the human body"
+            },
+            {
+              "code": "INTSC-LS-4",
+              "description": "Describe reproduction in flowering plants and explain the process of photosynthesis"
+            },
+            {
+              "code": "INTSC-LS-5",
+              "description": "Describe the properties, composition, and importance of soil to agriculture"
+            },
+            {
+              "code": "INTSC-LS-6",
+              "description": "Classify living organisms into major groups and identify distinguishing features of each group"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Energy and Physics",
+      "abbreviation": "EP",
+      "subStrands": [
+        {
+          "name": "Forms, Transfer, and Transformation of Energy",
+          "objectives": [
+            {
+              "code": "INTSC-EP-1",
+              "description": "Identify forms of energy (heat, light, sound, electrical, mechanical, nuclear) and give examples of energy sources"
+            },
+            {
+              "code": "INTSC-EP-2",
+              "description": "Explain heat transfer by conduction, convection, and radiation with practical examples"
+            },
+            {
+              "code": "INTSC-EP-3",
+              "description": "Describe how sound is produced, transmitted through different media, and its everyday uses and dangers"
+            },
+            {
+              "code": "INTSC-EP-4",
+              "description": "Explain reflection and refraction of light and describe uses of lenses and mirrors"
+            },
+            {
+              "code": "INTSC-EP-5",
+              "description": "Describe electric current, voltage, conductors, insulators, and simple series and parallel circuits"
+            },
+            {
+              "code": "INTSC-EP-6",
+              "description": "Define force, friction, gravity, and simple machines and explain their effects in daily life"
+            },
+            {
+              "code": "INTSC-EP-7",
+              "description": "Describe natural and artificial magnets, their properties, and uses including electromagnets"
+            },
+            {
+              "code": "INTSC-EP-8",
+              "description": "Explain work, energy, and power and the relationship between them using simple calculations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Earth Science and Environment",
+      "abbreviation": "ESE",
+      "subStrands": [
+        {
+          "name": "Climate, Technology, and Careers in Science",
+          "objectives": [
+            {
+              "code": "INTSC-ESE-1",
+              "description": "Explain the causes, effects, and mitigation strategies for climate change"
+            },
+            {
+              "code": "INTSC-ESE-2",
+              "description": "Describe the role of ICT, robotics, nanotechnology, and artificial intelligence in modern science"
+            },
+            {
+              "code": "INTSC-ESE-3",
+              "description": "Identify career opportunities in science and their relevance to national development"
+            },
+            {
+              "code": "INTSC-ESE-4",
+              "description": "Conduct simple science experiments safely and record results accurately"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

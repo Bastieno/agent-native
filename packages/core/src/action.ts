@@ -149,7 +149,12 @@ export interface ActionMcpAppResourceConfig {
 }
 
 export interface ActionMcpAppConfig {
-  resource: ActionMcpAppResourceConfig;
+  /**
+   * Inline UI rendered by MCP Apps hosts. Optional when `compactCatalog` is
+   * true: the action then joins the compact chat-app catalog as a plain tool,
+   * with no UI resource.
+   */
+  resource?: ActionMcpAppResourceConfig;
   /**
    * MCP Apps tool visibility. Defaults to model + app so the LLM can call the
    * action and the app iframe can call it back through the host bridge.
@@ -159,7 +164,8 @@ export interface ActionMcpAppConfig {
    * Rare escape hatch for MCP Apps chat hosts. By default OAuth callers with
    * `mcp:apps` see the generic app tools (`open_app`, `list_apps`, etc.) so
    * hosts do not ingest every action-specific UI resource. Set this only when
-   * this specific action must stay visible in that compact catalog.
+   * this specific action must stay visible in that compact catalog. Works
+   * with or without a `resource`.
    */
   compactCatalog?: boolean;
 }
@@ -385,13 +391,8 @@ export function defineAction(options: any) {
   const mcpApp: ActionMcpAppConfig | undefined =
     options.mcpApp &&
     typeof options.mcpApp === "object" &&
-    !Array.isArray(options.mcpApp) &&
-    options.mcpApp.resource &&
-    typeof options.mcpApp.resource === "object" &&
-    !Array.isArray(options.mcpApp.resource) &&
-    (typeof options.mcpApp.resource.html === "string" ||
-      typeof options.mcpApp.resource.html === "function")
-      ? options.mcpApp
+    !Array.isArray(options.mcpApp)
+      ? normalizeMcpAppConfig(options.mcpApp)
       : undefined;
 
   return {
@@ -409,6 +410,31 @@ export function defineAction(options: any) {
     ...(link ? { link } : {}),
     ...(mcpApp ? { mcpApp } : {}),
   };
+}
+
+function hasValidMcpAppResource(
+  resource: ActionMcpAppConfig["resource"],
+): resource is ActionMcpAppResourceConfig {
+  return (
+    !!resource &&
+    typeof resource === "object" &&
+    !Array.isArray(resource) &&
+    (typeof resource.html === "string" || typeof resource.html === "function")
+  );
+}
+
+/**
+ * Keep `mcpApp` when it carries a renderable `resource`, or when it only opts
+ * the action into the compact chat-app catalog. An invalid `resource` is
+ * dropped rather than advertised.
+ */
+function normalizeMcpAppConfig(
+  config: ActionMcpAppConfig,
+): ActionMcpAppConfig | undefined {
+  if (hasValidMcpAppResource(config.resource)) return config;
+  if (config.compactCatalog !== true) return undefined;
+  const { resource: _resource, ...rest } = config;
+  return rest;
 }
 
 // ---------------------------------------------------------------------------

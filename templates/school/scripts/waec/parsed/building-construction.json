@@ -1,0 +1,191 @@
+{
+  "found": true,
+  "subject": "Building Construction",
+  "subjectCode": "BLDCON",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction, Safety and Tools",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Building Introduction, Construction Team, Safety, Tools and Site Operations",
+          "objectives": [
+            {
+              "code": "BLDCON-INTRO-1",
+              "description": "Introduction to building: definition of building, classification and types, introduction to national building codes (building regulations and byelaw requirements)."
+            },
+            {
+              "code": "BLDCON-INTRO-2",
+              "description": "Building construction and construction team: definition, purpose and procedures for building construction; parties in the construction team — client's team, contractor's team and statutory personnel; function of the team members; relationship of the parties."
+            },
+            {
+              "code": "BLDCON-INTRO-3",
+              "description": "Safety practices: definition of safety, rules and regulation; hazards in the workshop and construction site; causes and method of accident prevention; safety equipment and measures at construction site; first aid equipment, procedures and safety wears; safety in working with dangerous equipment and materials (electricity, scaffolding, formwork, cement, roof, etc)."
+            },
+            {
+              "code": "BLDCON-INTRO-4",
+              "description": "Basic tools, equipment and machines: identification and functions of basic tools and equipment; care of tools and equipment."
+            },
+            {
+              "code": "BLDCON-INTRO-5",
+              "description": "Site clearing and levelling: operations involved in site clearing; tools and equipment for site clearing and levelling; basic site levelling operations."
+            },
+            {
+              "code": "BLDCON-INTRO-6",
+              "description": "Site organization and layout: preliminary operations in building construction; procedure for site layout; location, boundary lines, hoarding, hutments and access road."
+            },
+            {
+              "code": "BLDCON-INTRO-7",
+              "description": "Setting out: methods of setting-out (3:4:5 method, builders' square method); tools and equipment for setting out; procedures for setting out."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Building Drawing",
+      "abbreviation": "DRAW",
+      "subStrands": [
+        {
+          "name": "Drawing Tools, Symbols, Scales, Productions and CADD",
+          "objectives": [
+            {
+              "code": "BLDCON-DRAW-1",
+              "description": "Use of drawing tools and simple exercise on plane geometry in relation to building; building drawing symbols."
+            },
+            {
+              "code": "BLDCON-DRAW-2",
+              "description": "Scales used in building and their application on site; production drawings and interpretations (plans, elevations, sections and details)."
+            },
+            {
+              "code": "BLDCON-DRAW-3",
+              "description": "Special details (detailing building elements including doors and windows schedule); scaling (enlargement, pictorial and perspectives)."
+            },
+            {
+              "code": "BLDCON-DRAW-4",
+              "description": "Definitions and use of Auto-CADD."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Substructure",
+      "abbreviation": "SUBSTR",
+      "subStrands": [
+        {
+          "name": "Excavation and Foundation",
+          "objectives": [
+            {
+              "code": "BLDCON-SUBSTR-1",
+              "description": "Excavation and earthwork: classifications, types and properties of soil; definition and function of excavation; methods of excavations; tools, equipment and plant used for excavation; solution to excavation problems (earthwork support, timbering, battering and dewatering); safety rules during excavations."
+            },
+            {
+              "code": "BLDCON-SUBSTR-2",
+              "description": "Foundation: definition, purpose and functional requirement of foundation; types of foundation; factors that determine choice of foundation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Superstructure",
+      "abbreviation": "SUPER",
+      "subStrands": [
+        {
+          "name": "Floors, Walls, Concrete, Doors, Windows, Staircases and Roofs",
+          "objectives": [
+            {
+              "code": "BLDCON-SUPER-1",
+              "description": "Ground floors: types, functions and functional requirement of ground floor; methods of constructing ground floor; definition of basement; differences between building with basement and without basement; problems relating to basement in a building."
+            },
+            {
+              "code": "BLDCON-SUPER-2",
+              "description": "Suspended floors: definition and functions of upper floor; methods of construction of concrete floors and timber upper floors."
+            },
+            {
+              "code": "BLDCON-SUPER-3",
+              "description": "Concrete: definition and types of concrete; materials for concrete; definitions, types, components and manufacture of cement; properties and uses of cement including alternatives e.g. Pozzolana, Pulverized fuel ash (PFA), Rice husk ash (RHA) etc.; types and uses of aggregates; types and uses of reinforcements; properties and characteristics of concrete; process of concrete production; types of concrete tests."
+            },
+            {
+              "code": "BLDCON-SUPER-4",
+              "description": "Walls: definition, types and functions of walls; definition, types and properties of walling materials (including locally sourced materials); manufacturing processes of walling materials (clay, brick, blocks and concrete blocks); sizes of blocks and bricks; mortar mixes for brick; methods of wall construction; timber wall construction; definition and function of wall openings; methods of constructing wall openings; functions of lintels and arches."
+            },
+            {
+              "code": "BLDCON-SUPER-5",
+              "description": "Doors and windows: definition, functions and types of doors and windows; methods of fixing doors and window frames."
+            },
+            {
+              "code": "BLDCON-SUPER-6",
+              "description": "Staircases: definition, classification, types and uses of stairs; materials used for construction of stairs; materials used for finishing staircases."
+            },
+            {
+              "code": "BLDCON-SUPER-7",
+              "description": "Roofs: definition, purpose and types of roof; functional requirements of roof; materials used for roofs; roof covering materials; protection of roof from wind, rain, lightening, etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Building Services and Finishes",
+      "abbreviation": "SERVFIN",
+      "subStrands": [
+        {
+          "name": "Plumbing, Electrical, Finishes and External Works",
+          "objectives": [
+            {
+              "code": "BLDCON-SERVFIN-1",
+              "description": "Plumbing installations and drainage system: types of fitting in plumbing and sanitary works; materials for plumbing works and fittings; types of sanitary appliances; soil and waste appliances; installation of sanitary appliances; terms used in drainage works; principles and functional requirement of drainage system; types of drainage system; types of drainage materials (pipes and fittings); methods of laying and testing drain lines; description of septic and soakaway (inspection chamber, manhole, etc)."
+            },
+            {
+              "code": "BLDCON-SERVFIN-2",
+              "description": "Electrical installation and solar energy system: electrical symbols, installation terms and materials; identification and uses of electrical wiring materials; types of electrical wiring; definition, functions and components of solar energy systems."
+            },
+            {
+              "code": "BLDCON-SERVFIN-3",
+              "description": "Floor finishes: types and characteristics of floor finishes; methods of laying floor finishes; uses of floor finishes; care and maintenance of floor finishes."
+            },
+            {
+              "code": "BLDCON-SERVFIN-4",
+              "description": "Wall finishes: types and characteristics of wall finishes; plastering and rendering; types of rendering; methods of applying plastering and rendering mix."
+            },
+            {
+              "code": "BLDCON-SERVFIN-5",
+              "description": "Ceiling: types and function of ceiling finishes; ceiling finishing materials."
+            },
+            {
+              "code": "BLDCON-SERVFIN-6",
+              "description": "External work: types of fence, materials for fencing and construction of fence; types of gate, fixing of gates and production of gate; types and materials for construction of access roads; construction of access road; needs and materials for landscaping; procedures for landscaping."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Business and Contract",
+      "abbreviation": "BIZCON",
+      "subStrands": [
+        {
+          "name": "Business Organization, Book Keeping and Contracts",
+          "objectives": [
+            {
+              "code": "BLDCON-BIZCON-1",
+              "description": "Types of business organization and ways of raising capital: principles and management of business organization in the building industry; types of business organization in the building industry; types and sources of capital."
+            },
+            {
+              "code": "BLDCON-BIZCON-2",
+              "description": "Book keeping: book keeping in small scale businesses; books of original entries."
+            },
+            {
+              "code": "BLDCON-BIZCON-3",
+              "description": "Contract work: definition and types of contract; contract documents; parties to a contract."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

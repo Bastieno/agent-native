@@ -1,0 +1,167 @@
+{
+  "found": true,
+  "subject": "Radio, Television and Electronics Works",
+  "subjectCode": "RTEW",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Workshop Safety",
+      "abbreviation": "SAFETY",
+      "subStrands": [
+        {
+          "name": "Hazards, Safety Checks and Precautions",
+          "objectives": [
+            {
+              "code": "RTEW-SAFETY-1",
+              "description": "Sources and prevention of hazards: concept of safety; sources of hazards; treatments including electric shock, damp or wet floor, wrong handling of tools, improper workshop dressing, horse play in the workshop."
+            },
+            {
+              "code": "RTEW-SAFETY-2",
+              "description": "Safety checks in servicing radio receiver: preparation of work areas; capacitor discharges; working on power lines and live circuits; handling of tools."
+            },
+            {
+              "code": "RTEW-SAFETY-3",
+              "description": "Safety precautions in television workshop: power supplies in TV; picture tube; high voltage section; component rating."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Basic Electricity",
+      "abbreviation": "ELEC",
+      "subStrands": [
+        {
+          "name": "Electronic Components, Laws and Devices",
+          "objectives": [
+            {
+              "code": "RTEW-ELEC-1",
+              "description": "Structure of matter; conductors, insulators and semiconductors; current, voltage and resistance — definition, units and symbols; laws of attraction and repulsion of charges."
+            },
+            {
+              "code": "RTEW-ELEC-2",
+              "description": "Electronic components: identification by name, type, graphical symbol, value and rating — resistors, capacitors, inductors, diodes, transformers, transistors, integrated circuit; colour code for resistors and capacitors; testing of capacitors."
+            },
+            {
+              "code": "RTEW-ELEC-3",
+              "description": "Kirchhoff's Current and Voltage Laws: concepts, definitions and calculations; Ohm's Law; electric power; direct and alternating current; alternating waveform (r.m.s., peak, average values, frequency and period)."
+            },
+            {
+              "code": "RTEW-ELEC-4",
+              "description": "Diodes and Transistors: types, graphical symbols and structure; testing for diodes and transistor configurations (CC, CE and CB). Battery: types, testing, difference between wet and dry cells."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electronic Tools and Instruments",
+      "abbreviation": "TOOLS",
+      "subStrands": [
+        {
+          "name": "Hand Tools, Measuring Instruments and Fault Finding Equipment",
+          "objectives": [
+            {
+              "code": "RTEW-TOOLS-1",
+              "description": "Electronic hand tools: types and uses — screw drivers, diagonal cutters, soldering gun, soldering iron, lead sucker, pocket knife, stripper, soldering wick."
+            },
+            {
+              "code": "RTEW-TOOLS-2",
+              "description": "Electronic measuring instruments: identification, uses and operation — voltmeter, ammeter, ohmmeter, multimeter; basic AC and DC circuit measurements; testing semiconductor devices."
+            },
+            {
+              "code": "RTEW-TOOLS-3",
+              "description": "Fault finding equipment: identification, uses and operation — oscilloscope, signal tracer, digital frequency counter, logic probe, TV analyser."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electronics Devices and Circuits",
+      "abbreviation": "CIRCUITS",
+      "subStrands": [
+        {
+          "name": "Emission, Semiconductors, Power Supply, Amplifiers, Feedback and Oscillators",
+          "objectives": [
+            {
+              "code": "RTEW-CIRCUITS-1",
+              "description": "Meaning of electronics and electronic circuit; concept of emission and photoelectric devices — types of emission (thermionic, photoelectric, field and secondary)."
+            },
+            {
+              "code": "RTEW-CIRCUITS-2",
+              "description": "Semiconductor theory; semiconductor diodes — rectification, principles of operation, characteristics and application; power supply unit — rectification types, filters, construction of stabilized low DC power supply."
+            },
+            {
+              "code": "RTEW-CIRCUITS-3",
+              "description": "Amplifiers: operation and construction of Class A, B, C and AB amplifiers; RLC circuits (quantitative treatments only)."
+            },
+            {
+              "code": "RTEW-CIRCUITS-4",
+              "description": "Feedback: concept; types; effect of positive feedback on bandwidth, noise, gain and distortion. Oscillators and Multivibrators: principles, types, construction; types of multivibrator (astable, bistable, monostable)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electronic Communication Systems",
+      "abbreviation": "COMMS",
+      "subStrands": [
+        {
+          "name": "Communication Systems, Modulation, Radio/TV Transmitters and Receivers",
+          "objectives": [
+            {
+              "code": "RTEW-COMMS-1",
+              "description": "Electronic communication systems: definition, types; noise; electromagnetic spectrum — classification, propagation of radio waves, radio frequency bands (VLF, LF, MF, HF, VHF, UHF, SHF, EHF) and their applications."
+            },
+            {
+              "code": "RTEW-COMMS-2",
+              "description": "Transducers: definition, types and functions — loudspeaker, microphone, video camera, CRT/LCD."
+            },
+            {
+              "code": "RTEW-COMMS-3",
+              "description": "Modulation and demodulation: definition, principles and types; AM and FM waveforms; percentage of modulation, modulation index; carrier wave function; types of demodulation."
+            },
+            {
+              "code": "RTEW-COMMS-4",
+              "description": "Radio transmitter and receiver: function and operation; block diagram of TRF and superheterodyne receivers (FM and AM); advantages and disadvantages. Selectivity and sensitivity. Resonant circuit: types (series and parallel), bandwidth, resonant frequency."
+            },
+            {
+              "code": "RTEW-COMMS-5",
+              "description": "Satellite communication systems: elements, types, transmission and reception, antenna. Television transmitter: working principle and block diagram. Image and sound reproduction in TV receiver: principle of scanning, colour TV principles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Workshop Practice, Maintenance and Entrepreneurship",
+      "abbreviation": "WKSHOP",
+      "subStrands": [
+        {
+          "name": "Radio/TV Maintenance, Repairs and Business",
+          "objectives": [
+            {
+              "code": "RTEW-WKSHOP-1",
+              "description": "Maintenance and repair of radio receivers: fault diagnosis procedures; alignment of RF and IF stages; use of multimeter; measurement of current, voltage and resistance in active and passive components."
+            },
+            {
+              "code": "RTEW-WKSHOP-2",
+              "description": "Maintenance and repair of TV receivers: procedures for TV repairs; use of service manual and circuit diagram; identification of symptoms and repair of faults; fault clearing instruments; static and dynamic colour convergence; colour bar generator."
+            },
+            {
+              "code": "RTEW-WKSHOP-3",
+              "description": "Business Management and Finance: accounting practices; cost benefit analysis; purchasing method; business records (ledger, repair order form, inventory sheet); sources of capital."
+            },
+            {
+              "code": "RTEW-WKSHOP-4",
+              "description": "Customer Relations and Business Opportunities: customer psychology, telephone courtesy, working relations; business opportunities — satellite installation, electronic specialist, radio and TV consultant/technician, sales and service craftsman, antenna and TV installation work."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

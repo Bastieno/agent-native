@@ -1,0 +1,175 @@
+{
+  "found": true,
+  "subject": "Auto Electrical Work",
+  "subjectCode": "AUTOELEC",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Battery",
+      "abbreviation": "BATT",
+      "subStrands": [
+        {
+          "name": "Battery Concepts, Types, Charging and Testing",
+          "objectives": [
+            {
+              "code": "AUTOELEC-BATT-1",
+              "description": "Concept of battery: definition, distinction between motor vehicle battery and other batteries."
+            },
+            {
+              "code": "AUTOELEC-BATT-2",
+              "description": "Uses of battery: vehicle battery assembly and as power source in soldering."
+            },
+            {
+              "code": "AUTOELEC-BATT-3",
+              "description": "Types, constructional details and ratings: lead-acid and nickel-alkaline types."
+            },
+            {
+              "code": "AUTOELEC-BATT-4",
+              "description": "Charging: safety rules, electrolyte preparation, battery cleaning and connection, charging mode, state of charge, electrolyte testing."
+            },
+            {
+              "code": "AUTOELEC-BATT-5",
+              "description": "Testing and maintenance: specific gravity test of electrolyte, cell voltage and polarity tests, tools and equipment; electrolyte topping up, hydrometer reading and interpretation, over-charging symptoms and idle-battery safe-keeping."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Starting System",
+      "abbreviation": "START",
+      "subStrands": [
+        {
+          "name": "Components, Circuit Diagram, Types and Repair",
+          "objectives": [
+            {
+              "code": "AUTOELEC-START-1",
+              "description": "Purpose and components of starting system: battery, flywheel, starter motor, switch and solenoid."
+            },
+            {
+              "code": "AUTOELEC-START-2",
+              "description": "Circuit diagram: drawing and reading of circuit diagram including location of components and their sequential arrangement in a vehicle."
+            },
+            {
+              "code": "AUTOELEC-START-3",
+              "description": "Types of starter motor: axial and inertia; treatment should include pinion engagements."
+            },
+            {
+              "code": "AUTOELEC-START-4",
+              "description": "Repair of starter motors: dismantling and assembling, bushing and brush replacement, commutator soldering/repair, troubleshooting and rectification; armature servicing, diagnosis and repairs/restoration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ignition System",
+      "abbreviation": "IGNIT",
+      "subStrands": [
+        {
+          "name": "Components, Circuit, Timing and Faults",
+          "objectives": [
+            {
+              "code": "AUTOELEC-IGNIT-1",
+              "description": "Purpose and components of ignition system: circuit cables, ignition switch, battery, coil, distributor, capacitor, high tension leads and sparking plugs."
+            },
+            {
+              "code": "AUTOELEC-IGNIT-2",
+              "description": "Circuit diagram: drawing and reading of circuit diagram including line diagram and conventional symbols."
+            },
+            {
+              "code": "AUTOELEC-IGNIT-3",
+              "description": "Construction and operation of ignition coil: circuit diagram and internal construction of the coil."
+            },
+            {
+              "code": "AUTOELEC-IGNIT-4",
+              "description": "Types of ignition system: conventional contact breaker and electronic ignition systems."
+            },
+            {
+              "code": "AUTOELEC-IGNIT-5",
+              "description": "Timing: concept and timing faults such as retarded ignition and over-advanced ignition."
+            },
+            {
+              "code": "AUTOELEC-IGNIT-6",
+              "description": "Faults and repairs: hard starting, jerking, back firing etc; use of multimeter, scanner, test lamps etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Charging System",
+      "abbreviation": "CHARGE",
+      "subStrands": [
+        {
+          "name": "Alternator, Circuit Diagram and Faults",
+          "objectives": [
+            {
+              "code": "AUTOELEC-CHARGE-1",
+              "description": "Purpose and components of charging system: switch, battery, cables, alternators, voltage regulators."
+            },
+            {
+              "code": "AUTOELEC-CHARGE-2",
+              "description": "Alternator: constructional details, conversion of a.c. to d.c. (rectification), function of each part of an alternator."
+            },
+            {
+              "code": "AUTOELEC-CHARGE-3",
+              "description": "Circuit diagram: drawing and reading of circuit diagram including graphical and pictorial representation; how to remove and fix the charging system units."
+            },
+            {
+              "code": "AUTOELEC-CHARGE-4",
+              "description": "Faults and repairs: brush and bearing replacement, diode testing, repair and replacement; bearing seizure, charging failure etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lighting System",
+      "abbreviation": "LIGHT",
+      "subStrands": [
+        {
+          "name": "Classification, Head Lamps, Circuit Diagram and Maintenance",
+          "objectives": [
+            {
+              "code": "AUTOELEC-LIGHT-1",
+              "description": "Purpose and classification of lighting in a motor vehicle: obligatory and non-obligatory lights; types, features, setting of head lamps."
+            },
+            {
+              "code": "AUTOELEC-LIGHT-2",
+              "description": "Head lamps: classification, drawing and reading of circuit diagram; troubleshooting."
+            },
+            {
+              "code": "AUTOELEC-LIGHT-3",
+              "description": "Maintenance and repairs: tools, equipment and procedures for repairing faults such as broken headlamp lens, bulb failure, non-aligned headlamps, open and short circuits etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auxiliary System",
+      "abbreviation": "AUX",
+      "subStrands": [
+        {
+          "name": "Components, Operation and Maintenance",
+          "objectives": [
+            {
+              "code": "AUTOELEC-AUX-1",
+              "description": "Concept and components of auxiliary system: definition, uses and units; water temperature gauge, oil pressure gauge, fuel gauge, horn relay, wiper switch, screen washer pump, indicator and door switch."
+            },
+            {
+              "code": "AUTOELEC-AUX-2",
+              "description": "Constructional details and operation of auxiliary system components."
+            },
+            {
+              "code": "AUTOELEC-AUX-3",
+              "description": "Maintenance and repairs of auxiliary components: troubleshooting; tools and equipment and procedures for repairs of faults such as the failure of horn, screen wiper, oil pressure gauge, fuel gauge etc."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

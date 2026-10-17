@@ -1,0 +1,106 @@
+{
+  "found": true,
+  "subject": "French",
+  "subjectCode": "FRENCH",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Oral Communication",
+      "abbreviation": "OC",
+      "subStrands": [
+        {
+          "name": "Greetings, Introduction, and Conversation",
+          "objectives": [
+            {
+              "code": "FRENCH-OC-1",
+              "description": "Use French greetings and self-introduction phrases correctly in oral exchanges"
+            },
+            {
+              "code": "FRENCH-OC-2",
+              "description": "Conduct simple dialogues on familiar topics including family, school, colours, and food"
+            },
+            {
+              "code": "FRENCH-OC-3",
+              "description": "Express frequency of activities using adverbs (souvent, parfois, toujours, jamais)"
+            },
+            {
+              "code": "FRENCH-OC-4",
+              "description": "Invite someone, accept and refuse invitations, ask for permission, and give advice in French"
+            },
+            {
+              "code": "FRENCH-OC-5",
+              "description": "Give directions, explain a procedure, and respond to commands and prohibitions in French"
+            },
+            {
+              "code": "FRENCH-OC-6",
+              "description": "Describe people, objects, weather, and situations using appropriate French vocabulary and structures"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vocabulary and Language Structures",
+      "abbreviation": "VLS",
+      "subStrands": [
+        {
+          "name": "Numbers, Time, Family, and Daily Life",
+          "objectives": [
+            {
+              "code": "FRENCH-VLS-1",
+              "description": "Count and use numbers 1–100 and apply arithmetic operations in French"
+            },
+            {
+              "code": "FRENCH-VLS-2",
+              "description": "Name days of the week, months of the year, and express dates and seasons in French"
+            },
+            {
+              "code": "FRENCH-VLS-3",
+              "description": "Identify and describe family members, relationships, and household objects in French"
+            },
+            {
+              "code": "FRENCH-VLS-4",
+              "description": "Name food items, meals, and market goods and use these in practical French conversations"
+            },
+            {
+              "code": "FRENCH-VLS-5",
+              "description": "Use classroom objects, colours, and descriptive adjectives correctly in French sentences"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reading and Writing",
+      "abbreviation": "RW",
+      "subStrands": [
+        {
+          "name": "Comprehension, Writing, and Role Play",
+          "objectives": [
+            {
+              "code": "FRENCH-RW-1",
+              "description": "Read simple French texts and answer comprehension questions on content and vocabulary"
+            },
+            {
+              "code": "FRENCH-RW-2",
+              "description": "Write simple sentences, short paragraphs, and guided compositions in French on familiar topics"
+            },
+            {
+              "code": "FRENCH-RW-3",
+              "description": "Perform role plays on practical situations including transport, market shopping, and restaurant visits"
+            },
+            {
+              "code": "FRENCH-RW-4",
+              "description": "Understand and follow simple recipes, procedures, and instructional texts written in French"
+            },
+            {
+              "code": "FRENCH-RW-5",
+              "description": "Prepare and respond to guided oral and written French exercises as exam preparation"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

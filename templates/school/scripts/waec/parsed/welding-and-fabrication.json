@@ -1,0 +1,120 @@
+{
+  "found": true,
+  "subject": "Welding and Fabrication Engineering Craft Practice",
+  "subjectCode": "WELDFAB",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Workshop Safety and Standards",
+      "abbreviation": "SAFETY",
+      "subStrands": [
+        {
+          "name": "Safety, Codes, Layout and First Aid",
+          "objectives": [
+            {
+              "code": "WELDFAB-SAFETY-1",
+              "description": "Introduction to fabrication and welding practice; safety precautions — types and causes of accident (fire, explosion, sharp objects, hazardous gases), accident prevention measures, types and causes of environmental pollution, methods of preventing environmental pollution, safety facilities and protective wears."
+            },
+            {
+              "code": "WELDFAB-SAFETY-2",
+              "description": "Workshop layout (fabrication and welding); standard welding codes and symbols; first-aid administration in the workshop."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Properties of Metals",
+      "abbreviation": "METALS",
+      "subStrands": [
+        {
+          "name": "Ferrous/Non-Ferrous Metals, Sheet Metal and Heat Treatment",
+          "objectives": [
+            {
+              "code": "WELDFAB-METALS-1",
+              "description": "Ferrous and non-ferrous metals: steel, aluminium, cast iron, copper and zinc, tin, alloy steel."
+            },
+            {
+              "code": "WELDFAB-METALS-2",
+              "description": "Properties of metals: ductility, hardness, toughness, malleability, fusion and tenacity, brittleness, elasticity and plasticity."
+            },
+            {
+              "code": "WELDFAB-METALS-3",
+              "description": "Sheet metal (aluminium, mild steel, brass): concept of sheet metal; gauges of sheet metal; selection of suitable metals for specific jobs."
+            },
+            {
+              "code": "WELDFAB-METALS-4",
+              "description": "Heat treatment of metals: hardening, annealing, normalising, tempering and case-hardening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tools and Equipment",
+      "abbreviation": "TOOLS",
+      "subStrands": [
+        {
+          "name": "Fabrication and Welding Tools, Equipment and Maintenance",
+          "objectives": [
+            {
+              "code": "WELDFAB-TOOLS-1",
+              "description": "Identification of tools and equipment for fabrication and welding; equipment set-up for gas, arc welding and fabrication; job holding devices; measuring instruments, marking out and cutting tools."
+            },
+            {
+              "code": "WELDFAB-TOOLS-2",
+              "description": "Identification of parts and accessories for gas and arc welding; maintenance procedure for arc and gas (oxy-acetylene) welding equipment; preparation of acetylene gas from carbide."
+            },
+            {
+              "code": "WELDFAB-TOOLS-3",
+              "description": "Types of electrodes and their composition, application, gauges, selection for specific jobs; equipment for fault detection and trouble shooting."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Operations and Techniques",
+      "abbreviation": "OPS",
+      "subStrands": [
+        {
+          "name": "Welding Types, Joints, Marking Out, Templates and Fabrication Techniques",
+          "objectives": [
+            {
+              "code": "WELDFAB-OPS-1",
+              "description": "Types of welding (gas and arc): explanation of the principles of gas and arc welding and their differences; description of a typical fabrication process."
+            },
+            {
+              "code": "WELDFAB-OPS-2",
+              "description": "Types of joints, joint methods and application in welding and fabrication; classification of marking out techniques; description of the use of templates for fabricated and welded assemblies; welding techniques and application."
+            },
+            {
+              "code": "WELDFAB-OPS-3",
+              "description": "Techniques in fabrication work: description of folding techniques and their importance in fabrication work."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fasteners and Forging",
+      "abbreviation": "FASTEN",
+      "subStrands": [
+        {
+          "name": "Permanent and Temporary Fasteners, Rivets, Bolts, Screws and Forging",
+          "objectives": [
+            {
+              "code": "WELDFAB-FASTEN-1",
+              "description": "Classification of fasteners; permanent fasteners — rivet and its application (types, uses); temporary fasteners — bolt and nuts (description, uses); classes of rivets and screws."
+            },
+            {
+              "code": "WELDFAB-FASTEN-2",
+              "description": "Forging process: definition; forging tools and equipment (furnace, swages, fullers, flatters and tongs); forging processes — upsetting, drawing down, bending, twisting."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

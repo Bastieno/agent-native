@@ -1,0 +1,404 @@
+{
+  "found": true,
+  "subject": "Further Mathematics",
+  "subjectCode": "FMATH",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Pure Mathematics",
+      "abbreviation": "PURE",
+      "subStrands": [
+        {
+          "name": "Sets and Surds",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-1",
+              "description": "Idea of a set defined by a property, set notations and their meanings. Notations: (x : x is real), ∪, ∩, { }, ∉, ∈, ⊂, ⊆, U (universal set) and A' (Complement of set A)."
+            },
+            {
+              "code": "FMATH-PURE-2",
+              "description": "Disjoint sets, Universal set and complement of set."
+            },
+            {
+              "code": "FMATH-PURE-3",
+              "description": "Venn diagrams, use of sets and Venn diagrams to solve problems. More challenging problems involving union, intersection, the universal set, subset and complement of set."
+            },
+            {
+              "code": "FMATH-PURE-4",
+              "description": "Commutative and Associative laws, Distributive properties over union and intersection. Three set problems. Use of De Morgan's laws to solve related problems."
+            },
+            {
+              "code": "FMATH-PURE-5",
+              "description": "Surds of the form a/√b, a√b and a+b√n where a is rational, b is a positive integer and n is not a perfect square. All the four operations on surds. Rationalising the denominator of surds such as a/√b, (a+√b)/(c-√d)."
+            }
+          ]
+        },
+        {
+          "name": "Binary Operations and Logical Reasoning",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-6",
+              "description": "Binary Operations – Properties: Closure, Commutativity, Associativity and Distributivity, Identity elements and inverses. Use of properties to solve related problems."
+            },
+            {
+              "code": "FMATH-PURE-7",
+              "description": "Logical Reasoning – Rule of syntax: true or false statements, rule of logic applied to arguments, implications and deductions. Using logical reasoning to determine the validity of compound statements involving implications and connectivities. Include use of symbols: ~P, p ∨ q, p ∧ q, p ⟹ q."
+            },
+            {
+              "code": "FMATH-PURE-8",
+              "description": "The truth table: Use of Truth tables to deduce conclusions of compound statements. Include negation."
+            }
+          ]
+        },
+        {
+          "name": "Functions",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-9",
+              "description": "Domain and co-domain of a function. The notation e.g. f: x → 3x+4; g: x → x²; where x ∈ R. Graphical representation of a function; image and the range."
+            },
+            {
+              "code": "FMATH-PURE-10",
+              "description": "One-to-one, onto, identity and constant mapping."
+            },
+            {
+              "code": "FMATH-PURE-11",
+              "description": "Inverse of a function: Determination of the inverse of a one-to-one function."
+            },
+            {
+              "code": "FMATH-PURE-12",
+              "description": "Composite of functions: Notation fog(x) = f(g(x)). Restrict to simple algebraic functions only."
+            }
+          ]
+        },
+        {
+          "name": "Polynomial Functions",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-13",
+              "description": "Linear Functions, Equations and Inequality: Recognition and sketching of graphs of linear functions and equations. Gradient and intercepts forms of linear equations i.e. ax + by + c = 0; y = mx + c; x/a + y/b = k. Parallel and perpendicular lines. Linear Inequalities. Graphical representation of linear inequalities in two variables. Application to Linear Programming."
+            },
+            {
+              "code": "FMATH-PURE-14",
+              "description": "Quadratic Functions, Equations and Inequalities: Recognition and sketching graphs of quadratic functions e.g. f: x → ax² + bx + c. Identification of vertex, axis of symmetry, maximum and minimum, increasing and decreasing parts of a parabola. Include values of x for which f(x) > 0 or f(x) < 0. Solution of simultaneous equations: one linear and one quadratic. Method of completing the squares. Express f(x) = ax² + bx + c in the form f(x) = a(x+d)² + k, where k is the maximum or minimum value."
+            },
+            {
+              "code": "FMATH-PURE-15",
+              "description": "Roots of quadratic equations – equal roots (b² - 4ac = 0), real and unequal roots (b² – 4ac > 0), imaginary roots (b² – 4ac < 0); sum and product of roots of a quadratic equation. Solving quadratic inequalities."
+            },
+            {
+              "code": "FMATH-PURE-16",
+              "description": "Cubic Functions and Equations: Recognition of cubic functions e.g. f: x → ax³ + bx² + cx + d. Drawing graphs of cubic functions for a given range. Factorization of cubic expressions and solution of cubic equations. Factorization of a³ ± b³. Basic operations on polynomials, the remainder and factor theorems."
+            }
+          ]
+        },
+        {
+          "name": "Rational Functions and Indices/Logarithms",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-17",
+              "description": "Rational functions of the form Q(x) = f(x)/g(x), g(x) ≠ 0, where g(x) and f(x) are polynomials. g(x) may be factorised into linear and quadratic factors (Degree of Numerator less than that of denominator which is less than or equal to 4). The four basic operations. Zeros, domain and range."
+            },
+            {
+              "code": "FMATH-PURE-18",
+              "description": "Resolution of rational functions into partial fractions."
+            },
+            {
+              "code": "FMATH-PURE-19",
+              "description": "Indices: Laws of indices. Application of the laws of indices to evaluating products, quotients, powers and nth root. Solve equations involving indices."
+            },
+            {
+              "code": "FMATH-PURE-20",
+              "description": "Logarithms: Laws of Logarithms. Application of logarithms in calculations involving product, quotients, power (log aⁿ), nth roots (log √a, log a^(1/n)). Solve equations involving logarithms (including change of base). Reduction of a relation such as y = ax^b (a,b are constants) to a linear form: log₁₀y = b log₁₀x + log₁₀a."
+            }
+          ]
+        },
+        {
+          "name": "Permutation, Combinations and Binomial Theorem",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-21",
+              "description": "Permutation and Combinations: Simple cases of arrangements and selection of objects. Knowledge of arrangement and selection is expected. The notations: nCr, (n r) and nPr for selection and arrangement respectively should be noted and used. nPr = n!/(n-r)!; nCr = n!/[r!(n-r)!]."
+            },
+            {
+              "code": "FMATH-PURE-22",
+              "description": "Binomial Theorem: Expansion of (a+b)ⁿ. Use of (1+x)ⁿ ≈ 1+nx for any rational n, where x is sufficiently small. Use of the binomial theorem for positive integral index only. Proof of the theorem not required."
+            }
+          ]
+        },
+        {
+          "name": "Sequences and Series",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-23",
+              "description": "Finite and Infinite sequences. Recognizing the pattern of a sequence."
+            },
+            {
+              "code": "FMATH-PURE-24",
+              "description": "Linear sequence/Arithmetic Progression (A.P.): Un = U₁ + (n-1)d, where d is the common difference. Exponential sequence/Geometric Progression (G.P.): Un = U₁ r^(n-1) where r is the common ratio."
+            },
+            {
+              "code": "FMATH-PURE-25",
+              "description": "Finite and Infinite series. Linear series (sum of A.P.): Sn = n/2(U₁+Un); Sn = n/2[2a + (n-1)d]. Exponential series (sum of G.P.): Sn = U₁(1-rⁿ)/(1-r), r<1; Sn = U₁(rⁿ-1)/(r-1), r>1. Sum to infinity: S = a/(1-r), r < 1."
+            }
+          ]
+        },
+        {
+          "name": "Matrices and Linear Transformation",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-26",
+              "description": "Matrices: Concept of a matrix – state the order of a matrix and indicate the type. Equal matrices – If two matrices are equal, their corresponding elements are equal. Addition and subtraction of matrices (up to 3 x 3 matrices). Multiplication of a matrix by a scalar and by a matrix (up to 3 x 3 matrices)."
+            },
+            {
+              "code": "FMATH-PURE-27",
+              "description": "Determinants: Evaluation of determinants of 2 x 2 matrices. Evaluation of determinants of 3 x 3 matrices (Nigeria). Application of determinants to solution of simultaneous linear equations."
+            },
+            {
+              "code": "FMATH-PURE-28",
+              "description": "Inverse of 2 x 2 Matrices: e.g. If A = [a b; c d], then A⁻¹ = 1/(ad-bc)[d -b; -c a]."
+            },
+            {
+              "code": "FMATH-PURE-29",
+              "description": "Linear Transformation: Finding the images of points under given linear transformation. Determining the matrices of given linear transformation. Finding the inverse of a linear transformation (restrict to 2 x 2 matrices). Finding the composition of linear transformation. Recognizing the Identity transformation. Standard transformation matrices including reflections in axes and lines, and anticlockwise rotation through θ about the origin."
+            }
+          ]
+        },
+        {
+          "name": "Trigonometry",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-30",
+              "description": "Trigonometric Ratios and Rules: Sine, Cosine and Tangent of general angles (0° ≤ θ ≤ 360°). Identify trigonometric ratios of angles 30°, 45°, 60° without use of tables. Use basic trigonometric ratios and reciprocals to prove given trigonometric identities. Evaluate sine, cosine and tangent of negative angles. Convert degrees into radians and vice versa. Application to real life situations such as heights and distances, perimeters, solution of triangles, angles of elevation and depression, bearings including use of sine and cosine rules."
+            },
+            {
+              "code": "FMATH-PURE-31",
+              "description": "Compound and Multiple Angles: sin(A ± B), cos(A ± B), tan(A ± B). Use of compound angles in simple identities and solution of trigonometric ratios. Use of simple trigonometric identities to find trigonometric ratios of compound and multiple angles (up to 3A)."
+            },
+            {
+              "code": "FMATH-PURE-32",
+              "description": "Trigonometric Functions and Equations: Relate trigonometric ratios to Cartesian Coordinates of points (x, y) on the circle x² + y² = r². Graphs of sine, cosine, tangent and functions of the form a sin x + b cos x. Identifying maximum and minimum point, increasing and decreasing portions. Graphical solutions of simple trigonometric equations. Solve trigonometric equations up to quadratic equations e.g. 2sin²x – sin x – 3 = 0, for 0° ≤ x ≤ 360°."
+            }
+          ]
+        },
+        {
+          "name": "Co-ordinate Geometry",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-33",
+              "description": "Straight Lines: Mid-point of a line segment. Coordinates of points which divides a given line in a given ratio. Distance between two points; Gradient of a line; Equation of a line in intercept form and gradient form. Conditions for parallel and perpendicular lines. Calculate the acute angle between two intersecting lines."
+            },
+            {
+              "code": "FMATH-PURE-34",
+              "description": "Conic Sections: Loci of variable points which move under given conditions. Equation of a circle in terms of centre (a, b) and radius r: (x-a)² + (y-b)² = r². The general form: x² + y² + 2gx + 2fy + c = 0, where (-g, -f) is the centre and radius r = √(a² + b² – c). Tangents and normals to circles. Equations of parabola in rectangular Cartesian coordinates (y² = 4ax, include parametric equations (at², at)). Finding the equation of a tangent and normal to a parabola at a given point."
+            }
+          ]
+        },
+        {
+          "name": "Differentiation",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-35",
+              "description": "The idea of a limit: Intuitive treatment of limit. Relate to the gradient of a curve: f'(x) = lim[h→0] [f(x+h) – f(x)]/h."
+            },
+            {
+              "code": "FMATH-PURE-36",
+              "description": "The derivative of a function: Its meaning and its determination from first principles (simple cases only) e.g. ax^n + b, n ≤ 3, (n ∈ I)."
+            },
+            {
+              "code": "FMATH-PURE-37",
+              "description": "Differentiation of polynomials: e.g. ax^m – bx^(m-1) + ... + k, where m ∈ I, k is a constant."
+            },
+            {
+              "code": "FMATH-PURE-38",
+              "description": "Differentiation of trigonometric functions: e.g. sin x, y = a sin x ± b cos x, where a, b are constants."
+            },
+            {
+              "code": "FMATH-PURE-39",
+              "description": "Product and quotient rules. Differentiation of implicit functions such as ax² + by² = c; including polynomials of the form (a + bx^n)^m."
+            },
+            {
+              "code": "FMATH-PURE-40",
+              "description": "Differentiation of transcendental functions (Nigeria): e.g. y = e^(ax), y = log 3x, y = ln x."
+            },
+            {
+              "code": "FMATH-PURE-41",
+              "description": "Second order derivatives and rates of change and small changes (Δx). Concept of Maxima and Minima: (i) The equation of a tangent to a curve at a point. (ii) Restrict turning points to maxima and minima. (iii) Include curve sketching (up to cubic functions) and linear kinematics."
+            }
+          ]
+        },
+        {
+          "name": "Integration",
+          "objectives": [
+            {
+              "code": "FMATH-PURE-42",
+              "description": "Indefinite Integral: Integration of polynomials of the form ax^n; n ≠ -1. i.e. ∫x^n dx = x^(n+1)/(n+1) + c, n ≠ -1. Integration of sum and difference of polynomials."
+            },
+            {
+              "code": "FMATH-PURE-43",
+              "description": "Integration of polynomials of the form ax^n; n = -1 (Nigeria): i.e. ∫x⁻¹ dx = ln x."
+            },
+            {
+              "code": "FMATH-PURE-44",
+              "description": "Definite Integral: Simple problems on integration by substitution. Integration of simple trigonometric functions of the form ∫sin x dx."
+            },
+            {
+              "code": "FMATH-PURE-45",
+              "description": "Applications of the Definite Integral: (i) Plane areas and rate of change. Include linear kinematics. Relate to the area under a curve. (ii) Volume of solid of revolution. (iii) Approximation restricted to trapezium rule."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Statistics and Probability",
+      "abbreviation": "STATS",
+      "subStrands": [
+        {
+          "name": "Statistics",
+          "objectives": [
+            {
+              "code": "FMATH-STATS-1",
+              "description": "Tabulation and graphical representation of data: Frequency tables. Cumulative frequency tables. Histogram (including unequal class intervals). Cumulative frequency curve (Ogive) for grouped data."
+            },
+            {
+              "code": "FMATH-STATS-2",
+              "description": "Measures of location: Central tendency: mean, median, mode, quartiles and percentiles. Mode and modal group for grouped data from a histogram. Median from grouped data. Mean for grouped data (use of an assumed mean required)."
+            },
+            {
+              "code": "FMATH-STATS-3",
+              "description": "Measures of Dispersion: (i) Range, Inter-Quartile and Semi inter-quartile range from an Ogive. (ii) Mean deviation, variance and standard deviation for grouped and ungrouped data. Using an assumed mean or true mean."
+            },
+            {
+              "code": "FMATH-STATS-4",
+              "description": "Correlation: Scatter diagrams, use of line of best fit to predict one variable from another, meaning of correlation; positive, negative and zero correlations. Spearman's Rank coefficient. Use data without ties."
+            }
+          ]
+        },
+        {
+          "name": "Probability",
+          "objectives": [
+            {
+              "code": "FMATH-STATS-5",
+              "description": "Meaning of probability. Tossing 2 dice once; drawing from a box with or without replacement."
+            },
+            {
+              "code": "FMATH-STATS-6",
+              "description": "Relative frequency."
+            },
+            {
+              "code": "FMATH-STATS-7",
+              "description": "Calculation of Probability using simple sample spaces: Equally likely events, mutually exclusive, independent and conditional events. Include the probability of an event considered as the probability of a set."
+            },
+            {
+              "code": "FMATH-STATS-8",
+              "description": "Addition and multiplication of probabilities."
+            },
+            {
+              "code": "FMATH-STATS-9",
+              "description": "Probability distributions: (i) Binomial distribution P(x=r) = nCr p^r q^(n-r), where probability of success = p, probability of failure = q, p + q = 1 and n is the number of trials. Simple problems only. (ii) Poisson distribution P(x) = e^(-λ) λ^x / x!, where λ = np, n is large and p is small (Nigeria)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vectors and Mechanics",
+      "abbreviation": "MECH",
+      "subStrands": [
+        {
+          "name": "Vectors",
+          "objectives": [
+            {
+              "code": "FMATH-MECH-1",
+              "description": "Definitions of scalar and vector quantities."
+            },
+            {
+              "code": "FMATH-MECH-2",
+              "description": "Representation of Vectors: Representation of vector (a b) in the form ai + bj."
+            },
+            {
+              "code": "FMATH-MECH-3",
+              "description": "Algebra of Vectors: Addition and subtraction, multiplication of vectors by vectors, scalars and equation of vectors. Triangle, Parallelogram and polygon Laws."
+            },
+            {
+              "code": "FMATH-MECH-4",
+              "description": "Commutative, Associative and Distributive Properties: Illustrate through diagram. Illustrate by solving problems in elementary plane geometry e.g. concurrency of medians and diagonals."
+            },
+            {
+              "code": "FMATH-MECH-5",
+              "description": "Unit vectors: The notation: i for the unit vector [1;0] and j for the unit vector [0;1] along the x and y axes respectively. Calculation of unit vector (â) along a i.e. â = a/|a|."
+            },
+            {
+              "code": "FMATH-MECH-6",
+              "description": "Position Vectors: Position vector of A relative to O is OA. Position vector of the midpoint of a line segment. Relate to coordinates of mid-point of a line segment."
+            },
+            {
+              "code": "FMATH-MECH-7",
+              "description": "Resolution and Composition of Vectors: Applying triangle, parallelogram and polygon laws to composition of forces acting at a point."
+            },
+            {
+              "code": "FMATH-MECH-8",
+              "description": "Scalar (dot) product and its application: Finding angle between two vectors. Using the dot product to establish trigonometric formulae such as cos(a±b), sin(a±b), cosine rule and sine rule."
+            },
+            {
+              "code": "FMATH-MECH-9",
+              "description": "Vector (cross) product and its application (Nigeria)."
+            }
+          ]
+        },
+        {
+          "name": "Statics",
+          "objectives": [
+            {
+              "code": "FMATH-MECH-10",
+              "description": "Definition of a force. Representation of forces."
+            },
+            {
+              "code": "FMATH-MECH-11",
+              "description": "Composition and resolution of coplanar forces acting at a point. Composition and resolution of general coplanar forces on rigid bodies."
+            },
+            {
+              "code": "FMATH-MECH-12",
+              "description": "Equilibrium of Bodies: Apply to simple problems e.g. suspension of particles by strings."
+            },
+            {
+              "code": "FMATH-MECH-13",
+              "description": "Determination of Resultant: Resultant of forces, Lami's theorem."
+            },
+            {
+              "code": "FMATH-MECH-14",
+              "description": "Moments of forces: Using the principles of moments to solve related problems."
+            },
+            {
+              "code": "FMATH-MECH-15",
+              "description": "Friction: Distinction between smooth and rough planes. Determination of the coefficient of friction."
+            }
+          ]
+        },
+        {
+          "name": "Dynamics",
+          "objectives": [
+            {
+              "code": "FMATH-MECH-16",
+              "description": "The concepts of motion: The definitions of displacement, velocity, acceleration and speed. Composition of velocities and accelerations."
+            },
+            {
+              "code": "FMATH-MECH-17",
+              "description": "Equations of Motion: Rectilinear motion. Newton's laws of motion. Application of Newton's Laws. Motion along inclined planes (resolving a force upon a plane into normal and frictional forces). Motion under gravity (ignore air resistance). Application of the equations of motions: V = u + at, S = ut + ½at²; v² = u² + 2as."
+            },
+            {
+              "code": "FMATH-MECH-18",
+              "description": "The impulse and momentum equations: Conservation of Linear Momentum (exclude coefficient of restitution). Distinguish between momentum and impulse."
+            },
+            {
+              "code": "FMATH-MECH-19",
+              "description": "Projectiles (Nigeria): Objects projected at an angle to the horizontal."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

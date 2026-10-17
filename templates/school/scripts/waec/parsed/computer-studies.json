@@ -1,0 +1,437 @@
+{
+  "found": true,
+  "subject": "Computer Studies",
+  "subjectCode": "CS",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Computer Evolution",
+      "abbreviation": "EVOL",
+      "subStrands": [
+        {
+          "name": "Computing Devices: Pre-computing Age to 20th Century",
+          "objectives": [
+            {
+              "code": "CS-EVOL-1",
+              "description": "Features, components and uses of early computing devices (pre-computing age, 19th century): Abacus; Slide Rule; Napier's bone; Pascal's calculator; Leibnitz multiplier; Jacquard loom; Charles Babbage's analytical engine; Hollerith Census Machine; Burrough's Machine. Contribution of each founder to modern computers. Trend of development in computing devices from one to the other."
+            },
+            {
+              "code": "CS-EVOL-2",
+              "description": "Features, components and uses of 20th century computing devices: ENIAC; EDVAC; UNIVAC 1; Desktop Personal Computers; Laptop and Notebook computers; Palmtop. Comparative study of sizes and basic components."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fundamentals of Computing",
+      "abbreviation": "FUND",
+      "subStrands": [
+        {
+          "name": "Overview of Computing System",
+          "objectives": [
+            {
+              "code": "CS-FUND-1",
+              "description": "Definition of a computer. Two main constituents of a computer: computer hardware and computer software. Classification and examples of hardware and software. Differences between hardware and software. Functional parts of a computer."
+            },
+            {
+              "code": "CS-FUND-2",
+              "description": "Characteristics of computers: electronic in nature; accuracy; speed; interactive etc."
+            },
+            {
+              "code": "CS-FUND-3",
+              "description": "Data and Information: definition and examples of data and information; differences between data and information."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Hardware",
+      "abbreviation": "HW",
+      "subStrands": [
+        {
+          "name": "Input and Output Devices",
+          "objectives": [
+            {
+              "code": "CS-HW-1",
+              "description": "Definition and examples of input devices. Use of keyboard, mouse, scanner, joystick, light pen. Classification of keys on the keyboard: function, numeric, alphabetic, cursor keys. Features, function and operation of the mouse. Differences in keyboard, mouse, light pen and scanner."
+            },
+            {
+              "code": "CS-HW-2",
+              "description": "Definition and examples of output devices: monitor, printer, speaker, plotter – type, features and uses. Differences between input and output devices. Similarities and differences in inkjet, laser and line printers. Examples and types of printers and monitors."
+            }
+          ]
+        },
+        {
+          "name": "Central Processing Unit and Memory",
+          "objectives": [
+            {
+              "code": "CS-HW-3",
+              "description": "Components of CPU: Arithmetic and Logic Unit (ALU), Control Unit. Functions of ALU and Control Unit. Combination of the CPU and Memory Unit as system unit."
+            },
+            {
+              "code": "CS-HW-4",
+              "description": "Types of Memory Unit: Primary and Secondary memory. Components of Primary memory: ROM and RAM. Differences and uses of ROM and RAM. Physical identification of RAM and ROM devices."
+            },
+            {
+              "code": "CS-HW-5",
+              "description": "Examples of Secondary memory devices: floppy disk, hard disk, compact disk (CD), flash disk, digital video disk (DVD). Unit of storage: bits, nibble, bytes, kilobytes, megabytes, gigabytes, terabytes. Interconversion of units of storage. Comparative study of auxiliary storage devices in respect of size, speed and technology."
+            }
+          ]
+        },
+        {
+          "name": "Logic Circuits",
+          "objectives": [
+            {
+              "code": "CS-HW-6",
+              "description": "Definition, types, uses and symbols of standard logic gates: AND, NOT, OR. Logic equations for AND, NOT, OR gates. Construction of truth tables for standard logic gates. Differences between AND, NOT, OR gates."
+            },
+            {
+              "code": "CS-HW-7",
+              "description": "NAND and NOR as alternative logic gates. Construction of truth table for NAND and NOR. Construction of a simple comparator with XOR (Exclusive OR) and NOR gate."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Software",
+      "abbreviation": "SW",
+      "subStrands": [
+        {
+          "name": "System Software",
+          "objectives": [
+            {
+              "code": "CS-SW-1",
+              "description": "Definition and types of software: system software and application software. Differences between system and application software."
+            },
+            {
+              "code": "CS-SW-2",
+              "description": "System software and their examples: Operating System (e.g. MS Windows); Translator (e.g. Compiler); Tools/Utility (e.g. Antivirus)."
+            },
+            {
+              "code": "CS-SW-3",
+              "description": "Examples of Operating Systems: MS Windows; Linux; UNIX; MS-DOS. Operating systems of phones, iPad and other computerized devices e.g. Android, Blackberry."
+            },
+            {
+              "code": "CS-SW-4",
+              "description": "Examples of Translators: Assemblers; Compilers; Interpreters. Differences among the translators."
+            },
+            {
+              "code": "CS-SW-5",
+              "description": "Examples of Utility Programs: Editor; Anti-virus."
+            }
+          ]
+        },
+        {
+          "name": "Operating System",
+          "objectives": [
+            {
+              "code": "CS-SW-6",
+              "description": "Definition, types, examples and function of Operating System: Graphic User Interface (GUI) e.g. MS Windows, Linux; Command line e.g. MS-DOS, UNIX. Differences between GUI and Command line Operating Systems."
+            }
+          ]
+        },
+        {
+          "name": "Application Software",
+          "objectives": [
+            {
+              "code": "CS-SW-7",
+              "description": "Definition and types of application software. Common Application Packages and their examples: Word processing (MS Word); Spreadsheet (MS Excel); Database (MS Access); Graphics. Differences between user application program and application packages."
+            },
+            {
+              "code": "CS-SW-8",
+              "description": "Packages for specific purposes: accounting software; payroll program; banking software; education management software; statistical packages; hospital management software."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Application",
+      "abbreviation": "APP",
+      "subStrands": [
+        {
+          "name": "Word Processing",
+          "objectives": [
+            {
+              "code": "CS-APP-1",
+              "description": "Definition and examples of word processing and word processors: MS Word; Wordstar; WordPerfect. Features of word processing programs. Application areas: office, publishing, journalism, education."
+            },
+            {
+              "code": "CS-APP-2",
+              "description": "Features of MS Word. Steps in activating and exiting MS Word. Basic operations: create, edit, save, retrieve, print, close. Further operations: move, copy, cut, use of different types and sizes of fonts, formatting, justifying, search/explore, spell checking, file merging."
+            }
+          ]
+        },
+        {
+          "name": "Spreadsheet",
+          "objectives": [
+            {
+              "code": "CS-APP-3",
+              "description": "Definition and examples of spreadsheet programs: VisiCALC; MS Excel; SuperCALC; Autocad. Features of spreadsheet programs. Application areas: accounting, statistical calculation, student results."
+            },
+            {
+              "code": "CS-APP-4",
+              "description": "Features of MS Excel environment: status bar, menu bar, formula bar. Definition of basic terms: worksheet, workbook, cells, cell ranges. Data types in Excel: number, labels, formula."
+            },
+            {
+              "code": "CS-APP-5",
+              "description": "Basic operations in Excel: data entry, saving, retrieve, copy, move. Arithmetic calculations using formula and built-in functions (sum, average, etc.). Additional operations: editing, formatting, printing, drawing charts (pie chart, histogram, bar chart)."
+            }
+          ]
+        },
+        {
+          "name": "Database",
+          "objectives": [
+            {
+              "code": "CS-APP-6",
+              "description": "Definition of database and database packages. Examples: Dbase IV; Foxbase; MS Access; Oracle. Basic terms: file, record, field, key."
+            },
+            {
+              "code": "CS-APP-7",
+              "description": "Types of database organisation methods and their features: hierarchical; network; relational. Features of database format: files designed as tables; tables comprise rows and columns."
+            },
+            {
+              "code": "CS-APP-8",
+              "description": "Steps in creating a database: define the structure; indicate field type (numeric, character, data, text); enter data; save data. Basic operations on a database: searching, modifying, sorting, reporting, selecting, inserting."
+            }
+          ]
+        },
+        {
+          "name": "Graphics and Presentation",
+          "objectives": [
+            {
+              "code": "CS-APP-9",
+              "description": "Definition of graphics. Examples of graphics packages: Paint; Harvard graphics; Photoshop; CorelDraw. Features in activating and exiting CorelDraw. Simple design using CorelDraw: business card, school logo, national flag, invitation card, certification."
+            },
+            {
+              "code": "CS-APP-10",
+              "description": "Definition of presentation package. Examples: MS PowerPoint. Features of PowerPoint environment. Steps in activating and exiting PowerPoint. PowerPoint operations: create new presentation, insert pictures/text/graphs, animated contents, add new slide, save, run slide show, print, close presentation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Managing Computer Files",
+      "abbreviation": "FILES",
+      "subStrands": [
+        {
+          "name": "Concept of Computer Files",
+          "objectives": [
+            {
+              "code": "CS-FILES-1",
+              "description": "Definition of terms: computer file, record, field, data item. Types of data item: numeric, alphabetic, alphanumeric."
+            },
+            {
+              "code": "CS-FILES-2",
+              "description": "File structure organisation: Data item → record → file → database. Types of file organisation: serial, sequential, index, random. Differences among the organisation methods. Methods of accessing files: serial, sequential, random."
+            },
+            {
+              "code": "CS-FILES-3",
+              "description": "File classification: master file, transaction file, reference file. Criteria for classifying files: nature of content (program and data), organisation method, storage medium."
+            }
+          ]
+        },
+        {
+          "name": "Handling Computer Files",
+          "objectives": [
+            {
+              "code": "CS-FILES-4",
+              "description": "Basic operations on computer files: file, delete, retrieve, insert, copy, view, update, open, close. File processing using BASIC programming."
+            },
+            {
+              "code": "CS-FILES-5",
+              "description": "Effect of file insecurity: data loss, data corruption, data becomes unreliable. Causes of data loss: over-writing, inadvertent deletion. Methods of file security: use of backup, use of antivirus, password, proper labelling of storage devices."
+            },
+            {
+              "code": "CS-FILES-6",
+              "description": "Differences between computer files and manual files. Advantages of computer files: more secure, fast to access. Disadvantages of computer files: expensive to set up, irregular supply of electricity."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Basic Computer Operations",
+      "abbreviation": "OPS",
+      "subStrands": [
+        {
+          "name": "Booting, Shutdown and Data Conversion",
+          "objectives": [
+            {
+              "code": "CS-OPS-1",
+              "description": "Description and types of booting process: cold booting and warm booting. Differences between cold and warm booting. Steps involved in booting a computer and shutting down a computer. Identification of features on a desktop."
+            },
+            {
+              "code": "CS-OPS-2",
+              "description": "Computer data conversion: definition of registers, address, bus. Types and functions of registers: MDR, CIR, SCR. Differences between register and main memory. Steps involved in how a computer converts data to required information (Input-Process-Output). Factors affecting speed of data transfer: bus speed; bus width."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Information and Communication Technology",
+      "abbreviation": "ICT",
+      "subStrands": [
+        {
+          "name": "Communication Systems",
+          "objectives": [
+            {
+              "code": "CS-ICT-1",
+              "description": "What 'ICT' acronym stands for. Types of ICT: Broadcasting, Telecommunication, Data Network, Information Systems, Satellite Communications. Examples of broadcasting: radio broadcasting, television broadcasting, satellite system. Examples of telecommunication: PSTN (landline), mobile phone systems, CSPT, satellite telephone system, fixed wireless telephone system."
+            },
+            {
+              "code": "CS-ICT-2",
+              "description": "Examples of data networks: Personal Area Network (PAN), Local Area Network (LAN), Metropolitan Area Network (MAN), Wide Area Network (WAN), Internet. Examples of information systems: Data Processing System, Global Positioning System (GPS)."
+            }
+          ]
+        },
+        {
+          "name": "Application Areas and ICT Gadgets",
+          "objectives": [
+            {
+              "code": "CS-ICT-3",
+              "description": "Application areas of ICT: teleconferencing, video conferencing, telecommuting, telecomputing, messaging, information search/retrieval and archival."
+            },
+            {
+              "code": "CS-ICT-4",
+              "description": "ICT-based gadgets and their operations: mobile phones, computers, fax machines, Automated Teller Machines (ATM), dispensing machines, Point of Sale machines, Automated Cash Register (ACR), radio sets, television sets."
+            }
+          ]
+        },
+        {
+          "name": "Internet and Email",
+          "objectives": [
+            {
+              "code": "CS-ICT-5",
+              "description": "Definition of Internet and internet terms: homepage, browse, browser, chatroom, cybercafe, HTTP, HTML, ISP, webpage, website. Types of internet browsers: Internet Explorer, Netscape Navigator, Opera, Firefox, Cometbird. Features of internet browsers: title bar, menu bar, tool bar, address bar."
+            },
+            {
+              "code": "CS-ICT-6",
+              "description": "Types of internet services: electronic mail (e-mail), e-mail discussion group, instant messaging, Telnet, Usenet, File Transfer Protocol (FTP), World Wide Web (www), chatting. Benefits of Internet to society."
+            },
+            {
+              "code": "CS-ICT-7",
+              "description": "Definition of electronic mail. E-mail services: sending/receiving e-mail, chatting. Steps in creating e-mail account and opening mailbox. Features in an e-mail address. Definition and steps involved in chatting."
+            }
+          ]
+        },
+        {
+          "name": "Networking and World Wide Web",
+          "objectives": [
+            {
+              "code": "CS-ICT-8",
+              "description": "Definition of a computer network. Types of network: PAN, LAN, WAN, MAN, Internet. Network topology: Star, Bus, Ring. Differences in the various topologies. Network devices: Hub, Modems, Switches, Routers, Network Interface Card (NIC), Bridge. Advantages of networking."
+            },
+            {
+              "code": "CS-ICT-9",
+              "description": "Introduction to World Wide Web (WWW): what WWW acronym stands for; brief history; basic terminologies (website, webpage, homepage, protocol). Protocol: HTTP, HTML. Uses/benefits of www. Navigating through websites. Difference between e-mail and website address. Software for web development."
+            },
+            {
+              "code": "CS-ICT-10",
+              "description": "Types of Network Cables and Connectors: cables (twisted pair, coaxial, fibre optic, telephone); connectors (RJ45, RJ11, T-connectors). Types of Computer Cables and Connectors: power cables, data cables (printer cable, USB, monitor cable, serial cable); male and female connectors."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Developing Problem-Solving Skills",
+      "abbreviation": "PROG",
+      "subStrands": [
+        {
+          "name": "Programming Languages",
+          "objectives": [
+            {
+              "code": "CS-PROG-1",
+              "description": "Programming language: definition, examples, levels and features. Levels and examples: Machine Language (ML) e.g. 100011001; Low Level Language (LLL) e.g. Assembly Language; High Level Language (HLL) e.g. BASIC, C++, FORTRAN. Comparison, advantages and disadvantages of ML, LLL and HLL."
+            },
+            {
+              "code": "CS-PROG-2",
+              "description": "High Level Languages: definition and examples. Classification as scientific, general-purpose, business, AI, string processing language (SPL). Features of BASIC, C, PASCAL, COBOL – comparative study. Other programming languages such as Java, Python."
+            }
+          ]
+        },
+        {
+          "name": "Algorithm and Flowchart",
+          "objectives": [
+            {
+              "code": "CS-PROG-3",
+              "description": "Definition of algorithm and flowchart. Functions of algorithm. Characteristics of algorithm: finite, effective, unambiguous. Writing algorithm for: computing average of a given set of numbers; evaluation of equations; computing the first ten odd numbers."
+            },
+            {
+              "code": "CS-PROG-4",
+              "description": "Flowchart symbols: I/O, Process, Decisions. Use of each flowchart symbol. Drawing flowchart diagrams for given programming problems."
+            }
+          ]
+        },
+        {
+          "name": "BASIC Programming",
+          "objectives": [
+            {
+              "code": "CS-PROG-5",
+              "description": "What BASIC acronym stands for. BASIC characteristics. Types of data: variable, constant/literal, numeric, string/alphanumeric."
+            },
+            {
+              "code": "CS-PROG-6",
+              "description": "BASIC Statements: INPUT; PRINT, LPRINT; LET; END; REM; READ; DATA. Arithmetic operators (-,+,*,/). Arithmetic expressions and their evaluation."
+            },
+            {
+              "code": "CS-PROG-7",
+              "description": "Simple BASIC programs: calculate area of triangle, area of rectangle, average of 3 numbers. Running simple programs on the computer."
+            },
+            {
+              "code": "CS-PROG-8",
+              "description": "Built-in functions in BASIC: SQR(X), INT(X), SIN(X), ABS(X), RND(X), COS(X), TAN(X), LOG(X), EXP(X). BASIC notation of mathematical expressions. BASIC programs to find square roots, cosines, tangents and plot sine wave curve."
+            },
+            {
+              "code": "CS-PROG-9",
+              "description": "Additional BASIC Statements: DIM Statement; FOR-NEXT statement; WHILE-END statement. Defining one-dimensional array using DIM statement. Operating on array elements: input, output, arithmetic operations. Write BASIC programs to store vectors, calculate means, calculate areas of rectangles, compute sum of first 100 integers. Numbers of iterations should not exceed eight (8)."
+            }
+          ]
+        },
+        {
+          "name": "Program and Systems Development",
+          "objectives": [
+            {
+              "code": "CS-PROG-10",
+              "description": "Definition of program. Characteristics of a good program: accuracy, readability, maintainability, efficiency, generality, clarity. Precautions in developing a program. Steps in program development: problem definition, problem analysis, flow charting, desk checking, program coding, program compilation, program testing/debugging, program documentation. Description of each stage. Examples of interpreted program (BASIC) and compiled program (COBOL, FORTRAN)."
+            },
+            {
+              "code": "CS-PROG-11",
+              "description": "Definition of system development cycle. Description and stages in system development cycle: preliminary study, feasibility, investigate study, analysis, design, implementation, maintenance, study review. Description of each stage and diagram of system development cycle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Ethics and Human Issues",
+      "abbreviation": "ETHICS",
+      "subStrands": [
+        {
+          "name": "Security, Ethics and Legal Issues",
+          "objectives": [
+            {
+              "code": "CS-ETHICS-1",
+              "description": "Sources of security breaches: virus, worms and Trojan horses (definition and effects); poor implementation of network; poor implementation or lack of ICT policies; carelessness in giving out personal information online; hackers and spammers (definitions)."
+            },
+            {
+              "code": "CS-ETHICS-2",
+              "description": "Preventive measures: use of antivirus software (e.g. Norton, McAfee, Avast); use of firewall (definition and explanation); exercising care in giving out vital and personal information; encryption (definition); proper network implementation and policies; using sites with web certificates; exercising care in opening e-mail attachments."
+            },
+            {
+              "code": "CS-ETHICS-3",
+              "description": "Legal issues: copyright (software copyright); ownership rights to text, images, audio, video; privacy of audio and video software; cyber crimes including identity theft, internet fraud, hacking."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

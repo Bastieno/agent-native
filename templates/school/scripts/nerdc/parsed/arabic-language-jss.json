@@ -1,0 +1,94 @@
+{
+  "found": true,
+  "subject": "Arabic Language",
+  "subjectCode": "ARABIC",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Arabic Script and Phonology",
+      "abbreviation": "ASP",
+      "subStrands": [
+        {
+          "name": "Alphabet, Vowels, and Pronunciation",
+          "objectives": [
+            {
+              "code": "ARABIC-ASP-1",
+              "description": "Identify, write, and connect all 28 Arabic letters in their initial, medial, final, and isolated forms"
+            },
+            {
+              "code": "ARABIC-ASP-2",
+              "description": "Apply short and long vowels (fatha, kasra, damma, and their extensions) correctly in reading and writing"
+            },
+            {
+              "code": "ARABIC-ASP-3",
+              "description": "Pronounce Arabic sounds including emphatic consonants and pharyngeal sounds correctly"
+            },
+            {
+              "code": "ARABIC-ASP-4",
+              "description": "Apply tanwin, shaddah, sukun, and other diacritical marks in reading Arabic texts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Arabic Grammar and Vocabulary",
+      "abbreviation": "AGV",
+      "subStrands": [
+        {
+          "name": "Basic Grammar and Word Formation",
+          "objectives": [
+            {
+              "code": "ARABIC-AGV-1",
+              "description": "Classify Arabic nouns as masculine or feminine and use them correctly in singular, dual, and plural forms"
+            },
+            {
+              "code": "ARABIC-AGV-2",
+              "description": "Identify and conjugate basic Arabic verbs in the past, present, and command tenses"
+            },
+            {
+              "code": "ARABIC-AGV-3",
+              "description": "Build simple Arabic sentences using subject-verb-object structure and apply definite and indefinite articles"
+            },
+            {
+              "code": "ARABIC-AGV-4",
+              "description": "Use common Arabic vocabulary on themes including greetings, family, home, school, and daily activities"
+            },
+            {
+              "code": "ARABIC-AGV-5",
+              "description": "Count and use Arabic numbers 1–100 and express dates, time, and quantities correctly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reading and Writing",
+      "abbreviation": "RW",
+      "subStrands": [
+        {
+          "name": "Comprehension and Composition",
+          "objectives": [
+            {
+              "code": "ARABIC-RW-1",
+              "description": "Read simple Arabic texts with correct pronunciation and demonstrate understanding through comprehension questions"
+            },
+            {
+              "code": "ARABIC-RW-2",
+              "description": "Copy, dictate, and write simple Arabic sentences and short paragraphs with correct script"
+            },
+            {
+              "code": "ARABIC-RW-3",
+              "description": "Write simple Arabic compositions on familiar topics using learned vocabulary and structures"
+            },
+            {
+              "code": "ARABIC-RW-4",
+              "description": "Identify themes and moral lessons in simple Arabic literary and religious texts"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

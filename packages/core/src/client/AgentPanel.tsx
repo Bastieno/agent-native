@@ -355,6 +355,15 @@ export interface AgentPanelProps extends Omit<
 > {
   /** Initial mode. Default: "chat" */
   defaultMode?: "chat" | "cli";
+  /**
+   * Show the model picker in the chat composer. Default: true. Set false
+   * when the app chooses the model on the server.
+   */
+  showModelSelector?: boolean;
+  /** Show the Workspace tab (files, skills, MCP servers). Default: true. */
+  showWorkspace?: boolean;
+  /** Show the settings gear (engine, keys, limits). Default: true. */
+  showSettings?: boolean;
   /** CSS class for the outer container */
   className?: string;
   /** Called when the user clicks the collapse button. If provided, a collapse button appears in the header. */
@@ -494,6 +503,8 @@ function AgentPanelInner({
   browserTabId,
   chatNotice,
   codeAccess,
+  showWorkspace = true,
+  showSettings = true,
   ...assistantChatProps
 }: AgentPanelProps) {
   const mounted = useClientOnly();
@@ -538,8 +549,8 @@ function AgentPanelInner({
       if (
         saved === "chat" ||
         saved === "cli" ||
-        saved === "resources" ||
-        saved === "settings"
+        (saved === "resources" && showWorkspace) ||
+        (saved === "settings" && showSettings)
       )
         return saved;
     } catch {}
@@ -554,9 +565,19 @@ function AgentPanelInner({
     section: string | null;
     requestKey: number;
   }>({ section: null, requestKey: 0 });
-  const switchMode = useCallback((m: PanelMode) => {
-    startTransition(() => setMode(m));
-  }, []);
+  // A hidden area stays hidden: its tab, a saved mode and an event asking
+  // for it (e.g. "open settings") all fall back to the chat.
+  const switchMode = useCallback(
+    (m: PanelMode) => {
+      if (
+        (m === "resources" && !showWorkspace) ||
+        (m === "settings" && !showSettings)
+      )
+        return;
+      startTransition(() => setMode(m));
+    },
+    [showWorkspace, showSettings],
+  );
   const activateOnKeyDown = useCallback(
     (activate: () => void) => (event: React.KeyboardEvent) => {
       if (!ACTIVATE_KEYS.has(event.key)) return;
@@ -782,48 +803,59 @@ function AgentPanelInner({
               </TooltipContent>
             </Tooltip>
           )}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button
-                onClick={() => switchMode("resources")}
-                aria-label="Workspace files, agents, skills, and tasks"
-                className={cn(
-                  "flex items-center gap-1 rounded-md px-2 py-1 text-[12px] leading-none",
-                  activeMode === "resources"
-                    ? "bg-accent text-foreground"
-                    : "text-muted-foreground hover:bg-accent/50 hover:text-foreground",
-                )}
-                style={AGENT_PANEL_CONTROL_STYLE}
-              >
-                <IconLayoutGrid size={14} />
-                Workspace
-              </button>
-            </TooltipTrigger>
-            <TooltipContent>
-              Workspace files, agents, skills, and tasks
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button
-                onClick={() => switchMode("settings")}
-                aria-label="Setup and configuration"
-                className={cn(
-                  "flex items-center justify-center rounded-md px-1.5 py-1",
-                  activeMode === "settings"
-                    ? "bg-accent text-foreground"
-                    : "text-muted-foreground hover:bg-accent/50 hover:text-foreground",
-                )}
-              >
-                <IconSettings size={14} />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent>Setup and configuration</TooltipContent>
-          </Tooltip>
+          {showWorkspace && (
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={() => switchMode("resources")}
+                  aria-label="Workspace files, agents, skills, and tasks"
+                  className={cn(
+                    "flex items-center gap-1 rounded-md px-2 py-1 text-[12px] leading-none",
+                    activeMode === "resources"
+                      ? "bg-accent text-foreground"
+                      : "text-muted-foreground hover:bg-accent/50 hover:text-foreground",
+                  )}
+                  style={AGENT_PANEL_CONTROL_STYLE}
+                >
+                  <IconLayoutGrid size={14} />
+                  Workspace
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>
+                Workspace files, agents, skills, and tasks
+              </TooltipContent>
+            </Tooltip>
+          )}
+          {showSettings && (
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={() => switchMode("settings")}
+                  aria-label="Setup and configuration"
+                  className={cn(
+                    "flex items-center justify-center rounded-md px-1.5 py-1",
+                    activeMode === "settings"
+                      ? "bg-accent text-foreground"
+                      : "text-muted-foreground hover:bg-accent/50 hover:text-foreground",
+                  )}
+                >
+                  <IconSettings size={14} />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>Setup and configuration</TooltipContent>
+            </Tooltip>
+          )}
         </div>
       </TooltipProvider>
     ),
-    [codeAccessEnabled, codeUnavailableDescription, showCliMode],
+    [
+      codeAccessEnabled,
+      codeUnavailableDescription,
+      showCliMode,
+      showWorkspace,
+      showSettings,
+      switchMode,
+    ],
   );
 
   const renderHeaderActions = useCallback(
@@ -1431,7 +1463,7 @@ function AgentPanelInner({
           )}
 
       {/* Resources view */}
-      {mode === "resources" && (
+      {mode === "resources" && showWorkspace && (
         <div className="flex-1 min-h-0">
           <Suspense
             fallback={
@@ -1451,7 +1483,7 @@ function AgentPanelInner({
       )}
 
       {/* Settings / Setup view */}
-      {mode === "settings" && (
+      {mode === "settings" && showSettings && (
         <div className="flex flex-col flex-1 min-h-0">
           <Suspense
             fallback={
@@ -1995,6 +2027,16 @@ export interface AgentSidebarProps {
   /** Animate the mobile overlay in a sheet-style slide transition. */
   animateMobile?: boolean;
   /**
+   * Width (px) at or below which the panel becomes an overlay with a backdrop
+   * instead of taking space in the layout. Defaults to 767 (phones).
+   *
+   * Apps whose own chrome is wide — a nav sidebar plus a dense main column —
+   * squeeze the panel long before a phone width, so they can overlay earlier
+   * (e.g. 1279 to keep it in-layout only on large desktops) and pair it with
+   * an `AgentToggleButton`.
+   */
+  overlayBreakpointPx?: number;
+  /**
    * Bind chats to a resource. When set, every chat started here is
    * scoped to `{type, id}`, the tab bar/history partition by that scope,
    * and a "Working on {label}" badge appears with a Detach option.
@@ -2003,6 +2045,16 @@ export interface AgentSidebarProps {
   scope?: import("./use-chat-threads.js").ChatThreadScope | null;
   /** Stable browser tab id used for tab-scoped app-state context. */
   browserTabId?: string;
+  /**
+   * Show the model picker in the chat composer. Default: true. Set false
+   * when the app chooses the model on the server — for example per role —
+   * so nobody is offered a choice the server would not honour.
+   */
+  showModelSelector?: boolean;
+  /** Show the Workspace tab (files, skills, MCP servers). Default: true. */
+  showWorkspace?: boolean;
+  /** Show the settings gear (engine, keys, limits). Default: true. */
+  showSettings?: boolean;
 }
 
 /**
@@ -2019,8 +2071,12 @@ export function AgentSidebar({
   position = "right",
   defaultOpen = false,
   animateMobile = false,
+  overlayBreakpointPx,
   scope,
   browserTabId,
+  showModelSelector,
+  showWorkspace,
+  showSettings,
 }: AgentSidebarProps) {
   const initialWidth = defaultSidebarWidth ?? sidebarWidth ?? 380;
   const [open, setOpen] = useState(() =>
@@ -2028,12 +2084,13 @@ export function AgentSidebar({
   );
   const [presentationMode, setPresentationMode] = useState(false);
   const [width, setWidth] = useState(initialWidth);
+  const overlayQuery = `(max-width: ${overlayBreakpointPx ?? 767}px)`;
   const [fullscreen, setFullscreen] = useState(() => {
-    // Force-disable on mobile: a Claude-style centered column makes no sense
-    // when the sidebar already covers most of the viewport.
+    // Force-disable in overlay mode: a Claude-style centered column makes no
+    // sense when the sidebar already covers most of the viewport.
     if (
       typeof window !== "undefined" &&
-      window.matchMedia("(max-width: 767px)").matches
+      window.matchMedia(overlayQuery).matches
     ) {
       return false;
     }
@@ -2044,18 +2101,19 @@ export function AgentSidebar({
     }
   });
 
-  // Track mobile viewport so we can switch to overlay mode.
+  // Track the viewport so we can switch to overlay mode. Narrow by default;
+  // apps with their own wide chrome can overlay at larger widths.
   const [isMobile, setIsMobile] = useState(
     () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(max-width: 767px)").matches,
+      typeof window !== "undefined" && window.matchMedia(overlayQuery).matches,
   );
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
+    const mq = window.matchMedia(overlayQuery);
+    setIsMobile(mq.matches);
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
-  }, []);
+  }, [overlayQuery]);
   useEffect(() => {
     try {
       const saved = localStorage.getItem(SIDEBAR_STORAGE_KEY);
@@ -2479,6 +2537,9 @@ export function AgentSidebar({
           onToggleFullscreen={isMobile ? undefined : toggleFullscreen}
           scope={scope}
           browserTabId={browserTabId}
+          showModelSelector={showModelSelector}
+          showWorkspace={showWorkspace}
+          showSettings={showSettings}
         />
       </div>
       {showResizeHandle && isLeft && (

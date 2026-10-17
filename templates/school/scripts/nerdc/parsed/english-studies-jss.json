@@ -1,0 +1,196 @@
+{
+  "found": true,
+  "subject": "English Studies",
+  "subjectCode": "ENGSTUD",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Oral English and Speech Work",
+      "abbreviation": "OESP",
+      "subStrands": [
+        {
+          "name": "Vowel Sounds and Phonology",
+          "objectives": [
+            {
+              "code": "ENGSTUD-OESP-1",
+              "description": "Identify and produce pure vowel sounds (monophthongs) in isolation and in connected speech"
+            },
+            {
+              "code": "ENGSTUD-OESP-2",
+              "description": "Identify and produce diphthong sounds including /eɪ/, /oʊ/, /aɪ/, /aʊ/, /ɔɪ/, /ɪə/, /eə/, /ʊə/"
+            },
+            {
+              "code": "ENGSTUD-OESP-3",
+              "description": "Identify and contrast consonant sounds including fricatives /θ/, /ð/, /ʃ/, /ʧ/, /w/, /j/ in minimal pairs"
+            },
+            {
+              "code": "ENGSTUD-OESP-4",
+              "description": "Identify word stress patterns and apply correct stress in polysyllabic words"
+            },
+            {
+              "code": "ENGSTUD-OESP-5",
+              "description": "Apply appropriate intonation patterns (rising and falling) in statements, questions, and commands"
+            },
+            {
+              "code": "ENGSTUD-OESP-6",
+              "description": "Produce consonant clusters correctly in words and connected speech"
+            },
+            {
+              "code": "ENGSTUD-OESP-7",
+              "description": "Demonstrate awareness of word boundaries and linking sounds in natural speech"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grammar and Language Use",
+      "abbreviation": "GLU",
+      "subStrands": [
+        {
+          "name": "Parts of Speech",
+          "objectives": [
+            {
+              "code": "ENGSTUD-GLU-1",
+              "description": "Identify and use nouns, pronouns, verbs, adjectives, and adverbs correctly in sentences"
+            },
+            {
+              "code": "ENGSTUD-GLU-2",
+              "description": "Apply verb tenses (present, past, future) and concord correctly in oral and written expression"
+            },
+            {
+              "code": "ENGSTUD-GLU-3",
+              "description": "Use conjunctions including 'although', 'whereas', 'despite', and 'in spite of' to create complex sentences"
+            },
+            {
+              "code": "ENGSTUD-GLU-4",
+              "description": "Form and use active and passive voice constructions appropriately"
+            },
+            {
+              "code": "ENGSTUD-GLU-5",
+              "description": "Identify and use synonyms, antonyms, and causative verbs to enrich vocabulary"
+            },
+            {
+              "code": "ENGSTUD-GLU-6",
+              "description": "Construct tag questions and differentiate between polar and tag questions"
+            },
+            {
+              "code": "ENGSTUD-GLU-7",
+              "description": "Use prefixes, suffixes, and adverbs of place to expand word knowledge and sentence variety"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reading and Comprehension",
+      "abbreviation": "RC",
+      "subStrands": [
+        {
+          "name": "Reading Skills and Vocabulary Development",
+          "objectives": [
+            {
+              "code": "ENGSTUD-RC-1",
+              "description": "Read and identify main ideas, topic sentences, and supporting details in passages"
+            },
+            {
+              "code": "ENGSTUD-RC-2",
+              "description": "Apply skimming and scanning strategies to locate specific information in texts"
+            },
+            {
+              "code": "ENGSTUD-RC-3",
+              "description": "Infer the author's purpose, tone, and attitude from contextual clues in passages"
+            },
+            {
+              "code": "ENGSTUD-RC-4",
+              "description": "Identify keywords and signal expressions that redirect attention to the main point of a passage"
+            },
+            {
+              "code": "ENGSTUD-RC-5",
+              "description": "Build and use vocabulary in thematic areas including transportation, religion, and conflict resolution"
+            },
+            {
+              "code": "ENGSTUD-RC-6",
+              "description": "Read to evaluate content and distinguish between fact and opinion in texts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Writing and Composition",
+      "abbreviation": "WC",
+      "subStrands": [
+        {
+          "name": "Essay Writing and Letter Writing",
+          "objectives": [
+            {
+              "code": "ENGSTUD-WC-1",
+              "description": "Write narrative essays with clear plot, setting, characters, and sequence of events"
+            },
+            {
+              "code": "ENGSTUD-WC-2",
+              "description": "Write expository essays on familiar topics with organized paragraphs and supporting details"
+            },
+            {
+              "code": "ENGSTUD-WC-3",
+              "description": "Write argumentative essays presenting a clearly stated position supported by logical arguments"
+            },
+            {
+              "code": "ENGSTUD-WC-4",
+              "description": "Write formal letters (to an authority, official, or institution) with correct format and register"
+            },
+            {
+              "code": "ENGSTUD-WC-5",
+              "description": "Write informal letters (to a friend or family member) with appropriate tone and format"
+            },
+            {
+              "code": "ENGSTUD-WC-6",
+              "description": "Write a well-structured summary that captures the key ideas of a given passage concisely"
+            },
+            {
+              "code": "ENGSTUD-WC-7",
+              "description": "Write dialogues with correct punctuation, appropriate register, and realistic exchange of ideas"
+            },
+            {
+              "code": "ENGSTUD-WC-8",
+              "description": "Write report texts on observed events with accurate, objective, and organized information"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Literature in English",
+      "abbreviation": "LIT",
+      "subStrands": [
+        {
+          "name": "Prose, Drama, and Poetry",
+          "objectives": [
+            {
+              "code": "ENGSTUD-LIT-1",
+              "description": "Identify themes, characterization, plot, and setting in recommended prose texts"
+            },
+            {
+              "code": "ENGSTUD-LIT-2",
+              "description": "Analyse dialogue, dramatic action, and stagecraft elements in recommended drama texts"
+            },
+            {
+              "code": "ENGSTUD-LIT-3",
+              "description": "Identify and interpret figurative language including simile, metaphor, alliteration, irony, and pun in poetry"
+            },
+            {
+              "code": "ENGSTUD-LIT-4",
+              "description": "Distinguish between myths, legends, and folktales and identify their moral lessons"
+            },
+            {
+              "code": "ENGSTUD-LIT-5",
+              "description": "Write a short original poem, play extract, or story using literary devices"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

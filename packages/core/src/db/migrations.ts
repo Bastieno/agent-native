@@ -153,7 +153,27 @@ export function runMigrations(
         "for why this is required (shared-DB version-collision bug).",
     );
   }
+  const highestVersion = migrations.reduce(
+    (max, m) => (m.version > max ? m.version : max),
+    0,
+  );
+
   return async () => {
+    // Dev reloads re-run every startup plugin, including this one. The
+    // previous instance of the module still holds the SQLite write lock for a
+    // moment, so the re-run lands on a busy database and retries for up to a
+    // minute — and until it returns, the server has no request handler at all:
+    // every request hangs or 503s with "environment unavailable". That is the
+    // stall a developer sees after editing a server file a few times in quick
+    // succession.
+    //
+    // Nothing needs re-running: this process applied these migrations already.
+    // The highest version is remembered, so adding a migration during dev
+    // still applies on the next reload — only the no-op case is skipped.
+    const alreadyApplied = ((globalThis as any).__agentNativeMigrations__ ??=
+      new Map<string, number>()) as Map<string, number>;
+    if (alreadyApplied.get(table) === highestVersion) return;
+
     try {
       // Check for Cloudflare D1 binding (only if DATABASE_URL not set)
       const d1 = getDialect() === "d1" ? globalThis.__cf_env?.DB : null;
@@ -227,6 +247,7 @@ export function runMigrations(
             throw err;
           }
         }
+        alreadyApplied.set(table, highestVersion);
         return;
       }
 
@@ -305,6 +326,7 @@ export function runMigrations(
           throw err;
         }
       }
+      alreadyApplied.set(table, highestVersion);
     } catch (err) {
       console.error("[db] Migration failed:", (err as Error).message);
       // In local dev, hard-fail so the developer catches errors immediately.

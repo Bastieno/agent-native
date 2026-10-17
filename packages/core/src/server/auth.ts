@@ -1487,9 +1487,21 @@ function createAuthGuardFn(): (
     if (p === "/login" || p === "/signup") {
       const session = await getSession(event);
       if (session) {
+        const queryStr = queryStart >= 0 ? url.slice(queryStart + 1) : "";
+        const safeReturn = safeReturnPath(
+          new URLSearchParams(queryStr).get("return"),
+        );
+        // safeReturnPath() yields "/" for a missing or unsafe param, which is
+        // not a destination — a mounted app's home is its base path.
+        const dest =
+          safeReturn !== "/" &&
+          safeReturn !== "/login" &&
+          safeReturn !== "/signup"
+            ? safeReturn
+            : getAppBasePath() || "/";
         return new Response("", {
           status: 302,
-          headers: { Location: getAppBasePath() || "/" },
+          headers: { Location: dest },
         });
       }
       return new Response(loginHtml, {
@@ -1544,6 +1556,36 @@ function createAuthGuardFn(): (
     if (getMethod(event) === "GET") {
       const autoSession = await maybeAutoCreateDevSession(event, url);
       if (autoSession) return autoSession;
+    }
+
+    // Redirect page routes to /login?return=<path> so the URL bar shows /login
+    // while the user authenticates. After sign-in, __anGetReturnPath() in the
+    // login HTML reads the ?return= param and navigates back to the original URL.
+    // Fall back to inline login HTML for the app's own home to avoid a
+    // redirect loop. The mount prefix is APP_BASE_PATH, or the workspace mount
+    // inferred from the request the same way the login page infers it, so a
+    // mounted app is sent to its own login page rather than the root's.
+    const queryStr = queryStart >= 0 ? url.slice(queryStart) : "";
+    const safeReturn = safeReturnPath(rawPath + queryStr);
+    const mountPrefix =
+      getAppBasePath() || inferWorkspaceBasePathFromRequest(rawPath);
+    const appPath =
+      mountPrefix &&
+      (rawPath === mountPrefix || rawPath.startsWith(`${mountPrefix}/`))
+        ? rawPath.slice(mountPrefix.length) || "/"
+        : rawPath;
+    if (
+      appPath !== "/" &&
+      appPath !== "/login" &&
+      appPath !== "/signup" &&
+      safeReturn !== "/"
+    ) {
+      return new Response("", {
+        status: 302,
+        headers: {
+          Location: `${mountPrefix}/login?return=${encodeURIComponent(safeReturn)}`,
+        },
+      });
     }
 
     return new Response(loginHtml, {

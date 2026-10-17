@@ -1,0 +1,136 @@
+{
+  "found": true,
+  "subject": "Marketing",
+  "subjectCode": "MKTG",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Foundations of Marketing",
+      "abbreviation": "FOUND",
+      "subStrands": [
+        {
+          "name": "Introduction, Concepts and Marketing Mix",
+          "objectives": [
+            {
+              "code": "MKTG-FOUND-1",
+              "description": "Introduction to Marketing: meaning; explanation of basic terms (needs, wants, demands, product, exchange, transactions, markets); brief history of marketing in Nigeria; functions of marketing."
+            },
+            {
+              "code": "MKTG-FOUND-2",
+              "description": "Marketing Concepts: meaning; various marketing concepts (production, product, selling, marketing and societal marketing)."
+            },
+            {
+              "code": "MKTG-FOUND-3",
+              "description": "Marketing Mix and Marketing Environment: meaning; elements (4 Ps); marketing environment; factors affecting marketing environment (political, cultural, religious, economic, technological, social)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Products and Markets",
+      "abbreviation": "PRODMKT",
+      "subStrands": [
+        {
+          "name": "Products, Markets, Consumer Behaviour and Organisational Behaviour",
+          "objectives": [
+            {
+              "code": "MKTG-PRODMKT-1",
+              "description": "Products: meaning; classification (industrial goods, consumer goods, services, primary and secondary products, mineral products — oil and non-oil); distinctions between classes of products."
+            },
+            {
+              "code": "MKTG-PRODMKT-2",
+              "description": "Markets: meaning; classification — consumer, organisation (industrial, reseller and government)."
+            },
+            {
+              "code": "MKTG-PRODMKT-3",
+              "description": "Consumer and Organisational Behaviour: meaning; influencing factors; decision process in logical order."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketing Management",
+      "abbreviation": "MGMT",
+      "subStrands": [
+        {
+          "name": "Planning, Research, Pricing, Advertising, Sales Promotion and Merchandising",
+          "objectives": [
+            {
+              "code": "MKTG-MGMT-1",
+              "description": "Marketing Planning and Research: meaning, process and importance; elements of marketing planning; information required; reasons for marketing planning and research; utilisation of feedback."
+            },
+            {
+              "code": "MKTG-MGMT-2",
+              "description": "Pricing: meaning; strategies (haggling, cost-plus, demand and competition); price determinants."
+            },
+            {
+              "code": "MKTG-MGMT-3",
+              "description": "Advertising: definition; functions; media — meaning, types, advantages and disadvantages."
+            },
+            {
+              "code": "MKTG-MGMT-4",
+              "description": "Sales Promotion: meaning and functions; forms — price-off, coupons, salesmen competition, loyalty schemes, premium offers, trade-in-allowance, sampling, training schemes, merchandising incentives."
+            },
+            {
+              "code": "MKTG-MGMT-5",
+              "description": "Merchandising: meaning; elements (packaging, branding and labelling); influencing factors; functions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Distribution and Logistics",
+      "abbreviation": "DISTRIB",
+      "subStrands": [
+        {
+          "name": "Distribution, Transportation and Warehousing",
+          "objectives": [
+            {
+              "code": "MKTG-DISTRIB-1",
+              "description": "Distribution: definition; channels of distribution (definition and types); factors influencing choice of distribution channels; functions of channel members."
+            },
+            {
+              "code": "MKTG-DISTRIB-2",
+              "description": "Transportation: meaning, mode, choice and importance; documents used in transportation; factors affecting choice of transportation."
+            },
+            {
+              "code": "MKTG-DISTRIB-3",
+              "description": "Warehousing: meaning, types and functions; activities in the warehouse."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Market Institutions and International Marketing",
+      "abbreviation": "INTL",
+      "subStrands": [
+        {
+          "name": "Market Unions, Facilitators, International Marketing, ICT and Entrepreneurship",
+          "objectives": [
+            {
+              "code": "MKTG-INTL-1",
+              "description": "Market Unions and Facilitators: market unions (meaning and types); roles of market unions in local markets; market facilitators — meaning, types and roles."
+            },
+            {
+              "code": "MKTG-INTL-2",
+              "description": "International Marketing: meaning, importance/reasons and methods; influencing factors; guiding rules and regulations."
+            },
+            {
+              "code": "MKTG-INTL-3",
+              "description": "ICT in Marketing: e-marketing (electronic marketing) — meaning, importance, uses, ethics and abuses."
+            },
+            {
+              "code": "MKTG-INTL-4",
+              "description": "Entrepreneurship in Marketing: meaning; setting up a marketing business; business plan; marketing of products."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

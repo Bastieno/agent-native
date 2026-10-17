@@ -414,6 +414,7 @@ async function executeJob(
 
         try {
           await runAgentLoop({
+            runSource: "job",
             engine,
             model,
             systemPrompt,

@@ -1,0 +1,121 @@
+{
+  "found": true,
+  "subject": "Islamic Studies",
+  "subjectCode": "IS",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Qur'anic Studies and Recitation",
+      "abbreviation": "QSR",
+      "subStrands": [
+        {
+          "name": "Tajweed and Qur'anic Surahs",
+          "objectives": [
+            {
+              "code": "IS-QSR-1",
+              "description": "Recite selected short surahs (Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas, Al-Asr) with correct pronunciation and tajweed"
+            },
+            {
+              "code": "IS-QSR-2",
+              "description": "Identify and apply basic rules of tajweed including madd, ghunnah, idgham, and ikhfa in recitation"
+            },
+            {
+              "code": "IS-QSR-3",
+              "description": "Translate and explain the meanings of selected Qur'anic surahs and apply their teachings to daily life"
+            },
+            {
+              "code": "IS-QSR-4",
+              "description": "Describe the importance of the Qur'an as the primary source of guidance for Muslims"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hadith and Sunnah",
+      "abbreviation": "HS",
+      "subStrands": [
+        {
+          "name": "Prophetic Traditions and Their Application",
+          "objectives": [
+            {
+              "code": "IS-HS-1",
+              "description": "Identify selected hadith of the Prophet Muhammad (SAW) and explain their moral and practical relevance"
+            },
+            {
+              "code": "IS-HS-2",
+              "description": "Distinguish between authentic (sahih) and weak hadith and explain the importance of hadith sciences"
+            },
+            {
+              "code": "IS-HS-3",
+              "description": "Apply prophetic teachings on honesty, cleanliness, respect for elders, and good neighbourliness in daily conduct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Islamic History and Civilisation",
+      "abbreviation": "IHC",
+      "subStrands": [
+        {
+          "name": "Prophets, Early Islam, and Islam in Nigeria",
+          "objectives": [
+            {
+              "code": "IS-IHC-1",
+              "description": "Narrate the lives and missions of selected prophets of Allah including Ibrahim, Musa, Isa, and Muhammad (SAW)"
+            },
+            {
+              "code": "IS-IHC-2",
+              "description": "Describe the early history of Islam, the Hijrah, and the establishment of the Muslim community in Medina"
+            },
+            {
+              "code": "IS-IHC-3",
+              "description": "Explain the spread of Islam in West Africa and its introduction to northern Nigeria through trans-Saharan trade"
+            },
+            {
+              "code": "IS-IHC-4",
+              "description": "Describe the Sokoto Jihad led by Usman Dan Fodio and its impact on Islam in Nigeria"
+            },
+            {
+              "code": "IS-IHC-5",
+              "description": "Identify notable Islamic scholars and leaders in Nigeria and their contributions to education and governance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Islamic Worship and Practice",
+      "abbreviation": "IWP",
+      "subStrands": [
+        {
+          "name": "Pillars of Islam and Moral Conduct",
+          "objectives": [
+            {
+              "code": "IS-IWP-1",
+              "description": "Explain the Five Pillars of Islam (Shahadah, Salat, Zakat, Sawm, Hajj) and their significance for Muslim life"
+            },
+            {
+              "code": "IS-IWP-2",
+              "description": "Demonstrate correct performance of wudu (ablution) and the five daily prayers with their intentions and postures"
+            },
+            {
+              "code": "IS-IWP-3",
+              "description": "Explain the importance of fasting in Ramadan (Sawm), its spiritual benefits, and rules of the fast"
+            },
+            {
+              "code": "IS-IWP-4",
+              "description": "Describe Islamic values of honesty, justice, compassion, and modesty and how they guide a Muslim's interaction with others"
+            },
+            {
+              "code": "IS-IWP-5",
+              "description": "Identify Islamic festivals (Eid al-Fitr, Eid al-Adha) and explain their significance and modes of celebration"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
