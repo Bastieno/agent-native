@@ -1,10 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
-import { IconClipboardList } from "@tabler/icons-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { IconChevronDown, IconClipboardList } from "@tabler/icons-react";
+import { cn } from "@/lib/utils";
+import { isCurrentWeek } from "@shared/term-weeks";
+import { splitWorkTitle } from "@shared/work-title";
 import { useMyWeek } from "@/hooks/use-my-week";
 import { useRole } from "@/hooks/use-role";
 import { useSchoolConfig } from "@/hooks/use-school-config";
@@ -132,25 +140,116 @@ export default function StudentDashboard() {
       {/* Material still has to be findable. Taking it out of the work count
           was right; taking it off the page would have hidden the reading a
           teacher published. */}
-      {toRead.length > 0 ? (
-        <div>
-          <h2 className="mb-3 text-sm font-medium">To read and practise</h2>
-          <div className="space-y-2">
-            {toRead.map((a: any) => (
-              <Link
-                key={a.assessmentId}
-                to={`/student/assessments/${a.assessmentId}`}
-                className="flex items-center justify-between rounded-lg border p-3 transition-colors hover:bg-accent/50"
-              >
-                <p className="min-w-0 truncate text-sm">{a.title}</p>
-                <span className="shrink-0 text-xs text-muted-foreground">
-                  {a.format ?? "Nothing to hand in"}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      ) : null}
+      {toRead.length > 0 ? <ReadingBySubject items={toRead} /> : null}
+    </div>
+  );
+}
+
+type Material = {
+  assessmentId: string;
+  title: string;
+  subjectName: string | null;
+  className: string | null;
+  lessonDate: string | null;
+  format: string | null;
+};
+
+/**
+ * What there is to read and practise, a subject at a time.
+ *
+ * Every reading and card deck from every class used to sit in one run of
+ * rows with nothing to say which subject any of it belonged to. Here each
+ * subject is one row, showing this week's piece (or the latest, when this
+ * week has none); the rest of that subject's material opens beneath it.
+ */
+function ReadingBySubject({ items }: { items: Material[] }) {
+  const [open, setOpen] = useState<string | null>(null);
+
+  const bySubject = new Map<string, Material[]>();
+  for (const m of items) {
+    const key = m.subjectName ?? m.className ?? "Other";
+    bySubject.set(key, [...(bySubject.get(key) ?? []), m]);
+  }
+  // A title that is only the subject's own name ("Week 11 revision: English
+  // Language") says nothing under that subject's heading; the kind does.
+  const topicOf = (m: Material, subject: string) => {
+    const t = splitWorkTitle(m.title);
+    return t.topic.toLowerCase() === subject.toLowerCase() && t.kind
+      ? t.kind.charAt(0).toUpperCase() + t.kind.slice(1)
+      : t.topic;
+  };
+  // Newest week first inside a subject, by the week in the title.
+  const weekOf = (m: Material) => splitWorkTitle(m.title).week ?? 0;
+  const subjects = [...bySubject.entries()]
+    .map(([name, list]) => {
+      const sorted = [...list].sort((a, b) => weekOf(b) - weekOf(a));
+      const now = sorted.find((m) => isCurrentWeek(m.lessonDate));
+      return { name, sorted, featured: now ?? sorted[0], isNow: !!now };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  return (
+    <div>
+      <h2 className="mb-3 text-sm font-medium">To read and practise</h2>
+      <div className="divide-y rounded-lg border">
+        {subjects.map((s) => {
+          const f = splitWorkTitle(s.featured.title);
+          return (
+            <Collapsible
+              key={s.name}
+              open={open === s.name}
+              onOpenChange={(o) => setOpen(o ? s.name : null)}
+            >
+              <CollapsibleTrigger className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left hover:bg-accent/50">
+                <div className="min-w-0">
+                  <p className="text-sm font-medium">{s.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">
+                    {s.isNow ? "This week" : "Latest"}
+                    {f.week ? ` · Week ${f.week}` : ""} ·{" "}
+                    {topicOf(s.featured, s.name)}
+                  </p>
+                </div>
+                <div className="flex shrink-0 items-center gap-3 text-xs text-muted-foreground">
+                  {s.sorted.length} {s.sorted.length === 1 ? "item" : "items"}
+                  <IconChevronDown
+                    size={16}
+                    className={cn(
+                      "transition-transform",
+                      open === s.name && "rotate-180",
+                    )}
+                  />
+                </div>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <div className="divide-y border-t bg-muted/20">
+                  {s.sorted.map((m) => {
+                    const t = splitWorkTitle(m.title);
+                    return (
+                      <Link
+                        key={m.assessmentId}
+                        to={`/student/assessments/${m.assessmentId}`}
+                        className="flex items-center justify-between gap-4 py-2.5 pl-8 pr-4 hover:bg-accent/50"
+                      >
+                        <div className="min-w-0">
+                          <p className="truncate text-sm">
+                            {topicOf(m, s.name)}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            {t.week ? `Week ${t.week}` : null}
+                          </p>
+                        </div>
+                        <span className="shrink-0 text-xs text-muted-foreground">
+                          {m.format ?? t.kind ?? "Nothing to hand in"}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
+          );
+        })}
+      </div>
     </div>
   );
 }

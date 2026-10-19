@@ -83,6 +83,46 @@ export default defineAction({
 
     const activityIds = activities.map((a: { id: string }) => a.id);
 
+    // Which subject and class each piece belongs to, and which week of the
+    // term it was set for. Without them a learner's list is every piece from
+    // every class in one run, with nothing to say what any of it is for. Only
+    // the week's date is read from the lesson note: the note itself is the
+    // teacher's, never the class's.
+    const classRows = await db
+      .select({
+        id: schema.classes.id,
+        name: schema.classes.name,
+        subjectName: schema.subjects.name,
+      })
+      .from(schema.classes)
+      .leftJoin(
+        schema.subjects,
+        eq(schema.classes.subjectId, schema.subjects.id),
+      )
+      .where(inArray(schema.classes.id, classIds));
+    const classOf = new Map<string, { name: string; subjectName: string }>(
+      classRows.map((c: any) => [
+        c.id,
+        { name: c.name, subjectName: c.subjectName ?? c.name },
+      ]),
+    );
+    const noteIds = [
+      ...new Set(
+        activities.map((a: any) => a.lessonNoteId).filter(Boolean) as string[],
+      ),
+    ];
+    const noteDates = new Map<string, string | null>();
+    if (noteIds.length) {
+      const notes = await db
+        .select({
+          id: schema.lessonNotes.id,
+          lessonDate: schema.lessonNotes.lessonDate,
+        })
+        .from(schema.lessonNotes)
+        .where(inArray(schema.lessonNotes.id, noteIds));
+      for (const n of notes) noteDates.set(n.id, n.lessonDate ?? null);
+    }
+
     // Which variant this learner was given, where anyone said so.
     const assigned = await db
       .select()
@@ -126,6 +166,12 @@ export default defineAction({
       return {
         assessmentId: activity.id,
         classId: activity.classId,
+        className: classOf.get(activity.classId)?.name ?? null,
+        subjectName: classOf.get(activity.classId)?.subjectName ?? null,
+        // The Monday of the week this was set for, when it belongs to one.
+        lessonDate: activity.lessonNoteId
+          ? (noteDates.get(activity.lessonNoteId) ?? null)
+          : null,
         title: activity.title,
         assessmentType: activity.assessmentType,
         format: activity.format,
