@@ -413,10 +413,14 @@ export default function StudentAssessment() {
             )}
           </div>
         ) : oneAtATime ? null : nothingToHandIn ? (
-          <p className="text-xs text-muted-foreground">
-            There is nothing to hand in for this — work through it as many times
-            as you like.
-          </p>
+          // Not before it opens: "work through it" sits badly under a notice
+          // saying there is nothing to work through yet.
+          timing?.notYetOpen ? null : (
+            <p className="text-xs text-muted-foreground">
+              There is nothing to hand in for this — work through it as many
+              times as you like.
+            </p>
+          )
         ) : (
           !isSubmitted &&
           !needsToStart &&
