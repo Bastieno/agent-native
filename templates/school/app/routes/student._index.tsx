@@ -17,7 +17,7 @@ import { useMyWeek } from "@/hooks/use-my-week";
 import { useRole } from "@/hooks/use-role";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { firstNameOrNull } from "@shared/person-name";
-import { countOfWork, workWords } from "@shared/terminology";
+import { countOfWork } from "@shared/terminology";
 import { submissionStatusWord } from "@/lib/submission-status";
 
 export default function StudentDashboard() {
@@ -66,8 +66,6 @@ export default function StudentDashboard() {
   // A name only when someone gave one: signing up derives a name from the
   // email address, and "Welcome back, student1" is worse than no name at all.
   const firstName = firstNameOrNull(user?.name, user?.email);
-  // The school's own words, plural included — "3 homework", not "3 homeworks".
-  const work = workWords(config as any);
 
   return (
     <div className="p-6 space-y-6">
@@ -79,7 +77,7 @@ export default function StudentDashboard() {
         <p className="mt-1 text-sm text-muted-foreground">
           {pending.length > 0
             ? `You have ${countOfWork(pending.length, config as any)} to hand in.`
-            : `Nothing to hand in right now. Your ${work.many} appear here when a teacher sets them.`}
+            : `Nothing to hand in right now. Anything a teacher sets will appear here.`}
         </p>
         {next ? (
           <p className="mt-1 text-sm text-muted-foreground">
