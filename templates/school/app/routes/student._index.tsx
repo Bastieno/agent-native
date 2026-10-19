@@ -51,8 +51,10 @@ export default function StudentDashboard() {
       !a.window?.hasClosed &&
       (a.submissionStatus === "not_started" || a.submissionStatus === "draft"),
   );
-  /** Published to read or practise with, not owed. */
-  const toRead = assessments.filter((a: any) => a.isMaterial);
+  /** Published to read or practise with, not owed, and already open. */
+  const toRead = assessments.filter(
+    (a: any) => a.isMaterial && !a.window?.notYetOpen,
+  );
 
   useEffect(() => {
     sync({

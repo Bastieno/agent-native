@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import type { WrittenNote } from "./lesson-note-writer.js";
 import { actorLabel, describeActors } from "./lesson-attribution.js";
 import { sharedWithClass } from "./shared-with-class.js";
+import { heldBack } from "../../shared/held-back.js";
 
 /**
  * What the class reads, written beside what the teacher plans.
@@ -159,6 +160,7 @@ export async function materialForLesson(
       responseMode: schema.assessments.responseMode,
       durationMinutes: schema.assessments.durationMinutes,
       dueDate: schema.assessments.dueDate,
+      opensAt: schema.assessments.opensAt,
       objectivesJson: schema.assessments.objectivesJson,
       // Who gave it to the class. Shown to the teacher so an admin's
       // publishing is something they read, not something they discover.
@@ -166,7 +168,11 @@ export async function materialForLesson(
       publishedAt: schema.assessments.publishedAt,
     })
     .from(schema.assessments)
-    .where(and(...conditions));
+    .where(and(...conditions))
+    // A class does not see material its teacher has scheduled for later.
+    .then((all: any[]) =>
+      opts.publishedOnly ? all.filter((r) => !heldBack(r)) : all,
+    );
   // Who published each one, in words. A learner is not shown this (they see
   // only published work anyway, and whose decision it was is staffroom
   // business), so it is resolved only when drafts are being returned too.

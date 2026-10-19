@@ -854,6 +854,13 @@ box entirely and tells the learner there is nothing to hand in.
 | `opensAt`  | everyone   | work scheduled for a later lesson   |
 | `closesAt` | everyone   | a hard deadline for the whole class |
 
+**Material waits for its week.** A reading or card deck with an `opensAt` in the
+future is not listed to learners at all (dashboard, class page, lesson page)
+until it opens; work with one stays listed and says when it opens, so a learner
+knows what is coming. `update-assessment --opensAt` sets it on something
+already made, which is how a week's reading, drafted when the notes were
+planned, is held for its Monday.
+
 **Ask for a closing date on anything handed in.** Work closes by itself when
 its marks are published, but learners see the right answers on their returned
 paper only once it closes, so work that is never marked, or marked late, needs
@@ -1384,7 +1391,7 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 | -------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `list-assessments`   | `--classId`                                                                                                     |
 | `create-assessment`  | `--classId [--unitId] --title --type --dueDate --totalPoints`                                                   |
-| `update-assessment`  | `--id ...fields`                                                                                                |
+| `update-assessment`  | `--id ...fields [--opensAt <ISO>]` — an empty `--opensAt` opens it at once                                      |
 | `publish-assessment` | `--id`                                                                                                          |
 | `close-assessment`   | `--id`                                                                                                          |
 | `list-variants`      | `--assessmentId`                                                                                                |

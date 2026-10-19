@@ -10,7 +10,7 @@ import {
   type WeekContent,
 } from "./content.js";
 import { learnersOf } from "./context.js";
-import { markOpenAnswers, sit } from "./teaching.js";
+import { markOpenAnswers, opensOn, sit } from "./teaching.js";
 import { abilityInWeek } from "../population.js";
 
 /**
@@ -126,6 +126,7 @@ export async function revisionWeek(run: ShowcaseRun): Promise<void> {
         ].join("\n"),
       gradingMode: "none",
       responseMode: "none",
+      opensAt: opensOn(run, week),
       publish: true,
       confirm: true,
     });

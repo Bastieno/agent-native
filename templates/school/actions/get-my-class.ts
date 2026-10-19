@@ -5,6 +5,7 @@ import { eq, and, desc, asc, inArray, sql } from "drizzle-orm";
 import { resolveStudentId } from "../server/lib/student-session.js";
 import { z } from "zod";
 import { sharedWithClass } from "../server/lib/shared-with-class.js";
+import { heldBack } from "../shared/held-back.js";
 
 /**
  * A class as a learner sees it: what it is, who teaches it, the material that
@@ -87,6 +88,7 @@ export default defineAction({
             renderAs: schema.assessments.renderAs,
             gradingMode: schema.assessments.gradingMode,
             responseMode: schema.assessments.responseMode,
+            opensAt: schema.assessments.opensAt,
           })
           .from(schema.assessments)
           .where(
@@ -99,15 +101,20 @@ export default defineAction({
             ),
           )
       : [];
+    // A week whose material has not opened yet is not listed, and does not
+    // count towards what a listed week holds.
     const hasMaterial = new Set(
-      openWeeks.map((w: any) => w.lessonNoteId).filter(Boolean),
+      openWeeks
+        .filter((w: any) => !heldBack(w))
+        .map((w: any) => w.lessonNoteId)
+        .filter(Boolean),
     );
     // What is in each week, by shape rather than by the school's format
     // name — so a week can say "Reading · Cards" without the page having to
     // know what "key terms" means.
     const shapesByWeek = new Map<string, string[]>();
     for (const w of openWeeks as any[]) {
-      if (!w.lessonNoteId) continue;
+      if (!w.lessonNoteId || heldBack(w)) continue;
       if (w.gradingMode !== "none" || w.responseMode !== "none") continue;
       const list = shapesByWeek.get(w.lessonNoteId) ?? [];
       list.push(w.renderAs ?? "prose");
@@ -129,15 +136,17 @@ export default defineAction({
         durationMinutes: schema.assessments.durationMinutes,
         dueDate: schema.assessments.dueDate,
         status: schema.assessments.status,
+        opensAt: schema.assessments.opensAt,
       })
       .from(schema.assessments)
       .where(
         and(eq(schema.assessments.classId, rawArgs.classId), sharedWithClass()),
       )
       .orderBy(asc(schema.assessments.dueDate));
+    const listed = assessments.filter((a: any) => !heldBack(a));
 
     // The student's own status per assessment — never anyone else's.
-    const assessmentIds = assessments.map((a: any) => a.id);
+    const assessmentIds = listed.map((a: any) => a.id);
     const mySubs =
       studentId && assessmentIds.length > 0
         ? await db
@@ -159,7 +168,7 @@ export default defineAction({
     return {
       cls: { ...cls, teacherName },
       lessons,
-      assessments: assessments.map((a: any) => ({
+      assessments: listed.map((a: any) => ({
         ...a,
         // Something to read is not something to hand in. Counting the two
         // together told a learner they owed seven pieces of work when they
@@ -168,7 +177,7 @@ export default defineAction({
         submissionStatus: statusByAssessment[a.id] ?? "not_started",
       })),
       // What is actually owed, for anything that wants to say a number.
-      workSet: assessments.filter(
+      workSet: listed.filter(
         (a: any) => !(a.gradingMode === "none" && a.responseMode === "none"),
       ).length,
     };

@@ -24,6 +24,12 @@ export default defineAction({
       .optional(),
     dueDate: z.string().optional().describe("ISO date string, e.g. 2026-06-15"),
     totalPoints: z.number().optional(),
+    opensAt: z
+      .string()
+      .optional()
+      .describe(
+        "ISO date/time it becomes available to the class. Until then learners see its title and when it opens, not its content. Pass an empty string to open it at once.",
+      ),
     lessonNoteId: z
       .string()
       .optional()
@@ -51,6 +57,9 @@ export default defineAction({
         args.lessonNoteId === "" ? null : args.lessonNoteId;
     }
     if (args.totalPoints !== undefined) updates.totalPoints = args.totalPoints;
+    // Empty string clears it, for the same reason as the lesson above.
+    if (args.opensAt !== undefined)
+      updates.opensAt = args.opensAt === "" ? null : args.opensAt;
 
     await db
       .update(schema.assessments)

@@ -78,6 +78,18 @@ export function friday(run: ShowcaseRun, week: number): string {
   return d.toISOString().slice(0, 10);
 }
 
+/**
+ * When a week's material opens: its Monday, at the start of the school day.
+ * Reading and cards carry no hand-in, so they can wait for their week without
+ * stopping the simulation sitting the term's work; held back, a learner sees
+ * only what a real term would have opened by the date they sign in.
+ */
+export function opensOn(run: ShowcaseRun, week: number): string {
+  const d = new Date(`${friday(run, week)}T07:45:00+01:00`);
+  d.setUTCDate(d.getUTCDate() - 4);
+  return d.toISOString();
+}
+
 /** Which marked piece a class gets this week: the rotation, offset per class. */
 export function kindFor(
   run: ShowcaseRun,
@@ -517,8 +529,14 @@ export async function teachClassWeek(
       title: `Week ${week} reading: ${written.reading.title}`,
     });
   }
-  if (readingId)
+  if (readingId) {
+    // Published now, open in its own week.
+    await client.as(cls.teacher, "update-assessment", {
+      id: readingId,
+      opensAt: opensOn(run, week),
+    });
     await client.as(cls.teacher, "publish-assessment", { id: readingId });
+  }
 
   // A card deck every other week, with nothing to hand in.
   if (teachingIndex % 2 === 1) {
@@ -535,6 +553,7 @@ export async function teachClassWeek(
         content: cards.map((c) => `**${c.front}** — ${c.back}`).join("\n\n"),
         gradingMode: "none",
         responseMode: "none",
+        opensAt: opensOn(run, week),
         publish: true,
         confirm: true,
       });
