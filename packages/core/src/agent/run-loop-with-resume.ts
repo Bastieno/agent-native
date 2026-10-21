@@ -23,6 +23,7 @@
 
 import {
   runAgentLoop,
+  applyAgentRunGate,
   appendAgentLoopContinuation,
   isResumableEngineError,
   continuationReasonForResumableError,
@@ -51,9 +52,24 @@ export const MAX_RUN_LOOP_CONTINUATIONS = 6;
  * call goes straight to `runAgentLoop` with no wrapping.
  */
 export async function runAgentLoopDirectWithSoftTimeout(
-  opts: Parameters<typeof runAgentLoop>[0],
+  rawOpts: Parameters<typeof runAgentLoop>[0],
   softTimeoutMs?: number,
 ): Promise<Awaited<ReturnType<typeof runAgentLoop>>> {
+  // Gate the run once, here: each continuation below is the same run, so it
+  // must not be counted again, and must keep the model the gate chose.
+  const gated = await applyAgentRunGate(rawOpts);
+  if (gated.reply !== undefined) {
+    rawOpts.send({ type: "text", text: gated.reply });
+    rawOpts.send({ type: "done" });
+    return {
+      inputTokens: 0,
+      outputTokens: 0,
+      cacheReadTokens: 0,
+      cacheWriteTokens: 0,
+      model: rawOpts.model,
+    };
+  }
+  const opts = gated.opts;
   const timeoutMs = resolveRunSoftTimeoutMs(softTimeoutMs);
   if (timeoutMs <= 0) return runAgentLoop(opts);
 

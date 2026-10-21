@@ -62,6 +62,12 @@ export default function TeacherLayout() {
     <AgentSidebar
       emptyStateText="How can I help you with your classes?"
       dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
+      // The admin sets each role's model (Settings → Assistant) and the server
+      // enforces it, so a picker here would offer a choice it cannot honour.
+      // Someone who needs a stronger model asks the admin.
+      showModelSelector={false}
+      // Engine, keys and limits are the admin's to set, not a teacher's.
+      showSettings={false}
       overlayBreakpointPx={1279}
       defaultOpen={
         typeof window !== "undefined" ? window.innerWidth >= 1280 : false

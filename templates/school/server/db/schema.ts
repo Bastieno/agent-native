@@ -220,6 +220,19 @@ export const classSchedules = table("class_schedules", {
  * fingerprint is the term's lessons when it was drafted: accepting refuses a
  * draft the timetable has moved on from.
  */
+/**
+ * Messages each person sent the assistant on one school day. The id is
+ * "<userId>:<YYYY-MM-DD>", the day counted in the school's own timezone.
+ */
+export const agentMessageUsage = table("agent_message_usage", {
+  id: text("id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  userId: text("user_id").notNull(),
+  day: text("day").notNull(),
+  count: integer("count").notNull().default(0),
+  updatedAt: text("updated_at").notNull(),
+});
+
 export const timetableProposals = table("timetable_proposals", {
   id: text("id").primaryKey(),
   schoolId: text("school_id").notNull(),

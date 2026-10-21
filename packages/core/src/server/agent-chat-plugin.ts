@@ -23,6 +23,7 @@ import {
   type ActionEntry,
 } from "../agent/production-agent.js";
 import { runAgentLoopDirectWithSoftTimeout } from "../agent/run-loop-with-resume.js";
+import { setAgentRunGate } from "../agent/run-gate.js";
 import {
   A2A_USAGE_LABEL,
   MCP_ASK_APP_USAGE_LABEL,
@@ -1900,6 +1901,14 @@ export interface AgentChatPluginOptions {
    */
   disableDbDataTools?: boolean;
   /**
+   * Gate for agent runs that are not chat messages — sub-agents, automations,
+   * scheduled jobs, integrations, agent-to-agent and MCP calls. Each asks it
+   * first, with the person and what started the run, and it may refuse with a
+   * reply, force the model or narrow the tools, as `prepareRequest` does for a
+   * chat message. Without it those runs skip whatever an app enforces there.
+   */
+  runGate?: import("../agent/run-gate.js").AgentRunGate;
+  /**
    * Optional callback to append template-specific context to the system
    * prompt on each request. Runs after AGENTS.md / skills / memory are
    * loaded and before the schema block — use it to inject dynamic SQL
@@ -1928,6 +1937,14 @@ export interface AgentChatPluginOptions {
    * Optional per-template request normalizer. Runs after authentication and
    * before the model sees the message, so apps can translate chat attachments
    * into template-native file handles while preserving the user's visible text.
+   *
+   * It may also return `model` to run the turn on a model of the app's
+   * choosing — the client's model and engine picks are then ignored, which is
+   * how an app keeps a role on a cheaper model — or `reply` to answer with a
+   * fixed message without calling a model (a switched-off agent, a used-up
+   * allowance), or `toolFilter` to narrow the tools for this request (e.g. by
+   * role): a filtered-out tool is neither offered nor run, and tool-search
+   * cannot surface it.
    */
   prepareRequest?: (details: {
     event: any;
@@ -1945,11 +1962,20 @@ export interface AgentChatPluginOptions {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        /** Run this turn on this model, whatever the client picked. */
+        model?: string;
+        /** Answer with this text and do not run the model at all. */
+        reply?: string;
+        /** Only the tools this returns true for are offered or run. */
+        toolFilter?: (name: string) => boolean;
       }
     | Promise<void | {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        model?: string;
+        reply?: string;
+        toolFilter?: (name: string) => boolean;
       }>;
   /**
    * Use ONLY the template's `systemPrompt` and the actions list — skip the
@@ -3195,6 +3221,7 @@ export function createAgentChatPlugin(
       // so the agent can only touch data through the app's own actions, where
       // per-role and per-row rules live. `db-schema` is kept: it exposes table
       // shapes, not rows.
+      setAgentRunGate(options?.runGate ?? null);
       const dbScripts = options?.disableDbDataTools
         ? Object.fromEntries(
             Object.entries(allDbScripts).filter(
@@ -3802,6 +3829,7 @@ export function createAgentChatPlugin(
 
           const a2aUsage = await runAgentLoopDirectWithSoftTimeout(
             {
+              runSource: "a2a",
               engine: a2aEngine,
               model,
               systemPrompt,
@@ -4022,6 +4050,7 @@ export function createAgentChatPlugin(
 
           const mcpUsage = await runAgentLoopDirectWithSoftTimeout(
             {
+              runSource: "mcp",
               engine: mcpEngine,
               model,
               systemPrompt,

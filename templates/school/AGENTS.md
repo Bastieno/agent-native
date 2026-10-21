@@ -675,6 +675,69 @@ When asked "How is Grade 9 performing?":
 3. `identify-struggling-students --gradeLevel "Grade 9" --threshold 0.5`
 4. Present structured report with class averages, distribution, weak units, at-risk students, and recommendation
 
+### A4b. The assistant's settings
+
+The admin decides who has you, on which model, and how many messages a day.
+It lives in the school config under `agent`, read with `get-school-config`
+(plus `agentModelChoices`) and changed with
+`update-school-config --agent '{...}'`, admin only. An admin finds it at
+Settings → Assistant: the learner switch first, year groups, models and
+limits under Advanced.
+
+```bash
+pnpm action update-school-config --agent '{"learnerAgentEnabled":false}'
+pnpm action update-school-config --agent '{"learnerAgentByYearGroup":{"<gradeLevelId>":true}}'  # null removes it
+pnpm action update-school-config --agent '{"models":{"learner":"claude-haiku-4-5"},"dailyMessageLimits":{"learner":30,"admin":null}}'
+pnpm action get-my-agent-access   # whether the signed-in person has you now, and why not
+```
+
+- **Learners on or off**, school-wide, with a year group allowed to differ. A
+  learner with it off does not see you at all; their messages are refused on
+  the server.
+- **Never while sitting a paper.** A learner who has started a timed paper and
+  not handed it in gets a short reply instead of you, whatever is set; you are
+  back once they submit or the time runs out. Untimed work is not affected.
+- **Model per role** (learner, teacher, admin), from `agentModelChoices` only.
+  Defaults: Haiku for learners, Sonnet for staff. The server forces it for
+  everyone, and the chat has no model picker in any portal. When a teacher
+  asks for a stronger model, say it is the admin's choice and they can ask
+  for it; when an admin asks, offer to change their role's model.
+- **Every value is the school's own.** The defaults below are written into
+  the school's config once — at setup, or the first time an older school's
+  settings are read — and from then on only the stored values are enforced.
+  No limit is a stored `null`.
+- **Daily limit per role**, counted per person per school day in the
+  school's timezone (Africa/Lagos when unset). Defaults: learner 30, teacher
+  200, admin none. Past it the person gets a calm reply in the chat.
+
+**The chat panel differs by role.** Learners get the chat alone: no
+Workspace tab and no settings, and the server refuses a learner's writes to
+personal workspace files and MCP servers and any use of the engine action
+(`server/middleware/learner-limits.ts`). Teachers have no settings gear.
+Changing or disconnecting the AI engine is for org owners and admins only.
+
+**Each role's assistant has its own tool list** (`server/lib/role-tools.ts`):
+the school actions its policy allows, plus moving its own screen and tool
+search. Staff also get memory and workspace files, sub-agents, automations,
+jobs, notifications, progress, web requests and any MCP server they
+connected; admins also get extensions. Learners get none of those: they
+would let a learner rewrite their tutor or run models outside the daily
+limit. Nobody gets browser or computer control, Builder connect, docs
+search, call-agent, chat search or the engine and loop settings (an admin
+changes those in Settings). If something you need is missing, it is not on
+the list — say so rather than looking for a way round it.
+
+**Every run counts, not just chat messages.** Sub-agents, automations,
+scheduled jobs, integrations and agent-to-agent or MCP calls pass the same
+gate as a chat message: each run is one message against that person's daily
+limit and runs on their role's model. A teacher's request that starts three
+sub-agents uses four messages. Say so before fanning work out to sub-agents
+when someone is near their limit.
+
+When an admin asks to change any of this, say what learners will notice ("JSS1
+will lose the assistant from their next message"), confirm, then set it. The
+refusals are the app's, not yours: you never see a refused message.
+
 ### A5. School Customization
 
 #### Adding custom fields
@@ -725,22 +788,22 @@ Extensions are org-scoped so all staff see them.
 
 ### A6. Navigation Map (Admin)
 
-| User says                       | Navigate to                                                                                        |
-| ------------------------------- | -------------------------------------------------------------------------------------------------- |
-| "overview", "home", "dashboard" | `navigate --view=overview`                                                                         |
-| "curriculum"                    | `navigate --view=curriculum`                                                                       |
-| "what's missing for JSS1?"      | `navigate --view=curriculum --gradeLevelId <id>` — only that year group's subjects, counted for it |
-| "show me the Maths curriculum"  | `navigate --view=curriculum --subjectId <id> [--gradeLevelId <id>]`                                |
-| "set up curriculum"             | `navigate --view=curriculum-setup`                                                                 |
-| "staff", "teachers"             | `navigate --view=staff`                                                                            |
-| "students", "roster"            | `navigate --view=students`                                                                         |
-| "classes"                       | `navigate --view=classes`                                                                          |
-| "arms", "SS1A"                  | `navigate --view=arms` — the arms tab of Classes                                                   |
-| "timetable"                     | `navigate --view=timetable [--termId <id>] [--armId <id> \| --teacherUserId <id> \| --room "..."]` |
-| "lesson notes", "who's behind?" | `navigate --view=lessons` — readiness per class; add `--classId` for one, `--lessonId` for a note  |
-| "analytics", "performance"      | `navigate --view=analytics`                                                                        |
-| "settings", "configure"         | `navigate --view=settings`                                                                         |
-| "extensions", "widgets"         | `navigate --view=extensions`                                                                       |
+| User says                       | Navigate to                                                                                         |
+| ------------------------------- | --------------------------------------------------------------------------------------------------- |
+| "overview", "home", "dashboard" | `navigate --view=overview`                                                                          |
+| "curriculum"                    | `navigate --view=curriculum`                                                                        |
+| "what's missing for JSS1?"      | `navigate --view=curriculum --gradeLevelId <id>` — only that year group's subjects, counted for it  |
+| "show me the Maths curriculum"  | `navigate --view=curriculum --subjectId <id> [--gradeLevelId <id>]`                                 |
+| "set up curriculum"             | `navigate --view=curriculum-setup`                                                                  |
+| "staff", "teachers"             | `navigate --view=staff`                                                                             |
+| "students", "roster"            | `navigate --view=students`                                                                          |
+| "classes"                       | `navigate --view=classes`                                                                           |
+| "arms", "SS1A"                  | `navigate --view=arms` — the arms tab of Classes                                                    |
+| "timetable"                     | `navigate --view=timetable [--termId <id>] [--armId <id> \| --teacherUserId <id> \| --room "..."]`  |
+| "lesson notes", "who's behind?" | `navigate --view=lessons` — readiness per class; add `--classId` for one, `--lessonId` for a note   |
+| "analytics", "performance"      | `navigate --view=analytics`                                                                         |
+| "settings", "configure"         | `navigate --view=settings` (`settingsTab: assistant` in `<current-screen>` means the Assistant tab) |
+| "extensions", "widgets"         | `navigate --view=extensions`                                                                        |
 
 ---
 
@@ -1270,6 +1333,7 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 | `setup-school`                                 | `--name --type`                                                                                                                                          |
 | `get-school-config`                            |                                                                                                                                                          |
 | `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels --schoolWeek '{cycleLength,days:[{day,periods:[...]}]}' --rooms '[{name,kind}]'` |
+| `get-my-agent-access`                          | — whether the signed-in person has the assistant now; `blocked` is off, sitting or limit, with messages used and the day's limit                         |
 | `get-custom-fields-schema`                     |                                                                                                                                                          |
 | `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                                                                                |
 | `list-academic-years` / `create-academic-year` | `--name --startDate --endDate [--setActive]` — upcoming unless `--setActive` or the school has no current year                                           |

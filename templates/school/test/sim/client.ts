@@ -338,6 +338,84 @@ export class Client {
   }
 
   /** The same, where a refusal is the expected answer. */
+  /**
+   * Send the assistant one message as someone, the way the chat panel does.
+   *
+   * No model needs to answer for this to say something: a message the school
+   * refuses comes back at once as the app's own reply, and one it lets
+   * through carries the model it will run on (`X-Agent-Model`) before any
+   * model is called — so the request is dropped as soon as that is known.
+   */
+  async chat(
+    persona: Persona,
+    message: string,
+    pick: { model?: string; engine?: string } = {},
+  ): Promise<{ status: number; model: string | null; reply: string }> {
+    const abort = new AbortController();
+    const timer = setTimeout(() => abort.abort(), 60_000);
+    const started = Date.now();
+    try {
+      const res = await fetch(`${this.baseUrl}/_agent-native/agent-chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", cookie: persona.cookie },
+        body: JSON.stringify({
+          message,
+          threadId: `sim-${persona.label}-${Date.now()}`,
+          ...pick,
+        }),
+        signal: abort.signal,
+      });
+      const model = res.headers.get("X-Agent-Model");
+      let reply = "";
+      if (model) {
+        abort.abort();
+      } else {
+        for (const line of (await res.text()).split("\n")) {
+          if (!line.startsWith("data: ")) continue;
+          try {
+            const ev = JSON.parse(line.slice(6));
+            if (ev.type === "text") reply += ev.text;
+          } catch {
+            // Not an event.
+          }
+        }
+      }
+      this.calls.push({
+        at: new Date().toISOString(),
+        persona: persona.label,
+        action: "agent-chat",
+        ok: res.ok,
+        ms: Date.now() - started,
+        ...(reply ? { message: reply } : {}),
+      });
+      return { status: res.status, model, reply };
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  /** A framework route the action helper does not cover, as someone. */
+  async raw(
+    persona: Persona,
+    method: Verb,
+    path: string,
+    body?: unknown,
+  ): Promise<{ status: number; body: any }> {
+    const res = await fetch(`${this.baseUrl}${path}`, {
+      method,
+      headers: { "Content-Type": "application/json", cookie: persona.cookie },
+      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+    });
+    const text = await res.text();
+    let parsed: any = text;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      // Not JSON; keep the text.
+    }
+    return { status: res.status, body: parsed };
+  }
+
   async refused(
     persona: Persona,
     action: string,

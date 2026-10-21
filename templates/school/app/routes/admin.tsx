@@ -108,6 +108,10 @@ export default function AdminLayout() {
     <AgentSidebar
       emptyStateText="How can I help you manage your school?"
       dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
+      // The admin sets each role's model (Settings → Assistant) and the server
+      // enforces it, so a picker here would offer a choice it cannot honour.
+      // Someone who needs a stronger model asks the admin.
+      showModelSelector={false}
       // Side by side only on a large desktop; below that the panel overlays
       // the page instead of squeezing navigation + content + chat into one row.
       overlayBreakpointPx={1279}

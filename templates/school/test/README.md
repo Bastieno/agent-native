@@ -16,6 +16,12 @@ as JSON and CSV, report cards for the strongest, middling and weakest learner,
 what a learner sees of their own term, the printed copies of a worksheet, and
 the full call transcript.
 
+`pnpm journey:agent-access` is a small one: a school of two learners, and the
+admin's controls over the assistant — the switch, a year group that differs,
+a paper being sat, the day's limit, and a learner asking for a dearer model.
+Each check sends a real chat message and reads what the server did with it;
+no model is called.
+
 ## What it is
 
 - **`scenarios/`** — the test plan, as a file. A school's year groups, term

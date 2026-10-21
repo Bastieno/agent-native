@@ -101,6 +101,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "get-school-stats": STAFF,
   "get-school-config": EVERYONE, // grading scale, labels — UI needs it
   "update-school-config": ADMIN,
+  // Whether the signed-in person has the assistant right now, and why not.
+  "get-my-agent-access": EVERYONE,
   "set-school-logo": ADMIN,
   "get-custom-fields-schema": STAFF,
   "update-custom-fields-schema": ADMIN,

@@ -721,6 +721,13 @@ export type MultiTabAssistantChatProps = Omit<
    * the composer.
    */
   scope?: ChatThreadScope | null;
+  /**
+   * Show the model picker in the composer. Default: true. Set false when the
+   * app chooses the model on the server (e.g. per role): the picker is then
+   * hidden, the model list is not fetched, and no model is sent with a
+   * message, so nobody is shown a choice that would not be honoured.
+   */
+  showModelSelector?: boolean;
 };
 
 export function MultiTabAssistantChat({
@@ -732,6 +739,7 @@ export function MultiTabAssistantChat({
   storageKey,
   browserTabId,
   scope = null,
+  showModelSelector = true,
   ...props
 }: MultiTabAssistantChatProps) {
   const {
@@ -977,6 +985,7 @@ export function MultiTabAssistantChat({
   }, []);
 
   useEffect(() => {
+    if (!showModelSelector) return;
     refreshEngines();
     window.addEventListener("agent-engine:configured-changed", refreshEngines);
     return () =>
@@ -984,7 +993,7 @@ export function MultiTabAssistantChat({
         "agent-engine:configured-changed",
         refreshEngines,
       );
-  }, [refreshEngines]);
+  }, [refreshEngines, showModelSelector]);
 
   // Parent-child thread mapping — persisted to localStorage.
   // Maps childThreadId → parentThreadId for sub-agent tabs.
@@ -2102,13 +2111,17 @@ export function MultiTabAssistantChat({
                   onSaveThread={handleSaveThread}
                   onGenerateTitle={handleGenerateTitle}
                   onSlashCommand={handleSlashCommand}
-                  selectedModel={modelSelection?.model}
-                  selectedEngine={modelSelection?.engine}
-                  selectedEffort={modelSelection?.effort ?? "auto"}
-                  defaultModel={defaultModel}
-                  availableModels={availableModels}
-                  onModelChange={handleModelChange}
-                  onEffortChange={handleEffortChange}
+                  {...(showModelSelector
+                    ? {
+                        selectedModel: modelSelection?.model,
+                        selectedEngine: modelSelection?.engine,
+                        selectedEffort: modelSelection?.effort ?? "auto",
+                        defaultModel,
+                        availableModels,
+                        onModelChange: handleModelChange,
+                        onEffortChange: handleEffortChange,
+                      }
+                    : {})}
                   onForkChat={() => handleForkChat(tabId)}
                 />
               </div>
