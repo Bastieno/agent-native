@@ -7,35 +7,70 @@ owner's, since it needs their accounts and payment. Nothing has been deployed.
 Owner's goals (2026-10-12): lowest cost; demo first, then a separate
 production environment for a pilot with real schools; repo is private.
 
-## Hosting: one small VPS, three apps
+## Hosting: demo on Netlify now, production decided before the pilot
 
-Run the app as a plain Node server (`pnpm build` then `pnpm start`, Nitro's
-node preset) on one small VPS in Frankfurt, behind Caddy for TLS:
+Decided 2026-10-22: the demo runs on Netlify with a Neon database. Where the
+pilot's production app runs is decided later, once the demo shows real polling
+and agent-run numbers. Moving is a hosting change, not a code change: the
+template is host-agnostic (Nitro, SQL only).
 
-| Subdomain  | Purpose                    | Database                             |
-| ---------- | -------------------------- | ------------------------------------ |
-| `demo.`    | Showcase school, fake data | Neon project/branch `demo`           |
-| `staging.` | Test a branch before prod  | Neon branch `staging` (copy of prod) |
-| `app.`     | Pilot schools, real data   | Neon branch `main`                   |
+| Environment | Host                    | Database                             | When  |
+| ----------- | ----------------------- | ------------------------------------ | ----- |
+| `demo.`     | Netlify (own site)      | Neon branch `demo`                   | now   |
+| `staging.`  | same host as production | Neon branch `staging` (copy of prod) | pilot |
+| `app.`      | Netlify or a VPS, below | Neon branch `main`                   | pilot |
 
-Why a VPS rather than Netlify, Vercel or Cloudflare:
+### Demo on Netlify
 
-- `useDbSync()` polls every 2 seconds per open tab. On per-invocation
-  pricing that becomes the main cost once teachers keep the app open all day.
-  On a VPS it is free.
-- Agent runs (planning, grading, timetabling) are long LLM loops. Serverless
-  function timeouts cut them off. A Node process has no such limit.
-- A small VPS costs a few dollars a month for all three apps.
+- One Netlify site for `demo.`, built from this repo. The sibling templates
+  show the shape: a `netlify.toml` with `NITRO_PRESET=netlify`, a
+  `pnpm --filter school build` command, and an ignore-build entry in
+  `scripts/netlify-ignore-build.mjs` (it has none for `school` yet). The
+  portability rule keeps platform config out of template source, but this repo
+  already carries one per template; follow that convention and keep the school's
+  file minimal.
+- `DATABASE_URL` points at the Neon `demo` branch. Never `drizzle-kit push`;
+  startup migrations create the tables.
+- Env vars set in the Netlify dashboard, not in the repo: `BETTER_AUTH_SECRET`,
+  `BETTER_AUTH_URL` and `APP_URL` (the demo URL), the LLM key with a low
+  spend cap, and `NODE_ENV=production`. Email stays unset on the demo.
+- Functions time out at about 75 seconds. Normal pages and short actions are
+  fine. A long agent run (timetable generation, bulk grading, curriculum
+  drafting) may be cut off, so the demo script avoids them or runs them in
+  smaller steps. Treat any timeout seen on the demo as evidence for the
+  production decision below, not as a demo bug.
+- The demo is built from a laptop: `SIM_PASSWORD=<private> SCHOOL_URL=https://demo.…
+pnpm showcase:school`. Hundreds of short requests; expect it to be slower
+  than locally.
+- Netlify bills function calls and bandwidth. A handful of prospects clicking
+  through is negligible, but leave no tabs open on the demo overnight.
 
-Cost of this choice: we own OS updates, restarts (systemd) and TLS (Caddy
-handles TLS automatically). Template code stays host-agnostic. The VPS config
-(Caddyfile, systemd units, env files) lives outside `templates/school`, in a
-deploy directory or a separate private repo, per the portability rule.
+### Production for the pilot: decide with numbers
 
-Fallback if ops work becomes a burden: Netlify plus Neon, the same setup as
-the sibling templates. The code needs no change; only the hosting config differs.
+Two options; the demo supplies the evidence to choose between them.
 
-### VPS configuration
+**Option A, Netlify again.** Least work. Choose it if the demo shows modest
+polling cost and no agent run hits the time limit.
+
+**Option B, one small VPS.** Run the app as a plain Node server (`pnpm build`
+then `pnpm start`, Nitro's node preset) in Frankfurt behind Caddy, with
+`staging.` and `app.` side by side:
+
+- `useDbSync()` polls every 2 seconds per open tab. On per-invocation pricing
+  that becomes the main cost once teachers keep the app open all day; on a VPS
+  it is free.
+- Agent runs (planning, grading, timetabling) are long LLM loops that
+  serverless time limits cut off. A Node process has no such limit.
+- A flat few euros a month for both environments.
+- Cost: we own OS updates, restarts (systemd) and TLS (Caddy), and a single
+  server is a single point of failure. The Caddyfile, systemd units and env
+  files live outside `templates/school`, in a deploy directory or a separate
+  private repo.
+
+Choose B if the demo shows polling dominating the bill, or agent runs timing
+out.
+
+### VPS configuration (Option B)
 
 - Hetzner Cloud CX23 (2 vCPU, 4 GB RAM, 40 GB SSD), Nuremberg or Falkenstein.
   Upgrade path: CX33 (4 vCPU, 8 GB) by resizing in place.
@@ -49,7 +84,11 @@ the sibling templates. The code needs no change; only the hosting config differs
   later if they get slow.
 - Hetzner server backups switched on (whole-disk snapshots, daily).
 
-### Estimated monthly cost (check prices before buying; Hetzner raised prices in April 2026)
+### Estimated monthly cost
+
+Demo now: Netlify free tier, Neon free tier, a domain (about €1 a month) and
+the LLM spend cap: about €1 plus LLM usage. The table below is Option B for
+the pilot (check prices before buying; Hetzner raised prices in April 2026).
 
 | Item                     | Estimate                                |
 | ------------------------ | --------------------------------------- |
@@ -189,7 +228,10 @@ Still open:
 
 1. Done: the demo password comes from `SIM_PASSWORD`; `db:push` is removed.
    (Provisioning and MCP setup are also built; see above.)
-2. Create the Neon project with `demo`, `main` and `staging` branches.
-3. Provision the VPS, Caddy, and systemd units for the three apps.
-4. Deploy `demo.`, run the showcase against it.
-5. Clear the pilot blockers, then deploy `staging.` and `app.`.
+2. Owner: create the Neon project in Frankfurt with `demo`, `main` and
+   `staging` branches; create the Netlify site; register the domain.
+3. Add the school's `netlify.toml` and ignore-build entry, then deploy `demo.`.
+4. Build the showcase on the demo with `SIM_PASSWORD` set; check the pages and
+   note any timeouts and the Netlify usage after a few days.
+5. Decide Option A or B for production from those numbers.
+6. Clear the pilot blockers, then deploy `staging.` and `app.`.
