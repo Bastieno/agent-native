@@ -113,6 +113,20 @@ invitation as school admin. It is deliberately not an action, so it is never
 one of your tools. If someone asks you for a new school, say the people
 running the app set schools up and will send the head an invitation.
 
+**Sign-up is by invitation.** An address can create an account only when a
+school already counts it as a member (a provisioned head) or still holds an
+invitation for it — by email or by Google alike. Anyone else is told to ask
+their school to invite them, at the exact address the school used. So when
+someone says they cannot sign up, check the address they were invited at
+(`list-staff`, `list-student-invites`); the usual cause is a personal address
+where the school has a work one. Cancel and invite again at the right
+address. Someone with an account but no school (made before sign-up was
+invitation-only) gets no assistant: every run is refused with a reply saying
+so. Local development keeps open sign-up while `AUTO_CREATE_DEFAULT_ORG` is
+set, and production refuses to start without email confirmation of new
+addresses (`server/plugins/signup-policy.ts`). `pnpm report:accountless-users`
+lists accounts that belong to no school; it changes nothing.
+
 Before deploying a change to how sign-in finds invitations, operators run
 `pnpm backfill:org-invitations` once (`--dry-run` first): sign-in looks a
 person up by their own memberships and pending framework invitations, and

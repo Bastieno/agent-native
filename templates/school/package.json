@@ -21,12 +21,14 @@
     "journey:mcp-setup": "tsx test/sim/run-mcp-setup.ts",
     "journey:agent-access": "tsx test/sim/run-agent-access.ts",
     "journey:access": "tsx test/sim/run-access.ts",
+    "journey:invite-only": "tsx test/sim/run-invite-only.ts",
     "showcase:school": "tsx test/sim/run-showcase.ts",
     "showcase:check-content": "tsx test/sim/showcase/check-content.ts",
     "showcase:reset": "rm -f data/showcase.db data/showcase.db-wal data/showcase.db-shm",
     "journeys:reset": "rm -f data/journeys.db data/journeys.db-wal data/journeys.db-shm",
     "provision:school": "tsx ops/provision-school.ts",
-    "backfill:org-invitations": "tsx ops/backfill-org-invitations.ts"
+    "backfill:org-invitations": "tsx ops/backfill-org-invitations.ts",
+    "report:accountless-users": "tsx ops/accountless-users.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",

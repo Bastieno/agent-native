@@ -8,6 +8,7 @@ import { activityWindow } from "./activity-window.js";
 import { ensureAgentSettings } from "./agent-settings-store.js";
 import { toolFilterForRole } from "./role-tools.js";
 import type { SchoolRole } from "./action-policy.js";
+import { isOrgMember } from "./signup-access.js";
 import {
   audienceForRole,
   DEFAULT_SCHOOL_TIMEZONE,
@@ -28,7 +29,7 @@ import {
  * never disagree.
  */
 
-export type AgentBlock = "off" | "sitting" | "limit";
+export type AgentBlock = "none" | "off" | "sitting" | "limit";
 
 export interface AgentAccess {
   audience: AgentAudience;
@@ -52,6 +53,8 @@ interface Who {
   userId: string | null;
   schoolId: string | null;
   role: string | null;
+  /** No profile and no school membership: not part of any school. */
+  noSchool?: boolean;
 }
 
 async function whoIs(
@@ -59,11 +62,16 @@ async function whoIs(
   orgId?: string | null,
 ): Promise<Who> {
   const actor = email ? await actorForEmail(email) : null;
+  // Someone with no profile is setting a school up (a provisioned head) only
+  // if a school counts them as a member. Anyone else belongs to no school and
+  // gets no assistant: it is the deployment's model bill, not theirs.
+  const noSchool = !actor && !(email && (await isOrgMember(email)));
   return {
     userId: actor?.userId ?? null,
-    schoolId: actor?.schoolId ?? orgId ?? null,
+    schoolId: actor?.schoolId ?? (noSchool ? null : (orgId ?? null)),
     // Someone setting a school up has no profile yet and is its admin.
-    role: actor?.schoolRole ?? "school_admin",
+    role: actor?.schoolRole ?? (noSchool ? null : "school_admin"),
+    noSchool,
   };
 }
 
@@ -168,6 +176,9 @@ function blockedMessage(
   if (why === "sitting") {
     return `I'm switched off while you sit "${title}", so the work stays yours. I'll be back once you've handed it in — good luck!`;
   }
+  if (why === "none") {
+    return "You're not part of a school here yet, so the assistant isn't available. Ask your school to invite you.";
+  }
   if (why === "off") {
     return "The school has switched the assistant off for now. If you need help, ask your teacher.";
   }
@@ -183,6 +194,18 @@ export async function agentAccessFor(
 ): Promise<AgentAccess & { who: Who; day: string }> {
   const who = await whoIs(email, orgId);
   const audience = audienceForRole(who.role);
+  if (who.noSchool) {
+    return {
+      who,
+      day: schoolDay(DEFAULT_SCHOOL_TIMEZONE),
+      audience,
+      model: null,
+      used: 0,
+      limit: null,
+      blocked: "none",
+      message: blockedMessage("none", audience, null),
+    };
+  }
   const { settings, timeZone } = await schoolSettings(who.schoolId);
   const day = schoolDay(timeZone);
   // Someone with no school yet (an admin mid-setup) has no settings to read.
