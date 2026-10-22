@@ -261,11 +261,20 @@ export default defineAction({
           .describe(
             "Requests the whole school may hand to the assistant in a school day from people's own AI apps (Claude, ChatGPT). Those apps use the school's tools directly at no cost; only requests handed to the assistant count. null is no limit.",
           ),
+        dailySchoolLimit: z
+          .number()
+          .int()
+          .min(0)
+          .nullable()
+          .optional()
+          .describe(
+            "Messages the whole school may send the assistant in a school day, every way in counted together (chat, sub-agents, jobs, AI apps). Sits above each person's own limit. null is no limit.",
+          ),
       }),
     )
       .optional()
       .describe(
-        "The school's assistant: whether learners have it (school-wide and per year group), which model each role uses, a daily message limit per role, and a school-wide daily limit on requests from people's own AI apps. Pass only what changes; the rest is kept. A learner sitting a timed paper never has it, whatever is set here.",
+        "The school's assistant: whether learners have it (school-wide and per year group), which model each role uses, a daily message limit per role, a daily total for the whole school, and a school-wide daily limit on requests from people's own AI apps. Pass only what changes; the rest is kept. A learner sitting a timed paper never has it, whatever is set here.",
       ),
     customLabels: jsonish(z.record(z.string(), z.string()))
       .optional()
@@ -339,6 +348,10 @@ export default defineAction({
           patch.chatAppDailyLimit !== undefined
             ? patch.chatAppDailyLimit
             : before.chatAppDailyLimit,
+        dailySchoolLimit:
+          patch.dailySchoolLimit !== undefined
+            ? patch.dailySchoolLimit
+            : before.dailySchoolLimit,
       };
     }
     if (args.customLabels) {

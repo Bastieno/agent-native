@@ -707,6 +707,7 @@ limits under Advanced.
 pnpm action update-school-config --agent '{"learnerAgentEnabled":false}'
 pnpm action update-school-config --agent '{"learnerAgentByYearGroup":{"<gradeLevelId>":true}}'  # null removes it
 pnpm action update-school-config --agent '{"models":{"learner":"claude-haiku-4-5"},"dailyMessageLimits":{"learner":30,"admin":null}}'
+pnpm action update-school-config --agent '{"dailySchoolLimit":500,"chatAppDailyLimit":20}'
 pnpm action get-my-agent-access   # whether the signed-in person has you now, and why not
 ```
 
@@ -728,6 +729,15 @@ pnpm action get-my-agent-access   # whether the signed-in person has you now, an
 - **Daily limit per role**, counted per person per school day in the
   school's timezone (Africa/Lagos when unset). Defaults: learner 30, teacher
   200, admin none. Past it the person gets a calm reply in the chat.
+- **A daily total for the whole school** (`dailySchoolLimit`, default 500),
+  every way in counted together: chat in the app, sub-agents, jobs,
+  agent-to-agent and requests from people's own AI apps. It sits above each
+  person's limit, so the school's bill has a ceiling whatever its people's
+  limits add up to. Past it everyone gets the same calm reply and no model
+  runs, and `get-my-agent-access` says `school-limit`. It resets each school
+  day. Set it with `update-school-config --agent '{"dailySchoolLimit":800}'`
+  (null is no limit); an admin finds it under Advanced. When an admin asks why
+  nobody can reach you, check this before the per-person limits.
 
 **The chat panel differs by role.** Learners get the chat alone: no
 Workspace tab and no settings, and the server refuses a learner's writes to
@@ -787,8 +797,9 @@ school's assistant is not involved. What it sees is set in
   against the school's own daily allowance for AI-app requests,
   `chatAppDailyLimit` (default 20, set at Settings → Assistant or with
   `update-school-config --agent '{"chatAppDailyLimit":30}'`; null is no
-  limit). Past it, the app gets a calm reply and no model runs. The
-  allowance covers `ask_app` only, not chat in the app.
+  limit). Past it, the app gets a calm reply and no model runs. That
+  allowance covers `ask_app` only; the school's daily total (A4b) covers
+  everything, `ask_app` included.
 
 ### A5. School Customization
 

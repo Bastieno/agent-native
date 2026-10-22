@@ -29,7 +29,7 @@ import {
  * never disagree.
  */
 
-export type AgentBlock = "none" | "off" | "sitting" | "limit";
+export type AgentBlock = "none" | "off" | "sitting" | "limit" | "school-limit";
 
 export interface AgentAccess {
   audience: AgentAudience;
@@ -168,6 +168,22 @@ async function countMessage(who: Who, day: string): Promise<void> {
 }
 
 /**
+ * Messages the whole school has sent the assistant today: the sum of every
+ * person's count. The AI-app allowance's own row counts the same requests a
+ * second time, so it is left out.
+ */
+async function schoolMessagesToday(
+  schoolId: string,
+  day: string,
+): Promise<number> {
+  const row = (await getDb().get(
+    sql`SELECT COALESCE(SUM(count), 0) AS total FROM agent_message_usage
+        WHERE school_id = ${schoolId} AND day = ${day} AND id NOT LIKE ${"chat-apps:%"}`,
+  )) as { total: number } | undefined;
+  return Number(row?.total ?? 0);
+}
+
+/**
  * Requests the school's members handed to the assistant from their own AI
  * apps today, school-wide. Kept in the same table as each person's count,
  * under a row of the school's own.
@@ -206,6 +222,11 @@ function blockedMessage(
   }
   if (why === "none") {
     return "You're not part of a school here yet, so the assistant isn't available. Ask your school to invite you.";
+  }
+  if (why === "school-limit") {
+    return audience === "learner"
+      ? "The school's assistant has answered all it can for today. It will be back tomorrow — meanwhile, have another go on your own or ask your teacher."
+      : `The school has used today's ${limit} messages with the assistant, across everyone. It resets tomorrow; an admin can raise the school's limit in Settings.`;
   }
   if (why === "off") {
     return "The school has switched the assistant off for now. If you need help, ask your teacher.";
@@ -266,6 +287,19 @@ export async function agentAccessFor(
       };
     }
   }
+  // The school's total sits above each person's own limit.
+  const schoolLimit = settings ? settings.dailySchoolLimit : null;
+  if (
+    schoolLimit !== null &&
+    who.schoolId &&
+    (await schoolMessagesToday(who.schoolId, day)) >= schoolLimit
+  ) {
+    return {
+      ...base,
+      blocked: "school-limit",
+      message: blockedMessage("school-limit", audience, schoolLimit),
+    };
+  }
   if (limit !== null && used >= limit) {
     return {
       ...base,
@@ -295,7 +329,12 @@ export async function gateAgentMessage(details: {
   if (access.blocked && access.message) {
     // A continuation of an answer already under way finishes on the model,
     // unless the person has since been switched off or started a paper.
-    if (!(details.internalContinuation && access.blocked === "limit")) {
+    if (
+      !(
+        details.internalContinuation &&
+        (access.blocked === "limit" || access.blocked === "school-limit")
+      )
+    ) {
       return { reply: access.message };
     }
   }

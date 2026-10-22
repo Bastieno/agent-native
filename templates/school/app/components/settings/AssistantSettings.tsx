@@ -209,6 +209,24 @@ export function AssistantSettings() {
 
           <section className="space-y-2 rounded-lg border bg-card p-4">
             <div>
+              <h3 className="text-sm font-medium">Whole school, per day</h3>
+              <p className="text-xs text-muted-foreground">
+                The most messages everyone together can send the assistant in a
+                school day, however they reach it. It sits above each
+                person&apos;s own limit. Leave it empty for no limit.
+              </p>
+            </div>
+            <LimitInput
+              label="Daily message limit for the whole school"
+              value={settings.dailySchoolLimit}
+              onSave={(limit) =>
+                update({ ...settings, dailySchoolLimit: limit })
+              }
+            />
+          </section>
+
+          <section className="space-y-2 rounded-lg border bg-card p-4">
+            <div>
               <h3 className="text-sm font-medium">Requests from AI apps</h3>
               <p className="text-xs text-muted-foreground">
                 Staff can connect their own Claude or ChatGPT. Those apps use

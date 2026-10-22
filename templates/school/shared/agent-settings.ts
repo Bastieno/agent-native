@@ -33,6 +33,14 @@ export interface AgentSettings {
    * capped for the school as a whole. Null is no limit.
    */
   chatAppDailyLimit: number | null;
+  /**
+   * Messages the whole school may send the assistant in a school day, by every
+   * way in together: chat in the app, sub-agents, jobs, agent-to-agent and
+   * requests from AI apps. It sits above each person's own limit, so one
+   * school cannot run up the bill whatever its people's limits add up to.
+   * Null is no limit.
+   */
+  dailySchoolLimit: number | null;
 }
 
 export const LEARNER_DEFAULT_MODEL = "claude-haiku-4-5";
@@ -49,6 +57,9 @@ export const DEFAULT_AGENT_SETTINGS: AgentSettings = {
   },
   dailyMessageLimits: { learner: 30, teacher: 200, admin: null },
   chatAppDailyLimit: 20,
+  // Room for a normal pilot day — a few hundred learner questions on the
+  // cheap model and the staff's work on top — while capping the worst day.
+  dailySchoolLimit: 500,
 };
 
 /** The time a school day is counted in when the school has not said. */
@@ -81,6 +92,7 @@ export function storedAgentSettings(stored: unknown): AgentSettings | null {
   if (!byYear) return null;
   // Stored before this setting existed: not complete, so it is seeded once.
   if (!("chatAppDailyLimit" in s) || !isLimit(s.chatAppDailyLimit)) return null;
+  if (!("dailySchoolLimit" in s) || !isLimit(s.dailySchoolLimit)) return null;
   return {
     learnerAgentEnabled: s.learnerAgentEnabled,
     learnerAgentByYearGroup: Object.fromEntries(
@@ -89,6 +101,7 @@ export function storedAgentSettings(stored: unknown): AgentSettings | null {
     models: { ...s.models },
     dailyMessageLimits: { ...s.dailyMessageLimits },
     chatAppDailyLimit: s.chatAppDailyLimit,
+    dailySchoolLimit: s.dailySchoolLimit,
   };
 }
 
@@ -135,6 +148,12 @@ export function resolveAgentSettings(stored: unknown): AgentSettings {
           ? null
           : Math.floor(s.chatAppDailyLimit)
         : DEFAULT_AGENT_SETTINGS.chatAppDailyLimit,
+    dailySchoolLimit:
+      "dailySchoolLimit" in s && isLimit(s.dailySchoolLimit)
+        ? s.dailySchoolLimit === null
+          ? null
+          : Math.floor(s.dailySchoolLimit)
+        : DEFAULT_AGENT_SETTINGS.dailySchoolLimit,
   };
 }
 

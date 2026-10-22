@@ -47,7 +47,7 @@ export default function StudentLayout() {
   // around the learner's answers.
   const { data: access, isPending: accessPending } = useQuery<{
     available: boolean;
-    blocked: "off" | "sitting" | "limit" | null;
+    blocked: "off" | "sitting" | "limit" | "school-limit" | null;
   }>({
     queryKey: ["my-agent-access"],
     queryFn: async () => {

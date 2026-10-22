@@ -167,6 +167,7 @@ async function codingClient() {
     session.user?.name === "Mrs Ada Okafor",
     `the head carries the name they were invited under (${session.user?.name})`,
   );
+  return { schoolId: provisionedId ?? "", headEmail };
 }
 
 /**
@@ -417,11 +418,49 @@ async function chatClientDirect() {
     "the 21st gets the calm limit reply",
   );
   check(decided.nextDay === "ran", "the next school day starts from nothing");
+  return { schoolId: provisionedId ?? "", headEmail };
+}
+
+/**
+ * The school's daily total for the assistant, every way in counted together,
+ * asked of the real gate with no model run (test/sim/school-total.ts).
+ */
+function schoolTotal(
+  a: { schoolId: string; headEmail: string },
+  b: { schoolId: string; headEmail: string },
+) {
+  console.log("\nThe school's daily total for the assistant");
+  const run = spawnSync(
+    "npx",
+    [
+      "tsx",
+      "test/sim/school-total.ts",
+      a.schoolId,
+      a.headEmail,
+      b.schoolId,
+      b.headEmail,
+      "Africa/Lagos",
+    ],
+    { encoding: "utf8", env: { ...process.env, DATABASE_URL } },
+  );
+  if (run.status !== 0) throw new Error(`school total: ${run.stderr}`);
+  const r = JSON.parse(run.stdout.trim().split("\n").pop() ?? "{}");
+  check(
+    r.last === "ran",
+    `the message that brings the school to its ${r.limit} still runs`,
+  );
+  check(
+    r.over?.reply?.includes(`today's ${r.limit} messages`),
+    "the next is refused with the school's total, and no model runs",
+  );
+  check(r.otherSchool === "ran", "another school is not affected");
+  check(r.nextDay === "ran", "a new school day starts from nothing");
 }
 
 async function main() {
-  await codingClient();
-  await chatClientDirect();
+  const first = await codingClient();
+  const second = await chatClientDirect();
+  schoolTotal(second, first);
   if (process.env.JOURNEY_CHAT === "1") await chatClient();
   console.log("\nAll checks passed.");
 }

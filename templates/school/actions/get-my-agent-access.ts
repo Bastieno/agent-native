@@ -5,7 +5,7 @@ import { agentAccessFor } from "../server/lib/agent-gate.js";
 
 export default defineAction({
   description:
-    "Whether the signed-in person has the school's assistant right now. Returns available, and when it is not, why (off: the school switched it off for their year group; sitting: they are in the middle of a timed paper; limit: today's messages are used up) with the message they are shown, plus messages used today and the day's limit (null: no limit).",
+    "Whether the signed-in person has the school's assistant right now. Returns available, and when it is not, why (off: the school switched it off for their year group; sitting: they are in the middle of a timed paper; limit: today's messages are used up; school-limit: the whole school has used its day's total) with the message they are shown, plus messages used today and the day's limit (null: no limit).",
   schema: z.object({}),
   http: { method: "GET" },
   readOnly: true,
