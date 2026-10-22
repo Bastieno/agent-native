@@ -35,6 +35,20 @@
       "runtimeArgs": ["pnpm", "--dir", "templates/school", "dev:journeys"],
       "port": 8132,
       "autoPort": false
+    },
+    {
+      "name": "school-journeys-invite-only",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "AUTO_CREATE_DEFAULT_ORG=",
+        "corepack",
+        "pnpm",
+        "--dir",
+        "templates/school",
+        "dev:journeys"
+      ],
+      "port": 8132,
+      "autoPort": false
     }
   ]
 }

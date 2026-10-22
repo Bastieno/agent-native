@@ -22,6 +22,14 @@ a paper being sat, the day's limit, and a learner asking for a dearer model.
 Each check sends a real chat message and reads what the server did with it;
 no model is called.
 
+`pnpm journey:access` checks who lands where on sign-in, with two schools in
+one deployment: provisioned heads, a stranger, an invited teacher, an account
+made before its invitation, someone invited by both schools, a cancelled
+invitation, and members with no role in a set-up and a not-yet-set-up school.
+It runs under open sign-up (the local default) and invite-only sign-up (the
+`school-journeys-invite-only` launch configuration, which blanks
+`AUTO_CREATE_DEFAULT_ORG`), and checks whichever it finds.
+
 ## What it is
 
 - **`scenarios/`** — the test plan, as a file. A school's year groups, term
