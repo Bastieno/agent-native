@@ -2051,6 +2051,12 @@ export interface AgentChatPluginOptions {
     name: string,
     entry: ActionEntry,
   ) => boolean | Promise<boolean>;
+  /**
+   * Refuse an MCP caller before anything is listed or run (see
+   * `MCPConfig.refuseCaller`). Return a message to refuse, null to allow.
+   * Runs inside the caller's request context.
+   */
+  mcpRefuseCaller?: () => string | null | Promise<string | null>;
   a2aMessageFallback?: (details: {
     message: import("../a2a/types.js").Message;
     text: string;
@@ -3966,6 +3972,9 @@ export function createAgentChatPlugin(
           : {}),
         ...(options?.mcpToolFilter
           ? { isToolListedForCaller: options.mcpToolFilter }
+          : {}),
+        ...(options?.mcpRefuseCaller
+          ? { refuseCaller: options.mcpRefuseCaller }
           : {}),
         askAgent: async (message: string) => {
           // Runs inside the MCP caller's request context (build-server wraps

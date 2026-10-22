@@ -8,6 +8,7 @@ import {
   getRequestHeader,
 } from "h3";
 import { readBody } from "../server/h3-helpers.js";
+import { runWithRequestContext } from "../server/request-context.js";
 import { isLoopbackRequest } from "../server/auth.js";
 import {
   createMCPServerForRequest,
@@ -203,7 +204,13 @@ function buildWebRequest(event: H3Event, method: string): Request {
 export async function handleMcpRequest(
   event: H3Event,
   config: MCPConfig,
-): Promise<Response | string | { error: string } | undefined> {
+): Promise<
+  | Response
+  | string
+  | { error: string }
+  | { jsonrpc: "2.0"; id: unknown; error: { code: number; message: string } }
+  | undefined
+> {
   const pathname = event.url?.pathname || "/";
   const subpath = pathname.replace(/^\/+/, "").replace(/\/+$/, "");
   if (subpath) {
@@ -256,6 +263,31 @@ export async function handleMcpRequest(
   // once; both transports accept it as a pre-parsed body so the request
   // stream is never consumed twice.
   const body = method === "POST" ? await readBody(event) : undefined;
+
+  // The app may refuse this caller outright (see `MCPConfig.refuseCaller`).
+  // Asked before a server is built, so nothing is listed or run for them.
+  if (config.refuseCaller && authResult.identity?.userEmail) {
+    let refusal: string | null = null;
+    try {
+      refusal = await runWithRequestContext(
+        { userEmail: authResult.identity.userEmail },
+        () => Promise.resolve(config.refuseCaller!()),
+      );
+    } catch (err) {
+      console.error(
+        "[mcp] refuseCaller failed; letting the request through",
+        err,
+      );
+    }
+    if (refusal) {
+      setResponseStatus(event, 403);
+      return {
+        jsonrpc: "2.0",
+        id: (body as { id?: unknown } | undefined)?.id ?? null,
+        error: { code: -32001, message: refusal },
+      };
+    }
+  }
 
   // Per-request stateless transport + server. Both runtimes build the SAME
   // server from the SAME config + verified identity + request meta, so

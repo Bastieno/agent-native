@@ -2452,6 +2452,46 @@ describe("handleMcpRequest — web-standard runtime fallback (no Node req/res)",
     expect(res).toEqual({ error: "Unauthorized" });
   });
 
+  it("refuses a caller the app turns away, with its message and a 403", async () => {
+    const seen: Array<string | undefined> = [];
+    const { getRequestUserEmail } =
+      await import("../server/request-context.js");
+    const refusing = {
+      ...config,
+      refuseCaller: () => {
+        seen.push(getRequestUserEmail());
+        return "Learners use the school app, not an AI app.";
+      },
+    };
+    const event = makeWebEvent({
+      method: "POST",
+      body: { jsonrpc: "2.0", id: 12, method: "tools/list", params: {} },
+      headers: await mcpAppsAuthHeaders(),
+    });
+    const res = await handleMcpRequest(event, refusing as any);
+    expect(event._status).toBe(403);
+    expect(res).toEqual({
+      jsonrpc: "2.0",
+      id: 12,
+      error: {
+        code: -32001,
+        message: "Learners use the school app, not an AI app.",
+      },
+    });
+    expect(seen).toEqual(["oauth@example.com"]);
+  });
+
+  it("lets a caller through when the app does not refuse them", async () => {
+    const out = await callWeb(
+      { jsonrpc: "2.0", id: 13, method: "tools/list", params: {} },
+      {
+        headers: await mcpAppsAuthHeaders(),
+        config: { ...config, refuseCaller: () => null },
+      },
+    );
+    expect(Array.isArray(out.result.tools)).toBe(true);
+  });
+
   it("returns 204 for DELETE on the web runtime (stateless, unchanged)", async () => {
     process.env.ACCESS_TOKEN = "secret-token";
     const event = makeWebEvent({

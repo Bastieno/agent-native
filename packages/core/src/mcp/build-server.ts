@@ -109,6 +109,17 @@ export interface MCPConfig {
     name: string,
     entry: ActionEntry,
   ) => boolean | Promise<boolean>;
+  /**
+   * Turn a verified caller away before anything is listed or run. Evaluated
+   * once per MCP request inside the caller's request context; return a
+   * message to refuse (sent back as HTTP 403 with a JSON-RPC error carrying
+   * the message), or null to let the request through. An app uses this for
+   * people who must not use it from an external AI client at all, which a
+   * listing filter cannot express: an empty tool list looks like a broken
+   * connector, not a decision. If it throws, the request goes through and the
+   * error is logged — actions still enforce their own permissions.
+   */
+  refuseCaller?: () => string | null | Promise<string | null>;
 }
 
 /**
