@@ -99,6 +99,8 @@ export type {
   AgentRunGateDetails,
   AgentRunSource,
 } from "../agent/run-gate.js";
+export type { AllowSignUp, SignUpDetails } from "./signup-gate.js";
+export { SIGN_UP_REFUSED } from "./signup-gate.js";
 export {
   getStoredModelForEngine,
   resolveEngine,
