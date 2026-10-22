@@ -1,6 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { readAppState } from "@agent-native/core/application-state";
-import { getAllSettings, getOrgSetting } from "@agent-native/core/settings";
+import { getOrgSetting } from "@agent-native/core/settings";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray, sql } from "drizzle-orm";
@@ -16,6 +16,7 @@ import { getMyWeek } from "../server/lib/my-week.js";
 import { timetableView } from "../server/lib/timetable-view.js";
 import { getSchoolRole } from "../server/lib/student-access.js";
 import { viewRoleFor } from "../shared/view-role.js";
+import { accessWithoutProfile } from "../server/lib/school-access.js";
 import { proposalView } from "../server/lib/timetable-generation.js";
 import { coverageView } from "../server/lib/timetable-coverage.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
@@ -43,14 +44,13 @@ export default defineAction({
     // The branch follows the role the person really holds. Navigation state is
     // written by the page, so a learner could claim "admin" there.
     const schoolRole = userEmail ? await getSchoolRole(userEmail) : null;
-    // No profile yet: the school's first admin, set up in the wizard, while no
-    // school exists (as /api/school/session decides); otherwise no branch.
-    const schoolExists = schoolRole
-      ? true
-      : Object.keys(await getAllSettings()).some((k) =>
-          /^o:[^:]+:school-config$/.test(k),
-        );
-    const role = viewRoleFor(schoolRole, schoolExists);
+    // No profile yet: the admin branch only for someone who may set their own
+    // school up, as /api/school/session decides; otherwise no branch.
+    const canSetUp =
+      !schoolRole && userEmail
+        ? (await accessWithoutProfile(userEmail, schoolId)).access === "setup"
+        : false;
+    const role = viewRoleFor(schoolRole, canSetUp);
 
     // ─── Admin views ─────────────────────────────────────────────────────────
     if (role === "admin") {

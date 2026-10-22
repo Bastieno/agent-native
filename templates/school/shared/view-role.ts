@@ -22,16 +22,17 @@ export function viewRoleOf(
 }
 
 /**
- * The branch view-screen shows. A person with no profile is the school's first
- * admin only while no school exists yet (the same signal the session handler
- * uses); once one does, they have no branch, so what a page writes into
- * navigation state never grants one.
+ * The branch view-screen shows. A person with no profile gets the admin branch
+ * only while they may set their own school up (its owner or admin, before it
+ * has a configuration — the same answer the session handler gives); otherwise
+ * they have no branch, so what a page writes into navigation state never
+ * grants one.
  */
 export function viewRoleFor(
   schoolRole: string | null | undefined,
-  schoolExists: boolean,
+  canSetUp: boolean,
 ): ViewRole | null {
   const real = viewRoleOf(schoolRole);
   if (real) return real;
-  return !schoolRole && !schoolExists ? "admin" : null;
+  return !schoolRole && canSetUp ? "admin" : null;
 }

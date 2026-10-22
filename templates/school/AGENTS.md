@@ -113,6 +113,11 @@ invitation as school admin. It is deliberately not an action, so it is never
 one of your tools. If someone asks you for a new school, say the people
 running the app set schools up and will send the head an invitation.
 
+Before deploying a change to how sign-in finds invitations, operators run
+`pnpm backfill:org-invitations` once (`--dry-run` first): sign-in looks a
+person up by their own memberships and pending framework invitations, and
+this gives every pending school invitation the framework row it needs.
+
 The head can then set the school up from the app or from their own AI app
 over MCP. Either way it starts with `setup-school`, which makes them the
 admin. A head connecting from Claude Desktop or ChatGPT reaches you through
@@ -620,7 +625,7 @@ issued with, because they are a record of what was sent home.
 
 1. `invite-staff` — records the pending invite (visible on the Staff page) and
    emails it, if the school has email set up
-2. Staff member clicks the link and signs in — their school profile is **created automatically** on first login; no manual step needed
+2. Staff member clicks the link and signs in — their school profile is **created automatically** on first login; no manual step needed. Sign-in only ever looks at the person's own schools: the ones they belong to and the ones that invited them. Someone invited by two schools joins the one they are active in; the other invitation stays pending. Someone with no role sees a waiting page naming their school, or, if no school knows them, a page saying the account is not part of a school. Only the organisation's owner or an admin may set up a school nobody runs yet
 3. **Only then can they be given classes.** A class needs its teacher's
    account, and an invited teacher does not have one until they sign in. When
    you invite a teacher, say so: "Once she has signed in, I can give her her

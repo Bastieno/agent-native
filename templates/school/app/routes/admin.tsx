@@ -21,7 +21,7 @@ function timetablePath(nav: Record<string, unknown>): string {
 }
 
 export default function AdminLayout() {
-  const { role, isLoading, isAuthenticated, accessDenied } = useRole();
+  const { role, isLoading, isAuthenticated, access } = useRole();
   const navigate = useNavigate();
   const { command, clearCommand } = useNavigationState();
 
@@ -32,8 +32,8 @@ export default function AdminLayout() {
       navigate("/login");
       return;
     }
-    // Authenticated but school is set up and they have no invite
-    if (accessDenied) {
+    // No role, and not someone who may set their school up
+    if (!role && access !== "setup") {
       navigate("/pending-activation");
       return;
     }
@@ -41,8 +41,8 @@ export default function AdminLayout() {
     if (role && role !== "school_admin") {
       navigate("/");
     }
-    // Authenticated with no role (first admin) or school_admin → stay here
-  }, [isLoading, isAuthenticated, accessDenied, role, navigate]);
+    // Setting their own school up, or school_admin → stay here
+  }, [isLoading, isAuthenticated, access, role, navigate]);
 
   useEffect(() => {
     if (!command.data) return;

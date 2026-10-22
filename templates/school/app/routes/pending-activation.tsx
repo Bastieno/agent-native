@@ -1,21 +1,25 @@
-import { IconSchool } from "@tabler/icons-react";
+import { IconLogout, IconSchool } from "@tabler/icons-react";
+import { agentNativePath } from "@agent-native/core/client";
+import { Button } from "@/components/ui/button";
 import { useRole } from "@/hooks/use-role";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 export default function PendingActivation() {
-  const { role, isLoading } = useRole();
+  // Keeps checking, so the page moves on by itself once an invitation lands.
+  const { role, access, schoolName, isLoading } = useRole({ poll: true });
   const navigate = useNavigate();
 
-  // Redirect automatically once the admin has set up an invite and the user
-  // signs back in — the session endpoint auto-activates on the next poll.
   useEffect(() => {
     if (isLoading) return;
     if (role === "school_admin") navigate("/admin");
     else if (role === "teacher" || role === "subject_coordinator")
       navigate("/teacher");
     else if (role === "student") navigate("/student");
-  }, [role, isLoading, navigate]);
+    else if (access === "setup") navigate("/admin");
+  }, [role, access, isLoading, navigate]);
+
+  const inSchool = access === "waiting";
 
   return (
     <div className="flex h-screen items-center justify-center bg-background">
@@ -25,15 +29,29 @@ export default function PendingActivation() {
             <IconSchool size={28} className="text-muted-foreground" />
           </div>
         </div>
-        <h1 className="text-xl font-semibold">Waiting for access</h1>
+        <h1 className="text-xl font-semibold">
+          {inSchool
+            ? "Waiting for access"
+            : "This account isn't part of a school"}
+        </h1>
         <p className="text-sm text-muted-foreground">
-          Your account has been created. Once your school admin sends you an
-          invite, you will be redirected to the right portal automatically — no
-          action needed on your end.
+          {inSchool
+            ? `You're signed in to ${schoolName ?? "your school"}. Once your school admin gives you access, this page will take you to the right place by itself.`
+            : "Sign in with the address your school invited, or ask your school office."}
         </p>
-        <p className="text-xs text-muted-foreground">
-          If you believe this is a mistake, contact your school administrator.
-        </p>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={async () => {
+            await fetch(agentNativePath("/_agent-native/auth/logout"), {
+              method: "POST",
+            });
+            window.location.href = "/login";
+          }}
+        >
+          <IconLogout size={16} />
+          Sign out
+        </Button>
       </div>
     </div>
   );

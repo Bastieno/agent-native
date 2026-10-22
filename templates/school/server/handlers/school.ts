@@ -2,15 +2,19 @@ import { defineEventHandler, getRouterParam, getQuery, createError } from "h3";
 import { getSession, runWithRequestContext } from "@agent-native/core/server";
 import { getDb, schema } from "../db/index.js";
 import { eq, and, desc, asc, inArray, sql, count } from "drizzle-orm";
-import {
-  getOrgSetting,
-  getAllSettings,
-  putOrgSetting,
-} from "@agent-native/core/settings";
+import { getOrgSetting, putOrgSetting } from "@agent-native/core/settings";
+import { getOrgContext } from "@agent-native/core/org";
 import { nanoid } from "nanoid";
 import { putUserSetting } from "@agent-native/core/settings";
 import { applyInvitedName } from "../lib/user-names.js";
 import { withOrgSettingLock } from "../lib/org-setting-lock.js";
+import {
+  accessWithoutProfile,
+  candidateOrgsFor,
+  findPendingInvite,
+  type PendingInvite,
+  type SchoolAccess,
+} from "../lib/school-access.js";
 import {
   assertClassAccess,
   assertAssessmentAccess,
@@ -106,6 +110,11 @@ async function ensureSchoolMembership(
         sql`INSERT INTO org_members (id, org_id, email, role, joined_at) VALUES (${nanoid()}, ${orgId}, ${email.toLowerCase()}, 'member', ${Date.now()})`,
       );
     }
+    // An account made before it was invited still holds the framework
+    // invitation as pending; it is used now.
+    await db.run(
+      sql`UPDATE org_invitations SET status = 'accepted' WHERE org_id = ${orgId} AND LOWER(email) = ${email.toLowerCase()} AND status = 'pending'`,
+    );
     // Point them at the school, not at whatever org signing up made for them.
     await putUserSetting(email.toLowerCase(), "active-org-id", { orgId });
   } catch {
@@ -114,88 +123,29 @@ async function ensureSchoolMembership(
 }
 
 /**
- * When an invited staff member signs in for the first time they have no
- * school_profiles row yet.  Scan pending-staff-invites across all orgs and
- * auto-create the profile so they land in the right portal immediately
- * without the admin having to manually run finalize-staff-invite.
+ * Turn an invitation into a school profile, the first time the invited person
+ * signs in, so they land in the right portal without the admin running
+ * finalize-staff-invite. A student also gets their academic record.
  */
-async function autoActivateInvitedStaff(
+async function activateInvite(
   db: any,
   userId: string,
   email: string,
-): Promise<{ schoolRole: string; schoolId: string } | null> {
-  const all = await getAllSettings();
-  const INVITE_KEY_RE = /^o:([^:]+):pending-staff-invites$/;
-  for (const [fullKey, value] of Object.entries(all)) {
-    const m = INVITE_KEY_RE.exec(fullKey);
-    if (!m) continue;
-    const orgId = m[1];
-    const invites = Array.isArray(value) ? value : [];
-    const match = invites.find(
-      (inv: any) => inv.email?.toLowerCase() === email.toLowerCase(),
-    );
-    if (!match) continue;
-    const schoolRole = match.schoolRole as string;
-    // Create the school profile
-    await db.insert(schema.schoolProfiles).values({
-      id: nanoid(),
-      userId,
-      schoolId: orgId,
-      schoolRole,
-      status: "active",
-    });
-    await ensureSchoolMembership(db, orgId, email);
-    await applyInvitedName(db, userId, email, match.name);
-    // Remove from pending list so they no longer show under "Pending invitations"
-    const remaining = invites.filter(
-      (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
-    );
-    await withOrgSettingLock(`${orgId}:pending-staff-invites`, async () => {
-      const current = ((await getOrgSetting(orgId, "pending-staff-invites")) ??
-        []) as any[];
-      await putOrgSetting(
-        orgId,
-        "pending-staff-invites",
-        current.filter(
-          (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
-        ) as any,
-      );
-    });
-    return { schoolRole, schoolId: orgId };
-  }
-  return null;
-}
-
-/**
- * When an invited student signs in for the first time, auto-create their
- * school_profiles row (role=student) and students academic record.
- */
-async function autoActivateInvitedStudents(
-  db: any,
-  userId: string,
-  email: string,
-): Promise<{ schoolRole: string; schoolId: string } | null> {
-  const all = await getAllSettings();
-  const INVITE_KEY_RE = /^o:([^:]+):pending-student-invites$/;
-  for (const [fullKey, value] of Object.entries(all)) {
-    const m = INVITE_KEY_RE.exec(fullKey);
-    if (!m) continue;
-    const orgId = m[1];
-    const invites = Array.isArray(value) ? value : [];
-    const match = invites.find(
-      (inv: any) => inv.email?.toLowerCase() === email.toLowerCase(),
-    );
-    if (!match) continue;
-    // Create school profile
-    await db.insert(schema.schoolProfiles).values({
-      id: nanoid(),
-      userId,
-      schoolId: orgId,
-      schoolRole: "student",
-      status: "active",
-    });
-    await ensureSchoolMembership(db, orgId, email);
-    await applyInvitedName(db, userId, email, match.name);
+  found: PendingInvite,
+): Promise<{ schoolRole: string; schoolId: string }> {
+  const { orgId, kind, invite: match } = found;
+  const schoolRole =
+    kind === "student" ? "student" : (match.schoolRole as string);
+  await db.insert(schema.schoolProfiles).values({
+    id: nanoid(),
+    userId,
+    schoolId: orgId,
+    schoolRole,
+    status: "active",
+  });
+  await ensureSchoolMembership(db, orgId, email);
+  await applyInvitedName(db, userId, email, match.name);
+  if (kind === "student") {
     // Create student academic record, carrying whatever the invitation knew.
     //
     // The record cannot exist before this moment — there is no account to
@@ -214,26 +164,24 @@ async function autoActivateInvitedStudents(
       orgId,
       visibility: "org",
     });
-    // Taking this invitation off the list is a read-modify-write like
-    // adding one, so it takes the same lock: two learners signing in at the
-    // same moment would otherwise each write back a list still containing
-    // the other, and one of them would be activated twice on a later visit.
-    await withOrgSettingLock(`${orgId}:pending-student-invites`, async () => {
-      const current = ((await getOrgSetting(
-        orgId,
-        "pending-student-invites",
-      )) ?? []) as any[];
-      await putOrgSetting(
-        orgId,
-        "pending-student-invites",
-        current.filter(
-          (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
-        ) as any,
-      );
-    });
-    return { schoolRole: "student", schoolId: orgId };
   }
-  return null;
+  // Taking this invitation off the list is a read-modify-write like adding
+  // one, so it takes the same lock: two people signing in at the same moment
+  // would otherwise each write back a list still containing the other, and
+  // one of them would be activated twice on a later visit.
+  const key =
+    kind === "student" ? "pending-student-invites" : "pending-staff-invites";
+  await withOrgSettingLock(`${orgId}:${key}`, async () => {
+    const current = ((await getOrgSetting(orgId, key)) ?? []) as any[];
+    await putOrgSetting(
+      orgId,
+      key,
+      current.filter(
+        (inv: any) => inv.email?.toLowerCase() !== email.toLowerCase(),
+      ) as any,
+    );
+  });
+  return { schoolRole, schoolId: orgId };
 }
 
 /**
@@ -277,50 +225,30 @@ export const getSessionInfo = defineEventHandler(async (event) => {
     ? await getSchoolProfile(db, session.userId)
     : null;
 
-  // Auto-activate if the user is in a pending staff invite list
+  // The school this request acts in, as every action sees it.
+  const activeOrgId = session.email ? (await getOrgContext(event)).orgId : null;
+
+  // An invited person's first sign-in: activate them from their own schools'
+  // invitations, the active one first. Never from anyone else's.
   if (!profile && session.userId && session.email) {
-    const activated = await autoActivateInvitedStaff(
-      db,
-      session.userId,
+    const found = await findPendingInvite(
       session.email,
+      await candidateOrgsFor(session.email, activeOrgId),
     );
-    if (activated) {
-      profile = {
-        schoolRole: activated.schoolRole,
-        schoolId: activated.schoolId,
-      };
+    if (found) {
+      profile = await activateInvite(db, session.userId, session.email, found);
     }
   }
 
-  // Auto-activate if the user is in a pending student invite list
-  if (!profile && session.userId && session.email) {
-    const activated = await autoActivateInvitedStudents(
-      db,
-      session.userId,
-      session.email,
-    );
-    if (activated) {
-      profile = {
-        schoolRole: activated.schoolRole,
-        schoolId: activated.schoolId,
-      };
-    }
-  }
-
-  // If still no profile, check whether this school has already been initialized.
-  // If it has, this user arrived without an invite — deny school access so they
-  // land on the pending-activation page rather than the admin onboarding wizard.
-  // (Before setup-school runs there is no school-config entry, so the first
-  // legitimate admin always gets through to the wizard.)
-  let accessDenied = false;
+  // Still no profile: where they stand in their own school decides whether
+  // they set it up, wait to be given a role, or are not part of a school.
+  let access: SchoolAccess | null = null;
+  let schoolName: string | null = null;
   if (!profile && session.email) {
-    const all = await getAllSettings();
-    const schoolIsInitialized = Object.keys(all).some((k) =>
-      /^o:[^:]+:school-config$/.test(k),
-    );
-    if (schoolIsInitialized) {
-      accessDenied = true;
-    }
+    ({ access, schoolName } = await accessWithoutProfile(
+      session.email,
+      activeOrgId,
+    ));
   }
 
   // The session carries no name, so the portals had none to greet anyone by.
@@ -342,7 +270,10 @@ export const getSessionInfo = defineEventHandler(async (event) => {
     user: { id: session.userId, email: session.email, name },
     schoolRole: profile?.schoolRole ?? null,
     schoolId: profile?.schoolId ?? null,
-    accessDenied,
+    access,
+    schoolName,
+    // Kept for older clients: anyone who may not set a school up.
+    accessDenied: access === "none" || access === "waiting",
   };
 });
 

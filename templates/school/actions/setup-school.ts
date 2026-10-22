@@ -10,6 +10,7 @@ import { z } from "zod";
 import { ensureAgentSettings } from "../server/lib/agent-settings-store.js";
 import { withOrgSettingLock } from "../server/lib/org-setting-lock.js";
 import { applyInvitedName } from "../server/lib/user-names.js";
+import { mayRunSetup, orgRoleFor } from "../server/lib/school-access.js";
 
 export default defineAction({
   description:
@@ -70,6 +71,17 @@ export default defineAction({
     ) {
       throw new Error(
         "This school already has an administrator. Ask them to invite you rather than setting it up again.",
+      );
+    }
+    // A school nobody runs yet is set up by the person it was made for: the
+    // organisation's owner or an admin (a provisioned head is its owner).
+    // Anyone else who belongs to it waits to be invited.
+    if (
+      existingAdmins.length === 0 &&
+      !mayRunSetup(await orgRoleFor(orgId, userEmail))
+    ) {
+      throw new Error(
+        "Only the person this school was created for can set it up. Ask them to invite you once it is ready.",
       );
     }
 

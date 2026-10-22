@@ -1930,13 +1930,16 @@ check("the agent's screen follows the role a person really holds", () => {
   assert.equal(viewRoleOf("parent"), null);
 });
 
-check("a first admin keeps the agent's view only until a school exists", () => {
-  assert.equal(viewRoleFor(null, false), "admin");
-  assert.equal(viewRoleFor(null, true), null);
-  assert.equal(viewRoleFor("parent", false), null);
-  // A learner whose navigation says admin is still a learner.
-  assert.equal(viewRoleFor("student", true), "student");
-});
+check(
+  "someone with no profile has the admin view only while they may set their school up",
+  () => {
+    assert.equal(viewRoleFor(null, true), "admin");
+    assert.equal(viewRoleFor(null, false), null);
+    assert.equal(viewRoleFor("parent", true), null);
+    // A learner whose navigation says admin is still a learner.
+    assert.equal(viewRoleFor("student", false), "student");
+  },
+);
 
 // ── a double the missing periods cannot hold ──
 check(

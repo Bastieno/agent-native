@@ -7,6 +7,12 @@ export type SchoolRole =
   | "student"
   | null;
 
+/**
+ * Where someone without a school role stands: not part of a school, able to
+ * set their own school up, or waiting to be given a role in it.
+ */
+export type SchoolAccess = "none" | "setup" | "waiting";
+
 interface SessionData {
   user?: {
     id: string;
@@ -15,10 +21,13 @@ interface SessionData {
   };
   schoolRole?: SchoolRole;
   schoolId?: string | null;
+  access?: SchoolAccess | null;
+  schoolName?: string | null;
   accessDenied?: boolean;
 }
 
-export function useRole() {
+/** `poll`: keep checking, for a page waiting on someone else to act. */
+export function useRole({ poll = false }: { poll?: boolean } = {}) {
   const { data, isLoading } = useQuery<SessionData>({
     queryKey: ["session"],
     queryFn: async () => {
@@ -27,6 +36,7 @@ export function useRole() {
       return res.json();
     },
     staleTime: 60_000,
+    refetchInterval: poll ? 5_000 : false,
   });
 
   return {
@@ -36,6 +46,8 @@ export function useRole() {
     isLoading,
     isAuthenticated: !!data?.user,
     accessDenied: data?.accessDenied ?? false,
+    access: data?.schoolRole ? null : (data?.access ?? null),
+    schoolName: data?.schoolName ?? null,
     isAdmin: data?.schoolRole === "school_admin",
     isTeacher:
       data?.schoolRole === "teacher" ||

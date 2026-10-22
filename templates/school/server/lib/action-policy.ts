@@ -84,8 +84,9 @@ export const OPERATOR_ONLY = new Set<string>([
  * its profile from before the guard existed.
  *
  * This is not a hole: `setup-school` itself refuses when the organisation
- * already has a school admin, so it can create a school where there is none
- * and cannot be used to seize one that exists.
+ * already has a school admin, and otherwise to anyone but the organisation's
+ * owner or an admin, so it can create a school where there is none and cannot
+ * be used to seize one that exists.
  */
 export const BOOTSTRAP = new Set<string>(["setup-school"]);
 

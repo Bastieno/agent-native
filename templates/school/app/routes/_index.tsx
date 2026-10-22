@@ -5,7 +5,7 @@ import { DefaultSpinner } from "@agent-native/core/client";
 
 export default function Index() {
   const navigate = useNavigate();
-  const { role, isLoading, isAuthenticated, accessDenied } = useRole();
+  const { role, isLoading, isAuthenticated, access } = useRole();
 
   useEffect(() => {
     if (isLoading) return;
@@ -19,14 +19,14 @@ export default function Index() {
       navigate("/teacher");
     } else if (role === "student") {
       navigate("/student");
-    } else if (accessDenied) {
-      // School is already set up — this user has no invite yet
-      navigate("/pending-activation");
-    } else {
-      // No role and school not yet initialized — first admin, go to setup
+    } else if (access === "setup") {
+      // Owner or admin of a school nobody has set up yet
       navigate("/admin");
+    } else {
+      // Not part of a school, or not given a role in it yet
+      navigate("/pending-activation");
     }
-  }, [role, isLoading, isAuthenticated, accessDenied, navigate]);
+  }, [role, isLoading, isAuthenticated, access, navigate]);
 
   return (
     <div className="flex h-screen items-center justify-center">
