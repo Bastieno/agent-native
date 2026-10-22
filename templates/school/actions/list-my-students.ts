@@ -9,6 +9,7 @@ import {
 } from "../server/lib/class-access.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
+import { rowsOf } from "../server/lib/raw-sql.js";
 
 export default defineAction({
   description:
@@ -80,7 +81,7 @@ export default defineAction({
     }
 
     // Fetch user names/emails in one query
-    const userRows = (await db.all(
+    const userRows = (await rowsOf(
       sql`SELECT id, email, name FROM "user" WHERE id IN (${sql.join(
         studentUserIds.map((id: string) => sql`${id}`),
         sql`, `,

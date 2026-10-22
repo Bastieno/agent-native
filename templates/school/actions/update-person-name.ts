@@ -5,6 +5,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { and, eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { actorForEmail } from "../server/lib/class-access.js";
+import { rowOf, runSql } from "../server/lib/raw-sql.js";
 
 /**
  * Correct the name a person is known by.
@@ -74,12 +75,12 @@ export default defineAction({
       if (!profile) throw new Error("That person was not found.");
     }
 
-    const before = (await db.get(
+    const before = (await rowOf(
       sql`SELECT name, email FROM "user" WHERE id = ${targetId} LIMIT 1`,
     )) as { name: string | null; email: string | null } | undefined;
     if (!before) throw new Error("That person was not found.");
 
-    await db.run(sql`UPDATE "user" SET name = ${name} WHERE id = ${targetId}`);
+    await runSql(sql`UPDATE "user" SET name = ${name} WHERE id = ${targetId}`);
     await writeAppState("refresh-signal", { ts: Date.now() });
 
     return {

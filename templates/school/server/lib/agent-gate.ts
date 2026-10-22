@@ -18,6 +18,7 @@ import {
   type AgentAudience,
   type AgentSettings,
 } from "../../shared/agent-settings.js";
+import { rowOf, runSql } from "./raw-sql.js";
 
 /**
  * Whether this person may talk to the assistant right now, and on which model.
@@ -151,7 +152,7 @@ async function learnerGradeLevel(userId: string): Promise<string | null> {
 }
 
 async function usedToday(userId: string, day: string): Promise<number> {
-  const row = (await getDb().get(
+  const row = (await rowOf(
     sql`SELECT count FROM agent_message_usage WHERE id = ${`${userId}:${day}`} LIMIT 1`,
   )) as { count: number } | undefined;
   return Number(row?.count ?? 0);
@@ -160,7 +161,7 @@ async function usedToday(userId: string, day: string): Promise<number> {
 async function countMessage(who: Who, day: string): Promise<void> {
   if (!who.userId) return;
   const now = new Date().toISOString();
-  await getDb().run(
+  await runSql(
     sql`INSERT INTO agent_message_usage (id, school_id, user_id, day, count, updated_at)
         VALUES (${`${who.userId}:${day}`}, ${who.schoolId ?? ""}, ${who.userId}, ${day}, 1, ${now})
         ON CONFLICT (id) DO UPDATE SET count = agent_message_usage.count + 1, updated_at = ${now}`,
@@ -176,7 +177,7 @@ async function schoolMessagesToday(
   schoolId: string,
   day: string,
 ): Promise<number> {
-  const row = (await getDb().get(
+  const row = (await rowOf(
     sql`SELECT COALESCE(SUM(count), 0) AS total FROM agent_message_usage
         WHERE school_id = ${schoolId} AND day = ${day} AND id NOT LIKE ${"chat-apps:%"}`,
   )) as { total: number } | undefined;
@@ -196,7 +197,7 @@ async function chatAppRequestsToday(
   schoolId: string,
   day: string,
 ): Promise<number> {
-  const row = (await getDb().get(
+  const row = (await rowOf(
     sql`SELECT count FROM agent_message_usage WHERE id = ${chatAppRowId(schoolId, day)} LIMIT 1`,
   )) as { count: number } | undefined;
   return Number(row?.count ?? 0);
@@ -204,7 +205,7 @@ async function chatAppRequestsToday(
 
 async function countChatAppRequest(schoolId: string, day: string) {
   const now = new Date().toISOString();
-  await getDb().run(
+  await runSql(
     sql`INSERT INTO agent_message_usage (id, school_id, user_id, day, count, updated_at)
         VALUES (${chatAppRowId(schoolId, day)}, ${schoolId}, ${`school:${schoolId}`}, ${day}, 1, ${now})
         ON CONFLICT (id) DO UPDATE SET count = agent_message_usage.count + 1, updated_at = ${now}`,

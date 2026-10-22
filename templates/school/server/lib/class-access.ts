@@ -1,5 +1,6 @@
 import { and, eq, sql } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
+import { rowOf } from "./raw-sql.js";
 
 /**
  * Row-level access for class-scoped data.
@@ -28,7 +29,7 @@ export async function actorForEmail(
   email: string,
 ): Promise<ClassAccessActor | null> {
   const db = getDb();
-  const row = (await db.get(
+  const row = (await rowOf(
     sql`SELECT id FROM "user" WHERE email = ${email} LIMIT 1`,
   )) as { id: string } | undefined;
   if (!row?.id) return null;

@@ -3,6 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { z } from "zod";
+import { rowOf } from "../server/lib/raw-sql.js";
 
 export default defineAction({
   description:
@@ -17,7 +18,7 @@ export default defineAction({
 
     // Get user id from email
     const { sql } = await import("drizzle-orm");
-    const userRow = (await db.get(
+    const userRow = (await rowOf(
       sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
     )) as { id: string } | undefined;
     if (!userRow) throw new Error("User not found.");

@@ -1,10 +1,11 @@
 import { sql, eq, and } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
+import { rowOf } from "./raw-sql.js";
 
 /** The signed-in user's ID, looked up by email (actions only carry the email). */
 export async function getUserIdByEmail(email: string): Promise<string | null> {
   const db = getDb();
-  const row = (await db.get(
+  const row = (await rowOf(
     sql`SELECT id FROM "user" WHERE email = ${email} LIMIT 1`,
   )) as { id: string } | undefined;
   return row?.id ?? null;

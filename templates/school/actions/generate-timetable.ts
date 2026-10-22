@@ -20,6 +20,7 @@ import {
   findTerm,
   loadSchoolConfig,
 } from "../server/lib/timetable.js";
+import { rowOf } from "../server/lib/raw-sql.js";
 
 const count = (n: number, one: string, many: string) =>
   `${n} ${n === 1 ? one : many}`;
@@ -106,7 +107,7 @@ export default defineAction({
         and(eq(P.schoolId, orgId), eq(P.termId, term.id), eq(P.status, "open")),
       );
     const userRow = userEmail
-      ? await db.get<{ id: string }>(
+      ? await rowOf<{ id: string }>(
           sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
         )
       : null;

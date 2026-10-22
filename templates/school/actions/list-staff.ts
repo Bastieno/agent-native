@@ -4,6 +4,7 @@ import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, ne, sql } from "drizzle-orm";
 import { z } from "zod";
+import { rowOf } from "../server/lib/raw-sql.js";
 
 export default defineAction({
   description:
@@ -37,7 +38,7 @@ export default defineAction({
     // Enrich with name and email from the framework user table
     const enriched = await Promise.all(
       profiles.map(async (p) => {
-        const userRow = (await db.get(
+        const userRow = (await rowOf(
           sql`SELECT email, name FROM "user" WHERE id = ${p.userId} LIMIT 1`,
         )) as { email: string; name: string } | undefined;
         return {

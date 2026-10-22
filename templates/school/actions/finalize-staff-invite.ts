@@ -7,6 +7,7 @@ import { sql } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { realNameOrNull } from "../server/lib/user-names.js";
 import { z } from "zod";
+import { rowOf, runSql } from "../server/lib/raw-sql.js";
 
 export default defineAction({
   description:
@@ -29,7 +30,7 @@ export default defineAction({
     const db = getDb();
 
     // Look up the user by email in the framework user table
-    const userRow = await db.get<{ id: string; name: string | null }>(
+    const userRow = await rowOf<{ id: string; name: string | null }>(
       sql`SELECT id, name FROM "user" WHERE LOWER(email) = ${email} LIMIT 1`,
     );
     if (!userRow?.id) {
@@ -104,17 +105,17 @@ export default defineAction({
     // under, unless they have chosen one themselves. Signing up derives a
     // name from the address, and "teacher.maths" is nobody's name.
     if (invitedName && !realNameOrNull(userRow.name, email)) {
-      await db.run(
+      await runSql(
         sql`UPDATE "user" SET name = ${invitedName} WHERE id = ${userId}`,
       );
     }
 
     // Add to org_members so the framework's getOrgContext can resolve orgId for this user
-    const existingMember = await db.get<{ id: string }>(
+    const existingMember = await rowOf<{ id: string }>(
       sql`SELECT id FROM org_members WHERE org_id = ${orgId} AND LOWER(email) = ${email} LIMIT 1`,
     );
     if (!existingMember) {
-      await db.run(
+      await runSql(
         sql`INSERT INTO org_members (id, org_id, email, role, joined_at) VALUES (${nanoid()}, ${orgId}, ${email}, 'member', ${Date.now()})`,
       );
     }

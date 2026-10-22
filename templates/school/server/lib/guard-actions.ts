@@ -20,6 +20,7 @@ import {
   BOOTSTRAP,
   type SchoolRole,
 } from "./action-policy.js";
+import { rowOf, rowsOf } from "./raw-sql.js";
 
 /**
  * Wrap every template action with a role check.
@@ -88,7 +89,7 @@ export function guardActions<T extends Record<string, any>>(actions: T): T {
 async function frameworkOrgForEmail(email: string): Promise<string | null> {
   const db = getDb();
   try {
-    const active = await db.get<{ value: string }>(
+    const active = await rowOf<{ value: string }>(
       sql`SELECT value FROM settings WHERE key = ${`u:${email}:active-org-id`} LIMIT 1`,
     );
     if (active?.value) {
@@ -99,7 +100,7 @@ async function frameworkOrgForEmail(email: string): Promise<string | null> {
     // Fall through to membership.
   }
   try {
-    const rows = await db.all<{ org_id: string }>(
+    const rows = await rowsOf<{ org_id: string }>(
       sql`SELECT org_id FROM org_members WHERE email = ${email}`,
     );
     if (rows?.length === 1) return rows[0].org_id;

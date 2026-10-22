@@ -19,6 +19,7 @@ import {
   assertClassAccess,
   assertAssessmentAccess,
 } from "../lib/class-access.js";
+import { rowOf, runSql } from "../lib/raw-sql.js";
 
 // ─── Helper ──────────────────────────────────────────────────────────────────
 
@@ -31,7 +32,7 @@ async function requireSession(event: any) {
   // Fall back to a lookup by email so all handlers always have a userId.
   if (!session.userId) {
     const db = getDb();
-    const row = (await db.get(
+    const row = (await rowOf(
       sql`SELECT id FROM "user" WHERE email = ${session.email} LIMIT 1`,
     )) as { id: string } | undefined;
     if (row?.id) (session as any).userId = row.id;
@@ -102,17 +103,17 @@ async function ensureSchoolMembership(
   email: string,
 ): Promise<void> {
   try {
-    const existing = await db.get(
+    const existing = await rowOf(
       sql`SELECT id FROM org_members WHERE org_id = ${orgId} AND LOWER(email) = ${email.toLowerCase()} LIMIT 1`,
     );
     if (!existing) {
-      await db.run(
+      await runSql(
         sql`INSERT INTO org_members (id, org_id, email, role, joined_at) VALUES (${nanoid()}, ${orgId}, ${email.toLowerCase()}, 'member', ${Date.now()})`,
       );
     }
     // An account made before it was invited still holds the framework
     // invitation as pending; it is used now.
-    await db.run(
+    await runSql(
       sql`UPDATE org_invitations SET status = 'accepted' WHERE org_id = ${orgId} AND LOWER(email) = ${email.toLowerCase()} AND status = 'pending'`,
     );
     // Point them at the school, not at whatever org signing up made for them.
@@ -257,7 +258,7 @@ export const getSessionInfo = defineEventHandler(async (event) => {
   let name: string | null = (session as any).name ?? null;
   if (!name && session.userId) {
     try {
-      const row = (await db.get(
+      const row = (await rowOf(
         sql`SELECT name FROM "user" WHERE id = ${session.userId} LIMIT 1`,
       )) as { name: string | null } | undefined;
       name = row?.name ?? null;

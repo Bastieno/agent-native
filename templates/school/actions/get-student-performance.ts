@@ -4,6 +4,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import { z } from "zod";
+import { rowOf } from "../server/lib/raw-sql.js";
 
 export default defineAction({
   description:
@@ -19,7 +20,7 @@ export default defineAction({
     const db = getDb();
 
     // Get student info
-    const userRow = (await db.get(
+    const userRow = (await rowOf(
       sql`SELECT name, email FROM "user" WHERE id = ${args.studentId} LIMIT 1`,
     )) as { name: string; email: string } | undefined;
 

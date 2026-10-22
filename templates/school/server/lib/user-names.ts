@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import { getDb } from "../db/index.js";
 import { realNameOrNull } from "../../shared/person-name.js";
+import { rowOf, rowsOf, runSql } from "./raw-sql.js";
 
 export interface UserLabel {
   name: string | null;
@@ -23,7 +24,7 @@ export async function getUserLabels(
   if (ids.length === 0) return out;
 
   const db = getDb();
-  const rows = (await db.all(
+  const rows = (await rowsOf(
     sql`SELECT id, name, email FROM "user" WHERE id IN (${sql.join(
       ids.map((id) => sql`${id}`),
       sql`, `,
@@ -52,7 +53,7 @@ export { realNameOrNull };
 export async function userByEmail(
   email: string,
 ): Promise<{ name: string | null; email: string } | null> {
-  const row = (await getDb().get(
+  const row = (await rowOf(
     sql`SELECT name, email FROM "user" WHERE LOWER(email) = ${email.toLowerCase()} LIMIT 1`,
   )) as { name: string | null; email: string } | undefined;
   return row ?? null;
@@ -80,11 +81,11 @@ export async function applyInvitedName(
   const name = typeof invitedName === "string" ? invitedName.trim() : "";
   if (!name) return;
   try {
-    const row = (await db.get(
+    const row = (await rowOf(
       sql`SELECT name FROM "user" WHERE id = ${userId} LIMIT 1`,
     )) as { name: string | null } | undefined;
     if (realNameOrNull(row?.name, email)) return; // they named themselves
-    await db.run(sql`UPDATE "user" SET name = ${name} WHERE id = ${userId}`);
+    await runSql(sql`UPDATE "user" SET name = ${name} WHERE id = ${userId}`);
   } catch {
     // A name is worth having, not worth failing a sign-in for.
   }

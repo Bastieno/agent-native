@@ -16,7 +16,12 @@ export default defineAction({
       );
     }
     const db = getDb();
-    const result = await db.run(sql.raw(args.sql));
+    // SQLite answers a read through `run`; Postgres only through `execute`.
+    const raw: any = db;
+    const result =
+      typeof raw.run === "function"
+        ? await raw.run(sql.raw(args.sql))
+        : await raw.execute(sql.raw(args.sql));
     return result;
   },
 });

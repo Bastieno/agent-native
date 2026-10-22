@@ -10,6 +10,7 @@ import {
 } from "../server/lib/timetable.js";
 import { schoolToday } from "../shared/dates.js";
 import { schoolWeekdayName, joinDoubles } from "../shared/school-week.js";
+import { rowOf } from "../server/lib/raw-sql.js";
 
 export default defineAction({
   description:
@@ -32,7 +33,7 @@ export default defineAction({
 
     // Resolve the teacher's userId
     if (!userEmail) throw new Error("No authenticated user.");
-    const userRow = await db.get<{ id: string }>(
+    const userRow = await rowOf<{ id: string }>(
       sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
     );
     if (!userRow) throw new Error("User not found.");

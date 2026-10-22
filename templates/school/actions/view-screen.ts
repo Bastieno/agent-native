@@ -21,6 +21,7 @@ import { proposalView } from "../server/lib/timetable-generation.js";
 import { coverageView } from "../server/lib/timetable-coverage.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 import { sharedWithClass } from "../server/lib/shared-with-class.js";
+import { rowOf } from "../server/lib/raw-sql.js";
 
 export default defineAction({
   description:
@@ -472,7 +473,7 @@ export default defineAction({
           // Look up teacher's userId from the framework user table
           let teacherUserId: string | undefined;
           if (userEmail) {
-            const userRow = await db.get<{ id: string }>(
+            const userRow = await rowOf<{ id: string }>(
               sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
             );
             teacherUserId = userRow?.id;
@@ -564,7 +565,7 @@ export default defineAction({
       let studentUserId: string | undefined;
       if (userEmail) {
         try {
-          const userRow = await db.get<{ id: string }>(
+          const userRow = await rowOf<{ id: string }>(
             sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
           );
           studentUserId = userRow?.id;

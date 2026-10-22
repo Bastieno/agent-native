@@ -905,6 +905,41 @@ export default runMigrations(
       version: 90,
       sql: `CREATE TABLE IF NOT EXISTS agent_message_usage (id TEXT PRIMARY KEY, school_id TEXT NOT NULL, user_id TEXT NOT NULL, day TEXT NOT NULL, count INTEGER NOT NULL DEFAULT 0, updated_at TEXT NOT NULL)`,
     },
+    {
+      // The schema declares these flags as booleans (`integer(..., { mode:
+      // "boolean" })`), which Postgres reads as real BOOLEAN columns, but the
+      // migrations that created them wrote INTEGER. SQLite is happy with 0 and
+      // 1; Postgres refuses `is_published = true` against an integer with
+      // "operator does not exist". Postgres only, values kept as they are.
+      version: 91,
+      sql: {
+        postgres: `ALTER TABLE assessments ALTER COLUMN instant_feedback DROP DEFAULT;
+          ALTER TABLE assessments ALTER COLUMN instant_feedback TYPE BOOLEAN USING (instant_feedback <> 0);
+          ALTER TABLE assessments ALTER COLUMN instant_feedback SET DEFAULT FALSE;
+          ALTER TABLE assessment_styles ALTER COLUMN is_sample DROP DEFAULT;
+          ALTER TABLE assessment_styles ALTER COLUMN is_sample TYPE BOOLEAN USING (is_sample <> 0);
+          ALTER TABLE assessment_styles ALTER COLUMN is_sample SET DEFAULT FALSE;
+          ALTER TABLE question_responses ALTER COLUMN timed_out DROP DEFAULT;
+          ALTER TABLE question_responses ALTER COLUMN timed_out TYPE BOOLEAN USING (timed_out <> 0);
+          ALTER TABLE question_responses ALTER COLUMN timed_out SET DEFAULT FALSE;
+          ALTER TABLE question_responses ALTER COLUMN is_correct TYPE BOOLEAN USING (is_correct <> 0);
+          ALTER TABLE question_responses ALTER COLUMN needs_review DROP DEFAULT;
+          ALTER TABLE question_responses ALTER COLUMN needs_review TYPE BOOLEAN USING (needs_review <> 0);
+          ALTER TABLE question_responses ALTER COLUMN needs_review SET DEFAULT FALSE;
+          ALTER TABLE grades ALTER COLUMN is_published DROP DEFAULT;
+          ALTER TABLE grades ALTER COLUMN is_published TYPE BOOLEAN USING (is_published <> 0);
+          ALTER TABLE grades ALTER COLUMN is_published SET DEFAULT FALSE;
+          ALTER TABLE gradebook_entries ALTER COLUMN is_published DROP DEFAULT;
+          ALTER TABLE gradebook_entries ALTER COLUMN is_published TYPE BOOLEAN USING (is_published <> 0);
+          ALTER TABLE gradebook_entries ALTER COLUMN is_published SET DEFAULT FALSE;
+          ALTER TABLE curriculum_frameworks ALTER COLUMN is_sample DROP DEFAULT;
+          ALTER TABLE curriculum_frameworks ALTER COLUMN is_sample TYPE BOOLEAN USING (is_sample <> 0);
+          ALTER TABLE curriculum_frameworks ALTER COLUMN is_sample SET DEFAULT FALSE;
+          ALTER TABLE framework_objectives ALTER COLUMN code_generated DROP DEFAULT;
+          ALTER TABLE framework_objectives ALTER COLUMN code_generated TYPE BOOLEAN USING (code_generated <> 0);
+          ALTER TABLE framework_objectives ALTER COLUMN code_generated SET DEFAULT FALSE`,
+      },
+    },
   ],
   { table: "school_migrations" },
 );

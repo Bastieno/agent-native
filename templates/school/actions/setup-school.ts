@@ -11,6 +11,7 @@ import { ensureAgentSettings } from "../server/lib/agent-settings-store.js";
 import { withOrgSettingLock } from "../server/lib/org-setting-lock.js";
 import { applyInvitedName } from "../server/lib/user-names.js";
 import { mayRunSetup, orgRoleFor } from "../server/lib/school-access.js";
+import { rowOf } from "../server/lib/raw-sql.js";
 
 export default defineAction({
   description:
@@ -38,7 +39,7 @@ export default defineAction({
     const db = getDb();
 
     // Look up the current user's ID from the framework user table
-    const userRow = await db.get<{ id: string }>(
+    const userRow = await rowOf<{ id: string }>(
       sql`SELECT id FROM "user" WHERE email = ${userEmail} LIMIT 1`,
     );
     const userId = userRow?.id;

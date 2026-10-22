@@ -6,6 +6,7 @@ import { resolveStudentId } from "../server/lib/student-session.js";
 import { z } from "zod";
 import { sharedWithClass } from "../server/lib/shared-with-class.js";
 import { heldBack } from "../shared/held-back.js";
+import { rowOf } from "../server/lib/raw-sql.js";
 
 /**
  * A class as a learner sees it: what it is, who teaches it, the material that
@@ -56,7 +57,7 @@ export default defineAction({
 
     let teacherName: string | null = null;
     if (cls.primaryTeacherUserId) {
-      const t = (await db.get(
+      const t = (await rowOf(
         sql`SELECT name, email FROM "user" WHERE id = ${cls.primaryTeacherUserId} LIMIT 1`,
       )) as { name: string | null; email: string | null } | undefined;
       teacherName = t?.name ?? t?.email ?? null;
