@@ -1,6 +1,8 @@
 # Deployment plan
 
-Status: draft, awaiting the owner's confirmation. Nothing has been deployed.
+Status: strategy confirmed 2026-10-22 (VPS + Neon + Resend; core changes stay on
+the owner's fork, not upstreamed). Code steps done; provisioning is the
+owner's, since it needs their accounts and payment. Nothing has been deployed.
 
 Owner's goals (2026-10-12): lowest cost; demo first, then a separate
 production environment for a pilot with real schools; repo is private.
@@ -90,8 +92,8 @@ not on hosting.
 - Migrations only: append a new numbered step to
   `server/plugins/db.ts`. Changes are additive: add tables and columns, never
   rename, drop or truncate. They run at startup.
-- Never run `drizzle-kit push` against Neon. Remove the `db:push` script from
-  `package.json` so nobody runs it by accident.
+- Never run `drizzle-kit push` against Neon. The `db:push` script has been
+  removed from `package.json` so nobody runs it by accident.
 - Release order: deploy to `staging` (its branch was reset from prod) →
   check the startup log for migration errors → run a smoke journey → deploy to
   `app`.
@@ -124,9 +126,10 @@ nothing is mailed by mistake.
 - Built by `pnpm showcase:school` with `SCHOOL_URL=https://demo.…`, into its
   own database. It never shares a database with `app.`.
 - The shared local password (`test/sim/client.ts`) must not guard the demo.
-  Small code change: read the password from an env var (for example
-  `SHOWCASE_PASSWORD`), keeping the local value as the default. The demo
-  password goes only to prospects you're talking to, never on a public page.
+  It is now read from `SIM_PASSWORD`, with the local throwaway as the default,
+  so run the showcase against the demo with `SIM_PASSWORD` set to a private
+  value. The demo password goes only to prospects you're talking to, never on
+  a public page.
 - The generated roster file stays local. It prints the password.
 - Rebuild the demo from scratch when it gets messy: reset the Neon branch,
   then rerun the showcase.
@@ -184,8 +187,8 @@ Still open:
 
 ## Steps, once approved
 
-1. Read the demo password from an env var; remove `db:push`.
-   (Provisioning and MCP setup are already built; see above.)
+1. Done: the demo password comes from `SIM_PASSWORD`; `db:push` is removed.
+   (Provisioning and MCP setup are also built; see above.)
 2. Create the Neon project with `demo`, `main` and `staging` branches.
 3. Provision the VPS, Caddy, and systemd units for the three apps.
 4. Deploy `demo.`, run the showcase against it.

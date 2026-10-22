@@ -19,8 +19,14 @@
  */
 const BASE = process.env.SCHOOL_URL ?? "http://localhost:8132";
 
-/** Local test accounts for a local dev server; never a real credential. */
-export const TEST_PASSWORD = "SimTest!2026pass";
+/**
+ * The shared password for the simulated accounts.
+ *
+ * The default is a throwaway for a local dev server. Pointed at a hosted copy
+ * (SCHOOL_URL), set SIM_PASSWORD to something private: the default is in this
+ * repository, so it must never guard a deployment anyone else can reach.
+ */
+export const TEST_PASSWORD = process.env.SIM_PASSWORD || "SimTest!2026pass";
 
 type Verb = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
