@@ -33,7 +33,11 @@ template is host-agnostic (Nitro, SQL only).
   startup migrations create the tables.
 - Env vars set in the Netlify dashboard, not in the repo: `BETTER_AUTH_SECRET`,
   `BETTER_AUTH_URL` and `APP_URL` (the demo URL), the LLM key with a low
-  spend cap, and `NODE_ENV=production`. Email stays unset on the demo.
+  spend cap, and `NODE_ENV=production`. Email stays unset on the demo, so
+  also set `ALLOW_UNVERIFIED_SIGNUP=1` (and `AUTH_SKIP_EMAIL_VERIFICATION=1`):
+  production refuses to start otherwise, because without email anyone who
+  knows an invited address could claim it. That is acceptable on a demo that
+  holds only made-up people, never on `app.`.
 - Functions time out at about 75 seconds. Normal pages and short actions are
   fine. A long agent run (timetable generation, bulk grading, curriculum
   drafting) may be cut off, so the demo script avoids them or runs them in
@@ -158,7 +162,8 @@ Each app has its own env file, readable by root only, loaded by systemd:
 Resend: free tier, with a verified sending domain (SPF/DKIM) so invites don't
 land in spam. Invites already report `emailSent` and fall back to a sign-in
 link. Only `app.` gets real email. `staging.` and `demo.` leave it unset, so
-nothing is mailed by mistake.
+nothing is mailed by mistake; the production start-up check then needs
+`ALLOW_UNVERIFIED_SIGNUP=1` on those two, and must never be set on `app.`.
 
 ## Demo school
 
