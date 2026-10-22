@@ -18,7 +18,7 @@
  * switched off for that step, so nothing is sent. No model is called.
  */
 import { spawnSync } from "node:child_process";
-import { ActionError, Client, type Persona } from "./client.js";
+import { ActionError, Client, TEST_PASSWORD, type Persona } from "./client.js";
 
 const DATABASE_URL =
   process.env.JOURNEY_DATABASE_URL ?? "file:./data/journeys.db";
@@ -60,6 +60,38 @@ function provision(label: string): {
     throw new Error(`provisioning ${name} failed: ${result.stderr}`);
   }
   return { orgId, name, head };
+}
+
+/** Whether this server lets the address sign up (invite-only refuses with 403). */
+async function signUpAllowed(address: string): Promise<boolean> {
+  const res = await fetch(`${client.baseUrl}/_agent-native/auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: address, password: TEST_PASSWORD }),
+  });
+  return res.status !== 403;
+}
+
+/**
+ * An account that belongs to no school. Invite-only, the only such accounts
+ * are ones made before the rule, so it is made the way they were.
+ */
+async function accountWithoutSchool(
+  address: string,
+  label: string,
+  role: Persona["role"],
+): Promise<Persona> {
+  if (await signUpAllowed(address)) return client.signUp(address, label, role);
+  const made = spawnSync(
+    "npx",
+    ["tsx", "test/sim/legacy-account.ts", address],
+    {
+      encoding: "utf8",
+      env: { ...process.env, DATABASE_URL },
+    },
+  );
+  if (made.status !== 0) throw new Error(`legacy account: ${made.stderr}`);
+  return client.signIn(address, label, role);
 }
 
 async function session(p: Persona): Promise<any> {
@@ -115,9 +147,16 @@ async function main() {
   await client.as(headB, "setup-school", { name: b.name, type: "secondary" });
 
   console.log("\nSomeone invited by no school");
-  const stranger = await client.signUp(email("stranger"), "Stranger", "admin");
+  const openSignup = await signUpAllowed(email("stranger"));
+  if (!openSignup) {
+    check(true, "invite-only: they cannot even sign up");
+  }
+  const stranger = await accountWithoutSchool(
+    email("stranger"),
+    "Stranger",
+    "admin",
+  );
   s = await session(stranger);
-  const openSignup = s.access === "setup";
   console.log(
     `  (sign-up here is ${openSignup ? "open: newcomers own a workspace" : "invite-only"})`,
   );
@@ -168,7 +207,7 @@ async function main() {
 
   console.log("\nAn account made before its invitation");
   const lateEmail = email("late.a");
-  const late = await client.signUp(lateEmail, "Late", "student");
+  const late = await accountWithoutSchool(lateEmail, "Late", "student");
   s = await session(late);
   check(!s.schoolRole, "before the invitation they have no school role");
   await client.as(headA, "invite-student", {
@@ -214,12 +253,23 @@ async function main() {
     name: "Chidi Cancelled",
   });
   await client.as(headA, "cancel-student-invite", { email: cancelledEmail });
-  const cancelled = await client.signUp(cancelledEmail, "Cancelled", "student");
-  s = await session(cancelled);
-  check(
-    !s.schoolRole && s.schoolId !== a.orgId && s.schoolName !== a.name,
-    `signing up does not put them in school A (access ${s.access})`,
-  );
+  if (openSignup) {
+    const cancelled = await client.signUp(
+      cancelledEmail,
+      "Cancelled",
+      "student",
+    );
+    s = await session(cancelled);
+    check(
+      !s.schoolRole && s.schoolId !== a.orgId && s.schoolName !== a.name,
+      `signing up does not put them in school A (access ${s.access})`,
+    );
+  } else {
+    check(
+      !(await signUpAllowed(cancelledEmail)),
+      "invite-only: they cannot sign up with the cancelled invitation",
+    );
+  }
 
   console.log("\nA member of a set-up school who has no role in it");
   const removedEmail = email("removed.b");
