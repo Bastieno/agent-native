@@ -16,14 +16,5 @@ export default mergeConfig(
       // `--host` when you need to test from a phone or tablet on the LAN.
       host: "127.0.0.1",
     },
-    environments: {
-      ssr: {
-        build: {
-          rollupOptions: {
-            input: "./ssr-entry.ts",
-          },
-        },
-      },
-    },
   },
 );
