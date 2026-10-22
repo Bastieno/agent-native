@@ -1,6 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting, putOrgSetting } from "@agent-native/core/settings";
+import { getDbExec } from "@agent-native/core/db";
 import { z } from "zod";
 
 export default defineAction({
@@ -31,6 +32,17 @@ export default defineAction({
     }
 
     await putOrgSetting(orgId, "pending-student-invites", filtered as any);
+
+    // The framework invitation goes too. Left pending, signing up would still
+    // make them a member of the school, as if the invitation had stood.
+    try {
+      await getDbExec().execute({
+        sql: `UPDATE org_invitations SET status = 'cancelled' WHERE org_id = ? AND LOWER(email) = ? AND status = 'pending'`,
+        args: [orgId, email],
+      });
+    } catch {
+      // Non-fatal
+    }
 
     return {
       success: true,
