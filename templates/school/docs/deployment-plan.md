@@ -176,7 +176,46 @@ nothing is mailed by mistake; the production start-up check then needs
   a public page.
 - The generated roster file stays local. It prints the password.
 - Rebuild the demo from scratch when it gets messy: reset the Neon branch,
-  then rerun the showcase.
+  then repeat the three steps below.
+
+### Building the demo (done 2026-10-22)
+
+The showcase is about 90,000 requests. Over the internet to a serverless
+function and a Frankfurt database that is hours; locally on SQLite it is under
+four minutes. So the demo is built locally and loaded into Neon:
+
+1. `pnpm migrate:school` with `DATABASE_URL` set to the Neon branch. A first
+   request on a fresh serverless database starts ninety migrations, and the
+   host froze the function after six, leaving the schema half built. Run this
+   from a machine that stays awake. (Recommended: also run it in the Netlify
+   build command, so a deploy never depends on a cold start finishing it.)
+2. Build Crestfield on a throwaway SQLite file with its own server (`DATABASE_URL=file:./data/demo-build.db`,
+   `pnpm exec agent-native dev --port 8133`) and `SCHOOL_URL=http://localhost:8133
+SHOWCASE_DATABASE_URL=file:./data/demo-build.db SIM_PASSWORD=<private> pnpm showcase:school`.
+   Do not save files in `templates/school` while it runs: the dev server
+   restarts and requests fail.
+3. `pnpm load:school --from file:./data/demo-build.db --exclude-email dev@local.test`
+   with `DATABASE_URL` on Neon. It checks both schemas, inserts only, leaves
+   out the local dev account and sessions, and checks every table's count
+   (120,757 rows in about 2.5 minutes). The people, school and invitations
+   arrive with the data, so `provision:school` is not needed.
+
+Keep `DATABASE_URL` and `SIM_PASSWORD` in a file outside the repo
+(`~/.crestfield-demo.env`, mode 600) and source it; never paste them into chat
+or a command line that is logged.
+
+What it found, all fixed on the branch: the school had never run on Postgres.
+Thirty-five `db.get`/`db.all`/`db.run` calls (SQLite-only) now go through
+`server/lib/raw-sql.ts`, and nine boolean flag columns were created as
+integers (migration 91 converts them, Postgres only). Pages 404'd in a
+production build until `server/routes/[...page].get.ts` existed and the
+`ssr-entry.ts` override was limited to dev.
+
+Still true on the hosted demo: right after idle, a cold function instance
+answers 404 for framework routes (sign-in, actions) for a few seconds while
+its plugins start, and Neon's free compute wakes in a second or two. Retrying
+works. This is the evidence to weigh for Option A or B.
+
 - Agent chat on the demo spends real LLM money. Keep the provider spend cap low.
 
 ## New schools and MCP
