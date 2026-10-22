@@ -25,6 +25,14 @@ export interface AgentSettings {
   models: Record<AgentAudience, string>;
   /** Messages a person may send in a school day. Null is no limit. */
   dailyMessageLimits: Record<AgentAudience, number | null>;
+  /**
+   * Requests the whole school may hand to the assistant in a school day from
+   * people's own AI apps (Claude, ChatGPT) through `ask_app`. Those apps call
+   * the school's tools directly for most work, at no cost to the school; a
+   * request handed to the assistant runs on the school's model, so it is
+   * capped for the school as a whole. Null is no limit.
+   */
+  chatAppDailyLimit: number | null;
 }
 
 export const LEARNER_DEFAULT_MODEL = "claude-haiku-4-5";
@@ -40,6 +48,7 @@ export const DEFAULT_AGENT_SETTINGS: AgentSettings = {
     admin: STAFF_DEFAULT_MODEL,
   },
   dailyMessageLimits: { learner: 30, teacher: 200, admin: null },
+  chatAppDailyLimit: 20,
 };
 
 /** The time a school day is counted in when the school has not said. */
@@ -70,6 +79,8 @@ export function storedAgentSettings(stored: unknown): AgentSettings | null {
       ? s.learnerAgentByYearGroup
       : null;
   if (!byYear) return null;
+  // Stored before this setting existed: not complete, so it is seeded once.
+  if (!("chatAppDailyLimit" in s) || !isLimit(s.chatAppDailyLimit)) return null;
   return {
     learnerAgentEnabled: s.learnerAgentEnabled,
     learnerAgentByYearGroup: Object.fromEntries(
@@ -77,6 +88,7 @@ export function storedAgentSettings(stored: unknown): AgentSettings | null {
     ) as Record<string, boolean>,
     models: { ...s.models },
     dailyMessageLimits: { ...s.dailyMessageLimits },
+    chatAppDailyLimit: s.chatAppDailyLimit,
   };
 }
 
@@ -117,6 +129,12 @@ export function resolveAgentSettings(stored: unknown): AgentSettings {
     learnerAgentByYearGroup: byYear,
     models,
     dailyMessageLimits: limits,
+    chatAppDailyLimit:
+      "chatAppDailyLimit" in s && isLimit(s.chatAppDailyLimit)
+        ? s.chatAppDailyLimit === null
+          ? null
+          : Math.floor(s.chatAppDailyLimit)
+        : DEFAULT_AGENT_SETTINGS.chatAppDailyLimit,
   };
 }
 

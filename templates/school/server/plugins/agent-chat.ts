@@ -7,11 +7,27 @@ import { appStateGet } from "@agent-native/core/application-state";
 import actionsRegistry from "../../.generated/actions-registry.js";
 import { guardActions } from "../lib/guard-actions.js";
 import { gateAgentMessage } from "../lib/agent-gate.js";
+import {
+  CHAT_APP_INSTRUCTIONS,
+  chatAppToolFilter,
+  refuseChatAppCaller,
+  withChatAppSurface,
+} from "../lib/chat-apps.js";
 
 export default createAgentChatPlugin({
   // Every action is role-checked. This map backs both the agent's tools and
   // the auto-mounted HTTP endpoints, so the guard covers both paths.
-  actions: guardActions(loadActionsFromStaticRegistry(actionsRegistry)),
+  // The actions a head or teacher's own AI app (Claude, ChatGPT) may call
+  // directly are marked here, with their guidance; see server/lib/chat-apps.ts.
+  actions: withChatAppSurface(
+    guardActions(loadActionsFromStaticRegistry(actionsRegistry)),
+  ),
+  // From an outside AI app: learners and people with no school are turned
+  // away, each role sees its own short list, and the client is told how the
+  // school's work is done.
+  mcpRefuseCaller: refuseChatAppCaller,
+  mcpToolFilter: chatAppToolFilter,
+  mcpInstructions: CHAT_APP_INSTRUCTIONS,
   appId: "school",
   model: "claude-haiku-4-5",
   // The admin decides who has the assistant, on which model and how many
@@ -33,8 +49,10 @@ export default createAgentChatPlugin({
   // and MCP calls — passes the same gate: each run counts as a message
   // against that person's daily limit, runs on their role's model and, for a
   // learner, has the learner's tools only.
-  runGate: async ({ ownerEmail, orgId }) =>
-    gateAgentMessage({ ownerEmail, orgId }),
+  // A request from someone's own AI app (ask_app, source "mcp") also counts
+  // against the school's daily allowance for those (chatAppDailyLimit).
+  runGate: async ({ ownerEmail, orgId, source }) =>
+    gateAgentMessage({ ownerEmail, orgId, source }),
   // A school org holds every student, teacher and grade. The framework's SQL
   // tools are org-scoped, which would let any signed-in student read the whole
   // school. Data access goes through role-checked actions only.

@@ -167,6 +167,34 @@ async function countMessage(who: Who, day: string): Promise<void> {
   );
 }
 
+/**
+ * Requests the school's members handed to the assistant from their own AI
+ * apps today, school-wide. Kept in the same table as each person's count,
+ * under a row of the school's own.
+ */
+function chatAppRowId(schoolId: string, day: string): string {
+  return `chat-apps:${schoolId}:${day}`;
+}
+
+async function chatAppRequestsToday(
+  schoolId: string,
+  day: string,
+): Promise<number> {
+  const row = (await getDb().get(
+    sql`SELECT count FROM agent_message_usage WHERE id = ${chatAppRowId(schoolId, day)} LIMIT 1`,
+  )) as { count: number } | undefined;
+  return Number(row?.count ?? 0);
+}
+
+async function countChatAppRequest(schoolId: string, day: string) {
+  const now = new Date().toISOString();
+  await getDb().run(
+    sql`INSERT INTO agent_message_usage (id, school_id, user_id, day, count, updated_at)
+        VALUES (${chatAppRowId(schoolId, day)}, ${schoolId}, ${`school:${schoolId}`}, ${day}, 1, ${now})
+        ON CONFLICT (id) DO UPDATE SET count = agent_message_usage.count + 1, updated_at = ${now}`,
+  );
+}
+
 function blockedMessage(
   why: AgentBlock,
   audience: AgentAudience,
@@ -258,6 +286,8 @@ export async function gateAgentMessage(details: {
   ownerEmail: string | null;
   orgId?: string | null;
   internalContinuation?: boolean;
+  /** What started a run that is not a chat message; "mcp" is an AI app. */
+  source?: string;
 }): Promise<
   { model?: string; toolFilter?: (name: string) => boolean } | { reply: string }
 > {
@@ -268,6 +298,21 @@ export async function gateAgentMessage(details: {
     if (!(details.internalContinuation && access.blocked === "limit")) {
       return { reply: access.message };
     }
+  }
+  // A request handed over from someone's own AI app also counts against the
+  // school's allowance for those, which the admin sets (chatAppDailyLimit).
+  const schoolId = access.who.schoolId;
+  if (details.source === "mcp" && schoolId) {
+    const { settings } = await schoolSettings(schoolId);
+    const cap = settings ? settings.chatAppDailyLimit : null;
+    if (cap !== null && cap !== undefined) {
+      if ((await chatAppRequestsToday(schoolId, access.day)) >= cap) {
+        return {
+          reply: `The school has used today's ${cap} requests to its assistant from AI apps like Claude or ChatGPT. It resets tomorrow. Your AI app can still use the school's tools directly, and the assistant in the school app is not affected; an admin can raise the limit in Settings.`,
+        };
+      }
+    }
+    await countChatAppRequest(schoolId, access.day);
   }
   if (!details.internalContinuation) {
     await countMessage(access.who, access.day);

@@ -88,7 +88,15 @@ export const OPERATOR_ONLY = new Set<string>([
  * owner or an admin, so it can create a school where there is none and cannot
  * be used to seize one that exists.
  */
-export const BOOTSTRAP = new Set<string>(["setup-school"]);
+export const BOOTSTRAP = new Set<string>([
+  "setup-school",
+  // What a head setting up from their own AI app needs before setup-school
+  // has given them a role: which settings are still empty, and how setup is
+  // done. Neither shows anything about people; the guard has already
+  // resolved the head to the school they belong to.
+  "check-school-setup",
+  "get-school-guidance",
+]);
 
 export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   // ── Context & navigation ──────────────────────────────────────────────
@@ -123,6 +131,10 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-school-resource": ADMIN,
   "draft-school-guide": ADMIN_COORD,
   "check-school-setup": ADMIN_COORD,
+  // This app's own guide, by topic, for an assistant working from outside the
+  // app (a head's own Claude or ChatGPT). Staff only: learners never connect
+  // one (server/lib/chat-apps.ts refuses them).
+  "get-school-guidance": STAFF,
   // How a subject's questions are worded is a curriculum decision.
   "list-assessment-styles": STAFF,
   "get-assessment-style": STAFF,

@@ -206,6 +206,25 @@ export function AssistantSettings() {
               ))}
             </div>
           </section>
+
+          <section className="space-y-2 rounded-lg border bg-card p-4">
+            <div>
+              <h3 className="text-sm font-medium">Requests from AI apps</h3>
+              <p className="text-xs text-muted-foreground">
+                Staff can connect their own Claude or ChatGPT. Those apps use
+                the school&apos;s tools directly; this limits how many requests
+                the whole school hands to the assistant from them each day.
+                Leave it empty for no limit.
+              </p>
+            </div>
+            <LimitInput
+              label="Daily limit for requests from AI apps, whole school"
+              value={settings.chatAppDailyLimit}
+              onSave={(limit) =>
+                update({ ...settings, chatAppDailyLimit: limit })
+              }
+            />
+          </section>
         </CollapsibleContent>
       </Collapsible>
     </div>
@@ -214,10 +233,12 @@ export function AssistantSettings() {
 
 function LimitInput({
   who,
+  label,
   value,
   onSave,
 }: {
-  who: AgentAudience;
+  who?: AgentAudience;
+  label?: string;
   value: number | null;
   onSave: (limit: number | null) => void;
 }) {
@@ -239,7 +260,9 @@ function LimitInput({
   return (
     <div className="flex items-center gap-2">
       <Input
-        aria-label={`Daily message limit for ${WHO[who].toLowerCase()}`}
+        aria-label={
+          label ?? `Daily message limit for ${WHO[who!].toLowerCase()}`
+        }
         inputMode="numeric"
         className="h-8 w-20"
         placeholder="No limit"
