@@ -234,10 +234,8 @@ export function withChatAppSurface<T extends Record<string, any>>(
     }
     const topic = topicFor(name);
     const hint = [
-      topic
-        ? `Before ${topic.replace("-", " ")} work, call get-school-guidance with topic "${topic}" once and follow it.`
-        : null,
-      "Speak to the person in the school's own words, never tool, id or field names.",
+      topic ? `First call get-school-guidance ("${topic}").` : null,
+      "Use the school's words, not tool or field names.",
     ]
       .filter(Boolean)
       .join(" ");
@@ -266,12 +264,14 @@ type Standing =
   | { kind: "before-setup" }
   | { kind: "no-school" };
 
-// tools/list asks once per tool, so a caller is looked up once per moment.
+// tools/list asks once per tool, so a caller is looked up once per listing.
+// Kept to a second, so a head who has just set the school up is not shown
+// the before-setup list on their next request.
 const recent = new Map<string, { at: number; standing: Standing }>();
 
 async function standingOf(email: string): Promise<Standing> {
   const hit = recent.get(email);
-  if (hit && Date.now() - hit.at < 5_000) return hit.standing;
+  if (hit && Date.now() - hit.at < 1_000) return hit.standing;
   const actor = await actorForEmail(email);
   const standing: Standing = actor?.schoolRole
     ? { kind: "role", role: actor.schoolRole as SchoolRole }

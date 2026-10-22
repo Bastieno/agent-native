@@ -1,5 +1,6 @@
 /**
- * A head sets up a provisioned school from an MCP client.
+ * A head sets up a provisioned school from an MCP client, and staff use the
+ * school's tools from their own AI apps.
  *
  *   SCHOOL_URL=http://localhost:8132 pnpm journey:mcp-setup
  *
@@ -18,6 +19,11 @@ import { TEST_PASSWORD } from "./client.js";
 import { connect, mcp, tool } from "./mcp-client.js";
 
 const BASE = process.env.SCHOOL_URL ?? "http://localhost:8132";
+// The provisioning script and the cap check write straight to the server's
+// database; without this they wrote to data/app.db while the journeys server
+// read data/journeys.db.
+const DATABASE_URL =
+  process.env.JOURNEY_DATABASE_URL ?? "file:./data/journeys.db";
 
 function check(ok: unknown, what: string): void {
   if (!ok) throw new Error(`FAILED: ${what}`);
@@ -78,7 +84,12 @@ async function provisionedHead(tag: string): Promise<Head> {
     ],
     {
       encoding: "utf8",
-      env: { ...process.env, RESEND_API_KEY: "", SENDGRID_API_KEY: "" },
+      env: {
+        ...process.env,
+        DATABASE_URL,
+        RESEND_API_KEY: "",
+        SENDGRID_API_KEY: "",
+      },
     },
   );
   process.stdout.write(
@@ -170,8 +181,8 @@ async function chatClient() {
   check(accessToken, "the head's chat app connects with OAuth");
   const tools = await initialize(accessToken);
   check(
-    tools.has("ask_app") && !tools.has("setup-school"),
-    "the chat app is offered ask_app, not every action",
+    tools.has("ask_app") && !tools.has("list-staff"),
+    "the chat app is offered ask_app and setup, not every action",
   );
 
   const answer = await tool(accessToken, "ask_app", {
@@ -186,8 +197,231 @@ async function chatClient() {
   );
 }
 
+/** The tools a client lists, with the listing's size in bytes. */
+async function listed(accessToken: string) {
+  await mcp(accessToken, "initialize", {
+    protocolVersion: "2025-06-18",
+    capabilities: {},
+    clientInfo: { name: "journey", version: "1" },
+  });
+  const out = await mcp(accessToken, "tools/list", {});
+  const tools = out.tools as Array<{
+    name: string;
+    annotations?: { destructiveHint?: boolean };
+  }>;
+  return {
+    names: new Set(tools.map((t) => t.name)),
+    byName: new Map(tools.map((t) => [t.name, t])),
+    bytes: JSON.stringify(out.tools).length,
+  };
+}
+
+/** The refusal message when connecting is refused, or null if it was not. */
+async function refusedAtConnect(accessToken: string): Promise<string | null> {
+  try {
+    await mcp(accessToken, "tools/list", {});
+    return null;
+  } catch (err) {
+    return err instanceof Error ? err.message : String(err);
+  }
+}
+
+/** Signs in, and loads the session once so an invitation is taken up. */
+async function joinAs(email: string): Promise<string> {
+  const cookie = await signUp(email);
+  await webSession(cookie);
+  return cookie;
+}
+
+const BUDGET_BYTES = 48 * 1024;
+
+/**
+ * A chat app (Claude Desktop, claude.ai, ChatGPT) calls the school's own
+ * tools: each role lists its short set, the work goes through directly, and
+ * no model runs on the school's key. Learners and people in no school are
+ * turned away at connect.
+ */
+async function chatClientDirect() {
+  console.log("\nA chat app calls the school's tools directly");
+  const { headEmail, schoolName, provisionedId, cookie } =
+    await provisionedHead("d");
+  const headToken = await connect(cookie, "Claude");
+  check(headToken, "the head's chat app connects with OAuth");
+
+  let head = await listed(headToken);
+  check(
+    head.names.has("setup-school") &&
+      head.names.has("check-school-setup") &&
+      head.names.has("get-school-guidance") &&
+      head.names.has("ask_app") &&
+      head.names.size === 4,
+    `before setup the head sees setup only (${[...head.names].join(", ")})`,
+  );
+
+  const guide = await tool(headToken, "get-school-guidance", {
+    topic: "setup",
+  });
+  check(
+    !guide.isError && guide.text.includes("setup sheet"),
+    "the head's app can read how setup is done",
+  );
+  const gaps = await tool(headToken, "check-school-setup", {});
+  check(!gaps.isError, "the head's app can see what is still empty");
+
+  const setup = await tool(headToken, "setup-school", {
+    name: schoolName,
+    type: "secondary",
+    country: "Nigeria",
+    timezone: "Africa/Lagos",
+  });
+  check(!setup.isError, "setup-school runs from the chat app");
+  check(
+    JSON.parse(setup.text).schoolId === provisionedId,
+    "it set up the school that was provisioned",
+  );
+  const web = await webSession(cookie);
+  check(
+    web.schoolRole === "school_admin" && web.schoolId === provisionedId,
+    `on the web the head is the school's admin (role ${web.schoolRole})`,
+  );
+
+  // A moment for the head's new role to take over from the setup list.
+  await new Promise((r) => setTimeout(r, 1100));
+  head = await listed(headToken);
+  check(
+    head.names.has("invite-staff") &&
+      head.names.has("update-school-config") &&
+      !head.names.has("suspend-staff") &&
+      !head.names.has("open_app"),
+    `after setup the head sees the admin's list (${head.names.size} tools)`,
+  );
+  check(
+    head.bytes < BUDGET_BYTES,
+    `the admin's list is within budget (${Math.round(head.bytes / 1024)} KB)`,
+  );
+  if (head.names.size > 50) {
+    console.log(`  !!  the admin's list has ${head.names.size} tools`);
+  }
+  check(
+    head.byName.get("invite-staff")?.annotations?.destructiveHint === true,
+    "inviting staff is flagged for the host to confirm",
+  );
+
+  const run = provisionedId?.slice(0, 6) ?? Date.now().toString(36);
+  const teacherEmail = `teacher.${run}@gmail-sim.test`;
+  const learnerEmail = `learner.${run}@gmail-sim.test`;
+  const invited = await tool(headToken, "invite-staff", {
+    email: teacherEmail,
+    name: "Mr Tunde Bello",
+    schoolRole: "teacher",
+  });
+  check(!invited.isError, "the head invites a teacher from the chat app");
+  const invitedLearner = await tool(headToken, "invite-student", {
+    email: learnerEmail,
+    name: "Amaka Obi",
+  });
+  check(
+    !invitedLearner.isError,
+    "the head invites a learner from the chat app",
+  );
+
+  const teacherCookie = await joinAs(teacherEmail);
+  const teacherToken = await connect(teacherCookie, "Claude");
+  const teacher = await listed(teacherToken);
+  check(
+    teacher.names.has("get-marking-queue") &&
+      teacher.names.has("plan-lesson-notes") &&
+      !teacher.names.has("invite-staff"),
+    `a teacher sees teaching tools and not inviting staff (${teacher.names.size} tools)`,
+  );
+  check(
+    teacher.bytes < BUDGET_BYTES,
+    `the teacher's list is within budget (${Math.round(teacher.bytes / 1024)} KB)`,
+  );
+  let forced: string | null = null;
+  try {
+    const r = await tool(teacherToken, "invite-staff", {
+      email: `someone.${run}@gmail-sim.test`,
+      name: "Someone",
+      schoolRole: "teacher",
+    });
+    forced = r.isError ? r.text : null;
+  } catch (err) {
+    forced = err instanceof Error ? err.message : String(err);
+  }
+  check(forced, "a teacher forcing invite-staff is refused");
+
+  const learnerCookie = await joinAs(learnerEmail);
+  const learnerToken = await connect(learnerCookie, "Claude");
+  const learnerRefusal = await refusedAtConnect(learnerToken);
+  check(
+    learnerRefusal?.includes("Learners use the school app"),
+    "a learner's chat app is refused at connect, with a reason",
+  );
+
+  // Someone in no school: an account no school has taken in. Invite-only,
+  // the only such accounts are old ones, so one is made the way they were.
+  const strangerEmail = `stranger.${run}@gmail-sim.test`;
+  const register = await fetch(`${BASE}/_agent-native/auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: strangerEmail, password: TEST_PASSWORD }),
+  });
+  if (register.status === 403) {
+    const made = spawnSync(
+      "npx",
+      ["tsx", "test/sim/legacy-account.ts", strangerEmail],
+      { encoding: "utf8", env: { ...process.env, DATABASE_URL } },
+    );
+    if (made.status !== 0) throw new Error(`legacy account: ${made.stderr}`);
+  }
+  const strangerToken = await connect(await signUp(strangerEmail), "Claude");
+  check(
+    (await refusedAtConnect(strangerToken))?.includes("not part of a school"),
+    "an account in no school is refused at connect, with a reason",
+  );
+
+  // The school's allowance for requests handed to its assistant from AI
+  // apps. At 0, ask_app answers with the limit and runs no model.
+  const capped = await tool(headToken, "update-school-config", {
+    agent: { chatAppDailyLimit: 0 },
+  });
+  check(!capped.isError, "the head sets the school's AI-app allowance");
+  const asked = await tool(headToken, "ask_app", { message: "Hello" });
+  check(
+    asked.text.includes("requests to its assistant from AI apps"),
+    "past the allowance, ask_app says so instead of running the model",
+  );
+  await tool(headToken, "update-school-config", {
+    agent: { chatAppDailyLimit: 20 },
+  });
+  const cap = spawnSync(
+    "npx",
+    [
+      "tsx",
+      "test/sim/chat-app-cap.ts",
+      provisionedId ?? "",
+      headEmail,
+      "Africa/Lagos",
+    ],
+    { encoding: "utf8", env: { ...process.env, DATABASE_URL } },
+  );
+  if (cap.status !== 0) throw new Error(`cap check: ${cap.stderr}`);
+  const decided = JSON.parse(cap.stdout.trim().split("\n").pop() ?? "{}");
+  check(
+    decided.twentieth === "ran" && decided.afterTwentieth === 20,
+    "the 20th request of the day runs and is counted",
+  );
+  check(
+    decided.twentyFirst?.reply?.includes("today's 20 requests"),
+    "the 21st gets the calm limit reply",
+  );
+  check(decided.nextDay === "ran", "the next school day starts from nothing");
+}
+
 async function main() {
   await codingClient();
+  await chatClientDirect();
   if (process.env.JOURNEY_CHAT === "1") await chatClient();
   console.log("\nAll checks passed.");
 }

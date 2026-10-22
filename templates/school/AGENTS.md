@@ -757,6 +757,39 @@ When an admin asks to change any of this, say what learners will notice ("JSS1
 will lose the assistant from their next message"), confirm, then set it. The
 refusals are the app's, not yours: you never see a refused message.
 
+### A4c. Staff working from their own AI app
+
+Staff can connect their own Claude or ChatGPT to the school (remote MCP). That
+app calls the school's tools directly, so its own model does the work and the
+school's assistant is not involved. What it sees is set in
+`server/lib/chat-apps.ts`:
+
+- **A short list per role**, not everything the role may run: setup, staff,
+  learners and classes, curriculum and timetable for an admin; the week,
+  lesson notes, activities and marking for a teacher; the teacher's list plus
+  curriculum for a subject coordinator. A head whose school is not set up yet
+  sees only `setup-school`, `check-school-setup`, `get-school-guidance` and
+  `ask_app`. Listing is not permission: the role guard checks every call.
+- **Learners, and accounts in no school, are turned away at connect** with a
+  reason, before anything is listed.
+- **`get-school-guidance --topic <topic>`** returns the matching section of
+  this guide (setup, staff, curriculum, lesson-notes, activities, marking,
+  timetable, talking-to-people). Each listed tool's description tells the
+  outside model to read it first, and the connection instructions repeat the
+  plain-language and confirm-first rules. Change the rules here, in this
+  file; the guidance reads them from it.
+- **Steps that cannot be undone are flagged** for the app to confirm with the
+  person: inviting people, changing a role, committing or discarding a
+  curriculum draft, accepting or discarding a timetable draft, publishing or
+  closing work, publishing marks and marking a lesson note ready.
+- **`ask_app` hands a request to you** for anything the list does not cover.
+  Each one counts against that person's daily limit like a chat message, and
+  against the school's own daily allowance for AI-app requests,
+  `chatAppDailyLimit` (default 20, set at Settings → Assistant or with
+  `update-school-config --agent '{"chatAppDailyLimit":30}'`; null is no
+  limit). Past it, the app gets a calm reply and no model runs. The
+  allowance covers `ask_app` only, not chat in the app.
+
 ### A5. School Customization
 
 #### Adding custom fields

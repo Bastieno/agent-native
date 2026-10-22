@@ -211,17 +211,24 @@ async function main() {
     "its chat message is answered with a refusal, and no model runs",
     `status ${chat.status}, model ${chat.model}, reply "${chat.reply}"`,
   );
+  // From its own AI app it is turned away at connect (chat-apps.ts), before
+  // anything is listed, so no tool and no model can run for it.
   const token = await connect(legacy.cookie, "Claude");
-  await mcp(token, "initialize", {
-    protocolVersion: "2025-06-18",
-    capabilities: {},
-    clientInfo: { name: "journey", version: "1" },
-  });
-  const viaMcp = await tool(token, "ask_app", { message: "Hello?" });
+  let refusedWith = "";
+  try {
+    await mcp(token, "initialize", {
+      protocolVersion: "2025-06-18",
+      capabilities: {},
+      clientInfo: { name: "journey", version: "1" },
+    });
+    await tool(token, "ask_app", { message: "Hello?" });
+  } catch (err) {
+    refusedWith = err instanceof Error ? err.message : String(err);
+  }
   check(
-    NO_SCHOOL.test(viaMcp.text),
-    "asking through its own AI app (MCP ask_app) gets the same refusal, and no model runs",
-    viaMcp.text.slice(0, 200),
+    NO_SCHOOL.test(refusedWith),
+    "its own AI app is refused at connect, with the same reason, and no model runs",
+    refusedWith.slice(0, 200) || "it was not refused",
   );
 
   console.log(
