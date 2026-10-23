@@ -211,10 +211,21 @@ integers (migration 91 converts them, Postgres only). Pages 404'd in a
 production build until `server/routes/[...page].get.ts` existed and the
 `ssr-entry.ts` override was limited to dev.
 
-Still true on the hosted demo: right after idle, a cold function instance
-answers 404 for framework routes (sign-in, actions) for a few seconds while
-its plugins start, and Neon's free compute wakes in a second or two. Retrying
-works. This is the evidence to weigh for Option A or B.
+Cold starts, found and fixed (2026-10-23): Nitro starts each startup plugin
+and does not wait for it, and the framework registers sign-in, the session and
+every action after its database checks. A request that reached a fresh
+serverless instance first got a 404, which the app read as "signed out" and
+bounced to a `/login` that also 404'd. `server/lib/plugin-readiness.ts` and
+`server/middleware/00-wait-for-plugins.ts` now hold every request until the
+plugins are done (20 s at most) and send it through the app again. A first
+request on a new instance now takes about 3 seconds instead of failing.
+
+Also true of Neon's free plan: the database sleeps after 5 idle minutes and the
+first connections after a wake-up can fail, so open the demo once a minute
+before showing it. The functions run in US East (Ohio) on Netlify, so the
+database lives in Neon's AWS US East 2: with the database in Frankfurt every
+query crossed the Atlantic. From a laptop in Nigeria the Ohio database is
+flaky to connect to (the load script retries); from Netlify it was not.
 
 - Agent chat on the demo spends real LLM money. Keep the provider spend cap low.
 
