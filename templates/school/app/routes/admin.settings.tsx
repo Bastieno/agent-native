@@ -2,6 +2,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -113,7 +114,7 @@ export default function AdminSettings() {
   // nothing else — so an admin could not see the year, the terms or the
   // fields their school already has, and the agent describing them sounded
   // like it was describing this page.
-  const { data: years = [] } = useQuery<any[]>({
+  const { data: years = [], isLoading: yearsLoading } = useQuery<any[]>({
     queryKey: ["academic-years"],
     queryFn: async () => {
       const res = await fetch(
@@ -147,7 +148,7 @@ export default function AdminSettings() {
         toast.error(e.message);
       });
   }
-  const { data: terms = [] } = useQuery<any[]>({
+  const { data: terms = [], isLoading: termsLoading } = useQuery<any[]>({
     queryKey: ["terms"],
     queryFn: async () => {
       const res = await fetch(
@@ -266,7 +267,9 @@ export default function AdminSettings() {
                   : config.termStructure}
               </h3>
 
-              {years.length === 0 ? (
+              {yearsLoading || termsLoading ? (
+                <ListState loading rows={2} title="Terms" />
+              ) : years.length === 0 ? (
                 <p className="text-xs text-muted-foreground">
                   No academic year yet. Until one exists with its terms, a term
                   has no length — schemes of work and the calendar have no weeks

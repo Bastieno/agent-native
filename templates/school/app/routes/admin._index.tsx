@@ -57,10 +57,15 @@ export default function AdminOverview() {
       role: "admin",
       view: "overview",
       isNewSchool: !schoolId,
-      staffCount: stats?.staffCount ?? 0,
-      studentCount: stats?.studentCount ?? 0,
-      classCount: stats?.classCount ?? 0,
-      subjectCount: stats?.subjectCount ?? 0,
+      // Left out until the counts have loaded, so the agent is never told 0.
+      ...(stats
+        ? {
+            staffCount: stats.staffCount ?? 0,
+            studentCount: stats.studentCount ?? 0,
+            classCount: stats.classCount ?? 0,
+            subjectCount: stats.subjectCount ?? 0,
+          }
+        : {}),
     } as any);
   }, [sync, schoolId, stats]);
 

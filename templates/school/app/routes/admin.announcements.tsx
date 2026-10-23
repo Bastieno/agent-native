@@ -1,4 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
@@ -68,7 +69,7 @@ export default function AdminAnnouncements() {
     sync({ role: "admin", view: "announcements" } as any);
   }, [sync]);
 
-  const { data: announcements = [] } = useQuery<any[]>({
+  const { data: announcements = [], isLoading } = useQuery<any[]>({
     queryKey: ["admin-announcements"],
     queryFn: async () => {
       const res = await fetch(
@@ -149,7 +150,9 @@ export default function AdminAnnouncements() {
         </Button>
       </div>
 
-      {announcements.length === 0 ? (
+      {isLoading ? (
+        <ListState loading title="Announcements" />
+      ) : announcements.length === 0 ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
           <IconBell size={32} className="mx-auto text-muted-foreground mb-3" />
           <p className="text-sm font-medium">No announcements yet</p>

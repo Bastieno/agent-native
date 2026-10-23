@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
@@ -86,7 +87,7 @@ export default function TeacherClass() {
     enabled: !!classId,
   });
 
-  const { data: lessons = [] } = useQuery<any[]>({
+  const { data: lessons = [], isLoading: lessonsLoading } = useQuery<any[]>({
     queryKey: ["lessons", classId],
     queryFn: async () => {
       const res = await fetch(
@@ -100,7 +101,9 @@ export default function TeacherClass() {
     enabled: !!classId,
   });
 
-  const { data: allActivities = [] } = useQuery<any[]>({
+  const { data: allActivities = [], isLoading: activitiesLoading } = useQuery<
+    any[]
+  >({
     queryKey: ["assessments", classId],
     queryFn: async () => {
       const res = await fetch(
@@ -120,7 +123,7 @@ export default function TeacherClass() {
   );
   const materialCount = allActivities.length - assessments.length;
 
-  const { data: students = [] } = useQuery<any[]>({
+  const { data: students = [], isLoading: studentsLoading } = useQuery<any[]>({
     queryKey: ["class-students", classId],
     queryFn: async () => {
       const res = await fetch(
@@ -208,20 +211,22 @@ export default function TeacherClass() {
       <Tabs defaultValue="lessons">
         <TabsList>
           <TabsTrigger value="lessons">
-            <IconFileText size={14} className="mr-1.5" /> Lessons (
-            {lessons.length})
+            <IconFileText size={14} className="mr-1.5" /> Lessons
+            {lessonsLoading ? "" : ` (${lessons.length})`}
           </TabsTrigger>
           <TabsTrigger value="assessments">
-            <IconClipboardList size={14} className="mr-1.5" /> Assessments (
-            {assessments.length})
+            <IconClipboardList size={14} className="mr-1.5" /> Assessments
+            {activitiesLoading ? "" : ` (${assessments.length})`}
           </TabsTrigger>
           <TabsTrigger value="students">
-            <IconUsers size={14} className="mr-1.5" /> Students (
-            {students.length})
+            <IconUsers size={14} className="mr-1.5" /> Students
+            {studentsLoading ? "" : ` (${students.length})`}
           </TabsTrigger>
         </TabsList>
         <TabsContent value="lessons" className="mt-4 space-y-2">
-          {lessons.length === 0 ? (
+          {lessonsLoading ? (
+            <ListState loading rows={3} title="Lesson notes" />
+          ) : lessons.length === 0 ? (
             <p className="text-sm text-muted-foreground">
               No lesson notes yet. Ask the agent to create one.
             </p>
@@ -269,7 +274,9 @@ export default function TeacherClass() {
               reads or practises with are on their own week — see Lessons.
             </p>
           ) : null}
-          {assessments.length === 0 ? (
+          {activitiesLoading ? (
+            <ListState loading rows={3} title="Work" />
+          ) : assessments.length === 0 ? (
             <p className="text-sm text-muted-foreground">
               Nothing set for this class to hand in yet. Ask the agent for a
               worksheet or a test.
@@ -313,7 +320,9 @@ export default function TeacherClass() {
               <IconUserPlus size={14} className="mr-1.5" /> Enroll Student
             </Button>
           </div>
-          {students.length === 0 ? (
+          {studentsLoading ? (
+            <ListState loading rows={3} title="Students" />
+          ) : students.length === 0 ? (
             <p className="text-sm text-muted-foreground">
               No students enrolled. Click &ldquo;Enroll Student&rdquo; to add
               one.

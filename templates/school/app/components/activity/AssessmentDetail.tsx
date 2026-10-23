@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import { BackLink } from "@/components/layout/BackLink";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
@@ -116,7 +117,7 @@ export function AssessmentDetail({
     enabled: !!assessmentId,
   });
 
-  const { data: variants = [] } = useQuery<any[]>({
+  const { data: variants = [], isLoading: variantsLoading } = useQuery<any[]>({
     queryKey: ["variants", assessmentId],
     queryFn: async () => {
       const res = await fetch(
@@ -144,7 +145,9 @@ export function AssessmentDetail({
   const isMaterial =
     assessment?.gradingMode === "none" && assessment?.responseMode === "none";
 
-  const { data: submissions = [] } = useQuery<any[]>({
+  const { data: submissions = [], isLoading: submissionsLoading } = useQuery<
+    any[]
+  >({
     queryKey: ["submissions", assessmentId],
     queryFn: async () => {
       const res = await fetch(
@@ -396,7 +399,9 @@ export function AssessmentDetail({
             <TabsTrigger value="submissions">Submissions</TabsTrigger>
           </TabsList>
           <TabsContent value="variants" className="mt-4 space-y-3">
-            {variants.length === 0 ? (
+            {variantsLoading ? (
+              <ListState loading rows={2} title="Variants" />
+            ) : variants.length === 0 ? (
               <div className="rounded-lg border border-dashed p-8 text-center">
                 <p className="text-sm font-medium">No variants yet</p>
                 <p className="text-xs text-muted-foreground mt-1">
@@ -503,7 +508,9 @@ export function AssessmentDetail({
             )}
           </TabsContent>
           <TabsContent value="submissions" className="mt-4 space-y-2">
-            {submissions.length === 0 ? (
+            {submissionsLoading ? (
+              <ListState loading rows={3} title="Submissions" />
+            ) : submissions.length === 0 ? (
               <p className="text-sm text-muted-foreground">
                 No submissions yet.
               </p>

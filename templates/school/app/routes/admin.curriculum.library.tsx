@@ -1,4 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
@@ -122,7 +123,7 @@ export default function AdminCurriculumLibrary() {
     },
   });
 
-  const { data } = useQuery<any>({
+  const { data, isLoading } = useQuery<any>({
     queryKey: ["school-library", showSamples],
     queryFn: async () => {
       const res = await fetch(
@@ -233,7 +234,9 @@ export default function AdminCurriculumLibrary() {
         </button>
       </div>
 
-      {libraries.length === 0 ? (
+      {isLoading ? (
+        <ListState loading rows={2} title="Libraries" />
+      ) : libraries.length === 0 ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
           <IconBook size={28} className="mx-auto mb-3 text-muted-foreground" />
           <p className="text-sm font-medium">No syllabus of your own yet</p>

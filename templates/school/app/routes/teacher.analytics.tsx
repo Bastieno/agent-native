@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
@@ -13,7 +14,7 @@ export default function TeacherAnalytics() {
     sync({ role: "teacher", view: "analytics" });
   }, [sync]);
 
-  const { data: analytics } = useQuery({
+  const { data: analytics, isLoading } = useQuery({
     queryKey: ["teacher-analytics"],
     queryFn: async () => {
       const res = await fetch(
@@ -33,7 +34,9 @@ export default function TeacherAnalytics() {
         </p>
       </div>
 
-      {!analytics ? (
+      {isLoading ? (
+        <ListState loading rows={3} title="Analytics" />
+      ) : !analytics ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
           <IconChartBar
             size={28}

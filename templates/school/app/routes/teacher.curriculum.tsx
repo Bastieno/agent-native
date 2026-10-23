@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
@@ -39,7 +40,7 @@ export default function TeacherCurriculum() {
   // teacher, so a chemistry teacher's curriculum page listed all twenty-odd
   // subjects. `get-my-classes` already means "mine" for staff, and it is
   // what the teacher's own class list uses.
-  const { data: classes = [] } = useQuery<any[]>({
+  const { data: classes = [], isLoading } = useQuery<any[]>({
     queryKey: ["my-classes-curriculum"],
     queryFn: async () => {
       const res = await fetch(
@@ -115,7 +116,9 @@ export default function TeacherCurriculum() {
         </div>
       ) : null}
 
-      {subjects.length === 0 ? (
+      {isLoading ? (
+        <ListState loading rows={2} title="Subjects" />
+      ) : subjects.length === 0 ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
           <IconBook size={28} className="mx-auto mb-2 text-muted-foreground" />
           <p className="text-sm font-medium">No classes yet</p>

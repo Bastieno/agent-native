@@ -15,6 +15,7 @@ import { isCurrentWeek } from "@shared/term-weeks";
 import { splitWorkTitle } from "@shared/work-title";
 import { useMyWeek } from "@/hooks/use-my-week";
 import { useRole } from "@/hooks/use-role";
+import { ListState } from "@/components/ListState";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { firstNameOrNull } from "@shared/person-name";
 import { countOfWork } from "@shared/terminology";
@@ -28,7 +29,7 @@ export default function StudentDashboard() {
   const { data: week } = useMyWeek();
   const next = week?.next ?? null;
 
-  const { data: assessments = [] } = useQuery<any[]>({
+  const { data: assessments = [], isLoading } = useQuery<any[]>({
     queryKey: ["my-assessments"],
     queryFn: async () => {
       const res = await fetch(
@@ -60,10 +61,15 @@ export default function StudentDashboard() {
     sync({
       role: "student",
       view: "dashboard",
-      pendingCount: pending.length,
-      totalAssessments: assessments.length,
+      // Left out until the list has loaded, so the agent is never told 0.
+      ...(isLoading
+        ? {}
+        : {
+            pendingCount: pending.length,
+            totalAssessments: assessments.length,
+          }),
     } as any);
-  }, [sync, pending.length, assessments.length]);
+  }, [sync, isLoading, pending.length, assessments.length]);
 
   // A name only when someone gave one: signing up derives a name from the
   // email address, and "Welcome back, student1" is worse than no name at all.
@@ -77,9 +83,11 @@ export default function StudentDashboard() {
         </h1>
         {/* The page used to promise upcoming work above an empty panel. */}
         <p className="mt-1 text-sm text-muted-foreground">
-          {pending.length > 0
-            ? `You have ${countOfWork(pending.length, config as any)} to hand in.`
-            : `Nothing to hand in right now. Anything a teacher sets will appear here.`}
+          {isLoading
+            ? "\u00a0"
+            : pending.length > 0
+              ? `You have ${countOfWork(pending.length, config as any)} to hand in.`
+              : `Nothing to hand in right now. Anything a teacher sets will appear here.`}
         </p>
         {next ? (
           <p className="mt-1 text-sm text-muted-foreground">
@@ -94,7 +102,9 @@ export default function StudentDashboard() {
             <Badge className="ml-2 text-xs">{pending.length}</Badge>
           )}
         </h2>
-        {pending.length === 0 ? (
+        {isLoading ? (
+          <ListState loading rows={2} title="Pending work" />
+        ) : pending.length === 0 ? (
           <div className="rounded-lg border border-dashed p-8 text-center">
             <IconClipboardList
               size={28}

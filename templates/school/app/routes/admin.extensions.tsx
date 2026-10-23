@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { EmbeddedExtension } from "@agent-native/core/client/extensions";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -12,7 +13,7 @@ export default function AdminExtensions() {
     sync({ role: "admin", view: "extensions" });
   }, [sync]);
 
-  const { data: extensions } = useQuery({
+  const { data: extensions, isLoading } = useQuery({
     queryKey: ["school-extensions"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/_agent-native/extensions"));
@@ -30,7 +31,9 @@ export default function AdminExtensions() {
         </p>
       </div>
 
-      {!extensions || extensions.length === 0 ? (
+      {isLoading ? (
+        <ListState loading rows={2} title="Extensions" />
+      ) : !extensions || extensions.length === 0 ? (
         <div className="rounded-lg border border-dashed p-12 text-center">
           <IconPuzzle
             size={28}

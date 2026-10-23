@@ -1,4 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useRole } from "@/hooks/use-role";
@@ -96,7 +97,7 @@ export function CurriculumWorkspace({
   // answer or nothing — the preview must show what will actually be written.
   const { config: schoolConfig } = useSchoolConfig();
 
-  const { data: activeDraft } = useQuery({
+  const { data: activeDraft, isLoading: draftLoading } = useQuery({
     queryKey: ["curriculum-draft-record", draftId],
     queryFn: async () => {
       if (!draftId) return null;
@@ -274,7 +275,9 @@ export function CurriculumWorkspace({
         </p>
       ) : null}
 
-      {subjects.length === 0 ? (
+      {draftLoading && subjects.length === 0 ? (
+        <ListState loading rows={2} title="Draft" />
+      ) : subjects.length === 0 ? (
         <div className="rounded-lg border border-dashed p-8 text-center">
           <p className="text-sm font-medium">Nothing drafted yet</p>
           <p className="mx-auto mt-1 max-w-sm text-xs text-muted-foreground">

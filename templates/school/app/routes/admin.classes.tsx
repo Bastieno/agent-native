@@ -96,11 +96,11 @@ export default function AdminClasses() {
       role: "admin",
       view: "classes",
       tab,
-      classCount: classes.length,
+      ...(isLoading ? {} : { classCount: classes.length }),
       gradeFilter,
       teacherFilter,
     } as any);
-  }, [sync, tab, classes.length, gradeFilter, teacherFilter]);
+  }, [sync, tab, isLoading, classes.length, gradeFilter, teacherFilter]);
 
   const gradeLevels = useMemo(
     () =>

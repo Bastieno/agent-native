@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useRole } from "@/hooks/use-role";
+import { ListState } from "@/components/ListState";
 import { useEffect } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +13,7 @@ export default function TeacherDashboard() {
   const { sync } = useNavigationState();
   const { user } = useRole();
 
-  const { data: classes = [] } = useQuery<any[]>({
+  const { data: classes = [], isLoading } = useQuery<any[]>({
     queryKey: ["my-classes"],
     queryFn: async () => {
       const res = await fetch(
@@ -27,9 +28,11 @@ export default function TeacherDashboard() {
     sync({
       role: "teacher",
       view: "dashboard",
-      classCount: classes.length,
+      // Left out until the list has loaded: a default of 0 would tell the
+      // agent this teacher has no classes.
+      ...(isLoading ? {} : { classCount: classes.length }),
     } as any);
-  }, [sync, classes.length]);
+  }, [sync, isLoading, classes.length]);
 
   return (
     <div className="h-full overflow-auto p-6 space-y-6">
@@ -49,7 +52,9 @@ export default function TeacherDashboard() {
       <Today />
       <div>
         <h2 className="text-sm font-medium mb-3">My Classes</h2>
-        {classes.length === 0 ? (
+        {isLoading ? (
+          <ListState loading rows={2} title="My classes" />
+        ) : classes.length === 0 ? (
           <div className="rounded-lg border border-dashed p-8 text-center">
             <IconSchool
               size={28}
