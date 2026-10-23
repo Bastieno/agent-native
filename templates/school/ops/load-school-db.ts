@@ -44,6 +44,37 @@ const SKIP = new Set([
 
 const q = (name: string) => `"${name.replace(/"/g, '""')}"`;
 
+/**
+ * One statement, retried. The first queries on a fresh connection to a hosted
+ * database sometimes fail with no message while it wakes, and a long load now
+ * and then loses its connection. Everything this tool runs is safe to repeat:
+ * reads, `ON CONFLICT DO NOTHING` inserts and sequence resets. A statement that
+ * never answers is given up on after a minute.
+ */
+async function withRetry<T>(run: () => Promise<T>): Promise<T> {
+  let last: unknown;
+  for (let attempt = 1; attempt <= 6; attempt++) {
+    try {
+      return await Promise.race([
+        run(),
+        new Promise<never>((_, reject) =>
+          setTimeout(() => reject(new Error("no answer in 60s")), 60_000),
+        ),
+      ]);
+    } catch (err) {
+      last = err;
+      console.log(
+        `  (connection hiccup, attempt ${attempt} of 6: ${err instanceof Error ? err.message || err.name : "error"})`,
+      );
+      await new Promise((r) => setTimeout(r, 1000 * attempt));
+    }
+  }
+  throw last;
+}
+
+/** Enough rows for a statement, but never more than about this many bytes. */
+const MAX_STATEMENT_BYTES = 400_000;
+
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
   const value = i >= 0 ? process.argv[i + 1] : undefined;
@@ -95,6 +126,11 @@ function convert(value: unknown, type: string): unknown {
 
 async function main() {
   loadEnv();
+  process.on("uncaughtException", (err) => {
+    console.log(
+      `  (connection event: ${(err as Error)?.message || (err as Error)?.name || "error"})`,
+    );
+  });
   const from = arg("from");
   const dryRun = process.argv.includes("--dry-run");
   if (!from)
@@ -112,7 +148,11 @@ async function main() {
   }
 
   const src = createClient({ url: from });
-  const dst = getDbExec();
+  const raw = getDbExec();
+  const dst = {
+    execute: (q: Parameters<typeof raw.execute>[0]) =>
+      withRetry(() => raw.execute(q)),
+  };
 
   // Same schema on both sides, and an empty target.
   const version = async (run: () => Promise<{ rows: any[] }>) => {
@@ -289,21 +329,39 @@ async function main() {
       })) as any;
       if (page.rows.length === 0) break;
       after = Number(page.rows[page.rows.length - 1]._rowid);
-      const marks = page.rows
-        .map(() => `(${plan.columns.map(() => "?").join(", ")})`)
-        .join(", ");
-      const args = page.rows.flatMap((row: any) =>
+      // Split the page so no statement carries more than MAX_STATEMENT_BYTES.
+      const converted = page.rows.map((row: any) =>
         plan.columns.map((c) => convert(row[c.name], c.type)),
       );
-      pending.push(
-        dst.execute({
-          sql: `INSERT INTO ${q(plan.table)} (${names}) VALUES ${marks} ON CONFLICT DO NOTHING`,
-          args,
-        }),
-      );
+      let from = 0;
+      while (from < converted.length) {
+        let to = from;
+        let bytes = 0;
+        while (
+          to < converted.length &&
+          (to === from || bytes < MAX_STATEMENT_BYTES)
+        ) {
+          bytes += converted[to].reduce(
+            (n: number, v: unknown) =>
+              n + (typeof v === "string" ? v.length : 16),
+            0,
+          );
+          to++;
+        }
+        const chunk = converted.slice(from, to);
+        const marks = chunk
+          .map(() => `(${plan.columns.map(() => "?").join(", ")})`)
+          .join(", ");
+        pending.push(
+          dst.execute({
+            sql: `INSERT INTO ${q(plan.table)} (${names}) VALUES ${marks} ON CONFLICT DO NOTHING`,
+            args: chunk.flat(),
+          }),
+        );
+        if (pending.length >= 2) await Promise.all(pending.splice(0));
+        from = to;
+      }
       done += page.rows.length;
-      // A few batches in flight at once hides the round trip to the database.
-      if (pending.length >= 4) await Promise.all(pending.splice(0));
     }
     await Promise.all(pending);
     // A serial column's counter must start after the rows just written.

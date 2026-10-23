@@ -7,10 +7,16 @@
  * `db.execute`, which answers with `{ rows }` (or the rows themselves, from
  * some drivers). These three keep a query's shape the same on both.
  *
+ * Which database is in use is asked of the configuration, never worked out by
+ * looking for methods on the db object: until its driver has loaded (the first
+ * calls of a cold start), `getDb()` returns a placeholder that answers "yes" to
+ * every method name and then returns nothing for the ones Postgres lacks.
+ *
  * Prefer the query builder; reach for these only where a query is written in
  * SQL, such as a read of the framework's own `user` table.
  */
 import type { SQL } from "drizzle-orm";
+import { isPostgres } from "@agent-native/core/db";
 import { getDb } from "../db/index.js";
 
 /** Every row a query returns. */
@@ -18,7 +24,7 @@ export async function rowsOf<T = Record<string, unknown>>(
   query: SQL,
 ): Promise<T[]> {
   const db: any = getDb();
-  if (typeof db.all === "function") return (await db.all(query)) as T[];
+  if (!isPostgres()) return (await db.all(query)) as T[];
   const result = await db.execute(query);
   return (Array.isArray(result) ? result : (result?.rows ?? [])) as T[];
 }
@@ -33,6 +39,6 @@ export async function rowOf<T = Record<string, unknown>>(
 /** A statement that changes data and answers with nothing. */
 export async function runSql(query: SQL): Promise<void> {
   const db: any = getDb();
-  if (typeof db.run === "function") await db.run(query);
+  if (!isPostgres()) await db.run(query);
   else await db.execute(query);
 }

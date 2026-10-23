@@ -1,4 +1,5 @@
 import { defineAction } from "@agent-native/core";
+import { isPostgres } from "@agent-native/core/db";
 import { getDb } from "../server/db/index.js";
 import { sql } from "drizzle-orm";
 import { z } from "zod";
@@ -18,10 +19,9 @@ export default defineAction({
     const db = getDb();
     // SQLite answers a read through `run`; Postgres only through `execute`.
     const raw: any = db;
-    const result =
-      typeof raw.run === "function"
-        ? await raw.run(sql.raw(args.sql))
-        : await raw.execute(sql.raw(args.sql));
+    const result = isPostgres()
+      ? await raw.execute(sql.raw(args.sql))
+      : await raw.run(sql.raw(args.sql));
     return result;
   },
 });
