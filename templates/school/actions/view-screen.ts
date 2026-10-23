@@ -15,6 +15,7 @@ import { joinDoubles } from "../shared/school-week.js";
 import { getMyWeek } from "../server/lib/my-week.js";
 import { timetableView } from "../server/lib/timetable-view.js";
 import { getSchoolRole } from "../server/lib/student-access.js";
+import { studentProfileFor } from "../server/lib/student-profile.js";
 import { viewRoleFor } from "../shared/view-role.js";
 import { accessWithoutProfile } from "../server/lib/school-access.js";
 import { proposalView } from "../server/lib/timetable-generation.js";
@@ -22,6 +23,33 @@ import { coverageView } from "../server/lib/timetable-coverage.js";
 import { loadSubjectCurriculum } from "../server/lib/subject-curriculum.js";
 import { sharedWithClass } from "../server/lib/shared-with-class.js";
 import { rowOf } from "../server/lib/raw-sql.js";
+import getSchoolAnalytics from "./get-school-analytics.js";
+import getMyAnalytics from "./get-my-analytics.js";
+import getGradebook from "./get-gradebook.js";
+import getMyTermGrades from "./get-my-term-grades.js";
+
+/**
+ * A page's figures, the same ones its own query loads, for the agent to read.
+ *
+ * The agent is always told which view is open, but not what is printed on it.
+ * Left to that, asked "explain this number" it can answer from the sentence
+ * the person quoted and fill the rest in from general knowledge. So a page
+ * whose numbers people ask about hands them over here, keyed so they are
+ * plainly "what is on screen" and not something the agent went looking for.
+ * Long lists are trimmed to keep the turn small, and say so.
+ */
+async function onScreen<T>(read: () => Promise<T>): Promise<T | undefined> {
+  try {
+    return await read();
+  } catch {
+    // Not available to this person, or no longer there.
+    return undefined;
+  }
+}
+const trimmed = <T>(rows: T[] | undefined, keep: number) =>
+  rows && rows.length > keep
+    ? { rows: rows.slice(0, keep), total: rows.length, trimmedTo: keep }
+    : { rows: rows ?? [], total: rows?.length ?? 0 };
 
 export default defineAction({
   description:
@@ -287,6 +315,18 @@ export default defineAction({
         screen.liveWorkspace = draftState;
       }
 
+      // The school's analytics page: the figures it prints.
+      if (nav.view === "analytics" && schoolId) {
+        const a: any = await onScreen(() => getSchoolAnalytics.run({}));
+        if (a) {
+          const { classSummaries, ...rest } = a;
+          screen.analyticsOnScreen = {
+            ...rest,
+            classSummaries: trimmed(classSummaries, 30),
+          };
+        }
+      }
+
       if ((nav.view === "students" || nav.studentId) && schoolId) {
         try {
           const students = await db
@@ -304,10 +344,44 @@ export default defineAction({
           // continue
         }
       }
+
+      // A learner's own page is open: give the agent what is on it, with how
+      // each figure was counted and the papers behind it, so "explain this"
+      // is answered from the data and not guessed at.
+      if (nav.studentId && schoolId) {
+        try {
+          screen.learnerOnScreen = await studentProfileFor(nav.studentId, {
+            orgId: schoolId,
+            userEmail,
+          });
+        } catch {
+          // not available to this person, or no longer there
+        }
+      }
     }
 
     // ─── Teacher views ────────────────────────────────────────────────────────
     if (role === "teacher") {
+      // The gradebook and the analytics a teacher is looking at.
+      if (nav.view === "gradebook" && nav.classId) {
+        const gb: any = await onScreen(() =>
+          getGradebook.run({ classId: nav.classId }),
+        );
+        if (gb) {
+          screen.gradebookOnScreen = {
+            ...gb,
+            // The page's own arithmetic, so a figure on it can be explained.
+            counting: [
+              "A learner's average is the mean of the percentages on the pieces of work they have a mark for.",
+              "Work with no mark is left out, not counted as zero, so a learner who has missed work can look better here than on their report card, which follows the school's missed-work setting.",
+              "Reading pages and card decks carry no marks and have no column.",
+            ],
+          };
+        }
+      }
+      if (nav.view === "analytics") {
+        screen.analyticsOnScreen = await onScreen(() => getMyAnalytics.run({}));
+      }
       if (nav.view === "class" && nav.classId) {
         try {
           const [cls] = await db
@@ -561,6 +635,20 @@ export default defineAction({
 
     // ─── Student views ────────────────────────────────────────────────────────
     if (role === "student") {
+      // Their own grades page: the term, as the report card counts it.
+      if (nav.view === "grades" || nav.view === "progress") {
+        const g: any = await onScreen(() => getMyTermGrades.run({}));
+        if (g) {
+          screen.gradesOnScreen = {
+            ...g,
+            counting: [
+              "Counted the way the report card counts: published marks only.",
+              "A subject's average is its marked work under the school's missed-work setting (summary.missedCountsAsZero says which); the overall average is the mean of the subjects' averages.",
+              "Earlier and later are the averages of the first and second half of the term's work by due date.",
+            ],
+          };
+        }
+      }
       // Resolve current student's userId from the framework user table
       let studentUserId: string | undefined;
       if (userEmail) {

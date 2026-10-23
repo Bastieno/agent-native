@@ -303,6 +303,19 @@ export default defineAction({
       schoolAverage: overallAverage,
       activeStudents: studentProfiles.length,
       gradedSubmissions: grades.length,
+      // How every figure here is counted, in plain words, so whoever explains
+      // a number (a person, or the agent) quotes the rule instead of guessing
+      // it. Note where it differs from a report card: the school's missed-work
+      // setting is not applied here, and a mark counts whether or not it has
+      // been published to the learner.
+      counting: [
+        "A class's average is the mean of the percentage on every mark recorded for its handed-in work. Reading pages and card decks carry no marks and are not counted.",
+        "The school's average, a subject's average and a year group's average are each the mean of the averages of the classes in them, so every class counts equally whatever its size.",
+        "A mark counts whether or not it has been published to the learner.",
+        "Work that was not handed in is not counted in any average. The school's missed-work setting is not applied here, unlike on a learner's Grades page and the report card, so an average here can be higher than the same learners' own term averages.",
+        "Completion is the share of expected hand-ins (learners enrolled times pieces of work set) that were handed in.",
+        "Graded submissions is the number of marks recorded.",
+      ],
       completionRate:
         totalExpected > 0
           ? Math.round(

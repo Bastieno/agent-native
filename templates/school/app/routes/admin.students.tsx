@@ -2,6 +2,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router";
 import { Input } from "@/components/ui/input";
 import { ListState } from "@/components/ListState";
 import { Pagination, usePagination } from "@/components/Pagination";
@@ -367,8 +368,12 @@ export default function AdminStudents() {
         <div className="rounded-lg border divide-y">
           {paged.items.map((student: any) => (
             <div key={student.id} className="flex items-center gap-3 px-4 py-3">
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium">
+              {/* The whole name block opens the learner. */}
+              <Link
+                to={`/admin/students/${student.id}`}
+                className="group min-w-0 flex-1"
+              >
+                <p className="text-sm font-medium group-hover:text-primary">
                   {student.name ?? student.email ?? student.userId}
                 </p>
                 <p className="text-xs text-muted-foreground">
@@ -380,7 +385,7 @@ export default function AdminStudents() {
                     ? ` · ${student.gradeLevelName}`
                     : null}
                 </p>
-              </div>
+              </Link>
               <Badge
                 variant={student.status === "active" ? "default" : "secondary"}
               >
