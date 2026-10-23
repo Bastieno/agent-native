@@ -99,7 +99,9 @@ export interface StudentNav {
     | "submission"
     | "grades"
     | "progress"
-    | "week";
+    | "week"
+    // One subject, week by week, for going back over it.
+    | "revise";
   classId?: string;
   lessonId?: string;
   assessmentId?: string;

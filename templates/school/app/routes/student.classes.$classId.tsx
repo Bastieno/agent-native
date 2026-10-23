@@ -18,6 +18,7 @@ import {
   IconChevronLeft,
   IconChevronDown,
   IconCircleCheck,
+  IconRepeat,
 } from "@tabler/icons-react";
 import { submissionStatusWord } from "@/lib/submission-status";
 
@@ -123,7 +124,7 @@ export default function StudentClassDetail() {
   const shownWeeks = weekList.slice(firstShown);
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-6 pb-24 space-y-6">
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <Link
           to="/student/classes"
@@ -136,12 +137,22 @@ export default function StudentClassDetail() {
         <span className="text-foreground font-medium">{cls.name}</span>
       </div>
 
-      <div>
-        <h1 className="text-xl font-semibold">{cls.name}</h1>
-        <p className="text-sm text-muted-foreground mt-1">
-          {cls.subjectName ?? "—"} ·{" "}
-          {cls.teacherName ? `Teacher: ${cls.teacherName}` : NO_TEACHER_LABEL}
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-xl font-semibold">{cls.name}</h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            {cls.subjectName ?? "—"} ·{" "}
+            {cls.teacherName ? `Teacher: ${cls.teacherName}` : NO_TEACHER_LABEL}
+          </p>
+        </div>
+        {/* Every week and every mark for this subject on one page. */}
+        <Link
+          to={`/student/revise/${classId}`}
+          className="inline-flex h-8 items-center gap-1.5 rounded-md border px-3 text-sm font-medium hover:bg-accent"
+        >
+          <IconRepeat size={14} />
+          Revise
+        </Link>
       </div>
 
       {/* Work and material are both activities underneath, but a learner
@@ -320,11 +331,13 @@ function WeekRow({ lesson }: { lesson: any }) {
       className="group flex items-center justify-between gap-3 rounded-lg border p-3 hover:border-primary/50 transition-colors"
     >
       <div className="min-w-0 space-y-1">
-        <p className="flex items-center gap-2 text-sm font-medium transition-colors group-hover:text-primary">
+        {isCurrentWeek(lesson.lessonDate) ? (
+          <Badge className="mb-1 whitespace-nowrap text-[11px]">
+            This week
+          </Badge>
+        ) : null}
+        <p className="text-sm font-medium transition-colors group-hover:text-primary">
           {lesson.title}
-          {isCurrentWeek(lesson.lessonDate) ? (
-            <Badge className="text-[11px]">This week</Badge>
-          ) : null}
         </p>
         {lesson.summary && (
           <p className="line-clamp-2 text-xs text-muted-foreground">

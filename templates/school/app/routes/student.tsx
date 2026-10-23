@@ -37,6 +37,8 @@ export default function StudentLayout() {
     else if (nav.view === "grades" || nav.view === "progress")
       navigate("/student/grades");
     else if (nav.view === "week") navigate("/student/week");
+    else if (nav.view === "revise" && nav.classId)
+      navigate(`/student/revise/${nav.classId}`);
   }, [command.data, clearCommand, navigate]);
 
   // Whether the school gives this learner the assistant. Until the answer is

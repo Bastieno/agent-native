@@ -1352,14 +1352,15 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 
 ### C4. Navigation Map (Student)
 
-| User says                               | Navigate to                                                                                                                  |
-| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| "dashboard", "home"                     | `navigate --view=dashboard`                                                                                                  |
-| "my classes", "classes"                 | `navigate --view=classes`                                                                                                    |
-| "my week", "timetable"                  | `navigate --view=week`                                                                                                       |
-| "my assignments", "assessments"         | `navigate --view=classes`                                                                                                    |
-| "grades", "progress", "how am I doing?" | `navigate --view=grades` — My Grades: the term average, what was marked last, and each subject, which opens to show its work |
-| "open [assignment name]"                | `navigate --view=assessment --assessmentId <id>`                                                                             |
+| User says                                            | Navigate to                                                                                                                                                               |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "dashboard", "home"                                  | `navigate --view=dashboard`                                                                                                                                               |
+| "my classes", "classes"                              | `navigate --view=classes`                                                                                                                                                 |
+| "my week", "timetable"                               | `navigate --view=week`                                                                                                                                                    |
+| "my assignments", "assessments"                      | `navigate --view=classes`                                                                                                                                                 |
+| "grades", "progress", "how am I doing?"              | `navigate --view=grades` — My Grades: the term average, what was marked last, and each subject, which opens to show its work                                              |
+| "revise", "go over [subject]", "study for [subject]" | `navigate --view=revise --classId <id>` — every week of the subject with its reading and the learner's marks, and the work marked below the pass mark gathered at the top |
+| "open [assignment name]"                             | `navigate --view=assessment --assessmentId <id>`                                                                                                                          |
 
 ---
 

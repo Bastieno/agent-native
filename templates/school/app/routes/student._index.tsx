@@ -9,7 +9,11 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { IconChevronDown, IconClipboardList } from "@tabler/icons-react";
+import {
+  IconChevronDown,
+  IconChevronRight,
+  IconClipboardList,
+} from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { isCurrentWeek } from "@shared/term-weeks";
 import { splitWorkTitle } from "@shared/work-title";
@@ -157,6 +161,7 @@ export default function StudentDashboard() {
 
 type Material = {
   assessmentId: string;
+  classId: string | null;
   title: string;
   subjectName: string | null;
   className: string | null;
@@ -232,6 +237,16 @@ function ReadingBySubject({ items }: { items: Material[] }) {
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <div className="divide-y border-t bg-muted/20">
+                  {/* Everything for this subject, week by week, with marks. */}
+                  {s.featured.classId ? (
+                    <Link
+                      to={`/student/revise/${s.featured.classId}`}
+                      className="flex items-center justify-between gap-3 py-2.5 pl-8 pr-4 text-sm font-medium text-primary hover:bg-accent/50"
+                    >
+                      Revise {s.name}
+                      <IconChevronRight size={14} />
+                    </Link>
+                  ) : null}
                   {s.sorted.map((m) => {
                     const t = splitWorkTitle(m.title);
                     return (
