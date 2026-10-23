@@ -150,53 +150,98 @@ export default function TeacherStudents() {
           }
         />
       ) : (
-        <div className="rounded-lg border">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b bg-muted/40">
-                <th className="px-4 py-2.5 text-left font-medium">Name</th>
-                <th className="px-4 py-2.5 text-left font-medium">Class</th>
-                <th className="px-4 py-2.5 text-left font-medium">Category</th>
-                <th className="px-4 py-2.5 text-left font-medium">Avg Score</th>
-                <th className="px-4 py-2.5 text-left font-medium">
-                  Completion
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {paged.items.map((s: any) => (
-                <tr key={s.id} className="border-b last:border-0">
-                  <td className="px-4 py-2.5">
-                    <div>
-                      <p className="font-medium">{s.name}</p>
-                      <p className="text-xs text-muted-foreground">{s.email}</p>
-                    </div>
-                  </td>
-                  <td className="px-4 py-2.5 text-muted-foreground text-xs">
+        <>
+          {/* A phone gets a list of cards; the table is for wider screens. */}
+          <ul className="divide-y rounded-lg border sm:hidden">
+            {paged.items.map((s: any) => (
+              <li key={s.id} className="flex items-start gap-3 px-4 py-3">
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium">{s.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">
+                    {s.email}
+                  </p>
+                  <p className="mt-0.5 truncate text-xs text-muted-foreground">
                     {s.className ?? "—"}
-                  </td>
-                  <td className="px-4 py-2.5">
-                    {s.category ? (
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium capitalize ${categoryColors[s.category] ?? "bg-muted text-muted-foreground"}`}
-                      >
-                        {s.category}
-                      </span>
-                    ) : (
-                      <span className="text-xs text-muted-foreground">—</span>
-                    )}
-                  </td>
-                  <td className="px-4 py-2.5 text-muted-foreground">
+                    {s.completionRate != null
+                      ? ` · ${s.completionRate}% done`
+                      : ""}
+                  </p>
+                </div>
+                <div className="flex shrink-0 flex-col items-end gap-1">
+                  <span className="text-sm font-medium tabular-nums">
                     {s.averageScore != null ? `${s.averageScore}%` : "—"}
-                  </td>
-                  <td className="px-4 py-2.5 text-muted-foreground">
-                    {s.completionRate != null ? `${s.completionRate}%` : "—"}
-                  </td>
+                  </span>
+                  {s.category ? (
+                    <span
+                      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium capitalize ${categoryColors[s.category] ?? "bg-muted text-muted-foreground"}`}
+                    >
+                      {s.category}
+                    </span>
+                  ) : null}
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="hidden rounded-lg border sm:block">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted/40">
+                  <th className="px-4 py-2.5 text-left font-medium">Name</th>
+                  <th className="hidden px-4 py-2.5 text-left font-medium sm:table-cell">
+                    Class
+                  </th>
+                  <th className="px-4 py-2.5 text-left font-medium">
+                    Category
+                  </th>
+                  <th className="px-4 py-2.5 text-left font-medium">
+                    Avg Score
+                  </th>
+                  <th className="hidden px-4 py-2.5 text-left font-medium sm:table-cell">
+                    Completion
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {paged.items.map((s: any) => (
+                  <tr key={s.id} className="border-b last:border-0">
+                    <td className="px-4 py-2.5">
+                      <div>
+                        <p className="font-medium">{s.name}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {s.email}
+                        </p>
+                        {/* The Class column returns from sm up. */}
+                        <p className="text-xs text-muted-foreground sm:hidden">
+                          {s.className ?? "—"}
+                        </p>
+                      </div>
+                    </td>
+                    <td className="hidden px-4 py-2.5 text-xs text-muted-foreground sm:table-cell">
+                      {s.className ?? "—"}
+                    </td>
+                    <td className="px-4 py-2.5">
+                      {s.category ? (
+                        <span
+                          className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium capitalize ${categoryColors[s.category] ?? "bg-muted text-muted-foreground"}`}
+                        >
+                          {s.category}
+                        </span>
+                      ) : (
+                        <span className="text-xs text-muted-foreground">—</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-2.5 text-muted-foreground">
+                      {s.averageScore != null ? `${s.averageScore}%` : "—"}
+                    </td>
+                    <td className="hidden px-4 py-2.5 text-muted-foreground sm:table-cell">
+                      {s.completionRate != null ? `${s.completionRate}%` : "—"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
       <Pagination {...paged} noun="students" />
     </div>

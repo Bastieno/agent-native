@@ -213,17 +213,29 @@ export default function TeacherClass() {
         )}
       </div>
       <Tabs defaultValue="lessons">
-        <TabsList>
-          <TabsTrigger value="lessons">
-            <IconFileText size={14} className="mr-1.5" /> Lessons
+        {/* Three tabs have to share a phone's width: icons go, text shrinks. */}
+        <TabsList className="w-full">
+          <TabsTrigger
+            value="lessons"
+            className="flex-1 px-2 text-xs sm:text-sm"
+          >
+            <IconFileText size={14} className="mr-1.5 hidden sm:block" />{" "}
+            Lessons
             {lessonsLoading ? "" : ` (${lessons.length})`}
           </TabsTrigger>
-          <TabsTrigger value="assessments">
-            <IconClipboardList size={14} className="mr-1.5" /> Assessments
+          <TabsTrigger
+            value="assessments"
+            className="flex-1 px-2 text-xs sm:text-sm"
+          >
+            <IconClipboardList size={14} className="mr-1.5 hidden sm:block" />{" "}
+            Assessments
             {activitiesLoading ? "" : ` (${assessments.length})`}
           </TabsTrigger>
-          <TabsTrigger value="students">
-            <IconUsers size={14} className="mr-1.5" /> Students
+          <TabsTrigger
+            value="students"
+            className="flex-1 px-2 text-xs sm:text-sm"
+          >
+            <IconUsers size={14} className="mr-1.5 hidden sm:block" /> Students
             {studentsLoading ? "" : ` (${students.length})`}
           </TabsTrigger>
         </TabsList>

@@ -363,7 +363,41 @@ export default function AdminClasses() {
 
                 {/* Table */}
                 {!isCollapsed && (
-                  <table className="w-full text-sm">
+                  <ul className="divide-y border-t sm:hidden">
+                    {rows.map((cls: any) => (
+                      <li key={cls.id}>
+                        <button
+                          type="button"
+                          onClick={() => openClassDialog(cls)}
+                          className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-muted/20"
+                        >
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate text-sm font-medium">
+                              {cls.name}
+                            </p>
+                            <p className="truncate text-xs text-muted-foreground">
+                              {cls.teacherName ?? NO_TEACHER_LABEL}
+                            </p>
+                          </div>
+                          <span className="inline-flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
+                            <IconUsers size={13} />
+                            {cls.enrollmentCount ?? 0}
+                          </span>
+                          <Badge
+                            variant={
+                              cls.status === "active" ? "default" : "secondary"
+                            }
+                            className="shrink-0 text-xs capitalize"
+                          >
+                            {cls.status}
+                          </Badge>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {!isCollapsed && (
+                  <table className="hidden w-full text-sm sm:table">
                     <thead>
                       <tr className="border-b border-t bg-background">
                         <th className="px-4 py-2 text-left text-xs font-medium text-muted-foreground">

@@ -305,8 +305,8 @@ export function AssessmentDetail({
     // and the student's own view of this page.
     <div className="h-full overflow-auto">
       <div className="mx-auto w-full max-w-4xl space-y-4 p-6">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
             {/* Back to the week when this belongs to one, because that is
                 where it was opened from; to the class otherwise. The way
                 out should retrace the way in. */}

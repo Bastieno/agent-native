@@ -5,6 +5,13 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router";
 import { cn } from "@/lib/utils";
 import { Pagination, usePagination } from "@/components/Pagination";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { ListState } from "@/components/ListState";
 import {
@@ -107,7 +114,26 @@ export default function AdminAnalytics() {
               <h2 className="text-sm font-medium">
                 Performance by Grade Level
               </h2>
-              <div className="rounded-lg border">
+              <ul className="divide-y rounded-lg border sm:hidden">
+                {analytics.byGradeLevel.map((g: any) => (
+                  <li
+                    key={g.gradeLevelId}
+                    className="flex items-center justify-between gap-3 px-4 py-3"
+                  >
+                    <div>
+                      <p className="text-sm font-medium">{g.gradeLevelName}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {g.studentCount} students · {g.completionRate ?? "—"}%
+                        handed in
+                      </p>
+                    </div>
+                    <span className="text-sm font-medium tabular-nums">
+                      {g.average ?? "—"}%
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="hidden rounded-lg border sm:block">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b bg-muted/40">
@@ -281,7 +307,41 @@ function SubjectPerformance({
         </div>
       ) : null}
 
-      <div className="overflow-x-auto rounded-lg border">
+      {/* On a phone the headings that sort are out of reach, so a menu does it. */}
+      <div className="flex items-center justify-between gap-3 sm:hidden">
+        <span className="text-xs text-muted-foreground">Sorted by</span>
+        <Select
+          value={`${sort.key}:${sort.dir}`}
+          onValueChange={(v) => {
+            const [key, dir] = v.split(":");
+            setSort({ key: key as SortKey, dir: Number(dir) as 1 | -1 });
+          }}
+        >
+          <SelectTrigger className="h-8 w-auto gap-2 text-xs">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="average:1">Weakest first</SelectItem>
+            <SelectItem value="average:-1">Strongest first</SelectItem>
+            <SelectItem value="name:1">Name, A to Z</SelectItem>
+            <SelectItem value="students:-1">Most students</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+      <ul className="divide-y rounded-lg border sm:hidden">
+        {paged.items.map((s) => (
+          <SubjectCard
+            key={s.subjectId}
+            subject={s}
+            passMark={passMark}
+            classes={classSummaries.filter(
+              (c: any) => c.subjectName === s.subjectName,
+            )}
+          />
+        ))}
+      </ul>
+
+      <div className="hidden overflow-x-auto rounded-lg border sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b bg-muted/40">
@@ -311,6 +371,109 @@ function SubjectPerformance({
       </div>
       <Pagination {...paged} noun="subjects" flush={false} />
     </div>
+  );
+}
+
+/** The phone version of a subject row: a card that opens to its classes. */
+function SubjectCard({
+  subject,
+  classes,
+  passMark,
+}: {
+  subject: any;
+  classes: any[];
+  passMark: number;
+}) {
+  const [open, setOpen] = useState(false);
+  const canOpen = classes.length > 0;
+  const avg = averageOf(subject);
+  const weak = avg !== null && avg < passMark;
+
+  return (
+    <li>
+      <button
+        type="button"
+        disabled={!canOpen}
+        onClick={() => setOpen((was) => !was)}
+        className="w-full space-y-2 px-4 py-3 text-left disabled:cursor-default"
+      >
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="flex items-center gap-1.5 text-sm font-medium">
+              <IconChevronRight
+                size={14}
+                className={cn(
+                  "shrink-0 text-muted-foreground transition-transform",
+                  open && "rotate-90",
+                  !canOpen && "invisible",
+                )}
+              />
+              {subject.subjectName}
+            </p>
+            <p className="pl-5 text-xs text-muted-foreground">
+              {subject.classCount} class{subject.classCount !== 1 ? "es" : ""} ·{" "}
+              {subject.studentCount} students
+            </p>
+          </div>
+          <span
+            className={cn(
+              "flex shrink-0 items-center gap-1 text-sm tabular-nums",
+              weak && "font-medium text-destructive",
+            )}
+          >
+            {subject.trend === "up" ? (
+              <IconTrendingUp size={14} className="text-green-500" />
+            ) : subject.trend === "down" ? (
+              <IconTrendingDown size={14} className="text-red-500" />
+            ) : null}
+            {avg === null ? "—" : `${subject.average}%`}
+          </span>
+        </div>
+        <div className="relative ml-5 h-1.5 rounded-full bg-muted">
+          <div
+            className={cn(
+              "h-full rounded-full",
+              weak ? "bg-destructive" : "bg-primary",
+            )}
+            style={{ width: `${Math.min(100, Math.max(0, avg ?? 0))}%` }}
+          />
+          <span
+            className="absolute -top-0.5 h-2.5 w-px bg-foreground/50"
+            style={{ left: `${passMark}%` }}
+            aria-hidden
+          />
+        </div>
+      </button>
+      {open ? (
+        <div className="divide-y border-t bg-muted/20">
+          {classes.map((cls: any) => (
+            <div key={cls.classId} className="space-y-0.5 py-2.5 pl-9 pr-4">
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="text-sm font-medium">{cls.className}</span>
+                <span className="text-sm tabular-nums">
+                  {cls.averageScore ? `${cls.averageScore}%` : "—"}
+                </span>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                {cls.teacherName ?? (
+                  <span className="italic">No teacher assigned</span>
+                )}
+                {" · "}
+                {cls.completionRate === null
+                  ? "nothing set yet"
+                  : `${cls.completionRate}% handed in`}
+              </p>
+              <Link
+                to={`/admin/lessons?classId=${cls.classId}`}
+                className="text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+              >
+                Lesson notes
+              </Link>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </li>
   );
 }
 
