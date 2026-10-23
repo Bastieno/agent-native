@@ -59,6 +59,7 @@ export function TimetableGrid({
   clashes,
   selected,
   renderCell,
+  titleBy = "class",
 }: {
   week: SchoolWeek;
   dayNames: Record<number, string>;
@@ -67,6 +68,12 @@ export function TimetableGrid({
   proposed?: ResolvedPeriod[];
   clashes: Clash[];
   selected?: { day: number; periodNumber: number } | null;
+  /**
+   * What heads a lesson. A grid of one arm is all that arm's classes, so its
+   * name in front of each subject only uses the line; a teacher's or a room's
+   * grid mixes arms and needs it.
+   */
+  titleBy?: "subject" | "class";
   /** Wraps an editable lesson cell (e.g. in its editor). Omit for read-only. */
   renderCell?: (
     day: number,
@@ -110,6 +117,7 @@ export function TimetableGrid({
       clashes={clashes}
       selected={selected?.day === day && selected.periodNumber === number}
       renderCell={renderCell}
+      titleBy={titleBy}
     />
   );
 
@@ -200,6 +208,7 @@ function Cell({
   clashes,
   selected,
   renderCell,
+  titleBy,
 }: {
   week: SchoolWeek;
   day: number;
@@ -211,6 +220,7 @@ function Cell({
   tall: boolean;
   clashes: Clash[];
   selected: boolean;
+  titleBy: "subject" | "class";
   renderCell?: (
     day: number,
     periodNumber: number,
@@ -245,6 +255,9 @@ function Cell({
     entries.length > 0 && entries.every((e) => isProposed(e.scheduleId));
   const editable = !!renderCell && !draftOnly;
 
+  const titleOf = (e: ResolvedPeriod) =>
+    titleBy === "subject" ? e.subjectName || e.className : e.className;
+
   const body = (
     <div className={cn("flex gap-1", tall && "min-h-[7rem]")}>
       {entries.map((e) => (
@@ -258,8 +271,8 @@ function Cell({
               : "bg-primary/10",
           )}
         >
-          <span className="block truncate text-xs font-medium">
-            {e.className}
+          <span className="line-clamp-2 break-words text-xs font-medium">
+            {titleOf(e)}
           </span>
           {e.lessonLabel ? (
             <span className="block truncate text-[11px]">{e.lessonLabel}</span>
@@ -303,7 +316,9 @@ function Cell({
 
   // The hover card's trigger sits inside the editor's, so both reach the
   // same element: hover explains the clash, click opens the editor.
-  if (clashing) cell = <HoverCardTrigger asChild>{cell}</HoverCardTrigger>;
+  if (entries.length > 0) {
+    cell = <HoverCardTrigger asChild>{cell}</HoverCardTrigger>;
+  }
   // The editor sees only the real lessons of the cell.
   const wrapped = editable
     ? renderCell!(
@@ -313,15 +328,42 @@ function Cell({
         cell,
       )
     : cell;
-  if (!clashing) return <>{wrapped}</>;
+  if (entries.length === 0) return <>{wrapped}</>;
   return (
-    <HoverCard openDelay={150}>
+    <HoverCard openDelay={200} closeDelay={80}>
       {wrapped}
-      <HoverCardContent className="w-72 space-y-1.5 text-sm">
-        {messages.map((m, i) => (
-          <p key={i}>{m}</p>
-        ))}
-      </HoverCardContent>
+      {/* Hidden while the editor is open over the same cell. */}
+      {selected ? null : (
+        <HoverCardContent className="w-72 space-y-3 text-sm" align="start">
+          {entries.map((e) => (
+            <div key={e.scheduleId} className="space-y-0.5">
+              <p className="font-semibold">{e.subjectName || e.className}</p>
+              <p className="text-xs text-muted-foreground">
+                {[
+                  e.className,
+                  doubled ? "Double lesson" : `${e.start}–${e.end}`,
+                ].join(" · ")}
+              </p>
+              {e.lessonLabel ? (
+                <p className="text-xs">{e.lessonLabel}</p>
+              ) : null}
+              <p className="text-xs text-muted-foreground">
+                {[
+                  e.teachers.map((t) => t.name).join(", ") || "No teacher",
+                  e.room,
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </p>
+            </div>
+          ))}
+          {messages.map((m, i) => (
+            <p key={i} className="text-xs text-destructive">
+              {m}
+            </p>
+          ))}
+        </HoverCardContent>
+      )}
     </HoverCard>
   );
 }

@@ -465,6 +465,7 @@ export default function AdminTimetable() {
           <ProposalBar termId={termId} proposal={proposal} />
         ) : null}
         <TimetableGrid
+          titleBy={view === "arm" ? "subject" : "class"}
           week={week}
           proposed={proposed}
           dayNames={tt.dayNames}
