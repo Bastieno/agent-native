@@ -1,6 +1,7 @@
 import { runMigrations } from "@agent-native/core/db";
+import { readyBeforeServing } from "../lib/plugin-readiness.js";
 
-export default runMigrations(
+const migrations = runMigrations(
   [
     {
       version: 1,
@@ -943,3 +944,5 @@ export default runMigrations(
   ],
   { table: "school_migrations" },
 );
+
+export default readyBeforeServing(migrations);

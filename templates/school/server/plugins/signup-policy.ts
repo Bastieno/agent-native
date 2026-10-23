@@ -1,4 +1,5 @@
 import { isEmailConfigured } from "@agent-native/core/server";
+import { readyBeforeServing } from "../lib/plugin-readiness.js";
 
 /**
  * Whether sign-up confirms the address by email, worked out the way the
@@ -33,7 +34,7 @@ function signUpVerifiesEmail(): boolean {
  * email, anyone who knows an invited address can create that account before
  * its owner does. Set `ALLOW_UNVERIFIED_SIGNUP=1` to override deliberately.
  */
-export default function signupPolicyPlugin() {
+function signupPolicyPlugin() {
   const isProduction =
     process.env.NODE_ENV === "production" ||
     process.env.AGENT_MODE === "production";
@@ -73,3 +74,5 @@ export default function signupPolicyPlugin() {
     );
   }
 }
+
+export default readyBeforeServing(signupPolicyPlugin);

@@ -13,8 +13,9 @@ import {
   refuseChatAppCaller,
   withChatAppSurface,
 } from "../lib/chat-apps.js";
+import { readyBeforeServing } from "../lib/plugin-readiness.js";
 
-export default createAgentChatPlugin({
+const agentChat = createAgentChatPlugin({
   // Every action is role-checked. This map backs both the agent's tools and
   // the auto-mounted HTTP endpoints, so the guard covers both paths.
   // The actions a head or teacher's own AI app (Claude, ChatGPT) may call
@@ -97,3 +98,5 @@ Before executing destructive or irreversible actions (suspend, remove, delete, p
 
 Never reveal student categories (foundational/developing/advanced) to students.`,
 });
+
+export default readyBeforeServing(agentChat);

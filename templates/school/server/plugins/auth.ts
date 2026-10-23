@@ -1,7 +1,8 @@
 import { createAuthPlugin } from "@agent-native/core/server";
 import { allowSchoolSignUp } from "../lib/signup-access.js";
+import { readyBeforeServing } from "../lib/plugin-readiness.js";
 
-export default createAuthPlugin({
+const auth = createAuthPlugin({
   // Invitation-only unless open sign-up is on (server/lib/signup-access.ts):
   // an address no school has invited cannot create an account, by email or
   // by Google.
@@ -17,3 +18,5 @@ export default createAuthPlugin({
     ],
   },
 });
+
+export default readyBeforeServing(auth);
