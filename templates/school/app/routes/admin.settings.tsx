@@ -196,8 +196,10 @@ export default function AdminSettings() {
           </p>
         </div>
         <Tabs value={tab} onValueChange={setTab}>
-          {/* Nine tabs are wider than the column, so they wrap. */}
-          <TabsList className="h-auto flex-wrap justify-start">
+          {/* Nine tabs are wider than the reading column, so on a phone or a
+              narrow window they wrap. On a wide screen they ignore the column
+              and sit on one line. */}
+          <TabsList className="h-auto flex-wrap justify-start xl:w-max xl:flex-nowrap">
             <TabsTrigger value="grading">Grading</TabsTrigger>
             <TabsTrigger value="terms">Terms</TabsTrigger>
             <TabsTrigger value="school-week">School week</TabsTrigger>

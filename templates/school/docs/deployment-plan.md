@@ -49,6 +49,34 @@ pnpm showcase:school`. Hundreds of short requests; expect it to be slower
 - Netlify bills function calls and bandwidth. A handful of prospects clicking
   through is negligible, but leave no tabs open on the demo overnight.
 
+### Demo on Vercel (when Netlify credits run out)
+
+Netlify's free plan gave 300 credits a month and 240 went on 16 production
+deploys, so projects paused. Vercel runs the same build with
+`NITRO_PRESET=vercel`; `netlify.toml` is untouched and keeps working.
+
+- `vercel.json` sets the function region to `iad1` (Washington DC, the nearest
+  to the Ohio Neon database) and `git.deploymentEnabled: false`, so a push
+  never builds. Do not connect the Git repo in the dashboard either.
+- Deploys are manual and prebuilt: build on the laptop, upload the output.
+  Nothing is built on Vercel, so a deploy costs no build minutes:
+
+  ```bash
+  cd templates/school
+  COREPACK_ENABLE_STRICT=0 NITRO_PRESET=vercel pnpm build   # writes .vercel/output
+  npx vercel deploy --prebuilt --prod
+  ```
+
+- First time only: `npx vercel login`, then `npx vercel link --yes --project
+crestfield-demo` inside `templates/school`, then add the env vars (same names
+  as Netlify, minus `ANTHROPIC_API_KEY` and `NITRO_PRESET`) with
+  `npx vercel env add NAME production`. `BETTER_AUTH_URL` and `APP_URL` are the
+  project's `https://<name>.vercel.app` URL.
+- The build emits one function (`__server.func`) that the `[...page]` route and
+  the API routes all point at, so there is one cold start, and the plugin
+  readiness gate (`server/lib/plugin-readiness.ts`) covers it as on Netlify.
+- Free (Hobby) plans are non-commercial; fine for this demo, not for the pilot.
+
 ### Production for the pilot: decide with numbers
 
 Two options; the demo supplies the evidence to choose between them.
