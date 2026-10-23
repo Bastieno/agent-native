@@ -106,6 +106,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
 
   // ── School identity & configuration ───────────────────────────────────
   "setup-school": ADMIN,
+  "save-assistant-key": ADMIN,
   "get-school": EVERYONE,
   "get-school-stats": STAFF,
   "get-school-config": EVERYONE, // grading scale, labels — UI needs it

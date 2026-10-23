@@ -2011,6 +2011,8 @@ export interface AgentSidebarProps {
   children: React.ReactNode;
   /** Placeholder text for the empty chat state */
   emptyStateText?: string;
+  /** Replaces the built-in "turn on the assistant" card. See AssistantChatProps. */
+  setupCard?: AssistantChatProps["setupCard"];
   /** Suggestion prompts shown when no messages */
   suggestions?: string[];
   /** Context-aware suggestions merged with `suggestions`. Enabled by default. */
@@ -2064,6 +2066,7 @@ export interface AgentSidebarProps {
 export function AgentSidebar({
   children,
   emptyStateText = "How can I help you?",
+  setupCard,
   suggestions,
   dynamicSuggestions,
   defaultSidebarWidth,
@@ -2530,6 +2533,7 @@ export function AgentSidebar({
       >
         <AgentPanel
           emptyStateText={emptyStateText}
+          setupCard={setupCard}
           suggestions={suggestions}
           dynamicSuggestions={dynamicSuggestions}
           onCollapse={() => setOpenPersisted(false)}

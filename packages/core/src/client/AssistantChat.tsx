@@ -2839,7 +2839,7 @@ function RunErrorRecoveryCard({
               ? "The agent stopped before finishing"
               : "The agent hit an error"}
           </div>
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground [overflow-wrap:anywhere]">
             {info.message}
           </p>
           {shouldShowBuilderReconnect && !builderReconnectResolved && (
@@ -3340,6 +3340,13 @@ export interface AssistantChatProps {
    */
   providerStatusChecksEnabled?: boolean;
   /**
+   * Replaces the built-in "Turn on the AI assistant" card (Builder connect +
+   * API key link) shown when no provider is configured. A host that has its
+   * own way to supply the key renders it here; after saving, dispatch
+   * `agent-engine:configured-changed` on `window` so the gate re-checks.
+   */
+  setupCard?: React.ReactNode;
+  /**
    * Advanced host override for non-HTTP transports. Defaults to the production
    * sidebar SSE adapter when omitted.
    */
@@ -3452,6 +3459,7 @@ const AssistantChatInner = forwardRef<
     onConnectProvider,
     plusMenuMode = "full",
     providerStatusChecksEnabled = true,
+    setupCard,
     loadHistoryRepository,
     historyReloadKey,
   },
@@ -4872,10 +4880,12 @@ const AssistantChatInner = forwardRef<
                 </div>
               ) : missingApiKey && messages.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full px-2">
-                  <BuilderSetupCard
-                    onConnected={handleBuilderConnected}
-                    bouncePulse={missingKeyBouncePulse}
-                  />
+                  {setupCard ?? (
+                    <BuilderSetupCard
+                      onConnected={handleBuilderConnected}
+                      bouncePulse={missingKeyBouncePulse}
+                    />
+                  )}
                 </div>
               ) : isRestoring ? (
                 <div className="flex flex-col gap-3 p-4">
@@ -4928,12 +4938,13 @@ const AssistantChatInner = forwardRef<
                       }}
                     />
                   </AssistantMessageListErrorBoundary>
-                  {missingApiKey && (
-                    <BuilderSetupCard
-                      onConnected={handleBuilderConnected}
-                      bouncePulse={missingKeyBouncePulse}
-                    />
-                  )}
+                  {missingApiKey &&
+                    (setupCard ?? (
+                      <BuilderSetupCard
+                        onConnected={handleBuilderConnected}
+                        bouncePulse={missingKeyBouncePulse}
+                      />
+                    ))}
                   {visibleLoopLimit && !showRunningInUI && (
                     <LoopLimitContinueCard
                       info={visibleLoopLimit}

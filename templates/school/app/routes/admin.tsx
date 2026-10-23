@@ -4,6 +4,7 @@ import { AgentSidebar } from "@agent-native/core/client";
 import { getSchoolSuggestions } from "@/lib/school-suggestions";
 import { SchoolTheme } from "@/components/SchoolTheme";
 import { AdminSidebar } from "@/components/layout/AdminSidebar";
+import { AssistantSetupCard } from "@/components/settings/AssistantKey";
 import { PortalShell } from "@/components/layout/PortalShell";
 import { useRole } from "@/hooks/use-role";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -109,6 +110,7 @@ export default function AdminLayout() {
 
   return (
     <AgentSidebar
+      setupCard={<AssistantSetupCard />}
       emptyStateText="How can I help you manage your school?"
       dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
       // The admin sets each role's model (Settings → Assistant) and the server

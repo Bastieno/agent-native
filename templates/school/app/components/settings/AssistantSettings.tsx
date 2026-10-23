@@ -3,6 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { IconChevronDown } from "@tabler/icons-react";
 import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
+import {
+  AssistantKeyForm,
+  useAssistantConnected,
+} from "@/components/settings/AssistantKey";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -25,6 +30,37 @@ import {
   type AgentAudience,
   type AgentSettings,
 } from "@shared/agent-settings";
+
+/** Whether the school has an API key, with a way to add or replace it. */
+function ConnectionRow() {
+  const { data: connected, isLoading } = useAssistantConnected();
+  const [editing, setEditing] = useState(false);
+  if (isLoading) return null;
+  return (
+    <div className="rounded-lg border bg-card p-4">
+      <div className="flex items-center justify-between gap-4">
+        <div className="space-y-1">
+          <p className="text-sm font-medium">API key</p>
+          <p className="text-xs text-muted-foreground">
+            {connected
+              ? "The assistant is switched on for your school."
+              : "The assistant is off until you add your Anthropic API key."}
+          </p>
+        </div>
+        {!editing ? (
+          <Button variant="outline" size="sm" onClick={() => setEditing(true)}>
+            {connected ? "Replace key" : "Add key"}
+          </Button>
+        ) : null}
+      </div>
+      {editing ? (
+        <div className="mt-3">
+          <AssistantKeyForm onSaved={() => setEditing(false)} />
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 const WHO: Record<AgentAudience, string> = {
   learner: "Learners",
@@ -64,6 +100,7 @@ export function AssistantSettings() {
 
   return (
     <div className="space-y-4">
+      <ConnectionRow />
       <div className="flex items-start justify-between gap-4 rounded-lg border bg-card p-4">
         <div className="space-y-1">
           <Label htmlFor="learner-agent" className="text-sm font-medium">

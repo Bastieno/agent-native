@@ -10,6 +10,7 @@ import { setAgentWatching } from "@/lib/agent-availability";
 import { getSchoolSuggestions } from "@/lib/school-suggestions";
 import { SchoolTheme } from "@/components/SchoolTheme";
 import { StudentNav } from "@/components/layout/StudentNav";
+import { AssistantSetupCard } from "@/components/settings/AssistantKey";
 import { useRole } from "@/hooks/use-role";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { DefaultSpinner } from "@agent-native/core/client";
@@ -119,6 +120,7 @@ export default function StudentLayout() {
 function StudentAgent({ children }: { children: ReactNode }) {
   return (
     <AgentSidebar
+      setupCard={<AssistantSetupCard />}
       emptyStateText="Ask me for help with your assignments!"
       dynamicSuggestions={{ getSuggestions: getSchoolSuggestions }}
       // The admin sets each role's model (Settings → Assistant) and the server
