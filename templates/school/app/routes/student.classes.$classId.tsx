@@ -2,15 +2,22 @@ import { useQuery } from "@tanstack/react-query";
 import { NO_TEACHER_LABEL } from "@shared/class-teacher";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { isCurrentWeek } from "@shared/term-weeks";
 import {
   IconBook,
   IconChevronRight,
   IconClipboard,
   IconChevronLeft,
+  IconChevronDown,
+  IconCircleCheck,
 } from "@tabler/icons-react";
 import { submissionStatusWord } from "@/lib/submission-status";
 
@@ -89,6 +96,32 @@ export default function StudentClassDetail() {
     (a: any) => a.isMaterial && !a.lessonNoteId,
   );
 
+  // Work still owed comes first, soonest due at the top. What is handed in,
+  // marked or closed has nothing left to do, so it waits behind one line
+  // instead of pushing the open work down the page.
+  const isDone = (w: any) =>
+    ["submitted", "graded"].includes(w.submissionStatus) ||
+    w.status === "closed";
+  const byDue = (x: any, y: any) =>
+    (x.dueDate ?? "9999").localeCompare(y.dueDate ?? "9999");
+  const openWork = work.filter((w: any) => !isDone(w)).sort(byDue);
+  const doneWork = work.filter(isDone).sort((x: any, y: any) => byDue(y, x));
+
+  // A learner opens this page to find the current week, not week 1: from
+  // this week on is shown; earlier weeks open from one line.
+  const weekList: any[] = lessons ?? [];
+  const today = new Date().toISOString().slice(0, 10);
+  let firstShown = weekList.findIndex((l) => isCurrentWeek(l.lessonDate));
+  if (firstShown < 0) {
+    firstShown = weekList.findIndex(
+      (l) => l.lessonDate && String(l.lessonDate).slice(0, 10) >= today,
+    );
+  }
+  // Term over: the last few weeks are the ones still worth a glance.
+  if (firstShown < 0) firstShown = Math.max(0, weekList.length - 3);
+  const earlierWeeks = weekList.slice(0, firstShown);
+  const shownWeeks = weekList.slice(firstShown);
+
   return (
     <div className="p-6 space-y-6">
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -120,98 +153,46 @@ export default function StudentClassDetail() {
             <IconClipboard size={14} />
             To hand in
           </h2>
-          <div className="space-y-2">
-            {work.map((a: any) => (
-              <Link
-                key={a.id}
-                to={`/student/assessments/${a.id}`}
-                className="group flex items-center justify-between rounded-lg border p-3 hover:border-primary/50 transition-colors"
-              >
-                <div className="space-y-0.5">
-                  <p className="text-sm font-medium group-hover:text-primary transition-colors">
-                    {a.title}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {/* The school's own word for the work — "class test" —
-                        never the app's internal type, and no "No due date"
-                        on something that never had one. */}
-                    {[
-                      a.format ?? a.assessmentType,
-                      a.durationMinutes ? `${a.durationMinutes} minutes` : null,
-                      a.dueDate ? `Due ${a.dueDate}` : null,
-                    ]
-                      .filter(Boolean)
-                      .join(" · ")}
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Badge
-                    variant={
-                      a.submissionStatus === "graded"
-                        ? "default"
-                        : a.submissionStatus === "submitted"
-                          ? "secondary"
-                          : "outline"
-                    }
-                    className="text-xs capitalize"
-                  >
-                    {/* Closed and never handed in: "Not started" would read
-                        as something they can still do. */}
-                    {a.status === "closed" &&
-                    !["submitted", "graded"].includes(a.submissionStatus)
-                      ? "Closed"
-                      : submissionStatusWord(a.submissionStatus)}
-                  </Badge>
-                  <IconChevronRight
-                    size={14}
-                    className="text-muted-foreground group-hover:text-primary transition-colors"
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
+          {openWork.length > 0 ? (
+            <div className="space-y-2">
+              {openWork.map((a: any) => (
+                <WorkRow key={a.id} a={a} />
+              ))}
+            </div>
+          ) : (
+            <p className="flex items-center gap-2 rounded-lg border border-dashed p-3 text-sm text-muted-foreground">
+              <IconCircleCheck size={16} />
+              Nothing left to hand in.
+            </p>
+          )}
+          {doneWork.length > 0 ? (
+            <Fold label={`Done (${doneWork.length})`}>
+              {doneWork.map((a: any) => (
+                <WorkRow key={a.id} a={a} />
+              ))}
+            </Fold>
+          ) : null}
         </div>
       )}
 
-      {lessons && lessons.length > 0 && (
+      {weekList.length > 0 && (
         <div className="space-y-3">
           <h2 className="text-sm font-medium flex items-center gap-2">
             <IconBook size={14} />
             Your weeks
           </h2>
           <div className="space-y-2">
-            {lessons.map((lesson: any) => (
-              <Link
-                key={lesson.id}
-                to={`/student/lessons/${lesson.id}`}
-                className="group flex items-center justify-between gap-3 rounded-lg border p-3 hover:border-primary/50 transition-colors"
-              >
-                <div className="min-w-0 space-y-1">
-                  <p className="flex items-center gap-2 text-sm font-medium transition-colors group-hover:text-primary">
-                    {lesson.title}
-                    {isCurrentWeek(lesson.lessonDate) ? (
-                      <Badge className="text-[11px]">This week</Badge>
-                    ) : null}
-                  </p>
-                  {lesson.summary && (
-                    <p className="line-clamp-2 text-xs text-muted-foreground">
-                      {lesson.summary}
-                    </p>
-                  )}
-                  {/* What is waiting inside, so a week is worth opening. */}
-                  {lesson.shapes?.length ? (
-                    <p className="text-xs text-muted-foreground">
-                      {describeShapes(lesson.shapes)}
-                    </p>
-                  ) : null}
-                </div>
-                <IconChevronRight
-                  size={16}
-                  className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors"
-                />
-              </Link>
+            {shownWeeks.map((lesson: any) => (
+              <WeekRow key={lesson.id} lesson={lesson} />
             ))}
           </div>
+          {earlierWeeks.length > 0 ? (
+            <Fold label={`Earlier weeks (${earlierWeeks.length})`}>
+              {earlierWeeks.map((lesson: any) => (
+                <WeekRow key={lesson.id} lesson={lesson} />
+              ))}
+            </Fold>
+          ) : null}
         </div>
       )}
 
@@ -256,5 +237,111 @@ export default function StudentClassDetail() {
           </div>
         )}
     </div>
+  );
+}
+
+/** A line that opens to the rest, so finished things stay out of the way. */
+function Fold({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <Collapsible open={open} onOpenChange={setOpen} className="space-y-2">
+      <CollapsibleTrigger className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground">
+        <IconChevronDown
+          size={14}
+          className={open ? "" : "-rotate-90 transition-transform"}
+        />
+        {label}
+      </CollapsibleTrigger>
+      <CollapsibleContent className="space-y-2">{children}</CollapsibleContent>
+    </Collapsible>
+  );
+}
+
+function WorkRow({ a }: { a: any }) {
+  return (
+    <Link
+      to={`/student/assessments/${a.id}`}
+      className="group flex items-center justify-between rounded-lg border p-3 hover:border-primary/50 transition-colors"
+    >
+      <div className="space-y-0.5">
+        <p className="text-sm font-medium group-hover:text-primary transition-colors">
+          {a.title}
+        </p>
+        <p className="text-xs text-muted-foreground">
+          {/* The school's own word for the work — "class test" — never the
+              app's internal type, and no "No due date" on something that
+              never had one. */}
+          {[
+            a.format ?? a.assessmentType,
+            a.durationMinutes ? `${a.durationMinutes} minutes` : null,
+            a.dueDate ? `Due ${a.dueDate}` : null,
+          ]
+            .filter(Boolean)
+            .join(" · ")}
+        </p>
+      </div>
+      <div className="flex items-center gap-2">
+        <Badge
+          variant={
+            a.submissionStatus === "graded"
+              ? "default"
+              : a.submissionStatus === "submitted"
+                ? "secondary"
+                : "outline"
+          }
+          className="text-xs capitalize"
+        >
+          {/* Closed and never handed in: "Not started" would read as
+              something they can still do. */}
+          {a.status === "closed" &&
+          !["submitted", "graded"].includes(a.submissionStatus)
+            ? "Closed"
+            : submissionStatusWord(a.submissionStatus)}
+        </Badge>
+        <IconChevronRight
+          size={14}
+          className="text-muted-foreground group-hover:text-primary transition-colors"
+        />
+      </div>
+    </Link>
+  );
+}
+
+function WeekRow({ lesson }: { lesson: any }) {
+  return (
+    <Link
+      to={`/student/lessons/${lesson.id}`}
+      className="group flex items-center justify-between gap-3 rounded-lg border p-3 hover:border-primary/50 transition-colors"
+    >
+      <div className="min-w-0 space-y-1">
+        <p className="flex items-center gap-2 text-sm font-medium transition-colors group-hover:text-primary">
+          {lesson.title}
+          {isCurrentWeek(lesson.lessonDate) ? (
+            <Badge className="text-[11px]">This week</Badge>
+          ) : null}
+        </p>
+        {lesson.summary && (
+          <p className="line-clamp-2 text-xs text-muted-foreground">
+            {lesson.summary}
+          </p>
+        )}
+        {/* What is waiting inside, so a week is worth opening. */}
+        {lesson.shapes?.length ? (
+          <p className="text-xs text-muted-foreground">
+            {describeShapes(lesson.shapes)}
+          </p>
+        ) : null}
+      </div>
+      <IconChevronRight
+        size={16}
+        className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors"
+      />
+    </Link>
   );
 }

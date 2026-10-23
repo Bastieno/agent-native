@@ -44,7 +44,7 @@ function Lessons({ period }: { period: Period }) {
     <div className="space-y-2">
       {period.lessons.map((lesson) => (
         <div key={lesson.classId} className="min-w-0">
-          <p className="truncate text-sm font-medium">
+          <p className="line-clamp-2 break-words text-sm font-medium">
             {lesson.className || lesson.subjectName}
           </p>
           {lesson.lessonLabel ? (
@@ -111,7 +111,8 @@ function DayList({ day }: { day: Day }) {
   return <div className="divide-y rounded-lg border">{items}</div>;
 }
 
-/** Days across, periods down. Used from `md` up. */
+/** Days across, periods down. Used from `lg` up; narrower screens get one
+ * day at a time, because five columns do not fit a tablet. */
 function WeekGrid({ days }: { days: Day[] }) {
   // Lesson rows are the period numbers; a break sits after the period that
   // precedes it on its own day. Days may keep different bell times.
@@ -133,7 +134,9 @@ function WeekGrid({ days }: { days: Day[] }) {
     }
   }
   const ordered = [...rows.values()].sort((a, b) => a.order - b.order);
-  const cols = `5.5rem repeat(${days.length}, minmax(8rem, 1fr))`;
+  // minmax(0, 1fr): columns share the width equally instead of growing to the
+  // longest title, which is what pushed the grid off the page.
+  const cols = `5.5rem repeat(${days.length}, minmax(0, 1fr))`;
 
   // One grid, so a double can span its two period rows. A double joins when
   // its second period is the very next row.
@@ -157,7 +160,7 @@ function WeekGrid({ days }: { days: Day[] }) {
     cells.push(
       <div
         key={key}
-        className="border-b px-3 py-3 text-xs text-muted-foreground"
+        className="sticky left-0 z-[1] border-b bg-background px-3 py-3 text-xs text-muted-foreground"
         style={{ gridRow, gridColumn: 1 }}
       >
         <p className="font-medium text-foreground">Period {first.number}</p>
@@ -180,10 +183,7 @@ function WeekGrid({ days }: { days: Day[] }) {
       cells.push(
         <div
           key={`${key}:${d.day}`}
-          className={cn(
-            "min-w-0 border-b px-3 py-3",
-            d.isToday && "bg-primary/5",
-          )}
+          className={cn("min-w-0 border-b p-1.5", d.isToday && "bg-primary/5")}
           style={{
             gridRow: joined ? `${gridRow} / span 2` : gridRow,
             gridColumn: j + 2,
@@ -191,12 +191,19 @@ function WeekGrid({ days }: { days: Day[] }) {
           data-double={joined ? "true" : undefined}
         >
           {period ? (
-            <>
+            // The same tile the admin's timetable uses, so a lesson looks
+            // like a lesson in both places; a double fills its two rows.
+            <div
+              className={cn(
+                "h-full rounded-md px-2.5 py-2",
+                period.lessons.length > 0 && "bg-muted/50",
+              )}
+            >
               {joined || range !== timeRange(first) ? (
                 <p className="mb-1 text-xs text-muted-foreground">{range}</p>
               ) : null}
               <Lessons period={period} />
-            </>
+            </div>
           ) : null}
         </div>,
       );
@@ -205,7 +212,7 @@ function WeekGrid({ days }: { days: Day[] }) {
 
   return (
     <div className="overflow-x-auto rounded-lg border">
-      <div className="min-w-max">
+      <div className="min-w-[44rem]">
         <div
           className="grid border-b bg-muted/40 text-sm"
           style={{ gridTemplateColumns: cols }}
@@ -214,15 +221,15 @@ function WeekGrid({ days }: { days: Day[] }) {
           {days.map((d) => (
             <div
               key={d.day}
+              aria-current={d.isToday ? "date" : undefined}
               className={cn(
-                "px-3 py-2 font-medium",
+                "px-4 py-2 font-medium",
                 d.isToday && "bg-primary/10 text-primary",
               )}
             >
               {d.dayName}
-              {d.isToday ? (
-                <span className="ml-1.5 text-xs font-normal">Today</span>
-              ) : null}
+              {/* The tinted column says it; the word is for screen readers. */}
+              {d.isToday ? <span className="sr-only"> (today)</span> : null}
             </div>
           ))}
         </div>
@@ -284,10 +291,10 @@ export default function StudentWeek() {
         </div>
       ) : (
         <>
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <WeekGrid days={days} />
           </div>
-          <div className="space-y-3 md:hidden">
+          <div className="space-y-3 lg:hidden">
             <Tabs
               value={activeDay ? String(activeDay.day) : undefined}
               onValueChange={setPicked}
@@ -300,6 +307,16 @@ export default function StudentWeek() {
                     className="flex-1 px-2"
                   >
                     {schoolWeekdayShortName(d.day, locale)}
+                    {/* Today stays findable after tapping to another day. */}
+                    {d.isToday ? (
+                      <>
+                        <span
+                          className="ml-1.5 inline-block size-1.5 rounded-full bg-primary"
+                          aria-hidden
+                        />
+                        <span className="sr-only"> (today)</span>
+                      </>
+                    ) : null}
                   </TabsTrigger>
                 ))}
               </TabsList>
