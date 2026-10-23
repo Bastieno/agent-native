@@ -214,14 +214,20 @@ export default function StudentAssessment() {
     <div className="h-full flex flex-col overflow-hidden">
       <div className="flex items-center justify-between border-b px-6 py-3">
         <div className="min-w-0">
+          {/* Back to where it was opened from: its week when it belongs to
+              one (that is the page that lists it), the class otherwise. */}
           <BackLink
             to={
-              assessment?.classId
-                ? `/student/classes/${assessment.classId}`
-                : "/student/classes"
+              assessment?.lessonNoteId
+                ? `/student/lessons/${assessment.lessonNoteId}`
+                : assessment?.classId
+                  ? `/student/classes/${assessment.classId}`
+                  : "/student/classes"
             }
           >
-            {assessment?.className ?? "My classes"}
+            {assessment?.lessonNoteId
+              ? (assessment.lessonTitle ?? "Back to the week")
+              : (assessment?.className ?? "My classes")}
           </BackLink>
           <h1 className="text-base font-semibold">
             {assessment?.title ?? "Assessment"}

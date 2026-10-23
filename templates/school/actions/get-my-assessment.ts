@@ -52,6 +52,7 @@ export default defineAction({
         totalPoints: schema.assessments.totalPoints,
         status: schema.assessments.status,
         classId: schema.assessments.classId,
+        lessonNoteId: schema.assessments.lessonNoteId,
         opensAt: schema.assessments.opensAt,
         closesAt: schema.assessments.closesAt,
         durationMinutes: schema.assessments.durationMinutes,
@@ -184,9 +185,20 @@ export default defineAction({
       .where(eq(schema.classes.id, assessment.classId))
       .limit(1);
 
+    // The week this was set for, so "back" can return to it. Only its title is
+    // read: the note itself is the teacher's, never the class's.
+    const [week] = assessment.lessonNoteId
+      ? await db
+          .select({ title: schema.lessonNotes.title })
+          .from(schema.lessonNotes)
+          .where(eq(schema.lessonNotes.id, assessment.lessonNoteId))
+          .limit(1)
+      : [];
+
     return {
       ...assessment,
       className: cls?.name ?? null,
+      lessonTitle: week?.title ?? null,
       // difficulty is deliberately omitted.
       window,
       variant: mine
