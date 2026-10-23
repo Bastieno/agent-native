@@ -58,13 +58,14 @@ function PeriodRow({
   }, [p.number]);
   const where = `${dayName} period ${p.number}`;
 
+  // Phone: two tidy rows (number, start, end / kind, label, remove).
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="grid grid-cols-6 items-center gap-2 max-sm:border-b max-sm:pb-3 max-sm:last:border-0 max-sm:last:pb-0 sm:flex sm:flex-wrap">
       <Input
         type="number"
         min={1}
         aria-label={`Period number, ${dayName} period ${p.number}`}
-        className="h-8 w-16"
+        className="col-span-2 h-8 w-full sm:w-16"
         value={numberText}
         onChange={(e) => {
           setNumberText(e.target.value);
@@ -77,14 +78,14 @@ function PeriodRow({
       <Input
         type="time"
         aria-label={`Start, ${where}`}
-        className="h-8 w-28"
+        className="col-span-2 h-8 w-full sm:w-28"
         value={p.start}
         onChange={(e) => onChange({ start: e.target.value })}
       />
       <Input
         type="time"
         aria-label={`End, ${where}`}
-        className="h-8 w-28"
+        className="col-span-2 h-8 w-full sm:w-28"
         value={p.end}
         onChange={(e) => onChange({ end: e.target.value })}
       />
@@ -92,7 +93,10 @@ function PeriodRow({
         value={p.kind}
         onValueChange={(v) => onChange({ kind: v as WeekPeriod["kind"] })}
       >
-        <SelectTrigger className="h-8 w-28" aria-label={`Kind, ${where}`}>
+        <SelectTrigger
+          className="col-span-2 h-8 w-full sm:w-28"
+          aria-label={`Kind, ${where}`}
+        >
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
@@ -103,14 +107,14 @@ function PeriodRow({
       <Input
         aria-label={`Label, ${where}`}
         placeholder="Label"
-        className="h-8 min-w-24 flex-1"
+        className="col-span-3 h-8 min-w-24 sm:flex-1"
         value={p.label ?? ""}
         onChange={(e) => onChange({ label: e.target.value || undefined })}
       />
       <Button
         variant="ghost"
         size="icon"
-        className="h-8 w-8"
+        className="col-span-1 h-8 w-8 justify-self-end"
         aria-label={`Remove ${where}`}
         onClick={onRemove}
       >

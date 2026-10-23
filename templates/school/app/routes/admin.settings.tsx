@@ -188,7 +188,7 @@ export default function AdminSettings() {
     // a 2000px display a heading and its help text ended up at opposite ends
     // of the screen, reading as two unrelated things.
     <div className="h-full overflow-auto p-6">
-      <div className="max-w-3xl space-y-4">
+      <div className="min-w-0 max-w-3xl space-y-4">
         <div>
           <h1 className="text-xl font-semibold">School Settings</h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -196,7 +196,8 @@ export default function AdminSettings() {
           </p>
         </div>
         <Tabs value={tab} onValueChange={setTab}>
-          <TabsList>
+          {/* Nine tabs are wider than the column, so they wrap. */}
+          <TabsList className="h-auto flex-wrap justify-start">
             <TabsTrigger value="grading">Grading</TabsTrigger>
             <TabsTrigger value="terms">Terms</TabsTrigger>
             <TabsTrigger value="school-week">School week</TabsTrigger>
