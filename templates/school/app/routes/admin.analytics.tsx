@@ -174,6 +174,18 @@ export default function AdminAnalytics() {
               </div>
             </div>
           )}
+
+          {/* So the page can be trusted, or checked: how every figure is made. */}
+          <p className="text-xs text-muted-foreground">
+            Counted like the report card: published marks only, with work not
+            handed in{" "}
+            {analytics.missedWorkCountsAsZero
+              ? "counted as zero"
+              : "left out of the average"}
+            . A class is the mean of its learners, and the school, a subject and
+            a year group are the mean of their classes, so every class counts
+            equally.
+          </p>
         </>
       )}
     </div>

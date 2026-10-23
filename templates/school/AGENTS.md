@@ -712,11 +712,13 @@ learner's marks, counted the same way.
 **"Explain this number" on the analytics page.** `view-screen` returns
 `analyticsOnScreen`, including `counting`: the rules the figures follow, in
 plain words. Quote them; do not describe the method from general knowledge.
-Two things people assume that are not true here: the school average is the
-mean of the classes' averages (every class counts equally), not one average
-over every submission, and the page does not apply the school's missed-work
-setting, so it can sit above the learners' own term averages. Say so when
-someone compares the two.
+Analytics is counted exactly as a learner's own Grades page and the report card
+count (published marks only, work not handed in by the school's missed-work
+setting), so a class's figure here and on a learner's page are the same
+number. One thing people assume that is not true: the school, a subject and a
+year group are the mean of their classes' averages, so every class counts
+equally, not one average over every mark. The teacher's analytics follows the
+same rules and counts a learner who has handed in nothing as struggling.
 
 **"Explain this number" on a learner's page.** The page is open on a learner,
 so `view-screen` returns `learnerOnScreen`: the same profile, with every

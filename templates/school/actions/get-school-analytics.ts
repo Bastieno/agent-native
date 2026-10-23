@@ -1,11 +1,14 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
+import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray, ne } from "drizzle-orm";
 import { z } from "zod";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { isUnassignedTeacher } from "../shared/class-teacher.js";
 import { sharedWithClass } from "../server/lib/shared-with-class.js";
+import { classAveragesFor } from "../server/lib/class-averages.js";
+import { missedWorkPolicy } from "../shared/missed-work.js";
 
 export default defineAction({
   description:
@@ -95,7 +98,14 @@ export default defineAction({
         ? await db
             .select()
             .from(schema.grades)
-            .where(inArray(schema.grades.assessmentId, assessmentIds))
+            .where(
+              and(
+                inArray(schema.grades.assessmentId, assessmentIds),
+                // A mark nobody has published is not yet part of the record,
+                // here as on a report card and a learner's own page.
+                eq(schema.grades.isPublished, true),
+              ),
+            )
         : [];
     const turnedIn =
       assessmentIds.length > 0
@@ -133,6 +143,15 @@ export default defineAction({
     const enrolledPerClass: Record<string, number> = {};
     for (const e of enrollments)
       enrolledPerClass[e.classId] = (enrolledPerClass[e.classId] ?? 0) + 1;
+
+    // A class's average is the mean of its learners' own subject figures,
+    // counted as the report card counts them (published marks, and work not
+    // handed in by the school's missed-work setting), so this page and a
+    // learner's page can never quote different numbers for the same class.
+    const policy = missedWorkPolicy(
+      await getOrgSetting(orgId, "school-config"),
+    );
+    const classAverages = await classAveragesFor(classIds, policy);
 
     const pctByClass: Record<string, number[]> = {};
     for (const g of grades as any[]) {
@@ -180,8 +199,8 @@ export default defineAction({
         assessmentCount: classAssessments.length,
         gradedCount: pcts.length,
         averageScore:
-          pcts.length > 0
-            ? (pcts.reduce((a, b) => a + b, 0) / pcts.length).toFixed(1)
+          classAverages.get(cls.id)?.exact != null
+            ? classAverages.get(cls.id)!.exact!.toFixed(1)
             : null,
         completionRate:
           expected > 0
@@ -309,13 +328,17 @@ export default defineAction({
       // setting is not applied here, and a mark counts whether or not it has
       // been published to the learner.
       counting: [
-        "A class's average is the mean of the percentage on every mark recorded for its handed-in work. Reading pages and card decks carry no marks and are not counted.",
-        "The school's average, a subject's average and a year group's average are each the mean of the averages of the classes in them, so every class counts equally whatever its size.",
-        "A mark counts whether or not it has been published to the learner.",
-        "Work that was not handed in is not counted in any average. The school's missed-work setting is not applied here, unlike on a learner's Grades page and the report card, so an average here can be higher than the same learners' own term averages.",
+        "A learner's figure in a class is their published marks, counted as their own Grades page and the report card count them: work not handed in " +
+          (policy === "zero"
+            ? "counts as zero (the school's missed-work setting)."
+            : "is left out of the average (the school's missed-work setting)."),
+        "A class's average is the mean of its enrolled learners' figures. A learner with no figure (nothing marked yet) is left out.",
+        "The school's average, a subject's average and a year group's average are each the mean of the averages of the classes in them, so every class counts equally whatever its size. They are not one average over every mark.",
+        "Only published marks count. Reading pages and card decks carry no marks and are not counted.",
         "Completion is the share of expected hand-ins (learners enrolled times pieces of work set) that were handed in.",
-        "Graded submissions is the number of marks recorded.",
+        "Graded submissions is the number of published marks.",
       ],
+      missedWorkCountsAsZero: policy === "zero",
       completionRate:
         totalExpected > 0
           ? Math.round(

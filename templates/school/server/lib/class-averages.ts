@@ -11,11 +11,26 @@ import { summarise, type MissedWorkPolicy } from "../../shared/missed-work.js";
  * nothing marked under the "excluded" policy has no figure and is left out,
  * so one absentee does not drag the class down or lift it up.
  */
+export interface ClassAverage {
+  /** Rounded to a whole number, as a learner's own figure is. */
+  average: number | null;
+  /** The same mean unrounded, for a page that shows a decimal. */
+  exact: number | null;
+  learners: number;
+  /** Each enrolled learner's figure in this class, under the school's policy. */
+  figures: Array<{
+    studentId: string;
+    percentage: number | null;
+    /** Work was set and none of it came back. */
+    nothingHandedIn: boolean;
+  }>;
+}
+
 export async function classAveragesFor(
   classIds: string[],
   policy: MissedWorkPolicy,
-): Promise<Map<string, { average: number | null; learners: number }>> {
-  const out = new Map<string, { average: number | null; learners: number }>();
+): Promise<Map<string, ClassAverage>> {
+  const out = new Map<string, ClassAverage>();
   if (classIds.length === 0) return out;
   const db = getDb();
 
@@ -76,6 +91,7 @@ export async function classAveragesFor(
     const set = assessments.filter((a) => a.classId === classId);
     const setIds = new Set(set.map((a) => a.id));
     const figures: number[] = [];
+    const each: ClassAverage["figures"] = [];
     const enrolled = enrolments.filter((e) => e.classId === classId);
     for (const e of enrolled) {
       const studentId = studentIdOf.get(e.userId);
@@ -83,14 +99,22 @@ export async function classAveragesFor(
       const scores = grades
         .filter((g) => g.studentId === studentId && setIds.has(g.assessmentId))
         .map((g) => parseFloat(g.percentage ?? "0"));
-      const { percentage } = summarise(scores, set.length, policy);
+      const { percentage, nothingHandedIn } = summarise(
+        scores,
+        set.length,
+        policy,
+      );
+      each.push({ studentId, percentage, nothingHandedIn });
       if (percentage !== null) figures.push(percentage);
     }
+    const exact = figures.length
+      ? figures.reduce((a, b) => a + b, 0) / figures.length
+      : null;
     out.set(classId, {
-      average: figures.length
-        ? Math.round(figures.reduce((a, b) => a + b, 0) / figures.length)
-        : null,
+      average: exact === null ? null : Math.round(exact),
+      exact,
       learners: figures.length,
+      figures: each,
     });
   }
   return out;

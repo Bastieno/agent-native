@@ -1,5 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
+import { classAveragesFor } from "../server/lib/class-averages.js";
+import { missedWorkPolicy } from "../shared/missed-work.js";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, desc, asc, inArray, sql, count, ne } from "drizzle-orm";
@@ -129,34 +131,49 @@ export default defineAction({
       (s: any) => !gradedSubmissionIds.has(s.id),
     ).length;
 
-    // Overall average from all published grades
-    const allPercentages = grades
-      .map((g: any) => parseFloat(g.percentage ?? "0"))
-      .filter((p: number) => !isNaN(p));
+    // Counted as a learner's own Grades page and the report card count: each
+    // learner's figure in a class is their published marks under the school's
+    // missed-work setting. A class average is the mean of those figures, and a
+    // learner who handed nothing in is struggling, not invisible.
+    const policy = missedWorkPolicy(schoolConfig);
+    const classAverages = await classAveragesFor(classIds, policy);
+    const scored = [...classAverages.values()].filter((c) => c.exact !== null);
     const overallAverage =
-      allPercentages.length > 0
+      scored.length > 0
         ? (
-            allPercentages.reduce((a: number, b: number) => a + b, 0) /
-            allPercentages.length
+            scored.reduce((n, c) => n + (c.exact as number), 0) / scored.length
           ).toFixed(1)
         : null;
 
-    // Struggling: enrolled students with average below passMark
-    // Count unique students with avg < passMark across all classes
-    const studentScores: Record<string, number[]> = {};
-    for (const g of grades as any[]) {
-      if (g.studentId && g.percentage != null) {
-        const p = parseFloat(g.percentage);
-        if (!isNaN(p)) {
-          if (!studentScores[g.studentId]) studentScores[g.studentId] = [];
-          studentScores[g.studentId].push(p);
+    const isStruggling = (f: {
+      percentage: number | null;
+      nothingHandedIn: boolean;
+    }) =>
+      f.nothingHandedIn || (f.percentage !== null && f.percentage < passMark);
+    // Across classes: a learner is struggling when their own average over the
+    // teacher's classes is below the pass mark, or they have handed nothing in.
+    const byLearner = new Map<string, number[]>();
+    const nothingBy = new Set<string>();
+    for (const c of classAverages.values()) {
+      for (const f of c.figures) {
+        if (f.percentage !== null) {
+          byLearner.set(f.studentId, [
+            ...(byLearner.get(f.studentId) ?? []),
+            f.percentage,
+          ]);
+        } else if (f.nothingHandedIn) {
+          nothingBy.add(f.studentId);
         }
       }
     }
-    const strugglingCount = Object.values(studentScores).filter((scores) => {
-      const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-      return avg < passMark;
-    }).length;
+    const strugglingCount = new Set([
+      ...[...byLearner.entries()]
+        .filter(
+          ([, xs]) => xs.reduce((a, b) => a + b, 0) / xs.length < passMark,
+        )
+        .map(([id]) => id),
+      ...[...nothingBy].filter((id) => !byLearner.has(id)),
+    ]).size;
 
     // Per-class breakdown
     const byClass = primaryClasses.map((c: any) => {
@@ -165,19 +182,9 @@ export default defineAction({
           .filter((a: any) => a.classId === c.id)
           .map((a: any) => a.id),
       );
-      const classGrades = (grades as any[]).filter((g: any) =>
-        classAssessmentIds.has(g.assessmentId),
-      );
-      const classPercentages = classGrades
-        .map((g: any) => parseFloat(g.percentage ?? "0"))
-        .filter((p: number) => !isNaN(p));
+      const classCounted = classAverages.get(c.id);
       const classAvg =
-        classPercentages.length > 0
-          ? (
-              classPercentages.reduce((a: number, b: number) => a + b, 0) /
-              classPercentages.length
-            ).toFixed(1)
-          : null;
+        classCounted?.exact != null ? classCounted.exact.toFixed(1) : null;
 
       const classPendingSubs = pendingSubmissions.filter(
         (s: any) =>
@@ -185,22 +192,8 @@ export default defineAction({
           !gradedSubmissionIds.has(s.id),
       ).length;
 
-      const classStudentScores: Record<string, number[]> = {};
-      for (const g of classGrades) {
-        if (g.studentId && g.percentage != null) {
-          const p = parseFloat(g.percentage);
-          if (!isNaN(p)) {
-            if (!classStudentScores[g.studentId])
-              classStudentScores[g.studentId] = [];
-            classStudentScores[g.studentId].push(p);
-          }
-        }
-      }
-      const classStruggling = Object.values(classStudentScores).filter(
-        (scores) => {
-          const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-          return avg < passMark;
-        },
+      const classStruggling = (classCounted?.figures ?? []).filter(
+        isStruggling,
       ).length;
 
       const expected = (countMap[c.id] ?? 0) * classAssessmentIds.size;
@@ -229,6 +222,16 @@ export default defineAction({
       pendingGrading,
       strugglingCount,
       byClass,
+      // How every figure here is counted, so it can be explained, not guessed.
+      counting: [
+        "A learner's figure in a class is their published marks, counted as their own Grades page and the report card count them: work not handed in " +
+          (policy === "zero"
+            ? "counts as zero (the school's missed-work setting)."
+            : "is left out of the average (the school's missed-work setting)."),
+        "A class's average is the mean of its enrolled learners' figures; the overall average is the mean of your classes' averages, so every class counts equally.",
+        `Struggling means a learner whose figure is below the ${passMark}% pass mark, or who has handed in nothing marked.`,
+        "Completion is the share of expected hand-ins (learners enrolled times pieces of work set) that were handed in.",
+      ],
     };
   },
 });
