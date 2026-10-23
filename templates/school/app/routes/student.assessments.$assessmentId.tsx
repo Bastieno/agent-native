@@ -1,4 +1,5 @@
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
+import { originOf } from "@/lib/origin";
 import { BackLink } from "@/components/layout/BackLink";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -25,6 +26,7 @@ import { submissionStatusWord } from "@/lib/submission-status";
 
 export default function StudentAssessment() {
   const { assessmentId } = useParams();
+  const cameFrom = originOf(useLocation().state);
   const { sync } = useNavigationState();
   const { user } = useRole();
   const qc = useQueryClient();
@@ -214,20 +216,23 @@ export default function StudentAssessment() {
     <div className="h-full flex flex-col overflow-hidden">
       <div className="flex items-center justify-between border-b px-6 py-3">
         <div className="min-w-0">
-          {/* Back to where it was opened from: its week when it belongs to
-              one (that is the page that lists it), the class otherwise. */}
+          {/* Back to where it was opened from, named: the page that linked
+              here says so. Opened without one (a bookmark, a message), it
+              falls back to its week when it belongs to one, else the class. */}
           <BackLink
             to={
-              assessment?.lessonNoteId
+              cameFrom?.to ??
+              (assessment?.lessonNoteId
                 ? `/student/lessons/${assessment.lessonNoteId}`
                 : assessment?.classId
                   ? `/student/classes/${assessment.classId}`
-                  : "/student/classes"
+                  : "/student/classes")
             }
           >
-            {assessment?.lessonNoteId
-              ? (assessment.lessonTitle ?? "Back to the week")
-              : (assessment?.className ?? "My classes")}
+            {cameFrom?.label ??
+              (assessment?.lessonNoteId
+                ? (assessment.lessonTitle ?? "Back to the week")
+                : (assessment?.className ?? "My classes"))}
           </BackLink>
           <h1 className="text-base font-semibold">
             {assessment?.title ?? "Assessment"}

@@ -24,8 +24,10 @@ import { useSchoolConfig } from "@/hooks/use-school-config";
 import { firstNameOrNull } from "@shared/person-name";
 import { countOfWork } from "@shared/terminology";
 import { submissionStatusWord } from "@/lib/submission-status";
+import { useOrigin } from "@/lib/origin";
 
 export default function StudentDashboard() {
+  const origin = useOrigin();
   const { sync } = useNavigationState();
   const { user } = useRole();
   const { config } = useSchoolConfig();
@@ -125,6 +127,7 @@ export default function StudentDashboard() {
               <Link
                 key={assessment.assessmentId}
                 to={`/student/assessments/${assessment.assessmentId}`}
+                state={origin("Dashboard")}
                 className="flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50 transition-colors"
               >
                 <div>
@@ -178,6 +181,7 @@ type Material = {
  * week has none); the rest of that subject's material opens beneath it.
  */
 function ReadingBySubject({ items }: { items: Material[] }) {
+  const origin = useOrigin();
   const [open, setOpen] = useState<string | null>(null);
 
   const bySubject = new Map<string, Material[]>();
@@ -253,6 +257,7 @@ function ReadingBySubject({ items }: { items: Material[] }) {
                       <Link
                         key={m.assessmentId}
                         to={`/student/assessments/${m.assessmentId}`}
+                        state={origin("Dashboard")}
                         className="flex items-center justify-between gap-4 py-2.5 pl-8 pr-4 hover:bg-accent/50"
                       >
                         <div className="min-w-0">

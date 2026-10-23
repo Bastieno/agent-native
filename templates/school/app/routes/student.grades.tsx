@@ -11,6 +11,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
+import { useOrigin } from "@/lib/origin";
 
 type Piece = {
   assessmentId: string;
@@ -148,6 +149,7 @@ function TermSummary({
 }: {
   summary: NonNullable<TermGrades["summary"]>;
 }) {
+  const origin = useOrigin();
   const { formatDate } = useSchoolDates();
   const direction =
     summary.earlier !== null && summary.later !== null
@@ -190,6 +192,7 @@ function TermSummary({
         {summary.dueNext ? (
           <Link
             to={`/student/assessments/${summary.dueNext.assessmentId}`}
+            state={origin("Grades")}
             className="mt-1 block hover:underline"
           >
             <p className="truncate text-sm font-medium">
@@ -214,6 +217,7 @@ function TermSummary({
 }
 
 function Recent({ pieces }: { pieces: Piece[] }) {
+  const origin = useOrigin();
   if (!pieces.length) return null;
   return (
     <section className="space-y-3">
@@ -223,6 +227,7 @@ function Recent({ pieces }: { pieces: Piece[] }) {
           <Link
             key={p.assessmentId}
             to={`/student/assessments/${p.assessmentId}`}
+            state={origin("Grades")}
             className="flex items-center justify-between gap-4 px-4 py-3 hover:bg-muted/50"
           >
             <div className="min-w-0">
@@ -252,6 +257,7 @@ function SubjectRow({
   onOpenChange: (open: boolean) => void;
   passMark: number;
 }) {
+  const origin = useOrigin();
   return (
     <Collapsible open={open} onOpenChange={onOpenChange}>
       <CollapsibleTrigger className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left hover:bg-muted/50">
@@ -303,6 +309,7 @@ function SubjectRow({
             <Link
               key={p.assessmentId}
               to={`/student/assessments/${p.assessmentId}`}
+              state={origin("Grades")}
               className="flex items-center justify-between gap-4 py-2.5 pl-8 pr-4 hover:bg-muted/50"
             >
               <div className="min-w-0">

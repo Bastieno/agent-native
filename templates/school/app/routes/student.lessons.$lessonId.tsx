@@ -11,8 +11,10 @@ import {
   IconVideo,
 } from "@tabler/icons-react";
 import { weekNumberIn, withoutWeekPrefix } from "@shared/week-prefix";
+import { useOrigin } from "@/lib/origin";
 
 export default function StudentLesson() {
+  const origin = useOrigin();
   const { lessonId } = useParams<{ lessonId: string }>();
   const { sync } = useNavigationState();
 
@@ -88,6 +90,7 @@ export default function StudentLesson() {
             <Link
               key={m.id}
               to={`/student/assessments/${m.id}`}
+              state={origin(lesson.title)}
               className="flex items-center gap-3 rounded-lg border p-3 transition-colors hover:border-primary/40"
             >
               <IconNotebook size={16} className="shrink-0 text-primary" />

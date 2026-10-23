@@ -14,6 +14,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { submissionStatusWord } from "@/lib/submission-status";
 import { isCurrentWeek } from "@shared/term-weeks";
 import { cn } from "@/lib/utils";
+import { useOrigin } from "@/lib/origin";
 
 type Piece = {
   assessmentId: string;
@@ -38,6 +39,7 @@ type TermGrades = {
  * each piece of work, and the papers that went badly gathered at the top.
  */
 export default function StudentRevise() {
+  const origin = useOrigin();
   const { classId } = useParams<{ classId: string }>();
   const { sync } = useNavigationState();
   const [search, setSearch] = useState("");
@@ -158,6 +160,7 @@ export default function StudentRevise() {
     return (
       <Link
         to={`/student/assessments/${a.id}`}
+        state={origin(`Revise ${cls.subjectName}`)}
         className={cn(
           "group flex items-center justify-between gap-3 py-3 text-sm",
           // Inside a week or an exam card the row lines up with the title

@@ -21,6 +21,7 @@ import {
   IconRepeat,
 } from "@tabler/icons-react";
 import { submissionStatusWord } from "@/lib/submission-status";
+import { useOrigin } from "@/lib/origin";
 
 /**
  * What each state is called to the person it is about.
@@ -58,6 +59,7 @@ function describeShapes(shapes: string[]): string {
 }
 
 export default function StudentClassDetail() {
+  const origin = useOrigin();
   const { classId } = useParams<{ classId: string }>();
   const { sync } = useNavigationState();
 
@@ -167,7 +169,7 @@ export default function StudentClassDetail() {
           {openWork.length > 0 ? (
             <div className="space-y-2">
               {openWork.map((a: any) => (
-                <WorkRow key={a.id} a={a} />
+                <WorkRow key={a.id} a={a} from={cls.name} />
               ))}
             </div>
           ) : (
@@ -179,7 +181,7 @@ export default function StudentClassDetail() {
           {doneWork.length > 0 ? (
             <Fold label={`Done (${doneWork.length})`}>
               {doneWork.map((a: any) => (
-                <WorkRow key={a.id} a={a} />
+                <WorkRow key={a.id} a={a} from={cls.name} />
               ))}
             </Fold>
           ) : null}
@@ -218,6 +220,7 @@ export default function StudentClassDetail() {
               <Link
                 key={a.id}
                 to={`/student/assessments/${a.id}`}
+                state={origin(cls.name)}
                 className="group flex items-center justify-between rounded-lg border p-3 transition-colors hover:border-primary/50"
               >
                 <p className="min-w-0 truncate text-sm font-medium transition-colors group-hover:text-primary">
@@ -274,10 +277,12 @@ function Fold({
   );
 }
 
-function WorkRow({ a }: { a: any }) {
+function WorkRow({ a, from }: { a: any; from: string }) {
+  const origin = useOrigin();
   return (
     <Link
       to={`/student/assessments/${a.id}`}
+      state={origin(from)}
       className="group flex items-center justify-between rounded-lg border p-3 hover:border-primary/50 transition-colors"
     >
       <div className="space-y-0.5">
