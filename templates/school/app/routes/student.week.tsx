@@ -1,8 +1,13 @@
 import { useEffect, useState, type ReactElement } from "react";
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { IconCalendarWeek } from "@tabler/icons-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useMyWeek } from "@/hooks/use-my-week";
@@ -36,27 +41,76 @@ function continuesInto(period: Period, next: Period | undefined): boolean {
   );
 }
 
-function Lessons({ period }: { period: Period }) {
+/**
+ * What a learner looks for is the subject: every lesson here is their own
+ * class, so "JSS1A" in front of each one only used up the line.
+ */
+const subjectOf = (l: MyWeekLesson) => l.subjectName || l.className;
+
+function Lessons({
+  period,
+  range,
+  card,
+}: {
+  period: Period;
+  /** The lesson's time, for the card that opens over a grid tile. */
+  range?: string;
+  /** Open the full details over the tile. For the grid, where text is cut. */
+  card?: boolean;
+}) {
   if (period.lessons.length === 0) {
     return <span className="text-sm text-muted-foreground">Free</span>;
   }
   return (
     <div className="space-y-2">
-      {period.lessons.map((lesson) => (
-        <div key={lesson.classId} className="min-w-0">
-          <p className="line-clamp-2 break-words text-sm font-medium">
-            {lesson.className || lesson.subjectName}
-          </p>
-          {lesson.lessonLabel ? (
-            <p className="truncate text-xs">{lesson.lessonLabel}</p>
-          ) : null}
-          {details(lesson) ? (
-            <p className="truncate text-xs text-muted-foreground">
-              {details(lesson)}
+      {period.lessons.map((lesson) => {
+        const body = (
+          <div className="min-w-0" tabIndex={card ? 0 : undefined}>
+            <p className="line-clamp-2 break-words text-sm font-medium">
+              {subjectOf(lesson)}
             </p>
-          ) : null}
-        </div>
-      ))}
+            {lesson.lessonLabel ? (
+              <p className="truncate text-xs">{lesson.lessonLabel}</p>
+            ) : null}
+            {lesson.teacherName ? (
+              <p className="truncate text-xs text-muted-foreground">
+                {lesson.teacherName}
+              </p>
+            ) : null}
+            {lesson.room ? (
+              <p className="truncate text-xs text-muted-foreground">
+                {lesson.room}
+              </p>
+            ) : null}
+          </div>
+        );
+        if (!card) return <div key={lesson.classId}>{body}</div>;
+        return (
+          <HoverCard key={lesson.classId} openDelay={200} closeDelay={80}>
+            <HoverCardTrigger asChild>{body}</HoverCardTrigger>
+            <HoverCardContent className="w-72 space-y-1.5" align="start">
+              <p className="text-sm font-semibold">{subjectOf(lesson)}</p>
+              <p className="text-xs text-muted-foreground">
+                {[lesson.className, range].filter(Boolean).join(" · ")}
+              </p>
+              {lesson.lessonLabel ? (
+                <p className="text-xs">{lesson.lessonLabel}</p>
+              ) : null}
+              {details(lesson) ? (
+                <p className="text-xs text-muted-foreground">
+                  {details(lesson)}
+                </p>
+              ) : null}
+              <Link
+                to={`/student/classes/${lesson.classId}`}
+                className="inline-block pt-1 text-xs text-primary underline-offset-2 hover:underline"
+              >
+                Open class
+              </Link>
+            </HoverCardContent>
+          </HoverCard>
+        );
+      })}
     </div>
   );
 }
@@ -202,7 +256,7 @@ function WeekGrid({ days }: { days: Day[] }) {
               {joined || range !== timeRange(first) ? (
                 <p className="mb-1 text-xs text-muted-foreground">{range}</p>
               ) : null}
-              <Lessons period={period} />
+              <Lessons period={period} range={range} card />
             </div>
           ) : null}
         </div>,
