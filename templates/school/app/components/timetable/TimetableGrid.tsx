@@ -1,4 +1,6 @@
-import { useMemo, type ReactElement, type ReactNode } from "react";
+import { useMemo, useState, type ReactElement, type ReactNode } from "react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useMinWidth } from "@/hooks/use-min-width";
 import {
   HoverCard,
   HoverCardContent,
@@ -106,7 +108,12 @@ export function TimetableGrid({
     return { bySlot, partnerOf, spans };
   }, [periods, week, rows]);
 
-  const cellFor = (day: number, number: number, tall = false) => (
+  const cellFor = (
+    day: number,
+    number: number,
+    tall = false,
+    showFree = false,
+  ) => (
     <Cell
       week={week}
       day={day}
@@ -118,8 +125,99 @@ export function TimetableGrid({
       selected={selected?.day === day && selected.periodNumber === number}
       renderCell={renderCell}
       titleBy={titleBy}
+      showFree={showFree}
     />
   );
+
+  // Five columns do not fit a phone: below lg it is one day at a time. Only
+  // one layout is rendered, so each lesson has a single editor and card.
+  const wide = useMinWidth(1024);
+  const [picked, setPicked] = useState<number | null>(null);
+  if (!wide) {
+    // Monday = 1 … Sunday = 7, like the school's own day numbers.
+    const jsDay = new Date().getDay();
+    const today = jsDay === 0 ? 7 : jsDay;
+    const active =
+      days.find((d) => d.day === picked) ??
+      days.find((d) => d.day === today) ??
+      days[0];
+    return (
+      <div className="space-y-3" data-testid="timetable-day-list">
+        <Tabs
+          value={String(active.day)}
+          onValueChange={(v) => setPicked(Number(v))}
+        >
+          <TabsList className="w-full justify-between">
+            {days.map((d) => (
+              <TabsTrigger
+                key={d.day}
+                value={String(d.day)}
+                className="flex-1 px-1.5"
+              >
+                {(dayNames[d.day] ?? String(d.day)).slice(0, 3)}
+                {d.day === today ? (
+                  <>
+                    <span
+                      className="ml-1.5 inline-block size-1.5 rounded-full bg-primary"
+                      aria-hidden
+                    />
+                    <span className="sr-only"> (today)</span>
+                  </>
+                ) : null}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
+        <div className="divide-y rounded-lg border">
+          {rows.map((row, i) => {
+            const slot = findPeriod(week, active.day, row.number);
+            // A period this day does not have.
+            if (!slot) return null;
+            if (slot.kind !== "lesson") {
+              return (
+                <div
+                  key={row.number}
+                  className="flex items-center justify-between bg-muted/40 px-3 py-1.5 text-xs text-muted-foreground"
+                >
+                  <span>{slot.label ?? ""}</span>
+                  <span>
+                    {slot.start}–{slot.end}
+                  </span>
+                </div>
+              );
+            }
+            // The second half of a double is inside its first half's cell.
+            if (spans.has(`${active.day}:${i - 1}`)) return null;
+            const spanning = spans.has(`${active.day}:${i}`);
+            const below = rows[i + 1];
+            const others = spanning
+              ? (bySlot.get(`${active.day}:${below.number}`) ?? [])
+              : [];
+            return (
+              <div key={row.number} className="flex gap-3 px-2 py-2">
+                <div className="w-14 shrink-0 pt-1 text-xs text-muted-foreground">
+                  <p className="font-medium text-foreground">
+                    {spanning ? `${row.label}–${below.label}` : row.label}
+                  </p>
+                  <p>{row.start}</p>
+                </div>
+                <div className="min-w-0 flex-1 space-y-1">
+                  {cellFor(
+                    active.day,
+                    row.number,
+                    spanning && others.length === 0,
+                    true,
+                  )}
+                  {/* Other classes in the second period, e.g. an option block. */}
+                  {others.length > 0 ? cellFor(active.day, below.number) : null}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 
   return (
     // The grid scrolls sideways inside itself; the page never does.
@@ -209,6 +307,7 @@ function Cell({
   selected,
   renderCell,
   titleBy,
+  showFree,
 }: {
   week: SchoolWeek;
   day: number;
@@ -221,6 +320,8 @@ function Cell({
   clashes: Clash[];
   selected: boolean;
   titleBy: "subject" | "class";
+  /** Say so in an empty period; the phone list would otherwise show a blank row. */
+  showFree: boolean;
   renderCell?: (
     day: number,
     periodNumber: number,
@@ -260,6 +361,9 @@ function Cell({
 
   const body = (
     <div className={cn("flex gap-1", tall && "min-h-[7rem]")}>
+      {entries.length === 0 && showFree ? (
+        <span className="px-1.5 py-1 text-xs text-muted-foreground">Free</span>
+      ) : null}
       {entries.map((e) => (
         <div
           key={e.scheduleId}
