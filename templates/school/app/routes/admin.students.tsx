@@ -4,6 +4,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { ListState } from "@/components/ListState";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -191,6 +192,7 @@ export default function AdminStudents() {
       gradeFilter === "all" || s.gradeLevelName === gradeFilter;
     return matchesSearch && matchesGrade;
   });
+  const paged = usePagination(filtered);
 
   async function handleInvite() {
     if (!inviteName || !inviteEmail) return;
@@ -363,7 +365,7 @@ export default function AdminStudents() {
         />
       ) : (
         <div className="rounded-lg border divide-y">
-          {filtered.map((student: any) => (
+          {paged.items.map((student: any) => (
             <div key={student.id} className="flex items-center gap-3 px-4 py-3">
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium">
@@ -420,6 +422,7 @@ export default function AdminStudents() {
           ))}
         </div>
       )}
+      <Pagination {...paged} noun="students" />
 
       {/* Pending Invitations */}
       {pendingInvites.length > 0 && (

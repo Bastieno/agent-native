@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
@@ -84,11 +85,12 @@ export default function AdminLessons() {
   ] as string[];
   const shown =
     year === ALL ? rows : rows.filter((r) => r.gradeLevelName === year);
+  const paged = usePagination(shown);
 
   if (classId) return <ClassNotes classId={classId} rows={rows} />;
 
   return (
-    <div className="h-full space-y-6 overflow-auto p-6 pb-24">
+    <div className="h-full space-y-6 overflow-auto p-6">
       <div>
         <h1 className="text-xl font-semibold">Lesson notes</h1>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -129,7 +131,7 @@ export default function AdminLessons() {
         </div>
       ) : (
         <div className="divide-y rounded-lg border">
-          {shown.map((row) => (
+          {paged.items.map((row) => (
             <Link
               key={row.classId}
               to={`/admin/lessons?classId=${row.classId}`}
@@ -148,6 +150,7 @@ export default function AdminLessons() {
           ))}
         </div>
       )}
+      <Pagination {...paged} noun="classes" />
     </div>
   );
 }

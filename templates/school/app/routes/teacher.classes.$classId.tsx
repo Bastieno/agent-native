@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
@@ -149,6 +150,9 @@ export default function TeacherClass() {
     enabled: enrollOpen,
   });
 
+  const lessonsPaged = usePagination(lessons);
+  const assessmentsPaged = usePagination(assessments);
+  const studentsPaged = usePagination(students);
   const enrolledUserIds = useMemo(
     () => new Set(students.map((s: any) => s.studentUserId)),
     [students],
@@ -231,7 +235,7 @@ export default function TeacherClass() {
               No lesson notes yet. Ask the agent to create one.
             </p>
           ) : (
-            lessons.map((lesson: any) => {
+            lessonsPaged.items.map((lesson: any) => {
               // Thirteen near-identical rows, and the one a teacher wants is
               // almost always today's.
               const thisWeek = isCurrentWeek(lesson.lessonDate);
@@ -264,6 +268,7 @@ export default function TeacherClass() {
               );
             })
           )}
+          <Pagination {...lessonsPaged} noun="lessons" />
         </TabsContent>
         <TabsContent value="assessments" className="mt-4 space-y-2">
           {/* Say what this list is before saying what it leaves out — the
@@ -282,7 +287,7 @@ export default function TeacherClass() {
               worksheet or a test.
             </p>
           ) : (
-            assessments.map((assessment: any) => (
+            assessmentsPaged.items.map((assessment: any) => (
               <Link
                 key={assessment.id}
                 to={`/teacher/assessments/${assessment.id}`}
@@ -309,6 +314,7 @@ export default function TeacherClass() {
               </Link>
             ))
           )}
+          <Pagination {...assessmentsPaged} noun="assessments" />
         </TabsContent>
         <TabsContent value="students" className="mt-4 space-y-2">
           <div className="flex justify-end">
@@ -328,7 +334,7 @@ export default function TeacherClass() {
               one.
             </p>
           ) : (
-            students.map((s: any) => (
+            studentsPaged.items.map((s: any) => (
               <div
                 key={s.enrollmentId}
                 className="flex items-center gap-3 rounded-lg border p-3"
@@ -368,6 +374,7 @@ export default function TeacherClass() {
               </div>
             ))
           )}
+          <Pagination {...studentsPaged} noun="students" />
         </TabsContent>
       </Tabs>
 

@@ -10,6 +10,7 @@ import { callAction } from "@/components/timetable/arms-shared";
 import { NewClassDialog } from "@/components/timetable/NewClassDialog";
 import { Badge } from "@/components/ui/badge";
 import { ListState } from "@/components/ListState";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -130,15 +131,37 @@ export default function AdminClasses() {
     [classes, gradeFilter, teacherFilter],
   );
 
+  // Pages run across the whole filtered list; each year group then shows
+  // the part of itself that falls on this page, with its full count kept.
+  // Sorted by year group first, so a group is not split across pages.
+  const sortedByGroup = useMemo(
+    () =>
+      [...filtered].sort((a: any, b: any) =>
+        (a.gradeLevelName ?? "Unassigned").localeCompare(
+          b.gradeLevelName ?? "Unassigned",
+        ),
+      ),
+    [filtered],
+  );
+  const paged = usePagination(sortedByGroup);
+  const groupTotals = useMemo(() => {
+    const totals: Record<string, number> = {};
+    for (const cls of filtered) {
+      const key = cls.gradeLevelName ?? "Unassigned";
+      totals[key] = (totals[key] ?? 0) + 1;
+    }
+    return totals;
+  }, [filtered]);
+
   const grouped = useMemo(() => {
     const map: Record<string, any[]> = {};
-    for (const cls of filtered) {
+    for (const cls of paged.items) {
       const key = cls.gradeLevelName ?? "Unassigned";
       if (!map[key]) map[key] = [];
       map[key].push(cls);
     }
     return Object.entries(map).sort(([a], [b]) => a.localeCompare(b));
-  }, [filtered]);
+  }, [paged.items]);
 
   const toggleGroup = (key: string) =>
     setCollapsed((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -321,7 +344,8 @@ export default function AdminClasses() {
                   <span className="text-sm font-medium">{grade}</span>
                   <div className="flex items-center gap-3">
                     <span className="text-xs text-muted-foreground">
-                      {rows.length} class{rows.length !== 1 ? "es" : ""}
+                      {groupTotals[grade] ?? rows.length} class
+                      {(groupTotals[grade] ?? rows.length) !== 1 ? "es" : ""}
                     </span>
                     {isCollapsed ? (
                       <IconChevronRight
@@ -406,6 +430,7 @@ export default function AdminClasses() {
             );
           })
         )}
+        <Pagination {...paged} noun="classes" />
       </div>
 
       {/* Class detail dialog */}

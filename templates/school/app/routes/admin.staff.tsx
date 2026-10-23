@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ListState } from "@/components/ListState";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -108,6 +109,7 @@ export default function AdminStaff() {
 
   const active = data?.active ?? [];
   const pending = data?.pending ?? [];
+  const activePaged = usePagination(active);
   const isEmpty = active.length === 0 && pending.length === 0;
 
   async function handleInvite() {
@@ -215,7 +217,7 @@ export default function AdminStaff() {
                 Active
               </h2>
               <div className="rounded-lg border divide-y">
-                {active.map((member: any) => (
+                {activePaged.items.map((member: any) => (
                   <div
                     key={member.id}
                     className="flex items-center gap-3 px-4 py-3"
@@ -294,6 +296,7 @@ export default function AdminStaff() {
                   </div>
                 ))}
               </div>
+              <Pagination {...activePaged} noun="staff" flush={false} />
             </section>
           )}
 

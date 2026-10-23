@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ListState } from "@/components/ListState";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { Badge } from "@/components/ui/badge";
 import { IconUsers, IconSearch } from "@tabler/icons-react";
 
@@ -84,6 +85,7 @@ export default function TeacherStudents() {
       classId === ALL || (s.classes ?? []).some((c: any) => c.id === classId);
     return matchesSearch && matchesClass;
   });
+  const paged = usePagination(filtered);
 
   return (
     <div className="p-6 space-y-6 overflow-y-auto h-full">
@@ -162,7 +164,7 @@ export default function TeacherStudents() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((s: any) => (
+              {paged.items.map((s: any) => (
                 <tr key={s.id} className="border-b last:border-0">
                   <td className="px-4 py-2.5">
                     <div>
@@ -196,6 +198,7 @@ export default function TeacherStudents() {
           </table>
         </div>
       )}
+      <Pagination {...paged} noun="students" />
     </div>
   );
 }

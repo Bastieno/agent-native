@@ -1,5 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
@@ -86,6 +87,7 @@ export default function AdminAnnouncements() {
     },
   });
 
+  const paged = usePagination(announcements);
   const { data: classes = [] } = useQuery<any[]>({
     queryKey: ["admin-classes"],
     queryFn: async () => {
@@ -162,7 +164,7 @@ export default function AdminAnnouncements() {
         </div>
       ) : (
         <div className="space-y-3">
-          {announcements.map((a: any) => (
+          {paged.items.map((a: any) => (
             <div key={a.id} className="rounded-lg border p-4 space-y-1.5">
               <div className="flex items-start justify-between gap-2">
                 <div className="space-y-0.5 flex-1 min-w-0">
@@ -194,6 +196,7 @@ export default function AdminAnnouncements() {
           ))}
         </div>
       )}
+      <Pagination {...paged} noun="announcements" />
 
       {/* Create Announcement Dialog */}
       <Dialog open={createOpen} onOpenChange={setCreateOpen}>
