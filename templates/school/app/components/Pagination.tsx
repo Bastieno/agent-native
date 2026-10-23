@@ -117,11 +117,11 @@ export function Pagination({
       aria-label="Pagination"
       // Sticks to the bottom of the scrolling page (-bottom-6 cancels the
       // page's own p-6, so no strip is left for rows to show through), so a long list never has
-      // to be scrolled to its end to change page. pr-14 keeps the controls
+      // to be scrolled to its end to change page. pr-20 (pr-14 from sm up) keeps the controls
       // clear of the floating assistant button. min-h-[53px] is the height of
       // the sidebar's Sign out footer, so the two top borders line up.
       className={cn(
-        "sticky -bottom-6 z-10 -mx-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 min-h-[53px] border-t bg-background/95 px-6 py-2 pr-14 text-xs text-muted-foreground backdrop-blur",
+        "sticky -bottom-6 z-10 -mx-6 flex min-h-[53px] flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t bg-background/95 px-6 py-2 pr-20 sm:pr-14 text-xs text-muted-foreground backdrop-blur",
         // The bar's own height must not depend on where it is.
         flush && "-mb-6",
       )}
@@ -134,9 +134,9 @@ export function Pagination({
           className="h-8 w-auto gap-2 text-xs"
           aria-label="Rows per page"
         >
-          <span>Show</span>
+          <span className="max-sm:sr-only">Show</span>
           <SelectValue />
-          <span>rows</span>
+          <span className="max-sm:sr-only">rows</span>
         </SelectTrigger>
         <SelectContent>
           {PAGE_SIZES.map((n) => (
@@ -158,27 +158,33 @@ export function Pagination({
         >
           <IconChevronLeft size={14} />
         </Button>
-        {pageNumbers(page, pageCount).map((n, i) =>
-          n === "gap" ? (
-            <span key={`gap-${i}`} className="px-1.5" aria-hidden>
-              …
-            </span>
-          ) : (
-            <Button
-              key={n}
-              variant={n === page ? "outline" : "ghost"}
-              size="sm"
-              className={cn(
-                "h-8 min-w-8 px-2 tabular-nums",
-                n === page && "border-primary text-primary",
-              )}
-              aria-current={n === page ? "page" : undefined}
-              onClick={() => setPage(n)}
-            >
-              {n}
-            </Button>
-          ),
-        )}
+        {/* A phone has no room for the numbers: say where you are instead. */}
+        <span className="px-2 tabular-nums sm:hidden">
+          {page} / {pageCount}
+        </span>
+        <div className="hidden items-center gap-1 sm:flex">
+          {pageNumbers(page, pageCount).map((n, i) =>
+            n === "gap" ? (
+              <span key={`gap-${i}`} className="px-1.5" aria-hidden>
+                …
+              </span>
+            ) : (
+              <Button
+                key={n}
+                variant={n === page ? "outline" : "ghost"}
+                size="sm"
+                className={cn(
+                  "h-8 min-w-8 px-2 tabular-nums",
+                  n === page && "border-primary text-primary",
+                )}
+                aria-current={n === page ? "page" : undefined}
+                onClick={() => setPage(n)}
+              >
+                {n}
+              </Button>
+            ),
+          )}
+        </div>
         <Button
           variant="ghost"
           size="sm"
@@ -189,7 +195,7 @@ export function Pagination({
         >
           <IconChevronRight size={14} />
         </Button>
-        <span className="pl-2" aria-live="polite">
+        <span className="hidden pl-2 sm:inline" aria-live="polite">
           Showing {from}–{to} of {total} {noun}
         </span>
       </div>

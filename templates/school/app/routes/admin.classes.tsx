@@ -253,7 +253,7 @@ export default function AdminClasses() {
     <div className="h-full overflow-auto flex flex-col">
       {/* Header */}
       <div className="px-6 pt-6 pb-4 space-y-4 shrink-0">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h1 className="text-xl font-semibold">All Classes</h1>
             <p className="text-sm text-muted-foreground mt-1">
@@ -269,7 +269,7 @@ export default function AdminClasses() {
                 : ""}
             </p>
           </div>
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex flex-wrap items-center gap-2">
             <Select value={gradeFilter} onValueChange={setGradeFilter}>
               <SelectTrigger className="h-8 text-xs w-36">
                 <SelectValue placeholder="Grade level" />
@@ -369,10 +369,10 @@ export default function AdminClasses() {
                         <th className="px-4 py-2 text-left text-xs font-medium text-muted-foreground">
                           Class
                         </th>
-                        <th className="px-4 py-2 text-left text-xs font-medium text-muted-foreground">
+                        <th className="hidden px-4 py-2 text-left text-xs font-medium text-muted-foreground sm:table-cell">
                           Subject
                         </th>
-                        <th className="px-4 py-2 text-left text-xs font-medium text-muted-foreground">
+                        <th className="hidden px-4 py-2 text-left text-xs font-medium text-muted-foreground sm:table-cell">
                           Teacher
                         </th>
                         <th className="px-4 py-2 text-left text-xs font-medium text-muted-foreground">
@@ -392,11 +392,16 @@ export default function AdminClasses() {
                         >
                           <td className="px-4 py-2.5 font-medium">
                             {cls.name}
+                            {/* Subject and teacher have their own columns from
+                                sm up; on a phone they sit under the name. */}
+                            <span className="block text-xs font-normal text-muted-foreground sm:hidden">
+                              {cls.teacherName ?? NO_TEACHER_LABEL}
+                            </span>
                           </td>
-                          <td className="px-4 py-2.5 text-muted-foreground">
+                          <td className="hidden px-4 py-2.5 text-muted-foreground sm:table-cell">
                             {cls.subjectName ?? "—"}
                           </td>
-                          <td className="px-4 py-2.5 text-muted-foreground">
+                          <td className="hidden px-4 py-2.5 text-muted-foreground sm:table-cell">
                             {/* A class can be planned before it is staffed;
                                 a dash would read as missing data. */}
                             {cls.teacherName ?? (
