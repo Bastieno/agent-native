@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { IconChevronDown, IconCopy } from "@tabler/icons-react";
 import { toast } from "sonner";
+import { copyText } from "@/lib/copy-text";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import {
@@ -289,9 +290,11 @@ export function AssistantSettings() {
 }
 
 /**
- * The address staff paste into their AI app (a custom connector in Claude or
- * ChatGPT). It is this deployment's own address, so it is read from the
- * browser rather than written into the page.
+ * How staff connect their own AI app. The connect page has the steps for each
+ * app (Claude, ChatGPT, Cursor and more), so it is the main action; the bare
+ * address is under it for anyone who only needs to paste it. Both are this
+ * deployment's own, so they are read from the browser rather than written
+ * into the page.
  */
 function McpAddress() {
   const [address, setAddress] = useState("");
@@ -300,37 +303,39 @@ function McpAddress() {
   }, []);
   if (!address) return null;
   return (
-    <div className="space-y-1">
-      <Label className="text-xs">Address for their AI app</Label>
-      <div className="flex gap-2">
-        <Input readOnly value={address} className="font-mono text-xs" />
-        <Button
-          variant="outline"
-          size="icon"
-          aria-label="Copy address"
-          onClick={() => {
-            navigator.clipboard
-              ?.writeText(address)
-              .then(() => toast.success("Address copied"))
-              .catch(() => toast.error("Could not copy"));
-          }}
-        >
-          <IconCopy size={16} />
+    <div className="space-y-3">
+      <div className="flex items-center justify-between gap-4">
+        <p className="text-xs text-muted-foreground">
+          Steps for Claude, ChatGPT and other apps, with your school account.
+        </p>
+        <Button asChild size="sm" className="shrink-0">
+          <a
+            href={agentNativePath("/_agent-native/mcp/connect")}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Connect an AI app
+          </a>
         </Button>
       </div>
-      <p className="text-xs text-muted-foreground">
-        In Claude or ChatGPT, add it as a custom connector and sign in with your
-        school account. Apps that cannot sign in this way can use the{" "}
-        <a
-          href={agentNativePath("/_agent-native/mcp/connect")}
-          target="_blank"
-          rel="noreferrer"
-          className="underline underline-offset-2"
-        >
-          connect page
-        </a>
-        .
-      </p>
+      <div className="space-y-1">
+        <Label className="text-xs">Or paste this address</Label>
+        <div className="flex gap-2">
+          <Input readOnly value={address} className="font-mono text-xs" />
+          <Button
+            variant="outline"
+            size="icon"
+            aria-label="Copy address"
+            onClick={async () => {
+              if (await copyText(address)) toast.success("Address copied");
+              else
+                toast.error("Could not copy. Select the address and copy it.");
+            }}
+          >
+            <IconCopy size={16} />
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
