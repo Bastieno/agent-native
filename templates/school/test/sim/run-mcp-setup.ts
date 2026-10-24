@@ -234,7 +234,12 @@ async function joinAs(email: string): Promise<string> {
   return cookie;
 }
 
-const BUDGET_BYTES = 48 * 1024;
+// A size guard of our own, not a limit any host publishes: a model chooses
+// better from a short list, and a long one costs every chat app's context. It
+// was 48 KB when the admin's list was 46 KB, which left room for one tool.
+// 56 KB leaves room for a handful more; when it is next reached, trim
+// descriptions before raising it again.
+const BUDGET_BYTES = 56 * 1024;
 
 /**
  * A chat app (Claude Desktop, claude.ai, ChatGPT) calls the school's own

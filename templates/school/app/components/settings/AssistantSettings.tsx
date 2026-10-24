@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
-import { IconChevronDown } from "@tabler/icons-react";
+import { IconChevronDown, IconCopy } from "@tabler/icons-react";
+import { toast } from "sonner";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import {
@@ -272,6 +273,7 @@ export function AssistantSettings() {
                 Leave it empty for no limit.
               </p>
             </div>
+            <McpAddress />
             <LimitInput
               label="Daily limit for requests from AI apps, whole school"
               value={settings.chatAppDailyLimit}
@@ -282,6 +284,53 @@ export function AssistantSettings() {
           </section>
         </CollapsibleContent>
       </Collapsible>
+    </div>
+  );
+}
+
+/**
+ * The address staff paste into their AI app (a custom connector in Claude or
+ * ChatGPT). It is this deployment's own address, so it is read from the
+ * browser rather than written into the page.
+ */
+function McpAddress() {
+  const [address, setAddress] = useState("");
+  useEffect(() => {
+    setAddress(`${window.location.origin}/_agent-native/mcp`);
+  }, []);
+  if (!address) return null;
+  return (
+    <div className="space-y-1">
+      <Label className="text-xs">Address for their AI app</Label>
+      <div className="flex gap-2">
+        <Input readOnly value={address} className="font-mono text-xs" />
+        <Button
+          variant="outline"
+          size="icon"
+          aria-label="Copy address"
+          onClick={() => {
+            navigator.clipboard
+              ?.writeText(address)
+              .then(() => toast.success("Address copied"))
+              .catch(() => toast.error("Could not copy"));
+          }}
+        >
+          <IconCopy size={16} />
+        </Button>
+      </div>
+      <p className="text-xs text-muted-foreground">
+        In Claude or ChatGPT, add it as a custom connector and sign in with your
+        school account. Apps that cannot sign in this way can use the{" "}
+        <a
+          href={agentNativePath("/_agent-native/mcp/connect")}
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-2"
+        >
+          connect page
+        </a>
+        .
+      </p>
     </div>
   );
 }
