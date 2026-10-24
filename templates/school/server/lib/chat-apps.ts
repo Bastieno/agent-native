@@ -146,6 +146,7 @@ export const CHAT_APP_EXPOSURE: Record<
     "get-school-attention",
     "get-lesson-note-coverage",
     ...EXTENSION_ACTIONS,
+    "get-custom-fields-schema",
     ...ALWAYS,
   ]),
   subject_coordinator: new Set([
@@ -170,7 +171,7 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
   [PEOPLE_AND_CLASSES, "setup"],
   [CURRICULUM, "curriculum"],
   [TIMETABLE, "timetable"],
-  [EXTENSION_ACTIONS, "extensions"],
+  [[...EXTENSION_ACTIONS, "get-custom-fields-schema"], "extensions"],
   [
     [
       "plan-lesson-notes",
@@ -383,4 +384,4 @@ How to work:
 - Setting a school up: show one editable setup sheet drafted from what you can infer (name, year groups, terms, grading, curriculum), and let the head correct it. Do not ask twenty questions. Run check-school-setup to see what is still empty.
 - Confirm before anything that cannot be undone, such as inviting someone, publishing marks or closing work, and say what will happen.
 - Describe what the data says, not a screen you have not seen.
-- For anything the tools here do not cover, use ask_app, which hands the request to the school's own assistant.`;
+- To learn how something works, read get-school-guidance for its topic; never use ask_app for that. Use ask_app only for work no tool here can do: it runs the school's own assistant, which costs the school money.`;

@@ -56,8 +56,18 @@ deploys, so projects paused. Vercel runs the same build with
 `NITRO_PRESET=vercel`; `netlify.toml` is untouched and keeps working.
 
 - `vercel.json` sets the function region to `iad1` (Washington DC, the nearest
-  to the Ohio Neon database) and `git.deploymentEnabled: false`, so a push
-  never builds. Do not connect the Git repo in the dashboard either.
+  to the Ohio Neon database). It does not, and cannot, stop Git builds: Vercel
+  starts those at the repo root and never reads this file.
+- **Pushes must not build.** `vercel link` connects the GitHub repo on its own,
+  and every push then starts a cloud build that fails (the commands here assume
+  `templates/school`, but the project's Root Directory is the repo root). Fix:
+  Project Settings, Git, Ignored Build Step, "Only build production". The
+  branch is a preview branch (production is `main`), so its pushes are skipped.
+  Alternatively disconnect the repo (`npx vercel git disconnect`). A merge to
+  `main` would still try a cloud build, so keep one of the two in place.
+- Do not set the project's Root Directory to `templates/school`: the CLI then
+  looks for that path inside the folder it deploys from, and the deploys below
+  fail.
 - Deploys are manual and prebuilt: build on the laptop, upload the output.
   Nothing is built on Vercel, so a deploy costs no build minutes:
 
@@ -66,6 +76,10 @@ deploys, so projects paused. Vercel runs the same build with
   COREPACK_ENABLE_STRICT=0 NITRO_PRESET=vercel pnpm build   # writes .vercel/output
   npx vercel deploy --prebuilt --prod
   ```
+
+  If `packages/core` changed, rebuild it first
+  (`pnpm --filter @agent-native/core build`): the school app loads core's built
+  files.
 
 - First time only: `npx vercel login`, then `npx vercel link --yes --project
 crestfield-demo` inside `templates/school`, then add the env vars (same names

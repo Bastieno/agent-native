@@ -935,6 +935,25 @@ Say "mini-app" or "widget" to a head teacher; leave out how it is built.
 - From their own AI app an admin can create and change extensions directly, so
   the school's assistant (and its key) is not used.
 
+**Writing one.** Everything needed is here; do not ask the school's assistant
+how extensions work.
+
+- An extension is one self-contained piece of HTML using Alpine.js, with no
+  build step.
+- Its own data goes in `extensionData`: `set(collection, id, data)`,
+  `get(collection, id)`, `list(collection)` and `remove(collection, id)`.
+  Records belong to the person by default. Add `{ scope: "org" }` to keep them
+  for the whole school, which is what a shared tally needs, and `{ scope: "all" }`
+  on `list` or `get` to read both.
+- School data comes through `appAction(name, params)`, which runs the school's
+  own actions as the person looking at it, with their role limits. Do not write
+  SQL in an extension.
+- The school has no built-in idea of a "house". If it records one, it is a
+  custom student field: `get-custom-fields-schema` shows what is recorded. A
+  tracker that only needs a total per house can keep its own totals in
+  `extensionData` and need nothing from the school.
+- Build it private, say in a sentence what it does, and ask before sharing it.
+
 ```bash
 pnpm action create-extension --name "House Badges" --description "Shows house badge on student cards" --content "<html>..."
 pnpm action navigate --view=extensions

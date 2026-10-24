@@ -1,7 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "git": { "deploymentEnabled": false },
-  "regions": ["iad1"],
-  "installCommand": "cd ../.. && pnpm install",
-  "buildCommand": "cd ../.. && NITRO_PRESET=vercel pnpm --filter school build"
+  "regions": ["iad1"]
 }
