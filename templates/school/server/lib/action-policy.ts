@@ -251,6 +251,12 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   // classes, so the same question is safe to ask from either portal.
   "get-lesson-note-coverage": STAFF,
   "get-school-attention": ADMIN,
+  // The framework's extension actions are not in this app's action folder, but
+  // an admin's AI app may call them, so they carry a policy like any other.
+  "list-extensions": ADMIN,
+  "get-extension": ADMIN,
+  "create-extension": ADMIN,
+  "update-extension": ADMIN,
   "get-lesson-note": EVERYONE, // handler restricts students to their own finalized lessons
   "create-lesson-note": STAFF,
   "update-lesson-note": STAFF,

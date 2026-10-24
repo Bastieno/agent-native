@@ -1,5 +1,6 @@
 import { currentAccess } from "@agent-native/core/sharing";
 import { actorForEmail } from "./class-access.js";
+import { assertCallerMayRun } from "./guard-actions.js";
 import { roleMayUseTool } from "./role-tools.js";
 import { isOrgMember } from "./signup-access.js";
 import type { SchoolRole } from "./action-policy.js";
@@ -109,6 +110,17 @@ const TEACHING = [
   "create-announcement",
 ];
 
+/**
+ * The framework's extension actions an admin's AI app may call directly. They
+ * are built by the framework, not found in this app's action folder.
+ */
+export const EXTENSION_ACTIONS = [
+  "list-extensions",
+  "get-extension",
+  "create-extension",
+  "update-extension",
+];
+
 /** Everyone who may connect also gets these. */
 const ALWAYS = ["get-school-guidance", "ask_app"];
 
@@ -133,6 +145,7 @@ export const CHAT_APP_EXPOSURE: Record<
     "get-school-stats",
     "get-school-attention",
     "get-lesson-note-coverage",
+    ...EXTENSION_ACTIONS,
     ...ALWAYS,
   ]),
   subject_coordinator: new Set([
@@ -157,6 +170,7 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
   [PEOPLE_AND_CLASSES, "setup"],
   [CURRICULUM, "curriculum"],
   [TIMETABLE, "timetable"],
+  [EXTENSION_ACTIONS, "extensions"],
   [
     [
       "plan-lesson-notes",
@@ -303,6 +317,34 @@ export async function refuseChatAppCaller(): Promise<string | null> {
 }
 
 /**
+ * The same marking for the framework's extension actions: list them for chat
+ * apps, point at the guidance, and check the caller's role on every call. The
+ * framework builds these, so this app's action guard never sees them.
+ */
+export function withChatAppExtensionSurface<T extends Record<string, any>>(
+  entries: T,
+): T {
+  const out: Record<string, any> = { ...entries };
+  for (const name of EXTENSION_ACTIONS) {
+    const entry = entries[name];
+    if (!entry?.tool || typeof entry.run !== "function") continue;
+    out[name] = {
+      ...entry,
+      tool: {
+        ...entry.tool,
+        description: `${entry.tool.description} First call get-school-guidance ("extensions"). Use the school's words, not tool or field names.`,
+      },
+      mcpApp: { ...(entry.mcpApp ?? {}), compactCatalog: true },
+      run: async (args: any, ctx: any) => {
+        await assertCallerMayRun(name);
+        return entry.run(args, ctx);
+      },
+    };
+  }
+  return out as T;
+}
+
+/**
  * Which tools this caller's client lists. Actions marked for chat apps follow
  * the caller's role list above; anything else — listed only to coding clients
  * such as Claude Code — follows the same per-role rule as the in-app
@@ -334,7 +376,7 @@ export async function chatAppToolFilter(
 export const CHAT_APP_INSTRUCTIONS = `You are helping someone who runs or teaches at a school, through the school's own tools.
 
 How to work:
-- Before a kind of task, call get-school-guidance with its topic (setup, staff, curriculum, lesson-notes, activities, marking, timetable) and follow it. Start with topic "talking-to-people".
+- Before a kind of task, call get-school-guidance with its topic (setup, staff, curriculum, lesson-notes, activities, marking, timetable, extensions) and follow it. Start with topic "talking-to-people".
 - Answer at the size of the question: a broad one gets a short answer, not everything you can find. Start with what the person should do or decide, ordered by what blocks teaching or publishing (get-school-attention is that list; check-school-setup adds what is not set up yet), and say which page fixes each. Do not run through settings, rooms or bell times unless asked.
 - Say what the figures say and how they were counted, and stop: no cause for a mark, and no judgement of a teacher from their class's marks. Plain prose, no headings or emojis.
 - Speak in the school's own words. Never name tools, ids, role codes or field names: say "I'll invite Mrs Okoro as a teacher", not the tool you will call. Offer outcomes, not tools: "Shall I draft the lesson notes for JSS1 Basic Science?"

@@ -313,6 +313,24 @@ async function chatClientDirect() {
     "inviting staff is flagged for the host to confirm",
   );
 
+  check(
+    head.names.has("create-extension") &&
+      head.names.has("update-extension") &&
+      head.names.has("list-extensions") &&
+      !head.names.has("delete-extension"),
+    "the admin's app can create and change extensions itself, not delete them",
+  );
+  const madeExtension = await tool(headToken, "create-extension", {
+    name: "House points",
+    description: "A tally of house points",
+    content:
+      '<div x-data="{ n: 0 }"><button @click="n++">Add</button> <span x-text="n"></span></div>',
+  });
+  check(
+    !madeExtension.isError,
+    "the admin's app creates an extension directly",
+  );
+
   const run = provisionedId?.slice(0, 6) ?? Date.now().toString(36);
   const teacherEmail = `teacher.${run}@gmail-sim.test`;
   const learnerEmail = `learner.${run}@gmail-sim.test`;
@@ -356,6 +374,23 @@ async function chatClientDirect() {
     forced = err instanceof Error ? err.message : String(err);
   }
   check(forced, "a teacher forcing invite-staff is refused");
+
+  check(
+    !teacher.names.has("create-extension"),
+    "a teacher is not offered extensions",
+  );
+  let forcedExtension: string | null = null;
+  try {
+    const r = await tool(teacherToken, "create-extension", {
+      name: "Sneaky",
+      description: "x",
+      content: "<div></div>",
+    });
+    forcedExtension = r.isError ? r.text : null;
+  } catch (err) {
+    forcedExtension = err instanceof Error ? err.message : String(err);
+  }
+  check(forcedExtension, "a teacher forcing create-extension is refused");
 
   const learnerCookie = await joinAs(learnerEmail);
   const learnerToken = await connect(learnerCookie, "Claude");

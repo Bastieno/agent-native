@@ -11,6 +11,7 @@ import {
   CHAT_APP_INSTRUCTIONS,
   chatAppToolFilter,
   refuseChatAppCaller,
+  withChatAppExtensionSurface,
   withChatAppSurface,
 } from "../lib/chat-apps.js";
 import { readyBeforeServing } from "../lib/plugin-readiness.js";
@@ -26,6 +27,9 @@ const agentChat = createAgentChatPlugin({
   // From an outside AI app: learners and people with no school are turned
   // away, each role sees its own short list, and the client is told how the
   // school's work is done.
+  // The framework's extension actions: an admin's AI app may use a few of
+  // them directly; each call is role-checked.
+  transformExtensionActions: withChatAppExtensionSurface,
   mcpRefuseCaller: refuseChatAppCaller,
   mcpToolFilter: chatAppToolFilter,
   mcpInstructions: CHAT_APP_INSTRUCTIONS,

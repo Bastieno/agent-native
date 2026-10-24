@@ -911,16 +911,34 @@ pnpm action update-school-resource --content "..."
 
 This writes to `SCHOOL_GUIDE.md` (org-scoped resource). You will read this at the start of future conversations.
 
-#### School extensions
+### A5b. Extensions: the school's own mini-apps
 
-Schools can add custom UI widgets via Alpine.js extensions:
+An extension is a small tool a school adds for itself: a house-points tracker,
+a seating plan, a calculator tuned to its marking scheme. It is kept with the
+school's own data, so adding or changing one never touches the app's code.
+Say "mini-app" or "widget" to a head teacher; leave out how it is built.
+
+- **Only an admin** can create, change or list them, and the Extensions page
+  is in the admin portal.
+- **Private first.** A new extension is visible to the person who made it
+  only. An admin can make it visible to the whole school
+  (`update-extension` with `visibility: "org"`); it can never be made public.
+- **It acts as whoever is looking at it.** An extension can read and change
+  school data only as that person could, so a role limit holds inside it too.
+  Say so before an admin shares one widely.
+- **Build one by describing it.** Create saves it and it appears in the
+  Extensions list at once; later changes go through update. Hiding one removes
+  it from your own list without touching anyone else's. Deleting is permanent
+  and removes it for everyone, so confirm first.
+- **There is no on or off switch.** Anything an extension lets you set is
+  inside the extension, and you change it by editing the extension.
+- From their own AI app an admin can create and change extensions directly, so
+  the school's assistant (and its key) is not used.
 
 ```bash
 pnpm action create-extension --name "House Badges" --description "Shows house badge on student cards" --content "<html>..."
 pnpm action navigate --view=extensions
 ```
-
-Extensions are org-scoped so all staff see them.
 
 ### A6. Navigation Map (Admin)
 

@@ -209,7 +209,7 @@ async function assertCallerMayTouch(
   }
 }
 
-async function assertCallerMayRun(actionName: string): Promise<void> {
+export async function assertCallerMayRun(actionName: string): Promise<void> {
   // A framework action this school app deliberately does not use: say so,
   // rather than reporting it as an oversight.
   const denial = denialReasonFor(actionName);

@@ -38,6 +38,7 @@ export const GUIDANCE_TOPICS = {
   ],
   timetable: ["### A2c. The school's week, arms and the timetable"],
   staff: ["### A3. Staff Management"],
+  extensions: ["### A5b. Extensions: the school's own mini-apps"],
 } as const;
 
 export type GuidanceTopic = keyof typeof GUIDANCE_TOPICS;
