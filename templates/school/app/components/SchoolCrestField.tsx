@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { IconPhotoPlus, IconTrash } from "@tabler/icons-react";
 
 /** Matches the server's limit, so a too-large file is refused before upload. */
-const MAX_LOGO_BYTES = 48 * 1024;
+const MAX_LOGO_BYTES = 512 * 1024;
 
 /**
  * Choose the school's crest.
@@ -58,7 +58,7 @@ export function SchoolCrestField({
       toast.error(
         `That file is ${Math.round(file.size / 1024)}KB and the limit is ${
           MAX_LOGO_BYTES / 1024
-        }KB. Resize it — 256×256 is plenty for a crest.`,
+        }KB. Resize it — 512×512 is plenty for a crest.`,
       );
       return;
     }

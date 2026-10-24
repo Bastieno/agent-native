@@ -1,30 +1,38 @@
 import { defineAction } from "@agent-native/core";
-import { getOrgSetting, putOrgSetting } from "@agent-native/core/settings";
+import {
+  deleteOrgSetting,
+  getOrgSetting,
+  putOrgSetting,
+} from "@agent-native/core/settings";
 import { currentAccess } from "@agent-native/core/sharing";
 import { z } from "zod";
+import {
+  CREST_SETTING_KEY,
+  MAX_CREST_BYTES,
+  crestUrl,
+} from "../server/lib/school-crest.js";
 
 /**
  * Put the school's crest on its portal and its paper, without object storage.
  *
- * A crest is a few kilobytes and changes about once a decade, so it is held
- * inline as a data URL in the school's own configuration rather than in a
- * bucket. That means no S3 account, no credentials, no bill and no second
- * system to back up — and, more importantly, no public URL: a file in a bucket
- * is readable by anyone who gets the link, which is the wrong default for a
- * deployment holding children's records, even for something as harmless as a
- * logo.
+ * A crest changes about once a decade, so it is held in the school's own
+ * settings rather than in a bucket: no S3 account, no credentials, no bill and
+ * no second system to back up — and, more importantly, no public URL: a file
+ * in a bucket is readable by anyone who gets the link, which is the wrong
+ * default for a deployment holding children's records, even for a logo.
  *
- * A data URL is still a URL, so everything that already renders `theme.logoUrl`
- * in an `<img>` keeps working with no change.
+ * The image is kept in its own setting and served from `/api/school/crest` to
+ * people signed in to the school; only that short address goes in the school's
+ * configuration as `theme.logoUrl`. (It used to be inlined in the config, which
+ * is read on nearly every page and handed to the assistant whole, so it had to
+ * stay tiny.) Everything that already renders `theme.logoUrl` in an `<img>`
+ * keeps working with no change.
  *
  * This is deliberately not a general file service. When learners start handing
  * in photographs of their working, those are many, large and genuinely
  * sensitive, and they need a real store with access checks per file. This
  * covers the one small case properly instead of building that early.
  */
-
-/** Raw bytes, before base64 expands them by about a third. */
-const MAX_LOGO_BYTES = 48 * 1024;
 
 const ALLOWED = new Set([
   "image/png",
@@ -38,13 +46,13 @@ const ALLOWED = new Set([
 
 export default defineAction({
   description:
-    "Set or remove the school's crest, shown in the portal header and on printed documents. Takes the image as a data URL (data:image/png;base64,...), stored inline in the school's configuration — no file hosting needed. Keep it small and square; 256×256 is plenty.",
+    "Set or remove the school's crest, shown in the portal header and on printed documents. Takes the image as a data URL (data:image/png;base64,...), stored inline in the school's configuration — no file hosting needed. Square works best; 512×512 is plenty.",
   schema: z.object({
     dataUrl: z
       .string()
       .optional()
       .describe(
-        "The image as a data URL: data:image/png;base64,iVBOR... PNG, JPEG, WebP or SVG, under 48KB before encoding.",
+        "The image as a data URL: data:image/png;base64,iVBOR... PNG, JPEG, WebP or SVG, under 512KB before encoding.",
       ),
     clear: z
       .boolean()
@@ -67,6 +75,7 @@ export default defineAction({
     if (args.clear) {
       delete theme.logoUrl;
       await putOrgSetting(orgId, "school-config", { ...existing, theme });
+      await deleteOrgSetting(orgId, CREST_SETTING_KEY);
       return { cleared: true, message: "The school crest has been removed." };
     }
 
@@ -99,15 +108,21 @@ export default defineAction({
       throw new Error("The image data could not be decoded.");
     }
     if (bytes.length === 0) throw new Error("The image is empty.");
-    if (bytes.length > MAX_LOGO_BYTES) {
+    if (bytes.length > MAX_CREST_BYTES) {
       throw new Error(
         `That image is ${Math.round(bytes.length / 1024)}KB, and the limit is ${
-          MAX_LOGO_BYTES / 1024
-        }KB. It is carried with the school's settings on every page load, so resize it — 256×256 is plenty for a crest.`,
+          MAX_CREST_BYTES / 1024
+        }KB. Resize it — 512×512 is plenty for a crest.`,
       );
     }
 
-    theme.logoUrl = args.dataUrl;
+    const updatedAt = Date.now();
+    await putOrgSetting(orgId, CREST_SETTING_KEY, {
+      dataUrl: args.dataUrl,
+      mimeType,
+      updatedAt,
+    });
+    theme.logoUrl = crestUrl(updatedAt);
     await putOrgSetting(orgId, "school-config", { ...existing, theme });
 
     return {
