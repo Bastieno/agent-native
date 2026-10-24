@@ -71,6 +71,8 @@ export interface TeacherNav {
     | "gradebook"
     | "students"
     | "analytics"
+    // The extensions the admin has put in front of teachers.
+    | "extensions"
     // Drafting a curriculum is subject work, so a teacher reaches these too.
     | "curriculum"
     | "curriculum-setup";

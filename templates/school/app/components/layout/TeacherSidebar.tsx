@@ -4,11 +4,13 @@ import {
   IconChartBar,
   IconLayoutDashboard,
   IconLogout,
+  IconPuzzle,
   IconSchool,
   IconUsers,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
+import { useTeacherExtensions } from "@/hooks/use-teacher-extensions";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 
 const navItems = [
@@ -30,6 +32,14 @@ export function TeacherSidebar({
   showAgentToggle = true,
 }: { showAgentToggle?: boolean } = {}) {
   const { config } = useSchoolConfig();
+  // Shown only once the admin has put something in front of teachers.
+  const { extensions } = useTeacherExtensions();
+  const items = extensions.length
+    ? [
+        ...navItems,
+        { href: "/teacher/extensions", label: "Extensions", icon: IconPuzzle },
+      ]
+    : navItems;
   const schoolName =
     (config as any)?.theme?.displayName ??
     (config as any)?.name ??
@@ -43,7 +53,7 @@ export function TeacherSidebar({
         {showAgentToggle ? <AgentToggleButton /> : null}
       </div>
       <nav className="flex-1 overflow-y-auto p-2 space-y-0.5">
-        {navItems.map(({ href, label, icon: Icon, end }) => (
+        {items.map(({ href, label, icon: Icon, end }: any) => (
           <NavLink
             key={href}
             to={href}

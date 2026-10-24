@@ -253,6 +253,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "get-school-attention": ADMIN,
   // The framework's extension actions are not in this app's action folder, but
   // an admin's AI app may call them, so they carry a policy like any other.
+  "get-extension-audience": STAFF,
+  "set-extension-audience": ADMIN,
   "list-extensions": ADMIN,
   "get-extension": ADMIN,
   "create-extension": ADMIN,

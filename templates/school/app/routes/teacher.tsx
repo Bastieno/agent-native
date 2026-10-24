@@ -40,6 +40,7 @@ export default function TeacherLayout() {
       navigate(`/teacher/gradebook/${nav.classId}`);
     else if (nav.view === "students") navigate("/teacher/students");
     else if (nav.view === "analytics") navigate("/teacher/analytics");
+    else if (nav.view === "extensions") navigate("/teacher/extensions");
   }, [command.data, clearCommand, navigate]);
 
   useEffect(() => {

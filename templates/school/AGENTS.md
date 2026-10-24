@@ -920,6 +920,11 @@ Say "mini-app" or "widget" to a head teacher; leave out how it is built.
 
 - **Only an admin** can create, change or list them, and the Extensions page
   is in the admin portal.
+- **Teachers see only what the admin puts in front of them.** On the admin's
+  Extensions page each extension has a "Teachers" switch. Switched on, it is
+  shared with the school and appears on a teacher's own Extensions page, which
+  teachers only see once at least one is on. Learners have no Extensions page.
+  Do not promise a teacher can use an extension the admin has not switched on.
 - **Private first.** A new extension is visible to the person who made it
   only. An admin can make it visible to the whole school
   (`update-extension` with `visibility: "org"`); it can never be made public.
