@@ -38,6 +38,7 @@ export const GUIDANCE_TOPICS = {
   ],
   timetable: ["### A2c. The school's week, arms and the timetable"],
   staff: ["### A3. Staff Management"],
+  analytics: ["### A4. School Analytics", "### B5. Class Analytics"],
   extensions: ["### A5b. Extensions: the school's own mini-apps"],
 } as const;
 

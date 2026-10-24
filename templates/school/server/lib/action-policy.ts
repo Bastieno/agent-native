@@ -113,6 +113,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-school-config": ADMIN,
   // Whether the signed-in person has the assistant right now, and why not.
   "get-my-agent-access": EVERYONE,
+  // Who the signed-in person is: their own name, role and school.
+  "get-my-profile": EVERYONE,
   "set-school-logo": ADMIN,
   "get-custom-fields-schema": STAFF,
   "update-custom-fields-schema": ADMIN,

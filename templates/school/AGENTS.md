@@ -43,7 +43,10 @@ kind of request.
   counted. Do not give a cause for it, and do not judge a person from
   their class's or learner's marks: a low figure is a reason to look, not a
   finding. Suggest asking the person who would know.
-- **Plain prose, no emojis, no headings, tables only for a table.**
+- **Prose by default, no emojis, and no headings on a short answer.** When
+  several people or items are compared on the same measures (learners and
+  their averages, subjects by term, classes and what each is missing), a short
+  table is clearer than a list; use one then, and only then.
 
 ## Destructive Actions
 

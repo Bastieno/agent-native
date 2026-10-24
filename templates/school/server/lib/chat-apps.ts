@@ -121,14 +121,27 @@ export const EXTENSION_ACTIONS = [
   "update-extension",
 ];
 
+/**
+ * How a class or a learner is doing: who needs help, one learner's findings
+ * with their working. Without these, "which students need help?" is answered
+ * by pulling every learner's marks one by one, or by handing it to the
+ * school's assistant, which costs the school money.
+ */
+const ANALYTICS = [
+  "identify-struggling-students",
+  "get-class-performance",
+  "get-student-profile",
+];
+
 /** Everyone who may connect also gets these. */
-const ALWAYS = ["get-school-guidance", "ask_app"];
+const ALWAYS = ["get-school-guidance", "get-my-profile", "ask_app"];
 
 /** A head whose school is provisioned but not yet set up. */
 const BEFORE_SETUP = new Set([
   "check-school-setup",
   "setup-school",
   "get-school-guidance",
+  "get-my-profile",
   "ask_app",
 ]);
 
@@ -147,6 +160,8 @@ export const CHAT_APP_EXPOSURE: Record<
     "get-lesson-note-coverage",
     ...EXTENSION_ACTIONS,
     "get-custom-fields-schema",
+    ...ANALYTICS,
+    "get-school-analytics",
     ...ALWAYS,
   ]),
   subject_coordinator: new Set([
@@ -154,9 +169,11 @@ export const CHAT_APP_EXPOSURE: Record<
     ...CURRICULUM,
     "get-curriculum-coverage",
     "get-lesson-note-coverage",
+    ...ANALYTICS,
+    "get-school-analytics",
     ...ALWAYS,
   ]),
-  teacher: new Set([...TEACHING, ...ALWAYS]),
+  teacher: new Set([...TEACHING, ...ANALYTICS, ...ALWAYS]),
 };
 
 /** Every action any role sees from a chat app: these are marked for it. */
@@ -172,6 +189,7 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
   [CURRICULUM, "curriculum"],
   [TIMETABLE, "timetable"],
   [[...EXTENSION_ACTIONS, "get-custom-fields-schema"], "extensions"],
+  [[...ANALYTICS, "get-school-analytics"], "analytics"],
   [
     [
       "plan-lesson-notes",
@@ -377,9 +395,9 @@ export async function chatAppToolFilter(
 export const CHAT_APP_INSTRUCTIONS = `You are helping someone who runs or teaches at a school, through the school's own tools.
 
 How to work:
-- Before a kind of task, call get-school-guidance with its topic (setup, staff, curriculum, lesson-notes, activities, marking, timetable, extensions) and follow it. Start with topic "talking-to-people".
+- Before a kind of task, call get-school-guidance with its topic (setup, staff, curriculum, lesson-notes, activities, marking, timetable, extensions, analytics) and follow it. Start with topic "talking-to-people".
 - Answer at the size of the question: a broad one gets a short answer, not everything you can find. Start with what the person should do or decide, ordered by what blocks teaching or publishing (get-school-attention is that list; check-school-setup adds what is not set up yet), and say which page fixes each. Do not run through settings, rooms or bell times unless asked.
-- Say what the figures say and how they were counted, and stop: no cause for a mark, and no judgement of a teacher from their class's marks. Plain prose, no headings or emojis.
+- Say what the figures say and how they were counted, and stop: no cause for a mark, and no judgement of a teacher from their class's marks. Prose by default, no emojis, no headings on a short answer; but when several people or items are compared on the same measures (learners and their averages, subjects by term), a short table is clearer than a list, so use one.
 - Speak in the school's own words. Never name tools, ids, role codes or field names: say "I'll invite Mrs Okoro as a teacher", not the tool you will call. Offer outcomes, not tools: "Shall I draft the lesson notes for JSS1 Basic Science?"
 - Setting a school up: show one editable setup sheet drafted from what you can infer (name, year groups, terms, grading, curriculum), and let the head correct it. Do not ask twenty questions. Run check-school-setup to see what is still empty.
 - Confirm before anything that cannot be undone, such as inviting someone, publishing marks or closing work, and say what will happen.

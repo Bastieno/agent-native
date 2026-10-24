@@ -237,9 +237,10 @@ async function joinAs(email: string): Promise<string> {
 // A size guard of our own, not a limit any host publishes: a model chooses
 // better from a short list, and a long one costs every chat app's context. It
 // was 48 KB when the admin's list was 46 KB, which left room for one tool.
-// 56 KB leaves room for a handful more; when it is next reached, trim
-// descriptions before raising it again.
-const BUDGET_BYTES = 56 * 1024;
+// 72 KB leaves room for a dozen more admin tools; it was raised from 56 KB
+// when the analytics and "who am I" tools went in, rather than trimming
+// tool descriptions. Raise it again only on purpose.
+const BUDGET_BYTES = 72 * 1024;
 
 /**
  * A chat app (Claude Desktop, claude.ai, ChatGPT) calls the school's own
@@ -259,8 +260,9 @@ async function chatClientDirect() {
     head.names.has("setup-school") &&
       head.names.has("check-school-setup") &&
       head.names.has("get-school-guidance") &&
+      head.names.has("get-my-profile") &&
       head.names.has("ask_app") &&
-      head.names.size === 4,
+      head.names.size === 5,
     `before setup the head sees setup only (${[...head.names].join(", ")})`,
   );
 
@@ -329,6 +331,19 @@ async function chatClientDirect() {
   check(
     !madeExtension.isError,
     "the admin's app creates an extension directly",
+  );
+
+  check(
+    head.names.has("get-my-profile") &&
+      head.names.has("identify-struggling-students") &&
+      head.names.has("get-student-profile") &&
+      head.names.has("get-school-analytics"),
+    "the admin's app can ask who it is signed in as, and who is struggling",
+  );
+  const me = await tool(headToken, "get-my-profile", {});
+  check(
+    !me.isError && /admin/i.test(me.text),
+    "the head's app is told it is signed in as the school's admin",
   );
 
   const run = provisionedId?.slice(0, 6) ?? Date.now().toString(36);
