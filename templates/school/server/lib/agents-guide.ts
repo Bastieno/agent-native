@@ -13,7 +13,11 @@ import { join } from "node:path";
  */
 
 export const GUIDANCE_TOPICS = {
-  "talking-to-people": ["## Destructive Actions", "## Talking to people"],
+  "talking-to-people": [
+    "## Shaping an answer",
+    "## Destructive Actions",
+    "## Talking to people",
+  ],
   setup: [
     "### A0. Where a new school comes from",
     "### A1. School Onboarding (first run)",
