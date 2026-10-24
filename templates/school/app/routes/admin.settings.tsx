@@ -186,9 +186,10 @@ export default function AdminSettings() {
   return (
     // Settings is prose and short rows, so it keeps a readable column: across
     // a 2000px display a heading and its help text ended up at opposite ends
-    // of the screen, reading as two unrelated things.
+    // of the screen, reading as two unrelated things. The column grows on big
+    // screens, enough for the tab row and no further.
     <div className="h-full overflow-auto p-6">
-      <div className="min-w-0 max-w-3xl space-y-4">
+      <div className="min-w-0 max-w-3xl space-y-4 xl:max-w-5xl 2xl:max-w-6xl">
         <div>
           <h1 className="text-xl font-semibold">School Settings</h1>
           <p className="text-sm text-muted-foreground mt-1">
