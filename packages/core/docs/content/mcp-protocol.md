@@ -189,6 +189,54 @@ The mapping is direct:
 
 When `mcpApp` is present, the tool entry also includes `_meta.ui.resourceUri`, `_meta["ui/resourceUri"]`, and `_meta["openai/outputTemplate"]`, and the corresponding `ui://` resource is returned as `text/html;profile=mcp-app`.
 
+### Curating the catalog for chat apps {#curated-catalog}
+
+By default a chat app sees the generic app verbs and reaches everything else
+through `ask_app`, which runs the app's own agent. For an app whose people
+work from their own Claude or ChatGPT, three options let the app hand over a
+short list of real tools instead, so the person's own model does the thinking
+and the app only runs the action.
+
+**Plain tools in the compact catalog.** Mark an action `mcpApp: { compactCatalog: true }`.
+No `resource` is needed: the action is listed as an ordinary tool with no
+`_meta.ui` and no entry in `resources/list`. An action that does carry a
+`resource` behaves as before.
+
+```ts
+export default defineAction({
+  description: "Which classes are behind on lesson notes.",
+  mcpApp: { compactCatalog: true },
+  // ...
+});
+```
+
+**Instructions on connect.** `createAgentChatPlugin({ mcpInstructions })`
+takes a string, or a function that runs inside the caller's request context.
+It is sent in the `initialize` result. Claude adds it to the model's context;
+other hosts may ignore it, so keep each tool's description self-sufficient.
+
+**A per-caller list.** `createAgentChatPlugin({ mcpToolFilter })` is called as
+`(name, entry) => boolean | Promise<boolean>` for each tool when a caller asks
+for `tools/list`, inside that caller's request context, so
+`getRequestUserEmail()` and `getRequestOrgId()` are the verified caller. It
+applies to the compact and full catalogs, to built-ins such as `ask_app` and
+`ask-agent`, and `resources/list` follows it. A filter that throws hides the
+tool.
+
+> **The filter only hides tools from the list.** `tools/call` is unchanged, so
+> a caller who knows a name can still call it. Every action must check the
+> caller's role itself. Treat the filter as what the model sees, never as
+> permission.
+
+**The caller's own key and usage.** `ask_app` and `ask-agent` resolve the
+caller's provider key the way their web chat does, including an organisation's
+key. Where the deploy-key fallback is blocked and the caller has no key, the
+call fails with the standard missing-key message instead of spending the
+deployment's key. Token use is recorded against the caller, labelled
+`mcp-ask-app` (and `a2a` for agent-to-agent runs) so it can be told apart from
+web chat. A2A runs still resolve their key from the plugin and the deploy
+key, not the caller's.
+
 ### The `ask-agent` tool {#ask-agent}
 
 In addition to individual action tools, every MCP server includes an `ask-agent` meta-tool. This sends a natural-language message to the app's AI agent and returns the response.
