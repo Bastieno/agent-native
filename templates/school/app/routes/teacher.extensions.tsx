@@ -1,5 +1,6 @@
 import { ListState } from "@/components/ListState";
-import { EmbeddedExtension } from "@agent-native/core/client/extensions";
+import { Link } from "react-router";
+import { Button } from "@/components/ui/button";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
 import { IconPuzzle } from "@tabler/icons-react";
@@ -36,7 +37,7 @@ export default function TeacherExtensions() {
           </p>
         </div>
       ) : (
-        <div className="space-y-4">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {extensions.map((ext) => (
             <div key={ext.id} className="space-y-2 rounded-lg border p-4">
               <h3 className="text-sm font-semibold">{ext.name}</h3>
@@ -45,12 +46,9 @@ export default function TeacherExtensions() {
                   {ext.description}
                 </p>
               )}
-              <EmbeddedExtension
-                extensionId={ext.id}
-                slotId={`teacher-extensions-${ext.id}`}
-                className="rounded border bg-muted/20"
-                initialHeight={192}
-              />
+              <Button asChild variant="outline" size="sm" className="mt-1">
+                <Link to={`/teacher/extension/${ext.id}`}>Open</Link>
+              </Button>
             </div>
           ))}
         </div>

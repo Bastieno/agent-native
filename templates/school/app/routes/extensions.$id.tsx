@@ -1,23 +1,19 @@
-import { useParams } from "react-router";
-import { ExtensionViewer } from "@agent-native/core/client/extensions";
-
-export function meta() {
-  return [{ title: "Extension" }];
-}
+import { Navigate, useParams } from "react-router";
+import { useRole } from "@/hooks/use-role";
 
 /**
- * One extension on a page of its own: where "Open full view" goes.
- *
- * It sits outside the admin and teacher layouts, like the print pages, so the
- * extension gets the whole window. The viewer brings its own header with the
- * way back.
+ * The framework links an extension to /extensions/:id (its "Open full view",
+ * its breadcrumbs). The school shows each one inside the person's own portal,
+ * where the sidebar and the assistant panel are, so go there.
  */
 export default function ExtensionFullView() {
   const { id } = useParams<{ id: string }>();
-  if (!id) return null;
+  const { isAdmin, isLoading } = useRole();
+  if (!id || isLoading) return null;
   return (
-    <div className="h-screen">
-      <ExtensionViewer extensionId={id} />
-    </div>
+    <Navigate
+      to={`/${isAdmin ? "admin" : "teacher"}/extension/${id}`}
+      replace
+    />
   );
 }
