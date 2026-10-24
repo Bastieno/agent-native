@@ -94,6 +94,10 @@ export default function AdminLayout() {
       ...(nav.assessmentId
         ? { "print-activity": `/print/activity/${nav.assessmentId}` }
         : {}),
+      // An issued report card, printed from what was stored.
+      ...(nav.reportId
+        ? { "print-report": `/print/report/${nav.reportId}` }
+        : {}),
     };
     const path = viewMap[nav.view];
     if (path) navigate(path);

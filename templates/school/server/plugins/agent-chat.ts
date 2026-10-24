@@ -14,6 +14,7 @@ import {
   withChatAppExtensionSurface,
   withChatAppSurface,
 } from "../lib/chat-apps.js";
+import { promptGuide } from "../lib/prompt-guide.js";
 import { readyBeforeServing } from "../lib/plugin-readiness.js";
 
 const agentChat = createAgentChatPlugin({
@@ -31,6 +32,9 @@ const agentChat = createAgentChatPlugin({
   // them directly; each call is role-checked.
   transformExtensionActions: withChatAppExtensionSurface,
   mcpRefuseCaller: refuseChatAppCaller,
+  // Each person's assistant is sent the guide for their own role, not all
+  // three roles' (see server/lib/prompt-guide.ts).
+  transformAgentsMd: promptGuide,
   mcpToolFilter: chatAppToolFilter,
   mcpInstructions: CHAT_APP_INSTRUCTIONS,
   appId: "school",

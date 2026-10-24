@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router";
+import { Navigate, useParams } from "react-router";
 import { agentNativePath } from "@agent-native/core/client";
 import { IconPrinter, IconFileText } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
@@ -58,6 +58,26 @@ export default function PrintDocument() {
     },
     enabled: !!documentId,
   });
+
+  // An issued report card has its own page. A link to /print/<its id> is an
+  // easy mistake to make, so when no document has this id, see whether a
+  // report card does and go to it.
+  const { data: reportExists } = useQuery({
+    queryKey: ["document-is-report", documentId],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath(
+          `/_agent-native/actions/get-report-card?id=${documentId}`,
+        ),
+      );
+      return res.ok;
+    },
+    enabled: !!documentId && !isLoading && !doc?.body,
+    retry: false,
+  });
+  if (reportExists) {
+    return <Navigate to={`/print/report/${documentId}`} replace />;
+  }
 
   const schoolName =
     (config as any)?.theme?.displayName ?? (config as any)?.name ?? null;

@@ -311,7 +311,7 @@ export default defineAction({
       term: term.name,
       overall,
       path: `/print/report/${id}`,
-      message: `Issued ${studentName}'s report for ${term.name} (${serial}). It is frozen as it stands and will reprint exactly this way. Open it at /print/report/${id}.`,
+      message: `Issued ${studentName}'s report for ${term.name} (${serial}). It is frozen as it stands and will reprint exactly this way. To show it inside the app, navigate with view print-report and reportId ${id} (the id, not a document id). From an outside AI app, give the person this address on the school's site: /print/report/${id}.`,
     };
   },
 });

@@ -9,7 +9,7 @@ export default defineAction({
     view: z
       .string()
       .describe(
-        "The view to navigate to. Admin: overview, curriculum, curriculum-setup, staff, students (pass studentId to open one learner: how they are doing, what is going well and what needs attention), classes, arms (the arms tab of the Classes page), timetable (pass termId, and one of armId, teacherUserId or room to show that arm's, teacher's or room's week; an arm is shown when none is given), lessons (lesson-note readiness; pass classId for one class or lessonId for one note), analytics, settings, extensions. Teacher: dashboard, classes, class, unit, lesson, assessment, gradebook, students, analytics, extensions (the mini-apps the admin has put in front of teachers). Student: dashboard, week (their own timetable), classes, class, revise (pass classId: one subject week by week, with the learner's marks), assessment, submission, grades, progress. Any staff role: document (a printable made with create-activity's sibling, create-document) — pass documentId; print-material (a week's worksheets, reading and card decks printed from what is stored) — pass lessonId; print-activity (one of them) — pass assessmentId.",
+        "The view to navigate to. Admin: overview, curriculum, curriculum-setup, staff, students (pass studentId to open one learner: how they are doing, what is going well and what needs attention), classes, arms (the arms tab of the Classes page), timetable (pass termId, and one of armId, teacherUserId or room to show that arm's, teacher's or room's week; an arm is shown when none is given), lessons (lesson-note readiness; pass classId for one class or lessonId for one note), analytics, settings, extensions. Teacher: dashboard, classes, class, unit, lesson, assessment, gradebook, students, analytics, extensions (the mini-apps the admin has put in front of teachers). Student: dashboard, week (their own timetable), classes, class, revise (pass classId: one subject week by week, with the learner's marks), assessment, submission, grades, progress. Any staff role: document (a printable made with create-activity's sibling, create-document) — pass documentId; print-material (a week's worksheets, reading and card decks printed from what is stored) — pass lessonId; print-activity (one of them) — pass assessmentId; print-report (an issued report card, printed from what was stored) — pass reportId, the id issue-report-card returned.",
       ),
     classId: z
       .string()
@@ -31,6 +31,12 @@ export default defineAction({
       .string()
       .optional()
       .describe("Document ID from create-document, for the 'document' view"),
+    reportId: z
+      .string()
+      .optional()
+      .describe(
+        "Report card ID from issue-report-card, for the 'print-report' view",
+      ),
     unitId: z.string().optional().describe("Unit ID for unit/lesson views"),
     lessonId: z.string().optional().describe("Lesson note ID for lesson view"),
     assessmentId: z

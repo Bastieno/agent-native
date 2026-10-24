@@ -337,8 +337,10 @@ async function chatClientDirect() {
     head.names.has("get-my-profile") &&
       head.names.has("identify-struggling-students") &&
       head.names.has("get-student-profile") &&
-      head.names.has("get-school-analytics"),
-    "the admin's app can ask who it is signed in as, and who is struggling",
+      head.names.has("get-school-analytics") &&
+      head.names.has("issue-report-card") &&
+      head.names.has("get-report-card"),
+    "the admin's app can ask who it is, who is struggling, and issue report cards",
   );
   const me = await tool(headToken, "get-my-profile", {});
   check(

@@ -28,6 +28,8 @@ export default function TeacherLayout() {
       navigate(`/print/material/${nav.lessonId}`);
     else if (nav.view === "print-activity" && nav.assessmentId)
       navigate(`/print/activity/${nav.assessmentId}`);
+    else if (nav.view === "print-report" && nav.reportId)
+      navigate(`/print/report/${nav.reportId}`);
     else if (nav.view === "dashboard") navigate("/teacher");
     else if (nav.view === "classes") navigate("/teacher/classes");
     else if (nav.view === "class" && nav.classId)
