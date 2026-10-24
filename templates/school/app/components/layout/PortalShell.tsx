@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { useLocation } from "react-router";
-import { AgentToggleButton } from "@agent-native/core/client";
+import { DraggableAgentButton } from "@/components/layout/DraggableAgentButton";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useCurrentTerm } from "@/hooks/use-current-term";
@@ -101,11 +101,12 @@ export function PortalShell({
       </div>
 
       {/* Agent button, for the widths where the panel is an overlay. Sits
-          clear of the bottom edge and above page content. */}
-      {/* Only where the sidebar is not on screen. Above xl the sidebar's own
-          header carries the toggle, so a floating bubble would sit over the
-          page for no reason — and over the open panel. */}
-      <AgentToggleButton className="fixed bottom-6 right-6 z-30 h-12 w-12 rounded-full border bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:text-primary-foreground xl:hidden" />
+          clear of the bottom edge and above page content, and can be dragged
+          off whatever it covers. Only where the sidebar is not on screen:
+          above xl the sidebar's own header carries the toggle, so a floating
+          bubble would sit over the page for no reason, and over the open
+          panel. */}
+      <DraggableAgentButton className="xl:hidden" />
     </div>
   );
 }
