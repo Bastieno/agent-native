@@ -2052,6 +2052,17 @@ export interface AgentChatPluginOptions {
     entry: ActionEntry,
   ) => boolean | Promise<boolean>;
   /**
+   * Adjust the app's AGENTS.md before it goes into the assistant's
+   * instructions, for the person it is built for (`owner`, their email). The
+   * whole file is otherwise sent on every step to everyone, so an app whose
+   * guide has a section per role can send each person only theirs. Return the
+   * text to use; if it throws or returns nothing, the full file is used.
+   */
+  transformAgentsMd?: (
+    agentsMd: string,
+    owner: string,
+  ) => string | Promise<string>;
+  /**
    * Adjust the framework's extension actions (`create-extension`,
    * `update-extension`, `list-extensions`, ...) before they are registered for
    * the agent and over MCP. A template can mark some as
@@ -2652,6 +2663,15 @@ const DEFAULT_SYSTEM_PROMPT = PROD_FRAMEWORK_PROMPT;
  * AGENTS.md and restarting the server is all it takes; Vite HMR invalidates
  * the bundle in dev so changes land instantly.
  */
+/**
+ * An app's own adjustment of its AGENTS.md before it goes into the prompt (see
+ * `AgentChatPluginOptions.transformAgentsMd`). Held at module level because
+ * the prompt is built from several places, in and outside this plugin.
+ */
+let agentsMdTransform:
+  | ((agentsMd: string, owner: string) => string | Promise<string>)
+  | undefined;
+
 export async function loadResourcesForPrompt(
   owner: string,
   compact = false,
@@ -2676,8 +2696,22 @@ export async function loadResourcesForPrompt(
 
     // 2. Template AGENTS.md — always included (critical template instructions).
     if (bundle.agentsMd.trim()) {
+      let templateAgentsMd = bundle.agentsMd.trim();
+      if (agentsMdTransform) {
+        try {
+          templateAgentsMd =
+            (await agentsMdTransform(templateAgentsMd, owner)).trim() ||
+            templateAgentsMd;
+        } catch (err) {
+          // A failing adjustment must not leave the assistant with no guide.
+          console.warn(
+            "[agent-chat] transformAgentsMd threw; using the full AGENTS.md:",
+            err instanceof Error ? err.message : err,
+          );
+        }
+      }
       sections.push(
-        `<resource name="AGENTS.md" scope="template">\n${bundle.agentsMd.trim()}\n</resource>`,
+        `<resource name="AGENTS.md" scope="template">\n${templateAgentsMd}\n</resource>`,
       );
     }
 
@@ -3081,6 +3115,7 @@ export function shouldBlockInProductCodeEditingSurface(input: {
 export function createAgentChatPlugin(
   options?: AgentChatPluginOptions,
 ): NitroPluginDef {
+  agentsMdTransform = options?.transformAgentsMd ?? agentsMdTransform;
   return (nitroApp: any) => {
     markDefaultPluginProvided(nitroApp, "agent-chat");
     // Nitro v3 calls plugins synchronously and doesn't await async return
