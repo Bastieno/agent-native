@@ -228,6 +228,15 @@ tool.
 > caller's role itself. Treat the filter as what the model sees, never as
 > permission.
 
+**The framework's own actions.** Extensions (`create-extension`,
+`update-extension`, `list-extensions`, ...) are built by the framework, not
+found in the app's action folder, so neither `compactCatalog` nor an app's
+action guard reaches them. `createAgentChatPlugin({ transformExtensionActions })`
+receives those entries and returns them changed: mark some
+`mcpApp: { compactCatalog: true }` to list them for chat apps, and wrap `run`
+with the app's own role check. Without that check, anyone who can call a listed
+tool can run it.
+
 **The caller's own key and usage.** `ask_app` and `ask-agent` resolve the
 caller's provider key the way their web chat does, including an organisation's
 key. Where the deploy-key fallback is blocked and the caller has no key, the

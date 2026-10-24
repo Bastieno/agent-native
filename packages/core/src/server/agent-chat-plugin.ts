@@ -2052,6 +2052,17 @@ export interface AgentChatPluginOptions {
     entry: ActionEntry,
   ) => boolean | Promise<boolean>;
   /**
+   * Adjust the framework's extension actions (`create-extension`,
+   * `update-extension`, `list-extensions`, ...) before they are registered for
+   * the agent and over MCP. A template can mark some as
+   * `mcpApp: { compactCatalog: true }` so chat apps list them as plain tools,
+   * and wrap `run` with its own role check: these actions are not template
+   * actions, so a template's action guard never sees them.
+   */
+  transformExtensionActions?: (
+    entries: Record<string, ActionEntry>,
+  ) => Record<string, ActionEntry>;
+  /**
    * Refuse an MCP caller before anything is listed or run (see
    * `MCPConfig.refuseCaller`). Return a message to refuse, null to allow.
    * Runs inside the caller's request context.
@@ -3490,6 +3501,9 @@ export function createAgentChatPlugin(
           await import("../extensions/actions.js");
         toolActions = createExtensionActionEntries();
       } catch {}
+      if (options?.transformExtensionActions) {
+        toolActions = options.transformExtensionActions(toolActions);
+      }
       let browserSessionTools: Record<string, ActionEntry> = {};
       try {
         const { createBrowserSessionActionEntries } =
