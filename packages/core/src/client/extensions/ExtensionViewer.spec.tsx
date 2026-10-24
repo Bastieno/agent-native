@@ -94,12 +94,14 @@ describe("ExtensionViewer MCP embeds", () => {
     vi.unstubAllGlobals();
   });
 
-  async function renderViewer() {
+  async function renderViewer(
+    controls?: React.ComponentProps<typeof ExtensionViewer>["controls"],
+  ) {
     await act(async () => {
       root.render(
         <QueryClientProvider client={queryClient}>
           <MemoryRouter initialEntries={["/extensions/ext-1/github-stars"]}>
-            <ExtensionViewer extensionId="ext-1" />
+            <ExtensionViewer extensionId="ext-1" controls={controls} />
           </MemoryRouter>
         </QueryClientProvider>,
       );
@@ -130,5 +132,24 @@ describe("ExtensionViewer MCP embeds", () => {
       "agent-native-extension-binding",
     );
     expect(iframe.getAttribute("sandbox")).toBe("allow-scripts allow-forms");
+  });
+
+  it("shows every header control by default", async () => {
+    await renderViewer();
+    const text = container.textContent ?? "";
+    expect(text).toContain("Share");
+    expect(text).toContain("Edit extension");
+    expect(container.querySelector('[aria-label="Back to app"]')).toBeTruthy();
+  });
+
+  it("hides the header controls a host app switches off", async () => {
+    await renderViewer({ edit: false, share: false, rename: false });
+    const text = container.textContent ?? "";
+    expect(text).not.toContain("Share");
+    expect(text).not.toContain("Edit extension");
+    expect(text).not.toContain("Rename");
+    // What is not switched off stays.
+    expect(container.querySelector('[aria-label="Back to app"]')).toBeTruthy();
+    expect(text).toContain("Refresh");
   });
 });

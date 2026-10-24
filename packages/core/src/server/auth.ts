@@ -63,6 +63,12 @@ import {
 import { getBetterAuth, getBetterAuthSync } from "./better-auth-instance.js";
 import type { BetterAuthConfig } from "./better-auth-instance.js";
 import {
+  isSignUpRefusal,
+  setSignUpRule,
+  signUpRefusal,
+  type AllowSignUp,
+} from "./signup-gate.js";
+import {
   getAllowedCorsOrigin,
   readCorsAllowedOrigins,
 } from "./cors-origins.js";
@@ -249,6 +255,15 @@ export interface AuthOptions {
    * Falls back to the `GOOGLE_AUTH_MODE` env var, then `'auto'`.
    */
   googleAuthMode?: GoogleAuthMode;
+  /**
+   * Who may create an account. Asked for every new address, on every path:
+   * the email form, Better Auth's social sign-in, identity SSO, and the
+   * generic Google route (which asks whenever it would start a session for an
+   * address with no account). Return `true` to let it in, or a message to
+   * refuse it — the message is what the person sees. Existing accounts are
+   * never asked. Leave unset for open sign-up.
+   */
+  allowSignUp?: AllowSignUp;
   /**
    * Additional Better Auth configuration (social providers, plugins, etc.)
    */
@@ -720,9 +735,27 @@ const EXPECTED_AUTH_FAILURE_PATTERNS: RegExp[] = [
 ];
 
 export function isExpectedAuthFailure(error: unknown): boolean {
+  if (isSignUpRefusal(error)) return true;
   const msg = (error as { message?: unknown })?.message;
   if (typeof msg !== "string") return false;
   return EXPECTED_AUTH_FAILURE_PATTERNS.some((re) => re.test(msg));
+}
+
+/**
+ * Whether an address already has an account here: a Better Auth user row.
+ * Only asked when an app has a sign-up rule; without one nothing is refused.
+ */
+async function hasAccountForEmail(email: string): Promise<boolean> {
+  try {
+    const { getDbExec } = await import("../db/client.js");
+    const { rows } = await getDbExec().execute({
+      sql: 'SELECT 1 FROM "user" WHERE LOWER(email) = ? LIMIT 1',
+      args: [email.trim().toLowerCase()],
+    });
+    return rows.length > 0;
+  } catch {
+    return false;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -1487,9 +1520,21 @@ function createAuthGuardFn(): (
     if (p === "/login" || p === "/signup") {
       const session = await getSession(event);
       if (session) {
+        const queryStr = queryStart >= 0 ? url.slice(queryStart + 1) : "";
+        const safeReturn = safeReturnPath(
+          new URLSearchParams(queryStr).get("return"),
+        );
+        // safeReturnPath() yields "/" for a missing or unsafe param, which is
+        // not a destination — a mounted app's home is its base path.
+        const dest =
+          safeReturn !== "/" &&
+          safeReturn !== "/login" &&
+          safeReturn !== "/signup"
+            ? safeReturn
+            : getAppBasePath() || "/";
         return new Response("", {
           status: 302,
-          headers: { Location: getAppBasePath() || "/" },
+          headers: { Location: dest },
         });
       }
       return new Response(loginHtml, {
@@ -1544,6 +1589,36 @@ function createAuthGuardFn(): (
     if (getMethod(event) === "GET") {
       const autoSession = await maybeAutoCreateDevSession(event, url);
       if (autoSession) return autoSession;
+    }
+
+    // Redirect page routes to /login?return=<path> so the URL bar shows /login
+    // while the user authenticates. After sign-in, __anGetReturnPath() in the
+    // login HTML reads the ?return= param and navigates back to the original URL.
+    // Fall back to inline login HTML for the app's own home to avoid a
+    // redirect loop. The mount prefix is APP_BASE_PATH, or the workspace mount
+    // inferred from the request the same way the login page infers it, so a
+    // mounted app is sent to its own login page rather than the root's.
+    const queryStr = queryStart >= 0 ? url.slice(queryStart) : "";
+    const safeReturn = safeReturnPath(rawPath + queryStr);
+    const mountPrefix =
+      getAppBasePath() || inferWorkspaceBasePathFromRequest(rawPath);
+    const appPath =
+      mountPrefix &&
+      (rawPath === mountPrefix || rawPath.startsWith(`${mountPrefix}/`))
+        ? rawPath.slice(mountPrefix.length) || "/"
+        : rawPath;
+    if (
+      appPath !== "/" &&
+      appPath !== "/login" &&
+      appPath !== "/signup" &&
+      safeReturn !== "/"
+    ) {
+      return new Response("", {
+        status: 302,
+        headers: {
+          Location: `${mountPrefix}/login?return=${encodeURIComponent(safeReturn)}`,
+        },
+      });
     }
 
     return new Response(loginHtml, {
@@ -2569,6 +2644,27 @@ async function mountBetterAuthRoutes(
             );
           }
 
+          // This route starts a session without creating a Better Auth user,
+          // so the sign-up rule is asked here for any address with no account.
+          const refusal = (await hasAccountForEmail(email))
+            ? null
+            : await signUpRefusal(email);
+          if (refusal) {
+            const msg = `You signed in with Google as ${email}. ${refusal}`;
+            if (flowId) {
+              setDesktopExchangeError(flowId, {
+                message: msg,
+                code: "sign_up_not_allowed",
+              });
+            }
+            logGoogleOAuthDebug(event, "callback-sign-up-refused", {
+              flowId,
+              desktop,
+              emailDomain: email.split("@")[1] || "",
+            });
+            return oauthErrorPage(msg);
+          }
+
           const { sessionToken } = await createOAuthSession(event, email, {
             hasProductionSession: false,
             desktop,
@@ -3000,7 +3096,7 @@ async function mountBetterAuthRoutes(
         if (!isExpectedAuthFailure(e)) {
           captureAuthError(e, { route: "signup", email });
         }
-        setResponseStatus(event, 409);
+        setResponseStatus(event, isSignUpRefusal(e) ? 403 : 409);
         return { error: e?.message || "Registration failed" };
       }
     }),
@@ -3302,7 +3398,7 @@ function mountAuthFallbackRoutes(app: H3App): void {
         if (!isExpectedAuthFailure(e)) {
           captureAuthError(e, { route: "signup", email });
         }
-        setResponseStatus(event, 409);
+        setResponseStatus(event, isSignUpRefusal(e) ? 403 : 409);
         return { error: e?.message || "Registration failed" };
       }
     }),
@@ -3367,6 +3463,9 @@ export async function autoMountAuth(
   app: H3App,
   options: AuthOptions = {},
 ): Promise<boolean> {
+  // Set before any early return: the default plugin can mount first, and the
+  // template's own plugin then arrives here with the rule.
+  if (options.allowSignUp) setSignUpRule(options.allowSignUp);
   // If auth is already mounted on THIS app (e.g., default plugin ran before
   // custom plugin in the same server boot), don't re-mount routes — but DO
   // update the live config if custom options like googleOnly or loginHtml

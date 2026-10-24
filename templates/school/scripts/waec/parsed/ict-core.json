@@ -1,0 +1,85 @@
+{
+  "found": true,
+  "subject": "ICT (Core)",
+  "subjectCode": "ICTCORE",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Basic ICT Concepts and Computers",
+      "abbreviation": "BASICS",
+      "subStrands": [
+        {
+          "name": "ICT Meaning, Hardware, Software and Threats",
+          "objectives": [
+            {
+              "code": "ICTCORE-BASICS-1",
+              "description": "Meaning of ICT and its related terminologies; uses of ICT tools e.g. mobile phones, computers, internet, television set, radio, etc.; impact of ICT on education, social and economic development; information processing cycle — distinction between data and information; types and uses of computers."
+            },
+            {
+              "code": "ICTCORE-BASICS-2",
+              "description": "Computer hardware: categories of computer hardware — system unit, peripherals and storage media."
+            },
+            {
+              "code": "ICTCORE-BASICS-3",
+              "description": "Computer software: types of software — system and application software; open source and proprietary software."
+            },
+            {
+              "code": "ICTCORE-BASICS-4",
+              "description": "Threats to computers and users: meaning of computer threats; categories — natural threats (earthquakes, heat, floods, etc.) and human threats (viruses, worms, intentional damage, etc.); health hazards to computer users — causes and effects; remedies to threats and hazards."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Word Processing",
+      "abbreviation": "WORDPROC",
+      "subStrands": [
+        {
+          "name": "Creating, Editing and Printing Documents",
+          "objectives": [
+            {
+              "code": "ICTCORE-WORDPROC-1",
+              "description": "Word processing packages, their uses and importance; related concepts and terminologies; creating and saving documents; editing, formatting and insertion of objects e.g. tables, graphics, etc.; printing of documents; speed and accuracy in typing at 30–35 words per minute."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spreadsheet",
+      "abbreviation": "SPREAD",
+      "subStrands": [
+        {
+          "name": "Creating Worksheets, Formulae and Printing",
+          "objectives": [
+            {
+              "code": "ICTCORE-SPREAD-1",
+              "description": "Spreadsheet packages, their uses and importance; related concepts and terminologies; types of data and their uses; creating and saving workbook; constructing and inserting formulae and functions; editing and formatting worksheets; printing worksheets."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Presentation and Internet",
+      "abbreviation": "PRESENT",
+      "subStrands": [
+        {
+          "name": "Presentations, Internet, Email and Communication Tools",
+          "objectives": [
+            {
+              "code": "ICTCORE-PRESENT-1",
+              "description": "Presentation packages, uses and importance; creating and saving presentations; editing, formatting and insertion of objects; slide shows; master slides; factors to consider before delivering a presentation; printing presentation documents."
+            },
+            {
+              "code": "ICTCORE-PRESENT-2",
+              "description": "The internet: meaning, concepts, terminologies and requirements; features and uses of browser windows; rules and regulations in the use of the internet (netiquette); sending and accessing e-mail; internet related tools for communication e.g. chatting, downloading, uploading, search engines, social media etc."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

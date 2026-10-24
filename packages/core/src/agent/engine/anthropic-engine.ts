@@ -28,6 +28,57 @@ import {
 } from "./credential-errors.js";
 import { ANTHROPIC_MODEL_CONFIG } from "../model-config.js";
 
+/**
+ * Mark where the conversation so far ends, so the next step reads it from the
+ * cache instead of paying for it again.
+ *
+ * The instructions and tool list were already cached, but the conversation
+ * (every earlier message and every tool result) was sent at full price on each
+ * step. In a run that looks up a dozen learners' marks, that history is most of
+ * what is paid for. Two breakpoints are placed: the end of the last message
+ * (read next step) and the end of the user message before it, which is where
+ * the previous step's breakpoint was, so a step that added many tool results at
+ * once still finds the earlier entry. With the two on the instructions and the
+ * tools that makes four, the most the API allows.
+ */
+export function withConversationCacheBreakpoints<
+  M extends { role: string; content: unknown },
+>(messages: M[]): M[] {
+  const out = [...messages];
+  const mark = (index: number) => {
+    const msg = out[index];
+    if (!msg || msg.role !== "user") return;
+    const content: any[] = Array.isArray(msg.content)
+      ? [...msg.content]
+      : typeof msg.content === "string" && msg.content
+        ? [{ type: "text", text: msg.content }]
+        : [];
+    for (let i = content.length - 1; i >= 0; i--) {
+      const block = content[i];
+      // Thinking blocks cannot carry a breakpoint; an empty text block either.
+      if (
+        block?.type === "thinking" ||
+        block?.type === "redacted_thinking" ||
+        (block?.type === "text" && !block.text)
+      ) {
+        continue;
+      }
+      content[i] = { ...block, cache_control: { type: "ephemeral" } };
+      out[index] = { ...msg, content };
+      return;
+    }
+  };
+  const last = out.length - 1;
+  mark(last);
+  for (let i = last - 1; i >= 0; i--) {
+    if (out[i].role === "user") {
+      mark(i);
+      break;
+    }
+  }
+  return out;
+}
+
 export const ANTHROPIC_CAPABILITIES: EngineCapabilities = {
   thinking: true,
   promptCaching: true,
@@ -109,7 +160,9 @@ class AnthropicEngine implements AgentEngine {
       max_tokens: opts.maxOutputTokens ?? 32768,
       system: systemBlocks,
       tools: cachedTools.length > 0 ? cachedTools : undefined,
-      messages,
+      messages: cacheEnabled
+        ? withConversationCacheBreakpoints(messages)
+        : messages,
       ...(opts.temperature !== undefined
         ? { temperature: opts.temperature }
         : {}),

@@ -1,0 +1,116 @@
+{
+  "found": true,
+  "subject": "Mining",
+  "subjectCode": "MINING",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction to Mining",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Concepts, Minerals, History and Legislation",
+          "objectives": [
+            {
+              "code": "MINING-INTRO-1",
+              "description": "Meaning and branches of mining; terminology used in mining; classification and importance of minerals."
+            },
+            {
+              "code": "MINING-INTRO-2",
+              "description": "Distribution of minerals in Nigeria; history of mining; mining activities in Nigeria; importance of minerals to man and national economy."
+            },
+            {
+              "code": "MINING-INTRO-3",
+              "description": "Minerals markets and cartels; mine accounting and sources of finance for mining ventures; aspects of Nigerian Minerals and Mining Act, 2007; mining titles acquisition."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Basic Geology",
+      "abbreviation": "GEOL",
+      "subStrands": [
+        {
+          "name": "Geology, Earth Structure, Rocks and Minerals",
+          "objectives": [
+            {
+              "code": "MINING-GEOL-1",
+              "description": "Definition of geology and its scope; relationship between geology and mining; structure of the Earth; relative abundance of elements in the Earth's crust; economic mineral potentials of Nigeria."
+            },
+            {
+              "code": "MINING-GEOL-2",
+              "description": "Rocks and rock types (igneous, sedimentary and metamorphic); rock-forming minerals; physical and chemical properties of rock-forming minerals; rock cycle; weathering."
+            },
+            {
+              "code": "MINING-GEOL-3",
+              "description": "Simplified geological map of Nigeria; mineral map of Nigeria; collection and collation of geological data; interpretation of topographical and geological maps; drawing of simple geological cross-section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stages of Development in Mining",
+      "abbreviation": "STAGES",
+      "subStrands": [
+        {
+          "name": "Mining Methods, Prospecting, Exploration and Feasibility",
+          "objectives": [
+            {
+              "code": "MINING-STAGES-1",
+              "description": "Classification of mining methods (surface and underground); choice of mining methods; surface mining methods (quarrying, open pit, open cast, alluvial); underground mining methods (room-and-pillar, longwall, cut-and-fill, shrinkage, block caving, sub-level); comparison and justification."
+            },
+            {
+              "code": "MINING-STAGES-2",
+              "description": "Prospecting stage: meaning and outlines of prospecting techniques (geological, geophysical, geochemical, remote sensing); exploration stage: meaning and classification of exploration techniques."
+            },
+            {
+              "code": "MINING-STAGES-3",
+              "description": "Meaning of feasibility study; financial analysis in mining; meaning of mine development; list of unit operations in mining (drilling, blasting etc.); need for mineral processing; unit operations in mineral processing; metal extraction (pyrometallurgy, hydrometallurgy, electrometallurgy)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mineral Processing and Gemology",
+      "abbreviation": "PROCESS",
+      "subStrands": [
+        {
+          "name": "Mineral Processing, Gemology and Lapidary",
+          "objectives": [
+            {
+              "code": "MINING-PROCESS-1",
+              "description": "Meaning of mineral processing, comminution terms, concentration terms, mill accounting terms; properties of minerals employed in mineral processing (specific gravity, magnetism etc.); main operations — comminution and concentration; products (concentrate, tailings, middling); dewatering; tailings disposal."
+            },
+            {
+              "code": "MINING-PROCESS-2",
+              "description": "Meaning of gemology and lapidary; machines and tools in gemstone processing; meaning and properties of gemstones; types of gemstones based on shape, colour, size, refractive index; characteristics and identification of gemstones; unit of measurement; marketing and prices."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Health, Safety and Environment",
+      "abbreviation": "HSE",
+      "subStrands": [
+        {
+          "name": "Safety, Hazards, Environment and Mining Law",
+          "objectives": [
+            {
+              "code": "MINING-HSE-1",
+              "description": "Health hazards in mining; safety requirements/measures; impacts of mining on the environment; safety equipment and apparels (personal protective equipment — PPE); common diseases associated with mining industry."
+            },
+            {
+              "code": "MINING-HSE-2",
+              "description": "Administering simple first aid; guidelines for accident reporting; steps for environmental control; basic issues in National policy on mineral development; mining laws and regulations; environmental protection laws; National policy on the environment."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

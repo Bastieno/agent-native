@@ -1,0 +1,141 @@
+{
+  "found": true,
+  "subject": "Digital Technologies",
+  "subjectCode": "DIGTECH",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Computer Fundamentals",
+      "abbreviation": "CF",
+      "subStrands": [
+        {
+          "name": "Hardware, Software, and System Concepts",
+          "objectives": [
+            {
+              "code": "DIGTECH-CF-1",
+              "description": "Identify and describe the main parts of a computer (CPU, input/output devices, storage devices) and their functions"
+            },
+            {
+              "code": "DIGTECH-CF-2",
+              "description": "Distinguish between hardware and software and classify software into system and application types"
+            },
+            {
+              "code": "DIGTECH-CF-3",
+              "description": "Describe types of storage devices (hard disk, SSD, flash drive, memory card) and their capacities"
+            },
+            {
+              "code": "DIGTECH-CF-4",
+              "description": "Apply correct typing posture, keyboard technique, and use alphanumeric, function, and service keys"
+            },
+            {
+              "code": "DIGTECH-CF-5",
+              "description": "Describe types and speeds of computer networks (LAN, WAN, MAN) and explain how they function"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Productivity and Office Tools",
+      "abbreviation": "POT",
+      "subStrands": [
+        {
+          "name": "Word Processing, Spreadsheets, and Presentations",
+          "objectives": [
+            {
+              "code": "DIGTECH-POT-1",
+              "description": "Use word processing software to create, format, edit, and save documents"
+            },
+            {
+              "code": "DIGTECH-POT-2",
+              "description": "Enter and edit data in a spreadsheet, create formulas, and generate simple charts"
+            },
+            {
+              "code": "DIGTECH-POT-3",
+              "description": "Format cells, save, and retrieve spreadsheet files in Microsoft Excel or equivalent"
+            },
+            {
+              "code": "DIGTECH-POT-4",
+              "description": "Create, format, and present slides in presentation software (Microsoft PowerPoint or equivalent)"
+            },
+            {
+              "code": "DIGTECH-POT-5",
+              "description": "Add pictures, audio, video, transitions, and animations to presentation slides"
+            },
+            {
+              "code": "DIGTECH-POT-6",
+              "description": "Print and save presentations and documents in appropriate formats"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Internet and Digital Communication",
+      "abbreviation": "IDC",
+      "subStrands": [
+        {
+          "name": "Online Research, Email, and Digital Safety",
+          "objectives": [
+            {
+              "code": "DIGTECH-IDC-1",
+              "description": "Describe the internet, its uses, and identify reliable search engines and web browsers"
+            },
+            {
+              "code": "DIGTECH-IDC-2",
+              "description": "Use search engines effectively to find, evaluate, and cite online information"
+            },
+            {
+              "code": "DIGTECH-IDC-3",
+              "description": "Compose, send, receive, and manage emails as a digital communication tool"
+            },
+            {
+              "code": "DIGTECH-IDC-4",
+              "description": "Describe digital safety measures including secure passwords, avoiding cyberbullying, and malware protection"
+            },
+            {
+              "code": "DIGTECH-IDC-5",
+              "description": "Explain digital ethics including intellectual property, copyright, plagiarism, and responsible use of social media"
+            },
+            {
+              "code": "DIGTECH-IDC-6",
+              "description": "Describe cyber laws, digital rights, and online privacy practices"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Emerging Technologies and Careers",
+      "abbreviation": "ETC",
+      "subStrands": [
+        {
+          "name": "Future Technologies and ICT Careers",
+          "objectives": [
+            {
+              "code": "DIGTECH-ETC-1",
+              "description": "Describe emerging technologies including Artificial Intelligence, Robotics, and Internet of Things at an introductory level"
+            },
+            {
+              "code": "DIGTECH-ETC-2",
+              "description": "Explain basic concepts of Blockchain and Cloud Computing and their applications in society"
+            },
+            {
+              "code": "DIGTECH-ETC-3",
+              "description": "Identify career opportunities in ICT (software developer, data analyst, network engineer, cybersecurity specialist, graphic designer)"
+            },
+            {
+              "code": "DIGTECH-ETC-4",
+              "description": "Design and present a capstone digital project (website prototype, database, digital media production, or simple program)"
+            },
+            {
+              "code": "DIGTECH-ETC-5",
+              "description": "Edit digital media including basic image cropping/resizing, audio trimming, and video clip assembly"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { betterAuth, type BetterAuthOptions } from "better-auth";
+import { APIError } from "better-auth/api";
 import { jwt } from "better-auth/plugins/jwt";
 import { bearer } from "better-auth/plugins/bearer";
 import { sendEmail, isEmailConfigured } from "./email.js";
@@ -21,6 +22,7 @@ import { getAppProductionUrl } from "./app-url.js";
 import { getDbExec, isPostgres } from "../db/client.js";
 import { acceptPendingInvitationsForEmail } from "../org/accept-pending.js";
 import { autoJoinDomainMatchingOrgs } from "../org/auto-join-domain.js";
+import { SIGN_UP_REFUSED, signUpRefusal } from "./signup-gate.js";
 import { saveOAuthTokens } from "../oauth-tokens/store.js";
 import { identify, track } from "../tracking/index.js";
 import { resolveAuthCookieNamespace } from "./cookie-namespace.js";
@@ -768,6 +770,21 @@ async function createBetterAuthInstance(
     databaseHooks: {
       user: {
         create: {
+          // The app's sign-up rule (`createAuthPlugin({ allowSignUp })`).
+          // Every path that creates a Better Auth user passes here: the email
+          // form, Better Auth's social sign-in and identity SSO. Throwing an
+          // APIError keeps the message, so the person sees why.
+          before: async (user: { email?: string }) => {
+            const refusal = user?.email
+              ? await signUpRefusal(user.email)
+              : null;
+            if (refusal) {
+              throw new APIError("FORBIDDEN", {
+                message: refusal,
+                code: SIGN_UP_REFUSED,
+              });
+            }
+          },
           after: async (user: {
             id?: string;
             email?: string;

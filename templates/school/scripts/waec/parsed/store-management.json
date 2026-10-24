@@ -1,0 +1,124 @@
+{
+  "found": true,
+  "subject": "Store Management",
+  "subjectCode": "STOREMGT",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction to Store Management",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Store Management, Functions and Establishment Factors",
+          "objectives": [
+            {
+              "code": "STOREMGT-INTRO-1",
+              "description": "Store Management: meaning; importance; functions of a store manager; characteristics of a store manager; customer services (pre-sale and after-sale services)."
+            },
+            {
+              "code": "STOREMGT-INTRO-2",
+              "description": "Functions of Management: planning, organisation, leading, staffing, controlling."
+            },
+            {
+              "code": "STOREMGT-INTRO-3",
+              "description": "Factors to be considered in establishing a store: market, finance, types of stock, transport, accessibility, security, government regulation and personnel."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Retailing, Wholesaling and Stock Control",
+      "abbreviation": "STOCK",
+      "subStrands": [
+        {
+          "name": "Retailing, Wholesaling, Warehousing, Transportation and Stock Control",
+          "objectives": [
+            {
+              "code": "STOREMGT-STOCK-1",
+              "description": "Retailing: definition; functions of a retailer. Wholesaling: definition; functions of a wholesaler. Warehousing: meaning; types; importance. Transportation: definition; means; advantages and disadvantages; factors determining choice of transport."
+            },
+            {
+              "code": "STOREMGT-STOCK-2",
+              "description": "Introduction to Stock Control: meaning; importance; types of stock records (stock list, bin card/store card, store requisition form, delivery notes)."
+            },
+            {
+              "code": "STOREMGT-STOCK-3",
+              "description": "Methods of Stock Control: manual (periodic, perpetual and annual stock taking) and computerised; levels of stock control (maximum, minimum, reorder level); issuing of stock (FIFO and LIFO)."
+            },
+            {
+              "code": "STOREMGT-STOCK-4",
+              "description": "Pricing: definition; types (skimming, mark-up, mark-down, penetration, below or above mark pricing)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Organisational Policy and Communication",
+      "abbreviation": "ORGPOL",
+      "subStrands": [
+        {
+          "name": "Organisational Policy, Standards, Culture and Communication",
+          "objectives": [
+            {
+              "code": "STOREMGT-ORGPOL-1",
+              "description": "Organisational Policy: definition; employment policy; decision on customer services and public relations. Organisational Standards: definition; productivity standards; standards for customer satisfaction. Organisational Culture: definition; explanation."
+            },
+            {
+              "code": "STOREMGT-ORGPOL-2",
+              "description": "Communication: definition; means (fax, telephone, email, radio messages); word processing — using computer to write business letters."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Business Law and Records",
+      "abbreviation": "BIZLAW",
+      "subStrands": [
+        {
+          "name": "Business Law, Regulatory Agencies and Record Keeping",
+          "objectives": [
+            {
+              "code": "STOREMGT-BIZLAW-1",
+              "description": "Business Law: overview — definition; law of contract (elements, rights and obligations of employer and employee); agency (definition, types, creation, rights and obligations of principals/agents); sale of goods act (contract of sale, formalities)."
+            },
+            {
+              "code": "STOREMGT-BIZLAW-2",
+              "description": "Government Regulation and Regulatory Agencies: patent right, copyright, trade mark; health and safety at work act; consumer protection agency; licence; NAFDAC, NDLEA, SON."
+            },
+            {
+              "code": "STOREMGT-BIZLAW-3",
+              "description": "Record Keeping: documentation — filing/indexing (definition, rules, methods); source documents (meaning, types); trade documents — documents used in foreign trade (bills of lading, certificate of origin, consular invoice, insurance certificate, bill of exchange, letter of credit) and home trade."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bookkeeping, Risk and Finance",
+      "abbreviation": "FINANCE",
+      "subStrands": [
+        {
+          "name": "Bookkeeping, Risk Management and Handling Store Finances",
+          "objectives": [
+            {
+              "code": "STOREMGT-FINANCE-1",
+              "description": "Bookkeeping: subsidiary books (meaning, types, uses, purchase and sales day book, returns books, cash books); imprest system (definition, preparation of petty cash book); final accounts (trading, profit and loss account, balance sheet); sales/turnover (meaning, calculation of rate of sales turnover)."
+            },
+            {
+              "code": "STOREMGT-FINANCE-2",
+              "description": "Risk Management: definition; methods — sound management practices, reduction of risks (optimum stock level), hedging, risk transfer through insurance."
+            },
+            {
+              "code": "STOREMGT-FINANCE-3",
+              "description": "Handling Finances of the Store: investments — capital investment (investment in capital market, functions of stock exchange, advantages of shareholding); money market instruments (treasury bill, commercial papers, bonds). Taxation: meaning, importance, types (income tax, import duties, excise duties, VAT)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

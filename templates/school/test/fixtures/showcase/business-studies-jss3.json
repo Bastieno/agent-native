@@ -1,0 +1,2803 @@
+{
+  "subject": "Business Studies",
+  "yearGroup": "JSS3",
+  "weeks": {
+    "1": {
+      "topic": "The trial balance: finding differences and its limits",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. total the two columns of a trial balance and find a difference;\n2. list the errors that a trial balance shows and those it hides;\n3. describe how to look for an error and the use of a suspense account;\n4. answer BECE-style questions on the trial balance.\n\n## Materials\n\nA trial balance on a chart with a deliberate difference, past BECE questions, calculators.\n\n## Starter\n\nGive a trial balance with debit total ₦210,000 and credit total ₦214,000. Ask: what could the ₦4,000 mean? Collect ideas.\n\n## Development\n\n1. Revise: debit balances (assets, expenses, drawings) and credit balances (capital, liabilities, income).\n2. Find the difference between the two totals and say which side is short.\n3. Errors that show: one-sided entry, wrong addition, a figure copied to the wrong side. Errors that do not show: omission, compensating, commission, principle, original entry.\n4. Method of searching: re-add; check each balance copied; check whether half the difference is an amount posted to the wrong side; check one-sided entries.\n5. A suspense account holds the difference temporarily so the trial balance agrees until the error is found.\n\n## Class activity\n\nGroups get a trial balance with a hidden error. They find the difference and propose three things to check.\n\n## Evaluation\n\n1. Which side is bigger if a debit entry was never made?\n2. Name two errors that a trial balance will not reveal.\n3. What is a suspense account?\n\n## Assignment\n\nQuiz on the app. Revise the list of errors with one example each.",
+      "reading": {
+        "title": "When the trial balance does not agree",
+        "content": "# The trial balance: differences and limits\n\nA trial balance lists every ledger balance. When the debit column and credit column total the same, the books are arithmetically in order. When they do not, there is an error to find.\n\n## Finding the difference\n\n**Worked example.** Mr Danjuma's trial balance totals are: debit ₦395,500; credit ₦401,500.\n\nDifference = 401,500 - 395,500 = ₦6,000. The credit side is bigger, so the debit side is short. Either a debit entry of ₦6,000 was missed, or a credit entry was made twice, or ₦3,000 was put on the credit side that should be on the debit side (the mistake counts twice, so the gap is ₦6,000).\n\n## Where to look\n\n1. Add both columns again.\n2. Check that each ledger balance was copied to the correct side.\n3. Halve the difference (₦3,000). Is there a balance of that size?\n4. Look for one-sided entries: a payment credited to cash but never debited to an expense.\n\n## Suspense account\n\nIf the error cannot be found today, the difference is placed in a **suspense account** so that the trial balance agrees for now. The suspense account is cleared when the error is found.\n\n## Errors a trial balance cannot show\n\n| Error | Example |\n| --- | --- |\n| Omission | A sale is left out of every book |\n| Commission | ₦8,000 posted to Mr Eze's account instead of Mr Ede's |\n| Principle | A ₦90,000 machine written as an expense |\n| Compensating | A ₦2,000 mistake on the debit side cancelled by another on the credit side |\n| Original entry | A ₦5,000 sale entered as ₦500 on both sides |\n\nAn agreeing trial balance therefore does not prove the books are free of errors. It proves only that the debits and credits are equal."
+      },
+      "cards": [
+        {
+          "front": "Trial balance difference",
+          "back": "The gap between the debit and credit totals, which shows an error to find."
+        },
+        {
+          "front": "Suspense account",
+          "back": "A temporary account that holds an unexplained difference."
+        },
+        {
+          "front": "Error of commission",
+          "back": "A correct amount posted to the wrong account of the same kind."
+        },
+        {
+          "front": "Error of principle",
+          "back": "An item entered in the wrong class of account, such as a machine as an expense."
+        },
+        {
+          "front": "Error of original entry",
+          "back": "The wrong amount recorded on both the debit and credit side."
+        },
+        {
+          "front": "Drawings",
+          "back": "Money the owner takes from the business for private use; a debit balance."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A trial balance has a debit total of ₦210,000 and a credit total of ₦214,000. Which error could cause this?",
+          "options": [
+            "A sale of ₦4,000 was left out of the books completely",
+            "₦4,000 rent was debited to the wages account instead of the rent account",
+            "A ₦2,000 error on the debit side cancelled a ₦2,000 error on the credit side",
+            "A ₦4,000 payment was credited to cash but never debited to an expense account"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Drawings, the money an owner takes for private use, appear in a trial balance on the",
+          "options": [
+            "credit side as income",
+            "credit side as capital",
+            "debit side",
+            "neither side"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Add these debit balances: cash ₦84,000; motor van ₦520,000; rent ₦36,000; purchases ₦212,000.",
+          "options": [
+            "₦852,000",
+            "₦842,000",
+            "₦832,000",
+            "₦868,000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A ₦5,000 sale was recorded as ₦500 in both the sales account and the customer's account. This is an error of",
+          "options": [
+            "omission",
+            "commission",
+            "compensating",
+            "original entry"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trial balance does not agree. What should the bookkeeper do first?",
+          "options": [
+            "Add the difference to wages",
+            "Add both columns again and check the difference",
+            "Throw away the ledger",
+            "Change the capital figure"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain why a trial balance may agree even though there are errors in the books. Give two examples of such errors.",
+          "markScheme": [
+            "Explains that the trial balance only compares the debit and credit totals",
+            "Gives and explains a first error that does not affect the totals",
+            "Gives and explains a second error that does not affect the totals"
+          ],
+          "modelAnswer": "A trial balance only checks that the debit total equals the credit total, so an error that affects both sides equally will not show. If a sale is left out of every book, nothing is entered on either side. If an amount is posted to the wrong account of the same kind, the totals are still equal.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The trial balance only checks that the debit total equals the credit total. So an error that affects both sides by the same amount will not show. For example if a sale is left out completely, nothing is entered on either side, so the totals still agree. Another example is a compensating error, where a ₦2,000 mistake on the debit side is cancelled by a ₦2,000 mistake on the credit side.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "only checks that the debit total equals the credit total"
+                },
+                {
+                  "point": 1,
+                  "quote": "if a sale is left out completely, nothing is entered on either side"
+                },
+                {
+                  "point": 2,
+                  "quote": "a compensating error, where a ₦2,000 mistake on the debit side is cancelled by a ₦2,000 mistake on the credit side"
+                }
+              ],
+              "feedback": "Full marks. For each error you said why the totals still agree."
+            },
+            {
+              "tier": "full",
+              "text": "Because the trial balance only compares the two totals, it cannot see if both sides are wrong by the same amount. An error of commission is one, for example paying ₦8,000 to Mr Eze's account instead of Mr Ede's account. The totals stay the same. Another is an error of principle, such as buying a ₦90,000 machine and writing it as an expense.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "only compares the two totals"
+                },
+                {
+                  "point": 1,
+                  "quote": "An error of commission is one, for example paying ₦8,000 to Mr Eze's account instead of Mr Ede's account"
+                },
+                {
+                  "point": 2,
+                  "quote": "an error of principle, such as buying a ₦90,000 machine and writing it as an expense"
+                }
+              ],
+              "feedback": "All three marks. Your examples have real amounts, which makes them easy to picture."
+            },
+            {
+              "tier": "partial",
+              "text": "The trial balance may agree if a transaction is left out, because nothing is entered on either side.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "a transaction is left out, because nothing is entered on either side"
+                }
+              ],
+              "feedback": "That is a good example. Also explain the main reason, that a trial balance only compares the debit and credit totals, and give a second error such as a compensating error."
+            },
+            {
+              "tier": "partial",
+              "text": "Because the trial balance only checks the totals. An example is when the bookkeeper adds the columns wrongly.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "only checks the totals"
+                }
+              ],
+              "feedback": "Right about the totals. But wrong addition would make the totals disagree, so it would show. Examples that stay hidden are omission and errors of commission.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The trial balance can agree because the bookkeeper is clever and he made no error.",
+              "meets": [],
+              "feedback": "An agreeing trial balance does not prove there are no errors. Explain which errors affect both sides equally so the totals still match."
+            },
+            {
+              "tier": "weak",
+              "text": "Because it is only a trial, not the real account.",
+              "meets": [],
+              "feedback": "'Trial' does not mean unreal. The trial balance compares totals only, so errors that leave debits equal to credits are not shown."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Danjuma's trial balance totals are: debit ₦395,500 and credit ₦401,500. Find the difference, say which side is short, and describe what he should do to find the error.",
+          "markScheme": [
+            "Works out the difference as ₦6,000",
+            "Says the debit side is short (the credit side is bigger)",
+            "Suggests adding both columns again",
+            "Suggests checking for a balance of half the difference (₦3,000) placed on the wrong side",
+            "Says an unfound difference can be put in a suspense account"
+          ],
+          "modelAnswer": "The difference is 401,500 - 395,500 = ₦6,000. The credit side is bigger, so the debit side is short. He should add both columns again, then look for a balance of ₦3,000 that was put on the wrong side, since that makes a gap of ₦6,000. If he cannot find the error, he can put ₦6,000 in a suspense account until it is found.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The difference is 401,500 - 395,500 = ₦6,000. The credit side is bigger, so the debit side is too low, maybe a debit entry was missed. First I will add both columns again. Then I will check if an amount of ₦3,000 was posted to the credit side instead of the debit side, because that would make a difference of ₦6,000. If I cannot find it I will put the ₦6,000 in a suspense account until it is found.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "401,500 - 395,500 = ₦6,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "The credit side is bigger, so the debit side is too low"
+                },
+                {
+                  "point": 2,
+                  "quote": "add both columns again"
+                },
+                {
+                  "point": 3,
+                  "quote": "an amount of ₦3,000 was posted to the credit side instead of the debit side"
+                },
+                {
+                  "point": 4,
+                  "quote": "put the ₦6,000 in a suspense account until it is found"
+                }
+              ],
+              "feedback": "Full marks. The point about half the difference shows real understanding of how errors behave."
+            },
+            {
+              "tier": "full",
+              "text": "Difference = ₦6,000 (401,500 - 395,500). The debit total is the smaller one, so a debit is missing or too small. I will check the addition of both columns, and check that every ledger balance was copied to the right side. A ₦3,000 balance on the wrong side gives double, ₦6,000. If the error is still not found, a suspense account is opened for ₦6,000 on the debit side so that the trial balance agrees for now.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Difference = ₦6,000 (401,500 - 395,500)"
+                },
+                {
+                  "point": 1,
+                  "quote": "The debit total is the smaller one, so a debit is missing or too small"
+                },
+                {
+                  "point": 2,
+                  "quote": "check the addition of both columns"
+                },
+                {
+                  "point": 3,
+                  "quote": "A ₦3,000 balance on the wrong side gives double, ₦6,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "a suspense account is opened for ₦6,000 on the debit side"
+                }
+              ],
+              "feedback": "All five marks. You even said which side the suspense account goes on."
+            },
+            {
+              "tier": "partial",
+              "text": "The difference is 401,500 - 395,500 = ₦6,000. I will check the addition of the columns again.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "401,500 - 395,500 = ₦6,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "check the addition of the columns again"
+                }
+              ],
+              "feedback": "Good start. Also say which side is short, look for a ₦3,000 balance on the wrong side, and say what a suspense account is for."
+            },
+            {
+              "tier": "partial",
+              "text": "The credit side is bigger than the debit side so a debit is missing. The difference is ₦5,000. I will put it in a suspense account.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The credit side is bigger than the debit side so a debit is missing"
+                },
+                {
+                  "point": 4,
+                  "quote": "put it in a suspense account"
+                }
+              ],
+              "feedback": "You found the side and the suspense account. Subtract again: 401,500 - 395,500 = ₦6,000. And try to find the error before using suspense."
+            },
+            {
+              "tier": "weak",
+              "text": "The bookkeeper should add ₦6,000 to the debit side so that it agrees and then submit it.",
+              "meets": [],
+              "feedback": "Forcing the figures to agree hides the error. Search for it first: add the columns again and look for an item on the wrong side."
+            },
+            {
+              "tier": "weak",
+              "text": "The business has lost ₦6,000 because the credit side is more than the debit side.",
+              "meets": [],
+              "feedback": "A difference between the columns is not a loss. It shows an error in recording. Profit or loss comes from the trading and profit and loss account."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Final accounts with returns and drawings",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. adjust sales and purchases for returns;\n2. prepare a trading and profit and loss account;\n3. prepare a balance sheet with drawings;\n4. check that a balance sheet balances.\n\n## Materials\n\nFinal accounts layout chart, calculators, practice figures for two businesses.\n\n## Starter\n\nA shopkeeper sold ₦100,000 of goods but customers returned ₦10,000 worth. Ask: how much did she really sell?\n\n## Development\n\n1. Net sales = sales - returns inwards. Net purchases = purchases - returns outwards.\n2. Cost of goods sold = opening stock + net purchases - closing stock. Gross profit = net sales - cost of goods sold.\n3. Net profit = gross profit - total expenses.\n4. Closing capital = opening capital + net profit - drawings.\n5. Balance sheet: fixed assets and current assets on one side; capital and liabilities on the other; both totals equal.\n\n## Class activity\n\nPairs complete a full set of accounts for a small business from a trial balance and check their balance sheet balances.\n\n## Evaluation\n\n1. Sales ₦200,000; returns inwards ₦15,000. Net sales?\n2. Why are drawings subtracted from capital?\n3. Which is a fixed asset: stock or a delivery van?\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Final accounts, step by step",
+        "content": "# Final accounts\n\nLast year you prepared simple final accounts. This week we add two items that real businesses always have: **returns** and **drawings**.\n\n## Returns\n\n- **Returns inwards** are goods customers send back. They reduce sales. **Net sales = sales - returns inwards.**\n- **Returns outwards** are goods the business sends back to suppliers. They reduce purchases. **Net purchases = purchases - returns outwards.**\n\n## Trading account\n\nCost of goods sold = opening stock + net purchases - closing stock.\n\nGross profit = net sales - cost of goods sold.\n\n**Worked example.** Mrs Hauwa's fabric store: sales ₦900,000; returns inwards ₦30,000; opening stock ₦70,000; purchases ₦520,000; returns outwards ₦20,000; closing stock ₦90,000.\n\n- Net sales = 900,000 - 30,000 = ₦870,000.\n- Net purchases = 520,000 - 20,000 = ₦500,000.\n- Cost of goods sold = 70,000 + 500,000 - 90,000 = ₦480,000.\n- Gross profit = 870,000 - 480,000 = ₦390,000.\n\n## Profit and loss account\n\nNet profit = gross profit - expenses. Her expenses are rent ₦48,000, wages ₦96,000 and electricity ₦24,000, a total of ₦168,000. Net profit = 390,000 - 168,000 = ₦222,000.\n\n## Drawings\n\nWhen the owner takes money or goods from the business for private use, it is called **drawings**. Drawings are not an expense. They reduce the owner's capital.\n\nClosing capital = opening capital + net profit - drawings.\n\n## Balance sheet\n\n**Worked example.** Mr Okon has equipment ₦300,000 (fixed asset); stock ₦55,000, debtors ₦65,000, cash ₦100,000 (current assets); creditors ₦40,000. Opening capital ₦400,000; net profit ₦130,000; drawings ₦50,000.\n\n- Current assets = 55,000 + 65,000 + 100,000 = 220,000. Total assets = 300,000 + 220,000 = ₦520,000.\n- Capital = 400,000 + 130,000 - 50,000 = ₦480,000. With creditors 40,000, total = ₦520,000.\n\nBoth sides agree, so it balances."
+      },
+      "cards": [
+        {
+          "front": "Returns inwards",
+          "back": "Goods returned by customers; subtracted from sales."
+        },
+        {
+          "front": "Returns outwards",
+          "back": "Goods the business sends back to suppliers; subtracted from purchases."
+        },
+        {
+          "front": "Net sales",
+          "back": "Sales minus returns inwards."
+        },
+        {
+          "front": "Drawings",
+          "back": "Money or goods the owner takes for private use; reduce capital."
+        },
+        {
+          "front": "Closing capital",
+          "back": "Opening capital + net profit - drawings."
+        },
+        {
+          "front": "Fixed asset",
+          "back": "A long-lasting asset such as equipment or a van."
+        },
+        {
+          "front": "Current asset",
+          "back": "Stock, debtors and cash."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Net sales are calculated as",
+          "options": [
+            "sales plus returns inwards",
+            "sales minus returns inwards",
+            "sales minus purchases",
+            "sales plus closing stock"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Opening stock is ₦30,000, net purchases ₦210,000 and closing stock ₦40,000. The cost of goods sold is",
+          "options": [
+            "₦280,000",
+            "₦240,000",
+            "₦180,000",
+            "₦200,000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Net sales are ₦260,000 and the cost of goods sold is ₦200,000. The gross profit is",
+          "options": [
+            "₦60,000",
+            "₦460,000",
+            "₦200,000",
+            "₦260,000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is an expense in the profit and loss account?",
+          "options": [
+            "Closing stock",
+            "Drawings",
+            "Rent",
+            "Capital"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A trader began with ₦300,000 capital, made a net profit of ₦90,000 and took drawings of ₦40,000. Her closing capital is",
+          "options": [
+            "₦430,000",
+            "₦350,000",
+            "₦390,000",
+            "₦250,000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Mrs Hauwa's records for the year are: sales ₦900,000; returns inwards ₦30,000; opening stock ₦70,000; purchases ₦520,000; returns outwards ₦20,000; closing stock ₦90,000; rent ₦48,000; wages ₦96,000; electricity ₦24,000. Find her net sales, cost of goods sold, gross profit, total expenses and net profit.",
+          "markScheme": [
+            "Works out net sales as ₦870,000",
+            "Works out cost of goods sold as ₦480,000",
+            "Works out gross profit as ₦390,000",
+            "Works out total expenses as ₦168,000",
+            "Works out net profit as ₦222,000"
+          ],
+          "modelAnswer": "Net sales = 900,000 - 30,000 = ₦870,000. Net purchases = 520,000 - 20,000 = ₦500,000, so cost of goods sold = 70,000 + 500,000 - 90,000 = ₦480,000. Gross profit = 870,000 - 480,000 = ₦390,000. Expenses = 48,000 + 96,000 + 24,000 = ₦168,000. Net profit = 390,000 - 168,000 = ₦222,000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Net sales = 900,000 - 30,000 = ₦870,000. Net purchases = 520,000 - 20,000 = ₦500,000. Cost of goods sold = 70,000 + 500,000 - 90,000 = ₦480,000. Gross profit = 870,000 - 480,000 = ₦390,000. Expenses = 48,000 + 96,000 + 24,000 = ₦168,000. Net profit = 390,000 - 168,000 = ₦222,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Net sales = 900,000 - 30,000 = ₦870,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cost of goods sold = 70,000 + 500,000 - 90,000 = ₦480,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gross profit = 870,000 - 480,000 = ₦390,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Expenses = 48,000 + 96,000 + 24,000 = ₦168,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Net profit = 390,000 - 168,000 = ₦222,000"
+                }
+              ],
+              "feedback": "Full marks. Each step is on its own line with its working, so every figure can be checked."
+            },
+            {
+              "tier": "full",
+              "text": "I take the returns inwards from sales: 900,000 - 30,000 = 870,000 net sales. Purchases less returns outwards is 500,000, so cost of goods sold is 70,000 + 500,000 - 90,000 = 480,000. The gross profit is 870,000 - 480,000 = 390,000. The expenses total 168,000 (rent, wages and electricity). Net profit is 390,000 - 168,000 = ₦222,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "900,000 - 30,000 = 870,000 net sales"
+                },
+                {
+                  "point": 1,
+                  "quote": "cost of goods sold is 70,000 + 500,000 - 90,000 = 480,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "The gross profit is 870,000 - 480,000 = 390,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "The expenses total 168,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Net profit is 390,000 - 168,000 = ₦222,000"
+                }
+              ],
+              "feedback": "All five marks. You explained how each return is used."
+            },
+            {
+              "tier": "partial",
+              "text": "Net sales 870,000. Cost of goods sold = 70,000 + 520,000 - 90,000 = 500,000. Gross profit = 870,000 - 500,000 = 370,000. Expenses = 168,000. Net profit = 370,000 - 168,000 = 202,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Net sales 870,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Expenses = 168,000"
+                }
+              ],
+              "feedback": "Net sales and expenses are right. You forgot the returns outwards: purchases of 520,000 become 500,000, so cost of goods sold is 480,000 and the profits change."
+            },
+            {
+              "tier": "partial",
+              "text": "Net sales = 900,000 - 30,000 = 870,000. Cost of goods sold = 70,000 + 500,000 - 90,000 = 480,000. Gross profit = 870,000 - 480,000 = 390,000. Then I took away only the wages and rent: 390,000 - 144,000 = ₦246,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Net sales = 900,000 - 30,000 = 870,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cost of goods sold = 70,000 + 500,000 - 90,000 = 480,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gross profit = 870,000 - 480,000 = 390,000"
+                }
+              ],
+              "feedback": "The trading account is perfect. You left out electricity: total expenses are 168,000, so the net profit is 390,000 - 168,000 = ₦222,000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Net profit = 900,000 - 520,000 = ₦380,000.",
+              "meets": [],
+              "feedback": "That subtracts only purchases. Work through the steps: net sales, cost of goods sold with stock and returns, gross profit, then subtract expenses."
+            },
+            {
+              "tier": "weak",
+              "text": "I add everything to get the profit. 900,000 + 30,000 + 70,000 + 520,000 + 20,000 + 90,000 = 1,630,000.",
+              "meets": [],
+              "feedback": "Profit is not found by adding all the figures. Sales are income, purchases and expenses are costs, and the profit is the difference."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Okon's business has: equipment ₦300,000; stock ₦55,000; debtors ₦65,000; cash ₦100,000; creditors ₦40,000. His opening capital was ₦400,000, his net profit ₦130,000 and his drawings ₦50,000. Prepare the balance sheet and show that it balances.",
+          "markScheme": [
+            "Shows equipment as a fixed asset and totals the current assets as ₦220,000",
+            "Totals the assets as ₦520,000",
+            "Works out capital as 400,000 + 130,000 - 50,000 = ₦480,000, taking away the drawings",
+            "Adds the creditors of ₦40,000 to capital to get ₦520,000",
+            "States that the two sides are equal so it balances"
+          ],
+          "modelAnswer": "Fixed asset: equipment ₦300,000. Current assets: stock 55,000 + debtors 65,000 + cash 100,000 = ₦220,000. Total assets = ₦520,000. Capital = 400,000 + 130,000 - 50,000 = ₦480,000. Capital 480,000 + creditors 40,000 = ₦520,000, which equals the assets, so it balances.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Fixed asset: equipment ₦300,000. Current assets: stock 55,000 + debtors 65,000 + cash 100,000 = ₦220,000. Total assets = 300,000 + 220,000 = ₦520,000. Capital = 400,000 + 130,000 - 50,000 drawings = ₦480,000. Capital 480,000 + creditors 40,000 = ₦520,000. This equals the total assets, so the balance sheet balances.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fixed asset: equipment ₦300,000. Current assets: stock 55,000 + debtors 65,000 + cash 100,000 = ₦220,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Total assets = 300,000 + 220,000 = ₦520,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Capital = 400,000 + 130,000 - 50,000 drawings = ₦480,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Capital 480,000 + creditors 40,000 = ₦520,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "so the balance sheet balances"
+                }
+              ],
+              "feedback": "Full marks. Drawings are treated correctly as a reduction of capital."
+            },
+            {
+              "tier": "full",
+              "text": "Assets: equipment ₦300,000 is a fixed asset. Stock ₦55,000, debtors ₦65,000 and cash ₦100,000 are current assets and make ₦220,000. The assets total ₦520,000. For capital I start with ₦400,000, add the net profit of ₦130,000 and take out the drawings of ₦50,000 because Mr Okon took them for himself, giving ₦480,000. Adding the ₦40,000 creditors gives ₦520,000. Both sides are the same so it balances.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "equipment ₦300,000 is a fixed asset. Stock ₦55,000, debtors ₦65,000 and cash ₦100,000 are current assets and make ₦220,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "The assets total ₦520,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "take out the drawings of ₦50,000 because Mr Okon took them for himself, giving ₦480,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Adding the ₦40,000 creditors gives ₦520,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Both sides are the same so it balances"
+                }
+              ],
+              "feedback": "All five marks. Saying why drawings come out of capital shows you understand it, not just the rule."
+            },
+            {
+              "tier": "partial",
+              "text": "Assets: equipment 300,000, current assets 220,000, total 520,000. Capital 400,000 + 130,000 = 530,000. Creditors 40,000. Total 570,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "equipment 300,000, current assets 220,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "total 520,000"
+                }
+              ],
+              "feedback": "The assets are right. Drawings of ₦50,000 must be taken out of capital: 400,000 + 130,000 - 50,000 = 480,000, and then the two sides agree at ₦520,000."
+            },
+            {
+              "tier": "partial",
+              "text": "Capital = 400,000 + 130,000 - 50,000 = ₦480,000. With the creditors of ₦40,000 the total is ₦520,000, so it balances.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Capital = 400,000 + 130,000 - 50,000 = ₦480,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "With the creditors of ₦40,000 the total is ₦520,000"
+                }
+              ],
+              "feedback": "Capital and creditors are right. Show the assets as well, with current assets totalling ₦220,000, because the sheet balances only when the assets total ₦520,000."
+            },
+            {
+              "tier": "weak",
+              "text": "Balance sheet is the same as the profit and loss so the balance is the net profit of ₦130,000.",
+              "meets": [],
+              "feedback": "The balance sheet lists assets and what the business owes, on one date. It balances when total assets equal capital plus liabilities."
+            },
+            {
+              "tier": "weak",
+              "text": "Drawings are an asset, so total assets = 300,000 + 220,000 + 50,000 = ₦570,000.",
+              "meets": [],
+              "feedback": "Drawings are money the owner took out, so they are not an asset. They reduce the owner's capital."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Entrepreneurship: meaning, qualities and skills",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define entrepreneurship and entrepreneur;\n2. describe the personal qualities of a successful entrepreneur;\n3. name the skills an entrepreneur needs;\n4. advise a young person who wants to start a business.\n\n## Materials\n\nShort case cards about Nigerian young business owners (invented), a flip chart for qualities and skills.\n\n## Starter\n\nAsk: who in your area started a small business from nothing? What did they do to make it work? Write the qualities mentioned on the board.\n\n## Development\n\n1. Entrepreneurship is the process of identifying a need, organising resources, starting a business and accepting the risk of loss in order to make profit. The person who does it is an entrepreneur.\n2. Qualities: creativity, hard work, determination, willingness to take risks, honesty, planning, leadership and self-confidence.\n3. Skills: communication, financial management, marketing and selling, decision-making, time management.\n4. Distinguish a quality (how a person is) from a skill (what a person can do; learned by practice).\n5. Discuss why many small businesses fail in the first year and what qualities and skills could have prevented it.\n\n## Class activity\n\nGroups read a case card about a young person starting a business and list three qualities and three skills that person will need, with a reason for each.\n\n## Evaluation\n\n1. Define entrepreneurship.\n2. Give one difference between a quality and a skill.\n3. Why is honesty important for an entrepreneur?\n\n## Assignment\n\nWorksheet on the app. Interview a small business owner and write three lines on what makes them succeed.",
+      "reading": {
+        "title": "Who is an entrepreneur?",
+        "content": "# Entrepreneurship\n\n## Meaning\n\nAn **entrepreneur** is a person who sees a need, brings together the money, materials and people to meet it, starts a business and accepts the **risk** that it may fail. **Entrepreneurship** is what that person does.\n\nA woman who sees that nobody sells hot meals near a new motor park, and starts selling jollof rice there, is an entrepreneur. She had an idea, she put her own money in, and if few people buy, she is the one who loses.\n\n## Qualities of a successful entrepreneur\n\n- **Creativity.** Thinks of new products or better ways to do things.\n- **Hard work.** A new business needs long hours before it grows.\n- **Determination.** Does not give up when sales are slow or the first attempt fails.\n- **Willingness to take risks.** Spends money on a business knowing it may be lost, but only after careful thought.\n- **Honesty.** Customers, suppliers and banks trust an honest person.\n- **Planning.** Looks ahead so as not to run out of money or stock.\n- **Leadership.** Guides workers and keeps them working well.\n\n## Skills of an entrepreneur\n\nA **skill** is something a person can do, learned by practice or training.\n\n- **Communication:** explaining goods to customers and agreeing terms with suppliers.\n- **Financial management:** knowing what things cost, setting prices and keeping records.\n- **Marketing and selling:** finding customers and persuading them to buy.\n- **Decision-making:** choosing among options quickly and sensibly.\n- **Time management:** using the day well.\n\n## Quality or skill?\n\nHonesty is a **quality**: it is part of who you are. Keeping accounts is a **skill**: you learn how to do it.\n\n## Why this matters for Nigeria\n\nMany young people cannot find paid work. Entrepreneurs create jobs for themselves and for others, and meet needs that nobody else meets."
+      },
+      "cards": [
+        {
+          "front": "Entrepreneur",
+          "back": "A person who starts and runs a business and accepts the risk of loss."
+        },
+        {
+          "front": "Entrepreneurship",
+          "back": "The process of seeing a need and starting a business to meet it."
+        },
+        {
+          "front": "Quality",
+          "back": "A personal trait, such as honesty or determination."
+        },
+        {
+          "front": "Skill",
+          "back": "Something a person can do, learned by practice, such as keeping accounts."
+        },
+        {
+          "front": "Risk",
+          "back": "The chance of losing money or failing."
+        },
+        {
+          "front": "Creativity",
+          "back": "Thinking of new products or better ways of doing things."
+        },
+        {
+          "front": "Financial management",
+          "back": "Knowing costs, setting prices and keeping records."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "An entrepreneur is a person who",
+          "options": [
+            "starts and runs a business and accepts the risk of loss",
+            "works for a salary in a bank",
+            "only buys goods for the home",
+            "keeps accounts for other people"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Mrs Bola noticed that nobody sold hot meals near a new motor park, so she began to sell jollof rice there. Which quality did she show?",
+          "options": [
+            "Laziness",
+            "Shyness",
+            "Obedience",
+            "Seeing an opportunity that others missed"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A young man's first shop failed, but he studied his mistakes and opened a better one. Which quality did he show?",
+          "options": [
+            "Dishonesty",
+            "Determination",
+            "Carelessness",
+            "Luck"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is a risk that an entrepreneur takes?",
+          "options": [
+            "Being paid every month whatever happens",
+            "Having a fixed boss",
+            "Losing the money invested if the business fails",
+            "Working fixed hours with no extra effort"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which skill helps an entrepreneur to avoid selling goods at a loss?",
+          "options": [
+            "Financial management",
+            "Singing",
+            "Playing football",
+            "Painting"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define entrepreneurship and explain two qualities of a successful entrepreneur.",
+          "markScheme": [
+            "Defines entrepreneurship as starting and running a business and accepting risk to make profit",
+            "Names a first quality and explains how it helps",
+            "Names a second quality and explains how it helps"
+          ],
+          "modelAnswer": "Entrepreneurship is starting and running a business and taking the risk of loss in order to make profit. One quality is determination, because an entrepreneur must not give up when sales are slow. Another is honesty, because customers and suppliers trust an honest person.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Entrepreneurship is starting and running a business and taking the risk of losing money in order to make profit. One quality is creativity, because an entrepreneur must think of new products or better ways to do things. Another is hard work, because a new business needs long hours before it grows.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "starting and running a business and taking the risk of losing money in order to make profit"
+                },
+                {
+                  "point": 1,
+                  "quote": "creativity, because an entrepreneur must think of new products or better ways to do things"
+                },
+                {
+                  "point": 2,
+                  "quote": "hard work, because a new business needs long hours before it grows"
+                }
+              ],
+              "feedback": "Full marks. For each quality you gave the reason it matters."
+            },
+            {
+              "tier": "full",
+              "text": "It is the act of identifying a need, organising resources and starting a business to meet the need, and accepting the risk. A good entrepreneur is honest, so customers trust him and come back. He must also be a good planner, so that he does not run out of money or stock.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "identifying a need, organising resources and starting a business to meet the need, and accepting the risk"
+                },
+                {
+                  "point": 1,
+                  "quote": "honest, so customers trust him and come back"
+                },
+                {
+                  "point": 2,
+                  "quote": "a good planner, so that he does not run out of money or stock"
+                }
+              ],
+              "feedback": "All three marks. Your definition shows each step of the process."
+            },
+            {
+              "tier": "partial",
+              "text": "Entrepreneurship is when somebody starts a business and takes risk. A good entrepreneur must be hardworking.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "starts a business and takes risk"
+                }
+              ],
+              "feedback": "Your definition is right. A quality needs a reason: say why hard work helps, and give a second quality with its reason."
+            },
+            {
+              "tier": "partial",
+              "text": "An entrepreneur must be creative so that he can get new ideas for his business. He must also be determined, so that he does not stop when it is difficult.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "creative so that he can get new ideas for his business"
+                },
+                {
+                  "point": 2,
+                  "quote": "determined, so that he does not stop when it is difficult"
+                }
+              ],
+              "feedback": "Both qualities are well explained. You also need to define entrepreneurship: starting and running a business and accepting the risk of loss."
+            },
+            {
+              "tier": "weak",
+              "text": "Entrepreneurship is when a rich man opens a big company with many workers and a car.",
+              "meets": [],
+              "feedback": "An entrepreneur does not have to be rich or own a big company; many start with very little. Define it as starting and running a business and accepting the risk."
+            },
+            {
+              "tier": "weak",
+              "text": "An entrepreneur is a person who works for a company and receives salary. The qualities are to be early and wear a tie.",
+              "meets": [],
+              "feedback": "An employee works for a salary; an entrepreneur starts and runs their own business. Qualities such as creativity and determination are about how the person approaches problems."
+            }
+          ]
+        },
+        {
+          "prompt": "Chinedu, aged 17, repairs phones for his neighbours and wants to turn it into a business. Advise him on three qualities or skills he needs and why each is important.",
+          "markScheme": [
+            "Names a first quality or skill",
+            "Explains why it is important for Chinedu",
+            "Names a second quality or skill",
+            "Explains why it is important for Chinedu",
+            "Names a third quality or skill",
+            "Explains why it is important for Chinedu"
+          ],
+          "modelAnswer": "Chinedu needs honesty, because customers leave their phones with him and must trust him. He needs financial management, so that he knows his costs, his prices and his profit. He also needs communication skills, so that he can explain faults to customers and win new customers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Chinedu needs honesty, because customers will leave their phones with him and must trust him to return them and charge fairly. He needs financial management, so that he knows what the parts cost, what to charge and how much profit he makes. He also needs communication skills, so that he can explain the fault to customers and bring in new customers by talking well about his work.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "honesty"
+                },
+                {
+                  "point": 1,
+                  "quote": "customers will leave their phones with him and must trust him to return them and charge fairly"
+                },
+                {
+                  "point": 2,
+                  "quote": "financial management"
+                },
+                {
+                  "point": 3,
+                  "quote": "he knows what the parts cost, what to charge and how much profit he makes"
+                },
+                {
+                  "point": 4,
+                  "quote": "communication skills"
+                },
+                {
+                  "point": 5,
+                  "quote": "explain the fault to customers and bring in new customers by talking well about his work"
+                }
+              ],
+              "feedback": "Full marks. Each quality or skill is tied to phone repair, not only listed."
+            },
+            {
+              "tier": "full",
+              "text": "He should be creative, for example offering screen protection or fast repair that other repairers do not offer, so that customers choose him. He must be determined, because the first months may bring few customers and he should not give up. He must also be willing to take risks, such as spending his savings on tools, knowing the money can be lost if it does not work.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "creative"
+                },
+                {
+                  "point": 1,
+                  "quote": "offering screen protection or fast repair that other repairers do not offer, so that customers choose him"
+                },
+                {
+                  "point": 2,
+                  "quote": "determined"
+                },
+                {
+                  "point": 3,
+                  "quote": "the first months may bring few customers and he should not give up"
+                },
+                {
+                  "point": 4,
+                  "quote": "willing to take risks"
+                },
+                {
+                  "point": 5,
+                  "quote": "spending his savings on tools, knowing the money can be lost if it does not work"
+                }
+              ],
+              "feedback": "All six marks. Your examples are specific to his situation."
+            },
+            {
+              "tier": "partial",
+              "text": "Chinedu must be hardworking and honest. He must also know how to keep records.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "hardworking"
+                },
+                {
+                  "point": 2,
+                  "quote": "honest"
+                },
+                {
+                  "point": 4,
+                  "quote": "know how to keep records"
+                }
+              ],
+              "feedback": "Three good choices. You must explain why each matters for him, for example why honesty is important when people leave their phones with him."
+            },
+            {
+              "tier": "partial",
+              "text": "He needs to be determined, because he must not give up when business is slow. He needs to be creative too.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "determined"
+                },
+                {
+                  "point": 1,
+                  "quote": "he must not give up when business is slow"
+                },
+                {
+                  "point": 2,
+                  "quote": "creative"
+                }
+              ],
+              "feedback": "Determination is well explained. Say why creativity helps him, and add a third quality or skill with its reason."
+            },
+            {
+              "tier": "weak",
+              "text": "Chinedu should go to school and stop repairing phones because business is not for children.",
+              "meets": [],
+              "feedback": "Young people can be entrepreneurs. The question asks which qualities and skills Chinedu needs to grow his repair work."
+            },
+            {
+              "tier": "weak",
+              "text": "He needs a lot of money from his father. When he has the money he will be an entrepreneur.",
+              "meets": [],
+              "feedback": "Money helps, but it is not a quality or skill. Think about what Chinedu must be and be able to do, such as being honest and keeping accounts."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Spotting and evaluating business opportunities",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain what a business opportunity is and where to find one;\n2. give examples at local, national and international levels;\n3. evaluate an opportunity using demand, capital, competition and other factors.\n\n## Materials\n\nPictures of a market, a processing factory and a container ship; a list of Nigerian exports; a marker board.\n\n## Starter\n\nAsk: what do people in this neighbourhood complain about? (no light, no water, spoilt food, long queues). List five complaints.\n\n## Development\n\n1. A business opportunity is a gap in the market: a need that is not met, or is met badly, and people will pay to have it met.\n2. Sources: complaints, waste (for example spoilt tomatoes), new technology, changing lifestyles, local raw materials and goods Nigeria imports but could make.\n3. Levels: local (the neighbourhood or town), national (across Nigeria) and international (export and the wider world).\n4. Evaluate before starting: demand, capital needed, competition, raw materials, skills, location, permits and expected profit.\n5. Compare two opportunities by scoring each factor.\n\n## Class activity\n\nGroups pick one complaint from the starter and turn it into a business idea at one of the three levels, then test it against the evaluation factors.\n\n## Evaluation\n\n1. What is a business opportunity?\n2. Give one export opportunity from Nigeria.\n3. Name two things to check before starting a business.\n\n## Assignment\n\nWorksheet on the app. List three problems at home or school that a business could solve.",
+      "reading": {
+        "title": "Finding a gap worth filling",
+        "content": "# Business opportunities\n\n## What is an opportunity?\n\nA **business opportunity** is a chance to meet a need that people have and will pay for. The need may not be met at all, or it may be met badly or too slowly.\n\nMany opportunities come from problems. Farmers in Kano lose tomatoes because the fruit spoils before it reaches the market. A man who dries and packs the tomatoes has turned that problem into a business.\n\n## Where do opportunities come from?\n\n1. **Complaints** that people make again and again.\n2. **Waste:** crops that rot, plastic that is thrown away.\n3. **New technology:** mobile phones created repair, airtime and money-transfer businesses.\n4. **Local resources:** Nigeria has cassava, cocoa, sesame, shea and hibiscus.\n5. **Imports:** things Nigeria buys from abroad that could be made here.\n\n## Three levels\n\n| Level | Example |\n| --- | --- |\n| Local | A laundry near a school hostel where pupils have no time to wash |\n| National | Packing garri and selling it in supermarkets across Nigeria |\n| International | Exporting dried hibiscus flowers or sesame seeds to buyers abroad |\n\n## Evaluating an opportunity\n\nAn idea is not an opportunity until it passes some checks.\n\n1. **Demand.** Are there enough customers who need it and will pay?\n2. **Capital.** How much is needed to start, and how will it be found? An idea that needs ₦400,000 is no help to someone with ₦150,000.\n3. **Competition.** Who already sells this? What will be better about yours?\n4. **Raw materials and supply.** Are they available, and at a steady price?\n5. **Skills.** Can you or your team do the work?\n6. **Location and transport.** Can the goods reach buyers at a good cost?\n7. **Rules and permits.** Packaged food, for example, needs NAFDAC registration.\n\nAn entrepreneur who checks these before spending money saves time, and sometimes a lot of money."
+      },
+      "cards": [
+        {
+          "front": "Business opportunity",
+          "back": "A chance to meet a need that people have and will pay for."
+        },
+        {
+          "front": "Local opportunity",
+          "back": "A need in your own neighbourhood or town."
+        },
+        {
+          "front": "National opportunity",
+          "back": "A need or market across the whole of Nigeria."
+        },
+        {
+          "front": "International opportunity",
+          "back": "A chance to sell to buyers in other countries, such as exports."
+        },
+        {
+          "front": "Demand",
+          "back": "How many people want a product and can pay for it."
+        },
+        {
+          "front": "Competition",
+          "back": "Other businesses selling the same or similar goods."
+        },
+        {
+          "front": "Why check before starting",
+          "back": "To avoid spending money on an idea that cannot succeed."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which is the best way to spot a business opportunity?",
+          "options": [
+            "Copy any shop that looks busy",
+            "Wait for government to give you a job",
+            "Find a need that people have which nobody is meeting well",
+            "Choose the business with the biggest shop"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A man in Kano sees that many tomatoes spoil before they reach the market, so he starts drying and packing them. He has turned a ___ into an opportunity.",
+          "options": [
+            "profit",
+            "problem",
+            "loan",
+            "tax"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is an international business opportunity?",
+          "options": [
+            "Selling pure water in your street",
+            "Opening a salon near the school",
+            "Supplying garri to markets in another state",
+            "Exporting dried hibiscus flowers to buyers abroad"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Before starting a business, an entrepreneur should first check",
+          "options": [
+            "whether enough customers need the product and will pay",
+            "the colour of the signboard",
+            "how many friends will visit",
+            "what the neighbour thinks of the name"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "An entrepreneur has ₦150,000 but the business needs ₦400,000 to start. This is a problem of",
+          "options": [
+            "demand",
+            "location",
+            "capital",
+            "advertising"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what a business opportunity is and give one example at each level: local, national and international.",
+          "markScheme": [
+            "Explains that a business opportunity is a chance to meet a need that people will pay for",
+            "Gives a correct local example",
+            "Gives a correct national example",
+            "Gives a correct international example"
+          ],
+          "modelAnswer": "A business opportunity is a chance to meet a need that people have and will pay for. A local example is a laundry near a school hostel. A national example is packing garri to sell across Nigeria. An international example is exporting sesame seeds to other countries.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A business opportunity is a chance to meet a need that people have, so as to make profit. A local one is opening a laundry near a school hostel where students have no time to wash. A national one is packing garri and selling it in supermarkets across Nigeria. An international one is exporting sesame seeds to buyers in other countries.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a chance to meet a need that people have, so as to make profit"
+                },
+                {
+                  "point": 1,
+                  "quote": "opening a laundry near a school hostel"
+                },
+                {
+                  "point": 2,
+                  "quote": "packing garri and selling it in supermarkets across Nigeria"
+                },
+                {
+                  "point": 3,
+                  "quote": "exporting sesame seeds to buyers in other countries"
+                }
+              ],
+              "feedback": "Full marks. Each level has an example that really belongs to it."
+            },
+            {
+              "tier": "full",
+              "text": "It is a gap in the market, when people want something that is not yet supplied or is supplied badly. Locally, a person can start a generator repair shop in an area with many generators. Nationally, a company can run a delivery service between cities. Internationally, a farmer can export cocoa or cashew nuts.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a gap in the market, when people want something that is not yet supplied or is supplied badly"
+                },
+                {
+                  "point": 1,
+                  "quote": "start a generator repair shop in an area with many generators"
+                },
+                {
+                  "point": 2,
+                  "quote": "run a delivery service between cities"
+                },
+                {
+                  "point": 3,
+                  "quote": "export cocoa or cashew nuts"
+                }
+              ],
+              "feedback": "All four marks. Your definition mentions both the unmet and the badly met need."
+            },
+            {
+              "tier": "partial",
+              "text": "A business opportunity is a chance to start a business. A local opportunity is selling pure water in my street. An international one is exporting cocoa.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "selling pure water in my street"
+                },
+                {
+                  "point": 3,
+                  "quote": "exporting cocoa"
+                }
+              ],
+              "feedback": "Your examples are good. The definition must say that the chance is to meet a need people will pay for. You also left out a national example.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "It is a need that people have. A local one is a bakery in a town without a bakery. A national one is selling in many states.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a need that people have"
+                },
+                {
+                  "point": 1,
+                  "quote": "a bakery in a town without a bakery"
+                }
+              ],
+              "feedback": "Good definition and local example. A national example must be specific, for example packing garri for supermarkets across Nigeria, and you need an international one."
+            },
+            {
+              "tier": "weak",
+              "text": "A business opportunity is when somebody gives you money to start a business.",
+              "meets": [],
+              "feedback": "A business opportunity is a chance to meet a need that people will pay for, not a gift of money."
+            },
+            {
+              "tier": "weak",
+              "text": "Local is a big shop, national is a bigger shop and international is the biggest shop.",
+              "meets": [],
+              "feedback": "The levels depend on where the customers are: in your town, across Nigeria, or in other countries. They are not about the size of the shop."
+            }
+          ]
+        },
+        {
+          "prompt": "Mama Ngozi wants to start a business packaging garri in Abia State and selling it across Nigeria. Name three things she should check before she starts and explain why each matters.",
+          "markScheme": [
+            "Names a first factor to check",
+            "Explains why it matters",
+            "Names a second factor to check",
+            "Explains why it matters",
+            "Names a third factor to check",
+            "Explains why it matters"
+          ],
+          "modelAnswer": "She should check demand, because if few people want packaged garri she will not sell. She should check how much capital she needs for cassava, machines and packaging, so that she can pay for everything before sales come. She should check competition, because other brands may sell well and she needs something better.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "She should check demand, that is whether people across Nigeria will buy packaged garri, because if few people want it she will not sell. She should check how much capital she needs for cassava, machines and packaging, so that she can pay for everything before the first sales come. She should also check competition, because other brands may already be selling well and she must have something better such as cleaner garri or a lower price.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "check demand"
+                },
+                {
+                  "point": 1,
+                  "quote": "if few people want it she will not sell"
+                },
+                {
+                  "point": 2,
+                  "quote": "check how much capital she needs for cassava, machines and packaging"
+                },
+                {
+                  "point": 3,
+                  "quote": "so that she can pay for everything before the first sales come"
+                },
+                {
+                  "point": 4,
+                  "quote": "check competition"
+                },
+                {
+                  "point": 5,
+                  "quote": "other brands may already be selling well and she must have something better"
+                }
+              ],
+              "feedback": "Full marks. Your reasons are specific to garri and to her plan."
+            },
+            {
+              "tier": "full",
+              "text": "First is the supply of raw material: cassava must be available and cheap all year round in Abia, or the factory will stop. Second is NAFDAC registration, because packaged food cannot be sold in shops without it and she can be fined. Third is transport to other states: if the cost of carrying garri is too high, her price will be higher than local garri.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "supply of raw material"
+                },
+                {
+                  "point": 1,
+                  "quote": "cassava must be available and cheap all year round in Abia, or the factory will stop"
+                },
+                {
+                  "point": 2,
+                  "quote": "NAFDAC registration"
+                },
+                {
+                  "point": 3,
+                  "quote": "packaged food cannot be sold in shops without it and she can be fined"
+                },
+                {
+                  "point": 4,
+                  "quote": "transport to other states"
+                },
+                {
+                  "point": 5,
+                  "quote": "if the cost of carrying garri is too high, her price will be higher than local garri"
+                }
+              ],
+              "feedback": "All six marks. Permits and transport are practical points that many learners miss."
+            },
+            {
+              "tier": "partial",
+              "text": "She should check demand, capital and competition.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "demand"
+                },
+                {
+                  "point": 2,
+                  "quote": "capital"
+                },
+                {
+                  "point": 4,
+                  "quote": "competition"
+                }
+              ],
+              "feedback": "Three good factors. The question asks you to explain why each matters, for example why she must know the demand before spending money."
+            },
+            {
+              "tier": "partial",
+              "text": "She should check if there are enough customers because if there are few customers the business will fail. She should also check the location.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "check if there are enough customers"
+                },
+                {
+                  "point": 1,
+                  "quote": "if there are few customers the business will fail"
+                },
+                {
+                  "point": 4,
+                  "quote": "the location"
+                }
+              ],
+              "feedback": "Customers are well explained. Explain why location matters, and add a second factor with a reason, such as capital or competition."
+            },
+            {
+              "tier": "weak",
+              "text": "She should check if her family will like the garri.",
+              "meets": [],
+              "feedback": "Family taste is not enough. Think about whether enough customers across Nigeria will buy it, whether she has the money, and who she competes with."
+            },
+            {
+              "tier": "weak",
+              "text": "Mama Ngozi should just start and see what happens. A good entrepreneur does not plan.",
+              "meets": [],
+              "feedback": "Good entrepreneurs check before they spend: demand, capital, competition and supply. A plan saves them from avoidable losses."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Writing a simple business plan",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state why a business plan is needed;\n2. name and describe the parts of a simple business plan;\n3. work out start-up cost, monthly income and profit from a plan;\n4. judge whether a plan is sound.\n\n## Materials\n\nA sample one-page business plan (a bakery), blank plan template, calculators.\n\n## Starter\n\nAsk: if you wanted to borrow ₦200,000 from an uncle for a business, what would he want to know first? List the questions.\n\n## Development\n\n1. A business plan is a written statement of what the business will do and how it will succeed. It guides the owner and convinces banks and investors.\n2. Parts: business description and objectives; market analysis (customers, competitors, location, prices); resources (capital, equipment, premises, people); financial projections (start-up cost, expected sales, costs and profit).\n3. Objectives should be clear and measurable, for example sell 200 loaves a day within six months.\n4. Financial projections: monthly income = customers x price x number of weeks; profit = income - costs; payback period = start-up cost / monthly profit.\n5. Show a sample plan and ask learners to spot what is missing.\n\n## Class activity\n\nPairs write a one-page plan for a small business of their choice with the four parts and a simple profit estimate.\n\n## Evaluation\n\n1. Why do banks ask for a business plan?\n2. What does market analysis cover?\n3. Start-up ₦300,000; monthly profit ₦60,000. How many months to earn back the start-up cost?\n\n## Assignment\n\nWorksheet on the app. Finish your one-page plan and show it to an adult for comment.",
+      "reading": {
+        "title": "Putting the idea on paper",
+        "content": "# A simple business plan\n\nA **business plan** is a written document that says what you will sell, to whom, with what, and how much money you expect to make. It helps the owner think clearly, and it is what a bank or an investor wants to see before lending money.\n\n## The parts of a simple business plan\n\n**1. Business description and objectives.** What the business is and what it aims at. Objectives should be clear and measurable: \"to sell 200 loaves a day within six months\" is better than \"to do well\".\n\n**2. Market analysis.** Who the customers are, how many there are, who the competitors are, where the shop will be and what prices will be charged.\n\n**3. Resources.** What is needed to start: capital, equipment, premises and workers.\n\n**4. Financial projections.** An estimate of start-up costs, sales, running costs and profit.\n\n## A worked financial projection\n\nMrs Funke plans a bakery. Her start-up costs total ₦450,000. She expects monthly sales of ₦300,000 and monthly costs of ₦210,000.\n\n- Monthly profit = 300,000 - 210,000 = ₦90,000.\n- Payback period = 450,000 ÷ 90,000 = 5 months.\n\nShe will earn back the cost of starting within five months if the sales come as expected.\n\n## Testing a plan\n\nA sound plan answers these questions:\n\n- Is there a real demand?\n- Does the money add up?\n- Can the owner do what the plan says?\n- What could go wrong, and what then?\n\nAn honest plan mentions risks. A plan that promises a big profit with no risk is a warning, not a recommendation.\n\n## After the plan\n\nThe plan is not finished when it is written. The owner compares the real results with the plan each month and changes what is not working."
+      },
+      "cards": [
+        {
+          "front": "Business plan",
+          "back": "A written statement of what a business will do and how it will succeed."
+        },
+        {
+          "front": "Objective",
+          "back": "A clear, measurable aim, such as selling 200 loaves a day."
+        },
+        {
+          "front": "Market analysis",
+          "back": "A study of the customers, competitors, location and prices."
+        },
+        {
+          "front": "Resources",
+          "back": "Capital, equipment, premises and workers needed to start."
+        },
+        {
+          "front": "Financial projection",
+          "back": "An estimate of start-up cost, sales, costs and profit."
+        },
+        {
+          "front": "Payback period",
+          "back": "Start-up cost divided by monthly profit."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which part of a business plan describes the customers and the competitors?",
+          "options": [
+            "Objectives",
+            "Financial projections",
+            "Resources",
+            "Market analysis"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Why do banks ask for a business plan before lending money?",
+          "options": [
+            "To decorate the bank wall",
+            "To judge whether the business can succeed and repay the loan",
+            "To choose the name of the business",
+            "To advertise the business"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is a clear, measurable objective?",
+          "options": [
+            "To sell 200 loaves a day within six months",
+            "To be the best",
+            "To make plenty of money",
+            "To work hard"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A business needs ₦450,000 to start and expects ₦90,000 profit a month. How many months will it take to earn back the start-up cost?",
+          "options": [
+            "9 months",
+            "50 months",
+            "5 months",
+            "4 months"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The financial projections in a plan show",
+          "options": [
+            "the owner's favourite colour",
+            "the names of the staff",
+            "pictures of the shop",
+            "the expected sales, costs and profit"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Name four parts of a simple business plan and say what each one contains.",
+          "markScheme": [
+            "Describes the business description and objectives",
+            "Describes the market analysis",
+            "Describes the resources",
+            "Describes the financial projections"
+          ],
+          "modelAnswer": "The business description and objectives say what the business is and what it aims at. The market analysis covers the customers, competitors and prices. The resources part lists the capital, equipment, premises and workers needed. The financial projections show the expected sales, costs and profit.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The business description and objectives say what the business is and what it wants to achieve. The market analysis says who the customers are, who the competitors are and what prices to charge. The resources part lists the money, equipment, shop and workers needed. The financial projections show the expected sales, costs and profit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "say what the business is and what it wants to achieve"
+                },
+                {
+                  "point": 1,
+                  "quote": "who the customers are, who the competitors are and what prices to charge"
+                },
+                {
+                  "point": 2,
+                  "quote": "lists the money, equipment, shop and workers needed"
+                },
+                {
+                  "point": 3,
+                  "quote": "show the expected sales, costs and profit"
+                }
+              ],
+              "feedback": "Full marks. Each part has its own content, not repeated wording."
+            },
+            {
+              "tier": "full",
+              "text": "Objectives: the aims of the business, for example to sell 200 loaves a day. Market analysis: a study of the customers and of other bakeries nearby. Resources: what is needed to start, such as capital, an oven, premises and staff. Financial projections: an estimate of sales, expenses and profit for the first year.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the aims of the business, for example to sell 200 loaves a day"
+                },
+                {
+                  "point": 1,
+                  "quote": "a study of the customers and of other bakeries nearby"
+                },
+                {
+                  "point": 2,
+                  "quote": "what is needed to start, such as capital, an oven, premises and staff"
+                },
+                {
+                  "point": 3,
+                  "quote": "an estimate of sales, expenses and profit for the first year"
+                }
+              ],
+              "feedback": "All four marks. The example of a measurable objective is a strong detail."
+            },
+            {
+              "tier": "partial",
+              "text": "Objectives are what the business wants to achieve. Market analysis is about customers. Resources and financial projections are also parts.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Objectives are what the business wants to achieve"
+                },
+                {
+                  "point": 1,
+                  "quote": "Market analysis is about customers"
+                }
+              ],
+              "feedback": "You need to say what resources and financial projections contain: money, equipment and workers for resources; expected sales, costs and profit for projections. Competitors and prices also belong to market analysis."
+            },
+            {
+              "tier": "partial",
+              "text": "Resources are the money and equipment needed. Financial projections show how much profit we hope to make. The other parts are the title page and the pictures.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the money and equipment needed"
+                },
+                {
+                  "point": 3,
+                  "quote": "show how much profit we hope to make"
+                }
+              ],
+              "feedback": "Those two are right. The other two parts are the business description with its objectives and the market analysis, not a title page and pictures."
+            },
+            {
+              "tier": "weak",
+              "text": "A business plan has the owner's name, address and photograph.",
+              "meets": [],
+              "feedback": "A business plan is about the business: what it does, its market, resources and expected money. Personal details are not its main parts."
+            },
+            {
+              "tier": "weak",
+              "text": "A business plan is the plan for the building of the shop, with the drawing of the shop.",
+              "meets": [],
+              "feedback": "A building plan shows a structure. A business plan explains the business and how it will succeed, in four main parts."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Kabiru plans a barbing salon. Start-up costs: equipment ₦180,000, rent for one year ₦120,000 and supplies ₦30,000. He expects 40 customers a week at ₦1,500 each, and his running costs are ₦100,000 a month (take a month as 4 weeks). Work out his start-up cost, his monthly income and his monthly profit, and say whether the plan looks sound.",
+          "markScheme": [
+            "Works out the start-up cost as ₦330,000",
+            "Works out the monthly income as ₦240,000",
+            "Works out the monthly profit as ₦140,000",
+            "Judges the plan with a reason, for example the start-up cost is earned back in under three months",
+            "Names a risk or something to check, such as fewer customers than expected"
+          ],
+          "modelAnswer": "Start-up cost = 180,000 + 120,000 + 30,000 = ₦330,000. Monthly income = 40 x 1,500 x 4 = ₦240,000. Monthly profit = 240,000 - 100,000 = ₦140,000. The plan looks sound because he earns back ₦330,000 in less than three months. The risk is that fewer than 40 customers may come each week.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Start-up cost = 180,000 + 120,000 + 30,000 = ₦330,000. Monthly income = 40 × 1,500 × 4 = ₦240,000. Monthly profit = 240,000 - 100,000 = ₦140,000. At that rate he gets back the ₦330,000 in about 2 to 3 months, so the plan looks good. But it depends on getting 40 customers every week, so he should check how many customers the area can give him.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Start-up cost = 180,000 + 120,000 + 30,000 = ₦330,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Monthly income = 40 × 1,500 × 4 = ₦240,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Monthly profit = 240,000 - 100,000 = ₦140,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "he gets back the ₦330,000 in about 2 to 3 months, so the plan looks good"
+                },
+                {
+                  "point": 4,
+                  "quote": "it depends on getting 40 customers every week, so he should check how many customers the area can give him"
+                }
+              ],
+              "feedback": "Full marks. Your final sentence about checking the customers is exactly what a bank would want to hear."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 180,000 + 120,000 + 30,000 = ₦330,000. (b) 40 customers × ₦1,500 = ₦60,000 a week, so ₦60,000 × 4 = ₦240,000 a month. (c) Profit = ₦240,000 - ₦100,000 = ₦140,000 a month. (d) The business is worth starting because it earns ₦140,000 a month, and the start-up cost can be recovered in less than three months. A risk is that fewer customers may come in the early weeks, so he should have some savings to cover costs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 180,000 + 120,000 + 30,000 = ₦330,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "₦60,000 × 4 = ₦240,000 a month"
+                },
+                {
+                  "point": 2,
+                  "quote": "Profit = ₦240,000 - ₦100,000 = ₦140,000 a month"
+                },
+                {
+                  "point": 3,
+                  "quote": "worth starting because it earns ₦140,000 a month, and the start-up cost can be recovered in less than three months"
+                },
+                {
+                  "point": 4,
+                  "quote": "fewer customers may come in the early weeks, so he should have some savings to cover costs"
+                }
+              ],
+              "feedback": "All five marks. You answered each part in order and added a sensible suggestion about savings."
+            },
+            {
+              "tier": "partial",
+              "text": "Start-up cost is 180,000 + 120,000 + 30,000 = ₦330,000. Monthly income is 40 × 1,500 = ₦60,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Start-up cost is 180,000 + 120,000 + 30,000 = ₦330,000"
+                }
+              ],
+              "feedback": "The start-up cost is right. 40 × 1,500 is the income for one week; multiply by 4 for the month to get ₦240,000, then subtract the running costs and comment on the plan."
+            },
+            {
+              "tier": "partial",
+              "text": "Start-up cost is ₦330,000. Monthly income is ₦240,000. Monthly profit is ₦240,000 - ₦100,000 = ₦140,000. The plan is good.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Start-up cost is ₦330,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Monthly income is ₦240,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Monthly profit is ₦240,000 - ₦100,000 = ₦140,000"
+                }
+              ],
+              "feedback": "All three figures are right. A judgement needs a reason: for example, he earns back ₦330,000 in less than three months. Also name a risk, such as fewer customers.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "He needs ₦180,000 because the equipment is the biggest.",
+              "meets": [],
+              "feedback": "The start-up cost is all three items added together: equipment, rent and supplies. Then work out the monthly income and profit."
+            },
+            {
+              "tier": "weak",
+              "text": "Monthly profit = 330,000 + 240,000 + 100,000 = ₦670,000.",
+              "meets": [],
+              "feedback": "Profit is income minus costs. Find the monthly income (40 × 1,500 × 4), then subtract the monthly running costs."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "The rights and responsibilities of consumers",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the eight consumer rights and explain each;\n2. state the responsibilities of consumers;\n3. describe what a consumer can do when goods are faulty;\n4. name Nigerian bodies that protect consumers.\n\n## Materials\n\nCards with eight rights, examples of food labels, a faulty-goods role-play script.\n\n## Starter\n\nAsk: has anyone bought something that was spoiled or did not work? What did you do? Collect experiences.\n\n## Development\n\n1. The eight rights: basic needs, safety, information, choice, to be heard, redress, consumer education and a healthy environment.\n2. Match each right to an everyday case: expired juice (safety), no price tag (information), forced to buy one brand (choice).\n3. Responsibilities: be critically aware (check goods and labels), act (complain), care about others, protect the environment, and join others (consumer associations).\n4. What to do when goods are faulty: keep the receipt, return to the seller, then complain to a consumer body such as the FCCPC, or NAFDAC for food and drugs, or SON for standards.\n\n## Class activity\n\nGroups role-play a faulty-goods case: buyer, seller and a consumer-body officer. The class names the rights and responsibilities shown.\n\n## Evaluation\n\n1. Which right is denied when expired food is sold?\n2. Name two responsibilities of a consumer.\n3. What should a buyer keep as proof of purchase?\n\n## Assignment\n\nQuiz on the app. Read the label on a packaged food and list what information it gives.",
+      "reading": {
+        "title": "Protecting the buyer",
+        "content": "# Consumer rights and responsibilities\n\nA **consumer** is anyone who buys or uses goods and services. Consumers are protected by eight rights, recognised across the world and supported in Nigeria by law and by agencies.\n\n## The eight consumer rights\n\n1. **Right to basic needs:** access to food, clothing, shelter, health care and education.\n2. **Right to safety:** goods and services must not harm the buyer. Expired or contaminated food breaks this right.\n3. **Right to information:** the buyer must be told the price, content, quality and use of goods. Labels and price tags serve this right.\n4. **Right to choose:** the buyer can choose between goods and sellers, and cannot be forced to buy a particular one.\n5. **Right to be heard:** the consumer's complaints must be listened to.\n6. **Right to redress:** a faulty product must be repaired, replaced or refunded, or compensation paid.\n7. **Right to consumer education:** the buyer should learn how to buy wisely and know their rights.\n8. **Right to a healthy environment:** a clean place to live and work, free from pollution.\n\n## Responsibilities of consumers\n\nRights come with responsibilities.\n\n- **Be critical:** check goods, read labels and compare prices before buying.\n- **Act:** speak up when something is wrong; keep the receipt as proof.\n- **Care about others:** do not buy goods that harm other people or are obviously stolen.\n- **Protect the environment:** dispose of waste properly.\n- **Join together:** consumer associations are stronger than single buyers.\n\n## Who protects consumers in Nigeria?\n\n- The **Federal Competition and Consumer Protection Commission (FCCPC)** investigates complaints about unfair trading.\n- **NAFDAC** regulates food, drugs and cosmetics.\n- The **Standards Organisation of Nigeria (SON)** sets standards for goods.\n- **Consumer associations** educate buyers and help them to complain.\n\n## When goods are faulty\n\nTake the goods and the receipt back to the seller and ask politely for a replacement or refund. If the seller refuses, report to a consumer body. Complaining also protects the next buyer."
+      },
+      "cards": [
+        {
+          "front": "Consumer",
+          "back": "A person who buys or uses goods and services."
+        },
+        {
+          "front": "Right to safety",
+          "back": "Goods and services must not harm the buyer."
+        },
+        {
+          "front": "Right to information",
+          "back": "The buyer must be told the price, contents and quality of goods."
+        },
+        {
+          "front": "Right to choose",
+          "back": "The buyer cannot be forced to buy one product or seller."
+        },
+        {
+          "front": "Right to redress",
+          "back": "A faulty product must be repaired, replaced or refunded."
+        },
+        {
+          "front": "A consumer responsibility",
+          "back": "Check goods and read labels before buying; keep the receipt."
+        },
+        {
+          "front": "NAFDAC",
+          "back": "The agency that regulates food, drugs and cosmetics in Nigeria."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A buyer in Jos finds that a sealed bottle of juice is already expired. Which right was broken?",
+          "options": [
+            "Right to choose",
+            "Right to safety",
+            "Right to be heard",
+            "Right to a healthy environment"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A shop owner forces customers to buy one brand only. Which consumer right is denied?",
+          "options": [
+            "Right to safety",
+            "Right to redress",
+            "Right to choose",
+            "Right to consumer education"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a responsibility of a consumer?",
+          "options": [
+            "To demand lower prices always",
+            "To refuse to pay for any goods",
+            "To leave bad goods without complaining",
+            "To check goods and read labels before buying"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A customer's complaint about a faulty blender is ignored and no refund is given. Which right is denied?",
+          "options": [
+            "Right to redress",
+            "Right to information",
+            "Right to choose",
+            "Right to basic needs"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The right to information means",
+          "options": [
+            "the right to read newspapers free of charge",
+            "the right to know the price, content and quality of goods before buying",
+            "the right to free goods",
+            "the right to advertise"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State and explain three consumer rights.",
+          "markScheme": [
+            "Names a first consumer right",
+            "Explains it",
+            "Names a second consumer right",
+            "Explains it",
+            "Names a third consumer right",
+            "Explains it"
+          ],
+          "modelAnswer": "The right to safety means goods must not harm the buyer, for example food must not be expired. The right to information means the buyer must be told the price, contents and quality. The right to choose means the buyer cannot be forced to buy one thing.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The right to safety means goods must not harm the buyer, for example food must not be expired. The right to information means the buyer must be told the price, content and quality, so that he can decide well. The right to choose means a buyer can pick from different goods and sellers and cannot be forced to buy one thing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The right to safety"
+                },
+                {
+                  "point": 1,
+                  "quote": "goods must not harm the buyer, for example food must not be expired"
+                },
+                {
+                  "point": 2,
+                  "quote": "The right to information"
+                },
+                {
+                  "point": 3,
+                  "quote": "the buyer must be told the price, content and quality"
+                },
+                {
+                  "point": 4,
+                  "quote": "The right to choose"
+                },
+                {
+                  "point": 5,
+                  "quote": "a buyer can pick from different goods and sellers and cannot be forced to buy one thing"
+                }
+              ],
+              "feedback": "Full marks. Every right is named and then explained with a clear meaning."
+            },
+            {
+              "tier": "full",
+              "text": "Right to be heard: the consumer can complain and the complaint must be listened to. Right to redress: if goods are faulty the consumer should get a refund, a replacement or compensation. Right to consumer education: the consumer should be taught how to buy wisely and to know their rights.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Right to be heard"
+                },
+                {
+                  "point": 1,
+                  "quote": "the consumer can complain and the complaint must be listened to"
+                },
+                {
+                  "point": 2,
+                  "quote": "Right to redress"
+                },
+                {
+                  "point": 3,
+                  "quote": "a refund, a replacement or compensation"
+                },
+                {
+                  "point": 4,
+                  "quote": "Right to consumer education"
+                },
+                {
+                  "point": 5,
+                  "quote": "taught how to buy wisely and to know their rights"
+                }
+              ],
+              "feedback": "All six marks. You chose three rights that are not the most common ones, and explained each correctly."
+            },
+            {
+              "tier": "partial",
+              "text": "The right to choose and the right to safety. Safety is that goods should not hurt you.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the right to safety"
+                },
+                {
+                  "point": 1,
+                  "quote": "goods should not hurt you"
+                },
+                {
+                  "point": 2,
+                  "quote": "The right to choose"
+                }
+              ],
+              "feedback": "Two rights, one explained. Explain the right to choose (you cannot be forced to buy one thing) and add a third right with its meaning."
+            },
+            {
+              "tier": "partial",
+              "text": "The right to be heard means the consumer can complain. The right to redress and the right to information are also consumer rights.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The right to be heard"
+                },
+                {
+                  "point": 1,
+                  "quote": "the consumer can complain"
+                },
+                {
+                  "point": 2,
+                  "quote": "The right to redress"
+                },
+                {
+                  "point": 4,
+                  "quote": "the right to information"
+                }
+              ],
+              "feedback": "The right to be heard is well explained. The other two are named but not explained: redress is a refund, repair or replacement; information is knowing the price and contents."
+            },
+            {
+              "tier": "weak",
+              "text": "The right to buy anything you want without paying. The right to shout at the seller.",
+              "meets": [],
+              "feedback": "Consumer rights do not let you take goods without paying, and complaints should be made politely. Think of safety, information, choice and redress."
+            },
+            {
+              "tier": "weak",
+              "text": "Consumer rights are the rights of the seller to make profit. The consumer has no rights.",
+              "meets": [],
+              "feedback": "Consumer rights protect the buyer. There are eight, such as the right to safety and the right to redress."
+            }
+          ]
+        },
+        {
+          "prompt": "Mrs Aisha bought a pair of shoes for ₦12,000 at a market stall. The sole came off after one week and the seller refuses to change them or refund her. Say which right is involved, what she should do, and what she should have done when she bought them.",
+          "markScheme": [
+            "Identifies the right to redress",
+            "Says she should first return to the seller and ask for a replacement or refund",
+            "Says she can report to a consumer body such as the FCCPC or a consumer association if he refuses",
+            "Says she should have checked the goods and kept the receipt when buying",
+            "Says complaining also protects other consumers"
+          ],
+          "modelAnswer": "Her right to redress is being denied, since faulty goods should be replaced or refunded. She should return to the seller with the shoes and her receipt and ask for a replacement or refund. If he refuses, she can report to the FCCPC or a consumer association. When buying she should have checked the shoes and kept the receipt. Complaining also protects other buyers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Her right to redress has been denied, because she should get a replacement or refund for faulty goods. She should go back to the seller with the shoes and her receipt and ask for a change politely. If he still refuses she should report to the consumer protection office, the FCCPC, or a consumer association. When buying she should have checked the shoes and asked for a receipt, which is a consumer's responsibility. By complaining she also helps to protect other buyers from the same seller.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "right to redress has been denied"
+                },
+                {
+                  "point": 1,
+                  "quote": "go back to the seller with the shoes and her receipt and ask for a change politely"
+                },
+                {
+                  "point": 2,
+                  "quote": "report to the consumer protection office, the FCCPC, or a consumer association"
+                },
+                {
+                  "point": 3,
+                  "quote": "should have checked the shoes and asked for a receipt"
+                },
+                {
+                  "point": 4,
+                  "quote": "helps to protect other buyers from the same seller"
+                }
+              ],
+              "feedback": "Full marks. Your answer says what happened, what to do and what to do differently next time."
+            },
+            {
+              "tier": "full",
+              "text": "The right to redress is involved. First Mrs Aisha should return to the stall with the shoes and show proof of purchase, for example a receipt, to ask for a replacement. If the seller refuses, she can report him to FCCPC or the consumer association in her area. A responsible consumer inspects goods before buying and keeps the receipt. Reporting the matter is also good for other consumers because the seller may be made to stop selling poor goods.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The right to redress is involved"
+                },
+                {
+                  "point": 1,
+                  "quote": "return to the stall with the shoes and show proof of purchase"
+                },
+                {
+                  "point": 2,
+                  "quote": "report him to FCCPC or the consumer association in her area"
+                },
+                {
+                  "point": 3,
+                  "quote": "A responsible consumer inspects goods before buying and keeps the receipt"
+                },
+                {
+                  "point": 4,
+                  "quote": "good for other consumers because the seller may be made to stop selling poor goods"
+                }
+              ],
+              "feedback": "All five marks. You tied the responsibility to the situation, which is what the question asked."
+            },
+            {
+              "tier": "partial",
+              "text": "She has the right to redress. She should go back to the seller and tell him to change the shoes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "She has the right to redress"
+                },
+                {
+                  "point": 1,
+                  "quote": "go back to the seller and tell him to change the shoes"
+                }
+              ],
+              "feedback": "Right and first step. Also say what she can do if he refuses, what she should have checked when buying, and why complaining helps other buyers."
+            },
+            {
+              "tier": "partial",
+              "text": "She should report the seller to the FCCPC if he refuses. She should have checked the shoes before buying them.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "report the seller to the FCCPC if he refuses"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should have checked the shoes before buying them"
+                }
+              ],
+              "feedback": "Both points are good. Name the right (redress), say she should first return to the seller, and say that complaining helps other consumers.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "She should insult the seller in the market so that everybody will hear. Then he will give her money.",
+              "meets": [],
+              "feedback": "Complaints should be made politely and with proof. Return to the seller with the shoes and receipt, then report to a consumer body if he refuses."
+            },
+            {
+              "tier": "weak",
+              "text": "The shoes were cheap so she has no right to complain. It is her fault for buying from the market.",
+              "meets": [],
+              "feedback": "A consumer has the right to redress whatever the price or place. Faulty goods must be replaced or refunded."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Personal finance: needs, wants, scale of preference, saving and budgeting",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. tell needs from wants;\n2. draw up a scale of preference and explain opportunity cost;\n3. state reasons for saving and ways of saving;\n4. prepare a simple monthly budget and find the surplus.\n\n## Materials\n\nCards of items (rice, a games console, uniform, data bundle, medicine, party clothes), a budget sheet, calculators.\n\n## Starter\n\nGive each pair ₦2,000 of play money and a list of eight things to buy. They must choose, then say what they gave up.\n\n## Development\n\n1. Needs are things a person must have to live (food, clothing, shelter, health care, basic education). Wants are things that are nice to have but we can live without.\n2. Resources are limited but wants are unlimited, so we must choose. A scale of preference lists wants in order of importance.\n3. Opportunity cost is the next best thing given up when a choice is made.\n4. Saving means keeping part of income for later. Reasons: emergencies, school fees, starting a business. Ways: bank accounts, cooperative societies, a money box.\n5. Budget: expected income minus planned spending. Surplus is saved; a deficit means spending must be cut. Modesty means living within your means.\n\n## Class activity\n\nLearners write a scale of preference for ₦5,000 and a monthly budget for a family with ₦120,000 income, and find how much they can save.\n\n## Evaluation\n\n1. Give two needs and two wants.\n2. What is opportunity cost?\n3. Income ₦80,000, spending ₦72,000. What is the saving?\n\n## Assignment\n\nProblem set on the app. Prepare a weekly budget for your pocket money.",
+      "reading": {
+        "title": "Spending wisely and saving",
+        "content": "# Personal finance\n\n## Needs and wants\n\nA **need** is something a person must have to live and be well: food, water, clothing, shelter, medicine and basic education. A **want** is something that is nice to have but not necessary: a games console, designer shoes, a second phone.\n\nSometimes the same thing can be both. A phone to call for help may be a need for a trader; a new, expensive phone is a want.\n\n## Scale of preference\n\nMoney is limited, and wants are not. We cannot have everything, so we **choose**. A **scale of preference** is a list of wants arranged in order of importance, with the most important first.\n\n**Opportunity cost** is the next best thing you give up when you choose. If Tunde has ₦3,000 and must choose between a football and a novel and buys the football, the novel is the opportunity cost.\n\n## Saving\n\n**Saving** is keeping part of your income for later instead of spending it all. People save:\n\n- for **emergencies** such as illness;\n- for **future goals** such as school fees or starting a business;\n- to **earn interest** in a bank.\n\nWays of saving: a bank savings account, a cooperative society, or a money box at home.\n\nA pupil who receives ₦2,500 a week and saves ₦500 each week will have 12 x 500 = ₦6,000 after 12 weeks.\n\n## Budgeting\n\nA **budget** is a plan for how to spend income. Budget surplus = income - planned spending.\n\n**Worked example.** Mrs Bello earns ₦120,000 a month. She spends food ₦45,000, rent ₦30,000, transport ₦15,000 and school fees ₦20,000.\n\n- Total spending = 45,000 + 30,000 + 15,000 + 20,000 = ₦110,000.\n- Surplus = 120,000 - 110,000 = ₦10,000, which she can save.\n\nTo save 10% she needs 10/100 x 120,000 = ₦12,000, so she is ₦2,000 short and must trim something.\n\n## Modesty\n\n**Modesty** means living within your means, spending less than you earn and not showing off. A modest person saves first and spends after, so a bad month does not become a crisis."
+      },
+      "cards": [
+        {
+          "front": "Need",
+          "back": "Something a person must have to live, such as food, shelter or medicine."
+        },
+        {
+          "front": "Want",
+          "back": "Something nice to have that we can live without."
+        },
+        {
+          "front": "Scale of preference",
+          "back": "A list of wants arranged in order of importance."
+        },
+        {
+          "front": "Opportunity cost",
+          "back": "The next best thing given up when a choice is made."
+        },
+        {
+          "front": "Saving",
+          "back": "Keeping part of income for later."
+        },
+        {
+          "front": "Budget",
+          "back": "A plan for how income will be spent."
+        },
+        {
+          "front": "Modesty",
+          "back": "Living within one's means and not spending to show off."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a need?",
+          "options": [
+            "A new pair of designer sunglasses",
+            "A video game",
+            "Food",
+            "A second phone"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A scale of preference is",
+          "options": [
+            "a list of wants arranged in order of importance",
+            "a weighing machine",
+            "a bank statement",
+            "a list of prices"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Tunde has ₦3,000 and must choose between a football and a novel. He buys the football. The opportunity cost is",
+          "options": [
+            "the ₦3,000",
+            "the football",
+            "nothing",
+            "the novel he gave up"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A pupil receives ₦2,500 a week and saves ₦500 each week. How much is saved after 12 weeks?",
+          "options": [
+            "₦30,000",
+            "₦6,000",
+            "₦3,000",
+            "₦500"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which is the best reason for saving?",
+          "options": [
+            "To show off to friends",
+            "To avoid buying needs",
+            "To have money for emergencies and future goals",
+            "To give all the money away"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between needs and wants. Give two examples of each.",
+          "markScheme": [
+            "States that needs are things we must have to live",
+            "States that wants are things we would like but can live without",
+            "Gives two correct examples of needs",
+            "Gives two correct examples of wants"
+          ],
+          "modelAnswer": "Needs are things we must have to live, such as food and shelter. Wants are things we would like to have but can live without, such as a games console or designer shoes.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Needs are things we must have to live, like food and shelter. Wants are things we would like to have but can live without, like a games console or designer shoes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "things we must have to live"
+                },
+                {
+                  "point": 1,
+                  "quote": "things we would like to have but can live without"
+                },
+                {
+                  "point": 2,
+                  "quote": "food and shelter"
+                },
+                {
+                  "point": 3,
+                  "quote": "a games console or designer shoes"
+                }
+              ],
+              "feedback": "Full marks. The phrase 'can live without' is exactly what separates wants from needs."
+            },
+            {
+              "tier": "full",
+              "text": "A need is something a person cannot do without for health and safety, for example clothing and medicine. A want is something that makes life more pleasant but is not necessary, such as a new phone or party jollof.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "something a person cannot do without for health and safety"
+                },
+                {
+                  "point": 1,
+                  "quote": "makes life more pleasant but is not necessary"
+                },
+                {
+                  "point": 2,
+                  "quote": "clothing and medicine"
+                },
+                {
+                  "point": 3,
+                  "quote": "a new phone or party jollof"
+                }
+              ],
+              "feedback": "All four marks. Your examples are clear and fit their group."
+            },
+            {
+              "tier": "partial",
+              "text": "Needs are the things we must have, like food and water. Wants are the things we like.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the things we must have"
+                },
+                {
+                  "point": 2,
+                  "quote": "food and water"
+                }
+              ],
+              "feedback": "Your needs are right. Say that wants are things we can live without, and give two examples of wants."
+            },
+            {
+              "tier": "partial",
+              "text": "Wants are things we would like but do not need, for example a bicycle and a television. Needs are things like a house.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "things we would like but do not need"
+                },
+                {
+                  "point": 3,
+                  "quote": "a bicycle and a television"
+                }
+              ],
+              "feedback": "Wants are well done. Say what a need is (something we must have to live) and give two examples, such as a house and food."
+            },
+            {
+              "tier": "weak",
+              "text": "Needs are what rich people have and wants are what poor people have.",
+              "meets": [],
+              "feedback": "Needs and wants do not depend on being rich or poor. Needs are what everyone must have to live; wants are extras."
+            },
+            {
+              "tier": "weak",
+              "text": "Needs and wants are the same thing, because everyone wants what he needs.",
+              "meets": [],
+              "feedback": "They are different. You can live without a want, but not without a need such as food."
+            }
+          ]
+        },
+        {
+          "prompt": "Mrs Bello earns ₦120,000 a month. She spends ₦45,000 on food, ₦30,000 on rent, ₦15,000 on transport and ₦20,000 on school fees. Find how much she has left. She wants to save 15% of her income: how much is that, and how much more does she need? Suggest one way she could find it.",
+          "markScheme": [
+            "Works out total spending as ₦110,000",
+            "Works out the amount left as ₦10,000",
+            "Works out 15% of ₦120,000 as ₦18,000",
+            "Works out that she needs ₦8,000 more",
+            "Suggests a sensible way to reduce spending without cutting a basic need such as rent or school fees"
+          ],
+          "modelAnswer": "Total spending = 45,000 + 30,000 + 15,000 + 20,000 = ₦110,000. Left over = 120,000 - 110,000 = ₦10,000. 15% of 120,000 = ₦18,000. She needs 18,000 - 10,000 = ₦8,000 more. She could reduce her food bill by buying foodstuff in bulk, since rent and school fees cannot be reduced.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Total spending = 45,000 + 30,000 + 15,000 + 20,000 = ₦110,000. Left over = 120,000 - 110,000 = ₦10,000. 15% of 120,000 = 15/100 × 120,000 = ₦18,000. She needs 18,000 - 10,000 = ₦8,000 more. She can cut ₦8,000 from the food bill by buying foodstuff in bulk at the market instead of small daily purchases, because rent and school fees cannot be reduced.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total spending = 45,000 + 30,000 + 15,000 + 20,000 = ₦110,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Left over = 120,000 - 110,000 = ₦10,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "15% of 120,000 = 15/100 × 120,000 = ₦18,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "She needs 18,000 - 10,000 = ₦8,000 more"
+                },
+                {
+                  "point": 4,
+                  "quote": "She can cut ₦8,000 from the food bill by buying foodstuff in bulk at the market instead of small daily purchases"
+                }
+              ],
+              "feedback": "Full marks. Your suggestion protects the needs that cannot be cut."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The money she spends is 110,000, so she is left with ₦10,000. (b) 15% of ₦120,000 is ₦18,000. (c) That is ₦8,000 more than she now has left. She could reduce transport by sharing a ride with a colleague or walking part of the way, which saves some money without touching school fees.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The money she spends is 110,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "she is left with ₦10,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "15% of ₦120,000 is ₦18,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "₦8,000 more than she now has left"
+                },
+                {
+                  "point": 4,
+                  "quote": "reduce transport by sharing a ride with a colleague or walking part of the way"
+                }
+              ],
+              "feedback": "All five marks. You answered each part in order."
+            },
+            {
+              "tier": "partial",
+              "text": "Total spending = 45,000 + 30,000 + 15,000 + 20,000 = ₦110,000. She has ₦10,000 left. 15% of 120,000 is ₦1,800.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total spending = 45,000 + 30,000 + 15,000 + 20,000 = ₦110,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "She has ₦10,000 left"
+                }
+              ],
+              "feedback": "The first two parts are correct. For 15%, work 15 ÷ 100 × 120,000 = ₦18,000, then find the shortfall and suggest a saving."
+            },
+            {
+              "tier": "partial",
+              "text": "She is left with ₦10,000. 15% of 120,000 is ₦18,000, which is more than ₦10,000 so she cannot save 15% now. She should stop paying school fees.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "She is left with ₦10,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "15% of 120,000 is ₦18,000"
+                }
+              ],
+              "feedback": "The two figures are right. Say she needs ₦8,000 more. School fees are a need, so cut something else, such as spending on food or transport."
+            },
+            {
+              "tier": "weak",
+              "text": "She should buy new clothes with the ₦10,000 because she has worked hard.",
+              "meets": [],
+              "feedback": "A plan to save asks first what is left and what the saving target is. Compute the surplus and the 15% saving."
+            },
+            {
+              "tier": "weak",
+              "text": "120,000 + 45,000 + 30,000 + 15,000 + 20,000 = ₦230,000 so she has ₦230,000 to save.",
+              "meets": [],
+              "feedback": "Spending is subtracted from income, not added to it. Total the four costs, then take them from ₦120,000."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Keyboarding: posture, the home row and typing technique",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. sit and place the hands correctly for typing;\n2. name the home row keys and the function of common keys;\n3. explain touch typing;\n4. work out typing speed in words per minute.\n\n## Materials\n\nComputers or keyboard charts (printed), a typing tutor program if available, a timer, a marker board.\n\n## Starter\n\nAsk two learners to type their names, one looking at the keys, one not. Compare time and mistakes (or, without computers, point to keys on a chart).\n\n## Development\n\n1. Posture: sit upright, back supported, feet flat on the floor, screen at eye level, elbows near a right angle, wrists straight and not resting on the edge of the table.\n2. Home row: left hand on A S D F, right hand on J K L and ;. F and J have raised bumps so fingers can find them. Thumbs over the space bar.\n3. Function keys: Shift (capitals), Caps Lock, Enter (new line), Backspace (deletes the character to the left), Delete, Tab, number row.\n4. Touch typing means typing without looking at the keys, with each finger responsible for certain keys.\n5. Speed: words per minute = words typed / minutes. Work: 150 words in 5 minutes is 30 words per minute.\n\n## Class activity\n\nLearners practise home row drills for ten minutes, then a short passage; they record their words per minute and the errors.\n\n## Evaluation\n\n1. Which fingers go on ASDF?\n2. What does Backspace do?\n3. A learner types 90 words in 3 minutes. What is the speed?\n\n## Assignment\n\nWorksheet on the app. Practise the home row for fifteen minutes every day this week and record your speed.",
+      "reading": {
+        "title": "Learning to type properly",
+        "content": "# Keyboarding\n\nMost office, school and bank work now uses a computer. A person who types well saves time and avoids errors.\n\n## Posture\n\nGood posture protects your back, neck and wrists.\n\n- Sit **upright** with your back supported.\n- Keep your **feet flat** on the floor.\n- Put the **screen at eye level**.\n- Keep your **elbows near a right angle** and your **wrists straight**, not bent up or resting hard on the table.\n\n## The home row\n\nThe home row is the middle row of letters. Your fingers rest here and return here after every key.\n\n- Left hand: **A S D F**\n- Right hand: **J K L ;**\n- Thumbs: over the **space bar**\n\nThe keys **F** and **J** have small raised bumps so that your fingers can find the home row without looking.\n\n## Useful keys\n\n| Key | What it does |\n| --- | --- |\n| Shift | Makes a capital letter or the upper symbol on a key |\n| Caps Lock | Makes every letter a capital until pressed again |\n| Enter | Starts a new line |\n| Backspace | Deletes the character to the left of the cursor |\n| Delete | Deletes the character to the right of the cursor |\n| Tab | Moves across a set space |\n| Space bar | Makes a space between words |\n\n## Touch typing\n\n**Touch typing** means typing without looking at the keys. Each finger has its own keys. The typist looks at the text or the screen, so mistakes are spotted at once.\n\nHabits that help:\n\n1. Return the fingers to the home row after each key.\n2. Use the correct finger for every key.\n3. Practise a little every day.\n4. Aim for **accuracy first**, then speed.\n\n## Typing speed\n\nWords per minute = number of words typed ÷ number of minutes.\n\n**Worked example.** A learner types 150 words in 5 minutes. Speed = 150 ÷ 5 = 30 words per minute."
+      },
+      "cards": [
+        {
+          "front": "Home row (left hand)",
+          "back": "A S D F"
+        },
+        {
+          "front": "Home row (right hand)",
+          "back": "J K L ;"
+        },
+        {
+          "front": "Why F and J have bumps",
+          "back": "So fingers can find the home row without looking."
+        },
+        {
+          "front": "Backspace",
+          "back": "Deletes the character to the left of the cursor."
+        },
+        {
+          "front": "Touch typing",
+          "back": "Typing without looking at the keys, with each finger having its own keys."
+        },
+        {
+          "front": "Words per minute",
+          "back": "Words typed divided by the minutes taken."
+        },
+        {
+          "front": "Correct posture",
+          "back": "Back upright, feet flat, wrists straight, screen at eye level."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "On the home row, the fingers of the left hand rest on",
+          "options": [
+            "Q W E R",
+            "Z X C V",
+            "1 2 3 4",
+            "A S D F"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Why do the F and J keys have small raised bumps?",
+          "options": [
+            "For decoration",
+            "To help fingers find the home row without looking",
+            "To show they are broken",
+            "To make typing louder"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which key deletes the character to the left of the cursor?",
+          "options": [
+            "Backspace",
+            "Enter",
+            "Tab",
+            "Shift"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A learner types 150 words in 5 minutes. What is the typing speed?",
+          "options": [
+            "15 words per minute",
+            "750 words per minute",
+            "30 words per minute",
+            "5 words per minute"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is the correct way to sit for typing?",
+          "options": [
+            "Leaning on the table with the screen above eye level",
+            "Feet crossed off the floor with wrists bent up",
+            "Slouching with elbows high",
+            "Back straight, feet flat on the floor and wrists straight"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the correct posture and hand position for typing.",
+          "markScheme": [
+            "States that the typist sits upright with the back straight",
+            "States that the feet are flat on the floor",
+            "States that the wrists are straight and the forearms level",
+            "States that the fingers rest on the home row, ASDF and JKL;"
+          ],
+          "modelAnswer": "The typist sits upright with the back straight and the feet flat on the floor. The wrists are straight and the forearms level. The fingers rest on the home row, ASDF for the left hand and JKL; for the right hand.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A person should sit upright with the back straight. The feet should rest flat on the floor. The wrists should be straight and the forearms level, not bent up or resting on the desk. The fingers rest on the home row, ASDF for the left hand and JKL; for the right, with the thumbs on the space bar.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sit upright with the back straight"
+                },
+                {
+                  "point": 1,
+                  "quote": "feet should rest flat on the floor"
+                },
+                {
+                  "point": 2,
+                  "quote": "wrists should be straight and the forearms level"
+                },
+                {
+                  "point": 3,
+                  "quote": "ASDF for the left hand and JKL; for the right"
+                }
+              ],
+              "feedback": "Full marks. You included the thumbs on the space bar as well."
+            },
+            {
+              "tier": "full",
+              "text": "Sit up straight with your back against the chair and the screen at eye level. Put both feet on the floor. Keep your elbows near a right angle and your wrists straight so they do not get hurt. Put the left fingers on A S D F and the right fingers on J K L and the semicolon, thumbs over the space bar.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sit up straight with your back against the chair"
+                },
+                {
+                  "point": 1,
+                  "quote": "Put both feet on the floor"
+                },
+                {
+                  "point": 2,
+                  "quote": "Keep your elbows near a right angle and your wrists straight"
+                },
+                {
+                  "point": 3,
+                  "quote": "the left fingers on A S D F and the right fingers on J K L and the semicolon"
+                }
+              ],
+              "feedback": "All four marks. Mentioning the screen at eye level is a good extra."
+            },
+            {
+              "tier": "partial",
+              "text": "You should sit straight and put your feet on the floor. You use all fingers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sit straight"
+                },
+                {
+                  "point": 1,
+                  "quote": "put your feet on the floor"
+                }
+              ],
+              "feedback": "Posture is good. Add the wrists (straight) and exactly where the fingers go: ASDF and JKL; on the home row."
+            },
+            {
+              "tier": "partial",
+              "text": "The fingers must be on the home row ASDF JKL; and the back must be straight. You can lean on the keyboard with your wrists.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the back must be straight"
+                },
+                {
+                  "point": 3,
+                  "quote": "ASDF JKL;"
+                }
+              ],
+              "feedback": "Back and hands are right. Wrists should not rest on the keyboard or table; they should be straight and floating. Also say that the feet stay flat on the floor.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "You must sit on the edge of the table and look at the keys.",
+              "meets": [],
+              "feedback": "Sit on a chair with your back upright and feet on the floor, and learn the keys so that you need not look down."
+            },
+            {
+              "tier": "weak",
+              "text": "Use two fingers only and type very fast with your eyes closed.",
+              "meets": [],
+              "feedback": "Typing properly uses all ten fingers from the home row. Speed comes after accuracy and practice."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain what touch typing is and why it is better than looking at the keys. Give three habits that help a learner type faster with fewer errors.",
+          "markScheme": [
+            "States that touch typing is typing without looking at the keys",
+            "Explains why it is better, such as it is faster and mistakes are seen on the screen",
+            "Gives a first helpful habit, such as returning to the home row",
+            "Gives a second helpful habit, such as using the correct finger for each key",
+            "Gives a third helpful habit, such as regular practice with accuracy before speed"
+          ],
+          "modelAnswer": "Touch typing is typing without looking at the keys. It is better because the typist watches the screen, so mistakes are seen at once, and it is faster. Three good habits are returning the fingers to the home row, using the correct finger for each key, and practising regularly with accuracy before speed.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Touch typing means typing without looking at the keys. It is better because you look at the screen, so you see your mistakes at once and you type faster. Three habits are: keep the fingers on the home row when not typing, use the correct finger for each key, and practise every day, with accuracy first and speed later.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "typing without looking at the keys"
+                },
+                {
+                  "point": 1,
+                  "quote": "you look at the screen, so you see your mistakes at once and you type faster"
+                },
+                {
+                  "point": 2,
+                  "quote": "keep the fingers on the home row when not typing"
+                },
+                {
+                  "point": 3,
+                  "quote": "use the correct finger for each key"
+                },
+                {
+                  "point": 4,
+                  "quote": "practise every day, with accuracy first and speed later"
+                }
+              ],
+              "feedback": "Full marks. Your three habits are all different and practical."
+            },
+            {
+              "tier": "full",
+              "text": "Touch typing is when a typist knows where the keys are by feel and does not look down. It is faster, because eyes do not move between keyboard and screen, and there are fewer errors. To improve, a learner should return the fingers to the home row after each key, use all ten fingers with the right finger for each key, and practise short sessions regularly while trying to be correct before trying to be quick.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "knows where the keys are by feel and does not look down"
+                },
+                {
+                  "point": 1,
+                  "quote": "faster, because eyes do not move between keyboard and screen, and there are fewer errors"
+                },
+                {
+                  "point": 2,
+                  "quote": "return the fingers to the home row after each key"
+                },
+                {
+                  "point": 3,
+                  "quote": "use all ten fingers with the right finger for each key"
+                },
+                {
+                  "point": 4,
+                  "quote": "practise short sessions regularly while trying to be correct before trying to be quick"
+                }
+              ],
+              "feedback": "All five marks. You explained why looking down slows a typist."
+            },
+            {
+              "tier": "partial",
+              "text": "Touch typing is typing without looking at the keys. It is faster. A good habit is to practise every day.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "typing without looking at the keys"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is faster"
+                },
+                {
+                  "point": 4,
+                  "quote": "practise every day"
+                }
+              ],
+              "feedback": "Good. Add two more habits: returning to the home row and using the correct finger for each key. Also say that you see your mistakes on the screen."
+            },
+            {
+              "tier": "partial",
+              "text": "With touch typing you use your fingers properly. Keep your fingers on the home row and use the right finger for each key.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Keep your fingers on the home row"
+                },
+                {
+                  "point": 3,
+                  "quote": "use the right finger for each key"
+                }
+              ],
+              "feedback": "Two good habits. Define touch typing (typing without looking at the keys), say why it is better, and add regular practice."
+            },
+            {
+              "tier": "weak",
+              "text": "Touch typing is touching the keys very hard so that the letters come out clear.",
+              "meets": [],
+              "feedback": "Touch typing is not about pressing hard. It means typing without looking at the keys, with each finger having its own keys."
+            },
+            {
+              "tier": "weak",
+              "text": "It is better to look at the keys because you will not press the wrong one.",
+              "meets": [],
+              "feedback": "Looking down slows you and you cannot see mistakes on the screen. With practice, touch typing is both faster and more accurate."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Scope of business revisited: stages of production and types of business",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. classify business activities as industry, commerce or direct services;\n2. describe the stages of production from raw material to consumer;\n3. name the factors of production and their rewards;\n4. answer BECE-style questions on the scope of business.\n\n## Materials\n\nA chain of cards for garri (farm, mill, wholesaler, retailer, buyer), past BECE questions, a marker board.\n\n## Starter\n\nHold up a loaf of bread. Ask learners to name everyone and everything needed to get it to a table, from the wheat to the shop.\n\n## Development\n\n1. Revise: industry (extractive, manufacturing, construction), commerce (trade and aids to trade) and direct services.\n2. Primary production extracts from nature, secondary production makes goods, tertiary production provides commerce and services.\n3. Follow garri from the cassava farm through a processing mill and wholesaler to a retailer and consumer.\n4. Factors of production: land (rent), labour (wages), capital (interest) and enterprise (profit).\n5. Classify mixed cases: a bakery that bakes and sells bread is in both manufacturing and commerce.\n\n## Class activity\n\nPairs draw the production chain for a product of their choice, label each stage with its type and name an aid to trade used along the way.\n\n## Evaluation\n\n1. Classify a miner and a bank.\n2. Which factor of production earns rent?\n3. Name one aid to trade used between a mill and a wholesaler.\n\n## Assignment\n\nWorksheet on the app. Draw a production chain for a product of your choice.",
+      "reading": {
+        "title": "From raw material to buyer",
+        "content": "# The scope of business: a review\n\nIn Junior Secondary 1 you learned that business has three groups: **industry**, **commerce** and **direct services**. This week we look at how they connect.\n\n## The stages of production\n\n- **Primary production** takes things from nature: farming, fishing, mining, logging. (Extractive industry.)\n- **Secondary production** changes raw materials into finished goods: milling, baking, weaving, making furniture. (Manufacturing; construction also belongs here.)\n- **Tertiary production** is commerce and direct services: trading, banking, transport, teaching, hairdressing.\n\n## Following garri from farm to table\n\n1. A **farmer** grows and harvests cassava. This is **extractive industry**.\n2. A **processor** peels, grates, presses and fries the cassava into garri. This is **manufacturing**.\n3. A **wholesaler** buys many bags and sells them on. This is **commerce**.\n4. A **retailer** sells small measures to buyers in the market. This is also commerce.\n5. A **consumer** buys and eats the garri.\n\nAlong the way, **aids to trade** help: lorries carry the goods (transport), a bank lends the processor money (banking), and a radio advert tells people about a brand (advertising).\n\n## Factors of production\n\nProduction needs four **factors**, and each earns a reward.\n\n| Factor | What it is | Reward |\n| --- | --- | --- |\n| Land | Natural resources, such as farmland and minerals | Rent |\n| Labour | Human effort, mental and physical | Wages |\n| Capital | Money, machines and buildings used to make goods | Interest |\n| Enterprise | The entrepreneur who organises and takes the risk | Profit |\n\n## Mixed businesses\n\nSome businesses belong to more than one group. A bakery that bakes bread (manufacturing) and sells it over the counter (commerce) is both. When you classify a business, ask: what is its **main** activity, and what does it do to earn money?"
+      },
+      "cards": [
+        {
+          "front": "Primary production",
+          "back": "Taking things from nature, such as farming and mining."
+        },
+        {
+          "front": "Secondary production",
+          "back": "Changing raw materials into finished goods."
+        },
+        {
+          "front": "Tertiary production",
+          "back": "Commerce and direct services."
+        },
+        {
+          "front": "Land",
+          "back": "A factor of production whose reward is rent."
+        },
+        {
+          "front": "Labour",
+          "back": "A factor of production whose reward is wages."
+        },
+        {
+          "front": "Capital",
+          "back": "A factor of production whose reward is interest."
+        },
+        {
+          "front": "Enterprise",
+          "back": "The entrepreneur, who earns profit for organising and taking the risk."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A farmer harvests palm fruit, a mill presses it into oil and a trader sells the oil. Which of these is secondary production?",
+          "options": [
+            "Harvesting the fruit",
+            "Pressing the fruit into oil",
+            "Selling the oil",
+            "Carrying the oil to market"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is a tertiary (service) activity?",
+          "options": [
+            "Mining tin",
+            "Farming yams",
+            "Making furniture",
+            "Teaching in a private school"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The factors of production are",
+          "options": [
+            "land, labour, capital and enterprise",
+            "money, shops, cars and houses",
+            "buying, selling, saving and spending",
+            "wages, rent, interest and profit"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which reward goes to the factor of production called land?",
+          "options": [
+            "Wages",
+            "Interest",
+            "Rent",
+            "Profit"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A bakery buys flour, bakes bread and sells it over the counter in its own shop. It is engaged in both",
+          "options": [
+            "extractive industry and commerce",
+            "manufacturing and commerce",
+            "construction and direct services",
+            "extractive industry and direct services"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Classify each of these as industry, commerce or direct service and give a reason: (a) a fisherman on the Niger; (b) a supermarket; (c) a barber.",
+          "markScheme": [
+            "Classifies the fisherman as industry (extractive)",
+            "Gives a correct reason for the fisherman",
+            "Classifies the supermarket as commerce",
+            "Gives a correct reason for the supermarket",
+            "Classifies the barber as a direct service",
+            "Gives a correct reason for the barber"
+          ],
+          "modelAnswer": "The fisherman is in extractive industry, because he takes fish from nature. A supermarket is commerce, because it buys goods and sells them to customers. A barber is a direct service, because he does work for people and makes no goods.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The fisherman is in industry, extractive, because he takes fish from nature. (b) A supermarket is commerce, because it buys goods and sells them to customers. (c) A barber is a direct service, because he does work for people and makes no goods.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) The fisherman is in industry, extractive"
+                },
+                {
+                  "point": 1,
+                  "quote": "because he takes fish from nature"
+                },
+                {
+                  "point": 2,
+                  "quote": "(b) A supermarket is commerce"
+                },
+                {
+                  "point": 3,
+                  "quote": "because it buys goods and sells them to customers"
+                },
+                {
+                  "point": 4,
+                  "quote": "(c) A barber is a direct service"
+                },
+                {
+                  "point": 5,
+                  "quote": "because he does work for people and makes no goods"
+                }
+              ],
+              "feedback": "Full marks. Every classification has a reason that fits the definition."
+            },
+            {
+              "tier": "full",
+              "text": "Fisherman: industry (extractive), since he gets the fish from the river instead of making it. Supermarket: commerce, because it is only buying and selling, it does not make the goods. Barber: direct service, because the product is the haircut done for the customer, not a thing that is made.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fisherman: industry (extractive)"
+                },
+                {
+                  "point": 1,
+                  "quote": "since he gets the fish from the river instead of making it"
+                },
+                {
+                  "point": 2,
+                  "quote": "Supermarket: commerce"
+                },
+                {
+                  "point": 3,
+                  "quote": "because it is only buying and selling, it does not make the goods"
+                },
+                {
+                  "point": 4,
+                  "quote": "Barber: direct service"
+                },
+                {
+                  "point": 5,
+                  "quote": "the product is the haircut done for the customer, not a thing that is made"
+                }
+              ],
+              "feedback": "All six marks. Explaining that the supermarket does not make the goods shows why it is commerce, not industry."
+            },
+            {
+              "tier": "partial",
+              "text": "Fisherman is industry. Supermarket is commerce. Barber is direct service.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fisherman is industry"
+                },
+                {
+                  "point": 2,
+                  "quote": "Supermarket is commerce"
+                },
+                {
+                  "point": 4,
+                  "quote": "Barber is direct service"
+                }
+              ],
+              "feedback": "All three classifications are correct, but the question also asks for a reason for each, such as taking fish from nature, buying and selling goods, and doing work for people."
+            },
+            {
+              "tier": "partial",
+              "text": "The fisherman is in commerce because he sells fish. A supermarket is commerce because it sells goods. A barber is a direct service because he cuts hair.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "A supermarket is commerce"
+                },
+                {
+                  "point": 3,
+                  "quote": "because it sells goods"
+                },
+                {
+                  "point": 4,
+                  "quote": "A barber is a direct service"
+                },
+                {
+                  "point": 5,
+                  "quote": "because he cuts hair"
+                }
+              ],
+              "feedback": "Supermarket and barber are right. The fisherman takes fish from nature, which is extractive industry; the person who buys the fish and resells it is the commerce.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "All of them are business. They all want money.",
+              "meets": [],
+              "feedback": "Each belongs to a different group: industry, commerce or direct service. Say which and why."
+            },
+            {
+              "tier": "weak",
+              "text": "The fisherman is direct service because he serves fish. The supermarket is industry because it is big. The barber is commerce because he trades haircuts.",
+              "meets": [],
+              "feedback": "The groups depend on what the business does, not its size or the word 'serve'. The fisherman takes goods from nature, the supermarket buys and sells, and the barber does work for people."
+            }
+          ]
+        },
+        {
+          "prompt": "Describe the chain of production of garri from the cassava farm to the buyer. Name the type of business at each stage and one aid to trade used along the way.",
+          "markScheme": [
+            "Says the farmer grows the cassava and names this extractive industry (primary production)",
+            "Says the processor turns it into garri and names this manufacturing (secondary production)",
+            "Says the wholesaler buys in bulk and sells on, and names this commerce",
+            "Says the retailer sells small amounts to consumers",
+            "Names an aid to trade (for example transport or banking) and says how it helps"
+          ],
+          "modelAnswer": "A farmer grows and harvests the cassava, which is extractive industry. A processor turns it into garri, which is manufacturing. A wholesaler buys the garri in bags and sells to retailers, which is commerce. The retailer sells small amounts to buyers. Transport carries the garri from the mill to the wholesaler, which is an aid to trade because it brings goods to where they are needed.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The cassava is grown and harvested by a farmer, which is extractive industry (primary production). The cassava is then peeled, grated, pressed and fried into garri in a processing mill, which is manufacturing (secondary production). A wholesaler buys the garri in bags and sells to retailers; this is commerce. The retailer sells small cups of garri to buyers in the market. Transport by lorry from the mill to the wholesaler is an aid to trade, because it carries the goods to where they are needed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "grown and harvested by a farmer, which is extractive industry (primary production)"
+                },
+                {
+                  "point": 1,
+                  "quote": "peeled, grated, pressed and fried into garri in a processing mill, which is manufacturing (secondary production)"
+                },
+                {
+                  "point": 2,
+                  "quote": "A wholesaler buys the garri in bags and sells to retailers; this is commerce"
+                },
+                {
+                  "point": 3,
+                  "quote": "The retailer sells small cups of garri to buyers in the market"
+                },
+                {
+                  "point": 4,
+                  "quote": "Transport by lorry from the mill to the wholesaler is an aid to trade, because it carries the goods to where they are needed"
+                }
+              ],
+              "feedback": "Full marks. Each stage has its type and the aid to trade is explained."
+            },
+            {
+              "tier": "full",
+              "text": "Stage one is the farmer who plants and harvests cassava; this is extractive industry. Stage two is the garri processor, who changes the cassava into garri: manufacturing. Stage three is the wholesaler, a commerce business that buys many bags and sells them on. Stage four is the retailer, who sells to consumers in small measures. Along the way, a bank may lend money to the processor, and this banking service is an aid to trade because it provides the money to keep the mill working.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the farmer who plants and harvests cassava; this is extractive industry"
+                },
+                {
+                  "point": 1,
+                  "quote": "garri processor, who changes the cassava into garri: manufacturing"
+                },
+                {
+                  "point": 2,
+                  "quote": "the wholesaler, a commerce business that buys many bags and sells them on"
+                },
+                {
+                  "point": 3,
+                  "quote": "the retailer, who sells to consumers in small measures"
+                },
+                {
+                  "point": 4,
+                  "quote": "a bank may lend money to the processor, and this banking service is an aid to trade because it provides the money to keep the mill working"
+                }
+              ],
+              "feedback": "All five marks. Using banking as the aid to trade shows you see beyond transport."
+            },
+            {
+              "tier": "partial",
+              "text": "The farmer grows cassava, that is extractive industry. The processor turns it to garri, which is manufacturing. Then the garri is sold in the market.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The farmer grows cassava, that is extractive industry"
+                },
+                {
+                  "point": 1,
+                  "quote": "The processor turns it to garri, which is manufacturing"
+                }
+              ],
+              "feedback": "The first two stages are right. Name the wholesaler and the retailer, say that they are commerce, and give an aid to trade such as transport."
+            },
+            {
+              "tier": "partial",
+              "text": "The garri is made in a factory, which is manufacturing. A wholesaler sells it to retailers, which is commerce. Retailers sell to the consumers. Lorries carry it from place to place, which is transport, an aid to trade.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "which is manufacturing"
+                },
+                {
+                  "point": 2,
+                  "quote": "A wholesaler sells it to retailers, which is commerce"
+                },
+                {
+                  "point": 3,
+                  "quote": "Retailers sell to the consumers"
+                },
+                {
+                  "point": 4,
+                  "quote": "Lorries carry it from place to place, which is transport, an aid to trade"
+                }
+              ],
+              "feedback": "A good chain, but you began in the middle. The chain starts with the farmer who grows the cassava, which is extractive industry."
+            },
+            {
+              "tier": "weak",
+              "text": "Cassava becomes garri by the work of one person who is everything: farmer, miller and trader.",
+              "meets": [],
+              "feedback": "In a chain of production different businesses do different stages. Name them in order: farmer, processor, wholesaler, retailer."
+            },
+            {
+              "tier": "weak",
+              "text": "First is the consumer then the retailer then the wholesaler then the factory then the farm.",
+              "meets": [],
+              "feedback": "That is the chain backwards. Goods start with the farm and end with the consumer."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

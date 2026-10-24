@@ -1,0 +1,2728 @@
+{
+  "subject": "Financial Accounting",
+  "yearGroup": "SS3",
+  "weeks": {
+    "1": {
+      "topic": "Company final accounts, ratios and the purchase of a business",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. prepare the trading, profit and loss and appropriation accounts of a limited company from a trial balance and adjustments;\n2. treat debenture interest, depreciation and taxation correctly;\n3. prepare the shareholders' funds section of a company balance sheet;\n4. calculate and interpret gross profit margin, current ratio and acid test ratio;\n5. prepare a purchase of business account and find goodwill;\n6. record the issue of shares at a premium.\n\n## Materials\n\nPast WASSCE company accounts questions, a printed trial balance of Okonkwo and Sons Ltd, calculators.\n\n## Starter (5 minutes)\n\nAsk: a company earned ₦1 080 000 before tax. Is that what the shareholders can share? Let learners list the deductions: tax, reserves, dividends.\n\n## Development\n\n1. Revise the layout of a company's accounts: trading, profit and loss (with debenture interest), appropriation (tax, reserves, dividends, retained profit).\n2. Work the Okonkwo and Sons trial balance in stages: cost of goods sold, expenses with depreciation and debenture interest, tax at 30%.\n3. Appropriation: transfer to general reserve, preference dividend (a percentage of preference share capital), ordinary dividend.\n4. Shareholders' funds: share capital, share premium, reserves and retained profit.\n5. Ratios: current ratio and acid test; say what each shows about liquidity.\n6. Purchase of business: purchase consideration less net assets taken over gives goodwill.\n\n## Class activity\n\nPast question: groups work Okonkwo and Sons for 25 minutes, WASSCE style, then swap scripts and mark with the scheme.\n\n## Evaluation\n\n1. Why is debenture interest charged before tax and a dividend after tax?\n2. How is goodwill found in a purchase of a business?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "The final accounts of Okonkwo and Sons Ltd",
+        "content": "# Company final accounts, ratios and the purchase of a business\n\nWASSCE often asks for the final accounts of a limited company for internal use. The steps are the same as for a sole trader, with extra items: **debenture interest** is an expense; **tax** is deducted from profit; and the profit left is shared in the **appropriation account**.\n\n## Worked example: Okonkwo and Sons Ltd, Nnewi\n\nSales ₦4 800 000; purchases ₦2 900 000; opening stock ₦400 000; closing stock ₦460 000; distribution expenses ₦300 000; administration expenses ₦420 000; plant at cost ₦1 200 000, to be depreciated at 10%; 10% debentures ₦400 000; company tax 30% of profit.\n\n- Cost of goods sold = 400 000 + 2 900 000 − 460 000 = **₦2 840 000**\n- Gross profit = 4 800 000 − 2 840 000 = **₦1 960 000**\n- Expenses = 300 000 + 420 000 + depreciation 120 000 + debenture interest 40 000 = ₦880 000\n- Net profit before tax = 1 960 000 − 880 000 = **₦1 080 000**\n- Tax = 30% × 1 080 000 = ₦324 000\n- Net profit after tax = **₦756 000**\n\n## Appropriation\n\nTransfer to general reserve ₦100 000; preference dividend 8% of ₦500 000 = ₦40 000; ordinary dividend 20% of ₦2 000 000 = ₦400 000. Retained profit for the year = 756 000 − 100 000 − 40 000 − 400 000 = **₦216 000**. With ₦250 000 brought forward, the balance carried forward is **₦466 000**.\n\n## Shareholders' funds\n\n| | ₦ |\n| --- | --- |\n| Ordinary shares | 2 000 000 |\n| 8% preference shares | 500 000 |\n| General reserve (100 000 + 100 000) | 200 000 |\n| Retained profit | 466 000 |\n| **Total** | **3 166 000** |\n\n## Ratios\n\n- Current ratio = current assets ÷ current liabilities.\n- Acid test = (current assets − stock) ÷ current liabilities.\n\nFor example, with current assets of ₦480 000 (stock ₦120 000) and current liabilities of ₦300 000, the current ratio is 1.6:1 and the acid test is 360 000 ÷ 300 000 = **1.2:1**. A ratio above 1 means the company can pay its short-term debts.\n\n## Purchase of a business\n\nIf a company pays ₦1 400 000 for a business whose assets are premises ₦900 000, stock ₦300 000 and debtors ₦200 000, and takes over creditors of ₦160 000, net assets are ₦1 240 000 and goodwill is 1 400 000 − 1 240 000 = **₦160 000**.\n\n## Issue of shares at a premium\n\nA company issues 100 000 ordinary shares of 50 kobo each at 80 kobo. The premium is 30 kobo a share: 100 000 × 0.30 = ₦30 000, credited to share premium. Share capital is ₦50 000."
+      },
+      "cards": [
+        {
+          "front": "Debenture interest",
+          "back": "An expense charged in the profit and loss account before tax."
+        },
+        {
+          "front": "Dividend",
+          "back": "A share of profit paid to shareholders; an appropriation of profit after tax."
+        },
+        {
+          "front": "Preference dividend",
+          "back": "A fixed percentage of preference share capital, paid before the ordinary dividend."
+        },
+        {
+          "front": "Retained profit",
+          "back": "The profit left in the company after tax, reserves and dividends."
+        },
+        {
+          "front": "Shareholders' funds",
+          "back": "Share capital + share premium + reserves + retained profit."
+        },
+        {
+          "front": "Current ratio",
+          "back": "Current assets ÷ current liabilities."
+        },
+        {
+          "front": "Acid test ratio",
+          "back": "(Current assets − stock) ÷ current liabilities."
+        },
+        {
+          "front": "Goodwill on purchase of a business",
+          "back": "Purchase consideration less net assets taken over."
+        },
+        {
+          "front": "Share premium",
+          "back": "The amount paid for a share above its nominal value, credited to a share premium account."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A company issued 10% debentures of ₦400 000 on 1 October. What interest accrues to 31 December?",
+          "options": [
+            "₦40 000",
+            "₦4 000",
+            "₦10 000",
+            "₦30 000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A company's profit after tax is ₦300 000. It transfers ₦50 000 to reserve, pays a preference dividend of ₦30 000 and an ordinary dividend of ₦120 000. What is the retained profit for the year?",
+          "options": [
+            "₦100 000",
+            "₦200 000",
+            "₦70 000",
+            "₦150 000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A company issues 100 000 ordinary shares of 50 kobo each at 80 kobo each. What amount is credited to the share premium account?",
+          "options": [
+            "₦80 000",
+            "₦50 000",
+            "₦20 000",
+            "₦30 000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A company has current assets of ₦480 000, of which stock is ₦120 000, and current liabilities of ₦300 000. What is its acid test ratio?",
+          "options": [
+            "1.6:1",
+            "1.2:1",
+            "0.4:1",
+            "0.8:1"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A company buys a business for ₦1 400 000. The business has assets of ₦1 400 000 and creditors of ₦160 000. What is the goodwill?",
+          "options": [
+            "Nil",
+            "₦1 240 000",
+            "₦160 000",
+            "₦1 560 000"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Okonkwo and Sons Ltd had sales of ₦4 800 000, purchases ₦2 900 000, opening stock ₦400 000, closing stock ₦460 000, distribution expenses ₦300 000 and administration expenses ₦420 000. Plant costing ₦1 200 000 is to be depreciated at 10%. The company has ₦400 000 of 10% debentures. Company tax is 30% of the net profit. Calculate (a) the gross profit, (b) the total expenses, (c) the net profit before tax, (d) the net profit after tax.",
+          "markScheme": [
+            "Gross profit: 4 800 000 − (400 000 + 2 900 000 − 460 000) = ₦1 960 000",
+            "Total expenses: 300 000 + 420 000 + 120 000 depreciation + 40 000 debenture interest = ₦880 000",
+            "Net profit before tax: 1 960 000 − 880 000 = ₦1 080 000",
+            "Tax 30% × 1 080 000 = ₦324 000, so net profit after tax = ₦756 000"
+          ],
+          "modelAnswer": "(a) Cost of goods sold = 400 000 + 2 900 000 − 460 000 = 2 840 000; gross profit = 4 800 000 − 2 840 000 = ₦1 960 000. (b) Depreciation = 10% × 1 200 000 = 120 000; debenture interest = 10% × 400 000 = 40 000; total expenses = 300 000 + 420 000 + 120 000 + 40 000 = ₦880 000. (c) Net profit before tax = 1 960 000 − 880 000 = ₦1 080 000. (d) Tax = 30% × 1 080 000 = 324 000; net profit after tax = 1 080 000 − 324 000 = ₦756 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Cost of goods sold = 400 000 + 2 900 000 − 460 000 = 2 840 000, so gross profit = 4 800 000 − 2 840 000 = 1 960 000. (b) Depreciation 120 000 and debenture interest 40 000, so expenses = 300 000 + 420 000 + 120 000 + 40 000 = 880 000. (c) 1 960 000 − 880 000 = 1 080 000. (d) Tax = 30/100 × 1 080 000 = 324 000, so profit after tax = 756 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cost of goods sold = 400 000 + 2 900 000 − 460 000 = 2 840 000, so gross profit = 4 800 000 − 2 840 000 = 1 960 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Depreciation 120 000 and debenture interest 40 000, so expenses = 300 000 + 420 000 + 120 000 + 40 000 = 880 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "1 960 000 − 880 000 = 1 080 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Tax = 30/100 × 1 080 000 = 324 000, so profit after tax = 756 000."
+                }
+              ],
+              "feedback": "Full marks. You included the depreciation and the debenture interest in the expenses and charged tax on the profit before tax."
+            },
+            {
+              "tier": "full",
+              "text": "The gross profit is sales 4 800 000 less the goods that cost 2 840 000, which is ₦1 960 000. The expenses are 300 000 + 420 000, plus 10% of the plant (120 000) and 10% of the debentures (40 000), a total of 880 000. The profit before tax is 1 960 000 − 880 000 = 1 080 000. The tax is 324 000 and what is left for shareholders is 756 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sales 4 800 000 less the goods that cost 2 840 000, which is ₦1 960 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "The expenses are 300 000 + 420 000, plus 10% of the plant (120 000) and 10% of the debentures (40 000), a total of 880 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "The profit before tax is 1 960 000 − 880 000 = 1 080 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The tax is 324 000 and what is left for shareholders is 756 000."
+                }
+              ],
+              "feedback": "Four marks. Your working shows where each expense comes from."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 4 800 000 − 2 840 000 = 1 960 000. (b) 300 000 + 420 000 + 120 000 = 840 000. (c) 1 960 000 − 840 000 = 1 120 000. (d) Tax 336 000, profit after tax 784 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) 4 800 000 − 2 840 000 = 1 960 000."
+                }
+              ],
+              "feedback": "The gross profit is right. You left out the debenture interest of 40 000 (10% of 400 000), so the expenses are 880 000, the profit before tax 1 080 000 and the profit after tax 756 000."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) Expenses: 300 000 + 420 000 + 120 000 + 40 000 = 880 000. (a) Gross profit = 4 800 000 − 2 900 000 = 1 900 000. (c) 1 900 000 − 880 000 = 1 020 000. (d) Tax 306 000, so 714 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) Expenses: 300 000 + 420 000 + 120 000 + 40 000 = 880 000."
+                }
+              ],
+              "feedback": "The expenses are right. For the gross profit you used purchases instead of cost of goods sold: 400 000 + 2 900 000 − 460 000 = 2 840 000. Then every later figure changes.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 4 800 000 − 2 900 000 = 1 900 000. (b) 300 000 + 420 000 = 720 000. (c) 1 180 000. (d) 30% of profit 354 000, so 826 000.",
+              "meets": [],
+              "feedback": "Cost of goods sold must use opening and closing stock, depreciation and debenture interest are expenses, and tax is charged on the profit before tax. The correct profit after tax is 756 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Gross profit = 4 800 000 − 2 840 000 = 1 960 000. Tax is 30% so I take 30% of that: 588 000 and the profit is 1 372 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Gross profit = 4 800 000 − 2 840 000 = 1 960 000."
+                }
+              ],
+              "feedback": "Tax is charged on the net profit before tax, not on the gross profit. Deduct the expenses (880 000) first to get 1 080 000, and then tax of 324 000 gives 756 000."
+            }
+          ]
+        },
+        {
+          "prompt": "The net profit after tax of Okonkwo and Sons Ltd was ₦756 000. The directors transferred ₦100 000 to general reserve, proposed a dividend of 8% on ₦500 000 preference shares and 20% on ₦2 000 000 ordinary shares. The general reserve before the transfer was ₦100 000 and retained profit brought forward was ₦250 000. Prepare the appropriation account and show the total of the shareholders' funds.",
+          "markScheme": [
+            "Preference dividend ₦40 000 and ordinary dividend ₦400 000",
+            "Retained profit for the year: 756 000 − 100 000 − 40 000 − 400 000 = ₦216 000",
+            "Retained profit carried forward: 216 000 + 250 000 = ₦466 000",
+            "Shareholders' funds: 2 000 000 + 500 000 + general reserve 200 000 + 466 000 = ₦3 166 000"
+          ],
+          "modelAnswer": "Preference dividend = 8% × 500 000 = 40 000. Ordinary dividend = 20% × 2 000 000 = 400 000. Retained profit for the year = 756 000 − 100 000 − 40 000 − 400 000 = ₦216 000. Retained profit carried forward = 216 000 + 250 000 = ₦466 000. General reserve is now 100 000 + 100 000 = 200 000. Shareholders' funds = ordinary shares 2 000 000 + preference shares 500 000 + general reserve 200 000 + retained profit 466 000 = ₦3 166 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Preference dividend 8% × 500 000 = 40 000; ordinary dividend 20% × 2 000 000 = 400 000. Retained profit for the year = 756 000 − 100 000 − 40 000 − 400 000 = 216 000. Plus 250 000 brought forward = 466 000 carried forward. Shareholders' funds = 2 000 000 + 500 000 + 200 000 general reserve + 466 000 = ₦3 166 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Preference dividend 8% × 500 000 = 40 000; ordinary dividend 20% × 2 000 000 = 400 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Retained profit for the year = 756 000 − 100 000 − 40 000 − 400 000 = 216 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Plus 250 000 brought forward = 466 000 carried forward."
+                },
+                {
+                  "point": 3,
+                  "quote": "Shareholders' funds = 2 000 000 + 500 000 + 200 000 general reserve + 466 000 = ₦3 166 000."
+                }
+              ],
+              "feedback": "Full marks. The general reserve of 200 000 was updated for this year's transfer, which many learners forget."
+            },
+            {
+              "tier": "full",
+              "text": "The preference shareholders get 8% of 500 000, which is 40 000, and the ordinary shareholders get 20% of 2 000 000, which is 400 000. Out of 756 000, after 100 000 to the reserve and both dividends, 216 000 stays in the company. With 250 000 from last year the retained profit is 466 000. The reserve is now 200 000, so the shareholders' funds are 2 000 000 + 500 000 + 200 000 + 466 000 = 3 166 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8% of 500 000, which is 40 000, and the ordinary shareholders get 20% of 2 000 000, which is 400 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Out of 756 000, after 100 000 to the reserve and both dividends, 216 000 stays in the company."
+                },
+                {
+                  "point": 2,
+                  "quote": "With 250 000 from last year the retained profit is 466 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The reserve is now 200 000, so the shareholders' funds are 2 000 000 + 500 000 + 200 000 + 466 000 = 3 166 000."
+                }
+              ],
+              "feedback": "Four marks, with good reasoning in words at each step."
+            },
+            {
+              "tier": "partial",
+              "text": "Preference dividend 40 000, ordinary dividend 400 000. Retained profit = 756 000 − 40 000 − 400 000 = 316 000. Carried forward = 316 000 + 250 000 = 566 000. Funds = 2 000 000 + 500 000 + 100 000 + 566 000 = 3 166 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Preference dividend 40 000, ordinary dividend 400 000."
+                }
+              ],
+              "feedback": "The dividends are right. The transfer to reserve of 100 000 must also be deducted, so retained profit for the year is 216 000 and the balance 466 000. Your total is the same only because the reserve is also 100 000 short."
+            },
+            {
+              "tier": "partial",
+              "text": "Preference dividend 8% of 500 000 = 40 000. Ordinary dividend 20% of 2 000 000 = 400 000. Retained profit for the year = 756 000 − 100 000 − 40 000 − 400 000 = 216 000. Shareholders' funds = 2 000 000 + 500 000 + 100 000 + 216 000 = 2 816 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Preference dividend 8% of 500 000 = 40 000. Ordinary dividend 20% of 2 000 000 = 400 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Retained profit for the year = 756 000 − 100 000 − 40 000 − 400 000 = 216 000."
+                }
+              ],
+              "feedback": "You have the appropriation correct. The funds must include the retained profit brought forward (466 000 in all) and the reserve after the transfer (200 000): 3 166 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Dividend is 28% of 756 000 = 211 680. Retained profit = 756 000 − 211 680 = 544 320.",
+              "meets": [],
+              "feedback": "Dividends are percentages of the share capital of each class, not of the profit: 40 000 on the preference shares and 400 000 on the ordinary shares. The retained profit for the year is 216 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Dividends are 40 000 and 400 000. The shareholders' funds are the dividends: 440 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Dividends are 40 000 and 400 000."
+                }
+              ],
+              "feedback": "The dividends are right. Shareholders' funds are the share capital, reserves and retained profit of the company, which total 3 166 000."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Departmental accounts with transfers, and branch profit",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. say why businesses keep departmental and branch accounts, and how a department differs from a branch;\n2. prepare departmental trading and profit and loss accounts, including goods transferred between departments at cost;\n3. choose a fair basis for apportioning each expense;\n4. prepare a branch account when goods are sent at cost and cash sales are remitted to head office;\n5. record inter-branch transfers through head office.\n\n## Materials\n\nPast WASSCE questions on departmental and branch accounts, a floor plan of a supermarket on Zaria Road, Kano, calculators.\n\n## Starter (5 minutes)\n\nAsk: the household department needs ₦40 000 of rice and oil from the foodstuff department for a promotion. How should the accounts show it, so that neither department's profit is wrong?\n\n## Development\n\n1. Meaning and importance of departmental accounts and branch accounts; differences between a department and a branch.\n2. Departmental trading accounts: each has its own stock, purchases and sales. Goods transferred at cost are deducted from the sending department's purchases and added to the receiving department's.\n3. Apportion expenses on a fair basis: floor area for rent, number of staff for wages, sales for insurance and advertising.\n4. Net profit of each department = gross profit − its share of the expenses. The two should add up to the net profit of the business.\n5. Branch account in the head office books (goods at cost): debit opening stock, goods sent and expenses paid by head office; credit sales remitted and closing stock; the balance is the profit.\n6. Inter-branch transfers: head office debits the receiving branch and credits the sending branch.\n\n## Class activity\n\nPast WASSCE question worked in pairs under time, then marked against a scheme.\n\n## Evaluation\n\n1. In which department's accounts is a transfer deducted from purchases?\n2. Why must the departments' net profits add up to the business's net profit?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Zaria Road Stores: two departments and a branch",
+        "content": "# Departmental accounts with transfers, and branch profit\n\n## Departments\n\nA **department** is a section of a business in the same premises, with its own stock and sales. Separate trading accounts show which section earns the best gross profit. A **branch** is a part of the business in a different place.\n\n## Transfers between departments\n\nIf the foodstuff department (F) passes goods costing ₦40 000 to the household department (H) at cost, F's purchases are reduced by ₦40 000 and H's purchases are increased by the same amount.\n\n**Worked example: Zaria Road Stores, Kano.**\n\n| | F ₦ | H ₦ |\n| --- | --- | --- |\n| Sales | 1 200 000 | 800 000 |\n| Opening stock | 90 000 | 110 000 |\n| Purchases | 700 000 | 450 000 |\n| Transfer F to H at cost | (40 000) | 40 000 |\n| Closing stock | (80 000) | (130 000) |\n| Cost of goods sold | 670 000 | 470 000 |\n| **Gross profit** | **530 000** | **330 000** |\n\nExpenses are shared: rent ₦100 000 by floor area (2:3), wages ₦180 000 by staff (5:4), insurance ₦30 000 by sales (3:2).\n\n| | F | H |\n| --- | --- | --- |\n| Rent | 40 000 | 60 000 |\n| Wages | 100 000 | 80 000 |\n| Insurance | 18 000 | 12 000 |\n| Total | 158 000 | 152 000 |\n| **Net profit** | **372 000** | **178 000** |\n\nTotal net profit = ₦550 000. Check: total gross profit 860 000 less total expenses 310 000 = 550 000.\n\n## Branch accounts\n\nIn the head office books, a branch account for a branch supplied at cost:\n\n**Debit:** opening stock, goods sent to branch, expenses paid by head office.\n**Credit:** sales (cash sent to head office), closing stock.\nThe **balancing figure** is the profit or loss of the branch.\n\n**Worked example: Kaduna branch.** Opening stock ₦50 000; goods sent ₦360 000; rent ₦24 000 and salaries ₦60 000 paid by head office; cash sales sent to head office ₦450 000; closing stock ₦70 000.\n\nDebit side: 50 000 + 360 000 + 24 000 + 60 000 = ₦494 000.\nCredit side: 450 000 + 70 000 = ₦520 000.\nProfit = 520 000 − 494 000 = **₦26 000**.\n\nCheck: cost of goods sold = 50 000 + 360 000 − 70 000 = 340 000; gross profit = 450 000 − 340 000 = 110 000; less expenses 84 000 = ₦26 000.\n\n## Inter-branch transfers\n\nWhen one branch sends goods to another on head office's instruction, head office debits the branch receiving the goods and credits the branch sending them."
+      },
+      "cards": [
+        {
+          "front": "Basis for apportioning wages between departments",
+          "back": "Number of staff in each department."
+        },
+        {
+          "front": "Basis for apportioning insurance of stock",
+          "back": "Value of stock, or sales."
+        },
+        {
+          "front": "Transfer of goods between departments at cost",
+          "back": "Deducted from the sender's purchases and added to the receiver's."
+        },
+        {
+          "front": "Net profit of a department",
+          "back": "Its gross profit less its share of the expenses."
+        },
+        {
+          "front": "Branch account in head office books",
+          "back": "Debit: opening stock, goods sent, expenses; credit: sales remitted, closing stock; balance = profit."
+        },
+        {
+          "front": "Closing stock of a branch",
+          "back": "Credited in the branch account."
+        },
+        {
+          "front": "Difference between a department and a branch",
+          "back": "A branch is in a different place from the head office; a department is in the same premises."
+        },
+        {
+          "front": "Inter-branch transfer",
+          "back": "Head office debits the receiving branch and credits the sending branch."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The cost of advertising a supermarket as a whole is best shared between its departments on the basis of",
+          "options": [
+            "sales of each department",
+            "floor area of each department",
+            "number of staff in each department",
+            "the cost of the departmental stock"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Goods costing ₦40 000 are transferred at cost from department F to department H. In the departmental trading accounts this is",
+          "options": [
+            "added to the sales of F",
+            "deducted from the purchases of H and added to F's",
+            "ignored because both are in the same business",
+            "deducted from the purchases of F and added to the purchases of H"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A department's sales were ₦500 000. Its opening stock was ₦30 000, purchases ₦320 000 and closing stock ₦50 000. What was its gross profit?",
+          "options": [
+            "₦170 000",
+            "₦300 000",
+            "₦200 000",
+            "₦230 000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "In the branch account in the head office books, the closing stock of the branch is entered",
+          "options": [
+            "on the credit side",
+            "on the debit side",
+            "in the sales account",
+            "in the head office cash book only"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A branch has sales of ₦300 000 and cost of goods sold of ₦220 000. Expenses of the branch are ₦50 000. What is the branch profit?",
+          "options": [
+            "₦80 000",
+            "₦30 000",
+            "₦130 000",
+            "₦50 000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Zaria Road Stores, Kano, has two departments. Foodstuff (F): sales ₦1 200 000, opening stock ₦90 000, purchases ₦700 000, closing stock ₦80 000. Household (H): sales ₦800 000, opening stock ₦110 000, purchases ₦450 000, closing stock ₦130 000. Goods costing ₦40 000 were transferred from F to H at cost. Calculate for each department (a) the cost of goods sold, (b) the gross profit.",
+          "markScheme": [
+            "F cost of goods sold: 90 000 + 700 000 − 40 000 − 80 000 = ₦670 000",
+            "F gross profit: 1 200 000 − 670 000 = ₦530 000",
+            "H cost of goods sold: 110 000 + 450 000 + 40 000 − 130 000 = ₦470 000",
+            "H gross profit: 800 000 − 470 000 = ₦330 000"
+          ],
+          "modelAnswer": "Foodstuff: cost of goods sold = 90 000 + 700 000 − 40 000 (transfer out) − 80 000 = ₦670 000; gross profit = 1 200 000 − 670 000 = ₦530 000. Household: cost of goods sold = 110 000 + 450 000 + 40 000 (transfer in) − 130 000 = ₦470 000; gross profit = 800 000 − 470 000 = ₦330 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Foodstuff: 90 000 + 700 000 − 40 000 − 80 000 = 670 000 cost of goods sold. Gross profit = 1 200 000 − 670 000 = 530 000. Household: 110 000 + 450 000 + 40 000 − 130 000 = 470 000. Gross profit = 800 000 − 470 000 = 330 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "90 000 + 700 000 − 40 000 − 80 000 = 670 000 cost of goods sold."
+                },
+                {
+                  "point": 1,
+                  "quote": "Gross profit = 1 200 000 − 670 000 = 530 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "110 000 + 450 000 + 40 000 − 130 000 = 470 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Gross profit = 800 000 − 470 000 = 330 000."
+                }
+              ],
+              "feedback": "Full marks. The transfer is deducted from F and added to H, so the total cost is unchanged."
+            },
+            {
+              "tier": "full",
+              "text": "F: its purchases are really 700 000 − 40 000 = 660 000, so cost of goods sold is 90 000 + 660 000 − 80 000 = 670 000 and gross profit is 530 000. H: its purchases are 450 000 + 40 000 = 490 000, so cost of goods sold is 110 000 + 490 000 − 130 000 = 470 000 and gross profit is 330 000. The total gross profit is 860 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "cost of goods sold is 90 000 + 660 000 − 80 000 = 670 000"
+                },
+                {
+                  "point": 1,
+                  "quote": "gross profit is 530 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "cost of goods sold is 110 000 + 490 000 − 130 000 = 470 000"
+                },
+                {
+                  "point": 3,
+                  "quote": "gross profit is 330 000."
+                }
+              ],
+              "feedback": "Four marks. Adjusting the purchases first and then adding the total gross profit is a good check."
+            },
+            {
+              "tier": "partial",
+              "text": "F: 90 000 + 700 000 − 40 000 − 80 000 = 670 000. Gross profit 530 000. H: 110 000 + 450 000 − 40 000 − 130 000 = 390 000. Gross profit 410 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "F: 90 000 + 700 000 − 40 000 − 80 000 = 670 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Gross profit 530 000."
+                }
+              ],
+              "feedback": "F is correct. The goods transferred are received by H, so they are added to H's purchases, not deducted: 110 000 + 450 000 + 40 000 − 130 000 = 470 000, giving a gross profit of 330 000."
+            },
+            {
+              "tier": "partial",
+              "text": "F: 90 000 + 700 000 − 80 000 = 710 000, gross profit 490 000. H: 110 000 + 450 000 + 40 000 − 130 000 = 470 000. Gross profit 330 000.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "H: 110 000 + 450 000 + 40 000 − 130 000 = 470 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Gross profit 330 000."
+                }
+              ],
+              "feedback": "H is right. F also has to be reduced by the transfer of 40 000, because those goods left the department: cost of goods sold 670 000 and gross profit 530 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "F gross profit = 1 200 000 − 700 000 = 500 000. H gross profit = 800 000 − 450 000 = 350 000.",
+              "meets": [],
+              "feedback": "You used purchases as the cost of goods sold. Include the opening and closing stocks and the transfer of 40 000 from F to H. The gross profits are 530 000 and 330 000."
+            },
+            {
+              "tier": "weak",
+              "text": "F: 90 000 + 700 000 − 40 000 − 80 000 = 670 000. The rest is the same for H, 670 000, and gross profit is 800 000 − 670 000 = 130 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "F: 90 000 + 700 000 − 40 000 − 80 000 = 670 000."
+                }
+              ],
+              "feedback": "You have F. H has its own stocks and receives the transfer: 110 000 + 450 000 + 40 000 − 130 000 = 470 000, so its gross profit is 330 000."
+            }
+          ]
+        },
+        {
+          "prompt": "The head office of Zaria Road Stores controls a branch at Kaduna. During the year: opening stock at the branch ₦50 000; goods sent from head office at cost ₦360 000; rent ₦24 000 and salaries ₦60 000 paid by head office; cash sales of ₦450 000 sent to head office; closing stock ₦70 000. Prepare the branch account in the head office books and show that the profit agrees with a branch trading and profit and loss account.",
+          "markScheme": [
+            "Debit side: opening stock 50 000, goods sent 360 000, rent 24 000 and salaries 60 000, a total of ₦494 000",
+            "Credit side: cash sales 450 000 and closing stock 70 000, a total of ₦520 000",
+            "Branch profit as the balancing figure: 520 000 − 494 000 = ₦26 000",
+            "Check: gross profit 450 000 − (50 000 + 360 000 − 70 000) = 110 000, less expenses 84 000 = ₦26 000"
+          ],
+          "modelAnswer": "Debit side: stock 50 000, goods sent 360 000, rent 24 000, salaries 60 000 = ₦494 000. Credit side: sales 450 000 and closing stock 70 000 = ₦520 000. The balancing figure, ₦26 000, is the profit of the branch. Check: cost of goods sold = 50 000 + 360 000 − 70 000 = 340 000; gross profit = 450 000 − 340 000 = 110 000; expenses = 24 000 + 60 000 = 84 000; net profit = 110 000 − 84 000 = ₦26 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Branch account. Dr: stock 50 000, goods sent 360 000, rent 24 000, salaries 60 000 = 494 000. Cr: sales 450 000, closing stock 70 000 = 520 000. Profit to balance, 520 000 − 494 000 = ₦26 000. Check: cost of goods sold 340 000, gross profit 450 000 − 340 000 = 110 000, less expenses 84 000 = 26 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Dr: stock 50 000, goods sent 360 000, rent 24 000, salaries 60 000 = 494 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Cr: sales 450 000, closing stock 70 000 = 520 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Profit to balance, 520 000 − 494 000 = ₦26 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Check: cost of goods sold 340 000, gross profit 450 000 − 340 000 = 110 000, less expenses 84 000 = 26 000."
+                }
+              ],
+              "feedback": "Full marks. The check by a separate trading and profit and loss account proves the branch account."
+            },
+            {
+              "tier": "full",
+              "text": "On the debit side I put what the head office gave to the branch, which is the stock 50 000, the goods 360 000, and the rent and salaries it paid, 84 000; the total is 494 000. On the credit side I put what the branch returned, the cash sales 450 000 and the closing stock 70 000, which makes 520 000. The credit side is bigger by 26 000, so the branch made a profit of 26 000. To check: the goods sold cost 340 000, so gross profit is 110 000 and after the 84 000 expenses it is 26 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "On the debit side I put what the head office gave to the branch, which is the stock 50 000, the goods 360 000, and the rent and salaries it paid, 84 000; the total is 494 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "On the credit side I put what the branch returned, the cash sales 450 000 and the closing stock 70 000, which makes 520 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "The credit side is bigger by 26 000, so the branch made a profit of 26 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "To check: the goods sold cost 340 000, so gross profit is 110 000 and after the 84 000 expenses it is 26 000."
+                }
+              ],
+              "feedback": "Four marks. Describing the debit side as 'what head office gave' and the credit side as 'what the branch returned' is a good way to remember the sides."
+            },
+            {
+              "tier": "partial",
+              "text": "Dr: stock 50 000, goods 360 000, rent 24 000, salaries 60 000 = 494 000. Cr: sales 450 000 = 450 000. Loss = 44 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Dr: stock 50 000, goods 360 000, rent 24 000, salaries 60 000 = 494 000."
+                }
+              ],
+              "feedback": "The debit side is right. The closing stock of 70 000 is a credit, because the branch still has the goods, so the credit side is 520 000 and the profit is 26 000, not a loss."
+            },
+            {
+              "tier": "partial",
+              "text": "Cr: sales 450 000 and closing stock 70 000 = 520 000. Dr: stock 50 000, goods 360 000 = 410 000. Profit = 520 000 − 410 000 = 110 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Cr: sales 450 000 and closing stock 70 000 = 520 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Dr: stock 50 000, goods 360 000 = 410 000. Profit = 520 000 − 410 000 = 110 000."
+                }
+              ],
+              "feedback": "The credit side is right. The rent and salaries paid by head office, 84 000, are debits too, so the debit side is 494 000. The profit of 110 000 is the gross profit; the net profit is 26 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Sales 450 000 less goods sent 360 000 = 90 000. The branch profit is 90 000.",
+              "meets": [],
+              "feedback": "The stocks and the expenses are missing. The branch account has all of them: debits 494 000, credits 520 000, so the profit is 26 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Debit: stock 50 000, goods 360 000, rent 24 000, salaries 60 000 = 494 000. The credit side is the debit side, and the profit is 494 000 because that is what the head office put in.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Debit: stock 50 000, goods 360 000, rent 24 000, salaries 60 000 = 494 000."
+                }
+              ],
+              "feedback": "The debit side is right, but it is not profit. Put the credit side, sales 450 000 and closing stock 70 000, against it; the balance is 26 000."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Government accounts: the Consolidated Revenue Fund and budget control",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the meaning of public sector accounting and how it differs from private sector accounting;\n2. explain the Consolidated Revenue Fund, the Appropriation Act and the role of the Auditor-General;\n3. list the sources of federal, state and local government revenue, including internally generated revenue;\n4. distinguish capital from recurrent expenditure;\n5. prepare a simple statement of revenue and expenditure of a state government;\n6. compare actual figures with the budget and state the variance.\n\n## Materials\n\nAn extract of a state government budget (summary page), calculators, past WASSCE questions on public sector accounting.\n\n## Starter (5 minutes)\n\nAsk: the state government budgeted ₦135 billion but collected ₦127 billion. What must it do with its projects? Elicit that spending must follow what comes in.\n\n## Development\n\n1. Revise the meaning and differences: aim, budget, cash basis, accountability.\n2. Consolidated Revenue Fund: the main government account into which all revenues are paid. Money leaves it only as the Appropriation Act or other law allows.\n3. Appropriation Act: the approved budget; supplementary appropriation for overspending.\n4. Sources: statutory allocation, VAT share, taxes, internally generated revenue (PAYE, road taxes, fees and fines), grants, loans.\n5. Recurrent (personnel costs, overheads, debt service) and capital expenditure.\n6. Budget control: variance = actual − budget; explain over- and under-spending.\n7. Audit: the Auditor-General checks that money was spent for the purposes approved.\n\n## Class activity\n\nGroups prepare a statement for a state, compare it with a given budget, and write a two-sentence comment for the Commissioner of Finance.\n\n## Evaluation\n\n1. Who may authorise money to leave the Consolidated Revenue Fund?\n2. A ministry's actual recurrent spending is ₦92 billion against a budget of ₦90 billion. State the variance.\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "The state budget and the Consolidated Revenue Fund",
+        "content": "# Government accounts: the Consolidated Revenue Fund and budget control\n\nThe money collected and spent by governments belongs to the people, so government accounts stress **accountability**.\n\n## The Consolidated Revenue Fund\n\nAll revenue collected by a government is paid into one account, the **Consolidated Revenue Fund (CRF)**. Money can leave it only as authorised by law. Each year the legislature passes an **Appropriation Act**, which is the approved budget. If a ministry needs more than it was given, a **supplementary appropriation** must be approved. The **Auditor-General** examines the accounts to confirm that money was spent for the purposes approved and reports to the legislature.\n\n## Sources of revenue\n\n- Statutory allocation from the Federation Account.\n- Share of value added tax (VAT).\n- **Internally generated revenue (IGR)**: PAYE from workers, road taxes, fees, fines and rates.\n- Grants and loans.\n\n## Types of expenditure\n\n**Recurrent expenditure**: personnel costs (salaries), overheads and debt service. **Capital expenditure**: roads, hospitals, schools and equipment.\n\n## Worked example: a state government (₦ billion)\n\nRevenue: allocation 90; VAT share 12; PAYE 18; road taxes 4; fees and fines 3. Total = **127**.\n\nRecurrent: personnel 60; overheads 20; debt service 12. Total = **92**.\nCapital: 30.\n\nSurplus = 127 − (92 + 30) = **₦5 billion**.\n\n## Comparing with the budget\n\nThe budget was: revenue 135, recurrent 90, capital 45 (a balanced budget).\n\n| | Budget | Actual | Variance |\n| --- | --- | --- | --- |\n| Revenue | 135 | 127 | 8 short |\n| Recurrent | 90 | 92 | 2 over |\n| Capital | 45 | 30 | 15 under |\n\nThe state spent ₦2 billion more than it planned on running costs, but only ₦30 billion of its ₦45 billion on projects, because revenue fell short. A **supplementary budget** is needed for the extra recurrent spending, and some capital projects are delayed."
+      },
+      "cards": [
+        {
+          "front": "Consolidated Revenue Fund",
+          "back": "The main government account into which all revenue is paid."
+        },
+        {
+          "front": "Appropriation Act",
+          "back": "The law passed by the legislature approving the budget and the spending of each ministry."
+        },
+        {
+          "front": "Supplementary appropriation",
+          "back": "Extra approval for spending above the budget."
+        },
+        {
+          "front": "Auditor-General",
+          "back": "The officer who audits government accounts and reports to the legislature."
+        },
+        {
+          "front": "Internally generated revenue",
+          "back": "Revenue a state raises itself, such as PAYE, road taxes, fees and fines."
+        },
+        {
+          "front": "Personnel costs",
+          "back": "Salaries and allowances of government staff; part of recurrent expenditure."
+        },
+        {
+          "front": "Variance",
+          "back": "Actual figure less the budget figure."
+        },
+        {
+          "front": "Capital expenditure",
+          "back": "Spending on lasting assets such as roads and hospitals."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "All revenue collected by a government is first paid into the",
+          "options": [
+            "state treasury cash box",
+            "Auditor-General's office",
+            "budget office",
+            "Consolidated Revenue Fund"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is capital expenditure of a state government?",
+          "options": [
+            "Payment of teachers' salaries",
+            "Purchase of ambulances for a general hospital",
+            "Payment of the hospital's light bill",
+            "Payment of interest on a loan"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is internally generated revenue of a state?",
+          "options": [
+            "Allocation from the Federation Account",
+            "A grant from a foreign donor",
+            "Pay-as-you-earn tax collected from civil servants",
+            "A bank loan"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A state's recurrent expenditure was budgeted at ₦60 billion and the actual was ₦64 billion. The variance is",
+          "options": [
+            "₦4 billion overspent",
+            "₦4 billion underspent",
+            "₦64 billion overspent",
+            "nil"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Who audits the accounts of a state government and reports to the House of Assembly?",
+          "options": [
+            "The Commissioner for Finance",
+            "The Governor",
+            "The Accountant-General only",
+            "The Auditor-General"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what is meant by the Consolidated Revenue Fund and state three ways in which the law controls the spending of public money.",
+          "markScheme": [
+            "States that the CRF is the main account into which all revenue collected by the government is paid",
+            "States that money may be withdrawn only as authorised by law, i.e. by the Appropriation Act",
+            "States that the Appropriation Act is the budget approved by the legislature, and extra spending needs a supplementary appropriation",
+            "States that the Auditor-General audits the accounts and reports to the legislature"
+          ],
+          "modelAnswer": "The Consolidated Revenue Fund is the main account into which all revenue collected by the government is paid. Money can be taken out only as authorised by law, which is the Appropriation Act, the budget approved by the legislature. If more is needed than the Act provides, a supplementary appropriation must be passed. The Auditor-General examines the accounts and reports to the legislature to show that money was used for the approved purposes.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The Consolidated Revenue Fund is the account into which all the money collected by government is paid. No money can be taken out unless the law allows it. The law is the Appropriation Act, which is the budget approved by the National Assembly, and extra spending needs a supplementary budget. The Auditor-General checks the accounts and reports to the legislature that the money was spent as approved.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The Consolidated Revenue Fund is the account into which all the money collected by government is paid."
+                },
+                {
+                  "point": 1,
+                  "quote": "No money can be taken out unless the law allows it."
+                },
+                {
+                  "point": 2,
+                  "quote": "The law is the Appropriation Act, which is the budget approved by the National Assembly, and extra spending needs a supplementary budget."
+                },
+                {
+                  "point": 3,
+                  "quote": "The Auditor-General checks the accounts and reports to the legislature that the money was spent as approved."
+                }
+              ],
+              "feedback": "Full marks. You covered the account and all three controls."
+            },
+            {
+              "tier": "full",
+              "text": "It is the main account of the government where every revenue collected goes. Withdrawals must be authorised by law. The Appropriation Act is the budget that the legislature approves, and if a ministry overspends, the legislature must pass a supplementary appropriation. After the year, the Auditor-General audits the accounts and reports to the legislature.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is the main account of the government where every revenue collected goes."
+                },
+                {
+                  "point": 1,
+                  "quote": "Withdrawals must be authorised by law."
+                },
+                {
+                  "point": 2,
+                  "quote": "The Appropriation Act is the budget that the legislature approves, and if a ministry overspends, the legislature must pass a supplementary appropriation."
+                },
+                {
+                  "point": 3,
+                  "quote": "After the year, the Auditor-General audits the accounts and reports to the legislature."
+                }
+              ],
+              "feedback": "Four marks. Linking the supplementary appropriation to overspending is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "The Consolidated Revenue Fund is where the government puts all its revenue. The Auditor-General audits the accounts. The government can spend the money as it likes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The Consolidated Revenue Fund is where the government puts all its revenue."
+                },
+                {
+                  "point": 3,
+                  "quote": "The Auditor-General audits the accounts."
+                }
+              ],
+              "feedback": "You have the meaning and the audit. The last statement is the reverse of the control: the government can spend only as the Appropriation Act, approved by the legislature, allows."
+            },
+            {
+              "tier": "partial",
+              "text": "The money can only be taken out as the law says. The Appropriation Act is the budget, approved by the legislature. The CRF is a bank in Abuja.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The money can only be taken out as the law says."
+                },
+                {
+                  "point": 2,
+                  "quote": "The Appropriation Act is the budget, approved by the legislature."
+                }
+              ],
+              "feedback": "Your controls are correct. The CRF is not a place in Abuja: it is the main account of the government in which all revenue is paid, and it exists for the state governments as well.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The CRF is the money the government borrows from the World Bank. The government spends it on whatever it wants.",
+              "meets": [],
+              "feedback": "Borrowed money is a source of funds, but the CRF is the account for all revenue. Spending follows the Appropriation Act, with an audit by the Auditor-General."
+            },
+            {
+              "tier": "weak",
+              "text": "The Consolidated Revenue Fund is the fund where the revenue is paid. Controls are policemen and the president.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The Consolidated Revenue Fund is the fund where the revenue is paid."
+                }
+              ],
+              "feedback": "The first part is correct. The controls are legal and financial: the Appropriation Act, supplementary appropriation for extra spending, and the audit by the Auditor-General."
+            }
+          ]
+        },
+        {
+          "prompt": "A state government's actual figures for the year (₦ billion) were: allocation 90; VAT share 12; PAYE 18; road taxes 4; fees and fines 3; personnel costs 60; overheads 20; debt service 12; capital expenditure 30. The budget was: revenue 135; recurrent expenditure 90; capital expenditure 45. Calculate the actual revenue, recurrent expenditure and surplus, and state the variance for revenue, recurrent and capital expenditure.",
+          "markScheme": [
+            "Actual revenue 127; variance against the budget of 135 is 8 short",
+            "Actual recurrent expenditure 92; variance against 90 is 2 overspent",
+            "Capital expenditure 30 against 45 is 15 underspent",
+            "Actual surplus: 127 − (92 + 30) = ₦5 billion"
+          ],
+          "modelAnswer": "Actual revenue = 90 + 12 + 18 + 4 + 3 = ₦127 billion, which is 8 less than the budget of 135. Actual recurrent expenditure = 60 + 20 + 12 = ₦92 billion, which is 2 more than the budget of 90. Capital expenditure was 30 against a budget of 45, so it was 15 underspent. The actual surplus = 127 − 92 − 30 = ₦5 billion.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Revenue = 90 + 12 + 18 + 4 + 3 = 127, which is 8 short of the budget of 135. Recurrent = 60 + 20 + 12 = 92, which is 2 over the budget of 90. Capital was 30 against 45, so 15 was not spent. Surplus = 127 − 92 − 30 = ₦5 billion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Revenue = 90 + 12 + 18 + 4 + 3 = 127, which is 8 short of the budget of 135."
+                },
+                {
+                  "point": 1,
+                  "quote": "Recurrent = 60 + 20 + 12 = 92, which is 2 over the budget of 90."
+                },
+                {
+                  "point": 2,
+                  "quote": "Capital was 30 against 45, so 15 was not spent."
+                },
+                {
+                  "point": 3,
+                  "quote": "Surplus = 127 − 92 − 30 = ₦5 billion."
+                }
+              ],
+              "feedback": "Full marks. You gave the amount and the direction of every variance."
+            },
+            {
+              "tier": "full",
+              "text": "The state collected 127 billion, but it had planned 135 billion, so it has a shortfall of 8 billion. Running costs were 92 billion instead of 90 billion, an overspend of 2 billion. Projects got only 30 billion instead of 45 billion, so 15 billion was underspent. After all spending of 122 billion the state has a surplus of 5 billion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "127 billion, but it had planned 135 billion, so it has a shortfall of 8 billion."
+                },
+                {
+                  "point": 1,
+                  "quote": "Running costs were 92 billion instead of 90 billion, an overspend of 2 billion."
+                },
+                {
+                  "point": 2,
+                  "quote": "Projects got only 30 billion instead of 45 billion, so 15 billion was underspent."
+                },
+                {
+                  "point": 3,
+                  "quote": "After all spending of 122 billion the state has a surplus of 5 billion."
+                }
+              ],
+              "feedback": "Four marks. Your sentences are clear enough to go in a report to a Commissioner."
+            },
+            {
+              "tier": "partial",
+              "text": "Revenue is 127, 8 less than 135. Recurrent is 60 + 20 + 12 = 92, 2 more than the budget. Capital was 30 against 45, so it is 15 over. Surplus = 127 − 92 = 35.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Revenue is 127, 8 less than 135."
+                },
+                {
+                  "point": 1,
+                  "quote": "Recurrent is 60 + 20 + 12 = 92, 2 more than the budget."
+                }
+              ],
+              "feedback": "Revenue and recurrent are right. Spending less than the budget is underspending, not overspending. The surplus must also take away the capital expenditure of 30, giving 5."
+            },
+            {
+              "tier": "partial",
+              "text": "Capital 30 against 45, so 15 was underspent. The surplus is 127 − 92 − 30 = 5. Revenue is 127 and recurrent is 92, and both are more than the budget.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Capital 30 against 45, so 15 was underspent."
+                },
+                {
+                  "point": 3,
+                  "quote": "The surplus is 127 − 92 − 30 = 5."
+                }
+              ],
+              "feedback": "Capital and surplus are right. Revenue of 127 is less than 135 (8 short), but recurrent of 92 is more than 90 (2 over).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Revenue is 90 because it is the allocation. Spending is 60 + 20 + 12 + 30 = 122. There is a deficit of 32.",
+              "meets": [],
+              "feedback": "Revenue includes VAT, PAYE, road taxes, fees and fines: 127 in all. The state has a surplus of 5 billion, not a deficit."
+            },
+            {
+              "tier": "weak",
+              "text": "Revenue is 127 and the budget was 135. The variance is 135 + 127 = 262 billion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Revenue is 127 and the budget was 135."
+                }
+              ],
+              "feedback": "A variance is the difference between the actual and the budget, 135 − 127 = 8, not the sum. The same applies for recurrent (2 over) and capital (15 under)."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Computerised accounting: packages, spreadsheets and controls",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish manual from computerised accounting processing systems;\n2. describe the processes of data processing and the hardware and software used;\n3. use simple spreadsheet formulas for totals, products and depreciation;\n4. explain controls that protect computerised records: passwords, user access levels, validation, backup;\n5. state the merits and demerits of manual and computerised systems, and the effect of the internet, cloud storage and electronic payment.\n\n## Materials\n\nA computer or phone with a spreadsheet, a projector, a printed sample from an accounting package.\n\n## Starter (5 minutes)\n\nAsk: a supermarket in Wuse, Abuja, scans each item at the till. How does the stock figure change without anyone writing it? Introduce real-time processing.\n\n## Development\n\n1. Revise input, processing, storage and output; batch and real-time processing.\n2. Hardware (input, output, storage) and software (system and application). Accounting packages and spreadsheets.\n3. Spreadsheet basics: cells, formulas starting with =, SUM, multiplication, percentages, copying a formula down a column.\n4. Controls: passwords, access by user level, validation (e.g. a date or a number must be in the right range), regular backup, an audit trail.\n5. Internet and cloud: records can be reached from anywhere, but only with a connection and good security; electronic payment, POS and transfers update the books quickly.\n6. Merits and demerits compared with manual accounting.\n\n## Class activity\n\nLearners build a depreciation schedule in a spreadsheet and test that changing the rate updates the figures.\n\n## Evaluation\n\n1. Write a formula to total the cells D2 to D9.\n2. Name two controls against fraud in a computerised system.\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Spreadsheets, packages and controls",
+        "content": "# Computerised accounting: packages, spreadsheets and controls\n\n## Accounting packages and spreadsheets\n\nA **computerised accounting system** uses application software to record, post and report. An **accounting package** has sections for sales, purchases, stock, cash and payroll, and prepares the trial balance and final accounts. A **spreadsheet** is a grid of **cells**; a cell that begins with **=** is a **formula**.\n\n| Task | Formula |\n| --- | --- |\n| Add the cells B2 to B6 | =SUM(B2:B6) |\n| Multiply quantity in B2 by price in C2 | =B2*C2 |\n| 10% of the cost in B2 | =B2*10% |\n\n**Example.** If B2 is 12 items and C2 is ₦2 500 each, =B2*C2 shows **30 000**.\n\n## Depreciation schedule\n\nAn accountant enters the cost of equipment ₦1 200 000 in B2, the rate 10% in B3 and the years in B4 (3).\n\n- Annual depreciation: **=B2*B3**, which gives ₦120 000.\n- Net book value after B4 years: **=B2-B2*B3*B4**, which gives 1 200 000 − 360 000 = **₦840 000**.\n\nIf the rate in B3 changes, the figures update automatically.\n\n## Types of processing\n\nIn **batch processing** the data is collected and processed together at set times, such as monthly payroll. In **real-time processing** the records are updated immediately, as when a point-of-sale (POS) terminal reduces stock at the moment of sale.\n\n## Controls\n\nA computer system is only as safe as its controls.\n\n- **Passwords and user levels**: each person sees only what the job needs; a cashier cannot change prices.\n- **Validation**: the system rejects data in the wrong form, such as letters in an amount.\n- **Backup**: copies of the data are kept on a separate disk or in the cloud.\n- **Audit trail**: the system records who entered or changed a figure.\n\n## The internet and cloud storage\n\nRecords stored in the **cloud** can be reached from any place with a connection and are protected from a fire at the shop, but they cannot be reached without a connection, and the business depends on the provider's security. Electronic payments (bank transfer, POS, mobile money) are recorded quickly but also need controls against fraud.\n\n## Merits and demerits\n\nComputerised: fast, accurate, neat reports, easy retrieval; but costly, needs trained staff, and depends on power and security. Manual: cheap and simple, but slow and prone to errors."
+      },
+      "cards": [
+        {
+          "front": "Formula to add B2 to B6",
+          "back": "=SUM(B2:B6)"
+        },
+        {
+          "front": "Batch processing",
+          "back": "Data collected and processed together at set times, such as monthly payroll."
+        },
+        {
+          "front": "Real-time processing",
+          "back": "Records are updated immediately, as when a POS terminal updates stock at each sale."
+        },
+        {
+          "front": "Validation",
+          "back": "A check that the data entered is in the right form or range."
+        },
+        {
+          "front": "Backup",
+          "back": "A copy of the data kept separately so that it can be restored if the original is lost."
+        },
+        {
+          "front": "Access control",
+          "back": "Passwords and user levels so staff see only what their job needs."
+        },
+        {
+          "front": "Audit trail",
+          "back": "A record of who entered or changed each item."
+        },
+        {
+          "front": "Cloud storage",
+          "back": "Keeping records on a provider's servers, reachable by internet."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which spreadsheet formula adds the values in cells B2 to B6?",
+          "options": [
+            "=B2+B6",
+            "=SUM(B2:B6)",
+            "=TOTAL(B2-B6)",
+            "=ADD(B2:B6)"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "In a spreadsheet, B2 contains 12 (items) and C2 contains 2 500 (price in naira). What does the formula =B2*C2 show?",
+          "options": [
+            "14 500",
+            "2 512",
+            "12 2 500",
+            "30 000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a control against fraud in a computerised accounting system?",
+          "options": [
+            "Giving all the staff the same password",
+            "Turning off the backup to save space",
+            "Allowing staff to see only what their job needs, using passwords",
+            "Keeping all the data on one flash drive"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is an advantage of storing accounting records in the cloud?",
+          "options": [
+            "The records can be reached from any place with an internet connection",
+            "The records can be reached without a connection",
+            "The business no longer needs any password",
+            "The records can never be lost"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A supermarket till updates the stock figure the moment each item is scanned. This is an example of",
+          "options": [
+            "batch processing",
+            "manual processing",
+            "output processing",
+            "real-time processing"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A supermarket at Wuse, Abuja, uses a computerised accounting package. State and explain three controls which protect its accounting records.",
+          "markScheme": [
+            "Passwords and user access levels: each staff member can reach only the part of the system the job needs",
+            "Validation or an audit trail: data entered in the wrong form is rejected, or changes can be traced to a person",
+            "Backup: copies of the data are kept separately so that the records can be restored after a loss"
+          ],
+          "modelAnswer": "Passwords and user levels: each member of staff has a password that opens only what the job needs, so a cashier cannot change prices or the ledgers. Validation checks, and an audit trail: the system refuses data in the wrong form, such as letters in an amount, and records who made each entry, so that errors and fraud can be traced. Backup: copies of the data are kept on a separate disk or in the cloud, so that the records can be restored if the computer fails or is stolen.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Passwords and user levels: each worker has his own password and can only open the part of the system for his job, so the cashier cannot change the prices. Validation: the system will not accept letters in the amount box, and an audit trail shows who made each entry. Backup: the data is copied to another disk or the cloud so that it can be restored if the computer is stolen or spoilt.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Passwords and user levels: each worker has his own password and can only open the part of the system for his job, so the cashier cannot change the prices."
+                },
+                {
+                  "point": 1,
+                  "quote": "Validation: the system will not accept letters in the amount box, and an audit trail shows who made each entry."
+                },
+                {
+                  "point": 2,
+                  "quote": "Backup: the data is copied to another disk or the cloud so that it can be restored if the computer is stolen or spoilt."
+                }
+              ],
+              "feedback": "Full marks. Each control has a reason attached."
+            },
+            {
+              "tier": "full",
+              "text": "Each user has a password and an access level, so a sales person cannot see the payroll. The software checks the data that is typed: for example, it will reject a date like 45 January, and it records who changed a figure. A copy of the files is kept every day on a flash drive kept away from the shop, or in the cloud, so that if NEPA damages the computer the records are not lost.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Each user has a password and an access level, so a sales person cannot see the payroll."
+                },
+                {
+                  "point": 1,
+                  "quote": "The software checks the data that is typed: for example, it will reject a date like 45 January, and it records who changed a figure."
+                },
+                {
+                  "point": 2,
+                  "quote": "A copy of the files is kept every day on a flash drive kept away from the shop, or in the cloud, so that if NEPA damages the computer the records are not lost."
+                }
+              ],
+              "feedback": "Three marks. The examples of validation and of backup are practical."
+            },
+            {
+              "tier": "partial",
+              "text": "Passwords: only people who know the password can open the system. Backup: copies of the data are kept so that they can be restored. The third is the computer, because it is intelligent.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Passwords: only people who know the password can open the system."
+                },
+                {
+                  "point": 2,
+                  "quote": "Backup: copies of the data are kept so that they can be restored."
+                }
+              ],
+              "feedback": "You have two controls explained. The third must be a control such as validation or an audit trail: the system rejects wrong data or shows who changed a figure."
+            },
+            {
+              "tier": "partial",
+              "text": "Validation checks make the computer reject wrong data. The security guard stops thieves. Also the cashier should be trusted.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Validation checks make the computer reject wrong data."
+                }
+              ],
+              "feedback": "One control is explained. A guard or trusting the cashier is not a control built into the system. Passwords and user levels, and backup, are the other two.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Computers are controlled by the manager, the owner and the accountant. They watch the screen all day.",
+              "meets": [],
+              "feedback": "A control is a feature of the system, not people watching the screen: passwords and access levels, validation or an audit trail, and a regular backup."
+            },
+            {
+              "tier": "weak",
+              "text": "A password. A password again, and another password for the second control.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A password."
+                }
+              ],
+              "feedback": "One control is right. You need two other different controls, with a reason for each: for example validation (wrong data is rejected) and backup (records can be restored)."
+            }
+          ]
+        },
+        {
+          "prompt": "A clerk uses a spreadsheet to find the depreciation on equipment. The cost ₦1 200 000 is in cell B2, the rate 10% in B3 and the number of years in B4 (3 years). (a) Write a formula for the annual depreciation by the straight-line method and state the value it shows. (b) Write a formula for the net book value after the number of years in B4 and state its value.",
+          "markScheme": [
+            "Formula for annual depreciation: =B2*B3",
+            "Value of annual depreciation: ₦120 000",
+            "Formula for net book value: =B2-B2*B3*B4",
+            "Value of net book value: 1 200 000 − 360 000 = ₦840 000"
+          ],
+          "modelAnswer": "(a) The formula is =B2*B3, which shows ₦120 000. (b) The net book value is the cost less the depreciation for all the years: =B2-B2*B3*B4, which gives 1 200 000 − 120 000 × 3 = ₦840 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) =B2*B3 gives 120 000. (b) =B2-B2*B3*B4 gives 1 200 000 − 360 000 = 840 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=B2*B3"
+                },
+                {
+                  "point": 1,
+                  "quote": "120 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "=B2-B2*B3*B4"
+                },
+                {
+                  "point": 3,
+                  "quote": "840 000."
+                }
+              ],
+              "feedback": "Full marks. Your formulas use cell names, so they will update if the rate changes."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The annual depreciation is cost times rate, so I type =B2*B3 and the cell shows ₦120 000. (b) After 3 years the depreciation is 120 000 × 3, which is 360 000, so the net book value is =B2-B2*B3*B4, which shows ₦840 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=B2*B3"
+                },
+                {
+                  "point": 1,
+                  "quote": "₦120 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "=B2-B2*B3*B4"
+                },
+                {
+                  "point": 3,
+                  "quote": "₦840 000."
+                }
+              ],
+              "feedback": "Four marks. Your explanation shows why the formula is built that way."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) =B2*B3 and it shows 12 000 000. (b) =B2-B3*B4. The value is about 1 200 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=B2*B3"
+                }
+              ],
+              "feedback": "Your first formula is correct. Check the rate: 10% in a spreadsheet is 0.1 and gives 120 000 (typing 10 as the rate gives 12 000 000). The net book value needs the cost in the depreciation too: =B2-B2*B3*B4."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) =B2*B3, the value is 120 000. (b) =B2-B3, which shows 840 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=B2*B3,"
+                },
+                {
+                  "point": 1,
+                  "quote": "120 000."
+                }
+              ],
+              "feedback": "The first formula and value are right. The second formula =B2-B3 would not give 840 000. The depreciation for the years is B2*B3*B4, so the formula is =B2-B2*B3*B4.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) =B2+B3 and it shows 1 200 010. (b) =B2+B4 and it shows 1 200 003.",
+              "meets": [],
+              "feedback": "Depreciation is a part of the cost, so you multiply the cost by the rate: =B2*B3. The net book value takes the depreciation for the years off the cost: =B2-B2*B3*B4."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 120 000. (b) 1 200 000 − 120 000 = 1 080 000 because depreciation is charged once.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(a) 120 000."
+                }
+              ],
+              "feedback": "You have the annual value, but no formula. For the net book value after 3 years, take off 3 years' depreciation: 840 000, with the formula =B2-B2*B3*B4."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Miscellaneous accounts: joint venture, consignment, contract and hire purchase",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain what joint venture, consignment, contract and hire purchase accounts are, and the terms used in each;\n2. prepare a simple joint venture account and share the profit;\n3. prepare a consignment account and value the unsold stock with a share of the freight;\n4. find the profit to be taken on an uncompleted contract;\n5. account for a hire purchase purchase: deposit, instalments, interest and depreciation.\n\n## Materials\n\nPhotographs of a rice warehouse in Lagos, a lorry waybill, a hire purchase agreement for a van (names removed), calculators.\n\n## Starter (5 minutes)\n\nAsk: two traders agree to buy and sell a lorry-load of rice together, and agree to share the profit. How do they work out who owes whom at the end?\n\n## Development\n\n1. Joint venture: a short-term business by two or more people. The venture account has the costs and the sales; the profit is shared in the agreed ratio, and the venturers settle what is due.\n2. Consignment: the consignor sends goods to the consignee, who sells them for commission. Goods remain the consignor's property. Unsold stock is valued at cost plus a share of the consignor's expenses.\n3. Contract: a long job, such as building a bridge. Work is certified; part of the profit is taken each year, cautiously.\n4. Hire purchase: the buyer pays a deposit and instalments and owns the asset after the last payment. The buyer records the asset at cash price, depreciates it and treats the difference as interest.\n5. Worked examples of each, with the figures in the reading.\n\n## Class activity\n\nEach group works one type from raw figures and explains the result to the class.\n\n## Evaluation\n\n1. Who owns goods on consignment before they are sold?\n2. How is the interest on hire purchase found?\n\n## Assignment\n\nProblem set on the app, due Monday.",
+      "reading": {
+        "title": "Four special kinds of account",
+        "content": "# Miscellaneous accounts\n\n## Joint venture\n\nTwo or more persons combine to do one piece of business and share the profit. **Worked example.** Mr Ade and Mr Bello buy 200 bags of rice. Ade buys the rice for ₦3 000 000 and pays ₦100 000 transport. Bello sells it for ₦3 800 000 and pays ₦60 000 selling expenses.\n\nProfit = 3 800 000 − (3 000 000 + 100 000 + 60 000) = **₦640 000**. Shared equally, each has ₦320 000. Bello holds the sales money, so he pays Ade: 3 800 000 − (60 000 + 320 000) = **₦3 420 000**, which is Ade's 3 100 000 plus his 320 000 of profit.\n\n## Consignment\n\nThe **consignor** sends goods to a **consignee**, who sells them for a **commission**. The goods remain the consignor's until they are sold.\n\n**Worked example.** Mr Chika of Onitsha sends 100 generators costing ₦45 000 each to Mr Yau at Kano. Freight paid by Chika is ₦150 000. Yau sells 80 at ₦60 000 each, earns 5% commission, and pays ₦30 000 expenses.\n\n- Goods sent 4 500 000 + freight 150 000 = 4 650 000, or ₦46 500 a generator.\n- Closing stock: 20 × 46 500 = **₦930 000** (cost plus a share of the freight).\n- Sales = 80 × 60 000 = ₦4 800 000. Commission = ₦240 000.\n- Profit = 4 800 000 − (4 500 000 + 150 000 + 240 000 + 30 000 − 930 000) = **₦810 000**.\n- Cash due from Yau = 4 800 000 − 240 000 − 30 000 = ₦4 530 000.\n\n## Contract accounts\n\nOn a long contract the contractor takes only part of the profit while the work is going on.\n\n**Notional profit** = value of work certified − cost of the work.\n**Profit to take** = ⅔ × notional profit × (cash received ÷ work certified).\n\nIf work certified is ₦14 million, cost to date ₦12 million and cash received ₦12.6 million: notional profit = ₦2 million; cash ÷ certified = 90%; profit to take = ⅔ × 2 × 0.9 = **₦1.2 million**. The rest is held back by prudence, in case of later costs.\n\n## Hire purchase\n\nThe buyer pays a **deposit** and **instalments** and owns the asset after the last. **Worked example.** A van with a cash price of ₦3 000 000: deposit ₦600 000 and four yearly instalments of ₦750 000. Hire purchase price = 600 000 + 4 × 750 000 = ₦3 600 000, so the interest is **₦600 000**, ₦150 000 a year.\n\nThe van is recorded at its cash price, ₦3 000 000, and depreciated at 20% (₦600 000 a year). In year 1 the profit and loss account is charged depreciation 600 000 and interest 150 000. The balance sheet shows the van at ₦2 400 000, and the hire purchase creditor at 2 400 000 + 150 000 − 750 000 = ₦1 800 000."
+      },
+      "cards": [
+        {
+          "front": "Joint venture",
+          "back": "A business by two or more people for a single deal, with profit shared in an agreed ratio."
+        },
+        {
+          "front": "Consignor and consignee",
+          "back": "The consignor sends the goods; the consignee sells them for commission."
+        },
+        {
+          "front": "Who owns consigned goods before sale?",
+          "back": "The consignor."
+        },
+        {
+          "front": "Valuation of unsold consignment stock",
+          "back": "Cost plus a share of the consignor's expenses such as freight."
+        },
+        {
+          "front": "Notional profit on a contract",
+          "back": "Value of work certified less the cost of the work."
+        },
+        {
+          "front": "Profit to take on an uncompleted contract",
+          "back": "⅔ × notional profit × cash received ÷ work certified."
+        },
+        {
+          "front": "Hire purchase interest",
+          "back": "Hire purchase price less cash price."
+        },
+        {
+          "front": "How a hire purchase asset is recorded",
+          "back": "At its cash price, then depreciated; the difference is interest."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In a joint venture the profit is ₦240 000 and is shared between A and B in the ratio 3:2. What does each receive?",
+          "options": [
+            "₦120 000 each",
+            "₦160 000 and ₦80 000",
+            "₦144 000 and ₦96 000",
+            "₦96 000 and ₦144 000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Goods sent on consignment remain the property of",
+          "options": [
+            "the consignee until they arrive",
+            "the customer who orders them",
+            "the bank",
+            "the consignor until they are sold"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A consignor sent 100 units costing ₦5 000 each and paid freight of ₦20 000. At the end 10 units were unsold. At what value are they included in the closing stock?",
+          "options": [
+            "₦50 000",
+            "₦52 000",
+            "₦70 000",
+            "₦20 000"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "On a contract, the value of work certified is ₦9 million and the cost of the work is ₦7.5 million. What is the notional profit?",
+          "options": [
+            "₦1.5 million",
+            "₦16.5 million",
+            "₦9 million",
+            "₦7.5 million"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A machine has a cash price of ₦900 000. On hire purchase it costs ₦1 080 000 in all. What is the interest?",
+          "options": [
+            "₦1 980 000",
+            "₦900 000",
+            "₦180 000",
+            "₦1 080 000"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Mr Chika of Onitsha consigned 100 generators costing ₦45 000 each to Mr Yau of Kano and paid freight of ₦150 000. Yau sold 80 generators at ₦60 000 each, charged a commission of 5% on sales, and paid expenses of ₦30 000. Calculate (a) the value of the closing stock of 20 generators, (b) the sales and commission, (c) Chika's profit on the consignment, (d) the amount Yau owes Chika.",
+          "markScheme": [
+            "Closing stock: 20 × (45 000 + 1 500 freight) = 20 × 46 500 = ₦930 000",
+            "Sales 80 × 60 000 = ₦4 800 000 and commission 5% = ₦240 000",
+            "Profit = 4 800 000 − (4 500 000 + 150 000 + 240 000 + 30 000 − 930 000) = ₦810 000",
+            "Amount due from Yau = 4 800 000 − 240 000 − 30 000 = ₦4 530 000"
+          ],
+          "modelAnswer": "(a) Freight per generator = 150 000 ÷ 100 = 1 500, so cost per generator = 46 500 and the closing stock = 20 × 46 500 = ₦930 000. (b) Sales = 80 × 60 000 = ₦4 800 000; commission = 5% × 4 800 000 = ₦240 000. (c) Profit = 4 800 000 − (4 500 000 + 150 000 + 240 000 + 30 000 − 930 000) = 4 800 000 − 3 990 000 = ₦810 000. (d) Yau keeps his commission and expenses, so he owes 4 800 000 − 240 000 − 30 000 = ₦4 530 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Freight per generator = 150 000 ÷ 100 = 1 500, so each costs 46 500 and the 20 left are worth 20 × 46 500 = 930 000. (b) Sales = 80 × 60 000 = 4 800 000. Commission = 5% × 4 800 000 = 240 000. (c) Costs = 4 500 000 + 150 000 + 240 000 + 30 000 − 930 000 = 3 990 000, so profit = 4 800 000 − 3 990 000 = 810 000. (d) Yau owes 4 800 000 − 240 000 − 30 000 = 4 530 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Freight per generator = 150 000 ÷ 100 = 1 500, so each costs 46 500 and the 20 left are worth 20 × 46 500 = 930 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Sales = 80 × 60 000 = 4 800 000. Commission = 5% × 4 800 000 = 240 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Costs = 4 500 000 + 150 000 + 240 000 + 30 000 − 930 000 = 3 990 000, so profit = 4 800 000 − 3 990 000 = 810 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Yau owes 4 800 000 − 240 000 − 30 000 = 4 530 000."
+                }
+              ],
+              "feedback": "Full marks. Adding a share of the freight to the unsold stock is the step that distinguishes a strong answer."
+            },
+            {
+              "tier": "full",
+              "text": "The 80 generators that were sold cost 80 × 46 500 = 3 720 000. The 20 unsold ones cost 46 500 each too, because the freight of 1 500 is shared, so the closing stock is 930 000. Sales are 4 800 000 and the commission is 240 000. Profit = 4 800 000 − 3 720 000 − 240 000 − 30 000 = 810 000. Yau keeps his commission and his expenses, so he sends 4 530 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The 20 unsold ones cost 46 500 each too, because the freight of 1 500 is shared, so the closing stock is 930 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Sales are 4 800 000 and the commission is 240 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Profit = 4 800 000 − 3 720 000 − 240 000 − 30 000 = 810 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "Yau keeps his commission and his expenses, so he sends 4 530 000."
+                }
+              ],
+              "feedback": "Four marks. Your second way of finding the profit, from the cost of the 80 sold, is a good check."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 20 × 45 000 = 900 000. (b) Sales = 80 × 60 000 = 4 800 000; commission = 240 000. (c) Profit = 4 800 000 − (4 500 000 + 150 000 + 240 000 + 30 000 − 900 000) = 780 000. (d) 4 800 000 − 240 000 − 30 000 = 4 530 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) Sales = 80 × 60 000 = 4 800 000; commission = 240 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "(d) 4 800 000 − 240 000 − 30 000 = 4 530 000."
+                }
+              ],
+              "feedback": "The unsold stock must carry its share of the freight: 20 × 46 500 = 930 000. Then the profit is 810 000. Your sales, commission and the amount due are right."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The freight per generator is 1 500 so the closing stock is 20 × 46 500 = 930 000. (b) Sales = 100 × 60 000 = 6 000 000. Commission 300 000. (c) Profit = 6 000 000 − 3 990 000 = 2 010 000. (d) 6 000 000 − 330 000 = 5 670 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) The freight per generator is 1 500 so the closing stock is 20 × 46 500 = 930 000."
+                }
+              ],
+              "feedback": "Your closing stock is right. Only 80 generators were sold, so the sales are 80 × 60 000 = 4 800 000, the commission is 240 000 and the amount due is 4 530 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 20 × 60 000 = 1 200 000. (b) 80 × 60 000 = 4 800 000. (c) Profit = 4 800 000 − 4 500 000 = 300 000. (d) 4 800 000.",
+              "meets": [],
+              "feedback": "Closing stock is valued at cost, not at selling price. The commission, the expenses and the freight must also be deducted. Yau does not send all the sales money, only 4 530 000."
+            },
+            {
+              "tier": "weak",
+              "text": "Sales are 80 × 60 000 = 4 800 000 and the commission is 5% = 240 000. The profit is 240 000, the commission, because it is the money Yau earns.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Sales are 80 × 60 000 = 4 800 000 and the commission is 5% = 240 000."
+                }
+              ],
+              "feedback": "The commission is Yau's reward, and it is a cost to Chika. Chika's profit is the sales less all the costs, including the cost of the generators, after allowing for the closing stock: 810 000."
+            }
+          ]
+        },
+        {
+          "prompt": "A contractor is building a bridge. At the end of the year the value of the work certified was ₦14 million and the cost of the work to date was ₦12 million. The contractor had received ₦12.6 million in cash from the client. Calculate (a) the notional profit, (b) the fraction of cash received to work certified, (c) the profit to be taken in the year, and explain why the whole notional profit is not taken.",
+          "markScheme": [
+            "Notional profit: 14 − 12 = ₦2 million",
+            "Cash received ÷ work certified: 12.6 ÷ 14 = 90%",
+            "Profit to take: ⅔ × 2 million × 90% = ₦1.2 million",
+            "States that part of the profit is held back because the contract is not complete and later costs or problems may occur (prudence)"
+          ],
+          "modelAnswer": "(a) Notional profit = 14 − 12 = ₦2 million. (b) Cash received ÷ work certified = 12.6 ÷ 14 = 0.9, or 90%. (c) Profit to take = ⅔ × 2 million × 0.9 = ₦1.2 million. The whole notional profit is not taken because the contract is not finished; there may be later costs or defects, and the client has not yet paid all the money, so the prudence concept says that only a cautious part is recognised.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Notional profit = 14 million − 12 million = 2 million. (b) 12.6 ÷ 14 = 0.9, which is 90%. (c) Profit to take = 2/3 × 2 million × 90% = ₦1.2 million. Only part is taken because the bridge is not finished, so there may be more costs or faults later, and prudence says we should not take the profit before it is certain.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Notional profit = 14 million − 12 million = 2 million."
+                },
+                {
+                  "point": 1,
+                  "quote": "12.6 ÷ 14 = 0.9, which is 90%."
+                },
+                {
+                  "point": 2,
+                  "quote": "Profit to take = 2/3 × 2 million × 90% = ₦1.2 million."
+                },
+                {
+                  "point": 3,
+                  "quote": "Only part is taken because the bridge is not finished, so there may be more costs or faults later, and prudence says we should not take the profit before it is certain."
+                }
+              ],
+              "feedback": "Full marks. The reason for holding back profit is the point of the formula."
+            },
+            {
+              "tier": "full",
+              "text": "The notional profit is the value of the work done less its cost, which is ₦2 million. The client has paid 12.6 million of the 14 million certified, which is 90%. The profit to take is two thirds of 2 million, 1.333 million, times 90%, so ₦1.2 million. We hold some back because the contract is incomplete and there may be defects or extra costs to come, so prudence says to be careful.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "which is ₦2 million."
+                },
+                {
+                  "point": 1,
+                  "quote": "12.6 million of the 14 million certified, which is 90%."
+                },
+                {
+                  "point": 2,
+                  "quote": "The profit to take is two thirds of 2 million, 1.333 million, times 90%, so ₦1.2 million."
+                },
+                {
+                  "point": 3,
+                  "quote": "We hold some back because the contract is incomplete and there may be defects or extra costs to come, so prudence says to be careful."
+                }
+              ],
+              "feedback": "Four marks, with a clear explanation of each step."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Notional profit = 14 − 12 = 2 million. (b) 12.6/14 = 90%. (c) The profit to take is the notional profit times 90% = 1.8 million. The whole profit is not taken because the client may not pay.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) Notional profit = 14 − 12 = 2 million."
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) 12.6/14 = 90%."
+                }
+              ],
+              "feedback": "The first two parts are correct. The formula also has the fraction two thirds, so the profit to take is ⅔ × 2 × 0.9 = 1.2 million. The reason is that the contract is not finished, not only the client's payment."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Notional profit = 14 − 12.6 = 1.4 million. (c) 2/3 × 2 × 90% = 1.2 million. The profit is not all taken because we want to be safe.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "(c) 2/3 × 2 × 90% = 1.2 million."
+                }
+              ],
+              "feedback": "Your profit to take is right, but the notional profit is the work certified less the cost of the work (14 − 12 = 2), not less the cash received. 'To be safe' should be explained: the work is incomplete and later costs may come.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 14 + 12 = 26. (b) 14 − 12.6 = 1.4. (c) 26 − 1.4 = 24.6 million. We take the full profit because we did the work.",
+              "meets": [],
+              "feedback": "Notional profit is the difference between the value of the work and its cost, 2 million. Only part of it, 1.2 million, is taken while the contract is incomplete."
+            },
+            {
+              "tier": "weak",
+              "text": "The whole profit is not taken because the contract is not finished and more costs can come. (a) 12 million. (b) 12. (c) 12 million.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "The whole profit is not taken because the contract is not finished and more costs can come."
+                }
+              ],
+              "feedback": "You gave the reason for holding back. The calculations need the notional profit (14 − 12 = 2), the fraction (12.6 ÷ 14 = 90%) and then ⅔ × 2 × 90% = 1.2 million."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "The financial system: money market, capital market and insurance",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the meaning and components of the financial system;\n2. state the meaning, functions and features of the money market, the capital market and the insurance market;\n3. describe the methods of raising funds in the capital market: public offer, offer for subscription, rights issue, private placement and bonds;\n4. state the requirements for a company to access the capital market;\n5. state the benefits of the capital market to investors, government, the economy and the company;\n6. state the types and features of financial regulation and why it is needed.\n\n## Materials\n\nA page of share prices from a newspaper, a copy of an insurance proposal form (blanked), a diagram of the financial system on chart paper.\n\n## Starter (5 minutes)\n\nAsk: Madam Nneka has ₦2 000 000 saved and does not need it for a year. Mr Dayo needs ₦2 000 000 to expand his bakery. How can her money reach his business safely? Elicit banks, shares, bonds.\n\n## Development\n\n1. The financial system: institutions, markets and instruments that move money from savers to borrowers. Regulators: CBN (banks and money market), SEC (capital market), NAICOM (insurance), PenCom (pensions), NDIC (deposit insurance).\n2. Money market: short-term funds, up to one year: treasury bills, commercial paper, certificates of deposit, call money.\n3. Capital market: long-term funds, over one year: shares, bonds and debentures. Primary market (new issues) and secondary market (trading on the Nigerian Exchange).\n4. Raising funds: initial public offer, offer for subscription, rights issue, private placement, bonds. Worked rights issue.\n5. Requirements: registration with the SEC, a prospectus, audited accounts for the required years, a minimum share capital, listing rules.\n6. Insurance: spreading risk; principles of utmost good faith, insurable interest and indemnity.\n7. Benefits and regulation: investor protection, fair trading, confidence in the economy.\n\n## Class activity\n\nA mock rights issue: learners compute the theoretical ex-rights price and decide whether to take up the rights.\n\n## Evaluation\n\n1. Which body regulates the capital market?\n2. A company issues 300 million shares at ₦2. How much does it raise?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "How money moves from savers to business",
+        "content": "# The financial system: money market, capital market and insurance\n\nThe **financial system** is made up of institutions (banks, insurance companies, the stock exchange), markets and instruments that move money from those who have more than they need (**savers**) to those who need it (**borrowers**). In Nigeria the Central Bank of Nigeria (CBN) regulates banks and the money market, the **Securities and Exchange Commission (SEC)** regulates the capital market, and the National Insurance Commission (NAICOM) regulates insurance.\n\n## The money market\n\nThe money market deals in **short-term** funds, usually up to one year. Its instruments include **treasury bills**, **commercial paper**, certificates of deposit and call money. It helps banks and the government to manage their short-term cash needs.\n\n## The capital market\n\nThe capital market deals in **long-term** funds, for more than one year. Its instruments are **shares**, **bonds** and **debentures**. New issues are sold in the **primary market**; later buying and selling takes place in the **secondary market**, on the Nigerian Exchange.\n\n## Raising funds in the capital market\n\n- **Initial public offer (IPO)**: a company sells shares to the public for the first time. If it sells 300 million shares at ₦2 each, it raises 300 000 000 × 2 = **₦600 million**.\n- **Offer for subscription**: the company invites the public to buy new shares.\n- **Rights issue**: new shares are offered to existing shareholders at a price below the market price.\n- **Private placement**: shares are sold to chosen investors.\n- **Bonds**: the company or government borrows from investors for a fixed period and pays interest.\n\n**Worked example (rights issue).** A company offers one new share for every four held, at ₦3.00. The market price is ₦4.00. For four old shares and one new: (4 × 4.00 + 3.00) ÷ 5 = **₦3.80**, the theoretical ex-rights price.\n\n## Requirements to access the market\n\nRegistration with the SEC; an approved **prospectus**; audited accounts for the past years; a minimum share capital; and compliance with the listing rules of the Exchange.\n\n## Benefits\n\n- **Investors**: dividends, growth in the value of shares, and easy sale.\n- **Government**: raises long-term funds through bonds without printing money.\n- **Economy**: turns savings into investment and creates jobs.\n- **Company**: cheap long-term finance, with no need to repay shares.\n\n## The insurance market\n\nInsurance spreads the risk of loss among many people. It depends on **utmost good faith**, **insurable interest** and **indemnity**.\n\n## Why regulate?\n\nTo protect investors from fraud, to make trading fair and transparent, and to keep confidence in the economy."
+      },
+      "cards": [
+        {
+          "front": "Financial system",
+          "back": "The institutions, markets and instruments that move money from savers to borrowers."
+        },
+        {
+          "front": "Money market",
+          "back": "The market for short-term funds, up to one year, e.g. treasury bills."
+        },
+        {
+          "front": "Capital market",
+          "back": "The market for long-term funds, e.g. shares and bonds."
+        },
+        {
+          "front": "Regulator of the capital market in Nigeria",
+          "back": "The Securities and Exchange Commission (SEC)."
+        },
+        {
+          "front": "Primary market",
+          "back": "Where new securities are first sold."
+        },
+        {
+          "front": "Secondary market",
+          "back": "Where existing securities are bought and sold, e.g. on the Exchange."
+        },
+        {
+          "front": "Rights issue",
+          "back": "New shares offered to existing shareholders, usually at less than the market price."
+        },
+        {
+          "front": "Insurable interest",
+          "back": "The buyer of insurance must stand to lose if the insured item is lost."
+        },
+        {
+          "front": "Reason for regulation",
+          "back": "To protect investors, make trading fair, and keep confidence."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which body regulates the capital market in Nigeria?",
+          "options": [
+            "The Central Bank of Nigeria",
+            "The National Insurance Commission",
+            "The Securities and Exchange Commission",
+            "The Nigeria Deposit Insurance Corporation"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these statements about the money market is correct?",
+          "options": [
+            "It deals in short-term funds, for example treasury bills",
+            "It deals mainly in shares",
+            "It lends only for more than ten years",
+            "It is the market where bonds are first issued"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A company makes an initial public offer of 300 million ordinary shares at ₦2.00 each. How much will it raise if all the shares are sold?",
+          "options": [
+            "₦150 million",
+            "₦300 million",
+            "₦6 million",
+            "₦600 million"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A company offers a rights issue of one new share for every four held at ₦3.00. The market price is ₦4.00. What is the theoretical ex-rights price?",
+          "options": [
+            "₦3.50",
+            "₦3.80",
+            "₦4.00",
+            "₦3.25"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Mr Okoro insures his shop against fire, but he can insure only a shop that he owns or has a financial stake in. This is the principle of",
+          "options": [
+            "indemnity",
+            "utmost good faith",
+            "insurable interest",
+            "contribution"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between the money market and the capital market, giving one example of an instrument traded in each.",
+          "markScheme": [
+            "States that the money market deals in short-term funds, up to one year",
+            "Gives a money market instrument, e.g. treasury bills, commercial paper or call money",
+            "States that the capital market deals in long-term funds, over one year",
+            "Gives a capital market instrument, e.g. shares, bonds or debentures"
+          ],
+          "modelAnswer": "The money market deals in short-term funds, usually for up to one year, and one of its instruments is the treasury bill. The capital market deals in long-term funds, for more than one year, and its instruments include shares and bonds.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The money market is where funds are borrowed and lent for a short time, up to one year. An example is the treasury bill. The capital market is where funds are raised for a long time, more than one year. Shares and bonds are traded there.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The money market is where funds are borrowed and lent for a short time, up to one year."
+                },
+                {
+                  "point": 1,
+                  "quote": "An example is the treasury bill."
+                },
+                {
+                  "point": 2,
+                  "quote": "The capital market is where funds are raised for a long time, more than one year."
+                },
+                {
+                  "point": 3,
+                  "quote": "Shares and bonds are traded there."
+                }
+              ],
+              "feedback": "Full marks. The time period is what separates the two, and you gave it for both."
+            },
+            {
+              "tier": "full",
+              "text": "Money market: short-term funds, which are repaid within one year. An example is commercial paper. Capital market: long-term funds which the company may not repay for many years or never. The instruments are ordinary shares and debentures.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Money market: short-term funds, which are repaid within one year."
+                },
+                {
+                  "point": 1,
+                  "quote": "An example is commercial paper."
+                },
+                {
+                  "point": 2,
+                  "quote": "Capital market: long-term funds which the company may not repay for many years or never."
+                },
+                {
+                  "point": 3,
+                  "quote": "The instruments are ordinary shares and debentures."
+                }
+              ],
+              "feedback": "Four marks. Saying that shares may never be repaid is a good point about long-term funds."
+            },
+            {
+              "tier": "partial",
+              "text": "The money market is for short-term money and the capital market is for long-term money. Treasury bills. Capital market is bigger.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The money market is for short-term money and the capital market is for long-term money."
+                },
+                {
+                  "point": 1,
+                  "quote": "Treasury bills."
+                }
+              ],
+              "feedback": "You have the time difference and one money-market instrument. Give an instrument for the capital market, such as shares or bonds. 'Bigger' is not a difference that is always true."
+            },
+            {
+              "tier": "partial",
+              "text": "The capital market is for money that is needed for a long time. The instruments are shares. The money market is for banks.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The capital market is for money that is needed for a long time."
+                },
+                {
+                  "point": 3,
+                  "quote": "The instruments are shares."
+                }
+              ],
+              "feedback": "The capital market part is right. The money market is the market for short-term funds, up to one year, with instruments such as treasury bills. 'For banks' does not say what it deals in.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The money market is where people sell goods like tomatoes and rice and the capital market is where people sell cars and buildings.",
+              "meets": [],
+              "feedback": "These are markets for goods. The money market and the capital market are markets for funds: short-term (treasury bills) and long-term (shares and bonds)."
+            },
+            {
+              "tier": "weak",
+              "text": "The capital market is where shares are sold. The money market is where money is exchanged for naira and dollars.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "The capital market is where shares are sold."
+                }
+              ],
+              "feedback": "You gave a capital market instrument. The money market is the market for short-term funds, up to one year, such as treasury bills, not the exchange of currencies."
+            }
+          ]
+        },
+        {
+          "prompt": "State three reasons why the capital market is regulated, and name the body that regulates the capital market in Nigeria.",
+          "markScheme": [
+            "Reason 1: to protect investors from fraud and unfair practices",
+            "Reason 2: to ensure that trading is fair, orderly and open, with proper disclosure of information",
+            "Reason 3: to maintain confidence and stability in the market and the economy",
+            "Names the Securities and Exchange Commission (SEC) as the regulator"
+          ],
+          "modelAnswer": "The capital market is regulated to protect investors from fraud and unfair practices, to ensure that trading is fair and orderly, and that companies give full and truthful information, and to maintain confidence and stability in the market and the economy. The regulator in Nigeria is the Securities and Exchange Commission (SEC).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Regulation protects investors from fraud, such as promoters who take people's money and disappear. It makes trading fair and open, because companies must give true information in the prospectus and accounts. It keeps confidence in the market, so that people will go on saving and investing, which helps the economy. The body is the Securities and Exchange Commission.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Regulation protects investors from fraud, such as promoters who take people's money and disappear."
+                },
+                {
+                  "point": 1,
+                  "quote": "It makes trading fair and open, because companies must give true information in the prospectus and accounts."
+                },
+                {
+                  "point": 2,
+                  "quote": "It keeps confidence in the market, so that people will go on saving and investing, which helps the economy."
+                },
+                {
+                  "point": 3,
+                  "quote": "The body is the Securities and Exchange Commission."
+                }
+              ],
+              "feedback": "Full marks. Your reasons are separate from each other and each has an explanation."
+            },
+            {
+              "tier": "full",
+              "text": "One reason is to protect the savings of small investors from cheats. Another is to make sure that prices are not controlled by a few people and that information is open to all. A third is to keep the market stable so that the economy is not harmed when the market falls. The regulator is the SEC.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to protect the savings of small investors from cheats."
+                },
+                {
+                  "point": 1,
+                  "quote": "to make sure that prices are not controlled by a few people and that information is open to all."
+                },
+                {
+                  "point": 2,
+                  "quote": "to keep the market stable so that the economy is not harmed when the market falls."
+                },
+                {
+                  "point": 3,
+                  "quote": "The regulator is the SEC."
+                }
+              ],
+              "feedback": "Four marks. Preventing a few people from controlling prices is a good, specific reason."
+            },
+            {
+              "tier": "partial",
+              "text": "To protect investors from fraud. SEC. To collect money for the government. To punish the stockbrokers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "To protect investors from fraud."
+                },
+                {
+                  "point": 3,
+                  "quote": "SEC."
+                }
+              ],
+              "feedback": "Two marks. Regulation is not mainly to collect money or to punish, but to make trading fair and open and to maintain confidence in the market."
+            },
+            {
+              "tier": "partial",
+              "text": "It makes trading fair and orderly. It maintains public confidence in the market. The regulator is the CBN.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "It makes trading fair and orderly."
+                },
+                {
+                  "point": 2,
+                  "quote": "It maintains public confidence in the market."
+                }
+              ],
+              "feedback": "The reasons are correct. The CBN regulates banks and the money market; the capital market is regulated by the Securities and Exchange Commission.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The capital market is regulated so that nobody will use it. The NAICOM does the regulation.",
+              "meets": [],
+              "feedback": "Regulation is not to stop people using the market, but to make it safe, fair and trusted. NAICOM regulates insurance; the SEC regulates the capital market."
+            },
+            {
+              "tier": "weak",
+              "text": "The SEC regulates it. It is regulated because it is part of the government.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "The SEC regulates it."
+                }
+              ],
+              "feedback": "You named the regulator. The reasons are to protect investors from fraud, to make trading fair and open, and to maintain confidence in the market."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Revision: the nature, functions and users of accounting",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. trace the history of accounting and name the professional bodies in Nigeria;\n2. distinguish bookkeeping from accounting;\n3. state and illustrate the functions of accounting;\n4. identify users of accounting information, including non-business users, and what each needs;\n5. name the stages of the accounting process and the characteristics of useful accounting information, and answer WASSCE-style questions on them.\n\n## Materials\n\nPast WASSCE theory questions on this topic, an NGO's annual report extract (names removed), index cards.\n\n## Starter (5 minutes)\n\nRead: a church building fund asked members for money and later published a report of income and spending. Ask who needs that report, and what each reader wants to know.\n\n## Development\n\n1. History in brief: early records, double entry in the fifteenth century, the growth of companies and the accounting profession; in Nigeria, ICAN and ANAN (the Association of National Accountants of Nigeria).\n2. Bookkeeping and accounting: recording versus classifying, summarising and interpreting, with advice.\n3. Functions: keeping records, finding profit or loss, showing financial position, providing information for tax, loans and decisions, and helping to prevent fraud.\n4. Users: owners, managers, employees, lenders, suppliers, customers, government agencies, donors, and the public; their different questions.\n5. Stages of accounting: recording, classifying, summarising, interpreting and communicating.\n6. Characteristics: relevance, reliability, understandability, comparability, timeliness and verifiability; give a short example of each.\n7. Practise how to write a four-mark theory answer: point, then explanation, then example.\n\n## Class activity\n\nPast question: groups write a model answer for 'State four functions of accounting', then compare with the marking scheme.\n\n## Evaluation\n\n1. Which user wants to know whether a grant was used for the purpose given?\n2. What is the difference between reliability and verifiability?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Revising what accounting is for",
+        "content": "# Revision: the nature, functions and users of accounting\n\n## A short history\n\nRecords of trade are very old. Modern bookkeeping rests on **double entry**, set out in print in the fifteenth century. As trade and companies grew, accounting became a profession. In Nigeria, the **Institute of Chartered Accountants of Nigeria (ICAN)** and the **Association of National Accountants of Nigeria (ANAN)** train and regulate accountants.\n\n## Bookkeeping and accounting\n\n**Bookkeeping** is the recording of transactions in the books. **Accounting** begins with those records and goes on to classify and summarise them, prepare the final accounts, interpret the figures and advise users. A bookkeeper works from rules; an accountant uses judgement.\n\n## Functions of accounting\n\n1. **Keeping records** of all transactions, so that nothing is forgotten.\n2. **Finding the profit or loss** for a period.\n3. **Showing the financial position**: what is owned and owed.\n4. **Providing information** for tax assessment, loans and management decisions.\n5. **Preventing and detecting fraud and errors** through control.\n\n## Users of accounting information\n\n| User | Wants to know |\n| --- | --- |\n| Owner | Profit and the worth of the business |\n| Manager | Costs and performance of each part |\n| Employees | Security of their jobs and pay |\n| Lender | Ability to repay a loan |\n| Supplier | Whether credit sales will be paid for |\n| Tax authority | The tax due |\n| Donor or grant-giver | Whether the money was used for the purpose given |\n| Public and members | Whether a church or club is well run |\n\n## The accounting process\n\n**Recording** → **classifying** → **summarising** → **interpreting and communicating**.\n\n## Characteristics of useful information\n\n- **Relevant**: helps the decision.\n- **Reliable**: free from error and bias.\n- **Understandable**: clear to the reader.\n- **Comparable**: prepared the same way each year.\n- **Timely**: available when needed.\n- **Verifiable**: can be checked to receipts, invoices and bank statements.\n\n**Example.** A bakery's accounts agree with the invoices and the bank statement, so an auditor can check them: they are verifiable. The same accounts delivered eighteen months late are accurate but not timely.\n\n## Writing a theory answer\n\nFor four marks, make four points. Give each a clear heading, one sentence of explanation, and a short Nigerian example if there is room."
+      },
+      "cards": [
+        {
+          "front": "ICAN and ANAN",
+          "back": "The two professional accountancy bodies in Nigeria."
+        },
+        {
+          "front": "Bookkeeping",
+          "back": "Recording of transactions in the books."
+        },
+        {
+          "front": "Accounting",
+          "back": "Recording, classifying, summarising and interpreting financial information, and advising users."
+        },
+        {
+          "front": "What does a donor want from accounts?",
+          "back": "To know whether the funds were used for the purpose given."
+        },
+        {
+          "front": "Verifiable information",
+          "back": "Can be checked to documents such as receipts and bank statements."
+        },
+        {
+          "front": "Timely information",
+          "back": "Available soon enough to help in a decision."
+        },
+        {
+          "front": "Stages of the accounting process",
+          "back": "Recording, classifying, summarising, interpreting and communicating."
+        },
+        {
+          "front": "A function of accounting",
+          "back": "Finding the profit or loss and showing the financial position."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a professional accountancy body in Nigeria?",
+          "options": [
+            "The Central Bank of Nigeria",
+            "The Institute of Chartered Accountants of Nigeria",
+            "The Federal Inland Revenue Service",
+            "The Securities and Exchange Commission"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A donor agency gave ₦5 000 000 to a school for new science laboratories. What does the agency want to know from the school's accounts?",
+          "options": [
+            "Whether the money was used for the purpose given",
+            "How many students are in the school",
+            "What the head teacher earns",
+            "Whether the school makes profit"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The accounts of a pharmacy agree with its invoices, receipts and bank statements, so that an auditor can check each figure. Which characteristic does this show?",
+          "options": [
+            "Timeliness",
+            "Comparability",
+            "Verifiability",
+            "Understandability"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The accountant explains to the owner of a bakery why profit fell this year and suggests actions. Which stage of the accounting process is this?",
+          "options": [
+            "Recording",
+            "Classifying",
+            "Summarising",
+            "Interpreting and communicating"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a function of accounting?",
+          "options": [
+            "Printing the invoices of the business",
+            "Finding the profit or loss of the business for a period",
+            "Selling the goods of the business",
+            "Hiring the staff of the business"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between bookkeeping and accounting.",
+          "markScheme": [
+            "States that bookkeeping is the recording of transactions in the books",
+            "States that accounting also classifies and summarises the records and prepares the final accounts",
+            "States that accounting includes interpreting the figures and advising users or management"
+          ],
+          "modelAnswer": "Bookkeeping is the day-to-day recording of transactions in the books of the business. Accounting starts from those records and goes on to classify and summarise them, prepare the final accounts and interpret the results, so that the owner or management can be advised.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Bookkeeping is the writing down of transactions in the books as they happen. Accounting takes those records, groups them, summarises them and prepares the final accounts. Accounting also interprets the results and advises the owner, which a bookkeeper does not do.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bookkeeping is the writing down of transactions in the books as they happen."
+                },
+                {
+                  "point": 1,
+                  "quote": "Accounting takes those records, groups them, summarises them and prepares the final accounts."
+                },
+                {
+                  "point": 2,
+                  "quote": "Accounting also interprets the results and advises the owner, which a bookkeeper does not do."
+                }
+              ],
+              "feedback": "Full marks. Each part of the definition is a separate point."
+            },
+            {
+              "tier": "full",
+              "text": "A bookkeeper records the daily sales, purchases and payments in the day books and ledger. An accountant uses the records to prepare the trial balance and the final accounts. He also explains what the figures mean and advises on decisions, such as whether to borrow.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "records the daily sales, purchases and payments in the day books and ledger."
+                },
+                {
+                  "point": 1,
+                  "quote": "uses the records to prepare the trial balance and the final accounts."
+                },
+                {
+                  "point": 2,
+                  "quote": "He also explains what the figures mean and advises on decisions, such as whether to borrow."
+                }
+              ],
+              "feedback": "Three marks. The example of advice on borrowing is a good one."
+            },
+            {
+              "tier": "partial",
+              "text": "Bookkeeping is recording the transactions. Accounting is also recording but it is for big companies.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bookkeeping is recording the transactions."
+                }
+              ],
+              "feedback": "You have bookkeeping. Accounting is not just for big companies: it goes beyond recording to classify, summarise and interpret the records."
+            },
+            {
+              "tier": "partial",
+              "text": "Accounting is the preparation of the final accounts from the records. It also advises management on what the figures mean. Bookkeeping is typing.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Accounting is the preparation of the final accounts from the records."
+                },
+                {
+                  "point": 2,
+                  "quote": "It also advises management on what the figures mean."
+                }
+              ],
+              "feedback": "Two marks for accounting. Bookkeeping is the recording of transactions in the books, not typing. Say that it is the base on which accounting is built.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Bookkeeping is keeping books like exercise books and accounting is keeping the money in the bank.",
+              "meets": [],
+              "feedback": "'Books' here means the books of account. Bookkeeping is the recording of transactions in them, and accounting is the summarising and interpreting of those records."
+            },
+            {
+              "tier": "weak",
+              "text": "Bookkeeping is accounting. They are the same thing and both are done by the accountant.",
+              "meets": [],
+              "feedback": "They are related, but not the same. Bookkeeping is recording only; accounting goes on to classify, summarise, interpret and advise."
+            }
+          ]
+        },
+        {
+          "prompt": "State four functions of accounting. Illustrate each with an example from a business such as a bakery, a pharmacy or a transport company in Nigeria.",
+          "markScheme": [
+            "Records transactions: e.g. a pharmacy records every sale and purchase, so nothing is forgotten",
+            "Determines the profit or loss for a period: e.g. a bakery finds out whether it made a profit in the year",
+            "Shows the financial position: e.g. a transport company shows what it owns (buses) and owes (a bank loan)",
+            "Provides information for tax, loans and decisions, or helps to prevent fraud, with an example"
+          ],
+          "modelAnswer": "Accounting keeps records of all transactions, so that a pharmacy knows what it sold and bought. It finds the profit or loss, so a bakery knows whether it earned a profit in the year. It shows the financial position, so a transport company can show its buses and its bank loan in a balance sheet. It supplies information for tax, loans and decisions, for example the accounts a bank asks for before lending, and it helps to detect fraud and errors.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Accounting keeps a record of all transactions, so a pharmacy knows how much it sold and what it bought. It finds the profit or loss, so the bakery can tell whether the year was good. It shows the financial position: a transport company can show the buses it owns and the loan it owes. It gives information to others, such as the accounts a bank wants before it lends.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Accounting keeps a record of all transactions, so a pharmacy knows how much it sold and what it bought."
+                },
+                {
+                  "point": 1,
+                  "quote": "It finds the profit or loss, so the bakery can tell whether the year was good."
+                },
+                {
+                  "point": 2,
+                  "quote": "It shows the financial position: a transport company can show the buses it owns and the loan it owes."
+                },
+                {
+                  "point": 3,
+                  "quote": "It gives information to others, such as the accounts a bank wants before it lends."
+                }
+              ],
+              "feedback": "Full marks. Four different functions, each with its own business example."
+            },
+            {
+              "tier": "full",
+              "text": "One function is record keeping, because the owner of a bakery cannot remember all the sales and expenses of the year. Another is to find the profit or loss, which tells the owner whether to carry on. A third is to show what the business owns and owes in the balance sheet. A fourth is to help to prevent fraud, because if every naira is recorded a dishonest worker is easily noticed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "record keeping, because the owner of a bakery cannot remember all the sales and expenses of the year."
+                },
+                {
+                  "point": 1,
+                  "quote": "to find the profit or loss, which tells the owner whether to carry on."
+                },
+                {
+                  "point": 2,
+                  "quote": "to show what the business owns and owes in the balance sheet."
+                },
+                {
+                  "point": 3,
+                  "quote": "to help to prevent fraud, because if every naira is recorded a dishonest worker is easily noticed."
+                }
+              ],
+              "feedback": "Four marks. The fraud example is specific and realistic."
+            },
+            {
+              "tier": "partial",
+              "text": "Accounting is for record keeping of the sales. It shows the profit of the bakery. It also shows the business and it also shows the profit again.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Accounting is for record keeping of the sales."
+                },
+                {
+                  "point": 1,
+                  "quote": "It shows the profit of the bakery."
+                }
+              ],
+              "feedback": "Two marks. You repeated the profit function. Replace it with a different one, such as showing the financial position (assets and liabilities) or supplying information for tax or loans."
+            },
+            {
+              "tier": "partial",
+              "text": "It shows the assets and liabilities of the transport company. It gives information for tax and loans. It also helps the transport company to buy more buses and to employ drivers.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "It shows the assets and liabilities of the transport company."
+                },
+                {
+                  "point": 3,
+                  "quote": "It gives information for tax and loans."
+                }
+              ],
+              "feedback": "Two marks. Buying buses and employing drivers are not functions of accounting: recording the transactions and finding the profit are the other two.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Accounting makes the business to be big, makes the owner to be rich, makes workers to work well and makes customers to buy.",
+              "meets": [],
+              "feedback": "These are results a business may hope for, not functions of accounting. Functions are keeping records, finding profit or loss, showing financial position, and providing information."
+            },
+            {
+              "tier": "weak",
+              "text": "Accounting is for record keeping. The others are bookkeeping, tax, and bank, so these are four.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Accounting is for record keeping."
+                }
+              ],
+              "feedback": "You have one function. The others must be functions, not names: finding the profit or loss, showing the financial position, and providing information for tax and loans."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Revision: books of account, petty cash, trial balance errors and suspense",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the accounting equation to find a missing figure;\n2. apply the rules of double entry and classify accounts;\n3. name the source documents and the subsidiary books they go into;\n4. write up an analytical petty cash book under the imprest system;\n5. prepare a trial balance and a bank reconciliation statement;\n6. locate errors, write the journal entries to correct them, open and clear a suspense account, and find the effect on profit.\n\n## Materials\n\nPast WASSCE questions on errors and suspense, a printed analytical petty cash book, calculators.\n\n## Starter (5 minutes)\n\nA trial balance is added up and the debit side is ₦9 000 more than the credit side. Ask: does that prove there is only one mistake? What types of mistake would not show?\n\n## Development\n\n1. Revision of the equation and double entry using a quick drill.\n2. Source documents and books: invoice (day books), credit note (returns books), receipt and cheque (cash book).\n3. Petty cash: the imprest is the fixed float; the petty cashier records payments in analysed columns; the cashier restores the sum spent.\n4. Errors not shown by the trial balance: omission, commission, principle, compensating, original entry, reversal.\n5. Errors that do show: one-sided entries, wrong additions, transpositions; a suspense account holds the difference until the errors are found.\n6. Journal entries to correct each error; effect of each correction on profit.\n\n## Class activity\n\nGroups receive a trial balance with a difference of ₦9 000 and three errors; they open a suspense account, correct it and recalculate the profit.\n\n## Evaluation\n\n1. Which of these errors does not affect the trial balance: sales undercast, purchase of equipment put in the purchases account?\n2. How much does the cashier receive at the end of a week when ₦11 000 of a ₦20 000 imprest has been spent?\n\n## Assignment\n\nWorksheet on the app, due Friday.",
+      "reading": {
+        "title": "Petty cash, errors and the suspense account",
+        "content": "# Books of account, petty cash, trial balance errors and suspense\n\n## The equation and double entry\n\n**Assets = Capital + Liabilities.** If assets are ₦1 450 000 and capital ₦900 000, liabilities are 1 450 000 − 900 000 = **₦550 000**.\n\nDebit the account that receives value; credit the account that gives it. Buying furniture on credit from Mr Musa for ₦90 000: debit furniture, credit Musa.\n\nInvoices go to the day books, credit notes to the returns books, and receipts and cheques to the cash book.\n\n## Petty cash\n\nUnder the **imprest system** the petty cashier starts each week with a fixed sum, say ₦20 000. Payments are entered in a petty cash book, with a column for each type of expense.\n\n| Day | Item | Total ₦ | Postage | Transport | Stationery | Cleaning |\n| --- | --- | --- | --- | --- | --- | --- |\n| Mon | Postage | 1 500 | 1 500 | | | |\n| Tue | Transport | 2 800 | | 2 800 | | |\n| Wed | Stationery | 3 200 | | | 3 200 | |\n| Thu | Cleaning | 1 400 | | | | 1 400 |\n| Fri | Transport | 2 100 | | 2 100 | | |\n| | **Total** | **11 000** | **1 500** | **4 900** | **3 200** | **1 400** |\n\nThe balance left is 20 000 − 11 000 = ₦9 000. The main cashier pays **₦11 000** to restore the imprest to ₦20 000.\n\n## Errors and the trial balance\n\n**Not shown** by the trial balance: omission, commission, principle, compensating, original entry and reversal errors.\n\n**Shown:** a one-sided entry, a wrong addition or a transposition. When the totals differ, the difference is placed in a **suspense account** until the error is found.\n\n## Worked example\n\nA trial balance's debit side is ₦9 000 more than its credit side, so ₦9 000 is credited to suspense. Then three errors are found.\n\n1. Sales were undercast by ₦5 000: **Dr Suspense 5 000, Cr Sales 5 000.**\n2. A rent payment of ₦12 000 was entered in the rent account as ₦16 000: **Dr Suspense 4 000, Cr Rent 4 000.**\n3. Goods bought for ₦8 000 were debited to Equipment: **Dr Purchases 8 000, Cr Equipment 8 000** (no suspense, because the totals were not affected).\n\nSuspense: Cr 9 000 − Dr 5 000 − Dr 4 000 = nil.\n\n**Effect on profit.** If the profit was ₦640 000, correction 1 adds 5 000 (more sales), correction 2 adds 4 000 (less rent) and correction 3 reduces profit by 8 000 (more purchases): 640 000 + 5 000 + 4 000 − 8 000 = **₦641 000**."
+      },
+      "cards": [
+        {
+          "front": "Accounting equation",
+          "back": "Assets = Capital + Liabilities."
+        },
+        {
+          "front": "Imprest system",
+          "back": "The petty cashier is given a fixed sum which is restored to that sum after each period."
+        },
+        {
+          "front": "Credit note received from a supplier",
+          "back": "First recorded in the returns outwards (purchases returns) book."
+        },
+        {
+          "front": "Error of principle",
+          "back": "An item is entered in the wrong class of account, e.g. equipment in the purchases account; the trial balance still agrees."
+        },
+        {
+          "front": "Error of commission",
+          "back": "An item is entered in the wrong account of the same class; the trial balance still agrees."
+        },
+        {
+          "front": "Transposition error",
+          "back": "Two digits written the wrong way round, e.g. 12 000 as 21 000."
+        },
+        {
+          "front": "Suspense account",
+          "back": "Holds the difference on a trial balance until the errors are found."
+        },
+        {
+          "front": "Bank reconciliation: standing order not yet in the cash book",
+          "back": "Deduct it from the cash book balance first."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The assets of a business are ₦1 450 000 and its capital is ₦900 000. What are its liabilities?",
+          "options": [
+            "₦550 000",
+            "₦2 350 000",
+            "₦900 000",
+            "₦1 450 000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A business buys office furniture on credit from Mr Musa for ₦90 000. Which entry is correct?",
+          "options": [
+            "Debit Musa, credit furniture",
+            "Debit furniture, credit cash",
+            "Debit furniture, credit Musa",
+            "Debit purchases, credit Musa"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A credit note is received from a supplier for goods returned to him. In which book is it first recorded?",
+          "options": [
+            "The sales day book",
+            "The cash book",
+            "The returns inwards book",
+            "The returns outwards book"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trader's cash book shows a bank balance of ₦138 000. The bank statement shows a standing order of ₦6 000 which is not yet in the cash book. What is the correct cash book balance?",
+          "options": [
+            "₦144 000",
+            "₦132 000",
+            "₦138 000",
+            "₦6 000"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A computer costing ₦150 000 is entered in the purchases account. This is an error of",
+          "options": [
+            "principle",
+            "omission",
+            "commission",
+            "compensating"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A petty cashier starts the week with an imprest of ₦20 000. Payments: Monday postage ₦1 500; Tuesday transport ₦2 800; Wednesday stationery ₦3 200; Thursday cleaning ₦1 400; Friday transport ₦2 100. Write up the analysed petty cash book, find the balance left, and state how much the cashier receives to restore the imprest.",
+          "markScheme": [
+            "Total payments for the week: ₦11 000",
+            "Analysis totals: postage 1 500, transport 4 900 (2 800 + 2 100), stationery 3 200, cleaning 1 400",
+            "Balance carried down: 20 000 − 11 000 = ₦9 000",
+            "Amount received to restore the imprest: ₦11 000, making the opening balance ₦20 000 again"
+          ],
+          "modelAnswer": "Total payments = 1 500 + 2 800 + 3 200 + 1 400 + 2 100 = ₦11 000. The analysis columns total: postage 1 500; transport 2 800 + 2 100 = 4 900; stationery 3 200; cleaning 1 400; together 11 000. The balance carried down is 20 000 − 11 000 = ₦9 000. The main cashier pays ₦11 000, the amount spent, to bring the imprest back to ₦20 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Total payments = 1 500 + 2 800 + 3 200 + 1 400 + 2 100 = 11 000. Postage 1 500, transport 2 800 + 2 100 = 4 900, stationery 3 200, cleaning 1 400, which also adds up to 11 000. Balance c/d = 20 000 − 11 000 = ₦9 000. The cashier receives ₦11 000 to restore the imprest to 20 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total payments = 1 500 + 2 800 + 3 200 + 1 400 + 2 100 = 11 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "Postage 1 500, transport 2 800 + 2 100 = 4 900, stationery 3 200, cleaning 1 400, which also adds up to 11 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Balance c/d = 20 000 − 11 000 = ₦9 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "The cashier receives ₦11 000 to restore the imprest to 20 000."
+                }
+              ],
+              "feedback": "Full marks. Checking that the analysis columns add up to the total column is what prevents errors."
+            },
+            {
+              "tier": "full",
+              "text": "The five payments come to ₦11 000. In the analysis columns, transport has two entries, 4 900 in all, and the others are postage 1 500, stationery 3 200 and cleaning 1 400. ₦9 000 is left, because 11 000 of the 20 000 was spent. The main cashier gives back the ₦11 000 so that the imprest is ₦20 000 again at the start of the next week.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The five payments come to ₦11 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "In the analysis columns, transport has two entries, 4 900 in all, and the others are postage 1 500, stationery 3 200 and cleaning 1 400."
+                },
+                {
+                  "point": 2,
+                  "quote": "₦9 000 is left, because 11 000 of the 20 000 was spent."
+                },
+                {
+                  "point": 3,
+                  "quote": "The main cashier gives back the ₦11 000 so that the imprest is ₦20 000 again at the start of the next week."
+                }
+              ],
+              "feedback": "Four marks. You explained why 11 000 is the amount restored."
+            },
+            {
+              "tier": "partial",
+              "text": "Total = 1 500 + 2 800 + 3 200 + 1 400 + 2 100 = 11 000. Transport 2 800 and 2 100 are in separate columns. Balance = 20 000 − 11 000 = 9 000. The cashier receives 9 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total = 1 500 + 2 800 + 3 200 + 1 400 + 2 100 = 11 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "Balance = 20 000 − 11 000 = 9 000."
+                }
+              ],
+              "feedback": "The total and balance are right. Both transport payments go in the same analysis column, 4 900. The cashier receives the amount spent, 11 000, not the balance left."
+            },
+            {
+              "tier": "partial",
+              "text": "Postage 1 500, transport 4 900, stationery 3 200, cleaning 1 400. Total payments = 13 000. The balance is 7 000. The cashier receives 7 000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Postage 1 500, transport 4 900, stationery 3 200, cleaning 1 400."
+                }
+              ],
+              "feedback": "Your analysis columns are correct, but 1 500 + 4 900 + 3 200 + 1 400 = 11 000, not 13 000. Then the balance is 9 000 and the amount restored is 11 000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Petty cash is the money in the bank. The balance is 20 000 + 11 000 = 31 000 and the cashier receives 31 000.",
+              "meets": [],
+              "feedback": "Petty cash is a small cash float kept for minor expenses. The payments are taken away from the imprest: 20 000 − 11 000 = 9 000 left, and 11 000 is paid to restore it."
+            },
+            {
+              "tier": "weak",
+              "text": "Total 11 000. The cashier receives 20 000 because the imprest is 20 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total 11 000."
+                }
+              ],
+              "feedback": "You have the total. The cashier receives only what was spent, 11 000, because 9 000 is still in the box, and the imprest is again 20 000."
+            }
+          ]
+        },
+        {
+          "prompt": "The debit side of a trial balance exceeded the credit side by ₦9 000, and the difference was put in a suspense account. The following errors were later found: (i) the sales day book was undercast by ₦5 000; (ii) a rent payment of ₦12 000 was entered in the rent account as ₦16 000; (iii) goods bought for ₦8 000 were debited to the equipment account. Write the journal entries to correct the errors, show that the suspense account is cleared, and find the corrected profit if the profit before the corrections was ₦640 000.",
+          "markScheme": [
+            "Opens the suspense account with a credit of ₦9 000, because the debit side was bigger",
+            "(i) Debit suspense ₦5 000, credit sales ₦5 000",
+            "(ii) Debit suspense ₦4 000, credit rent ₦4 000",
+            "(iii) Debit purchases ₦8 000, credit equipment ₦8 000, with no entry in suspense, and the suspense account is nil",
+            "Corrected profit: 640 000 + 5 000 + 4 000 − 8 000 = ₦641 000"
+          ],
+          "modelAnswer": "The debit side was bigger, so ₦9 000 was credited to suspense. (i) Sales were too low by 5 000: debit suspense 5 000, credit sales 5 000. (ii) Rent was debited with 4 000 too much: debit suspense 4 000, credit rent 4 000. (iii) Purchases were wrongly put in equipment, so debit purchases 8 000 and credit equipment 8 000. Suspense: credit 9 000, debits 5 000 + 4 000 = 9 000, so it is cleared to nil. Profit = 640 000 + 5 000 (sales) + 4 000 (less rent) − 8 000 (more purchases) = ₦641 000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The debit side was bigger so I credited suspense with 9 000. (i) Dr Suspense 5 000, Cr Sales 5 000. (ii) Dr Suspense 4 000, Cr Rent 4 000. (iii) Dr Purchases 8 000, Cr Equipment 8 000; this does not affect suspense. The two debits to suspense, 5 000 + 4 000, cancel the credit of 9 000, so suspense is nil. Profit = 640 000 + 5 000 + 4 000 − 8 000 = ₦641 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The debit side was bigger so I credited suspense with 9 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "(i) Dr Suspense 5 000, Cr Sales 5 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "(ii) Dr Suspense 4 000, Cr Rent 4 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "(iii) Dr Purchases 8 000, Cr Equipment 8 000; this does not affect suspense. The two debits to suspense, 5 000 + 4 000, cancel the credit of 9 000, so suspense is nil."
+                },
+                {
+                  "point": 4,
+                  "quote": "Profit = 640 000 + 5 000 + 4 000 − 8 000 = ₦641 000."
+                }
+              ],
+              "feedback": "Full marks. You saw that the principle error (iii) is not in suspense and still changes profit."
+            },
+            {
+              "tier": "full",
+              "text": "Suspense must have a credit of 9 000, because debits were 9 000 more than credits. Sales were too small, so I debit suspense and credit sales with 5 000. Rent was overstated by 4 000, so I credit rent and debit suspense with 4 000. The equipment account has purchases in it, so Dr Purchases 8 000 and Cr Equipment 8 000; the trial balance was not affected by this error, so no suspense. Suspense is now 9 000 − 5 000 − 4 000 = nil. The profit rises by 5 000 and 4 000 and falls by 8 000, so it is 641 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "because debits were 9 000 more than credits."
+                },
+                {
+                  "point": 1,
+                  "quote": "I debit suspense and credit sales with 5 000."
+                },
+                {
+                  "point": 2,
+                  "quote": "I credit rent and debit suspense with 4 000."
+                },
+                {
+                  "point": 3,
+                  "quote": "so Dr Purchases 8 000 and Cr Equipment 8 000; the trial balance was not affected by this error, so no suspense. Suspense is now 9 000 − 5 000 − 4 000 = nil."
+                },
+                {
+                  "point": 4,
+                  "quote": "so it is 641 000."
+                }
+              ],
+              "feedback": "Five marks. Explaining which errors go through suspense, and which do not, is what the examiner wants."
+            },
+            {
+              "tier": "partial",
+              "text": "Suspense is credited with 9 000. (i) Dr Suspense 5 000, Cr Sales 5 000. (ii) Dr Rent 4 000, Cr Suspense 4 000. (iii) Dr Purchases 8 000, Cr Equipment 8 000. Profit = 640 000 + 5 000 − 8 000 = 637 000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Suspense is credited with 9 000."
+                },
+                {
+                  "point": 1,
+                  "quote": "(i) Dr Suspense 5 000, Cr Sales 5 000."
+                }
+              ],
+              "feedback": "(ii) is the wrong way round: the rent was overstated, so credit rent and debit suspense; then suspense clears to nil. The rent correction also adds 4 000 to profit, giving 641 000."
+            },
+            {
+              "tier": "partial",
+              "text": "(iii) Dr Purchases 8 000, Cr Equipment 8 000. (i) Dr Sales 5 000, Cr Suspense 5 000. (ii) Dr Suspense 4 000, Cr Rent 4 000. Profit = 640 000 + 5 000 + 4 000 − 8 000 = 641 000.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "(iii) Dr Purchases 8 000, Cr Equipment 8 000."
+                }
+              ],
+              "feedback": "Entry (iii) is correct and your profit is correct. Entry (i) is the wrong way round: sales are too low, so credit sales and debit suspense. Then suspense clears.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Suspense account is where the 9 000 is lost. All three errors are put in the suspense account as debits. Profit is 640 000.",
+              "meets": [],
+              "feedback": "Suspense holds a difference temporarily. Two of the errors, (i) and (ii), clear it; error (iii) does not affect it and changes the profit. The profit is 641 000."
+            },
+            {
+              "tier": "weak",
+              "text": "(iii) Dr Purchases 8 000, Cr Equipment 8 000. I do not understand (i) and (ii), so I leave them. Suspense still has 9 000.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "(iii) Dr Purchases 8 000, Cr Equipment 8 000."
+                }
+              ],
+              "feedback": "You corrected (iii). For (i) and (ii), debit suspense 5 000 and credit sales; debit suspense 4 000 and credit rent. These clear the 9 000 in suspense."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Revision: accounting concepts applied to cases",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the meaning and significance of each accounting concept;\n2. apply the concepts to short cases, saying what the accountant should do;\n3. explain the concepts of going concern, duality, realisation, accruals, historical cost, prudence, consistency, materiality, business entity, money measurement and periodicity in the form needed for WASSCE;\n4. state the limitations of the concepts, and how they conflict with one another.\n\n## Materials\n\nPast WASSCE questions on concepts, case cards, chart paper with a table of concepts.\n\n## Starter (5 minutes)\n\nRead: a tailor in Aba receives a ₦50 000 deposit for dresses to be delivered next month. Ask whether it is income today. Let learners argue and record their reasons.\n\n## Development\n\n1. Revise the concepts through cases: realisation (the sale is made on delivery), going concern, duality, accruals, historical cost, prudence, consistency, materiality, business entity, money measurement, periodicity.\n2. For each case, learners say the concept, the correct treatment and the reason.\n3. Limitations: historical cost and inflation, money measurement and non-monetary facts, prudence and understated profit, the freedom to choose methods.\n4. Conflicts: prudence may conflict with accruals (a gain not yet earned); consistency may conflict with a better method.\n5. Writing answers: name the concept, state it, then apply it to the case.\n\n## Class activity\n\nCase cards: each group takes three cards, names the concept, and states the treatment. The class votes on any disputed answer.\n\n## Evaluation\n\n1. What does the accountant do when a customer says he cannot pay a ₦40 000 debt?\n2. Give one limitation of the historical cost concept.\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Choosing the right concept for the case",
+        "content": "# Accounting concepts applied to cases\n\nIn WASSCE you are often given a short case and asked to name the concept and say what the accountant should do. Always do three things: **name** the concept, **state** it in a sentence, and **apply** it to the case.\n\n## Cases and answers\n\n**1. Revenue and delivery (realisation).** A tailor in Aba receives ₦50 000 for dresses to be delivered next month. The revenue is recognised when the dresses are delivered, not when the money arrives. Until then the ₦50 000 is a liability, a deposit.\n\n**2. Rent not yet paid (accruals).** December rent of ₦30 000 is paid in January. It belongs to December, so it is charged to December's profit and shown as an accrued liability.\n\n**3. A customer cannot pay (prudence).** A customer owing ₦40 000 says he cannot pay. The accountant writes off the debt as a bad debt and does not wait, because profit must not be overstated.\n\n**4. A van that has gone up in price (historical cost).** A van bought in 2021 for ₦2 400 000 now costs ₦3 500 000. It is recorded at ₦2 400 000 less depreciation. The cost is a fact; the new price is an opinion.\n\n**5. Changing a method (consistency).** A business used straight-line depreciation in the past and changes to reducing balance this year without saying so. This breaks consistency, and the profit of the two years is no longer comparable.\n\n**6. A building to be demolished (going concern).** Assets are normally valued assuming the business will continue. If a business is about to close, they must be valued at what they would sell for.\n\n**7. Buying a generator for cash (duality).** Every transaction has two effects: debit the generator and credit cash.\n\n## Limitations\n\n- **Historical cost** ignores inflation, so old assets look cheap.\n- **Money measurement** leaves out skill, location and loyalty of customers.\n- **Prudence** can understate profit.\n- The freedom to choose methods, for example of stock valuation, makes accounts of different businesses harder to compare.\n\n## When concepts conflict\n\nPrudence says to recognise a loss as soon as it is likely, while accruals says to match costs to revenue. A careful accountant explains the choice and applies it consistently."
+      },
+      "cards": [
+        {
+          "front": "Realisation concept",
+          "back": "Revenue is recognised when goods are delivered or the service is done, not when the order or deposit is received."
+        },
+        {
+          "front": "Accruals concept",
+          "back": "Expenses and revenues belong to the period in which they are earned or incurred, not paid or received."
+        },
+        {
+          "front": "Going concern concept",
+          "back": "The business is assumed to continue, so assets are not valued at forced-sale prices."
+        },
+        {
+          "front": "Duality concept",
+          "back": "Every transaction has two effects, so debits equal credits."
+        },
+        {
+          "front": "Prudence concept",
+          "back": "Losses are recognised as soon as they are likely; gains only when they are certain."
+        },
+        {
+          "front": "Consistency concept",
+          "back": "The same methods are used from year to year."
+        },
+        {
+          "front": "Limitation of money measurement",
+          "back": "Important non-money facts such as the skill of staff are left out."
+        },
+        {
+          "front": "Limitation of historical cost",
+          "back": "Ignores inflation, so asset values in the balance sheet may be too low."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Madam Folake used straight-line depreciation for her equipment for five years. This year she switched to reducing balance without a reason or a note. Which concept has she broken?",
+          "options": [
+            "Going concern",
+            "Materiality",
+            "Duality",
+            "Consistency"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A tailor in Aba receives ₦50 000 as a deposit for dresses to be delivered next month. When should the revenue be recognised?",
+          "options": [
+            "When the dresses are delivered",
+            "When the money is received",
+            "When the order is placed",
+            "When the tailor buys the cloth"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The fixed assets of a thriving shop are not valued at what they would fetch in a forced sale. Which concept explains this?",
+          "options": [
+            "Prudence",
+            "Money measurement",
+            "Going concern",
+            "Realisation"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Commission earned in December is received in January. The accountant includes it in December's income. This follows the",
+          "options": [
+            "historical cost concept",
+            "accruals concept",
+            "materiality concept",
+            "business entity concept"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A shop bought in 2010 for ₦6 000 000 still appears at ₦6 000 000 in the books although prices have risen. This is a limitation of",
+          "options": [
+            "the going concern concept",
+            "the duality concept",
+            "the periodicity concept",
+            "the historical cost concept"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the going concern concept and the duality (dual aspect) concept, giving one example of each.",
+          "markScheme": [
+            "States that going concern means the business is assumed to continue trading for the foreseeable future",
+            "Gives an example: assets are valued on that basis and depreciated over their life, not at forced-sale values",
+            "States that duality means every transaction has two effects, a debit and a credit of equal amounts",
+            "Gives an example: buying a generator for cash is debited to generator and credited to cash"
+          ],
+          "modelAnswer": "The going concern concept assumes that the business will continue in operation for the foreseeable future. For example, a machine is depreciated over its useful life and is not valued at what it would fetch in a forced sale. The duality concept says that every transaction has two effects, so a debit entry is always matched by an equal credit entry. For example, when a generator is bought for cash, the generator account is debited and the cash account is credited.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Going concern means that the business is expected to go on for a long time and will not close down soon. For example, the machines are depreciated over their useful life and are not valued as if they were sold tomorrow. Duality means that each transaction has two sides, a debit and a credit which are equal. For example, buying a generator for cash is Dr Generator and Cr Cash.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Going concern means that the business is expected to go on for a long time and will not close down soon."
+                },
+                {
+                  "point": 1,
+                  "quote": "For example, the machines are depreciated over their useful life and are not valued as if they were sold tomorrow."
+                },
+                {
+                  "point": 2,
+                  "quote": "Duality means that each transaction has two sides, a debit and a credit which are equal."
+                },
+                {
+                  "point": 3,
+                  "quote": "For example, buying a generator for cash is Dr Generator and Cr Cash."
+                }
+              ],
+              "feedback": "Full marks. The examples show you understand the concepts, not just their names."
+            },
+            {
+              "tier": "full",
+              "text": "The going concern concept assumes the business will continue operating in the future. So a building is shown at its cost less depreciation, not at the price it would fetch in a quick sale. Under the dual aspect concept every transaction affects two accounts, and the total debits equal the total credits. If I pay ₦40 000 for rent, I debit the rent account and credit the cash account.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The going concern concept assumes the business will continue operating in the future."
+                },
+                {
+                  "point": 1,
+                  "quote": "So a building is shown at its cost less depreciation, not at the price it would fetch in a quick sale."
+                },
+                {
+                  "point": 2,
+                  "quote": "Under the dual aspect concept every transaction affects two accounts, and the total debits equal the total credits."
+                },
+                {
+                  "point": 3,
+                  "quote": "If I pay ₦40 000 for rent, I debit the rent account and credit the cash account."
+                }
+              ],
+              "feedback": "Four marks. Your examples are ordinary transactions that anyone can check."
+            },
+            {
+              "tier": "partial",
+              "text": "Going concern means the business will continue to exist. Duality means every transaction has two effects. For example, a shop is a going concern and the dual aspect is double entry.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Going concern means the business will continue to exist."
+                },
+                {
+                  "point": 2,
+                  "quote": "Duality means every transaction has two effects."
+                }
+              ],
+              "feedback": "You have the two definitions. Your examples only repeat the names. Show a use: assets valued at cost less depreciation for going concern, and Dr Generator, Cr Cash for duality."
+            },
+            {
+              "tier": "partial",
+              "text": "Duality is when a debit has an equal credit. If I buy furniture for cash, Dr Furniture and Cr Cash. Going concern is when the business is going to the market.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Duality is when a debit has an equal credit."
+                },
+                {
+                  "point": 3,
+                  "quote": "If I buy furniture for cash, Dr Furniture and Cr Cash."
+                }
+              ],
+              "feedback": "The duality answer and example are correct. Going concern is about continuing in business, not going to the market: the business is expected to continue, so assets are not valued at forced-sale prices.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Going concern is when a company is concerned about its going, and duality is when two people do the business.",
+              "meets": [],
+              "feedback": "These are guesses based on the words. Going concern means the business is expected to continue; duality means every transaction has two equal effects, a debit and a credit."
+            },
+            {
+              "tier": "weak",
+              "text": "Duality means that each transaction affects two accounts. The going concern is the owner of the business who is going to the office.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Duality means that each transaction affects two accounts."
+                }
+              ],
+              "feedback": "You have duality. Going concern is not a person: it is the assumption that the business will continue, so that assets are shown at cost less depreciation rather than forced-sale value."
+            }
+          ]
+        },
+        {
+          "prompt": "Mrs Amaka runs a carpentry shop. (a) A delivery van bought in 2021 for ₦2 400 000 would now cost ₦3 500 000. (b) Rent for December, ₦30 000, will be paid in January. (c) A customer owing ₦40 000 has told her he cannot pay. For each, name the concept and say how Mrs Amaka should treat the item. State also one limitation of the concept in (a).",
+          "markScheme": [
+            "(a) Historical cost: the van is kept at ₦2 400 000 less depreciation, not ₦3 500 000",
+            "(b) Accruals: the ₦30 000 is charged to December's expenses and shown as an accrued liability",
+            "(c) Prudence: the ₦40 000 is written off as a bad debt (or provided for) so that profit is not overstated",
+            "Limitation of historical cost: it ignores inflation, so the van and other old assets look worth less than they are"
+          ],
+          "modelAnswer": "(a) Historical cost: the van is recorded at the price paid, ₦2 400 000, less depreciation, and not at the new price of ₦3 500 000. (b) Accruals: the rent belongs to December, so ₦30 000 is charged to December's profit and shown as an accrued expense, a current liability. (c) Prudence: the debt is probably bad, so ₦40 000 is written off or provided for, so that profit and debtors are not overstated. The limitation of historical cost is that it ignores inflation, so old assets appear in the balance sheet at less than their present worth.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Historical cost concept: the van stays at ₦2 400 000 less depreciation, not the ₦3 500 000, because the cost is proved by the receipt. (b) Accruals concept: the rent belongs to December, so I charge ₦30 000 to December's expenses and show it as an amount owing. (c) Prudence concept: I write off the ₦40 000 as a bad debt, because profit must not be overstated. The limitation of historical cost is that it ignores inflation, so the van is worth more than it shows.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Historical cost concept: the van stays at ₦2 400 000 less depreciation, not the ₦3 500 000, because the cost is proved by the receipt."
+                },
+                {
+                  "point": 1,
+                  "quote": "Accruals concept: the rent belongs to December, so I charge ₦30 000 to December's expenses and show it as an amount owing."
+                },
+                {
+                  "point": 2,
+                  "quote": "Prudence concept: I write off the ₦40 000 as a bad debt, because profit must not be overstated."
+                },
+                {
+                  "point": 3,
+                  "quote": "The limitation of historical cost is that it ignores inflation, so the van is worth more than it shows."
+                }
+              ],
+              "feedback": "Full marks. For each case you named the concept and the treatment."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The concept is historical cost, so I record the van at what I paid, 2 400 000, less the depreciation. (b) The concept is accruals, so the December rent is an expense of December and a liability at 31 December, even though I pay in January. (c) The concept is prudence, so I treat the 40 000 as a bad debt now, not wait for him to run away. A limitation of historical cost is that in times of inflation the balance sheet understates the real value of the assets.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I record the van at what I paid, 2 400 000, less the depreciation."
+                },
+                {
+                  "point": 1,
+                  "quote": "the December rent is an expense of December and a liability at 31 December, even though I pay in January."
+                },
+                {
+                  "point": 2,
+                  "quote": "so I treat the 40 000 as a bad debt now, not wait for him to run away."
+                },
+                {
+                  "point": 3,
+                  "quote": "A limitation of historical cost is that in times of inflation the balance sheet understates the real value of the assets."
+                }
+              ],
+              "feedback": "Four marks. 'Not wait for him to run away' captures the idea of prudence well."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Historical cost: the van is shown at ₦2 400 000 less depreciation. (b) Matching: it is paid in January so it is an expense of January. (c) Prudence: write off the ₦40 000. The limitation is that cost is cheap.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Historical cost: the van is shown at ₦2 400 000 less depreciation."
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) Prudence: write off the ₦40 000."
+                }
+              ],
+              "feedback": "Three of the treatments are good. The rent is an expense of December (accruals), shown as an accrued liability. The limitation is that the cost ignores inflation, so old assets look cheaper than they are."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) Accruals: the rent is charged to December even though it is unpaid. (a) Historical cost ignores inflation, so the van is understated. (c) Going concern: I will wait for the customer to pay since the business will continue.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) Accruals: the rent is charged to December even though it is unpaid."
+                },
+                {
+                  "point": 3,
+                  "quote": "(a) Historical cost ignores inflation, so the van is understated."
+                }
+              ],
+              "feedback": "You have two correct. The customer's debt is a prudence case: the accountant should write it off or provide for it now. Waiting would overstate the profit and the debtors.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Consistency. (b) Duality. (c) Money measurement. The limitation is that the van is old.",
+              "meets": [],
+              "feedback": "These concepts do not fit the cases. Use historical cost for the van, accruals for the rent and prudence for the bad debt. The limitation is that inflation makes the van's cost out of date."
+            },
+            {
+              "tier": "weak",
+              "text": "(b) Accruals: charge the rent to December. (a) Put the van at 3 500 000 because that is its price now. (c) Wait until the customer pays.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) Accruals: charge the rent to December."
+                }
+              ],
+              "feedback": "One correct. The van stays at its cost less depreciation, 2 400 000, because the cost is a fact. The customer's debt should be written off at once under prudence."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

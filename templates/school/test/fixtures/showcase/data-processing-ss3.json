@@ -1,0 +1,2672 @@
+{
+  "subject": "Data Processing",
+  "yearGroup": "SS3",
+  "weeks": {
+    "1": {
+      "topic": "Graphic design in practice: colour, resolution and file formats",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use CorelDRAW tools to plan and build a design for a client;\n2. explain RGB and CMYK colour and say which is for screen and which for print;\n3. calculate the print size of a picture from its pixels and resolution;\n4. choose a suitable file format for a purpose.\n\n## Materials\n\nComputers with CorelDRAW (or Inkscape), a projector, a printed full-colour flyer, a calculator, sample files in .cdr, .jpg, .png and .pdf.\n\n## Starter (5 minutes)\n\nShow a flyer on the projector and on paper. Ask: why do the colours look brighter on the screen than on paper? Collect answers.\n\n## Development\n\n1. Recap vector and bitmap graphics and the CorelDRAW tools. A design for a client begins with a brief: purpose, size, text, colours.\n2. Colour models: RGB (red, green, blue) is for screens; CMYK (cyan, magenta, yellow, black) is for printing. Printing from RGB can dull the colours.\n3. Resolution: pixels per inch (dpi or ppi). Print size = pixels / dpi. Work: 1,200 x 900 pixels at 300 dpi = 4 x 3 inches. Pictures for print need about 300 dpi; for screens 72 to 96 are enough.\n4. File formats: .cdr (editable CorelDRAW), JPEG (photographs, small, loses some quality), PNG (graphics with clear backgrounds), PDF (for printing and sharing).\n5. Good design: alignment, contrast, a few fonts, and space between items.\n\n## Class activity\n\nPupils plan a one-page flyer for a school quiz: size, text, colours and format for printing.\n\n## Evaluation\n\n1. Which colour model is used for printing?\n2. A picture is 1,500 pixels wide at 300 dpi. How wide will it print?\n\n## Assignment\n\nComplete the problem set and the worksheet on the app.",
+      "reading": {
+        "title": "Designing for screen and for print",
+        "content": "# Graphic design in practice: colour, resolution and file formats\n\n## From brief to design\n\nA designer starts with a **brief**: who it is for, what it must say, its size and where it will be shown. A flyer for a school quiz needs a title, date, venue and one clear picture. The designer sketches the layout, then builds it in a package such as CorelDRAW with the rectangle, ellipse and text tools, and the fill and outline tools.\n\n## Colour models\n\n- **RGB (red, green, blue)** mixes light and is used for screens: phones, monitors and projectors.\n- **CMYK (cyan, magenta, yellow, black)** mixes inks and is used for printing.\n\nA design for print should be set up in CMYK, so the colours you see are close to those that will be printed. Very bright screen colours may look duller on paper.\n\n## Resolution and print size\n\n**Resolution** is the number of pixels in each inch, called **dpi** (dots per inch) or ppi. For good printing a picture needs about **300 dpi**; for a screen, **72 to 96 dpi** is enough.\n\n**Print size = number of pixels divided by dpi.**\n\n**Worked example.** A photograph is 1,200 pixels wide and 900 pixels high. At 300 dpi, width = 1,200 / 300 = **4 inches** and height = 900 / 300 = **3 inches**. If you stretch the same picture to 8 inches wide, the resolution falls to 1,200 / 8 = 150 dpi and the print looks blurred.\n\n## File formats\n\n| Format | Use |\n| --- | --- |\n| .cdr | the editable CorelDRAW design |\n| JPEG (.jpg) | photographs; small file but loses some quality |\n| PNG (.png) | graphics with a clear background such as logos on web pages |\n| PDF (.pdf) | sharing and printing, keeps the layout |\n\nAlways keep the .cdr file so you can edit the design later, and export the other formats.\n\n## Rules of good design\n\nKeep **alignment** tidy, use strong **contrast** between text and background, limit yourself to two or three **fonts**, leave **white space**, and place the most important item first."
+      },
+      "cards": [
+        {
+          "front": "Brief",
+          "back": "A client's instructions on the purpose, size, text and colours of a design."
+        },
+        {
+          "front": "RGB",
+          "back": "Red, green and blue light; the colour model for screens."
+        },
+        {
+          "front": "CMYK",
+          "back": "Cyan, magenta, yellow and black inks; the colour model for printing."
+        },
+        {
+          "front": "Resolution",
+          "back": "The number of pixels in each inch of a picture, measured in dpi."
+        },
+        {
+          "front": "Print size",
+          "back": "Number of pixels divided by dpi."
+        },
+        {
+          "front": "JPEG",
+          "back": "A format for photographs with small files that loses some quality."
+        },
+        {
+          "front": "PDF",
+          "back": "A format used for sharing and printing a design with its layout kept."
+        },
+        {
+          "front": "White space",
+          "back": "Empty space left around items to make a design clear."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which colour model is used when a design is to be printed?",
+          "options": [
+            "RGB",
+            "CMYK",
+            "HTML",
+            "ASCII"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A picture is 1,500 pixels wide at 300 dpi. Its printed width is",
+          "options": [
+            "5 inches",
+            "50 inches",
+            "0.2 inch",
+            "450 inches"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which file format keeps the layout of a design for printing and sharing?",
+          "options": [
+            "JPEG",
+            "TXT",
+            "PDF",
+            "MP3"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Stretching a 1,200-pixel-wide picture to 8 inches wide makes its resolution",
+          "options": [
+            "300 dpi",
+            "1,200 dpi",
+            "96 dpi",
+            "150 dpi"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which format would you keep so that you can edit a CorelDRAW design later?",
+          "options": [
+            ".jpg",
+            ".mp4",
+            ".png",
+            ".cdr"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A photograph is 1,800 pixels wide and 1,200 pixels high. (a) Calculate its printed width and height at 300 dpi. (b) The printer wants to print it 9 inches wide. Calculate the new resolution and say what will happen to the quality.",
+          "markScheme": [
+            "Width = 1,800 / 300 = 6 inches",
+            "Height = 1,200 / 300 = 4 inches",
+            "New resolution = 1,800 / 9 = 200 dpi",
+            "At 200 dpi the picture is below 300 dpi, so it will look less sharp"
+          ],
+          "modelAnswer": "(a) Width = 1,800 / 300 = 6 inches and height = 1,200 / 300 = 4 inches. (b) If it is printed 9 inches wide, the resolution = 1,800 / 9 = 200 dpi. This is less than the 300 dpi needed for good printing, so the picture will look less sharp.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Width = 1,800 / 300 = 6 inches. Height = 1,200 / 300 = 4 inches. (b) New resolution = 1,800 / 9 = 200 dpi. That is lower than 300 dpi, so the picture will not be as sharp.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Width = 1,800 / 300 = 6 inches"
+                },
+                {
+                  "point": 1,
+                  "quote": "Height = 1,200 / 300 = 4 inches"
+                },
+                {
+                  "point": 2,
+                  "quote": "New resolution = 1,800 / 9 = 200 dpi"
+                },
+                {
+                  "point": 3,
+                  "quote": "lower than 300 dpi, so the picture will not be as sharp"
+                }
+              ],
+              "feedback": "All four marks. Each step is shown and the conclusion states the effect on quality."
+            },
+            {
+              "tier": "full",
+              "text": "I divide the pixels by the dpi: 1800 divided by 300 is 6 inches wide and 1200 divided by 300 is 4 inches high. Enlarging it to 9 inches gives 1800 divided by 9 which is 200 dpi. This is below the 300 dpi needed for print so the picture will look a bit blurred.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1800 divided by 300 is 6 inches wide"
+                },
+                {
+                  "point": 1,
+                  "quote": "1200 divided by 300 is 4 inches high"
+                },
+                {
+                  "point": 2,
+                  "quote": "1800 divided by 9 which is 200 dpi"
+                },
+                {
+                  "point": 3,
+                  "quote": "below the 300 dpi needed for print so the picture will look a bit blurred"
+                }
+              ],
+              "feedback": "Full marks. 'Blurred' describes the problem well."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 1,800 / 300 = 6 inches and 1,200 / 300 = 4 inches. (b) The resolution is 9 dpi.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1,800 / 300 = 6 inches"
+                },
+                {
+                  "point": 1,
+                  "quote": "1,200 / 300 = 4 inches"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b) resolution = pixels / inches = 1,800 / 9 = 200 dpi, and 200 is lower than 300, so quality falls."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Width = 6 inches and height = 4 inches. (b) 1,800 / 9 = 200 dpi so the picture will be blurred when enlarged.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Width = 6 inches"
+                },
+                {
+                  "point": 2,
+                  "quote": "1,800 / 9 = 200 dpi"
+                },
+                {
+                  "point": 3,
+                  "quote": "the picture will be blurred when enlarged"
+                }
+              ],
+              "feedback": "Good, but show how you got the width and height (1,800 / 300 and 1,200 / 300) so the marker can see the method.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 1,800 x 300 = 540,000 inches. (b) It will be clear.",
+              "meets": [],
+              "feedback": "Divide the pixels by the dpi: 1,800 / 300 = 6 inches. For 9 inches wide, the resolution drops to 200 dpi and the print becomes less sharp."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 1,800 inches and 1,200 inches. (b) 9 dpi.",
+              "meets": [],
+              "feedback": "Pixels are not inches. Print size = pixels / dpi, giving 6 by 4 inches. At 9 inches wide the resolution is 1,800 / 9 = 200 dpi."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Distinguish between RGB and CMYK and say where each is used. (b) A print shop in Ibadan asks a designer for a banner file. State which colour model and which file format the designer should choose, and why the original .cdr file should be kept.",
+          "markScheme": [
+            "RGB mixes red, green and blue light and is used for screens",
+            "CMYK mixes cyan, magenta, yellow and black ink and is used for printing",
+            "The designer should use CMYK and a print format such as PDF",
+            "Keep the .cdr file because it can be edited later"
+          ],
+          "modelAnswer": "(a) RGB mixes red, green and blue light and is used for screens such as phones and monitors. CMYK mixes cyan, magenta, yellow and black inks and is used for printing. (b) For a banner to be printed the designer should use the CMYK colour model and send the file as a PDF, which keeps the layout. The original .cdr file should be kept so that the design can be edited later.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) RGB uses red, green and blue light and is used for screens. CMYK uses cyan, magenta, yellow and black inks and is used for printing. (b) The designer should use CMYK and send the banner as a PDF because it keeps the layout for the printer. The .cdr file should be kept so that the design can be edited later.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "RGB uses red, green and blue light and is used for screens"
+                },
+                {
+                  "point": 1,
+                  "quote": "CMYK uses cyan, magenta, yellow and black inks and is used for printing"
+                },
+                {
+                  "point": 2,
+                  "quote": "use CMYK and send the banner as a PDF because it keeps the layout for the printer"
+                },
+                {
+                  "point": 3,
+                  "quote": "The .cdr file should be kept so that the design can be edited later"
+                }
+              ],
+              "feedback": "All four marks. Each choice comes with a reason."
+            },
+            {
+              "tier": "full",
+              "text": "RGB is the light colours red, green and blue, so it is for phones and computer screens. CMYK is the ink colours, so it is for printed work. For the banner, the colours should be set in CMYK and the file exported as a PDF. The .cdr file stays on my computer so that I can change the text next time.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "RGB is the light colours red, green and blue, so it is for phones and computer screens"
+                },
+                {
+                  "point": 1,
+                  "quote": "CMYK is the ink colours, so it is for printed work"
+                },
+                {
+                  "point": 2,
+                  "quote": "the colours should be set in CMYK and the file exported as a PDF"
+                },
+                {
+                  "point": 3,
+                  "quote": "The .cdr file stays on my computer so that I can change the text next time"
+                }
+              ],
+              "feedback": "Full marks. A practical answer that is also correct."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) RGB is for screens and CMYK is for printing. (b) The designer should use CMYK.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "RGB is for screens"
+                },
+                {
+                  "point": 1,
+                  "quote": "CMYK is for printing"
+                }
+              ],
+              "feedback": "The first part is right but you should say what the letters mean (red, green, blue light; cyan, magenta, yellow, black ink). Add the file format (PDF) and why the .cdr file is kept."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) The file should be saved as a PDF and the .cdr file kept so that it can be edited. (a) RGB is for printing and CMYK is for screens.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "saved as a PDF"
+                },
+                {
+                  "point": 3,
+                  "quote": "the .cdr file kept so that it can be edited"
+                }
+              ],
+              "feedback": "Part (b) is good (add CMYK). In (a) you have them reversed: RGB is for screens, CMYK for printing.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) RGB is a type of cable and CMYK is a type of paper. (b) Use any format.",
+              "meets": [],
+              "feedback": "RGB and CMYK are colour models. For print use CMYK and a format such as PDF; keep the .cdr file for editing."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They are the same. (b) Use MP3 for the banner.",
+              "meets": [],
+              "feedback": "RGB (light, screens) differs from CMYK (ink, printing). MP3 is an audio format; use PDF for printing."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Maintenance of the computer",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain why a computer must be maintained and distinguish preventive from corrective maintenance;\n2. clean a computer, and charge and replace batteries and UPS safely;\n3. list hardware and software maintenance tasks;\n4. explain what a computer crash is and how data is recovered.\n\n## Materials\n\nA soft brush, a dry cloth, screen wipes, an air blower, a UPS, a laptop battery, a DVD drive with a lens cleaning disc, a flash drive with a backup.\n\n## Starter (5 minutes)\n\nAsk: your family's generator needs servicing every few months. Does a computer need servicing too? What goes wrong when it is never cleaned or updated?\n\n## Development\n\n1. Maintenance keeps a computer working. Preventive maintenance is done regularly to stop faults; corrective maintenance repairs a fault after it occurs.\n2. General cleaning: switch off and unplug first; dust the case with a soft brush; wipe the screen with a slightly damp soft cloth; clean the keyboard with an air blower; never spray liquid directly.\n3. Batteries: charge a laptop battery before it is fully empty, avoid overheating, and replace a swollen or faulty battery. A UPS battery lasts about three to five years and is replaced when it cannot hold a charge.\n4. DVD drive: clean the lens with a lens cleaning disc.\n5. Hardware tasks: check cables, fans and the power supply. Software tasks: update the operating system, run antivirus, delete unused programs, defragment or clean up the disk, and back up files.\n6. Crash and recovery: a crash is when the system stops working or freezes. Restart; use safe mode; restore from a backup or recovery software.\n\n## Class activity\n\nPupils clean the keyboard and screen of a school computer, with the teacher's supervision, and fill in a maintenance checklist.\n\n## Evaluation\n\n1. State two precautions before cleaning a computer.\n2. What is a backup and why is it important after a crash?\n\n## Assignment\n\nComplete the worksheet and the quiz on the app.",
+      "reading": {
+        "title": "Keeping the computer healthy",
+        "content": "# Maintenance of the computer\n\n## Why maintain a computer?\n\nA computer in a school ICT room works in dust, heat and unstable power. Without care it slows down, overheats and loses data. **Maintenance** is the work done to keep it in good working order.\n\n- **Preventive maintenance** is done regularly to stop faults: cleaning, updates, backups.\n- **Corrective maintenance** is done after a fault, to repair or replace what is damaged.\n\n## General cleaning\n\n1. Switch off and **unplug** the computer.\n2. Dust the case and vents with a **soft brush** or air blower.\n3. Wipe the screen with a soft cloth that is only slightly damp. Never spray liquid on the screen or keyboard.\n4. Clean the keyboard with an air blower and turn it upside down to shake out crumbs.\n5. Keep the room cool and free of dust; no food or drinks.\n\n## Batteries and the UPS\n\nA laptop battery should be charged before it is fully empty and not left at full charge at all times in heat. Replace it when it no longer holds a charge or swells. A **UPS (uninterruptible power supply)** keeps the computer running for a few minutes during a power cut so that you can save and shut down properly. Its battery usually needs replacing after three to five years.\n\n## Cleaning a DVD drive\n\nDust on the **lens** stops the drive reading discs. Use a **lens cleaning disc**, which has tiny brushes that sweep the lens as it spins.\n\n## Hardware and software maintenance\n\n*Hardware:* check that cables are tight; clean the cooling fan; check the power supply; do not move a computer while it is on.\n\n*Software:* install updates of the operating system; run **antivirus** scans; remove programs you do not use; clear temporary files and free disk space; and make regular **backups**.\n\n## Computer crash and data recovery\n\nA **crash** is when the computer freezes or stops working. Causes include a virus, a power surge, overheating, a faulty hard disk and corrupted files. To recover: restart; start in **safe mode**; restore the system to an earlier point; or use **recovery software** to find lost files. The best protection is a **backup**, a copy of your important files on a flash drive, an external disk or online storage."
+      },
+      "cards": [
+        {
+          "front": "Preventive maintenance",
+          "back": "Regular care done to stop faults from developing."
+        },
+        {
+          "front": "Corrective maintenance",
+          "back": "Repair done after a fault has occurred."
+        },
+        {
+          "front": "UPS",
+          "back": "A device that supplies power from a battery during a power cut."
+        },
+        {
+          "front": "Lens cleaning disc",
+          "back": "A disc with tiny brushes used to clean the lens of a DVD drive."
+        },
+        {
+          "front": "Antivirus",
+          "back": "Software that finds and removes viruses."
+        },
+        {
+          "front": "Backup",
+          "back": "A copy of files kept elsewhere in case the original is lost."
+        },
+        {
+          "front": "Computer crash",
+          "back": "When a computer freezes or stops working."
+        },
+        {
+          "front": "Safe mode",
+          "back": "A start-up mode that loads only the basic parts of the system, used to fix faults."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Before cleaning the system unit of a computer you should first",
+          "options": [
+            "spray it with water",
+            "switch it off and unplug it",
+            "switch it to safe mode",
+            "remove the hard disk"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The screen of a computer should be cleaned with",
+          "options": [
+            "a soft, slightly damp cloth",
+            "a wet sponge",
+            "sandpaper",
+            "detergent poured on the screen"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A UPS is used mainly to",
+          "options": [
+            "print documents",
+            "scan photographs",
+            "connect to the Internet",
+            "keep the computer on briefly during a power cut"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Dust on the lens of a DVD drive is cleaned with a",
+          "options": [
+            "magnet",
+            "hammer",
+            "wet cloth",
+            "lens cleaning disc"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The best protection against losing data after a crash is",
+          "options": [
+            "a screen saver",
+            "a bigger monitor",
+            "a backup",
+            "a louder speaker"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State four precautions to take when cleaning a computer, and explain the difference between preventive and corrective maintenance.",
+          "markScheme": [
+            "Switch off and unplug the computer first",
+            "Use a soft, slightly damp cloth on the screen and never spray liquid directly",
+            "Use a brush or air blower for dust and keep food and drinks away",
+            "Preventive maintenance is regular care to stop faults, corrective is repair after a fault occurs"
+          ],
+          "modelAnswer": "Before cleaning, switch off and unplug the computer. Wipe the screen with a soft, slightly damp cloth and never spray liquid directly on the screen or keyboard. Use a soft brush or air blower to remove dust from the case and keyboard, and keep food and drinks away from the computer. Preventive maintenance is regular care, such as cleaning and updates, done to stop faults; corrective maintenance is repair done after a fault has occurred.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First, switch off and unplug the computer. Second, wipe the screen with a soft cloth that is slightly damp and never spray liquid on it. Third, use a soft brush or blower for dust. Fourth, keep food and drinks away. Preventive maintenance is done regularly to stop faults from happening, but corrective maintenance is the repair done after a fault has happened.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "switch off and unplug the computer"
+                },
+                {
+                  "point": 1,
+                  "quote": "wipe the screen with a soft cloth that is slightly damp and never spray liquid on it"
+                },
+                {
+                  "point": 2,
+                  "quote": "use a soft brush or blower for dust"
+                },
+                {
+                  "point": 3,
+                  "quote": "Preventive maintenance is done regularly to stop faults from happening, but corrective maintenance is the repair done after a fault has happened"
+                }
+              ],
+              "feedback": "All four marks. Four precautions, then both kinds of maintenance."
+            },
+            {
+              "tier": "full",
+              "text": "Unplug the computer before cleaning so that there is no shock. Use a dry or slightly wet cloth, not water poured on the screen. Use an air blower to clean the keyboard. Do not eat near the computer. Preventive maintenance includes cleaning and updating the software regularly, while corrective maintenance means repairing a computer that has already failed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Unplug the computer before cleaning so that there is no shock"
+                },
+                {
+                  "point": 1,
+                  "quote": "Use a dry or slightly wet cloth, not water poured on the screen"
+                },
+                {
+                  "point": 2,
+                  "quote": "Use an air blower to clean the keyboard"
+                },
+                {
+                  "point": 3,
+                  "quote": "Preventive maintenance includes cleaning and updating the software regularly, while corrective maintenance means repairing a computer that has already failed"
+                }
+              ],
+              "feedback": "Full marks. Giving the reason for unplugging is a good habit."
+            },
+            {
+              "tier": "partial",
+              "text": "Switch off the computer and use a soft cloth. Preventive maintenance is repairing a computer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Switch off the computer"
+                }
+              ],
+              "feedback": "The first precaution is correct (also unplug it). Preventive maintenance is not repair; it is regular care to stop faults. Repair is corrective maintenance. Add two more precautions."
+            },
+            {
+              "tier": "partial",
+              "text": "Preventive maintenance stops faults and corrective repairs after a fault. Use a brush to clean the dust.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Use a brush to clean the dust"
+                },
+                {
+                  "point": 3,
+                  "quote": "Preventive maintenance stops faults and corrective repairs after a fault"
+                }
+              ],
+              "feedback": "The difference is correct. You need four precautions in all, such as unplugging first, not spraying liquid and keeping food away.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Wash the computer with water and soap and dry it in the sun.",
+              "meets": [],
+              "feedback": "Water damages the electronics. Switch off, unplug, dust with a brush and wipe lightly with a damp cloth."
+            },
+            {
+              "tier": "weak",
+              "text": "Cleaning is for the room only and preventive means preventing people from using the computer.",
+              "meets": [],
+              "feedback": "The computer must be cleaned too. Preventive maintenance means regular care to stop faults, not stopping people from using it."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) A school computer suddenly freezes during a lesson and the pupil loses his work. State three possible causes of the crash and two ways of recovering the data. (b) State two ways of protecting the work before a crash.",
+          "markScheme": [
+            "Three causes such as a virus, a power surge, overheating, a faulty hard disk or corrupted files",
+            "Recovery 1: restart or use safe mode or restore to an earlier point",
+            "Recovery 2: use recovery software or a backup",
+            "Protection: save often and keep backups on a flash drive or online, or use a UPS"
+          ],
+          "modelAnswer": "(a) A crash may be caused by a virus, a power failure or surge, overheating, a faulty hard disk or corrupted files. The data may be recovered by restarting in safe mode or restoring the system to an earlier point, and by using recovery software or the backup copy. (b) Before a crash the pupil should save often and keep a backup on a flash drive or online, and a UPS can protect against a power cut.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Causes are a virus, a power surge and overheating. To recover, restart the computer and use safe mode, and use recovery software or the backup copy. (b) The pupil should save the work often and keep a backup on a flash drive. A UPS also lets him save when light goes off.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a virus, a power surge and overheating"
+                },
+                {
+                  "point": 1,
+                  "quote": "restart the computer and use safe mode"
+                },
+                {
+                  "point": 2,
+                  "quote": "use recovery software or the backup copy"
+                },
+                {
+                  "point": 3,
+                  "quote": "save the work often and keep a backup on a flash drive"
+                }
+              ],
+              "feedback": "All four marks. Three causes, two recoveries and two protections."
+            },
+            {
+              "tier": "full",
+              "text": "A crash can be caused by a faulty hard disk, corrupted files or a virus. The data can be recovered by restoring the system to an earlier date, and by recovery software that searches for lost files. To protect it before a crash, use the auto-save and keep a copy on a flash drive or the Internet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a faulty hard disk, corrupted files or a virus"
+                },
+                {
+                  "point": 1,
+                  "quote": "restoring the system to an earlier date"
+                },
+                {
+                  "point": 2,
+                  "quote": "recovery software that searches for lost files"
+                },
+                {
+                  "point": 3,
+                  "quote": "keep a copy on a flash drive or the Internet"
+                }
+              ],
+              "feedback": "Full marks. Auto-save is a good practical answer."
+            },
+            {
+              "tier": "partial",
+              "text": "The causes are virus and overheating. To recover, use a backup. To protect, save the work.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "use a backup"
+                },
+                {
+                  "point": 3,
+                  "quote": "save the work"
+                }
+              ],
+              "feedback": "You gave two causes where three were needed, and only one recovery method. Add safe mode or system restore, and say that backups should be kept on a flash drive."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A virus, a power surge and a faulty hard disk can cause a crash. (b) Using a UPS and saving often.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A virus, a power surge and a faulty hard disk can cause a crash"
+                },
+                {
+                  "point": 3,
+                  "quote": "Using a UPS and saving often"
+                }
+              ],
+              "feedback": "Causes and protection are right. You did not explain how to recover the data (safe mode, restore, recovery software or a backup).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The computer is tired. To recover, switch it off and on three times.",
+              "meets": [],
+              "feedback": "A crash has causes such as viruses and power surges. To recover use safe mode, restore or recovery software, or a backup."
+            },
+            {
+              "tier": "weak",
+              "text": "Crash is when the computer falls from the table. The data cannot be recovered.",
+              "meets": [],
+              "feedback": "A software crash is a freeze, not a fall. Data can often be recovered, especially from a backup."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Computer ethics and laboratory rules",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define computer ethics and explain why it matters;\n2. state the rules of the computer room and how it should be managed;\n3. describe responsible ways of using a computer and the Internet;\n4. describe ways of securing a computer and data.\n\n## Materials\n\nA poster of ICT room rules, a log book, a sample login screen, a list of scenarios (copying a classmate's project, downloading pirated music, using someone's password).\n\n## Starter (5 minutes)\n\nRead a scenario: a pupil finds a classmate's logged-in account on a school computer and posts a joke in his name. Ask: was it wrong? Why? Use it to introduce ethics.\n\n## Development\n\n1. Define ethics as the rules of right and wrong; computer ethics is the code of conduct for the use of computers and information. Reasons: protecting people's rights, privacy, work and property.\n2. Computer room management: a log book, a timetable, a duty prefect, a first aid box, and a fire extinguisher; only authorised persons; keep the room clean.\n3. Laboratory rules: no food or drink, no bags near computers, do not change settings or unplug cables, no personal flash drives without a virus scan, report faults, log out, and shut down properly.\n4. Responsible use: do not copy software without a licence (piracy); do not plagiarise; respect others' privacy; do not spread viruses or false news; do not use another person's account.\n5. Securing computers: passwords, locking the room, antivirus, backups, keeping software updated, and restricting user accounts.\n\n## Class activity\n\nGroups write ten ICT room rules, then judge four scenarios as ethical or unethical.\n\n## Evaluation\n\n1. Why should a food and drink ban apply in the computer room?\n2. Give two examples of unethical use of a computer.\n\n## Assignment\n\nComplete the worksheet, problem set and quiz on the app.",
+      "reading": {
+        "title": "Right and wrong with computers",
+        "content": "# Computer ethics and laboratory rules\n\n## What is computer ethics?\n\n**Ethics** is the set of rules that tell us what is right and what is wrong. **Computer ethics** is the code of good behaviour in using computers and information. It protects people's **privacy**, **property** and **rights** and keeps the computer room safe.\n\n## Managing the computer room\n\n- Keep a **log book** where each user writes name, date, computer number and time.\n- Use a **timetable** so that every class has a turn.\n- Allow only authorised persons and staff to use the room.\n- Keep the room clean, cool and dust-free; have a **fire extinguisher** and **first aid box**.\n- Keep a record of equipment and report faults to the ICT teacher.\n\n## Laboratory rules\n\n1. No food or drink: spills damage keyboards and crumbs attract insects.\n2. No bags, wet hands or running about in the room.\n3. Do not unplug cables or change the computer settings.\n4. Scan every flash drive for viruses before using it.\n5. Do not install programs without permission.\n6. Log in with your own account and **log out** when you finish.\n7. Shut down the computer properly, and push in the chair.\n8. Report faults and accidents at once.\n\n## Responsible use of computers\n\n- Do not copy and sell software or films: this is **piracy**, a crime.\n- Do not **plagiarise**: do not present others' work as yours; say where you got the information.\n- Do not read others' files or use their passwords: respect **privacy**.\n- Do not spread viruses, rumours or false news.\n- Do not use the Internet to insult or threaten anybody.\n\n## Securing computers and data\n\n- Use **strong passwords** and change them often.\n- Lock the computer room, and put important computers on a **UPS** and burglar-proof doors.\n- Install **antivirus** and a **firewall** and keep software updated.\n- Make regular **backups**.\n- Give each user a limited **user account** so that only the administrator can change settings."
+      },
+      "cards": [
+        {
+          "front": "Computer ethics",
+          "back": "The code of right and wrong behaviour in using computers and information."
+        },
+        {
+          "front": "Piracy",
+          "back": "Copying or selling software, music or films without permission."
+        },
+        {
+          "front": "Plagiarism",
+          "back": "Presenting another person's work as your own."
+        },
+        {
+          "front": "Log book",
+          "back": "A record of who used the computer room, when and on which computer."
+        },
+        {
+          "front": "Privacy",
+          "back": "A person's right to keep personal information and files to themselves."
+        },
+        {
+          "front": "Strong password",
+          "back": "A long password made of letters, numbers and symbols that is hard to guess."
+        },
+        {
+          "front": "User account",
+          "back": "A login giving a person limited access to a computer."
+        },
+        {
+          "front": "Firewall",
+          "back": "A security tool that blocks unauthorised access to a computer or network."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Copying and selling software without the owner's permission is called",
+          "options": [
+            "piracy",
+            "backup",
+            "formatting",
+            "browsing"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A reason for banning drinks in the computer room is that",
+          "options": [
+            "pupils get thirsty",
+            "spilled liquid can damage the keyboard and equipment",
+            "drinks increase the speed",
+            "it saves electricity"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Presenting another person's work as your own is",
+          "options": [
+            "backup",
+            "a firewall",
+            "a user account",
+            "plagiarism"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a responsible way of using a computer?",
+          "options": [
+            "Using a classmate's password",
+            "Scanning a flash drive for viruses before using it",
+            "Installing games on school computers",
+            "Deleting other pupils' files"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The purpose of a log book in the computer room is to",
+          "options": [
+            "record who used which computer and when",
+            "save files",
+            "scan for viruses",
+            "charge the battery"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what is meant by computer ethics and state four rules that should be observed in a school computer room.",
+          "markScheme": [
+            "Computer ethics is the code of right and wrong behaviour in the use of computers and information",
+            "A first valid rule with a reason, e.g. no food or drink because spills damage equipment",
+            "A second valid rule, e.g. scan flash drives for viruses",
+            "Two more valid rules, e.g. log out, do not change settings, report faults"
+          ],
+          "modelAnswer": "Computer ethics is the code of right and wrong behaviour in the use of computers and information. In a school computer room, pupils should not eat or drink because spills can damage the equipment. They should scan a flash drive for viruses before using it. They should not change settings or unplug cables, and they should log out and shut down properly after use.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Computer ethics is the rules of right and wrong in using computers and information. In the computer room, do not eat or drink because the keyboard can be spoiled. Scan any flash drive for virus before using it. Do not change the settings or remove cables. Log out and shut down the computer properly after use.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the rules of right and wrong in using computers and information"
+                },
+                {
+                  "point": 1,
+                  "quote": "do not eat or drink because the keyboard can be spoiled"
+                },
+                {
+                  "point": 2,
+                  "quote": "Scan any flash drive for virus before using it"
+                },
+                {
+                  "point": 3,
+                  "quote": "Do not change the settings or remove cables. Log out and shut down the computer properly after use"
+                }
+              ],
+              "feedback": "All four marks. The reason for the food rule makes it convincing."
+            },
+            {
+              "tier": "full",
+              "text": "It is the code of good behaviour that guides people in using computers, which protects privacy and property. The rules are: no bags or food in the lab, use your own account and log out, report any fault to the teacher, and do not install programs without permission.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the code of good behaviour that guides people in using computers, which protects privacy and property"
+                },
+                {
+                  "point": 1,
+                  "quote": "no bags or food in the lab"
+                },
+                {
+                  "point": 2,
+                  "quote": "use your own account and log out"
+                },
+                {
+                  "point": 3,
+                  "quote": "report any fault to the teacher, and do not install programs without permission"
+                }
+              ],
+              "feedback": "Full marks. Naming what ethics protects (privacy and property) is a strong point."
+            },
+            {
+              "tier": "partial",
+              "text": "Computer ethics is good behaviour on a computer. The rules are no food and no drink.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "good behaviour on a computer"
+                },
+                {
+                  "point": 1,
+                  "quote": "no food and no drink"
+                }
+              ],
+              "feedback": "The definition is right in idea. You need four rules and a reason for each: for example scanning flash drives, logging out, and not changing settings."
+            },
+            {
+              "tier": "partial",
+              "text": "The rules are to scan flash drives, to log out and not to change the settings of the computer. Ethics is a rule.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "scan flash drives"
+                },
+                {
+                  "point": 3,
+                  "quote": "to log out and not to change the settings of the computer"
+                }
+              ],
+              "feedback": "Your rules are good. 'A rule' is not a full definition: computer ethics is the code of right and wrong behaviour in using computers, and it guards privacy and property.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Computer ethics is the study of computer parts. The rules are to play games in the lab.",
+              "meets": [],
+              "feedback": "Ethics is about right and wrong behaviour, not the study of parts. A rule like playing games contradicts lab rules."
+            },
+            {
+              "tier": "weak",
+              "text": "Ethics is the job of the teacher. Pupils can do what they want.",
+              "meets": [],
+              "feedback": "Pupils must follow rules too. Computer ethics is the code of right and wrong behaviour in computer use."
+            }
+          ]
+        },
+        {
+          "prompt": "A pupil copies a classmate's project from the school computer, submits it as his own and installs a pirated game on the computer. (a) Name the two unethical acts and explain why each is wrong. (b) State three ways in which the school can secure its computers and data.",
+          "markScheme": [
+            "Plagiarism: presenting another person's work as his own",
+            "Explains the wrong: it is dishonest and denies the owner credit",
+            "Piracy: installing a copied game without licence is a crime; it may carry viruses",
+            "Three security measures, such as passwords, antivirus, backups, locking the room, user accounts"
+          ],
+          "modelAnswer": "(a) Copying the project and submitting it as his own is plagiarism, which is dishonest because he takes the credit for another person's work. Installing a pirated game is piracy, which is illegal because the owner has not been paid, and the game may carry a virus. (b) The school can protect its computers with passwords and user accounts, antivirus and a firewall, regular backups and a locked, burglar-proof room.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Copying the project is plagiarism, which is dishonest because it takes the credit from the owner. Installing a pirated game is piracy, which is a crime because the owner of the game has not been paid, and it may bring viruses. (b) The school can use passwords and user accounts, install antivirus, make backups and lock the computer room.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Copying the project is plagiarism"
+                },
+                {
+                  "point": 1,
+                  "quote": "which is dishonest because it takes the credit from the owner"
+                },
+                {
+                  "point": 2,
+                  "quote": "Installing a pirated game is piracy, which is a crime because the owner of the game has not been paid, and it may bring viruses"
+                },
+                {
+                  "point": 3,
+                  "quote": "passwords and user accounts, install antivirus, make backups and lock the computer room"
+                }
+              ],
+              "feedback": "All four marks. Each act is named and explained."
+            },
+            {
+              "tier": "full",
+              "text": "The first is plagiarism because he claims another person's work as his, which is cheating. The second is piracy, because the game was copied without permission, and unlicensed software can also contain a virus. To secure computers the school should use strong passwords, an up-to-date antivirus, regular backups and a firewall.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The first is plagiarism"
+                },
+                {
+                  "point": 1,
+                  "quote": "he claims another person's work as his, which is cheating"
+                },
+                {
+                  "point": 2,
+                  "quote": "the game was copied without permission, and unlicensed software can also contain a virus"
+                },
+                {
+                  "point": 3,
+                  "quote": "strong passwords, an up-to-date antivirus, regular backups and a firewall"
+                }
+              ],
+              "feedback": "Full marks. Mentioning the virus risk shows the practical harm."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Plagiarism is copying and piracy is wrong. (b) Use passwords.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Plagiarism is copying"
+                }
+              ],
+              "feedback": "You named plagiarism but did not explain why it is wrong, and piracy needs a meaning (copying software without permission). Give three security measures, not one."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) Passwords, antivirus and backups. (a) Piracy is installing a game that was copied without permission, which is illegal.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Piracy is installing a game that was copied without permission, which is illegal"
+                },
+                {
+                  "point": 3,
+                  "quote": "Passwords, antivirus and backups"
+                }
+              ],
+              "feedback": "Piracy and security are good. You did not name or explain the first act: copying the classmate's project is plagiarism.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The pupil is clever. (b) The school should buy more computers.",
+              "meets": [],
+              "feedback": "The acts are unethical: plagiarism and piracy. Security means passwords, antivirus, backups and locking the room, not buying more computers."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They are both normal. (b) Remove the game and forget.",
+              "meets": [],
+              "feedback": "Both are unethical and should be dealt with. Security measures protect the computers: passwords, antivirus, backups and locking the room."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Safety measures in the computer room",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe a safe sitting position at a computer and give reasons;\n2. place the monitor, keyboard, mouse, CPU and other devices correctly;\n3. state the requirements for lighting, dust control and keeping liquids away;\n4. state the electrical safety rules and the actions to take in a fire.\n\n## Materials\n\nAn adjustable chair, a desk with a computer, a ruler, a measuring tape, a fire extinguisher (for demonstration), a poster of safe sitting posture.\n\n## Starter (5 minutes)\n\nAsk three pupils to sit at a computer for one minute in the way they usually sit. Ask the class what might hurt the pupils' backs, eyes or wrists if they sit like that for a whole lesson.\n\n## Development\n\n1. Why safety matters: prevent health problems (eye strain, backache, repetitive strain injury in the wrists), damage to equipment and fire.\n2. Sitting: back straight and supported, feet flat on the floor, thighs level, elbows at about 90 degrees, forearms level with the keyboard, wrists straight.\n3. Positioning: the top of the monitor at or slightly below eye level, an arm's length away (about 50 to 70 cm), directly in front; the keyboard and mouse at elbow height and close; the CPU on a stand, with vents free; cables tidied.\n4. Environment: good lighting without glare on the screen; a screen filter if needed; a dust-free, cool room with ventilation; keep liquids and food out.\n5. Electrical and fire safety: do not overload sockets, do not touch cables with wet hands, switch off at the socket, use a surge protector, and know where the fire extinguisher is.\n6. Take a break from the screen every 20 to 30 minutes: look away at something far for a few seconds.\n\n## Class activity\n\nPupils measure the distance from their eyes to the screen and adjust their chair and monitor to the correct position.\n\n## Evaluation\n\n1. State two reasons for keeping liquids away from the computer room.\n2. At what height should the top of the monitor be?\n\n## Assignment\n\nComplete the worksheet and the problem set on the app.",
+      "reading": {
+        "title": "Using computers without harming yourself or the machines",
+        "content": "# Safety measures in the computer room\n\n## Why safety matters\n\nLong hours at a computer can cause **eye strain**, **backache**, **neck pain** and **repetitive strain injury (RSI)** in the wrists. Poor arrangement of a room can damage equipment, cause electric shock and even fire.\n\n## Sitting arrangement\n\n- Sit with the **back straight** and supported by the chair.\n- Keep both **feet flat** on the floor or a footrest.\n- Let the **thighs** be level and the **elbows bent at about 90 degrees**.\n- Keep the **forearms level** with the keyboard and the **wrists straight**.\n\n## Positioning the devices\n\n- **Monitor**: directly in front, an arm's length away (about 50 to 70 cm), with the top of the screen at or just below eye level so the neck is not tilted.\n- **Keyboard and mouse**: at elbow height, close to the body, with space to rest the wrists.\n- **CPU (system unit)**: placed on a stand, not on the floor where dust and water reach it, with the air vents free of obstruction.\n- **Peripheral devices** such as the printer and speaker: placed where cables do not cross the walkway.\n- **Cables**: tied or put in trunking so that nobody trips over them.\n\n## Lighting, dust and liquids\n\n- Light the room well but avoid **glare** on the screen. Windows should be at the side, not behind or in front of the screen.\n- Keep a **dust-free** environment: wipe surfaces, use covers and keep windows closed during harmattan dust.\n- Keep **liquids and food away**. Spills damage keyboards and can cause electric shock.\n- Keep the room cool and ventilated so the machines do not overheat.\n\n## Electrical and fire safety\n\n- Do not plug too many devices into one socket (**overloading**).\n- Use a **surge protector** or UPS.\n- Do not touch plugs or cables with wet hands; switch off before you plug or unplug.\n- Report damaged cables.\n- Have a **fire extinguisher** and know the exit. In a fire, switch off the power at the mains if it is safe, and leave the room calmly.\n\n## Healthy habits\n\nLook away from the screen for a few seconds every 20 to 30 minutes, blink often, stand up and stretch, and do not sit in one position for long periods."
+      },
+      "cards": [
+        {
+          "front": "Repetitive strain injury",
+          "back": "Pain in the wrists or hands caused by repeated movements, such as long typing."
+        },
+        {
+          "front": "Correct monitor position",
+          "back": "Directly in front, an arm's length away, with the top at or slightly below eye level."
+        },
+        {
+          "front": "Correct elbow position",
+          "back": "Bent at about 90 degrees with forearms level with the keyboard."
+        },
+        {
+          "front": "Glare",
+          "back": "Bright light reflecting on the screen that strains the eyes."
+        },
+        {
+          "front": "Overloading a socket",
+          "back": "Plugging in too many devices so that the socket overheats."
+        },
+        {
+          "front": "Surge protector",
+          "back": "A device that protects equipment from sudden jumps in voltage."
+        },
+        {
+          "front": "Why keep liquids away",
+          "back": "They damage the equipment and can cause electric shock."
+        },
+        {
+          "front": "Break from the screen",
+          "back": "Look away every 20 to 30 minutes to rest the eyes."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The top of a monitor should be",
+          "options": [
+            "above the head",
+            "at or slightly below eye level",
+            "on the floor",
+            "behind the keyboard"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A suitable position for the elbows when typing is",
+          "options": [
+            "straight at 180 degrees",
+            "hanging below the chair",
+            "raised above the shoulders",
+            "bent at about 90 degrees"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following can cause an electric fire?",
+          "options": [
+            "Overloading a socket with too many devices",
+            "Using a surge protector",
+            "Switching off at the socket",
+            "Tidying cables"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A dust-free computer room is needed because dust",
+          "options": [
+            "improves the picture",
+            "cools the processor",
+            "can settle in the vents and damage the components",
+            "makes the keyboard quieter"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Glare on the screen is best avoided by",
+          "options": [
+            "placing the window behind the screen",
+            "turning off all lights",
+            "placing windows at the side, not facing the screen",
+            "raising the screen's brightness to the highest"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the correct sitting position and the correct position of the monitor, keyboard and mouse for a pupil using a computer. Give a reason for each position.",
+          "markScheme": [
+            "Sit with the back straight and supported, feet flat, to avoid back pain",
+            "Elbows bent at about 90 degrees with wrists straight, to avoid wrist strain",
+            "The monitor directly in front, an arm's length away, with its top at or just below eye level, to prevent neck and eye strain",
+            "The keyboard and mouse at elbow height and close to the body"
+          ],
+          "modelAnswer": "The pupil should sit with the back straight and supported and the feet flat on the floor, which prevents backache. The elbows should be bent at about 90 degrees with the wrists straight, which prevents wrist strain. The monitor should be in front, about an arm's length away, with the top at or slightly below eye level, so the neck and eyes are not strained. The keyboard and mouse should be at elbow height and close to the body.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The pupil should sit with the back straight and supported and the feet flat on the floor so that the back does not ache. The elbows should be at about 90 degrees and the wrists straight so that the wrists do not get hurt. The monitor should be in front at an arm's length with the top at eye level or a little lower so that the neck and eyes are not strained. The keyboard and mouse should be at the level of the elbows and close to the body.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "back straight and supported and the feet flat on the floor so that the back does not ache"
+                },
+                {
+                  "point": 1,
+                  "quote": "elbows should be at about 90 degrees and the wrists straight so that the wrists do not get hurt"
+                },
+                {
+                  "point": 2,
+                  "quote": "monitor should be in front at an arm's length with the top at eye level or a little lower so that the neck and eyes are not strained"
+                },
+                {
+                  "point": 3,
+                  "quote": "keyboard and mouse should be at the level of the elbows and close to the body"
+                }
+              ],
+              "feedback": "All four marks. A reason with every position."
+            },
+            {
+              "tier": "full",
+              "text": "Sit upright with a supported back and put your feet on the floor to protect your spine. Keep your forearms level and wrists straight on the keyboard to prevent RSI. The screen should be straight ahead, about 50 to 70 cm from the eyes, with its top slightly below eye level to avoid neck strain. The mouse and keyboard stay close and at the height of the elbow.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sit upright with a supported back and put your feet on the floor to protect your spine"
+                },
+                {
+                  "point": 1,
+                  "quote": "Keep your forearms level and wrists straight on the keyboard to prevent RSI"
+                },
+                {
+                  "point": 2,
+                  "quote": "about 50 to 70 cm from the eyes, with its top slightly below eye level to avoid neck strain"
+                },
+                {
+                  "point": 3,
+                  "quote": "The mouse and keyboard stay close and at the height of the elbow"
+                }
+              ],
+              "feedback": "Full marks. Mentioning RSI and the distance in centimetres is precise."
+            },
+            {
+              "tier": "partial",
+              "text": "The pupil should sit straight. The monitor should be in front of the pupil. The keyboard should be near.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The pupil should sit straight"
+                }
+              ],
+              "feedback": "You gave the right ideas but no distances, heights or reasons. Say where the top of the monitor should be, the angle of the elbows, and why each position protects the body."
+            },
+            {
+              "tier": "partial",
+              "text": "The monitor should be an arm's length away with its top at eye level or lower. The wrists should be straight and the elbows at 90 degrees.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The wrists should be straight and the elbows at 90 degrees"
+                },
+                {
+                  "point": 2,
+                  "quote": "The monitor should be an arm's length away with its top at eye level or lower"
+                }
+              ],
+              "feedback": "Monitor and arms are good. Add the sitting position (back straight and feet flat), the position of the keyboard and mouse, and reasons.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The pupil should lie down so that he is relaxed. The monitor should be beside him.",
+              "meets": [],
+              "feedback": "Lying down or placing the monitor to the side strains the body. Sit upright with the monitor in front at an arm's length."
+            },
+            {
+              "tier": "weak",
+              "text": "Sit on the table and put the monitor on your lap.",
+              "meets": [],
+              "feedback": "The monitor must be on a stable table in front of you at eye level, and you should sit on a chair with your back supported."
+            }
+          ]
+        },
+        {
+          "prompt": "The ICT room of a school has a window facing the screens, sockets with many devices plugged in, and a pupil drinking water at a computer. State the three hazards, say what could go wrong with each, and give the correct action.",
+          "markScheme": [
+            "Window facing the screens causes glare and eye strain; place screens so that windows are at the side or use blinds",
+            "Overloaded socket can overheat and cause a fire or shock; reduce the load and use a surge protector",
+            "Liquid near the computer can spill and damage equipment or cause shock; ban drinks",
+            "Gives a correct action for each of the three hazards"
+          ],
+          "modelAnswer": "The window facing the screens causes glare, which strains the eyes; the screens should be turned so that the windows are at the side, or blinds should be used. The overloaded sockets can overheat and cause a fire or electric shock; the devices should be reduced and a surge protector used. The drink can spill on the keyboard and damage it or cause shock, so drinks must be banned from the room.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The window facing the screens causes glare, so pupils will have eye strain. The screens should be turned so that windows are at the side, or blinds used. The overloaded socket may overheat and cause fire or shock, so fewer devices should be plugged in and a surge protector used. The drink may spill on the keyboard and spoil it or cause an electric shock, so drinks should not be allowed in the room.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The window facing the screens causes glare, so pupils will have eye strain"
+                },
+                {
+                  "point": 1,
+                  "quote": "The overloaded socket may overheat and cause fire or shock, so fewer devices should be plugged in and a surge protector used"
+                },
+                {
+                  "point": 2,
+                  "quote": "The drink may spill on the keyboard and spoil it or cause an electric shock"
+                },
+                {
+                  "point": 3,
+                  "quote": "drinks should not be allowed in the room"
+                }
+              ],
+              "feedback": "All four marks. Each hazard has its risk and its action."
+            },
+            {
+              "tier": "full",
+              "text": "Glare from the window: place windows to the side or use curtains. Too many plugs in one socket: it can overheat and cause a fire so spread them out and use a surge protector. Water on the desk: it can enter the keyboard and cause a short circuit so no liquids are allowed in the room.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Glare from the window: place windows to the side or use curtains"
+                },
+                {
+                  "point": 1,
+                  "quote": "it can overheat and cause a fire so spread them out and use a surge protector"
+                },
+                {
+                  "point": 2,
+                  "quote": "it can enter the keyboard and cause a short circuit"
+                },
+                {
+                  "point": 3,
+                  "quote": "no liquids are allowed in the room"
+                }
+              ],
+              "feedback": "Full marks. 'Short circuit' is the exact danger of water in a keyboard."
+            },
+            {
+              "tier": "partial",
+              "text": "The window causes glare, so the screens should be turned to the side. The socket and the drink are also dangerous.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The window causes glare, so the screens should be turned to the side"
+                }
+              ],
+              "feedback": "The window is well handled. Say what could go wrong with the overloaded socket (overheating, fire, shock) and the drink (spill, damage, shock), and the action for each."
+            },
+            {
+              "tier": "partial",
+              "text": "The overloaded socket can cause a fire, so reduce the plugs. The drink can spill and spoil the computer.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The overloaded socket can cause a fire, so reduce the plugs"
+                },
+                {
+                  "point": 2,
+                  "quote": "The drink can spill and spoil the computer"
+                }
+              ],
+              "feedback": "Two hazards are well explained. Add the window: glare strains the eyes, and the answer is to move the screens or use blinds.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The window is good for light. The sockets are for plugs. Water is good for health.",
+              "meets": [],
+              "feedback": "They are hazards in this setting: glare strains eyes, overloaded sockets can cause fire and liquids damage equipment."
+            },
+            {
+              "tier": "weak",
+              "text": "Nothing is wrong. Pupils are allowed to drink.",
+              "meets": [],
+              "feedback": "There are three hazards. Drinks must be kept away because spills can damage equipment and cause shock."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Careers in data processing and computer professional bodies",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name professions in computing and state what each person does;\n2. state the qualities of a good data processing professional;\n3. name computer professional bodies in Nigeria and state their duties.\n\n## Materials\n\nA chart of computing careers, a short job advert for a data entry clerk and a database administrator, a guest speaker if possible, a printed code of conduct.\n\n## Starter (5 minutes)\n\nAsk: who has seen a person fixing computers or phones in their area? What would he need to know? Make a list of jobs that did not exist 30 years ago.\n\n## Development\n\n1. Professions: data entry clerk, computer operator, programmer, systems analyst, database administrator, network administrator, web designer, computer engineer or technician, ICT teacher, data analyst and cyber security officer. Say what each does.\n2. Qualities: accuracy, honesty and confidentiality, patience, attention to detail, ability to work in a team, willingness to keep learning, good communication, and discipline.\n3. Professional bodies: the Computer Professionals Registration Council of Nigeria (CPN), which regulates the practice of computing and registers practitioners; the Nigeria Computer Society (NCS), which promotes computing, organises conferences and training and sets standards for its members.\n4. Duties of professional bodies: setting a code of conduct, certifying members, disciplining wrongdoing, training, and representing the profession before government.\n5. Pathways: certificates, diplomas and degrees, and short courses.\n\n## Class activity\n\nPupils interview one ICT worker in their area and report on the work, the training and the qualities needed.\n\n## Evaluation\n\n1. State two qualities of a good data entry clerk.\n2. What is the duty of a computer professional body?\n\n## Assignment\n\nComplete the quiz and the worksheet on the app.",
+      "reading": {
+        "title": "Working with computers",
+        "content": "# Careers in data processing and computer professional bodies\n\n## Careers in computing\n\nComputers have created many kinds of work. Some of the main ones are:\n\n- **Data entry clerk**: types raw data, such as records and forms, into the computer accurately.\n- **Computer operator**: runs the computers and checks that jobs are completed.\n- **Programmer (software developer)**: writes the programs that tell computers what to do.\n- **Systems analyst**: studies how an organisation works and designs a computer system to solve its problems.\n- **Database administrator (DBA)**: designs, protects and manages databases.\n- **Network administrator**: sets up and looks after the computer network.\n- **Web designer**: builds and updates websites.\n- **Computer engineer or technician**: repairs and maintains the hardware.\n- **Cyber security officer**: guards systems and data against hackers.\n- **Data analyst**: studies data to find patterns that help decisions.\n- **ICT teacher**: teaches computer skills.\n\n## Qualities of a good data processing professional\n\n- **Accuracy** and attention to detail, because one wrong digit can change a result.\n- **Honesty and confidentiality**: keeping private information such as results and salaries secret.\n- **Patience** and discipline for long, careful work.\n- **Willingness to keep learning**, because technology changes fast.\n- **Teamwork** and good communication.\n- **Problem-solving** skills.\n\n## Computer professional bodies\n\nA **professional body** is an association of people in the same profession that sets standards and protects the public.\n\n- The **Computer Professionals Registration Council of Nigeria (CPN)** is the body set up by law to regulate the computing profession. It registers practitioners and companies, sets standards, and can take action against unregistered or unethical practice.\n- The **Nigeria Computer Society (NCS)** is the professional association of computer practitioners. It promotes the profession, organises conferences and training, and encourages high standards among its members.\n\n## Duties of professional bodies\n\nThey set a **code of conduct**, **register and certify** members, **train and update** them, **discipline** members who break the rules, and **represent** the profession in dealings with government and the public.\n\n## Pathways\n\nA learner can start with an SS3 certificate in Data Processing, then take a diploma or degree in computer science or information technology, or short professional certificates in networking, databases or cyber security."
+      },
+      "cards": [
+        {
+          "front": "Data entry clerk",
+          "back": "A person who types raw data into the computer accurately."
+        },
+        {
+          "front": "Systems analyst",
+          "back": "A person who studies an organisation's needs and designs a computer system for it."
+        },
+        {
+          "front": "Database administrator",
+          "back": "A person who designs, secures and manages databases."
+        },
+        {
+          "front": "Programmer",
+          "back": "A person who writes computer programs."
+        },
+        {
+          "front": "Quality of a good professional",
+          "back": "Accuracy, honesty, patience and willingness to keep learning."
+        },
+        {
+          "front": "CPN",
+          "back": "The Computer Professionals Registration Council of Nigeria, which regulates the profession."
+        },
+        {
+          "front": "NCS",
+          "back": "The Nigeria Computer Society, an association of computer practitioners."
+        },
+        {
+          "front": "Code of conduct",
+          "back": "The rules of behaviour a professional body expects of its members."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A person who designs, protects and manages databases is a",
+          "options": [
+            "data entry clerk",
+            "database administrator",
+            "web designer",
+            "computer operator"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following is an important quality of a data entry clerk?",
+          "options": [
+            "Carelessness",
+            "Secrecy about mistakes",
+            "Impatience",
+            "Accuracy"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The body set up by law to regulate the practice of computing in Nigeria is the",
+          "options": [
+            "WAEC",
+            "JAMB",
+            "Computer Professionals Registration Council of Nigeria",
+            "National Examinations Council"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A person who writes programs for computers is a",
+          "options": [
+            "programmer",
+            "systems analyst",
+            "network administrator",
+            "computer technician"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A duty of a professional body is to",
+          "options": [
+            "set a code of conduct for members",
+            "print money",
+            "teach pupils in primary schools only",
+            "sell computers"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State what each of the following does: (a) a systems analyst, (b) a database administrator, (c) a network administrator. Give two qualities of a good data processing professional.",
+          "markScheme": [
+            "A systems analyst studies an organisation's needs and designs a computer system",
+            "A database administrator designs, secures and manages databases",
+            "A network administrator sets up and looks after the computer network",
+            "Two valid qualities, such as accuracy, honesty, patience, willingness to learn"
+          ],
+          "modelAnswer": "(a) A systems analyst studies how an organisation works and designs a computer system to solve its problems. (b) A database administrator designs, secures and manages the organisation's databases. (c) A network administrator sets up and looks after the computer network. A good data processing professional must be accurate and honest, keeping private information secret.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A systems analyst studies how an organisation works and designs a computer system to solve its problems. (b) A database administrator designs, protects and manages the databases. (c) A network administrator sets up and maintains the computer network. Qualities are accuracy, because one wrong digit can change a result, and honesty in keeping information confidential.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "studies how an organisation works and designs a computer system to solve its problems"
+                },
+                {
+                  "point": 1,
+                  "quote": "designs, protects and manages the databases"
+                },
+                {
+                  "point": 2,
+                  "quote": "sets up and maintains the computer network"
+                },
+                {
+                  "point": 3,
+                  "quote": "accuracy, because one wrong digit can change a result, and honesty in keeping information confidential"
+                }
+              ],
+              "feedback": "All four marks. Giving the reason for accuracy is very good."
+            },
+            {
+              "tier": "full",
+              "text": "The systems analyst finds out what a business needs and plans a computer system for it. The database administrator looks after the data stored in the database and makes sure it is safe. The network administrator connects the computers and keeps the network working. A good professional should be patient and willing to keep learning.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "finds out what a business needs and plans a computer system for it"
+                },
+                {
+                  "point": 1,
+                  "quote": "looks after the data stored in the database and makes sure it is safe"
+                },
+                {
+                  "point": 2,
+                  "quote": "connects the computers and keeps the network working"
+                },
+                {
+                  "point": 3,
+                  "quote": "patient and willing to keep learning"
+                }
+              ],
+              "feedback": "Full marks. Each role is explained in plain words."
+            },
+            {
+              "tier": "partial",
+              "text": "A systems analyst analyses systems. A database administrator manages the database. A network administrator manages the network.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A database administrator manages the database"
+                },
+                {
+                  "point": 2,
+                  "quote": "A network administrator manages the network"
+                }
+              ],
+              "feedback": "Your database and network answers need more detail (design, protect, set up). Saying 'analyses systems' repeats the name: studies an organisation's needs and designs a system. Add two qualities."
+            },
+            {
+              "tier": "partial",
+              "text": "Qualities of a good professional are accuracy and honesty. A systems analyst designs computer systems for organisations.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A systems analyst designs computer systems for organisations"
+                },
+                {
+                  "point": 3,
+                  "quote": "accuracy and honesty"
+                }
+              ],
+              "feedback": "Good, but you left out the database administrator and the network administrator.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A systems analyst is a person who analyses the system of a school. A database administrator is the person who sells data.",
+              "meets": [],
+              "feedback": "A systems analyst designs computer systems for an organisation's needs. A database administrator designs and protects databases; data is not sold."
+            },
+            {
+              "tier": "weak",
+              "text": "They are all the same: they work on a computer.",
+              "meets": [],
+              "feedback": "They have different roles: systems analyst (designs systems), database administrator (manages data) and network administrator (manages the network)."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Name two professional bodies for computer practitioners in Nigeria and state one duty of each. (b) Explain why a data processing professional must keep information confidential.",
+          "markScheme": [
+            "The CPN (Computer Professionals Registration Council of Nigeria) named, with a duty such as regulating and registering practitioners",
+            "The NCS (Nigeria Computer Society) named, with a duty such as promoting the profession and training members",
+            "Confidentiality protects people's private information such as results, salaries and accounts",
+            "Leaking such information can harm people or the organisation, and the professional may lose trust or be disciplined"
+          ],
+          "modelAnswer": "(a) The Computer Professionals Registration Council of Nigeria (CPN) regulates the practice of computing and registers practitioners. The Nigeria Computer Society (NCS) promotes the profession and organises training and conferences for members. (b) A data processing professional handles private information such as results, salaries and bank records. If it is leaked, people can be harmed and the organisation loses trust, and the professional can be disciplined.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The CPN, the Computer Professionals Registration Council of Nigeria, regulates the profession and registers practitioners. The NCS, the Nigeria Computer Society, promotes computing and trains its members through conferences. (b) A professional has access to private information such as results and salaries. If it leaks, people can be harmed and the organisation loses trust, so he can lose his job or be disciplined.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The CPN, the Computer Professionals Registration Council of Nigeria, regulates the profession and registers practitioners"
+                },
+                {
+                  "point": 1,
+                  "quote": "The NCS, the Nigeria Computer Society, promotes computing and trains its members through conferences"
+                },
+                {
+                  "point": 2,
+                  "quote": "A professional has access to private information such as results and salaries"
+                },
+                {
+                  "point": 3,
+                  "quote": "If it leaks, people can be harmed and the organisation loses trust, so he can lose his job or be disciplined"
+                }
+              ],
+              "feedback": "All four marks. Both bodies are named in full and each has its duty."
+            },
+            {
+              "tier": "full",
+              "text": "CPN controls who can practise computing in Nigeria by registering them and punishing wrongdoers. NCS is an association that organises training and sets standards for members. Confidentiality matters because a data professional sees private information like bank details, and revealing it can hurt people and damage the trust that people have in the organisation.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "CPN controls who can practise computing in Nigeria by registering them and punishing wrongdoers"
+                },
+                {
+                  "point": 1,
+                  "quote": "NCS is an association that organises training and sets standards for members"
+                },
+                {
+                  "point": 2,
+                  "quote": "a data professional sees private information like bank details"
+                },
+                {
+                  "point": 3,
+                  "quote": "revealing it can hurt people and damage the trust that people have in the organisation"
+                }
+              ],
+              "feedback": "Full marks. A clear and accurate account of both bodies."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) CPN regulates and registers practitioners and NCS is the other body. (b) Because it is a secret.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "CPN regulates and registers practitioners"
+                }
+              ],
+              "feedback": "The CPN is well described. The NCS needs a duty too (it promotes the profession and trains members), and say why secrecy matters: leaks harm people and destroy trust."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The CPN regulates and registers computer professionals. (b) Private information must be kept confidential so that people are not harmed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The CPN regulates and registers computer professionals"
+                },
+                {
+                  "point": 2,
+                  "quote": "Private information must be kept confidential so that people are not harmed"
+                }
+              ],
+              "feedback": "The CPN and the reason are good. Add the second body (NCS) with a duty, and say what happens when a professional leaks information.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) WAEC and NECO. (b) Because I do not want to talk.",
+              "meets": [],
+              "feedback": "WAEC and NECO are examination bodies. Computer bodies are the CPN and the NCS. Confidentiality protects people's private data."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The police and the army. (b) Information should be shared with everybody.",
+              "meets": [],
+              "feedback": "Name professional bodies of computing: CPN and NCS. Private information such as results and bank details must not be shared."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Computer viruses",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a computer virus and name its types;\n2. state the sources of virus infection and the signs that a computer is infected;\n3. explain how viruses are prevented, detected and removed;\n4. describe the destructive effects of a virus on a computer and its data.\n\n## Materials\n\nA computer with antivirus software, a flash drive (clean), a poster of virus warning signs, screenshots of a warning message and of a slow computer.\n\n## Starter (5 minutes)\n\nAsk: a pupil plugs a flash drive into the school computer and after that the computer starts to behave strangely. What do you think happened? Let pupils suggest causes and then introduce the term virus.\n\n## Development\n\n1. Define a computer virus as a harmful program that copies itself and spreads from one computer or file to another, attaching to files and damaging data and programs.\n2. Types: boot sector virus, file infector, macro virus, worm, Trojan horse, and ransomware (explain the differences briefly).\n3. Sources: infected flash drives, email attachments, pirated or downloaded software, unsafe websites and networks.\n4. Signs: slow computer, strange messages, programs that open by themselves, missing or damaged files, frequent crashes, and unusual disk activity.\n5. Prevention: install and update antivirus, scan flash drives, do not open unknown attachments, avoid pirated software, use a firewall and back up files. Detection: antivirus scan. Deletion: quarantine or delete infected files; reinstall if needed.\n6. Effects: loss or corruption of data, slow performance, stolen passwords, system crash and costs of repair.\n\n## Class activity\n\nPupils scan a clean flash drive with the antivirus, report what the scan shows and explain the steps.\n\n## Evaluation\n\n1. State two signs of a virus infection.\n2. Why must antivirus software be updated regularly?\n\n## Assignment\n\nComplete the problem set and the worksheet on the app.",
+      "reading": {
+        "title": "Programs that spread and destroy",
+        "content": "# Computer viruses\n\n## What is a computer virus?\n\nA **computer virus** is a harmful program that copies itself and spreads from one file or computer to another without the user's knowledge, often damaging data and programs. Like a biological virus, it needs a host (a file or program) to spread.\n\n## Types and examples of malicious programs\n\n- **Boot sector virus**: infects the start-up area of a disk, so that the computer may not start.\n- **File infector virus**: attaches to program files and spreads when they are run.\n- **Macro virus**: hides in documents such as Word or Excel files and runs when the document is opened.\n- **Worm**: spreads over a network by itself, slowing it down.\n- **Trojan horse**: pretends to be a useful program but opens the way for attackers.\n- **Ransomware**: locks your files and demands money to unlock them.\n\n## Sources of virus infection\n\n- Infected **flash drives** and other storage devices.\n- **Email attachments** from unknown senders.\n- **Pirated software** and cracked programs.\n- **Unsafe websites** and downloads.\n- Unprotected **networks**.\n\n## Signs of a virus\n\nThe computer becomes **slow**; strange **messages** or pictures appear; programs **open or close by themselves**; files **disappear** or cannot open; the computer **crashes** or restarts often; the disk light flashes though you are doing nothing.\n\n## Prevention, detection and deletion\n\n**Prevention:** install **antivirus** software and keep it **updated** so that it knows new viruses; scan every flash drive before use; do not open attachments from strangers; avoid pirated software; use a **firewall**; keep the operating system updated; and make **backups**.\n\n**Detection:** run a full **antivirus scan**.\n\n**Deletion:** let the antivirus **quarantine** (isolate) or **delete** infected files; remove a bad program; if the system is badly damaged, reinstall it and restore files from a backup.\n\n## Destructive effects\n\nA virus can **delete or corrupt files**, **slow** the computer, **steal passwords** and personal information, **crash** the system, spread to other computers on the network and cost the school money for repair."
+      },
+      "cards": [
+        {
+          "front": "Computer virus",
+          "back": "A harmful program that copies itself and spreads from file to file or computer to computer."
+        },
+        {
+          "front": "Worm",
+          "back": "A virus that spreads by itself over a network."
+        },
+        {
+          "front": "Trojan horse",
+          "back": "A harmful program that pretends to be useful."
+        },
+        {
+          "front": "Ransomware",
+          "back": "A program that locks files and demands payment to unlock them."
+        },
+        {
+          "front": "Antivirus",
+          "back": "Software that prevents, detects and removes viruses."
+        },
+        {
+          "front": "Quarantine",
+          "back": "Isolating an infected file so it cannot spread."
+        },
+        {
+          "front": "Sign of a virus",
+          "back": "A slow computer, strange messages or files that disappear."
+        },
+        {
+          "front": "Common source of a virus",
+          "back": "An infected flash drive or an email attachment."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A harmful program that copies itself and spreads from one computer to another is a",
+          "options": [
+            "firewall",
+            "browser",
+            "modem",
+            "virus"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is a common source of computer viruses?",
+          "options": [
+            "A scanned flash drive",
+            "An infected email attachment",
+            "A keyboard",
+            "A mouse mat"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A virus that hides in a Word or Excel document is a",
+          "options": [
+            "boot sector virus",
+            "firewall",
+            "worm",
+            "macro virus"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Antivirus software must be updated regularly so that it",
+          "options": [
+            "prints faster",
+            "uses less electricity",
+            "can recognise new viruses",
+            "can increase the memory"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A program that locks your files and demands money to unlock them is",
+          "options": [
+            "a worm",
+            "a Trojan horse",
+            "ransomware",
+            "a browser"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State four signs that a computer has been infected by a virus, and explain three ways of preventing infection in a school computer room.",
+          "markScheme": [
+            "Names four signs, such as slow performance, strange messages, missing files, frequent crashes, programs opening by themselves",
+            "Prevention 1 explained, e.g. install and update antivirus",
+            "Prevention 2 explained, e.g. scan flash drives before use",
+            "Prevention 3 explained, e.g. do not open unknown attachments or use pirated software"
+          ],
+          "modelAnswer": "Signs of a virus include a slow computer, strange messages on the screen, missing or damaged files and frequent crashes. To prevent infection the school should install antivirus software and update it so that it recognises new viruses. Every flash drive should be scanned before it is used, because infected drives are a common source. Pupils should not open attachments from strangers or install pirated software, which can carry viruses.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Signs are that the computer becomes slow, strange messages appear, files disappear and the computer crashes often. To prevent infection, install antivirus and update it so that it can recognise new viruses. Scan every flash drive before using it because flash drives carry viruses from one computer to another. Do not open attachments from strangers or use pirated software, because they can contain viruses.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the computer becomes slow, strange messages appear, files disappear and the computer crashes often"
+                },
+                {
+                  "point": 1,
+                  "quote": "install antivirus and update it so that it can recognise new viruses"
+                },
+                {
+                  "point": 2,
+                  "quote": "Scan every flash drive before using it because flash drives carry viruses from one computer to another"
+                },
+                {
+                  "point": 3,
+                  "quote": "Do not open attachments from strangers or use pirated software, because they can contain viruses"
+                }
+              ],
+              "feedback": "All four marks. Each prevention method includes why it works."
+            },
+            {
+              "tier": "full",
+              "text": "The signs are slow work, programs opening by themselves, missing files and unusual warning messages. Prevention: use a firewall and keep it on so that outsiders cannot enter; keep antivirus up to date; avoid downloading from unsafe websites. These measures stop viruses before they reach the computer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "slow work, programs opening by themselves, missing files and unusual warning messages"
+                },
+                {
+                  "point": 1,
+                  "quote": "keep antivirus up to date"
+                },
+                {
+                  "point": 2,
+                  "quote": "use a firewall and keep it on so that outsiders cannot enter"
+                },
+                {
+                  "point": 3,
+                  "quote": "avoid downloading from unsafe websites"
+                }
+              ],
+              "feedback": "Full marks. A firewall is a good extra measure."
+            },
+            {
+              "tier": "partial",
+              "text": "The signs are that the computer is slow and the files are lost. To prevent a virus, use antivirus.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "use antivirus"
+                }
+              ],
+              "feedback": "You gave two signs where four were needed, and one prevention method without explanation. Add flash drive scanning and not opening unknown attachments."
+            },
+            {
+              "tier": "partial",
+              "text": "Signs: slow computer, files lost, strange messages and crashes. Prevention is to scan flash drives.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "slow computer, files lost, strange messages and crashes"
+                },
+                {
+                  "point": 2,
+                  "quote": "scan flash drives"
+                }
+              ],
+              "feedback": "Your four signs are right. Explain scanning (infected drives spread viruses) and give two more prevention methods, such as updating antivirus and avoiding unknown attachments.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The signs are that the computer is hot and the monitor is big. To prevent a virus we pray.",
+              "meets": [],
+              "feedback": "Signs of a virus are a slow computer, strange messages, missing files and crashes. Prevention is by antivirus, scanning flash drives and safe downloads."
+            },
+            {
+              "tier": "weak",
+              "text": "A virus is a sickness of pupils. It is prevented by taking medicine.",
+              "meets": [],
+              "feedback": "A computer virus is a harmful program, not a disease. Prevent it with antivirus, scanning and safe habits."
+            }
+          ]
+        },
+        {
+          "prompt": "A pupil plugs a flash drive into the school computer, the computer becomes slow and several files cannot be opened. (a) Suggest what may be wrong and name the source. (b) State the steps that should be taken to detect and remove the problem. (c) State two destructive effects a virus can have on the school's data.",
+          "markScheme": [
+            "A virus infection; the source is the infected flash drive",
+            "Detection: run a full antivirus scan (updated antivirus)",
+            "Removal: quarantine or delete infected files and, if needed, restore from backup",
+            "Two effects, such as data deleted or corrupted, passwords stolen, system crash"
+          ],
+          "modelAnswer": "(a) The computer is probably infected by a virus, which came from the infected flash drive. (b) The school should update the antivirus and run a full scan to detect the virus, then quarantine or delete the infected files, and if the system is badly damaged restore the files from a backup. (c) A virus may delete or corrupt files, steal passwords and cause the system to crash.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A virus has infected the computer and the source is the flash drive. (b) Update the antivirus and run a full scan to find the virus, then quarantine or delete the infected files, and restore any lost file from the backup. (c) The virus can delete or damage the files, and it can steal passwords.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A virus has infected the computer and the source is the flash drive"
+                },
+                {
+                  "point": 1,
+                  "quote": "run a full scan to find the virus"
+                },
+                {
+                  "point": 2,
+                  "quote": "quarantine or delete the infected files, and restore any lost file from the backup"
+                },
+                {
+                  "point": 3,
+                  "quote": "delete or damage the files, and it can steal passwords"
+                }
+              ],
+              "feedback": "All four marks. You followed detection with removal and recovery."
+            },
+            {
+              "tier": "full",
+              "text": "The computer has a virus from the flash drive. I would first disconnect it from the network, then run the antivirus to scan the whole computer and remove the infected files. A virus can corrupt the school's records and can also crash the computer so that it cannot start.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The computer has a virus from the flash drive"
+                },
+                {
+                  "point": 1,
+                  "quote": "run the antivirus to scan the whole computer"
+                },
+                {
+                  "point": 2,
+                  "quote": "remove the infected files"
+                },
+                {
+                  "point": 3,
+                  "quote": "corrupt the school's records and can also crash the computer so that it cannot start"
+                }
+              ],
+              "feedback": "Full marks. Disconnecting from the network first stops the virus spreading."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) It is a virus from the flash drive. (b) Use antivirus. (c) It spoils the files.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is a virus from the flash drive"
+                },
+                {
+                  "point": 3,
+                  "quote": "It spoils the files"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b), say that you run a full scan, then quarantine or delete the infected files. In (c), give two effects: for example deleted files and stolen passwords."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) Run a full antivirus scan and delete the infected files. (c) Virus can crash the system and steal passwords.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Run a full antivirus scan"
+                },
+                {
+                  "point": 2,
+                  "quote": "delete the infected files"
+                },
+                {
+                  "point": 3,
+                  "quote": "crash the system and steal passwords"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are good. You did not say what is wrong with the computer in (a): a virus from the infected flash drive.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The computer is tired. (b) Switch it off and leave it. (c) It makes the computer hot.",
+              "meets": [],
+              "feedback": "The signs point to a virus from the flash drive. Update the antivirus and run a full scan to remove it. Effects include deleted files and stolen passwords."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The flash drive is spoilt. (b) Format the flash drive and throw it away. (c) It improves the speed.",
+              "meets": [],
+              "feedback": "The computer has a virus, not a spoilt flash drive. Scan and remove the virus; a virus slows the system rather than improving it."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "The relational model: keys, relationships, queries and SQL",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the relational model, entity, attribute and relationship;\n2. identify primary and foreign keys and link two tables;\n3. state the uses of forms, queries and reports;\n4. write simple SQL SELECT queries and describe query by example (QBE).\n\n## Materials\n\nComputers with Microsoft Access or LibreOffice Base, a projector, printed copies of two tables (Students and Classes), a query grid.\n\n## Starter (5 minutes)\n\nWrite the class name 'SS3A Data Processing, Room 4, Teacher Mrs Eze' next to each of 40 pupils on the board (or say you would). Ask: what is wasted? Where should the class details be kept so that they are written only once?\n\n## Development\n\n1. Relational model: data is kept in related tables. An entity is a thing we keep data about (a student); an attribute is a fact about it (name); a relationship links entities (a student belongs to a class).\n2. Primary key: uniquely identifies each record in its table. Foreign key: a field in one table that holds the primary key of another, so that the tables are linked.\n3. Create two tables in Access, set the primary keys and make the relationship using the foreign key field.\n4. Forms enter and view data one record at a time; queries search and combine data; reports present results for printing.\n5. Query languages: query by example (QBE), where the user fills in a grid, and SQL (Structured Query Language), where the user types commands such as SELECT Name FROM Students WHERE ClassID = 'SS3A'.\n\n## Class activity\n\nPupils build the two tables, link them, and write a query to list all pupils in SS3A.\n\n## Evaluation\n\n1. What is a foreign key?\n2. What does SELECT * FROM Students do?\n\n## Assignment\n\nComplete the worksheet and the quiz on the app.",
+      "reading": {
+        "title": "Linking tables so that data is written once",
+        "content": "# The relational model: keys, relationships, queries and SQL\n\n## The relational model\n\nIn a **relational database** data is stored in several **tables** that are linked. This avoids repeating data. Imagine writing a class's room and teacher beside every pupil's name; instead we keep this once in a Classes table and link it.\n\n- An **entity** is something we keep data about, such as a student or a class.\n- An **attribute** is a fact about an entity, such as a student's name. Attributes become the **fields** of the table.\n- A **relationship** is a link between entities. One class has many students: a **one-to-many** relationship.\n\n## Keys\n\nThe **primary key** uniquely identifies each record in its own table. The **foreign key** is a field in one table that holds the primary key of another table, making the link.\n\n**Classes**\n\n| ClassID | ClassName | Teacher |\n| --- | --- | --- |\n| SS3A | SS3A Data Processing | Mrs Eze |\n| SS3B | SS3B Data Processing | Mr Bello |\n\n**Students**\n\n| AdmNo | Name | ClassID |\n| --- | --- | --- |\n| 001 | Ada Obi | SS3A |\n| 002 | Musa Bello | SS3B |\n| 003 | Tolu Ade | SS3A |\n\nIn Classes the primary key is **ClassID**. In Students the primary key is **AdmNo** and **ClassID** is the **foreign key**. It links each student to a class, so Tolu Ade's teacher can be found without repeating it.\n\n## Forms, queries and reports\n\n- A **form** is a screen for entering or viewing one record at a time.\n- A **query** asks the database a question and returns the matching records.\n- A **report** is a neat printed or displayed summary of data.\n\n## Query languages\n\n**Query by example (QBE)**: you fill in a grid: choose the table, the field to show and type the condition ('SS3A') under the ClassID field.\n\n**SQL (Structured Query Language)**: you type commands.\n\n- `SELECT * FROM Students;` shows every field of every record in Students.\n- `SELECT Name FROM Students WHERE ClassID = 'SS3A';` shows the names of the pupils in SS3A: Ada Obi and Tolu Ade.\n- `SELECT Name FROM Students ORDER BY Name;` lists names in alphabetical order.\n\nSELECT chooses fields, FROM names the table and WHERE gives the condition."
+      },
+      "cards": [
+        {
+          "front": "Relational database",
+          "back": "A database in which data is kept in linked tables."
+        },
+        {
+          "front": "Entity",
+          "back": "A thing about which data is kept, such as a student."
+        },
+        {
+          "front": "Attribute",
+          "back": "A fact about an entity, such as a name; it becomes a field."
+        },
+        {
+          "front": "Primary key",
+          "back": "A field that uniquely identifies each record in its table."
+        },
+        {
+          "front": "Foreign key",
+          "back": "A field in one table that holds the primary key of another, linking the tables."
+        },
+        {
+          "front": "Query",
+          "back": "A request that finds records matching a condition."
+        },
+        {
+          "front": "SQL",
+          "back": "Structured Query Language, used to ask questions of a database."
+        },
+        {
+          "front": "QBE",
+          "back": "Query by example, in which the user fills in a grid instead of typing commands."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A field in one table that holds the primary key of another table is a",
+          "options": [
+            "primary key",
+            "report",
+            "foreign key",
+            "form"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "In SQL, which word chooses the fields to display?",
+          "options": [
+            "SELECT",
+            "FROM",
+            "WHERE",
+            "ORDER"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which SQL statement lists the names of students in class SS3A?",
+          "options": [
+            "SELECT * FROM Classes;",
+            "SELECT Name WHERE Students;",
+            "SELECT ClassID FROM Name;",
+            "SELECT Name FROM Students WHERE ClassID = 'SS3A';"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A screen used to enter or view one record at a time is a",
+          "options": [
+            "report",
+            "form",
+            "table",
+            "primary key"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Query by example (QBE) is a way of asking a database questions by",
+          "options": [
+            "filling in a grid",
+            "typing a long program",
+            "printing the table",
+            "deleting the table"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Use the Classes and Students tables in the reading. (a) Name the primary key of each table and the foreign key. (b) Why is the class teacher's name kept in Classes and not repeated in Students?",
+          "markScheme": [
+            "Primary key of Classes is ClassID and of Students is AdmNo",
+            "The foreign key is ClassID in the Students table",
+            "It links each student to a class record",
+            "Repeating wastes space and risks inconsistency; stored once it can be changed in one place"
+          ],
+          "modelAnswer": "(a) The primary key of Classes is ClassID and the primary key of Students is AdmNo. The foreign key is ClassID in Students, which links each student to a class. (b) The teacher's name is kept once in Classes so that it is not repeated for every student, which wastes space and could lead to different spellings. If the teacher changes, it is changed in one place only.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The primary key of Classes is ClassID and the primary key of Students is AdmNo. The foreign key is ClassID in the Students table. It links each student to a class. (b) If the teacher's name was written beside every student it would waste space and could be spelt differently. By keeping it in Classes it can be changed in one place when the teacher changes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The primary key of Classes is ClassID and the primary key of Students is AdmNo"
+                },
+                {
+                  "point": 1,
+                  "quote": "The foreign key is ClassID in the Students table"
+                },
+                {
+                  "point": 2,
+                  "quote": "It links each student to a class"
+                },
+                {
+                  "point": 3,
+                  "quote": "it would waste space and could be spelt differently"
+                }
+              ],
+              "feedback": "All four marks. You gave two reasons in (b): waste and inconsistency."
+            },
+            {
+              "tier": "full",
+              "text": "Classes uses ClassID as its primary key and Students uses AdmNo. ClassID in Students is the foreign key because it holds the primary key of the Classes table, so the two tables are linked. The teacher's name is stored only once so there is no repetition, and an update needs to be done in only one place.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Classes uses ClassID as its primary key and Students uses AdmNo"
+                },
+                {
+                  "point": 1,
+                  "quote": "ClassID in Students is the foreign key"
+                },
+                {
+                  "point": 2,
+                  "quote": "it holds the primary key of the Classes table, so the two tables are linked"
+                },
+                {
+                  "point": 3,
+                  "quote": "The teacher's name is stored only once so there is no repetition"
+                }
+              ],
+              "feedback": "Full marks. Explaining that the foreign key holds the other table's primary key is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The primary key is ClassID in both tables. The foreign key is AdmNo. (b) To save space.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "To save space"
+                }
+              ],
+              "feedback": "The primary keys are different: ClassID for Classes and AdmNo for Students; the foreign key is ClassID in Students. Saving space is one reason; add that data stays consistent."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) AdmNo and ClassID are the primary keys, and ClassID in Students is the foreign key. (b) So that we do not repeat the teacher's name.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "ClassID in Students is the foreign key"
+                },
+                {
+                  "point": 3,
+                  "quote": "So that we do not repeat the teacher's name"
+                }
+              ],
+              "feedback": "The foreign key and the reason are right. Say which key belongs to which table (ClassID to Classes, AdmNo to Students) and what the foreign key does: it links the student to the class.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The primary key is the first key on the keyboard. (b) Because the teacher is not a student.",
+              "meets": [],
+              "feedback": "A primary key is the field that uniquely identifies each record. The foreign key links tables. Teacher details are kept once to avoid repetition."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Name is the primary key and Teacher is the foreign key. (b) To hide the teacher.",
+              "meets": [],
+              "feedback": "Names can repeat so they are poor keys. ClassID and AdmNo are the keys, and the foreign key is ClassID in Students."
+            }
+          ]
+        },
+        {
+          "prompt": "Using the same tables, (a) write an SQL statement to list the names of all students in class SS3B, (b) say what SELECT * FROM Students; displays, and (c) distinguish between a form and a report.",
+          "markScheme": [
+            "SELECT Name FROM Students WHERE ClassID = 'SS3B';",
+            "SELECT * FROM Students displays all the fields of all the records in the table",
+            "A form is used for entering or viewing one record at a time",
+            "A report is a neat summary of data for printing or display"
+          ],
+          "modelAnswer": "(a) SELECT Name FROM Students WHERE ClassID = 'SS3B'; (b) SELECT * FROM Students; displays every field of every record in the Students table. (c) A form is a screen used to enter or view one record at a time, while a report is a neat summary of data prepared for printing or display.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) SELECT Name FROM Students WHERE ClassID = 'SS3B'; (b) It shows every field of all the records in the Students table. (c) A form is used for entering or viewing one record at a time, but a report presents data in a neat form for printing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "SELECT Name FROM Students WHERE ClassID = 'SS3B';"
+                },
+                {
+                  "point": 1,
+                  "quote": "It shows every field of all the records in the Students table"
+                },
+                {
+                  "point": 2,
+                  "quote": "A form is used for entering or viewing one record at a time"
+                },
+                {
+                  "point": 3,
+                  "quote": "a report presents data in a neat form for printing"
+                }
+              ],
+              "feedback": "All four marks. The statement is correct, including the quotation marks around the text."
+            },
+            {
+              "tier": "full",
+              "text": "The query is: SELECT Name FROM Students WHERE ClassID = 'SS3B'; The asterisk means all fields, so SELECT * FROM Students; displays the whole table. A form shows one record at a time on the screen for data entry, while a report is a summary arranged for printing or presenting.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "SELECT Name FROM Students WHERE ClassID = 'SS3B';"
+                },
+                {
+                  "point": 1,
+                  "quote": "The asterisk means all fields, so SELECT * FROM Students; displays the whole table"
+                },
+                {
+                  "point": 2,
+                  "quote": "A form shows one record at a time on the screen for data entry"
+                },
+                {
+                  "point": 3,
+                  "quote": "a report is a summary arranged for printing or presenting"
+                }
+              ],
+              "feedback": "Full marks. You explained what the asterisk means."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) SELECT Name FROM Students WHERE ClassID = SS3B. (b) It shows the table. (c) A form and a report are the same.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "It shows the table"
+                }
+              ],
+              "feedback": "Your query is almost right: text such as SS3B needs quotation marks, and it should end with a semicolon. In (b) say it shows all fields of all records. A form and a report are different: form for entering one record, report for presenting."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) SELECT Name FROM Students WHERE ClassID = 'SS3B'; (b) The asterisk shows everything. (c) A report is for printing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "SELECT Name FROM Students WHERE ClassID = 'SS3B';"
+                },
+                {
+                  "point": 1,
+                  "quote": "The asterisk shows everything"
+                },
+                {
+                  "point": 3,
+                  "quote": "A report is for printing"
+                }
+              ],
+              "feedback": "Three correct. A form is used to enter or view a single record; you need to say that to complete (c).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) SELECT SS3B. (b) It selects students. (c) Form is for filling and report is a report of the school.",
+              "meets": [],
+              "feedback": "A query needs the field, the table and the condition: SELECT Name FROM Students WHERE ClassID = 'SS3B'; The asterisk shows all fields; a report summarises data."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) DELETE Students. (b) It deletes the students table. (c) A form is a paper and a report is a screen.",
+              "meets": [],
+              "feedback": "DELETE removes data. SELECT only displays it. A form is a screen for entering a record; a report is a summary for printing."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "File organisation",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a file, a record and file organisation;\n2. describe serial, sequential, indexed sequential and random (direct) access file organisation;\n3. compare the types for speed, cost and suitability;\n4. choose a suitable organisation for a given job.\n\n## Materials\n\nA pile of index cards (one per pupil) in random order, a ruler, a school register, a dictionary and a phone's contact list as examples.\n\n## Starter (5 minutes)\n\nGive a volunteer a pile of shuffled cards of the class and ask him to find 'Tolu Ade'. Then arrange the cards alphabetically and repeat. Ask: why was the second search faster?\n\n## Development\n\n1. Definitions: a field, a record (fields about one item), a file (records of the same kind), file organisation (the way records are arranged on the storage medium).\n2. Serial: records are stored in the order they arrive, with no sorting. Searching means reading from the start. Used for transaction logs.\n3. Sequential: records are sorted by a key field, such as admission number. Searching is faster than serial, and it suits payroll processing where every record is processed.\n4. Indexed sequential: records sorted by key with an index that points to blocks of records, so a record can be found quickly or all records read in order. Used in a library catalogue.\n5. Random (direct): the position of a record is calculated from its key, so any record is found at once, however many there are. Used in an ATM or airline booking system.\n6. Compare: speed of finding one record, speed of processing all records, cost and complexity.\n\n## Class activity\n\nPupils decide which organisation is best for ten tasks (monthly payroll, ATM balance check, a log of visitors, a library search).\n\n## Evaluation\n\n1. Why is a random access file better for an ATM?\n2. What is a key field?\n\n## Assignment\n\nComplete the worksheet, the problem set and the quiz on the app.",
+      "reading": {
+        "title": "How records are arranged in a file",
+        "content": "# File organisation\n\n## Terms\n\n- A **field** is one item of data, such as a name.\n- A **record** is a set of related fields about one item, such as a pupil's AdmNo, Name and Class.\n- A **file** is a collection of records of the same kind, such as the file of all pupils.\n- A **key field** is the field that identifies a record, such as AdmNo.\n\n**File organisation** is the way the records are arranged and stored in a file. The choice affects how quickly records can be found and processed.\n\n## Types of file organisation\n\n**1. Serial organisation.** Records are stored one after the other in the order in which they arrive, with no sorting. To find a record, the computer must read from the beginning. It is simple and cheap and used for logs and temporary transaction files, such as a list of the day's sales.\n\n**2. Sequential organisation.** Records are stored in order of a **key field**, for example from the smallest admission number to the largest. It is quick to process all the records in turn, as in a monthly payroll. To add a record the file must be rewritten, and finding one record still needs a search from the top.\n\n**3. Indexed sequential organisation.** Records are kept in key order and there is also an **index**, a small table that tells where blocks of records are found, like the index of a textbook. A single record is found quickly through the index, and all records can still be read in order. It is used in library catalogues and school records.\n\n**4. Random (direct access) organisation.** The position of each record is worked out from its key by a formula, so the record is found directly, however big the file is. It is the fastest for single records but needs a disk (not tape) and is more costly to set up. It is used in ATMs and airline booking systems, where a customer's record must appear at once.\n\n## Comparing them\n\n| Organisation | Finding one record | Processing all records | Typical use |\n| --- | --- | --- | --- |\n| Serial | slowest | slow | transaction log |\n| Sequential | slow | fast | payroll |\n| Indexed sequential | fast | fast | library catalogue |\n| Random | fastest | not in order | ATM, bookings |\n\n## Choosing\n\nIf every record is processed each time, as in payroll, sequential is good. If single records are looked up quickly, as with a customer at an ATM, use random access. If both are needed, use indexed sequential."
+      },
+      "cards": [
+        {
+          "front": "File",
+          "back": "A collection of records of the same kind."
+        },
+        {
+          "front": "Key field",
+          "back": "The field that identifies a record, such as admission number."
+        },
+        {
+          "front": "Serial file",
+          "back": "Records are stored in the order they arrive, without sorting."
+        },
+        {
+          "front": "Sequential file",
+          "back": "Records are stored in order of the key field."
+        },
+        {
+          "front": "Indexed sequential file",
+          "back": "Sorted records with an index for fast lookup."
+        },
+        {
+          "front": "Random (direct) access file",
+          "back": "The position of a record is worked out from its key, so it is found at once."
+        },
+        {
+          "front": "Best for payroll",
+          "back": "Sequential organisation, because every record is processed."
+        },
+        {
+          "front": "Best for an ATM",
+          "back": "Random access, because one record must be found at once."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Records stored in the order in which they arrive, without sorting, form a",
+          "options": [
+            "serial file",
+            "sequential file",
+            "random file",
+            "indexed file"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which organisation is best for an ATM, which must find one customer's account at once?",
+          "options": [
+            "Serial",
+            "Sequential",
+            "Indexed sequential only",
+            "Random (direct) access"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Records arranged in order of a key field form a",
+          "options": [
+            "serial file",
+            "sequential file",
+            "random file",
+            "report"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A table that tells where blocks of records are found, used to speed up searching, is called an",
+          "options": [
+            "index",
+            "key",
+            "form",
+            "field"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A monthly payroll that processes every employee's record each time is best stored in a",
+          "options": [
+            "serial file",
+            "random file",
+            "sequential file",
+            "single field"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between serial and sequential file organisation and say which is faster for finding a record. Give one use of each.",
+          "markScheme": [
+            "Serial: records stored in the order they arrive, with no sorting",
+            "Sequential: records stored in order of a key field",
+            "Sequential is faster to search because records are in order",
+            "Use: serial for a transaction log; sequential for payroll"
+          ],
+          "modelAnswer": "In a serial file, records are stored in the order in which they arrive, without sorting. In a sequential file, records are stored in order of a key field, such as the admission number. Searching a sequential file is faster because the records are in order, while a serial file must be read from the start. A serial file can be used for a day's transaction log, and a sequential file for the monthly payroll.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "In a serial file the records are kept in the order they arrive, without sorting. In a sequential file the records are kept in order of a key field. A sequential file is faster to search because the records are in order. A serial file can be used for a daily sales log, and a sequential file for a payroll.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the records are kept in the order they arrive, without sorting"
+                },
+                {
+                  "point": 1,
+                  "quote": "the records are kept in order of a key field"
+                },
+                {
+                  "point": 2,
+                  "quote": "A sequential file is faster to search because the records are in order"
+                },
+                {
+                  "point": 3,
+                  "quote": "A serial file can be used for a daily sales log, and a sequential file for a payroll"
+                }
+              ],
+              "feedback": "All four marks. You gave both a use and a reason for the speed."
+            },
+            {
+              "tier": "full",
+              "text": "Serial means the records follow one another as they were entered. Sequential means they are sorted using the key field such as the admission number. Finding a record is faster in sequential since the order guides the search. For example, the day's transactions are kept serially and the employees' salary records sequentially.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the records follow one another as they were entered"
+                },
+                {
+                  "point": 1,
+                  "quote": "they are sorted using the key field such as the admission number"
+                },
+                {
+                  "point": 2,
+                  "quote": "Finding a record is faster in sequential since the order guides the search"
+                },
+                {
+                  "point": 3,
+                  "quote": "the day's transactions are kept serially and the employees' salary records sequentially"
+                }
+              ],
+              "feedback": "Full marks. Clear definitions, with correct uses."
+            },
+            {
+              "tier": "partial",
+              "text": "A serial file is not sorted and a sequential file is sorted. Sequential is faster.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Sequential is faster"
+                }
+              ],
+              "feedback": "Add what it is sorted by (a key field), and give a use for each, such as a transaction log (serial) and payroll (sequential)."
+            },
+            {
+              "tier": "partial",
+              "text": "A sequential file is sorted by the key field. A serial file is the fastest. Serial is used in a log.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A sequential file is sorted by the key field"
+                },
+                {
+                  "point": 3,
+                  "quote": "Serial is used in a log"
+                }
+              ],
+              "feedback": "Your definition of sequential and the serial use are right. A serial file is the slowest to search, not the fastest, because it is unsorted.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Serial is when records are in a series of episodes. Sequential is when they are in sequence.",
+              "meets": [],
+              "feedback": "Serial means records are stored as they arrive; sequential means they are sorted by a key field."
+            },
+            {
+              "tier": "weak",
+              "text": "They are the same.",
+              "meets": [],
+              "feedback": "They are different: serial files are unsorted, sequential files are sorted by a key field, which makes searching faster."
+            }
+          ]
+        },
+        {
+          "prompt": "A bank wants to store customer accounts so that a customer's balance appears at once at an ATM, and also wants to process all accounts at night to add interest. (a) Suggest the best file organisation for the ATM and give a reason. (b) Which organisation suits the night processing? (c) Name an organisation that suits both and explain how it works.",
+          "markScheme": [
+            "Random (direct) access for the ATM because a record is found directly from its key",
+            "Sequential for the night processing because all records are processed in order",
+            "Indexed sequential suits both",
+            "It keeps records in key order with an index to find a single record quickly"
+          ],
+          "modelAnswer": "(a) For the ATM, random (direct) access is best because the position of a customer's record is worked out from the key, so the record is found at once. (b) For night processing of all accounts a sequential file is suitable because every record is processed in order. (c) Indexed sequential organisation suits both: records are kept in key order and an index tells where records are, so a single record can be found quickly and all records can still be processed in order.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Random access, because the position of the record is worked out from the customer's key so the balance appears at once. (b) Sequential, because every account is processed in order. (c) Indexed sequential: the records are stored in key order and an index tells where each block is, so one record is found quickly and all can be read in order.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Random access, because the position of the record is worked out from the customer's key so the balance appears at once"
+                },
+                {
+                  "point": 1,
+                  "quote": "Sequential, because every account is processed in order"
+                },
+                {
+                  "point": 2,
+                  "quote": "Indexed sequential"
+                },
+                {
+                  "point": 3,
+                  "quote": "the records are stored in key order and an index tells where each block is, so one record is found quickly and all can be read in order"
+                }
+              ],
+              "feedback": "All four marks. You explained how indexed sequential gets both advantages."
+            },
+            {
+              "tier": "full",
+              "text": "For the ATM I would choose direct access because each record is found at once from its key. For adding interest to all accounts at night a sequential file is good because all the records are read one after another. A file that can do both is indexed sequential, because it has an index that guides to a single record but the records are still in order.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "direct access because each record is found at once from its key"
+                },
+                {
+                  "point": 1,
+                  "quote": "a sequential file is good because all the records are read one after another"
+                },
+                {
+                  "point": 2,
+                  "quote": "indexed sequential"
+                },
+                {
+                  "point": 3,
+                  "quote": "it has an index that guides to a single record but the records are still in order"
+                }
+              ],
+              "feedback": "Full marks. Direct access is another name for random access, and you used it correctly."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Random access. (b) Sequential. (c) Serial.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Random access"
+                },
+                {
+                  "point": 1,
+                  "quote": "Sequential"
+                }
+              ],
+              "feedback": "(a) and (b) are right but you need a reason for each. For (c) the answer is indexed sequential, which keeps records in order and has an index; a serial file suits neither job."
+            },
+            {
+              "tier": "partial",
+              "text": "(c) Indexed sequential, because it has an index and the records are in order. (a) Random access. (b) Serial.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Random access"
+                },
+                {
+                  "point": 2,
+                  "quote": "Indexed sequential"
+                },
+                {
+                  "point": 3,
+                  "quote": "it has an index and the records are in order"
+                }
+              ],
+              "feedback": "Part (c) and (a) are good. Night processing of all accounts suits a sequential file, because every record is read in order; a serial file is unsorted.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The ATM should use paper files. (b) The night should use serial. (c) Both.",
+              "meets": [],
+              "feedback": "The ATM needs direct access to a record, night processing is best sequential, and indexed sequential serves both."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Sequential because it is in sequence. (b) Random because it is random. (c) None.",
+              "meets": [],
+              "feedback": "Match the job: single lookups use random access; processing all records uses sequential; both are served by indexed sequential."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Database security and the database administrator",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain why data in a database must be secured;\n2. describe access control: user names, passwords and levels of access;\n3. explain data encryption and encrypt a short word with a simple cipher;\n4. state the role of the database administrator (DBA).\n\n## Materials\n\nA projector, a login screen from a school system, two printed alphabets (plain and shifted by 3), a sample table of user permissions.\n\n## Starter (5 minutes)\n\nAsk: should every pupil be able to change the results in the school's database? Who should see the staff salaries? Who may change the fees? Collect answers and list who needs what access.\n\n## Development\n\n1. Data security means protecting data from unauthorised access, change, loss or theft. Threats: hackers, viruses, careless staff, fire and theft, and power failure.\n2. Access control: user names and passwords (authentication); levels of access (read only, read and write, full control); locking the room; logging who did what.\n3. Data encryption: scrambling data into an unreadable form (ciphertext) with a key so that only authorised people can read it. Work a Caesar cipher: shift each letter three places, so CAT becomes FDW.\n4. Other measures: backups, antivirus, firewall, and a plan for recovery.\n5. The database administrator (DBA): creates users and sets their access, backs up and restores the data, monitors the database, and keeps it secure and running.\n\n## Class activity\n\nPupils encrypt their first name with a shift of three and exchange it with a partner who decrypts it.\n\n## Evaluation\n\n1. What is the difference between read only and read and write access?\n2. Encrypt BAD using a shift of three.\n\n## Assignment\n\nComplete the worksheet and the problem set on the app.",
+      "reading": {
+        "title": "Keeping a database safe",
+        "content": "# Database security and the database administrator\n\n## Why secure data?\n\nA database may hold results, fees, salaries, medical records and bank accounts. If it is changed, stolen or lost, people can suffer. **Data security** is protecting data from **unauthorised access**, **change**, **loss** and **theft**.\n\nThreats include hackers, viruses, dishonest or careless staff, fire and theft of computers, and power failure.\n\n## Access control\n\n**Access control** decides who may use the database and what they may do.\n\n- **User name and password** (authentication): the user proves who he is.\n- **Levels of access**: a pupil may have **read only** access to his own result; a teacher may **read and write** the scores of his class; only the administrator has **full control** to create, delete and change the structure.\n- **Physical control**: a locked server room and burglar-proof doors.\n- **Audit log**: a record of who opened or changed which data and when.\n\n| User | Level |\n| --- | --- |\n| Pupil | read only (own record) |\n| Teacher | read and write (own class) |\n| Database administrator | full control |\n\n## Data encryption\n\n**Encryption** scrambles data into an unreadable form called **ciphertext** using a **key**, so that anyone who steals it cannot read it. **Decryption** turns it back into **plaintext** with the key.\n\nA very simple method is the **Caesar cipher**: shift each letter a fixed number of places along the alphabet. With a shift of 3, A becomes D, B becomes E, C becomes F and so on. The word CAT becomes **FDW**, and BAD becomes **EDG**. Real systems use much stronger methods, such as those that protect bank transfers and WhatsApp messages.\n\n## Other protection\n\nMake regular **backups**; keep **antivirus** and a **firewall**; update software; and plan how to recover from a disaster.\n\n## The database administrator (DBA)\n\nThe **database administrator** is the person responsible for the database. The DBA:\n\n- creates users and gives each the right level of access;\n- protects the data with passwords, encryption and a firewall;\n- makes **backups** and restores data when lost;\n- monitors performance and fixes faults;\n- decides the structure of the database and keeps it organised."
+      },
+      "cards": [
+        {
+          "front": "Data security",
+          "back": "Protecting data from unauthorised access, change, loss and theft."
+        },
+        {
+          "front": "Access control",
+          "back": "Deciding who may use a database and what each user may do."
+        },
+        {
+          "front": "Authentication",
+          "back": "Proving who you are, usually with a user name and password."
+        },
+        {
+          "front": "Read only access",
+          "back": "The user may view data but not change it."
+        },
+        {
+          "front": "Encryption",
+          "back": "Scrambling data into an unreadable form that only a key holder can read."
+        },
+        {
+          "front": "Ciphertext",
+          "back": "Data after it has been encrypted."
+        },
+        {
+          "front": "Caesar cipher",
+          "back": "A simple cipher that shifts each letter a fixed number of places."
+        },
+        {
+          "front": "Database administrator",
+          "back": "The person who manages and secures the database."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Scrambling data so that only someone with the key can read it is called",
+          "options": [
+            "formatting",
+            "compiling",
+            "encryption",
+            "scanning"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A user who can view data but not change it has",
+          "options": [
+            "full control",
+            "administrator rights",
+            "no password",
+            "read only access"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Using a Caesar cipher with a shift of 3, the word CAT becomes",
+          "options": [
+            "FDW",
+            "DBU",
+            "ECV",
+            "XYZ"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Who creates users and sets their access levels in a database?",
+          "options": [
+            "The pupils",
+            "The printer",
+            "The database administrator",
+            "The monitor"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of the following is a method of access control?",
+          "options": [
+            "A screen saver",
+            "A user name and password",
+            "A bigger monitor",
+            "A faster printer"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain three ways of protecting the data in a school database and say what the database administrator does to keep it secure.",
+          "markScheme": [
+            "Access control with user names and passwords, and levels of access",
+            "Encryption of sensitive data so that it cannot be read if stolen",
+            "Regular backups (or antivirus or firewall) so that data can be recovered",
+            "The DBA creates users, sets their access levels, makes backups and monitors the database"
+          ],
+          "modelAnswer": "The school can use access control: every user has a user name and password, and each gets a level of access, for example read only for pupils. Sensitive data such as results and salaries can be encrypted so that it cannot be read if stolen. Regular backups let the school recover data after a virus or fire. The database administrator creates the users, sets their access levels, makes the backups and watches the database for faults and attacks.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "One way is access control, in which each user has a user name and password and a level of access such as read only for pupils. Another is encryption, which scrambles the sensitive data so that if it is stolen it cannot be read. Another is regular backup so that the data can be recovered if it is lost. The database administrator creates the users and sets their levels of access, makes the backups and monitors the database.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "access control, in which each user has a user name and password and a level of access such as read only for pupils"
+                },
+                {
+                  "point": 1,
+                  "quote": "encryption, which scrambles the sensitive data so that if it is stolen it cannot be read"
+                },
+                {
+                  "point": 2,
+                  "quote": "regular backup so that the data can be recovered if it is lost"
+                },
+                {
+                  "point": 3,
+                  "quote": "The database administrator creates the users and sets their levels of access, makes the backups and monitors the database"
+                }
+              ],
+              "feedback": "All four marks. Each method has its purpose, and the role of the administrator is specific."
+            },
+            {
+              "tier": "full",
+              "text": "The school should give passwords to users and limit what each can do, so teachers can edit only their own class. It should install a firewall and antivirus to stop hackers and viruses. It should also make backups. The DBA manages all this, giving access to users, protecting the data, and restoring it if there is a problem.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "give passwords to users and limit what each can do, so teachers can edit only their own class"
+                },
+                {
+                  "point": 1,
+                  "quote": "install a firewall and antivirus to stop hackers and viruses"
+                },
+                {
+                  "point": 2,
+                  "quote": "make backups"
+                },
+                {
+                  "point": 3,
+                  "quote": "The DBA manages all this, giving access to users, protecting the data, and restoring it if there is a problem"
+                }
+              ],
+              "feedback": "Full marks. Your teacher example shows what levels of access mean."
+            },
+            {
+              "tier": "partial",
+              "text": "Use passwords, encryption and backups. The DBA is the boss of the database.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Use passwords"
+                },
+                {
+                  "point": 1,
+                  "quote": "encryption"
+                },
+                {
+                  "point": 2,
+                  "quote": "backups"
+                }
+              ],
+              "feedback": "The three methods are right but need a short explanation of how each protects data. 'The boss' is not enough: the DBA creates users, sets access, backs up and monitors."
+            },
+            {
+              "tier": "partial",
+              "text": "The DBA creates users and sets their access and makes backups. The school can use passwords.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "passwords"
+                },
+                {
+                  "point": 3,
+                  "quote": "The DBA creates users and sets their access and makes backups"
+                }
+              ],
+              "feedback": "The DBA part is good. Add two more protection methods, such as encryption and a firewall, and explain how each protects data.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Protect the data by hiding the computer under the table. The DBA is the person who clears the dust.",
+              "meets": [],
+              "feedback": "Use access control, encryption and backups. The DBA manages and secures the database, creating users, backing up and monitoring."
+            },
+            {
+              "tier": "weak",
+              "text": "Give the password to everybody so that nobody is angry.",
+              "meets": [],
+              "feedback": "Passwords must be kept private and each user should have the right level of access."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Using a Caesar cipher with a shift of 3, encrypt the word BAD and decrypt the word FDW. (b) Explain the difference between read only and read and write access, with one user who should have each in a school database.",
+          "markScheme": [
+            "BAD becomes EDG",
+            "FDW decrypts to CAT",
+            "Read only: the user can view but not change data, e.g. a pupil viewing his result",
+            "Read and write: the user can view and change data, e.g. a teacher entering scores"
+          ],
+          "modelAnswer": "(a) Shifting each letter three places forward, B becomes E, A becomes D and D becomes G, so BAD becomes EDG. To decrypt FDW, shift each letter three places back: F becomes C, D becomes A and W becomes T, so FDW is CAT. (b) Read only access lets a user view data but not change it, for example a pupil viewing his own result. Read and write access lets the user view and change data, for example a teacher entering the scores of his class.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) BAD becomes EDG because B+3 is E, A+3 is D and D+3 is G. FDW is decrypted by shifting back three places, giving CAT. (b) Read only means a user can only view data and not change it, like a pupil seeing his result. Read and write means a user can view and change data, like a teacher who enters the scores of his class.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "BAD becomes EDG"
+                },
+                {
+                  "point": 1,
+                  "quote": "giving CAT"
+                },
+                {
+                  "point": 2,
+                  "quote": "Read only means a user can only view data and not change it, like a pupil seeing his result"
+                },
+                {
+                  "point": 3,
+                  "quote": "Read and write means a user can view and change data, like a teacher who enters the scores of his class"
+                }
+              ],
+              "feedback": "All four marks. You showed the shift letter by letter, which is the best way to avoid errors."
+            },
+            {
+              "tier": "full",
+              "text": "To encrypt BAD I move each letter 3 forward: B to E, A to D, D to G, which gives EDG. To decrypt FDW I move 3 back: F to C, D to A, W to T, which gives CAT. A pupil should have read only access to his result so that he cannot change it. A teacher has read and write access so that he can enter and correct scores.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "which gives EDG"
+                },
+                {
+                  "point": 1,
+                  "quote": "which gives CAT"
+                },
+                {
+                  "point": 2,
+                  "quote": "A pupil should have read only access to his result so that he cannot change it"
+                },
+                {
+                  "point": 3,
+                  "quote": "A teacher has read and write access so that he can enter and correct scores"
+                }
+              ],
+              "feedback": "Full marks. Both the encryption and the decryption are correct."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) BAD becomes EDG and FDW becomes CAT. (b) Read only is for reading and read and write is for reading and writing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "BAD becomes EDG"
+                },
+                {
+                  "point": 1,
+                  "quote": "FDW becomes CAT"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b) say what the user can do and give an example user for each: a pupil who views a result (read only), a teacher who enters scores (read and write)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) BAD becomes DCF and FDW becomes ECV. (b) A pupil should have read only access and a teacher read and write access.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "A pupil should have read only access"
+                },
+                {
+                  "point": 3,
+                  "quote": "a teacher read and write access"
+                }
+              ],
+              "feedback": "Part (b) is right. In (a), shift three places: B to E, A to D, D to G gives EDG, and FDW shifted back three gives CAT.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) BAD is BAD and FDW is FDW. (b) Read only is for pupils and read and write is for read.",
+              "meets": [],
+              "feedback": "Encryption changes the letters: BAD becomes EDG (shift of 3) and FDW decrypts to CAT. Read only users can view; read and write users can view and change."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They are the names of animals. (b) All users should have all the access.",
+              "meets": [],
+              "feedback": "The words are examples for the cipher: BAD gives EDG and FDW gives CAT. Giving everyone full access defeats security; levels depend on the job."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

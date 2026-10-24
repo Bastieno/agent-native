@@ -1,0 +1,2672 @@
+{
+  "subject": "Digital Technologies",
+  "yearGroup": "JSS3",
+  "weeks": {
+    "1": {
+      "topic": "Online safety: phishing, privacy and protecting your accounts",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. recognise a phishing message and say how to respond;\n2. explain how public Wi-Fi and oversharing put accounts at risk;\n3. set privacy controls and use two-step verification;\n4. describe the steps to take when an account is hacked or a device is infected.\n\n## Materials\n\nA projector, three printed sample messages (one genuine school notice, two fake alerts), and a phone or laptop showing the privacy settings of a social media app.\n\n## Starter (5 minutes)\n\nShow a message: \"Dear customer, your account has been blocked. Click here and send your PIN today.\" Ask the class who has seen something like it, and what made them suspicious.\n\n## Development\n\n1. Revise strong passwords and malware (JSS2).\n2. Phishing: a trick message that pretends to come from a bank, a company or a friend to steal passwords or money. Signs: urgency or threats, a request for a PIN or password, spelling errors, a strange sender address, an unexpected link or attachment, a prize you did not enter for.\n3. What to do: do not click, do not reply, check with the real organisation using a number or website you already know, report and delete.\n4. Social engineering: tricking a person, not a machine. A caller who says he is from the bank and asks for your OTP.\n5. Public Wi-Fi: others may be able to see what you send. Avoid banking or logging in to important accounts on it.\n6. Privacy settings: choose who can see your posts, turn off location sharing, and think about what you post. Your digital footprint stays.\n7. If an account is hacked: change the password at once, turn on two-step verification, tell contacts, and report to the site.\n\n## Class activity\n\nPupils sort the three sample messages into genuine and phishing and underline the warning signs.\n\n## Evaluation\n\n1. Give three signs of a phishing message.\n2. What should you do if you think your account has been hacked?\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Spotting tricks and protecting your accounts",
+        "content": "# Online safety: phishing, privacy and protecting your accounts\n\nIn JSS2 you learned about strong passwords, cyberbullying and malware. Many online dangers do not attack the computer at all. They **trick the person**.\n\n## Phishing\n\n**Phishing** is a message that pretends to be from a bank, a mobile company, a school or a friend, in order to make you give away your password, PIN or money. The message may arrive by email, SMS, WhatsApp or a social media chat.\n\n**Warning signs:**\n\n- It is **urgent** or **threatening**: *Your account will be closed in 24 hours!*\n- It asks for your **password, PIN or one-time code (OTP)**. Real banks never ask for these.\n- The **sender's address** looks odd, for example *support@bank-secure123.com*.\n- There are **spelling and grammar mistakes**.\n- It tells you that you have **won** a prize in a competition you did not enter.\n- It has a **link or attachment** you did not expect.\n\n**What to do:**\n1. Do **not** click the link or open the attachment.\n2. Do **not** reply or send any information.\n3. **Check** with the real organisation, using a phone number or website you already know, not the one in the message.\n4. **Report** the message and delete it.\n\n## Social engineering\n\n**Social engineering** means tricking a person into giving help to a criminal. A caller says he is from your bank and needs the code that was just sent to your phone. The code is the key to your account, so do not give it to anyone.\n\n## Public Wi-Fi and oversharing\n\nOn **public Wi-Fi** in a market or a hotel, other people on the same network may be able to see some of what you send. Do not do banking or open important accounts on it.\n\nYour **digital footprint** is the trail of information about you online: posts, photos, comments. Some of it stays for years. Do not post your home address, phone number, school timetable or a photo showing your school uniform with its name. A criminal can join the pieces together.\n\n## Privacy and two-step verification\n\n- In the settings, choose **who can see** your posts and photos (friends only, not everyone).\n- Turn off **location sharing** for apps that do not need it.\n- Turn on **two-step verification**. Even if someone learns your password, he cannot enter without the code from your phone.\n\n## If an account is hacked\n\n1. **Change the password** at once, and on any other site where you used the same one.\n2. Turn on **two-step verification**.\n3. **Tell** your contacts so that they do not trust messages from you.\n4. **Report** it to the website, and tell a parent or teacher.\n\n## Worked example\n\nEmeka receives an SMS: *Congratulations! You won ₦500,000. Send your bank PIN to claim.* He sees three warning signs: a prize he did not enter for, a request for his PIN, and pressure to act. He deletes it and tells his father."
+      },
+      "cards": [
+        {
+          "front": "Phishing",
+          "back": "A trick message that pretends to be from a trusted source to steal passwords, PINs or money."
+        },
+        {
+          "front": "Warning signs of phishing",
+          "back": "Urgency or threats, requests for a PIN or password, odd sender address, spelling mistakes, unexpected links."
+        },
+        {
+          "front": "OTP",
+          "back": "One-time password or code. Never tell it to anyone."
+        },
+        {
+          "front": "Social engineering",
+          "back": "Tricking a person, rather than a machine, into helping a criminal."
+        },
+        {
+          "front": "Digital footprint",
+          "back": "The trail of information about you that stays online."
+        },
+        {
+          "front": "Public Wi-Fi risk",
+          "back": "Others on the network may see what you send, so avoid banking or important logins."
+        },
+        {
+          "front": "Two-step verification",
+          "back": "A second proof, such as a code sent to your phone, in addition to the password."
+        },
+        {
+          "front": "First step if hacked",
+          "back": "Change the password at once, and turn on two-step verification."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A message says: 'Your bank account will close today. Click here and send your PIN.' What is the best action?",
+          "options": [
+            "Click the link quickly so the account stays open",
+            "Send the PIN to be safe",
+            "Ignore the link and check with the bank using a number you already know",
+            "Forward the message to ten friends"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A caller says he is from your bank and asks for the code just sent to your phone. You should",
+          "options": [
+            "read the code to him",
+            "give him half of the code",
+            "send the code by SMS",
+            "end the call and not share the code"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is NOT a usual sign of phishing?",
+          "options": [
+            "A spelling mistake in a message from a 'bank'",
+            "A message that comes from a known friend and talks about things only you two know, and asks nothing risky",
+            "An unexpected prize",
+            "A demand to act today or lose your account"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why should you avoid banking on public Wi-Fi in a market or hotel?",
+          "options": [
+            "Other people on the network may see some of what you send",
+            "Public Wi-Fi is always slower",
+            "It uses more electricity",
+            "Your bank will charge extra"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Afolabi's social media account has been hacked. What should he do first?",
+          "options": [
+            "Post a message to the hacker",
+            "Wait to see what happens",
+            "Change the password and turn on two-step verification",
+            "Delete his phone"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Obi's mother receives this SMS: 'MTN-WIN: You have won ₦1,000,000! Click on bit.ly/claim-now within 1 hour and enter your BVN.' List three warning signs that it is a scam, and say what she should do.",
+          "markScheme": [
+            "Identifies a prize she did not enter for / too good to be true",
+            "Identifies urgency (within 1 hour) or pressure",
+            "Identifies a request for personal data (BVN) or a suspicious link",
+            "States a correct action: do not click, do not reply, delete or report, check with the real company"
+          ],
+          "modelAnswer": "The message offers a big prize that she did not enter for. It puts pressure on her to act within 1 hour. It asks for her BVN and gives a strange link. She should not click the link or reply. She should delete the message and report it, or check with the real company using a number she already knows.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "It says she has won a million naira, but she did not enter for anything. It is in a hurry, she must click within 1 hour. It also asks for her BVN, which is private, and gives a strange link. She should not click it or reply, and should delete it or report it to the company.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It says she has won a million naira, but she did not enter for anything"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is in a hurry, she must click within 1 hour"
+                },
+                {
+                  "point": 2,
+                  "quote": "It also asks for her BVN, which is private, and gives a strange link"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should not click it or reply, and should delete it or report it to the company"
+                }
+              ],
+              "feedback": "All four marks. Three signs and the right action."
+            },
+            {
+              "tier": "full",
+              "text": "The signs are: a prize that is too big to be true, the time limit of 1 hour to make her rush, and the request for BVN with a link that is not the real MTN address. She should not click, should check with MTN using the number she already has, and then delete the message.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a prize that is too big to be true"
+                },
+                {
+                  "point": 1,
+                  "quote": "the time limit of 1 hour to make her rush"
+                },
+                {
+                  "point": 2,
+                  "quote": "the request for BVN with a link that is not the real MTN address"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should not click, should check with MTN using the number she already has"
+                }
+              ],
+              "feedback": "Full marks. Checking with the real company, using a number you already have, is the safest step."
+            },
+            {
+              "tier": "partial",
+              "text": "It is a scam because it asks for the BVN and it has a strange link. She should not click it.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "it asks for the BVN and it has a strange link"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should not click it"
+                }
+              ],
+              "feedback": "Good. You need three warning signs, and you only gave the BVN and link. Add the prize she did not enter for and the one-hour pressure."
+            },
+            {
+              "tier": "partial",
+              "text": "The message is rushing her with one hour and it says she has won. She should delete it.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "rushing her with one hour"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should delete it"
+                }
+              ],
+              "feedback": "The time pressure and the action are right. The prize she did not enter for is a warning sign by itself, so explain that. Add the request for the BVN, which is private."
+            },
+            {
+              "tier": "weak",
+              "text": "The message is true because it is from MTN. She should click quickly so that somebody else will not win.",
+              "meets": [],
+              "feedback": "A message that says it is from a company is not proof. Real companies do not ask for your BVN by SMS. The prize, the hurry and the strange link are all warning signs. Do not click."
+            },
+            {
+              "tier": "weak",
+              "text": "She should send the BVN but not the account number, then it is safe.",
+              "meets": [],
+              "feedback": "Do not send any of it. The BVN is private information, and the message is a scam. Do not click or reply; delete it and report it."
+            }
+          ]
+        },
+        {
+          "prompt": "Ngozi uses the same password for her email, her school portal and her social media. A hacker gets into her social media account and sends messages to her friends asking for money. (a) Explain why using the same password is a risk. (b) Give three steps Ngozi should take. (c) Give one way she can make her accounts safer in future.",
+          "markScheme": [
+            "Explains that with one password, the hacker can try it on her other accounts",
+            "Changes the password at once (including on the other accounts)",
+            "Tells her friends not to trust the messages, or reports to the site / informs an adult",
+            "Suggests a lasting protection, e.g. different strong password for each account, or two-step verification"
+          ],
+          "modelAnswer": "If a hacker learns one password, he can try it on her other accounts. She should change the password at once, on the social media and the other accounts where she used it. She should tell her friends not to send money and report the hack to the site. In future she should use a different strong password for each account and turn on two-step verification.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "If one password is found, the hacker can use it to enter her email and school portal too. Ngozi should change the password now, for all the accounts. She should tell her friends not to send money and report to the site. Later she should use different strong passwords and turn on two-step verification.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "If one password is found, the hacker can use it to enter her email and school portal too"
+                },
+                {
+                  "point": 1,
+                  "quote": "Ngozi should change the password now, for all the accounts"
+                },
+                {
+                  "point": 2,
+                  "quote": "She should tell her friends not to send money and report to the site"
+                },
+                {
+                  "point": 3,
+                  "quote": "Later she should use different strong passwords and turn on two-step verification"
+                }
+              ],
+              "feedback": "All four marks. You answered (a), (b) and (c) completely."
+            },
+            {
+              "tier": "full",
+              "text": "The problem is that the hacker can try the same password on her other accounts and get in all of them. She must change her passwords right away. She must warn her friends so they will not send money, and tell her parents. In future she should have a different password for each account.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the hacker can try the same password on her other accounts and get in all of them"
+                },
+                {
+                  "point": 1,
+                  "quote": "She must change her passwords right away"
+                },
+                {
+                  "point": 2,
+                  "quote": "She must warn her friends so they will not send money, and tell her parents"
+                },
+                {
+                  "point": 3,
+                  "quote": "In future she should have a different password for each account"
+                }
+              ],
+              "feedback": "Full marks. Telling her parents is a good step."
+            },
+            {
+              "tier": "partial",
+              "text": "The same password is a risk because the hacker can enter her other accounts. She should change the password.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the hacker can enter her other accounts"
+                },
+                {
+                  "point": 1,
+                  "quote": "She should change the password"
+                }
+              ],
+              "feedback": "Both are right. Add what she should do for her friends (warn them not to send money, report the hack), and a lasting protection such as two-step verification."
+            },
+            {
+              "tier": "partial",
+              "text": "She should tell her friends not to send money. In future she should use two-step verification.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "She should tell her friends not to send money"
+                },
+                {
+                  "point": 3,
+                  "quote": "In future she should use two-step verification"
+                }
+              ],
+              "feedback": "Good steps. You did not explain why the same password is risky (the hacker can use it on other accounts), and you did not say she must change the password at once."
+            },
+            {
+              "tier": "weak",
+              "text": "The same password is not a risk, she just has to be careful about her friends. She should delete the account.",
+              "meets": [],
+              "feedback": "A reused password is a real risk, because one stolen password opens every account that uses it. Change the passwords, warn your friends and use a different strong password on each account."
+            },
+            {
+              "tier": "weak",
+              "text": "The hacker is a bad person and she should send him a message to stop and wait for him.",
+              "meets": [],
+              "feedback": "You cannot stop a hacker by messaging him. Change the password at once, warn friends, report to the site, and use different strong passwords with two-step verification."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Digital ethics: ownership, honesty and your digital footprint",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. explain intellectual property, copyright and licences;\n2. say when using other people's work is allowed, and how to give credit;\n3. describe netiquette and the digital footprint;\n4. discuss the honest use of AI tools in schoolwork.\n\n## Materials\n\nA projector, cards with ethical dilemmas, and an example of a work that carries a Creative Commons credit.\n\n## Starter (5 minutes)\n\nAsk: \"A friend copies a song and sells it on a memory card in the market. Who loses?\" Collect answers: the musician, the record company, those who made the song.\n\n## Development\n\n1. Revise intellectual property, copyright, plagiarism and piracy from JSS2.\n2. Licences: a licence says what you may do with a work. All rights reserved means ask first. Creative Commons lets you share or reuse under rules such as giving credit.\n3. Using others' work fairly: a short quotation with credit, a picture with permission, your own words with citation.\n4. Netiquette (rules for polite online behaviour): kind words, no capital-letter shouting, respect privacy, think before sending, do not spread rumours.\n5. Digital footprint: the record of what you post, like and comment on. Employers and schools may look at it years later. You can shape it.\n6. AI tools: they can help you understand and practise, but handing in work that an AI wrote as your own is dishonest. Check facts, say when you used help, and follow the school's rules.\n\n## Class activity\n\nGroups discuss three dilemmas and say what the right action is, and which rule it follows.\n\n## Evaluation\n\n1. Give one example of a legal and one of an illegal use of another person's picture.\n2. What does a Creative Commons licence allow?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Doing the right thing online",
+        "content": "# Digital ethics: ownership, honesty and your digital footprint\n\nTechnology makes it easy to copy, to share and to post. **Ethics** ask whether we *should*. This lesson builds on what you learned in JSS2 about intellectual property, copyright and plagiarism.\n\n## Who owns a digital work?\n\nA song, a photograph, a story or a computer program is **intellectual property**. The creator, or a company that has bought the rights, owns it. **Copyright** is the legal protection that stops other people copying or selling the work without permission.\n\n## Licences: what you may do\n\nA **licence** tells you what you are allowed to do with a work.\n\n- **All rights reserved**: you must ask the owner first.\n- **Creative Commons**: the owner allows reuse under conditions, for example that you **give credit**, or that you do not sell it.\n- **Public domain**: the work is free for anyone to use.\n\nLook for the licence before you use a picture or a piece of music in your project.\n\n## Using other people's work fairly\n\n| You may | You must not |\n|---|---|\n| Quote a short piece, in quotation marks, with the source | Copy a whole page and say you wrote it |\n| Use a picture that allows reuse, and give credit | Take any picture from a search and sell it on a poster |\n| Put an idea in your own words and cite where it came from | Share a pirated film or a cracked program |\n\n## Netiquette\n\n**Netiquette** means polite online behaviour.\n\n- Be kind and respectful, even if you disagree.\n- Do not WRITE IN CAPITALS, which looks like shouting.\n- Keep other people's private details private.\n- Think before you send: could it hurt someone, or be shown to someone else?\n- Do not spread rumours or unchecked news.\n\n## Your digital footprint\n\nEverything you post, like, comment on or share leaves a trail called your **digital footprint**. Even if you delete a post, someone may have copied or saved it. Schools, universities and employers may look at it. A careful, kind footprint helps your future.\n\n## Honest use of AI tools\n\nAI tools can explain a topic or help you practise. Used honestly, they help you learn. But if you ask an AI to write your essay and hand it in as your own work, that is **dishonest**, because you pretend that you did the thinking. It is also not always correct, since AI tools can make mistakes. So:\n\n1. Use AI to help you **understand**, then do the work **yourself**.\n2. **Check** facts in a reliable source.\n3. Say honestly when you used help, and follow your school's rules.\n\n## Worked example\n\nAmina needs a picture of the Zuma Rock for a project. She finds one with a Creative Commons licence that requires credit. She uses it and writes under it: *Photograph by [name of photographer], used under a Creative Commons licence.* She follows the rule and the photographer gets credit."
+      },
+      "cards": [
+        {
+          "front": "Licence",
+          "back": "A statement of what you may do with a work."
+        },
+        {
+          "front": "All rights reserved",
+          "back": "You must ask the owner before using the work."
+        },
+        {
+          "front": "Creative Commons",
+          "back": "A licence that allows reuse under conditions, such as giving credit."
+        },
+        {
+          "front": "Public domain",
+          "back": "Work that anyone can use freely."
+        },
+        {
+          "front": "Netiquette",
+          "back": "Polite online behaviour: be kind, think before you send, respect privacy."
+        },
+        {
+          "front": "Digital footprint",
+          "back": "The trail of what you post, like and share online, which can stay for years."
+        },
+        {
+          "front": "Honest use of AI",
+          "back": "Use it to help you understand, do the work yourself, check facts and say when you used help."
+        },
+        {
+          "front": "Piracy",
+          "back": "Copying or sharing films, music or programs without permission."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A picture has a Creative Commons licence which says 'you must give credit'. What must you do?",
+          "options": [
+            "Say who made it when you use it",
+            "Nothing, because it is free",
+            "Pay the owner",
+            "Delete the picture"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is an honest use of an AI tool for school?",
+          "options": [
+            "Asking the AI to write your essay and handing it in as your own",
+            "Asking it to explain a topic you do not understand, then writing your own work and checking the facts",
+            "Copying the AI's answer for a test",
+            "Giving your password to the AI"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Chiamaka deletes an embarrassing post an hour after she sent it. Why might it still cause harm?",
+          "options": [
+            "Deleting a post always erases it everywhere",
+            "Posts are never seen by others",
+            "The post goes to her teacher automatically",
+            "Someone may already have saved or copied it, so it can stay in her digital footprint"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a good example of netiquette?",
+          "options": [
+            "Typing in capital letters to show you are serious",
+            "Forwarding a rumour to everybody",
+            "Being polite even when you disagree",
+            "Sharing a friend's private chat with the class"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A pupil copies a music album and sells it to classmates for ₦500 each. This is",
+          "options": [
+            "fair use",
+            "a breach of copyright and piracy",
+            "netiquette",
+            "a Creative Commons licence"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what a digital footprint is, and give two ways a pupil can make her digital footprint a good one.",
+          "markScheme": [
+            "Defines digital footprint as the trail of information/posts about you online",
+            "States that it can stay for a long time or be seen by others (school, employers)",
+            "Gives one way to keep it good, e.g. think before posting, be kind",
+            "Gives a second way, e.g. keep private information private, check before sharing, ask permission before posting others"
+          ],
+          "modelAnswer": "A digital footprint is the trail of information about you that is left online, such as posts, photos and comments. It can stay for many years and schools or employers may see it. A pupil can keep it good by thinking before she posts and by being kind. She should also keep her private information private.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Digital footprint is the trail of what you post, like and comment on online. It can stay for many years and a school or employer may see it. To make it good, she should think before she posts and be kind in her comments. She should also not post private things like her address.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Digital footprint is the trail of what you post, like and comment on online"
+                },
+                {
+                  "point": 1,
+                  "quote": "It can stay for many years and a school or employer may see it"
+                },
+                {
+                  "point": 2,
+                  "quote": "she should think before she posts and be kind in her comments"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should also not post private things like her address"
+                }
+              ],
+              "feedback": "All four marks. You defined it, gave its lasting effect and two good habits."
+            },
+            {
+              "tier": "full",
+              "text": "It is the record of everything you do online, like pictures and messages. Even if you delete it, people may have saved it, and a university may look at it later. A pupil should post only what she is happy for everybody to see. She should ask permission before posting a photo of somebody.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is the record of everything you do online, like pictures and messages"
+                },
+                {
+                  "point": 1,
+                  "quote": "Even if you delete it, people may have saved it, and a university may look at it later"
+                },
+                {
+                  "point": 2,
+                  "quote": "A pupil should post only what she is happy for everybody to see"
+                },
+                {
+                  "point": 3,
+                  "quote": "She should ask permission before posting a photo of somebody"
+                }
+              ],
+              "feedback": "Full marks. Posting only what you would be happy for everyone to see is a very useful rule."
+            },
+            {
+              "tier": "partial",
+              "text": "A digital footprint is the things you do online that leave a trail. It can stay for a long time.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the things you do online that leave a trail"
+                },
+                {
+                  "point": 1,
+                  "quote": "It can stay for a long time"
+                }
+              ],
+              "feedback": "Your definition and its lasting effect are right. The question also asks for two ways to make it good, such as thinking before posting and keeping private details private."
+            },
+            {
+              "tier": "partial",
+              "text": "She should be kind and think before posting. Do not put your address.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "She should be kind and think before posting"
+                },
+                {
+                  "point": 3,
+                  "quote": "Do not put your address"
+                }
+              ],
+              "feedback": "These two habits are good. Start by saying what a digital footprint is (the trail of information you leave online) and why it matters (it can stay and be seen by others)."
+            },
+            {
+              "tier": "weak",
+              "text": "A digital footprint is the mark that your foot makes on a phone screen. To make it good, clean the screen.",
+              "meets": [],
+              "feedback": "A digital footprint is the trail of information you leave online, such as posts and comments. To make it good, think before posting, be kind and keep private details private."
+            },
+            {
+              "tier": "weak",
+              "text": "It is your phone number that shows in your account. A good one is when many people know your number.",
+              "meets": [],
+              "feedback": "Your phone number is only one piece. A digital footprint is everything you leave online. A good one is made by being kind and careful, not by sharing private details widely."
+            }
+          ]
+        },
+        {
+          "prompt": "Tobi has a school assignment to write 300 words about the effects of deforestation. He asks an AI tool to write it, copies it and hands it in as his own. (a) Explain why this is dishonest. (b) Describe how he could use an AI tool honestly for the same assignment. (c) Say one other thing he should do to avoid plagiarism.",
+          "markScheme": [
+            "Explains it is dishonest because he presents work he did not do as his own",
+            "Describes an honest use, e.g. asking the AI to explain the topic or check his understanding",
+            "Says he must write the essay himself in his own words / do the thinking",
+            "Gives another step: check facts in a reliable source, cite sources, or say he used help"
+          ],
+          "modelAnswer": "It is dishonest because he is presenting work that he did not do as his own, and the thinking is not his. He could use an AI tool to explain the effects of deforestation or to give feedback on his own draft, and then write the essay himself in his own words. He should also check the facts in a reliable source and cite where the information came from.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "It is dishonest because he handed in the AI's work and said it was his own, so he pretended to have done the thinking. He could ask the AI to explain deforestation, then write the essay himself in his own words. He should also check the facts in a book or a reliable website and say where he got them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is dishonest because he handed in the AI's work and said it was his own"
+                },
+                {
+                  "point": 1,
+                  "quote": "He could ask the AI to explain deforestation"
+                },
+                {
+                  "point": 2,
+                  "quote": "write the essay himself in his own words"
+                },
+                {
+                  "point": 3,
+                  "quote": "check the facts in a book or a reliable website and say where he got them"
+                }
+              ],
+              "feedback": "All four marks. You separated learning from the tool and cheating with it."
+            },
+            {
+              "tier": "full",
+              "text": "Tobi cheated because the work is not his but he is showing it as his own. He can use the AI to help him understand the topic, or to see if his own draft is clear. The writing must still come from him. Then he must check the facts because AI can make mistakes, and he can tell his teacher he used it for help.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Tobi cheated because the work is not his but he is showing it as his own"
+                },
+                {
+                  "point": 1,
+                  "quote": "He can use the AI to help him understand the topic, or to see if his own draft is clear"
+                },
+                {
+                  "point": 2,
+                  "quote": "The writing must still come from him"
+                },
+                {
+                  "point": 3,
+                  "quote": "he must check the facts because AI can make mistakes, and he can tell his teacher he used it for help"
+                }
+              ],
+              "feedback": "Full marks. Saying that AI can make mistakes is an important point."
+            },
+            {
+              "tier": "partial",
+              "text": "It is dishonest because the work is not his own. He should write it himself.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is dishonest because the work is not his own"
+                },
+                {
+                  "point": 2,
+                  "quote": "He should write it himself"
+                }
+              ],
+              "feedback": "The reason and the correction are right. Describe how he could use the AI honestly (to explain the topic) and one more habit, such as checking the facts."
+            },
+            {
+              "tier": "partial",
+              "text": "He can use the AI to explain the topic and then he checks the facts in a book.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "He can use the AI to explain the topic"
+                },
+                {
+                  "point": 3,
+                  "quote": "he checks the facts in a book"
+                }
+              ],
+              "feedback": "Good honest uses. You did not say why handing in the AI's essay is dishonest, nor that he must write the essay himself."
+            },
+            {
+              "tier": "weak",
+              "text": "It is not dishonest because the AI is not a person, so nobody owns the work.",
+              "meets": [],
+              "feedback": "The dishonesty is that Tobi presents work he did not do as his own. Use AI to understand the topic, then write your own essay and check the facts."
+            },
+            {
+              "tier": "weak",
+              "text": "It is dishonest because the AI will tell the teacher. He should delete the AI.",
+              "meets": [],
+              "feedback": "The real problem is that Tobi is pretending the work is his. He should use the AI to understand the topic, and then do the writing himself."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Cyber laws, digital rights and online privacy",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. say what a cyber law is and why countries make them;\n2. describe common cybercrimes;\n3. explain digital rights, including privacy and freedom of expression with its limits;\n4. describe good privacy practices for an individual and a company that keeps personal data.\n\n## Materials\n\nA projector, simple summaries of the Nigerian laws below written by the teacher, and cards with short crime and rights cases.\n\n## Starter (5 minutes)\n\nAsk: \"If someone breaks into a shop at night, he can be arrested. What about someone who breaks into a bank's computer system from far away?\" Lead to the idea that laws are needed for the online world.\n\n## Development\n\n1. A cyber law is a rule made by government about the use of computers and the internet. It protects people, property and the country.\n2. In Nigeria, the Cybercrimes (Prohibition, Prevention, etc.) Act 2015 (as amended) makes many online acts offences, for example hacking, online fraud, identity theft, cyberstalking, and spreading child abuse material. The details are for the courts; pupils should know the idea.\n3. Common cybercrimes: hacking, phishing and online fraud, identity theft, cyberstalking and bullying, spreading malware, piracy.\n4. Digital rights: the rights people have online. Privacy (your personal information is yours), freedom of expression (you may share opinions, but not lies that harm or hate), access to information.\n5. Data protection: the Nigeria Data Protection Act 2023 sets rules for how organisations collect, use and keep personal data, and the Nigeria Data Protection Commission oversees them. Organisations should collect only what they need, keep it safe and say how they use it.\n6. Personal privacy practices: share little, read what you agree to, adjust settings, use strong passwords, and ask how your data will be used.\n\n## Class activity\n\nGroups receive five short cases and decide for each: is it a cybercrime, a rights issue, or both? They name the crime or right.\n\n## Evaluation\n\n1. Give two examples of cybercrime.\n2. Why should an organisation collect only the data it needs?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "The rules of the online world",
+        "content": "# Cyber laws, digital rights and online privacy\n\nJust as there are rules on the road, there are rules for the internet. Without them, criminals could steal and bully with little fear of punishment.\n\n## What is a cyber law?\n\nA **cyber law** is a rule made by government about how computers and the internet may be used. It protects people, their money, their information, and the country's systems. A person who breaks it can be arrested, tried in court and punished.\n\nIn Nigeria, the **Cybercrimes (Prohibition, Prevention, etc.) Act** is the main law. It makes many harmful online acts offences. (The courts decide the exact penalties; your job is to know the main idea.)\n\n## Common cybercrimes\n\n| Cybercrime | What it is |\n|---|---|\n| **Hacking** | Getting into a computer or an account without permission |\n| **Online fraud** | Using the internet to cheat people of money, such as a fake shop or a fake loan offer |\n| **Identity theft** | Using another person's name, photo or details to pretend to be him |\n| **Cyberstalking and bullying** | Using messages to follow, threaten or frighten a person |\n| **Spreading malware** | Making or sending harmful programs |\n| **Piracy** | Copying and selling films, music and software without permission |\n\n## Digital rights\n\nPeople have rights online as well as offline.\n\n- **Privacy**: your personal information, such as your address, photos and messages, belongs to you. Others should not take it or share it without a good reason or your permission.\n- **Freedom of expression**: you may share your opinions. But this freedom has limits. You may not use it to tell harmful lies about a person, to threaten, or to spread hate.\n- **Access to information**: people should be able to learn and find information online.\n\nRights come with **responsibilities**. Your freedom ends where it harms another person's rights.\n\n## Protecting personal data\n\nBanks, schools, shops and apps hold information about people. The **Nigeria Data Protection Act 2023** sets rules for how organisations must handle personal data, and the **Nigeria Data Protection Commission** is the body that oversees it. Good practice for an organisation:\n\n1. Collect **only the data it needs**.\n2. Say **why** it is collected and how it will be used.\n3. **Keep it safe** with passwords and security.\n4. Do not **share or sell** it without permission.\n\n## Your own privacy practice\n\n- **Share little**: do not give your details to every app or form.\n- **Read before you agree** to terms and permissions.\n- Use **privacy settings** and strong passwords.\n- **Ask** how your information will be used.\n\n## Worked example\n\nA shop in Port Harcourt asks customers to fill a form with their name, phone number, home address and mother's maiden name to join a loyalty club. The shop only needs a phone number to send offers. The extra information is not needed. A careful customer gives only what is necessary, and the shop should not collect more than it needs."
+      },
+      "cards": [
+        {
+          "front": "Cyber law",
+          "back": "A rule made by government about the use of computers and the internet."
+        },
+        {
+          "front": "Hacking",
+          "back": "Getting into a computer or account without permission."
+        },
+        {
+          "front": "Identity theft",
+          "back": "Using another person's name or details to pretend to be him."
+        },
+        {
+          "front": "Cyberstalking",
+          "back": "Using messages to follow, threaten or frighten a person."
+        },
+        {
+          "front": "Digital rights",
+          "back": "The rights people have online, such as privacy and freedom of expression."
+        },
+        {
+          "front": "Limit of free expression",
+          "back": "It does not cover harmful lies, threats or hate."
+        },
+        {
+          "front": "Data protection rule",
+          "back": "An organisation should collect only the data it needs, keep it safe and say how it is used."
+        },
+        {
+          "front": "Personal privacy practice",
+          "back": "Share little, read before you agree, use privacy settings and strong passwords."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A person gets into his neighbour's WhatsApp account without permission and reads her messages. This is",
+          "options": [
+            "freedom of expression",
+            "netiquette",
+            "data protection",
+            "hacking"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is NOT a good practice for an organisation that keeps personal data?",
+          "options": [
+            "Sell the data to anyone who pays, without asking",
+            "Keep the data secure",
+            "Say why the data is collected",
+            "Collect only the data it needs"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Tunde uses another person's photo and name to open a social media account and asks his friends for money. This is",
+          "options": [
+            "a legal use of a photo",
+            "digital rights",
+            "identity theft and fraud",
+            "good netiquette"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A pupil says 'I have freedom of expression, so I can post any lie about my classmate.' What is wrong with this?",
+          "options": [
+            "Nothing, freedom of expression has no limits",
+            "Freedom of expression does not cover harmful lies about a person",
+            "Pupils have no rights",
+            "Social media is for teachers only"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A mobile app asks for access to your contacts, camera and location although it is only a calculator. The best response is",
+          "options": [
+            "accept everything quickly",
+            "give all permissions and your password",
+            "forward the request to friends",
+            "question why it needs this and refuse what it does not need"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "What is a cyber law, and why do countries make them? Give two examples of cybercrime.",
+          "markScheme": [
+            "Defines a cyber law as a rule about the use of computers and the internet",
+            "Gives a reason, e.g. to protect people, their money, information or systems",
+            "Gives one correct example of cybercrime",
+            "Gives a second correct example of cybercrime"
+          ],
+          "modelAnswer": "A cyber law is a rule made by government about how computers and the internet may be used. Countries make them to protect people, their money and their information. Examples of cybercrime are hacking and online fraud.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A cyber law is a rule that the government makes about the use of computers and the internet. Countries make them to protect people and their money and information from criminals. Examples are hacking and identity theft.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A cyber law is a rule that the government makes about the use of computers and the internet"
+                },
+                {
+                  "point": 1,
+                  "quote": "to protect people and their money and information from criminals"
+                },
+                {
+                  "point": 2,
+                  "quote": "hacking"
+                },
+                {
+                  "point": 3,
+                  "quote": "identity theft"
+                }
+              ],
+              "feedback": "All four marks. You defined it, gave the purpose and two correct examples."
+            },
+            {
+              "tier": "full",
+              "text": "It is a law about computers and the internet. We have them so that criminals who cheat people online can be punished and people can be safe. Two cybercrimes are online fraud, like a fake shop, and cyberstalking.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is a law about computers and the internet"
+                },
+                {
+                  "point": 1,
+                  "quote": "so that criminals who cheat people online can be punished and people can be safe"
+                },
+                {
+                  "point": 2,
+                  "quote": "online fraud, like a fake shop"
+                },
+                {
+                  "point": 3,
+                  "quote": "cyberstalking"
+                }
+              ],
+              "feedback": "Full marks. A fake shop is a very good example of online fraud."
+            },
+            {
+              "tier": "partial",
+              "text": "A cyber law is a rule about computers and the internet. One cybercrime is hacking.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A cyber law is a rule about computers and the internet"
+                },
+                {
+                  "point": 2,
+                  "quote": "One cybercrime is hacking"
+                }
+              ],
+              "feedback": "These are right. Explain why countries make cyber laws (to protect people, their money and information), and give a second example of cybercrime."
+            },
+            {
+              "tier": "partial",
+              "text": "Countries make cyber laws to protect people online. Examples are hacking and fraud.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "to protect people online"
+                },
+                {
+                  "point": 2,
+                  "quote": "hacking"
+                },
+                {
+                  "point": 3,
+                  "quote": "fraud"
+                }
+              ],
+              "feedback": "Your reason and examples are right. You did not say what a cyber law is: a rule about how computers and the internet may be used."
+            },
+            {
+              "tier": "weak",
+              "text": "A cyber law is a law for cyber cafes. They are made so that cafes pay tax.",
+              "meets": [],
+              "feedback": "A cyber law is about using computers and the internet, not only cyber cafes. Countries make them to protect people from crimes like hacking and online fraud."
+            },
+            {
+              "tier": "weak",
+              "text": "Cyber laws are made to stop people from using the internet. Cybercrime is when a person uses it too much.",
+              "meets": [],
+              "feedback": "Cyber laws protect people; they do not ban the internet. Cybercrimes are harmful acts such as hacking, online fraud and identity theft."
+            }
+          ]
+        },
+        {
+          "prompt": "A company in Kano collects its customers' names, addresses, phone numbers, bank details and photographs to send a monthly newsletter. It also gives the list to other companies without telling the customers. Explain what the company is doing wrong, and what it should do instead. Say what a customer can do to protect his own privacy.",
+          "markScheme": [
+            "Says it collects more data than it needs (for a newsletter)",
+            "Says it shares the data without permission / without telling customers",
+            "Says what it should do, e.g. collect only what is needed, say why, keep it safe",
+            "Gives a way a customer can protect privacy, e.g. share little, read before agreeing, ask how it will be used"
+          ],
+          "modelAnswer": "The company collects more data than it needs, because a newsletter needs only a name and a contact. It also shares customers' details with other companies without their permission. It should collect only what it needs, tell customers how it will be used and keep it safe. A customer can protect his privacy by sharing as little as possible and by asking how his data will be used.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The company collects too much data. For a newsletter it only needs a name and an email or phone number, not bank details. It also gives the list to other companies without permission, which is wrong. It should collect only what it needs, say why and keep it safe. A customer should give little information and ask how it will be used.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The company collects too much data"
+                },
+                {
+                  "point": 1,
+                  "quote": "It also gives the list to other companies without permission, which is wrong"
+                },
+                {
+                  "point": 2,
+                  "quote": "It should collect only what it needs, say why and keep it safe"
+                },
+                {
+                  "point": 3,
+                  "quote": "A customer should give little information and ask how it will be used"
+                }
+              ],
+              "feedback": "All four marks. You said what is wrong, what to do and how a customer can protect himself."
+            },
+            {
+              "tier": "full",
+              "text": "It is wrong to collect bank details and photographs for a newsletter, because it does not need them. It is also wrong to give the information to other companies without telling the customers. The company should collect only what is necessary and keep the data safe with a password. As a customer I would read before I agree and give only the details that are needed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is wrong to collect bank details and photographs for a newsletter, because it does not need them"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is also wrong to give the information to other companies without telling the customers"
+                },
+                {
+                  "point": 2,
+                  "quote": "The company should collect only what is necessary and keep the data safe with a password"
+                },
+                {
+                  "point": 3,
+                  "quote": "As a customer I would read before I agree and give only the details that are needed"
+                }
+              ],
+              "feedback": "Full marks. Clear on all four points."
+            },
+            {
+              "tier": "partial",
+              "text": "The company is wrong to give the list to other companies without permission. It should keep the data safe.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "wrong to give the list to other companies without permission"
+                },
+                {
+                  "point": 2,
+                  "quote": "It should keep the data safe"
+                }
+              ],
+              "feedback": "Both points are right. You also need to say it collects more than it needs for a newsletter, and how a customer can protect his own privacy."
+            },
+            {
+              "tier": "partial",
+              "text": "A customer can give only a little information. The company collects too many things.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The company collects too many things"
+                },
+                {
+                  "point": 3,
+                  "quote": "A customer can give only a little information"
+                }
+              ],
+              "feedback": "Good. Be exact about what was wrong: it needs a name and a contact, not bank details. Add that it shared data without permission, and what the company should do instead."
+            },
+            {
+              "tier": "weak",
+              "text": "The company is doing well because it is advertising. The customers should be happy to get a newsletter.",
+              "meets": [],
+              "feedback": "The problem is how it handled the data: it collected more than it needed and shared it without permission. It should collect only what it needs and keep it safe."
+            },
+            {
+              "tier": "weak",
+              "text": "The company should collect more data such as the bank PIN so that it will be able to know the customers better.",
+              "meets": [],
+              "feedback": "Collecting a bank PIN is dangerous and unnecessary. A company should collect only the data it needs, keep it safe and not share it without permission."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Emerging technologies: AI, robotics and the Internet of Things",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. describe artificial intelligence (AI) with everyday examples;\n2. describe what a robot is and where robots are used;\n3. explain the Internet of Things (IoT) with examples;\n4. discuss one benefit and one risk of each technology.\n\n## Materials\n\nA projector, pictures or short clips of a phone voice assistant, a factory robot arm and a smart gadget, and a sample list of everyday devices.\n\n## Starter (5 minutes)\n\nAsk: \"When your phone suggests the next word you want to type, who decided that word?\" Lead pupils to see that a program learned from many examples.\n\n## Development\n\n1. AI: computer systems that do tasks that normally need human intelligence, such as understanding speech, recognising pictures and making predictions. They learn patterns from large amounts of data. Examples: voice assistants, translation, spam filters, recommendations of videos.\n2. AI is not a thinking person. It can be wrong, and it can be unfair if its data is unfair.\n3. Robotics: machines that can sense, decide and act. A robot has sensors (to see or feel), a controller (a computer) and actuators or motors (to move). Uses: factories, hospitals, farming, bomb disposal, exploring space.\n4. IoT: everyday objects with sensors and an internet connection that send or receive data. Examples: a smart meter that reports a household's electricity use, a farm sensor that reports soil moisture, a smart doorbell.\n5. Benefits: speed, accuracy, doing dangerous or boring work, saving resources. Risks: loss of some jobs, privacy, hacking, mistakes and over-reliance.\n\n## Class activity\n\nGroups choose one technology and design a helpful use for their own school or town, with one risk and how to reduce it.\n\n## Evaluation\n\n1. How is a robot different from an ordinary machine?\n2. Give two examples of IoT devices.\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "New technologies shaping our world",
+        "content": "# Emerging technologies: AI, robotics and the Internet of Things\n\n**Emerging technologies** are new technologies that are developing fast and changing how we live and work. Three important ones are artificial intelligence, robotics and the Internet of Things.\n\n## Artificial intelligence (AI)\n\n**Artificial intelligence** means computer systems that can do tasks which usually need human intelligence. Examples are understanding speech, recognising a face or a picture, translating languages and making predictions.\n\nHow does it work? An AI system is shown a very large amount of **data** and **learns patterns** from it. A spam filter, for example, learns from millions of emails which ones are junk.\n\n**Everyday examples:**\n- A phone's **voice assistant** that understands a spoken question.\n- **Translation** apps that turn English into Hausa, Yoruba or Igbo text.\n- **Recommendations** of videos or songs you may like.\n- A bank system that spots a card payment that looks unusual.\n\n**Important to know:** AI is not a person and does not understand like one. It can be **wrong**. If the data it learned from is unfair or incomplete, its answers can be unfair. People must check what it says.\n\n## Robotics\n\nA **robot** is a machine that can **sense** its surroundings, **decide** what to do and **act**. It has:\n\n1. **Sensors**: to see, hear or feel, such as a camera.\n2. A **controller**: a small computer that decides.\n3. **Motors or actuators**: to move.\n\nA washing machine follows a fixed cycle. A robot responds to what it senses, for example a robot vacuum that turns when it feels a wall.\n\n**Uses:** factories that build cars, hospitals that use robots to help in surgery, farms that use machines to spray crops, and dangerous jobs such as clearing explosives or exploring other planets.\n\n## The Internet of Things (IoT)\n\nThe **Internet of Things** is a network of ordinary objects that have **sensors and an internet connection**, so they can send and receive data.\n\n**Examples:**\n- A **smart electricity meter** that sends a household's use to the power company.\n- A **soil sensor** on a farm that tells a farmer by phone when the soil is dry.\n- A **smart doorbell** that sends a picture to your phone.\n- A **tracker** on a delivery lorry that shows where it is.\n\n## Benefits and risks\n\n| | Benefits | Risks |\n|---|---|---|\n| **AI** | Fast, can handle huge data, helps with language and health | Mistakes, unfair results, misuse such as fake pictures |\n| **Robots** | Do dangerous or repeating work, very accurate | Some jobs may change or be lost, cost |\n| **IoT** | Saves time and resources, remote monitoring | Hacking, loss of privacy, needs internet |\n\n## Worked example\n\nA farmer in Kaduna puts a soil sensor in her tomato field. It sends data over the mobile network to an app. When the soil is too dry, the app tells her, and she waters only then. This is IoT: the sensor is the object, the connection sends the data, and the farmer saves water and time. The risk is that if someone hacks the system, they might see her farm's data."
+      },
+      "cards": [
+        {
+          "front": "Artificial intelligence",
+          "back": "Computer systems that do tasks that normally need human intelligence, by learning patterns from data."
+        },
+        {
+          "front": "One everyday use of AI",
+          "back": "Voice assistant, translation app, spam filter, or video recommendation."
+        },
+        {
+          "front": "Why can AI be wrong or unfair?",
+          "back": "It learns from data, and the data may be incomplete or unfair. It does not understand like a person."
+        },
+        {
+          "front": "Robot",
+          "back": "A machine that can sense its surroundings, decide and act."
+        },
+        {
+          "front": "Three parts of a robot",
+          "back": "Sensors, a controller and motors or actuators."
+        },
+        {
+          "front": "Internet of Things",
+          "back": "Everyday objects with sensors and an internet connection that send or receive data."
+        },
+        {
+          "front": "Example of IoT",
+          "back": "A smart electricity meter, a farm soil sensor or a smart doorbell."
+        },
+        {
+          "front": "A risk of IoT",
+          "back": "Hacking and loss of privacy."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is an example of artificial intelligence?",
+          "options": [
+            "A calculator adding two numbers",
+            "A phone app that translates a spoken sentence into another language",
+            "A torch",
+            "A printer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these parts lets a robot 'see' what is around it?",
+          "options": [
+            "Motor",
+            "Battery",
+            "Wheel",
+            "Sensor"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A soil sensor in a tomato farm in Kaduna sends a message to the farmer's phone when the soil is dry. This is an example of",
+          "options": [
+            "Internet of Things",
+            "a virus",
+            "word processing",
+            "blockchain"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A hospital's AI program was trained mostly on pictures from only one group of people. It gives poorer results for other groups. Why?",
+          "options": [
+            "AI is always accurate",
+            "Hospitals do not use computers",
+            "The data it learned from was not fair or complete",
+            "Robots caused the problem"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "What is the main difference between a robot and an ordinary washing machine that follows one fixed cycle?",
+          "options": [
+            "A robot senses its surroundings and decides what to do",
+            "A washing machine is bigger",
+            "A robot needs no electricity",
+            "A washing machine has a screen"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what is meant by the Internet of Things. Give two examples, and one risk.",
+          "markScheme": [
+            "Explains that IoT means everyday objects with sensors connected to the internet",
+            "States that they send or receive data",
+            "Gives two correct examples (one mark for two correct examples)",
+            "Gives a correct risk, e.g. hacking or loss of privacy"
+          ],
+          "modelAnswer": "The Internet of Things is a network of everyday objects that have sensors and an internet connection. They send and receive data. Examples are a smart electricity meter and a soil sensor on a farm. A risk is that they can be hacked and a person's private data can be seen.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The Internet of Things means everyday objects that have sensors and are connected to the internet. They send data and receive data. Two examples are a smart meter that tells the power company the electricity used, and a smart doorbell. A risk is hackers may get into the devices and see private things.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "everyday objects that have sensors and are connected to the internet"
+                },
+                {
+                  "point": 1,
+                  "quote": "They send data and receive data"
+                },
+                {
+                  "point": 2,
+                  "quote": "a smart meter that tells the power company the electricity used, and a smart doorbell"
+                },
+                {
+                  "point": 3,
+                  "quote": "hackers may get into the devices and see private things"
+                }
+              ],
+              "feedback": "All four marks. Each part of the question is answered."
+            },
+            {
+              "tier": "full",
+              "text": "IoT is when normal things like a fridge or a farm sensor are joined to the internet with sensors, so they send information to us. For example a soil sensor can send a message to a farmer's phone and a tracker can show where a lorry is. A risk is loss of privacy if somebody hacks it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "normal things like a fridge or a farm sensor are joined to the internet with sensors"
+                },
+                {
+                  "point": 1,
+                  "quote": "they send information to us"
+                },
+                {
+                  "point": 2,
+                  "quote": "a soil sensor can send a message to a farmer's phone and a tracker can show where a lorry is"
+                },
+                {
+                  "point": 3,
+                  "quote": "loss of privacy if somebody hacks it"
+                }
+              ],
+              "feedback": "Full marks. The soil sensor and the lorry tracker are real uses in Nigeria."
+            },
+            {
+              "tier": "partial",
+              "text": "IoT is objects that are connected to the internet and send data. An example is a smart meter.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "objects that are connected to the internet"
+                },
+                {
+                  "point": 1,
+                  "quote": "send data"
+                }
+              ],
+              "feedback": "The meaning is right. Your example is only one, and you did not give a risk. Add a second example and a risk such as hacking."
+            },
+            {
+              "tier": "partial",
+              "text": "A smart doorbell and a soil sensor are examples. Hackers are a risk.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "A smart doorbell and a soil sensor are examples"
+                },
+                {
+                  "point": 3,
+                  "quote": "Hackers are a risk"
+                }
+              ],
+              "feedback": "The examples and the risk are right. You did not say what the Internet of Things is: everyday objects with sensors and an internet connection that send or receive data."
+            },
+            {
+              "tier": "weak",
+              "text": "It is the internet that is used for things like shopping. The example is Jumia and Konga.",
+              "meets": [],
+              "feedback": "The Internet of Things is not shopping online. It is everyday objects with sensors that connect to the internet and send data, such as a smart electricity meter or a soil sensor."
+            },
+            {
+              "tier": "weak",
+              "text": "It is things that connect to the internet like the phone and the laptop only. There is no risk.",
+              "meets": [],
+              "feedback": "Phones and laptops are normal computers. IoT is mostly everyday objects with sensors, such as a smart meter. There are risks, for example hacking and loss of privacy."
+            }
+          ]
+        },
+        {
+          "prompt": "A school proposes to use AI to mark pupils' multiple-choice tests and a robot to carry books from the library to the classrooms. Give one benefit and one risk of the AI marking, and say what three parts the robot would need to find its way and carry the books.",
+          "markScheme": [
+            "Gives a correct benefit of AI marking, e.g. faster or consistent",
+            "Gives a correct risk, e.g. mistakes, unfairness, or need to be checked by a teacher",
+            "States that the robot needs sensors (to see obstacles or find the way)",
+            "States a controller (computer to decide) and motors or wheels (to move)"
+          ],
+          "modelAnswer": "A benefit of AI marking is that it is fast, so pupils get their results quickly. A risk is that it can make mistakes, so a teacher must check the results. The robot would need sensors to see where it is going, a controller to decide, and motors or wheels to move.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "One benefit is that the AI marks very fast so pupils will get their results quickly. A risk is that the AI can make mistakes, so teachers must still check. The robot will need sensors to see the way and the people, a controller to decide, and motors and wheels to move.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the AI marks very fast so pupils will get their results quickly"
+                },
+                {
+                  "point": 1,
+                  "quote": "the AI can make mistakes, so teachers must still check"
+                },
+                {
+                  "point": 2,
+                  "quote": "sensors to see the way and the people"
+                },
+                {
+                  "point": 3,
+                  "quote": "a controller to decide, and motors and wheels to move"
+                }
+              ],
+              "feedback": "All four marks. You named three parts of the robot and linked each to a job."
+            },
+            {
+              "tier": "full",
+              "text": "Benefit: it will mark all the tests the same way and save teachers' time. Risk: if it was not taught properly, it may mark some answers wrongly. For the robot: a camera or sensor to see, a small computer to control it, and wheels with a motor to go.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "it will mark all the tests the same way and save teachers' time"
+                },
+                {
+                  "point": 1,
+                  "quote": "it may mark some answers wrongly"
+                },
+                {
+                  "point": 2,
+                  "quote": "a camera or sensor to see"
+                },
+                {
+                  "point": 3,
+                  "quote": "a small computer to control it, and wheels with a motor to go"
+                }
+              ],
+              "feedback": "Full marks. Saving teachers' time is a correct benefit."
+            },
+            {
+              "tier": "partial",
+              "text": "A benefit is it is fast. A risk is mistakes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A benefit is it is fast"
+                },
+                {
+                  "point": 1,
+                  "quote": "A risk is mistakes"
+                }
+              ],
+              "feedback": "The benefit and risk are right. Now answer the robot part: it needs sensors, a controller and motors or wheels."
+            },
+            {
+              "tier": "partial",
+              "text": "The robot needs a sensor, a controller and a motor.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "a sensor"
+                },
+                {
+                  "point": 3,
+                  "quote": "a controller and a motor"
+                }
+              ],
+              "feedback": "The robot parts are correct. Add a benefit and a risk of the AI marking, such as speed and the chance of mistakes."
+            },
+            {
+              "tier": "weak",
+              "text": "The benefit is that pupils will not need to learn again. The robot will need a brain and hands like a person.",
+              "meets": [],
+              "feedback": "AI marking does not remove the need to learn. A benefit is speed, and a risk is mistakes. A robot needs sensors, a controller and motors, not a human brain and hands."
+            },
+            {
+              "tier": "weak",
+              "text": "The risk is that AI will become angry. The robot needs only a battery.",
+              "meets": [],
+              "feedback": "AI does not have feelings. A real risk is that it makes mistakes or is unfair. A robot also needs sensors to see and a controller and motors to move."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Blockchain and cloud computing",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. explain cloud computing and name its uses;\n2. give benefits and limits of the cloud;\n3. explain the basic idea of a blockchain (blocks, chain, shared record);\n4. say why a blockchain is hard to change and where it is used.\n\n## Materials\n\nA projector, a school email account showing online storage (such as Google Drive or OneDrive), and index cards for a chain activity.\n\n## Starter (5 minutes)\n\nAsk: \"If you lose your phone, how do you get your photos back?\" Some pupils will say they are saved online. Ask where \"online\" really is.\n\n## Development\n\n1. Cloud computing: using storage, programs and computing power on servers in data centres, reached through the internet, instead of on your own device.\n2. Examples: online storage (Google Drive, OneDrive), email, online word processors, video streaming, mobile banking apps.\n3. Benefits: reach your files from any device, easy sharing, automatic backup, no need to buy big equipment, pay for what you use.\n4. Limits: need internet (and data costs), privacy and security depend on the provider, you must have a strong password and two-step verification.\n5. Blockchain: a digital record (ledger) kept as a chain of blocks, shared by many computers. Each block holds records and the link (a code called a hash) to the block before it.\n6. If someone changes one block, its code changes and no longer matches the next block, and the other computers see the difference. This makes records hard to change secretly.\n7. Uses: cryptocurrency, tracking goods from farm to shop, recording land or certificates. Blockchain is not the same as cryptocurrency; cryptocurrency is one use.\n\n## Class activity\n\nEach pupil is a block holding a record. Link the cards in order, then change one card and show how the chain no longer matches.\n\n## Evaluation\n\n1. Give two benefits of cloud storage.\n2. Why is it hard to cheat a blockchain?\n\n## Assignment\n\nQuiz on the app.",
+      "reading": {
+        "title": "Storing files in the cloud, and the chain of blocks",
+        "content": "# Blockchain and cloud computing\n\n## Cloud computing\n\n**Cloud computing** means using storage, programs and computing power that sit on powerful computers called **servers** in a data centre, instead of on your own device. You reach them through the **internet**. The cloud is not a real cloud; it is other people's computers connected to the internet.\n\n**Everyday examples:**\n- **Online storage** such as Google Drive or OneDrive, where you keep files and open them on any device.\n- **Email**, which stays on the provider's servers so you can read it on any phone.\n- **Online word processors**, where a group can edit the same document.\n- **Video streaming** and **mobile banking apps**.\n\n### Benefits\n\n- **Access anywhere**: log in on a school computer or a phone and find your work.\n- **Easy sharing**: send a link instead of a file.\n- **Backup**: if your phone is stolen, your files are still safe.\n- **Saves money**: a school does not need to buy and maintain a big server.\n\n### Limits\n\n- You need an **internet connection**, which may be slow or costly, and not available during a network failure.\n- You depend on the **provider** to keep your data safe and the service running.\n- A weak password can let others into your files. Use a strong password and two-step verification.\n\n## Blockchain\n\nA **blockchain** is a way of keeping records so that they are very hard to change in secret. A record is stored in a **block**. Each block holds:\n\n1. some **records** (for example, who paid whom),\n2. a unique code called its **hash**, which is like a fingerprint of the block's contents, and\n3. the hash of the **block before it**.\n\nBlocks join one after another, to make a **chain**.\n\n**Shared by many.** The same chain is kept on many computers. Nobody owns it alone.\n\n**Why is it hard to cheat?** If someone changes a record in an old block, the block's hash changes. The next block still holds the old hash, so the chain **no longer matches**. The other computers also keep their own copy, and they will see the difference and reject the change. To cheat, a person would have to change the block and every block after it on most of the computers at once, which is almost impossible.\n\n### Uses of blockchain\n\n- **Cryptocurrency**, such as Bitcoin, uses a blockchain to record who owns what. Blockchain and cryptocurrency are **not the same**: cryptocurrency is one use of blockchain.\n- **Tracking goods**, for example cocoa from the farm to the shop, so buyers can see where it came from.\n- **Keeping records** such as certificates or land documents, where changes must be visible.\n\n## Worked example\n\nA school stores 200 scanned certificates in the cloud. Any teacher with permission can open them from home. If the school's computer in the office is stolen, the certificates are not lost. But the cloud account needs a strong password, because anyone who guesses it can read the certificates."
+      },
+      "cards": [
+        {
+          "front": "Cloud computing",
+          "back": "Using storage and programs on servers reached through the internet, not on your own device."
+        },
+        {
+          "front": "Server",
+          "back": "A powerful computer that stores data and serves programs to other computers."
+        },
+        {
+          "front": "Benefit of the cloud",
+          "back": "Access from any device, easy sharing, backup, saves money."
+        },
+        {
+          "front": "Limit of the cloud",
+          "back": "Needs internet, depends on the provider, and needs strong passwords."
+        },
+        {
+          "front": "Blockchain",
+          "back": "A shared record kept as a chain of blocks that is very hard to change secretly."
+        },
+        {
+          "front": "Block",
+          "back": "A part of a blockchain that holds records, its own hash and the hash of the block before it."
+        },
+        {
+          "front": "Why is a blockchain hard to cheat?",
+          "back": "Changing a block breaks the chain, and many computers keep a copy and would see the difference."
+        },
+        {
+          "front": "Is blockchain the same as cryptocurrency?",
+          "back": "No. Cryptocurrency is one use of blockchain."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is an example of cloud computing?",
+          "options": [
+            "Saving a file on a flash drive",
+            "Typing in a word processor with no internet",
+            "Keeping files in Google Drive and opening them on a phone and a school computer",
+            "Printing a document"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A secondary school's server computer was stolen. Which would have protected its records?",
+          "options": [
+            "Keeping a copy of the records in cloud storage",
+            "Keeping them in a cupboard",
+            "Printing the computer's name",
+            "Using a smaller monitor"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Why can the cloud be a problem for a school in a village with weak network?",
+          "options": [
+            "Cloud files cannot be saved",
+            "The school needs a good internet connection to use the files",
+            "The cloud needs no password",
+            "Clouds use no electricity"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "What links one block in a blockchain to the next?",
+          "options": [
+            "A cable",
+            "A password",
+            "A printer",
+            "The hash of the block before it"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A dishonest clerk changes one old record in one copy of a blockchain. What is most likely to happen?",
+          "options": [
+            "Every computer accepts the change",
+            "The chain no longer matches, and the other copies show the difference",
+            "The blockchain is deleted",
+            "The records become public domain"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what cloud computing is, and give two benefits and one limit of storing files in the cloud.",
+          "markScheme": [
+            "Explains that cloud computing means using servers/storage reached through the internet",
+            "States one correct benefit",
+            "States a second correct benefit",
+            "States a correct limit, e.g. needs internet, depends on the provider, or password risk"
+          ],
+          "modelAnswer": "Cloud computing is using storage and programs on servers that we reach through the internet, instead of on our own device. One benefit is that we can open the files from any device. Another benefit is that the files are backed up if our device is lost. A limit is that we need an internet connection to reach them.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Cloud computing is when you keep your files and use programs on servers through the internet and not on your own device. A benefit is that you can open your files from any device. Another benefit is that if you lose your phone the files are not lost. A limit is that you need the internet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "you keep your files and use programs on servers through the internet and not on your own device"
+                },
+                {
+                  "point": 1,
+                  "quote": "you can open your files from any device"
+                },
+                {
+                  "point": 2,
+                  "quote": "if you lose your phone the files are not lost"
+                },
+                {
+                  "point": 3,
+                  "quote": "you need the internet"
+                }
+              ],
+              "feedback": "All four marks. Clear explanation, two benefits and a limit."
+            },
+            {
+              "tier": "full",
+              "text": "It is using other computers called servers over the internet to store our files. It is easy to share a file by sending a link, and it saves money because the school does not need to buy a big computer. The limit is that if the network is bad you cannot reach your files.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "using other computers called servers over the internet to store our files"
+                },
+                {
+                  "point": 1,
+                  "quote": "easy to share a file by sending a link"
+                },
+                {
+                  "point": 2,
+                  "quote": "saves money because the school does not need to buy a big computer"
+                },
+                {
+                  "point": 3,
+                  "quote": "if the network is bad you cannot reach your files"
+                }
+              ],
+              "feedback": "Full marks. The network limit is very relevant to many places in Nigeria."
+            },
+            {
+              "tier": "partial",
+              "text": "Cloud computing is using the servers on the internet for your files. One benefit is you can open them anywhere.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "using the servers on the internet for your files"
+                },
+                {
+                  "point": 1,
+                  "quote": "you can open them anywhere"
+                }
+              ],
+              "feedback": "The meaning and one benefit are right. Give a second benefit (such as backup or easy sharing) and one limit (such as needing internet)."
+            },
+            {
+              "tier": "partial",
+              "text": "A benefit is backup and another is sharing. The limit is internet.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A benefit is backup and another is sharing"
+                },
+                {
+                  "point": 3,
+                  "quote": "The limit is internet"
+                }
+              ],
+              "feedback": "The benefits and limit are right. Start with what cloud computing is: using servers and storage reached through the internet instead of your own device."
+            },
+            {
+              "tier": "weak",
+              "text": "Cloud computing is when you keep your files in the sky. It has no limit.",
+              "meets": [],
+              "feedback": "The cloud is not in the sky. It is servers in data centres that you reach through the internet. It does have limits, such as needing a good internet connection."
+            },
+            {
+              "tier": "weak",
+              "text": "Cloud computing means using a computer when it is cloudy and the weather is bad. A benefit is rain.",
+              "meets": [],
+              "feedback": "Cloud computing has nothing to do with weather. It means using servers through the internet. Benefits include access from any device and backup."
+            }
+          ]
+        },
+        {
+          "prompt": "Describe what a blockchain is and explain why it is very hard to change a record in it without being found out. Give one use of blockchain that is not cryptocurrency.",
+          "markScheme": [
+            "Describes a blockchain as a chain of blocks that hold records",
+            "States that each block holds the hash/code of the previous block (linking them)",
+            "Explains that changing a block breaks the chain, or that many computers keep copies and would notice",
+            "Gives a correct use other than cryptocurrency, e.g. tracking goods or keeping certificates"
+          ],
+          "modelAnswer": "A blockchain is a record kept as a chain of blocks, each holding records. Each block contains the hash of the block before it, which links them. If someone changes a block, the hash changes and the chain no longer matches, and the many computers that keep a copy will see the difference. It can be used to track cocoa from the farm to the shop.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A blockchain is a chain of blocks, and each block keeps records. Each block has the hash of the block before it, so they are linked. If somebody changes one block, the chain will not match, and the other computers that have a copy will see it. It can be used to track cocoa from the farm to the shop.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A blockchain is a chain of blocks, and each block keeps records"
+                },
+                {
+                  "point": 1,
+                  "quote": "Each block has the hash of the block before it, so they are linked"
+                },
+                {
+                  "point": 2,
+                  "quote": "If somebody changes one block, the chain will not match, and the other computers that have a copy will see it"
+                },
+                {
+                  "point": 3,
+                  "quote": "track cocoa from the farm to the shop"
+                }
+              ],
+              "feedback": "All four marks. You explained the linking and why cheating is noticed."
+            },
+            {
+              "tier": "full",
+              "text": "It is a list of records kept in blocks that are joined together in a chain. Every block holds a code of the block before it. A cheat would have to change that block and all the blocks after it in many computers at the same time, which is nearly impossible. It can be used to keep land documents or school certificates.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a list of records kept in blocks that are joined together in a chain"
+                },
+                {
+                  "point": 1,
+                  "quote": "Every block holds a code of the block before it"
+                },
+                {
+                  "point": 2,
+                  "quote": "A cheat would have to change that block and all the blocks after it in many computers at the same time, which is nearly impossible"
+                },
+                {
+                  "point": 3,
+                  "quote": "keep land documents or school certificates"
+                }
+              ],
+              "feedback": "Full marks. Land documents and certificates are good non-cryptocurrency uses."
+            },
+            {
+              "tier": "partial",
+              "text": "A blockchain is blocks joined in a chain which keep records. It is used for cryptocurrency like Bitcoin.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A blockchain is blocks joined in a chain which keep records"
+                }
+              ],
+              "feedback": "The description is right, but the question wants a use that is not cryptocurrency, such as tracking goods. Also explain how the blocks are linked (the hash of the previous block) and why changes are noticed.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "If a person changes one block, the other computers will see it because they all have a copy. It can track goods.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the other computers will see it because they all have a copy"
+                },
+                {
+                  "point": 3,
+                  "quote": "It can track goods"
+                }
+              ],
+              "feedback": "These two points are right. Describe what a blockchain is (a chain of blocks holding records) and how each block holds the code of the one before it."
+            },
+            {
+              "tier": "weak",
+              "text": "A blockchain is a chain that locks a block of cement. It cannot be changed because it is heavy.",
+              "meets": [],
+              "feedback": "A blockchain is a digital record, not a physical chain. Blocks of records are linked by hash codes, and changes are noticed because many computers keep a copy."
+            },
+            {
+              "tier": "weak",
+              "text": "It is another name for Bitcoin and nobody can change a record because it is a secret from everyone.",
+              "meets": [],
+              "feedback": "Bitcoin is one use of blockchain, not the same thing. Changes are noticed because each block holds the hash of the one before and many computers keep a copy."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Careers in ICT",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. name five careers in ICT and describe what each person does;\n2. say the skills and school subjects that lead to each career;\n3. match a task or problem to the right ICT professional;\n4. describe how a pupil can begin to prepare now.\n\n## Materials\n\nA projector, career cards with a job title on one and a job description on another, and a short list of free coding or design activities that pupils can try.\n\n## Starter (5 minutes)\n\nAsk: \"When you use a bank app, who made it, who keeps it working and who keeps hackers out?\" Collect ideas, and tell the class that each is a different ICT career.\n\n## Development\n\n1. Software developer: writes the programs and apps. Skills: logic, patience, programming languages. Subjects: Mathematics, Digital Technologies.\n2. Data analyst: collects data and finds patterns to help organisations decide. Skills: spreadsheets, statistics, clear reporting. Subjects: Mathematics, Economics.\n3. Network engineer: builds and looks after computer networks, routers and cables. Skills: problem solving, knowledge of networking. Subjects: Physics, Digital Technologies.\n4. Cybersecurity specialist: protects systems and data from attacks and tests for weaknesses. Skills: careful thinking, knowledge of security and law. Subjects: Mathematics, Digital Technologies.\n5. Graphic designer: makes images, logos, posters and layouts. Skills: creativity, design software, an eye for colour and space. Subjects: Fine Art, Digital Technologies.\n6. Other: web designer, IT support technician, database administrator, UX designer, hardware technician.\n7. Preparing now: practise typing and problem solving, try a free coding course, make a poster, learn spreadsheets, keep up with Mathematics and English, and learn safe habits online.\n\n## Class activity\n\nMatch the career cards to the job descriptions. Then each pupil explains which career they might like and what they could do this term to move towards it.\n\n## Evaluation\n\n1. What does a network engineer do?\n2. Which career fits a person who enjoys design?\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Careers in ICT and how to prepare for them",
+        "content": "# Careers in ICT\n\nInformation and Communication Technology (ICT) gives work to millions of people. Banks, schools, hospitals, farms, shops and even churches use computers, so people with ICT skills are needed everywhere. Here are five careers.\n\n## Software developer\n\nA **software developer** writes the programs and apps that run on computers and phones. Before a bank can have an app, someone must design it and write the instructions in a programming language such as Python or JavaScript, then test it to find mistakes.\n\n**Skills:** logical thinking, patience, programming, and teamwork.\n**Useful subjects:** Mathematics and Digital Technologies.\n\n## Data analyst\n\nA **data analyst** collects data, cleans it and finds patterns that help an organisation decide what to do. For example, an analyst for a chain of supermarkets can study sales to see which goods to stock before December.\n\n**Skills:** spreadsheets, statistics, and clear reports and charts.\n**Useful subjects:** Mathematics and Economics.\n\n## Network engineer\n\nA **network engineer** builds and looks after the networks that connect computers, such as the school LAN, routers, switches, cables and Wi-Fi. When the internet in an office stops working, the network engineer finds the fault.\n\n**Skills:** problem solving and knowledge of networks.\n**Useful subjects:** Physics and Digital Technologies.\n\n## Cybersecurity specialist\n\nA **cybersecurity specialist** protects computer systems and data from hackers and malware. The specialist may test a bank's system for weak points before a criminal finds them, set up protection and teach staff to avoid phishing.\n\n**Skills:** careful thinking, knowledge of security and of the law, honesty.\n**Useful subjects:** Mathematics and Digital Technologies.\n\n## Graphic designer\n\nA **graphic designer** creates images, logos, posters, book covers and layouts, using design software. A designer can make a poster for a music festival or the logo of a new Nigerian business.\n\n**Skills:** creativity, a good eye for colour and space, and knowledge of design software.\n**Useful subjects:** Fine Art and Digital Technologies.\n\n## Other ICT jobs\n\nWeb designer, IT support technician (who repairs and sets up computers), database administrator (who looks after large stores of data), and user experience (UX) designer (who makes apps easy to use).\n\n## Which professional is needed?\n\n| Problem | Who helps |\n|---|---|\n| A school wants an app for its fees | Software developer |\n| A shop wants to know which products sell most | Data analyst |\n| The school's Wi-Fi keeps disconnecting | Network engineer |\n| A company's customer data was stolen | Cybersecurity specialist |\n| A new business needs a logo | Graphic designer |\n\n## Preparing now\n\n- Practise typing and problem solving.\n- Try a free coding or design course online.\n- Learn to use a spreadsheet properly.\n- Work hard at **Mathematics and English**, because every ICT career needs them.\n- Make something real, such as a small poster, a simple web page or a spreadsheet for your family's expenses.\n- Practise safe and honest habits online."
+      },
+      "cards": [
+        {
+          "front": "Software developer",
+          "back": "Writes, tests and improves programs and apps."
+        },
+        {
+          "front": "Data analyst",
+          "back": "Collects and studies data to find patterns that help organisations decide."
+        },
+        {
+          "front": "Network engineer",
+          "back": "Builds and looks after computer networks, routers and cables."
+        },
+        {
+          "front": "Cybersecurity specialist",
+          "back": "Protects systems and data from hackers and malware."
+        },
+        {
+          "front": "Graphic designer",
+          "back": "Creates images, logos, posters and layouts using design software."
+        },
+        {
+          "front": "IT support technician",
+          "back": "Repairs and sets up computers and helps users with problems."
+        },
+        {
+          "front": "Subjects that help in ICT careers",
+          "back": "Mathematics and English, with Digital Technologies, Physics and Economics for some careers."
+        },
+        {
+          "front": "One way to prepare now",
+          "back": "Try a free coding or design course, or make a small real project."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A bank's customer data was stolen by hackers. Which professional would be asked to protect the system from now on?",
+          "options": [
+            "Graphic designer",
+            "Data analyst",
+            "Network engineer",
+            "Cybersecurity specialist"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which person writes the instructions that make a mobile banking app work?",
+          "options": [
+            "IT support technician",
+            "Software developer",
+            "Data analyst",
+            "Graphic designer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A supermarket wants to know which goods sold best in each month last year. The best person to ask is a",
+          "options": [
+            "network engineer",
+            "cybersecurity specialist",
+            "data analyst",
+            "web designer"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which subject helps for almost every ICT career?",
+          "options": [
+            "Mathematics",
+            "Music only",
+            "Home Economics only",
+            "Religious Studies only"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The Wi-Fi in a school keeps cutting off in the computer lab. Who should the school call?",
+          "options": [
+            "Graphic designer",
+            "Software developer",
+            "Data analyst",
+            "Network engineer"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Choose two ICT careers from software developer, data analyst, network engineer, cybersecurity specialist and graphic designer. For each, say what the person does and name one school subject that would help.",
+          "markScheme": [
+            "Describes what the first career does",
+            "Names a suitable subject for the first career",
+            "Describes what the second career does",
+            "Names a suitable subject for the second career"
+          ],
+          "modelAnswer": "A software developer writes and tests programs and apps. Mathematics would help. A graphic designer makes images, logos and posters. Fine Art would help.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A software developer writes and tests programs and apps. Mathematics helps because it trains logical thinking. A graphic designer makes logos, posters and pictures using design software. Fine Art helps for the colour and drawing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A software developer writes and tests programs and apps"
+                },
+                {
+                  "point": 1,
+                  "quote": "Mathematics helps because it trains logical thinking"
+                },
+                {
+                  "point": 2,
+                  "quote": "A graphic designer makes logos, posters and pictures using design software"
+                },
+                {
+                  "point": 3,
+                  "quote": "Fine Art helps for the colour and drawing"
+                }
+              ],
+              "feedback": "All four marks. Giving the reason a subject helps is a good extra."
+            },
+            {
+              "tier": "full",
+              "text": "A network engineer builds and repairs networks like the school LAN, and the subject that helps is Physics. A data analyst studies numbers and finds patterns to help a company to decide, and Mathematics helps with that.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A network engineer builds and repairs networks like the school LAN"
+                },
+                {
+                  "point": 1,
+                  "quote": "the subject that helps is Physics"
+                },
+                {
+                  "point": 2,
+                  "quote": "A data analyst studies numbers and finds patterns to help a company to decide"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mathematics helps with that"
+                }
+              ],
+              "feedback": "Full marks. Both careers and subjects are matched correctly."
+            },
+            {
+              "tier": "partial",
+              "text": "A software developer writes programs. A data analyst studies data and Mathematics will help.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A software developer writes programs"
+                },
+                {
+                  "point": 2,
+                  "quote": "A data analyst studies data"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mathematics will help"
+                }
+              ],
+              "feedback": "Careful: you named a subject only for the second career. Add one for the software developer, for example Mathematics or Digital Technologies."
+            },
+            {
+              "tier": "partial",
+              "text": "A cybersecurity specialist protects systems. A network engineer fixes the networks. Physics and Digital Technologies help.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A cybersecurity specialist protects systems"
+                },
+                {
+                  "point": 2,
+                  "quote": "A network engineer fixes the networks"
+                }
+              ],
+              "feedback": "You described both careers correctly. Say which subject helps which career, for instance Digital Technologies for cybersecurity and Physics for network engineering."
+            },
+            {
+              "tier": "weak",
+              "text": "A software developer is a person who develops the software by buying it. A network engineer is a person who sells the net.",
+              "meets": [],
+              "feedback": "A developer writes and tests programs, and a network engineer builds and repairs networks. Name a subject that helps each, such as Mathematics or Physics."
+            },
+            {
+              "tier": "weak",
+              "text": "A graphic designer repairs computers. The subject that helps is Agriculture.",
+              "meets": [],
+              "feedback": "A graphic designer makes images, posters and logos. Repairing computers is an IT support technician's work. Fine Art or Digital Technologies would help a designer."
+            }
+          ]
+        },
+        {
+          "prompt": "Sade says she enjoys solving puzzles and wants to protect people's money from online thieves, while her friend Kunle loves drawing and wants to design logos for new businesses. Which ICT career would suit each of them? Give a reason for each, and name two things each of them can do this year to prepare.",
+          "markScheme": [
+            "Names cybersecurity specialist for Sade, with a reason",
+            "Names graphic designer for Kunle, with a reason",
+            "Gives a way to prepare for Sade, e.g. practise problem solving, learn about safe computing",
+            "Gives a way to prepare for Kunle, e.g. practise drawing and learn design software"
+          ],
+          "modelAnswer": "Sade would suit cybersecurity, because it needs careful puzzle-solving and the job is to protect people's money and data from criminals. Kunle would suit graphic design, because designers draw and create logos using design software. This year Sade can practise problem solving in Mathematics and learn safe habits online. Kunle can practise drawing and try a free design program.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Sade would suit cybersecurity specialist, because the job needs puzzle solving and it protects people's money and data from online thieves. Kunle would suit graphic designer because designers draw and make logos with design software. This year Sade can practise problem solving in Mathematics and learn safe habits. Kunle can practise drawing and try free design software.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sade would suit cybersecurity specialist, because the job needs puzzle solving and it protects people's money and data from online thieves"
+                },
+                {
+                  "point": 1,
+                  "quote": "Kunle would suit graphic designer because designers draw and make logos with design software"
+                },
+                {
+                  "point": 2,
+                  "quote": "Sade can practise problem solving in Mathematics and learn safe habits"
+                },
+                {
+                  "point": 3,
+                  "quote": "Kunle can practise drawing and try free design software"
+                }
+              ],
+              "feedback": "All four marks. Each career has a reason and a plan."
+            },
+            {
+              "tier": "full",
+              "text": "Cybersecurity is for Sade, because she likes puzzles and she wants to stop thieves online. For Kunle it is graphic design, since he likes drawing and he wants to make logos. Sade should work hard in Mathematics and try a free course on staying safe online. Kunle should draw every week and learn a design app like a free poster maker.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cybersecurity is for Sade, because she likes puzzles and she wants to stop thieves online"
+                },
+                {
+                  "point": 1,
+                  "quote": "For Kunle it is graphic design, since he likes drawing and he wants to make logos"
+                },
+                {
+                  "point": 2,
+                  "quote": "Sade should work hard in Mathematics and try a free course on staying safe online"
+                },
+                {
+                  "point": 3,
+                  "quote": "Kunle should draw every week and learn a design app like a free poster maker"
+                }
+              ],
+              "feedback": "Full marks. Specific, realistic steps for each friend."
+            },
+            {
+              "tier": "partial",
+              "text": "Sade is cybersecurity and Kunle is graphic designer. Sade likes puzzles and Kunle likes drawing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sade is cybersecurity"
+                },
+                {
+                  "point": 1,
+                  "quote": "Kunle is graphic designer"
+                }
+              ],
+              "feedback": "The careers are right. Add what each person can do this year to prepare, and say why cybersecurity fits protecting money, not only puzzles."
+            },
+            {
+              "tier": "partial",
+              "text": "Sade can learn Mathematics and Kunle can practise drawing. They can both try free courses.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Sade can learn Mathematics"
+                },
+                {
+                  "point": 3,
+                  "quote": "Kunle can practise drawing"
+                }
+              ],
+              "feedback": "These are good preparations. Name the careers (cybersecurity specialist and graphic designer) and give the reasons they fit."
+            },
+            {
+              "tier": "weak",
+              "text": "Sade should be a graphic designer so that she can design the money. Kunle should be a network engineer to use his drawing in the cables.",
+              "meets": [],
+              "feedback": "The careers are swapped. Sade, who wants to protect money online, suits cybersecurity. Kunle, who likes drawing and logos, suits graphic design."
+            },
+            {
+              "tier": "weak",
+              "text": "They should not prepare, because ICT careers are for old people. They can just wait.",
+              "meets": [],
+              "feedback": "Pupils can start now: practise problem solving and keep up Mathematics for Sade, and practise drawing and try a free design program for Kunle."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Capstone project: plan, build, test and present",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. choose a project and write what it must do (its purpose and users);\n2. break a project into stages: plan, design, build, test, present;\n3. write simple test checks and improve the project after testing;\n4. present the project clearly and take feedback.\n\n## Materials\n\nA projector, a project planning sheet, sample project ideas (a school website prototype, a library database, a short video, a simple program), and a feedback form.\n\n## Starter (5 minutes)\n\nAsk: \"If you are asked to build a house, do you start by laying blocks?\" Lead pupils to say that we plan, draw, build, check and then hand over.\n\n## Development\n\n1. The capstone project brings together what you learned in Digital Technologies: documents, spreadsheets, presentations, the internet, safety and ethics.\n2. Choose a project with a real user. Examples: a web page prototype for a local bakery, a spreadsheet database of the school library, a short video on road safety, a simple program that adds up a shopping bill.\n3. Plan: state the purpose, the users, and what the finished work must include (the success criteria). List who does what if in a group, and set dates.\n4. Design: sketch the pages or screens on paper before using the computer.\n5. Build: make the first version and save it often with clear file names. Keep a copy as backup.\n6. Test: check each success criterion. Ask a real user to try it. Write down what is wrong and fix it.\n7. Present: say the purpose, show how it works, say what you learned, and ask for questions. Keep it short.\n8. Be honest: name the sources and anyone who helped.\n\n## Class activity\n\nPupils complete a one-page project plan with purpose, users, three success criteria and a timeline.\n\n## Evaluation\n\n1. Why do we sketch a design before building?\n2. Give two checks for a school website prototype.\n\n## Assignment\n\nWorksheet on the app: finish the project plan.",
+      "reading": {
+        "title": "Planning and presenting a digital project",
+        "content": "# Capstone project: plan, build, test and present\n\nA **capstone project** is a larger piece of work that brings together many skills you have learned. In Digital Technologies you can make a website prototype, a database, a piece of digital media or a simple program. Real projects, whether a bank's app or a school's results system, follow clear stages.\n\n## Choose a project that has a real user\n\nA good project solves a real problem for a real person.\n\n| Idea | User | What it does |\n|---|---|---|\n| Website prototype | A local bakery | Shows the products, prices and phone number |\n| Spreadsheet database | The school librarian | Lists books and who has borrowed them |\n| Short video | The school | Teaches road safety to JSS1 |\n| Simple program | A shopkeeper | Adds up a bill and shows the total |\n\nA **prototype** is a first, simple version used to try out the idea.\n\n## Stage 1: Plan\n\nWrite down:\n- the **purpose**: what the project is for;\n- the **users**: who will use it;\n- the **success criteria**: what must be true when it is finished. For the bakery page: *shows at least five products with prices; the phone number is easy to see; it can be read on a phone.*\n- **who does what** and **by when**.\n\nWithout success criteria you cannot tell if you have succeeded.\n\n## Stage 2: Design\n\nDraw a **sketch** of each page or screen on paper. Decide the headings, pictures and colours. Changing a sketch is quick, and changing a finished page is slow.\n\n## Stage 3: Build\n\nMake the first version. **Save often** with clear file names, such as *Bakery_Page_v1*, and keep a backup copy on a flash drive or in the cloud, in case NEPA takes the light before you save.\n\n## Stage 4: Test\n\nCheck the project against each success criterion. Better still, ask a **real user** to try it while you watch.\n\nA simple test table:\n\n| Check | Pass? | What to fix |\n|---|---|---|\n| Five products with prices | Yes | |\n| Phone number easy to see | No | Make it bigger and move it up |\n| Readable on a phone | Yes | |\n\nFix what failed, then test again.\n\n## Stage 5: Present\n\nA short presentation of 3 to 5 minutes:\n1. Say the **purpose** and the user.\n2. **Show** how it works.\n3. Say what **went well** and what you would **improve**.\n4. Ask for **questions** and take **feedback** politely.\n\n## Be honest\n\nSay where your pictures and facts came from, and name the people who helped you. If you used an AI tool or a template, say so.\n\n## Worked example\n\nChika and Bayo plan a spreadsheet for the school library. Purpose: to record borrowed books. User: the librarian. Success criteria: it has columns for book title, borrower, date borrowed and date due; the due date is worked out by a formula; and it can be saved and opened again. During testing, the librarian finds that the dates show as numbers. They fix the date format, test again and present the final version."
+      },
+      "cards": [
+        {
+          "front": "Capstone project",
+          "back": "A larger project that brings together many skills learned in the course."
+        },
+        {
+          "front": "Prototype",
+          "back": "A first, simple version of a project used to try out the idea."
+        },
+        {
+          "front": "Success criteria",
+          "back": "What must be true when the project is finished, so you can check if it works."
+        },
+        {
+          "front": "Stages of a project",
+          "back": "Plan, design, build, test, present."
+        },
+        {
+          "front": "Why sketch first?",
+          "back": "Changing a sketch is quick; changing a finished page is slow."
+        },
+        {
+          "front": "Testing",
+          "back": "Checking the project against the success criteria, ideally with a real user."
+        },
+        {
+          "front": "Backup",
+          "back": "An extra copy of your work, so that you do not lose it."
+        },
+        {
+          "front": "A good presentation",
+          "back": "States the purpose, shows how it works, says what to improve and asks for questions."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the first stage of a project?",
+          "options": [
+            "Planning",
+            "Testing",
+            "Saving",
+            "Presenting"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is a good success criterion for a bakery website prototype?",
+          "options": [
+            "It is pretty",
+            "It is big",
+            "It shows at least five products with prices",
+            "It has many colours"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Why should a real user try your project during testing?",
+          "options": [
+            "To make the project longer",
+            "To pay for the project",
+            "To save the file",
+            "To show you things that you did not notice yourself"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A group's computer shuts down because of a power cut and they lose two days of work. What would have prevented this?",
+          "options": [
+            "Using a bigger monitor",
+            "Saving often and keeping a backup copy",
+            "Using more colours",
+            "Skipping the plan"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which sentence is the best way to begin a project presentation?",
+          "options": [
+            "'I did not have time.'",
+            "'Please do not ask questions.'",
+            "'Our project is a spreadsheet to help the school librarian record borrowed books.'",
+            "'It is on the computer.'"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Chidi's group will make a simple spreadsheet database for the school tuckshop. Write the purpose, the user, and three success criteria for the project.",
+          "markScheme": [
+            "States a clear purpose (what the project is for)",
+            "States the user (e.g. the tuckshop manager)",
+            "Gives a first measurable or checkable success criterion",
+            "Gives a second and third checkable success criterion (both needed)"
+          ],
+          "modelAnswer": "The purpose is to record what the tuckshop sells and the money it receives. The user is the tuckshop manager. The success criteria are: it has columns for item, price, number sold and total; a formula works out the total for each item; and it can be saved and opened again.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Purpose: to record what the tuckshop sells and how much money it earns. User: the tuckshop manager. Success criteria: it has columns for item, price, number sold and total; the total is worked out by a formula; and it can be saved and opened again without errors.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to record what the tuckshop sells and how much money it earns"
+                },
+                {
+                  "point": 1,
+                  "quote": "the tuckshop manager"
+                },
+                {
+                  "point": 2,
+                  "quote": "it has columns for item, price, number sold and total"
+                },
+                {
+                  "point": 3,
+                  "quote": "the total is worked out by a formula; and it can be saved and opened again without errors"
+                }
+              ],
+              "feedback": "All four marks. Your success criteria can be checked one by one."
+            },
+            {
+              "tier": "full",
+              "text": "The project is for keeping a record of sales in the tuckshop. The user is the lady who runs the tuckshop. It must show the item, the price, and the number sold. It must calculate the total money automatically. It must be easy to read, with headings in bold and the money in naira.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The project is for keeping a record of sales in the tuckshop"
+                },
+                {
+                  "point": 1,
+                  "quote": "The user is the lady who runs the tuckshop"
+                },
+                {
+                  "point": 2,
+                  "quote": "It must show the item, the price, and the number sold"
+                },
+                {
+                  "point": 3,
+                  "quote": "It must calculate the total money automatically. It must be easy to read, with headings in bold and the money in naira"
+                }
+              ],
+              "feedback": "Full marks. Each criterion is something you can test."
+            },
+            {
+              "tier": "partial",
+              "text": "The purpose is to record sales in the tuckshop. The user is the manager.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to record sales in the tuckshop"
+                },
+                {
+                  "point": 1,
+                  "quote": "The user is the manager"
+                }
+              ],
+              "feedback": "The purpose and user are right. You need three success criteria, for example the columns it must have, a formula for the total, and that it can be saved and reopened."
+            },
+            {
+              "tier": "partial",
+              "text": "The success criteria are: it has a formula for totals, it is saved with a good name and it looks nice. The purpose is for the tuckshop.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "it has a formula for totals, it is saved with a good name"
+                }
+              ],
+              "feedback": "'Looks nice' cannot be checked. Be more exact, such as 'headings are bold and money is in naira'. Also say the purpose clearly and name the user."
+            },
+            {
+              "tier": "weak",
+              "text": "The purpose is to finish before the others. The user is me. The criteria are to be fast.",
+              "meets": [],
+              "feedback": "The purpose is what the project is for (to record tuckshop sales). The user is the person who will use it, such as the manager. Success criteria are things you can check, such as columns and a formula."
+            },
+            {
+              "tier": "weak",
+              "text": "The project will be a website, a video and a game for the tuckshop so that it will be big.",
+              "meets": [],
+              "feedback": "A bigger project is not better. Choose one clear purpose and user, then write three checkable criteria such as the columns it must have and that totals are calculated by a formula."
+            }
+          ]
+        },
+        {
+          "prompt": "Oge's team has built a first version of a bakery web page prototype. Describe how they should test it, give two things they might check, and say what they should do when a check fails. Then name one thing she should do to be honest in the presentation.",
+          "markScheme": [
+            "Says they should test against the success criteria (or ask a real user to try it)",
+            "Gives a first sensible check, e.g. the phone number is easy to see",
+            "Gives a second sensible check, e.g. readable on a phone, or products with prices",
+            "Says to fix the fault and test again; and says to name sources or helpers (one mark for both)"
+          ],
+          "modelAnswer": "They should test the page against their success criteria, and ask a real user to try it while they watch. They might check that the phone number is easy to see and that the page can be read on a phone. When a check fails, they should fix the problem and test again. In the presentation she should name the sources of any pictures and the people who helped.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "They should test it against the success criteria and ask a real person to use it while they watch. They can check if the phone number is easy to see, and if the page is readable on a phone. If any check fails they should fix it and test again. In the presentation she must say where the pictures came from and who helped them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "test it against the success criteria and ask a real person to use it while they watch"
+                },
+                {
+                  "point": 1,
+                  "quote": "check if the phone number is easy to see"
+                },
+                {
+                  "point": 2,
+                  "quote": "if the page is readable on a phone"
+                },
+                {
+                  "point": 3,
+                  "quote": "If any check fails they should fix it and test again. In the presentation she must say where the pictures came from and who helped them"
+                }
+              ],
+              "feedback": "All four marks. Testing, fixing and honesty are all covered."
+            },
+            {
+              "tier": "full",
+              "text": "Make a test table with the success criteria and tick pass or fail. One check is whether the products have prices, and another is whether it opens well on a phone. The ones that fail will be corrected and then they test again. She should be honest about the sources of her pictures and tell if somebody helped.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Make a test table with the success criteria and tick pass or fail"
+                },
+                {
+                  "point": 1,
+                  "quote": "whether the products have prices"
+                },
+                {
+                  "point": 2,
+                  "quote": "whether it opens well on a phone"
+                },
+                {
+                  "point": 3,
+                  "quote": "The ones that fail will be corrected and then they test again. She should be honest about the sources of her pictures and tell if somebody helped"
+                }
+              ],
+              "feedback": "Full marks. A test table is exactly the right tool."
+            },
+            {
+              "tier": "partial",
+              "text": "They can ask a user to try it. They should check the phone number is easy to see.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "They can ask a user to try it"
+                },
+                {
+                  "point": 1,
+                  "quote": "They should check the phone number is easy to see"
+                }
+              ],
+              "feedback": "These two points are right. Add a second check, what to do when a check fails (fix it and test again), and the honest thing to do in the presentation."
+            },
+            {
+              "tier": "partial",
+              "text": "If a check fails they should correct it and test again. She should say who helped her.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "If a check fails they should correct it and test again. She should say who helped her"
+                }
+              ],
+              "feedback": "That earns the last point. You did not say how to test (against the success criteria, with a real user) or give two checks."
+            },
+            {
+              "tier": "weak",
+              "text": "They should not test it because testing may spoil it. They should just present it.",
+              "meets": [],
+              "feedback": "Testing finds the faults before the users do. Test against the success criteria, ask a user to try it, fix problems and test again."
+            },
+            {
+              "tier": "weak",
+              "text": "To test it they should delete it and make it again. She should hide where her pictures came from.",
+              "meets": [],
+              "feedback": "Do not delete: test against the success criteria and fix faults. Hiding sources is dishonest; she should name where the pictures came from and who helped."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Editing digital media: images, audio and video",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. crop and resize an image without stretching it;\n2. trim an audio clip and add a fade;\n3. assemble video clips on a timeline, cut, and add titles;\n4. choose suitable file formats, and work out image size and clip length.\n\n## Materials\n\nComputers with a free image editor, an audio editor and a video editor (or a phone editing app), sample photos, a short audio clip and three short video clips.\n\n## Starter (5 minutes)\n\nShow a photo that is too wide and stretched, and the same photo properly resized. Ask what went wrong in the first.\n\n## Development\n\n1. Images: digital pictures are made of tiny dots called pixels. Size is shown as width by height, such as 4000 × 3000. Crop removes parts of the picture. Resize changes the size. To avoid stretching, keep the aspect ratio: change width and height by the same factor.\n2. Formats: JPEG for photos (smaller files), PNG for graphics and when you need clear backgrounds.\n3. Audio: a waveform shows loud and quiet parts. Trim removes the unwanted start and end. A fade-in and fade-out remove sudden starts and stops. Formats: MP3 (small), WAV (large and high quality).\n4. Video: a video editor has a timeline. Import clips, drag them in order, cut parts out, add a title, add a transition and sound, then export as MP4.\n5. Keep the original files. Save your edited work under a new name.\n6. Check copyright for pictures and music, and ask permission before using a classmate's photo.\n\n## Class activity\n\nPupils crop a photo, resize it to 800 pixels wide, trim an audio clip and join three video clips with a title.\n\n## Evaluation\n\n1. A 1600 × 1200 picture is resized to 400 pixels wide. What is the new height?\n2. Why do we keep the original file?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Cutting, trimming and joining pictures, sound and video",
+        "content": "# Editing digital media: images, audio and video\n\nEditing means changing a picture, sound or video so that it is better and fits its purpose. You can use free apps on a computer or phone.\n\n## Images\n\nA digital picture is made up of very small coloured dots called **pixels**. The size of a picture is given as **width × height in pixels**, for example 4000 × 3000.\n\n**Crop** cuts away the part of a picture that you do not want, for example the empty space around a person.\n\n**Resize** changes the number of pixels. To avoid a stretched or squashed picture, keep the **aspect ratio**, the relationship between width and height. This means you multiply or divide the width and the height by the **same number**.\n\n**Worked example.** A photo is 4000 × 3000. You want it 800 pixels wide for a web page. The width is divided by 4000 ÷ 800 = 5. Divide the height by 5 as well: 3000 ÷ 5 = **600**. The new size is **800 × 600**.\n\n**File formats.**\n- **JPEG (.jpg)**: good for photographs, with small file size.\n- **PNG (.png)**: good for logos and graphics, and can have a see-through background.\n\n## Audio\n\nAn audio editor shows a **waveform**, a picture of the loud and quiet parts of the sound.\n\n- **Trim** removes the part you do not want, usually at the start and the end.\n- **Fade in** and **fade out** make the sound begin and end gently, not suddenly.\n- Export as **MP3** for a small file or **WAV** for the best quality, which makes a large file.\n\n**Worked example.** A recording is 3 minutes 20 seconds (200 seconds). You trim 20 seconds from the start and 30 seconds from the end. 200 − 20 − 30 = **150 seconds**, which is 2 minutes 30 seconds.\n\n## Video\n\nA video editor has a **timeline**, where you put clips in the order you want.\n\n1. **Import** the clips.\n2. Drag them on to the timeline in order.\n3. **Cut** to remove mistakes or waiting time.\n4. Add a **title**, a **transition** between clips and **sound**.\n5. **Export** the video, usually as **MP4**.\n\n**Worked example.** Three clips are 45 seconds, 30 seconds and 1 minute 15 seconds (75 seconds). Total = 45 + 30 + 75 = **150 seconds**, or 2 minutes 30 seconds.\n\n## Good habits\n\n- **Keep the original files** and save the edited version under a new name, so you can start again if you spoil it.\n- **Save often**, because large files take time and a power cut can lose your work.\n- **Copyright**: use music and pictures that you made, or that you are allowed to use, and give credit.\n- **Ask permission** before using a photo or video of another person."
+      },
+      "cards": [
+        {
+          "front": "Pixel",
+          "back": "A tiny coloured dot that makes up a digital picture."
+        },
+        {
+          "front": "Crop",
+          "back": "Cut away the part of a picture that you do not want."
+        },
+        {
+          "front": "Aspect ratio",
+          "back": "The relationship between a picture's width and height. Keep it to avoid stretching."
+        },
+        {
+          "front": "JPEG and PNG",
+          "back": "JPEG for photographs with small files; PNG for graphics and see-through backgrounds."
+        },
+        {
+          "front": "Trim (audio)",
+          "back": "Remove the unwanted start or end of a sound clip."
+        },
+        {
+          "front": "Fade in or out",
+          "back": "Makes the sound begin or end gently."
+        },
+        {
+          "front": "Timeline",
+          "back": "The place in a video editor where you arrange clips in order."
+        },
+        {
+          "front": "Why keep the original?",
+          "back": "So you can start again if you spoil the edited version."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A photo is 4000 × 3000 pixels. You resize its width to 1000 pixels and keep the aspect ratio. What is the new height?",
+          "options": [
+            "1000",
+            "750",
+            "3000",
+            "600"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A picture looks fat and squashed after resizing. The most likely reason is that",
+          "options": [
+            "the width and height were changed by different amounts",
+            "it was saved as a JPEG",
+            "it was cropped",
+            "the original was kept"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A song clip is 4 minutes (240 seconds). You trim 15 seconds from the start and 25 seconds from the end. How long is the new clip?",
+          "options": [
+            "220 seconds",
+            "265 seconds",
+            "180 seconds",
+            "200 seconds"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "In a video editor, where do you arrange clips in the order you want?",
+          "options": [
+            "In the file name",
+            "In the waveform",
+            "On the timeline",
+            "On the pixel grid"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Why should you save your edited picture under a new name?",
+          "options": [
+            "Because the computer requires it",
+            "To change its format to MP3",
+            "To make the picture smaller",
+            "So that the original is kept in case you spoil the edit"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A 3200 × 2400 photograph is to be put on a web page 800 pixels wide. (a) Work out the new height so that the picture is not stretched. (b) Name the file format you would choose for a photograph and give a reason.",
+          "markScheme": [
+            "Works out the scale: 3200 ÷ 800 = 4 (or equivalent ratio)",
+            "Gets the new height 2400 ÷ 4 = 600 pixels",
+            "Chooses JPEG for photographs",
+            "Gives a reason, e.g. smaller file size"
+          ],
+          "modelAnswer": "The width is reduced from 3200 to 800, which is dividing by 4. The height must also be divided by 4, so 2400 ÷ 4 = 600 pixels. The new size is 800 × 600. I would choose JPEG for a photograph, because it gives a small file size.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "3200 ÷ 800 = 4, so I must divide the height by 4 also. 2400 ÷ 4 = 600 pixels. The new size is 800 × 600. For a photograph I will use JPEG because the file size is small and the page will load fast.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3200 ÷ 800 = 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "2400 ÷ 4 = 600 pixels"
+                },
+                {
+                  "point": 2,
+                  "quote": "I will use JPEG"
+                },
+                {
+                  "point": 3,
+                  "quote": "the file size is small and the page will load fast"
+                }
+              ],
+              "feedback": "All four marks. You divided both width and height by the same number."
+            },
+            {
+              "tier": "full",
+              "text": "The width went from 3200 to 800, it is 4 times smaller. I do the same to the height: 2400 divided by 4 = 600. So the picture is 800 by 600 pixels. I will save it as a jpg, because photographs are small in that format.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "it is 4 times smaller"
+                },
+                {
+                  "point": 1,
+                  "quote": "2400 divided by 4 = 600"
+                },
+                {
+                  "point": 2,
+                  "quote": "I will save it as a jpg"
+                },
+                {
+                  "point": 3,
+                  "quote": "photographs are small in that format"
+                }
+              ],
+              "feedback": "Full marks. Clear working and a sensible format."
+            },
+            {
+              "tier": "partial",
+              "text": "The height is 600 pixels. I will use JPEG for the photo.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The height is 600 pixels"
+                },
+                {
+                  "point": 2,
+                  "quote": "I will use JPEG for the photo"
+                }
+              ],
+              "feedback": "The height and the format are right. Show how you got 600 (3200 ÷ 800 = 4, then 2400 ÷ 4), and give a reason for choosing JPEG."
+            },
+            {
+              "tier": "partial",
+              "text": "I divide 3200 by 800 which is 4. Then 2400 divided by 4 is 800. JPEG is good for pictures.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I divide 3200 by 800 which is 4"
+                },
+                {
+                  "point": 2,
+                  "quote": "JPEG is good for pictures"
+                }
+              ],
+              "feedback": "The scale factor is right, but 2400 ÷ 4 = 600, not 800. If the height were 800 the photograph would be stretched. Check by dividing both numbers by the same factor. Give a reason for JPEG too."
+            },
+            {
+              "tier": "weak",
+              "text": "The height will be 800 also because the width is 800. I will use MP3.",
+              "meets": [],
+              "feedback": "Keeping the same height would stretch the picture. Divide both by 4: the height is 2400 ÷ 4 = 600. MP3 is for audio; JPEG is for photographs."
+            },
+            {
+              "tier": "weak",
+              "text": "3200 − 800 = 2400 so the height is 2400 − 800 = 1600. I will use PNG because it is for pictures.",
+              "meets": [],
+              "feedback": "Resizing is by division, not subtraction: 3200 ÷ 800 = 4, so the height is 2400 ÷ 4 = 600. PNG is fine for graphics, but JPEG is better for photographs because the file is smaller."
+            }
+          ]
+        },
+        {
+          "prompt": "Ola is making a 3-minute video about his school sports day. He has three clips, which last 45 seconds, 30 seconds and 1 minute 15 seconds, and a song of 4 minutes (240 seconds). Work out the total length of his clips. Then describe the steps he should follow to join the clips, and to make the song fit the video, and say why he should keep the original files.",
+          "markScheme": [
+            "Total length of clips 45 + 30 + 75 = 150 seconds (2 minutes 30 seconds)",
+            "Describes importing the clips and arranging them on the timeline (and cutting/adding a title)",
+            "Trims the song to fit / uses a fade-out at the end so it does not stop suddenly",
+            "Keeps the originals so he can start again if he spoils the edit (or for a safe copy)"
+          ],
+          "modelAnswer": "The clips add up to 45 + 30 + 75 = 150 seconds, which is 2 minutes 30 seconds. He imports the clips, puts them on the timeline in order, and cuts out any mistakes. He should trim the song to the length of the video and add a fade-out so that it does not stop suddenly. He should keep the original files so that he can start again if he spoils the edit.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The clips are 45 + 30 + 75 = 150 seconds, which is 2 minutes 30 seconds. He imports the clips and puts them in order on the timeline and cuts the bad parts. He should trim the song to 2 minutes 30 and put a fade-out at the end. He keeps the original files so he can start again if he spoils the edit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "45 + 30 + 75 = 150 seconds, which is 2 minutes 30 seconds"
+                },
+                {
+                  "point": 1,
+                  "quote": "He imports the clips and puts them in order on the timeline and cuts the bad parts"
+                },
+                {
+                  "point": 2,
+                  "quote": "He should trim the song to 2 minutes 30 and put a fade-out at the end"
+                },
+                {
+                  "point": 3,
+                  "quote": "He keeps the original files so he can start again if he spoils the edit"
+                }
+              ],
+              "feedback": "All four marks. The arithmetic is right and each step is in order."
+            },
+            {
+              "tier": "full",
+              "text": "1 minute 15 seconds is 75 seconds. So 45 + 30 + 75 = 150 seconds, that is 2 minutes 30. In the video editor he brings in the clips and arranges them in order on the timeline. The song is longer than the video, so he trims it and uses a fade-out. He saves the edit under a new name so that the original files are not spoilt.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "45 + 30 + 75 = 150 seconds, that is 2 minutes 30"
+                },
+                {
+                  "point": 1,
+                  "quote": "he brings in the clips and arranges them in order on the timeline"
+                },
+                {
+                  "point": 2,
+                  "quote": "he trims it and uses a fade-out"
+                },
+                {
+                  "point": 3,
+                  "quote": "He saves the edit under a new name so that the original files are not spoilt"
+                }
+              ],
+              "feedback": "Full marks. Changing 1 minute 15 seconds into 75 seconds first was the key step."
+            },
+            {
+              "tier": "partial",
+              "text": "The total is 150 seconds. He arranges the clips on the timeline.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The total is 150 seconds"
+                },
+                {
+                  "point": 1,
+                  "quote": "He arranges the clips on the timeline"
+                }
+              ],
+              "feedback": "Both points are right. Say what to do with the 4-minute song (trim it, add a fade-out), and why to keep the original files."
+            },
+            {
+              "tier": "partial",
+              "text": "He should trim the song and keep the original files. The total is 45 + 30 + 1 = 76 seconds.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "He should trim the song"
+                },
+                {
+                  "point": 3,
+                  "quote": "keep the original files"
+                }
+              ],
+              "feedback": "Trimming and keeping the originals are right. The last clip is 1 minute 15 seconds, which is 75 seconds, not 1, so the total is 150 seconds. Also describe how to join the clips on the timeline."
+            },
+            {
+              "tier": "weak",
+              "text": "The video is 3 minutes because it is a 3 minute video. He should use all the 4 minutes of the song.",
+              "meets": [],
+              "feedback": "Add the clips to find the length: 45 + 30 + 75 = 150 seconds. The song is longer, so trim it. Keep the original files."
+            },
+            {
+              "tier": "weak",
+              "text": "He should delete the original clips after joining them so that the computer will have space.",
+              "meets": [],
+              "feedback": "Keep the original clips. If he spoils the edit, he can start again. Join the clips on the timeline, trim the song to fit, and save under a new name."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Inside the computer: CPU, memory and choosing a system",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. describe the parts of the CPU (control unit and arithmetic logic unit) and what clock speed and cores mean;\n2. distinguish RAM from ROM and from storage;\n3. say what the motherboard does;\n4. read a simple computer specification and choose a system for a task.\n\n## Materials\n\nAn old desktop system unit with the cover removed (if available), a projector, a picture of a motherboard, and two printed computer specifications.\n\n## Starter (5 minutes)\n\nShow the two specifications and ask: \"Which is better for a school lab and why?\" Collect guesses without correcting them.\n\n## Development\n\n1. Revise: input, output, CPU, storage (JSS1).\n2. The CPU has a control unit, which directs the work and fetches instructions, and an arithmetic logic unit (ALU), which does calculations and comparisons.\n3. Clock speed is measured in gigahertz (GHz): how many billions of cycles per second. A higher number usually means faster. Cores: a CPU with more cores can do more tasks at the same time.\n4. RAM (random access memory) holds the programs and data in use. It is volatile: it is cleared when the power goes off. More RAM lets you run more programs at once.\n5. ROM (read-only memory) holds the start-up instructions. It is non-volatile and keeps them when the power is off.\n6. Storage (hard disk, SSD) holds files and programs for the long term.\n7. The motherboard is the main circuit board that joins the CPU, RAM, storage and other parts so that they can communicate.\n8. Reading a specification: processor (type, GHz, cores), RAM in GB, storage in GB or TB, screen size.\n\n## Class activity\n\nGroups choose between three computers for three users (a school office, a pupil who edits videos, a student who only types and browses), and justify the choice.\n\n## Evaluation\n\n1. What does the ALU do?\n2. Why is RAM said to be volatile?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "What happens inside the system unit",
+        "content": "# Inside the computer: CPU, memory and choosing a system\n\nIn JSS1 you met the main parts of a computer: input devices, the CPU, output devices and storage. Now we look inside the system unit to see how the parts work together, and how to read a computer's specification.\n\n## The CPU in more detail\n\nThe **CPU** (Central Processing Unit) follows instructions one after another, billions of times every second. It has two main parts:\n\n- The **control unit** directs the work. It fetches each instruction and tells the other parts what to do.\n- The **arithmetic logic unit (ALU)** does the calculations (adding, subtracting) and the comparisons (is this number bigger than that one?).\n\n**Clock speed** is how fast the CPU works. It is measured in **gigahertz (GHz)**. A CPU of 3 GHz completes about 3 billion cycles every second. A higher number usually means a faster CPU.\n\n**Cores.** A CPU may have several cores, each of which can work on a task. A computer with four cores can handle more tasks at the same time than one with a single core.\n\n## Memory\n\n**RAM (random access memory)** is the working memory. It holds the programs and the files you are using at the moment, so the CPU can reach them quickly. RAM is **volatile**: when the power goes off, everything in it disappears. That is why unsaved work is lost in a power cut. More RAM lets you run more programs at once without the computer slowing down.\n\n**ROM (read-only memory)** holds the first instructions that the computer needs to start up. It is **non-volatile**: the instructions stay when the power is off.\n\n**Storage** (a hard disk or an SSD) keeps files and programs for a long time, also when the power is off. It is much larger than RAM but slower.\n\n| | RAM | ROM | Storage |\n|---|---|---|---|\n| Keeps data when power is off? | No | Yes | Yes |\n| Used for | Work in progress | Start-up instructions | Files and programs |\n| Size | Medium (such as 8 GB) | Small | Large (such as 500 GB) |\n\n## The motherboard\n\nThe **motherboard** is the large circuit board inside the system unit. The CPU, RAM and storage plug into it, and it carries the signals that let them communicate. If the motherboard fails, the computer cannot work.\n\n## Reading a specification\n\nA seller may describe a computer like this:\n\n*Processor: 3.0 GHz, 4 cores. RAM: 8 GB. Storage: 256 GB SSD. Screen: 15 inches.*\n\nThis means a processor with 4 cores that runs at 3.0 GHz, 8 GB of working memory, and an SSD of 256 GB for files.\n\n## Choosing a system\n\n| User | Needs | Suitable choice |\n|---|---|---|\n| School office typing letters | Basic work | A computer with 4 GB RAM is enough |\n| A pupil who edits video | Many programs and big files | A fast CPU with several cores, 8 GB or more of RAM, and a large SSD |\n| A computer lab | Many users, reliable and affordable | A moderate specification, with a good SSD |\n\n## Worked example\n\nA pupil's computer has 4 GB of RAM and slows down when she opens a video editor and a browser together. The RAM is nearly full, so the computer must work harder. Adding more RAM, for example 8 GB, would let it handle both programs more easily."
+      },
+      "cards": [
+        {
+          "front": "Control unit",
+          "back": "The part of the CPU that directs the work and fetches instructions."
+        },
+        {
+          "front": "ALU",
+          "back": "Arithmetic logic unit: the part of the CPU that does calculations and comparisons."
+        },
+        {
+          "front": "Clock speed",
+          "back": "How fast the CPU works, in gigahertz (GHz). A higher number is usually faster."
+        },
+        {
+          "front": "Core",
+          "back": "A part of the CPU that can work on a task. More cores handle more tasks at once."
+        },
+        {
+          "front": "RAM",
+          "back": "Working memory that holds programs and files in use. It is cleared when the power goes off."
+        },
+        {
+          "front": "ROM",
+          "back": "Memory that holds start-up instructions and keeps them when the power is off."
+        },
+        {
+          "front": "Volatile",
+          "back": "Loses its content when the power goes off, like RAM."
+        },
+        {
+          "front": "Motherboard",
+          "back": "The main circuit board that connects the CPU, RAM, storage and other parts."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which part of the CPU does calculations and comparisons?",
+          "options": [
+            "Control unit",
+            "ROM",
+            "Motherboard",
+            "Arithmetic logic unit"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A computer shows 'Processor: 3.0 GHz, 4 cores'. What does '4 cores' mean?",
+          "options": [
+            "It has four screens",
+            "It has four hard disks",
+            "The CPU can work on several tasks at the same time",
+            "It will run for four hours"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which memory loses its content when the power goes off?",
+          "options": [
+            "RAM",
+            "SSD",
+            "Hard disk",
+            "ROM"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The computer in a school office slows down when a clerk opens a spreadsheet, a browser and a document together. Which upgrade is most likely to help?",
+          "options": [
+            "A bigger monitor",
+            "More RAM",
+            "A new keyboard",
+            "A longer cable"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which part joins the CPU, RAM and storage so they can communicate?",
+          "options": [
+            "Motherboard",
+            "Mouse",
+            "Speaker",
+            "ROM"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between RAM and ROM. Say which one is lost in a power cut, and explain how this affects a pupil who is typing a project and has not saved.",
+          "markScheme": [
+            "States that RAM holds the programs and data in use",
+            "States that ROM holds start-up instructions and keeps them",
+            "States that RAM is volatile and its content is lost when the power goes off",
+            "Links this to unsaved work being lost in a power cut"
+          ],
+          "modelAnswer": "RAM is the working memory that holds the programs and files that are in use. ROM holds the start-up instructions and keeps them when the power is off. RAM is volatile, so what is in it is lost in a power cut. A pupil who has not saved her project loses it, because it was only in RAM, not on storage.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "RAM is the working memory that holds the programs and the work I am doing. ROM keeps the start-up instructions for the computer. When the power goes off, RAM loses everything, but ROM keeps its content. So if a pupil has not saved her project when NEPA takes the light, it is lost, because it was only in RAM.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "RAM is the working memory that holds the programs and the work I am doing"
+                },
+                {
+                  "point": 1,
+                  "quote": "ROM keeps the start-up instructions for the computer"
+                },
+                {
+                  "point": 2,
+                  "quote": "When the power goes off, RAM loses everything, but ROM keeps its content"
+                },
+                {
+                  "point": 3,
+                  "quote": "if a pupil has not saved her project when NEPA takes the light, it is lost, because it was only in RAM"
+                }
+              ],
+              "feedback": "All four marks. You connected the technical idea to the real situation."
+            },
+            {
+              "tier": "full",
+              "text": "RAM is where the computer keeps what is running now. ROM has the first instructions the computer needs when it starts and they do not disappear. RAM is volatile so it is cleared at a power cut. A pupil who did not save the project will lose it because it was in the RAM and not on the hard disk.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "RAM is where the computer keeps what is running now"
+                },
+                {
+                  "point": 1,
+                  "quote": "ROM has the first instructions the computer needs when it starts and they do not disappear"
+                },
+                {
+                  "point": 2,
+                  "quote": "RAM is volatile so it is cleared at a power cut"
+                },
+                {
+                  "point": 3,
+                  "quote": "A pupil who did not save the project will lose it because it was in the RAM and not on the hard disk"
+                }
+              ],
+              "feedback": "Full marks. Saying that the work was not on the hard disk is the key idea."
+            },
+            {
+              "tier": "partial",
+              "text": "RAM is the working memory and it is lost when the power goes off. ROM is not lost.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "RAM is the working memory"
+                },
+                {
+                  "point": 2,
+                  "quote": "it is lost when the power goes off"
+                }
+              ],
+              "feedback": "You gave the key difference. Say what ROM holds (the start-up instructions), and explain what happens to the unsaved project: it is lost because it was only in RAM."
+            },
+            {
+              "tier": "partial",
+              "text": "The pupil will lose her project if she did not save it. RAM is cleared in a power cut.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "RAM is cleared in a power cut"
+                },
+                {
+                  "point": 3,
+                  "quote": "The pupil will lose her project if she did not save it"
+                }
+              ],
+              "feedback": "Both points are right. Say what each memory is for: RAM holds programs and data in use, and ROM holds the start-up instructions."
+            },
+            {
+              "tier": "weak",
+              "text": "RAM is read-only memory and ROM is random access memory. The project is safe.",
+              "meets": [],
+              "feedback": "The names are swapped: RAM is random access memory, the working memory, and ROM is read-only memory. In a power cut RAM is cleared, so an unsaved project is lost."
+            },
+            {
+              "tier": "weak",
+              "text": "RAM and ROM are the same, they are memory. The project will remain because the computer remembers everything.",
+              "meets": [],
+              "feedback": "They are different. RAM holds the work in progress and is cleared when power goes off; ROM holds start-up instructions and keeps them. Unsaved work in RAM is lost."
+            }
+          ]
+        },
+        {
+          "prompt": "A secondary school can afford only one of two second-hand computers, which cost the same. Computer A: 2.0 GHz, 2 cores, 4 GB RAM, 500 GB hard disk. Computer B: 2.6 GHz, 4 cores, 8 GB RAM, 256 GB SSD. A pupil will use it to edit short videos for the school's media club. Which would you choose, and why? Say what each of the specification items means.",
+          "markScheme": [
+            "Chooses Computer B",
+            "Explains that the higher clock speed and more cores make it faster / handle more tasks",
+            "Explains that 8 GB RAM lets it run the editing program and other programs more easily",
+            "Explains that an SSD is faster than a hard disk (while noting the smaller capacity is enough or can be added)"
+          ],
+          "modelAnswer": "I would choose Computer B. Its processor has a higher clock speed, 2.6 GHz against 2.0 GHz, and four cores, so it can do more work at the same time. Its 8 GB of RAM lets it run a video editor and other programs together more smoothly than 4 GB. Its SSD is faster than a hard disk, although it is smaller, which is enough for short videos.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I would choose Computer B. Its clock speed is higher, 2.6 GHz, and it has 4 cores so it can handle more tasks at the same time. Its 8 GB of RAM can run the video editor and other programs together better than 4 GB. The SSD is faster than the hard disk, and 256 GB is enough for short videos.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I would choose Computer B"
+                },
+                {
+                  "point": 1,
+                  "quote": "Its clock speed is higher, 2.6 GHz, and it has 4 cores so it can handle more tasks at the same time"
+                },
+                {
+                  "point": 2,
+                  "quote": "Its 8 GB of RAM can run the video editor and other programs together better than 4 GB"
+                },
+                {
+                  "point": 3,
+                  "quote": "The SSD is faster than the hard disk, and 256 GB is enough for short videos"
+                }
+              ],
+              "feedback": "All four marks. You explained each item of the specification, as the question asked."
+            },
+            {
+              "tier": "full",
+              "text": "B is better for video editing. GHz tells how fast the CPU is, and B has more, with 4 cores to do many jobs at once. B has 8 GB of RAM, so more of the video can be held in the working memory and it will not slow down. An SSD opens files faster than an HDD, so B is quicker even if its storage is smaller.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "B is better for video editing"
+                },
+                {
+                  "point": 1,
+                  "quote": "GHz tells how fast the CPU is, and B has more, with 4 cores to do many jobs at once"
+                },
+                {
+                  "point": 2,
+                  "quote": "B has 8 GB of RAM, so more of the video can be held in the working memory and it will not slow down"
+                },
+                {
+                  "point": 3,
+                  "quote": "An SSD opens files faster than an HDD, so B is quicker even if its storage is smaller"
+                }
+              ],
+              "feedback": "Full marks. Good explanation of what GHz, cores, RAM and the SSD mean."
+            },
+            {
+              "tier": "partial",
+              "text": "I choose B because it has more RAM and more cores.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I choose B"
+                },
+                {
+                  "point": 2,
+                  "quote": "it has more RAM"
+                },
+                {
+                  "point": 1,
+                  "quote": "more cores"
+                }
+              ],
+              "feedback": "The choice and two reasons are right. Explain what they mean (more cores handle more tasks at once, more RAM runs programs together) and say why the SSD is an advantage.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Computer B has an SSD, which is faster than a hard disk. It has a bigger clock speed.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Computer B has an SSD, which is faster than a hard disk"
+                },
+                {
+                  "point": 1,
+                  "quote": "It has a bigger clock speed"
+                }
+              ],
+              "feedback": "These reasons are right, but you did not say clearly which computer you choose, and you did not mention RAM (8 GB against 4 GB), which matters most for editing video."
+            },
+            {
+              "tier": "weak",
+              "text": "I choose A because it has 500 GB which is bigger than 256 GB so it is better for everything.",
+              "meets": [],
+              "feedback": "Storage size is not the main need for editing video. B has a faster CPU, more cores, more RAM and an SSD, which is faster than A's hard disk. Choose B and explain each point."
+            },
+            {
+              "tier": "weak",
+              "text": "A is better because the numbers are smaller and smaller is faster.",
+              "meets": [],
+              "feedback": "Smaller numbers are not faster. A higher clock speed means a faster CPU, and more cores and more RAM help with video editing. B is the better choice."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

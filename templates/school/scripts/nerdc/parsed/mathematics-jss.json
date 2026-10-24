@@ -1,0 +1,145 @@
+{
+  "found": true,
+  "subject": "Mathematics",
+  "subjectCode": "MATHJSS",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Number and Numeration",
+      "abbreviation": "NN",
+      "subStrands": [
+        {
+          "name": "Number Systems and Operations",
+          "objectives": [
+            {
+              "code": "MATHJSS-NN-1",
+              "description": "Identify and convert numbers between different number bases (binary, octal, decimal)"
+            },
+            {
+              "code": "MATHJSS-NN-2",
+              "description": "Find multiples, factors, LCM, and HCF of whole numbers using prime factorisation"
+            },
+            {
+              "code": "MATHJSS-NN-3",
+              "description": "Perform operations on fractions (addition, subtraction, multiplication, division) and convert between fractions and decimals"
+            },
+            {
+              "code": "MATHJSS-NN-4",
+              "description": "Calculate percentages, ratios, and proportions and apply them to real-life situations"
+            },
+            {
+              "code": "MATHJSS-NN-5",
+              "description": "Apply indices and standard form to express and compute with very large or very small numbers"
+            },
+            {
+              "code": "MATHJSS-NN-6",
+              "description": "Use logarithms (common logs) to simplify multiplication and division of numbers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Algebraic Processes",
+      "abbreviation": "AP",
+      "subStrands": [
+        {
+          "name": "Equations and Expressions",
+          "objectives": [
+            {
+              "code": "MATHJSS-AP-1",
+              "description": "Solve one-variable linear equations and represent solutions on a number line"
+            },
+            {
+              "code": "MATHJSS-AP-2",
+              "description": "Simplify and evaluate algebraic expressions involving one or more variables"
+            },
+            {
+              "code": "MATHJSS-AP-3",
+              "description": "Solve simultaneous linear equations using substitution and elimination methods"
+            },
+            {
+              "code": "MATHJSS-AP-4",
+              "description": "Factorise algebraic expressions and solve simple quadratic equations by factorisation"
+            },
+            {
+              "code": "MATHJSS-AP-5",
+              "description": "Represent real-life situations using algebraic equations and interpret results"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Geometry and Mensuration",
+      "abbreviation": "GM",
+      "subStrands": [
+        {
+          "name": "Shapes, Angles, and Measurement",
+          "objectives": [
+            {
+              "code": "MATHJSS-GM-1",
+              "description": "Identify and classify types of angles and apply angle sum properties of triangles and quadrilaterals"
+            },
+            {
+              "code": "MATHJSS-GM-2",
+              "description": "Identify properties of 2D shapes (triangles, quadrilaterals, circles) and 3D figures (cubes, cuboids, cylinders, cones, spheres)"
+            },
+            {
+              "code": "MATHJSS-GM-3",
+              "description": "Calculate perimeter, area, and volume of regular plane shapes and solid figures"
+            },
+            {
+              "code": "MATHJSS-GM-4",
+              "description": "Perform basic geometric constructions using ruler and compass (bisecting angles, constructing triangles)"
+            },
+            {
+              "code": "MATHJSS-GM-5",
+              "description": "Apply trigonometry to calculate angles of elevation, depression, and distances using scale drawings"
+            },
+            {
+              "code": "MATHJSS-GM-6",
+              "description": "Solve problems involving bearings and distances using cardinal points and scale drawing"
+            },
+            {
+              "code": "MATHJSS-GM-7",
+              "description": "Construct angles of 30°, 45°, 60°, 90°, 120° and copy given angles using geometric instruments"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Statistics and Probability",
+      "abbreviation": "SP",
+      "subStrands": [
+        {
+          "name": "Data Handling and Chance",
+          "objectives": [
+            {
+              "code": "MATHJSS-SP-1",
+              "description": "Collect, organise, and present data in frequency tables, bar charts, pie charts, and line graphs"
+            },
+            {
+              "code": "MATHJSS-SP-2",
+              "description": "Calculate and interpret measures of central tendency: mean, median, mode, and range for given data sets"
+            },
+            {
+              "code": "MATHJSS-SP-3",
+              "description": "Apply measures of central tendency to real-life problems and communicate findings clearly"
+            },
+            {
+              "code": "MATHJSS-SP-4",
+              "description": "Define probability as a measure of chance and calculate probability of simple events from experiments"
+            },
+            {
+              "code": "MATHJSS-SP-5",
+              "description": "Conduct simple probability experiments (coin toss, dice roll, ludo) and record outcomes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

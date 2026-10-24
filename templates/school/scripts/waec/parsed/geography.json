@@ -1,0 +1,282 @@
+{
+  "found": true,
+  "subject": "Geography",
+  "subjectCode": "GEO",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Elements of Practical and Physical Geography",
+      "abbreviation": "PRACTICAL",
+      "subStrands": [
+        {
+          "name": "Map Work",
+          "objectives": [
+            {
+              "code": "GEO-PRACTICAL-1",
+              "description": "Maps: meaning, types and uses. Map reading and interpretation based on contoured survey maps of parts of West Africa: scale, measurement of distances, direction and bearing, map reduction and enlargement."
+            },
+            {
+              "code": "GEO-PRACTICAL-2",
+              "description": "Identification of physical features such as spurs, valleys, etc. and cultural features such as city walls, settlements, communication routes, etc.; measurement of gradients, drawing of cross profiles, inter-visibility."
+            },
+            {
+              "code": "GEO-PRACTICAL-3",
+              "description": "Description and explanation of drainage characteristics and pattern; patterns of communication, settlement and land use."
+            }
+          ]
+        },
+        {
+          "name": "Geographic Information System (GIS)",
+          "objectives": [
+            {
+              "code": "GEO-PRACTICAL-4",
+              "description": "GIS: Basic concepts, components (hardware, software, data, procedures and experts); sources of data (land surveying, remote sensing, map digitizing, map scanning, field investigation and tabular data etc); uses (defence, agriculture, urban development, mapping, surveying, transportation, census etc), problems (power, personnel, capital etc)."
+            }
+          ]
+        },
+        {
+          "name": "Statistical Maps and Diagrams",
+          "objectives": [
+            {
+              "code": "GEO-PRACTICAL-5",
+              "description": "Graphical representation of statistical data: Bar graphs, Line graphs, flow charts, dot maps, proportional circles, density maps, isopleth maps."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Elements of Physical Geography",
+      "abbreviation": "PHYSICAL",
+      "subStrands": [
+        {
+          "name": "The Earth",
+          "objectives": [
+            {
+              "code": "GEO-PHYSICAL-1",
+              "description": "The earth as a planet in relation to the sun, latitude and distance, longitude and time, earth's rotation and revolution and their effects, structure of the earth (internal and external)."
+            }
+          ]
+        },
+        {
+          "name": "Rocks and Tectonic Processes",
+          "objectives": [
+            {
+              "code": "GEO-PHYSICAL-2",
+              "description": "Rocks: types, characteristics, formation and uses."
+            },
+            {
+              "code": "GEO-PHYSICAL-3",
+              "description": "Tectonic processes: Vulcanicity, earthquake, landforms – Mountains, plains, karsts and coastal landforms (formation, characteristics and importance)."
+            },
+            {
+              "code": "GEO-PHYSICAL-4",
+              "description": "Denudational processes: Agencies modifying landforms such as weathering, mass movement, running water, underground water, wind and waves."
+            }
+          ]
+        },
+        {
+          "name": "Weather and Climate",
+          "objectives": [
+            {
+              "code": "GEO-PHYSICAL-5",
+              "description": "Simple weather study based on local observation, description of the Stevenson's screen and uses of basic weather instruments e.g. rain gauge, thermometer, barometer, wind vane etc."
+            },
+            {
+              "code": "GEO-PHYSICAL-6",
+              "description": "Climate elements: Rainfall, sunshine, air pressure, wind, humidity, temperature and cloud. Factors affecting climatic elements e.g. altitude, latitude, ocean currents, land and sea breezes, continentality, aspect. Interpretation of climatic charts and data."
+            },
+            {
+              "code": "GEO-PHYSICAL-7",
+              "description": "Major types of climate (Hot climate – Equatorial, Tropical Continental, Desert; Temperate climate – warm and cool). Classification of climate based on Greek and Koppen."
+            },
+            {
+              "code": "GEO-PHYSICAL-8",
+              "description": "Climate change: meaning, causes, effects and remedies."
+            }
+          ]
+        },
+        {
+          "name": "Environment",
+          "objectives": [
+            {
+              "code": "GEO-PHYSICAL-9",
+              "description": "Environmental resources: meaning, classification (renewable and non-renewable), types (vegetation, water, mineral, atmospheric, etc.) and the importance of each."
+            },
+            {
+              "code": "GEO-PHYSICAL-10",
+              "description": "Environmental problems/hazards: types (soil erosion, drought, desert encroachment, flooding and pollution), causes, effects and prevention of each."
+            },
+            {
+              "code": "GEO-PHYSICAL-11",
+              "description": "Environmental conservation: meaning, importance, methods, problems and solutions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Economic and Human Geography",
+      "abbreviation": "ECOHUM",
+      "subStrands": [
+        {
+          "name": "World Population and Settlement",
+          "objectives": [
+            {
+              "code": "GEO-ECOHUM-1",
+              "description": "World Population: factors and patterns of growth, distribution and movement, growth rate problems."
+            },
+            {
+              "code": "GEO-ECOHUM-2",
+              "description": "Settlement: types (rural and urban); patterns and factors affecting location; growth and size; functions of rural and urban settlements; interaction patterns (urban-rural, rural-urban, urban-urban, rural-rural); migration."
+            }
+          ]
+        },
+        {
+          "name": "Transportation, Industry and Trade",
+          "objectives": [
+            {
+              "code": "GEO-ECOHUM-3",
+              "description": "Transportation: modes (roads, railways, water, air, pipeline, cables, ropeways etc.); transportation and economic development (movement of people and commodities, national and international trade, diffusion of ideas and technology, national integration); problems of transportation and their solutions."
+            },
+            {
+              "code": "GEO-ECOHUM-4",
+              "description": "Industry: classification (primary, secondary and tertiary); types (heavy and light industry); factors of industrial location; contributions to development; problems/solutions."
+            },
+            {
+              "code": "GEO-ECOHUM-5",
+              "description": "Trade: meaning, types (national and international), reasons for trade, importance."
+            },
+            {
+              "code": "GEO-ECOHUM-6",
+              "description": "Tourism: meaning, centres, reasons (leisure, recreation, education etc.); importance, problems and solutions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Regional Geography of Nigeria",
+      "abbreviation": "NIGERIA",
+      "subStrands": [
+        {
+          "name": "Nigeria: Physical and Human Setting",
+          "objectives": [
+            {
+              "code": "GEO-NIGERIA-1",
+              "description": "Nigeria on broad outline: Location, position, size, distance and political divisions."
+            },
+            {
+              "code": "GEO-NIGERIA-2",
+              "description": "Physical setting: Relief, drainage, climate, vegetation."
+            },
+            {
+              "code": "GEO-NIGERIA-3",
+              "description": "Population: size, distribution, structure, population quality, population movement, population data (sources and problems/solutions)."
+            }
+          ]
+        },
+        {
+          "name": "Nigeria: Resources, Agriculture and Industry",
+          "objectives": [
+            {
+              "code": "GEO-NIGERIA-4",
+              "description": "Resources: Mineral (petroleum, gas, coal, tin/columbite, iron ore, limestone) – distribution, methods of extraction, problems and solutions; Power (Petroleum, gas, coal, HEP, solar energy); Water (rivers, lakes, dams, sea, underground water); Vegetation (trees, food and cash crops; timber, etc.) – forest, savanna, biosphere."
+            },
+            {
+              "code": "GEO-NIGERIA-5",
+              "description": "Agriculture: types of agricultural practices, food and cash crops, importance, problems and solutions."
+            },
+            {
+              "code": "GEO-NIGERIA-6",
+              "description": "Transportation: mode, advantages and disadvantages, problems and solutions, influence of transportation on human activities."
+            },
+            {
+              "code": "GEO-NIGERIA-7",
+              "description": "Communication: communication networks, advantages and disadvantages, importance, problems and solutions."
+            },
+            {
+              "code": "GEO-NIGERIA-8",
+              "description": "Industry: definition, types, major industrial zones, factors of location, importance, problems and solutions."
+            },
+            {
+              "code": "GEO-NIGERIA-9",
+              "description": "Trade: meaning, types (national and international), stock exchange, capital market, forex, major commercial areas, importance of commercial activities."
+            },
+            {
+              "code": "GEO-NIGERIA-10",
+              "description": "Tourism: meaning, centres, reasons for tourism, importance, problems and solutions."
+            },
+            {
+              "code": "GEO-NIGERIA-11",
+              "description": "Issues of Development and Environmental Conservation: Rural and regional development, resource management and conservation, environmental pollution (air, water, soil, noise); waste disposal etc."
+            },
+            {
+              "code": "GEO-NIGERIA-12",
+              "description": "ECOWAS: meaning, member countries, purposes/mandate, advantages/benefits, disadvantages, problems and solutions. Geo-political issues – Land reclamation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Regional Geography of Africa",
+      "abbreviation": "AFRICA",
+      "subStrands": [
+        {
+          "name": "Africa: Overview and Selected Topics",
+          "objectives": [
+            {
+              "code": "GEO-AFRICA-1",
+              "description": "Africa on broad outline: Location, size, position, political divisions and associated islands, physical features and their economic importance (relief, drainage, climate and vegetation), distribution of minerals."
+            },
+            {
+              "code": "GEO-AFRICA-2",
+              "description": "Irrigation agriculture in the Nile Basin and the Niger Basin."
+            },
+            {
+              "code": "GEO-AFRICA-3",
+              "description": "Plantation agriculture in West and East Africa."
+            },
+            {
+              "code": "GEO-AFRICA-4",
+              "description": "Oil production in Nigeria, Ghana and Libya."
+            },
+            {
+              "code": "GEO-AFRICA-5",
+              "description": "Lumbering in Equatorial Africa (with particular reference to Cote d'Ivoire and Zaire)."
+            },
+            {
+              "code": "GEO-AFRICA-6",
+              "description": "Gold mining in South Africa. Copper mining in Zambia and Zaire."
+            },
+            {
+              "code": "GEO-AFRICA-7",
+              "description": "Population distribution in West Africa."
+            },
+            {
+              "code": "GEO-AFRICA-8",
+              "description": "ECOWAS: meaning, member countries, purposes/mandate, advantages/benefits, disadvantages, problems and solutions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Field Work",
+      "abbreviation": "FIELDWK",
+      "subStrands": [
+        {
+          "name": "Geographical Fieldwork",
+          "objectives": [
+            {
+              "code": "GEO-FIELDWK-1",
+              "description": "Fieldwork on any one of the following topics based on local geography of candidate's home country: (i) Land use (rural or urban) – rural crop farming (rice, cocoa, etc.), mining, fishing; urban commercial activities, ports, factories, recreational etc; (ii) Market survey – rural or urban; (iii) Traffic flow – rural or urban; (iv) Patterns of journey to work – rural or urban; (v) Rate of erosion in the locality."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+import { defineAction } from "@agent-native/core";
+import { currentAccess } from "@agent-native/core/sharing";
+import { getDb, schema } from "../server/db/index.js";
+import { eq, and } from "drizzle-orm";
+import { z } from "zod";
+import { nanoid } from "nanoid";
+import {
+  armWord,
+  armsInYearGroup,
+  withdrawArmFromClass,
+  enrolArmInClass,
+  setOptionArms,
+  untouchedNote,
+  type RollUntouched,
+} from "../server/lib/arm-enrolment.js";
+import { getSchoolRole } from "../server/lib/student-access.js";
+import { isUnassignedTeacher } from "../shared/class-teacher.js";
+import { countsProblem } from "../shared/lesson-counts.js";
+
+export default defineAction({
+  description:
+    "Update a class (name, status, room number, capacity, primary teacher, or the periods a week it needs and how many are doubles).",
+  schema: z.object({
+    id: z.string().describe("Class ID"),
+    name: z.string().optional(),
+    status: z.enum(["active", "archived"]).optional(),
+    primaryTeacherUserId: z
+      .string()
+      .optional()
+      .describe(
+        "Assign the primary teacher of a class that has none, or swap it",
+      ),
+    roomNumber: z.string().optional(),
+    capacity: z.number().optional(),
+    periodsPerWeek: z
+      .number()
+      .int()
+      .min(0)
+      .max(100)
+      .nullable()
+      .optional()
+      .describe("Periods a week the class needs; null clears it"),
+    doublesPerWeek: z
+      .number()
+      .int()
+      .min(0)
+      .max(50)
+      .nullable()
+      .optional()
+      .describe("How many of those periods come as doubles (a double is 2)"),
+    armId: z
+      .string()
+      .nullable()
+      .optional()
+      .describe(
+        "Make this a whole-arm class (enrolling that arm's learners), or null to make it unattached. Not together with optionArmIds.",
+      ),
+    optionArmIds: z
+      .array(z.string())
+      .optional()
+      .describe(
+        "The arms this option class draws on, replacing any it had. Pass [] to clear them.",
+      ),
+  }),
+  http: { method: "POST" },
+  run: async (args) => {
+    const { orgId, userEmail } = currentAccess();
+    if (!orgId) throw new Error("No school context.");
+    const word = await armWord(orgId);
+    // Moving a class between arms changes who is enrolled, which is the
+    // admin's call; a teacher may still change everything else.
+    if (
+      args.armId !== undefined ||
+      args.optionArmIds !== undefined ||
+      args.periodsPerWeek !== undefined ||
+      args.doublesPerWeek !== undefined
+    ) {
+      const role = userEmail ? await getSchoolRole(userEmail) : null;
+      if (role !== "school_admin") {
+        throw new Error(
+          args.periodsPerWeek !== undefined || args.doublesPerWeek !== undefined
+            ? "Only an admin can change how many lessons a class has a week."
+            : `Only an admin can change which ${word} a class belongs to.`,
+        );
+      }
+    }
+    const db = getDb();
+    const now = new Date().toISOString();
+
+    const [cls] = await db
+      .select()
+      .from(schema.classes)
+      .where(
+        and(eq(schema.classes.id, args.id), eq(schema.classes.orgId, orgId)),
+      )
+      .limit(1);
+    if (!cls) throw new Error("That class is not in this school.");
+
+    // What the class would be after this change, so the either/or holds
+    // against what it already is, not only against what is passed.
+    const nextArmId = args.armId !== undefined ? args.armId : cls.armId;
+    const nextOptions =
+      args.optionArmIds ??
+      (args.armId
+        ? []
+        : (
+            await db
+              .select({ armId: schema.classArms.armId })
+              .from(schema.classArms)
+              .where(eq(schema.classArms.classId, args.id))
+          ).map((r: any) => r.armId));
+    if (nextArmId && nextOptions.length > 0) {
+      throw new Error(
+        `A class is either for one whole ${word} or an option across several, not both.`,
+      );
+    }
+    // The counts as they would stand: clearing the periods clears the doubles.
+    const nextPeriods =
+      args.periodsPerWeek !== undefined
+        ? args.periodsPerWeek
+        : (cls.periodsPerWeek ?? null);
+    const nextDoubles =
+      nextPeriods == null
+        ? null
+        : args.doublesPerWeek !== undefined
+          ? args.doublesPerWeek
+          : (cls.doublesPerWeek ?? null);
+    const countsIssue = countsProblem(nextPeriods, nextDoubles);
+    if (countsIssue) throw new Error(countsIssue);
+    await armsInYearGroup(
+      orgId,
+      cls.gradeLevelId,
+      [args.armId, ...(args.optionArmIds ?? [])].filter(
+        (a): a is string => !!a,
+      ),
+      word,
+    );
+
+    const updates: Record<string, any> = { updatedAt: now };
+    if (args.name !== undefined) updates.name = args.name;
+    if (args.status !== undefined) updates.status = args.status;
+    if (args.primaryTeacherUserId !== undefined)
+      updates.primaryTeacherUserId = args.primaryTeacherUserId;
+    if (args.roomNumber !== undefined) updates.roomNumber = args.roomNumber;
+    if (args.capacity !== undefined) updates.capacity = args.capacity;
+    if (args.armId !== undefined) updates.armId = args.armId;
+    if (
+      args.periodsPerWeek !== undefined ||
+      args.doublesPerWeek !== undefined
+    ) {
+      updates.periodsPerWeek = nextPeriods;
+      updates.doublesPerWeek = nextDoubles;
+    }
+
+    await db
+      .update(schema.classes)
+      .set(updates)
+      .where(
+        and(eq(schema.classes.id, args.id), eq(schema.classes.orgId, orgId)),
+      );
+
+    // A whole-arm class has no option rows; a stale set would make it both.
+    if (args.optionArmIds !== undefined) {
+      await setOptionArms(args.id, args.optionArmIds);
+    } else if (args.armId) {
+      await setOptionArms(args.id, []);
+    }
+    // The class left its old arm (for another, or for none): that arm's
+    // learners come off it, except any who are in the new arm.
+    let withdrawn = 0;
+    if (
+      args.armId !== undefined &&
+      cls.armId &&
+      cls.armId !== (args.armId ?? null)
+    ) {
+      withdrawn = await withdrawArmFromClass(
+        orgId,
+        args.id,
+        cls.armId,
+        args.armId ?? null,
+      );
+    }
+    let enrolled = 0;
+    let untouched: RollUntouched = null;
+    if (args.armId) {
+      ({ enrolled, untouched } = await enrolArmInClass(
+        orgId,
+        args.id,
+        args.armId,
+      ));
+    }
+
+    // Assigning a teacher to an unassigned class has to reach the join table
+    // too, or the class stays invisible in their own portal.
+    if (
+      args.primaryTeacherUserId !== undefined &&
+      !isUnassignedTeacher(args.primaryTeacherUserId)
+    ) {
+      const [existing] = await db
+        .select({ id: schema.classTeachers.id })
+        .from(schema.classTeachers)
+        .where(
+          and(
+            eq(schema.classTeachers.classId, args.id),
+            eq(schema.classTeachers.teacherUserId, args.primaryTeacherUserId),
+          ),
+        )
+        .limit(1);
+      if (!existing) {
+        await db.insert(schema.classTeachers).values({
+          id: nanoid(),
+          classId: args.id,
+          teacherUserId: args.primaryTeacherUserId,
+          role: "primary",
+        });
+      }
+    }
+
+    const count = (n: number) => `${n} ${n === 1 ? "learner" : "learners"}`;
+    const notes: string[] = [];
+    if (args.armId && !untouched)
+      notes.push(`${count(enrolled)} from its ${word} newly enrolled`);
+    if (withdrawn > 0)
+      notes.push(
+        `${count(withdrawn)} of its old ${word} withdrawn (anyone already in the new ${word} stays)`,
+      );
+    return {
+      id: args.id,
+      updated: true,
+      enrolled,
+      withdrawn,
+      message: `${
+        notes.length
+          ? `Updated the class; ${notes.join(", and ")}.`
+          : "Updated the class."
+      }${untouched ? ` ${untouchedNote(untouched, word)}` : ""}`,
+    };
+  },
+});

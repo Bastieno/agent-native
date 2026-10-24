@@ -93,9 +93,19 @@ export {
   getOwnerActiveApiKey,
   runAgentLoop,
 } from "../agent/production-agent.js";
+export type {
+  AgentRunGate,
+  AgentRunGateDecision,
+  AgentRunGateDetails,
+  AgentRunSource,
+} from "../agent/run-gate.js";
+export type { AllowSignUp, SignUpDetails } from "./signup-gate.js";
+export { SIGN_UP_REFUSED } from "./signup-gate.js";
 export {
   getStoredModelForEngine,
   resolveEngine,
+  BUILDER_DEFAULT_MODEL,
+  BUILDER_SUPPORTED_MODELS,
 } from "../agent/engine/index.js";
 export { createDevScriptRegistry } from "../scripts/dev/index.js";
 

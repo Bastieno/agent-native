@@ -1,0 +1,2836 @@
+{
+  "subject": "Agricultural Science",
+  "yearGroup": "SS3",
+  "weeks": {
+    "1": {
+      "topic": "Bee keeping, basic economic principles, factors of production, demand and supply",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain apiculture, the types of bees, methods and equipment of bee keeping, and the precautions needed;\n2. explain scarcity, choice, scale of preference and the law of diminishing returns in farming;\n3. describe land, labour, capital and management as factors of production, and the effect of rural-urban migration on farm labour;\n4. state the law of demand and the factors affecting demand for farm produce, and distinguish movements along from shifts of the demand curve;\n5. do the same for supply.\n\n## Materials\n\nA Kenya top-bar hive (or picture), a smoker, a bee veil and gloves; a jar of honey and a piece of beeswax; graph paper; a price list of tomatoes at Bodija market across the year.\n\n## Starter (5 minutes)\n\nShow the tomato price list. Ask: why does a basket cost about N8,000 in March but over N40,000 in July?\n\n## Development\n\n1. Apiculture: the indigenous African bee and exotic bees; products and importance; traditional (log and pot hives, harvesting by burning) and modern (top-bar and Langstroth hives) methods; equipment; precautions.\n2. Explain scarcity, choice and opportunity cost with a farmer choosing between maize and fish. Explain scale of preference. Work through a table showing the law of diminishing returns.\n3. Discuss the four factors of production and their rewards. Discuss rural-urban migration.\n4. Plot a demand schedule for yam. Explain the law of demand and its factors. Show a movement along the curve and a shift.\n5. Repeat with a supply schedule.\n\n## Class activity\n\nStudents plot the demand and supply schedules for tomatoes on one graph and find the equilibrium price.\n\n## Evaluation\n\n1. What is the use of a smoker in bee keeping?\n2. State the law of diminishing returns.\n3. What causes a shift of the demand curve?\n\n## Assignment\n\nQuiz on Thursday. Revise the laws of demand and supply.",
+      "reading": {
+        "title": "Bees, and the economics of farming",
+        "content": "# Apiculture\n\n**Apiculture** is the keeping of bees for honey, beeswax and other products. **Indigenous** bees (*Apis mellifera adansonii*) are productive but aggressive; **exotic** bees, such as the Italian bee, are gentler but less suited to the tropics.\n\n**Importance**: honey for food and medicine, beeswax for candles and polish, income, pollination of crops,.\n\n**Methods**: **traditional** bee keeping uses log, pot or calabash hives and harvests by burning, which kills bees and spoils honey. **Modern** bee keeping uses **Kenya top-bar** or **Langstroth** hives with movable frames, so honey is harvested without destroying the colony.\n\n**Equipment**: hives, smoker, hive tool, bee suit with veil, gloves, jungle boots, bee brush, honey extractor.\n\n**Precautions**: wear the full suit; work in the evening or early morning; use smoke to calm the bees; site hives away from homes, roads and livestock.\n\n# Basic economic principles\n\n- **Scarcity**: resources such as land, money and labour are limited, while wants are unlimited.\n- **Choice**: because resources are scarce, the farmer must choose. What is given up is the **opportunity cost**.\n- **Scale of preference**: a list of wants arranged in order of importance.\n- **Law of diminishing returns**: if more and more units of a variable input are added to a fixed input, the extra output from each additional unit eventually falls.\n\n| Fertilizer (bags/ha) | Maize yield (kg) | Extra yield (kg) |\n| --- | --- | --- |\n| 0 | 1,200 | - |\n| 1 | 1,900 | 700 |\n| 2 | 2,400 | 500 |\n| 3 | 2,700 | 300 |\n| 4 | 2,800 | 100 |\n\n# Factors of production\n\n| Factor | Reward |\n| --- | --- |\n| Land | Rent |\n| Labour | Wages |\n| Capital | Interest |\n| Management (entrepreneur) | Profit |\n\n**Labour** is human effort. It can be family, hired or communal, and skilled or unskilled. **Rural-urban migration**, as young people move to Lagos and Ibadan for jobs, leaves mainly the old on the farms, so labour becomes scarce and expensive.\n\n# Demand\n\n**Demand** is the quantity of a good that buyers are willing and able to buy at a given price at a given time. **Law of demand**: the higher the price, the lower the quantity demanded, other things being equal.\n\nFactors: price of the good, prices of substitutes, income, taste, population, season and festivals.\n\nA change in the good's own **price** causes a **movement along** the demand curve. A change in any other factor **shifts** the whole curve: to the right if demand rises, as for rams before Sallah.\n\n# Supply\n\n**Supply** is the quantity sellers are willing and able to offer at a given price at a given time. **Law of supply**: the higher the price, the higher the quantity supplied.\n\nFactors: price, cost of inputs, weather, pests and diseases, technology, government policy, season, storage.\n\nA price change gives a **movement along** the supply curve; a change in another factor, such as drought, **shifts** it (to the left if supply falls)."
+      },
+      "cards": [
+        {
+          "front": "Apiculture",
+          "back": "The keeping of bees for honey, beeswax and other products."
+        },
+        {
+          "front": "Use of a smoker",
+          "back": "To calm the bees before the hive is opened."
+        },
+        {
+          "front": "Opportunity cost",
+          "back": "The next best alternative given up when a choice is made."
+        },
+        {
+          "front": "Scale of preference",
+          "back": "A list of wants arranged in order of importance."
+        },
+        {
+          "front": "Law of diminishing returns",
+          "back": "Adding more of a variable input to a fixed input eventually gives less extra output per unit."
+        },
+        {
+          "front": "Reward of capital",
+          "back": "Interest."
+        },
+        {
+          "front": "Law of demand",
+          "back": "The higher the price, the lower the quantity demanded, other things being equal."
+        },
+        {
+          "front": "Law of supply",
+          "back": "The higher the price, the higher the quantity supplied, other things being equal."
+        },
+        {
+          "front": "What shifts a demand curve",
+          "back": "A change in any factor other than the good's own price, such as income or taste."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Why is a Kenya top-bar hive better than a traditional log hive?",
+          "options": [
+            "It attracts more aggressive bees",
+            "Honey can be harvested without destroying the colony",
+            "It needs no protective clothing",
+            "It produces no beeswax"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A farmer with N500,000 chooses to buy fingerlings instead of a maize sheller. The sheller is the farmer's",
+          "options": [
+            "scale of preference",
+            "fixed cost",
+            "opportunity cost",
+            "capital"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is the reward for labour?",
+          "options": ["Rent", "Interest", "Profit", "Wages"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Before Sallah, more rams are demanded at every price. On a graph this is shown as",
+          "options": [
+            "a shift of the demand curve to the right",
+            "a movement down the demand curve",
+            "a shift of the demand curve to the left",
+            "a movement up the supply curve"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A drought in the north reduces the tomato harvest. What happens to the supply curve of tomatoes in Ibadan?",
+          "options": [
+            "It shifts to the right",
+            "It shifts to the left",
+            "It does not change",
+            "It becomes the demand curve"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Using this data from a maize farm at Ogbomoso, show the law of diminishing returns. Fertilizer (bags per hectare): 0, 1, 2, 3, 4. Yield (kg): 1,000; 1,800; 2,400; 2,700; 2,800. Calculate the extra yield from each bag, state the law, and say how many bags the farmer should stop at if each bag costs as much as 200 kg of maize.",
+          "markScheme": [
+            "Extra yields calculated correctly: 800, 600, 300, 100 kg",
+            "States that the extra (marginal) yield falls as more bags are added",
+            "States the law: adding more units of a variable input to a fixed input eventually gives smaller additions to output",
+            "Identifies that land is the fixed factor and fertilizer the variable factor",
+            "Stops at 3 bags: the 4th bag adds only 100 kg, worth less than its 200 kg cost"
+          ],
+          "modelAnswer": "The extra yields are 1,800 - 1,000 = 800 kg, 2,400 - 1,800 = 600 kg, 2,700 - 2,400 = 300 kg and 2,800 - 2,700 = 100 kg. Each extra bag adds less than the one before. This is the law of diminishing returns: when more and more units of a variable input (fertilizer) are added to a fixed input (one hectare of land), the extra output from each additional unit eventually falls. The farmer should stop at 3 bags, because the 3rd bag adds 300 kg, more than its 200 kg cost, but the 4th adds only 100 kg, less than its cost.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Extra yield: 800, 600, 300 and 100 kg. The extra yield keeps falling as more bags are used. Law: when more units of a variable factor are added to a fixed factor, the additional output will eventually decrease. Here land is fixed and fertilizer is variable. He should stop at 3 bags because the 4th bag gives only 100 kg, which is less than the 200 kg it costs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Extra yield: 800, 600, 300 and 100 kg"
+                },
+                {
+                  "point": 1,
+                  "quote": "The extra yield keeps falling as more bags are used"
+                },
+                {
+                  "point": 2,
+                  "quote": "when more units of a variable factor are added to a fixed factor, the additional output will eventually decrease"
+                },
+                {
+                  "point": 3,
+                  "quote": "Here land is fixed and fertilizer is variable"
+                },
+                {
+                  "point": 4,
+                  "quote": "He should stop at 3 bags because the 4th bag gives only 100 kg, which is less than the 200 kg it costs"
+                }
+              ],
+              "feedback": "Calculations, law and decision all correct, with the reason clearly given. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Marginal yields: 1,800 - 1,000 = 800; 2,400 - 1,800 = 600; 2,700 - 2,400 = 300; 2,800 - 2,700 = 100. The marginal product diminishes. The law of diminishing returns says that adding successive units of a variable input to a fixed input leads eventually to smaller increases in output. Land (1 ha) is the fixed input. The 3rd bag still pays (300 > 200) but the 4th does not (100 < 200), so stop at 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1,800 - 1,000 = 800; 2,400 - 1,800 = 600; 2,700 - 2,400 = 300; 2,800 - 2,700 = 100"
+                },
+                {
+                  "point": 1,
+                  "quote": "The marginal product diminishes"
+                },
+                {
+                  "point": 2,
+                  "quote": "adding successive units of a variable input to a fixed input leads eventually to smaller increases in output"
+                },
+                {
+                  "point": 3,
+                  "quote": "Land (1 ha) is the fixed input"
+                },
+                {
+                  "point": 4,
+                  "quote": "The 3rd bag still pays (300 > 200) but the 4th does not (100 < 200), so stop at 3"
+                }
+              ],
+              "feedback": "Clear working and a well-argued decision. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "Extra yields are 800, 600, 300, 100. The yield increases less and less. The farmer should use 4 bags because that gives the highest yield.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Extra yields are 800, 600, 300, 100"
+                },
+                {
+                  "point": 1,
+                  "quote": "The yield increases less and less"
+                }
+              ],
+              "feedback": "Your calculations and observation are right. State the law with fixed and variable inputs, and compare each bag's extra yield with its cost: the 4th bag adds 100 kg but costs 200 kg, so stop at 3."
+            },
+            {
+              "tier": "partial",
+              "text": "The law of diminishing returns states that as more fertilizer is added to the same land, the extra yield falls. The farmer should stop at 3 bags.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "as more fertilizer is added to the same land, the extra yield falls"
+                },
+                {
+                  "point": 3,
+                  "quote": "more fertilizer is added to the same land"
+                },
+                {
+                  "point": 4,
+                  "quote": "The farmer should stop at 3 bags"
+                }
+              ],
+              "feedback": "Your statement of the law and decision are right. Show the extra yields (800, 600, 300, 100 kg) and use them to explain why 3 bags is the stopping point."
+            },
+            {
+              "tier": "weak",
+              "text": "The more fertilizer the more the yield, so the farmer should use as many bags as possible.",
+              "meets": [],
+              "feedback": "Total yield rises, but each bag adds less. Work out the extra yield from each bag and compare it with the cost of the bag."
+            },
+            {
+              "tier": "weak",
+              "text": "Extra yield is 1,000, 1,800, 2,400, 2,700, 2,800. Diminishing returns means the yield is going down.",
+              "meets": [],
+              "feedback": "Those are the total yields, which are going up. The extra yield is the difference between one level and the next: 800, 600, 300 and 100 kg. That is what diminishes."
+            }
+          ]
+        },
+        {
+          "prompt": "Distinguish between a movement along the demand curve and a shift of the demand curve for yam, and give three factors other than price that could shift the demand for yam in Ibadan.",
+          "markScheme": [
+            "Movement along the curve is caused by a change in the price of yam itself",
+            "Shift of the curve is caused by a change in a factor other than the price of yam (curve moves left or right)",
+            "First non-price factor (e.g. income of consumers)",
+            "Second non-price factor (e.g. price of substitutes such as rice or cassava products)",
+            "Third non-price factor (e.g. taste/fashion, population, festivals/season)"
+          ],
+          "modelAnswer": "A movement along the demand curve happens when the price of yam itself changes: if the price falls, buyers move down the same curve and buy more. A shift of the demand curve happens when something other than the price of yam changes, so more or less yam is demanded at every price and the whole curve moves to the right or left. Factors that shift it include the income of consumers, the prices of substitutes such as rice and garri, and the population of Ibadan; festivals such as the New Yam Festival or Christmas also raise demand.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Movement along the curve is due to change in the price of yam itself, for example when price falls more is bought. A shift occurs when another factor changes and the whole curve moves to the right or left. Factors: increase in people's income, fall in the price of rice which is a substitute, and an increase in population of Ibadan.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Movement along the curve is due to change in the price of yam itself"
+                },
+                {
+                  "point": 1,
+                  "quote": "A shift occurs when another factor changes and the whole curve moves to the right or left"
+                },
+                {
+                  "point": 2,
+                  "quote": "increase in people's income"
+                },
+                {
+                  "point": 3,
+                  "quote": "fall in the price of rice which is a substitute"
+                },
+                {
+                  "point": 4,
+                  "quote": "an increase in population of Ibadan"
+                }
+              ],
+              "feedback": "A clear distinction and three correct factors. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "A change in the own price of yam causes extension or contraction of demand along the same curve. A change in other determinants causes the curve to shift. Determinants: consumers' income, prices of substitutes like garri, and changes in taste, e.g. during festive periods.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A change in the own price of yam causes extension or contraction of demand along the same curve"
+                },
+                {
+                  "point": 1,
+                  "quote": "A change in other determinants causes the curve to shift"
+                },
+                {
+                  "point": 2,
+                  "quote": "consumers' income"
+                },
+                {
+                  "point": 3,
+                  "quote": "prices of substitutes like garri"
+                },
+                {
+                  "point": 4,
+                  "quote": "changes in taste, e.g. during festive periods"
+                }
+              ],
+              "feedback": "Accurate, with the correct terms extension and contraction. All five marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Movement along the curve is when price changes. Shift is when the curve moves. Factors: income and taste.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Movement along the curve is when price changes"
+                },
+                {
+                  "point": 2,
+                  "quote": "income"
+                },
+                {
+                  "point": 4,
+                  "quote": "taste"
+                }
+              ],
+              "feedback": "Movement and two factors are right. Say what causes a shift (a change in something other than the price of yam), and add a third factor such as the price of substitutes."
+            },
+            {
+              "tier": "partial",
+              "text": "A shift of demand is when the price of yam changes and the curve moves. Factors are income, price of rice and season.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "income"
+                },
+                {
+                  "point": 3,
+                  "quote": "price of rice"
+                },
+                {
+                  "point": 4,
+                  "quote": "season"
+                }
+              ],
+              "feedback": "Your three factors are right. But a change in the price of yam only moves buyers along the same curve; the curve shifts when one of your other factors changes."
+            },
+            {
+              "tier": "weak",
+              "text": "Demand curve slopes downward. When there is plenty yam the price will fall.",
+              "meets": [],
+              "feedback": "Plenty of yam is a supply change. Explain what moves buyers along the demand curve (a change in yam's price) and what shifts the whole curve (income, substitutes, taste)."
+            },
+            {
+              "tier": "weak",
+              "text": "Movement is when the farmer moves the yam to the market and shift is when the yam is shifted to the store.",
+              "meets": [],
+              "feedback": "These are terms about a graph. A movement along the curve comes from a change in yam's price; a shift comes from a change in another factor, such as income."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Price policy, farm management, agricultural finance and farm records",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain price support, price control and subsidy and their effects on agricultural production;\n2. define farm manager and farm management, and state the functions and problems of a farm manager;\n3. explain agricultural finance, the sources and classes of farm credit, the problems of farmers and lenders, and the meaning of agri-business;\n4. explain the capital market, its institutions and sources of funds, and its role in agri-business;\n5. state the importance and types of farm records and design a simple record.\n\n## Materials\n\nA newspaper cutting on the fertilizer subsidy or on government buying grain for the strategic reserve; a sample loan form from the Bank of Agriculture; a sample feed record and egg production record from a poultry farm.\n\n## Starter (5 minutes)\n\nAsk: in a year of bumper maize harvest, the price falls so low that farmers lose money. What could government do?\n\n## Development\n\n1. Explain price support (a guaranteed minimum price), price control (a maximum price) and subsidy. Discuss the effect of each on output.\n2. Define farm management and the farm manager. List the manager's functions and problems.\n3. Discuss sources of farm finance: personal savings, family, cooperatives, money lenders, commercial banks, the Bank of Agriculture. Classify credit by time, source and liquidity. Discuss problems of borrowers and lenders. Define agri-business.\n4. Explain the capital market: the Nigerian Exchange, issuing houses, insurance companies, merchant banks; bonds and shares.\n5. Show the sample records. List the types and their importance. Students design a feed record.\n\n## Class activity\n\nStudents design an egg production record for a 500-bird layer farm for one week.\n\n## Evaluation\n\n1. What is the difference between price support and price control?\n2. Give two reasons farmers find it hard to obtain bank loans.\n3. What is an inventory record?\n\n## Assignment\n\nProblem set questions 4 and 5 and both written questions, due next Tuesday.",
+      "reading": {
+        "title": "Money, management and records on the farm",
+        "content": "# Price policy\n\n- **Price support**: government sets a **minimum (floor) price** above the market price and buys any surplus, as when grain is bought for the strategic reserve. Farmers produce more, but surpluses can pile up at government's cost.\n- **Price control**: government sets a **maximum (ceiling) price** to protect consumers. Food becomes cheaper for town dwellers, but farmers earn less, may produce less, and black markets can arise.\n- **Subsidy**: government pays part of the cost of inputs such as fertilizer, seed and tractor hire. Production costs fall and output rises, but subsidies are costly to government and inputs are often diverted to people who are not farmers.\n\n# Farm management\n\n**Farm management** is the organisation and running of a farm to achieve the farmer's goals, especially profit. A **farm manager** is the person who makes these decisions and directs the work.\n\n**Functions**: planning what to produce; organising land, labour and capital; directing and supervising workers; buying inputs and marketing produce; keeping records and accounts; taking risks and decisions.\n\n**Problems**: lack of capital, unreliable weather, pests and diseases, price changes, scarce skilled labour, theft.\n\n# Agricultural finance\n\n**Agricultural finance** is the provision and management of money for farming. It lets farmers buy inputs and expand.\n\n**Sources**: personal savings; family and friends; **cooperative societies**; esusu groups; money lenders; commercial banks; the **Bank of Agriculture**; government schemes.\n\n**Classes of credit**\n\n- **By time**: **short-term** (under 1 year, for seeds and fertilizer); **medium-term** (1–5 years, for livestock and small machines); **long-term** (over 5 years, for land, buildings and tree crops).\n- **By source**: **institutional** (banks, cooperatives) and **non-institutional** (money lenders, relatives).\n- **By liquidity**: **loan in cash** and **loan in kind** (seed, fertilizer or feed instead of money).\n\n**Problems of farmers**: high interest rates, lack of collateral, delays, too much paperwork, illiteracy. **Problems of lenders**: high risk, poor repayment and diversion of loans.\n\n**Agri-business** is the business of farming together with supplying inputs, processing and marketing produce for profit.\n\n# The capital market\n\nThe **capital market** is where long-term funds are raised and traded. Institutions include the **Nigerian Exchange (stock exchange)**, issuing houses, **merchant banks** and **insurance companies**. Funds come from **bonds**, shares and insurance savings. It lets large agro-businesses, such as feed mills and oil palm estates, raise long-term capital to build and expand.\n\n# Farm records\n\nRecords show whether the farm makes a profit, guide planning, and are needed for loans and taxes.\n\n- **Inventory records**: everything the farm owns, with values.\n- **Production records**: crop yields, eggs, milk, births, feed used.\n- **Income and expenditure records**: money received and spent.\n- **Supplementary records**: labour, vaccination and treatment, breeding records.\n\n**Example: a feed record.** Columns: date, house number, number of birds, feed type, bags given, bags in stock, remarks."
+      },
+      "cards": [
+        {
+          "front": "Price support",
+          "back": "A guaranteed minimum price set by government, above the market price, to protect farmers."
+        },
+        {
+          "front": "Price control",
+          "back": "A maximum price set by government to protect consumers."
+        },
+        {
+          "front": "Farm management",
+          "back": "The organisation and running of a farm to achieve the farmer's goals, especially profit."
+        },
+        {
+          "front": "Short-term credit",
+          "back": "A loan repaid within one year, used for seeds, fertilizer and feed."
+        },
+        {
+          "front": "Loan in kind",
+          "back": "Credit given as inputs such as seed or fertilizer instead of money."
+        },
+        {
+          "front": "Collateral",
+          "back": "Property a borrower pledges as security for a loan."
+        },
+        {
+          "front": "Agri-business",
+          "back": "Farming together with input supply, processing and marketing, run for profit."
+        },
+        {
+          "front": "Capital market",
+          "back": "The market where long-term funds are raised through shares, bonds and loans."
+        },
+        {
+          "front": "Inventory record",
+          "back": "A list of everything the farm owns, with its value."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Government guarantees to buy maize at not less than N450,000 per tonne when the market price is lower. This is",
+          "options": [
+            "price control",
+            "price support",
+            "a subsidy on inputs",
+            "a ceiling price"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A loan taken to plant a 4-hectare oil palm plantation that will not yield for about four years and will be repaid over ten years is",
+          "options": [
+            "long-term credit",
+            "short-term credit",
+            "a loan in kind",
+            "medium-term credit"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which is a problem faced by banks in granting loans to farmers?",
+          "options": [
+            "Interest rates are too low",
+            "Farmers have too much collateral",
+            "High risk of crop failure and poor repayment",
+            "Too few people want loans"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A poultry farmer records the number of eggs collected from each house every day. This is a",
+          "options": [
+            "production record",
+            "inventory record",
+            "income record",
+            "labour record"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which institution belongs to the capital market?",
+          "options": [
+            "A local esusu group",
+            "The Nigerian Exchange (stock exchange)",
+            "A village money lender",
+            "A farmers' market at Bodija"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain how price support and input subsidy each affect agricultural production in Nigeria, giving one advantage and one disadvantage of each.",
+          "markScheme": [
+            "Price support: government guarantees a minimum price (and buys surplus), so farmers are assured of income",
+            "Advantage of price support: encourages farmers to increase production / stabilises farm income",
+            "Disadvantage of price support: surpluses accumulate / costly to government / storage problems",
+            "Subsidy: government pays part of the cost of inputs (fertilizer, seed), lowering production costs",
+            "Advantage of subsidy: more farmers use improved inputs, so output rises",
+            "Disadvantage of subsidy: costly to government, or inputs diverted/hoarded by non-farmers"
+          ],
+          "modelAnswer": "Under price support, government guarantees farmers a minimum price for a crop and buys any surplus at that price. This assures farmers of income and encourages them to produce more, but the government may be left with large surpluses that are costly to buy and store. A subsidy means government pays part of the cost of inputs such as fertilizer, so production costs fall. More farmers can afford improved inputs and output rises, but subsidies cost government a lot and the inputs are often diverted to people who are not farmers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Price support is when government fixes a minimum price and buys excess produce so the farmer is sure of a good income. This encourages farmers to produce more. But government may have too much grain to store and it costs a lot. Subsidy is when government pays part of the cost of fertilizer so farmers buy it cheaply. More farmers use fertilizer and yields rise. But middlemen and politicians divert subsidised fertilizer so it does not reach farmers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Price support is when government fixes a minimum price and buys excess produce so the farmer is sure of a good income"
+                },
+                {
+                  "point": 1,
+                  "quote": "This encourages farmers to produce more"
+                },
+                {
+                  "point": 2,
+                  "quote": "government may have too much grain to store and it costs a lot"
+                },
+                {
+                  "point": 3,
+                  "quote": "Subsidy is when government pays part of the cost of fertilizer so farmers buy it cheaply"
+                },
+                {
+                  "point": 4,
+                  "quote": "More farmers use fertilizer and yields rise"
+                },
+                {
+                  "point": 5,
+                  "quote": "middlemen and politicians divert subsidised fertilizer so it does not reach farmers"
+                }
+              ],
+              "feedback": "Both policies explained with a real advantage and disadvantage each. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "With price support, a floor price above equilibrium guarantees farm income and stabilises it. Advantage: output increases. Disadvantage: surpluses build up and storage is costly. A subsidy reduces the cost of production for farmers. Advantage: wider adoption of improved inputs and higher output. Disadvantage: huge cost to government budget.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a floor price above equilibrium guarantees farm income"
+                },
+                {
+                  "point": 1,
+                  "quote": "Advantage: output increases"
+                },
+                {
+                  "point": 2,
+                  "quote": "surpluses build up and storage is costly"
+                },
+                {
+                  "point": 3,
+                  "quote": "A subsidy reduces the cost of production for farmers"
+                },
+                {
+                  "point": 4,
+                  "quote": "wider adoption of improved inputs and higher output"
+                },
+                {
+                  "point": 5,
+                  "quote": "huge cost to government budget"
+                }
+              ],
+              "feedback": "Accurate and concise, using correct economic terms. All six marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Price support helps farmers to sell at a good price so they produce more. Subsidy makes fertilizer cheap so farmers use more and produce more. Subsidy is expensive for government.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Price support helps farmers to sell at a good price"
+                },
+                {
+                  "point": 1,
+                  "quote": "so they produce more"
+                },
+                {
+                  "point": 3,
+                  "quote": "Subsidy makes fertilizer cheap"
+                },
+                {
+                  "point": 4,
+                  "quote": "farmers use more and produce more"
+                },
+                {
+                  "point": 5,
+                  "quote": "Subsidy is expensive for government"
+                }
+              ],
+              "feedback": "You covered subsidy fully and the benefit of price support. Add a disadvantage of price support, such as surpluses that are costly to store."
+            },
+            {
+              "tier": "partial",
+              "text": "Price support is when government sets a maximum price so that food will be cheap. Subsidy reduces the cost of inputs so more farmers can afford fertilizer and output increases.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Subsidy reduces the cost of inputs"
+                },
+                {
+                  "point": 4,
+                  "quote": "so more farmers can afford fertilizer and output increases"
+                }
+              ],
+              "feedback": "Your subsidy explanation is good. A maximum price is price control; price support is a minimum price that protects farmers. Give a disadvantage of each policy too."
+            },
+            {
+              "tier": "weak",
+              "text": "Price support means the government supports farmers by giving them money for free every month.",
+              "meets": [],
+              "feedback": "Price support is a guaranteed minimum price for produce, not monthly payments. Explain that, then explain subsidy on inputs, with an advantage and disadvantage of each."
+            },
+            {
+              "tier": "weak",
+              "text": "Subsidy is a tax that farmers pay to government on fertilizer.",
+              "meets": [],
+              "feedback": "A subsidy is the opposite of a tax: government pays part of the price so farmers pay less. Reread the price policy section."
+            }
+          ]
+        },
+        {
+          "prompt": "A young graduate wants a N2,000,000 loan to start a 1,000-bird broiler farm at Oyo. Name three possible sources of the loan, classify the loan by time and by source, and explain three problems the graduate may face in obtaining it.",
+          "markScheme": [
+            "Three valid sources (e.g. Bank of Agriculture, commercial bank, cooperative society, government youth scheme, family)",
+            "Classifies by time: short-term (broilers are sold in 6–8 weeks) or medium-term if it includes housing/equipment, with a reason",
+            "Classifies by source: institutional (bank/cooperative) or non-institutional (family/money lender), consistent with the source",
+            "Problem 1: lack of collateral",
+            "Problem 2: high interest rate",
+            "Problem 3: delays/bureaucracy, lack of records/business plan, or lender's fear of risk"
+          ],
+          "modelAnswer": "The graduate could borrow from the Bank of Agriculture, a commercial bank or a farmers' cooperative society. Most of the loan is for day-old chicks and feed for a 6 to 8 week cycle, so it is short-term credit, though money for the pen and equipment would be medium-term. From a bank or cooperative it is institutional credit. The graduate may lack collateral such as land with a certificate of occupancy; the interest rate may be too high for the profit a young farm makes; and the bank may delay the loan or reject it because a new farm has no records and is seen as risky.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Sources: Bank of Agriculture, commercial bank, and cooperative society. By time it is short-term because broilers are sold within 8 weeks and the loan can be repaid quickly. By source it is institutional because it is from a bank. Problems: no collateral to pledge, high interest rate, and delay in processing the loan.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bank of Agriculture, commercial bank, and cooperative society"
+                },
+                {
+                  "point": 1,
+                  "quote": "it is short-term because broilers are sold within 8 weeks"
+                },
+                {
+                  "point": 2,
+                  "quote": "it is institutional because it is from a bank"
+                },
+                {
+                  "point": 3,
+                  "quote": "no collateral to pledge"
+                },
+                {
+                  "point": 4,
+                  "quote": "high interest rate"
+                },
+                {
+                  "point": 5,
+                  "quote": "delay in processing the loan"
+                }
+              ],
+              "feedback": "Every part answered, and you gave reasons for each classification. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "He can apply to the Bank of Agriculture, a microfinance bank, or the state youth empowerment scheme. Since the money is for housing and equipment as well as chicks, it is medium-term. Coming from a bank, it is institutional credit. Problems: the bank will demand collateral he does not have, interest rates are high, and as a new farmer without records the bank sees him as a high risk.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the Bank of Agriculture, a microfinance bank, or the state youth empowerment scheme"
+                },
+                {
+                  "point": 1,
+                  "quote": "Since the money is for housing and equipment as well as chicks, it is medium-term"
+                },
+                {
+                  "point": 2,
+                  "quote": "Coming from a bank, it is institutional credit"
+                },
+                {
+                  "point": 3,
+                  "quote": "the bank will demand collateral he does not have"
+                },
+                {
+                  "point": 4,
+                  "quote": "interest rates are high"
+                },
+                {
+                  "point": 5,
+                  "quote": "as a new farmer without records the bank sees him as a high risk"
+                }
+              ],
+              "feedback": "A well-reasoned answer: classifying it as medium-term because of the housing is correct. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Sources are bank, cooperative and family. It is a long-term loan. Problems are collateral and interest rate.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "bank, cooperative and family"
+                },
+                {
+                  "point": 3,
+                  "quote": "collateral"
+                },
+                {
+                  "point": 4,
+                  "quote": "interest rate"
+                }
+              ],
+              "feedback": "Sources and two problems are right. Broilers are sold in about eight weeks, so this is short- or medium-term credit, not long-term. Also classify by source and give a third problem."
+            },
+            {
+              "tier": "partial",
+              "text": "Bank of Agriculture, commercial banks and money lenders. It is short-term and institutional. The problem is that banks don't like farmers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bank of Agriculture, commercial banks and money lenders"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is short-term"
+                },
+                {
+                  "point": 2,
+                  "quote": "institutional"
+                }
+              ],
+              "feedback": "Sources and classification are right; say why it is short-term (broilers sell in 6–8 weeks). Banks are wary because of risk; name real problems: no collateral, high interest, delays."
+            },
+            {
+              "tier": "weak",
+              "text": "He should get money from the government because government gives every graduate money for farming.",
+              "meets": [],
+              "feedback": "Government does not fund every graduate. Name three real lenders, classify the loan by time and source, and explain problems such as lack of collateral."
+            },
+            {
+              "tier": "weak",
+              "text": "The loan is a loan in kind because he will buy birds with it. The problem is that birds can die.",
+              "meets": [],
+              "feedback": "A loan given as money is a loan in cash, even if it buys birds. Bird deaths are a farm risk, not a problem in getting the loan; think of collateral and interest rates."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Farm accounts, marketing, agricultural insurance and extension",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. prepare simple expenditure, income and profit and loss accounts and a balance sheet, and use depreciation, appreciation, salvage value, inventory and farm budget;\n2. explain the marketing of agricultural produce, marketing agents and functions, export crops and the problems of marketing;\n3. explain agricultural insurance, its types, premiums and problems;\n4. explain agricultural extension, its methods, programmes in West Africa, problems, and the qualities of a good extension worker.\n\n## Materials\n\nA sample profit and loss account for a small poultry farm; a receipt book; a NAIC (Nigerian Agricultural Insurance Corporation) leaflet; a picture of an extension worker demonstrating to farmers.\n\n## Starter (5 minutes)\n\nAsk: a farmer sold N1,200,000 worth of eggs this year. Did the farm make a profit? What else do we need to know?\n\n## Development\n\n1. Build a profit and loss account from a list of incomes and expenses on the board. Work out straight-line depreciation on a sprayer. Explain appreciation, salvage value, inventory and a farm budget. Show the layout of a balance sheet.\n2. Define marketing. Trace yam from an Oyo farm to Lagos through assemblers, wholesalers and retailers. Discuss the functions and problems, and export crops such as cocoa, sesame, cashew and ginger.\n3. Explain insurance and the premium. List the types of policy and the problems of agricultural insurance.\n4. Define extension. Compare individual and group contact methods. Name ADP, NDE and agro-service centres. Discuss problems and the qualities of a good extension worker.\n\n## Class activity\n\nStudents prepare a profit and loss account from the figures in the worksheet.\n\n## Evaluation\n\n1. A sprayer bought for N60,000 lasts 5 years with no salvage value. What is its yearly depreciation?\n2. Name two marketing functions.\n3. What is a premium?\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Keeping accounts, selling produce and protecting the farm",
+        "content": "# Farm accounts\n\n- **Expenditure (purchases) account**: all money spent, such as feed, seed, labour and drugs.\n- **Income (sales) account**: all money received from sales.\n- **Profit and loss account**: income minus expenditure (including depreciation) for the year. A positive result is profit, a negative one a loss.\n- **Balance sheet**: a statement, on one date, of what the farm owns (**assets**) and what it owes (**liabilities**). Net worth = assets - liabilities.\n\n**Terms**: **depreciation** is the fall in value of an asset through use and age; **appreciation** is a rise in value, such as land; **salvage value** is what an asset is worth at the end of its useful life; an **inventory** is a list of assets with their values; a **farm budget** is an estimate of future income and costs.\n\n**Worked example.** A maize sheller costs N300,000, lasts 5 years and has a salvage value of N50,000. Straight-line depreciation = (300,000 - 50,000) / 5 = N50,000 a year.\n\nA farm sells maize for N1,500,000. It spends N650,000 on seed, fertilizer and labour, and the sheller depreciates by N50,000. Profit = 1,500,000 - (650,000 + 50,000) = N800,000.\n\n# Marketing agricultural produce\n\n**Marketing** is all the activities involved in moving produce from the farm to the consumer.\n\n**Agents**: assemblers (village buyers), wholesalers, retailers, commission agents, cooperatives, and processors. Too many middlemen raise prices and pay farmers little.\n\n**Functions**: **assembling** (collecting small lots into large ones), **grading**, **transportation**, **storage**, **processing**, **packaging**, **financing** and **selling**.\n\n**Export crops** of West Africa: cocoa, cashew, sesame, ginger, rubber, cotton, coffee, palm kernel. Exporters must register, meet quality and grading standards, obtain certificates, and follow phytosanitary rules. Cooperatives help small farmers export.\n\n**Problems**: poor roads and transport, poor storage and processing, price changes, too many middlemen, lack of market information, poor grading, and perishability.\n\n# Agricultural insurance\n\n**Agricultural insurance** protects farmers against losses from risks such as fire, flood, drought, pests, disease and theft. The farmer pays a **premium**; if the insured loss happens, the insurer pays compensation.\n\n**Policies**: crop insurance; livestock insurance; farm vehicle insurance; fire and machinery or building insurance; life assurance for the farmer.\n\n**Problems**: farmers' ignorance of insurance, high premiums, delays in paying claims, difficulty in proving losses.\n\n# Agricultural extension\n\n**Agricultural extension** is the education of farmers in improved methods, linking research to the farm.\n\n- **Individual contact**: farm and home visits, office calls, letters, phone calls.\n- **Group contact**: demonstrations, meetings, field days, shows, farmer field schools.\n- **Mass contact**: radio, television, posters.\n\n**Programmes**: the ADPs, the National Directorate of Employment (NDE), agro-service centres, and state ministries of agriculture.\n\n**Problems**: illiteracy among farmers, too few extension workers, poor transport, poor pay, and farmers' resistance to change.\n\nA **good extension worker** is knowledgeable, patient, honest, a good communicator in the local language, and respects farmers."
+      },
+      "cards": [
+        {
+          "front": "Profit and loss account",
+          "back": "A statement of income minus expenditure (including depreciation) for a period."
+        },
+        {
+          "front": "Balance sheet",
+          "back": "A statement of a farm's assets and liabilities on a particular date."
+        },
+        {
+          "front": "Depreciation",
+          "back": "The fall in value of an asset through use and age."
+        },
+        {
+          "front": "Salvage value",
+          "back": "What an asset is worth at the end of its useful life."
+        },
+        {
+          "front": "Straight-line depreciation",
+          "back": "(Cost - salvage value) / years of useful life."
+        },
+        {
+          "front": "Assembling",
+          "back": "The marketing function of collecting small lots of produce into large ones."
+        },
+        {
+          "front": "Premium",
+          "back": "The regular payment a farmer makes to an insurance company for cover."
+        },
+        {
+          "front": "Agricultural extension",
+          "back": "Educating farmers in improved methods, linking research to the farm."
+        },
+        {
+          "front": "Group contact methods",
+          "back": "Demonstrations, meetings, field days, shows and farmer field schools."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A sprayer bought for N80,000 has a useful life of 4 years and a salvage value of N8,000. Its yearly straight-line depreciation is",
+          "options": ["N20,000", "N18,000", "N22,000", "N72,000"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Village buyers who collect small quantities of yam from many farmers into lorry loads are performing which marketing function?",
+          "options": ["Processing", "Grading", "Assembling", "Retailing"],
+          "answer": "C"
+        },
+        {
+          "prompt": "The regular payment a poultry farmer makes to an insurance company is called the",
+          "options": ["premium", "claim", "compensation", "interest"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which is a group contact method of agricultural extension?",
+          "options": [
+            "Farm visit",
+            "Office call",
+            "Personal letter",
+            "Method demonstration at a field day"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which statement shows appreciation of a farm asset?",
+          "options": [
+            "A tractor is worth less each year",
+            "Farmland bought for N2 million is now worth N3 million",
+            "A sprayer breaks down",
+            "Feed is used up"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A layer farm at Oyo had these figures for the year: sale of eggs N3,600,000; sale of spent hens N400,000; feed N2,100,000; day-old chicks and drugs N450,000; labour N360,000. A generator bought for N500,000, with a salvage value of N100,000 and a life of 4 years, is also used. Calculate the depreciation on the generator and the farm's profit or loss.",
+          "markScheme": [
+            "Total income = 3,600,000 + 400,000 = N4,000,000",
+            "Depreciation = (500,000 - 100,000) / 4 = N100,000",
+            "Total expenditure = 2,100,000 + 450,000 + 360,000 + 100,000 = N3,010,000",
+            "Profit = 4,000,000 - 3,010,000 = N990,000 (stated as a profit)"
+          ],
+          "modelAnswer": "Total income = N3,600,000 + N400,000 = N4,000,000. Depreciation on the generator = (N500,000 - N100,000) / 4 = N100,000 a year. Total expenditure = N2,100,000 + N450,000 + N360,000 + N100,000 = N3,010,000. Profit = N4,000,000 - N3,010,000 = N990,000. The farm made a profit of N990,000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Income = 3,600,000 + 400,000 = N4,000,000. Depreciation = (500,000 - 100,000) / 4 = N100,000. Expenditure = 2,100,000 + 450,000 + 360,000 + 100,000 = N3,010,000. Profit = 4,000,000 - 3,010,000 = N990,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Income = 3,600,000 + 400,000 = N4,000,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Depreciation = (500,000 - 100,000) / 4 = N100,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Expenditure = 2,100,000 + 450,000 + 360,000 + 100,000 = N3,010,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Profit = 4,000,000 - 3,010,000 = N990,000"
+                }
+              ],
+              "feedback": "Every figure correct with working shown. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Depreciation of generator per year is N400,000 divided by 4 years = N100,000. Total income is N4,000,000 (eggs plus spent hens). Total costs including depreciation are N3,010,000. So the farm made a profit of N990,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total income is N4,000,000 (eggs plus spent hens)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Depreciation of generator per year is N400,000 divided by 4 years = N100,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Total costs including depreciation are N3,010,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "the farm made a profit of N990,000"
+                }
+              ],
+              "feedback": "All correct. In an exam, show where N400,000 comes from (500,000 - 100,000) and how the costs add up."
+            },
+            {
+              "tier": "partial",
+              "text": "Income = N4,000,000. Depreciation = 500,000 / 4 = N125,000. Expenditure = 2,100,000 + 450,000 + 360,000 + 125,000 = N3,035,000. Profit = N965,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Income = N4,000,000"
+                }
+              ],
+              "feedback": "Your income and method are right, but depreciation must take off the salvage value first: (500,000 - 100,000) / 4 = N100,000. That makes expenditure N3,010,000 and profit N990,000."
+            },
+            {
+              "tier": "partial",
+              "text": "Income = 3,600,000 + 400,000 = 4,000,000. Depreciation = (500,000 - 100,000) / 4 = 100,000. Expenditure = 2,100,000 + 450,000 + 360,000 = 2,910,000. Profit = 1,090,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Income = 3,600,000 + 400,000 = 4,000,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Depreciation = (500,000 - 100,000) / 4 = 100,000"
+                }
+              ],
+              "feedback": "Income and depreciation are right, but you calculated depreciation and then left it out of the costs. Add it: expenditure is N3,010,000 and profit N990,000."
+            },
+            {
+              "tier": "weak",
+              "text": "Profit = 3,600,000 - 2,100,000 = N1,500,000 because feed is the main cost.",
+              "meets": [],
+              "feedback": "Profit must count all income (eggs and spent hens) and all costs, including chicks, drugs, labour and depreciation. Add them up and subtract."
+            },
+            {
+              "tier": "weak",
+              "text": "Total = 3,600,000 + 400,000 + 2,100,000 + 450,000 + 360,000 + 500,000 = N7,410,000 profit.",
+              "meets": [],
+              "feedback": "Costs are subtracted from income, not added to it. Income is N4,000,000; take away the costs, and use depreciation, not the full price of the generator."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain three problems of marketing agricultural produce in Nigeria, and describe two ways a cooperative society could help yam farmers around Saki market their produce.",
+          "markScheme": [
+            "Problem 1 explained (e.g. poor roads/transport raise costs and cause spoilage)",
+            "Problem 2 explained (e.g. poor storage/processing facilities lead to losses of perishable produce)",
+            "Problem 3 explained (e.g. too many middlemen reduce farmers' share; price fluctuation; lack of market information; poor grading)",
+            "Cooperative help 1 (e.g. bulking produce to sell in large quantities and bargain for better prices)",
+            "Cooperative help 2 (e.g. joint transport/storage, market information, credit, selling directly to cities/processors)"
+          ],
+          "modelAnswer": "Poor rural roads make transport slow and costly, so yams are bruised and some rot before reaching the market. There are few good storage and processing facilities, so farmers must sell quickly at harvest when prices are lowest. Too many middlemen stand between farmer and consumer, so the farmer receives only a small share of the final price. A cooperative could bulk its members' yams and sell large lots directly to buyers in Ibadan and Lagos, bargaining for a better price. It could also build a shared, well-ventilated yam barn so members can store yams and sell when prices rise.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1. Bad roads make transportation costly and yams get damaged on the way. 2. Lack of storage makes farmers sell at harvest when the price is low. 3. Middlemen buy cheaply from farmers and sell high, so farmers gain little. A cooperative can gather the members' yams together and sell in bulk at a better price, and it can build a common store so they sell later when prices are high.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bad roads make transportation costly and yams get damaged on the way"
+                },
+                {
+                  "point": 1,
+                  "quote": "Lack of storage makes farmers sell at harvest when the price is low"
+                },
+                {
+                  "point": 2,
+                  "quote": "Middlemen buy cheaply from farmers and sell high, so farmers gain little"
+                },
+                {
+                  "point": 3,
+                  "quote": "A cooperative can gather the members' yams together and sell in bulk at a better price"
+                },
+                {
+                  "point": 4,
+                  "quote": "it can build a common store so they sell later when prices are high"
+                }
+              ],
+              "feedback": "Three problems clearly explained and two practical roles for the cooperative. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Problems: price fluctuations, because supply is high at harvest and low later; poor transport network; and lack of market information, so farmers do not know prices in the cities. The cooperative can hire lorries jointly to carry yams to Lagos, and give members information on prices so they are not cheated.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "poor transport network"
+                },
+                {
+                  "point": 1,
+                  "quote": "price fluctuations, because supply is high at harvest and low later"
+                },
+                {
+                  "point": 2,
+                  "quote": "lack of market information, so farmers do not know prices in the cities"
+                },
+                {
+                  "point": 3,
+                  "quote": "The cooperative can hire lorries jointly to carry yams to Lagos"
+                },
+                {
+                  "point": 4,
+                  "quote": "give members information on prices so they are not cheated"
+                }
+              ],
+              "feedback": "Well chosen problems, each with a cause, and two sensible cooperative roles. All five marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Problems are bad roads, no storage and middlemen. Cooperatives help farmers by giving them loans.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "bad roads"
+                },
+                {
+                  "point": 1,
+                  "quote": "no storage"
+                },
+                {
+                  "point": 2,
+                  "quote": "middlemen"
+                }
+              ],
+              "feedback": "Three correct problems, but each needs explaining: what does a bad road do to yams? Loans help production; for marketing, say how a cooperative sells in bulk or stores produce."
+            },
+            {
+              "tier": "partial",
+              "text": "Yam rots quickly because there are no storage facilities. The cooperative can sell the yams together in large quantity to get good price, and buy a lorry for transport.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Yam rots quickly because there are no storage facilities"
+                },
+                {
+                  "point": 3,
+                  "quote": "The cooperative can sell the yams together in large quantity to get good price"
+                },
+                {
+                  "point": 4,
+                  "quote": "buy a lorry for transport"
+                }
+              ],
+              "feedback": "Storage and both cooperative roles are right. The question asks for three problems; add two more, such as bad roads and too many middlemen, each explained."
+            },
+            {
+              "tier": "weak",
+              "text": "The problem of marketing is that people do not like to eat yam again, they prefer rice.",
+              "meets": [],
+              "feedback": "Demand for yam remains strong. The problems are in getting it to buyers: roads, storage, middlemen, price swings. Then explain how a cooperative helps."
+            },
+            {
+              "tier": "weak",
+              "text": "A cooperative society is a group of people who come together to help each other.",
+              "meets": [],
+              "feedback": "That defines a cooperative but does not answer the question. Explain three marketing problems and two specific ways the cooperative could help sell the yams."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Practical soil work: examining soils and rocks, and testing soil in the laboratory",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish fertile from infertile soil by colour, texture, structure, organic matter and living things, and judge texture by feel;\n2. describe a soil profile and identify the common rock types;\n3. describe laboratory methods for mechanical analysis, bulk density and total pore space, moisture content, maximum water holding capacity, wilting point and capillarity, and calculate results;\n4. determine soil pH;\n5. identify common fertilizers and organic manures and describe their application.\n\n## Materials\n\nSoil samples from the school farm and from a bare, eroded path; a cylinder core sampler; a balance; an oven or a hot plate; evaporating dishes; glass tubes of sand, loam and clay standing in water; pH meter or indicator kit; samples of urea, NPK 15:15:15, single superphosphate and muriate of potash; compost.\n\n## Starter (5 minutes)\n\nGive each group the two soil samples. Ask them to list every difference they can see, smell and feel.\n\n## Development\n\n1. Compare fertile and infertile soil. Demonstrate the feel test: moisten soil and rub it between finger and thumb; try to roll it into a ribbon.\n2. Revise the soil profile and the three rock types with specimens.\n3. Demonstrate each laboratory test and the formula for its result. Work an example of moisture content and of bulk density on the board.\n4. Test the pH of both samples.\n5. Show each fertilizer: colour, form, nutrient and rate. Discuss green manure, farmyard manure and compost and how each is made.\n\n## Class activity\n\nGroups weigh a fresh soil sample, dry it, reweigh it and calculate its moisture content.\n\n## Evaluation\n\n1. A moist sample weighs 60 g and 50 g after drying. What is its moisture content on a dry-weight basis?\n2. In which tube of soil does water rise highest, and why?\n3. What colour and form is urea?\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Examining and testing soil",
+        "content": "# Fertile and infertile soil\n\n| Feature | Fertile soil | Infertile soil |\n| --- | --- | --- |\n| Colour | Dark brown to black (humus) | Pale, grey or light red |\n| Texture | Loamy | Very sandy or heavy clay |\n| Structure | Crumbly | Loose and single-grained, or hard clods |\n| Organic matter | Plenty | Little |\n| Living things | Many earthworms, roots, termites | Few |\n\n**Texture by feel**: moisten a pinch and rub it. **Sand** feels gritty and will not stick. **Silt** feels smooth and soapy. **Clay** feels sticky, can be rolled into a thin thread and bent into a ring, and shines when rubbed. **Loam** is slightly gritty and holds together.\n\nRevise the soil profile (O, A, B, C, R horizons) and the rock types (igneous: granite; sedimentary: sandstone, limestone; metamorphic: marble).\n\n# Physical properties in the laboratory\n\n- **Mechanical analysis**: sedimentation in a measuring cylinder, a hydrometer, or a set of sieves, to find the proportions of sand, silt and clay.\n- **Moisture content**: weigh the moist soil, dry it in an oven at 105 degrees Celsius to constant weight, and reweigh.\n\n  Moisture content (%) = (moist weight - dry weight) / dry weight x 100.\n\n  **Example**: moist 80 g, dry 64 g. Moisture = 16 / 64 x 100 = 25%.\n\n- **Bulk density**: drive a core sampler of known volume into the soil, dry the core and weigh it.\n\n  Bulk density = oven-dry mass / total volume.\n\n  **Example**: a 100 cm³ core weighs 140 g dry. Bulk density = 1.4 g/cm³.\n\n- **Total pore space** = (1 - bulk density / particle density) x 100, using particle density 2.65 g/cm³. For the core above: (1 - 1.4/2.65) x 100 = about 47%.\n- **Maximum water holding capacity**: saturate soil in a funnel or perforated tin, let it drain, and measure the water held. Clay holds most, sand least.\n- **Wilting point**: grow seedlings in pots, stop watering, and record the soil moisture when they stay wilted overnight.\n- **Capillarity**: stand glass tubes of sand, loam and clay in water and measure how high water rises over time. It rises fastest in sand at first but highest in clay.\n\n# Chemical properties\n\n**Soil pH** is measured by mixing soil with distilled water and using a **pH meter** or **indicator** solution and colour chart.\n\n**Fertilizers**:\n\n| Fertilizer | Nutrient | Appearance |\n| --- | --- | --- |\n| Urea | 46% N | White granules or pellets |\n| Ammonium sulphate | 21% N | White crystals |\n| Single superphosphate | P | Grey granules |\n| Muriate of potash | K | Red or pink crystals |\n| NPK 15:15:15 | N, P, K | Mixed granules |\n\nThey are applied by broadcasting, ring, band or side placement, or as a foliar spray, at rates such as 4 bags of NPK per hectare for maize.\n\n**Organic manure**:\n\n- **Green manure**: a legume such as Mucuna grown and ploughed in while green.\n- **Farmyard manure**: animal dung mixed with bedding, rotted before use.\n- **Compost**: layers of plant waste, dung, ash and soil kept moist and turned until they decompose."
+      },
+      "cards": [
+        {
+          "front": "Colour of fertile soil",
+          "back": "Dark brown to black, because of humus."
+        },
+        {
+          "front": "Feel of clay soil when wet",
+          "back": "Sticky; can be rolled into a thin thread and shines when rubbed."
+        },
+        {
+          "front": "Moisture content formula",
+          "back": "(moist weight - dry weight) / dry weight x 100."
+        },
+        {
+          "front": "Bulk density",
+          "back": "Oven-dry mass of soil divided by its total volume, in g/cm³."
+        },
+        {
+          "front": "Wilting point",
+          "back": "The soil moisture at which plants stay wilted even overnight."
+        },
+        {
+          "front": "Capillarity test result",
+          "back": "Water rises highest in clay, through its fine pores."
+        },
+        {
+          "front": "Urea",
+          "back": "A white granular fertilizer containing 46% nitrogen."
+        },
+        {
+          "front": "Muriate of potash",
+          "back": "A red or pink potassium fertilizer."
+        },
+        {
+          "front": "Green manure",
+          "back": "A legume crop grown and ploughed into the soil while still green."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A moist soil sample weighs 75 g. After oven-drying it weighs 60 g. Its moisture content on a dry-weight basis is",
+          "options": ["20%", "15%", "80%", "25%"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these features shows a fertile soil?",
+          "options": [
+            "Dark colour with many earthworms",
+            "Pale grey colour",
+            "Hard clods with no roots",
+            "Loose single grains of sand"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Tubes of sand, loam and clay stand in water for a week. In which does water rise highest?",
+          "options": ["Sand", "Loam", "Clay", "All rise equally"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A fertilizer is red-pink and crystalline. It is most likely",
+          "options": [
+            "urea",
+            "single superphosphate",
+            "muriate of potash",
+            "ammonium sulphate"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A core of soil of volume 200 cm³ weighs 260 g after oven-drying. Its bulk density is",
+          "options": ["0.77 g/cm³", "1.3 g/cm³", "2.6 g/cm³", "1.5 g/cm³"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe how you would determine the moisture content of a soil sample from the school farm in the laboratory. A moist sample weighs 90 g and 72 g after drying; calculate its moisture content.",
+          "markScheme": [
+            "Weigh an empty container, then the container with the moist soil",
+            "Dry the soil in an oven at about 105 °C",
+            "Reweigh, and repeat drying until the weight is constant",
+            "Moisture content = (moist - dry) / dry x 100",
+            "Correct answer: (90 - 72) / 72 x 100 = 25%"
+          ],
+          "modelAnswer": "Weigh an empty evaporating dish, then weigh it again with the moist soil sample. Put the dish in an oven at about 105 °C to dry the soil. Cool it and reweigh, and keep drying and reweighing until the weight no longer changes. Moisture content = (moist weight - dry weight) / dry weight x 100 = (90 - 72) / 72 x 100 = 18 / 72 x 100 = 25%.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Weigh an empty dish, then weigh it with the fresh soil. Dry it in the oven at 105 degrees. Weigh it again and keep drying until the weight is constant. Moisture content = (moist - dry) / dry x 100 = (90 - 72) / 72 x 100 = 25%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Weigh an empty dish, then weigh it with the fresh soil"
+                },
+                {
+                  "point": 1,
+                  "quote": "Dry it in the oven at 105 degrees"
+                },
+                {
+                  "point": 2,
+                  "quote": "Weigh it again and keep drying until the weight is constant"
+                },
+                {
+                  "point": 3,
+                  "quote": "Moisture content = (moist - dry) / dry x 100"
+                },
+                {
+                  "point": 4,
+                  "quote": "(90 - 72) / 72 x 100 = 25%"
+                }
+              ],
+              "feedback": "Correct method, formula and answer. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Record the weight of a crucible, add the moist soil and record again. Oven-dry at 105 °C for 24 hours, cool in a desiccator and reweigh; repeat until two weighings agree. Water lost = 90 - 72 = 18 g. Moisture % = water lost / dry weight x 100 = 18/72 x 100 = 25%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Record the weight of a crucible, add the moist soil and record again"
+                },
+                {
+                  "point": 1,
+                  "quote": "Oven-dry at 105 °C for 24 hours"
+                },
+                {
+                  "point": 2,
+                  "quote": "repeat until two weighings agree"
+                },
+                {
+                  "point": 3,
+                  "quote": "Moisture % = water lost / dry weight x 100"
+                },
+                {
+                  "point": 4,
+                  "quote": "18/72 x 100 = 25%"
+                }
+              ],
+              "feedback": "Excellent: using a desiccator shows good laboratory practice. All five marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Weigh the soil, dry it in an oven and weigh it again. Moisture = 90 - 72 = 18, 18/90 x 100 = 20%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Weigh the soil"
+                },
+                {
+                  "point": 1,
+                  "quote": "dry it in an oven"
+                }
+              ],
+              "feedback": "The steps are right, but moisture content is calculated on the dry weight: 18 / 72 x 100 = 25%. Also dry to constant weight to be sure all the water has gone."
+            },
+            {
+              "tier": "partial",
+              "text": "Put the soil in the sun to dry for two days and weigh. Moisture content = (moist - dry) / dry x 100 = 18/72 x 100 = 25%.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Moisture content = (moist - dry) / dry x 100"
+                },
+                {
+                  "point": 4,
+                  "quote": "18/72 x 100 = 25%"
+                }
+              ],
+              "feedback": "Your formula and answer are correct. Sun-drying does not remove all water; in the laboratory weigh first, then oven-dry at 105 °C to constant weight."
+            },
+            {
+              "tier": "weak",
+              "text": "Moisture content is 90 + 72 = 162%. The soil is very wet.",
+              "meets": [],
+              "feedback": "The water lost is the difference, 90 - 72 = 18 g, divided by the dry weight and multiplied by 100. Also describe weighing and oven-drying."
+            },
+            {
+              "tier": "weak",
+              "text": "Pour water on the soil and see how much it absorbs. That is the moisture content.",
+              "meets": [],
+              "feedback": "That measures water holding capacity, not the water already in the soil. Weigh, oven-dry and reweigh, then use the formula."
+            }
+          ]
+        },
+        {
+          "prompt": "A core sampler of volume 150 cm³ is driven into the soil of the school farm. The oven-dry soil in it weighs 210 g. Calculate the bulk density and the total pore space (particle density 2.65 g/cm³), and explain what a high bulk density would tell a farmer about the soil.",
+          "markScheme": [
+            "Bulk density = 210 / 150 = 1.4 g/cm³ (with unit)",
+            "Correct pore space formula: (1 - bulk density / particle density) x 100",
+            "Pore space = (1 - 1.4/2.65) x 100 = about 47% (accept 47.2%)",
+            "High bulk density means the soil is compacted/has few pores",
+            "Consequence: poor aeration, drainage and root penetration, so crops grow poorly"
+          ],
+          "modelAnswer": "Bulk density = oven-dry mass / volume = 210 / 150 = 1.4 g/cm³. Total pore space = (1 - bulk density / particle density) x 100 = (1 - 1.4/2.65) x 100 = (1 - 0.528) x 100 = about 47%. A high bulk density means the soil is compacted and has little pore space, so air and water move through it poorly and roots find it hard to grow, and crop yields fall.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Bulk density = 210 / 150 = 1.4 g/cm³. Pore space = (1 - BD/PD) x 100 = (1 - 1.4/2.65) x 100 = 47.2%. A high bulk density shows the soil is compacted with few pores, so there is poor aeration and drainage and roots cannot penetrate well.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bulk density = 210 / 150 = 1.4 g/cm³"
+                },
+                {
+                  "point": 1,
+                  "quote": "Pore space = (1 - BD/PD) x 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "(1 - 1.4/2.65) x 100 = 47.2%"
+                },
+                {
+                  "point": 3,
+                  "quote": "A high bulk density shows the soil is compacted with few pores"
+                },
+                {
+                  "point": 4,
+                  "quote": "there is poor aeration and drainage and roots cannot penetrate well"
+                }
+              ],
+              "feedback": "Correct calculations with units, and a clear interpretation. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "BD = mass/volume = 210/150 = 1.4 g per cm³. Porosity = (1 - 1.4 ÷ 2.65) x 100 ≈ 47%. If the bulk density were high, the soil would be compact, maybe from tractors or trampling, and roots would struggle to grow, water would not drain and air would be short.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "BD = mass/volume = 210/150 = 1.4 g per cm³"
+                },
+                {
+                  "point": 1,
+                  "quote": "Porosity = (1 - 1.4 ÷ 2.65) x 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "≈ 47%"
+                },
+                {
+                  "point": 3,
+                  "quote": "the soil would be compact"
+                },
+                {
+                  "point": 4,
+                  "quote": "roots would struggle to grow, water would not drain and air would be short"
+                }
+              ],
+              "feedback": "All correct, and you even suggested the cause of compaction. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "Bulk density = 210/150 = 1.4 g/cm³. Pore space = 1.4/2.65 x 100 = 52.8%. High bulk density means the soil is very fertile.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bulk density = 210/150 = 1.4 g/cm³"
+                }
+              ],
+              "feedback": "Bulk density is right. Pore space is (1 - 1.4/2.65) x 100 = 47%; you calculated the solid part instead. High bulk density means compaction, which is bad for roots, not fertility."
+            },
+            {
+              "tier": "partial",
+              "text": "Bulk density = 150/210 = 0.71 g/cm³. Pore space = (1 - 0.71/2.65) x 100 = 73%. A high bulk density means the soil is compacted so roots cannot grow well and water does not drain.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Pore space = (1 - 0.71/2.65) x 100"
+                },
+                {
+                  "point": 3,
+                  "quote": "A high bulk density means the soil is compacted"
+                },
+                {
+                  "point": 4,
+                  "quote": "roots cannot grow well and water does not drain"
+                }
+              ],
+              "feedback": "Your pore space formula and interpretation are right, but bulk density is mass divided by volume: 210 / 150 = 1.4 g/cm³, which gives about 47% pore space.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Bulk density = 210 x 150 = 31,500. The soil is very heavy.",
+              "meets": [],
+              "feedback": "Density is mass divided by volume, not multiplied: 210 / 150 = 1.4 g/cm³. Then use the pore space formula and explain what compaction does to roots."
+            },
+            {
+              "tier": "weak",
+              "text": "High bulk density means there is a lot of soil so the farmer will have more space to plant crops.",
+              "meets": [],
+              "feedback": "Bulk density measures how tightly packed the soil is. A high value means compaction and poor aeration. Also do the two calculations."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Practical: irrigation equipment, garden tools, implements, processing equipment and the tractor",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. identify irrigation and drainage equipment and state their uses;\n2. identify, describe, use and maintain common garden tools;\n3. identify tractor and animal-drawn implements, their major parts and functions, and their maintenance;\n4. identify harvesting, processing and storage equipment and state their uses;\n5. identify the major components of a farm tractor and describe its servicing and maintenance.\n\n## Materials\n\nFrom the school farm store: watering can, hose, sprinkler head, hoe, cutlass, trowel, hand fork, rake, shovel, spade, sickle, secateurs, shears, budding knife; pictures or a visit to the ADP tractor yard to see a disc plough, harrow, ridger, planter and cultivator; a cassava grater and a groundnut lifter (or pictures); a tractor manual.\n\n## Starter (5 minutes)\n\nLay out all the tools on a table with numbers. Students write the name of each in two minutes.\n\n## Development\n\n1. Go round the irrigation equipment: watering can, sprinkler, pump, pipes and hoses.\n2. For each garden tool, students handle it and state its description, use and maintenance. Emphasise that blades are cleaned, sharpened and oiled.\n3. Show the implements and label their parts: discs, frame, hitch, depth wheel, tines, seed hopper, metering plate.\n4. Show harvesting and processing equipment: sheller, dehusker, winnower, dryer, grater, groundnut lifter, scythe, refrigerator.\n5. Label the tractor's components. Take the class through daily, weekly and periodic servicing.\n\n## Class activity\n\nIn groups, students make a table of ten tools: name, sketch, use and one maintenance practice.\n\n## Evaluation\n\n1. Which tool is used to cut small branches when pruning?\n2. Name the part of a planter that holds the seed.\n3. How often should the air filter of a tractor be cleaned in the dry season?\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Identifying farm tools, implements and the tractor",
+        "content": "# Irrigation and drainage equipment\n\n- **Watering can**: waters nursery beds and seedlings; the rose gives a gentle spray.\n- **Sprinkler**: sprays water over crops like rain.\n- **Pump**: lifts water from a well, river or borehole.\n- **Pipes and hoses**: carry water; perforated pipes are used for drip irrigation and underground drainage.\n\n# Garden tools\n\n| Tool | Description | Use |\n| --- | --- | --- |\n| Hoe | Metal blade on a wooden handle | Weeding, ridging, making heaps |\n| Cutlass | Long flat steel blade | Clearing bush, cutting |\n| Garden trowel | Small scoop-shaped blade | Transplanting seedlings |\n| Hand fork | Small fork with three or four prongs | Loosening soil around seedlings |\n| Shovel and spade | Broad blade on a long handle | Moving soil; digging |\n| Rake | Row of teeth on a long handle | Levelling beds, gathering trash |\n| Sickle | Curved blade | Cutting grass and harvesting rice |\n| Secateurs | Short strong scissors with a spring | Pruning small branches |\n| Shears | Large two-bladed scissors | Trimming hedges and lawns |\n| Budding knife | Small knife with a bone spatula | Budding and grafting |\n| Emasculator | Pincer-like clamp | Bloodless castration of male animals |\n\n**Maintenance**: wash off soil after use, sharpen blades, oil metal parts, tighten or replace loose handles, store in a dry place.\n\n# Tractor and animal-drawn implements\n\n- **Plough**: discs or mouldboard, frame, hitch, depth (furrow) wheel. Turns the soil.\n- **Harrow**: discs or spike teeth on a frame. Breaks clods.\n- **Ridger**: two mouldboards back to back. Makes ridges.\n- **Planter**: seed hopper, metering plate, furrow opener and covering device. Sows seed evenly.\n- **Cultivator**: tines or shovels. Loosens soil and removes weeds between rows.\n\nMaintain them by cleaning after use, greasing bearings, tightening bolts, sharpening discs and storing under a shed.\n\n# Harvesting, processing and storage equipment\n\nGroundnut lifter (lifts pods from the soil); scythe and sickle (cut grass and cereals); **sheller** (removes maize grain or groundnut shells); **dehusker** (removes husks from rice or maize); **winnower** (separates grain from chaff); **dryer** (dries grain to safe moisture); **grater** (grates cassava for garri); **processor** (mills or presses produce); **refrigerator** (stores perishables cold).\n\n# The farm tractor\n\n**Major components**: engine; fuel system; cooling system (radiator, fan, water pump); lubrication system; electrical system (battery, starter); transmission (clutch, gearbox); hydraulic system and three-point linkage; power take-off (PTO); steering; brakes; wheels and tyres.\n\n**Servicing and maintenance**\n\n- **Daily**: check engine oil, radiator water, fuel and tyre pressure; clean the air filter in dusty conditions; grease nipples.\n- **Periodic**: change engine oil and filters after the hours in the manual; check battery water; check the fan belt and brakes.\n- **Always**: keep it clean and store it under a shed."
+      },
+      "cards": [
+        {
+          "front": "Garden trowel",
+          "back": "A small scoop-shaped hand tool used for transplanting seedlings."
+        },
+        {
+          "front": "Secateurs",
+          "back": "Short spring-loaded scissors used for pruning small branches."
+        },
+        {
+          "front": "Shears",
+          "back": "Large two-bladed scissors used for trimming hedges and lawns."
+        },
+        {
+          "front": "Budding knife",
+          "back": "A small knife with a bone spatula used in budding and grafting."
+        },
+        {
+          "front": "Emasculator",
+          "back": "A clamp used for bloodless castration of male animals."
+        },
+        {
+          "front": "Seed hopper",
+          "back": "The part of a planter that holds the seed."
+        },
+        {
+          "front": "Winnower",
+          "back": "Equipment that separates grain from chaff."
+        },
+        {
+          "front": "Three-point linkage",
+          "back": "The hydraulic hitch on a tractor that attaches, lifts and lowers implements."
+        },
+        {
+          "front": "Daily tractor checks",
+          "back": "Engine oil, radiator water, fuel, tyre pressure and air filter."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which tool would you use to transplant tomato seedlings from a nursery tray?",
+          "options": ["Shovel", "Garden trowel", "Rake", "Sickle"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The part of a planter that controls how many seeds drop at a time is the",
+          "options": ["metering plate", "hitch", "disc", "depth wheel"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which equipment is used to separate rice grains from the chaff after threshing?",
+          "options": ["Grater", "Dryer", "Groundnut lifter", "Winnower"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which tractor system includes the radiator, the fan and the water pump?",
+          "options": [
+            "Lubrication system",
+            "Hydraulic system",
+            "Cooling system",
+            "Electrical system"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which tool is used to trim an Ixora hedge?",
+          "options": ["Shears", "Budding knife", "Hand fork", "Emasculator"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the routine servicing a tractor driver at the Oyo State ADP should carry out daily, and periodically, to keep the tractor in good condition.",
+          "markScheme": [
+            "Daily: check engine oil level (top up)",
+            "Daily: check radiator water/coolant level",
+            "Daily: check tyre pressure and fuel, and grease moving parts (grease nipples)",
+            "Daily/as needed: clean the air filter, especially in dusty/harmattan conditions",
+            "Periodic: change engine oil and filters after the stated hours",
+            "Periodic: check battery water/terminals, fan belt tension or brakes; store under a shed"
+          ],
+          "modelAnswer": "Every day before work, the driver should check the engine oil with the dipstick and top it up, check the water in the radiator, check the fuel and tyre pressure, and grease all the grease nipples. In dusty weather, especially during the harmattan, the air filter should be cleaned daily. Periodically, after the number of hours stated in the manual, the engine oil and filters should be changed, the battery water and terminals checked, and the fan belt and brakes adjusted. The tractor should be washed and parked under a shed.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Daily: check the engine oil with dipstick, check the radiator water, check tyre pressure and grease the nipples, and clean the air cleaner because of dust. After some hours of work: change the engine oil and the oil filter, and check the battery water and the fan belt.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "check the engine oil with dipstick"
+                },
+                {
+                  "point": 1,
+                  "quote": "check the radiator water"
+                },
+                {
+                  "point": 2,
+                  "quote": "check tyre pressure and grease the nipples"
+                },
+                {
+                  "point": 3,
+                  "quote": "clean the air cleaner because of dust"
+                },
+                {
+                  "point": 4,
+                  "quote": "change the engine oil and the oil filter"
+                },
+                {
+                  "point": 5,
+                  "quote": "check the battery water and the fan belt"
+                }
+              ],
+              "feedback": "A complete servicing routine, divided correctly into daily and periodic tasks. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Before starting each day the operator checks oil level, coolant level, fuel and tyres, and lubricates all grease points. During harmattan the air filter is cleaned daily. At intervals stated in the manual, engine oil and filters are replaced, brakes adjusted and battery electrolyte topped up.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "checks oil level"
+                },
+                {
+                  "point": 1,
+                  "quote": "coolant level"
+                },
+                {
+                  "point": 2,
+                  "quote": "fuel and tyres, and lubricates all grease points"
+                },
+                {
+                  "point": 3,
+                  "quote": "During harmattan the air filter is cleaned daily"
+                },
+                {
+                  "point": 4,
+                  "quote": "engine oil and filters are replaced"
+                },
+                {
+                  "point": 5,
+                  "quote": "brakes adjusted and battery electrolyte topped up"
+                }
+              ],
+              "feedback": "Accurate, and linking the air filter to the harmattan shows good understanding. All six marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Check oil and water every day. Wash the tractor after work. Change the oil.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Check oil"
+                },
+                {
+                  "point": 1,
+                  "quote": "water every day"
+                },
+                {
+                  "point": 4,
+                  "quote": "Change the oil"
+                }
+              ],
+              "feedback": "Oil, water and oil change are right. Add tyre pressure and greasing, cleaning the air filter, and periodic checks of the battery and fan belt."
+            },
+            {
+              "tier": "partial",
+              "text": "Daily: check engine oil, fuel and tyres. Weekly: paint the tractor and clean the seats.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "check engine oil"
+                },
+                {
+                  "point": 2,
+                  "quote": "fuel and tyres"
+                }
+              ],
+              "feedback": "Your daily checks are a good start. Painting is not servicing. Add radiator water, the air filter, and periodic oil and filter changes and battery checks."
+            },
+            {
+              "tier": "weak",
+              "text": "The tractor should be driven slowly and not used in the rain.",
+              "meets": [],
+              "feedback": "Careful driving helps, but servicing means checks and replacements: oil, radiator water, tyres, greasing, air filter, oil and filter changes."
+            },
+            {
+              "tier": "weak",
+              "text": "Take the tractor to the mechanic when it breaks down.",
+              "meets": [],
+              "feedback": "Servicing is done to prevent breakdowns. List the daily checks (oil, water, tyres, grease, air filter) and the periodic ones (oil and filter change, battery)."
+            }
+          ]
+        },
+        {
+          "prompt": "Name the tool or equipment used for each of these jobs and describe one way of maintaining each: (a) bloodless castration of a young bull, (b) pruning the small branches of an orange tree, (c) grating cassava for garri, (d) transplanting pepper seedlings.",
+          "markScheme": [
+            "(a) Emasculator, with maintenance (clean and disinfect after use, oil the hinge)",
+            "(b) Secateurs (accept pruning shears), with maintenance (sharpen/clean sap off blades, oil the spring)",
+            "(c) Cassava grater (mechanical or hand grater), with maintenance (wash immediately after use to remove starch, dry, replace worn grating surface)",
+            "(d) Garden trowel, with maintenance (wash off soil, dry, store in a dry place/oil to prevent rust)"
+          ],
+          "modelAnswer": "(a) An emasculator is used. It should be washed and disinfected after each use and its hinge oiled. (b) Secateurs are used. Wipe the sap off the blades, sharpen them, and oil the spring. (c) A cassava grater is used. It must be washed immediately after use so that starch and juice do not dry on it, dried, and the grating sheet replaced when it wears. (d) A garden trowel is used. Wash off the soil after use, dry it, and store it in a dry place to prevent rust.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Emasculator: clean and disinfect it after every use. (b) Secateurs: sharpen the blades and oil the spring. (c) Cassava grater: wash it immediately after use and dry it. (d) Garden trowel: wash off the soil and oil it before storing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) Emasculator: clean and disinfect it after every use"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) Secateurs: sharpen the blades and oil the spring"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) Cassava grater: wash it immediately after use and dry it"
+                },
+                {
+                  "point": 3,
+                  "quote": "(d) Garden trowel: wash off the soil and oil it before storing"
+                }
+              ],
+              "feedback": "Every tool correct with a proper maintenance practice. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Castration: the emasculator, whose jaws should be cleaned with disinfectant. Pruning: secateurs, which should be kept sharp and wiped free of sap. Grating: a motorised cassava grater, which must be washed to remove starch at the end of each day. Transplanting: hand trowel, which is cleaned and kept dry so it does not rust.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the emasculator, whose jaws should be cleaned with disinfectant"
+                },
+                {
+                  "point": 1,
+                  "quote": "secateurs, which should be kept sharp and wiped free of sap"
+                },
+                {
+                  "point": 2,
+                  "quote": "a motorised cassava grater, which must be washed to remove starch at the end of each day"
+                },
+                {
+                  "point": 3,
+                  "quote": "hand trowel, which is cleaned and kept dry so it does not rust"
+                }
+              ],
+              "feedback": "All four correct, with maintenance that fits each tool. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Knife. (b) Secateurs, oil them. (c) Grater, wash it. (d) Hoe, clean it.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) Secateurs, oil them"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) Grater, wash it"
+                }
+              ],
+              "feedback": "Secateurs and grater are right. Bloodless castration uses an emasculator, not a knife, and seedlings are transplanted with a garden trowel, not a hoe."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Emasculator. (b) Cutlass, sharpen it. (c) Grater, wash it after use. (d) Trowel, keep it dry.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "(c) Grater, wash it after use"
+                },
+                {
+                  "point": 3,
+                  "quote": "(d) Trowel, keep it dry"
+                }
+              ],
+              "feedback": "Grater and trowel are right, and emasculator is the correct tool for (a) but needs a maintenance practice. A cutlass tears small branches; secateurs make a clean cut."
+            },
+            {
+              "tier": "weak",
+              "text": "All of them use a cutlass because it can cut anything. Sharpen it with a file.",
+              "meets": [],
+              "feedback": "Each job has its own tool: emasculator, secateurs, cassava grater and garden trowel. Learn them from the table in the reading."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Budding knife. (b) Shears. (c) Pestle and mortar. (d) Spade.",
+              "meets": [],
+              "feedback": "None of these fits the job. Castration uses an emasculator, pruning small branches uses secateurs, garri needs a cassava grater, and seedlings need a trowel. Give maintenance for each too."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Practical: horticultural, livestock, fishing and survey equipment; identifying seeds and storage organs",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the uses and maintenance of horticultural tools such as the dibber, pruning knife, secateurs, shears, budding knife and measuring tape;\n2. identify and state the uses and care of livestock and fishing equipment: waterers, feeders, milking machine, nets, hook and line, branding iron and egg candler;\n3. identify and state the uses and care of survey equipment;\n4. identify seeds, seedlings, fruits and storage organs of common crops, pasture grasses and legumes, and their essential parts.\n\n## Materials\n\nA dibber, pruning knife, secateurs, budding knife and measuring tape; a poultry drinker and a feeding trough; a cast net and hook and line; an egg candler (or a torch and a cardboard tube); ranging poles, pegs, arrows, a 20 m chain and a prismatic compass; seeds of maize, cowpea, groundnut and oil palm; a yam tuber, cassava root, onion bulb, cocoyam corm, ginger rhizome and Irish potato.\n\n## Starter (5 minutes)\n\nCandle an egg in a darkened corner of the room. Ask: what are we looking for?\n\n## Development\n\n1. Hand round the horticultural tools. Students state each use and one maintenance practice.\n2. Show each piece of livestock and fishing equipment. Discuss use and care.\n3. Set out a straight line across the school field with ranging poles; measure it with the chain and arrows. Explain each instrument and its care.\n4. Lay out the seeds and storage organs. Students identify each and name its type: tuber, root, bulb, corm, rhizome. Cut open a maize grain and a bean seed to show the parts.\n\n## Class activity\n\nA rotating practical: ten numbered stations, each with a specimen. Students identify it and write one use or feature.\n\n## Evaluation\n\n1. What is an egg candler used for?\n2. What is the use of arrows in chain surveying?\n3. Is the onion a bulb or a corm?\n\n## Assignment\n\nQuiz on Thursday based on the specimen stations.",
+      "reading": {
+        "title": "Identifying equipment and planting materials",
+        "content": "# Horticultural tools\n\n- **Dibber**: a pointed stick or metal rod for making holes to plant seeds and seedlings.\n- **Pruning knife**: a curved knife for cutting branches and shaping plants.\n- **Secateurs** and **shears**: pruning small branches; trimming hedges and lawns.\n- **Budding knife**: making the cut and lifting the bark in budding.\n- **Measuring tape**: measuring plot sizes and spacing.\n- **Hand fork, hand trowel, hoe and garden fork**: loosening soil, transplanting, weeding, turning compost.\n\nKeep blades sharp, clean off sap and soil, oil metal parts, and store tools dry.\n\n# Livestock and fishing equipment\n\n| Equipment | Use | Care |\n| --- | --- | --- |\n| Waterers (drinkers) | Supply clean water to animals and birds | Wash and disinfect daily |\n| Feeders and troughs | Hold feed so it is not wasted or soiled | Clean regularly; keep dry |\n| Milking machine | Milks cows by suction | Wash and sterilise teat cups and pipes after each milking |\n| Branding iron | Marks animals for identification | Clean; keep rust-free |\n| Egg candler | Shines light through eggs to check fertility, cracks and blood spots | Keep bulb and lens clean |\n| Nets (cast, gill, seine, drag) | Catch fish | Wash, dry in shade, mend holes |\n| Hook and line | Catches fish one at a time | Keep hooks sharp and rust-free |\n\n# Farm surveying equipment\n\n- **Measuring tape** and **Gunter's chain** (20 m, 100 links): measure distances.\n- **Ranging poles**: mark the ends of survey lines so they are straight.\n- **Pins or arrows**: mark each chain length on the ground.\n- **Pegs**: mark corners and stations.\n- **Offset staff**: measures short distances at right angles from the chain line.\n- **Plumb bob**: checks that poles stand vertically.\n- **Prismatic compass**: measures bearings.\n- **Theodolite**: measures horizontal and vertical angles precisely.\n\nCare: clean and dry chains and tapes, oil chain links, keep the compass away from iron, and carry the theodolite in its box.\n\n# Seeds, fruits and storage organs\n\n**Seeds**: maize (grain, a monocot with one cotyledon and endosperm); cowpea and groundnut (dicots, two cotyledons, no endosperm); oil palm (a nut inside a fleshy fruit).\n\nA seed's **essential parts** are the **testa** (seed coat), the **embryo** (radicle, plumule and cotyledons), and in cereals the **endosperm** that stores food.\n\n**Storage organs**\n\n| Organ | Crop | Feature |\n| --- | --- | --- |\n| Stem tuber | Yam, Irish potato | Swollen stem with buds (eyes) |\n| Root tuber | Cassava, sweet potato | Swollen root with no buds |\n| Bulb | Onion | Short stem with fleshy leaves |\n| Corm | Cocoyam | Swollen upright stem base |\n| Rhizome | Ginger | Horizontal underground stem with nodes |\n\n**Pasture plants**: guinea grass and elephant grass have long narrow leaves and fibrous roots; legumes such as Centrosema and Stylosanthes have compound leaves and root nodules.\n\n**Example.** A cocoyam has rings (nodes) and a bud at the top, so it is a stem (corm). A cassava root has no buds or nodes, which is why cassava is planted from stem cuttings, not roots."
+      },
+      "cards": [
+        {
+          "front": "Dibber",
+          "back": "A pointed tool for making holes to plant seeds and seedlings."
+        },
+        {
+          "front": "Egg candler",
+          "back": "A device that shines light through eggs to check fertility, cracks and blood spots."
+        },
+        {
+          "front": "Care of fishing nets",
+          "back": "Wash, dry in the shade and mend holes."
+        },
+        {
+          "front": "Gunter's chain",
+          "back": "A survey chain 20 m long with 100 links."
+        },
+        {
+          "front": "Arrows (pins)",
+          "back": "Mark each chain length on the ground in chain surveying."
+        },
+        {
+          "front": "Offset staff",
+          "back": "Measures short distances at right angles from the chain line."
+        },
+        {
+          "front": "Essential parts of a seed",
+          "back": "Testa, embryo (radicle, plumule, cotyledons) and, in cereals, endosperm."
+        },
+        {
+          "front": "Corm",
+          "back": "A swollen upright underground stem base, as in cocoyam."
+        },
+        {
+          "front": "Rhizome",
+          "back": "A horizontal underground stem with nodes, as in ginger."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A poultry farmer shines a light through eggs before setting them in the incubator. The equipment used is",
+          "options": ["an egg candler", "a brooder", "a waterer", "a debeaker"],
+          "answer": "A"
+        },
+        {
+          "prompt": "In chain surveying, the pins used to mark each chain length on the ground are called",
+          "options": ["ranging poles", "pegs", "arrows", "offsets"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Ginger is propagated from a horizontal underground stem with nodes called a",
+          "options": ["bulb", "corm", "root tuber", "rhizome"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which part of a maize grain stores food for the young seedling?",
+          "options": ["Radicle", "Endosperm", "Plumule", "Testa"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which piece of equipment should be washed and sterilised after every use to prevent mastitis in dairy cows?",
+          "options": [
+            "Branding iron",
+            "Feeding trough",
+            "Milking machine",
+            "Cast net"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "You are shown a yam tuber, a cassava root, an onion and a cocoyam. Identify the type of storage organ each is and give one feature that shows it.",
+          "markScheme": [
+            "Yam: stem tuber, shown by buds/eyes or growth from the head",
+            "Cassava: root tuber, shown by no buds/nodes (a swollen root)",
+            "Onion: bulb, shown by fleshy leaves on a short stem",
+            "Cocoyam: corm, shown by rings/nodes and a terminal bud on a swollen upright stem base"
+          ],
+          "modelAnswer": "Yam is a stem tuber: it has buds, and new shoots grow from its head. Cassava is a root tuber: it is a swollen root with no buds or nodes. Onion is a bulb: it is a short stem surrounded by layers of fleshy leaves. Cocoyam is a corm: it is a swollen, upright stem base with rings of nodes and a bud at the top.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Yam is a stem tuber because it has eyes from where it sprouts. Cassava is a root tuber because it has no buds. Onion is a bulb made of fleshy leaves. Cocoyam is a corm because it has rings and a bud at the top.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Yam is a stem tuber because it has eyes from where it sprouts"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cassava is a root tuber because it has no buds"
+                },
+                {
+                  "point": 2,
+                  "quote": "Onion is a bulb made of fleshy leaves"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cocoyam is a corm because it has rings and a bud at the top"
+                }
+              ],
+              "feedback": "All four identified with a correct feature. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Yam: stem tuber, sprouts from the head. Cassava: root tuber, has no nodes. Onion: bulb, short stem with scale leaves. Cocoyam: corm, an upright swollen stem with nodes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Yam: stem tuber, sprouts from the head"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cassava: root tuber, has no nodes"
+                },
+                {
+                  "point": 2,
+                  "quote": "Onion: bulb, short stem with scale leaves"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cocoyam: corm, an upright swollen stem with nodes"
+                }
+              ],
+              "feedback": "Accurate and well described. All four marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Yam is a tuber, cassava is a tuber, onion is a bulb because it has layers, cocoyam is a tuber.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "onion is a bulb because it has layers"
+                }
+              ],
+              "feedback": "Onion is right. Say which kind of tuber: yam is a stem tuber (it has buds), cassava a root tuber (no buds). Cocoyam is a corm, with rings of nodes."
+            },
+            {
+              "tier": "partial",
+              "text": "Yam is a stem tuber because it has buds. Cassava is a stem tuber. Onion is a bulb. Cocoyam is a rhizome because it grows underground.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Yam is a stem tuber because it has buds"
+                }
+              ],
+              "feedback": "Yam is right. Cassava has no buds, so it is a root tuber. Give a feature for onion (fleshy leaves). Cocoyam grows upright with rings of nodes, so it is a corm; a rhizome grows sideways."
+            },
+            {
+              "tier": "weak",
+              "text": "They are all roots because they are found under the soil.",
+              "meets": [],
+              "feedback": "Growing underground does not make an organ a root. Look for buds and nodes: yam and cocoyam are stems, onion is a bulb of leaves, and only cassava is a true root."
+            },
+            {
+              "tier": "weak",
+              "text": "Yam is a fruit, cassava is a root, onion is a vegetable, cocoyam is a tuber.",
+              "meets": [],
+              "feedback": "These mix uses with plant parts. The question asks the type of storage organ: stem tuber, root tuber, bulb or corm, each with a feature."
+            }
+          ]
+        },
+        {
+          "prompt": "Describe how you would use ranging poles, a chain, arrows and an offset staff to survey the boundary of a rectangular plot on the school farm, and state how each instrument should be cared for.",
+          "markScheme": [
+            "Ranging poles placed at the corners/ends of each line (and in between) to keep the line straight",
+            "Chain stretched along the line between poles to measure the distance",
+            "Arrows/pins put in at the end of each chain length and collected to count the chains",
+            "Offset staff used to measure short perpendicular distances from the chain line to features",
+            "Care: chain cleaned/dried/oiled; poles kept straight/stored upright; arrows counted and kept from rust"
+          ],
+          "modelAnswer": "Place a ranging pole at each corner of the plot and, on long sides, more poles in between, sighting them so the line is straight. Two people stretch the chain along the line between the poles. At the end of each chain length the leader pushes in an arrow; the follower picks the arrows up, so counting them gives the number of chains measured. The offset staff is used to measure short distances at right angles from the chain line to features such as a tree or the edge of a path. Afterwards, the chain is cleaned, dried and oiled, the ranging poles are stored upright so they do not bend, and the arrows are counted and kept free from rust.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Put ranging poles at the four corners and between them so you can sight a straight line. Stretch the chain between the poles to measure the length. At the end of each chain put an arrow in the ground, and the follower collects them to count chains. Use the offset staff to measure the distance at right angles from the chain to things like trees. Clean and oil the chain after use, keep the poles straight and count the arrows so none is lost.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Put ranging poles at the four corners and between them so you can sight a straight line"
+                },
+                {
+                  "point": 1,
+                  "quote": "Stretch the chain between the poles to measure the length"
+                },
+                {
+                  "point": 2,
+                  "quote": "At the end of each chain put an arrow in the ground, and the follower collects them to count chains"
+                },
+                {
+                  "point": 3,
+                  "quote": "Use the offset staff to measure the distance at right angles from the chain to things like trees"
+                },
+                {
+                  "point": 4,
+                  "quote": "Clean and oil the chain after use, keep the poles straight and count the arrows"
+                }
+              ],
+              "feedback": "A clear, correct procedure with sensible care for each instrument. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Ranging poles are erected at each station and intermediate points to range the line straight. The chain is laid out along the ranged line and pulled taut. An arrow marks each full chain length. Offsets to boundary features are taken with the offset staff, perpendicular to the chain line. Care: wipe and oil chain links, store ranging poles upright, keep arrows dry.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ranging poles are erected at each station and intermediate points to range the line straight"
+                },
+                {
+                  "point": 1,
+                  "quote": "The chain is laid out along the ranged line and pulled taut"
+                },
+                {
+                  "point": 2,
+                  "quote": "An arrow marks each full chain length"
+                },
+                {
+                  "point": 3,
+                  "quote": "Offsets to boundary features are taken with the offset staff, perpendicular to the chain line"
+                },
+                {
+                  "point": 4,
+                  "quote": "wipe and oil chain links, store ranging poles upright, keep arrows dry"
+                }
+              ],
+              "feedback": "Precise surveying language and every step covered. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "The ranging poles are put at the corners. The chain measures the distance. The arrows show the direction of north.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The ranging poles are put at the corners"
+                },
+                {
+                  "point": 1,
+                  "quote": "The chain measures the distance"
+                }
+              ],
+              "feedback": "Poles and chain are right. Arrows mark each chain length, not north (that is the compass). Describe the offset staff and how to care for each instrument."
+            },
+            {
+              "tier": "partial",
+              "text": "Fix the ranging poles in a straight line, measure with the chain, push in an arrow after each chain. Keep the chain clean and oiled.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fix the ranging poles in a straight line"
+                },
+                {
+                  "point": 1,
+                  "quote": "measure with the chain"
+                },
+                {
+                  "point": 2,
+                  "quote": "push in an arrow after each chain"
+                },
+                {
+                  "point": 4,
+                  "quote": "Keep the chain clean and oiled"
+                }
+              ],
+              "feedback": "A sound procedure. You left out the offset staff: it measures short distances at right angles from the chain line to features."
+            },
+            {
+              "tier": "weak",
+              "text": "Walk round the plot and count your steps to know the size.",
+              "meets": [],
+              "feedback": "Pacing gives only a rough estimate. The question asks how the poles, chain, arrows and offset staff are used, and how to care for them."
+            },
+            {
+              "tier": "weak",
+              "text": "The chain is used to tie the ranging poles together so that the boundary is fenced.",
+              "meets": [],
+              "feedback": "The chain is a measuring instrument, not a fence. Describe how poles mark the line, the chain measures it, arrows count chain lengths and the staff takes offsets."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Practical crop production: pests and diseases, plant population, seed tests and propagation",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. identify the main field and storage pests and crop diseases from specimens, with their damage, causal agents and control;\n2. state the planting dates and seed rates of common crops, and calculate plant population;\n3. carry out a germination test and calculate the germination percentage;\n4. describe seedbed preparation, fertilizer application, mulching, use of pesticides and watering;\n5. name forest products and by-products;\n6. describe direct sowing, transplanting, layering, grafting and budding.\n\n## Materials\n\nPreserved specimens of cotton stainer, yam beetle and weevil; diseased leaves (cassava mosaic, maize rust); 100 maize seeds, petri dishes, cotton wool and water; a knapsack sprayer, PPE and an empty pesticide container; orange seedlings, a budding knife and budding tape; samples of timber, charcoal, gum arabic and chewing sticks.\n\n## Starter (5 minutes)\n\nAsk: only half of a farmer's maize seed came up. How could the farmer have found out before planting?\n\n## Development\n\n1. Identify the pest and disease specimens in rotation; for each, state the damage or symptom, cause and control.\n2. Revise planting dates, seed rates and spacing for maize, cowpea, yam and cassava. Work the plant population formula on the board.\n3. Set up a germination test: 100 seeds on moist cotton wool in each of four dishes. Count after 7 days and calculate the percentage.\n4. Demonstrate seedbed preparation, ring fertilizer application, mulching, safe use of a knapsack sprayer, and watering.\n5. List forest products and by-products.\n6. Demonstrate T-budding on an orange rootstock, and describe grafting, layering, transplanting and direct sowing.\n\n## Class activity\n\nGroups calculate the plant population for three crops from their spacing, then record their germination test.\n\n## Evaluation\n\n1. What is the plant population of maize at 75 cm x 25 cm with one plant per stand on one hectare?\n2. 84 of 100 seeds germinate. What is the germination percentage?\n3. What is the difference between budding and grafting?\n\n## Assignment\n\nProblem set questions 4 and 5 and both written questions, due next Tuesday.",
+      "reading": {
+        "title": "Practical crop production",
+        "content": "# Identifying pests and diseases\n\n- **Cotton stainer**: red and black bug on cotton bolls; sucks seeds and stains lint. Control: insecticides, destroy alternate hosts.\n- **Yam beetle**: black beetle that bores holes in yam tubers. Control: treat setts with insecticide, crop rotation.\n- **Grain weevil**: small brown snout beetle in stored grain. Control: dry grain, hermetic storage, fumigation.\n- **Cassava mosaic** (virus, spread by whitefly): mottled, twisted leaves. Control: clean cuttings, resistant varieties.\n- **Maize rust** (fungus): rusty-brown pustules on leaves. Control: resistant varieties, fungicide.\n\n# Planting dates, seed rates and plant population\n\n| Crop | Planting time (south) | Spacing | Seed rate per hectare |\n| --- | --- | --- | --- |\n| Maize | March–April; August | 75 cm x 25 cm | 20–25 kg |\n| Cowpea | June–August | 60 cm x 30 cm | 25–30 kg |\n| Yam | March–April | 1 m x 1 m | 10,000 setts |\n| Cassava | April–October | 1 m x 1 m | 10,000 cuttings |\n\n**Plant population** = area / (spacing between rows x spacing within rows) x plants per stand.\n\n**Worked example.** Maize at 75 cm x 25 cm, one plant per stand, on 1 ha (10,000 m²): 10,000 / (0.75 x 0.25) = 10,000 / 0.1875 = 53,333 plants.\n\n# Seed quality tests\n\nGood seed is viable, pure, free of disease and damage, and true to variety. A **germination test** checks viability: place 100 seeds on moist cotton wool or paper in a petri dish, keep moist and warm, and count the seedlings after about 7 days.\n\nGermination percentage = seeds germinated / seeds tested x 100.\n\nIf 85 out of 100 germinate, the germination percentage is 85%. Below about 80%, the farmer should raise the seed rate or buy better seed.\n\n# Crop husbandry operations\n\n- **Seedbed preparation**: clear, plough, harrow, then make beds, ridges or mounds to suit the crop.\n- **Fertilizer application**: right type, right rate, right time, right method; keep fertilizer off leaves and stems.\n- **Mulching**: dry grass or leaves on the soil conserve moisture and suppress weeds.\n- **Pesticides**: read the label; wear gloves, mask and boots; spray with the wind behind you; never eat or smoke while spraying; dispose of containers safely.\n- **Watering**: early morning or evening, at the root zone.\n\n# Forest products\n\n**Products**: timber, poles, fuelwood. **By-products**: charcoal, sawdust, gum arabic, latex, fruits, honey, medicinal bark and roots, chewing sticks, bush meat.\n\n# Propagating horticultural plants\n\n- **Direct sowing**: seed sown where the plant will grow (maize, okro).\n- **Transplanting**: raising seedlings in a nursery, then moving them to the field (tomato, pepper).\n- **Layering**: a stem is made to root while still attached to the parent (ixora, bougainvillea); in **marcotting** soil is wrapped round a wounded branch.\n- **Grafting**: a shoot (**scion**) is joined to a rooted **stock**.\n- **Budding**: a single bud is inserted under the bark of the stock, as in T-budding of citrus.\n\nGrafted and budded plants fruit earlier and are true to type."
+      },
+      "cards": [
+        {
+          "front": "Plant population formula",
+          "back": "Area / (between-row spacing x within-row spacing) x plants per stand."
+        },
+        {
+          "front": "Germination percentage",
+          "back": "Seeds germinated / seeds tested x 100."
+        },
+        {
+          "front": "Seed rate of maize",
+          "back": "About 20–25 kg per hectare."
+        },
+        {
+          "front": "Viability",
+          "back": "The ability of a seed to germinate."
+        },
+        {
+          "front": "Mulching",
+          "back": "Covering the soil with dry grass or leaves to conserve moisture and suppress weeds."
+        },
+        {
+          "front": "Forest by-products",
+          "back": "Charcoal, sawdust, gum arabic, latex, honey, medicinal bark, chewing sticks."
+        },
+        {
+          "front": "Scion",
+          "back": "The shoot or bud from the desired variety that is joined to the stock in grafting."
+        },
+        {
+          "front": "Budding",
+          "back": "Inserting a single bud under the bark of a rootstock, as in T-budding of citrus."
+        },
+        {
+          "front": "Marcotting",
+          "back": "Air layering: wrapping soil around a wounded branch so it roots while on the parent plant."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A red and black bug feeding on cotton bolls leaves the lint stained. The pest is the",
+          "options": [
+            "yam beetle",
+            "cotton stainer",
+            "grain weevil",
+            "variegated grasshopper"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Of 200 cowpea seeds tested, 170 germinate. The germination percentage is",
+          "options": ["85%", "70%", "17%", "117%"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Yam is planted at 1 m x 1 m with one sett per stand. How many setts are needed for 0.5 hectare?",
+          "options": ["10,000", "2,500", "20,000", "5,000"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A single bud from a sweet orange is inserted under the bark of a rough lemon seedling. This method is",
+          "options": ["layering", "grafting", "budding", "marcotting"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is a safe practice when spraying pesticide with a knapsack sprayer?",
+          "options": [
+            "Spraying into the wind",
+            "Wearing gloves, a mask and boots",
+            "Eating while spraying to save time",
+            "Washing the sprayer in a fish pond"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A farmer at Ogbomoso plants 2 hectares of maize at 75 cm x 25 cm with one plant per stand. (a) Calculate the plant population. (b) In a germination test, 88 of 100 seeds germinated. If a hectare normally needs 20 kg of seed at 100% germination, how much seed should the farmer buy for the 2 hectares?",
+          "markScheme": [
+            "Area of one stand = 0.75 x 0.25 = 0.1875 m² (with 2 ha = 20,000 m²)",
+            "Plant population = 20,000 / 0.1875 = 106,667 plants (accept 106,666)",
+            "Germination percentage = 88%",
+            "Seed needed at 100% germination = 2 x 20 = 40 kg",
+            "Adjusted seed = 40 / 0.88 = about 45.5 kg (accept 45–46 kg)"
+          ],
+          "modelAnswer": "(a) Two hectares = 20,000 m². Each stand takes 0.75 m x 0.25 m = 0.1875 m². Plant population = 20,000 / 0.1875 = 106,667 plants. (b) The germination percentage is 88/100 x 100 = 88%. At 100% germination the farmer would need 2 x 20 = 40 kg. Because only 88% germinate, the farmer needs 40 / 0.88 = about 45.5 kg, so should buy about 46 kg.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Area = 2 ha = 20,000 m². One stand = 0.75 x 0.25 = 0.1875 m². Population = 20,000 / 0.1875 = 106,667 plants. (b) Germination = 88%. Seed for 2 ha = 40 kg. Adjusted = 40 / 0.88 = 45.5 kg.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "One stand = 0.75 x 0.25 = 0.1875 m²"
+                },
+                {
+                  "point": 1,
+                  "quote": "Population = 20,000 / 0.1875 = 106,667 plants"
+                },
+                {
+                  "point": 2,
+                  "quote": "Germination = 88%"
+                },
+                {
+                  "point": 3,
+                  "quote": "Seed for 2 ha = 40 kg"
+                },
+                {
+                  "point": 4,
+                  "quote": "Adjusted = 40 / 0.88 = 45.5 kg"
+                }
+              ],
+              "feedback": "Every step correct, with the metres and hectares converted properly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Spacing area = 0.75 m x 0.25 m = 0.1875 m² per plant. For 20,000 m² the population is 106,666 plants. Germination is 88/100 x 100 = 88%. Normal seed = 20 x 2 = 40 kg, but since only 88% germinate, seed needed = 40 x 100/88 = 45.45 kg, about 46 kg.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Spacing area = 0.75 m x 0.25 m = 0.1875 m² per plant"
+                },
+                {
+                  "point": 1,
+                  "quote": "For 20,000 m² the population is 106,666 plants"
+                },
+                {
+                  "point": 2,
+                  "quote": "Germination is 88/100 x 100 = 88%"
+                },
+                {
+                  "point": 3,
+                  "quote": "Normal seed = 20 x 2 = 40 kg"
+                },
+                {
+                  "point": 4,
+                  "quote": "seed needed = 40 x 100/88 = 45.45 kg, about 46 kg"
+                }
+              ],
+              "feedback": "Correct throughout, and rounding up to 46 kg is sensible practice. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "Population = 20,000 / (0.75 x 0.25) = 106,667 plants. Seed = 40 kg.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(0.75 x 0.25)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Population = 20,000 / (0.75 x 0.25) = 106,667 plants"
+                },
+                {
+                  "point": 3,
+                  "quote": "Seed = 40 kg"
+                }
+              ],
+              "feedback": "Part (a) is correct. In (b), only 88% of the seed germinates, so 40 kg is not enough: divide by 0.88 to get about 45.5 kg."
+            },
+            {
+              "tier": "partial",
+              "text": "Population = 2 / (75 x 25) = 0.001 plants. Germination is 88%, so seed = 40 x 0.88 = 35.2 kg.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Germination is 88%"
+                },
+                {
+                  "point": 3,
+                  "quote": "40 x 0.88"
+                }
+              ],
+              "feedback": "Convert to metres and square metres first: 20,000 m² / (0.75 m x 0.25 m) = 106,667 plants. With poorer germination you need more seed, not less: 40 / 0.88 = 45.5 kg.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Population = 75 x 25 = 1,875 plants for each hectare.",
+              "meets": [],
+              "feedback": "Multiplying the spacings gives the space each plant takes, not the number of plants. Divide the area in m² by that space, after changing cm to m."
+            },
+            {
+              "tier": "weak",
+              "text": "The farmer should buy 20 kg of seed because that is the seed rate for maize.",
+              "meets": [],
+              "feedback": "20 kg is for one hectare at full germination. The farmer has 2 hectares and only 88% germination; work out the plant population too."
+            }
+          ]
+        },
+        {
+          "prompt": "Describe how you would carry out T-budding to propagate a sweet orange on a rough lemon rootstock, and give two advantages of budding over raising oranges from seed.",
+          "markScheme": [
+            "Select a healthy rootstock (pencil-thick) and a budwood from a good sweet orange variety",
+            "Make a T-shaped cut in the bark of the rootstock about 15–25 cm above the soil and lift the bark flaps",
+            "Cut a shield-shaped bud from the budwood and slide it under the bark flaps",
+            "Tie firmly with budding tape (leaving the bud exposed), then later remove tape and cut back the stock above the bud once it takes",
+            "Advantage 1: plants are true to type / same quality as the parent",
+            "Advantage 2: earlier fruiting, or uses hardy/disease-resistant rootstock"
+          ],
+          "modelAnswer": "Choose a healthy rough lemon seedling about as thick as a pencil as the rootstock, and budwood from a high-yielding sweet orange tree. With a clean budding knife, make a T-shaped cut in the bark of the rootstock about 20 cm above the ground and gently lift the two flaps of bark. Cut a shield-shaped bud from the budwood and slide it under the flaps. Tie it firmly with budding tape, leaving the bud uncovered. After about three weeks, if the bud is still green it has taken; remove the tape and cut back the top of the rootstock above the bud so the bud grows. Budded plants are true to type, giving the same fruit as the parent, and they fruit earlier than seedlings; the rough lemon roots also make the tree hardy.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Choose a healthy rough lemon seedling as rootstock and a good sweet orange as budwood. Make a T cut on the bark of the stock about 20 cm above the soil and open the flaps. Cut a shield bud from the budwood and insert it under the flaps. Tie with budding tape leaving the bud out, and after it takes cut off the top of the stock above the bud. Budded oranges are true to type and fruit earlier than seedlings.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Choose a healthy rough lemon seedling as rootstock and a good sweet orange as budwood"
+                },
+                {
+                  "point": 1,
+                  "quote": "Make a T cut on the bark of the stock about 20 cm above the soil and open the flaps"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cut a shield bud from the budwood and insert it under the flaps"
+                },
+                {
+                  "point": 3,
+                  "quote": "Tie with budding tape leaving the bud out, and after it takes cut off the top of the stock above the bud"
+                },
+                {
+                  "point": 4,
+                  "quote": "Budded oranges are true to type"
+                },
+                {
+                  "point": 5,
+                  "quote": "fruit earlier than seedlings"
+                }
+              ],
+              "feedback": "Each step in the right order, and two correct advantages. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Select a vigorous rough lemon stock of pencil thickness and mature budwood from a proven sweet orange. Make a T-shaped incision in the stock bark and lift the bark. Slice off a shield-shaped bud and push it down under the bark. Wrap with polythene budding tape, exposing the bud. Remove tape after 3 weeks if the bud is green, then lop the stock above the union. Advantages: the rootstock gives resistance to disease and drought, and the tree is identical to the parent.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Select a vigorous rough lemon stock of pencil thickness and mature budwood from a proven sweet orange"
+                },
+                {
+                  "point": 1,
+                  "quote": "Make a T-shaped incision in the stock bark and lift the bark"
+                },
+                {
+                  "point": 2,
+                  "quote": "Slice off a shield-shaped bud and push it down under the bark"
+                },
+                {
+                  "point": 3,
+                  "quote": "Wrap with polythene budding tape, exposing the bud. Remove tape after 3 weeks if the bud is green, then lop the stock above the union"
+                },
+                {
+                  "point": 4,
+                  "quote": "the tree is identical to the parent"
+                },
+                {
+                  "point": 5,
+                  "quote": "the rootstock gives resistance to disease and drought"
+                }
+              ],
+              "feedback": "Precise, practical and complete; checking that the bud is still green before cutting back is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "Make a T cut on the rootstock, put the bud from the orange inside and tie it. Budding makes the orange fruit early.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Make a T cut on the rootstock"
+                },
+                {
+                  "point": 2,
+                  "quote": "put the bud from the orange inside"
+                },
+                {
+                  "point": 5,
+                  "quote": "Budding makes the orange fruit early"
+                }
+              ],
+              "feedback": "The core steps are there. Say how you choose the stock and budwood, how the tie leaves the bud exposed, and that the stock is cut back once the bud takes. Add that budded trees are true to type."
+            },
+            {
+              "tier": "partial",
+              "text": "Cut a branch from the sweet orange and join it to the rough lemon stem and tie it with tape. Advantage: true to type and fruits early.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "true to type"
+                },
+                {
+                  "point": 5,
+                  "quote": "fruits early"
+                }
+              ],
+              "feedback": "Both advantages are right, but joining a branch is grafting. Budding inserts a single shield-shaped bud under a T-shaped cut in the bark; describe those steps."
+            },
+            {
+              "tier": "weak",
+              "text": "Plant the orange seed inside the lemon fruit and they will grow together.",
+              "meets": [],
+              "feedback": "Budding joins a bud from the orange to a living rootstock. Reread the propagation section and describe the T-cut and inserting the bud."
+            },
+            {
+              "tier": "weak",
+              "text": "Budding is waiting for the orange tree to produce buds and flowers before transplanting it.",
+              "meets": [],
+              "feedback": "Budding is a method of vegetative propagation: a bud from one plant is inserted under the bark of another. Describe how it is done."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Practical: weeds, local breeds and handling, internal organs, by-products and feedstuffs",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. identify common weeds by their external features, state how each is dispersed and how it is controlled;\n2. identify common local and exotic breeds and describe methods of restraint, handling and grooming;\n3. identify the major organs of the digestive, reproductive and excretory systems of farm animals and state their functions;\n4. identify animal by-products: hides and skins, fur, feathers and horn;\n5. identify common feeds and feedstuffs and their local sources, and state their uses in rations.\n\n## Materials\n\nWeed specimens: spear grass, Tridax, goat weed, Siam weed, nut grass, Euphorbia; pictures of White Fulani, N'Dama, Muturu, West African Dwarf goat, Yankasa and Uda sheep, Large White pig; a rope halter; the viscera of a slaughtered goat or fowl from the market (in a tray, with gloves); a goat skin, feathers and a horn; samples of maize, groundnut cake, fish meal, rice bran, palm kernel cake, bone meal and oyster shell.\n\n## Starter (5 minutes)\n\nPass round a Tridax head and blow the seeds. Ask: how far could these travel, and what does that mean for the farmer next door?\n\n## Development\n\n1. Rotate the weed specimens. Record leaf, stem, root and flower features and the mode of dispersal of each.\n2. Show the breed pictures. Demonstrate tying a halter and holding a goat; describe casting cattle, the crush, the nose ring, and grooming.\n3. Wearing gloves, identify the organs in the tray and state their functions.\n4. Pass round the by-products and discuss their uses.\n5. Sort the feed samples into energy, protein and mineral sources.\n\n## Class activity\n\nStudents draw and label two weeds, two organs and two feedstuffs from the specimens.\n\n## Evaluation\n\n1. How is Tridax dispersed?\n2. Name the organ in the fowl that stores food before digestion.\n3. Is fish meal a source of energy or protein?\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Identifying weeds, breeds, organs and feedstuffs",
+        "content": "# Common weeds\n\n| Weed | Botanical name | Features | Dispersal |\n| --- | --- | --- | --- |\n| Spear grass | *Imperata cylindrica* | Sharp narrow leaves, white fluffy flower heads, underground rhizomes | Wind (seeds), rhizomes |\n| Tridax | *Tridax procumbens* | Hairy creeping stems, yellow-centred flowers | Wind (feathery pappus) |\n| Goat weed | *Ageratum conyzoides* | Hairy leaves, purple-blue flowers, goat smell | Wind, water |\n| Siam weed | *Chromolaena odorata* | Tall shrub, triangular leaves, strong smell | Wind |\n| Nut grass | *Cyperus rotundus* | Triangular stem, underground tubers | Tubers, farm tools |\n| Euphorbia | *Euphorbia heterophylla* | Milky latex, explosive pods | Explosive mechanism |\n\nOther modes of dispersal: animals (hooked seeds stick to fur), man (in seed, soil and tools), and water.\n\n**Control**: hand-pulling and hoeing for annuals; repeated digging out of rhizomes and tubers; mulching and cover crops; herbicides such as glyphosate for spear grass; crop rotation; slashing before seeding.\n\n# Breeds and handling\n\n- **Cattle**: White Fulani, Red Bororo, Sokoto Gudali (local, humped zebu); N'Dama and Muturu (local, humpless, trypanotolerant); Friesian (exotic dairy).\n- **Goats**: West African Dwarf, Red Sokoto. **Sheep**: Yankasa, Uda, Balami.\n- **Pigs**: Large White, Landrace, Duroc (exotic). **Poultry**: local chickens; Isa Brown layers; broilers.\n\n**Restraint**: halter and rope; the crush (a narrow pen); a nose ring or bull leader; casting with ropes for treatment; holding a goat by the horns and neck; holding a bird by both legs with the wings folded.\n\n**Grooming**: brushing, washing, trimming hooves, removing ticks. It keeps animals clean and lets the farmer check for wounds and parasites.\n\n# Internal organs\n\n- **Digestive**: mouth, oesophagus, stomach (four chambers in ruminants), small intestine (absorption), large intestine (water absorption), liver (bile), pancreas (enzymes); in poultry, the crop and gizzard.\n- **Reproductive**: female: ovaries (eggs and hormones), oviducts, uterus (development of the foetus), cervix, vagina. Male: testes (sperm and testosterone), sperm ducts, penis.\n- **Excretory**: kidneys filter blood and form urine; ureters carry urine to the bladder; the urethra carries it out.\n\n# By-products\n\n**Hides** (large animals such as cattle) and **skins** (goats and sheep) make leather for shoes, bags and drums. **Fur** (rabbits) makes clothing. **Feathers** fill pillows and make fish feed. **Horn** and hooves make buttons, combs and glue. **Bone meal** and **blood meal** go into feeds.\n\n# Feeds and feedstuffs\n\n| Feedstuff | Class | Local source |\n| --- | --- | --- |\n| Maize, sorghum | Energy | Farms; markets |\n| Rice bran, wheat offal | Energy and fibre | Rice and flour mills |\n| Groundnut cake, soya meal | Protein | Oil mills |\n| Palm kernel cake | Protein and energy | Palm kernel mills |\n| Fish meal, blood meal | Animal protein | Fish processors, abattoirs |\n| Bone meal, oyster shell | Minerals (Ca, P) | Abattoirs; coastal shell |\n\nRations are balanced from these: a **starter**, **grower** or **finisher** for broilers, **layers' mash** for laying hens, and concentrate supplements for ruminants."
+      },
+      "cards": [
+        {
+          "front": "How spear grass spreads",
+          "back": "By wind-blown seeds and underground rhizomes."
+        },
+        {
+          "front": "Dispersal of Tridax seeds",
+          "back": "By wind, using a feathery pappus."
+        },
+        {
+          "front": "Euphorbia heterophylla",
+          "back": "A weed with milky latex whose pods burst open to scatter seeds."
+        },
+        {
+          "front": "N'Dama",
+          "back": "A local humpless cattle breed that tolerates trypanosomiasis."
+        },
+        {
+          "front": "Crush",
+          "back": "A narrow pen used to restrain cattle for treatment."
+        },
+        {
+          "front": "Function of the kidneys",
+          "back": "Filter the blood and form urine."
+        },
+        {
+          "front": "Hide and skin",
+          "back": "A hide comes from a large animal such as a cow; a skin from a small one such as a goat."
+        },
+        {
+          "front": "Palm kernel cake",
+          "back": "A by-product of palm kernel oil milling, used as a protein and energy feed."
+        },
+        {
+          "front": "Oyster shell",
+          "back": "A calcium source added to layers' feed for strong eggshells."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A weed has a triangular stem and small underground tubers that are spread by hoes and ploughs. It is",
+          "options": [
+            "nut grass (Cyperus rotundus)",
+            "Tridax procumbens",
+            "goat weed (Ageratum conyzoides)",
+            "Siam weed (Chromolaena odorata)"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which breed of cattle is local, humpless and tolerant of trypanosomiasis?",
+          "options": ["White Fulani", "Friesian", "N'Dama", "Sokoto Gudali"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which organ filters the blood and forms urine?",
+          "options": ["Liver", "Pancreas", "Uterus", "Kidney"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which feedstuff is mainly a source of animal protein?",
+          "options": ["Rice bran", "Fish meal", "Maize", "Oyster shell"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The skin of a goat is used mainly to make",
+          "options": [
+            "leather for bags, shoes and drums",
+            "pillow stuffing",
+            "buttons and combs",
+            "glue"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "You are given specimens of spear grass and Tridax procumbens. For each, describe two external features, state how it is dispersed, and give one method of controlling it.",
+          "markScheme": [
+            "Spear grass: two correct features (narrow sharp-edged leaves, white fluffy/silky flower heads, rhizomes)",
+            "Spear grass: dispersed by wind (seeds) and/or rhizomes",
+            "Spear grass control: herbicide (glyphosate), repeated digging out of rhizomes, or shading with cover crops",
+            "Tridax: two correct features (hairy creeping stems, toothed hairy leaves, yellow-centred flowers on long stalks)",
+            "Tridax: dispersed by wind (feathery pappus)",
+            "Tridax control: hand-pulling/hoeing before it flowers, or mulching, or herbicide"
+          ],
+          "modelAnswer": "Spear grass has long, narrow leaves with sharp edges and white, silky flower heads, and it spreads underground by rhizomes. It is dispersed by wind-blown seeds and by its rhizomes. It is controlled by spraying glyphosate or by digging out the rhizomes repeatedly. Tridax has hairy, creeping stems and hairy, toothed leaves, with flowers that have a yellow centre on long stalks. Its seeds have a feathery pappus and are dispersed by wind. It is controlled by hoeing or hand-pulling before it flowers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Spear grass has long narrow leaves with sharp edges and white hairy flowers. It is dispersed by wind and by its rhizomes underground. Control it with glyphosate. Tridax has a hairy creeping stem and yellow flowers on long stalks. Its seeds are dispersed by wind because of the hairs on them. Control it by hoeing before it flowers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Spear grass has long narrow leaves with sharp edges and white hairy flowers"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is dispersed by wind and by its rhizomes underground"
+                },
+                {
+                  "point": 2,
+                  "quote": "Control it with glyphosate"
+                },
+                {
+                  "point": 3,
+                  "quote": "Tridax has a hairy creeping stem and yellow flowers on long stalks"
+                },
+                {
+                  "point": 4,
+                  "quote": "Its seeds are dispersed by wind because of the hairs on them"
+                },
+                {
+                  "point": 5,
+                  "quote": "Control it by hoeing before it flowers"
+                }
+              ],
+              "feedback": "Features, dispersal and control for both weeds, all correct. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Imperata cylindrica: linear leaves with serrated margins and silky white inflorescence. Dispersal: wind-borne seeds and rhizomes. Control: repeated forking out of rhizomes or systemic herbicide. Tridax procumbens: procumbent hairy stems, opposite hairy leaves. Dispersal: wind, by the pappus. Control: mulching or uprooting before seeding.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "linear leaves with serrated margins and silky white inflorescence"
+                },
+                {
+                  "point": 1,
+                  "quote": "wind-borne seeds and rhizomes"
+                },
+                {
+                  "point": 2,
+                  "quote": "repeated forking out of rhizomes or systemic herbicide"
+                },
+                {
+                  "point": 3,
+                  "quote": "procumbent hairy stems, opposite hairy leaves"
+                },
+                {
+                  "point": 4,
+                  "quote": "wind, by the pappus"
+                },
+                {
+                  "point": 5,
+                  "quote": "mulching or uprooting before seeding"
+                }
+              ],
+              "feedback": "Accurate botanical description throughout, using the correct terms. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "Spear grass is dispersed by rhizomes and controlled by herbicides. Tridax has yellow flowers and is dispersed by wind.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Spear grass is dispersed by rhizomes"
+                },
+                {
+                  "point": 2,
+                  "quote": "controlled by herbicides"
+                },
+                {
+                  "point": 4,
+                  "quote": "dispersed by wind"
+                }
+              ],
+              "feedback": "Dispersal of both and control of spear grass are right. Give two features of each weed (for example the sharp narrow leaves of spear grass) and a control for Tridax."
+            },
+            {
+              "tier": "partial",
+              "text": "Spear grass has sharp leaves and white flowers, it spreads by seeds. Tridax is a big shrub with a strong smell and it is controlled by slashing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Spear grass has sharp leaves and white flowers"
+                },
+                {
+                  "point": 1,
+                  "quote": "it spreads by seeds"
+                }
+              ],
+              "feedback": "Your spear grass features are right. A tall shrub with a strong smell is Siam weed; Tridax is a low creeping plant with hairy stems and wind-dispersed seeds."
+            },
+            {
+              "tier": "weak",
+              "text": "Both are grasses which grow everywhere. They are controlled by burning.",
+              "meets": [],
+              "feedback": "Tridax is not a grass. Examine each specimen: describe its leaves, stem and flowers, how its seeds spread, and a method of control."
+            },
+            {
+              "tier": "weak",
+              "text": "Spear grass is dispersed by animals because it sticks to them. Tridax is dispersed by water.",
+              "meets": [],
+              "feedback": "Both are mainly wind-dispersed, and spear grass also spreads by rhizomes. Give two features and a control method for each."
+            }
+          ]
+        },
+        {
+          "prompt": "A Crestfield class examines the internal organs of a slaughtered goat. Name two organs from each of the digestive, reproductive (female) and excretory systems, and state the function of each.",
+          "markScheme": [
+            "Two digestive organs named (e.g. rumen, abomasum, small intestine, liver)",
+            "Correct functions of both digestive organs",
+            "Two female reproductive organs named (e.g. ovary, uterus, oviduct)",
+            "Correct functions of both reproductive organs",
+            "Two excretory organs named (e.g. kidney, bladder, ureter)",
+            "Correct functions of both excretory organs"
+          ],
+          "modelAnswer": "Digestive: the rumen, where microbes ferment and break down grass; the small intestine, where digested food is absorbed into the blood. Reproductive: the ovary, which produces eggs and hormones; the uterus, where the foetus develops during pregnancy. Excretory: the kidney, which filters the blood and forms urine; the bladder, which stores urine until it is passed out.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Digestive: rumen, where bacteria break down grass; small intestine, where food is absorbed. Reproductive: ovary, which produces eggs; uterus, where the young develops. Excretory: kidney, which filters blood to form urine; bladder, which stores urine.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Digestive: rumen"
+                },
+                {
+                  "point": 1,
+                  "quote": "where bacteria break down grass; small intestine, where food is absorbed"
+                },
+                {
+                  "point": 2,
+                  "quote": "Reproductive: ovary"
+                },
+                {
+                  "point": 3,
+                  "quote": "which produces eggs; uterus, where the young develops"
+                },
+                {
+                  "point": 4,
+                  "quote": "Excretory: kidney"
+                },
+                {
+                  "point": 5,
+                  "quote": "which filters blood to form urine; bladder, which stores urine"
+                }
+              ],
+              "feedback": "Two correct organs from each system, each with its function. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The liver produces bile and stores glycogen, and the abomasum digests food with enzymes. The oviduct carries the egg and is where fertilisation takes place, while the uterus holds the developing foetus. The kidneys remove urea from the blood as urine, and the ureters carry urine to the bladder.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The liver"
+                },
+                {
+                  "point": 1,
+                  "quote": "produces bile and stores glycogen, and the abomasum digests food with enzymes"
+                },
+                {
+                  "point": 2,
+                  "quote": "The oviduct"
+                },
+                {
+                  "point": 3,
+                  "quote": "carries the egg and is where fertilisation takes place, while the uterus holds the developing foetus"
+                },
+                {
+                  "point": 4,
+                  "quote": "The kidneys"
+                },
+                {
+                  "point": 5,
+                  "quote": "remove urea from the blood as urine, and the ureters carry urine to the bladder"
+                }
+              ],
+              "feedback": "Accurate and well chosen organs. All six marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Digestive: stomach and intestine. Reproductive: ovary and uterus. Excretory: kidney and bladder.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Digestive: stomach and intestine"
+                },
+                {
+                  "point": 2,
+                  "quote": "Reproductive: ovary and uterus"
+                },
+                {
+                  "point": 4,
+                  "quote": "Excretory: kidney and bladder"
+                }
+              ],
+              "feedback": "All the organs are correct, but the question also asks for the function of each. Add what each organ does, for example the kidney filters blood to form urine."
+            },
+            {
+              "tier": "partial",
+              "text": "Rumen: digests grass. Liver: pumps blood. Ovary: produces eggs. Uterus: produces milk. Kidney: makes urine. Lungs: remove waste.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Rumen: digests grass. Liver"
+                },
+                {
+                  "point": 2,
+                  "quote": "Ovary: produces eggs. Uterus"
+                },
+                {
+                  "point": 4,
+                  "quote": "Kidney: makes urine. Lungs"
+                }
+              ],
+              "feedback": "Your organs are well chosen, but two functions are wrong: the heart pumps blood, not the liver, and milk comes from the mammary glands, not the uterus. The lungs do excrete carbon dioxide, but the kidney and bladder are the organs of the urinary system asked for here."
+            },
+            {
+              "tier": "weak",
+              "text": "The goat has heart, lungs and liver. The heart pumps blood and the lungs are for breathing.",
+              "meets": [],
+              "feedback": "The heart and lungs belong to the circulatory and respiratory systems. Name two organs each from the digestive, reproductive and excretory systems."
+            },
+            {
+              "tier": "weak",
+              "text": "The digestive system has the gizzard and crop. The kidney is for digestion.",
+              "meets": [],
+              "feedback": "A goat has no gizzard or crop; those are in poultry. The kidney is excretory. Look again at the organs in a ruminant."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Practical animal production: parasites, disease prevention, routine management and fish processing",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. identify ticks, lice, tapeworms, liver flukes and roundworms, describe their life cycles and damage, and state their control;\n2. describe drugging, drenching, dipping, spraying and farm sanitation as methods of preventing and controlling disease;\n3. describe routine management practices: selection, culling, ear-notching, tattooing, branding, debeaking, dehorning and castration, and identify the tools used;\n4. describe methods of harvesting, processing and preserving fish.\n\n## Materials\n\nPreserved ticks, lice, a tapeworm segment and a liver with flukes (or pictures); a drenching gun; a hand sprayer; an ear notcher, tattoo pliers, a debeaker, a dehorning iron, a burdizzo (emasculator) and an elastrator with rubber rings (or pictures); a cast net; smoked and dried fish from the market.\n\n## Starter (5 minutes)\n\nShow the liver with flukes. Ask: how did these worms get into a cow's liver, and why did the butcher condemn it?\n\n## Development\n\n1. Identify each parasite. Trace the life cycles of the tick, the tapeworm and the liver fluke, and state damage and control.\n2. Demonstrate drenching a goat with the drenching gun. Describe dipping and spraying for ticks, and the rules of farm sanitation.\n3. Show the tools of routine management and explain each practice, why it is done and at what age.\n4. Describe harvesting fish by draining and netting. Compare smoking, sun-drying, salting, freezing and canning. Pass round the smoked fish.\n\n## Class activity\n\nStudents complete a table: practice, tool, age done, reason.\n\n## Evaluation\n\n1. What is the intermediate host of the tapeworm of cattle?\n2. Why are layers debeaked?\n3. Give one advantage of smoking fish over selling it fresh.\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Keeping livestock healthy and managed, and handling fish",
+        "content": "# Parasites of farm animals\n\n**Ectoparasites**\n\n- **Ticks**: eight-legged, blood-sucking. A tick lays thousands of eggs on the ground; larvae climb onto the host, feed, drop off, moult into nymphs, and so on to adults. Ticks cause anaemia, damage hides, and spread diseases such as red water and heartwater. Control: dipping or spraying with acaricide, hand-picking, rotational grazing, burning tick-infested bush.\n- **Lice**: wingless, flattened insects that live all their lives on the host. They cause itching, rubbing, loss of hair or feathers, and poor growth. Control: insecticide dusting or spraying, clean housing.\n\n**Endoparasites**\n\n- **Tapeworm**: flat, segmented worm in the intestine. Segments full of eggs pass out in the faeces; cattle or pigs swallow them with grass or feed; larvae form cysts in the muscle; people are infected by eating undercooked meat. Control: meat inspection, cooking meat well, proper toilets, deworming.\n- **Liver fluke**: flat, leaf-shaped worm in the liver and bile ducts. Eggs pass in the dung into water, hatch, and enter a **water snail**; larvae leave the snail, encyst on grass, and are eaten by cattle or sheep. Control: drain wet pastures, kill snails, fence off swamps, deworm.\n- **Roundworm**: long, round worm in the intestine; eggs are swallowed from contaminated feed, water or soil. Control: regular deworming, clean feed and water, rotational grazing.\n\nParasites cause weight loss, anaemia, low yields, damaged hides and condemned livers.\n\n# Preventing and controlling disease\n\n- **Drugging** (medication) and **drenching**: giving liquid dewormers by mouth with a drenching gun or bottle.\n- **Dipping**: driving animals through a dip tank of acaricide.\n- **Spraying**: applying acaricide or insecticide with a sprayer.\n- **Farm sanitation**: clean pens and equipment, dry litter, footbaths at entrances, proper disposal of dead animals, isolation of sick animals, quarantine of new stock, vaccination.\n\n# Routine management practices\n\n| Practice | Tool | Purpose |\n| --- | --- | --- |\n| Selection | Records, inspection | Keeping the best animals for breeding |\n| Culling | Records | Removing old, sick or unproductive animals |\n| Ear-notching | Ear notcher | Identifying pigs |\n| Tattooing | Tattoo pliers and ink | Permanent identification inside the ear |\n| Branding | Hot or freeze branding iron | Identifying cattle |\n| Debeaking | Debeaker | Preventing feather pecking and cannibalism in poultry |\n| Dehorning | Dehorning iron, caustic stick, saw | Preventing injury to people and other animals |\n| Castration | Burdizzo (emasculator), elastrator, knife | Preventing unwanted breeding; calmer animals; better meat |\n\n# Fish harvesting and preservation\n\n**Harvesting**: partial harvesting with seine or cast nets; complete harvesting by draining the pond.\n\n**Processing and preservation**: fresh fish spoils within hours in the heat, so it is gutted, washed and then:\n\n- **Smoked** in a kiln, the commonest method in Nigeria; adds flavour and keeps for weeks.\n- **Sun-dried**: cheap but slow and dusty.\n- **Salted**: draws out water.\n- **Frozen** or **chilled** with ice.\n- **Canned**: sealed and heat-treated, as with sardines.\n\nPreservation reduces losses and lets fish reach distant markets."
+      },
+      "cards": [
+        {
+          "front": "Acaricide",
+          "back": "A chemical that kills ticks, used in dipping and spraying."
+        },
+        {
+          "front": "Damage done by ticks",
+          "back": "Anaemia, damaged hides, and spread of diseases such as red water and heartwater."
+        },
+        {
+          "front": "Intermediate host of the cattle tapeworm",
+          "back": "Cattle; humans are infected by eating undercooked beef containing cysts."
+        },
+        {
+          "front": "Drenching",
+          "back": "Giving a liquid medicine, usually a dewormer, by mouth."
+        },
+        {
+          "front": "Culling",
+          "back": "Removing old, sick or unproductive animals from the herd or flock."
+        },
+        {
+          "front": "Ear-notching",
+          "back": "Cutting notches in the ear, mainly of pigs, to identify them."
+        },
+        {
+          "front": "Debeaking",
+          "back": "Trimming the beak of poultry to prevent feather pecking and cannibalism."
+        },
+        {
+          "front": "Burdizzo",
+          "back": "A bloodless castration tool that crushes the spermatic cords."
+        },
+        {
+          "front": "Commonest way of preserving fish in Nigeria",
+          "back": "Smoking in a kiln."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Goats are made to walk through a tank of acaricide. This practice is",
+          "options": ["drenching", "dipping", "debeaking", "dehorning"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which practice prevents feather pecking and cannibalism in a flock of layers?",
+          "options": ["Debeaking", "Culling", "Tattooing", "Ear-notching"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Draining swampy pastures helps to control the liver fluke because it",
+          "options": [
+            "kills the adult flukes in the liver",
+            "kills the eggs in the faeces",
+            "removes ticks from the animals",
+            "destroys the habitat of the water snail"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which tool is used for bloodless castration of a bull calf?",
+          "options": ["Debeaker", "Ear notcher", "Burdizzo", "Drenching gun"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which method of fish preservation is most common in Nigerian markets?",
+          "options": ["Canning", "Smoking", "Freezing", "Salting"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the life cycle of the liver fluke and explain three ways a cattle farmer near the Ogun river can control it.",
+          "markScheme": [
+            "Eggs from the adult fluke in the liver/bile duct pass out in the dung and hatch in water",
+            "Larvae (miracidia) enter a water snail, the intermediate host, and multiply",
+            "Larvae (cercariae) leave the snail and encyst on grass; cattle are infected by eating the grass",
+            "Control 1: drain wet/swampy pastures or fence off swamps",
+            "Control 2: kill the snails (molluscicide, ducks)",
+            "Control 3: deworm/drench cattle regularly with a flukicide, or rotational grazing"
+          ],
+          "modelAnswer": "Adult flukes live in the liver and bile ducts and lay eggs that pass out with the dung. In water, the eggs hatch into larvae, which enter a water snail, the intermediate host, and multiply inside it. The next larval stage leaves the snail and forms cysts on grass near the water. Cattle become infected when they eat this grass. To control it, the farmer should drain swampy pastures or fence cattle away from the river banks, kill snails with molluscicide or by keeping ducks, and drench the cattle regularly with a flukicide.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The adult fluke lays eggs in the liver which pass out with the dung. The eggs hatch in water and the larvae enter a water snail. They develop inside the snail, come out and stick to grass as cysts. When cattle eat the grass they are infected. Control: drain the swampy areas, kill the snails with chemicals, and drench the cattle with dewormer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The adult fluke lays eggs in the liver which pass out with the dung. The eggs hatch in water"
+                },
+                {
+                  "point": 1,
+                  "quote": "the larvae enter a water snail"
+                },
+                {
+                  "point": 2,
+                  "quote": "come out and stick to grass as cysts. When cattle eat the grass they are infected"
+                },
+                {
+                  "point": 3,
+                  "quote": "drain the swampy areas"
+                },
+                {
+                  "point": 4,
+                  "quote": "kill the snails with chemicals"
+                },
+                {
+                  "point": 5,
+                  "quote": "drench the cattle with dewormer"
+                }
+              ],
+              "feedback": "The whole cycle in order and three control methods, each aimed at a stage. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Eggs are passed in faeces and hatch into miracidia in water. Miracidia penetrate a snail (intermediate host) where they multiply. Cercariae emerge and encyst on herbage as metacercariae, which cattle ingest while grazing. Control: fence off the river bank, use molluscicides or ducks to reduce snails, and treat cattle with flukicides.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Eggs are passed in faeces and hatch into miracidia in water"
+                },
+                {
+                  "point": 1,
+                  "quote": "Miracidia penetrate a snail (intermediate host) where they multiply"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cercariae emerge and encyst on herbage as metacercariae, which cattle ingest while grazing"
+                },
+                {
+                  "point": 3,
+                  "quote": "fence off the river bank"
+                },
+                {
+                  "point": 4,
+                  "quote": "use molluscicides or ducks to reduce snails"
+                },
+                {
+                  "point": 5,
+                  "quote": "treat cattle with flukicides"
+                }
+              ],
+              "feedback": "Precise, with every larval stage named. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "The eggs pass out in the dung and go into a snail. Then the cattle eat grass and get infected. Control by deworming.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "go into a snail"
+                },
+                {
+                  "point": 5,
+                  "quote": "Control by deworming"
+                }
+              ],
+              "feedback": "Snail and deworming are right. Say that the eggs hatch in water, and that larvae leave the snail and form cysts on grass. Give two more controls, such as draining pastures and killing snails."
+            },
+            {
+              "tier": "partial",
+              "text": "Cattle are infected by drinking water with fluke eggs. The eggs hatch in the liver. Control: kill snails, drain swamps, deworm.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "drain swamps"
+                },
+                {
+                  "point": 4,
+                  "quote": "kill snails"
+                },
+                {
+                  "point": 5,
+                  "quote": "deworm"
+                }
+              ],
+              "feedback": "Your three controls are right. The cycle needs correcting: eggs hatch in water, larvae develop in a snail, and cattle are infected by eating cysts on grass, not eggs in water."
+            },
+            {
+              "tier": "weak",
+              "text": "Liver fluke is caught when cattle eat undercooked meat. Control by cooking meat well.",
+              "meets": [],
+              "feedback": "That is closer to the tapeworm in people. Cattle get liver fluke from cysts on grass near water, after the larvae have developed in a snail."
+            },
+            {
+              "tier": "weak",
+              "text": "Liver fluke is spread by ticks. Dip the cattle in acaricide.",
+              "meets": [],
+              "feedback": "Ticks are ectoparasites that do not carry liver fluke. The fluke's intermediate host is a water snail; control targets the snail, wet pastures and the worm in the cattle."
+            }
+          ]
+        },
+        {
+          "prompt": "A pig and poultry farm at Ibadan is setting up routine management. For each of these practices, name the tool used and explain why it is done: (a) ear-notching of piglets, (b) castration of male piglets, (c) debeaking of layers, (d) culling of layers.",
+          "markScheme": [
+            "(a) Ear notcher; for identification of individual pigs/litters for records",
+            "(b) Knife/scalpel, burdizzo or elastrator; to prevent unwanted breeding, make pigs docile, improve meat quality (no boar taint)",
+            "(c) Debeaker; to prevent feather pecking/cannibalism and feed wastage",
+            "(d) Records (and handling/inspection); to remove unproductive, old or sick birds and cut feed costs"
+          ],
+          "modelAnswer": "(a) Ear-notching is done with an ear notcher, to identify each pig and its litter so that records of growth and breeding can be kept. (b) Castration is done with a sterile knife or scalpel (or a burdizzo), to prevent unwanted breeding, make the pigs calmer, and remove boar taint so the meat is better. (c) Debeaking is done with a debeaker, to stop feather pecking and cannibalism and to reduce feed wastage. (d) Culling uses the farm's production records and inspection of the birds, to remove birds that have stopped laying, are old or are sick, so the farmer does not waste feed on them.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Ear notcher, to identify each pig for record keeping. (b) Burdizzo or knife, to stop unwanted mating and make the meat better without boar smell. (c) Debeaker, to stop the birds pecking each other and wasting feed. (d) Using egg records and handling the birds, to remove birds that are not laying so feed is not wasted.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) Ear notcher, to identify each pig for record keeping"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) Burdizzo or knife, to stop unwanted mating and make the meat better without boar smell"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) Debeaker, to stop the birds pecking each other and wasting feed"
+                },
+                {
+                  "point": 3,
+                  "quote": "(d) Using egg records and handling the birds, to remove birds that are not laying so feed is not wasted"
+                }
+              ],
+              "feedback": "Correct tool and reason for each practice. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Ear-notching with an ear notcher allows permanent identification of piglets. Castration with a scalpel prevents indiscriminate breeding and boar taint and makes the pigs docile. Debeaking with an electric debeaker prevents cannibalism. Culling is guided by production records and removes unproductive or diseased birds, saving feed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ear-notching with an ear notcher allows permanent identification of piglets"
+                },
+                {
+                  "point": 1,
+                  "quote": "Castration with a scalpel prevents indiscriminate breeding and boar taint and makes the pigs docile"
+                },
+                {
+                  "point": 2,
+                  "quote": "Debeaking with an electric debeaker prevents cannibalism"
+                },
+                {
+                  "point": 3,
+                  "quote": "Culling is guided by production records and removes unproductive or diseased birds, saving feed"
+                }
+              ],
+              "feedback": "Clear and accurate on all four practices. All marks earned."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Ear notcher for identification. (b) Castration makes the pigs fat. (c) Debeaker to stop cannibalism. (d) Culling is killing sick birds.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) Ear notcher for identification"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) Debeaker to stop cannibalism"
+                }
+              ],
+              "feedback": "(a) and (c) are right. For castration, name the tool and give the main reasons: no unwanted breeding, calmer pigs, no boar taint. Culling also removes birds that have stopped laying, using records."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Tattoo pliers, to identify pigs. (b) Knife, to prevent unwanted breeding. (c) Debeaker, to prevent pecking. (d) Cutlass, to cut the birds.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) Knife, to prevent unwanted breeding"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) Debeaker, to prevent pecking"
+                }
+              ],
+              "feedback": "(b) and (c) are right. Ear-notching uses an ear notcher, not tattoo pliers. Culling means selecting unproductive birds for removal using records; it is not done with a cutlass."
+            },
+            {
+              "tier": "weak",
+              "text": "These practices are done to make the animals look beautiful for the market.",
+              "meets": [],
+              "feedback": "Each practice has a practical purpose: identification, controlling breeding, preventing cannibalism, removing unproductive birds. Name the tool for each."
+            },
+            {
+              "tier": "weak",
+              "text": "Ear-notching is done to let the pig hear better and debeaking makes the hen lay more eggs.",
+              "meets": [],
+              "feedback": "Ear-notching is for identification, and debeaking prevents pecking and cannibalism. Reread the routine management table and name the tool for each practice."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

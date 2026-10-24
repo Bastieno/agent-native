@@ -1,0 +1,137 @@
+{
+  "found": true,
+  "subject": "Social and Citizenship Studies",
+  "subjectCode": "SCS",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Society, Family, and Values",
+      "abbreviation": "SFV",
+      "subStrands": [
+        {
+          "name": "Social Values and Family",
+          "objectives": [
+            {
+              "code": "SCS-SFV-1",
+              "description": "Describe the concept of society and explain the roles of family as the basic social unit"
+            },
+            {
+              "code": "SCS-SFV-2",
+              "description": "Identify core national values including honesty, discipline, respect for elders, and tolerance and explain their importance"
+            },
+            {
+              "code": "SCS-SFV-3",
+              "description": "Discuss gender roles in traditional and modern Nigerian society and advocate for gender equality"
+            },
+            {
+              "code": "SCS-SFV-4",
+              "description": "Explain the importance of work, the dignity of labour, and the social value of different occupations"
+            },
+            {
+              "code": "SCS-SFV-5",
+              "description": "Describe self-control and discipline as essential values in school, family, and community life"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Civic Rights and Responsibilities",
+      "abbreviation": "CRR",
+      "subStrands": [
+        {
+          "name": "Human Rights and Citizenship",
+          "objectives": [
+            {
+              "code": "SCS-CRR-1",
+              "description": "Explain the meaning and importance of citizenship and identify the qualities of a good citizen"
+            },
+            {
+              "code": "SCS-CRR-2",
+              "description": "Describe the Universal Declaration of Human Rights (UDHR) and explain the rights of children under the Child Rights Act"
+            },
+            {
+              "code": "SCS-CRR-3",
+              "description": "Explain citizens' duties and responsibilities including respect for rule of law and participation in civic processes"
+            },
+            {
+              "code": "SCS-CRR-4",
+              "description": "Identify human rights institutions in Nigeria (NHRC, Legal Aid Council, NGOs) and explain their roles"
+            },
+            {
+              "code": "SCS-CRR-5",
+              "description": "Describe the African Charter on Human and Peoples' Rights and explain its relevance to Nigerian citizens"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Governance and Democracy",
+      "abbreviation": "GVD",
+      "subStrands": [
+        {
+          "name": "Democratic Principles and Leadership",
+          "objectives": [
+            {
+              "code": "SCS-GVD-1",
+              "description": "Explain the principles of democracy, rule of law, and the importance of free and fair elections"
+            },
+            {
+              "code": "SCS-GVD-2",
+              "description": "Describe the qualities of good leadership and give examples from Nigerian history"
+            },
+            {
+              "code": "SCS-GVD-3",
+              "description": "Explain the meaning and effects of corruption and describe the roles of anti-corruption agencies (EFCC, ICPC)"
+            },
+            {
+              "code": "SCS-GVD-4",
+              "description": "Explain the meaning of peace and describe strategies for conflict prevention and resolution in communities"
+            },
+            {
+              "code": "SCS-GVD-5",
+              "description": "Describe civic participation methods including voting, volunteering, and expressing public opinion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "National Development and Global Citizenship",
+      "abbreviation": "NDG",
+      "subStrands": [
+        {
+          "name": "Environment, Economy, and Sustainable Development",
+          "objectives": [
+            {
+              "code": "SCS-NDG-1",
+              "description": "Explain the meaning and indicators of national development and the roles of citizens in achieving it"
+            },
+            {
+              "code": "SCS-NDG-2",
+              "description": "Describe environmental citizenship practices including sanitation, waste management, and conservation"
+            },
+            {
+              "code": "SCS-NDG-3",
+              "description": "Explain economic values including thrift, saving, investment, and entrepreneurship as drivers of development"
+            },
+            {
+              "code": "SCS-NDG-4",
+              "description": "Identify the Sustainable Development Goals (SDGs) and explain how Nigerian citizens can contribute to them"
+            },
+            {
+              "code": "SCS-NDG-5",
+              "description": "Describe civic challenges in Nigeria and Africa (poverty, illiteracy, unemployment, governance failures) and suggest solutions"
+            },
+            {
+              "code": "SCS-NDG-6",
+              "description": "Explain the importance of national integration and unity in Nigeria's diverse multicultural society"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

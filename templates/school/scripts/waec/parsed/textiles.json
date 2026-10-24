@@ -1,0 +1,112 @@
+{
+  "found": true,
+  "subject": "Textiles",
+  "subjectCode": "TEXT",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction to Textiles",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Rationale, Development, Careers and Cultural Values",
+          "objectives": [
+            {
+              "code": "TEXT-INTRO-1",
+              "description": "Meaning and rationale for studying textiles; developments of textiles and careers; textiles and cultural values; competencies, attitudes and behaviour required for employment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Textile Fibres and Yarns",
+      "abbreviation": "FIBRE",
+      "subStrands": [
+        {
+          "name": "Fibres, Yarns and Blends",
+          "objectives": [
+            {
+              "code": "TEXT-FIBRE-1",
+              "description": "Identification and classification of fibres; properties and suitability; fibre processing (soaking, ginning, etc.)."
+            },
+            {
+              "code": "TEXT-FIBRE-2",
+              "description": "Yarn preparation (traditional and contemporary); types of yarn; blends and mixtures; yarn terminologies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fabric Construction",
+      "abbreviation": "FABRIC",
+      "subStrands": [
+        {
+          "name": "Weaving, Knitting and Non-Woven Fabrics",
+          "objectives": [
+            {
+              "code": "TEXT-FABRIC-1",
+              "description": "Point paper designing: plain, twill, satin/sateen and variations."
+            },
+            {
+              "code": "TEXT-FABRIC-2",
+              "description": "Looms and accessories: types of loom (man power, traditional, broad loom and power looms — shuttle and shuttle-less — and accessories); textile calculations (weight/cost of warp, weft and fabric)."
+            },
+            {
+              "code": "TEXT-FABRIC-3",
+              "description": "Weaving processes (traditional and broad loom): warping, beaming, heddling, reeding, tying up, bobbin winding; loom motions (primary, secondary and auxiliary)."
+            },
+            {
+              "code": "TEXT-FABRIC-4",
+              "description": "Other fabric construction processes: knitting, crocheting and tapestry; non-woven fabric."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fabric Decoration and Finishing",
+      "abbreviation": "DECOR",
+      "subStrands": [
+        {
+          "name": "Decoration Techniques and Finishing",
+          "objectives": [
+            {
+              "code": "TEXT-DECOR-1",
+              "description": "Preparation, care and maintenance of tools, materials and equipment; basic drawings using elements and principles of design; idea development/preliminary designing/ICT; usage of indigenous colour schemes, ideas, symbols and cultural motifs."
+            },
+            {
+              "code": "TEXT-DECOR-2",
+              "description": "Decorative techniques: dyeing, printing, appliqué and embroidery processes; types of finishing techniques (mechanical and chemical); care and maintenance of fabrics."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sustainable Development, Portfolio and Entrepreneurship",
+      "abbreviation": "ENTREP",
+      "subStrands": [
+        {
+          "name": "Sustainability, Portfolio, Exhibition and Entrepreneurship",
+          "objectives": [
+            {
+              "code": "TEXT-ENTREP-1",
+              "description": "Sustainable development: challenges and interventions in managing resources, marketing and distribution; cultural values (traditional/contemporary); healthy studio practices."
+            },
+            {
+              "code": "TEXT-ENTREP-2",
+              "description": "Portfolio and Exhibition: types of portfolios (hard and soft copy); collection and building of portfolio; meaning, types, purpose and processes of mounting exhibitions; appreciating and patronising indigenous textiles."
+            },
+            {
+              "code": "TEXT-ENTREP-3",
+              "description": "Entrepreneurial skills in practice: preparation of business plan; planning of an enterprise; key points of a business plan; costing, pricing and marketing of textile products."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

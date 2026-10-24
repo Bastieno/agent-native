@@ -1,0 +1,2685 @@
+{
+  "subject": "Economics",
+  "yearGroup": "SS3",
+  "weeks": {
+    "1": {
+      "topic": "Industrialisation and national income concepts",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe strategies of industrialisation and its problems in Nigeria;\n2. explain the link between agricultural and industrial development;\n3. define GDP, GNP, NNP and national income, and calculate each;\n4. describe the output, income and expenditure methods of measuring national income and their problems.\n\n## Materials\n\nCalculators, a table of national accounts figures, past WASSCE questions on national income.\n\n## Starter (5 minutes)\n\nAsk: if a Nigerian company owns a factory in Ghana, and a Chinese company owns a factory in Lagos, whose output counts as Nigeria's? Let pupils argue before introducing GDP and GNP.\n\n## Development\n\n1. Strategies of industrialisation: import substitution, export promotion, and heavy industry. Problems: poor power, low capital, small market, weak technology, dependence on imported inputs. The link with agriculture: farms supply raw materials and food; factories supply fertiliser and machines.\n2. Define GDP (value of final goods and services produced inside a country in a year), GNP = GDP + net factor income from abroad, NNP = GNP - depreciation, and national income as NNP at factor cost.\n3. Work a calculation: from the expenditure table find GDP, GNP and NNP.\n4. Methods: output (add value added in each sector, avoiding double counting), income (wages, rent, interest, profit) and expenditure (C + I + G + (X - M)).\n5. Problems: double counting, the informal sector, subsistence output, inaccurate data and price changes.\n\n## Class activity\n\nPairs use a table to find GDP by expenditure, then GNP and NNP.\n\n## Evaluation\n\n1. Distinguish GDP from GNP.\n2. Why is much of Nigerian output left out of official national income?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Counting what a country earns",
+        "content": "# Industrialisation and national income concepts\n\n## Industrialisation\n\n**Industrialisation** is the growth of manufacturing and other industries in an economy. Strategies include **import substitution** (making at home what was imported, such as soap, tyres or textiles), **export promotion** (making goods for sale abroad) and building **basic industries** such as steel and petrochemicals.\n\n**Problems** in Nigeria: unreliable power, shortage of capital, small markets because of low incomes, weak technology, dependence on imported parts, and poor roads.\n\n**Link with agriculture:** farms supply raw materials (cotton, cassava, palm oil), food for industrial workers and a market for tractors and fertiliser; industry gives agriculture machines and processing. A weak farm sector slows industry.\n\n## National income concepts\n\n- **Gross Domestic Product (GDP)**: the value of all final goods and services produced within a country in a year, by both citizens and foreigners.\n- **Gross National Product (GNP)** = GDP + net factor income from abroad. Net factor income is the earnings of citizens abroad minus the earnings of foreigners in the country.\n- **Net National Product (NNP)** = GNP - depreciation (capital consumption). NNP at factor cost is **national income**.\n\n## Measuring national income\n\n1. **Output method**: add the **value added** at each stage in every sector. Adding the full value of each stage causes **double counting**.\n2. **Income method**: add all incomes earned: wages, rent, interest and profit.\n3. **Expenditure method**: GDP = C + I + G + (X - M), where C is consumption, I investment, G government spending, X exports and M imports.\n\n**Worked example (N billion).** C = 600, I = 200, G = 250, X = 150, M = 100.\n\n- GDP = 600 + 200 + 250 + (150 - 100) = **1,100**.\n- If net factor income from abroad is -50, GNP = 1,100 - 50 = **1,050**.\n- If depreciation is 60, NNP = 1,050 - 60 = **990**.\n\n## Problems of measurement\n\nDouble counting; the informal sector and subsistence farming, which are not recorded; illiteracy and poor record keeping; changes in prices which make years hard to compare; and unpaid work such as housework."
+      },
+      "cards": [
+        {
+          "front": "Import substitution",
+          "back": "Producing at home goods that were formerly imported."
+        },
+        {
+          "front": "GDP",
+          "back": "The value of final goods and services produced within a country in a year."
+        },
+        {
+          "front": "GNP",
+          "back": "GDP plus net factor income from abroad."
+        },
+        {
+          "front": "NNP",
+          "back": "GNP minus depreciation."
+        },
+        {
+          "front": "Value added",
+          "back": "The value a firm adds to inputs; used to avoid double counting."
+        },
+        {
+          "front": "Expenditure method",
+          "back": "GDP = C + I + G + (X - M)."
+        },
+        {
+          "front": "Double counting",
+          "back": "Counting the same output twice when finding national income."
+        },
+        {
+          "front": "Net factor income from abroad",
+          "back": "Income of citizens from abroad minus income of foreigners at home."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A country has C = 600, I = 200, G = 250, X = 150 and M = 100 (in N billion). Its GDP is",
+          "options": [
+            "1,000",
+            "1,300",
+            "1,200",
+            "1,100"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "If GDP is N1,100 billion and net factor income from abroad is -N50 billion, GNP is",
+          "options": [
+            "N1,050 billion",
+            "N1,150 billion",
+            "N1,100 billion",
+            "N50 billion"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Net National Product is obtained by",
+          "options": [
+            "adding depreciation to GNP",
+            "subtracting depreciation from GNP",
+            "subtracting imports from GDP",
+            "adding exports to GDP"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following is a problem of measuring national income in Nigeria?",
+          "options": [
+            "Too much accurate data",
+            "All goods are exported",
+            "Output of the informal sector is not recorded",
+            "There is no GDP"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Producing at home the tyres and soap formerly imported is called",
+          "options": [
+            "import substitution",
+            "export promotion",
+            "nationalisation",
+            "entrepot trade"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The following figures (N billion) are for an economy in a year: consumption 800, investment 250, government spending 300, exports 200, imports 150, net factor income from abroad -70, depreciation 80. Calculate (a) GDP, (b) GNP and (c) NNP.",
+          "markScheme": [
+            "GDP = 800 + 250 + 300 + (200 - 150) = N1,400 billion",
+            "GNP = 1,400 - 70 = N1,330 billion",
+            "NNP = 1,330 - 80 = N1,250 billion",
+            "Uses the correct formulas and states the units (N billion)"
+          ],
+          "modelAnswer": "(a) GDP = C + I + G + (X - M) = 800 + 250 + 300 + (200 - 150) = N1,400 billion. (b) GNP = GDP + net factor income from abroad = 1,400 + (-70) = N1,330 billion. (c) NNP = GNP - depreciation = 1,330 - 80 = N1,250 billion.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) GDP = C + I + G + (X - M) = 800 + 250 + 300 + (200 - 150) = N1,400 billion. (b) GNP = GDP + net factor income = 1,400 - 70 = N1,330 billion. (c) NNP = GNP - depreciation = 1,330 - 80 = N1,250 billion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "GDP = C + I + G + (X - M) = 800 + 250 + 300 + (200 - 150) = N1,400 billion"
+                },
+                {
+                  "point": 1,
+                  "quote": "1,400 - 70 = N1,330 billion"
+                },
+                {
+                  "point": 2,
+                  "quote": "NNP = GNP - depreciation = 1,330 - 80 = N1,250 billion"
+                },
+                {
+                  "point": 3,
+                  "quote": "GNP = GDP + net factor income"
+                }
+              ],
+              "feedback": "All four marks. You wrote each formula before substituting and kept the units."
+            },
+            {
+              "tier": "full",
+              "text": "GDP is 800 + 250 + 300 = 1,350 plus net exports of 50, which gives 1,400. GNP is 1,400 plus net factor income of -70, so 1,330. NNP is 1,330 less depreciation 80, so 1,250. All in N billion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "GDP is 800 + 250 + 300 = 1,350 plus net exports of 50, which gives 1,400"
+                },
+                {
+                  "point": 1,
+                  "quote": "GNP is 1,400 plus net factor income of -70, so 1,330"
+                },
+                {
+                  "point": 2,
+                  "quote": "NNP is 1,330 less depreciation 80, so 1,250"
+                },
+                {
+                  "point": 3,
+                  "quote": "All in N billion"
+                }
+              ],
+              "feedback": "Full marks. Working out net exports separately is a good way to avoid mistakes."
+            },
+            {
+              "tier": "partial",
+              "text": "GDP = 800 + 250 + 300 + 200 - 150 = N1,400 billion. GNP = 1,400 - 70 = N1,330 billion. NNP = 1,330 + 80 = N1,410 billion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "GDP = 800 + 250 + 300 + 200 - 150 = N1,400 billion"
+                },
+                {
+                  "point": 1,
+                  "quote": "GNP = 1,400 - 70 = N1,330 billion"
+                }
+              ],
+              "feedback": "GDP and GNP are right. Depreciation is a deduction: NNP = 1,330 - 80 = N1,250 billion, not plus."
+            },
+            {
+              "tier": "partial",
+              "text": "GDP = 800 + 250 + 300 + 200 + 150 = 1,700. GNP = 1,700 - 70 = 1,630. NNP = 1,630 - 80 = 1,550.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "NNP = 1,630 - 80"
+                }
+              ],
+              "feedback": "Your steps for GNP and NNP are the right ones, but imports are subtracted, not added: (X - M) = 50, so GDP = 1,400, GNP = 1,330 and NNP = 1,250.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "GDP is 800 because it is consumption. GNP is 70 and NNP is 80.",
+              "meets": [],
+              "feedback": "GDP adds C, I, G and net exports (X - M) = 1,400. GNP then adds net factor income (-70), and NNP subtracts depreciation (80). The 70 and 80 are adjustments, not the answers."
+            },
+            {
+              "tier": "weak",
+              "text": "GDP = 800 + 250 + 300 + 200 + 150 + 70 + 80 = 1,850. GNP and NNP are the same as GDP.",
+              "meets": [],
+              "feedback": "Only C, I, G and (X - M) go into GDP. GNP adds net factor income from abroad and NNP subtracts depreciation, so the three figures are different: 1,400, 1,330 and 1,250."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Explain the difference between GDP and GNP. (b) State the three methods of measuring national income. (c) Give two reasons why Nigeria's national income figures may not show the true size of the economy.",
+          "markScheme": [
+            "GDP is output produced within the country by all, while GNP adds net factor income from abroad (output of citizens wherever they are)",
+            "Names the three methods: output, income and expenditure",
+            "Reason: informal sector and subsistence output are not recorded",
+            "Reason: double counting, poor records, or price changes"
+          ],
+          "modelAnswer": "(a) GDP is the value of output produced inside a country by anyone, while GNP is GDP plus net factor income from abroad, so it counts the earnings of citizens wherever they work. (b) The three methods are the output method, the income method and the expenditure method. (c) A lot of output in the informal sector and subsistence farming is not recorded, and poor records, double counting and price changes make the data inaccurate.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) GDP is the output produced within a country by both citizens and foreigners, but GNP is GDP plus net factor income from abroad, that is, the income of citizens abroad less that of foreigners in the country. (b) The output method, the income method and the expenditure method. (c) Much output of the informal sector and subsistence farmers is not recorded, and there may be poor record keeping and double counting.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "GDP is the output produced within a country by both citizens and foreigners, but GNP is GDP plus net factor income from abroad"
+                },
+                {
+                  "point": 1,
+                  "quote": "The output method, the income method and the expenditure method"
+                },
+                {
+                  "point": 2,
+                  "quote": "Much output of the informal sector and subsistence farmers is not recorded"
+                },
+                {
+                  "point": 3,
+                  "quote": "poor record keeping and double counting"
+                }
+              ],
+              "feedback": "All four marks. Defining net factor income makes the difference clear."
+            },
+            {
+              "tier": "full",
+              "text": "(a) GDP counts what is produced inside the country, including by foreign firms. GNP counts what the citizens produce wherever they are, so it adds income from abroad and subtracts income sent out. (b) Output, income and expenditure methods. (c) Unrecorded informal trading and farming for home use, and changing prices that make comparison between years difficult.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "GDP counts what is produced inside the country, including by foreign firms. GNP counts what the citizens produce wherever they are"
+                },
+                {
+                  "point": 1,
+                  "quote": "Output, income and expenditure methods"
+                },
+                {
+                  "point": 2,
+                  "quote": "Unrecorded informal trading and farming for home use"
+                },
+                {
+                  "point": 3,
+                  "quote": "changing prices that make comparison between years difficult"
+                }
+              ],
+              "feedback": "Full marks. A clear, balanced answer."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) GDP is the production within the country and GNP is the production of the nation. (b) Output and expenditure. (c) The informal sector is not counted.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The informal sector is not counted"
+                }
+              ],
+              "feedback": "The idea in (a) is close, but GNP is GDP plus net factor income from abroad, which is the exact difference. For (b) name all three methods, including the income method, and give a second reason in (c)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) GNP is GDP plus net income from abroad. (b) The output method, the income method and the expenditure method. (c) Because the government does not like to count.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "GNP is GDP plus net income from abroad"
+                },
+                {
+                  "point": 1,
+                  "quote": "The output method, the income method and the expenditure method"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. In (c) give real reasons: the informal sector and subsistence farming are missed, records are poor, and double counting happens.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) GDP is for a country and GNP is for a person. (b) Tax methods. (c) Because the people are many.",
+              "meets": [],
+              "feedback": "Both measure a nation's output. GNP = GDP + net factor income from abroad. The methods are output, income and expenditure, and the problems are unrecorded informal activity and poor data."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They are the same. (b) Adding, subtracting and multiplying. (c) Nigeria is poor.",
+              "meets": [],
+              "feedback": "GDP and GNP differ by net factor income from abroad. The methods count output, income or expenditure. Give measurement problems, such as unrecorded informal output, not the level of income."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Uses of national income data, and money",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate per capita income and real national income, and state the uses and limitations of national income data;\n2. explain barter and its problems;\n3. state the types, characteristics and functions of money;\n4. explain the demand for and supply of money and how they affect the value of money and prices.\n\n## Materials\n\nCalculators, notes of different Nigerian currency (or pictures), a table of price index numbers.\n\n## Starter (5 minutes)\n\nAsk: a trader in a village has yams and wants a pair of shoes, but the shoemaker wants fish. What can they do? List the answers on the board and name the problem.\n\n## Development\n\n1. Per capita income = national income / population. Work an example and explain real national income = nominal income / price index x 100, and why we compare real, not nominal, incomes.\n2. Uses of national income data: compare countries and years, plan, measure growth. Limitations: unrecorded output, unequal distribution, quality of life not captured, differences in price levels.\n3. Barter: the exchange of goods for goods. Problems: double coincidence of wants, no common measure of value, indivisibility, no store of value.\n4. Types of money: commodity (cowries), metallic coins, paper notes, bank deposits, electronic money. Characteristics: acceptability, durability, portability, divisibility, scarcity, stability. Functions: medium of exchange, unit of account, store of value, standard of deferred payment.\n5. Demand for money (transactions, precautionary, speculative motives) and supply of money (set by the Central Bank and banks). Value of money is the inverse of the price level.\n\n## Class activity\n\nGroups calculate per capita and real income, and decide which country is better off.\n\n## Evaluation\n\n1. State two problems of barter.\n2. If the price index rises from 100 to 125, what is the value of money?\n\n## Assignment\n\nComplete the problem set on the app.",
+      "reading": {
+        "title": "Measuring, comparing and exchanging",
+        "content": "# Uses of national income data, and money\n\n## Per capita and real income\n\n**Per capita income** = national income / population. A country with a national income of N45,000 billion and a population of 150 million has a per capita income of 45,000,000,000,000 / 150,000,000 = **N300,000** per person.\n\n**Nominal** national income is measured at current prices; it can rise only because prices rose. **Real** national income removes the effect of price change:\n\nreal income = nominal income / price index x 100.\n\nIf nominal income is N1,200 billion and the price index is 120 (base year = 100), real income = 1,200 / 120 x 100 = **N1,000 billion**.\n\n**Uses of national income data:** comparing the growth of a country over the years or with other countries, planning, finding the share of each sector, and deciding on taxes. **Limitations:** it leaves out informal and unpaid work, hides how unequally income is shared, ignores leisure and pollution, and prices differ between countries.\n\n## Barter\n\n**Barter** is the direct exchange of goods and services for other goods and services. Its problems:\n\n1. **Double coincidence of wants**: each person must want exactly what the other has.\n2. **No common measure of value**: how many yams equal a pair of shoes?\n3. **Indivisibility**: a cow cannot be cut to pay for a pencil.\n4. **Poor store of value**: yam and fish rot.\n\n## Money\n\n**Money** is anything generally accepted as payment for goods and services and settlement of debts. Forms have changed: cowries and other **commodity money**, **coins**, **paper notes**, **bank deposits** and **electronic money** such as transfers and cards.\n\n**Characteristics of good money:** acceptable, durable, portable, divisible, scarce enough to hold value and stable.\n\n**Functions:** a medium of exchange; a unit of account; a store of value; and a standard of deferred payment (debts can be repaid later).\n\n## Demand for and supply of money\n\nPeople demand money to make purchases (transactions motive), to meet emergencies (precautionary motive) and to take advantage of future opportunities (speculative motive). The **supply of money** is the total money in the economy, controlled by the Central Bank through its policies.\n\n## Value of money and the price level\n\nThe value of money is what it can buy. It moves opposite to the price level. If the price index rises from 100 to 125, N1 buys only 100 / 125 = 0.8 of what it did, so its value has fallen to N0.80."
+      },
+      "cards": [
+        {
+          "front": "Per capita income",
+          "back": "National income divided by population."
+        },
+        {
+          "front": "Real income",
+          "back": "Nominal income adjusted for price changes."
+        },
+        {
+          "front": "Barter",
+          "back": "Direct exchange of goods for goods."
+        },
+        {
+          "front": "Double coincidence of wants",
+          "back": "Each trader must want what the other has."
+        },
+        {
+          "front": "Medium of exchange",
+          "back": "The function of money as a means of buying and selling."
+        },
+        {
+          "front": "Store of value",
+          "back": "The ability of money to keep purchasing power for future use."
+        },
+        {
+          "front": "Standard of deferred payment",
+          "back": "Money's use in settling debts to be paid later."
+        },
+        {
+          "front": "Value of money",
+          "back": "What money can buy; it falls when the price level rises."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A country has a national income of N90,000 million and a population of 300,000. Its per capita income is",
+          "options": [
+            "N30,000",
+            "N300",
+            "N3,000",
+            "N300,000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "If nominal income is N2,400 billion and the price index is 120 (base year = 100), real income is",
+          "options": [
+            "N2,880 billion",
+            "N2,000 billion",
+            "N2,400 billion",
+            "N20 billion"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following is a problem of barter?",
+          "options": [
+            "Double coincidence of wants",
+            "Money is too durable",
+            "Prices are fixed",
+            "Goods are too scarce"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Money used to settle debts that will be paid in the future performs the function of",
+          "options": [
+            "a medium of exchange",
+            "a unit of account",
+            "a store of value",
+            "a standard of deferred payment"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "If the price index rises from 100 to 200, the value of money",
+          "options": [
+            "doubles",
+            "is unchanged",
+            "halves",
+            "becomes zero"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A country's national income is N60,000 billion at current prices and its population is 200 million. The price index is 150 with the base year equal to 100. Calculate (a) the per capita income and (b) the real national income. State one reason why real income is a better measure of growth than nominal income.",
+          "markScheme": [
+            "Per capita income = 60,000,000,000,000 / 200,000,000 = N300,000",
+            "Real income = 60,000 / 150 x 100",
+            "Real national income = N40,000 billion",
+            "Nominal income can rise because of price rises alone, but real income removes the price effect"
+          ],
+          "modelAnswer": "(a) Per capita income = national income / population = N60,000 billion / 200 million = N300,000. (b) Real income = nominal income / price index x 100 = 60,000 / 150 x 100 = N40,000 billion. Real income is a better measure of growth because nominal income can rise only because prices have risen, while real income removes the effect of price changes.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Per capita income = 60,000,000,000,000 / 200,000,000 = N300,000. (b) Real income = 60,000 / 150 x 100 = N40,000 billion. Real income is better because nominal income can increase just because prices went up, while real income takes the price rise out.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Per capita income = 60,000,000,000,000 / 200,000,000 = N300,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Real income = 60,000 / 150 x 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "N40,000 billion"
+                },
+                {
+                  "point": 3,
+                  "quote": "nominal income can increase just because prices went up, while real income takes the price rise out"
+                }
+              ],
+              "feedback": "All four marks. Writing the full number of naira in (a) avoids the usual slip with zeros."
+            },
+            {
+              "tier": "full",
+              "text": "Per capita income is national income divided by population, which gives N300,000 per person. Real income is nominal income divided by the price index times 100: 60,000 divided by 150 x 100 = 40,000, so N40,000 billion. Nominal income may grow only because of inflation, so real income shows the true change in output.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Per capita income is national income divided by population, which gives N300,000 per person"
+                },
+                {
+                  "point": 1,
+                  "quote": "Real income is nominal income divided by the price index times 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "so N40,000 billion"
+                },
+                {
+                  "point": 3,
+                  "quote": "Nominal income may grow only because of inflation, so real income shows the true change in output"
+                }
+              ],
+              "feedback": "Full marks. Naming inflation as the cause for nominal rises answers the last part exactly."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 60,000 billion divided by 200 million is N300,000. (b) Real income = 60,000 x 150/100 = N90,000 billion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "60,000 billion divided by 200 million is N300,000"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b) you multiplied by the index; real income divides by the index: 60,000 / 150 x 100 = N40,000 billion. You also need to say why real income is better."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Per capita income is N300,000. (b) Real income = 60,000 / 150 x 100 = 40,000 billion. Real is better because it is real.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Per capita income is N300,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Real income = 60,000 / 150 x 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "40,000 billion"
+                }
+              ],
+              "feedback": "The calculations are correct. 'Because it is real' is not a reason: it removes the effect of price rises, which can raise nominal income without more output.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 60,000 - 200 = 59,800. (b) 150 - 100 = 50. Nominal is better.",
+              "meets": [],
+              "feedback": "Per capita income divides national income by population (N300,000). Real income divides nominal income by the price index and multiplies by 100 (N40,000 billion). Real is the better guide to growth."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Per capita income is the income of the capital city. (b) 60,000 + 150 = 60,150.",
+              "meets": [],
+              "feedback": "Per capita means per person: national income / population = N300,000. For real income, divide 60,000 by 150 and multiply by 100 to remove the effect of price rises."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Explain four problems of barter. (b) State three characteristics of good money and say how money solves the problem of 'double coincidence of wants'.",
+          "markScheme": [
+            "Double coincidence of wants: both parties must want what the other has",
+            "No common unit of measuring value",
+            "Indivisibility of some goods, or goods cannot be stored",
+            "Characteristics: any three of acceptability, durability, portability, divisibility, scarcity",
+            "Money is a medium of exchange: the seller accepts money and then buys what he wants elsewhere"
+          ],
+          "modelAnswer": "(a) Barter needs a double coincidence of wants, so each trader must want what the other has. There is no common measure of value, so it is hard to say how many yams equal a pair of shoes. Some goods are indivisible, like a cow, and perishable goods such as fish cannot store value. (b) Good money is acceptable, durable, portable and divisible. Money solves the double coincidence problem because it is a medium of exchange: the seller accepts money for his goods and then uses it to buy what he wants from anyone else.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) In barter, both people must want what the other has, which is called double coincidence of wants. There is no common unit to measure value. Some goods like a cow cannot be divided. Perishable goods like fish cannot keep value. (b) Good money is acceptable, durable and portable. Money solves the double coincidence of wants because a seller can take money and use it to buy what he wants from anybody.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "both people must want what the other has, which is called double coincidence of wants"
+                },
+                {
+                  "point": 1,
+                  "quote": "There is no common unit to measure value"
+                },
+                {
+                  "point": 2,
+                  "quote": "Some goods like a cow cannot be divided"
+                },
+                {
+                  "point": 3,
+                  "quote": "Good money is acceptable, durable and portable"
+                },
+                {
+                  "point": 4,
+                  "quote": "a seller can take money and use it to buy what he wants from anybody"
+                }
+              ],
+              "feedback": "All five marks. The answer names four problems and shows how money removes the main one."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Barter has no common measure of value. It suffers from double coincidence of wants. It is difficult to divide items such as livestock. It has no good store of value because food rots. (b) The characteristics are divisibility, scarcity and general acceptability. Money is a medium of exchange so the seller does not need the buyer to have what he wants; he receives money and spends it elsewhere.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It suffers from double coincidence of wants"
+                },
+                {
+                  "point": 1,
+                  "quote": "Barter has no common measure of value"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is difficult to divide items such as livestock"
+                },
+                {
+                  "point": 3,
+                  "quote": "divisibility, scarcity and general acceptability"
+                },
+                {
+                  "point": 4,
+                  "quote": "he receives money and spends it elsewhere"
+                }
+              ],
+              "feedback": "Full marks. 'Spends it elsewhere' is exactly the way money breaks the double coincidence."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Barter has double coincidence of wants and no common measure of value. (b) Good money is acceptable and durable. Money solves it by being a medium of exchange.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "double coincidence of wants"
+                },
+                {
+                  "point": 1,
+                  "quote": "no common measure of value"
+                }
+              ],
+              "feedback": "You gave two of four problems; add indivisibility and storage. Name a third characteristic of money and explain how a medium of exchange helps: the seller takes money and spends it elsewhere."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) Money is acceptable, portable and divisible, and it solves the problem because people can take money and buy what they need from anyone. (a) Barter is slow.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "acceptable, portable and divisible"
+                },
+                {
+                  "point": 4,
+                  "quote": "people can take money and buy what they need from anyone"
+                }
+              ],
+              "feedback": "Part (b) is well done. For (a), say why barter is hard: double coincidence of wants, no common measure of value, indivisibility and poor store of value.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Barter is old fashioned and people dislike it. (b) Money is paper and it is nice.",
+              "meets": [],
+              "feedback": "List the actual problems of barter (double coincidence of wants, no common measure, indivisibility, no store of value) and the characteristics of money, such as acceptability, durability and divisibility."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Barter has no money. (b) The characteristics of money are Naira, Dollar and Cedi.",
+              "meets": [],
+              "feedback": "Having no money is what barter is, not a problem. Characteristics describe qualities, such as acceptable and portable; Naira and Dollar are examples of money."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Inflation and financial institutions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define inflation, calculate its rate and state its types;\n2. explain the causes, effects and control of inflation;\n3. describe the traditional, central, commercial, development and merchant banks, insurance companies and building societies;\n4. state the functions of the Central Bank of Nigeria.\n\n## Materials\n\nCalculators, a chart of price index numbers, an esusu (ajo) contribution card, a bank deposit slip.\n\n## Starter (5 minutes)\n\nAsk: a bag of rice cost N45,000 two years ago. Now it costs N75,000. What has happened to the value of your pocket money? Who suffers most, and who gains?\n\n## Development\n\n1. Define inflation as a sustained rise in the general price level. Rate of inflation = (new index - old index) / old index x 100. Work an example.\n2. Types: demand-pull, cost-push, imported inflation; creeping, galloping and hyperinflation.\n3. Causes: excess money supply, high government spending, rising costs of fuel and wages, and import prices. Effects: falling value of money, harm to people on fixed incomes and savers, gains to debtors, discouraged savings, higher cost of living. Control: monetary policy (raising interest rates, reserve requirements), fiscal policy (higher taxes, lower spending), more production and price controls.\n4. Financial institutions: traditional (esusu, ajo, cooperative thrift), Central Bank, commercial banks, development banks such as the Bank of Industry, merchant banks, insurance companies and building societies (mortgage institutions).\n5. Functions of the Central Bank: issues currency, banker to government, banker to banks, lender of last resort, controls credit and money supply.\n\n## Class activity\n\nPupils compute inflation rates from a table and rank the effects.\n\n## Evaluation\n\n1. State two causes of cost-push inflation.\n2. State three functions of the Central Bank.\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "Rising prices, and the institutions that handle money",
+        "content": "# Inflation and financial institutions\n\n## Inflation\n\n**Inflation** is a persistent rise in the general level of prices, so each naira buys less. It is measured with a price index. The inflation rate = (new index - old index) / old index x 100.\n\n**Worked example.** If the price index rises from 125 to 150, the rate of inflation = (150 - 125) / 125 x 100 = 25 / 125 x 100 = **20%**.\n\n**Types.** *Demand-pull*: too much money chasing too few goods. *Cost-push*: rising costs of production, such as fuel, wages or imported inputs, push prices up. *Imported inflation*: rising prices of imports. By speed: *creeping* (small), *galloping* (very fast) and *hyperinflation* (out of control).\n\n**Causes:** an increase in the money supply, heavy government spending, higher wages and fuel costs, scarcity of goods, and a falling exchange rate which raises import prices.\n\n**Effects:** the value of money falls; people on fixed incomes, such as pensioners, lose; savers lose, but debtors gain because they repay with cheaper naira; savings and investment may fall; exports may become uncompetitive.\n\n**Control:** *monetary policy* (the Central Bank raises interest rates or the cash reserve ratio to reduce credit); *fiscal policy* (government cuts spending or raises taxes); raising production; and price controls where suitable.\n\n## Financial institutions\n\n- **Traditional institutions**: esusu, ajo and cooperative thrift societies where members save together and take turns to collect.\n- **Central Bank**: the apex bank. The Central Bank of Nigeria (CBN) issues currency; is banker and adviser to government; banker to other banks; lender of last resort; and controls credit and the money supply.\n- **Commercial banks**: accept deposits, give loans and provide payment services, such as transfers and cheques.\n- **Development banks**: give long-term loans to farming, industry or housing, such as the Bank of Industry.\n- **Merchant banks**: deal in large loans, issue of shares and advice to firms. In Nigeria many have merged into universal banks.\n- **Insurance companies**: pay compensation for loss against a premium.\n- **Building societies / mortgage banks**: give loans for building or buying houses, repaid over a long time."
+      },
+      "cards": [
+        {
+          "front": "Inflation",
+          "back": "A persistent rise in the general level of prices."
+        },
+        {
+          "front": "Rate of inflation",
+          "back": "(New index - old index) / old index x 100."
+        },
+        {
+          "front": "Demand-pull inflation",
+          "back": "Too much money chasing too few goods."
+        },
+        {
+          "front": "Cost-push inflation",
+          "back": "Prices rise because costs of production rise."
+        },
+        {
+          "front": "Lender of last resort",
+          "back": "The Central Bank lends to banks that cannot get funds elsewhere."
+        },
+        {
+          "front": "Commercial bank",
+          "back": "A bank that accepts deposits and gives loans."
+        },
+        {
+          "front": "Insurance",
+          "back": "Protection against loss in return for a premium."
+        },
+        {
+          "front": "Esusu / ajo",
+          "back": "A traditional rotating savings scheme."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "If the price index rises from 200 to 230, the rate of inflation is",
+          "options": [
+            "30%",
+            "13%",
+            "15%",
+            "23%"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Inflation caused by a rise in the cost of fuel and wages is called",
+          "options": [
+            "demand-pull inflation",
+            "cost-push inflation",
+            "creeping deflation",
+            "imported deflation"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Who gains most during inflation?",
+          "options": [
+            "Pensioners on fixed pay",
+            "Savers with money at home",
+            "Workers on fixed salaries",
+            "Debtors who repay with cheaper naira"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which institution is the lender of last resort in Nigeria?",
+          "options": [
+            "The Central Bank of Nigeria",
+            "A merchant bank",
+            "A building society",
+            "An insurance company"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Esusu or ajo is an example of",
+          "options": [
+            "a development bank",
+            "a traditional financial institution",
+            "a merchant bank",
+            "a Central Bank function"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A price index (2020 = 100) rose to 140 in 2022 and to 168 in 2023. Calculate the rate of inflation between 2022 and 2023. Explain two effects of this inflation on the people of a town.",
+          "markScheme": [
+            "Rate = (168 - 140) / 140 x 100",
+            "Rate of inflation = 20%",
+            "Effect 1 with explanation, e.g. the value of money falls so incomes buy less, especially for people on fixed incomes",
+            "Effect 2 with explanation, e.g. debtors gain and savers lose, or savings are discouraged"
+          ],
+          "modelAnswer": "Rate of inflation = (168 - 140) / 140 x 100 = 28 / 140 x 100 = 20%. One effect is that the value of money falls, so people with fixed incomes, such as pensioners, can buy less than before. Another is that savers lose, because the naira they saved is worth less, while borrowers gain because they repay with cheaper naira.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Rate of inflation = (168 - 140) / 140 x 100 = 28/140 x 100 = 20%. One effect is that people on fixed incomes like pensioners can buy less because the value of money has fallen. Another effect is that savers lose because the money in their savings buys less, but debtors gain because they pay back with naira of lower value.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Rate of inflation = (168 - 140) / 140 x 100"
+                },
+                {
+                  "point": 1,
+                  "quote": "28/140 x 100 = 20%"
+                },
+                {
+                  "point": 2,
+                  "quote": "people on fixed incomes like pensioners can buy less because the value of money has fallen"
+                },
+                {
+                  "point": 3,
+                  "quote": "savers lose because the money in their savings buys less, but debtors gain"
+                }
+              ],
+              "feedback": "All four marks. Each effect comes with its reason."
+            },
+            {
+              "tier": "full",
+              "text": "The change in the index is 168 minus 140 = 28, divided by the old index 140 and multiplied by 100, which is 20 percent. Effects: workers whose salaries do not increase become poorer because prices are higher, and people stop saving because the saved money loses value, which reduces investment.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "168 minus 140 = 28, divided by the old index 140 and multiplied by 100"
+                },
+                {
+                  "point": 1,
+                  "quote": "which is 20 percent"
+                },
+                {
+                  "point": 2,
+                  "quote": "workers whose salaries do not increase become poorer because prices are higher"
+                },
+                {
+                  "point": 3,
+                  "quote": "people stop saving because the saved money loses value, which reduces investment"
+                }
+              ],
+              "feedback": "Full marks. You divided by the old index, which is the step many learners get wrong."
+            },
+            {
+              "tier": "partial",
+              "text": "The rate is (168 - 140) / 168 x 100 = 16.7%. Inflation makes things dear.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(168 - 140)"
+                }
+              ],
+              "feedback": "The change (28) is right, but divide by the old index, 140, not the new one: 20%. 'Things are dear' is not an effect; say who loses, for example people on fixed incomes, and why."
+            },
+            {
+              "tier": "partial",
+              "text": "Inflation rate is 28/140 x 100 = 20%. One effect is that it is bad.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "28/140 x 100"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 20%"
+                }
+              ],
+              "feedback": "Your rate is correct. 'Bad' needs explaining: for example the value of money falls, so people on fixed incomes and savers lose.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Rate = 168 - 140 = 28%. The effect is that prices go up and money goes down.",
+              "meets": [],
+              "feedback": "Express the change as a percentage of the old index: 28/140 x 100 = 20%. Then explain effects clearly: who loses and who gains, with a reason."
+            },
+            {
+              "tier": "weak",
+              "text": "The rate is 168/140 = 1.2. Inflation makes people rich because they have plenty of money.",
+              "meets": [],
+              "feedback": "1.2 shows the ratio, but the rate is (168 - 140)/140 x 100 = 20%. Inflation does not make people richer; the same money buys less, so those on fixed incomes become poorer."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) State three functions of the Central Bank of Nigeria. (b) Distinguish between a commercial bank and a development bank. (c) Explain how the Central Bank can reduce inflation.",
+          "markScheme": [
+            "Three functions: any three of issuing currency, banker to government, banker to banks, lender of last resort, controlling money supply",
+            "Commercial banks accept deposits and give mostly short-term loans for trade",
+            "Development banks give long-term loans to agriculture, industry or housing",
+            "Central Bank raises interest rates, cash reserve ratio, or sells securities to reduce credit and the money supply"
+          ],
+          "modelAnswer": "(a) The Central Bank issues the currency, is banker to the government, is banker to other banks and lender of last resort, and controls the money supply. (b) A commercial bank accepts deposits and gives mainly short-term loans, while a development bank gives long-term loans for agriculture, industry or housing. (c) To reduce inflation the Central Bank can raise interest rates or the cash reserve ratio, or sell securities, so banks have less to lend and the money supply falls.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) It issues currency, it is banker to the government and it is the lender of last resort to banks. (b) A commercial bank accepts deposits and gives short-term loans, but a development bank gives long-term loans for farming, industry or housing. (c) The Central Bank can raise the interest rate or the cash reserve ratio so that banks have less money to lend, and the money supply falls.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It issues currency, it is banker to the government and it is the lender of last resort to banks"
+                },
+                {
+                  "point": 1,
+                  "quote": "A commercial bank accepts deposits and gives short-term loans"
+                },
+                {
+                  "point": 2,
+                  "quote": "a development bank gives long-term loans for farming, industry or housing"
+                },
+                {
+                  "point": 3,
+                  "quote": "raise the interest rate or the cash reserve ratio so that banks have less money to lend, and the money supply falls"
+                }
+              ],
+              "feedback": "All four marks. You explained how the policy reduces inflation, not just named it."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Issuing the naira, acting as banker to government and to the commercial banks, and controlling the supply of money. (b) Commercial banks take deposits from the public and lend for short periods, mostly to traders. Development banks give loans for long periods to projects such as factories and farms. (c) By selling government securities or raising reserve requirements, the CBN reduces credit and so the money supply, which lowers demand-pull inflation.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Issuing the naira, acting as banker to government and to the commercial banks, and controlling the supply of money"
+                },
+                {
+                  "point": 1,
+                  "quote": "Commercial banks take deposits from the public and lend for short periods"
+                },
+                {
+                  "point": 2,
+                  "quote": "Development banks give loans for long periods to projects such as factories and farms"
+                },
+                {
+                  "point": 3,
+                  "quote": "By selling government securities or raising reserve requirements, the CBN reduces credit and so the money supply"
+                }
+              ],
+              "feedback": "Full marks. Naming demand-pull inflation shows you see which type this policy cures."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The Central Bank issues money and keeps the government's money. (b) A commercial bank is for ordinary people and a development bank is for the government. (c) It can increase the interest rate.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "issues money and keeps the government's money"
+                },
+                {
+                  "point": 3,
+                  "quote": "It can increase the interest rate"
+                }
+              ],
+              "feedback": "Parts (a) and (c) have the right ideas; (c) should say why it reduces inflation (less borrowing, less money supply). A development bank lends long-term to farming and industry; it is not only for government."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) A commercial bank gives short-term loans and takes deposits while a development bank gives long-term loans for industry. (c) The Central Bank can reduce the money supply.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A commercial bank gives short-term loans and takes deposits"
+                },
+                {
+                  "point": 2,
+                  "quote": "a development bank gives long-term loans for industry"
+                }
+              ],
+              "feedback": "Your distinction is good. For (a) name three functions, and for (c) say how the money supply is reduced: higher interest rates or reserve requirements.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The Central Bank gives loans to people and keeps their money. (b) Commercial banks are the banks that do business. (c) It will print more money.",
+              "meets": [],
+              "feedback": "Printing more money would increase inflation. The CBN issues currency and acts as banker to government and banks. Commercial banks take deposits and give short-term loans; development banks give long-term loans."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The Central Bank is a bank in Abuja. (b) A development bank is where children save. (c) It will arrest those who sell at high prices.",
+              "meets": [],
+              "feedback": "State functions, such as issuing currency and being lender of last resort. A development bank finances long-term development, not children's savings. The CBN controls inflation through interest rates and money supply."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Money and capital markets, public finance and taxation",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish the money market from the capital market and give their instruments;\n2. state the objectives of fiscal policy and the sources of government revenue;\n3. distinguish direct from indirect taxes and state the canons of taxation;\n4. calculate tax under proportional, progressive and regressive rates.\n\n## Materials\n\nCalculators, a chart of tax bands, a sample payslip, the Nigerian Exchange (NGX) share price list from a newspaper.\n\n## Starter (5 minutes)\n\nShow a payslip with a tax deduction. Ask: why does government take part of your pay? What do you get in return?\n\n## Development\n\n1. Money market: short-term funds (treasury bills, commercial papers, call money). Capital market: long-term funds (shares, bonds), traded on the Nigerian Exchange. Participants: banks, the Central Bank, stockbrokers, investors.\n2. Fiscal policy: use of taxation and spending to affect the economy. Objectives: full employment, price stability, growth and fair income distribution.\n3. Sources of revenue: taxes, oil revenue and royalties, fees and fines, grants and loans, and government businesses.\n4. Taxation: direct taxes (personal income tax, company tax, capital gains tax) and indirect taxes (VAT, customs duties, excise). Incidence: who finally bears the tax.\n5. Canons of taxation (Adam Smith): equity, certainty, convenience and economy. Rates: proportional, progressive, regressive. Work an example of each.\n\n## Class activity\n\nPupils calculate the tax of three people on a given progressive scale.\n\n## Evaluation\n\n1. Give two examples each of a direct and an indirect tax.\n2. What is meant by the canon of certainty?\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "How government raises and uses money",
+        "content": "# Money and capital markets, public finance and taxation\n\n## Money and capital markets\n\nThe **money market** deals in short-term funds, usually under one year. Its instruments include Treasury bills and commercial papers. The **capital market** deals in long-term funds for investment: shares and bonds, bought and sold on the Nigerian Exchange. A company that wants money to build a factory may issue shares; government may issue bonds to finance a road.\n\n## Fiscal policy and sources of revenue\n\n**Fiscal policy** is the use of government taxation and spending to manage the economy. Its objectives include full employment, stable prices, economic growth and a fairer share of income.\n\nGovernment revenue comes from taxes, **oil revenue** (royalties and taxes on crude oil), fees, fines and licences, loans and grants, and profits from public enterprises.\n\n## Taxation\n\nA **tax** is a compulsory payment to government that gives no direct benefit in return.\n\n- **Direct taxes** are paid directly by the person on whom they are placed: personal income tax and company income tax.\n- **Indirect taxes** are placed on goods and services and paid through prices: value added tax (VAT) and customs duties.\n\nThe **incidence** is who finally bears the burden. A VAT on bread is charged to the baker but paid by the buyer.\n\n### Canons of taxation\n\n1. **Equity**: the tax should be fair to all, matching ability to pay.\n2. **Certainty**: taxpayers should know how much to pay and when.\n3. **Convenience**: payment should be easy in time and manner.\n4. **Economy**: the cost of collecting it should be small.\n\n### Rates of taxation\n\n- **Proportional**: the same percentage at every income. 10% of N80,000 = N8,000 and 10% of N200,000 = N20,000.\n- **Progressive**: the percentage rises as income rises. Take: first N100,000 at 5%, next N100,000 at 10%, anything above at 15%. On N250,000: 5,000 + 10,000 + 7,500 = N22,500, an average rate of 9%.\n- **Regressive**: the percentage falls as income rises, so it takes a larger share from the poor. A flat N2,000 levy is 4% of N50,000 but only 1% of N200,000."
+      },
+      "cards": [
+        {
+          "front": "Money market",
+          "back": "The market for short-term funds, such as treasury bills."
+        },
+        {
+          "front": "Capital market",
+          "back": "The market for long-term funds, such as shares and bonds."
+        },
+        {
+          "front": "Fiscal policy",
+          "back": "The use of taxation and public spending to manage the economy."
+        },
+        {
+          "front": "Direct tax",
+          "back": "A tax paid directly by the person it is placed on, such as income tax."
+        },
+        {
+          "front": "Indirect tax",
+          "back": "A tax on goods and services paid through prices, such as VAT."
+        },
+        {
+          "front": "Progressive tax",
+          "back": "The rate rises as income rises."
+        },
+        {
+          "front": "Regressive tax",
+          "back": "The rate falls as income rises; it takes a bigger share from the poor."
+        },
+        {
+          "front": "Canon of certainty",
+          "back": "The taxpayer should know how much to pay and when."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is traded in the capital market?",
+          "options": [
+            "Treasury bills",
+            "Call money",
+            "Shares and bonds",
+            "Commercial papers only"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of the following is a direct tax?",
+          "options": [
+            "Value added tax",
+            "Customs duty",
+            "Excise duty",
+            "Personal income tax"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A tax that takes 10% of every person's income, whether poor or rich, is",
+          "options": [
+            "proportional",
+            "progressive",
+            "regressive",
+            "indirect"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The canon of taxation which says that the cost of collecting a tax should be small is",
+          "options": [
+            "equity",
+            "certainty",
+            "convenience",
+            "economy"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A flat levy of N3,000 charged on every worker takes a larger share of a poor person's income than a rich person's. The tax is",
+          "options": [
+            "progressive",
+            "proportional",
+            "regressive",
+            "direct only"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A progressive income tax charges 5% on the first N100,000 of income, 10% on the next N100,000 and 15% on anything above N200,000. Calculate the tax paid by Mrs Bello whose income is N300,000, and her average rate of tax.",
+          "markScheme": [
+            "5% of N100,000 = N5,000",
+            "10% of the next N100,000 = N10,000",
+            "15% of the remaining N100,000 = N15,000",
+            "Total tax = N30,000, so the average rate = 10%"
+          ],
+          "modelAnswer": "Tax on the first N100,000 at 5% = N5,000. Tax on the next N100,000 at 10% = N10,000. Tax on the remaining N100,000 at 15% = N15,000. Total tax = 5,000 + 10,000 + 15,000 = N30,000. Average rate = 30,000 / 300,000 x 100 = 10%.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First N100,000 at 5% = N5,000. Next N100,000 at 10% = N10,000. Last N100,000 at 15% = N15,000. Total tax = N30,000. Average rate = 30,000/300,000 x 100 = 10%.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First N100,000 at 5% = N5,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Next N100,000 at 10% = N10,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Last N100,000 at 15% = N15,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total tax = N30,000. Average rate = 30,000/300,000 x 100 = 10%"
+                }
+              ],
+              "feedback": "All four marks. Taxing each band separately is the right method for a progressive scale."
+            },
+            {
+              "tier": "full",
+              "text": "I divide the income into bands. 5/100 x 100,000 = 5,000, 10/100 x 100,000 = 10,000 and 15/100 x 100,000 = 15,000. These add up to N30,000 tax. The average rate is 30,000 divided by 300,000, which is 10 percent.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5/100 x 100,000 = 5,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "10/100 x 100,000 = 10,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "15/100 x 100,000 = 15,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "These add up to N30,000 tax. The average rate is 30,000 divided by 300,000, which is 10 percent"
+                }
+              ],
+              "feedback": "Full marks. Showing each band's calculation makes the total easy to check."
+            },
+            {
+              "tier": "partial",
+              "text": "5% of the first N100,000 = N5,000. Then 15% of the other N200,000 = N30,000, so the tax is N35,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5% of the first N100,000 = N5,000"
+                }
+              ],
+              "feedback": "Your first band is right. The next N100,000 is taxed at 10% and only the last N100,000 at 15%, so the tax is N30,000 and the average rate is 10%."
+            },
+            {
+              "tier": "partial",
+              "text": "5% of 100,000 = 5,000. 10% of 100,000 = 10,000. 15% of 100,000 = 15,000. The total tax is 5,000 + 10,000 + 15,000 = 30,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5% of 100,000 = 5,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "10% of 100,000 = 10,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "15% of 100,000 = 15,000"
+                }
+              ],
+              "feedback": "The bands and total are correct. You did not find the average rate: total tax divided by income = 30,000 / 300,000 x 100 = 10%.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "5 + 10 + 15 = 30 so she pays 30% of her income.",
+              "meets": [],
+              "feedback": "The percentages apply to bands of N100,000 each, not to the whole income. Tax = 5,000 + 10,000 + 15,000 = N30,000, which is 10% of N300,000."
+            },
+            {
+              "tier": "weak",
+              "text": "The tax is 10% of 300,000 = 30,000 because it is the middle rate.",
+              "meets": [],
+              "feedback": "You reached the right figure by a wrong method. The total tax is N30,000, found by taxing each band at its own rate, and the average rate is 10%; show the bands."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Distinguish between direct and indirect taxes with two examples each. (b) Explain two canons of taxation. (c) Why is a regressive tax unfair to poor people?",
+          "markScheme": [
+            "Direct tax paid by the person it is placed on; examples: personal income tax, company tax",
+            "Indirect tax placed on goods and paid through prices; examples: VAT, customs duties",
+            "Two canons explained (e.g. equity, certainty, convenience, economy)",
+            "A regressive tax takes a larger share of a poor person's income than of a rich person's"
+          ],
+          "modelAnswer": "(a) A direct tax is paid by the person on whom it is placed, such as personal income tax and company income tax. An indirect tax is placed on goods and services and paid through prices, such as VAT and customs duties. (b) Equity means the tax should be fair, matching ability to pay. Certainty means the taxpayer should know how much to pay and when. (c) A regressive tax takes a larger share of a poor person's income than a rich person's, so it makes the burden heavier on those who can least afford it.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A direct tax is paid by the person it is imposed on, like personal income tax and company tax. An indirect tax is placed on goods and paid through the price, like VAT and customs duty. (b) Equity means the tax should be fair and depend on ability to pay. Certainty means the taxpayer should know how much to pay and when. (c) A regressive tax takes a bigger share of a poor person's income than of a rich person's income.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A direct tax is paid by the person it is imposed on, like personal income tax and company tax"
+                },
+                {
+                  "point": 1,
+                  "quote": "An indirect tax is placed on goods and paid through the price, like VAT and customs duty"
+                },
+                {
+                  "point": 2,
+                  "quote": "Equity means the tax should be fair and depend on ability to pay"
+                },
+                {
+                  "point": 3,
+                  "quote": "takes a bigger share of a poor person's income than of a rich person's income"
+                }
+              ],
+              "feedback": "All four marks. Every part answered with correct examples."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Direct taxes, such as income tax and company tax, are paid directly by those taxed. Indirect taxes, such as VAT and import duties, are paid when buying goods. (b) Convenience means that it should be easy to pay at a suitable time. Economy means that the cost of collection should be small compared with the tax collected. (c) The poor pay a higher percentage of their income than the rich, so it is not fair.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Direct taxes, such as income tax and company tax, are paid directly by those taxed"
+                },
+                {
+                  "point": 1,
+                  "quote": "Indirect taxes, such as VAT and import duties, are paid when buying goods"
+                },
+                {
+                  "point": 2,
+                  "quote": "Economy means that the cost of collection should be small compared with the tax collected"
+                },
+                {
+                  "point": 3,
+                  "quote": "The poor pay a higher percentage of their income than the rich"
+                }
+              ],
+              "feedback": "Full marks. The canons are explained, not only named."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Direct tax is income tax and indirect tax is VAT. (b) Equity is that the tax should be fair. Certainty is that you know when to pay. (c) It is unfair because the poor pay more.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Direct tax is income tax"
+                },
+                {
+                  "point": 1,
+                  "quote": "indirect tax is VAT"
+                },
+                {
+                  "point": 2,
+                  "quote": "Equity is that the tax should be fair. Certainty is that you know when to pay"
+                }
+              ],
+              "feedback": "The examples are right but you need a definition of direct and indirect tax (who pays: the person taxed, or through prices). For (c) say what the poor pay more of: a larger share of their income."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A direct tax is paid by the person taxed and an indirect tax is paid in the price of goods. Examples are income tax, company tax, VAT and customs duty. (c) A regressive tax is bad.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A direct tax is paid by the person taxed"
+                },
+                {
+                  "point": 1,
+                  "quote": "an indirect tax is paid in the price of goods"
+                }
+              ],
+              "feedback": "Part (a) is complete. You also need (b), two canons explained, and in (c) explain why: it takes a larger share of a poor person's income.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Direct tax is tax paid directly to the president. (b) Canons are the guns used in war. (c) Poor people are not paying tax.",
+              "meets": [],
+              "feedback": "Direct and indirect describe who bears the tax, not whom it is paid to. Canons are principles for a good tax (equity, certainty, convenience, economy). Regressive taxes take a bigger share of poor incomes."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Indirect tax is tax that is not paid. (b) Equity is the shares in a company. (c) It is not fair because it is regressive.",
+              "meets": [],
+              "feedback": "Indirect taxes are paid, through the prices of goods. Here equity means fairness in taxation. In (c) explain why regressive is unfair: it takes a larger percentage from the poor."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Public expenditure, the budget and economic development",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the incidence and effects of direct and indirect taxes;\n2. distinguish recurrent from capital expenditure and state the effects of public spending;\n3. explain the government budget (surplus, deficit, balanced) and the national debt;\n4. distinguish economic growth from economic development and state the characteristics and problems of developing countries.\n\n## Materials\n\nCalculators, a simple pie chart of a state budget, a table of GDP figures, an HDI-style table of a developed and a developing country.\n\n## Starter (5 minutes)\n\nAsk: your school's budget lists salaries, chalk and a new science laboratory. Which of these will you pay for again next year, and which just once?\n\n## Development\n\n1. Incidence: who bears the tax. The impact is on the seller; the incidence depends on elasticity of demand. A tax on an inelastic good is passed to the buyer.\n2. Public expenditure: recurrent (salaries, running costs) and capital (roads, schools, power plants). Effects: jobs, growth, income redistribution; risks: inflation and debt.\n3. The budget: planned revenue and expenditure for a year. Surplus (revenue exceeds spending), deficit (spending exceeds revenue), balanced. The national debt is the total owed by government; in Nigeria the Debt Management Office keeps the records.\n4. Growth (rise in real output) versus development (growth plus better living standards, health, education and fair sharing). Calculate a growth rate.\n5. Characteristics of developing countries: low per capita income, dependence on primary products, high population growth, unemployment, poor infrastructure. Problems: capital shortage, corruption, debt, weak institutions.\n\n## Class activity\n\nGroups tabulate a budget, find the balance and suggest what to cut.\n\n## Evaluation\n\n1. Government revenue is N20 trillion and spending is N27 trillion. State the balance.\n2. Give two characteristics of a developing country.\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "Spending the nation's money, and what development means",
+        "content": "# Public expenditure, the budget and economic development\n\n## Incidence of taxes\n\nThe **incidence** of a tax is who finally bears it. A tax may be imposed on the seller but passed on to the buyer in a higher price. If demand is **inelastic** (like salt or petrol), the seller can pass most of the tax to buyers. If demand is **elastic**, the seller must carry more of the tax, because buyers will cut purchases if the price rises. Governments therefore tax inelastic goods to raise revenue.\n\n## Public expenditure\n\n- **Recurrent expenditure**: day-to-day spending such as salaries and pensions, office costs and school running costs.\n- **Capital expenditure**: spending on lasting assets such as roads, bridges, power stations and hospitals.\n\nSpending can create jobs, raise demand and improve infrastructure. But too much spending may cause inflation, and borrowing to finance it adds to the national debt.\n\n## The government budget\n\nA **budget** is the government's plan of expected revenue and spending for a year.\n\n- **Surplus**: revenue is greater than expenditure.\n- **Deficit**: expenditure is greater than revenue. If revenue is N20 trillion and spending is N27 trillion, the deficit is N7 trillion, which must be financed by borrowing.\n- **Balanced**: revenue equals expenditure.\n\nThe **national debt** is the total amount the government owes, to its citizens and to lenders abroad. In Nigeria the Debt Management Office (DMO) records and manages it. Debt is a problem when interest payments take too much of revenue.\n\n## Economic growth and development\n\n**Economic growth** is an increase in a country's real output over time. Growth rate = (new GDP - old GDP) / old GDP x 100. If real GDP rises from N1,000 billion to N1,060 billion, growth is 60 / 1,000 x 100 = **6%**.\n\n**Economic development** is growth together with improvement in the quality of life: better health, education, housing, and fair sharing of income. A country can grow without developing, if the gain goes only to a few.\n\n## Developing countries\n\n*Characteristics:* low per capita income; dependence on farming and raw material exports; high birth rates and rapid population growth; high unemployment and underemployment; poor roads and power; wide gap between rich and poor.\n\n*Problems:* shortage of capital, heavy debt, corruption and weak institutions, low technology, and unstable prices of primary exports."
+      },
+      "cards": [
+        {
+          "front": "Incidence of tax",
+          "back": "Who finally bears the burden of a tax."
+        },
+        {
+          "front": "Recurrent expenditure",
+          "back": "Spending on day-to-day running costs such as salaries."
+        },
+        {
+          "front": "Capital expenditure",
+          "back": "Spending on lasting assets such as roads and hospitals."
+        },
+        {
+          "front": "Budget deficit",
+          "back": "Government spending is greater than revenue."
+        },
+        {
+          "front": "National debt",
+          "back": "The total amount government owes."
+        },
+        {
+          "front": "Economic growth",
+          "back": "A rise in real national output over time."
+        },
+        {
+          "front": "Economic development",
+          "back": "Growth together with better living standards and fair sharing."
+        },
+        {
+          "front": "Characteristic of a developing country",
+          "back": "Low per capita income and dependence on primary products."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Government spending on the salaries of civil servants is",
+          "options": [
+            "capital expenditure",
+            "a budget surplus",
+            "recurrent expenditure",
+            "national debt"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "If government revenue is N20 trillion and expenditure is N27 trillion, the budget is",
+          "options": [
+            "in surplus by N7 trillion",
+            "in deficit by N7 trillion",
+            "balanced",
+            "in deficit by N47 trillion"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A tax on a good with inelastic demand will mostly be borne by",
+          "options": [
+            "the seller",
+            "the buyer",
+            "the government",
+            "the importer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Real GDP rises from N2,000 billion to N2,100 billion. The growth rate is",
+          "options": [
+            "10%",
+            "50%",
+            "5%",
+            "2%"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of the following shows economic development rather than only growth?",
+          "options": [
+            "A rise in GDP alone",
+            "More oil exports with no change in schools or hospitals",
+            "A rise in the national debt",
+            "Higher life expectancy, better schooling and a fall in poverty"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A government plans to raise N18 trillion in revenue and spend N14 trillion on recurrent items and N9 trillion on capital projects. (a) State the total expenditure and the budget balance. (b) State how the government may finance the balance. (c) Give two examples of capital expenditure.",
+          "markScheme": [
+            "Total expenditure = 14 + 9 = N23 trillion",
+            "Budget deficit of N5 trillion (23 - 18)",
+            "The balance may be financed by borrowing (or selling bonds, or printing money)",
+            "Two examples of capital expenditure such as roads, bridges, hospitals, power stations"
+          ],
+          "modelAnswer": "(a) Total expenditure = 14 + 9 = N23 trillion. Revenue is N18 trillion, so there is a deficit of 23 - 18 = N5 trillion. (b) The deficit will be financed by borrowing, for example by selling bonds or taking loans. (c) Capital expenditure includes roads and hospitals.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Total expenditure = 14 + 9 = N23 trillion. Revenue is 18 so the deficit is 23 - 18 = N5 trillion. (b) The government can borrow from banks and the public by selling bonds, or take loans. (c) Building roads and building power stations.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total expenditure = 14 + 9 = N23 trillion"
+                },
+                {
+                  "point": 1,
+                  "quote": "the deficit is 23 - 18 = N5 trillion"
+                },
+                {
+                  "point": 2,
+                  "quote": "borrow from banks and the public by selling bonds, or take loans"
+                },
+                {
+                  "point": 3,
+                  "quote": "Building roads and building power stations"
+                }
+              ],
+              "feedback": "All four marks. You added the two kinds of expenditure before comparing with revenue."
+            },
+            {
+              "tier": "full",
+              "text": "Expenditure is N14 trillion plus N9 trillion which equals N23 trillion. Since revenue (N18 trillion) is less than that, there is a budget deficit of N5 trillion. It can be financed by borrowing, such as bonds. Capital expenditure examples are hospitals and bridges.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Expenditure is N14 trillion plus N9 trillion which equals N23 trillion"
+                },
+                {
+                  "point": 1,
+                  "quote": "there is a budget deficit of N5 trillion"
+                },
+                {
+                  "point": 2,
+                  "quote": "It can be financed by borrowing, such as bonds"
+                },
+                {
+                  "point": 3,
+                  "quote": "hospitals and bridges"
+                }
+              ],
+              "feedback": "Full marks. You gave the name of the balance as well as the size."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Total expenditure is N23 trillion and the budget is in deficit. (b) By borrowing. (c) Roads and salaries.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total expenditure is N23 trillion"
+                },
+                {
+                  "point": 2,
+                  "quote": "By borrowing"
+                }
+              ],
+              "feedback": "Give the size of the deficit: 23 - 18 = N5 trillion. Salaries are recurrent, not capital, expenditure; hospitals or bridges would be examples."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 14 + 9 = 23 so the deficit is N23 trillion. (b) The government can borrow. (c) Roads and bridges.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "14 + 9 = 23"
+                },
+                {
+                  "point": 2,
+                  "quote": "The government can borrow"
+                },
+                {
+                  "point": 3,
+                  "quote": "Roads and bridges"
+                }
+              ],
+              "feedback": "The total and the examples are right. The deficit is expenditure minus revenue: 23 - 18 = N5 trillion, not the whole N23 trillion.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 14 - 9 = 5 so there is a surplus of 5. (b) The government will keep the surplus. (c) Salary and rent.",
+              "meets": [],
+              "feedback": "Total expenditure is recurrent plus capital: 14 + 9 = 23, which is more than revenue (18), so there is a deficit of 5. Salary and rent are recurrent items."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The expenditure is 18 and the budget is balanced. (b) By taxes only. (c) Chalk and books.",
+              "meets": [],
+              "feedback": "Revenue is 18, but expenditure is 14 + 9 = 23, so the budget has a deficit of 5. Financing is usually by borrowing. Capital items are long-lasting assets such as roads, not chalk."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Distinguish between economic growth and economic development. (b) State three characteristics of a developing country such as Nigeria. (c) Explain why a tax on a good with inelastic demand brings in more revenue than one on a good with elastic demand.",
+          "markScheme": [
+            "Growth is an increase in real output (GDP); development includes improved living standards",
+            "Three characteristics of developing countries, e.g. low per capita income, dependence on primary products, high unemployment, poor infrastructure",
+            "With inelastic demand, quantity bought hardly falls when the tax raises the price",
+            "So the government collects the tax on almost the same quantity, and revenue is greater"
+          ],
+          "modelAnswer": "(a) Economic growth is a rise in real output over time, measured by GDP. Economic development is growth together with better health, education, housing and a fairer sharing of income. (b) Developing countries have low per capita income, depend on primary products such as crude oil and farm produce, and have high unemployment and poor infrastructure. (c) When demand is inelastic, buyers do not reduce the quantity bought much when the tax raises the price, so the government collects the tax on almost the same quantity and earns more revenue.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Economic growth is the increase in real output or GDP over time, but development is growth plus improved living standards like health, education and a fairer sharing of income. (b) Low per capita income, dependence on primary products like crude oil, and unemployment. (c) When demand is inelastic, people continue to buy almost the same quantity even when the tax raises the price, so the government collects tax on nearly the same quantity and gets more revenue.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the increase in real output or GDP over time, but development is growth plus improved living standards like health, education and a fairer sharing of income"
+                },
+                {
+                  "point": 1,
+                  "quote": "Low per capita income, dependence on primary products like crude oil, and unemployment"
+                },
+                {
+                  "point": 2,
+                  "quote": "people continue to buy almost the same quantity even when the tax raises the price"
+                },
+                {
+                  "point": 3,
+                  "quote": "the government collects tax on nearly the same quantity and gets more revenue"
+                }
+              ],
+              "feedback": "All four marks. You explained what elasticity means for tax revenue rather than just stating it."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Growth is a rise in real GDP; development is a rise in the quality of life, including health and education. (b) Poor infrastructure, high population growth and heavy reliance on agriculture and oil. (c) If demand is inelastic the quantity demanded falls by a small percentage when the price rises because of the tax, so the government still collects much tax; if demand is elastic buyers cut their purchases sharply and the tax collected falls.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Growth is a rise in real GDP; development is a rise in the quality of life, including health and education"
+                },
+                {
+                  "point": 1,
+                  "quote": "Poor infrastructure, high population growth and heavy reliance on agriculture and oil"
+                },
+                {
+                  "point": 2,
+                  "quote": "the quantity demanded falls by a small percentage when the price rises because of the tax"
+                },
+                {
+                  "point": 3,
+                  "quote": "if demand is elastic buyers cut their purchases sharply and the tax collected falls"
+                }
+              ],
+              "feedback": "Full marks. Contrasting inelastic with elastic demand completes the explanation."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Growth is an increase in GDP and development is improvement of life. (b) Poverty and unemployment. (c) Inelastic goods are taxed more because people need them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Growth is an increase in GDP and development is improvement of life"
+                }
+              ],
+              "feedback": "Part (a) is correct. For (b) you need three characteristics (you gave two, and 'poverty' should be low per capita income). In (c) explain that quantity bought hardly falls, so the government collects the tax on nearly the same quantity."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) A developing country has low per capita income, dependence on primary products and poor roads. (c) The quantity falls little so government gets more revenue.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "low per capita income, dependence on primary products and poor roads"
+                },
+                {
+                  "point": 2,
+                  "quote": "The quantity falls little"
+                }
+              ],
+              "feedback": "Part (b) is good and (c) has the right idea; add that this is why revenue is greater than for an elastic good. You also need (a): the difference between growth and development.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Growth is when a child grows and development is when he is developed. (b) They are poor. (c) It is because government likes it.",
+              "meets": [],
+              "feedback": "Growth is a rise in real output; development includes better living standards. Characteristics need naming (low income, primary products, unemployment). Inelastic demand means buyers do not cut back much when the price rises."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They are the same thing. (b) Nigeria is rich in oil. (c) Elastic goods bring more revenue because they stretch.",
+              "meets": [],
+              "feedback": "Growth is only an increase in output; development includes living standards. Oil dependence is a characteristic, but give three. Inelastic goods bring more revenue because purchases fall little when the tax is added."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Development planning and types of plan",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define development planning and state its objectives;\n2. explain the problems of planning in developing countries like Nigeria;\n3. distinguish short-term, medium-term, long-term (perspective) and rolling plans;\n4. give examples of Nigerian development plans.\n\n## Materials\n\nA timeline of Nigerian development plans, a chart comparing the types of plan, a school-term plan as an example.\n\n## Starter (5 minutes)\n\nAsk: how do you plan your own WASSCE preparation? What do you plan for this term, for this year, and for after school? Link the answers to short, medium and long plans.\n\n## Development\n\n1. Define a development plan: a government's programme of targets and the means of reaching them over a period. Elements: objectives, targets, resources, projects, time period and monitoring.\n2. Objectives of planning: growth, jobs, reducing poverty and inequality, balanced regional development, self-reliance.\n3. Problems: lack of reliable data, shortage of funds, corruption, weak implementation, political instability and change of government, dependence on foreign aid and oil prices.\n4. Types of plan: short-term (up to one year or two), medium-term (three to five years), perspective or long-term (ten to twenty years), and rolling plan (revised every year and extended each year).\n5. Nigerian examples: the first National Development Plan, 1962-68; later fixed-term plans; rolling plans of the 1990s; Vision 20:2020.\n\n## Class activity\n\nPupils write a one-page plan for their school's library with a short, medium and long-term target.\n\n## Evaluation\n\n1. Give two reasons why development plans fail in Nigeria.\n2. How does a rolling plan differ from a fixed plan?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Planning a country's future",
+        "content": "# Development planning and types of plan\n\n## What is development planning?\n\nA **development plan** is a government's programme of what it wants to achieve and how it will use the country's resources to do so over a stated period. A plan has these **elements**:\n\n1. **Objectives**: what the plan aims at, such as more jobs and growth.\n2. **Targets**: measurable goals, such as raising electricity supply to a certain megawatt level.\n3. **Resources**: the money, people and materials that will be used.\n4. **Projects and policies**: the roads, schools, factories and measures to be undertaken.\n5. **Time period** and **monitoring**: when the targets are to be met and how progress will be checked.\n\n## Objectives of planning\n\n- faster economic growth and a higher standard of living;\n- creation of employment;\n- reduction of poverty and inequality;\n- balanced development between regions and between rural and urban areas;\n- reducing dependence on a single export such as crude oil.\n\n## Problems of planning\n\n- lack of reliable data on population, output and incomes;\n- shortage of funds, especially when oil prices fall;\n- corruption, poor management and weak implementation;\n- change of governments, with new leaders abandoning old plans;\n- shortage of skilled planners and poor infrastructure;\n- dependence on foreign loans and aid.\n\n## Types of plan\n\n| Type | Length | Feature |\n| --- | --- | --- |\n| Short-term | up to one or two years | Immediate targets, such as the annual budget |\n| Medium-term | three to five years | Most common, such as the early National Development Plans |\n| Perspective (long-term) | ten to twenty years | A long vision, such as Vision 20:2020 |\n| Rolling plan | revised each year | Each year the first year is dropped and a new year added, so the plan stays up to date |\n\nA **rolling plan** is useful where conditions change quickly, because mistakes are corrected each year. Nigeria used rolling plans in the 1990s.\n\n## Nigerian examples\n\nThe First National Development Plan (1962-68) was a fixed medium-term plan that stressed agriculture, roads and education. Later fixed plans followed, then rolling plans in the 1990s, and Vision 20:2020, which aimed to place Nigeria among the twenty largest economies by 2020."
+      },
+      "cards": [
+        {
+          "front": "Development plan",
+          "back": "A government programme of targets and measures to reach them over a period."
+        },
+        {
+          "front": "Target",
+          "back": "A measurable goal set in a plan."
+        },
+        {
+          "front": "Short-term plan",
+          "back": "A plan of one or two years, such as the annual budget."
+        },
+        {
+          "front": "Medium-term plan",
+          "back": "A plan of three to five years."
+        },
+        {
+          "front": "Perspective plan",
+          "back": "A long-term plan of ten to twenty years."
+        },
+        {
+          "front": "Rolling plan",
+          "back": "A plan revised each year, dropping the past year and adding a new one."
+        },
+        {
+          "front": "Problem of planning",
+          "back": "Lack of reliable data, funds and continuity."
+        },
+        {
+          "front": "First National Development Plan",
+          "back": "The Nigerian plan for 1962-68."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A plan that is revised every year, with a new year added each time, is called",
+          "options": [
+            "a rolling plan",
+            "a perspective plan",
+            "a medium-term plan",
+            "a short-term plan"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of the following is an element of a development plan?",
+          "options": [
+            "Customs duty",
+            "Monitoring of progress",
+            "Inflation",
+            "A balance of payments"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A plan lasting ten to twenty years is a",
+          "options": [
+            "short-term plan",
+            "rolling plan",
+            "medium-term plan",
+            "perspective plan"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a problem of planning in developing countries?",
+          "options": [
+            "Too much skilled labour",
+            "Excess foreign exchange",
+            "Lack of reliable data",
+            "Low population"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Nigeria's First National Development Plan covered the period",
+          "options": [
+            "1962-68",
+            "1970-74",
+            "1990-95",
+            "1999-2003"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define a development plan and explain three problems that have made it difficult for Nigerian development plans to succeed.",
+          "markScheme": [
+            "A development plan is a programme of targets and the measures and resources to reach them within a stated time",
+            "Problem 1 explained, e.g. lack of reliable data",
+            "Problem 2 explained, e.g. corruption or poor implementation",
+            "Problem 3 explained, e.g. change of government without continuity, or shortage of funds when oil prices fall"
+          ],
+          "modelAnswer": "A development plan is a government's programme of targets, and the resources and measures to reach them, within a stated period. Plans have suffered from the lack of reliable data on population, output and incomes, so the targets are poorly set. Corruption and poor management mean that money is wasted or projects are abandoned. New governments often abandon the plans of the previous one, and falling oil prices cut the funds available.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A development plan is a programme made by the government which states targets and how resources will be used to reach them within a period. One problem is lack of reliable data, so planners cannot set realistic targets. Another is corruption, which causes money for projects to be wasted. A third is that a new government may abandon the plan of the one before it, so projects stop halfway.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a programme made by the government which states targets and how resources will be used to reach them within a period"
+                },
+                {
+                  "point": 1,
+                  "quote": "lack of reliable data, so planners cannot set realistic targets"
+                },
+                {
+                  "point": 2,
+                  "quote": "corruption, which causes money for projects to be wasted"
+                },
+                {
+                  "point": 3,
+                  "quote": "a new government may abandon the plan of the one before it, so projects stop halfway"
+                }
+              ],
+              "feedback": "All four marks. Each problem comes with its effect on the plan."
+            },
+            {
+              "tier": "full",
+              "text": "A plan is a government's set of targets with the projects and money to achieve them over a stated time. Plans fail in Nigeria because of poor implementation, since agencies do not complete projects. Funds are also not enough when the price of oil falls. Finally, there is a shortage of skilled planners and engineers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a government's set of targets with the projects and money to achieve them over a stated time"
+                },
+                {
+                  "point": 1,
+                  "quote": "poor implementation, since agencies do not complete projects"
+                },
+                {
+                  "point": 2,
+                  "quote": "Funds are also not enough when the price of oil falls"
+                },
+                {
+                  "point": 3,
+                  "quote": "a shortage of skilled planners and engineers"
+                }
+              ],
+              "feedback": "Full marks. Linking funds to oil prices shows you know Nigeria's economy."
+            },
+            {
+              "tier": "partial",
+              "text": "A development plan is the programme of government for development. The problems are corruption, lack of money and bad roads.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the programme of government for development"
+                }
+              ],
+              "feedback": "The definition needs the targets and a stated time period. You named three problems but did not explain how any of them makes a plan fail; say what each does to the plan."
+            },
+            {
+              "tier": "partial",
+              "text": "The problems are lack of data, corruption and changing of governments. For example, the new government does not like the old plan.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "lack of data"
+                },
+                {
+                  "point": 3,
+                  "quote": "changing of governments. For example, the new government does not like the old plan"
+                }
+              ],
+              "feedback": "Your problems are valid. You must also define a development plan, and explain how corruption and lack of data affect the plan.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A development plan is a plan to develop. The problems are laziness and bad weather.",
+              "meets": [],
+              "feedback": "A development plan is a government programme of targets and measures over a period. Real problems include lack of data, funds, corruption and lack of continuity."
+            },
+            {
+              "tier": "weak",
+              "text": "A development plan is the building plan of a house. The problem is that bricks are costly.",
+              "meets": [],
+              "feedback": "A development plan is for the whole economy, not one building. Problems relate to data, funds, corruption, skills and political change."
+            }
+          ]
+        },
+        {
+          "prompt": "Distinguish between a medium-term plan and a rolling plan. State one advantage of a rolling plan over a fixed plan and mention one Nigerian example of each kind of plan.",
+          "markScheme": [
+            "A medium-term plan is fixed and lasts about three to five years",
+            "A rolling plan is revised every year, dropping the past year and adding a new one",
+            "Advantage: it can adjust to changes in the economy, correcting mistakes yearly",
+            "Nigerian examples such as the First National Development Plan 1962-68 (fixed) and the rolling plans of the 1990s"
+          ],
+          "modelAnswer": "A medium-term plan is a fixed plan that runs for about three to five years, while a rolling plan is revised each year: the year just ended is dropped and a new year is added, so the plan always looks ahead for the same number of years. The advantage of a rolling plan is that it can adjust to changes in the economy and correct mistakes each year. Nigeria's First National Development Plan of 1962-68 was fixed, and the rolling plans were used in the 1990s.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A medium-term plan is a fixed plan for about three to five years. A rolling plan is revised every year, so the year that is finished is dropped and a new year is added. Its advantage is that it can be adjusted to changes in the economy, so mistakes are corrected quickly. An example of a fixed plan is the First National Development Plan of 1962-68 and the rolling plans were used in the 1990s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A medium-term plan is a fixed plan for about three to five years"
+                },
+                {
+                  "point": 1,
+                  "quote": "A rolling plan is revised every year, so the year that is finished is dropped and a new year is added"
+                },
+                {
+                  "point": 2,
+                  "quote": "it can be adjusted to changes in the economy, so mistakes are corrected quickly"
+                },
+                {
+                  "point": 3,
+                  "quote": "the First National Development Plan of 1962-68 and the rolling plans were used in the 1990s"
+                }
+              ],
+              "feedback": "All four marks. You covered the difference, the advantage and both examples."
+            },
+            {
+              "tier": "full",
+              "text": "A medium-term plan has a fixed period of three to five years that is not changed until it ends. A rolling plan is reviewed every year and extended by one more year. The advantage of a rolling plan is flexibility when conditions change, like a fall in oil price. The first plan of 1962 to 1968 was a fixed plan and Nigeria later used rolling plans in the 1990s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "fixed period of three to five years that is not changed until it ends"
+                },
+                {
+                  "point": 1,
+                  "quote": "A rolling plan is reviewed every year and extended by one more year"
+                },
+                {
+                  "point": 2,
+                  "quote": "flexibility when conditions change, like a fall in oil price"
+                },
+                {
+                  "point": 3,
+                  "quote": "The first plan of 1962 to 1968 was a fixed plan and Nigeria later used rolling plans in the 1990s"
+                }
+              ],
+              "feedback": "Full marks. The oil price example makes the advantage concrete."
+            },
+            {
+              "tier": "partial",
+              "text": "A medium-term plan lasts three to five years. A rolling plan is changed every year. It is better because it is flexible.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A medium-term plan lasts three to five years"
+                },
+                {
+                  "point": 1,
+                  "quote": "A rolling plan is changed every year"
+                },
+                {
+                  "point": 2,
+                  "quote": "it is flexible"
+                }
+              ],
+              "feedback": "The three points are right. You gave no Nigerian example: the First National Development Plan (1962-68) was a fixed plan, and rolling plans were used in the 1990s."
+            },
+            {
+              "tier": "partial",
+              "text": "The First National Development Plan of 1962-68 was a medium-term plan. Rolling plans were used in the 1990s. A rolling plan lasts for a short time.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "The First National Development Plan of 1962-68 was a medium-term plan. Rolling plans were used in the 1990s"
+                }
+              ],
+              "feedback": "The examples are correct. A rolling plan is not short; it is revised yearly with a new year added. Give the advantage too: it can adjust to changes in the economy.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A medium-term plan is a plan for the middle of the year. A rolling plan is a plan that rolls on a road.",
+              "meets": [],
+              "feedback": "A medium-term plan runs for three to five years. A rolling plan is revised each year with a new year added. Say how one adjusts to change better than the other."
+            },
+            {
+              "tier": "weak",
+              "text": "They are the same, because both are plans of the government.",
+              "meets": [],
+              "feedback": "Both are government plans, but they differ in time and revision: a medium-term plan is fixed for three to five years; a rolling plan is revised every year."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "International trade, comparative advantage and trade policy",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish domestic from international trade and state the basis of international trade;\n2. use absolute and comparative advantage to show gains from trade;\n3. define terms of trade and calculate it from index numbers;\n4. describe tariffs and direct controls, and the trend and structure of West African trade.\n\n## Materials\n\nCalculators, a table of output per worker for two countries, a chart of Nigeria's main exports and imports.\n\n## Starter (5 minutes)\n\nAsk: your phone was probably made abroad, while Nigeria sells crude oil. Why not make everything at home? Collect answers on the board.\n\n## Development\n\n1. Domestic trade is within a country; international trade crosses borders and involves different currencies, laws and risks. Basis: differences in resources, climate and skills.\n2. Absolute advantage: producing more with the same resources. Comparative advantage: producing at a lower opportunity cost. Work the rice and cocoa example for Nigeria and Ghana.\n3. Terms of trade = (index of export prices / index of import prices) x 100. Interpret a value above or below 100.\n4. Commercial policy: aims (protect infant industries, save foreign exchange, raise revenue). Instruments: tariffs (import duties: specific, ad valorem), quotas, embargo, import licences, exchange control.\n5. West African trade: mostly primary exports to developed countries and imports of manufactures; little trade within the region.\n\n## Class activity\n\nPairs decide which good each country should specialise in and the gains from trade.\n\n## Evaluation\n\n1. A country exports at index 110 and imports at index 125. State the terms of trade.\n2. Give two reasons why a country imposes a tariff.\n\n## Assignment\n\nComplete the problem set on the app.",
+      "reading": {
+        "title": "Why countries trade, and how they limit it",
+        "content": "# International trade, comparative advantage and trade policy\n\n## Domestic and international trade\n\n**Domestic trade** is trade within a country, in one currency. **International trade** is trade between countries. It uses different currencies, faces customs and laws, and carries more risks. Countries trade because they differ in resources (Nigeria has crude oil, Ghana has gold), climate, skills and technology.\n\n## Absolute and comparative advantage\n\nA country has an **absolute advantage** if it can produce a good using fewer resources than another. It has a **comparative advantage** if it produces the good at a **lower opportunity cost**.\n\n**Worked example.** In one day a worker produces:\n\n| | Rice (bags) | Cocoa (bags) |\n| --- | --- | --- |\n| Nigeria | 20 | 10 |\n| Ghana | 10 | 8 |\n\nNigeria has an absolute advantage in both goods. But compare opportunity costs.\n\n- Nigeria: 1 bag of rice costs 10/20 = 0.5 bag of cocoa; 1 bag of cocoa costs 2 bags of rice.\n- Ghana: 1 bag of rice costs 8/10 = 0.8 bag of cocoa; 1 bag of cocoa costs 1.25 bags of rice.\n\nNigeria gives up less cocoa to produce rice (0.5 against 0.8), so Nigeria has a **comparative advantage in rice**. Ghana gives up less rice to produce cocoa (1.25 against 2), so Ghana has the comparative advantage in cocoa. Both gain if each specialises and trades.\n\n## Terms of trade\n\nTerms of trade = (index of export prices / index of import prices) x 100. If export prices have an index of 110 and import prices 125, the terms of trade = 110/125 x 100 = **88**. Below 100 means the terms have worsened: the country must export more to buy the same imports.\n\n## Commercial policy\n\nGovernments restrict trade to protect infant industries, to save foreign exchange, to protect jobs or to raise revenue. The instruments are:\n\n- **Tariffs** (import duties): *specific* (a fixed amount per unit) or *ad valorem* (a percentage of value).\n- **Quotas**: a limit on the quantity imported.\n- **Embargo**: a ban on trade in some goods or with some country.\n- **Import licences** and **exchange control** that limit the foreign exchange available.\n\n## West African trade\n\nWest African countries mostly export primary products, such as crude oil, cocoa, groundnut and cotton, and import machines, vehicles and manufactured goods. Trade among them is small, because they produce similar goods and have poor transport links and different currencies."
+      },
+      "cards": [
+        {
+          "front": "Absolute advantage",
+          "back": "The ability to produce a good with fewer resources than another country."
+        },
+        {
+          "front": "Comparative advantage",
+          "back": "The ability to produce a good at a lower opportunity cost."
+        },
+        {
+          "front": "Terms of trade",
+          "back": "Index of export prices divided by index of import prices, times 100."
+        },
+        {
+          "front": "Tariff",
+          "back": "A tax on imports."
+        },
+        {
+          "front": "Quota",
+          "back": "A limit on the quantity of a good that may be imported."
+        },
+        {
+          "front": "Embargo",
+          "back": "A ban on trade in certain goods or with a certain country."
+        },
+        {
+          "front": "Infant industry",
+          "back": "A new industry that needs protection until it is strong enough to compete."
+        },
+        {
+          "front": "Exchange control",
+          "back": "Government limits on the foreign exchange available to buyers."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "From the table in the reading, the opportunity cost of 1 bag of rice in Ghana is",
+          "options": [
+            "0.5 bag of cocoa",
+            "1.25 bags of cocoa",
+            "2 bags of cocoa",
+            "0.8 bag of cocoa"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Using the same table, Nigeria has a comparative advantage in",
+          "options": [
+            "both goods",
+            "rice",
+            "cocoa",
+            "neither good"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "If the index of export prices is 150 and import prices is 120, the terms of trade are",
+          "options": [
+            "125",
+            "80",
+            "150",
+            "120"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A limit on the quantity of rice that may be imported into Nigeria is called",
+          "options": [
+            "a tariff",
+            "an embargo",
+            "exchange control",
+            "a quota"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A tax of 10% of the value of imported cars is a",
+          "options": [
+            "specific tariff",
+            "quota",
+            "ad valorem tariff",
+            "subsidy"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "In one day a worker in Kenya produces 24 bags of tea or 12 bags of maize, and a worker in Uganda produces 10 bags of tea or 10 bags of maize. (a) Calculate the opportunity cost of one bag of maize in each country. (b) State which country has a comparative advantage in maize and which in tea, with a reason.",
+          "markScheme": [
+            "Kenya: 1 bag of maize costs 24/12 = 2 bags of tea",
+            "Uganda: 1 bag of maize costs 10/10 = 1 bag of tea",
+            "Uganda has the comparative advantage in maize because its opportunity cost is lower",
+            "Kenya has the comparative advantage in tea because its opportunity cost of tea (0.5 bag of maize) is lower than Uganda's (1 bag)"
+          ],
+          "modelAnswer": "(a) In Kenya, 1 bag of maize costs 24 / 12 = 2 bags of tea. In Uganda, 1 bag of maize costs 10 / 10 = 1 bag of tea. (b) Uganda has the comparative advantage in maize because its opportunity cost (1 tea) is lower than Kenya's (2 tea). Kenya has the comparative advantage in tea, because the opportunity cost of a bag of tea is 0.5 bag of maize in Kenya but 1 bag of maize in Uganda.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Kenya: 1 maize costs 24/12 = 2 bags of tea. Uganda: 1 maize costs 10/10 = 1 bag of tea. (b) Uganda has the comparative advantage in maize because it gives up only 1 tea against 2 in Kenya. Kenya has the comparative advantage in tea since 1 tea costs it 0.5 maize while 1 tea costs Uganda 1 maize.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Kenya: 1 maize costs 24/12 = 2 bags of tea"
+                },
+                {
+                  "point": 1,
+                  "quote": "Uganda: 1 maize costs 10/10 = 1 bag of tea"
+                },
+                {
+                  "point": 2,
+                  "quote": "Uganda has the comparative advantage in maize because it gives up only 1 tea against 2 in Kenya"
+                },
+                {
+                  "point": 3,
+                  "quote": "Kenya has the comparative advantage in tea since 1 tea costs it 0.5 maize while 1 tea costs Uganda 1 maize"
+                }
+              ],
+              "feedback": "All four marks. Checking tea's opportunity cost as well gave a complete answer."
+            },
+            {
+              "tier": "full",
+              "text": "Opportunity cost of maize: Kenya = 24 divided by 12 = 2 tea; Uganda = 10 divided by 10 = 1 tea. So Uganda should specialise in maize since it sacrifices less tea. For tea, Kenya's opportunity cost is 12/24 = 0.5 maize and Uganda's is 1 maize, so Kenya should specialise in tea.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Kenya = 24 divided by 12 = 2 tea"
+                },
+                {
+                  "point": 1,
+                  "quote": "Uganda = 10 divided by 10 = 1 tea"
+                },
+                {
+                  "point": 2,
+                  "quote": "Uganda should specialise in maize since it sacrifices less tea"
+                },
+                {
+                  "point": 3,
+                  "quote": "Kenya's opportunity cost is 12/24 = 0.5 maize and Uganda's is 1 maize, so Kenya should specialise in tea"
+                }
+              ],
+              "feedback": "Full marks. You used opportunity cost for both goods, which is the safest method."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Kenya 2 tea and Uganda 1 tea. (b) Kenya has an absolute advantage in tea and maize. Kenya should specialise in both.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Kenya 2 tea"
+                },
+                {
+                  "point": 1,
+                  "quote": "Uganda 1 tea"
+                }
+              ],
+              "feedback": "Your opportunity costs are right. Kenya's absolute advantage in tea is true, but trade is based on comparative advantage: Uganda gives up less tea for maize, so Uganda is best at maize and Kenya at tea."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Kenya 2 tea and Uganda 1 tea. (b) Uganda has the comparative advantage in maize. Kenya has the comparative advantage in tea because it produces more tea.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Kenya 2 tea"
+                },
+                {
+                  "point": 1,
+                  "quote": "Uganda 1 tea"
+                },
+                {
+                  "point": 2,
+                  "quote": "Uganda has the comparative advantage in maize"
+                }
+              ],
+              "feedback": "Maize is correct. For tea, the reason should be a lower opportunity cost (0.5 maize in Kenya, against 1 in Uganda), not simply that Kenya produces more.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 24 + 12 = 36 and 10 + 10 = 20. (b) Kenya since it produces more.",
+              "meets": [],
+              "feedback": "Opportunity cost is what you give up: for one maize, 24/12 = 2 tea in Kenya and 10/10 = 1 tea in Uganda. Comparative advantage goes to the lower opportunity cost, not the larger output."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The opportunity cost is 12 in Kenya and 10 in Uganda. (b) Uganda has the advantage in tea.",
+              "meets": [],
+              "feedback": "Divide the output of tea by the output of maize in each country: Kenya 2 and Uganda 1 tea per maize. Uganda is best at maize (lower cost); Kenya is best at tea."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) The index of Nigeria's export prices is 105 and the index of its import prices is 140. Calculate the terms of trade and say what it shows. (b) State two reasons why a government may put a tariff on imported rice. (c) Distinguish between a tariff and a quota.",
+          "markScheme": [
+            "Terms of trade = 105/140 x 100 = 75",
+            "Terms of trade have worsened because it is below 100, so more exports are needed to pay for the same imports",
+            "Two reasons for a tariff, e.g. to protect local rice farmers or raise revenue or save foreign exchange",
+            "A tariff is a tax on imports while a quota is a limit on the quantity imported"
+          ],
+          "modelAnswer": "(a) Terms of trade = 105 / 140 x 100 = 75. This is below 100, so the terms have worsened: Nigeria must export more to pay for the same quantity of imports. (b) A tariff on rice protects local rice farmers from cheap imports and raises revenue for government. (c) A tariff is a tax placed on imported goods, while a quota is a limit on the quantity of the good that may be imported.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Terms of trade = 105/140 x 100 = 75. It is below 100, so the terms of trade have worsened and Nigeria must export more to buy the same imports. (b) A tariff protects local rice farmers from cheap foreign rice, and it raises revenue for the government. (c) A tariff is a tax on imports but a quota is a limit on the quantity that can be imported.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Terms of trade = 105/140 x 100 = 75"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is below 100, so the terms of trade have worsened and Nigeria must export more to buy the same imports"
+                },
+                {
+                  "point": 2,
+                  "quote": "A tariff protects local rice farmers from cheap foreign rice, and it raises revenue for the government"
+                },
+                {
+                  "point": 3,
+                  "quote": "A tariff is a tax on imports but a quota is a limit on the quantity that can be imported"
+                }
+              ],
+              "feedback": "All four marks. You interpreted the figure, not only calculated it."
+            },
+            {
+              "tier": "full",
+              "text": "Terms of trade is export price index over import price index times 100, which is 105 divided by 140 times 100 = 75. This shows a deterioration, since one unit of exports buys fewer imports. Reasons for a rice tariff: to save foreign exchange and to protect infant rice mills. A tariff is a duty paid on imports while a quota limits the number of units of imports.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "105 divided by 140 times 100 = 75"
+                },
+                {
+                  "point": 1,
+                  "quote": "This shows a deterioration, since one unit of exports buys fewer imports"
+                },
+                {
+                  "point": 2,
+                  "quote": "to save foreign exchange and to protect infant rice mills"
+                },
+                {
+                  "point": 3,
+                  "quote": "A tariff is a duty paid on imports while a quota limits the number of units of imports"
+                }
+              ],
+              "feedback": "Full marks. 'One unit of exports buys fewer imports' is a clear way to explain a worsening."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The terms of trade is 105/140 x 100 = 75, which is bad. (b) To protect local farmers. (c) A tariff is a quota.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The terms of trade is 105/140 x 100 = 75"
+                },
+                {
+                  "point": 2,
+                  "quote": "To protect local farmers"
+                }
+              ],
+              "feedback": "The calculation is correct; explain what 75 shows (below 100 means the terms have worsened). You gave one reason of two for (b), and a tariff and a quota are different: tax versus a limit."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 140/105 x 100 = 133, so the terms are good. (b) To protect local farmers and raise revenue. (c) A tariff is a tax on imports and a quota limits the quantity.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "To protect local farmers and raise revenue"
+                },
+                {
+                  "point": 3,
+                  "quote": "A tariff is a tax on imports and a quota limits the quantity"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are correct. The terms of trade put export prices on top: 105/140 x 100 = 75, which is a worsening, not an improvement.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 140 - 105 = 35. (b) Because the government wants money. (c) A quota is a type of embargo.",
+              "meets": [],
+              "feedback": "Terms of trade is a ratio: 105/140 x 100 = 75. A tariff is a tax on imports that protects local producers and raises revenue; a quota limits the quantity imported."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The terms of trade is 105 + 140 = 245. (b) To stop importing. (c) Tariff is a type of tax and quota is a type of tax.",
+              "meets": [],
+              "feedback": "Divide, do not add: 105/140 x 100 = 75. Give reasons for a tariff beyond 'stop importing', and say a quota is a quantity limit, not a tax."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Balance of payments and economic integration",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the role of money (foreign exchange) in international transactions;\n2. state the components of the balance of payments and calculate the balance of trade and the current account;\n3. explain disequilibrium, its causes, its adjustment and its financing;\n4. state the objectives and levels of economic integration.\n\n## Materials\n\nCalculators, a balance of payments table, a map of West Africa, a chart of exchange rates in a newspaper.\n\n## Starter (5 minutes)\n\nAsk: a Nigerian company wants to buy machines from Germany. The German seller wants euros. How does the company get euros? Who supplies them?\n\n## Development\n\n1. Foreign exchange and the exchange rate. Exports earn foreign exchange; imports use it. The Central Bank holds reserves.\n2. Balance of payments: a record of all transactions of a country with the rest of the world in a year. Current account: visible trade (goods) and invisible trade (services, income, transfers). Capital and financial account: investment and loans.\n3. Work through a table: balance of trade = visible exports - visible imports; current account = balance of trade + net invisibles.\n4. Disequilibrium: deficit (payments exceed receipts) or surplus. Causes: falling export prices, heavy imports, capital flight. Adjustment: exchange rate policy (devaluation or depreciation), exchange control, monetary policy (higher interest rates), fiscal policy (cutting spending, taxes). Financing: using reserves and borrowing from abroad.\n5. Economic integration: objectives and levels: free trade area, customs union, common market, economic union.\n\n## Class activity\n\nGroups complete a balance of payments table and suggest two policies for a deficit.\n\n## Evaluation\n\n1. Distinguish visible from invisible trade.\n2. In which level of integration is there a common external tariff?\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "Keeping the nation's accounts with the world",
+        "content": "# Balance of payments and economic integration\n\n## Money in international trade\n\nEach country uses its own currency, so buying from abroad needs **foreign exchange**. The price of one currency in terms of another is the **exchange rate**. Exports earn foreign exchange and imports use it. A country keeps a stock of foreign currencies as **external reserves**, held by the central bank.\n\n## The balance of payments\n\nThe **balance of payments (BOP)** is a record of all the payments and receipts between a country and the rest of the world in a year.\n\n- **Current account**: *visible trade* (goods such as crude oil and cars) and *invisible trade* (services such as shipping, tourism, and banking, plus income from investments and transfers such as remittances).\n- **Capital and financial account**: foreign investment and loans coming in or going out.\n\n**Worked example (N billion).**\n\n| Item | Amount |\n| --- | --- |\n| Visible exports | 900 |\n| Visible imports | 1,100 |\n| Invisible exports (receipts) | 300 |\n| Invisible imports (payments) | 250 |\n| Net capital inflow | 120 |\n\n- **Balance of trade** = 900 - 1,100 = **-200** (a deficit).\n- Net invisibles = 300 - 250 = +50.\n- **Current account balance** = -200 + 50 = **-150**.\n- Overall balance = -150 + 120 = **-30**, which must be met from reserves or borrowing.\n\n## Disequilibrium and adjustment\n\nA deficit may arise from falling export prices, heavy import of food and fuel, or capital flight. To correct it a country may:\n\n- let its currency **depreciate** or **devalue**, which makes exports cheaper and imports dearer;\n- use **exchange control**, rationing foreign exchange;\n- use **monetary policy**: higher interest rates reduce spending and attract foreign funds;\n- use **fiscal policy**: cut government spending or raise taxes.\n\nA deficit can be **financed** by using reserves or by borrowing from abroad, including from the IMF.\n\n## Economic integration\n\nCountries join together to cut trade barriers and gain larger markets. The levels are:\n\n1. **Free trade area**: no tariffs among members, each with its own tariff on outsiders.\n2. **Customs union**: free trade plus a common external tariff.\n3. **Common market**: also free movement of labour and capital.\n4. **Economic union**: common economic policies and sometimes a common currency.\n\nObjectives include bigger markets, economies of scale, faster growth and stronger bargaining power."
+      },
+      "cards": [
+        {
+          "front": "Foreign exchange",
+          "back": "Foreign currency used to pay for international transactions."
+        },
+        {
+          "front": "Balance of payments",
+          "back": "A record of a country's payments and receipts with the rest of the world in a year."
+        },
+        {
+          "front": "Visible trade",
+          "back": "Trade in goods."
+        },
+        {
+          "front": "Invisible trade",
+          "back": "Trade in services, income from investments and transfers."
+        },
+        {
+          "front": "Balance of trade",
+          "back": "Visible exports minus visible imports."
+        },
+        {
+          "front": "External reserves",
+          "back": "Stock of foreign currencies held by the central bank."
+        },
+        {
+          "front": "Customs union",
+          "back": "Free trade among members plus a common external tariff."
+        },
+        {
+          "front": "Common market",
+          "back": "A customs union with free movement of labour and capital."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Trade in goods such as crude oil and cars is called",
+          "options": [
+            "invisible trade",
+            "visible trade",
+            "capital movement",
+            "a transfer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Visible exports are N500 billion and visible imports are N620 billion. The balance of trade is",
+          "options": [
+            "-N120 billion",
+            "N120 billion",
+            "N1,120 billion",
+            "-N620 billion"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these would help correct a deficit in the balance of payments?",
+          "options": [
+            "Cutting taxes on imports",
+            "Raising government spending",
+            "Allowing the currency to depreciate",
+            "Raising import quotas"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which level of integration has a common external tariff but not free movement of labour?",
+          "options": [
+            "Free trade area",
+            "Common market",
+            "Economic union",
+            "Customs union"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Remittances sent home by Nigerians abroad are recorded under",
+          "options": [
+            "visible exports",
+            "invisible receipts (transfers)",
+            "capital outflow",
+            "import payments"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A country's transactions for a year (N billion) were: visible exports 720, visible imports 840, invisible receipts 180, invisible payments 130, net capital inflow 60. Calculate (a) the balance of trade, (b) the current account balance and (c) the overall balance. State how any deficit may be financed.",
+          "markScheme": [
+            "Balance of trade = 720 - 840 = -N120 billion",
+            "Current account = -120 + (180 - 130) = -N70 billion",
+            "Overall balance = -70 + 60 = -N10 billion",
+            "Deficit may be financed from external reserves or foreign borrowing"
+          ],
+          "modelAnswer": "(a) Balance of trade = 720 - 840 = -N120 billion. (b) Net invisibles = 180 - 130 = +50, so current account = -120 + 50 = -N70 billion. (c) Overall balance = -70 + 60 = -N10 billion, a deficit. It may be financed by drawing on external reserves or by borrowing from abroad.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Balance of trade = 720 - 840 = -N120 billion. (b) Net invisibles = 180 - 130 = 50, so current account = -120 + 50 = -N70 billion. (c) Overall balance = -70 + 60 = -N10 billion. The deficit can be financed by using external reserves or by borrowing from abroad.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Balance of trade = 720 - 840 = -N120 billion"
+                },
+                {
+                  "point": 1,
+                  "quote": "current account = -120 + 50 = -N70 billion"
+                },
+                {
+                  "point": 2,
+                  "quote": "Overall balance = -70 + 60 = -N10 billion"
+                },
+                {
+                  "point": 3,
+                  "quote": "using external reserves or by borrowing from abroad"
+                }
+              ],
+              "feedback": "All four marks. Finding net invisibles as a separate step made the current account easy to check."
+            },
+            {
+              "tier": "full",
+              "text": "Balance of trade is visible exports less visible imports: 720 minus 840 is a deficit of 120. The invisibles give a surplus of 50, so the current account is a deficit of 70. Adding the capital inflow of 60 leaves an overall deficit of 10, which will be met from reserves or loans.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "720 minus 840 is a deficit of 120"
+                },
+                {
+                  "point": 1,
+                  "quote": "the current account is a deficit of 70"
+                },
+                {
+                  "point": 2,
+                  "quote": "overall deficit of 10"
+                },
+                {
+                  "point": 3,
+                  "quote": "met from reserves or loans"
+                }
+              ],
+              "feedback": "Full marks. Describing each result as a deficit or surplus is a good habit."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 720 - 840 = -120. (b) The current account is -120 + 180 - 130 = -70. (c) The overall balance is -70.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "720 - 840 = -120"
+                },
+                {
+                  "point": 1,
+                  "quote": "-120 + 180 - 130 = -70"
+                }
+              ],
+              "feedback": "(a) and (b) are right. In (c) add the capital inflow: -70 + 60 = -10. You must also say how the deficit is financed (reserves or borrowing)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The balance of trade is 720 - 840 = -120. (b) The current account is -120 + 180 = 60. (c) -10. Reserves can finance the deficit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "720 - 840 = -120"
+                },
+                {
+                  "point": 3,
+                  "quote": "Reserves can finance the deficit"
+                }
+              ],
+              "feedback": "The balance of trade is right, and so is the financing. Net invisibles are 180 - 130 = 50, not 180, so the current account is -70, and the overall balance is -70 + 60 = -10.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 720 + 840 = 1,560. (b) 180 + 130 = 310. (c) 60.",
+              "meets": [],
+              "feedback": "The balance is a difference, not a sum. Balance of trade = exports - imports (-120). Add net invisibles (+50) for the current account (-70) and then the capital inflow (+60) for -10."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The balance of trade is 720 because exports are less. (b) The current account is 130. (c) It is balanced.",
+              "meets": [],
+              "feedback": "Subtract visible imports from visible exports: 720 - 840 = -120. The current account is -70 and the overall balance is -10, so it is not balanced."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) State three policies a government may use to correct a balance of payments deficit. (b) Distinguish between a free trade area and a customs union. (c) State two objectives of economic integration.",
+          "markScheme": [
+            "Three policies: any three of depreciation or devaluation, exchange control, higher interest rates, cutting government spending, raising taxes or tariffs",
+            "A free trade area removes tariffs among members, each keeping its own tariff on outsiders",
+            "A customs union also adopts a common external tariff",
+            "Two objectives, e.g. larger markets, economies of scale, faster growth, stronger bargaining power"
+          ],
+          "modelAnswer": "(a) A government may let the currency depreciate or devalue it, use exchange control, and cut government spending or raise interest rates. (b) In a free trade area there are no tariffs between members, but each member keeps its own tariff against outsiders; a customs union also adopts a common external tariff. (c) The objectives of integration include bigger markets and economies of scale, and faster growth.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The government can devalue the currency so exports become cheaper, control the use of foreign exchange, and cut government spending. (b) In a free trade area members trade freely without tariffs but each has its own tariff for outsiders. In a customs union the members also agree on one common tariff against outsiders. (c) The objectives are a bigger market for goods and economies of scale, and faster economic growth.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "devalue the currency so exports become cheaper, control the use of foreign exchange, and cut government spending"
+                },
+                {
+                  "point": 1,
+                  "quote": "In a free trade area members trade freely without tariffs but each has its own tariff for outsiders"
+                },
+                {
+                  "point": 2,
+                  "quote": "In a customs union the members also agree on one common tariff against outsiders"
+                },
+                {
+                  "point": 3,
+                  "quote": "a bigger market for goods and economies of scale, and faster economic growth"
+                }
+              ],
+              "feedback": "All four marks. The reason attached to devaluation shows understanding."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Depreciation of the currency, raising interest rates to reduce spending, and exchange control. (b) A free trade area has no tariffs within it, while a customs union has no tariff within it and one common external tariff. (c) Integration gives larger markets and allows more specialisation, and it increases the bargaining power of the members in world trade.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Depreciation of the currency, raising interest rates to reduce spending, and exchange control"
+                },
+                {
+                  "point": 1,
+                  "quote": "A free trade area has no tariffs within it"
+                },
+                {
+                  "point": 2,
+                  "quote": "a customs union has no tariff within it and one common external tariff"
+                },
+                {
+                  "point": 3,
+                  "quote": "larger markets and allows more specialisation, and it increases the bargaining power of the members in world trade"
+                }
+              ],
+              "feedback": "Full marks. Clear, accurate and complete in every part."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Devaluation, exchange control and cutting spending. (b) A free trade area is where countries trade freely. A customs union is a union of customs. (c) Bigger market.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Devaluation, exchange control and cutting spending"
+                }
+              ],
+              "feedback": "Part (a) is right. The difference in (b) is the common external tariff in a customs union; a free trade area has none. You need two objectives in (c); add faster growth or economies of scale."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) A customs union has a common external tariff but a free trade area does not. (c) The objectives are a bigger market and faster growth. (a) The government can borrow money.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "A customs union has a common external tariff but a free trade area does not"
+                },
+                {
+                  "point": 3,
+                  "quote": "a bigger market and faster growth"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are correct. Borrowing is a way of financing a deficit, not correcting it; name three policies such as devaluation, exchange control or cutting spending.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Printing more money, giving subsidies and more imports. (b) They are the same. (c) To make countries friends.",
+              "meets": [],
+              "feedback": "Printing money and importing more would worsen the deficit. Name policies that reduce imports or raise exports. Free trade areas and customs unions differ by the common external tariff."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Closing the airport. (b) A free trade area is a market for free things. (c) Because Africa is poor.",
+              "meets": [],
+              "feedback": "Use real policies: devaluation, exchange control, higher interest rates, lower spending. A free trade area means no tariffs among members. Integration aims at larger markets and growth."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "ECOWAS and international economic organisations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the origin, objectives and achievements of ECOWAS;\n2. explain the problems of economic integration in West Africa;\n3. state the roles of OPEC, ECA, IMF, IBRD (World Bank), AfDB and UNCTAD;\n4. relate each organisation to Nigeria.\n\n## Materials\n\nA map of West Africa, a chart of the six organisations with their dates, headquarters and roles, a copy of the ECOWAS passport if available.\n\n## Starter (5 minutes)\n\nAsk: who has crossed the border at Seme into Benin? What did you need, and what was different from travelling to Ghana by air? Use the answers to introduce regional integration.\n\n## Development\n\n1. ECOWAS: formed in 1975 by the Treaty of Lagos with Nigeria as a founding member. Aims: to promote trade, cooperation and economic union among member states; free movement of persons; a common market and a common external tariff.\n2. Achievements: free movement and ECOWAS passport, trade liberalisation scheme, peacekeeping (ECOMOG), ECOWAS Bank for Investment and Development.\n3. Problems: similar products so little trade among members, poor transport, language and currency differences, political instability, rivalry, delays in paying contributions, and smuggling. Recent membership changes: some members have announced withdrawal.\n4. Other organisations: OPEC (oil price and production policy, Nigeria a member since 1971); ECA (UN agency for Africa's development); IMF (short-term loans to correct balance of payments deficits); IBRD or World Bank (long-term loans for development projects); AfDB (loans to African countries); UNCTAD (trade and development of poorer countries).\n\n## Class activity\n\nMatching game: organisation, role and one example of how Nigeria has dealt with it.\n\n## Evaluation\n\n1. State two achievements of ECOWAS.\n2. Which organisation gives short-term loans to cover balance of payments problems?\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "Working together across borders",
+        "content": "# ECOWAS and international economic organisations\n\n## ECOWAS\n\nThe **Economic Community of West African States (ECOWAS)** was set up in **1975** by the Treaty of Lagos. Nigeria was a founding member and the idea was strongly supported by Nigeria and Togo. It was revised in 1993. Its aims are to promote trade, cooperation and economic development among member states, and eventually to form an economic union with a common currency.\n\n**Achievements:** free movement of persons across member states with the ECOWAS travel documents; a trade liberalisation scheme that reduced tariffs on goods made in the region; peacekeeping through ECOMOG in Liberia and Sierra Leone; road and telecommunications projects; and the ECOWAS Bank for Investment and Development.\n\n**Problems:** members produce similar goods (cocoa, groundnuts, crude oil), so there is little to trade among themselves; poor roads and railways; different official languages (English, French, Portuguese) and currencies; political instability and coups; failure to pay contributions; border delays and smuggling; and fear of domination by the largest economy. The membership of the community has also changed in recent years, so check the current position.\n\n## Other international organisations\n\n**OPEC (Organization of the Petroleum Exporting Countries)**, formed in 1960, coordinates the oil policy of member countries, including output quotas to stabilise prices. Nigeria joined in 1971.\n\n**ECA (Economic Commission for Africa)**, formed in 1958 as part of the United Nations, helps African countries with research, planning and cooperation.\n\n**IMF (International Monetary Fund)** promotes stable exchange rates and gives short-term loans to members with balance of payments problems, often with conditions.\n\n**IBRD (International Bank for Reconstruction and Development)**, part of the World Bank, gives long-term loans for development projects such as roads and power.\n\n**AfDB (African Development Bank)**, formed in 1964, gives loans and technical help to African countries for development projects.\n\n**UNCTAD (United Nations Conference on Trade and Development)**, formed in 1964, promotes the trade of developing countries and seeks fairer terms of trade."
+      },
+      "cards": [
+        {
+          "front": "ECOWAS",
+          "back": "The Economic Community of West African States, formed in 1975."
+        },
+        {
+          "front": "Treaty of Lagos",
+          "back": "The 1975 agreement that set up ECOWAS."
+        },
+        {
+          "front": "ECOMOG",
+          "back": "The ECOWAS peacekeeping force used in Liberia and Sierra Leone."
+        },
+        {
+          "front": "OPEC",
+          "back": "Organization of the Petroleum Exporting Countries; coordinates oil policy."
+        },
+        {
+          "front": "IMF",
+          "back": "Gives short-term loans to countries with balance of payments difficulties."
+        },
+        {
+          "front": "IBRD (World Bank)",
+          "back": "Gives long-term loans for development projects."
+        },
+        {
+          "front": "AfDB",
+          "back": "The African Development Bank, which lends to African countries."
+        },
+        {
+          "front": "UNCTAD",
+          "back": "UN body that promotes the trade and development of poorer countries."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "ECOWAS was established in",
+          "options": [
+            "1960",
+            "1963",
+            "1975",
+            "1993"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The institution that gives short-term loans to countries with balance of payments problems is the",
+          "options": [
+            "IBRD",
+            "AfDB",
+            "UNCTAD",
+            "IMF"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is a problem facing ECOWAS?",
+          "options": [
+            "Members produce similar goods, so intra-regional trade is small",
+            "Members are too rich",
+            "There is excess foreign exchange",
+            "All members use the same language"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The organisation formed in 1960 to coordinate the oil policies of its members is",
+          "options": [
+            "ECA",
+            "OPEC",
+            "UNCTAD",
+            "IMF"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Long-term loans for development projects, such as roads and power plants, are given by the",
+          "options": [
+            "IMF",
+            "UNCTAD",
+            "ECOWAS",
+            "IBRD (World Bank)"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State three aims or achievements of ECOWAS and explain three problems that limit trade among West African countries.",
+          "markScheme": [
+            "One aim or achievement stated (e.g. free movement of persons)",
+            "Two further aims or achievements (e.g. trade liberalisation, peacekeeping, common market)",
+            "Explains that members produce similar goods so there is little to trade",
+            "Explains a second and third problem (e.g. poor transport, currency and language differences, political instability, smuggling)"
+          ],
+          "modelAnswer": "ECOWAS aims to promote free movement of persons, to reduce trade barriers through a trade liberalisation scheme, and to keep peace in the region through ECOMOG. Trade among members is limited because they produce similar goods, such as cocoa and groundnuts, so there is little to trade. Poor roads and railways raise transport costs. Different currencies and languages and political instability and border delays further reduce trade.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "ECOWAS promotes free movement of people across member states. It has a trade liberalisation scheme that reduces tariffs. It has also kept peace through ECOMOG in Liberia and Sierra Leone. Trade among members is small because they produce similar goods such as cocoa, so they have little to sell to each other. Poor roads and railways make transport costly and different currencies and languages make payment difficult.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ECOWAS promotes free movement of people across member states"
+                },
+                {
+                  "point": 1,
+                  "quote": "It has a trade liberalisation scheme that reduces tariffs. It has also kept peace through ECOMOG in Liberia and Sierra Leone"
+                },
+                {
+                  "point": 2,
+                  "quote": "they produce similar goods such as cocoa, so they have little to sell to each other"
+                },
+                {
+                  "point": 3,
+                  "quote": "Poor roads and railways make transport costly and different currencies and languages make payment difficult"
+                }
+              ],
+              "feedback": "All four marks. Every problem comes with its effect on trade."
+            },
+            {
+              "tier": "full",
+              "text": "The aims and achievements include a common market with free movement of persons, a reduction of tariffs on regional goods, and the ECOWAS Bank for Investment and Development. The problems are that the countries produce similar primary products, the roads linking them are poor, and political instability and coups disrupt trade; there is also smuggling at the borders.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a common market with free movement of persons"
+                },
+                {
+                  "point": 1,
+                  "quote": "a reduction of tariffs on regional goods, and the ECOWAS Bank for Investment and Development"
+                },
+                {
+                  "point": 2,
+                  "quote": "the countries produce similar primary products"
+                },
+                {
+                  "point": 3,
+                  "quote": "the roads linking them are poor, and political instability and coups disrupt trade"
+                }
+              ],
+              "feedback": "Full marks. A balanced answer covering both parts of the question."
+            },
+            {
+              "tier": "partial",
+              "text": "ECOWAS promotes free movement and trade. The problems are language and different currencies.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ECOWAS promotes free movement"
+                },
+                {
+                  "point": 3,
+                  "quote": "language and different currencies"
+                }
+              ],
+              "feedback": "You gave only one achievement and two problems, with no explanation. Add a third aim or achievement (peacekeeping or the Bank), and explain why similar products and poor transport reduce trade."
+            },
+            {
+              "tier": "partial",
+              "text": "The problems are that the members produce similar goods and they have poor transport. The aims are to unite West Africa.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the members produce similar goods"
+                },
+                {
+                  "point": 3,
+                  "quote": "they have poor transport"
+                }
+              ],
+              "feedback": "Your two problems are right; add a third and explain how each limits trade. 'Unite West Africa' is vague: name aims such as free movement, tariff reduction and peacekeeping.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "ECOWAS is for Nigerians to travel and the problem is that the countries are far.",
+              "meets": [],
+              "feedback": "ECOWAS is a regional body formed by 1975's Treaty of Lagos, not just for Nigerians. Name real aims and give real trade problems such as similar goods, poor roads and different currencies."
+            },
+            {
+              "tier": "weak",
+              "text": "ECOWAS wants to make West Africa one country. The problem is that Nigeria is big.",
+              "meets": [],
+              "feedback": "ECOWAS aims at economic integration (free movement, trade liberalisation), not one country. Say how problems such as similar exports and poor transport limit trade."
+            }
+          ]
+        },
+        {
+          "prompt": "State the main role of each of the following and say how it may help a developing country like Nigeria: (a) IMF, (b) World Bank (IBRD), (c) OPEC, (d) UNCTAD.",
+          "markScheme": [
+            "IMF: short-term loans for balance of payments problems and stable exchange rates",
+            "IBRD: long-term loans for development projects such as roads and power",
+            "OPEC: coordinates oil policy and output to stabilise prices, which helps oil-exporting Nigeria",
+            "UNCTAD: promotes the trade of developing countries and fairer terms of trade"
+          ],
+          "modelAnswer": "(a) The IMF promotes stable exchange rates and gives short-term loans to countries with balance of payments deficits. (b) The IBRD gives long-term loans for development projects, such as roads and power plants. (c) OPEC coordinates the oil policies of its members and their output, to stabilise oil prices, which helps Nigeria's oil revenue. (d) UNCTAD promotes the trade of developing countries and seeks fairer terms of trade for them.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The IMF gives short-term loans to countries with a balance of payments deficit and works for stable exchange rates. (b) The World Bank (IBRD) gives long-term loans for development projects like roads and power. (c) OPEC coordinates the oil policy and output of its members to keep oil prices stable, which protects Nigeria's income from crude oil. (d) UNCTAD promotes the trade of developing countries and works for fairer terms of trade for them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The IMF gives short-term loans to countries with a balance of payments deficit and works for stable exchange rates"
+                },
+                {
+                  "point": 1,
+                  "quote": "The World Bank (IBRD) gives long-term loans for development projects like roads and power"
+                },
+                {
+                  "point": 2,
+                  "quote": "OPEC coordinates the oil policy and output of its members to keep oil prices stable, which protects Nigeria's income from crude oil"
+                },
+                {
+                  "point": 3,
+                  "quote": "UNCTAD promotes the trade of developing countries and works for fairer terms of trade for them"
+                }
+              ],
+              "feedback": "All four marks. You linked each role to a benefit for Nigeria."
+            },
+            {
+              "tier": "full",
+              "text": "IMF: helps countries with balance of payments problems through short-term loans. IBRD: provides long-term loans for projects such as power plants, schools and roads. OPEC: controls oil output of members so that prices do not fall, which is important for Nigeria because of its oil revenue. UNCTAD: helps developing countries to trade on better terms and gain markets.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "helps countries with balance of payments problems through short-term loans"
+                },
+                {
+                  "point": 1,
+                  "quote": "provides long-term loans for projects such as power plants, schools and roads"
+                },
+                {
+                  "point": 2,
+                  "quote": "controls oil output of members so that prices do not fall, which is important for Nigeria because of its oil revenue"
+                },
+                {
+                  "point": 3,
+                  "quote": "helps developing countries to trade on better terms and gain markets"
+                }
+              ],
+              "feedback": "Full marks. Brief, clear and accurate."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) IMF gives loans. (b) The World Bank gives long-term loans for projects. (c) OPEC controls the oil price. (d) UNCTAD is for trade.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The World Bank gives long-term loans for projects"
+                },
+                {
+                  "point": 2,
+                  "quote": "OPEC controls the oil price"
+                }
+              ],
+              "feedback": "Two are good. The IMF gives short-term loans for balance of payments problems, and UNCTAD promotes the trade of developing countries on better terms; say what the help is, and how it benefits Nigeria."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The IMF gives short-term loans for balance of payments deficits. (d) UNCTAD promotes the trade of developing countries. (b) The World Bank gives loans. (c) OPEC is for oil.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The IMF gives short-term loans for balance of payments deficits"
+                },
+                {
+                  "point": 3,
+                  "quote": "UNCTAD promotes the trade of developing countries"
+                }
+              ],
+              "feedback": "Parts (a) and (d) are correct. The World Bank gives long-term loans for development projects, and OPEC coordinates oil policy to keep prices stable.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) IMF is a bank in America. (b) World Bank is the bank of the world. (c) OPEC is for Arabs. (d) UNCTAD is for the United Nations.",
+              "meets": [],
+              "feedback": "State what each does: IMF (short-term loans for balance of payments), World Bank (long-term development loans), OPEC (oil policy; Nigeria is a member), UNCTAD (trade of developing countries)."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The IMF gives gifts to countries. (b) The World Bank gives loans to banks. (c) OPEC controls oil in Nigeria only. (d) UNCTAD controls tariffs.",
+              "meets": [],
+              "feedback": "IMF loans are not gifts and carry conditions. The World Bank lends to governments for projects. OPEC covers many oil exporters. UNCTAD promotes trade of developing countries but does not control tariffs."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

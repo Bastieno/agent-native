@@ -1,0 +1,2564 @@
+{
+  "subject": "Further Mathematics",
+  "yearGroup": "SS2",
+  "weeks": {
+    "1": {
+      "topic": "Series, matrices and determinants",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the sum of an arithmetic series and of a geometric series, and the sum to infinity of a GP with |r| < 1;\n2. state the order and type of a matrix, and use equality of matrices;\n3. add, subtract and multiply matrices up to 3 × 3, and multiply by a scalar;\n4. evaluate 2 × 2 and 3 × 3 determinants;\n5. solve simultaneous linear equations using determinants.\n\n## Materials\n\nA chart of the series formulas, a chart showing row-by-column multiplication, a market price list for a matrix example.\n\n## Starter (5 minutes)\n\nTell the story of the young Gauss adding 1 + 2 + ... + 100 in seconds. Ask the class to find the trick: pair the first and last numbers.\n\n## Development\n\n1. Derive Sₙ = n/2(U₁ + Uₙ) = n/2[2a + (n − 1)d] by writing the series forwards and backwards.\n2. Derive Sₙ = a(1 − rⁿ)/(1 − r) for a GP. Show that when |r| < 1, rⁿ → 0, so S∞ = a/(1 − r).\n3. Introduce a matrix as a table of numbers. State order (rows × columns) and types: row, column, square, zero, identity. Equal matrices have equal corresponding entries.\n4. Add matrices of the same order; multiply by a scalar. Multiply a 2 × 2 by a 2 × 1, then a 2 × 2 by a 2 × 2, row by column. Show AB ≠ BA in general.\n5. Evaluate |a b; c d| = ad − bc. Expand a 3 × 3 determinant along the first row.\n6. Solve two simultaneous equations by Cramer's rule: x = Dₓ/D, y = Dᵧ/D.\n\n## Class activity\n\nIn pairs, students multiply two given 2 × 2 matrices both ways and confirm that AB and BA are different.\n\n## Evaluation\n\n1. Find the sum of the first 10 terms of 4, 7, 10, ....\n2. Evaluate |4 1; 3 2|.\n\n## Assignment\n\nWorksheet questions, due Tuesday.",
+      "reading": {
+        "title": "Adding up series, and working with matrices",
+        "content": "# Series\n\nA **series** is the sum of the terms of a sequence.\n\n## Arithmetic series\n\nThe sum of the first n terms of an AP is\n\nSₙ = n/2 (U₁ + Uₙ) = n/2 [2a + (n − 1)d].\n\n**Worked example.** Find the sum of the first 15 terms of 6, 10, 14, ....\nSₙ = 15/2 [12 + 14 × 4] = 7.5 × 68 = 510.\n\n## Geometric series\n\nThe sum of the first n terms of a GP is\n\nSₙ = a(1 − rⁿ)/(1 − r) when r < 1, or Sₙ = a(rⁿ − 1)/(r − 1) when r > 1.\n\nIf −1 < r < 1, the terms get smaller and smaller and the sum approaches a fixed value, the **sum to infinity**:\n\nS∞ = a/(1 − r).\n\n**Worked example.** 1 + 3 + 9 + ... to 6 terms = (3⁶ − 1)/(3 − 1) = 728/2 = 364.\n\n**Worked example.** 18 + 6 + 2 + ... to infinity: a = 18, r = 1/3, S∞ = 18/(2/3) = 27.\n\n# Matrices\n\nA **matrix** is a rectangular array of numbers. A matrix with m rows and n columns has **order** m × n. A square matrix has as many rows as columns. The **identity matrix** I has 1s on the leading diagonal and 0s elsewhere.\n\nTwo matrices are **equal** if they have the same order and their corresponding entries are equal.\n\n- **Addition and subtraction**: add or subtract corresponding entries (same order only).\n- **Scalar multiplication**: multiply every entry by the number.\n- **Matrix multiplication**: AB is possible when the number of columns of A equals the number of rows of B. Each entry is a row of A times a column of B.\n\n**Worked example.** [2 1; 0 3] × [1 4; 2 1] = [2 + 2, 8 + 1; 0 + 6, 0 + 3] = [4 9; 6 3].\n\nIn general AB ≠ BA.\n\n# Determinants\n\nFor a 2 × 2 matrix, |a b; c d| = ad − bc.\n\nFor a 3 × 3 matrix, expand along the first row:\n\n|a b c; d e f; g h i| = a(ei − fh) − b(di − fg) + c(dh − eg).\n\n**Worked example.** |1 2 0; 3 1 2; 0 1 4| = 1(4 − 2) − 2(12 − 0) + 0 = 2 − 24 = −22.\n\n## Solving equations by determinants\n\nFor ax + by = p and cx + dy = q, let D = |a b; c d|, Dₓ = |p b; q d| and Dᵧ = |a p; c q|. Then x = Dₓ/D and y = Dᵧ/D, provided D ≠ 0. This is **Cramer's rule**."
+      },
+      "cards": [
+        {
+          "front": "Sum of n terms of an AP",
+          "back": "Sₙ = n/2 [2a + (n − 1)d]."
+        },
+        {
+          "front": "Sum of n terms of a GP (r > 1)",
+          "back": "Sₙ = a(rⁿ − 1)/(r − 1)."
+        },
+        {
+          "front": "Sum to infinity of a GP",
+          "back": "S∞ = a/(1 − r), valid only when −1 < r < 1."
+        },
+        {
+          "front": "Order of a matrix",
+          "back": "Number of rows × number of columns."
+        },
+        {
+          "front": "When can AB be found?",
+          "back": "When the number of columns of A equals the number of rows of B."
+        },
+        {
+          "front": "Identity matrix (2 × 2)",
+          "back": "[1 0; 0 1]; AI = IA = A."
+        },
+        {
+          "front": "Determinant of [a b; c d]",
+          "back": "ad − bc."
+        },
+        {
+          "front": "Cramer's rule",
+          "back": "x = Dₓ/D and y = Dᵧ/D, where D is the determinant of the coefficients."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the sum of the first 20 terms of the arithmetic progression whose first three terms are 2, 5 and 8.",
+          "options": ["610", "59", "1220", "580"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the sum to infinity of the geometric progression 12, 6, 3, and so on.",
+          "options": ["21", "24", "18", "36"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A matrix has 2 rows and 3 columns. What is its order?",
+          "options": ["3 × 2", "6", "2 × 3", "5"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Evaluate the determinant |3 2; 4 5|.",
+          "options": ["23", "−7", "2", "7"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Find the product [1 2; 3 4] × [2; 1], where [2; 1] is a column matrix.",
+          "options": ["[2; 3]", "[4; 10]", "[2 4; 3 4]", "[5; 11]"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A = [2 1; 3 −1] and B = [1 0; 2 4]. Find (a) A + 2B and (b) AB.",
+          "markScheme": [
+            "2B = [2 0; 4 8]",
+            "A + 2B = [4 1; 7 7]",
+            "First row of AB: [2 × 1 + 1 × 2, 2 × 0 + 1 × 4] = [4 4]",
+            "Second row of AB: [3 × 1 + (−1) × 2, 3 × 0 + (−1) × 4] = [1 −4]"
+          ],
+          "modelAnswer": "(a) 2B = [2 0; 4 8], so A + 2B = [2 + 2, 1 + 0; 3 + 4, −1 + 8] = [4 1; 7 7]. (b) AB = [2(1) + 1(2), 2(0) + 1(4); 3(1) + (−1)(2), 3(0) + (−1)(4)] = [4 4; 1 −4].",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 2B = [2 0; 4 8]\nA + 2B = [2+2 1+0; 3+4 -1+8] = [4 1; 7 7]\n(b) AB = [2(1)+1(2) 2(0)+1(4); 3(1)+(-1)(2) 3(0)+(-1)(4)]\n= [4 4; 1 -4]",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2B = [2 0; 4 8]"
+                },
+                {
+                  "point": 1,
+                  "quote": "= [4 1; 7 7]"
+                },
+                {
+                  "point": 2,
+                  "quote": "2(1)+1(2) 2(0)+1(4)"
+                },
+                {
+                  "point": 3,
+                  "quote": "3(1)+(-1)(2) 3(0)+(-1)(4)"
+                }
+              ],
+              "feedback": "Every entry shown and correct. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Doubling B gives [2 0; 4 8]. Adding to A: A + 2B = [4 1; 7 7]. For AB, row 1 of A with each column of B: 2 + 2 = 4 and 0 + 4 = 4. Row 2: 3 − 2 = 1 and 0 − 4 = −4. So AB = [4 4; 1 −4].",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Doubling B gives [2 0; 4 8]"
+                },
+                {
+                  "point": 1,
+                  "quote": "A + 2B = [4 1; 7 7]"
+                },
+                {
+                  "point": 2,
+                  "quote": "row 1 of A with each column of B: 2 + 2 = 4 and 0 + 4 = 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "Row 2: 3 − 2 = 1 and 0 − 4 = −4"
+                }
+              ],
+              "feedback": "Clear, and describing row-by-column multiplication in words shows you understand it. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "A + 2B = [2+2 1; 3+4 -1+8] = [4 1; 7 7]. AB = [2×1 1×0; 3×2 -1×4] = [2 0; 6 -4].",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A + 2B = [2+2 1; 3+4 -1+8] = [4 1; 7 7]"
+                }
+              ],
+              "feedback": "Part (a) is right. Matrices are not multiplied entry by entry: each entry of AB is a row of A times a column of B, e.g. 2 × 1 + 1 × 2 = 4 for the top left.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "2B = [2 0; 4 8], A + 2B = [4 1; 7 7]. AB = [2+0 4+0; 1+0 -4+0]... AB = [2 4; 3 -4]",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2B = [2 0; 4 8]"
+                },
+                {
+                  "point": 1,
+                  "quote": "A + 2B = [4 1; 7 7]"
+                }
+              ],
+              "feedback": "Part (a) is correct. In (b) each entry needs both products added: row 1 of A times column 1 of B is 2 × 1 + 1 × 2 = 4, not 2. Work through all four entries that way."
+            },
+            {
+              "tier": "weak",
+              "text": "A + 2B = [3 1; 5 3] × 2 = [6 2; 10 6].",
+              "meets": [],
+              "feedback": "Only B is doubled, not the sum. Find 2B first by multiplying each entry of B by 2, then add A."
+            },
+            {
+              "tier": "weak",
+              "text": "AB = det A × det B = (-2 - 3)(4 - 0) = -20.",
+              "meets": [],
+              "feedback": "The product of two matrices is a matrix, not a number. Multiply each row of A by each column of B to get the four entries of AB."
+            }
+          ]
+        },
+        {
+          "prompt": "Use determinants to solve the simultaneous equations 2x + 3y = 13 and 5x − y = 7.",
+          "markScheme": [
+            "D = |2 3; 5 −1| = −2 − 15 = −17",
+            "Dₓ = |13 3; 7 −1| = −13 − 21 = −34",
+            "Dᵧ = |2 13; 5 7| = 14 − 65 = −51",
+            "x = Dₓ/D = 2 and y = Dᵧ/D = 3"
+          ],
+          "modelAnswer": "D = |2 3; 5 −1| = 2(−1) − 3(5) = −17. Dₓ = |13 3; 7 −1| = 13(−1) − 3(7) = −34. Dᵧ = |2 13; 5 7| = 2(7) − 13(5) = −51. So x = −34 ÷ −17 = 2 and y = −51 ÷ −17 = 3. Check: 2(2) + 3(3) = 13 and 5(2) − 3 = 7.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "D = |2 3; 5 -1| = -2 - 15 = -17\nDx = |13 3; 7 -1| = -13 - 21 = -34\nDy = |2 13; 5 7| = 14 - 65 = -51\nx = -34/-17 = 2, y = -51/-17 = 3",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "D = |2 3; 5 -1| = -2 - 15 = -17"
+                },
+                {
+                  "point": 1,
+                  "quote": "Dx = |13 3; 7 -1| = -13 - 21 = -34"
+                },
+                {
+                  "point": 2,
+                  "quote": "Dy = |2 13; 5 7| = 14 - 65 = -51"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = -34/-17 = 2, y = -51/-17 = 3"
+                }
+              ],
+              "feedback": "All three determinants are correct and the signs are handled carefully. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The coefficient determinant is (2)(−1) − (3)(5) = −17. Replacing the x column with the constants: (13)(−1) − (3)(7) = −34, so x = 2. Replacing the y column: (2)(7) − (13)(5) = −51, so y = 3. Check in the second equation: 10 − 3 = 7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The coefficient determinant is (2)(−1) − (3)(5) = −17"
+                },
+                {
+                  "point": 1,
+                  "quote": "Replacing the x column with the constants: (13)(−1) − (3)(7) = −34"
+                },
+                {
+                  "point": 2,
+                  "quote": "Replacing the y column: (2)(7) − (13)(5) = −51"
+                },
+                {
+                  "point": 3,
+                  "quote": "so x = 2. Replacing the y column: (2)(7) − (13)(5) = −51, so y = 3"
+                }
+              ],
+              "feedback": "Correct, and saying which column is replaced each time shows you understand Cramer's rule. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "D = 2(-1) - 3(5) = -17. Dx = 13(-1) - 3(7) = -34. x = 2. Then 2(2) + 3y = 13 so y = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "D = 2(-1) - 3(5) = -17"
+                },
+                {
+                  "point": 1,
+                  "quote": "Dx = 13(-1) - 3(7) = -34"
+                }
+              ],
+              "feedback": "D and Dₓ are right, and your answers are correct. The question asks you to use determinants for both, so find Dᵧ = |2 13; 5 7| too."
+            },
+            {
+              "tier": "partial",
+              "text": "D = |2 3; 5 -1| = -2 + 15 = 13. Dx = -13 - 21 = -34. Dy = 14 - 65 = -51. x = -34/13, y = -51/13.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Dx = -13 - 21 = -34"
+                },
+                {
+                  "point": 2,
+                  "quote": "Dy = 14 - 65 = -51"
+                }
+              ],
+              "feedback": "Dₓ and Dᵧ are right. A determinant is ad − bc, so D = (2)(−1) − (3)(5) = −17, not −2 + 15. Then x = 2 and y = 3."
+            },
+            {
+              "tier": "weak",
+              "text": "Multiply the second equation by 3: 15x - 3y = 21. Add: 17x = 34, x = 2.",
+              "meets": [],
+              "feedback": "Elimination gives the right x, but the question asks for determinants. Find D, Dₓ and Dᵧ and use x = Dₓ/D, y = Dᵧ/D."
+            },
+            {
+              "tier": "weak",
+              "text": "D = 2 × 3 × 5 × -1 = -30. x = 13/-30, y = 7/-30.",
+              "meets": [],
+              "feedback": "A 2 × 2 determinant is ad − bc, the product of the leading diagonal minus the product of the other diagonal: (2)(−1) − (3)(5)."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Inverse matrices, linear transformations and trigonometry",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the inverse of a 2 × 2 matrix and use it to solve simultaneous equations;\n2. find images under a linear transformation, its matrix, its inverse and the composition of two transformations;\n3. state the standard matrices for reflections and anticlockwise rotation through θ;\n4. find trigonometric ratios of general and negative angles, and of 30°, 45° and 60° without tables;\n5. convert between degrees and radians, prove simple identities and use the sine and cosine rules, including bearings.\n\n## Materials\n\nGraph paper, a protractor, a chart of the special-angle triangles, a chart of the four quadrants (ASTC).\n\n## Starter (5 minutes)\n\nAsk: a fishing boat leaves Badagry and sails north-east, then turns and sails south-east. How could we find how far it is from Badagry without measuring?\n\n## Development\n\n1. For A = [a b; c d], show A⁻¹ = 1/(ad − bc) [d −b; −c a]. Check AA⁻¹ = I. Use it to solve two equations.\n2. Map the triangle (0, 0), (2, 0), (2, 1) under [0 −1; 1 0] and identify the rotation of 90°. List the matrices for reflection in the axes and in y = x, and rotation through θ: [cos θ −sin θ; sin θ cos θ]. Find a composition by multiplying matrices.\n3. Draw the 30-60-90 and 45-45-90 triangles to get exact values.\n4. Use the ASTC diagram for angles from 0° to 360° and for negative angles, e.g. sin(−30°) = −½.\n5. Show that π radians = 180°. Prove tan θ + 1/tan θ = 1/(sin θ cos θ).\n6. State the sine and cosine rules; solve the starter problem.\n\n## Class activity\n\nIn groups, students find the images of a triangle under two transformations, then under their composition, and compare.\n\n## Evaluation\n\n1. Find the inverse of [5 2; 2 1].\n2. Find cos 300° without tables.\n\n## Assignment\n\nRevise for Monday's quiz.",
+      "reading": {
+        "title": "Inverses, transformations and the trigonometry of any angle",
+        "content": "# The inverse of a 2 × 2 matrix\n\nIf A = [a b; c d] and |A| = ad − bc ≠ 0, then\n\nA⁻¹ = 1/(ad − bc) × [d −b; −c a].\n\nSwap the leading diagonal, change the signs of the other two entries, and divide by the determinant. AA⁻¹ = A⁻¹A = I.\n\n**Worked example.** A = [5 3; 3 2]. |A| = 10 − 9 = 1, so A⁻¹ = [2 −3; −3 5].\n\n# Linear transformations\n\nA 2 × 2 matrix maps a point (x, y) to a new point: [a b; c d][x; y] = [ax + by; cx + dy].\n\n| Transformation | Matrix |\n| --- | --- |\n| Reflection in the x-axis | [1 0; 0 −1] |\n| Reflection in the y-axis | [−1 0; 0 1] |\n| Reflection in y = x | [0 1; 1 0] |\n| Anticlockwise rotation through θ about O | [cos θ −sin θ; sin θ cos θ] |\n| Identity | [1 0; 0 1] |\n\nThe transformation 'T followed by S' has matrix ST. The inverse transformation has matrix T⁻¹.\n\n**Worked example.** Under rotation through 90°, [0 −1; 1 0], the point (3, 1) maps to (−1, 3).\n\n# Trigonometry of any angle\n\n| | 30° | 45° | 60° |\n| --- | --- | --- | --- |\n| sin | 1/2 | √2/2 | √3/2 |\n| cos | √3/2 | √2/2 | 1/2 |\n| tan | √3/3 | 1 | √3 |\n\nIn the four quadrants, All ratios are positive in the first, Sine in the second, Tan in the third and Cos in the fourth (ASTC). So sin 210° = −sin 30° = −1/2 and cos 330° = cos 30° = √3/2. For negative angles, sin(−θ) = −sin θ, cos(−θ) = cos θ.\n\nπ radians = 180°, so 1 radian ≈ 57.3° and 135° = 3π/4.\n\nThe reciprocal ratios are cosec θ = 1/sin θ, sec θ = 1/cos θ, cot θ = 1/tan θ, and sin²θ + cos²θ = 1.\n\n**Worked example.** Prove (1 − cos²θ)/cos²θ = tan²θ. Left side = sin²θ/cos²θ = tan²θ.\n\n## The sine and cosine rules\n\nIn triangle ABC with sides a, b, c opposite A, B, C:\n\n- Sine rule: a/sin A = b/sin B = c/sin C\n- Cosine rule: a² = b² + c² − 2bc cos A\n\n**Worked example.** Two roads from a junction meet at 120°. Two towns lie 6 km and 10 km along them. Distance² = 36 + 100 − 2(6)(10) cos 120° = 136 + 60 = 196, so the towns are 14 km apart.\n\nBearings are measured clockwise from north as three figures, such as 060°."
+      },
+      "cards": [
+        {
+          "front": "Inverse of [a b; c d]",
+          "back": "1/(ad − bc) × [d −b; −c a]."
+        },
+        {
+          "front": "Matrix for reflection in the x-axis",
+          "back": "[1 0; 0 −1]."
+        },
+        {
+          "front": "Matrix for reflection in y = x",
+          "back": "[0 1; 1 0]."
+        },
+        {
+          "front": "Anticlockwise rotation through θ",
+          "back": "[cos θ −sin θ; sin θ cos θ]."
+        },
+        {
+          "front": "sin 60°, cos 60°, tan 60°",
+          "back": "√3/2, 1/2, √3."
+        },
+        {
+          "front": "ASTC",
+          "back": "All positive in quadrant 1, Sine in 2, Tan in 3, Cos in 4."
+        },
+        {
+          "front": "π radians",
+          "back": "180°."
+        },
+        {
+          "front": "Cosine rule",
+          "back": "a² = b² + c² − 2bc cos A."
+        },
+        {
+          "front": "Sine rule",
+          "back": "a/sin A = b/sin B = c/sin C."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the inverse of the matrix [3 1; 5 2].",
+          "options": [
+            "[2 1; 5 3]",
+            "[2 −1; −5 3]",
+            "[−2 1; 5 −3]",
+            "[3 −1; −5 2]"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the image of the point (2, 3) under the transformation with matrix [1 0; 0 −1]?",
+          "options": ["(2, −3)", "(−2, 3)", "(3, 2)", "(−2, −3)"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Without using tables, what is the value of sin 60°?",
+          "options": ["1/2", "√2/2", "√3/2", "√3"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Express 150° in radians.",
+          "options": ["3π/4", "2π/3", "5π/3", "5π/6"],
+          "answer": "D"
+        },
+        {
+          "prompt": "In a triangle, two sides of 5 cm and 8 cm contain an angle of 60°. What is the length of the third side?",
+          "options": ["7 cm", "9.4 cm", "13 cm", "49 cm"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A = [4 3; 1 2]. Find A⁻¹. Hence solve the simultaneous equations 4x + 3y = 18 and x + 2y = 7.",
+          "markScheme": [
+            "|A| = 4 × 2 − 3 × 1 = 5",
+            "A⁻¹ = (1/5)[2 −3; −1 4]",
+            "Writes [x; y] = A⁻¹[18; 7] and multiplies: (1/5)[36 − 21; −18 + 28] = (1/5)[15; 10]",
+            "x = 3, y = 2"
+          ],
+          "modelAnswer": "|A| = (4)(2) − (3)(1) = 5, so A⁻¹ = (1/5)[2 −3; −1 4]. The equations are A[x; y] = [18; 7], so [x; y] = A⁻¹[18; 7] = (1/5)[2(18) − 3(7); −1(18) + 4(7)] = (1/5)[15; 10] = [3; 2]. So x = 3 and y = 2.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "|A| = 8 - 3 = 5\nA⁻¹ = 1/5 [2 -3; -1 4]\n[x; y] = 1/5 [2 -3; -1 4][18; 7] = 1/5 [36 - 21; -18 + 28] = 1/5 [15; 10] = [3; 2]\nx = 3, y = 2",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "|A| = 8 - 3 = 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "A⁻¹ = 1/5 [2 -3; -1 4]"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 1/5 [36 - 21; -18 + 28] = 1/5 [15; 10]"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = 3, y = 2"
+                }
+              ],
+              "feedback": "Correct and clearly set out. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Determinant = (4)(2) − (3)(1) = 5. Inverse: swap 4 and 2, change the signs of 3 and 1, divide by 5: A⁻¹ = (1/5)[2 −3; −1 4]. Multiplying A⁻¹ by [18; 7]: top = (36 − 21)/5 = 3, bottom = (−18 + 28)/5 = 2. So x = 3, y = 2. Check: 12 + 6 = 18 and 3 + 4 = 7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Determinant = (4)(2) − (3)(1) = 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "A⁻¹ = (1/5)[2 −3; −1 4]"
+                },
+                {
+                  "point": 2,
+                  "quote": "top = (36 − 21)/5 = 3, bottom = (−18 + 28)/5 = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "So x = 3, y = 2"
+                }
+              ],
+              "feedback": "Correct, and the check in both equations confirms it. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "|A| = 5. A⁻¹ = 1/5 [2 3; 1 4]. [x; y] = 1/5 [36 + 21; 18 + 28] = [11.4; 9.2].",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "|A| = 5"
+                }
+              ],
+              "feedback": "Your determinant is right. To form the inverse you must also change the signs of the off-diagonal entries: (1/5)[2 −3; −1 4]. That gives x = 3, y = 2."
+            },
+            {
+              "tier": "partial",
+              "text": "|A| = 5, A⁻¹ = 1/5 [2 -3; -1 4]. [x; y] = [18; 7] × A⁻¹ = 1/5 [18×2 7×-3; 18×-1 7×4] = 1/5 [36 -21; -18 28].",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "|A| = 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "A⁻¹ = 1/5 [2 -3; -1 4]"
+                }
+              ],
+              "feedback": "Your inverse is correct. The column [18; 7] goes on the right, and each row of A⁻¹ is multiplied by it and added: (36 − 21)/5 = 3 and (−18 + 28)/5 = 2.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A⁻¹ = [1/4 1/3; 1 1/2], taking 1 over each number.",
+              "meets": [],
+              "feedback": "The inverse of a matrix is not found by taking reciprocals of the entries. Use A⁻¹ = 1/(ad − bc) [d −b; −c a]."
+            },
+            {
+              "tier": "weak",
+              "text": "From the second equation x = 7 - 2y. Substitute: 4(7 - 2y) + 3y = 18, 28 - 5y = 18, y = 2, x = 3.",
+              "meets": [],
+              "feedback": "Your answers are right, but the question says 'hence', so it must use A⁻¹. Find the determinant, then the inverse, then multiply it by [18; 7]."
+            }
+          ]
+        },
+        {
+          "prompt": "A boat leaves a jetty P on the Lagos lagoon and travels 40 km on a bearing of 060° to Q. It then travels 30 km on a bearing of 150° to R. Calculate the distance PR and the bearing of R from P.",
+          "markScheme": [
+            "Finds angle PQR = 90° (back bearing 240° − 150°)",
+            "PR² = 40² + 30², so PR = 50 km",
+            "Angle QPR = tan⁻¹(30/40) ≈ 36.9°",
+            "Bearing of R from P = 060° + 36.9° ≈ 097°"
+          ],
+          "modelAnswer": "The bearing of P from Q is 060° + 180° = 240°. The boat leaves Q on 150°, so angle PQR = 240° − 150° = 90°. By Pythagoras (or the cosine rule), PR² = 40² + 30² = 2500, so PR = 50 km. In the right-angled triangle, tan QPR = 30/40, so angle QPR = 36.9°. The bearing of R from P is 060° + 36.9° = 096.9°, about 097°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Back bearing of P from Q = 060 + 180 = 240°. Angle PQR = 240 - 150 = 90°.\nPR² = 40² + 30² = 1600 + 900 = 2500, PR = 50 km.\ntan QPR = 30/40 = 0.75, angle QPR = 36.9°.\nBearing of R from P = 60 + 36.9 = 096.9° ≈ 097°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Angle PQR = 240 - 150 = 90°"
+                },
+                {
+                  "point": 1,
+                  "quote": "PR = 50 km"
+                },
+                {
+                  "point": 2,
+                  "quote": "angle QPR = 36.9°"
+                },
+                {
+                  "point": 3,
+                  "quote": "Bearing of R from P = 60 + 36.9 = 096.9° ≈ 097°"
+                }
+              ],
+              "feedback": "Clear working, with the right angle found from the back bearing. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "At Q the angle between QP (bearing 240°) and QR (bearing 150°) is 90°. Cosine rule: PR² = 40² + 30² − 2(40)(30)cos 90° = 2500, so PR = 50 km. Sine rule: sin QPR = 30 sin 90°/50 = 0.6, so QPR = 36.87°. Bearing = 060° + 36.87° = 096.87°, which is 097° to the nearest degree.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the angle between QP (bearing 240°) and QR (bearing 150°) is 90°"
+                },
+                {
+                  "point": 1,
+                  "quote": "PR² = 40² + 30² − 2(40)(30)cos 90° = 2500, so PR = 50 km"
+                },
+                {
+                  "point": 2,
+                  "quote": "QPR = 36.87°"
+                },
+                {
+                  "point": 3,
+                  "quote": "which is 097° to the nearest degree"
+                }
+              ],
+              "feedback": "Using the cosine and sine rules works for any angle, not just a right angle. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Angle PQR = 150 - 60 = 90°. PR = √(40² + 30²) = 50 km. Bearing of R from P = 150°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Angle PQR = 150 - 60 = 90°"
+                },
+                {
+                  "point": 1,
+                  "quote": "PR = √(40² + 30²) = 50 km"
+                }
+              ],
+              "feedback": "Your distance is right. 150° is the direction from Q to R, not from P. Find angle QPR = tan⁻¹(30/40) and add it to 060°.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Angle at Q = 90°. PR = 40 + 30 = 70 km. tan P = 30/40, P = 36.9°. Bearing = 60 + 36.9 = 096.9°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Angle at Q = 90°"
+                },
+                {
+                  "point": 2,
+                  "quote": "tan P = 30/40, P = 36.9°"
+                },
+                {
+                  "point": 3,
+                  "quote": "Bearing = 60 + 36.9 = 096.9°"
+                }
+              ],
+              "feedback": "Your angles and bearing are right. Distances along two sides of a triangle cannot simply be added; use Pythagoras: PR = √(40² + 30²) = 50 km."
+            },
+            {
+              "tier": "weak",
+              "text": "The bearing of R from P is 060 + 150 = 210°. PR = 70 km.",
+              "meets": [],
+              "feedback": "Bearings are not added like that. Draw the north lines at P and Q, find the angle at Q from the back bearing, then use Pythagoras or the cosine rule."
+            },
+            {
+              "tier": "weak",
+              "text": "PR² = 40² + 30² − 2(40)(30)cos 60° = 2500 − 1200 = 1300. PR = 36 km.",
+              "meets": [],
+              "feedback": "60° is the first bearing, not the angle inside the triangle at Q. Use the back bearing 240° to find angle PQR = 90°, then redo the cosine rule."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Compound angles, trigonometric graphs and equations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the formulae for sin(A ± B), cos(A ± B) and tan(A ± B);\n2. find ratios of multiple angles such as 2A and 3A and use them in simple identities;\n3. relate sin θ and cos θ to the coordinates of a point on the circle x² + y² = r²;\n4. sketch the graphs of sin x, cos x, tan x and a sin x + b cos x, identifying maximum and minimum points;\n5. solve trigonometric equations up to quadratic, for 0° ≤ x ≤ 360°.\n\n## Materials\n\nGraph paper, a unit circle chart, a table of values of sin x and cos x.\n\n## Starter (5 minutes)\n\nAsk: is sin 75° equal to sin 45° + sin 30°?\n\n## Development\n\n1. State sin(A + B) = sin A cos B + cos A sin B and the other compound formulae. Find sin 75° and cos 15° exactly.\n2. Put B = A to get sin 2A = 2 sin A cos A and cos 2A = cos²A − sin²A = 1 − 2 sin²A = 2 cos²A − 1. Give sin 3A.\n3. Mark a point (x, y) on the circle of radius r: sin θ = y/r, cos θ = x/r.\n4. Plot y = sin x and y = cos x from 0° to 360°, marking maxima, minima and where each increases. Write 3 sin x + 4 cos x as 5 sin(x + 53.1°), maximum 5.\n5. Solve sin x = ½ from the graph and from ASTC. Solve 2 sin²x − sin x − 3 = 0 by factorising, rejecting sin x = 3/2.\n\n## Class activity\n\nIn pairs, students solve 2 cos²x − cos x − 1 = 0 for 0° ≤ x ≤ 360° and check the answers on their graph of cos x.\n\n## Evaluation\n\n1. Find cos 75° exactly.\n2. Solve tan x = 1 for 0° ≤ x ≤ 360°.\n\n## Assignment\n\nProblem set questions, due Thursday.",
+      "reading": {
+        "title": "Compound angles and solving trigonometric equations",
+        "content": "# Compound angle formulae\n\n- sin(A ± B) = sin A cos B ± cos A sin B\n- cos(A ± B) = cos A cos B ∓ sin A sin B\n- tan(A ± B) = (tan A ± tan B)/(1 ∓ tan A tan B)\n\n**Worked example.** cos 15° = cos(45° − 30°) = cos 45° cos 30° + sin 45° sin 30° = (√2/2)(√3/2) + (√2/2)(1/2) = (√6 + √2)/4.\n\n## Multiple angles\n\nPutting B = A:\n\n- sin 2A = 2 sin A cos A\n- cos 2A = cos²A − sin²A = 1 − 2 sin²A = 2 cos²A − 1\n- tan 2A = 2 tan A/(1 − tan²A)\n\nAnd sin 3A = 3 sin A − 4 sin³A.\n\n**Worked example.** If sin A = 4/5 and A is acute, cos A = 3/5, so sin 2A = 2(4/5)(3/5) = 24/25.\n\n# Trigonometric functions and graphs\n\nFor a point (x, y) on the circle x² + y² = r², at angle θ from the positive x-axis, cos θ = x/r and sin θ = y/r. As θ goes round from 0° to 360°, y = sin θ rises to a maximum of 1 at 90°, falls to −1 at 270° and returns to 0. y = cos θ starts at 1, falls to −1 at 180° and returns to 1. y = tan θ has no value at 90° and 270°.\n\nA function a sin x + b cos x can be written R sin(x + α), where R = √(a² + b²) and tan α = b/a. Its maximum is R and its minimum −R.\n\n**Worked example.** sin x + √3 cos x = 2 sin(x + 60°), with maximum 2 when x = 30°.\n\n# Solving trigonometric equations\n\n1. Find the basic (acute) angle.\n2. Use ASTC to find every angle in 0° ≤ x ≤ 360° with the right sign.\n\n**Worked example.** Solve cos x = −½. Basic angle 60°; cos is negative in the 2nd and 3rd quadrants, so x = 120° or 240°.\n\nQuadratic equations in sin x or cos x are factorised like ordinary quadratics. Remember that −1 ≤ sin x ≤ 1, so some roots must be rejected.\n\n**Worked example.** Solve 2 sin²x − sin x − 3 = 0 for 0° ≤ x ≤ 360°.\n(2 sin x − 3)(sin x + 1) = 0, so sin x = 3/2 or sin x = −1.\nsin x = 3/2 has no solution. sin x = −1 gives x = 270°.\n\nIf both sin and cos appear, use sin²x + cos²x = 1 to write the equation in one ratio first."
+      },
+      "cards": [
+        {
+          "front": "sin(A + B)",
+          "back": "sin A cos B + cos A sin B."
+        },
+        {
+          "front": "cos(A − B)",
+          "back": "cos A cos B + sin A sin B."
+        },
+        {
+          "front": "tan(A + B)",
+          "back": "(tan A + tan B)/(1 − tan A tan B)."
+        },
+        {
+          "front": "sin 2A",
+          "back": "2 sin A cos A."
+        },
+        {
+          "front": "cos 2A in terms of sin A",
+          "back": "1 − 2 sin²A."
+        },
+        {
+          "front": "Maximum of a sin x + b cos x",
+          "back": "√(a² + b²)."
+        },
+        {
+          "front": "Range of sin x and cos x",
+          "back": "From −1 to 1, so sin x = 3/2 has no solution."
+        },
+        {
+          "front": "Steps for solving sin x = k",
+          "back": "Find the basic angle, then use ASTC for all angles from 0° to 360°."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the exact value of sin 75°.",
+          "options": [
+            "(√3 + 1)/2",
+            "√3/2 + √2/2",
+            "(√6 + √2)/4",
+            "(√6 − √2)/4"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is equal to cos 2A?",
+          "options": ["1 − 2 sin²A", "2 sin A cos A", "1 + 2 sin²A", "2 cos A"],
+          "answer": "A"
+        },
+        {
+          "prompt": "If tan A = 1/2 and tan B = 1/3, find tan(A + B).",
+          "options": ["5/6", "1", "5/7", "6/5"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the maximum value of 3 sin x + 4 cos x?",
+          "options": ["7", "1", "12", "5"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Solve 2 sin x = 1 for 0° ≤ x ≤ 360°.",
+          "options": [
+            "30° and 150°",
+            "30° and 330°",
+            "60° and 120°",
+            "30° only"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A and B are acute angles with sin A = 3/5 and cos B = 5/13. Without using tables, find sin(A + B) and cos(A − B).",
+          "markScheme": [
+            "cos A = 4/5",
+            "sin B = 12/13",
+            "sin(A + B) = (3/5)(5/13) + (4/5)(12/13) = 63/65",
+            "cos(A − B) = (4/5)(5/13) + (3/5)(12/13) = 56/65"
+          ],
+          "modelAnswer": "Since A is acute and sin A = 3/5, the right-angled triangle has sides 3, 4, 5, so cos A = 4/5. Since cos B = 5/13, the triangle has sides 5, 12, 13, so sin B = 12/13. sin(A + B) = sin A cos B + cos A sin B = (3/5)(5/13) + (4/5)(12/13) = 15/65 + 48/65 = 63/65. cos(A − B) = cos A cos B + sin A sin B = (4/5)(5/13) + (3/5)(12/13) = 20/65 + 36/65 = 56/65.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "cos A = 4/5 (3-4-5 triangle), sin B = 12/13 (5-12-13 triangle).\nsin(A + B) = sinAcosB + cosAsinB = (3/5)(5/13) + (4/5)(12/13) = 15/65 + 48/65 = 63/65\ncos(A - B) = cosAcosB + sinAsinB = (4/5)(5/13) + (3/5)(12/13) = 20/65 + 36/65 = 56/65",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "cos A = 4/5"
+                },
+                {
+                  "point": 1,
+                  "quote": "sin B = 12/13"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 15/65 + 48/65 = 63/65"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 20/65 + 36/65 = 56/65"
+                }
+              ],
+              "feedback": "Correct, and naming the Pythagorean triples shows where cos A and sin B came from. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Using sin²A + cos²A = 1: cos A = √(1 − 9/25) = 4/5. Similarly sin B = √(1 − 25/169) = 12/13. Then sin(A + B) = 3/5 × 5/13 + 4/5 × 12/13 = 63/65, and cos(A − B) = 4/5 × 5/13 + 3/5 × 12/13 = 56/65.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "cos A = √(1 − 9/25) = 4/5"
+                },
+                {
+                  "point": 1,
+                  "quote": "sin B = √(1 − 25/169) = 12/13"
+                },
+                {
+                  "point": 2,
+                  "quote": "sin(A + B) = 3/5 × 5/13 + 4/5 × 12/13 = 63/65"
+                },
+                {
+                  "point": 3,
+                  "quote": "cos(A − B) = 4/5 × 5/13 + 3/5 × 12/13 = 56/65"
+                }
+              ],
+              "feedback": "Using the identity instead of triangles is equally good. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "cos A = 4/5, sin B = 12/13. sin(A + B) = sinA + sinB = 3/5 + 12/13 = 99/65.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "cos A = 4/5"
+                },
+                {
+                  "point": 1,
+                  "quote": "sin B = 12/13"
+                }
+              ],
+              "feedback": "Both ratios are right. sin(A + B) is not sin A + sin B; use sin A cos B + cos A sin B. Then find cos(A − B) with its own formula."
+            },
+            {
+              "tier": "partial",
+              "text": "cos A = 4/5, sin B = 12/13. sin(A + B) = (3/5)(5/13) + (4/5)(12/13) = 63/65. cos(A - B) = (4/5)(5/13) - (3/5)(12/13) = -16/65.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "cos A = 4/5"
+                },
+                {
+                  "point": 1,
+                  "quote": "sin B = 12/13"
+                },
+                {
+                  "point": 2,
+                  "quote": "sin(A + B) = (3/5)(5/13) + (4/5)(12/13) = 63/65"
+                }
+              ],
+              "feedback": "Everything is right except the sign in cos(A − B). The cosine formula changes sign: cos(A − B) = cos A cos B + sin A sin B, giving 56/65."
+            },
+            {
+              "tier": "weak",
+              "text": "sin(A + B) = sin A + sin B = 3/5 + 5/13 = 64/65.",
+              "meets": [],
+              "feedback": "5/13 is cos B, not sin B, and sin(A + B) is not the sum of the sines. Find cos A and sin B first, then use sin A cos B + cos A sin B."
+            },
+            {
+              "tier": "weak",
+              "text": "A = sin⁻¹(3/5) = 36.87°, B = cos⁻¹(5/13) = 67.38°. sin(A + B) = sin 104.25° = 0.969.",
+              "meets": [],
+              "feedback": "The question says without tables, and the answer is wanted as an exact fraction. Find cos A = 4/5 and sin B = 12/13, then use the compound angle formulae.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "Solve the equation 2 cos²x + 3 sin x − 3 = 0 for 0° ≤ x ≤ 360°.",
+          "markScheme": [
+            "Replaces cos²x by 1 − sin²x",
+            "Obtains 2 sin²x − 3 sin x + 1 = 0",
+            "Factorises to (2 sin x − 1)(sin x − 1) = 0, so sin x = 1/2 or sin x = 1",
+            "x = 30°, 90° and 150°"
+          ],
+          "modelAnswer": "Using cos²x = 1 − sin²x: 2(1 − sin²x) + 3 sin x − 3 = 0, so −2 sin²x + 3 sin x − 1 = 0, or 2 sin²x − 3 sin x + 1 = 0. This factorises as (2 sin x − 1)(sin x − 1) = 0, so sin x = 1/2 or sin x = 1. sin x = 1/2 gives x = 30° or 150°; sin x = 1 gives x = 90°. So x = 30°, 90°, 150°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "2(1 - sin²x) + 3sinx - 3 = 0\n2 - 2sin²x + 3sinx - 3 = 0\n2sin²x - 3sinx + 1 = 0\n(2sinx - 1)(sinx - 1) = 0\nsinx = 1/2 or sinx = 1\nx = 30°, 150° or x = 90°",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2(1 - sin²x) + 3sinx - 3 = 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "2sin²x - 3sinx + 1 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "(2sinx - 1)(sinx - 1) = 0\nsinx = 1/2 or sinx = 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = 30°, 150° or x = 90°"
+                }
+              ],
+              "feedback": "Every step correct and all three solutions found. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Change everything to sine using cos²x = 1 − sin²x. The equation becomes 2sin²x − 3sin x + 1 = 0. Let s = sin x: 2s² − 3s + 1 = 0, (2s − 1)(s − 1) = 0, s = 0.5 or 1. sin x = 0.5: x = 30°, 150° (first and second quadrants). sin x = 1: x = 90°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Change everything to sine using cos²x = 1 − sin²x"
+                },
+                {
+                  "point": 1,
+                  "quote": "The equation becomes 2sin²x − 3sin x + 1 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "(2s − 1)(s − 1) = 0, s = 0.5 or 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "sin x = 0.5: x = 30°, 150° (first and second quadrants). sin x = 1: x = 90°"
+                }
+              ],
+              "feedback": "Substituting s for sin x kept the algebra clean. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "2(1 - sin²x) + 3sinx - 3 = 0, 2sin²x - 3sinx + 1 = 0, sinx = 1/2 or 1. x = 30° or 90°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2(1 - sin²x) + 3sinx - 3 = 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "2sin²x - 3sinx + 1 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "sinx = 1/2 or 1"
+                }
+              ],
+              "feedback": "Your working is right. Sine is also positive in the second quadrant, so sin x = 1/2 gives 150° as well as 30°."
+            },
+            {
+              "tier": "partial",
+              "text": "Replace cos²x with 1 - sin²x: 2 - 2sin²x + 3sinx - 3 = 0, so 2sin²x - 3sinx - 1 = 0. sinx = (3 ± √17)/4 = 1.78 or -0.28. x = 196.3° or 343.7°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Replace cos²x with 1 - sin²x"
+                }
+              ],
+              "feedback": "The substitution is right. Check the constant: 2 − 3 = −1, and multiplying through by −1 gives 2 sin²x − 3 sin x + 1 = 0, which factorises neatly."
+            },
+            {
+              "tier": "weak",
+              "text": "2cos²x = 3 - 3sinx. cos²x = 3/2(1 - sinx). Let x = 90°: 0 = 0. So x = 90°.",
+              "meets": [],
+              "feedback": "Trying one value finds one answer but not all of them. Replace cos²x by 1 − sin²x to get a quadratic in sin x, then solve it fully."
+            },
+            {
+              "tier": "weak",
+              "text": "Divide by cos x: 2cos x + 3tan x - 3/cos x = 0. Then tan x = 1, x = 45° and 225°.",
+              "meets": [],
+              "feedback": "Dividing by cos x does not simplify this equation. Use sin²x + cos²x = 1 to write it in terms of sin x only."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Straight lines, circles, the parabola and limits",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find midpoints, distances and the point dividing a line in a given ratio;\n2. find the equation of a line, test for parallel and perpendicular lines and find the angle between two lines;\n3. find the centre and radius of a circle in either form, and its tangent and normal at a point;\n4. find the tangent and normal to the parabola y² = 4ax;\n5. explain a limit intuitively and relate it to the gradient of a curve.\n\n## Materials\n\nGraph paper, a pair of compasses, string and drawing pins for a locus demonstration.\n\n## Starter (5 minutes)\n\nTie a goat to a peg with a 5 m rope. Ask: what shape does the edge of the grass it can eat make?\n\n## Development\n\n1. Derive the midpoint and distance formulae. Find the point dividing AB in the ratio m : n.\n2. Write lines in y = mx + c and x/a + y/b = 1 forms. State m₁ = m₂ and m₁m₂ = −1. Use tan θ = |(m₁ − m₂)/(1 + m₁m₂)| for the angle between lines.\n3. Define a locus. Derive (x − a)² + (y − b)² = r² and expand to the general form, giving centre (−g, −f) and radius √(g² + f² − c).\n4. The tangent is perpendicular to the radius at the point of contact; find its equation.\n5. Sketch y² = 4ax. Use the point (at², 2at) and gradient 1/t to find the tangent and normal.\n6. On y = x², let the chord from (2, 4) shrink to a tangent as h → 0, giving gradient 4. Write f′(x) = lim [f(x + h) − f(x)]/h.\n\n## Class activity\n\nIn pairs, students find the centre and radius of three circles given in general form, then sketch them.\n\n## Evaluation\n\n1. Find the distance between (1, 2) and (4, 6).\n2. Find lim (x → 2) of (x² − 4)/(x − 2).\n\n## Assignment\n\nWorksheet questions, due Monday.",
+      "reading": {
+        "title": "Lines, circles, parabolas and the idea of a limit",
+        "content": "# Straight lines\n\nFor A(x₁, y₁) and B(x₂, y₂):\n\n- midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2);\n- distance AB = √[(x₂ − x₁)² + (y₂ − y₁)²];\n- gradient m = (y₂ − y₁)/(x₂ − x₁);\n- the point dividing AB internally in the ratio m : n is ((nx₁ + mx₂)/(m + n), (ny₁ + my₂)/(m + n)).\n\nThe line through (x₁, y₁) with gradient m is y − y₁ = m(x − x₁). Lines are parallel if m₁ = m₂, perpendicular if m₁m₂ = −1, and the acute angle θ between them satisfies tan θ = |(m₁ − m₂)/(1 + m₁m₂)|.\n\n**Worked example.** The distance between (−1, 2) and (5, 10) is √(36 + 64) = 10, and the midpoint is (2, 6).\n\n# Circles\n\nA **locus** is the path of a point moving under a given condition. A point always r from (a, b) traces the circle\n\n(x − a)² + (y − b)² = r².\n\nExpanded, this is the **general form** x² + y² + 2gx + 2fy + c = 0, with centre (−g, −f) and radius √(g² + f² − c).\n\n**Worked example.** x² + y² + 6x − 8y = 0: g = 3, f = −4, c = 0. Centre (−3, 4), radius √(9 + 16) = 5.\n\nThe **tangent** at a point on a circle is perpendicular to the radius there; the **normal** is the line along the radius.\n\n# The parabola\n\nThe parabola y² = 4ax has its vertex at the origin and opens to the right. Every point on it can be written (at², 2at), the **parametric** form. The gradient there is 1/t, so the tangent is y − 2at = (1/t)(x − at²), or ty = x + at². The normal has gradient −t.\n\n**Worked example.** For y² = 8x, a = 2. At t = 1 the point is (2, 4); the tangent is y = x + 2 and the normal is y − 4 = −(x − 2), or x + y = 6.\n\n# The idea of a limit\n\nThe value an expression approaches as x gets closer and closer to a number is its **limit**. (x² − 1)/(x − 1) cannot be worked out at x = 1, but it equals x + 1 for every other x, so its limit as x → 1 is 2.\n\nThe gradient of a chord of y = f(x) from x to x + h is [f(x + h) − f(x)]/h. As h → 0, the chord becomes the tangent, so\n\nf′(x) = lim (h → 0) [f(x + h) − f(x)]/h.\n\nFor y = x² at x = 3, the chord gradient is [(3 + h)² − 9]/h = 6 + h, which tends to 6."
+      },
+      "cards": [
+        {
+          "front": "Midpoint of (x₁, y₁) and (x₂, y₂)",
+          "back": "((x₁ + x₂)/2, (y₁ + y₂)/2)."
+        },
+        {
+          "front": "Point dividing AB in ratio m : n",
+          "back": "((nx₁ + mx₂)/(m + n), (ny₁ + my₂)/(m + n))."
+        },
+        {
+          "front": "Angle between two lines",
+          "back": "tan θ = |(m₁ − m₂)/(1 + m₁m₂)|."
+        },
+        {
+          "front": "Circle with centre (a, b) and radius r",
+          "back": "(x − a)² + (y − b)² = r²."
+        },
+        {
+          "front": "Centre and radius of x² + y² + 2gx + 2fy + c = 0",
+          "back": "Centre (−g, −f), radius √(g² + f² − c)."
+        },
+        {
+          "front": "Tangent to a circle",
+          "back": "Perpendicular to the radius at the point of contact."
+        },
+        {
+          "front": "Parametric point on y² = 4ax",
+          "back": "(at², 2at), where the gradient is 1/t."
+        },
+        {
+          "front": "Derivative from first principles",
+          "back": "f′(x) = lim (h → 0) [f(x + h) − f(x)]/h."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the midpoint of the line joining (−2, 5) and (6, −1).",
+          "options": ["(4, 4)", "(2, 2)", "(4, −3)", "(−4, 3)"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find the point that divides the line from A(1, 2) to B(7, 11) internally in the ratio 1 : 2.",
+          "options": ["(5, 8)", "(4, 6.5)", "(3, 5)", "(2, 3)"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Find the centre and radius of the circle x² + y² − 4x + 6y − 12 = 0.",
+          "options": [
+            "Centre (2, −3), radius 5",
+            "Centre (−2, 3), radius 5",
+            "Centre (2, −3), radius 1",
+            "Centre (4, −6), radius 12"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Two lines have gradients 2 and 1/3. What is the acute angle between them?",
+          "options": ["30°", "60°", "90°", "45°"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Find the limit of (x² − 9)/(x − 3) as x approaches 3.",
+          "options": ["0", "It does not exist", "6", "3"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Find the equation of the line through P(3, −2) that is perpendicular to the line 2x − 3y + 5 = 0. Find also the distance from P to the point Q(−1, 1).",
+          "markScheme": [
+            "Gradient of 2x − 3y + 5 = 0 is 2/3",
+            "Perpendicular gradient is −3/2",
+            "Equation: y + 2 = −3/2(x − 3), i.e. 3x + 2y − 5 = 0",
+            "PQ = √(4² + 3²) = 5"
+          ],
+          "modelAnswer": "Rearranging, 3y = 2x + 5, so y = (2/3)x + 5/3 and the gradient is 2/3. A perpendicular line has gradient −3/2. Through (3, −2): y + 2 = −(3/2)(x − 3), so 2y + 4 = −3x + 9 and 3x + 2y − 5 = 0. PQ = √[(−1 − 3)² + (1 + 2)²] = √(16 + 9) = 5.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "3y = 2x + 5, y = 2/3x + 5/3, gradient = 2/3.\nPerpendicular gradient = -3/2.\ny + 2 = -3/2(x - 3)\n2y + 4 = -3x + 9\n3x + 2y - 5 = 0\nPQ = √((-1-3)² + (1+2)²) = √(16 + 9) = 5",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "gradient = 2/3"
+                },
+                {
+                  "point": 1,
+                  "quote": "Perpendicular gradient = -3/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "3x + 2y - 5 = 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "PQ = √((-1-3)² + (1+2)²) = √(16 + 9) = 5"
+                }
+              ],
+              "feedback": "Correct throughout, with the equation tidied into general form. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "For ax + by + c = 0 the gradient is −a/b = −2/−3 = 2/3. The perpendicular gradient is the negative reciprocal, −3/2. The line is y = −3/2 x + c; at (3, −2), −2 = −9/2 + c, so c = 5/2 and y = −3/2 x + 5/2, or 3x + 2y = 5. Distance PQ = √(16 + 9) = 5 units.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "−a/b = −2/−3 = 2/3"
+                },
+                {
+                  "point": 1,
+                  "quote": "The perpendicular gradient is the negative reciprocal, −3/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "y = −3/2 x + 5/2, or 3x + 2y = 5"
+                },
+                {
+                  "point": 3,
+                  "quote": "Distance PQ = √(16 + 9) = 5 units"
+                }
+              ],
+              "feedback": "Using −a/b directly saves time, and finding c from the point is just as valid. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Gradient of the line = 2/3. Perpendicular gradient = 3/2. y + 2 = 3/2(x - 3), 2y = 3x - 13. PQ = 5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Gradient of the line = 2/3"
+                },
+                {
+                  "point": 3,
+                  "quote": "PQ = 5"
+                }
+              ],
+              "feedback": "The gradient and the distance are right. The perpendicular gradient is the negative reciprocal, −3/2, so that m₁m₂ = −1. Redo the equation with −3/2."
+            },
+            {
+              "tier": "partial",
+              "text": "Gradient = 2/3, so perpendicular gradient = -3/2. y - 2 = -3/2(x + 3). 2y - 4 = -3x - 9. 3x + 2y + 5 = 0. PQ = √(4 + 1) = √5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Gradient = 2/3"
+                },
+                {
+                  "point": 1,
+                  "quote": "perpendicular gradient = -3/2"
+                }
+              ],
+              "feedback": "Your gradients are right, but the signs of the point went wrong: through (3, −2) the equation is y + 2 = −3/2(x − 3). For PQ, the differences are −4 and 3, so PQ = √(16 + 9) = 5.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Gradient = 2. Perpendicular = -2. y = -2x + 4.",
+              "meets": [],
+              "feedback": "Make y the subject first: 3y = 2x + 5, so the gradient is 2/3. Then the perpendicular gradient is −3/2. Use the point (3, −2) to find the equation."
+            },
+            {
+              "tier": "weak",
+              "text": "The perpendicular line is 3x + 2y + 5 = 0 because you swap the numbers. Distance = 3 - (-1) + (-2) - 1 = 1.",
+              "meets": [],
+              "feedback": "Swapping coefficients gives the right direction but you must also make the line pass through P(3, −2). Distance uses Pythagoras: √[(x₂ − x₁)² + (y₂ − y₁)²]."
+            }
+          ]
+        },
+        {
+          "prompt": "Show that the point A(4, 2) lies on the circle x² + y² − 2x + 4y − 20 = 0. Find the centre of the circle and the equation of the tangent to the circle at A.",
+          "markScheme": [
+            "Substitutes A: 16 + 4 − 8 + 8 − 20 = 0, so A lies on the circle",
+            "Centre is (1, −2)",
+            "Gradient of the radius CA = (2 + 2)/(4 − 1) = 4/3",
+            "Gradient of the tangent = −3/4",
+            "Tangent: y − 2 = −3/4(x − 4), i.e. 3x + 4y − 20 = 0"
+          ],
+          "modelAnswer": "At A(4, 2): 16 + 4 − 8 + 8 − 20 = 0, so A lies on the circle. Here g = −1 and f = 2, so the centre is C(1, −2). The gradient of CA is (2 − (−2))/(4 − 1) = 4/3. The tangent is perpendicular to the radius, so its gradient is −3/4. The tangent is y − 2 = −(3/4)(x − 4), so 4y − 8 = −3x + 12, giving 3x + 4y − 20 = 0.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "16 + 4 - 8 + 8 - 20 = 0, so A is on the circle. Centre = (1, -2).\nGradient of radius = (2 - (-2))/(4 - 1) = 4/3\nGradient of tangent = -3/4\ny - 2 = -3/4(x - 4)\n4y - 8 = -3x + 12\n3x + 4y - 20 = 0",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "16 + 4 - 8 + 8 - 20 = 0, so A is on the circle"
+                },
+                {
+                  "point": 1,
+                  "quote": "Centre = (1, -2)"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gradient of radius = (2 - (-2))/(4 - 1) = 4/3"
+                },
+                {
+                  "point": 3,
+                  "quote": "Gradient of tangent = -3/4"
+                },
+                {
+                  "point": 4,
+                  "quote": "3x + 4y - 20 = 0"
+                }
+              ],
+              "feedback": "Every step correct, and you showed that A really is on the circle first. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Substituting x = 4, y = 2 gives 0, so A is on the circle. Comparing with x² + y² + 2gx + 2fy + c = 0, g = −1, f = 2, so the centre is (1, −2) and the radius is √(1 + 4 + 20) = 5. The radius to A has gradient 4/3, so the tangent, at right angles to it, has gradient −3/4. Tangent: 4(y − 2) = −3(x − 4), so 3x + 4y = 20.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Substituting x = 4, y = 2 gives 0, so A is on the circle"
+                },
+                {
+                  "point": 1,
+                  "quote": "so the centre is (1, −2)"
+                },
+                {
+                  "point": 2,
+                  "quote": "The radius to A has gradient 4/3"
+                },
+                {
+                  "point": 3,
+                  "quote": "has gradient −3/4"
+                },
+                {
+                  "point": 4,
+                  "quote": "3x + 4y = 20"
+                }
+              ],
+              "feedback": "Correct, and finding the radius as well shows you know the general form well. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "16 + 4 - 8 + 8 - 20 = 0, so A is on the circle. Centre = (-1, 2). Gradient of radius = (2 - 2)/(4 + 1) = 0. Tangent is vertical: x = 4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "16 + 4 - 8 + 8 - 20 = 0, so A is on the circle"
+                }
+              ],
+              "feedback": "You showed correctly that A is on the circle. The centre is (−g, −f): here 2g = −2 and 2f = 4, so g = −1, f = 2 and the centre is (1, −2), not (−1, 2). Recalculate the gradient of the radius from that.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "16 + 4 - 8 + 8 - 20 = 0 so A is on it. Centre (1, -2). Gradient CA = 4/3. Tangent: y - 2 = 4/3(x - 4), 3y - 6 = 4x - 16, 4x - 3y - 10 = 0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "16 + 4 - 8 + 8 - 20 = 0 so A is on it"
+                },
+                {
+                  "point": 1,
+                  "quote": "Centre (1, -2)"
+                },
+                {
+                  "point": 2,
+                  "quote": "Gradient CA = 4/3"
+                }
+              ],
+              "feedback": "Your centre and the gradient of the radius are right, but you used it for the tangent. The tangent is perpendicular to the radius, so its gradient is −3/4."
+            },
+            {
+              "tier": "weak",
+              "text": "The tangent touches the circle at A so its equation is x² + y² = 4² + 2² = 20.",
+              "meets": [],
+              "feedback": "A tangent is a straight line, not a circle. Find the centre, then the gradient of the radius to A; the tangent is perpendicular to it."
+            },
+            {
+              "tier": "weak",
+              "text": "Differentiate: 2x - 2 = 0, x = 1. So the tangent is x = 1.",
+              "meets": [],
+              "feedback": "x = 1 is the x-coordinate of the centre, not a tangent. Use the fact that the tangent at A is perpendicular to the radius CA."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Differentiation: first principles, polynomials and sin x",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the derivative as the gradient of a curve at a point;\n2. find the derivative of ax^n + b, n ≤ 3, from first principles;\n3. differentiate polynomials term by term using d/dx(axⁿ) = naxⁿ⁻¹;\n4. differentiate sin x and cos x, and expressions such as a sin x ± b cos x;\n5. find the gradient of a curve at a given point.\n\n## Materials\n\nGraph paper, a ruler, a large graph of y = x² with tangents drawn at x = 1, 2 and 3, a calculator.\n\n## Starter (5 minutes)\n\nShow the graph of y = x² with three tangents. Ask students to measure the gradient of each tangent. Ask: can you see a rule linking the gradient to x?\n\n## Development\n\n1. Recall that the gradient of the chord from x to x + h is [f(x + h) − f(x)]/h and that the derivative is its limit as h → 0.\n2. Differentiate y = x² and y = 3x³ from first principles, showing every step of the expansion.\n3. Generalise to d/dx(xⁿ) = nxⁿ⁻¹ and differentiate polynomials term by term. Stress that the derivative of a constant is 0. Include negative powers such as 1/x² = x⁻².\n4. Plot sin x and estimate its gradient at 0°, 90° and 180°: 1, 0, −1. Compare with cos x. State d/dx(sin x) = cos x and d/dx(cos x) = −sin x, with x in radians.\n5. Find the gradient of y = x³ − 2x at x = 2, and of y = 2 sin x + cos x at x = π/2.\n\n## Class activity\n\nIn pairs, students differentiate five polynomials and check one answer by first principles.\n\n## Evaluation\n\n1. Differentiate y = 5x⁴ − 3x + 8.\n2. Find dy/dx when y = 4 cos x − sin x.\n\n## Assignment\n\nWorksheet questions, due Wednesday.",
+      "reading": {
+        "title": "Finding the gradient of a curve",
+        "content": "# The derivative\n\nThe gradient of a straight line is the same everywhere, but the gradient of a curve changes from point to point. The gradient of a curve at a point is the gradient of the **tangent** there.\n\nTake two points on y = f(x): P(x, f(x)) and Q(x + h, f(x + h)). The gradient of the chord PQ is\n\n[f(x + h) − f(x)]/h.\n\nAs h → 0, Q moves towards P and the chord becomes the tangent. The limit is the **derivative**, written dy/dx or f′(x):\n\nf′(x) = lim (h → 0) [f(x + h) − f(x)]/h.\n\nThis is called **differentiation from first principles**.\n\n**Worked example.** Differentiate y = x³ from first principles.\nf(x + h) = (x + h)³ = x³ + 3x²h + 3xh² + h³.\nf(x + h) − f(x) = 3x²h + 3xh² + h³.\nDivide by h: 3x² + 3xh + h².\nAs h → 0, this tends to 3x². So dy/dx = 3x².\n\n# Differentiating polynomials\n\nThe pattern from first principles gives the rule\n\nd/dx (axⁿ) = naxⁿ⁻¹.\n\nThe derivative of a constant is 0, and a sum is differentiated term by term. The rule also works for negative powers.\n\n**Worked example.** y = 2x⁴ − 5x² + 3x − 7. dy/dx = 8x³ − 10x + 3.\n\n**Worked example.** y = 3/x = 3x⁻¹. dy/dx = −3x⁻² = −3/x².\n\n**Worked example.** Find the gradient of y = x³ − 2x at x = 2. dy/dx = 3x² − 2 = 3(4) − 2 = 10.\n\n# Differentiating sin x and cos x\n\nWith x measured in **radians**:\n\n- d/dx (sin x) = cos x\n- d/dx (cos x) = −sin x\n\nSo for y = a sin x ± b cos x, dy/dx = a cos x ∓ b sin x.\n\n**Worked example.** y = 2 sin x + cos x. dy/dx = 2 cos x − sin x. At x = π/2, dy/dx = 2(0) − 1 = −1.\n\nYou can check d/dx(sin x) = cos x from the graph: sin x is steepest, with gradient 1, at x = 0, where cos x = 1; it is flat at x = π/2, where cos x = 0."
+      },
+      "cards": [
+        {
+          "front": "Derivative from first principles",
+          "back": "f′(x) = lim (h → 0) [f(x + h) − f(x)]/h."
+        },
+        {
+          "front": "d/dx (axⁿ)",
+          "back": "naxⁿ⁻¹."
+        },
+        {
+          "front": "Derivative of a constant",
+          "back": "0."
+        },
+        {
+          "front": "d/dx (1/x)",
+          "back": "−1/x²."
+        },
+        {
+          "front": "d/dx (sin x)",
+          "back": "cos x, with x in radians."
+        },
+        {
+          "front": "d/dx (cos x)",
+          "back": "−sin x."
+        },
+        {
+          "front": "Gradient of a curve at a point",
+          "back": "The value of dy/dx at that point; the gradient of the tangent."
+        },
+        {
+          "front": "Why the chord becomes the tangent",
+          "back": "As h → 0, the second point moves onto the first."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Differentiate y = 4x³ − 5x² + 7.",
+          "options": [
+            "12x² − 10x + 7",
+            "12x² − 10x",
+            "4x² − 5x",
+            "12x³ − 10x²"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find dy/dx when y = 3 sin x − 2 cos x.",
+          "options": [
+            "3 cos x − 2 sin x",
+            "−3 cos x + 2 sin x",
+            "3 cos x + 2 cos x",
+            "3 cos x + 2 sin x"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Find the gradient of the curve y = x² − 3x + 2 at the point where x = 4.",
+          "options": ["5", "6", "2", "13"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Differentiate y = 1/x² with respect to x.",
+          "options": ["2/x", "−1/x", "−2/x³", "−2x"],
+          "answer": "C"
+        },
+        {
+          "prompt": "For f(x) = 5x + 1, what is the value of lim (h → 0) [f(x + h) − f(x)]/h?",
+          "options": ["5x", "5", "6", "0"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Differentiate y = 2x² + 3 from first principles.",
+          "markScheme": [
+            "f(x + h) = 2(x + h)² + 3 = 2x² + 4xh + 2h² + 3",
+            "f(x + h) − f(x) = 4xh + 2h²",
+            "Divides by h: [f(x + h) − f(x)]/h = 4x + 2h",
+            "Takes the limit as h → 0: dy/dx = 4x"
+          ],
+          "modelAnswer": "f(x) = 2x² + 3, so f(x + h) = 2(x + h)² + 3 = 2x² + 4xh + 2h² + 3. Then f(x + h) − f(x) = 4xh + 2h². Dividing by h gives 4x + 2h. As h → 0, this tends to 4x, so dy/dx = 4x.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "f(x + h) = 2(x + h)² + 3 = 2x² + 4xh + 2h² + 3\nf(x + h) - f(x) = 4xh + 2h²\n[f(x + h) - f(x)]/h = 4x + 2h\nAs h → 0, dy/dx = 4x",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f(x + h) = 2(x + h)² + 3 = 2x² + 4xh + 2h² + 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "f(x + h) - f(x) = 4xh + 2h²"
+                },
+                {
+                  "point": 2,
+                  "quote": "[f(x + h) - f(x)]/h = 4x + 2h"
+                },
+                {
+                  "point": 3,
+                  "quote": "As h → 0, dy/dx = 4x"
+                }
+              ],
+              "feedback": "A model first-principles answer: every line is there. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Let y + δy = 2(x + δx)² + 3 = 2x² + 4xδx + 2(δx)² + 3. Subtract y = 2x² + 3: δy = 4xδx + 2(δx)². Divide by δx: δy/δx = 4x + 2δx. As δx → 0, δy/δx → 4x, so dy/dx = 4x.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "y + δy = 2(x + δx)² + 3 = 2x² + 4xδx + 2(δx)² + 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "δy = 4xδx + 2(δx)²"
+                },
+                {
+                  "point": 2,
+                  "quote": "δy/δx = 4x + 2δx"
+                },
+                {
+                  "point": 3,
+                  "quote": "As δx → 0, δy/δx → 4x, so dy/dx = 4x"
+                }
+              ],
+              "feedback": "The δx notation is just as correct, and every step is shown. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "f(x + h) = 2(x + h)² + 3 = 2x² + 4xh + 2h² + 3. f(x + h) - f(x) = 4xh + 2h² + 6. Divide by h: 4x + 2h + 6/h. As h → 0 the 6/h becomes infinite, so there is no derivative.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f(x + h) = 2(x + h)² + 3 = 2x² + 4xh + 2h² + 3"
+                }
+              ],
+              "feedback": "Your expansion is right. When you subtract f(x) = 2x² + 3, the +3 is taken away, not added, so f(x + h) − f(x) = 4xh + 2h². Dividing by h and letting h → 0 then gives 4x.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "f(x + h) = 2x² + 4xh + 2h² + 3. f(x + h) - f(x) = 4xh + 2h². dy/dx = 4x.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f(x + h) = 2x² + 4xh + 2h² + 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "f(x + h) - f(x) = 4xh + 2h²"
+                }
+              ],
+              "feedback": "The expansion and the difference are right. Show the last two steps: divide by h to get 4x + 2h, then let h → 0."
+            },
+            {
+              "tier": "weak",
+              "text": "Using the rule, dy/dx = 2 × 2x = 4x.",
+              "meets": [],
+              "feedback": "The answer is right, but the question asks for first principles. Find f(x + h), subtract f(x), divide by h and let h → 0."
+            },
+            {
+              "tier": "weak",
+              "text": "f(x + h) = 2x² + h + 3. f(x + h) - f(x) = h. h/h = 1. dy/dx = 1.",
+              "meets": [],
+              "feedback": "f(x + h) means replace every x by (x + h): 2(x + h)² + 3. Expand the bracket carefully, then subtract f(x)."
+            }
+          ]
+        },
+        {
+          "prompt": "A curve has equation y = x³ − 6x² + 9x + 2. (a) Find dy/dx. (b) Find the gradient of the curve at x = 2. (c) Find the coordinates of the points on the curve where the gradient is zero.",
+          "markScheme": [
+            "dy/dx = 3x² − 12x + 9",
+            "Gradient at x = 2 is 12 − 24 + 9 = −3",
+            "Solves 3x² − 12x + 9 = 0 to get x = 1 or x = 3",
+            "Points (1, 6) and (3, 2)"
+          ],
+          "modelAnswer": "(a) dy/dx = 3x² − 12x + 9. (b) At x = 2, dy/dx = 3(4) − 12(2) + 9 = −3. (c) 3x² − 12x + 9 = 0, so x² − 4x + 3 = 0, (x − 1)(x − 3) = 0 and x = 1 or 3. When x = 1, y = 1 − 6 + 9 + 2 = 6; when x = 3, y = 27 − 54 + 27 + 2 = 2. The points are (1, 6) and (3, 2).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) dy/dx = 3x² - 12x + 9\n(b) x = 2: 12 - 24 + 9 = -3\n(c) 3x² - 12x + 9 = 0, x² - 4x + 3 = 0, (x - 1)(x - 3) = 0, x = 1 or 3\nx = 1: y = 1 - 6 + 9 + 2 = 6\nx = 3: y = 27 - 54 + 27 + 2 = 2\nPoints (1, 6) and (3, 2)",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 3x² - 12x + 9"
+                },
+                {
+                  "point": 1,
+                  "quote": "x = 2: 12 - 24 + 9 = -3"
+                },
+                {
+                  "point": 2,
+                  "quote": "(x - 1)(x - 3) = 0, x = 1 or 3"
+                },
+                {
+                  "point": 3,
+                  "quote": "Points (1, 6) and (3, 2)"
+                }
+              ],
+              "feedback": "All three parts correct, with the y-values worked out from the original equation. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Differentiating term by term, dy/dx = 3x² − 12x + 9. When x = 2 the gradient is −3. The gradient is zero when 3(x² − 4x + 3) = 0, so x = 1 or x = 3. Putting these into the curve: (1, 6) and (3, 2).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 3x² − 12x + 9"
+                },
+                {
+                  "point": 1,
+                  "quote": "When x = 2 the gradient is −3"
+                },
+                {
+                  "point": 2,
+                  "quote": "3(x² − 4x + 3) = 0, so x = 1 or x = 3"
+                },
+                {
+                  "point": 3,
+                  "quote": "(1, 6) and (3, 2)"
+                }
+              ],
+              "feedback": "Correct and concise. Taking out the factor 3 made the quadratic easy. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "dy/dx = 3x² - 12x + 9. At x = 2, gradient = -3. 3x² - 12x + 9 = 0 gives x = 1 or 3. Points (1, 0) and (3, 0).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 3x² - 12x + 9"
+                },
+                {
+                  "point": 1,
+                  "quote": "At x = 2, gradient = -3"
+                },
+                {
+                  "point": 2,
+                  "quote": "3x² - 12x + 9 = 0 gives x = 1 or 3"
+                }
+              ],
+              "feedback": "Parts (a) and (b) and the x-values are right. The y-coordinates come from the curve, not from dy/dx: put x = 1 and x = 3 into y = x³ − 6x² + 9x + 2."
+            },
+            {
+              "tier": "partial",
+              "text": "dy/dx = 3x² - 12x + 9. At x = 2: 3(2)² - 12(2) + 9 = 12 - 24 + 9 = -3. Zero gradient: x² - 4x + 3 = 0, (x + 1)(x + 3) = 0, so x = -1 or -3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 3x² - 12x + 9"
+                },
+                {
+                  "point": 1,
+                  "quote": "12 - 24 + 9 = -3"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. Check the factors: (x + 1)(x + 3) = x² + 4x + 3. You need (x − 1)(x − 3), so x = 1 or 3, then find y from the curve."
+            },
+            {
+              "tier": "weak",
+              "text": "At x = 2, y = 8 - 24 + 18 + 2 = 4. So the gradient is 4.",
+              "meets": [],
+              "feedback": "4 is the y-coordinate at x = 2, not the gradient. Differentiate first, then substitute x = 2 into dy/dx."
+            },
+            {
+              "tier": "weak",
+              "text": "dy/dx = x² - 6x + 9. Gradient zero when x = 3.",
+              "meets": [],
+              "feedback": "Each power must be brought down as a multiplier: d/dx(x³) = 3x², and d/dx(6x²) = 12x. Redo dy/dx, then solve dy/dx = 0."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Product, quotient and chain rules, implicit and exponential functions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. differentiate products and quotients of functions;\n2. differentiate (a + bxⁿ)ᵐ using the chain rule;\n3. differentiate implicit functions such as ax² + by² = c;\n4. differentiate eᵃˣ, ln x and log 3x.\n\n## Materials\n\nA chart of the differentiation rules, graph of y = eˣ with tangents drawn, a calculator with eˣ and ln keys.\n\n## Starter (5 minutes)\n\nAsk: we can differentiate x² and sin x. Can we differentiate x² sin x by differentiating each part and multiplying? Test it with x = 0 and a quick sketch.\n\n## Development\n\n1. State the product rule: if y = uv, dy/dx = u dv/dx + v du/dx. Differentiate x² sin x and x³(2x − 1).\n2. State the quotient rule: if y = u/v, dy/dx = (v du/dx − u dv/dx)/v². Differentiate (2x + 1)/(x − 3).\n3. Introduce the chain rule with u = 3x² + 1 in y = (3x² + 1)⁴: dy/dx = dy/du × du/dx = 4u³ × 6x.\n4. Differentiate x² + y² = 25 implicitly, treating y as a function of x: d/dx(y²) = 2y dy/dx. Find the gradient at (3, 4).\n5. Show that the gradient of y = eˣ equals its height. State d/dx(eᵃˣ) = aeᵃˣ and d/dx(ln x) = 1/x. Show that ln 3x = ln 3 + ln x, so its derivative is also 1/x.\n\n## Class activity\n\nIn pairs, students differentiate six functions, deciding first which rule each one needs.\n\n## Evaluation\n\n1. Differentiate y = x e²ˣ.\n2. Find dy/dx if 2x² + y² = 9.\n\n## Assignment\n\nWorksheet questions, due Monday.",
+      "reading": {
+        "title": "More rules for differentiating",
+        "content": "# The product rule\n\nIf y = uv, where u and v are functions of x,\n\ndy/dx = u (dv/dx) + v (du/dx).\n\n**Worked example.** y = x³ cos x. Let u = x³, v = cos x. dy/dx = x³(−sin x) + cos x(3x²) = 3x² cos x − x³ sin x.\n\n# The quotient rule\n\nIf y = u/v,\n\ndy/dx = [v (du/dx) − u (dv/dx)]/v².\n\n**Worked example.** y = x²/(x + 1). u = x², v = x + 1. dy/dx = [(x + 1)(2x) − x²(1)]/(x + 1)² = (x² + 2x)/(x + 1)².\n\n# The chain rule\n\nFor a function of a function, let u be the inside function:\n\ndy/dx = (dy/du) × (du/dx).\n\n**Worked example.** y = (3x² + 1)⁴. Let u = 3x² + 1, so y = u⁴. dy/dx = 4u³ × 6x = 24x(3x² + 1)³.\n\nIn general, d/dx (a + bxⁿ)ᵐ = m(a + bxⁿ)ᵐ⁻¹ × nbxⁿ⁻¹.\n\n# Implicit differentiation\n\nSometimes y is not given as y = f(x), as in the circle x² + y² = 25. Differentiate every term with respect to x, using the chain rule on terms in y: d/dx(y²) = 2y dy/dx.\n\n**Worked example.** x² + y² = 25. 2x + 2y dy/dx = 0, so dy/dx = −x/y. At (3, 4) the gradient is −3/4.\n\n# Exponential and logarithmic functions\n\nThe number e ≈ 2.718 has a special property: the gradient of y = eˣ at any point equals y itself.\n\n- d/dx (eˣ) = eˣ, and d/dx (eᵃˣ) = aeᵃˣ\n- d/dx (ln x) = 1/x\n- Since ln 3x = ln 3 + ln x, d/dx (ln 3x) = 1/x as well.\n- For base-10 logarithms, log x = ln x/ln 10, so d/dx (log x) = 1/(x ln 10).\n\n**Worked example.** y = e⁵ˣ + ln x. dy/dx = 5e⁵ˣ + 1/x.\n\n**Worked example.** y = x² ln x. By the product rule, dy/dx = x²(1/x) + 2x ln x = x + 2x ln x.\n\nThese functions describe growth and decay, such as money in a savings account at continuous interest, or the cooling of a cup of tea."
+      },
+      "cards": [
+        {
+          "front": "Product rule",
+          "back": "If y = uv, dy/dx = u dv/dx + v du/dx."
+        },
+        {
+          "front": "Quotient rule",
+          "back": "If y = u/v, dy/dx = (v du/dx − u dv/dx)/v²."
+        },
+        {
+          "front": "Chain rule",
+          "back": "dy/dx = dy/du × du/dx."
+        },
+        {
+          "front": "d/dx (a + bx)ⁿ",
+          "back": "nb(a + bx)ⁿ⁻¹."
+        },
+        {
+          "front": "d/dx (y²) in implicit differentiation",
+          "back": "2y dy/dx."
+        },
+        {
+          "front": "d/dx (eᵃˣ)",
+          "back": "aeᵃˣ."
+        },
+        {
+          "front": "d/dx (ln x)",
+          "back": "1/x."
+        },
+        {
+          "front": "d/dx (ln 3x)",
+          "back": "1/x, since ln 3x = ln 3 + ln x."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Differentiate y = x² sin x.",
+          "options": [
+            "2x cos x",
+            "2x sin x − x² cos x",
+            "2x sin x + x² cos x",
+            "x² cos x"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Differentiate y = (2x + 1)⁵.",
+          "options": ["5(2x + 1)⁴", "10(2x + 1)⁴", "2(2x + 1)⁵", "10(2x + 1)⁵"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find dy/dx when y = e³ˣ.",
+          "options": ["3e³ˣ", "e³ˣ", "3xe³ˣ⁻¹", "e³ˣ/3"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find dy/dx when y = ln 3x.",
+          "options": ["3/x", "1/(3x)", "3", "1/x"],
+          "answer": "D"
+        },
+        {
+          "prompt": "If x² + y² = 25, find dy/dx.",
+          "options": ["−y/x", "2x + 2y", "−x/y", "x/y"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Differentiate y = (2x + 1)/(x − 3) with respect to x, simplifying your answer.",
+          "markScheme": [
+            "Identifies u = 2x + 1, v = x − 3, du/dx = 2, dv/dx = 1",
+            "Substitutes into the quotient rule: [(x − 3)(2) − (2x + 1)(1)]/(x − 3)²",
+            "Simplifies the numerator to −7",
+            "dy/dx = −7/(x − 3)²"
+          ],
+          "modelAnswer": "Let u = 2x + 1 and v = x − 3, so du/dx = 2 and dv/dx = 1. By the quotient rule, dy/dx = [v(du/dx) − u(dv/dx)]/v² = [(x − 3)(2) − (2x + 1)(1)]/(x − 3)² = (2x − 6 − 2x − 1)/(x − 3)² = −7/(x − 3)².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "u = 2x + 1, du/dx = 2; v = x - 3, dv/dx = 1\ndy/dx = [(x - 3)(2) - (2x + 1)(1)]/(x - 3)²\n= (2x - 6 - 2x - 1)/(x - 3)²\n= -7/(x - 3)²",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "u = 2x + 1, du/dx = 2; v = x - 3, dv/dx = 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "dy/dx = [(x - 3)(2) - (2x + 1)(1)]/(x - 3)²"
+                },
+                {
+                  "point": 2,
+                  "quote": "(2x - 6 - 2x - 1)"
+                },
+                {
+                  "point": 3,
+                  "quote": "= -7/(x - 3)²"
+                }
+              ],
+              "feedback": "Correct and fully simplified. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Quotient rule with top u = 2x + 1 (u′ = 2) and bottom v = x − 3 (v′ = 1): dy/dx = (vu′ − uv′)/v² = (2(x − 3) − (2x + 1))/(x − 3)². The numerator is 2x − 6 − 2x − 1 = −7, so dy/dx = −7/(x − 3)². The gradient is always negative.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "top u = 2x + 1 (u′ = 2) and bottom v = x − 3 (v′ = 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "(2(x − 3) − (2x + 1))/(x − 3)²"
+                },
+                {
+                  "point": 2,
+                  "quote": "The numerator is 2x − 6 − 2x − 1 = −7"
+                },
+                {
+                  "point": 3,
+                  "quote": "dy/dx = −7/(x − 3)²"
+                }
+              ],
+              "feedback": "Correct, and noticing that the gradient is always negative is a good extra observation. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "u = 2x + 1, v = x - 3. dy/dx = [(2x + 1)(1) - (x - 3)(2)]/(x - 3)² = (2x + 1 - 2x + 6)/(x - 3)² = 7/(x - 3)².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "u = 2x + 1, v = x - 3"
+                }
+              ],
+              "feedback": "You have u and v right, but the numerator is v du/dx − u dv/dx, with v first. The order matters: it gives −7, not 7."
+            },
+            {
+              "tier": "partial",
+              "text": "du/dx = 2, dv/dx = 1. dy/dx = [(x - 3)(2) - (2x + 1)(1)]/(x - 3)² = (2x - 6 - 2x + 1)/(x - 3)² = -5/(x - 3)².",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "du/dx = 2, dv/dx = 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "dy/dx = [(x - 3)(2) - (2x + 1)(1)]/(x - 3)²"
+                }
+              ],
+              "feedback": "Your set-up is right. The minus sign applies to the whole of (2x + 1), so it becomes −2x − 1, not −2x + 1. The numerator is −7.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "dy/dx = (d/dx of top)/(d/dx of bottom) = 2/1 = 2.",
+              "meets": [],
+              "feedback": "A quotient is not differentiated by dividing the two derivatives. Use the quotient rule: (v du/dx − u dv/dx)/v²."
+            },
+            {
+              "tier": "weak",
+              "text": "y = (2x + 1)(x - 3)⁻¹. dy/dx = 2 × -1(x - 3)⁻² = -2/(x - 3)².",
+              "meets": [],
+              "feedback": "Writing it as a product is a good idea, but then you need the product rule: (2x + 1)(−1)(x − 3)⁻² + (x − 3)⁻¹(2). Simplify that, or use the quotient rule."
+            }
+          ]
+        },
+        {
+          "prompt": "A curve has equation 3x² + 2y² = 14. Find dy/dx in terms of x and y. Hence find the gradient of the curve at the point (2, −1) and the equation of the tangent there.",
+          "markScheme": [
+            "Differentiates 2y² to give 4y dy/dx",
+            "6x + 4y dy/dx = 0",
+            "dy/dx = −3x/(2y)",
+            "Gradient at (2, −1) = −6/(−2) = 3",
+            "Tangent: y + 1 = 3(x − 2), i.e. y = 3x − 7"
+          ],
+          "modelAnswer": "Differentiating each term with respect to x: 6x + 4y(dy/dx) = 0, so dy/dx = −6x/(4y) = −3x/(2y). At (2, −1), dy/dx = −3(2)/(2 × −1) = 3. The tangent is y − (−1) = 3(x − 2), so y = 3x − 7.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "d/dx(3x²) + d/dx(2y²) = 0\n6x + 4y dy/dx = 0\ndy/dx = -6x/4y = -3x/2y\nAt (2, -1): dy/dx = -6/-2 = 3\nTangent: y + 1 = 3(x - 2), y = 3x - 7",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "6x + 4y dy/dx = 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "6x + 4y dy/dx = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "dy/dx = -6x/4y = -3x/2y"
+                },
+                {
+                  "point": 3,
+                  "quote": "At (2, -1): dy/dx = -6/-2 = 3"
+                },
+                {
+                  "point": 4,
+                  "quote": "y = 3x - 7"
+                }
+              ],
+              "feedback": "Every step correct and the tangent found. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Treat y as a function of x: the derivative of 2y² is 4y(dy/dx) by the chain rule. So 6x + 4y(dy/dx) = 0 and dy/dx = −3x/(2y). At (2, −1): −3(2)/(2(−1)) = −6/−2 = 3. Tangent through (2, −1) with gradient 3: y = 3x + c, −1 = 6 + c, c = −7, so y = 3x − 7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the derivative of 2y² is 4y(dy/dx) by the chain rule"
+                },
+                {
+                  "point": 1,
+                  "quote": "6x + 4y(dy/dx) = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "dy/dx = −3x/(2y)"
+                },
+                {
+                  "point": 3,
+                  "quote": "−3(2)/(2(−1)) = −6/−2 = 3"
+                },
+                {
+                  "point": 4,
+                  "quote": "so y = 3x − 7"
+                }
+              ],
+              "feedback": "Explaining why 2y² gives 4y dy/dx shows real understanding. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "6x + 4y dy/dx = 0, so dy/dx = -3x/2y. At (2, -1): dy/dx = -3(2)/2(-1) = -3. Tangent: y + 1 = -3(x - 2), y = -3x + 5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "6x + 4y dy/dx = 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "6x + 4y dy/dx = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "dy/dx = -3x/2y"
+                }
+              ],
+              "feedback": "Your implicit differentiation is right. Take care with the signs at (2, −1): −3(2) ÷ 2(−1) = −6 ÷ −2 = +3. With gradient 3 the tangent is y = 3x − 7."
+            },
+            {
+              "tier": "partial",
+              "text": "6x + 4y dy/dx = 0. dy/dx = -3x/2y. At (2, -1): -6/-2 = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "6x + 4y dy/dx = 0"
+                },
+                {
+                  "point": 1,
+                  "quote": "6x + 4y dy/dx = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "dy/dx = -3x/2y"
+                },
+                {
+                  "point": 3,
+                  "quote": "At (2, -1): -6/-2 = 3"
+                }
+              ],
+              "feedback": "The differentiation and the gradient are correct. Finish with the tangent: y + 1 = 3(x − 2), which is y = 3x − 7."
+            },
+            {
+              "tier": "weak",
+              "text": "2y² = 14 - 3x², y = √(7 - 1.5x²). dy/dx = 1/(2√(7 - 1.5x²)).",
+              "meets": [],
+              "feedback": "Making y the subject can work, but you must use the chain rule on the inside, −3x, and choose the negative root for the point (2, −1). Implicit differentiation is much simpler here."
+            },
+            {
+              "tier": "weak",
+              "text": "dy/dx = 6x + 4y = 12 - 4 = 8 at (2, -1).",
+              "meets": [],
+              "feedback": "Differentiating the left side gives an equation, 6x + 4y dy/dx = 0, which you then solve for dy/dx. It is not dy/dx itself."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Applications of differentiation and the indefinite integral",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find second derivatives, rates of change and small changes;\n2. find the equation of the tangent to a curve at a point;\n3. find turning points, decide whether each is a maximum or minimum, and sketch cubic curves;\n4. apply differentiation to velocity and acceleration in straight-line motion;\n5. integrate axⁿ (n ≠ −1), sums of such terms, and x⁻¹.\n\n## Materials\n\nGraph paper, a sketch of a cubic with its turning points marked, a ball for a motion demonstration.\n\n## Starter (5 minutes)\n\nThrow a ball straight up. Ask: at the very top, what is the ball's velocity? How could we find when it reaches the top from a formula for its height?\n\n## Development\n\n1. Differentiate twice to get d²y/dx². For s = t³ − 6t², find v = ds/dt and a = dv/dt.\n2. Rates of change: link two rates with the chain rule, dA/dt = dA/dr × dr/dt. Small changes: δy ≈ (dy/dx) δx.\n3. Find the tangent to y = x² + 1 at x = 2 using y − y₁ = m(x − x₁).\n4. At a turning point dy/dx = 0. If d²y/dx² > 0 it is a minimum; if d²y/dx² < 0 a maximum. Sketch y = x³ − 3x using its turning points and intercepts.\n5. Introduce integration as the reverse of differentiation: ∫xⁿ dx = xⁿ⁺¹/(n + 1) + c, n ≠ −1. Explain the constant c. State ∫x⁻¹ dx = ln x + c.\n\n## Class activity\n\nIn groups, students find and classify the turning points of a given cubic, then sketch it.\n\n## Evaluation\n\n1. Integrate 6x² − 4x + 3.\n2. Find the turning point of y = x² − 8x + 3 and say whether it is a maximum or minimum.\n\n## Assignment\n\nRevise for Wednesday's quiz.",
+      "reading": {
+        "title": "Using derivatives, and reversing them",
+        "content": "# Second derivatives\n\nDifferentiating dy/dx again gives the **second derivative**, d²y/dx². For y = x⁴ − 2x², dy/dx = 4x³ − 4x and d²y/dx² = 12x² − 4.\n\n# Rates of change and small changes\n\ndy/dx is the rate at which y changes with x. When two quantities change with time, the chain rule links their rates:\n\ndA/dt = (dA/dr) × (dr/dt).\n\nFor a small change δx in x, the change in y is approximately δy ≈ (dy/dx) δx.\n\n**Worked example.** The side of a square tile is 20 cm and is measured 0.1 cm too long. Area A = x², dA/dx = 2x = 40, so the error in area is about 40 × 0.1 = 4 cm².\n\n# Tangents\n\nThe tangent at (x₁, y₁) has gradient m = dy/dx there, and equation y − y₁ = m(x − x₁).\n\n# Maximum and minimum points\n\nAt a **turning point**, dy/dx = 0.\n\n- If d²y/dx² > 0, the point is a **minimum**.\n- If d²y/dx² < 0, the point is a **maximum**.\n\n**Worked example.** y = x³ − 3x. dy/dx = 3x² − 3 = 0, so x = ±1. d²y/dx² = 6x. At x = 1, 6 > 0: minimum (1, −2). At x = −1, −6 < 0: maximum (−1, 2). With the intercepts at x = 0 and x = ±√3, this is enough to sketch the curve.\n\n# Linear kinematics\n\nIf s is the displacement of a body at time t, its velocity is v = ds/dt and its acceleration is a = dv/dt = d²s/dt². The body is momentarily at rest when v = 0.\n\n**Worked example.** s = 20t − 5t². v = 20 − 10t, so a ball thrown up stops rising at t = 2 s, at height 20(2) − 5(4) = 20 m.\n\n# The indefinite integral\n\nIntegration reverses differentiation:\n\n∫xⁿ dx = xⁿ⁺¹/(n + 1) + c, for n ≠ −1.\n\nThe constant c is needed because every constant differentiates to 0. Sums and differences are integrated term by term, and constants multiply through: ∫axⁿ dx = axⁿ⁺¹/(n + 1) + c.\n\n**Worked example.** ∫(6x² − 4x + 5) dx = 2x³ − 2x² + 5x + c.\n\nThe formula fails when n = −1, because it would divide by zero. Instead,\n\n∫x⁻¹ dx = ∫(1/x) dx = ln x + c.\n\n**Worked example.** ∫(3/x + 2x) dx = 3 ln x + x² + c."
+      },
+      "cards": [
+        {
+          "front": "Second derivative",
+          "back": "d²y/dx², found by differentiating dy/dx."
+        },
+        {
+          "front": "Condition for a turning point",
+          "back": "dy/dx = 0."
+        },
+        {
+          "front": "Test for a minimum",
+          "back": "dy/dx = 0 and d²y/dx² > 0."
+        },
+        {
+          "front": "Test for a maximum",
+          "back": "dy/dx = 0 and d²y/dx² < 0."
+        },
+        {
+          "front": "Small change in y",
+          "back": "δy ≈ (dy/dx) δx."
+        },
+        {
+          "front": "Velocity and acceleration from displacement s",
+          "back": "v = ds/dt and a = dv/dt."
+        },
+        {
+          "front": "∫xⁿ dx (n ≠ −1)",
+          "back": "xⁿ⁺¹/(n + 1) + c."
+        },
+        {
+          "front": "∫(1/x) dx",
+          "back": "ln x + c."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "If y = x³ − 3x, find d²y/dx².",
+          "options": ["3x² − 3", "6x", "6", "3x²"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The curve y = x² − 6x + 1 has one turning point. Which statement is true?",
+          "options": [
+            "It is a maximum at x = 3",
+            "It is a minimum at x = −3",
+            "It is a minimum at x = 3",
+            "It is a maximum at x = 6"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Find ∫(3x² + 4x) dx.",
+          "options": [
+            "x³ + 2x² + c",
+            "6x + 4 + c",
+            "3x³ + 4x² + c",
+            "x³ + 4x² + c"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find ∫(2/x) dx.",
+          "options": ["−2/x² + c", "2x⁰/0 + c", "x²/2 + c", "2 ln x + c"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A particle moves so that its displacement after t seconds is s = t³ − 6t² + 9t metres. What is its velocity when t = 2?",
+          "options": ["2 m/s", "−3 m/s", "3 m/s", "0 m/s"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Find the coordinates of the turning points of the curve y = 2x³ − 3x² − 12x + 5, and determine whether each is a maximum or a minimum.",
+          "markScheme": [
+            "dy/dx = 6x² − 6x − 12",
+            "Solves 6x² − 6x − 12 = 0 to get x = 2 or x = −1",
+            "Turning points (2, −15) and (−1, 12)",
+            "d²y/dx² = 12x − 6: at x = 2 it is 18 > 0, a minimum; at x = −1 it is −18 < 0, a maximum"
+          ],
+          "modelAnswer": "dy/dx = 6x² − 6x − 12 = 6(x − 2)(x + 1). Setting dy/dx = 0 gives x = 2 or x = −1. When x = 2, y = 16 − 12 − 24 + 5 = −15; when x = −1, y = −2 − 3 + 12 + 5 = 12. d²y/dx² = 12x − 6. At x = 2 it is 18 > 0, so (2, −15) is a minimum. At x = −1 it is −18 < 0, so (−1, 12) is a maximum.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "dy/dx = 6x² - 6x - 12 = 6(x² - x - 2) = 6(x - 2)(x + 1) = 0, x = 2 or -1\nx = 2: y = 16 - 12 - 24 + 5 = -15\nx = -1: y = -2 - 3 + 12 + 5 = 12\nd²y/dx² = 12x - 6\nAt x = 2: 18 > 0, minimum (2, -15)\nAt x = -1: -18 < 0, maximum (-1, 12)",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 6x² - 6x - 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "6(x - 2)(x + 1) = 0, x = 2 or -1"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 2: y = 16 - 12 - 24 + 5 = -15\nx = -1: y = -2 - 3 + 12 + 5 = 12"
+                },
+                {
+                  "point": 3,
+                  "quote": "At x = 2: 18 > 0, minimum (2, -15)\nAt x = -1: -18 < 0, maximum (-1, 12)"
+                }
+              ],
+              "feedback": "Complete and correct, with both points classified by the second derivative. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Turning points where dy/dx = 6x² − 6x − 12 = 0, i.e. x² − x − 2 = 0, so x = 2 or x = −1. Coordinates: (2, −15) and (−1, 12). The second derivative 12x − 6 is positive at x = 2, so (2, −15) is a minimum, and negative at x = −1, so (−1, 12) is a maximum.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 6x² − 6x − 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² − x − 2 = 0, so x = 2 or x = −1"
+                },
+                {
+                  "point": 2,
+                  "quote": "Coordinates: (2, −15) and (−1, 12)"
+                },
+                {
+                  "point": 3,
+                  "quote": "The second derivative 12x − 6 is positive at x = 2, so (2, −15) is a minimum, and negative at x = −1, so (−1, 12) is a maximum"
+                }
+              ],
+              "feedback": "Correct and concise, with every turning point classified. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "dy/dx = 6x² - 6x - 12 = 0, x = 2 or -1. Points (2, -15) and (-1, 12). The first is a maximum and the second is a minimum because 2 is bigger than -1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 6x² - 6x - 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "x = 2 or -1"
+                },
+                {
+                  "point": 2,
+                  "quote": "Points (2, -15) and (-1, 12)"
+                }
+              ],
+              "feedback": "Your turning points are right, but their nature does not depend on which x is bigger. Find d²y/dx² = 12x − 6: it is positive at x = 2, so (2, −15) is a minimum."
+            },
+            {
+              "tier": "partial",
+              "text": "dy/dx = 6x² - 6x - 12. x = 2 or -1. d²y/dx² = 12x - 6. At x = 2, 18, minimum. At x = -1, -18, maximum.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 6x² - 6x - 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "x = 2 or -1"
+                },
+                {
+                  "point": 3,
+                  "quote": "At x = 2, 18, minimum. At x = -1, -18, maximum"
+                }
+              ],
+              "feedback": "Your method is all correct. The question asks for coordinates, so substitute each x into the curve to get (2, −15) and (−1, 12).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Put y = 0 and solve 2x³ - 3x² - 12x + 5 = 0 to find the turning points.",
+              "meets": [],
+              "feedback": "Setting y = 0 finds where the curve crosses the x-axis. Turning points are where the gradient is zero, so solve dy/dx = 0."
+            },
+            {
+              "tier": "weak",
+              "text": "dy/dx = 6x² - 6x - 12. At x = 0, dy/dx = -12, so the turning point is (0, 5), a maximum.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dy/dx = 6x² - 6x - 12"
+                }
+              ],
+              "feedback": "Your derivative is right. A turning point is where dy/dx = 0, not where x = 0. Solve 6x² − 6x − 12 = 0."
+            }
+          ]
+        },
+        {
+          "prompt": "Oil leaking from a pipeline in a creek in the Niger Delta spreads out as a circle. Its radius increases at a steady rate of 0.5 m/s. At what rate is the area of the spill increasing when the radius is 10 m? (Leave your answer in terms of π, then give it to 3 significant figures.)",
+          "markScheme": [
+            "A = πr², so dA/dr = 2πr",
+            "Uses the chain rule: dA/dt = (dA/dr)(dr/dt)",
+            "Substitutes: dA/dt = 2π(10)(0.5)",
+            "dA/dt = 10π ≈ 31.4 m²/s"
+          ],
+          "modelAnswer": "The area is A = πr², so dA/dr = 2πr. By the chain rule, dA/dt = (dA/dr)(dr/dt) = 2πr × 0.5. When r = 10, dA/dt = 2π × 10 × 0.5 = 10π ≈ 31.4 m² per second.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A = πr², dA/dr = 2πr\ndA/dt = dA/dr × dr/dt\n= 2π(10)(0.5)\n= 10π m²/s ≈ 31.4 m²/s",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = πr², dA/dr = 2πr"
+                },
+                {
+                  "point": 1,
+                  "quote": "dA/dt = dA/dr × dr/dt"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 2π(10)(0.5)"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 10π m²/s ≈ 31.4 m²/s"
+                }
+              ],
+              "feedback": "Correct, with the chain rule stated before substituting. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The area of the circle is πr². Its rate of change with r is 2πr. Since r grows at 0.5 m/s, the area grows at 2πr × 0.5 = πr m²/s. When r = 10 m, this is 10π, which is 31.4 m²/s to 3 s.f.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The area of the circle is πr². Its rate of change with r is 2πr"
+                },
+                {
+                  "point": 1,
+                  "quote": "Since r grows at 0.5 m/s, the area grows at 2πr × 0.5"
+                },
+                {
+                  "point": 2,
+                  "quote": "When r = 10 m, this is 10π"
+                },
+                {
+                  "point": 3,
+                  "quote": "31.4 m²/s to 3 s.f."
+                }
+              ],
+              "feedback": "Explaining the chain rule in words works well. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "dA/dt = dA/dr × dr/dt. A = π(10)² = 100π, so dA/dt = 100π × 0.5 = 50π = 157 m²/s.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "dA/dt = dA/dr × dr/dt"
+                }
+              ],
+              "feedback": "The chain rule is the right tool, but you used the area itself instead of its derivative. dA/dr = 2πr = 20π, so dA/dt = 20π × 0.5 = 10π ≈ 31.4 m²/s.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "dA/dr = 2πr = 20π. The area increases at 20π m²/s = 62.8 m²/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dA/dr = 2πr"
+                }
+              ],
+              "feedback": "dA/dr is right, but that is the rate per metre of radius. Multiply by dr/dt = 0.5 m/s to get the rate per second: 10π m²/s."
+            },
+            {
+              "tier": "weak",
+              "text": "The radius goes up by 0.5 each second so the area goes up by π(0.5)² = 0.785 m²/s.",
+              "meets": [],
+              "feedback": "The increase in area depends on how big the circle already is. Use dA/dt = (dA/dr)(dr/dt), with dA/dr = 2πr and r = 10."
+            },
+            {
+              "tier": "weak",
+              "text": "Circumference = 2πr = 20π. Rate = 20π ÷ 0.5 = 40π.",
+              "meets": [],
+              "feedback": "2πr is indeed dA/dr, but you should multiply by the rate of the radius, not divide: dA/dt = 2πr × dr/dt."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Definite integrals and their uses, and grouped data",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. evaluate definite integrals, including simple substitution and ∫sin x dx;\n2. find the area under a curve and the distance travelled from a velocity function;\n3. find the volume of a solid of revolution;\n4. estimate an integral with the trapezium rule;\n5. draw frequency and cumulative frequency tables, a histogram with unequal intervals and an ogive.\n\n## Materials\n\nGraph paper, a chart of y = 4x − x² with the area shaded, a cone made from card, test scores of a previous SS2 class for the data work.\n\n## Starter (5 minutes)\n\nShow the shaded area under y = 4x − x². Ask: how could we find this area? Count squares? Is there a quicker way?\n\n## Development\n\n1. Define ∫ₐᵇ f(x) dx = F(b) − F(a). Evaluate ∫₁³ 2x dx and ∫₀^π sin x dx. Show a simple substitution: ∫2x(x² + 1)³ dx with u = x² + 1.\n2. Find the area under a curve between two values of x, and between a curve and the x-axis. Link to motion: distance = ∫v dt.\n3. Rotate the card cone to show a solid of revolution. State V = π∫y² dx and find the volume of the cone made by rotating y = x.\n4. Divide the area into strips and derive the trapezium rule. Compare the estimate with the exact value.\n5. Turn the class's scores into a frequency table and a cumulative frequency table. Draw a histogram with unequal classes using frequency density, and an ogive.\n\n## Class activity\n\nGroups draw the ogive of the SS2 test scores and read off the median.\n\n## Evaluation\n\n1. Evaluate ∫₀² (3x² + 1) dx.\n2. A class of width 5 has frequency 20. What is its frequency density?\n\n## Assignment\n\nProblem set questions, due Friday.",
+      "reading": {
+        "title": "Definite integrals, areas and volumes, and organising data",
+        "content": "# The definite integral\n\nIf F(x) is an integral of f(x), then\n\n∫ₐᵇ f(x) dx = [F(x)]ₐᵇ = F(b) − F(a).\n\nThe constant c cancels, so it is left out.\n\n**Worked example.** ∫₁² (3x² − 2) dx = [x³ − 2x]₁² = (8 − 4) − (1 − 2) = 5.\n\n**Integration of sin x**: ∫sin x dx = −cos x + c and ∫cos x dx = sin x + c.\n\n**Substitution.** ∫2x(x² + 1)³ dx: let u = x² + 1, so du = 2x dx and the integral is ∫u³ du = u⁴/4 + c = (x² + 1)⁴/4 + c.\n\n# Areas and motion\n\nThe area between the curve y = f(x), the x-axis and the lines x = a and x = b is ∫ₐᵇ y dx. An area below the x-axis comes out negative, so find it separately.\n\nIf v is the velocity of a body, the distance travelled from t = a to t = b is ∫ₐᵇ v dt.\n\n**Worked example.** A car's velocity is v = 3t² m/s. The distance travelled in the first 4 s is ∫₀⁴ 3t² dt = [t³]₀⁴ = 64 m.\n\n# Volume of a solid of revolution\n\nWhen the area under y = f(x) from x = a to x = b is rotated once about the x-axis, the volume formed is\n\nV = π ∫ₐᵇ y² dx.\n\n**Worked example.** Rotating y = 2x from x = 0 to x = 3 gives a cone of volume π∫₀³ 4x² dx = π[4x³/3]₀³ = 36π.\n\n# The trapezium rule\n\nDivide the interval into n strips of width h. Then\n\n∫ₐᵇ y dx ≈ (h/2)[y₀ + yₙ + 2(y₁ + y₂ + ... + yₙ₋₁)].\n\nMore strips give a better estimate.\n\n# Tabulating data\n\nA **frequency table** groups data into classes. A **cumulative frequency table** adds the frequencies as you go, giving the number of values up to each upper class boundary. Plotting cumulative frequency against upper class boundary and joining with a smooth curve gives the **ogive**.\n\nIn a **histogram**, the area of each bar represents the frequency. If the classes have unequal widths, the height of each bar is the **frequency density**:\n\nfrequency density = frequency ÷ class width.\n\n**Worked example.** A class 10–30 marks (width 20) with frequency 16 has a bar of height 16 ÷ 20 = 0.8."
+      },
+      "cards": [
+        {
+          "front": "∫ₐᵇ f(x) dx",
+          "back": "F(b) − F(a), where F is an integral of f."
+        },
+        {
+          "front": "∫sin x dx",
+          "back": "−cos x + c."
+        },
+        {
+          "front": "Area under y = f(x) from a to b",
+          "back": "∫ₐᵇ y dx."
+        },
+        {
+          "front": "Distance from velocity",
+          "back": "Distance = ∫v dt between the two times."
+        },
+        {
+          "front": "Volume of revolution about the x-axis",
+          "back": "V = π∫ₐᵇ y² dx."
+        },
+        {
+          "front": "Trapezium rule",
+          "back": "(h/2)[y₀ + yₙ + 2(y₁ + ... + yₙ₋₁)]."
+        },
+        {
+          "front": "Frequency density",
+          "back": "Frequency ÷ class width; the height of a bar in a histogram with unequal intervals."
+        },
+        {
+          "front": "Ogive",
+          "back": "A cumulative frequency curve plotted against upper class boundaries."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Evaluate ∫₁³ 2x dx.",
+          "options": ["8", "9", "4", "10"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Evaluate ∫₀^π sin x dx.",
+          "options": ["0", "1", "2", "−2"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Find the area under the curve y = x² between x = 0 and x = 3.",
+          "options": ["27", "9", "3", "6"],
+          "answer": "B"
+        },
+        {
+          "prompt": "In a histogram with unequal class intervals, a class of width 10 has a frequency of 15. What is the height of its bar?",
+          "options": ["15", "150", "0.67", "1.5"],
+          "answer": "D"
+        },
+        {
+          "prompt": "The region under y = x from x = 0 to x = 3 is rotated once about the x-axis. What is the volume of the solid formed?",
+          "options": ["9π", "3π", "27π", "4.5π"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Find the area enclosed between the curve y = 4x − x² and the x-axis.",
+          "markScheme": [
+            "Finds the limits: 4x − x² = 0 gives x = 0 and x = 4",
+            "Integrates: ∫(4x − x²) dx = 2x² − x³/3",
+            "Substitutes the limits: (32 − 64/3) − 0",
+            "Area = 32/3 square units (≈ 10.7)"
+          ],
+          "modelAnswer": "The curve meets the x-axis where 4x − x² = 0, so x(4 − x) = 0 and x = 0 or x = 4. Area = ∫₀⁴ (4x − x²) dx = [2x² − x³/3]₀⁴ = (2 × 16 − 64/3) − 0 = 32 − 64/3 = 32/3 square units, about 10.7.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "4x - x² = 0, x(4 - x) = 0, x = 0 or 4\nArea = ∫₀⁴ (4x - x²) dx = [2x² - x³/3]₀⁴\n= (32 - 64/3) - 0\n= 32/3 square units",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x(4 - x) = 0, x = 0 or 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "[2x² - x³/3]"
+                },
+                {
+                  "point": 2,
+                  "quote": "= (32 - 64/3) - 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 32/3 square units"
+                }
+              ],
+              "feedback": "Limits found first and every step shown. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The curve crosses the x-axis at x = 0 and x = 4, since 4x − x² = x(4 − x). Integrating, 2x² − x³/3. At x = 4: 32 − 21.33 = 10.67. At x = 0: 0. Area = 10.67 square units (exactly 32/3).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The curve crosses the x-axis at x = 0 and x = 4"
+                },
+                {
+                  "point": 1,
+                  "quote": "Integrating, 2x² − x³/3"
+                },
+                {
+                  "point": 2,
+                  "quote": "At x = 4: 32 − 21.33 = 10.67. At x = 0: 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "Area = 10.67 square units (exactly 32/3)"
+                }
+              ],
+              "feedback": "Correct, and giving the exact value too is good practice. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "∫(4x - x²) dx = 2x² - x³/3. Using x = 0 to 2: 8 - 8/3 = 16/3.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "∫(4x - x²) dx = 2x² - x³/3"
+                }
+              ],
+              "feedback": "Your integral is right, but the limits are where the curve meets the x-axis. Solve 4x − x² = 0 to get x = 0 and 4, then substitute."
+            },
+            {
+              "tier": "partial",
+              "text": "Limits: x = 0 and x = 4. ∫(4x - x²) dx = 4x² - x³ = 64 - 64 = 0. So the area is 0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Limits: x = 0 and x = 4"
+                }
+              ],
+              "feedback": "The limits are right. When you integrate, raise each power by one and divide by the new power: 4x becomes 2x² and x² becomes x³/3.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "dy/dx = 4 - 2x = 0, x = 2, y = 4. Area = 2 × 4 = 8.",
+              "meets": [],
+              "feedback": "Area under a curve is found by integrating, not differentiating. Find where the curve meets the x-axis, then integrate 4x − x² between those limits."
+            },
+            {
+              "tier": "weak",
+              "text": "Area = ½ × base × height = ½ × 4 × 4 = 8.",
+              "meets": [],
+              "feedback": "The region is bounded by a curve, not a triangle, so the triangle formula gives the wrong area. Integrate 4x − x² from 0 to 4."
+            }
+          ]
+        },
+        {
+          "prompt": "Use the trapezium rule with 4 strips to estimate ∫₀² (x² + 1) dx. Find the exact value of the integral and say whether the trapezium rule over-estimates or under-estimates it.",
+          "markScheme": [
+            "Strip width h = 0.5",
+            "y-values at x = 0, 0.5, 1, 1.5, 2: 1, 1.25, 2, 3.25, 5",
+            "Substitutes: (0.5/2)[1 + 5 + 2(1.25 + 2 + 3.25)]",
+            "Estimate = 4.75",
+            "Exact value = 14/3 ≈ 4.67, so the trapezium rule over-estimates"
+          ],
+          "modelAnswer": "h = (2 − 0)/4 = 0.5. At x = 0, 0.5, 1, 1.5, 2, y = 1, 1.25, 2, 3.25, 5. Trapezium rule: (0.5/2)[1 + 5 + 2(1.25 + 2 + 3.25)] = 0.25 × [6 + 13] = 4.75. Exact value: [x³/3 + x]₀² = 8/3 + 2 = 14/3 ≈ 4.67. The trapezium rule gives too large a value, an over-estimate, because the curve bends upwards and the straight tops of the strips lie above it.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "h = 0.5\nx: 0, 0.5, 1, 1.5, 2\ny: 1, 1.25, 2, 3.25, 5\nArea ≈ 0.5/2 [1 + 5 + 2(1.25 + 2 + 3.25)] = 0.25 × 19 = 4.75\nExact: [x³/3 + x]₀² = 8/3 + 2 = 14/3 = 4.67\nThe trapezium rule over-estimates.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "h = 0.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "y: 1, 1.25, 2, 3.25, 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "0.5/2 [1 + 5 + 2(1.25 + 2 + 3.25)]"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 0.25 × 19 = 4.75"
+                },
+                {
+                  "point": 4,
+                  "quote": "Exact: [x³/3 + x]₀² = 8/3 + 2 = 14/3 = 4.67\nThe trapezium rule over-estimates."
+                }
+              ],
+              "feedback": "Every step correct, with a clear table of values. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "With 4 strips over 0 to 2, each strip is 0.5 wide. Ordinates: 1, 1.25, 2, 3.25, 5. Estimate = ½ × 0.5 × (first + last + twice the middle ones) = 0.25 × (6 + 13) = 4.75. Exact integral = 2³/3 + 2 = 4.667. The estimate is bigger, so the rule over-estimates, because the curve y = x² + 1 bends upward and the chords lie above it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "each strip is 0.5 wide"
+                },
+                {
+                  "point": 1,
+                  "quote": "Ordinates: 1, 1.25, 2, 3.25, 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "½ × 0.5 × (first + last + twice the middle ones) = 0.25 × (6 + 13)"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 4.75"
+                },
+                {
+                  "point": 4,
+                  "quote": "Exact integral = 2³/3 + 2 = 4.667. The estimate is bigger, so the rule over-estimates"
+                }
+              ],
+              "feedback": "Correct, and explaining why the chords lie above the curve shows real understanding. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "h = 0.5. y = 1, 1.25, 2, 3.25, 5. Area = 0.5[1 + 5 + 2(1.25 + 2 + 3.25)] = 0.5 × 19 = 9.5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "h = 0.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "y = 1, 1.25, 2, 3.25, 5"
+                }
+              ],
+              "feedback": "Your strip width and y-values are right. The rule uses h/2, not h, outside the bracket: 0.25 × 19 = 4.75. Then find the exact value to compare."
+            },
+            {
+              "tier": "partial",
+              "text": "h = 0.5. Area ≈ 0.25[1 + 5 + 2(1.25 + 2 + 3.25)] = 4.75. Exact = 8/3 = 2.67. So the trapezium rule over-estimates.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "h = 0.5"
+                },
+                {
+                  "point": 2,
+                  "quote": "0.25[1 + 5 + 2(1.25 + 2 + 3.25)]"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 4.75"
+                }
+              ],
+              "feedback": "Your trapezium estimate is correct. In the exact integral, ∫1 dx = x adds 2, so the exact value is 8/3 + 2 = 14/3 ≈ 4.67."
+            },
+            {
+              "tier": "weak",
+              "text": "Area = (h/2)(first + last) = (2/2)(1 + 5) = 6.",
+              "meets": [],
+              "feedback": "That is one trapezium, not four. With 4 strips h = 0.5, and the middle ordinates must be included twice."
+            },
+            {
+              "tier": "weak",
+              "text": "∫(x² + 1) dx = 2x = 4. The trapezium rule gives the exact answer.",
+              "meets": [],
+              "feedback": "2x is the derivative, not the integral. The integral is x³/3 + x. The trapezium rule only estimates; work it out with 4 strips of width 0.5."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Averages and spread: location and dispersion",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the mean, median and mode of ungrouped and grouped data, using an assumed mean for grouped data;\n2. find the modal class and estimate the mode from a histogram;\n3. find the median, quartiles and percentiles from grouped data and from an ogive;\n4. find the range, interquartile range and semi-interquartile range;\n5. calculate the mean deviation, variance and standard deviation.\n\n## Materials\n\nGraph paper, the ogive drawn last week, a frequency table of the class's heights, calculators.\n\n## Starter (5 minutes)\n\nTwo provision stores both average ₦13 000 in sales a day. Ask: would the owners feel the same about their businesses? What else would you want to know?\n\n## Development\n\n1. Revise the mean of ungrouped data. For grouped data, use class midpoints and an assumed mean A: x̄ = A + Σfd/Σf, where d = x − A.\n2. Identify the modal class and estimate the mode from the tallest bar of the histogram by joining the corners.\n3. Find the median class, then use median = L + [(n/2 − F)/f] × c. Read the median and quartiles from the ogive. Define percentiles.\n4. Define range, interquartile range Q₃ − Q₁ and semi-interquartile range ½(Q₃ − Q₁).\n5. Work the mean deviation Σ|x − x̄|/n, the variance Σ(x − x̄)²/n and the standard deviation √variance for six daily sales figures. Extend to grouped data with Σf(x − x̄)²/Σf.\n6. Return to the starter: the store with the smaller standard deviation has steadier sales.\n\n## Class activity\n\nIn groups, students find the mean and standard deviation of their own heights from the class table.\n\n## Evaluation\n\n1. Find the variance of 3, 5, 7.\n2. Q₁ = 20 and Q₃ = 36. Find the semi-interquartile range.\n\n## Assignment\n\nWorksheet questions, due Monday.",
+      "reading": {
+        "title": "Measuring the centre and the spread of data",
+        "content": "# Measures of location\n\n- The **mean** is the sum of the values divided by how many there are: x̄ = Σx/n, or Σfx/Σf for a frequency table.\n- The **median** is the middle value when the data are in order.\n- The **mode** is the value that occurs most often. For grouped data, the **modal class** is the class with the highest frequency.\n\n## The mean of grouped data with an assumed mean\n\nUse the class midpoints x. Choose an **assumed mean** A, usually a midpoint near the middle, and let d = x − A. Then\n\nx̄ = A + Σfd/Σf.\n\nThis keeps the numbers small.\n\n## The median of grouped data\n\nFind the class containing the (n/2)th value. Then\n\nmedian = L + [(n/2 − F)/f] × c,\n\nwhere L is the lower class boundary of the median class, F the cumulative frequency before it, f its frequency and c its width.\n\n**Worked example.** Weights of 50 bags of garri (kg): 10–14: 6, 15–19: 14, 20–24: 18, 25–29: 12. Cumulative frequencies: 6, 20, 38, 50. n/2 = 25, so the median class is 20–24, with L = 19.5, F = 20, f = 18 and c = 5. Median = 19.5 + (5/18) × 5 = 20.9 kg.\n\nThe **quartiles** Q₁ and Q₃ are the (n/4)th and (3n/4)th values, and the kth **percentile** is the (kn/100)th value. All can be read from an ogive.\n\n# Measures of dispersion\n\n- **Range** = largest value − smallest value.\n- **Interquartile range** = Q₃ − Q₁; the **semi-interquartile range** is half of it.\n- **Mean deviation** = Σ|x − x̄|/n, the average distance from the mean.\n- **Variance** = Σ(x − x̄)²/n, or Σf(x − x̄)²/Σf for grouped data.\n- **Standard deviation** = √variance.\n\n**Worked example.** Find the standard deviation of 2, 4, 6, 8, 10.\nx̄ = 6. Deviations: −4, −2, 0, 2, 4. Squares: 16, 4, 0, 4, 16, with sum 40.\nVariance = 40/5 = 8, standard deviation = √8 = 2.83.\nMean deviation = (4 + 2 + 0 + 2 + 4)/5 = 2.4.\n\nA small standard deviation means the values are close to the mean; a large one means they are spread out. Using an assumed mean also works here: variance = Σfd²/Σf − (Σfd/Σf)²."
+      },
+      "cards": [
+        {
+          "front": "Mean with an assumed mean A",
+          "back": "x̄ = A + Σfd/Σf, where d = x − A."
+        },
+        {
+          "front": "Median of grouped data",
+          "back": "L + [(n/2 − F)/f] × c."
+        },
+        {
+          "front": "Modal class",
+          "back": "The class with the highest frequency."
+        },
+        {
+          "front": "Interquartile range",
+          "back": "Q₃ − Q₁."
+        },
+        {
+          "front": "Semi-interquartile range",
+          "back": "½(Q₃ − Q₁)."
+        },
+        {
+          "front": "Mean deviation",
+          "back": "Σ|x − x̄|/n."
+        },
+        {
+          "front": "Variance",
+          "back": "Σ(x − x̄)²/n."
+        },
+        {
+          "front": "Standard deviation",
+          "back": "The square root of the variance."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the mean of 4, 7, 9, 10 and 15.",
+          "options": ["9", "10", "11.25", "7"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Find the range of 12, 5, 18, 7 and 9.",
+          "options": ["18", "13", "9", "5"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find the variance of 2, 4, 6 and 8.",
+          "options": ["√5", "20", "5", "2.5"],
+          "answer": "C"
+        },
+        {
+          "prompt": "For a set of examination marks, the lower quartile is 32 and the upper quartile is 58. What is the semi-interquartile range?",
+          "options": ["26", "45", "90", "13"],
+          "answer": "D"
+        },
+        {
+          "prompt": "The ages of people at a church harvest were grouped as 10–19: 4, 20–29: 9, 30–39: 15, 40–49: 7. What is the modal class?",
+          "options": ["10–19", "20–29", "30–39", "40–49"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The marks of 40 SS2 students in a Further Mathematics test were: 1–10: 3, 11–20: 7, 21–30: 12, 31–40: 10, 41–50: 8. Using an assumed mean of 25.5, calculate the mean mark.",
+          "markScheme": [
+            "Class midpoints 5.5, 15.5, 25.5, 35.5, 45.5",
+            "Deviations d = x − 25.5: −20, −10, 0, 10, 20",
+            "Σfd = −60 − 70 + 0 + 100 + 160 = 130",
+            "Mean = 25.5 + 130/40 = 28.75"
+          ],
+          "modelAnswer": "Midpoints: 5.5, 15.5, 25.5, 35.5, 45.5. With A = 25.5, d = −20, −10, 0, 10, 20. fd = −60, −70, 0, 100, 160, so Σfd = 130 and Σf = 40. Mean = A + Σfd/Σf = 25.5 + 130/40 = 25.5 + 3.25 = 28.75.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "x: 5.5, 15.5, 25.5, 35.5, 45.5\nd = x - 25.5: -20, -10, 0, 10, 20\nfd: -60, -70, 0, 100, 160\nΣfd = 130, Σf = 40\nMean = 25.5 + 130/40 = 25.5 + 3.25 = 28.75",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x: 5.5, 15.5, 25.5, 35.5, 45.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "d = x - 25.5: -20, -10, 0, 10, 20"
+                },
+                {
+                  "point": 2,
+                  "quote": "Σfd = 130"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mean = 25.5 + 130/40 = 25.5 + 3.25 = 28.75"
+                }
+              ],
+              "feedback": "A clear table and the correct mean. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Using class marks 5.5, 15.5, 25.5, 35.5 and 45.5 and A = 25.5, the deviations are −20, −10, 0, 10 and 20. Multiplying by the frequencies and adding: 3(−20) + 7(−10) + 12(0) + 10(10) + 8(20) = 130. Mean = 25.5 + 130 ÷ 40 = 28.75 marks.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "class marks 5.5, 15.5, 25.5, 35.5 and 45.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "the deviations are −20, −10, 0, 10 and 20"
+                },
+                {
+                  "point": 2,
+                  "quote": "3(−20) + 7(−10) + 12(0) + 10(10) + 8(20) = 130"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mean = 25.5 + 130 ÷ 40 = 28.75 marks"
+                }
+              ],
+              "feedback": "Correct and clearly explained. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Midpoints 5.5, 15.5, 25.5, 35.5, 45.5. d = -20, -10, 0, 10, 20. Σd = 0. Mean = 25.5 + 0 = 25.5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Midpoints 5.5, 15.5, 25.5, 35.5, 45.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "d = -20, -10, 0, 10, 20"
+                }
+              ],
+              "feedback": "Midpoints and deviations are right. Each deviation must be multiplied by its frequency before adding: Σfd = 130, and the mean is 25.5 + 130/40 = 28.75."
+            },
+            {
+              "tier": "partial",
+              "text": "Midpoints 5.5, 15.5, 25.5, 35.5, 45.5. fd = -60, -70, 0, 100, 160. Σfd = 130. Mean = 25.5 + 130/5 = 51.5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Midpoints 5.5, 15.5, 25.5, 35.5, 45.5"
+                },
+                {
+                  "point": 2,
+                  "quote": "Σfd = 130"
+                }
+              ],
+              "feedback": "Your Σfd is right, but divide by the total frequency, Σf = 40, not by the number of classes. 25.5 + 3.25 = 28.75. A mean of 51.5 is higher than any mark, which should warn you.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = (3 + 7 + 12 + 10 + 8)/5 = 8.",
+              "meets": [],
+              "feedback": "That is the average frequency, not the average mark. Use the midpoints of the classes and the formula x̄ = A + Σfd/Σf."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = (10 + 20 + 30 + 40 + 50)/5 = 30.",
+              "meets": [],
+              "feedback": "Each class must be weighted by its frequency, and you should use midpoints such as 5.5 and 15.5, not the upper limits. Use x̄ = A + Σfd/Σf."
+            }
+          ]
+        },
+        {
+          "prompt": "A provision store in Ibadan recorded its sales, in thousands of naira, for six days: 12, 15, 9, 18, 10, 14. Calculate the mean, the mean deviation, the variance and the standard deviation of the sales.",
+          "markScheme": [
+            "Mean = 78/6 = 13",
+            "Mean deviation = (1 + 2 + 4 + 5 + 3 + 1)/6 = 16/6 ≈ 2.67",
+            "Σ(x − x̄)² = 1 + 4 + 16 + 25 + 9 + 1 = 56",
+            "Variance = 56/6 ≈ 9.33",
+            "Standard deviation = √9.33 ≈ 3.06 (thousand naira)"
+          ],
+          "modelAnswer": "Mean = (12 + 15 + 9 + 18 + 10 + 14)/6 = 78/6 = 13. Deviations from 13: −1, 2, −4, 5, −3, 1. Mean deviation = (1 + 2 + 4 + 5 + 3 + 1)/6 = 16/6 = 2.67. Squared deviations: 1, 4, 16, 25, 9, 1, with sum 56. Variance = 56/6 = 9.33. Standard deviation = √9.33 = 3.06, that is about ₦3060.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Mean = 78/6 = 13\nx - x̄: -1, 2, -4, 5, -3, 1\n|x - x̄|: 1, 2, 4, 5, 3, 1, sum = 16\nMean deviation = 16/6 = 2.67\n(x - x̄)²: 1, 4, 16, 25, 9, 1, sum = 56\nVariance = 56/6 = 9.33\nSD = √9.33 = 3.06",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 78/6 = 13"
+                },
+                {
+                  "point": 1,
+                  "quote": "Mean deviation = 16/6 = 2.67"
+                },
+                {
+                  "point": 2,
+                  "quote": "(x - x̄)²: 1, 4, 16, 25, 9, 1, sum = 56"
+                },
+                {
+                  "point": 3,
+                  "quote": "Variance = 56/6 = 9.33"
+                },
+                {
+                  "point": 4,
+                  "quote": "SD = √9.33 = 3.06"
+                }
+              ],
+              "feedback": "Every measure correct, with a tidy table of deviations. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Total = 78, so the mean is ₦13 000. Distances from the mean: 1, 2, 4, 5, 3, 1, average 16 ÷ 6 = 2.67 (₦2 670). Squares of the deviations add up to 56, so the variance is 56 ÷ 6 = 9.33 and the standard deviation is 3.06, about ₦3 060.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total = 78, so the mean is ₦13 000"
+                },
+                {
+                  "point": 1,
+                  "quote": "average 16 ÷ 6 = 2.67 (₦2 670)"
+                },
+                {
+                  "point": 2,
+                  "quote": "Squares of the deviations add up to 56"
+                },
+                {
+                  "point": 3,
+                  "quote": "the variance is 56 ÷ 6 = 9.33"
+                },
+                {
+                  "point": 4,
+                  "quote": "the standard deviation is 3.06, about ₦3 060"
+                }
+              ],
+              "feedback": "Correct, and giving the answers in naira makes them meaningful. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Mean = 13. Deviations: -1, 2, -4, 5, -3, 1. Mean deviation = 0/6 = 0. Squares sum = 56. Variance = 9.33. SD = 3.06.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 13"
+                },
+                {
+                  "point": 2,
+                  "quote": "Squares sum = 56"
+                },
+                {
+                  "point": 3,
+                  "quote": "Variance = 9.33"
+                },
+                {
+                  "point": 4,
+                  "quote": "SD = 3.06"
+                }
+              ],
+              "feedback": "Everything is right except the mean deviation. It uses the sizes of the deviations, ignoring the signs: (1 + 2 + 4 + 5 + 3 + 1)/6 = 2.67."
+            },
+            {
+              "tier": "partial",
+              "text": "Mean = 13. Σ(x - x̄)² = 56. Variance = 56/5 = 11.2. SD = 3.35.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 13"
+                },
+                {
+                  "point": 2,
+                  "quote": "Σ(x - x̄)² = 56"
+                }
+              ],
+              "feedback": "The mean and the sum of squares are right. In this course the variance divides by n = 6: 56/6 = 9.33, giving SD = 3.06. Find the mean deviation too."
+            },
+            {
+              "tier": "weak",
+              "text": "Mean = 13. SD = 18 - 9 = 9.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mean = 13"
+                }
+              ],
+              "feedback": "18 − 9 is the range, a different measure of spread. The standard deviation uses every value: square each deviation from 13, average them, then take the square root."
+            },
+            {
+              "tier": "weak",
+              "text": "Variance = (12² + 15² + 9² + 18² + 10² + 14²)/6 = 1070/6 = 178.3. SD = 13.4.",
+              "meets": [],
+              "feedback": "You squared the values, not their deviations from the mean. Find the mean, 13, subtract it from each value, then square and average."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

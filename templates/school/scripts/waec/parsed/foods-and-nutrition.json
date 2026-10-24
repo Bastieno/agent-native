@@ -1,0 +1,94 @@
+{
+  "found": true,
+  "subject": "Foods and Nutrition",
+  "subjectCode": "FOODNUT",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Nutrition and Health",
+      "abbreviation": "NUTRI",
+      "subStrands": [
+        {
+          "name": "Nutrients, Meal Planning and Special Nutritional Needs",
+          "objectives": [
+            {
+              "code": "FOODNUT-NUTRI-1",
+              "description": "Introduction to foods and nutrition: meaning; basic knowledge of nutrition; importance of human nutrition; factors affecting foods and nutrition; food habits."
+            },
+            {
+              "code": "FOODNUT-NUTRI-2",
+              "description": "Careers associated with foods and nutrition: careers in foods and nutrition; factors that influence career choices; characteristics required for foods and nutrition careers."
+            },
+            {
+              "code": "FOODNUT-NUTRI-3",
+              "description": "Basic food nutrients: the nutrients and their nutritive values; functions of the different nutrients; sources of the different nutrients; dietary deficiencies; metabolism (digestion and absorption of foods — carbohydrate, protein, fat); knowledge and use of food composition table; food tests — simple physical and chemical tests of food stuffs to detect presence of nutrients in foods e.g. proteins, fats and carbohydrates."
+            },
+            {
+              "code": "FOODNUT-NUTRI-4",
+              "description": "Meal planning: meal planning terms; reasons for planning meals; factors in planning meals; general principles of meal planning; meal patterns."
+            },
+            {
+              "code": "FOODNUT-NUTRI-5",
+              "description": "Special nutritional needs: nutritional needs for different groups e.g. pregnant and lactating mothers, infants and children, adolescents, adults and the aged, vegetarians; planning meals for people in health conditions e.g. HIV & AIDS, invalids, convalescents, overweight, underweight, hypertension, diabetes etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Food Laboratory and Equipment",
+      "abbreviation": "EQUIP",
+      "subStrands": [
+        {
+          "name": "Kitchen Types, Equipment, Safety and Sanitation",
+          "objectives": [
+            {
+              "code": "FOODNUT-EQUIP-1",
+              "description": "The kitchen: types of kitchen e.g. traditional, modern, institutional; planning different types of kitchen; factors to consider when planning; cleaning agents and abrasives (commercial and local)."
+            },
+            {
+              "code": "FOODNUT-EQUIP-2",
+              "description": "Kitchen equipment and tools: classes and types of equipment; selection, use, care and storage of large and small equipment, fixtures and appliances."
+            },
+            {
+              "code": "FOODNUT-EQUIP-3",
+              "description": "Safety in the kitchen: types of kitchen accidents; causes and prevention of accidents; content and use of first aid box; simple first aid treatment."
+            },
+            {
+              "code": "FOODNUT-EQUIP-4",
+              "description": "Sanitation in the kitchen: personal hygiene; kitchen hygiene e.g. general cleaning, waste disposal, pests and pest control; food hygiene e.g. handling of foods, food borne diseases, food sanitation laws."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Food Commodities",
+      "abbreviation": "COMMOD",
+      "subStrands": [
+        {
+          "name": "Animal Products, Cereals, Fruits, Vegetables and Legumes",
+          "objectives": [
+            {
+              "code": "FOODNUT-COMMOD-1",
+              "description": "Animal and animal products: milk and milk products e.g. cheese, yoghurt; eggs; meat; poultry; fish etc. — kinds/types and structure; selection; storage."
+            },
+            {
+              "code": "FOODNUT-COMMOD-2",
+              "description": "Cereals/grains: kinds and forms; importance of cereals and grains — versatility, thickening, cheap source of energy/good source of roughage."
+            },
+            {
+              "code": "FOODNUT-COMMOD-3",
+              "description": "Fruits and vegetables: classification of fruits and classification of vegetables; selection, preparation and uses."
+            },
+            {
+              "code": "FOODNUT-COMMOD-4",
+              "description": "Legumes and oily seeds: types, nutritive value, uses, preparation and processing of legumes and oily seeds."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

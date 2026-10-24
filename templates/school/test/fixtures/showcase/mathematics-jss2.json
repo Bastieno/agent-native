@@ -1,0 +1,2616 @@
+{
+  "subject": "Mathematics",
+  "yearGroup": "JSS2",
+  "weeks": {
+    "1": {
+      "topic": "Expanding, simplifying and substituting",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. expand a single bracket and the product of two binomials;\n2. simplify expressions with several variables, including algebraic fractions such as 12x²y ÷ 4xy²;\n3. substitute positive and negative values, and fractions, into expressions;\n4. use a formula from a real situation, and build an expression for a combined quantity.\n\n## Materials\n\nA rectangle cut from cardboard and divided into four parts for the area model of (x + 3)(x + 2), cards with expressions, and a keke fare chart.\n\n## Starter (5 minutes)\n\nQuick revision from JSS1: simplify 7m − 2n − 3m + 5n, and find its value when m = 1 and n = −2. Discuss the sign of 5 × (−2).\n\n## Development\n\n1. Single brackets with letters outside: 2a(3a − 4) = 6a² − 8a. Note that a × a = a².\n2. Two brackets: use the area model. A rectangle (x + 3) by (x + 2) splits into x², 2x, 3x and 6, so (x + 3)(x + 2) = x² + 5x + 6. Every term in the first bracket multiplies every term in the second.\n3. Signs: (2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12.\n4. Dividing terms: 12x²y ÷ 4xy² = 3x/y; cancel numbers and letters separately.\n5. Substitution with negatives: when x = −2, x² = 4 but −x² = −4. Always use brackets.\n6. Formulas: a keke charges C = 150 + 80d naira for d km. Find C for d = 6, then find d when C = 1,110.\n\n## Class activity\n\nGroups are given a fare formula and two journeys, one d km and one 3 km longer, and write and simplify an expression for the total fare.\n\n## Evaluation\n\n1. Expand (x − 5)(x + 2).\n2. Evaluate 3a² − 2b when a = −1 and b = 4.\n3. Simplify 18p³q ÷ 6pq.\n\n## Assignment\n\nWorksheet on the app, due Thursday.",
+      "reading": {
+        "title": "Opening brackets and putting in values",
+        "content": "# Expanding, simplifying and substituting\n\n## Single brackets\n\nMultiply every term inside the bracket by the term outside. Letters multiply too.\n\n- 2a(3a − 4) = 6a² − 8a\n- −a(a + 2) = −a² − 2a\n\n**Worked example 1.** Simplify 2a(3a − 4) − a(a + 2). Expanding gives 6a² − 8a − a² − 2a. Collecting like terms: 5a² − 10a.\n\n## Two brackets\n\nEach term in the first bracket multiplies each term in the second. Think of the area of a rectangle with sides (x + 3) and (x + 2): it is made of x², 2x, 3x and 6.\n\n(x + 3)(x + 2) = x² + 2x + 3x + 6 = x² + 5x + 6\n\n**Worked example 2.** (2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12.\n\nThe usual mistake is to multiply only the first terms and the last terms, writing x² + 6. That misses the two middle terms.\n\n## Dividing terms\n\nCancel the numbers, then each letter.\n\n12x²y ÷ 4xy² = (12 ÷ 4) × (x² ÷ x) × (y ÷ y²) = 3 × x × 1/y = 3x/y.\n\n## Substitution\n\nReplace each letter with its value, in brackets.\n\n**Worked example 3.** Find (p² − q)/r when p = 2, q = −3 and r = 4.\n\n(2² − (−3)) ÷ 4 = (4 + 3) ÷ 4 = 7/4.\n\nBe careful with powers of negative numbers: if x = −2, then x² = (−2)² = 4, but −x² = −4.\n\n## Formulas from real life\n\nA keke rider charges C = 150 + 80d naira for a journey of d km.\n\n- For 6 km: C = 150 + 80 × 6 = ₦630.\n- If a passenger paid ₦1,110: 150 + 80d = 1,110, so 80d = 960 and d = 12 km.\n- Two friends travel d km and (d + 3) km. Their total fare is (150 + 80d) + (150 + 80(d + 3)) = 160d + 540 naira."
+      },
+      "cards": [
+        {
+          "front": "Expand 2a(3a − 4)",
+          "back": "6a² − 8a"
+        },
+        {
+          "front": "Expand (x + 3)(x + 2)",
+          "back": "x² + 5x + 6"
+        },
+        {
+          "front": "Expanding two brackets",
+          "back": "Multiply each term in the first bracket by each term in the second, then collect like terms."
+        },
+        {
+          "front": "(2x − 3)(x + 4)",
+          "back": "2x² + 5x − 12"
+        },
+        {
+          "front": "12x²y ÷ 4xy²",
+          "back": "3x/y"
+        },
+        {
+          "front": "If x = −2, what are x² and −x²?",
+          "back": "x² = 4 and −x² = −4."
+        },
+        {
+          "front": "Formula",
+          "back": "A rule connecting quantities, such as C = 150 + 80d for a keke fare."
+        },
+        {
+          "front": "Why put negative values in brackets?",
+          "back": "So the signs are multiplied correctly, for example 5(−2) = −10."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Expand (x + 3)(x + 2).",
+          "options": ["x² + 6", "x² + 5x + 6", "x² + 6x + 5", "2x + 5"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Simplify 2a(3a − 4) − a(a + 2).",
+          "options": ["5a² − 10a", "5a² − 6a", "7a² − 10a", "5a² − 2a"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Given p = 2, q = −3 and r = 4, find the value of (p² − q)/r.",
+          "options": ["1/4", "−1/4", "7/4", "7"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A trader buys x bags of rice at ₦45,000 each and y bags of beans at ₦38,000 each. Which expression gives the total cost in naira?",
+          "options": [
+            "83,000xy",
+            "83,000(x + y)",
+            "45,000y + 38,000x",
+            "45,000x + 38,000y"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Simplify 12x²y ÷ 4xy².",
+          "options": ["3x/y", "3xy", "8x/y", "3y/x"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Expand and simplify (2x − 3)(x + 4) − x(x − 5). Hence find its value when x = −2.",
+          "markScheme": [
+            "Expands (2x − 3)(x + 4) = 2x² + 5x − 12",
+            "Expands −x(x − 5) = −x² + 5x",
+            "Simplifies to x² + 10x − 12",
+            "Substitutes correctly: (−2)² + 10(−2) − 12 = −28"
+          ],
+          "modelAnswer": "(2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12. −x(x − 5) = −x² + 5x. Together: 2x² − x² + 5x + 5x − 12 = x² + 10x − 12. When x = −2: (−2)² + 10(−2) − 12 = 4 − 20 − 12 = −28.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12\n−x(x − 5) = −x² + 5x\nTotal = x² + 10x − 12\nx = −2: 4 − 20 − 12 = −28",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "= 2x² + 5x − 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "−x(x − 5) = −x² + 5x"
+                },
+                {
+                  "point": 2,
+                  "quote": "Total = x² + 10x − 12"
+                },
+                {
+                  "point": 3,
+                  "quote": "4 − 20 − 12 = −28"
+                }
+              ],
+              "feedback": "Full marks. You got the +5x from −x × −5, and squared −2 correctly to get 4."
+            },
+            {
+              "tier": "full",
+              "text": "First part: 2x times x is 2x², 2x times 4 is 8x, −3 times x is −3x, −3 times 4 is −12, so 2x² + 5x − 12. Second part: −x² + 5x. Adding gives x² + 10x − 12. Putting x = −2 gives (−2)² + 10(−2) − 12 = 4 − 20 − 12 = −28.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "so 2x² + 5x − 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "Second part: −x² + 5x"
+                },
+                {
+                  "point": 2,
+                  "quote": "Adding gives x² + 10x − 12"
+                },
+                {
+                  "point": 3,
+                  "quote": "(−2)² + 10(−2) − 12 = 4 − 20 − 12 = −28"
+                }
+              ],
+              "feedback": "All four marks, with every product of the two brackets written out. Very thorough."
+            },
+            {
+              "tier": "partial",
+              "text": "2x² + 5x − 12 − x² − 5x = x² − 12. When x = −2, 4 − 12 = −8.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2x² + 5x − 12"
+                }
+              ],
+              "feedback": "The two brackets are expanded correctly. In −x(x − 5), the last product is −x × −5 = +5x, not −5x. That gives x² + 10x − 12, which is −28 when x = −2."
+            },
+            {
+              "tier": "partial",
+              "text": "2x² + 5x − 12 − x² + 5x = x² + 10x − 12\nx = −2: −4 − 20 − 12 = −36",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2x² + 5x − 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "− x² + 5x"
+                },
+                {
+                  "point": 2,
+                  "quote": "= x² + 10x − 12"
+                }
+              ],
+              "feedback": "Your simplifying is all correct. When x = −2, x² = (−2)² = +4, not −4, so the value is 4 − 20 − 12 = −28.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(2x − 3)(x + 4) = 2x² − 12. Then − x² − 5x. Answer x² − 5x − 12.",
+              "meets": [],
+              "feedback": "Multiplying only the first terms and the last terms misses the middle ones: 2x × 4 = 8x and −3 × x = −3x. Every term in one bracket multiplies every term in the other."
+            },
+            {
+              "tier": "weak",
+              "text": "Put x = −2 straight away: (−4 − 3)(−2 + 4) − (−2)(−2 − 5) = −7 × 2 − 14 = −28.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "= −28"
+                }
+              ],
+              "feedback": "Your value is right, and substituting carefully like that is a good check. But the question asks you to expand and simplify first: the expression is x² + 10x − 12."
+            }
+          ]
+        },
+        {
+          "prompt": "A keke rider in Ilorin charges C = 150 + 80d naira for a journey of d km. (a) Find the fare for a 6 km journey. (b) A passenger paid ₦1,110. How far did they travel? (c) Ada travels d km and Tolu travels 3 km further than Ada. Write a simplified expression for their total fare.",
+          "markScheme": [
+            "Fare for 6 km = 150 + 80 × 6 = ₦630",
+            "Forms 150 + 80d = 1,110, so 80d = 960",
+            "d = 12 km",
+            "Total fare = (150 + 80d) + (150 + 80(d + 3))",
+            "Simplifies to 160d + 540 naira"
+          ],
+          "modelAnswer": "(a) C = 150 + 80 × 6 = 150 + 480 = ₦630. (b) 150 + 80d = 1,110, so 80d = 960 and d = 12 km. (c) Ada pays 150 + 80d and Tolu travels d + 3 km, so Tolu pays 150 + 80(d + 3). Total = 150 + 80d + 150 + 80d + 240 = 160d + 540 naira.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) C = 150 + 80(6) = 150 + 480 = ₦630\n(b) 150 + 80d = 1110, 80d = 960, d = 12 km\n(c) Ada = 150 + 80d, Tolu = 150 + 80(d + 3) = 150 + 80d + 240. Total = (150 + 80d) + (150 + 80(d + 3)) = 160d + 540",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "C = 150 + 80(6) = 150 + 480 = ₦630"
+                },
+                {
+                  "point": 1,
+                  "quote": "150 + 80d = 1110, 80d = 960"
+                },
+                {
+                  "point": 2,
+                  "quote": "d = 12 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total = (150 + 80d) + (150 + 80(d + 3))"
+                },
+                {
+                  "point": 4,
+                  "quote": "= 160d + 540"
+                }
+              ],
+              "feedback": "Full marks. Writing Ada's and Tolu's fares separately before adding kept part (c) clear."
+            },
+            {
+              "tier": "full",
+              "text": "6 km costs 150 + 480 = 630 naira. For ₦1,110 take away the 150 first, leaves 960, and 960 ÷ 80 = 12 so 12 km. For the two of them, Ada pays 150 + 80d and Tolu pays 150 + 80(d + 3) because she goes 3 km more. Adding: 300 + 80d + 80d + 240 = 160d + 540 naira.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "6 km costs 150 + 480 = 630 naira"
+                },
+                {
+                  "point": 1,
+                  "quote": "take away the 150 first, leaves 960"
+                },
+                {
+                  "point": 2,
+                  "quote": "960 ÷ 80 = 12 so 12 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "Ada pays 150 + 80d and Tolu pays 150 + 80(d + 3)"
+                },
+                {
+                  "point": 4,
+                  "quote": "300 + 80d + 80d + 240 = 160d + 540 naira"
+                }
+              ],
+              "feedback": "All five marks. Undoing the formula step by step in (b) is exactly right; next time also write it as an equation, 150 + 80d = 1,110."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 150 + 80 × 6 = 230 × 6 = ₦1,380. (b) 1110 − 150 = 960, 960 ÷ 80 = 12 km. (c) 150 + 80d + 150 + 80d + 3 = 160d + 303.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "1110 − 150 = 960"
+                },
+                {
+                  "point": 2,
+                  "quote": "960 ÷ 80 = 12 km"
+                }
+              ],
+              "feedback": "Part (b) is right. In (a), multiply before adding: 80 × 6 = 480, then 150 + 480 = ₦630. In (c), Tolu's extra 3 km cost 80 × 3 = ₦240 each, so write 80(d + 3) and expand it to 80d + 240."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) ₦630. (b) 12 km. (c) 150 + 80d + 150 + 80(d + 3) = 300 + 160d + 3 = 160d + 303.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "₦630"
+                },
+                {
+                  "point": 2,
+                  "quote": "12 km"
+                },
+                {
+                  "point": 3,
+                  "quote": "150 + 80d + 150 + 80(d + 3)"
+                }
+              ],
+              "feedback": "Your answers to (a) and (b) are right, though you should show the working. In (c) the 80 multiplies the 3 as well: 80(d + 3) = 80d + 240, so the total is 160d + 540."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 150 + 80 + 6 = ₦236. (b) 1110 ÷ 80 = 13.9 km.",
+              "meets": [],
+              "feedback": "80d means 80 × d, so for 6 km it is 80 × 6 = 480, and the fare is ₦630. In (b), take away the fixed ₦150 before dividing by 80."
+            },
+            {
+              "tier": "weak",
+              "text": "(c) Ada is d and Tolu is d + 3, so total is 2d + 3.",
+              "meets": [],
+              "feedback": "2d + 3 is their total distance, not their fare. Put each distance into the formula: 150 + 80d for Ada and 150 + 80(d + 3) for Tolu, then add. Parts (a) and (b) also need answers."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Solving simultaneous equations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. choose between substitution and elimination for a given pair of equations;\n2. solve by elimination when both equations must be multiplied first, including negative coefficients;\n3. form simultaneous equations from word problems about prices, tickets and ages;\n4. check solutions in both original equations and answer the question asked.\n\n## Materials\n\nA gate-ticket price board from an inter-house sports day, cards with pairs of equations, and a chart: same signs subtract, different signs add.\n\n## Starter (5 minutes)\n\nRevise from JSS1: solve x + y = 9 and x − y = 3. Ask why adding the equations makes y disappear.\n\n## Development\n\n1. Substitution when one letter is already alone: x = 3y and 2x + y = 14 give 6y + y = 14, so y = 2 and x = 6.\n2. Elimination with one multiplier: 2x + y = 7 and x − y = 2 can be added at once; 3x + 2y = 18 and 3x − y = 9 are subtracted.\n3. Elimination with two multipliers: 3x + 2y = 13 and 5x − 3y = 9. Multiply by 3 and by 2 to get +6y and −6y, then add: 19x = 57, x = 3, y = 2.\n4. Word problems: define the letters first. Sports day: adults pay ₦500, children ₦200; 10 tickets cost ₦3,800. Write a + c = 10 and 500a + 200c = 3,800.\n5. Answer the actual question. If it asks for the cost of 12 books and 20 biros, finding the price of one of each is not the end.\n\n## Class activity\n\nPairs write their own price problem from the school bookshop list, solve their partner's, and check the answer in both equations.\n\n## Evaluation\n\n1. Solve 4x + 3y = 10 and 2x − y = 0.\n2. A mother is four times as old as her daughter. Their ages add up to 50. How old is each?\n\n## Assignment\n\nWorksheet on the app, due Monday.",
+      "reading": {
+        "title": "Choosing a method",
+        "content": "# Solving simultaneous equations\n\n## Which method?\n\n- If one equation already says x = ... or y = ..., use **substitution**.\n- Otherwise use **elimination**: make the number in front of one letter the same in both equations, then add or subtract.\n\n## Elimination with two multipliers\n\n**Worked example 1.** Solve 3x + 2y = 13 and 5x − 3y = 9.\n\nNeither letter matches, so multiply. To make the y terms 6y, multiply the first equation by 3 and the second by 2:\n\n- 9x + 6y = 39\n- 10x − 6y = 18\n\nThe signs are different (+6y and −6y), so **add**: 19x = 57, x = 3.\n\nPut x = 3 in the first equation: 9 + 2y = 13, 2y = 4, y = 2.\n\n**Check** in the second: 5(3) − 3(2) = 15 − 6 = 9. Correct.\n\nRemember: same signs, subtract; different signs, add.\n\n## Word problems\n\nFirst say what each letter stands for. Then turn each sentence into an equation.\n\n**Worked example 2.** At an inter-house sports day, adult tickets cost ₦500 and children's tickets cost ₦200. A family buys 10 tickets for ₦3,800. How many adult tickets did they buy?\n\nLet a be the number of adult tickets and c the number of children's tickets.\n\n- a + c = 10\n- 500a + 200c = 3,800\n\nFrom the first, c = 10 − a. Substitute: 500a + 200(10 − a) = 3,800, so 500a + 2,000 − 200a = 3,800. Then 300a = 1,800 and a = 6. They bought 6 adult and 4 children's tickets.\n\n**Worked example 3.** A mother is four times as old as her daughter, and their ages add up to 50. Let the daughter be d: then m = 4d and m + d = 50. So 5d = 50, d = 10, and the mother is 40.\n\n## Finish the question\n\nAfter solving, read the question again. If it asks how much 12 books and 20 biros cost, use your prices to work that out."
+      },
+      "cards": [
+        {
+          "front": "When should you use substitution?",
+          "back": "When one equation already gives one letter on its own, such as x = 3y."
+        },
+        {
+          "front": "Same signs on the matching terms",
+          "back": "Subtract the equations."
+        },
+        {
+          "front": "Different signs on the matching terms",
+          "back": "Add the equations."
+        },
+        {
+          "front": "Solve 3x + 2y = 13 and 5x − 3y = 9",
+          "back": "× 3 and × 2, then add: 19x = 57, so x = 3 and y = 2."
+        },
+        {
+          "front": "First step in a word problem",
+          "back": "Say what each letter stands for."
+        },
+        {
+          "front": "a + c = 10 and 500a + 200c = 3,800",
+          "back": "a = 6 adults and c = 4 children."
+        },
+        {
+          "front": "Last step after solving",
+          "back": "Check in both equations and answer the question that was asked."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Solve 2x + y = 7 and x − y = 2.",
+          "options": [
+            "x = 1, y = 3",
+            "x = 9, y = 2",
+            "x = 3, y = 1",
+            "x = 3, y = −1"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Given that x = 3y and 2x + y = 14, find y.",
+          "options": ["2", "14/5", "7", "6"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which step eliminates x from 3x + 2y = 18 and 3x − y = 9?",
+          "options": [
+            "Add the two equations",
+            "Subtract the second equation from the first",
+            "Multiply the second equation by 2 and add",
+            "Divide the first equation by 2"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "At a sports day, adult tickets cost ₦500 and children's tickets cost ₦200. A family buys 10 tickets for ₦3,800. How many adult tickets did they buy?",
+          "options": ["4", "7", "19", "6"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A mother is four times as old as her daughter. Their ages add up to 50 years. How old is the daughter?",
+          "options": ["10 years", "12.5 years", "40 years", "46 years"],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Solve the simultaneous equations 3x + 2y = 13 and 5x − 3y = 9 by elimination.",
+          "markScheme": [
+            "Multiplies to make one pair of coefficients equal (9x + 6y = 39 and 10x − 6y = 18, or equivalent)",
+            "Adds (or subtracts) correctly to get 19x = 57",
+            "x = 3",
+            "y = 2"
+          ],
+          "modelAnswer": "Multiply the first equation by 3: 9x + 6y = 39. Multiply the second by 2: 10x − 6y = 18. The y terms have different signs, so add: 19x = 57, so x = 3. Substitute into the first equation: 9 + 2y = 13, so 2y = 4 and y = 2. Check: 5(3) − 3(2) = 9.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(1) × 3: 9x + 6y = 39\n(2) × 2: 10x − 6y = 18\nAdd: 19x = 57\nx = 3\n3(3) + 2y = 13, 2y = 4, y = 2",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(1) × 3: 9x + 6y = 39\n(2) × 2: 10x − 6y = 18"
+                },
+                {
+                  "point": 1,
+                  "quote": "Add: 19x = 57"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 3"
+                },
+                {
+                  "point": 3,
+                  "quote": "y = 2"
+                }
+              ],
+              "feedback": "Full marks. Adding because the signs were different was the key decision, and you made it correctly."
+            },
+            {
+              "tier": "full",
+              "text": "To remove x I multiply the first by 5 and the second by 3: 15x + 10y = 65 and 15x − 9y = 27. Subtract: 19y = 38 so y = 2. Then 3x + 4 = 13, 3x = 9, x = 3. Check: 15 − 6 = 9.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "15x + 10y = 65 and 15x − 9y = 27"
+                },
+                {
+                  "point": 1,
+                  "quote": "Subtract: 19y = 38"
+                },
+                {
+                  "point": 2,
+                  "quote": "3x = 9, x = 3"
+                },
+                {
+                  "point": 3,
+                  "quote": "so y = 2"
+                }
+              ],
+              "feedback": "All four marks. Eliminating x first is just as good, and 10y − (−9y) = 19y is handled correctly.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "9x + 6y = 39\n10x − 6y = 18\nSubtract: −x = 21\nx = −21",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "9x + 6y = 39\n10x − 6y = 18"
+                }
+              ],
+              "feedback": "Your multiplying is right. But +6y and −6y have different signs, so add the equations to remove y: 19x = 57 and x = 3. Subtracting leaves 12y, so y did not disappear."
+            },
+            {
+              "tier": "partial",
+              "text": "9x + 6y = 39 and 10x − 6y = 18. Adding gives 19x = 57 and x = 3. Then 3 + 2y = 13 so y = 5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "9x + 6y = 39 and 10x − 6y = 18"
+                },
+                {
+                  "point": 1,
+                  "quote": "Adding gives 19x = 57"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 3"
+                }
+              ],
+              "feedback": "Correct as far as x = 3. When you substituted, 3x is 3 × 3 = 9, not 3: 9 + 2y = 13 gives y = 2. Checking in the second equation would have caught it."
+            },
+            {
+              "tier": "weak",
+              "text": "Add them: 8x − y = 22. So x = 22/8 and y = 1.",
+              "meets": [],
+              "feedback": "Adding straight away does not remove either letter. Multiply first so that one letter has the same number in front, for example 6y and −6y, then add."
+            },
+            {
+              "tier": "weak",
+              "text": "From 3x + 2y = 13, x = 13 − 2y − 3. Put in the second: 5(10 − 2y) − 3y = 9, 50 − 13y = 9, y = 3.2",
+              "meets": [],
+              "feedback": "To get x alone you must divide by 3, not subtract 3: x = (13 − 2y)/3. Elimination is easier here: multiply by 3 and by 2 and add, giving 19x = 57."
+            }
+          ]
+        },
+        {
+          "prompt": "A school bookshop sells exercise books and biros. Five books and three biros cost ₦1,400. Two books and seven biros cost ₦850. (a) Form two equations and solve them to find the price of a book and of a biro. (b) How much would 12 books and 20 biros cost?",
+          "markScheme": [
+            "Forms 5b + 3p = 1,400 and 2b + 7p = 850",
+            "Multiplies correctly to eliminate one letter (for example 10b + 6p = 2,800 and 10b + 35p = 4,250)",
+            "Biro = ₦50",
+            "Book = ₦250",
+            "12 books and 20 biros cost 12 × 250 + 20 × 50 = ₦4,000"
+          ],
+          "modelAnswer": "Let a book cost b naira and a biro p naira. 5b + 3p = 1,400 ... (1) and 2b + 7p = 850 ... (2). (1) × 2: 10b + 6p = 2,800. (2) × 5: 10b + 35p = 4,250. Subtract: 29p = 1,450, so p = 50. In (1): 5b + 150 = 1,400, so 5b = 1,250 and b = 250. A book costs ₦250 and a biro ₦50. 12 books and 20 biros cost 12 × 250 + 20 × 50 = 3,000 + 1,000 = ₦4,000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Let book = b, biro = p.\n5b + 3p = 1400 (1)\n2b + 7p = 850 (2)\n(1) × 2: 10b + 6p = 2800\n(2) × 5: 10b + 35p = 4250\n(2) − (1): 29p = 1450, p = 50\n5b + 150 = 1400, 5b = 1250, b = 250\n12 books and 20 biros = 3000 + 1000 = ₦4,000",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5b + 3p = 1400 (1)\n2b + 7p = 850 (2)"
+                },
+                {
+                  "point": 1,
+                  "quote": "(1) × 2: 10b + 6p = 2800\n(2) × 5: 10b + 35p = 4250"
+                },
+                {
+                  "point": 2,
+                  "quote": "29p = 1450, p = 50"
+                },
+                {
+                  "point": 3,
+                  "quote": "b = 250"
+                },
+                {
+                  "point": 4,
+                  "quote": "12 books and 20 biros = 3000 + 1000 = ₦4,000"
+                }
+              ],
+              "feedback": "Full marks, and you finished with part (b), which many forget."
+            },
+            {
+              "tier": "full",
+              "text": "5b + 3p = 1,400 and 2b + 7p = 850. Multiply the first by 7 and the second by 3: 35b + 21p = 9,800 and 6b + 21p = 2,550. Subtract: 29b = 7,250 so b = 250. Then 500 + 7p = 850, 7p = 350, p = 50. A book is ₦250 and a biro ₦50. 12 books = ₦3,000, 20 biros = ₦1,000, total ₦4,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5b + 3p = 1,400 and 2b + 7p = 850"
+                },
+                {
+                  "point": 1,
+                  "quote": "35b + 21p = 9,800 and 6b + 21p = 2,550"
+                },
+                {
+                  "point": 2,
+                  "quote": "7p = 350, p = 50"
+                },
+                {
+                  "point": 3,
+                  "quote": "29b = 7,250 so b = 250"
+                },
+                {
+                  "point": 4,
+                  "quote": "12 books = ₦3,000, 20 biros = ₦1,000, total ₦4,000"
+                }
+              ],
+              "feedback": "All five marks. Eliminating p first is fine, and your multiplication by 7 and 3 is accurate."
+            },
+            {
+              "tier": "partial",
+              "text": "5b + 3p = 1400\n2b + 7p = 850\n× 2: 10b + 6p = 2800\n× 5: 10b + 35p = 4250\n29p = 1450, p = 50\nb = 250",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5b + 3p = 1400\n2b + 7p = 850"
+                },
+                {
+                  "point": 1,
+                  "quote": "× 2: 10b + 6p = 2800\n× 5: 10b + 35p = 4250"
+                },
+                {
+                  "point": 2,
+                  "quote": "29p = 1450, p = 50"
+                },
+                {
+                  "point": 3,
+                  "quote": "b = 250"
+                }
+              ],
+              "feedback": "Part (a) is fully correct. You did not answer part (b): 12 × 250 + 20 × 50 = ₦4,000."
+            },
+            {
+              "tier": "partial",
+              "text": "5b + 3p = 1400 and 2b + 7p = 850. × 2 and × 5: 10b + 6p = 2800, 10b + 35p = 850. Subtract: 29p = −1950, p = −67.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "5b + 3p = 1400 and 2b + 7p = 850"
+                }
+              ],
+              "feedback": "Good equations and the right idea. When you multiply an equation by 5, multiply the right side too: 850 × 5 = 4,250. A price cannot be negative, which was a sign to look back."
+            },
+            {
+              "tier": "weak",
+              "text": "7 books and 10 biros cost 2,250. So one book and one biro cost 2,250 ÷ 17 = ₦132.",
+              "meets": [],
+              "feedback": "Adding the two orders mixes books and biros, which have different prices. Use a letter for each and write one equation per order: 5b + 3p = 1,400 and 2b + 7p = 850."
+            },
+            {
+              "tier": "weak",
+              "text": "5b + 3p = 1400 so 8bp = 1400 and bp = 175.",
+              "meets": [],
+              "feedback": "5b and 3p are unlike terms, so they cannot be added to make 8bp. Write the second equation, 2b + 7p = 850, and eliminate one letter."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Factorisation and simple quadratic equations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. factorise expressions by taking out a common factor;\n2. factorise quadratic expressions of the form x² + bx + c, including the difference of two squares;\n3. solve quadratic equations by factorisation, using the fact that if ab = 0 then a = 0 or b = 0;\n4. form a quadratic equation from a problem about area and reject a solution that does not make sense.\n\n## Materials\n\nAlgebra tiles cut from cardboard (x² squares, x strips and unit squares), a chart of factor pairs of 12 and of −12, and a measuring tape for the school garden.\n\n## Starter (5 minutes)\n\nAsk: I multiplied two numbers and got 0. What can you say about them? Lead learners to see that at least one of them must be 0.\n\n## Development\n\n1. Common factors: factorising is expanding in reverse. 6x + 9 = 3(2x + 3); x² − 4x = x(x − 4).\n2. Quadratics x² + bx + c: find two numbers that multiply to c and add to b. For x² + 7x + 12: 3 × 4 = 12 and 3 + 4 = 7, so (x + 3)(x + 4). Show it with algebra tiles.\n3. Negative c: x² − x − 12. List factor pairs of −12 and find the pair that adds to −1: −4 and 3. So (x − 4)(x + 3).\n4. Difference of two squares: x² − 9 = (x − 3)(x + 3).\n5. Solving: x² − x − 12 = 0 becomes (x − 4)(x + 3) = 0, so x − 4 = 0 or x + 3 = 0, giving x = 4 or x = −3. Stress the sign change at the last step.\n6. Area problem: a garden is 3 m longer than it is wide, with area 40 m². x(x + 3) = 40 gives x = 5 or x = −8; a width cannot be negative.\n\n## Class activity\n\nGroups factorise six quadratics on cards, then check each by expanding. Fast groups solve the garden problem with different areas.\n\n## Evaluation\n\n1. Factorise x² + 5x + 6.\n2. Solve x² − 2x − 15 = 0.\n3. Solve x² − 16 = 0.\n\n## Assignment\n\nWorksheet on the app, due Wednesday.",
+      "reading": {
+        "title": "Taking expressions apart",
+        "content": "# Factorisation and quadratic equations\n\n## Common factors\n\n**Factorising** is the reverse of expanding. Look for a factor that every term shares and take it outside a bracket.\n\n- 6x + 9 = 3(2x + 3)\n- x² − 4x = x(x − 4)\n\nCheck by expanding: 3(2x + 3) = 6x + 9.\n\n## Factorising x² + bx + c\n\nFind two numbers that **multiply to give c** and **add to give b**.\n\n**Worked example 1.** x² + 7x + 12. Pairs that multiply to 12: 1 and 12, 2 and 6, 3 and 4. Only 3 and 4 add to 7. So x² + 7x + 12 = (x + 3)(x + 4).\n\n**Worked example 2.** x² − x − 12. The product is negative, so one number is negative. Pairs: −4 and 3 (sum −1), 4 and −3 (sum 1), −6 and 2, and so on. We need sum −1, so x² − x − 12 = (x − 4)(x + 3).\n\n## Difference of two squares\n\nx² − 9 = (x − 3)(x + 3), because the middle terms −3x and +3x cancel. In general, a² − b² = (a − b)(a + b).\n\n## Solving quadratic equations\n\nIf two numbers multiply to give 0, at least one of them is 0. So once the equation is factorised and equal to 0, set each bracket equal to 0.\n\n**Worked example 3.** Solve x² − x − 12 = 0.\n\n- (x − 4)(x + 3) = 0\n- x − 4 = 0 or x + 3 = 0\n- x = 4 or x = −3\n\nNotice the signs: the bracket (x + 3) gives x = −3.\n\n**Worked example 4.** Solve x² − 4x = 0. x(x − 4) = 0, so x = 0 or x = 4. Do not divide by x; you would lose the answer 0.\n\n## Problems about area\n\nA school garden is 3 m longer than it is wide, and its area is 40 m². Let the width be x m. Then x(x + 3) = 40, so x² + 3x − 40 = 0, which factorises to (x + 8)(x − 5) = 0. So x = −8 or x = 5. A width cannot be negative, so the garden is 5 m wide and 8 m long."
+      },
+      "cards": [
+        {
+          "front": "Factorising",
+          "back": "Writing an expression as a product of factors; the reverse of expanding."
+        },
+        {
+          "front": "Factorise 6x + 9",
+          "back": "3(2x + 3)"
+        },
+        {
+          "front": "Factorising x² + bx + c",
+          "back": "Find two numbers that multiply to c and add to b."
+        },
+        {
+          "front": "Factorise x² + 7x + 12",
+          "back": "(x + 3)(x + 4)"
+        },
+        {
+          "front": "Difference of two squares",
+          "back": "a² − b² = (a − b)(a + b)"
+        },
+        {
+          "front": "If ab = 0",
+          "back": "Then a = 0 or b = 0."
+        },
+        {
+          "front": "Solve (x − 4)(x + 3) = 0",
+          "back": "x = 4 or x = −3"
+        },
+        {
+          "front": "Why not divide x² − 4x = 0 by x?",
+          "back": "You would lose the solution x = 0."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Factorise 6x + 9.",
+          "options": ["3(2x + 3)", "6(x + 9)", "3(2x + 9)", "9(x + 1)"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Factorise x² + 7x + 12.",
+          "options": [
+            "(x + 2)(x + 6)",
+            "(x + 3)(x + 4)",
+            "(x + 1)(x + 12)",
+            "(x − 3)(x − 4)"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Solve (x − 5)(x + 2) = 0.",
+          "options": [
+            "x = −5 or x = 2",
+            "x = 5 or x = 2",
+            "x = 5 or x = −2",
+            "x = −10"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Factorise x² − 9.",
+          "options": [
+            "(x − 3)²",
+            "(x − 9)(x + 1)",
+            "x(x − 9)",
+            "(x − 3)(x + 3)"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Solve x² − 4x = 0.",
+          "options": [
+            "x = 4 only",
+            "x = 0 or x = 4",
+            "x = 2 or x = −2",
+            "x = −4 or x = 0"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Solve x² − x − 12 = 0 by factorisation.",
+          "markScheme": [
+            "Finds the two numbers that multiply to −12 and add to −1: −4 and 3",
+            "Factorises as (x − 4)(x + 3) = 0",
+            "Sets each factor equal to zero",
+            "x = 4 or x = −3"
+          ],
+          "modelAnswer": "I need two numbers that multiply to give −12 and add to give −1. These are −4 and 3. So x² − x − 12 = (x − 4)(x + 3) = 0. Then x − 4 = 0 or x + 3 = 0, so x = 4 or x = −3.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Numbers that multiply to −12 and add to −1 are −4 and +3.\n(x − 4)(x + 3) = 0\nx − 4 = 0 or x + 3 = 0\nx = 4 or x = −3",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Numbers that multiply to −12 and add to −1 are −4 and +3"
+                },
+                {
+                  "point": 1,
+                  "quote": "(x − 4)(x + 3) = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "x − 4 = 0 or x + 3 = 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = 4 or x = −3"
+                }
+              ],
+              "feedback": "Full marks, every step shown. Getting the signs right on the last line is where most learners slip, and you did not."
+            },
+            {
+              "tier": "full",
+              "text": "Product −12, sum −1: −4 × 3 = −12 and −4 + 3 = −1. So x² − 4x + 3x − 12 = 0, x(x − 4) + 3(x − 4) = 0, (x − 4)(x + 3) = 0. Either x − 4 = 0 giving x = 4, or x + 3 = 0 giving x = −3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "−4 × 3 = −12 and −4 + 3 = −1"
+                },
+                {
+                  "point": 1,
+                  "quote": "(x − 4)(x + 3) = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "Either x − 4 = 0 giving x = 4, or x + 3 = 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "giving x = −3"
+                }
+              ],
+              "feedback": "All four marks. Splitting the middle term and grouping is a reliable method, and you used it neatly."
+            },
+            {
+              "tier": "partial",
+              "text": "(x + 4)(x − 3) = 0\nx + 4 = 0 or x − 3 = 0\nx = −4 or x = 3",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "x + 4 = 0 or x − 3 = 0"
+                }
+              ],
+              "feedback": "Your method of setting each bracket to zero is right. But 4 and −3 add to +1, not −1, so the brackets are (x − 4)(x + 3), giving x = 4 or x = −3. Expand your brackets to check: (x + 4)(x − 3) = x² + x − 12."
+            },
+            {
+              "tier": "partial",
+              "text": "−4 and 3. (x − 4)(x + 3) = 0. So x = −4 or x = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "−4 and 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "(x − 4)(x + 3) = 0"
+                }
+              ],
+              "feedback": "The factorisation is right. At the last step set each bracket to zero: x − 4 = 0 gives x = 4, and x + 3 = 0 gives x = −3. You wrote the numbers from the brackets with their signs unchanged.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "x² − x = 12, x(x − 1) = 12 so x = 12 or x − 1 = 12, x = 13.",
+              "meets": [],
+              "feedback": "The rule 'one factor must be zero' only works when the product equals 0, not 12. Keep everything on one side: x² − x − 12 = 0, then factorise to (x − 4)(x + 3) = 0."
+            },
+            {
+              "tier": "weak",
+              "text": "x² − x = 12, so x = 12 + 1 = 13 and the square root is about 3.6.",
+              "meets": [],
+              "feedback": "A quadratic cannot be solved like a linear equation. Find two numbers that multiply to −12 and add to −1 (−4 and 3) and factorise."
+            }
+          ]
+        },
+        {
+          "prompt": "A rectangular school garden is 3 m longer than it is wide. Its area is 40 m². Let the width be x m. Form an equation, solve it by factorisation, and find the length and width of the garden.",
+          "markScheme": [
+            "Forms x(x + 3) = 40",
+            "Rearranges to x² + 3x − 40 = 0",
+            "Factorises: (x + 8)(x − 5) = 0",
+            "x = 5, rejecting x = −8 because a width cannot be negative",
+            "Width 5 m and length 8 m"
+          ],
+          "modelAnswer": "The length is x + 3, so x(x + 3) = 40. Expanding and rearranging: x² + 3x − 40 = 0. Two numbers that multiply to −40 and add to 3 are 8 and −5, so (x + 8)(x − 5) = 0, and x = −8 or x = 5. A width cannot be negative, so x = 5. The garden is 5 m wide and 5 + 3 = 8 m long. Check: 5 × 8 = 40 m².",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Area = x(x + 3) = 40\nx² + 3x − 40 = 0\n(x + 8)(x − 5) = 0\nx = −8 or x = 5\nWidth cannot be −8 so x = 5.\nWidth = 5 m, length = 8 m. Check 5 × 8 = 40.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Area = x(x + 3) = 40"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² + 3x − 40 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "(x + 8)(x − 5) = 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "Width cannot be −8 so x = 5."
+                },
+                {
+                  "point": 4,
+                  "quote": "Width = 5 m, length = 8 m"
+                }
+              ],
+              "feedback": "Full marks. You gave a reason for rejecting −8 and checked the area, which is complete work."
+            },
+            {
+              "tier": "full",
+              "text": "Length is x + 3 so x(x + 3) = 40 which gives x² + 3x − 40 = 0. 8 × −5 = −40 and 8 − 5 = 3 so (x + 8)(x − 5) = 0. x = 5 or −8 but a garden can't have a negative side so x = 5. The garden is 5 m by 8 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x(x + 3) = 40"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² + 3x − 40 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "(x + 8)(x − 5) = 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = 5 or −8 but a garden can't have a negative side so x = 5"
+                },
+                {
+                  "point": 4,
+                  "quote": "The garden is 5 m by 8 m"
+                }
+              ],
+              "feedback": "All five marks. Showing how you found 8 and −5 makes the factorisation easy to trust."
+            },
+            {
+              "tier": "partial",
+              "text": "x(x + 3) = 40\nx² + 3x − 40 = 0\n(x + 8)(x − 5) = 0\nx = −8 or 5",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x(x + 3) = 40"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² + 3x − 40 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "(x + 8)(x − 5) = 0"
+                }
+              ],
+              "feedback": "Your algebra is right. Now answer the question: a width cannot be −8, so x = 5, and the garden is 5 m wide and 8 m long."
+            },
+            {
+              "tier": "partial",
+              "text": "x(x + 3) = 40 so x² + 3x − 40 = 0. (x − 8)(x + 5) = 0 so x = 8 or x = −5. The width is 8 m and the length is 11 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x(x + 3) = 40"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² + 3x − 40 = 0"
+                }
+              ],
+              "feedback": "Your equation is right, but −8 and 5 add to −3, not +3, so the brackets are (x + 8)(x − 5). That gives a width of 5 m and a length of 8 m. Check your answer: 8 × 11 = 88, not 40."
+            },
+            {
+              "tier": "weak",
+              "text": "40 = 5 × 8 so the width is 5 and length is 8.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "the width is 5 and length is 8"
+                }
+              ],
+              "feedback": "Your dimensions are right, but the question asks you to form and solve an equation: x(x + 3) = 40, then factorise x² + 3x − 40 = 0."
+            },
+            {
+              "tier": "weak",
+              "text": "x² + 3 = 40, x² = 37, x = 6.1",
+              "meets": [],
+              "feedback": "x(x + 3) means x × x plus x × 3, which is x² + 3x, not x² + 3. Rearrange x² + 3x − 40 = 0 and factorise."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Writing equations from real life",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. translate a word problem into an algebraic equation, saying what the letter stands for;\n2. solve the equation and check the answer against the story, not just the equation;\n3. interpret the answer in words, including rejecting answers that cannot happen;\n4. compare two real options, such as two phone plans, using equations.\n\n## Materials\n\nTwo phone tariff leaflets (or a chart copied from them), a keke fare chart, and word-problem cards.\n\n## Starter (5 minutes)\n\nSay: I think of a number, double it and subtract 7, and I get 15. Ask learners to find the number by working backwards, then write the equation 2n − 7 = 15.\n\n## Development\n\n1. Key words: sum (+), difference (−), times or product (×), shared or per (÷), is (=). Build a table on the board.\n2. Always begin with Let x be ... Write it as a sentence.\n3. Ages: Chidi is x years old and his sister is 5 years older; their ages add to 29: x + (x + 5) = 29, so x = 12.\n4. Ages in the future: in 12 years, both people are 12 years older. Show the common mistake of adding 12 to one person only.\n5. Consecutive numbers: n, n + 1, n + 2.\n6. Comparing options: Plan A costs ₦1,000 plus ₦10 a minute, Plan B ₦400 plus ₦25 a minute. Find when they cost the same (40 minutes) and discuss which plan suits a heavy or a light caller.\n7. Interpret: write the final answer as a sentence that answers the question.\n\n## Class activity\n\nGroups receive a story card, write the equation, solve it, and present the answer as a sentence. The class checks each answer against the story.\n\n## Evaluation\n\n1. The sum of three consecutive numbers is 72. Find them.\n2. A bill is ₦500 plus ₦20 per minute. It came to ₦1,300. How many minutes were used?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "From stories to equations",
+        "content": "# Writing equations from real life\n\nMany everyday problems can be solved with algebra. The skill is turning the words into an equation.\n\n## Step by step\n\n1. Say what the letter stands for: Let x be the number of minutes.\n2. Write the other quantities using x.\n3. Find the sentence that says two things are equal, and write the equation.\n4. Solve it.\n5. Check the answer in the **story**, and write it as a sentence.\n\n| Words | Algebra |\n| --- | --- |\n| 5 more than x | x + 5 |\n| twice x | 2x |\n| x shared among 4 | x/4 |\n| three consecutive numbers | n, n + 1, n + 2 |\n\n## Worked example 1: a phone bill\n\nAda's bill is ₦500 a month plus ₦20 for each minute. One month it was ₦1,300. Let m be the minutes used. 500 + 20m = 1,300, so 20m = 800 and m = 40. Ada used 40 minutes.\n\n## Worked example 2: ages\n\nA father is three times as old as his son. In 12 years he will be twice as old as his son. Let the son be x years old; the father is 3x.\n\nIn 12 years **both** are 12 years older: the son is x + 12 and the father 3x + 12. So 3x + 12 = 2(x + 12). Then 3x + 12 = 2x + 24 and x = 12. The son is 12 and the father is 36.\n\n**Check:** in 12 years they will be 24 and 48, and 48 is twice 24.\n\n## Worked example 3: comparing two plans\n\nPlan A: ₦1,000 a month plus ₦10 a minute. Plan B: ₦400 a month plus ₦25 a minute. For m minutes, A costs 1,000 + 10m and B costs 400 + 25m.\n\nThey cost the same when 1,000 + 10m = 400 + 25m, so 600 = 15m and m = 40 minutes.\n\nFor 60 minutes, A costs ₦1,600 and B costs ₦1,900. So Plan B is cheaper for people who call less than 40 minutes a month, and Plan A is cheaper for those who call more.\n\n## Does the answer make sense?\n\nA number of people, tickets or minutes cannot be negative, and a number of people cannot be a fraction. If your answer is like that, check your equation."
+      },
+      "cards": [
+        {
+          "front": "First step in a word problem",
+          "back": "Say what the letter stands for, for example: let m be the number of minutes."
+        },
+        {
+          "front": "5 more than x",
+          "back": "x + 5"
+        },
+        {
+          "front": "Three consecutive whole numbers",
+          "back": "n, n + 1 and n + 2"
+        },
+        {
+          "front": "Ages in 12 years' time",
+          "back": "Add 12 to every person's age."
+        },
+        {
+          "front": "Bill: ₦500 plus ₦20 a minute, total ₦1,300",
+          "back": "500 + 20m = 1,300, so m = 40 minutes."
+        },
+        {
+          "front": "Interpreting an answer",
+          "back": "Write it as a sentence and check it makes sense in the story."
+        },
+        {
+          "front": "When do two plans cost the same?",
+          "back": "When their expressions are equal; solve that equation."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Chidi is x years old. His sister is 5 years older than him. Their ages add up to 29. Which equation shows this?",
+          "options": ["x + 5 = 29", "2x + 5 = 29", "5x = 29", "2x − 5 = 29"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A number is doubled and then 7 is subtracted. The result is 15. What is the number?",
+          "options": ["4", "44", "11", "16"],
+          "answer": "C"
+        },
+        {
+          "prompt": "The perimeter of a square plot of land is 48 m. How long is each side?",
+          "options": ["12 m", "24 m", "44 m", "192 m"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The sum of three consecutive whole numbers is 72. What is the smallest of them?",
+          "options": ["24", "22", "25", "23"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A phone bill is ₦500 a month plus ₦20 for each minute of calls. One month the bill was ₦1,300. How many minutes were used?",
+          "options": ["65", "40", "90", "26"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A father is three times as old as his son. In 12 years' time, the father will be twice as old as the son. Form an equation and find their present ages.",
+          "markScheme": [
+            "Lets the son be x and the father 3x",
+            "Forms 3x + 12 = 2(x + 12)",
+            "Solves to x = 12",
+            "States the son is 12 and the father is 36"
+          ],
+          "modelAnswer": "Let the son be x years old, so the father is 3x. In 12 years they will be x + 12 and 3x + 12, and the father will be twice as old: 3x + 12 = 2(x + 12). So 3x + 12 = 2x + 24, which gives x = 12. The son is 12 years old and the father is 36. Check: in 12 years they will be 24 and 48, and 48 = 2 × 24.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Let son = x, father = 3x.\nIn 12 years: son x + 12, father 3x + 12.\n3x + 12 = 2(x + 12)\n3x + 12 = 2x + 24\nx = 12\nSon is 12 years, father is 36 years. Check 48 = 2 × 24.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Let son = x, father = 3x."
+                },
+                {
+                  "point": 1,
+                  "quote": "3x + 12 = 2(x + 12)"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 12"
+                },
+                {
+                  "point": 3,
+                  "quote": "Son is 12 years, father is 36 years."
+                }
+              ],
+              "feedback": "Full marks. You added 12 to both ages, and your check shows the answer fits the story."
+            },
+            {
+              "tier": "full",
+              "text": "If the son is x the father is 3x. After 12 years the father is 3x + 12 and that is double of x + 12, so 3x + 12 = 2(x + 12). Opening the bracket 3x + 12 = 2x + 24, x = 24 − 12 = 12. The son is 12 now and the father is 3 × 12 = 36.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "If the son is x the father is 3x"
+                },
+                {
+                  "point": 1,
+                  "quote": "so 3x + 12 = 2(x + 12)"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 24 − 12 = 12"
+                },
+                {
+                  "point": 3,
+                  "quote": "The son is 12 now and the father is 3 × 12 = 36"
+                }
+              ],
+              "feedback": "All four marks, explained clearly in words. Add a quick check (24 and 48) to make it complete."
+            },
+            {
+              "tier": "partial",
+              "text": "Son = x, father = 3x. 3x + 12 = 2x. x = −12.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Son = x, father = 3x"
+                }
+              ],
+              "feedback": "Good start. In 12 years the son is also 12 years older, so the right side is 2(x + 12), not 2x. An age of −12 cannot be right, which should tell you to look again."
+            },
+            {
+              "tier": "partial",
+              "text": "Son x, father 3x. 3x + 12 = 2(x + 12), 3x + 12 = 2x + 12, x = 0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Son x, father 3x"
+                },
+                {
+                  "point": 1,
+                  "quote": "3x + 12 = 2(x + 12)"
+                }
+              ],
+              "feedback": "Your equation is exactly right. When you expand 2(x + 12), multiply the 12 by 2 as well: 2x + 24. Then x = 12, so the son is 12 and the father 36.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The father is 3 times and then 2 times so 3 − 2 = 1, the son is 12 and the father is 24.",
+              "meets": [],
+              "feedback": "Guessing from the numbers does not work: 24 is only twice 12, not three times. Let the son be x and the father 3x, then write their ages in 12 years and form an equation."
+            },
+            {
+              "tier": "weak",
+              "text": "Father = 3x, son = x. 3x = 2x so x = 12.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Father = 3x, son = x"
+                }
+              ],
+              "feedback": "You chose the letters well, but 3x = 2x is not the story. In 12 years the ages are 3x + 12 and x + 12, and the first is twice the second: 3x + 12 = 2(x + 12)."
+            }
+          ]
+        },
+        {
+          "prompt": "A network offers two monthly phone plans. Plan A costs ₦1,000 plus ₦10 per minute of calls. Plan B costs ₦400 plus ₦25 per minute. (a) Write an expression for the cost of each plan for m minutes. (b) For how many minutes do the plans cost the same? (c) Mrs Bello talks for about 60 minutes a month. Which plan should she choose? Explain using the costs.",
+          "markScheme": [
+            "Plan A = 1,000 + 10m and Plan B = 400 + 25m",
+            "Forms 1,000 + 10m = 400 + 25m",
+            "m = 40 minutes",
+            "Cost at 60 minutes: Plan A ₦1,600 and Plan B ₦1,900",
+            "Concludes Plan A is cheaper for her, because she talks more than 40 minutes"
+          ],
+          "modelAnswer": "(a) Plan A costs 1,000 + 10m naira and Plan B costs 400 + 25m naira. (b) They cost the same when 1,000 + 10m = 400 + 25m. Then 600 = 15m, so m = 40 minutes. (c) At 60 minutes, Plan A costs 1,000 + 600 = ₦1,600 and Plan B costs 400 + 1,500 = ₦1,900. She should choose Plan A: it saves ₦300, and Plan A is cheaper for anyone who talks more than 40 minutes.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A = 1000 + 10m, B = 400 + 25m\n(b) 1000 + 10m = 400 + 25m, 600 = 15m, m = 40 minutes\n(c) A = 1000 + 600 = ₦1,600 and B = 400 + 1500 = ₦1,900. She should choose Plan A because it is ₦300 cheaper; after 40 minutes A is always cheaper.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = 1000 + 10m, B = 400 + 25m"
+                },
+                {
+                  "point": 1,
+                  "quote": "1000 + 10m = 400 + 25m"
+                },
+                {
+                  "point": 2,
+                  "quote": "m = 40 minutes"
+                },
+                {
+                  "point": 3,
+                  "quote": "A = 1000 + 600 = ₦1,600 and B = 400 + 1500 = ₦1,900"
+                },
+                {
+                  "point": 4,
+                  "quote": "She should choose Plan A because it is ₦300 cheaper; after 40 minutes A is always cheaper."
+                }
+              ],
+              "feedback": "Full marks. Linking your answer in (c) back to the 40 minutes in (b) is exactly the interpretation the question wanted."
+            },
+            {
+              "tier": "full",
+              "text": "Plan A: 1,000 + 10m. Plan B: 400 + 25m. Same cost when 1,000 + 10m = 400 + 25m; 15m = 600 so m = 40. For 60 minutes Plan A is ₦1,600 and Plan B is ₦1,900, so Plan A is better for her since she talks more than 40 minutes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Plan A: 1,000 + 10m. Plan B: 400 + 25m."
+                },
+                {
+                  "point": 1,
+                  "quote": "Same cost when 1,000 + 10m = 400 + 25m"
+                },
+                {
+                  "point": 2,
+                  "quote": "15m = 600 so m = 40"
+                },
+                {
+                  "point": 3,
+                  "quote": "For 60 minutes Plan A is ₦1,600 and Plan B is ₦1,900"
+                },
+                {
+                  "point": 4,
+                  "quote": "so Plan A is better for her since she talks more than 40 minutes"
+                }
+              ],
+              "feedback": "All five marks, short and complete."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A = 1000 + 10m, B = 400 + 25m. (b) 1000 + 10m = 400 + 25m, 1400 = 35m, m = 40. (c) Plan B because it is only ₦400.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = 1000 + 10m, B = 400 + 25m"
+                },
+                {
+                  "point": 1,
+                  "quote": "1000 + 10m = 400 + 25m"
+                }
+              ],
+              "feedback": "Your expressions and equation are right. In (b), you added instead of moving terms across: 1,000 − 400 = 600 and 25m − 10m = 15m, so m = 40 (your 40 came out right by luck). In (c), work out both costs for 60 minutes: ₦1,600 for A and ₦1,900 for B, so A is cheaper."
+            },
+            {
+              "tier": "partial",
+              "text": "Plan A costs 1000 + 10 × 60 = 1600. Plan B costs 400 + 25 × 60 = 1900. Choose Plan A because it is cheaper.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Plan A costs 1000 + 10 × 60 = 1600. Plan B costs 400 + 25 × 60 = 1900."
+                },
+                {
+                  "point": 4,
+                  "quote": "Choose Plan A because it is cheaper."
+                }
+              ],
+              "feedback": "Part (c) is worked out correctly. You skipped (a) and (b): write each plan with m, 1,000 + 10m and 400 + 25m, and solve 1,000 + 10m = 400 + 25m to find they cost the same at 40 minutes."
+            },
+            {
+              "tier": "weak",
+              "text": "Plan B is cheaper because ₦400 is less than ₦1,000.",
+              "meets": [],
+              "feedback": "Plan B starts cheaper, but each minute costs more on it. Work out the total for 60 minutes on each plan: A is ₦1,600 and B is ₦1,900."
+            },
+            {
+              "tier": "weak",
+              "text": "A = 1010m and B = 425m. 1010m = 425m so m = 0.",
+              "meets": [],
+              "feedback": "1,000 and 10m are unlike terms, so they cannot be joined into 1010m. The cost of Plan A is 1,000 + 10m: a fixed ₦1,000 plus ₦10 for each minute."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Angles in triangles and quadrilaterals",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name acute, right, obtuse, straight and reflex angles and measure them with a protractor;\n2. use angles on a straight line (180°) and angles at a point (360°);\n3. use the angle sum of a triangle (180°) and of a quadrilateral (360°) to find missing angles;\n4. form and solve equations from angle facts.\n\n## Materials\n\nProtractors, rulers, paper triangles for tearing, a cardboard quadrilateral, and a door to show a right angle and a straight angle.\n\n## Starter (5 minutes)\n\nOpen the classroom door slowly. Ask learners to call out when the angle is acute, right, obtuse, and when the door is flat against the wall (straight).\n\n## Development\n\n1. Classify angles: acute (less than 90°), right (90°), obtuse (between 90° and 180°), straight (180°), reflex (between 180° and 360°).\n2. Angles on a straight line add to 180°; angles at a point add to 360°. Work: x and 3x on a straight line give 4x = 180°, x = 45°.\n3. Each learner cuts out a triangle, tears off the three corners and places them together on a straight line. They make 180°.\n4. Draw a diagonal in a quadrilateral to make two triangles: 2 × 180° = 360°.\n5. Isosceles triangles have two equal base angles. If the vertex angle is 40°, each base angle is (180 − 40) ÷ 2 = 70°.\n6. Equations: angles x, 2x and x + 20 in a triangle give 4x + 20 = 180, so x = 40.\n\n## Class activity\n\nGroups measure the four angles of a cardboard quadrilateral, add them, and compare totals. Discuss why the totals are close to, but not exactly, 360°.\n\n## Evaluation\n\n1. Two angles of a triangle are 48° and 67°. Find the third.\n2. Three angles of a quadrilateral are 85°, 95° and 110°. Find the fourth.\n\n## Assignment\n\nProblem set on the app, due Tuesday.",
+      "reading": {
+        "title": "How angles add up",
+        "content": "# Angles in triangles and quadrilaterals\n\n## Types of angle\n\n| Angle | Size |\n| --- | --- |\n| Acute | less than 90° |\n| Right | exactly 90° |\n| Obtuse | between 90° and 180° |\n| Straight | exactly 180° |\n| Reflex | between 180° and 360° |\n\n## Angle facts\n\n- Angles on a **straight line** add up to **180°**.\n- Angles at a **point** add up to **360°**.\n- The angles of a **triangle** add up to **180°**. Tear the three corners off a paper triangle and they fit together on a straight line.\n- The angles of a **quadrilateral** add up to **360°**. A diagonal splits it into two triangles, and 2 × 180° = 360°.\n- In an **isosceles triangle**, the two base angles are equal. In an **equilateral triangle**, every angle is 60°.\n\n## Worked examples\n\n**Example 1.** Two angles of a triangle are 48° and 67°. The third is 180° − 48° − 67° = 65°.\n\n**Example 2.** Three angles of a quadrilateral are 85°, 95° and 110°. The fourth is 360° − 290° = 70°.\n\n**Example 3.** An isosceles triangle has a vertex angle of 40°. The base angles share the rest: (180° − 40°) ÷ 2 = 70° each.\n\n## Using equations\n\nWhen angles are given with letters, add them, set the total equal to the angle sum, and solve.\n\n**Example 4.** The angles of a triangle are x, 2x and (x + 20)°.\n\n- x + 2x + x + 20 = 180\n- 4x + 20 = 180\n- 4x = 160, so x = 40\n\nThe angles are 40°, 80° and 60°. **Check:** 40 + 80 + 60 = 180.\n\n## Exterior angles\n\nIf one side of a shape is extended, the angle outside the shape and the angle inside lie on a straight line, so they add up to 180°. An interior angle of 100° gives an exterior angle of 80°.\n\nAlways give a reason for each step, for example \"angles in a triangle add up to 180°\"."
+      },
+      "cards": [
+        {
+          "front": "Acute angle",
+          "back": "Less than 90°."
+        },
+        {
+          "front": "Obtuse angle",
+          "back": "Between 90° and 180°."
+        },
+        {
+          "front": "Reflex angle",
+          "back": "Between 180° and 360°."
+        },
+        {
+          "front": "Angles on a straight line",
+          "back": "Add up to 180°."
+        },
+        {
+          "front": "Angles at a point",
+          "back": "Add up to 360°."
+        },
+        {
+          "front": "Angle sum of a triangle",
+          "back": "180°"
+        },
+        {
+          "front": "Angle sum of a quadrilateral",
+          "back": "360°"
+        },
+        {
+          "front": "Base angles of an isosceles triangle",
+          "back": "They are equal."
+        },
+        {
+          "front": "Exterior angle with interior angle 100°",
+          "back": "180° − 100° = 80°"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What type of angle is 135°?",
+          "options": ["Acute", "Right", "Obtuse", "Reflex"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Two angles of a triangle are 48° and 67°. Find the third angle.",
+          "options": ["65°", "115°", "245°", "75°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Three angles of a quadrilateral are 85°, 95° and 110°. Find the fourth angle.",
+          "options": ["290°", "70°", "90°", "250°"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Two angles, x and 3x, lie together on a straight line. Find x.",
+          "options": ["60°", "90°", "30°", "45°"],
+          "answer": "D"
+        },
+        {
+          "prompt": "The vertex angle of an isosceles triangle is 40°. What is the size of each base angle?",
+          "options": ["140°", "40°", "70°", "50°"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The angles of a triangle are x, 2x and (x + 20)°. Form an equation, find x, and state the three angles.",
+          "markScheme": [
+            "Uses the angle sum of a triangle: x + 2x + x + 20 = 180",
+            "Simplifies to 4x = 160",
+            "x = 40",
+            "States the angles: 40°, 80° and 60°"
+          ],
+          "modelAnswer": "The angles of a triangle add up to 180°, so x + 2x + x + 20 = 180. That gives 4x + 20 = 180, so 4x = 160 and x = 40. The angles are 40°, 2 × 40° = 80° and 40° + 20° = 60°. Check: 40 + 80 + 60 = 180.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Angles in a triangle = 180°\nx + 2x + x + 20 = 180\n4x + 20 = 180\n4x = 160\nx = 40\nThe angles are 40°, 80° and 60°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + 2x + x + 20 = 180"
+                },
+                {
+                  "point": 1,
+                  "quote": "4x = 160"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 40"
+                },
+                {
+                  "point": 3,
+                  "quote": "The angles are 40°, 80° and 60°."
+                }
+              ],
+              "feedback": "Full marks, and you stated the angle fact you used. A check that 40 + 80 + 60 = 180 would finish it."
+            },
+            {
+              "tier": "full",
+              "text": "All the angles add to 180 so 4x + 20 = 180 since x + 2x + x = 4x. Take 20 from both sides, 4x = 160, x = 40°. So the angles are x = 40°, 2x = 80°, x + 20 = 60°, and 40 + 80 + 60 = 180.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "All the angles add to 180 so 4x + 20 = 180 since x + 2x + x = 4x"
+                },
+                {
+                  "point": 1,
+                  "quote": "4x = 160"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 40°"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = 40°, 2x = 80°, x + 20 = 60°"
+                }
+              ],
+              "feedback": "All four marks, with a check at the end. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "x + 2x + x + 20 = 180, 4x + 20 = 180, 4x = 160, x = 40. The angles are 40°, 80° and 40°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + 2x + x + 20 = 180"
+                },
+                {
+                  "point": 1,
+                  "quote": "4x = 160"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 40"
+                }
+              ],
+              "feedback": "Your equation and x = 40 are right. The third angle is x + 20 = 60°, not 40°; your three angles add to 160°, not 180°, which shows the slip."
+            },
+            {
+              "tier": "partial",
+              "text": "x + 2x + x + 20 = 180\n3x + 20 = 180\n3x = 160\nx = 53.3",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + 2x + x + 20 = 180"
+                }
+              ],
+              "feedback": "Your equation is right. Count the x terms again: x + 2x + x = 4x, not 3x. Then 4x = 160 and x = 40, giving angles of 40°, 80° and 60°."
+            },
+            {
+              "tier": "weak",
+              "text": "A triangle has three equal angles of 60° so x = 60.",
+              "meets": [],
+              "feedback": "Only an equilateral triangle has three 60° angles, and here the angles are different: x, 2x and x + 20. Add them and set the total equal to 180°."
+            },
+            {
+              "tier": "weak",
+              "text": "x + 2x + x + 20 = 4x + 20 = 24x. 24x = 180, x = 7.5",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "x + 2x + x + 20"
+                }
+              ],
+              "feedback": "4x and 20 are unlike terms, so they cannot be joined into 24x. Keep 4x + 20 = 180, take 20 from both sides, and divide by 4."
+            }
+          ]
+        },
+        {
+          "prompt": "In quadrilateral ABCD, angle A = 2y, angle B = 3y, angle C = 100° and angle D = 110°. (a) Find y, and the sizes of angles A and B. (b) Side DC is extended beyond C to a point E. Find angle BCE, giving a reason.",
+          "markScheme": [
+            "States that the angles of a quadrilateral add up to 360°",
+            "Forms 2y + 3y + 100 + 110 = 360",
+            "y = 30",
+            "Angle A = 60° and angle B = 90°",
+            "Angle BCE = 180° − 100° = 80°, because angles on a straight line add up to 180°"
+          ],
+          "modelAnswer": "(a) The angles of a quadrilateral add up to 360°, so 2y + 3y + 100 + 110 = 360. Then 5y + 210 = 360, 5y = 150 and y = 30. Angle A = 2 × 30 = 60° and angle B = 3 × 30 = 90°. (b) D, C and E lie on a straight line, so angle BCD + angle BCE = 180°. Angle BCE = 180° − 100° = 80°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Sum of angles in a quadrilateral = 360°. 2y + 3y + 100 + 110 = 360, 5y + 210 = 360, 5y = 150, y = 30. A = 60°, B = 90°.\n(b) BCE = 180 − 100 = 80° (angles on a straight line).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sum of angles in a quadrilateral = 360°"
+                },
+                {
+                  "point": 1,
+                  "quote": "2y + 3y + 100 + 110 = 360"
+                },
+                {
+                  "point": 2,
+                  "quote": "y = 30"
+                },
+                {
+                  "point": 3,
+                  "quote": "A = 60°, B = 90°"
+                },
+                {
+                  "point": 4,
+                  "quote": "BCE = 180 − 100 = 80° (angles on a straight line)"
+                }
+              ],
+              "feedback": "Full marks, with a reason for each part. This is how a geometry answer should look."
+            },
+            {
+              "tier": "full",
+              "text": "A quadrilateral's angles make 360°. 5y + 210 = 360 because 2y + 3y + 100 + 110 = 360. So 5y = 150 and y = 30. Angle A is 60° and angle B is 90° (a right angle). DCE is a straight line so angle BCE and angle C make 180°, BCE = 80°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A quadrilateral's angles make 360°"
+                },
+                {
+                  "point": 1,
+                  "quote": "2y + 3y + 100 + 110 = 360"
+                },
+                {
+                  "point": 2,
+                  "quote": "y = 30"
+                },
+                {
+                  "point": 3,
+                  "quote": "Angle A is 60° and angle B is 90°"
+                },
+                {
+                  "point": 4,
+                  "quote": "DCE is a straight line so angle BCE and angle C make 180°, BCE = 80°"
+                }
+              ],
+              "feedback": "All five marks. Noticing angle B is a right angle is a nice touch."
+            },
+            {
+              "tier": "partial",
+              "text": "2y + 3y + 100 + 110 = 360\n5y = 150\ny = 30\nA = 60, B = 90\nBCE = 100° (vertically opposite)",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "2y + 3y + 100 + 110 = 360"
+                },
+                {
+                  "point": 2,
+                  "quote": "y = 30"
+                },
+                {
+                  "point": 3,
+                  "quote": "A = 60, B = 90"
+                }
+              ],
+              "feedback": "Part (a) is right, though you should state that a quadrilateral's angles add to 360°. In (b), BCE and angle C lie together on the straight line DCE, so BCE = 180° − 100° = 80°. Vertically opposite angles need two crossing lines.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Angles in a quadrilateral add to 360°. 2y + 3y = 360 − 210 = 150. 5y = 150, y = 30. A = 2 × 30 = 32°, B = 3 × 30 = 33°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Angles in a quadrilateral add to 360°"
+                },
+                {
+                  "point": 1,
+                  "quote": "2y + 3y = 360 − 210 = 150"
+                },
+                {
+                  "point": 2,
+                  "quote": "y = 30"
+                }
+              ],
+              "feedback": "Good method to y = 30. Then 2y means 2 × 30 = 60°, not 32°, and 3y = 90°. You also need part (b): angle BCE = 180° − 100° = 80°."
+            },
+            {
+              "tier": "weak",
+              "text": "2y + 3y + 100 + 110 = 180, 5y = −30, y = −6.",
+              "meets": [],
+              "feedback": "180° is the angle sum of a triangle. A quadrilateral's angles add to 360°, so 5y + 210 = 360 and y = 30. A negative angle should warn you something is wrong."
+            },
+            {
+              "tier": "weak",
+              "text": "The angles of a quadrilateral are all 90° so A = 90 and B = 90 and y = 45.",
+              "meets": [],
+              "feedback": "Only rectangles and squares have four right angles, and here C is 100°. Use the total, 360°: 2y + 3y + 100 + 110 = 360, which gives y = 30."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Plane shapes and solid figures",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the properties of triangles and of quadrilaterals (square, rectangle, parallelogram, rhombus, trapezium, kite) in terms of sides, angles and diagonals;\n2. name the parts of a circle: centre, radius, diameter, chord, arc and circumference;\n3. identify cubes, cuboids, cylinders, cones and spheres and count their faces, edges and vertices;\n4. check Euler's rule, F + V − E = 2, for solids with flat faces.\n\n## Materials\n\nEveryday solids: a chalk box (cuboid), a dice (cube), a Milo tin (cylinder), a funnel or a party hat (cone), a football (sphere); paper cut-outs of quadrilaterals; string and a drawing pin for circles.\n\n## Starter (5 minutes)\n\nPass round the chalk box, the Milo tin and the football. Ask each group to describe one solid without naming it while the class guesses.\n\n## Development\n\n1. Triangles by sides (equilateral, isosceles, scalene) and by angles (acute, right, obtuse).\n2. Quadrilaterals: fold and measure the paper cut-outs to discover which have equal sides, right angles, parallel sides and equal diagonals. Build a table.\n3. Discuss the family of quadrilaterals: every square is a rectangle and a rhombus; not every rectangle is a square.\n4. The circle: draw one with string and a pin. Label the radius, diameter (twice the radius), chord, arc and circumference.\n5. Solids: count the faces, edges and vertices of the cube, cuboid and a square-based pyramid. Note that the cylinder, cone and sphere have curved surfaces.\n6. Check F + V − E = 2 for the cube: 6 + 8 − 12 = 2.\n\n## Class activity\n\nGroups complete a table of faces, edges and vertices for the solids on their desk, then check Euler's rule for each solid with flat faces.\n\n## Evaluation\n\n1. Name a quadrilateral with exactly one pair of parallel sides.\n2. How many edges does a cuboid have?\n3. What is the diameter of a circle of radius 7 cm?\n\n## Assignment\n\nWorksheet on the app, due Thursday.",
+      "reading": {
+        "title": "Shapes around us",
+        "content": "# Plane shapes and solid figures\n\n## Plane (2D) shapes\n\nA plane shape is flat. It has length and width but no thickness.\n\n**Triangles** can be equilateral (three equal sides, each angle 60°), isosceles (two equal sides and two equal angles) or scalene (no equal sides).\n\n**Quadrilaterals** have four sides.\n\n| Shape | Sides | Angles | Diagonals |\n| --- | --- | --- | --- |\n| Square | all equal, opposite sides parallel | all 90° | equal, cross at 90° |\n| Rectangle | opposite sides equal and parallel | all 90° | equal |\n| Rhombus | all equal, opposite sides parallel | opposite angles equal | cross at 90° |\n| Parallelogram | opposite sides equal and parallel | opposite angles equal | bisect each other |\n| Trapezium | one pair of parallel sides | | |\n| Kite | two pairs of equal adjacent sides | one pair of equal angles | cross at 90° |\n\nA square has every property of a rectangle, so every square is a rectangle. But a rectangle 6 cm by 4 cm does not have four equal sides, so not every rectangle is a square.\n\n**The circle.** The **radius** goes from the centre to the edge. The **diameter** goes right across through the centre and is twice the radius. A **chord** joins two points on the circle. An **arc** is part of the circumference, the distance round the circle.\n\n## Solid (3D) figures\n\n| Solid | Everyday example | Faces | Edges | Vertices |\n| --- | --- | --- | --- | --- |\n| Cube | a dice | 6 | 12 | 8 |\n| Cuboid | a chalk box | 6 | 12 | 8 |\n| Square-based pyramid | a tent roof | 5 | 8 | 5 |\n| Cylinder | a Milo tin | 2 flat, 1 curved | 2 curved | 0 |\n| Cone | a funnel | 1 flat, 1 curved | 1 curved | 1 |\n| Sphere | a football | 1 curved | 0 | 0 |\n\n## Euler's rule\n\nFor any solid with flat faces, **faces + vertices − edges = 2**.\n\n**Worked example.** For a cube: 6 + 8 − 12 = 2. For a square-based pyramid: 5 + 5 − 8 = 2.\n\nA vertex is a corner. An edge is where two faces meet."
+      },
+      "cards": [
+        {
+          "front": "Isosceles triangle",
+          "back": "Two equal sides and two equal base angles."
+        },
+        {
+          "front": "Rhombus",
+          "back": "Four equal sides, opposite sides parallel, diagonals cross at right angles."
+        },
+        {
+          "front": "Trapezium",
+          "back": "A quadrilateral with exactly one pair of parallel sides."
+        },
+        {
+          "front": "Is every square a rectangle?",
+          "back": "Yes: it has four right angles and opposite sides equal and parallel."
+        },
+        {
+          "front": "Diameter",
+          "back": "A line through the centre from edge to edge; twice the radius."
+        },
+        {
+          "front": "Chord",
+          "back": "A straight line joining two points on a circle."
+        },
+        {
+          "front": "Faces, edges and vertices of a cuboid",
+          "back": "6 faces, 12 edges, 8 vertices."
+        },
+        {
+          "front": "Euler's rule",
+          "back": "Faces + vertices − edges = 2."
+        },
+        {
+          "front": "Which solid has the shape of a Milo tin?",
+          "back": "Cylinder."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "How many faces does a cuboid have?",
+          "options": ["4", "6", "8", "12"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A quadrilateral has four equal sides, but its angles are not right angles. What is it?",
+          "options": ["Rectangle", "Trapezium", "Rhombus", "Kite"],
+          "answer": "C"
+        },
+        {
+          "prompt": "How many edges does a cube have?",
+          "options": ["12", "6", "8", "24"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which solid has the same shape as a Milo tin?",
+          "options": ["Cone", "Cuboid", "Sphere", "Cylinder"],
+          "answer": "D"
+        },
+        {
+          "prompt": "What is the name of a straight line from the centre of a circle to its edge?",
+          "options": ["Diameter", "Chord", "Radius", "Arc"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State the number of faces, edges and vertices of a cube and of a square-based pyramid. Show that F + V − E = 2 for each solid.",
+          "markScheme": [
+            "Cube: 6 faces, 12 edges, 8 vertices",
+            "Square-based pyramid: 5 faces, 8 edges, 5 vertices",
+            "Cube: 6 + 8 − 12 = 2",
+            "Pyramid: 5 + 5 − 8 = 2"
+          ],
+          "modelAnswer": "A cube has 6 faces, 12 edges and 8 vertices. A square-based pyramid has 5 faces (the square base and 4 triangles), 8 edges (4 round the base and 4 up to the top) and 5 vertices (4 at the base and 1 at the top). For the cube, F + V − E = 6 + 8 − 12 = 2. For the pyramid, F + V − E = 5 + 5 − 8 = 2.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Cube: F = 6, E = 12, V = 8. Pyramid: F = 5, E = 8, V = 5.\nCube: 6 + 8 − 12 = 2\nPyramid: 5 + 5 − 8 = 2",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cube: F = 6, E = 12, V = 8"
+                },
+                {
+                  "point": 1,
+                  "quote": "Pyramid: F = 5, E = 8, V = 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cube: 6 + 8 − 12 = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "Pyramid: 5 + 5 − 8 = 2"
+                }
+              ],
+              "feedback": "Full marks, laid out neatly. Every count is correct."
+            },
+            {
+              "tier": "full",
+              "text": "A cube like a dice has 6 square faces, 12 edges and 8 corners. The pyramid has a square bottom and 4 triangles so 5 faces, 4 edges at the bottom and 4 going up makes 8 edges, and 4 corners at the bottom plus the top one makes 5 vertices. Cube 6 + 8 − 12 = 2 and pyramid 5 + 5 − 8 = 2 so the rule works for both.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A cube like a dice has 6 square faces, 12 edges and 8 corners"
+                },
+                {
+                  "point": 1,
+                  "quote": "so 5 faces, 4 edges at the bottom and 4 going up makes 8 edges, and 4 corners at the bottom plus the top one makes 5 vertices"
+                },
+                {
+                  "point": 2,
+                  "quote": "Cube 6 + 8 − 12 = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "pyramid 5 + 5 − 8 = 2"
+                }
+              ],
+              "feedback": "All four marks. Explaining how you counted the pyramid's edges and vertices shows real understanding."
+            },
+            {
+              "tier": "partial",
+              "text": "Cube: 6 faces, 12 edges, 8 vertices. 6 + 8 − 12 = 2. Pyramid: 5 faces, 8 edges, 4 vertices. 5 + 4 − 8 = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cube: 6 faces, 12 edges, 8 vertices"
+                },
+                {
+                  "point": 2,
+                  "quote": "6 + 8 − 12 = 2"
+                }
+              ],
+              "feedback": "The cube is all correct. The pyramid has 5 vertices: 4 at the base and 1 at the top. Then 5 + 5 − 8 = 2; when the rule fails, recount."
+            },
+            {
+              "tier": "partial",
+              "text": "Cube has 6 faces, 8 edges and 12 vertices. Pyramid has 5 faces, 8 edges, 5 vertices and 5 + 5 − 8 = 2.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Pyramid has 5 faces, 8 edges, 5 vertices"
+                },
+                {
+                  "point": 3,
+                  "quote": "5 + 5 − 8 = 2"
+                }
+              ],
+              "feedback": "The pyramid is right. For the cube you swapped edges and vertices: it has 8 corners (vertices) and 12 edges. Then 6 + 8 − 12 = 2.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A cube has 6 sides and a pyramid has 3 sides because it is a triangle.",
+              "meets": [],
+              "feedback": "A square-based pyramid is a solid with a square base and four triangular faces, so 5 faces. Count the faces, the edges and the corners (vertices) of each solid separately."
+            },
+            {
+              "tier": "weak",
+              "text": "Cube F = 6. Pyramid F = 4. F + V − E = 2 is always true so it works.",
+              "meets": [],
+              "feedback": "The question asks you to show it, using your own counts. You need edges and vertices too: a cube has 12 edges and 8 vertices, and a square-based pyramid has 5 faces, 8 edges and 5 vertices."
+            }
+          ]
+        },
+        {
+          "prompt": "Kemi says: \"Every square is a rectangle, but not every rectangle is a square.\" Is Kemi right? Explain using the properties of the sides, angles and diagonals of both shapes.",
+          "markScheme": [
+            "States the properties of a rectangle: four right angles, opposite sides equal and parallel",
+            "Shows that a square has all these properties, so a square is a rectangle",
+            "Explains that a rectangle need not have four equal sides, so it is not always a square",
+            "Compares the diagonals: both are equal, but only a square's diagonals cross at right angles"
+          ],
+          "modelAnswer": "Kemi is right. A rectangle has four right angles, and its opposite sides are equal and parallel. A square has four right angles and its opposite sides are equal and parallel too, so a square has every property of a rectangle and is a special rectangle. But a rectangle does not need all four sides equal: a 6 cm by 4 cm rectangle is not a square. The diagonals of both shapes are equal, but only the square's diagonals cross at right angles.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Yes she is right. A rectangle has 4 right angles and opposite sides equal and parallel. A square also has 4 right angles and opposite sides equal and parallel, so it is a rectangle too. But a rectangle can be long and short like 6 cm by 4 cm so its sides are not all equal and it is not a square. Both have equal diagonals but the square's diagonals meet at 90° and the rectangle's do not.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A rectangle has 4 right angles and opposite sides equal and parallel"
+                },
+                {
+                  "point": 1,
+                  "quote": "A square also has 4 right angles and opposite sides equal and parallel, so it is a rectangle too"
+                },
+                {
+                  "point": 2,
+                  "quote": "a rectangle can be long and short like 6 cm by 4 cm so its sides are not all equal and it is not a square"
+                },
+                {
+                  "point": 3,
+                  "quote": "Both have equal diagonals but the square's diagonals meet at 90° and the rectangle's do not"
+                }
+              ],
+              "feedback": "Full marks. Your 6 cm by 4 cm example makes the second half of the argument convincing."
+            },
+            {
+              "tier": "full",
+              "text": "Kemi is correct. For a shape to be a rectangle it needs four 90° angles and opposite sides equal and parallel; a square has all of that, so a square passes the test. A rectangle fails the square test because a square needs all four sides equal. Diagonals: equal in both shapes, but they are perpendicular only in the square.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "For a shape to be a rectangle it needs four 90° angles and opposite sides equal and parallel"
+                },
+                {
+                  "point": 1,
+                  "quote": "a square has all of that, so a square passes the test"
+                },
+                {
+                  "point": 2,
+                  "quote": "A rectangle fails the square test because a square needs all four sides equal"
+                },
+                {
+                  "point": 3,
+                  "quote": "Diagonals: equal in both shapes, but they are perpendicular only in the square"
+                }
+              ],
+              "feedback": "All four marks. Treating the properties as a test the shape must pass is a clear way to argue."
+            },
+            {
+              "tier": "partial",
+              "text": "Yes. A square has four right angles like a rectangle so it is a rectangle. A rectangle has two long sides and two short sides so it is not a square.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A square has four right angles like a rectangle so it is a rectangle"
+                },
+                {
+                  "point": 2,
+                  "quote": "A rectangle has two long sides and two short sides so it is not a square"
+                }
+              ],
+              "feedback": "The argument is right. Give the full properties of a rectangle (four right angles, opposite sides equal and parallel) and compare the diagonals: equal in both, but at right angles only in a square."
+            },
+            {
+              "tier": "partial",
+              "text": "Kemi is right. A rectangle has 4 right angles and opposite sides equal. The diagonals of a rectangle and a square are equal and they both cut at right angles.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A rectangle has 4 right angles and opposite sides equal"
+                }
+              ],
+              "feedback": "The rectangle's properties are right, but the diagonals of a rectangle that is not a square do not cross at right angles; only the square's do. Then say why a square has all of a rectangle's properties, and why a rectangle need not be a square."
+            },
+            {
+              "tier": "weak",
+              "text": "No she is wrong. A square and a rectangle are different shapes because a square has equal sides.",
+              "meets": [],
+              "feedback": "A square does have four equal sides, but that does not stop it being a rectangle. Check the square against the rectangle's properties: four right angles, opposite sides equal and parallel. It has them all."
+            },
+            {
+              "tier": "weak",
+              "text": "Yes because they both have four sides.",
+              "meets": [],
+              "feedback": "Many shapes have four sides, such as a kite or a trapezium. Compare the angles, the sides and the diagonals of the square and the rectangle."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Perimeter, area and volume",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the perimeter of rectangles, squares, triangles and circles (circumference = 2πr);\n2. find the area of rectangles, triangles, parallelograms, trapeziums and circles (πr²);\n3. find the volume of cubes, cuboids and cylinders (πr²h);\n4. convert units (cm to m, m³ to litres) and solve practical problems such as tiling a floor or filling a tank.\n\n## Materials\n\nMetre rules and measuring tapes, a floor tile, a chalk box, a Milo tin, a 1-litre bottle and a 25-litre jerrycan.\n\n## Starter (5 minutes)\n\nAsk: how many floor tiles would cover our classroom? Let learners guess, then plan how to find out.\n\n## Development\n\n1. Perimeter is the distance round a shape; area is the space it covers, in square units.\n2. Formulas: rectangle A = l × b; triangle A = ½ × base × height; parallelogram A = base × height; trapezium A = ½(a + b)h; circle C = 2πr and A = πr², with π = 22/7.\n3. Measure the classroom floor. Work out how many 50 cm tiles cover it. Stress that units must match: 50 cm = 0.5 m, so a tile is 0.25 m², not 0.5 m².\n4. Volume is the space inside a solid, in cubic units. Cuboid V = l × b × h; cylinder V = πr²h.\n5. Measure the Milo tin and find its volume. Then a water tank: radius 0.7 m, height 1.5 m, V = 2.31 m³.\n6. 1 m³ = 1,000 litres, so the tank holds 2,310 litres. How many 25-litre jerrycans fill it?\n\n## Class activity\n\nGroups measure their desk top, a chalk box and a tin, and find the area or volume of each, showing units.\n\n## Evaluation\n\n1. Find the area of a triangle with base 10 cm and height 6 cm.\n2. Find the circumference of a circle of radius 7 cm.\n3. Find the volume of a cuboid 5 cm by 4 cm by 3 cm.\n\n## Assignment\n\nWorksheet on the app, due Wednesday.",
+      "reading": {
+        "title": "Measuring flat shapes and solids",
+        "content": "# Perimeter, area and volume\n\n## Perimeter\n\nThe **perimeter** is the total distance round a shape. Add the lengths of all the sides.\n\nThe perimeter of a circle is its **circumference**: C = 2πr, where r is the radius. We often use π = 22/7. A circle of radius 7 cm has circumference 2 × 22/7 × 7 = 44 cm.\n\n## Area\n\n**Area** is the space a flat shape covers. It is measured in square units, such as cm² or m².\n\n| Shape | Area |\n| --- | --- |\n| Rectangle | length × breadth |\n| Triangle | ½ × base × height |\n| Parallelogram | base × height |\n| Trapezium | ½ × (sum of parallel sides) × height |\n| Circle | πr² |\n\n**Worked example 1.** A classroom floor is 8 m by 6 m. It is covered with square tiles of side 50 cm.\n\n- Floor area = 8 × 6 = 48 m².\n- 50 cm = 0.5 m, so each tile is 0.5 × 0.5 = 0.25 m².\n- Number of tiles = 48 ÷ 0.25 = 192.\n\nA common mistake is to say one tile is 0.5 m². Square the side, do not just convert it.\n\n## Volume\n\n**Volume** is the space inside a solid, measured in cubic units, such as cm³ or m³.\n\n- Cube or cuboid: V = length × breadth × height. A box 5 cm by 4 cm by 3 cm has volume 60 cm³.\n- Cylinder: V = πr²h, the area of the circle times the height.\n\n**Worked example 2.** A water tank is a cylinder of radius 70 cm and height 1.5 m.\n\n- Use the same units: r = 0.7 m.\n- V = 22/7 × 0.7 × 0.7 × 1.5 = 2.31 m³.\n- 1 m³ = 1,000 litres, so the tank holds 2,310 litres.\n\n## Units\n\n- 1 m = 100 cm, but 1 m² = 10,000 cm² and 1 m³ = 1,000,000 cm³.\n- 1 litre = 1,000 cm³, and 1 m³ = 1,000 litres.\n\nAlways write the unit with your answer."
+      },
+      "cards": [
+        {
+          "front": "Perimeter",
+          "back": "The total distance round a shape."
+        },
+        {
+          "front": "Area of a triangle",
+          "back": "½ × base × height"
+        },
+        {
+          "front": "Area of a trapezium",
+          "back": "½ × (sum of the parallel sides) × height"
+        },
+        {
+          "front": "Circumference of a circle",
+          "back": "2πr"
+        },
+        {
+          "front": "Area of a circle",
+          "back": "πr²"
+        },
+        {
+          "front": "Volume of a cylinder",
+          "back": "πr²h"
+        },
+        {
+          "front": "1 m³ in litres",
+          "back": "1,000 litres"
+        },
+        {
+          "front": "Area of a square tile of side 50 cm, in m²",
+          "back": "0.5 × 0.5 = 0.25 m²"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Find the area of a rectangular plot 12 m long and 7 m wide.",
+          "options": ["38 m²", "84 m²", "19 m²", "168 m²"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find the perimeter of a square of side 9 cm.",
+          "options": ["81 cm", "18 cm", "36 cm", "27 cm"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Find the area of a triangle with base 10 cm and height 6 cm.",
+          "options": ["30 cm²", "60 cm²", "16 cm²", "32 cm²"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A chalk box measures 5 cm by 4 cm by 3 cm. What is its volume?",
+          "options": ["12 cm³", "47 cm³", "94 cm³", "60 cm³"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Find the circumference of a circle of radius 7 cm. (Take π = 22/7.)",
+          "options": ["22 cm", "154 cm", "44 cm", "14 cm"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A classroom floor is 8 m long and 6 m wide. It is to be covered with square tiles of side 50 cm, which cost ₦450 each. How many tiles are needed, and what will they cost?",
+          "markScheme": [
+            "Area of the floor = 8 × 6 = 48 m²",
+            "Area of one tile = 0.5 × 0.5 = 0.25 m² (or works in cm)",
+            "Number of tiles = 48 ÷ 0.25 = 192",
+            "Cost = 192 × ₦450 = ₦86,400"
+          ],
+          "modelAnswer": "The floor area is 8 × 6 = 48 m². The side of a tile is 50 cm = 0.5 m, so one tile covers 0.5 × 0.5 = 0.25 m². The number of tiles is 48 ÷ 0.25 = 192. The cost is 192 × 450 = ₦86,400.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Floor = 8 × 6 = 48 m². Tile = 0.5 m × 0.5 m = 0.25 m². Number = 48 ÷ 0.25 = 192 tiles. Cost = 192 × 450 = ₦86,400.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Floor = 8 × 6 = 48 m²"
+                },
+                {
+                  "point": 1,
+                  "quote": "Tile = 0.5 m × 0.5 m = 0.25 m²"
+                },
+                {
+                  "point": 2,
+                  "quote": "Number = 48 ÷ 0.25 = 192 tiles"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cost = 192 × 450 = ₦86,400"
+                }
+              ],
+              "feedback": "Full marks. Converting the tile side to metres before squaring is exactly right."
+            },
+            {
+              "tier": "full",
+              "text": "I worked in cm. Floor is 800 cm by 600 cm = 480,000 cm². One tile is 50 × 50 = 2,500 cm². 480,000 ÷ 2,500 = 192 tiles. Another way: 16 tiles along and 12 across, 16 × 12 = 192. Cost ₦450 × 192 = ₦86,400.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Floor is 800 cm by 600 cm = 480,000 cm²"
+                },
+                {
+                  "point": 1,
+                  "quote": "One tile is 50 × 50 = 2,500 cm²"
+                },
+                {
+                  "point": 2,
+                  "quote": "480,000 ÷ 2,500 = 192 tiles"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cost ₦450 × 192 = ₦86,400"
+                }
+              ],
+              "feedback": "All four marks, and checking with 16 tiles by 12 tiles is a clever way to confirm 192."
+            },
+            {
+              "tier": "partial",
+              "text": "Area = 48 m². Tile = 50 cm = 0.5 m. 48 ÷ 0.5 = 96 tiles. Cost = 96 × 450 = ₦43,200.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Area = 48 m²"
+                }
+              ],
+              "feedback": "The floor area is right. 0.5 m is the side of a tile, not its area: one tile covers 0.5 × 0.5 = 0.25 m², so 192 tiles are needed, costing ₦86,400."
+            },
+            {
+              "tier": "partial",
+              "text": "Floor area 48 m², tile area 0.25 m², so tiles = 48 × 0.25 = 12. Cost = 12 × 450 = ₦5,400.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Floor area 48 m²"
+                },
+                {
+                  "point": 1,
+                  "quote": "tile area 0.25 m²"
+                }
+              ],
+              "feedback": "Both areas are right. To find how many tiles fit, divide the floor by one tile: 48 ÷ 0.25 = 192. Twelve small tiles could not cover a whole classroom.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Perimeter of floor = 8 + 6 + 8 + 6 = 28 m. Tiles = 28 ÷ 50 = 0.56. Cost = 450.",
+              "meets": [],
+              "feedback": "Tiles cover the floor, so you need its area, 8 × 6 = 48 m², not the perimeter. Then divide by the area of one tile, 0.25 m²."
+            },
+            {
+              "tier": "weak",
+              "text": "8 × 6 = 48, 48 ÷ 50 = 0.96 so 1 tile which costs ₦450.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "8 × 6 = 48"
+                }
+              ],
+              "feedback": "The floor area is 48 m² but the tile is 50 cm, so the units do not match. Change 50 cm to 0.5 m and find the tile's area, 0.25 m², then divide."
+            }
+          ]
+        },
+        {
+          "prompt": "A cylindrical water tank has a radius of 70 cm and a height of 1.5 m. (a) Find its volume in cubic metres. (Take π = 22/7.) (b) How many litres does it hold? (c) How many full 25-litre jerrycans of water are needed to fill it?",
+          "markScheme": [
+            "Uses V = πr²h",
+            "Converts to the same units: r = 0.7 m",
+            "V = 22/7 × 0.7 × 0.7 × 1.5 = 2.31 m³",
+            "Capacity = 2.31 × 1,000 = 2,310 litres",
+            "2,310 ÷ 25 = 92.4, so 93 jerrycans are needed"
+          ],
+          "modelAnswer": "(a) V = πr²h. The radius is 70 cm = 0.7 m, so V = 22/7 × 0.7 × 0.7 × 1.5 = 22 × 0.1 × 0.7 × 1.5 = 2.31 m³. (b) 1 m³ = 1,000 litres, so the tank holds 2,310 litres. (c) 2,310 ÷ 25 = 92.4. Ninety-two jerrycans leave the tank short, so 93 are needed.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) r = 70 cm = 0.7 m. V = πr²h = 22/7 × 0.7 × 0.7 × 1.5 = 2.31 m³\n(b) 2.31 × 1000 = 2,310 litres\n(c) 2310 ÷ 25 = 92.4 so 93 jerrycans (92 will not fill it).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "V = πr²h"
+                },
+                {
+                  "point": 1,
+                  "quote": "r = 70 cm = 0.7 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 22/7 × 0.7 × 0.7 × 1.5 = 2.31 m³"
+                },
+                {
+                  "point": 3,
+                  "quote": "2.31 × 1000 = 2,310 litres"
+                },
+                {
+                  "point": 4,
+                  "quote": "2310 ÷ 25 = 92.4 so 93 jerrycans (92 will not fill it)"
+                }
+              ],
+              "feedback": "Full marks. Rounding up to 93 with a reason is exactly right for a filling problem."
+            },
+            {
+              "tier": "full",
+              "text": "Volume of a cylinder is πr²h. In centimetres: 22/7 × 70 × 70 × 150 = 2,310,000 cm³, which is 2.31 m³. 1 litre is 1000 cm³ so it holds 2,310 litres. 2,310 ÷ 25 = 92.4, you need 93 jerrycans to fill it completely.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Volume of a cylinder is πr²h"
+                },
+                {
+                  "point": 1,
+                  "quote": "In centimetres: 22/7 × 70 × 70 × 150"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 2,310,000 cm³, which is 2.31 m³"
+                },
+                {
+                  "point": 3,
+                  "quote": "it holds 2,310 litres"
+                },
+                {
+                  "point": 4,
+                  "quote": "you need 93 jerrycans to fill it completely"
+                }
+              ],
+              "feedback": "All five marks. Working in centimetres, with the height as 150 cm, is perfectly good; your conversions are all correct."
+            },
+            {
+              "tier": "partial",
+              "text": "V = πr²h = 22/7 × 70 × 70 × 1.5 = 23,100 m³. Litres = 23,100,000. Jerrycans = 924,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "V = πr²h"
+                }
+              ],
+              "feedback": "Right formula, but you mixed centimetres (70) with metres (1.5). Change the radius to 0.7 m first: V = 2.31 m³, which is 2,310 litres. A school tank holding 23 million litres should look too big."
+            },
+            {
+              "tier": "partial",
+              "text": "r = 0.7 m. V = 22/7 × 0.7 × 0.7 × 1.5 = 2.31 m³. 2.31 m³ = 2,310 litres. 2310 ÷ 25 = 92.4 = 92 jerrycans.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "r = 0.7 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "V = 22/7 × 0.7 × 0.7 × 1.5 = 2.31 m³"
+                },
+                {
+                  "point": 3,
+                  "quote": "2.31 m³ = 2,310 litres"
+                }
+              ],
+              "feedback": "Excellent working to 2,310 litres; write the formula V = πr²h first. 92 jerrycans give only 2,300 litres, so the tank is not full: you need 93."
+            },
+            {
+              "tier": "weak",
+              "text": "V = 2πr × h = 2 × 22/7 × 0.7 × 1.5 = 6.6 m³ = 6,600 litres.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "0.7"
+                }
+              ],
+              "feedback": "You changed the radius to metres correctly, but 2πr is the circumference. Volume uses the area of the circle: V = πr²h = 22/7 × 0.7 × 0.7 × 1.5 = 2.31 m³."
+            },
+            {
+              "tier": "weak",
+              "text": "70 × 1.5 = 105 litres so 105 ÷ 25 = 4 jerrycans.",
+              "meets": [],
+              "feedback": "Multiplying the radius by the height does not give a volume. Use V = πr²h with the radius in metres, then change m³ to litres by multiplying by 1,000."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Constructions with ruler and compasses",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use a ruler and a pair of compasses accurately, leaving construction arcs visible;\n2. bisect a given angle and a given line segment;\n3. construct a triangle given three sides, and given two sides and the included angle of 60°;\n4. decide whether three lengths can make a triangle.\n\n## Materials\n\nA mathematical set for each learner (ruler, compasses, protractor, sharp pencil), a board compass and board ruler, and plain paper.\n\n## Starter (5 minutes)\n\nAsk: how could you cut a paper angle exactly in half without a protractor? Let learners fold paper angles. Then say we will do the same with compasses.\n\n## Development\n\n1. Check that the compass pencil is sharp and the hinge is firm. Arcs must stay on the page.\n2. Bisecting an angle: arc from the vertex cutting both arms at P and Q; equal arcs from P and Q crossing at R; join the vertex to R. Measure both halves to check.\n3. Bisecting a line: arcs of more than half the length from each end, above and below; join the two crossing points. The bisector meets the line at 90° at its midpoint.\n4. Triangle with three sides (6 cm, 5 cm, 4 cm): draw the 6 cm base; from one end an arc of 5 cm, from the other an arc of 4 cm; join to the crossing point.\n5. Constructing 60°: an arc from the point, then the same radius from where it cuts the line; the crossing makes an equilateral triangle, so the angle is 60°.\n6. The triangle rule: the two shorter sides must add to more than the longest side. Try 3, 4 and 8 cm and see the arcs fail to meet.\n\n## Class activity\n\nEach learner constructs triangle PQR with PQ = 7 cm, angle PQR = 60° and QR = 5 cm, then measures PR. The class compares results; answers should be within 1 mm of 6.2 cm.\n\n## Evaluation\n\n1. Bisect an angle of 100° and check with a protractor.\n2. Construct a triangle with sides 7 cm, 6 cm and 5 cm.\n\n## Assignment\n\nWorksheet on the app, due Thursday. Bring your constructions to class for marking.",
+      "reading": {
+        "title": "Drawing exactly with compasses",
+        "content": "# Constructions\n\nA **construction** is an accurate drawing made with a ruler and a pair of compasses. A protractor is used only to check. Leave all your arcs showing: they prove you constructed the figure.\n\n## Bisecting an angle\n\nTo **bisect** means to cut into two equal parts.\n\n1. Put the compass point on the vertex B. Draw an arc that cuts both arms, at P and Q.\n2. With the point on P, draw an arc inside the angle. Keep the same radius and do the same from Q. The two arcs cross at R.\n3. Join B to R. The line BR bisects the angle.\n\nIf angle ABC is 80°, each half is 40°. Check with your protractor.\n\n## Bisecting a line segment\n\nOpen the compasses to more than half of AB. Draw arcs above and below the line from A, then from B with the same radius. Join the two crossing points. This line is the **perpendicular bisector**: it cuts AB at its midpoint, at 90°.\n\n## Constructing a triangle from three sides\n\n**Worked example.** Construct a triangle with sides 6 cm, 5 cm and 4 cm.\n\n1. Draw the base AB = 6 cm.\n2. With centre A and radius 5 cm, draw an arc.\n3. With centre B and radius 4 cm, draw an arc crossing the first. Call the crossing C.\n4. Join AC and BC.\n\n## Constructing an angle of 60°\n\nFrom point Q on a line, draw an arc that cuts the line at S. With the same radius and centre S, draw an arc that cuts the first arc at T. Join QT. Angle SQT is 60°, because Q, S and T form an equilateral triangle.\n\nTo construct triangle PQR with PQ = 7 cm, angle PQR = 60° and QR = 5 cm: draw PQ, construct 60° at Q, mark R 5 cm along the new arm, and join PR. PR measures about 6.2 cm.\n\n## Can it be a triangle?\n\nThe two shorter sides must add up to **more** than the longest side. 3 cm, 4 cm and 8 cm cannot make a triangle, because 3 + 4 = 7 is less than 8: the arcs will never meet."
+      },
+      "cards": [
+        {
+          "front": "Bisect",
+          "back": "Cut into two equal parts."
+        },
+        {
+          "front": "Pair of compasses",
+          "back": "The instrument for drawing arcs and circles and copying lengths."
+        },
+        {
+          "front": "Bisecting an angle of 80°",
+          "back": "Gives two angles of 40°."
+        },
+        {
+          "front": "Perpendicular bisector",
+          "back": "A line that cuts a segment at its midpoint at right angles."
+        },
+        {
+          "front": "Why leave construction arcs on the page?",
+          "back": "They show the figure was constructed, not just measured."
+        },
+        {
+          "front": "How does a 60° construction work?",
+          "back": "The arcs make an equilateral triangle, whose angles are all 60°."
+        },
+        {
+          "front": "Triangle rule for three lengths",
+          "back": "The two shorter sides must add up to more than the longest."
+        },
+        {
+          "front": "Can 3 cm, 4 cm and 8 cm make a triangle?",
+          "back": "No, because 3 + 4 is less than 8."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which instrument is used to draw arcs in a construction?",
+          "options": ["Protractor", "Set square", "Pair of compasses", "Ruler"],
+          "answer": "C"
+        },
+        {
+          "prompt": "An angle of 70° is bisected. What is the size of each new angle?",
+          "options": ["35°", "70°", "140°", "20°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "To construct a triangle with sides 6 cm, 5 cm and 4 cm, a learner draws the 6 cm base first. What should they do next?",
+          "options": [
+            "Measure 60° at each end with a protractor",
+            "Draw a 5 cm line straight up from the middle of the base",
+            "Bisect the base",
+            "Draw an arc of radius 5 cm from one end and an arc of radius 4 cm from the other"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "What does the perpendicular bisector of a line segment AB do?",
+          "options": [
+            "It passes through A only",
+            "It cuts AB at its midpoint at right angles",
+            "It runs parallel to AB",
+            "It meets AB at 45°"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which set of lengths cannot be the sides of a triangle?",
+          "options": [
+            "5 cm, 6 cm, 7 cm",
+            "3 cm, 4 cm, 5 cm",
+            "3 cm, 4 cm, 8 cm",
+            "6 cm, 6 cm, 6 cm"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Angle ABC is 80°. Describe, step by step, how to bisect it using a ruler and a pair of compasses, and how you would check your construction.",
+          "markScheme": [
+            "With centre B, draws an arc cutting BA and BC (at P and Q)",
+            "With centres P and Q and the same radius, draws arcs that cross (at R)",
+            "Joins B to R",
+            "Checks with a protractor that each angle is 40°"
+          ],
+          "modelAnswer": "With the compass point on B, I draw an arc that cuts BA at P and BC at Q. Keeping the same radius, I put the point on P and draw an arc inside the angle, then do the same from Q, so the two arcs cross at R. I join B to R with a ruler; BR bisects the angle. To check, I measure angles ABR and RBC with a protractor; each should be 40°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1. Put the compass on B and draw an arc to cut BA at P and BC at Q.\n2. From P draw an arc in between the arms, and from Q draw another arc with the same radius, they meet at R.\n3. Join B to R with a ruler.\n4. Measure ABR and RBC with a protractor, they should both be 40°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Put the compass on B and draw an arc to cut BA at P and BC at Q"
+                },
+                {
+                  "point": 1,
+                  "quote": "From P draw an arc in between the arms, and from Q draw another arc with the same radius, they meet at R"
+                },
+                {
+                  "point": 2,
+                  "quote": "Join B to R with a ruler"
+                },
+                {
+                  "point": 3,
+                  "quote": "Measure ABR and RBC with a protractor, they should both be 40°"
+                }
+              ],
+              "feedback": "Full marks. Numbered steps with the points labelled are exactly how a construction should be described."
+            },
+            {
+              "tier": "full",
+              "text": "With B as centre and any radius I draw an arc that crosses both arms. From the two crossing points I draw two arcs of equal radius which cut each other inside the angle. The line from B through where they cut is the bisector. I check with my protractor that both parts are 40°, half of 80.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "With B as centre and any radius I draw an arc that crosses both arms"
+                },
+                {
+                  "point": 1,
+                  "quote": "From the two crossing points I draw two arcs of equal radius which cut each other inside the angle"
+                },
+                {
+                  "point": 2,
+                  "quote": "The line from B through where they cut is the bisector"
+                },
+                {
+                  "point": 3,
+                  "quote": "I check with my protractor that both parts are 40°"
+                }
+              ],
+              "feedback": "All four marks. Saying the two arcs must have equal radius shows you understand why it works."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw an arc from B cutting the two lines. From the two points draw arcs that cross. Join B to the crossing point.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw an arc from B cutting the two lines"
+                },
+                {
+                  "point": 1,
+                  "quote": "From the two points draw arcs that cross"
+                },
+                {
+                  "point": 2,
+                  "quote": "Join B to the crossing point"
+                }
+              ],
+              "feedback": "The construction is described correctly; say the two arcs must have the same radius. You also need the check: measure each half with a protractor, and each should be 40°.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Use the protractor to measure 40° from BA and draw the line. Then check with the protractor that both angles are 40°.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "check with the protractor that both angles are 40°"
+                }
+              ],
+              "feedback": "Using a protractor to draw the line is measuring, not constructing. Draw an arc from B cutting both arms, then equal arcs from those two points crossing at R, and join BR. Use the protractor only to check the 40°."
+            },
+            {
+              "tier": "weak",
+              "text": "Draw a line from B to the middle of AC.",
+              "meets": [],
+              "feedback": "The middle of AC is only on the bisector when BA and BC are the same length. Use compasses: an arc from B cutting both arms, then two equal arcs from those points, and join B to where they cross."
+            },
+            {
+              "tier": "weak",
+              "text": "Open the compass to 80° and draw a circle at B then cut it in half.",
+              "meets": [],
+              "feedback": "Compasses are opened to a length, not an angle. Draw one arc from B cutting both arms, then two equal arcs from those points; the line from B to their crossing cuts the angle in half."
+            }
+          ]
+        },
+        {
+          "prompt": "Describe how to construct triangle PQR with PQ = 7 cm, angle PQR = 60° and QR = 5 cm, using only a ruler and a pair of compasses. Then state the length of PR you would expect to measure.",
+          "markScheme": [
+            "Draws PQ = 7 cm with a ruler",
+            "Constructs 60° at Q: an arc from Q, then the same radius from where it cuts QP, joining Q to the crossing",
+            "Marks R on the new arm with an arc of radius 5 cm from Q",
+            "Joins P to R",
+            "PR is about 6.2 cm"
+          ],
+          "modelAnswer": "I draw PQ = 7 cm. With centre Q I draw an arc cutting QP at S. With the same radius and centre S I draw an arc cutting the first arc at T, and I draw the line from Q through T; angle PQT is 60°. I set my compasses to 5 cm and, with centre Q, mark R on QT. Then I join P to R. When measured, PR is about 6.2 cm.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Draw PQ 7 cm. With Q as centre draw an arc to cut PQ at S. Same radius, from S draw an arc to cut the first arc at T. Draw line QT so angle PQT = 60°. Open the compass to 5 cm and from Q cut QT at R. Join PR. PR = 6.2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw PQ 7 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "With Q as centre draw an arc to cut PQ at S. Same radius, from S draw an arc to cut the first arc at T. Draw line QT so angle PQT = 60°"
+                },
+                {
+                  "point": 2,
+                  "quote": "Open the compass to 5 cm and from Q cut QT at R"
+                },
+                {
+                  "point": 3,
+                  "quote": "Join PR"
+                },
+                {
+                  "point": 4,
+                  "quote": "PR = 6.2 cm"
+                }
+              ],
+              "feedback": "Full marks. Each step is precise, and your 6.2 cm shows the construction was accurate."
+            },
+            {
+              "tier": "full",
+              "text": "First a 7 cm line PQ. To make 60° at Q I draw an arc from Q, then keep the compass the same and draw from where the arc meets the line, the two arcs cross, and I join Q to that point. That makes an equilateral triangle so it is 60°. Then I measure 5 cm with the compass from Q along that line to get R and join R to P. PR measures 6.2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First a 7 cm line PQ"
+                },
+                {
+                  "point": 1,
+                  "quote": "I draw an arc from Q, then keep the compass the same and draw from where the arc meets the line, the two arcs cross, and I join Q to that point"
+                },
+                {
+                  "point": 2,
+                  "quote": "I measure 5 cm with the compass from Q along that line to get R"
+                },
+                {
+                  "point": 3,
+                  "quote": "join R to P"
+                },
+                {
+                  "point": 4,
+                  "quote": "PR measures 6.2 cm"
+                }
+              ],
+              "feedback": "All five marks, and you explained why the angle is 60°, which most learners leave out."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw PQ = 7 cm. Use a protractor to make 60° at Q. Mark 5 cm along it to get R. Join PR, it is 6.2 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw PQ = 7 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "Mark 5 cm along it to get R"
+                },
+                {
+                  "point": 3,
+                  "quote": "Join PR"
+                },
+                {
+                  "point": 4,
+                  "quote": "it is 6.2 cm"
+                }
+              ],
+              "feedback": "The triangle is right, but the question says ruler and compasses only. Construct the 60°: an arc from Q, then the same radius from where it cuts QP; join Q to where the arcs cross."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw PQ = 7 cm. From Q draw an arc of 5 cm and from P draw an arc of 6 cm, where they meet is R. Join them. Angle Q is 60°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw PQ = 7 cm"
+                }
+              ],
+              "feedback": "You used the three-sides method, but PR is not given, so 6 cm is a guess and the angle at Q will not be exactly 60°. Construct the 60° angle at Q first, then mark R 5 cm along it."
+            },
+            {
+              "tier": "weak",
+              "text": "Draw a line 7 cm and another line 5 cm and join them to make a triangle. PR is 12 cm.",
+              "meets": [],
+              "feedback": "The 5 cm side must start at Q at an angle of exactly 60° to PQ, so construct that angle first. PR is a side of the triangle, so it must be shorter than 7 + 5 = 12 cm."
+            },
+            {
+              "tier": "weak",
+              "text": "Draw PQ 7 cm. Bisect PQ and the line going up is 60°. Mark R on it 5 cm away.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw PQ 7 cm"
+                }
+              ],
+              "feedback": "A perpendicular bisector makes 90°, not 60°, and it starts from the middle of PQ, not from Q. For 60°, draw an arc from Q, then the same radius from where it cuts QP, and join Q to the crossing."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Angles of elevation and depression",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain angles of elevation and depression, measured from the horizontal;\n2. use a scale drawing to find heights and distances;\n3. use the tangent ratio, tan θ = opposite ÷ adjacent, to calculate heights and distances;\n4. use the fact that the angle of depression from A to B equals the angle of elevation from B to A.\n\n## Materials\n\nA home-made clinometer (a protractor with a string and a stone tied to it, and a straw to sight through), a measuring tape, graph paper, and a table of tangents.\n\n## Starter (5 minutes)\n\nTake the class to the flagpole. Ask: how could we find its height without climbing it? Collect ideas.\n\n## Development\n\n1. Angle of elevation: looking up from the horizontal to an object. Angle of depression: looking down from the horizontal.\n2. The two are equal for the same line of sight, because they are alternate angles between parallel horizontal lines.\n3. Scale drawing: stand 30 m from the flagpole and measure the angle of elevation (about 40°). With a scale of 1 cm to 5 m, draw a 6 cm base, a 40° angle and a vertical line. Measure the height (about 5.0 cm) and convert (25 m).\n4. Tangent: in a right-angled triangle, tan θ = opposite ÷ adjacent. Height = 30 × tan 40° = 30 × 0.8391 = 25.2 m, which agrees with the drawing.\n5. Depression: from the top of a 60 m lighthouse, the angle of depression of a canoe is 30°. The angle at the canoe is also 30°, so tan 30° = 60 ÷ d and d = 103.9 m.\n6. Point out the common mistake of putting the angle of depression inside the triangle at the top.\n\n## Class activity\n\nGroups use the clinometer to measure the angle of elevation of the top of the school building from a measured distance, make a scale drawing, and compare with a tangent calculation.\n\n## Evaluation\n\n1. From 20 m away, the angle of elevation of a tree top is 45°. How tall is the tree?\n2. On a scale of 1 cm to 5 m, what does a 7.2 cm line represent?\n\n## Assignment\n\nQuiz on the app, due Friday.",
+      "reading": {
+        "title": "Looking up and looking down",
+        "content": "# Angles of elevation and depression\n\n## The two angles\n\nWhen you look **up** at the top of a mast, the angle between the horizontal and your line of sight is the **angle of elevation**.\n\nWhen you look **down** from a cliff at a boat, the angle between the horizontal and your line of sight is the **angle of depression**.\n\nBoth are measured from the **horizontal**, never from the vertical.\n\nThe angle of depression from A to B equals the angle of elevation from B to A. The two horizontal lines are parallel, so the angles are alternate angles.\n\n## Method 1: scale drawing\n\n**Worked example 1.** A learner stands 30 m from the foot of a mast. The angle of elevation of the top is 40°. Find the height of the mast.\n\nChoose a scale: 1 cm to 5 m.\n\n1. Draw a horizontal line 30 ÷ 5 = 6 cm long for the ground.\n2. At one end, draw an angle of 40° with a protractor.\n3. At the other end, draw a vertical line (90°) until it meets the slanting line.\n4. Measure the vertical line: about 5.0 cm.\n5. Convert back: 5.0 × 5 = 25 m.\n\n## Method 2: the tangent ratio\n\nIn a right-angled triangle, for an angle θ:\n\ntan θ = opposite side ÷ adjacent side\n\nIn example 1, the height is opposite the 40° angle and the 30 m is adjacent. So height = 30 × tan 40° = 30 × 0.8391 = 25.2 m. The drawing and the calculation agree.\n\n**Worked example 2.** From the top of a lighthouse 60 m high on the Lagos coast, the angle of depression of a canoe is 30°. How far is the canoe from the foot of the lighthouse?\n\nThe angle of elevation from the canoe is also 30°. The height (60 m) is opposite this angle, and the distance d is adjacent.\n\ntan 30° = 60 ÷ d, so d = 60 ÷ 0.5774 = 103.9 m.\n\n## Useful values\n\n| Angle | tan |\n| --- | --- |\n| 30° | 0.5774 |\n| 40° | 0.8391 |\n| 45° | 1.0000 |\n| 60° | 1.7321 |\n\nAt 45°, the height equals the distance, because tan 45° = 1."
+      },
+      "cards": [
+        {
+          "front": "Angle of elevation",
+          "back": "The angle up from the horizontal to an object above you."
+        },
+        {
+          "front": "Angle of depression",
+          "back": "The angle down from the horizontal to an object below you."
+        },
+        {
+          "front": "What are both angles measured from?",
+          "back": "The horizontal."
+        },
+        {
+          "front": "Angle of depression from A to B compared with angle of elevation from B to A",
+          "back": "They are equal (alternate angles)."
+        },
+        {
+          "front": "tan θ",
+          "back": "Opposite side ÷ adjacent side."
+        },
+        {
+          "front": "Scale 1 cm to 5 m: what does 7.2 cm represent?",
+          "back": "7.2 × 5 = 36 m"
+        },
+        {
+          "front": "tan 45°",
+          "back": "1, so the height equals the distance."
+        },
+        {
+          "front": "Clinometer",
+          "back": "An instrument for measuring angles of elevation and depression."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "From where is an angle of elevation measured?",
+          "options": [
+            "From the vertical, downwards",
+            "From the horizontal, upwards",
+            "From the ground to the object's foot",
+            "From the object down to the observer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "On a scale drawing, 1 cm represents 5 m. What distance does a line of 7.2 cm represent?",
+          "options": ["36 m", "7.2 m", "12.2 m", "3.6 m"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A learner stands 20 m from the foot of a tree. The angle of elevation of the top of the tree is 45°. How tall is the tree? (Ignore the learner's height.)",
+          "options": ["10 m", "45 m", "20 m", "28.3 m"],
+          "answer": "C"
+        },
+        {
+          "prompt": "From the top of a cliff, the angle of depression of a boat is 30°. What is the angle of elevation of the cliff top from the boat?",
+          "options": ["60°", "150°", "90°", "30°"],
+          "answer": "D"
+        },
+        {
+          "prompt": "In a right-angled triangle, what is the tangent of an angle?",
+          "options": [
+            "Opposite side ÷ hypotenuse",
+            "Adjacent side ÷ hypotenuse",
+            "Opposite side ÷ adjacent side",
+            "Hypotenuse ÷ opposite side"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A learner stands 30 m from the foot of a mobile phone mast on level ground. The angle of elevation of the top of the mast is 40°. Using a scale of 1 cm to 5 m, describe the scale drawing you would make, and find the height of the mast. (Ignore the learner's height.)",
+          "markScheme": [
+            "Converts 30 m to 6 cm on the scale",
+            "Draws a 40° angle at the learner's end and a vertical line at the mast's end",
+            "Measures the vertical line as about 5.0 cm (or calculates 30 × tan 40°)",
+            "Gives the height as about 25 m"
+          ],
+          "modelAnswer": "On the scale 1 cm to 5 m, the 30 m ground becomes 30 ÷ 5 = 6 cm. I draw a 6 cm horizontal line. At the learner's end I measure an angle of 40° and draw a long slanting line. At the mast's end I draw a vertical line up until it meets the slanting line. The vertical line measures about 5.0 cm, which is 5.0 × 5 = 25 m. So the mast is about 25 m high. (Check: 30 × tan 40° = 30 × 0.8391 = 25.2 m.)",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "30 m ÷ 5 = 6 cm, so I draw a base line 6 cm. At one end I draw 40° with my protractor and at the other end I draw a line at 90° going up. Where they meet is the top. The upright line measured 5.0 cm, so the height is 5 × 5 = 25 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "30 m ÷ 5 = 6 cm, so I draw a base line 6 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "At one end I draw 40° with my protractor and at the other end I draw a line at 90° going up"
+                },
+                {
+                  "point": 2,
+                  "quote": "The upright line measured 5.0 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "so the height is 5 × 5 = 25 m"
+                }
+              ],
+              "feedback": "Full marks. Your drawing steps are clear and your measurement is accurate."
+            },
+            {
+              "tier": "full",
+              "text": "Scale: 30 m is 6 cm. Draw the 6 cm ground, then 40° at the learner, then a vertical line at the mast. To check I used tan: height = 30 × tan 40° = 30 × 0.8391 = 25.2 m. On my drawing the mast was 5.0 cm = 25 m, so the mast is about 25 m tall.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Scale: 30 m is 6 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "then 40° at the learner, then a vertical line at the mast"
+                },
+                {
+                  "point": 2,
+                  "quote": "height = 30 × tan 40° = 30 × 0.8391 = 25.2 m"
+                },
+                {
+                  "point": 3,
+                  "quote": "the mast is about 25 m tall"
+                }
+              ],
+              "feedback": "All four marks. Checking the drawing with the tangent is excellent practice; the two answers agree."
+            },
+            {
+              "tier": "partial",
+              "text": "Draw 6 cm for 30 m and an angle of 40°. The height on my drawing was 5 cm so the mast is 5 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Draw 6 cm for 30 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "The height on my drawing was 5 cm"
+                }
+              ],
+              "feedback": "Your scale and measurement are right. Convert back using the scale: 5 cm × 5 = 25 m, not 5 m. Also say that the mast is drawn as a vertical line at the other end."
+            },
+            {
+              "tier": "partial",
+              "text": "6 cm base, 40° at the learner end, vertical line at the mast end. The mast is 30 × 40 ÷ 90 = 13.3 m tall.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "6 cm base"
+                },
+                {
+                  "point": 1,
+                  "quote": "40° at the learner end, vertical line at the mast end"
+                }
+              ],
+              "feedback": "Your drawing is described correctly, so measure it: the vertical line is about 5.0 cm, which is 25 m. Heights are not in proportion to angles, so 30 × 40 ÷ 90 does not work.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The mast is 40 m because the angle is 40°.",
+              "meets": [],
+              "feedback": "The angle is not the height. Draw the 30 m as 6 cm, draw a 40° angle and a vertical line, then measure the vertical line and multiply by 5."
+            },
+            {
+              "tier": "weak",
+              "text": "Draw a line 30 cm and measure 40° from the vertical. The height is 30 + 40 = 70 m.",
+              "meets": [],
+              "feedback": "With a scale of 1 cm to 5 m, 30 m is 6 cm, not 30 cm, and the angle of elevation is measured from the horizontal. Then measure the height on your drawing and convert it."
+            }
+          ]
+        },
+        {
+          "prompt": "From the top of a lighthouse 60 m high, the angle of depression of a canoe at sea is 30°. Find, correct to one decimal place, how far the canoe is from the foot of the lighthouse. (tan 30° = 0.5774)",
+          "markScheme": [
+            "States that the angle of elevation from the canoe is 30° (alternate angles)",
+            "Uses tan 30° = 60 ÷ d (height opposite, distance adjacent)",
+            "d = 60 ÷ 0.5774",
+            "d = 103.9 m"
+          ],
+          "modelAnswer": "The angle of depression from the top equals the angle of elevation from the canoe, because they are alternate angles, so the angle at the canoe is 30°. The height, 60 m, is opposite this angle and the distance d is adjacent. tan 30° = 60 ÷ d, so d = 60 ÷ tan 30° = 60 ÷ 0.5774 = 103.9 m.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Angle of elevation of the top from the canoe = 30° (alternate angles).\ntan 30° = 60/d\nd = 60 ÷ 0.5774\nd = 103.9 m",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Angle of elevation of the top from the canoe = 30° (alternate angles)"
+                },
+                {
+                  "point": 1,
+                  "quote": "tan 30° = 60/d"
+                },
+                {
+                  "point": 2,
+                  "quote": "d = 60 ÷ 0.5774"
+                },
+                {
+                  "point": 3,
+                  "quote": "d = 103.9 m"
+                }
+              ],
+              "feedback": "Full marks, with the reason for the 30° at the canoe stated."
+            },
+            {
+              "tier": "full",
+              "text": "The angle at the canoe is also 30° because the horizontal at the top is parallel to the sea. Opposite is 60 m and adjacent is the distance d. tan 30° = 60 ÷ d so d = 60 ÷ 0.5774 = 103.92, which is 103.9 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The angle at the canoe is also 30° because the horizontal at the top is parallel to the sea"
+                },
+                {
+                  "point": 1,
+                  "quote": "tan 30° = 60 ÷ d"
+                },
+                {
+                  "point": 2,
+                  "quote": "d = 60 ÷ 0.5774"
+                },
+                {
+                  "point": 3,
+                  "quote": "which is 103.9 m"
+                }
+              ],
+              "feedback": "All four marks. Naming the opposite and adjacent sides first is what makes the tangent setup reliable."
+            },
+            {
+              "tier": "partial",
+              "text": "The angle at the canoe is 30° because of alternate angles. tan 30° = d/60, d = 60 × 0.5774 = 34.6 m",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The angle at the canoe is 30° because of alternate angles"
+                }
+              ],
+              "feedback": "You found the angle at the canoe correctly. The 60 m height is opposite that angle and the distance is adjacent, so tan 30° = 60 ÷ d, giving d = 103.9 m. A canoe seen at a shallow angle must be further away than the lighthouse is tall."
+            },
+            {
+              "tier": "partial",
+              "text": "Angle at canoe = 30°. tan 30° = 60 ÷ d. d = 60 × 0.5774 = 34.6 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Angle at canoe = 30°"
+                },
+                {
+                  "point": 1,
+                  "quote": "tan 30° = 60 ÷ d"
+                }
+              ],
+              "feedback": "Your setup is right. To get d on its own from tan 30° = 60 ÷ d, divide: d = 60 ÷ 0.5774 = 103.9 m. You multiplied instead."
+            },
+            {
+              "tier": "weak",
+              "text": "The distance is 60 × 30 = 1800 m.",
+              "meets": [],
+              "feedback": "Multiplying the height by the angle has no meaning. Use the right-angled triangle: the angle at the canoe is 30°, so tan 30° = 60 ÷ d."
+            },
+            {
+              "tier": "weak",
+              "text": "The angle at the top inside the triangle is 30° so the angle at the canoe is 60°. tan 60° = 60/d, d = 60 ÷ 1.7321 = 34.6 m.",
+              "meets": [],
+              "feedback": "The angle of depression is measured from the horizontal, not from the lighthouse, so it is not the angle inside the triangle at the top. The angle at the canoe is 30°, and d = 60 ÷ tan 30° = 103.9 m."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

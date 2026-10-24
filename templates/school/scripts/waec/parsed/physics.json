@@ -1,0 +1,813 @@
+{
+  "found": true,
+  "subject": "Physics",
+  "subjectCode": "PHY",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Interaction of Matter, Space and Time",
+      "abbreviation": "MATTER",
+      "subStrands": [
+        {
+          "name": "Concepts of Matter",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-1",
+              "description": "Simple structure of matter should be discussed. Three physics states of matter, namely solid, liquid and gas should be treated."
+            },
+            {
+              "code": "PHY-MATTER-2",
+              "description": "Evidence of the particle nature of matter e.g. Brownian motion experiment, Kinetic theory of matter."
+            },
+            {
+              "code": "PHY-MATTER-3",
+              "description": "Use of the kinetic theory to explain: states of matter (solid, liquid and gas), pressure in a gas, evaporation and boiling; cohesion, adhesion, capillarity."
+            },
+            {
+              "code": "PHY-MATTER-4",
+              "description": "Crystalline and amorphous substances to be compared. Arrangement of atoms in crystalline structure to be described e.g. face centred, body centred."
+            }
+          ]
+        },
+        {
+          "name": "Fundamental and Derived Quantities and Units",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-5",
+              "description": "Length, mass, time, electric current, luminous intensity, thermodynamic temperature, amount of substance as examples of fundamental quantities and m, kg, s, A, cd, K and mol as their respective units."
+            },
+            {
+              "code": "PHY-MATTER-6",
+              "description": "Volume, density and speed as derived quantities and m3, kgm-3 and ms-1 as their respective units."
+            }
+          ]
+        },
+        {
+          "name": "Position, Distance and Displacement",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-7",
+              "description": "Position of objects in space using the X, Y, Z axes should be mentioned."
+            },
+            {
+              "code": "PHY-MATTER-8",
+              "description": "Use of string, metre rule, vernier calipers and micrometer screw gauge. Degree of accuracy should be noted. Metre (m) as unit of distance."
+            },
+            {
+              "code": "PHY-MATTER-9",
+              "description": "Use of compass and a protractor. Graphical location and directions by axes to be stressed."
+            },
+            {
+              "code": "PHY-MATTER-10",
+              "description": "Distinction between distance and displacement."
+            }
+          ]
+        },
+        {
+          "name": "Mass, Weight and Time",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-11",
+              "description": "Use of lever balance and chemical/beam balance to measure mass and spring balance to measure weight. Mention should be made of electronic/digital balance."
+            },
+            {
+              "code": "PHY-MATTER-12",
+              "description": "Kilogram (kg) as unit of mass and newton (N) as unit of weight. Distinction between mass and weight."
+            },
+            {
+              "code": "PHY-MATTER-13",
+              "description": "The use of heart-beat, sand-clock, ticker-timer, pendulum and stopwatch/clock. Second (s) as unit of time."
+            }
+          ]
+        },
+        {
+          "name": "Fluid at Rest",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-14",
+              "description": "Experimental determination of volume, density and relative density for solids and liquids."
+            },
+            {
+              "code": "PHY-MATTER-15",
+              "description": "Concept and definition of pressure. Pascal's principle, application of principle to hydraulic press and car brakes. Dependence of pressure on the depth of a point below a liquid surface. Atmospheric pressure. Simple barometer, manometer, siphon, syringe and pump. Determination of the relative density of liquids with U-tube and Hare's apparatus."
+            },
+            {
+              "code": "PHY-MATTER-16",
+              "description": "Identification of the forces acting on a body partially or completely immersed in a fluid. Archimedes' principle: Use of the principle to determine the relative densities of solids and liquids."
+            },
+            {
+              "code": "PHY-MATTER-17",
+              "description": "Law of flotation: Establishing the conditions for a body to float in a fluid. Applications in hydrometer, balloons, boats, ships, submarines etc."
+            }
+          ]
+        },
+        {
+          "name": "Motion",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-18",
+              "description": "Types of motion: Random, rectilinear, translational, Rotational, circular, orbital, spin, Oscillatory. Only qualitative treatment is required. Illustration should be given for the various types of motion."
+            },
+            {
+              "code": "PHY-MATTER-19",
+              "description": "Relative motion. Numerical problems on co-linear motion may be set."
+            },
+            {
+              "code": "PHY-MATTER-20",
+              "description": "Cause of motion: Force as cause of motion."
+            },
+            {
+              "code": "PHY-MATTER-21",
+              "description": "Types of force: Contact force (push and pull) and Non-contact force/field force (electric and magnetic attractions and repulsions; gravitational pull)."
+            },
+            {
+              "code": "PHY-MATTER-22",
+              "description": "Solid friction: Frictional force between two stationary bodies (static) and between two bodies in relative motion (dynamic). Coefficients of limiting friction and their determinations. Advantages of friction e.g. in locomotion, friction belt, grindstone. Disadvantages of friction e.g. reduction of efficiency, wear and tear of machines. Methods of reducing friction; e.g. use of ball bearings, rollers, streamlining and lubrication."
+            },
+            {
+              "code": "PHY-MATTER-23",
+              "description": "Viscosity (friction in fluids): Definition and effects. Simple explanation as extension of friction in fluids. Fluid friction and its application in lubrication should be treated qualitatively. Terminal velocity and its determination."
+            },
+            {
+              "code": "PHY-MATTER-24",
+              "description": "Simple ideas of circular motion: Experiments with a string tied to a stone at one end and whirled around to demonstrate motion in a vertical/horizontal circle, show the difference between angular speed and velocity, and draw a diagram to illustrate centripetal force. Banking of roads in reducing sideways friction should be qualitatively discussed."
+            }
+          ]
+        },
+        {
+          "name": "Speed, Velocity and Rectilinear Acceleration",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-25",
+              "description": "Concept of speed as change of distance with time. Concept of velocity as change of displacement with time. Metre per second (ms-1) as unit of speed/velocity. Ticker-timer or similar devices should be used to determine speed/velocity."
+            },
+            {
+              "code": "PHY-MATTER-26",
+              "description": "Uniform/non-uniform speed/velocity. Determination of instantaneous speed/velocity from distance/displacement-time graph and by calculation."
+            },
+            {
+              "code": "PHY-MATTER-27",
+              "description": "Concept of acceleration/deceleration as increase/decrease in velocity with time. Unit of acceleration as ms-2. Ticker-timer or similar devices should be used to determine acceleration."
+            },
+            {
+              "code": "PHY-MATTER-28",
+              "description": "Uniform/non-uniform acceleration. Determination of acceleration and displacement from velocity-time graph."
+            },
+            {
+              "code": "PHY-MATTER-29",
+              "description": "Equations of motion with constant acceleration. Motion under gravity as a special case. Use of equations to solve numerical problems."
+            }
+          ]
+        },
+        {
+          "name": "Scalars and Vectors",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-30",
+              "description": "Concept of scalars as physical quantities with magnitude and no direction. Mass, distance, speed and time as examples of scalars."
+            },
+            {
+              "code": "PHY-MATTER-31",
+              "description": "Concept of vectors as physical quantities with both magnitude and direction. Weight, displacement, velocity and acceleration as examples of vectors."
+            },
+            {
+              "code": "PHY-MATTER-32",
+              "description": "Vector representation. Addition of vectors: Use of force board to determine the resultant of two forces."
+            },
+            {
+              "code": "PHY-MATTER-33",
+              "description": "Resolution of vectors. Resultant velocity using vector representation: Obtain the resultant of two velocities analytically and graphically."
+            }
+          ]
+        },
+        {
+          "name": "Equilibrium of Forces",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-34",
+              "description": "Principle of moments: Torque/Moment of force. Simple treatment of a couple, e.g. turning of water tap, corkscrew and steering wheel."
+            },
+            {
+              "code": "PHY-MATTER-35",
+              "description": "Conditions for equilibrium of rigid bodies under the action of parallel and non-parallel forces. Use of force board to determine resultant and equilibrant forces. Treatment should include resolution of forces into two perpendicular directions and composition of forces. Parallelogram of forces. Triangle of forces."
+            },
+            {
+              "code": "PHY-MATTER-36",
+              "description": "Centre of gravity and stability. Should be treated experimentally. Treatment should include stable, unstable and neutral equilibra."
+            }
+          ]
+        },
+        {
+          "name": "Simple Harmonic Motion",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-37",
+              "description": "Illustration, explanation and definition of simple harmonic motion (S.H.M). Use of a loaded test-tube oscillating vertically in a liquid, simple pendulum, spiral spring and bifilar suspension to demonstrate simple harmonic motion."
+            },
+            {
+              "code": "PHY-MATTER-38",
+              "description": "Speed and acceleration of S.H.M. Relate linear and angular speeds, linear and angular accelerations."
+            },
+            {
+              "code": "PHY-MATTER-39",
+              "description": "Period, frequency and amplitude of a body executing S.H.M. Experimental determination of 'g' with the simple pendulum and helical spring. The theory of the principles should be treated but derivation of the formula for 'g' is not required. Simple problems may be set on simple harmonic motion."
+            },
+            {
+              "code": "PHY-MATTER-40",
+              "description": "Energy of S.H.M."
+            },
+            {
+              "code": "PHY-MATTER-41",
+              "description": "Forced vibration and resonance."
+            }
+          ]
+        },
+        {
+          "name": "Newton's Laws of Motion",
+          "objectives": [
+            {
+              "code": "PHY-MATTER-42",
+              "description": "First Law: Inertia of rest and inertia of motion. Distinction between inertia mass and weight."
+            },
+            {
+              "code": "PHY-MATTER-43",
+              "description": "Second Law: Force, acceleration, momentum and impulse. Use of timing devices e.g. ticker-timer to determine the acceleration of a falling body. Linear momentum and its conservation. Collision of elastic bodies in a straight line."
+            },
+            {
+              "code": "PHY-MATTER-44",
+              "description": "Third Law: Action and reaction. Applications: recoil of a gun, jet and rocket propulsions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Energy: Mechanical and Heat",
+      "abbreviation": "ENERGY",
+      "subStrands": [
+        {
+          "name": "Forms, Resources and Conservation of Energy",
+          "objectives": [
+            {
+              "code": "PHY-ENERGY-1",
+              "description": "Forms of energy: Examples of various forms of energy should be mentioned e.g. mechanical (potential and kinetic), heat, chemical, electrical, light, sound, nuclear."
+            },
+            {
+              "code": "PHY-ENERGY-2",
+              "description": "World energy resources: Renewable (e.g. solar, wind, tides, hydro, ocean waves) and non-renewable (e.g. petroleum, coal, nuclear, biomass) sources of energy should be discussed briefly."
+            },
+            {
+              "code": "PHY-ENERGY-3",
+              "description": "Conservation of energy: Statement of the principle of conservation of energy and its use in explaining energy transformations."
+            }
+          ]
+        },
+        {
+          "name": "Work, Energy, Power and Machines",
+          "objectives": [
+            {
+              "code": "PHY-ENERGY-4",
+              "description": "Concept of work as a measure of energy transfer. Unit of energy as the joule (J)."
+            },
+            {
+              "code": "PHY-ENERGY-5",
+              "description": "Concept of energy as capability to do work. Unit of electrical consumption is KWh."
+            },
+            {
+              "code": "PHY-ENERGY-6",
+              "description": "Work done in a gravitational field: Work done in lifting a body and by falling bodies."
+            },
+            {
+              "code": "PHY-ENERGY-7",
+              "description": "Types of mechanical energy: Potential energy (P.E.) and Kinetic energy (K.E.). Derivation of P.E. and K.E. are expected to be known. Identification of types of energy possessed by a body under given conditions."
+            },
+            {
+              "code": "PHY-ENERGY-8",
+              "description": "Conservation of mechanical energy: Verification of the principle."
+            },
+            {
+              "code": "PHY-ENERGY-9",
+              "description": "Concept of power as time rate of doing work. Unit of power as the watt (W)."
+            },
+            {
+              "code": "PHY-ENERGY-10",
+              "description": "Application of mechanical energy – machines: Levers, pulleys, inclined plane, wedge, screw, wheel and axle, gears. The force ratio (F.R), mechanical advantage (M.A), velocity ratio (V.R) and efficiency of each machine should be treated. Identification of simple machines that make up a given complicated machine e.g. bicycle. Effects of friction on Machines."
+            }
+          ]
+        },
+        {
+          "name": "Heat Energy",
+          "objectives": [
+            {
+              "code": "PHY-ENERGY-11",
+              "description": "Temperature and its measurement: Concept of temperature as degree of hotness or coldness of a body. Construction and graduation of a simple thermometer. Properties of thermometric liquids. Constant-volume gas thermometer, resistance thermometer, thermocouple, liquid-in-glass thermometer including maximum and minimum thermometer and clinical thermometer; pyrometer should be mentioned. Celsius and Absolute scales of temperature. Kelvin and degree Celsius as units of temperature."
+            },
+            {
+              "code": "PHY-ENERGY-12",
+              "description": "Effects of heat on matter: Use of the kinetic theory to explain effects of heat. Rise in temperature, change of phase state, expansion, change of resistance. Mention should be made of: change of colour, thermionic emission, change in chemical properties."
+            },
+            {
+              "code": "PHY-ENERGY-13",
+              "description": "Thermal expansion – Linear, area and volume expansivities. Qualitative and quantitative treatment. Per Kelvin (K-1) as the unit of expansivity. Consequences and applications of expansions: expansion in buildings and bridges, bimetallic strips, thermostat, over-head cables causing sagging and in railway lines causing buckling. Real and apparent expansion of liquids. Anomalous expansion of water."
+            },
+            {
+              "code": "PHY-ENERGY-14",
+              "description": "Heat transfer – Conduction, convection and radiation. Use of the kinetic theory to explain the modes of heat transfer. Treatment should include the explanation of land and sea breezes, ventilation and applications in cooling devices. The vacuum flask."
+            },
+            {
+              "code": "PHY-ENERGY-15",
+              "description": "The gas laws – Boyle's law, Charles' law, pressure law and general gas law. The laws should be verified using simple apparatus. Use of the kinetic theory to explain the laws. Simple problems may be set. Mention should be made of the operation of safety air bags in vehicles."
+            },
+            {
+              "code": "PHY-ENERGY-16",
+              "description": "Measurement of heat energy: Concept of heat capacity; Specific heat capacity. Use of the method of mixtures and the electrical method to determine the specific heat capacities of solids and liquids. Land and sea breezes related to the specific heat capacity of water and land. Jkg-1K-1 as unit of specific heat capacity."
+            },
+            {
+              "code": "PHY-ENERGY-17",
+              "description": "Latent heat: Concept of latent heat and its types. Determination of the melting point of solid and the boiling point of a liquid. Effects of impurities and pressure on melting and boiling points. Application in pressure cooker."
+            },
+            {
+              "code": "PHY-ENERGY-18",
+              "description": "Specific latent heat of fusion and of vaporization: Use of the method of mixtures and the electrical method to determine the specific latent heats of fusion of ice and of vaporization of steam. Applications in refrigerators and air conditioners. Jkg-1 as unit of specific latent heat."
+            },
+            {
+              "code": "PHY-ENERGY-19",
+              "description": "Evaporation and boiling: Effect of temperature, humidity, surface area and draught on evaporation to be discussed."
+            },
+            {
+              "code": "PHY-ENERGY-20",
+              "description": "Vapour and vapour pressure: Explanation of vapour and vapour pressure. Demonstration of vapour pressure using simple experiments. Saturated vapour pressure and its relation to boiling."
+            },
+            {
+              "code": "PHY-ENERGY-21",
+              "description": "Humidity, relative humidity and dew point: Measurement of dew point and relative humidity. Estimation of humidity of the atmosphere using wet and dry-bulb hygrometer."
+            },
+            {
+              "code": "PHY-ENERGY-22",
+              "description": "Humidity and the weather: Formation of dew, fog and rain."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Waves",
+      "abbreviation": "WAVES",
+      "subStrands": [
+        {
+          "name": "Production, Propagation and Types of Waves",
+          "objectives": [
+            {
+              "code": "PHY-WAVES-1",
+              "description": "Production and propagation of mechanical waves: Use of ropes and springs (slinky) to generate mechanical waves."
+            },
+            {
+              "code": "PHY-WAVES-2",
+              "description": "Pulsating system: Energy transmitted with definite speed, frequency and wavelength. Use of ripple tank to show water waves and to demonstrate energy propagation by waves. Hertz (Hz) as unit of frequency."
+            },
+            {
+              "code": "PHY-WAVES-3",
+              "description": "Waveform: Description and graphical representation. Amplitude, wavelength, frequency and period. Sound and light as wave phenomena."
+            },
+            {
+              "code": "PHY-WAVES-4",
+              "description": "Mathematical relationship connecting frequency (f), wavelength (λ), period (T) and velocity (v): V = fλ and T = 1/f. Simple problems may be set."
+            },
+            {
+              "code": "PHY-WAVES-5",
+              "description": "Types of waves: Transverse and longitudinal. Examples to be given."
+            },
+            {
+              "code": "PHY-WAVES-6",
+              "description": "Mathematical representation of wave motion: Equation y = A sin(wt ± 2πx/λ) to be explained. Questions on phase difference will not be set."
+            }
+          ]
+        },
+        {
+          "name": "Properties of Waves",
+          "objectives": [
+            {
+              "code": "PHY-WAVES-7",
+              "description": "Properties of waves: Reflection, refraction, diffraction, interference, superposition of progressive waves producing standing/stationary waves. Ripple tank should be extensively used to demonstrate these properties with plane and circular waves. Explanation of the properties."
+            }
+          ]
+        },
+        {
+          "name": "Light Waves",
+          "objectives": [
+            {
+              "code": "PHY-WAVES-8",
+              "description": "Sources of light: Natural and artificial. Luminous and non-luminous bodies."
+            },
+            {
+              "code": "PHY-WAVES-9",
+              "description": "Rectilinear propagation of light: Formation of shadows and eclipse. Pinhole camera. Simple numerical problems may be set."
+            },
+            {
+              "code": "PHY-WAVES-10",
+              "description": "Reflection of light at plane surface (plane mirror): Regular and irregular reflections. Verification of laws of reflection. Formation of images. Inclined plane mirrors. Rotation of mirrors. Applications in periscope, sextant and kaleidoscope."
+            },
+            {
+              "code": "PHY-WAVES-11",
+              "description": "Reflection of light at curved surfaces (concave and convex mirrors): Laws of reflection. Formation of images. Characteristics of images. Use of mirror formulae: 1/u + 1/v = 1/f and magnification m = v/u to solve numerical problems. (Derivation of formulae is not required.) Experimental determination of the focal length of concave mirror. Applications in searchlight, parabolic and driving mirrors, car headlamps etc."
+            },
+            {
+              "code": "PHY-WAVES-12",
+              "description": "Refraction of light at plane surfaces (rectangular glass prism/block and triangular prism): Laws of refraction. Formation of images, real and apparent depths. Critical angle and total internal reflection. Lateral displacement and angle of deviation. Use of minimum deviation equation. Applications: periscope, prism binoculars, optical fibres. The mirage."
+            },
+            {
+              "code": "PHY-WAVES-13",
+              "description": "Refraction of light at curved surfaces (converging and diverging lenses): Formation of images. Use of lens formulae 1/u + 1/v = 1/f and magnification v/u to solve numerical problems. (Derivation of formulae not required.) Experimental determination of the focal length of converging lens. Power of lens in dioptres (D)."
+            },
+            {
+              "code": "PHY-WAVES-14",
+              "description": "Application of lenses in optical instruments: Simple camera, the human eye, film projector, simple and compound microscopes, terrestrial and astronomical telescopes. Angular magnification. Prism binoculars. The structure and function of the camera and the human eye should be compared. Defects of the human eye and their corrections."
+            },
+            {
+              "code": "PHY-WAVES-15",
+              "description": "Dispersion of white light by a triangular glass prism: Production of pure spectrum of white light. Recombination of the components of the spectrum. Colours of objects. Mixing coloured lights."
+            }
+          ]
+        },
+        {
+          "name": "Electromagnetic Waves",
+          "objectives": [
+            {
+              "code": "PHY-WAVES-16",
+              "description": "Types of radiation in electromagnetic spectrum: Elementary description and uses of various types of radiation: Radio, infrared, visible light, ultra-violet, X-rays, gamma rays."
+            }
+          ]
+        },
+        {
+          "name": "Sound Waves",
+          "objectives": [
+            {
+              "code": "PHY-WAVES-17",
+              "description": "Sources of sound."
+            },
+            {
+              "code": "PHY-WAVES-18",
+              "description": "Transmission of sound waves: Experiment to show that a material medium is required."
+            },
+            {
+              "code": "PHY-WAVES-19",
+              "description": "Speed of sound in solid, liquid and air: To be compared. Dependence of velocity of sound on temperature and pressure to be considered."
+            },
+            {
+              "code": "PHY-WAVES-20",
+              "description": "Echoes and reverberation: Use of echoes in mineral exploration, and determination of ocean depth. Thunder and multiple reflections in a large room as examples of reverberation."
+            },
+            {
+              "code": "PHY-WAVES-21",
+              "description": "Noise and music. Characteristics of sound: Pitch, loudness and quality."
+            },
+            {
+              "code": "PHY-WAVES-22",
+              "description": "Vibration in strings: The use of sonometer to demonstrate the dependence of frequency (f) on length (l), tension (T) and mass per unit length (linear density) (m) of string. Use of the formula f0 = (1/2l)√(T/m) in solving simple numerical problems. Applications in stringed instruments: e.g. guitar, piano, harp and violin."
+            },
+            {
+              "code": "PHY-WAVES-23",
+              "description": "Forced vibration: Use of resonance boxes and sonometer to illustrate forced vibration. Resonance; harmonics and overtones: Use of overtones to explain the quality of a musical note. Applications in percussion instruments: e.g. drum, bell, cymbals, xylophone."
+            },
+            {
+              "code": "PHY-WAVES-24",
+              "description": "Vibration of air in pipe – open and closed pipes: Measurement of velocity of sound in air or frequency of tuning fork using the resonance tube. Use of the relationship v = fλ in solving numerical problems. End correction is expected to be mentioned. Applications in wind instruments e.g. organ, flute, trumpet, horn, clarinet and saxophone."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fields",
+      "abbreviation": "FIELDS",
+      "subStrands": [
+        {
+          "name": "Description and Properties of Fields",
+          "objectives": [
+            {
+              "code": "PHY-FIELDS-1",
+              "description": "Concept of fields: Gravitational, electric and magnetic. Properties of a force field. Use of compass needle and iron filings to show magnetic field lines."
+            }
+          ]
+        },
+        {
+          "name": "Gravitational Field",
+          "objectives": [
+            {
+              "code": "PHY-FIELDS-2",
+              "description": "Acceleration due to gravity (g): G as gravitational field intensity should be mentioned, g = F/m."
+            },
+            {
+              "code": "PHY-FIELDS-3",
+              "description": "Gravitational force between two masses – Newton's law of gravitation: Masses include protons, electrons and planets. Universal gravitational constant (G). Relationship between 'G' and 'g'."
+            },
+            {
+              "code": "PHY-FIELDS-4",
+              "description": "Gravitational potential and escape velocity: Calculation of the escape velocity of a rocket from the earth's gravitational field."
+            }
+          ]
+        },
+        {
+          "name": "Electric Field – Electrostatics",
+          "objectives": [
+            {
+              "code": "PHY-FIELDS-5",
+              "description": "Production of electric charges: Production by friction, induction and contact."
+            },
+            {
+              "code": "PHY-FIELDS-6",
+              "description": "Types of distribution of charges: A simple electroscope should be used to detect and compare charges on differently-shaped bodies. Application in lightning conductors."
+            },
+            {
+              "code": "PHY-FIELDS-7",
+              "description": "Storage of charges. Electric lines of force: Determination, properties and field patterns of charges."
+            },
+            {
+              "code": "PHY-FIELDS-8",
+              "description": "Electric force between point charges – Coulomb's law: Permittivity of a medium."
+            },
+            {
+              "code": "PHY-FIELDS-9",
+              "description": "Concepts of electric field, electric field intensity (potential gradient) and electric potential: Calculation of electric field intensity and electric potential of simple systems."
+            },
+            {
+              "code": "PHY-FIELDS-10",
+              "description": "Capacitance – definition, arrangement and application: Factors affecting the capacitance of a parallel-plate capacitor. The farad (F) as unit of capacitance. Capacitors in series and in parallel. Energy stored in a charged capacitor. Uses of capacitors: e.g. in radio and television. (Derivation of formulae for capacitance is not required.)"
+            }
+          ]
+        },
+        {
+          "name": "Current Electricity",
+          "objectives": [
+            {
+              "code": "PHY-FIELDS-11",
+              "description": "Production of electric current from primary and secondary cells: Simple cell and its defects. Daniel cell, Lechanché cell (wet and dry). Lead-acid accumulator. Alkaline-cadmium cell. E.m.f. of a cell, the volt (V) as unit of e.m.f."
+            },
+            {
+              "code": "PHY-FIELDS-12",
+              "description": "Potential difference and electric current: Ohm's law and resistance. Verification of Ohm's law. The volt (V), ampere (A) and ohm (Ω) as units of p.d., current and resistance respectively."
+            },
+            {
+              "code": "PHY-FIELDS-13",
+              "description": "Electric circuit: Series and parallel arrangement of cells and resistors. Lost volt and internal resistance of batteries."
+            },
+            {
+              "code": "PHY-FIELDS-14",
+              "description": "Electric conduction through materials: Ohmic and non-ohmic conductors. Examples of ohmic conductors are metals; non-ohmic conductors are semiconductors."
+            },
+            {
+              "code": "PHY-FIELDS-15",
+              "description": "Electric energy and power: Quantitative definition of electrical energy and power. Heating effect of an electric current and its application. Conversion of electrical energy to mechanical energy e.g. electric motors. Conversion of solar energy to electrical and heat energies: e.g. solar cells, solar heaters."
+            },
+            {
+              "code": "PHY-FIELDS-16",
+              "description": "Shunt and multiplier: Use in conversion of a galvanometer into an ammeter and a voltmeter."
+            },
+            {
+              "code": "PHY-FIELDS-17",
+              "description": "Resistivity and conductivity: Factors affecting the electrical resistance of a material should be treated. Simple problems may be set."
+            },
+            {
+              "code": "PHY-FIELDS-18",
+              "description": "Measurement of electric current, potential difference, resistance, e.m.f. and internal resistance of a cell: Principle of operation and use of ammeter, voltmeter, potentiometer. The Wheatstone bridge and metre bridge."
+            }
+          ]
+        },
+        {
+          "name": "Magnetic Field",
+          "objectives": [
+            {
+              "code": "PHY-FIELDS-19",
+              "description": "Properties of magnets and magnetic materials: Practical examples such as soft iron, steel and alloys."
+            },
+            {
+              "code": "PHY-FIELDS-20",
+              "description": "Magnetization and demagnetization: Temporary and permanent magnets. Comparison of iron and steel as magnetic materials."
+            },
+            {
+              "code": "PHY-FIELDS-21",
+              "description": "Concept of magnetic field: Magnetic flux and magnetic flux density. Magnetic field around a permanent magnet, a current-carrying conductor and a solenoid. Plotting of line of force to locate neutral points. Units of magnetic flux and magnetic flux density as weber (Wb) and tesla (T) respectively."
+            },
+            {
+              "code": "PHY-FIELDS-22",
+              "description": "Magnetic force on a current-carrying conductor placed in a magnetic field and between two parallel current-carrying conductors: Qualitative treatment only. Applications: electric motor and moving-coil galvanometer."
+            },
+            {
+              "code": "PHY-FIELDS-23",
+              "description": "Use of electromagnets: Examples in electric bell, telephone earpiece etc."
+            },
+            {
+              "code": "PHY-FIELDS-24",
+              "description": "The earth's magnetic field: Mariner's compass. Angles of dip and declination."
+            },
+            {
+              "code": "PHY-FIELDS-25",
+              "description": "Magnetic force on a moving charged particle: Solving simple problems involving the motion of a charged particle in a magnetic field, using F = qvB sin θ."
+            }
+          ]
+        },
+        {
+          "name": "Electromagnetic Field and Induction",
+          "objectives": [
+            {
+              "code": "PHY-FIELDS-26",
+              "description": "Concept of electromagnetic field: Identifying the directions of current, magnetic field and force in an electromagnetic field (Fleming's left-hand rule)."
+            },
+            {
+              "code": "PHY-FIELDS-27",
+              "description": "Electromagnetic induction – Faraday's law, Lenz's law and motor-generator effect: Applications: Generator (d.c. and a.c.) induction coil and transformer. The principles underlying the production of direct and alternating currents should be treated. Equation E = E0 sin wt should be explained."
+            },
+            {
+              "code": "PHY-FIELDS-28",
+              "description": "Inductance: Qualitative explanation of self and mutual inductance. The unit of inductance is henry (H). (E = ½LI2.) Application in radio, T.V., transformer. (Derivation of formula is not required.)"
+            },
+            {
+              "code": "PHY-FIELDS-29",
+              "description": "Eddy currents: A method of reducing eddy current losses should be treated. Applications in induction furnace, speedometer, etc."
+            },
+            {
+              "code": "PHY-FIELDS-30",
+              "description": "Power transmission and distribution: Reduction of power losses in high-tension transmission lines. Household wiring system should be discussed."
+            }
+          ]
+        },
+        {
+          "name": "Simple A.C. Circuits",
+          "objectives": [
+            {
+              "code": "PHY-FIELDS-31",
+              "description": "Graphical representation of e.m.f. and current in an a.c. circuit: Graphs of equation I = I0 sin wt and E = E0 sin wt should be treated."
+            },
+            {
+              "code": "PHY-FIELDS-32",
+              "description": "Peak and r.m.s. values: Phase relationship between voltage and current in the circuit elements: resistor, inductor and capacitor."
+            },
+            {
+              "code": "PHY-FIELDS-33",
+              "description": "Series circuit containing resistor, inductor and capacitor: Simple calculations involving a.c. circuit. (Derivation of formulae is not required.)"
+            },
+            {
+              "code": "PHY-FIELDS-34",
+              "description": "Reactance and impedance: XL and Xc should be treated. Simple numerical problems may be set."
+            },
+            {
+              "code": "PHY-FIELDS-35",
+              "description": "Vector diagrams."
+            },
+            {
+              "code": "PHY-FIELDS-36",
+              "description": "Resonance in an a.c. circuit: Applications in tuning of radio and T.V. should be discussed."
+            },
+            {
+              "code": "PHY-FIELDS-37",
+              "description": "Power in an a.c. circuit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Atomic and Nuclear Physics",
+      "abbreviation": "ATOMIC",
+      "subStrands": [
+        {
+          "name": "Structure of the Atom",
+          "objectives": [
+            {
+              "code": "PHY-ATOMIC-1",
+              "description": "Models of the atom: Thomson, Rutherford, Bohr and electron-cloud (wave-mechanical) models should be discussed qualitatively. Limitations of each model. Quantization of angular momentum (Bohr)."
+            },
+            {
+              "code": "PHY-ATOMIC-2",
+              "description": "Energy quantization: Energy levels in the atom. Colour and light frequency. Treatment should include: Frank-Hertz experiment, Line spectra from hot bodies, absorption spectra and spectra of discharge lamps."
+            },
+            {
+              "code": "PHY-ATOMIC-3",
+              "description": "Photoelectric effect: Explanation of photoelectric effect. Dual nature of light. Work function and threshold frequency. Einstein's photoelectric equation and its explanation. Application in T.V., camera, etc. Simple problems may be set."
+            },
+            {
+              "code": "PHY-ATOMIC-4",
+              "description": "Thermionic emission: Explanation and applications."
+            },
+            {
+              "code": "PHY-ATOMIC-5",
+              "description": "X-rays: Production of X-rays and structure of X-ray tube. Types, characteristics, properties, uses and hazards of X-rays. Safety precautions."
+            }
+          ]
+        },
+        {
+          "name": "Structure of the Nucleus",
+          "objectives": [
+            {
+              "code": "PHY-ATOMIC-6",
+              "description": "Composition of the nucleus: Protons and neutrons. Nucleon number (A), proton number (Z), neutron number (N) and the equation: A = Z + N to be treated. Nuclides and their notation. Isotopes."
+            },
+            {
+              "code": "PHY-ATOMIC-7",
+              "description": "Radioactivity – Natural and artificial: Radioactive elements, radioactive emissions (α, β, γ) and their properties and uses. Detection of radiations by G-M counter, photographic plates, etc. Radioactive decay, half-life and decay constant. Transformation of elements. Applications of radioactivity in agriculture, medicine, industry, archaeology, etc."
+            },
+            {
+              "code": "PHY-ATOMIC-8",
+              "description": "Nuclear reactions – Fusion and Fission: Distinction between fusion and fission. Binding energy, mass defect and energy equation E = Δmc2. Nuclear reactors. Atomic bomb. Radiation hazards and safety precautions. Peaceful uses of nuclear reactions."
+            }
+          ]
+        },
+        {
+          "name": "Wave-Particle Paradox",
+          "objectives": [
+            {
+              "code": "PHY-ATOMIC-9",
+              "description": "Electron diffraction. Duality of matter. Simple illustration of the dual nature of light."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Harmonised Topics for All Member Countries",
+      "abbreviation": "HARM",
+      "subStrands": [
+        {
+          "name": "Derived Quantities and Dimensional Analysis",
+          "objectives": [
+            {
+              "code": "PHY-HARM-1",
+              "description": "Fundamental quantities and units e.g. Length, mass, time, electric current, luminous intensity etc., m, kg, s, A, cd etc. as their respective units."
+            },
+            {
+              "code": "PHY-HARM-2",
+              "description": "Derived quantities and units e.g. volume, density, speed etc. m3, kgm-3, ms-1 etc. as their respective units."
+            },
+            {
+              "code": "PHY-HARM-3",
+              "description": "Explanation of dimensions in terms of fundamental and derived quantities. Uses of dimensions: to verify dimensional correctness of a given equation; to derive the relationship between quantities; to obtain derived units."
+            }
+          ]
+        },
+        {
+          "name": "Projectile Motion",
+          "objectives": [
+            {
+              "code": "PHY-HARM-4",
+              "description": "Concept of projectiles as an object thrown/released into space. Applications of projectiles in warfare, sports etc. Simple problems involving range, maximum height and time of flight may be set."
+            }
+          ]
+        },
+        {
+          "name": "Satellites and Rockets",
+          "objectives": [
+            {
+              "code": "PHY-HARM-5",
+              "description": "Meaning of a satellite. Comparison of natural and artificial satellites. Parking orbits, geostationary satellites and period of revolution and speed of a satellite. Uses of satellites and rockets."
+            }
+          ]
+        },
+        {
+          "name": "Elastic Properties of Solids and Thermal Conductivity",
+          "objectives": [
+            {
+              "code": "PHY-HARM-6",
+              "description": "Elastic properties of solid: Hooke's law, Young's modulus and work done in springs and string. Behaviour of elastic materials under stress – features of load-extension graph. Simple calculations on Hooke's law and Young's modulus."
+            },
+            {
+              "code": "PHY-HARM-7",
+              "description": "Thermal conductivity: Solar energy; solar panel for heat energy supply. Solar energy collector and Black body radiation: Explanation of a blackbody. Variation of intensity of black body radiation with wavelength at different temperatures."
+            }
+          ]
+        },
+        {
+          "name": "Fibre Optics",
+          "objectives": [
+            {
+              "code": "PHY-HARM-8",
+              "description": "Explanation of concept of fibre optics. Principle of transmission of light through an optical fibre. Applications of fibre optics e.g. local area Networks (LAN), medicine, sensing devices, carrying laser beams etc."
+            }
+          ]
+        },
+        {
+          "name": "Introduction to LASER",
+          "objectives": [
+            {
+              "code": "PHY-HARM-9",
+              "description": "Meaning of LASER. Types of LASERS (Solid state, gas, liquid and semi-conductor LASERS). Application of LASERS (in scientific research, communication, medicine, military technology, holograms etc.). Dangers involved in using LASERS."
+            }
+          ]
+        },
+        {
+          "name": "Magnetic Materials and Electrical Conduction",
+          "objectives": [
+            {
+              "code": "PHY-HARM-10",
+              "description": "Magnetic materials: Uses of magnets and ferromagnetic materials."
+            },
+            {
+              "code": "PHY-HARM-11",
+              "description": "Electrical Conduction through materials (Electronic): Distinction between conductors, semiconductors and insulators in terms of band theory. Semiconductor materials (silicon and germanium). Meaning of intrinsic semiconductors. Charge carriers. Doping; production of p-type and n-type extrinsic semiconductors. Junction diode – forward and reverse biasing, voltage characteristics. Uses of diodes. Half and full wave rectification."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

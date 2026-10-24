@@ -1,0 +1,184 @@
+{
+  "found": true,
+  "subject": "Book Keeping",
+  "subjectCode": "BOOKKP",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction to Book Keeping",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Fundamentals, Transactions and Accounts Classification",
+          "objectives": [
+            {
+              "code": "BOOKKP-INTRO-1",
+              "description": "Meaning of book keeping: definition, history, nature, importance and functions of book keeping; career opportunities and beneficiaries of book keeping; qualities and values of book keepers."
+            },
+            {
+              "code": "BOOKKP-INTRO-2",
+              "description": "Assets and liabilities: definition, differences, classification and examples of assets and liabilities."
+            },
+            {
+              "code": "BOOKKP-INTRO-3",
+              "description": "Business transactions: meaning and types of business transactions; parties involved in business transactions."
+            },
+            {
+              "code": "BOOKKP-INTRO-4",
+              "description": "Classification of accounts: personal accounts (debtors and creditors); impersonal accounts (real and nominal)."
+            },
+            {
+              "code": "BOOKKP-INTRO-5",
+              "description": "Source documents: definition, identification, types and uses of source documents."
+            },
+            {
+              "code": "BOOKKP-INTRO-6",
+              "description": "Concepts and conventions: definition, identification and the differences between concepts and conventions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Books of Entry and Ledger",
+      "abbreviation": "BOOKS",
+      "subStrands": [
+        {
+          "name": "Books of Original Entry, Ledger and Double Entry",
+          "objectives": [
+            {
+              "code": "BOOKKP-BOOKS-1",
+              "description": "Books of original entry: definition, purpose, types, format, uses and preparation of books of original entry."
+            },
+            {
+              "code": "BOOKKP-BOOKS-2",
+              "description": "Ledger: definition, classification, format, uses and preparation of ledgers."
+            },
+            {
+              "code": "BOOKKP-BOOKS-3",
+              "description": "Principles of double entry: meaning, history, rules and making double entries."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cash Book and Bank Reconciliation",
+      "abbreviation": "CASH",
+      "subStrands": [
+        {
+          "name": "Cash Book Types, Bank Reconciliation and Trial Balance",
+          "objectives": [
+            {
+              "code": "BOOKKP-CASH-1",
+              "description": "Cash book: meaning, purpose, description, differences and preparation of single column, double column, three column and petty cash book."
+            },
+            {
+              "code": "BOOKKP-CASH-2",
+              "description": "Bank reconciliation statement: meaning and purpose; terminologies and banking documents; causes of differences between cash book and bank statement balance."
+            },
+            {
+              "code": "BOOKKP-CASH-3",
+              "description": "Trial balance and errors: meaning and functions of trial balance; rules and preparation of trial balance; meaning, types, classification of errors; correction of errors and preparation of suspense account."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Financial Statements and Adjustments",
+      "abbreviation": "FINSTAT",
+      "subStrands": [
+        {
+          "name": "Trading, P&L, Balance Sheet and Adjustments",
+          "objectives": [
+            {
+              "code": "BOOKKP-FINSTAT-1",
+              "description": "Trading account: definition, purpose, format and preparation of simple trading account; methods of valuing stock (FIFO and LIFO)."
+            },
+            {
+              "code": "BOOKKP-FINSTAT-2",
+              "description": "Profit and loss account: definition, purpose, format and preparation of profit and loss account."
+            },
+            {
+              "code": "BOOKKP-FINSTAT-3",
+              "description": "Balance sheet: meaning, content, format and preparation of a simple balance sheet."
+            },
+            {
+              "code": "BOOKKP-FINSTAT-4",
+              "description": "Adjustments to financial statements: adjustment for prepayments, accruals, depreciation, bad and doubtful debts; meaning and methods of depreciation (straight line and reducing balance)."
+            },
+            {
+              "code": "BOOKKP-FINSTAT-5",
+              "description": "Control accounts: meaning and preparation of sales ledger and purchases ledger control accounts."
+            },
+            {
+              "code": "BOOKKP-FINSTAT-6",
+              "description": "Single entry and incomplete records: meaning, limitations and preparation of final accounts from incomplete records."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Specialised Accounts",
+      "abbreviation": "SPEC",
+      "subStrands": [
+        {
+          "name": "Non-Profit, Manufacturing, Partnership, Joint Venture, Company and Other Accounts",
+          "objectives": [
+            {
+              "code": "BOOKKP-SPEC-1",
+              "description": "Accounts of not-for-profit making organizations: purpose, content and preparation of receipts and payments accounts, income and expenditure account."
+            },
+            {
+              "code": "BOOKKP-SPEC-2",
+              "description": "Manufacturing accounts: meaning, purpose and terminologies; preparation of manufacturing, trading, profit and loss accounts."
+            },
+            {
+              "code": "BOOKKP-SPEC-3",
+              "description": "Partnership accounts: meaning and terms — partnership deed, drawings, interest on capital, interest on drawings; preparation of capital and current accounts, profit and loss and appropriation account and balance sheet; admission of new partners and goodwill account."
+            },
+            {
+              "code": "BOOKKP-SPEC-4",
+              "description": "Joint venture accounts: meaning and purpose; differences between joint venture and partnership."
+            },
+            {
+              "code": "BOOKKP-SPEC-5",
+              "description": "Departmental and branch accounts: importance and differences; preparation of departmental and simple branch accounts."
+            },
+            {
+              "code": "BOOKKP-SPEC-6",
+              "description": "Introduction to company accounts: formation and terminologies; preparation of simple financial statements."
+            },
+            {
+              "code": "BOOKKP-SPEC-7",
+              "description": "Interpretation of accounts: purpose and computation of ratios — net profit margin, stock turnover, quick ratio, acid test ratio, gross profit margin, return on capital employed."
+            },
+            {
+              "code": "BOOKKP-SPEC-8",
+              "description": "Purchase of business: reasons, terminologies and preparation of accounts related to purchase and sale of business."
+            },
+            {
+              "code": "BOOKKP-SPEC-9",
+              "description": "Consignment accounts: terminologies and preparation of simple consignment accounts."
+            },
+            {
+              "code": "BOOKKP-SPEC-10",
+              "description": "Hire purchase: meaning and preparation of accounts in the seller's and hirer's books."
+            },
+            {
+              "code": "BOOKKP-SPEC-11",
+              "description": "Contract accounts: meaning, purpose and terminologies; preparation of contract accounts."
+            },
+            {
+              "code": "BOOKKP-SPEC-12",
+              "description": "Cooperative accounts: meaning and objectives of cooperative societies."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2567 @@
+{
+  "subject": "Further Mathematics",
+  "yearGroup": "SS1",
+  "weeks": {
+    "1": {
+      "topic": "Sets, notation and Venn diagrams",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe a set by listing and by a property, using {x : ...};\n2. use the symbols ∈, ∉, ⊂, ⊆, ∪, ∩, U and A' correctly;\n3. identify disjoint sets, the universal set and the complement of a set;\n4. solve two-set problems with Venn diagrams and n(A ∪ B) = n(A) + n(B) − n(A ∩ B).\n\n## Materials\n\nA chart of set symbols, coloured chalk, two hula hoops (or chalk circles on the floor), name cards for the students.\n\n## Starter (5 minutes)\n\nAsk students who offer Further Mathematics to stand in one hoop and those who offer Technical Drawing to stand in the other. Ask: where should a student who offers both stand? And one who offers neither?\n\n## Development\n\n1. Write U = {x : x is an integer, 1 ≤ x ≤ 10} and list it. Define a set by a property and by listing.\n2. Introduce ∈ and ∉, then ⊂ and ⊆ with examples. Show that a set with n elements has 2ⁿ subsets.\n3. Define union, intersection and complement. Shade A ∪ B, A ∩ B, A' and A ∩ B' on Venn diagrams.\n4. Define disjoint sets: A ∩ B = ∅. Use even and odd numbers.\n5. Derive n(A ∪ B) = n(A) + n(B) − n(A ∩ B) from the Venn diagram. Solve a word problem with a class, including the number in neither set.\n\n## Class activity\n\nStudents survey their row on two school clubs, put the numbers in a Venn diagram and check the formula.\n\n## Evaluation\n\n1. If U = {1, 2, 3, 4, 5, 6} and A = {2, 4, 6}, list A'.\n2. How many subsets has {p, q, r}?\n\n## Assignment\n\nWorksheet questions, due Tuesday.",
+      "reading": {
+        "title": "Sets and how to picture them",
+        "content": "# Describing a set\n\nA **set** is a well-defined collection of objects, called its **elements**. We can list the elements, A = {2, 4, 6, 8}, or describe them by a property: A = {x : x is an even number, 0 < x < 10}, read 'the set of all x such that x is an even number between 0 and 10'.\n\n## Symbols\n\n| Symbol | Meaning |\n| --- | --- |\n| ∈ | is an element of: 4 ∈ A |\n| ∉ | is not an element of: 5 ∉ A |\n| ⊆ | is a subset of (may be equal) |\n| ⊂ | is a proper subset of |\n| ∪ | union: elements in A or B or both |\n| ∩ | intersection: elements in both A and B |\n| U | the universal set: everything under discussion |\n| A' | the complement of A: elements of U not in A |\n| ∅ or { } | the empty set |\n\nA set with n elements has 2ⁿ subsets. {a, b} has four: { }, {a}, {b}, {a, b}.\n\n## Disjoint sets\n\nTwo sets are **disjoint** if they have no element in common: A ∩ B = ∅. The set of boys and the set of girls in a class are disjoint.\n\n## Venn diagrams\n\nA rectangle stands for U and circles stand for the sets inside it. The overlap of two circles is A ∩ B; both circles together are A ∪ B; everything outside A is A'.\n\nFor two sets,\n\nn(A ∪ B) = n(A) + n(B) − n(A ∩ B).\n\nWe subtract n(A ∩ B) because those elements were counted twice.\n\n**Worked example.** In a group of 60 traders at Alaba market, 35 sell phones, 28 sell phone accessories and 5 sell neither. How many sell both?\n\nn(P ∪ A) = 60 − 5 = 55.\n55 = 35 + 28 − x, so x = 63 − 55 = 8.\n\nSo 8 sell both, 35 − 8 = 27 sell phones only and 28 − 8 = 20 sell accessories only. Check: 27 + 8 + 20 + 5 = 60.\n\n**Worked example.** U = {1, 2, ..., 10}, A = {x : x is odd}, B = {x : x is a multiple of 3}.\nA = {1, 3, 5, 7, 9}, B = {3, 6, 9}, A ∩ B = {3, 9}, A ∪ B = {1, 3, 5, 6, 7, 9}, (A ∪ B)' = {2, 4, 8, 10}."
+      },
+      "cards": [
+        {
+          "front": "{x : x is prime, x < 10}",
+          "back": "{2, 3, 5, 7}."
+        },
+        {
+          "front": "A ∪ B",
+          "back": "The set of elements in A or B or both."
+        },
+        {
+          "front": "A ∩ B",
+          "back": "The set of elements in both A and B."
+        },
+        {
+          "front": "A' (complement of A)",
+          "back": "The elements of the universal set that are not in A."
+        },
+        {
+          "front": "Disjoint sets",
+          "back": "Sets with no element in common: A ∩ B = ∅."
+        },
+        {
+          "front": "Number of subsets of a set with n elements",
+          "back": "2ⁿ."
+        },
+        {
+          "front": "Proper subset (⊂)",
+          "back": "Every element of A is in B, and B has at least one element not in A."
+        },
+        {
+          "front": "n(A ∪ B)",
+          "back": "n(A) + n(B) − n(A ∩ B)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "U = {1, 2, 3, ..., 10} and A = {x : x is a prime number}. How many elements are in A'?",
+          "options": ["4", "6", "5", "10"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which pair of sets is disjoint?",
+          "options": [
+            "{factors of 6} and {factors of 9}",
+            "{multiples of 2} and {multiples of 3}",
+            "{even numbers} and {odd numbers}",
+            "{vowels} and {letters in the word 'Abuja'}"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A = {x : x² = 9}. Which statement is true?",
+          "options": ["−3 ∈ A", "A = {3}", "9 ∈ A", "A ⊂ {3}"],
+          "answer": "A"
+        },
+        {
+          "prompt": "In an SS1 class of 40, 24 students like jollof rice, 20 like fried rice and 7 like neither. How many like both?",
+          "options": ["4", "7", "17", "11"],
+          "answer": "D"
+        },
+        {
+          "prompt": "How many subsets does the set {a, b, c, d} have?",
+          "options": ["8", "16", "4", "15"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "U = {x : x is an integer, 1 ≤ x ≤ 12}, A = {x : x is a multiple of 3} and B = {x : x is a factor of 12}. List the elements of (a) A, (b) B, (c) A ∩ B, (d) A ∪ B and (e) A'.",
+          "markScheme": [
+            "A = {3, 6, 9, 12}",
+            "B = {1, 2, 3, 4, 6, 12}",
+            "A ∩ B = {3, 6, 12}",
+            "A ∪ B = {1, 2, 3, 4, 6, 9, 12}",
+            "A' = {1, 2, 4, 5, 7, 8, 10, 11}"
+          ],
+          "modelAnswer": "(a) A = {3, 6, 9, 12}. (b) B = {1, 2, 3, 4, 6, 12}. (c) A ∩ B = {3, 6, 12}, the elements in both. (d) A ∪ B = {1, 2, 3, 4, 6, 9, 12}, the elements in either. (e) A' = {1, 2, 4, 5, 7, 8, 10, 11}, the elements of U not in A.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A = {3, 6, 9, 12}\n(b) B = {1, 2, 3, 4, 6, 12}\n(c) A ∩ B = {3, 6, 12}\n(d) A ∪ B = {1, 2, 3, 4, 6, 9, 12}\n(e) A' = {1, 2, 4, 5, 7, 8, 10, 11}",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = {3, 6, 9, 12}"
+                },
+                {
+                  "point": 1,
+                  "quote": "B = {1, 2, 3, 4, 6, 12}"
+                },
+                {
+                  "point": 2,
+                  "quote": "A ∩ B = {3, 6, 12}"
+                },
+                {
+                  "point": 3,
+                  "quote": "A ∪ B = {1, 2, 3, 4, 6, 9, 12}"
+                },
+                {
+                  "point": 4,
+                  "quote": "A' = {1, 2, 4, 5, 7, 8, 10, 11}"
+                }
+              ],
+              "feedback": "Every set is listed correctly and completely. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "U = {1,2,3,4,5,6,7,8,9,10,11,12}. A = {3,6,9,12}. B = {1,2,3,4,6,12}. A∩B = {3,6,12}. A∪B = {1,2,3,4,6,9,12}. A' = {1,2,4,5,7,8,10,11}.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = {3,6,9,12}"
+                },
+                {
+                  "point": 1,
+                  "quote": "B = {1,2,3,4,6,12}"
+                },
+                {
+                  "point": 2,
+                  "quote": "A∩B = {3,6,12}"
+                },
+                {
+                  "point": 3,
+                  "quote": "A∪B = {1,2,3,4,6,9,12}"
+                },
+                {
+                  "point": 4,
+                  "quote": "A' = {1,2,4,5,7,8,10,11}"
+                }
+              ],
+              "feedback": "Listing U first made every other set easy to check. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "A = {3, 6, 9, 12}. B = {2, 3, 4, 6}. A ∩ B = {3, 6}. A ∪ B = {2, 3, 4, 6, 9, 12}. A' = {1, 2, 4, 5, 7, 8, 10, 11}.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = {3, 6, 9, 12}"
+                },
+                {
+                  "point": 4,
+                  "quote": "A' = {1, 2, 4, 5, 7, 8, 10, 11}"
+                }
+              ],
+              "feedback": "A and A' are right. Every number is a factor of itself, and 1 is a factor of every number, so B must include 1 and 12. That changes A ∩ B and A ∪ B too."
+            },
+            {
+              "tier": "partial",
+              "text": "A = {3, 6, 9, 12}, B = {1, 2, 3, 4, 6, 12}. A ∩ B = {1, 2, 3, 4, 6, 9, 12}. A ∪ B = {3, 6, 12}. A' = {1, 2, 4, 5, 7, 8, 10, 11}",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A = {3, 6, 9, 12}"
+                },
+                {
+                  "point": 1,
+                  "quote": "B = {1, 2, 3, 4, 6, 12}"
+                },
+                {
+                  "point": 4,
+                  "quote": "A' = {1, 2, 4, 5, 7, 8, 10, 11}"
+                }
+              ],
+              "feedback": "A, B and A' are correct, but you swapped union and intersection. Intersection (∩) is what the sets share, {3, 6, 12}; union (∪) is everything in either."
+            },
+            {
+              "tier": "weak",
+              "text": "A = {3, 6, 9, 12, 15, 18}. B = {12, 24, 36}. A ∩ B = {12}.",
+              "meets": [],
+              "feedback": "Only elements of U, the integers from 1 to 12, can be in these sets. B is the factors of 12, the numbers that divide 12 exactly, not its multiples."
+            },
+            {
+              "tier": "weak",
+              "text": "A' = {3, 6, 9, 12} because the complement is the same as the set. A ∪ B means add the sets.",
+              "meets": [],
+              "feedback": "Those are the elements of A, not A'. The complement A' is everything in U that is not in A. Union is not addition; it is the set of elements in A or B or both."
+            }
+          ]
+        },
+        {
+          "prompt": "In an SS1 class of 50 students in Ikeja, 30 offer Further Mathematics, 25 offer Technical Drawing and 8 offer neither. How many students offer (a) both subjects, (b) Further Mathematics only, and (c) exactly one of the two subjects?",
+          "markScheme": [
+            "n(F ∪ T) = 50 − 8 = 42",
+            "Forms a correct equation, e.g. 30 + 25 − x = 42",
+            "Both = 13",
+            "Further Mathematics only = 17",
+            "Exactly one subject = 17 + 12 = 29"
+          ],
+          "modelAnswer": "Let x offer both. The number offering at least one subject is n(F ∪ T) = 50 − 8 = 42. Using n(F ∪ T) = n(F) + n(T) − n(F ∩ T): 42 = 30 + 25 − x, so x = 55 − 42 = 13. (a) 13 offer both. (b) Further Mathematics only = 30 − 13 = 17. (c) Technical Drawing only = 25 − 13 = 12, so exactly one subject = 17 + 12 = 29.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "n(F ∪ T) = 50 - 8 = 42\n42 = 30 + 25 - x\nx = 55 - 42 = 13\n(a) Both = 13\n(b) F only = 30 - 13 = 17\n(c) T only = 25 - 13 = 12, so exactly one = 17 + 12 = 29",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "n(F ∪ T) = 50 - 8 = 42"
+                },
+                {
+                  "point": 1,
+                  "quote": "42 = 30 + 25 - x"
+                },
+                {
+                  "point": 2,
+                  "quote": "Both = 13"
+                },
+                {
+                  "point": 3,
+                  "quote": "F only = 30 - 13 = 17"
+                },
+                {
+                  "point": 4,
+                  "quote": "exactly one = 17 + 12 = 29"
+                }
+              ],
+              "feedback": "Correct throughout, set out clearly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "From the Venn diagram: (30 - x) + x + (25 - x) + 8 = 50, so 63 - x = 50 and x = 13. This uses n(F ∪ T) = 42 students taking at least one. Both = 13. Further Maths only = 17. Technical Drawing only = 12. Exactly one = 29. Check: 17 + 13 + 12 + 8 = 50.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "n(F ∪ T) = 42"
+                },
+                {
+                  "point": 1,
+                  "quote": "(30 - x) + x + (25 - x) + 8 = 50"
+                },
+                {
+                  "point": 2,
+                  "quote": "Both = 13"
+                },
+                {
+                  "point": 3,
+                  "quote": "Further Maths only = 17"
+                },
+                {
+                  "point": 4,
+                  "quote": "Exactly one = 29"
+                }
+              ],
+              "feedback": "Building the equation from the Venn regions and checking the total at the end is excellent practice. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "n(F ∪ T) = 50 - 8 = 42. Both = 42 - 30 = 12. F only = 30 - 12 = 18. Exactly one = 18 + 13 = 31.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "n(F ∪ T) = 50 - 8 = 42"
+                }
+              ],
+              "feedback": "You correctly found that 42 offer at least one subject. The overlap is not 42 − 30; use 42 = 30 + 25 − x, which gives 13 for both, then 17 and 12 for each subject alone.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "n(F ∪ T) = 50 - 8 = 42. 42 = 30 + 25 - x so x = 13. Both = 13. F only = 30 - 13 = 17. Exactly one subject = 50 - 13 = 37.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "n(F ∪ T) = 50 - 8 = 42"
+                },
+                {
+                  "point": 1,
+                  "quote": "42 = 30 + 25 - x"
+                },
+                {
+                  "point": 2,
+                  "quote": "Both = 13"
+                },
+                {
+                  "point": 3,
+                  "quote": "F only = 30 - 13 = 17"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. In (c), 50 − 13 still includes the 8 who offer neither. Exactly one subject is F only plus T only: 17 + 12 = 29."
+            },
+            {
+              "tier": "weak",
+              "text": "Both = 30 - 25 = 5. F only = 30. Exactly one = 30 + 25 = 55.",
+              "meets": [],
+              "feedback": "Subtracting the two numbers does not give the overlap. Start with how many offer at least one subject, 50 − 8 = 42, then use n(F ∪ T) = n(F) + n(T) − n(F ∩ T)."
+            },
+            {
+              "tier": "weak",
+              "text": "The students who offer neither are 8, so both = 8 also because neither and both are the same number in a Venn diagram.",
+              "meets": [],
+              "feedback": "Neither and both are different regions: neither is outside both circles, both is the overlap. Use 50 − 8 = 42 for the number in the circles, then 42 = 30 + 25 − x."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Laws of sets, surds and binary operations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the commutative, associative and distributive laws of sets and De Morgan's laws;\n2. solve three-set problems with a Venn diagram;\n3. simplify surds, carry out the four operations on them and rationalise denominators;\n4. test a binary operation for closure, commutativity and associativity, and find its identity and inverses.\n\n## Materials\n\nA chart of the laws of sets, coloured chalk for shading Venn diagrams, a calculator for checking surds.\n\n## Starter (5 minutes)\n\nAsk: is √2 × √8 a whole number? Is √2 + √8? Let students guess before any working.\n\n## Development\n\n1. Shade (A ∪ B)' and A' ∩ B' on two diagrams to show they are the same: De Morgan's law. Do the same for (A ∩ B)' = A' ∪ B'. State the commutative, associative and distributive laws.\n2. Draw three overlapping circles. Fill a three-set problem from the centre outwards, starting with the number in all three.\n3. Simplify √50 = 5√2. Add and subtract like surds. Multiply surds, then rationalise a/√b and (a + √b)/(c − √d) using the conjugate.\n4. Define a binary operation * on a set. Test a * b = a + b + ab for closure, commutativity and associativity. Find the identity e from a * e = a, and the inverse of a from a * a⁻¹ = e.\n\n## Class activity\n\nIn pairs, students rationalise three denominators and check each answer on the calculator.\n\n## Evaluation\n\n1. Simplify √75 − √12.\n2. Find the identity element of a * b = a + b − 4.\n\n## Assignment\n\nWorksheet questions, due Thursday.",
+      "reading": {
+        "title": "Laws of sets, surds and binary operations",
+        "content": "# Laws of sets\n\nFor any sets A, B and C:\n\n- **Commutative**: A ∪ B = B ∪ A and A ∩ B = B ∩ A.\n- **Associative**: (A ∪ B) ∪ C = A ∪ (B ∪ C), and the same for ∩.\n- **Distributive**: A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C) and A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C).\n- **De Morgan's laws**: (A ∪ B)' = A' ∩ B' and (A ∩ B)' = A' ∪ B'.\n\n## Three-set problems\n\nFor three sets, n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A ∩ B) − n(B ∩ C) − n(A ∩ C) + n(A ∩ B ∩ C). In a Venn diagram, always fill the centre first and work outwards.\n\n**Worked example.** Of 70 farmers in a village near Ogbomoso, 30 grow yam, 35 cassava and 25 maize; 10 grow yam and cassava, 12 cassava and maize, 8 yam and maize, and 4 grow all three. n(Y ∪ C ∪ M) = 30 + 35 + 25 − 10 − 12 − 8 + 4 = 64, so 6 grow none of the three.\n\n# Surds\n\nA **surd** is a root that cannot be written as a rational number, such as √2 or √5. Simplify by taking out square factors: √50 = √25 × √2 = 5√2.\n\n- Add or subtract only like surds: 3√2 + 5√2 = 8√2.\n- Multiply: √a × √b = √(ab); (2 + √3)(1 + √3) = 2 + 2√3 + √3 + 3 = 5 + 3√3.\n- **Rationalise** a/√b by multiplying top and bottom by √b: 10/√5 = 10√5/5 = 2√5.\n- For a denominator c − √d, multiply top and bottom by its **conjugate** c + √d, since (c − √d)(c + √d) = c² − d.\n\n**Worked example.** 4/(3 − √5) = 4(3 + √5)/(9 − 5) = 4(3 + √5)/4 = 3 + √5.\n\n# Binary operations\n\nA **binary operation** * on a set S combines any two elements a and b to give a * b.\n\n- **Closed**: a * b is always in S.\n- **Commutative**: a * b = b * a.\n- **Associative**: (a * b) * c = a * (b * c).\n- **Identity** e: a * e = e * a = a.\n- **Inverse** of a: the element a⁻¹ with a * a⁻¹ = e.\n\n**Worked example.** On the real numbers, a * b = a + b + 3. It is commutative, since a + b + 3 = b + a + 3. Identity: a + e + 3 = a, so e = −3. Inverse of a: a + a⁻¹ + 3 = −3, so a⁻¹ = −6 − a. The inverse of 2 is −8."
+      },
+      "cards": [
+        {
+          "front": "De Morgan's laws",
+          "back": "(A ∪ B)' = A' ∩ B' and (A ∩ B)' = A' ∪ B'."
+        },
+        {
+          "front": "Distributive law of sets",
+          "back": "A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)."
+        },
+        {
+          "front": "n(A ∪ B ∪ C)",
+          "back": "Sum of the three sets, minus the three pairwise overlaps, plus the triple overlap."
+        },
+        {
+          "front": "Simplify √72",
+          "back": "√36 × √2 = 6√2."
+        },
+        {
+          "front": "Conjugate of 3 − √2",
+          "back": "3 + √2; their product is 9 − 2 = 7."
+        },
+        {
+          "front": "Rationalise 6/√2",
+          "back": "6√2/2 = 3√2."
+        },
+        {
+          "front": "Closure",
+          "back": "A set is closed under * if a * b is in the set for every a and b in it."
+        },
+        {
+          "front": "Identity element",
+          "back": "The element e with a * e = e * a = a for every a."
+        },
+        {
+          "front": "Inverse of a under *",
+          "back": "The element a⁻¹ with a * a⁻¹ = a⁻¹ * a = e."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "By De Morgan's law, (A ∪ B)' is equal to",
+          "options": ["A' ∪ B'", "A' ∩ B'", "A ∩ B", "(A ∩ B)'"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Simplify √48 − √27.",
+          "options": ["√21", "7√3", "√3", "1"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Rationalise 6/√3.",
+          "options": ["2√3", "6√3", "√3/2", "3√2"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A binary operation * is defined on the real numbers by a * b = a + b + ab. Find 2 * 3.",
+          "options": ["6", "5", "12", "11"],
+          "answer": "D"
+        },
+        {
+          "prompt": "The operation * is defined on the real numbers by a * b = a + b − 2. What is its identity element?",
+          "options": ["0", "1", "2", "−2"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Express (2 + √3)/(2 − √3) in the form a + b√3, where a and b are integers.",
+          "markScheme": [
+            "Multiplies numerator and denominator by the conjugate 2 + √3",
+            "Numerator: (2 + √3)² = 4 + 4√3 + 3 = 7 + 4√3",
+            "Denominator: (2 − √3)(2 + √3) = 4 − 3 = 1",
+            "Answer: 7 + 4√3 (a = 7, b = 4)"
+          ],
+          "modelAnswer": "Multiply the numerator and the denominator by the conjugate 2 + √3. Numerator: (2 + √3)(2 + √3) = 4 + 2√3 + 2√3 + 3 = 7 + 4√3. Denominator: (2 − √3)(2 + √3) = 4 − 3 = 1. So (2 + √3)/(2 − √3) = 7 + 4√3, with a = 7 and b = 4.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(2 + √3)/(2 - √3) x (2 + √3)/(2 + √3)\n= (2 + √3)² / (4 - 3)\n= (4 + 4√3 + 3)/1\n= 7 + 4√3\nSo a = 7, b = 4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(2 + √3)/(2 - √3) x (2 + √3)/(2 + √3)"
+                },
+                {
+                  "point": 1,
+                  "quote": "(4 + 4√3 + 3)"
+                },
+                {
+                  "point": 2,
+                  "quote": "(4 - 3)"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 7 + 4√3"
+                }
+              ],
+              "feedback": "Correct and neatly set out, with a and b stated. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Multiply top and bottom by the conjugate of the denominator, 2 + √3. The bottom becomes 2² − (√3)² = 4 − 3 = 1. The top is (2 + √3)(2 + √3) = 4 + 2√3 + 2√3 + 3 = 7 + 4√3. Answer: 7 + 4√3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Multiply top and bottom by the conjugate of the denominator, 2 + √3"
+                },
+                {
+                  "point": 1,
+                  "quote": "4 + 2√3 + 2√3 + 3 = 7 + 4√3"
+                },
+                {
+                  "point": 2,
+                  "quote": "2² − (√3)² = 4 − 3 = 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "Answer: 7 + 4√3"
+                }
+              ],
+              "feedback": "Clear reasoning, and using the difference of two squares for the denominator was efficient. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Multiply by (2 + √3)/(2 + √3). Top = 4 + 3 = 7. Bottom = 4 - 3 = 1. Answer = 7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Multiply by (2 + √3)/(2 + √3)"
+                },
+                {
+                  "point": 2,
+                  "quote": "Bottom = 4 - 3 = 1"
+                }
+              ],
+              "feedback": "Your method and denominator are right. (2 + √3)² is not 4 + 3; you lost the middle terms, 2 × 2 × √3 = 4√3. The answer is 7 + 4√3."
+            },
+            {
+              "tier": "partial",
+              "text": "(2 + √3)/(2 - √3) x (2 + √3)/(2 + √3) = (4 + 4√3 + 3)/(4 + 3) = (7 + 4√3)/7 = 1 + 4√3/7",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(2 + √3)/(2 - √3) x (2 + √3)/(2 + √3)"
+                },
+                {
+                  "point": 1,
+                  "quote": "(4 + 4√3 + 3)"
+                }
+              ],
+              "feedback": "Your numerator is right. In the denominator, (2 − √3)(2 + √3) = 4 − 3, because the √3 terms cancel and √3 × −√3 = −3. That gives 1, so the answer is 7 + 4√3.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(2 + √3)/(2 - √3) = cancel the 2s = √3/-√3 = -1.",
+              "meets": [],
+              "feedback": "You cannot cancel terms that are added or subtracted. Rationalise instead: multiply the top and bottom by the conjugate, 2 + √3."
+            },
+            {
+              "tier": "weak",
+              "text": "Multiply by √3: (2√3 + 3)/(2√3 - 3). So a = 3, b = 2.",
+              "meets": [],
+              "feedback": "Multiplying by √3 does not remove the surd from the denominator here. Use the conjugate 2 + √3, so the denominator becomes 4 − 3 = 1."
+            }
+          ]
+        },
+        {
+          "prompt": "In a school in Surulere, 100 SS1 students were asked about three subjects. 45 offer Further Mathematics (F), 50 offer Physics (P) and 40 offer Chemistry (C). 15 offer F and P, 20 offer P and C, 10 offer F and C, and 5 offer all three. How many offer none of the three subjects, and how many offer exactly one?",
+          "markScheme": [
+            "Correct substitution: n(F ∪ P ∪ C) = 45 + 50 + 40 − 15 − 20 − 10 + 5",
+            "n(F ∪ P ∪ C) = 95, so none = 5",
+            "F only = 25 (45 − 15 − 10 + 5)",
+            "P only = 20 and C only = 15",
+            "Exactly one subject = 25 + 20 + 15 = 60"
+          ],
+          "modelAnswer": "n(F ∪ P ∪ C) = 45 + 50 + 40 − 15 − 20 − 10 + 5 = 95, so 100 − 95 = 5 offer none. Working from the centre of the Venn diagram: F only = 45 − 15 − 10 + 5 = 25; P only = 50 − 15 − 20 + 5 = 20; C only = 40 − 20 − 10 + 5 = 15. Exactly one subject = 25 + 20 + 15 = 60.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "n(F ∪ P ∪ C) = 45 + 50 + 40 - 15 - 20 - 10 + 5 = 95\nNone = 100 - 95 = 5\nF only = 45 - 15 - 10 + 5 = 25\nP only = 50 - 15 - 20 + 5 = 20\nC only = 40 - 20 - 10 + 5 = 15\nExactly one = 25 + 20 + 15 = 60",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "n(F ∪ P ∪ C) = 45 + 50 + 40 - 15 - 20 - 10 + 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "None = 100 - 95 = 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "F only = 45 - 15 - 10 + 5 = 25"
+                },
+                {
+                  "point": 3,
+                  "quote": "P only = 50 - 15 - 20 + 5 = 20\nC only = 40 - 20 - 10 + 5 = 15"
+                },
+                {
+                  "point": 4,
+                  "quote": "Exactly one = 25 + 20 + 15 = 60"
+                }
+              ],
+              "feedback": "Every region worked out correctly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Venn regions from the middle: all three = 5. F and P only = 10, P and C only = 15, F and C only = 5. F only = 45 - 10 - 5 - 5 = 25, P only = 50 - 10 - 15 - 5 = 20, C only = 40 - 15 - 5 - 5 = 15. Total in circles = 5 + 10 + 15 + 5 + 25 + 20 + 15 = 95, which is 45 + 50 + 40 - 15 - 20 - 10 + 5. So 5 offer none and 60 offer exactly one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "45 + 50 + 40 - 15 - 20 - 10 + 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "So 5 offer none"
+                },
+                {
+                  "point": 2,
+                  "quote": "F only = 45 - 10 - 5 - 5 = 25"
+                },
+                {
+                  "point": 3,
+                  "quote": "P only = 50 - 10 - 15 - 5 = 20, C only = 40 - 15 - 5 - 5 = 15"
+                },
+                {
+                  "point": 4,
+                  "quote": "60 offer exactly one"
+                }
+              ],
+              "feedback": "Filling the Venn diagram from the centre and checking against the formula is the best method. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "n(F ∪ P ∪ C) = 45 + 50 + 40 - 15 - 20 - 10 + 5 = 95, so 5 offer none. F only = 45 - 15 - 10 = 20, P only = 50 - 15 - 20 = 15, C only = 40 - 20 - 10 = 10. Exactly one = 45.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "n(F ∪ P ∪ C) = 45 + 50 + 40 - 15 - 20 - 10 + 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 95, so 5 offer none"
+                }
+              ],
+              "feedback": "The number offering none is right. In each 'only' region you subtracted the 5 in the centre twice, so add it back once: F only = 45 − 15 − 10 + 5 = 25, P only = 20, C only = 15, making 60.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "n(F ∪ P ∪ C) = 45 + 50 + 40 - 15 - 20 - 10 + 5 = 95. So none = 5. Exactly one = 95 - 15 - 20 - 10 = 50.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "n(F ∪ P ∪ C) = 45 + 50 + 40 - 15 - 20 - 10 + 5"
+                },
+                {
+                  "point": 1,
+                  "quote": "So none = 5"
+                }
+              ],
+              "feedback": "The number offering none is right. For exactly one, find each 'only' region: F only = 45 − 15 − 10 + 5 = 25, and similarly for P and C. Then add them."
+            },
+            {
+              "tier": "weak",
+              "text": "45 + 50 + 40 = 135. 135 - 100 = 35 offer none.",
+              "meets": [],
+              "feedback": "Adding the three sets counts the students in the overlaps more than once. Use n(F ∪ P ∪ C) = 45 + 50 + 40 − 15 − 20 − 10 + 5, then subtract from 100."
+            },
+            {
+              "tier": "weak",
+              "text": "Only one subject: 45 - 5 = 40 for F, 50 - 5 = 45 for P, 40 - 5 = 35 for C. Total 120. None is 0 because everybody offers a subject.",
+              "meets": [],
+              "feedback": "Each 'only' region must remove all the overlaps with the other two sets, not only the centre. Draw three circles, put 5 in the middle and work outwards."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Logical reasoning and truth tables",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. tell a statement (proposition) from a sentence that is not one;\n2. write compound statements using ~p, p ∧ q, p ∨ q and p ⟹ q;\n3. construct truth tables for compound statements, including negation;\n4. form the converse and contrapositive of an implication;\n5. use a truth table to decide whether an argument is valid.\n\n## Materials\n\nA chart of the truth tables for ~, ∧, ∨ and ⟹, statement cards for sorting, chalk ruled into columns.\n\n## Starter (5 minutes)\n\nWrite: 'If it rains, the football match at the school field will be cancelled.' Ask: the match was cancelled. Did it rain? Let the class argue.\n\n## Development\n\n1. Define a statement as a sentence that is either true or false, but not both. Sort cards: questions and commands are not statements.\n2. Introduce the connectives with everyday sentences: 'not', 'and', 'or', 'if ... then'. Write each in symbols.\n3. Build the truth table for each connective. Stress that p ⟹ q is false only when p is true and q is false.\n4. Construct the truth table for ~(p ∧ q) and ~p ∨ ~q column by column and show they agree.\n5. From p ⟹ q, form the converse q ⟹ p and the contrapositive ~q ⟹ ~p. Show with a table that only the contrapositive is equivalent to the original.\n6. Test the starter argument: write it in symbols and check whether the conclusion must follow.\n\n## Class activity\n\nIn pairs, students write two everyday arguments in symbols and test each with a truth table.\n\n## Evaluation\n\n1. When is p ∨ q false?\n2. Write the contrapositive of: 'If a number is even, it is divisible by 2.'\n\n## Assignment\n\nWorksheet questions, due Monday.",
+      "reading": {
+        "title": "Statements, connectives and valid arguments",
+        "content": "# Statements\n\nA **statement** (or proposition) is a sentence that is either true or false, but not both. 'Abuja is the capital of Nigeria' is a true statement; 'Kano is in Ogun State' is a false statement. 'Shut the window' and 'What time is it?' are not statements.\n\n## Connectives\n\nLet p and q be statements.\n\n| Symbol | Read as | True when |\n| --- | --- | --- |\n| ~p | not p | p is false |\n| p ∧ q | p and q | both are true |\n| p ∨ q | p or q | at least one is true |\n| p ⟹ q | if p then q | always, except when p is true and q is false |\n\n## Truth tables\n\nA truth table lists every combination of truth values. With two statements there are four rows.\n\n| p | q | p ∧ q | p ∨ q | p ⟹ q |\n| --- | --- | --- | --- | --- |\n| T | T | T | T | T |\n| T | F | F | T | F |\n| F | T | F | T | T |\n| F | F | F | F | T |\n\n**Worked example.** Show that ~(p ∨ q) and ~p ∧ ~q are equivalent.\n\n| p | q | p ∨ q | ~(p ∨ q) | ~p | ~q | ~p ∧ ~q |\n| --- | --- | --- | --- | --- | --- | --- |\n| T | T | T | F | F | F | F |\n| T | F | T | F | F | T | F |\n| F | T | T | F | T | F | F |\n| F | F | F | T | T | T | T |\n\nThe columns for ~(p ∨ q) and ~p ∧ ~q are the same, so the statements are equivalent.\n\n## Converse and contrapositive\n\nFor p ⟹ q, the **converse** is q ⟹ p and the **contrapositive** is ~q ⟹ ~p. The contrapositive always has the same truth value as the original; the converse need not. 'If a shape is a square, it has four sides' is true, but its converse, 'If a shape has four sides, it is a square', is false.\n\n## Valid arguments\n\nAn argument is **valid** if the conclusion must be true whenever all the premises are true. Write premises P₁, P₂ and conclusion C, and test (P₁ ∧ P₂) ⟹ C. If it is true in every row, it is a **tautology** and the argument is valid. Note that 'the match was cancelled, so it rained' is not valid: the match could have been cancelled for another reason."
+      },
+      "cards": [
+        {
+          "front": "Statement (proposition)",
+          "back": "A sentence that is either true or false, but not both."
+        },
+        {
+          "front": "~p",
+          "back": "Not p; true when p is false."
+        },
+        {
+          "front": "p ∧ q",
+          "back": "p and q; true only when both are true."
+        },
+        {
+          "front": "p ∨ q",
+          "back": "p or q; false only when both are false."
+        },
+        {
+          "front": "When is p ⟹ q false?",
+          "back": "Only when p is true and q is false."
+        },
+        {
+          "front": "Converse of p ⟹ q",
+          "back": "q ⟹ p."
+        },
+        {
+          "front": "Contrapositive of p ⟹ q",
+          "back": "~q ⟹ ~p; it is equivalent to p ⟹ q."
+        },
+        {
+          "front": "Tautology",
+          "back": "A compound statement that is true in every row of its truth table."
+        },
+        {
+          "front": "Valid argument",
+          "back": "One in which (premises) ⟹ (conclusion) is a tautology."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "p is 'It is raining' and q is 'The road to Ojota is flooded'. Which sentence is p ⟹ q?",
+          "options": [
+            "If it is raining, then the road to Ojota is flooded",
+            "It is raining and the road to Ojota is flooded",
+            "If the road to Ojota is flooded, then it is raining",
+            "It is not raining or the road is not flooded"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which statement is equivalent to ~(p ∧ q)?",
+          "options": ["~p ∧ ~q", "p ∨ q", "~p ∨ ~q", "~p ⟹ q"],
+          "answer": "C"
+        },
+        {
+          "prompt": "The implication p ⟹ q is false when",
+          "options": [
+            "p is false and q is true",
+            "p is true and q is false",
+            "p and q are both false",
+            "p and q are both true"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the contrapositive of p ⟹ q?",
+          "options": ["q ⟹ p", "~p ⟹ ~q", "p ⟹ ~q", "~q ⟹ ~p"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a statement?",
+          "options": [
+            "Please bring your geometry set",
+            "Lagos is the capital of Ghana",
+            "Is the generator on?",
+            "Let us go to the market"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Construct a truth table for p ∨ ~q. State the only case in which p ∨ ~q is false.",
+          "markScheme": [
+            "Correct p and q columns covering all four combinations",
+            "Correct ~q column: F, T, F, T",
+            "Correct p ∨ ~q column: T, T, F, T",
+            "States that p ∨ ~q is false only when p is false and q is true"
+          ],
+          "modelAnswer": "p: T, T, F, F. q: T, F, T, F. ~q: F, T, F, T. p ∨ ~q: T, T, F, T. The statement p ∨ ~q is false only in the third row, when p is false and q is true, because then both p and ~q are false.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "p | q | ~q | p ∨ ~q\nT | T | F | T\nT | F | T | T\nF | T | F | F\nF | F | T | T\np ∨ ~q is false only when p is false and q is true.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "p | q | ~q | p ∨ ~q\nT | T | F | T\nT | F | T | T\nF | T | F | F\nF | F | T | T"
+                },
+                {
+                  "point": 1,
+                  "quote": "p | q | ~q"
+                },
+                {
+                  "point": 2,
+                  "quote": "| p ∨ ~q"
+                },
+                {
+                  "point": 3,
+                  "quote": "p ∨ ~q is false only when p is false and q is true"
+                }
+              ],
+              "feedback": "A complete, correct table and the right conclusion. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Rows (p, q, ~q, p ∨ ~q): (T, T, F, T), (T, F, T, T), (F, T, F, F), (F, F, T, T). The only F in the last column is when p is F and q is T, since then p and ~q are both false.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(T, T, F, T), (T, F, T, T), (F, T, F, F), (F, F, T, T)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Rows (p, q, ~q, p ∨ ~q)"
+                },
+                {
+                  "point": 2,
+                  "quote": "The only F in the last column"
+                },
+                {
+                  "point": 3,
+                  "quote": "when p is F and q is T, since then p and ~q are both false"
+                }
+              ],
+              "feedback": "All correct, and you explained why that row is false. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "p | q | ~q | p ∨ ~q\nT | T | F | F\nT | F | T | T\nF | T | F | F\nF | F | T | T\nIt is false when ~q is false.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "p | q | ~q | p ∨ ~q"
+                },
+                {
+                  "point": 1,
+                  "quote": "| ~q |"
+                }
+              ],
+              "feedback": "Your p, q and ~q columns are right. 'Or' is true if at least one part is true, so the first row is T because p is true. That leaves only one false row: p false, q true.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "p: T T F F\nq: T F T F\n~q: F T F T\np ∨ ~q: T T F T",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "p: T T F F\nq: T F T F"
+                },
+                {
+                  "point": 1,
+                  "quote": "~q: F T F T"
+                },
+                {
+                  "point": 2,
+                  "quote": "p ∨ ~q: T T F T"
+                }
+              ],
+              "feedback": "Your table is completely correct. Finish by stating the case asked for: it is false only when p is false and q is true."
+            },
+            {
+              "tier": "weak",
+              "text": "p ∨ ~q is false when p and q are both false, because 'or' needs one of them to be true.",
+              "meets": [],
+              "feedback": "When q is false, ~q is true, so p ∨ ~q is true. Build the table column by column: p, q, then ~q, then p ∨ ~q."
+            },
+            {
+              "tier": "weak",
+              "text": "p | q | p ∨ ~q\nT | F | F\nF | T | T",
+              "meets": [],
+              "feedback": "A truth table for two statements needs all four rows, and a column for ~q before you combine. Then 'or' is true when at least one part is true."
+            }
+          ]
+        },
+        {
+          "prompt": "Consider the argument: 'If Chidi studies hard, Chidi will pass the examination. Chidi did not pass the examination. Therefore Chidi did not study hard.' Let p be 'Chidi studies hard' and q be 'Chidi passes the examination'. Write the argument in symbols and use a truth table to decide whether it is valid.",
+          "markScheme": [
+            "Writes the premises and conclusion in symbols: p ⟹ q, ~q; conclusion ~p",
+            "Correct column for (p ⟹ q) ∧ ~q: F, F, F, T",
+            "Correct column for [(p ⟹ q) ∧ ~q] ⟹ ~p: T in every row",
+            "Concludes that it is a tautology, so the argument is valid"
+          ],
+          "modelAnswer": "Premises: p ⟹ q and ~q. Conclusion: ~p. Test [(p ⟹ q) ∧ ~q] ⟹ ~p. For the rows (p, q) = (T, T), (T, F), (F, T), (F, F): p ⟹ q is T, F, T, T; ~q is F, T, F, T; (p ⟹ q) ∧ ~q is F, F, F, T; ~p is F, F, T, T; and [(p ⟹ q) ∧ ~q] ⟹ ~p is T, T, T, T. It is true in every row, so it is a tautology and the argument is valid.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Premises: p ⟹ q, ~q. Conclusion: ~p.\np q | p⟹q | ~q | (p⟹q)∧~q | ~p | [(p⟹q)∧~q]⟹~p\nT T | T | F | F | F | T\nT F | F | T | F | F | T\nF T | T | F | F | T | T\nF F | T | T | T | T | T\nThe last column is all true, so it is a tautology. The argument is valid.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Premises: p ⟹ q, ~q. Conclusion: ~p."
+                },
+                {
+                  "point": 1,
+                  "quote": "(p⟹q)∧~q"
+                },
+                {
+                  "point": 2,
+                  "quote": "The last column is all true"
+                },
+                {
+                  "point": 3,
+                  "quote": "so it is a tautology. The argument is valid"
+                }
+              ],
+              "feedback": "Correct symbols, a complete table and the right conclusion. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "In symbols: (p ⟹ q) ∧ ~q, therefore ~p. The column (p ⟹ q) ∧ ~q is F, F, F, T, true only in the last row where p and q are both false. In that row ~p is T, so [(p ⟹ q) ∧ ~q] ⟹ ~p is T there, and it is T in the other rows because the premise part is false. So the statement is true in all four rows and the argument is valid.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In symbols: (p ⟹ q) ∧ ~q, therefore ~p"
+                },
+                {
+                  "point": 1,
+                  "quote": "The column (p ⟹ q) ∧ ~q is F, F, F, T"
+                },
+                {
+                  "point": 2,
+                  "quote": "the statement is true in all four rows"
+                },
+                {
+                  "point": 3,
+                  "quote": "the argument is valid"
+                }
+              ],
+              "feedback": "Excellent reasoning: you explained why each row is true, not just that it is. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "p ⟹ q, ~q, therefore ~p.\np q p⟹q ~q ~p\nT T T F F\nT F F T F\nF T T F T\nF F T T T\nThe argument is valid because in the last row everything is true.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "p ⟹ q, ~q, therefore ~p"
+                }
+              ],
+              "feedback": "Your symbols and first columns are right. To decide validity, combine the premises into (p ⟹ q) ∧ ~q and test [(p ⟹ q) ∧ ~q] ⟹ ~p; show that it is true in every row, which makes it a tautology."
+            },
+            {
+              "tier": "partial",
+              "text": "Premises p ⟹ q and ~q, conclusion ~p. (p ⟹ q) ∧ ~q = F, F, F, T. ~p = F, F, T, T. The final implication is T, F, T, T so the argument is not valid.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Premises p ⟹ q and ~q, conclusion ~p"
+                },
+                {
+                  "point": 1,
+                  "quote": "(p ⟹ q) ∧ ~q = F, F, F, T"
+                }
+              ],
+              "feedback": "Your columns are right up to the last one. An implication with a false first part is true, so the second row is T, not F. The final column is all T, so the argument is valid."
+            },
+            {
+              "tier": "weak",
+              "text": "The argument is not valid because Chidi could have failed for another reason, like being sick.",
+              "meets": [],
+              "feedback": "That reasoning tests the converse. Here the argument goes from 'did not pass' to 'did not study hard', which is the contrapositive and is valid. Show it with a truth table of [(p ⟹ q) ∧ ~q] ⟹ ~p."
+            },
+            {
+              "tier": "weak",
+              "text": "p ∧ q ⟹ ~p. When p is true and q is true, ~p is false, so it is invalid.",
+              "meets": [],
+              "feedback": "The premises are p ⟹ q and ~q, not p ∧ q. Write them correctly, then build the full table for [(p ⟹ q) ∧ ~q] ⟹ ~p."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Functions, mappings and inverse functions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the notation f: x → 3x + 4 and find images under a function;\n2. identify the domain, co-domain and range of a function;\n3. tell one-to-one, onto, identity and constant mappings apart, using arrow diagrams and graphs;\n4. find the inverse of a one-to-one function.\n\n## Materials\n\nCards with numbers for arrow diagrams, graph paper, a chart of the four kinds of mapping.\n\n## Starter (5 minutes)\n\nA vending machine at the motor park gives one drink for each button. Ask: could one button give two different drinks? Could two buttons give the same drink? Which of these would make customers complain?\n\n## Development\n\n1. Define a function as a rule that maps each element of the domain to exactly one element of the co-domain. Write f: x → 3x + 4 and f(x) = 3x + 4; find f(2) and f(−1).\n2. Draw an arrow diagram from {−2, −1, 0, 1, 2} under g: x → x². Name the domain, co-domain and range, and show the range can be smaller than the co-domain.\n3. Classify mappings: one-to-one (no two elements share an image), onto (every element of the co-domain is an image), identity (x → x), constant (every x → the same value). Use the horizontal line test on graphs of 2x + 1 and x².\n4. Find the inverse of f(x) = 3x + 4: put y = 3x + 4, make x the subject, then swap. Check that f(f⁻¹(x)) = x. Explain why only one-to-one functions have inverses.\n\n## Class activity\n\nIn pairs, students draw arrow diagrams for three rules on a given domain and classify each mapping.\n\n## Evaluation\n\n1. Find the range of f: x → 2x − 3 on the domain {0, 1, 2, 3}.\n2. Find the inverse of g(x) = 5x − 2.\n\n## Assignment\n\nRevise for Wednesday's quiz.",
+      "reading": {
+        "title": "Functions and their inverses",
+        "content": "# What is a function?\n\nA **function** (or mapping) from a set A to a set B is a rule that assigns to **each** element of A **exactly one** element of B.\n\n- A is the **domain**: the inputs.\n- B is the **co-domain**: where the outputs are allowed to be.\n- The set of outputs actually produced is the **range**, or the set of **images**.\n\nWe write f: x → 3x + 4, or f(x) = 3x + 4, where x ∈ R. The image of 2 is f(2) = 3(2) + 4 = 10.\n\n**Worked example.** g: x → x² on the domain {−3, −1, 0, 1, 3}. The images are 9, 1, 0, 1, 9, so the range is {0, 1, 9}. Notice that 3 and −3 have the same image.\n\nThe graph of a function is the set of points (x, f(x)). A vertical line meets the graph of a function at most once.\n\n## Kinds of mapping\n\n- **One-to-one**: different inputs always give different outputs. f(x) = 2x + 1 is one-to-one; g(x) = x² on R is not, since g(2) = g(−2). On a graph, no horizontal line meets the curve more than once.\n- **Onto**: every element of the co-domain is the image of some element. The range equals the co-domain.\n- **Identity**: I(x) = x; each element maps to itself.\n- **Constant**: every element maps to the same value, as in h(x) = 7.\n\n## Inverse functions\n\nIf f is one-to-one, its **inverse** f⁻¹ reverses it: if f(a) = b then f⁻¹(b) = a. To find it:\n\n1. Write y = f(x).\n2. Make x the subject.\n3. Replace y by x to get f⁻¹(x).\n\n**Worked example.** Find the inverse of f(x) = (4x + 1)/3.\ny = (4x + 1)/3, so 3y = 4x + 1, 4x = 3y − 1 and x = (3y − 1)/4. So f⁻¹(x) = (3x − 1)/4.\nCheck: f(2) = (8 + 1)/3 = 3 and f⁻¹(3) = (9 − 1)/4 = 2.\n\nA function that is not one-to-one has no inverse on its whole domain: for x², the output 4 would have to go back to both 2 and −2."
+      },
+      "cards": [
+        {
+          "front": "Function",
+          "back": "A rule assigning to each element of the domain exactly one element of the co-domain."
+        },
+        {
+          "front": "Domain",
+          "back": "The set of inputs of a function."
+        },
+        {
+          "front": "Range",
+          "back": "The set of images actually produced by a function; part of the co-domain."
+        },
+        {
+          "front": "One-to-one mapping",
+          "back": "Different inputs always give different outputs."
+        },
+        {
+          "front": "Onto mapping",
+          "back": "Every element of the co-domain is an image; the range equals the co-domain."
+        },
+        {
+          "front": "Constant mapping",
+          "back": "Every element maps to the same value, e.g. h(x) = 7."
+        },
+        {
+          "front": "Identity mapping",
+          "back": "I(x) = x; each element maps to itself."
+        },
+        {
+          "front": "Steps to find f⁻¹",
+          "back": "Write y = f(x), make x the subject, then replace y by x."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "f: x → 3x + 4. Find f(−2).",
+          "options": ["10", "−2", "2", "−10"],
+          "answer": "B"
+        },
+        {
+          "prompt": "g: x → x² is defined on the domain {−2, −1, 0, 1, 2}. What is the range of g?",
+          "options": [
+            "{−4, −1, 0, 1, 4}",
+            "{0, 1, 2}",
+            "{0, 1, 4}",
+            "{−2, −1, 0, 1, 2}"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these functions on the real numbers is NOT one-to-one?",
+          "options": ["x → 2x + 1", "x → x³", "x → x − 5", "x → x²"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Find the inverse of f(x) = (2x − 3)/5.",
+          "options": ["(5x + 3)/2", "(5x − 3)/2", "5/(2x − 3)", "(2x + 3)/5"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A mapping sends every element of its domain to the number 7. What kind of mapping is it?",
+          "options": ["Identity", "One-to-one", "Constant", "Onto"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "f: x → 2x − 1 is defined on the domain {−1, 0, 1, 2, 3}. (a) Find the range of f. (b) Is f one-to-one? Give a reason. (c) Find f⁻¹(x) and hence f⁻¹(5).",
+          "markScheme": [
+            "Range = {−3, −1, 1, 3, 5}",
+            "States f is one-to-one, because each image comes from exactly one element of the domain (no two elements share an image)",
+            "f⁻¹(x) = (x + 1)/2",
+            "f⁻¹(5) = 3"
+          ],
+          "modelAnswer": "(a) f(−1) = −3, f(0) = −1, f(1) = 1, f(2) = 3, f(3) = 5, so the range is {−3, −1, 1, 3, 5}. (b) Yes, f is one-to-one, because no two elements of the domain have the same image. (c) Let y = 2x − 1, so x = (y + 1)/2 and f⁻¹(x) = (x + 1)/2. Then f⁻¹(5) = (5 + 1)/2 = 3.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) f(-1) = -3, f(0) = -1, f(1) = 1, f(2) = 3, f(3) = 5. Range = {-3, -1, 1, 3, 5}\n(b) Yes it is one-to-one because every element has a different image.\n(c) y = 2x - 1, x = (y + 1)/2, so f⁻¹(x) = (x + 1)/2. f⁻¹(5) = 6/2 = 3",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Range = {-3, -1, 1, 3, 5}"
+                },
+                {
+                  "point": 1,
+                  "quote": "Yes it is one-to-one because every element has a different image"
+                },
+                {
+                  "point": 2,
+                  "quote": "f⁻¹(x) = (x + 1)/2"
+                },
+                {
+                  "point": 3,
+                  "quote": "f⁻¹(5) = 6/2 = 3"
+                }
+              ],
+              "feedback": "All three parts correct, with the images shown. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Images: -3, -1, 1, 3, 5, so the range is {-3, -1, 1, 3, 5}. No two inputs give the same output, so f is one-to-one. To reverse 'double then subtract 1', add 1 then halve: f⁻¹(x) = (x + 1)/2. f⁻¹(5) = 3, which checks because f(3) = 5.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the range is {-3, -1, 1, 3, 5}"
+                },
+                {
+                  "point": 1,
+                  "quote": "No two inputs give the same output, so f is one-to-one"
+                },
+                {
+                  "point": 2,
+                  "quote": "f⁻¹(x) = (x + 1)/2"
+                },
+                {
+                  "point": 3,
+                  "quote": "f⁻¹(5) = 3"
+                }
+              ],
+              "feedback": "Undoing the steps in reverse order is a good way to find an inverse, and your check confirms it. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Range = {-3, -1, 1, 3, 5}. It is one-to-one. f⁻¹(x) = (x - 1)/2, f⁻¹(5) = 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Range = {-3, -1, 1, 3, 5}"
+                }
+              ],
+              "feedback": "Your range is correct. Give a reason for one-to-one: no two elements share an image. For the inverse, the opposite of subtracting 1 is adding 1, so f⁻¹(x) = (x + 1)/2 and f⁻¹(5) = 3."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Range = {-3, -1, 1, 3, 5}. (b) Yes, because each element of the domain has one image only. (c) f⁻¹(x) = 1/(2x - 1). f⁻¹(5) = 1/9.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Range = {-3, -1, 1, 3, 5}"
+                }
+              ],
+              "feedback": "Your range is right. 'Each element has one image' is true of every function; one-to-one means no two elements share an image. f⁻¹ is not the reciprocal 1/f(x); make x the subject of y = 2x − 1.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The range is {-1, 0, 1, 2, 3} because that is the set given. f⁻¹ = -2x + 1.",
+              "meets": [],
+              "feedback": "That set is the domain, the inputs. The range is the set of outputs: put each element into 2x − 1. For the inverse, solve y = 2x − 1 for x."
+            },
+            {
+              "tier": "weak",
+              "text": "f(x) = 2x - 1 so f(5) = 9. The function is one-to-one because it is a straight line.",
+              "meets": [],
+              "feedback": "The question asks for f⁻¹(5), not f(5). First find the inverse by making x the subject of y = 2x − 1, then substitute 5. Also list the range from the domain given."
+            }
+          ]
+        },
+        {
+          "prompt": "f(x) = (3x + 2)/(x − 1), x ≠ 1. Find f⁻¹(x), state the value of x for which f⁻¹ is not defined, and find f⁻¹(4).",
+          "markScheme": [
+            "Writes y = (3x + 2)/(x − 1) and cross-multiplies: y(x − 1) = 3x + 2",
+            "Collects the x terms: xy − 3x = y + 2, so x(y − 3) = y + 2",
+            "f⁻¹(x) = (x + 2)/(x − 3)",
+            "f⁻¹ is not defined when x = 3",
+            "f⁻¹(4) = 6"
+          ],
+          "modelAnswer": "Let y = (3x + 2)/(x − 1). Then y(x − 1) = 3x + 2, so xy − y = 3x + 2. Collecting the x terms: xy − 3x = y + 2, x(y − 3) = y + 2 and x = (y + 2)/(y − 3). So f⁻¹(x) = (x + 2)/(x − 3). It is not defined when x = 3. f⁻¹(4) = (4 + 2)/(4 − 3) = 6. Check: f(6) = 20/5 = 4.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "y = (3x + 2)/(x - 1)\ny(x - 1) = 3x + 2\nxy - y = 3x + 2\nxy - 3x = y + 2\nx(y - 3) = y + 2\nx = (y + 2)/(y - 3)\nf⁻¹(x) = (x + 2)/(x - 3), not defined at x = 3\nf⁻¹(4) = 6/1 = 6",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "y(x - 1) = 3x + 2"
+                },
+                {
+                  "point": 1,
+                  "quote": "x(y - 3) = y + 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "f⁻¹(x) = (x + 2)/(x - 3)"
+                },
+                {
+                  "point": 3,
+                  "quote": "not defined at x = 3"
+                },
+                {
+                  "point": 4,
+                  "quote": "f⁻¹(4) = 6/1 = 6"
+                }
+              ],
+              "feedback": "Every step shown, line by line. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Put y = (3x + 2)/(x − 1) and multiply out: y(x − 1) = 3x + 2. Bringing x terms together gives x(y − 3) = y + 2, so x = (y + 2)/(y − 3). Therefore f⁻¹(x) = (x + 2)/(x − 3). The denominator is zero when x = 3, so f⁻¹ is undefined there. f⁻¹(4) = 6/1 = 6, and f(6) = 20/5 = 4 confirms it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "y(x − 1) = 3x + 2"
+                },
+                {
+                  "point": 1,
+                  "quote": "x(y − 3) = y + 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "f⁻¹(x) = (x + 2)/(x − 3)"
+                },
+                {
+                  "point": 3,
+                  "quote": "The denominator is zero when x = 3, so f⁻¹ is undefined there"
+                },
+                {
+                  "point": 4,
+                  "quote": "f⁻¹(4) = 6/1 = 6"
+                }
+              ],
+              "feedback": "Correct, with a reason for the excluded value and a check at the end. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "y(x - 1) = 3x + 2. xy - y = 3x + 2. xy - 3x = 2 - y. x(y - 3) = 2 - y. f⁻¹(x) = (2 - x)/(x - 3). Undefined at x = 3. f⁻¹(4) = -2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "y(x - 1) = 3x + 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "Undefined at x = 3"
+                }
+              ],
+              "feedback": "Your method is right, but moving −y to the right side makes it +y, not −y: xy − 3x = y + 2. Then f⁻¹(x) = (x + 2)/(x − 3) and f⁻¹(4) = 6."
+            },
+            {
+              "tier": "partial",
+              "text": "y(x - 1) = 3x + 2, xy - y = 3x + 2, xy - 3x = y + 2, x(y - 3) = y + 2. So f⁻¹(x) = (x + 2)/(x - 3). f⁻¹(4) = 6. It is undefined at x = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "y(x - 1) = 3x + 2"
+                },
+                {
+                  "point": 1,
+                  "quote": "x(y - 3) = y + 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "f⁻¹(x) = (x + 2)/(x - 3)"
+                },
+                {
+                  "point": 4,
+                  "quote": "f⁻¹(4) = 6"
+                }
+              ],
+              "feedback": "Your inverse and f⁻¹(4) are correct. x = 1 is excluded from f; for f⁻¹ the denominator is x − 3, so it is undefined at x = 3."
+            },
+            {
+              "tier": "weak",
+              "text": "f⁻¹(x) = (x - 1)/(3x + 2), turning the fraction upside down.",
+              "meets": [],
+              "feedback": "The inverse is not the reciprocal. Write y = (3x + 2)/(x − 1), cross-multiply, and make x the subject."
+            },
+            {
+              "tier": "weak",
+              "text": "f(4) = (12 + 2)/(4 - 1) = 14/3. So f⁻¹(4) = 3/14.",
+              "meets": [],
+              "feedback": "f⁻¹(4) is the input that gives 4, not the reciprocal of f(4). Find f⁻¹(x) first by making x the subject, then substitute 4."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Composite, linear and quadratic functions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find composite functions such as fog(x) = f(g(x));\n2. find the gradient and intercepts of a line in its three forms, and recognise parallel and perpendicular lines;\n3. graph linear inequalities in two variables and apply them to linear programming;\n4. express ax² + bx + c in the form a(x + d)² + k and read off the vertex, axis of symmetry and maximum or minimum value;\n5. find where a quadratic is positive or negative, and solve a linear and a quadratic equation together.\n\n## Materials\n\nGraph paper, rulers, a chart of the parabola y = x² − 4x + 3 with its vertex marked.\n\n## Starter (5 minutes)\n\nA bus fare is ₦200 plus ₦50 for each kilometre. Ask: write the fare as a function of distance. What is the gradient, and what does it mean?\n\n## Development\n\n1. With f(x) = 2x + 1 and g(x) = x², find fog(3) and gof(3). Show fog ≠ gof in general.\n2. Rearrange 3x + 2y − 6 = 0 into y = mx + c and into intercept form. State m₁ = m₂ for parallel lines and m₁m₂ = −1 for perpendicular lines.\n3. Shade the region x + y ≤ 6, x ≥ 0, y ≥ 0 and test a point. Solve a small profit problem by checking the corners of the region.\n4. Complete the square on x² − 4x + 3 = (x − 2)² − 1. Read off the vertex (2, −1) and the axis x = 2. Sketch it, marking where it increases, decreases and is negative.\n5. Solve y = x + 1 and y = x² − 1 by substitution.\n\n## Class activity\n\nIn groups, students complete the square for three quadratics and sketch each one, labelling the vertex and intercepts.\n\n## Evaluation\n\n1. Find the gradient of the line 4x − 2y + 7 = 0.\n2. State the minimum value of (x + 3)² − 5.\n\n## Assignment\n\nProblem set questions, due Friday.",
+      "reading": {
+        "title": "Composite functions, straight lines and parabolas",
+        "content": "# Composite functions\n\nfog(x) means f(g(x)): apply g first, then f.\n\n**Worked example.** f(x) = x + 4 and g(x) = 3x. fog(x) = f(3x) = 3x + 4, but gof(x) = g(x + 4) = 3x + 12. The order matters.\n\n# Linear functions\n\nThe graph of a linear function is a straight line. It can be written in three forms:\n\n- y = mx + c, with gradient m and y-intercept c;\n- ax + by + c = 0, with gradient −a/b;\n- x/a + y/b = 1, cutting the x-axis at a and the y-axis at b.\n\nTwo lines are **parallel** if their gradients are equal, and **perpendicular** if the product of their gradients is −1.\n\n**Worked example.** The line 2x + 5y − 10 = 0 gives y = −(2/5)x + 2, so m = −2/5. A perpendicular line has gradient 5/2.\n\n## Linear inequalities and linear programming\n\nThe graph of x + 2y ≤ 8 is the line x + 2y = 8 with the region on one side. Test the origin: 0 ≤ 8 is true, so shade the side containing (0, 0). With several inequalities, the region satisfying all of them is the **feasible region**. In **linear programming**, the greatest or least value of a quantity such as profit is found at a corner of this region.\n\n# Quadratic functions\n\nThe graph of f(x) = ax² + bx + c is a **parabola**. If a > 0 it has a minimum point; if a < 0, a maximum.\n\n**Completing the square** writes f(x) as a(x + d)² + k. The vertex is (−d, k), the axis of symmetry is x = −d, and k is the minimum (or maximum) value.\n\n**Worked example.** f(x) = x² + 6x + 5 = (x + 3)² − 9 + 5 = (x + 3)² − 4.\nVertex (−3, −4); axis x = −3; minimum value −4. The curve decreases for x < −3 and increases for x > −3.\nSince x² + 6x + 5 = (x + 1)(x + 5), f(x) < 0 for −5 < x < −1, and f(x) > 0 for x < −5 or x > −1.\n\n## One linear and one quadratic equation\n\nSubstitute the linear equation into the quadratic, then solve.\n\n**Worked example.** Solve y = x + 1 and y = x² − 1.\nx² − 1 = x + 1, so x² − x − 2 = 0, (x − 2)(x + 1) = 0 and x = 2 or x = −1.\nThe solutions are (2, 3) and (−1, 0)."
+      },
+      "cards": [
+        {
+          "front": "fog(x)",
+          "back": "f(g(x)): apply g first, then f."
+        },
+        {
+          "front": "Gradient of ax + by + c = 0",
+          "back": "−a/b."
+        },
+        {
+          "front": "Condition for parallel lines",
+          "back": "Equal gradients: m₁ = m₂."
+        },
+        {
+          "front": "Condition for perpendicular lines",
+          "back": "m₁ × m₂ = −1."
+        },
+        {
+          "front": "Feasible region",
+          "back": "The region of a graph that satisfies all the inequalities in a problem."
+        },
+        {
+          "front": "Where a linear programming maximum is found",
+          "back": "At a corner (vertex) of the feasible region."
+        },
+        {
+          "front": "Vertex of a(x + d)² + k",
+          "back": "(−d, k); k is the minimum value if a > 0."
+        },
+        {
+          "front": "Complete the square: x² − 8x + 10",
+          "back": "(x − 4)² − 6."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "f(x) = 2x + 1 and g(x) = x². Find fog(3).",
+          "options": ["49", "19", "10", "16"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the gradient of the line 3x + 2y − 6 = 0?",
+          "options": ["−2/3", "3/2", "3", "−3/2"],
+          "answer": "D"
+        },
+        {
+          "prompt": "What is the gradient of a line perpendicular to y = 2x + 5?",
+          "options": ["2", "−2", "−1/2", "1/2"],
+          "answer": "C"
+        },
+        {
+          "prompt": "What is the minimum value of f(x) = x² − 6x + 11?",
+          "options": ["2", "11", "3", "−3"],
+          "answer": "A"
+        },
+        {
+          "prompt": "For what values of x is x² − x − 6 < 0?",
+          "options": [
+            "x < −2 or x > 3",
+            "−3 < x < 2",
+            "−2 < x < 3",
+            "x > 3 only"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "f(x) = 3x − 2 and g(x) = x² + 1. Find (a) fog(x), (b) gof(x) and (c) fog(2) and gof(2). What do your answers show about the order of composition?",
+          "markScheme": [
+            "fog(x) = 3(x² + 1) − 2 = 3x² + 1",
+            "gof(x) = (3x − 2)² + 1 = 9x² − 12x + 5",
+            "fog(2) = 13 and gof(2) = 17",
+            "States that fog ≠ gof, so the order of composition matters"
+          ],
+          "modelAnswer": "(a) fog(x) = f(x² + 1) = 3(x² + 1) − 2 = 3x² + 1. (b) gof(x) = g(3x − 2) = (3x − 2)² + 1 = 9x² − 12x + 4 + 1 = 9x² − 12x + 5. (c) fog(2) = 3(4) + 1 = 13 and gof(2) = 36 − 24 + 5 = 17. Since fog(2) ≠ gof(2), composition is not commutative: the order in which the functions are applied matters.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) fog(x) = f(x² + 1) = 3(x² + 1) - 2 = 3x² + 1\n(b) gof(x) = g(3x - 2) = (3x - 2)² + 1 = 9x² - 12x + 4 + 1 = 9x² - 12x + 5\n(c) fog(2) = 12 + 1 = 13, gof(2) = 36 - 24 + 5 = 17\nThey are not equal, so the order matters.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "fog(x) = f(x² + 1) = 3(x² + 1) - 2 = 3x² + 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 9x² - 12x + 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "fog(2) = 12 + 1 = 13, gof(2) = 36 - 24 + 5 = 17"
+                },
+                {
+                  "point": 3,
+                  "quote": "They are not equal, so the order matters"
+                }
+              ],
+              "feedback": "Correct throughout, with the expansion of (3x − 2)² shown. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "fog(x): put x² + 1 into f to get 3x² + 3 − 2 = 3x² + 1. gof(x): put 3x − 2 into g to get 9x² − 12x + 4 + 1 = 9x² − 12x + 5. At x = 2: fog = 13, gof = 17. Since they differ, fog and gof are different functions; composition is not commutative.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "put x² + 1 into f to get 3x² + 3 − 2 = 3x² + 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "9x² − 12x + 4 + 1 = 9x² − 12x + 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "At x = 2: fog = 13, gof = 17"
+                },
+                {
+                  "point": 3,
+                  "quote": "composition is not commutative"
+                }
+              ],
+              "feedback": "Clear and complete, with the right word, commutative, for the conclusion. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "fog(x) = 3x² + 1. gof(x) = (3x - 2)² + 1 = 9x² + 4 + 1 = 9x² + 5. fog(2) = 13, gof(2) = 41.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "fog(x) = 3x² + 1"
+                }
+              ],
+              "feedback": "fog is right. (3x − 2)² is not 9x² + 4; it has a middle term: 9x² − 12x + 4. Then gof(2) = 17. Finish by saying what the different answers show."
+            },
+            {
+              "tier": "partial",
+              "text": "fog(x) = (3x - 2)² + 1 = 9x² - 12x + 5. gof(x) = 3(x² + 1) - 2 = 3x² + 1. fog(2) = 17 and gof(2) = 13. So the order matters.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "So the order matters"
+                }
+              ],
+              "feedback": "Your algebra is correct, but you swapped the two. fog(x) means f(g(x)): apply g first, then f, giving 3x² + 1. Your conclusion about order is right.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "fog(x) = f(x) x g(x) = (3x - 2)(x² + 1) = 3x³ - 2x² + 3x - 2.",
+              "meets": [],
+              "feedback": "fog does not mean f multiplied by g. It means put g(x) into f: f(x² + 1) = 3(x² + 1) − 2."
+            },
+            {
+              "tier": "weak",
+              "text": "fog(x) = 3x - 2 + x² + 1 = x² + 3x - 1. gof(x) is the same because addition is commutative.",
+              "meets": [],
+              "feedback": "Composition is not addition. To find fog(x), replace x in f by g(x). You will find fog and gof are different."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Express f(x) = 2x² − 8x + 3 in the form a(x + d)² + k. Hence state the minimum value of f(x) and the equation of its axis of symmetry. (b) Solve simultaneously y = 2x − 1 and y = x² − 2x + 2.",
+          "markScheme": [
+            "2x² − 8x + 3 = 2(x² − 4x) + 3 = 2(x − 2)² − 8 + 3",
+            "f(x) = 2(x − 2)² − 5",
+            "Minimum value −5, axis of symmetry x = 2",
+            "Substitutes to get x² − 2x + 2 = 2x − 1, i.e. x² − 4x + 3 = 0",
+            "Solutions (1, 1) and (3, 5)"
+          ],
+          "modelAnswer": "(a) 2x² − 8x + 3 = 2(x² − 4x) + 3 = 2[(x − 2)² − 4] + 3 = 2(x − 2)² − 8 + 3 = 2(x − 2)² − 5. The minimum value is −5, when x = 2, and the axis of symmetry is x = 2. (b) x² − 2x + 2 = 2x − 1, so x² − 4x + 3 = 0, (x − 1)(x − 3) = 0 and x = 1 or 3. When x = 1, y = 1; when x = 3, y = 5. The solutions are (1, 1) and (3, 5).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 2x² - 8x + 3 = 2(x² - 4x) + 3 = 2(x - 2)² - 8 + 3 = 2(x - 2)² - 5\nMinimum value = -5, axis of symmetry x = 2\n(b) x² - 2x + 2 = 2x - 1\nx² - 4x + 3 = 0\n(x - 1)(x - 3) = 0\nx = 1, y = 1; x = 3, y = 5",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2(x² - 4x) + 3 = 2(x - 2)² - 8 + 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 2(x - 2)² - 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "Minimum value = -5, axis of symmetry x = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "x² - 4x + 3 = 0"
+                },
+                {
+                  "point": 4,
+                  "quote": "x = 1, y = 1; x = 3, y = 5"
+                }
+              ],
+              "feedback": "Both parts correct, with the −8 from completing the square shown clearly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Take out 2: f(x) = 2[x² − 4x + 3/2] = 2[(x − 2)² − 4 + 3/2] = 2(x − 2)² − 8 + 3 = 2(x − 2)² − 5. So a = 2, d = −2, k = −5. Least value of f is −5 at x = 2, and the curve is symmetric about x = 2. For (b): x² − 2x + 2 = 2x − 1 gives x² − 4x + 3 = 0, so x = 1 or x = 3, and the points are (1, 1) and (3, 5).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "2[(x − 2)² − 4 + 3/2] = 2(x − 2)² − 8 + 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 2(x − 2)² − 5"
+                },
+                {
+                  "point": 2,
+                  "quote": "Least value of f is −5 at x = 2, and the curve is symmetric about x = 2"
+                },
+                {
+                  "point": 3,
+                  "quote": "x² − 2x + 2 = 2x − 1 gives x² − 4x + 3 = 0"
+                },
+                {
+                  "point": 4,
+                  "quote": "the points are (1, 1) and (3, 5)"
+                }
+              ],
+              "feedback": "Correct throughout, and naming a, d and k shows you understand the form asked for. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 2x² - 8x + 3 = 2(x - 2)² - 4 + 3 = 2(x - 2)² - 1. Minimum value is -1 at x = 2. (b) x² - 4x + 3 = 0, x = 1 or 3. Points (1, 1) and (3, 5).",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "x² - 4x + 3 = 0"
+                },
+                {
+                  "point": 4,
+                  "quote": "Points (1, 1) and (3, 5)"
+                }
+              ],
+              "feedback": "Part (b) is fully right. In (a), the −4 inside the bracket is multiplied by the 2 outside: 2(x − 2)² − 8 + 3 = 2(x − 2)² − 5, so the minimum is −5."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 2(x - 2)² - 5. Minimum value is 2, axis x = -5. (b) x² - 2x + 2 = 2x - 1, x² - 4x + 3 = 0, x = 1 or 3.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "2(x - 2)² - 5"
+                },
+                {
+                  "point": 3,
+                  "quote": "x² - 2x + 2 = 2x - 1, x² - 4x + 3 = 0"
+                }
+              ],
+              "feedback": "Your completed square is right but you misread it: the minimum value is k = −5 and the axis is x = 2. In (b), find y for each x to give the points (1, 1) and (3, 5)."
+            },
+            {
+              "tier": "weak",
+              "text": "Minimum value: x = -b/2a = 8/4 = 2. So the minimum value is 2.",
+              "meets": [],
+              "feedback": "x = 2 is where the minimum happens, not the minimum value. Complete the square to get 2(x − 2)² − 5; the minimum value is −5. Then do part (b) by substitution."
+            },
+            {
+              "tier": "weak",
+              "text": "(b) Add the equations: 2y = x² + 1. So y = (x² + 1)/2.",
+              "meets": [],
+              "feedback": "Adding the equations does not eliminate a variable here. Substitute y = 2x − 1 into the quadratic to get an equation in x only, then solve it."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Roots of quadratics, cubic functions and the factor theorem",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use b² − 4ac to decide whether the roots of a quadratic are real and unequal, equal, or not real;\n2. find the sum and product of the roots of a quadratic and use them;\n3. solve quadratic inequalities;\n4. recognise and sketch cubic functions, and factorise a³ + b³ and a³ − b³;\n5. use the remainder and factor theorems to factorise a cubic and solve cubic equations.\n\n## Materials\n\nGraph paper, a table of values for y = x³ − 2x² − 5x + 6, a chart of the discriminant cases.\n\n## Starter (5 minutes)\n\nAsk: without solving, how could you tell that x² + 4 = 0 has no real answer? What about x² − 4x + 4 = 0?\n\n## Development\n\n1. From the quadratic formula, show why b² − 4ac decides the nature of the roots. Classify three equations.\n2. Show that for ax² + bx + c = 0, α + β = −b/a and αβ = c/a. Find α² + β² = (α + β)² − 2αβ.\n3. Solve x² − 2x − 8 > 0 by factorising and testing a point in each interval on a number line.\n4. Plot y = x³ − 2x² − 5x + 6 from the table. Read off where it crosses the x-axis.\n5. State the remainder and factor theorems. Show f(1) = 0, so (x − 1) is a factor; divide to factorise fully and compare with the graph.\n6. Give a³ − b³ = (a − b)(a² + ab + b²) and a³ + b³ = (a + b)(a² − ab + b²). Factorise x³ − 27.\n\n## Class activity\n\nIn pairs, students find a factor of a given cubic by trial, then factorise it fully.\n\n## Evaluation\n\n1. Find the remainder when x³ + 2x − 5 is divided by x − 1.\n2. For what value of k does x² − 6x + k = 0 have equal roots?\n\n## Assignment\n\nWorksheet questions, due Tuesday.",
+      "reading": {
+        "title": "Roots of quadratics and factorising cubics",
+        "content": "# The nature of the roots\n\nThe roots of ax² + bx + c = 0 are x = [−b ± √(b² − 4ac)]/2a. The **discriminant** b² − 4ac tells us what kind of roots there are:\n\n- b² − 4ac > 0: two real, unequal roots;\n- b² − 4ac = 0: two equal (repeated) roots;\n- b² − 4ac < 0: no real roots (the roots are imaginary).\n\n**Worked example.** x² − 6x + 9 = 0 has b² − 4ac = 36 − 36 = 0, so it has equal roots, x = 3 twice.\n\n## Sum and product of roots\n\nIf α and β are the roots of ax² + bx + c = 0, then\n\nα + β = −b/a and αβ = c/a.\n\nAlso α² + β² = (α + β)² − 2αβ. An equation with roots α and β is x² − (α + β)x + αβ = 0.\n\n**Worked example.** For x² − 7x + 10 = 0, α + β = 7 and αβ = 10. Check: the roots are 2 and 5.\n\n## Quadratic inequalities\n\nFactorise, mark the roots on a number line, and test a value in each interval. For x² − 2x − 8 > 0, (x − 4)(x + 2) > 0, so x < −2 or x > 4.\n\n# Cubic functions\n\nf(x) = ax³ + bx² + cx + d is a **cubic function**. Its graph, when a > 0, rises from the bottom left to the top right, usually with one maximum and one minimum point in between. It crosses the x-axis at most three times.\n\n## Remainder and factor theorems\n\n- **Remainder theorem**: when f(x) is divided by (x − a), the remainder is f(a).\n- **Factor theorem**: if f(a) = 0, then (x − a) is a factor of f(x).\n\n**Worked example.** Factorise f(x) = x³ − 4x² + x + 6.\nTry x = −1: f(−1) = −1 − 4 − 1 + 6 = 0, so (x + 1) is a factor.\nDividing, f(x) = (x + 1)(x² − 5x + 6) = (x + 1)(x − 2)(x − 3).\nSo f(x) = 0 when x = −1, 2 or 3.\n\nPolynomials can be added, subtracted and multiplied by collecting like terms, and divided by long division, as above.\n\n## Sum and difference of two cubes\n\n- a³ − b³ = (a − b)(a² + ab + b²)\n- a³ + b³ = (a + b)(a² − ab + b²)\n\nSo x³ − 27 = (x − 3)(x² + 3x + 9), and 8x³ + 1 = (2x + 1)(4x² − 2x + 1)."
+      },
+      "cards": [
+        {
+          "front": "Discriminant",
+          "back": "b² − 4ac; it decides the nature of the roots of ax² + bx + c = 0."
+        },
+        {
+          "front": "b² − 4ac = 0",
+          "back": "The quadratic has equal (repeated) roots."
+        },
+        {
+          "front": "b² − 4ac < 0",
+          "back": "No real roots; the roots are imaginary."
+        },
+        {
+          "front": "Sum and product of the roots",
+          "back": "α + β = −b/a and αβ = c/a."
+        },
+        {
+          "front": "α² + β²",
+          "back": "(α + β)² − 2αβ."
+        },
+        {
+          "front": "Remainder theorem",
+          "back": "f(x) ÷ (x − a) leaves remainder f(a)."
+        },
+        {
+          "front": "Factor theorem",
+          "back": "If f(a) = 0, then (x − a) is a factor of f(x)."
+        },
+        {
+          "front": "a³ − b³",
+          "back": "(a − b)(a² + ab + b²)."
+        },
+        {
+          "front": "a³ + b³",
+          "back": "(a + b)(a² − ab + b²)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the nature of the roots of 2x² − 4x + 5 = 0?",
+          "options": [
+            "Real and unequal",
+            "Real and equal",
+            "Not real (imaginary)",
+            "One real and one imaginary"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "α and β are the roots of 3x² − 6x − 9 = 0. Find α + β and αβ.",
+          "options": [
+            "α + β = −2, αβ = −3",
+            "α + β = 2, αβ = −3",
+            "α + β = 6, αβ = −9",
+            "α + β = 2, αβ = 3"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Find the remainder when x³ − 2x² + 3x − 4 is divided by x − 2.",
+          "options": ["2", "−26", "0", "−2"],
+          "answer": "A"
+        },
+        {
+          "prompt": "For what values of k does x² + kx + 9 = 0 have equal roots?",
+          "options": ["9", "±3", "±9", "±6"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Factorise x³ − 8.",
+          "options": [
+            "(x − 2)³",
+            "(x − 2)(x² + 2x + 4)",
+            "(x + 2)(x² − 2x + 4)",
+            "(x − 2)(x² + 4)"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "α and β are the roots of 2x² − 5x + 1 = 0. Without solving the equation, find the values of α + β, αβ and α² + β².",
+          "markScheme": [
+            "α + β = −b/a = 5/2",
+            "αβ = c/a = 1/2",
+            "Uses α² + β² = (α + β)² − 2αβ",
+            "α² + β² = 25/4 − 1 = 21/4"
+          ],
+          "modelAnswer": "Here a = 2, b = −5 and c = 1. α + β = −b/a = 5/2 and αβ = c/a = 1/2. Then α² + β² = (α + β)² − 2αβ = (5/2)² − 2(1/2) = 25/4 − 1 = 21/4.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "a = 2, b = -5, c = 1\nα + β = -b/a = 5/2\nαβ = c/a = 1/2\nα² + β² = (α + β)² - 2αβ = 25/4 - 1 = 21/4",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "α + β = -b/a = 5/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "αβ = c/a = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "α² + β² = (α + β)² - 2αβ"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 25/4 - 1 = 21/4"
+                }
+              ],
+              "feedback": "Correct throughout, and writing a, b and c first avoided any sign slip. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Sum of roots = 5/2, product of roots = 1/2. Since (α + β)² = α² + 2αβ + β², α² + β² = (α + β)² − 2αβ = (5/2)² − 1 = 6.25 − 1 = 5.25, which is 21/4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sum of roots = 5/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "product of roots = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "α² + β² = (α + β)² − 2αβ"
+                },
+                {
+                  "point": 3,
+                  "quote": "5.25, which is 21/4"
+                }
+              ],
+              "feedback": "Showing where the identity comes from was a good touch. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "α + β = -5/2, αβ = 1/2. α² + β² = (α + β)² - 2αβ = 25/4 - 1 = 21/4.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "αβ = 1/2"
+                },
+                {
+                  "point": 2,
+                  "quote": "α² + β² = (α + β)² - 2αβ"
+                },
+                {
+                  "point": 3,
+                  "quote": "= 25/4 - 1 = 21/4"
+                }
+              ],
+              "feedback": "The product and α² + β² are right (squaring hid your sign slip). The sum is −b/a, and b = −5, so α + β = +5/2.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "α + β = 5/2, αβ = 1/2. α² + β² = (α + β)² = 25/4.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "α + β = 5/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "αβ = 1/2"
+                }
+              ],
+              "feedback": "Your sum and product are right. (α + β)² = α² + 2αβ + β², so you must subtract 2αβ to get α² + β²: 25/4 − 1 = 21/4."
+            },
+            {
+              "tier": "weak",
+              "text": "Using the formula, x = (5 ± √17)/4. α² + β² is the square of each one added, about 5.",
+              "meets": [],
+              "feedback": "The question says not to solve the equation. Use α + β = −b/a and αβ = c/a, then α² + β² = (α + β)² − 2αβ."
+            },
+            {
+              "tier": "weak",
+              "text": "α + β = b/a = -5/2, αβ = a/c = 2.",
+              "meets": [],
+              "feedback": "Check the formulas: α + β = −b/a = 5/2 and αβ = c/a = 1/2. Then use (α + β)² − 2αβ for α² + β²."
+            }
+          ]
+        },
+        {
+          "prompt": "f(x) = x³ − 2x² − 5x + 6. Show that (x − 1) is a factor of f(x). Hence factorise f(x) completely and solve f(x) = 0.",
+          "markScheme": [
+            "f(1) = 1 − 2 − 5 + 6 = 0, so (x − 1) is a factor by the factor theorem",
+            "Divides to obtain the quotient x² − x − 6",
+            "f(x) = (x − 1)(x − 3)(x + 2)",
+            "x = 1, x = 3 or x = −2"
+          ],
+          "modelAnswer": "f(1) = 1 − 2 − 5 + 6 = 0, so by the factor theorem (x − 1) is a factor. Dividing f(x) by (x − 1) gives x² − x − 6, so f(x) = (x − 1)(x² − x − 6) = (x − 1)(x − 3)(x + 2). Hence f(x) = 0 when x = 1, x = 3 or x = −2.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "f(1) = 1 - 2 - 5 + 6 = 0, so (x - 1) is a factor.\n(x³ - 2x² - 5x + 6) ÷ (x - 1) = x² - x - 6\nf(x) = (x - 1)(x² - x - 6) = (x - 1)(x - 3)(x + 2)\nx = 1, 3 or -2",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f(1) = 1 - 2 - 5 + 6 = 0, so (x - 1) is a factor"
+                },
+                {
+                  "point": 1,
+                  "quote": "= x² - x - 6"
+                },
+                {
+                  "point": 2,
+                  "quote": "(x - 1)(x - 3)(x + 2)"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = 1, 3 or -2"
+                }
+              ],
+              "feedback": "Complete and correct, with every step shown. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "By the factor theorem, substitute x = 1: 1 − 2 − 5 + 6 = 0, so x − 1 divides f(x). Comparing coefficients, f(x) = (x − 1)(x² + bx − 6) gives b − 1 = −2, so b = −1: the quotient is x² − x − 6. This factorises to (x − 3)(x + 2), so f(x) = (x − 1)(x − 3)(x + 2) and the roots are 1, 3 and −2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "substitute x = 1: 1 − 2 − 5 + 6 = 0, so x − 1 divides f(x)"
+                },
+                {
+                  "point": 1,
+                  "quote": "the quotient is x² − x − 6"
+                },
+                {
+                  "point": 2,
+                  "quote": "f(x) = (x − 1)(x − 3)(x + 2)"
+                },
+                {
+                  "point": 3,
+                  "quote": "the roots are 1, 3 and −2"
+                }
+              ],
+              "feedback": "Comparing coefficients instead of long division is a quick, sound method. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "f(1) = 1 - 2 - 5 + 6 = 0 so x - 1 is a factor. f(x) = (x - 1)(x² - x - 6). x = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f(1) = 1 - 2 - 5 + 6 = 0 so x - 1 is a factor"
+                },
+                {
+                  "point": 1,
+                  "quote": "(x² - x - 6)"
+                }
+              ],
+              "feedback": "Good start. The quadratic factor also factorises: x² − x − 6 = (x − 3)(x + 2). That gives two more roots, 3 and −2."
+            },
+            {
+              "tier": "partial",
+              "text": "f(1) = 0 so (x - 1) is a factor. Quotient is x² - x - 6 = (x + 3)(x - 2). So f(x) = (x - 1)(x + 3)(x - 2), x = 1, -3, 2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f(1) = 0 so (x - 1) is a factor"
+                },
+                {
+                  "point": 1,
+                  "quote": "Quotient is x² - x - 6"
+                }
+              ],
+              "feedback": "Your factor test and division are right. Check the last step: (x + 3)(x − 2) = x² + x − 6. You need numbers that multiply to −6 and add to −1: −3 and +2."
+            },
+            {
+              "tier": "weak",
+              "text": "f(-1) = -1 - 2 + 5 + 6 = 8. So (x - 1) is not a factor.",
+              "meets": [],
+              "feedback": "To test (x − 1), substitute x = 1, not x = −1. f(1) = 0, so it is a factor."
+            },
+            {
+              "tier": "weak",
+              "text": "x³ - 2x² - 5x + 6 = 0, x³ = 2x² + 5x - 6, x = 6.",
+              "meets": [],
+              "feedback": "A cubic cannot be solved by moving terms across like that. Use the factor theorem to find one factor, divide, then factorise the quadratic."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Rational functions, partial fractions and indices",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find the domain and zeros of a rational function Q(x) = f(x)/g(x);\n2. add, subtract, multiply and divide rational functions;\n3. resolve a rational function into partial fractions with linear and quadratic factors in the denominator;\n4. apply the laws of indices to evaluate expressions and solve equations involving indices.\n\n## Materials\n\nA chart of the laws of indices, a chart of the three types of partial fraction, cards with rational expressions for sorting.\n\n## Starter (5 minutes)\n\nWrite 1/2 + 1/3 = 5/6 on the board. Ask: can we go backwards, and split 5/((x + 1)(x − 4)) into two simpler fractions the same way?\n\n## Development\n\n1. Define a rational function Q(x) = f(x)/g(x) with g(x) ≠ 0. Find the excluded values (domain) and the zeros of (x² − 4)/(x² − 9).\n2. Add 2/(x − 1) + 3/(x + 2) over a common denominator. Multiply and divide simple rational functions, cancelling common factors.\n3. Show the three forms: distinct linear factors A/(x − a) + B/(x − b); a repeated factor A/(x − a) + B/(x − a)²; a quadratic factor (Bx + C)/(x² + k). Find constants by substituting convenient values and by comparing coefficients.\n4. State the laws of indices. Evaluate 16^(3/4) and 8^(−2/3).\n5. Solve 2^(x+1) = 32 by writing both sides as powers of 2. Solve 3^(2x) − 4(3^x) + 3 = 0 with the substitution y = 3^x.\n\n## Class activity\n\nIn pairs, students resolve two expressions into partial fractions and check by adding the fractions back together.\n\n## Evaluation\n\n1. Evaluate 32^(−2/5).\n2. Resolve 4/((x − 1)(x + 3)) into partial fractions.\n\n## Assignment\n\nWorksheet questions, due Wednesday.",
+      "reading": {
+        "title": "Rational functions, partial fractions and indices",
+        "content": "# Rational functions\n\nA **rational function** has the form Q(x) = f(x)/g(x), where f and g are polynomials and g(x) ≠ 0.\n\n- The **domain** is every real number except the values that make g(x) = 0.\n- The **zeros** are the values that make f(x) = 0 (and not g(x)).\n\n**Worked example.** Q(x) = (x − 5)/(x² − 1). The domain excludes x = 1 and x = −1. The zero is x = 5.\n\nRational functions are added and subtracted over a common denominator, and multiplied and divided like ordinary fractions:\n\n2/(x − 1) + 3/(x + 2) = [2(x + 2) + 3(x − 1)]/[(x − 1)(x + 2)] = (5x + 1)/[(x − 1)(x + 2)].\n\n# Partial fractions\n\nResolving into **partial fractions** reverses addition. When the degree of the numerator is less than that of the denominator:\n\n| Denominator has | Write |\n| --- | --- |\n| distinct linear factors (x − a)(x − b) | A/(x − a) + B/(x − b) |\n| a repeated factor (x − a)² | A/(x − a) + B/(x − a)² |\n| a quadratic factor (x² + k) | (Bx + C)/(x² + k) |\n\n**Worked example.** Resolve (x + 11)/[(x + 3)(x − 2)].\nx + 11 = A(x − 2) + B(x + 3).\nPut x = 2: 13 = 5B, so B = 13/5. Put x = −3: 8 = −5A, so A = −8/5.\nSo (x + 11)/[(x + 3)(x − 2)] = −8/[5(x + 3)] + 13/[5(x − 2)].\n\n**Worked example.** Resolve 3/[(x + 1)(x² + 2)].\n3 = A(x² + 2) + (Bx + C)(x + 1). Put x = −1: 3 = 3A, so A = 1. Comparing x² terms: 0 = A + B, so B = −1. Comparing constants: 3 = 2A + C, so C = 1. The result is 1/(x + 1) + (1 − x)/(x² + 2).\n\n# Indices\n\n| Law | Example |\n| --- | --- |\n| aᵐ × aⁿ = aᵐ⁺ⁿ | 2³ × 2⁴ = 2⁷ |\n| aᵐ ÷ aⁿ = aᵐ⁻ⁿ | 5⁶ ÷ 5² = 5⁴ |\n| (aᵐ)ⁿ = aᵐⁿ | (3²)³ = 3⁶ |\n| a⁰ = 1 | 7⁰ = 1 |\n| a⁻ⁿ = 1/aⁿ | 2⁻³ = 1/8 |\n| a^(m/n) = (ⁿ√a)ᵐ | 16^(3/4) = 2³ = 8 |\n\nTo solve an equation with the unknown in the index, write both sides as powers of the same base and equate the indices.\n\n**Worked example.** Solve 9^x = 27. Write 3^(2x) = 3³, so 2x = 3 and x = 3/2."
+      },
+      "cards": [
+        {
+          "front": "Rational function",
+          "back": "Q(x) = f(x)/g(x), with f and g polynomials and g(x) ≠ 0."
+        },
+        {
+          "front": "Domain of a rational function",
+          "back": "All real numbers except those that make the denominator zero."
+        },
+        {
+          "front": "Zeros of a rational function",
+          "back": "Values that make the numerator zero (and not the denominator)."
+        },
+        {
+          "front": "Partial fraction form for (x − a)(x − b)",
+          "back": "A/(x − a) + B/(x − b)."
+        },
+        {
+          "front": "Partial fraction form for a quadratic factor x² + k",
+          "back": "(Bx + C)/(x² + k)."
+        },
+        {
+          "front": "a^(m/n)",
+          "back": "The nth root of a, raised to the power m."
+        },
+        {
+          "front": "a⁻ⁿ",
+          "back": "1/aⁿ."
+        },
+        {
+          "front": "Evaluate 8^(2/3)",
+          "back": "(∛8)² = 2² = 4."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "For which values of x is Q(x) = (x + 2)/(x² − 9) not defined?",
+          "options": ["x = −2", "x = 9", "x = 3 or x = −3", "x = 0"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Express (5x − 1)/[(x + 1)(x − 2)] in partial fractions.",
+          "options": [
+            "2/(x + 1) + 3/(x − 2)",
+            "3/(x + 1) + 2/(x − 2)",
+            "−2/(x + 1) + 3/(x − 2)",
+            "2/(x + 1) − 3/(x − 2)"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Evaluate 27^(2/3).",
+          "options": ["18", "9", "3", "81"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Solve 2^(x + 1) = 32.",
+          "options": ["x = 5", "x = 16", "x = 4", "x = 3"],
+          "answer": "C"
+        },
+        {
+          "prompt": "What are the zeros of Q(x) = (x² − 4)/(x² + 1)?",
+          "options": ["x = ±1", "x = 4", "There are none", "x = ±2"],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Resolve (3x + 3)/[(x − 1)(x + 2)] into partial fractions.",
+          "markScheme": [
+            "Writes (3x + 3)/[(x − 1)(x + 2)] = A/(x − 1) + B/(x + 2), so 3x + 3 = A(x + 2) + B(x − 1)",
+            "A = 2 (e.g. putting x = 1: 6 = 3A)",
+            "B = 1 (e.g. putting x = −2: −3 = −3B)",
+            "Answer: 2/(x − 1) + 1/(x + 2)"
+          ],
+          "modelAnswer": "Let (3x + 3)/[(x − 1)(x + 2)] = A/(x − 1) + B/(x + 2). Then 3x + 3 = A(x + 2) + B(x − 1). Putting x = 1: 6 = 3A, so A = 2. Putting x = −2: −3 = −3B, so B = 1. So the expression equals 2/(x − 1) + 1/(x + 2).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(3x + 3)/((x - 1)(x + 2)) = A/(x - 1) + B/(x + 2)\n3x + 3 = A(x + 2) + B(x - 1)\nx = 1: 6 = 3A, A = 2\nx = -2: -3 = -3B, B = 1\nAnswer: 2/(x - 1) + 1/(x + 2)",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x + 3 = A(x + 2) + B(x - 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "A = 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "B = 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "Answer: 2/(x - 1) + 1/(x + 2)"
+                }
+              ],
+              "feedback": "Clear method and correct constants. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Let it equal A/(x − 1) + B/(x + 2). Multiplying through: 3x + 3 = A(x + 2) + B(x − 1). Comparing x terms: A + B = 3. Comparing constants: 2A − B = 3. Adding: 3A = 6, so A = 2 and B = 1. Result: 2/(x − 1) + 1/(x + 2). Check: [2(x + 2) + (x − 1)]/[(x − 1)(x + 2)] = (3x + 3)/[(x − 1)(x + 2)].",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x + 3 = A(x + 2) + B(x − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "A = 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "B = 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "Result: 2/(x − 1) + 1/(x + 2)"
+                }
+              ],
+              "feedback": "Comparing coefficients is a good alternative method, and your check confirms the answer. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "3x + 3 = A(x + 2) + B(x - 1). x = 1: 6 = 3A so A = 2. x = -2: -3 = -B so B = 3. Answer 2/(x - 1) + 3/(x + 2).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x + 3 = A(x + 2) + B(x - 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "A = 2"
+                }
+              ],
+              "feedback": "Your set-up and A are right. When x = −2, B(x − 1) = B(−3) = −3B, so −3 = −3B and B = 1."
+            },
+            {
+              "tier": "partial",
+              "text": "3x + 3 = A(x + 2) + B(x - 1). x = 1: 6 = 3A, A = 2. x = -2: -3 = -3B, B = 1. So the answer is 2/(x + 2) + 1/(x - 1).",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3x + 3 = A(x + 2) + B(x - 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "A = 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "B = 1"
+                }
+              ],
+              "feedback": "Your constants are right, but you put them over the wrong denominators at the end. A belongs to (x − 1) and B to (x + 2), so the answer is 2/(x − 1) + 1/(x + 2)."
+            },
+            {
+              "tier": "weak",
+              "text": "(3x + 3)/((x - 1)(x + 2)) = 3x/(x - 1) + 3/(x + 2).",
+              "meets": [],
+              "feedback": "You cannot split the numerator between the two denominators. Write A/(x − 1) + B/(x + 2), multiply through, and find A and B."
+            },
+            {
+              "tier": "weak",
+              "text": "3(x + 1)/((x - 1)(x + 2)). Cancel (x + 1) with (x - 1) to get 3/(x + 2).",
+              "meets": [],
+              "feedback": "(x + 1) and (x − 1) are different factors and cannot cancel. Set up A/(x − 1) + B/(x + 2) and find the constants."
+            }
+          ]
+        },
+        {
+          "prompt": "Solve the equation 3^(2x) − 4(3^x) + 3 = 0.",
+          "markScheme": [
+            "Uses the substitution y = 3^x, noting 3^(2x) = y²",
+            "Obtains y² − 4y + 3 = 0",
+            "y = 1 or y = 3",
+            "x = 0 or x = 1"
+          ],
+          "modelAnswer": "Let y = 3^x. Then 3^(2x) = (3^x)² = y², so the equation becomes y² − 4y + 3 = 0. Factorising, (y − 1)(y − 3) = 0, so y = 1 or y = 3. If 3^x = 1 = 3⁰, x = 0. If 3^x = 3 = 3¹, x = 1. So x = 0 or x = 1.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Let y = 3^x, so 3^(2x) = y².\ny² - 4y + 3 = 0\n(y - 1)(y - 3) = 0\ny = 1 or y = 3\n3^x = 1 gives x = 0; 3^x = 3 gives x = 1.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Let y = 3^x, so 3^(2x) = y²"
+                },
+                {
+                  "point": 1,
+                  "quote": "y² - 4y + 3 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "y = 1 or y = 3"
+                },
+                {
+                  "point": 3,
+                  "quote": "3^x = 1 gives x = 0; 3^x = 3 gives x = 1"
+                }
+              ],
+              "feedback": "A tidy substitution and both solutions found. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "3^(2x) is the same as (3^x)², so putting p = 3^x gives p² − 4p + 3 = 0. This factorises to (p − 3)(p − 1) = 0, so p = 3 or p = 1. Then 3^x = 3¹ means x = 1, and 3^x = 3⁰ means x = 0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "3^(2x) is the same as (3^x)², so putting p = 3^x"
+                },
+                {
+                  "point": 1,
+                  "quote": "p² − 4p + 3 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "p = 3 or p = 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "3^x = 3¹ means x = 1, and 3^x = 3⁰ means x = 0"
+                }
+              ],
+              "feedback": "Correct, and writing 1 as 3⁰ made the last step clear. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Let y = 3^x. y² - 4y + 3 = 0, (y - 1)(y - 3) = 0, y = 1 or 3. So x = 1 or 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Let y = 3^x"
+                },
+                {
+                  "point": 1,
+                  "quote": "y² - 4y + 3 = 0"
+                },
+                {
+                  "point": 2,
+                  "quote": "y = 1 or 3"
+                }
+              ],
+              "feedback": "Your substitution and quadratic are right, but y is 3^x, not x. Go back: 3^x = 1 gives x = 0, and 3^x = 3 gives x = 1."
+            },
+            {
+              "tier": "partial",
+              "text": "Let y = 3^x. Then 3^(2x) = 2y. 2y - 4y + 3 = 0, -2y = -3, y = 3/2.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Let y = 3^x"
+                }
+              ],
+              "feedback": "The substitution is the right idea, but 3^(2x) = (3^x)² = y², not 2y. That gives the quadratic y² − 4y + 3 = 0.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "3^(2x) - 4(3^x) + 3 = 0, divide by 3: 3^(2x - 1) - 4(3^(x - 1)) + 1 = 0. So x = 1.",
+              "meets": [],
+              "feedback": "Dividing by 3 does not simplify this. Put y = 3^x so the equation becomes a quadratic in y, and solve that. You will find two answers."
+            },
+            {
+              "tier": "weak",
+              "text": "2x - 4x + 3 = 0 by taking the powers, so -2x = -3 and x = 1.5.",
+              "meets": [],
+              "feedback": "You can compare powers only when each side is a single power of the same base. Here, let y = 3^x and solve y² − 4y + 3 = 0."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Logarithms, permutations, combinations and the binomial theorem",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. apply the laws of logarithms, including change of base, and solve logarithmic equations;\n2. reduce y = axᵇ to the linear form log y = b log x + log a;\n3. use ⁿPᵣ and ⁿCᵣ for arrangements and selections;\n4. expand (a + b)ⁿ for a positive integer n, and use (1 + x)ⁿ ≈ 1 + nx for small x.\n\n## Materials\n\nFour-figure tables or calculators, a chart of Pascal's triangle to row 6, letter cards A, B, C, D.\n\n## Starter (5 minutes)\n\nAsk four students to stand in a line at the front. Ask: in how many different orders could they stand? Then: if only two of them can represent the class at a quiz, how many different pairs are possible?\n\n## Development\n\n1. Define log_a x = y ⟺ aʸ = x. State the product, quotient and power laws and log_a a = 1, log_a 1 = 0. Show change of base: log_a x = log_b x / log_b a.\n2. Solve log₂(x + 1) + log₂(x − 1) = 3, rejecting values that make a logarithm undefined.\n3. Take logs of y = axᵇ to get log y = b log x + log a, a straight line with gradient b and intercept log a.\n4. Count the starter arrangements as 4! = 24. Define ⁿPᵣ = n!/(n − r)! for arrangements and ⁿCᵣ = n!/[r!(n − r)!] for selections, where order does not matter.\n5. Build Pascal's triangle and link it to ⁿCᵣ. Expand (a + b)⁴. Use (1 + x)ⁿ ≈ 1 + nx to estimate (1.02)¹⁰.\n\n## Class activity\n\nIn groups, students list all selections of two letters from A, B, C, D, then all arrangements, and compare with ⁴C₂ and ⁴P₂.\n\n## Evaluation\n\n1. Evaluate log₃ 81.\n2. In how many ways can a captain and vice-captain be chosen from 11 players?\n\n## Assignment\n\nWorksheet questions, due Friday.",
+      "reading": {
+        "title": "Logarithms, counting and the binomial theorem",
+        "content": "# Logarithms\n\nlog_a x = y means aʸ = x. So log₁₀ 1000 = 3 because 10³ = 1000.\n\n| Law | Statement |\n| --- | --- |\n| Product | log_a (xy) = log_a x + log_a y |\n| Quotient | log_a (x/y) = log_a x − log_a y |\n| Power | log_a xⁿ = n log_a x, so log_a ⁿ√x = (1/n) log_a x |\n| Change of base | log_a x = log_b x / log_b a |\n\nAlso log_a a = 1 and log_a 1 = 0. The logarithm of zero or a negative number is not defined.\n\n**Worked example.** Simplify log 2 + log 50. log 2 + log 50 = log 100 = 2.\n\n**Worked example.** Find log₅ 20 using change of base. log₅ 20 = log 20 / log 5 = 1.3010/0.6990 = 1.861.\n\n## Reducing to a straight line\n\nIf y = axᵇ, taking logs gives log y = b log x + log a. A graph of log y against log x is a straight line with gradient b and intercept log a, so a and b can be found from experimental data.\n\n# Permutations and combinations\n\nn! = n × (n − 1) × ... × 2 × 1, and 0! = 1.\n\n- A **permutation** is an arrangement, where order matters: ⁿPᵣ = n!/(n − r)!.\n- A **combination** is a selection, where order does not matter: ⁿCᵣ = n!/[r!(n − r)!], also written (n r).\n\n**Worked example.** From 8 students, a class captain and an assistant are chosen: ⁸P₂ = 8 × 7 = 56 ways. A team of 2 is chosen with no titles: ⁸C₂ = 56/2 = 28 ways.\n\n**Worked example.** The letters of LAGOS can be arranged in 5! = 120 ways.\n\n# The binomial theorem\n\nFor a positive integer n,\n\n(a + b)ⁿ = aⁿ + ⁿC₁aⁿ⁻¹b + ⁿC₂aⁿ⁻²b² + ... + bⁿ.\n\nThe coefficients are the rows of **Pascal's triangle**: 1; 1 1; 1 2 1; 1 3 3 1; 1 4 6 4 1; 1 5 10 10 5 1.\n\n**Worked example.** (1 + 3x)³ = 1 + 3(3x) + 3(3x)² + (3x)³ = 1 + 9x + 27x² + 27x³.\n\n## An approximation\n\nWhen x is very small, (1 + x)ⁿ ≈ 1 + nx, for any rational n. So (1.002)⁵ ≈ 1 + 5(0.002) = 1.01, and √1.04 = (1 + 0.04)^(1/2) ≈ 1 + ½(0.04) = 1.02."
+      },
+      "cards": [
+        {
+          "front": "log_a x = y means",
+          "back": "aʸ = x."
+        },
+        {
+          "front": "Product law of logarithms",
+          "back": "log (xy) = log x + log y."
+        },
+        {
+          "front": "Change of base",
+          "back": "log_a x = log_b x / log_b a."
+        },
+        {
+          "front": "Linear form of y = axᵇ",
+          "back": "log y = b log x + log a."
+        },
+        {
+          "front": "ⁿPᵣ",
+          "back": "n!/(n − r)!, the number of arrangements of r objects from n."
+        },
+        {
+          "front": "ⁿCᵣ",
+          "back": "n!/[r!(n − r)!], the number of selections of r objects from n."
+        },
+        {
+          "front": "Row 4 of Pascal's triangle",
+          "back": "1 4 6 4 1, the coefficients of (a + b)⁴."
+        },
+        {
+          "front": "Approximation for (1 + x)ⁿ when x is small",
+          "back": "(1 + x)ⁿ ≈ 1 + nx."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Evaluate log₂ 32.",
+          "options": ["5", "16", "6", "2.5"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Simplify log 8 + log 5 − log 4, where the logarithms are to base 10.",
+          "options": ["log 9", "10", "1", "2"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Evaluate ⁵P₂.",
+          "options": ["10", "20", "60", "120"],
+          "answer": "B"
+        },
+        {
+          "prompt": "In how many ways can a committee of 3 be chosen from 7 school prefects?",
+          "options": ["210", "21", "343", "35"],
+          "answer": "D"
+        },
+        {
+          "prompt": "What is the coefficient of x² in the expansion of (1 + 2x)⁵?",
+          "options": ["10", "40", "80", "20"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Solve log₂(x + 1) + log₂(x − 1) = 3.",
+          "markScheme": [
+            "Combines using the product law: log₂[(x + 1)(x − 1)] = 3",
+            "Removes the logarithm: x² − 1 = 2³ = 8",
+            "x² = 9, so x = 3 or x = −3",
+            "Rejects x = −3 (log of a negative number is undefined), so x = 3"
+          ],
+          "modelAnswer": "By the product law, log₂[(x + 1)(x − 1)] = 3, so (x + 1)(x − 1) = 2³ = 8. Then x² − 1 = 8, x² = 9 and x = 3 or x = −3. If x = −3, x + 1 and x − 1 are negative and their logarithms are not defined, so x = −3 is rejected. The solution is x = 3.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "log₂[(x + 1)(x - 1)] = 3\n(x + 1)(x - 1) = 2³\nx² - 1 = 8\nx² = 9, x = ±3\nx = -3 is not possible because log of a negative number is undefined.\nSo x = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "log₂[(x + 1)(x - 1)] = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² - 1 = 8"
+                },
+                {
+                  "point": 2,
+                  "quote": "x² = 9, x = ±3"
+                },
+                {
+                  "point": 3,
+                  "quote": "x = -3 is not possible because log of a negative number is undefined.\nSo x = 3."
+                }
+              ],
+              "feedback": "Correct, and you remembered to reject the root that makes the logarithms undefined. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Adding the logs multiplies the numbers: log₂(x² − 1) = 3. So x² − 1 = 8 and x² = 9, giving x = 3 or x = −3. Checking x = −3: log₂(−2) does not exist, so it fails. Checking x = 3: log₂ 4 + log₂ 2 = 2 + 1 = 3. Answer x = 3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "log₂(x² − 1) = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² − 1 = 8"
+                },
+                {
+                  "point": 2,
+                  "quote": "giving x = 3 or x = −3"
+                },
+                {
+                  "point": 3,
+                  "quote": "Checking x = −3: log₂(−2) does not exist, so it fails"
+                }
+              ],
+              "feedback": "Checking both roots in the original equation is excellent practice. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "log₂(x² - 1) = 3. x² - 1 = 8. x² = 9. x = 3 or -3.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "log₂(x² - 1) = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "x² - 1 = 8"
+                },
+                {
+                  "point": 2,
+                  "quote": "x = 3 or -3"
+                }
+              ],
+              "feedback": "Your working is right. Check each answer in the original equation: x = −3 gives log₂(−2), which is undefined, so only x = 3 is a solution."
+            },
+            {
+              "tier": "partial",
+              "text": "log₂[(x + 1)(x - 1)] = 3, so x² - 1 = 3 × 2 = 6, x² = 7, x = √7.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "log₂[(x + 1)(x - 1)] = 3"
+                }
+              ],
+              "feedback": "Combining the logarithms is right. log₂ N = 3 means N = 2³ = 8, not 3 × 2. That gives x² = 9."
+            },
+            {
+              "tier": "weak",
+              "text": "log₂(x + 1) + log₂(x - 1) = log₂(2x) = 3, so 2x = 8 and x = 4.",
+              "meets": [],
+              "feedback": "The sum of two logarithms is the log of the product, not the sum: log₂[(x + 1)(x − 1)]. Try again from there.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Cancel the log₂ to get (x + 1) + (x - 1) = 3, 2x = 3, x = 1.5.",
+              "meets": [],
+              "feedback": "Logarithms cannot be cancelled term by term. Use the product law first to make one logarithm, then write it in index form."
+            }
+          ]
+        },
+        {
+          "prompt": "Expand (2 + x)⁴ in ascending powers of x. Use your expansion to evaluate (2.01)⁴ correct to four decimal places.",
+          "markScheme": [
+            "Uses the coefficients 1, 4, 6, 4, 1 (or ⁴C₀ to ⁴C₄) with decreasing powers of 2",
+            "(2 + x)⁴ = 16 + 32x + 24x² + 8x³ + x⁴",
+            "Substitutes x = 0.01",
+            "(2.01)⁴ = 16.3224 to four decimal places"
+          ],
+          "modelAnswer": "(2 + x)⁴ = 2⁴ + 4(2³)x + 6(2²)x² + 4(2)x³ + x⁴ = 16 + 32x + 24x² + 8x³ + x⁴. With x = 0.01: 16 + 0.32 + 0.0024 + 0.000008 + 0.00000001 = 16.32240801, so (2.01)⁴ = 16.3224 to four decimal places.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(2 + x)⁴ = 1(2⁴) + 4(2³)x + 6(2²)x² + 4(2)x³ + 1x⁴\n= 16 + 32x + 24x² + 8x³ + x⁴\nPut x = 0.01:\n16 + 0.32 + 0.0024 + 0.000008 + 0.00000001 = 16.32240801\n(2.01)⁴ = 16.3224 (4 d.p.)",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1(2⁴) + 4(2³)x + 6(2²)x² + 4(2)x³ + 1x⁴"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 16 + 32x + 24x² + 8x³ + x⁴"
+                },
+                {
+                  "point": 2,
+                  "quote": "Put x = 0.01"
+                },
+                {
+                  "point": 3,
+                  "quote": "(2.01)⁴ = 16.3224 (4 d.p.)"
+                }
+              ],
+              "feedback": "Every term correct and the approximation exact to four places. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "From Pascal's triangle the coefficients are 1, 4, 6, 4, 1. (2 + x)⁴ = 16 + 32x + 24x² + 8x³ + x⁴. Since 2.01 = 2 + 0.01, put x = 0.01: 16 + 0.32 + 0.0024 + 0.000008 + ... ≈ 16.3224. The last two terms are too small to affect the fourth decimal place.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "From Pascal's triangle the coefficients are 1, 4, 6, 4, 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "(2 + x)⁴ = 16 + 32x + 24x² + 8x³ + x⁴"
+                },
+                {
+                  "point": 2,
+                  "quote": "Since 2.01 = 2 + 0.01, put x = 0.01"
+                },
+                {
+                  "point": 3,
+                  "quote": "≈ 16.3224"
+                }
+              ],
+              "feedback": "Correct, and explaining why the last terms can be ignored shows good judgement. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "(2 + x)⁴ = 2⁴ + 4x + 6x² + 4x³ + x⁴ = 16 + 4x + 6x² + 4x³ + x⁴. Put x = 0.01: 16 + 0.04 + 0.0006 + ... = 16.0406.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Put x = 0.01"
+                }
+              ],
+              "feedback": "Substituting x = 0.01 is right. Each coefficient must also be multiplied by the right power of 2: 4 × 2³ = 32, 6 × 2² = 24 and 4 × 2 = 8."
+            },
+            {
+              "tier": "partial",
+              "text": "Coefficients 1, 4, 6, 4, 1. (2 + x)⁴ = 16 + 32x + 24x² + 8x³ + x⁴. With x = 0.1: 16 + 3.2 + 0.24 + 0.008 + 0.0001 = 19.4481.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Coefficients 1, 4, 6, 4, 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "(2 + x)⁴ = 16 + 32x + 24x² + 8x³ + x⁴"
+                }
+              ],
+              "feedback": "Your expansion is correct. 2.01 is 2 + 0.01, so x = 0.01, not 0.1. Redo the substitution to get 16.3224."
+            },
+            {
+              "tier": "weak",
+              "text": "(2 + x)⁴ = 2⁴ + x⁴ = 16 + x⁴. (2.01)⁴ = 16 + 0.01⁴ = 16.0000.",
+              "meets": [],
+              "feedback": "(a + b)⁴ is not a⁴ + b⁴; there are middle terms. Use the coefficients 1, 4, 6, 4, 1 from Pascal's triangle."
+            },
+            {
+              "tier": "weak",
+              "text": "(2.01)⁴ = 2.01 × 4 = 8.04.",
+              "meets": [],
+              "feedback": "A power of 4 means multiplying 2.01 by itself four times, not multiplying by 4. Expand (2 + x)⁴ with the binomial theorem, then put x = 0.01."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Sequences: arithmetic and geometric progressions",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. tell finite from infinite sequences;\n2. recognise the pattern of a sequence and find its next terms and a general term;\n3. use Uₙ = U₁ + (n − 1)d for an arithmetic progression;\n4. use Uₙ = U₁rⁿ⁻¹ for a geometric progression;\n5. find the first term and common difference or ratio from two given terms.\n\n## Materials\n\nMatchsticks for building patterns, a chart of square and triangular numbers, a calendar page.\n\n## Starter (5 minutes)\n\nBuild a row of squares from matchsticks: 4, 7, 10 sticks. Ask: how many sticks for 10 squares? For 100 squares?\n\n## Development\n\n1. Define a sequence as an ordered list of numbers. Contrast the dates in October (finite) with the counting numbers (infinite).\n2. Find patterns in 1, 4, 9, 16, ... and 2, 6, 12, 20, .... Write a general term for each.\n3. Define an AP by a common difference d. Derive Uₙ = U₁ + (n − 1)d from the matchstick pattern: U₁ = 4, d = 3, so Uₙ = 3n + 1.\n4. Define a GP by a common ratio r. Derive Uₙ = U₁rⁿ⁻¹ from 3, 6, 12, 24, ....\n5. Given two terms, set up simultaneous equations: subtract for an AP, divide for a GP. Work one of each.\n6. Apply both to savings and population problems.\n\n## Class activity\n\nIn pairs, students write one AP and one GP of their own, swap with another pair, and find the 10th term of each.\n\n## Evaluation\n\n1. Find the 15th term of 5, 9, 13, ....\n2. Find the common ratio of 81, 27, 9, ....\n\n## Assignment\n\nRevise for Thursday's quiz.",
+      "reading": {
+        "title": "Number patterns, APs and GPs",
+        "content": "# Sequences\n\nA **sequence** is a list of numbers in a definite order, following a rule. Each number is a **term**: U₁, U₂, U₃, and so on.\n\n- A **finite** sequence ends: the house numbers on a street, or the scores of 40 students in a test.\n- An **infinite** sequence goes on for ever: 1, 2, 3, 4, ....\n\nTo find the pattern, look at the differences between terms, or the ratios.\n\n**Worked example.** 3, 8, 15, 24, 35, ... The differences are 5, 7, 9, 11, so the next difference is 13 and the next term is 48. Each term is one less than a square: Uₙ = (n + 1)² − 1.\n\n# Arithmetic progressions (A.P.)\n\nIn an **arithmetic progression**, each term is found by adding the same number, the **common difference** d:\n\na, a + d, a + 2d, a + 3d, ...\n\nThe nth term is Uₙ = U₁ + (n − 1)d.\n\n**Worked example.** Find the 20th term of 7, 12, 17, ....\nU₁ = 7, d = 5. U₂₀ = 7 + 19 × 5 = 102.\n\n**Worked example.** The 4th term of an AP is 11 and the 9th term is 26. Find the first term and common difference.\nU₁ + 3d = 11 and U₁ + 8d = 26. Subtracting, 5d = 15, so d = 3 and U₁ = 2.\n\n# Geometric progressions (G.P.)\n\nIn a **geometric progression**, each term is found by multiplying by the same number, the **common ratio** r:\n\na, ar, ar², ar³, ...\n\nThe nth term is Uₙ = U₁rⁿ⁻¹.\n\n**Worked example.** Find the 7th term of 5, 10, 20, ....\nU₁ = 5, r = 2. U₇ = 5 × 2⁶ = 320.\n\n**Worked example.** The 3rd term of a GP is 18 and the 6th term is 486. Divide: ar⁵ ÷ ar² = r³ = 486/18 = 27, so r = 3 and a = 18/9 = 2.\n\nThe ratio can be a fraction, as in 64, 32, 16, ..., where r = ½, or negative, as in 1, −2, 4, −8, ..., where r = −2.\n\n## Real-life use\n\nA salary that rises by the same amount each year forms an AP. A population growing by the same percentage each year forms a GP: if 50 000 people grow by 4% a year, after n years there are 50 000 × (1.04)ⁿ."
+      },
+      "cards": [
+        {
+          "front": "Finite sequence",
+          "back": "A sequence with a last term."
+        },
+        {
+          "front": "Infinite sequence",
+          "back": "A sequence that goes on without end."
+        },
+        {
+          "front": "Common difference",
+          "back": "The fixed number added to each term of an AP: d = U₂ − U₁."
+        },
+        {
+          "front": "nth term of an AP",
+          "back": "Uₙ = U₁ + (n − 1)d."
+        },
+        {
+          "front": "Common ratio",
+          "back": "The fixed number each term of a GP is multiplied by: r = U₂ ÷ U₁."
+        },
+        {
+          "front": "nth term of a GP",
+          "back": "Uₙ = U₁rⁿ⁻¹."
+        },
+        {
+          "front": "Finding d from two terms of an AP",
+          "back": "Subtract the two equations for the terms."
+        },
+        {
+          "front": "Finding r from two terms of a GP",
+          "back": "Divide the two equations for the terms."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the next term of the sequence 2, 6, 12, 20, 30, ...?",
+          "options": ["40", "42", "36", "44"],
+          "answer": "B"
+        },
+        {
+          "prompt": "The first three terms of an arithmetic progression are 3, 7 and 11. Find its 10th term.",
+          "options": ["43", "40", "39", "37"],
+          "answer": "C"
+        },
+        {
+          "prompt": "The first three terms of a geometric progression are 2, 6 and 18. Find its 6th term.",
+          "options": ["486", "1458", "162", "36"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is a finite sequence?",
+          "options": [
+            "The even numbers 2, 4, 6, 8, ...",
+            "The powers of 2",
+            "The multiples of 5",
+            "The ages of the 40 students in SS1A, from youngest to oldest"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The 3rd term of an arithmetic progression is 10 and the 7th term is 22. What is the first term?",
+          "options": ["3", "7", "4", "1"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A trader at Oyingbo market saves ₦500 in the first week and increases the amount saved by ₦150 every week. In which week will the amount saved in that week first be more than ₦3000, and how much is saved that week?",
+          "markScheme": [
+            "Identifies an AP with U₁ = 500 and d = 150, so Uₙ = 500 + (n − 1)150",
+            "Forms the inequality 500 + (n − 1)150 > 3000",
+            "Solves to n − 1 > 16.7 (or n > 17.7)",
+            "Week 18, when ₦3050 is saved"
+          ],
+          "modelAnswer": "The weekly savings form an AP with U₁ = 500 and d = 150, so Uₙ = 500 + (n − 1)150. We need 500 + (n − 1)150 > 3000, so (n − 1)150 > 2500 and n − 1 > 16.7. The smallest whole number is n − 1 = 17, so n = 18. In week 18 the trader saves 500 + 17 × 150 = ₦3050.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "a = 500, d = 150. Uₙ = 500 + (n - 1)150.\n500 + (n - 1)150 > 3000\n(n - 1)150 > 2500\nn - 1 > 16.67\nn = 18\nU₁₈ = 500 + 17(150) = 3050. So week 18, ₦3050.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a = 500, d = 150. Uₙ = 500 + (n - 1)150."
+                },
+                {
+                  "point": 1,
+                  "quote": "500 + (n - 1)150 > 3000"
+                },
+                {
+                  "point": 2,
+                  "quote": "n - 1 > 16.67"
+                },
+                {
+                  "point": 3,
+                  "quote": "So week 18, ₦3050"
+                }
+              ],
+              "feedback": "Correct, and you checked the amount in week 18. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "This is an A.P. with first term 500 and common difference 150, so the nth week's saving is 500 + 150(n − 1). Setting 500 + 150(n − 1) > 3000 gives 150(n − 1) > 2500, n > 17.7. Week 17 gives 500 + 16 × 150 = 2900, which is not enough, so it is week 18 with ₦3050.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the nth week's saving is 500 + 150(n − 1)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Setting 500 + 150(n − 1) > 3000"
+                },
+                {
+                  "point": 2,
+                  "quote": "n > 17.7"
+                },
+                {
+                  "point": 3,
+                  "quote": "it is week 18 with ₦3050"
+                }
+              ],
+              "feedback": "Checking week 17 as well shows exactly why the answer is 18. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Uₙ = 500 + (n - 1)150 = 3000. (n - 1)150 = 2500, n - 1 = 16.67, n = 17.67, so week 17.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Uₙ = 500 + (n - 1)150"
+                },
+                {
+                  "point": 2,
+                  "quote": "n - 1 = 16.67"
+                }
+              ],
+              "feedback": "Your formula and working are right, but n must be a whole number above 17.67, so round up to week 18. Week 17 gives only ₦2900. Then state the amount, ₦3050."
+            },
+            {
+              "tier": "partial",
+              "text": "Uₙ = 500 + 150n > 3000. 150n > 2500, n > 16.7, so week 17. Saved 500 + 150 × 17 = ₦3050.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "n > 16.7"
+                }
+              ],
+              "feedback": "The amount is right but the formula is not: in week 1 your formula gives 650. The nth term is 500 + (n − 1)150, so the week is 18.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "3000 ÷ 500 = 6, so in week 6.",
+              "meets": [],
+              "feedback": "The trader does not save ₦500 every week; it increases by ₦150 each time. Use the AP formula Uₙ = 500 + (n − 1)150 and set it greater than 3000."
+            },
+            {
+              "tier": "weak",
+              "text": "The savings double, so 500, 1000, 2000, 4000. Week 4.",
+              "meets": [],
+              "feedback": "Adding ₦150 each week makes an AP, not doubling, which would be a GP. Write Uₙ = 500 + (n − 1)150 and solve Uₙ > 3000."
+            }
+          ]
+        },
+        {
+          "prompt": "The second term of a geometric progression is 12 and the fifth term is 324. Find the common ratio, the first term and the seventh term.",
+          "markScheme": [
+            "Forms ar = 12 and ar⁴ = 324",
+            "Divides to get r³ = 27, so r = 3",
+            "First term a = 4",
+            "U₇ = 4 × 3⁶ = 2916"
+          ],
+          "modelAnswer": "U₂ = ar = 12 and U₅ = ar⁴ = 324. Dividing, ar⁴ ÷ ar = r³ = 324/12 = 27, so r = 3. Then a = 12/3 = 4. U₇ = ar⁶ = 4 × 729 = 2916.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "ar = 12 ... (1)\nar⁴ = 324 ... (2)\n(2) ÷ (1): r³ = 27, r = 3\na = 12/3 = 4\nU₇ = 4 × 3⁶ = 4 × 729 = 2916",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ar = 12 ... (1)\nar⁴ = 324 ... (2)"
+                },
+                {
+                  "point": 1,
+                  "quote": "r³ = 27, r = 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "a = 12/3 = 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "U₇ = 4 × 3⁶ = 4 × 729 = 2916"
+                }
+              ],
+              "feedback": "Clear, numbered equations and all three answers correct. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "From U₂ to U₅ we multiply by r three times, so r³ = 324 ÷ 12 = 27 and r = 3. This is the same as dividing ar⁴ = 324 by ar = 12. The first term is 12 ÷ 3 = 4. The seventh term is ar⁶ = 4 × 729 = 2916. Check: 4, 12, 36, 108, 324.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "dividing ar⁴ = 324 by ar = 12"
+                },
+                {
+                  "point": 1,
+                  "quote": "r³ = 324 ÷ 12 = 27 and r = 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "The first term is 12 ÷ 3 = 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "The seventh term is ar⁶ = 4 × 729 = 2916"
+                }
+              ],
+              "feedback": "Writing out the first five terms is a quick and convincing check. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "ar = 12, ar⁴ = 324. r³ = 27, r = 3. a = 4. U₇ = 4 × 3⁷ = 8748.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ar = 12, ar⁴ = 324"
+                },
+                {
+                  "point": 1,
+                  "quote": "r³ = 27, r = 3"
+                },
+                {
+                  "point": 2,
+                  "quote": "a = 4"
+                }
+              ],
+              "feedback": "Everything is right except the last step. Uₙ = arⁿ⁻¹, so U₇ = ar⁶ = 4 × 729 = 2916, not ar⁷."
+            },
+            {
+              "tier": "partial",
+              "text": "ar = 12, ar⁴ = 324. Dividing, r⁴ = 324/12 = 27, so r = 2.28 and a = 12/2.28 = 5.26.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ar = 12, ar⁴ = 324"
+                }
+              ],
+              "feedback": "Your two equations are right. Dividing ar⁴ by ar leaves r³, not r⁴, so r³ = 27 and r = 3 exactly. Then a = 4."
+            },
+            {
+              "tier": "weak",
+              "text": "d = (324 - 12)/3 = 104. First term = 12 - 104 = -92.",
+              "meets": [],
+              "feedback": "This is a geometric progression, so the terms are multiplied by a common ratio, not increased by a common difference. Write ar = 12 and ar⁴ = 324 and divide."
+            },
+            {
+              "tier": "weak",
+              "text": "r = 324/12 = 27. The first term is 12/27 = 0.44.",
+              "meets": [],
+              "feedback": "324 ÷ 12 = 27 is r³, because there are three multiplications from the 2nd term to the 5th. So r = ∛27 = 3."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

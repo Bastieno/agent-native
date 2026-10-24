@@ -1,0 +1,137 @@
+{
+  "found": true,
+  "subject": "Cultural and Creative Arts",
+  "subjectCode": "CCA",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Visual Arts",
+      "abbreviation": "VA",
+      "subStrands": [
+        {
+          "name": "Drawing, Painting, and Design",
+          "objectives": [
+            {
+              "code": "CCA-VA-1",
+              "description": "Identify and apply the elements of art (line, shape, colour, texture, form, space) and principles of design"
+            },
+            {
+              "code": "CCA-VA-2",
+              "description": "Demonstrate observational drawing and shading techniques using natural objects and still life"
+            },
+            {
+              "code": "CCA-VA-3",
+              "description": "Apply painting techniques including watercolour and tempera to create original works of art"
+            },
+            {
+              "code": "CCA-VA-4",
+              "description": "Produce craftwork using local materials including weaving, tie-dye, and textile design"
+            },
+            {
+              "code": "CCA-VA-5",
+              "description": "Explain the importance of the arts to Nigerian society and cultural identity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "abbreviation": "MUS",
+      "subStrands": [
+        {
+          "name": "Music Theory and Performance",
+          "objectives": [
+            {
+              "code": "CCA-MUS-1",
+              "description": "Identify the fundamentals of music including musical alphabet, clef, staves, notes, and their relative values"
+            },
+            {
+              "code": "CCA-MUS-2",
+              "description": "Demonstrate ear training by identifying pitch, intervals, and harmony in musical passages"
+            },
+            {
+              "code": "CCA-MUS-3",
+              "description": "Sing the solfa notes of the Nigerian National Anthem and practise major scales"
+            },
+            {
+              "code": "CCA-MUS-4",
+              "description": "Identify types of singing voices and use breathing exercises for voice training"
+            },
+            {
+              "code": "CCA-MUS-5",
+              "description": "Describe traditional Nigerian music styles and their cultural contexts"
+            },
+            {
+              "code": "CCA-MUS-6",
+              "description": "Play a simple recorder or other classroom instrument applying learned musical principles"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drama and Theatre",
+      "abbreviation": "DT",
+      "subStrands": [
+        {
+          "name": "Playwriting, Directing, and Performance",
+          "objectives": [
+            {
+              "code": "CCA-DT-1",
+              "description": "Describe the origin, forms, and elements of drama and theatre and identify people involved in theatre production"
+            },
+            {
+              "code": "CCA-DT-2",
+              "description": "Explain the roles and duties of a theatre director in coordinating stage productions"
+            },
+            {
+              "code": "CCA-DT-3",
+              "description": "Identify the functions and areas of theatre design including costumes, lighting, and set design"
+            },
+            {
+              "code": "CCA-DT-4",
+              "description": "Perform improvisation and dramatise scenes from recommended texts or original scripts"
+            },
+            {
+              "code": "CCA-DT-5",
+              "description": "Describe career opportunities in drama and identify notable Nigerian dramatists and playwrights"
+            },
+            {
+              "code": "CCA-DT-6",
+              "description": "Describe the rehearsal process and participate in structured school drama productions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dance",
+      "abbreviation": "DNC",
+      "subStrands": [
+        {
+          "name": "Dance Styles, Choreography, and Careers",
+          "objectives": [
+            {
+              "code": "CCA-DNC-1",
+              "description": "Identify types of dance including traditional, modern, and creative dance forms practised in Nigeria"
+            },
+            {
+              "code": "CCA-DNC-2",
+              "description": "Describe the role of a choreographer and demonstrate basic processes of choreography in creating a dance pattern"
+            },
+            {
+              "code": "CCA-DNC-3",
+              "description": "Identify career prospects in dance and name notable Nigerian dance artists and companies"
+            },
+            {
+              "code": "CCA-DNC-4",
+              "description": "Perform elements of traditional Nigerian dance styles as part of cultural appreciation"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

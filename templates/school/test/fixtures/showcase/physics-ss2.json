@@ -1,0 +1,2771 @@
+{
+  "subject": "Physics",
+  "yearGroup": "SS2",
+  "weeks": {
+    "1": {
+      "topic": "Work, energy, power and machines",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate the work done in lifting a body and by a falling body;\n2. state the expressions for potential and kinetic energy and identify the energy a body has in a given situation;\n3. apply the conservation of mechanical energy to a falling body;\n4. define power and calculate it in watts;\n5. calculate the mechanical advantage, velocity ratio and efficiency of a simple machine;\n6. convert temperatures between the Celsius and absolute scales.\n\n## Materials\n\nA block and tackle pulley system, slotted masses, a spring balance, a metre rule, a stopwatch, a bicycle.\n\n## Starter (5 minutes)\n\nTwo students carry the same bag up the stairs, one walking, one running. Who did more work? Who was more powerful?\n\n## Development\n\n1. Define work as force times distance moved in the direction of the force. Show that lifting a mass m through a height h needs work mgh.\n2. Derive P.E. = mgh and K.E. = ½mv². Let a stone fall from a known height and show that the P.E. lost equals the K.E. gained.\n3. Define power as the rate of doing work. Work out the power of each student from the starter.\n4. Introduce M.A. = load/effort, V.R. = distance moved by effort/distance moved by load and efficiency = (M.A./V.R.) × 100%. Use the pulley system to find each.\n5. Point out the levers, gears, and wheel and axle on the bicycle. Explain why friction makes every real machine less than 100% efficient.\n6. Briefly: temperature as degree of hotness; T (K) = θ (°C) + 273.\n\n## Class activity\n\nGroups measure the effort needed to raise three different loads with the pulley system and calculate the efficiency each time.\n\n## Evaluation\n\n1. A 40 kg boy climbs 5 m in 10 s. What is his power?\n2. Why is the efficiency of a machine always less than 100%?\n\n## Assignment\n\nWorksheet questions and the practical write-up, due next lesson.",
+      "reading": {
+        "title": "Work, energy and the machines that help us",
+        "content": "# Work and energy\n\n**Work** is done when a force moves its point of application in the direction of the force. Work = force × distance, and its unit is the joule (J).\n\nWhen you lift a body of mass m through a height h, you work against its weight mg, so the work done is **W = mgh**. When the body falls back through the same height, gravity does the same amount of work on it.\n\n## Potential and kinetic energy\n\n- **Potential energy** is the energy a body has because of its position. A body raised through h has P.E. = mgh.\n- **Kinetic energy** is the energy a body has because it is moving. A body of mass m moving at speed v has K.E. = ½mv².\n\nA coconut hanging on a tree has P.E. only. As it falls, it loses P.E. and gains K.E. Just before it hits the ground, almost all its energy is kinetic.\n\n## Conservation of mechanical energy\n\nIf there is no air resistance, the total mechanical energy (P.E. + K.E.) of a falling body stays the same.\n\n**Worked example.** A 3 kg pawpaw falls from a height of 5 m. Take g = 10 m/s².\nP.E. at the top = 3 × 10 × 5 = 150 J. Just before landing, K.E. = 150 J, so ½ × 3 × v² = 150, v² = 100 and v = 10 m/s.\n\n## Power\n\n**Power** is the rate of doing work: P = W/t. Its unit is the watt (W); 1 W = 1 J/s.\n\n## Machines\n\nA machine lets a small **effort** overcome a large **load**. Levers, pulleys, the inclined plane, the wedge, the screw, the wheel and axle and gears are all machines. A bicycle combines several: the pedal crank is a wheel and axle, the brake handle is a lever, and the chain wheels are gears.\n\n- Mechanical advantage (M.A.), or force ratio = load ÷ effort\n- Velocity ratio (V.R.) = distance moved by effort ÷ distance moved by load\n- Efficiency = (work output ÷ work input) × 100% = (M.A. ÷ V.R.) × 100%\n\n**Worked example.** A pulley system of V.R. 5 raises a load of 800 N with an effort of 250 N. M.A. = 800 ÷ 250 = 3.2. Efficiency = 3.2 ÷ 5 × 100% = 64%.\n\nNo real machine is 100% efficient, because some work is wasted against friction and in lifting moving parts.\n\n## Temperature\n\nTemperature is the degree of hotness or coldness of a body. To change degrees Celsius to kelvin, add 273: 27 °C is 300 K."
+      },
+      "cards": [
+        {
+          "front": "Work done in lifting a body",
+          "back": "W = mgh, where m is the mass, g the acceleration due to gravity and h the height."
+        },
+        {
+          "front": "Kinetic energy",
+          "back": "Energy a body has because it is moving: K.E. = ½mv²."
+        },
+        {
+          "front": "Potential energy",
+          "back": "Energy a body has because of its position: P.E. = mgh."
+        },
+        {
+          "front": "Conservation of mechanical energy",
+          "back": "With no friction or air resistance, P.E. + K.E. of a body stays constant."
+        },
+        {
+          "front": "Power",
+          "back": "The rate of doing work, P = W/t, measured in watts (W)."
+        },
+        {
+          "front": "Mechanical advantage (force ratio)",
+          "back": "Load divided by effort."
+        },
+        {
+          "front": "Velocity ratio",
+          "back": "Distance moved by the effort divided by distance moved by the load."
+        },
+        {
+          "front": "Efficiency of a machine",
+          "back": "(M.A. ÷ V.R.) × 100%, always less than 100% because of friction."
+        },
+        {
+          "front": "Celsius to kelvin",
+          "back": "Add 273: T (K) = θ (°C) + 273."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A labourer at Bodija market lifts a 50 kg bag of rice onto a shelf 1.2 m high. How much work does the labourer do? (g = 10 m/s²)",
+          "options": ["60 J", "600 J", "6000 J", "41.7 J"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A 2 kg coconut falls from the top of a palm tree 20 m high. Ignoring air resistance, what is its kinetic energy just before it hits the ground? (g = 10 m/s²)",
+          "options": ["40 J", "200 J", "400 J", "800 J"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A borehole pump lifts 300 kg of water into an overhead tank 8 m high in 60 s. What is its useful power output? (g = 10 m/s²)",
+          "options": ["400 W", "24 000 W", "40 W", "2400 W"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A machine has a velocity ratio of 5 and a mechanical advantage of 4. What is its efficiency?",
+          "options": [
+            "125%",
+            "20%",
+            "100%, because the machine is assumed ideal",
+            "80%"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The normal body temperature of a healthy person is 37 °C. What is this on the absolute scale?",
+          "options": ["37 K", "310 K", "236 K", "273 K"],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A woman in Ibadan draws a 20 kg bucket of water up from a well 15 m deep in 30 s. Taking g = 10 m/s², calculate (a) the work she does on the bucket and (b) her power.",
+          "markScheme": [
+            "Uses W = mgh with correct substitution (20 × 10 × 15)",
+            "Work done = 3000 J, with unit",
+            "Uses P = W/t with correct substitution (3000 ÷ 30)",
+            "Power = 100 W, with unit"
+          ],
+          "modelAnswer": "(a) Work done = mgh = 20 × 10 × 15 = 3000 J. (b) Power = work done ÷ time = 3000 ÷ 30 = 100 W.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) W = mgh = 20 x 10 x 15 = 3000 J\n(b) P = W/t = 3000/30 = 100 W",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "W = mgh = 20 x 10 x 15"
+                },
+                {
+                  "point": 1,
+                  "quote": "3000 J"
+                },
+                {
+                  "point": 2,
+                  "quote": "P = W/t = 3000/30"
+                },
+                {
+                  "point": 3,
+                  "quote": "100 W"
+                }
+              ],
+              "feedback": "Both formulas, both substitutions and both units are correct. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Force needed is the weight = 20 x 10 = 200 N. Work = force x distance = 200 x 15 = 3000 J. Power is work done per second so power = 3000 J / 30 s = 100 watts.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Work = force x distance = 200 x 15"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 3000 J"
+                },
+                {
+                  "point": 2,
+                  "quote": "power = 3000 J / 30 s"
+                },
+                {
+                  "point": 3,
+                  "quote": "100 watts"
+                }
+              ],
+              "feedback": "Working out the weight first and then force times distance is the same as mgh, and you showed every step clearly. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "W = mgh = 20 x 10 x 15 = 3000\nP = W x t = 3000 x 30 = 90000 W",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "W = mgh = 20 x 10 x 15"
+                }
+              ],
+              "feedback": "Your substitution for work is right, but you left out the unit, joules. Power is work divided by time, not multiplied: 3000 ÷ 30 = 100 W."
+            },
+            {
+              "tier": "partial",
+              "text": "Work done = mgh = 20 x 10 x 15 = 3000 J. Power = 3000/30 = 100",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Work done = mgh = 20 x 10 x 15"
+                },
+                {
+                  "point": 1,
+                  "quote": "3000 J"
+                },
+                {
+                  "point": 2,
+                  "quote": "Power = 3000/30"
+                }
+              ],
+              "feedback": "Correct working all through. You lost the last mark for writing 100 without its unit; power is in watts, so write 100 W."
+            },
+            {
+              "tier": "weak",
+              "text": "Work = mass x distance = 20 x 15 = 300 J. Power = 300 / 30 = 10 W",
+              "meets": [],
+              "feedback": "Work is force times distance, and the force here is the weight, mg = 200 N, not the mass. Redo it with W = mgh and the power will follow."
+            },
+            {
+              "tier": "weak",
+              "text": "Work done is the energy she uses. Energy = ½mv² but she is not moving fast so the work is small, about 20 x 15 = 300 J.",
+              "meets": [],
+              "feedback": "Lifting the bucket gives it potential energy, not kinetic energy, so use W = mgh = 20 × 10 × 15. Then divide by the time to get the power."
+            }
+          ]
+        },
+        {
+          "prompt": "A block and tackle with a velocity ratio of 4 is used on a building site in Abuja to raise a load of 600 N with an effort of 200 N. Calculate its mechanical advantage and efficiency, and give one reason why the efficiency is less than 100%.",
+          "markScheme": [
+            "M.A. = load ÷ effort = 600 ÷ 200 = 3",
+            "Efficiency = (M.A. ÷ V.R.) × 100% with correct substitution",
+            "Efficiency = 75%",
+            "Gives a valid reason: friction at the pulleys, or work done lifting the lower pulley block and rope"
+          ],
+          "modelAnswer": "M.A. = load ÷ effort = 600 ÷ 200 = 3. Efficiency = (M.A. ÷ V.R.) × 100% = (3 ÷ 4) × 100% = 75%. The efficiency is less than 100% because some of the work put in is wasted against friction in the pulleys and in lifting the lower pulley block itself.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "MA = load/effort = 600/200 = 3. Efficiency = MA/VR x 100 = 3/4 x 100 = 75%. It is not 100% because there is friction between the rope and the pulleys which wastes some of the work.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "MA = load/effort = 600/200 = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "Efficiency = MA/VR x 100 = 3/4 x 100"
+                },
+                {
+                  "point": 2,
+                  "quote": "75%"
+                },
+                {
+                  "point": 3,
+                  "quote": "there is friction between the rope and the pulleys which wastes some of the work"
+                }
+              ],
+              "feedback": "Every step is right and your reason names where the friction acts. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Mechanical advantage = 600 N ÷ 200 N = 3 (no unit). Efficiency = (3 ÷ 4) × 100% = 75 percent. Part of the effort is used to lift the lower block of pulleys and the rope, not the load, so the work output is less than the work input.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mechanical advantage = 600 N ÷ 200 N = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "Efficiency = (3 ÷ 4) × 100%"
+                },
+                {
+                  "point": 2,
+                  "quote": "75 percent"
+                },
+                {
+                  "point": 3,
+                  "quote": "Part of the effort is used to lift the lower block of pulleys and the rope"
+                }
+              ],
+              "feedback": "Correct throughout, and noting that M.A. has no unit was a sharp touch. Your reason about the weight of the lower block is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "MA = 600/200 = 3. Efficiency = VR/MA x 100 = 4/3 x 100 = 133%. This is because the machine multiplies the force.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "MA = 600/200 = 3"
+                }
+              ],
+              "feedback": "Your M.A. is right. Efficiency is M.A. ÷ V.R., not the other way round; an answer above 100% should warn you, because no machine gives out more work than you put in. Then give a reason such as friction."
+            },
+            {
+              "tier": "partial",
+              "text": "MA = 600 / 200 = 3\nEfficiency = 3/4 x 100% = 75%\nThe efficiency is less than 100% because the load is too heavy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "MA = 600 / 200 = 3"
+                },
+                {
+                  "point": 1,
+                  "quote": "Efficiency = 3/4 x 100%"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 75%"
+                }
+              ],
+              "feedback": "Your calculations are all correct. The weight of the load is not the reason for wasted work; say that friction in the pulleys, or lifting the lower block, uses up part of the work put in.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "MA = effort/load = 200/600 = 0.33. Efficiency = 0.33 x 4 = 1.33 so the machine is not good.",
+              "meets": [],
+              "feedback": "M.A. is load divided by effort, so it is 600 ÷ 200 = 3. Then efficiency is M.A. ÷ V.R. × 100%. Go over the worked example in the reading."
+            },
+            {
+              "tier": "weak",
+              "text": "The efficiency is less than 100% because of friction in the pulleys. MA = 600 - 200 = 400.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "because of friction in the pulleys"
+                }
+              ],
+              "feedback": "Friction is the right reason. Mechanical advantage is load divided by effort, not load minus effort: 600 ÷ 200 = 3. Use that to find the efficiency."
+            }
+          ]
+        }
+      ],
+      "practical": {
+        "title": "Mechanical advantage, velocity ratio and efficiency of a pulley system",
+        "instructions": "Set up the block and tackle pulley system on the retort stand as shown on the board. You will raise different loads, measure the effort each time and the distances moved, and use your readings to find how the efficiency changes with the load.",
+        "steps": [
+          {
+            "text": "Clamp the upper pulley block firmly to the retort stand and thread the string through all the pulleys. Count the strands supporting the lower block; this is the velocity ratio.",
+            "note": "Make sure the clamp is tight before hanging any load."
+          },
+          {
+            "text": "Hang a load of 2 N on the lower block. Add slotted masses to the effort hanger until the load rises slowly at a steady speed. Record the effort."
+          },
+          {
+            "text": "Pull the effort down through 40 cm with a metre rule beside it and measure how far the load rises. Check that the ratio of the distances agrees with your velocity ratio."
+          },
+          {
+            "text": "Repeat for loads of 4 N, 6 N, 8 N and 10 N, recording the effort for each."
+          },
+          {
+            "text": "For each load, calculate M.A. = load ÷ effort and efficiency = (M.A. ÷ V.R.) × 100%. Tabulate your results.",
+            "note": "Tap the bench gently before reading the effort, to free the pulleys from sticking."
+          },
+          {
+            "text": "Plot efficiency against load and state what happens to the efficiency as the load increases."
+          }
+        ],
+        "rubric": [
+          {
+            "description": "Method and readings: correct set-up, V.R. found, effort and distances recorded for at least five loads",
+            "maxPoints": 4
+          },
+          {
+            "description": "Results table and calculations: M.A. and efficiency correct for each load, with a suitable graph",
+            "maxPoints": 4
+          },
+          {
+            "description": "Conclusion and precautions: states the trend and gives at least two precautions",
+            "maxPoints": 2
+          }
+        ],
+        "writeUps": [
+          {
+            "tier": "full",
+            "text": "Method: The pulley system had 4 strings supporting the lower block so VR = 4. When the effort moved 40 cm the load moved 10 cm, which agrees. For loads 2, 4, 6, 8 and 10 N we found efforts of 1.0, 1.6, 2.2, 2.7 and 3.2 N.\nResults: MA = 2.0, 2.5, 2.7, 3.0, 3.1. Efficiency = 50%, 63%, 68%, 74%, 78%. The graph of efficiency against load rises steeply at first and then levels off.\nConclusion: The efficiency increases with load because the weight of the lower block and the friction become a smaller part of the total effort.\nPrecautions: I tapped the bench to reduce sticking, and I read the metre rule at eye level to avoid parallax.",
+            "scores": [4, 4, 2],
+            "feedback": "A complete, careful write-up. Your explanation of why the efficiency rises with load goes beyond what was asked."
+          },
+          {
+            "tier": "full",
+            "text": "VR counted = 4, checked by distances (effort 40 cm, load 10 cm).\nLoad (N) / Effort (N) / MA / Efficiency: 2 / 1.1 / 1.8 / 45%; 4 / 1.7 / 2.4 / 59%; 6 / 2.3 / 2.6 / 65%; 8 / 2.8 / 2.9 / 71%; 10 / 3.3 / 3.0 / 76%.\nThe graph showed a curve that rises and begins to flatten.\nConclusion: efficiency increases as the load increases but stays below 100%.\nPrecautions: the effort was added until the load rose at steady speed, and the stand was clamped so it did not shake.",
+            "scores": [4, 3, 2],
+            "feedback": "Accurate readings and a clear table with every value correct. Label your graph axes with quantities and units to earn the last calculation mark."
+          },
+          {
+            "tier": "partial",
+            "text": "We set up the pulley and put loads of 2 N, 4 N, 6 N and 8 N. The efforts were 1.0 N, 1.6 N, 2.2 N and 2.8 N. MA = 2, 2.5, 2.7, 2.9. VR is 4. Efficiency = 2/4 = 0.5, 0.63, 0.68, 0.73. So the efficiency increases when the load is increased.",
+            "scores": [3, 2, 1],
+            "feedback": "Your readings and M.A. values are good. Multiply by 100 to give efficiency as a percentage, take a fifth load, and add the graph and two precautions."
+          },
+          {
+            "tier": "partial",
+            "text": "Aim: to find the efficiency of a pulley. The VR is 4 because there are 4 pulleys. Load 2 N, effort 1 N; load 6 N, effort 2.2 N; load 10 N effort 3.2 N. Efficiency was 50%, 68% and 78%. I drew a graph and it is a straight line going up. Precaution: I avoided parallax error.",
+            "scores": [2, 2, 1],
+            "feedback": "Your efficiencies are right for the loads you took. V.R. comes from the strands supporting the lower block, not the number of pulleys, and you need at least five loads. Look again at the graph: it curves and levels off."
+          },
+          {
+            "tier": "weak",
+            "text": "We used a pulley to lift a load. The load was 6 N and the effort was 2 N. The MA is 6 - 2 = 4. The efficiency is 100% because the pulley made the work easy for us to lift the load. Precaution: be careful.",
+            "scores": [1, 0, 0],
+            "feedback": "M.A. is load divided by effort, so 6 ÷ 2 = 3, not 6 − 2. A machine makes work easier but never 100% efficient. Take five loads and work out M.A. ÷ V.R. × 100% for each."
+          },
+          {
+            "tier": "weak",
+            "text": "Method: we hung masses on the pulley and pulled the string and measured. The velocity ratio was 4. The results were recorded in the table. The efficiency of the pulley is high and it shows that pulleys are useful in building sites for lifting blocks.",
+            "scores": [1, 0, 1],
+            "feedback": "You found the velocity ratio, but there are no readings or calculations in your write-up. Copy your table of loads and efforts, then calculate M.A. and efficiency for each load."
+          }
+        ]
+      }
+    },
+    "2": {
+      "topic": "Expansion, heat transfer, the gas laws and heat capacity",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the kinetic theory to explain the effects of heat on matter;\n2. calculate linear expansion and explain the uses and dangers of expansion;\n3. explain conduction, convection and radiation, land and sea breezes and the vacuum flask;\n4. state Boyle's, Charles' and the pressure laws and solve simple problems on them;\n5. find a specific heat capacity by the method of mixtures.\n\n## Materials\n\nA ball and ring, a bimetallic strip, a Bunsen burner, a beaker of water with potassium permanganate, a vacuum flask cut open (or a chart), a syringe sealed at the nozzle, a calorimeter, thermometers, copper pellets.\n\n## Starter (5 minutes)\n\nAsk: why do the NEPA cables between poles sag more in the afternoon than in the early morning?\n\n## Development\n\n1. Heat the ball until it will not pass through the ring. Explain that heated particles vibrate more and move further apart.\n2. Define linear expansivity, α = extension ÷ (original length × temperature rise). Work an example on a railway line. Heat the bimetallic strip and link it to the thermostat in an electric iron.\n3. Show convection with the permanganate crystal. Explain conduction by passing on vibrations, and radiation needing no medium. Use the land-and-sea-breeze diagram and the vacuum flask.\n4. Press the sealed syringe to show Boyle's law. State Charles' and the pressure law, and combine them into PV/T = constant.\n5. Define heat capacity and specific heat capacity. Work a method-of-mixtures example on the board.\n\n## Class activity\n\nIn groups, students explain one of: the gap in a railway line, the sea breeze, or why a car tyre pressure rises after a long journey from Lagos to Ibadan.\n\n## Evaluation\n\n1. Why is the inner wall of a vacuum flask silvered?\n2. A gas occupies 100 cm³ at 27 °C. What volume will it occupy at 127 °C at constant pressure?\n\n## Assignment\n\nWorksheet questions, due Thursday.",
+      "reading": {
+        "title": "Heat and what it does to matter",
+        "content": "# Effects of heat\n\nWhen a body is heated, its particles gain energy. Its temperature may rise, it may melt or boil, it may expand, and the resistance of a metal wire increases.\n\n## Thermal expansion\n\nHeated particles vibrate more strongly and push one another further apart, so the body expands. The **linear expansivity** α of a solid is the increase in length per unit length per kelvin rise in temperature. Its unit is K⁻¹.\n\n**Worked example.** A copper overhead wire is 50 m long at 20 °C. Find its expansion at 50 °C if α = 1.7 × 10⁻⁵ K⁻¹.\nExpansion = α × L × Δθ = 1.7 × 10⁻⁵ × 50 × 30 = 2.55 × 10⁻² m, or 25.5 mm.\n\nThat is why railway lines are laid with gaps, bridges rest on rollers and overhead cables are left slack. A **bimetallic strip** bends when heated because one metal expands more than the other; it switches the thermostat of an electric iron on and off. Water is unusual: it contracts when warmed from 0 °C to 4 °C, so ponds freeze from the top.\n\n## Heat transfer\n\n- **Conduction**: vibrating particles pass energy to their neighbours, mainly in solids.\n- **Convection**: warm fluid rises and cooler fluid sinks to take its place.\n- **Radiation**: energy travels as waves, even through a vacuum.\n\nBy day, land heats faster than the sea, warm air over the land rises, and cool air blows in from the sea: a **sea breeze**. At night the land cools faster and a **land breeze** blows out to sea. A vacuum flask stops conduction and convection with its vacuum and cuts radiation with its silvered walls.\n\n## The gas laws\n\nFor a fixed mass of gas:\n\n- Boyle's law: PV is constant at constant temperature.\n- Charles' law: V/T is constant at constant pressure.\n- Pressure law: P/T is constant at constant volume.\n- General gas law: P₁V₁/T₁ = P₂V₂/T₂, with T in kelvin.\n\nCar air bags inflate when a reaction fills them with gas in a fraction of a second.\n\n## Heat capacity\n\nThe **specific heat capacity** c of a substance is the heat needed to raise 1 kg of it by 1 K. Heat Q = mcΔθ, and c is in J kg⁻¹ K⁻¹. Water has a very high c, 4200 J kg⁻¹ K⁻¹, which is why the sea warms slowly.\n\nIn the **method of mixtures**, heat lost by the hot body = heat gained by the cold one."
+      },
+      "cards": [
+        {
+          "front": "Linear expansivity",
+          "back": "Increase in length per unit length per kelvin rise in temperature. Unit: K⁻¹."
+        },
+        {
+          "front": "Bimetallic strip",
+          "back": "Two metals joined together that bend when heated because they expand by different amounts. Used in thermostats."
+        },
+        {
+          "front": "Anomalous expansion of water",
+          "back": "Water contracts when heated from 0 °C to 4 °C; it is densest at 4 °C."
+        },
+        {
+          "front": "Convection",
+          "back": "Heat transfer by the movement of a fluid: warm fluid rises, cool fluid sinks."
+        },
+        {
+          "front": "Sea breeze",
+          "back": "A daytime wind from sea to land, because land heats faster than the sea."
+        },
+        {
+          "front": "Boyle's law",
+          "back": "For a fixed mass of gas at constant temperature, pressure × volume is constant."
+        },
+        {
+          "front": "Charles' law",
+          "back": "For a fixed mass of gas at constant pressure, volume is proportional to absolute temperature."
+        },
+        {
+          "front": "Specific heat capacity",
+          "back": "Heat needed to raise the temperature of 1 kg of a substance by 1 K. Unit: J kg⁻¹ K⁻¹."
+        },
+        {
+          "front": "Method of mixtures",
+          "back": "Heat lost by the hot body = heat gained by the cold body, if no heat escapes."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A steel railway line is 20 m long at 25 °C. By how much does it expand on a hot afternoon at 45 °C? (Linear expansivity of steel = 1.2 × 10⁻⁵ K⁻¹)",
+          "options": ["0.48 mm", "4.8 mm", "48 mm", "10.8 mm"],
+          "answer": "B"
+        },
+        {
+          "prompt": "On a sunny afternoon at Bar Beach, a cool breeze blows from the sea onto the land. Why?",
+          "options": [
+            "Land has a lower specific heat capacity, so it gets hotter; the warm air over it rises and cooler sea air moves in",
+            "The sea is warmer than the land in the afternoon, so its air moves towards the land",
+            "Wind always blows from the sea towards the land",
+            "Cold air rises over the land and pulls air from the sea"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A gas occupies 200 cm³ at a pressure of 1.0 × 10⁵ Pa. It is compressed at constant temperature until its pressure is 2.5 × 10⁵ Pa. What is its new volume?",
+          "options": ["500 cm³", "125 cm³", "80 cm³", "50 cm³"],
+          "answer": "C"
+        },
+        {
+          "prompt": "How much heat is needed to raise the temperature of 2 kg of water in a pot from 30 °C to 80 °C? (Specific heat capacity of water = 4200 J kg⁻¹ K⁻¹)",
+          "options": ["420 000 J", "8400 J", "672 000 J", "210 000 J"],
+          "answer": "A"
+        },
+        {
+          "prompt": "The vacuum between the double walls of a vacuum flask mainly reduces heat transfer by",
+          "options": [
+            "radiation only",
+            "evaporation",
+            "conduction and convection",
+            "radiation and conduction"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Use the kinetic theory to explain why a metal rod expands when it is heated. Give two everyday examples in Nigeria where expansion must be allowed for, and say how it is allowed for.",
+          "markScheme": [
+            "States that on heating the particles gain energy and vibrate more vigorously (with larger amplitude)",
+            "States that the particles therefore move further apart, so the rod gets longer",
+            "First correct example with how it is allowed for (e.g. gaps left between railway lines to prevent buckling)",
+            "Second correct example with how it is allowed for (e.g. overhead cables left slack so they do not snap when they contract at night)"
+          ],
+          "modelAnswer": "When the rod is heated, its particles gain energy and vibrate more strongly about their fixed positions. As they vibrate harder they push one another further apart, so the rod expands. Railway lines are laid with small gaps between the lengths so they can expand on hot days without buckling. Electric cables between NEPA poles are left slack so that when they contract on a cold harmattan morning they do not snap.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "When the metal is heated its particles get more energy and vibrate faster and more widely. This makes them push each other further apart so the metal becomes longer. Examples: railway lines have gaps between them so that in the sun they expand into the gap and do not bend. The bridge at Third Mainland rests on rollers so it can expand and move.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "its particles get more energy and vibrate faster and more widely"
+                },
+                {
+                  "point": 1,
+                  "quote": "push each other further apart so the metal becomes longer"
+                },
+                {
+                  "point": 2,
+                  "quote": "railway lines have gaps between them so that in the sun they expand into the gap and do not bend"
+                },
+                {
+                  "point": 3,
+                  "quote": "rests on rollers so it can expand and move"
+                }
+              ],
+              "feedback": "A complete explanation with two good examples, each saying how the expansion is allowed for. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Heat gives the molecules of the rod more kinetic energy so they vibrate with bigger amplitude. The average distance between them increases and the rod expands. 1. Overhead electric wires are hung loosely so that when they contract in the cold harmattan they do not cut. 2. Concrete roads and bridges have expansion joints filled with soft material.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "they vibrate with bigger amplitude"
+                },
+                {
+                  "point": 1,
+                  "quote": "The average distance between them increases and the rod expands"
+                },
+                {
+                  "point": 2,
+                  "quote": "Overhead electric wires are hung loosely so that when they contract in the cold harmattan they do not cut"
+                },
+                {
+                  "point": 3,
+                  "quote": "Concrete roads and bridges have expansion joints filled with soft material"
+                }
+              ],
+              "feedback": "Clear and exact. Linking the slack wires to harmattan cold shows you understand contraction as well as expansion."
+            },
+            {
+              "tier": "partial",
+              "text": "When heated the particles of the metal expand and become bigger so the rod expands. Gaps are left in railway lines so they do not buckle. Electric wires are left to sag.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Gaps are left in railway lines so they do not buckle"
+                },
+                {
+                  "point": 3,
+                  "quote": "Electric wires are left to sag"
+                }
+              ],
+              "feedback": "Your two examples are right. The particles themselves do not get bigger; they vibrate more and move further apart. Write that and you have the explanation marks.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "The particles vibrate more when heated and move further apart, so the rod expands. An example is the bimetallic strip in a pressing iron.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The particles vibrate more when heated"
+                },
+                {
+                  "point": 1,
+                  "quote": "move further apart, so the rod expands"
+                }
+              ],
+              "feedback": "Your explanation is correct. The bimetallic strip uses expansion rather than allowing for it, and you need two examples, such as gaps in railway lines and slack overhead cables."
+            },
+            {
+              "tier": "weak",
+              "text": "Heat enters the rod and fills the spaces inside it so it becomes bigger. That is why pipes burst.",
+              "meets": [],
+              "feedback": "Heat is not a substance that fills the rod. The particles vibrate more and push further apart. Then give two examples, such as railway gaps, and say how each allows for expansion."
+            },
+            {
+              "tier": "weak",
+              "text": "Metal expands because of the sun. In Nigeria the railway lines have gaps so they will not bend when hot.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the railway lines have gaps so they will not bend when hot"
+                }
+              ],
+              "feedback": "Your railway example earns a mark. Explain what heating does to the particles: they vibrate more and move further apart. Add a second example such as slack overhead cables."
+            }
+          ]
+        },
+        {
+          "prompt": "In an experiment by the method of mixtures, 0.6 kg of copper pellets at 100 °C are poured into 0.4 kg of water at 20 °C in a lagged container of negligible heat capacity. The final temperature of the mixture is 30 °C. Calculate the specific heat capacity of copper. (Specific heat capacity of water = 4200 J kg⁻¹ K⁻¹)",
+          "markScheme": [
+            "Heat gained by water = 0.4 × 4200 × 10 = 16 800 J",
+            "Heat lost by copper = 0.6 × c × 70 (= 42c)",
+            "States or uses heat lost by copper = heat gained by water",
+            "c = 400 J kg⁻¹ K⁻¹, with unit"
+          ],
+          "modelAnswer": "Heat gained by water = mcΔθ = 0.4 × 4200 × (30 − 20) = 16 800 J. Heat lost by copper = 0.6 × c × (100 − 30) = 42c. Since no heat is lost, heat lost by copper = heat gained by water, so 42c = 16 800 and c = 400 J kg⁻¹ K⁻¹.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Heat gained by water = 0.4 x 4200 x (30-20) = 16800 J\nHeat lost by copper = 0.6 x c x (100-30) = 42c\nHeat lost = heat gained\n42c = 16800\nc = 400 J/kg K",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Heat gained by water = 0.4 x 4200 x (30-20) = 16800 J"
+                },
+                {
+                  "point": 1,
+                  "quote": "Heat lost by copper = 0.6 x c x (100-30) = 42c"
+                },
+                {
+                  "point": 2,
+                  "quote": "Heat lost = heat gained"
+                },
+                {
+                  "point": 3,
+                  "quote": "c = 400 J/kg K"
+                }
+              ],
+              "feedback": "Set out exactly as a method-of-mixtures answer should be. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Since the container is lagged, the heat given out by the copper is all taken in by the water. Water: Q = mcθ = 0.4 × 4200 × 10 = 16 800 J. Copper: Q = 0.6 × c × 70. So 0.6 × 70 × c = 16 800, giving c = 16 800 ÷ 42 = 400 J kg⁻¹ K⁻¹.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Water: Q = mcθ = 0.4 × 4200 × 10 = 16 800 J"
+                },
+                {
+                  "point": 1,
+                  "quote": "Copper: Q = 0.6 × c × 70"
+                },
+                {
+                  "point": 2,
+                  "quote": "the heat given out by the copper is all taken in by the water"
+                },
+                {
+                  "point": 3,
+                  "quote": "c = 16 800 ÷ 42 = 400 J kg⁻¹ K⁻¹"
+                }
+              ],
+              "feedback": "Correct, and you explained why the lagging lets you equate the two heats. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "Heat gained by water = 0.4 x 4200 x 10 = 16800 J. Heat lost by copper = 0.6 x c x 100 = 60c. 60c = 16800, c = 280 J/kgK",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Heat gained by water = 0.4 x 4200 x 10 = 16800 J"
+                },
+                {
+                  "point": 2,
+                  "quote": "60c = 16800"
+                }
+              ],
+              "feedback": "Your water calculation and the balance of heats are right. The copper cools from 100 °C to 30 °C, so its temperature change is 70 K, not 100. That gives c = 400 J kg⁻¹ K⁻¹."
+            },
+            {
+              "tier": "partial",
+              "text": "Heat lost by copper = heat gained by water\n0.6 x c x 70 = 0.4 x 4200 x 30\n42c = 50400\nc = 1200 J/kgK",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "0.6 x c x 70"
+                },
+                {
+                  "point": 2,
+                  "quote": "Heat lost by copper = heat gained by water"
+                }
+              ],
+              "feedback": "The copper side and your equation are right. The water warms from 20 °C to 30 °C, a rise of 10 K, not 30. Use 10 and you get 400 J kg⁻¹ K⁻¹."
+            },
+            {
+              "tier": "weak",
+              "text": "c = Q/mθ = 4200/(0.6 x 100) = 70 J/kgK",
+              "meets": [],
+              "feedback": "4200 is the specific heat capacity of water, not a quantity of heat. Work out the heat the water gains first, mcΔθ = 0.4 × 4200 × 10, then set it equal to the heat the copper loses."
+            },
+            {
+              "tier": "weak",
+              "text": "The copper is hot and the water is cold so heat moves from copper to water until they are the same temperature which is 30 degrees. So the specific heat capacity of copper is 30.",
+              "meets": [],
+              "feedback": "You described the heat flow well, but 30 °C is the final temperature, not the specific heat capacity. Calculate the heat gained by the water and set it equal to the heat lost by the copper."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Latent heat, evaporation, vapour and humidity",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain latent heat and distinguish latent heat of fusion from latent heat of vaporization;\n2. calculate the heat needed to melt or boil a given mass;\n3. state the effects of impurities and pressure on melting and boiling points;\n4. explain the factors that affect evaporation and why evaporation cools;\n5. relate saturated vapour pressure to boiling;\n6. explain relative humidity, dew point and the formation of dew, fog and rain.\n\n## Materials\n\nCrushed ice, a beaker, a Bunsen burner, a thermometer, a stopwatch, salt, a pressure cooker (or picture), methylated spirit, a wet-and-dry bulb hygrometer, a shiny tin and ice.\n\n## Starter (5 minutes)\n\nRub methylated spirit on each student's palm. Ask: why does your hand feel cold when nothing cold touched it?\n\n## Development\n\n1. Heat crushed ice and record its temperature each minute until the water boils. Plot the graph and show the two flat parts where heat is absorbed with no rise in temperature.\n2. Define specific latent heat, L = Q/m, unit J kg⁻¹. Work examples for ice and steam.\n3. Add salt to ice to show impurities lower the melting point. Explain the pressure cooker: higher pressure, higher boiling point.\n4. Explain evaporation as the escape of the fastest molecules. List the effects of temperature, humidity, surface area and draught. Link to the refrigerator.\n5. Explain saturated vapour pressure; a liquid boils when its s.v.p. equals the external pressure.\n6. Cool a shiny tin with ice until dew forms; that temperature is the dew point. Read the hygrometer and explain relative humidity.\n\n## Class activity\n\nStudents read the class hygrometer and use the table to find the relative humidity of the classroom.\n\n## Evaluation\n\n1. Why does a burn from steam hurt more than a burn from boiling water?\n2. Why do clothes dry faster during harmattan?\n\n## Assignment\n\nRevise for Friday's quiz.",
+      "reading": {
+        "title": "Changing state: latent heat, vapour and the weather",
+        "content": "# Latent heat\n\nIf you heat ice and keep reading the thermometer, the temperature stays at 0 °C until all the ice has melted, then rises again until it stays at 100 °C while the water boils. The heat taken in at these steady temperatures does not raise the temperature; it changes the state. It is called **latent** (hidden) heat.\n\n- The **specific latent heat of fusion** is the heat needed to change 1 kg of a solid at its melting point to liquid at the same temperature. For ice it is 3.36 × 10⁵ J kg⁻¹.\n- The **specific latent heat of vaporization** is the heat needed to change 1 kg of a liquid at its boiling point to vapour at the same temperature. For water it is 2.26 × 10⁶ J kg⁻¹.\n\nHeat Q = mL.\n\n**Worked example.** How much heat changes 0.5 kg of ice at 0 °C to water at 10 °C?\nMelting: 0.5 × 3.36 × 10⁵ = 168 000 J. Warming: 0.5 × 4200 × 10 = 21 000 J. Total = 189 000 J.\n\nImpurities lower the melting point, which is why salt is sprinkled on icy roads abroad. Raising the pressure raises the boiling point, so a **pressure cooker** cooks beans quickly at about 120 °C.\n\n## Evaporation\n\nEvaporation is the escape of molecules from the surface of a liquid at any temperature. The fastest molecules escape, so the average energy of those left falls and the liquid cools. Evaporation is faster when the temperature is high, the air is dry, the surface is large and there is a draught. That is why clothes dry quickly on a harmattan afternoon.\n\nA refrigerator and an air conditioner use a liquid that evaporates in pipes inside, taking latent heat from the food or the room. The vapour is then compressed and condenses outside, giving the heat away.\n\n## Vapour pressure and boiling\n\nIn a closed space, vapour builds up above a liquid until it is **saturated**. The pressure it then exerts is the **saturated vapour pressure** (s.v.p.), which rises with temperature. A liquid boils when its s.v.p. equals the pressure of the atmosphere above it.\n\n## Humidity\n\n**Relative humidity** = (mass of water vapour in a given volume of air ÷ mass needed to saturate it at that temperature) × 100%. It is measured with a wet-and-dry bulb hygrometer: the bigger the difference between the readings, the drier the air.\n\nThe **dew point** is the temperature at which the air becomes saturated. When grass cools below the dew point at night, water condenses on it as dew. Fog is the same condensation on dust in the air, and rain forms when droplets in clouds grow heavy and fall."
+      },
+      "cards": [
+        {
+          "front": "Latent heat",
+          "back": "Heat absorbed or given out when a substance changes state, with no change in temperature."
+        },
+        {
+          "front": "Specific latent heat of fusion",
+          "back": "Heat needed to change 1 kg of solid at its melting point to liquid at the same temperature."
+        },
+        {
+          "front": "Specific latent heat of vaporization",
+          "back": "Heat needed to change 1 kg of liquid at its boiling point to vapour at the same temperature."
+        },
+        {
+          "front": "Effect of pressure on boiling point",
+          "back": "Higher pressure raises the boiling point, as in a pressure cooker."
+        },
+        {
+          "front": "Why evaporation cools",
+          "back": "The fastest molecules escape, so the average kinetic energy of the rest falls."
+        },
+        {
+          "front": "Saturated vapour pressure",
+          "back": "The pressure exerted by a vapour in contact with its liquid when no more can evaporate."
+        },
+        {
+          "front": "Boiling",
+          "back": "Happens when the saturated vapour pressure of a liquid equals the external pressure."
+        },
+        {
+          "front": "Dew point",
+          "back": "The temperature at which the air becomes saturated with the water vapour in it."
+        },
+        {
+          "front": "Relative humidity",
+          "back": "The water vapour in the air as a percentage of what would saturate it at that temperature."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "How much heat is needed to melt 0.5 kg of ice at 0 °C into water at 0 °C? (Specific latent heat of fusion of ice = 3.36 × 10⁵ J kg⁻¹)",
+          "options": [
+            "6.72 × 10⁵ J",
+            "1.68 × 10⁵ J",
+            "3.36 × 10⁵ J",
+            "1.68 × 10³ J"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Beans cook faster in a pressure cooker than in an open pot because",
+          "options": [
+            "the steam is trapped and cannot escape",
+            "the lid stops the heat from escaping into the kitchen",
+            "the pressure lowers the boiling point of the water",
+            "the higher pressure raises the boiling point of the water"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A liquid boils when",
+          "options": [
+            "its saturated vapour pressure equals the external pressure",
+            "its temperature reaches 100 °C",
+            "bubbles form at its surface",
+            "it is heated faster than it can evaporate"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "On which day would wet school uniforms on a line dry fastest?",
+          "options": [
+            "A cool, still morning in the rainy season",
+            "A hot, still, humid afternoon in July",
+            "A hot, dry, windy harmattan afternoon",
+            "A cold, foggy harmattan morning"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The wet bulb of a hygrometer reads much lower than the dry bulb. What does this tell you about the air?",
+          "options": [
+            "It is saturated with water vapour",
+            "It is about to rain",
+            "Its temperature is below the dew point",
+            "Its relative humidity is low"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A trader in Kano buys a 0.2 kg block of ice at 0 °C to cool a drink. Calculate the total heat the ice must absorb to become water at 20 °C. (Specific latent heat of fusion of ice = 3.36 × 10⁵ J kg⁻¹; specific heat capacity of water = 4200 J kg⁻¹ K⁻¹)",
+          "markScheme": [
+            "Heat to melt the ice = mL = 0.2 × 3.36 × 10⁵ = 67 200 J",
+            "Heat to warm the water = mcΔθ = 0.2 × 4200 × 20 = 16 800 J",
+            "Total heat = 84 000 J, with unit"
+          ],
+          "modelAnswer": "First the ice melts at 0 °C: Q₁ = mL = 0.2 × 3.36 × 10⁵ = 67 200 J. Then the water warms from 0 °C to 20 °C: Q₂ = mcΔθ = 0.2 × 4200 × 20 = 16 800 J. Total heat = 67 200 + 16 800 = 84 000 J.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Melting: Q = mL = 0.2 x 336000 = 67200 J\nWarming: Q = mcθ = 0.2 x 4200 x 20 = 16800 J\nTotal = 84000 J",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Q = mL = 0.2 x 336000 = 67200 J"
+                },
+                {
+                  "point": 1,
+                  "quote": "Q = mcθ = 0.2 x 4200 x 20 = 16800 J"
+                },
+                {
+                  "point": 2,
+                  "quote": "Total = 84000 J"
+                }
+              ],
+              "feedback": "You took both stages in the right order and added them. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The ice must first melt without changing temperature, which needs 0.2 × 3.36 × 10⁵ = 6.72 × 10⁴ J. The water then rises by 20 °C, needing 0.2 × 4200 × 20 = 1.68 × 10⁴ J. So altogether the ice absorbs 8.4 × 10⁴ J.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "0.2 × 3.36 × 10⁵ = 6.72 × 10⁴ J"
+                },
+                {
+                  "point": 1,
+                  "quote": "0.2 × 4200 × 20 = 1.68 × 10⁴ J"
+                },
+                {
+                  "point": 2,
+                  "quote": "the ice absorbs 8.4 × 10⁴ J"
+                }
+              ],
+              "feedback": "Correct, and standard form kept the numbers tidy. Saying the temperature does not change while it melts shows you understand latent heat."
+            },
+            {
+              "tier": "partial",
+              "text": "Q = mL = 0.2 x 3.36 x 10^5 = 67200 J. This is the heat absorbed by the ice.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Q = mL = 0.2 x 3.36 x 10^5 = 67200 J"
+                }
+              ],
+              "feedback": "Your melting step is correct. After melting, the water still has to warm from 0 °C to 20 °C; add mcΔθ = 0.2 × 4200 × 20 to get the total."
+            },
+            {
+              "tier": "partial",
+              "text": "Heat to melt = 0.2 x 3.36 x 10^5 = 67200 J. Heat to raise temperature = 0.2 x 4200 x 20 = 16800 J. Total = 67200 - 16800 = 50400 J",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Heat to melt = 0.2 x 3.36 x 10^5 = 67200 J"
+                },
+                {
+                  "point": 1,
+                  "quote": "Heat to raise temperature = 0.2 x 4200 x 20 = 16800 J"
+                }
+              ],
+              "feedback": "Both stages are worked out correctly. The ice absorbs heat in both stages, so add them: 67 200 + 16 800 = 84 000 J."
+            },
+            {
+              "tier": "weak",
+              "text": "Q = mcθ = 0.2 x 4200 x 20 = 16800 J",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Q = mcθ = 0.2 x 4200 x 20 = 16800 J"
+                }
+              ],
+              "feedback": "This is the heat for warming the water, but the ice has to melt first. Add the latent heat, mL = 0.2 × 3.36 × 10⁵ J."
+            },
+            {
+              "tier": "weak",
+              "text": "Q = mL x θ = 0.2 x 336000 x 20 = 1344000 J",
+              "meets": [],
+              "feedback": "Latent heat is not multiplied by a temperature change, because melting happens at one temperature. Do it in two steps: mL to melt, then mcΔθ to warm the water."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain, in terms of molecules, why evaporation produces cooling. Use your explanation to describe how a refrigerator keeps food cold.",
+          "markScheme": [
+            "States that the most energetic (fastest) molecules escape from the surface of the liquid",
+            "States that the average kinetic energy of the remaining molecules falls, so the temperature falls",
+            "States that in a refrigerator a volatile liquid (refrigerant) evaporates in the pipes inside, absorbing latent heat from the food compartment",
+            "States that the vapour is compressed and condenses in the pipes outside (at the back), giving out the heat"
+          ],
+          "modelAnswer": "In a liquid the molecules move at different speeds. Only the fastest ones have enough energy to escape from the surface. When they leave, the average kinetic energy of the molecules left behind is lower, so the liquid's temperature falls. In a refrigerator, a volatile refrigerant evaporates in the pipes inside the cabinet and takes latent heat of vaporization from the food. A compressor then pumps the vapour to the pipes at the back, where it is compressed, condenses and gives out that heat to the room.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "During evaporation the molecules with the highest energy break away from the surface. The ones that remain have less average kinetic energy so the liquid becomes colder. In a fridge a liquid called refrigerant evaporates inside the freezer pipes and takes heat from the food as latent heat. The compressor then squeezes the vapour and it condenses in the coils at the back where it releases the heat, which is why the back of a fridge is warm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the molecules with the highest energy break away from the surface"
+                },
+                {
+                  "point": 1,
+                  "quote": "The ones that remain have less average kinetic energy so the liquid becomes colder"
+                },
+                {
+                  "point": 2,
+                  "quote": "refrigerant evaporates inside the freezer pipes and takes heat from the food as latent heat"
+                },
+                {
+                  "point": 3,
+                  "quote": "it condenses in the coils at the back where it releases the heat"
+                }
+              ],
+              "feedback": "Every step is there, and linking it to the warm back of the fridge shows real understanding. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Fast molecules escape first, leaving slower ones behind. Lower average speed means lower average K.E., which means lower temperature. A refrigerator uses this: the refrigerant liquid evaporates in the cooling unit inside, absorbing latent heat of vaporisation from the food. Outside, the compressor raises its pressure so the vapour condenses and gives out the heat through the black pipes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fast molecules escape first"
+                },
+                {
+                  "point": 1,
+                  "quote": "Lower average speed means lower average K.E., which means lower temperature"
+                },
+                {
+                  "point": 2,
+                  "quote": "the refrigerant liquid evaporates in the cooling unit inside, absorbing latent heat of vaporisation from the food"
+                },
+                {
+                  "point": 3,
+                  "quote": "the vapour condenses and gives out the heat through the black pipes"
+                }
+              ],
+              "feedback": "Clear and complete, and you kept the explanation short. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "When a liquid evaporates the fast molecules escape, so the liquid left becomes cool. A fridge uses a gas that evaporates and makes the inside cold.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the fast molecules escape"
+                }
+              ],
+              "feedback": "You have the fast molecules escaping. Say why that cools: the average kinetic energy of those left falls. For the fridge, say the refrigerant takes latent heat from the food as it evaporates, and gives it out when it condenses outside."
+            },
+            {
+              "tier": "partial",
+              "text": "Molecules with more energy escape and the average kinetic energy of the remaining ones drops so the temperature drops. In the refrigerator the refrigerant evaporates inside and absorbs heat from the food, so the food is cold.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Molecules with more energy escape"
+                },
+                {
+                  "point": 1,
+                  "quote": "the average kinetic energy of the remaining ones drops so the temperature drops"
+                },
+                {
+                  "point": 2,
+                  "quote": "the refrigerant evaporates inside and absorbs heat from the food"
+                }
+              ],
+              "feedback": "Your explanation of cooling is exact. To finish, say where the heat goes: the vapour is compressed and condenses in the pipes at the back, giving the heat out to the room."
+            },
+            {
+              "tier": "weak",
+              "text": "Evaporation cools because water is cold. The fridge has ice inside that makes the food cold.",
+              "meets": [],
+              "feedback": "Evaporation cools even warm water, because the fastest molecules escape and the average energy of the rest falls. A fridge does not use ice; it uses a refrigerant that evaporates inside and takes heat from the food."
+            },
+            {
+              "tier": "weak",
+              "text": "The fridge has a gas that is very cold and it blows the cold air on the food. The molecules of the food slow down and the food becomes cold.",
+              "meets": [],
+              "feedback": "The refrigerant is not simply cold; it becomes cold by evaporating, taking latent heat from the food. Start with why evaporation cools: the fastest molecules escape and the rest have less energy."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Waves: how they are made and how they travel",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. produce mechanical waves with a rope and a slinky;\n2. explain that a wave transfers energy, not matter, at a definite speed;\n3. draw a waveform and label its amplitude, wavelength and period;\n4. use v = fλ and T = 1/f to solve problems;\n5. distinguish transverse from longitudinal waves with examples.\n\n## Materials\n\nA long rope, a slinky spring, a ripple tank with a motor-driven dipper, a cork, a stroboscope (or a phone video in slow motion), graph chart of a waveform.\n\n## Starter (5 minutes)\n\nDrop a stone into a basin of water with a cork floating in it. Ask: did the cork travel to the edge with the ripples? What did travel?\n\n## Development\n\n1. Tie the rope to a door handle and flick the free end. Then stretch the slinky along the floor and push one end back and forth. Students describe how each coil or part of the rope moves.\n2. Define a wave as a disturbance that carries energy from one place to another. Show that the cork only bobs up and down.\n3. Draw the displacement-distance graph on the board. Label crest, trough, amplitude and wavelength. Define frequency (Hz) and period.\n4. Derive v = fλ: in one period the wave moves one wavelength. Work two examples, one on an FM radio station.\n5. Run the ripple tank to show plane and circular waves moving at a steady speed.\n6. Classify transverse (rope, water, light) and longitudinal (slinky pushed, sound) waves.\n\n## Class activity\n\nPairs count the waves made by the ripple-tank dipper in 10 s and measure the wavelength on the screen with a ruler. They calculate the wave speed.\n\n## Evaluation\n\n1. A wave has a frequency of 5 Hz and a wavelength of 0.4 m. What is its speed?\n2. Give one example each of a transverse and a longitudinal wave.\n\n## Assignment\n\nProblem set, due Tuesday.",
+      "reading": {
+        "title": "Waves and how they carry energy",
+        "content": "# What is a wave?\n\nA **wave** is a disturbance that travels through a medium (or through space) and carries energy from one place to another, without carrying the medium with it. Drop a stone into a pond and a floating leaf bobs up and down as the ripples pass, but it does not travel to the bank. The energy travels; the water stays where it is.\n\nWaves that need a material medium, such as waves on a rope, water waves and sound, are **mechanical waves**. Light and radio waves need no medium.\n\n## Describing a wave\n\nA graph of displacement against distance shows the **waveform**.\n\n- **Amplitude (A)**: the greatest displacement of a particle from its rest position.\n- **Wavelength (λ)**: the distance between two neighbouring crests, or two neighbouring troughs.\n- **Frequency (f)**: the number of complete waves passing a point each second, measured in hertz (Hz).\n- **Period (T)**: the time for one complete wave to pass. T = 1/f.\n\n## The wave equation\n\nIn one period a wave moves forward one wavelength, so its speed is v = λ/T = fλ.\n\n**Worked example 1.** A police radio transmits at 150 MHz. Radio waves travel at 3 × 10⁸ m/s. Find the wavelength.\nλ = v/f = (3 × 10⁸) ÷ (1.5 × 10⁸) = 2 m.\n\n**Worked example 2.** A leaf on a pond bobs up and down 15 times in 30 s, and the crests are 3 m apart.\nf = 15 ÷ 30 = 0.5 Hz, T = 1 ÷ 0.5 = 2 s, v = fλ = 0.5 × 3 = 1.5 m/s.\n\n## Transverse and longitudinal waves\n\n- In a **transverse wave**, the particles of the medium vibrate at right angles to the direction the wave travels. Examples: waves on a rope, water waves, light.\n- In a **longitudinal wave**, the particles vibrate along the direction the wave travels, forming compressions and rarefactions. Examples: sound, a slinky pushed back and forth.\n\n## The ripple tank\n\nA ripple tank is a shallow glass-bottomed tray of water lit from above. A vibrating dipper makes waves whose shadows fall on a screen below, so you can watch them, measure their wavelength and see that they move at a steady speed."
+      },
+      "cards": [
+        {
+          "front": "Wave",
+          "back": "A disturbance that carries energy from one place to another without carrying the medium."
+        },
+        {
+          "front": "Amplitude",
+          "back": "The greatest displacement of a particle from its rest position."
+        },
+        {
+          "front": "Wavelength (λ)",
+          "back": "The distance between two neighbouring crests or troughs."
+        },
+        {
+          "front": "Frequency",
+          "back": "The number of complete waves per second, measured in hertz (Hz)."
+        },
+        {
+          "front": "Period and frequency",
+          "back": "T = 1/f."
+        },
+        {
+          "front": "Wave equation",
+          "back": "v = fλ."
+        },
+        {
+          "front": "Transverse wave",
+          "back": "Particles vibrate at right angles to the direction of travel, e.g. light, water waves."
+        },
+        {
+          "front": "Longitudinal wave",
+          "back": "Particles vibrate along the direction of travel, forming compressions and rarefactions, e.g. sound."
+        },
+        {
+          "front": "Mechanical wave",
+          "back": "A wave that needs a material medium, such as sound or a wave on a rope."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is a longitudinal wave?",
+          "options": [
+            "Light from the sun",
+            "Ripples on the Ogun river",
+            "Sound from a loudspeaker in air",
+            "The wave on a plucked guitar string"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The NEPA mains supply has a frequency of 50 Hz. What is its period?",
+          "options": ["0.02 s", "50 s", "0.2 s", "2 s"],
+          "answer": "A"
+        },
+        {
+          "prompt": "An FM station in Lagos broadcasts at 100 MHz. If radio waves travel at 3 × 10⁸ m/s, what is the wavelength?",
+          "options": ["0.33 m", "30 m", "3.0 × 10¹⁶ m", "3.0 m"],
+          "answer": "D"
+        },
+        {
+          "prompt": "The amplitude of a wave is",
+          "options": [
+            "the distance between a crest and the next trough",
+            "the greatest displacement of a particle from its rest position",
+            "the distance between two neighbouring crests",
+            "the height from a trough to a crest"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The dipper of a ripple tank makes 10 waves each second, and the waves are 2.5 cm apart. What is the speed of the waves?",
+          "options": ["4 cm/s", "0.25 cm/s", "25 cm/s", "12.5 cm/s"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between a transverse wave and a longitudinal wave, and give one example of each.",
+          "markScheme": [
+            "Transverse: particles of the medium vibrate perpendicular to the direction of travel of the wave",
+            "A correct example of a transverse wave (e.g. light, water waves, wave on a rope)",
+            "Longitudinal: particles vibrate parallel to (along) the direction of travel of the wave",
+            "A correct example of a longitudinal wave (e.g. sound, a slinky pushed back and forth)"
+          ],
+          "modelAnswer": "In a transverse wave the particles of the medium vibrate at right angles to the direction in which the wave travels, as in water waves or light. In a longitudinal wave the particles vibrate backwards and forwards along the direction in which the wave travels, as in sound waves in air.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Transverse wave is one in which the particles vibrate perpendicular to the direction the wave is moving, e.g. water waves. Longitudinal wave is one in which the particles vibrate in the same direction as the wave is moving, e.g. sound wave.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the particles vibrate perpendicular to the direction the wave is moving"
+                },
+                {
+                  "point": 1,
+                  "quote": "e.g. water waves"
+                },
+                {
+                  "point": 2,
+                  "quote": "the particles vibrate in the same direction as the wave is moving"
+                },
+                {
+                  "point": 3,
+                  "quote": "e.g. sound wave"
+                }
+              ],
+              "feedback": "Both definitions and both examples are correct. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "If you shake a rope up and down the wave goes along the rope but each part moves up and down, at right angles to the wave. That is transverse; light is also transverse. If you push a slinky in and out the coils move back and forth along the line the wave travels, making compressions and rarefactions. That is longitudinal, like sound.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "each part moves up and down, at right angles to the wave"
+                },
+                {
+                  "point": 1,
+                  "quote": "light is also transverse"
+                },
+                {
+                  "point": 2,
+                  "quote": "the coils move back and forth along the line the wave travels"
+                },
+                {
+                  "point": 3,
+                  "quote": "longitudinal, like sound"
+                }
+              ],
+              "feedback": "Explaining through the rope and the slinky made both ideas very clear, and your examples are right. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Transverse waves move up and down like water waves. Longitudinal waves move straight forward like sound.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "like water waves"
+                },
+                {
+                  "point": 3,
+                  "quote": "like sound"
+                }
+              ],
+              "feedback": "Your examples are right. Describe how the particles vibrate compared with the direction the wave travels: at right angles for transverse, along it for longitudinal.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "In a transverse wave the particles vibrate at right angles to the direction of the wave, e.g. light. In a longitudinal wave the particles vibrate along the direction of the wave, e.g. radio waves.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the particles vibrate at right angles to the direction of the wave"
+                },
+                {
+                  "point": 1,
+                  "quote": "e.g. light"
+                },
+                {
+                  "point": 2,
+                  "quote": "the particles vibrate along the direction of the wave"
+                }
+              ],
+              "feedback": "Both definitions are correct. Radio waves are electromagnetic and transverse, like light; give sound as your longitudinal example."
+            },
+            {
+              "tier": "weak",
+              "text": "A transverse wave travels across and a longitudinal wave travels a long distance like radio.",
+              "meets": [],
+              "feedback": "The names describe how the particles vibrate, not how far the wave goes. In a transverse wave they vibrate at right angles to the wave's direction; in a longitudinal wave, along it."
+            },
+            {
+              "tier": "weak",
+              "text": "Transverse waves need a medium but longitudinal waves do not need a medium. Example of transverse is sound.",
+              "meets": [],
+              "feedback": "Sound is longitudinal and does need a medium. The difference is the direction of vibration: across the direction of travel for transverse, along it for longitudinal."
+            }
+          ]
+        },
+        {
+          "prompt": "A fisherman on Lake Kainji notices that his canoe bobs up and down 20 times in 50 seconds as waves pass, and that the crests are 4 m apart. Calculate (a) the frequency, (b) the period and (c) the speed of the waves.",
+          "markScheme": [
+            "Frequency = 20 ÷ 50 = 0.4 Hz",
+            "Period = 1/f = 2.5 s (or 50 ÷ 20)",
+            "Uses v = fλ with correct substitution (0.4 × 4)",
+            "Speed = 1.6 m/s, with unit"
+          ],
+          "modelAnswer": "(a) f = number of waves ÷ time = 20 ÷ 50 = 0.4 Hz. (b) T = 1/f = 1 ÷ 0.4 = 2.5 s. (c) v = fλ = 0.4 × 4 = 1.6 m/s.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) f = 20/50 = 0.4 Hz\n(b) T = 1/f = 1/0.4 = 2.5 s\n(c) v = fλ = 0.4 x 4 = 1.6 m/s",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f = 20/50 = 0.4 Hz"
+                },
+                {
+                  "point": 1,
+                  "quote": "T = 1/f = 1/0.4 = 2.5 s"
+                },
+                {
+                  "point": 2,
+                  "quote": "v = fλ = 0.4 x 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "1.6 m/s"
+                }
+              ],
+              "feedback": "Neat and correct in every part. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "One bob takes 50 ÷ 20 = 2.5 s, so the period is 2.5 s and the frequency is 1 ÷ 2.5 = 0.4 Hz. Speed = frequency × wavelength = 0.4 × 4 = 1.6 m s⁻¹.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the frequency is 1 ÷ 2.5 = 0.4 Hz"
+                },
+                {
+                  "point": 1,
+                  "quote": "the period is 2.5 s"
+                },
+                {
+                  "point": 2,
+                  "quote": "Speed = frequency × wavelength = 0.4 × 4"
+                },
+                {
+                  "point": 3,
+                  "quote": "1.6 m s⁻¹"
+                }
+              ],
+              "feedback": "Finding the period first is just as good, and every answer has its unit. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "f = 50/20 = 2.5 Hz\nT = 1/2.5 = 0.4 s\nv = fλ = 2.5 x 4 = 10 m/s",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "v = fλ"
+                }
+              ],
+              "feedback": "You know v = fλ, but frequency is waves per second: 20 ÷ 50 = 0.4 Hz, not 50 ÷ 20. That swap made the period and speed wrong too."
+            },
+            {
+              "tier": "partial",
+              "text": "Frequency = 20/50 = 0.4 Hz. Period = 1/0.4 = 2.5 s. Speed = λ/f = 4/0.4 = 10 m/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Frequency = 20/50 = 0.4 Hz"
+                },
+                {
+                  "point": 1,
+                  "quote": "Period = 1/0.4 = 2.5 s"
+                }
+              ],
+              "feedback": "Your frequency and period are right. Speed is frequency times wavelength, v = fλ = 0.4 × 4 = 1.6 m/s; dividing gives the wrong answer."
+            },
+            {
+              "tier": "weak",
+              "text": "Speed = distance/time = 4/50 = 0.08 m/s",
+              "meets": [],
+              "feedback": "4 m is the distance between crests, not the distance a wave travels in 50 s. Find the frequency first, 20 waves in 50 s, then use v = fλ."
+            },
+            {
+              "tier": "weak",
+              "text": "The frequency is 20 Hz because the canoe moved 20 times. The period is 50 s. Speed = 20 x 4 = 80 m/s.",
+              "meets": [],
+              "feedback": "Frequency is the number of waves each second, so 20 in 50 s is 0.4 Hz. The period is the time for one wave, 2.5 s. Try the speed again with these."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Wave properties and the reflection of light",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. read the amplitude and wavelength from y = A sin(ωt − 2πx/λ);\n2. describe reflection, refraction, diffraction and interference of waves in a ripple tank;\n3. explain shadows, eclipses and the pinhole camera by rectilinear propagation;\n4. state and verify the laws of reflection and describe the image in a plane mirror;\n5. use 1/u + 1/v = 1/f and m = v/u for curved mirrors.\n\n## Materials\n\nA ripple tank with straight and point dippers, a metal barrier, a glass plate, a pinhole camera made from a tin, plane and concave mirrors, optical pins, a candle.\n\n## Starter (5 minutes)\n\nAsk: why can you hear a teacher talking in the corridor when you cannot see round the door?\n\n## Development\n\n1. Write y = A sin(ωt − 2πx/λ) and pick out A and λ from an example.\n2. In the ripple tank, show plane waves reflecting from the barrier, slowing and bending over the glass plate (refraction), spreading through a narrow gap (diffraction), and two point dippers overlapping (interference). Link diffraction to the starter.\n3. Classify sources of light as luminous or non-luminous. Show a shadow of a pencil from a small and a large source; explain umbra, penumbra and eclipses. Use the pinhole camera and its magnification formula.\n4. Verify the laws of reflection with pins. List the properties of a plane-mirror image. State n = 360/θ − 1 for inclined mirrors and that a mirror turned through θ turns the reflected ray through 2θ.\n5. Form a real image of a candle with the concave mirror. Introduce the mirror formula and work an example.\n\n## Class activity\n\nGroups find the focal length of a concave mirror by focusing the image of a distant window on a sheet of paper.\n\n## Evaluation\n\n1. How many images are formed by two mirrors at 90°?\n2. An object is 30 cm from a concave mirror of focal length 10 cm. Where is the image?\n\n## Assignment\n\nWorksheet questions, due Monday.",
+      "reading": {
+        "title": "How waves behave, and how light is reflected",
+        "content": "# Properties of waves\n\nA progressive wave can be written y = A sin(ωt − 2πx/λ), where A is the amplitude and λ the wavelength. In y = 0.05 sin(20πt − 2πx/0.5), the amplitude is 0.05 m and the wavelength is 0.5 m.\n\nAll waves show these properties, which a ripple tank makes easy to see:\n\n- **Reflection**: waves bounce off a barrier.\n- **Refraction**: waves change speed and direction when they pass into shallower water.\n- **Diffraction**: waves spread out as they pass through a gap or round an edge. Sound diffracts round doorways, which is why you hear people you cannot see.\n- **Interference**: where two sets of waves meet, they add up to a bigger wave or cancel out.\n- **Stationary waves**: two equal waves travelling in opposite directions superpose to give a wave that does not move along.\n\n# Light travels in straight lines\n\n**Luminous** bodies, like the sun or a lamp, give out their own light; **non-luminous** bodies, like the moon, are seen by the light they reflect. Light travels in straight lines, so opaque objects cast shadows. An eclipse of the sun happens when the moon passes between the sun and the earth.\n\nIn a **pinhole camera**, magnification = image height ÷ object height = image distance ÷ object distance.\n\n**Worked example.** A 15 m tall mango tree is 30 m from a pinhole camera whose box is 12 cm long. Image height = 15 × 0.12 ÷ 30 = 0.06 m, or 6 cm.\n\n## Reflection at a plane mirror\n\nThe laws of reflection:\n\n1. The incident ray, the reflected ray and the normal at the point of incidence all lie in the same plane.\n2. The angle of incidence equals the angle of reflection.\n\nThe image in a plane mirror is virtual, upright, the same size as the object, laterally inverted and as far behind the mirror as the object is in front. Two mirrors inclined at θ give 360/θ − 1 images. When a mirror turns through θ, the reflected ray turns through 2θ.\n\n## Curved mirrors\n\nA concave mirror converges light; a convex mirror spreads it out and gives a wider view, so it is used as a driving mirror. For both, 1/u + 1/v = 1/f and m = v/u, taking real distances as positive.\n\n**Worked example.** An object stands 12 cm from a concave mirror of focal length 8 cm. 1/v = 1/8 − 1/12 = 1/24, so v = 24 cm. m = 24 ÷ 12 = 2. The image is real, inverted and twice the size."
+      },
+      "cards": [
+        {
+          "front": "Diffraction",
+          "back": "The spreading of a wave as it passes through a gap or round an edge."
+        },
+        {
+          "front": "Interference",
+          "back": "The adding or cancelling of two sets of waves where they overlap."
+        },
+        {
+          "front": "Luminous body",
+          "back": "A body that gives out its own light, such as the sun or a lamp."
+        },
+        {
+          "front": "Rectilinear propagation",
+          "back": "Light travels in straight lines."
+        },
+        {
+          "front": "Pinhole camera magnification",
+          "back": "Image height ÷ object height = image distance ÷ object distance."
+        },
+        {
+          "front": "Laws of reflection",
+          "back": "Incident ray, reflected ray and normal lie in one plane; angle of incidence = angle of reflection."
+        },
+        {
+          "front": "Image in a plane mirror",
+          "back": "Virtual, upright, same size, laterally inverted, as far behind as the object is in front."
+        },
+        {
+          "front": "Images in inclined mirrors",
+          "back": "n = 360/θ − 1."
+        },
+        {
+          "front": "Mirror formula",
+          "back": "1/u + 1/v = 1/f, with magnification m = v/u."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A 2 m tall man stands 10 m in front of a pinhole camera whose box is 20 cm long. How tall is his image on the screen?",
+          "options": ["4 cm", "100 cm", "40 cm", "0.4 cm"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A barber places two plane mirrors at an angle of 60° to each other. How many images of a comb placed between them are seen?",
+          "options": ["6", "5", "7", "3"],
+          "answer": "B"
+        },
+        {
+          "prompt": "A plane mirror is turned through 15° while the incident ray stays fixed. Through what angle does the reflected ray turn?",
+          "options": ["15°", "7.5°", "30°", "45°"],
+          "answer": "C"
+        },
+        {
+          "prompt": "An object is placed 15 cm in front of a concave mirror of focal length 10 cm. How far from the mirror is the image?",
+          "options": ["6 cm", "25 cm", "5 cm", "30 cm"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Students in a classroom can hear a radio playing in the corridor even though the door is only half open and they cannot see the radio. Which wave property explains this?",
+          "options": [
+            "Reflection",
+            "Refraction",
+            "Diffraction",
+            "Rectilinear propagation"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A student stands 1.5 m in front of a plane mirror on the wall of the school hostel. State the two laws of reflection. Then describe the image the student sees, including how far the image is from the student.",
+          "markScheme": [
+            "The incident ray, reflected ray and normal at the point of incidence lie in the same plane",
+            "The angle of incidence is equal to the angle of reflection",
+            "The image is virtual (cannot be formed on a screen) and upright",
+            "The image is laterally inverted (left and right swapped) and the same size as the student",
+            "The image is 1.5 m behind the mirror, so 3.0 m from the student"
+          ],
+          "modelAnswer": "First law: the incident ray, the reflected ray and the normal at the point of incidence all lie in the same plane. Second law: the angle of incidence equals the angle of reflection. The image is virtual and upright, the same size as the student and laterally inverted, so the student's right hand appears as the image's left. It is as far behind the mirror as the student is in front, 1.5 m, so it is 3.0 m from the student.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Laws: (1) The incident ray, reflected ray and the normal at the point of incidence all lie in the same plane. (2) Angle of incidence = angle of reflection. The image is upright and virtual, it is the same size and laterally inverted. It is 1.5 m behind the mirror so the distance from the student to the image is 3 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The incident ray, reflected ray and the normal at the point of incidence all lie in the same plane"
+                },
+                {
+                  "point": 1,
+                  "quote": "Angle of incidence = angle of reflection"
+                },
+                {
+                  "point": 2,
+                  "quote": "The image is upright and virtual"
+                },
+                {
+                  "point": 3,
+                  "quote": "it is the same size and laterally inverted"
+                },
+                {
+                  "point": 4,
+                  "quote": "the distance from the student to the image is 3 m"
+                }
+              ],
+              "feedback": "All five points, and you remembered to add the two distances. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The angle the incident ray makes with the normal is equal to the angle the reflected ray makes with it, and both rays and the normal are in one plane. The image is erect and cannot be caught on a screen, so it is virtual. It is the same height as the student but the left side appears as the right. Object distance = image distance = 1.5 m, so image to student = 1.5 + 1.5 = 3.0 m.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "both rays and the normal are in one plane"
+                },
+                {
+                  "point": 1,
+                  "quote": "The angle the incident ray makes with the normal is equal to the angle the reflected ray makes with it"
+                },
+                {
+                  "point": 2,
+                  "quote": "The image is erect and cannot be caught on a screen, so it is virtual"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is the same height as the student but the left side appears as the right"
+                },
+                {
+                  "point": 4,
+                  "quote": "image to student = 1.5 + 1.5 = 3.0 m"
+                }
+              ],
+              "feedback": "Every point is right and explained in your own words. Showing 1.5 + 1.5 made the distance clear."
+            },
+            {
+              "tier": "partial",
+              "text": "Laws of reflection: angle of incidence is equal to angle of reflection. The image is virtual, upright and laterally inverted. The image is 1.5 m from the student.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "angle of incidence is equal to angle of reflection"
+                },
+                {
+                  "point": 2,
+                  "quote": "The image is virtual, upright"
+                }
+              ],
+              "feedback": "Your second law and the image's nature are right. Give the first law too (both rays and the normal in one plane), say the image is the same size, and remember the image is 1.5 m behind the mirror, so 3.0 m from the student."
+            },
+            {
+              "tier": "partial",
+              "text": "1. The incident ray, the reflected ray and the normal lie in the same plane. 2. The angle of incidence equals the angle of reflection. The image is real and inverted and is 3 m away from the student.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The incident ray, the reflected ray and the normal lie in the same plane"
+                },
+                {
+                  "point": 1,
+                  "quote": "The angle of incidence equals the angle of reflection"
+                },
+                {
+                  "point": 4,
+                  "quote": "is 3 m away from the student"
+                }
+              ],
+              "feedback": "Both laws and the 3 m distance are right. A plane mirror image is virtual and upright, not real and inverted; that describes a concave mirror with a distant object. Add that it is laterally inverted and the same size.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The light reflects back from the mirror to the eye. The image is smaller than the student because the mirror is far.",
+              "meets": [],
+              "feedback": "A plane mirror image is always the same size as the object, however far away. Learn the two laws of reflection and the five properties of the image from the reading."
+            },
+            {
+              "tier": "weak",
+              "text": "The angle of incidence is equal to the angle of refraction. The image is 1.5 m.",
+              "meets": [],
+              "feedback": "It is the angle of reflection, not refraction, that equals the angle of incidence. The image is 1.5 m behind the mirror, which makes it 3.0 m from the student."
+            }
+          ]
+        },
+        {
+          "prompt": "A 4 cm tall object is placed 30 cm in front of a concave mirror of focal length 20 cm. Calculate the position of the image, its magnification and its height, and state the nature of the image.",
+          "markScheme": [
+            "Correct substitution: 1/30 + 1/v = 1/20",
+            "v = 60 cm (in front of the mirror)",
+            "Magnification m = v/u = 2, so image height = 8 cm",
+            "Image is real, inverted and magnified"
+          ],
+          "modelAnswer": "Using 1/u + 1/v = 1/f: 1/30 + 1/v = 1/20, so 1/v = 1/20 − 1/30 = 1/60 and v = 60 cm in front of the mirror. Magnification m = v/u = 60 ÷ 30 = 2, so the image is 2 × 4 = 8 cm tall. The image is real, inverted and magnified.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1/u + 1/v = 1/f\n1/30 + 1/v = 1/20\n1/v = 1/20 - 1/30 = (3-2)/60 = 1/60\nv = 60 cm\nm = v/u = 60/30 = 2\nheight = 2 x 4 = 8 cm\nThe image is real, inverted and magnified.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/30 + 1/v = 1/20"
+                },
+                {
+                  "point": 1,
+                  "quote": "v = 60 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "height = 2 x 4 = 8 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "The image is real, inverted and magnified"
+                }
+              ],
+              "feedback": "Clear, step-by-step and correct throughout. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Using the mirror formula with u = 30 cm and f = 20 cm: 1/v = 1/20 − 1/30 = 1/60, so the image forms 60 cm in front of the mirror. Magnification = 60/30 = 2, which makes the image 8 cm high. Since v is positive it is a real image, and it is upside down and bigger than the object.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/v = 1/20 − 1/30"
+                },
+                {
+                  "point": 1,
+                  "quote": "the image forms 60 cm in front of the mirror"
+                },
+                {
+                  "point": 2,
+                  "quote": "Magnification = 60/30 = 2, which makes the image 8 cm high"
+                },
+                {
+                  "point": 3,
+                  "quote": "it is a real image, and it is upside down and bigger than the object"
+                }
+              ],
+              "feedback": "Correct, and using the sign of v to decide that the image is real was good reasoning."
+            },
+            {
+              "tier": "partial",
+              "text": "1/30 + 1/v = 1/20, so 1/v = 1/20 + 1/30 = 5/60 and v = 12 cm. m = 12/30 = 0.4. Height = 0.4 x 4 = 1.6 cm. The image is real and inverted and diminished.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/30 + 1/v = 1/20"
+                }
+              ],
+              "feedback": "Your substitution is right, but moving 1/30 across makes it negative: 1/v = 1/20 − 1/30 = 1/60, so v = 60 cm. An object between F and C always gives a magnified image.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "1/30 + 1/v = 1/20, 1/v = 1/60, v = 60 cm. m = u/v = 30/60 = 0.5. Image height = 2 cm. The image is real.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/30 + 1/v = 1/20"
+                },
+                {
+                  "point": 1,
+                  "quote": "v = 60 cm"
+                }
+              ],
+              "feedback": "Your image position is right. Magnification is v/u, not u/v, so it is 2 and the image is 8 cm tall. Say also that it is inverted and magnified."
+            },
+            {
+              "tier": "weak",
+              "text": "v = u + f = 30 + 20 = 50 cm. The image is virtual and upright.",
+              "meets": [],
+              "feedback": "The distances are not simply added. Use 1/u + 1/v = 1/f, then m = v/u. With the object beyond the focal point the image is real and inverted."
+            },
+            {
+              "tier": "weak",
+              "text": "Magnification = image/object. The image is magnified because a concave mirror always magnifies, so it is virtual and 8 cm.",
+              "meets": [],
+              "feedback": "A concave mirror gives a virtual image only when the object is inside the focal length. Work out v from 1/u + 1/v = 1/f first; your 8 cm needs that working to earn its mark."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Refraction, lenses and the spectrum",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the laws of refraction and calculate refractive index from angles and from real and apparent depth;\n2. explain critical angle and total internal reflection and their uses;\n3. use 1/u + 1/v = 1/f and m = v/u for lenses and find the power of a lens;\n4. compare the eye with the camera and explain how short and long sight are corrected;\n5. describe dispersion of white light and the main parts of the electromagnetic spectrum.\n\n## Materials\n\nRectangular glass blocks, optical pins, drawing boards, protractors, a prism, a ray box, converging and diverging lenses, a screen, a bowl of water and a coin.\n\n## Starter (5 minutes)\n\nPut a coin in an empty bowl and move back until the edge just hides it. Pour in water. Ask: why can you now see the coin?\n\n## Development\n\n1. Shine the ray box through the glass block. State the two laws of refraction and n = sin i / sin r. Explain real and apparent depth: n = real depth ÷ apparent depth.\n2. Increase the angle in the semicircular block until the ray grazes the surface: the critical angle, sin c = 1/n. Beyond it, total internal reflection. Applications: optical fibres, prism binoculars, mirages on hot tarred roads.\n3. Use the converging lens to form a real image of the window on the screen. Work the lens formula and power P = 1/f (f in metres) in dioptres.\n4. Compare the eye and the camera. Short sight is corrected with a diverging lens, long sight with a converging lens.\n5. Pass white light through the prism to show the spectrum ROYGBIV. List the electromagnetic spectrum from radio to gamma rays with one use each.\n\n## Class activity\n\nThe practical: refraction through a rectangular glass block, finding the refractive index from a graph of sin i against sin r.\n\n## Evaluation\n\n1. A lens has a focal length of 50 cm. What is its power?\n2. State two conditions for total internal reflection.\n\n## Assignment\n\nComplete the practical write-up, due Wednesday.",
+      "reading": {
+        "title": "Bending light: refraction, lenses and colour",
+        "content": "# Refraction\n\nLight changes speed, and usually direction, when it passes from one medium to another. This is **refraction**. The laws of refraction are:\n\n1. The incident ray, the refracted ray and the normal at the point of incidence lie in the same plane.\n2. sin i / sin r is a constant for a given pair of media (Snell's law). This constant is the **refractive index**, n.\n\n**Worked example.** Light strikes glass at 60° and is refracted at 35°. n = sin 60° ÷ sin 35° = 0.866 ÷ 0.574 = 1.51.\n\nA pool looks shallower than it is. n = real depth ÷ apparent depth, so a well 4.0 m deep, in water of n = 4/3, looks only 3.0 m deep.\n\n## Total internal reflection\n\nWhen light goes from a denser to a less dense medium, there is an angle of incidence, the **critical angle** c, for which the refracted ray grazes the surface. sin c = 1/n. If the angle of incidence is bigger than c, all the light is reflected back: **total internal reflection**. It is used in optical fibres, prism periscopes and binoculars, and causes the mirage that looks like water on a hot road.\n\n## Lenses\n\nA **converging** (convex) lens brings parallel rays to a focus; a **diverging** (concave) lens spreads them out. For both, 1/u + 1/v = 1/f and m = v/u, with real distances positive and virtual ones negative. The **power** of a lens is P = 1/f, with f in metres; its unit is the dioptre (D).\n\n**Worked example.** An object is 30 cm from a converging lens of focal length 20 cm. 1/v = 1/20 − 1/30 = 1/60, so v = 60 cm. The image is real, inverted and twice the size.\n\nThe camera and the eye both use a converging lens to form a real, inverted image, on film or on the retina. The camera focuses by moving the lens; the eye changes the shape of its lens. A short-sighted eye is corrected with a diverging lens and a long-sighted eye with a converging lens.\n\n## Dispersion and the spectrum\n\nA prism splits white light into red, orange, yellow, green, blue, indigo and violet, because each colour is refracted by a different amount. Violet bends most.\n\nVisible light is one part of the **electromagnetic spectrum**: radio waves (broadcasting), infrared (TV remote controls), visible light, ultraviolet (sterilising water), X-rays (seeing bones) and gamma rays (killing cancer cells)."
+      },
+      "cards": [
+        {
+          "front": "Snell's law",
+          "back": "sin i / sin r is constant for a given pair of media; the constant is the refractive index."
+        },
+        {
+          "front": "Refractive index from depth",
+          "back": "n = real depth ÷ apparent depth."
+        },
+        {
+          "front": "Critical angle",
+          "back": "The angle of incidence in the denser medium for which the angle of refraction is 90°. sin c = 1/n."
+        },
+        {
+          "front": "Conditions for total internal reflection",
+          "back": "Light goes from denser to less dense medium, and the angle of incidence exceeds the critical angle."
+        },
+        {
+          "front": "Power of a lens",
+          "back": "P = 1/f with f in metres, measured in dioptres (D)."
+        },
+        {
+          "front": "Correction of short sight",
+          "back": "A diverging (concave) lens."
+        },
+        {
+          "front": "Correction of long sight",
+          "back": "A converging (convex) lens."
+        },
+        {
+          "front": "Dispersion",
+          "back": "The splitting of white light into its colours by a prism."
+        },
+        {
+          "front": "Infrared radiation",
+          "back": "Electromagnetic radiation just beyond red, used in TV remote controls and felt as heat."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A ray of light enters a glass block from air at an angle of incidence of 45° and is refracted at 28°. What is the refractive index of the glass? (sin 45° = 0.707, sin 28° = 0.469)",
+          "options": ["1.61", "0.66", "1.5", "1.2"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A fish pond in a farm in Oyo is 2.0 m deep. How deep does it appear to a farmer looking straight down? (Refractive index of water = 4/3)",
+          "options": ["2.67 m", "1.5 m", "2.0 m", "0.67 m"],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is the critical angle of a glass whose refractive index is 1.5?",
+          "options": ["42°", "48°", "34°", "90°"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A converging lens has a focal length of 25 cm. What is its power?",
+          "options": ["25 D", "0.04 D", "−4 D", "+4 D"],
+          "answer": "D"
+        },
+        {
+          "prompt": "A student cannot read the writing on the chalkboard from the back of the class but reads a textbook easily. Which lens corrects this defect?",
+          "options": [
+            "A converging lens",
+            "A diverging lens",
+            "A bifocal plane glass",
+            "A triangular prism"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain what is meant by total internal reflection. State the two conditions needed for it to happen, and give one use of it in everyday life.",
+          "markScheme": [
+            "All the light is reflected back into the denser medium at the boundary, with none refracted out",
+            "Condition: light travels from an optically denser to a less dense medium",
+            "Condition: the angle of incidence is greater than the critical angle",
+            "One correct application (e.g. optical fibres, prism periscope or binoculars, mirage)"
+          ],
+          "modelAnswer": "Total internal reflection happens when light striking the boundary of a medium is all reflected back into that medium and none passes out. It needs two conditions: the light must be travelling from an optically denser medium, such as glass, into a less dense one, such as air; and the angle of incidence must be greater than the critical angle. It is used in optical fibres, which carry telephone and internet signals as light.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Total internal reflection is when all the light hitting a surface is reflected back inside the denser medium and none comes out. Conditions: the light must go from a denser medium to a less dense medium, and the angle of incidence must be more than the critical angle. It is used in optical fibre cables for internet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "all the light hitting a surface is reflected back inside the denser medium and none comes out"
+                },
+                {
+                  "point": 1,
+                  "quote": "the light must go from a denser medium to a less dense medium"
+                },
+                {
+                  "point": 2,
+                  "quote": "the angle of incidence must be more than the critical angle"
+                },
+                {
+                  "point": 3,
+                  "quote": "optical fibre cables for internet"
+                }
+              ],
+              "feedback": "A complete answer: the meaning, both conditions and a good use. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "When light in glass meets the glass–air surface at an angle bigger than the critical angle, it cannot escape and the whole of it is reflected back into the glass. This only happens if the light is going from the optically denser medium into the less dense one. Prism binoculars use it to turn the light round.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the whole of it is reflected back into the glass"
+                },
+                {
+                  "point": 1,
+                  "quote": "if the light is going from the optically denser medium into the less dense one"
+                },
+                {
+                  "point": 2,
+                  "quote": "at an angle bigger than the critical angle"
+                },
+                {
+                  "point": 3,
+                  "quote": "Prism binoculars use it to turn the light round"
+                }
+              ],
+              "feedback": "All four points, worked into one clear description. Prism binoculars are a well-chosen example."
+            },
+            {
+              "tier": "partial",
+              "text": "It is when light is reflected totally inside a substance. The angle of incidence must be greater than the critical angle. It is used in periscopes.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The angle of incidence must be greater than the critical angle"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is used in periscopes"
+                }
+              ],
+              "feedback": "Your condition on the critical angle and your use are right. Give the other condition, that the light goes from a denser to a less dense medium, and say that all the light is reflected back into the denser medium.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Total internal reflection is when all the light is reflected back into the glass and none passes into the air. It happens when light goes from glass to air and the angle of incidence equals the critical angle.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "all the light is reflected back into the glass and none passes into the air"
+                },
+                {
+                  "point": 1,
+                  "quote": "when light goes from glass to air"
+                }
+              ],
+              "feedback": "Your description and the first condition are right. At exactly the critical angle the ray grazes the surface; the angle must be greater than it. Add a use such as optical fibres."
+            },
+            {
+              "tier": "weak",
+              "text": "It is when light reflects from a mirror and the angle of incidence is equal to the angle of reflection. Used in a mirror.",
+              "meets": [],
+              "feedback": "That describes ordinary reflection at a mirror. Total internal reflection happens inside glass or water when light meets the surface beyond the critical angle. Read that section of the reading again."
+            },
+            {
+              "tier": "weak",
+              "text": "Total internal reflection is used in optical fibres. It happens when light goes from air into water.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "used in optical fibres"
+                }
+              ],
+              "feedback": "Optical fibres are a correct use. The light must go the other way, from the denser medium such as water into air, and the angle of incidence must exceed the critical angle."
+            }
+          ]
+        },
+        {
+          "prompt": "A trader in Onitsha holds a converging lens of focal length 15 cm at 10 cm from the small print on a medicine label, which is 4 mm high. Calculate the image distance, the magnification and the height of the image, and describe the image.",
+          "markScheme": [
+            "Correct substitution: 1/10 + 1/v = 1/15",
+            "v = −30 cm, i.e. 30 cm on the same side of the lens as the object",
+            "Magnification = 3, so image height = 12 mm",
+            "Image is virtual, upright and magnified"
+          ],
+          "modelAnswer": "1/u + 1/v = 1/f gives 1/10 + 1/v = 1/15, so 1/v = 1/15 − 1/10 = −1/30 and v = −30 cm. The image is 30 cm from the lens on the same side as the label. Magnification = v/u = 30 ÷ 10 = 3, so the image is 3 × 4 = 12 mm high. It is virtual, upright and magnified, which is why the lens works as a reading glass.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1/u + 1/v = 1/f\n1/10 + 1/v = 1/15\n1/v = 1/15 - 1/10 = (2 - 3)/30 = -1/30\nv = -30 cm (virtual, same side as the object)\nm = 30/10 = 3\nheight = 3 x 4 = 12 mm\nThe image is virtual, erect and magnified.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/10 + 1/v = 1/15"
+                },
+                {
+                  "point": 1,
+                  "quote": "v = -30 cm (virtual, same side as the object)"
+                },
+                {
+                  "point": 2,
+                  "quote": "height = 3 x 4 = 12 mm"
+                },
+                {
+                  "point": 3,
+                  "quote": "The image is virtual, erect and magnified"
+                }
+              ],
+              "feedback": "Correct throughout, and you explained what the minus sign means. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Using the lens formula, 1/v = 1/15 − 1/10 = −1/30, which gives v = −30 cm. The negative sign shows the image is on the same side as the label, 30 cm from the lens. m = 30 ÷ 10 = 3 and the image height is 1.2 cm. It is upright, enlarged and virtual, so the trader sees bigger writing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/v = 1/15 − 1/10"
+                },
+                {
+                  "point": 1,
+                  "quote": "the image is on the same side as the label, 30 cm from the lens"
+                },
+                {
+                  "point": 2,
+                  "quote": "m = 30 ÷ 10 = 3 and the image height is 1.2 cm"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is upright, enlarged and virtual"
+                }
+              ],
+              "feedback": "All correct, and giving 12 mm as 1.2 cm is fine. Linking the result to why the writing looks bigger was a good finish."
+            },
+            {
+              "tier": "partial",
+              "text": "1/10 + 1/v = 1/15, 1/v = 1/15 - 1/10 = -1/30, v = -30 cm. Magnification = 3. The image is real and inverted.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/10 + 1/v = 1/15"
+                },
+                {
+                  "point": 1,
+                  "quote": "v = -30 cm"
+                }
+              ],
+              "feedback": "Your image distance is right. A negative v means the image is virtual and upright, not real and inverted. Then multiply 4 mm by the magnification for the image height."
+            },
+            {
+              "tier": "partial",
+              "text": "1/v = 1/10 + 1/15 = 5/30, v = 6 cm. m = 6/10 = 0.6. Image height = 2.4 mm. The image is virtual and upright because it is a reading glass.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "The image is virtual and upright"
+                }
+              ],
+              "feedback": "You knew a reading glass gives a virtual, upright image. In the formula, 1/v = 1/f − 1/u, so you must subtract: 1/15 − 1/10 = −1/30, which gives v = −30 cm and a magnification of 3."
+            },
+            {
+              "tier": "weak",
+              "text": "Magnification = f/u = 15/10 = 1.5 so the image is 6 mm.",
+              "meets": [],
+              "feedback": "Magnification is v/u, so you must find v first from 1/u + 1/v = 1/f. Then describe the image: is it real or virtual, upright or inverted?"
+            },
+            {
+              "tier": "weak",
+              "text": "The image is formed 15 cm from the lens at the focus and it is real and big.",
+              "meets": [],
+              "feedback": "Only rays from a very distant object meet at the focus. The label is inside the focal length, so use the lens formula to find v; you will find the image is virtual."
+            }
+          ]
+        }
+      ],
+      "practical": {
+        "title": "Refraction through a rectangular glass block",
+        "instructions": "You are to trace rays of light through a rectangular glass block using optical pins, measure the angles of incidence and refraction, and find the refractive index of the glass from a graph of sin i against sin r.",
+        "steps": [
+          {
+            "text": "Fix a sheet of white paper to the drawing board. Place the glass block in the middle and trace its outline ABCD. Remove the block."
+          },
+          {
+            "text": "Draw a normal at a point N on AB. Draw a line from N making an angle of incidence i = 20° with the normal."
+          },
+          {
+            "text": "Fix two pins, P₁ and P₂, on this line at least 5 cm apart. Replace the block on its outline.",
+            "note": "Keep the pins vertical and handle them by the head."
+          },
+          {
+            "text": "Looking through face CD, fix two more pins, P₃ and P₄, so that they appear in a straight line with the images of P₁ and P₂."
+          },
+          {
+            "text": "Remove the block. Join P₃P₄ to meet CD at M, then join NM. Measure the angle of refraction r between NM and the normal."
+          },
+          {
+            "text": "Repeat for i = 30°, 40°, 50° and 60°. Tabulate i, r, sin i and sin r."
+          },
+          {
+            "text": "Plot sin i against sin r and find the slope, which is the refractive index of the glass. State two precautions."
+          }
+        ],
+        "rubric": [
+          {
+            "description": "Tracing: outline, normals and pin positions correct for five angles, angles measured to the nearest degree",
+            "maxPoints": 4
+          },
+          {
+            "description": "Results: table of i, r, sin i and sin r to 3 decimal places, and a correct graph with labelled axes",
+            "maxPoints": 4
+          },
+          {
+            "description": "Conclusion: slope worked out from a large triangle, refractive index stated, two precautions",
+            "maxPoints": 2
+          }
+        ],
+        "writeUps": [
+          {
+            "tier": "full",
+            "text": "Method: I traced the block, drew normals and used pins P₁ to P₄ to trace each ray for i = 20°, 30°, 40°, 50° and 60°.\nResults: r = 13°, 19°, 25°, 31°, 35°. sin i = 0.342, 0.500, 0.643, 0.766, 0.866. sin r = 0.225, 0.326, 0.423, 0.515, 0.574.\nGraph: a straight line through the origin. Slope from the triangle (0.100, 0.150) to (0.550, 0.830) = 0.680 ÷ 0.450 = 1.51.\nConclusion: the refractive index of the glass is 1.51. Snell's law is obeyed.\nPrecautions: pins were kept vertical and far apart; I looked at the bases of the pins to avoid parallax.",
+            "scores": [4, 4, 2],
+            "feedback": "Excellent. Your angles are consistent, your slope comes from a large triangle and your refractive index is just what crown glass gives."
+          },
+          {
+            "tier": "full",
+            "text": "Rays were traced for five angles of incidence using four pins each time and the refracted ray NM was drawn.\ni / r / sin i / sin r: 20 / 14 / 0.342 / 0.242; 30 / 20 / 0.500 / 0.342; 40 / 25 / 0.643 / 0.423; 50 / 30 / 0.766 / 0.500; 60 / 35 / 0.866 / 0.574.\nThe graph of sin i against sin r is a straight line passing through the origin with slope 1.50. Therefore n = 1.50.\nPrecautions: I made sure the block was returned exactly to its outline, and the pins were vertical.",
+            "scores": [4, 3, 2],
+            "feedback": "Good tracing and a correct result. Show the triangle you used for the slope and label the axes on your graph to get full marks for results."
+          },
+          {
+            "tier": "partial",
+            "text": "Method: we traced the block and used pins to find the refracted rays for 20°, 30°, 40°, 50°, 60°.\nResults: r = 13°, 20°, 26°, 30°, 36°.\nn = sin i / sin r: 1.52, 1.46, 1.47, 1.53, 1.47. Average n = 1.49.\nPrecaution: avoid parallax.",
+            "scores": [3, 2, 1],
+            "feedback": "Your tracing and ratios are good, and the average is sensible. The task asks for a graph of sin i against sin r and its slope; add that, and give a second precaution."
+          },
+          {
+            "tier": "partial",
+            "text": "Angles of incidence 20, 30, 40, 50, 60. Angles of refraction 13, 19, 25, 31, 35. I plotted i against r and got a straight line. The slope was 1.7 so the refractive index is 1.7. Precautions: pins were vertical, block was not moved.",
+            "scores": [3, 1, 2],
+            "feedback": "Your angles are well measured. The graph must be of sin i against sin r, not i against r; the angles themselves are not in proportion, which is why your slope came out too big."
+          },
+          {
+            "tier": "weak",
+            "text": "We put the glass block on the paper and put pins. The light bends when it enters the glass. The angle of refraction is bigger than the angle of incidence because glass is denser. The refractive index is 30/19 = 1.6.",
+            "scores": [1, 0, 0],
+            "feedback": "Light bends towards the normal entering glass, so r is smaller than i, as your own 30° and 19° show. Use sines, not the angles, and take five readings to draw the graph."
+          },
+          {
+            "tier": "weak",
+            "text": "Aim: to find the refractive index of the glass block. Apparatus: glass block, optical pins, drawing board, white paper, protractor. We traced the outline of the block, drew a normal, and sent in rays at different angles, marking them with pins. We removed the block and joined up the pin marks to find the refracted rays, then measured the angles. We plotted the graph. The refractive index of glass is 1.5 from the textbook.",
+            "scores": [1, 0, 1],
+            "feedback": "You listed the apparatus, but no readings or graph appear in your write-up, and the answer must come from your own slope, not the textbook. Copy in your table and work out the slope."
+          }
+        ]
+      }
+    },
+    "8": {
+      "topic": "Sound: travel, echoes and vibrating strings",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name sources of sound and show that sound needs a material medium;\n2. compare the speed of sound in solids, liquids and air, and state how temperature and pressure affect it;\n3. use echoes to find distances and explain reverberation;\n4. relate pitch, loudness and quality to frequency, amplitude and overtones;\n5. use f₀ = (1/2l)√(T/m) for a vibrating string.\n\n## Materials\n\nA tuning fork, a bell jar with an electric bell, a vacuum pump, a sonometer with slotted masses, a guitar or local string instrument (goje), a stopwatch, a metre rule.\n\n## Starter (5 minutes)\n\nAsk: during a storm, why do we see lightning before we hear the thunder?\n\n## Development\n\n1. Strike a tuning fork and touch it to water to show that sound comes from vibrating bodies.\n2. Ring the bell in the bell jar and pump out the air. Students note the sound dying away while the hammer still strikes.\n3. Compare speeds: about 340 m/s in air, 1500 m/s in water, 5000 m/s in steel. Explain that speed in air rises with temperature but does not change with pressure.\n4. Take the class outside to clap in front of the school wall. Derive speed = 2d/t for an echo and its use in sonar and mineral prospecting. Explain reverberation in the assembly hall.\n5. Distinguish noise from music. Link pitch to frequency, loudness to amplitude and quality to overtones.\n6. On the sonometer, show that a shorter, tighter or lighter wire gives a higher note. Write f₀ = (1/2l)√(T/m) and work an example.\n\n## Class activity\n\nIn groups, students tune the sonometer to a tuning fork by moving the bridge and record the length for three tensions.\n\n## Evaluation\n\n1. An echo from a cliff 170 m away returns after 1 s. What is the speed of sound?\n2. What happens to the frequency of a guitar string when it is tightened?\n\n## Assignment\n\nWorksheet questions, due Thursday.",
+      "reading": {
+        "title": "How sound travels and how strings make music",
+        "content": "# Sources of sound\n\nEvery sound comes from something vibrating: the skin of a talking drum, a guitar string, the cone of a loudspeaker, your vocal cords. The vibrations push and pull on the air, sending out a **longitudinal wave** of compressions and rarefactions.\n\n## Sound needs a medium\n\nIf an electric bell rings inside a bell jar and the air is pumped out, the sound fades away, even though you can still see the hammer striking the gong. Sound cannot travel through a vacuum.\n\n## The speed of sound\n\nSound travels at about 340 m/s in air, about 1500 m/s in water and about 5000 m/s in steel; the closer the particles, the faster the vibration is passed on. In air, the speed rises with temperature, but a change of pressure alone does not change it.\n\n## Echoes\n\nAn **echo** is a reflected sound. The sound travels to the reflector and back, so\n\nspeed = 2 × distance ÷ time.\n\n**Worked example.** A hunter fires a gun 102 m from a cliff and hears the echo 0.6 s later. Speed = 2 × 102 ÷ 0.6 = 340 m/s.\n\nShips use echoes (sonar) to measure the depth of the sea, and oil companies in the Niger Delta send sound into the ground and time the echoes to find rock layers. **Reverberation** happens when many reflections arrive so close together that they blur the original sound, as in a large empty hall or in rolling thunder.\n\n## Characteristics of sound\n\n- **Pitch** depends on frequency: a high frequency gives a high note.\n- **Loudness** depends on amplitude.\n- **Quality** (timbre) depends on the overtones that come with the fundamental note. It is why a flute and a guitar playing the same note sound different.\n\nMusic has a regular pattern of vibration; noise is irregular.\n\n## Vibrating strings\n\nA plucked string vibrates with its lowest (fundamental) frequency\n\nf₀ = (1/2l) √(T/m)\n\nwhere l is the length, T the tension and m the mass per unit length. A shorter, tighter or thinner string gives a higher note. This is how a guitarist tunes the strings and changes notes by pressing on the frets.\n\n**Worked example.** A sonometer wire 0.3 m long has a tension of 36 N and a mass per unit length of 0.01 kg/m. f₀ = (1 ÷ 0.6) × √(36 ÷ 0.01) = 60 ÷ 0.6 = 100 Hz."
+      },
+      "cards": [
+        {
+          "front": "What every source of sound has in common",
+          "back": "It is vibrating."
+        },
+        {
+          "front": "Can sound travel through a vacuum?",
+          "back": "No. Sound needs a material medium."
+        },
+        {
+          "front": "Speed of sound in air",
+          "back": "About 340 m/s; it increases with temperature but not with pressure alone."
+        },
+        {
+          "front": "Echo equation",
+          "back": "Speed = 2 × distance ÷ time, because the sound goes there and back."
+        },
+        {
+          "front": "Reverberation",
+          "back": "Many reflections arriving so close together that they prolong and blur a sound."
+        },
+        {
+          "front": "Pitch",
+          "back": "How high or low a note is; it depends on frequency."
+        },
+        {
+          "front": "Loudness",
+          "back": "Depends on the amplitude of the sound wave."
+        },
+        {
+          "front": "Quality (timbre)",
+          "back": "Depends on the overtones present with the fundamental."
+        },
+        {
+          "front": "Frequency of a string",
+          "back": "f₀ = (1/2l)√(T/m)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A student claps hands 85 m in front of the school fence and hears the echo 0.5 s later. What is the speed of sound in air?",
+          "options": ["170 m/s", "340 m/s", "42.5 m/s", "680 m/s"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Through which of these can sound NOT travel?",
+          "options": ["Water", "Steel", "A vacuum", "Air"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A singer in a church choir sings a higher note. What has changed in the sound wave?",
+          "options": [
+            "Its frequency",
+            "Its amplitude",
+            "Its quality",
+            "Its speed"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The tension in a sonometer wire is made four times as large, with the length unchanged. What happens to its fundamental frequency?",
+          "options": [
+            "It halves",
+            "It becomes four times as large",
+            "It does not change",
+            "It doubles"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A ship off the coast of Bonny sends a sound pulse to the seabed and receives the echo 2 s later. If sound travels at 1500 m/s in sea water, how deep is the sea there?",
+          "options": ["3000 m", "750 m", "1500 m", "1.33 m"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe an experiment to show that sound needs a material medium to travel. Say what you would observe and what you would conclude.",
+          "markScheme": [
+            "Apparatus: an electric bell placed inside a bell jar connected to a vacuum pump",
+            "Observation with air in the jar: the bell is heard ringing",
+            "Observation as air is pumped out: the sound becomes fainter and dies away although the hammer is still seen striking the gong",
+            "Conclusion: sound needs a material medium (cannot pass through a vacuum)"
+          ],
+          "modelAnswer": "An electric bell is hung inside a bell jar that is connected to a vacuum pump. The bell is switched on and is heard ringing clearly. As the pump removes the air, the sound gets fainter and finally cannot be heard, although the hammer can still be seen hitting the gong. When air is let back in, the sound returns. This shows that sound needs a material medium and cannot travel through a vacuum.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Put an electric bell inside a bell jar and connect the jar to a vacuum pump. Switch on the bell and you hear it ring. Start pumping the air out; the sound becomes fainter and fainter until you cannot hear it, but you still see the hammer hitting the gong. So sound needs a medium like air to travel.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Put an electric bell inside a bell jar and connect the jar to a vacuum pump"
+                },
+                {
+                  "point": 1,
+                  "quote": "Switch on the bell and you hear it ring"
+                },
+                {
+                  "point": 2,
+                  "quote": "the sound becomes fainter and fainter until you cannot hear it, but you still see the hammer hitting the gong"
+                },
+                {
+                  "point": 3,
+                  "quote": "sound needs a medium like air to travel"
+                }
+              ],
+              "feedback": "A clear, complete description, and mentioning that the hammer can still be seen makes the conclusion convincing. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Apparatus: electric bell, bell jar, vacuum pump, battery. With air inside, the ringing is loud. When the air is removed by the pump the ringing dies out, though the striker is still vibrating. Letting the air back in brings the sound back. Conclusion: sound cannot travel through a vacuum; it needs a material medium.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Apparatus: electric bell, bell jar, vacuum pump"
+                },
+                {
+                  "point": 1,
+                  "quote": "With air inside, the ringing is loud"
+                },
+                {
+                  "point": 2,
+                  "quote": "When the air is removed by the pump the ringing dies out, though the striker is still vibrating"
+                },
+                {
+                  "point": 3,
+                  "quote": "sound cannot travel through a vacuum; it needs a material medium"
+                }
+              ],
+              "feedback": "Well organised, and letting the air back in is a good check. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "An electric bell is placed in a bell jar and the air is pumped out with a vacuum pump. The sound stops. This shows that sound needs air.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "An electric bell is placed in a bell jar and the air is pumped out with a vacuum pump"
+                },
+                {
+                  "point": 3,
+                  "quote": "This shows that sound needs air"
+                }
+              ],
+              "feedback": "Your apparatus and conclusion are right. Describe both observations: the bell is heard at first, and as the air is removed the sound fades even though the hammer is still seen striking.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Use a bell in a jar with a pump. When the air is taken out you can still see the hammer hitting but the sound goes off gradually.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Use a bell in a jar with a pump"
+                },
+                {
+                  "point": 2,
+                  "quote": "When the air is taken out you can still see the hammer hitting but the sound goes off gradually"
+                }
+              ],
+              "feedback": "Your observation is exactly right. Say that the bell is heard at first, and finish with the conclusion: sound needs a material medium."
+            },
+            {
+              "tier": "weak",
+              "text": "Put a radio in a box and close it. The sound is lower so sound needs air.",
+              "meets": [],
+              "feedback": "A closed box still has air in it, so this does not test whether sound needs a medium. The experiment uses a bell in a bell jar with the air pumped out."
+            },
+            {
+              "tier": "weak",
+              "text": "Sound travels faster in solids than in air because the particles are close together, so it needs a medium.",
+              "meets": [],
+              "feedback": "That fact is true, but the question asks for an experiment. Describe the bell in the bell jar, what you hear as the air is pumped out, and what that shows."
+            }
+          ]
+        },
+        {
+          "prompt": "A sonometer wire 0.50 m long is under a tension of 64 N and has a mass per unit length of 0.010 kg/m. Calculate its fundamental frequency. What would the frequency become if the length were reduced to 0.25 m with the tension unchanged?",
+          "markScheme": [
+            "Correct substitution into f₀ = (1/2l)√(T/m): (1/(2 × 0.50))√(64/0.010)",
+            "√(T/m) = √6400 = 80",
+            "f₀ = 80 Hz, with unit",
+            "Halving the length doubles the frequency: 160 Hz"
+          ],
+          "modelAnswer": "f₀ = (1/2l)√(T/m) = (1/(2 × 0.50)) × √(64 ÷ 0.010) = 1 × √6400 = 80 Hz. Frequency is inversely proportional to length, so halving the length to 0.25 m doubles the frequency to 160 Hz.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "f = 1/2l x √(T/m) = 1/(2 x 0.5) x √(64/0.01) = 1 x √6400 = 80 Hz. f is inversely proportional to l, so when l is halved f is doubled = 160 Hz.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/(2 x 0.5) x √(64/0.01)"
+                },
+                {
+                  "point": 1,
+                  "quote": "√6400 = 80"
+                },
+                {
+                  "point": 2,
+                  "quote": "80 Hz"
+                },
+                {
+                  "point": 3,
+                  "quote": "when l is halved f is doubled = 160 Hz"
+                }
+              ],
+              "feedback": "Correct, and using the inverse proportion for the second part saved you time. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "T/m = 64 ÷ 0.010 = 6400, √6400 = 80.\nf₀ = 80 ÷ (2 × 0.50) = 80 ÷ 1.0 = 80 Hz.\nNew length: f = 80 ÷ (2 × 0.25) = 80 ÷ 0.5 = 160 Hz.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "f₀ = 80 ÷ (2 × 0.50)"
+                },
+                {
+                  "point": 1,
+                  "quote": "√6400 = 80"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 80 Hz"
+                },
+                {
+                  "point": 3,
+                  "quote": "f = 80 ÷ (2 × 0.25) = 80 ÷ 0.5 = 160 Hz"
+                }
+              ],
+              "feedback": "Clear working in both parts, with units. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "f = 1/2l √(T/m) = 1/1 x √(64/0.01) = √6400 = 80 Hz. When the length is reduced the frequency will reduce to 40 Hz.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1/1 x √(64/0.01)"
+                },
+                {
+                  "point": 1,
+                  "quote": "√6400 = 80"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 80 Hz"
+                }
+              ],
+              "feedback": "Your first answer is correct. Look at the formula again: l is in the denominator, so a shorter string gives a higher note. Halving the length doubles the frequency to 160 Hz."
+            },
+            {
+              "tier": "partial",
+              "text": "f = 1/2l x √(T/m) = 1/(2 x 0.5) x √(64 x 0.01) = 1 x 0.8 = 0.8 Hz. If the length is halved the frequency doubles so 1.6 Hz.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "If the length is halved the frequency doubles"
+                }
+              ],
+              "feedback": "You know halving the length doubles the frequency. Under the square root, divide the tension by the mass per unit length, 64 ÷ 0.010 = 6400, which gives 80 Hz and then 160 Hz."
+            },
+            {
+              "tier": "weak",
+              "text": "f = v/λ = 64/0.5 = 128 Hz",
+              "meets": [],
+              "feedback": "64 N is the tension, not the speed of the wave. For a string, use f₀ = (1/2l)√(T/m) and substitute all three values."
+            },
+            {
+              "tier": "weak",
+              "text": "f = 2l√(T/m) = 2 x 0.5 x 80 = 80 Hz. When the length is 0.25 m the frequency is 2 x 0.25 x 80 = 40 Hz.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "80"
+                }
+              ],
+              "feedback": "You worked out √(T/m) = 80 correctly, but the formula is 1/2l, not 2l. You reached 80 Hz by chance, which is why the second part came out wrong; it should be 160 Hz.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Resonance, pipes and the gravitational field",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain forced vibration and resonance, and use overtones to explain the quality of a note;\n2. find the speed of sound with a resonance tube, allowing for the end correction;\n3. compare the notes of open and closed pipes;\n4. describe gravitational, electric and magnetic fields and plot magnetic field lines;\n5. define g as gravitational field intensity and apply Newton's law of gravitation.\n\n## Materials\n\nTuning forks (256 Hz and 512 Hz), a sonometer, a resonance tube, a metre rule, a bar magnet, iron filings, plotting compasses, a whistle.\n\n## Starter (5 minutes)\n\nPlay a long note on a flute or whistle, then blow across an empty bottle. Ask: where is the sound coming from when nothing solid is vibrating?\n\n## Development\n\n1. Press the stem of a struck fork on the sonometer box: the box vibrates in forced vibration. Tune the wire until a paper rider jumps off: resonance. Explain overtones and quality with drums and bells.\n2. Lower the resonance tube in the water with a sounding fork over it until the note is loudest. Measure l₁ and l₂. Show λ = 2(l₂ − l₁) and the end correction e = λ/4 − l₁.\n3. Draw the air columns in open and closed pipes; an open pipe gives all harmonics, a closed pipe only odd ones. Link to the organ, flute and clarinet.\n4. Sprinkle iron filings round the magnet and plot the field with compasses. Define a field of force and its properties.\n5. State Newton's law, F = Gm₁m₂/r². Define g = F/m and show g = GM/R². Calculate g for the earth.\n\n## Class activity\n\nGroups use the resonance tube with the 512 Hz fork, record l₁ and l₂ and calculate the speed of sound.\n\n## Evaluation\n\n1. What happens to the gravitational force between two masses if the distance between them is doubled?\n2. Why is the sound loudest at certain lengths of the resonance tube?\n\n## Assignment\n\nRevise for Friday's quiz.",
+      "reading": {
+        "title": "Resonance and fields of force",
+        "content": "# Forced vibration and resonance\n\nWhen a vibrating body makes another body vibrate, the second body is in **forced vibration**. If the frequency of the forcing body equals the **natural frequency** of the second body, the second body vibrates with a very large amplitude. This is **resonance**.\n\nSoldiers break step on a bridge so that their marching does not set it resonating, and a radio is tuned by making its circuit resonate with one station's frequency.\n\nA vibrating body gives its lowest note, the **fundamental**, together with higher notes called **overtones**. The mixture of overtones gives each instrument its **quality**. A drum, a bell and a xylophone bar all have their own pattern of overtones.\n\n## Vibrating air columns\n\nIn a pipe closed at one end, the first resonance occurs when the air column is a quarter of a wavelength long. Because the vibration reaches a little beyond the open end, we add an **end correction**, e:\n\nλ/4 = l₁ + e, and λ/2 = l₂ − l₁ for the second resonance.\n\n**Worked example.** With a 256 Hz fork, resonance occurs at 32.0 cm and 99.0 cm. λ/2 = 67.0 cm, so λ = 1.34 m and v = fλ = 256 × 1.34 = 343 m/s. The end correction is λ/4 − l₁ = 33.5 − 32.0 = 1.5 cm.\n\nA closed pipe gives only odd harmonics; an open pipe gives all of them, so an open organ pipe and a closed one of the same length sound different. The flute is an open pipe; the clarinet behaves like a closed one.\n\n## Fields of force\n\nA **field** is a region in which a force is felt: a mass feels a gravitational force, a charge feels an electric force, and a magnetic material feels a magnetic force. Iron filings sprinkled round a bar magnet line up along the field lines, which run from the north pole to the south pole and never cross.\n\n## Gravitation\n\nNewton's law of gravitation states that every particle attracts every other with a force proportional to the product of their masses and inversely proportional to the square of their distance apart:\n\nF = Gm₁m₂/r², with G = 6.67 × 10⁻¹¹ N m² kg⁻².\n\nThe **gravitational field intensity** at a point is the force on 1 kg there: g = F/m, in N/kg. At the earth's surface, g = GM/R².\n\n**Worked example.** M = 6.0 × 10²⁴ kg and R = 6.4 × 10⁶ m. g = (6.67 × 10⁻¹¹ × 6.0 × 10²⁴) ÷ (6.4 × 10⁶)² = 9.8 N/kg."
+      },
+      "cards": [
+        {
+          "front": "Forced vibration",
+          "back": "Vibration of a body caused by another vibrating body."
+        },
+        {
+          "front": "Resonance",
+          "back": "Large-amplitude vibration when the forcing frequency equals the natural frequency of the body."
+        },
+        {
+          "front": "Overtones",
+          "back": "Higher frequencies sounded with the fundamental; they give a note its quality."
+        },
+        {
+          "front": "End correction",
+          "back": "The small extra length beyond the open end of a pipe where the air still vibrates."
+        },
+        {
+          "front": "Closed pipe, first resonance",
+          "back": "l₁ + e = λ/4."
+        },
+        {
+          "front": "Field of force",
+          "back": "A region in which a mass, a charge or a magnetic material feels a force."
+        },
+        {
+          "front": "Newton's law of gravitation",
+          "back": "F = Gm₁m₂/r²."
+        },
+        {
+          "front": "Gravitational field intensity",
+          "back": "The force on a unit mass, g = F/m, in N/kg."
+        },
+        {
+          "front": "Relation between g and G",
+          "back": "g = GM/R², where M and R are the mass and radius of the earth."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A 500 Hz tuning fork is held over a resonance tube. Ignoring the end correction, the first resonance occurs when the air column is 0.17 m long. What is the speed of sound?",
+          "options": ["85 m/s", "170 m/s", "340 m/s", "680 m/s"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Soldiers marching across a footbridge are ordered to break step. This is to avoid",
+          "options": [
+            "an echo",
+            "resonance",
+            "diffraction of the sound of their boots",
+            "reverberation"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Two masses attract each other with a gravitational force F. If the distance between them is doubled, what is the new force?",
+          "options": ["F/4", "F/2", "2F", "4F"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A 5 kg bag of garri weighs 49 N. What is the gravitational field intensity where it is weighed?",
+          "options": ["245 N/kg", "0.1 N/kg", "44 N/kg", "9.8 N/kg"],
+          "answer": "D"
+        },
+        {
+          "prompt": "The direction of a magnetic field line at a point is the direction in which",
+          "options": [
+            "the south pole of a small compass would point",
+            "the north pole of a small compass would point",
+            "iron filings would move",
+            "the earth's gravity acts"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "What is meant by resonance? Describe how resonance can be shown with a tuning fork and a sonometer, and give one everyday example of resonance.",
+          "markScheme": [
+            "Resonance occurs when a body is made to vibrate at its own natural frequency by another body vibrating at the same frequency",
+            "The body then vibrates with a large (maximum) amplitude",
+            "Demonstration: a sounding fork's stem is pressed on the sonometer box and the wire length adjusted until a paper rider on the wire jumps off (or the sound is loudest)",
+            "A correct everyday example (e.g. tuning a radio, a bridge vibrating under marching soldiers, a glass shattering at a sung note)"
+          ],
+          "modelAnswer": "Resonance happens when a body is set vibrating by another body whose frequency equals its own natural frequency. The body then vibrates with a very large amplitude. To show it, place a small paper rider on the sonometer wire, strike a tuning fork and press its stem on the sonometer box, and move the bridge to change the length of the wire. At one length the wire's natural frequency equals the fork's and the rider jumps off. Tuning a radio to a station is an everyday example.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Resonance is when a body vibrates at its natural frequency because another body is vibrating at that same frequency, and its amplitude becomes very large. Put a paper rider on the sonometer wire, strike a fork and place it on the box, and slide the bridge. At the right length the rider jumps off because the wire is resonating. Example: when you tune a radio to a station.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a body vibrates at its natural frequency because another body is vibrating at that same frequency"
+                },
+                {
+                  "point": 1,
+                  "quote": "its amplitude becomes very large"
+                },
+                {
+                  "point": 2,
+                  "quote": "At the right length the rider jumps off because the wire is resonating"
+                },
+                {
+                  "point": 3,
+                  "quote": "when you tune a radio to a station"
+                }
+              ],
+              "feedback": "Full marks. Your demonstration is described step by step, with the paper rider showing the large amplitude clearly."
+            },
+            {
+              "tier": "full",
+              "text": "If the frequency of a forcing vibration is the same as the natural frequency of an object, the object vibrates with maximum amplitude. That is resonance. When the stem of a sounding fork is pressed on the sonometer box and the wire is adjusted until its note matches the fork, the sound becomes loudest. Soldiers break step on bridges because of resonance.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "If the frequency of a forcing vibration is the same as the natural frequency of an object"
+                },
+                {
+                  "point": 1,
+                  "quote": "the object vibrates with maximum amplitude"
+                },
+                {
+                  "point": 2,
+                  "quote": "the wire is adjusted until its note matches the fork, the sound becomes loudest"
+                },
+                {
+                  "point": 3,
+                  "quote": "Soldiers break step on bridges because of resonance"
+                }
+              ],
+              "feedback": "Clear definition and a sound demonstration. Full marks."
+            },
+            {
+              "tier": "partial",
+              "text": "Resonance is when two things vibrate at the same frequency and the sound becomes loud. Example is a radio.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "the sound becomes loud"
+                },
+                {
+                  "point": 3,
+                  "quote": "Example is a radio"
+                }
+              ],
+              "feedback": "You have the large amplitude and a good example. Say that the forcing frequency matches the body's natural frequency, and describe the sonometer demonstration.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "Resonance happens when a body is forced to vibrate at its natural frequency by another vibrating body. Strike a tuning fork and put it on the sonometer box, then move the bridge until a paper rider falls off the wire.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a body is forced to vibrate at its natural frequency by another vibrating body"
+                },
+                {
+                  "point": 2,
+                  "quote": "move the bridge until a paper rider falls off the wire"
+                }
+              ],
+              "feedback": "Your definition and demonstration are good. Add that the amplitude becomes very large, and give an everyday example such as tuning a radio."
+            },
+            {
+              "tier": "weak",
+              "text": "Resonance is when sound is reflected from a wall and comes back to you.",
+              "meets": [],
+              "feedback": "That is an echo. Resonance is a large vibration when a body is driven at its own natural frequency. Read the first section of this week's reading again."
+            },
+            {
+              "tier": "weak",
+              "text": "Resonance is when the tuning fork vibrates very fast. When you put it on the sonometer it makes the wire vibrate and the sound is loud.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "the sound is loud"
+                }
+              ],
+              "feedback": "You noticed the loud sound. The key idea is matching frequencies: the wire resonates only when its natural frequency equals the fork's. Add how you would adjust the wire, and an example."
+            }
+          ]
+        },
+        {
+          "prompt": "In a resonance tube experiment with a 512 Hz tuning fork, the first resonance occurs when the air column is 16.0 cm long and the second when it is 49.5 cm long. Calculate the wavelength of the sound, the speed of sound in air and the end correction of the tube.",
+          "markScheme": [
+            "λ/2 = l₂ − l₁ = 49.5 − 16.0 = 33.5 cm",
+            "λ = 67.0 cm (0.67 m)",
+            "v = fλ = 512 × 0.67 = 343 m/s",
+            "End correction e = λ/4 − l₁ = 16.75 − 16.0 = 0.75 cm"
+          ],
+          "modelAnswer": "The difference between the two resonance lengths is half a wavelength: λ/2 = 49.5 − 16.0 = 33.5 cm, so λ = 67.0 cm = 0.67 m. The speed of sound is v = fλ = 512 × 0.67 = 343 m/s. At the first resonance, l₁ + e = λ/4, so e = 16.75 − 16.0 = 0.75 cm.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "l2 - l1 = λ/2\n49.5 - 16.0 = 33.5 cm = λ/2\nλ = 67 cm = 0.67 m\nv = fλ = 512 x 0.67 = 343 m/s\nl1 + e = λ/4 = 16.75 cm\ne = 16.75 - 16.0 = 0.75 cm",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "49.5 - 16.0 = 33.5 cm = λ/2"
+                },
+                {
+                  "point": 1,
+                  "quote": "λ = 67 cm = 0.67 m"
+                },
+                {
+                  "point": 2,
+                  "quote": "v = fλ = 512 x 0.67 = 343 m/s"
+                },
+                {
+                  "point": 3,
+                  "quote": "e = 16.75 - 16.0 = 0.75 cm"
+                }
+              ],
+              "feedback": "Every step is correct and well laid out. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The two lengths differ by half a wavelength, 33.5 cm, so the wavelength is 67.0 cm. Speed = 512 × 0.670 = 343 m/s. A quarter wavelength is 16.75 cm but the first length was only 16.0 cm, so the end correction is 0.75 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The two lengths differ by half a wavelength, 33.5 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "the wavelength is 67.0 cm"
+                },
+                {
+                  "point": 2,
+                  "quote": "Speed = 512 × 0.670 = 343 m/s"
+                },
+                {
+                  "point": 3,
+                  "quote": "the end correction is 0.75 cm"
+                }
+              ],
+              "feedback": "Correct throughout, and explaining the end correction in words shows you understand what it is."
+            },
+            {
+              "tier": "partial",
+              "text": "λ = 4 x l1 = 4 x 16 = 64 cm. v = 512 x 0.64 = 327.7 m/s. λ/2 = 49.5 - 16 = 33.5 so λ = 67 cm.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "λ/2 = 49.5 - 16 = 33.5"
+                },
+                {
+                  "point": 1,
+                  "quote": "λ = 67 cm"
+                }
+              ],
+              "feedback": "Your second method, from the difference of the two lengths, gives the right wavelength. Use that 0.67 m for the speed; 4 × l₁ ignores the end correction. Then find e = λ/4 − l₁."
+            },
+            {
+              "tier": "partial",
+              "text": "λ/2 = 33.5 cm, λ = 67 cm. v = fλ = 512 x 67 = 34304 m/s.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "λ/2 = 33.5 cm"
+                },
+                {
+                  "point": 1,
+                  "quote": "λ = 67 cm"
+                }
+              ],
+              "feedback": "Your wavelength is right, but change it to metres before multiplying: 512 × 0.67 = 343 m/s. A speed of 34 000 m/s should tell you a unit is wrong. Then find the end correction."
+            },
+            {
+              "tier": "weak",
+              "text": "λ = 49.5 + 16 = 65.5 cm. v = 512 / 0.655 = 781 m/s.",
+              "meets": [],
+              "feedback": "The two lengths differ by half a wavelength, so subtract them and double: λ = 2 × (49.5 − 16.0). Speed is frequency times wavelength, not divided by it."
+            },
+            {
+              "tier": "weak",
+              "text": "The end correction is the extra length at the top of the tube, it is 0.6 times the radius of the tube. v = 512 x 16 = 8192.",
+              "meets": [],
+              "feedback": "e is about 0.6 times the radius, but no radius is given here; find e from λ/4 − l₁. Start with λ/2 = l₂ − l₁, then v = fλ in metres."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Escape velocity and electric charges",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain gravitational potential and calculate the escape velocity from the earth;\n2. produce charges by friction, induction and contact;\n3. use a gold-leaf electroscope to detect charge and show how charge spreads on differently shaped conductors;\n4. explain the action of a lightning conductor;\n5. draw electric field patterns and apply Coulomb's law.\n\n## Materials\n\nA polythene rod, a cellulose acetate rod, a woollen cloth, a silk cloth, a gold-leaf electroscope, a pear-shaped conductor on an insulating stand, a proof plane, small bits of paper, a plastic comb, a chart of field patterns.\n\n## Starter (5 minutes)\n\nComb dry hair (or rub a biro on your sleeve) and pick up bits of paper. Ask: why do you sometimes feel a small shock when you remove a nylon shirt during harmattan?\n\n## Development\n\n1. Recall gravitational potential, V = −GM/r. Show that a rocket escapes when ½mv² = GMm/R, giving v = √(2gR). Work it out for the earth.\n2. Rub polythene with wool and acetate with silk. Show like charges repel and unlike charges attract. Explain charging by friction as the transfer of electrons.\n3. Charge the electroscope by contact, then by induction, step by step.\n4. Touch the proof plane to different parts of the pear-shaped conductor and test on the electroscope: charge gathers at the sharp end. Explain point discharge and the lightning conductor on a tall building.\n5. Draw field lines round single and paired charges. State Coulomb's law, F = q₁q₂/(4πε₀r²), and explain permittivity. Work an example.\n\n## Class activity\n\nIn pairs, students draw the field pattern between two unlike charges and between two like charges, marking the neutral point.\n\n## Evaluation\n\n1. Why is a lightning conductor pointed?\n2. Two charges repel with a force of 8 N. What is the force if the distance between them is doubled?\n\n## Assignment\n\nProblem set questions, due Monday.",
+      "reading": {
+        "title": "Escaping gravity, and the forces between charges",
+        "content": "# Gravitational potential and escape velocity\n\nThe **gravitational potential** at a point is the work done in bringing a unit mass from infinity to that point. Because gravity attracts, the work is negative: V = −GM/r.\n\nTo escape completely from the earth, a rocket must be launched with enough kinetic energy to reach infinity:\n\n½mv² = GMm/R, so v = √(2GM/R) = √(2gR).\n\n**Worked example.** On the moon, g = 1.6 m/s² and R = 1.7 × 10⁶ m. v = √(2 × 1.6 × 1.7 × 10⁶) = √(5.44 × 10⁶) = 2.3 × 10³ m/s, about 2.3 km/s. The earth's escape velocity, worked the same way, is about 11 km/s.\n\n# Electric charges\n\nThere are two kinds of charge, positive and negative. **Like charges repel; unlike charges attract.**\n\n## Producing charge\n\n- **Friction**: rubbing a polythene rod with wool moves electrons from the wool to the rod, so the rod becomes negative and the wool positive.\n- **Contact**: a charged rod touched on a conductor shares its charge with it, giving the conductor the same sign.\n- **Induction**: a charged rod held near a conductor pushes its free electrons to one side. If the conductor is earthed and then the earth is removed before the rod, it is left with a charge opposite to the rod's.\n\nThe **gold-leaf electroscope** detects charge: its leaves spread apart when it is charged.\n\n## Distribution of charge\n\nOn a conductor, charge collects most densely where the surface is most sharply curved. At a sharp point the charge can become so dense that it ionises the air and leaks away. A **lightning conductor** is a pointed copper rod on top of a tall building, connected to a plate in the ground. It discharges the cloud above it and carries a strike safely to earth.\n\n## Electric fields and Coulomb's law\n\nElectric lines of force start on positive charges and end on negative charges. They never cross, and they are closest where the field is strongest.\n\n**Coulomb's law**: the force between two point charges is proportional to the product of the charges and inversely proportional to the square of their distance apart:\n\nF = q₁q₂ / (4πε₀r²), with 1/(4πε₀) = 9 × 10⁹ N m² C⁻² in air.\n\nε₀ is the **permittivity** of free space. A medium with a higher permittivity reduces the force.\n\n**Worked example.** Charges of 1 μC and 5 μC are 0.15 m apart in air. F = 9 × 10⁹ × 1 × 10⁻⁶ × 5 × 10⁻⁶ ÷ 0.15² = 0.045 ÷ 0.0225 = 2.0 N, a repulsion."
+      },
+      "cards": [
+        {
+          "front": "Gravitational potential",
+          "back": "Work done in bringing a unit mass from infinity to a point; V = −GM/r."
+        },
+        {
+          "front": "Escape velocity",
+          "back": "The least launch speed that lets a body escape a planet's gravity; v = √(2gR), about 11.2 km/s for the earth."
+        },
+        {
+          "front": "Law of electric charges",
+          "back": "Like charges repel; unlike charges attract."
+        },
+        {
+          "front": "Charging by friction",
+          "back": "Rubbing transfers electrons from one material to the other."
+        },
+        {
+          "front": "Charging by induction",
+          "back": "Charging a conductor without touching it, by holding a charged body near and earthing the conductor."
+        },
+        {
+          "front": "Where charge collects on a conductor",
+          "back": "Most densely at the sharpest points."
+        },
+        {
+          "front": "Lightning conductor",
+          "back": "A pointed rod on a tall building, earthed, which discharges clouds and carries lightning safely to the ground."
+        },
+        {
+          "front": "Electric lines of force",
+          "back": "Start on positive and end on negative charges; they never cross."
+        },
+        {
+          "front": "Coulomb's law",
+          "back": "F = q₁q₂/(4πε₀r²)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Calculate the escape velocity from the earth's surface. (g = 10 m/s², radius of the earth = 6.4 × 10⁶ m)",
+          "options": ["8.0 km/s", "11.3 km/s", "1.28 × 10⁸ m/s", "80 km/s"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Two point charges of 2 μC and 3 μC are 0.3 m apart in air. What is the force between them? (1/4πε₀ = 9 × 10⁹ N m² C⁻²)",
+          "options": ["0.18 N", "0.06 N", "0.6 N", "1.8 N"],
+          "answer": "C"
+        },
+        {
+          "prompt": "A pear-shaped metal conductor on an insulating stand is given a positive charge. Where is the charge most concentrated?",
+          "options": [
+            "On the flattest part",
+            "At its centre, inside the metal",
+            "Evenly over the whole surface",
+            "At the most pointed end"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "On a dry harmattan morning, a plastic comb run through dry hair picks up small bits of paper. How was the comb charged?",
+          "options": [
+            "By friction",
+            "By induction",
+            "By contact",
+            "By conduction through the air"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which statement about electric lines of force is correct?",
+          "options": [
+            "They cross each other where the field is strong",
+            "They begin on positive charges and end on negative charges",
+            "They run from negative charges to positive charges",
+            "They form closed loops like magnetic field lines"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe, step by step, how you would give a gold-leaf electroscope a positive charge by induction using a negatively charged polythene rod. Say what happens to the leaves at each stage.",
+          "markScheme": [
+            "The negative rod is brought near (not touching) the cap; electrons are repelled to the leaves, which diverge",
+            "The cap is earthed (touched with a finger) with the rod still near; electrons flow to earth and the leaves collapse",
+            "The finger (earth) is removed first, while the rod is still near",
+            "The rod is then removed; the electroscope is left positively charged and the leaves diverge"
+          ],
+          "modelAnswer": "Bring the negatively charged rod close to the cap without touching it. Electrons in the cap are repelled down to the leaves, which spread apart. With the rod still near, touch the cap with a finger: the repelled electrons flow to earth and the leaves fall. Remove the finger first, keeping the rod in place, and then take the rod away. The electroscope now has fewer electrons than protons, so it is positively charged and the leaves spread apart again.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1. Bring the negative rod near the cap but do not touch. The electrons are pushed down to the leaves so the leaves open. 2. Touch the cap with your finger while the rod is still there. The electrons go to the earth through your body and the leaves close. 3. Take your finger away first. 4. Then take the rod away. The electroscope is now positive and the leaves open.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bring the negative rod near the cap but do not touch. The electrons are pushed down to the leaves so the leaves open"
+                },
+                {
+                  "point": 1,
+                  "quote": "Touch the cap with your finger while the rod is still there. The electrons go to the earth through your body and the leaves close"
+                },
+                {
+                  "point": 2,
+                  "quote": "Take your finger away first"
+                },
+                {
+                  "point": 3,
+                  "quote": "Then take the rod away. The electroscope is now positive and the leaves open"
+                }
+              ],
+              "feedback": "Every step in the right order, with the leaves described each time. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The rod is held close to the cap. Free electrons in the cap are repelled to the leaf and plate, and the leaf diverges. Earthing the cap lets these electrons escape to earth and the leaf collapses. The earth connection is broken before the rod is removed, otherwise electrons would return. When the rod goes, the electroscope has a deficit of electrons, i.e. a positive charge, and the leaf diverges.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Free electrons in the cap are repelled to the leaf and plate, and the leaf diverges"
+                },
+                {
+                  "point": 1,
+                  "quote": "Earthing the cap lets these electrons escape to earth and the leaf collapses"
+                },
+                {
+                  "point": 2,
+                  "quote": "The earth connection is broken before the rod is removed"
+                },
+                {
+                  "point": 3,
+                  "quote": "When the rod goes, the electroscope has a deficit of electrons, i.e. a positive charge, and the leaf diverges"
+                }
+              ],
+              "feedback": "Excellent. Explaining why the earth must be broken first shows real understanding of induction."
+            },
+            {
+              "tier": "partial",
+              "text": "Bring the negative rod near the cap and the leaves open. Touch the cap with your finger and the leaves close. Remove the rod and then remove your finger. The electroscope is positively charged.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bring the negative rod near the cap and the leaves open"
+                },
+                {
+                  "point": 1,
+                  "quote": "Touch the cap with your finger and the leaves close"
+                }
+              ],
+              "feedback": "Your first two steps are right, but the order at the end matters. Remove your finger before the rod; if the rod goes first, electrons flow back from earth and the electroscope is left uncharged."
+            },
+            {
+              "tier": "partial",
+              "text": "Hold the rod near the cap. Earth the cap by touching it, electrons flow away. Remove the finger, then remove the rod. The electroscope is now positive.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Remove the finger, then remove the rod"
+                },
+                {
+                  "point": 3,
+                  "quote": "The electroscope is now positive"
+                }
+              ],
+              "feedback": "Your order of steps is correct. The question also asks what the leaves do: say they diverge when the rod is brought near, collapse when the cap is earthed, and diverge again at the end.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Rub the polythene rod and touch it on the cap of the electroscope. The leaves will open because it is now charged positive.",
+              "meets": [],
+              "feedback": "Touching the cap is charging by contact, and it would give the electroscope the rod's own negative charge. For induction, hold the rod near without touching, then earth the cap."
+            },
+            {
+              "tier": "weak",
+              "text": "Bring the rod near and the protons move to the cap and the leaves open, then the electroscope is positive.",
+              "meets": [],
+              "feedback": "Protons do not move in a metal; only the free electrons do. The negative rod repels electrons to the leaves. Then you must earth the cap to remove them."
+            }
+          ]
+        },
+        {
+          "prompt": "Two small metal spheres carrying charges of +4 μC and −6 μC are 0.20 m apart in air. Calculate the force between them and say whether it is attractive or repulsive. What would the force be if they were moved to 0.60 m apart? (1/4πε₀ = 9 × 10⁹ N m² C⁻²)",
+          "markScheme": [
+            "Correct substitution: F = 9 × 10⁹ × 4 × 10⁻⁶ × 6 × 10⁻⁶ ÷ 0.20²",
+            "F = 5.4 N",
+            "The force is attractive because the charges are unlike",
+            "At 0.60 m (three times the distance) the force is one-ninth: 0.6 N"
+          ],
+          "modelAnswer": "F = (1/4πε₀) q₁q₂/r² = 9 × 10⁹ × 4 × 10⁻⁶ × 6 × 10⁻⁶ ÷ (0.20)² = 0.216 ÷ 0.04 = 5.4 N. The charges are unlike, so the force is attractive. At 0.60 m the distance is three times as large, so by the inverse square law the force is 5.4 ÷ 9 = 0.6 N.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "F = kq1q2/r² = 9x10^9 x 4x10^-6 x 6x10^-6 / 0.2² = 0.216/0.04 = 5.4 N. It is attractive because one is positive and one is negative. When r is 0.6 m, r is 3 times bigger so F is 1/9: 5.4/9 = 0.6 N.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "9x10^9 x 4x10^-6 x 6x10^-6 / 0.2²"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 5.4 N"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is attractive because one is positive and one is negative"
+                },
+                {
+                  "point": 3,
+                  "quote": "5.4/9 = 0.6 N"
+                }
+              ],
+              "feedback": "All correct, and using the inverse square law for the second part was efficient. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Force = 9 × 10⁹ × (4 × 10⁻⁶)(6 × 10⁻⁶) ÷ (0.20)² = 5.4 N, attraction since the charges are opposite. At 0.60 m: F = 9 × 10⁹ × 24 × 10⁻¹² ÷ 0.36 = 0.216 ÷ 0.36 = 0.6 N.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Force = 9 × 10⁹ × (4 × 10⁻⁶)(6 × 10⁻⁶) ÷ (0.20)²"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 5.4 N"
+                },
+                {
+                  "point": 2,
+                  "quote": "attraction since the charges are opposite"
+                },
+                {
+                  "point": 3,
+                  "quote": "0.216 ÷ 0.36 = 0.6 N"
+                }
+              ],
+              "feedback": "Correct both times. Recalculating at 0.60 m is a good check on the inverse square law."
+            },
+            {
+              "tier": "partial",
+              "text": "F = 9x10^9 x 4x10^-6 x 6x10^-6 / 0.2 = 1.08 N. It is attractive. At 0.6 m the force is 1.08/3 = 0.36 N.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "It is attractive"
+                }
+              ],
+              "feedback": "You know the force is attractive. Coulomb's law has r², not r: divide by 0.04 to get 5.4 N. Tripling the distance then divides the force by 9, not 3."
+            },
+            {
+              "tier": "partial",
+              "text": "F = 9 x 10^9 x 4 x 10^-6 x 6 x 10^-6 / (0.2)^2 = 5.4 N. The force is repulsive. At 0.6 m, F = 5.4/9 = 0.6 N.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "9 x 10^9 x 4 x 10^-6 x 6 x 10^-6 / (0.2)^2"
+                },
+                {
+                  "point": 1,
+                  "quote": "= 5.4 N"
+                },
+                {
+                  "point": 3,
+                  "quote": "F = 5.4/9 = 0.6 N"
+                }
+              ],
+              "feedback": "Your calculations are all correct. One charge is positive and the other negative, so they attract; only like charges repel."
+            },
+            {
+              "tier": "weak",
+              "text": "F = q1 x q2 = 4 x 6 = 24 N. The force is attractive.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The force is attractive"
+                }
+              ],
+              "feedback": "You chose attraction correctly. The force also depends on the distance and the constant: F = 9 × 10⁹ × q₁q₂ ÷ r², with the charges in coulombs."
+            },
+            {
+              "tier": "weak",
+              "text": "F = 9 x 10^9 x 4 x 6 / 0.2^2 = 5.4 x 10^12 N. When the distance increases the force increases.",
+              "meets": [],
+              "feedback": "Microcoulombs must be changed to coulombs (× 10⁻⁶) before substituting. And the force gets weaker as the charges move apart, as the inverse square law says."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

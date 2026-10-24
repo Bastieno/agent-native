@@ -1,0 +1,2721 @@
+{
+  "subject": "Economics",
+  "yearGroup": "SS2",
+  "weeks": {
+    "1": {
+      "topic": "Algebraic equilibrium, price controls and division of labour",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. find equilibrium price and quantity from demand and supply equations;\n2. explain maximum and minimum price controls, rationing and the black market;\n3. explain division of labour and specialisation, with their advantages and disadvantages;\n4. distinguish internal from external economies of scale.\n\n## Materials\n\nCalculators, whiteboard, a printed pair of equations for each pair, a chart of economies of scale.\n\n## Starter (5 minutes)\n\nRecap SS1: ask the class how equilibrium was found from a table. Then ask: if the table has no row where demand equals supply, how could we find the price exactly?\n\n## Development\n\n1. Present Qd = 120 - 2P and Qs = 20 + 3P. Set Qd = Qs, solve for P, then substitute to find Q. Check by substituting P into both equations.\n2. Test a price ceiling of N10: find Qd and Qs and the shortage. Test a floor of N30: find the surplus.\n3. Define rationing and black market. Relate to queues for petrol when the price is held below the market level.\n4. Define division of labour (breaking a job into tasks) and specialisation (concentrating on one task). Give the pin-factory or a bakery as an example. List advantages and disadvantages.\n5. Distinguish internal economies (technical, managerial, financial, marketing) from external economies (a skilled labour pool, good roads, banks near an industrial estate).\n\n## Class activity\n\nPairs solve two sets of equations and decide whether a stated ceiling price creates a shortage.\n\n## Evaluation\n\n1. Solve Qd = 50 - P and Qs = 2P - 10.\n2. Give two disadvantages of division of labour.\n\n## Assignment\n\nComplete the problem set on the app.",
+      "reading": {
+        "title": "Solving for equilibrium, and gains from working together",
+        "content": "# Algebraic equilibrium, price controls and division of labour\n\n## Finding equilibrium with equations\n\nSometimes demand and supply are given as equations, not tables. Let Qd = 120 - 2P and Qs = 20 + 3P, where P is price in naira and Q is quantity in kg.\n\nAt equilibrium Qd = Qs:\n\n120 - 2P = 20 + 3P\n\n120 - 20 = 3P + 2P\n\n100 = 5P, so **P = 20**.\n\nPut P = 20 in Qd: 120 - 40 = **80**. Check with Qs: 20 + 60 = 80. The equilibrium price is N20 and the quantity is 80 kg.\n\n## Price controls\n\nIf government fixes a **maximum price** of N10: Qd = 120 - 20 = 100; Qs = 20 + 30 = 50. There is excess demand of 50 kg. Goods become scarce, so sellers may **ration** them by queue, by quantity per customer, or sell them in a **black market** at a higher price.\n\nIf government fixes a **minimum price** of N30: Qd = 120 - 60 = 60; Qs = 20 + 90 = 110. Excess supply is 50 kg. The government may need to buy the surplus.\n\n## Division of labour and specialisation\n\n**Division of labour** means breaking production into many small tasks, with each worker doing one. **Specialisation** means a worker, firm or region concentrating on what it does best. In a bakery one person mixes dough, another bakes and another packs.\n\n*Advantages:* higher output, more skill from repeating a task, less time lost in changing jobs, use of machines.\n\n*Disadvantages:* boredom, loss of skill in other jobs, unemployment if the task disappears, and a whole process stops if one worker is absent.\n\n## Economies of scale\n\nWhen a firm grows, its cost per unit may fall. These savings are **economies of scale**.\n\n- **Internal economies** come from inside the firm: technical (large machines), managerial (specialist managers), financial (cheaper loans), marketing (bulk buying and advertising).\n- **External economies** come from the industry or location: a trained labour force, good roads, banks and suppliers near an industrial estate, such as the clustering of printers at Ikeja.\n\nIf a firm grows too large, **diseconomies of scale** appear: managing becomes hard and costs per unit rise."
+      },
+      "cards": [
+        {
+          "front": "Equilibrium condition",
+          "back": "Qd = Qs."
+        },
+        {
+          "front": "Maximum price",
+          "back": "A price ceiling set by government; below equilibrium it creates a shortage."
+        },
+        {
+          "front": "Minimum price",
+          "back": "A price floor set by government; above equilibrium it creates a surplus."
+        },
+        {
+          "front": "Rationing",
+          "back": "Sharing out a scarce good by queue or fixed quantity per person."
+        },
+        {
+          "front": "Division of labour",
+          "back": "Breaking production into tasks, each done by a different worker."
+        },
+        {
+          "front": "Specialisation",
+          "back": "Concentrating on what a worker, firm or region does best."
+        },
+        {
+          "front": "Internal economies of scale",
+          "back": "Cost savings that come from the growth of the firm itself."
+        },
+        {
+          "front": "External economies of scale",
+          "back": "Cost savings that come from the growth of the industry or its location."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "If Qd = 80 - P and Qs = 3P - 20, the equilibrium price is",
+          "options": [
+            "N15",
+            "N20",
+            "N25",
+            "N30"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Using Qd = 80 - P and Qs = 3P - 20, the equilibrium quantity is",
+          "options": [
+            "55",
+            "60",
+            "65",
+            "50"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A government sets a maximum price below the equilibrium price. The immediate result is",
+          "options": [
+            "a surplus of the good",
+            "excess demand for the good",
+            "an increase in supply",
+            "a fall in demand"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "An advantage of division of labour is",
+          "options": [
+            "workers become bored",
+            "production stops if one worker is absent",
+            "workers lose other skills",
+            "workers become skilled at one task"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trained labour force and good roads near an industrial estate give a firm",
+          "options": [
+            "external economies of scale",
+            "internal economies of scale",
+            "diseconomies of scale",
+            "a monopoly"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "The demand for garri in a market is Qd = 150 - 2P and the supply is Qs = 30 + 4P, where P is the price in naira per cup and Q is in cups. (a) Calculate the equilibrium price and quantity. (b) If government fixes a maximum price of N10, calculate the quantity demanded, the quantity supplied and the shortage.",
+          "markScheme": [
+            "Sets Qd = Qs: 150 - 2P = 30 + 4P",
+            "Equilibrium price: 120 = 6P, so P = N20",
+            "Equilibrium quantity: Q = 150 - 40 = 110 cups",
+            "At N10: Qd = 130 and Qs = 70, so the shortage is 60 cups"
+          ],
+          "modelAnswer": "(a) At equilibrium Qd = Qs, so 150 - 2P = 30 + 4P. Then 120 = 6P, so P = N20. Q = 150 - 2(20) = 110 cups (check: 30 + 4(20) = 110). (b) At P = N10, Qd = 150 - 20 = 130 and Qs = 30 + 40 = 70. The shortage is 130 - 70 = 60 cups.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 150 - 2P = 30 + 4P, so 120 = 6P and P = N20. Q = 150 - 2(20) = 110 cups. (b) At N10, Qd = 150 - 20 = 130 and Qs = 30 + 40 = 70, so the shortage is 60 cups.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "150 - 2P = 30 + 4P"
+                },
+                {
+                  "point": 1,
+                  "quote": "120 = 6P and P = N20"
+                },
+                {
+                  "point": 2,
+                  "quote": "Q = 150 - 2(20) = 110 cups"
+                },
+                {
+                  "point": 3,
+                  "quote": "the shortage is 60 cups"
+                }
+              ],
+              "feedback": "All four marks. Each step is shown, which a marker can follow and credit."
+            },
+            {
+              "tier": "full",
+              "text": "Equilibrium is where Qd = Qs. 150 - 2P = 30 + 4P gives 150 - 30 = 4P + 2P, so 120 = 6P and P = 20. Substituting into supply, Q = 30 + 80 = 110. When the price is fixed at N10, quantity demanded is 130 and quantity supplied is 70. The difference is a shortage of 60 cups.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Equilibrium is where Qd = Qs"
+                },
+                {
+                  "point": 1,
+                  "quote": "120 = 6P and P = 20"
+                },
+                {
+                  "point": 2,
+                  "quote": "Q = 30 + 80 = 110"
+                },
+                {
+                  "point": 3,
+                  "quote": "a shortage of 60 cups"
+                }
+              ],
+              "feedback": "Full marks. Substituting into the supply equation is a good way to check your quantity."
+            },
+            {
+              "tier": "partial",
+              "text": "150 - 2P = 30 + 4P, 120 = 6P, P = N20. Q = 110. At N10 there is a shortage.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "150 - 2P = 30 + 4P"
+                },
+                {
+                  "point": 1,
+                  "quote": "P = N20"
+                },
+                {
+                  "point": 2,
+                  "quote": "Q = 110"
+                }
+              ],
+              "feedback": "Part (a) is correct. For (b) you must work out Qd (130) and Qs (70) at N10 and state the size of the shortage, 60 cups."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Equilibrium: 150 - 2P = 30 + 4P so 120 = 6P so P = 20 and Q = 150 - 2(20) = 110. (b) At N10, Qd = 150 - 10 = 140 and Qs = 30 + 40 = 70, so the shortage is 70.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "150 - 2P = 30 + 4P"
+                },
+                {
+                  "point": 1,
+                  "quote": "120 = 6P so P = 20"
+                },
+                {
+                  "point": 2,
+                  "quote": "Q = 150 - 2(20) = 110"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b) Qd = 150 - 2(10) = 130, because P is multiplied by 2, so the shortage is 130 - 70 = 60.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 150 - 2P = 30 + 4P so P = 150 - 30 = 120 and Q = 6. (b) The shortage is 10.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "150 - 2P = 30 + 4P"
+                }
+              ],
+              "feedback": "Setting the equations equal is the right start. Collect P terms on one side: 120 = 6P, so P = 20. Then substitute to find Q = 110, and test P = 10 in both equations for the shortage."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The equilibrium price is N150 and quantity 30. (b) The government should fix N10 to make it cheap.",
+              "meets": [],
+              "feedback": "Those numbers come straight from the equations, not from solving them. Set Qd = Qs: 150 - 2P = 30 + 4P gives P = 20, Q = 110. At N10, Qd = 130 and Qs = 70, a shortage of 60."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Explain how division of labour raises output in a bakery and state two of its disadvantages. (b) Distinguish between internal and external economies of scale, giving one example of each.",
+          "markScheme": [
+            "Division of labour raises output because workers become skilled at one task and time is saved",
+            "One disadvantage, e.g. boredom or loss of other skills",
+            "A second disadvantage, e.g. production stops if one worker is absent or unemployment if the task is replaced",
+            "Internal economies come from within the firm (e.g. bulk buying) while external economies come from the industry or location (e.g. a trained labour pool)"
+          ],
+          "modelAnswer": "(a) When each baker does one task, such as mixing, baking or packing, they become skilled at it and no time is lost moving between jobs, so output rises. Its disadvantages are boredom and the loss of other skills, and the whole process stops if one worker is absent. (b) Internal economies of scale come from the growth of the firm itself, for example buying flour in bulk at a lower price. External economies come from the growth of the industry or its location, for example a pool of trained bakers and good roads in an industrial area.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Each worker does only one job, such as mixing or packing, so they become skilled and do it faster and no time is wasted changing tasks, so more bread is made. Disadvantages: the work becomes boring, and if one worker is absent the whole line may stop. (b) Internal economies come from within the firm, such as buying flour in bulk. External economies come from the industry or area, such as skilled bakers living nearby.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "become skilled and do it faster and no time is wasted changing tasks"
+                },
+                {
+                  "point": 1,
+                  "quote": "the work becomes boring"
+                },
+                {
+                  "point": 2,
+                  "quote": "if one worker is absent the whole line may stop"
+                },
+                {
+                  "point": 3,
+                  "quote": "Internal economies come from within the firm, such as buying flour in bulk. External economies come from the industry or area, such as skilled bakers living nearby"
+                }
+              ],
+              "feedback": "Full marks. Each disadvantage is a different one, and both economies have an example."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Division of labour makes workers experts in one task, so they work quickly and use machines better, which raises the number of loaves. It can make workers lose skills in other jobs and cause unemployment when the task is done by a machine. (b) Internal economies are cost savings inside the firm itself, e.g. a large oven. External economies are savings from the industry, e.g. good roads and banks around an industrial estate.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "makes workers experts in one task, so they work quickly"
+                },
+                {
+                  "point": 1,
+                  "quote": "lose skills in other jobs"
+                },
+                {
+                  "point": 2,
+                  "quote": "cause unemployment when the task is done by a machine"
+                },
+                {
+                  "point": 3,
+                  "quote": "Internal economies are cost savings inside the firm itself, e.g. a large oven. External economies are savings from the industry, e.g. good roads and banks around an industrial estate"
+                }
+              ],
+              "feedback": "All four marks. Giving a machine replacing a task as the unemployment risk is a precise point."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Division of labour makes workers good at one task so output increases. It is boring and workers lose other skills. (b) Internal economies are savings inside the firm and external economies are outside.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "makes workers good at one task so output increases"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is boring"
+                },
+                {
+                  "point": 2,
+                  "quote": "workers lose other skills"
+                }
+              ],
+              "feedback": "The bakery part is well done. For (b) you need an example of each, such as bulk buying (internal) and a trained labour pool (external); and external economies come from the industry or location, not just 'outside'."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) It raises output because each person does a job. The disadvantage is that if the person is absent everything stops. (b) Internal economy is bulk buying and external is a skilled labour pool in the area.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "if the person is absent everything stops"
+                },
+                {
+                  "point": 3,
+                  "quote": "Internal economy is bulk buying and external is a skilled labour pool in the area"
+                }
+              ],
+              "feedback": "Your (b) is correct. In (a) say why output rises (skill and time saved) and give a second disadvantage such as boredom.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Division of labour means dividing the profit among workers. It is bad because workers will quarrel. (b) Internal is inside the country and external is outside.",
+              "meets": [],
+              "feedback": "Division of labour is dividing the job into tasks, not the profit. Internal and external economies refer to the firm and the industry, not the country."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Division of labour is when a baker is sharing the bread. (b) Economies of scale is when you save money by buying small.",
+              "meets": [],
+              "feedback": "Division of labour splits the work into tasks that different workers do. Economies of scale are the falling cost per unit as a firm grows, often from buying in bulk, not from buying small."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Productivity and the concepts of cost",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate total, average and marginal product from a table;\n2. state the law of variable proportions and say where diminishing returns begin;\n3. define fixed, variable, total, average and marginal cost and calculate them;\n4. distinguish the economist's view of cost from the accountant's view.\n\n## Materials\n\nCalculators, a product table for workers on a cassava farm, a cost table for a bakery, graph paper.\n\n## Starter (5 minutes)\n\nAsk: one worker bakes 10 loaves in an hour. Two workers share the same small oven. Will they bake 20? Why might it be fewer than 20?\n\n## Development\n\n1. Define production, productivity, total product (TP), average product (AP = TP / workers) and marginal product (MP = change in TP from one more worker).\n2. Fill in a table of workers 1 to 7. Show that MP first rises, then falls, and AP follows it. State the law of variable proportions, pointing out where diminishing returns begin.\n3. Define costs: fixed cost (FC), variable cost (VC), total cost (TC = FC + VC), average cost (AC = TC / Q) and marginal cost (MC = change in TC from one more unit).\n4. Distinguish short run (at least one factor fixed) from long run (all factors variable).\n5. Explain the economist's cost, which includes opportunity cost and the owner's own resources, against the accountant's cost, which counts money paid out only.\n\n## Class activity\n\nGroups complete a cost table for a bakery and plot AC and MC on one graph.\n\n## Evaluation\n\n1. A firm's TC rises from N140 to N170 when output rises from 1 to 2. State the MC.\n2. Why is rent paid to oneself still a cost to an economist?\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "More workers, more output, and what it costs",
+        "content": "# Productivity and the concepts of cost\n\n## Product\n\nOn a cassava farm, workers share one plot of fixed size.\n\n| Workers | Total product (bags) | Average product | Marginal product |\n| --- | --- | --- | --- |\n| 1 | 10 | 10 | 10 |\n| 2 | 30 | 15 | 20 |\n| 3 | 60 | 20 | 30 |\n| 4 | 80 | 20 | 20 |\n| 5 | 90 | 18 | 10 |\n| 6 | 90 | 15 | 0 |\n| 7 | 84 | 12 | -6 |\n\n**Total product (TP)** is the total output. **Average product (AP)** = TP / number of workers. **Marginal product (MP)** is the extra output from one more worker.\n\nThe **law of variable proportions** (law of diminishing returns) says that when more units of a variable factor are added to a fixed factor, the extra output at first rises, but after a point it falls. Here MP rises up to the third worker, 30 bags, and falls from the fourth worker. Diminishing returns begin after the third worker. The plot is too small for so many people.\n\n## Costs\n\n- **Fixed costs (FC)** do not change with output: rent, insurance, a loan on machines.\n- **Variable costs (VC)** change with output: flour, fuel, wages paid per piece.\n- **Total cost (TC)** = FC + VC.\n- **Average cost (AC)** = TC / output.\n- **Marginal cost (MC)** = change in TC when one more unit is made.\n\n**Example.** A bakery has fixed cost of N20,000. At 10 bags of flour the total cost is N50,000, and at 11 bags it is N52,000. Variable cost at 10 bags = 50,000 - 20,000 = N30,000. AC = 50,000 / 10 = N5,000. MC of the 11th = 52,000 - 50,000 = N2,000.\n\nIn the **short run** at least one factor (say, the size of the oven) is fixed. In the **long run** all factors can be changed.\n\n## Economist's cost and accountant's cost\n\nAn accountant records the money actually paid out: wages, rent, materials. An economist also counts **opportunity cost**, including the value of the owner's own time and property used in the business. If Mama Kemi runs her shop in her own building, the accountant records no rent; the economist counts the rent she could have earned by letting it."
+      },
+      "cards": [
+        {
+          "front": "Total product",
+          "back": "The total output produced by all the workers."
+        },
+        {
+          "front": "Marginal product",
+          "back": "The extra output from employing one more worker."
+        },
+        {
+          "front": "Law of variable proportions",
+          "back": "Adding a variable factor to a fixed factor first raises extra output, then reduces it."
+        },
+        {
+          "front": "Fixed cost",
+          "back": "A cost that does not change with output, such as rent."
+        },
+        {
+          "front": "Variable cost",
+          "back": "A cost that changes with output, such as flour or fuel."
+        },
+        {
+          "front": "Marginal cost",
+          "back": "The change in total cost from making one more unit."
+        },
+        {
+          "front": "Accountant's cost",
+          "back": "Money actually paid out for the factors of production."
+        },
+        {
+          "front": "Economist's cost",
+          "back": "Money paid out plus the opportunity cost of the owner's own resources."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In the table in the reading, the marginal product of the fourth worker is",
+          "options": [
+            "10 bags",
+            "20 bags",
+            "30 bags",
+            "80 bags"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Diminishing returns begin when",
+          "options": [
+            "total product is highest",
+            "marginal product starts to fall",
+            "average product is lowest",
+            "fixed cost is zero"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A firm's total cost is N5,000 when it makes 10 units and N5,300 when it makes 11 units. The marginal cost of the 11th unit is",
+          "options": [
+            "N300",
+            "N480",
+            "N500",
+            "N5,300"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of the following is a fixed cost for a poultry farmer?",
+          "options": [
+            "Cost of feed",
+            "Cost of vaccines",
+            "Annual rent of the pen",
+            "Cost of eggs crates"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "An economist counts as part of the cost of a business the",
+          "options": [
+            "owner's time and property, valued at what they could earn elsewhere",
+            "money paid to workers only",
+            "profit of the business",
+            "taxes paid by customers"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A bakery in Ilorin has a fixed cost of N20,000 a month. At 10 bags of flour processed its total cost is N50,000 and at 11 bags it is N52,000. Calculate (a) the variable cost at 10 bags, (b) the average cost at 10 bags and (c) the marginal cost of the 11th bag.",
+          "markScheme": [
+            "Variable cost = 50,000 - 20,000 = N30,000",
+            "Average cost = 50,000 / 10 = N5,000",
+            "Marginal cost = 52,000 - 50,000 = N2,000",
+            "States the formula used for variable cost"
+          ],
+          "modelAnswer": "(a) Variable cost = total cost - fixed cost = 50,000 - 20,000 = N30,000. (b) Average cost = 50,000 / 10 = N5,000 per bag. (c) Marginal cost = 52,000 - 50,000 = N2,000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) VC = TC - FC = 50,000 - 20,000 = N30,000. (b) AC = TC/Q = 50,000/10 = N5,000. (c) MC = 52,000 - 50,000 = N2,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "VC = TC - FC = 50,000 - 20,000 = N30,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "AC = TC/Q = 50,000/10 = N5,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "MC = 52,000 - 50,000 = N2,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "VC = TC - FC"
+                }
+              ],
+              "feedback": "All four marks. You wrote each formula before substituting and kept the naira sign."
+            },
+            {
+              "tier": "full",
+              "text": "Variable cost is total cost minus fixed cost, which is N50,000 - N20,000 = N30,000. Average cost is N50,000 divided by 10 bags = N5,000. Marginal cost of the 11th bag is N52,000 - N50,000 = N2,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "N50,000 - N20,000 = N30,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "N50,000 divided by 10 bags = N5,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "N52,000 - N50,000 = N2,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Variable cost is total cost minus fixed cost"
+                }
+              ],
+              "feedback": "Full marks. Units are shown in every line."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 30,000. (b) 50,000 / 10 = 5,000. (c) 52,000 / 11 = 4,727.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "30,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "50,000 / 10 = 5,000"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. Marginal cost is the change in total cost from one more unit, N52,000 - N50,000 = N2,000, not the new average cost. Also write the unit (naira)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) VC = 50,000 - 20,000 = N30,000. (b) AC = 30,000/10 = N3,000. (c) MC = N2,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "VC = 50,000 - 20,000 = N30,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "MC = N2,000"
+                }
+              ],
+              "feedback": "Variable cost and marginal cost are right. Average cost uses total cost, 50,000 / 10 = N5,000; N3,000 is the average variable cost.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The variable cost is 20,000. (b) The average cost is 50,000. (c) The marginal cost is 52,000.",
+              "meets": [],
+              "feedback": "20,000 is the fixed cost. Variable cost = TC - FC = N30,000. Average cost divides by output (N5,000), and marginal cost is the increase in total cost for the 11th bag (N2,000)."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 50,000 + 20,000 = 70,000. (b) 70,000 / 10 = 7,000. (c) 52,000 + 50,000 = 102,000.",
+              "meets": [],
+              "feedback": "Total cost already includes the fixed cost, so you subtract it to get variable cost (N30,000). AC = 50,000 / 10 and MC = 52,000 - 50,000; you added instead."
+            }
+          ]
+        },
+        {
+          "prompt": "The table shows the output of a cassava farm as workers are added to a fixed plot. Workers 1 to 6 give a total product of 10, 30, 60, 80, 90 and 90 bags. (a) Calculate the marginal product of the fifth worker and the average product of the fourth. (b) State the law of variable proportions and identify, with a reason, the worker after whom diminishing returns begin.",
+          "markScheme": [
+            "Marginal product of the fifth worker = 90 - 80 = 10 bags",
+            "Average product of the fourth worker = 80 / 4 = 20 bags",
+            "Law: adding a variable factor to a fixed factor first raises, then reduces, extra output",
+            "Diminishing returns begin after the third worker, because MP falls from 30 to 20 for the fourth"
+          ],
+          "modelAnswer": "(a) MP of the 5th worker = 90 - 80 = 10 bags. AP of the 4th worker = 80 / 4 = 20 bags. (b) The law of variable proportions says that when more of a variable factor is added to a fixed factor, extra output first rises and after a point falls. Marginal product rises to 30 bags at the third worker and falls to 20 for the fourth, so diminishing returns begin after the third worker.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) MP of 5th = 90 - 80 = 10 bags. AP of 4th = 80/4 = 20 bags. (b) The law says that if you keep adding variable factor to a fixed factor, the extra output first rises and then falls. Diminishing returns start after the 3rd worker because MP was 30 for him and then dropped to 20 for the 4th.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "MP of 5th = 90 - 80 = 10 bags"
+                },
+                {
+                  "point": 1,
+                  "quote": "AP of 4th = 80/4 = 20 bags"
+                },
+                {
+                  "point": 2,
+                  "quote": "if you keep adding variable factor to a fixed factor, the extra output first rises and then falls"
+                },
+                {
+                  "point": 3,
+                  "quote": "Diminishing returns start after the 3rd worker because MP was 30 for him and then dropped to 20 for the 4th"
+                }
+              ],
+              "feedback": "Full marks. You named the worker and gave the figures that justify it."
+            },
+            {
+              "tier": "full",
+              "text": "The marginal product of the fifth worker is 90 minus 80 which is 10 bags. The average product of the fourth is 80 divided by 4 = 20 bags. The law of variable proportions says when more workers are added to a fixed plot, output at first rises by more and more, and later by less and less. After the third worker the marginal product starts to fall (30 then 20), so that is where diminishing returns start.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "90 minus 80 which is 10 bags"
+                },
+                {
+                  "point": 1,
+                  "quote": "80 divided by 4 = 20 bags"
+                },
+                {
+                  "point": 2,
+                  "quote": "when more workers are added to a fixed plot, output at first rises by more and more, and later by less and less"
+                },
+                {
+                  "point": 3,
+                  "quote": "After the third worker the marginal product starts to fall (30 then 20)"
+                }
+              ],
+              "feedback": "All four marks. Putting the law in terms of the plot made it clear."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) MP of the fifth is 10 bags and AP of the fourth is 80/4 = 20. (b) Diminishing returns begin at the fourth worker.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "MP of the fifth is 10 bags"
+                },
+                {
+                  "point": 1,
+                  "quote": "AP of the fourth is 80/4 = 20"
+                }
+              ],
+              "feedback": "The calculations are correct. You did not state the law, and diminishing returns begin after the third worker, whose MP of 30 is the highest; the fourth is the first whose MP falls (20)."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) MP of the fifth is 90 and AP of the fourth is 20. (b) The law says that when more of a variable factor is added to a fixed factor the extra output rises and then falls. It starts after the third worker since MP falls.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "AP of the fourth is 20"
+                },
+                {
+                  "point": 2,
+                  "quote": "when more of a variable factor is added to a fixed factor the extra output rises and then falls"
+                },
+                {
+                  "point": 3,
+                  "quote": "It starts after the third worker since MP falls"
+                }
+              ],
+              "feedback": "Your law and your point of diminishing returns are good. MP of the fifth is the change in TP: 90 - 80 = 10 bags; 90 is the total.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 5 and 4. (b) The law is that more workers means more bags always.",
+              "meets": [],
+              "feedback": "MP of the fifth = 90 - 80 = 10 and AP of the fourth = 80/4 = 20. The law says the extra output stops rising after a point; more workers do not always mean more output."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The marginal product is 90 and the average is 80. (b) It starts after the sixth worker because that is the end.",
+              "meets": [],
+              "feedback": "Marginal product is the extra output from one worker: 90 - 80 = 10. Average = TP / workers = 20. Diminishing returns start where MP begins to fall, after the third worker."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Revenue concepts and market structures",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate total, average and marginal revenue;\n2. explain marginal revenue product and its use in hiring decisions;\n3. describe perfect competition, monopoly and monopolistic competition;\n4. explain how price and output are decided under each, using profit maximisation (MC = MR).\n\n## Materials\n\nCalculators, a demand and revenue table for a monopolist, cards describing five local businesses, graph paper.\n\n## Starter (5 minutes)\n\nAsk: in Mile 12 market, many traders sell the same tomatoes and none can choose the price. Then ask: NEPA (or a single electricity distributor in a town) is the only seller of power. How is that different?\n\n## Development\n\n1. Define total revenue (TR = price x quantity), average revenue (AR = TR / Q, which equals price) and marginal revenue (MR = change in TR from one more unit).\n2. Work a table. Show that under perfect competition price is the same for every unit, so AR = MR = P; under monopoly price falls as output rises, so MR is below AR.\n3. Define marginal revenue product (MRP = marginal physical product x marginal revenue) and the rule: hire a worker if MRP is greater than the wage.\n4. Describe market structures: perfect competition (many sellers, identical goods, free entry), monopoly (one seller, no close substitute, barriers to entry), monopolistic competition (many sellers, differentiated goods, such as bakeries and hair salons).\n5. State the profit-maximising rule: produce where MC = MR. Show the resulting price and output for each structure.\n\n## Class activity\n\nSorting cards: which market structure does each local business belong to?\n\n## Evaluation\n\n1. A firm sells 4 units at N40 each. What is its total revenue?\n2. Why is a monopolist's marginal revenue below its price?\n\n## Assignment\n\nComplete the differentiated worksheet on the app. Core and extension questions are marked.",
+      "reading": {
+        "title": "Money coming in, and who sells to whom",
+        "content": "# Revenue concepts and market structures\n\n## Revenue\n\n**Total revenue (TR)** = price x quantity sold. **Average revenue (AR)** = TR / quantity, which is the same as price. **Marginal revenue (MR)** is the extra revenue from selling one more unit.\n\nA monopolist sells a product and must cut price to sell more:\n\n| Quantity | Price (AR) | TR | MR |\n| --- | --- | --- | --- |\n| 1 | 50 | 50 | 50 |\n| 2 | 45 | 90 | 40 |\n| 3 | 40 | 120 | 30 |\n| 4 | 35 | 140 | 20 |\n| 5 | 30 | 150 | 10 |\n\nMR is below price because the lower price applies to all units, not only the extra one.\n\nUnder perfect competition a firm accepts the market price, so AR = MR = price. A trader who sells tomatoes at N500 a basket earns N500 for every extra basket.\n\n## Marginal revenue product\n\n**MRP** = marginal physical product of a worker x marginal revenue. If an extra worker adds 20 baskets and each basket sells for N2,000, MRP = N40,000. If the worker costs less than that, hiring is worthwhile.\n\n## Market structures\n\n**Perfect competition**: many buyers and sellers; identical product; free entry and exit; full knowledge. No firm can control price. Farm produce markets come close.\n\n**Monopoly**: a single seller with no close substitute and barriers to entry, such as a licence or huge capital. The monopolist can control price. A public water board in a town is an example.\n\n**Monopolistic competition**: many sellers offering differentiated products, such as brands of bread or hair salons. Each has a little control over its price through branding.\n\n## Profit maximisation\n\nA firm maximises profit by producing the output where **marginal cost equals marginal revenue (MC = MR)**, as long as price covers average cost. Under perfect competition, the price is fixed by the market and the firm adjusts output. Under monopoly, the firm chooses price and output together, often charging a higher price and producing less than a competitive industry would."
+      },
+      "cards": [
+        {
+          "front": "Total revenue",
+          "back": "Price multiplied by quantity sold."
+        },
+        {
+          "front": "Average revenue",
+          "back": "Total revenue divided by quantity; equal to price."
+        },
+        {
+          "front": "Marginal revenue",
+          "back": "The extra revenue from selling one more unit."
+        },
+        {
+          "front": "Marginal revenue product",
+          "back": "Marginal physical product times marginal revenue."
+        },
+        {
+          "front": "Perfect competition",
+          "back": "Many sellers of an identical product, with free entry, so no seller controls price."
+        },
+        {
+          "front": "Monopoly",
+          "back": "A single seller with no close substitute and barriers to entry."
+        },
+        {
+          "front": "Monopolistic competition",
+          "back": "Many sellers of differentiated products, each with some control over price."
+        },
+        {
+          "front": "Profit-maximising output",
+          "back": "Where marginal cost equals marginal revenue."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A trader sells 60 sachets of pure water at N30 each. Her total revenue is",
+          "options": [
+            "N1,800",
+            "N90",
+            "N30",
+            "N600"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "In the table in the reading, the marginal revenue of the 4th unit is",
+          "options": [
+            "N35",
+            "N30",
+            "N20",
+            "N140"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Under perfect competition, a firm's marginal revenue equals",
+          "options": [
+            "zero",
+            "its total cost",
+            "its total revenue",
+            "its price"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a feature of monopolistic competition?",
+          "options": [
+            "A single seller",
+            "Many sellers of differentiated products",
+            "Identical products",
+            "No advertising"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A firm maximises profit at the output where",
+          "options": [
+            "total revenue is zero",
+            "marginal cost equals marginal revenue",
+            "average cost is highest",
+            "price is lowest"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A monopolist sells 3 units at N40 each and 4 units at N35 each. Calculate the total revenue at each output and the marginal revenue of the fourth unit. Explain why marginal revenue is less than price.",
+          "markScheme": [
+            "TR for 3 units = 3 x 40 = N120",
+            "TR for 4 units = 4 x 35 = N140",
+            "Marginal revenue of the 4th unit = 140 - 120 = N20",
+            "Explains that MR is below price because the price must be cut on all units to sell one more"
+          ],
+          "modelAnswer": "TR at 3 units = 3 x 40 = N120. TR at 4 units = 4 x 35 = N140. MR of the 4th unit = 140 - 120 = N20. MR is less than the price of N35 because to sell the fourth unit the monopolist has to cut the price of all the units, so the extra revenue is the new price less what is lost on the first three units.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "TR at 3 units = 3 x 40 = N120. TR at 4 units = 4 x 35 = N140. MR of the 4th = 140 - 120 = N20. MR is lower than the price because the monopolist must reduce the price on all the units to sell one more, so he loses some money on the earlier units.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "TR at 3 units = 3 x 40 = N120"
+                },
+                {
+                  "point": 1,
+                  "quote": "TR at 4 units = 4 x 35 = N140"
+                },
+                {
+                  "point": 2,
+                  "quote": "MR of the 4th = 140 - 120 = N20"
+                },
+                {
+                  "point": 3,
+                  "quote": "the monopolist must reduce the price on all the units to sell one more"
+                }
+              ],
+              "feedback": "All four marks. You explained where the 'lost' revenue comes from."
+            },
+            {
+              "tier": "full",
+              "text": "Total revenue for 3 units is 120 naira and for 4 units is 140 naira. Marginal revenue is 140 minus 120 = N20. Marginal revenue is below the price (N35) because the lower price has to be given on every unit and not only on the fourth one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total revenue for 3 units is 120 naira"
+                },
+                {
+                  "point": 1,
+                  "quote": "for 4 units is 140 naira"
+                },
+                {
+                  "point": 2,
+                  "quote": "Marginal revenue is 140 minus 120 = N20"
+                },
+                {
+                  "point": 3,
+                  "quote": "the lower price has to be given on every unit and not only on the fourth one"
+                }
+              ],
+              "feedback": "Full marks. A short, exact explanation."
+            },
+            {
+              "tier": "partial",
+              "text": "TR for 3 is 120 and TR for 4 is 140, so MR is N20. MR is less because it is cheap.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "TR for 3 is 120"
+                },
+                {
+                  "point": 1,
+                  "quote": "TR for 4 is 140"
+                },
+                {
+                  "point": 2,
+                  "quote": "MR is N20"
+                }
+              ],
+              "feedback": "The three calculations are correct. Why is MR below price? Because the monopolist must cut the price on all units to sell one more, not because the good is cheap."
+            },
+            {
+              "tier": "partial",
+              "text": "TR for 3 is 3 x 40 = N120 and for 4 is 4 x 35 = N140. MR is 35 because it is the price of the 4th unit. MR is the same as price.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "TR for 3 is 3 x 40 = N120"
+                },
+                {
+                  "point": 1,
+                  "quote": "for 4 is 4 x 35 = N140"
+                }
+              ],
+              "feedback": "Total revenue is correct. MR is the change in TR, 140 - 120 = N20, not the price. It is lower than price for a monopolist because price is cut on all units.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "TR = 40 + 35 = 75. MR = 75/2. MR is less than price because the monopolist is greedy.",
+              "meets": [],
+              "feedback": "TR is price times quantity: 3 x 40 = 120 and 4 x 35 = 140. MR = 140 - 120 = 20. MR is below price because the lower price applies to all the units sold."
+            },
+            {
+              "tier": "weak",
+              "text": "Total revenue is the profit. The marginal revenue is N35 because it is the 4th unit.",
+              "meets": [],
+              "feedback": "Total revenue is price x quantity, before costs, not profit. Marginal revenue is the change in TR from selling the fourth unit (N20), not the price."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Distinguish between perfect competition and monopoly under any three headings. (b) A firm owner finds that an extra worker adds 25 bags of beans to output and each bag sells for N8,000 at the fixed market price. The worker would cost N150,000. Calculate the worker's marginal revenue product and state whether the owner should hire the worker.",
+          "markScheme": [
+            "Number of sellers: many under perfect competition, one under monopoly",
+            "Product: identical under perfect competition, no close substitute under monopoly",
+            "Control over price or entry: none under perfect competition, price maker with barriers to entry under monopoly",
+            "MRP = 25 x 8,000 = N200,000, which exceeds N150,000, so hire the worker"
+          ],
+          "modelAnswer": "(a) Number of sellers: many in perfect competition, one in monopoly. Product: identical in perfect competition, no close substitute in monopoly. Control: a perfectly competitive firm takes the market price, while a monopolist controls price and entry is blocked. (b) MRP = marginal physical product x marginal revenue = 25 x N8,000 = N200,000. This is more than the N150,000 cost of the worker, so the owner should hire.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Perfect competition has many sellers but monopoly has one seller. In perfect competition the goods are identical, but in monopoly there is no close substitute. A competitive firm cannot control price, but a monopolist can set price and others cannot enter. (b) MRP = 25 x N8,000 = N200,000, which is more than N150,000, so the owner should hire the worker.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Perfect competition has many sellers but monopoly has one seller"
+                },
+                {
+                  "point": 1,
+                  "quote": "In perfect competition the goods are identical, but in monopoly there is no close substitute"
+                },
+                {
+                  "point": 2,
+                  "quote": "A competitive firm cannot control price, but a monopolist can set price and others cannot enter"
+                },
+                {
+                  "point": 3,
+                  "quote": "MRP = 25 x N8,000 = N200,000, which is more than N150,000, so the owner should hire the worker"
+                }
+              ],
+              "feedback": "All four marks. You gave three clear contrasts and then used the rule in part (b)."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Sellers: many vs one. Entry: free vs blocked by barriers. Price: the firm is a price taker in perfect competition and a price maker in monopoly. (b) MRP is the extra output times price = 25 bags x N8,000 = N200,000. The worker costs N150,000, so hiring adds N50,000, and the owner should hire.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sellers: many vs one"
+                },
+                {
+                  "point": 1,
+                  "quote": "Entry: free vs blocked by barriers"
+                },
+                {
+                  "point": 2,
+                  "quote": "Price: the firm is a price taker in perfect competition and a price maker in monopoly"
+                },
+                {
+                  "point": 3,
+                  "quote": "MRP is the extra output times price = 25 bags x N8,000 = N200,000"
+                }
+              ],
+              "feedback": "Full marks. Working out the N50,000 gain makes the decision easy to see."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Perfect competition has many sellers and monopoly has one seller. Perfect competition has identical products and monopoly has no close substitute. (b) MRP = 25 x 8,000 = N200,000 so hire.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Perfect competition has many sellers and monopoly has one seller"
+                },
+                {
+                  "point": 1,
+                  "quote": "Perfect competition has identical products and monopoly has no close substitute"
+                },
+                {
+                  "point": 3,
+                  "quote": "MRP = 25 x 8,000 = N200,000 so hire"
+                }
+              ],
+              "feedback": "Good, but you gave two headings of three. The third could be control over price: a monopolist can set it and competitive firms cannot."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Perfect competition has free entry and monopoly has barriers. There are many sellers in perfect competition and one in monopoly. (b) MRP is 25 + 8,000 = 8,025, so the owner should not hire.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "There are many sellers in perfect competition and one in monopoly"
+                },
+                {
+                  "point": 2,
+                  "quote": "Perfect competition has free entry and monopoly has barriers"
+                }
+              ],
+              "feedback": "Part (a) has good contrasts. MRP is multiplication: 25 bags x N8,000 = N200,000, which is above N150,000, so the owner should hire.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Perfect competition is perfect and monopoly is bad. (b) 25 bags is the MRP and he should hire.",
+              "meets": [],
+              "feedback": "Say how they differ: sellers, product, entry, price control. MRP is the extra output times the price per bag: 25 x 8,000 = N200,000, compared with the wage of N150,000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Perfect competition is for rich people and monopoly is for the government. (b) MRP = 150,000 so he should not hire.",
+              "meets": [],
+              "feedback": "A market structure is about the number of sellers and the product. A monopoly is a single seller, not necessarily the government. MRP is 25 x 8,000 = N200,000, higher than the cost, so hire."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Price discrimination and types of business enterprise",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use total cost and total revenue to find profit and the break-even point;\n2. explain price discrimination and the conditions for it;\n3. describe the main types of business enterprise and their features;\n4. list sources of funds and common problems of business enterprises.\n\n## Materials\n\nCalculators, a cost and revenue table, pictures of a roadside shop, a cooperative thrift society, a limited company and a statutory corporation.\n\n## Starter (5 minutes)\n\nAsk: why does a cinema in Lagos charge students less than adults for the same film? Is that fair? Is it good business?\n\n## Development\n\n1. Review: profit = TR - TC. Work a table to find the output with highest profit and the output at which TR = TC (break-even).\n2. Define price discrimination: charging different prices for the same product to different buyers for reasons other than cost. Types: by time, place, age or income. Conditions: the seller has market power, buyers can be separated, and the product cannot be resold.\n3. Introduce business enterprises: sole proprietorship, partnership, private and public limited companies, co-operative societies, statutory corporations and joint ventures. For each: ownership, liability, source of funds, continuity.\n4. Sources of funds: personal savings, loans, shares, retained profits, grants.\n5. Problems: shortage of capital, poor management, competition, harsh regulation, poor power supply.\n\n## Class activity\n\nIn groups, advise a student who wants to start a bakery on the best form of business with reasons.\n\n## Evaluation\n\n1. Give two conditions for price discrimination.\n2. Which type of enterprise has unlimited liability and why?\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "Profit, different prices, and different kinds of business",
+        "content": "# Price discrimination and types of business enterprise\n\n## Profit and break-even\n\nProfit = total revenue - total cost. A firm breaks even when TR = TC.\n\nA bakery sells loaves at N500. Its costs are: 100 loaves, TC N40,000; 200 loaves, TC N90,000; 300 loaves, TC N120,000.\n\n- At 100 loaves: TR = N50,000, profit = N10,000.\n- At 200 loaves: TR = N100,000, profit = N10,000.\n- At 300 loaves: TR = N150,000, profit = N30,000.\n\nThe firm makes the highest profit at 300 loaves.\n\n## Price discrimination\n\n**Price discrimination** means selling the same good at different prices to different buyers where the difference is not due to cost. Examples are cheaper cinema tickets for students, lower night call rates on a mobile network, and bus fares that rise at peak hours.\n\nConditions: the seller must have some control over price; the market must be divided into groups with different elasticities of demand; and the buyers must not be able to resell to each other.\n\n## Types of business enterprise\n\n- **Sole proprietorship**: owned and run by one person. Easy to start and keep control, but capital is small and liability is unlimited.\n- **Partnership**: two or more owners (textbooks usually give a maximum of twenty) sharing profit; more capital and skills, but disputes arise and liability is unlimited.\n- **Private limited company**: shares are not sold to the public; liability is limited to the shares held.\n- **Public limited company**: shares are sold to the public and traded on the Nigerian Exchange; large capital, limited liability, separate legal existence.\n- **Co-operative society**: members join together to help one another, as in a farmers' thrift society. Each member has one vote.\n- **Statutory corporation**: set up by an Act of the National Assembly and owned by government, such as the Nigerian Ports Authority.\n- **Joint venture**: two or more parties, often a government body and a foreign firm, share a project, as in oil exploration.\n\n## Sources of funds\n\nOwners' savings, bank loans, sale of shares, retained profits, grants and trade credit.\n\n## Problems of business enterprises\n\nLack of capital, poor management, weak demand, stiff competition, unreliable power and poor roads, and multiple taxes."
+      },
+      "cards": [
+        {
+          "front": "Profit",
+          "back": "Total revenue minus total cost."
+        },
+        {
+          "front": "Break-even point",
+          "back": "The output at which total revenue equals total cost."
+        },
+        {
+          "front": "Price discrimination",
+          "back": "Charging different prices for the same product for reasons other than cost."
+        },
+        {
+          "front": "Sole proprietorship",
+          "back": "A business owned and run by one person, with unlimited liability."
+        },
+        {
+          "front": "Partnership",
+          "back": "A business owned by two or more people who share the profit."
+        },
+        {
+          "front": "Limited liability",
+          "back": "Owners lose no more than the amount they invested in shares."
+        },
+        {
+          "front": "Co-operative society",
+          "back": "A business owned by members who help one another; one member, one vote."
+        },
+        {
+          "front": "Statutory corporation",
+          "back": "A public enterprise created by an Act of law and owned by government."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A trader's total revenue is N85,000 and total cost is N60,000. His profit is",
+          "options": [
+            "N145,000",
+            "N25,000",
+            "N60,000",
+            "N85,000"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Cheaper cinema tickets for students and dearer ones for adults is an example of",
+          "options": [
+            "price discrimination",
+            "rationing",
+            "a price ceiling",
+            "a subsidy"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is NOT a condition for price discrimination?",
+          "options": [
+            "The seller has some control over price",
+            "Markets can be kept apart",
+            "Buyers can easily resell the product",
+            "Elasticity of demand differs in the groups"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The owners of a public limited company",
+          "options": [
+            "have unlimited liability",
+            "have limited liability",
+            "cannot sell their shares",
+            "must be fewer than twenty"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A business whose members have one vote each regardless of the number of shares held is a",
+          "options": [
+            "sole proprietorship",
+            "public limited company",
+            "co-operative society",
+            "statutory corporation"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Ada runs a shop. At 40 units her total revenue is N24,000 and her total cost is N30,000. At 80 units her total revenue is N48,000 and her total cost is N42,000. At 120 units her total revenue is N72,000 and her total cost is N72,000. Calculate her profit or loss at each output and state the break-even output.",
+          "markScheme": [
+            "At 40 units: loss of N6,000",
+            "At 80 units: profit of N6,000",
+            "At 120 units: profit of N0, so she breaks even",
+            "States that the break-even output is 120 units (TR = TC), noting that the loss is turned to profit in between"
+          ],
+          "modelAnswer": "At 40 units: 24,000 - 30,000 = a loss of N6,000. At 80 units: 48,000 - 42,000 = a profit of N6,000. At 120 units: 72,000 - 72,000 = zero, so she breaks even at 120 units because TR = TC. Her profit is highest at 80 units among these outputs.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "40 units: 24,000 - 30,000 = a loss of N6,000. 80 units: 48,000 - 42,000 = a profit of N6,000. 120 units: 72,000 - 72,000 = 0. So the break-even output is 120 units because TR = TC there. Her best output of the three is 80 units.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "24,000 - 30,000 = a loss of N6,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "48,000 - 42,000 = a profit of N6,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "72,000 - 72,000 = 0"
+                },
+                {
+                  "point": 3,
+                  "quote": "the break-even output is 120 units because TR = TC there"
+                }
+              ],
+              "feedback": "All four marks. Noticing that 80 units gives the best profit shows you understand what the figures mean."
+            },
+            {
+              "tier": "full",
+              "text": "Profit = TR - TC. At 40 she has a loss of N6,000, at 80 she makes a profit of N6,000 and at 120 she makes neither profit nor loss. Break-even is at 120 units, where total revenue equals total cost.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "At 40 she has a loss of N6,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "at 80 she makes a profit of N6,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "at 120 she makes neither profit nor loss"
+                },
+                {
+                  "point": 3,
+                  "quote": "Break-even is at 120 units, where total revenue equals total cost"
+                }
+              ],
+              "feedback": "Full marks. Quoting the formula first made your working clear."
+            },
+            {
+              "tier": "partial",
+              "text": "At 40 units the loss is N6,000, at 80 the profit is N6,000 and at 120 the profit is N0.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "At 40 units the loss is N6,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "at 80 the profit is N6,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "at 120 the profit is N0"
+                }
+              ],
+              "feedback": "Your three answers are correct. You did not state the break-even output: it is 120 units, where TR equals TC and profit is zero."
+            },
+            {
+              "tier": "partial",
+              "text": "At 40 she makes a profit of N6,000 because 30,000 - 24,000 = 6,000. At 80 the profit is N6,000. At 120 she breaks even.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "At 80 the profit is N6,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "At 120 she breaks even"
+                }
+              ],
+              "feedback": "Profit is TR minus TC, so at 40 units it is 24,000 - 30,000 = a loss of N6,000. Your other two answers are right, and 120 units is the break-even output.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Profit is the total cost minus revenue so at 40 units she gained N6,000.",
+              "meets": [],
+              "feedback": "Profit is revenue minus cost. At 40 units, revenue is below cost, so there is a loss of N6,000. Work out all three outputs and find where profit is zero."
+            },
+            {
+              "tier": "weak",
+              "text": "She breaks even at 40 units because the revenue is small. At 80 units the revenue is 48,000.",
+              "meets": [],
+              "feedback": "Break-even is where TR equals TC, which happens at 120 units (72,000 each). At 40 units she has a loss of N6,000. Compute TR - TC at each output."
+            }
+          ]
+        },
+        {
+          "prompt": "Compare a sole proprietorship with a public limited company in terms of (i) the liability of the owners and (ii) the sources of capital. State two problems that the owner of a small business in Nigeria may face.",
+          "markScheme": [
+            "Sole proprietor has unlimited liability, so personal property can be used to pay debts",
+            "Shareholders of a public limited company have limited liability to their shares",
+            "Sole proprietor raises capital from personal savings, loans or family; a public company sells shares to the public",
+            "Two valid problems, e.g. lack of capital, unreliable power supply, poor management, high taxes"
+          ],
+          "modelAnswer": "(i) A sole proprietor has unlimited liability, so his personal property can be taken to pay the debts of the business; shareholders in a public limited company have limited liability and can lose only the money they invested. (ii) A sole proprietor raises capital from personal savings, loans and family, while a public limited company sells shares to the public and can raise very large sums. Small businesses in Nigeria face problems such as lack of capital and unreliable electricity.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(i) The sole proprietor has unlimited liability, so his personal property can be sold to pay the debts of the business. In a public limited company the shareholders have limited liability and can lose only what they invested. (ii) The sole proprietor gets capital from his savings or a loan, but a public limited company sells shares to the public. Problems: lack of capital and unreliable power supply.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The sole proprietor has unlimited liability, so his personal property can be sold to pay the debts of the business"
+                },
+                {
+                  "point": 1,
+                  "quote": "the shareholders have limited liability and can lose only what they invested"
+                },
+                {
+                  "point": 2,
+                  "quote": "The sole proprietor gets capital from his savings or a loan, but a public limited company sells shares to the public"
+                },
+                {
+                  "point": 3,
+                  "quote": "lack of capital and unreliable power supply"
+                }
+              ],
+              "feedback": "All four marks. Every point is a comparison, not a description of one business."
+            },
+            {
+              "tier": "full",
+              "text": "(i) A sole proprietor has unlimited liability, which means he can lose his own property if the business fails. A public limited company has limited liability, which means a shareholder cannot lose more than his shares. (ii) A sole proprietor depends on personal savings, loans and family help, while the public company raises capital from many shareholders. Two problems are poor management and high taxes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A sole proprietor has unlimited liability, which means he can lose his own property if the business fails"
+                },
+                {
+                  "point": 1,
+                  "quote": "A public limited company has limited liability, which means a shareholder cannot lose more than his shares"
+                },
+                {
+                  "point": 2,
+                  "quote": "A sole proprietor depends on personal savings, loans and family help, while the public company raises capital from many shareholders"
+                },
+                {
+                  "point": 3,
+                  "quote": "poor management and high taxes"
+                }
+              ],
+              "feedback": "Full marks. Well compared and each point is explained."
+            },
+            {
+              "tier": "partial",
+              "text": "(i) The sole proprietor has unlimited liability and the public limited company has limited liability. (ii) Both get their capital from the bank.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The sole proprietor has unlimited liability"
+                },
+                {
+                  "point": 1,
+                  "quote": "the public limited company has limited liability"
+                }
+              ],
+              "feedback": "Liability is right but say what it means: the sole proprietor can lose personal property. For (ii), a public limited company raises capital by selling shares. You also need two problems of small businesses."
+            },
+            {
+              "tier": "partial",
+              "text": "(ii) The sole proprietor gets capital from savings and the public limited company sells shares to the public. The problems are lack of capital and bad roads.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The sole proprietor gets capital from savings and the public limited company sells shares to the public"
+                },
+                {
+                  "point": 3,
+                  "quote": "lack of capital and bad roads"
+                }
+              ],
+              "feedback": "Capital sources and problems are good. You did not answer (i) on liability: the sole proprietor has unlimited liability, the shareholders of a public company have limited liability.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(i) The sole proprietor does not pay tax and the public limited company pays tax. (ii) The capital is money.",
+              "meets": [],
+              "feedback": "Both pay tax. Liability is about whether the owner's personal property can be used for the debts: unlimited for the sole proprietor, limited for shareholders. Name the sources of capital for each."
+            },
+            {
+              "tier": "weak",
+              "text": "(i) The sole proprietor has many owners and the public company has one owner. (ii) Both use bank loans.",
+              "meets": [],
+              "feedback": "It is the other way: a sole proprietorship has one owner and a public company has many shareholders. A public company also raises capital by selling shares."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Public enterprises and the distribution of goods",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain privatisation and commercialisation as remedies for the problems of public enterprises;\n2. distinguish indigenisation from nationalisation;\n3. describe the chain of distribution and the role of producers, wholesalers, retailers and co-operatives;\n4. state the role of government agencies in distribution and the problems of distribution with their solutions.\n\n## Materials\n\nPictures of a depot, a wholesaler's store and a retail shop; a chart of the chain of distribution; a short account of a state-owned company that was sold.\n\n## Starter (5 minutes)\n\nAsk: your family buys a bag of rice. Trace it back. Who sold it to you, who sold it to them, and where did it start?\n\n## Development\n\n1. Recall why government owns enterprises and list their problems: inefficiency, political interference, corruption, losses.\n2. Define privatisation (sale of government shares to private owners) and commercialisation (the enterprise stays public but is run on business lines). Advantages and disadvantages of each. Mention the Bureau of Public Enterprises.\n3. Define indigenisation (transfer of ownership of foreign firms to Nigerians) and nationalisation (government takes over private firms). Give the Nigerian Enterprises Promotion Decrees of the 1970s as a historical example.\n4. Trace the chain: producer, wholesaler, retailer, consumer. Role of each, and of co-operatives in cutting out middlemen.\n5. Government agencies: the Standards Organisation of Nigeria (SON), NAFDAC, the Federal Competition and Consumer Protection Commission. Problems: poor roads, hoarding, middlemen, storage losses.\n\n## Class activity\n\nStudents draw the chain of distribution for a product they know, tomatoes or sachet water.\n\n## Evaluation\n\n1. Define privatisation.\n2. State two problems of distribution in Nigeria and a solution to each.\n\n## Assignment\n\nComplete the differentiated worksheet on the app. Core and extension questions are marked.",
+      "reading": {
+        "title": "From the factory to the buyer",
+        "content": "# Public enterprises and the distribution of goods\n\n## Problems of public enterprises\n\nGovernment-owned businesses, such as power or telephone companies, often suffer from poor management, political interference, overstaffing, corruption and lack of funds. Many have run at a loss and depended on government subsidies.\n\n## Privatisation and commercialisation\n\n**Privatisation** is the sale of government shares in a public enterprise to private individuals or firms. The aim is to make the business more efficient through profit motive, reduce government spending and widen ownership. The Bureau of Public Enterprises (BPE) handled the sale of many Nigerian government companies. Weaknesses: workers may lose their jobs, and the buyers may be a few rich people, or may raise prices.\n\n**Commercialisation** means the government keeps ownership but the enterprise is run like a business: charging economic prices, cutting waste and managing without regular subsidies.\n\n## Indigenisation and nationalisation\n\n**Indigenisation** is the transfer of ownership of foreign firms to citizens. In the 1970s Nigeria passed decrees that required foreigners to sell shares in many businesses to Nigerians. **Nationalisation** is the takeover of private firms by the state, sometimes with payment.\n\n## Distribution\n\n**Distribution** moves goods from producers to consumers. The chain is usually:\n\nproducer, then **wholesaler**, then **retailer**, then consumer.\n\n- The **wholesaler** buys in bulk, stores goods, sells to retailers in smaller lots and gives credit.\n- The **retailer** sells in small quantities to the final buyer, often near the home.\n- **Co-operative societies** buy and sell for their members and may cut out middlemen so that farmers earn more.\n\nA bag of rice may be milled in Kebbi, sold to a wholesaler in Ibadan, then to a retailer in Bodija, then to you.\n\n## Government agencies and problems\n\nAgencies protect buyers and regulate trade: the Standards Organisation of Nigeria sets product standards; NAFDAC controls food and drugs; the Federal Competition and Consumer Protection Commission checks unfair trade practice.\n\nProblems of distribution include poor roads, high transport cost, insecurity on highways, poor storage that spoils food, hoarding, and too many middlemen. Solutions include better roads and rail, storage depots, strict enforcement against hoarding and support for co-operatives."
+      },
+      "cards": [
+        {
+          "front": "Privatisation",
+          "back": "The sale of government-owned shares in an enterprise to private owners."
+        },
+        {
+          "front": "Commercialisation",
+          "back": "Running a public enterprise on business lines while government still owns it."
+        },
+        {
+          "front": "Indigenisation",
+          "back": "Transfer of ownership of foreign firms to citizens."
+        },
+        {
+          "front": "Nationalisation",
+          "back": "Takeover of private enterprises by government."
+        },
+        {
+          "front": "Wholesaler",
+          "back": "Buys in bulk from producers and sells in smaller lots to retailers."
+        },
+        {
+          "front": "Retailer",
+          "back": "Sells small quantities to the final consumer."
+        },
+        {
+          "front": "Hoarding",
+          "back": "Keeping goods back from sale to force the price up."
+        },
+        {
+          "front": "SON",
+          "back": "The agency that sets and enforces product standards in Nigeria."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The sale of government shares in a public enterprise to private individuals is called",
+          "options": [
+            "nationalisation",
+            "commercialisation",
+            "indigenisation",
+            "privatisation"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is a function of a wholesaler?",
+          "options": [
+            "Selling to the final consumer in small quantities",
+            "Buying in bulk and selling to retailers",
+            "Growing the goods",
+            "Printing receipts for consumers"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Commercialisation of a public enterprise means",
+          "options": [
+            "selling it to foreign investors",
+            "closing it down",
+            "running it on business principles while government still owns it",
+            "giving it to the workers"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is a problem of distribution in Nigeria?",
+          "options": [
+            "Excess national income",
+            "Poor roads that raise transport costs",
+            "Too many wholesalers only",
+            "Excess storage space"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Government taking over a privately owned company is known as",
+          "options": [
+            "nationalisation",
+            "privatisation",
+            "indigenisation",
+            "commercialisation"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define privatisation and state three benefits it was meant to bring to public enterprises in Nigeria. State one possible disadvantage.",
+          "markScheme": [
+            "Privatisation is the sale of government shares in a public enterprise to private owners",
+            "Benefit: greater efficiency through the profit motive",
+            "Benefit: reduces government spending or subsidy and raises revenue, or widens ownership",
+            "Disadvantage: loss of jobs or higher prices for consumers (one valid disadvantage)"
+          ],
+          "modelAnswer": "Privatisation is the sale of government-owned shares in a public enterprise to private individuals or firms. It was meant to make the enterprise more efficient through the profit motive, to reduce the burden of subsidies on government and bring in revenue from the sale, and to widen ownership of businesses. A possible disadvantage is that workers may lose their jobs or that prices may rise once profit becomes the aim.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Privatisation is when government sells the shares it owns in a public company to private people or firms. It was meant to make the company efficient because private owners want profit. It reduces what government spends on subsidies and gives it money from the sale. It also spreads ownership to more people. A disadvantage is that workers can lose their jobs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "government sells the shares it owns in a public company to private people or firms"
+                },
+                {
+                  "point": 1,
+                  "quote": "make the company efficient because private owners want profit"
+                },
+                {
+                  "point": 2,
+                  "quote": "reduces what government spends on subsidies and gives it money from the sale"
+                },
+                {
+                  "point": 3,
+                  "quote": "workers can lose their jobs"
+                }
+              ],
+              "feedback": "All four marks. You gave reasons for the benefits instead of a bare list."
+            },
+            {
+              "tier": "full",
+              "text": "Privatisation means selling public enterprises to private owners. Benefits: better management and efficiency since private owners want profit, less government subsidy to loss-making firms, and ownership by more people. Disadvantage: the new owners may raise the price of the service, for example telephone or electricity tariffs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "selling public enterprises to private owners"
+                },
+                {
+                  "point": 1,
+                  "quote": "better management and efficiency since private owners want profit"
+                },
+                {
+                  "point": 2,
+                  "quote": "less government subsidy to loss-making firms"
+                },
+                {
+                  "point": 3,
+                  "quote": "the new owners may raise the price of the service"
+                }
+              ],
+              "feedback": "Full marks. The tariff example shows a real consequence for consumers."
+            },
+            {
+              "tier": "partial",
+              "text": "Privatisation is the sale of government enterprises to private owners. It makes them efficient and reduces what government spends.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the sale of government enterprises to private owners"
+                },
+                {
+                  "point": 1,
+                  "quote": "It makes them efficient"
+                }
+              ],
+              "feedback": "The definition and the efficiency point are right. Reducing government spending is a second benefit; state a third, such as wider ownership, and give one disadvantage such as loss of jobs."
+            },
+            {
+              "tier": "partial",
+              "text": "The benefits are efficiency, income to government and wider ownership. The disadvantage is that workers lose their jobs.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "efficiency"
+                },
+                {
+                  "point": 2,
+                  "quote": "income to government"
+                },
+                {
+                  "point": 3,
+                  "quote": "workers lose their jobs"
+                }
+              ],
+              "feedback": "Good points, but you left out the definition: privatisation is the sale of government shares in a public enterprise to private owners. Always define the term the question asks about.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Privatisation is when the government takes over private companies so that the people will benefit.",
+              "meets": [],
+              "feedback": "That is nationalisation. Privatisation is the opposite: government sells public enterprises to private owners."
+            },
+            {
+              "tier": "weak",
+              "text": "Privatisation is when a person owns a private school. It brings money.",
+              "meets": [],
+              "feedback": "Privatisation is the sale of a public enterprise to private owners. Say what it brings: efficiency, less spending by government and wider ownership."
+            }
+          ]
+        },
+        {
+          "prompt": "Trace the chain of distribution of a bag of rice from a Kebbi farm to a household in Ibadan. State the role of each link and say how a co-operative society could shorten the chain.",
+          "markScheme": [
+            "Identifies the chain: producer/miller, wholesaler, retailer, consumer",
+            "The wholesaler buys in bulk, stores and breaks into smaller lots for retailers",
+            "The retailer sells small quantities to households",
+            "A co-operative buys directly from farmers and sells to members, removing some middlemen so prices fall"
+          ],
+          "modelAnswer": "The rice goes from the producer or miller in Kebbi to a wholesaler, then to a retailer, and finally to the household in Ibadan. The wholesaler buys in bulk, stores the rice and sells it in smaller lots to retailers. The retailer sells in small quantities, such as a derica or one bag, to households near their homes. A co-operative society could buy directly from the farmers and sell to its members, cutting out some middlemen, so the farmer earns more and the household pays less.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The rice goes from the producer in Kebbi to a wholesaler in Ibadan, then to a retailer, then to the household. The wholesaler buys the rice in bulk, stores it and sells it in smaller lots to retailers. The retailer sells small quantities to families who live near. A co-operative could buy directly from the farmers and sell to its members, which cuts out the middlemen and makes the price lower.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "from the producer in Kebbi to a wholesaler in Ibadan, then to a retailer, then to the household"
+                },
+                {
+                  "point": 1,
+                  "quote": "buys the rice in bulk, stores it and sells it in smaller lots to retailers"
+                },
+                {
+                  "point": 2,
+                  "quote": "The retailer sells small quantities to families who live near"
+                },
+                {
+                  "point": 3,
+                  "quote": "buy directly from the farmers and sell to its members, which cuts out the middlemen and makes the price lower"
+                }
+              ],
+              "feedback": "All four marks. You described what each link does, not only who they are."
+            },
+            {
+              "tier": "full",
+              "text": "Producer (Kebbi farmer or miller), then wholesaler, then retailer, then consumer. The wholesaler's role is bulk buying, storage and supplying the retailer in smaller amounts. The retailer's role is selling to the household in small amounts. A co-operative of farmers can sell to a members' shop in Ibadan directly so that fewer middlemen add profit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Producer (Kebbi farmer or miller), then wholesaler, then retailer, then consumer"
+                },
+                {
+                  "point": 1,
+                  "quote": "bulk buying, storage and supplying the retailer in smaller amounts"
+                },
+                {
+                  "point": 2,
+                  "quote": "selling to the household in small amounts"
+                },
+                {
+                  "point": 3,
+                  "quote": "A co-operative of farmers can sell to a members' shop in Ibadan directly so that fewer middlemen add profit"
+                }
+              ],
+              "feedback": "Full marks. You gave the chain in order and a concrete way the co-operative shortens it."
+            },
+            {
+              "tier": "partial",
+              "text": "The chain is producer, wholesaler, retailer and then consumer. The wholesaler buys in bulk and the retailer sells to people.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "producer, wholesaler, retailer and then consumer"
+                },
+                {
+                  "point": 1,
+                  "quote": "The wholesaler buys in bulk"
+                },
+                {
+                  "point": 2,
+                  "quote": "the retailer sells to people"
+                }
+              ],
+              "feedback": "Your chain is right, and each role is brief. Add the wholesaler's storage and breaking of bulk, that the retailer sells small quantities, and how a co-operative removes middlemen."
+            },
+            {
+              "tier": "partial",
+              "text": "A co-operative society can buy rice from the farmers directly and sell to its members, so it removes the middlemen. The rice goes from the farmer to the buyer.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "buy rice from the farmers directly and sell to its members, so it removes the middlemen"
+                }
+              ],
+              "feedback": "Your co-operative point is correct. Name the links in the chain and state the role of the wholesaler and of the retailer.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The rice goes from the farm to the market. The government brings it.",
+              "meets": [],
+              "feedback": "Name the links: producer, wholesaler, retailer, consumer. Government does not carry the rice; traders do. State what the wholesaler and retailer each do."
+            },
+            {
+              "tier": "weak",
+              "text": "Producer, then consumer, then wholesaler. The retailer is the person who produces it.",
+              "meets": [],
+              "feedback": "The consumer is last. The order is producer, wholesaler, retailer, consumer. The producer, not the retailer, makes the goods; the retailer sells to the consumer."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Population: size, growth, migration and census",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state what determines the size and growth of a population and calculate natural increase;\n2. explain the causes and effects of rural-urban migration;\n3. state the Malthusian theory of population and its weaknesses;\n4. describe age, sex and occupational distribution, and the importance and problems of a census.\n\n## Materials\n\nCalculators, a chart of birth and death rates, a population pyramid of Nigeria, a map showing the movement of people from villages to Lagos.\n\n## Starter (5 minutes)\n\nAsk: your street had 40 houses ten years ago. Now it has 70. What has changed about the people who live there? Where might the extra people have come from?\n\n## Development\n\n1. Define population. List the factors that determine size: birth rate, death rate and net migration. Define natural increase = birth rate - death rate. Work an example.\n2. Rural-urban migration: causes (poor rural amenities, jobs in the city, education) and effects (pressure on housing, unemployment, crime in cities; fewer farm workers, ageing villages).\n3. Teach Malthus: population grows in geometric progression (1, 2, 4, 8) but food only in arithmetic progression (1, 2, 3, 4), so the checks of famine, war and disease reduce population. Criticisms: advances in agriculture, family planning, trade.\n4. Age, sex and occupational distribution; dependency ratio.\n5. Census: purpose (planning, sharing of revenue and seats) and problems (cost, insecurity, disputes about numbers).\n\n## Class activity\n\nPupils plot a population pyramid from given figures and describe its shape.\n\n## Evaluation\n\n1. A country has a birth rate of 40 and a death rate of 15 per thousand. Find the natural increase.\n2. Name two problems of conducting a census in Nigeria.\n\n## Assignment\n\nComplete the problem set on the app.",
+      "reading": {
+        "title": "How populations change",
+        "content": "# Population: size, growth, migration and census\n\n## Size and growth\n\nA **population** is the total number of people living in an area at a given time. It changes through:\n\n- the **birth rate**: births per 1,000 people in a year;\n- the **death rate**: deaths per 1,000 people in a year;\n- **migration**: people moving in (immigration) or out (emigration).\n\n**Natural increase** = birth rate - death rate. If a country has 38 births and 12 deaths per 1,000, natural increase = 38 - 12 = 26 per 1,000, which is 2.6% a year.\n\nPopulation growth is faster when birth rates are high, health care lowers death rates, and young adults are many.\n\n## Rural-urban migration\n\nPeople leave villages for towns, as many move to Lagos, Kano or Port Harcourt. **Causes:** better jobs, schools and hospitals in towns; poor roads and light in villages; insecurity or poor harvests. **Effects on towns:** crowding, slums, unemployment, pressure on water and transport. **Effects on villages:** fewer young farm workers, lower food output and an ageing population.\n\n## The Malthusian theory\n\nThomas Malthus said that population increases in **geometric progression** (1, 2, 4, 8, 16) while food supply increases in **arithmetic progression** (1, 2, 3, 4, 5). Eventually people outrun food and \"positive checks\" such as famine, disease and war reduce numbers, or \"preventive checks\" such as late marriage can hold them back.\n\n**Criticisms:** new seeds, machines and fertilisers have raised food output faster than he expected; family planning reduces births; and countries can buy food through trade.\n\n## Distribution of the population\n\nBy **age**: Nigeria has a large share of children and youths (a broad base), so many dependants. By **sex**: the proportion of men to women. By **occupation**: how many work in farming, industry and services. Place also matters: the density of Lagos is far higher than the density of Borno.\n\n## The census\n\nA **census** is an official counting of people and collecting of information about them. It helps plan schools, hospitals and roads, and may guide the sharing of revenue and political seats. Problems: high cost, insecurity, illiteracy, disputes over results, and people hiding their numbers."
+      },
+      "cards": [
+        {
+          "front": "Birth rate",
+          "back": "Number of births per 1,000 people in a year."
+        },
+        {
+          "front": "Death rate",
+          "back": "Number of deaths per 1,000 people in a year."
+        },
+        {
+          "front": "Natural increase",
+          "back": "Birth rate minus death rate."
+        },
+        {
+          "front": "Rural-urban migration",
+          "back": "Movement of people from villages to towns."
+        },
+        {
+          "front": "Malthus's theory",
+          "back": "Population grows geometrically while food supply grows arithmetically."
+        },
+        {
+          "front": "Positive checks",
+          "back": "Famine, disease and war that reduce a population."
+        },
+        {
+          "front": "Dependency",
+          "back": "Children and the old who rely on the working population."
+        },
+        {
+          "front": "Census",
+          "back": "An official count of the people in a country and their characteristics."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A country has a birth rate of 40 per thousand and a death rate of 15 per thousand. Its natural increase per thousand is",
+          "options": [
+            "55",
+            "25",
+            "2.5",
+            "15"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following is an effect of rural-urban migration on the villages?",
+          "options": [
+            "Decline in farm labour",
+            "Overcrowding",
+            "Slums",
+            "Traffic congestion"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "According to Malthus, population increases",
+          "options": [
+            "arithmetically",
+            "by the same amount as food",
+            "only through immigration",
+            "geometrically"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A population of 2,000,000 grows at 3% a year. The increase in one year is",
+          "options": [
+            "6,000",
+            "600,000",
+            "60,000",
+            "3,000,000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is a problem of conducting a census in Nigeria?",
+          "options": [
+            "Excess funds",
+            "Too much literacy",
+            "Too few forms",
+            "Disputes over the results and insecurity"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A town had 120,000 people at the start of the year. During the year there were 4,800 births, 1,200 deaths, 2,400 people moved in and 1,200 people moved out. Calculate (a) the natural increase, (b) the net migration and (c) the population at the end of the year.",
+          "markScheme": [
+            "Natural increase = 4,800 - 1,200 = 3,600",
+            "Net migration = 2,400 - 1,200 = 1,200",
+            "Total change = 3,600 + 1,200 = 4,800",
+            "Population at the end = 120,000 + 4,800 = 124,800"
+          ],
+          "modelAnswer": "(a) Natural increase = births - deaths = 4,800 - 1,200 = 3,600. (b) Net migration = 2,400 in - 1,200 out = 1,200. (c) The total change is 3,600 + 1,200 = 4,800, so the population at the end of the year is 120,000 + 4,800 = 124,800.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Natural increase = 4,800 - 1,200 = 3,600. (b) Net migration = 2,400 - 1,200 = 1,200. (c) Total change = 3,600 + 1,200 = 4,800, so the new population = 120,000 + 4,800 = 124,800.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Natural increase = 4,800 - 1,200 = 3,600"
+                },
+                {
+                  "point": 1,
+                  "quote": "Net migration = 2,400 - 1,200 = 1,200"
+                },
+                {
+                  "point": 2,
+                  "quote": "Total change = 3,600 + 1,200 = 4,800"
+                },
+                {
+                  "point": 3,
+                  "quote": "the new population = 120,000 + 4,800 = 124,800"
+                }
+              ],
+              "feedback": "All four marks. You added the natural increase and the net migration before adding to the old population."
+            },
+            {
+              "tier": "full",
+              "text": "The natural increase is births minus deaths = 3,600. Net migration is immigrants minus emigrants = 1,200. The population increases by 3,600 + 1,200 = 4,800 so at the end of the year the town has 124,800 people.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The natural increase is births minus deaths = 3,600"
+                },
+                {
+                  "point": 1,
+                  "quote": "Net migration is immigrants minus emigrants = 1,200"
+                },
+                {
+                  "point": 2,
+                  "quote": "The population increases by 3,600 + 1,200 = 4,800"
+                },
+                {
+                  "point": 3,
+                  "quote": "the town has 124,800 people"
+                }
+              ],
+              "feedback": "Full marks. Defining each term in words shows you know why you subtract."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Natural increase = 3,600. (b) Net migration = 1,200. (c) The population is 120,000 + 3,600 = 123,600.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Natural increase = 3,600"
+                },
+                {
+                  "point": 1,
+                  "quote": "Net migration = 1,200"
+                }
+              ],
+              "feedback": "Your first two answers are right. In (c) you forgot to add the net migration; the total change is 3,600 + 1,200 = 4,800, so the population is 124,800."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 4,800 - 1,200 = 3,600. (b) 2,400 + 1,200 = 3,600. (c) 120,000 + 3,600 + 3,600 = 127,200.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4,800 - 1,200 = 3,600"
+                }
+              ],
+              "feedback": "Natural increase is correct. Net migration is those who came in minus those who went out, 2,400 - 1,200 = 1,200; adding them gave a wrong total.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 4,800 + 1,200 = 6,000. (b) 2,400 + 1,200 = 3,600. (c) 120,000.",
+              "meets": [],
+              "feedback": "Natural increase subtracts deaths from births (4,800 - 1,200), and net migration subtracts emigrants from immigrants. Then add both to 120,000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Natural increase is the births = 4,800. (b) Net migration is 2,400. (c) 124,800.",
+              "meets": [],
+              "feedback": "Natural increase takes the deaths away from the births, and net migration takes those leaving from those arriving. The final figure is not enough without the working."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) State the Malthusian theory of population. (b) Give two reasons why Malthus's prediction has not come true in most countries. (c) State two reasons why many young people in Nigerian villages move to cities.",
+          "markScheme": [
+            "Population grows geometrically while food grows arithmetically, so population will outrun food",
+            "One reason, e.g. improved farm technology, fertilisers and high-yield seeds",
+            "Another reason, e.g. family planning, or food trade/imports",
+            "Two causes of migration: e.g. better jobs, schools and amenities in cities, poor rural facilities"
+          ],
+          "modelAnswer": "(a) Malthus said that population increases geometrically (1, 2, 4, 8) while food supply increases only arithmetically (1, 2, 3, 4), so population will outrun food and be checked by famine, disease and war. (b) New seeds, fertilisers and machines have raised food production faster than he expected, and family planning and trade in food have also reduced the pressure. (c) Young people leave for better jobs and for schools, hospitals and electricity in cities, which villages lack.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Malthus said population grows geometrically, like 1, 2, 4, 8, but food grows arithmetically, like 1, 2, 3, 4, so population will become more than food. (b) New farming technology such as fertilisers and improved seeds increased food output, and family planning reduced the number of births. (c) Young people move to cities for jobs and for better schools and hospitals.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "population grows geometrically, like 1, 2, 4, 8, but food grows arithmetically, like 1, 2, 3, 4, so population will become more than food"
+                },
+                {
+                  "point": 1,
+                  "quote": "New farming technology such as fertilisers and improved seeds increased food output"
+                },
+                {
+                  "point": 2,
+                  "quote": "family planning reduced the number of births"
+                },
+                {
+                  "point": 3,
+                  "quote": "Young people move to cities for jobs and for better schools and hospitals"
+                }
+              ],
+              "feedback": "Full marks. The number patterns make the theory easy to follow."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The theory says that population increases in geometric progression while food supply increases in arithmetic progression, so there is a time when people will be too many for food, and famine and disease reduce them. (b) Food production increased through machines and high-yield seeds, and countries import food. (c) Because cities have more jobs and village amenities like light, water and hospitals are poor.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "population increases in geometric progression while food supply increases in arithmetic progression"
+                },
+                {
+                  "point": 1,
+                  "quote": "Food production increased through machines and high-yield seeds"
+                },
+                {
+                  "point": 2,
+                  "quote": "countries import food"
+                },
+                {
+                  "point": 3,
+                  "quote": "cities have more jobs and village amenities like light, water and hospitals are poor"
+                }
+              ],
+              "feedback": "All four marks. Importing food is a good reason that many learners omit."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Malthus said population will grow faster than food. (b) Because of new farm machines. (c) For jobs and school in the cities.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "new farm machines"
+                },
+                {
+                  "point": 3,
+                  "quote": "jobs and school in the cities"
+                }
+              ],
+              "feedback": "For (a), add how each grows: population geometrically, food arithmetically. In (b) you need two reasons: machines and, for example, family planning or food imports."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Population increases geometrically but food increases arithmetically. (b) Family planning and importing food. (c) For modern life and jobs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Population increases geometrically but food increases arithmetically"
+                },
+                {
+                  "point": 2,
+                  "quote": "Family planning and importing food"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are correct (note that (b) needs two reasons and you gave two). For (c) say what draws people: jobs, schools, hospitals and electricity, not 'modern life'.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Malthus said population will reduce because of food. (b) Because Nigeria has a lot of food. (c) Because villages are boring.",
+              "meets": [],
+              "feedback": "Malthus said population grows faster than food and will be reduced by famine, war and disease. Say how technology and family planning changed things, and give real causes of migration, such as jobs and amenities."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The theory says that food grows geometrically and population arithmetically. (b) Because of NAFDAC. (c) Because of armed robbers.",
+              "meets": [],
+              "feedback": "You swapped the rates: population grows geometrically and food arithmetically. NAFDAC is unrelated; think technology and family planning. People move to cities mainly for work and amenities."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Optimum population, the labour force and wages",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish under-population, optimum population and over-population;\n2. define the labour force, human capital, and mobility of labour;\n3. explain how wages are determined and what causes unemployment and underemployment;\n4. state the roles of trade unions, employers' associations and government in labour matters.\n\n## Materials\n\nCalculators, a diagram of output per head against population, cards describing different workers, a poster of the Nigeria Labour Congress.\n\n## Starter (5 minutes)\n\nAsk: a classroom is built for 40 pupils. What happens to learning if 25 pupils are in it? If 90 are in it? What number is best?\n\n## Development\n\n1. Use the classroom to introduce the optimum population: the size at which output per head is highest. Under-population: below the optimum, resources are not fully used. Over-population: above the optimum, output per head falls.\n2. Define labour force (everyone aged 15 to 64 willing and able to work), human capital (knowledge and skills), efficiency and mobility of labour (occupational and geographical). Factors affecting the size of the labour force: age structure, retirement age, education, attitudes toward women working.\n3. Wage determination: demand for labour (MRP) meets supply of labour. Minimum wage and its effects.\n4. Unemployment: types (frictional, structural, seasonal, cyclical) and underemployment. Calculate the unemployment rate.\n5. Trade unions (NLC), employers' associations (NECA) and government policies on labour and wages.\n\n## Class activity\n\nStudents sort ten workers into employed, unemployed and underemployed, then calculate a class unemployment rate from a scenario.\n\n## Evaluation\n\n1. Define the optimum population.\n2. Give two causes of unemployment among school leavers.\n\n## Assignment\n\nComplete the differentiated worksheet on the app. Core and extension questions are marked.",
+      "reading": {
+        "title": "The right number of people, and what work pays",
+        "content": "# Optimum population, the labour force and wages\n\n## Under-, optimum and over-population\n\nThe **optimum population** is the size at which output per head is highest, given the land, capital and skills available. If the population is below this, there is **under-population**: resources are not fully used, as in a vast empty farmland with few workers. If it is above, there is **over-population**: too many people share the resources, so output per head falls, as in an area with too many farmers on too little land.\n\nThe optimum is not fixed. New technology or discovery of oil can raise it.\n\n## Labour force and human capital\n\nThe **labour force** (working population) is the part of the population willing and able to work. It excludes young children, full-time students, the retired and the sick. Its size depends on the age structure, the school-leaving and retirement ages, the number of women who work, and migration.\n\n**Human capital** is the knowledge, skills and health of workers, which grow through education and training. A well-trained worker is more **efficient**. **Mobility of labour** is the ease with which workers change jobs (**occupational mobility**) or places (**geographical mobility**). It is harder when people lack skills, housing or information.\n\n## Wages\n\nA wage is the price of labour. It is set by the demand for labour (from firms, based on the worker's marginal revenue product) and the supply of labour. Wages are higher for skilled work, dangerous work and jobs with few qualified people. Government may fix a **minimum wage**; if it is above the market wage, firms may employ fewer workers.\n\n## Unemployment\n\nA person is unemployed when able and willing to work but without a job. The unemployment rate is the number of unemployed divided by the labour force, times 100.\n\n**Worked example.** If 90,000 are employed and 10,000 are unemployed, the labour force is 100,000 and the unemployment rate is 10,000 / 100,000 x 100 = **10%**.\n\nTypes: **frictional** (changing jobs), **structural** (skills do not match jobs), **seasonal** (farm work) and **cyclical** (recession). **Underemployment** is when workers are not fully used, such as a graduate selling recharge cards or a farmer working only in the rainy season.\n\n## Unions and policy\n\n**Trade unions** such as the Nigeria Labour Congress (NLC) negotiate wages for workers. **Employers' associations** like the Nigeria Employers' Consultative Association (NECA) represent firms. Government sets minimum wage, labour laws and encourages training."
+      },
+      "cards": [
+        {
+          "front": "Optimum population",
+          "back": "The size of population at which output per head is highest."
+        },
+        {
+          "front": "Over-population",
+          "back": "Population above the optimum, so output per head falls."
+        },
+        {
+          "front": "Labour force",
+          "back": "The part of the population that is able and willing to work."
+        },
+        {
+          "front": "Human capital",
+          "back": "The knowledge, skills and health of workers."
+        },
+        {
+          "front": "Occupational mobility",
+          "back": "The ease of moving from one type of job to another."
+        },
+        {
+          "front": "Frictional unemployment",
+          "back": "Temporary unemployment while people change jobs."
+        },
+        {
+          "front": "Underemployment",
+          "back": "Workers not fully used, or working below their skill or hours."
+        },
+        {
+          "front": "Trade union",
+          "back": "An organisation of workers that bargains for pay and conditions."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A country in which output per head falls because there are too many people for its resources is",
+          "options": [
+            "under-populated",
+            "over-populated",
+            "optimally populated",
+            "urbanised"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Out of a labour force of 50,000, 5,000 are unemployed. The unemployment rate is",
+          "options": [
+            "5%",
+            "9.1%",
+            "50%",
+            "10%"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A graduate of Economics is selling recharge cards at a roadside because he cannot find a job in his field. This is an example of",
+          "options": [
+            "frictional unemployment",
+            "cyclical unemployment",
+            "underemployment",
+            "retirement"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of the following affects the size of a country's labour force?",
+          "options": [
+            "The number of students in universities",
+            "The price of land",
+            "The retirement age",
+            "The size of its rivers"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A minimum wage set above the market wage may lead to",
+          "options": [
+            "more jobs for all workers",
+            "lower prices",
+            "a fall in unions",
+            "fewer workers being employed"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "In a town, 160,000 people are in employment and 40,000 people are looking for jobs. (a) Calculate the unemployment rate. (b) Distinguish between unemployment and underemployment, giving one example of each from a Nigerian town.",
+          "markScheme": [
+            "Labour force = 160,000 + 40,000 = 200,000",
+            "Unemployment rate = 40,000 / 200,000 x 100 = 20%",
+            "Unemployment: able and willing to work but without a job, with a valid example",
+            "Underemployment: working but not fully used or below skill, with a valid example"
+          ],
+          "modelAnswer": "(a) The labour force is 160,000 + 40,000 = 200,000. The unemployment rate is 40,000 / 200,000 x 100 = 20%. (b) Unemployment is when a person is able and willing to work but has no job at all, for example a school leaver looking for work in Ibadan. Underemployment is when a person works but is not fully used or works below their skill, such as a graduate who sells recharge cards.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The labour force is 160,000 + 40,000 = 200,000. Unemployment rate = 40,000/200,000 x 100 = 20%. (b) Unemployment is when someone is willing and able to work but cannot find any job, like a school leaver looking for work. Underemployment is when someone works but is not fully used or does work below their skill, like a graduate engineer who drives a keke.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The labour force is 160,000 + 40,000 = 200,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Unemployment rate = 40,000/200,000 x 100 = 20%"
+                },
+                {
+                  "point": 2,
+                  "quote": "willing and able to work but cannot find any job, like a school leaver looking for work"
+                },
+                {
+                  "point": 3,
+                  "quote": "works but is not fully used or does work below their skill, like a graduate engineer who drives a keke"
+                }
+              ],
+              "feedback": "All four marks. You found the labour force first, which is the step most learners miss."
+            },
+            {
+              "tier": "full",
+              "text": "The labour force is the employed plus the unemployed, 200,000. The rate is 40,000 divided by 200,000 times 100 = 20%. Unemployment means having no job though you are able and want to work, e.g. a youth who finished SS3 and is looking for work. Underemployment means working but below your ability or for fewer hours, e.g. a farmer who farms only in the rainy season.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The labour force is the employed plus the unemployed, 200,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "The rate is 40,000 divided by 200,000 times 100 = 20%"
+                },
+                {
+                  "point": 2,
+                  "quote": "having no job though you are able and want to work, e.g. a youth who finished SS3 and is looking for work"
+                },
+                {
+                  "point": 3,
+                  "quote": "working but below your ability or for fewer hours, e.g. a farmer who farms only in the rainy season"
+                }
+              ],
+              "feedback": "Full marks. Seasonal farm work is a very good example of underemployment."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 40,000/160,000 x 100 = 25%. (b) Unemployment is not having a job and underemployment is having a job but not using it fully, like a graduate selling recharge cards.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Unemployment is not having a job"
+                },
+                {
+                  "point": 3,
+                  "quote": "underemployment is having a job but not using it fully, like a graduate selling recharge cards"
+                }
+              ],
+              "feedback": "Part (b) is good (add an example of unemployment). In (a) divide by the whole labour force, 200,000, not by the employed: 40,000/200,000 x 100 = 20%."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The labour force is 200,000 and the rate is 20%. (b) Unemployment is when you have no job and underemployment is when you work too much.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The labour force is 200,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "the rate is 20%"
+                }
+              ],
+              "feedback": "Part (a) is correct. Underemployment is the reverse of working too much: the worker is not fully used or works below their skill. Give an example of each in (b).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 160,000 - 40,000 = 120,000. (b) Unemployment and underemployment are the same.",
+              "meets": [],
+              "feedback": "The rate is the unemployed divided by the labour force (200,000), times 100: 20%. The two are different: unemployed has no work, underemployed works but is not fully used."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The unemployment rate is 40,000. (b) Unemployment is the people who work and underemployment is people who do not work.",
+              "meets": [],
+              "feedback": "A rate is a percentage: 40,000/200,000 x 100 = 20%. Unemployed people have no work; underemployed people work but not fully or below their skill, so you have swapped them."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain the meaning of optimum population. Use it to explain how a country can be over-populated even if it has a very large land area, and state two ways of reducing over-population.",
+          "markScheme": [
+            "Optimum population is the size at which output per head is highest",
+            "Over-population is when the population exceeds the optimum, so output per head falls",
+            "Over-population depends on resources and skills, not land area alone",
+            "Two remedies, e.g. family planning, industrialisation and new technology, emigration, creation of jobs"
+          ],
+          "modelAnswer": "The optimum population is the size at which output per head is highest, given the country's resources and skills. If the population is above this, output per head falls and the country is over-populated. This depends on the resources, skills and capital available, not on land alone, so a large country with poor soil, little capital and few skills can still be over-populated. Over-population can be reduced by family planning and by raising the optimum through industrialisation and better technology.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Optimum population is the size of population that gives the highest output per head. When the population is more than the optimum, output per head begins to fall and the country is over-populated. A country with a large land may still be over-populated if the land is poor, or there is little capital and the people have few skills. It can be reduced by family planning and by industrialisation so that more output is produced.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "size of population that gives the highest output per head"
+                },
+                {
+                  "point": 1,
+                  "quote": "When the population is more than the optimum, output per head begins to fall"
+                },
+                {
+                  "point": 2,
+                  "quote": "if the land is poor, or there is little capital and the people have few skills"
+                },
+                {
+                  "point": 3,
+                  "quote": "family planning and by industrialisation"
+                }
+              ],
+              "feedback": "All four marks. You explained that over-population is about resources and skills, not just land."
+            },
+            {
+              "tier": "full",
+              "text": "The optimum population is the number of people that makes output per head the highest. Over-population happens when the people are more than this level so each person gets less output. A large country can be over-populated if its resources are not developed or the people lack skills, because the optimum depends on resources and technology. Ways to reduce it: birth control and creating jobs in industries or improving technology.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the number of people that makes output per head the highest"
+                },
+                {
+                  "point": 1,
+                  "quote": "people are more than this level so each person gets less output"
+                },
+                {
+                  "point": 2,
+                  "quote": "if its resources are not developed or the people lack skills, because the optimum depends on resources and technology"
+                },
+                {
+                  "point": 3,
+                  "quote": "birth control and creating jobs in industries or improving technology"
+                }
+              ],
+              "feedback": "Full marks. Saying that the optimum depends on technology links the answer to the next idea of changing the optimum."
+            },
+            {
+              "tier": "partial",
+              "text": "Optimum population is the best population for a country. Over-population is when there are too many people for the resources. Family planning can reduce it.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Over-population is when there are too many people for the resources"
+                },
+                {
+                  "point": 3,
+                  "quote": "Family planning can reduce it"
+                }
+              ],
+              "feedback": "You need to say what 'best' means: output per head is highest. Also explain why a country with a large land can still be over-populated (poor land, little capital, few skills) and give a second remedy."
+            },
+            {
+              "tier": "partial",
+              "text": "A country can be over-populated even with a large land because land is not everything. Optimum population is where output per head is highest. Two remedies are family planning and industrialisation.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Optimum population is where output per head is highest"
+                },
+                {
+                  "point": 3,
+                  "quote": "family planning and industrialisation"
+                }
+              ],
+              "feedback": "Your definition and remedies are good. Explain over-population (population above the optimum, so output per head falls) and why land alone does not decide it: resources, capital and skills do.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Optimum population means the population is the highest. A country is over-populated if it is small in size.",
+              "meets": [],
+              "feedback": "The optimum is the size at which output per head is highest, not the biggest population. Over-population depends on resources, capital and skills in relation to the number of people, not size alone."
+            },
+            {
+              "tier": "weak",
+              "text": "Optimum is the number of people who work. A large land cannot be overpopulated because there is space for everyone.",
+              "meets": [],
+              "feedback": "Optimum population is the size at which output per head is highest. Even a large land can be over-populated if its resources, capital and skills are too few to give good output per person."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Agriculture: systems, importance and problems",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the structure of Nigerian agriculture (food crops, export crops, livestock, fisheries);\n2. distinguish peasant, commercial, co-operative and state farming;\n3. explain the importance of agriculture and how its products are marketed;\n4. explain minimum agricultural prices, the problems of agriculture and their remedies.\n\n## Materials\n\nPictures of a cassava farm, a poultry farm, a cocoa plantation and a fish pond; a map of Nigeria showing crops by zone.\n\n## Starter (5 minutes)\n\nAsk: what did you eat this morning, and where did each part come from? Mark each on the board as crop, animal or fish.\n\n## Development\n\n1. Structure of agriculture: food crops (yam, cassava, maize), export crops (cocoa in Ondo, groundnuts and cotton in the north, rubber and palm oil in the south), livestock and fisheries.\n2. Systems: peasant (small plots, family labour, simple tools), commercial (large scale, machines, for profit), co-operative (farmers pooling land or marketing), state farming (owned by government).\n3. Importance: food, raw materials, employment, foreign exchange and income.\n4. Marketing: define the role of the middleman; explain commodity (marketing) boards that bought export crops at fixed prices, which were abolished in 1986. The idea of a guaranteed minimum price.\n5. Problems (land tenure, poor storage, little credit, pests, poor roads, ageing farmers) and remedies.\n\n## Class activity\n\nGroups present one problem of Nigerian farmers and a solution using local examples.\n\n## Evaluation\n\n1. Differentiate between peasant and commercial farming.\n2. What is a minimum agricultural price?\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "How Nigeria feeds itself and earns from the soil",
+        "content": "# Agriculture: systems, importance and problems\n\n## Structure of agriculture\n\nNigerian agriculture has four parts:\n\n- **Food crops**: yam, cassava, maize, rice, millet and beans.\n- **Export crops (cash crops)**: cocoa (Ondo, Ogun, Oyo), oil palm and rubber (south), groundnuts and cotton (north).\n- **Livestock**: cattle, goats, sheep, poultry and pigs.\n- **Fisheries**: river, sea and fish pond production.\n\n## Systems of farming\n\n- **Peasant farming**: small farms, family labour, simple tools such as hoes and cutlasses; mostly for the family's food.\n- **Commercial farming**: large farms, machines and hired labour, produced for sale and profit.\n- **Co-operative farming**: farmers pool land, labour or marketing; benefits include cheaper inputs and shared storage.\n- **State farming**: farms owned and run by government to supply food or raw materials.\n\n## Importance of agriculture\n\nIt supplies food, raw materials for industries (cotton for textiles, cocoa for chocolate), jobs for a large share of Nigerians, income for rural households and foreign exchange from exports.\n\n## Marketing of farm products\n\nFarm produce goes from the farmer to a buyer, then wholesalers and retailers. Farmers are often weak because they sell right after harvest when prices are low. In the past, **commodity boards** (marketing boards) bought export crops such as cocoa and groundnuts from farmers at fixed prices and sold them abroad. They were abolished in 1986 under the Structural Adjustment Programme.\n\n## Agricultural policies\n\nA **minimum price** is a guaranteed price below which the government promises not to let the price fall. It protects farmers from a sharp drop in income when there is a bumper harvest. The government may buy the surplus.\n\n## Problems and remedies\n\n| Problem | Remedy |\n| --- | --- |\n| Small farms and land tenure issues | Land reforms; commercial farms |\n| Poor storage and processing | Silos and cold rooms |\n| Lack of credit | Farmers' loans and co-operatives |\n| Pests and disease | Extension services and improved seeds |\n| Poor roads | Rural road building |\n| Insecurity in farming areas | Better security for farmers |\n\nAn example: a tomato farmer in Kano loses much of the harvest because there is no cold room. A processing factory for tomato paste would reduce the loss."
+      },
+      "cards": [
+        {
+          "front": "Food crops",
+          "back": "Crops grown mainly to feed people, such as yam, cassava and maize."
+        },
+        {
+          "front": "Export crops",
+          "back": "Crops grown mainly for sale abroad, such as cocoa and rubber."
+        },
+        {
+          "front": "Peasant farming",
+          "back": "Small-scale farming with family labour and simple tools."
+        },
+        {
+          "front": "Commercial farming",
+          "back": "Large-scale farming with machines and hired labour for profit."
+        },
+        {
+          "front": "Co-operative farming",
+          "back": "Farmers pool resources such as land or marketing."
+        },
+        {
+          "front": "Commodity board",
+          "back": "A body that bought export crops at fixed prices and sold them abroad."
+        },
+        {
+          "front": "Minimum price",
+          "back": "A guaranteed price below which government will not let the price fall."
+        },
+        {
+          "front": "Land tenure problem",
+          "back": "Small and divided holdings that stop large-scale farming."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following is an export crop in Nigeria?",
+          "options": [
+            "Yam",
+            "Cassava",
+            "Cocoa",
+            "Beans"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Farming with simple tools and family labour on a small plot is called",
+          "options": [
+            "peasant farming",
+            "commercial farming",
+            "state farming",
+            "co-operative farming"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which is NOT a way in which agriculture helps the economy?",
+          "options": [
+            "It provides raw materials for industries",
+            "It provides jobs",
+            "It earns foreign exchange",
+            "It reduces the country's need for rainfall"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A guaranteed minimum price for a crop is meant to",
+          "options": [
+            "protect farmers from falls in income",
+            "make food dear for consumers",
+            "reduce production",
+            "stop exports"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "One remedy for post-harvest losses of tomatoes is",
+          "options": [
+            "more peasant farms",
+            "less rainfall",
+            "storage and processing facilities",
+            "higher import duties"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between peasant farming and commercial farming under three headings, and state two problems of Nigerian farmers.",
+          "markScheme": [
+            "Scale: small plots for peasant farming and large estates for commercial farming",
+            "Labour and tools: family labour with hoes versus hired labour and machines",
+            "Purpose: mainly for the family's food, versus mainly for sale and profit",
+            "Two valid problems of farmers, e.g. poor storage, little credit, poor roads, pests"
+          ],
+          "modelAnswer": "Peasant farming is on small plots, using family labour and simple tools like the hoe, mainly to feed the family. Commercial farming is on large farms, uses hired labour and machines, and produces mainly for sale and profit. Nigerian farmers face problems such as lack of credit and poor storage that spoils produce.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Peasant farming is on small land while commercial farming is on a large farm. A peasant farmer uses family labour and cutlass or hoe but a commercial farmer uses hired workers and tractors. The peasant farms mainly to feed his family, but the commercial farmer produces to sell for profit. Problems of farmers are lack of loans and poor storage.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Peasant farming is on small land while commercial farming is on a large farm"
+                },
+                {
+                  "point": 1,
+                  "quote": "uses family labour and cutlass or hoe but a commercial farmer uses hired workers and tractors"
+                },
+                {
+                  "point": 2,
+                  "quote": "farms mainly to feed his family, but the commercial farmer produces to sell for profit"
+                },
+                {
+                  "point": 3,
+                  "quote": "lack of loans and poor storage"
+                }
+              ],
+              "feedback": "All four marks. Three contrasts, each with both sides stated."
+            },
+            {
+              "tier": "full",
+              "text": "Scale: peasant is small scale and commercial is large scale. Tools and labour: peasant uses hoes and family members, commercial uses machines and paid workers. Aim: peasant is mostly for subsistence while commercial is for profit. Problems: poor roads that raise the cost of carrying crops and pests that destroy crops.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "peasant is small scale and commercial is large scale"
+                },
+                {
+                  "point": 1,
+                  "quote": "peasant uses hoes and family members, commercial uses machines and paid workers"
+                },
+                {
+                  "point": 2,
+                  "quote": "peasant is mostly for subsistence while commercial is for profit"
+                },
+                {
+                  "point": 3,
+                  "quote": "poor roads that raise the cost of carrying crops and pests that destroy crops"
+                }
+              ],
+              "feedback": "Full marks. 'Subsistence' is the exact term for farming mostly to feed the family."
+            },
+            {
+              "tier": "partial",
+              "text": "Peasant farming is small and commercial farming is large. Commercial farming uses machines. Farmers have poor roads and pests as problems.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Peasant farming is small and commercial farming is large"
+                },
+                {
+                  "point": 3,
+                  "quote": "poor roads and pests"
+                }
+              ],
+              "feedback": "Good start, but you gave one of the three contrasts clearly. Add the labour and tools used by the peasant farmer, and the purpose of each (food for the family versus sale for profit)."
+            },
+            {
+              "tier": "partial",
+              "text": "The peasant farmer farms for his family but the commercial farmer farms for profit. A problem is the lack of credit.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The peasant farmer farms for his family but the commercial farmer farms for profit"
+                }
+              ],
+              "feedback": "The purpose is well stated. Add the scale and the labour and tools, and give a second problem such as poor storage or pests.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Peasant farmers are poor and commercial farmers are rich. The problem is that they do not have money.",
+              "meets": [],
+              "feedback": "The difference is in scale, labour and tools, and purpose, not the wealth of the farmer. Name two specific problems, such as poor storage or lack of credit, and say why they matter."
+            },
+            {
+              "tier": "weak",
+              "text": "Peasant farming is for peasants only and commercial farming is for big men. The problem is rain.",
+              "meets": [],
+              "feedback": "Describe each by size of farm, labour and tools used, and the aim of production. Name real problems of farmers such as poor roads, storage or credit."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) What is a minimum agricultural price? (b) Explain how it helps farmers and one problem it may create for government. (c) Explain why Nigeria's commodity boards were once set up and say what happened to them in 1986.",
+          "markScheme": [
+            "A minimum price is a guaranteed price below which the market price will not be allowed to fall",
+            "It protects farmers' income when there is a bumper harvest or low prices",
+            "It can create a surplus that government must buy and store, which is costly",
+            "Commodity boards bought export crops at fixed prices to stabilise farmers' income and were abolished in 1986"
+          ],
+          "modelAnswer": "(a) A minimum agricultural price is a price guaranteed by government, below which the market price is not allowed to fall. (b) It protects farmers' income when there is a bumper harvest, but it can create a surplus that government must buy and store, which is costly. (c) Commodity boards were set up to buy export crops such as cocoa from farmers at fixed prices and sell them abroad, so farmers' incomes were stable; they were abolished in 1986.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A minimum price is a price set by government which the market price cannot go below. (b) It helps farmers because their income is protected when the price would fall during a bumper harvest. But it can create a surplus which government has to buy and store, and that costs money. (c) Commodity boards bought cocoa and groundnut from the farmers at fixed prices to make their income stable, and they were abolished in 1986.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "price set by government which the market price cannot go below"
+                },
+                {
+                  "point": 1,
+                  "quote": "their income is protected when the price would fall during a bumper harvest"
+                },
+                {
+                  "point": 2,
+                  "quote": "it can create a surplus which government has to buy and store, and that costs money"
+                },
+                {
+                  "point": 3,
+                  "quote": "were abolished in 1986"
+                }
+              ],
+              "feedback": "All four marks. Linking the minimum price to a bumper harvest is exactly the situation it is made for."
+            },
+            {
+              "tier": "full",
+              "text": "A minimum price is the lowest price that government allows for a crop. It stops farmers from earning too little when there is plenty, but government may have to buy the extra produce and store it, which is expensive. The commodity boards purchased export crops from farmers at fixed prices so that farmers would have steady income; they were scrapped in 1986.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the lowest price that government allows for a crop"
+                },
+                {
+                  "point": 1,
+                  "quote": "stops farmers from earning too little when there is plenty"
+                },
+                {
+                  "point": 2,
+                  "quote": "government may have to buy the extra produce and store it, which is expensive"
+                },
+                {
+                  "point": 3,
+                  "quote": "scrapped in 1986"
+                }
+              ],
+              "feedback": "Full marks. 'Steady income' states the reason for the boards clearly."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) It is the price that government fixes for farm products. (b) It helps farmers to get more money. (c) The commodity boards were abolished.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the price that government fixes for farm products"
+                },
+                {
+                  "point": 3,
+                  "quote": "The commodity boards were abolished"
+                }
+              ],
+              "feedback": "For (a), add that it is a minimum below which the price cannot fall. For (b) give the problem (a surplus that government must buy). For (c) give the year, 1986, and why they existed."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) It protects farmers when prices fall but it creates a surplus which government must pay for. (c) The commodity boards bought cocoa from farmers at fixed prices.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "It protects farmers when prices fall"
+                },
+                {
+                  "point": 2,
+                  "quote": "it creates a surplus which government must pay for"
+                }
+              ],
+              "feedback": "Part (b) is well done. You also need the definition in (a) and what happened to the commodity boards in 1986: they were abolished.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is the price of food in the market. (b) It makes food cheap for the poor. (c) Commodity board is the board for commodities.",
+              "meets": [],
+              "feedback": "A minimum price is a guaranteed floor set by government for farmers, so it keeps prices from falling, not food cheap. Commodity boards bought export crops at fixed prices; say what happened in 1986."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is the least price a shop can sell. (b) It makes the consumers pay less. (c) They were closed because the farmers refused to sell.",
+              "meets": [],
+              "feedback": "A minimum agricultural price protects farmers by stopping prices from falling below a guaranteed level, so consumers do not pay less. The boards were abolished in 1986 under the Structural Adjustment Programme."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Industry: types, location and industrialisation",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the meaning and types of industry;\n2. distinguish plant, firm, industry and industrial estate;\n3. list the factors that decide where an industry is located and explain localisation;\n4. explain the role of industrialisation in economic development.\n\n## Materials\n\nPictures of a quarry, a flour mill, a bank and a bakery; a map of Nigeria with Ikeja, Agbara and Apapa industrial areas; cards with the terms plant, firm, industry and estate.\n\n## Starter (5 minutes)\n\nAsk: a company owns a bakery in Ogba and another in Ibadan. Is that one firm or two? Is it one plant or two? Take guesses before defining the terms.\n\n## Development\n\n1. Define industry as all firms making the same product or similar products. Types: extractive (mining, oil), manufacturing (cement, beer), construction and commercial or service industries.\n2. Clarify the terms: **plant** (a single factory or workplace), **firm** (a business unit that may own several plants), **industry** (all firms making a similar product) and **industrial estate** (an area planned for factories with roads, power and water).\n3. Factors of location: raw materials, power, market, transport, labour, capital, government policy and the pull of existing industries.\n4. Localisation: the concentration of an industry in a particular area, such as printing in Ikeja. Advantages and disadvantages.\n5. Role of industrialisation: jobs, foreign exchange saving, higher incomes, and linkage with agriculture.\n\n## Class activity\n\nGroups choose the best town in Nigeria for a cement factory, a tomato paste factory and a bakery, and justify each with location factors.\n\n## Evaluation\n\n1. Distinguish between a plant and a firm.\n2. Why is a cement factory sited near a limestone deposit?\n\n## Assignment\n\nComplete the differentiated worksheet on the app. Core and extension questions are marked.",
+      "reading": {
+        "title": "Where factories are built and why",
+        "content": "# Industry: types, location and industrialisation\n\n## What is an industry?\n\nAn **industry** is a group of firms that produce the same or similar goods or services. Industries are grouped as:\n\n- **Extractive industries**: taking from the earth and sea, such as oil, tin and fishing.\n- **Manufacturing industries**: changing raw materials into goods, such as cement, beer and textiles.\n- **Construction industries**: building roads and houses.\n- **Commercial (service) industries**: banking, insurance, transport and trade.\n\n## Plant, firm, industry and industrial estate\n\n- A **plant** is one factory or workplace.\n- A **firm** is a business organisation that may own one or many plants. A bakery company with outlets in Ogba and Ibadan is one firm with two plants.\n- An **industry** is all the firms making a similar product: the baking industry.\n- An **industrial estate** is a planned area with roads, water, power and other services where factories are located together, as in Ikeja and Agbara.\n\n## Location of industry\n\nA factory is placed where its costs are lowest. The factors include:\n\n1. **Raw materials**: weight-losing materials such as limestone, which is heavy and loses weight in production, pull the factory to the source.\n2. **Power**: electricity or gas supplies.\n3. **Market**: perishable or bulky goods like bread are made near buyers.\n4. **Transport**: roads, ports and railways.\n5. **Labour**: skilled and cheap workers.\n6. **Capital and government**: tax holidays, free land or policy support.\n\n## Localisation\n\nWhen many firms of one industry are in one area, the industry is **localised**. Examples: leather in Kano and printing in Ikeja. Advantages: a trained labour supply, shared services and specialist suppliers (external economies). Disadvantages: if the industry declines the whole area suffers, and crowding raises costs.\n\n## Role of industrialisation\n\nIndustrialisation raises output and income, creates jobs, saves foreign exchange by replacing imports, earns foreign exchange through exports, and gives farmers a market for their raw materials such as cassava, cotton and tomatoes. It also spreads new skills and technology. Problems include poor power supply, high cost of capital and competition from imports."
+      },
+      "cards": [
+        {
+          "front": "Industry",
+          "back": "All the firms producing the same or similar goods or services."
+        },
+        {
+          "front": "Plant",
+          "back": "A single factory or workplace."
+        },
+        {
+          "front": "Firm",
+          "back": "A business organisation that may own one or more plants."
+        },
+        {
+          "front": "Industrial estate",
+          "back": "A planned area with services where many factories are sited."
+        },
+        {
+          "front": "Localisation of industry",
+          "back": "The concentration of an industry in one area."
+        },
+        {
+          "front": "Extractive industry",
+          "back": "An industry that takes resources from the earth or sea."
+        },
+        {
+          "front": "Manufacturing industry",
+          "back": "An industry that turns raw materials into finished goods."
+        },
+        {
+          "front": "Import substitution",
+          "back": "Producing at home goods that were formerly imported."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A cement factory is usually sited near limestone deposits because",
+          "options": [
+            "limestone is cheap to transport",
+            "there is no need for power",
+            "consumers live near the deposit",
+            "the raw material is heavy and loses weight in production"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A company with factories in Lagos and Kano is one",
+          "options": [
+            "plant",
+            "industry",
+            "firm with two plants",
+            "industrial estate"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of the following is an extractive industry?",
+          "options": [
+            "Baking",
+            "Crude oil production",
+            "Banking",
+            "Printing"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Concentration of printing firms in Ikeja is an example of",
+          "options": [
+            "localisation of industry",
+            "nationalisation",
+            "import substitution",
+            "indigenisation"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which is an advantage of industrialisation?",
+          "options": [
+            "It creates jobs and uses local raw materials",
+            "It increases dependence on imports",
+            "It reduces national income",
+            "It removes the need for agriculture"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain four factors that a company should consider before locating a tomato-paste factory in Nigeria.",
+          "markScheme": [
+            "Raw material: tomatoes are perishable, so site near the farms (e.g. Kano or Kaduna) to reduce spoilage",
+            "Power supply: electricity or gas is needed for processing and cold storage",
+            "Transport: roads to move tomatoes in and tins out to the market",
+            "Market, labour or government incentive: a valid fourth factor"
+          ],
+          "modelAnswer": "Tomatoes are perishable and lose weight in processing, so the factory should be near the farms, as in Kano or Kaduna. It needs a reliable power supply for processing and cold storage. It needs good roads to bring in tomatoes and carry out the finished paste to the market. Skilled and cheap labour, or incentives such as tax holidays, would also influence the choice.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First, raw material: tomatoes spoil quickly so the factory should be near tomato farms, like in Kano. Second, power: the factory needs steady electricity for machines and cold rooms. Third, transport: good roads are needed to carry the tomatoes to the factory and the tins to the markets. Fourth, labour: workers should be available and not expensive.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tomatoes spoil quickly so the factory should be near tomato farms, like in Kano"
+                },
+                {
+                  "point": 1,
+                  "quote": "the factory needs steady electricity for machines and cold rooms"
+                },
+                {
+                  "point": 2,
+                  "quote": "good roads are needed to carry the tomatoes to the factory and the tins to the markets"
+                },
+                {
+                  "point": 3,
+                  "quote": "workers should be available and not expensive"
+                }
+              ],
+              "feedback": "All four marks. You gave a reason for every factor, not a bare list."
+            },
+            {
+              "tier": "full",
+              "text": "Raw materials: sited near tomato growing areas because tomatoes are perishable. Power supply: processing and storage need electricity. Transport and market: the paste must reach shops in cities, so the site needs good roads or a port. Government policy: tax holidays or free land in an industrial estate can lower the cost.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sited near tomato growing areas because tomatoes are perishable"
+                },
+                {
+                  "point": 1,
+                  "quote": "processing and storage need electricity"
+                },
+                {
+                  "point": 2,
+                  "quote": "the paste must reach shops in cities, so the site needs good roads or a port"
+                },
+                {
+                  "point": 3,
+                  "quote": "tax holidays or free land in an industrial estate can lower the cost"
+                }
+              ],
+              "feedback": "Full marks. Tying each factor to a feature of tomato paste makes the answer specific."
+            },
+            {
+              "tier": "partial",
+              "text": "Raw materials because tomatoes spoil. Transport so that the goods can reach the market. Capital and labour are also important.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Raw materials because tomatoes spoil"
+                },
+                {
+                  "point": 2,
+                  "quote": "Transport so that the goods can reach the market"
+                }
+              ],
+              "feedback": "Raw materials and transport are good. Say where the raw materials are found and why. Add the need for power, and explain capital or labour rather than only naming them."
+            },
+            {
+              "tier": "partial",
+              "text": "Power is needed to run the machines. Labour is needed to work in the factory. The market is where people buy the paste.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Power is needed to run the machines"
+                },
+                {
+                  "point": 3,
+                  "quote": "Labour is needed to work in the factory"
+                }
+              ],
+              "feedback": "Power and labour are valid. Place is the point of the question: say where raw materials come from, and how transport links the factory to farms and shops.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The factory should be placed in a good place and where people like it. It should have a good name.",
+              "meets": [],
+              "feedback": "Name the real location factors: raw materials (tomato farms), power, transport, market, labour, and government help. Each one should be tied to the tomato-paste factory."
+            },
+            {
+              "tier": "weak",
+              "text": "I will put it in my village because I know the people. The factory should have a big building.",
+              "meets": [],
+              "feedback": "A factory goes where its costs are lowest and its market is reachable. Think about the sources of tomatoes, electricity, roads, workers and incentives, not familiarity."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Distinguish between a plant, a firm and an industry, with a Nigerian example. (b) State two advantages and one disadvantage of the localisation of an industry.",
+          "markScheme": [
+            "Plant is a single factory or workplace",
+            "Firm is a business organisation that may own several plants",
+            "Industry is all the firms producing a similar product",
+            "Advantages and disadvantage of localisation stated correctly (two advantages and one disadvantage)"
+          ],
+          "modelAnswer": "(a) A plant is a single factory or workplace. A firm is a business organisation that may own more than one plant: a bakery company with plants in Ogba and Ibadan is one firm. An industry is all the firms that produce a similar product, such as the baking industry. (b) Advantages of localisation: a trained labour force and shared services and suppliers. Disadvantage: if the industry declines, the whole area suffers, and crowding raises costs.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A plant is one factory. A firm is a company that can own many plants, for example a bakery company with two bakeries in Lagos and Ibadan. An industry is all the firms that make the same goods, like the baking industry. (b) Advantages: skilled workers are available and there are shared services such as banks and roads. A disadvantage is that if the industry fails the whole area is affected and loses jobs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A plant is one factory"
+                },
+                {
+                  "point": 1,
+                  "quote": "A firm is a company that can own many plants"
+                },
+                {
+                  "point": 2,
+                  "quote": "An industry is all the firms that make the same goods, like the baking industry"
+                },
+                {
+                  "point": 3,
+                  "quote": "skilled workers are available and there are shared services such as banks and roads. A disadvantage is that if the industry fails the whole area is affected and loses jobs"
+                }
+              ],
+              "feedback": "All four marks. The bakery example shows the difference between the three terms."
+            },
+            {
+              "tier": "full",
+              "text": "A plant is a single workplace or factory. A firm is a business that may have one or more plants. An industry is all firms producing a similar product, such as the cement industry. Localisation gives a trained labour pool and cheaper supply of materials; but a decline in the industry causes unemployment in the whole area.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A plant is a single workplace or factory"
+                },
+                {
+                  "point": 1,
+                  "quote": "A firm is a business that may have one or more plants"
+                },
+                {
+                  "point": 2,
+                  "quote": "An industry is all firms producing a similar product, such as the cement industry"
+                },
+                {
+                  "point": 3,
+                  "quote": "Localisation gives a trained labour pool and cheaper supply of materials; but a decline in the industry causes unemployment in the whole area"
+                }
+              ],
+              "feedback": "Full marks. You covered both parts and gave a clear example."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A plant is a factory, a firm is a company and an industry is a group of firms. (b) An advantage is skilled labour. A disadvantage is that the area depends on one industry.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A plant is a factory"
+                },
+                {
+                  "point": 1,
+                  "quote": "a firm is a company"
+                },
+                {
+                  "point": 2,
+                  "quote": "an industry is a group of firms"
+                }
+              ],
+              "feedback": "Your definitions are right but need more: a firm may own several plants, and an industry makes a similar product. In (b) you need two advantages and a disadvantage; you gave only one advantage."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) Advantages are a skilled labour supply and shared services. The disadvantage is that if the industry declines the area suffers. A firm is a company that owns plants.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A firm is a company that owns plants"
+                },
+                {
+                  "point": 3,
+                  "quote": "Advantages are a skilled labour supply and shared services. The disadvantage is that if the industry declines the area suffers"
+                }
+              ],
+              "feedback": "Part (b) is correct. Add what a plant is (a single factory) and what an industry is (all firms making a similar product), with an example.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Plant is a tree, firm is a company and industry is a place. (b) It is bad.",
+              "meets": [],
+              "feedback": "In economics a plant is a single factory, a firm is a company that may own several, and an industry is all firms making a similar product. Say what localisation is and what it gains or costs."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They are all the same. (b) Localisation is when the factory is moved to the local government.",
+              "meets": [],
+              "feedback": "They are different: plant (one workplace), firm (the business), industry (all similar firms). Localisation means concentration of an industry in one area, giving advantages such as a skilled labour pool."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

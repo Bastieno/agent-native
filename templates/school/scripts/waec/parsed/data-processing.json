@@ -1,0 +1,168 @@
+{
+  "found": true,
+  "subject": "Data Processing",
+  "subjectCode": "DATAPROC",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Information Age — History and Data",
+      "abbreviation": "INFOAGE",
+      "subStrands": [
+        {
+          "name": "History of Computers, Data and Information",
+          "objectives": [
+            {
+              "code": "DATAPROC-INFOAGE-1",
+              "description": "History of computers: computing devices; concept of number system in computing; generations of computer — first, second, third, fourth, fifth generations — year of development, basic component/type of technology, speed of operation, storage capacity/component."
+            },
+            {
+              "code": "DATAPROC-INFOAGE-2",
+              "description": "Data and information: definition of data and information; types of data; ways of handling data; digitalization; differences between data and information."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Basic Computing",
+      "abbreviation": "BASICCOMP",
+      "subStrands": [
+        {
+          "name": "Computer Classification, ICT Applications and Components",
+          "objectives": [
+            {
+              "code": "DATAPROC-BASICCOMP-1",
+              "description": "Classification of computers: by type, size and usage."
+            },
+            {
+              "code": "DATAPROC-BASICCOMP-2",
+              "description": "Application of ICT in everyday life: uses of ICT in everyday activities; impact of ICT in the society; areas of ICT application linked to societal development."
+            },
+            {
+              "code": "DATAPROC-BASICCOMP-3",
+              "description": "Components of computers: input devices, output devices, system unit, storage devices — examples of each component and how they are used in data processing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Information Processing and Transmission",
+      "abbreviation": "INFOPROC",
+      "subStrands": [
+        {
+          "name": "Information Processing, Transmission, Networking and Internet",
+          "objectives": [
+            {
+              "code": "DATAPROC-INFOPROC-1",
+              "description": "The art of information processing: definition of information processing; steps involved in information processing."
+            },
+            {
+              "code": "DATAPROC-INFOPROC-2",
+              "description": "Process of information transmission: definition of information transmission; methods of transmitting information; modes of information transmission — visuals (newspaper), audio (radio, telephone), audio-visual (GSM, television)."
+            },
+            {
+              "code": "DATAPROC-INFOPROC-3",
+              "description": "Medium of information transmission: types of information transmission; classification of means of transmission (radio, television, newspaper etc.)."
+            },
+            {
+              "code": "DATAPROC-INFOPROC-4",
+              "description": "Networking: meaning of networking, internet and intranet; types of networking — MAN, LAN, WAN; significance of networking."
+            },
+            {
+              "code": "DATAPROC-INFOPROC-5",
+              "description": "Internet: definition; benefits of internet; internet browsers; internet security; abuse of the internet."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tools for Processing Information",
+      "abbreviation": "TOOLS",
+      "subStrands": [
+        {
+          "name": "Operating System, Word Processing, Spreadsheet, Database, Presentation, Web and Graphics",
+          "objectives": [
+            {
+              "code": "DATAPROC-TOOLS-1",
+              "description": "Operating system: definition, types, examples and functions of operating system; differences between text (character) base interface and graphical user interface (GUI)."
+            },
+            {
+              "code": "DATAPROC-TOOLS-2",
+              "description": "Word processing: definition, uses and examples of word processing software; starting, loading and exiting word processing; creating, saving and retrieving documents."
+            },
+            {
+              "code": "DATAPROC-TOOLS-3",
+              "description": "Spreadsheet: definition, uses and examples of spreadsheet applications; loading and exiting spreadsheets; creating, saving and retrieving spreadsheet files."
+            },
+            {
+              "code": "DATAPROC-TOOLS-4",
+              "description": "Database management system: definition, uses and examples of database applications; loading and exiting DBMS; creating, saving and retrieving database files; examples of packages e.g. Microsoft Access."
+            },
+            {
+              "code": "DATAPROC-TOOLS-5",
+              "description": "Presentation package: definition, uses and examples; loading and exiting presentation programs; creating, saving and retrieving presentation files."
+            },
+            {
+              "code": "DATAPROC-TOOLS-6",
+              "description": "Web design packages: definition, uses, components and examples."
+            },
+            {
+              "code": "DATAPROC-TOOLS-7",
+              "description": "Graphic packages: definition, uses and examples of graphic packages (focus on Corel Draw)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Maintenance, Ethics and Data Management",
+      "abbreviation": "MAINT",
+      "subStrands": [
+        {
+          "name": "Maintenance, Ethics, Safety, Career and Data Management",
+          "objectives": [
+            {
+              "code": "DATAPROC-MAINT-1",
+              "description": "Maintenance of computer: general cleaning; battery charging and replacement for portable systems and UPS; DVD drive lens cleaning; details of hardware maintenance; details of software maintenance; computer crash and data recovery."
+            },
+            {
+              "code": "DATAPROC-MAINT-2",
+              "description": "Computer ethics: computer room management ethics; laboratory rules and regulations; responsible ways of using and securing computers."
+            },
+            {
+              "code": "DATAPROC-MAINT-3",
+              "description": "Safety measures: sitting arrangement; positioning of the monitor, keyboard, CPU, mouse and peripheral devices; illuminating the computer room; maintaining a dust free environment; keeping liquid away from the computer room."
+            },
+            {
+              "code": "DATAPROC-MAINT-4",
+              "description": "Career opportunities in data processing: professions in computer; qualities of a good data processing professional; computer professional bodies and their duties."
+            },
+            {
+              "code": "DATAPROC-MAINT-5",
+              "description": "Computer virus: definition, types/examples, sources, signals of virus warning, virus prevention, detection and deletion; destructive effects of virus infection on computers."
+            },
+            {
+              "code": "DATAPROC-MAINT-6",
+              "description": "Relational model: database and table creation using application packages; creating relationships between tables — primary and foreign keys, entities, attributes and relationships; creation of forms, queries and reports; query language (query by example, SQL)."
+            },
+            {
+              "code": "DATAPROC-MAINT-7",
+              "description": "File organization: definition and types of file organization; comparison between the various types of file organization."
+            },
+            {
+              "code": "DATAPROC-MAINT-8",
+              "description": "Database security: concept of data security, access control and data encryption; role of a database administrator."
+            },
+            {
+              "code": "DATAPROC-MAINT-9",
+              "description": "Parallel and distributed databases: basic concept of parallel and distributed database; storing data in a distributed database management system (DBM)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

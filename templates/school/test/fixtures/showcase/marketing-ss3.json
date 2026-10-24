@@ -1,0 +1,2805 @@
+{
+  "subject": "Marketing",
+  "yearGroup": "SS3",
+  "weeks": {
+    "1": {
+      "topic": "Transportation: choosing a mode and counting the cost",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the importance of transportation and the modes available;\n2. state the factors affecting the choice of transport;\n3. explain containerisation and the documents used for goods and passengers: bill of lading, airway bill, consignment note, manifest;\n4. compare the cost of two modes of transport by calculation.\n\n## Materials\n\nA model or picture of a shipping container, a sample manifest, a cost comparison table, calculators, WASSCE past questions on transportation.\n\n## Starter (5 minutes)\n\nAsk: a distributor in Kaduna has to move 40 tonnes of sorghum to Lagos. Should she use lorries or rail? What would she compare? Take answers (cost, speed, safety) and tell the class that today they will compare using real figures.\n\n## Development\n\n1. Revision: transportation gives goods place utility; modes are road, rail, water, air and pipeline.\n2. Factors affecting choice: nature of goods (perishable, fragile, bulky), distance, speed required, cost, security, and availability of routes.\n3. Containerisation: packing goods in standard steel boxes (containers) that can be moved between ship, train and lorry without unpacking. It reduces handling, damage and theft and speeds up loading.\n4. Documents: bill of lading (sea), airway bill (air), consignment note (road or rail), manifest (list of cargo or passengers carried by a ship, aircraft or vehicle).\n5. Cost comparison: total cost = number of trips x cost per trip. Worked example in the reading.\n6. A cheaper mode is not always the best: speed, safety and convenience must be weighed.\n\n## Class activity\n\nPairs compare road and rail for moving 60 tonnes using figures given by the teacher, then decide which to use and explain why.\n\n## Evaluation\n\n1. State two advantages of containerisation.\n2. Why is a manifest used?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Counting the cost of moving goods",
+        "content": "# Transportation: choosing a mode and counting the cost\n\n## Why transport matters in marketing\n\nGoods have to reach the places where buyers are. Transport widens markets, keeps shops stocked and affects the final price. A good marketer chooses the mode that best balances cost, speed and safety.\n\n## Factors affecting the choice of transport\n\n- **Nature of the goods**: perishable goods need speed and cold storage; fragile goods need careful handling; bulky goods need cheap transport.\n- **Distance** to be covered.\n- **Speed** required by the customer.\n- **Cost**.\n- **Security**: risk of theft or accident.\n- **Availability** of roads, railways, ports and airports.\n\n## Containerisation\n\n**Containerisation** is the packing of goods in large standard steel boxes called **containers**, which can be lifted between ship, train and lorry without unpacking the goods. **Advantages:** less handling, so less damage and theft; faster loading; and goods can travel door to door by different modes. **Disadvantages:** containers need cranes and special trucks, and the system is costly to set up.\n\n## Transport documents\n\n- **Bill of lading**: for goods sent by sea; a receipt and proof of ownership.\n- **Airway bill**: for goods sent by air.\n- **Consignment note**: given by a road or rail carrier to the sender as acknowledgement of goods received.\n- **Manifest**: a list of all the cargo (cargo manifest) or all the passengers (passenger manifest) carried by a ship, aircraft or vehicle.\n\n## Comparing the cost of two modes\n\n**Worked example.** A distributor wants to move 40 tonnes of sorghum from Kaduna to Lagos.\n\nBy lorry: each lorry carries 10 tonnes at N120,000 per trip. Trips needed = 40/10 = 4. Cost = 4 x 120,000 = **N480,000**.\n\nBy rail: each wagon carries 20 tonnes at N150,000. Wagons needed = 40/20 = 2. Cost = 2 x 150,000 = **N300,000**.\n\nRail is cheaper by 480,000 - 300,000 = **N180,000**.\n\nBut cost is not the only thing. Lorries give door-to-door delivery and may arrive sooner; rail may be slower to load and unload and leaves goods at the station. If the grain must be delivered quickly to the buyer's door, the distributor might pay more for road."
+      },
+      "cards": [
+        {
+          "front": "Containerisation",
+          "back": "Packing goods in standard steel boxes that can move between ship, train and lorry."
+        },
+        {
+          "front": "Container",
+          "back": "A large standard steel box used to carry goods without unpacking."
+        },
+        {
+          "front": "Manifest",
+          "back": "A list of the cargo or passengers carried by a ship, aircraft or vehicle."
+        },
+        {
+          "front": "Consignment note",
+          "back": "A road or rail carrier's acknowledgement to the sender of goods received."
+        },
+        {
+          "front": "Bill of lading",
+          "back": "A document for goods carried by sea; receipt and proof of ownership."
+        },
+        {
+          "front": "Airway bill",
+          "back": "A document for goods carried by air."
+        },
+        {
+          "front": "Perishable goods",
+          "back": "Goods that spoil quickly and need fast transport."
+        },
+        {
+          "front": "Total transport cost",
+          "back": "Number of trips multiplied by the cost per trip."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Goods packed in standard steel boxes that can be moved between ship, train and lorry without unpacking are said to be",
+          "options": [
+            "manifested",
+            "bonded",
+            "containerised",
+            "franchised"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A distributor can move 40 tonnes of sorghum by lorry (10 tonnes per trip at N120,000) or by rail (20 tonnes per wagon at N150,000). Rail is cheaper by",
+          "options": [
+            "N90,000",
+            "N480,000",
+            "N180,000",
+            "N300,000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A list of all the passengers carried on a flight is called a",
+          "options": [
+            "bill of lading",
+            "passenger manifest",
+            "delivery note",
+            "waybill"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Fresh tomatoes from Kaduna are moved to Lagos in night trucks with cool storage mainly because of their",
+          "options": [
+            "colour",
+            "weight",
+            "price",
+            "perishability"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which statement about pipeline transport is correct?",
+          "options": [
+            "It is used only for liquids and gases and has a low running cost",
+            "It can carry any type of goods",
+            "It is the fastest mode of transport",
+            "It has no initial cost"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A distributor wants to move 40 tonnes of sorghum from Kaduna to Lagos. A lorry carries 10 tonnes and charges N120,000 per trip. A rail wagon carries 20 tonnes and charges N150,000. (a) Calculate the cost by lorry. (b) Calculate the cost by rail. (c) By how much is rail cheaper? (d) State one reason why the distributor might still choose road.",
+          "markScheme": [
+            "Cost by lorry = 4 trips x 120,000 = N480,000",
+            "Cost by rail = 2 wagons x 150,000 = N300,000",
+            "Rail is cheaper by 480,000 - 300,000 = N180,000",
+            "A non-cost reason, for example door-to-door delivery or faster delivery"
+          ],
+          "modelAnswer": "(a) Trips needed = 40/10 = 4, so cost = 4 x N120,000 = N480,000. (b) Wagons needed = 40/20 = 2, so cost = 2 x N150,000 = N300,000. (c) Rail is cheaper by N480,000 - N300,000 = N180,000. (d) The distributor might choose road because lorries give door-to-door delivery and may deliver sooner.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Trips = 40 divided by 10 = 4. Cost = 4 x 120,000 = N480,000. (b) Wagons = 40 divided by 20 = 2. Cost = 2 x 150,000 = N300,000. (c) 480,000 - 300,000 = N180,000. (d) Road gives door-to-door delivery, so there is no need to move the goods from the station.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cost = 4 x 120,000 = N480,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cost = 2 x 150,000 = N300,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "480,000 - 300,000 = N180,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Road gives door-to-door delivery, so there is no need to move the goods from the station"
+                }
+              ],
+              "feedback": "All four marks. Working out the number of trips first is the key step."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 4 lorries x N120,000 = N480,000. (b) 2 wagons x N150,000 = N300,000. (c) Rail is cheaper by N180,000. (d) Lorries may deliver faster and straight to the buyer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4 lorries x N120,000 = N480,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 wagons x N150,000 = N300,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Rail is cheaper by N180,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Lorries may deliver faster and straight to the buyer"
+                }
+              ],
+              "feedback": "Full marks. Every figure is right."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 40/10 = 4 trips, 4 x 120,000 = N480,000. (b) 150,000 x 20 = N3,000,000. (c) N180,000. (d) Road is cheaper.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "40/10 = 4 trips, 4 x 120,000 = N480,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "N180,000"
+                }
+              ],
+              "feedback": "The lorry cost is right. For rail, 40 tonnes needs 40/20 = 2 wagons: 2 x 150,000 = N300,000. Road is not cheaper in this case; a reason to choose it is door-to-door delivery."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 4 x 120,000 = N480,000. (b) 2 x 150,000 = N300,000. (c) 480,000 + 300,000 = N780,000. (d) It delivers to the door.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4 x 120,000 = N480,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 x 150,000 = N300,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "It delivers to the door"
+                }
+              ],
+              "feedback": "Your lorry cost, rail cost and the road reason are right. The difference is a subtraction: 480,000 - 300,000 = N180,000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 120,000 x 40 = N4,800,000. (b) 150,000 x 40 = N6,000,000. (c) N1,200,000. (d) Lorries are faster than aeroplanes.",
+              "meets": [],
+              "feedback": "Divide the load by the capacity to find the number of trips: 40/10 = 4 lorries and 40/20 = 2 wagons. Then multiply by the charge per trip."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 120,000 + 10 = N120,010. (b) 150,000 + 20 = N150,020. (c) N29,990. (d) It can go to the door of the buyer.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "It can go to the door of the buyer"
+                }
+              ],
+              "feedback": "Your reason for road earns a mark. The costs are number of trips times charge per trip: 4 x 120,000 = N480,000 and 2 x 150,000 = N300,000, and the difference is N180,000.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) What is containerisation? (b) State two advantages of containerisation. (c) State one disadvantage.",
+          "markScheme": [
+            "Containerisation is the packing of goods in standard steel containers that can be moved between ship, train and lorry without unpacking",
+            "First advantage, for example less handling and damage",
+            "Second advantage, for example faster loading or reduced theft",
+            "One disadvantage, for example it needs cranes and special trucks which are costly"
+          ],
+          "modelAnswer": "(a) Containerisation is the packing of goods in large standard steel boxes called containers, which can be moved between ship, train and lorry without unpacking the goods. (b) It reduces handling, so there is less damage, and it speeds up loading and reduces theft. (c) It needs cranes and special trucks, which are costly to buy.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Containerisation is when goods are packed in standard steel boxes that can move from a ship to a train to a lorry without being unpacked. (b) There is less handling of goods so less damage and loading is faster and the goods are safer from theft. (c) It needs cranes and special trucks which are expensive.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Containerisation is when goods are packed in standard steel boxes that can move from a ship to a train to a lorry without being unpacked"
+                },
+                {
+                  "point": 1,
+                  "quote": "There is less handling of goods so less damage"
+                },
+                {
+                  "point": 2,
+                  "quote": "loading is faster and the goods are safer from theft"
+                },
+                {
+                  "point": 3,
+                  "quote": "It needs cranes and special trucks which are expensive"
+                }
+              ],
+              "feedback": "All four marks. A complete answer."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It is the use of large standard containers to carry goods from one place to another by different modes without repacking. (b) The goods are less likely to be damaged; there is less theft since the container is locked. (c) The equipment to lift containers is costly.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is the use of large standard containers to carry goods from one place to another by different modes without repacking"
+                },
+                {
+                  "point": 1,
+                  "quote": "The goods are less likely to be damaged"
+                },
+                {
+                  "point": 2,
+                  "quote": "there is less theft since the container is locked"
+                },
+                {
+                  "point": 3,
+                  "quote": "The equipment to lift containers is costly"
+                }
+              ],
+              "feedback": "Full marks. A locked container reduces theft, which is a real advantage."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Containerisation is the packing of goods in standard containers that move between ship, train and lorry. (b) Less damage. It is cheap. (c) It is good.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Containerisation is the packing of goods in standard containers that move between ship, train and lorry"
+                },
+                {
+                  "point": 1,
+                  "quote": "Less damage"
+                }
+              ],
+              "feedback": "The meaning and less damage are right. Containerisation is not cheap to set up; its disadvantage is the cost of cranes and trucks. Add faster loading as a second advantage."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Containerisation is the use of containers. (b) Faster loading and less handling. (c) It needs special trucks and cranes.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Faster loading"
+                },
+                {
+                  "point": 1,
+                  "quote": "less handling"
+                },
+                {
+                  "point": 3,
+                  "quote": "It needs special trucks and cranes"
+                }
+              ],
+              "feedback": "Your advantages and disadvantage are right. The meaning should say that goods are packed in standard containers and moved between ship, train and lorry without unpacking."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Containerisation is putting a person in a container. (b) It is heavy. (c) It is dark.",
+              "meets": [],
+              "feedback": "Containerisation is packing goods in standard steel containers. Its advantages are less handling and damage, and faster loading. A disadvantage is cost of equipment."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is the use of containers to store water. (b) It reduces theft. (c) It uses cranes.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "It reduces theft"
+                }
+              ],
+              "feedback": "Your advantage earns a mark. Containers are used to carry goods between modes of transport, not only water. Using cranes is a cost disadvantage, but state that they are costly.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Warehousing: location, types and stock turnover",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the types and functions of warehouses;\n2. state the factors considered in choosing a site for a warehouse;\n3. describe the layout and activities of a warehouse;\n4. calculate stock turnover and interpret the result.\n\n## Materials\n\nA sketch of a warehouse layout, a table of sales and stock figures, calculators, WASSCE past questions.\n\n## Starter (5 minutes)\n\nAsk: a firm sells goods across Lagos. Where should it put its warehouse: at the port, in the city centre or on the outskirts? Take answers and list the reasons offered: cost, traffic, nearness to customers.\n\n## Development\n\n1. Recap types: private, public, bonded, cold storage, commodity. Functions: storage, protection, breaking bulk, grading and packing, financing through receipts.\n2. Site factors: nearness to the market, access to roads and rail, cost and size of land, security, availability of workers and utilities (water, electricity), room for expansion, and rules on land use.\n3. Layout: receiving bay, storage area (fast-moving goods near the door, heavy goods low), packing area, dispatch bay and an office for records.\n4. Stock turnover shows how many times a firm sells and replaces its stock in a period:\n   stock turnover = cost of goods sold / average stock.\n   High turnover means that goods sell fast; low turnover means slow sales and money tied up in stock.\n5. Worked examples and exercises.\n\n## Class activity\n\nGroups plan the layout of a warehouse for a drinks distributor and list the factors that decided their site.\n\n## Evaluation\n\n1. Cost of goods sold N9,000,000; average stock N1,500,000. Find the stock turnover.\n2. State two factors in choosing a warehouse site.\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Where to build, and how fast stock moves",
+        "content": "# Warehousing: location, types and stock turnover\n\n## Types and functions in brief\n\nA **private** warehouse belongs to one firm; a **public** warehouse is hired out. A **bonded** warehouse holds imports under customs control until duty is paid. **Cold storage** keeps perishable goods. A **commodity** warehouse holds graded farm produce and issues receipts which can be used as security for loans.\n\nWarehouses store and protect goods, break bulk, grade and pack them, and allow farmers and traders to borrow against stored goods.\n\n## Choosing a site\n\nA firm weighs these factors:\n\n- **Nearness to the market** so that delivery is quick and cheap.\n- **Access to transport**: good roads, rail or a port.\n- **Cost and size of land**: cheaper land outside the city may mean longer trips.\n- **Security** from theft and flooding.\n- **Availability of labour and utilities** such as electricity and water.\n- **Room for expansion**.\n- **Land-use rules** of local government.\n\n## Layout\n\nA good warehouse has a **receiving bay**, a **storage area** (fast-moving goods near the door, heavy goods low), a **packing area**, a **dispatch bay** and an **office** for records. A good layout reduces handling time and damage.\n\n## Stock turnover\n\n**Stock turnover** shows how many times a firm sells and replaces its stock in a period.\n\nstock turnover = cost of goods sold / average stock\n\n**Worked example.** A distributor's cost of goods sold for the year is N9,000,000 and its average stock is N1,500,000.\nStock turnover = 9,000,000 / 1,500,000 = **6 times** a year.\n\nThis means that the stock is sold and replaced about every two months (12 months / 6).\n\nA **high** turnover means goods sell quickly, little money is tied up in stock and there is less risk of expiry. A **low** turnover suggests slow sales, unsold stock, higher storage costs and a danger of goods going out of date.\n\n## Using the result\n\nA distributor whose turnover falls from 8 to 5 times should find out why: perhaps the price is too high, the goods are the wrong ones, or promotion is weak. Turnover is a measure of how well the warehouse and the sales effort work together."
+      },
+      "cards": [
+        {
+          "front": "Private warehouse",
+          "back": "A warehouse owned and used by one firm."
+        },
+        {
+          "front": "Public warehouse",
+          "back": "A warehouse hired out to many users."
+        },
+        {
+          "front": "Receiving bay",
+          "back": "The part of a warehouse where goods are unloaded and checked."
+        },
+        {
+          "front": "Warehouse site",
+          "back": "The place chosen for building a warehouse, decided by nearness to market and transport."
+        },
+        {
+          "front": "Stock turnover",
+          "back": "Cost of goods sold divided by average stock."
+        },
+        {
+          "front": "High turnover",
+          "back": "Goods sell quickly and little money is tied up in stock."
+        },
+        {
+          "front": "Low turnover",
+          "back": "Slow sales and money tied up in unsold stock."
+        },
+        {
+          "front": "Warehouse layout",
+          "back": "The arrangement of receiving, storage, packing and dispatch areas."
+        },
+        {
+          "front": "Warehouse receipt",
+          "back": "A document proving that goods are stored, usable as security for a loan."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A distributor's cost of goods sold is N9,000,000 and its average stock is N1,500,000. Its stock turnover is",
+          "options": [
+            "6 times",
+            "13.5 times",
+            "10.5 times",
+            "7,500,000 times"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A firm that distributes goods across Lagos is choosing a warehouse site. The most important factor is nearness to the market and",
+          "options": [
+            "a beautiful building",
+            "the owner's village",
+            "a large hall for parties",
+            "good road access"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A farmers' co-operative stores cocoa in a commodity warehouse and uses the receipt to obtain a bank loan. This shows the warehouse function of",
+          "options": [
+            "advertising",
+            "financing",
+            "grading",
+            "dispatching"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Imported spirits are stored under customs control until the importer pays duty. The warehouse used is",
+          "options": [
+            "a bonded warehouse",
+            "a private warehouse",
+            "a cold room",
+            "a commodity warehouse"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A manager places fast-moving goods near the warehouse door and heavy goods on low shelves. This is a decision on",
+          "options": [
+            "pricing",
+            "advertising",
+            "layout",
+            "financing"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A distributor's average stock for the year is N800,000 and its cost of goods sold is N6,400,000. (a) State the formula for stock turnover. (b) Calculate the stock turnover. (c) What does a high stock turnover show?",
+          "markScheme": [
+            "Stock turnover = cost of goods sold / average stock",
+            "6,400,000 / 800,000 = 8 times",
+            "A high turnover shows that goods sell quickly and little money is tied up in stock"
+          ],
+          "modelAnswer": "(a) Stock turnover = cost of goods sold / average stock. (b) 6,400,000 / 800,000 = 8 times. (c) A high stock turnover shows that goods sell quickly, so little money is tied up in stock and there is less risk that goods will expire.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Stock turnover = cost of goods sold divided by average stock. (b) 6,400,000 / 800,000 = 8 times. (c) It shows that the goods are selling fast and little money is tied up in unsold stock.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Stock turnover = cost of goods sold divided by average stock"
+                },
+                {
+                  "point": 1,
+                  "quote": "6,400,000 / 800,000 = 8 times"
+                },
+                {
+                  "point": 2,
+                  "quote": "It shows that the goods are selling fast and little money is tied up in unsold stock"
+                }
+              ],
+              "feedback": "All three marks. Formula, working and meaning are all right."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Cost of goods sold / average stock. (b) N6,400,000 divided by N800,000 equals 8 times a year. (c) A high turnover shows that sales are good and the stock does not stay long in the warehouse.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cost of goods sold / average stock"
+                },
+                {
+                  "point": 1,
+                  "quote": "N6,400,000 divided by N800,000 equals 8 times a year"
+                },
+                {
+                  "point": 2,
+                  "quote": "A high turnover shows that sales are good and the stock does not stay long in the warehouse"
+                }
+              ],
+              "feedback": "Full marks. Interpreting the result is as important as calculating it."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Cost of goods sold divided by average stock. (b) 800,000 / 6,400,000 = 0.125. (c) Goods sell quickly.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cost of goods sold divided by average stock"
+                },
+                {
+                  "point": 2,
+                  "quote": "Goods sell quickly"
+                }
+              ],
+              "feedback": "The formula and meaning are right. You divided the wrong way round: the cost of goods sold is divided by average stock, 6,400,000 / 800,000 = 8 times."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Stock turnover is the stock multiplied by sales. (b) 6,400,000 / 800,000 = 8. (c) It shows that the stock is moving quickly.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "6,400,000 / 800,000 = 8"
+                },
+                {
+                  "point": 2,
+                  "quote": "It shows that the stock is moving quickly"
+                }
+              ],
+              "feedback": "The calculation and meaning are right. The formula is cost of goods sold divided by average stock, not multiplied."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The number of times a lorry turns. (b) 6,400,000 x 800,000. (c) The warehouse is large.",
+              "meets": [],
+              "feedback": "Stock turnover is cost of goods sold divided by average stock: how many times the stock is sold and replaced. Here it is 6,400,000 / 800,000 = 8; it shows how fast goods sell."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Cost of goods sold plus average stock. (b) 6,400,000 + 800,000 = 7,200,000. (c) Goods sell fast.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Goods sell fast"
+                }
+              ],
+              "feedback": "The meaning of a high turnover earns a mark. The formula divides: 6,400,000 / 800,000 = 8 times, not 7,200,000.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "State four factors that a firm should consider when choosing a site for a warehouse.",
+          "markScheme": [
+            "Nearness to the market",
+            "Access to good transport",
+            "Cost and size of land, or room for expansion",
+            "Security, or availability of labour and utilities"
+          ],
+          "modelAnswer": "A firm should consider nearness to the market, so that delivery is quick and cheap; access to good roads, rail or a port; the cost and size of land, with room for expansion; and security, together with the availability of labour, electricity and water.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The firm should consider how near the site is to the market, so delivery will be quick, whether good roads or rail lead to the site, the cost of the land and whether there is room to expand and the security of the area and availability of electricity and workers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "how near the site is to the market, so delivery will be quick"
+                },
+                {
+                  "point": 1,
+                  "quote": "whether good roads or rail lead to the site"
+                },
+                {
+                  "point": 2,
+                  "quote": "the cost of the land and whether there is room to expand"
+                },
+                {
+                  "point": 3,
+                  "quote": "the security of the area and availability of electricity and workers"
+                }
+              ],
+              "feedback": "All four marks. Each factor is stated with a reason."
+            },
+            {
+              "tier": "full",
+              "text": "Nearness to customers. Access to a port, a railway or a good road. The price of the land. Availability of workers in the area.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Nearness to customers"
+                },
+                {
+                  "point": 1,
+                  "quote": "Access to a port, a railway or a good road"
+                },
+                {
+                  "point": 2,
+                  "quote": "The price of the land"
+                },
+                {
+                  "point": 3,
+                  "quote": "Availability of workers in the area"
+                }
+              ],
+              "feedback": "Full marks. Four different factors, each of them a real business consideration."
+            },
+            {
+              "tier": "partial",
+              "text": "Nearness to the market. Good roads. The beauty of the area. The size of the owner's family.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Nearness to the market"
+                },
+                {
+                  "point": 1,
+                  "quote": "Good roads"
+                }
+              ],
+              "feedback": "Market and roads are right. Beauty of the area and the owner's family are not business factors; add land cost or security."
+            },
+            {
+              "tier": "partial",
+              "text": "Cost of land. Security. The colour of the building. The language of the people.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Cost of land"
+                },
+                {
+                  "point": 3,
+                  "quote": "Security"
+                }
+              ],
+              "feedback": "Cost of land and security are right. Colour of the building and language are not important. Add nearness to the market and access to transport."
+            },
+            {
+              "tier": "weak",
+              "text": "The warehouse should be near the owner's house. It should be big. It should be tall. It should be white.",
+              "meets": [],
+              "feedback": "The firm chooses a site for business reasons: nearness to the market, access to transport, cost of land and security."
+            },
+            {
+              "tier": "weak",
+              "text": "Good roads. Big building. Nice paint. Nice name.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Good roads"
+                }
+              ],
+              "feedback": "Good roads is right. Add nearness to the market, land cost and security. Paint and the name do not affect the choice of site.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Market unions and facilitators: roles and limits",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain what market unions are and the types found in Nigeria;\n2. discuss the roles of market unions in local markets and the problems they face;\n3. explain marketing facilitators and their roles;\n4. distinguish facilitators from middlemen.\n\n## Materials\n\nNews cuttings about a market traders' union, a sample list of facilitators, cards for sorting (facilitator or middleman), WASSCE past questions.\n\n## Starter (5 minutes)\n\nAsk: the local government raises the daily levy on stall owners at a market. Who will speak for the traders, and how will they decide what to do? Draw out the work of a union.\n\n## Development\n\n1. Market unions: associations of traders in a market (market traders' union) or in one line of trade (a trade-line union).\n2. Roles: settling disputes, enforcing standards and discipline, collecting dues for cleaning and security, bargaining with the local government and others, helping members in trouble (welfare, loans), and training traders.\n3. Problems of market unions: disputes among leaders, poor use of dues, forcing members to follow strikes, and sometimes fixing prices against consumers' interest.\n4. Marketing facilitators help marketing without owning the goods: banks, insurance companies, transporters, warehouses, advertising agencies, research firms, communication and ICT firms.\n5. A facilitator differs from a middleman. A middleman, such as a wholesaler, buys the goods and resells them. A facilitator never takes ownership of the goods.\n6. Apply: for a small business, list the facilitators it needs.\n\n## Class activity\n\nSorting game: students put cards (bank, wholesaler, courier, retailer, advertising agency, insurance firm) under 'facilitator' or 'middleman'.\n\n## Evaluation\n\n1. Name two problems of market unions.\n2. Why is a courier firm a facilitator and not a middleman?\n\n## Assignment\n\nQuiz on the app.",
+      "reading": {
+        "title": "What unions and facilitators do for markets",
+        "content": "# Market unions and facilitators: roles and limits\n\n## Market unions\n\nA **market union** is an association of traders formed to protect and promote their shared interests. A **market traders' union** covers all traders in one market, such as a cattle market in Kano or Balogun market in Lagos. A **trade-line union** covers traders in the same line of goods wherever they are, for example computer dealers or spare-parts dealers.\n\n### Roles\n\n- **Settling disputes** among traders and between traders and customers.\n- **Maintaining standards and discipline**: a union of tomato sellers may stop members from selling spoiled tomatoes to protect the name of the market.\n- **Representing members**: bargaining with the local government on levies, or on market facilities such as drainage.\n- **Collecting dues** for cleaning, security and welfare.\n- **Welfare and loans**: a fund to help members in sickness, accident or loss.\n- **Information and training**: telling members about new rules and prices.\n\n### Problems\n\nUnions may suffer from quarrels among leaders, misuse of dues, forced strikes that close markets, and, sometimes, fixing prices in ways that harm consumers.\n\n## Marketing facilitators\n\nA **marketing facilitator** is an organisation that helps marketing without owning the goods. Examples:\n\n- **Banks**: finance and payments.\n- **Insurance companies**: cover against risks.\n- **Transporters and couriers**: move goods and parcels.\n- **Warehouses**: store goods.\n- **Advertising agencies**: create and place adverts.\n- **Marketing research firms**: collect information.\n- **ICT and telecom firms**: provide websites, payment platforms and communication.\n\n## Facilitator or middleman?\n\nA **middleman** such as a wholesaler or retailer **buys the goods and resells them**, taking ownership. A facilitator never owns the goods. A courier carries a parcel for a fee but does not buy it. A bank gives a loan but does not buy the stock.\n\n## Applying the idea\n\nAn online fashion seller needs a bank (to accept payments), a courier (to deliver), an advertising platform (to be seen), an insurance firm (to cover goods in transit) and an ICT firm (for a website). She could try to do all this herself, but it would take her time and money away from her business."
+      },
+      "cards": [
+        {
+          "front": "Market union",
+          "back": "An association of traders formed to protect and promote their interests."
+        },
+        {
+          "front": "Trade-line union",
+          "back": "A union of traders in the same line of goods."
+        },
+        {
+          "front": "Representing members",
+          "back": "Speaking for traders to the local government, for example on levies."
+        },
+        {
+          "front": "Marketing facilitator",
+          "back": "An organisation that helps marketing without owning the goods."
+        },
+        {
+          "front": "Middleman",
+          "back": "A trader such as a wholesaler who buys goods and resells them."
+        },
+        {
+          "front": "Courier company",
+          "back": "A facilitator that carries parcels for a fee."
+        },
+        {
+          "front": "Insurance company",
+          "back": "A facilitator that covers the risk of loss."
+        },
+        {
+          "front": "Advertising agency",
+          "back": "A facilitator that creates and places adverts."
+        },
+        {
+          "front": "Problem of unions",
+          "back": "Quarrels among leaders and misuse of dues."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A union of tomato traders at Mile 12 stops members from selling spoiled tomatoes in order to protect the name of the market. This role is",
+          "options": [
+            "maintaining standards and discipline",
+            "advertising",
+            "insurance",
+            "importing"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A market union negotiates with the local government to reduce the daily levy on stall owners. This role is",
+          "options": [
+            "representing members",
+            "warehousing",
+            "settling disputes among traders",
+            "grading"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A courier company that delivers parcels for online sellers is an example of",
+          "options": [
+            "a wholesaler",
+            "a marketing facilitator",
+            "a retailer",
+            "a producer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following is not a marketing facilitator?",
+          "options": [
+            "A bank",
+            "An insurance company",
+            "A wholesaler who buys goods and resells them",
+            "An advertising agency"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A fund set up by a market union to help members in sickness or after a fire is part of its",
+          "options": [
+            "tax function",
+            "advertising function",
+            "importing function",
+            "welfare function"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Distinguish between a marketing facilitator and a middleman. (b) State two ways in which a market union can help a trader whose shop and goods were destroyed by fire.",
+          "markScheme": [
+            "A marketing facilitator helps marketing but does not own the goods",
+            "A middleman buys the goods and resells them, taking ownership",
+            "First way the union can help, for example giving a loan or welfare support from its fund",
+            "Second way, for example representing the trader to the authorities for relief or collecting contributions from members"
+          ],
+          "modelAnswer": "(a) A marketing facilitator helps marketing to take place without owning the goods, for example a bank or a courier. A middleman buys the goods and resells them, taking ownership, for example a wholesaler. (b) The union can give the trader a loan or welfare support from its fund, and it can collect contributions from members or speak to the local government for help.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A marketing facilitator helps marketing take place but does not own the goods, for example a bank. A middleman buys the goods and resells them, so he owns them, for example a wholesaler. (b) The union can give him a loan from its welfare fund, and it can ask the other members to contribute money and speak to the local government for help.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A marketing facilitator helps marketing take place but does not own the goods"
+                },
+                {
+                  "point": 1,
+                  "quote": "A middleman buys the goods and resells them, so he owns them"
+                },
+                {
+                  "point": 2,
+                  "quote": "The union can give him a loan from its welfare fund"
+                },
+                {
+                  "point": 3,
+                  "quote": "it can ask the other members to contribute money and speak to the local government for help"
+                }
+              ],
+              "feedback": "All four marks. Ownership of the goods is the central distinction."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Facilitators do not take ownership of goods, they only assist, like courier firms. Middlemen take ownership because they buy and resell, like retailers. (b) The union can use its welfare fund to support him; the union can represent him to the authorities for relief or tax waiver.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Facilitators do not take ownership of goods, they only assist"
+                },
+                {
+                  "point": 1,
+                  "quote": "Middlemen take ownership because they buy and resell"
+                },
+                {
+                  "point": 2,
+                  "quote": "The union can use its welfare fund to support him"
+                },
+                {
+                  "point": 3,
+                  "quote": "the union can represent him to the authorities for relief or tax waiver"
+                }
+              ],
+              "feedback": "Full marks. Both union actions are sensible and realistic."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A facilitator helps marketing without owning the goods. A middleman is also a facilitator. (b) The union can give a loan.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A facilitator helps marketing without owning the goods"
+                },
+                {
+                  "point": 2,
+                  "quote": "The union can give a loan"
+                }
+              ],
+              "feedback": "The facilitator and the loan are right. A middleman buys the goods and resells them, so he owns them and is not a facilitator. Add a second way the union can help, such as asking members to contribute."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A middleman buys the goods and resells them. A facilitator sells the goods. (b) The union can collect contributions from members.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A middleman buys the goods and resells them"
+                },
+                {
+                  "point": 3,
+                  "quote": "The union can collect contributions from members"
+                }
+              ],
+              "feedback": "The middleman and union help are right. A facilitator does not sell the goods; it helps marketing without owning them. Add a second union action, such as a loan from the welfare fund."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A facilitator is a man who facilitates and a middleman is in the middle. (b) The union will punish him.",
+              "meets": [],
+              "feedback": "A facilitator helps marketing without owning goods; a middleman buys and resells them. A union helps a member in need through a loan or collected contributions, not punishment."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) They are the same. (b) The union can give him some money from its welfare fund.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The union can give him some money from its welfare fund"
+                }
+              ],
+              "feedback": "Your union help earns a mark. Facilitators and middlemen differ: middlemen own the goods they resell, facilitators do not.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "A young woman in Lagos is starting an online fashion business. Name three marketing facilitators she is likely to use and state the role of each.",
+          "markScheme": [
+            "First facilitator named with its role, for example a bank handles payments",
+            "Second facilitator named with its role, for example a courier company delivers the clothes",
+            "Third facilitator named with its role, for example an advertising platform or agency promotes her business",
+            "Facilitators let her concentrate on designing and selling instead of doing all the tasks herself"
+          ],
+          "modelAnswer": "She is likely to use a bank, which accepts payments from customers and gives loans. She will use a courier company to deliver the clothes to customers. She will also use an advertising platform or agency to make her business known. Using facilitators lets her concentrate on designing and selling instead of doing all these tasks herself.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "She is likely to use a bank which accepts payments from customers and may give her a loan, a courier company which delivers the clothes to the customers and an advertising agency which advertises her business. With these, she can concentrate on designing and selling clothes instead of doing everything herself.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a bank which accepts payments from customers and may give her a loan"
+                },
+                {
+                  "point": 1,
+                  "quote": "a courier company which delivers the clothes to the customers"
+                },
+                {
+                  "point": 2,
+                  "quote": "an advertising agency which advertises her business"
+                },
+                {
+                  "point": 3,
+                  "quote": "With these, she can concentrate on designing and selling clothes instead of doing everything herself"
+                }
+              ],
+              "feedback": "All four marks. Each facilitator is paired with its role."
+            },
+            {
+              "tier": "full",
+              "text": "A bank to receive her customers' payments and transfers. A courier firm to take parcels to customers in other states. A social media platform to advertise her designs. These facilitators save her time so she can focus on her business.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A bank to receive her customers' payments and transfers"
+                },
+                {
+                  "point": 1,
+                  "quote": "A courier firm to take parcels to customers in other states"
+                },
+                {
+                  "point": 2,
+                  "quote": "A social media platform to advertise her designs"
+                },
+                {
+                  "point": 3,
+                  "quote": "These facilitators save her time so she can focus on her business"
+                }
+              ],
+              "feedback": "Full marks. A social media platform is a valid modern facilitator."
+            },
+            {
+              "tier": "partial",
+              "text": "A bank, for payments. A courier, for delivery. Customers. She will also use a wholesaler.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A bank, for payments"
+                },
+                {
+                  "point": 1,
+                  "quote": "A courier, for delivery"
+                }
+              ],
+              "feedback": "The bank and courier are right. Customers and a wholesaler are not facilitators; add an advertising or insurance firm with its role."
+            },
+            {
+              "tier": "partial",
+              "text": "An advertising agency to promote her clothes. An insurance company. A bank.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "An advertising agency to promote her clothes"
+                }
+              ],
+              "feedback": "Advertising is right. Insurance and bank need roles stated: insurance covers goods in transit and the bank handles payments."
+            },
+            {
+              "tier": "weak",
+              "text": "She will use her mother, her friends and her sister. They will help her.",
+              "meets": [],
+              "feedback": "Facilitators are organisations such as banks, couriers and advertising agencies that help marketing without owning the goods, not relatives."
+            },
+            {
+              "tier": "weak",
+              "text": "A bank. A shop. A market.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A bank"
+                }
+              ],
+              "feedback": "A bank is a facilitator, but state its role: accepting payments and giving loans. A shop and a market are places of sale, not facilitators.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "International marketing",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define international marketing and give the reasons firms market abroad;\n2. describe the methods of entering foreign markets: exporting, licensing, joint ventures, franchising and direct investment;\n3. state the factors that influence international marketing;\n4. state the rules and regulations that guide exports;\n5. calculate the naira value of an export sale given an exchange rate.\n\n## Materials\n\nA world map, an export licence sample, pictures of Nigerian export products (cocoa, sesame, shea butter, cashew), an exchange rate notice, calculators.\n\n## Starter (5 minutes)\n\nAsk: shea butter is made in a village in Niger State. A buyer in Europe wants 5 tonnes of it. What must the producer do before it can reach him? List the steps students suggest: packaging, paperwork, shipping, getting paid in foreign money.\n\n## Development\n\n1. International marketing is the marketing of goods and services to customers in more than one country. Reasons: a larger market, spreading risk, extra profit, unused capacity, earning foreign exchange, and competition at home.\n2. Methods: exporting (selling from the home country), licensing (allowing a foreign firm to produce and sell under your brand for a fee), joint venture (sharing ownership and risk with a foreign partner), franchising (letting a foreign firm use your name and system), and direct investment (opening a branch or factory abroad).\n3. Influencing factors: tariffs and quotas, laws, culture and language, exchange rates, political stability, transport and communication, and competition.\n4. Rules and regulations: export licences, customs documents, quality standards (such as inspection and approvals from regulatory bodies), packaging and labelling rules, and support from the Nigerian Export Promotion Council.\n5. Exchange rate calculation: naira value = foreign price x quantity x exchange rate.\n\n## Class activity\n\nGroups prepare a short plan for exporting cashew nuts from Nigeria to a customer abroad, listing documents, packaging and the method of entering the market.\n\n## Evaluation\n\n1. Define licensing.\n2. State two factors a firm must consider before selling abroad.\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Selling beyond our borders",
+        "content": "# International marketing\n\n**International marketing** is the marketing of goods and services to customers in more than one country. A cocoa farmer who sells to a buyer in Europe, a Nollywood producer who sells films abroad and a bank that opens a branch in Accra are all marketing internationally.\n\n## Reasons for marketing abroad\n\n- **A bigger market**: more customers than at home.\n- **Spreading risk**: if home sales fall, foreign sales may continue.\n- **Extra profit** and use of spare capacity.\n- **Earning foreign exchange**.\n- **Competition at home** that makes the home market crowded.\n- **Using skills and goods the country is good at**.\n\n## Methods of entering foreign markets\n\n| Method | What it means |\n| --- | --- |\n| **Exporting** | Selling goods from the home country to buyers abroad, directly or through agents |\n| **Licensing** | Allowing a foreign firm to make and sell the product under your brand for a fee |\n| **Joint venture** | Sharing ownership and risk of a business with a foreign partner |\n| **Franchising** | Allowing a foreign firm to use your name and way of doing business for a fee |\n| **Direct investment** | Opening a branch or a factory in the foreign country |\n\n## Factors influencing international marketing\n\n- **Tariffs and quotas** that raise prices or limit quantity.\n- **Laws and standards**: some countries refuse goods that fail their health or labelling rules.\n- **Culture and language**: customs, tastes and religion affect what people buy; packaging and adverts must suit them.\n- **Exchange rates**: changes in the value of the naira affect profit.\n- **Political stability** and security.\n- **Transport and communication** facilities.\n- **Competition** from other exporters.\n\n## Rules and regulations\n\nExporters need an **export licence** where required, **customs documents** (invoice, certificate of origin, bill of lading), quality approval and proper packaging and labelling. In Nigeria, the **Nigerian Export Promotion Council (NEPC)** helps exporters with information, training and finding markets.\n\n## Worked example\n\nAn exporter sells 2,000 cartons of cashew snacks at $12 each. If the exchange rate is N1,500 to $1 (a figure used for the example), the dollar value is 2,000 x 12 = $24,000. In naira it is 24,000 x 1,500 = **N36,000,000**. If the naira falls in value, the same dollars bring more naira, which helps the exporter; if it rises, the exporter earns fewer naira."
+      },
+      "cards": [
+        {
+          "front": "International marketing",
+          "back": "Marketing goods and services to customers in more than one country."
+        },
+        {
+          "front": "Exporting",
+          "back": "Selling goods from the home country to buyers abroad."
+        },
+        {
+          "front": "Licensing",
+          "back": "Allowing a foreign firm to produce and sell under your brand for a fee."
+        },
+        {
+          "front": "Joint venture",
+          "back": "Sharing ownership and risk of a business with a foreign partner."
+        },
+        {
+          "front": "Franchising",
+          "back": "Allowing a foreign firm to use your name and system for a fee."
+        },
+        {
+          "front": "Direct investment",
+          "back": "Opening a branch or factory in a foreign country."
+        },
+        {
+          "front": "Export licence",
+          "back": "Permission from government to export certain goods."
+        },
+        {
+          "front": "NEPC",
+          "back": "The Nigerian Export Promotion Council, which helps exporters."
+        },
+        {
+          "front": "Exchange rate",
+          "back": "The value of one currency in terms of another."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A Nigerian snack maker allows a firm in Ghana to produce and sell its snack under the Nigerian brand in return for a fee. This method of entering a foreign market is",
+          "options": [
+            "exporting",
+            "direct investment",
+            "licensing",
+            "countertrade"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "An exporter sells 2,000 cartons of snacks at $12 each when the exchange rate is N1,500 to $1. The naira value of the sale is",
+          "options": [
+            "N24,000",
+            "N18,000,000",
+            "N3,000,000",
+            "N36,000,000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A foreign country refuses a Nigerian food product because its labelling does not meet the country's rules. This is an effect of",
+          "options": [
+            "religious festivals",
+            "language only",
+            "legal and regulatory factors",
+            "the climate"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The agency in Nigeria that assists exporters with information, training and finding markets is the",
+          "options": [
+            "Nigerian Export Promotion Council",
+            "Federal Road Safety Corps",
+            "Nigerian Ports Authority only",
+            "Corporate Affairs Commission"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A firm opens its own factory in Ghana to supply the Ghanaian market. This method is",
+          "options": [
+            "exporting",
+            "direct investment",
+            "licensing",
+            "franchising"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Define international marketing. (b) State three reasons why firms market their products internationally.",
+          "markScheme": [
+            "International marketing is the marketing of goods and services to customers in more than one country",
+            "First reason, for example a bigger market",
+            "Second reason, for example spreading risk or extra profit",
+            "Third reason, for example earning foreign exchange or using spare capacity"
+          ],
+          "modelAnswer": "(a) International marketing is the marketing of goods and services to customers in more than one country. (b) Firms market abroad to reach a bigger market, to spread the risk so that a fall in home sales does not ruin them, and to earn foreign exchange.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) International marketing is selling goods and services to customers in more than one country. (b) To reach a larger market, to spread risk so that if sales fall at home they still sell abroad and to earn foreign exchange.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "International marketing is selling goods and services to customers in more than one country"
+                },
+                {
+                  "point": 1,
+                  "quote": "To reach a larger market"
+                },
+                {
+                  "point": 2,
+                  "quote": "to spread risk so that if sales fall at home they still sell abroad"
+                },
+                {
+                  "point": 3,
+                  "quote": "to earn foreign exchange"
+                }
+              ],
+              "feedback": "All four marks. Your reason about spreading risk is explained."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It is the marketing of a firm's products to buyers in other countries as well as at home. (b) There are more customers abroad; extra profit; the firm can use its spare capacity to produce more.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is the marketing of a firm's products to buyers in other countries as well as at home"
+                },
+                {
+                  "point": 1,
+                  "quote": "There are more customers abroad"
+                },
+                {
+                  "point": 2,
+                  "quote": "extra profit"
+                },
+                {
+                  "point": 3,
+                  "quote": "the firm can use its spare capacity to produce more"
+                }
+              ],
+              "feedback": "Full marks. Using spare capacity is a valid reason."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) International marketing is marketing of goods in other countries. (b) A bigger market. To show off.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "International marketing is marketing of goods in other countries"
+                },
+                {
+                  "point": 1,
+                  "quote": "A bigger market"
+                }
+              ],
+              "feedback": "The definition and bigger market are right. Showing off is not a business reason; add spreading risk or earning foreign exchange."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) International marketing is marketing at the airport. (b) To spread risk and to earn foreign exchange.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "To spread risk"
+                },
+                {
+                  "point": 3,
+                  "quote": "to earn foreign exchange"
+                }
+              ],
+              "feedback": "Both reasons are right. International marketing means marketing to customers in more than one country, not marketing at the airport."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is marketing by the United Nations. (b) To go on holiday.",
+              "meets": [],
+              "feedback": "International marketing is selling to customers in more than one country. Firms do it for a bigger market, to spread risk and to earn foreign exchange."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is trade between friends. (b) A bigger market.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A bigger market"
+                }
+              ],
+              "feedback": "Your reason earns a mark. International marketing is selling goods and services to customers in more than one country, not trade between friends.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Explain licensing and joint venture as methods of entering a foreign market. (b) State two factors that a Nigerian firm must consider before selling its products in another country.",
+          "markScheme": [
+            "Licensing is allowing a foreign firm to make and sell the product under the brand for a fee",
+            "A joint venture is sharing ownership and risk of a business with a foreign partner",
+            "First factor, for example laws and standards of the foreign country",
+            "Second factor, for example language and culture, or exchange rates"
+          ],
+          "modelAnswer": "(a) Licensing is allowing a foreign firm to produce and sell the product under the Nigerian firm's brand for a fee. A joint venture is a business in which the Nigerian firm shares ownership and risk with a foreign partner. (b) The firm must consider the laws and standards of the foreign country, such as labelling rules, and the language and culture of the customers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Licensing is when a firm allows a foreign company to make and sell its product under its brand and pays a fee. A joint venture is when the Nigerian firm and a foreign firm own a business together and share the risk. (b) The laws and standards of the foreign country on goods and labels and language and culture of the customers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Licensing is when a firm allows a foreign company to make and sell its product under its brand and pays a fee"
+                },
+                {
+                  "point": 1,
+                  "quote": "A joint venture is when the Nigerian firm and a foreign firm own a business together and share the risk"
+                },
+                {
+                  "point": 2,
+                  "quote": "The laws and standards of the foreign country on goods and labels"
+                },
+                {
+                  "point": 3,
+                  "quote": "language and culture of the customers"
+                }
+              ],
+              "feedback": "All four marks. Each method and factor is explained."
+            },
+            {
+              "tier": "full",
+              "text": "(a) In licensing the owner of a brand gives permission to a foreign firm to produce and sell for a fee. In a joint venture two firms from different countries share ownership and the risks of a business. (b) Tariffs and import rules of the country; exchange rate which may reduce profits.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In licensing the owner of a brand gives permission to a foreign firm to produce and sell for a fee"
+                },
+                {
+                  "point": 1,
+                  "quote": "In a joint venture two firms from different countries share ownership and the risks of a business"
+                },
+                {
+                  "point": 2,
+                  "quote": "Tariffs and import rules of the country"
+                },
+                {
+                  "point": 3,
+                  "quote": "exchange rate which may reduce profits"
+                }
+              ],
+              "feedback": "Full marks. Tariffs and exchange rates are real factors."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Licensing is giving permission to a foreign firm to produce a brand for a fee. Joint venture is a venture. (b) Laws of the country.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Licensing is giving permission to a foreign firm to produce a brand for a fee"
+                },
+                {
+                  "point": 2,
+                  "quote": "Laws of the country"
+                }
+              ],
+              "feedback": "Licensing and laws are right. A joint venture is a business that two firms from different countries own and run together, sharing risk. Add a second factor, such as culture or exchange rates."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Licensing is a paper that says that a driver can drive. A joint venture is two firms sharing ownership and risk. (b) Language.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A joint venture is two firms sharing ownership and risk"
+                },
+                {
+                  "point": 3,
+                  "quote": "Language"
+                }
+              ],
+              "feedback": "Joint venture and language are right. Licensing here means permission to produce and sell a brand for a fee, not a driving licence. Add a second factor, such as laws and standards."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Licensing is a driving licence. Joint venture is a journey. (b) The weather and the flag.",
+              "meets": [],
+              "feedback": "Licensing is permission to produce a brand for a fee; a joint venture is sharing ownership and risk with a foreign partner. Consider laws, culture, language and exchange rates."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Joint venture is where two firms own a business together. Licensing is licence. (b) Colour.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Joint venture is where two firms own a business together"
+                }
+              ],
+              "feedback": "Your joint venture earns a mark. Licensing means giving a foreign firm permission to make and sell your brand for a fee. Factors include laws and language, not colour.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "ICT in marketing: e-marketing, its uses, ethics and abuses",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define e-marketing and ICT in marketing;\n2. state the importance and uses of e-marketing;\n3. state the ethical rules of e-marketing;\n4. identify the abuses of e-marketing and how to guard against them.\n\n## Materials\n\nA phone or computer showing a business page on social media (with permission), printed examples of a scam message and a genuine business message, WASSCE past questions.\n\n## Starter (5 minutes)\n\nAsk: how many of you have bought something using a phone, or seen an advert on a phone while using an app? What was good about it? Was there anything about it that worried you? Write the answers in two columns: good, worry.\n\n## Development\n\n1. ICT is information and communication technology: computers, phones, the internet and software. E-marketing (electronic marketing) is the use of ICT to promote, sell and serve customers: websites, e-mail, social media, mobile apps and online payment.\n2. Importance: reaches many customers at low cost, works day and night, allows direct contact, gives fast feedback, and lets small firms compete with large ones.\n3. Uses: online shops, advertising on social media, e-mail and text promotions, customer service by chat, online surveys and collecting data, and electronic payment.\n4. Ethics: truthful information, permission before sending messages, protection of customers' data, respect for privacy, honouring orders and delivery, and fair dealing.\n5. Abuses: spam (unwanted mass messages), fake shops and online fraud, phishing (tricking people into giving passwords or card numbers), misleading adverts, selling customers' data without permission, and fake reviews.\n6. Safeguards: law, buyer education, secure payment, and reporting scams.\n\n## Class activity\n\nGroups write ethical guidelines for a school's online snack shop, and a short list of warning signs of a fake online shop.\n\n## Evaluation\n\n1. State two uses of e-marketing.\n2. What is spam?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Marketing with phones, apps and the internet",
+        "content": "# ICT in marketing: e-marketing\n\n**Information and communication technology (ICT)** covers computers, phones, the internet and the software that goes with them. **E-marketing** (electronic marketing) is the use of ICT to promote, sell and serve customers. It includes websites, e-mail, social media, mobile apps and online payment.\n\n## Importance of e-marketing\n\n- It can reach **many customers at low cost**, in Nigeria and abroad.\n- It works **day and night**, so a shop never closes.\n- It allows **direct contact** with customers.\n- It gives **fast feedback** through comments and ratings.\n- It helps a small firm compete with a large one.\n\n## Uses of ICT in marketing\n\n- **Online shops** and marketplaces for selling goods.\n- **Advertising** on social media, websites and search pages.\n- **E-mail and text-message promotions** to customers who agreed to receive them.\n- **Customer service** by chat or phone.\n- **Research**: online surveys and studying customer behaviour.\n- **Electronic payment** by card, transfer or mobile wallets.\n\nA small bakery in Enugu that takes orders on a messaging app, receives payment by transfer and delivers by motorbike is using e-marketing.\n\n## Ethics of e-marketing\n\nEthics are standards of right conduct. In e-marketing, a firm should:\n\n- Give **truthful** information about goods and prices.\n- Get **permission** before sending promotional messages.\n- Protect customers' **personal data** and respect their privacy.\n- **Deliver** what was ordered and pay refunds.\n- Deal fairly with competitors.\n\n## Abuses\n\n- **Spam**: sending large numbers of unwanted promotional messages.\n- **Fake online shops** that take money and never deliver.\n- **Phishing**: tricking people into giving passwords or card numbers.\n- **Misleading adverts** and fake reviews.\n- **Selling customers' data** without permission.\n- Selling harmful or banned goods.\n\n## Safeguards\n\nLaws on data and fraud, secure payment systems, teaching buyers to check a seller's reputation before paying, and reporting scams all help to guard against these abuses."
+      },
+      "cards": [
+        {
+          "front": "ICT",
+          "back": "Information and communication technology: computers, phones and the internet."
+        },
+        {
+          "front": "E-marketing",
+          "back": "Using ICT to promote, sell and serve customers."
+        },
+        {
+          "front": "Spam",
+          "back": "Large numbers of unwanted promotional messages."
+        },
+        {
+          "front": "Phishing",
+          "back": "Tricking people into giving passwords or card details."
+        },
+        {
+          "front": "Online shop",
+          "back": "A website or app through which goods are sold."
+        },
+        {
+          "front": "Privacy",
+          "back": "The right of customers to keep personal information protected."
+        },
+        {
+          "front": "Ethics",
+          "back": "Standards of right conduct in business."
+        },
+        {
+          "front": "Fake review",
+          "back": "A false comment written to make a product look good or bad."
+        },
+        {
+          "front": "Electronic payment",
+          "back": "Payment by card, transfer or mobile wallet."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Using websites, e-mail and social media to promote and sell products is called",
+          "options": [
+            "personal selling",
+            "merchandising",
+            "warehousing",
+            "e-marketing"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A small bakery in Enugu takes orders on a messaging app, receives payment by transfer and delivers by motorbike. This is an example of",
+          "options": [
+            "a trade fair",
+            "price control",
+            "a monopoly",
+            "e-marketing"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Sending large numbers of unwanted promotional messages to people's phones is called",
+          "options": [
+            "branding",
+            "franchising",
+            "spam",
+            "sampling"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of the following is an ethical practice in e-marketing?",
+          "options": [
+            "Getting a customer's permission before sending promotional messages",
+            "Sending messages to everyone without asking",
+            "Selling customers' personal data to others",
+            "Posting fake reviews"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "An advantage of e-marketing to a small business is that it can",
+          "options": [
+            "avoid all competition",
+            "reach many customers at low cost",
+            "sell without delivering",
+            "ignore customers' complaints"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) What is e-marketing? (b) State three uses of ICT in marketing.",
+          "markScheme": [
+            "E-marketing is the use of ICT to promote, sell and serve customers",
+            "First use, for example selling through an online shop",
+            "Second use, for example advertising on social media",
+            "Third use, for example customer service, online surveys or electronic payment"
+          ],
+          "modelAnswer": "(a) E-marketing is the use of information and communication technology, such as websites, e-mail and social media, to promote, sell and serve customers. (b) ICT is used to sell goods through online shops, to advertise on social media, and to receive payment electronically.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) E-marketing is the use of websites, e-mail, social media and other electronic means to promote and sell goods and to serve customers. (b) Selling through an online shop, advertising on social media and receiving payment by transfer or card.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "E-marketing is the use of websites, e-mail, social media and other electronic means to promote and sell goods and to serve customers"
+                },
+                {
+                  "point": 1,
+                  "quote": "Selling through an online shop"
+                },
+                {
+                  "point": 2,
+                  "quote": "advertising on social media"
+                },
+                {
+                  "point": 3,
+                  "quote": "receiving payment by transfer or card"
+                }
+              ],
+              "feedback": "All four marks. Complete and accurate."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It means using ICT such as the internet and phones to promote and sell products and to look after customers. (b) Taking orders on a website or an app; sending adverts and promotions by e-mail to customers who agreed; answering customers' questions by chat.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It means using ICT such as the internet and phones to promote and sell products and to look after customers"
+                },
+                {
+                  "point": 1,
+                  "quote": "Taking orders on a website or an app"
+                },
+                {
+                  "point": 2,
+                  "quote": "sending adverts and promotions by e-mail to customers who agreed"
+                },
+                {
+                  "point": 3,
+                  "quote": "answering customers' questions by chat"
+                }
+              ],
+              "feedback": "Full marks. Customer chat is a good use."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) E-marketing is the use of ICT to promote and sell products. (b) Online shops. Radio adverts. Posters.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "E-marketing is the use of ICT to promote and sell products"
+                },
+                {
+                  "point": 1,
+                  "quote": "Online shops"
+                }
+              ],
+              "feedback": "The definition and online shops are right. Radio and posters are not ICT uses. Add advertising on social media or electronic payment."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) E-marketing is marketing of electronics. (b) Advertising on the internet and online payment.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Advertising on the internet"
+                },
+                {
+                  "point": 3,
+                  "quote": "online payment"
+                }
+              ],
+              "feedback": "Both uses are right. E-marketing is the use of ICT to promote, sell and serve customers, not marketing of electronic goods."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) E-marketing is marketing of the E class students. (b) Typing, drawing and writing.",
+              "meets": [],
+              "feedback": "E-marketing is the use of ICT, such as the internet and phones, to promote and sell products. Uses include online shops, social media adverts and electronic payment."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is marketing on a computer. (b) Online shops.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Online shops"
+                }
+              ],
+              "feedback": "Your use earns a mark. E-marketing is more than marketing on a computer: it uses ICT such as phones and the internet to promote, sell and serve customers.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Explain two abuses of e-marketing. (b) State two ethical rules a business should follow when marketing online.",
+          "markScheme": [
+            "First abuse of e-marketing explained, for example spam or phishing",
+            "Second abuse explained, for example fake online shops or misleading adverts",
+            "First ethical rule, for example giving truthful information or getting permission before sending promotions",
+            "Second ethical rule, for example protecting customers' personal data or delivering what was ordered"
+          ],
+          "modelAnswer": "(a) Spam is sending large numbers of unwanted promotional messages. A fake online shop takes customers' money and never delivers the goods. (b) A business should give truthful information about its goods, and it should protect customers' personal data.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Spam is when a business sends thousands of unwanted promotional messages to people. A fake online shop collects money from customers and does not send the goods. (b) A business should give true information about its goods and prices. It should protect the personal data of its customers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Spam is when a business sends thousands of unwanted promotional messages to people"
+                },
+                {
+                  "point": 1,
+                  "quote": "A fake online shop collects money from customers and does not send the goods"
+                },
+                {
+                  "point": 2,
+                  "quote": "A business should give true information about its goods and prices"
+                },
+                {
+                  "point": 3,
+                  "quote": "It should protect the personal data of its customers"
+                }
+              ],
+              "feedback": "All four marks. You explained the abuses and gave the matching rules."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Phishing is tricking customers into giving their passwords and card numbers. Misleading adverts give a false impression of a product. (b) Businesses should get permission before sending promotional messages. They should deliver what was ordered or give a refund.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Phishing is tricking customers into giving their passwords and card numbers"
+                },
+                {
+                  "point": 1,
+                  "quote": "Misleading adverts give a false impression of a product"
+                },
+                {
+                  "point": 2,
+                  "quote": "Businesses should get permission before sending promotional messages"
+                },
+                {
+                  "point": 3,
+                  "quote": "They should deliver what was ordered or give a refund"
+                }
+              ],
+              "feedback": "Full marks. Phishing and permission both matter in e-marketing."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Spam is unwanted promotional messages sent to many people. Selling is an abuse. (b) Giving true information.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Spam is unwanted promotional messages sent to many people"
+                },
+                {
+                  "point": 2,
+                  "quote": "Giving true information"
+                }
+              ],
+              "feedback": "Spam and true information are right. Selling is not an abuse in itself; fake shops that do not deliver are. Add a second ethical rule, such as protecting customers' data."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Abuse is when people are abused. (b) Get permission before sending messages and protect customers' personal data.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Get permission before sending messages"
+                },
+                {
+                  "point": 3,
+                  "quote": "protect customers' personal data"
+                }
+              ],
+              "feedback": "Both ethical rules are right. In (a), the abuses of e-marketing are practices such as spam, fake shops and phishing."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Abuse is when someone abuses the internet by playing games. (b) Be nice and be good.",
+              "meets": [],
+              "feedback": "Abuses of e-marketing include spam, fake shops and phishing. Ethical rules are specific: truthful information, permission, protecting data."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Spam is an unwanted message sent to a lot of people. The other is bad. (b) Do not cheat.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Spam is an unwanted message sent to a lot of people"
+                }
+              ],
+              "feedback": "Your spam explanation earns a mark. Name and explain a second abuse (fake shops or phishing). 'Do not cheat' should be specific: give true information or protect customers' data.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Entrepreneurship in marketing",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define an entrepreneur and entrepreneurship and state the qualities of a good entrepreneur;\n2. outline the steps in setting up a marketing business;\n3. state the contents of a business plan;\n4. explain how a new business markets its products;\n5. calculate a break-even point.\n\n## Materials\n\nA sample one-page business plan, pictures of a small business (pure water factory, tailoring shop, snack stall), calculators, WASSCE past questions.\n\n## Starter (5 minutes)\n\nAsk: a young woman in Ibadan sees that nobody in her estate sells fresh fruit juice. What should she do before she spends her savings? List the steps students suggest and keep them for the lesson.\n\n## Development\n\n1. An entrepreneur is a person who identifies a business opportunity, brings together land, labour and capital, and takes the risk of running the business. Entrepreneurship is the process of doing this.\n2. Qualities: creativity, hard work, willingness to take calculated risks, discipline, honesty, leadership, good planning, and ability to learn from failure.\n3. Setting up a marketing business: identify an opportunity; research the market; decide the product; prepare a business plan; raise capital; register the business with the Corporate Affairs Commission; get premises and licences; recruit staff; and launch.\n4. A business plan sets out: the business idea, the market and customers, competitors, the marketing plan (product, price, place, promotion), costs and expected income, the owner and staff, and the sources of capital.\n5. Marketing a new product: free samples, a launch event, social media pages, flyers, word of mouth, and good customer service.\n6. Break-even: the number of units at which total revenue equals total costs. Break-even units = fixed costs / (price per unit - variable cost per unit).\n\n## Class activity\n\nEach group writes a one-page business plan for a school snack shop, including the break-even calculation.\n\n## Evaluation\n\n1. State two qualities of a good entrepreneur.\n2. Fixed costs N150,000, price N300, variable cost N200. Find the break-even number of units.\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Starting a business and getting customers",
+        "content": "# Entrepreneurship in marketing\n\n## The entrepreneur\n\nAn **entrepreneur** is a person who sees a business opportunity, brings together the resources to take advantage of it, and accepts the risk of profit or loss. **Entrepreneurship** is the process of doing this. Many of Nigeria's markets, workshops and factories began as one person's idea.\n\n### Qualities of a good entrepreneur\n\n- **Creativity**: finding new ideas or better ways of doing things.\n- **Hard work and discipline**.\n- **Willingness to take calculated risks**, not blind ones.\n- **Honesty**, which builds customers' trust.\n- **Leadership** and good dealing with people.\n- **Planning** and the ability to learn from mistakes.\n\n## Setting up a marketing business\n\n1. **Identify an opportunity**: an unmet need, such as fresh fruit juice in an estate where none is sold.\n2. **Research the market**: who will buy, how many, at what price, and who the competitors are.\n3. **Decide the product** and how it will be different.\n4. **Write a business plan.**\n5. **Raise capital** from savings, family, cooperative societies, banks or micro-finance.\n6. **Register** the business with the Corporate Affairs Commission and obtain any licences, such as NAFDAC registration for food.\n7. **Get premises, equipment and staff.**\n8. **Launch** and promote the business.\n\n## The business plan\n\nA **business plan** is a written document that shows how the business will be started and run. It contains:\n\n- the business idea and aims;\n- the market, customers and competitors;\n- the marketing plan: product, price, place and promotion;\n- the cost of starting and running, and the expected sales;\n- who owns and manages the business;\n- where capital will come from.\n\nIt helps the owner to plan and persuades a bank or investor to lend.\n\n## Marketing a new product\n\nA new business can give **free samples**, hold a **launch**, create **social media pages**, share **flyers**, use **word of mouth**, and give such good **customer service** that customers recommend it.\n\n## Break-even\n\nThe **break-even point** is the number of units a business must sell to cover all its costs, so that it makes neither profit nor loss.\n\nbreak-even units = fixed costs / (price per unit - variable cost per unit)\n\n**Worked example.** A sachet-water business has fixed costs of N150,000 a month. A bag sells for N300 and costs N200 in materials and labour to make. Each bag adds N300 - N200 = N100 towards the fixed costs. Break-even = 150,000 / 100 = **1,500 bags**. Sales revenue at break-even = 1,500 x 300 = **N450,000**. Every bag sold after the 1,500th brings N100 profit."
+      },
+      "cards": [
+        {
+          "front": "Entrepreneur",
+          "back": "A person who sees an opportunity, organises resources and takes the risk of a business."
+        },
+        {
+          "front": "Entrepreneurship",
+          "back": "The process of starting and running a business and taking its risk."
+        },
+        {
+          "front": "Business plan",
+          "back": "A written document that shows how a business will be started and run."
+        },
+        {
+          "front": "Calculated risk",
+          "back": "A risk taken after weighing the possible gains and losses."
+        },
+        {
+          "front": "Fixed costs",
+          "back": "Costs that do not change with the number of units made, such as rent."
+        },
+        {
+          "front": "Variable cost",
+          "back": "A cost that rises with each unit made, such as materials."
+        },
+        {
+          "front": "Break-even point",
+          "back": "The number of units sold at which total revenue equals total costs."
+        },
+        {
+          "front": "Launch",
+          "back": "The event or activity that introduces a new business or product to the market."
+        },
+        {
+          "front": "CAC registration",
+          "back": "Registering a business with the Corporate Affairs Commission."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A person who identifies a business opportunity, brings together resources and bears the risk of the business is called an",
+          "options": [
+            "employee",
+            "entrepreneur",
+            "auditor",
+            "agent"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A written document that sets out a business's aims, market, finances and how it will operate is a",
+          "options": [
+            "business plan",
+            "balance sheet",
+            "bill of lading",
+            "price list"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A sachet-water firm has fixed costs of N150,000 a month. A bag sells for N300 and costs N200 to make. Its break-even number of bags is",
+          "options": [
+            "1,500",
+            "500",
+            "750",
+            "15,000"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which step should come first when setting up a marketing business?",
+          "options": [
+            "Printing flyers",
+            "Hiring many workers",
+            "Buying a vehicle",
+            "Identifying a market opportunity and researching it"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A new entrepreneur gives free samples of her snack at a market to make it known. This is an example of",
+          "options": [
+            "pricing",
+            "price control",
+            "promotion",
+            "warehousing"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) What is entrepreneurship? (b) State three qualities of a good entrepreneur.",
+          "markScheme": [
+            "Entrepreneurship is the process of identifying an opportunity, organising resources and taking the risk of a business",
+            "First quality, for example creativity",
+            "Second quality, for example willingness to take calculated risks",
+            "Third quality, for example hard work, honesty or discipline"
+          ],
+          "modelAnswer": "(a) Entrepreneurship is the process of identifying a business opportunity, bringing together the resources needed and taking the risk of running the business. (b) A good entrepreneur is creative, takes calculated risks, and works hard.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Entrepreneurship is the process of seeing a business opportunity, organising resources to use it and bearing the risk of the business. (b) A good entrepreneur is creative and has new ideas, ready to take calculated risks and hard-working and disciplined.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Entrepreneurship is the process of seeing a business opportunity, organising resources to use it and bearing the risk of the business"
+                },
+                {
+                  "point": 1,
+                  "quote": "creative and has new ideas"
+                },
+                {
+                  "point": 2,
+                  "quote": "ready to take calculated risks"
+                },
+                {
+                  "point": 3,
+                  "quote": "hard-working and disciplined"
+                }
+              ],
+              "feedback": "All four marks. Each quality is a separate one."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It is the starting and running of a business by identifying an opportunity and taking the risk involved. (b) Creativity, willingness to take calculated risks and honesty so that customers trust him.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is the starting and running of a business by identifying an opportunity and taking the risk involved"
+                },
+                {
+                  "point": 1,
+                  "quote": "Creativity"
+                },
+                {
+                  "point": 2,
+                  "quote": "willingness to take calculated risks"
+                },
+                {
+                  "point": 3,
+                  "quote": "honesty so that customers trust him"
+                }
+              ],
+              "feedback": "Full marks. Honesty is an important quality for repeat customers."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Entrepreneurship is starting a business and taking the risk. (b) Creativity. Being rich. Being tall.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Entrepreneurship is starting a business and taking the risk"
+                },
+                {
+                  "point": 1,
+                  "quote": "Creativity"
+                }
+              ],
+              "feedback": "The meaning and creativity are right. Being rich or tall is not a quality of a good entrepreneur; add calculated risk-taking or hard work."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Entrepreneurship is the study of business. (b) Taking calculated risks and hard work.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Taking calculated risks"
+                },
+                {
+                  "point": 3,
+                  "quote": "hard work"
+                }
+              ],
+              "feedback": "Both qualities are right. Entrepreneurship is the process of identifying an opportunity, organising resources and taking the risk, not just the study of business. Add creativity."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is the money that a businessman keeps. (b) Money, car and house.",
+              "meets": [],
+              "feedback": "Entrepreneurship is identifying an opportunity and taking the risk of a business. Qualities include creativity, calculated risk-taking and hard work, not possessions."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is the ability to be a boss. (b) Hard work.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Hard work"
+                }
+              ],
+              "feedback": "Hard work is a correct quality. Entrepreneurship is more than being a boss: it is identifying an opportunity, organising resources and bearing the risk.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "A sachet-water business has fixed costs of N150,000 a month. A bag of water sells for N300 and costs N200 to produce. (a) Calculate the amount each bag adds towards the fixed costs. (b) Calculate the break-even number of bags. (c) Calculate the sales revenue at the break-even point. (d) State two items that should be in a business plan.",
+          "markScheme": [
+            "Each bag adds 300 - 200 = N100 towards fixed costs",
+            "Break-even = 150,000 / 100 = 1,500 bags",
+            "Revenue at break-even = 1,500 x 300 = N450,000",
+            "Two items in a business plan, for example the market and customers, and the cost of starting"
+          ],
+          "modelAnswer": "(a) Each bag adds N300 - N200 = N100 towards the fixed costs. (b) Break-even = 150,000 / 100 = 1,500 bags. (c) Revenue at break-even = 1,500 x N300 = N450,000. (d) A business plan should contain the market and customers of the business, and the cost of starting and running it, together with where capital will come from.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 300 - 200 = N100 per bag. (b) 150,000 / 100 = 1,500 bags. (c) 1,500 x 300 = N450,000. (d) A business plan should contain the market and the customers, and the cost of starting the business.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "300 - 200 = N100 per bag"
+                },
+                {
+                  "point": 1,
+                  "quote": "150,000 / 100 = 1,500 bags"
+                },
+                {
+                  "point": 2,
+                  "quote": "1,500 x 300 = N450,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "A business plan should contain the market and the customers, and the cost of starting the business"
+                }
+              ],
+              "feedback": "All four marks. Each part follows from the one before."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Contribution per bag = N300 - N200 = N100. (b) Break-even = fixed cost divided by contribution = 150,000/100 = 1,500 bags. (c) Revenue = 1,500 bags x N300 = N450,000. (d) The marketing plan, and where the capital will come from.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Contribution per bag = N300 - N200 = N100"
+                },
+                {
+                  "point": 1,
+                  "quote": "Break-even = fixed cost divided by contribution = 150,000/100 = 1,500 bags"
+                },
+                {
+                  "point": 2,
+                  "quote": "Revenue = 1,500 bags x N300 = N450,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "The marketing plan, and where the capital will come from"
+                }
+              ],
+              "feedback": "Full marks. Naming the term 'contribution' shows you understand the idea."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 300 - 200 = N100. (b) 1,500 bags. (c) 1,500 x 200 = N300,000. (d) Name of the owner.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "300 - 200 = N100"
+                },
+                {
+                  "point": 1,
+                  "quote": "1,500 bags"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right. Revenue is the number of bags times the selling price: 1,500 x 300 = N450,000. A business plan also includes the market and costs, in addition to the owner's name."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) N100. (b) 150,000 / 300 = 500 bags. (c) N450,000. (d) The market and customers, and the cost of starting.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "N450,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "The market and customers, and the cost of starting"
+                }
+              ],
+              "feedback": "The revenue and plan items are right. Break-even divides fixed costs by the amount each bag adds (N100), not the price: 150,000 / 100 = 1,500 bags."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 300 + 200 = N500. (b) 150,000 x 500 = N75,000,000. (c) N75,000. (d) Name and age.",
+              "meets": [],
+              "feedback": "Each bag adds the price minus the cost: 300 - 200 = N100. Break-even = fixed costs / that amount = 1,500 bags. Revenue = 1,500 x 300. A business plan includes market and costs."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 300 - 200 = N100. (b) N150,000. (c) N150,000. (d) Plan.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "300 - 200 = N100"
+                }
+              ],
+              "feedback": "Your N100 is right. For (b) must divide the fixed costs by it: 150,000 / 100 = 1,500 bags, and (c) is 1,500 x 300 = N450,000.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Revision: the basic ideas of marketing and its history in Nigeria",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. use the terms need, want, demand, product, exchange, transaction and market correctly in examination answers;\n2. trace the history of marketing in Nigeria, including trading companies, marketing boards and liberalisation;\n3. state and explain the functions of marketing;\n4. answer WASSCE-type questions on this topic.\n\n## Materials\n\nPast WASSCE questions on introduction to marketing, a timeline chart, cards with key terms, chart paper.\n\n## Starter (5 minutes)\n\nGive each pair a card with a situation: 'A man in Kano needs to travel to Abuja, wants to fly with a certain airline, and has saved enough to buy the ticket.' Ask which word describes each part (need, want, demand). Take answers and correct.\n\n## Development\n\n1. Revise the definitions. Need: a basic requirement. Want: a desire for a particular thing that satisfies a need. Demand: a want backed by the ability and willingness to pay. Exchange: obtaining a wanted thing by offering something of value in return; it needs at least two parties, each with something of value, each free to accept or refuse, and each able to communicate and deliver. Transaction: one particular exchange, with an agreed price, time and place. Market: the actual and potential buyers.\n2. Timeline of marketing in Nigeria: early barter and local markets; trans-Saharan and coastal trade; colonial trading companies buying produce and selling imports; marketing boards (from 1947); independence and industrial growth; liberalisation after 1986 when the boards were abolished; modern supermarkets, malls and online selling.\n3. Why marketing boards ended: farmers were paid prices below the world price, and the boards were criticised for inefficiency and misuse of funds.\n4. Functions of marketing: research, product planning, pricing, promotion, distribution, selling, customer service, and market information passed back to the producer.\n5. Examination practice.\n\n## Class activity\n\nTimed practice: students answer one past WASSCE question on the topic in 10 minutes, then mark each other's using the scheme.\n\n## Evaluation\n\n1. Distinguish an exchange from a transaction.\n2. State two reasons why marketing boards were criticised.\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "The ideas behind marketing, and how it grew in Nigeria",
+        "content": "# Revision: the basic ideas of marketing and its history in Nigeria\n\n## Key terms for the examination\n\n- **Need**: a basic requirement, such as food or transport.\n- **Want**: a desire for a particular thing that satisfies a need, such as a particular airline.\n- **Demand**: a want backed by the **ability and willingness to pay**.\n- **Product**: anything offered to satisfy a need or want.\n- **Exchange**: obtaining something wanted by offering something of value in return. For an exchange to take place there must be at least two parties; each must have something of value; each must be free to accept or refuse; and each must be able to communicate and deliver.\n- **Transaction**: one particular exchange with agreed terms: a price, a time and a place.\n- **Market**: the actual and potential buyers of a product. **Potential** buyers have a need and money but have not yet bought.\n\n**Example.** A man in Kano needs to travel to Abuja (**need**), wants to fly with a certain airline (**want**), and has saved enough to buy the ticket (**demand**). When he pays and receives the ticket, that is a **transaction**.\n\n## History of marketing in Nigeria\n\n1. **Early trade**: barter and local markets that met on set days. Long-distance trade linked the north with North Africa across the Sahara and the south with the coast.\n2. **Colonial period**: trading companies bought cocoa, groundnuts and palm produce for export and sold imported goods. From **1947**, **marketing boards** bought produce from farmers at fixed prices and sold it abroad.\n3. **After independence (1960)**: industries grew, and local manufacturers began to advertise and distribute through wholesalers and retailers.\n4. **1986 onward**: the marketing boards were abolished as part of economic reforms and trade was liberalised. Firms competed to meet customers' demands.\n5. **Today**: supermarkets, shopping malls, mobile payment and online selling.\n\n### Why marketing boards ended\n\nThey were criticised because farmers were paid less than the world price, funds were sometimes misused, and they were inefficient.\n\n## Functions of marketing\n\n- **Research**: finding out what customers want.\n- **Product planning** and development.\n- **Pricing**.\n- **Promotion**.\n- **Distribution** (including transport and storage).\n- **Selling**.\n- **Customer service** after the sale.\n- **Market information**: passing customers' views back to the producer.\n\n## Answering examination questions\n\nDefine each term, then give a Nigerian example. When asked to 'trace' or 'outline' a history, give stages in order with a fact for each."
+      },
+      "cards": [
+        {
+          "front": "Need",
+          "back": "A basic requirement such as food or transport."
+        },
+        {
+          "front": "Want",
+          "back": "A desire for a particular thing that satisfies a need."
+        },
+        {
+          "front": "Demand",
+          "back": "A want backed by the ability and willingness to pay."
+        },
+        {
+          "front": "Exchange",
+          "back": "Obtaining something wanted by offering something of value in return."
+        },
+        {
+          "front": "Transaction",
+          "back": "One particular exchange with agreed price, time and place."
+        },
+        {
+          "front": "Potential market",
+          "back": "People with a need and money who have not yet bought."
+        },
+        {
+          "front": "Marketing board",
+          "back": "A body set up from 1947 to buy farmers' produce for export."
+        },
+        {
+          "front": "Liberalisation",
+          "back": "Removing government controls on trade, as after 1986."
+        },
+        {
+          "front": "Market information",
+          "back": "Customers' views passed back to the producer."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A man needs to travel from Kano to Abuja, wants to fly with a particular airline and has the money for the ticket. His wish for that ticket is a",
+          "options": [
+            "demand",
+            "need only",
+            "transaction",
+            "market"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of the following is necessary for an exchange to take place?",
+          "options": [
+            "Only one party exists",
+            "Each party has something of value that the other wants",
+            "Only money is involved",
+            "The government must be present"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The marketing boards that bought farmers' produce in Nigeria were abolished in",
+          "options": [
+            "1947",
+            "1960",
+            "1986",
+            "2010"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Telling producers what consumers think of their products is the marketing function of",
+          "options": [
+            "warehousing",
+            "packing",
+            "financing",
+            "providing market information"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "People who have a need and money for a product but have not yet bought it are the firm's",
+          "options": [
+            "actual market",
+            "potential market",
+            "competitors",
+            "suppliers"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Distinguish between an exchange and a transaction. (b) What is meant by a market in marketing?",
+          "markScheme": [
+            "An exchange is obtaining something wanted by offering something of value in return",
+            "A transaction is one particular exchange with agreed terms such as price, time and place",
+            "A market is the actual and potential buyers of a product",
+            "The buyers have a need, the money and the willingness to buy"
+          ],
+          "modelAnswer": "(a) An exchange is obtaining something wanted by offering something of value in return. A transaction is one particular exchange with agreed terms, such as a price, a time and a place. (b) A market in marketing is the set of actual and potential buyers of a product, who have a need, the money and the willingness to buy.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) An exchange is getting something you want by giving something of value in return. A transaction is a particular exchange, for example paying N2,500 for beans at an agreed price, time and place. (b) A market is all the actual and potential buyers of a product, people who have a need, money and the will to buy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "An exchange is getting something you want by giving something of value in return"
+                },
+                {
+                  "point": 1,
+                  "quote": "A transaction is a particular exchange, for example paying N2,500 for beans at an agreed price, time and place"
+                },
+                {
+                  "point": 2,
+                  "quote": "A market is all the actual and potential buyers of a product"
+                },
+                {
+                  "point": 3,
+                  "quote": "people who have a need, money and the will to buy"
+                }
+              ],
+              "feedback": "All four marks. The example of beans makes the transaction clear."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Exchange is the process of getting a wanted object by offering something in return. Transaction is a specific exchange between two parties with agreed terms. (b) A market consists of those who buy or could buy a product, who have a need and the money and are willing to spend it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Exchange is the process of getting a wanted object by offering something in return"
+                },
+                {
+                  "point": 1,
+                  "quote": "Transaction is a specific exchange between two parties with agreed terms"
+                },
+                {
+                  "point": 2,
+                  "quote": "A market consists of those who buy or could buy a product"
+                },
+                {
+                  "point": 3,
+                  "quote": "who have a need and the money and are willing to spend it"
+                }
+              ],
+              "feedback": "Full marks. Naming both actual and potential buyers is what the examiner wants."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) An exchange is giving something to get something. A transaction is when money is used. (b) A market is the buyers of a product.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "An exchange is giving something to get something"
+                },
+                {
+                  "point": 2,
+                  "quote": "A market is the buyers of a product"
+                }
+              ],
+              "feedback": "The exchange and market are right. A transaction is one particular exchange with agreed price, time and place, not only when money is used. Add that buyers need money and willingness to buy."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) An exchange is a transaction. A transaction is one particular exchange with a price, time and place. (b) A market is where people buy.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A transaction is one particular exchange with a price, time and place"
+                }
+              ],
+              "feedback": "Your transaction is right. An exchange is the wider idea of getting something by giving something of value; it is not the same as a transaction. In marketing, a market is the set of buyers, not just a place."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) An exchange is a change and a transaction is a trade. (b) A market is a big shop.",
+              "meets": [],
+              "feedback": "An exchange is getting something wanted by giving something of value. A transaction is one particular exchange with agreed terms. A market in marketing is the actual and potential buyers."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Exchange is for traders, transaction is for banks. (b) The buyers of a product.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The buyers of a product"
+                }
+              ],
+              "feedback": "Your market answer earns a mark, though you should add that they have a need, money and willingness. Exchange and transaction are not about who uses them: a transaction is one particular exchange with agreed terms.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Trace the development of marketing in Nigeria from the colonial period to the present, mentioning marketing boards. (b) Why were the marketing boards criticised?",
+          "markScheme": [
+            "Colonial period: trading companies bought produce for export and sold imported goods",
+            "Marketing boards were set up from 1947 to buy farmers' produce for export",
+            "After 1986 the boards were abolished and trade was liberalised",
+            "Today there are supermarkets, shopping malls and online selling",
+            "Boards were criticised, for example because farmers were paid less than the world price"
+          ],
+          "modelAnswer": "(a) In the colonial period, trading companies bought cocoa, groundnuts and palm produce for export and sold imported goods. From 1947, marketing boards bought produce from farmers and sold it abroad. After 1986 the boards were abolished and trade was liberalised, so firms competed to meet customers' demands. Today there are supermarkets, shopping malls and online selling. (b) The boards were criticised because farmers were paid less than the world price for their produce, and because of inefficiency and misuse of funds.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) In the colonial period, trading companies bought produce like cocoa and groundnuts for export and sold imported goods. From 1947 marketing boards were set up to buy farmers' produce and sell it abroad. After 1986 the boards were abolished and trade was liberalised. Today we have supermarkets, shopping malls and online selling. (b) Farmers were paid less than the world price for their produce.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "trading companies bought produce like cocoa and groundnuts for export and sold imported goods"
+                },
+                {
+                  "point": 1,
+                  "quote": "From 1947 marketing boards were set up to buy farmers' produce and sell it abroad"
+                },
+                {
+                  "point": 2,
+                  "quote": "After 1986 the boards were abolished and trade was liberalised"
+                },
+                {
+                  "point": 3,
+                  "quote": "Today we have supermarkets, shopping malls and online selling"
+                },
+                {
+                  "point": 4,
+                  "quote": "Farmers were paid less than the world price for their produce"
+                }
+              ],
+              "feedback": "All five marks. The stages are in the correct order."
+            },
+            {
+              "tier": "full",
+              "text": "(a) During the colonial period, trading companies bought export crops and sold imports. Marketing boards started in 1947 to buy produce from farmers. In 1986 they were scrapped and trade was opened to private firms. Now there are shopping malls and e-commerce. (b) They paid farmers lower prices than the produce earned abroad, and they were inefficient.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "During the colonial period, trading companies bought export crops and sold imports"
+                },
+                {
+                  "point": 1,
+                  "quote": "Marketing boards started in 1947 to buy produce from farmers"
+                },
+                {
+                  "point": 2,
+                  "quote": "In 1986 they were scrapped and trade was opened to private firms"
+                },
+                {
+                  "point": 3,
+                  "quote": "Now there are shopping malls and e-commerce"
+                },
+                {
+                  "point": 4,
+                  "quote": "They paid farmers lower prices than the produce earned abroad, and they were inefficient"
+                }
+              ],
+              "feedback": "Full marks. You gave the reason why farmers disliked the boards."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The trading companies bought produce for export during the colonial period. Marketing boards were set up in 1947. Then Nigeria became independent. (b) They paid farmers little.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The trading companies bought produce for export during the colonial period"
+                },
+                {
+                  "point": 1,
+                  "quote": "Marketing boards were set up in 1947"
+                },
+                {
+                  "point": 4,
+                  "quote": "They paid farmers little"
+                }
+              ],
+              "feedback": "The colonial and 1947 stages and the criticism are right. Independence is a date but not a marketing stage by itself; add liberalisation after 1986 and today's retail and online selling."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) In 1986 the boards were abolished and trade was liberalised. Now there are online shops. Before that, there was barter. (b) The boards were too many.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "In 1986 the boards were abolished and trade was liberalised"
+                },
+                {
+                  "point": 3,
+                  "quote": "Now there are online shops"
+                }
+              ],
+              "feedback": "Your 1986 stage and the modern stage are right. Say what the boards did (bought produce from farmers from 1947) and that the criticism was low prices to farmers, not the number of boards."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Marketing started with the telephone and now we have WhatsApp. (b) The boards were noisy.",
+              "meets": [],
+              "feedback": "Marketing in Nigeria developed from local markets, through trading companies and marketing boards, to liberalisation and modern retail. The boards were criticised for paying farmers low prices."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Marketing boards were set up in 1947 to buy produce. They are still working today. (b) Because of bad people.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Marketing boards were set up in 1947 to buy produce"
+                }
+              ],
+              "feedback": "Your 1947 point earns a mark. The boards were abolished in 1986 and are no longer working. They were criticised because farmers were paid less than the world price.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Revision: marketing concepts in practice",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the five marketing concepts and the belief behind each;\n2. identify the concept a firm is following from a description of its behaviour;\n3. state the situations in which each concept is likely to be used, and its weakness;\n4. answer WASSCE-type questions on marketing concepts.\n\n## Materials\n\nFive scenario cards describing firms, past WASSCE questions on marketing concepts, chart paper.\n\n## Starter (5 minutes)\n\nRead a short story: 'In the 1990s, a telephone company in Nigeria had a waiting list of years. It did not worry about what customers wanted, because every line it could install was taken.' Ask: what did the company believe about its customers? Which concept was it following?\n\n## Development\n\n1. Production concept: customers prefer goods that are cheap and available; produce more. Used when demand is more than supply.\n2. Product concept: customers prefer the best quality and features; improve the product. Weakness: 'marketing myopia', where the firm loves its product more than the customer's need.\n3. Selling concept: customers must be persuaded; use heavy selling and promotion. Common for 'unsought' goods such as insurance and when there is unsold stock.\n4. Marketing concept: find out what customers want and supply it better than rivals. All departments work towards customer satisfaction, and profit is the reward.\n5. Societal marketing concept: satisfy customers and also protect society's long-term welfare (health, environment).\n6. Compare using the table in the reading.\n7. Examination technique: define, state the belief, give a Nigerian example, state a weakness.\n\n## Class activity\n\nFive scenario cards: groups name the concept and justify it using the firm's behaviour, then switch cards with another group.\n\n## Evaluation\n\n1. Which concept suits a market with shortages?\n2. State one weakness of the selling concept.\n\n## Assignment\n\nQuiz on the app.",
+      "reading": {
+        "title": "Which idea guides the firm?",
+        "content": "# Revision: marketing concepts in practice\n\nA **marketing concept** is the idea that guides how a firm approaches its market. In examinations, you may be asked to name the concept from a description, or to explain a concept and give an example.\n\n## The five concepts\n\n### 1. Production concept\n\n**Belief:** customers prefer goods that are cheap and easy to find. **Action:** produce more, lower the cost, widen distribution. **When used:** when demand is greater than supply, as with a telephone company in the 1990s that had a waiting list of years. **Weakness:** the firm may ignore what customers actually want.\n\n### 2. Product concept\n\n**Belief:** customers prefer the best quality, performance and features. **Action:** keep improving the product. **Weakness:** the firm may fall in love with its product and forget what customers need, for example a fancy phone with features that nobody wants and at a price nobody can pay.\n\n### 3. Selling concept\n\n**Belief:** customers will not buy enough unless they are persuaded. **Action:** heavy advertising and personal selling. **When used:** for goods people do not usually think of buying, such as insurance, and when stock is unsold. **Weakness:** sells what the firm makes rather than what customers want, and may produce unhappy customers who never return.\n\n### 4. Marketing concept\n\n**Belief:** success comes from finding out what customers want and satisfying them better than rivals. **Action:** research first, then product, price, place and promotion to match. A bakery that adds a sugar-free loaf after a survey of customers is following it. All departments work together for the customer, and profit is the reward for satisfaction.\n\n### 5. Societal marketing concept\n\n**Belief:** a firm must satisfy customers and also protect the long-term welfare of society. **Action:** it considers health, the environment and fairness. A drinks company that recycles its bottles, reduces sugar and helps provide clean water while still making a profit is following it.\n\n## Comparing the concepts\n\n| Concept | Starts from | Focus | Weakness |\n| --- | --- | --- | --- |\n| Production | The factory | Low cost, availability | Ignores customers' wants |\n| Product | The product | Quality, features | Product may not fit needs |\n| Selling | Existing products | Heavy selling | Customer dissatisfaction |\n| Marketing | The customer | Satisfaction, profit | Needs research; may ignore society |\n| Societal | Customer and society | Satisfaction and welfare | Higher costs |\n\n## In the examination\n\nDefine, give the belief, give a Nigerian example and, if asked, a weakness. If a question describes a firm, look for the clue: low cost (production), quality (product), pushing (selling), research (marketing), society (societal)."
+      },
+      "cards": [
+        {
+          "front": "Marketing concept",
+          "back": "The idea that guides how a firm approaches its market."
+        },
+        {
+          "front": "Production concept",
+          "back": "Customers prefer cheap, available goods, so produce more."
+        },
+        {
+          "front": "Product concept",
+          "back": "Customers prefer the best quality, so improve the product."
+        },
+        {
+          "front": "Selling concept",
+          "back": "Customers must be persuaded, so use heavy selling and promotion."
+        },
+        {
+          "front": "Marketing concept (customer)",
+          "back": "Find out what customers want and satisfy them better than rivals."
+        },
+        {
+          "front": "Societal marketing concept",
+          "back": "Satisfy customers and protect society's long-term welfare."
+        },
+        {
+          "front": "Weakness of production concept",
+          "back": "The firm may ignore what customers want."
+        },
+        {
+          "front": "Weakness of selling concept",
+          "back": "Customers may be dissatisfied and never return."
+        },
+        {
+          "front": "Marketing myopia",
+          "back": "Loving the product more than the customer's real need."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A telephone company in the 1990s had a waiting list of years and concentrated on installing as many lines as possible. This was the",
+          "options": [
+            "selling concept",
+            "societal concept",
+            "marketing concept",
+            "production concept"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A firm employs door-to-door agents to persuade households to buy insurance policies that they had not thought of buying. This is the",
+          "options": [
+            "production concept",
+            "selling concept",
+            "product concept",
+            "societal concept"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A bakery adds a sugar-free loaf after a survey of its customers shows that many want one. This is the",
+          "options": [
+            "marketing concept",
+            "production concept",
+            "selling concept",
+            "product concept"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A drinks company recycles its bottles, reduces the sugar in its drinks and helps provide clean water, while still making a profit. This is the",
+          "options": [
+            "production concept",
+            "selling concept",
+            "societal marketing concept",
+            "product concept"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A weakness of the product concept is that the firm may",
+          "options": [
+            "produce too cheaply",
+            "sell too little advertising",
+            "have no factory",
+            "concentrate on its product and forget what customers actually need"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Explain the product concept. (b) State one weakness of the product concept, with an example.",
+          "markScheme": [
+            "The product concept holds that customers prefer the best quality, performance and features, so the firm concentrates on improving the product",
+            "One weakness, for example the firm may forget what customers actually need or can afford",
+            "A suitable example, for example a phone with features nobody wants at a price nobody can pay"
+          ],
+          "modelAnswer": "(a) The product concept holds that customers prefer the best quality, performance and features, so the firm concentrates on improving its product. (b) A weakness is that the firm may forget what customers actually need or can afford. For example, a firm may produce a phone with many features that nobody wants, at a price nobody can pay.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The product concept is the belief that customers prefer the best quality and features, so a firm concentrates on improving its product. (b) The firm may forget what the customers really need or can afford. For example, a firm makes a phone with many features that nobody wants and sells it at a price people cannot pay.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The product concept is the belief that customers prefer the best quality and features, so a firm concentrates on improving its product"
+                },
+                {
+                  "point": 1,
+                  "quote": "The firm may forget what the customers really need or can afford"
+                },
+                {
+                  "point": 2,
+                  "quote": "a firm makes a phone with many features that nobody wants and sells it at a price people cannot pay"
+                }
+              ],
+              "feedback": "All three marks. The weakness is supported by an example."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It is the idea that people will buy the product with the best quality and performance, so the firm should keep improving it. (b) The product may be better than customers need, so they may not buy. Example: a firm perfects a very costly generator when the buyers wanted a cheap one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is the idea that people will buy the product with the best quality and performance, so the firm should keep improving it"
+                },
+                {
+                  "point": 1,
+                  "quote": "The product may be better than customers need, so they may not buy"
+                },
+                {
+                  "point": 2,
+                  "quote": "Example: a firm perfects a very costly generator when the buyers wanted a cheap one"
+                }
+              ],
+              "feedback": "Full marks. The generator example fits the weakness exactly."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The product concept is where the firm concentrates on the quality of the product. (b) It is expensive.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The product concept is where the firm concentrates on the quality of the product"
+                }
+              ],
+              "feedback": "The concept is right. The weakness is that the firm may forget what customers need or can afford. Give an example, such as a phone with features nobody wants."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The product concept is making many products. (b) The firm may forget what the customers want.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The firm may forget what the customers want"
+                }
+              ],
+              "feedback": "Your weakness is right. The product concept is about improving quality and features, not making many products. Add an example."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The product concept is when a firm sells products. (b) It is the best concept.",
+              "meets": [],
+              "feedback": "The product concept is the belief that customers prefer the best quality, so the firm improves its product. Its weakness is that it may ignore what customers need."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Customers prefer the best quality so the firm keeps improving the product. (b) Nothing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Customers prefer the best quality so the firm keeps improving the product"
+                }
+              ],
+              "feedback": "Your explanation earns a mark. The weakness is that the firm may forget what customers need or can afford; give an example.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "(a) State the belief behind the selling concept. (b) State two differences between the selling concept and the marketing concept. (c) Name one situation in which the selling concept is commonly used.",
+          "markScheme": [
+            "The selling concept holds that customers will not buy enough unless they are persuaded by heavy selling and promotion",
+            "First difference, for example selling starts with the existing product while marketing starts with the customer",
+            "Second difference, for example selling aims at a sale while marketing aims at customer satisfaction and repeat business",
+            "A situation, for example goods people do not think of buying, such as insurance, or when stock is unsold"
+          ],
+          "modelAnswer": "(a) The selling concept holds that customers will not buy enough of a firm's products unless they are persuaded with heavy selling and promotion. (b) The selling concept starts with the product the firm has made, whereas the marketing concept starts with what the customer wants. The selling concept aims at a sale, whereas the marketing concept aims at customer satisfaction so that customers come back. (c) It is commonly used for goods people do not usually think of buying, such as insurance.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Customers will not buy enough unless they are persuaded with heavy selling and promotion. (b) Selling starts from the product already made, but marketing starts from what the customer wants. Selling aims at making a sale, but marketing aims at customer satisfaction so that customers return. (c) It is used for goods such as insurance that people do not usually think of buying.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Customers will not buy enough unless they are persuaded with heavy selling and promotion"
+                },
+                {
+                  "point": 1,
+                  "quote": "Selling starts from the product already made, but marketing starts from what the customer wants"
+                },
+                {
+                  "point": 2,
+                  "quote": "Selling aims at making a sale, but marketing aims at customer satisfaction so that customers return"
+                },
+                {
+                  "point": 3,
+                  "quote": "It is used for goods such as insurance that people do not usually think of buying"
+                }
+              ],
+              "feedback": "All four marks. You covered belief, differences and a situation."
+            },
+            {
+              "tier": "full",
+              "text": "(a) It holds that people must be pushed through selling and promotion to buy enough. (b) The selling concept begins with the firm's product and the marketing concept begins with the customer's needs. The selling concept wants to sell now and the marketing concept wants satisfied customers who return. (c) When a firm has unsold stock.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It holds that people must be pushed through selling and promotion to buy enough"
+                },
+                {
+                  "point": 1,
+                  "quote": "The selling concept begins with the firm's product and the marketing concept begins with the customer's needs"
+                },
+                {
+                  "point": 2,
+                  "quote": "The selling concept wants to sell now and the marketing concept wants satisfied customers who return"
+                },
+                {
+                  "point": 3,
+                  "quote": "When a firm has unsold stock"
+                }
+              ],
+              "feedback": "Full marks. Unsold stock is a valid situation."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Customers must be persuaded to buy. (b) Marketing begins with the customer but selling begins with the product. (c) When the firm is closing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Customers must be persuaded to buy"
+                },
+                {
+                  "point": 1,
+                  "quote": "Marketing begins with the customer but selling begins with the product"
+                }
+              ],
+              "feedback": "The belief and one difference are right. Add the second difference (sales against customer satisfaction). For the situation, say goods such as insurance, or unsold stock, not when the firm is closing."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The belief is that customers are always right. (b) Selling aims at a sale; marketing aims at customer satisfaction. (c) Insurance.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Selling aims at a sale; marketing aims at customer satisfaction"
+                },
+                {
+                  "point": 3,
+                  "quote": "Insurance"
+                }
+              ],
+              "feedback": "The second difference and situation are right. The selling concept holds that customers must be persuaded, not that they are always right. Add the starting-point difference."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Customers like selling. (b) They are the same. (c) In the market.",
+              "meets": [],
+              "feedback": "The selling concept holds that customers will not buy enough unless persuaded. It differs from the marketing concept in starting from the product and aiming at a sale. It is used for goods like insurance."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Customers will not buy unless they are pushed. (b) One is short. (c) For fun.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Customers will not buy unless they are pushed"
+                }
+              ],
+              "feedback": "Your belief earns a mark. The differences are in the starting point (product against customer) and the aim (sale against satisfaction). A situation is insurance or unsold stock.",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Revision: the marketing mix and the marketing environment in practice",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain the four elements of the marketing mix with examples of decisions under each;\n2. distinguish controllable from uncontrollable factors;\n3. explain how political, cultural, religious, economic, technological and social factors affect a firm;\n4. show how a firm adjusts its mix when the environment changes;\n5. answer WASSCE-type questions on the topic.\n\n## Materials\n\nCase study cards (a pharmacy, a hotel, a generator maker), past WASSCE questions, a chart with the mix and environment, chart paper.\n\n## Starter (5 minutes)\n\nRead: 'Fuel prices rise sharply and a generator maker finds that few customers want its big model.' Ask: which part of the mix could it change? What outside force caused the problem? Take answers.\n\n## Development\n\n1. Revise the marketing mix: product (quality, design, packaging, brand, after-sales), price (list price, discounts, credit terms), place (outlets, channels, transport, storage) and promotion (advertising, personal selling, sales promotion, publicity).\n2. The mix is controllable by the firm; the environment is not, so the firm adapts to it.\n3. Environmental factors: political (laws, policies, security), cultural (customs, tastes), religious (beliefs and festivals), economic (income, inflation, exchange rates), technological (new machines, internet, mobile payment) and social (population, education, family).\n4. Adapting the mix: when incomes fall, a firm may offer smaller packs (product), cut prices (price), use cheaper outlets (place), or use cheaper media (promotion).\n5. Case study practice, then past WASSCE questions.\n\n## Class activity\n\nCase study: a hotel in Abuja notices that business bookings have fallen. Groups list the environmental causes and suggest changes to the mix.\n\n## Evaluation\n\n1. Distinguish a controllable from an uncontrollable factor.\n2. Give one example of a technological factor.\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Adapting the mix to a changing environment",
+        "content": "# Revision: the marketing mix and the marketing environment in practice\n\n## The marketing mix\n\nThe four Ps are the tools a firm controls.\n\n- **Product**: quality, design, packaging, brand name, after-sales service. A bank that adds a USSD code so that customers without smartphones can transfer money has made a **product** decision.\n- **Price**: list price, discounts and credit terms.\n- **Place**: where and how the product reaches customers. A pharmacy chain that opens branches in new housing estates has made a **place** decision.\n- **Promotion**: advertising, personal selling, sales promotion and publicity. A hotel offering free breakfast to attract guests is using a **promotion**.\n\n## Controllable and uncontrollable factors\n\nThe firm controls the **marketing mix**, its **staff**, **finance** and **production**. It cannot control the **environment**: laws, economy, culture, competition and technology. A successful firm studies its environment and adapts its mix to it.\n\n## The environment\n\n| Factor | Examples | Example of firm's response |\n| --- | --- | --- |\n| **Political and legal** | Import bans, taxes, security, labelling laws | A firm using imported materials switches to local ones after a ban |\n| **Cultural** | Customs, tastes, language | A drinks company pulls a jolly advert during a period of national mourning |\n| **Religious** | Beliefs, festivals | A food firm ensures its goods meet religious rules and supplies more before festivals |\n| **Economic** | Incomes, inflation, exchange rates | A generator maker introduces a fuel-efficient model when fuel prices rise |\n| **Technological** | Internet, mobile payment, new machines | A bank offers a mobile app and USSD banking |\n| **Social** | Population, education, family size | A school-supplies firm launches cheaper exercise books for large families |\n| **Competitive** | Rivals' prices and products | A phone firm cuts prices when a rival launches a cheaper model |\n\n## Why study the environment?\n\n- To spot **opportunities**, such as a growing young population.\n- To avoid **threats**, such as a new tax or a stronger competitor.\n- To make better plans.\n\n## Adapting the mix\n\nWhen household incomes fall, a firm may:\n- offer smaller, cheaper packs (**product**);\n- reduce prices or give discounts (**price**);\n- sell through cheaper outlets (**place**);\n- use cheaper media such as radio or social media (**promotion**).\n\n## Answering examination questions\n\nFor a question on the environment, name the factor, say how it affects the firm, and say what the firm should do about it. For a question on the mix, give a decision under each element."
+      },
+      "cards": [
+        {
+          "front": "Marketing mix",
+          "back": "Product, price, place and promotion: the tools a firm controls."
+        },
+        {
+          "front": "Controllable factors",
+          "back": "Factors the firm can decide, such as the marketing mix."
+        },
+        {
+          "front": "Uncontrollable factors",
+          "back": "Environmental forces outside the firm, such as laws and the economy."
+        },
+        {
+          "front": "Political factor",
+          "back": "Laws, policies and security that affect marketing."
+        },
+        {
+          "front": "Economic factor",
+          "back": "Incomes, inflation and exchange rates."
+        },
+        {
+          "front": "Technological factor",
+          "back": "New machines, the internet and mobile payment."
+        },
+        {
+          "front": "Social factor",
+          "back": "Population, education and family size."
+        },
+        {
+          "front": "Opportunity",
+          "back": "A favourable change in the environment that a firm can use."
+        },
+        {
+          "front": "Threat",
+          "back": "An unfavourable change in the environment, such as a new tax."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A generator maker introduces a fuel-efficient model after fuel prices rise sharply. The firm is responding to a change in the",
+          "options": [
+            "religious environment",
+            "cultural environment",
+            "economic environment",
+            "legal environment only"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A bank adds a USSD code so that customers without smartphones can transfer money. This is mainly a response to the",
+          "options": [
+            "political environment",
+            "religious environment",
+            "competitive environment only",
+            "technological environment"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A pharmacy chain opens new branches in housing estates. This is a decision under",
+          "options": [
+            "promotion",
+            "place",
+            "product",
+            "price"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A hotel offers a free breakfast to attract guests. This is a decision under",
+          "options": [
+            "place",
+            "product design only",
+            "distribution",
+            "promotion"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is an uncontrollable factor for a firm?",
+          "options": [
+            "The laws made by government",
+            "The price it charges",
+            "The advertising it uses",
+            "The packaging it chooses"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Distinguish between controllable and uncontrollable factors in marketing, giving one example of each. (b) State two reasons why a firm should study its marketing environment.",
+          "markScheme": [
+            "Controllable factors are those the firm can decide, such as the marketing mix",
+            "Uncontrollable factors are those outside the firm's control, such as laws or the economy",
+            "First reason, for example to spot opportunities",
+            "Second reason, for example to avoid threats or to make better plans"
+          ],
+          "modelAnswer": "(a) Controllable factors are those the firm can decide for itself, such as the price it charges. Uncontrollable factors are outside the firm's control, such as laws made by government or inflation. (b) A firm studies its environment to spot opportunities, such as a growing young population, and to avoid threats, such as a new tax.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Controllable factors are those that a firm can decide for itself, like the price it charges. Uncontrollable factors are outside the firm's control, like government laws or inflation. (b) To spot opportunities like a growing market and to avoid threats like a new tax or a stronger competitor.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Controllable factors are those that a firm can decide for itself, like the price it charges"
+                },
+                {
+                  "point": 1,
+                  "quote": "Uncontrollable factors are outside the firm's control, like government laws or inflation"
+                },
+                {
+                  "point": 2,
+                  "quote": "To spot opportunities like a growing market"
+                },
+                {
+                  "point": 3,
+                  "quote": "to avoid threats like a new tax or a stronger competitor"
+                }
+              ],
+              "feedback": "All four marks. Each answer includes an example."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The marketing mix is controllable because the firm decides the product, the price and promotion. The environment is uncontrollable, for example the exchange rate. (b) To see new opportunities in the market; so as to make better plans and avoid losses.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The marketing mix is controllable because the firm decides the product, the price and promotion"
+                },
+                {
+                  "point": 1,
+                  "quote": "The environment is uncontrollable, for example the exchange rate"
+                },
+                {
+                  "point": 2,
+                  "quote": "To see new opportunities in the market"
+                },
+                {
+                  "point": 3,
+                  "quote": "so as to make better plans and avoid losses"
+                }
+              ],
+              "feedback": "Full marks. The marketing mix as a controllable factor is exactly the textbook example."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Controllable factors are things the firm can decide. Uncontrollable factors are things that are not good. (b) To see opportunities.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Controllable factors are things the firm can decide"
+                },
+                {
+                  "point": 2,
+                  "quote": "To see opportunities"
+                }
+              ],
+              "feedback": "The controllable factors and opportunities are right. Uncontrollable factors are forces outside the firm's control, such as laws or the economy. Add avoiding threats."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Controllable factors are the factors of the control room. Uncontrollable factors are the factors outside the firm's control like laws. (b) To avoid threats and find opportunities.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Uncontrollable factors are the factors outside the firm's control like laws"
+                },
+                {
+                  "point": 3,
+                  "quote": "To avoid threats"
+                },
+                {
+                  "point": 2,
+                  "quote": "find opportunities"
+                }
+              ],
+              "feedback": "Your uncontrollable factors and both reasons are right. Controllable factors are those the firm can decide, such as price and promotion."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Controllable is when the firm controls its workers and uncontrollable is when the workers control the firm. (b) For fun.",
+              "meets": [],
+              "feedback": "Controllable factors are those the firm can decide, such as its marketing mix; uncontrollable factors are outside the firm, such as laws and the economy. A firm studies the environment to spot opportunities and avoid threats."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Controllable factors are factors the firm decides. The other one is not. (b) To be rich.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Controllable factors are factors the firm decides"
+                }
+              ],
+              "feedback": "Your controllable factors earn a mark. Say that uncontrollable factors are outside the firm, such as laws or inflation. The reasons are to spot opportunities and avoid threats.",
+              "unsure": true
+            }
+          ]
+        },
+        {
+          "prompt": "A pharmacy chain plans to open a branch in a new housing estate in Port Harcourt. (a) Explain how any three of the following may affect the pharmacy: political and legal, economic, social, technological, competitive. (b) State one change the pharmacy might make to its marketing mix as a result of one of them.",
+          "markScheme": [
+            "First factor correctly explained, for example political and legal: rules on drug registration and licensing",
+            "Second factor correctly explained, for example economic: incomes of residents determine what they can buy",
+            "Third factor correctly explained, for example competitive: existing pharmacies nearby may take customers",
+            "A suitable change to the marketing mix and the element named, for example stocking cheaper brands (product) or offering delivery (place)"
+          ],
+          "modelAnswer": "(a) Political and legal: the pharmacy must be licensed and sell only registered drugs. Economic: the incomes of residents decide what they can afford, so a firm in a low-income estate needs cheaper brands. Competitive: other pharmacies nearby may take customers, so it must offer better service or prices. (b) The pharmacy might stock cheaper brands (product) or offer home delivery (place) to attract customers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Political and legal: the pharmacy must have a licence and sell only registered drugs. Economic: the incomes of people in the estate decide what they can afford to buy. Competitive: other pharmacies close by may take customers away unless it gives a better service or price. (b) It may stock cheaper brands, which is a product decision, if incomes are low.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Political and legal: the pharmacy must have a licence and sell only registered drugs"
+                },
+                {
+                  "point": 1,
+                  "quote": "Economic: the incomes of people in the estate decide what they can afford to buy"
+                },
+                {
+                  "point": 2,
+                  "quote": "Competitive: other pharmacies close by may take customers away unless it gives a better service or price"
+                },
+                {
+                  "point": 3,
+                  "quote": "It may stock cheaper brands, which is a product decision, if incomes are low"
+                }
+              ],
+              "feedback": "All four marks. Each factor is applied to a pharmacy."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Legal: it must obey laws on selling drugs and employ a registered pharmacist. Technological: customers who use mobile apps may want to order drugs online. Social: many young families in the estate will need baby products and health advice. (b) It may offer home delivery, which is a place decision, to reach customers who order online.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Legal: it must obey laws on selling drugs and employ a registered pharmacist"
+                },
+                {
+                  "point": 1,
+                  "quote": "Technological: customers who use mobile apps may want to order drugs online"
+                },
+                {
+                  "point": 2,
+                  "quote": "Social: many young families in the estate will need baby products and health advice"
+                },
+                {
+                  "point": 3,
+                  "quote": "It may offer home delivery, which is a place decision, to reach customers who order online"
+                }
+              ],
+              "feedback": "Full marks. Home delivery for online orders is a good place decision."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Political and legal: it must be licensed. Economic: people's incomes affect what they can buy. Social: people. (b) It may sell cheaper drugs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Political and legal: it must be licensed"
+                },
+                {
+                  "point": 1,
+                  "quote": "Economic: people's incomes affect what they can buy"
+                },
+                {
+                  "point": 3,
+                  "quote": "It may sell cheaper drugs"
+                }
+              ],
+              "feedback": "The legal, economic and mix change are right. The social factor needs an effect on the pharmacy, for example many young families needing baby products."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Competitive: other pharmacies may take customers. Technological: computers. Economic: money. (b) It could offer discounts, a price decision.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Competitive: other pharmacies may take customers"
+                },
+                {
+                  "point": 3,
+                  "quote": "It could offer discounts, a price decision"
+                }
+              ],
+              "feedback": "The competitive factor and the mix change are right. Technological and economic need effects: for example, customers ordering online, or incomes deciding what they can afford."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The estate is new so it is fine. (b) Open at 8 am.",
+              "meets": [],
+              "feedback": "The factors are part of the environment: for instance licensing laws, residents' incomes and competing pharmacies. A change to the mix might be a cheaper brand, a discount or delivery."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Economic: the incomes of people in the estate affect what they can buy. The others are many. (b) Change the colour.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Economic: the incomes of people in the estate affect what they can buy"
+                }
+              ],
+              "feedback": "Your economic factor earns a mark. Explain two other factors, and give a mix change with its element, such as stocking cheaper brands (product).",
+              "unsure": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

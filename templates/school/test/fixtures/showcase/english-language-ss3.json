@@ -1,0 +1,2501 @@
+{
+  "subject": "English Language",
+  "yearGroup": "SS3",
+  "weeks": {
+    "1": {
+      "topic": "Summary writing: extracting relevant points and writing them concisely",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. read a passage and pick out the points that answer the summary question;\n2. write each point in one clear sentence of their own words;\n3. avoid repetition, examples, explanations and copying of long phrases.\n\n## Materials\n\nThe passage \"The Fisherman's Net\", highlighters, a marking grid with content points and style marks.\n\n## Starter (5 minutes)\n\nAsk a student to tell the class in one sentence what happened on the way to school this morning. Ask the class: what did you leave out? Explain that a summary keeps the main point and removes detail.\n\n## Development\n\n1. Read the question first. Underline what it asks for (for example \"the reasons why the fishermen suffered\") and the number of points required.\n2. Read the passage and mark every sentence that answers the question. Skip examples, names, quotations and descriptions.\n3. List the points in note form, then write each as a full sentence of your own words, in the order of the passage.\n4. Join the sentences with simple linking words; do not begin with a long introduction.\n5. Check length (the question may say not more than 80 words) and cut any word that adds nothing.\n6. Common errors: copying whole sentences, adding your opinion, using examples, and repeating a point in different words.\n\n## Class activity\n\nIn pairs, students underline the relevant points in the passage and write them as a numbered list of eight short sentences, then exchange and mark each other's lists.\n\n## Evaluation\n\n1. What is the difference between a summary and the passage?\n2. Rewrite in not more than ten words: \"The boat, which was old and leaking badly, had to be pulled ashore by the tired fishermen.\"\n\n## Assignment\n\nSummarise the second paragraph of the passage in not more than forty words.",
+      "reading": {
+        "title": "The Fisherman's Net",
+        "content": "# The Fisherman's Net\n\nFor three generations the people of Makoko, a settlement on the edge of the Lagos lagoon, lived by fishing. Their houses stood on stilts above the water, and their canoes carried them to the fishing grounds before dawn. A good catch fed the family and paid the school fees; a poor one meant hunger.\n\nIn recent years, the catch has become poorer. Sand-filling for new estates has pushed the fish away from the shore, and oil spills from passing barges have killed many young fish. Where a fisherman once brought in forty kilograms of tilapia in a morning, he now struggles to catch ten. The price of fuel for the outboard engines has doubled, so that going farther out costs more than the extra fish are worth.\n\nSome families have responded by sending their children to learn other trades. Mr Ayo Kuti, who has fished for forty years, now teaches his grandson to repair engines and has bought him a sewing machine for his sister. \"The net will not feed them as it fed me,\" he says. But others have stayed, and a small cooperative has begun to farm fish in cages in the calmer parts of the lagoon. Early results are promising; the farmed fish grow quickly and the cooperative sells them to restaurants on the mainland.\n\nThe community's difficulties are not yet over. The cages need clean water, and the sand-filling is continuing. Without a plan to protect the lagoon, the farmers fear that even the new fish will not survive.\n\n## How to write a summary\n\nA summary is a short account of the **main points** that answer a particular question. It is not a shortened copy of the passage.\n\n### Steps\n\n1. **Read the question.** Suppose it reads: *In not more than 60 words, state the reasons why fishing has become harder for the people of Makoko.*\n2. **Underline the relevant points** in the passage: sand-filling pushed fish away; oil spills killed young fish; fuel price doubled so far fishing costs too much.\n3. **Leave out** the examples (forty kilograms, ten), the names (Mr Kuti), the history (three generations) and the description (stilts).\n4. **Write in your own words** and in full sentences, joining the points: *Sand-filling for estates has driven the fish from the shore, and oil spills from barges have killed young fish. Also, fuel for engines now costs twice as much, so fishing farther out no longer pays.*\n5. **Count the words** and cut anything unnecessary.\n\n### Faults to avoid\n\n- copying whole sentences from the passage;\n- including examples or figures that are not needed;\n- repeating a point in different words;\n- giving your own opinion;\n- exceeding the word limit."
+      },
+      "cards": [
+        {
+          "front": "Summary",
+          "back": "A short account of the main points of a passage that answer a particular question."
+        },
+        {
+          "front": "First step in a summary question",
+          "back": "Read the question and underline what it asks for."
+        },
+        {
+          "front": "What to leave out of a summary",
+          "back": "Examples, figures, names, descriptions, and repeated ideas."
+        },
+        {
+          "front": "Lifting",
+          "back": "Copying whole sentences from the passage instead of using your own words; it loses marks."
+        },
+        {
+          "front": "Main point",
+          "back": "An idea that directly answers the question, as opposed to a supporting detail."
+        },
+        {
+          "front": "Conciseness",
+          "back": "Saying a thing in the fewest words that keep the full meaning."
+        },
+        {
+          "front": "Redundancy",
+          "back": "Saying the same thing twice in different words."
+        },
+        {
+          "front": "Summary answer format",
+          "back": "Full sentences in your own words, in the order of the passage, within the word limit."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following should be left out of a summary on the reasons for the fall in fish catches?",
+          "options": [
+            "Mr Kuti has fished for forty years.",
+            "Sand-filling has pushed fish away from the shore.",
+            "Oil spills have killed young fish.",
+            "The cost of fuel has doubled."
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which is the best concise version of: \"The boat, which was old and leaking badly, had to be pulled ashore by the tired fishermen\"?",
+          "options": [
+            "The old boat was pulled ashore.",
+            "The leaking boat was pulled ashore by tired fishermen.",
+            "A boat leaked.",
+            "The fishermen were tired."
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The question asks for \"three reasons\". A candidate writes five. What is the likely result?",
+          "options": [
+            "Extra marks for extra points",
+            "No penalty, because more is better",
+            "Marks lost, because the answer does not follow the instruction",
+            "The examiner reads only the first point"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A candidate writes: \"The community's difficulties are not yet over, because the cages need clean water, and the sand-filling is continuing.\" What is the main fault if this is copied word for word from the passage?",
+          "options": [
+            "It is too short",
+            "It contains an opinion",
+            "It has no verbs",
+            "It is lifted from the passage"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a redundant (repeated) expression?",
+          "options": [
+            "The price rose and increased.",
+            "The fishermen caught fewer fish.",
+            "The catch has fallen.",
+            "Fuel costs more now."
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Read the extract. \"Chief Ojo's farm had always been the pride of Iseyin. Every year he harvested over two hundred bags of maize, which he sold in Ibadan. But last year the rains came late, and half of the crop withered in the fields. An outbreak of army worm destroyed much of what was left. Then the road to Ibadan, already poor, was washed away by floods, so that the little he harvested could not be carried to market. Chief Ojo, who had hired twelve workers, had to dismiss ten of them.\" In not more than 40 words, summarise the reasons why Chief Ojo's harvest brought him little money last year.",
+          "markScheme": [
+            "States that the rains came late and half the crop withered",
+            "States that army worm destroyed much of the remaining crop",
+            "States that the road to market was washed away, so he could not carry the harvest to sell",
+            "Writes in full sentences in the writer's own words, within the limit and without the dismissal of workers or the history of the farm"
+          ],
+          "modelAnswer": "The late rains made half of the crop wither. Army worm then destroyed much of the rest. Finally, floods washed away the road to Ibadan, so the little that remained could not be carried to market.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The late rains caused half of the maize to wither, and army worm ruined much of the remainder. Floods then destroyed the road to Ibadan, so he could not carry the little left to market.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The late rains caused half of the maize to wither"
+                },
+                {
+                  "point": 1,
+                  "quote": "army worm ruined much of the remainder"
+                },
+                {
+                  "point": 2,
+                  "quote": "Floods then destroyed the road to Ibadan, so he could not carry the little left to market"
+                },
+                {
+                  "point": 3,
+                  "quote": "The late rains caused half of the maize to wither, and army worm ruined much of the remainder."
+                }
+              ],
+              "feedback": "All three reasons, in your own words, in 36 words, with nothing extra. A model summary."
+            },
+            {
+              "tier": "full",
+              "text": "First, the rains were late and half the crop dried up. Second, army worm attacked most of what survived. Lastly, the damaged road made it impossible to take the remaining crop to Ibadan for sale.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the rains were late and half the crop dried up"
+                },
+                {
+                  "point": 1,
+                  "quote": "army worm attacked most of what survived"
+                },
+                {
+                  "point": 2,
+                  "quote": "the damaged road made it impossible to take the remaining crop to Ibadan for sale"
+                },
+                {
+                  "point": 3,
+                  "quote": "First, the rains were late and half the crop dried up."
+                }
+              ],
+              "feedback": "Clear and well ordered, and in your own words. Your signposts (first, second, lastly) help the examiner find each point."
+            },
+            {
+              "tier": "partial",
+              "text": "The rains came late and half of the crop withered in the fields. An outbreak of army worm destroyed much of what was left. Chief Ojo had to dismiss ten workers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The rains came late and half of the crop withered in the fields"
+                },
+                {
+                  "point": 1,
+                  "quote": "An outbreak of army worm destroyed much of what was left"
+                }
+              ],
+              "feedback": "The first two reasons are there but copied almost word for word from the passage. You missed the washed-away road, and the dismissal of workers is a result, not a reason."
+            },
+            {
+              "tier": "partial",
+              "text": "There was no rain on time and the road was spoilt by floods. Therefore he could not sell the maize in Ibadan.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the road was spoilt by floods. Therefore he could not sell the maize in Ibadan"
+                }
+              ],
+              "feedback": "You have the road, in your own words. But the late rain led to half the crop withering, and you also left out the army worm. Look for all three reasons."
+            },
+            {
+              "tier": "weak",
+              "text": "Chief Ojo's farm had always been the pride of Iseyin and he harvested two hundred bags every year. He hired twelve workers and sold the maize in Ibadan.",
+              "meets": [],
+              "feedback": "This is the background to the passage, not the reasons for the poor harvest. The question is about last year: late rains, army worm and the washed-away road."
+            },
+            {
+              "tier": "weak",
+              "text": "He lost because it was a bad year and he is a good farmer who did not deserve it. I feel sorry for him and the government should help farmers like him.",
+              "meets": [],
+              "feedback": "A summary gives the points in the passage, not your opinion or feelings. Name the three events that reduced the harvest."
+            }
+          ]
+        },
+        {
+          "prompt": "Rewrite each of the following in as few words as possible without losing the meaning. (a) \"At this point in time, the committee is of the opinion that the meeting should be postponed to a later date.\" (b) \"The students who were standing outside the hall in a queue were waiting for their turn to enter the examination hall.\" (c) \"The reason why he was late was because of the fact that the bus broke down.\"",
+          "markScheme": [
+            "(a) reduced to a short sentence such as \"The committee thinks the meeting should be postponed\"",
+            "(b) reduced to a short sentence such as \"The students queued to enter the examination hall\"",
+            "(c) reduced to a short sentence such as \"He was late because the bus broke down\""
+          ],
+          "modelAnswer": "(a) The committee now thinks the meeting should be postponed. (b) The students queued to enter the examination hall. (c) He was late because the bus broke down.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The committee thinks the meeting should be postponed. (b) The students queued outside the hall for the examination. (c) He was late because the bus broke down.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The committee thinks the meeting should be postponed"
+                },
+                {
+                  "point": 1,
+                  "quote": "The students queued outside the hall for the examination"
+                },
+                {
+                  "point": 2,
+                  "quote": "He was late because the bus broke down"
+                }
+              ],
+              "feedback": "Each sentence loses its padding and keeps its meaning. Fine, economical writing."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The committee now wants to postpone the meeting. (b) The students were queueing to enter the examination hall. (c) He was late because his bus broke down.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The committee now wants to postpone the meeting"
+                },
+                {
+                  "point": 1,
+                  "quote": "The students were queueing to enter the examination hall"
+                },
+                {
+                  "point": 2,
+                  "quote": "He was late because his bus broke down"
+                }
+              ],
+              "feedback": "All three are concise and accurate. The word now keeps the sense of \"at this point in time\"."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The committee thinks the meeting should be postponed. (b) The students were waiting in a queue outside the hall for their turn. (c) The reason he was late was because the bus broke down.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The committee thinks the meeting should be postponed"
+                }
+              ],
+              "feedback": "(a) is concise. (b) still has \"in a queue\" and \"waiting\" doing the same job; say they queued. (c) The reason ... was because is repetitive; write He was late because."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) At this time, the committee thinks the meeting should be moved. (b) The students queued to enter the hall. (c) He was late because the bus broke down.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The students queued to enter the hall"
+                },
+                {
+                  "point": 2,
+                  "quote": "He was late because the bus broke down"
+                }
+              ],
+              "feedback": "(b) and (c) are concise. (a) keeps At this time, which is padding, and moved changes the meaning slightly; postponed means moved to a later date."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The committee is of the opinion that the meeting should be postponed to a later date. (b) The students waited. (c) The reason why he was late was the bus.",
+              "meets": [],
+              "feedback": "(a) is nearly unchanged. (b) is so short that it loses the point about the examination, and (c) keeps the repeated phrase. Cut the padding, not the meaning."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Meeting. (b) Students in the queue. (c) Bus.",
+              "meets": [],
+              "feedback": "A summary must be in sentences that keep the meaning. Single words lose it. For (c): He was late because the bus broke down."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Summary of a specific aspect or portion of a passage",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. read a summary question and decide exactly which portion of the passage it covers;\n2. select only the points about the aspect asked for, ignoring the rest of the passage;\n3. write a summary of the aspect in one paragraph of connected sentences within the word limit.\n\n## Materials\n\nThe passage \"Light for Ajegunle Village\", highlighters in two colours, a sample marking guide.\n\n## Starter (5 minutes)\n\nAsk: \"Tell me only what the headmaster said about punctuality at assembly.\" After a student answers, ask what they left out and why. Link to the idea that a summary of an aspect is selective.\n\n## Development\n\n1. A summary question usually names an aspect: \"the problems of the village before the project\", \"the benefits of the project\", \"the steps taken\". Underline this phrase in the question.\n2. Read the passage twice. On the first reading, mark the portions that deal with that aspect in one colour. On the second, mark everything else in a different colour and ignore it.\n3. Teach a signal to look for: words such as because, as a result and since often introduce reasons and effects; first, then and finally often introduce steps.\n4. Write the points in order, one sentence each, joining them with and, but and so that the paragraph is connected.\n5. Check: does every sentence belong to the aspect asked about? Remove any sentence that does not.\n\n## Class activity\n\nTwo questions are set on the same passage: one on the problems, one on the benefits. Half the class answers each. Pairs from opposite halves compare and show that the answers differ, though the passage is the same.\n\n## Evaluation\n\n1. Which two sentences in the passage describe the benefits only?\n2. Write a one-sentence summary of the problems.\n\n## Assignment\n\nChoose a news report from a newspaper and write a 50-word summary of the causes of the event it describes.",
+      "reading": {
+        "title": "Light for Ajegunle Village",
+        "content": "# Light for Ajegunle Village\n\nUntil two years ago, Ajegunle, a village of about four hundred households in Ogun State, had never had electricity. After dark, families lit kerosene lamps, which gave poor light and filled the rooms with smoke. Children coughed at night. Students struggled to read after sunset, and the nearby clinic could not keep vaccines cold, so mothers had to carry their babies twelve kilometres to the town for their injections.\n\nThen a non-governmental organisation offered to build a small solar power plant if the villagers could provide the land and labour. The elders gave a plot behind the primary school. Young men from the village dug the foundations, and a team of technicians installed panels, batteries and cables. Each household agreed to pay 800 naira a month, which would be used to repair the equipment when it broke.\n\nThe effects have been remarkable. The clinic now has a refrigerator, and the vaccines are stored at home. Students read until ten at night under bright lamps, and last year the village secondary school recorded its best WAEC result. Mr Garba, the welder, now works after dark, and his income has risen by half. A grinding mill was opened, so women who used to walk six kilometres to grind their pepper now do so at the edge of the village.\n\nNot everything has been easy. During the harmattan, the dust that settles on the panels reduces the power. Some households have used more electricity than they paid for, causing arguments. The village head, Baale Adeyemi, has appointed a committee to clean the panels each week and to read the meters monthly.\n\n## Summarising an aspect of a passage\n\nThe examiner's question may ask about one **aspect** of the passage only. Consider these three questions on this passage:\n\n- *Summarise the problems of the village before the plant was built.* (paragraph 1)\n- *Summarise what the villagers did to make the plant possible.* (paragraph 2)\n- *Summarise the benefits of the plant.* (paragraph 3)\n\nThe same passage gives a different summary each time.\n\n### Example\n\n**Question.** In not more than 50 words, summarise the problems of the village before the plant was built.\n\n**Relevant points:** no electricity; kerosene lamps gave poor light and smoke; children coughed; students could not read after dark; the clinic could not keep vaccines cold, so mothers walked twelve kilometres.\n\n**Irrelevant:** the number of households, the NGO, the benefits.\n\n**Answer.** The village had no electricity. Kerosene lamps gave poor light and smoke that made children cough, students could not read at night, and since the clinic could not store vaccines, mothers carried their babies twelve kilometres to the town for injections."
+      },
+      "cards": [
+        {
+          "front": "Aspect (in a summary question)",
+          "back": "The particular part of a passage the question asks about, such as the problems or the benefits."
+        },
+        {
+          "front": "How to find the relevant portion",
+          "back": "Underline the aspect in the question, then mark the sentences in the passage that deal with it."
+        },
+        {
+          "front": "Signal words for reasons and effects",
+          "back": "Because, as a result, since, so that."
+        },
+        {
+          "front": "Signal words for steps",
+          "back": "First, then, next, finally."
+        },
+        {
+          "front": "Selective summary",
+          "back": "One that includes only the points on the aspect asked, even if the passage has other information."
+        },
+        {
+          "front": "Connected writing in a summary",
+          "back": "Points joined with and, but, so, to make a paragraph, not a list."
+        },
+        {
+          "front": "Final check",
+          "back": "Does every sentence belong to the aspect asked about?"
+        },
+        {
+          "front": "Penalty for including other aspects",
+          "back": "Marks lost, because they do not answer the question, and they use up the word limit."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Question: \"Summarise the benefits of the solar plant.\" Which of the following belongs in the answer?",
+          "options": [
+            "The clinic can store vaccines in a refrigerator.",
+            "Dust on the panels reduces the power in the harmattan.",
+            "Children coughed because of kerosene smoke.",
+            "Each household agreed to pay 800 naira a month."
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Question: \"State the problems the villagers still face.\" Which sentence from the passage gives a relevant point?",
+          "options": [
+            "Mr Garba, the welder, now works after dark.",
+            "Some households have used more electricity than they paid for, causing arguments.",
+            "Students read until ten at night.",
+            "A grinding mill was opened."
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which word in a passage is most likely to introduce a reason?",
+          "options": [
+            "finally",
+            "however",
+            "because",
+            "meanwhile"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A candidate answering a question on the problems of the village before the plant also writes about the benefits. What is the likely result?",
+          "options": [
+            "The extra points earn extra marks",
+            "The answer is graded as perfect",
+            "The examiner ignores the first half",
+            "The candidate loses marks for irrelevant points"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which sentence is the best summary of what the villagers did to make the plant possible?",
+          "options": [
+            "They gave land, provided labour and agreed to pay a monthly fee.",
+            "They lit kerosene lamps and coughed.",
+            "They walked twelve kilometres to the clinic.",
+            "They cleaned the panels and read the meters."
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Read: \"Before the new market was built, traders at Oja-Oba sold their goods on the roadside. Goods spoiled in the sun and rain, and several traders were knocked down by passing vehicles. Customers complained of the dust and the smell from open drains. Then the local government built a covered market with a drainage system, 200 stalls and a car park. Traders who once lost goods to rain now keep them safely, and sales have risen. Customers also say they are more willing to shop in the cleaner environment.\" In not more than 45 words, summarise the problems of the old market.",
+          "markScheme": [
+            "States that goods spoiled in the sun and rain",
+            "States that traders were knocked down by vehicles",
+            "States that customers complained of dust and the smell from open drains",
+            "Writes only about the problems, in connected sentences and in own words"
+          ],
+          "modelAnswer": "Because traders sold on the roadside, goods spoiled in the sun and rain, and some traders were knocked down by vehicles. Customers also disliked the dust and the smell from open drains.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Goods sold on the roadside were ruined by sun and rain, and passing vehicles knocked down some traders. Customers also complained of dust and the smell from open drains.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Goods sold on the roadside were ruined by sun and rain"
+                },
+                {
+                  "point": 1,
+                  "quote": "passing vehicles knocked down some traders"
+                },
+                {
+                  "point": 2,
+                  "quote": "Customers also complained of dust and the smell from open drains"
+                },
+                {
+                  "point": 3,
+                  "quote": "Goods sold on the roadside were ruined by sun and rain, and passing vehicles knocked down some traders."
+                }
+              ],
+              "feedback": "All three problems, in your own words, in about 30 words, with nothing about the benefits. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The roadside market exposed goods to the weather and spoilt them. Traders were in danger from vehicles, and buyers were put off by the dust and foul smell from the drains.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The roadside market exposed goods to the weather and spoilt them"
+                },
+                {
+                  "point": 1,
+                  "quote": "Traders were in danger from vehicles"
+                },
+                {
+                  "point": 2,
+                  "quote": "buyers were put off by the dust and foul smell from the drains"
+                },
+                {
+                  "point": 3,
+                  "quote": "Traders were in danger from vehicles, and buyers were put off"
+                }
+              ],
+              "feedback": "A well-connected paragraph. Exposed goods to the weather is a very good rewording of the original."
+            },
+            {
+              "tier": "partial",
+              "text": "Goods were spoiled by sun and rain. Traders were knocked down by vehicles. The local government built a covered market with 200 stalls.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Goods were spoiled by sun and rain"
+                },
+                {
+                  "point": 1,
+                  "quote": "Traders were knocked down by vehicles"
+                }
+              ],
+              "feedback": "Two problems are correct. The last sentence is about the solution, not a problem; use that space for the dust and the smell from the drains."
+            },
+            {
+              "tier": "partial",
+              "text": "The customers complained of dust and a bad smell from the drains, and the traders lost their goods.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The customers complained of dust and a bad smell from the drains"
+                }
+              ],
+              "feedback": "You have the customers' complaint. \"Lost their goods\" is vague: say they spoiled in the sun and rain. The danger from vehicles is missing."
+            },
+            {
+              "tier": "weak",
+              "text": "The market was built by the local government and it has 200 stalls, a drainage system and a car park. Sales have risen.",
+              "meets": [],
+              "feedback": "This summarises the new market, but the question is about the problems of the old one. Read the question again and use the first part of the passage."
+            },
+            {
+              "tier": "weak",
+              "text": "Oja-Oba is a market in Ibadan and the traders are hardworking. The government should build more markets in Nigeria.",
+              "meets": [],
+              "feedback": "None of this answers the question. The first is outside information, and the second is your opinion. Pick out what went wrong at the roadside market."
+            }
+          ]
+        },
+        {
+          "prompt": "Read: \"To start a school garden, the Agricultural Science club first chose a plot near the water tap. Members then cleared the weeds and tilled the soil. Next they mixed in compost from the kitchen, planted okro and pepper in rows, and fenced the plot with bamboo to keep goats out. Each week, two members watered the beds, weeded them and recorded the growth. After ten weeks, they harvested, sold the vegetables and used the money to buy seeds for the next term.\" In not more than 50 words, summarise the steps the club took in preparing and planting the garden, up to the stage of fencing.",
+          "markScheme": [
+            "States that they chose a plot near water and cleared the weeds",
+            "States that they tilled the soil and mixed in compost",
+            "States that they planted okro and pepper in rows",
+            "States that they fenced the plot with bamboo, and stops there (no weekly care, harvest or selling)"
+          ],
+          "modelAnswer": "The club chose a plot near the water tap and cleared weeds. They tilled the soil and mixed in compost, planted okro and pepper in rows, and then fenced the plot with bamboo to keep goats out.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The club picked a site near the water and cleared it of weeds. They dug the soil and added compost, then sowed okro and pepper in lines and surrounded the plot with a bamboo fence against goats.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The club picked a site near the water and cleared it of weeds"
+                },
+                {
+                  "point": 1,
+                  "quote": "They dug the soil and added compost"
+                },
+                {
+                  "point": 2,
+                  "quote": "sowed okro and pepper in lines"
+                },
+                {
+                  "point": 3,
+                  "quote": "surrounded the plot with a bamboo fence against goats"
+                }
+              ],
+              "feedback": "All four steps in order, in your own words, and you stopped at the fence as the question required. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "First a place beside the tap was selected and weeded. The soil was tilled and mixed with compost, okro and pepper were planted in rows, and a bamboo fence was put round the plot to keep out goats.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a place beside the tap was selected and weeded"
+                },
+                {
+                  "point": 1,
+                  "quote": "The soil was tilled and mixed with compost"
+                },
+                {
+                  "point": 2,
+                  "quote": "okro and pepper were planted in rows"
+                },
+                {
+                  "point": 3,
+                  "quote": "a bamboo fence was put round the plot to keep out goats"
+                }
+              ],
+              "feedback": "Complete and correctly ordered. The passive voice works well in a list of steps."
+            },
+            {
+              "tier": "partial",
+              "text": "They chose a plot near the water tap, cleared weeds and tilled the soil. They planted okro and pepper in rows. Two members watered the beds each week.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "They chose a plot near the water tap, cleared weeds"
+                },
+                {
+                  "point": 2,
+                  "quote": "They planted okro and pepper in rows"
+                }
+              ],
+              "feedback": "Good start, but you missed the compost and the fence, and you went beyond the fence into the weekly care that the question excluded."
+            },
+            {
+              "tier": "partial",
+              "text": "The club mixed compost into the soil and fenced the garden with bamboo so that goats could not enter.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The club mixed compost into the soil"
+                },
+                {
+                  "point": 3,
+                  "quote": "fenced the garden with bamboo so that goats could not enter"
+                }
+              ],
+              "feedback": "Two steps are accurate and in your own words. The summary needs the first two steps (the choice of site and clearing the weeds) and the planting of okro and pepper."
+            },
+            {
+              "tier": "weak",
+              "text": "After ten weeks they harvested and sold the vegetables and bought seeds for the next term.",
+              "meets": [],
+              "feedback": "This is the end of the passage; the question stops at the fence. Go back to the beginning and list the steps in order."
+            },
+            {
+              "tier": "weak",
+              "text": "The Agricultural Science club is a good club and the students learn many things about farming. They like okro.",
+              "meets": [],
+              "feedback": "You have written general comments, not the steps. Name each action in order: choose the plot, clear it, till, add compost, plant, fence."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Oral English: single consonant sounds and their contrasts",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. distinguish voiced and voiceless consonants;\n2. recognise and produce contrasts such as /p/ and /b/, /t/ and /d/, /f/ and /v/, /s/ and /z/, /ʃ/ and /tʃ/, /θ/ and /ð/;\n3. identify the consonant sound at the beginning, middle or end of a word, as the Oral English paper requires.\n\n## Materials\n\nA chart of English consonant phonemes with place and manner of articulation, minimal-pair cards, a mirror for each pair.\n\n## Starter (5 minutes)\n\nPlace a hand on the throat and say /s/ and /z/ in turn. Ask what the fingers feel. Introduce the idea of voicing.\n\n## Development\n\n1. A sound is a unit of speech; a letter is a symbol of writing. English has 24 consonant sounds, though it has 21 consonant letters.\n2. Voiced sounds make the vocal cords vibrate (/b, d, g, v, z, ð, ʒ, dʒ/). Voiceless ones do not (/p, t, k, f, s, θ, ʃ, tʃ/).\n3. Minimal pairs differ in one sound only: pit/bit (/p/ and /b/), tuck/duck (/t/ and /d/), fan/van (/f/ and /v/), ship/chip (/ʃ/ and /tʃ/), they/day (/ð/ and /d/).\n4. Common difficulties for Nigerian speakers: replacing /θ/ by /t/ (saying tink for think) and /ð/ by /d/ (saying dem for them); merging /v/ with /f/ or /b/; confusing /ʃ/ and /s/.\n5. Drill with pairs, then with sentences, using the mirror to see the lips and tongue.\n\n## Class activity\n\nStudents work in pairs, one reading a word from a pair and the other saying which of the two words was read. They swap roles and record their scores.\n\n## Evaluation\n\n1. Is the first sound in \"zoo\" voiced or voiceless?\n2. Which word begins with a different consonant sound: ship, chip, sheep, shoe?\n\n## Assignment\n\nList ten words that begin with /θ/ and ten that begin with /ð/. Practise each aloud and mark which are voiced.",
+      "reading": {
+        "title": "Consonant sounds of English",
+        "content": "# Consonant sounds of English\n\nIn Oral English we study **sounds**, not letters. The word *knife* has five letters but only three sounds: /n/, /aɪ/ and /f/. The word *ship* has four letters and three sounds: /ʃ/, /ɪ/, /p/. The symbols between slanting lines belong to the International Phonetic Alphabet (IPA).\n\n## Voiced and voiceless\n\nPut your fingers on your throat and say /s/, then /z/. At /z/ you feel a vibration; at /s/ you do not. Sounds with vibration are **voiced**; those without are **voiceless**.\n\n| Voiceless | Voiced |\n| --- | --- |\n| /p/ as in *pit* | /b/ as in *bit* |\n| /t/ as in *tuck* | /d/ as in *duck* |\n| /k/ as in *back* | /g/ as in *bag* |\n| /f/ as in *fan* | /v/ as in *van* |\n| /s/ as in *sip* | /z/ as in *zip* |\n| /θ/ as in *thin* | /ð/ as in *they* |\n| /ʃ/ as in *ship* | /ʒ/ as in *vision* |\n| /tʃ/ as in *chip* | /dʒ/ as in *jeep* |\n\nThe pairs above are produced in the same place and in the same way. The only difference is voicing. A pair of words that differ in one sound only is called a **minimal pair**: *pit* and *bit*, *fan* and *van*, *ship* and *chip*.\n\n## Sounds Nigerian learners often confuse\n\n- **/θ/ and /t/:** *think* is /θɪŋk/, not /tɪŋk/. Place the tongue between the teeth and blow air out.\n- **/ð/ and /d/:** *they* is /ðeɪ/, not /deɪ/. Same tongue position, with voice.\n- **/f/ and /v/:** *fan* and *van*. For /v/, the upper teeth touch the lower lip and the voice sounds.\n- **/ʃ/ and /tʃ/:** *ship* has a continuous hiss; *chip* begins with a stop followed by the hiss.\n- **/s/ and /ʃ/:** *sip* and *ship*.\n\n## Spelling and sound\n\nThe same letter can stand for different sounds. The letter *s* is /s/ in *sit*, but /z/ in *rose*. The letters *th* are /θ/ in *thick* but /ð/ in *then*. And the same sound can be spelt in different ways: /f/ in *fish*, *phone* and *laugh*.\n\n**Worked example.** Choose the word that has a different consonant sound at the beginning: *ship, chip, sheep, shoe*.\n\n1. *ship* begins with /ʃ/.\n2. *chip* begins with /tʃ/.\n3. *sheep* begins with /ʃ/.\n4. *shoe* begins with /ʃ/.\n\nThe answer is **chip**."
+      },
+      "cards": [
+        {
+          "front": "Voiced sound",
+          "back": "A sound made with the vocal cords vibrating, such as /b/, /d/, /z/."
+        },
+        {
+          "front": "Voiceless sound",
+          "back": "A sound made without vibration of the vocal cords, such as /p/, /t/, /s/."
+        },
+        {
+          "front": "Minimal pair",
+          "back": "Two words that differ in one sound only, such as pit and bit."
+        },
+        {
+          "front": "/θ/ as in",
+          "back": "think, thick, bath (voiceless)."
+        },
+        {
+          "front": "/ð/ as in",
+          "back": "they, then, mother (voiced)."
+        },
+        {
+          "front": "/ʃ/ as in",
+          "back": "ship, sheep, wash."
+        },
+        {
+          "front": "/tʃ/ as in",
+          "back": "chip, church, match."
+        },
+        {
+          "front": "Difference between a letter and a sound",
+          "back": "A letter is a written symbol; a sound is a unit of speech. One letter may stand for more than one sound."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these words begins with a voiced consonant sound?",
+          "options": [
+            "tuck",
+            "pit",
+            "fan",
+            "duck"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Choose the word that has the same consonant sound at the beginning as \"think\".",
+          "options": [
+            "they",
+            "then",
+            "thin",
+            "that"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which pair of words is a minimal pair that differs in the first consonant sound only?",
+          "options": [
+            "fan and van",
+            "ship and sheep",
+            "bat and bait",
+            "cut and cart"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "In which word does the letter s represent the sound /z/?",
+          "options": [
+            "sit",
+            "rose",
+            "sun",
+            "bus"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Choose the word whose first consonant sound is different from the others.",
+          "options": [
+            "chip",
+            "church",
+            "chain",
+            "ship"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Explain what is meant by voiced and voiceless sounds. (b) Give two pairs of words that differ only in this feature, and name the sounds that differ.",
+          "markScheme": [
+            "States that voiced sounds are made with vibration of the vocal cords",
+            "States that voiceless sounds are made without vibration of the vocal cords",
+            "Gives one correct pair of words with the differing sounds named (for example pit/bit, /p/ and /b/)",
+            "Gives a second correct pair with the differing sounds named"
+          ],
+          "modelAnswer": "(a) Voiced sounds are made with the vocal cords vibrating; voiceless sounds are made without that vibration. (b) The words pit and bit differ in /p/ (voiceless) and /b/ (voiced). The words fan and van differ in /f/ (voiceless) and /v/ (voiced).",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Voiced sounds are produced with vibration in the vocal cords, and voiceless sounds are produced without any vibration. (b) pit and bit: /p/ is voiceless and /b/ is voiced. tuck and duck: /t/ is voiceless and /d/ is voiced.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Voiced sounds are produced with vibration in the vocal cords"
+                },
+                {
+                  "point": 1,
+                  "quote": "voiceless sounds are produced without any vibration"
+                },
+                {
+                  "point": 2,
+                  "quote": "pit and bit: /p/ is voiceless and /b/ is voiced"
+                },
+                {
+                  "point": 3,
+                  "quote": "tuck and duck: /t/ is voiceless and /d/ is voiced"
+                }
+              ],
+              "feedback": "Both definitions and both pairs are correct, with the sounds named and labelled. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) If you put your fingers on your throat and the cords vibrate, the sound is voiced. If they do not vibrate, it is voiceless. (b) fan and van, where /f/ is voiceless and /v/ is voiced; sip and zip, where /s/ is voiceless and /z/ is voiced.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "If you put your fingers on your throat and the cords vibrate, the sound is voiced"
+                },
+                {
+                  "point": 1,
+                  "quote": "If they do not vibrate, it is voiceless"
+                },
+                {
+                  "point": 2,
+                  "quote": "fan and van, where /f/ is voiceless and /v/ is voiced"
+                },
+                {
+                  "point": 3,
+                  "quote": "sip and zip, where /s/ is voiceless and /z/ is voiced"
+                }
+              ],
+              "feedback": "I like your throat test, which makes the idea practical. Both pairs are right."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Voiced sounds are made with the vocal cords vibrating. Voiceless sounds are the ones we do not say loudly. (b) pit and bit, /p/ and /b/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Voiced sounds are made with the vocal cords vibrating"
+                },
+                {
+                  "point": 2,
+                  "quote": "pit and bit, /p/ and /b/"
+                }
+              ],
+              "feedback": "Voiced is right. Voiceless does not mean quiet: it means the vocal cords do not vibrate. You gave only one pair; add another, such as fan and van."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Voiceless sounds are made without vibration of the cords. Voiced sounds are the ones with a voice. (b) ship and chip. fan and van.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Voiceless sounds are made without vibration of the cords"
+                },
+                {
+                  "point": 3,
+                  "quote": "fan and van"
+                }
+              ],
+              "feedback": "Your voiceless definition is correct, but \"with a voice\" needs to say vibration of the cords. Ship and chip differ in /ʃ/ and /tʃ/, which is a different feature, not voicing. Fan and van is right; name /f/ and /v/."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Voiced sounds are loud and voiceless sounds are silent. (b) The word cat and the word dog.",
+              "meets": [],
+              "feedback": "Voiceless sounds are not silent. Both kinds are heard; the difference is whether the vocal cords vibrate. Cat and dog differ in every sound; choose a pair that differs in one, like pit and bit."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Voiced is for vowels and voiceless is for consonants. (b) a, e, i, o, u.",
+              "meets": [],
+              "feedback": "Both consonants and vowels can be voiced; the question is about the vibration of the vocal cords. Your pair must be two words, such as pit and bit, with the differing consonants named."
+            }
+          ]
+        },
+        {
+          "prompt": "In each line, write down the word that has a different consonant sound at the beginning, and say what the sound is in the odd word and in the others. (a) thin, think, then, thick (b) ship, sheep, chip, shoe (c) very, van, fan, vase",
+          "markScheme": [
+            "(a) then, with /ð/ while the others have /θ/",
+            "(b) chip, with /tʃ/ while the others have /ʃ/",
+            "(c) fan, with /f/ while the others have /v/"
+          ],
+          "modelAnswer": "(a) then begins with /ð/, while thin, think and thick begin with /θ/. (b) chip begins with /tʃ/, while ship, sheep and shoe begin with /ʃ/. (c) fan begins with /f/, while very, van and vase begin with /v/.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) then: it begins with /ð/ and the others with /θ/. (b) chip: it begins with /tʃ/ and the others with /ʃ/. (c) fan: it begins with /f/ and the others with /v/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "then: it begins with /ð/ and the others with /θ/"
+                },
+                {
+                  "point": 1,
+                  "quote": "chip: it begins with /tʃ/ and the others with /ʃ/"
+                },
+                {
+                  "point": 2,
+                  "quote": "fan: it begins with /f/ and the others with /v/"
+                }
+              ],
+              "feedback": "Each odd word is identified with both sounds named. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) then, because it has the voiced /ð/ while the rest have voiceless /θ/. (b) chip, because it starts with the /tʃ/ sound and the others with /ʃ/. (c) fan, because it has voiceless /f/ and the others have voiced /v/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "then, because it has the voiced /ð/ while the rest have voiceless /θ/"
+                },
+                {
+                  "point": 1,
+                  "quote": "chip, because it starts with the /tʃ/ sound and the others with /ʃ/"
+                },
+                {
+                  "point": 2,
+                  "quote": "fan, because it has voiceless /f/ and the others have voiced /v/"
+                }
+              ],
+              "feedback": "You added voiced and voiceless to your answers, which is useful understanding. Complete."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) then. (b) ship. (c) fan.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "then"
+                },
+                {
+                  "point": 2,
+                  "quote": "fan"
+                }
+              ],
+              "feedback": "(a) and (c) are right, but the question also asks you to name the sounds: /ð/ against /θ/, and /f/ against /v/. In (b), ship begins with /ʃ/ like sheep and shoe; the odd word is chip, with /tʃ/."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) then, /ð/ and /θ/. (b) ship, because it begins with /s/ and the others with /ʃ/. (c) fan, /f/ and /v/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "then, /ð/ and /θ/"
+                },
+                {
+                  "point": 2,
+                  "quote": "fan, /f/ and /v/"
+                }
+              ],
+              "feedback": "(a) and (c) are good. In (b), ship, sheep and shoe all begin with /ʃ/; the odd one is chip with /tʃ/. The spelling sh always gives /ʃ/, and ch here gives /tʃ/."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) think. (b) shoe. (c) very.",
+              "meets": [],
+              "feedback": "These are not the odd words. In (a) then has the voiced sound; in (b) chip has /tʃ/; in (c) fan has /f/. Say each word aloud with a hand on your throat."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) thin, because it has the th. (b) ship, because it has the sh. (c) van, because of the v.",
+              "meets": [],
+              "feedback": "You compared letters, but the question is about sounds. Say the words: in (a) all four have th, but then sounds different from the others."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Oral English: consonant clusters at the beginning and end of syllables",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a consonant cluster and count the consonant sounds in a cluster;\n2. recognise initial clusters (play, pray, string) and final clusters (felt, nest, next);\n3. pronounce clusters without inserting a vowel or dropping a consonant;\n4. identify the words in minimal pairs that differ only in a cluster.\n\n## Materials\n\nCards of cluster words, a chart of initial and final clusters, a recording of correct pronunciation.\n\n## Starter (5 minutes)\n\nAsk students to say \"street\" slowly. How many consonant sounds come before the vowel? Write /s/, /t/, /r/ on the board and call the group a cluster.\n\n## Development\n\n1. A consonant cluster is two or more consonant sounds together, without a vowel between them. Count sounds, not letters: \"splash\" has three initial consonant sounds, /spl/.\n2. Initial clusters of two: /pl/ in play, /pr/ in pray, /st/ in stop, /bl/ in blue. Of three: /spr/ in spring, /str/ in string, /skr/ in scream.\n3. Final clusters: /lt/ in felt, /st/ in nest, /kst/ in next, /nd/ in hand, /ld/ in felled, /mpt/ in tempt.\n4. Typical errors: inserting a vowel (saying \"sitirike\" for strike, or \"kilass\" for class), dropping a final consonant (saying \"nes\" for nest or \"nex\" for next), and replacing /l/ and /r/ in clusters (saying \"pray\" for play).\n5. Drill slowly: say the first consonant, then add the next without a vowel. Contrast minimal pairs: play/pray, sting/string, felt/felled, nest/next.\n\n## Class activity\n\nIn pairs, one student reads a word from each pair while the other points to the right card. Reverse roles and record errors.\n\n## Evaluation\n\n1. How many consonant sounds are there in the initial cluster of \"splash\"?\n2. Which of these words contains a final cluster of three consonants: next, hand, tempt?\n\n## Assignment\n\nList five words for each of these initial clusters: /pl/, /pr/, /str/, and five words that end in /st/. Read them aloud at home.",
+      "reading": {
+        "title": "Consonants that travel together",
+        "content": "# Consonants that travel together\n\nIn many English words, two or three consonant sounds come together without a vowel between them. Such a group is called a **consonant cluster**.\n\n- *play* begins with the cluster /pl/;\n- *string* begins with the three-consonant cluster /str/;\n- *nest* ends with the cluster /st/;\n- *next* ends with the three-consonant cluster /kst/.\n\nWe count **sounds**, not letters. In *splash* there are three initial consonant sounds (/s/, /p/, /l/) and the letters s-p-l. In *knight* the letter *k* is silent, so the word begins with the single sound /n/.\n\n## Initial clusters\n\n| Cluster | Examples |\n| --- | --- |\n| /pl/ | play, please |\n| /pr/ | pray, price |\n| /bl/ | blue, black |\n| /br/ | bring, bread |\n| /st/ | stop, step |\n| /str/ | string, street |\n| /spr/ | spring, spread |\n| /skr/ | scream, scratch |\n\n## Final clusters\n\n| Cluster | Examples |\n| --- | --- |\n| /lt/ | felt, belt |\n| /ld/ | felled, called |\n| /st/ | nest, best |\n| /kst/ | next, text |\n| /nd/ | hand, sand |\n| /mpt/ | tempt, attempt |\n\n## Minimal pairs with clusters\n\nA pair of words can differ only in a cluster:\n\n- *play* and *pray*: /pl/ and /pr/;\n- *sting* and *string*: /st/ and /str/;\n- *felt* and *felled*: /lt/ and /ld/;\n- *nest* and *next*: /st/ and /kst/.\n\nThe words *felt* and *felled* are written very differently but are said alike except for the last sound: *felt* ends with /t/, and *felled* ends with /d/.\n\n## Common difficulties\n\nIn languages where syllables normally end in vowels, speakers often **insert a vowel** into a cluster, so that *street* sounds like \"siritiri\", or **drop a final consonant**, so that *nest* sounds like \"nes\" and *next* like \"nex\". Neither is acceptable in the examination. To practise, say the first consonant alone, then add the next without any vowel: /s/, /st/, /str/, /stri:t/.\n\n**Worked example.** How many consonant sounds end each of these words: *nest, next, tempt, hand*?\n\n1. *nest* ends with /st/ (two).\n2. *next* ends with /kst/ (three).\n3. *tempt* ends with /mpt/ (three).\n4. *hand* ends with /nd/ (two).\n\n*Next* and *tempt* end with three consonant sounds; *nest* and *hand* end with two."
+      },
+      "cards": [
+        {
+          "front": "Consonant cluster",
+          "back": "Two or more consonant sounds together in a syllable, with no vowel between them."
+        },
+        {
+          "front": "Initial cluster in splash",
+          "back": "/spl/ (three consonant sounds)."
+        },
+        {
+          "front": "Final cluster in next",
+          "back": "/kst/ (three consonant sounds)."
+        },
+        {
+          "front": "Minimal pair: play / pray",
+          "back": "They differ in the cluster /pl/ and /pr/."
+        },
+        {
+          "front": "Minimal pair: nest / next",
+          "back": "They differ in the final cluster /st/ and /kst/."
+        },
+        {
+          "front": "Epenthesis (vowel insertion)",
+          "back": "Putting a vowel into a cluster, such as saying \"siritiri\" for street."
+        },
+        {
+          "front": "Final cluster dropping",
+          "back": "Leaving out the last consonant, as in saying \"nes\" for nest."
+        },
+        {
+          "front": "Count sounds, not letters",
+          "back": "Count the consonant sounds in a cluster, not the consonant letters."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "How many consonant sounds are there in the initial cluster of the word \"string\"?",
+          "options": [
+            "One",
+            "Three",
+            "Two",
+            "Four"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following pairs of words differs only in an initial consonant cluster?",
+          "options": [
+            "nest and next",
+            "felt and felled",
+            "play and pray",
+            "sit and set"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A candidate pronounces \"next\" as \"nex\". What is the error?",
+          "options": [
+            "A vowel is inserted into the cluster",
+            "The vowel is lengthened",
+            "/n/ is replaced by /m/",
+            "The final cluster is shortened by dropping /t/"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which word has the final cluster /ld/?",
+          "options": [
+            "felled",
+            "felt",
+            "fell",
+            "film"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which word does not begin with a consonant cluster?",
+          "options": [
+            "blue",
+            "knight",
+            "string",
+            "scream"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) What is a consonant cluster? (b) Write down the initial cluster in each of these words: play, string, scream. (c) Write down the final cluster in each of: nest, next, felled.",
+          "markScheme": [
+            "Defines a consonant cluster as two or more consonant sounds together without a vowel between them",
+            "Gives the correct initial clusters: /pl/, /str/, /skr/",
+            "Gives the correct final clusters: /st/, /kst/, /ld/"
+          ],
+          "modelAnswer": "(a) A consonant cluster is a group of two or more consonant sounds that come together without a vowel between them. (b) play: /pl/; string: /str/; scream: /skr/. (c) nest: /st/; next: /kst/; felled: /ld/.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A consonant cluster is two or more consonant sounds that occur together without any vowel between them. (b) play /pl/, string /str/, scream /skr/. (c) nest /st/, next /kst/, felled /ld/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A consonant cluster is two or more consonant sounds that occur together without any vowel between them"
+                },
+                {
+                  "point": 1,
+                  "quote": "play /pl/, string /str/, scream /skr/"
+                },
+                {
+                  "point": 2,
+                  "quote": "nest /st/, next /kst/, felled /ld/"
+                }
+              ],
+              "feedback": "The definition and every cluster are right, and you counted sounds rather than letters. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Consonant sounds that stand together at the start or end of a syllable with no vowel sound between. (b) /pl/, /str/, /skr/. (c) /st/, /kst/, /ld/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Consonant sounds that stand together at the start or end of a syllable with no vowel sound between"
+                },
+                {
+                  "point": 1,
+                  "quote": "/pl/, /str/, /skr/"
+                },
+                {
+                  "point": 2,
+                  "quote": "/st/, /kst/, /ld/"
+                }
+              ],
+              "feedback": "Correct, and your definition covers both the start and end of a syllable. Writing the word with each cluster would make it clearer for a reader."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Two or more consonant letters together. (b) /pl/, /str/, /scr/. (c) /st/, /kst/, /ld/.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "/st/, /kst/, /ld/"
+                }
+              ],
+              "feedback": "Your final clusters are right. A cluster is of consonant sounds, not letters. In scream, the k sound is written c, so write /skr/ not /scr/."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A group of consonant sounds without a vowel. (b) /pl/, /str/, /skr/. (c) /st/, /ks/, /d/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A group of consonant sounds without a vowel"
+                },
+                {
+                  "point": 1,
+                  "quote": "/pl/, /str/, /skr/"
+                }
+              ],
+              "feedback": "(a) and (b) are right. In (c), next ends in /kst/, not /ks/, and felled ends in /ld/ because the l sound is pronounced before the d."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A consonant cluster is a word that has many consonants. (b) p, s, s. (c) t, t, d.",
+              "meets": [],
+              "feedback": "A cluster is a group of consonant sounds, not a word. In (b) and (c) you gave single letters; write the whole cluster, such as /pl/ for play and /st/ for nest."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A cluster is a group of vowels. (b) pla, stri, scre. (c) nes, nex, fel.",
+              "meets": [],
+              "feedback": "A cluster contains consonants, not vowels. Your (b) includes vowel sounds, and in (c) you dropped the final consonants, which is the very error we practise to avoid."
+            }
+          ]
+        },
+        {
+          "prompt": "In each pair, one word contains a longer consonant cluster. Write down that word and give its cluster. (a) sting / string (b) nest / next (c) pay / play",
+          "markScheme": [
+            "(a) string, with /str/",
+            "(b) next, with /kst/",
+            "(c) play, with /pl/"
+          ],
+          "modelAnswer": "(a) string has the longer cluster, /str/, against /st/ in sting. (b) next has /kst/ at the end, against /st/ in nest. (c) play begins with /pl/, whereas pay begins with the single consonant /p/.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) string: /str/ (b) next: /kst/ (c) play: /pl/",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "string: /str/"
+                },
+                {
+                  "point": 1,
+                  "quote": "next: /kst/"
+                },
+                {
+                  "point": 2,
+                  "quote": "play: /pl/"
+                }
+              ],
+              "feedback": "Each longer cluster is named exactly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) string, which begins with the three-sound cluster /str/. (b) next, which ends with the three-sound cluster /kst/. (c) play, because /pl/ is a cluster of two sounds while pay has only /p/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "string, which begins with the three-sound cluster /str/"
+                },
+                {
+                  "point": 1,
+                  "quote": "next, which ends with the three-sound cluster /kst/"
+                },
+                {
+                  "point": 2,
+                  "quote": "play, because /pl/ is a cluster of two sounds"
+                }
+              ],
+              "feedback": "You described each cluster and counted its sounds. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) string: /str/ (b) next: /ks/ (c) play: /pl/",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "string: /str/"
+                },
+                {
+                  "point": 2,
+                  "quote": "play: /pl/"
+                }
+              ],
+              "feedback": "(a) and (c) are right. The word next ends with three sounds, /kst/; /ks/ drops the final /t/, a common error."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) string (b) next (c) play",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "next"
+                }
+              ],
+              "feedback": "You chose the right words, but the question also asks for the cluster. Add /str/, /kst/ and /pl/. Always read all of a question."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) sting (b) nest (c) pay",
+              "meets": [],
+              "feedback": "These are the shorter words. The word with the longer cluster is string in (a), next in (b) and play in (c). Count the consonant sounds in each."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) string: s t r i n g (b) next: n e x t (c) play: p l a y",
+              "meets": [],
+              "feedback": "You spelled the words letter by letter. The question asks for the consonant cluster as sounds, written between slanting lines, for example /str/ for string."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Oral English: pure vowels and their contrasts",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the twelve pure vowels of English and give a key word for each;\n2. distinguish long and short vowels (/i:/ and /ɪ/, /ɑ:/ and /æ/);\n3. recognise the vowel sound in a word and match words with the same vowel;\n4. pronounce minimal pairs such as seat/sit, sit/set, peck/pack, pack/park and cart/cat.\n\n## Materials\n\nA chart of the twelve pure vowels with key words, minimal-pair cards, a recording or the teacher's clear model reading.\n\n## Starter (5 minutes)\n\nWrite \"seat\" and \"sit\" on the board. Ask a student to say both. Ask the class: is the vowel the same in both words, or is one longer?\n\n## Development\n\n1. A pure vowel (monophthong) is a single vowel sound made without moving the tongue. English has twelve: /i:/ seat, /ɪ/ sit, /e/ set, /æ/ cat, /ɑ:/ cart, /ɒ/ hot, /ɔ:/ caught, /ʊ/ put, /u:/ boot, /ʌ/ cut, /ɜ:/ bird, /ə/ the first sound of about.\n2. The colon shows a long vowel. Long and short vowels change the meaning: seat/sit, pool/pull, cart/cat.\n3. Spelling is not a guide: the vowel in \"put\" is not that in \"but\", and the letter u in \"bus\" and \"busy\" gives different sounds.\n4. Typical difficulties: merging /ɪ/ with /i:/, /æ/ with /e/ or /ʌ/, and /ɒ/ with /ɔ:/.\n5. Drill minimal pairs in groups; students identify which word is read.\n\n## Class activity\n\nThe teacher reads fifteen words; students write the number of the vowel chart that matches the vowel. They check in pairs.\n\n## Evaluation\n\n1. Which word has a long vowel: sit, seat, set?\n2. Write the key word that has the same vowel as the word \"cart\".\n\n## Assignment\n\nWrite two words for each of the twelve pure vowels, using words not already given.",
+      "reading": {
+        "title": "The pure vowels of English",
+        "content": "# The pure vowels of English\n\nEnglish has five vowel letters (a, e, i, o, u) but about twenty vowel sounds. Twelve of these are **pure vowels** (also called monophthongs): single, steady sounds. The others are diphthongs, which we meet later.\n\n## The twelve pure vowels\n\n| Symbol | Key word | Type |\n| --- | --- | --- |\n| /i:/ | seat, bee | long |\n| /ɪ/ | sit, pin | short |\n| /e/ | set, bed | short |\n| /æ/ | cat, pack | short |\n| /ɑ:/ | cart, park | long |\n| /ɒ/ | hot, dog | short |\n| /ɔ:/ | caught, born | long |\n| /ʊ/ | put, book | short |\n| /u:/ | boot, moon | long |\n| /ʌ/ | cut, love | short |\n| /ɜ:/ | bird, work | long |\n| /ə/ | about, teacher (last syllable) | short, weak |\n\nThe colon (:) after the symbol shows a **long** vowel.\n\n## Why vowel length and quality matter\n\nIf two words differ in one vowel only, the vowel carries the whole difference of meaning:\n\n- *seat* /si:t/ and *sit* /sɪt/;\n- *sit* /sɪt/ and *set* /set/;\n- *peck* /pek/ and *pack* /pæk/;\n- *pack* /pæk/ and *park* /pɑ:k/;\n- *cart* /kɑ:t/ and *cat* /kæt/.\n\nA speaker who says *sit* for *seat* may be understood in context, but in an examination you must show that you hear and make the difference.\n\n## Spelling is not a reliable guide\n\nThe same letters give different sounds, and different letters give the same sound:\n\n- *put* /pʊt/ and *but* /bʌt/ are spelt alike but not pronounced alike;\n- *bee*, *sea*, *key* and *people* all have the sound /i:/;\n- *cut* and *love* both have /ʌ/ though the letters differ.\n\n## Common difficulties\n\n1. Using /ɪ/ for /i:/ (*sit* for *seat*).\n2. Using /e/ for /æ/ (*bed* for *bad*).\n3. Using /ɒ/ for /ɔ:/ (*cot* for *caught*).\n4. Making all unstressed vowels full instead of /ə/.\n\n**Worked example.** Choose the word that has the same vowel sound as the underlined part of *p**ar**k*: *pack, cart, cat, pit*.\n\n1. *park* has /ɑ:/.\n2. *pack* has /æ/, *cat* has /æ/, *pit* has /ɪ/.\n3. *cart* has /ɑ:/.\n\nThe answer is **cart**."
+      },
+      "cards": [
+        {
+          "front": "Pure vowel (monophthong)",
+          "back": "A single, steady vowel sound; English has twelve."
+        },
+        {
+          "front": "/i:/ as in",
+          "back": "seat, bee, key (long)."
+        },
+        {
+          "front": "/ɪ/ as in",
+          "back": "sit, pin, busy (short)."
+        },
+        {
+          "front": "/æ/ as in",
+          "back": "cat, pack, bad (short)."
+        },
+        {
+          "front": "/ɑ:/ as in",
+          "back": "cart, park, father (long)."
+        },
+        {
+          "front": "/ɔ:/ as in",
+          "back": "caught, born, door (long)."
+        },
+        {
+          "front": "/ə/",
+          "back": "The weak vowel in unstressed syllables, as in about and teacher."
+        },
+        {
+          "front": "What the colon in /i:/ shows",
+          "back": "That the vowel is long."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these words has the vowel /ɑ:/?",
+          "options": [
+            "cat",
+            "cart",
+            "cut",
+            "caught"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Choose the word that has the same vowel sound as \"seat\".",
+          "options": [
+            "sit",
+            "set",
+            "key",
+            "say"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which pair of words is distinguished by a short and a long vowel?",
+          "options": [
+            "sit and seat",
+            "peck and pack",
+            "pack and back",
+            "cat and cap"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which word has the same vowel sound as \"love\"?",
+          "options": [
+            "put",
+            "move",
+            "go",
+            "cut"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "In the word \"teacher\", the vowel sound in the last syllable is",
+          "options": [
+            "/i:/",
+            "/ə/",
+            "/e/",
+            "/ɜ:/"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) What is a pure vowel? (b) For each pair, write the symbol of the vowel in each word and say whether it is long or short: (i) seat and sit (ii) pack and park.",
+          "markScheme": [
+            "States that a pure vowel is a single vowel sound made without a change of tongue position (a monophthong)",
+            "Gives (i) seat /i:/ long and sit /ɪ/ short",
+            "Gives (ii) pack /æ/ short and park /ɑ:/ long"
+          ],
+          "modelAnswer": "(a) A pure vowel is a single steady vowel sound in which the tongue does not move; it is also called a monophthong. (b) (i) seat has /i:/, which is long, and sit has /ɪ/, which is short. (ii) pack has /æ/, which is short, and park has /ɑ:/, which is long.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A pure vowel is a vowel sound made in one steady position of the tongue, with no glide. (b) (i) seat /i:/ is long and sit /ɪ/ is short. (ii) pack /æ/ is short and park /ɑ:/ is long.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A pure vowel is a vowel sound made in one steady position of the tongue, with no glide"
+                },
+                {
+                  "point": 1,
+                  "quote": "seat /i:/ is long and sit /ɪ/ is short"
+                },
+                {
+                  "point": 2,
+                  "quote": "pack /æ/ is short and park /ɑ:/ is long"
+                }
+              ],
+              "feedback": "Definition, symbols and lengths all correct. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) A monophthong, which is a single vowel sound where the tongue stays in the same place. (b) (i) /i:/ long, /ɪ/ short. (ii) /æ/ short, /ɑ:/ long.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A monophthong, which is a single vowel sound where the tongue stays in the same place"
+                },
+                {
+                  "point": 1,
+                  "quote": "(i) /i:/ long, /ɪ/ short"
+                },
+                {
+                  "point": 2,
+                  "quote": "(ii) /æ/ short, /ɑ:/ long"
+                }
+              ],
+              "feedback": "Using the term monophthong shows good revision. Your order matches the words as asked."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A pure vowel is a single vowel sound. (b) (i) seat /i:/ is long and sit /ɪ/ is short. (ii) pack /e/ is short and park /ɑ:/ is long.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A pure vowel is a single vowel sound"
+                },
+                {
+                  "point": 1,
+                  "quote": "seat /i:/ is long and sit /ɪ/ is short"
+                }
+              ],
+              "feedback": "(a) and (i) are right. In (ii) pack has /æ/, not /e/; /e/ is the vowel in peck and set."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A vowel that is a, e, i, o or u. (b) (i) seat /i:/ is long and sit /ɪ/ is short. (ii) pack /æ/ is short and park /ɑ:/ is long.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "seat /i:/ is long and sit /ɪ/ is short"
+                },
+                {
+                  "point": 2,
+                  "quote": "pack /æ/ is short and park /ɑ:/ is long"
+                }
+              ],
+              "feedback": "(b) is completely correct. In (a), a pure vowel is a single vowel sound, not a letter; there are twelve of them, while the letters are five."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A pure vowel is a vowel with no consonant. (b) (i) seat is a, sit is i. (ii) pack is a, park is a.",
+              "meets": [],
+              "feedback": "You named the vowel letters, but the question asks for vowel sounds in IPA symbols such as /i:/ and /ɪ/. Say the words aloud and listen to the sound of each."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Pure vowels are the ones in the dictionary. (b) (i) both are short. (ii) both are long.",
+              "meets": [],
+              "feedback": "In each pair one vowel is long and one short. Seat is long, sit is short, and in pack and park the order is short and long. A long vowel takes longer to say."
+            }
+          ]
+        },
+        {
+          "prompt": "Each transcription below stands for one of the two words in brackets. Write down the word, and name the vowel sound that tells the two words apart. (a) /sɪt/ (sit / seat) (b) /pæk/ (pack / park) (c) /kɑ:t/ (cart / cat)",
+          "markScheme": [
+            "(a) sit, with the short vowel /ɪ/ (seat has /i:/)",
+            "(b) pack, with the vowel /æ/ (park has /ɑ:/)",
+            "(c) cart, with the long vowel /ɑ:/ (cat has /æ/)"
+          ],
+          "modelAnswer": "(a) sit, because the vowel /ɪ/ is short, whereas seat has the long vowel /i:/. (b) pack, because it has /æ/, whereas park has the long vowel /ɑ:/. (c) cart, because it has the long vowel /ɑ:/, whereas cat has the short vowel /æ/.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) sit: it has the short vowel /ɪ/, and seat would have /i:/. (b) pack: it has /æ/, while park has /ɑ:/. (c) cart: it has the long /ɑ:/ and cat has /æ/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sit: it has the short vowel /ɪ/, and seat would have /i:/"
+                },
+                {
+                  "point": 1,
+                  "quote": "pack: it has /æ/, while park has /ɑ:/"
+                },
+                {
+                  "point": 2,
+                  "quote": "cart: it has the long /ɑ:/ and cat has /æ/"
+                }
+              ],
+              "feedback": "All three words are chosen and the vowels are named correctly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) sit, because /ɪ/ is the short vowel, not /i:/. (b) pack, since /æ/ is not the long /ɑ:/ of park. (c) cart, as it has the long vowel /ɑ:/ unlike the /æ/ in cat.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sit, because /ɪ/ is the short vowel, not /i:/"
+                },
+                {
+                  "point": 1,
+                  "quote": "pack, since /æ/ is not the long /ɑ:/ of park"
+                },
+                {
+                  "point": 2,
+                  "quote": "cart, as it has the long vowel /ɑ:/ unlike the /æ/ in cat"
+                }
+              ],
+              "feedback": "Correct on each, with the contrast stated. Your reasoning is easy to follow."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) sit. (b) pack, because it has /æ/. (c) cart.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "pack, because it has /æ/"
+                }
+              ],
+              "feedback": "Your three words are correct, but only (b) names the vowel sound as the question asks. For (a) write /ɪ/ against /i:/, and for (c) /ɑ:/ against /æ/."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) sit, because /ɪ/ is short. (b) park, because /ɑ:/ is long. (c) cart, because /ɑ:/ is long.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sit, because /ɪ/ is short"
+                },
+                {
+                  "point": 2,
+                  "quote": "cart, because /ɑ:/ is long"
+                }
+              ],
+              "feedback": "(a) and (c) are right. In (b), the transcription /pæk/ has the short vowel /æ/, so the word is pack. Park would be /pɑ:k/."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) seat. (b) park. (c) cat.",
+              "meets": [],
+              "feedback": "Each of these has the wrong vowel for the transcription. /ɪ/ is the vowel of sit, /æ/ the vowel of pack, and /ɑ:/ the vowel of cart. Learn the key words in the vowel table."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) sit, because it has an i. (b) pack, because it has an a. (c) cart, because it has an a.",
+              "meets": [],
+              "feedback": "You looked at the spelling. The question is about the vowel sounds: /ɪ/, /æ/ and /ɑ:/, and cat and cart both have the letter a but different sounds."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Oral English: diphthongs and triphthongs",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a diphthong and a triphthong;\n2. name the eight diphthongs of English and give a key word for each;\n3. identify words with the same diphthong and contrast diphthongs with pure vowels (let/late, cheer/chair, load/lord);\n4. recognise the five triphthongs in words such as player, fire, royal, lower and hour.\n\n## Materials\n\nA vowel chart showing glides, minimal-pair cards, a recording of the teacher's model reading.\n\n## Starter (5 minutes)\n\nSay \"late\" slowly and ask the class to notice that the mouth moves during the vowel. Say \"let\" and compare: the mouth stays still.\n\n## Development\n\n1. A diphthong is a vowel sound that glides from one vowel position to another within one syllable. English has eight: /eɪ/ (late), /aɪ/ (high), /ɔɪ/ (boy), /əʊ/ (go), /aʊ/ (now), /ɪə/ (cheer), /eə/ (chair), /ʊə/ (tour).\n2. A triphthong is a diphthong with a weak /ə/ added at the end: /eɪə/ in player, /aɪə/ in fire, /ɔɪə/ in royal, /əʊə/ in lower, /aʊə/ in hour.\n3. Contrasts that matter: let/late (/e/ and /eɪ/), cheer/chair (/ɪə/ and /eə/), load/lord (/əʊ/ and /ɔ:/), cot/coat (/ɒ/ and /əʊ/).\n4. Common difficulties: replacing a diphthong with a pure vowel (saying \"go\" as /gɔ/), and confusing /ɪə/ with /eə/ or /ʊə/ with /ɔ:/.\n5. Drill: say the first part, then glide to the second without a break.\n\n## Class activity\n\nStudents sort twenty word cards into the eight diphthong groups and the triphthong group, then check against the chart.\n\n## Evaluation\n\n1. Which word has a diphthong: bed, bad, bay?\n2. How many vowel sounds are in the word \"fire\"?\n\n## Assignment\n\nFind three words for each diphthong and write them in a table with their transcription.",
+      "reading": {
+        "title": "Gliding vowels: diphthongs and triphthongs",
+        "content": "# Gliding vowels: diphthongs and triphthongs\n\nPure vowels keep the tongue in one place. A **diphthong** is a vowel sound in which the tongue glides from one position to another during one syllable. Say the word *late* slowly: you will feel your mouth move from /e/ towards /ɪ/. The sound is written /eɪ/.\n\n## The eight diphthongs\n\n| Symbol | Key word | Glide towards |\n| --- | --- | --- |\n| /eɪ/ | late, day | /ɪ/ |\n| /aɪ/ | high, fly | /ɪ/ |\n| /ɔɪ/ | boy, coin | /ɪ/ |\n| /əʊ/ | go, boat | /ʊ/ |\n| /aʊ/ | now, house | /ʊ/ |\n| /ɪə/ | cheer, here | /ə/ |\n| /eə/ | chair, there | /ə/ |\n| /ʊə/ | tour, poor | /ə/ |\n\nThe first part of the diphthong is longer and stronger; the second part is short and weak.\n\n## Triphthongs\n\nA **triphthong** is a diphthong followed by a weak /ə/. There are five:\n\n| Symbol | Key word |\n| --- | --- |\n| /eɪə/ | player |\n| /aɪə/ | fire |\n| /ɔɪə/ | royal |\n| /əʊə/ | lower |\n| /aʊə/ | hour |\n\nIn the rapid speech of many speakers, the middle part is weakened, so *fire* may sound like *far*. In careful speech it has three parts.\n\n## Contrasts to practise\n\n- *let* /let/ and *late* /leɪt/: pure vowel /e/ against diphthong /eɪ/;\n- *cheer* /tʃɪə/ and *chair* /tʃeə/: two different diphthongs;\n- *load* /ləʊd/ and *lord* /lɔ:d/: diphthong /əʊ/ against pure vowel /ɔ:/;\n- *cot* /kɒt/ and *coat* /kəʊt/.\n\n## Common errors\n\nSpeakers often replace a diphthong with a pure vowel, saying *go* as /gɔ:/ or *day* as /de/. Others confuse /ɪə/ and /eə/ so that *here* and *hair* sound alike.\n\n**Worked example.** Choose the word with the same vowel sound as the one underlined in *c**oa**t*: *cot, caught, boat, cut*.\n\n1. *coat* has /əʊ/.\n2. *cot* has /ɒ/, *caught* has /ɔ:/ and *cut* has /ʌ/.\n3. *boat* has /əʊ/.\n\nThe answer is **boat**."
+      },
+      "cards": [
+        {
+          "front": "Diphthong",
+          "back": "A vowel sound that glides from one vowel position to another within one syllable."
+        },
+        {
+          "front": "Triphthong",
+          "back": "A diphthong followed by a weak /ə/, giving three vowel parts."
+        },
+        {
+          "front": "/eɪ/ as in",
+          "back": "late, day, rain."
+        },
+        {
+          "front": "/əʊ/ as in",
+          "back": "go, boat, home."
+        },
+        {
+          "front": "/ɪə/ as in",
+          "back": "cheer, here, near."
+        },
+        {
+          "front": "/eə/ as in",
+          "back": "chair, there, care."
+        },
+        {
+          "front": "Example of a triphthong",
+          "back": "/aɪə/ in fire; /aʊə/ in hour."
+        },
+        {
+          "front": "Contrast: load / lord",
+          "back": "/əʊ/ diphthong against /ɔ:/ pure vowel."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these words contains a diphthong?",
+          "options": [
+            "bed",
+            "bad",
+            "bay",
+            "bud"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Choose the word that has the same vowel sound as \"cheer\".",
+          "options": [
+            "chair",
+            "here",
+            "church",
+            "chart"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which pair of words differs by a diphthong and a pure vowel?",
+          "options": [
+            "load and lord",
+            "cheer and chair",
+            "late and gate",
+            "high and hi"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The word \"hour\" is an example of",
+          "options": [
+            "a pure vowel",
+            "a diphthong",
+            "a consonant cluster",
+            "a triphthong"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which word has the vowel /ɔɪ/?",
+          "options": [
+            "bow",
+            "bay",
+            "boy",
+            "bee"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Define a diphthong, giving two examples of words with different diphthongs. (b) What is the difference between a diphthong and a triphthong?",
+          "markScheme": [
+            "Defines a diphthong as a vowel sound that glides from one vowel position to another in one syllable",
+            "Gives two correct examples with different diphthongs (for example late /eɪ/ and go /əʊ/)",
+            "States that a triphthong is a diphthong followed by /ə/, so it has three parts, and gives an example such as fire"
+          ],
+          "modelAnswer": "(a) A diphthong is a vowel sound in which the tongue glides from one vowel position to another within a single syllable. Examples are late /eɪ/ and go /əʊ/. (b) A triphthong is a diphthong with a weak /ə/ added, so it has three parts, as in fire /faɪə/.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A diphthong is a vowel sound that glides from one vowel to another in one syllable. Examples are boy /ɔɪ/ and now /aʊ/. (b) A triphthong is a diphthong followed by a weak schwa, so it has three vowel parts, as in fire /aɪə/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A diphthong is a vowel sound that glides from one vowel to another in one syllable"
+                },
+                {
+                  "point": 1,
+                  "quote": "Examples are boy /ɔɪ/ and now /aʊ/"
+                },
+                {
+                  "point": 2,
+                  "quote": "A triphthong is a diphthong followed by a weak schwa, so it has three vowel parts, as in fire /aɪə/"
+                }
+              ],
+              "feedback": "A correct definition, two examples with different diphthongs, and a clear statement of the difference. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) A diphthong is a gliding vowel where the tongue moves while the vowel is being said, for example late /eɪ/ and cheer /ɪə/. (b) A diphthong has two parts but a triphthong has three, because it adds /ə/ at the end. For example, hour /aʊə/.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A diphthong is a gliding vowel where the tongue moves while the vowel is being said"
+                },
+                {
+                  "point": 1,
+                  "quote": "late /eɪ/ and cheer /ɪə/"
+                },
+                {
+                  "point": 2,
+                  "quote": "A diphthong has two parts but a triphthong has three, because it adds /ə/ at the end"
+                }
+              ],
+              "feedback": "Clear and accurate. Your examples show two different glides."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A diphthong is a vowel sound made of two vowels. Examples are late /eɪ/ and go /əʊ/. (b) A triphthong is a vowel with three letters.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "late /eɪ/ and go /əʊ/"
+                }
+              ],
+              "feedback": "Your examples are right. A diphthong is one glided sound, not two separate vowels, and the difference is in sounds, not letters: a triphthong has three parts, ending in /ə/."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A diphthong is a vowel that glides from one position to another. Examples are cat and bed. (b) A triphthong is a diphthong with an extra /ə/ such as fire.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A diphthong is a vowel that glides from one position to another"
+                },
+                {
+                  "point": 2,
+                  "quote": "A triphthong is a diphthong with an extra /ə/ such as fire"
+                }
+              ],
+              "feedback": "The definition and (b) are good. Cat /æ/ and bed /e/ are pure vowels. Examples of diphthongs are late, go and boy."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A diphthong is a word with two vowel letters like boat and rain. (b) A triphthong is a word with three vowel letters like beautiful.",
+              "meets": [],
+              "feedback": "Diphthongs and triphthongs are sounds, not spellings. Boat has the diphthong /əʊ/, but we count sounds in speech. A triphthong is a diphthong plus /ə/."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A diphthong is a double consonant. (b) A triphthong is a triple consonant.",
+              "meets": [],
+              "feedback": "Both are about vowels. A diphthong is a vowel glide such as /eɪ/ in late; a triphthong adds /ə/ at the end, as in fire."
+            }
+          ]
+        },
+        {
+          "prompt": "For each pair, write the transcription of each word and say what kind of vowel each has (pure vowel, diphthong). (a) let and late (b) load and lord (c) cheer and chair",
+          "markScheme": [
+            "(a) let /let/ has a pure vowel; late /leɪt/ has a diphthong",
+            "(b) load /ləʊd/ has a diphthong; lord /lɔ:d/ has a pure vowel",
+            "(c) cheer /tʃɪə/ and chair /tʃeə/ both have diphthongs"
+          ],
+          "modelAnswer": "(a) let /let/ has the pure vowel /e/; late /leɪt/ has the diphthong /eɪ/. (b) load /ləʊd/ has the diphthong /əʊ/; lord /lɔ:d/ has the pure vowel /ɔ:/. (c) cheer /tʃɪə/ has the diphthong /ɪə/ and chair /tʃeə/ has the diphthong /eə/.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) let /let/, pure vowel; late /leɪt/, diphthong. (b) load /ləʊd/, diphthong; lord /lɔ:d/, pure vowel. (c) cheer /tʃɪə/, diphthong; chair /tʃeə/, diphthong.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "let /let/, pure vowel; late /leɪt/, diphthong"
+                },
+                {
+                  "point": 1,
+                  "quote": "load /ləʊd/, diphthong; lord /lɔ:d/, pure vowel"
+                },
+                {
+                  "point": 2,
+                  "quote": "cheer /tʃɪə/, diphthong; chair /tʃeə/, diphthong"
+                }
+              ],
+              "feedback": "All six transcriptions and classifications correct. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) /let/ has one pure vowel /e/ but /leɪt/ has a diphthong /eɪ/. (b) /ləʊd/ has a diphthong /əʊ/ and /lɔ:d/ has the long pure vowel /ɔ:/. (c) /tʃɪə/ and /tʃeə/ each have a diphthong, /ɪə/ and /eə/ respectively.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "/let/ has one pure vowel /e/ but /leɪt/ has a diphthong /eɪ/"
+                },
+                {
+                  "point": 1,
+                  "quote": "/ləʊd/ has a diphthong /əʊ/ and /lɔ:d/ has the long pure vowel /ɔ:/"
+                },
+                {
+                  "point": 2,
+                  "quote": "/tʃɪə/ and /tʃeə/ each have a diphthong"
+                }
+              ],
+              "feedback": "Accurate and well organised. You identified that (c) is a contrast between two diphthongs, not between a pure vowel and a diphthong."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) let /let/, pure vowel; late /leɪt/, diphthong. (b) load /lɔ:d/, pure vowel; lord /lɔ:d/, pure vowel. (c) cheer and chair have diphthongs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "let /let/, pure vowel; late /leɪt/, diphthong"
+                },
+                {
+                  "point": 2,
+                  "quote": "cheer and chair have diphthongs"
+                }
+              ],
+              "feedback": "(a) and (c) are right. In (b), load has the diphthong /əʊ/, so /ləʊd/; you wrote it the same as lord. The two words differ in exactly that vowel."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) let /let/ and late /let/, both pure vowels. (b) load /ləʊd/, diphthong; lord /lɔ:d/, pure vowel. (c) cheer /tʃɪə/, chair /tʃeə/, both diphthongs.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "load /ləʊd/, diphthong; lord /lɔ:d/, pure vowel"
+                },
+                {
+                  "point": 2,
+                  "quote": "cheer /tʃɪə/, chair /tʃeə/, both diphthongs"
+                }
+              ],
+              "feedback": "(b) and (c) are right. In (a), late has the diphthong /eɪ/, so /leɪt/ and not /let/. That is the difference between the pair."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) both words have the letter e. (b) both words have the letter o. (c) both words have the letter e.",
+              "meets": [],
+              "feedback": "You looked at the spelling. We compare the vowel sounds: let has /e/, late has /eɪ/, load has /əʊ/, lord has /ɔ:/. Say each word slowly and notice if the mouth moves."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) let is short and late is long. (b) load is short and lord is long. (c) cheer is short and chair is long.",
+              "meets": [],
+              "feedback": "Length is only part of the story. The question asks whether the vowel is pure or a diphthong; late, load, cheer and chair all have glides, and the transcription must be written."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Oral English: word stress and shifting stress",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define stress and syllable, and count the syllables in a word;\n2. identify the stressed syllable in words of two or more syllables;\n3. explain how stress shifts between a noun and a verb (record, import, rebel) and between related words (photograph, photography, photographic);\n4. recognise the change of vowel quality when stress moves.\n\n## Materials\n\nA list of words with the stress mark ' placed before the stressed syllable, a drum or desk for tapping the beat, a recording of the teacher's model reading.\n\n## Starter (5 minutes)\n\nSay \"present\" two ways: 'present (a gift) and pre'sent (to hand over). Ask: does the meaning change? What changed?\n\n## Development\n\n1. A syllable is a unit of pronunciation with one vowel sound: tea-cher (2), ed-u-ca-tion (4). The stressed syllable is said with more force, longer and higher in pitch.\n2. In dictionaries the stress mark ' comes before the stressed syllable: 'teacher, pho'tography.\n3. Shifting stress in two-syllable words: nouns and adjectives are often stressed on the first syllable, verbs on the second ('import n, im'port v; 'record n, re'cord v; 'rebel n, re'bel v; 'increase n, in'crease v).\n4. Shifting stress in word families: 'photograph, pho'tography, photo'graphic; 'politics, po'litical; 'economy, eco'nomic.\n5. Vowel quality changes when stress changes: the stressed syllable has a full vowel, and the unstressed one is reduced to /ə/ (for example, 'present with /e/ and /ə/; pre'sent with /ɪ/ or /ə/ and /e/).\n6. Practise by tapping the beat on the desk on the stressed syllable.\n\n## Class activity\n\nStudents are given twenty words. They mark the stressed syllable and tap it while saying the word. Pairs check each other against a dictionary.\n\n## Evaluation\n\n1. How many syllables has the word \"economy\", and which is stressed?\n2. Mark the stress in the noun and the verb: record.\n\n## Assignment\n\nFind six words in your textbook with the stress mark in the dictionary and copy them with their transcription.",
+      "reading": {
+        "title": "Where the stress falls",
+        "content": "# Where the stress falls\n\nIn any English word of more than one syllable, one syllable is said with more force than the others. This is the **stressed syllable**. It is longer, louder and higher in pitch. Wrong stress can make a word hard to understand, even when every sound in it is right.\n\n## Syllables\n\nA **syllable** has one vowel sound.\n\n- *teacher*: tea-cher (2 syllables);\n- *economy*: e-con-o-my (4);\n- *school*: school (1).\n\n## Marking stress\n\nDictionaries put the mark **'** before the stressed syllable.\n\n- **'**teacher: stress on the first syllable;\n- a**'**bout: stress on the second;\n- e**'**conomy: stress on the second;\n- educ**'**ation: stress on the third.\n\n## Nouns and verbs\n\nMany two-syllable words are both noun and verb. The noun is usually stressed on the **first** syllable, and the verb on the **second**.\n\n| Word | Noun | Verb |\n| --- | --- | --- |\n| import | **'**import | im**'**port |\n| record | **'**record | re**'**cord |\n| rebel | **'**rebel | re**'**bel |\n| increase | **'**increase | in**'**crease |\n| present | **'**present | pre**'**sent |\n| object | **'**object | ob**'**ject |\n\nCompare: *Nigeria's* **'**imports *have* **in'**creased. *Nigeria must* **im'**port *less rice.*\n\n## Word families\n\nWhen a suffix is added, the stress often moves.\n\n| Base | Related words |\n| --- | --- |\n| **'**photograph | pho**'**tography, photo**'**graphic |\n| **'**politics | po**'**litical, politi**'**cian |\n| e**'**conomy | eco**'**nomic, e**'**conomist |\n| **'**family | fa**'**miliar |\n\n## Stress changes the vowel\n\nIn a stressed syllable the vowel is full and clear. In an unstressed syllable it often weakens to /ə/. In **'**photograph the first syllable has /əʊ/ and the second is reduced; in pho**'**tography the first syllable is reduced to /ə/ and the second is stressed. The same letters give different sounds when the stress moves.\n\n## Finding the stress\n\n1. Say the word aloud and tap the beat on the desk.\n2. The syllable on which the tap falls hardest is stressed.\n3. Check with a dictionary.\n\n**Worked example.** Mark the stress in the verb *record*.\n\n1. *record* has two syllables: re-cord.\n2. As a verb, the stress falls on the second syllable.\n3. Answer: re**'**cord, said /rɪ'kɔ:d/. The noun is **'**record, said /'rekɔ:d/."
+      },
+      "cards": [
+        {
+          "front": "Syllable",
+          "back": "A unit of pronunciation that has one vowel sound."
+        },
+        {
+          "front": "Stressed syllable",
+          "back": "The syllable said with more force, length and pitch than the others."
+        },
+        {
+          "front": "Stress mark",
+          "back": "The sign ' placed before the stressed syllable in a dictionary."
+        },
+        {
+          "front": "Noun and verb stress in import",
+          "back": "Noun: 'import (first syllable). Verb: im'port (second syllable)."
+        },
+        {
+          "front": "Stress in economy",
+          "back": "e'conomy (second syllable); eco'nomic (third syllable)."
+        },
+        {
+          "front": "Stress in photograph, photography",
+          "back": "'photograph; pho'tography."
+        },
+        {
+          "front": "What happens to unstressed vowels",
+          "back": "They are often reduced to /ə/."
+        },
+        {
+          "front": "Quick way to find the stress",
+          "back": "Say the word aloud and tap the beat; the strongest tap falls on the stressed syllable."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which word has its stress on the second syllable when used as a verb?",
+          "options": [
+            "table",
+            "market",
+            "teacher",
+            "record"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "How many syllables are in the word \"education\"?",
+          "options": [
+            "Two",
+            "Three",
+            "Four",
+            "Five"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is correctly marked for the stress of the noun?",
+          "options": [
+            "im'port",
+            "'import",
+            "imp'ort",
+            "i'mport"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "In which word does the stress fall on the third syllable?",
+          "options": [
+            "photo'graphic",
+            "pho'tography",
+            "'photograph",
+            "'photographer"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Why does the vowel in the first syllable of \"photography\" differ from that in \"photograph\"?",
+          "options": [
+            "The spelling is different",
+            "The letter o has changed",
+            "Photography is a verb",
+            "The stress has moved, so the first vowel is reduced"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Explain the difference in stress between the noun and the verb in \"The 'record was broken\" and \"They want to re'cord the song\". (b) Give another word that behaves the same way, marking the stress in both uses.",
+          "markScheme": [
+            "States that in the noun the stress falls on the first syllable",
+            "States that in the verb the stress falls on the second syllable",
+            "Gives another word (for example import, rebel, increase, present, object) with the stress correctly marked for the noun and the verb"
+          ],
+          "modelAnswer": "(a) As a noun, record is stressed on the first syllable, 'record. As a verb it is stressed on the second syllable, re'cord. (b) Import follows the same pattern: the noun is 'import and the verb is im'port.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) When record is a noun the stress is on the first syllable, 'record. When it is a verb the stress moves to the second syllable, re'cord. (b) Import: the noun is 'import and the verb is im'port.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "When record is a noun the stress is on the first syllable, 'record"
+                },
+                {
+                  "point": 1,
+                  "quote": "When it is a verb the stress moves to the second syllable, re'cord"
+                },
+                {
+                  "point": 2,
+                  "quote": "Import: the noun is 'import and the verb is im'port"
+                }
+              ],
+              "feedback": "Rule and example both correct, with the stress marks placed accurately. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) The noun has the stress on the first syllable and the verb has it on the second syllable. (b) Rebel: the noun is 'rebel and the verb is re'bel.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The noun has the stress on the first syllable"
+                },
+                {
+                  "point": 1,
+                  "quote": "the verb has it on the second syllable"
+                },
+                {
+                  "point": 2,
+                  "quote": "Rebel: the noun is 'rebel and the verb is re'bel"
+                }
+              ],
+              "feedback": "A neat, complete answer. You used the stress marks correctly before the stressed syllable."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) In the noun the stress is on the first syllable and in the verb the stress is on the first syllable too. (b) Present: 'present and 'present.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In the noun the stress is on the first syllable"
+                }
+              ],
+              "feedback": "The noun is right. The stress changes in the verb: re'cord has stress on the second syllable. That is why the pair is worth learning: pre'sent is the verb."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The stress changes. The verb is stressed on the second syllable. (b) Import: 'import, im'port.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The verb is stressed on the second syllable"
+                },
+                {
+                  "point": 2,
+                  "quote": "Import: 'import, im'port"
+                }
+              ],
+              "feedback": "The verb rule and your example are good. State where the noun stress is: the first syllable."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) There is no difference because it is the same word. (b) Teacher.",
+              "meets": [],
+              "feedback": "The spelling is the same, but the stress is not: the noun is 'record and the verb is re'cord. And teacher is stressed on the first syllable in all uses; choose a word like import."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The noun is louder than the verb. (b) Table, market.",
+              "meets": [],
+              "feedback": "Stress is about which syllable is stressed, not how loud the whole word is. Table and market have the same stress in every use. Words that change are import, rebel, present."
+            }
+          ]
+        },
+        {
+          "prompt": "Mark the stressed syllable in each of the following words, writing the stress mark ' before it, and say how many syllables each word has: (a) economy (b) economic (c) politician",
+          "markScheme": [
+            "(a) e'conomy, four syllables",
+            "(b) eco'nomic, four syllables",
+            "(c) poli'tician, four syllables"
+          ],
+          "modelAnswer": "(a) e'conomy: four syllables, e-con-o-my, with the stress on the second. (b) eco'nomic: four syllables, e-co-nom-ic, with the stress on the third. (c) poli'tician: four syllables, pol-i-ti-cian, with the stress on the third.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) e'conomy, four syllables. (b) eco'nomic, four syllables. (c) poli'tician, four syllables.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "e'conomy, four syllables"
+                },
+                {
+                  "point": 1,
+                  "quote": "eco'nomic, four syllables"
+                },
+                {
+                  "point": 2,
+                  "quote": "poli'tician, four syllables"
+                }
+              ],
+              "feedback": "All three stress marks are in the right place and the syllables are counted correctly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) e-con-o-my (4 syllables), stress on con: e'conomy. (b) e-co-nom-ic (4), stress on nom: eco'nomic. (c) pol-i-ti-cian (4), stress on ti: poli'tician.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "e-con-o-my (4 syllables), stress on con: e'conomy"
+                },
+                {
+                  "point": 1,
+                  "quote": "e-co-nom-ic (4), stress on nom: eco'nomic"
+                },
+                {
+                  "point": 2,
+                  "quote": "pol-i-ti-cian (4), stress on ti: poli'tician"
+                }
+              ],
+              "feedback": "Splitting each word into syllables before marking the stress is the safest method. All correct."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) e'conomy, four syllables. (b) 'economic, four syllables. (c) poli'tician, four syllables.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "e'conomy, four syllables"
+                },
+                {
+                  "point": 2,
+                  "quote": "poli'tician, four syllables"
+                }
+              ],
+              "feedback": "(a) and (c) are right. In (b) the suffix -ic moves the stress to the syllable before it: eco'nomic, not 'economic."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 'economy, four syllables. (b) eco'nomic, four syllables. (c) 'politician, three syllables.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "eco'nomic, four syllables"
+                }
+              ],
+              "feedback": "(b) is right. In (a) the stress is on the second syllable, e'conomy. In (c) there are four syllables, pol-i-ti-cian, and the stress is on ti."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) economy, 2. (b) economic, 2. (c) politician, 2.",
+              "meets": [],
+              "feedback": "You did not mark the stress, and the syllable counts are too low. Count the vowel sounds: e-con-o-my is four, and the others also have four."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 'e'c'o'n'o'm'y. (b) 'e'c'o'n'o'm'i'c. (c) 'p'o'l'i'ti'c'i'a'n.",
+              "meets": [],
+              "feedback": "A word has one main stress, not one on every letter. Count the syllables, then mark the one pronounced most strongly."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Oral English: sentence stress and the rhythm of English",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain that English is a stress-timed language;\n2. tell content words (nouns, main verbs, adjectives, adverbs) from function words (articles, prepositions, auxiliaries, pronouns, conjunctions);\n3. mark the stressed words in a sentence and read it with the right rhythm;\n4. explain why function words are usually weak in connected speech.\n\n## Materials\n\nSentences on strips, a drum or a ruler for tapping, a short recorded dialogue.\n\n## Starter (5 minutes)\n\nTap a steady beat on the desk and say: \"CATS chase MICE.\" Then say \"The CATS have been CHASing the MICE.\" Ask: which sentence took longer to say? (Almost the same time.) Introduce rhythm.\n\n## Development\n\n1. In a stress-timed language like English, stressed syllables come at roughly equal intervals of time. Unstressed syllables are squeezed in between.\n2. Content words carry meaning and are normally stressed: nouns, main verbs, adjectives, adverbs (and also question words and demonstratives).\n3. Function words hold the sentence together and are normally unstressed: articles (a, the), prepositions (in, at), auxiliaries (is, have), pronouns (he, she), conjunctions (and, but). They are often weak: \"and\" /ən/, \"to\" /tə/, \"of\" /əv/.\n4. Mark the stress in a sentence: The 'farmer 'sold the 'yams at the 'market.\n5. Practise tapping the stressed words at an even beat while saying the whole sentence.\n6. Warn: learners who give every word equal stress speak slowly and sound unnatural in an examination.\n\n## Class activity\n\nIn pairs, one reads a sentence while the other taps the stressed words. They then swap sentences, and each pair performs for the class.\n\n## Evaluation\n\n1. Mark the stressed words in: \"My brother is going to the market.\"\n2. Why is \"the\" usually unstressed?\n\n## Assignment\n\nWrite five sentences of your own and mark the stressed words with an underline. Read them aloud at home.",
+      "reading": {
+        "title": "The rhythm of English",
+        "content": "# The rhythm of English\n\nWhen you speak English, some words are said strongly and others are said weakly and quickly. This pattern gives English its **rhythm**.\n\n## Stress-timed language\n\nEnglish is **stress-timed**. This means that the stressed syllables come at roughly equal intervals of time, no matter how many unstressed syllables fall between them. Compare:\n\n1. **CATS chase MICE.**\n2. **The CATS have been CHAsing the MICE.**\n\nThe second sentence has more syllables, but it takes almost the same time to say as the first because the extra syllables are squeezed in between the stressed words. A learner who gives every syllable the same length, as in some other languages, will speak with a different rhythm.\n\n## Content words and function words\n\n| Content words (stressed) | Function words (usually unstressed) |\n| --- | --- |\n| nouns: *farmer, yams, market* | articles: *a, an, the* |\n| main verbs: *sold, bought* | prepositions: *at, in, of, to* |\n| adjectives: *fresh, large* | auxiliary verbs: *is, has, was, can* |\n| adverbs: *quickly, early* | pronouns: *he, they, it* |\n| question words: *where, why* | conjunctions: *and, but, or* |\n\nThe sentence *The farmer sold the yams at the market* is said:\n\nthe **FARmer** **SOLD** the **YAMS** at the **MARket**\n\nOnly four of the eight words are stressed, and the words *the* and *at* are weak. \"At the\" sounds like /ət ðə/.\n\n## Weak forms\n\nFunction words have two forms: a strong form, used when they are stressed or at the end of a sentence, and a weak form, used in connected speech.\n\n| Word | Strong form | Weak form |\n| --- | --- | --- |\n| and | /ænd/ | /ən/ |\n| to | /tu:/ | /tə/ |\n| of | /ɒv/ | /əv/ |\n| can | /kæn/ | /kən/ |\n\nIn \"Bread and butter\", *and* is /ən/. But in the answer to \"Where did you go?\", *I went to*... *to* may be said as /tu:/ when it is stressed.\n\n## Why it matters\n\nThe Oral English paper tests sentence stress through questions like: *Which of the words in this sentence carries the main stress?* The answer is always a content word, chosen by its meaning in the context.\n\n**Worked example.** Mark the stressed words in: *The headmaster has arrived at the school.*\n\n1. Content words: *headmaster, arrived, school.*\n2. Function words: *the, has, at, the.*\n\nThe stressed words are **headmaster**, **arrived** and **school**."
+      },
+      "cards": [
+        {
+          "front": "Stress-timed language",
+          "back": "A language in which stressed syllables come at roughly equal intervals of time; English is one."
+        },
+        {
+          "front": "Content words",
+          "back": "Words that carry meaning and are normally stressed: nouns, main verbs, adjectives, adverbs."
+        },
+        {
+          "front": "Function words",
+          "back": "Words that hold a sentence together and are normally unstressed: articles, prepositions, auxiliaries, pronouns, conjunctions."
+        },
+        {
+          "front": "Weak form",
+          "back": "The short form of a function word in connected speech, such as /ən/ for and."
+        },
+        {
+          "front": "Strong form",
+          "back": "The full form of a function word, used when it is stressed or at the end of a sentence."
+        },
+        {
+          "front": "Stressed words in: Mary bought some bread",
+          "back": "Mary, bought, bread."
+        },
+        {
+          "front": "Effect of giving every word equal stress",
+          "back": "The speech sounds slow, unnatural and difficult to follow."
+        },
+        {
+          "front": "Which words does English usually not stress?",
+          "back": "Articles, prepositions, auxiliaries, pronouns and conjunctions."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following words is normally stressed in a sentence?",
+          "options": [
+            "the",
+            "of",
+            "and",
+            "market"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "In the sentence \"The farmer sold the yams at the market\", which set of words is stressed?",
+          "options": [
+            "farmer, sold, yams, market",
+            "The, sold, at, the",
+            "The, farmer, the, market",
+            "farmer, the, at, market"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A language in which stressed syllables occur at roughly equal intervals of time is called",
+          "options": [
+            "syllable-timed",
+            "tone-timed",
+            "stress-timed",
+            "word-timed"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a function word?",
+          "options": [
+            "bought",
+            "them",
+            "beautiful",
+            "quickly"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "In the sentence \"Why did the bus leave early?\", which words carry the main stress?",
+          "options": [
+            "Why, did, the, early",
+            "the, bus, leave, early",
+            "did, the, bus, leave",
+            "Why, bus, leave, early"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Explain what is meant by saying that English is a stress-timed language. (b) Mark the stressed words in this sentence: \"The old man is selling fresh fish at the market.\"",
+          "markScheme": [
+            "States that the stressed syllables come at roughly equal intervals of time",
+            "States that the unstressed syllables are squeezed in or said quickly between them",
+            "Marks the content words old, man, selling, fresh, fish and market as stressed",
+            "Does not stress the function words the, is, at"
+          ],
+          "modelAnswer": "(a) English is stress-timed, meaning that stressed syllables occur at roughly equal intervals of time, and the unstressed syllables are said quickly in the gaps between them. (b) The 'old 'man is 'selling 'fresh 'fish at the 'market; the, is and at are not stressed.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) In a stress-timed language like English the stressed syllables come at about equal intervals of time. The unstressed syllables are squeezed in quickly between them. (b) The OLD MAN is SELLING FRESH FISH at the MARKET. The, is and at are not stressed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the stressed syllables come at about equal intervals of time"
+                },
+                {
+                  "point": 1,
+                  "quote": "The unstressed syllables are squeezed in quickly between them"
+                },
+                {
+                  "point": 2,
+                  "quote": "The OLD MAN is SELLING FRESH FISH at the MARKET"
+                },
+                {
+                  "point": 3,
+                  "quote": "The, is and at are not stressed"
+                }
+              ],
+              "feedback": "A full explanation, correct stress marking and a note on the function words. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(a) English rhythm depends on the stressed syllables, which are spaced evenly in time, while the syllables between them are weak and fast. (b) 'old 'man 'selling 'fresh 'fish 'market. The unstressed words are the, is and at.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "English rhythm depends on the stressed syllables, which are spaced evenly in time"
+                },
+                {
+                  "point": 1,
+                  "quote": "the syllables between them are weak and fast"
+                },
+                {
+                  "point": 2,
+                  "quote": "'old 'man 'selling 'fresh 'fish 'market"
+                },
+                {
+                  "point": 3,
+                  "quote": "The unstressed words are the, is and at"
+                }
+              ],
+              "feedback": "Your explanation is accurate and your marking includes every content word, with the function words left weak."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) It means that the stressed syllables come at equal intervals of time. (b) The old man is selling fresh fish at the market, all the words are stressed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the stressed syllables come at equal intervals of time"
+                }
+              ],
+              "feedback": "Your first point is right, and you could add that the syllables between are said quickly. In (b), not all words are stressed; the function words the, is and at are weak."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) English has some syllables strong and some weak. (b) The OLD MAN is SELLING FRESH FISH at the MARKET.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The OLD MAN is SELLING FRESH FISH at the MARKET"
+                },
+                {
+                  "point": 3,
+                  "quote": "is SELLING FRESH FISH at the MARKET"
+                }
+              ],
+              "feedback": "(b) is correct. In (a), say what stress-timed means: the strong syllables are spaced at equal time intervals, and the weak ones fit in between."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) English is a language that is spoken with stress on the last word. (b) The old man is selling fresh fish at the MARKET.",
+              "meets": [],
+              "feedback": "Stress-timed does not mean a stress on the last word. It is about the regular timing of the stressed syllables. In (b) stress the content words old, man, selling, fresh, fish and market."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It means English is a language that is spoken with time. (b) THE OLD MAN IS SELLING FRESH FISH AT THE MARKET.",
+              "meets": [],
+              "feedback": "You gave every word stress, which is what the lesson warns against. Stress only the content words, and say what stress-timed means: the stressed syllables are evenly spaced in time."
+            }
+          ]
+        },
+        {
+          "prompt": "Read this exchange aloud in your mind. A: \"Where did Tunde buy the shoes?\" B: \"He bought the shoes in Ibadan.\" Which words in B's reply are most strongly stressed, and which words are weak? Give a reason.",
+          "markScheme": [
+            "Identifies bought, shoes and Ibadan (the content words) as stressed",
+            "Identifies he, the and in as weak (function words)",
+            "Gives the reason: content words carry the meaning, and function words only join the sentence, so they are said quickly"
+          ],
+          "modelAnswer": "The stressed words are bought, shoes and Ibadan, because they are content words and carry the meaning. Ibadan carries the strongest stress as it answers the question. He, the and in are weak, because they are function words that only join the sentence together.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The stressed words are bought, shoes and Ibadan, with Ibadan strongest because it answers the question. He, the and in are weak. Content words carry the meaning, but function words only hold the sentence together, so they are said quickly.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The stressed words are bought, shoes and Ibadan"
+                },
+                {
+                  "point": 1,
+                  "quote": "He, the and in are weak"
+                },
+                {
+                  "point": 2,
+                  "quote": "Content words carry the meaning, but function words only hold the sentence together, so they are said quickly"
+                }
+              ],
+              "feedback": "Correct on all three, and you noticed the strongest stress is on the new information, Ibadan. Excellent."
+            },
+            {
+              "tier": "full",
+              "text": "Stressed: bought, shoes, Ibadan. Weak: he, the, in. This is because bought, shoes and Ibadan are content words (a verb and nouns) which tell us the facts, whereas he, the and in are only grammar words.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Stressed: bought, shoes, Ibadan"
+                },
+                {
+                  "point": 1,
+                  "quote": "Weak: he, the, in"
+                },
+                {
+                  "point": 2,
+                  "quote": "bought, shoes and Ibadan are content words (a verb and nouns) which tell us the facts"
+                }
+              ],
+              "feedback": "A tidy answer with a clear reason. Grammar words is a good plain name for function words."
+            },
+            {
+              "tier": "partial",
+              "text": "The stressed words are bought, shoes and Ibadan. He and in are weak.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The stressed words are bought, shoes and Ibadan"
+                },
+                {
+                  "point": 1,
+                  "quote": "He and in are weak"
+                }
+              ],
+              "feedback": "Correct words, but the reason is missing: give it. Also add the, which is weak too."
+            },
+            {
+              "tier": "partial",
+              "text": "Ibadan is stressed because it is the place. The other words are weak because they are small.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ibadan is stressed because it is the place"
+                }
+              ],
+              "feedback": "Ibadan is stressed, but bought and shoes are also content words and stressed. Words are weak because they are function words, not because they are small; small content words like fish are stressed."
+            },
+            {
+              "tier": "weak",
+              "text": "He, the and in are stressed because they come first. Ibadan is weak.",
+              "meets": [],
+              "feedback": "The reverse is true. Ibadan, bought and shoes carry the meaning and are stressed; he, the and in are function words and weak."
+            },
+            {
+              "tier": "weak",
+              "text": "Every word is stressed equally so that the listener will understand.",
+              "meets": [],
+              "feedback": "English does not give equal stress to all words; that makes speech slow and unclear. The content words are stressed and the function words are weak."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Oral English: emphatic stress and contrast",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain that emphatic stress places extra force on one word to show contrast or correction;\n2. identify the word that carries emphatic stress from the context of a dialogue;\n3. show how moving the emphatic stress changes the meaning of the same sentence;\n4. read sentences aloud with correct emphatic stress.\n\n## Materials\n\nShort dialogues on cards, a recording of the teacher's model reading, a board for marking the stress in capitals.\n\n## Starter (5 minutes)\n\nSay: \"I did not take your pen.\" Say it five times, each time stressing a different word. Ask: does the meaning change? Let students suggest what each version implies.\n\n## Development\n\n1. Normal sentence stress falls on the content words. Emphatic stress is an extra-strong stress on one word, often a word that is not usually stressed, to bring out contrast, correction or a strong feeling.\n2. Emphatic stress is shown by a bigger change of pitch on the stressed syllable and often a longer vowel.\n3. Context decides the stressed word. In \"Did Tunde buy the BLUE shirt?\", the answer \"No, he bought the RED shirt\" stresses the word that contrasts.\n4. The same sentence has different meanings with different emphatic stress. \"SHE didn't steal the money\" suggests another person did; \"She didn't STEAL the money\" suggests she did something else with it.\n5. In the examination, a short dialogue is given and the candidate chooses which word in the reply carries the emphatic stress.\n6. Practise dialogues in pairs: one student asks a wrong guess question and the other corrects it with emphatic stress.\n\n## Class activity\n\nIn pairs, students are given five dialogues. In each, one asks a question containing a wrong detail and the other corrects it. The class marks the emphatic stress.\n\n## Evaluation\n\n1. In the dialogue \"Did you buy rice? No, I bought BEANS\", which word carries the emphatic stress?\n2. Say \"I like Mary\" with the stress on I and then on Mary. How do the meanings differ?\n\n## Assignment\n\nWrite four short dialogues where emphatic stress is needed. Capitalise the stressed word in each reply.",
+      "reading": {
+        "title": "Putting force on the word that matters",
+        "content": "# Putting force on the word that matters\n\nIn normal speech, the stress in a sentence falls on the content words. But sometimes the speaker needs to draw attention to one particular word, perhaps to correct an error or to show contrast. In that case, the speaker places **emphatic stress** on that word: it is said with extra force and a marked change of pitch.\n\n## Emphatic stress and contrast\n\nStudy this exchange:\n\nA: *Did Tunde buy the **blue** shirt?*\n\nB: *No, he bought the **RED** shirt.*\n\nIn B's reply, *red* gets the emphatic stress because it contrasts with *blue*. The words *bought* and *shirt* are still content words, but they are not new and so they receive less attention.\n\nNow consider a different question:\n\nA: *Did Tunde buy the red **trousers**?*\n\nB: *No, he bought the red **SHIRT**.*\n\nHere the emphasis moves to *shirt*, because *shirt* contrasts with *trousers*. The context decides which word is emphasised.\n\n## The same sentence, different meanings\n\nTake the sentence: *Ade sold the goat in Oyo.* The word stressed changes what is understood.\n\n| Stressed word | Meaning suggested |\n| --- | --- |\n| **ADE** sold the goat in Oyo | It was Ade, not someone else |\n| Ade **SOLD** the goat in Oyo | He sold it; he did not give it away |\n| Ade sold the **GOAT** in Oyo | The goat, not another animal |\n| Ade sold the goat in **OYO** | In Oyo, not in another town |\n\n## Showing emphatic stress\n\nIn print, emphatic stress is shown by capital letters, italics or underlining. In speech, it is shown by:\n\n- a stronger voice;\n- a longer vowel;\n- a marked change in pitch (usually a fall or a rise) on the stressed syllable.\n\n## Examination tip\n\nIn the examination you are given a short dialogue with one word underlined or in capitals and asked whether the emphatic stress is correctly placed, or you are asked to find the word that would carry emphatic stress. To decide, read the first speaker's words and find what the second speaker is **correcting** or **contrasting**. That word carries the emphatic stress.\n\n**Worked example.** *A: Is your uncle a teacher? B: No, he is a **doctor**.* Which word carries the emphatic stress in B's reply?\n\n1. A's question contained the word *teacher*.\n2. B corrects it with *doctor*.\n3. The contrast is between *teacher* and *doctor*, so the emphatic stress is on **doctor**."
+      },
+      "cards": [
+        {
+          "front": "Emphatic stress",
+          "back": "Extra force and a pitch change placed on one word to show contrast, correction or strong feeling."
+        },
+        {
+          "front": "How to find the emphatic word",
+          "back": "Read the first speaker's words and find what the second speaker is correcting or contrasting."
+        },
+        {
+          "front": "Signs of emphatic stress in speech",
+          "back": "A stronger voice, a longer vowel and a marked pitch change on the syllable."
+        },
+        {
+          "front": "Signs of emphatic stress in writing",
+          "back": "Capital letters, italics or underlining."
+        },
+        {
+          "front": "Effect of moving the emphatic stress",
+          "back": "The meaning changes: ADE sold it suggests it was not someone else."
+        },
+        {
+          "front": "Contrast",
+          "back": "A difference between two things that the speaker wants to point out."
+        },
+        {
+          "front": "Dialogue: Did you want tea? No, I wanted COFFEE.",
+          "back": "Emphatic stress is on coffee, which contrasts with tea."
+        },
+        {
+          "front": "Can a function word carry emphatic stress?",
+          "back": "Yes, when the contrast is about it, as in: I said IN the box, not ON it."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A: \"Is Chinwe's mother a nurse?\" B: \"No, she is a teacher.\" Which word in B's reply carries the emphatic stress?",
+          "options": [
+            "No",
+            "she",
+            "teacher",
+            "is"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A: \"Did Musa travel to Kano on Monday?\" B: \"No, he travelled to Kano on Tuesday.\" Which word in B's reply carries the emphatic stress?",
+          "options": [
+            "Tuesday",
+            "travelled",
+            "Kano",
+            "he"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "In the sentence \"SHE didn't take the money\", the emphatic stress suggests that",
+          "options": [
+            "nobody took the money",
+            "someone else took the money",
+            "she took something else",
+            "she took the money later"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following is not a sign of emphatic stress in speech?",
+          "options": [
+            "A louder, stronger voice",
+            "A marked change in pitch on the syllable",
+            "A longer vowel in the stressed syllable",
+            "Speaking every word with equal force"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A: \"Did you say you saw the car in the garage?\" B: \"No, I said I saw it in the street.\" Where does the emphatic stress fall in B's reply?",
+          "options": [
+            "said",
+            "saw",
+            "street",
+            "car"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Read each dialogue and write down the word in the second speaker's reply that carries the emphatic stress. Give a reason for each. (a) A: \"Did you eat rice at the party?\" B: \"No, I ate beans.\" (b) A: \"Is Mr Lawal the Principal?\" B: \"No, he is the Vice-Principal.\" (c) A: \"Did Funke break the window?\" B: \"No, Kemi broke the window.\"",
+          "markScheme": [
+            "(a) beans, because it contrasts with rice",
+            "(b) Vice-Principal (or Vice), because it corrects Principal",
+            "(c) Kemi, because it corrects Funke"
+          ],
+          "modelAnswer": "(a) The emphatic stress is on beans, because it contrasts with rice. (b) It is on Vice-Principal (the syllable Vice), because it corrects the title Principal. (c) It is on Kemi, because it corrects the name Funke.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) BEANS, because it contrasts with rice. (b) VICE-Principal, because it corrects the word Principal in A's question. (c) KEMI, because it corrects Funke, the wrong person in the question.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "BEANS, because it contrasts with rice"
+                },
+                {
+                  "point": 1,
+                  "quote": "VICE-Principal, because it corrects the word Principal in A's question"
+                },
+                {
+                  "point": 2,
+                  "quote": "KEMI, because it corrects Funke, the wrong person in the question"
+                }
+              ],
+              "feedback": "Each emphasised word is identified with its contrast. Full marks, including the neat point about Vice."
+            },
+            {
+              "tier": "full",
+              "text": "(a) beans: the speaker is correcting the food that A mentioned. (b) Vice-Principal: the title is wrong in the question, so the correction is stressed. (c) Kemi: the question names the wrong person, so the right person is stressed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "beans: the speaker is correcting the food that A mentioned"
+                },
+                {
+                  "point": 1,
+                  "quote": "Vice-Principal: the title is wrong in the question, so the correction is stressed"
+                },
+                {
+                  "point": 2,
+                  "quote": "Kemi: the question names the wrong person, so the right person is stressed"
+                }
+              ],
+              "feedback": "Clear reasoning each time: you looked for what was wrong in the question and found its correction."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) beans, because it is the answer. (b) Principal, because it is the word in the question. (c) Kemi, because it is the right person.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "beans, because it is the answer"
+                },
+                {
+                  "point": 2,
+                  "quote": "Kemi, because it is the right person"
+                }
+              ],
+              "feedback": "(a) and (c) are right. In (b), the stress is on the corrected word Vice, not Principal, which both speakers use. Look for the new, contrasting word."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) ate, because it is the verb. (b) Vice-Principal, because he is not the Principal. (c) Kemi, because the speaker is correcting Funke.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Vice-Principal, because he is not the Principal"
+                },
+                {
+                  "point": 2,
+                  "quote": "Kemi, because the speaker is correcting Funke"
+                }
+              ],
+              "feedback": "(b) and (c) are right. In (a) the verb ate is not what is being corrected; the food is. The stress goes on beans, which contrasts with rice."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) No. (b) No. (c) No. They are the first words of the replies.",
+              "meets": [],
+              "feedback": "No is not the word that carries the emphatic stress. Look for what each speaker corrects: beans against rice, Vice against Principal, Kemi against Funke."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) party. (b) Lawal. (c) window. Because they are nouns.",
+              "meets": [],
+              "feedback": "Nouns are normally stressed, but emphatic stress goes to the word that contrasts with the question. These are words already mentioned by both speakers."
+            }
+          ]
+        },
+        {
+          "prompt": "The sentence \"Dayo bought two books at the bookshop\" is said in four ways, each time with emphatic stress on a different word: (i) DAYO (ii) TWO (iii) BOOKS (iv) BOOKSHOP. For any two of these, say what each stress suggests and write a short question that the sentence could be answering.",
+          "markScheme": [
+            "Gives the correct suggestion for the first chosen stress (for example, DAYO means it was Dayo, not someone else)",
+            "Writes a suitable question for the first chosen stress, containing a wrong detail (for example, Did Femi buy two books?)",
+            "Gives the correct suggestion and a suitable question for the second chosen stress"
+          ],
+          "modelAnswer": "(i) DAYO suggests it was Dayo and not someone else who bought the books. A question: Did Femi buy two books at the bookshop? (iii) BOOKS suggests that books, and not another thing, were bought. A question: Did Dayo buy two pens at the bookshop?",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(i) DAYO suggests that it was Dayo who bought them, not another person. Question: Did Femi buy two books at the bookshop? (ii) TWO suggests that the number is two, not another number. Question: Did Dayo buy three books at the bookshop?",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "DAYO suggests that it was Dayo who bought them, not another person"
+                },
+                {
+                  "point": 1,
+                  "quote": "Question: Did Femi buy two books at the bookshop?"
+                },
+                {
+                  "point": 2,
+                  "quote": "TWO suggests that the number is two, not another number. Question: Did Dayo buy three books at the bookshop?"
+                }
+              ],
+              "feedback": "Both stresses are explained and each has a good contrasting question. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "(iii) BOOKS: it suggests that he bought books and not other things, so the question could be: Did Dayo buy two pens at the bookshop? (iv) BOOKSHOP: it suggests the place was the bookshop, not another place, so the question could be: Did Dayo buy two books at the market?",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "BOOKS: it suggests that he bought books and not other things"
+                },
+                {
+                  "point": 1,
+                  "quote": "Did Dayo buy two pens at the bookshop?"
+                },
+                {
+                  "point": 2,
+                  "quote": "BOOKSHOP: it suggests the place was the bookshop, not another place, so the question could be: Did Dayo buy two books at the market?"
+                }
+              ],
+              "feedback": "Accurate. Your questions each contain exactly one wrong detail, which is how the dialogue is built in the examination."
+            },
+            {
+              "tier": "partial",
+              "text": "(i) DAYO means that it was Dayo who bought the books and not another person. (ii) TWO means he bought two books.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "DAYO means that it was Dayo who bought the books and not another person"
+                }
+              ],
+              "feedback": "Your first suggestion is good. Questions are also required, such as: Did Femi buy two books? For TWO, say that the stress contrasts with another number, and write a question such as Did he buy three books?"
+            },
+            {
+              "tier": "partial",
+              "text": "(i) Did Femi buy two books at the bookshop? That is the question for DAYO. (iii) Did Dayo buy two pens at the bookshop? That is the question for BOOKS.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Did Femi buy two books at the bookshop?"
+                }
+              ],
+              "feedback": "Your questions are right, but the question asks you to say what each stress suggests. Add, for example, that DAYO suggests it was Dayo and not someone else."
+            },
+            {
+              "tier": "weak",
+              "text": "(i) DAYO means Dayo is loud. (ii) TWO means he bought a lot of books.",
+              "meets": [],
+              "feedback": "Emphatic stress is not loudness for its own sake: it points to a contrast. DAYO suggests it was Dayo and not someone else, and TWO suggests two and not another number."
+            },
+            {
+              "tier": "weak",
+              "text": "All four sentences are the same, because the words are the same.",
+              "meets": [],
+              "feedback": "The words are the same, but the meaning suggested is different, depending on which word is stressed. Try saying them aloud to hear the difference."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

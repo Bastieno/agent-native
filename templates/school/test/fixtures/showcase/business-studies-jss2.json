@@ -1,0 +1,2690 @@
+{
+  "subject": "Business Studies",
+  "yearGroup": "JSS2",
+  "weeks": {
+    "1": {
+      "topic": "Choosing a mode of transport: cost, speed and suitability",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. compare road, rail, water, air and pipeline on cost, speed, capacity and reach;\n2. choose the best mode for a given load;\n3. calculate and compare transport costs.\n\n## Materials\n\nA comparison table drawn on a chart, cards describing six loads, a calculator for each group.\n\n## Starter\n\nWrite on the board: send a bag of rice from Kebbi to Lagos. Ask groups how it might travel and what could go wrong. List their ideas.\n\n## Development\n\n1. Revise the five modes. Add the criteria for choosing: cost, speed, size of load, reach (door to door or fixed route), safety and nature of goods.\n2. Road: flexible and door to door but small loads, accidents and bad roads. Rail: large loads, cheap per tonne but fixed lines and slower loading. Water: very large loads, cheapest per tonne, but slow and limited to waterways. Air: fastest, safest for small valuable goods, costly. Pipeline: continuous and cheap for liquids and gas, but only for them.\n3. Cost per unit times number of units gives total cost. Work 200 bags at ₦1,200 by road and ₦900 by rail.\n4. Discuss goods that spoil (speed matters) and goods that do not (cost matters).\n\n## Class activity\n\nEach group gets a load card (fresh fish, cement, a spare part for a bank, crude oil, containers of imported rice) and justifies its choice of mode in two sentences.\n\n## Evaluation\n\n1. Why is water cheaper for very heavy goods?\n2. Which mode would you choose for fresh fish from Badagry to Abuja? Why?\n3. A cost of ₦60 per carton for 300 cartons. What is the total?\n\n## Assignment\n\nWorksheet on the app. Ask a trader or driver how they decide which way to send goods.",
+      "reading": {
+        "title": "Which way should the goods go?",
+        "content": "# Choosing a mode of transport\n\nA trader does not just ask, \"How can I send this?\" She asks, \"Which way is best for these goods?\" The answer depends on six things.\n\n## What to think about\n\n1. **Cost.** What is the price per bag, carton or tonne?\n2. **Speed.** How soon must the goods arrive?\n3. **Size of the load.** One box or five hundred tonnes?\n4. **Reach.** Can it go from the farm to the shop door, or must the goods be collected from a station or port?\n5. **Safety.** Will goods break, spoil or be stolen?\n6. **Nature of the goods.** Fresh, heavy, liquid, valuable?\n\n## The modes compared\n\n| Mode | Strength | Weakness |\n| --- | --- | --- |\n| Road | Door to door; reaches villages; flexible | Small loads; bad roads; accidents; traffic |\n| Rail | Very large loads at low cost per tonne; fairly safe | Fixed lines; slower; goods must be taken to and from the station |\n| Water | Largest loads; cheapest per tonne; carries imports and exports | Slow; limited to rivers, lagoons and the sea |\n| Air | Fastest; safe for small valuable goods | Costly; small loads; airports only |\n| Pipeline | Cheap and constant for oil, gas and water | Only for liquids and gas; fixed |\n\n## Working out cost\n\nTotal cost = cost per unit x number of units.\n\n**Worked example.** A trader sends 80 cartons of noodles. Road costs ₦500 a carton and water costs ₦350 a carton.\n\n- Road: 80 x 500 = ₦40,000.\n- Water: 80 x 350 = ₦28,000.\n- Saving by water = 40,000 - 28,000 = ₦12,000.\n\nThe cheaper way is not always the best way. If water takes six days longer and the shop will run out of noodles, the trader may still pay for the road.\n\n## Matching goods to modes\n\nFresh fish and vegetables spoil, so they need speed: road with a cold van, or air for long distances. Cement and grain do not spoil, so cost matters more: rail or water. A spare part that stops a factory must go by air."
+      },
+      "cards": [
+        {
+          "front": "Mode that is door to door",
+          "back": "Road transport."
+        },
+        {
+          "front": "Mode with the cheapest cost per tonne for very large loads",
+          "back": "Water transport."
+        },
+        {
+          "front": "Mode that is fastest",
+          "back": "Air transport."
+        },
+        {
+          "front": "Weakness of rail",
+          "back": "It runs on fixed lines, so goods must be taken to and from the station."
+        },
+        {
+          "front": "Total transport cost",
+          "back": "Cost per unit multiplied by the number of units."
+        },
+        {
+          "front": "When does speed matter most?",
+          "back": "When the goods spoil quickly or are urgently needed."
+        },
+        {
+          "front": "When does cost matter most?",
+          "back": "When the goods are heavy, cheap and do not spoil."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which is a disadvantage of road transport in Nigeria?",
+          "options": [
+            "It cannot reach villages",
+            "Bad roads and accidents can delay or damage goods",
+            "It can only carry small goods",
+            "It needs a railway line"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why is rail usually cheaper than road for carrying 500 tonnes of cement a long way?",
+          "options": [
+            "Trains can go anywhere",
+            "Trains are faster than planes",
+            "Cement likes trains",
+            "One train carries a very large load at once"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A company in Port Harcourt must send a spare part to a factory in Kano by tomorrow morning. The best mode is",
+          "options": [
+            "air",
+            "water",
+            "rail",
+            "pipeline"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A trader sends 80 cartons of noodles. Road costs ₦500 a carton and water costs ₦350 a carton. How much does she save by using water?",
+          "options": [
+            "₦28,000",
+            "₦40,000",
+            "₦12,000",
+            "₦150"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A shipper moves a container from Lagos to Calabar by sea rather than by road mainly because water transport",
+          "options": [
+            "is faster than air",
+            "carries very large loads at low cost per tonne",
+            "reaches every village",
+            "never has delays"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Give two advantages and two disadvantages of road transport.",
+          "markScheme": [
+            "States a first advantage of road transport",
+            "States a second advantage",
+            "States a first disadvantage",
+            "States a second disadvantage"
+          ],
+          "modelAnswer": "Road transport is flexible and can carry goods from the farm to the shop door, and it reaches villages that have no rail or ship. Its disadvantages are that bad roads and accidents damage goods and that a lorry carries a small load compared with a train.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Road transport can carry goods from the farm to the shop door, and it reaches villages that have no train or ship. The disadvantages are that bad roads damage goods and accidents happen, and a lorry can carry only a small load compared with a train.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "carry goods from the farm to the shop door"
+                },
+                {
+                  "point": 1,
+                  "quote": "reaches villages that have no train or ship"
+                },
+                {
+                  "point": 2,
+                  "quote": "bad roads damage goods and accidents happen"
+                },
+                {
+                  "point": 3,
+                  "quote": "a lorry can carry only a small load compared with a train"
+                }
+              ],
+              "feedback": "Full marks. Each advantage and disadvantage is specific to Nigeria."
+            },
+            {
+              "tier": "full",
+              "text": "Two advantages: it is flexible because lorries can go anywhere there is a road, and it is quick for short distances. Two disadvantages: traffic and go-slows cause delay, and it is costly for long distances compared with rail.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "it is flexible because lorries can go anywhere there is a road"
+                },
+                {
+                  "point": 1,
+                  "quote": "it is quick for short distances"
+                },
+                {
+                  "point": 2,
+                  "quote": "traffic and go-slows cause delay"
+                },
+                {
+                  "point": 3,
+                  "quote": "it is costly for long distances compared with rail"
+                }
+              ],
+              "feedback": "All four marks. Comparing the cost with rail shows you are thinking about choice, not just listing."
+            },
+            {
+              "tier": "partial",
+              "text": "Road transport reaches many places. It is also quick. The disadvantage is accident.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "reaches many places"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is also quick"
+                },
+                {
+                  "point": 2,
+                  "quote": "accident"
+                }
+              ],
+              "feedback": "Three marks. You need a second disadvantage, such as bad roads, traffic or the small size of load a lorry carries."
+            },
+            {
+              "tier": "partial",
+              "text": "The advantage of road transport is that it reaches the door of the buyer. Its disadvantages are that it is cheap and it is slow.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "it reaches the door of the buyer"
+                }
+              ],
+              "feedback": "Door to door is a good advantage. Cheap is not a disadvantage; and road is often quicker than rail. Think of accidents, bad roads and small loads.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Road transport is good because it has lorries. It is bad because lorries are big.",
+              "meets": [],
+              "feedback": "Lorries are what road transport uses, not an advantage. Say what it can do (door to door, reaches villages) and its real problems (accidents, bad roads)."
+            },
+            {
+              "tier": "weak",
+              "text": "Advantage of road is that it is the oldest one. Disadvantage is that it is dusty.",
+              "meets": [],
+              "feedback": "Being old or dusty is not what decides transport choice. Think about reach, cost, load size and safety."
+            }
+          ]
+        },
+        {
+          "prompt": "A trader must send 200 bags of beans from Kano to Lagos. A lorry charges ₦1,100 a bag and takes 2 days. The train charges ₦800 a bag and takes 4 days, and the beans must be collected from the station. Work out the cost of each mode, how much she saves by train, and advise her which to use.",
+          "markScheme": [
+            "Lorry cost correctly worked: 200 x 1,100 = ₦220,000",
+            "Train cost correctly worked: 200 x 800 = ₦160,000",
+            "Saving by train correctly stated as ₦60,000",
+            "Notes that the train is slower or needs collecting from the station",
+            "Gives a sensible recommendation with a reason that fits the goods"
+          ],
+          "modelAnswer": "By lorry the cost is 200 x 1,100 = ₦220,000. By train it is 200 x 800 = ₦160,000. She saves 220,000 - 160,000 = ₦60,000 by train. The train takes two days longer and she must collect the beans herself. Dry beans do not spoil quickly, so I advise her to use the train.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Lorry: 200 × 1,100 = ₦220,000. Train: 200 × 800 = ₦160,000. She saves 220,000 - 160,000 = ₦60,000 by train. But the train takes 4 days and she must collect the beans from the station herself. Beans do not spoil quickly so I advise her to use the train and save the money.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "200 × 1,100 = ₦220,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "200 × 800 = ₦160,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "She saves 220,000 - 160,000 = ₦60,000 by train"
+                },
+                {
+                  "point": 3,
+                  "quote": "the train takes 4 days and she must collect the beans from the station herself"
+                },
+                {
+                  "point": 4,
+                  "quote": "Beans do not spoil quickly so I advise her to use the train"
+                }
+              ],
+              "feedback": "Full marks. The working is clear and the advice uses what you know about beans."
+            },
+            {
+              "tier": "full",
+              "text": "By lorry the cost is 1,100 × 200 = ₦220,000 and by train 800 × 200 = ₦160,000, so the train is ₦60,000 cheaper. The disadvantage of train is that it is slower by two days and not door to door. If she is not in a hurry the train is better because dry beans can wait, so I would choose the train.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "1,100 × 200 = ₦220,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "800 × 200 = ₦160,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "the train is ₦60,000 cheaper"
+                },
+                {
+                  "point": 3,
+                  "quote": "it is slower by two days and not door to door"
+                },
+                {
+                  "point": 4,
+                  "quote": "dry beans can wait, so I would choose the train"
+                }
+              ],
+              "feedback": "All five marks. You balanced the saving against the delay before deciding."
+            },
+            {
+              "tier": "partial",
+              "text": "Lorry costs 200 × 1,100 = ₦220,000. Train costs 200 × 800 = ₦160,000. She saves ₦60,000. She should use train.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "200 × 1,100 = ₦220,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "200 × 800 = ₦160,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "She saves ₦60,000"
+                }
+              ],
+              "feedback": "Your working is correct. A recommendation needs a reason: mention that the train takes longer and needs collection, and say why that does not matter for beans."
+            },
+            {
+              "tier": "partial",
+              "text": "Lorry costs 1,100 × 200 = ₦22,000. Train costs 800 × 200 = ₦16,000. She saves ₦6,000. The train is slower so I advise lorry because it is faster.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "The train is slower"
+                }
+              ],
+              "feedback": "You noticed the train is slower, which is a fair point. Check the multiplication: 1,100 × 200 = ₦220,000 and 800 × 200 = ₦160,000, so she saves ₦60,000. Then your advice should weigh that saving."
+            },
+            {
+              "tier": "weak",
+              "text": "Lorry is 1,100 and train is 800 so the train is 300 cheaper.",
+              "meets": [],
+              "feedback": "That is the saving for one bag. She sends 200 bags, so multiply each by 200 to find the totals and the saving."
+            },
+            {
+              "tier": "weak",
+              "text": "She should use air because it is fastest and beans are important.",
+              "meets": [],
+              "feedback": "Air is very costly, and beans are heavy and do not spoil. The question gives lorry and train, so compare their total costs first."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "How communication works: the process, barriers and choosing a channel",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the parts of the communication process;\n2. identify barriers to communication and ways to remove them;\n3. choose a suitable channel for a business message.\n\n## Materials\n\nPieces of paper for a whisper chain, a sample memo, a phone, a marker board.\n\n## Starter\n\nPlay 'whisper chain' with a sentence about an order of 36 bags of rice and ₦45,000. Compare the message at the end with the start.\n\n## Development\n\n1. The process: sender, message, channel, receiver and feedback. Draw it as a circle, not a line.\n2. Barriers: language (hard words, different languages), technical (bad network, noise), distance and attitude (not listening, unclear writing).\n3. Remedies: simple words, short sentences, checking back, using the language the receiver knows best, confirming by writing.\n4. Channels: choose by speed, record, cost and privacy. A memo for notices, a call for urgent news, an invoice for money.\n5. Show how ICT (mobile phones, email, messaging apps) has changed Nigerian business, and the risks, such as false messages.\n\n## Class activity\n\nGroups get four scenarios and choose a channel for each, naming one barrier that could spoil the message.\n\n## Evaluation\n\n1. What is feedback?\n2. Name one barrier and one way to remove it.\n3. Which channel gives a record: a call or a memo?\n\n## Assignment\n\nWorksheet on the app. Write a clear 30-word text message from a shopkeeper ordering 20 cartons of sugar.",
+      "reading": {
+        "title": "Why messages go wrong",
+        "content": "# The communication process\n\nCommunication is not complete when a message is sent. It is complete when the message has been **understood**.\n\n## The parts\n\n1. **Sender**: the person who has the message.\n2. **Message**: the information, put into words or signs.\n3. **Channel**: how it travels: speech, phone call, letter, memo, text, email.\n4. **Receiver**: the person who gets the message.\n5. **Feedback**: the receiver's reply, showing that the message was understood.\n\nWithout feedback the sender does not know if the message worked. That is why a supplier who gets an order should reply, \"Received: 36 bags of rice, delivery on Friday.\"\n\n## Barriers to communication\n\nA **barrier** is anything that stops the message being understood.\n\n- **Language barrier:** difficult words, jargon, or a receiver who speaks another language.\n- **Technical barrier:** bad network, a faulty phone, noise at the market.\n- **Distance barrier:** the parties are far apart and cannot meet.\n- **Attitude barrier:** the receiver is not listening or does not trust the sender.\n- **Unclear message:** missing details, such as a text that says \"Send 50, urgent\" without saying 50 of what.\n\n## Removing barriers\n\nUse simple words. Give full details: item, quantity, price, place, date. Ask the receiver to repeat or confirm. Choose a channel that suits the message and the receiver.\n\n## Choosing a channel\n\n| Need | Good channel |\n| --- | --- |\n| Urgent news | Phone call |\n| Proof and record | Memo, letter, email or invoice |\n| Tell many people | Notice board, radio, bulk text |\n| Private matter | Face-to-face talk |\n\nInformation and communication technology (ICT), such as mobile phones and the internet, has made business faster, but fast messages still need clear words."
+      },
+      "cards": [
+        {
+          "front": "Sender",
+          "back": "The person who starts the message."
+        },
+        {
+          "front": "Channel",
+          "back": "The way the message travels, such as a call, memo or text."
+        },
+        {
+          "front": "Feedback",
+          "back": "The receiver's reply that shows the message was understood."
+        },
+        {
+          "front": "Communication barrier",
+          "back": "Anything that stops a message being understood."
+        },
+        {
+          "front": "Technical barrier",
+          "back": "A fault in the equipment or network, such as bad signal."
+        },
+        {
+          "front": "Memo",
+          "back": "A short written message used inside an organisation."
+        },
+        {
+          "front": "ICT",
+          "back": "Information and communication technology, such as phones and the internet."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A message cannot be understood because it is full of difficult words. This is a",
+          "options": [
+            "transport problem",
+            "good feedback",
+            "communication barrier",
+            "business document"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "In the communication process, the reply of the receiver is called",
+          "options": [
+            "feedback",
+            "the channel",
+            "the sender",
+            "the code"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Bad network, noise and a faulty phone line are examples of",
+          "options": [
+            "language barriers",
+            "attitude barriers",
+            "distance barriers",
+            "technical barriers"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A manager wants to tell workers the shop will close on Monday and keep a record. The best method is",
+          "options": [
+            "a phone call to one worker",
+            "a written memo on the notice board",
+            "a shout across the shop",
+            "a rumour"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which is an advantage of email over a posted letter?",
+          "options": [
+            "It needs no electricity",
+            "It is always private",
+            "It arrives in seconds",
+            "It cannot be lost"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe two barriers to communication in a business and say how each can be removed.",
+          "markScheme": [
+            "Names a first barrier to communication",
+            "Says how it can be removed",
+            "Names a second barrier",
+            "Says how it can be removed"
+          ],
+          "modelAnswer": "A language barrier is when the receiver does not understand the words used; it is removed by using simple words. A technical barrier is bad network or noise; it can be removed by moving to a place with good signal or sending a written message.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "One barrier is language, when a supplier does not understand the hard words in the message. It is removed by using simple words. Another barrier is bad network, which cuts the call. It is removed by sending a text message so that the receiver can read it when the network returns.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "language, when a supplier does not understand the hard words in the message"
+                },
+                {
+                  "point": 1,
+                  "quote": "removed by using simple words"
+                },
+                {
+                  "point": 2,
+                  "quote": "bad network, which cuts the call"
+                },
+                {
+                  "point": 3,
+                  "quote": "sending a text message so that the receiver can read it when the network returns"
+                }
+              ],
+              "feedback": "Full marks. Your solution for each barrier fits the barrier."
+            },
+            {
+              "tier": "full",
+              "text": "An attitude barrier is when the receiver does not listen to the sender. The sender can remove it by speaking politely and explaining why the message matters. An unclear message is also a barrier, for example an order without the quantity. It can be removed by giving full details such as item, quantity and date.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "attitude barrier is when the receiver does not listen to the sender"
+                },
+                {
+                  "point": 1,
+                  "quote": "speaking politely and explaining why the message matters"
+                },
+                {
+                  "point": 2,
+                  "quote": "unclear message is also a barrier, for example an order without the quantity"
+                },
+                {
+                  "point": 3,
+                  "quote": "giving full details such as item, quantity and date"
+                }
+              ],
+              "feedback": "All four marks. Your example of the order without a quantity is true to life."
+            },
+            {
+              "tier": "partial",
+              "text": "A barrier is language. Another barrier is noise in the market. We can remove noise by going to a quiet place.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "language"
+                },
+                {
+                  "point": 2,
+                  "quote": "noise in the market"
+                },
+                {
+                  "point": 3,
+                  "quote": "going to a quiet place"
+                }
+              ],
+              "feedback": "Good. You need to say how the language barrier can be removed, for example by using simple words or a language both people speak."
+            },
+            {
+              "tier": "partial",
+              "text": "Distance is a barrier because the people are far. It is removed by using telephone. Another barrier is when people do not talk.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Distance is a barrier because the people are far"
+                },
+                {
+                  "point": 1,
+                  "quote": "removed by using telephone"
+                }
+              ],
+              "feedback": "Distance and the telephone are well done. 'When people do not talk' is not clear enough to be a barrier: say what stops understanding, such as unclear words or bad network, and how to fix it."
+            },
+            {
+              "tier": "weak",
+              "text": "Barriers are the walls and gates in the school that stop people from going in. They are removed by opening them.",
+              "meets": [],
+              "feedback": "A barrier in communication is anything that stops a message being understood, such as hard words or bad network, not a physical gate."
+            },
+            {
+              "tier": "weak",
+              "text": "The barrier to communication is money. When you have money you can communicate.",
+              "meets": [],
+              "feedback": "Money may help you buy airtime, but it is not what stops understanding. Think of language, noise, bad signal or unclear messages."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Ibe sends a text to his supplier: 'Send 50 cement urgent.' The supplier delivers 5 bags. Explain what went wrong and how Mr Ibe can prevent it next time.",
+          "markScheme": [
+            "Says the message was unclear or missing details",
+            "Says the supplier may have misread or misunderstood it",
+            "Says there was no feedback or confirmation",
+            "Suggests confirming by phone or asking for a reply",
+            "Suggests writing a clear order form with full details"
+          ],
+          "modelAnswer": "The message was unclear because it did not say 50 bags, the price or the delivery place, so the supplier misread it as 5. There was no feedback, since the supplier did not confirm the order. Mr Ibe should give full details, ask for confirmation by phone or reply, and send a written order form as a record.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The message was too short and did not give details like the unit, price and the place of delivery. The supplier read it wrongly. Also nobody checked: the supplier did not send feedback to confirm the order. Next time Mr Ibe should phone to confirm, and send a proper order form with all the details.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The message was too short and did not give details like the unit, price and the place of delivery"
+                },
+                {
+                  "point": 1,
+                  "quote": "The supplier read it wrongly"
+                },
+                {
+                  "point": 2,
+                  "quote": "nobody checked: the supplier did not send feedback to confirm the order"
+                },
+                {
+                  "point": 3,
+                  "quote": "phone to confirm"
+                },
+                {
+                  "point": 4,
+                  "quote": "send a proper order form with all the details"
+                }
+              ],
+              "feedback": "Full marks. You found what was missing and gave remedies that fit."
+            },
+            {
+              "tier": "full",
+              "text": "Mr Ibe did not give enough information, he did not say bags or the date, so the supplier could misunderstand '50' as '5'. There was no feedback because the supplier did not reply with the quantity he understood. To prevent it, Mr Ibe should ask for a reply confirming the number, and he should write the order in full on an order form.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "did not give enough information, he did not say bags or the date"
+                },
+                {
+                  "point": 1,
+                  "quote": "the supplier could misunderstand '50' as '5'"
+                },
+                {
+                  "point": 2,
+                  "quote": "There was no feedback because the supplier did not reply with the quantity he understood"
+                },
+                {
+                  "point": 3,
+                  "quote": "ask for a reply confirming the number"
+                },
+                {
+                  "point": 4,
+                  "quote": "write the order in full on an order form"
+                }
+              ],
+              "feedback": "All five marks. The point that the supplier should repeat the quantity back is the key to feedback."
+            },
+            {
+              "tier": "partial",
+              "text": "The message was not clear because Mr Ibe did not say bags. He should write the message clearly next time.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The message was not clear because Mr Ibe did not say bags"
+                }
+              ],
+              "feedback": "Right about the unclear message. Also explain how the supplier misread it, that there was no feedback, and suggest confirming by phone and using an order form."
+            },
+            {
+              "tier": "partial",
+              "text": "The supplier did not reply to confirm the order, so there was no feedback. Mr Ibe should call him to confirm.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The supplier did not reply to confirm the order, so there was no feedback"
+                },
+                {
+                  "point": 3,
+                  "quote": "call him to confirm"
+                }
+              ],
+              "feedback": "Feedback and the phone call are both good. Add that the text itself was unclear, since it did not give the unit or place, and suggest sending a written order form.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The supplier is a bad man who cheated Mr Ibe. Mr Ibe should find another supplier.",
+              "meets": [],
+              "feedback": "The supplier may have simply misread a short, unclear text. Look at the message first: what was missing, and how could Mr Ibe check it was understood?"
+            },
+            {
+              "tier": "weak",
+              "text": "The network was bad so the message did not reach. Mr Ibe should buy data.",
+              "meets": [],
+              "feedback": "The supplier did get a message and acted on it, so the problem was not the network. Look at what the message left out."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Advertising: purpose, types and effects",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the purposes of advertising;\n2. distinguish informative, persuasive and competitive advertising;\n3. name advertising media and choose one for a product;\n4. discuss the good and bad effects of advertising.\n\n## Materials\n\nSamples of adverts: a handbill, a newspaper advert, a radio jingle recording, pictures of a billboard and a social media post.\n\n## Starter\n\nPlay or recite a well-known radio jingle. Ask: what is it selling, and what did it say to make you remember?\n\n## Development\n\n1. Advertising is any paid message that tells people about goods or services and persuades them to buy.\n2. Purposes: to inform, to persuade, to remind, to introduce a new product, to meet competition.\n3. Types: informative (gives facts), persuasive (urges people to buy) and competitive (shows why one brand is better than others).\n4. Media: print (newspaper, handbills), broadcast (radio, television), outdoor (billboards, signboards), digital (social media, text messages) and word of mouth.\n5. Effects on business: more sales, wider markets, new products known. Effects on consumers: information and choice, but possible pressure to buy what is not needed and higher prices.\n\n## Class activity\n\nGroups write a 30-second radio advert for a product of their choice, then name its type and why they chose radio.\n\n## Evaluation\n\n1. State two purposes of advertising.\n2. Is a billboard print or outdoor advertising?\n3. Give one way advertising can mislead consumers.\n\n## Assignment\n\nQuiz on the app. Find an advert in your area and write its medium and type.",
+      "reading": {
+        "title": "Telling the world what you sell",
+        "content": "# Advertising\n\n**Advertising** is a paid message that tells people about goods or services and tries to make them buy. A business that does not advertise may have the best goods in town and still few customers, because nobody knows about them.\n\n## Purposes of advertising\n\n1. To **inform** people that a product exists, where it is sold and the price.\n2. To **persuade** people to buy it.\n3. To **remind** old customers.\n4. To **introduce** a new product or branch.\n5. To **compete** with other sellers.\n\n## Types of advertising\n\n- **Informative:** gives facts. \"A new bank branch is open at Challenge, Ibadan.\"\n- **Persuasive:** urges you to buy. \"Feel the freshness. Buy today.\"\n- **Competitive:** says why this brand is better than others. \"Our soap washes whiter than any other.\"\n\n## Media of advertising\n\n| Group | Examples |\n| --- | --- |\n| Print | Newspapers, magazines, handbills, posters |\n| Broadcast | Radio, television |\n| Outdoor | Billboards, signboards, painted vehicles |\n| Digital | Social media, websites, text messages |\n| Other | Word of mouth, samples, shop displays |\n\nThe best medium depends on who the customers are, how much money is available and how many people must be reached. A village shop may use a signboard and word of mouth; a national drinks brand uses television.\n\n## Effects\n\n**Good effects:** shows consumers what is available and helps them compare; increases sales; lets businesses grow; creates jobs for artists, writers and models.\n\n**Bad effects:** may persuade people to buy what they do not need; may exaggerate; the cost of advertising may be added to the price.\n\nAdvertising must be truthful. In Nigeria the Advertising Practitioners Council regulates adverts, and false claims can be punished."
+      },
+      "cards": [
+        {
+          "front": "Advertising",
+          "back": "A paid message that tells people about goods or services and persuades them to buy."
+        },
+        {
+          "front": "Informative advertising",
+          "back": "An advert that gives facts about a product."
+        },
+        {
+          "front": "Persuasive advertising",
+          "back": "An advert that urges people to buy."
+        },
+        {
+          "front": "Competitive advertising",
+          "back": "An advert that shows why one brand is better than others."
+        },
+        {
+          "front": "Outdoor advertising",
+          "back": "Billboards, signboards and painted vehicles."
+        },
+        {
+          "front": "Broadcast media",
+          "back": "Radio and television."
+        },
+        {
+          "front": "A bad effect of advertising",
+          "back": "It may persuade people to buy what they do not need."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The main purpose of advertising is to",
+          "options": [
+            "increase the price of goods",
+            "hide the faults of a product",
+            "stop customers from comparing",
+            "inform and persuade people to buy goods or services"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "An advert that says a new bank branch has opened at Challenge, Ibadan, is an example of",
+          "options": [
+            "informative advertising",
+            "competitive advertising",
+            "an invoice",
+            "a receipt"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A billboard along the Lagos-Ibadan expressway is an example of",
+          "options": [
+            "print media",
+            "broadcast media",
+            "outdoor advertising",
+            "word of mouth"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A soap company advertises that its soap washes whiter than another brand. This is",
+          "options": [
+            "informative advertising",
+            "competitive advertising",
+            "public relations",
+            "direct selling"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which is a possible bad effect of advertising on consumers?",
+          "options": [
+            "It may persuade people to buy things they do not need",
+            "It tells people where goods are sold",
+            "It lowers the price of every product",
+            "It removes the need for money"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain two reasons why a business advertises its goods.",
+          "markScheme": [
+            "States a first purpose, such as to inform customers",
+            "Explains it",
+            "States a second purpose, such as to persuade, remind or compete",
+            "Explains it"
+          ],
+          "modelAnswer": "A business advertises to inform people that its goods exist, where they are sold and at what price. It also advertises to persuade people to buy, so that its sales rise.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A business advertises to inform customers about a new product, so that they know it exists and where to buy it. It also advertises to persuade people to choose its goods instead of another seller's, so that its sales go up.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to inform customers about a new product"
+                },
+                {
+                  "point": 1,
+                  "quote": "they know it exists and where to buy it"
+                },
+                {
+                  "point": 2,
+                  "quote": "to persuade people to choose its goods instead of another seller's"
+                },
+                {
+                  "point": 3,
+                  "quote": "its sales go up"
+                }
+              ],
+              "feedback": "Full marks. You gave the purpose and then what it leads to, twice."
+            },
+            {
+              "tier": "full",
+              "text": "One reason is to remind old customers, because people can forget a shop if they do not hear from it. Another reason is to meet competition, since other businesses are also advertising and a business that is quiet will lose customers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to remind old customers"
+                },
+                {
+                  "point": 1,
+                  "quote": "people can forget a shop if they do not hear from it"
+                },
+                {
+                  "point": 2,
+                  "quote": "to meet competition"
+                },
+                {
+                  "point": 3,
+                  "quote": "a business that is quiet will lose customers"
+                }
+              ],
+              "feedback": "All four marks. Reminding and competing are less common answers and you explained both well."
+            },
+            {
+              "tier": "partial",
+              "text": "A business advertises to inform people. Another reason is to persuade.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to inform people"
+                },
+                {
+                  "point": 2,
+                  "quote": "to persuade"
+                }
+              ],
+              "feedback": "Two correct reasons, but each needs an explanation: what customers learn from an informative advert, and what persuading them leads to."
+            },
+            {
+              "tier": "partial",
+              "text": "Advertising is to make the business have many customers. Advertising helps to tell people that a new shop has opened.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tell people that a new shop has opened"
+                }
+              ],
+              "feedback": "Telling people a shop has opened is a good informing reason. 'Many customers' is the result, not a reason; say how advertising brings them, for example by persuading them."
+            },
+            {
+              "tier": "weak",
+              "text": "A business advertises because it wants to be famous and people will take photos of it.",
+              "meets": [],
+              "feedback": "Fame is not the aim. A business advertises to inform and persuade people so that they buy its goods."
+            },
+            {
+              "tier": "weak",
+              "text": "Business advertises to show off its money to the other businesses.",
+              "meets": [],
+              "feedback": "Advertising costs money, so a business only does it to gain customers: by informing, persuading or reminding them."
+            }
+          ]
+        },
+        {
+          "prompt": "Mama Ife is opening a new restaurant in Ibadan. Choose two media to advertise it, giving a reason for each, and say how she can find out if her advertising worked.",
+          "markScheme": [
+            "Names a suitable first medium",
+            "Gives a reason that fits the restaurant",
+            "Names a suitable second medium",
+            "Gives a reason that fits the restaurant",
+            "Says how to measure results, such as counting new customers or asking how they heard"
+          ],
+          "modelAnswer": "She can use a signboard outside the restaurant, because people who pass by will see it and it costs little. She can also use radio, because many people in Ibadan listen and she can announce the opening. To find out if it worked she can ask new customers how they heard of the restaurant and compare sales before and after.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "She can use a signboard at the road side, because people who pass by every day will see the restaurant. She can also use a local radio station to announce the opening, since many people in Ibadan listen to radio. After some weeks she can ask new customers how they heard about the restaurant, and count how many came after the advert.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a signboard at the road side"
+                },
+                {
+                  "point": 1,
+                  "quote": "people who pass by every day will see the restaurant"
+                },
+                {
+                  "point": 2,
+                  "quote": "a local radio station to announce the opening"
+                },
+                {
+                  "point": 3,
+                  "quote": "many people in Ibadan listen to radio"
+                },
+                {
+                  "point": 4,
+                  "quote": "ask new customers how they heard about the restaurant"
+                }
+              ],
+              "feedback": "Full marks. Both media fit a restaurant, and your method of checking is simple and workable."
+            },
+            {
+              "tier": "full",
+              "text": "One medium is handbills shared near the offices and the market, because the workers there are the ones who will buy lunch. The second is a social media page with photos of the food, since many young people look at their phones all the time. She can measure by checking if sales rise and by asking customers where they saw the advert.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "handbills shared near the offices and the market"
+                },
+                {
+                  "point": 1,
+                  "quote": "the workers there are the ones who will buy lunch"
+                },
+                {
+                  "point": 2,
+                  "quote": "a social media page with photos of the food"
+                },
+                {
+                  "point": 3,
+                  "quote": "many young people look at their phones all the time"
+                },
+                {
+                  "point": 4,
+                  "quote": "checking if sales rise and by asking customers where they saw the advert"
+                }
+              ],
+              "feedback": "All five marks. You picked the places where her customers are, which is the best way to choose a medium."
+            },
+            {
+              "tier": "partial",
+              "text": "She can use radio and television. Many people watch them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "radio"
+                },
+                {
+                  "point": 2,
+                  "quote": "television"
+                }
+              ],
+              "feedback": "Both are real media, but television advertising is costly for one new restaurant. Give a reason for each choice, and say how she will know whether it worked."
+            },
+            {
+              "tier": "partial",
+              "text": "She can put a billboard because many people pass the road. She can see if the advert worked when more customers come.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "put a billboard"
+                },
+                {
+                  "point": 1,
+                  "quote": "many people pass the road"
+                },
+                {
+                  "point": 4,
+                  "quote": "more customers come"
+                }
+              ],
+              "feedback": "Billboard with a reason is good, and counting customers is a way to measure. Add a second medium with its own reason, and be more specific about how she will check, such as asking customers where they heard of it.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "She should open the restaurant and wait for customers to come.",
+              "meets": [],
+              "feedback": "That is not advertising. The question asks you to choose media such as a signboard, radio or handbills, and to say why they suit a restaurant."
+            },
+            {
+              "tier": "weak",
+              "text": "She can advertise by giving free food to everybody every day.",
+              "meets": [],
+              "feedback": "Giving away all the food would lose money. Choose media that tell people about the restaurant, then explain why each reaches her customers."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Channels of distribution",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the chain from producer to consumer;\n2. state the functions of the wholesaler and the retailer;\n3. explain when a short channel is better than a long one;\n4. work out how prices build up along a channel.\n\n## Materials\n\nA flow chart on cardboard with four boxes and arrows; a tin of milk and a tomato as examples; a calculator.\n\n## Starter\n\nAsk: who made the tin of milk, and how many people handled it before you bought it? Write the names of the roles on the board.\n\n## Development\n\n1. Channels of distribution are the routes by which goods pass from producers to consumers.\n2. The common chain: producer to wholesaler to retailer to consumer. Shorter chains: producer to consumer (direct), or producer to retailer to consumer.\n3. Wholesaler: breaks bulk, stores goods, gives credit, passes information. Retailer: sells in small quantities, displays goods, gives advice.\n4. Choose the channel by the goods: fresh goods need a short chain; goods sold in huge numbers may need the long one.\n5. Work through the price build-up: each person adds a margin.\n\n## Class activity\n\nGroups trace three goods (a bag of rice, fresh tomatoes, a school textbook) and draw the channel each would use, with a reason.\n\n## Evaluation\n\n1. Name one function of a retailer.\n2. Why do farmers sell tomatoes through a short channel?\n3. A wholesaler buys at ₦5,000 and adds ₦600. What does the retailer pay?\n\n## Assignment\n\nProblem set on the app. Find the price of one item from a market and a supermarket and explain the difference.",
+      "reading": {
+        "title": "From the maker to the buyer",
+        "content": "# Channels of distribution\n\nA **channel of distribution** is the route that goods take from the producer to the consumer. The people along the route are called **middlemen**.\n\n## The common channels\n\n1. **Producer to consumer.** A farmer sells vegetables to a buyer at the farm gate. This is the shortest channel.\n2. **Producer to retailer to consumer.** A bakery sells bread to a shop, which sells to customers.\n3. **Producer to wholesaler to retailer to consumer.** A rice mill sells to a wholesaler, who sells to retailers, who sell to customers.\n\n## What the middlemen do\n\n**The wholesaler:**\n\n- **Breaks bulk.** Buys by the lorry and sells by the carton to retailers.\n- **Stores goods** so the producer does not need a huge warehouse and the retailer always finds goods.\n- **Gives credit** to retailers.\n- **Passes information** about what customers want.\n\n**The retailer:**\n\n- Sells in **small quantities** to the final buyer.\n- **Displays** goods in a convenient place.\n- **Advises** customers and may give credit.\n\n## Long channel or short channel?\n\nA long channel helps goods that are made in large amounts and sold all over the country. A short channel suits fresh goods, such as fish and tomatoes, which spoil quickly, or expensive goods that need special explanation.\n\n## How prices build up\n\nEvery middleman adds a margin to cover costs and make a profit.\n\n**Worked example.** A bag of rice leaves the mill at ₦40,000. The wholesaler adds ₦3,000 and sells at ₦43,000. The retailer adds ₦2,500 and sells at ₦45,500. The consumer pays ₦45,500.\n\nIf the consumer bought directly from the retailer without the wholesaler, the price would be lower: 40,000 + 2,500 = ₦42,500. But the mill would have to deliver to many small shops itself, so cutting out the wholesaler has a cost."
+      },
+      "cards": [
+        {
+          "front": "Channel of distribution",
+          "back": "The route goods take from producer to consumer."
+        },
+        {
+          "front": "Middleman",
+          "back": "A person between the producer and the consumer, such as a wholesaler or retailer."
+        },
+        {
+          "front": "Breaking bulk",
+          "back": "Buying in large quantities and selling in smaller ones."
+        },
+        {
+          "front": "Wholesaler",
+          "back": "Buys from producers in bulk, stores goods and sells to retailers."
+        },
+        {
+          "front": "Retailer",
+          "back": "Sells small quantities to the final consumer."
+        },
+        {
+          "front": "Direct channel",
+          "back": "Producer to consumer with no middleman."
+        },
+        {
+          "front": "Why fresh goods use short channels",
+          "back": "They spoil quickly and must reach the buyer fast."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The person who buys goods in bulk from a producer and sells smaller quantities to retailers is the",
+          "options": [
+            "agent",
+            "wholesaler",
+            "consumer",
+            "importer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A farmer in Ogbomoso sells fresh tomatoes straight to a buyer at his farm. The channel is",
+          "options": [
+            "producer to consumer",
+            "producer to wholesaler to retailer to consumer",
+            "producer to wholesaler to consumer",
+            "importer to retailer"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is a function of a retailer?",
+          "options": [
+            "Buying directly from many farmers and storing in a huge warehouse",
+            "Making the goods",
+            "Carrying goods on ships",
+            "Selling goods in small quantities to final consumers"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A manufacturer sells a carton of noodles at ₦4,000 to a wholesaler, who adds 10% and sells it to a retailer. What does the retailer pay?",
+          "options": [
+            "₦4,010",
+            "₦400",
+            "₦4,400",
+            "₦5,000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Why do sellers of fresh fish prefer a short channel?",
+          "options": [
+            "Fish does not spoil",
+            "Fish goes bad quickly, so it must reach consumers fast",
+            "Retailers refuse to buy fish",
+            "Wholesalers cannot count"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe two services a wholesaler provides, and say how each helps producers or retailers.",
+          "markScheme": [
+            "Names a first service of a wholesaler",
+            "Explains how it helps producers or retailers",
+            "Names a second service",
+            "Explains how it helps producers or retailers"
+          ],
+          "modelAnswer": "A wholesaler breaks bulk: he buys by the lorry from producers and sells in cartons to retailers who cannot afford a whole lorry. He also stores goods, so the producer needs no big warehouse and retailers can get goods whenever they need them.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A wholesaler breaks bulk. He buys a whole lorry of goods from the producer and sells small quantities to retailers who cannot afford a lorry. He also stores goods in his warehouse, so the producer does not need to keep them and the retailer can get goods whenever needed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "breaks bulk"
+                },
+                {
+                  "point": 1,
+                  "quote": "buys a whole lorry of goods from the producer and sells small quantities to retailers"
+                },
+                {
+                  "point": 2,
+                  "quote": "stores goods in his warehouse"
+                },
+                {
+                  "point": 3,
+                  "quote": "the producer does not need to keep them and the retailer can get goods whenever needed"
+                }
+              ],
+              "feedback": "Full marks. You showed the help to both the producer and the retailer."
+            },
+            {
+              "tier": "full",
+              "text": "A wholesaler gives credit to retailers, so a shop owner can take goods now and pay when she has sold them. A wholesaler also gives information to producers about what customers want, so the producer can make the right goods.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "gives credit to retailers"
+                },
+                {
+                  "point": 1,
+                  "quote": "a shop owner can take goods now and pay when she has sold them"
+                },
+                {
+                  "point": 2,
+                  "quote": "gives information to producers about what customers want"
+                },
+                {
+                  "point": 3,
+                  "quote": "so the producer can make the right goods"
+                }
+              ],
+              "feedback": "All four marks. Credit and information are services that many learners leave out."
+            },
+            {
+              "tier": "partial",
+              "text": "A wholesaler breaks bulk. He also stores goods.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "breaks bulk"
+                },
+                {
+                  "point": 2,
+                  "quote": "stores goods"
+                }
+              ],
+              "feedback": "Both services are right. For each one, say how it helps: who needs the goods in smaller packs, and who is spared from keeping a big stock."
+            },
+            {
+              "tier": "partial",
+              "text": "A wholesaler sells goods to the consumers directly. He also sells to retailers in big amounts so that retailers can sell them in small amounts.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sells to retailers in big amounts"
+                },
+                {
+                  "point": 1,
+                  "quote": "so that retailers can sell them in small amounts"
+                }
+              ],
+              "feedback": "Your second sentence describes breaking bulk well. Wholesalers sell mainly to retailers, not to consumers, and you need a second service such as storing goods.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A wholesaler is a person who sells things in a wholesome way. He gives people jobs.",
+              "meets": [],
+              "feedback": "'Wholesale' means selling in large quantities. Name what a wholesaler does for producers and retailers, such as breaking bulk or storing goods."
+            },
+            {
+              "tier": "weak",
+              "text": "The wholesaler is the last person in the chain and he buys from the consumer.",
+              "meets": [],
+              "feedback": "The consumer is the last person in the chain and is the one who buys. The wholesaler is between the producer and the retailer."
+            }
+          ]
+        },
+        {
+          "prompt": "A bag of rice leaves the mill at ₦40,000. The wholesaler adds ₦3,000 and the retailer adds ₦2,500. Write the channel, work out what the consumer pays, and say how much less the consumer would pay if the wholesaler were left out. Give one problem for the mill if the wholesaler is left out.",
+          "markScheme": [
+            "Writes the channel in the right order: producer, wholesaler, retailer, consumer",
+            "Works out the wholesaler's selling price as ₦43,000",
+            "Works out that the consumer pays ₦45,500",
+            "Says that without the wholesaler the consumer would pay less (₦42,500)",
+            "Gives a problem for the mill, such as having to store the rice or deliver to many small retailers"
+          ],
+          "modelAnswer": "The channel is producer to wholesaler to retailer to consumer. The wholesaler sells at 40,000 + 3,000 = ₦43,000, and the retailer sells at 43,000 + 2,500 = ₦45,500, so the consumer pays ₦45,500. Without the wholesaler the price would be 40,000 + 2,500 = ₦42,500, so the consumer would save ₦3,000. The mill would have to store the rice and deliver to many small retailers itself.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The channel is producer to wholesaler to retailer to consumer. The wholesaler sells at 40,000 + 3,000 = ₦43,000. The retailer sells at 43,000 + 2,500 = ₦45,500, so the consumer pays ₦45,500. If the wholesaler is cut out the consumer would pay 40,000 + 2,500 = ₦42,500, which is cheaper. But the miller would have to store the rice and sell to many small retailers himself.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "producer to wholesaler to retailer to consumer"
+                },
+                {
+                  "point": 1,
+                  "quote": "40,000 + 3,000 = ₦43,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "so the consumer pays ₦45,500"
+                },
+                {
+                  "point": 3,
+                  "quote": "40,000 + 2,500 = ₦42,500, which is cheaper"
+                },
+                {
+                  "point": 4,
+                  "quote": "the miller would have to store the rice and sell to many small retailers himself"
+                }
+              ],
+              "feedback": "Full marks. You showed each step of the price build-up, and the problem you gave for the mill is a real one."
+            },
+            {
+              "tier": "full",
+              "text": "Miller → wholesaler → retailer → consumer. Wholesaler's price is ₦43,000 (40,000 + 3,000). Retailer adds 2,500 so the consumer pays 43,000 + 2,500 = ₦45,500. Without the wholesaler the price would be ₦42,500 so the consumer saves ₦3,000. The disadvantage is that the miller must deliver the rice to all the retailers and keep stock himself, which costs him time and money.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Miller → wholesaler → retailer → consumer"
+                },
+                {
+                  "point": 1,
+                  "quote": "Wholesaler's price is ₦43,000 (40,000 + 3,000)"
+                },
+                {
+                  "point": 2,
+                  "quote": "43,000 + 2,500 = ₦45,500"
+                },
+                {
+                  "point": 3,
+                  "quote": "Without the wholesaler the price would be ₦42,500"
+                },
+                {
+                  "point": 4,
+                  "quote": "the miller must deliver the rice to all the retailers and keep stock himself"
+                }
+              ],
+              "feedback": "All five marks. Stating the ₦3,000 saving at the end answers the question directly."
+            },
+            {
+              "tier": "partial",
+              "text": "Producer, wholesaler, retailer, consumer. 40,000 + 3,000 + 2,500 = ₦45,500. The consumer pays ₦45,500.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Producer, wholesaler, retailer, consumer"
+                },
+                {
+                  "point": 2,
+                  "quote": "40,000 + 3,000 + 2,500 = ₦45,500"
+                }
+              ],
+              "feedback": "Channel and total are correct. Show the wholesaler's price (₦43,000), say what the consumer would pay without the wholesaler, and give a problem for the mill."
+            },
+            {
+              "tier": "partial",
+              "text": "The channel is producer, retailer, wholesaler, consumer. The consumer pays 40,000 + 3,000 + 2,500 = ₦45,500. Cutting out the wholesaler makes the rice cheaper.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "40,000 + 3,000 + 2,500 = ₦45,500"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cutting out the wholesaler makes the rice cheaper"
+                }
+              ],
+              "feedback": "The total is right and so is your idea that cutting out the wholesaler lowers the price. The retailer comes after the wholesaler in the chain. Give the new price (₦42,500) and a problem for the mill.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The consumer pays 40,000 because that is the price of the rice.",
+              "meets": [],
+              "feedback": "₦40,000 is the price when the rice leaves the mill. The wholesaler and the retailer each add something before the consumer buys."
+            },
+            {
+              "tier": "weak",
+              "text": "Wholesaler is the person who buys the rice and eats it. The retailer sells it. 40,000 × 3,000 × 2,500.",
+              "meets": [],
+              "feedback": "The wholesaler and retailer do not eat the rice; they pass it on. The price builds up by adding, not multiplying: 40,000 + 3,000, then + 2,500."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Why keep books: the importance of bookkeeping",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define bookkeeping and book of account;\n2. give reasons why a business keeps books;\n3. state the qualities of a good bookkeeper.\n\n## Materials\n\nA cash book from a real shop (blank pages are fine), a school exercise book ruled in columns, a marker board.\n\n## Starter\n\nAsk: Mama Nkechi sells goods every day and forgets how much she spent on stock. How can she know whether she is making profit? Collect ideas.\n\n## Development\n\n1. Define bookkeeping as the regular recording of a business's money transactions in books.\n2. Reasons: to know profit or loss, to know what is owed and what is owing, to prevent and find errors and fraud, to give information to banks and the tax office, to plan.\n3. Qualities of a bookkeeper: honesty, accuracy, neatness, confidentiality, regularity, and knowledge of accounts.\n4. Work a short example: sales ₦86,000, stock cost ₦50,000, rent ₦12,000, transport ₦8,000; profit = 86,000 - 70,000 = ₦16,000.\n\n## Class activity\n\nLearners keep a one-day record of the class tuck-shop's sales and costs in two columns, then find the profit.\n\n## Evaluation\n\n1. Define bookkeeping.\n2. Give two qualities of a bookkeeper.\n3. Why would a bank ask to see a trader's books?\n\n## Assignment\n\nWorksheet on the app. Write three lines on what could go wrong if a shop kept no records.",
+      "reading": {
+        "title": "Why a trader writes things down",
+        "content": "# Bookkeeping\n\n**Bookkeeping** is the regular recording of the money transactions of a business in books of account. A transaction is anything that involves money: a sale, a purchase, a payment of rent, a bank deposit.\n\n## Why keep books?\n\nConsider Mama Nkechi. She sold goods for ₦86,000 this month. She bought stock for ₦50,000, paid ₦12,000 for rent and ₦8,000 for transport. Her profit is 86,000 - (50,000 + 12,000 + 8,000) = 86,000 - 70,000 = ₦16,000. Without records she would only guess.\n\nBooks of account let a business:\n\n1. **Know its profit or loss.** Without records the owner may think she is rich when she is losing money.\n2. **Know who owes whom.** Customers who owe the business and suppliers the business owes are all recorded, so nobody is forgotten.\n3. **Prevent mistakes and stealing.** If cash is missing, the books show where it went.\n4. **Give information to others.** Banks ask to see books before lending. The tax office needs them to work out tax.\n5. **Plan.** The owner can see which goods sell best and which costs are too high.\n6. **Settle quarrels.** Written records are proof of what was paid.\n\n## The qualities of a good bookkeeper\n\n- **Honesty.** The bookkeeper handles other people's money and must record it truthfully.\n- **Accuracy.** A figure written as ₦4,500 instead of ₦5,400 makes the profit wrong.\n- **Neatness.** Clear writing prevents someone reading 1 as 7.\n- **Confidentiality.** The business's figures are secret and must not be told to rivals.\n- **Regularity.** Entries are made as transactions happen, not months later.\n- **Knowledge.** The bookkeeper must understand how to record each transaction.\n\nA business with good books can see where it stands; a business without them is travelling at night without a light."
+      },
+      "cards": [
+        {
+          "front": "Bookkeeping",
+          "back": "The regular recording of a business's money transactions in books of account."
+        },
+        {
+          "front": "Transaction",
+          "back": "Any activity that involves money, such as a sale or a payment."
+        },
+        {
+          "front": "Profit",
+          "back": "Income minus costs when income is bigger."
+        },
+        {
+          "front": "Honesty (bookkeeper)",
+          "back": "Recording money truthfully and never taking what belongs to the business."
+        },
+        {
+          "front": "Accuracy (bookkeeper)",
+          "back": "Writing every figure exactly right."
+        },
+        {
+          "front": "Confidentiality",
+          "back": "Keeping the business's figures secret from outsiders."
+        },
+        {
+          "front": "Why banks ask for books",
+          "back": "To see whether the business can repay a loan."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Bookkeeping is",
+          "options": [
+            "the selling of goods to customers",
+            "the making of goods in a factory",
+            "the regular recording of a business's money transactions",
+            "the advertising of goods"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A bookkeeper records ₦5,400 as ₦4,500 by mistake. Which quality is missing?",
+          "options": [
+            "Honesty",
+            "Accuracy",
+            "Politeness",
+            "Speed"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why do banks often ask a trader for her books before giving a loan?",
+          "options": [
+            "To check the colour of her shop",
+            "To give her a job",
+            "To advertise her business",
+            "To see whether the business can repay the loan"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A bookkeeper tells a friend how much the owner's business earned last year. Which quality is she failing to show?",
+          "options": [
+            "Confidentiality",
+            "Neatness",
+            "Punctuality",
+            "Arithmetic"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Mama Nkechi sold goods for ₦86,000. She spent ₦50,000 on stock, ₦12,000 on rent and ₦8,000 on transport. What is her profit?",
+          "options": [
+            "₦36,000",
+            "₦24,000",
+            "₦16,000",
+            "₦86,000"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Give three reasons why a trader should keep proper books of account.",
+          "markScheme": [
+            "Gives a first correct reason, such as to know profit or loss",
+            "Gives a second different correct reason",
+            "Gives a third different correct reason"
+          ],
+          "modelAnswer": "A trader should keep books to know how much profit or loss she has made, to show records to the bank or the tax office when they ask, and to find mistakes or stealing by workers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "So that the trader knows how much profit or loss he has made. So that he can show a bank or tax office the records when they ask. And so that mistakes or stealing by workers can be found.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "knows how much profit or loss he has made"
+                },
+                {
+                  "point": 1,
+                  "quote": "show a bank or tax office the records"
+                },
+                {
+                  "point": 2,
+                  "quote": "mistakes or stealing by workers can be found"
+                }
+              ],
+              "feedback": "Full marks. Three different reasons, each in your own words."
+            },
+            {
+              "tier": "full",
+              "text": "Books show what customers owe the business and what the business owes suppliers, so that nobody is forgotten. They help the owner to plan, for example to know which goods sell best. They also give proof if there is a quarrel about a payment.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "what customers owe the business and what the business owes suppliers"
+                },
+                {
+                  "point": 1,
+                  "quote": "know which goods sell best"
+                },
+                {
+                  "point": 2,
+                  "quote": "give proof if there is a quarrel about a payment"
+                }
+              ],
+              "feedback": "All three marks. Your reason about quarrels is a practical one that shows you understand written proof."
+            },
+            {
+              "tier": "partial",
+              "text": "To know the profit. To know how much money the business has.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "To know the profit"
+                },
+                {
+                  "point": 1,
+                  "quote": "how much money the business has"
+                }
+              ],
+              "feedback": "Two good reasons. Add a third that is different, such as to give information to the bank or the tax office, or to find mistakes."
+            },
+            {
+              "tier": "partial",
+              "text": "So that we know the profit or loss. It is also good because the government will not arrest the trader.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "know the profit or loss"
+                }
+              ],
+              "feedback": "The first reason is right. The tax office does need records, but say that directly: books are needed to work out how much tax the business must pay. Add a third reason.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Because the teacher told us to keep books.",
+              "meets": [],
+              "feedback": "Think about what the trader gains. For example, books show whether the business is making profit or loss."
+            },
+            {
+              "tier": "weak",
+              "text": "So that the trader will have many books in the shop and look educated.",
+              "meets": [],
+              "feedback": "Books of account are records of money, not decoration. A trader keeps them to know profit, who owes whom, and to find mistakes."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain two qualities of a good bookkeeper, and say what could go wrong without each.",
+          "markScheme": [
+            "Names a first quality of a good bookkeeper",
+            "Explains what could go wrong without it",
+            "Names a second quality",
+            "Explains what could go wrong without it"
+          ],
+          "modelAnswer": "A bookkeeper must be honest, because otherwise she may write false figures or take money from the business. A bookkeeper must be accurate, because one wrong figure makes the profit wrong and the owner may take a wrong decision.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A bookkeeper must be honest. If he is not honest he can write wrong figures or take money from the business. A bookkeeper must be accurate. If a figure is wrong, like ₦5,400 written as ₦4,500, the profit will be wrong and the owner may make a wrong decision.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "must be honest"
+                },
+                {
+                  "point": 1,
+                  "quote": "he can write wrong figures or take money from the business"
+                },
+                {
+                  "point": 2,
+                  "quote": "must be accurate"
+                },
+                {
+                  "point": 3,
+                  "quote": "the profit will be wrong and the owner may make a wrong decision"
+                }
+              ],
+              "feedback": "Full marks. The example of ₦5,400 and ₦4,500 shows exactly how an error harms the owner."
+            },
+            {
+              "tier": "full",
+              "text": "Confidentiality means the bookkeeper keeps the owner's secrets. Without it she may tell competitors how much the business earns and they could take its customers. Neatness is also a quality, because if the writing is not clear, others will read 1 as 7 and make mistakes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Confidentiality"
+                },
+                {
+                  "point": 1,
+                  "quote": "she may tell competitors how much the business earns and they could take its customers"
+                },
+                {
+                  "point": 2,
+                  "quote": "Neatness"
+                },
+                {
+                  "point": 3,
+                  "quote": "others will read 1 as 7 and make mistakes"
+                }
+              ],
+              "feedback": "All four marks. You chose two qualities that learners often forget and gave real consequences."
+            },
+            {
+              "tier": "partial",
+              "text": "A good bookkeeper must be honest and accurate.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "honest"
+                },
+                {
+                  "point": 2,
+                  "quote": "accurate"
+                }
+              ],
+              "feedback": "Both qualities are right. The question also asks what goes wrong without each one, for example false figures or a wrong profit."
+            },
+            {
+              "tier": "partial",
+              "text": "A bookkeeper should be neat. If he is not neat the books will look dirty and the owner will not like it. He should also be honest.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "neat"
+                },
+                {
+                  "point": 2,
+                  "quote": "honest"
+                }
+              ],
+              "feedback": "Neat and honest are good qualities. Without neatness the real danger is that figures are read wrongly, not that the book looks dirty. Say what could go wrong without honesty too.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A good bookkeeper must be tall and smart so that customers will respect him.",
+              "meets": [],
+              "feedback": "Looks do not matter for keeping books. Think about the qualities needed for handling money records, such as honesty and accuracy."
+            },
+            {
+              "tier": "weak",
+              "text": "A bookkeeper should be good at selling, so that he can sell more goods.",
+              "meets": [],
+              "feedback": "Selling is the work of a salesperson. A bookkeeper records transactions and needs qualities such as honesty, accuracy and neatness."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Source documents and special journals",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the source documents of a business and what each shows;\n2. say which journal each document is recorded in;\n3. enter credit sales and credit purchases in a journal and total it.\n\n## Materials\n\nSamples of an invoice, a credit note, a payment voucher and a cheque counterfoil; ruled sheets for a sales journal; a marker board.\n\n## Starter\n\nShow an invoice. Ask: how does the shop that received it know what to write in its books?\n\n## Development\n\n1. A source document is the first written proof of a transaction. Examples: invoice, receipt, credit note, debit note, voucher and cheque counterfoil.\n2. Special journals group like transactions: sales journal (credit sales), purchases journal (credit purchases), returns inwards journal (goods customers return), returns outwards journal (goods returned to suppliers) and the cash book (cash and bank).\n3. The sales invoice goes in the sales journal; the purchases invoice in the purchases journal; a credit note sent to a customer in the returns inwards journal.\n4. Layout: date, name of customer or supplier, invoice number, amount. Total the amount column at the end of the month.\n\n## Class activity\n\nPairs receive three sales invoices and enter them in a sales journal, then swap and check each other's total.\n\n## Evaluation\n\n1. Which journal records goods returned by a customer?\n2. What does a voucher prove?\n3. Total ₦7,200, ₦3,800 and ₦12,500 in a journal.\n\n## Assignment\n\nWorksheet on the app. Draw a blank purchases journal and fill in two entries.",
+      "reading": {
+        "title": "From document to journal",
+        "content": "# Source documents and special journals\n\n## Source documents\n\nEvery transaction begins with a piece of paper. These papers are called **source documents** because the entries in the books come from them.\n\n| Document | What it shows |\n| --- | --- |\n| Invoice | Goods sold on credit, with quantity, price and total |\n| Receipt | Money received |\n| Credit note | The seller reduces the buyer's bill because goods were returned |\n| Debit note | The buyer asks the seller to reduce a bill or records an extra charge |\n| Voucher | Proof that money was paid out, signed by the person paid |\n| Cheque counterfoil | The stub that records a cheque that was written |\n\n## Special journals\n\nIf a shop wrote every transaction in one book, finding anything would be slow. So similar transactions go into special books, called **journals** or day books.\n\n- **Sales journal:** credit sales, from sales invoices.\n- **Purchases journal:** credit purchases, from invoices received from suppliers.\n- **Returns inwards journal:** goods returned by customers, from credit notes sent.\n- **Returns outwards journal:** goods the business returns to suppliers, from credit notes received.\n- **Cash book:** all money received and paid, in cash or by bank.\n\n## How to enter a journal\n\nEach line has the date, the name of the customer or supplier, the invoice number and the amount.\n\n**Worked example.** Mr Tunde sells on credit:\n\n| Date | Customer | Invoice | Amount |\n| --- | --- | --- | --- |\n| 3 March | Mrs Bisi | 101 | ₦14,000 |\n| 9 March | Mr Chika | 102 | ₦9,500 |\n| 20 March | Mrs Bisi | 103 | ₦6,000 |\n| | Total for March | | ₦29,500 |\n\n14,000 + 9,500 + 6,000 = ₦29,500. The total is carried to the ledger at the end of the month.\n\nCash sales are not entered in the sales journal. They go straight into the cash book."
+      },
+      "cards": [
+        {
+          "front": "Source document",
+          "back": "The first written proof of a transaction, such as an invoice."
+        },
+        {
+          "front": "Invoice",
+          "back": "A document showing goods sold on credit and the amount due."
+        },
+        {
+          "front": "Credit note",
+          "back": "A document that reduces a buyer's bill because goods were returned."
+        },
+        {
+          "front": "Voucher",
+          "back": "Proof that money was paid out, signed by the person who received it."
+        },
+        {
+          "front": "Sales journal",
+          "back": "A book for credit sales, written from sales invoices."
+        },
+        {
+          "front": "Purchases journal",
+          "back": "A book for credit purchases, written from invoices received."
+        },
+        {
+          "front": "Returns inwards",
+          "back": "Goods that customers send back to the business."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The first written record of a transaction, from which entries are made in the books, is a",
+          "options": [
+            "trial balance",
+            "balance sheet",
+            "profit and loss account",
+            "source document"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trader buys goods on credit from a wholesaler. The invoice received is first recorded in the",
+          "options": [
+            "purchases journal",
+            "sales journal",
+            "cash book",
+            "returns outwards journal"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A customer returns damaged goods and the shop sends a credit note. The return is recorded in the",
+          "options": [
+            "purchases journal",
+            "cash book",
+            "returns inwards journal",
+            "petty cash book"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A shop made credit sales of ₦12,000, ₦8,500 and ₦15,500. What is the total in the sales journal?",
+          "options": [
+            "₦35,000",
+            "₦36,000",
+            "₦34,500",
+            "₦37,000"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A written proof of money paid out by a business, signed by the person who received it, is a",
+          "options": [
+            "credit note",
+            "invoice",
+            "trial balance",
+            "voucher"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State what each of these documents is used for: an invoice, a receipt and a credit note.",
+          "markScheme": [
+            "States that an invoice shows goods sold on credit and the amount due",
+            "States that a receipt is proof that money was received",
+            "States that a credit note reduces a bill because goods were returned"
+          ],
+          "modelAnswer": "An invoice shows goods sold on credit and the amount the buyer must pay. A receipt is proof that money has been received. A credit note is sent to reduce a buyer's bill when goods are returned.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "An invoice is sent to a customer who buys on credit, to show the goods and the amount to pay. A receipt is given when money is received, as proof of payment. A credit note is sent when the customer returns goods, so that the bill is reduced.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to show the goods and the amount to pay"
+                },
+                {
+                  "point": 1,
+                  "quote": "given when money is received, as proof of payment"
+                },
+                {
+                  "point": 2,
+                  "quote": "sent when the customer returns goods, so that the bill is reduced"
+                }
+              ],
+              "feedback": "Full marks. Each document is matched to the exact moment it is used."
+            },
+            {
+              "tier": "full",
+              "text": "Invoice: tells the buyer what goods were supplied on credit and how much he owes. Receipt: shows that the seller has received the money. Credit note: used to take away part of the amount on an invoice when some goods are brought back.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "tells the buyer what goods were supplied on credit and how much he owes"
+                },
+                {
+                  "point": 1,
+                  "quote": "shows that the seller has received the money"
+                },
+                {
+                  "point": 2,
+                  "quote": "take away part of the amount on an invoice when some goods are brought back"
+                }
+              ],
+              "feedback": "All three marks. You also showed the link between a credit note and an invoice."
+            },
+            {
+              "tier": "partial",
+              "text": "An invoice is a bill for goods sold on credit. A receipt is for money received. A credit note is a note about credit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a bill for goods sold on credit"
+                },
+                {
+                  "point": 1,
+                  "quote": "for money received"
+                }
+              ],
+              "feedback": "Invoice and receipt are right. A credit note is not just a note about credit; it reduces what a customer owes because goods were returned."
+            },
+            {
+              "tier": "partial",
+              "text": "A receipt shows that the buyer has paid. A credit note is used when the customer returns the goods. An invoice is a document given to the customer.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A receipt shows that the buyer has paid"
+                },
+                {
+                  "point": 2,
+                  "quote": "used when the customer returns the goods"
+                }
+              ],
+              "feedback": "Receipt and credit note are good; say that a credit note reduces the amount owed. An invoice must say more than 'a document': it lists the goods sold on credit and the amount due.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "An invoice is when somebody invites you to a party. A receipt is for cooking. A credit note is a music note.",
+              "meets": [],
+              "feedback": "These are business documents. An invoice lists goods sold on credit, a receipt proves payment and a credit note reduces a bill after goods are returned."
+            },
+            {
+              "tier": "weak",
+              "text": "They are all the same thing. They are papers that the shop gives to customers.",
+              "meets": [],
+              "feedback": "They are different papers with different jobs. Learn one use for each: invoice, amount due; receipt, payment proof; credit note, goods returned."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Tunde sold goods on credit: on 3 March to Mrs Bisi, invoice 101, ₦14,000; on 9 March to Mr Chika, invoice 102, ₦9,500; on 20 March to Mrs Bisi, invoice 103, ₦6,000. Say which journal records these sales, enter them and find the total.",
+          "markScheme": [
+            "Names the sales journal",
+            "Enters all three sales with date, customer and invoice number",
+            "Enters the amounts correctly",
+            "Totals the amounts as ₦29,500",
+            "Says the entries come from the sales invoices"
+          ],
+          "modelAnswer": "These are credit sales, so they go in the sales journal. 3 March, Mrs Bisi, invoice 101, ₦14,000; 9 March, Mr Chika, invoice 102, ₦9,500; 20 March, Mrs Bisi, invoice 103, ₦6,000. The total is 14,000 + 9,500 + 6,000 = ₦29,500. The entries are made from the sales invoices.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "These are credit sales so I enter them in the sales journal.\n3 March, Mrs Bisi, 101, ₦14,000\n9 March, Mr Chika, 102, ₦9,500\n20 March, Mrs Bisi, 103, ₦6,000\nTotal = 14,000 + 9,500 + 6,000 = ₦29,500. The entries are written from the sales invoices.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I enter them in the sales journal"
+                },
+                {
+                  "point": 1,
+                  "quote": "3 March, Mrs Bisi, 101"
+                },
+                {
+                  "point": 2,
+                  "quote": "₦14,000\n9 March, Mr Chika, 102, ₦9,500\n20 March, Mrs Bisi, 103, ₦6,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total = 14,000 + 9,500 + 6,000 = ₦29,500"
+                },
+                {
+                  "point": 4,
+                  "quote": "The entries are written from the sales invoices"
+                }
+              ],
+              "feedback": "Full marks. Your entries are complete and your total is right."
+            },
+            {
+              "tier": "full",
+              "text": "Sales journal. Because the goods were sold on credit, not for cash.\nDate | Customer | Invoice | Amount\n3 Mar | Mrs Bisi | 101 | 14,000\n9 Mar | Mr Chika | 102 | 9,500\n20 Mar | Mrs Bisi | 103 | 6,000\nTotal | | | 29,500\nI got the figures from the invoices Mr Tunde sent to the customers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sales journal"
+                },
+                {
+                  "point": 1,
+                  "quote": "3 Mar | Mrs Bisi | 101"
+                },
+                {
+                  "point": 2,
+                  "quote": "14,000\n9 Mar | Mr Chika | 102 | 9,500\n20 Mar | Mrs Bisi | 103 | 6,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total | | | 29,500"
+                },
+                {
+                  "point": 4,
+                  "quote": "I got the figures from the invoices Mr Tunde sent to the customers"
+                }
+              ],
+              "feedback": "All five marks. Your table is neat and you gave the reason for choosing the sales journal."
+            },
+            {
+              "tier": "partial",
+              "text": "It is the sales journal. 14,000 + 9,500 + 6,000 = ₦29,500.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the sales journal"
+                },
+                {
+                  "point": 3,
+                  "quote": "14,000 + 9,500 + 6,000 = ₦29,500"
+                }
+              ],
+              "feedback": "Journal and total are correct. You were also asked to enter each sale with its date, customer and invoice number."
+            },
+            {
+              "tier": "partial",
+              "text": "Sales journal. 3 March Mrs Bisi 101 14,000; 9 March Mr Chika 102 9,500; 20 March Mrs Bisi 103 6,000. Total ₦28,500.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sales journal"
+                },
+                {
+                  "point": 1,
+                  "quote": "3 March Mrs Bisi 101 14,000; 9 March Mr Chika 102 9,500; 20 March Mrs Bisi 103 6,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "14,000; 9 March Mr Chika 102 9,500; 20 March Mrs Bisi 103 6,000"
+                }
+              ],
+              "feedback": "Your entries are complete, but the total is wrong. Add again: 14,000 + 9,500 = 23,500; plus 6,000 = ₦29,500.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "It is the cash book because Mr Tunde got the money. The total is 14,000 and 9,500 and 6,000.",
+              "meets": [],
+              "feedback": "These sales were on credit, so no money was received yet; they go in the sales journal. The cash book records money actually received or paid."
+            },
+            {
+              "tier": "weak",
+              "text": "Purchases journal. 14,000 × 9,500 × 6,000.",
+              "meets": [],
+              "feedback": "Mr Tunde is selling, so the sales journal is correct. To total the amounts, add them; do not multiply."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Double entry: the cash book, petty cash book and ledger",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the rule of double entry;\n2. enter simple transactions in the cash account;\n3. explain the imprest system of petty cash;\n4. balance a cash account.\n\n## Materials\n\nRuled T-account sheets, a marker board with a large T-account drawn, play money, a petty cash tin.\n\n## Starter\n\nGive a learner ₦100 of play money to buy a pencil from another learner. Ask: how many people changed? Draw the two accounts on the board.\n\n## Development\n\n1. Every transaction has two sides: one account receives value (debit) and another gives value (credit). Total debits equal total credits.\n2. The cash account: money received goes on the debit side; money paid out on the credit side.\n3. The cash book is the cash account in book form, with bank and cash columns if needed.\n4. Petty cash: a small sum kept for small payments (stamps, transport, tea). The imprest system gives a fixed float, say ₦5,000; at the end of the week the cashier is paid back what was spent.\n5. Balance the cash account: total each side, take the smaller from the larger, and carry the balance down.\n\n## Class activity\n\nPairs enter six transactions in a T-account, balance it, and check the balance against the play money left.\n\n## Evaluation\n\n1. On which side of the cash account is rent paid entered?\n2. Cash ₦60,000; received ₦25,000; paid ₦18,000. What is the balance?\n3. What is a petty cash float?\n\n## Assignment\n\nWorksheet on the app. Write each of your pocket money receipts and spendings for a week in a cash account.",
+      "reading": {
+        "title": "Two sides to every transaction",
+        "content": "# Double entry\n\n## The rule\n\nEvery transaction affects **two** accounts. One account **receives** value and is **debited**. Another account **gives** value and is **credited**. The amount is the same on both sides.\n\n**Example.** A trader buys goods for ₦20,000 cash. The purchases account receives the goods: **debit purchases ₦20,000**. The cash account gives out the money: **credit cash ₦20,000**.\n\n## The cash account and the cash book\n\nThe cash account records money in and out. It has a debit (left) side and a credit (right) side.\n\n- **Debit side:** cash received (capital put in, cash sales, money from debtors).\n- **Credit side:** cash paid out (purchases, rent, wages).\n\nThe **cash book** is the cash account kept in book form, with columns for cash and for bank.\n\n## Balancing the cash account\n\n**Worked example.** A trader starts with ₦100,000 cash capital, buys goods for ₦40,000, sells goods for ₦65,000 and pays rent of ₦10,000.\n\n| Debit | ₦ | Credit | ₦ |\n| --- | --- | --- | --- |\n| Capital | 100,000 | Purchases | 40,000 |\n| Sales | 65,000 | Rent | 10,000 |\n| | | Balance carried down | 115,000 |\n| Total | 165,000 | Total | 165,000 |\n\nThe balance of ₦115,000 is the cash the trader still has. It is brought down to the debit side to start the next period.\n\n## Petty cash book\n\nSmall payments such as stamps, tea and transport would fill the cash book with tiny entries. So the cashier keeps a **petty cash book**. Under the **imprest system** a fixed sum called the **float**, for example ₦5,000, is given. At the end of the week the petty cashier is given back exactly what was spent, so the float is full again.\n\n## The ledger\n\nThe **ledger** is the collection of all the accounts: cash, sales, purchases, rent, debtors, creditors and so on. Entries from the journals and cash book are posted into it."
+      },
+      "cards": [
+        {
+          "front": "Double entry",
+          "back": "Every transaction has a debit entry and an equal credit entry."
+        },
+        {
+          "front": "Debit",
+          "back": "The account that receives value."
+        },
+        {
+          "front": "Credit",
+          "back": "The account that gives value."
+        },
+        {
+          "front": "Cash account: debit side",
+          "back": "Cash received."
+        },
+        {
+          "front": "Cash account: credit side",
+          "back": "Cash paid out."
+        },
+        {
+          "front": "Petty cash float",
+          "back": "A fixed small sum used for small expenses under the imprest system."
+        },
+        {
+          "front": "Ledger",
+          "back": "The book that contains all the accounts of a business."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In double entry, every transaction has",
+          "options": [
+            "one entry only",
+            "two debits",
+            "a debit entry and an equal credit entry",
+            "only credits"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A trader pays ₦10,000 cash for rent. In the cash account this is entered on the",
+          "options": [
+            "debit side",
+            "credit side",
+            "either side",
+            "neither side"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Cash received is entered on which side of the cash account?",
+          "options": [
+            "Debit side",
+            "Credit side",
+            "Neither side",
+            "Both sides"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Mrs Ada has ₦60,000 cash. She receives ₦25,000 from a customer and pays ₦18,000 to a supplier. How much cash does she have now?",
+          "options": [
+            "₦103,000",
+            "₦43,000",
+            "₦85,000",
+            "₦67,000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The petty cash book is used to record",
+          "options": [
+            "large payments by cheque",
+            "sales on credit",
+            "small day-to-day payments such as stamps and transport",
+            "the wages of all workers"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A trader buys goods for ₦20,000 cash. Explain how this is recorded using the rule of double entry.",
+          "markScheme": [
+            "Says two accounts are affected: the purchases (goods) account and the cash account",
+            "Says the purchases account is debited with ₦20,000",
+            "Says the cash account is credited with ₦20,000",
+            "Says every debit has an equal credit"
+          ],
+          "modelAnswer": "Two accounts are affected: purchases and cash. The purchases account receives the goods, so it is debited with ₦20,000. The cash account gives out the money, so it is credited with ₦20,000. The debit and the credit are equal.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Two accounts are affected: the purchases (goods) account and the cash account. The purchases account receives the goods, so it is debited with ₦20,000. The cash account gives out the money, so it is credited with ₦20,000. For every debit there is an equal credit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Two accounts are affected: the purchases (goods) account and the cash account"
+                },
+                {
+                  "point": 1,
+                  "quote": "purchases account receives the goods, so it is debited with ₦20,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "cash account gives out the money, so it is credited with ₦20,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "For every debit there is an equal credit"
+                }
+              ],
+              "feedback": "Full marks. You explained why each account is debited or credited, not just which."
+            },
+            {
+              "tier": "full",
+              "text": "Buying goods affects the goods account and the cash account. Debit the goods account with ₦20,000 because goods come in. Credit the cash account with ₦20,000 because cash goes out. The debit and the credit are the same amount, so the books balance.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "affects the goods account and the cash account"
+                },
+                {
+                  "point": 1,
+                  "quote": "Debit the goods account with ₦20,000 because goods come in"
+                },
+                {
+                  "point": 2,
+                  "quote": "Credit the cash account with ₦20,000 because cash goes out"
+                },
+                {
+                  "point": 3,
+                  "quote": "The debit and the credit are the same amount, so the books balance"
+                }
+              ],
+              "feedback": "All four marks. Linking 'goods come in' to debit and 'cash goes out' to credit is the best way to remember the rule."
+            },
+            {
+              "tier": "partial",
+              "text": "Debit the purchases account ₦20,000 and credit the cash account ₦20,000.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Debit the purchases account ₦20,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "credit the cash account ₦20,000"
+                }
+              ],
+              "feedback": "Both entries are right. Say why (one account receives, the other gives) and that the debit equals the credit."
+            },
+            {
+              "tier": "partial",
+              "text": "The cash account is debited because money is going out and the goods account is credited.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "cash account is debited because money is going out and the goods account"
+                }
+              ],
+              "feedback": "You named the two accounts, but you have the sides reversed. Money going out is a credit to cash; the goods coming in are a debit to the goods account.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Double entry means you write the transaction two times in the same book to be sure.",
+              "meets": [],
+              "feedback": "Double entry means two accounts are affected, one debited and one credited. It is not writing the same thing twice."
+            },
+            {
+              "tier": "weak",
+              "text": "Debit is when you owe and credit is when you are paid. The trader owes ₦20,000.",
+              "meets": [],
+              "feedback": "Debit is the account that receives value and credit the account that gives value. Here the trader paid cash, so he does not owe anything."
+            }
+          ]
+        },
+        {
+          "prompt": "A trader starts with ₦100,000 cash as capital, buys goods for ₦40,000 cash, sells goods for ₦65,000 cash and pays rent of ₦10,000. Write the cash account and find the balance.",
+          "markScheme": [
+            "Puts the cash received (capital ₦100,000 and sales ₦65,000) on the debit side",
+            "Puts the cash paid (purchases ₦40,000 and rent ₦10,000) on the credit side",
+            "Totals the receipts as ₦165,000",
+            "Totals the payments as ₦50,000",
+            "Finds the balance of ₦115,000"
+          ],
+          "modelAnswer": "Cash account. Debit side: capital ₦100,000 and sales ₦65,000, a total of ₦165,000. Credit side: purchases ₦40,000 and rent ₦10,000, a total of ₦50,000. The balance is 165,000 - 50,000 = ₦115,000 carried down, which is the cash the trader has left.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Cash account\nDebit: Capital 100,000, Sales 65,000. Total 165,000.\nCredit: Purchases 40,000, Rent 10,000. Total 50,000.\nBalance carried down = 165,000 - 50,000 = ₦115,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Debit: Capital 100,000, Sales 65,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Credit: Purchases 40,000, Rent 10,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Total 165,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total 50,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Balance carried down = 165,000 - 50,000 = ₦115,000"
+                }
+              ],
+              "feedback": "Full marks. Your account is complete and balances."
+            },
+            {
+              "tier": "full",
+              "text": "Money that comes in goes on the debit side: capital ₦100,000 and sales ₦65,000, which is ₦165,000 altogether. Money that goes out goes on the credit side: purchases ₦40,000 and rent ₦10,000, altogether ₦50,000. The balance is ₦165,000 - ₦50,000 = ₦115,000, so the trader has ₦115,000 cash left.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Money that comes in goes on the debit side: capital ₦100,000 and sales ₦65,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "purchases ₦40,000 and rent ₦10,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "which is ₦165,000 altogether"
+                },
+                {
+                  "point": 3,
+                  "quote": "altogether ₦50,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "The balance is ₦165,000 - ₦50,000 = ₦115,000"
+                }
+              ],
+              "feedback": "All five marks. Your reason for each side helps the reader follow every step."
+            },
+            {
+              "tier": "partial",
+              "text": "Debit: capital 100,000, sales 65,000. Credit: purchases 40,000, rent 10,000. Balance = 100,000 + 65,000 + 40,000 + 10,000 = ₦215,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Debit: capital 100,000, sales 65,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Credit: purchases 40,000, rent 10,000"
+                }
+              ],
+              "feedback": "Both sides are correctly placed. To find the cash left, total each side (165,000 and 50,000) and subtract: ₦115,000. Adding everything together gives a meaningless number."
+            },
+            {
+              "tier": "partial",
+              "text": "Receipts are 100,000 + 65,000 = 165,000 and payments are 40,000 + 10,000 = 50,000. The cash balance is ₦115,000.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "100,000 + 65,000 = 165,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "40,000 + 10,000 = 50,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "The cash balance is ₦115,000"
+                }
+              ],
+              "feedback": "Your figures and balance are right. Write them as an account with receipts on the debit side and payments on the credit side so that the reader sees where each belongs."
+            },
+            {
+              "tier": "weak",
+              "text": "The trader has 100,000 and he buys goods and sells goods so he has 100,000 left.",
+              "meets": [],
+              "feedback": "Buying, selling and paying rent change the cash. Money in (capital and sales) minus money out (purchases and rent) gives what is left."
+            },
+            {
+              "tier": "weak",
+              "text": "Cash account is where the cash is kept in the bank. The balance is 40,000.",
+              "meets": [],
+              "feedback": "The cash account records cash in and out of the business, and ₦40,000 is only the purchases. Put the receipts on the debit side and payments on the credit side, then balance."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "The trial balance and what it checks",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the purpose of a trial balance;\n2. decide whether a ledger balance goes on the debit or credit side;\n3. prepare a trial balance and check that it agrees;\n4. name errors that a trial balance does not show.\n\n## Materials\n\nA list of ledger balances on cards, a two-column trial balance sheet drawn on the board, a calculator.\n\n## Starter\n\nGive each learner a card with a ledger balance (for example: cash ₦45,000, capital ₦60,000). Ask them to stand on the side of the board where they think it goes.\n\n## Development\n\n1. A trial balance is a list of all ledger balances on a date, showing debit balances in one column and credit balances in the other. If the books are arithmetically right, both columns have the same total.\n2. Debit balances: assets (cash, stock, equipment, debtors) and expenses (purchases, rent, wages).\n3. Credit balances: capital, liabilities (creditors, loans) and income (sales).\n4. Prepare a trial balance from a list and add each column.\n5. Errors it does not show: omission, compensating errors, wrong account (commission), wrong principle and an original entry error.\n\n## Class activity\n\nGroups get a list of ten balances, prepare a trial balance, and one group is given a list with a missing item to find the difference.\n\n## Evaluation\n\n1. Which side does rent paid go on?\n2. Give the total when cash 20,000 and stock 15,000 are debits.\n3. Name one error a trial balance cannot find.\n\n## Assignment\n\nQuiz on the app.",
+      "reading": {
+        "title": "Do the books agree?",
+        "content": "# The trial balance\n\n## What is it?\n\nAt the end of a period, a bookkeeper takes the **balance** of every account in the ledger and lists it. This list is the **trial balance**. Debit balances go in one column and credit balances in the other.\n\nIf the double entry has been done correctly, the total of the debit column equals the total of the credit column. The trial balance is therefore a check on **arithmetical accuracy**.\n\n## Which side?\n\n**Debit balances:**\n\n- Assets: cash, stock, debtors, equipment.\n- Expenses: purchases, rent, wages, transport.\n\n**Credit balances:**\n\n- Capital (what the owner put in).\n- Liabilities: creditors, loans.\n- Income: sales.\n\nA memory aid: things the business owns and things it spends on are debits; the money it owes to the owner or others, and the money it earns, are credits.\n\n## Worked example\n\n| Account | Debit ₦ | Credit ₦ |\n| --- | --- | --- |\n| Cash | 45,000 | |\n| Stock | 30,000 | |\n| Rent | 6,000 | |\n| Purchases | 24,000 | |\n| Capital | | 60,000 |\n| Sales | | 45,000 |\n| **Total** | **105,000** | **105,000** |\n\nThe totals agree. If one column were ₦2,000 more than the other, there is a mistake to look for: perhaps an entry was made on one side only.\n\n## What the trial balance does not show\n\nAn agreeing trial balance does **not** prove the books are perfect. These errors do not affect the totals:\n\n- **Omission:** a whole transaction left out.\n- **Compensating errors:** two mistakes cancel out.\n- **Error of commission:** the right amount posted to the wrong account of the same type.\n- **Error of principle:** an item entered in the wrong kind of account, for example equipment bought as an expense.\n- **Original entry:** the wrong amount on both sides."
+      },
+      "cards": [
+        {
+          "front": "Trial balance",
+          "back": "A list of all ledger balances showing whether total debits equal total credits."
+        },
+        {
+          "front": "Debit balance",
+          "back": "Assets and expenses, such as cash, stock, purchases and rent."
+        },
+        {
+          "front": "Credit balance",
+          "back": "Capital, liabilities and income, such as capital, creditors and sales."
+        },
+        {
+          "front": "Error of omission",
+          "back": "A transaction left out of the books completely."
+        },
+        {
+          "front": "Compensating error",
+          "back": "Two mistakes of equal size that cancel each other."
+        },
+        {
+          "front": "If the trial balance does not agree",
+          "back": "There is an arithmetical error to find, such as a one-sided entry."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The purpose of a trial balance is to",
+          "options": [
+            "calculate tax",
+            "check that total debit balances equal total credit balances",
+            "find the profit of a business",
+            "advertise the business"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these balances goes on the credit side of a trial balance?",
+          "options": [
+            "Cash",
+            "Rent paid",
+            "Purchases",
+            "Capital"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A trial balance has debit total ₦184,500 and credit total ₦182,500. By how much do the two sides differ?",
+          "options": [
+            "₦367,000",
+            "₦1,000",
+            "₦2,000",
+            "₦0"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which error would NOT be shown by a trial balance?",
+          "options": [
+            "A sale entered in the wrong customer's account for the right amount",
+            "₦500 entered on the debit side only",
+            "The sales column added up wrongly",
+            "A credit entry left out with no debit"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A trial balance lists: cash ₦30,000; purchases ₦22,000; rent ₦8,000 (all debits); capital ₦40,000 and sales ₦20,000 (credits). What is the total of the debit side?",
+          "options": [
+            "₦120,000",
+            "₦60,000",
+            "₦40,000",
+            "₦80,000"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State the purpose of a trial balance and name one error it will not show.",
+          "markScheme": [
+            "Says a trial balance lists the ledger balances",
+            "Says it checks that total debits equal total credits",
+            "Names one error it will not show, such as omission or a compensating error"
+          ],
+          "modelAnswer": "A trial balance lists the balances of all the ledger accounts and checks that the total of the debit balances equals the total of the credit balances. It will not show an error of omission, where a whole transaction is left out.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A trial balance is a list of all the balances in the ledger. It is used to check that the debit total and the credit total are equal. It cannot show an error of omission, when a transaction is not recorded at all.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a list of all the balances in the ledger"
+                },
+                {
+                  "point": 1,
+                  "quote": "check that the debit total and the credit total are equal"
+                },
+                {
+                  "point": 2,
+                  "quote": "error of omission, when a transaction is not recorded at all"
+                }
+              ],
+              "feedback": "Full marks. Your error is explained as well as named."
+            },
+            {
+              "tier": "full",
+              "text": "It lists every ledger balance in two columns, debit and credit. If the double entry is right the two totals are the same. It will not find a compensating error, where one mistake cancels another.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "lists every ledger balance in two columns"
+                },
+                {
+                  "point": 1,
+                  "quote": "If the double entry is right the two totals are the same"
+                },
+                {
+                  "point": 2,
+                  "quote": "compensating error, where one mistake cancels another"
+                }
+              ],
+              "feedback": "All three marks. Your compensating error explanation is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "A trial balance is used to check that the debit total and credit total are equal.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "check that the debit total and credit total are equal"
+                }
+              ],
+              "feedback": "That is the main purpose. Say what a trial balance is (a list of the ledger balances) and name an error it cannot show, such as omission."
+            },
+            {
+              "tier": "partial",
+              "text": "A trial balance is a list of balances. It does not show a transaction that was left out.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a list of balances"
+                },
+                {
+                  "point": 2,
+                  "quote": "does not show a transaction that was left out"
+                }
+              ],
+              "feedback": "Good, and the omission error is correct. The purpose is to check that debit and credit totals agree; add that."
+            },
+            {
+              "tier": "weak",
+              "text": "The trial balance is for trying the business to see if it can pay the bills.",
+              "meets": [],
+              "feedback": "'Trial' does not mean testing the business. A trial balance checks whether the debit and credit totals of the ledger agree."
+            },
+            {
+              "tier": "weak",
+              "text": "It shows the profit of the business for the year. It will not show the expenses.",
+              "meets": [],
+              "feedback": "Profit is found in the trading and profit and loss account, not in the trial balance. The trial balance checks that debits equal credits."
+            }
+          ]
+        },
+        {
+          "prompt": "Prepare a trial balance from these balances at 31 December: cash ₦45,000; stock ₦30,000; rent ₦6,000; purchases ₦24,000; capital ₦60,000; sales ₦45,000. Show whether it agrees and say what that tells you.",
+          "markScheme": [
+            "Puts cash, stock, rent and purchases on the debit side",
+            "Puts capital and sales on the credit side",
+            "Totals the debit side as ₦105,000",
+            "Totals the credit side as ₦105,000",
+            "Says the totals agree, so the books are arithmetically accurate, but this does not prove there are no errors"
+          ],
+          "modelAnswer": "Debit: cash 45,000, stock 30,000, rent 6,000 and purchases 24,000, a total of ₦105,000. Credit: capital 60,000 and sales 45,000, a total of ₦105,000. The totals agree, so the books are arithmetically accurate, though some errors, such as omission, would not show.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Debit: cash 45,000, stock 30,000, rent 6,000, purchases 24,000. Total = ₦105,000.\nCredit: capital 60,000, sales 45,000. Total = ₦105,000.\nThe two totals agree, so the books are arithmetically accurate. But it does not prove there are no errors, since some errors like omission cannot be seen.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Debit: cash 45,000, stock 30,000, rent 6,000, purchases 24,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Credit: capital 60,000, sales 45,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Total = ₦105,000.\nCredit"
+                },
+                {
+                  "point": 3,
+                  "quote": "Total = ₦105,000.\nThe two totals agree"
+                },
+                {
+                  "point": 4,
+                  "quote": "arithmetically accurate. But it does not prove there are no errors"
+                }
+              ],
+              "feedback": "Full marks. Saying that agreement does not prove the books are perfect is the mark most learners miss."
+            },
+            {
+              "tier": "full",
+              "text": "Debit side has cash ₦45,000, stock ₦30,000, rent ₦6,000 and purchases ₦24,000 which add up to ₦105,000. Credit side has capital ₦60,000 and sales ₦45,000 which also add up to ₦105,000. Since both sides are equal the trial balance agrees, so no arithmetic mistake, although errors like leaving out a whole transaction would still not show.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Debit side has cash ₦45,000, stock ₦30,000, rent ₦6,000 and purchases ₦24,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Credit side has capital ₦60,000 and sales ₦45,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "add up to ₦105,000. Credit side"
+                },
+                {
+                  "point": 3,
+                  "quote": "also add up to ₦105,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "no arithmetic mistake, although errors like leaving out a whole transaction would still not show"
+                }
+              ],
+              "feedback": "All five marks. Your answer is clear and balanced."
+            },
+            {
+              "tier": "partial",
+              "text": "Debit: cash 45,000, stock 30,000, rent 6,000, purchases 24,000. Credit: capital 60,000, sales 45,000. The totals are both 105,000 so it agrees.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Debit: cash 45,000, stock 30,000, rent 6,000, purchases 24,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Credit: capital 60,000, sales 45,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "The totals are both 105,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "both 105,000"
+                }
+              ],
+              "feedback": "Sides and totals are right. Say what the agreement tells you: the books are arithmetically accurate, but it does not prove every error is absent."
+            },
+            {
+              "tier": "partial",
+              "text": "Debit side: cash, stock, rent, purchases. Credit side: capital, sales. Debit total 105,000, credit total 100,000. It does not agree.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Debit side: cash, stock, rent, purchases"
+                },
+                {
+                  "point": 1,
+                  "quote": "Credit side: capital, sales"
+                },
+                {
+                  "point": 2,
+                  "quote": "Debit total 105,000"
+                }
+              ],
+              "feedback": "Your sides are right and the debit total is correct. Check the credit side: 60,000 + 45,000 = 105,000, so it does agree."
+            },
+            {
+              "tier": "weak",
+              "text": "Cash, stock, capital and sales are on the debit side. Rent and purchases are on the credit side.",
+              "meets": [],
+              "feedback": "Capital and sales are credits, because they come from the owner and from earnings. Cash, stock, rent and purchases are debits."
+            },
+            {
+              "tier": "weak",
+              "text": "The trial balance is 45,000 + 30,000 + 6,000 + 24,000 + 60,000 + 45,000 = 210,000.",
+              "meets": [],
+              "feedback": "A trial balance has two columns that you total separately and compare. Adding every figure into one total does not check anything."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Trading account, profit and loss account and balance sheet",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. work out cost of goods sold and gross profit;\n2. work out net profit from gross profit and expenses;\n3. list assets and liabilities in a simple balance sheet;\n4. show that the balance sheet balances.\n\n## Materials\n\nA chart with the layout of the trading account, profit and loss account and balance sheet; calculators; a marker board.\n\n## Starter\n\nAsk: a trader sold goods for ₦100,000 that cost her ₦70,000. Is ₦30,000 all hers to keep? What else must she pay?\n\n## Development\n\n1. Trading account: sales minus cost of goods sold gives gross profit. Cost of goods sold = opening stock + purchases - closing stock.\n2. Profit and loss account: gross profit minus expenses (rent, wages, transport) gives net profit.\n3. Balance sheet: a list of what the business owns (assets) and owes (liabilities and capital) on one date. Assets = capital + liabilities.\n4. Fixed assets last a long time (equipment, shop); current assets change quickly (stock, debtors, cash).\n5. Work a full example from raw figures to a balanced sheet.\n\n## Class activity\n\nPairs receive a set of figures for a small business, prepare the three statements on one page and check that the balance sheet balances.\n\n## Evaluation\n\n1. Opening stock 25,000, purchases 140,000, closing stock 35,000. Find cost of goods sold.\n2. Gross profit 90,000, expenses 55,000. Find net profit.\n3. Name two current assets.\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "Did the business make a profit?",
+        "content": "# Final accounts\n\nAt the end of the year a trader wants to know two things: **how much profit did I make**, and **what does my business own and owe**? The trading account, the profit and loss account and the balance sheet answer them.\n\n## Trading account: gross profit\n\nCost of goods sold = opening stock + purchases - closing stock.\n\nGross profit = sales - cost of goods sold.\n\n**Worked example.** Mrs Ada's boutique: sales ₦480,000; opening stock ₦60,000; purchases ₦300,000; closing stock ₦80,000.\n\n- Cost of goods sold = 60,000 + 300,000 - 80,000 = ₦280,000.\n- Gross profit = 480,000 - 280,000 = ₦200,000.\n\n## Profit and loss account: net profit\n\nNet profit = gross profit - expenses.\n\nHer expenses are rent ₦30,000, wages ₦50,000 and transport ₦20,000, a total of ₦100,000.\n\nNet profit = 200,000 - 100,000 = ₦100,000.\n\n## Balance sheet\n\nThe balance sheet lists, on one date, what the business **owns** (assets) and what it **owes** (liabilities and capital).\n\n- **Fixed assets** are used for a long time: shop equipment, a van.\n- **Current assets** change quickly: stock, debtors (people who owe the business), cash.\n- **Capital** is the owner's investment plus net profit.\n- **Liabilities** are money owed to others, such as creditors.\n\nMrs Ada's boutique has shop equipment ₦150,000, stock ₦80,000, debtors ₦40,000, cash ₦90,000, creditors ₦10,000 and opening capital ₦250,000.\n\n| Assets | ₦ | Capital and liabilities | ₦ |\n| --- | --- | --- | --- |\n| Equipment | 150,000 | Capital 250,000 + profit 100,000 | 350,000 |\n| Stock | 80,000 | Creditors | 10,000 |\n| Debtors | 40,000 | | |\n| Cash | 90,000 | | |\n| **Total** | **360,000** | **Total** | **360,000** |\n\nBoth sides are ₦360,000, so the balance sheet balances."
+      },
+      "cards": [
+        {
+          "front": "Gross profit",
+          "back": "Sales minus the cost of goods sold."
+        },
+        {
+          "front": "Cost of goods sold",
+          "back": "Opening stock plus purchases minus closing stock."
+        },
+        {
+          "front": "Net profit",
+          "back": "Gross profit minus expenses."
+        },
+        {
+          "front": "Current asset",
+          "back": "An asset that changes quickly, such as stock, debtors or cash."
+        },
+        {
+          "front": "Fixed asset",
+          "back": "An asset used for a long time, such as equipment or a van."
+        },
+        {
+          "front": "Liability",
+          "back": "Money the business owes to others."
+        },
+        {
+          "front": "Balance sheet rule",
+          "back": "Assets = capital + liabilities."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Gross profit is",
+          "options": [
+            "sales minus cost of goods sold",
+            "sales minus all expenses",
+            "cost of goods sold plus expenses",
+            "stock plus purchases"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A trader's sales are ₦320,000 and the cost of goods sold is ₦210,000. What is the gross profit?",
+          "options": [
+            "₦530,000",
+            "₦210,000",
+            "₦320,000",
+            "₦110,000"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Opening stock is ₦25,000, purchases are ₦140,000 and closing stock is ₦35,000. What is the cost of goods sold?",
+          "options": [
+            "₦200,000",
+            "₦130,000",
+            "₦150,000",
+            "₦165,000"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Gross profit is ₦90,000 and expenses are ₦55,000. What is the net profit?",
+          "options": [
+            "₦145,000",
+            "₦55,000",
+            "₦35,000",
+            "₦90,000"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a current asset on a balance sheet?",
+          "options": [
+            "Stock of goods",
+            "Bank loan",
+            "Capital",
+            "Creditors"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A trader's records for the year are: sales ₦150,000; opening stock ₦20,000; purchases ₦90,000; closing stock ₦30,000; expenses ₦25,000. Calculate the cost of goods sold, the gross profit and the net profit.",
+          "markScheme": [
+            "Works out cost of goods sold as ₦80,000",
+            "Works out gross profit as ₦70,000",
+            "Works out net profit as ₦45,000"
+          ],
+          "modelAnswer": "Cost of goods sold = 20,000 + 90,000 - 30,000 = ₦80,000. Gross profit = 150,000 - 80,000 = ₦70,000. Net profit = 70,000 - 25,000 = ₦45,000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Cost of goods sold = 20,000 + 90,000 - 30,000 = ₦80,000.\nGross profit = 150,000 - 80,000 = ₦70,000.\nNet profit = 70,000 - 25,000 = ₦45,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cost of goods sold = 20,000 + 90,000 - 30,000 = ₦80,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Gross profit = 150,000 - 80,000 = ₦70,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Net profit = 70,000 - 25,000 = ₦45,000"
+                }
+              ],
+              "feedback": "Full marks. Each answer shows its working."
+            },
+            {
+              "tier": "full",
+              "text": "Opening stock plus purchases is 110,000. Take away the closing stock of 30,000 and the cost of goods sold is ₦80,000. Gross profit is sales minus that, so ₦150,000 - ₦80,000 = ₦70,000. The expenses of ₦25,000 are taken from the gross profit and so the net profit is ₦45,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the cost of goods sold is ₦80,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "₦150,000 - ₦80,000 = ₦70,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "the net profit is ₦45,000"
+                }
+              ],
+              "feedback": "All three marks. Your sentences explain why each subtraction is done."
+            },
+            {
+              "tier": "partial",
+              "text": "Cost of goods sold = 20,000 + 90,000 - 30,000 = ₦80,000. Gross profit = 150,000 - 80,000 = ₦70,000. Net profit is 70,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Cost of goods sold = 20,000 + 90,000 - 30,000 = ₦80,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Gross profit = 150,000 - 80,000 = ₦70,000"
+                }
+              ],
+              "feedback": "The first two are right. Net profit is gross profit minus the expenses: 70,000 - 25,000 = ₦45,000."
+            },
+            {
+              "tier": "partial",
+              "text": "Cost of goods sold: 20,000 + 90,000 = 110,000, then take away 30,000 and I get ₦80,000. Gross profit = 150,000 - 80,000 = ₦70,000. Then I add the expenses, 70,000 + 25,000 = ₦95,000 net profit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "then take away 30,000 and I get ₦80,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Gross profit = 150,000 - 80,000 = ₦70,000"
+                }
+              ],
+              "feedback": "Cost of goods sold and gross profit are right. Expenses are taken away from gross profit, not added: 70,000 - 25,000 = ₦45,000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Net profit = 150,000 + 25,000 = ₦175,000.",
+              "meets": [],
+              "feedback": "Expenses are subtracted, not added. First find the cost of goods sold, then the gross profit, then take expenses away."
+            },
+            {
+              "tier": "weak",
+              "text": "The profit is 150,000 - 20,000 = ₦130,000 because the stock is what was spent.",
+              "meets": [],
+              "feedback": "Cost of goods sold uses opening stock, purchases and closing stock together: 20,000 + 90,000 - 30,000."
+            }
+          ]
+        },
+        {
+          "prompt": "At the end of the year Mrs Ada's boutique has: shop equipment ₦150,000; stock ₦80,000; debtors ₦40,000; cash ₦90,000; creditors ₦10,000; opening capital ₦250,000. The net profit for the year was ₦100,000. Prepare the balance sheet and show that it balances.",
+          "markScheme": [
+            "Shows shop equipment of ₦150,000 as a fixed asset",
+            "Adds the current assets (stock, debtors and cash) to get ₦210,000",
+            "Totals the assets as ₦360,000",
+            "Works out capital as 250,000 + 100,000 = ₦350,000",
+            "Adds the creditors of ₦10,000 to capital to get ₦360,000 and says the sheet balances"
+          ],
+          "modelAnswer": "Fixed asset: shop equipment ₦150,000. Current assets: stock 80,000 + debtors 40,000 + cash 90,000 = ₦210,000. Total assets = 150,000 + 210,000 = ₦360,000. Capital = 250,000 + 100,000 = ₦350,000. Adding creditors of ₦10,000 gives ₦360,000, the same as the assets, so the balance sheet balances.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Fixed asset: shop equipment ₦150,000.\nCurrent assets: stock 80,000 + debtors 40,000 + cash 90,000 = ₦210,000.\nTotal assets = ₦360,000.\nCapital = 250,000 + 100,000 net profit = ₦350,000.\nCapital 350,000 + creditors 10,000 = ₦360,000, so it balances.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fixed asset: shop equipment ₦150,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "stock 80,000 + debtors 40,000 + cash 90,000 = ₦210,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "Total assets = ₦360,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "Capital = 250,000 + 100,000 net profit = ₦350,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Capital 350,000 + creditors 10,000 = ₦360,000, so it balances"
+                }
+              ],
+              "feedback": "Full marks. The fixed and current assets are separated, and your check at the end is the proof."
+            },
+            {
+              "tier": "full",
+              "text": "On the assets side I put equipment ₦150,000 as a fixed asset, then the current assets: stock ₦80,000, debtors ₦40,000, cash ₦90,000 which add up to ₦210,000. The assets total ₦360,000. The other side has capital, which is the opening capital ₦250,000 plus the profit ₦100,000 = ₦350,000, and creditors ₦10,000. These add up to ₦360,000 so both sides are equal.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "equipment ₦150,000 as a fixed asset"
+                },
+                {
+                  "point": 1,
+                  "quote": "stock ₦80,000, debtors ₦40,000, cash ₦90,000 which add up to ₦210,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "The assets total ₦360,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "₦250,000 plus the profit ₦100,000 = ₦350,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "These add up to ₦360,000 so both sides are equal"
+                }
+              ],
+              "feedback": "All five marks. You explained each group before totalling it."
+            },
+            {
+              "tier": "partial",
+              "text": "Assets: equipment 150,000, stock 80,000, debtors 40,000, cash 90,000, total 360,000. Capital 250,000 and creditors 10,000 total 260,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "equipment 150,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "total 360,000"
+                }
+              ],
+              "feedback": "The assets are right. Capital must include the year's net profit: 250,000 + 100,000 = ₦350,000. With creditors that gives ₦360,000 and the sheet balances."
+            },
+            {
+              "tier": "partial",
+              "text": "Current assets are 80,000 + 40,000 + 90,000 = ₦210,000. Capital is 250,000 + 100,000 = ₦350,000. Capital and creditors make 360,000, which is the same as the assets.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "80,000 + 40,000 + 90,000 = ₦210,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "250,000 + 100,000 = ₦350,000"
+                },
+                {
+                  "point": 4,
+                  "quote": "Capital and creditors make 360,000"
+                }
+              ],
+              "feedback": "Your figures are right. Show the equipment as a fixed asset and write the total assets (₦360,000) before comparing.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The balance sheet shows that the shop made a profit of 100,000 and so it balances.",
+              "meets": [],
+              "feedback": "A balance sheet balances when total assets equal capital plus liabilities. List each asset, total them, then compare with capital and creditors."
+            },
+            {
+              "tier": "weak",
+              "text": "Assets = 150,000 × 80,000 × 40,000 × 90,000.",
+              "meets": [],
+              "feedback": "Assets are added, not multiplied. Fixed assets plus current assets give the total: 150,000 + 210,000 = ₦360,000."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

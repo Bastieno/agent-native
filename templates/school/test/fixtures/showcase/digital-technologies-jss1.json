@@ -1,0 +1,2669 @@
+{
+  "subject": "Digital Technologies",
+  "yearGroup": "JSS1",
+  "weeks": {
+    "1": {
+      "topic": "The main parts of a computer",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. name the main parts of a computer system;\n2. say what the CPU does;\n3. give examples of input, output and storage devices;\n4. sort devices into input, output and storage.\n\n## Materials\n\nA desktop computer (or pictures of one), a keyboard, mouse, flash drive, printer and a set of picture cards of devices.\n\n## Starter (5 minutes)\n\nAsk: \"When you send a text message on a phone, what do you do first, and what do you see after?\" Lead pupils to see that something goes in, something is done to it, and something comes out.\n\n## Development\n\n1. Show the system unit, monitor, keyboard and mouse. Explain that a computer takes in data, processes it and gives out information.\n2. Input devices send data in: keyboard, mouse, scanner, microphone.\n3. The CPU is the brain of the computer. It carries out instructions and does the calculations.\n4. Output devices show results: monitor, printer, speaker.\n5. Storage devices keep files so they are not lost when the computer is switched off: hard disk, flash drive, memory card.\n6. Memory (RAM) holds what the computer is working on at the moment and is cleared when power goes off.\n\n## Class activity\n\nGroups receive picture cards and sort them into three columns: input, output, storage. Each group explains one card they found hard.\n\n## Evaluation\n\n1. What does the CPU do?\n2. Give two input devices and two output devices.\n\n## Assignment\n\nComplete the worksheet on the app and list five devices found in your home and say which group each belongs to.",
+      "reading": {
+        "title": "Meet the parts of a computer",
+        "content": "# The main parts of a computer\n\nA computer is a machine that takes in **data**, works on it, and gives out **information**. To do this it uses four groups of parts.\n\n## Input devices\n\nInput devices send data **into** the computer. The **keyboard** sends the letters you type. The **mouse** sends the movement of your hand so you can point and click. A **scanner** copies a page into the computer, and a **microphone** sends sound.\n\n## The CPU\n\nCPU stands for **Central Processing Unit**. It is the brain of the computer. It follows instructions and does all the calculations. When you add two numbers in a calculator program, the CPU does the adding. A faster CPU means the computer finishes work more quickly.\n\n## Output devices\n\nOutput devices show you the result. The **monitor** shows pictures and words on a screen. The **printer** puts the words on paper. The **speaker** gives out sound.\n\n## Storage devices\n\nStorage devices keep your work so you can open it later, even after the computer is switched off. Examples are the **hard disk** inside the computer, the **flash drive** you plug in, and the **memory card** in a phone.\n\n## Memory is not the same as storage\n\nThe computer's **memory (RAM)** holds the work you are doing right now. When the power goes off, for example during a NEPA light-out, whatever was not saved is lost. That is why you must **save** your work to a storage device.\n\n## Example\n\nA pupil in Abeokuta types a short story on the keyboard (input). The CPU processes it. The story appears on the monitor (output). She saves it on a flash drive (storage). Later she prints it on the printer (output)."
+      },
+      "cards": [
+        {
+          "front": "Computer",
+          "back": "A machine that takes in data, works on it and gives out information."
+        },
+        {
+          "front": "Input device",
+          "back": "A device that sends data into the computer, such as a keyboard or mouse."
+        },
+        {
+          "front": "CPU",
+          "back": "Central Processing Unit: the brain of the computer that carries out instructions."
+        },
+        {
+          "front": "Output device",
+          "back": "A device that shows the result of work, such as a monitor or printer."
+        },
+        {
+          "front": "Storage device",
+          "back": "A device that keeps files even when the power is off, such as a flash drive."
+        },
+        {
+          "front": "Name two input devices",
+          "back": "Keyboard and mouse (also scanner, microphone)."
+        },
+        {
+          "front": "Name two output devices",
+          "back": "Monitor and printer (also speaker)."
+        },
+        {
+          "front": "RAM",
+          "back": "The memory that holds the work you are doing now. It is cleared when power goes off."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these devices is used to send data into a computer?",
+          "options": [
+            "Monitor",
+            "Keyboard",
+            "Printer",
+            "Speaker"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A pupil types a letter, but the light goes off before she saves it. Why is the letter lost?",
+          "options": [
+            "The monitor was too bright",
+            "The keyboard was broken",
+            "The CPU deletes every letter",
+            "The letter was only in memory and not on a storage device"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "What does the CPU do?",
+          "options": [
+            "It carries out instructions and does calculations",
+            "It prints pages",
+            "It stores files for many years",
+            "It shows pictures on a screen"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which list contains only output devices?",
+          "options": [
+            "Mouse, scanner, microphone",
+            "Flash drive, hard disk, memory card",
+            "Monitor, printer, speaker",
+            "Keyboard, monitor, flash drive"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Chidi wants to carry his school project from the school computer to his home. Which device should he use?",
+          "options": [
+            "A flash drive",
+            "A monitor",
+            "A mouse",
+            "A speaker"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Write the names of the four groups of parts in a computer system and say one thing each group does. Give one example for each group.",
+          "markScheme": [
+            "Input devices send data into the computer, e.g. keyboard",
+            "The CPU processes data or carries out instructions",
+            "Output devices show results, e.g. monitor",
+            "Storage devices keep files, e.g. flash drive"
+          ],
+          "modelAnswer": "Input devices send data into the computer, for example the keyboard. The CPU processes the data by carrying out instructions. Output devices show the result, for example the monitor. Storage devices keep files so they are not lost, for example a flash drive.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Input is the keyboard and mouse, they send data into the computer. The CPU is the brain and it processes the data. Output is the monitor and printer, they show the result. Storage is the flash drive and it keeps our files.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input is the keyboard and mouse, they send data into the computer"
+                },
+                {
+                  "point": 1,
+                  "quote": "The CPU is the brain and it processes the data"
+                },
+                {
+                  "point": 2,
+                  "quote": "Output is the monitor and printer, they show the result"
+                },
+                {
+                  "point": 3,
+                  "quote": "Storage is the flash drive and it keeps our files"
+                }
+              ],
+              "feedback": "All four marks. You gave a job and an example for each group, which is exactly what the question asked."
+            },
+            {
+              "tier": "full",
+              "text": "Input devices like the mouse put data in. The CPU does the calculations. Output devices like the speaker give out the answer as sound. Storage like a hard disk keeps the work when the computer is off.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input devices like the mouse put data in"
+                },
+                {
+                  "point": 1,
+                  "quote": "The CPU does the calculations"
+                },
+                {
+                  "point": 2,
+                  "quote": "Output devices like the speaker give out the answer as sound"
+                },
+                {
+                  "point": 3,
+                  "quote": "Storage like a hard disk keeps the work when the computer is off"
+                }
+              ],
+              "feedback": "Full marks. Choosing a speaker and a hard disk shows you know there is more than one example in each group."
+            },
+            {
+              "tier": "partial",
+              "text": "Input is keyboard. The CPU is the brain of the computer. Output is monitor. Storage is the part inside.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input is keyboard"
+                },
+                {
+                  "point": 2,
+                  "quote": "Output is monitor"
+                }
+              ],
+              "feedback": "You gave good examples for input and output, but you did not say what they do. Say that input sends data in and output shows the result. For the CPU, say what the brain does: it processes data. For storage, name an example such as a flash drive and say it keeps files."
+            },
+            {
+              "tier": "partial",
+              "text": "The keyboard is input and the flash drive is storage. The CPU is the part that shows the picture. Output is not needed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The keyboard is input"
+                },
+                {
+                  "point": 3,
+                  "quote": "the flash drive is storage"
+                }
+              ],
+              "feedback": "You have input and storage right. The CPU does not show pictures; it carries out instructions and processes data. The monitor, which is output, shows the picture, and every computer needs output so we can see the result."
+            },
+            {
+              "tier": "weak",
+              "text": "A computer has screen, mouse, keyboard and wire. They all help the computer to work.",
+              "meets": [],
+              "feedback": "You named some real parts, but the question asks for four groups. Use the words input, CPU, output and storage, and say one job for each, for example: input devices send data into the computer."
+            },
+            {
+              "tier": "weak",
+              "text": "The four parts are monitor, keyboard, mouse and printer. The monitor is the CPU because it is the biggest.",
+              "meets": [],
+              "feedback": "The CPU is not the monitor; it is the processor, the brain inside the system unit. Try to group your devices: keyboard and mouse are input, monitor and printer are output. Then add the CPU and storage."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain the difference between a storage device and the memory (RAM) of a computer. Use an example of a NEPA light-out to show why saving is important.",
+          "markScheme": [
+            "Memory (RAM) holds the work being done now",
+            "Memory is cleared when the power goes off",
+            "Storage devices keep files after the power is off",
+            "Gives a correct example of unsaved work being lost, or saved work staying safe"
+          ],
+          "modelAnswer": "The RAM holds the work I am doing at the moment. When the power goes off it is cleared. A storage device like a flash drive keeps files even when the power is off. So if NEPA takes the light while I am typing and I have not saved, my work is lost, but saved work stays safe.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "RAM keeps the work I am doing now. When NEPA takes the light, everything in RAM is cleared. A hard disk keeps files even when there is no light. So if I did not save my essay, it is lost, but a saved essay is still there.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "RAM keeps the work I am doing now"
+                },
+                {
+                  "point": 1,
+                  "quote": "When NEPA takes the light, everything in RAM is cleared"
+                },
+                {
+                  "point": 2,
+                  "quote": "A hard disk keeps files even when there is no light"
+                },
+                {
+                  "point": 3,
+                  "quote": "if I did not save my essay, it is lost, but a saved essay is still there"
+                }
+              ],
+              "feedback": "All four marks. Your NEPA example shows exactly why saving matters."
+            },
+            {
+              "tier": "full",
+              "text": "Memory is where the computer holds what you are working on now and it goes away when power goes off. Storage like a flash drive keeps the file for a long time. If I type my homework and light goes off before I save, I must type it again.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Memory is where the computer holds what you are working on now"
+                },
+                {
+                  "point": 1,
+                  "quote": "it goes away when power goes off"
+                },
+                {
+                  "point": 2,
+                  "quote": "Storage like a flash drive keeps the file for a long time"
+                },
+                {
+                  "point": 3,
+                  "quote": "If I type my homework and light goes off before I save, I must type it again"
+                }
+              ],
+              "feedback": "Full marks. You matched each idea to a real situation, which is what the question asked for."
+            },
+            {
+              "tier": "partial",
+              "text": "The memory holds the work you are doing now. Storage is where you keep it. If NEPA takes light you can lose it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The memory holds the work you are doing now"
+                },
+                {
+                  "point": 2,
+                  "quote": "Storage is where you keep it"
+                }
+              ],
+              "feedback": "You have the two jobs. Add that RAM is cleared when the power goes off, and say what is lost: the work that was not saved. A storage device keeps the file even when the power is off."
+            },
+            {
+              "tier": "partial",
+              "text": "When the light goes off the work is gone from the memory. A flash drive is a storage and it is small.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "When the light goes off the work is gone from the memory"
+                }
+              ],
+              "feedback": "You are right that power loss clears memory. You did not say what memory holds, and you did not say that the flash drive keeps files safe when the power is off. Say both."
+            },
+            {
+              "tier": "weak",
+              "text": "Storage and memory are the same thing, they both keep things. Light can spoil the computer.",
+              "meets": [],
+              "feedback": "They are different. Memory (RAM) holds the work you are doing now and is cleared when power goes off; storage keeps files after the power is off. A light-out does not spoil the computer but it can cost you unsaved work."
+            },
+            {
+              "tier": "weak",
+              "text": "Memory is a flash drive and storage is the monitor. We must save so that the computer will not hang.",
+              "meets": [],
+              "feedback": "The flash drive is a storage device, and the monitor is output. Memory is the computer's working space. Saving is important because unsaved work in memory is lost when the power goes off."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Hardware and software",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. say the difference between hardware and software;\n2. name the two kinds of software, system and application;\n3. give examples of each kind;\n4. say why a computer cannot work with hardware alone.\n\n## Materials\n\nA computer with the operating system on screen, a word processor and a browser open, and cards with the names of programs and devices.\n\n## Starter (5 minutes)\n\nHold up a keyboard and then a game on a phone screen. Ask: \"Which one can I touch and which one can I only see and use?\"\n\n## Development\n\n1. Hardware is every part of the computer that you can touch: monitor, keyboard, CPU, mouse.\n2. Software is the set of instructions that tells the hardware what to do. You cannot touch it.\n3. System software runs the computer itself. The operating system (Windows, Android, macOS) is the main example. Utility programs such as antivirus also belong here.\n4. Application software helps you do a task: a word processor to write, a browser to search the internet, a calculator, a game.\n5. Show on the computer: the operating system starts first, and then applications run on top of it.\n\n## Class activity\n\nPupils sort cards into hardware, system software and application software. Each group defends one card.\n\n## Evaluation\n\n1. Give two examples of hardware and two of software.\n2. What does an operating system do?\n\n## Assignment\n\nComplete the worksheet on the app. At home, list the software on a phone and say which is system and which is application.",
+      "reading": {
+        "title": "Hardware, software and the two kinds of software",
+        "content": "# Hardware and software\n\n## Hardware\n\n**Hardware** is every part of a computer that you can see and touch. The monitor, keyboard, mouse, printer, flash drive and the CPU are all hardware. If it can fall on your foot, it is hardware.\n\n## Software\n\n**Software** is the set of instructions, called programs, that tells the hardware what to do. You cannot touch software. You see what it does on the screen. A computer with no software is like a danfo with a driver who has no road map: the parts are there, but nothing useful happens.\n\n## Two kinds of software\n\n### System software\n\nSystem software looks after the computer itself. The most important is the **operating system (OS)**. It starts when you switch on, controls the hardware, and lets other programs run. Windows, macOS, Linux and Android are operating systems. **Utility programs**, such as antivirus and disk cleaners, also belong to system software.\n\n### Application software\n\nApplication software helps you do a job you want to do:\n\n- a **word processor** for writing letters and notes;\n- a **spreadsheet** for figures and tables;\n- a **web browser** for the internet;\n- a **calculator**, a **music player**, a **game**.\n\n## Working together\n\nWhen you press the power button, the operating system loads first. Then you open an application, such as a word processor. The application asks the operating system to use the keyboard, screen and storage.\n\n## Worked example\n\nA trader in Ibadan uses a phone to record her sales.\n- The phone itself is **hardware**.\n- Android, which runs the phone, is **system software**.\n- The notes app where she writes her sales is **application software**.\n\n## Remember\n\nHardware is what you touch. Software is what you run. System software runs the computer. Application software runs your task."
+      },
+      "cards": [
+        {
+          "front": "Hardware",
+          "back": "The parts of a computer that you can see and touch."
+        },
+        {
+          "front": "Software",
+          "back": "Programs: instructions that tell the hardware what to do."
+        },
+        {
+          "front": "System software",
+          "back": "Software that runs and looks after the computer, such as an operating system."
+        },
+        {
+          "front": "Application software",
+          "back": "Software that helps you do a task, such as writing or searching the internet."
+        },
+        {
+          "front": "Operating system",
+          "back": "The main system software that starts first and controls the hardware. Examples: Windows, Android."
+        },
+        {
+          "front": "Name two application programs",
+          "back": "Word processor and web browser (also spreadsheet, game, calculator)."
+        },
+        {
+          "front": "Can you touch software?",
+          "back": "No. You use it and see its results, but you cannot touch it."
+        },
+        {
+          "front": "Antivirus",
+          "back": "A utility program, which is a kind of system software, that protects the computer."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is software?",
+          "options": [
+            "Mouse",
+            "Printer",
+            "Microsoft Word",
+            "Monitor"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which one is an operating system?",
+          "options": [
+            "Android",
+            "Google Chrome",
+            "Calculator",
+            "A flash drive"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Tolu uses a web browser to search for school information on a laptop. The web browser is",
+          "options": [
+            "hardware",
+            "application software",
+            "system software",
+            "an output device"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why can a new computer with no software not do useful work?",
+          "options": [
+            "The monitor is too small",
+            "The keyboard has no letters",
+            "Hardware is always broken when new",
+            "Hardware needs instructions, and software supplies them"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which list contains only hardware?",
+          "options": [
+            "Windows, Word, Chrome",
+            "Keyboard, monitor, mouse",
+            "Antivirus, Android, Excel",
+            "Printer, game, calculator"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain the difference between system software and application software. Give one example of each.",
+          "markScheme": [
+            "System software runs or controls the computer itself",
+            "An example of system software, e.g. operating system or antivirus",
+            "Application software helps the user do a task",
+            "An example of application software, e.g. word processor or browser"
+          ],
+          "modelAnswer": "System software runs the computer itself, for example Windows or Android. Application software helps the user do a task, for example a word processor for writing.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "System software controls the computer and makes it work, like Windows. Application software helps me do a job I want, like Microsoft Word to write a letter.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "System software controls the computer and makes it work"
+                },
+                {
+                  "point": 1,
+                  "quote": "like Windows"
+                },
+                {
+                  "point": 2,
+                  "quote": "Application software helps me do a job I want"
+                },
+                {
+                  "point": 3,
+                  "quote": "like Microsoft Word to write a letter"
+                }
+              ],
+              "feedback": "All four marks. You said what each one does and gave a correct example."
+            },
+            {
+              "tier": "full",
+              "text": "The operating system, for example Android, runs the phone and starts first. Application software are the apps I use for my work such as a calculator or a browser.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "runs the phone and starts first"
+                },
+                {
+                  "point": 1,
+                  "quote": "for example Android"
+                },
+                {
+                  "point": 2,
+                  "quote": "Application software are the apps I use for my work"
+                },
+                {
+                  "point": 3,
+                  "quote": "such as a calculator or a browser"
+                }
+              ],
+              "feedback": "Full marks. Android is a good example because every pupil has seen it on a phone."
+            },
+            {
+              "tier": "partial",
+              "text": "System software is the one that runs the computer, like the operating system. Application software is the other one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "System software is the one that runs the computer"
+                },
+                {
+                  "point": 1,
+                  "quote": "like the operating system"
+                }
+              ],
+              "feedback": "Your system software part is right. For application software you must say what it does (helps the user do a task) and give an example such as a word processor."
+            },
+            {
+              "tier": "partial",
+              "text": "Application software is what we use to do work like a browser. System software is Windows and Android and they are inside.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Application software is what we use to do work like a browser"
+                },
+                {
+                  "point": 1,
+                  "quote": "System software is Windows and Android"
+                }
+              ],
+              "feedback": "The examples are right. Add what system software does: it controls the computer and the hardware. 'Inside' is not enough, so say what the operating system does for the computer."
+            },
+            {
+              "tier": "weak",
+              "text": "System software is the computer parts and application software is the programs. Example is the mouse.",
+              "meets": [],
+              "feedback": "Parts you can touch, like the mouse, are hardware, not software. System software is a program that runs the computer, such as Windows, and application software is a program that helps you do a task, such as Word."
+            },
+            {
+              "tier": "weak",
+              "text": "System software is software you buy in a system shop and application software is when you apply for something online.",
+              "meets": [],
+              "feedback": "The names come from what the software does, not where you buy it. System software runs the computer, for example an operating system. Application software helps you do a task, such as writing in a word processor."
+            }
+          ]
+        },
+        {
+          "prompt": "Seun says: 'A computer only needs hardware to work.' Do you agree? Give two reasons and use a named example.",
+          "markScheme": [
+            "States that he is wrong (disagrees)",
+            "Hardware cannot work without instructions from software",
+            "Names the operating system as needed to start or control the computer",
+            "A correct named example, e.g. keyboard (hardware) needs Windows or Android (software) to be used"
+          ],
+          "modelAnswer": "I do not agree. Hardware cannot do anything without instructions, and software gives these instructions. The operating system, such as Windows, must load first to control the keyboard, screen and storage. A laptop with no Windows or other OS only shows a blank screen.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I do not agree with Seun. Hardware cannot work alone because it needs instructions from software. The operating system like Windows must start first to control the keyboard and the screen. A laptop without any operating system will show only a black screen.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I do not agree with Seun"
+                },
+                {
+                  "point": 1,
+                  "quote": "Hardware cannot work alone because it needs instructions from software"
+                },
+                {
+                  "point": 2,
+                  "quote": "The operating system like Windows must start first to control the keyboard and the screen"
+                },
+                {
+                  "point": 3,
+                  "quote": "A laptop without any operating system will show only a black screen"
+                }
+              ],
+              "feedback": "All four marks. The black screen example proves your point."
+            },
+            {
+              "tier": "full",
+              "text": "No, Seun is wrong. A phone has hardware like the screen and the CPU but if Android is removed it cannot do anything, because software tells the hardware what to do. The operating system is what lets me use the touch screen.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "No, Seun is wrong"
+                },
+                {
+                  "point": 1,
+                  "quote": "software tells the hardware what to do"
+                },
+                {
+                  "point": 2,
+                  "quote": "The operating system is what lets me use the touch screen"
+                },
+                {
+                  "point": 3,
+                  "quote": "A phone has hardware like the screen and the CPU but if Android is removed it cannot do anything"
+                }
+              ],
+              "feedback": "Full marks. Using the phone gives a clear example that everyone understands."
+            },
+            {
+              "tier": "partial",
+              "text": "I disagree. A computer needs software to work. The hardware is the part you touch.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I disagree"
+                },
+                {
+                  "point": 1,
+                  "quote": "A computer needs software to work"
+                }
+              ],
+              "feedback": "You disagree and give a reason. To earn more, name the operating system and say what it does, and give an example, such as a laptop that shows a blank screen with no Windows."
+            },
+            {
+              "tier": "partial",
+              "text": "Seun is not correct because the computer needs the operating system to start. Hardware is only the body.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Seun is not correct"
+                },
+                {
+                  "point": 2,
+                  "quote": "the computer needs the operating system to start"
+                }
+              ],
+              "feedback": "You know the operating system is needed. Say why hardware cannot work without software (it needs instructions), and give an example of a device that fails without software."
+            },
+            {
+              "tier": "weak",
+              "text": "I agree because hardware is the real computer and software is just extra things like games.",
+              "meets": [],
+              "feedback": "Software is not extra. Without programs such as the operating system, the hardware has no instructions and cannot do useful work. Games are only one kind of application software."
+            },
+            {
+              "tier": "weak",
+              "text": "Hardware can work with software only when there is internet so Seun is right.",
+              "meets": [],
+              "feedback": "Software does not need the internet to work. Hardware needs software for instructions, so Seun is wrong. For example a calculator app works on a phone with no data."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Storage devices and their capacity",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. name the common storage devices;\n2. compare a hard disk, SSD, flash drive and memory card;\n3. use the units of storage (byte, KB, MB, GB, TB);\n4. choose a suitable device for a task.\n\n## Materials\n\nA flash drive, a memory card, an old hard disk if available (opened by the teacher), and a card chart of the units of storage.\n\n## Starter (5 minutes)\n\nAsk: \"A phone says 'storage full'. What does that mean and what can you do?\" Collect answers on the board.\n\n## Development\n\n1. Storage devices keep data when the power is off. Name the four main kinds.\n2. Hard disk (HDD): a spinning disk inside the computer, large and cheap, but it has moving parts and can break if dropped.\n3. SSD: no moving parts, faster, uses less power, costs more per GB.\n4. Flash drive: small, plugs into a USB port, for carrying files.\n5. Memory card: used in phones and cameras.\n6. Units: 1 byte holds one character; 1 KB is about 1000 bytes; 1 MB is about 1000 KB; 1 GB is about 1000 MB; 1 TB is about 1000 GB.\n7. Work an example: how many 5 MB photos fit on a 4 GB flash drive (about 800).\n\n## Class activity\n\nGroups receive a task (carry a school project, store a whole school's records, a camera for a wedding) and choose a device with a reason.\n\n## Evaluation\n\n1. Name two differences between an HDD and an SSD.\n2. How many 2 MB songs fit in 1 GB (about 500)?\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "Where does the computer keep its files?",
+        "content": "# Storage devices and their capacity\n\n## Why we need storage\n\nWhen the power goes off, a computer forgets what it was working on unless you have **saved** it. A **storage device** keeps your files safely, even when the computer is switched off.\n\n## Common storage devices\n\n**Hard disk drive (HDD).** This is inside most desktop computers. It has a metal disk that spins. It can hold a lot of data and is cheap, but it can be damaged if it is dropped, because of the moving parts.\n\n**Solid state drive (SSD).** This has no moving parts. It starts programs much faster, uses less power, and is not easily damaged by shaking. It usually costs more for the same size.\n\n**Flash drive.** A small stick that plugs into the USB port. It is very good for carrying files from school to home.\n\n**Memory card.** A tiny card used in phones, cameras and tablets to add more space.\n\n## How much can they hold?\n\nWe measure storage in **bytes**. One byte holds one letter or number.\n\n| Unit | Size (about) |\n|---|---|\n| 1 KB (kilobyte) | 1000 bytes |\n| 1 MB (megabyte) | 1000 KB |\n| 1 GB (gigabyte) | 1000 MB |\n| 1 TB (terabyte) | 1000 GB |\n\nA short text file may be a few KB. A photo may be 2 to 5 MB. A film may be 1 or 2 GB. A school's records for many years may need a few TB.\n\n## Worked example\n\nA flash drive holds 8 GB. Each photo is 4 MB. How many photos can fit?\n\n8 GB is about 8000 MB. Then 8000 ÷ 4 = **2000 photos**.\n\n## Choosing a device\n\n- To carry a project from school to home: a **flash drive**.\n- For a phone that is out of space: a **memory card**.\n- For a school server that must open quickly: an **SSD**.\n- For many years of old records at low cost: a **hard disk**."
+      },
+      "cards": [
+        {
+          "front": "Storage device",
+          "back": "A device that keeps files even when the computer is switched off."
+        },
+        {
+          "front": "Hard disk (HDD)",
+          "back": "A spinning disk inside the computer. Large and cheap, but it has moving parts."
+        },
+        {
+          "front": "SSD",
+          "back": "A solid state drive with no moving parts. Faster and tougher, but costs more per GB."
+        },
+        {
+          "front": "Flash drive",
+          "back": "A small USB stick for carrying files from one computer to another."
+        },
+        {
+          "front": "Memory card",
+          "back": "A tiny card that adds storage to a phone or camera."
+        },
+        {
+          "front": "Byte",
+          "back": "The smallest unit we use. It holds one letter or number."
+        },
+        {
+          "front": "Order of the units",
+          "back": "Byte, KB, MB, GB, TB. Each is about 1000 times bigger than the one before."
+        },
+        {
+          "front": "1 GB is about how many MB?",
+          "back": "About 1000 MB."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which storage device has no moving parts and opens programs fastest?",
+          "options": [
+            "Hard disk",
+            "Spinning disk",
+            "Floppy disk",
+            "SSD"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A flash drive has 8 GB of space. Each song is 4 MB. About how many songs can it hold?",
+          "options": [
+            "200",
+            "2000",
+            "20 000",
+            "20"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which unit is the biggest?",
+          "options": [
+            "MB",
+            "KB",
+            "TB",
+            "GB"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A pupil wants to carry her project from the school lab to her home computer. The best device is",
+          "options": [
+            "a flash drive",
+            "a monitor",
+            "a keyboard",
+            "a printer"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Why can a hard disk be damaged when a laptop is dropped?",
+          "options": [
+            "It has no power",
+            "It is too cold",
+            "It is made of glass only",
+            "It has moving parts inside"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Give two differences between a hard disk drive (HDD) and a solid state drive (SSD).",
+          "markScheme": [
+            "States that an HDD has moving parts and an SSD has none",
+            "States that an SSD is faster",
+            "States that an HDD is cheaper or holds more for the same money (or an SSD costs more)"
+          ],
+          "modelAnswer": "An HDD has a spinning disk with moving parts, but an SSD has no moving parts. An SSD is faster at opening files. An HDD is cheaper for the same space, while an SSD costs more.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The HDD has a disk inside that spins but the SSD has no moving parts. The SSD is faster to open programs. The SSD is more expensive than the HDD for the same space.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The HDD has a disk inside that spins but the SSD has no moving parts"
+                },
+                {
+                  "point": 1,
+                  "quote": "The SSD is faster to open programs"
+                },
+                {
+                  "point": 2,
+                  "quote": "The SSD is more expensive than the HDD for the same space"
+                }
+              ],
+              "feedback": "All three marks. You gave the moving parts, the speed and the price."
+            },
+            {
+              "tier": "full",
+              "text": "An HDD can spoil if you drop it because it has moving parts but an SSD does not have, so it is stronger. An SSD works quicker. HDD is cheaper when you want plenty space.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "An HDD can spoil if you drop it because it has moving parts but an SSD does not have"
+                },
+                {
+                  "point": 1,
+                  "quote": "An SSD works quicker"
+                },
+                {
+                  "point": 2,
+                  "quote": "HDD is cheaper when you want plenty space"
+                }
+              ],
+              "feedback": "Full marks. Linking the moving parts to damage when dropped is a good use of the fact."
+            },
+            {
+              "tier": "partial",
+              "text": "The SSD is faster than the HDD. The HDD is bigger.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The SSD is faster than the HDD"
+                }
+              ],
+              "feedback": "Faster is correct. 'Bigger' is not clear, because both can be large. Say that the HDD has moving parts, and that it is cheaper for the same space."
+            },
+            {
+              "tier": "partial",
+              "text": "HDD has a moving disk inside. SSD is used in phones only.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "HDD has a moving disk inside"
+                }
+              ],
+              "feedback": "The moving disk is correct, but you should say the SSD has none. An SSD is also used in many laptops, not only phones. Add that it is faster, and costs more."
+            },
+            {
+              "tier": "weak",
+              "text": "The HDD is the hard one and SSD is the soft one. HDD is a flash drive.",
+              "meets": [],
+              "feedback": "The names are not about hard and soft. An HDD has a spinning disk inside and an SSD has no moving parts, and a flash drive is a different device. Give differences such as moving parts, speed and price."
+            },
+            {
+              "tier": "weak",
+              "text": "One is for the computer and the other is for the phone. They are both very heavy.",
+              "meets": [],
+              "feedback": "Both can be used in computers, and neither is especially heavy. The main differences are moving parts (HDD has them, SSD does not), speed (SSD is faster) and price (HDD is cheaper per GB)."
+            }
+          ]
+        },
+        {
+          "prompt": "A school in Ilorin has 3 GB of photos from sports day. The head teacher has a 2 GB flash drive and a 16 GB memory card. Which can keep all the photos? Show how you know, and say what the other cannot do.",
+          "markScheme": [
+            "Converts or compares the sizes correctly (3 GB is more than 2 GB)",
+            "Chooses the 16 GB memory card",
+            "Says the 2 GB flash drive is too small and cannot hold all the photos",
+            "Gives a correct reason that 16 GB is bigger than 3 GB, with room left over"
+          ],
+          "modelAnswer": "The photos are 3 GB. The flash drive holds only 2 GB, and 3 is more than 2, so it is too small and cannot keep all the photos. The memory card holds 16 GB, which is more than 3 GB, with 13 GB left over, so the memory card should be used.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The photos are 3 GB but the flash drive is 2 GB and 3 is bigger than 2. So the flash drive is too small and cannot keep all the photos. The 16 GB memory card is the one to use because 16 is more than 3 and 13 GB is left.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The photos are 3 GB but the flash drive is 2 GB and 3 is bigger than 2"
+                },
+                {
+                  "point": 2,
+                  "quote": "the flash drive is too small and cannot keep all the photos"
+                },
+                {
+                  "point": 1,
+                  "quote": "The 16 GB memory card is the one to use"
+                },
+                {
+                  "point": 3,
+                  "quote": "16 is more than 3 and 13 GB is left"
+                }
+              ],
+              "feedback": "All four marks. Working out the 13 GB left over was a good extra step."
+            },
+            {
+              "tier": "full",
+              "text": "The memory card can keep them. 16 GB is bigger than 3 GB so all the pictures will enter and some space will remain. The flash drive is only 2 GB, and 2 GB is less than 3 GB, so it will not be able to hold everything.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The memory card can keep them"
+                },
+                {
+                  "point": 3,
+                  "quote": "16 GB is bigger than 3 GB so all the pictures will enter and some space will remain"
+                },
+                {
+                  "point": 0,
+                  "quote": "2 GB is less than 3 GB"
+                },
+                {
+                  "point": 2,
+                  "quote": "it will not be able to hold everything"
+                }
+              ],
+              "feedback": "Full marks. You compared the sizes with the numbers, not just by guessing."
+            },
+            {
+              "tier": "partial",
+              "text": "The memory card because it is 16 GB. The flash drive is small.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The memory card because it is 16 GB"
+                }
+              ],
+              "feedback": "The choice is right. To earn the other marks, compare the numbers: the photos are 3 GB and the flash drive is only 2 GB, so it cannot hold them. Say also that 16 GB is greater than 3 GB.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "The flash drive cannot hold the photos because it is 2 GB. The photos are 3 GB.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The photos are 3 GB"
+                },
+                {
+                  "point": 2,
+                  "quote": "The flash drive cannot hold the photos because it is 2 GB"
+                }
+              ],
+              "feedback": "You showed that the flash drive is too small. Now finish the question: say which device can keep the photos (the 16 GB memory card) and why 16 GB is enough."
+            },
+            {
+              "tier": "weak",
+              "text": "The flash drive is better because it is a flash drive and a memory card is for phone only.",
+              "meets": [],
+              "feedback": "A memory card can be read by a computer too. Choose by size, not by name: the photos are 3 GB, the flash drive is only 2 GB, and the memory card is 16 GB."
+            },
+            {
+              "tier": "weak",
+              "text": "2 GB is bigger than 16 GB because 2 is the first number. So the flash drive.",
+              "meets": [],
+              "feedback": "16 is bigger than 2, so a 16 GB card holds more than a 2 GB drive. The photos are 3 GB, so only the 16 GB memory card can keep all of them."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Typing posture and the keyboard",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. sit in the correct posture to type;\n2. place their fingers on the home row;\n3. group keys into alphanumeric, function and service keys;\n4. use common service keys (Shift, Enter, Backspace, Caps Lock, Spacebar).\n\n## Materials\n\nA keyboard chart, computers with a word processor open, and a typing tutor program if available.\n\n## Starter (5 minutes)\n\nAsk two pupils to type their names, one using one finger and the other using both hands. Ask the class what they notice about speed and comfort.\n\n## Development\n\n1. Posture: sit up straight, feet flat on the floor, elbows near a right angle, wrists level, and the screen at eye level about an arm's length away.\n2. Home row: the left fingers rest on A, S, D, F and the right on J, K, L and ;. The thumbs rest on the spacebar. The little bumps on F and J guide the fingers.\n3. Alphanumeric keys are the letters and numbers.\n4. Function keys F1 to F12 are on the top row; each does a special job in a program, for example F5 refreshes a page.\n5. Service keys help with editing: Enter starts a new line, Backspace deletes to the left, Delete removes to the right, Shift gives capitals, Caps Lock locks capitals, Tab moves across, Esc cancels.\n\n## Class activity\n\nPupils type the sentence \"A sad lad asks a dad for a fall salad\" using the home row, then type their names with capitals using Shift.\n\n## Evaluation\n\n1. Name three things about a correct typing posture.\n2. What is the job of the Backspace key?\n\n## Assignment\n\nQuiz on the app, and ten minutes of typing practice.",
+      "reading": {
+        "title": "Sit well, type well",
+        "content": "# Typing posture and the keyboard\n\nTyping well is a skill. If you learn it properly now, you will work faster and your hands and back will not hurt.\n\n## Correct posture\n\n- Sit **upright** with your back against the chair.\n- Keep your **feet flat** on the floor.\n- Keep your **elbows** bent at about a right angle.\n- Keep your **wrists straight**, not bent up or down.\n- The **screen** should be at eye level and about an arm's length away.\n\n## The home row\n\nThe home row is the middle row of letters. Your fingers rest there when you are not typing.\n\n- Left hand: **A S D F**\n- Right hand: **J K L ;**\n- Both thumbs: the **spacebar**\n\nThere are small bumps on **F** and **J**. You can feel them without looking, so your fingers always know where home is. After pressing a key, return the finger to home.\n\n## Groups of keys\n\n**Alphanumeric keys.** These are the letters A to Z and the numbers 0 to 9, with punctuation.\n\n**Function keys.** F1 to F12 along the top. Each does a special job that depends on the program. For example, F5 refreshes a web page and F1 usually opens Help.\n\n**Service keys.** These help you to edit and control your typing:\n\n| Key | What it does |\n|---|---|\n| Enter | Starts a new line or accepts a command |\n| Backspace | Deletes the character to the left |\n| Delete | Deletes the character to the right |\n| Shift | Hold it down to type a capital letter or the top symbol on a key |\n| Caps Lock | Keeps all letters in capitals until you press it again |\n| Spacebar | Puts a space between words |\n| Tab | Jumps across the line |\n| Esc | Cancels or escapes |\n\n## Worked example\n\nTo type **Lagos is big**: hold **Shift** and press **L**, release, then type *agos*, press the **Spacebar**, type *is*, press the **Spacebar**, and type *big*.\n\nIf you type *Lagoss* by mistake, press **Backspace** once to remove the extra *s*."
+      },
+      "cards": [
+        {
+          "front": "Correct typing posture",
+          "back": "Sit upright, feet flat, elbows bent, wrists straight, screen at eye level."
+        },
+        {
+          "front": "Home row",
+          "back": "The row where the fingers rest: A S D F and J K L ;"
+        },
+        {
+          "front": "Why does F have a bump?",
+          "back": "It lets your fingers find the home row without looking."
+        },
+        {
+          "front": "Alphanumeric keys",
+          "back": "The letter and number keys."
+        },
+        {
+          "front": "Function keys",
+          "back": "F1 to F12 on the top row. Each does a special job in a program."
+        },
+        {
+          "front": "Service keys",
+          "back": "Keys such as Enter, Backspace, Shift and Caps Lock that help you edit and control typing."
+        },
+        {
+          "front": "Backspace",
+          "back": "Deletes the character to the left of the cursor."
+        },
+        {
+          "front": "Shift",
+          "back": "Held down to type a capital letter or the top symbol on a key."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which fingers of the left hand rest on the home row?",
+          "options": [
+            "A S D F",
+            "Q W E R",
+            "Z X C V",
+            "1 2 3 4"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Ngozi typed 'Abujja' but wants 'Abuja'. Which key should she press once to remove the extra letter?",
+          "options": [
+            "Enter",
+            "Shift",
+            "Backspace",
+            "Spacebar"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a correct typing posture?",
+          "options": [
+            "Wrists bent upward, leaning back",
+            "Screen very low, head down",
+            "One foot on the chair",
+            "Back straight, feet flat, screen at eye level"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "To type one capital letter, you should",
+          "options": [
+            "press Enter",
+            "hold Shift and press the letter",
+            "press Tab",
+            "press F1"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "F1 to F12 are called",
+          "options": [
+            "alphanumeric keys",
+            "home row keys",
+            "function keys",
+            "arrow keys"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe four things you should do to sit correctly when typing, and say why good posture matters.",
+          "markScheme": [
+            "Sits with the back straight / upright",
+            "Feet flat on the floor",
+            "Wrists straight / elbows bent / screen at eye level (any correct detail)",
+            "Another correct detail of posture",
+            "Gives a reason, e.g. avoids pain or tiredness, or types faster"
+          ],
+          "modelAnswer": "I sit with my back straight and my feet flat on the floor. I keep my elbows bent and my wrists straight, and I put the screen at eye level. Good posture stops pain in the back, neck and hands and helps me type faster.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I sit with my back straight. My feet are flat on the floor. My elbows are bent and my wrists are straight. The screen is at my eye level. Good posture helps me not to feel pain in my back and hands.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I sit with my back straight"
+                },
+                {
+                  "point": 1,
+                  "quote": "My feet are flat on the floor"
+                },
+                {
+                  "point": 2,
+                  "quote": "My elbows are bent and my wrists are straight"
+                },
+                {
+                  "point": 3,
+                  "quote": "The screen is at my eye level"
+                },
+                {
+                  "point": 4,
+                  "quote": "Good posture helps me not to feel pain in my back and hands"
+                }
+              ],
+              "feedback": "All five marks. Four correct details and a reason, well done."
+            },
+            {
+              "tier": "full",
+              "text": "Sit upright on the chair. Put both feet flat on the floor. Keep the wrists straight and not bending. Put the monitor at eye level and an arm's length away. Posture matters so that you will not be tired and so you type faster.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sit upright on the chair"
+                },
+                {
+                  "point": 1,
+                  "quote": "Put both feet flat on the floor"
+                },
+                {
+                  "point": 2,
+                  "quote": "Keep the wrists straight and not bending"
+                },
+                {
+                  "point": 3,
+                  "quote": "Put the monitor at eye level and an arm's length away"
+                },
+                {
+                  "point": 4,
+                  "quote": "so that you will not be tired and so you type faster"
+                }
+              ],
+              "feedback": "Full marks. You gave the distance of the screen as well, which is a good detail."
+            },
+            {
+              "tier": "partial",
+              "text": "Sit well on the chair and keep your back straight. Put your feet on the floor. Posture is important because it is good.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "keep your back straight"
+                },
+                {
+                  "point": 1,
+                  "quote": "Put your feet on the floor"
+                }
+              ],
+              "feedback": "You have two correct details. Add a third and fourth, such as straight wrists and the screen at eye level, and give a real reason: it prevents pain and tiredness."
+            },
+            {
+              "tier": "partial",
+              "text": "Keep your back straight, wrists straight and the screen high. If you sit badly your back will pain you.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Keep your back straight"
+                },
+                {
+                  "point": 2,
+                  "quote": "wrists straight"
+                },
+                {
+                  "point": 4,
+                  "quote": "your back will pain you"
+                }
+              ],
+              "feedback": "Good start with a reason. Say that the feet go flat on the floor, and be exact about the screen: it should be at eye level, not 'high'."
+            },
+            {
+              "tier": "weak",
+              "text": "You should sit and type fast. Use two fingers and look at the keys.",
+              "meets": [],
+              "feedback": "Typing fast is the aim, not a posture. Posture means how your body sits: back straight, feet flat, wrists straight, screen at eye level. Using all fingers on the home row is the best way to type."
+            },
+            {
+              "tier": "weak",
+              "text": "Lie your hands on the table and bend your head so you can see the keys well.",
+              "meets": [],
+              "feedback": "Bending the head down is poor posture and will hurt your neck. Keep your head up, your back straight, and your wrists straight above the keys."
+            }
+          ]
+        },
+        {
+          "prompt": "Name the home row keys for each hand and explain why the typist rests the fingers there. Then say what Shift and Backspace each do.",
+          "markScheme": [
+            "Names A S D F for the left hand and J K L ; for the right hand",
+            "Explains that the fingers start and return there, so they can reach any key (and F and J bumps help)",
+            "States that Shift gives capital letters or top symbols",
+            "States that Backspace deletes the character on the left"
+          ],
+          "modelAnswer": "The left hand rests on A, S, D and F and the right hand on J, K, L and ;. The fingers rest there so they can reach every other key and return, and the bumps on F and J help them find it. Shift is held to type capital letters, and Backspace deletes the character to the left of the cursor.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Left hand is A S D F and right hand is J K L ;. The fingers rest on those keys so that they can reach all the other keys and come back, and the bumps on F and J help to find them. Shift is used to type a capital letter. Backspace deletes the letter on the left.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Left hand is A S D F and right hand is J K L ;"
+                },
+                {
+                  "point": 1,
+                  "quote": "The fingers rest on those keys so that they can reach all the other keys and come back"
+                },
+                {
+                  "point": 2,
+                  "quote": "Shift is used to type a capital letter"
+                },
+                {
+                  "point": 3,
+                  "quote": "Backspace deletes the letter on the left"
+                }
+              ],
+              "feedback": "All four marks. You explained the reason for the home row, not only the letters."
+            },
+            {
+              "tier": "full",
+              "text": "A S D F for left, J K L ; for right. We rest there because every other key is near and we do not need to look at the keyboard, the little bumps on F and J guide us. Hold Shift to get capital letters. Backspace removes what is behind the cursor, on the left.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A S D F for left, J K L ; for right"
+                },
+                {
+                  "point": 1,
+                  "quote": "every other key is near and we do not need to look at the keyboard"
+                },
+                {
+                  "point": 2,
+                  "quote": "Hold Shift to get capital letters"
+                },
+                {
+                  "point": 3,
+                  "quote": "Backspace removes what is behind the cursor, on the left"
+                }
+              ],
+              "feedback": "Full marks. Every key is named and each job is explained clearly."
+            },
+            {
+              "tier": "partial",
+              "text": "The home row is A S D F and J K L ;. Shift makes capital letters. Backspace deletes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The home row is A S D F and J K L ;"
+                },
+                {
+                  "point": 2,
+                  "quote": "Shift makes capital letters"
+                }
+              ],
+              "feedback": "The home row and Shift are right. Say why fingers rest on the home row (to reach all keys quickly), and say which side Backspace deletes: the character to the left."
+            },
+            {
+              "tier": "partial",
+              "text": "The fingers rest on the middle row so that they can reach the others fast. Backspace deletes the letter before the cursor, Shift gives capital.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The fingers rest on the middle row so that they can reach the others fast"
+                },
+                {
+                  "point": 3,
+                  "quote": "Backspace deletes the letter before the cursor"
+                },
+                {
+                  "point": 2,
+                  "quote": "Shift gives capital"
+                }
+              ],
+              "feedback": "You explained the reason well and both keys are right. The question also asks you to name the keys: A S D F on the left, and J K L ; on the right."
+            },
+            {
+              "tier": "weak",
+              "text": "Home row is the first row with numbers. Shift is to move and Backspace is to go back to the first page.",
+              "meets": [],
+              "feedback": "The home row is the middle row of letters, A S D F and J K L ;. Shift is held to type a capital letter, and Backspace deletes one character to the left. It does not go back to a page."
+            },
+            {
+              "tier": "weak",
+              "text": "The home row is Q W E R T Y for the left and U I O P for the right. Shift is for capital letters.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Shift is for capital letters"
+                }
+              ],
+              "feedback": "Shift is right. Q W E R T Y is the row above the home row. The home row is A S D F and J K L ;. Say also what Backspace does: it deletes the character on the left."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Computer networks: LAN, MAN and WAN",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. say what a computer network is;\n2. describe a LAN, a MAN and a WAN;\n3. compare their sizes and usual speeds;\n4. name the devices that join a network (router, switch, cable, Wi-Fi);\n5. decide which type of network fits a situation.\n\n## Materials\n\nA picture of the school computer lab network, a router (or a photo), a network cable, and a map of Nigeria.\n\n## Starter (5 minutes)\n\nAsk: \"How does the printer in the school office print for many computers?\" Lead pupils to see that the computers are joined together.\n\n## Development\n\n1. A network is two or more computers joined to share files, printers and an internet connection.\n2. LAN (Local Area Network): a small area such as a lab, a school or a house. Usually fast and owned by one organisation.\n3. MAN (Metropolitan Area Network): joins networks in one town or city, for example the branches of a bank in Kano.\n4. WAN (Wide Area Network): covers a country or the world. The internet is the biggest WAN. Usually slower and more expensive to run than a LAN.\n5. Devices: network cable or Wi-Fi to carry data, a switch to join computers in a LAN, a router to join networks and connect to the internet.\n6. Speed is measured in megabits per second (Mbps).\n\n## Class activity\n\nGroups receive five situations and write LAN, MAN or WAN with a reason for each.\n\n## Evaluation\n\n1. Why is a lab network a LAN?\n2. Give one advantage of a network.\n\n## Assignment\n\nProblem set on the app.",
+      "reading": {
+        "title": "How computers talk to each other",
+        "content": "# Computer networks: LAN, MAN and WAN\n\n## What is a network?\n\nA **computer network** is two or more computers joined together so that they can share things. They can share files, a printer, and an internet connection.\n\nWithout a network, a school with 30 computers would need 30 printers. With a network, one printer serves everyone.\n\n## Types of network\n\n### LAN: Local Area Network\n\nA LAN covers a **small area**: one room, a building, a school or a house. The computers in the school's ICT lab form a LAN. One organisation owns it. Because the distances are short, a LAN is usually **fast**.\n\n### MAN: Metropolitan Area Network\n\nA MAN covers a **town or city**. It joins several LANs. For example, the branches of a bank in Kano may be joined in one MAN so that a customer can be served at any branch.\n\n### WAN: Wide Area Network\n\nA WAN covers a **very large area**: a country or the whole world. The **internet** is the largest WAN in the world. Because data travels very far, a WAN is usually **slower** and costs more to run than a LAN.\n\n## How a network works\n\n- **Cable or Wi-Fi** carries the data between devices.\n- A **switch** joins the computers inside a LAN.\n- A **router** joins one network to another, and connects the LAN to the internet.\n\nData is sent in small pieces called **packets**. The router sends each packet towards the computer it is meant for, and the other computer puts the pieces back together.\n\n## Speed\n\nNetwork speed is measured in **megabits per second (Mbps)**. A higher number means more data every second.\n\n## Worked example\n\nA secondary school in Ado-Ekiti joins 25 computers in its lab with cables and a switch. This is a **LAN**. The head teacher connects the lab to the internet through a router. The internet is a **WAN**.\n\n## Why networks are useful\n\n- Share **files** and **printers**.\n- Share one **internet** connection.\n- **Talk** to each other by email or chat."
+      },
+      "cards": [
+        {
+          "front": "Computer network",
+          "back": "Two or more computers joined together to share files, printers and an internet connection."
+        },
+        {
+          "front": "LAN",
+          "back": "Local Area Network: a small area such as a lab or school. Usually fast."
+        },
+        {
+          "front": "MAN",
+          "back": "Metropolitan Area Network: joins networks across a town or city."
+        },
+        {
+          "front": "WAN",
+          "back": "Wide Area Network: covers a country or the world. The internet is the biggest."
+        },
+        {
+          "front": "Router",
+          "back": "A device that joins networks together and connects them to the internet."
+        },
+        {
+          "front": "Switch",
+          "back": "A device that joins the computers inside one LAN."
+        },
+        {
+          "front": "Mbps",
+          "back": "Megabits per second: the unit for network speed."
+        },
+        {
+          "front": "Why are networks useful?",
+          "back": "They let users share files, printers and one internet connection."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The computers in one school's ICT lab joined together form a",
+          "options": [
+            "MAN",
+            "LAN",
+            "WAN",
+            "Internet"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which is the biggest WAN in the world?",
+          "options": [
+            "The internet",
+            "The school lab",
+            "A switch",
+            "A house network"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The branches of a bank in one city are joined to serve customers at any branch. This is most likely a",
+          "options": [
+            "Single computer",
+            "LAN",
+            "Bluetooth",
+            "MAN"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which device connects a school's LAN to the internet?",
+          "options": [
+            "Keyboard",
+            "Monitor",
+            "Router",
+            "Mouse"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A pupil says 'A WAN is usually faster than a LAN because it is bigger.' What is wrong with this?",
+          "options": [
+            "Nothing, it is right",
+            "Bigger networks need no cables",
+            "A WAN has no computers",
+            "Data travels further in a WAN, so it is usually slower than a LAN"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State what each of these is and give an example: (a) LAN (b) WAN.",
+          "markScheme": [
+            "LAN covers a small area such as a lab, building or school",
+            "A correct example of a LAN",
+            "WAN covers a large area such as a country or the world",
+            "A correct example of a WAN, e.g. the internet"
+          ],
+          "modelAnswer": "A LAN is a network that covers a small area, such as a school. An example is the computers in the ICT lab. A WAN covers a very large area, such as a country or the world. The internet is an example.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) LAN is a network of computers in a small place like a school or a house. Example is the ICT lab. (b) WAN is a network that covers a very large area like the whole world. Example is the internet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "LAN is a network of computers in a small place like a school or a house"
+                },
+                {
+                  "point": 1,
+                  "quote": "Example is the ICT lab"
+                },
+                {
+                  "point": 2,
+                  "quote": "WAN is a network that covers a very large area like the whole world"
+                },
+                {
+                  "point": 3,
+                  "quote": "Example is the internet"
+                }
+              ],
+              "feedback": "All four marks. Each definition has a size and an example."
+            },
+            {
+              "tier": "full",
+              "text": "LAN means Local Area Network. It joins computers in one building, for example the computers in our school library. WAN means Wide Area Network. It joins computers across countries, for example a bank joining its branches in Lagos and Abuja.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It joins computers in one building"
+                },
+                {
+                  "point": 1,
+                  "quote": "for example the computers in our school library"
+                },
+                {
+                  "point": 2,
+                  "quote": "It joins computers across countries"
+                },
+                {
+                  "point": 3,
+                  "quote": "for example a bank joining its branches in Lagos and Abuja"
+                }
+              ],
+              "feedback": "Full marks. A bank with branches in different cities is a good WAN example."
+            },
+            {
+              "tier": "partial",
+              "text": "LAN is a network in a small area. WAN is a network too. Example of LAN is the school lab.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "LAN is a network in a small area"
+                },
+                {
+                  "point": 1,
+                  "quote": "Example of LAN is the school lab"
+                }
+              ],
+              "feedback": "Your LAN answer is complete. For WAN, say that it covers a very large area, such as a country or the world, and give an example such as the internet."
+            },
+            {
+              "tier": "partial",
+              "text": "WAN is the one that covers a large area and the internet is an example. LAN is the small one.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "WAN is the one that covers a large area"
+                },
+                {
+                  "point": 3,
+                  "quote": "the internet is an example"
+                }
+              ],
+              "feedback": "Your WAN answer is right. For the LAN you needed to say where it is found (a lab, a school or a house) and give an example."
+            },
+            {
+              "tier": "weak",
+              "text": "LAN is a lan wire and WAN is a wire that is long. The example is the cable.",
+              "meets": [],
+              "feedback": "A LAN and a WAN are networks, not wires. A LAN covers a small area such as a school lab, and a WAN covers a very large area such as the whole world, like the internet."
+            },
+            {
+              "tier": "weak",
+              "text": "LAN is the internet and WAN is the school computers because the school is wide.",
+              "meets": [],
+              "feedback": "These are the wrong way round. The school's computers are a LAN (small area). The internet is a WAN (very wide area). Wide in WAN means a large area like a country."
+            }
+          ]
+        },
+        {
+          "prompt": "The principal of a school in Enugu wants to join the 40 computers in the school's two computer rooms so they share one printer, and also wants the school to use the internet. Say which type of network joins the computers, which device connects it to the internet, and why a network is better than 40 separate computers.",
+          "markScheme": [
+            "Identifies the network as a LAN",
+            "Names the router as the device that connects it to the internet",
+            "Says the computers can share a printer / files",
+            "Says they can share one internet connection (or another correct advantage, such as saving cost)"
+          ],
+          "modelAnswer": "The computers in the two rooms form a LAN. A router connects the LAN to the internet. With the network, all 40 computers can share one printer and share files, and they use one internet connection, which costs less than 40 separate ones.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The computers will form a LAN because it is the same school. A router will connect the LAN to the internet. With a network the 40 computers can share one printer and share files. They can also use one internet connection so it will cost less.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The computers will form a LAN because it is the same school"
+                },
+                {
+                  "point": 1,
+                  "quote": "A router will connect the LAN to the internet"
+                },
+                {
+                  "point": 2,
+                  "quote": "the 40 computers can share one printer and share files"
+                },
+                {
+                  "point": 3,
+                  "quote": "They can also use one internet connection so it will cost less"
+                }
+              ],
+              "feedback": "All four marks. You added the saving in cost, which is the real reason schools use networks."
+            },
+            {
+              "tier": "full",
+              "text": "It is a LAN, since the rooms are close. To reach the internet they need a router. The advantage is that the printer can be shared by all the computers, and the school pays for one internet line only.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is a LAN, since the rooms are close"
+                },
+                {
+                  "point": 1,
+                  "quote": "they need a router"
+                },
+                {
+                  "point": 2,
+                  "quote": "the printer can be shared by all the computers"
+                },
+                {
+                  "point": 3,
+                  "quote": "the school pays for one internet line only"
+                }
+              ],
+              "feedback": "Full marks. Short, clear and each point is covered."
+            },
+            {
+              "tier": "partial",
+              "text": "The network is LAN. A router will connect it to the internet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The network is LAN"
+                },
+                {
+                  "point": 1,
+                  "quote": "A router will connect it to the internet"
+                }
+              ],
+              "feedback": "These two points are right. The question also asks why a network is better, so give an advantage: the computers can share one printer and share one internet connection."
+            },
+            {
+              "tier": "partial",
+              "text": "It is LAN. The computers can share printer and one internet. It will help the school.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is LAN"
+                },
+                {
+                  "point": 2,
+                  "quote": "The computers can share printer"
+                }
+              ],
+              "feedback": "The type of network is right and you named sharing a printer. Name the device that joins the LAN to the internet (a router). Then say clearly what is shared on the internet: one connection, which saves money."
+            },
+            {
+              "tier": "weak",
+              "text": "It is WAN because there are many computers, and the wire will connect them. It is better because it is fast.",
+              "meets": [],
+              "feedback": "Many computers in one school is a LAN. A WAN covers a very large area. A router, not just wire, connects the LAN to the internet. The benefit to say is sharing a printer and one internet connection."
+            },
+            {
+              "tier": "weak",
+              "text": "They should buy 40 printers and 40 internet lines so each person has theirs.",
+              "meets": [],
+              "feedback": "That would cost far too much. The advantage of a network is that one printer and one internet line are shared by all the computers. Name the network (a LAN) and the router that connects it."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Word processing: create, format, edit and save",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. open a word processor and create a new document;\n2. format text (font, size, bold, italic, underline, alignment);\n3. edit text using copy, cut, paste and undo;\n4. save a document with a clear file name and open it again.\n\n## Materials\n\nComputers with Microsoft Word (or an equivalent word processor), a projector, and a printed sample notice for pupils to copy.\n\n## Starter (5 minutes)\n\nShow a plain handwritten notice and a typed, formatted notice. Ask which is easier to read and why.\n\n## Development\n\n1. Open the program and start a blank document. Point out the ribbon, the ruler and the typing area.\n2. Type a short paragraph about your school.\n3. Format: select text by dragging, then change the font, size and colour. Use Bold (Ctrl+B), Italic (Ctrl+I), Underline (Ctrl+U).\n4. Align text: left, centre, right, justify. Centre the heading.\n5. Edit: Copy (Ctrl+C), Cut (Ctrl+X), Paste (Ctrl+V), Undo (Ctrl+Z).\n6. Save: Ctrl+S, choose a folder, give a clear file name (for example JSS1_Notice) and save. Explain Save As for a copy.\n\n## Class activity\n\nPupils type and format a notice for the school's cultural day, then save it with their class and a short name.\n\n## Evaluation\n\n1. How do you make a heading bold and centred?\n2. What is the difference between Save and Save As?\n\n## Assignment\n\nComplete the worksheet on the app.",
+      "reading": {
+        "title": "Writing and formatting a document",
+        "content": "# Word processing: create, format, edit and save\n\nA **word processor** is application software for writing and changing documents. Microsoft Word, Google Docs and WPS Writer are examples. A document can be a letter, a notice, a story or a homework.\n\n## Starting a document\n\nOpen the program and choose **Blank document**. You will see a white page, a blinking line called the **cursor**, and a **ribbon** of buttons on top. Click on the page and start to type.\n\n## Formatting text\n\n**Formatting** changes how text looks. First **select** the text by dragging over it with the mouse. Then use the buttons.\n\n- **Font and size**: the style and size of the letters.\n- **Bold (Ctrl+B)**: makes the text thick.\n- **Italic (Ctrl+I)**: slants the text.\n- **Underline (Ctrl+U)**: puts a line under the text.\n- **Alignment**: left, centre, right or justify (straight on both edges).\n\nA heading is often **bold**, bigger and **centred**.\n\n## Editing text\n\n**Editing** means changing what you have typed.\n\n| Action | Shortcut | What it does |\n|---|---|---|\n| Copy | Ctrl+C | Makes a copy of the selected text |\n| Cut | Ctrl+X | Removes the text and keeps it to paste |\n| Paste | Ctrl+V | Puts the copied or cut text at the cursor |\n| Undo | Ctrl+Z | Takes back the last action |\n\n## Saving\n\nIf you do not save, your work can be lost when NEPA takes the light. Press **Ctrl+S**, choose a folder, type a **file name**, and click **Save**. Give names that tell you what the file is, such as *JSS1_Cultural_Day_Notice*, not *Document1*.\n\n**Save As** saves a copy under a new name or in another place, and leaves the first file as it was.\n\n## Worked example\n\nTo write a notice:\n1. Type *CULTURAL DAY*. Select it, press **Ctrl+B**, choose size 20, and click **Centre**.\n2. Press **Enter** and type the details in size 12, left aligned.\n3. If you copy the wrong line, press **Ctrl+Z**.\n4. Press **Ctrl+S** and save as *JSS1_Cultural_Day_Notice*."
+      },
+      "cards": [
+        {
+          "front": "Word processor",
+          "back": "Software for writing and changing documents, such as Microsoft Word."
+        },
+        {
+          "front": "Formatting",
+          "back": "Changing how text looks: font, size, bold, italic, colour, alignment."
+        },
+        {
+          "front": "Select",
+          "back": "Drag over text so that the next action affects only that text."
+        },
+        {
+          "front": "Ctrl+B / Ctrl+I / Ctrl+U",
+          "back": "Bold / italic / underline."
+        },
+        {
+          "front": "Copy, cut, paste",
+          "back": "Ctrl+C copies, Ctrl+X removes and keeps, Ctrl+V puts it at the cursor."
+        },
+        {
+          "front": "Undo",
+          "back": "Ctrl+Z takes back the last thing you did."
+        },
+        {
+          "front": "Save",
+          "back": "Ctrl+S keeps your document in a file with a name and a place."
+        },
+        {
+          "front": "Save As",
+          "back": "Saves a copy under a new name or in a new place."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which shortcut makes selected text bold?",
+          "options": [
+            "Ctrl+I",
+            "Ctrl+S",
+            "Ctrl+U",
+            "Ctrl+B"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Before you can change the font of a word, you must first",
+          "options": [
+            "save the file",
+            "print the page",
+            "select the word",
+            "close the program"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Adaeze deleted a whole paragraph by mistake. Which shortcut brings it back at once?",
+          "options": [
+            "Ctrl+Z",
+            "Ctrl+X",
+            "Ctrl+C",
+            "Ctrl+V"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which alignment places a title in the middle of the page?",
+          "options": [
+            "Left",
+            "Centre",
+            "Right",
+            "Justify"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why is 'Document1' a poor file name for a homework?",
+          "options": [
+            "It does not tell you what the file contains",
+            "Files cannot have numbers",
+            "It is too short to save",
+            "It must be in capital letters"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe how to type a heading, make it bold and centred, and save the document as 'JSS1_Notice'.",
+          "markScheme": [
+            "Types the heading and selects it",
+            "Applies bold (button or Ctrl+B)",
+            "Centres it (Centre button)",
+            "Saves with Ctrl+S or File > Save, types the name JSS1_Notice and clicks Save"
+          ],
+          "modelAnswer": "I type the heading and select it by dragging over it. I press Ctrl+B to make it bold and click the Centre button. Then I press Ctrl+S, type JSS1_Notice as the file name and click Save.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I type the heading and drag the mouse over it to select it. I press Ctrl+B to make it bold. I click the Centre button to put it in the middle. Then I press Ctrl+S, write JSS1_Notice and click Save.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I type the heading and drag the mouse over it to select it"
+                },
+                {
+                  "point": 1,
+                  "quote": "I press Ctrl+B to make it bold"
+                },
+                {
+                  "point": 2,
+                  "quote": "I click the Centre button to put it in the middle"
+                },
+                {
+                  "point": 3,
+                  "quote": "I press Ctrl+S, write JSS1_Notice and click Save"
+                }
+              ],
+              "feedback": "All four marks. The order of your steps is correct."
+            },
+            {
+              "tier": "full",
+              "text": "First type the heading then select it. Click B on the ribbon to make it bold. Click the centre icon. Go to File, click Save, type the name JSS1_Notice then click Save.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First type the heading then select it"
+                },
+                {
+                  "point": 1,
+                  "quote": "Click B on the ribbon to make it bold"
+                },
+                {
+                  "point": 2,
+                  "quote": "Click the centre icon"
+                },
+                {
+                  "point": 3,
+                  "quote": "Go to File, click Save, type the name JSS1_Notice then click Save"
+                }
+              ],
+              "feedback": "Full marks. Using the buttons on the ribbon is as good as using the shortcut."
+            },
+            {
+              "tier": "partial",
+              "text": "Type the heading, press Ctrl+B to make it bold and click centre.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "press Ctrl+B to make it bold"
+                },
+                {
+                  "point": 2,
+                  "quote": "click centre"
+                }
+              ],
+              "feedback": "Bold and centre are right, but you must select the heading first or the formatting will not apply to it. Then add the save step: Ctrl+S, type JSS1_Notice and click Save."
+            },
+            {
+              "tier": "partial",
+              "text": "I type the heading then I select it and make it bold. I save it as JSS1_Notice.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I type the heading then I select it"
+                },
+                {
+                  "point": 1,
+                  "quote": "make it bold"
+                },
+                {
+                  "point": 3,
+                  "quote": "I save it as JSS1_Notice"
+                }
+              ],
+              "feedback": "You have most of the steps. The missing one is centring the heading with the Centre button. Say also how you save: with Ctrl+S or File then Save."
+            },
+            {
+              "tier": "weak",
+              "text": "Write the heading and press print. Then the heading will be saved with the name.",
+              "meets": [],
+              "feedback": "Print puts the page on paper and does not save a file. Save with Ctrl+S, type the file name JSS1_Notice, and click Save. To format, select the heading first, then use bold and centre."
+            },
+            {
+              "tier": "weak",
+              "text": "Open Excel and write the heading in the cell, and press Enter. It is bold and centre automatically.",
+              "meets": [],
+              "feedback": "Headings are not made bold or centred automatically, and Excel is a spreadsheet. In a word processor you select the heading, then use bold and centre, and then save with the file name."
+            }
+          ]
+        },
+        {
+          "prompt": "Zainab typed a notice about the school's quiz competition. She wants to move the last sentence to the top and take back a spelling change she made by mistake. Name the keys or buttons she can use, and say what each does.",
+          "markScheme": [
+            "Cut (Ctrl+X) removes the sentence",
+            "Paste (Ctrl+V) puts it at the new position",
+            "Undo (Ctrl+Z) takes back the mistaken change",
+            "Selects the sentence first (or explains that cut and paste keep the text)"
+          ],
+          "modelAnswer": "She selects the last sentence and presses Ctrl+X to cut it. She moves the cursor to the top and presses Ctrl+V to paste it. To take back the spelling change she presses Ctrl+Z, which is Undo.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "She first selects the last sentence. She presses Ctrl+X to cut it. She puts the cursor at the top and presses Ctrl+V to paste it there. To remove the spelling mistake she made she presses Ctrl+Z to undo.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "She first selects the last sentence"
+                },
+                {
+                  "point": 0,
+                  "quote": "She presses Ctrl+X to cut it"
+                },
+                {
+                  "point": 1,
+                  "quote": "presses Ctrl+V to paste it there"
+                },
+                {
+                  "point": 2,
+                  "quote": "she presses Ctrl+Z to undo"
+                }
+              ],
+              "feedback": "All four marks. You remembered to select first."
+            },
+            {
+              "tier": "full",
+              "text": "She can select the sentence, then cut it with Ctrl+X, and click at the top and paste with Ctrl+V. Ctrl+Z is the undo which brings back what was there before the wrong change.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "She can select the sentence"
+                },
+                {
+                  "point": 0,
+                  "quote": "cut it with Ctrl+X"
+                },
+                {
+                  "point": 1,
+                  "quote": "paste with Ctrl+V"
+                },
+                {
+                  "point": 2,
+                  "quote": "Ctrl+Z is the undo which brings back what was there before the wrong change"
+                }
+              ],
+              "feedback": "Full marks. Clear use of cut, paste and undo."
+            },
+            {
+              "tier": "partial",
+              "text": "She can use Ctrl+X and Ctrl+V to move the sentence.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ctrl+X"
+                },
+                {
+                  "point": 1,
+                  "quote": "Ctrl+V"
+                }
+              ],
+              "feedback": "Cut and paste are right. Say that she must select the sentence first, and name the key for the spelling mistake: Ctrl+Z (Undo)."
+            },
+            {
+              "tier": "partial",
+              "text": "To take back the mistake she presses Ctrl+Z. To move the sentence she copies it with Ctrl+C and pastes it.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "To take back the mistake she presses Ctrl+Z"
+                }
+              ],
+              "feedback": "Undo is correct. Ctrl+C copies, so the old sentence would stay at the bottom as well. To move it she should cut with Ctrl+X, then paste with Ctrl+V."
+            },
+            {
+              "tier": "weak",
+              "text": "She will delete the sentence and type it again at the top. For the mistake she will just look.",
+              "meets": [],
+              "feedback": "Deleting and retyping works but wastes time. Use cut (Ctrl+X) and paste (Ctrl+V) to move text, and Undo (Ctrl+Z) to take back a mistake."
+            },
+            {
+              "tier": "weak",
+              "text": "She can use Ctrl+S to move the sentence and Ctrl+P to take back the mistake.",
+              "meets": [],
+              "feedback": "Ctrl+S saves and Ctrl+P prints. To move a sentence use cut (Ctrl+X) and paste (Ctrl+V). To take back a change use Undo (Ctrl+Z)."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Spreadsheets: data, formulas and charts",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. say what a spreadsheet is and name its parts (cell, row, column, cell address);\n2. enter and edit data in cells;\n3. write simple formulas, including SUM;\n4. make a simple chart from data.\n\n## Materials\n\nComputers with Microsoft Excel (or an equivalent spreadsheet program), a projector, and a printed table of a trader's weekly sales.\n\n## Starter (5 minutes)\n\nDraw a table on the board with the sales of a provision shop for five days. Ask the class to find the total by adding. Then say that a spreadsheet can do this at once.\n\n## Development\n\n1. A spreadsheet is a program for figures. Columns are letters (A, B, C), rows are numbers (1, 2, 3). A cell is where a column and row meet, and its address is, for example, B3.\n2. Click a cell and type. Press Enter to finish. To edit, double-click the cell or use the formula bar.\n3. Formulas start with =. Example: =B2+B3. Operators: + - * /.\n4. SUM adds a range: =SUM(B2:B6).\n5. Why formulas are better than typing totals: when a number changes, the answer changes by itself.\n6. Select the data, choose Insert, then Chart (column, bar or pie). Give the chart a title.\n\n## Class activity\n\nPupils enter the sales table, find the total with SUM and make a column chart.\n\n## Evaluation\n\n1. What does =SUM(B2:B6) do?\n2. Which cell is in column C, row 4?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Working with numbers in a spreadsheet",
+        "content": "# Spreadsheets: data, formulas and charts\n\nA **spreadsheet** is a program for working with numbers, lists and tables. Microsoft Excel, Google Sheets and WPS Spreadsheets are examples. Traders, banks and teachers use them to add, compare and keep records.\n\n## Parts of a spreadsheet\n\n- **Column**: goes down the page and is named with a letter (A, B, C ...).\n- **Row**: goes across the page and is named with a number (1, 2, 3 ...).\n- **Cell**: the box where a column and a row meet.\n- **Cell address**: the column letter and row number, such as **B3**.\n- **Range**: a block of cells, written like **B2:B6**, which means from B2 to B6.\n\n## Entering data\n\nClick a cell and type. Press **Enter** to finish. To change what is in a cell, click it and use the formula bar, or double-click it.\n\n## Formulas\n\nA **formula** always begins with an **equals sign (=)**. It tells the spreadsheet to calculate.\n\n| Formula | Meaning |\n|---|---|\n| =B2+B3 | Add the numbers in B2 and B3 |\n| =B2*C2 | Multiply the numbers in B2 and C2 |\n| =SUM(B2:B6) | Add all the numbers from B2 to B6 |\n\nWhen you change a number the formula uses, the answer changes **automatically**.\n\n## Worked example\n\nA trader in Bodija market records the number of baskets of tomatoes sold in a week.\n\n| | A | B |\n|---|---|---|\n| 1 | Day | Baskets |\n| 2 | Monday | 12 |\n| 3 | Tuesday | 8 |\n| 4 | Wednesday | 15 |\n| 5 | Thursday | 10 |\n| 6 | Friday | 20 |\n\nIn cell B7 type **=SUM(B2:B6)**. The answer is 12 + 8 + 15 + 10 + 20 = **65 baskets**. If Tuesday's figure is corrected to 10, the total changes to 67 by itself.\n\n## Charts\n\nA **chart** shows data as a picture. Select the data, click **Insert**, and choose a chart.\n- A **column or bar chart** compares amounts, such as sales on each day.\n- A **pie chart** shows parts of a whole.\n\nAlways give the chart a **title** and label the axes."
+      },
+      "cards": [
+        {
+          "front": "Spreadsheet",
+          "back": "A program for working with numbers in rows and columns."
+        },
+        {
+          "front": "Cell",
+          "back": "The box where a column and a row meet."
+        },
+        {
+          "front": "Cell address",
+          "back": "The column letter and row number of a cell, such as B3."
+        },
+        {
+          "front": "Formula",
+          "back": "An instruction that starts with = and tells the spreadsheet to calculate."
+        },
+        {
+          "front": "=SUM(B2:B6)",
+          "back": "Adds all the numbers from B2 to B6."
+        },
+        {
+          "front": "Range",
+          "back": "A block of cells, written like B2:B6."
+        },
+        {
+          "front": "Why use a formula?",
+          "back": "The answer changes automatically when a number changes."
+        },
+        {
+          "front": "Column chart",
+          "back": "A chart that compares amounts using bars."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "What is the address of the cell in column C and row 4?",
+          "options": [
+            "4C",
+            "C-4",
+            "C4",
+            "CC4"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Every formula in a spreadsheet must begin with",
+          "options": [
+            "a letter",
+            "a full stop",
+            "a bracket",
+            "an equals sign"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A teacher types 40 in B2 and 35 in B3. What does =B2+B3 show?",
+          "options": [
+            "40",
+            "75",
+            "35",
+            "B5"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The numbers 6, 4, 9, 11 and 5 are in cells B2 to B6. Which formula gives their total?",
+          "options": [
+            "=SUM(B2:B6)",
+            "=ADD(B2-B6)",
+            "=B2:B6",
+            "SUM(B2+B6)"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A trader changes one number in B3 but the total in B7 does not change. What is the most likely reason?",
+          "options": [
+            "Row 7 is locked by NEPA",
+            "Spreadsheets cannot add",
+            "The total was typed in as a number, not made with a formula",
+            "The chart is missing"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A pupil enters the number of mangoes sold in cells B2 to B5: 20, 15, 30 and 25. Write the formula for the total in B6, and say what the answer is. Explain why a formula is better than typing the total.",
+          "markScheme": [
+            "Writes a correct formula, e.g. =SUM(B2:B5) or =B2+B3+B4+B5",
+            "The formula begins with an equals sign (or uses cell addresses)",
+            "The total is 90",
+            "Says the total updates automatically when a number changes"
+          ],
+          "modelAnswer": "I type =SUM(B2:B5) in B6. The answer is 20 + 15 + 30 + 25 = 90. A formula is better than typing 90, because if one number changes, the total changes by itself.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "In B6 I will type =SUM(B2:B5). The answer will be 90 because 20 + 15 + 30 + 25 = 90. A formula is better because if I change any number, the total will change by itself.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=SUM(B2:B5)"
+                },
+                {
+                  "point": 1,
+                  "quote": "In B6 I will type =SUM(B2:B5)"
+                },
+                {
+                  "point": 2,
+                  "quote": "The answer will be 90"
+                },
+                {
+                  "point": 3,
+                  "quote": "if I change any number, the total will change by itself"
+                }
+              ],
+              "feedback": "All four marks. You gave the sum to check the answer, which is a good habit."
+            },
+            {
+              "tier": "full",
+              "text": "=B2+B3+B4+B5 is the formula. It gives 90. A formula is better than writing 90 because if the mango for Tuesday changes, the answer will be corrected automatically.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=B2+B3+B4+B5"
+                },
+                {
+                  "point": 1,
+                  "quote": "=B2+B3+B4+B5 is the formula"
+                },
+                {
+                  "point": 2,
+                  "quote": "It gives 90"
+                },
+                {
+                  "point": 3,
+                  "quote": "the answer will be corrected automatically"
+                }
+              ],
+              "feedback": "Full marks. Adding the cells one by one gives the same answer as SUM."
+            },
+            {
+              "tier": "partial",
+              "text": "The formula is =SUM(B2:B5) and the answer is 90.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=SUM(B2:B5)"
+                },
+                {
+                  "point": 1,
+                  "quote": "The formula is =SUM(B2:B5)"
+                },
+                {
+                  "point": 2,
+                  "quote": "the answer is 90"
+                }
+              ],
+              "feedback": "The formula and the total are right. You did not say why a formula is better than typing the total: the answer updates when a number changes."
+            },
+            {
+              "tier": "partial",
+              "text": "=SUM(B2:B5). A formula is better because it changes by itself when I change numbers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=SUM(B2:B5)"
+                },
+                {
+                  "point": 3,
+                  "quote": "it changes by itself when I change numbers"
+                }
+              ],
+              "feedback": "Your formula and reason are right. You also need the answer to the sum: 20 + 15 + 30 + 25 = 90."
+            },
+            {
+              "tier": "weak",
+              "text": "SUM(B2:B5) is the formula and the total is 75.",
+              "meets": [],
+              "feedback": "A formula must begin with =, so it is =SUM(B2:B5). The total is 20 + 15 + 30 + 25 = 90, not 75. Remember also to say why a formula is better than typing the total."
+            },
+            {
+              "tier": "weak",
+              "text": "I will type 90 in B6 because I added them in my head. It is the same thing.",
+              "meets": [],
+              "feedback": "The number 90 is the right total, but it is not the same thing. If you type it, it will not change when a number changes. Use =SUM(B2:B5) so the spreadsheet adds for you."
+            }
+          ]
+        },
+        {
+          "prompt": "A class teacher records the marks of four pupils in a test in cells A2 to B5 (names in A, marks in B). She wants to show which pupil did best. Which chart type should she use, and what should she do before and after making the chart to make it easy to read?",
+          "markScheme": [
+            "Chooses a column or bar chart (comparison between pupils)",
+            "Selects the data (names and marks) before inserting the chart",
+            "Gives the chart a title",
+            "Labels the axes or adds data labels / legend"
+          ],
+          "modelAnswer": "She should use a column chart, because it compares one pupil with another. First she selects the names and marks, then clicks Insert and chooses the chart. After that she adds a title, and labels the axes so that the reader knows what the bars mean.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A column chart is best, because it compares the pupils. She must first select the names and the marks and then click Insert and chart. After it appears she should give it a title and label the axes so that people know what the bars are.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A column chart is best, because it compares the pupils"
+                },
+                {
+                  "point": 1,
+                  "quote": "She must first select the names and the marks"
+                },
+                {
+                  "point": 2,
+                  "quote": "give it a title"
+                },
+                {
+                  "point": 3,
+                  "quote": "label the axes so that people know what the bars are"
+                }
+              ],
+              "feedback": "All four marks. Selecting first and labelling last are both what a careful pupil does."
+            },
+            {
+              "tier": "full",
+              "text": "She should use a bar chart to compare the marks. First select cells A2 to B5, then Insert, then Chart. Type a title like Test Marks. Put names under the bars and write marks on the side, so it can be understood.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "She should use a bar chart to compare the marks"
+                },
+                {
+                  "point": 1,
+                  "quote": "First select cells A2 to B5"
+                },
+                {
+                  "point": 2,
+                  "quote": "Type a title like Test Marks"
+                },
+                {
+                  "point": 3,
+                  "quote": "Put names under the bars and write marks on the side"
+                }
+              ],
+              "feedback": "Full marks. A title like 'Test Marks' is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "She should use a column chart to compare the marks and give it a title.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "use a column chart to compare the marks"
+                },
+                {
+                  "point": 2,
+                  "quote": "give it a title"
+                }
+              ],
+              "feedback": "Chart type and title are right. Say that she must select the data before inserting the chart, and label the axes so the reader knows names and marks.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "First select the names and marks. Then insert a chart. A pie chart will show who did best.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "First select the names and marks"
+                }
+              ],
+              "feedback": "Selecting first is right. A pie chart shows parts of a whole, so it is not the best way to compare marks; a column or bar chart is. Also add a title and labels."
+            },
+            {
+              "tier": "weak",
+              "text": "She should type the marks again in a new table. Then the chart will be ready.",
+              "meets": [],
+              "feedback": "Do not retype. Select the existing names and marks, click Insert, and choose a column chart. Then add a title and axis labels."
+            },
+            {
+              "tier": "weak",
+              "text": "She should use a line chart with colour so that the pupil with best mark will be beautiful.",
+              "meets": [],
+              "feedback": "Colour is fine, but the chart type must suit the data. To compare pupils use a column or bar chart. Select the data first and add a title and labels."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Formatting cells and saving spreadsheets",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. format cells (number format, bold, borders, fill colour, column width);\n2. show money in naira with two decimal places;\n3. save a spreadsheet with a suitable name and file type;\n4. open a saved spreadsheet and make a copy with Save As.\n\n## Materials\n\nComputers with Microsoft Excel (or an equivalent), a projector, and a printed table of a canteen's weekly sales.\n\n## Starter (5 minutes)\n\nShow two versions of the same table: one plain and one formatted with headings, borders and the naira sign. Ask which one a head teacher would prefer to read.\n\n## Development\n\n1. Select cells by dragging. A whole column is selected by clicking its letter.\n2. Format the heading row: bold, a fill colour, centred.\n3. Widen a column by dragging the line between two column letters, or by double-clicking it.\n4. Add borders to show the grid in a printed table.\n5. Number formats: Currency (₦), Percentage, Date, and the number of decimal places.\n6. Save: Ctrl+S, name the file, choose the type (Excel workbook, .xlsx). Use Save As for a copy.\n7. Open: File, Open, find the folder and the file name. Recent files appear on the start screen.\n\n## Class activity\n\nPupils format the canteen table from the starter: bold headings, naira format, borders, widen the columns, then save as JSS1_Canteen_Sales and reopen the file.\n\n## Evaluation\n\n1. Which format shows 1500 as ₦1,500.00?\n2. How do you open a file you saved last week?\n\n## Assignment\n\nWorksheet on the app.",
+      "reading": {
+        "title": "Making a spreadsheet neat, and keeping it",
+        "content": "# Formatting cells and saving spreadsheets\n\nA spreadsheet with correct numbers can still be hard to read. **Formatting** makes it clear. **Saving** keeps your work so that you can use it again.\n\n## Selecting cells\n\n- Drag with the mouse to select a **range**.\n- Click a **column letter** to select the whole column.\n- Click a **row number** to select the whole row.\n\nWhatever you do next is applied to the selected cells.\n\n## Common formats\n\n**For the heading row:** make it **bold**, add a **fill colour** and centre it so that it stands out.\n\n**Column width:** if you see #### in a cell, the column is too narrow. Double-click the line between two column letters to fit the column to the data.\n\n**Borders:** these draw lines around cells so that a printed table looks like a table.\n\n**Number formats:**\n\n| Format | Typed | Shown |\n|---|---|---|\n| Number, 2 decimal places | 1500 | 1500.00 |\n| Currency (₦) | 1500 | ₦1,500.00 |\n| Percentage | 0.25 | 25% |\n| Date | 14/10/2026 | 14-Oct-26 |\n\nThe format changes only the look. The value in the cell stays the same, so formulas still work.\n\n## Saving a spreadsheet\n\n1. Press **Ctrl+S** (or File, then Save).\n2. Choose a folder.\n3. Type a **file name** that says what it is, such as *JSS1_Canteen_Sales*.\n4. Keep the file type as **Excel Workbook (.xlsx)** and click **Save**.\n\nAfter that, **Ctrl+S** updates the same file. Save often, since the light can go off at any time.\n\n**Save As** makes a copy under another name or place, for example to keep an old version.\n\n## Opening a saved file\n\nClick **File**, then **Open**, find the folder, and double-click the file. Recent files are listed so you can open them quickly.\n\n## Worked example\n\nA canteen sold 4 plates of rice at ₦800 each. In cell B2 type 800. Select B2, choose **Currency**, and it will show **₦800.00**. In C2 the formula =B2*4 shows **₦3,200.00**."
+      },
+      "cards": [
+        {
+          "front": "Format cells",
+          "back": "Change how cells look without changing their values."
+        },
+        {
+          "front": "Fill colour",
+          "back": "A background colour for the selected cells."
+        },
+        {
+          "front": "####",
+          "back": "A cell shows this when the column is too narrow for the number."
+        },
+        {
+          "front": "Currency format",
+          "back": "Shows a number as money, such as ₦1,500.00."
+        },
+        {
+          "front": "Border",
+          "back": "A line around cells that makes a table clear."
+        },
+        {
+          "front": "File type for Excel",
+          "back": "Excel Workbook, with the ending .xlsx."
+        },
+        {
+          "front": "Save As",
+          "back": "Saves a copy under a new name or in a new place."
+        },
+        {
+          "front": "How to open a saved file",
+          "back": "File, then Open, then find the folder and double-click the file."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A cell shows #### instead of the number. What should you do?",
+          "options": [
+            "Make the column wider",
+            "Delete the number",
+            "Change the font to bold",
+            "Save the file again"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which format will show 2500 as ₦2,500.00?",
+          "options": [
+            "Percentage",
+            "Currency",
+            "Date",
+            "Text"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "What does Save As do?",
+          "options": [
+            "Deletes the file",
+            "Closes Excel",
+            "Prints the file",
+            "Saves a copy under a new name or place"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Ifeoma typed 0.35 in a cell and wants it to show 35%. Which format should she choose?",
+          "options": [
+            "Date",
+            "Currency",
+            "Percentage",
+            "Border"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "After you use the Currency format on a cell holding 800, the value in the cell is",
+          "options": [
+            "lost",
+            "still 800, only the look changes",
+            "changed to a word",
+            "changed to 8"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A class captain has made a table of money collected for a school trip. Describe four ways to format the table so it is easy to read.",
+          "markScheme": [
+            "Makes the heading row bold / fills it with colour",
+            "Widens the columns so nothing shows ####",
+            "Formats the money column as currency (naira)",
+            "Adds borders (or aligns / centres) to make the table clear"
+          ],
+          "modelAnswer": "I would make the heading row bold and give it a fill colour. I would widen the columns so that no number shows ####. I would format the money column as currency so it shows the naira sign and two decimal places. I would also add borders so the table looks like a table.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I will make the heading bold and put a colour in it. I will widen the columns so the numbers can show well. I will use the Currency format for the money. Then I will put borders around the cells.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I will make the heading bold and put a colour in it"
+                },
+                {
+                  "point": 1,
+                  "quote": "I will widen the columns so the numbers can show well"
+                },
+                {
+                  "point": 2,
+                  "quote": "I will use the Currency format for the money"
+                },
+                {
+                  "point": 3,
+                  "quote": "Then I will put borders around the cells"
+                }
+              ],
+              "feedback": "All four marks. Each of your ideas makes the table clearer to read."
+            },
+            {
+              "tier": "full",
+              "text": "Make the first row bold with fill colour. Double-click between the column letters to fit the width so there is no ####. Select the money and click currency to get the naira sign. Add borders to the table.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Make the first row bold with fill colour"
+                },
+                {
+                  "point": 1,
+                  "quote": "Double-click between the column letters to fit the width so there is no ####"
+                },
+                {
+                  "point": 2,
+                  "quote": "Select the money and click currency to get the naira sign"
+                },
+                {
+                  "point": 3,
+                  "quote": "Add borders to the table"
+                }
+              ],
+              "feedback": "Full marks. You even said how to fit the column width."
+            },
+            {
+              "tier": "partial",
+              "text": "I will bold the heading and add borders. I will make the money to show the naira.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I will bold the heading"
+                },
+                {
+                  "point": 3,
+                  "quote": "add borders"
+                },
+                {
+                  "point": 2,
+                  "quote": "I will make the money to show the naira"
+                }
+              ],
+              "feedback": "You have three of the four. Add that you will widen the columns so numbers do not show ####, and name the format (Currency) used for money."
+            },
+            {
+              "tier": "partial",
+              "text": "Make the heading bold and use a colour. I will make it big.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Make the heading bold and use a colour"
+                }
+              ],
+              "feedback": "The heading idea is right. 'Big' is not a way of formatting that helps much. Say that you will widen the columns, use the Currency format for money and add borders."
+            },
+            {
+              "tier": "weak",
+              "text": "I will type the words again very neatly in a new table.",
+              "meets": [],
+              "feedback": "Retyping is not formatting. Select the cells, then change their look: bold the headings, widen the columns, use Currency for the money and add borders."
+            },
+            {
+              "tier": "weak",
+              "text": "I will use a formula to make it neat and put equals sign everywhere.",
+              "meets": [],
+              "feedback": "A formula calculates, it does not format. To make the table easy to read, format the cells: bold heading, wider columns, currency format and borders."
+            }
+          ]
+        },
+        {
+          "prompt": "Tayo typed a student list in a spreadsheet and clicked Close without saving. Explain what may happen, and give the steps he should follow to save the next time and to open the file again tomorrow.",
+          "markScheme": [
+            "States that the work may be lost",
+            "Saves with Ctrl+S (or File, Save), names the file",
+            "Chooses the folder and keeps the file type, e.g. .xlsx",
+            "Opens it tomorrow using File, Open and choosing the file (or from recent files)"
+          ],
+          "modelAnswer": "The work may be lost because he did not save it. Next time he should press Ctrl+S, type a clear file name, choose the folder and click Save, keeping the type as .xlsx. Tomorrow he can click File, then Open, find the folder and double-click the file.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "His work may be lost, because he did not save it. Next time he must press Ctrl+S, give the file a name, choose the folder and the .xlsx type, then click Save. Tomorrow he goes to File, then Open, and clicks on the file.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "His work may be lost, because he did not save it"
+                },
+                {
+                  "point": 1,
+                  "quote": "he must press Ctrl+S, give the file a name"
+                },
+                {
+                  "point": 2,
+                  "quote": "choose the folder and the .xlsx type"
+                },
+                {
+                  "point": 3,
+                  "quote": "Tomorrow he goes to File, then Open, and clicks on the file"
+                }
+              ],
+              "feedback": "All four marks. You covered what goes wrong, how to save and how to open."
+            },
+            {
+              "tier": "full",
+              "text": "The list will be lost. To save he presses Ctrl+S, types a name like JSS1_Students, picks the folder and saves it as an Excel workbook. To open it tomorrow he can click File and Open, or he can find it in the recent files.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The list will be lost"
+                },
+                {
+                  "point": 1,
+                  "quote": "To save he presses Ctrl+S, types a name like JSS1_Students"
+                },
+                {
+                  "point": 2,
+                  "quote": "picks the folder and saves it as an Excel workbook"
+                },
+                {
+                  "point": 3,
+                  "quote": "he can click File and Open, or he can find it in the recent files"
+                }
+              ],
+              "feedback": "Full marks. A good file name and the recent files list are both helpful details."
+            },
+            {
+              "tier": "partial",
+              "text": "The work will be lost. He should save with Ctrl+S before closing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The work will be lost"
+                },
+                {
+                  "point": 1,
+                  "quote": "He should save with Ctrl+S before closing"
+                }
+              ],
+              "feedback": "These two points are right. Add the rest of the saving steps (file name, folder, .xlsx) and how to open the file tomorrow: File, then Open."
+            },
+            {
+              "tier": "partial",
+              "text": "He will lose the list. Tomorrow he will click File, Open and find it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "He will lose the list"
+                },
+                {
+                  "point": 3,
+                  "quote": "Tomorrow he will click File, Open and find it"
+                }
+              ],
+              "feedback": "There is a problem: if he did not save, there is nothing to find tomorrow. Say how to save: Ctrl+S, a file name, a folder and the .xlsx type, before he closes."
+            },
+            {
+              "tier": "weak",
+              "text": "He should shut down the computer quickly so that the file will be inside.",
+              "meets": [],
+              "feedback": "Shutting down does not save a file. He must press Ctrl+S, give the file a name, choose a folder and click Save, and then he can open it again with File and Open."
+            },
+            {
+              "tier": "weak",
+              "text": "He can print the list and the print will save the file inside the printer.",
+              "meets": [],
+              "feedback": "A printer does not save files. Printing gives paper only. To keep the file he must save it on the computer or a flash drive using Ctrl+S, and open it later with File, then Open."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Presentation slides: create, format and present",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, pupils should be able to:\n\n1. open a presentation program and make a title slide;\n2. add new slides with a suitable layout;\n3. format text and choose a design;\n4. run a slide show and follow rules for good slides.\n\n## Materials\n\nComputers with Microsoft PowerPoint (or an equivalent), a projector, and a sheet with the topic \"My community\".\n\n## Starter (5 minutes)\n\nShow a slide full of small writing and another with a title and three short points. Ask which one a visitor at the back of the hall could read.\n\n## Development\n\n1. A presentation is a set of slides used to talk to an audience.\n2. Open the program, choose Blank Presentation. The first slide is the title slide: type a title and your name.\n3. Add a slide with New Slide and choose a layout (Title and Content).\n4. Use short bullet points of 3 to 5 words, not long sentences.\n5. Format: font size at least 24, a clear colour that contrasts with the background, and one design (theme) for all slides.\n6. Run the slide show with F5, move with the arrow keys, and press Esc to stop.\n7. Rules: one idea per slide, few words, big letters.\n\n## Class activity\n\nPupils make a four-slide presentation titled \"My community\": title, a place, a festival, a person who helps.\n\n## Evaluation\n\n1. What does the F5 key do?\n2. Give two rules for a good slide.\n\n## Assignment\n\nComplete the quiz on the app.",
+      "reading": {
+        "title": "Making slides people can read",
+        "content": "# Presentation slides: create, format and present\n\nA **presentation** is a set of **slides** that you show while you talk. Microsoft PowerPoint, Google Slides and WPS Presentation are programs for making them. Teachers, business people and pupils use slides to explain ideas.\n\n## Starting\n\nOpen the program and choose **Blank Presentation**. The first slide is the **title slide**. Click the boxes to type a title and your name.\n\n## Adding slides\n\nClick **New Slide**. Each slide has a **layout**, which is the arrangement of its boxes.\n\n- **Title Slide**: a big title and a small subtitle.\n- **Title and Content**: a heading with bullet points.\n- **Two Content**: two columns, useful for comparing.\n- **Blank**: an empty slide for a picture.\n\n## Writing on slides\n\nSlides are not pages of a book. Keep text **short**.\n\n- Use **3 to 5 bullet points** on a slide.\n- Write **key words**, not full sentences.\n- Use **one idea** on each slide.\n- Use a font size of **24 or more** so people at the back can read.\n\n## Design\n\nA **theme** gives all the slides the same colours and fonts. Pick one theme for the whole presentation. Choose letters that **contrast** with the background: dark letters on a light background, or the other way round. Avoid yellow on white, because it is very hard to see.\n\n## Showing the slides\n\n- Press **F5** to start the **slide show** from the first slide.\n- Use the **arrow keys** or click to move forward and back.\n- Press **Esc** to end the show.\n\n## Worked example\n\nA pupil makes slides about Lagos.\n- Slide 1 (Title Slide): *Lagos, my city*, with her name.\n- Slide 2 (Title and Content): *Transport* with the points *Danfo buses*, *Okada*, *Ferry*.\n- Slide 3: *Food* with the points *Jollof rice*, *Akara*, *Suya*.\n\nEach slide has one idea and few words, so it is easy to read."
+      },
+      "cards": [
+        {
+          "front": "Presentation",
+          "back": "A set of slides used to talk to an audience."
+        },
+        {
+          "front": "Slide",
+          "back": "One page of a presentation."
+        },
+        {
+          "front": "Layout",
+          "back": "The arrangement of the boxes on a slide, such as Title and Content."
+        },
+        {
+          "front": "Theme",
+          "back": "A design that gives all the slides the same colours and fonts."
+        },
+        {
+          "front": "F5",
+          "back": "Starts the slide show."
+        },
+        {
+          "front": "Esc",
+          "back": "Ends the slide show."
+        },
+        {
+          "front": "Rules for a good slide",
+          "back": "Few words, big letters, one idea, colours that contrast."
+        },
+        {
+          "front": "Bullet point",
+          "back": "A short point on a slide, written as key words and not a full sentence."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which key starts a slide show in most presentation programs?",
+          "options": [
+            "F1",
+            "Tab",
+            "Enter",
+            "F5"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A good slide should have",
+          "options": [
+            "one idea in a few short points",
+            "a long paragraph in small letters",
+            "ten different fonts",
+            "yellow words on a white background"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which key do you press to stop the slide show and go back to editing?",
+          "options": [
+            "Shift",
+            "Backspace",
+            "Esc",
+            "Caps Lock"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Ayo made a slide with a whole page of writing in size 10. What is wrong with it?",
+          "options": [
+            "It has a title",
+            "The letters are too small and the text too long to read from a distance",
+            "It has a theme",
+            "It has bullets"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "What does a theme do?",
+          "options": [
+            "It prints the slides",
+            "It saves the slide as a picture",
+            "It adds music to every slide",
+            "It gives all the slides the same design"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Give four rules for making a good presentation slide, and say why each one helps the audience.",
+          "markScheme": [
+            "Keeps text short / few words, and says why (easy to read quickly)",
+            "Uses big letters (size 24 or more), and says why (can be read from the back)",
+            "Uses one idea per slide (or 3 to 5 bullets), and says why",
+            "Uses colours that contrast with the background (or one theme), and says why"
+          ],
+          "modelAnswer": "Use few words on a slide, so that people can read it quickly while they listen. Use big letters of size 24 or more, so that people at the back can read. Put one idea on each slide, so the audience does not get confused. Use colours that contrast with the background, so that the writing can be seen clearly.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Use few words so the people can read quick and listen to you. Use big letters, size 24 or more, so people at the back will see. One idea on one slide so that they will not be confused. Use dark letters on a light background so the words show well.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Use few words so the people can read quick and listen to you"
+                },
+                {
+                  "point": 1,
+                  "quote": "Use big letters, size 24 or more, so people at the back will see"
+                },
+                {
+                  "point": 2,
+                  "quote": "One idea on one slide so that they will not be confused"
+                },
+                {
+                  "point": 3,
+                  "quote": "Use dark letters on a light background so the words show well"
+                }
+              ],
+              "feedback": "All four marks. Every rule has a reason, which is what the question asked."
+            },
+            {
+              "tier": "full",
+              "text": "Short bullet points, because the audience should look at me and not read too much. Big font so everyone can read it in the hall. Not too many things on one slide, so that it is easy to follow. Good contrast between the letters and the background so that it is not hard to see.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Short bullet points, because the audience should look at me and not read too much"
+                },
+                {
+                  "point": 1,
+                  "quote": "Big font so everyone can read it in the hall"
+                },
+                {
+                  "point": 2,
+                  "quote": "Not too many things on one slide, so that it is easy to follow"
+                },
+                {
+                  "point": 3,
+                  "quote": "Good contrast between the letters and the background so that it is not hard to see"
+                }
+              ],
+              "feedback": "Full marks. Saying the audience should look at the speaker is a clever reason."
+            },
+            {
+              "tier": "partial",
+              "text": "Use big letters so people can read. Use few words on the slide. Use different colours.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Use big letters so people can read"
+                },
+                {
+                  "point": 0,
+                  "quote": "Use few words on the slide"
+                }
+              ],
+              "feedback": "The first two rules are right, but the first needs a reason. 'Different colours' is not a rule: say contrasting colours so the writing can be seen. Add one idea per slide."
+            },
+            {
+              "tier": "partial",
+              "text": "One idea on a slide so people will understand. The letters should be big. Add many pictures.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "One idea on a slide so people will understand"
+                },
+                {
+                  "point": 1,
+                  "quote": "The letters should be big"
+                }
+              ],
+              "feedback": "Two rules are right. Many pictures can crowd the slide, so it is not a rule for a good one. Add few words and contrast between letter and background colours, each with a reason."
+            },
+            {
+              "tier": "weak",
+              "text": "A good slide must have long writing so that the audience will know everything and the speaker will not need to talk.",
+              "meets": [],
+              "feedback": "A slide with long writing is hard to read and the audience will not listen to you. Use few words, big letters and one idea on each slide."
+            },
+            {
+              "tier": "weak",
+              "text": "Use many fonts and bright colours so that the slide will be beautiful and people will like it.",
+              "meets": [],
+              "feedback": "Many fonts and bright colours make the slide hard to read. Use one theme, colours that contrast, big letters and short points."
+            }
+          ]
+        },
+        {
+          "prompt": "Oluchi is making a four-slide presentation on 'Keeping our school clean'. Say what she should put on the title slide, how she should write the points on the next slides, and how she runs the show to her class.",
+          "markScheme": [
+            "Title slide has the title (and her name)",
+            "Points are short key words or bullets, not long sentences",
+            "Uses a suitable layout and keeps to one idea per slide, or a clear design",
+            "Starts the show with F5, moves with arrow keys or clicks, and ends with Esc"
+          ],
+          "modelAnswer": "On the title slide she puts the title, Keeping our school clean, and her name. On the other slides she uses a Title and Content layout with one idea each, written as short bullet points of a few words. To show the class she presses F5, moves with the arrow keys, and presses Esc to end.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "On the title slide she puts the title, Keeping our school clean, and her name. On the next slides she should write short bullet points with key words, not sentences. Each slide should be in Title and Content layout and have only one idea. She presses F5 to begin, uses the arrow keys to move and Esc to stop.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "On the title slide she puts the title, Keeping our school clean, and her name"
+                },
+                {
+                  "point": 1,
+                  "quote": "write short bullet points with key words, not sentences"
+                },
+                {
+                  "point": 2,
+                  "quote": "Each slide should be in Title and Content layout and have only one idea"
+                },
+                {
+                  "point": 3,
+                  "quote": "She presses F5 to begin, uses the arrow keys to move and Esc to stop"
+                }
+              ],
+              "feedback": "All four marks. Good, complete steps."
+            },
+            {
+              "tier": "full",
+              "text": "The title slide will have the topic and her name. The other slides will have bullets with 3 to 5 words, like Sweep the class, Use the dustbin. She should keep one idea on a slide and use the same theme. To present she presses F5, clicks to go to the next slide and uses Esc to end it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The title slide will have the topic and her name"
+                },
+                {
+                  "point": 1,
+                  "quote": "The other slides will have bullets with 3 to 5 words, like Sweep the class, Use the dustbin"
+                },
+                {
+                  "point": 2,
+                  "quote": "She should keep one idea on a slide and use the same theme"
+                },
+                {
+                  "point": 3,
+                  "quote": "To present she presses F5, clicks to go to the next slide and uses Esc to end it"
+                }
+              ],
+              "feedback": "Full marks. Your example bullets 'Sweep the class' and 'Use the dustbin' are exactly the right length."
+            },
+            {
+              "tier": "partial",
+              "text": "The title slide should have the title. The points should be short, not long sentences.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The title slide should have the title"
+                },
+                {
+                  "point": 1,
+                  "quote": "The points should be short, not long sentences"
+                }
+              ],
+              "feedback": "The title and short points are right. You did not say how to run the show: press F5, move with the arrow keys and press Esc to stop. A layout and one idea per slide would earn a third mark."
+            },
+            {
+              "tier": "partial",
+              "text": "She will put her name and the title on the first slide. Then she will press F5 to show it and Esc to stop.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "She will put her name and the title on the first slide"
+                },
+                {
+                  "point": 3,
+                  "quote": "she will press F5 to show it and Esc to stop"
+                }
+              ],
+              "feedback": "The title slide and running the show are right. The question also asks how to write the points: say they should be short key words, with one idea on each slide."
+            },
+            {
+              "tier": "weak",
+              "text": "She should write the whole essay on the first slide and then read it out to the class.",
+              "meets": [],
+              "feedback": "A slide is not a page for an essay. Put the title and her name on the title slide, short key words on the other slides, and press F5 to run the show."
+            },
+            {
+              "tier": "weak",
+              "text": "She will click Print and the class will see the slides on paper.",
+              "meets": [],
+              "feedback": "Printing gives paper, but she is giving a presentation. To show the slides she presses F5, moves with the arrow keys and presses Esc to end. Remember the title slide and short points."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

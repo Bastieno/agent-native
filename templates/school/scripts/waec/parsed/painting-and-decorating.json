@@ -1,0 +1,89 @@
+{
+  "found": true,
+  "subject": "Painting and Decorating",
+  "subjectCode": "PAINTDEC",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Introduction and Colour Theory",
+      "abbreviation": "INTRO",
+      "subStrands": [
+        {
+          "name": "Introduction, Colour Theory and Design",
+          "objectives": [
+            {
+              "code": "PAINTDEC-INTRO-1",
+              "description": "Introduction to Painting: meaning of pictorial and decorative painting; differences between pictorial and decorative paintings; tools and equipment; elements and principles of design; functions of pictorial and decorative painting."
+            },
+            {
+              "code": "PAINTDEC-INTRO-2",
+              "description": "Colour Theory: meaning of colour; classes of colour (primary, secondary and tertiary); properties of colour (hues, tones and intensity); colour schemes (analogous, complementary and monochromes); improvisation of colours from local sources."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Techniques in Painting",
+      "abbreviation": "TECH",
+      "subStrands": [
+        {
+          "name": "Pictorial and Decorative Painting Techniques",
+          "objectives": [
+            {
+              "code": "PAINTDEC-TECH-1",
+              "description": "Techniques in Pictorial Painting: dry painting, wet painting, glazing, impasto, fresco, tempera."
+            },
+            {
+              "code": "PAINTDEC-TECH-2",
+              "description": "Techniques in Decorative Painting: flat painting, rag rolling, scumbling or combing, spraying, mural, mosaic."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Types of Painting",
+      "abbreviation": "TYPES",
+      "subStrands": [
+        {
+          "name": "Pictorial and Decorative Painting Types",
+          "objectives": [
+            {
+              "code": "PAINTDEC-TYPES-1",
+              "description": "Types and Functions of Pictorial Painting: still life painting, nature painting, figure/life painting; differences between observatory and imaginative painting compositions; functions."
+            },
+            {
+              "code": "PAINTDEC-TYPES-2",
+              "description": "Types and Functions of Decorative Painting: body decoration (meaning, differences between traditional and modern, motifs and designs, materials, functions); wall decoration (meaning, differences between traditional and modern, motifs/patterns/designs, materials, functions)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Perspective, Prospects and Marketing",
+      "abbreviation": "PROSP",
+      "subStrands": [
+        {
+          "name": "Perspective, Prospects, Costing and Marketing",
+          "objectives": [
+            {
+              "code": "PAINTDEC-PROSP-1",
+              "description": "Perspective: meaning; types; importance of perspective in pictorial painting composition."
+            },
+            {
+              "code": "PAINTDEC-PROSP-2",
+              "description": "Prospects in Painting: the socio-economic value of pictorial and decorative painting; careers in pictorial and decorative painting."
+            },
+            {
+              "code": "PAINTDEC-PROSP-3",
+              "description": "Costing/Marketing of Paintings: costing based on location and size, materials/equipment, time invested, quantity and quality; exhibition of paintings (planning/processes, funding); marketing (pricing, negotiation, communication/advertising, outlets, selling)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

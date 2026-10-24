@@ -6,6 +6,49 @@
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["dev:lazy", "--", "--all"],
       "port": 8080
+    },
+    {
+      "name": "school",
+      "runtimeExecutable": "corepack",
+      "runtimeArgs": [
+        "pnpm",
+        "--dir",
+        "templates/school",
+        "dev",
+        "--port",
+        "8130",
+        "--strictPort"
+      ],
+      "port": 8130,
+      "autoPort": false
+    },
+    {
+      "name": "school-showcase",
+      "runtimeExecutable": "corepack",
+      "runtimeArgs": ["pnpm", "--dir", "templates/school", "dev:showcase"],
+      "port": 8131,
+      "autoPort": false
+    },
+    {
+      "name": "school-journeys",
+      "runtimeExecutable": "corepack",
+      "runtimeArgs": ["pnpm", "--dir", "templates/school", "dev:journeys"],
+      "port": 8132,
+      "autoPort": false
+    },
+    {
+      "name": "school-journeys-invite-only",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "AUTO_CREATE_DEFAULT_ORG=",
+        "corepack",
+        "pnpm",
+        "--dir",
+        "templates/school",
+        "dev:journeys"
+      ],
+      "port": 8132,
+      "autoPort": false
     }
   ]
 }

@@ -1,0 +1,141 @@
+{
+  "found": true,
+  "subject": "Business Studies",
+  "subjectCode": "BIZSTUD",
+  "framework": "NERDC",
+  "gradeRange": "JSS1-JSS3",
+  "strands": [
+    {
+      "name": "Introduction to Business and Commerce",
+      "abbreviation": "IBC",
+      "subStrands": [
+        {
+          "name": "Business Concepts and Occupations",
+          "objectives": [
+            {
+              "code": "BIZSTUD-IBC-1",
+              "description": "Explain the meaning and scope of business and distinguish between different types of business activities"
+            },
+            {
+              "code": "BIZSTUD-IBC-2",
+              "description": "Identify and classify types of occupations and explain their contributions to economic life"
+            },
+            {
+              "code": "BIZSTUD-IBC-3",
+              "description": "Describe the divisions of commerce including trade (home and foreign) and aids to trade"
+            },
+            {
+              "code": "BIZSTUD-IBC-4",
+              "description": "Explain forms of business ownership (sole proprietorship, partnership, cooperative, limited liability company)"
+            },
+            {
+              "code": "BIZSTUD-IBC-5",
+              "description": "Describe business transactions and identify common business documents (invoice, receipt, cheque, order form)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aids to Trade",
+      "abbreviation": "AT",
+      "subStrands": [
+        {
+          "name": "Banking, Insurance, Transport, Communication, and Advertising",
+          "objectives": [
+            {
+              "code": "BIZSTUD-AT-1",
+              "description": "Explain the functions of commercial banks and describe banking services available to individuals and businesses"
+            },
+            {
+              "code": "BIZSTUD-AT-2",
+              "description": "Describe insurance as an aid to trade, types of insurance, and the benefits of insurance to businesses"
+            },
+            {
+              "code": "BIZSTUD-AT-3",
+              "description": "Explain the role of transportation in facilitating trade and describe modes of transport used in Nigeria"
+            },
+            {
+              "code": "BIZSTUD-AT-4",
+              "description": "Describe communication methods in business and explain their importance in facilitating trade"
+            },
+            {
+              "code": "BIZSTUD-AT-5",
+              "description": "Explain the purpose of advertising, its types, and its impact on business and consumer behaviour"
+            },
+            {
+              "code": "BIZSTUD-AT-6",
+              "description": "Describe channels of distribution (producer → wholesaler → retailer → consumer) and the functions of each"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bookkeeping and Financial Records",
+      "abbreviation": "BFR",
+      "subStrands": [
+        {
+          "name": "Books of Account and Double Entry",
+          "objectives": [
+            {
+              "code": "BIZSTUD-BFR-1",
+              "description": "Explain the importance of bookkeeping and the qualities of a good bookkeeper"
+            },
+            {
+              "code": "BIZSTUD-BFR-2",
+              "description": "Identify and use source documents (invoice, receipt, voucher) and describe how they are recorded in special journals"
+            },
+            {
+              "code": "BIZSTUD-BFR-3",
+              "description": "Apply the double entry principle to record business transactions in the cash book, petty cash book, and ledger"
+            },
+            {
+              "code": "BIZSTUD-BFR-4",
+              "description": "Prepare a trial balance and explain its purpose in verifying arithmetical accuracy of ledger entries"
+            },
+            {
+              "code": "BIZSTUD-BFR-5",
+              "description": "Prepare simple Trading, Profit and Loss accounts and a Balance Sheet to determine business performance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Entrepreneurship and Consumer Education",
+      "abbreviation": "ECE",
+      "subStrands": [
+        {
+          "name": "Business Plans, Consumer Rights, and Personal Finance",
+          "objectives": [
+            {
+              "code": "BIZSTUD-ECE-1",
+              "description": "Define entrepreneurship and describe the personal qualities and skills of a successful entrepreneur"
+            },
+            {
+              "code": "BIZSTUD-ECE-2",
+              "description": "Identify business opportunities at local, national, and international levels and explain how to evaluate them"
+            },
+            {
+              "code": "BIZSTUD-ECE-3",
+              "description": "Write a simple business plan including objectives, market analysis, resources, and financial projections"
+            },
+            {
+              "code": "BIZSTUD-ECE-4",
+              "description": "Explain the eight universal rights of consumers and describe the responsibilities consumers have"
+            },
+            {
+              "code": "BIZSTUD-ECE-5",
+              "description": "Describe personal finance concepts including needs versus wants, scale of preference, saving, and modesty"
+            },
+            {
+              "code": "BIZSTUD-ECE-6",
+              "description": "Identify and use keyboarding skills correctly including proper posture, home row technique, and alphanumeric key functions"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,778 @@
+{
+  "found": true,
+  "subject": "Agricultural Science",
+  "subjectCode": "AGRIC",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Basic Concepts",
+      "abbreviation": "BASIC",
+      "subStrands": [
+        {
+          "name": "Meaning and Importance of Agriculture",
+          "objectives": [
+            {
+              "code": "AGRIC-BASIC-1",
+              "description": "Definition and branches of agricultural science."
+            },
+            {
+              "code": "AGRIC-BASIC-2",
+              "description": "Importance of agriculture to the individual, community and nation."
+            }
+          ]
+        },
+        {
+          "name": "Problems of Agricultural Development and Possible Solutions",
+          "objectives": [
+            {
+              "code": "AGRIC-BASIC-3",
+              "description": "Problems related to: land tenure; basic amenities; finance; transportation; storage and processing facilities; agricultural education and extension; tools and machinery; farm inputs; marketing system; environmental degradation. Assessment would include incidence of pests and diseases, vagaries of weather, labour and government policy."
+            },
+            {
+              "code": "AGRIC-BASIC-4",
+              "description": "Possible solutions to identified problems."
+            }
+          ]
+        },
+        {
+          "name": "Subsistence and Commercial Agriculture",
+          "objectives": [
+            {
+              "code": "AGRIC-BASIC-5",
+              "description": "Meaning of subsistence and commercial agriculture."
+            },
+            {
+              "code": "AGRIC-BASIC-6",
+              "description": "Differences between subsistence and commercial agriculture based on their characteristics."
+            },
+            {
+              "code": "AGRIC-BASIC-7",
+              "description": "Advantages and disadvantages of subsistence and commercial agriculture."
+            },
+            {
+              "code": "AGRIC-BASIC-8",
+              "description": "Problems of subsistence and commercial agriculture."
+            }
+          ]
+        },
+        {
+          "name": "Roles of Government and NGOs in Agricultural Development",
+          "objectives": [
+            {
+              "code": "AGRIC-BASIC-9",
+              "description": "Roles of government in agricultural development: agricultural finance (credit and subsidy); agricultural education; agricultural extension services; agricultural policies and programmes e.g. OFN, ADP, Farm Settlement, Agricultural Sector Rehabilitation Project (ASRP) and National Aids Coordination Secretariat."
+            },
+            {
+              "code": "AGRIC-BASIC-10",
+              "description": "Meaning of non-governmental organizations (NGOs) and their roles in agricultural development. Examples: WARDA, IITA, ILCA, ICRISAT."
+            },
+            {
+              "code": "AGRIC-BASIC-11",
+              "description": "Agricultural laws and reforms: land tenure systems in West Africa; government laws on land use in West Africa; advantages and disadvantages of the land use Act (Decree) and reforms in West Africa."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agricultural Ecology",
+      "abbreviation": "ECOL",
+      "subStrands": [
+        {
+          "name": "Agricultural Ecology and Ecosystem",
+          "objectives": [
+            {
+              "code": "AGRIC-ECOL-1",
+              "description": "Meaning of agricultural ecology and ecosystem."
+            },
+            {
+              "code": "AGRIC-ECOL-2",
+              "description": "Components of farm ecosystem e.g. biotic and abiotic."
+            },
+            {
+              "code": "AGRIC-ECOL-3",
+              "description": "Interactions of the components in the terrestrial and aquatic agro-ecosystem, including farm settings such as mono or sole cropping system, mixed cropping system, mixed farming system, fish ponds and forest (rain or savannah)."
+            }
+          ]
+        },
+        {
+          "name": "Land and Its Uses",
+          "objectives": [
+            {
+              "code": "AGRIC-ECOL-4",
+              "description": "Meaning of land and characteristics of land – free gift of nature, immobile, limited in supply etc."
+            },
+            {
+              "code": "AGRIC-ECOL-5",
+              "description": "Uses of land for agricultural purposes: crop production; wild life conservation/game reserve; livestock production; aquaculture; forestry and apiculture."
+            },
+            {
+              "code": "AGRIC-ECOL-6",
+              "description": "Uses of land for non-agricultural purposes: industry; housing; transport; health centres, church/mosque, mining, recreational centres, schools and markets."
+            },
+            {
+              "code": "AGRIC-ECOL-7",
+              "description": "Factors affecting land availability for agricultural purpose: physical factors (soil type, topography, land degradation, soil pollution); economic factors (population pressure, expansion of industries, mining/mineral exploitation, recreation/tourism); socio-cultural factors (land tenure system, religious purpose)."
+            }
+          ]
+        },
+        {
+          "name": "Agro-allied Industries and Environmental Factors",
+          "objectives": [
+            {
+              "code": "AGRIC-ECOL-8",
+              "description": "Agro-based industries and raw materials: paper industry – pulp wood; beverage industry – cocoa, tea; textile industry – cotton; soap industry – oil, seeds; leather industry – hides and skin; canning industry – meat and fish."
+            },
+            {
+              "code": "AGRIC-ECOL-9",
+              "description": "Relationship between agriculture and industries: agriculture provides market for industrial products e.g. farm machinery, chemicals; agriculture provides food for industrial workers."
+            },
+            {
+              "code": "AGRIC-ECOL-10",
+              "description": "Climatic factors affecting crop and animal distribution and production e.g. rainfall, temperature, light, wind, relative humidity."
+            },
+            {
+              "code": "AGRIC-ECOL-11",
+              "description": "Biotic factors e.g. predators, parasites, soil micro-organisms, pests, pathogens and weeds; interrelationship such as competition, parasitism, mutualism (symbiosis)."
+            },
+            {
+              "code": "AGRIC-ECOL-12",
+              "description": "Edaphic factors: soil pH, soil texture, soil structure, soil type etc."
+            }
+          ]
+        },
+        {
+          "name": "Rock Formation",
+          "objectives": [
+            {
+              "code": "AGRIC-ECOL-13",
+              "description": "Types of rock: igneous; sedimentary; metamorphic. Identification, description and examples of each rock type."
+            },
+            {
+              "code": "AGRIC-ECOL-14",
+              "description": "Processes of rock formation: how igneous, sedimentary and metamorphic rocks are formed."
+            }
+          ]
+        },
+        {
+          "name": "Soil Formation, Profile and Properties",
+          "objectives": [
+            {
+              "code": "AGRIC-ECOL-15",
+              "description": "Factors of soil formation: the parent rock, organisms, climate, topography and time. Role played by each factor."
+            },
+            {
+              "code": "AGRIC-ECOL-16",
+              "description": "Processes of soil formation: physical weathering; chemical weathering."
+            },
+            {
+              "code": "AGRIC-ECOL-17",
+              "description": "Soil profile development: meaning, importance, identification and description of each horizon."
+            },
+            {
+              "code": "AGRIC-ECOL-18",
+              "description": "Types of soil and their separation into sand, silt and clay fractions."
+            },
+            {
+              "code": "AGRIC-ECOL-19",
+              "description": "Chemical and biological composition of soil: soil macro and micro nutrients; soil water; soil macro-organisms; soil microbes; soil air."
+            },
+            {
+              "code": "AGRIC-ECOL-20",
+              "description": "Soil pH: determination of soil pH, causes and correction of soil acidity/alkalinity."
+            },
+            {
+              "code": "AGRIC-ECOL-21",
+              "description": "Physical properties of soil: soil texture; soil structure; water holding capacity, porosity, capillarity, consistency."
+            }
+          ]
+        },
+        {
+          "name": "Plant Nutrients, Nutrient Cycle and Organic Agriculture",
+          "objectives": [
+            {
+              "code": "AGRIC-ECOL-22",
+              "description": "Macro and micro nutrients, their functions and deficiency symptoms in crops. Macro-nutrients: N, P, K, Ca, Mg, S. Micro-nutrients: Zn, Fe, Mo, Co, Bo, Cu."
+            },
+            {
+              "code": "AGRIC-ECOL-23",
+              "description": "Factors affecting availability of nutrients in soil such as pH, excess of other nutrients, leaching, crop removal, oxidation and burning."
+            },
+            {
+              "code": "AGRIC-ECOL-24",
+              "description": "Methods of replenishing lost nutrients e.g. crop rotation, organic manuring, fertilizer application, fallowing, liming, cover-cropping. Types of fertilizers and methods of fertilizer application."
+            },
+            {
+              "code": "AGRIC-ECOL-25",
+              "description": "Nitrogen, carbon, water and phosphorus cycles. Description and importance of nitrogen, carbon and water cycles."
+            },
+            {
+              "code": "AGRIC-ECOL-26",
+              "description": "Organic agriculture – meaning and importance."
+            }
+          ]
+        },
+        {
+          "name": "Irrigation and Drainage",
+          "objectives": [
+            {
+              "code": "AGRIC-ECOL-27",
+              "description": "Meaning of irrigation system. Types of irrigation systems: overhead e.g. sprinkler; surface e.g. flooding, furrow/channel, basin, border; underground e.g. perforated pipes, drips. Advantages and disadvantages, importance and problems associated with irrigation."
+            },
+            {
+              "code": "AGRIC-ECOL-28",
+              "description": "Meaning of drainage and importance of drainage. Types of drainage systems: surface drainage e.g. channel, furrow; subsurface/underground drainage. Advantages and disadvantages of drainage systems."
+            }
+          ]
+        },
+        {
+          "name": "Agricultural Pollution",
+          "objectives": [
+            {
+              "code": "AGRIC-ECOL-29",
+              "description": "Meaning of agricultural pollution. Causes/sources of pollution of agricultural lands and fish ponds: excessive application of agricultural chemicals; marine and oil spillage; livestock waste and dung disposal. Effects of land/pond pollution on farmers and agricultural productivity. Ways of minimizing land/pond pollution."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agricultural Engineering and Mechanization",
+      "abbreviation": "MECH",
+      "subStrands": [
+        {
+          "name": "Farm Tools and Machinery",
+          "objectives": [
+            {
+              "code": "AGRIC-MECH-1",
+              "description": "Meaning and types of simple farm tools – cutlass, hoe, spade, shovel etc. Identification, description, uses and general maintenance of simple farm tools."
+            },
+            {
+              "code": "AGRIC-MECH-2",
+              "description": "Farm machinery: tractor; bulldozer; shellers; dryers; incubators; milking machines; combine harvester. Meaning, uses/functions and identification of different parts of each."
+            },
+            {
+              "code": "AGRIC-MECH-3",
+              "description": "Tractor-coupled implements: ploughs; harrows; ridgers; planters; harvesters; sprayers. Identification and uses of each implement."
+            }
+          ]
+        },
+        {
+          "name": "Maintenance, Mechanization and Farm Power",
+          "objectives": [
+            {
+              "code": "AGRIC-MECH-4",
+              "description": "Reasons for maintaining farm machines. Maintenance of farm machinery: check water and oil levels regularly; carry out routine service; keep machines clean. Precautionary measures in the use of farm machinery."
+            },
+            {
+              "code": "AGRIC-MECH-5",
+              "description": "Meaning of agricultural mechanization. Mechanized agricultural operations: ploughing, harrowing, planting, harvesting, milking. Advantages and disadvantages of agricultural mechanization. Limitations of agricultural mechanization."
+            },
+            {
+              "code": "AGRIC-MECH-6",
+              "description": "Prospects of agricultural mechanization. Possible ways of improving agricultural mechanization such as developing less expensive machines and establishing agricultural engineering schools for personnel."
+            },
+            {
+              "code": "AGRIC-MECH-7",
+              "description": "Sources of farm power. Advantages and disadvantages of different sources of farm power."
+            }
+          ]
+        },
+        {
+          "name": "Farm Surveying, Planning and Farmstead",
+          "objectives": [
+            {
+              "code": "AGRIC-MECH-8",
+              "description": "Meaning of farm surveying. Common survey equipment and their uses. Maintenance of farm survey equipment. Importance of farm surveying."
+            },
+            {
+              "code": "AGRIC-MECH-9",
+              "description": "Meaning of farm planning. Factors to be considered in farm planning. Importance of farm planning."
+            },
+            {
+              "code": "AGRIC-MECH-10",
+              "description": "Meaning of farmstead. Importance of farmstead planning. Factors to be considered in the design of a farmstead. Farmstead layout: site selection, location of structures and sketching of farm layout."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crop Production",
+      "abbreviation": "CROP",
+      "subStrands": [
+        {
+          "name": "Classification of Crops",
+          "objectives": [
+            {
+              "code": "AGRIC-CROP-1",
+              "description": "Classification of crops based on their uses e.g. cereals, pulses, roots and tubers, vegetables."
+            },
+            {
+              "code": "AGRIC-CROP-2",
+              "description": "Classification of crops based on their life cycle e.g. annual, biennial, perennial, ephemeral."
+            },
+            {
+              "code": "AGRIC-CROP-3",
+              "description": "Classification of crops based on their morphology e.g. monocotyledonous and dicotyledonous crops."
+            }
+          ]
+        },
+        {
+          "name": "Husbandry of Selected Crops",
+          "objectives": [
+            {
+              "code": "AGRIC-CROP-4",
+              "description": "Husbandry of selected crops including: botanical names and common names, varieties/types, climatic and soil requirements, land preparation, methods of propagation, planting date, seed rate, spacing, sowing depth and nursery requirements, cultural practices (supplying, thinning, manuring and fertilizer requirement and application, weeding, pests and disease control), harvesting, processing and storage. At least one representative crop from each grouping: cereals (maize, rice, guinea corn, millet); pulses/grain legumes (cowpea, soya bean, pigeon pea); roots and tubers (cassava, yam, potatoes); vegetables (tomatoes, onion, amaranthus, okro, cauliflower, spinach); fruits (citrus, banana, pineapple); beverages (cocoa, tea, coffee); spices (pepper, ginger); oils (groundnut, sheabutter, sunflower, oil palm); fibres (cotton, jute, sissal hemp); latex (rubber); others (sugar cane)."
+            }
+          ]
+        },
+        {
+          "name": "Pasture and Forage Crops",
+          "objectives": [
+            {
+              "code": "AGRIC-CROP-5",
+              "description": "Meaning of pasture and forage crops. Uses of forage crops. Types of pasture. Common grasses and legumes used for grazing livestock, including botanical names and characteristics. Factors affecting the distribution and productivity of pasture. Establishment of pasture. Management practices of pasture."
+            }
+          ]
+        },
+        {
+          "name": "Crop Improvement",
+          "objectives": [
+            {
+              "code": "AGRIC-CROP-6",
+              "description": "Aims of crop improvement. Methods/processes of crop improvement e.g. introduction, selection, breeding. Mendel's laws of inheritance: Mendel's 1st and 2nd laws; definition of genetic terms: characters/traits, chromosomes, genes. Advantages and disadvantages of crop improvement."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Forestry",
+      "abbreviation": "FOREST",
+      "subStrands": [
+        {
+          "name": "Forest Management",
+          "objectives": [
+            {
+              "code": "AGRIC-FOREST-1",
+              "description": "Meaning of forest and forestry. Importance of forestry. Forest regulations. Forest management practices. Implications of deforestation."
+            }
+          ]
+        },
+        {
+          "name": "Agro-forestry Practices in West Africa",
+          "objectives": [
+            {
+              "code": "AGRIC-FOREST-2",
+              "description": "Meaning of agro-forestry. Agro-forestry practices: taungya system; alley cropping; ley farming. Common tree species suitable for agro-forestry practices."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ornamental Plants",
+      "abbreviation": "ORNAM",
+      "subStrands": [
+        {
+          "name": "Ornamental Plants: Types and Cultivation",
+          "objectives": [
+            {
+              "code": "AGRIC-ORNAM-1",
+              "description": "Meaning and importance of ornamental plants."
+            },
+            {
+              "code": "AGRIC-ORNAM-2",
+              "description": "Types of ornamental plants according to their uses: bedding plants (mostly flowering plants); hedging plants; lawn grasses. Examples of ornamental plants including common and botanical names."
+            },
+            {
+              "code": "AGRIC-ORNAM-3",
+              "description": "Settings and location for planting ornamental plants."
+            },
+            {
+              "code": "AGRIC-ORNAM-4",
+              "description": "Methods of cultivating ornamental plants: by seed; vegetative propagation. Importance of each method and examples of plants propagated through such method."
+            },
+            {
+              "code": "AGRIC-ORNAM-5",
+              "description": "Maintenance of ornamental plants. Reasons for carrying out maintenance operations: watering, mulching, pruning."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crop Protection",
+      "abbreviation": "PROTECT",
+      "subStrands": [
+        {
+          "name": "Diseases of Crops",
+          "objectives": [
+            {
+              "code": "AGRIC-PROTECT-1",
+              "description": "Meaning of disease. General effects of diseases on crop production."
+            },
+            {
+              "code": "AGRIC-PROTECT-2",
+              "description": "Disease: causal organism, economic importance, mode of transmission, symptoms, prevention and control measures of diseases of the following crops: cereals – smut, rice blast, leaf rust; legumes – cercospora leaf spot, rosette; beverages – cocoa blackpod, swollen shoot, coffee leaf rust; tubers – cassava mosaic, bacterial leaf blight; fruits – citrus gummosis, dieback; fibre – black arm/bacterial blight of cotton; vegetables – root knot of tomato or okro, damping off, onion twister; stored produce – mould. At least two fungal, two viral, two bacterial and one nematode diseases."
+            }
+          ]
+        },
+        {
+          "name": "Pests of Crops",
+          "objectives": [
+            {
+              "code": "AGRIC-PROTECT-3",
+              "description": "Meaning of pests. Classification of pests: insect-pests; non-insect pests. Classification of insect-pests based on mouth parts with examples: biting and chewing; piercing and sucking; boring."
+            },
+            {
+              "code": "AGRIC-PROTECT-4",
+              "description": "Important insect-pests of major crops; field and storage pests, life cycle, economic importance, nature of damage, preventive and control measures: cereals – stem borer, army worm, ear worm; legumes – pod borer, aphids, sucking bugs and leaf beetle; beverages – cocoa myrids (capsids); tubers – yam beetle, cassava mealybugs, green spidermites, variegated grasshopper; fibre – cotton stainer, bollworms; fruits and vegetables – thrips, grasshopper, leaf roller, leaf beetle, scale insect; stored produce – grain weevils, bean beetle."
+            },
+            {
+              "code": "AGRIC-PROTECT-5",
+              "description": "Non-insect pests e.g. birds, rodents. Side effects of preventive and control methods: chemical – pollution, poisoning; biological – disruption of the ecosystem; cultural – harmful effects of burning. General effects/economic importance of pests."
+            }
+          ]
+        },
+        {
+          "name": "Weeds",
+          "objectives": [
+            {
+              "code": "AGRIC-PROTECT-6",
+              "description": "Meaning of weeds. Types of weeds. Effects of weeds on crops and economy. Characteristic features of weeds. Methods of controlling weeds: cultural, biological, chemical, physical and mechanical methods. Common and botanical names of weeds."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Animal Production",
+      "abbreviation": "ANIMAL",
+      "subStrands": [
+        {
+          "name": "Types, Classification and Anatomy of Farm Animals",
+          "objectives": [
+            {
+              "code": "AGRIC-ANIMAL-1",
+              "description": "Types of farm animals: cattle, sheep, goat, poultry, pig, rabbit, fish. Classification of farm animals according to: habitat – terrestrial and aquatic; uses – food, protection, pet."
+            },
+            {
+              "code": "AGRIC-ANIMAL-2",
+              "description": "Parts of farm animals; drawing and labeling of parts. Organs of farm animals e.g. heart, liver, lungs; identification of important organs and their functions."
+            },
+            {
+              "code": "AGRIC-ANIMAL-3",
+              "description": "Systems of farm animals: digestive system (including digestive system of poultry, differences between monogastric and ruminant digestive systems), circulatory system, respiratory system."
+            }
+          ]
+        },
+        {
+          "name": "Animal Reproduction and Environmental Physiology",
+          "objectives": [
+            {
+              "code": "AGRIC-ANIMAL-4",
+              "description": "Meaning of reproduction. Roles of hormones in reproduction of farm animals. Reproductive systems of farm animals. Processes of reproduction in farm animals including: oestrus cycle, heat period, mating, gestation period, parturition, lactation, colostrum, mammary glands, signs of heat, ovulation. Egg formation in poultry."
+            },
+            {
+              "code": "AGRIC-ANIMAL-5",
+              "description": "Meaning of environmental physiology. Effects of changes in climatic factors (temperature, relative humidity, light) on: growth, reproduction, milk production, egg production."
+            }
+          ]
+        },
+        {
+          "name": "Livestock Management and Nutrition",
+          "objectives": [
+            {
+              "code": "AGRIC-ANIMAL-6",
+              "description": "Meaning of livestock management. Requirements for livestock management: housing; feeding; hygiene and finishing of at least one ruminant and one non-ruminant from birth to market weight. Management systems: extensive, intensive and semi-intensive. Record keeping in livestock management. Importance of management practices."
+            },
+            {
+              "code": "AGRIC-ANIMAL-7",
+              "description": "Meaning of animal nutrition. Classification of feeds. Sources and functions of feed nutrients. Types of ration/diet and their uses; components of a balanced diet, production and maintenance rations; types of diet for the various classes of animals, their characteristics and supplementary feeding. Causes and symptoms of malnutrition and their correction in farm animals, including conditions such as ketosis, rickets."
+            }
+          ]
+        },
+        {
+          "name": "Rangeland and Pasture Management",
+          "objectives": [
+            {
+              "code": "AGRIC-ANIMAL-8",
+              "description": "Meaning and importance of rangeland/pasture to livestock and the characteristics of rangeland. Common grasses and legumes in rangeland. Factors affecting the level of production of herbage: rainfall, grass/legume composition, grazing. Methods of rangeland and pasture improvement: controlled stocking, rotational grazing, use of fertilizers, introduction of legumes, reseeding, weed control, burning, pest and disease control."
+            }
+          ]
+        },
+        {
+          "name": "Animal Improvement",
+          "objectives": [
+            {
+              "code": "AGRIC-ANIMAL-9",
+              "description": "Meaning and aims of animal improvement. Methods of animal improvement: introduction; selection; breeding. Differences and similarities between breeds (local, exotic and cross/hybrid) and performance of animals."
+            },
+            {
+              "code": "AGRIC-ANIMAL-10",
+              "description": "Artificial insemination: meaning; methods of collecting semen; advantages and disadvantages of artificial insemination."
+            }
+          ]
+        },
+        {
+          "name": "Animal Health Management",
+          "objectives": [
+            {
+              "code": "AGRIC-ANIMAL-11",
+              "description": "Meaning of disease. Causal organisms: viruses, bacteria, fungi and protozoa. Factors that could predispose animals to diseases: health status of animals, nutrition, management. Reaction of animals to diseases: susceptibility and resistance to diseases."
+            },
+            {
+              "code": "AGRIC-ANIMAL-12",
+              "description": "Causal organisms, symptoms, mode of transmission, effects, prevention and control of selected livestock diseases: viral – foot and mouth, rinderpest, newcastle; bacterial – anthrax, brucellosis, tuberculosis; fungal – aspergillosis, ringworm, scabies; protozoa – trypanosomiasis, coccidiosis. Economic importance of the diseases."
+            },
+            {
+              "code": "AGRIC-ANIMAL-13",
+              "description": "Parasites: meaning and types of parasites. Mode of transmission, life cycle, economic importance and control of: endoparasites – tapeworm, liverfluke and roundworm; ectoparasites – ticks, lice."
+            },
+            {
+              "code": "AGRIC-ANIMAL-14",
+              "description": "General methods of prevention and control of diseases and parasites: quarantine, inoculation/immunization, hygiene, breeding for resistance."
+            }
+          ]
+        },
+        {
+          "name": "Aquaculture and Apiculture",
+          "objectives": [
+            {
+              "code": "AGRIC-ANIMAL-15",
+              "description": "Meaning of aquaculture. Different types: fish farming; shrimp farming; crab farming. Meaning and importance of fish farming. Conditions necessary for siting a fish pond. Establishment and maintenance of fish pond including aeration, stocking, feeding, harvesting, processing and preservation of fish. Fishery regulations. Fishing methods and tools."
+            },
+            {
+              "code": "AGRIC-ANIMAL-16",
+              "description": "Meaning of apiculture or bee keeping. Types of bees: indigenous and exotic. Importance of bee keeping. Methods of bee keeping: traditional and modern. Bee keeping equipment: bee hives, hive tools like suits, smokers, jungle boots, brushes. Precautionary measures in bee keeping."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agricultural Economics and Extension",
+      "abbreviation": "ECON",
+      "subStrands": [
+        {
+          "name": "Basic Economic Principles and Factors of Production",
+          "objectives": [
+            {
+              "code": "AGRIC-ECON-1",
+              "description": "Basic economic principles: scarcity; choice; scale of preference; law of diminishing returns."
+            },
+            {
+              "code": "AGRIC-ECON-2",
+              "description": "Factors of production: land; capital; labour – characteristics and classification; management or entrepreneur. Rural-urban migration and how it affects labour availability in agricultural production."
+            }
+          ]
+        },
+        {
+          "name": "Demand, Supply and Implications for Agriculture",
+          "objectives": [
+            {
+              "code": "AGRIC-ECON-3",
+              "description": "Principles of demand: definition of demand; law of demand; factors affecting demand for agricultural produce; movements along the demand curve; shifts in the demand curve."
+            },
+            {
+              "code": "AGRIC-ECON-4",
+              "description": "Principles of supply: definition of supply; law of supply; movements along supply curve; shifts in the supply curve; factors affecting the supply of agricultural produce."
+            },
+            {
+              "code": "AGRIC-ECON-5",
+              "description": "Implications of demand and supply for agricultural production: price support; price control; subsidy programme and its effects on agricultural production."
+            }
+          ]
+        },
+        {
+          "name": "Farm Management and Finance",
+          "objectives": [
+            {
+              "code": "AGRIC-ECON-6",
+              "description": "Meaning of a farm manager. Functions of a farm manager. Meaning of farm management. Problems faced by farm managers."
+            },
+            {
+              "code": "AGRIC-ECON-7",
+              "description": "Meaning and importance of agricultural finance. Sources of farm finance. Classes of farm credit: by length of time (short-term, medium-term, long-term); by source (institutional, non-institutional); by liquidity (loan in-cash, loan in-kind). Problems faced by farmers in procuring agricultural credit (high interest rate, lack of collateral). Problems faced by institutions in granting loans. Meaning of agri-business."
+            },
+            {
+              "code": "AGRIC-ECON-8",
+              "description": "Capital market: meaning; institutions involved; sources of funds (bonds, insurance companies, merchant banks, the stock exchange); roles of capital markets in agricultural business."
+            }
+          ]
+        },
+        {
+          "name": "Farm Records, Accounts and Marketing",
+          "objectives": [
+            {
+              "code": "AGRIC-ECON-9",
+              "description": "Importance of farm records. Types of farm records: inventory records; production records; income and expenditure records; supplementary or special records. Designing farm records."
+            },
+            {
+              "code": "AGRIC-ECON-10",
+              "description": "Farm accounts: expenditure/purchases account; income/sales account; profit and loss account; balance sheet. Terms: salvage value, appreciation, farm budget, depreciation, inventory and their uses in calculating profit and loss."
+            },
+            {
+              "code": "AGRIC-ECON-11",
+              "description": "Meaning and importance of marketing of agricultural produce. Marketing agents and their functions (advantages and disadvantages). Marketing functions: assembling; transportation; processing. Marketing of export crops, export crops in West Africa, guidelines for exporting, corporate bodies and cooperative societies engaged in exporting. Problems of marketing agricultural produce."
+            }
+          ]
+        },
+        {
+          "name": "Agricultural Insurance and Extension",
+          "objectives": [
+            {
+              "code": "AGRIC-ECON-12",
+              "description": "Meaning and importance of agricultural insurance. Types of insurance policies: specific enterprise insurance (crop, livestock); farm vehicle insurance; fire disaster/machines and buildings insurance; life assurance. Insurance premium. Problems of agricultural insurance."
+            },
+            {
+              "code": "AGRIC-ECON-13",
+              "description": "Meaning and importance of agricultural extension. Agricultural extension methods: individual contact methods; group contact methods. Agricultural extension programmes in West Africa e.g. ADP, NDE, Agro-service centres, state ministries of agriculture and natural resources. Problems of agricultural extension in West Africa e.g. illiteracy among farmers, inadequate transport facilities. Qualities of a good extension worker."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Practical Agricultural Science",
+      "abbreviation": "PRAC",
+      "subStrands": [
+        {
+          "name": "Practical: Soil, Rocks and Laboratory Work",
+          "objectives": [
+            {
+              "code": "AGRIC-PRAC-1",
+              "description": "Soil: examination of fertile and infertile soils; distinguishing features of soils – colour, texture and structure, presence of organic matter and living things; texture by manual feeling of wet and dry soil."
+            },
+            {
+              "code": "AGRIC-PRAC-2",
+              "description": "Soil profile: simple description and identification of soil profile."
+            },
+            {
+              "code": "AGRIC-PRAC-3",
+              "description": "Rocks: identification of common rock types – igneous, sedimentary and metamorphic."
+            },
+            {
+              "code": "AGRIC-PRAC-4",
+              "description": "Laboratory work on physical properties of soil: mechanical analysis by sedimentation, hydrometer method or sieves; determination of bulk density and total pore space; determination of moisture content of a moist soil sample; determination of maximum water holding capacity; determination of wilting point; determination of capillary action."
+            },
+            {
+              "code": "AGRIC-PRAC-5",
+              "description": "Laboratory work on chemical properties of soil: determination of soil acidity using pH meter and/or simple equipment. Common types of chemical fertilizers: identification, methods and rates of application of nitrogen, phosphorus, potassium and compound fertilizers. Organic manure: green manure; farm yard; compost – identification, method of preparation and application."
+            },
+            {
+              "code": "AGRIC-PRAC-6",
+              "description": "Irrigation and drainage: identification and uses of irrigation and drainage equipment e.g. watering can, sprinkler, pump, pipes."
+            }
+          ]
+        },
+        {
+          "name": "Practical: Farm Tools, Machinery and Equipment",
+          "objectives": [
+            {
+              "code": "AGRIC-PRAC-7",
+              "description": "Farm tools and equipment: identification, description, uses and maintenance of various garden tools e.g. hoe, cutlass, garden trowel, hand fork, shovel, spade, rake, sickle, secateurs, shears, long handle hoe, pruner, budding knife, emasculator."
+            },
+            {
+              "code": "AGRIC-PRAC-8",
+              "description": "Tractor and animal-drawn implements: identification, description, uses and maintenance of ploughs, harrows, ridgers, planters, cultivators; identification of the major parts of the implements and their functions."
+            },
+            {
+              "code": "AGRIC-PRAC-9",
+              "description": "Harvesting, processing and storage equipment: identification, description and uses of dehuskers, shellers, winnowers, dryers, processors, graters, refrigerators, cutlasses, scythe, groundnut lifters."
+            },
+            {
+              "code": "AGRIC-PRAC-10",
+              "description": "Farm tractor: identification of major components, servicing and maintenance."
+            },
+            {
+              "code": "AGRIC-PRAC-11",
+              "description": "Uses and maintenance of horticultural tools: shears, dibber, pruning knife, secateurs, budding knife, measuring tapes, hand fork, hand trowel, hoe, fork."
+            },
+            {
+              "code": "AGRIC-PRAC-12",
+              "description": "Livestock and fishing equipment: identification, description, uses and care of waterers, feeders, milking machines, nets, hook and line, branding machine, egg candler."
+            },
+            {
+              "code": "AGRIC-PRAC-13",
+              "description": "Farm surveying equipment: identification, uses and care of measuring tape, pins or arrows, ranging poles, plum bob, offset staff, compass, gunter's chains, pegs, theodolite."
+            }
+          ]
+        },
+        {
+          "name": "Practical: Crop Production",
+          "objectives": [
+            {
+              "code": "AGRIC-PRAC-14",
+              "description": "Seeds, seedlings, fruits and storage organs of crops: identification of seeds, seedlings, fruits, storage organs and essential parts of the common crop plants, pasture grasses and legumes."
+            },
+            {
+              "code": "AGRIC-PRAC-15",
+              "description": "Main pests and diseases of crops: identification and control of main field and storage pests e.g. cotton stainer, yam beetles, weevils and the damage they cause; identification of main diseases of crops, their causal agents and characteristic symptoms, prevention and control."
+            },
+            {
+              "code": "AGRIC-PRAC-16",
+              "description": "Planting dates, seed rates, plant population and seed quality tests of the more common local crop plants."
+            },
+            {
+              "code": "AGRIC-PRAC-17",
+              "description": "Preparation of seedbeds, fertilizer application, mulching, use of pesticides, watering, vegetative propagation, germination tests."
+            },
+            {
+              "code": "AGRIC-PRAC-18",
+              "description": "Forest products and by-products."
+            },
+            {
+              "code": "AGRIC-PRAC-19",
+              "description": "Methods of propagation of horticultural plants: direct sowing, transplanting, layering, grafting and budding."
+            },
+            {
+              "code": "AGRIC-PRAC-20",
+              "description": "Common weeds: external features, mode of dispersal and methods of controlling weeds on the farm."
+            }
+          ]
+        },
+        {
+          "name": "Practical: Animal Production",
+          "objectives": [
+            {
+              "code": "AGRIC-PRAC-21",
+              "description": "Common breeds of animals and types of animals available in the locality: identification of breeds, methods of restraints, handling and grooming of farm animals."
+            },
+            {
+              "code": "AGRIC-PRAC-22",
+              "description": "Major internal organs of farm animals: identification and functions of organs of the digestive system, reproductive and excretory systems."
+            },
+            {
+              "code": "AGRIC-PRAC-23",
+              "description": "Animal by-products: identification of hides and skin, fur, feather, horn."
+            },
+            {
+              "code": "AGRIC-PRAC-24",
+              "description": "Animal feeds and feed stuffs and their local sources: identification and uses of feeds and feed stuffs e.g. fish meal, groundnut cake, rice bran; types of diets/ration."
+            },
+            {
+              "code": "AGRIC-PRAC-25",
+              "description": "Main pests and parasites of farm animals: identification of common ectoparasites (ticks, lice) and endoparasites (tapeworms, liver flukes, roundworms); damage caused and their control; life cycles."
+            },
+            {
+              "code": "AGRIC-PRAC-26",
+              "description": "Diseases of farm animals: methods of prevention and control e.g. drugging, drenching, dipping, spraying and simple methods of farm sanitation."
+            },
+            {
+              "code": "AGRIC-PRAC-27",
+              "description": "Routine management practices in farm animals: selection of livestock and poultry for breeding, culling, ear-notching, tattooing, horn or skin branding, debeaking, dehorning, castration. Identification of equipment/tools used."
+            },
+            {
+              "code": "AGRIC-PRAC-28",
+              "description": "Fish harvesting and preservation: methods of harvesting, processing and preservation of fish."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

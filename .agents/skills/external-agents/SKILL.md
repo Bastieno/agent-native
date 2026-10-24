@@ -149,7 +149,12 @@ compact MCP Apps catalog. Do not rely on action-specific `mcpApp` resources
 appearing in ChatGPT/Claude discovery by default; use `open_app` for the
 first-class app embed path. If a specific
 action truly must remain visible in that compact app-host catalog, set
-`mcpApp.compactCatalog: true` as a rare escape hatch.
+`mcpApp.compactCatalog: true` as a rare escape hatch; it needs no `resource`
+and is then listed as a plain tool. An app whose people work from their own
+chat app can curate that list per caller with the plugin options
+`mcpToolFilter` (which tools each caller is shown) and `mcpInstructions` (text
+sent on connect). The filter only hides tools from the list: `tools/call` is
+unchanged, so every action must still check the caller's role itself.
 
 ### 1b. Fast-path expectations for MCP Apps hosts
 

@@ -1,0 +1,89 @@
+{
+  "found": true,
+  "subject": "Literature in English",
+  "subjectCode": "LITENG",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Prose",
+      "abbreviation": "PROSE",
+      "subStrands": [
+        {
+          "name": "African and Non-African Prose Set Texts",
+          "objectives": [
+            {
+              "code": "LITENG-PROSE-1",
+              "description": "African Prose: appreciation of plot, character, theme, setting, style and language in African prose set texts (e.g. Second Class Citizen by Buchi Emecheta; Unexpected Joy at Dawn by Alex Agyei-Agyiri)."
+            },
+            {
+              "code": "LITENG-PROSE-2",
+              "description": "Non-African Prose: appreciation of plot, character, theme, setting, style and language in non-African prose set texts (e.g. Invisible Man by Ralph Ellison; Wuthering Heights by Emily Brontë)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drama",
+      "abbreviation": "DRAMA",
+      "subStrands": [
+        {
+          "name": "African, Shakespearean and Non-African Drama",
+          "objectives": [
+            {
+              "code": "LITENG-DRAMA-1",
+              "description": "African Drama: appreciation of dramatic techniques, themes, characterisation and language in African drama set texts (e.g. Let Me Die Alone by John K. Kargbo; The Lion and the Jewel by Wole Soyinka)."
+            },
+            {
+              "code": "LITENG-DRAMA-2",
+              "description": "Shakespearean Text: appreciation of dramatic structure, language, themes and characterisation in a Shakespeare play (e.g. A Midsummer Night's Dream)."
+            },
+            {
+              "code": "LITENG-DRAMA-3",
+              "description": "Non-African Drama: appreciation of dramatic techniques, themes and language in non-African drama set texts (e.g. Look Back in Anger by John Osborne; Fences by August Wilson)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poetry",
+      "abbreviation": "POETRY",
+      "subStrands": [
+        {
+          "name": "African and Non-African Poetry",
+          "objectives": [
+            {
+              "code": "LITENG-POETRY-1",
+              "description": "African Poetry: appreciation of imagery, diction, tone, mood, theme and poetic devices in African poetry set texts (e.g. 'Black Woman' by Léopold Sédar Senghor; 'The Leader and the Led' by Niyi Osundare; 'The Song of the Women of my Land' by Oumar Farouk Sesay; 'Raider of the Treasure Trove' by Lade Wosornu; 'A Government Driver on his Retirement' by Onu Chibuike)."
+            },
+            {
+              "code": "LITENG-POETRY-2",
+              "description": "Non-African Poetry: appreciation of imagery, diction, tone, mood, theme and poetic devices in non-African poetry set texts (e.g. 'The Good-Morrow' by John Donne; 'Caged Bird' by Maya Angelou; 'The Journey of the Magi' by T.S. Eliot; 'Do not Go Gentle into the Good Night' by Dylan Thomas; 'Binsey Poplars' by G.M. Hopkins; 'Bat' by D.H. Lawrence)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Principles of Literary Appreciation",
+      "abbreviation": "APPREC",
+      "subStrands": [
+        {
+          "name": "Basic Principles and Oral Literature",
+          "objectives": [
+            {
+              "code": "LITENG-APPREC-1",
+              "description": "Basic principles of literary appreciation: meaning of literature; genres (prose, poetry, drama); literary terms and devices; themes, plot, character, setting, style and language."
+            },
+            {
+              "code": "LITENG-APPREC-2",
+              "description": "Oral literature: characteristics and forms of oral literature (myths, legends, folktales, proverbs, riddles, dirges, praise poetry); functions of oral literature in society."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -699,6 +699,7 @@ You are a focused sub-agent with a specific task. You have been given a curated 
       };
 
       await runAgentLoop({
+        runSource: "sub-agent",
         engine,
         model,
         systemPrompt,
@@ -817,6 +818,7 @@ You are a focused sub-agent with a specific task. You have been given a curated 
               opts.parentThreadId,
               async (send, signal) => {
                 await runAgentLoop({
+                  runSource: "sub-agent",
                   engine: followUpEngine,
                   model: followUpModel,
                   systemPrompt: opts.systemPrompt,

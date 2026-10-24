@@ -1,0 +1,2665 @@
+{
+  "subject": "Intermediate Science",
+  "yearGroup": "JSS2",
+  "weeks": {
+    "1": {
+      "topic": "Specialised cells, tissues and the microscope",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. recall the parts of plant and animal cells and their work;\n2. explain how specialised cells are suited to their jobs;\n3. arrange cells, tissues, organs and systems in order of size;\n4. calculate magnification from a drawing.\n\n## Materials\n\nMicroscopes with prepared slides (blood smear, onion skin), charts of a root hair cell, red blood cell, nerve cell and muscle cell, rulers, drawing paper.\n\n## Starter (5 minutes)\n\nAsk: a danfo driver, a mechanic and a conductor all work on one bus, but each does a different job. Is the same true for cells in your body? Take two answers.\n\n## Development\n\n1. Quick recall of the cell: membrane, cytoplasm, nucleus, plus wall, large vacuole and chloroplasts in plants.\n2. Specialised cells have a shape that fits their job. Red blood cells are disc-shaped and carry oxygen; root hair cells have long thin extensions to take in water from soil; nerve cells are long to carry messages; muscle cells can shorten to cause movement.\n3. Levels of organisation: cells of the same kind make a tissue; different tissues make an organ; organs working together make a system. Example: muscle cells, muscle tissue, the heart, the circulatory system.\n4. Introduce magnification: magnification = size of the image ÷ actual size. Work an example: a drawing 30 mm long of a cell that is really 0.1 mm gives 30 ÷ 0.1 = ×300.\n5. Rearrange the formula to find the actual size: actual size = image size ÷ magnification.\n\n## Class activity\n\nLearners study the prepared slide, make a drawing of one cell and measure its width with a ruler, then calculate the actual size using the microscope's magnification.\n\n## Evaluation\n\n1. Why are red blood cells shaped like discs?\n2. Put in order: organ, cell, system, tissue.\n3. A drawing is 24 mm wide and the magnification is ×120. What is the actual width?\n\n## Assignment\n\nDraw three specialised cells and write under each how its shape helps it do its job. Submit on the app.",
+      "reading": {
+        "title": "Cells at work",
+        "content": "# Cells at work\n\n## Cells that do special jobs\n\nIn the last class we studied the general plant and animal cell. In a real body, however, cells are not all the same. Different cells are **specialised**, which means they have a shape and contents that suit the job they do.\n\n| Cell | Special feature | How it helps |\n| --- | --- | --- |\n| Red blood cell | Disc shape, no nucleus | Gives more room to carry oxygen and squeezes through tiny blood vessels |\n| Root hair cell | A long thin extension | Gives a large surface to absorb water and mineral salts from the soil |\n| Nerve cell | Very long with branches | Carries messages quickly across the body |\n| Muscle cell | Can get shorter | Pulls on bones to move the body |\n\n## From cell to system\n\nCells of one kind joined together form a **tissue**. Muscle tissue is made of muscle cells. Different tissues join to form an **organ**: the heart is made of muscle tissue, blood and nerve tissue. Organs that work together form a **system**: the heart, blood and blood vessels form the circulatory system.\n\nThe order from smallest to largest is: **cell → tissue → organ → system → organism**.\n\n## Using a microscope and magnification\n\nA microscope makes small things look bigger. We can calculate how many times bigger a drawing is than the real cell:\n\n**Magnification = size of image ÷ actual size**\n\n**Worked example 1.** A learner draws an onion cell 30 mm long. The real cell is 0.1 mm long.\n\nMagnification = 30 ÷ 0.1 = ×300.\n\n**Worked example 2.** A drawing of a cheek cell is 45 mm wide, and the magnification is ×150. What is the real width?\n\nActual size = image size ÷ magnification = 45 ÷ 150 = 0.3 mm.\n\nAlways use the same units for both measurements, and give the answer with its unit.\n\n## Remember\n\nAll cells have a membrane, cytoplasm and a nucleus (red blood cells lose theirs when mature). A plant cell also has a cell wall, a large vacuole and, in green parts, chloroplasts."
+      },
+      "cards": [
+        {
+          "front": "Specialised cell",
+          "back": "A cell with a shape or feature that suits its job."
+        },
+        {
+          "front": "Red blood cell",
+          "back": "Disc-shaped cell with no nucleus that carries oxygen."
+        },
+        {
+          "front": "Root hair cell",
+          "back": "Cell with a long extension that absorbs water from the soil."
+        },
+        {
+          "front": "Tissue",
+          "back": "A group of similar cells working together."
+        },
+        {
+          "front": "Organ",
+          "back": "Different tissues working together, such as the heart."
+        },
+        {
+          "front": "System",
+          "back": "Several organs working together, such as the digestive system."
+        },
+        {
+          "front": "Magnification formula",
+          "back": "Magnification = image size ÷ actual size"
+        },
+        {
+          "front": "Order of organisation",
+          "back": "Cell, tissue, organ, system, organism."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Why does a root hair cell have a long thin extension?",
+          "options": [
+            "To store food",
+            "To hold the root in place",
+            "To carry messages",
+            "To give a large surface for absorbing water"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which list shows the correct order from smallest to biggest?",
+          "options": [
+            "Organ, cell, tissue, system",
+            "Cell, tissue, organ, system",
+            "Tissue, cell, system, organ",
+            "System, organ, tissue, cell"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A drawing of a cell is 60 mm wide. The magnification is ×400. What is the real width of the cell?",
+          "options": [
+            "0.15 mm",
+            "340 mm",
+            "24,000 mm",
+            "6.7 mm"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Nerve cells are very long because they",
+          "options": [
+            "absorb water",
+            "trap sunlight",
+            "need to carry messages across the body",
+            "store large amounts of food"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A group of muscle cells working together is called",
+          "options": [
+            "an organ",
+            "a tissue",
+            "a system",
+            "an organism"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Choose three specialised cells. For each, state one feature of the cell and explain how it helps the cell do its job.",
+          "markScheme": [
+            "Names a specialised cell with a correct feature and explains how it helps",
+            "Names a second cell with a correct feature and explains how it helps",
+            "Names a third cell with a correct feature and explains how it helps",
+            "Each explanation links the feature to the job, not just a description"
+          ],
+          "modelAnswer": "A red blood cell is a disc with no nucleus, which gives it more room to carry oxygen. A root hair cell has a long thin extension, which gives a large surface to absorb water. A nerve cell is long with branches, which lets it carry messages quickly over a distance.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A red blood cell is shaped like a disc and has no nucleus so there is more space for oxygen to be carried. A root hair cell has a long thin part that goes into the soil so it has a big surface to take in water. A nerve cell is very long so it can carry messages from the toes to the brain.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "red blood cell is shaped like a disc and has no nucleus so there is more space for oxygen to be carried"
+                },
+                {
+                  "point": 1,
+                  "quote": "long thin part that goes into the soil so it has a big surface to take in water"
+                },
+                {
+                  "point": 2,
+                  "quote": "nerve cell is very long so it can carry messages from the toes to the brain"
+                },
+                {
+                  "point": 3,
+                  "quote": "so it has a big surface to take in water"
+                }
+              ],
+              "feedback": "Each feature is joined to its job with a reason."
+            },
+            {
+              "tier": "full",
+              "text": "Muscle cell can become short and that pulls the bone so we can move. Root hair cell has a long thin extension, which gives a bigger area to absorb water and salts. Red blood cell is a disc without a nucleus which makes room for more oxygen.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Muscle cell can become short and that pulls the bone so we can move"
+                },
+                {
+                  "point": 1,
+                  "quote": "extension, which gives a bigger area to absorb water and salts"
+                },
+                {
+                  "point": 2,
+                  "quote": "Red blood cell is a disc without a nucleus which makes room for more oxygen"
+                },
+                {
+                  "point": 3,
+                  "quote": "that pulls the bone so we can move"
+                }
+              ],
+              "feedback": "All three cells are correct and each explanation says why the feature helps."
+            },
+            {
+              "tier": "partial",
+              "text": "A red blood cell carries oxygen. A nerve cell is long. A root hair cell takes water from the soil.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A red blood cell carries oxygen"
+                }
+              ],
+              "feedback": "You gave the job of each cell but mostly not the feature. Say what is special about the shape and how it helps: a nerve cell is long, so it can carry messages across the body."
+            },
+            {
+              "tier": "partial",
+              "text": "Red blood cell has a disc shape. Nerve cell is long and has branches so that it can send messages quickly. Root hair cell has a hair.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Nerve cell is long and has branches so that it can send messages quickly"
+                }
+              ],
+              "feedback": "The nerve cell is well explained. For the red blood cell, say why a disc shape helps (more room for oxygen), and for the root hair cell, that the extension gives a large surface to absorb water."
+            },
+            {
+              "tier": "weak",
+              "text": "Red blood cell is red. Nerve cell is thin. Muscle cell is strong.",
+              "meets": [],
+              "feedback": "Colour and size words are not enough. Say what is special about the shape and what that lets the cell do, for example the long thin nerve cell carries messages."
+            },
+            {
+              "tier": "weak",
+              "text": "All cells are the same because they have a nucleus and membrane.",
+              "meets": [],
+              "feedback": "Some cells are the same in their basic parts, but specialised cells have different shapes that suit their jobs. For example, a root hair cell has a long extension for water."
+            }
+          ]
+        },
+        {
+          "prompt": "A learner draws a cheek cell seen under a microscope. The drawing is 45 mm wide and the microscope magnification is ×150. (a) Write the formula for magnification. (b) Work out the real width of the cell, with its unit. (c) Arrange these in order from smallest to largest: organ, cell, system, tissue.",
+          "markScheme": [
+            "Magnification = image size ÷ actual size (or actual = image ÷ magnification)",
+            "Substitutes 45 ÷ 150",
+            "Gets 0.3 mm with the unit",
+            "Order: cell, tissue, organ, system"
+          ],
+          "modelAnswer": "(a) Magnification = image size ÷ actual size, so actual size = image size ÷ magnification. (b) Actual width = 45 ÷ 150 = 0.3 mm. (c) Cell, tissue, organ, system.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Magnification = image size divided by actual size. (b) Actual size = 45 ÷ 150 = 0.3 mm. (c) cell, tissue, organ, system.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Magnification = image size divided by actual size"
+                },
+                {
+                  "point": 1,
+                  "quote": "45 ÷ 150"
+                },
+                {
+                  "point": 2,
+                  "quote": "= 0.3 mm"
+                },
+                {
+                  "point": 3,
+                  "quote": "cell, tissue, organ, system"
+                }
+              ],
+              "feedback": "All four marks, with the unit in the answer."
+            },
+            {
+              "tier": "full",
+              "text": "(a) actual size = image size ÷ magnification (b) 45 ÷ 150 = 0.3 mm so the cell is 0.3 mm wide (c) the smallest is the cell, then tissue, then organ and the biggest is system",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "actual size = image size ÷ magnification"
+                },
+                {
+                  "point": 1,
+                  "quote": "45 ÷ 150"
+                },
+                {
+                  "point": 2,
+                  "quote": "0.3 mm so the cell is 0.3 mm wide"
+                },
+                {
+                  "point": 3,
+                  "quote": "the smallest is the cell, then tissue, then organ and the biggest is system"
+                }
+              ],
+              "feedback": "Correct. Writing the formula in the form you used is just as good."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) magnification = image size ÷ actual size (b) 45 × 150 = 6750 mm (c) cell, tissue, organ, system",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "magnification = image size ÷ actual size"
+                },
+                {
+                  "point": 3,
+                  "quote": "cell, tissue, organ, system"
+                }
+              ],
+              "feedback": "The formula and the order are right. In (b) you multiplied: because the magnification is how many times bigger the drawing is, divide, 45 ÷ 150 = 0.3 mm. A cell of 6,750 mm would be 6 metres long."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) I do not remember. (b) 45 ÷ 150 = 0.3. (c) Cell, tissue, organ, system.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "45 ÷ 150"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cell, tissue, organ, system"
+                }
+              ],
+              "feedback": "You divided correctly and the order is right. Learn the formula, magnification = image size ÷ actual size, and write the unit mm after 0.3.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Magnification is how big the microscope is. (b) 150 mm (c) system, organ, cell, tissue",
+              "meets": [],
+              "feedback": "Magnification is how many times bigger the image is than the real object. Divide the image size by the magnification to find the actual size. The correct order is cell, tissue, organ, system."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) size + magnification (b) 45 + 150 = 195 mm (c) tissue, cell, system, organ",
+              "meets": [],
+              "feedback": "Magnification involves division, not addition. Actual size = 45 ÷ 150 = 0.3 mm. A cell is smaller than a tissue, which is smaller than an organ."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Breathing, digestion and the blood",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the work of the respiratory, digestive and circulatory systems;\n2. trace air through the respiratory system and food through the digestive system;\n3. describe how blood moves oxygen and digested food round the body.\n\n## Materials\n\nCharts of the three systems, a model of the lungs (a bottle with balloons), a stethoscope if available, a bicycle pump, a clock for pulse counting.\n\n## Starter (5 minutes)\n\nAsk learners to run on the spot for one minute. Then ask what changed: breathing, heartbeat, warm skin. Tell them these changes come from three systems working together.\n\n## Development\n\n1. Respiratory system: air enters through the nose, passes the windpipe (trachea), bronchi and into the lungs, where oxygen goes into the blood and carbon dioxide leaves. Use the bottle model: pulling down the rubber sheet makes the balloon inflate.\n2. Digestive system: food passes through the mouth, gullet, stomach, small intestine and large intestine. The mouth chews and saliva starts to break down starch; the stomach churns food with acid; the small intestine absorbs digested food into the blood; the large intestine absorbs water.\n3. Circulatory system: the heart pumps blood round the body in blood vessels. Blood carries oxygen from the lungs and digested food from the small intestine to every cell, and carries carbon dioxide back to the lungs.\n4. Measure the pulse at the wrist for 30 seconds at rest and after exercise, and discuss why it changes.\n5. Link the three systems: the lungs supply oxygen, digestion supplies food, the blood delivers both so that cells can release energy.\n\n## Class activity\n\nLearners trace and label the path of a mouthful of rice and a breath of air on an outline body, and record their pulse at rest and after exercise.\n\n## Evaluation\n\n1. Where does digested food enter the blood?\n2. What does the blood carry from the lungs to the cells?\n3. Why do we breathe faster when we run?\n\n## Assignment\n\nDraw the path of food through the body and write one job for each organ on the path. Submit on the app.",
+      "reading": {
+        "title": "Three systems that keep us going",
+        "content": "# Three systems that keep us going\n\n## The respiratory system: getting oxygen\n\nWhen you breathe in, air goes through your nose or mouth, down the windpipe (**trachea**), through two tubes called **bronchi** and into the **lungs**. In the lungs there are millions of tiny air sacs. Oxygen passes from the air sacs into the blood, and carbon dioxide passes out of the blood into the air sacs and leaves when you breathe out.\n\nMuscles between the ribs and the **diaphragm** below the lungs move to make you breathe in and out.\n\n## The digestive system: getting food ready\n\nDigestion breaks big pieces of food into small soluble ones that the blood can carry.\n\n1. **Mouth:** teeth chew the food, and saliva begins to digest starch.\n2. **Gullet:** a tube that pushes the food down to the stomach.\n3. **Stomach:** muscles churn the food and acid and juices break it down.\n4. **Small intestine:** digestion finishes here and the digested food passes into the blood.\n5. **Large intestine:** water is taken out and the rest leaves the body as faeces.\n\n## The circulatory system: delivery service\n\nThe **heart** is a muscle that pumps blood through **blood vessels** to every part of the body. Blood carries:\n\n- oxygen from the lungs to the cells;\n- digested food from the small intestine to the cells;\n- carbon dioxide from the cells back to the lungs.\n\nThe **pulse** you feel at your wrist is the beat of the heart pushing blood along an artery. At rest an adult's pulse is about 70 beats per minute. After exercise it is faster because the cells need more oxygen.\n\n**Worked example.** A learner counts 36 beats in 30 seconds. The pulse in one minute is 36 × 2 = 72 beats per minute.\n\n## Working together\n\nWithout the lungs there is no oxygen, without digestion there is no usable food, and without the blood neither would reach the cells."
+      },
+      "cards": [
+        {
+          "front": "Trachea",
+          "back": "The windpipe that carries air to the lungs."
+        },
+        {
+          "front": "Lungs",
+          "back": "Organs where oxygen enters the blood and carbon dioxide leaves."
+        },
+        {
+          "front": "Diaphragm",
+          "back": "The muscle below the lungs that helps us breathe."
+        },
+        {
+          "front": "Digestion",
+          "back": "Breaking food into small pieces the blood can carry."
+        },
+        {
+          "front": "Small intestine",
+          "back": "Where digestion is finished and food is absorbed into the blood."
+        },
+        {
+          "front": "Heart",
+          "back": "A muscle that pumps blood round the body."
+        },
+        {
+          "front": "Pulse",
+          "back": "The beat of the heart felt in an artery, such as at the wrist."
+        },
+        {
+          "front": "What does blood carry?",
+          "back": "Oxygen, digested food and carbon dioxide."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Where does digested food pass into the blood?",
+          "options": [
+            "Mouth",
+            "Stomach",
+            "Small intestine",
+            "Gullet"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is the correct path of air into the body?",
+          "options": [
+            "Nose, trachea, bronchi, lungs",
+            "Nose, bronchi, trachea, lungs",
+            "Mouth, gullet, lungs, stomach",
+            "Nose, lungs, trachea, bronchi"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Amaka counts 38 heartbeats in 30 seconds. What is her pulse per minute?",
+          "options": [
+            "1,140",
+            "19",
+            "68",
+            "76"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "After a race, a runner breathes faster because her body cells",
+          "options": [
+            "need less carbon dioxide",
+            "need more oxygen",
+            "have too much food",
+            "have stopped working"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which part of the circulatory system pumps blood?",
+          "options": [
+            "The heart",
+            "The lungs",
+            "The stomach",
+            "The diaphragm"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the path of food from the mouth until the digested food enters the blood. Say what happens in each part.",
+          "markScheme": [
+            "Mouth: chewing and saliva begin digestion",
+            "Gullet carries the food to the stomach",
+            "Stomach churns food and acid helps break it down",
+            "Small intestine: digestion is finished and the food passes into the blood"
+          ],
+          "modelAnswer": "In the mouth, the teeth chew the food and saliva starts to digest the starch. The gullet pushes the food down to the stomach. The stomach churns the food with acid and juices to break it down. In the small intestine digestion is finished and the digested food passes into the blood.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "In the mouth the teeth chew the food and saliva starts digesting the starch. The food goes down the gullet to the stomach. In the stomach the muscles churn it and the acid breaks it. Then in the small intestine the digestion is finished and the food goes into the blood.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the teeth chew the food and saliva starts digesting the starch"
+                },
+                {
+                  "point": 1,
+                  "quote": "The food goes down the gullet to the stomach"
+                },
+                {
+                  "point": 2,
+                  "quote": "the muscles churn it and the acid breaks it"
+                },
+                {
+                  "point": 3,
+                  "quote": "in the small intestine the digestion is finished and the food goes into the blood"
+                }
+              ],
+              "feedback": "All four stages are in order, with the work of each."
+            },
+            {
+              "tier": "full",
+              "text": "Mouth: chewing food and mixing it with saliva. The gullet moves the food into the stomach. Stomach: churns and adds acid to break the food. Small intestine: food is fully digested and passes into the blood.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Mouth: chewing food and mixing it with saliva"
+                },
+                {
+                  "point": 1,
+                  "quote": "The gullet moves the food into the stomach"
+                },
+                {
+                  "point": 2,
+                  "quote": "Stomach: churns and adds acid to break the food"
+                },
+                {
+                  "point": 3,
+                  "quote": "Small intestine: food is fully digested and passes into the blood"
+                }
+              ],
+              "feedback": "Complete, well organised and in the right order."
+            },
+            {
+              "tier": "partial",
+              "text": "The food goes in the mouth and the teeth chew it. It goes to the stomach where it is digested. It goes to the small intestine.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the teeth chew it"
+                }
+              ],
+              "feedback": "You have the order. Name the gullet, say what the stomach does (churns with acid), and say that digested food goes into the blood from the small intestine."
+            },
+            {
+              "tier": "partial",
+              "text": "In the mouth food is chewed, then the gullet takes it to the stomach. In the stomach the food is churned. The large intestine puts the food into the blood.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In the mouth food is chewed"
+                },
+                {
+                  "point": 1,
+                  "quote": "the gullet takes it to the stomach"
+                },
+                {
+                  "point": 2,
+                  "quote": "In the stomach the food is churned"
+                }
+              ],
+              "feedback": "The first stages are good. It is the small intestine that passes digested food into the blood; the large intestine takes out water."
+            },
+            {
+              "tier": "weak",
+              "text": "The food goes to the lungs where it is changed to oxygen and it goes into the blood.",
+              "meets": [],
+              "feedback": "The lungs are for air, not food. Food goes through the gullet to the stomach and then the small intestine, where digested food enters the blood."
+            },
+            {
+              "tier": "weak",
+              "text": "Food is digested in the heart and the blood pumps it out.",
+              "meets": [],
+              "feedback": "The heart pumps blood but does not digest food. Digestion happens in the mouth, stomach and small intestine."
+            }
+          ]
+        },
+        {
+          "prompt": "Femi runs round the football field and notices his breathing and pulse get faster. (a) Explain why his cells need more oxygen when he runs. (b) Describe how oxygen gets from the air to his leg muscles. (c) He counts 45 heartbeats in 30 seconds. Work out his pulse per minute.",
+          "markScheme": [
+            "Cells release more energy when running, which needs more oxygen",
+            "Oxygen passes from the air sacs of the lungs into the blood",
+            "The heart pumps the blood to the leg muscles",
+            "Pulse = 45 × 2 = 90 beats per minute"
+          ],
+          "modelAnswer": "(a) When he runs, his muscle cells use more energy, which needs more oxygen. (b) Air goes into the lungs and the oxygen passes into the blood. The heart pumps the blood to the leg muscles. (c) 45 × 2 = 90 beats per minute.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) When he runs the muscles use more energy and this needs more oxygen. (b) The oxygen goes into the lungs and passes into the blood, then the heart pumps the blood to his leg muscles. (c) 45 × 2 = 90 beats per minute.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the muscles use more energy and this needs more oxygen"
+                },
+                {
+                  "point": 1,
+                  "quote": "passes into the blood"
+                },
+                {
+                  "point": 2,
+                  "quote": "the heart pumps the blood to his leg muscles"
+                },
+                {
+                  "point": 3,
+                  "quote": "45 × 2 = 90 beats per minute"
+                }
+              ],
+              "feedback": "All correct, and the pulse has its unit."
+            },
+            {
+              "tier": "full",
+              "text": "His cells make more energy while he runs, so he needs more oxygen, that is why he breathes fast. The air goes into the lungs and the oxygen goes into the blood in the air sacs. The heart pumps the blood to the legs. 30 seconds is half a minute so I multiply 45 by 2 which is 90 beats per minute.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "His cells make more energy while he runs, so he needs more oxygen"
+                },
+                {
+                  "point": 1,
+                  "quote": "the oxygen goes into the blood in the air sacs"
+                },
+                {
+                  "point": 2,
+                  "quote": "The heart pumps the blood to the legs"
+                },
+                {
+                  "point": 3,
+                  "quote": "I multiply 45 by 2 which is 90 beats per minute"
+                }
+              ],
+              "feedback": "A full answer. You gave the reason for doubling the count."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) He needs more oxygen because he is tired. (b) The oxygen goes into the blood in the lungs and the heart pumps it to his muscles. (c) 90.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The oxygen goes into the blood in the lungs"
+                },
+                {
+                  "point": 2,
+                  "quote": "the heart pumps it to his muscles"
+                },
+                {
+                  "point": 3,
+                  "quote": "90"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are right; add 'beats per minute' to your answer. In (a), the reason is that his muscles are using more energy, not that he is tired."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Running uses energy and energy needs oxygen. (b) The air enters the nose and goes to the leg muscles. (c) 45 + 30 = 75.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Running uses energy and energy needs oxygen"
+                }
+              ],
+              "feedback": "Part (a) is well put. The air stops in the lungs; the oxygen has to pass into the blood, which the heart pumps to the legs. For the pulse, double the count, 45 × 2 = 90."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Because he is hot. (b) By the mouth. (c) 45 beats.",
+              "meets": [],
+              "feedback": "The need for oxygen comes from the muscles using more energy. Oxygen goes to the lungs, then the blood carries it to the legs. The count is for half a minute, so double it: 90 beats per minute."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The legs need food only. (b) The food goes to the legs through the nose. (c) 75",
+              "meets": [],
+              "feedback": "Cells need oxygen as well as food to release energy. Oxygen travels from the lungs in the blood. Double 45 to get 90 beats per minute."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Flowers, seeds and photosynthesis",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the parts of a flower and say what each does;\n2. describe pollination and fertilisation;\n3. say how seeds are spread;\n4. state what photosynthesis is, what it needs and what it makes.\n\n## Materials\n\nFresh hibiscus or pawpaw flowers, a hand lens, a blade, a potted plant, a leaf that has been in the dark and one in the sun, a chart of the flower.\n\n## Starter (5 minutes)\n\nHold up a hibiscus flower. Ask: where does a mango come from? Lead to the idea that every fruit starts as a flower.\n\n## Development\n\n1. Parts of a flower: petals attract insects; sepals protect the bud; stamens (anther and filament) make pollen; the carpel or pistil (stigma, style, ovary) holds the ovules. Dissect a hibiscus and name the parts.\n2. Pollination is the transfer of pollen from an anther to a stigma, by insects or wind. Fertilisation happens when the pollen's male cell joins the female cell in the ovule.\n3. After fertilisation the ovule becomes a seed and the ovary becomes the fruit.\n4. Seeds are spread by wind (silk cotton, tridax), animals (spear grass sticks on clothes), water (coconut) and explosion (flame of the forest pods).\n5. Photosynthesis: plants make food in leaves. Carbon dioxide + water, in sunlight and with chlorophyll, gives glucose and oxygen. Write the word equation and discuss why plants are the base of food chains.\n6. Show the test for starch with iodine on a leaf that has been in light (blue-black) and one kept in the dark (stays brown).\n\n## Class activity\n\nGroups dissect a flower, stick the parts on paper, and label each with its job.\n\n## Evaluation\n\n1. What is pollination?\n2. What does a plant need to carry out photosynthesis?\n3. Why is a leaf kept in the dark unable to make starch?\n\n## Assignment\n\nCollect two fruits at home and write which part of the flower each came from and how its seeds might be spread.",
+      "reading": {
+        "title": "From flower to fruit, and how plants make food",
+        "content": "# From flower to fruit, and how plants make food\n\n## Parts of a flower\n\nA flower is the part of the plant that makes seeds.\n\n- **Petals** are often bright, and they attract insects.\n- **Sepals** are small leaf-like parts that protect the flower when it is a bud.\n- **Stamens** are the male parts. The **anther** makes the yellow dust called pollen.\n- **Carpel** is the female part. It has a **stigma** (sticky top that catches pollen), a **style** and an **ovary** that holds the **ovules**.\n\n## Pollination and fertilisation\n\n**Pollination** is when pollen is carried from an anther to a stigma. Insects such as bees do this when they visit flowers for nectar. Wind carries the pollen of grasses like maize.\n\nAfter pollination, a tube grows down the style, and the male cell from the pollen joins an ovule. This is **fertilisation**. The ovule becomes a **seed** and the ovary becomes the **fruit**.\n\n## Spreading seeds\n\nSeeds must be spread so the young plants do not crowd the parent. Wind carries light seeds, such as those of the silk cotton tree. Animals carry seeds that stick to fur or are eaten, such as those of the guava. Water carries coconuts. Pods of flame of the forest burst open and throw seeds out.\n\n## Photosynthesis\n\nPlants make their own food in the green parts of the leaf by **photosynthesis**.\n\ncarbon dioxide + water, in sunlight and with chlorophyll → glucose + oxygen\n\n- Carbon dioxide comes from the air through tiny pores in the leaf.\n- Water comes from the soil through the roots.\n- **Chlorophyll** is the green substance in chloroplasts that traps sunlight energy.\n- The **glucose** is used for energy or changed to starch for storage. The oxygen is released into the air.\n\n**Worked example.** A student covers part of a leaf with black paper for three days. She tests the leaf with iodine. The covered part stays brown but the part in the light turns blue-black, because only the part in the light made starch.\n\nPhotosynthesis feeds the plant, and the oxygen it releases is what animals breathe."
+      },
+      "cards": [
+        {
+          "front": "Pollination",
+          "back": "The transfer of pollen from an anther to a stigma."
+        },
+        {
+          "front": "Fertilisation",
+          "back": "The joining of a male cell from the pollen with a female cell in the ovule."
+        },
+        {
+          "front": "Anther",
+          "back": "Part of the stamen that makes pollen."
+        },
+        {
+          "front": "Stigma",
+          "back": "Sticky top of the carpel that catches pollen."
+        },
+        {
+          "front": "What does the ovary become?",
+          "back": "The fruit."
+        },
+        {
+          "front": "What does the ovule become?",
+          "back": "The seed."
+        },
+        {
+          "front": "Photosynthesis",
+          "back": "The process by which green plants make food using carbon dioxide, water and light."
+        },
+        {
+          "front": "Chlorophyll",
+          "back": "Green substance in the leaves that traps sunlight."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The part of the flower that makes pollen is the",
+          "options": [
+            "ovary",
+            "anther",
+            "petal",
+            "stigma"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "After fertilisation, the ovary of a flower grows into the",
+          "options": [
+            "petal",
+            "root",
+            "seed",
+            "fruit"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these does a plant NOT need for photosynthesis?",
+          "options": [
+            "Water",
+            "Carbon dioxide",
+            "Oxygen",
+            "Sunlight"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Seeds of the spear grass stick to a goat's hair. This is a way of dispersal by",
+          "options": [
+            "animals",
+            "explosion",
+            "wind",
+            "water"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A leaf covered with black paper for three days is tested with iodine and stays brown. This is because",
+          "options": [
+            "it took in too much water",
+            "chlorophyll had been removed",
+            "it made starch",
+            "it could not make starch without light"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe what happens from the time pollen lands on a flower until a fruit has formed. Use the words pollination, fertilisation, ovule, seed and ovary.",
+          "markScheme": [
+            "Pollination: pollen is carried to the stigma",
+            "Pollen grows a tube and its male cell joins the ovule (fertilisation)",
+            "The fertilised ovule becomes a seed",
+            "The ovary grows into the fruit"
+          ],
+          "modelAnswer": "Pollen is carried from an anther to the stigma (pollination). A tube grows down and the male cell joins the ovule (fertilisation). The fertilised ovule becomes a seed and the ovary grows into the fruit.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Pollination is when a bee carries pollen to the stigma. Then a tube grows down and the male cell joins with the ovule and that is fertilisation. The ovule then becomes the seed. The ovary swells and becomes the fruit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Pollination is when a bee carries pollen to the stigma"
+                },
+                {
+                  "point": 1,
+                  "quote": "the male cell joins with the ovule and that is fertilisation"
+                },
+                {
+                  "point": 2,
+                  "quote": "The ovule then becomes the seed"
+                },
+                {
+                  "point": 3,
+                  "quote": "The ovary swells and becomes the fruit"
+                }
+              ],
+              "feedback": "Every step is there in the right order, and the five words are used correctly."
+            },
+            {
+              "tier": "full",
+              "text": "The wind or insect brings pollen from the anther to the stigma, this is pollination. Pollen makes a tube and the male cell reaches the ovule and fuses (fertilisation). After this the fertilised ovule becomes the seed and the ovary becomes the fruit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "brings pollen from the anther to the stigma, this is pollination"
+                },
+                {
+                  "point": 1,
+                  "quote": "the male cell reaches the ovule and fuses (fertilisation)"
+                },
+                {
+                  "point": 2,
+                  "quote": "the fertilised ovule becomes the seed"
+                },
+                {
+                  "point": 3,
+                  "quote": "the ovary becomes the fruit"
+                }
+              ],
+              "feedback": "Complete. You also named both wind and insects as carriers."
+            },
+            {
+              "tier": "partial",
+              "text": "The pollen lands on the stigma which is pollination. Then the ovule becomes a seed and the ovary becomes the fruit.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The pollen lands on the stigma which is pollination"
+                },
+                {
+                  "point": 2,
+                  "quote": "the ovule becomes a seed"
+                },
+                {
+                  "point": 3,
+                  "quote": "the ovary becomes the fruit"
+                }
+              ],
+              "feedback": "You are missing the step between: fertilisation, when the male cell from the pollen joins the ovule. The ovule can only become a seed after that."
+            },
+            {
+              "tier": "partial",
+              "text": "Pollination is when the male cell joins the female cell. Then the ovule becomes a seed. The ovary is the fruit.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the ovule becomes a seed"
+                },
+                {
+                  "point": 3,
+                  "quote": "The ovary is the fruit"
+                }
+              ],
+              "feedback": "You have mixed up two words. Pollination is carrying pollen to the stigma; the joining of the male and female cells is fertilisation."
+            },
+            {
+              "tier": "weak",
+              "text": "The flower falls down and the seed comes out of the petals.",
+              "meets": [],
+              "feedback": "The seed forms in the ovary, not in the petals. First pollen reaches the stigma, then fertilisation happens in the ovule."
+            },
+            {
+              "tier": "weak",
+              "text": "The flower is cooked by the sun and it becomes a fruit.",
+              "meets": [],
+              "feedback": "Sunlight does not turn a flower into a fruit. Pollination and fertilisation must happen first, then the ovule becomes the seed and the ovary becomes the fruit."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Write the word equation for photosynthesis. (b) A learner puts one potted plant in the sun and another in a dark cupboard for a week, giving both the same water. The plant in the dark turns pale and weak. Explain why. (c) State why photosynthesis is important to animals.",
+          "markScheme": [
+            "carbon dioxide + water → glucose + oxygen (with light and chlorophyll)",
+            "Names sunlight/light and chlorophyll as needed",
+            "The plant in the dark cannot make food because photosynthesis needs light",
+            "Animals depend on plants for food and the oxygen they release"
+          ],
+          "modelAnswer": "(a) Carbon dioxide + water, in sunlight and with chlorophyll, gives glucose + oxygen. (b) The plant in the dark cannot photosynthesise because it has no light, so it cannot make food and becomes pale and weak. (c) Animals depend on plants for food and breathe the oxygen that photosynthesis releases.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) carbon dioxide + water gives glucose + oxygen, with sunlight and chlorophyll. (b) The plant in the cupboard has no light so it cannot make food by photosynthesis, so it is weak. (c) Animals eat plants for food and breathe the oxygen the plants make.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "carbon dioxide + water gives glucose + oxygen"
+                },
+                {
+                  "point": 1,
+                  "quote": "with sunlight and chlorophyll"
+                },
+                {
+                  "point": 2,
+                  "quote": "has no light so it cannot make food by photosynthesis"
+                },
+                {
+                  "point": 3,
+                  "quote": "Animals eat plants for food and breathe the oxygen the plants make"
+                }
+              ],
+              "feedback": "A full answer, with both the food and the oxygen mentioned in (c)."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Water and carbon dioxide change to glucose and oxygen using light energy trapped by chlorophyll. (b) Light is needed to make the food, so the plant in the dark is hungry and becomes pale. (c) We cannot live without the plants because they are the first food and they give us oxygen.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Water and carbon dioxide change to glucose and oxygen"
+                },
+                {
+                  "point": 1,
+                  "quote": "light energy trapped by chlorophyll"
+                },
+                {
+                  "point": 2,
+                  "quote": "Light is needed to make the food, so the plant in the dark is hungry"
+                },
+                {
+                  "point": 3,
+                  "quote": "they are the first food and they give us oxygen"
+                }
+              ],
+              "feedback": "All four points. Calling plants the first food is a good way to say it."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) carbon dioxide + water → glucose + oxygen. (b) It does not have light. (c) Animals eat plants.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "carbon dioxide + water → glucose + oxygen"
+                },
+                {
+                  "point": 3,
+                  "quote": "Animals eat plants"
+                }
+              ],
+              "feedback": "Your equation is right. In (b) say what the lack of light stops: the plant cannot make food. In (c) add that animals breathe the oxygen."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Plants take in oxygen and give out carbon dioxide. (b) Because there is no light so it cannot make food. (c) Because plants give us oxygen.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "there is no light so it cannot make food"
+                },
+                {
+                  "point": 3,
+                  "quote": "plants give us oxygen"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are right. In (a) you reversed the gases: photosynthesis takes in carbon dioxide and water and gives out oxygen, plus glucose."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) glucose + oxygen → water + carbon dioxide (b) The cupboard is too hot. (c) Plants are green.",
+              "meets": [],
+              "feedback": "Your equation is for respiration, the other way round. Photosynthesis uses carbon dioxide and water to make glucose and oxygen. The plant is weak because it has no light to make food."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Plants eat soil. (b) It was not watered. (c) For decoration.",
+              "meets": [],
+              "feedback": "Plants make their own food using carbon dioxide, water and light. Both plants were watered, so lack of light is the cause. Animals depend on plants for food and oxygen."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Soil: what it is made of and why it matters",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. list the components of soil;\n2. compare sandy, clayey and loamy soil;\n3. do a simple calculation of soil composition;\n4. explain why soil matters to the farmer.\n\n## Materials\n\nSamples of sandy, clayey and loamy soil, a tall transparent jar, water, funnels with cotton wool, measuring cylinders, a stopwatch, a kitchen scale.\n\n## Starter (5 minutes)\n\nShow three handfuls of soil from different places. Ask learners to rub each between the fingers and describe how it feels. Record the words gritty, sticky and smooth.\n\n## Development\n\n1. Soil is made of mineral particles (from broken rock), humus (decayed plants and animals), water, air and living organisms such as earthworms and bacteria.\n2. Soil types by particle size: sand (large, gritty), silt (medium, smooth) and clay (very small, sticky). Loam is a mixture of all three with plenty of humus.\n3. Experiment 1: shake a soil sample in a jar of water, let it settle, and observe the layers: sand at the bottom, then silt, then clay, with humus floating.\n4. Experiment 2: pour 100 ml of water through 100 g of each soil in a funnel and time how fast it drains and how much is collected. Sandy soil drains fast; clay holds water.\n5. Compare in a table: drainage, water held, air spaces, suitable crops (groundnut and cassava on sandy soil; rice on clay; most crops on loam).\n6. Importance of soil: it anchors plants, supplies water and mineral salts, and is home to many organisms. Discuss soil erosion and how to prevent it.\n\n## Class activity\n\nGroups carry out the jar test and funnel test and record results in a table.\n\n## Evaluation\n\n1. Which soil type is best for most crops, and why?\n2. Why does rice grow well on clay soil?\n3. Name three things found in soil besides rock particles.\n\n## Assignment\n\nCollect a small sample of soil near your house, describe how it feels and decide whether it is more sandy, clayey or loamy.",
+      "reading": {
+        "title": "Looking closely at soil",
+        "content": "# Looking closely at soil\n\n## What soil is made of\n\nSoil is not just crushed rock. A handful of garden soil contains:\n\n- **mineral particles** from rocks broken down by weather over thousands of years;\n- **humus**, the dark material from dead plants and animals that have rotted;\n- **water** held between the particles;\n- **air** in the spaces between the particles;\n- **living things**, such as earthworms, termites, fungi and bacteria.\n\n## Types of soil\n\n| Soil | Particle size | Feel | Drainage | Water held |\n| --- | --- | --- | --- | --- |\n| Sandy | Large | Gritty | Fast | Little |\n| Silty | Medium | Smooth, like flour | Medium | Medium |\n| Clayey | Very small | Sticky when wet | Slow | Much, can waterlog |\n| Loam | Mixture of all three plus humus | Crumbly | Good | Good |\n\n**Loam** is the best soil for most crops because it holds water and air and has plenty of humus. Sandy soil suits groundnut and cassava, which like good drainage. Rice is often grown on clay soil that holds water.\n\n## Doing a soil test\n\nPut a spoonful of soil in a jar of water, shake well and leave for a day. The heaviest particles, the sand, settle first at the bottom, then silt, then clay. Humus floats on top.\n\n**Worked example.** A 200 g sample is separated and found to have 120 g sand, 50 g silt and 30 g clay.\n\n- Percentage of sand = 120 ÷ 200 × 100 = 60%.\n- Percentage of silt = 50 ÷ 200 × 100 = 25%.\n- Percentage of clay = 30 ÷ 200 × 100 = 15%.\n- The three percentages add up to 100%, so the work checks. The soil is mostly sand, so it will drain quickly.\n\n## Why soil matters\n\nSoil holds the roots of a plant firmly. It supplies water and mineral salts for growth. It is home to organisms that recycle dead plants into humus. But heavy rain can wash away the top layer, which is called **erosion**. Farmers prevent it by planting cover crops, making ridges across a slope and keeping a layer of mulch."
+      },
+      "cards": [
+        {
+          "front": "Humus",
+          "back": "Dark material in soil from rotted plants and animals."
+        },
+        {
+          "front": "Sandy soil",
+          "back": "Soil with large, gritty particles; drains fast and holds little water."
+        },
+        {
+          "front": "Clay soil",
+          "back": "Soil with very small, sticky particles; holds much water and drains slowly."
+        },
+        {
+          "front": "Loam",
+          "back": "A mixture of sand, silt, clay and humus; best for most crops."
+        },
+        {
+          "front": "Soil erosion",
+          "back": "The washing or blowing away of the top layer of soil."
+        },
+        {
+          "front": "Name two living things in soil",
+          "back": "Earthworms, termites, fungi, bacteria."
+        },
+        {
+          "front": "Percentage formula",
+          "back": "Part ÷ whole × 100"
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A soil sample of 250 g contains 100 g of sand. What percentage is sand?",
+          "options": [
+            "40%",
+            "50%",
+            "100%",
+            "25%"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which soil would be best for a farmer who wants good drainage for groundnut?",
+          "options": [
+            "Waterlogged soil",
+            "Soil with no air",
+            "Sandy soil",
+            "Clay soil"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "In the jar test, which material settles at the bottom first?",
+          "options": [
+            "Silt",
+            "Sand",
+            "Clay",
+            "Humus"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "What is humus?",
+          "options": [
+            "A kind of clay",
+            "Water in the soil",
+            "Rock broken by weather",
+            "Rotted plants and animals in the soil"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A farmer in Benue plants ridges across his slope to stop rain from washing away the top layer. He is preventing",
+          "options": [
+            "fertilisation",
+            "pollination",
+            "erosion",
+            "evaporation"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Compare sandy soil and clay soil. Say how each differs in drainage, in the amount of water held and in how the particles feel.",
+          "markScheme": [
+            "Sandy soil drains quickly; clay drains slowly",
+            "Sandy soil holds little water; clay holds much water",
+            "Sandy soil particles are large and gritty",
+            "Clay particles are very small and sticky when wet"
+          ],
+          "modelAnswer": "Sandy soil drains quickly and holds little water, and its particles are large and gritty. Clay soil drains slowly and holds much water, and its particles are very small and sticky when wet.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Sandy soil drains very fast but clay drains slowly. Sandy soil holds little water but clay holds a lot of water. Sandy soil feels gritty because the particles are big. Clay soil feels sticky when it is wet because the particles are very small.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sandy soil drains very fast but clay drains slowly"
+                },
+                {
+                  "point": 1,
+                  "quote": "Sandy soil holds little water but clay holds a lot of water"
+                },
+                {
+                  "point": 2,
+                  "quote": "Sandy soil feels gritty because the particles are big"
+                },
+                {
+                  "point": 3,
+                  "quote": "Clay soil feels sticky when it is wet because the particles are very small"
+                }
+              ],
+              "feedback": "All four differences, each side compared."
+            },
+            {
+              "tier": "full",
+              "text": "In drainage, sandy soil lets water pass quickly and clay soil lets it pass slowly. For water held, sandy soil keeps little and clay keeps plenty. The particles of sand are large and rough, but the clay particles are tiny and sticky.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "sandy soil lets water pass quickly and clay soil lets it pass slowly"
+                },
+                {
+                  "point": 1,
+                  "quote": "sandy soil keeps little and clay keeps plenty"
+                },
+                {
+                  "point": 2,
+                  "quote": "The particles of sand are large and rough"
+                },
+                {
+                  "point": 3,
+                  "quote": "the clay particles are tiny and sticky"
+                }
+              ],
+              "feedback": "Complete, and every property is compared for both soils."
+            },
+            {
+              "tier": "partial",
+              "text": "Sandy soil drains well and clay soil does not drain well. Sandy soil is rough.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sandy soil drains well and clay soil does not drain well"
+                },
+                {
+                  "point": 2,
+                  "quote": "Sandy soil is rough"
+                }
+              ],
+              "feedback": "Drainage is well done. Add how much water each holds (clay holds much and sand little), and describe clay: very small, sticky particles."
+            },
+            {
+              "tier": "partial",
+              "text": "Clay holds a lot of water and the sand holds only a little. Clay is sticky.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Clay holds a lot of water and the sand holds only a little"
+                },
+                {
+                  "point": 3,
+                  "quote": "Clay is sticky"
+                }
+              ],
+              "feedback": "Water held and the feel of clay are right. Now say how fast each drains, and that sand has large gritty particles."
+            },
+            {
+              "tier": "weak",
+              "text": "Sandy soil is for planting and clay soil is for building.",
+              "meets": [],
+              "feedback": "Both can be used for planting. The question asks about their properties: drainage, water held and the size and feel of their particles."
+            },
+            {
+              "tier": "weak",
+              "text": "Sandy soil holds a lot of water because it is sand and clay is hard.",
+              "meets": [],
+              "feedback": "Sand holds little water because its large particles leave big gaps and the water runs through. It is clay that holds a lot of water."
+            }
+          ]
+        },
+        {
+          "prompt": "A learner separates a 250 g sample of soil and finds 150 g of sand, 60 g of silt and 40 g of clay. (a) Work out the percentage of sand, silt and clay. (b) What kind of soil is this? Give a reason. (c) Suggest one crop that would grow well in it and say why.",
+          "markScheme": [
+            "Sand = 150 ÷ 250 × 100 = 60%",
+            "Silt = 24% and clay = 16%",
+            "Says it is a mostly sandy soil because over half is sand (it drains fast)",
+            "Gives a suitable crop with a reason, such as groundnut or cassava needs good drainage"
+          ],
+          "modelAnswer": "(a) Sand = 150 ÷ 250 × 100 = 60%. Silt = 60 ÷ 250 × 100 = 24%. Clay = 40 ÷ 250 × 100 = 16%. (b) It is a mostly sandy soil because 60% is sand, so it drains quickly. (c) Groundnut or cassava would grow well because they need good drainage.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Sand is 150 ÷ 250 × 100 = 60%. Silt is 60 ÷ 250 × 100 = 24% and clay is 40 ÷ 250 × 100 = 16%. (b) It is sandy soil because most of it is sand. (c) Groundnut will do well because it likes soil that drains fast.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sand is 150 ÷ 250 × 100 = 60%"
+                },
+                {
+                  "point": 1,
+                  "quote": "clay is 40 ÷ 250 × 100 = 16%"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is sandy soil because most of it is sand"
+                },
+                {
+                  "point": 3,
+                  "quote": "Groundnut will do well because it likes soil that drains fast"
+                }
+              ],
+              "feedback": "Each percentage is correct and they add to 100. A good habit to check."
+            },
+            {
+              "tier": "full",
+              "text": "(a) 150 out of 250 is 60% sand, 60 out of 250 is 24% silt, 40 out of 250 is 16% clay. They add up to 100%. (b) The soil is sandy because sand is more than half of it, so water will drain quickly. (c) Cassava, because the roots rot in soil that holds too much water.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "150 out of 250 is 60% sand"
+                },
+                {
+                  "point": 1,
+                  "quote": "40 out of 250 is 16% clay"
+                },
+                {
+                  "point": 2,
+                  "quote": "The soil is sandy because sand is more than half of it"
+                },
+                {
+                  "point": 3,
+                  "quote": "Cassava, because the roots rot in soil that holds too much water"
+                }
+              ],
+              "feedback": "Full marks. Your reason for cassava links the crop to the drainage."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Sand 60%, silt 24%, clay 16%. (b) It is loam. (c) Rice.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sand 60%"
+                },
+                {
+                  "point": 1,
+                  "quote": "silt 24%, clay 16%"
+                }
+              ],
+              "feedback": "Your percentages are correct. But 60% sand makes this a sandy soil, not loam, which would have a more even mixture. Rice needs soil that holds water, so it is not a good choice here."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 150 ÷ 250 = 0.6 which is 60% sand. The others I do not know. (b) Sandy. (c) Groundnut because it likes sandy soil.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "150 ÷ 250 = 0.6 which is 60% sand"
+                },
+                {
+                  "point": 3,
+                  "quote": "Groundnut because it likes sandy soil"
+                }
+              ],
+              "feedback": "The sand percentage is well worked out. Do silt and clay in the same way: 60 ÷ 250 and 40 ÷ 250, times 100. Give a reason for (b): it is sandy because 60% of it is sand."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 150 + 60 + 40 = 250. (b) It is red soil. (c) Maize.",
+              "meets": [],
+              "feedback": "Adding the parts gives the total, but a percentage is the part ÷ the whole × 100. For example sand is 150 ÷ 250 × 100 = 60%. Colour does not tell the type; the mostly sand sample is a sandy soil."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 150% sand, 60% silt and 40% clay. (b) Clay. (c) Any crop.",
+              "meets": [],
+              "feedback": "Percentages of one sample must add up to 100, so 150% cannot be right. Divide the part by 250 and multiply by 100. With 60% sand the soil is sandy, not clay."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Classifying living things",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain why living things are classified;\n2. group animals into vertebrates and invertebrates and name the five vertebrate groups;\n3. tell an insect from a spider;\n4. group plants and say why fungi are not plants.\n\n## Materials\n\nSpecimens or pictures of tilapia, toad, lizard, hen, goat, grasshopper, spider, earthworm, a maize plant, a bean plant, a mushroom, and a fern.\n\n## Starter (5 minutes)\n\nGive each group a bag of ten pictures and ask them to sort the pictures in any way they like. Let two groups explain how they sorted. Point out that scientists also sort but use agreed rules.\n\n## Development\n\n1. Classification is putting living things into groups by their shared features. It helps us study the huge number of living things and name them in a way everyone understands.\n2. Two big groups of animals: vertebrates (with a backbone) and invertebrates (without).\n3. Vertebrates: fish (gills, scales, fins, live in water), amphibians (moist skin, young in water, adults on land, e.g. toad), reptiles (dry scaly skin, lay eggs on land, e.g. lizard), birds (feathers, wings, lay hard-shelled eggs), mammals (hair or fur, feed young on milk).\n4. Invertebrates: insects (6 legs, 3 body parts, antennae), arachnids (8 legs, 2 body parts, no antennae, e.g. spider), worms (soft bodies without legs) and molluscs (e.g. snail).\n5. Plants: flowering plants (maize, bean) and non-flowering plants (ferns, mosses). Maize has narrow leaves with parallel veins (monocot); bean has broad leaves with branching veins (dicot).\n6. Fungi, like mushrooms, are not plants: they have no chlorophyll and get food from rotting material. Bacteria are tiny single-celled organisms.\n\n## Class activity\n\nGroups make a classification chart on cardboard with the pictures stuck in the correct boxes.\n\n## Evaluation\n\n1. Name the five groups of vertebrates.\n2. How do you know a spider is not an insect?\n3. Why is a mushroom not a plant?\n\n## Assignment\n\nList ten living things you see on your way to school and put each into a group. Submit on the app.",
+      "reading": {
+        "title": "Sorting out living things",
+        "content": "# Sorting out living things\n\n## Why classify?\n\nThere are millions of kinds of living things. To study them we put those with shared features into groups. This is **classification**. It is like arranging goods in Balogun market by type so that you can find what you want.\n\n## Animals\n\nAnimals are first divided into:\n\n- **Vertebrates**, which have a backbone;\n- **Invertebrates**, which do not.\n\n### The five groups of vertebrates\n\n| Group | Features | Example |\n| --- | --- | --- |\n| Fish | Gills, scales and fins; live in water | Tilapia, catfish |\n| Amphibians | Moist skin; young live in water, adults on land | Toad, frog |\n| Reptiles | Dry scaly skin; lay eggs on land | Lizard, crocodile |\n| Birds | Feathers and wings; lay hard-shelled eggs | Hen, pigeon |\n| Mammals | Hair or fur; feed their young on milk | Goat, bat, human |\n\n### Invertebrates\n\n- **Insects:** six legs, three body parts (head, thorax, abdomen) and one pair of antennae. Many have wings. Examples: grasshopper, housefly, bee.\n- **Arachnids:** eight legs and two body parts. No antennae and no wings. Examples: spider, scorpion.\n- **Worms:** soft bodies without legs, such as earthworms.\n- **Molluscs:** soft bodies, often with a shell, such as snails.\n\n## Plants\n\nFlowering plants make seeds in flowers. Some have narrow leaves with parallel veins (like maize), and some have broad leaves with branching veins (like beans). Non-flowering plants, such as ferns and mosses, reproduce using spores.\n\n## Fungi and bacteria\n\nA mushroom looks like a plant but it has no chlorophyll, so it cannot make its own food. It feeds on dead material. Fungi are a group on their own. Bacteria are tiny living things made of a single cell, some helpful, such as the ones used to make yoghurt, and some harmful.\n\n**Worked example.** A creature has eight legs, two body parts and no wings. It is an arachnid, not an insect."
+      },
+      "cards": [
+        {
+          "front": "Classification",
+          "back": "Putting living things into groups according to shared features."
+        },
+        {
+          "front": "Vertebrate",
+          "back": "An animal with a backbone."
+        },
+        {
+          "front": "Invertebrate",
+          "back": "An animal without a backbone."
+        },
+        {
+          "front": "Mammal",
+          "back": "A vertebrate with hair or fur that feeds its young on milk."
+        },
+        {
+          "front": "Insect",
+          "back": "An invertebrate with six legs, three body parts and antennae."
+        },
+        {
+          "front": "Arachnid",
+          "back": "An invertebrate with eight legs and two body parts, such as a spider."
+        },
+        {
+          "front": "Amphibian",
+          "back": "A vertebrate with moist skin whose young live in water, such as a toad."
+        },
+        {
+          "front": "Fungi",
+          "back": "Living things such as mushrooms with no chlorophyll that feed on dead material."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A bat flies but it has fur and feeds its young on milk. Which group does it belong to?",
+          "options": [
+            "Insects",
+            "Reptiles",
+            "Birds",
+            "Mammals"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which feature is found in insects but not in spiders?",
+          "options": [
+            "Two body parts",
+            "Antennae",
+            "A backbone",
+            "Eight legs"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A tilapia is classified as a fish because it",
+          "options": [
+            "has gills, scales and fins",
+            "lives near a river",
+            "has a backbone",
+            "lays eggs"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A toad lays eggs in water and the young breathe with gills; the adult lives on land. It is an",
+          "options": [
+            "insect",
+            "fish",
+            "amphibian",
+            "reptile"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Mushrooms are not classified as plants because they",
+          "options": [
+            "have no roots",
+            "cannot make their own food as they have no chlorophyll",
+            "grow in the forest",
+            "are small"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Name the five groups of vertebrates and give one feature and one example of each.",
+          "markScheme": [
+            "Fish: gills and scales, e.g. tilapia",
+            "Amphibians: moist skin, young in water, e.g. toad",
+            "Reptiles: dry scaly skin, e.g. lizard; birds: feathers, e.g. hen",
+            "Mammals: hair/fur and feed young on milk, e.g. goat"
+          ],
+          "modelAnswer": "Fish have gills and scales, for example tilapia. Amphibians have moist skin and their young live in water, for example a toad. Reptiles have dry scaly skin, for example a lizard, and birds have feathers, for example a hen. Mammals have hair or fur and feed their young on milk, for example a goat.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Fish have gills and scales like the tilapia. Amphibians have moist skin and the young live in water like the frog. Reptiles have dry scaly skin like the lizard and birds have feathers like the hen. Mammals have fur and feed their babies with milk like the goat.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fish have gills and scales like the tilapia"
+                },
+                {
+                  "point": 1,
+                  "quote": "Amphibians have moist skin and the young live in water like the frog"
+                },
+                {
+                  "point": 2,
+                  "quote": "Reptiles have dry scaly skin like the lizard and birds have feathers like the hen"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mammals have fur and feed their babies with milk like the goat"
+                }
+              ],
+              "feedback": "All five groups, each with a feature and an example."
+            },
+            {
+              "tier": "full",
+              "text": "Fish - live in water and breathe with gills, e.g. catfish. Amphibian - moist skin and lives in water and land, e.g. toad. Reptile - dry skin with scales, e.g. crocodile. Bird - feathers and wings, e.g. pigeon. Mammal - gives birth and feeds the young on milk, e.g. human.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fish - live in water and breathe with gills, e.g. catfish"
+                },
+                {
+                  "point": 1,
+                  "quote": "Amphibian - moist skin and lives in water and land, e.g. toad"
+                },
+                {
+                  "point": 2,
+                  "quote": "Reptile - dry skin with scales, e.g. crocodile. Bird - feathers and wings, e.g. pigeon"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mammal - gives birth and feeds the young on milk, e.g. human"
+                }
+              ],
+              "feedback": "Complete. Using different examples from the class notes shows you understand the groups."
+            },
+            {
+              "tier": "partial",
+              "text": "Fish, birds, mammals, reptiles and amphibians. Fish live in water. Birds have feathers. Mammals have milk.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fish live in water"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mammals have milk"
+                }
+              ],
+              "feedback": "You named all five groups, but the question wants a feature and an example for each. Add that fish have gills and scales, and give examples such as tilapia, hen or goat."
+            },
+            {
+              "tier": "partial",
+              "text": "Fish have gills, e.g. tilapia. Birds have feathers e.g. hen. Mammals feed young with milk e.g. cow. Reptiles are crawling things and amphibians are also crawling things.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Fish have gills, e.g. tilapia"
+                },
+                {
+                  "point": 3,
+                  "quote": "Mammals feed young with milk e.g. cow"
+                }
+              ],
+              "feedback": "Fish, birds and mammals are good. Reptiles have dry scaly skin and amphibians have moist skin, with young in water. Crawling is not a group feature."
+            },
+            {
+              "tier": "weak",
+              "text": "Dogs, goats, cows, sheep and pigs.",
+              "meets": [],
+              "feedback": "These are all mammals, so they are one group. The five groups are fish, amphibians, reptiles, birds and mammals; give a feature and example of each."
+            },
+            {
+              "tier": "weak",
+              "text": "Vertebrates are animals that have no backbone and invertebrates have a backbone.",
+              "meets": [],
+              "feedback": "You swapped them: vertebrates have a backbone and invertebrates do not. Then name the five groups of vertebrates with a feature of each."
+            }
+          ]
+        },
+        {
+          "prompt": "Femi found a small creature in the garden with eight legs, two body parts and no wings. (a) Is it an insect? Give two reasons for your answer. (b) State which group of invertebrates it belongs to. (c) A mushroom grows on a rotting log. Explain why it is not classified as a plant.",
+          "markScheme": [
+            "It is not an insect because it has eight legs, not six",
+            "It is not an insect because it has two body parts, not three (and no wings or antennae)",
+            "It is an arachnid, like a spider",
+            "A mushroom has no chlorophyll so it cannot make food; it feeds on dead material"
+          ],
+          "modelAnswer": "(a) It is not an insect because it has eight legs and insects have six, and it has two body parts and insects have three. (b) It is an arachnid, like a spider. (c) A mushroom has no chlorophyll, so it cannot make its own food by photosynthesis. It feeds on dead, rotting material, so it is a fungus and not a plant.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) It is not an insect because insects have six legs but this has eight, and insects have three body parts but this has two. (b) It is an arachnid, maybe a spider. (c) A mushroom has no chlorophyll so it cannot make food like plants do, it takes its food from the dead log.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "insects have six legs but this has eight"
+                },
+                {
+                  "point": 1,
+                  "quote": "insects have three body parts but this has two"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is an arachnid, maybe a spider"
+                },
+                {
+                  "point": 3,
+                  "quote": "A mushroom has no chlorophyll so it cannot make food like plants do"
+                }
+              ],
+              "feedback": "All four points, with a reason from the animal itself."
+            },
+            {
+              "tier": "full",
+              "text": "It is not an insect, because an insect has 6 legs not 8 and has a head, a thorax and an abdomen, which is three parts. It is an arachnid like a spider or a scorpion. A mushroom is a fungus; it does not have chlorophyll and cannot do photosynthesis and it feeds on dead things.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "an insect has 6 legs not 8"
+                },
+                {
+                  "point": 1,
+                  "quote": "has a head, a thorax and an abdomen, which is three parts"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is an arachnid like a spider or a scorpion"
+                },
+                {
+                  "point": 3,
+                  "quote": "it does not have chlorophyll and cannot do photosynthesis"
+                }
+              ],
+              "feedback": "A complete answer. Naming the three insect body parts is a good detail."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) It is not an insect because it has eight legs. (b) It is a spider. (c) Mushroom is not a plant because it is not green.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is not an insect because it has eight legs"
+                },
+                {
+                  "point": 2,
+                  "quote": "It is a spider"
+                }
+              ],
+              "feedback": "The legs are a good reason. Add the second one: two body parts, not three. Say 'arachnid' for the group. A mushroom is not a plant because it has no chlorophyll, not simply because it is not green.",
+              "unsure": true
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Not an insect, it has two body parts. (b) Arachnid. (c) The mushroom is a plant because it grows from the ground.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "it has two body parts"
+                },
+                {
+                  "point": 2,
+                  "quote": "Arachnid"
+                }
+              ],
+              "feedback": "Two points are right. Growing from the ground does not make something a plant: the mushroom has no chlorophyll and feeds on dead material, so it is a fungus."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is an insect because it is small. (b) Worm. (c) Mushrooms are plants.",
+              "meets": [],
+              "feedback": "Size does not decide it. Count the legs and body parts: eight legs and two parts make an arachnid. A mushroom has no chlorophyll, so it is not a plant."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Yes, it has wings. (b) Mammal. (c) Because it is white.",
+              "meets": [],
+              "feedback": "The question says it has no wings, and a mammal has a backbone and fur. An animal with eight legs is an arachnid. A mushroom is not a plant because it has no chlorophyll."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Forms and sources of energy",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name the forms of energy and give an example of each;\n2. say which energy changes happen in everyday devices;\n3. distinguish renewable from non-renewable sources;\n4. state that energy is not created or destroyed.\n\n## Materials\n\nA torch, a small solar panel with a bulb, a hand-cranked radio or dynamo, a bicycle, a candle, a bell, a pencil sharpener, charts of power stations.\n\n## Starter (5 minutes)\n\nSwitch a torch on and ask: where did the light come from? Follow the answers back to the battery and to the chemicals inside. Introduce the idea that energy changes from one form to another.\n\n## Development\n\n1. Energy is the ability to do work. Its unit is the joule (J).\n2. Forms: heat (thermal), light, sound, electrical, mechanical (kinetic energy of moving things and potential energy stored by position or stretching), chemical (in food, fuel and batteries) and nuclear (inside atoms).\n3. Energy changes: a torch turns chemical energy to electrical, then to light and heat; a generator turns kinetic energy to electrical; a solar panel turns light to electrical; a loudspeaker turns electrical to sound.\n4. Sources: renewable ones are not used up (the sun, wind, flowing water, biomass); non-renewable ones are finite (crude oil, coal, natural gas). Nigeria's examples: Kainji and Jebba dams (water), Niger Delta oil, solar for rural villages.\n5. Law of conservation of energy: energy cannot be created or destroyed, only changed from one form to another. Some always turns into unwanted heat.\n6. Draw the energy change for a bicycle dynamo lamp and for a candle.\n\n## Class activity\n\nLearners complete an energy chain for five devices and sort a set of cards into renewable and non-renewable sources.\n\n## Evaluation\n\n1. What energy change happens in a solar panel?\n2. Give two renewable and two non-renewable sources of energy.\n3. What happens to energy when it is used?\n\n## Assignment\n\nChoose three electrical devices at home and write the energy change in each, using the arrow notation. Submit on the app.",
+      "reading": {
+        "title": "Where does energy come from, and where does it go?",
+        "content": "# Where does energy come from, and where does it go?\n\n## What is energy?\n\nEnergy is the ability to make things move, heat up, light up or change. It is measured in **joules (J)**. A person, a generator and a fire all use or give energy.\n\n## Forms of energy\n\n- **Heat (thermal) energy:** from a fire or a cooker.\n- **Light energy:** from the sun or a lamp.\n- **Sound energy:** from a drum or a radio.\n- **Electrical energy:** from the NEPA line, a battery or a generator.\n- **Mechanical energy:** of moving things (**kinetic**) and of stored position, like water in a dam or a stretched spring (**potential**).\n- **Chemical energy:** stored in food, firewood, petrol and batteries.\n- **Nuclear energy:** stored inside atoms and released in nuclear power stations and in the sun.\n\n## Energy changes\n\nEnergy often changes from one form to another.\n\n- A torch: chemical → electrical → light (and some heat).\n- A solar panel: light → electrical.\n- A generator: chemical (petrol) → kinetic → electrical.\n- A radio: electrical → sound.\n- A person running: chemical (food) → kinetic and heat.\n\n## Conservation of energy\n\nEnergy is never created or destroyed. It is only changed from one form to another. Not all the energy ends up as the form we want: when a bulb gives light, much of the energy escapes as heat. The total energy stays the same.\n\n## Sources of energy\n\n**Renewable** sources do not run out: the sun, wind, flowing water and biomass (firewood, if trees are replanted). **Non-renewable** sources are used up and take millions of years to form: crude oil, coal and natural gas.\n\nNigeria gets electricity from dams such as Kainji and Jebba on the River Niger (water), and from gas-burning power stations (natural gas). Many villages now use solar panels.\n\n**Worked example.** In a hydroelectric dam, water high up has potential energy. It falls and gains kinetic energy, and turns a turbine that drives a generator, which gives electrical energy: potential → kinetic → electrical."
+      },
+      "cards": [
+        {
+          "front": "Energy",
+          "back": "The ability to do work; measured in joules (J)."
+        },
+        {
+          "front": "Kinetic energy",
+          "back": "Energy of a moving object."
+        },
+        {
+          "front": "Potential energy",
+          "back": "Stored energy because of position or stretching."
+        },
+        {
+          "front": "Chemical energy",
+          "back": "Energy stored in food, fuel and batteries."
+        },
+        {
+          "front": "Renewable source",
+          "back": "A source that is not used up, such as the sun or wind."
+        },
+        {
+          "front": "Non-renewable source",
+          "back": "A source that is used up, such as crude oil."
+        },
+        {
+          "front": "Conservation of energy",
+          "back": "Energy cannot be created or destroyed, only changed from one form to another."
+        },
+        {
+          "front": "Energy change in a solar panel",
+          "back": "Light energy to electrical energy."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which energy change happens in a loudspeaker?",
+          "options": [
+            "Heat to sound",
+            "Sound to electrical",
+            "Electrical to sound",
+            "Light to sound"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of the following is a non-renewable source of energy?",
+          "options": [
+            "Crude oil",
+            "Flowing water",
+            "Wind",
+            "The sun"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A stretched catapult has what form of energy?",
+          "options": [
+            "Light energy",
+            "Nuclear energy",
+            "Sound energy",
+            "Potential energy"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Water behind the Kainji Dam turns a turbine. The first form of energy the water has is",
+          "options": [
+            "kinetic energy only",
+            "potential energy",
+            "heat energy",
+            "electrical energy"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A bulb takes 100 J of electrical energy and gives 10 J of light. What happens to the other 90 J?",
+          "options": [
+            "It is changed to heat",
+            "It is stored in the glass as light",
+            "It goes back to the NEPA line",
+            "It is destroyed"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Write the energy changes that take place in (a) a torch, (b) a solar panel, (c) a radio, (d) a person running to catch a danfo.",
+          "markScheme": [
+            "Torch: chemical to electrical to light (and heat)",
+            "Solar panel: light to electrical",
+            "Radio: electrical to sound",
+            "Runner: chemical (food) to kinetic and heat"
+          ],
+          "modelAnswer": "(a) Chemical energy in the battery changes to electrical energy, then to light (and some heat). (b) Light energy changes to electrical energy. (c) Electrical energy changes to sound energy. (d) The chemical energy from food changes to kinetic energy and heat.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) chemical → electrical → light and heat (b) light → electrical (c) electrical → sound (d) chemical → kinetic and heat",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "chemical → electrical → light and heat"
+                },
+                {
+                  "point": 1,
+                  "quote": "light → electrical"
+                },
+                {
+                  "point": 2,
+                  "quote": "electrical → sound"
+                },
+                {
+                  "point": 3,
+                  "quote": "chemical → kinetic and heat"
+                }
+              ],
+              "feedback": "All four chains are correct and include the heat that is given out as well."
+            },
+            {
+              "tier": "full",
+              "text": "The battery in the torch has chemical energy which changes to electrical energy and then light. A solar panel changes sunlight to electricity. A radio changes electricity to sound. The runner changes the chemical energy from the food he ate to movement energy and heat.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "chemical energy which changes to electrical energy and then light"
+                },
+                {
+                  "point": 1,
+                  "quote": "changes sunlight to electricity"
+                },
+                {
+                  "point": 2,
+                  "quote": "changes electricity to sound"
+                },
+                {
+                  "point": 3,
+                  "quote": "chemical energy from the food he ate to movement energy and heat"
+                }
+              ],
+              "feedback": "Correct. 'Movement energy' is a good plain way of saying kinetic energy."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) battery to light (b) light to electrical (c) electrical to sound (d) food to moving",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "light to electrical"
+                },
+                {
+                  "point": 2,
+                  "quote": "electrical to sound"
+                }
+              ],
+              "feedback": "Two are right. For the torch say what form the battery energy is (chemical) and that it passes through electrical energy. For the runner, name the forms: chemical to kinetic and heat."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) chemical to electrical to light (b) heat to electrical (c) sound to electrical (d) chemical to kinetic",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "chemical to electrical to light"
+                },
+                {
+                  "point": 3,
+                  "quote": "chemical to kinetic"
+                }
+              ],
+              "feedback": "The torch and the runner are good. A solar panel uses light from the sun, and a radio produces sound from electricity: look at which way the change goes."
+            },
+            {
+              "tier": "weak",
+              "text": "They all change to energy.",
+              "meets": [],
+              "feedback": "Energy changes from one form to another, so name both forms, such as chemical to electrical in a battery."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) light to battery (b) battery to sun (c) wire to radio (d) the person to energy",
+              "meets": [],
+              "feedback": "Each answer needs forms of energy on each side of the arrow, such as electrical or light. Think about which form goes in and which form comes out of each one."
+            }
+          ]
+        },
+        {
+          "prompt": "Kainji Dam on the River Niger produces electricity. (a) Describe the energy changes from the water in the lake to the electricity that reaches a house. (b) Is water a renewable or non-renewable source? Give a reason. (c) Give one reason why a village far from the national grid might use solar panels, and name the energy change in the panel.",
+          "markScheme": [
+            "Water high up has potential energy and gains kinetic energy as it falls",
+            "The moving water turns a turbine which drives a generator that gives electrical energy",
+            "Water is renewable because rain refills the lake (it is not used up)",
+            "Solar panels give electricity without a grid or fuel; light changes to electrical"
+          ],
+          "modelAnswer": "(a) Water held high up has potential energy. When it falls it gains kinetic energy and turns a turbine, which drives a generator that gives electrical energy. (b) Water is renewable because the rain refills the lake, so it is not used up. (c) A village far from the grid can use solar panels because they need no fuel or cables, only sunlight, and the panel changes light energy to electrical energy.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The water in the dam has potential energy, and when it falls it has kinetic energy. This moves the turbine, the generator makes electrical energy and it goes to the houses by wires. (b) Renewable because the rain fills the river again and the water is not finished. (c) The village is far from the wires so it uses solar panels, which need only the sun, and the panel changes light to electricity.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The water in the dam has potential energy, and when it falls it has kinetic energy"
+                },
+                {
+                  "point": 1,
+                  "quote": "This moves the turbine, the generator makes electrical energy"
+                },
+                {
+                  "point": 2,
+                  "quote": "Renewable because the rain fills the river again and the water is not finished"
+                },
+                {
+                  "point": 3,
+                  "quote": "the panel changes light to electricity"
+                }
+              ],
+              "feedback": "A thorough answer. Your chain from potential to kinetic to electrical is exactly right."
+            },
+            {
+              "tier": "full",
+              "text": "The water is high so it has stored (potential) energy. As it falls it is moving so it has kinetic energy. It turns the turbine and the generator changes the movement into electricity. Water is a renewable source since the rain keeps filling the river. A village far from the grid can use a solar panel because there is no fuel to buy, and the panel turns light energy into electrical energy.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "it has stored (potential) energy. As it falls it is moving so it has kinetic energy"
+                },
+                {
+                  "point": 1,
+                  "quote": "It turns the turbine and the generator changes the movement into electricity"
+                },
+                {
+                  "point": 2,
+                  "quote": "Water is a renewable source since the rain keeps filling the river"
+                },
+                {
+                  "point": 3,
+                  "quote": "the panel turns light energy into electrical energy"
+                }
+              ],
+              "feedback": "All four marks. You explained each change in your own words."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Potential energy changes to kinetic energy and then to electrical energy. (b) Renewable. (c) Solar panels are cheap.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Potential energy changes to kinetic energy"
+                },
+                {
+                  "point": 2,
+                  "quote": "Renewable"
+                }
+              ],
+              "feedback": "The energy chain is good, though you should say that the moving water turns a turbine and a generator. Give a reason for renewable: the rain refills the lake. For (c), say light changes to electrical energy."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The water falls and turns the turbine to make electricity. (b) Water is renewable because it rains. (c) Solar panel changes light to electrical energy because the village has no light.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "turns the turbine to make electricity"
+                },
+                {
+                  "point": 2,
+                  "quote": "Water is renewable because it rains"
+                },
+                {
+                  "point": 3,
+                  "quote": "Solar panel changes light to electrical energy"
+                }
+              ],
+              "feedback": "Good. In (a) name the energy forms: the water has potential energy at the top and kinetic energy as it falls. In (c) the village has no grid, not no light, so solar power suits it."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The water changes to electricity. (b) Non-renewable because water finishes. (c) The sun is hot.",
+              "meets": [],
+              "feedback": "Water does not turn into electricity: its energy does, through a turbine and generator. Rain refills the lake, so water is renewable. A solar panel changes light to electrical energy."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The electricity goes up the wire. (b) Renewable. (c) Solar panels are heavy.",
+              "meets": [],
+              "feedback": "Describe where the energy starts: the high water has potential energy, which becomes kinetic and then electrical. Give a reason for renewable, such as the rain refilling the lake. Name the energy change in a solar panel."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "How heat travels",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe conduction, convection and radiation;\n2. name the method of heat transfer in everyday situations;\n3. explain how a vacuum flask and light-coloured clothes reduce heat transfer.\n\n## Materials\n\nA metal spoon and a wooden spoon, hot water, a candle with wax and pins, a beaker with potassium permanganate crystal, a heat source, a lamp, a black and a white tin with thermometers, a vacuum flask.\n\n## Starter (5 minutes)\n\nAsk: why do we stir soup with a wooden spoon and not a metal one? Collect ideas about the spoon handle getting hot and lead into conduction.\n\n## Development\n\n1. Conduction: heat passes through a solid from particle to particle without the material moving. Metals are good conductors; wood, plastic and air are poor conductors (insulators). Fix pins with wax along a metal rod and heat one end; the pins drop in order.\n2. Convection: in liquids and gases, hotter parts expand, become less dense and rise, while cooler, denser parts sink, making a current. Drop a crystal of potassium permanganate in water and heat below it to see the current.\n3. Radiation: heat travels as waves and needs no material; it crosses empty space, as the sun's heat reaches the earth. Dark, dull surfaces absorb and give out more radiation; shiny, light surfaces reflect it.\n4. Compare black and white tins in the sun with thermometers inside, and record the temperature every 3 minutes.\n5. Vacuum flask: a vacuum between double glass walls stops conduction and convection; the silvered walls reflect radiation; the stopper stops heat leaving by convection through the top.\n6. Everyday examples: a pot with a plastic handle, a sea breeze, white-painted houses and light clothes in hot weather, warm air rising above a fire.\n\n## Class activity\n\nIn groups, learners label the method of heat transfer in ten pictures, and predict the results of the black and white tin test.\n\n## Evaluation\n\n1. Why do cooking pots have plastic handles?\n2. Why does smoke from a fire go upward?\n3. How does the heat of the sun reach the earth through space?\n\n## Assignment\n\nMake a list of five things at home that use heat transfer and say which method each uses. Submit on the app.",
+      "reading": {
+        "title": "How heat travels",
+        "content": "# How heat travels\n\nHeat always flows from a hot place to a cooler one. It can travel in three ways.\n\n## Conduction\n\nIn a solid, the particles vibrate. When one end of a metal rod is heated, those particles vibrate more and pass the energy to the particles next to them, and so on along the rod. The material itself does not move. This is **conduction**.\n\nMetals such as copper and iron are **good conductors**. Wood, plastic, cloth and air are **poor conductors** (insulators). That is why a cooking pot is made of metal but has a plastic or wooden handle.\n\n## Convection\n\nIn liquids and gases, heat travels by **convection**. When water at the bottom of a pot is heated, it expands, becomes less dense and rises. Cooler water, which is denser, sinks to take its place. A circle of moving water, a **convection current**, forms and spreads the heat.\n\nConvection explains why smoke goes up, why a sea breeze blows in the afternoon (warm air over the land rises and cool air from the sea moves in), and why an air conditioner is fixed high on the wall.\n\n## Radiation\n\nThe heat from the sun reaches us through space, where there is no air. It travels as waves, and this is **radiation**. Radiation needs no material to travel through.\n\nDark, dull surfaces **absorb** radiation well and also give it out well. Light, shiny surfaces **reflect** it. That is why people wear white or light clothes in hot weather, and why houses in hot towns like Kano are often painted white.\n\n## The vacuum flask\n\nA vacuum flask keeps tea hot for hours because it stops all three:\n\n- the **vacuum** between the double glass walls stops conduction and convection;\n- the walls are **silvered** to reflect radiation;\n- the **stopper** is a poor conductor and closes the top.\n\n## Worked example\n\nYou sit near a fire. The heat reaches your hands in three ways: by radiation across the air, by convection as warm air rises, and by conduction if you touch a hot metal poker. Which one do you feel most when standing to the side? Radiation, because hot air rises upward and not sideways."
+      },
+      "cards": [
+        {
+          "front": "Conduction",
+          "back": "Heat travelling through a solid from particle to particle."
+        },
+        {
+          "front": "Convection",
+          "back": "Heat travelling in liquids and gases by currents of hot, rising fluid."
+        },
+        {
+          "front": "Radiation",
+          "back": "Heat travelling as waves, which needs no material."
+        },
+        {
+          "front": "Good conductor",
+          "back": "A material that lets heat pass easily, such as metal."
+        },
+        {
+          "front": "Insulator",
+          "back": "A poor conductor of heat, such as wood or plastic."
+        },
+        {
+          "front": "Why dark surfaces get hot in the sun",
+          "back": "They absorb more radiation than light surfaces."
+        },
+        {
+          "front": "Which methods does a vacuum stop?",
+          "back": "Conduction and convection."
+        },
+        {
+          "front": "Convection current",
+          "back": "The circular movement of hot rising and cool sinking fluid."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The heat of the sun reaches the earth mainly by",
+          "options": [
+            "radiation",
+            "evaporation",
+            "conduction",
+            "convection"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A woman cooks rice in a pot with a plastic handle. The handle is plastic because plastic",
+          "options": [
+            "is lighter than metal",
+            "conducts heat very well",
+            "is a poor conductor of heat",
+            "reflects radiation"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Why does smoke rise from a fire?",
+          "options": [
+            "Cool air is pulled to the fire by conduction",
+            "Hot air is less dense and rises",
+            "Smoke is lighter than air",
+            "The fire pushes it up"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A trader chooses a white umbrella rather than a black one for her stall in the sun because white",
+          "options": [
+            "is a better conductor",
+            "produces convection currents",
+            "absorbs more heat",
+            "reflects more of the sun's radiation"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "In a vacuum flask, the vacuum between the glass walls reduces heat loss by",
+          "options": [
+            "reflecting light",
+            "radiation only",
+            "conduction and convection",
+            "evaporation"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State whether heat travels mainly by conduction, convection or radiation in each situation: (a) a metal spoon left in a hot pot of soup gets hot at the handle, (b) the sun warms a person's face, (c) warm air rises above a charcoal stove, (d) the iron base of a flat iron heats a shirt.",
+          "markScheme": [
+            "(a) conduction",
+            "(b) radiation",
+            "(c) convection",
+            "(d) conduction"
+          ],
+          "modelAnswer": "(a) Conduction, because heat passes along the solid metal. (b) Radiation, because the sun's heat travels through space. (c) Convection, because warm air rises in a current. (d) Conduction, because the hot iron touches the cloth.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) conduction (b) radiation (c) convection (d) conduction because the iron touches the cloth",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) conduction"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) radiation"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) convection"
+                },
+                {
+                  "point": 3,
+                  "quote": "(d) conduction because the iron touches the cloth"
+                }
+              ],
+              "feedback": "All four are right. Your reason for (d), contact between the iron and the cloth, is the key idea."
+            },
+            {
+              "tier": "full",
+              "text": "The spoon is conduction since heat goes through the solid metal. The sun is radiation because it comes through space. Warm air going up is convection. The flat iron is conduction.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The spoon is conduction since heat goes through the solid metal"
+                },
+                {
+                  "point": 1,
+                  "quote": "The sun is radiation because it comes through space"
+                },
+                {
+                  "point": 2,
+                  "quote": "Warm air going up is convection"
+                },
+                {
+                  "point": 3,
+                  "quote": "The flat iron is conduction"
+                }
+              ],
+              "feedback": "Correct, and each answer has its reason."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) conduction (b) radiation (c) radiation (d) convection",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) conduction"
+                },
+                {
+                  "point": 1,
+                  "quote": "(b) radiation"
+                }
+              ],
+              "feedback": "The spoon and the sun are right. Warm air rising is convection (a current in a gas), and the iron heats the shirt by touching it, which is conduction."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) conduction (b) convection (c) convection (d) conduction",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "(a) conduction"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) convection"
+                },
+                {
+                  "point": 3,
+                  "quote": "(d) conduction"
+                }
+              ],
+              "feedback": "Three are right. Heat from the sun comes through space where there is no air, so it cannot be conduction or convection: it is radiation."
+            },
+            {
+              "tier": "weak",
+              "text": "They are all radiation because heat is the same.",
+              "meets": [],
+              "feedback": "Heat can travel in three ways, and the method depends on the situation. Solids use conduction, liquids and gases use convection currents, and radiation travels as waves."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) convection (b) conduction (c) radiation (d) radiation",
+              "meets": [],
+              "feedback": "Check each case: the spoon is a solid, so conduction; the sun's heat comes through space, so radiation; rising warm air is convection; and the iron touches the shirt, which is conduction."
+            }
+          ]
+        },
+        {
+          "prompt": "Mama Ibrahim buys a vacuum flask to keep her pap hot for the market. (a) Explain how the vacuum between the double walls helps. (b) Why are the inside walls silvered? (c) Her daughter says a black plastic flask would keep the pap cooler on a sunny day than a white one. Is she right? Explain.",
+          "markScheme": [
+            "The vacuum stops conduction and convection because there are no particles",
+            "The silvered walls reflect heat radiation back",
+            "The stopper is a poor conductor / closed top prevents heat loss",
+            "A black flask absorbs more radiation, so it would warm more in the sun: the daughter is wrong, the white one reflects more"
+          ],
+          "modelAnswer": "(a) There are no particles in a vacuum, so heat cannot pass by conduction or convection. (b) The silver surface reflects heat radiation back into the pap and also reflects the sun's heat away. (c) She is wrong. A black surface absorbs more radiation, so a black flask would warm up more in the sun than a white one, which reflects the radiation.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A vacuum has no air or particles so heat cannot go by conduction or convection. (b) The silver reflects the heat radiation back so it stays in the pap. The stopper is a bad conductor so it stops heat going out of the top. (c) The daughter is wrong because black takes in more of the sun's heat, so the black flask would be warmer. A white one reflects it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A vacuum has no air or particles so heat cannot go by conduction or convection"
+                },
+                {
+                  "point": 1,
+                  "quote": "The silver reflects the heat radiation back so it stays in the pap"
+                },
+                {
+                  "point": 2,
+                  "quote": "The stopper is a bad conductor so it stops heat going out of the top"
+                },
+                {
+                  "point": 3,
+                  "quote": "black takes in more of the sun's heat, so the black flask would be warmer"
+                }
+              ],
+              "feedback": "All four points. Adding the stopper shows you looked at the whole flask."
+            },
+            {
+              "tier": "full",
+              "text": "The vacuum is a space without air, so conduction and convection cannot take place across it. The shiny silver walls reflect radiation back into the drink. The stopper does not let heat leave since it is an insulator. The daughter is not right: dark colours absorb more radiation, so the black flask would heat up in the sun.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "conduction and convection cannot take place across it"
+                },
+                {
+                  "point": 1,
+                  "quote": "The shiny silver walls reflect radiation back into the drink"
+                },
+                {
+                  "point": 2,
+                  "quote": "The stopper does not let heat leave since it is an insulator"
+                },
+                {
+                  "point": 3,
+                  "quote": "dark colours absorb more radiation, so the black flask would heat up in the sun"
+                }
+              ],
+              "feedback": "A complete answer. You applied the idea about dark colours to a new problem."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The vacuum stops conduction and convection. (b) The silver reflects the heat. (c) She is right.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The vacuum stops conduction and convection"
+                },
+                {
+                  "point": 1,
+                  "quote": "The silver reflects the heat"
+                }
+              ],
+              "feedback": "Parts (a) and (b) are right; say why the vacuum works (no particles to pass the heat). In (c), black surfaces absorb more of the sun's radiation, so the white flask would stay cooler."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) There is no air in a vacuum so heat cannot travel. (b) Silver is shiny. (c) White is better because it reflects the sun.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "There is no air in a vacuum so heat cannot travel"
+                },
+                {
+                  "point": 3,
+                  "quote": "White is better because it reflects the sun"
+                }
+              ],
+              "feedback": "The vacuum and the white flask are well reasoned. In (b), shiny silver walls reflect the heat radiation back into the pap. Say that, not just that silver is shiny."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The vacuum keeps the pap cold. (b) For decoration. (c) The black flask is cooler.",
+              "meets": [],
+              "feedback": "The flask keeps heat in, so it stops conduction and convection with the vacuum. The silvering reflects radiation. A black surface absorbs more heat, so it would be hotter, not cooler."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is a vacuum cleaner. (b) So the flask is clean. (c) She is right because black is dark.",
+              "meets": [],
+              "feedback": "A vacuum in a flask is just empty space between the walls. Without particles, heat cannot be conducted or carried by convection. Dark surfaces absorb more heat, so the daughter is wrong."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Sound: how it is made and how it travels",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain that sound comes from vibrating objects;\n2. say that sound needs a material to travel and compare its speed in solids, liquids and gases;\n3. calculate distance from the speed of sound and the time taken;\n4. describe echoes, pitch, loudness and noise dangers.\n\n## Materials\n\nA ruler, a talking drum or tuning fork, a rubber band, a bell jar if available (or a diagram), a loudspeaker, a stopwatch, a tape measure, a chart of the decibel scale.\n\n## Starter (5 minutes)\n\nHold a ruler on a desk and twang it. Ask what the learners can see and hear. Place a hand on the throat while humming. Tell them that sound always comes from something vibrating.\n\n## Development\n\n1. Sound is produced by vibrating objects, such as a drum skin, a guitar string, the air in a flute, or the vocal cords.\n2. Sound travels as waves through a medium (solid, liquid or gas) and cannot travel through a vacuum. Show the diagram of a bell ringing in a bell jar with the air removed.\n3. Speed of sound: about 340 m/s in air, 1,500 m/s in water and over 5,000 m/s in steel. It travels fastest in solids.\n4. Calculation: distance = speed × time. Thunder is heard 3 s after lightning, so the storm is 340 × 3 = 1,020 m away. Echo: sound travels to a wall and back, so the wall is half the total distance.\n5. Pitch is how high or low a sound is (faster vibration gives higher pitch); loudness depends on the size of the vibration, measured in decibels (dB).\n6. Uses: music, communication, sonar for finding fish, ultrasound scans for babies in the womb. Dangers: noise from loud generators and loudspeakers can damage hearing; above about 85 dB for long periods is harmful. Ways to reduce it: ear protection, distance, quieter machines.\n\n## Class activity\n\nLearners take the class outdoors to measure the time for an echo off a school wall and calculate how far away the wall is.\n\n## Evaluation\n\n1. What must be present for sound to travel?\n2. A drum is heard 2 s after it is seen being hit. How far away is it? (Take the speed of sound as 340 m/s.)\n3. Name two ways to protect your hearing from loud noise.\n\n## Assignment\n\nFind out from a relative which noises in your area (generator, loudspeaker, market) are loud, and suggest two ways to reduce them. Submit on the app.",
+      "reading": {
+        "title": "Sound and its journey",
+        "content": "# Sound and its journey\n\n## Making sound\n\nEvery sound is made by something that **vibrates**, which means it moves quickly backwards and forwards. A drum makes sound when the skin vibrates. A guitar gives sound when its strings vibrate. When you speak, your vocal cords vibrate.\n\n## How sound travels\n\nThe vibrating object pushes on the air next to it, and this movement passes from particle to particle, as a wave, until it reaches your ear. Sound needs a **medium** (a solid, liquid or gas) to travel through. In a vacuum, where there are no particles, there is no sound. That is why astronauts talk by radio in space.\n\nSound travels faster when the particles are closer together.\n\n| Medium | Speed of sound |\n| --- | --- |\n| Air | about 340 m/s |\n| Water | about 1,500 m/s |\n| Steel | over 5,000 m/s |\n\n## Calculating distance\n\nDistance = speed × time\n\n**Worked example 1.** You hear thunder 3 seconds after the lightning flash. How far away was the lightning? Distance = 340 × 3 = 1,020 m.\n\n**Worked example 2 (echo).** A boy shouts in front of a cliff and hears the echo 2 seconds later. The sound goes to the cliff and back, so the total distance is 340 × 2 = 680 m. The cliff is half of this: 680 ÷ 2 = 340 m away.\n\nAn **echo** is sound that has bounced off a hard surface.\n\n## Pitch and loudness\n\n- **Pitch** is how high or low a note sounds. A fast vibration gives a high pitch, as in a whistle; a slow vibration gives a low pitch, as in a big bass drum.\n- **Loudness** depends on how big the vibration is. It is measured in **decibels (dB)**. A whisper is about 30 dB, a conversation about 60 dB and a loud generator or loudspeaker 90 dB or more.\n\n## Uses and dangers\n\nSound is used for music, speech and warning signals. Ships use sonar to find fish, and doctors use ultrasound to look at a baby in the womb.\n\nLong exposure to loud sounds, such as a generator beside the house or a loudspeaker at a party, can damage hearing for life. We can protect ourselves by keeping away from loud noises, using ear protection and keeping the volume low."
+      },
+      "cards": [
+        {
+          "front": "Vibration",
+          "back": "A quick back-and-forth movement; it is the source of sound."
+        },
+        {
+          "front": "Medium",
+          "back": "The solid, liquid or gas that sound travels through."
+        },
+        {
+          "front": "Speed of sound in air",
+          "back": "About 340 m/s."
+        },
+        {
+          "front": "Distance formula",
+          "back": "Distance = speed × time"
+        },
+        {
+          "front": "Echo",
+          "back": "Sound reflected from a hard surface."
+        },
+        {
+          "front": "Pitch",
+          "back": "How high or low a sound is; depends on the speed of vibration."
+        },
+        {
+          "front": "Decibel (dB)",
+          "back": "The unit used to measure loudness."
+        },
+        {
+          "front": "Does sound travel in a vacuum?",
+          "back": "No; it needs particles."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Sound is produced by",
+          "options": [
+            "a vacuum",
+            "static electricity",
+            "light",
+            "vibrating objects"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "In which medium does sound travel fastest?",
+          "options": [
+            "Water",
+            "Steel",
+            "A vacuum",
+            "Air"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A man sees a lightning flash and hears the thunder 4 s later. If the speed of sound is 340 m/s, how far is the lightning?",
+          "options": [
+            "1,360 m",
+            "13,600 m",
+            "85 m",
+            "344 m"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A drummer plays a louder note by hitting the drum harder. This increases the",
+          "options": [
+            "echo",
+            "pitch",
+            "loudness",
+            "speed of sound"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is the best way to protect hearing at a loud outdoor party?",
+          "options": [
+            "Stand next to the loudspeaker",
+            "Keep a distance or use ear protection",
+            "Shout louder",
+            "Switch off the lights"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Explain how the sound from a talking drum reaches the ear of a person standing across the compound. Include what is vibrating, what carries the sound, and what would happen if there were no air.",
+          "markScheme": [
+            "The drum skin vibrates when hit",
+            "The vibrations pass through the air from particle to particle as a wave",
+            "The wave reaches the ear and is heard",
+            "Without air (in a vacuum) the sound cannot travel because there are no particles"
+          ],
+          "modelAnswer": "When the drum is hit, its skin vibrates. The vibration passes from one air particle to the next as a sound wave, until it reaches the person's ear. If there were no air, as in a vacuum, there would be no particles to carry the vibration, so no sound would be heard.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "When the drummer hits the drum the skin vibrates. The vibrations push on the air and move from particle to particle as a wave across the compound until it reaches the ear and the person hears. If there was no air, the sound would not go because there would be nothing to carry it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the skin vibrates"
+                },
+                {
+                  "point": 1,
+                  "quote": "move from particle to particle as a wave across the compound"
+                },
+                {
+                  "point": 2,
+                  "quote": "until it reaches the ear and the person hears"
+                },
+                {
+                  "point": 3,
+                  "quote": "If there was no air, the sound would not go because there would be nothing to carry it"
+                }
+              ],
+              "feedback": "A complete chain from the skin to the ear. Your last sentence gives the reason sound needs a medium."
+            },
+            {
+              "tier": "full",
+              "text": "The drum skin shakes backwards and forwards when it is struck. The air particles next to it shake and pass the vibration on to the next ones, like a wave, to the person. The ear picks it up. Sound cannot travel in a vacuum because it has no particles.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The drum skin shakes backwards and forwards when it is struck"
+                },
+                {
+                  "point": 1,
+                  "quote": "pass the vibration on to the next ones, like a wave, to the person"
+                },
+                {
+                  "point": 2,
+                  "quote": "The ear picks it up"
+                },
+                {
+                  "point": 3,
+                  "quote": "Sound cannot travel in a vacuum because it has no particles"
+                }
+              ],
+              "feedback": "Four points, in your own words."
+            },
+            {
+              "tier": "partial",
+              "text": "The drum vibrates and the sound goes through the air to the ear. In space there is no sound.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The drum vibrates"
+                },
+                {
+                  "point": 2,
+                  "quote": "the sound goes through the air to the ear"
+                }
+              ],
+              "feedback": "You have the start and end. Explain how the sound goes through the air (the vibration is passed from particle to particle), and why there is no sound in space: there are no particles to carry it."
+            },
+            {
+              "tier": "partial",
+              "text": "The vibrating skin pushes the air and the air carries the vibration as a wave. Without air the drum will not vibrate.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The vibrating skin pushes the air"
+                },
+                {
+                  "point": 1,
+                  "quote": "the air carries the vibration as a wave"
+                }
+              ],
+              "feedback": "Good start. Without air the drum still vibrates; what is missing is anything to carry the sound to the ear. Say that sound cannot travel in a vacuum."
+            },
+            {
+              "tier": "weak",
+              "text": "The drum makes a sound and the sound flies in the air to the ear.",
+              "meets": [],
+              "feedback": "Say what the drum does to make the sound: its skin vibrates. Sound does not fly; the vibration is passed from air particle to air particle."
+            },
+            {
+              "tier": "weak",
+              "text": "Sound moves by light because we see the drum before we hear it.",
+              "meets": [],
+              "feedback": "Sound and light are different. Sound is carried by the vibration of air particles, which is slower than light, so we hear the drum after we see it."
+            }
+          ]
+        },
+        {
+          "prompt": "A boy stands 510 m from a tall wall on the school compound and claps. (a) Taking the speed of sound as 340 m/s, how long after the clap does he hear the echo? Show your working. (b) Explain why the echo is heard later than the clap. (c) A generator beside a house gives 95 dB of noise every night. Give one danger and one way to reduce the problem.",
+          "markScheme": [
+            "The sound travels to the wall and back: 510 × 2 = 1,020 m",
+            "Time = distance ÷ speed = 1,020 ÷ 340 = 3 s",
+            "Explains that the sound has to travel to the wall and back before it is heard again",
+            "States a danger (hearing damage) and a way to reduce it (distance, ear protection, quieter machine)"
+          ],
+          "modelAnswer": "(a) The sound goes to the wall and back, a total of 2 × 510 = 1,020 m. Time = 1,020 ÷ 340 = 3 seconds. (b) The echo is heard later because the sound has to travel to the wall and back before it reaches him. (c) Loud noise can damage hearing. It can be reduced by putting the generator farther from the house, in a sound-proof shed, or by using ear protection.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The sound goes to the wall and comes back so the distance is 510 × 2 = 1,020 m. Time = distance ÷ speed = 1,020 ÷ 340 = 3 seconds. (b) The sound must travel to the wall and back before he hears it again. (c) The loud noise can damage hearing, so put the generator far away from the house.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "510 × 2 = 1,020 m"
+                },
+                {
+                  "point": 1,
+                  "quote": "Time = distance ÷ speed = 1,020 ÷ 340 = 3 seconds"
+                },
+                {
+                  "point": 2,
+                  "quote": "The sound must travel to the wall and back before he hears it again"
+                },
+                {
+                  "point": 3,
+                  "quote": "The loud noise can damage hearing, so put the generator far away from the house"
+                }
+              ],
+              "feedback": "All correct. Doubling the distance for the return journey is the step most learners miss."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Total distance is 510 + 510 = 1,020 m. The time is 1,020 ÷ 340 = 3 s. (b) The sound has a long way to go, to the wall and back, so the echo comes after some time. (c) The danger is that the noise may make a person deaf, and one way is to wear ear plugs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total distance is 510 + 510 = 1,020 m"
+                },
+                {
+                  "point": 1,
+                  "quote": "The time is 1,020 ÷ 340 = 3 s"
+                },
+                {
+                  "point": 2,
+                  "quote": "The sound has a long way to go, to the wall and back"
+                },
+                {
+                  "point": 3,
+                  "quote": "the noise may make a person deaf, and one way is to wear ear plugs"
+                }
+              ],
+              "feedback": "Full marks with a clear method."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 510 ÷ 340 = 1.5 seconds. (b) The sound goes to the wall and comes back. (c) It can damage the ears. Keep it far away.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The sound goes to the wall and comes back"
+                },
+                {
+                  "point": 3,
+                  "quote": "It can damage the ears. Keep it far away"
+                }
+              ],
+              "feedback": "Your explanation is correct, but in (a) you used only one way. Since the sound goes there and back, the distance is 1,020 m and the time is 1,020 ÷ 340 = 3 s."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 1,020 ÷ 340 = 3 s. (b) Because sound is slow. (c) Noise is bad for the ears.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "1,020 ÷ 340 = 3 s"
+                }
+              ],
+              "feedback": "The 3 seconds is right, but show where 1,020 comes from: 510 twice for the journey to the wall and back. In (b), give the reason, and in (c) name a way to reduce the noise."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 510 × 340 = 173,400 s. (b) Because the wall is far. (c) The generator is bad.",
+              "meets": [],
+              "feedback": "To find time you divide the distance by the speed, not multiply. Use 1,020 m for the double journey: 1,020 ÷ 340 = 3 s."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 340 ÷ 510 = 0.67 s. (b) The echo is slow. (c) Noise is nice.",
+              "meets": [],
+              "feedback": "Time = distance ÷ speed, so put the distance on top. The sound travels to the wall and back, 1,020 m, taking 3 s. Loud noise damages hearing; it is not nice."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Reflection, refraction, lenses and mirrors",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the law of reflection and use it to find angles;\n2. describe the image formed by a plane mirror;\n3. explain refraction with everyday examples;\n4. name uses of convex and concave lenses and mirrors.\n\n## Materials\n\nA plane mirror, a protractor, a ray box or torch with a slit, a glass of water with a pencil, a convex lens (magnifying glass), a concave and a convex mirror (or a shiny spoon), paper.\n\n## Starter (5 minutes)\n\nPut a pencil in a glass of water and ask learners to look from the side. Ask: why does the pencil look bent? Record their ideas and say that light changes direction when it moves between substances.\n\n## Development\n\n1. Reflection: light bounces off a smooth surface. The normal is an imaginary line at 90° to the surface. The law: the angle of incidence equals the angle of reflection, both measured from the normal.\n2. Work: if a ray makes an angle of incidence of 35°, the angle of reflection is 35° and the angle between the incident and reflected rays is 70°. If the ray makes 20° with the surface, the angle of incidence is 90 − 20 = 70°.\n3. A plane mirror image is the same size as the object, the same distance behind the mirror as the object is in front, and laterally inverted (left and right swapped).\n4. Refraction: light bends when it passes from one transparent material into another because its speed changes. It bends towards the normal when it enters water or glass from air. This makes a pool look shallower than it is and a straw look bent.\n5. Lenses: a convex lens is thicker in the middle and brings rays together (magnifying glass, camera, projector, eye). A concave lens is thinner in the middle and spreads rays out (used for short-sighted eyes).\n6. Curved mirrors: concave mirrors collect light (torch and car headlamp reflectors, shaving mirrors); convex mirrors give a wide view (driving mirrors, shop security mirrors).\n\n## Class activity\n\nLearners draw ray diagrams for a plane mirror, a glass of water and a convex lens with a magnifying glass, and measure angles with a protractor.\n\n## Evaluation\n\n1. A ray hits a mirror at an angle of incidence of 40°. What is the angle of reflection?\n2. Why does a river look shallower than it is?\n3. Which kind of lens is a magnifying glass?\n\n## Assignment\n\nObserve your image in a spoon, the front and the back, and write what you see. Explain what kind of mirror each side is.",
+      "reading": {
+        "title": "Bouncing and bending light",
+        "content": "# Bouncing and bending light\n\n## Reflection\n\nWhen light hits a smooth, shiny surface such as a mirror, it bounces off. This is **reflection**. Scientists measure angles from the **normal**, an imaginary line drawn at 90° to the surface.\n\n**The law of reflection:** the angle of incidence is equal to the angle of reflection.\n\n**Worked example 1.** A ray of light hits a plane mirror and makes an angle of incidence of 35°. The angle of reflection is also 35°, so the angle between the incident ray and the reflected ray is 35° + 35° = 70°.\n\n**Worked example 2.** A ray makes 20° with the surface of the mirror. The normal is 90° from the surface, so the angle of incidence is 90° − 20° = 70°, and so the angle of reflection is 70°.\n\n### The image in a plane mirror\n\nThe image you see in a flat mirror is the same size as you, as far behind the mirror as you stand in front, and the left and right are swapped (this is called lateral inversion).\n\n## Refraction\n\nWhen light passes from one transparent material into another, it changes speed and **bends**. This is **refraction**.\n\n- When light goes from air into water or glass, it bends **towards** the normal.\n- Because of this a pencil in a glass of water looks bent, and a river looks shallower than it really is.\n\n## Lenses\n\nA **convex lens** is thicker in the middle. It brings rays of light together. Magnifying glasses, cameras, projectors and the lens in your eye are convex.\n\nA **concave lens** is thinner in the middle and spreads light out. It is used in spectacles for short-sighted people.\n\n## Curved mirrors\n\n- A **concave mirror** gathers light. It is used behind a torch bulb or a car headlamp to give a strong beam, and as a shaving mirror to give a large image.\n- A **convex mirror** curves outwards and shows a wide area. It is used as a driving mirror and in shops so that the owner can see all corners."
+      },
+      "cards": [
+        {
+          "front": "Normal",
+          "back": "An imaginary line at 90° to a surface, from which angles are measured."
+        },
+        {
+          "front": "Law of reflection",
+          "back": "The angle of incidence equals the angle of reflection."
+        },
+        {
+          "front": "Lateral inversion",
+          "back": "Left and right swapped in a mirror image."
+        },
+        {
+          "front": "Refraction",
+          "back": "The bending of light when it passes from one transparent material to another."
+        },
+        {
+          "front": "Convex lens",
+          "back": "A lens thicker in the middle that brings light rays together."
+        },
+        {
+          "front": "Concave lens",
+          "back": "A lens thinner in the middle that spreads light rays out."
+        },
+        {
+          "front": "Use of a convex mirror",
+          "back": "Driving mirror and shop security mirror; gives a wide view."
+        },
+        {
+          "front": "Use of a concave mirror",
+          "back": "Torch and headlamp reflector; shaving mirror."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A ray of light hits a plane mirror with an angle of incidence of 25°. What is the angle of reflection?",
+          "options": [
+            "65°",
+            "50°",
+            "25°",
+            "90°"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A ray of light makes an angle of 30° with the surface of a plane mirror. What is the angle of incidence?",
+          "options": [
+            "60°",
+            "90°",
+            "120°",
+            "30°"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A coin at the bottom of a bucket of water looks nearer to the surface than it really is. This is because of",
+          "options": [
+            "dispersion",
+            "absorption",
+            "reflection",
+            "refraction"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which instrument uses a convex lens?",
+          "options": [
+            "A driving mirror",
+            "A magnifying glass",
+            "A shop security mirror",
+            "Spectacles for the short-sighted"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Why is a convex mirror fixed to the side of a truck?",
+          "options": [
+            "It gives a wide view of the road behind",
+            "It makes objects bigger",
+            "It collects the sun's light",
+            "It turns the image upside down"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A ray of light hits a plane mirror and makes an angle of 20° with the surface of the mirror. (a) Draw or describe the normal. (b) Find the angle of incidence. (c) Find the angle of reflection. (d) Find the angle between the incident ray and the reflected ray.",
+          "markScheme": [
+            "Normal is a line at 90° to the mirror surface",
+            "Angle of incidence = 90° − 20° = 70°",
+            "Angle of reflection = 70° (law of reflection)",
+            "Angle between the rays = 70° + 70° = 140°"
+          ],
+          "modelAnswer": "(a) The normal is a line drawn at 90° to the surface of the mirror, where the ray hits it. (b) The angle of incidence is measured from the normal: 90° − 20° = 70°. (c) By the law of reflection the angle of reflection is also 70°. (d) The angle between the rays is 70° + 70° = 140°.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The normal is a line at 90 degrees to the mirror at the point the ray hits. (b) Angle of incidence = 90 − 20 = 70°. (c) The angle of reflection is equal to the angle of incidence, so 70°. (d) 70° + 70° = 140°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The normal is a line at 90 degrees to the mirror at the point the ray hits"
+                },
+                {
+                  "point": 1,
+                  "quote": "Angle of incidence = 90 − 20 = 70°"
+                },
+                {
+                  "point": 2,
+                  "quote": "so 70°"
+                },
+                {
+                  "point": 3,
+                  "quote": "70° + 70° = 140°"
+                }
+              ],
+              "feedback": "All four answers are right and you remembered to measure from the normal."
+            },
+            {
+              "tier": "full",
+              "text": "The normal is perpendicular to the mirror. The ray is 20° from the mirror so it is 70° from the normal, that is the angle of incidence. Reflected angle is the same, 70°. The two together make 140° between the incident ray and reflected ray.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The normal is perpendicular to the mirror"
+                },
+                {
+                  "point": 1,
+                  "quote": "it is 70° from the normal, that is the angle of incidence"
+                },
+                {
+                  "point": 2,
+                  "quote": "Reflected angle is the same, 70°"
+                },
+                {
+                  "point": 3,
+                  "quote": "make 140° between the incident ray and reflected ray"
+                }
+              ],
+              "feedback": "Correct. 'Perpendicular' is a good word for 'at 90°'."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A line at 90° to the mirror. (b) 20°. (c) 20°. (d) 40°.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A line at 90° to the mirror"
+                }
+              ],
+              "feedback": "The normal is right. But the 20° is measured from the surface of the mirror, not from the normal. The angle of incidence is 90° − 20° = 70°, then the reflection is 70° and the angle between the rays is 140°."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) 70° (c) 70° (d) 70°",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "(b) 70°"
+                },
+                {
+                  "point": 2,
+                  "quote": "(c) 70°"
+                }
+              ],
+              "feedback": "Your angles of incidence and reflection are right. The angle between the two rays is both added: 70° + 70° = 140°. You also need to describe the normal in (a).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) It is the mirror. (b) 20° (c) 160° (d) 180°",
+              "meets": [],
+              "feedback": "The normal is a line at 90° to the mirror, not the mirror itself. The 20° is from the surface, so the angle of incidence is 70°, and the reflected angle is the same."
+            },
+            {
+              "tier": "weak",
+              "text": "The light goes through the mirror so all the angles are zero.",
+              "meets": [],
+              "feedback": "A mirror reflects light; it does not let it through. Use the law of reflection: the angle of incidence (70° here) equals the angle of reflection."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Explain why a swimming pool looks shallower than it really is when you look from the side. (b) State the difference between a convex lens and a concave lens. (c) Give one use of a convex mirror and say why it is suitable.",
+          "markScheme": [
+            "Light from the bottom bends (refracts) as it leaves the water into the air",
+            "The eye traces the rays back in straight lines, so the bottom seems nearer to the surface",
+            "Convex lens is thicker in the middle and brings rays together; concave is thinner in the middle and spreads them",
+            "A convex mirror is used as a driving or security mirror because it gives a wide view"
+          ],
+          "modelAnswer": "(a) Light from the bottom of the pool bends when it leaves the water and enters the air (refraction). Our eyes trace the rays back in straight lines, so the bottom seems to be nearer the surface. (b) A convex lens is thicker in the middle and brings rays together; a concave lens is thinner in the middle and spreads them out. (c) A convex mirror is used as a driving mirror, because it shows a wide area behind the vehicle.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The light from the bottom bends when it comes out of the water into the air, that is refraction. Our eyes think the light came straight, so the bottom looks nearer the top. (b) A convex lens is thick in the middle and joins the rays together while a concave lens is thin in the middle and spreads the rays. (c) A convex mirror is used on cars, because it shows a big area behind.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The light from the bottom bends when it comes out of the water into the air, that is refraction"
+                },
+                {
+                  "point": 1,
+                  "quote": "Our eyes think the light came straight, so the bottom looks nearer the top"
+                },
+                {
+                  "point": 2,
+                  "quote": "A convex lens is thick in the middle and joins the rays together while a concave lens is thin in the middle and spreads the rays"
+                },
+                {
+                  "point": 3,
+                  "quote": "A convex mirror is used on cars, because it shows a big area behind"
+                }
+              ],
+              "feedback": "All four points. You explained the trick our eyes play, which is the heart of the answer."
+            },
+            {
+              "tier": "full",
+              "text": "The water bends the light as it goes out to the air, this is refraction. The eye follows the rays back straight and so the pool appears less deep. A convex lens is thicker in the middle and converges light, a concave lens is thinner in the middle and diverges light. A convex mirror is used in shops so the owner can see all the corners; it gives a wide view.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The water bends the light as it goes out to the air, this is refraction"
+                },
+                {
+                  "point": 1,
+                  "quote": "The eye follows the rays back straight and so the pool appears less deep"
+                },
+                {
+                  "point": 2,
+                  "quote": "A convex lens is thicker in the middle and converges light, a concave lens is thinner in the middle and diverges light"
+                },
+                {
+                  "point": 3,
+                  "quote": "A convex mirror is used in shops so the owner can see all the corners; it gives a wide view"
+                }
+              ],
+              "feedback": "Complete, and you used the words converge and diverge correctly."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The water bends the light. (b) A convex lens is thicker in the middle and a concave lens is thinner in the middle. (c) A convex mirror is used on a car.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The water bends the light"
+                },
+                {
+                  "point": 2,
+                  "quote": "A convex lens is thicker in the middle and a concave lens is thinner in the middle"
+                }
+              ],
+              "feedback": "Good, but in (a) explain what happens next: the eye thinks the light travelled straight, so the bottom looks nearer. In (c), say why: it gives a wide view."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The pool looks shallow because of reflection. (b) Convex lens brings the rays together and concave spreads them out. (c) Driving mirror because it shows wide area.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Convex lens brings the rays together and concave spreads them out"
+                },
+                {
+                  "point": 3,
+                  "quote": "Driving mirror because it shows wide area"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are good. In (a) the effect is refraction, the bending of light as it leaves the water, not reflection."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Because the water is clean. (b) A convex lens is for glasses and concave is for cameras. (c) A convex mirror is for the face.",
+              "meets": [],
+              "feedback": "The depth effect is caused by light bending (refraction), not the cleanliness. Convex lenses are for cameras and magnifying glasses. A convex mirror is used where a wide view is needed, such as a driving mirror."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The light is reflected by the floor. (b) They are the same. (c) The convex mirror makes things bigger.",
+              "meets": [],
+              "feedback": "The bottom looks nearer because light bends as it leaves the water. The two lenses are different shapes and do different jobs. A convex mirror shows a wider area but makes things look smaller."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

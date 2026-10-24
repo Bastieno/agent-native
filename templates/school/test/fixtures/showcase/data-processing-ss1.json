@@ -1,0 +1,2640 @@
+{
+  "subject": "Data Processing",
+  "yearGroup": "SS1",
+  "weeks": {
+    "1": {
+      "topic": "History of computers: devices, number systems and generations",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name early computing devices and say what each did;\n2. convert between binary and decimal numbers;\n3. list the five generations of computers with their technology, speed and storage.\n\n## Materials\n\nAn abacus (or pictures), a chart of the five generations, number cards for binary conversion, a vacuum tube or transistor sample if the school has one.\n\n## Starter (5 minutes)\n\nAsk: how did a trader at Balogun market add up the day's sales fifty years ago? Take answers (fingers, pen and paper, abacus) and link them to early computing devices.\n\n## Development\n\n1. Early devices: the abacus, Napier's bones, the Pascaline, Leibniz's calculator, Babbage's Difference Engine and Analytical Engine, and Hollerith's punched card machine.\n2. The number system: computers use binary (base 2) because their circuits have two states, on and off. Show place values 8, 4, 2, 1. Work 1101 in binary = 8 + 4 + 0 + 1 = 13, and 25 in decimal: 16 + 8 + 1 = 11001.\n3. Generations: first (about 1940-56, vacuum tubes), second (1956-63, transistors), third (1964-71, integrated circuits), fourth (1971 onwards, microprocessors), fifth (present, artificial intelligence and very large scale integration).\n4. Compare them by speed of operation, storage and size.\n\n## Class activity\n\nGroups convert five binary numbers and match each generation to its technology on a chart.\n\n## Evaluation\n\n1. Convert 1011 to decimal.\n2. Which technology marked the second generation?\n\n## Assignment\n\nComplete the worksheet, problem set and quiz on the app.",
+      "reading": {
+        "title": "From the abacus to artificial intelligence",
+        "content": "# History of computers: devices, number systems and generations\n\n## Early computing devices\n\nPeople have always needed to count and calculate. The **abacus** (about 2,500 years ago) uses beads on rods. In 1642 Blaise Pascal made the **Pascaline**, a mechanical adding machine. In the 1830s Charles Babbage designed the **Analytical Engine**, which had the parts of a modern computer: a store, a processor and input and output. He is called the father of computing. In the 1880s Herman Hollerith used **punched cards** to process census data.\n\n## Number systems in computing\n\nWe count in the **decimal** system (base 10), using ten digits 0 to 9. A computer's circuits have two states, on and off, so it uses the **binary** system (base 2), with only the digits 0 and 1. Each binary place value is a power of 2: 8, 4, 2, 1 from the right.\n\n**Binary to decimal.** 1101 in binary = (1 x 8) + (1 x 4) + (0 x 2) + (1 x 1) = 8 + 4 + 0 + 1 = **13**.\n\n**Decimal to binary.** To write 25: 16 goes into 25 once (remainder 9), 8 once (remainder 1), 4 no, 2 no, 1 once. So 25 = 16 + 8 + 1 = **11001**.\n\n## Generations of computers\n\n| Generation | Period (approx.) | Technology | Features |\n| --- | --- | --- | --- |\n| First | 1940-56 | Vacuum tubes | Huge, hot, slow, used much power, little storage |\n| Second | 1956-63 | Transistors | Smaller, faster, more reliable |\n| Third | 1964-71 | Integrated circuits (IC) | Smaller still, cheaper, faster, more storage |\n| Fourth | 1971-present | Microprocessors | Personal computers and laptops, large storage |\n| Fifth | present | Very large scale integration, artificial intelligence | Very fast, can learn and understand speech |\n\nSpeed rose from thousands of operations per second in the first generation to billions in the fourth. Storage rose from a few kilobytes to many gigabytes.\n\nThe computers in a school ICT room today belong to the fourth generation."
+      },
+      "cards": [
+        {
+          "front": "Abacus",
+          "back": "An early counting device using beads on rods."
+        },
+        {
+          "front": "Babbage's Analytical Engine",
+          "back": "A mechanical design with a store, a processor, and input and output; the plan of a modern computer."
+        },
+        {
+          "front": "Binary system",
+          "back": "Base 2 number system using only 0 and 1."
+        },
+        {
+          "front": "Vacuum tube",
+          "back": "The technology of first generation computers."
+        },
+        {
+          "front": "Transistor",
+          "back": "The technology of second generation computers."
+        },
+        {
+          "front": "Integrated circuit",
+          "back": "Many transistors on one chip; third generation technology."
+        },
+        {
+          "front": "Microprocessor",
+          "back": "A whole processor on one chip; fourth generation technology."
+        },
+        {
+          "front": "Fifth generation",
+          "back": "Computers built on artificial intelligence and very large scale integration."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The binary number 1101 is equal to the decimal number",
+          "options": [
+            "13",
+            "11",
+            "15",
+            "9"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which technology marked the second generation of computers?",
+          "options": [
+            "Vacuum tubes",
+            "Microprocessors",
+            "Transistors",
+            "Integrated circuits"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The decimal number 25 in binary is",
+          "options": [
+            "10011",
+            "11100",
+            "11011",
+            "11001"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Who designed the Analytical Engine, the plan of a modern computer?",
+          "options": [
+            "Blaise Pascal",
+            "Charles Babbage",
+            "Herman Hollerith",
+            "Napier"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Computers use the binary system because",
+          "options": [
+            "it is the oldest system",
+            "their circuits have two states, on and off",
+            "the decimal system is not in use",
+            "it has more digits"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "(a) Convert the binary number 10110 to decimal. (b) Convert the decimal number 19 to binary. Show your working.",
+          "markScheme": [
+            "Writes the place values 16, 8, 4, 2, 1 against the digits",
+            "10110 = 16 + 4 + 2 = 22",
+            "For 19: 16 + 2 + 1, or repeated division, shown",
+            "19 = 10011 in binary"
+          ],
+          "modelAnswer": "(a) The place values are 16, 8, 4, 2, 1. 10110 = (1 x 16) + (0 x 8) + (1 x 4) + (1 x 2) + (0 x 1) = 16 + 4 + 2 = 22. (b) 19 = 16 + 2 + 1, so there is a 1 in the 16, 2 and 1 places and a 0 in the 8 and 4 places: 10011.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Place values are 16, 8, 4, 2, 1. 10110 = 16 + 0 + 4 + 2 + 0 = 22. (b) 19 = 16 + 2 + 1, so I put 1 in 16, 0 in 8, 0 in 4, 1 in 2 and 1 in 1. The answer is 10011.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Place values are 16, 8, 4, 2, 1"
+                },
+                {
+                  "point": 1,
+                  "quote": "10110 = 16 + 0 + 4 + 2 + 0 = 22"
+                },
+                {
+                  "point": 2,
+                  "quote": "19 = 16 + 2 + 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "The answer is 10011"
+                }
+              ],
+              "feedback": "All four marks. Writing the place values first makes both conversions easy to check."
+            },
+            {
+              "tier": "full",
+              "text": "I write 16 8 4 2 1 and put 1 0 1 1 0 under it, so I add 16 + 4 + 2 = 22. For 19 I divide by 2 and keep the remainders: 19/2 = 9 r 1, 9/2 = 4 r 1, 4/2 = 2 r 0, 2/2 = 1 r 0, 1/2 = 0 r 1. Reading the remainders upward gives 10011.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I write 16 8 4 2 1 and put 1 0 1 1 0 under it"
+                },
+                {
+                  "point": 1,
+                  "quote": "I add 16 + 4 + 2 = 22"
+                },
+                {
+                  "point": 2,
+                  "quote": "19/2 = 9 r 1, 9/2 = 4 r 1, 4/2 = 2 r 0, 2/2 = 1 r 0, 1/2 = 0 r 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "Reading the remainders upward gives 10011"
+                }
+              ],
+              "feedback": "Full marks. Repeated division is another correct method, and you read the remainders in the right order."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 10110 = 16 + 4 + 2 = 22. (b) 19 is 11001.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "10110 = 16 + 4 + 2 = 22"
+                }
+              ],
+              "feedback": "Part (a) is right. For (b), 19 = 16 + 2 + 1 gives 10011; you have written 25's pattern (11001). Show your working to see where the 1s belong."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 10110 = 1 + 0 + 1 + 1 + 0 = 3. (b) 19 = 16 + 2 + 1 so it is 10011.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "19 = 16 + 2 + 1"
+                },
+                {
+                  "point": 3,
+                  "quote": "it is 10011"
+                }
+              ],
+              "feedback": "Part (b) is correct. In (a), the digits are multiplied by place values (16, 8, 4, 2, 1), not added as they are: 16 + 4 + 2 = 22.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 10110 is ten thousand one hundred and ten. (b) 19 in binary is 19.",
+              "meets": [],
+              "feedback": "Binary digits are place values of 2, not of 10. 10110 = 16 + 4 + 2 = 22, and 19 = 16 + 2 + 1 = 10011."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 1 + 0 + 1 + 1 + 0 = 3. (b) 1 and 9.",
+              "meets": [],
+              "feedback": "Each digit has a place value from the right: 1, 2, 4, 8, 16. Multiply and add to get 22. For 19, find which powers of 2 add up to it: 16 + 2 + 1, giving 10011."
+            }
+          ]
+        },
+        {
+          "prompt": "Name the five generations of computers. For the first three, state the main technology used and one limitation or advantage compared with the one before it.",
+          "markScheme": [
+            "Lists first to fifth generations in order (vacuum tubes, transistors, integrated circuits, microprocessors, artificial intelligence)",
+            "First generation: vacuum tubes; large, hot and slow",
+            "Second generation: transistors; smaller, faster and more reliable than vacuum tubes",
+            "Third generation: integrated circuits; smaller, cheaper and faster than transistor machines"
+          ],
+          "modelAnswer": "The five generations are first (vacuum tubes), second (transistors), third (integrated circuits), fourth (microprocessors) and fifth (artificial intelligence and very large scale integration). First generation computers used vacuum tubes, so they were huge, hot and slow. Second generation computers used transistors, which made them smaller, faster and more reliable. Third generation computers used integrated circuits, which made them smaller, cheaper and faster still.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First generation used vacuum tubes, which made the computers very large, hot and slow. Second generation used transistors, so the computers were smaller, faster and more reliable than before. Third generation used integrated circuits, which made them smaller, cheaper and faster again. The fourth uses microprocessors and the fifth is artificial intelligence.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The fourth uses microprocessors and the fifth is artificial intelligence"
+                },
+                {
+                  "point": 1,
+                  "quote": "First generation used vacuum tubes, which made the computers very large, hot and slow"
+                },
+                {
+                  "point": 2,
+                  "quote": "Second generation used transistors, so the computers were smaller, faster and more reliable than before"
+                },
+                {
+                  "point": 3,
+                  "quote": "Third generation used integrated circuits, which made them smaller, cheaper and faster again"
+                }
+              ],
+              "feedback": "All four marks. You gave a comparison for each of the three generations."
+            },
+            {
+              "tier": "full",
+              "text": "1st: vacuum tubes, which were bulky and used a lot of power. 2nd: transistors, which were smaller and faster than tubes. 3rd: integrated circuits, many transistors on one chip, so smaller and cheaper. 4th: microprocessors. 5th: artificial intelligence and VLSI.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4th: microprocessors. 5th: artificial intelligence and VLSI"
+                },
+                {
+                  "point": 1,
+                  "quote": "1st: vacuum tubes, which were bulky and used a lot of power"
+                },
+                {
+                  "point": 2,
+                  "quote": "2nd: transistors, which were smaller and faster than tubes"
+                },
+                {
+                  "point": 3,
+                  "quote": "3rd: integrated circuits, many transistors on one chip, so smaller and cheaper"
+                }
+              ],
+              "feedback": "Full marks. Short and correct, with a note for each generation."
+            },
+            {
+              "tier": "partial",
+              "text": "The generations are first, second, third, fourth and fifth. The first used vacuum tubes and the second used transistors.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The first used vacuum tubes"
+                },
+                {
+                  "point": 2,
+                  "quote": "the second used transistors"
+                }
+              ],
+              "feedback": "You named two technologies but gave no limitation or advantage, and left out the third generation (integrated circuits) and the technologies of the fourth and fifth."
+            },
+            {
+              "tier": "partial",
+              "text": "First generation used vacuum tubes and was large. Second used transistors. Third used integrated circuits, which made them smaller. Fourth used microprocessors.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "First generation used vacuum tubes and was large"
+                },
+                {
+                  "point": 3,
+                  "quote": "Third used integrated circuits, which made them smaller"
+                }
+              ],
+              "feedback": "Good technologies, but the second generation needs its advantage (smaller, faster, more reliable than tubes), and name the fifth generation (artificial intelligence).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "First generation is the oldest computer, second is the one after, third is the one after the second.",
+              "meets": [],
+              "feedback": "Name the technology of each generation: vacuum tubes, transistors, integrated circuits, and what changed in size and speed."
+            },
+            {
+              "tier": "weak",
+              "text": "First was the abacus, second was the typewriter and third was the television.",
+              "meets": [],
+              "feedback": "The abacus and typewriter are not generations. The generations are defined by electronic technology: vacuum tubes, transistors, integrated circuits, microprocessors, artificial intelligence."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Data and information",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define data and information and give examples of each;\n2. name the types of data;\n3. describe ways of handling data and explain digitalisation;\n4. state the differences between data and information.\n\n## Materials\n\nA sheet of raw scores for a class test, a printed class result sheet, a phone or camera, markers.\n\n## Starter (5 minutes)\n\nWrite on the board: 45, 38, 72, 61, 54. Ask: what do these numbers mean? Then write \"SS1A mathematics test: highest score 72\" and ask which one is more useful.\n\n## Development\n\n1. Define data as raw facts and figures that have not been processed, and information as data that has been processed into a meaningful form. Use the test scores as the example.\n2. Types of data: numeric (scores, prices), text (names, addresses), image, audio, video, and dates. Also qualitative (descriptions) and quantitative (measurements).\n3. Ways of handling data: collection, recording, sorting, calculating, storing and retrieving; manual (registers and files) and electronic (computers).\n4. Digitalisation: converting data from paper or analogue form into digital form (scanning a result sheet, recording a lesson on a phone).\n5. Differences: data is raw, unorganised and has no use alone; information is organised, meaningful and supports decisions.\n\n## Class activity\n\nPupils take raw scores of five classmates and turn them into information: total, average and position.\n\n## Evaluation\n\n1. What is the difference between data and information?\n2. Give two examples of digitalisation in a school.\n\n## Assignment\n\nComplete the worksheet and the problem set on the app.",
+      "reading": {
+        "title": "Raw facts and what we do with them",
+        "content": "# Data and information\n\n## Data\n\n**Data** means raw facts and figures that have not yet been processed. By itself it does not tell us much. The numbers 45, 38, 72, 61 and 54 are data. So are the names of pupils, a list of prices at Mile 12 market or a photograph.\n\n## Information\n\n**Information** is data that has been processed, organised and given meaning, so that it is useful for decisions. If we sort the five scores from highest to lowest and calculate the average, we get information: \"The highest score in SS1A is 72 and the class average is 54\". A head teacher can use that to plan extra lessons.\n\nData goes into a process and information comes out:\n\nData, then **processing**, then **information**.\n\n## Types of data\n\n- **Numeric data**: numbers, such as scores and prices.\n- **Text (alphabetic) data**: words, such as names and addresses.\n- **Alphanumeric data**: letters and digits together, such as a registration number SS1/023.\n- **Image data**: photographs and drawings.\n- **Audio data**: sound recordings.\n- **Video data**: moving pictures.\n\nData can also be **quantitative** (it can be measured, such as height) or **qualitative** (it describes, such as colour).\n\n## Ways of handling data\n\nData handling includes collecting, recording, sorting, calculating, storing and retrieving it. Handling can be **manual**, using registers, files and ledgers, or **electronic**, using computers, which is faster, more accurate, and takes less space.\n\n## Digitalisation\n\n**Digitalisation** is turning data from paper or other analogue forms into digital form that a computer can store and process. Scanning a handwritten result sheet, typing a register into a spreadsheet, and recording a lesson on a phone are all examples.\n\n## Data and information compared\n\n| Data | Information |\n| --- | --- |\n| Raw facts | Processed facts |\n| Not organised | Organised |\n| Has little meaning alone | Has meaning and use |\n| Input to processing | Output of processing |"
+      },
+      "cards": [
+        {
+          "front": "Data",
+          "back": "Raw facts and figures that have not been processed."
+        },
+        {
+          "front": "Information",
+          "back": "Data that has been processed into a meaningful form."
+        },
+        {
+          "front": "Numeric data",
+          "back": "Data made up of numbers, such as scores and prices."
+        },
+        {
+          "front": "Alphanumeric data",
+          "back": "Data made up of letters and digits together, such as SS1/023."
+        },
+        {
+          "front": "Image data",
+          "back": "Photographs and drawings."
+        },
+        {
+          "front": "Digitalisation",
+          "back": "Converting paper or analogue data into digital form."
+        },
+        {
+          "front": "Quantitative data",
+          "back": "Data that can be measured or counted."
+        },
+        {
+          "front": "Qualitative data",
+          "back": "Data that describes qualities, such as colour."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Raw, unprocessed facts and figures are called",
+          "options": [
+            "information",
+            "knowledge",
+            "a program",
+            "data"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is information rather than data?",
+          "options": [
+            "The scores 12, 48, 36",
+            "The names Ada, Musa and Chidi",
+            "A list of unsorted prices",
+            "The class average is 54 and the highest score is 72"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The registration number SS1/023 is an example of",
+          "options": [
+            "numeric data",
+            "alphanumeric data",
+            "image data",
+            "audio data"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Scanning a handwritten result sheet into a computer is an example of",
+          "options": [
+            "data deletion",
+            "information loss",
+            "digitalisation",
+            "manual handling"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is an advantage of electronic data handling over manual handling?",
+          "options": [
+            "It is slower",
+            "It takes more space",
+            "It is faster and more accurate",
+            "It needs no electricity"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between data and information, using the scores 45, 38, 72, 61 and 54 of five pupils in a test as your example.",
+          "markScheme": [
+            "Data is raw, unprocessed facts and figures",
+            "Information is data that has been processed or organised into a meaningful form",
+            "The scores are data",
+            "Processing them (for example finding the total, average or highest score) gives information"
+          ],
+          "modelAnswer": "Data is raw facts and figures that have not been processed, while information is data that has been processed and organised so that it has meaning. The scores 45, 38, 72, 61 and 54 are data. If we add them (270) and divide by 5, we get the average of 54, or sort them to find the highest score of 72; this is information that a teacher can use.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Data means raw facts and figures that are not yet processed. Information is data that has been processed so that it has meaning and can be used. The scores 45, 38, 72, 61 and 54 are just data. When I add them to get 270 and divide by 5 to get an average of 54, that average is information about the class.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Data means raw facts and figures that are not yet processed"
+                },
+                {
+                  "point": 1,
+                  "quote": "Information is data that has been processed so that it has meaning and can be used"
+                },
+                {
+                  "point": 2,
+                  "quote": "The scores 45, 38, 72, 61 and 54 are just data"
+                },
+                {
+                  "point": 3,
+                  "quote": "When I add them to get 270 and divide by 5 to get an average of 54, that average is information about the class"
+                }
+              ],
+              "feedback": "All four marks. You worked the average correctly (270 / 5 = 54) to show the processing."
+            },
+            {
+              "tier": "full",
+              "text": "Data is the raw facts that have not been arranged, for example the five scores. Information is the data after it has been processed, for example arranging them to show that 72 is the highest score and 38 is the lowest. A teacher can use the information to know which pupil needs help.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Data is the raw facts that have not been arranged"
+                },
+                {
+                  "point": 1,
+                  "quote": "Information is the data after it has been processed"
+                },
+                {
+                  "point": 2,
+                  "quote": "for example the five scores"
+                },
+                {
+                  "point": 3,
+                  "quote": "arranging them to show that 72 is the highest score and 38 is the lowest"
+                }
+              ],
+              "feedback": "Full marks. Sorting is a good example of processing, and you said how the information is used."
+            },
+            {
+              "tier": "partial",
+              "text": "Data is the raw facts and information is the result of processing. The scores are information because they are in the test.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Data is the raw facts"
+                },
+                {
+                  "point": 1,
+                  "quote": "information is the result of processing"
+                }
+              ],
+              "feedback": "The two definitions are right. The scores are data because they have not been processed. Say what processing would make them information, such as finding the average."
+            },
+            {
+              "tier": "partial",
+              "text": "The scores are data. Information is meaningful data. If you add them you get the total.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The scores are data"
+                }
+              ],
+              "feedback": "You identified the data. Information is data that has been processed into a form with meaning; finding the total is the processing, and you need to say what it tells us. Also define data.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Data is the computer and information is the Internet.",
+              "meets": [],
+              "feedback": "Data and information are not devices. Data is raw facts, like the scores; information is the meaning we get after processing them."
+            },
+            {
+              "tier": "weak",
+              "text": "Data and information are the same thing. The scores are information because they are numbers.",
+              "meets": [],
+              "feedback": "They are different: data is unprocessed; information is processed and useful. Numbers on their own, such as these scores, are data."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Name four types of data and give one example of each. (b) What is digitalisation? Give one example from a school.",
+          "markScheme": [
+            "Names four types of data from numeric, text, alphanumeric, image, audio, video",
+            "Gives a correct example for each type",
+            "Digitalisation is converting data from paper or analogue form to digital form that a computer can store and process",
+            "A correct school example, such as scanning a result sheet or typing the register into a computer"
+          ],
+          "modelAnswer": "(a) Numeric data, such as the scores 45 and 72; text data, such as a pupil's name; image data, such as a passport photograph; audio data, such as a recording of a lesson. (b) Digitalisation is converting data from paper or other analogue form into digital form that a computer can store and process. For example, a school scans its handwritten result sheets into computer files.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Numeric data, e.g. the price N500. Text data, e.g. the name Ngozi. Image data, e.g. a passport photograph. Audio data, e.g. a recording of a school song. (b) Digitalisation is changing data from paper or analogue form into digital form that a computer can store and process. For example, a school can scan the handwritten result sheet to keep it in the computer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Numeric data, e.g. the price N500. Text data, e.g. the name Ngozi. Image data, e.g. a passport photograph. Audio data, e.g. a recording of a school song"
+                },
+                {
+                  "point": 1,
+                  "quote": "e.g. the price N500"
+                },
+                {
+                  "point": 2,
+                  "quote": "changing data from paper or analogue form into digital form that a computer can store and process"
+                },
+                {
+                  "point": 3,
+                  "quote": "a school can scan the handwritten result sheet to keep it in the computer"
+                }
+              ],
+              "feedback": "All four marks. Four types, each with its own example."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Numeric: test scores. Alphanumeric: a registration number like SS1/023. Video: a recorded science experiment. Text: pupils' names. (b) Digitalisation means turning data into digital form so that it can be processed by a computer. An example is typing the class register into a spreadsheet instead of keeping it on paper only.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Numeric: test scores. Alphanumeric: a registration number like SS1/023. Video: a recorded science experiment. Text: pupils' names"
+                },
+                {
+                  "point": 1,
+                  "quote": "a registration number like SS1/023"
+                },
+                {
+                  "point": 2,
+                  "quote": "turning data into digital form so that it can be processed by a computer"
+                },
+                {
+                  "point": 3,
+                  "quote": "typing the class register into a spreadsheet instead of keeping it on paper only"
+                }
+              ],
+              "feedback": "Full marks. Four different types with good examples."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Numeric data, text data, image data and audio data. (b) Digitalisation is when a school buys computers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Numeric data, text data, image data and audio data"
+                }
+              ],
+              "feedback": "Your four types are right but you must give an example of each. Digitalisation is converting paper data to digital form, such as scanning a result sheet, not just buying computers."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) Digitalisation is to change paper to digital form on the computer, for example scanning a result sheet. (a) Numeric and text.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "to change paper to digital form on the computer"
+                },
+                {
+                  "point": 3,
+                  "quote": "for example scanning a result sheet"
+                }
+              ],
+              "feedback": "Part (b) is good. For (a) you need four types of data, each with an example: for instance numeric (scores), text (names), image (photograph) and audio (recording).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Big data, small data, medium data and old data. (b) Digitalisation is to write with digital pen.",
+              "meets": [],
+              "feedback": "Types of data describe form: numeric, text, image, audio, video. Digitalisation is the conversion of data into digital form for a computer."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Data, information, knowledge and wisdom. (b) Digitalisation is the same as computerisation of a village.",
+              "meets": [],
+              "feedback": "Those are not types of data. Name forms such as numeric, text, image or audio with examples. Digitalisation means converting paper or analogue data to digital data."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Classification of computers",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. classify computers by type: analogue, digital and hybrid;\n2. classify computers by size: supercomputer, mainframe, minicomputer and microcomputer;\n3. classify computers by usage: general purpose and special purpose;\n4. give an everyday example of each class.\n\n## Materials\n\nPictures of a fuel pump, a bank server room, a desktop, a laptop, a smartphone and a weather forecasting centre; a classification chart.\n\n## Starter (5 minutes)\n\nAsk: which is a computer, the phone in your pocket, the fuel pump at a filling station, or the server of a bank? Take a vote, then reveal that all three are computers of different kinds.\n\n## Development\n\n1. By type: analogue (measures continuous quantities: a thermometer, a speedometer, a fuel pump), digital (counts discrete numbers: a laptop, a calculator) and hybrid (both: a hospital heart monitor).\n2. By size: supercomputers (weather forecasting, space research), mainframes (banks, airlines), minicomputers (mid-size firms), microcomputers (desktops, laptops, tablets, smartphones).\n3. By usage: general purpose (can do many jobs, such as the school desktop) and special purpose (built for one task, such as an ATM or a traffic light controller).\n4. Compare cost, speed, number of users and example for each class.\n\n## Class activity\n\nSorting game: students place pictures of ten machines in the correct type, size and usage columns.\n\n## Evaluation\n\n1. Which class of computer is used for weather forecasting?\n2. Is an ATM general purpose or special purpose? Why?\n\n## Assignment\n\nComplete the quiz and the worksheet on the app.",
+      "reading": {
+        "title": "Kinds of computers",
+        "content": "# Classification of computers\n\nComputers differ in how they work, how big they are and what they are used for. We can classify them in three ways.\n\n## Classification by type\n\n- **Analogue computers** measure continuous quantities such as temperature, pressure or speed. A car speedometer and the meter of a fuel pump are analogue.\n- **Digital computers** work with numbers (digits 0 and 1) and count exact values. Laptops, smartphones and calculators are digital. Most computers today are digital.\n- **Hybrid computers** combine both. A hospital machine that measures a patient's heartbeat (analogue) and displays it as numbers (digital) is hybrid.\n\n## Classification by size\n\n- **Supercomputers** are the fastest and most powerful. They are used for weather forecasting, scientific research and space work.\n- **Mainframe computers** are large and serve hundreds or thousands of users at once. Banks, airlines and insurance companies use them to process millions of transactions.\n- **Minicomputers** are medium in size and power and serve a department or a medium business.\n- **Microcomputers** are small, with a single microprocessor, and meant for one user. They include desktops, laptops, tablets and smartphones. A pupil's laptop is a microcomputer.\n\n| Class | Users | Example of use |\n| --- | --- | --- |\n| Supercomputer | many scientists | weather forecast |\n| Mainframe | thousands | bank records |\n| Minicomputer | tens to hundreds | a university department |\n| Microcomputer | one | school work at home |\n\n## Classification by usage\n\n- **General purpose computers** can do many different jobs when given different programs. The desktop in your school ICT room can type a letter, calculate a budget and play a video.\n- **Special purpose computers** are built to do one job only. The computer in an ATM, a petrol pump, a washing machine or the controller of a traffic light is special purpose.\n\n## Summary\n\nA smartphone is a digital, general purpose microcomputer. An ATM is a digital, special purpose computer. A bank's central records are held on a mainframe."
+      },
+      "cards": [
+        {
+          "front": "Analogue computer",
+          "back": "Measures continuous quantities such as temperature or speed."
+        },
+        {
+          "front": "Digital computer",
+          "back": "Works with discrete numbers (0 and 1); most modern computers."
+        },
+        {
+          "front": "Hybrid computer",
+          "back": "Combines analogue and digital features."
+        },
+        {
+          "front": "Supercomputer",
+          "back": "The fastest and most powerful class; used for weather forecasting."
+        },
+        {
+          "front": "Mainframe",
+          "back": "A large computer serving thousands of users, such as a bank."
+        },
+        {
+          "front": "Microcomputer",
+          "back": "A small computer for one user: desktop, laptop, tablet, smartphone."
+        },
+        {
+          "front": "General purpose computer",
+          "back": "Can do many jobs with different programs."
+        },
+        {
+          "front": "Special purpose computer",
+          "back": "Built to do one job, such as an ATM."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A car speedometer that shows speed with a moving needle is an example of an",
+          "options": [
+            "digital computer",
+            "hybrid computer",
+            "analogue device",
+            "supercomputer"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which class of computer is used for forecasting the weather?",
+          "options": [
+            "Supercomputer",
+            "Microcomputer",
+            "Minicomputer",
+            "Hybrid computer"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A computer built only to run a traffic light is a",
+          "options": [
+            "general purpose computer",
+            "mainframe",
+            "supercomputer",
+            "special purpose computer"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is a microcomputer?",
+          "options": [
+            "A bank's central server",
+            "A smartphone",
+            "A weather forecasting machine",
+            "A mainframe in an airline"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A hospital machine that measures a heartbeat and shows it as numbers is a",
+          "options": [
+            "hybrid computer",
+            "analogue computer",
+            "mainframe",
+            "general purpose computer"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between a general purpose computer and a special purpose computer. Give one example of each.",
+          "markScheme": [
+            "A general purpose computer can do many different jobs using different programs",
+            "Example: a desktop or laptop",
+            "A special purpose computer is built to do one specific job only",
+            "Example: an ATM, a traffic light controller or a petrol pump"
+          ],
+          "modelAnswer": "A general purpose computer can do many different jobs when it is given different programs, for example a desktop computer that can type, calculate and play videos. A special purpose computer is designed to do one job only, for example the computer in an ATM or in a traffic light.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A general purpose computer can do many different jobs when you change the program, for example a laptop. A special purpose computer is made to do only one job, for example the computer inside an ATM that only gives out money and shows balances.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "can do many different jobs when you change the program"
+                },
+                {
+                  "point": 1,
+                  "quote": "for example a laptop"
+                },
+                {
+                  "point": 2,
+                  "quote": "made to do only one job"
+                },
+                {
+                  "point": 3,
+                  "quote": "the computer inside an ATM that only gives out money and shows balances"
+                }
+              ],
+              "feedback": "All four marks. Your example for the special purpose computer says exactly what the one job is."
+            },
+            {
+              "tier": "full",
+              "text": "General purpose computers are designed to perform many tasks such as word processing, spreadsheets and games. An example is the desktop in the ICT room. Special purpose computers are designed for a single task and cannot be used for others, for example the controller of a traffic light.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "designed to perform many tasks such as word processing, spreadsheets and games"
+                },
+                {
+                  "point": 1,
+                  "quote": "the desktop in the ICT room"
+                },
+                {
+                  "point": 2,
+                  "quote": "designed for a single task and cannot be used for others"
+                },
+                {
+                  "point": 3,
+                  "quote": "the controller of a traffic light"
+                }
+              ],
+              "feedback": "Full marks. Saying that a special purpose computer cannot be used for other tasks is a clear contrast."
+            },
+            {
+              "tier": "partial",
+              "text": "A general purpose computer is used for many things like a desktop. A special purpose computer is a computer for special people.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "used for many things"
+                },
+                {
+                  "point": 1,
+                  "quote": "a desktop"
+                }
+              ],
+              "feedback": "The general purpose part is right. A special purpose computer is built for one job, not for special people. Give an example such as an ATM."
+            },
+            {
+              "tier": "partial",
+              "text": "A special purpose computer is built for one job, such as a petrol pump. A general purpose computer is a big computer.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "built for one job"
+                },
+                {
+                  "point": 3,
+                  "quote": "a petrol pump"
+                }
+              ],
+              "feedback": "Your special purpose answer is correct. A general purpose computer is not defined by size; it is one that can do many different jobs with different programs, such as a laptop.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "General purpose is a computer for the general and special purpose is a computer for the school.",
+              "meets": [],
+              "feedback": "General purpose means it can do many jobs using different programs. Special purpose means it is built for one job only, like an ATM."
+            },
+            {
+              "tier": "weak",
+              "text": "A general purpose computer is an analogue computer and a special purpose computer is a digital computer.",
+              "meets": [],
+              "feedback": "Analogue and digital describe how a computer processes data, not its usage. General purpose = many jobs; special purpose = one job."
+            }
+          ]
+        },
+        {
+          "prompt": "Name the four classes of computer by size and, for each, state one use or example.",
+          "markScheme": [
+            "Supercomputer, with a use such as weather forecasting or scientific research",
+            "Mainframe, with a use such as bank or airline records for thousands of users",
+            "Minicomputer, with a use such as serving a department or medium business",
+            "Microcomputer, with an example such as a laptop, desktop or smartphone for one user"
+          ],
+          "modelAnswer": "The four classes by size are the supercomputer, used for weather forecasting; the mainframe, used by banks and airlines to process records for thousands of users; the minicomputer, used by a department or medium business; and the microcomputer, such as a laptop or smartphone, used by one person.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Supercomputer is used for weather forecasting and scientific research. Mainframe is used by banks to keep the records of many customers at once. Minicomputer is used by a medium business or a department of a university. Microcomputer is the small computer used by one person such as a laptop.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Supercomputer is used for weather forecasting and scientific research"
+                },
+                {
+                  "point": 1,
+                  "quote": "Mainframe is used by banks to keep the records of many customers at once"
+                },
+                {
+                  "point": 2,
+                  "quote": "Minicomputer is used by a medium business or a department of a university"
+                },
+                {
+                  "point": 3,
+                  "quote": "Microcomputer is the small computer used by one person such as a laptop"
+                }
+              ],
+              "feedback": "All four marks. Each class has a use that fits its size."
+            },
+            {
+              "tier": "full",
+              "text": "1. Supercomputers, for example for predicting weather. 2. Mainframes, for example the system in an airline that handles thousands of bookings. 3. Minicomputers, for example in a medium sized company's accounts office. 4. Microcomputers, for example desktops, tablets and smartphones used by one person.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Supercomputers, for example for predicting weather"
+                },
+                {
+                  "point": 1,
+                  "quote": "Mainframes, for example the system in an airline that handles thousands of bookings"
+                },
+                {
+                  "point": 2,
+                  "quote": "Minicomputers, for example in a medium sized company's accounts office"
+                },
+                {
+                  "point": 3,
+                  "quote": "Microcomputers, for example desktops, tablets and smartphones used by one person"
+                }
+              ],
+              "feedback": "Full marks. Numbered, correct and with examples."
+            },
+            {
+              "tier": "partial",
+              "text": "The classes are supercomputer, mainframe, minicomputer and microcomputer. The supercomputer is used for weather forecasting and the microcomputer is the smallest.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The supercomputer is used for weather forecasting"
+                }
+              ],
+              "feedback": "You named the four classes and gave a use for the supercomputer. The question wants a use or example for each: banks for mainframes, a department for minicomputers and a laptop for microcomputers."
+            },
+            {
+              "tier": "partial",
+              "text": "Supercomputer is used for weather forecasting. Mainframe is used in banks. Laptop is a microcomputer. The fourth one is a big computer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Supercomputer is used for weather forecasting"
+                },
+                {
+                  "point": 1,
+                  "quote": "Mainframe is used in banks"
+                },
+                {
+                  "point": 3,
+                  "quote": "Laptop is a microcomputer"
+                }
+              ],
+              "feedback": "Three correct. The fourth class is the minicomputer, a medium-sized computer used by a department or medium business.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "They are desktop, laptop, tablet and phone.",
+              "meets": [],
+              "feedback": "Those are all microcomputers. The four classes by size are supercomputer, mainframe, minicomputer and microcomputer."
+            },
+            {
+              "tier": "weak",
+              "text": "The classes are analogue, digital, hybrid and general.",
+              "meets": [],
+              "feedback": "Analogue, digital and hybrid are classes by type. By size they are supercomputer, mainframe, minicomputer and microcomputer."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Application of ICT in everyday life",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. list uses of ICT in everyday activities;\n2. describe the positive and negative impact of ICT on society;\n3. link areas of ICT application (education, health, banking, agriculture, communication, government) to national development.\n\n## Materials\n\nPictures of a POS terminal, an ATM, a telemedicine consultation, a mobile money agent and an e-learning page; an ICT usage chart.\n\n## Starter (5 minutes)\n\nAsk: how many times did you use ICT before you got to school today? Count phone calls, the radio, mobile transfer for transport, a POS payment. List on the board.\n\n## Development\n\n1. Define ICT: the use of computers and telecommunications to collect, process, store and share information.\n2. Everyday uses: communication (calls, WhatsApp), banking (ATM, mobile transfers, POS), education (e-learning, online WAEC registration), health (patient records, telemedicine), commerce (online shopping), entertainment, and government (e-passport, voter registration).\n3. Impact on society. Positive: faster communication, more jobs in IT, easy access to information, cheaper services. Negative: job losses where machines replace workers, cyber crime, addiction and wasted time, privacy risks, health problems from long use.\n4. Link to national development: ICT raises productivity, improves education and health delivery, widens financial inclusion and helps government transparency.\n\n## Class activity\n\nIn groups, choose one sector (health, banking or farming) and show how ICT improves it with one example from Nigeria.\n\n## Evaluation\n\n1. State three uses of ICT in a bank.\n2. Give two negative effects of ICT on society.\n\n## Assignment\n\nComplete the problem set and the worksheet on the app.",
+      "reading": {
+        "title": "How ICT touches daily life",
+        "content": "# Application of ICT in everyday life\n\n## What is ICT?\n\n**ICT (Information and Communication Technology)** is the use of computers, phones and communication networks to collect, process, store, send and receive information. It is part of ordinary life at home, school, in the market and at work.\n\n## Everyday uses\n\n- **Communication**: phone calls, text and voice messages, email and video calls link families and businesses.\n- **Banking**: ATMs, mobile banking apps, point of sale (POS) terminals and transfers allow people to pay and save without queueing in the bank.\n- **Education**: e-learning, digital libraries, online registration for WAEC and JAMB, and school record systems.\n- **Health**: electronic patient records, telemedicine where a doctor in Lagos advises a nurse in a village, and machines that scan the body.\n- **Commerce**: online shops and delivery services, and stock records on a computer.\n- **Agriculture**: weather information by phone, market prices by SMS, and online sale of produce.\n- **Government**: voter registration, the National Identification Number, tax payment and passports.\n- **Entertainment**: music, films and games.\n\n## Impact on society\n\n*Positive:* faster and cheaper communication; easier access to information; new jobs, such as software developers and phone repairers; better services; more people able to use banks.\n\n*Negative:* some jobs disappear when machines do the work; **cyber crime** such as online fraud; time wasted on social media; privacy and false information risks; and health effects such as eye strain.\n\n## ICT and national development\n\nICT helps a country to develop because it raises productivity in business, widens access to education, improves hospitals and government records, and links farmers to markets. A trader in Aba who accepts transfers can sell to buyers in Kano without travelling. Countries that use ICT well grow faster.\n\nA good user takes the benefits and guards against the risks."
+      },
+      "cards": [
+        {
+          "front": "ICT",
+          "back": "The use of computers and communication technology to handle information."
+        },
+        {
+          "front": "POS",
+          "back": "A point of sale terminal for paying with a card."
+        },
+        {
+          "front": "Telemedicine",
+          "back": "Giving medical advice or treatment from a distance using ICT."
+        },
+        {
+          "front": "E-learning",
+          "back": "Learning through computers, the Internet and digital materials."
+        },
+        {
+          "front": "Cyber crime",
+          "back": "Crimes committed using computers and the Internet, such as online fraud."
+        },
+        {
+          "front": "Financial inclusion",
+          "back": "Getting more people to use banking services, helped by mobile banking."
+        },
+        {
+          "front": "Positive impact of ICT",
+          "back": "Faster communication, easy access to information and new jobs."
+        },
+        {
+          "front": "Negative impact of ICT",
+          "back": "Job losses, cyber crime, wasted time and privacy risks."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "ICT stands for",
+          "options": [
+            "Internet Computer Technology",
+            "Information and Communication Technology",
+            "Information and Computer Training",
+            "Internal Communication Technology"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A doctor in Lagos advises a nurse in a village clinic over a video link. This is an example of",
+          "options": [
+            "e-commerce",
+            "e-learning",
+            "e-banking",
+            "telemedicine"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is a negative effect of ICT on society?",
+          "options": [
+            "Faster communication",
+            "New jobs in software",
+            "Online fraud",
+            "Cheaper services"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Paying for goods in a shop with a card at a POS terminal is an application of ICT in",
+          "options": [
+            "banking and commerce",
+            "farming only",
+            "entertainment",
+            "transport only"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A farmer receives market prices by SMS. This shows how ICT helps",
+          "options": [
+            "agriculture",
+            "telemedicine",
+            "entertainment",
+            "law enforcement"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State four ways in which ICT is used in banking in Nigeria and explain one benefit and one risk to customers.",
+          "markScheme": [
+            "Names a use such as ATM, mobile banking or POS",
+            "Names a second use",
+            "Names a third and fourth use",
+            "Explains a benefit (e.g. saves time, 24-hour service) and a risk (e.g. fraud or hacking)"
+          ],
+          "modelAnswer": "ICT is used in banking through ATMs for cash withdrawal, mobile banking apps and USSD codes for transfers, POS terminals for card payment, and computerised customer records. A benefit is that customers can transfer money or pay bills at any time without queueing in the bank. A risk is fraud, because criminals can steal card details or passwords and empty an account.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "ICT is used in banking in the ATM, which gives out cash, mobile banking apps for transfers, POS machines for paying in shops and online banking for checking balance and paying bills. A benefit is that customers save time because they can transfer money at any time without queuing. A risk is online fraud where criminals steal card numbers or passwords.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the ATM, which gives out cash"
+                },
+                {
+                  "point": 1,
+                  "quote": "mobile banking apps for transfers"
+                },
+                {
+                  "point": 2,
+                  "quote": "POS machines for paying in shops and online banking for checking balance and paying bills"
+                },
+                {
+                  "point": 3,
+                  "quote": "customers save time because they can transfer money at any time without queuing. A risk is online fraud where criminals steal card numbers or passwords"
+                }
+              ],
+              "feedback": "All four marks. Each use is distinct and your benefit and risk are both clear."
+            },
+            {
+              "tier": "full",
+              "text": "Banks use ICT in ATMs, in USSD codes on ordinary phones, in POS terminals and in the computer records of customers' accounts. It helps customers because they do not have to go to the bank and wait in a queue for small transactions. The risk is that a hacker or a fraudster can get a person's password and take money from the account.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ATMs"
+                },
+                {
+                  "point": 1,
+                  "quote": "USSD codes on ordinary phones"
+                },
+                {
+                  "point": 2,
+                  "quote": "POS terminals and in the computer records of customers' accounts"
+                },
+                {
+                  "point": 3,
+                  "quote": "they do not have to go to the bank and wait in a queue for small transactions. The risk is that a hacker or a fraudster can get a person's password and take money from the account"
+                }
+              ],
+              "feedback": "Full marks. USSD is a good Nigerian example because it works without Internet data."
+            },
+            {
+              "tier": "partial",
+              "text": "ICT is used in the ATM and in POS. A benefit is that it is fast.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ICT is used in the ATM and in POS"
+                }
+              ],
+              "feedback": "Two uses are right; you need four. Fast is true; say why (no queues, 24-hour service) and add a risk to customers such as fraud."
+            },
+            {
+              "tier": "partial",
+              "text": "ICT is used in ATM, mobile banking, POS and online banking. It has risk of fraud.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ICT is used in ATM, mobile banking, POS and online banking"
+                },
+                {
+                  "point": 3,
+                  "quote": "risk of fraud"
+                }
+              ],
+              "feedback": "Your four uses are correct. Add one benefit to customers, for example saving time by not queueing, and say how the fraud happens (stolen passwords).",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Banks use ICT to count money and to keep people out.",
+              "meets": [],
+              "feedback": "Name actual applications: ATMs, mobile banking, POS terminals, online banking. Give a benefit such as saving time and a risk such as fraud."
+            },
+            {
+              "tier": "weak",
+              "text": "The bank uses a pen and a ledger. The risk is that the pen can finish.",
+              "meets": [],
+              "feedback": "A ledger and pen are manual, not ICT. ICT in banking includes ATMs, mobile apps, POS and computerised records."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain how ICT can contribute to the development of Nigeria in any two areas, and state two ways in which ICT can harm society.",
+          "markScheme": [
+            "First area identified, with how ICT helps (e.g. education)",
+            "Second area identified, with how ICT helps (e.g. agriculture, health)",
+            "One harm of ICT explained (e.g. cyber crime)",
+            "Second harm explained (e.g. job loss, wasted time)"
+          ],
+          "modelAnswer": "In education, ICT lets pupils register for WAEC online, learn from digital libraries and take e-learning lessons, so more people get an education. In agriculture, farmers receive market prices and weather information by phone and can sell directly to buyers, so their income rises. ICT can also harm society through cyber crime such as online fraud, and through job losses when machines replace workers.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "In education, pupils can use e-learning and digital libraries and register for WAEC online, so more people get an education. In agriculture, a farmer can receive prices of crops by SMS and sell to buyers in other towns, which raises income. Harms: cyber crime such as online fraud, and some workers lose their jobs when machines and computers do the work.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "pupils can use e-learning and digital libraries and register for WAEC online, so more people get an education"
+                },
+                {
+                  "point": 1,
+                  "quote": "a farmer can receive prices of crops by SMS and sell to buyers in other towns, which raises income"
+                },
+                {
+                  "point": 2,
+                  "quote": "cyber crime such as online fraud"
+                },
+                {
+                  "point": 3,
+                  "quote": "some workers lose their jobs when machines and computers do the work"
+                }
+              ],
+              "feedback": "All four marks. You explained how each area gains, not just named it."
+            },
+            {
+              "tier": "full",
+              "text": "ICT helps health because doctors can keep patient records on computers and use telemedicine to advise nurses in villages. It also helps government to register voters and collect tax faster and more honestly. The negative effects are that people may waste time on social media and children may be exposed to harmful content.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "doctors can keep patient records on computers and use telemedicine to advise nurses in villages"
+                },
+                {
+                  "point": 1,
+                  "quote": "register voters and collect tax faster and more honestly"
+                },
+                {
+                  "point": 2,
+                  "quote": "people may waste time on social media"
+                },
+                {
+                  "point": 3,
+                  "quote": "children may be exposed to harmful content"
+                }
+              ],
+              "feedback": "Full marks. Telemedicine is a strong example of ICT helping development."
+            },
+            {
+              "tier": "partial",
+              "text": "ICT helps education and health. It also causes cyber crime.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "It also causes cyber crime"
+                }
+              ],
+              "feedback": "Name how ICT helps in each area, for example online WAEC registration or telemedicine, and give a second harm, such as job losses or wasted time."
+            },
+            {
+              "tier": "partial",
+              "text": "ICT helps farmers to get prices by SMS so they earn more. ICT helps banks to give ATM services. The bad things are fraud and job loss.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "ICT helps farmers to get prices by SMS so they earn more"
+                },
+                {
+                  "point": 1,
+                  "quote": "ICT helps banks to give ATM services"
+                }
+              ],
+              "feedback": "Your areas are right, but you only named the harms. Harms need a short explanation, such as fraud stealing money from accounts, and job loss when machines replace workers.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "ICT is good for Nigeria because it is modern. It is bad because it is not African.",
+              "meets": [],
+              "feedback": "Say how ICT helps specific areas (education, agriculture, health) and name real harms like cyber crime and wasted time."
+            },
+            {
+              "tier": "weak",
+              "text": "ICT develops Nigeria by making everybody rich. It harms society by making people tired.",
+              "meets": [],
+              "feedback": "ICT supports development by raising productivity and access to services; it does not make everybody rich. Name definite harms: cyber crime and job losses."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Components of a computer",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. name and give examples of input devices, output devices, the system unit and storage devices;\n2. say how each is used in data processing;\n3. trace data through input, processing, output and storage.\n\n## Materials\n\nA working desktop, keyboard, mouse, scanner, printer, flash drive, memory card, a CPU or RAM stick (if available), an unplugged system unit for the pupils to see inside.\n\n## Starter (5 minutes)\n\nAsk: when you type a result in a computer and print it, which parts did you touch and which parts did the work you cannot see? Take answers.\n\n## Development\n\n1. Data processing cycle: input, processing, output, storage.\n2. Input devices: keyboard, mouse, scanner, microphone, webcam, barcode reader, touch screen. Show how each sends data in.\n3. Output devices: monitor, printer, speaker, projector. Hard copy versus soft copy.\n4. System unit: the motherboard, the CPU (control unit, arithmetic and logic unit), RAM and ROM, the power supply and ports.\n5. Storage devices: primary (RAM, ROM) and secondary (hard disk, flash drive, memory card, CD/DVD). Units: byte, KB, MB, GB, TB.\n\n## Class activity\n\nLabel a diagram of the computer and sort twelve device cards into input, output, processing and storage.\n\n## Evaluation\n\n1. Which part of the computer is called the brain?\n2. State two differences between RAM and a hard disk.\n\n## Assignment\n\nComplete the worksheet and the quiz on the app.",
+      "reading": {
+        "title": "The parts of a computer and what they do",
+        "content": "# Components of a computer\n\nA computer system handles data in four steps: **input**, **processing**, **output** and **storage**. Each step has its own devices.\n\n## Input devices\n\nInput devices send data and instructions into the computer.\n\n- **Keyboard**: types letters and numbers.\n- **Mouse**: points and clicks.\n- **Scanner**: copies pictures or documents into the computer, as in digitalising a result sheet.\n- **Microphone**: records sound.\n- **Webcam**: records pictures and video.\n- **Barcode reader**: reads the code on goods in a supermarket.\n\n## Output devices\n\nOutput devices present processed information.\n\n- **Monitor**: shows results on screen (a **soft copy**).\n- **Printer**: puts them on paper (a **hard copy**).\n- **Speaker**: plays sound.\n- **Projector**: shows the screen to a class.\n\n## The system unit\n\nThe **system unit** is the box that holds the main parts:\n\n- The **motherboard** is the main circuit board that links all the parts.\n- The **CPU (Central Processing Unit)** is the brain of the computer. It has a **control unit** that directs operations and an **arithmetic and logic unit (ALU)** that calculates and compares.\n- **RAM (Random Access Memory)** holds the data and programs in use. It loses its contents when the power goes off.\n- **ROM (Read Only Memory)** holds the start-up instructions and keeps them when power goes off.\n- The **power supply unit** and **ports** for connecting other devices.\n\n## Storage devices\n\nStorage keeps data for later use. **Primary storage** (RAM and ROM) is inside the system unit. **Secondary storage** keeps data permanently: **hard disk**, **flash drive**, **memory card** and **optical disc** (CD or DVD).\n\nStorage is measured in **bytes**. 1 KB = 1,024 bytes; 1 MB = 1,024 KB; 1 GB = 1,024 MB; 1 TB = 1,024 GB.\n\n## An example\n\nA teacher types scores with the keyboard (input). The CPU adds them (processing). The screen shows the total and the printer prints a report (output). The file is saved on a flash drive (storage)."
+      },
+      "cards": [
+        {
+          "front": "Input device",
+          "back": "A device that sends data into the computer, such as a keyboard."
+        },
+        {
+          "front": "Output device",
+          "back": "A device that presents processed information, such as a monitor."
+        },
+        {
+          "front": "CPU",
+          "back": "The central processing unit; the brain of the computer."
+        },
+        {
+          "front": "Motherboard",
+          "back": "The main circuit board that connects all the parts."
+        },
+        {
+          "front": "RAM",
+          "back": "Temporary memory that holds data in use; it loses its contents when power is off."
+        },
+        {
+          "front": "ROM",
+          "back": "Memory with start-up instructions that keeps its contents when power is off."
+        },
+        {
+          "front": "Hard copy",
+          "back": "Output printed on paper."
+        },
+        {
+          "front": "Secondary storage",
+          "back": "Permanent storage such as a hard disk or flash drive."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following is an input device?",
+          "options": [
+            "Monitor",
+            "Printer",
+            "Speaker",
+            "Scanner"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The part of the computer called its brain is the",
+          "options": [
+            "monitor",
+            "CPU",
+            "keyboard",
+            "printer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Output that is printed on paper is called a",
+          "options": [
+            "hard copy",
+            "soft copy",
+            "backup",
+            "scan"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which memory loses its contents when the power is switched off?",
+          "options": [
+            "ROM",
+            "Hard disk",
+            "RAM",
+            "Flash drive"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "1 gigabyte (GB) is equal to",
+          "options": [
+            "1,024 bytes",
+            "1,024 KB",
+            "1,024 MB",
+            "1,024 TB"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State the function of the CPU and name its two main parts. Then explain the difference between RAM and a hard disk.",
+          "markScheme": [
+            "The CPU is the brain of the computer that processes data and controls operations",
+            "Its two parts are the control unit and the arithmetic and logic unit",
+            "RAM holds data and programs in use temporarily and loses them when power is off",
+            "A hard disk stores data permanently and keeps it when power is off"
+          ],
+          "modelAnswer": "The CPU is the brain of the computer; it processes data and controls what the other parts do. It has two parts, the control unit, which directs operations, and the arithmetic and logic unit, which does calculations and comparisons. RAM holds the programs and data in use for a short time and loses them when the power goes off, while a hard disk stores data permanently and keeps it when the computer is switched off.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The CPU is the brain of the computer which processes the data and controls the other parts. It has the control unit and the arithmetic and logic unit. RAM is temporary memory that holds what is being used and clears when the light goes off, but a hard disk keeps files permanently even when the computer is off.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the brain of the computer which processes the data and controls the other parts"
+                },
+                {
+                  "point": 1,
+                  "quote": "the control unit and the arithmetic and logic unit"
+                },
+                {
+                  "point": 2,
+                  "quote": "RAM is temporary memory that holds what is being used and clears when the light goes off"
+                },
+                {
+                  "point": 3,
+                  "quote": "a hard disk keeps files permanently even when the computer is off"
+                }
+              ],
+              "feedback": "All four marks. Your example of the light going off makes the RAM point easy to remember."
+            },
+            {
+              "tier": "full",
+              "text": "The function of the CPU is to carry out instructions and process data. Its main parts are the control unit, which directs the operations, and the ALU, which does calculations and logical comparisons. RAM stores programs and data only while the computer is on. A hard disk is a secondary storage that retains data when the power is off.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "to carry out instructions and process data"
+                },
+                {
+                  "point": 1,
+                  "quote": "the control unit, which directs the operations, and the ALU, which does calculations and logical comparisons"
+                },
+                {
+                  "point": 2,
+                  "quote": "RAM stores programs and data only while the computer is on"
+                },
+                {
+                  "point": 3,
+                  "quote": "A hard disk is a secondary storage that retains data when the power is off"
+                }
+              ],
+              "feedback": "Full marks. Every part is clear and accurate."
+            },
+            {
+              "tier": "partial",
+              "text": "The CPU is the brain of the computer. It has the control unit and the memory unit. RAM is temporary and the hard disk is permanent.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The CPU is the brain of the computer"
+                },
+                {
+                  "point": 2,
+                  "quote": "RAM is temporary"
+                },
+                {
+                  "point": 3,
+                  "quote": "the hard disk is permanent"
+                }
+              ],
+              "feedback": "Close. The two parts of the CPU are the control unit and the arithmetic and logic unit, not the memory unit, which is separate. Also say what 'temporary' means: RAM loses data when power is off."
+            },
+            {
+              "tier": "partial",
+              "text": "The CPU controls the computer. RAM is where files are saved forever. The hard disk is for programs in use.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The CPU controls the computer"
+                }
+              ],
+              "feedback": "The CPU does control the computer, but you need its two parts. You have swapped RAM and the hard disk: RAM is temporary; the hard disk keeps files permanently.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "The CPU is the box of the computer and has the keyboard and the mouse. RAM and hard disk are the same.",
+              "meets": [],
+              "feedback": "The CPU is the processor inside the system unit, not the box, keyboard or mouse. RAM and the hard disk differ in how long they keep data."
+            },
+            {
+              "tier": "weak",
+              "text": "The CPU is the screen that shows the work. RAM is a type of printer.",
+              "meets": [],
+              "feedback": "The screen is the monitor. The CPU processes data; RAM is temporary memory, not a printer."
+            }
+          ]
+        },
+        {
+          "prompt": "Classify the following into input devices, output devices and storage devices: keyboard, monitor, flash drive, scanner, printer, memory card. Explain what is meant by a soft copy and a hard copy.",
+          "markScheme": [
+            "Input devices: keyboard and scanner",
+            "Output devices: monitor and printer",
+            "Storage devices: flash drive and memory card",
+            "A soft copy is output on a screen or in a file; a hard copy is printed on paper"
+          ],
+          "modelAnswer": "Input devices: keyboard and scanner. Output devices: monitor and printer. Storage devices: flash drive and memory card. A soft copy is output that is displayed on the screen or kept in a file, and a hard copy is output printed on paper.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Input devices are the keyboard and the scanner. Output devices are the monitor and the printer. Storage devices are the flash drive and the memory card. A soft copy is information shown on the screen or saved in a file, but a hard copy is the one printed on paper.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input devices are the keyboard and the scanner"
+                },
+                {
+                  "point": 1,
+                  "quote": "Output devices are the monitor and the printer"
+                },
+                {
+                  "point": 2,
+                  "quote": "Storage devices are the flash drive and the memory card"
+                },
+                {
+                  "point": 3,
+                  "quote": "A soft copy is information shown on the screen or saved in a file, but a hard copy is the one printed on paper"
+                }
+              ],
+              "feedback": "All four marks. All six devices correctly placed, and both copies defined."
+            },
+            {
+              "tier": "full",
+              "text": "Input: keyboard, scanner. Output: monitor, printer. Storage: flash drive, memory card. A soft copy is the version you see on the monitor or have in a file, and a hard copy is a printed paper version.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input: keyboard, scanner"
+                },
+                {
+                  "point": 1,
+                  "quote": "Output: monitor, printer"
+                },
+                {
+                  "point": 2,
+                  "quote": "Storage: flash drive, memory card"
+                },
+                {
+                  "point": 3,
+                  "quote": "A soft copy is the version you see on the monitor or have in a file, and a hard copy is a printed paper version"
+                }
+              ],
+              "feedback": "Full marks. Short, and every device is correctly placed."
+            },
+            {
+              "tier": "partial",
+              "text": "Input: keyboard and scanner. Output: monitor and printer. Storage: flash drive and memory card. Soft copy is a copy that is soft.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Input: keyboard and scanner"
+                },
+                {
+                  "point": 1,
+                  "quote": "Output: monitor and printer"
+                },
+                {
+                  "point": 2,
+                  "quote": "Storage: flash drive and memory card"
+                }
+              ],
+              "feedback": "The classification is perfect. A soft copy is the information displayed on a screen or kept as a file, not printed, while a hard copy is on paper."
+            },
+            {
+              "tier": "partial",
+              "text": "Input: keyboard, scanner and printer. Output: monitor. Storage: flash drive and memory card. A hard copy is on paper.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Storage: flash drive and memory card"
+                },
+                {
+                  "point": 3,
+                  "quote": "A hard copy is on paper"
+                }
+              ],
+              "feedback": "The printer is an output device, not an input device. Say what a soft copy is too: information on screen or in a file.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Input is monitor and printer, output is keyboard and mouse. A hard copy is the computer and the soft copy is the cable.",
+              "meets": [],
+              "feedback": "You have swapped input and output: the keyboard and scanner send data in; the monitor and printer send it out. A hard copy is a paper print-out."
+            },
+            {
+              "tier": "weak",
+              "text": "All of them are input devices because they are connected to the computer.",
+              "meets": [],
+              "feedback": "Being connected to the computer does not make a device an input device. Input devices send data in (keyboard, scanner); output devices show results (monitor, printer); storage devices keep it."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "The art of information processing",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define information processing;\n2. state and explain the steps in information processing;\n3. apply the steps to a real task, such as producing a class result.\n\n## Materials\n\nRaw scores for five pupils, a chart of the processing cycle, calculators, a computer with a spreadsheet if available.\n\n## Starter (5 minutes)\n\nHand out slips with scores of five pupils in three subjects. Ask: how would you find the best pupil? What steps did you follow without noticing?\n\n## Development\n\n1. Define information processing: turning raw data into useful information through a series of steps.\n2. The steps: data collection, data preparation (checking and organising), input, processing (sorting, calculating, classifying), output, storage and distribution.\n3. Work the class result example. Collect the scores from the subject teachers; check for missing scores; enter them; calculate totals and averages and position; print the result sheets; save a copy.\n4. Discuss errors: input errors, wrong formulas, lost data. Verification and validation.\n5. Link with the processing cycle: input, processing, output, storage.\n\n## Class activity\n\nPupils process the five-pupil scores by hand, showing each step in the correct order.\n\n## Evaluation\n\n1. List the steps in information processing in order.\n2. Why must data be checked before it is processed?\n\n## Assignment\n\nComplete the worksheet, problem set and quiz on the app.",
+      "reading": {
+        "title": "From raw scores to a result sheet",
+        "content": "# The art of information processing\n\n## Meaning\n\n**Information processing** is the series of operations carried out on data to turn it into useful information. Whether by hand or by computer, the steps are the same.\n\n## Steps in information processing\n\n1. **Data collection**: gathering the raw facts from their sources, such as the scores from each subject teacher.\n2. **Data preparation**: checking the data for mistakes and missing items, and arranging it, so that bad data is not processed. This is called **validation** (is it possible?) and **verification** (is it what was written?).\n3. **Input**: entering the data into the computer using an input device.\n4. **Processing**: doing the work on the data, such as **sorting**, **calculating**, **classifying** and **summarising**.\n5. **Output**: presenting the information as a report on screen or on paper.\n6. **Storage**: saving the data and the information for later use.\n7. **Distribution (communication)**: sending the information to those who need it, such as report cards to parents.\n\n## Worked example: a class result\n\nChika's scores in four subjects are 68, 74, 55 and 83.\n\n- Collection: scores received from the four teachers.\n- Preparation: check that all four are there and all are between 0 and 100.\n- Processing: total = 68 + 74 + 55 + 83 = **280**. Average = 280 / 4 = **70**.\n- Sorting: all pupils are arranged from highest to lowest total to give each a position.\n- Output: the result sheet is printed.\n- Storage: the file is saved on the school computer and backed up on a flash drive.\n- Distribution: the report card is given to Chika's parents.\n\n## Why it matters\n\nInformation must be **accurate**, **timely** and **relevant** to be useful. If the data entered is wrong, the information will also be wrong. This is why computer people say **garbage in, garbage out**."
+      },
+      "cards": [
+        {
+          "front": "Information processing",
+          "back": "Turning raw data into useful information through a series of steps."
+        },
+        {
+          "front": "Data collection",
+          "back": "Gathering raw facts from their sources."
+        },
+        {
+          "front": "Validation",
+          "back": "Checking that data is reasonable and possible, for example a score between 0 and 100."
+        },
+        {
+          "front": "Verification",
+          "back": "Checking that data entered is the same as the source."
+        },
+        {
+          "front": "Processing",
+          "back": "Operations on data such as sorting, calculating and classifying."
+        },
+        {
+          "front": "Output",
+          "back": "Presenting processed information on screen or paper."
+        },
+        {
+          "front": "Storage",
+          "back": "Saving data and information for later use."
+        },
+        {
+          "front": "Garbage in, garbage out",
+          "back": "Wrong input data gives wrong output information."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Information processing is best defined as",
+          "options": [
+            "turning raw data into useful information",
+            "printing a document",
+            "buying a computer",
+            "storing a file on paper only"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Checking that a score typed in is between 0 and 100 is called",
+          "options": [
+            "distribution",
+            "storage",
+            "verification",
+            "validation"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A pupil scored 68, 74, 55 and 83. The average score is",
+          "options": [
+            "70",
+            "280",
+            "75",
+            "68"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Sending report cards to parents is the step called",
+          "options": [
+            "input",
+            "processing",
+            "distribution",
+            "collection"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "'Garbage in, garbage out' means that",
+          "options": [
+            "computers produce garbage",
+            "wrong data input gives wrong information output",
+            "old data must be thrown away",
+            "output devices are always faulty"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "List in order the steps of information processing and explain what is done at the processing step when the result of a class is prepared.",
+          "markScheme": [
+            "Lists collection, preparation (checking), input, processing, output, storage in the correct order",
+            "Adds distribution as the last step or explains the cycle correctly",
+            "Processing includes calculating totals and averages",
+            "Processing includes sorting the pupils to give positions"
+          ],
+          "modelAnswer": "The steps are data collection, data preparation (checking), input, processing, output, storage and distribution. At the processing step of a class result, the computer calculates each pupil's total and average, and sorts the pupils from highest to lowest total to find their positions.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The steps are data collection, data preparation or checking, input, processing, output, storage and then distribution. At the processing step for a class result, the totals and averages of each pupil are calculated and then the pupils are sorted from highest total to lowest to give positions.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "data collection, data preparation or checking, input, processing, output, storage"
+                },
+                {
+                  "point": 1,
+                  "quote": "then distribution"
+                },
+                {
+                  "point": 2,
+                  "quote": "the totals and averages of each pupil are calculated"
+                },
+                {
+                  "point": 3,
+                  "quote": "the pupils are sorted from highest total to lowest to give positions"
+                }
+              ],
+              "feedback": "All four marks. Steps in order, and you described the processing in terms of the result."
+            },
+            {
+              "tier": "full",
+              "text": "First collect the scores, then prepare and check them, then input them, process, output, store, and finally distribute the report. In processing the computer adds the scores to find each pupil's total, finds the average, and arranges the pupils in order of total to know who is first.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First collect the scores, then prepare and check them, then input them, process, output, store"
+                },
+                {
+                  "point": 1,
+                  "quote": "finally distribute the report"
+                },
+                {
+                  "point": 2,
+                  "quote": "adds the scores to find each pupil's total, finds the average"
+                },
+                {
+                  "point": 3,
+                  "quote": "arranges the pupils in order of total to know who is first"
+                }
+              ],
+              "feedback": "Full marks. Describing each step in plain words makes the order easy to follow."
+            },
+            {
+              "tier": "partial",
+              "text": "Input, processing, output and storage. In processing the computer calculates the totals.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "the computer calculates the totals"
+                }
+              ],
+              "feedback": "You gave only the four steps of the cycle. The full list also begins with collection and preparation, and ends with distribution. For processing, add sorting to find positions."
+            },
+            {
+              "tier": "partial",
+              "text": "Collection, input, processing, output, storage. In processing the pupils are sorted by position and the scores are added.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "the pupils are sorted by position"
+                },
+                {
+                  "point": 2,
+                  "quote": "the scores are added"
+                }
+              ],
+              "feedback": "Your processing description is good. You left out data preparation (checking) between collection and input, and distribution at the end.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Switching on, typing, printing and switching off. Processing is when the computer is on.",
+              "meets": [],
+              "feedback": "The steps are collection, preparation, input, processing, output, storage and distribution. Processing is the work on data, such as calculating totals and sorting."
+            },
+            {
+              "tier": "weak",
+              "text": "The steps are the monitor, the keyboard, the CPU and the printer. Processing is the printer.",
+              "meets": [],
+              "feedback": "Those are devices, not steps. Processing is a step in which data is calculated, sorted or classified, and the printer belongs to output."
+            }
+          ]
+        },
+        {
+          "prompt": "Mr Eze collects the scores of Ada: 72, 65, 90 and 49. (a) Calculate her total and average score. (b) Explain why the data should be checked before it is processed, and give one example of an error that checking would catch.",
+          "markScheme": [
+            "Total = 72 + 65 + 90 + 49 = 276",
+            "Average = 276 / 4 = 69",
+            "Wrong data gives wrong information (garbage in, garbage out)",
+            "Gives an example, such as a score above 100, a missing score or a mistyped number"
+          ],
+          "modelAnswer": "(a) Total = 72 + 65 + 90 + 49 = 276. Average = 276 / 4 = 69. (b) Data must be checked because wrong data gives wrong information: garbage in, garbage out. For example, if 90 were typed as 900, checking that scores lie between 0 and 100 would catch the error.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Total = 72 + 65 + 90 + 49 = 276. Average = 276 / 4 = 69. (b) If the data is wrong the information will also be wrong, which is garbage in, garbage out. For example, a score typed as 900 instead of 90 would be caught because a score cannot be above 100.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total = 72 + 65 + 90 + 49 = 276"
+                },
+                {
+                  "point": 1,
+                  "quote": "Average = 276 / 4 = 69"
+                },
+                {
+                  "point": 2,
+                  "quote": "If the data is wrong the information will also be wrong, which is garbage in, garbage out"
+                },
+                {
+                  "point": 3,
+                  "quote": "a score typed as 900 instead of 90 would be caught because a score cannot be above 100"
+                }
+              ],
+              "feedback": "All four marks. Your example shows what validation does."
+            },
+            {
+              "tier": "full",
+              "text": "Total is 72 plus 65 plus 90 plus 49, which is 276, and dividing by 4 subjects gives 69. Checking is needed because mistakes in the input will produce wrong results. A missing score would give the wrong total, and checking would find it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total is 72 plus 65 plus 90 plus 49, which is 276"
+                },
+                {
+                  "point": 1,
+                  "quote": "dividing by 4 subjects gives 69"
+                },
+                {
+                  "point": 2,
+                  "quote": "mistakes in the input will produce wrong results"
+                },
+                {
+                  "point": 3,
+                  "quote": "A missing score would give the wrong total, and checking would find it"
+                }
+              ],
+              "feedback": "Full marks. A missing score is a very common real error."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Total is 276 and average is 276/4 = 69. (b) To make sure it is correct.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total is 276"
+                },
+                {
+                  "point": 1,
+                  "quote": "average is 276/4 = 69"
+                }
+              ],
+              "feedback": "The calculations are correct. 'To make sure it is correct' needs a reason (wrong data gives wrong information) and an example, such as a score typed above 100."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Total is 72 + 65 + 90 + 49 = 276 and average = 276/3 = 92. (b) Garbage in garbage out. An example is a score of 200.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Total is 72 + 65 + 90 + 49 = 276"
+                },
+                {
+                  "point": 2,
+                  "quote": "Garbage in garbage out"
+                },
+                {
+                  "point": 3,
+                  "quote": "a score of 200"
+                }
+              ],
+              "feedback": "The total and part (b) are correct. Divide by the number of subjects, 4, not 3: 276 / 4 = 69.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The total is 72 + 65 = 137 and the average is 137. (b) We check it so the teacher will be happy.",
+              "meets": [],
+              "feedback": "Add all four scores (276) and divide by 4 to get 69. Checking matters because wrong data gives wrong information."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 72 x 65 x 90 x 49. (b) Because the computer may be broken.",
+              "meets": [],
+              "feedback": "Totals are found by adding, not multiplying: 276. Checking is needed to catch input errors, not computer faults."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Information transmission: methods and modes",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define information transmission;\n2. state the methods of transmitting information (traditional and modern);\n3. classify modes of transmission as visual, audio and audio-visual with examples;\n4. identify the parts of a communication process: sender, message, medium, receiver and feedback.\n\n## Materials\n\nA newspaper, a radio, a mobile phone, a picture of a town crier and a talking drum, a chart of the communication process.\n\n## Starter (5 minutes)\n\nAsk: how did a village in Yorubaland learn that the Oba was calling a meeting before the telephone? Collect answers (town crier, gong, talking drum) and compare with a WhatsApp group.\n\n## Development\n\n1. Define transmission: sending information from a source to a receiver through a medium.\n2. Traditional methods: town crier, talking drum, gong, smoke signals, messengers. Modern methods: post, telephone, radio, television, newspapers, GSM phones, email and the Internet.\n3. Parts of the process: sender, message, encoding, medium, decoding, receiver and feedback.\n4. Modes: visual (newspaper, posters), audio (radio, telephone call) and audio-visual (television, video call, GSM video).\n5. Compare speed, cost, reach and reliability of different methods.\n\n## Class activity\n\nPupils send one message by three methods and compare speed and accuracy.\n\n## Evaluation\n\n1. Give two examples each of visual and audio transmission.\n2. What is feedback in communication?\n\n## Assignment\n\nComplete the worksheet and the problem set on the app.",
+      "reading": {
+        "title": "How information travels from one person to another",
+        "content": "# Information transmission: methods and modes\n\n## What is transmission?\n\n**Information transmission** is the sending of information from a **sender** (source) to a **receiver** through a **medium** or channel. We transmit information every day: a teacher tells a class the date of the exam, a radio station announces the weather, a parent sends a text.\n\n## Parts of the communication process\n\n1. **Sender**: the person or device that originates the message.\n2. **Message**: the information being sent.\n3. **Medium (channel)**: the path through which it travels, such as air, a wire or radio waves.\n4. **Receiver**: the person or device that gets the message.\n5. **Feedback**: the receiver's response, which shows the message was understood.\n\n## Methods of transmission\n\n*Traditional methods*: the **town crier**, the **talking drum**, a **gong**, a messenger, smoke signals. They are slow and cover short distances.\n\n*Modern methods*: the **post office**, the **telephone**, **radio**, **television**, **newspapers**, **GSM mobile phones**, **email** and the **Internet**. They are faster and reach more people.\n\n## Modes of transmission\n\n- **Visual**: received by sight only. A **newspaper**, a poster, a billboard and a text message are visual.\n- **Audio**: received by hearing. The **radio** and an ordinary **telephone call** are audio.\n- **Audio-visual**: received by both sight and hearing. **Television**, a film, a video call and a video on a smartphone are audio-visual. A GSM phone can do all three: it shows messages, carries calls and plays videos.\n\n## Choosing a method\n\nThe best method depends on **speed**, **cost**, **reach**, **privacy** and **reliability**. A text message to one friend is cheap and private. A radio announcement reaches thousands in a state. A newspaper advert reaches many readers and can be kept, but it is not instant.\n\n## Example\n\nA school announces a PTA meeting by a printed notice on the board (visual), a message on the school radio (audio) and a short video on the school's page (audio-visual). Each reaches the parents in a different way."
+      },
+      "cards": [
+        {
+          "front": "Information transmission",
+          "back": "Sending information from a source to a receiver through a medium."
+        },
+        {
+          "front": "Medium",
+          "back": "The channel through which a message travels."
+        },
+        {
+          "front": "Feedback",
+          "back": "The receiver's response, showing the message was understood."
+        },
+        {
+          "front": "Visual mode",
+          "back": "Information received by sight, such as a newspaper."
+        },
+        {
+          "front": "Audio mode",
+          "back": "Information received by hearing, such as radio."
+        },
+        {
+          "front": "Audio-visual mode",
+          "back": "Information received by sight and hearing, such as television."
+        },
+        {
+          "front": "Town crier",
+          "back": "A traditional method: a person who announces news in a community."
+        },
+        {
+          "front": "Talking drum",
+          "back": "A traditional instrument used to send messages over a distance."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Sending information from a source to a receiver through a medium is called",
+          "options": [
+            "information storage",
+            "information processing",
+            "information transmission",
+            "information deletion"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A newspaper is an example of which mode of transmission?",
+          "options": [
+            "Audio",
+            "Audio-visual",
+            "Interactive",
+            "Visual"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is an audio-visual medium?",
+          "options": [
+            "Television",
+            "Radio",
+            "Newspaper",
+            "Poster"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The receiver's response that shows the message was understood is called",
+          "options": [
+            "medium",
+            "feedback",
+            "encoding",
+            "noise"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these is a traditional method of transmitting information?",
+          "options": [
+            "Email",
+            "Television",
+            "A town crier",
+            "A GSM phone"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between the visual, audio and audio-visual modes of transmitting information. Give one example of each.",
+          "markScheme": [
+            "Visual: received by sight only, such as a newspaper or poster",
+            "Audio: received by hearing only, such as the radio or a telephone call",
+            "Audio-visual: received by both sight and hearing, such as television",
+            "Gives an example for each mode"
+          ],
+          "modelAnswer": "The visual mode is received by sight only, for example a newspaper. The audio mode is received by hearing only, for example the radio or an ordinary telephone call. The audio-visual mode is received by both sight and hearing, for example television or a video call.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Visual information is the one we receive by seeing only, such as a newspaper. Audio information is received by hearing only, such as the radio. Audio-visual information is received by both seeing and hearing, such as television. Each mode has an example above.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Visual information is the one we receive by seeing only, such as a newspaper"
+                },
+                {
+                  "point": 1,
+                  "quote": "Audio information is received by hearing only, such as the radio"
+                },
+                {
+                  "point": 2,
+                  "quote": "Audio-visual information is received by both seeing and hearing, such as television"
+                },
+                {
+                  "point": 3,
+                  "quote": "such as the radio"
+                }
+              ],
+              "feedback": "All four marks. You defined each by the sense used, with an example."
+            },
+            {
+              "tier": "full",
+              "text": "Visual means that the receiver sees the message, for example a poster. Audio means that the receiver hears the message, for example a telephone call. Audio-visual means that the receiver both sees and hears, like a video call or a film.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Visual means that the receiver sees the message, for example a poster"
+                },
+                {
+                  "point": 1,
+                  "quote": "Audio means that the receiver hears the message, for example a telephone call"
+                },
+                {
+                  "point": 2,
+                  "quote": "Audio-visual means that the receiver both sees and hears, like a video call or a film"
+                },
+                {
+                  "point": 3,
+                  "quote": "for example a telephone call"
+                }
+              ],
+              "feedback": "Full marks. A video call is an excellent modern example."
+            },
+            {
+              "tier": "partial",
+              "text": "Visual is by seeing, such as a newspaper. Audio is by hearing, such as radio. Audio-visual is a mixed one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Visual is by seeing, such as a newspaper"
+                },
+                {
+                  "point": 1,
+                  "quote": "Audio is by hearing, such as radio"
+                }
+              ],
+              "feedback": "Visual and audio are right. Say clearly that audio-visual is received by both sight and hearing, and give an example, like television."
+            },
+            {
+              "tier": "partial",
+              "text": "Audio-visual is by seeing and hearing, such as television. Audio is by hearing. Visual is the same as audio.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Audio-visual is by seeing and hearing, such as television"
+                }
+              ],
+              "feedback": "Your audio-visual point is right. Visual is not the same as audio: visual is by sight only, such as a newspaper or poster.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Visual is when you use a phone. Audio is when you use a computer. Audio-visual is when you use a car.",
+              "meets": [],
+              "feedback": "The modes are defined by which senses receive the message: sight (visual), hearing (audio) or both (audio-visual)."
+            },
+            {
+              "tier": "weak",
+              "text": "They are all the same, they are ways of sending a letter.",
+              "meets": [],
+              "feedback": "They differ by the sense used: visual (sight), audio (hearing), audio-visual (both). A letter is visual."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Name the five parts of the communication process. (b) A school wants to tell parents about a meeting on Saturday. Suggest three methods it can use, saying one advantage of each.",
+          "markScheme": [
+            "Sender, message, medium, receiver and feedback named",
+            "First method with an advantage (e.g. SMS: quick and direct)",
+            "Second method with an advantage (e.g. radio announcement: reaches many parents)",
+            "Third method with an advantage (e.g. printed letter: can be kept as a record)"
+          ],
+          "modelAnswer": "(a) The five parts are the sender, the message, the medium, the receiver and feedback. (b) The school can send an SMS or WhatsApp message, which is quick and reaches each parent directly. It can give an announcement on the radio, which reaches many parents at once. It can send a printed letter through the pupils, which can be kept as a record.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The parts are the sender, message, medium, receiver and feedback. (b) The school can send a text message, which is fast and goes straight to each parent. It can use a radio announcement, which reaches many parents at once. It can send a printed letter with the pupils, which parents can keep as proof.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The parts are the sender, message, medium, receiver and feedback"
+                },
+                {
+                  "point": 1,
+                  "quote": "send a text message, which is fast and goes straight to each parent"
+                },
+                {
+                  "point": 2,
+                  "quote": "use a radio announcement, which reaches many parents at once"
+                },
+                {
+                  "point": 3,
+                  "quote": "send a printed letter with the pupils, which parents can keep as proof"
+                }
+              ],
+              "feedback": "All four marks. Each method has a real advantage."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Sender, message, medium or channel, receiver and feedback. (b) A notice on the school notice board is cheap and visible to all who visit. A WhatsApp group of parents is fast and parents can reply to confirm. A town crier or loudspeaker at the market square is useful for parents who have no phone.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sender, message, medium or channel, receiver and feedback"
+                },
+                {
+                  "point": 1,
+                  "quote": "A notice on the school notice board is cheap and visible to all who visit"
+                },
+                {
+                  "point": 2,
+                  "quote": "A WhatsApp group of parents is fast and parents can reply to confirm"
+                },
+                {
+                  "point": 3,
+                  "quote": "A town crier or loudspeaker at the market square is useful for parents who have no phone"
+                }
+              ],
+              "feedback": "Full marks. Choosing a method for parents without phones shows real thinking."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Sender, message, receiver. (b) A text message is quick. The school can also use radio and a letter.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "A text message is quick"
+                }
+              ],
+              "feedback": "You named three of the five parts (add medium and feedback). Your text message advantage is good; radio and a letter also need an advantage each, such as reaching many parents or being kept as a record."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) The parts are sender, message, medium, receiver and feedback. (b) The school can use the telephone.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The parts are sender, message, medium, receiver and feedback"
+                }
+              ],
+              "feedback": "Part (a) is complete. In (b), give three methods and an advantage of each, such as a radio announcement or a printed letter.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Teacher, student and school. (b) The school can use drumming.",
+              "meets": [],
+              "feedback": "The parts of communication are sender, message, medium, receiver and feedback. Give modern or traditional methods with their advantages."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The parts are pen, paper and book. (b) The school can shout.",
+              "meets": [],
+              "feedback": "Those are materials, not parts of the process. Use sender, message, medium, receiver, feedback; and give three methods with advantages."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Media of information transmission",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. state the two types of transmission medium: guided (wired) and unguided (wireless);\n2. classify the means of mass communication (radio, television, newspaper, the Internet) and say what each is best for;\n3. compare the media by speed, cost, reach and reliability.\n\n## Materials\n\nA short length of network cable, a pictured fibre optic cable, a radio, a newspaper, a phone, a chart of media.\n\n## Starter (5 minutes)\n\nAsk: how did you hear the last big news in your town: radio, a phone, a neighbour, a newspaper? Tally the answers on the board.\n\n## Development\n\n1. Medium means the path a message travels. Guided media use a physical path: twisted pair cable, coaxial cable and fibre optic cable. Unguided media use the air: radio waves, microwaves and satellite.\n2. Compare: fibre optic is fastest and carries most but costs more; radio waves reach a wide area but can be interrupted.\n3. Mass media: print (newspaper, magazine), broadcast (radio, television) and electronic (the Internet, social media).\n4. Strengths and limits: a newspaper can be kept but is slow; radio reaches rural areas and needs no electricity if battery powered; television shows pictures but costs more; the Internet is fast and interactive but needs data and power.\n5. Choosing a medium for a given audience.\n\n## Class activity\n\nGroups choose the best medium to announce a vaccination campaign in a village and defend the choice.\n\n## Evaluation\n\n1. Give two examples of guided and two of unguided media.\n2. Why is radio useful in rural areas?\n\n## Assignment\n\nComplete the quiz and the worksheet on the app.",
+      "reading": {
+        "title": "The paths and channels messages travel",
+        "content": "# Media of information transmission\n\n## Transmission media\n\nA **transmission medium** is the path along which a signal travels from sender to receiver. There are two kinds.\n\n**Guided (wired) media** use a physical cable:\n\n- **Twisted pair cable**: pairs of copper wires, used in telephone lines and the network cables in a school ICT room.\n- **Coaxial cable**: a copper core with shielding, used for cable television.\n- **Fibre optic cable**: glass threads that carry light. It is the fastest and carries the most data over long distances, but it costs more.\n\n**Unguided (wireless) media** send signals through the air:\n\n- **Radio waves**: radio, television broadcasts and Wi-Fi.\n- **Microwaves**: used for GSM mobile networks and links between towers.\n- **Satellite**: signals sent up to a satellite and back down, used for television and to reach remote places.\n\n## Means of mass communication\n\n**Mass media** reach many people at once.\n\n- **Print media**: newspapers and magazines. They can be kept and re-read but are slow and need literacy.\n- **Radio**: reaches towns and villages, is cheap, can run on batteries and works in local languages.\n- **Television**: shows both pictures and sound and holds attention, but sets and electricity are costly.\n- **The Internet**: carries text, sound and video, is fast and interactive, but needs data, a device and power.\n\n## Comparing media\n\n| Medium | Speed | Cost | Reach |\n| --- | --- | --- | --- |\n| Newspaper | slow | low | towns |\n| Radio | instant | low | wide |\n| Television | instant | high | towns with power |\n| Internet | instant | medium | where there is a network |\n\n## Example\n\nA state ministry wants to warn farmers about flooding. Radio in Hausa, Yoruba and Igbo reaches farmers who have no electricity. SMS reaches those with phones. A newspaper notice reaches town readers later."
+      },
+      "cards": [
+        {
+          "front": "Transmission medium",
+          "back": "The path along which a signal travels."
+        },
+        {
+          "front": "Guided medium",
+          "back": "A medium using a physical cable, such as twisted pair or fibre optic."
+        },
+        {
+          "front": "Unguided medium",
+          "back": "A medium that sends signals through the air, such as radio waves or satellite."
+        },
+        {
+          "front": "Fibre optic cable",
+          "back": "Glass cable carrying light; the fastest guided medium."
+        },
+        {
+          "front": "Satellite",
+          "back": "An unguided medium that relays signals to remote places."
+        },
+        {
+          "front": "Mass media",
+          "back": "Means of reaching many people at once: newspapers, radio, television, the Internet."
+        },
+        {
+          "front": "Print media",
+          "back": "Newspapers and magazines."
+        },
+        {
+          "front": "Broadcast media",
+          "back": "Radio and television."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following is a guided transmission medium?",
+          "options": [
+            "Satellite",
+            "Radio waves",
+            "Microwave",
+            "Fibre optic cable"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is an unguided medium?",
+          "options": [
+            "Radio waves",
+            "Coaxial cable",
+            "Twisted pair",
+            "Fibre optic cable"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Radio is useful for reaching rural communities mainly because it",
+          "options": [
+            "shows pictures",
+            "needs no electricity if it runs on batteries and uses local languages",
+            "is the most expensive",
+            "needs the Internet"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which medium carries data as light?",
+          "options": [
+            "Twisted pair",
+            "Coaxial cable",
+            "Fibre optic cable",
+            "Radio waves"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A newspaper is classified as",
+          "options": [
+            "broadcast media",
+            "electronic media",
+            "print media",
+            "a guided medium"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between guided and unguided transmission media and give two examples of each.",
+          "markScheme": [
+            "Guided media use a physical cable or wire to carry the signal",
+            "Two examples of guided media (twisted pair, coaxial, fibre optic)",
+            "Unguided media send the signal through the air without a cable",
+            "Two examples of unguided media (radio waves, microwave, satellite)"
+          ],
+          "modelAnswer": "Guided media carry the signal along a physical cable, for example twisted pair cable and fibre optic cable. Unguided media send the signal through the air without a physical cable, for example radio waves and satellite.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Guided media carry signals along a cable or wire. Examples are twisted pair cable and fibre optic cable. Unguided media send signals through the air and need no cable. Examples are radio waves and satellite.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Guided media carry signals along a cable or wire"
+                },
+                {
+                  "point": 1,
+                  "quote": "Examples are twisted pair cable and fibre optic cable"
+                },
+                {
+                  "point": 2,
+                  "quote": "Unguided media send signals through the air and need no cable"
+                },
+                {
+                  "point": 3,
+                  "quote": "Examples are radio waves and satellite"
+                }
+              ],
+              "feedback": "All four marks. A clear definition of each, with two examples."
+            },
+            {
+              "tier": "full",
+              "text": "A guided medium uses a physical path such as coaxial cable or fibre optic. An unguided medium is wireless, for example microwaves for GSM and Wi-Fi radio signals, where the signal goes through space.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A guided medium uses a physical path"
+                },
+                {
+                  "point": 1,
+                  "quote": "coaxial cable or fibre optic"
+                },
+                {
+                  "point": 2,
+                  "quote": "An unguided medium is wireless"
+                },
+                {
+                  "point": 3,
+                  "quote": "microwaves for GSM and Wi-Fi radio signals"
+                }
+              ],
+              "feedback": "Full marks. GSM is a good Nigerian example of an unguided medium."
+            },
+            {
+              "tier": "partial",
+              "text": "Guided media use cables, such as fibre optic cable. Unguided media are the ones that are not guided.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Guided media use cables"
+                }
+              ],
+              "feedback": "Guided is right. Unguided media send signals through the air, like radio waves or satellite. Give two examples of each."
+            },
+            {
+              "tier": "partial",
+              "text": "Unguided media are radio waves and satellite. Guided media are for guiding.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Unguided media are radio waves and satellite"
+                }
+              ],
+              "feedback": "Your unguided examples are right. Guided media carry the signal along a physical cable, for example twisted pair or fibre optic.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Guided media are the ones with a teacher guiding the user. Unguided are those without.",
+              "meets": [],
+              "feedback": "Guided and unguided refer to the path of the signal: a physical cable (guided) or the air (unguided)."
+            },
+            {
+              "tier": "weak",
+              "text": "Guided is the radio and unguided is the cable.",
+              "meets": [],
+              "feedback": "It is the other way: radio waves are unguided because they travel through the air; cables are guided."
+            }
+          ]
+        },
+        {
+          "prompt": "A state ministry wants to announce a flood warning to farmers in villages with little electricity. Recommend two media it should use and explain why, and state one weakness of a newspaper for this purpose.",
+          "markScheme": [
+            "Recommends radio and explains it works with batteries and reaches villages",
+            "Explains that broadcasts can be in local languages",
+            "Recommends a second medium, such as SMS, with a reason",
+            "States a weakness of a newspaper, such as slow, needs literacy or does not reach villages quickly"
+          ],
+          "modelAnswer": "The ministry should use radio, because a battery radio reaches villages without electricity and can broadcast in Hausa, Yoruba or Igbo so that farmers understand. It can also send SMS to farmers' phones, because the message reaches each person at once. A newspaper is slow and needs literacy, and it may not reach the villages in time.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I would use radio, because a battery radio works in villages with no light and reaches many farmers at once. The announcement can be in the local language so they understand. I would also use SMS because it reaches the farmers who have phones immediately. A newspaper is slow and does not reach the village quickly, so the warning may be late.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "radio, because a battery radio works in villages with no light and reaches many farmers at once"
+                },
+                {
+                  "point": 1,
+                  "quote": "The announcement can be in the local language so they understand"
+                },
+                {
+                  "point": 2,
+                  "quote": "SMS because it reaches the farmers who have phones immediately"
+                },
+                {
+                  "point": 3,
+                  "quote": "A newspaper is slow and does not reach the village quickly"
+                }
+              ],
+              "feedback": "All four marks. Each recommendation has its reason, and your newspaper weakness matches the need for speed."
+            },
+            {
+              "tier": "full",
+              "text": "The ministry can use radio which is cheap, reaches rural areas and works on batteries, with the message in Yoruba, Hausa or Igbo. It can also use a town crier or loudspeakers in villages. Newspapers are not good because many farmers cannot read them and they come late.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "radio which is cheap, reaches rural areas and works on batteries"
+                },
+                {
+                  "point": 1,
+                  "quote": "with the message in Yoruba, Hausa or Igbo"
+                },
+                {
+                  "point": 2,
+                  "quote": "a town crier or loudspeakers in villages"
+                },
+                {
+                  "point": 3,
+                  "quote": "many farmers cannot read them and they come late"
+                }
+              ],
+              "feedback": "Full marks. A town crier is a sensible traditional choice for a village."
+            },
+            {
+              "tier": "partial",
+              "text": "Radio and television because they reach many people. A newspaper is not good.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "A newspaper is not good"
+                }
+              ],
+              "feedback": "Radio is right, but television needs electricity, which the villages lack. Explain why, and give the weakness of a newspaper: it is slow, and needs literacy."
+            },
+            {
+              "tier": "partial",
+              "text": "I will use radio because it works on batteries. I will also use the Internet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "radio because it works on batteries"
+                }
+              ],
+              "feedback": "Radio is well reasoned. The Internet is a poor choice where there is little electricity or network; SMS or a town crier would fit better. Also state the newspaper's weakness.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "They should use any medium. A newspaper is the best because it is written.",
+              "meets": [],
+              "feedback": "Choose media that reach farmers with no electricity quickly, such as battery radio and SMS. A newspaper is slow and needs literacy."
+            },
+            {
+              "tier": "weak",
+              "text": "The ministry should use fibre optic cable to the villages.",
+              "meets": [],
+              "feedback": "Fibre optic is a transmission medium, not a mass medium for farmers, and is costly to lay. Radio and SMS are practical choices."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Networking: LAN, MAN, WAN, Internet and intranet",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a computer network, the Internet and an intranet;\n2. distinguish a LAN, a MAN and a WAN with examples;\n3. state the significance (advantages) of networking and one risk.\n\n## Materials\n\nA network switch or picture of one, a network cable, a map showing a school LAN and a bank's branches, a computer connected to a printer in the ICT room.\n\n## Starter (5 minutes)\n\nAsk: your ICT teacher prints from one computer to a printer shared by all. How is it possible? What would you need if every computer had its own printer?\n\n## Development\n\n1. Define a network: two or more computers linked to share data, resources and communicate.\n2. LAN (Local Area Network): a building or a school compound, like the ICT room. MAN (Metropolitan Area Network): a city, like a city cable network or a university with campuses across a city. WAN (Wide Area Network): countries and continents, like the Internet and a bank's branches across Nigeria.\n3. The Internet: a worldwide network of networks. An intranet: a private network inside an organisation that uses Internet technology, such as a school's staff portal.\n4. Significance: sharing of devices (printers) and files, communication, saving costs, central backup and security control. Risks: viruses spreading and hacking.\n\n## Class activity\n\nPupils classify ten examples as LAN, MAN or WAN, then draw the ICT room network.\n\n## Evaluation\n\n1. State two advantages of networking.\n2. Is the school's internal portal an Internet or an intranet?\n\n## Assignment\n\nComplete the problem set and the worksheet on the app.",
+      "reading": {
+        "title": "Computers that talk to each other",
+        "content": "# Networking: LAN, MAN, WAN, Internet and intranet\n\n## What is a network?\n\nA **computer network** is two or more computers and devices linked so that they can share data, programs and devices and communicate. Linking is done by cables or wireless connections and a **switch** or **router**.\n\n**Networking** is the process of setting up and using such links.\n\n## Types of network by size\n\n- **LAN (Local Area Network)**: covers a small area, such as a room, a school or an office building. The computers in your school ICT room joined to one printer form a LAN. It is fast and cheap to run.\n- **MAN (Metropolitan Area Network)**: covers a city or a large campus. A cable television network across a city, or a university with campuses in several parts of a town, is a MAN.\n- **WAN (Wide Area Network)**: covers a country or the world. A bank whose branches in Lagos, Kano and Enugu are connected, and the Internet itself, are WANs. It uses telephone lines, fibre optic cables and satellites.\n\n| Type | Area | Example |\n| --- | --- | --- |\n| LAN | a building | school ICT room |\n| MAN | a city | city cable network |\n| WAN | countries | the Internet |\n\n## Internet and intranet\n\nThe **Internet** is a worldwide network of networks that anyone can join through an Internet service provider. It carries email, websites, video and social media.\n\nAn **intranet** is a private network inside an organisation that uses the same technology as the Internet but is open only to its members. A school's staff portal for marking attendance is an intranet.\n\n## Significance of networking\n\n- **Sharing resources**: one printer, scanner or Internet connection serves many computers, which saves money.\n- **Sharing data and files**: results and registers are accessible to all authorised users.\n- **Communication**: email and messaging within the organisation.\n- **Central control**: backup and security managed from one place.\n- **Teamwork**: many people can work on one project.\n\n*Risks:* viruses spread quickly across a network, unauthorised users may gain access, and if the main server fails many users are affected."
+      },
+      "cards": [
+        {
+          "front": "Computer network",
+          "back": "Two or more computers linked to share data and resources."
+        },
+        {
+          "front": "LAN",
+          "back": "A network covering a small area such as a school or office building."
+        },
+        {
+          "front": "MAN",
+          "back": "A network covering a city or large campus."
+        },
+        {
+          "front": "WAN",
+          "back": "A network covering countries or the world; the Internet is one."
+        },
+        {
+          "front": "Internet",
+          "back": "A worldwide network of networks."
+        },
+        {
+          "front": "Intranet",
+          "back": "A private network inside an organisation using Internet technology."
+        },
+        {
+          "front": "Router",
+          "back": "A device that connects networks and directs data between them."
+        },
+        {
+          "front": "Resource sharing",
+          "back": "Several users sharing one printer, scanner or Internet connection."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "The computers in a school ICT room connected to one printer form a",
+          "options": [
+            "WAN",
+            "MAN",
+            "LAN",
+            "Internet"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A bank with branches linked in Lagos, Kano and Enugu uses a",
+          "options": [
+            "LAN",
+            "WAN",
+            "MAN",
+            "stand-alone computer"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A private network inside a school that only staff can use is an",
+          "options": [
+            "Internet",
+            "intranet",
+            "MAN",
+            "router"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which is an advantage of networking?",
+          "options": [
+            "Viruses spread easily",
+            "If the server fails everyone is affected",
+            "Several computers share one printer",
+            "Passwords become unnecessary"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The worldwide network of networks is called",
+          "options": [
+            "intranet",
+            "LAN",
+            "MAN",
+            "Internet"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between a LAN, a MAN and a WAN. Give one example of each from your own environment.",
+          "markScheme": [
+            "A LAN covers a small area such as a room or building",
+            "A MAN covers a city or large campus",
+            "A WAN covers a wide area such as countries or the world",
+            "Gives a suitable example for each"
+          ],
+          "modelAnswer": "A LAN covers a small area such as a room, a school or a building, for example the computers in the school ICT room. A MAN covers a city or a large campus, for example a cable television network across a town. A WAN covers a wide area such as countries or the whole world, for example the Internet or the connected branches of a bank.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A LAN covers a small area like one building, for example my school ICT room. A MAN covers a whole city, for example a university with campuses in the same city. A WAN covers countries or the world, for example a bank with branches in different states, or the Internet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A LAN covers a small area like one building"
+                },
+                {
+                  "point": 1,
+                  "quote": "A MAN covers a whole city"
+                },
+                {
+                  "point": 2,
+                  "quote": "A WAN covers countries or the world"
+                },
+                {
+                  "point": 3,
+                  "quote": "for example my school ICT room"
+                }
+              ],
+              "feedback": "All four marks. Using your own ICT room as the LAN example is exactly what the question asked."
+            },
+            {
+              "tier": "full",
+              "text": "LAN is a local area network in a limited place such as an office. MAN is a metropolitan area network that spreads over a city. WAN is a wide area network that spreads across a country or continents. Examples: the computers in an office for LAN, a city's cable network for MAN and the Internet for WAN.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "LAN is a local area network in a limited place such as an office"
+                },
+                {
+                  "point": 1,
+                  "quote": "MAN is a metropolitan area network that spreads over a city"
+                },
+                {
+                  "point": 2,
+                  "quote": "WAN is a wide area network that spreads across a country or continents"
+                },
+                {
+                  "point": 3,
+                  "quote": "a city's cable network for MAN and the Internet for WAN"
+                }
+              ],
+              "feedback": "Full marks. Spelling out the full names is a good addition."
+            },
+            {
+              "tier": "partial",
+              "text": "LAN is a network in a small area and WAN is a network for a big area. MAN is the one in the middle.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "LAN is a network in a small area"
+                },
+                {
+                  "point": 2,
+                  "quote": "WAN is a network for a big area"
+                }
+              ],
+              "feedback": "The sizes are right. Say what a MAN covers (a city), and give an example of each, such as the ICT room, a city cable network and the Internet."
+            },
+            {
+              "tier": "partial",
+              "text": "MAN covers a city. For example a university with campuses across a city. LAN and WAN are the other types.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "MAN covers a city"
+                }
+              ],
+              "feedback": "MAN is correct. Define the LAN (a building) and the WAN (countries) and give an example of each.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "LAN is the Lagos area network, MAN is the Maiduguri network and WAN is the Warri network.",
+              "meets": [],
+              "feedback": "The letters stand for Local, Metropolitan and Wide Area Network, which describe the size of the area, not places."
+            },
+            {
+              "tier": "weak",
+              "text": "LAN is a cable, MAN is a router and WAN is a switch.",
+              "meets": [],
+              "feedback": "They are network types by area: a building (LAN), a city (MAN) and a country or the world (WAN), not devices."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) State three advantages of networking the computers in a school. (b) State one risk. (c) What is the difference between the Internet and an intranet?",
+          "markScheme": [
+            "A first advantage, such as sharing a printer or Internet connection",
+            "Two further advantages (sharing files, communication, central backup)",
+            "One risk, such as spread of viruses, hacking or server failure",
+            "The Internet is a public worldwide network while an intranet is a private network for one organisation"
+          ],
+          "modelAnswer": "(a) Networking lets computers share a printer and an Internet connection, which saves money; pupils and teachers can share files; and the school can back up all data from one place. (b) A risk is that a virus can spread quickly to all computers. (c) The Internet is a public worldwide network open to anyone, while an intranet is a private network used only by members of one organisation.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Many computers can share one printer and Internet connection, which saves money. Teachers can share files and results with each other. The school can back up all its data from one computer. (b) A virus can spread quickly through the network to all the computers. (c) The Internet is a public worldwide network that anyone can join, but an intranet is a private network that only the staff or pupils of the school can use.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Many computers can share one printer and Internet connection, which saves money"
+                },
+                {
+                  "point": 1,
+                  "quote": "Teachers can share files and results with each other. The school can back up all its data from one computer"
+                },
+                {
+                  "point": 2,
+                  "quote": "A virus can spread quickly through the network to all the computers"
+                },
+                {
+                  "point": 3,
+                  "quote": "The Internet is a public worldwide network that anyone can join, but an intranet is a private network"
+                }
+              ],
+              "feedback": "All four marks. Three advantages, a risk and the difference, each explained."
+            },
+            {
+              "tier": "full",
+              "text": "(a) Resource sharing of printers and scanners, easy communication by email inside the school, and sharing of files. (b) If the main server fails, nobody can use the network. (c) The Internet connects networks all over the world and anyone can access it, whereas an intranet belongs to one organisation and only its members can use it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Resource sharing of printers and scanners"
+                },
+                {
+                  "point": 1,
+                  "quote": "easy communication by email inside the school, and sharing of files"
+                },
+                {
+                  "point": 2,
+                  "quote": "If the main server fails, nobody can use the network"
+                },
+                {
+                  "point": 3,
+                  "quote": "an intranet belongs to one organisation and only its members can use it"
+                }
+              ],
+              "feedback": "Full marks. Server failure is a risk many learners overlook."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Computers share printers and share files. (b) Viruses. (c) The Internet is bigger than the intranet.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Computers share printers"
+                },
+                {
+                  "point": 2,
+                  "quote": "Viruses"
+                }
+              ],
+              "feedback": "You gave two advantages (you need three, such as communication). For (c), it is not only size: the Internet is public and worldwide; an intranet is private to one organisation."
+            },
+            {
+              "tier": "partial",
+              "text": "(c) The Internet is open to everybody in the world, and an intranet is private to an organisation. (a) Sharing a printer. (b) None.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Sharing a printer"
+                },
+                {
+                  "point": 3,
+                  "quote": "The Internet is open to everybody in the world, and an intranet is private to an organisation"
+                }
+              ],
+              "feedback": "Part (c) is correct. Networks do have risks: viruses can spread, and a server failure affects all users. Give two more advantages too.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) The advantage is that the pupils can play games. (b) Network is a net for fishing. (c) Intranet is the Internet in a small way.",
+              "meets": [],
+              "feedback": "Advantages include resource sharing, file sharing and communication. A risk is virus spread. An intranet is private to an organisation; the Internet is public."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Networking makes computers faster. (b) The risk is that the computer will break. (c) They are the same.",
+              "meets": [],
+              "feedback": "Networking does not speed up a computer; it allows sharing. A real risk is viruses spreading. The Internet is public and worldwide; an intranet is private."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

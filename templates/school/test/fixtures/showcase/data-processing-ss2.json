@@ -1,0 +1,2668 @@
+{
+  "subject": "Data Processing",
+  "yearGroup": "SS2",
+  "weeks": {
+    "1": {
+      "topic": "Networking in practice: choosing and using networks",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. recall the meaning of networking, the Internet and an intranet;\n2. choose the right network type (LAN, MAN or WAN) for a given organisation;\n3. state the devices that make a network work;\n4. work out the cost saving from sharing resources and state the significance of networking.\n\n## Materials\n\nA network switch, a router and a network cable to pass around, a floor plan of a school with two blocks, calculators.\n\n## Starter (5 minutes)\n\nRecap SS1: ask pupils to explain in one sentence the difference between a LAN and a WAN. Then ask: a school has an ICT room in Block A and an admin office in Block B, 80 metres apart. What kind of network joins them?\n\n## Development\n\n1. Recall: a network links computers to share data and resources. The Internet is public and worldwide; an intranet is private to one organisation; an extranet allows selected outsiders, such as parents, to reach part of the intranet.\n2. Network devices: network interface card (NIC), cable or wireless access point, switch (links computers in a LAN), router (links networks and gives Internet access), modem (converts signals for the telephone or fibre line).\n3. Choose the network: one building or compound means LAN; several sites in a city means MAN; branches across states mean WAN.\n4. Cost of sharing: work out the cost of one shared printer against many.\n5. Significance: sharing, communication, central backup, security; and its weaknesses.\n\n## Class activity\n\nPupils are given five organisations (a village clinic, a state university, a bank, a cyber cafe, a pharmacy chain) and pick and justify a network type for each.\n\n## Evaluation\n\n1. Which device links several computers in a LAN?\n2. Why do banks use WANs?\n\n## Assignment\n\nComplete the worksheet and the quiz on the app.",
+      "reading": {
+        "title": "Putting a network to work",
+        "content": "# Networking in practice: choosing and using networks\n\n## Recall\n\nA **network** links two or more computers to share data, programs and devices. The **Internet** is a public worldwide network of networks. An **intranet** is a private network for one organisation. An **extranet** is a part of an intranet that selected outsiders, such as parents or suppliers, can reach with a password.\n\n## Devices that make a network work\n\n- **Network interface card (NIC)**: the part in each computer that connects it to the network.\n- **Cable or wireless access point**: the path for the signal.\n- **Switch**: joins the computers inside a LAN and sends data only to the computer that needs it.\n- **Router**: joins different networks, such as the school LAN to the Internet, and directs data.\n- **Modem**: converts signals so they can travel on a telephone or fibre line.\n\n## Choosing the right network\n\n| Organisation | Network | Why |\n| --- | --- | --- |\n| A school ICT room | LAN | one room or building |\n| A university with campuses across a city | MAN | several sites in one city |\n| A bank with branches in many states | WAN | sites far apart |\n\n## The cost of sharing\n\nA school ICT room has 20 computers. Giving each its own printer at N150,000 would cost 20 x 150,000 = N3,000,000. Connecting them in a LAN so that they share two printers costs 2 x 150,000 = N300,000 plus a switch of about N60,000 and cables of N40,000, a total of N400,000. The school saves N3,000,000 - N400,000 = **N2,600,000**.\n\n## Significance and limits\n\nNetworking allows resource sharing, quick communication, one central backup and control of who sees what. Its limits are the cost of setting up, the risk of viruses spreading, and the dependence on a server or router: if it fails, many users stop.\n\n## Using a network safely\n\nPupils should log in with their own password, never share it, log out when done, and not install programs on a shared computer."
+      },
+      "cards": [
+        {
+          "front": "Extranet",
+          "back": "A part of an intranet that selected outsiders can reach with a password."
+        },
+        {
+          "front": "NIC",
+          "back": "The network interface card that connects a computer to a network."
+        },
+        {
+          "front": "Switch",
+          "back": "A device that connects the computers in a LAN."
+        },
+        {
+          "front": "Router",
+          "back": "A device that connects different networks and directs data."
+        },
+        {
+          "front": "Modem",
+          "back": "A device that converts signals to travel on a telephone or fibre line."
+        },
+        {
+          "front": "Network for a city campus",
+          "back": "A MAN."
+        },
+        {
+          "front": "Network for bank branches in many states",
+          "back": "A WAN."
+        },
+        {
+          "front": "Resource sharing",
+          "back": "Many computers using the same printer or Internet connection."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which device joins the computers inside a school LAN?",
+          "options": [
+            "Switch",
+            "Scanner",
+            "Modem only",
+            "Monitor"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A network that lets parents see their children's results with a password, but nothing else on the school system, is an",
+          "options": [
+            "Internet",
+            "extranet",
+            "LAN",
+            "MAN"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A university with campuses in different parts of one city is best served by a",
+          "options": [
+            "LAN",
+            "stand-alone computer",
+            "MAN",
+            "WAN only"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which device connects the school LAN to the Internet?",
+          "options": [
+            "Keyboard",
+            "Switch",
+            "Printer",
+            "Router"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A bank with branches in Lagos, Abuja and Port Harcourt needs a",
+          "options": [
+            "LAN",
+            "WAN",
+            "MAN",
+            "tablet"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A school has 25 computers. A printer costs N120,000. (a) Calculate the cost of giving each computer its own printer. (b) If the school instead networks the computers so that they share 2 printers, with a switch costing N70,000 and cables costing N30,000, calculate the total cost and the saving.",
+          "markScheme": [
+            "Cost of separate printers = 25 x 120,000 = N3,000,000",
+            "Cost of shared printers = 2 x 120,000 = N240,000",
+            "Total networked cost = 240,000 + 70,000 + 30,000 = N340,000",
+            "Saving = 3,000,000 - 340,000 = N2,660,000"
+          ],
+          "modelAnswer": "(a) 25 x N120,000 = N3,000,000. (b) Two printers cost 2 x 120,000 = N240,000. The total cost with the switch and cables is 240,000 + 70,000 + 30,000 = N340,000. The saving is 3,000,000 - 340,000 = N2,660,000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 25 x 120,000 = N3,000,000. (b) Two printers = 2 x 120,000 = N240,000. The total = 240,000 + 70,000 + 30,000 = N340,000. The saving = 3,000,000 - 340,000 = N2,660,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "25 x 120,000 = N3,000,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Two printers = 2 x 120,000 = N240,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "The total = 240,000 + 70,000 + 30,000 = N340,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "The saving = 3,000,000 - 340,000 = N2,660,000"
+                }
+              ],
+              "feedback": "All four marks. Each step is clear and the units are shown."
+            },
+            {
+              "tier": "full",
+              "text": "Separate printers cost 25 times N120,000 which is N3,000,000. For the network, 2 printers cost N240,000, and with the N70,000 switch and N30,000 cables the cost is N340,000. The school saves N2,660,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "25 times N120,000 which is N3,000,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "2 printers cost N240,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "the cost is N340,000"
+                },
+                {
+                  "point": 3,
+                  "quote": "The school saves N2,660,000"
+                }
+              ],
+              "feedback": "Full marks. The saving is the figure a bursar would want."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 25 x 120,000 = N3,000,000. (b) The network costs 240,000 + 70,000 + 30,000 = N340,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "25 x 120,000 = N3,000,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "240,000 + 70,000 + 30,000 = N340,000"
+                }
+              ],
+              "feedback": "Both costs are right. You did not state the saving: 3,000,000 - 340,000 = N2,660,000. Also show how you found the cost of two printers."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 25 x 120,000 = 3,000,000. (b) Two printers cost 240,000. Total cost is 240,000 + 70,000 = 310,000. The saving is 2,690,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "25 x 120,000 = 3,000,000"
+                },
+                {
+                  "point": 1,
+                  "quote": "Two printers cost 240,000"
+                }
+              ],
+              "feedback": "The first two parts are right. You left out the N30,000 cables, so the total is N340,000 and the saving N2,660,000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 25 + 120,000 = 120,025. (b) 2 + 70,000 + 30,000.",
+              "meets": [],
+              "feedback": "For (a), multiply the number of printers by the price: 25 x 120,000 = N3,000,000. For (b), cost two printers (240,000), add the switch and cables (340,000 in all), then subtract from 3,000,000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 120,000. (b) A network is cheaper.",
+              "meets": [],
+              "feedback": "Show the calculation for each: 25 printers cost N3,000,000 and the network costs N340,000, a saving of N2,660,000."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) State the functions of a switch and a router in a school network. (b) Explain why a bank with branches in different states uses a WAN, and name one risk of networking for the bank.",
+          "markScheme": [
+            "A switch connects the computers inside the LAN and passes data to the correct computer",
+            "A router connects the school network to other networks such as the Internet",
+            "A bank's branches are far apart, so a WAN is needed to link them to share customer records",
+            "A valid risk, such as hacking, viruses or failure of the central server"
+          ],
+          "modelAnswer": "(a) A switch connects the computers inside the school LAN and sends data to the computer that needs it. A router connects the school network to other networks such as the Internet and directs data between them. (b) A bank's branches are in different states, far apart, so a WAN links them so that every branch can reach the same customer records. A risk is hacking, which could expose customer accounts.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The switch connects all the computers in the LAN and sends data to the right computer. The router connects the school network to the Internet. (b) A bank has branches in far apart places so it uses a WAN so that every branch can use the same customer records. A risk for the bank is that hackers can break in and steal customer money.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The switch connects all the computers in the LAN and sends data to the right computer"
+                },
+                {
+                  "point": 1,
+                  "quote": "The router connects the school network to the Internet"
+                },
+                {
+                  "point": 2,
+                  "quote": "it uses a WAN so that every branch can use the same customer records"
+                },
+                {
+                  "point": 3,
+                  "quote": "hackers can break in and steal customer money"
+                }
+              ],
+              "feedback": "All four marks. You linked the WAN to the reason for the bank's branches."
+            },
+            {
+              "tier": "full",
+              "text": "A switch links the computers in the same network. A router links different networks, for instance the school LAN with the Internet. The bank uses a WAN because the branches are far from one another and need to share the data. One risk is that if the central server fails, all the branches stop working.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A switch links the computers in the same network"
+                },
+                {
+                  "point": 1,
+                  "quote": "A router links different networks, for instance the school LAN with the Internet"
+                },
+                {
+                  "point": 2,
+                  "quote": "the branches are far from one another and need to share the data"
+                },
+                {
+                  "point": 3,
+                  "quote": "if the central server fails, all the branches stop working"
+                }
+              ],
+              "feedback": "Full marks. Server failure is a risk that applies strongly to a bank."
+            },
+            {
+              "tier": "partial",
+              "text": "A switch connects the computers in the LAN. A router is also a device. The bank uses a WAN because it is big.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A switch connects the computers in the LAN"
+                }
+              ],
+              "feedback": "The switch is right. Say what a router does: it connects the school network to other networks such as the Internet. A WAN is used because the branches are far apart, not because the bank is big."
+            },
+            {
+              "tier": "partial",
+              "text": "The router connects the school to the Internet. The bank uses a WAN because the branches are far apart. A risk is hacking.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The router connects the school to the Internet"
+                },
+                {
+                  "point": 2,
+                  "quote": "The bank uses a WAN because the branches are far apart"
+                },
+                {
+                  "point": 3,
+                  "quote": "A risk is hacking"
+                }
+              ],
+              "feedback": "Three good points. You did not say what a switch does: it connects the computers inside the LAN.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A switch is for turning the light on and a router is a tool to cut wood.",
+              "meets": [],
+              "feedback": "In networking, a switch connects computers inside a LAN and a router connects networks and gives Internet access."
+            },
+            {
+              "tier": "weak",
+              "text": "The bank uses a LAN because it is safe. A risk is that the bank is closed on Sunday.",
+              "meets": [],
+              "feedback": "A LAN covers a small area; branches in different states need a WAN. Network risks include hacking, viruses and server failure."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "The Internet: benefits, browsers, security and abuse",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define the Internet and explain how a user connects to it;\n2. state the benefits of the Internet;\n3. name Internet browsers and say what a browser and a search engine do;\n4. describe Internet security measures and the abuse of the Internet.\n\n## Materials\n\nA computer with Internet access (or screenshots), a router, a phone with a data bundle, posters on cyber safety.\n\n## Starter (5 minutes)\n\nAsk: how many of you searched for something on a phone this week? What did you use? Write 'Google' and 'Chrome' on the board and ask whether they are the same thing.\n\n## Development\n\n1. Define the Internet. Requirements for connection: a device, an Internet service provider (ISP), a modem or router, data and a browser.\n2. Benefits: research, email and messaging, online learning, e-commerce and banking, entertainment, news, and jobs.\n3. Browsers: Chrome, Firefox, Edge, Safari, Opera. A browser is the program used to view web pages; a search engine (such as Google) finds pages. Show the address bar and a web address (URL).\n4. Security: strong passwords, antivirus and firewalls, not clicking unknown links, avoiding sharing personal details, secure websites (https).\n5. Abuse: cyber bullying, fraud and phishing, spreading false news, pornography, piracy, and time wasting. Consequences and a pupil's duty.\n\n## Class activity\n\nPupils search for a topic, compare two results, and decide which is trustworthy.\n\n## Evaluation\n\n1. What is the difference between a browser and a search engine?\n2. State three ways of staying safe online.\n\n## Assignment\n\nComplete the worksheet, problem set and quiz on the app.",
+      "reading": {
+        "title": "Using the Internet wisely",
+        "content": "# The Internet: benefits, browsers, security and abuse\n\n## What is the Internet?\n\nThe **Internet** is a worldwide network of connected computer networks. Anyone with a device, a connection and data can use it. To connect you need a **device** (computer or phone), an **Internet service provider (ISP)** such as a mobile network, a **modem or router**, **data**, and a **browser**.\n\n## Benefits of the Internet\n\n- **Research and learning**: finding information, lessons and past questions.\n- **Communication**: email, messaging and video calls with people anywhere.\n- **E-commerce and banking**: buying, selling and transferring money online.\n- **Entertainment**: music, films and games.\n- **News**: current events as they happen.\n- **Jobs**: finding work, and working online.\n\n## Browsers and search engines\n\nA **browser** is a program used to open and view web pages. Examples are **Google Chrome**, **Mozilla Firefox**, **Microsoft Edge**, **Safari** and **Opera**. A **search engine**, such as **Google** or **Bing**, is a website that finds pages for a word you type. You use a browser to reach a search engine. A web address, or **URL**, such as www.waecdirect.org, leads to one page.\n\n## Internet security\n\n- Use a **strong password**: long, with letters, numbers and symbols; never share it.\n- Install an **antivirus** and keep a **firewall** on.\n- Do not click unknown links or open attachments from strangers; this is how **phishing** and viruses spread.\n- Use websites that begin with **https** when paying.\n- Do not give personal details, such as an ATM PIN, to anyone online.\n- Log out of shared computers.\n\n## Abuse of the Internet\n\n- **Cyber bullying** and harassment.\n- **Fraud and phishing**: tricking people into giving passwords or money.\n- **Spreading false news** and rumours.\n- **Viewing harmful content**, such as pornography.\n- **Piracy**: copying films, music or software without permission.\n- **Wasting time** on games and social media instead of study.\n\nA good user is honest, respectful and careful, and reports abuse to a teacher or parent."
+      },
+      "cards": [
+        {
+          "front": "Internet",
+          "back": "A worldwide network of connected computer networks."
+        },
+        {
+          "front": "ISP",
+          "back": "Internet service provider: the company that gives you access to the Internet."
+        },
+        {
+          "front": "Browser",
+          "back": "A program used to view web pages, such as Chrome or Firefox."
+        },
+        {
+          "front": "Search engine",
+          "back": "A website that finds pages for a word you type, such as Google."
+        },
+        {
+          "front": "URL",
+          "back": "The web address of a page."
+        },
+        {
+          "front": "Firewall",
+          "back": "A security tool that blocks unauthorised access to a computer or network."
+        },
+        {
+          "front": "Phishing",
+          "back": "Tricking people into giving passwords or money by false messages."
+        },
+        {
+          "front": "Piracy",
+          "back": "Copying films, music or software without permission."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of these is an Internet browser?",
+          "options": [
+            "Google search",
+            "Microsoft Word",
+            "Windows",
+            "Mozilla Firefox"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A company that gives you access to the Internet is called a",
+          "options": [
+            "browser",
+            "search engine",
+            "modem",
+            "service provider"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is the safest password?",
+          "options": [
+            "12345",
+            "Ngozi",
+            "N9#k2@Tq7z",
+            "password"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A message pretends to be from your bank and asks for your PIN. This is",
+          "options": [
+            "phishing",
+            "a firewall",
+            "an https site",
+            "a search engine"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of the following is an abuse of the Internet?",
+          "options": [
+            "Researching a school project",
+            "Copying films and music without permission",
+            "Sending an email to a teacher",
+            "Reading the news"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between a browser and a search engine, giving one example of each. Then state three benefits of the Internet to a secondary school pupil.",
+          "markScheme": [
+            "A browser is a program used to open and view web pages, for example Chrome",
+            "A search engine is a website that finds pages for the words typed, for example Google",
+            "One benefit explained, such as research for homework",
+            "Two more benefits, such as e-learning and communication"
+          ],
+          "modelAnswer": "A browser is the program we use to open and view web pages, for example Google Chrome. A search engine is a website that finds web pages for the words we type, for example Google. A pupil can use the Internet to research homework, to learn from online lessons and past questions, and to communicate with teachers and classmates by email or messages.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A browser is a program used to open web pages, for example Chrome. A search engine is a website that searches for pages when you type words, for example Google. A pupil can use the Internet to research for homework, to learn from online lessons and to send an email to a teacher.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A browser is a program used to open web pages, for example Chrome"
+                },
+                {
+                  "point": 1,
+                  "quote": "A search engine is a website that searches for pages when you type words, for example Google"
+                },
+                {
+                  "point": 2,
+                  "quote": "to research for homework"
+                },
+                {
+                  "point": 3,
+                  "quote": "to learn from online lessons and to send an email to a teacher"
+                }
+              ],
+              "feedback": "All four marks. You kept the two terms separate, which many learners mix up."
+            },
+            {
+              "tier": "full",
+              "text": "The browser, such as Firefox, is the software that displays websites. A search engine, such as Bing, finds the websites for you after you type a word. Benefits to a pupil: finding information for assignments, watching educational videos, and communicating with friends and teachers.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The browser, such as Firefox, is the software that displays websites"
+                },
+                {
+                  "point": 1,
+                  "quote": "A search engine, such as Bing, finds the websites for you after you type a word"
+                },
+                {
+                  "point": 2,
+                  "quote": "finding information for assignments"
+                },
+                {
+                  "point": 3,
+                  "quote": "watching educational videos, and communicating with friends and teachers"
+                }
+              ],
+              "feedback": "Full marks. Good examples, and you used a different search engine from the usual one."
+            },
+            {
+              "tier": "partial",
+              "text": "A browser is Google and a search engine is Chrome. The Internet helps me to research and to learn.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "The Internet helps me to research"
+                }
+              ],
+              "feedback": "You have the two examples the wrong way round: Chrome is a browser and Google is a search engine. Define each, and give three benefits."
+            },
+            {
+              "tier": "partial",
+              "text": "A browser is a program that opens web pages like Chrome. A search engine is the same.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A browser is a program that opens web pages like Chrome"
+                }
+              ],
+              "feedback": "Your browser answer is right. A search engine is different: it is a website that finds pages for your words, such as Google. Add the three benefits.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A browser is the thing that shows you the network. A search engine is the engine of the computer.",
+              "meets": [],
+              "feedback": "A browser is a program for viewing web pages. A search engine is a website that searches for pages. Neither is hardware."
+            },
+            {
+              "tier": "weak",
+              "text": "The Internet is for playing games and nothing else.",
+              "meets": [],
+              "feedback": "Games are one use. Benefits to pupils include research, online learning and communication. Distinguish a browser and a search engine too."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Explain three ways a pupil can protect their account and personal information online. (b) Describe two ways in which the Internet is abused.",
+          "markScheme": [
+            "Using a strong password that is not shared",
+            "Installing antivirus or a firewall, or avoiding unknown links",
+            "Not giving personal details such as a PIN to anyone online",
+            "Two abuses described (e.g. fraud or phishing, cyber bullying, false news, piracy)"
+          ],
+          "modelAnswer": "(a) A pupil should use a strong password with letters, numbers and symbols, and never share it. They should install antivirus and avoid clicking unknown links. They should never give a PIN or other personal details to anyone online. (b) The Internet is abused through fraud and phishing, where people are tricked into giving money or passwords, and through cyber bullying, where others are insulted or threatened online.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) Use a strong password made of letters, numbers and symbols and do not share it. Install an antivirus and do not click links from strangers. Never give my ATM PIN or home address to anybody online. (b) Fraud, where criminals trick people into sending money or giving their password, and cyber bullying, where people insult or threaten others online.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Use a strong password made of letters, numbers and symbols and do not share it"
+                },
+                {
+                  "point": 1,
+                  "quote": "Install an antivirus and do not click links from strangers"
+                },
+                {
+                  "point": 2,
+                  "quote": "Never give my ATM PIN or home address to anybody online"
+                },
+                {
+                  "point": 3,
+                  "quote": "Fraud, where criminals trick people into sending money or giving their password, and cyber bullying, where people insult or threaten others online"
+                }
+              ],
+              "feedback": "All four marks. The abuses are described, not just named."
+            },
+            {
+              "tier": "full",
+              "text": "(a) A strong password, logging out of shared computers, and checking that a website begins with https before entering card details. (b) Spreading false news, which makes people panic, and piracy, which is copying films and music without permission.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A strong password"
+                },
+                {
+                  "point": 1,
+                  "quote": "logging out of shared computers"
+                },
+                {
+                  "point": 2,
+                  "quote": "checking that a website begins with https before entering card details"
+                },
+                {
+                  "point": 3,
+                  "quote": "Spreading false news, which makes people panic, and piracy, which is copying films and music without permission"
+                }
+              ],
+              "feedback": "Full marks. https is a practical check that many users forget."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Use a strong password. Use antivirus. (b) Cyber bullying.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Use a strong password"
+                },
+                {
+                  "point": 1,
+                  "quote": "Use antivirus"
+                }
+              ],
+              "feedback": "Two protections are right; add a third (not giving personal details). You also need a second abuse and a description of each."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) People abuse the Internet by phishing, which tricks people into giving passwords, and by bullying others. (a) Do not share your PIN.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Do not share your PIN"
+                },
+                {
+                  "point": 3,
+                  "quote": "phishing, which tricks people into giving passwords, and by bullying others"
+                }
+              ],
+              "feedback": "The abuses and the PIN rule are right. Add two more protections, such as a strong password and antivirus.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Do not use the Internet. (b) The abuse is when the data finishes.",
+              "meets": [],
+              "feedback": "Protection means using the Internet carefully: strong passwords, antivirus, not sharing personal details. Abuse means harmful use such as fraud or cyber bullying."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Give your password to your best friend. (b) Using the Internet to do homework.",
+              "meets": [],
+              "feedback": "Never share a password, even with a friend. Doing homework is a good use. Abuses include fraud, cyber bullying, false news and piracy."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "The operating system",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define an operating system and say why a computer needs one;\n2. name types and examples of operating systems;\n3. state the functions of an operating system;\n4. distinguish a text (character) based interface from a graphical user interface (GUI).\n\n## Materials\n\nA computer showing the desktop, a screenshot of a command prompt window, a phone showing its home screen, a chart of operating systems.\n\n## Starter (5 minutes)\n\nSwitch on a computer and ask: before you can open any program, something has already started. What is it? Let pupils guess, then name it as the operating system.\n\n## Development\n\n1. Define the operating system (OS) as the system software that manages the hardware and lets users and programs work with the computer.\n2. Types: single-user and multi-user; single-tasking and multitasking; and by device: desktop (Windows, macOS, Linux), mobile (Android, iOS).\n3. Functions: managing memory, managing files, managing devices and drivers, running programs, providing a user interface, and security through user accounts and passwords.\n4. Interfaces: a text or command line interface needs typed commands (MS-DOS); a GUI uses windows, icons, menus and a pointer (Windows). Compare ease of use, speed and memory needed.\n\n## Class activity\n\nPupils create a folder, rename a file and delete it, then say which OS function each action used.\n\n## Evaluation\n\n1. State three functions of an operating system.\n2. Why is a GUI easier for a beginner than a text interface?\n\n## Assignment\n\nComplete the worksheet and the problem set on the app.",
+      "reading": {
+        "title": "The software that runs the computer",
+        "content": "# The operating system\n\n## What is an operating system?\n\nAn **operating system (OS)** is a set of programs that manages the computer's hardware and lets you and other programs use the computer. It is **system software**. When you switch on a computer, the OS starts first, and every other program runs on top of it. Without an OS a computer cannot be used.\n\n## Types of operating system\n\n- **Single-user**: one person at a time, such as a home computer.\n- **Multi-user**: many users at once, with their own accounts, as on a school network or a bank's mainframe.\n- **Single-tasking** runs one program at a time; **multitasking** runs several, as when you listen to music and type a document together.\n\nBy device:\n\n- **Desktop and laptop**: Microsoft Windows, macOS and Linux.\n- **Mobile**: Android and iOS.\n\n## Functions of an operating system\n\n1. **Memory management**: giving each running program space in memory and taking it back when it closes.\n2. **File management**: creating, naming, copying, moving and deleting files and folders.\n3. **Device management**: controlling the keyboard, printer and other devices through **drivers**.\n4. **Running programs**: loading and managing them.\n5. **User interface**: the way you give instructions.\n6. **Security**: protecting the system with user accounts and passwords.\n\n## Text-based interface and GUI\n\nA **text (character-based or command line) interface** needs you to type commands, as in MS-DOS. You must know the commands, a mistake in spelling causes an error, but it uses little memory and is fast for experts.\n\nA **graphical user interface (GUI)** uses **windows, icons, menus and a pointer**, so you click instead of typing commands. Windows and Android are examples. It is easy for beginners but needs more memory and a faster processor.\n\n| Feature | Text interface | GUI |\n| --- | --- | --- |\n| Input | typed commands | mouse, touch |\n| Ease | harder | easier |\n| Memory used | little | more |\n\nThe computers in your school ICT room use a GUI."
+      },
+      "cards": [
+        {
+          "front": "Operating system",
+          "back": "System software that manages the hardware and lets programs and users work with the computer."
+        },
+        {
+          "front": "Multitasking",
+          "back": "Running several programs at the same time."
+        },
+        {
+          "front": "Multi-user OS",
+          "back": "An OS that allows several users to work at once, each with an account."
+        },
+        {
+          "front": "Device driver",
+          "back": "A program that lets the OS control a hardware device."
+        },
+        {
+          "front": "File management",
+          "back": "Creating, naming, copying, moving and deleting files and folders."
+        },
+        {
+          "front": "Text-based interface",
+          "back": "An interface in which the user types commands."
+        },
+        {
+          "front": "GUI",
+          "back": "A graphical user interface using windows, icons, menus and a pointer."
+        },
+        {
+          "front": "Examples of mobile operating systems",
+          "back": "Android and iOS."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following is an operating system?",
+          "options": [
+            "Microsoft Word",
+            "Google Chrome",
+            "Windows",
+            "Mozilla Firefox"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The operating system function that creates, renames and deletes folders is",
+          "options": [
+            "memory management",
+            "file management",
+            "device management",
+            "security"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A system in which you must type commands such as 'dir' is a",
+          "options": [
+            "GUI",
+            "text-based interface",
+            "touch interface",
+            "voice interface"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of the following is a feature of a GUI?",
+          "options": [
+            "Windows, icons and menus",
+            "Typed commands only",
+            "No pointer",
+            "Needs no memory"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Android and iOS are examples of",
+          "options": [
+            "application packages",
+            "desktop operating systems",
+            "mobile operating systems",
+            "programming languages"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define an operating system and state four of its functions.",
+          "markScheme": [
+            "An operating system is system software that manages the computer's hardware and lets users and programs use it",
+            "One function with an explanation, e.g. memory management",
+            "A second function, e.g. file management or device management",
+            "Two more functions, e.g. running programs, user interface, security"
+          ],
+          "modelAnswer": "An operating system is system software that manages the hardware of a computer and allows users and other programs to work with it. Its functions include memory management, which gives each program space in memory; file management, which creates, copies and deletes files and folders; device management, which controls printers and keyboards through drivers; and security, which protects the system with user accounts and passwords.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "An operating system is the system software that controls the hardware of the computer and allows the user and programs to use it. Its functions are memory management, giving each running program a space in memory; file management, creating and deleting files and folders; device management, controlling the printer and keyboard; and security, protecting the computer with passwords.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the system software that controls the hardware of the computer and allows the user and programs to use it"
+                },
+                {
+                  "point": 1,
+                  "quote": "memory management, giving each running program a space in memory"
+                },
+                {
+                  "point": 2,
+                  "quote": "file management, creating and deleting files and folders"
+                },
+                {
+                  "point": 3,
+                  "quote": "device management, controlling the printer and keyboard; and security, protecting the computer with passwords"
+                }
+              ],
+              "feedback": "All four marks. Each function has a short explanation."
+            },
+            {
+              "tier": "full",
+              "text": "The OS is the main system software that manages the computer. It starts first when the computer is switched on. Functions: it loads and runs programs, it manages the files, it manages memory and it provides the user interface by which I give instructions.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the main system software that manages the computer"
+                },
+                {
+                  "point": 1,
+                  "quote": "it manages the files"
+                },
+                {
+                  "point": 2,
+                  "quote": "it manages memory"
+                },
+                {
+                  "point": 3,
+                  "quote": "it loads and runs programs"
+                }
+              ],
+              "feedback": "Full marks. Your note that it starts first is a good extra."
+            },
+            {
+              "tier": "partial",
+              "text": "The operating system is the software that makes the computer work. It manages files and memory.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the software that makes the computer work"
+                },
+                {
+                  "point": 1,
+                  "quote": "It manages files"
+                }
+              ],
+              "feedback": "Good start. You need four functions and your definition should say that it manages hardware and lets programs run. Add device management and security."
+            },
+            {
+              "tier": "partial",
+              "text": "Functions of the OS are file management, memory management, device management and security. The OS is a program.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "file management"
+                },
+                {
+                  "point": 2,
+                  "quote": "memory management"
+                },
+                {
+                  "point": 3,
+                  "quote": "device management and security"
+                }
+              ],
+              "feedback": "Your functions are right, but your definition is too vague: it is system software that manages the hardware and lets users and programs use the computer.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "An operating system is the person who operates the computer. The functions are typing and printing.",
+              "meets": [],
+              "feedback": "An operating system is software, not a person. Typing and printing are done by users. Its functions include managing memory, files and devices."
+            },
+            {
+              "tier": "weak",
+              "text": "Windows and Word are the operating system. It does Microsoft work.",
+              "meets": [],
+              "feedback": "Windows is an operating system; Word is an application program. State what an OS does: memory, file and device management, running programs and security."
+            }
+          ]
+        },
+        {
+          "prompt": "Distinguish between a text-based interface and a graphical user interface (GUI) under three headings. Say which one a beginner would prefer and why.",
+          "markScheme": [
+            "Input method: typed commands in a text interface versus mouse or touch with icons in a GUI",
+            "Ease of use: text interface needs commands to be remembered while GUI is easy to learn",
+            "Resources: text interface uses little memory while GUI needs more memory and a faster processor",
+            "A beginner prefers a GUI because it needs no commands to be memorised"
+          ],
+          "modelAnswer": "In a text-based interface the user types commands, while in a GUI the user clicks windows, icons and menus with a mouse or touch. A text interface is harder to learn because commands must be remembered and spelt correctly, while a GUI is easy to learn. A text interface uses little memory, but a GUI needs more memory and a faster processor. A beginner would prefer a GUI because there are no commands to memorise.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Input: a text interface uses typed commands but a GUI uses a mouse or touch with icons and menus. Ease: in a text interface you must remember the commands, but a GUI is easy to learn. Memory: a text interface uses little memory but a GUI uses more memory. A beginner prefers GUI because there are no commands to remember.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a text interface uses typed commands but a GUI uses a mouse or touch with icons and menus"
+                },
+                {
+                  "point": 1,
+                  "quote": "in a text interface you must remember the commands, but a GUI is easy to learn"
+                },
+                {
+                  "point": 2,
+                  "quote": "a text interface uses little memory but a GUI uses more memory"
+                },
+                {
+                  "point": 3,
+                  "quote": "A beginner prefers GUI because there are no commands to remember"
+                }
+              ],
+              "feedback": "All four marks. Three headings, each with both sides, and a reason for the beginner."
+            },
+            {
+              "tier": "full",
+              "text": "In a text interface the user types commands, as in MS-DOS, but in a GUI the user points and clicks, as in Windows. A GUI is simpler for new users while commands in the text interface must be learnt exactly. The text interface needs less processing power. A new user would choose the GUI since it is friendlier.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In a text interface the user types commands, as in MS-DOS, but in a GUI the user points and clicks, as in Windows"
+                },
+                {
+                  "point": 1,
+                  "quote": "A GUI is simpler for new users while commands in the text interface must be learnt exactly"
+                },
+                {
+                  "point": 2,
+                  "quote": "The text interface needs less processing power"
+                },
+                {
+                  "point": 3,
+                  "quote": "A new user would choose the GUI since it is friendlier"
+                }
+              ],
+              "feedback": "Full marks. MS-DOS and Windows are the right examples."
+            },
+            {
+              "tier": "partial",
+              "text": "A text interface uses commands and a GUI uses pictures. A beginner would like the GUI.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A text interface uses commands and a GUI uses pictures"
+                }
+              ],
+              "feedback": "The input difference is right. Add two more headings (ease of use, memory needed) and give a reason for the beginner: no commands to remember."
+            },
+            {
+              "tier": "partial",
+              "text": "A GUI uses more memory than a text interface. A GUI has windows and icons. The beginner will prefer text because it is simple.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "A GUI uses more memory than a text interface"
+                }
+              ],
+              "feedback": "The memory point is right. A beginner finds a text interface harder because it needs memorised commands; a GUI is the easier choice.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A text interface is for text messages and GUI is for games.",
+              "meets": [],
+              "feedback": "A text-based interface is one in which you type commands; a GUI uses windows, icons and menus. Compare them in input, ease and memory."
+            },
+            {
+              "tier": "weak",
+              "text": "They are the same because both are used on a computer.",
+              "meets": [],
+              "feedback": "Both are interfaces, but they differ: typed commands versus pointing and clicking, difficulty, and memory used."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Word processing: starting, creating, saving and retrieving documents",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define word processing and give its uses and examples of packages;\n2. start and exit a word processor;\n3. create, save and retrieve a document;\n4. use basic editing and formatting tools.\n\n## Materials\n\nComputers with Microsoft Word, LibreOffice Writer or WPS Writer; a projector; a flash drive; a printed letter to retype.\n\n## Starter (5 minutes)\n\nShow a handwritten letter with crossings-out and a typed version. Ask: which would a school prefer to send to parents, and why? Link the answer to word processing.\n\n## Development\n\n1. Define word processing as using a computer program to create, edit, format, store and print text documents.\n2. Uses: letters, reports, notices, school magazines, CVs and examination questions. Examples: Microsoft Word, LibreOffice Writer, WPS Writer, Google Docs.\n3. Demonstrate starting: Start menu, then the program name; or double-click the icon. Exit: File, then Exit, or the close button; the program asks whether to save.\n4. Demonstrate creating a document: type a short letter, use Backspace and Delete, select text, bold, italic, underline, font size, alignment.\n5. Saving: File, Save As; choose a folder, type a file name, choose the type, and click Save. Use Ctrl+S afterwards. Retrieving: File, Open, find the file and open it.\n\n## Class activity\n\nPupils type a short notice, save it as 'Notice_yourname', close the program and reopen the file.\n\n## Evaluation\n\n1. What is the difference between Save and Save As?\n2. Name two examples of word processing software.\n\n## Assignment\n\nComplete the quiz and the worksheet on the app.",
+      "reading": {
+        "title": "Writing with a computer",
+        "content": "# Word processing: starting, creating, saving and retrieving documents\n\n## What is word processing?\n\n**Word processing** is the use of a computer program to type, edit, format, store and print text documents. The program is called a **word processor**. It has replaced the typewriter in most offices and schools.\n\n## Uses\n\nA word processor is used for letters, reports, notices, school magazines, CVs, assignments and examination papers. It lets you correct mistakes without retyping the whole page.\n\n## Examples\n\n**Microsoft Word**, **LibreOffice Writer**, **WPS Writer** and **Google Docs**.\n\n## Starting and exiting\n\n**To start**: click the Start button, find the word processor in the list and click it, or double-click its icon on the desktop. A blank document opens.\n\n**To exit**: click File, then Exit (or the close button at the top right). If the document has not been saved, the program asks whether to save it. Always choose **Save** if you want to keep your work.\n\n## Creating a document\n\nType the text. Press **Enter** to start a new paragraph. **Backspace** deletes a letter to the left and **Delete** removes one to the right. To change text, **select** it by dragging with the mouse, then choose **bold**, *italic*, underline, a different font or a different size, or align it left, centre or right.\n\n## Saving a document\n\n1. Click **File**, then **Save As** (the first time).\n2. Choose where to keep it, such as a folder in Documents or a flash drive.\n3. Type a **file name** such as Letter_to_Principal.\n4. Click **Save**.\n\nAfter the first time, press **Ctrl + S** to save changes quickly. **Save** updates the same file; **Save As** makes a new file or copy with a new name or place.\n\n## Retrieving a document\n\nClick **File**, then **Open**. Find the folder, click the file name and click **Open**. In Word the recent files list also shows files you used lately.\n\n## Good practice\n\nSave as you type, every few minutes, so that a power failure does not destroy your work. Give files names that you can recognise later."
+      },
+      "cards": [
+        {
+          "front": "Word processing",
+          "back": "Using a program to create, edit, format, store and print text documents."
+        },
+        {
+          "front": "Word processor",
+          "back": "The program used for word processing, such as Microsoft Word."
+        },
+        {
+          "front": "Save",
+          "back": "Updates the existing file with your changes."
+        },
+        {
+          "front": "Save As",
+          "back": "Saves the document with a new name or in a new place."
+        },
+        {
+          "front": "Ctrl + S",
+          "back": "The keyboard shortcut for saving."
+        },
+        {
+          "front": "Backspace",
+          "back": "Deletes the character to the left of the cursor."
+        },
+        {
+          "front": "Retrieving a file",
+          "back": "Opening a saved file again using File, then Open."
+        },
+        {
+          "front": "Select text",
+          "back": "Highlight it so it can be formatted, copied or deleted."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following is a word processing package?",
+          "options": [
+            "LibreOffice Writer",
+            "Microsoft Excel",
+            "Google Chrome",
+            "Windows"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "To save a document for the first time you use",
+          "options": [
+            "Print",
+            "Exit",
+            "Save As",
+            "Open"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "The keyboard shortcut for saving a document is",
+          "options": [
+            "Ctrl + P",
+            "Ctrl + C",
+            "Ctrl + V",
+            "Ctrl + S"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "To open a document you saved yesterday, you click",
+          "options": [
+            "File, then Open",
+            "File, then Exit",
+            "Home, then Bold",
+            "View, then Zoom"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which key deletes the character to the left of the cursor?",
+          "options": [
+            "Enter",
+            "Backspace",
+            "Tab",
+            "Shift"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define word processing and state three uses of a word processor in a school. Give two examples of word processing packages.",
+          "markScheme": [
+            "Word processing is using a computer program to create, edit, format, store and print text documents",
+            "A first school use, such as typing letters to parents",
+            "Two more school uses, such as notices, reports, examination questions",
+            "Two examples of packages, such as Microsoft Word, LibreOffice Writer, WPS Writer"
+          ],
+          "modelAnswer": "Word processing is the use of a computer program to create, edit, format, store and print text documents. In a school it is used for typing letters to parents, preparing notices and reports, and setting examination questions. Examples of packages are Microsoft Word and LibreOffice Writer.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Word processing is using a computer program to type, edit, format, save and print documents. In a school it is used for typing letters to parents, writing the school notices and typing examination questions. Examples are Microsoft Word and LibreOffice Writer.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "using a computer program to type, edit, format, save and print documents"
+                },
+                {
+                  "point": 1,
+                  "quote": "typing letters to parents"
+                },
+                {
+                  "point": 2,
+                  "quote": "writing the school notices and typing examination questions"
+                },
+                {
+                  "point": 3,
+                  "quote": "Microsoft Word and LibreOffice Writer"
+                }
+              ],
+              "feedback": "All four marks. All parts of the question answered in order."
+            },
+            {
+              "tier": "full",
+              "text": "It is the creation and editing of text documents using a computer program, which can also format, store and print them. A school can use it for reports of pupils, timetables and the school magazine. Examples include WPS Writer and Google Docs.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "creation and editing of text documents using a computer program, which can also format, store and print them"
+                },
+                {
+                  "point": 1,
+                  "quote": "reports of pupils"
+                },
+                {
+                  "point": 2,
+                  "quote": "timetables and the school magazine"
+                },
+                {
+                  "point": 3,
+                  "quote": "WPS Writer and Google Docs"
+                }
+              ],
+              "feedback": "Full marks. Timetables and magazines are good, realistic school uses."
+            },
+            {
+              "tier": "partial",
+              "text": "Word processing is typing on the computer. It is used for letters and reports. Examples are Microsoft Word.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "letters"
+                },
+                {
+                  "point": 2,
+                  "quote": "reports"
+                }
+              ],
+              "feedback": "Typing is only part of it: word processing also edits, formats, stores and prints documents. Give a second example of a package, such as LibreOffice Writer."
+            },
+            {
+              "tier": "partial",
+              "text": "Examples of word processors are Microsoft Word and WPS Writer. It is used to create documents.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "Microsoft Word and WPS Writer"
+                }
+              ],
+              "feedback": "Your examples are right. Define word processing properly (create, edit, format, store, print) and give three school uses.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Word processing is when you process words in a food processor.",
+              "meets": [],
+              "feedback": "Word processing means using a computer program to create and edit text documents. It has nothing to do with food."
+            },
+            {
+              "tier": "weak",
+              "text": "A word processor is a typewriter. It is used in the market.",
+              "meets": [],
+              "feedback": "A word processor is a computer program, which replaced the typewriter. Name school uses (letters, reports, notices) and package examples."
+            }
+          ]
+        },
+        {
+          "prompt": "List, in order, the steps to type a short letter in a word processor, save it as 'Notice.docx' in a folder, close the program and open the file again. Explain the difference between Save and Save As.",
+          "markScheme": [
+            "Starts the word processor from the Start menu or desktop icon",
+            "Types the letter, then uses File, Save As, chooses the folder and types the file name",
+            "Closes the program using File, Exit and chooses to save if asked",
+            "Reopens it with File, Open (or the recent files list) and explains that Save updates the same file while Save As makes a new file or copy"
+          ],
+          "modelAnswer": "First I start the word processor from the Start menu or the desktop icon and type the letter. Then I click File, Save As, choose the folder, type the file name Notice and click Save. I close the program with File, Exit. To open the file again I start the program, click File, Open, find the folder and click the file name. Save updates the existing file with my changes, while Save As saves the document with a new name or in a different place.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I start Word from the Start menu. I type the letter. Then I click File, Save As, choose the folder, type Notice as the name and click Save. I close the program by File, Exit. To open it again I click File, Open, go to the folder and click Notice. Save updates the same file but Save As makes a new copy with a new name or place.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I start Word from the Start menu"
+                },
+                {
+                  "point": 1,
+                  "quote": "I click File, Save As, choose the folder, type Notice as the name and click Save"
+                },
+                {
+                  "point": 2,
+                  "quote": "I close the program by File, Exit"
+                },
+                {
+                  "point": 3,
+                  "quote": "Save updates the same file but Save As makes a new copy with a new name or place"
+                }
+              ],
+              "feedback": "All four marks. The steps are in the right order and you explained Save against Save As."
+            },
+            {
+              "tier": "full",
+              "text": "Open the word processor by double-clicking its icon, then type the letter. Click File, Save As, select the folder, give the name and Save. Click the close button. Later, open the program, click File, then Open and select the file. Save is used for saving changes to a file that already has a name; Save As is for the first save or for a copy with another name.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Open the word processor by double-clicking its icon"
+                },
+                {
+                  "point": 1,
+                  "quote": "Click File, Save As, select the folder, give the name and Save"
+                },
+                {
+                  "point": 2,
+                  "quote": "Click the close button"
+                },
+                {
+                  "point": 3,
+                  "quote": "Save is used for saving changes to a file that already has a name; Save As is for the first save or for a copy with another name"
+                }
+              ],
+              "feedback": "Full marks. You separated the first save from later saves, which is the real difference."
+            },
+            {
+              "tier": "partial",
+              "text": "I type the letter and click Save, then I close it. To open it again I click File and Open. Save and Save As are the same.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "I close it"
+                }
+              ],
+              "feedback": "Your order is close, but the first save uses Save As so that you choose the folder and the file name. Save updates the file, while Save As makes a new one; they are not the same."
+            },
+            {
+              "tier": "partial",
+              "text": "Type the letter, click File, Save As, choose the folder, name it and Save. Then close and reopen using File, Open. Save As is when you change the name.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "click File, Save As, choose the folder, name it and Save"
+                },
+                {
+                  "point": 2,
+                  "quote": "close"
+                }
+              ],
+              "feedback": "The saving steps are good and Save As is partly right. You did not start the program, and you need to say that Save updates the same file.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Press the power button, type the letter and close the computer. To open it, switch it on.",
+              "meets": [],
+              "feedback": "Switching off the computer does not save a document. Use File, Save As, name the file, close the program and reopen it with File, Open."
+            },
+            {
+              "tier": "weak",
+              "text": "Write the letter on paper, take a photo and save it in the phone.",
+              "meets": [],
+              "feedback": "The question is about a word processor: type the letter in the program, save it with File, Save As, and retrieve it with File, Open."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Spreadsheets: cells, formulas and saving workbooks",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a spreadsheet and state its uses, with examples of spreadsheet applications;\n2. identify rows, columns, cells, cell addresses, worksheets and workbooks;\n3. enter data and write simple formulas and functions (SUM, AVERAGE, MAX, MIN);\n4. load and exit the program, then create, save and retrieve a spreadsheet file.\n\n## Materials\n\nComputers with Microsoft Excel, LibreOffice Calc or Google Sheets, a projector, a printed table of a tuckshop's weekly sales.\n\n## Starter (5 minutes)\n\nWrite on the board the sales of five items at the school tuckshop with prices and quantities. Ask: how long would it take to find the total money by hand? How would a computer do it?\n\n## Development\n\n1. Define a spreadsheet as a program in which data is arranged in rows and columns and can be calculated automatically. Uses: budgets, results, sales records, attendance, school fees. Examples: Excel, Calc, Google Sheets.\n2. The screen: columns A, B, C...; rows 1, 2, 3...; a cell is where a row and column meet and has an address such as B3. A worksheet is one sheet; a workbook is the file with several worksheets.\n3. Entering data: text, numbers and formulas. Formulas start with =. Examples: =B2+B3, =C2*D2. Functions: =SUM(B2:B6), =AVERAGE(B2:B6), =MAX(B2:B6), =MIN(B2:B6).\n4. Demonstrate: starting, creating a table, saving with File, Save As, closing and reopening.\n5. Why a spreadsheet is better than a calculator: change one number and all results update.\n\n## Class activity\n\nPupils create a tuckshop sales table, calculate each total and the grand total with formulas, and save it.\n\n## Evaluation\n\n1. What does the formula =SUM(B2:B6) do?\n2. What is the address of the cell in column C, row 4?\n\n## Assignment\n\nComplete the problem set and the worksheet on the app.",
+      "reading": {
+        "title": "Calculating with rows and columns",
+        "content": "# Spreadsheets: cells, formulas and saving workbooks\n\n## What is a spreadsheet?\n\nA **spreadsheet** is a program in which data is arranged in **rows** and **columns** and calculated automatically. It is used for budgets, class results, sales records, attendance registers and school fees. Examples: **Microsoft Excel**, **LibreOffice Calc** and **Google Sheets**.\n\n## Parts of a spreadsheet\n\n- A **column** runs down and is named with a letter: A, B, C.\n- A **row** runs across and is named with a number: 1, 2, 3.\n- A **cell** is where a row and a column meet. Its **cell address** is the column letter then the row number. The cell in column C, row 4, is **C4**.\n- A **worksheet** is one page of cells. A **workbook** is the whole file, which may hold several worksheets.\n- A **range** is a block of cells, such as B2:B6, which means B2 down to B6.\n\n## Entering data and formulas\n\nYou can type text (labels), numbers and formulas. A **formula** always begins with an equals sign (=).\n\n| A | B | C | D |\n| --- | --- | --- | --- |\n| Item | Price (N) | Quantity | Total (N) |\n| Biscuit | 250 | 12 | =B2*C2 |\n| Sachet water | 50 | 40 | =B3*C3 |\n\nIn D2 the formula =B2*C2 gives 250 x 12 = **3,000**. In D3 it gives 50 x 40 = **2,000**. If a price changes, the total changes by itself.\n\n## Functions\n\nA **function** is a ready-made formula.\n\n- =SUM(B2:B6) adds the numbers in B2 to B6.\n- =AVERAGE(B2:B6) finds their mean.\n- =MAX(B2:B6) gives the largest, =MIN(B2:B6) the smallest.\n\nIf B2 to B5 hold 12, 8, 15 and 5: SUM = 40, AVERAGE = 10, MAX = 15, MIN = 5.\n\n## Loading, saving and exiting\n\n**Load** the program from the Start menu or the desktop icon. To save, click **File, Save As**, choose the folder, type a name such as Tuckshop_Sales and click **Save**. Use **Ctrl + S** afterwards. To retrieve, click **File, Open** and pick the file. To exit, click **File, Exit** and save if asked."
+      },
+      "cards": [
+        {
+          "front": "Spreadsheet",
+          "back": "A program that arranges data in rows and columns and calculates automatically."
+        },
+        {
+          "front": "Cell address",
+          "back": "The column letter and row number of a cell, such as C4."
+        },
+        {
+          "front": "Worksheet",
+          "back": "One page of cells in a spreadsheet file."
+        },
+        {
+          "front": "Workbook",
+          "back": "The whole spreadsheet file, which may contain several worksheets."
+        },
+        {
+          "front": "Formula",
+          "back": "An instruction beginning with = that calculates a result."
+        },
+        {
+          "front": "=SUM(B2:B6)",
+          "back": "Adds the numbers in cells B2 to B6."
+        },
+        {
+          "front": "=AVERAGE(B2:B6)",
+          "back": "Finds the mean of the numbers in B2 to B6."
+        },
+        {
+          "front": "Range",
+          "back": "A block of cells such as B2:B6."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following is a spreadsheet package?",
+          "options": [
+            "Microsoft Word",
+            "Paint",
+            "Notepad",
+            "Microsoft Excel"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "The cell in column D, row 7 has the address",
+          "options": [
+            "7D",
+            "D7",
+            "D-7",
+            "DD7"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "In a spreadsheet every formula starts with",
+          "options": [
+            "a full stop",
+            "a colon",
+            "an equals sign (=)",
+            "a bracket"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Cells B2 to B5 contain 12, 8, 15 and 5. The result of =SUM(B2:B5) is",
+          "options": [
+            "40",
+            "10",
+            "15",
+            "5"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Using the same cells, =AVERAGE(B2:B5) gives",
+          "options": [
+            "40",
+            "15",
+            "10",
+            "8"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A tuckshop records the price of biscuit as N250 in B2 and the quantity sold as 12 in C2. Sachet water is N50 in B3 and 40 in C3. (a) Write the formula for the total sales of biscuit in D2 and state its value. (b) Write the formula for the total sales of both items in D4 and state its value.",
+          "markScheme": [
+            "Formula in D2 is =B2*C2",
+            "Value of D2 is 3,000",
+            "Formula in D4 is =D2+D3 (or =SUM(D2:D3)), with D3 as =B3*C3",
+            "Value of D4 is 5,000"
+          ],
+          "modelAnswer": "(a) In D2 the formula is =B2*C2, which gives 250 x 12 = 3,000. (b) D3 holds =B3*C3 = 50 x 40 = 2,000. The total in D4 is =D2+D3 (or =SUM(D2:D3)), which gives 3,000 + 2,000 = 5,000.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) D2 = B2*C2, which is 250 x 12 = N3,000. (b) D3 = B3*C3 = 2,000. D4 = SUM(D2:D3), which is 3,000 + 2,000 = N5,000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "D2 = B2*C2"
+                },
+                {
+                  "point": 1,
+                  "quote": "250 x 12 = N3,000"
+                },
+                {
+                  "point": 2,
+                  "quote": "D4 = SUM(D2:D3)"
+                },
+                {
+                  "point": 3,
+                  "quote": "3,000 + 2,000 = N5,000"
+                }
+              ],
+              "feedback": "All four marks. You found D3 first, which the total needs. Remember to put = in front of a formula in the cell."
+            },
+            {
+              "tier": "full",
+              "text": "In D2 I type =B2*C2 and it shows 3000. In D3 I type =B3*C3 and it shows 2000. In D4 I type =D2+D3 and it shows 5000, the total sales of both items.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In D2 I type =B2*C2"
+                },
+                {
+                  "point": 1,
+                  "quote": "it shows 3000"
+                },
+                {
+                  "point": 2,
+                  "quote": "In D4 I type =D2+D3"
+                },
+                {
+                  "point": 3,
+                  "quote": "it shows 5000, the total sales of both items"
+                }
+              ],
+              "feedback": "Full marks. Typing exactly what goes into each cell is the correct way to present spreadsheet answers."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) =B2*C2 which gives 3000. (b) The total is 5000.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "=B2*C2"
+                },
+                {
+                  "point": 1,
+                  "quote": "which gives 3000"
+                }
+              ],
+              "feedback": "Part (a) is right. In (b) you must write the formula for D4 (=D2+D3 or =SUM(D2:D3)) as well as the value."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) =B2+C2 which is 262. (b) In D4 I type =D2+D3 to add the two totals.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "In D4 I type =D2+D3"
+                }
+              ],
+              "feedback": "Your formula for the grand total is right in form. But the total for one item is price times quantity, =B2*C2 = 3,000, not price plus quantity; with correct totals D4 shows 5,000.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 250 + 12 = 262. (b) 50 + 40 = 90.",
+              "meets": [],
+              "feedback": "A formula starts with = and multiplies price by quantity: =B2*C2 = 3,000. The total for both items is D2 + D3 = 5,000."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) B2C2. (b) D2D3.",
+              "meets": [],
+              "feedback": "Write cell references with an operator and begin with =: =B2*C2 for D2, and =D2+D3 for the total."
+            }
+          ]
+        },
+        {
+          "prompt": "(a) Distinguish between a worksheet and a workbook. (b) Cells B2 to B6 contain 20, 35, 15, 40 and 10. Write the function and the value for the sum, the average and the largest number.",
+          "markScheme": [
+            "A worksheet is one page of cells; a workbook is the file that holds one or more worksheets",
+            "=SUM(B2:B6) = 120",
+            "=AVERAGE(B2:B6) = 24",
+            "=MAX(B2:B6) = 40"
+          ],
+          "modelAnswer": "(a) A worksheet is one page of cells made of rows and columns, while a workbook is the whole file, which may contain several worksheets. (b) =SUM(B2:B6) = 20 + 35 + 15 + 40 + 10 = 120. =AVERAGE(B2:B6) = 120 / 5 = 24. =MAX(B2:B6) = 40.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) A worksheet is a single page of rows and columns while a workbook is the whole file that can have many worksheets. (b) =SUM(B2:B6) = 120. =AVERAGE(B2:B6) = 120/5 = 24. =MAX(B2:B6) = 40.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A worksheet is a single page of rows and columns while a workbook is the whole file that can have many worksheets"
+                },
+                {
+                  "point": 1,
+                  "quote": "=SUM(B2:B6) = 120"
+                },
+                {
+                  "point": 2,
+                  "quote": "=AVERAGE(B2:B6) = 120/5 = 24"
+                },
+                {
+                  "point": 3,
+                  "quote": "=MAX(B2:B6) = 40"
+                }
+              ],
+              "feedback": "All four marks. Showing 120/5 proves the average was worked from the sum."
+            },
+            {
+              "tier": "full",
+              "text": "A workbook is the file which contains worksheets, and a worksheet is one sheet in it. The sum is found with =SUM(B2:B6) and gives 120. The average is =AVERAGE(B2:B6), giving 24. The largest is =MAX(B2:B6), which gives 40.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A workbook is the file which contains worksheets, and a worksheet is one sheet in it"
+                },
+                {
+                  "point": 1,
+                  "quote": "=SUM(B2:B6) and gives 120"
+                },
+                {
+                  "point": 2,
+                  "quote": "=AVERAGE(B2:B6), giving 24"
+                },
+                {
+                  "point": 3,
+                  "quote": "=MAX(B2:B6), which gives 40"
+                }
+              ],
+              "feedback": "Full marks. Correct functions and correct values."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) A worksheet is one page and a workbook is the file. (b) =SUM(B2:B6) = 120. =AVERAGE(B2:B6) = 30. =MAX(B2:B6) = 40.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A worksheet is one page and a workbook is the file"
+                },
+                {
+                  "point": 1,
+                  "quote": "=SUM(B2:B6) = 120"
+                },
+                {
+                  "point": 3,
+                  "quote": "=MAX(B2:B6) = 40"
+                }
+              ],
+              "feedback": "The functions are right. The average is 120 divided by the 5 numbers, which is 24, not 30."
+            },
+            {
+              "tier": "partial",
+              "text": "(b) The sum is 120, the average is 24 and the largest is 40. (a) A worksheet is the same as a workbook.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The sum is 120"
+                },
+                {
+                  "point": 2,
+                  "quote": "the average is 24"
+                },
+                {
+                  "point": 3,
+                  "quote": "the largest is 40"
+                }
+              ],
+              "feedback": "Your values are right, but you should write the functions too (=SUM(B2:B6) and so on). A worksheet is one page; a workbook is the whole file.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) A worksheet is a paper for work. (b) SUM = 20, AVERAGE = 35, MAX = 10.",
+              "meets": [],
+              "feedback": "A worksheet is one page of cells in a spreadsheet file. SUM adds all five numbers (120), AVERAGE divides by five (24) and MAX picks the largest (40)."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Workbook is a book. (b) The functions are +, - and x.",
+              "meets": [],
+              "feedback": "A workbook is a spreadsheet file holding worksheets. Functions such as SUM, AVERAGE and MAX work on a range of cells."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Database management systems",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a database and a database management system (DBMS);\n2. state uses and examples of database applications and packages such as Microsoft Access;\n3. identify tables, fields, records and the primary key;\n4. load and exit a DBMS, then create, save and retrieve a database file.\n\n## Materials\n\nComputers with Microsoft Access or LibreOffice Base, a projector, a school register on paper, index cards with pupils' details.\n\n## Starter (5 minutes)\n\nHand out index cards, one per pupil, with name, class and age. Ask: how would you find all pupils aged 15 quickly? What if there were 2,000 cards?\n\n## Development\n\n1. Define a database as an organised collection of related data, and a DBMS as the software used to create, store, search and manage it. Examples: Microsoft Access, LibreOffice Base, MySQL, Oracle.\n2. Uses: school records, hospital patient files, bank accounts, library catalogues, airline bookings, a shop's stock.\n3. Structure: a table has columns called fields and rows called records. The primary key is the field that identifies each record uniquely, such as Admission Number.\n4. Demonstrate: load Access, choose Blank database, name and create; make a table with fields (AdmNo, Name, Class, Age); enter three records; save; close; reopen.\n5. Compare with a paper register and with a spreadsheet.\n\n## Class activity\n\nPupils build a table of ten classmates with the fields AdmNo, Name, Class and Age, then save it as 'SS2_Register'.\n\n## Evaluation\n\n1. What is a record? What is a field?\n2. Why must a primary key be unique?\n\n## Assignment\n\nComplete the worksheet and the quiz on the app.",
+      "reading": {
+        "title": "Keeping records so they can be found",
+        "content": "# Database management systems\n\n## Database and DBMS\n\nA **database** is an organised collection of related data stored so that it can be easily searched, updated and used. A school's records of its pupils, a hospital's patient files and a bank's accounts are all databases.\n\nA **database management system (DBMS)** is the software used to create, store, search, update and protect a database. Examples: **Microsoft Access**, **LibreOffice Base**, **MySQL** and **Oracle**.\n\n## Uses of databases\n\n- Schools: pupils' records, results, fees and staff.\n- Hospitals: patient histories and appointments.\n- Banks: customer accounts and transactions.\n- Libraries: lists of books and borrowers.\n- Shops: stock and sales.\n- Airlines: flight bookings.\n\nA database is better than a paper register because data can be found quickly, is stored in less space, can be updated easily and avoids repeating information.\n\n## Structure of a database table\n\nData is stored in a **table**, which looks like a grid.\n\n| AdmNo | Name | Class | Age |\n| --- | --- | --- | --- |\n| 001 | Ada Obi | SS2A | 15 |\n| 002 | Musa Bello | SS2B | 16 |\n| 003 | Tolu Ade | SS2A | 15 |\n\n- A **field** is a column, such as Name or Age. It holds one kind of data.\n- A **record** is a row, holding all the data about one person or item.\n- The **primary key** is a field whose value is different for every record, such as AdmNo. It identifies each record uniquely, so two pupils cannot have the same one.\n\n## Using a DBMS\n\n**Loading**: click Start, then Microsoft Access, and choose a blank database. **Creating**: name the file, create a table, type the field names and choose data types such as Text, Number and Date. **Entering records**: type into the datasheet. **Saving**: File, Save, then give the table a name. **Exiting**: File, Close or Exit. **Retrieving**: open Access, then File, Open, and choose the database file.\n\nOther objects in a DBMS are **queries** that search for data, **forms** for entering data and **reports** for printing results."
+      },
+      "cards": [
+        {
+          "front": "Database",
+          "back": "An organised collection of related data."
+        },
+        {
+          "front": "DBMS",
+          "back": "Software used to create, store, search and manage a database."
+        },
+        {
+          "front": "Field",
+          "back": "A column of a table that holds one kind of data."
+        },
+        {
+          "front": "Record",
+          "back": "A row of a table holding all the data about one item or person."
+        },
+        {
+          "front": "Primary key",
+          "back": "A field whose value is unique for every record."
+        },
+        {
+          "front": "Microsoft Access",
+          "back": "A database management package."
+        },
+        {
+          "front": "Query",
+          "back": "A request in a DBMS to search for data."
+        },
+        {
+          "front": "Report",
+          "back": "A printed or displayed summary of data from a database."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A database management system is best described as",
+          "options": [
+            "a type of printer",
+            "a game",
+            "software used to create and manage databases",
+            "an input device"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "In a database table, a row holding all the data about one pupil is called a",
+          "options": [
+            "field",
+            "key",
+            "report",
+            "record"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these would make the best primary key in a school database?",
+          "options": [
+            "Admission number",
+            "Class",
+            "Age",
+            "Surname"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Microsoft Access is an example of",
+          "options": [
+            "a word processor",
+            "a database management package",
+            "an operating system",
+            "a search engine"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "In the table in the reading, 'Name' and 'Age' are examples of",
+          "options": [
+            "fields",
+            "records",
+            "keys",
+            "reports"
+          ],
+          "answer": "A"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define a database and a database management system. Name one DBMS package and state three uses of a database in a school.",
+          "markScheme": [
+            "A database is an organised collection of related data",
+            "A DBMS is software used to create, store, search and manage the database",
+            "Names a package such as Microsoft Access",
+            "Gives three school uses, such as pupils' records, results and fees"
+          ],
+          "modelAnswer": "A database is an organised collection of related data, such as the records of all pupils in a school. A database management system is the software used to create, store, search, update and manage the database. An example is Microsoft Access. In a school a database can hold pupils' records, termly results, fees paid and staff details.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A database is an organised collection of related data. A DBMS is software used to create, store, search and manage that data. An example is Microsoft Access. In a school a database can be used for pupils' records, for results and for the fees paid.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "an organised collection of related data"
+                },
+                {
+                  "point": 1,
+                  "quote": "software used to create, store, search and manage that data"
+                },
+                {
+                  "point": 2,
+                  "quote": "Microsoft Access"
+                },
+                {
+                  "point": 3,
+                  "quote": "pupils' records, for results and for the fees paid"
+                }
+              ],
+              "feedback": "All four marks. Every part of the question is answered."
+            },
+            {
+              "tier": "full",
+              "text": "A database is related data arranged so that it can be searched easily. A database management system is a program that helps us to create and control the database, such as LibreOffice Base. A school can use it for the register, the library list of borrowed books and staff records.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "related data arranged so that it can be searched easily"
+                },
+                {
+                  "point": 1,
+                  "quote": "a program that helps us to create and control the database"
+                },
+                {
+                  "point": 2,
+                  "quote": "LibreOffice Base"
+                },
+                {
+                  "point": 3,
+                  "quote": "the register, the library list of borrowed books and staff records"
+                }
+              ],
+              "feedback": "Full marks. LibreOffice Base is a correct alternative to Access."
+            },
+            {
+              "tier": "partial",
+              "text": "A database is a collection of data. A DBMS is a database. Microsoft Access is one. It is used for records.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Microsoft Access is one"
+                }
+              ],
+              "feedback": "A database is organised and related. A DBMS is not a database but the software that manages it. Give three specific school uses, such as results and fees."
+            },
+            {
+              "tier": "partial",
+              "text": "A DBMS is software used to create and manage databases, like Access. A school uses it for results, fees and records.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "software used to create and manage databases"
+                },
+                {
+                  "point": 2,
+                  "quote": "like Access"
+                },
+                {
+                  "point": 3,
+                  "quote": "results, fees and records"
+                }
+              ],
+              "feedback": "Good, but you did not define a database: an organised collection of related data.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A database is a base where data is kept in the ground. DBMS is the manager of the base.",
+              "meets": [],
+              "feedback": "A database is an organised collection of related data stored on a computer. A DBMS is software, not a person."
+            },
+            {
+              "tier": "weak",
+              "text": "It is a type of Word. It is used to type letters.",
+              "meets": [],
+              "feedback": "A database is for storing and finding data, not typing letters. Microsoft Access is a database package; Word is a word processor."
+            }
+          ]
+        },
+        {
+          "prompt": "The table below stores pupils' data. Fields: AdmNo, Name, Class, Age. Records: (001, Ada Obi, SS2A, 15), (002, Musa Bello, SS2B, 16), (003, Tolu Ade, SS2A, 15). (a) How many fields and how many records does it have? (b) Which field is the best primary key, and why? (c) State the steps to save a new database in Microsoft Access.",
+          "markScheme": [
+            "4 fields and 3 records",
+            "AdmNo is the best primary key",
+            "Because it is different (unique) for every pupil, but Class and Age repeat",
+            "Steps: load Access, choose blank database, name the file and click Create (or File, Save), and save the table with a name"
+          ],
+          "modelAnswer": "(a) The table has 4 fields (AdmNo, Name, Class, Age) and 3 records. (b) AdmNo is the best primary key because it is different for every pupil, while Class and Age are repeated, and even two pupils may share a name. (c) Start Access, choose a blank database, type a file name and click Create, make the table, then click File, Save and give the table a name.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 4 fields and 3 records. (b) AdmNo is the best primary key because every pupil has a different admission number, but class and age can be the same for different pupils. (c) Open Access, choose Blank database, type the file name and click Create, then make the table and click File, Save and give it a name.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4 fields and 3 records"
+                },
+                {
+                  "point": 1,
+                  "quote": "AdmNo is the best primary key"
+                },
+                {
+                  "point": 2,
+                  "quote": "every pupil has a different admission number, but class and age can be the same for different pupils"
+                },
+                {
+                  "point": 3,
+                  "quote": "Open Access, choose Blank database, type the file name and click Create, then make the table and click File, Save and give it a name"
+                }
+              ],
+              "feedback": "All four marks. You said why Class and Age cannot be keys."
+            },
+            {
+              "tier": "full",
+              "text": "There are four fields because there are four columns, and three records because there are three rows. The primary key should be AdmNo since it is unique to each pupil, but names or classes could repeat. To save in Access I start the program, choose a new blank database, give it a name and click Create, and later use File, Save for the table.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "four fields because there are four columns, and three records because there are three rows"
+                },
+                {
+                  "point": 1,
+                  "quote": "The primary key should be AdmNo"
+                },
+                {
+                  "point": 2,
+                  "quote": "it is unique to each pupil, but names or classes could repeat"
+                },
+                {
+                  "point": 3,
+                  "quote": "start the program, choose a new blank database, give it a name and click Create, and later use File, Save for the table"
+                }
+              ],
+              "feedback": "Full marks. Linking fields to columns and records to rows shows you understand the structure."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 4 fields and 3 records. (b) The primary key is Name. (c) Click File, Save.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "4 fields and 3 records"
+                }
+              ],
+              "feedback": "Part (a) is right. Name is not the best key because two pupils may have the same name; use AdmNo, which is unique. In (c), start Access and choose a blank database first."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) 3 fields and 4 records. (b) AdmNo because it is unique. (c) Load Access, Blank database, name it and create, then save.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "AdmNo"
+                },
+                {
+                  "point": 2,
+                  "quote": "it is unique"
+                },
+                {
+                  "point": 3,
+                  "quote": "Load Access, Blank database, name it and create, then save"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are correct. Fields are columns (4) and records are rows (3); you swapped them.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 7. (b) Age. (c) Press Ctrl and S only.",
+              "meets": [],
+              "feedback": "Count columns for fields (4) and rows for records (3). Age repeats, so it is a poor key; AdmNo is unique. Saving a new Access file starts with creating a blank database."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) 1 field. (b) Class because it is the group. (c) Switch off the computer.",
+              "meets": [],
+              "feedback": "There are 4 fields (columns) and 3 records (rows). A primary key must be unique, which Class is not. Switching off does not save the database."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Presentation packages",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a presentation package and state its uses, with examples;\n2. start and exit a presentation program;\n3. create a slide show with title, bullet and picture slides, then save and retrieve it;\n4. apply simple rules for a clear presentation.\n\n## Materials\n\nComputers with Microsoft PowerPoint, LibreOffice Impress or Google Slides, a projector, a sample slide show with too much text and a better one.\n\n## Starter (5 minutes)\n\nShow two slides on the same topic: one crowded with small text, one with a heading and three short points and a picture. Ask which one the class could read from the back, and why.\n\n## Development\n\n1. Define a presentation package as software used to make slides of text, pictures, charts and sound that are shown to an audience. Uses: lessons, school debates, business proposals, project defence. Examples: PowerPoint, Impress, Google Slides.\n2. Loading and exiting: Start menu, program name; File, Exit.\n3. Creating: choose a layout (title slide, title and content), type the title, add bullet points, insert a picture, choose a design theme, add a transition.\n4. Saving: File, Save As, choose the folder, type a name, click Save. Retrieving: File, Open. Run the show with the Slide Show button or the F5 key.\n5. Rules: few words per slide, large font, contrast between text and background, one idea per slide, check spelling.\n\n## Class activity\n\nPupils make a four-slide show on 'My school' and present it to a partner.\n\n## Evaluation\n\n1. Name two examples of presentation software.\n2. State two rules for a good slide.\n\n## Assignment\n\nComplete the worksheet, the problem set and the quiz on the app.",
+      "reading": {
+        "title": "Showing ideas with slides",
+        "content": "# Presentation packages\n\n## What is a presentation package?\n\nA **presentation package** is a program for making a **slide show**: a set of **slides** that can hold text, pictures, charts, sound and video, shown to an audience on a screen or projector. Examples: **Microsoft PowerPoint**, **LibreOffice Impress** and **Google Slides**.\n\n## Uses\n\nTeachers use slides for lessons. Pupils use them for debates, project defence and class presentations. Businesses use them for sales talks and proposals. Churches and mosques use them for notices and songs.\n\n## Loading and exiting\n\n**Load**: click Start, find PowerPoint (or Impress) and click it, or double-click its icon. Choose a blank presentation. **Exit**: click File, then Exit; save when asked.\n\n## Creating a slide show\n\n1. The first slide is usually a **title slide**: a title and your name.\n2. Click **New Slide** and choose a **layout**, for example Title and Content.\n3. Type a title and **bullet points**: short phrases, not full paragraphs.\n4. Use **Insert, Picture** to add a picture. Choose a **design theme** so all slides look alike.\n5. Add a **transition**, the effect when one slide changes to the next, and **animation** for items on a slide, but use them sparingly.\n6. Press **F5** or click **Slide Show** to run it.\n\n## Saving and retrieving\n\nClick **File, Save As**, choose the folder, type a name such as My_School_Talk and click **Save**. To retrieve, click **File, Open** and select the file. Use **Ctrl + S** to save as you work.\n\n## Rules for a good presentation\n\n- One idea on each slide.\n- Few words: no more than about six lines.\n- Large, clear font (at least 24 points) and good contrast, such as dark text on a light background.\n- Pictures that help the point.\n- Check spelling.\n- Do not read from the slide; speak to the audience."
+      },
+      "cards": [
+        {
+          "front": "Presentation package",
+          "back": "Software for making slide shows of text, pictures and sound."
+        },
+        {
+          "front": "Slide",
+          "back": "One page of a presentation."
+        },
+        {
+          "front": "Layout",
+          "back": "The arrangement of title and content on a slide."
+        },
+        {
+          "front": "Transition",
+          "back": "The effect when one slide changes to the next."
+        },
+        {
+          "front": "Animation",
+          "back": "The effect used to bring items onto a slide."
+        },
+        {
+          "front": "Design theme",
+          "back": "A set pattern of colours and fonts applied to all slides."
+        },
+        {
+          "front": "F5",
+          "back": "The key that starts the slide show."
+        },
+        {
+          "front": "Examples of presentation software",
+          "back": "PowerPoint, Impress and Google Slides."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following is a presentation package?",
+          "options": [
+            "Microsoft Access",
+            "Microsoft PowerPoint",
+            "Microsoft Excel",
+            "Notepad"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "The effect shown when one slide changes to the next is called a",
+          "options": [
+            "transition",
+            "layout",
+            "theme",
+            "bullet"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which key starts a slide show in most presentation programs?",
+          "options": [
+            "F1",
+            "F2",
+            "F12",
+            "F5"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of the following is a good rule for a slide?",
+          "options": [
+            "Fill it with paragraphs",
+            "Use tiny writing",
+            "Keep a few words and one idea",
+            "Use red text on a red background"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "A presentation file is saved by clicking",
+          "options": [
+            "File, then Print",
+            "File, then Save As",
+            "Insert, then Picture",
+            "Slide Show, then Start"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define a presentation package and give two examples. State three rules to follow when making slides for a school debate.",
+          "markScheme": [
+            "A presentation package is software used to make slide shows of text, pictures and sound",
+            "Two examples, such as PowerPoint and Impress",
+            "One valid rule with a reason, e.g. few words so that the audience can read",
+            "Two more valid rules, e.g. large font, good contrast, one idea per slide"
+          ],
+          "modelAnswer": "A presentation package is software used to make slides containing text, pictures and sound that are shown to an audience. Examples are Microsoft PowerPoint and LibreOffice Impress. For a debate, keep few words on each slide so the audience can read it, use a large font and good colour contrast so that it can be seen from the back, and put one idea on each slide.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A presentation package is a program used to make slide shows that contain text, pictures and sound, shown to an audience. Examples are PowerPoint and Google Slides. Rules: use few words on each slide so people can read quickly; use a big font and good contrast between the text and the background; and keep one idea on each slide.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a program used to make slide shows that contain text, pictures and sound, shown to an audience"
+                },
+                {
+                  "point": 1,
+                  "quote": "PowerPoint and Google Slides"
+                },
+                {
+                  "point": 2,
+                  "quote": "use few words on each slide so people can read quickly"
+                },
+                {
+                  "point": 3,
+                  "quote": "use a big font and good contrast between the text and the background; and keep one idea on each slide"
+                }
+              ],
+              "feedback": "All four marks. Every rule comes with a reason."
+            },
+            {
+              "tier": "full",
+              "text": "It is software for creating slides which a speaker shows on a screen, with text, pictures and sound. Microsoft PowerPoint and LibreOffice Impress are examples. For a debate the slides should have short bullet points, not paragraphs, a font large enough to read from the back, and a plain background with clear contrast.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "software for creating slides which a speaker shows on a screen, with text, pictures and sound"
+                },
+                {
+                  "point": 1,
+                  "quote": "Microsoft PowerPoint and LibreOffice Impress"
+                },
+                {
+                  "point": 2,
+                  "quote": "short bullet points, not paragraphs"
+                },
+                {
+                  "point": 3,
+                  "quote": "a font large enough to read from the back, and a plain background with clear contrast"
+                }
+              ],
+              "feedback": "Full marks. 'Read from the back' is the test of a good slide."
+            },
+            {
+              "tier": "partial",
+              "text": "A presentation package is used to present. Examples are PowerPoint and Excel. Rules are to use pictures.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "to use pictures"
+                }
+              ],
+              "feedback": "Excel is a spreadsheet, not a presentation package; use Impress or Google Slides. A better definition: software for making slide shows. Give the reason for the rule, and two more rules."
+            },
+            {
+              "tier": "partial",
+              "text": "Rules: few words, big font and one idea per slide. Examples are PowerPoint and Impress.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "PowerPoint and Impress"
+                },
+                {
+                  "point": 2,
+                  "quote": "few words"
+                },
+                {
+                  "point": 3,
+                  "quote": "big font and one idea per slide"
+                }
+              ],
+              "feedback": "Your examples and rules are right. You did not define a presentation package: software for making slide shows with text, pictures and sound.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A presentation package is a package of gift that you present to someone.",
+              "meets": [],
+              "feedback": "A presentation package is a computer program for making slide shows, such as PowerPoint."
+            },
+            {
+              "tier": "weak",
+              "text": "Write everything on the slide so that you do not forget it.",
+              "meets": [],
+              "feedback": "The audience cannot read a crowded slide. Use few words, a large font, and speak to the audience instead of reading the slide."
+            }
+          ]
+        },
+        {
+          "prompt": "Write the steps to create a two-slide presentation on 'My school' in PowerPoint, save it, close the program and open it again. State what a transition is.",
+          "markScheme": [
+            "Starts the program and opens a blank presentation",
+            "Adds a title slide and a second slide with a layout, typing the title and bullet points",
+            "Saves with File, Save As, a folder and a file name, and closes the program",
+            "Retrieves with File, Open; and defines a transition as the effect when moving from one slide to the next"
+          ],
+          "modelAnswer": "I start PowerPoint from the Start menu and choose a blank presentation. On the title slide I type the title 'My school' and my name. I click New Slide, choose Title and Content, and type a heading and bullet points. I click File, Save As, choose the folder, type the name and click Save, then close with File, Exit. To open it again I start PowerPoint, click File, Open and choose the file. A transition is the effect shown when one slide changes to the next.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "I open PowerPoint from the Start menu and choose a blank presentation. I type 'My school' and my name on the title slide. Then I click New Slide, choose Title and Content and type the heading and bullet points. I click File, Save As, choose a folder, type the name and Save, then File, Exit. I open it again with File, Open and choose the file. A transition is the effect when one slide changes to the next one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "I open PowerPoint from the Start menu and choose a blank presentation"
+                },
+                {
+                  "point": 1,
+                  "quote": "Then I click New Slide, choose Title and Content and type the heading and bullet points"
+                },
+                {
+                  "point": 2,
+                  "quote": "I click File, Save As, choose a folder, type the name and Save"
+                },
+                {
+                  "point": 3,
+                  "quote": "A transition is the effect when one slide changes to the next one"
+                }
+              ],
+              "feedback": "All four marks. The steps are in the correct order."
+            },
+            {
+              "tier": "full",
+              "text": "Start PowerPoint and choose a blank presentation. Fill in the title slide, insert a new slide with a layout and add a title and two bullet points. Use File, Save As to give it a name in a folder, then close the program. To open it again, run PowerPoint, click File, Open and pick the file. A transition is the effect that appears when you move from one slide to the next.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Start PowerPoint and choose a blank presentation"
+                },
+                {
+                  "point": 1,
+                  "quote": "insert a new slide with a layout and add a title and two bullet points"
+                },
+                {
+                  "point": 2,
+                  "quote": "Use File, Save As to give it a name in a folder"
+                },
+                {
+                  "point": 3,
+                  "quote": "A transition is the effect that appears when you move from one slide to the next"
+                }
+              ],
+              "feedback": "Full marks. Short, correct and complete."
+            },
+            {
+              "tier": "partial",
+              "text": "Open PowerPoint, type the slides, save with File, Save As and close it. A transition is a way of changing something.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Open PowerPoint"
+                },
+                {
+                  "point": 2,
+                  "quote": "save with File, Save As"
+                }
+              ],
+              "feedback": "You gave the main steps. Say how you add the second slide (New Slide and a layout), how you reopen the file (File, Open) and what a transition is: the effect when one slide changes to the next."
+            },
+            {
+              "tier": "partial",
+              "text": "A transition is the effect when one slide moves to the next. I save it and close it, then open it again.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "A transition is the effect when one slide moves to the next"
+                }
+              ],
+              "feedback": "Your transition definition is right. Give the actual steps: start the program, add the slides with a layout, save with File, Save As, and reopen with File, Open.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "I write on the board and take a photo. A transition is when you travel.",
+              "meets": [],
+              "feedback": "Use the program: start PowerPoint, add slides, save the file and open it again. A transition is the effect between slides."
+            },
+            {
+              "tier": "weak",
+              "text": "Press F5 and it will make the slides. Transition is a bullet.",
+              "meets": [],
+              "feedback": "F5 only runs a show you already created. Create slides first with layouts, then save. A transition is the effect when moving between slides."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Web design packages",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a web page, a website and a web design package;\n2. state the uses and examples of web design packages;\n3. name the components of a web page;\n4. read and write a simple HTML page.\n\n## Materials\n\nComputers with a browser and a plain text editor (Notepad), a projector, the school's website (or a sample site) to study.\n\n## Starter (5 minutes)\n\nOpen a school or a news website on the projector. Ask: what can you see on this page? Write the answers (heading, picture, menu, links, a form) and sort them into components.\n\n## Development\n\n1. Define a web page (one document on the Web), a website (a collection of related web pages), a web server (where it is kept), and a web design package (software used to build web pages).\n2. Uses: school websites, shops, news pages, personal portfolios. Examples: Adobe Dreamweaver, Wix, WordPress, Google Sites, and plain editors such as Notepad.\n3. Components of a page: heading, text, images, hyperlinks, navigation menu, forms, tables and a background style.\n4. HTML basics: tags in angle brackets, such as <html>, <head>, <title>, <body>, <h1>, <p>, <a href=\"...\"> and <img src=\"...\">.\n5. Demonstrate: type a simple page in Notepad, save as index.html and open it in the browser.\n\n## Class activity\n\nPupils write a page with a heading, a paragraph and a link, save it as index.html and open it in a browser.\n\n## Evaluation\n\n1. What is a hyperlink?\n2. Which HTML tag creates the largest heading?\n\n## Assignment\n\nComplete the worksheet and the problem set on the app.",
+      "reading": {
+        "title": "How web pages are made",
+        "content": "# Web design packages\n\n## Terms\n\nA **web page** is a single document on the World Wide Web, which you view in a browser. A **website** is a collection of related web pages, such as the pages of a school's website. A **web server** is the computer on which the website is kept so that others can reach it. **Web design** is planning and building web pages.\n\nA **web design package** is software used to create web pages and websites. Some let you drag and drop items without writing code.\n\n## Examples\n\n- **Adobe Dreamweaver**: a professional design tool.\n- **Wix**, **WordPress** and **Google Sites**: online tools for building sites from templates.\n- **Notepad** or **Notepad++**: simple text editors in which HTML can be typed by hand.\n\n## Uses\n\nSchool websites, online shops, news and entertainment pages, blogs and personal portfolios, and pages that advertise a business.\n\n## Components of a web page\n\n- **Heading and text**: the words on the page.\n- **Images**: pictures and logos.\n- **Hyperlinks**: text or pictures that take you to another page when clicked.\n- **Navigation menu**: a set of links to the main pages.\n- **Forms**: boxes for entering information, such as a login or registration form.\n- **Tables**: data arranged in rows and columns.\n- **Style**: colours, fonts and backgrounds.\n\n## A simple HTML page\n\nWeb pages are written in **HTML (HyperText Markup Language)** using **tags** in angle brackets. Most tags open and close.\n\n`<html>`\n`<head><title>My School</title></head>`\n`<body>`\n`<h1>Welcome to Crestfield</h1>`\n`<p>We are a good school.</p>`\n`<a href=\"about.html\">About us</a>`\n`</body>`\n`</html>`\n\nThe **title** shows on the browser tab. **h1** is the largest heading. **p** makes a paragraph. **a href** makes a hyperlink to another page. Save the file with the extension **.html**, for example index.html, and open it in a browser."
+      },
+      "cards": [
+        {
+          "front": "Web page",
+          "back": "A single document on the World Wide Web."
+        },
+        {
+          "front": "Website",
+          "back": "A collection of related web pages."
+        },
+        {
+          "front": "Web design package",
+          "back": "Software used to create web pages and websites."
+        },
+        {
+          "front": "Hyperlink",
+          "back": "Text or a picture that takes you to another page when clicked."
+        },
+        {
+          "front": "HTML",
+          "back": "HyperText Markup Language, the code used to write web pages."
+        },
+        {
+          "front": "Tag",
+          "back": "A word in angle brackets that tells the browser how to display content."
+        },
+        {
+          "front": "<h1>",
+          "back": "The HTML tag for the largest heading."
+        },
+        {
+          "front": "Web server",
+          "back": "The computer on which a website is stored."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A collection of related web pages is called a",
+          "options": [
+            "web page",
+            "browser",
+            "website",
+            "search engine"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of the following is a web design package?",
+          "options": [
+            "Adobe Dreamweaver",
+            "Microsoft Excel",
+            "Windows",
+            "VLC"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Text or a picture that takes you to another page when you click it is a",
+          "options": [
+            "table",
+            "form",
+            "theme",
+            "hyperlink"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which HTML tag creates a paragraph?",
+          "options": [
+            "<h1>",
+            "<p>",
+            "<a>",
+            "<img>"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A web page written in HTML is usually saved with the extension",
+          "options": [
+            ".docx",
+            ".xlsx",
+            ".html",
+            ".jpg"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Define a web design package and give three examples. State three components of a web page.",
+          "markScheme": [
+            "A web design package is software used to create web pages and websites",
+            "Gives three examples, such as Dreamweaver, Wix, WordPress, Google Sites",
+            "Names a component such as a hyperlink or an image",
+            "Names two more components such as text, a menu, a form or a table"
+          ],
+          "modelAnswer": "A web design package is software used to create web pages and websites. Examples are Adobe Dreamweaver, Wix and WordPress. The components of a web page include text and headings, images, and hyperlinks; others are a navigation menu, forms and tables.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A web design package is software that is used to create web pages and websites. Examples are Dreamweaver, Wix and Google Sites. The components of a web page are text, images and hyperlinks.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "software that is used to create web pages and websites"
+                },
+                {
+                  "point": 1,
+                  "quote": "Dreamweaver, Wix and Google Sites"
+                },
+                {
+                  "point": 2,
+                  "quote": "images"
+                },
+                {
+                  "point": 3,
+                  "quote": "text, images and hyperlinks"
+                }
+              ],
+              "feedback": "All four marks. All parts of the question are answered."
+            },
+            {
+              "tier": "full",
+              "text": "It is a program used to design and build websites. Some examples are WordPress, Wix and Dreamweaver. A web page has headings and text, a navigation menu with links, and forms where visitors type information.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a program used to design and build websites"
+                },
+                {
+                  "point": 1,
+                  "quote": "WordPress, Wix and Dreamweaver"
+                },
+                {
+                  "point": 2,
+                  "quote": "a navigation menu with links"
+                },
+                {
+                  "point": 3,
+                  "quote": "headings and text, a navigation menu with links, and forms where visitors type information"
+                }
+              ],
+              "feedback": "Full marks. A form is a good component to name."
+            },
+            {
+              "tier": "partial",
+              "text": "A web design package is a program for web pages. Examples are Microsoft Word and Dreamweaver.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a program for web pages"
+                }
+              ],
+              "feedback": "Your definition is acceptable but you should name three real examples (Word is not one) and three components, such as images, text and hyperlinks."
+            },
+            {
+              "tier": "partial",
+              "text": "Components of a web page are images, text and hyperlinks. Examples are WordPress and Wix.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "images, text and hyperlinks"
+                },
+                {
+                  "point": 1,
+                  "quote": "WordPress and Wix"
+                }
+              ],
+              "feedback": "You gave two examples where three were asked, and no definition: a web design package is software for creating web pages.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A web design package is the package for a spider web.",
+              "meets": [],
+              "feedback": "A web design package is software for creating web pages on the World Wide Web, such as Wix or Dreamweaver."
+            },
+            {
+              "tier": "weak",
+              "text": "Examples are Google and Chrome. Components are the keyboard and the mouse.",
+              "meets": [],
+              "feedback": "Google and Chrome are a search engine and a browser. Web page components include text, images, hyperlinks and forms."
+            }
+          ]
+        },
+        {
+          "prompt": "Study this HTML: <html><head><title>My School</title></head><body><h1>Welcome</h1><p>We love learning.</p><a href='about.html'>About us</a></body></html>. (a) What shows on the browser tab? (b) Which tag makes the heading and which makes the link? (c) What happens when a visitor clicks 'About us'? (d) With what extension should the file be saved?",
+          "markScheme": [
+            "The title 'My School' shows on the browser tab",
+            "The heading is made by <h1> and the link by <a>",
+            "Clicking 'About us' opens the page about.html",
+            "The file is saved with the extension .html"
+          ],
+          "modelAnswer": "(a) The title, My School, shows on the browser tab. (b) The <h1> tag makes the heading and the <a> tag makes the link. (c) When a visitor clicks 'About us' the browser opens the page about.html. (d) The file should be saved with the extension .html, for example index.html.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) 'My School' shows on the tab because it is inside the title tag. (b) The heading is made by <h1> and the link is made by <a>. (c) When a visitor clicks 'About us' it opens the page about.html. (d) The file is saved as .html, such as index.html.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "'My School' shows on the tab because it is inside the title tag"
+                },
+                {
+                  "point": 1,
+                  "quote": "The heading is made by <h1> and the link is made by <a>"
+                },
+                {
+                  "point": 2,
+                  "quote": "it opens the page about.html"
+                },
+                {
+                  "point": 3,
+                  "quote": "The file is saved as .html, such as index.html"
+                }
+              ],
+              "feedback": "All four marks. You gave the reason for (a) as well as the answer."
+            },
+            {
+              "tier": "full",
+              "text": "The browser tab will show My School. The h1 tag makes the heading Welcome and the a tag makes the hyperlink About us. Clicking the link takes the visitor to the page called about.html. I will save the file with the .html extension.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The browser tab will show My School"
+                },
+                {
+                  "point": 1,
+                  "quote": "The h1 tag makes the heading Welcome and the a tag makes the hyperlink About us"
+                },
+                {
+                  "point": 2,
+                  "quote": "takes the visitor to the page called about.html"
+                },
+                {
+                  "point": 3,
+                  "quote": "I will save the file with the .html extension"
+                }
+              ],
+              "feedback": "Full marks. Clear, correct and complete."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) Welcome shows on the tab. (b) h1 is the heading and a is the link. (c) It opens the about page. (d) .doc",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "h1 is the heading and a is the link"
+                },
+                {
+                  "point": 2,
+                  "quote": "It opens the about page"
+                }
+              ],
+              "feedback": "Parts (b) and (c) are correct. The tab shows the title, My School, not the heading. An HTML file is saved with the .html extension, not .doc."
+            },
+            {
+              "tier": "partial",
+              "text": "(a) My School. (b) p is the heading and a is the link. (c) It opens about.html. (d) .html",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "My School"
+                },
+                {
+                  "point": 2,
+                  "quote": "It opens about.html"
+                },
+                {
+                  "point": 3,
+                  "quote": ".html"
+                }
+              ],
+              "feedback": "Three are right. The <p> tag makes a paragraph; the heading is made by <h1>.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "(a) Nothing shows. (b) The tags are the words. (c) It will open the computer. (d) .exe",
+              "meets": [],
+              "feedback": "The title shows on the browser tab; <h1> makes the heading and <a> the link; the link opens about.html; and the file is saved as .html."
+            },
+            {
+              "tier": "weak",
+              "text": "(a) We love learning. (b) The heading is the link. (c) It deletes the page. (d) .mp3",
+              "meets": [],
+              "feedback": "The tab shows the title (My School). The heading and link are different tags. A hyperlink opens another page. Web pages are saved as .html."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Graphic packages and CorelDRAW",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define a graphic package and state its uses;\n2. name examples of graphic packages and distinguish bitmap (raster) from vector graphics;\n3. identify the main parts of the CorelDRAW screen and its basic tools;\n4. create, save and retrieve a simple design.\n\n## Materials\n\nComputers with CorelDRAW (or Inkscape or Paint as alternatives), a projector, a school badge, a printed flyer and an advert.\n\n## Starter (5 minutes)\n\nShow the school badge and a banner. Ask: who designed this? What computer program would a designer in a print shop in Aba or Ibadan use to make it?\n\n## Development\n\n1. Define a graphic package as software for creating and editing pictures, logos and designs. Uses: logos, banners, posters, flyers, business cards, certificates and book covers.\n2. Examples: CorelDRAW, Adobe Photoshop, Adobe Illustrator, Inkscape, Paint. Compare bitmap graphics (made of pixels; Photoshop; loses quality when enlarged) with vector graphics (made of lines and curves; CorelDRAW and Illustrator; can be enlarged without loss).\n3. The CorelDRAW screen: title bar, menu bar, property bar, toolbox, drawing page, colour palette and status bar.\n4. Basic tools: Pick tool, Shape tool, Rectangle, Ellipse, Text, Fill and Outline.\n5. Make a simple design: a rectangle, an ellipse and text, then colour them. Save as a .cdr file with File, Save As; close; File, Open to retrieve.\n\n## Class activity\n\nPupils design a simple badge for their class and save it as 'Class_Badge'.\n\n## Evaluation\n\n1. State one difference between a bitmap and a vector graphic.\n2. Name two tools in the CorelDRAW toolbox and their uses.\n\n## Assignment\n\nComplete the quiz and the worksheet on the app.",
+      "reading": {
+        "title": "Making pictures and designs on the computer",
+        "content": "# Graphic packages and CorelDRAW\n\n## What is a graphic package?\n\nA **graphic package** is software used to create, edit and print pictures, drawings, logos and designs. Print shops, newspapers and advertising firms use it to make **logos**, **posters**, **banners**, **flyers**, **business cards**, **certificates** and **book covers**. Schools use it for badges and notices.\n\n## Examples\n\n- **CorelDRAW**: widely used in Nigerian print shops for banners and logos.\n- **Adobe Photoshop**: mostly for editing photographs.\n- **Adobe Illustrator** and **Inkscape**: for drawings and logos.\n- **Paint**: a simple drawing program that comes with Windows.\n\n## Bitmap and vector graphics\n\n**Bitmap (raster) graphics** are made of tiny squares called **pixels**. Photographs are bitmaps. If you enlarge them too much, they look blurred. Photoshop works mostly with bitmaps.\n\n**Vector graphics** are made of lines, curves and shapes defined by mathematics. They can be enlarged to the size of a billboard without losing quality. CorelDRAW and Illustrator work with vectors, which is why logos are drawn as vectors.\n\n## The CorelDRAW screen\n\n- **Title bar**: shows the name of the file.\n- **Menu bar**: File, Edit, View, Layout, Object and others.\n- **Property bar**: options for the tool in use.\n- **Toolbox**: the drawing tools.\n- **Drawing page**: the area you design on.\n- **Colour palette**: colours for fills and outlines.\n- **Status bar**: information about the selected object.\n\n## Basic tools\n\n| Tool | Use |\n| --- | --- |\n| Pick tool | select and move objects |\n| Shape tool | change the shape of curves and nodes |\n| Rectangle tool | draw squares and rectangles |\n| Ellipse tool | draw circles and ovals |\n| Text tool | add words |\n| Fill tool | colour the inside of a shape |\n| Outline tool | change the line round a shape |\n\n## Saving and retrieving\n\nClick **File, Save As**, choose the folder, type a name and click **Save**. CorelDRAW files have the extension **.cdr**. To open the design later, click **File, Open** and select the file. To use it in a document or print shop, **export** it as a picture file such as JPEG or PDF."
+      },
+      "cards": [
+        {
+          "front": "Graphic package",
+          "back": "Software for creating and editing pictures, logos and designs."
+        },
+        {
+          "front": "Bitmap (raster) graphic",
+          "back": "A picture made of pixels; it blurs when enlarged."
+        },
+        {
+          "front": "Vector graphic",
+          "back": "A picture made of lines and curves; it can be enlarged without loss of quality."
+        },
+        {
+          "front": "Pixel",
+          "back": "A tiny square of colour in a bitmap picture."
+        },
+        {
+          "front": "CorelDRAW",
+          "back": "A vector graphic package common in print shops."
+        },
+        {
+          "front": "Pick tool",
+          "back": "A CorelDRAW tool used to select and move objects."
+        },
+        {
+          "front": "Ellipse tool",
+          "back": "A CorelDRAW tool used to draw circles and ovals."
+        },
+        {
+          "front": ".cdr",
+          "back": "The file extension of a CorelDRAW design."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which of the following is a graphic package?",
+          "options": [
+            "Microsoft Word",
+            "CorelDRAW",
+            "Microsoft Excel",
+            "Windows"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A picture made of pixels that blurs when enlarged is a",
+          "options": [
+            "vector graphic",
+            "bitmap graphic",
+            "table",
+            "formula"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which CorelDRAW tool is used to select and move objects?",
+          "options": [
+            "Text tool",
+            "Fill tool",
+            "Ellipse tool",
+            "Pick tool"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "A logo that must be enlarged to a billboard without losing quality should be made as a",
+          "options": [
+            "vector graphic",
+            "bitmap graphic",
+            "spreadsheet",
+            "text file"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The file extension of a CorelDRAW design is",
+          "options": [
+            ".docx",
+            ".html",
+            ".cdr",
+            ".mp3"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Distinguish between a bitmap graphic and a vector graphic, and explain why a printing press that makes billboards prefers vector graphics for logos.",
+          "markScheme": [
+            "A bitmap graphic is made of pixels",
+            "A vector graphic is made of lines and curves defined by mathematics",
+            "A bitmap blurs or loses quality when enlarged",
+            "A vector graphic can be enlarged to any size without losing quality, so it suits billboards"
+          ],
+          "modelAnswer": "A bitmap graphic is made of tiny squares called pixels, while a vector graphic is made of lines, curves and shapes defined by mathematics. If a bitmap is enlarged it becomes blurred, but a vector graphic can be enlarged to any size without losing quality. A press making billboards therefore prefers vector logos, because they stay sharp at a very large size.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "A bitmap graphic is made of pixels while a vector graphic is made of lines and curves. When a bitmap is enlarged it becomes blurry because the pixels show. A vector graphic can be made as large as needed without losing quality, so a billboard logo that is drawn as a vector stays sharp.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A bitmap graphic is made of pixels"
+                },
+                {
+                  "point": 1,
+                  "quote": "a vector graphic is made of lines and curves"
+                },
+                {
+                  "point": 2,
+                  "quote": "When a bitmap is enlarged it becomes blurry because the pixels show"
+                },
+                {
+                  "point": 3,
+                  "quote": "A vector graphic can be made as large as needed without losing quality, so a billboard logo that is drawn as a vector stays sharp"
+                }
+              ],
+              "feedback": "All four marks. You explained the blur by the pixels showing."
+            },
+            {
+              "tier": "full",
+              "text": "Bitmap pictures such as photographs are formed by pixels, but vector pictures such as logos are formed by shapes defined by mathematical lines. Enlarging a bitmap reduces its quality. Vector graphics keep their quality at any size, so the printer can use the same logo for a business card and for a billboard.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Bitmap pictures such as photographs are formed by pixels"
+                },
+                {
+                  "point": 1,
+                  "quote": "vector pictures such as logos are formed by shapes defined by mathematical lines"
+                },
+                {
+                  "point": 2,
+                  "quote": "Enlarging a bitmap reduces its quality"
+                },
+                {
+                  "point": 3,
+                  "quote": "Vector graphics keep their quality at any size, so the printer can use the same logo for a business card and for a billboard"
+                }
+              ],
+              "feedback": "Full marks. The business card against billboard example is exactly right."
+            },
+            {
+              "tier": "partial",
+              "text": "A bitmap graphic is made of pixels and a vector graphic is made of lines. The printing press likes vector because it is good.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "A bitmap graphic is made of pixels"
+                },
+                {
+                  "point": 1,
+                  "quote": "a vector graphic is made of lines"
+                }
+              ],
+              "feedback": "The definitions are right. 'Good' is not a reason: a vector can be enlarged to any size without losing quality, while a bitmap blurs."
+            },
+            {
+              "tier": "partial",
+              "text": "Bitmaps lose quality when you enlarge them. Vector graphics do not lose quality.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Bitmaps lose quality when you enlarge them"
+                },
+                {
+                  "point": 3,
+                  "quote": "Vector graphics do not lose quality"
+                }
+              ],
+              "feedback": "Your effects are right; also define each: bitmaps are made of pixels, vectors are made of lines and curves defined by mathematics.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "A bitmap is a map of bits and a vector is a Vector Mobile Phone.",
+              "meets": [],
+              "feedback": "A bitmap is a picture made of pixels. A vector graphic is made of lines, curves and shapes, and can be enlarged without loss of quality."
+            },
+            {
+              "tier": "weak",
+              "text": "Bitmap is for drawing and vector is for writing.",
+              "meets": [],
+              "feedback": "Both can be drawn. The difference is how they are made: pixels versus lines and curves, and how they behave when enlarged."
+            }
+          ]
+        },
+        {
+          "prompt": "A pupil wants to design a badge in CorelDRAW with a circle, a shield and the school name. (a) Name the tools she would use for the circle, the colour and the name. (b) State how she would save the badge and how she would open it later.",
+          "markScheme": [
+            "Ellipse tool for the circle",
+            "Fill tool for the colour",
+            "Text tool for the school name",
+            "Saves with File, Save As (a .cdr file) and opens later with File, Open"
+          ],
+          "modelAnswer": "(a) She would use the Ellipse tool to draw the circle, the Fill tool to colour it and the Text tool to type the school name. (b) She would click File, Save As, choose a folder, type a name and click Save; CorelDRAW saves it as a .cdr file. Later she would click File, Open and select the file.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "(a) The Ellipse tool for the circle, the Fill tool for colouring and the Text tool for the school's name. (b) She clicks File, Save As, selects the folder, types a name and clicks Save, and the file is saved as .cdr. To open it she clicks File, Open and selects the badge.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The Ellipse tool for the circle"
+                },
+                {
+                  "point": 1,
+                  "quote": "the Fill tool for colouring"
+                },
+                {
+                  "point": 2,
+                  "quote": "the Text tool for the school's name"
+                },
+                {
+                  "point": 3,
+                  "quote": "She clicks File, Save As, selects the folder, types a name and clicks Save"
+                }
+              ],
+              "feedback": "All four marks. You included the .cdr extension and the reopening step."
+            },
+            {
+              "tier": "full",
+              "text": "She would draw the circle with the ellipse tool, colour it with the fill tool and type the school name with the text tool. To save the badge she uses File then Save As and gives it a name. To get it back she uses File then Open.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "draw the circle with the ellipse tool"
+                },
+                {
+                  "point": 1,
+                  "quote": "colour it with the fill tool"
+                },
+                {
+                  "point": 2,
+                  "quote": "type the school name with the text tool"
+                },
+                {
+                  "point": 3,
+                  "quote": "File then Save As and gives it a name"
+                }
+              ],
+              "feedback": "Full marks. Each tool matches its job."
+            },
+            {
+              "tier": "partial",
+              "text": "She would use the Ellipse tool for the circle and the Text tool for the name. She would save it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the Ellipse tool for the circle"
+                },
+                {
+                  "point": 2,
+                  "quote": "the Text tool for the name"
+                }
+              ],
+              "feedback": "The circle and the text tools are right. Name the tool for colour (the Fill tool) and say how to save (File, Save As) and open (File, Open)."
+            },
+            {
+              "tier": "partial",
+              "text": "The Fill tool will colour it. She saves with File, Save As, and opens with File, Open.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The Fill tool will colour it"
+                },
+                {
+                  "point": 3,
+                  "quote": "She saves with File, Save As, and opens with File, Open"
+                }
+              ],
+              "feedback": "Colour and file steps are right. Add the Ellipse tool for the circle and the Text tool for the name.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "She would use the keyboard and the mouse. She would save it by pressing the power button.",
+              "meets": [],
+              "feedback": "Name the CorelDRAW tools: Ellipse for the circle, Fill for colour, Text for the name. Save with File, Save As."
+            },
+            {
+              "tier": "weak",
+              "text": "She would use Excel for the circle. She would print it for saving.",
+              "meets": [],
+              "feedback": "Excel is a spreadsheet. In CorelDRAW use the Ellipse tool, Fill tool and Text tool, then File, Save As to save."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "found": true,
+  "subject": "Visual Art",
+  "subjectCode": "VISART",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "General Knowledge in Art",
+      "abbreviation": "GENERAL",
+      "subStrands": [
+        {
+          "name": "Nature, Elements, Principles, Tools and Art Terms",
+          "objectives": [
+            {
+              "code": "VISART-GENERAL-1",
+              "description": "Nature and branches of art and careers in art."
+            },
+            {
+              "code": "VISART-GENERAL-2",
+              "description": "Visual awareness, understanding and appreciation of art elements — line, colour, space, shape, form, texture, etc.; principles of art — balance, rhythm, proportion, harmony, emphasis, variety, etc."
+            },
+            {
+              "code": "VISART-GENERAL-3",
+              "description": "Perspective: meaning and types (aerial, linear — angular/parallel — and foreshortening)."
+            },
+            {
+              "code": "VISART-GENERAL-4",
+              "description": "Knowledge of production, use and care of art/craft tools and materials (brush, pencil, colour, palette, easels, etc.); art and craft terms (tie and dye, biscuit ware, silhouette, relief, chiaroscuro, sfumato, aperture, etc.); inter-relationships of the arts (music, visual art, dance, drama and literary arts)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Art of West Africa",
+      "abbreviation": "WESTAF",
+      "subStrands": [
+        {
+          "name": "Traditional and Contemporary West African Art",
+          "objectives": [
+            {
+              "code": "VISART-WESTAF-1",
+              "description": "Knowledge of traditional art of West Africa: basic concepts (animism, fetishism and mythology); art forms, geographical location, characteristics, underlying beliefs and sacred/secular functions — Bamileke (Cameroon), Fon (Dahomey/Benin Republic), Ashanti and Fante (Ghana), Senufo and Baule (Côte d'Ivoire), Dan and Ngere (Liberia), Dogon and Bambara (Mali), Mende and Sherbro (Sierra Leone), Mossi and Bobo (Burkina Faso), Benin, Ife, Nok, Igbo-Ukwu, Esie, Owo (Nigeria), etc."
+            },
+            {
+              "code": "VISART-WESTAF-2",
+              "description": "Modern Traditional Art: Oshogbo art, Modern Benin art, Abuja pottery, Bida brass works, calabash carving, Mbari mud sculpture, weaving, leatherwork, wall decoration, indigenous decorative motifs."
+            },
+            {
+              "code": "VISART-WESTAF-3",
+              "description": "Contemporary art: art institutions (art schools, galleries, arts centres, museums); art organisations (NSIAD, SNA, NSEA, Ona Art Movement, Ulli Art Movement, The Eye Society); outstanding contemporary West African artists — training, style, achievements and contributions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-historic, Egyptian and Western Art",
+      "abbreviation": "WESTERN",
+      "subStrands": [
+        {
+          "name": "Pre-historic, Ancient Egyptian, Greek, Medieval and Modern Western Art",
+          "objectives": [
+            {
+              "code": "VISART-WESTERN-1",
+              "description": "Pre-historic art (20,000–2000 BC) — Paleolithic, Mesolithic and Neolithic Stone Ages: beliefs, materials, characteristics and functions. Ancient Egyptian art 11,000–7,000 BC (Old, Middle and New Kingdoms): beliefs, styles and functions."
+            },
+            {
+              "code": "VISART-WESTERN-2",
+              "description": "Greek Art: periods (Archaic, Classical and Hellenistic) and characteristics. Medieval Art: features, media and characteristics."
+            },
+            {
+              "code": "VISART-WESTERN-3",
+              "description": "Renaissance Art: Early, Low and High Renaissance — artists including Giotto, Donatello, Masaccio. 19th Century Art: Impressionism (Cézanne, Monet, Manet, Seurat); Post-Impressionism (Van Gogh, Gauguin). 20th Century Art: Cubism — influence of African art; artists (Picasso, Braque)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drawing and Creative Design",
+      "abbreviation": "STUDIO",
+      "subStrands": [
+        {
+          "name": "Drawing, 2D and 3D Creative Design",
+          "objectives": [
+            {
+              "code": "VISART-STUDIO-1",
+              "description": "Drawing: drawing from objects (group of man-made objects as total composition); drawing from nature (study of natural objects — branches, flowers, foliage, fruits, rocks, bones, insects, birds, shells, fish, etc.); drawing from life (depicting structure and form of a living person). Media: pencil, pastel, charcoal, pen and ink, poster/water colour."
+            },
+            {
+              "code": "VISART-STUDIO-2",
+              "description": "Creative Design (2-Dimensional): graphic design (lettering and poster design, book jacket design, layout for publications, calendar and timetable design, typographical design); textile design (adire, batik, tie-and-dye, block printing, screen printing, embroidery, appliqué, weaving); picture making (painting, collage/mosaic, printmaking)."
+            },
+            {
+              "code": "VISART-STUDIO-3",
+              "description": "Creative Design (3-Dimensional): sculpture (figurative, abstract and non-figurative in clay, wood, metal, etc.); product design/modelling; ceramics; crafts (leatherwork, basketry, beadwork, calabash decoration, weaving, embroidery, macramé)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

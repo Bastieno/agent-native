@@ -1,0 +1,595 @@
+{
+  "found": true,
+  "subject": "Economics",
+  "subjectCode": "ECON",
+  "framework": "WAEC",
+  "gradeRange": "SS1-SS3",
+  "strands": [
+    {
+      "name": "Definition and Scope of Economics",
+      "abbreviation": "SCOPE",
+      "subStrands": [
+        {
+          "name": "Scarcity, Choice and Economic Activities",
+          "objectives": [
+            {
+              "code": "ECON-SCOPE-1",
+              "description": "Scarcity and Choice, Scale of Preference, Opportunity Cost, Production Possibility Curve."
+            },
+            {
+              "code": "ECON-SCOPE-2",
+              "description": "Economic activities – Production, Distribution and Consumption."
+            },
+            {
+              "code": "ECON-SCOPE-3",
+              "description": "Classification of economic activities - Primary, Secondary and Tertiary and their relative contributions in terms of output/income, employment, savings, investment and foreign exchange."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Factors of Production",
+      "abbreviation": "FACTORS",
+      "subStrands": [
+        {
+          "name": "Land, Labour, Capital and Entrepreneurship",
+          "objectives": [
+            {
+              "code": "ECON-FACTORS-1",
+              "description": "Land, labour, capital and entrepreneurship – meaning, characteristics and importance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Types and Basic Features of Economic Systems",
+      "abbreviation": "SYSTEMS",
+      "subStrands": [
+        {
+          "name": "Economic Systems",
+          "objectives": [
+            {
+              "code": "ECON-SYSTEMS-1",
+              "description": "Types of economic systems – capitalism, socialism and mixed economy."
+            },
+            {
+              "code": "ECON-SYSTEMS-2",
+              "description": "Basic features of each economic system."
+            },
+            {
+              "code": "ECON-SYSTEMS-3",
+              "description": "Advantages and disadvantages of each economic system."
+            },
+            {
+              "code": "ECON-SYSTEMS-4",
+              "description": "Economic problems of society and the approaches for solving them under each of the systems."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Basic Tools of Economic Analysis",
+      "abbreviation": "TOOLS",
+      "subStrands": [
+        {
+          "name": "Statistical and Graphical Tools",
+          "objectives": [
+            {
+              "code": "ECON-TOOLS-1",
+              "description": "Tables, graphs and charts. Some basic statistical measures and representations – arithmetic mean, median, mode and their simple applications."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Demand",
+      "abbreviation": "DEMAND",
+      "subStrands": [
+        {
+          "name": "Concept and Law of Demand",
+          "objectives": [
+            {
+              "code": "ECON-DEMAND-1",
+              "description": "Concept of demand and law of demand, the demand schedules and curve, reasons for exceptional demand curves, types of demand (derived, composite, joint and competitive)."
+            },
+            {
+              "code": "ECON-DEMAND-2",
+              "description": "Factors determining demand for goods and services – price of the commodity, prices of other commodities, income, tastes, price expectation, etc."
+            },
+            {
+              "code": "ECON-DEMAND-3",
+              "description": "Distinction between a shift of and movement along a demand curve."
+            },
+            {
+              "code": "ECON-DEMAND-4",
+              "description": "Concept of elasticity of demand. Types of elasticity of demand and their measurement – price, income and cross elasticities of demand: importance of the concept of elasticity of demand to consumers, producers and government."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Supply",
+      "abbreviation": "SUPPLY",
+      "subStrands": [
+        {
+          "name": "Concept and Law of Supply",
+          "objectives": [
+            {
+              "code": "ECON-SUPPLY-1",
+              "description": "Concept of supply and law of supply, supply schedules and curve, types of Supply – composite, complementary and competitive."
+            },
+            {
+              "code": "ECON-SUPPLY-2",
+              "description": "Factors determining supply – input prices, technology, prices of other commodities, climatic factors, etc."
+            },
+            {
+              "code": "ECON-SUPPLY-3",
+              "description": "Distinction between the shift of and movement along the supply curve."
+            },
+            {
+              "code": "ECON-SUPPLY-4",
+              "description": "Concept and measurement of elasticity of supply and its importance to producers and government."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theory of Consumer Behaviour",
+      "abbreviation": "CONSUMER",
+      "subStrands": [
+        {
+          "name": "Utility and Consumer Equilibrium",
+          "objectives": [
+            {
+              "code": "ECON-CONSUMER-1",
+              "description": "The utility concepts – total utility, average utility, marginal utility and the calculation of utility schedules."
+            },
+            {
+              "code": "ECON-CONSUMER-2",
+              "description": "The law of diminishing marginal utility, relationship between total utility, average utility and marginal utility."
+            },
+            {
+              "code": "ECON-CONSUMER-3",
+              "description": "The concept of equilibrium of a consumer. Determination of consumer equilibrium."
+            },
+            {
+              "code": "ECON-CONSUMER-4",
+              "description": "The effects of changes in price on consumer equilibrium. The relationship between marginal utility and the demand curve."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theory of Price Determination",
+      "abbreviation": "PRICE",
+      "subStrands": [
+        {
+          "name": "Equilibrium Price and Price Controls",
+          "objectives": [
+            {
+              "code": "ECON-PRICE-1",
+              "description": "The Concept of the market; interaction between demand and supply."
+            },
+            {
+              "code": "ECON-PRICE-2",
+              "description": "Price determination under free and regulated markets. Equilibrium price and quantity in product and factor markets."
+            },
+            {
+              "code": "ECON-PRICE-3",
+              "description": "The effects of changes in supply and demand on equilibrium prices and quantities."
+            },
+            {
+              "code": "ECON-PRICE-4",
+              "description": "Introduction to algebraic determination of equilibrium price and quantity."
+            },
+            {
+              "code": "ECON-PRICE-5",
+              "description": "Price controls: maximum and minimum price regulations – meaning and their effects; rationing, black market (parallel market)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theory of Production",
+      "abbreviation": "PRODTN",
+      "subStrands": [
+        {
+          "name": "Production and Productivity",
+          "objectives": [
+            {
+              "code": "ECON-PRODTN-1",
+              "description": "Production: division of labour and specialization; Scale of production (Internal and External economies)."
+            },
+            {
+              "code": "ECON-PRODTN-2",
+              "description": "Concept of total, average and marginal productivity and law of variable proportions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theory of Cost and Revenue",
+      "abbreviation": "COST",
+      "subStrands": [
+        {
+          "name": "Cost and Revenue Concepts",
+          "objectives": [
+            {
+              "code": "ECON-COST-1",
+              "description": "Cost concepts: total cost, average cost, marginal cost, variable cost, fixed cost; short run and long run costs."
+            },
+            {
+              "code": "ECON-COST-2",
+              "description": "Distinction between economist's and accountant's view of cost (opportunity cost and money cost)."
+            },
+            {
+              "code": "ECON-COST-3",
+              "description": "Revenue concepts: total, average and marginal revenue; Marginal Revenue Product."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Market Structures",
+      "abbreviation": "MARKET",
+      "subStrands": [
+        {
+          "name": "Perfect and Imperfect Competition",
+          "objectives": [
+            {
+              "code": "ECON-MARKET-1",
+              "description": "Concept of a market, characteristics of various market structures, determination of price and output under different structures – perfect competition and imperfect competition (monopoly and monopolistic competition)."
+            },
+            {
+              "code": "ECON-MARKET-2",
+              "description": "Review of cost and revenue concepts. Price discrimination."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Business Organizations",
+      "abbreviation": "BIZORG",
+      "subStrands": [
+        {
+          "name": "Types and Features of Business Enterprises",
+          "objectives": [
+            {
+              "code": "ECON-BIZORG-1",
+              "description": "Types and basic features of business enterprises – Sole Proprietorship; Partnership, Joint-Stock companies (Private and Public), Co-operatives; Statutory Corporation, Joint ventures."
+            },
+            {
+              "code": "ECON-BIZORG-2",
+              "description": "Sources of funds. General and basic problems of business enterprises."
+            },
+            {
+              "code": "ECON-BIZORG-3",
+              "description": "Privatization and Commercialization as solutions to problems of public enterprises. Indigenization and nationalization policies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Distributive Trade",
+      "abbreviation": "DISTRIB",
+      "subStrands": [
+        {
+          "name": "Distribution Process and Channels",
+          "objectives": [
+            {
+              "code": "ECON-DISTRIB-1",
+              "description": "Process of distribution, role of producers, role of wholesalers, retailers and co-operatives."
+            },
+            {
+              "code": "ECON-DISTRIB-2",
+              "description": "The role of government agencies in product distribution and the problems of distribution and their solutions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Population and Labour Market",
+      "abbreviation": "POPLAB",
+      "subStrands": [
+        {
+          "name": "Population",
+          "objectives": [
+            {
+              "code": "ECON-POPLAB-1",
+              "description": "Population – determination and implication of size and growth of population, Rural–urban migration, Malthusian theory of population."
+            },
+            {
+              "code": "ECON-POPLAB-2",
+              "description": "Geographical, age, sex and occupational distribution. Importance and problems of census."
+            },
+            {
+              "code": "ECON-POPLAB-3",
+              "description": "Population and economic development (under-population, optimum population and over-population)."
+            }
+          ]
+        },
+        {
+          "name": "Labour Market",
+          "objectives": [
+            {
+              "code": "ECON-POPLAB-4",
+              "description": "Concept of labour force and human capital, efficiency and mobility of labour, factors affecting the size of the labour force, particularly the population characteristics (age, sex, occupation, education, etc.)"
+            },
+            {
+              "code": "ECON-POPLAB-5",
+              "description": "Supply of and demand for labour: wage determination. Concept of unemployment and underemployment, Trade Unions, Employers' association and Government policies on labour and wages."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agriculture",
+      "abbreviation": "AGRIC",
+      "subStrands": [
+        {
+          "name": "Structure and Policy",
+          "objectives": [
+            {
+              "code": "ECON-AGRIC-1",
+              "description": "Structure (e.g. food crops, export crops, livestock, fisheries): systems of agriculture (peasant, commercial, co-operative and state farming)."
+            },
+            {
+              "code": "ECON-AGRIC-2",
+              "description": "Importance of agriculture to the national economy: marketing of agricultural products (commodity boards)."
+            },
+            {
+              "code": "ECON-AGRIC-3",
+              "description": "Agricultural policies (minimum agricultural prices) problems of agriculture and remedies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Industrialization",
+      "abbreviation": "INDUSTRY",
+      "subStrands": [
+        {
+          "name": "Industry and Industrial Development",
+          "objectives": [
+            {
+              "code": "ECON-INDUSTRY-1",
+              "description": "Meaning and types of industry. Definition of industrial concepts: plant, firm, industry and industrial estates."
+            },
+            {
+              "code": "ECON-INDUSTRY-2",
+              "description": "Location of industry, localization, role of industrialization in economic development."
+            },
+            {
+              "code": "ECON-INDUSTRY-3",
+              "description": "Strategies of industrialization. Problems of industrialization. The link between agricultural and industrial development."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "National Income",
+      "abbreviation": "NATINC",
+      "subStrands": [
+        {
+          "name": "National Income Concepts and Measurement",
+          "objectives": [
+            {
+              "code": "ECON-NATINC-1",
+              "description": "Meaning of major national income concepts e.g. Gross Domestic Product, Gross National Product, Net National Product, etc."
+            },
+            {
+              "code": "ECON-NATINC-2",
+              "description": "Different ways of measuring national income and their problems."
+            },
+            {
+              "code": "ECON-NATINC-3",
+              "description": "Uses and limitations of national income data; trends and structure of national income."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Money and Inflation",
+      "abbreviation": "MONEY",
+      "subStrands": [
+        {
+          "name": "Money",
+          "objectives": [
+            {
+              "code": "ECON-MONEY-1",
+              "description": "Money – definition and historical development – barter and its problems, types, characteristics, functions."
+            },
+            {
+              "code": "ECON-MONEY-2",
+              "description": "Supply of and demand for money, value of money and the price level."
+            }
+          ]
+        },
+        {
+          "name": "Inflation",
+          "objectives": [
+            {
+              "code": "ECON-MONEY-3",
+              "description": "Inflation: meaning, types, causes, effects and control."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Financial Institutions",
+      "abbreviation": "FININST",
+      "subStrands": [
+        {
+          "name": "Types and Functions of Financial Institutions",
+          "objectives": [
+            {
+              "code": "ECON-FININST-1",
+              "description": "Types (traditional, Central Bank, Commercial Bank, Development Bank, Merchant Bank, and Insurance Companies, Building Societies): development and functions of financial institutions."
+            },
+            {
+              "code": "ECON-FININST-2",
+              "description": "Money and capital markets; meaning, types and functions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Public Finance",
+      "abbreviation": "PUBFIN",
+      "subStrands": [
+        {
+          "name": "Fiscal Policy, Taxation and Public Expenditure",
+          "objectives": [
+            {
+              "code": "ECON-PUBFIN-1",
+              "description": "Fiscal policy and objectives of public finance: Sources of government revenue."
+            },
+            {
+              "code": "ECON-PUBFIN-2",
+              "description": "Taxation – types (direct and indirect), objectives, merits, demerits and incidence; Principles/canons of taxation; Rates of taxation (proportional, progressive and regressive)."
+            },
+            {
+              "code": "ECON-PUBFIN-3",
+              "description": "Direct and indirect taxation: incidence and effects of taxes."
+            },
+            {
+              "code": "ECON-PUBFIN-4",
+              "description": "Composition/structure of public expenditure (recurrent and capital expenditure): effects of public expenditure. Government budget and the national debt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Economic Development and Planning",
+      "abbreviation": "DEVPLAN",
+      "subStrands": [
+        {
+          "name": "Development, Planning and Developing Countries",
+          "objectives": [
+            {
+              "code": "ECON-DEVPLAN-1",
+              "description": "Meaning of economic development, distinction between economic growth and development, characteristics and problems of developing countries."
+            },
+            {
+              "code": "ECON-DEVPLAN-2",
+              "description": "Elements of development planning (objectives of planning, and problems of planning)."
+            },
+            {
+              "code": "ECON-DEVPLAN-3",
+              "description": "Types of plans (short term, medium term, perspective or long term, rolling plan etc.)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "International Trade and Balance of Payments",
+      "abbreviation": "INTLTRD",
+      "subStrands": [
+        {
+          "name": "International Trade",
+          "objectives": [
+            {
+              "code": "ECON-INTLTRD-1",
+              "description": "Differences between domestic and international trade, the basis of international trade, absolute and comparative cost advantage."
+            },
+            {
+              "code": "ECON-INTLTRD-2",
+              "description": "Terms of trade (definition and measurement) commercial policy (objectives) and instruments – tariffs (types) and direct control."
+            },
+            {
+              "code": "ECON-INTLTRD-3",
+              "description": "Trend and structure of West African countries' external trade."
+            }
+          ]
+        },
+        {
+          "name": "Balance of Payments",
+          "objectives": [
+            {
+              "code": "ECON-INTLTRD-4",
+              "description": "Role of money in international transactions, meaning and components of balance of payments, balance of payments disequilibrium."
+            },
+            {
+              "code": "ECON-INTLTRD-5",
+              "description": "Balance of payments adjustments (exchange rate policy, exchange control, monetary and fiscal policies) and financing (the use of reserves and international borrowing)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Economic Integration",
+      "abbreviation": "INTEG",
+      "subStrands": [
+        {
+          "name": "Regional Economic Integration",
+          "objectives": [
+            {
+              "code": "ECON-INTEG-1",
+              "description": "Economic Integration (objectives, levels of and features)."
+            },
+            {
+              "code": "ECON-INTEG-2",
+              "description": "Development and problems of economic integration in West Africa – ECOWAS."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "International Economic Organizations",
+      "abbreviation": "INTLORGS",
+      "subStrands": [
+        {
+          "name": "Development and Role of International Organizations",
+          "objectives": [
+            {
+              "code": "ECON-INTLORGS-1",
+              "description": "Development and role of: Organization of Petroleum Exporting Countries (OPEC); Economic Commission for Africa (ECA); International Monetary Fund (IMF); International Bank for Reconstruction and Development (IBRD); African Development Bank (AfDB); United Nations Conference on Trade and Development (UNCTAD) etc."
+            },
+            {
+              "code": "ECON-INTLORGS-2",
+              "description": "Relevance of such international economic organizations to West African Countries."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Major Natural Resources",
+      "abbreviation": "NATRES",
+      "subStrands": [
+        {
+          "name": "Natural Resource Development",
+          "objectives": [
+            {
+              "code": "ECON-NATRES-1",
+              "description": "Development of major natural resources (petroleum, gold, diamond, timber, groundnut etc) effects on West African economies (positive and negative)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2885 @@
+{
+  "subject": "Agricultural Science",
+  "yearGroup": "SS2",
+  "weeks": {
+    "1": {
+      "topic": "Tractor implements, machine maintenance, mechanisation and farm power",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. identify ploughs, harrows, ridgers, planters, harvesters and sprayers and state the use of each;\n2. give reasons for maintaining farm machines, describe routine maintenance and state safety precautions;\n3. explain agricultural mechanisation, its advantages, disadvantages and limitations in Nigeria;\n4. suggest ways of improving mechanisation;\n5. compare the sources of farm power.\n\n## Materials\n\nPictures or a visit to the tractor shed of the nearest ADP or farm settlement; pictures of a disc plough, disc harrow, ridger, planter, boom sprayer and combine harvester; a dipstick and a tractor operator's manual.\n\n## Starter (5 minutes)\n\nAsk: how long would it take your family to make ridges on one hectare with hoes? A tractor with a ridger does it in about three hours. Why then do most Nigerian farmers still use hoes?\n\n## Development\n\n1. Show each implement. Students name it and state its use, and the order of land preparation: plough, harrow, ridge, plant.\n2. Explain why machines need maintenance. Demonstrate checking oil with the dipstick and the radiator water level. List routine service tasks and safety rules.\n3. Define mechanisation. List the operations that can be mechanised. Discuss advantages, disadvantages and limitations: small, scattered farms, cost, lack of spare parts and skilled operators, tree stumps.\n4. Discuss prospects: cheaper locally made machines, hire services, engineering schools, land consolidation.\n5. Compare human, animal, mechanical, electrical, solar, wind and water power.\n\n## Class activity\n\nIn groups, students list the limitations of mechanisation in their own community and a solution to each.\n\n## Evaluation\n\n1. Which implement breaks up clods after ploughing?\n2. Give two routine maintenance checks before starting a tractor.\n3. State one advantage of animal power over tractor power.\n\n## Assignment\n\nProblem set questions 4 and 5 and both written questions, due next Tuesday.",
+      "reading": {
+        "title": "Machines on the farm",
+        "content": "# Tractor-coupled implements\n\n| Implement | Use |\n| --- | --- |\n| **Plough** (disc or mouldboard) | First tillage: cuts and turns the soil, buries weeds |\n| **Harrow** (disc or spike-tooth) | Second tillage: breaks clods and levels the soil |\n| **Ridger** | Makes ridges for yam, cassava and maize |\n| **Planter** | Places seeds at the right depth and spacing |\n| **Harvester** | Gathers crops; a combine harvester cuts and threshes grain |\n| **Sprayer** | Applies herbicides and pesticides |\n\nThe order of land preparation is plough, harrow, ridge, plant.\n\n# Maintaining farm machines\n\nMachines are maintained to make them last longer, prevent breakdowns in the busy season, save repair costs and keep operators safe.\n\n- Check engine oil, radiator water and battery water before each day's work.\n- Carry out routine servicing after the hours stated in the manual: change oil and filters, grease moving parts.\n- Keep tyres at the right pressure.\n- Wash off mud and plant material after use and store under a shed.\n\n**Safety**: only trained operators should drive; never carry passengers on the tractor; switch off before adjusting an implement; do not wear loose clothing near the power take-off.\n\n# Agricultural mechanisation\n\n**Agricultural mechanisation** is the use of machines to carry out farm operations such as ploughing, harrowing, planting, spraying, harvesting and milking.\n\n**Advantages**: large areas are worked quickly; operations are done on time; drudgery is reduced; output rises.\n\n**Disadvantages**: machines are costly to buy and run; they can compact the soil; they replace labourers and cause unemployment; spare parts are imported.\n\n**Limitations in Nigeria**: small, scattered farms under the land tenure system; tree stumps and rough land; lack of capital; few skilled operators and mechanics; poor roads.\n\n**Improving mechanisation**: develop cheaper machines locally; set up tractor hire services, as many ADPs do; train operators in agricultural engineering schools; consolidate land; give loans and subsidies.\n\n# Sources of farm power\n\n| Source | Advantage | Disadvantage |\n| --- | --- | --- |\n| Human | Cheap, available, suits small plots | Slow, tiring |\n| Animal (oxen, donkeys) | Cheaper than tractors; dung manures soil | Animals need feed and care |\n| Mechanical (engines) | Fast, powerful | Costly; needs fuel and skill |\n| Electrical | Clean, cheap to run | Unreliable supply in rural areas |\n| Solar, wind, water | Free and renewable | Costly to install; depends on weather |\n\n**Example.** Many farmers around Zaria use oxen to pull ridgers. Oxen cost far less than a tractor and can work small plots that a tractor cannot reach."
+      },
+      "cards": [
+        {
+          "front": "Plough",
+          "back": "The implement for first tillage: it cuts and turns the soil and buries weeds."
+        },
+        {
+          "front": "Harrow",
+          "back": "The implement for second tillage: it breaks clods and levels the soil after ploughing."
+        },
+        {
+          "front": "Ridger",
+          "back": "An implement that makes ridges for crops such as yam and cassava."
+        },
+        {
+          "front": "Order of land preparation",
+          "back": "Plough, harrow, ridge, then plant."
+        },
+        {
+          "front": "Agricultural mechanisation",
+          "back": "The use of machines to carry out farm operations."
+        },
+        {
+          "front": "Two daily checks on a tractor",
+          "back": "Engine oil level and radiator water level."
+        },
+        {
+          "front": "One limitation of mechanisation in Nigeria",
+          "back": "Small, scattered farm holdings under the land tenure system."
+        },
+        {
+          "front": "Advantage of animal power",
+          "back": "Cheaper than a tractor, works small plots, and its dung manures the soil."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which implement is used immediately after ploughing to break clods and level the soil?",
+          "options": ["Ridger", "Planter", "Harrow", "Sprayer"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which of these is a limitation of agricultural mechanisation in Nigeria?",
+          "options": [
+            "Machines work large areas quickly",
+            "Farm holdings are small and scattered",
+            "Machines reduce drudgery",
+            "Operations are done on time"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Before starting a tractor each morning, the operator should check the",
+          "options": [
+            "engine oil and radiator water levels",
+            "colour of the paint",
+            "weight of the plough",
+            "number of discs on the harrow"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "A farmer near Zaria uses oxen instead of a tractor. Which is an advantage of this choice?",
+          "options": [
+            "Oxen work faster than a tractor",
+            "Oxen need no feeding",
+            "Oxen can plough a hundred hectares a day",
+            "Oxen cost less and their dung manures the soil"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these would most help small-scale farmers in Oyo use tractors?",
+          "options": [
+            "Banning hoes and cutlasses",
+            "Importing larger tractors",
+            "Tractor hire services run by the ADP",
+            "Planting fewer crops"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A farm settlement at Ilora plans to prepare 40 hectares for maize with a tractor. In the right order, name the implements used from land preparation to harvest and state what each does.",
+          "markScheme": [
+            "Plough first: cuts and turns the soil, burying weeds",
+            "Harrow next: breaks clods and levels/produces a fine tilth",
+            "Ridger (if ridges used) or planter: planter places seeds at the correct depth and spacing",
+            "Sprayer: applies herbicide/pesticide during growth",
+            "Harvester/combine (or maize sheller after harvest): gathers the crop at maturity"
+          ],
+          "modelAnswer": "First the plough cuts and turns the soil and buries the weeds. Next the harrow breaks the clods and levels the soil to a fine tilth. Then the planter drops the maize seeds at the right depth and spacing. While the maize grows, the sprayer applies herbicide and insecticide. At maturity a harvester gathers the maize, and a sheller removes the grains from the cobs.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "First the plough, which cuts and turns over the soil and buries the weeds. Then the harrow to break the big clods and make the soil level. Then the planter puts the seeds in at the correct spacing and depth. The sprayer is used to spray herbicides and insecticides on the maize. Finally a combine harvester harvests the maize when it is mature.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "First the plough, which cuts and turns over the soil and buries the weeds"
+                },
+                {
+                  "point": 1,
+                  "quote": "Then the harrow to break the big clods and make the soil level"
+                },
+                {
+                  "point": 2,
+                  "quote": "Then the planter puts the seeds in at the correct spacing and depth"
+                },
+                {
+                  "point": 3,
+                  "quote": "The sprayer is used to spray herbicides and insecticides on the maize"
+                },
+                {
+                  "point": 4,
+                  "quote": "Finally a combine harvester harvests the maize when it is mature"
+                }
+              ],
+              "feedback": "Every implement in the right order with its job. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "1. Disc plough: primary tillage, turning the soil. 2. Disc harrow: secondary tillage, reducing clods to fine tilth. 3. Planter: sows the maize at uniform spacing. 4. Boom sprayer: controls weeds and pests with chemicals. 5. Harvester then sheller: harvesting the cobs and removing the grains.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Disc plough: primary tillage, turning the soil"
+                },
+                {
+                  "point": 1,
+                  "quote": "Disc harrow: secondary tillage, reducing clods to fine tilth"
+                },
+                {
+                  "point": 2,
+                  "quote": "Planter: sows the maize at uniform spacing"
+                },
+                {
+                  "point": 3,
+                  "quote": "Boom sprayer: controls weeds and pests with chemicals"
+                },
+                {
+                  "point": 4,
+                  "quote": "Harvester then sheller: harvesting the cobs and removing the grains"
+                }
+              ],
+              "feedback": "Complete and in order, with primary and secondary tillage named correctly. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "Harrow, plough, planter, harvester. The harrow clears the bush, the plough turns the soil, the planter plants the seeds and the harvester harvests.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "the plough turns the soil"
+                },
+                {
+                  "point": 2,
+                  "quote": "the planter plants the seeds"
+                },
+                {
+                  "point": 4,
+                  "quote": "the harvester harvests"
+                }
+              ],
+              "feedback": "Plough, planter and harvester are right. The harrow comes after the plough and breaks clods; it does not clear bush. You also left out the sprayer."
+            },
+            {
+              "tier": "partial",
+              "text": "Plough to till the land. Ridger to make ridges. Then the farmers plant by hand and weed with hoes.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Plough to till the land"
+                },
+                {
+                  "point": 2,
+                  "quote": "Ridger to make ridges"
+                }
+              ],
+              "feedback": "Plough and ridger are right. On 40 hectares a harrow, a planter, a sprayer and a harvester would be used too; name each and its job."
+            },
+            {
+              "tier": "weak",
+              "text": "Bulldozer, then tractor, then cutlass to clear the remaining grass.",
+              "meets": [],
+              "feedback": "A bulldozer clears forest, but the question asks for the implements a tractor pulls. Start with the plough, then the harrow, planter, sprayer and harvester."
+            },
+            {
+              "tier": "weak",
+              "text": "The tractor ploughs, plants and harvests the maize all by itself.",
+              "meets": [],
+              "feedback": "The tractor gives the power, but each job needs its own implement. Name them in order: plough, harrow, planter, sprayer, harvester."
+            }
+          ]
+        },
+        {
+          "prompt": "Mechanised farming is still rare among small farmers in Nigeria. Give three limitations of agricultural mechanisation in Nigeria, and for each suggest how it could be overcome.",
+          "markScheme": [
+            "Limitation 1 (e.g. small/scattered holdings due to land tenure)",
+            "Matching solution 1 (e.g. land consolidation, cooperative farming)",
+            "Limitation 2 (e.g. high cost of machines/lack of capital)",
+            "Matching solution 2 (e.g. tractor hire services, loans, subsidies, locally made cheaper machines)",
+            "Limitation 3 (e.g. lack of skilled operators/mechanics, lack of spare parts, tree stumps, poor roads)",
+            "Matching solution 3 (e.g. training in agricultural engineering schools, local spare-parts production, land clearing by government)"
+          ],
+          "modelAnswer": "First, farms are small and scattered because of the land tenure system, so tractors cannot work efficiently; this can be overcome by land consolidation or by farmers farming together in cooperatives. Second, tractors are too expensive for small farmers; government can provide tractor hire services, loans and subsidies, and encourage cheaper machines made in Nigeria. Third, there are few trained operators and mechanics and spare parts are scarce; agricultural engineering schools can train them, and spare parts can be made locally.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1. Land fragmentation: the farms are too small for tractors. Solution, the land can be consolidated or farmers form cooperatives to farm together. 2. Machines are costly. Solution, the ADP should provide tractor hiring at low rates. 3. Lack of skilled operators. Solution, establish agricultural engineering schools to train them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Land fragmentation: the farms are too small for tractors"
+                },
+                {
+                  "point": 1,
+                  "quote": "the land can be consolidated or farmers form cooperatives to farm together"
+                },
+                {
+                  "point": 2,
+                  "quote": "Machines are costly"
+                },
+                {
+                  "point": 3,
+                  "quote": "the ADP should provide tractor hiring at low rates"
+                },
+                {
+                  "point": 4,
+                  "quote": "Lack of skilled operators"
+                },
+                {
+                  "point": 5,
+                  "quote": "establish agricultural engineering schools to train them"
+                }
+              ],
+              "feedback": "Three limitations, each with a matching, practical solution. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Most farmers lack capital to buy tractors, government should give them loans and subsidy. Spare parts are imported and scarce, so local industries should be encouraged to manufacture spare parts. Many farms have tree stumps and are hilly, government can help to clear and develop the land.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Many farms have tree stumps and are hilly"
+                },
+                {
+                  "point": 1,
+                  "quote": "government can help to clear and develop the land"
+                },
+                {
+                  "point": 2,
+                  "quote": "Most farmers lack capital to buy tractors"
+                },
+                {
+                  "point": 3,
+                  "quote": "government should give them loans and subsidy"
+                },
+                {
+                  "point": 4,
+                  "quote": "Spare parts are imported and scarce"
+                },
+                {
+                  "point": 5,
+                  "quote": "local industries should be encouraged to manufacture spare parts"
+                }
+              ],
+              "feedback": "Three real limitations, each matched to a sensible remedy. Well reasoned."
+            },
+            {
+              "tier": "partial",
+              "text": "Tractors are expensive, so government should subsidise them. Farmers are illiterate. Land is small.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Tractors are expensive"
+                },
+                {
+                  "point": 3,
+                  "quote": "government should subsidise them"
+                },
+                {
+                  "point": 0,
+                  "quote": "Land is small"
+                }
+              ],
+              "feedback": "Cost and its solution are right, and small land is a real limitation. Give a solution for it (consolidation or cooperatives), and say what illiteracy prevents: farmers operating and maintaining machines."
+            },
+            {
+              "tier": "partial",
+              "text": "Limitations: high cost, lack of spare parts, small farms. Solutions: loans, train mechanics.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "small farms"
+                },
+                {
+                  "point": 2,
+                  "quote": "high cost"
+                },
+                {
+                  "point": 3,
+                  "quote": "loans"
+                },
+                {
+                  "point": 4,
+                  "quote": "lack of spare parts"
+                }
+              ],
+              "feedback": "Good limitations, but match each to its own solution. Training mechanics does not produce spare parts; say how parts could be made locally, and what to do about small farms."
+            },
+            {
+              "tier": "weak",
+              "text": "Machines make farmers lazy and they cause pollution, so government should ban them.",
+              "meets": [],
+              "feedback": "The question asks why mechanisation is limited and how to spread it, not whether to ban it. Think of cost, small farms and lack of skilled operators."
+            },
+            {
+              "tier": "weak",
+              "text": "Tractors are expensive. Farmers should save money.",
+              "meets": [
+                {
+                  "point": 2,
+                  "quote": "Tractors are expensive"
+                }
+              ],
+              "feedback": "Cost is a real limitation, but saving is not a practical answer for a small farmer. Suggest hire services or loans, and give two more limitations with solutions."
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "topic": "Farm surveying, farm planning, the farmstead and classifying crops",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. explain farm surveying, name common survey equipment with their uses and maintenance, and state its importance;\n2. explain farm planning, the factors considered and its importance;\n3. explain farmstead planning and sketch a simple farmstead layout;\n4. classify crops by their uses;\n5. classify crops by their life cycle.\n\n## Materials\n\nA 30 m measuring tape, ranging poles, pegs, arrows and a prismatic compass from the geography department; graph paper; samples of maize, cowpea, yam, okro, groundnut and an orange.\n\n## Starter (5 minutes)\n\nAsk: if your uncle buys four hectares at Fiditi to start a poultry and maize farm, what should he do before building anything?\n\n## Development\n\n1. Define farm surveying. Show each instrument and its use. Discuss care: wipe and dry the tape, store poles upright, keep the compass away from metal.\n2. Define farm planning. Discuss the factors: size of land, capital, labour, market, climate and soil, the farmer's skill, and security.\n3. Define a farmstead. Discuss factors in siting: nearness to water and roads, drainage, prevailing wind, security, room for expansion. Sketch a layout: house, poultry house downwind, store, pens, water source.\n4. Sort the crop samples by use: cereals, pulses, roots and tubers, vegetables, fruits, oils.\n5. Sort them again by life cycle: annual, biennial, perennial, ephemeral.\n\n## Class activity\n\nOn graph paper, each student sketches a farmstead layout for a 2 ha mixed farm, with a key.\n\n## Evaluation\n\n1. What is a ranging pole used for?\n2. Why is the poultry house sited downwind of the farmer's house?\n3. Is cassava an annual or a perennial crop?\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Planning a farm before you plant",
+        "content": "# Farm surveying\n\n**Farm surveying** is measuring and mapping farmland to find its size, shape, boundaries and slope.\n\n| Equipment | Use |\n| --- | --- |\n| Measuring tape and Gunter's chain | Measuring distances |\n| Ranging poles | Marking straight lines over long distances |\n| Arrows (pins) | Marking chain lengths on the ground |\n| Pegs | Marking corners and boundaries |\n| Prismatic compass | Finding direction (bearing) |\n| Theodolite | Measuring angles accurately |\n| Plumb bob | Making sure poles stand vertically |\n\n**Maintenance**: clean and dry tapes and chains before rolling them up; oil metal parts; keep the compass away from metal and handle the theodolite gently in its case.\n\n**Importance**: it shows the exact size of the land, settles boundary disputes, helps plan fields, drains and roads, and is needed for a certificate of occupancy and for loans.\n\n# Farm planning\n\n**Farm planning** is deciding in advance what to produce, how much, where and how, using the resources available. The farmer considers the size and fertility of the land, the climate, capital, labour, the market, transport, the farmer's own skill and the risk of theft.\n\nGood planning makes the best use of resources, reduces waste, and raises profit.\n\n# The farmstead\n\nA **farmstead** is the part of the farm where the buildings are: the farmer's house, stores, livestock houses, machine shed and water supply.\n\n**Factors in siting it**: well-drained, gently sloping land; near a reliable water source and a motorable road; livestock houses **downwind** of the house so smells and dust blow away; room for expansion; security.\n\n**Example layout.** On a farm at Fiditi the house faces the road. The store and machine shed are beside it. The poultry house is 50 m away downwind, running east to west so the sun does not shine directly in. The borehole is between them, uphill of the pens.\n\n# Classifying crops\n\n## By use\n\n- **Cereals**: maize, rice, sorghum, millet.\n- **Pulses (grain legumes)**: cowpea, soya bean, pigeon pea.\n- **Roots and tubers**: yam, cassava, cocoyam, sweet potato.\n- **Vegetables**: tomato, okro, amaranthus, onion.\n- **Fruits**: orange, pineapple, banana.\n- **Oils**: groundnut, oil palm, sesame.\n- **Beverages, spices, fibres and latex**: cocoa, ginger, cotton, rubber.\n\n## By life cycle\n\n- **Ephemeral**: completes its life in a few weeks, e.g. some amaranthus and many weeds.\n- **Annual**: completes its life in one season or year, e.g. maize, cowpea, rice.\n- **Biennial**: takes two years, e.g. pineapple, onion grown for seed.\n- **Perennial**: lives for more than two years, e.g. cocoa, oil palm, citrus, cassava (which can be harvested over two years or more)."
+      },
+      "cards": [
+        {
+          "front": "Farm surveying",
+          "back": "Measuring and mapping farmland to find its size, shape, boundaries and slope."
+        },
+        {
+          "front": "Ranging pole",
+          "back": "A tall painted pole used to mark straight lines over long distances in surveying."
+        },
+        {
+          "front": "Prismatic compass",
+          "back": "A survey instrument for finding direction (bearing)."
+        },
+        {
+          "front": "Farm planning",
+          "back": "Deciding in advance what to produce, how much, where and how, with the resources available."
+        },
+        {
+          "front": "Farmstead",
+          "back": "The part of the farm where the farmer's house, stores, livestock houses and machine shed are."
+        },
+        {
+          "front": "Why livestock houses go downwind",
+          "back": "So that smells, dust and flies blow away from the farmer's house."
+        },
+        {
+          "front": "Pulses",
+          "back": "Grain legumes such as cowpea, soya bean and pigeon pea."
+        },
+        {
+          "front": "Annual crop",
+          "back": "A crop that completes its life cycle in one season or year, e.g. maize."
+        },
+        {
+          "front": "Perennial crop",
+          "back": "A crop that lives for more than two years, e.g. cocoa, oil palm."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which survey instrument is used to find the direction of a farm boundary?",
+          "options": [
+            "Measuring tape",
+            "Ranging pole",
+            "Prismatic compass",
+            "Arrow"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "In a farmstead layout, the poultry house should be sited",
+          "options": [
+            "downwind of the farmer's house",
+            "upwind of the farmer's house",
+            "inside the farmer's house",
+            "on the lowest, wettest part of the farm"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Cowpea, soya bean and pigeon pea are classified by use as",
+          "options": ["cereals", "roots and tubers", "fibres", "pulses"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is an annual crop?",
+          "options": ["Cocoa", "Maize", "Oil palm", "Orange"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which factor would a farmer consider first in farm planning when deciding whether to grow tomatoes far from any town?",
+          "options": [
+            "The colour of the tomato",
+            "Availability of a market and transport",
+            "The farmer's religion",
+            "The number of survey pegs"
+          ],
+          "answer": "B"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State four factors a farmer should consider when choosing the site of a farmstead, and explain why each matters.",
+          "markScheme": [
+            "Water supply: nearness to a reliable source, needed for animals, people and processing",
+            "Accessibility: near a motorable road, for moving inputs and produce",
+            "Drainage/topography: well-drained, gently sloping land, so buildings do not flood",
+            "Any one other with reason: wind direction (livestock downwind), security, room for expansion, distance from fields"
+          ],
+          "modelAnswer": "The farmstead should be near a reliable water source, because animals, people and processing all need water every day. It should be close to a motorable road, so feed and fertilizer can be brought in and produce taken to market. It should be on well-drained, gently sloping land, so buildings do not flood. Livestock houses should be downwind of the farmer's house, so smells and dust blow away from it.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Water supply: the farmstead should be close to a stream or borehole because the animals need water daily. Road: it should be near a good road so that produce can be taken to market easily. Drainage: the land should be well drained so that the buildings will not be flooded. Direction of wind: the pens should be downwind of the house so the smell does not disturb the family.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Water supply: the farmstead should be close to a stream or borehole because the animals need water daily"
+                },
+                {
+                  "point": 1,
+                  "quote": "Road: it should be near a good road so that produce can be taken to market easily"
+                },
+                {
+                  "point": 2,
+                  "quote": "Drainage: the land should be well drained so that the buildings will not be flooded"
+                },
+                {
+                  "point": 3,
+                  "quote": "the pens should be downwind of the house so the smell does not disturb the family"
+                }
+              ],
+              "feedback": "Four factors, each with a clear reason. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "1. Accessibility, to bring in inputs and move out produce. 2. Nearness to water for livestock and domestic use. 3. Topography, a gentle slope is best for drainage and building. 4. Security, so that theft of animals and produce is reduced.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Nearness to water for livestock and domestic use"
+                },
+                {
+                  "point": 1,
+                  "quote": "Accessibility, to bring in inputs and move out produce"
+                },
+                {
+                  "point": 2,
+                  "quote": "Topography, a gentle slope is best for drainage and building"
+                },
+                {
+                  "point": 3,
+                  "quote": "Security, so that theft of animals and produce is reduced"
+                }
+              ],
+              "feedback": "All four factors with reasons, set out neatly. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "The farmstead should be near water, near a road, and the land should be fertile.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "near water"
+                },
+                {
+                  "point": 1,
+                  "quote": "near a road"
+                }
+              ],
+              "feedback": "Water and road are right, but give a reason for each. Fertile land is better used for crops; choose well-drained land or wind direction for the farmstead and say why."
+            },
+            {
+              "tier": "partial",
+              "text": "Water supply is needed for animals. The site should be well drained to prevent flooding. The farmstead should be in the middle of the bush so that thieves cannot see it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Water supply is needed for animals"
+                },
+                {
+                  "point": 2,
+                  "quote": "The site should be well drained to prevent flooding"
+                }
+              ],
+              "feedback": "Water and drainage earn marks. Hiding the farmstead in the bush would cut it off from roads; good access is a factor, and security comes from fencing and watchmen."
+            },
+            {
+              "tier": "weak",
+              "text": "The farmstead should be big and beautiful and painted well.",
+              "meets": [],
+              "feedback": "Size and paint do not decide the site. Think of water supply, access by road, drainage and wind direction, and say why each matters."
+            },
+            {
+              "tier": "weak",
+              "text": "The farmer should consider the soil type, the rainfall and the temperature so that the crops grow well.",
+              "meets": [],
+              "feedback": "Those decide what crops to grow. The farmstead is where the buildings go: consider water, road access, drainage and wind direction."
+            }
+          ]
+        },
+        {
+          "prompt": "Classify each of these crops by use and by life cycle: maize, cocoa, cowpea, pineapple and yam. Explain the difference between an annual and a perennial crop.",
+          "markScheme": [
+            "Maize: cereal, annual; and cowpea: pulse/grain legume, annual",
+            "Cocoa: beverage, perennial",
+            "Pineapple: fruit, biennial (accept perennial)",
+            "Yam: root and tuber, annual",
+            "Annual completes its life cycle in one season/year; perennial lives for more than two years"
+          ],
+          "modelAnswer": "Maize is a cereal and an annual. Cowpea is a pulse and an annual. Cocoa is a beverage crop and a perennial. Pineapple is a fruit and a biennial. Yam is a root and tuber crop and an annual. An annual crop completes its life cycle, from seed to seed, in one season or year, while a perennial crop lives and produces for more than two years.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Maize: cereal, annual. Cowpea: pulse, annual. Cocoa: beverage, perennial. Pineapple: fruit, biennial. Yam: tuber, annual. An annual completes its life cycle within one year but a perennial lives for more than two years.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Maize: cereal, annual. Cowpea: pulse, annual"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cocoa: beverage, perennial"
+                },
+                {
+                  "point": 2,
+                  "quote": "Pineapple: fruit, biennial"
+                },
+                {
+                  "point": 3,
+                  "quote": "Yam: tuber, annual"
+                },
+                {
+                  "point": 4,
+                  "quote": "An annual completes its life cycle within one year but a perennial lives for more than two years"
+                }
+              ],
+              "feedback": "Every crop classified correctly both ways, and a clear definition. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Maize is a cereal crop and cowpea a grain legume; both are annuals. Cocoa is a beverage crop that is perennial. Pineapple is a fruit, which I classify as perennial because it keeps producing suckers. Yam is a tuber crop and annual. Annual crops grow, produce and die in one season, while perennial crops live for many years.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Maize is a cereal crop and cowpea a grain legume; both are annuals"
+                },
+                {
+                  "point": 1,
+                  "quote": "Cocoa is a beverage crop that is perennial"
+                },
+                {
+                  "point": 2,
+                  "quote": "Pineapple is a fruit, which I classify as perennial because it keeps producing suckers"
+                },
+                {
+                  "point": 3,
+                  "quote": "Yam is a tuber crop and annual"
+                },
+                {
+                  "point": 4,
+                  "quote": "Annual crops grow, produce and die in one season, while perennial crops live for many years"
+                }
+              ],
+              "feedback": "All correct. Pineapple is often called biennial, but your reason for perennial is sound and is accepted."
+            },
+            {
+              "tier": "partial",
+              "text": "Maize cereal, cowpea legume, cocoa beverage, pineapple fruit, yam tuber. Annual crops are planted every year and perennial crops are planted once.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "Annual crops are planted every year and perennial crops are planted once"
+                }
+              ],
+              "feedback": "Your classification by use is right, but each crop also needs its life cycle (annual, biennial or perennial). Your definitions are acceptable; one season against more than two years is clearer."
+            },
+            {
+              "tier": "partial",
+              "text": "Maize is a cereal and annual. Cowpea is a legume and annual. Cocoa is a beverage and annual. Pineapple is a fruit and perennial. Yam is a vegetable and biennial.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Maize is a cereal and annual. Cowpea is a legume and annual"
+                },
+                {
+                  "point": 2,
+                  "quote": "Pineapple is a fruit and perennial"
+                }
+              ],
+              "feedback": "Maize, cowpea and pineapple are right. Cocoa lives for many years, so it is perennial; yam is a root and tuber crop grown as an annual. Also define annual and perennial."
+            },
+            {
+              "tier": "weak",
+              "text": "All of them are food crops. Annual crops are harvested once a year and perennial crops are harvested twice a year.",
+              "meets": [],
+              "feedback": "Classify each crop into its group (cereal, pulse, tuber and so on). Perennial does not mean harvested twice a year; it means the plant lives for more than two years."
+            },
+            {
+              "tier": "weak",
+              "text": "Maize and cowpea are monocots, cocoa and pineapple and yam are dicots.",
+              "meets": [],
+              "feedback": "That is a classification by seed leaves, and some are wrong: yam and pineapple are monocots. The question asks for use and life cycle."
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "topic": "Monocots and dicots, crop husbandry, pasture and crop improvement",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. classify crops as monocotyledons or dicotyledons by their features;\n2. describe the husbandry of a representative crop, from land preparation to storage, using maize and cassava;\n3. explain pasture and forage crops, their uses, establishment and management;\n4. state the aims and methods of crop improvement and explain Mendel's first and second laws.\n\n## Materials\n\nSeedlings of maize and cowpea; cassava stem cuttings; a maize cob; samples of guinea grass and Centrosema; a Punnett square chart.\n\n## Starter (5 minutes)\n\nPass round the maize and cowpea seedlings. Ask students to compare the leaves, the veins and the roots.\n\n## Development\n\n1. List the differences between monocots and dicots: one or two seed leaves, parallel or net veins, fibrous or tap roots.\n2. Take maize (Zea mays) and cassava (Manihot esculenta) through their husbandry: varieties, climate and soil, land preparation, propagation, planting date, spacing and seed rate, cultural practices, pests and diseases, harvesting, processing and storage. Students copy a table for each.\n3. Define pasture and forage. Show guinea grass and Centrosema. Discuss uses, types of pasture, establishment and management.\n4. State the aims of crop improvement and its methods: introduction, selection, breeding. Define gene, chromosome and trait. Work a monohybrid cross on the board using tall and dwarf maize.\n\n## Class activity\n\nIn pairs, students complete a husbandry table for cowpea, using the maize table as a model.\n\n## Evaluation\n\n1. Give two differences between maize and cowpea seedlings.\n2. State the spacing for maize.\n3. Cross TT with tt. What are the offspring?\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Growing crops well, and breeding better ones",
+        "content": "# Monocots and dicots\n\n| Monocotyledon | Dicotyledon |\n| --- | --- |\n| One seed leaf | Two seed leaves |\n| Parallel leaf veins | Net (reticulate) veins |\n| Fibrous roots | Tap root |\n| Maize, rice, yam, onion, oil palm | Cowpea, cassava, cocoa, tomato, cotton |\n\n# Husbandry of two crops\n\n**Maize** (*Zea mays*): a cereal. Varieties: early (about 90 days) and late (about 120 days) maturing. Needs 600–1,200 mm of rain and well-drained loam. Plough and harrow, then plant two seeds per hole at 75 cm x 25 cm, 3–5 cm deep, about 25 kg of seed per hectare, at the start of the rains (March–April in the south). Thin to one plant, weed twice, apply NPK 15:15:15 at two weeks and urea at six weeks. Pests: stem borer, armyworm. Diseases: maize streak, rust. Harvest green maize at 10–12 weeks or dry at 16; shell, dry to about 13% moisture, store in cribs or silos.\n\n**Cassava** (*Manihot esculenta*): a root crop. Improved IITA varieties resist cassava mosaic disease. Grows in most soils, even poor acid ones. Plant 20–25 cm stem cuttings on ridges or mounds at 1 m x 1 m (10,000 plants per hectare). Weed at 3, 8 and 12 weeks. Pests: mealybug, green spider mite. Harvest from 9 to 18 months. Process quickly into garri, fufu or lafun, because fresh roots spoil in two to three days.\n\n# Pasture and forage crops\n\n**Pasture** is land covered with grasses and legumes grazed by livestock. **Forage crops** are grown and fed to livestock, fresh or as hay or silage.\n\n- **Natural pasture** grows by itself; **artificial (sown) pasture** is planted.\n- Grasses: guinea grass (*Panicum maximum*), elephant grass (*Pennisetum purpureum*), Bahama grass. Legumes: Centrosema, Stylosanthes, Calopogonium.\n- Productivity depends on rainfall, soil fertility, grass-legume balance, and grazing pressure.\n- **Establishment**: clear and plough, sow grass and legume seed together at the start of the rains, fertilize.\n- **Management**: rotational grazing, avoid overstocking, weed, fertilize, reseed bare patches.\n\n# Crop improvement\n\nAims: higher yield, resistance to pests and diseases, better quality, early maturity, tolerance of drought.\n\nMethods: **introduction** (bringing a variety from elsewhere), **selection** (keeping seed from the best plants), **breeding** (crossing parents to combine good traits).\n\n**Terms**: a **trait** is a character such as height; **genes** control traits; **chromosomes** are thread-like structures in the nucleus that carry genes.\n\n**Mendel's first law** (segregation): the two factors for a trait separate in the gametes. **Second law** (independent assortment): factors for different traits are inherited independently.\n\n**Worked example.** Tall (T) is dominant over dwarf (t). Cross TT x tt: all offspring are Tt, tall. Cross two Tt plants: TT, Tt, Tt, tt, giving 3 tall : 1 dwarf.\n\nImprovement raises yields, but improved seed costs more and must be bought again each season, and local varieties may be lost."
+      },
+      "cards": [
+        {
+          "front": "Monocotyledon",
+          "back": "A plant with one seed leaf, parallel veins and fibrous roots, e.g. maize."
+        },
+        {
+          "front": "Dicotyledon",
+          "back": "A plant with two seed leaves, net veins and a tap root, e.g. cowpea."
+        },
+        {
+          "front": "Botanical name of cassava",
+          "back": "Manihot esculenta."
+        },
+        {
+          "front": "Spacing of maize",
+          "back": "75 cm x 25 cm, one plant per stand after thinning."
+        },
+        {
+          "front": "Pasture",
+          "back": "Land covered with grasses and legumes that livestock graze."
+        },
+        {
+          "front": "Two pasture legumes",
+          "back": "Centrosema and Stylosanthes."
+        },
+        {
+          "front": "Mendel's first law",
+          "back": "The law of segregation: the two factors for a trait separate when gametes form."
+        },
+        {
+          "front": "Gene",
+          "back": "A unit on a chromosome that controls a trait."
+        },
+        {
+          "front": "Offspring of Tt x Tt",
+          "back": "3 tall : 1 dwarf (TT, Tt, Tt, tt)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "A seedling has net-veined leaves and a tap root. It is most likely",
+          "options": ["maize", "rice", "cowpea", "onion"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is the recommended planting material for cassava?",
+          "options": ["Stem cuttings", "Seeds", "Tubers", "Suckers"],
+          "answer": "A"
+        },
+        {
+          "prompt": "In maize, tall (T) is dominant over dwarf (t). What proportion of the offspring of Tt x Tt will be dwarf?",
+          "options": ["None", "One half", "Three quarters", "One quarter"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which of these is a pasture legume?",
+          "options": [
+            "Guinea grass",
+            "Centrosema",
+            "Elephant grass",
+            "Spear grass"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A farmer keeps seed only from the maize plants with the biggest cobs and plants it next season. This method of crop improvement is",
+          "options": ["introduction", "hybridisation", "selection", "mutation"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Describe the husbandry of maize under these headings: land preparation, planting (time, spacing and depth), fertilizer application, and harvesting and storage.",
+          "markScheme": [
+            "Land preparation: clearing, ploughing and harrowing (or ridging)",
+            "Planting time at the start of the rains (March–April in the south)",
+            "Spacing 75 cm x 25 cm (accept 90 x 30 cm) at 3–5 cm depth",
+            "Fertilizer: NPK at planting/2 weeks and urea/nitrogen top-dressing at about 6 weeks",
+            "Harvesting when cobs are dry (or green at 10–12 weeks) and storing dried grain (about 13% moisture) in cribs/silos"
+          ],
+          "modelAnswer": "Clear the land, then plough and harrow it to a fine tilth. Plant at the start of the rains, in March or April in the south, at a spacing of 75 cm by 25 cm and a depth of 3 to 5 cm. Apply NPK 15:15:15 about two weeks after planting and top-dress with urea at about six weeks. Harvest when the cobs are dry, shell and dry the grain to about 13% moisture, and store it in cribs or silos.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Land preparation: clear the bush, plough and harrow. Planting: early in the rainy season around March to April, spacing 75 cm by 25 cm and 3 to 5 cm deep. Fertilizer: apply NPK 15:15:15 two weeks after planting then urea at six weeks. Harvesting: harvest the dry cobs, shell them, dry the grains well and store in a crib or silo.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "clear the bush, plough and harrow"
+                },
+                {
+                  "point": 1,
+                  "quote": "early in the rainy season around March to April"
+                },
+                {
+                  "point": 2,
+                  "quote": "spacing 75 cm by 25 cm and 3 to 5 cm deep"
+                },
+                {
+                  "point": 3,
+                  "quote": "apply NPK 15:15:15 two weeks after planting then urea at six weeks"
+                },
+                {
+                  "point": 4,
+                  "quote": "harvest the dry cobs, shell them, dry the grains well and store in a crib or silo"
+                }
+              ],
+              "feedback": "Every heading answered with the right figures. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "The land is cleared, ploughed and harrowed, or ridges made. Maize is planted at the onset of rain, 90 cm x 30 cm at about 4 cm depth, two seeds per hole. Compound fertilizer is applied at planting and nitrogen fertilizer later as top-dressing. Green maize is harvested at about 12 weeks; for grain, the cobs are left to dry, shelled and dried to 13% moisture before storage in silos.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The land is cleared, ploughed and harrowed, or ridges made"
+                },
+                {
+                  "point": 1,
+                  "quote": "planted at the onset of rain"
+                },
+                {
+                  "point": 2,
+                  "quote": "90 cm x 30 cm at about 4 cm depth"
+                },
+                {
+                  "point": 3,
+                  "quote": "Compound fertilizer is applied at planting and nitrogen fertilizer later as top-dressing"
+                },
+                {
+                  "point": 4,
+                  "quote": "dried to 13% moisture before storage in silos"
+                }
+              ],
+              "feedback": "Complete and accurate. Giving the safe moisture content for storage was a strong detail."
+            },
+            {
+              "tier": "partial",
+              "text": "Clear and plough the land. Plant in April at 75 cm x 25 cm. Apply fertilizer. Harvest when it is mature.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Clear and plough the land"
+                },
+                {
+                  "point": 1,
+                  "quote": "Plant in April"
+                },
+                {
+                  "point": 2,
+                  "quote": "at 75 cm x 25 cm"
+                }
+              ],
+              "feedback": "Land preparation, timing and spacing are right. Name the fertilizers and when they go on (NPK early, urea at about six weeks), and say how the grain is dried and stored."
+            },
+            {
+              "tier": "partial",
+              "text": "Make ridges and plant three seeds per hole, 1 m by 1 m. Apply NPK at planting and urea at six weeks. Harvest the cobs and store them in a basket in the kitchen.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Make ridges"
+                },
+                {
+                  "point": 3,
+                  "quote": "Apply NPK at planting and urea at six weeks"
+                }
+              ],
+              "feedback": "Ridging and your fertilizer timing are right. 1 m by 1 m is cassava spacing; maize is 75 cm by 25 cm. Grain must be dried to about 13% moisture and stored in a crib or silo, or weevils will spoil it."
+            },
+            {
+              "tier": "weak",
+              "text": "Maize is planted with stem cuttings in the dry season and harvested after one year.",
+              "meets": [],
+              "feedback": "That mixes maize up with cassava. Maize is planted from seed at the start of the rains and harvested in about four months. Reread the maize section."
+            },
+            {
+              "tier": "weak",
+              "text": "Clear the land and plant the maize. Water it every day and it will grow. Harvest it.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Clear the land"
+                }
+              ],
+              "feedback": "Clearing is a start. For each heading give the detail: planting time and spacing, which fertilizer and when, and how grain is dried and stored."
+            }
+          ]
+        },
+        {
+          "prompt": "A breeder at Ibadan crosses a pure-breeding tall maize plant (TT) with a pure-breeding dwarf plant (tt). Using a diagram or table, show the genotypes and phenotypes of the first (F1) and second (F2) generations, and state Mendel's first law.",
+          "markScheme": [
+            "Gametes T (from TT) and t (from tt) shown",
+            "F1 all Tt, all tall",
+            "F1 selfed/crossed Tt x Tt gives F2 genotypes TT, Tt, Tt, tt (1:2:1)",
+            "F2 phenotypic ratio 3 tall : 1 dwarf",
+            "Mendel's first law: the pair of factors for a trait separate (segregate) during gamete formation, each gamete getting one"
+          ],
+          "modelAnswer": "Parents TT x tt give gametes T and t. All F1 plants are Tt and tall, because T is dominant. Crossing two F1 plants, Tt x Tt, gives gametes T and t from each, and the F2 genotypes are TT, Tt, Tt and tt in the ratio 1:2:1. The F2 phenotypes are 3 tall : 1 dwarf. Mendel's first law, the law of segregation, says that the two factors for a trait separate when gametes are formed, so each gamete carries only one of them.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Parents: TT x tt. Gametes: T and t. F1: all Tt, all tall. F1 cross: Tt x Tt, gametes T, t and T, t. F2: TT, Tt, Tt, tt so genotype ratio 1:2:1. Phenotype: 3 tall to 1 dwarf. Mendel's first law states that the two factors controlling a character separate during gamete formation so each gamete gets only one.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Gametes: T and t"
+                },
+                {
+                  "point": 1,
+                  "quote": "F1: all Tt, all tall"
+                },
+                {
+                  "point": 2,
+                  "quote": "F2: TT, Tt, Tt, tt so genotype ratio 1:2:1"
+                },
+                {
+                  "point": 3,
+                  "quote": "Phenotype: 3 tall to 1 dwarf"
+                },
+                {
+                  "point": 4,
+                  "quote": "the two factors controlling a character separate during gamete formation so each gamete gets only one"
+                }
+              ],
+              "feedback": "Every step of both crosses shown, with the law stated precisely. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "TT gives only T gametes and tt gives only t gametes, so every F1 is Tt and tall because tall is dominant. When two Tt are crossed the F2 is 1 TT : 2 Tt : 1 tt, which means 3 tall : 1 dwarf. The law of segregation says a pair of genes separates when gametes are formed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "TT gives only T gametes and tt gives only t gametes"
+                },
+                {
+                  "point": 1,
+                  "quote": "every F1 is Tt and tall"
+                },
+                {
+                  "point": 2,
+                  "quote": "the F2 is 1 TT : 2 Tt : 1 tt"
+                },
+                {
+                  "point": 3,
+                  "quote": "3 tall : 1 dwarf"
+                },
+                {
+                  "point": 4,
+                  "quote": "The law of segregation says a pair of genes separates when gametes are formed"
+                }
+              ],
+              "feedback": "All correct and clearly reasoned. A Punnett square would make the F2 even easier to follow."
+            },
+            {
+              "tier": "partial",
+              "text": "F1 = Tt, all tall. F2 = TT, Tt, Tt, tt. 3 tall : 1 dwarf.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "F1 = Tt, all tall"
+                },
+                {
+                  "point": 2,
+                  "quote": "F2 = TT, Tt, Tt, tt"
+                },
+                {
+                  "point": 3,
+                  "quote": "3 tall : 1 dwarf"
+                }
+              ],
+              "feedback": "Your crosses are right. Show the gametes each parent makes (T and t), and state Mendel's first law: the two factors separate during gamete formation."
+            },
+            {
+              "tier": "partial",
+              "text": "Gametes are T and t. F1 is Tt, all tall. F2 is half tall and half dwarf because Tt x Tt gives Tt, Tt, tt, tt.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Gametes are T and t"
+                },
+                {
+                  "point": 1,
+                  "quote": "F1 is Tt, all tall"
+                }
+              ],
+              "feedback": "Gametes and F1 are right. Each Tt parent makes T and t gametes, so the F2 is TT, Tt, Tt, tt: 3 tall to 1 dwarf. Also state the law of segregation."
+            },
+            {
+              "tier": "weak",
+              "text": "When tall and dwarf are crossed the offspring will be medium height because they mix.",
+              "meets": [],
+              "feedback": "Mendel showed the factors do not blend. Tall is dominant, so all F1 are tall (Tt), and the F2 is 3 tall to 1 dwarf. Work through the cross step by step."
+            },
+            {
+              "tier": "weak",
+              "text": "F1 will be TTtt. Mendel's first law is that tall is dominant over dwarf.",
+              "meets": [],
+              "feedback": "Each gamete carries one factor, so F1 is Tt, not TTtt. Dominance is not the first law; the first law is that the two factors separate when gametes form."
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "topic": "Forestry, agro-forestry and ornamental plants",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. define forest and forestry, state the importance of forestry, and describe forest regulations and management practices;\n2. explain the effects of deforestation;\n3. describe taungya, alley cropping and ley farming and name trees suited to agro-forestry;\n4. explain the meaning and importance of ornamental plants;\n5. classify ornamental plants as bedding plants, hedges and lawn grasses, and say where each is planted.\n\n## Materials\n\nA piece of gmelina or teak timber; leaves of Leucaena and Gliricidia; cuttings of Ixora, Duranta and bougainvillea; a clump of carpet grass; a tour of the school compound.\n\n## Starter (5 minutes)\n\nAsk: what has happened to the forest that used to be along the road to Ijebu-Ode? What do we lose when a forest is cleared?\n\n## Development\n\n1. Define forest and forestry. List the importance of forests: timber, fuelwood, food, medicine, protection of soil and water, habitat for wildlife, climate.\n2. Discuss forest regulations: forest reserves, licences to fell, bans on felling young trees, fines for illegal burning. Discuss management: regeneration, afforestation, reforestation, thinning, fire tracing.\n3. Explain deforestation and its effects: erosion, desert encroachment, loss of wildlife, climate change.\n4. Describe taungya, alley cropping and ley farming with suitable trees.\n5. Walk round the compound. Students identify bedding plants, hedges and lawn grasses and note where each grows.\n\n## Class activity\n\nStudents draw a simple plan of the school compound and mark where they would plant a hedge, a flower bed and a lawn, with reasons.\n\n## Evaluation\n\n1. What is taungya?\n2. Give two effects of deforestation.\n3. Name one hedging plant and one lawn grass.\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Trees on the farm and plants for beauty",
+        "content": "# Forests and forestry\n\nA **forest** is a large area of land covered with trees and other plants. **Forestry** is the science of planting, managing and using forests.\n\n**Importance**: timber for building and furniture; fuelwood and charcoal; food, fruits and medicinal plants; raw material for paper; protection of soil from erosion; protection of water catchments; habitat for wildlife; regulation of climate; employment and revenue.\n\n**Forest regulations** in Nigeria include setting aside **forest reserves**, licences before felling, a minimum girth below which trees may not be felled, and fines for illegal felling and burning.\n\n**Management practices**: **regeneration** (natural or by planting); **afforestation** (planting trees where there was no forest); **reforestation** (replanting a cleared forest); thinning; pruning; fire tracing to stop bush fires; control of pests.\n\n## Deforestation\n\n**Deforestation** is the clearing of forest without replacing it. It causes soil erosion, loss of soil fertility, desert encroachment in the north, flooding, loss of wildlife and medicinal plants, and climate change.\n\n# Agro-forestry\n\n**Agro-forestry** is growing trees together with crops or livestock on the same land.\n\n- **Taungya**: farmers grow food crops between young forest trees for the first two or three years, until the tree canopy closes. Used in forest reserves.\n- **Alley cropping**: crops are grown in alleys between rows of leguminous trees such as *Leucaena* or *Gliricidia*. The trees are pruned and the leaves used as mulch and green manure.\n- **Ley farming**: land alternates between crops and planted pasture with trees, grazed by livestock.\n\nSuitable trees: Leucaena, Gliricidia, Acacia, gmelina, teak, cashew.\n\n# Ornamental plants\n\n**Ornamental plants** are grown for their beauty rather than for food. They beautify homes and offices, provide shade, act as windbreaks and fences, reduce dust and noise, control erosion, and can be sold for income.\n\n| Type | Use | Examples |\n| --- | --- | --- |\n| Bedding plants | Flower beds | Zinnia, marigold, Canna lily, periwinkle (*Catharanthus roseus*) |\n| Hedging plants | Living fences and borders | Ixora, Duranta, Hibiscus (*Hibiscus rosa-sinensis*), Acalypha |\n| Lawn grasses | Grass covering | Carpet grass (*Axonopus compressus*), Bahama grass (*Cynodon dactylon*) |\n\n**Settings**: around homes, schools and offices; along roadsides and roundabouts; in parks, gardens and hotel grounds; at sports fields (lawns); along boundaries (hedges).\n\n**Example.** The Ixora hedge along your school drive is pruned every few weeks to keep it neat, and the carpet grass on the football field holds the soil during heavy rain."
+      },
+      "cards": [
+        {
+          "front": "Forestry",
+          "back": "The science of planting, managing and using forests."
+        },
+        {
+          "front": "Afforestation",
+          "back": "Planting trees on land that had no forest."
+        },
+        {
+          "front": "Reforestation",
+          "back": "Replanting trees on land where a forest was cleared."
+        },
+        {
+          "front": "Deforestation",
+          "back": "Clearing forest without replacing it."
+        },
+        {
+          "front": "Taungya",
+          "back": "Growing food crops between young forest trees until the canopy closes."
+        },
+        {
+          "front": "Alley cropping",
+          "back": "Growing crops between rows of leguminous trees such as Leucaena, pruned for mulch."
+        },
+        {
+          "front": "Ornamental plants",
+          "back": "Plants grown for their beauty rather than for food."
+        },
+        {
+          "front": "Two hedging plants",
+          "back": "Ixora and Duranta."
+        },
+        {
+          "front": "Botanical name of carpet grass",
+          "back": "Axonopus compressus."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Farmers grow maize and yam between young teak trees in a forest reserve until the trees shade the ground. This practice is",
+          "options": [
+            "alley cropping",
+            "ley farming",
+            "taungya",
+            "shifting cultivation"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which is an effect of deforestation in northern Nigeria?",
+          "options": [
+            "Desert encroachment",
+            "Increase in soil fertility",
+            "More wildlife",
+            "Less soil erosion"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which of these is a lawn grass?",
+          "options": ["Ixora", "Zinnia", "Duranta", "Axonopus compressus"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Why are Leucaena and Gliricidia chosen for alley cropping?",
+          "options": [
+            "They produce valuable timber quickly",
+            "They are legumes whose prunings add nitrogen as mulch",
+            "They are flowering ornamental plants",
+            "They shade out the crop completely"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Planting trees on bare land that has never been a forest is called",
+          "options": [
+            "reforestation",
+            "regeneration",
+            "thinning",
+            "afforestation"
+          ],
+          "answer": "D"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "State four ways in which forests are important to Nigeria, and two effects of deforestation.",
+          "markScheme": [
+            "First importance (e.g. timber/wood for building, furniture or paper)",
+            "Second importance (e.g. fuelwood/charcoal, food, medicinal plants)",
+            "Third importance (e.g. protect soil from erosion/conserve water catchments)",
+            "Fourth importance (e.g. habitat for wildlife, climate regulation, employment, revenue)",
+            "First effect of deforestation (e.g. soil erosion, flooding)",
+            "Second effect of deforestation (e.g. desert encroachment, loss of wildlife, climate change)"
+          ],
+          "modelAnswer": "Forests provide timber for building, furniture and paper. They supply fuelwood, fruits and medicinal plants. Their roots and leaf litter protect the soil from erosion and protect water sources. They are a home for wildlife and help to regulate the climate. Deforestation leads to soil erosion and flooding, and in the north it allows the desert to spread.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Forests give timber for building houses and making furniture. They provide firewood and charcoal for cooking. They protect the soil from erosion because the trees cover the ground. They are the home of wild animals. When forests are cut down, erosion and flooding increase, and the desert spreads in the north.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Forests give timber for building houses and making furniture"
+                },
+                {
+                  "point": 1,
+                  "quote": "They provide firewood and charcoal for cooking"
+                },
+                {
+                  "point": 2,
+                  "quote": "They protect the soil from erosion because the trees cover the ground"
+                },
+                {
+                  "point": 3,
+                  "quote": "They are the home of wild animals"
+                },
+                {
+                  "point": 4,
+                  "quote": "erosion and flooding increase"
+                },
+                {
+                  "point": 5,
+                  "quote": "the desert spreads in the north"
+                }
+              ],
+              "feedback": "Four clear uses and two effects. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "1. Source of raw materials for paper and plywood industries. 2. Source of medicinal herbs and fruits. 3. Windbreak and climate regulation. 4. Employment for loggers and sawmill workers. Effects of deforestation: loss of biodiversity and climate change.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Source of raw materials for paper and plywood industries"
+                },
+                {
+                  "point": 1,
+                  "quote": "Source of medicinal herbs and fruits"
+                },
+                {
+                  "point": 2,
+                  "quote": "Windbreak and climate regulation"
+                },
+                {
+                  "point": 3,
+                  "quote": "Employment for loggers and sawmill workers"
+                },
+                {
+                  "point": 4,
+                  "quote": "loss of biodiversity"
+                },
+                {
+                  "point": 5,
+                  "quote": "climate change"
+                }
+              ],
+              "feedback": "All six points. Explain in a few words how deforestation changes the climate and you would have a very strong answer."
+            },
+            {
+              "tier": "partial",
+              "text": "Forests give us timber and firewood. They give us fresh air. Deforestation causes erosion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Forests give us timber"
+                },
+                {
+                  "point": 1,
+                  "quote": "firewood"
+                },
+                {
+                  "point": 4,
+                  "quote": "Deforestation causes erosion"
+                }
+              ],
+              "feedback": "Timber, firewood and erosion are right. Add two more uses, such as protecting soil and being a home for wildlife, and a second effect, such as desert encroachment."
+            },
+            {
+              "tier": "partial",
+              "text": "Forests provide timber, food, and medicine, and they conserve soil. Deforestation makes the land more fertile for farming.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Forests provide timber"
+                },
+                {
+                  "point": 1,
+                  "quote": "food, and medicine"
+                },
+                {
+                  "point": 2,
+                  "quote": "they conserve soil"
+                }
+              ],
+              "feedback": "Your uses are good. Clearing forest gives a few good seasons, then fertility falls as soil erodes; give two harmful effects of deforestation, such as erosion and loss of wildlife."
+            },
+            {
+              "tier": "weak",
+              "text": "Forests are dangerous because wild animals and snakes live there, so it is good to cut them down for farming.",
+              "meets": [],
+              "feedback": "Forests give timber, fuel, medicines and protection for the soil. Cutting them down causes erosion and desert spread. Reread the importance of forests."
+            },
+            {
+              "tier": "weak",
+              "text": "Forest is important because of trees. Deforestation is cutting of trees.",
+              "meets": [],
+              "feedback": "That restates the words. Say what the trees give us, such as timber and firewood, and what happens to the land when they are cut, such as erosion."
+            }
+          ]
+        },
+        {
+          "prompt": "A farmer at Ikire wants to keep growing maize on the same land without the soil losing fertility. Explain how alley cropping works, name two suitable trees, and give two advantages and one disadvantage of the practice.",
+          "markScheme": [
+            "Crops grown in alleys between rows of (leguminous) trees/shrubs",
+            "Trees pruned regularly and the prunings used as mulch/green manure",
+            "Two suitable trees named (Leucaena, Gliricidia, Cassia, Acacia)",
+            "Advantage 1: adds nitrogen/organic matter, maintaining fertility",
+            "Advantage 2: controls erosion/weeds, conserves moisture, provides fodder or stakes/fuelwood",
+            "Disadvantage: trees compete with the crop for light/water/nutrients, or pruning needs extra labour, or land taken by trees"
+          ],
+          "modelAnswer": "In alley cropping the farmer plants rows of leguminous trees such as Leucaena and Gliricidia about 4 m apart and grows maize in the alleys between them. The trees are pruned before and during the season and the prunings are spread as mulch, which rots and adds nitrogen and organic matter to the soil. Advantages: the soil stays fertile without much fertilizer, and the mulch and tree roots reduce erosion and weeds. Disadvantage: pruning the trees needs extra labour, and if not pruned they compete with the maize for light and water.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Alley cropping means planting maize between rows of legume trees like Leucaena and Gliricidia. The trees are cut back and the leaves spread on the soil as mulch which decays to add nitrogen. Advantages: it keeps the soil fertile and the mulch prevents erosion. Disadvantage: the trees can compete with the maize for sunlight if they are not pruned.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "planting maize between rows of legume trees"
+                },
+                {
+                  "point": 1,
+                  "quote": "The trees are cut back and the leaves spread on the soil as mulch"
+                },
+                {
+                  "point": 2,
+                  "quote": "Leucaena and Gliricidia"
+                },
+                {
+                  "point": 3,
+                  "quote": "it keeps the soil fertile"
+                },
+                {
+                  "point": 4,
+                  "quote": "the mulch prevents erosion"
+                },
+                {
+                  "point": 5,
+                  "quote": "the trees can compete with the maize for sunlight if they are not pruned"
+                }
+              ],
+              "feedback": "Every part answered: how it works, the trees, two advantages and a real disadvantage. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Hedgerows of Leucaena leucocephala or Gliricidia sepium are planted and the maize is grown in the alleys. The hedgerows are pruned and prunings used as green manure. It adds organic matter and nitrogen and the prunings also serve as fodder for goats. But pruning requires extra labour.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Hedgerows of Leucaena leucocephala or Gliricidia sepium are planted and the maize is grown in the alleys"
+                },
+                {
+                  "point": 1,
+                  "quote": "The hedgerows are pruned and prunings used as green manure"
+                },
+                {
+                  "point": 2,
+                  "quote": "Leucaena leucocephala or Gliricidia sepium"
+                },
+                {
+                  "point": 3,
+                  "quote": "It adds organic matter and nitrogen"
+                },
+                {
+                  "point": 4,
+                  "quote": "the prunings also serve as fodder for goats"
+                },
+                {
+                  "point": 5,
+                  "quote": "pruning requires extra labour"
+                }
+              ],
+              "feedback": "Accurate and complete, with full botanical names. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "Alley cropping is planting crops between rows of trees like Leucaena. It improves soil fertility and reduces erosion.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "planting crops between rows of trees"
+                },
+                {
+                  "point": 3,
+                  "quote": "It improves soil fertility"
+                },
+                {
+                  "point": 4,
+                  "quote": "reduces erosion"
+                }
+              ],
+              "feedback": "A good start. Explain how fertility is kept (the trees are pruned and the prunings used as mulch), name a second tree such as Gliricidia, and give a disadvantage."
+            },
+            {
+              "tier": "partial",
+              "text": "The farmer plants teak trees in rows and maize between them. The trees give shade to the maize. Disadvantage is that it takes much labour.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The farmer plants teak trees in rows and maize between them"
+                },
+                {
+                  "point": 5,
+                  "quote": "it takes much labour"
+                }
+              ],
+              "feedback": "The layout is right and labour is a real disadvantage. Teak is a timber tree; alley cropping uses legumes such as Leucaena and Gliricidia, pruned for mulch that adds nitrogen. Maize needs full sun, not shade.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Alley cropping is planting crops along the alleys and footpaths in the village so no land is wasted.",
+              "meets": [],
+              "feedback": "Alleys here are the strips between rows of legume trees on the farm. Read the agro-forestry section and describe how the tree prunings feed the soil."
+            },
+            {
+              "tier": "weak",
+              "text": "It is when the farmer plants maize one year and trees the next year. Example of tree is mango.",
+              "meets": [],
+              "feedback": "That is closer to rotation. In alley cropping the trees and the maize grow at the same time, and the trees are legumes such as Leucaena whose prunings are used as mulch."
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "topic": "Growing ornamentals, crop diseases and the classes of pests",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the propagation of ornamental plants by seed and by vegetative means, with examples;\n2. explain the maintenance of ornamental plants: watering, mulching and pruning;\n3. define disease and state its general effects on crop production;\n4. describe the causal organism, transmission, symptoms and control of named fungal, viral, bacterial and nematode diseases;\n5. define pest and classify insect pests by their mouthparts.\n\n## Materials\n\nZinnia seeds; Ixora and bougainvillea cuttings; secateurs; leaves showing cassava mosaic, maize rust and a cocoa pod with black pod (or pictures); a grasshopper, an aphid colony on a leaf and a stem-borer-damaged maize stem; hand lenses.\n\n## Starter (5 minutes)\n\nShow the mosaic cassava leaf and a healthy one. Ask: what is wrong with this plant, and how could it have caught it?\n\n## Development\n\n1. Demonstrate sowing zinnia seed in a nursery tray and setting Ixora cuttings. Explain why each method is used.\n2. Show watering, mulching and pruning, and the reason for each.\n3. Define disease. List general effects: lower yield and quality, death of plants, higher costs of control.\n4. Teach one disease from each group: fungal (cocoa black pod, maize rust), viral (cassava mosaic, groundnut rosette), bacterial (cassava bacterial blight, black arm of cotton), nematode (root knot of tomato).\n5. Define pest. Examine the insects under hand lenses and classify them as biting and chewing, piercing and sucking, or boring.\n\n## Class activity\n\nStudents complete a table for four diseases: causal organism, type, transmission, symptoms, control.\n\n## Evaluation\n\n1. Name one plant propagated by cuttings.\n2. Which organism causes cassava mosaic disease, and what spreads it?\n3. To which class does the aphid belong?\n\n## Assignment\n\nQuiz on Thursday on crop diseases and pest classes.",
+      "reading": {
+        "title": "Caring for ornamentals; diseases and pests of crops",
+        "content": "# Growing ornamental plants\n\n- **By seed**: zinnia, marigold, periwinkle, carpet grass. Cheap, gives many plants, but slower and plants may differ from the parent.\n- **Vegetative propagation**: cuttings (Ixora, Duranta, hibiscus, bougainvillea), layering, budding, grafting, and splitting of grass clumps. Plants are true to type and establish quickly.\n\n**Maintenance**\n\n- **Watering**, especially in the dry season, to prevent wilting.\n- **Mulching**, to keep the soil moist and cool and suppress weeds.\n- **Pruning**, to shape hedges, remove dead parts, and encourage new growth and flowering.\n\n# Crop diseases\n\nA **disease** is any condition that disturbs the normal functions of a plant. Diseases reduce yield and quality, kill plants, raise the cost of production, and lower farmers' income.\n\n| Disease | Crop | Organism | Spread by | Symptoms | Control |\n| --- | --- | --- | --- | --- | --- |\n| Black pod | Cocoa | Fungus (*Phytophthora*) | Rain splash, wet weather | Brown-black rotting pods | Remove infected pods; copper fungicide |\n| Rice blast | Rice | Fungus | Wind, infected seed | Spindle-shaped spots on leaves | Resistant varieties; fungicide |\n| Cassava mosaic | Cassava | Virus | Whitefly; infected cuttings | Yellow-green mottled, twisted leaves | Clean cuttings; resistant IITA varieties; uproot infected plants |\n| Groundnut rosette | Groundnut | Virus | Aphids | Stunted, bushy plants, yellow leaves | Early planting at close spacing; control aphids |\n| Bacterial blight | Cassava | Bacterium | Infected cuttings, rain splash | Angular water-soaked spots, wilting, dieback | Clean cuttings; crop rotation |\n| Black arm | Cotton | Bacterium | Infected seed | Black lesions on stems and leaves | Treated seed; resistant varieties |\n| Root knot | Tomato, okro | Nematode | Soil, infected seedlings | Swollen galls on roots, wilting | Crop rotation; nematicides; resistant varieties |\n\nStored produce can be attacked by **moulds** (fungi) when it is stored damp.\n\n# Pests\n\nA **pest** is any organism that damages crops or stored produce and causes economic loss. Pests are **insect pests** or **non-insect pests** (birds, rodents, monkeys, nematodes).\n\nInsect pests are grouped by their **mouthparts**:\n\n- **Biting and chewing**: they cut and eat leaves, stems and roots, leaving holes and ragged edges. Examples: grasshopper, armyworm, beetles.\n- **Piercing and sucking**: they pierce tissues and suck sap, causing wilting, curling and yellowing, and often spread viruses. Examples: aphids, cotton stainer, mealybug, cocoa capsid.\n- **Boring**: the larvae tunnel inside stems, pods or grains. Examples: maize stem borer, grain weevil, pod borer.\n\n**Example.** A field of groundnut at Kontagora with many stunted, bushy plants likely has rosette. The aphids that spread it are piercing and sucking insects, so killing them with a systemic insecticide helps prevent spread."
+      },
+      "cards": [
+        {
+          "front": "Vegetative propagation",
+          "back": "Raising new plants from parts of a parent plant, such as stem cuttings, instead of seed."
+        },
+        {
+          "front": "Why hedges are pruned",
+          "back": "To keep their shape, remove dead parts, and encourage new growth and flowering."
+        },
+        {
+          "front": "Disease (in plants)",
+          "back": "Any condition that disturbs the normal functions of a plant."
+        },
+        {
+          "front": "Cassava mosaic disease",
+          "back": "A viral disease spread by whitefly and infected cuttings; leaves are mottled and twisted."
+        },
+        {
+          "front": "Cocoa black pod",
+          "back": "A fungal disease (Phytophthora) causing brown-black rotting pods; spread by rain splash."
+        },
+        {
+          "front": "Root knot",
+          "back": "A nematode disease causing swollen galls on the roots of tomato and okro."
+        },
+        {
+          "front": "Pest",
+          "back": "Any organism that damages crops or stored produce and causes economic loss."
+        },
+        {
+          "front": "Piercing and sucking insects",
+          "back": "Insects that suck plant sap, e.g. aphids, cotton stainer, mealybug."
+        },
+        {
+          "front": "Boring insects",
+          "back": "Insects whose larvae tunnel inside stems, pods or grains, e.g. stem borer, weevil."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which ornamental plant is usually propagated by stem cuttings?",
+          "options": ["Zinnia", "Marigold", "Ixora", "Periwinkle"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Cassava mosaic disease is caused by a",
+          "options": [
+            "virus spread by whitefly",
+            "fungus spread by rain splash",
+            "bacterium spread by wind",
+            "nematode in the soil"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "Swollen galls on the roots of a wilting tomato plant show",
+          "options": ["black arm", "rice blast", "black pod", "root knot"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Aphids feeding on cowpea belong to which group of insect pests?",
+          "options": [
+            "Biting and chewing",
+            "Piercing and sucking",
+            "Boring",
+            "Non-insect pests"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which practice keeps the soil around a flower bed moist and cool in the dry season?",
+          "options": ["Pruning", "Budding", "Mulching", "Thinning"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "For cocoa black pod disease, state the causal organism, how it spreads, two symptoms and two control measures.",
+          "markScheme": [
+            "Causal organism: fungus, Phytophthora (palmivora/megakarya)",
+            "Spread by rain splash/wet weather, infected pods or soil (accept insects)",
+            "First symptom: brown/dark spots on pods",
+            "Second symptom: spots spread so the whole pod turns black and the beans rot",
+            "Control 1: remove and destroy infected pods / good sanitation / prune to reduce humidity",
+            "Control 2: spray copper-based fungicide"
+          ],
+          "modelAnswer": "Black pod is caused by the fungus Phytophthora. It spreads by rain splash in wet weather, from infected pods and soil. A small brown spot first appears on the pod, then spreads until the whole pod turns black and the beans inside rot. It is controlled by removing and destroying infected pods, pruning to reduce humidity, and spraying copper fungicide during the rains.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The organism is a fungus called Phytophthora palmivora. It is spread by rain splash during the wet season. Symptoms: brown spots appear on the pods, then the whole pod turns black and the beans rot. Control: pick and burn infected pods and spray with copper fungicide.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "a fungus called Phytophthora palmivora"
+                },
+                {
+                  "point": 1,
+                  "quote": "It is spread by rain splash during the wet season"
+                },
+                {
+                  "point": 2,
+                  "quote": "brown spots appear on the pods"
+                },
+                {
+                  "point": 3,
+                  "quote": "the whole pod turns black and the beans rot"
+                },
+                {
+                  "point": 4,
+                  "quote": "pick and burn infected pods"
+                },
+                {
+                  "point": 5,
+                  "quote": "spray with copper fungicide"
+                }
+              ],
+              "feedback": "Every part of the question answered correctly. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Causal organism: fungus (Phytophthora). Transmission: water splash from infected pods and soil, worse in humid weather. Symptoms are dark brown lesions on the pod which spread over the whole pod, and the pod becomes black and shrivelled with rotten beans inside. Control by regular removal of diseased pods, pruning to reduce humidity, and spraying copper-based fungicides.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "fungus (Phytophthora)"
+                },
+                {
+                  "point": 1,
+                  "quote": "water splash from infected pods and soil"
+                },
+                {
+                  "point": 2,
+                  "quote": "dark brown lesions on the pod"
+                },
+                {
+                  "point": 3,
+                  "quote": "the pod becomes black and shrivelled with rotten beans inside"
+                },
+                {
+                  "point": 4,
+                  "quote": "regular removal of diseased pods, pruning to reduce humidity"
+                },
+                {
+                  "point": 5,
+                  "quote": "spraying copper-based fungicides"
+                }
+              ],
+              "feedback": "Complete and precise. Linking pruning to lower humidity shows you understand why the disease spreads."
+            },
+            {
+              "tier": "partial",
+              "text": "It is caused by a fungus. The pods turn black. Spray fungicide.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is caused by a fungus"
+                },
+                {
+                  "point": 3,
+                  "quote": "The pods turn black"
+                },
+                {
+                  "point": 5,
+                  "quote": "Spray fungicide"
+                }
+              ],
+              "feedback": "Three marks. Add how it spreads (rain splash), the first symptom (brown spots), and a second control such as removing infected pods."
+            },
+            {
+              "tier": "partial",
+              "text": "Black pod is caused by a virus carried by mealybugs. The pods turn black and rot. Remove the infected pods and burn them.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "The pods turn black and rot"
+                },
+                {
+                  "point": 4,
+                  "quote": "Remove the infected pods and burn them"
+                }
+              ],
+              "feedback": "Symptom and sanitation are right. The virus spread by mealybugs causes swollen shoot, a different cocoa disease. Black pod is a fungus, Phytophthora, spread by rain splash."
+            },
+            {
+              "tier": "weak",
+              "text": "Black pod is caused by too much sun which burns the pods black. Water the cocoa.",
+              "meets": [],
+              "feedback": "Black pod is worst in wet weather, not sunshine. It is a fungal disease spread by rain splash; removing infected pods and spraying copper fungicide control it."
+            },
+            {
+              "tier": "weak",
+              "text": "It is caused by insects that bore into the pod. Spray insecticide.",
+              "meets": [],
+              "feedback": "Insecticide will not stop black pod, because it is caused by a fungus. Learn the organism, how it spreads, and the fungicide that controls it."
+            }
+          ]
+        },
+        {
+          "prompt": "Classify insect pests according to their mouthparts. For each class give one example and describe the damage it does to a named crop.",
+          "markScheme": [
+            "Biting and chewing, with a correct example (grasshopper, armyworm, beetle)",
+            "Damage by biting/chewing pest: eats leaves/stems leaving holes, ragged edges, defoliation",
+            "Piercing and sucking, with a correct example (aphid, cotton stainer, mealybug, capsid)",
+            "Damage by piercing/sucking pest: sucks sap causing wilting/curling/yellowing, stains or spreads virus",
+            "Boring, with a correct example (stem borer, weevil, pod borer)",
+            "Damage by boring pest: tunnels inside stem/grain/pod, causing lodging, dead heart, or hollow grain"
+          ],
+          "modelAnswer": "Biting and chewing insects, such as the variegated grasshopper, cut and eat leaves, so cassava leaves are left with holes and the plant may be stripped bare. Piercing and sucking insects, such as aphids, suck sap from cowpea so the leaves curl, yellow and wilt, and they spread viruses such as rosette in groundnut. Boring insects, such as the maize stem borer, tunnel inside the maize stem, so the plant breaks and falls and the yield drops.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1. Biting and chewing, e.g. grasshopper: eats the leaves of cassava leaving holes. 2. Piercing and sucking, e.g. aphids: suck the sap of cowpea so the leaves curl and turn yellow. 3. Boring, e.g. stem borer: bores into maize stems so the stem breaks and the plant falls.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Biting and chewing, e.g. grasshopper"
+                },
+                {
+                  "point": 1,
+                  "quote": "eats the leaves of cassava leaving holes"
+                },
+                {
+                  "point": 2,
+                  "quote": "Piercing and sucking, e.g. aphids"
+                },
+                {
+                  "point": 3,
+                  "quote": "suck the sap of cowpea so the leaves curl and turn yellow"
+                },
+                {
+                  "point": 4,
+                  "quote": "Boring, e.g. stem borer"
+                },
+                {
+                  "point": 5,
+                  "quote": "bores into maize stems so the stem breaks and the plant falls"
+                }
+              ],
+              "feedback": "All three classes with an example and the damage on a named crop. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Biting and chewing insects like the armyworm eat up maize leaves leaving only the midribs. Piercing and sucking insects like cotton stainers suck sap from cotton bolls and stain the lint. Boring insects like grain weevils bore into stored maize grains and leave them hollow and powdery.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Biting and chewing insects like the armyworm"
+                },
+                {
+                  "point": 1,
+                  "quote": "eat up maize leaves leaving only the midribs"
+                },
+                {
+                  "point": 2,
+                  "quote": "Piercing and sucking insects like cotton stainers"
+                },
+                {
+                  "point": 3,
+                  "quote": "suck sap from cotton bolls and stain the lint"
+                },
+                {
+                  "point": 4,
+                  "quote": "Boring insects like grain weevils"
+                },
+                {
+                  "point": 5,
+                  "quote": "bore into stored maize grains and leave them hollow and powdery"
+                }
+              ],
+              "feedback": "Excellent examples, including a storage pest. Every mark earned."
+            },
+            {
+              "tier": "partial",
+              "text": "Biting and chewing e.g. grasshopper. Piercing and sucking e.g. aphids. Boring e.g. weevils. They all reduce yield.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Biting and chewing e.g. grasshopper"
+                },
+                {
+                  "point": 2,
+                  "quote": "Piercing and sucking e.g. aphids"
+                },
+                {
+                  "point": 4,
+                  "quote": "Boring e.g. weevils"
+                }
+              ],
+              "feedback": "Classes and examples are all right. Each class damages crops in its own way: describe what each does, for example aphids sucking sap so cowpea leaves curl."
+            },
+            {
+              "tier": "partial",
+              "text": "Biting and chewing pests like grasshoppers eat leaves of maize. Sucking pests like the stem borer suck sap from the maize stem and it dies.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Biting and chewing pests like grasshoppers"
+                },
+                {
+                  "point": 1,
+                  "quote": "eat leaves of maize"
+                }
+              ],
+              "feedback": "Biting and chewing is right. The stem borer is a boring insect that tunnels inside the stem; aphids are a sucking example. Add the third class with its damage."
+            },
+            {
+              "tier": "weak",
+              "text": "Pests are classified into insects, birds and rodents. Rats eat the maize in the store.",
+              "meets": [],
+              "feedback": "That separates insect from non-insect pests. The question asks you to group insect pests by mouthparts: biting and chewing, piercing and sucking, and boring."
+            },
+            {
+              "tier": "weak",
+              "text": "Biting insects bite the farmer and sucking insects like mosquitoes suck blood.",
+              "meets": [],
+              "feedback": "The classes are about how insects damage crops, not people. Give a crop pest for each class and describe what it does to the crop."
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "topic": "Field and storage pests, weeds, and types of farm animals",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the life cycle, damage and control of major field and storage insect pests;\n2. describe non-insect pests and the side effects of chemical, biological and cultural control;\n3. define weeds, state their characteristics and effects, and describe methods of weed control, giving common and botanical names of weeds;\n4. name the types of farm animals and classify them by habitat and use.\n\n## Materials\n\nA maize stem damaged by stem borer; weevil-infested maize grains and cowpea with bean beetle holes; specimens of spear grass, Siam weed and goat weed; a knapsack sprayer (empty); pictures of farm animals.\n\n## Starter (5 minutes)\n\nPour some weevilled maize grains onto a tray. Ask: how did the insects get inside the grains, and how could the farmer have stopped them?\n\n## Development\n\n1. Teach the stem borer life cycle (egg, larva, pupa, adult) and its damage. Cover armyworm, cocoa capsid, yam beetle, cassava mealybug, variegated grasshopper, cotton stainer, grain weevil and bean beetle.\n2. Discuss birds (quelea on rice and millet) and rodents (cane rats on cassava). Explain side effects of control: pesticides pollute and poison; biological agents can upset the ecosystem; burning destroys organic matter.\n3. Define weed. Show the specimens with their botanical names. List characteristics, effects, and control methods.\n4. List farm animals: cattle, sheep, goats, poultry, pigs, rabbits, fish. Classify by habitat (terrestrial, aquatic) and use (food, work, protection, pets).\n\n## Class activity\n\nIn groups, students choose one pest and draw its life cycle, labelling the stage that does the damage.\n\n## Evaluation\n\n1. Which stage of the stem borer damages maize?\n2. Give one side effect of chemical pest control.\n3. Give the botanical name of spear grass.\n\n## Assignment\n\nProblem set questions 4 and 5 and both written questions, due next Tuesday.",
+      "reading": {
+        "title": "Pests, weeds and the animals we keep",
+        "content": "# Major insect pests\n\nMost insect pests go through **complete metamorphosis** (egg, larva, pupa, adult) or **incomplete metamorphosis** (egg, nymph, adult). It is usually the **larva** or **nymph** that does most damage.\n\n| Pest | Crop | Damage | Control |\n| --- | --- | --- | --- |\n| Stem borer | Maize, sorghum | Larvae tunnel in stems; dead heart, lodging | Early planting; destroy stalks; insecticide |\n| Armyworm | Maize, rice | Caterpillars strip leaves | Insecticide; early detection |\n| Cocoa capsid (mirid) | Cocoa | Sucks sap; black lesions, dieback | Insecticide spraying |\n| Yam beetle | Yam | Adults bore holes in tubers | Treat setts; crop rotation |\n| Cassava mealybug | Cassava | Sucks sap; bunchy, stunted tips | Biological control by a parasitic wasp |\n| Variegated grasshopper | Cassava | Eats leaves | Dig up eggs; insecticide |\n| Cotton stainer | Cotton | Sucks seeds; stains lint | Insecticide; destroy alternate hosts |\n| Grain weevil | Stored maize | Larvae eat inside grains | Dry grain well; hermetic bags; fumigation |\n| Bean beetle | Stored cowpea | Holes in seeds | Hermetic (PICS) bags; ash or neem |\n\n# Non-insect pests and control side effects\n\nNon-insect pests include **birds** (quelea and weaver birds on rice and millet), **rodents** (cane rats, rats in stores), monkeys and nematodes.\n\nEvery method of control has side effects:\n\n- **Chemical**: pollution of soil and water, poisoning of farmers, livestock and fish, residues in food, killing of useful insects such as bees.\n- **Biological**: introduced natural enemies can attack other organisms and upset the ecosystem.\n- **Cultural**: burning destroys organic matter and soil organisms.\n\n# Weeds\n\nA **weed** is a plant growing where it is not wanted. **Characteristics**: they produce many seeds, spread fast, survive harsh conditions, and have deep or spreading roots or underground stems.\n\n**Effects**: they compete with crops for light, water and nutrients; harbour pests and diseases; lower yield and quality; raise the cost of labour; some are poisonous to livestock. A few are useful as cover or fodder.\n\n**Common weeds**: spear grass (*Imperata cylindrica*), Siam weed (*Chromolaena odorata*), goat weed (*Ageratum conyzoides*), nut grass (*Cyperus rotundus*), Tridax (*Tridax procumbens*).\n\n**Control**: cultural (crop rotation, mulching, cover crops, close spacing); biological (natural enemies, grazing animals); chemical (herbicides); physical and mechanical (hand-pulling, hoeing, slashing, tractor cultivation).\n\n# Farm animals\n\nCattle, sheep, goats, poultry, pigs, rabbits and fish.\n\n- **By habitat**: **terrestrial** (land) animals such as goats and poultry; **aquatic** (water) animals such as catfish and tilapia.\n- **By use**: **food** (meat, milk, eggs); **work** (oxen, donkeys); **protection** (dogs); **pets** (cats, dogs, rabbits)."
+      },
+      "cards": [
+        {
+          "front": "Damaging stage of the maize stem borer",
+          "back": "The larva, which tunnels inside the stem."
+        },
+        {
+          "front": "Grain weevil",
+          "back": "A storage pest whose larvae eat the inside of stored grains."
+        },
+        {
+          "front": "Biological control of cassava mealybug",
+          "back": "Releasing a parasitic wasp that kills the mealybug."
+        },
+        {
+          "front": "One side effect of chemical control",
+          "back": "Pollution of soil and water, or poisoning of farmers, livestock and fish."
+        },
+        {
+          "front": "Weed",
+          "back": "A plant growing where it is not wanted."
+        },
+        {
+          "front": "Botanical name of spear grass",
+          "back": "Imperata cylindrica."
+        },
+        {
+          "front": "Botanical name of Siam weed",
+          "back": "Chromolaena odorata."
+        },
+        {
+          "front": "Aquatic farm animals",
+          "back": "Animals reared in water, such as catfish and tilapia."
+        },
+        {
+          "front": "Farm animals kept for work",
+          "back": "Oxen and donkeys, used for ploughing and carrying loads."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Maize plants in a field near Ogbomoso have dead central shoots and many stems have broken and fallen. Which pest is most likely?",
+          "options": ["Stem borer", "Aphid", "Cotton stainer", "Bean beetle"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Which is a side effect of using insecticides on a farm near a fish pond?",
+          "options": [
+            "It adds humus to the soil",
+            "It increases the number of bees",
+            "Fish may be poisoned by run-off",
+            "It improves soil structure"
+          ],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which weed spreads mainly by underground stems (rhizomes) and is very hard to remove by hoeing?",
+          "options": [
+            "Goat weed (Ageratum conyzoides)",
+            "Tridax procumbens",
+            "Siam weed (Chromolaena odorata)",
+            "Spear grass (Imperata cylindrica)"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Stored cowpea seeds have small round holes and fine powder in the bag. The pest is most likely the",
+          "options": ["armyworm", "bean beetle", "capsid", "yam beetle"],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which pair shows farm animals classified by habitat?",
+          "options": [
+            "Food and pets",
+            "Ruminant and non-ruminant",
+            "Terrestrial and aquatic",
+            "Work and protection"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "A farmer at Iseyin finds that much of last season's maize in the store is full of holes and powder. Name the pest, describe its life cycle, and give three ways the farmer can prevent the damage next season.",
+          "markScheme": [
+            "Names the pest: maize/grain weevil (Sitophilus)",
+            "Life cycle: egg laid inside a hole in the grain, larva feeds inside, pupates inside, adult emerges (complete metamorphosis)",
+            "Prevention 1: dry the grain well (to about 13% moisture) before storage",
+            "Prevention 2: clean/fumigate the store before storing, or use hermetic bags/airtight containers",
+            "Prevention 3: treat the grain with approved insecticide dust or natural protectants (ash, neem), or harvest promptly"
+          ],
+          "modelAnswer": "The pest is the maize weevil. The female bores a small hole in a grain, lays an egg inside and seals it. The larva hatches and eats the inside of the grain, pupates there, and the adult chews its way out, leaving a hole and powder. To prevent damage, the farmer should dry the maize to about 13% moisture before storing it, clean and fumigate the store or use airtight hermetic bags, and treat the grain with an approved storage insecticide or neem powder.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The pest is the maize weevil. It has complete metamorphosis: the female lays eggs inside the grain, the larva eats the grain from inside and pupates there, then the adult bores out. Prevention: dry the maize very well before storing, store it in hermetic bags that are airtight, and mix the grain with neem powder or storage dust.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The pest is the maize weevil"
+                },
+                {
+                  "point": 1,
+                  "quote": "the female lays eggs inside the grain, the larva eats the grain from inside and pupates there, then the adult bores out"
+                },
+                {
+                  "point": 2,
+                  "quote": "dry the maize very well before storing"
+                },
+                {
+                  "point": 3,
+                  "quote": "store it in hermetic bags that are airtight"
+                },
+                {
+                  "point": 4,
+                  "quote": "mix the grain with neem powder or storage dust"
+                }
+              ],
+              "feedback": "Correct pest, the full life cycle and three practical prevention methods. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Grain weevil (Sitophilus zeamais). Eggs are laid in holes in the grains, the larvae and pupae develop inside, and adults emerge through exit holes. The farmer should harvest early and dry the grain to about 13% moisture, fumigate the store, and apply an approved insecticide to the grain.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Grain weevil (Sitophilus zeamais)"
+                },
+                {
+                  "point": 1,
+                  "quote": "Eggs are laid in holes in the grains, the larvae and pupae develop inside, and adults emerge through exit holes"
+                },
+                {
+                  "point": 2,
+                  "quote": "dry the grain to about 13% moisture"
+                },
+                {
+                  "point": 3,
+                  "quote": "fumigate the store"
+                },
+                {
+                  "point": 4,
+                  "quote": "apply an approved insecticide to the grain"
+                }
+              ],
+              "feedback": "Precise and complete, even with the scientific name. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "The pest is weevil. The farmer should dry the maize before storing and spray insecticide in the store.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The pest is weevil"
+                },
+                {
+                  "point": 2,
+                  "quote": "dry the maize before storing"
+                },
+                {
+                  "point": 4,
+                  "quote": "spray insecticide in the store"
+                }
+              ],
+              "feedback": "Pest and two prevention methods are right. Describe the life cycle (egg laid inside the grain, larva and pupa inside, adult emerges) and add a third method such as airtight bags."
+            },
+            {
+              "tier": "partial",
+              "text": "Weevils lay eggs on the outside of the grains and the caterpillars eat the grains. The farmer should use hermetic bags.",
+              "meets": [
+                {
+                  "point": 3,
+                  "quote": "The farmer should use hermetic bags"
+                }
+              ],
+              "feedback": "Hermetic bags are a good answer. Weevil eggs are laid inside the grain, and the larvae are grubs that feed inside it. Name the pest and give two more ways to prevent damage."
+            },
+            {
+              "tier": "weak",
+              "text": "Rats have eaten the maize. The farmer should keep a cat in the store.",
+              "meets": [],
+              "feedback": "Rats leave chewed cobs and droppings, not small holes and powder in each grain. Those are signs of the maize weevil; describe its life cycle and how to prevent it."
+            },
+            {
+              "tier": "weak",
+              "text": "The pest is stem borer. It bores into the maize and the farmer should plant early.",
+              "meets": [],
+              "feedback": "The stem borer attacks growing maize in the field. Damage in the store is done by the grain weevil. Look at the storage pests in the table."
+            }
+          ]
+        },
+        {
+          "prompt": "Siam weed has overrun a young cassava farm at Ikire. Explain three ways the weed reduces cassava yield and describe one cultural, one chemical and one mechanical method of controlling it, with one disadvantage of the chemical method.",
+          "markScheme": [
+            "Effect 1: competes with cassava for light (shading)",
+            "Effect 2: competes for water and nutrients",
+            "Effect 3: harbours pests/diseases, or increases cost of labour/production",
+            "Cultural method: e.g. mulching, cover cropping, close spacing, crop rotation",
+            "Chemical method: herbicide (e.g. glyphosate before planting / selective herbicide)",
+            "Mechanical method plus chemical disadvantage: hoeing/slashing/uprooting; and herbicides pollute, are costly or can harm the crop/user"
+          ],
+          "modelAnswer": "Siam weed grows tall and shades the young cassava, taking the light it needs. It also takes water and nutrients from the soil, and it harbours pests such as grasshoppers. Culturally, the farmer can plant a cover crop such as melon or Mucuna between the cassava to smother weeds. Chemically, the farmer can spray a herbicide such as glyphosate on the weeds before planting. Mechanically, the farmer can slash and uproot the weed with a cutlass and hoe. But herbicides are costly and can pollute water and harm the farmer if not used carefully.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Siam weed shades the cassava from sunlight. It competes with it for water and nutrients. It hides pests like grasshoppers. Cultural control: plant melon as a cover crop to smother the weed. Chemical: spray glyphosate before planting. Mechanical: uproot the weeds and slash them with a cutlass. A disadvantage of herbicides is that they pollute the environment.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Siam weed shades the cassava from sunlight"
+                },
+                {
+                  "point": 1,
+                  "quote": "It competes with it for water and nutrients"
+                },
+                {
+                  "point": 2,
+                  "quote": "It hides pests like grasshoppers"
+                },
+                {
+                  "point": 3,
+                  "quote": "plant melon as a cover crop to smother the weed"
+                },
+                {
+                  "point": 4,
+                  "quote": "spray glyphosate before planting"
+                },
+                {
+                  "point": 5,
+                  "quote": "uproot the weeds and slash them with a cutlass. A disadvantage of herbicides is that they pollute the environment"
+                }
+              ],
+              "feedback": "Every part answered, with a named herbicide and a sensible cover crop. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Effects: it competes for light; it competes for soil nutrients and moisture; it increases the cost of weeding. Control: mulching (cultural), herbicide application (chemical), and hoe weeding (mechanical). Herbicides are expensive and can damage the cassava if sprayed carelessly.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "it competes for light"
+                },
+                {
+                  "point": 1,
+                  "quote": "it competes for soil nutrients and moisture"
+                },
+                {
+                  "point": 2,
+                  "quote": "it increases the cost of weeding"
+                },
+                {
+                  "point": 3,
+                  "quote": "mulching (cultural)"
+                },
+                {
+                  "point": 4,
+                  "quote": "herbicide application (chemical)"
+                },
+                {
+                  "point": 5,
+                  "quote": "hoe weeding (mechanical). Herbicides are expensive and can damage the cassava if sprayed carelessly"
+                }
+              ],
+              "feedback": "All six marks, clearly organised. Naming a herbicide would make it even stronger."
+            },
+            {
+              "tier": "partial",
+              "text": "The weed takes nutrients and water from the cassava. It can be controlled by hoeing or by spraying herbicide.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "The weed takes nutrients and water from the cassava"
+                },
+                {
+                  "point": 4,
+                  "quote": "spraying herbicide"
+                }
+              ],
+              "feedback": "Competition for water and nutrients and herbicide earn marks. Add shading and pests as effects, a cultural method such as mulching, and a disadvantage of herbicides. Hoeing counts only with that disadvantage."
+            },
+            {
+              "tier": "partial",
+              "text": "It shades the cassava and takes nutrients, so the tubers are small. Cultural method is burning the weed. Chemical method is spraying weedicide, but it is costly. Mechanical is using the tractor.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It shades the cassava"
+                },
+                {
+                  "point": 1,
+                  "quote": "takes nutrients"
+                },
+                {
+                  "point": 4,
+                  "quote": "Chemical method is spraying weedicide"
+                }
+              ],
+              "feedback": "Two effects and the chemical method are right. Burning would harm the young cassava and the soil; mulching or a cover crop is the cultural method. Add a third effect and say how a hoe or cutlass is used."
+            },
+            {
+              "tier": "weak",
+              "text": "Siam weed is good for the cassava because it covers the soil and prevents erosion.",
+              "meets": [],
+              "feedback": "Siam weed takes light, water and nutrients from the young cassava. Describe these effects and how the weed can be controlled."
+            },
+            {
+              "tier": "weak",
+              "text": "The farmer should burn the whole farm to kill the weed.",
+              "meets": [],
+              "feedback": "Burning would kill the cassava too and damage the soil. Explain how the weed reduces yield, then describe cultural, chemical and mechanical control."
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "topic": "Inside farm animals: body systems, reproduction and management",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. identify and state the functions of the main external parts and internal organs of farm animals;\n2. describe the digestive system of a ruminant, a pig and the fowl, and the circulatory and respiratory systems;\n3. explain reproduction in farm animals: hormones, oestrus, signs of heat, mating, gestation, parturition, lactation and egg formation;\n4. explain how temperature, humidity and light affect growth, reproduction, milk and egg production;\n5. describe livestock management systems and the management of a goat and a pig from birth to market weight.\n\n## Materials\n\nA chart of the ruminant stomach; the digestive tract of a slaughtered fowl from the market; a chart of the female reproductive system; a sample goat record card.\n\n## Starter (5 minutes)\n\nAsk: why does a goat chew all evening when it has stopped eating, while a pig never does?\n\n## Development\n\n1. Label the external parts of a cow on the board. Name the heart, lungs, liver and kidneys and their functions.\n2. Use the chart to trace food through the four chambers of the ruminant stomach. Compare with the pig's single stomach. Open the fowl's tract: crop, proventriculus, gizzard, caeca.\n3. Explain reproduction step by step, with gestation periods of cow, goat, sow and rabbit. Describe egg formation in the oviduct.\n4. Discuss heat stress, high humidity, and day length in layers.\n5. Compare extensive, semi-intensive and intensive systems. Outline housing, feeding, hygiene and records for a goat and a pig.\n\n## Class activity\n\nStudents draw and label the ruminant stomach and the digestive system of the fowl.\n\n## Evaluation\n\n1. Name the four chambers of the ruminant stomach.\n2. Give two signs of heat in a doe.\n3. Why do layers lay fewer eggs in very hot weather?\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "How farm animals work, and how we manage them",
+        "content": "# Organs and systems\n\nThe **heart** pumps blood; the **lungs** take in oxygen and give out carbon dioxide; the **liver** stores food and makes bile; the **kidneys** remove wastes as urine.\n\n## Digestion\n\n**Ruminants** (cattle, sheep, goats) have a four-chambered stomach:\n\n1. **Rumen**: the largest; microbes ferment grass and break down cellulose.\n2. **Reticulum**: forms the cud, which is brought back to the mouth and chewed again (**rumination**).\n3. **Omasum**: removes water.\n4. **Abomasum**: the true stomach, where enzymes digest food.\n\n**Monogastric** animals such as pigs and rabbits have a single stomach. They cannot digest much fibre, so they need concentrated feeds.\n\nThe **fowl** has no teeth. Food is stored in the **crop**, mixed with enzymes in the **proventriculus**, and ground with grit in the muscular **gizzard**. Two **caeca** digest some fibre.\n\n**Circulation** carries food and oxygen in the blood; **respiration** brings in oxygen through the nostrils, trachea and lungs (birds also have air sacs).\n\n# Reproduction\n\nHormones control reproduction. **FSH** ripens follicles, **oestrogen** brings the female on heat, **progesterone** maintains pregnancy, **oxytocin** causes contractions at birth and milk let-down, **prolactin** starts milk production, and **testosterone** controls male traits.\n\n- **Oestrous cycle**: the regular cycle of heat, about 21 days in cows, sows and does.\n- **Signs of heat**: restlessness, frequent bleating or mounting other animals, swollen red vulva, mucus discharge, loss of appetite.\n- **Ovulation**: release of the egg; **mating** places sperm in the female.\n- **Gestation**: cow about 283 days, goat and ewe about 150, sow 114 (3 months, 3 weeks, 3 days), rabbit 31.\n- **Parturition**: giving birth. **Lactation**: milk production by the mammary glands. The first milk, **colostrum**, carries antibodies.\n\n**Egg formation in the fowl**: yolk forms in the ovary; albumen is added in the magnum, the shell membranes in the isthmus, the shell in the uterus (shell gland). It takes about 25 hours.\n\n# Environmental physiology\n\nHigh **temperature** reduces feed intake, growth, milk yield and egg production, and lowers fertility. High **humidity** adds to heat stress and favours disease. **Light**: layers need about 16 hours of light a day for full production.\n\n# Livestock management\n\n- **Extensive**: animals roam freely; cheap, but low output and losses to theft and disease.\n- **Semi-intensive**: housed at night, grazed in a paddock by day.\n- **Intensive**: housed all the time and fed; high output, high cost.\n\n**A goat** needs a raised, airy pen, pasture or browse with a concentrate supplement, salt licks and clean water, deworming and vaccination, and is sold at about 12 months. **A pig** needs a concrete pen with shade and drainage, a balanced concentrate, iron injection for piglets, and reaches 80–90 kg in about 6 months. Keep records of births, feed, treatments and sales."
+      },
+      "cards": [
+        {
+          "front": "Rumen",
+          "back": "The largest chamber of the ruminant stomach, where microbes ferment grass and digest cellulose."
+        },
+        {
+          "front": "Abomasum",
+          "back": "The true stomach of a ruminant, where enzymes digest food."
+        },
+        {
+          "front": "Monogastric animal",
+          "back": "An animal with a single stomach, such as a pig or rabbit."
+        },
+        {
+          "front": "Gizzard",
+          "back": "The muscular organ in poultry that grinds food with grit."
+        },
+        {
+          "front": "Gestation period of a sow",
+          "back": "About 114 days: 3 months, 3 weeks and 3 days."
+        },
+        {
+          "front": "Colostrum",
+          "back": "The first milk after birth, rich in antibodies that protect the young."
+        },
+        {
+          "front": "Three signs of heat",
+          "back": "Restlessness, mounting other animals, swollen red vulva with mucus."
+        },
+        {
+          "front": "Semi-intensive system",
+          "back": "Animals are housed at night and grazed in a paddock by day."
+        },
+        {
+          "front": "Oxytocin",
+          "back": "The hormone that causes contractions at birth and milk let-down."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "In which chamber of a goat's stomach do microbes break down the cellulose in grass?",
+          "options": ["Abomasum", "Omasum", "Rumen", "Reticulum"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Which organ of the fowl grinds food with the help of grit?",
+          "options": ["Gizzard", "Crop", "Proventriculus", "Caecum"],
+          "answer": "A"
+        },
+        {
+          "prompt": "A sow is served on 1st March. About how long is it until she farrows?",
+          "options": ["31 days", "150 days", "283 days", "114 days"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Why should newborn kids suck colostrum within the first hours of life?",
+          "options": [
+            "It is sweeter than later milk",
+            "It contains antibodies that protect them from disease",
+            "It contains no fat",
+            "It makes them grow horns"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "A farmer at Ibadan keeps goats in a pen at night and lets them graze in a fenced paddock during the day. This system is",
+          "options": ["extensive", "intensive", "semi-intensive", "nomadic"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Give four differences between the digestive system of a ruminant such as the goat and that of a monogastric animal such as the pig.",
+          "markScheme": [
+            "Ruminant has a four-chambered stomach; monogastric has a single stomach",
+            "Ruminant chews the cud (ruminates); monogastric does not",
+            "Ruminant digests cellulose/fibre through microbes in the rumen; monogastric digests little fibre",
+            "Any one other: ruminant can feed mainly on roughage/grass while monogastric needs concentrates; ruminant lacks upper incisors (dental pad); microbes synthesise protein/vitamin B in ruminants"
+          ],
+          "modelAnswer": "A goat has a stomach with four chambers (rumen, reticulum, omasum and abomasum), while a pig has a single stomach. The goat chews the cud, bringing food back to the mouth to chew again, but the pig does not. Microbes in the goat's rumen digest cellulose, so it can live on grass and browse, while the pig digests little fibre and needs concentrated feed. The goat has no upper incisor teeth, only a dental pad, while the pig has upper and lower incisors.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "1. The goat has four stomach chambers but the pig has one. 2. The goat chews cud, the pig does not. 3. Bacteria in the rumen of the goat digest cellulose but the pig cannot digest much cellulose. 4. The goat can survive on grass alone while the pig needs concentrate feed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The goat has four stomach chambers but the pig has one"
+                },
+                {
+                  "point": 1,
+                  "quote": "The goat chews cud, the pig does not"
+                },
+                {
+                  "point": 2,
+                  "quote": "Bacteria in the rumen of the goat digest cellulose but the pig cannot digest much cellulose"
+                },
+                {
+                  "point": 3,
+                  "quote": "The goat can survive on grass alone while the pig needs concentrate feed"
+                }
+              ],
+              "feedback": "Four clear differences, each comparing both animals. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Ruminants have a compound stomach of rumen, reticulum, omasum and abomasum; monogastrics have a simple stomach. Ruminants regurgitate and re-chew food. Rumen microbes ferment fibre, so ruminants use roughage well. Ruminants have a dental pad in place of upper incisors, which pigs have.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ruminants have a compound stomach of rumen, reticulum, omasum and abomasum; monogastrics have a simple stomach"
+                },
+                {
+                  "point": 1,
+                  "quote": "Ruminants regurgitate and re-chew food"
+                },
+                {
+                  "point": 2,
+                  "quote": "Rumen microbes ferment fibre, so ruminants use roughage well"
+                },
+                {
+                  "point": 3,
+                  "quote": "Ruminants have a dental pad in place of upper incisors, which pigs have"
+                }
+              ],
+              "feedback": "All four marks. The dental pad is a difference many learners miss."
+            },
+            {
+              "tier": "partial",
+              "text": "The goat has four stomachs, rumen, reticulum, omasum and abomasum. The pig has one stomach. The goat eats grass and the pig eats everything.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The goat has four stomachs, rumen, reticulum, omasum and abomasum. The pig has one stomach"
+                }
+              ],
+              "feedback": "The stomach difference is right. Explain why the goat can live on grass (rumen microbes digest cellulose) and add that it chews the cud. Pigs need concentrates, not everything."
+            },
+            {
+              "tier": "partial",
+              "text": "Ruminant: four chambers, chews cud. Monogastric: one chamber, does not chew cud. Ruminant digests food faster than monogastric.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Ruminant: four chambers"
+                },
+                {
+                  "point": 1,
+                  "quote": "chews cud"
+                }
+              ],
+              "feedback": "Chambers and cud-chewing earn two marks. Digestion of fibre is slower in ruminants, not faster; the real difference is that rumen microbes digest cellulose. Add a fourth difference such as feed type."
+            },
+            {
+              "tier": "weak",
+              "text": "The goat is a ruminant because it is small and the pig is monogastric because it is fat.",
+              "meets": [],
+              "feedback": "Size does not decide it. Compare the stomachs: four chambers against one, cud-chewing, and digestion of fibre by microbes."
+            },
+            {
+              "tier": "weak",
+              "text": "Both animals have one stomach but the goat has a gizzard to grind grass.",
+              "meets": [],
+              "feedback": "Only poultry have a gizzard. A goat has a four-chambered stomach and chews the cud; a pig has one stomach. Reread the digestion section."
+            }
+          ]
+        },
+        {
+          "prompt": "A Crestfield parent keeps 300 layers in an open-sided house at Oyo. During the hot months of February and March, egg production falls. Explain the effect of high temperature on the birds, and describe how an egg is formed in the hen's oviduct.",
+          "markScheme": [
+            "High temperature causes heat stress: birds eat less feed, so fewer nutrients for egg production",
+            "Birds pant/drink more and use energy to cool down; thin shells or smaller eggs, fewer eggs laid",
+            "Yolk forms in the ovary and is released into the oviduct (infundibulum, where fertilisation can occur)",
+            "Albumen (egg white) added in the magnum; shell membranes in the isthmus",
+            "Shell added in the uterus/shell gland; egg laid through the vagina/cloaca (about 25 hours in all)"
+          ],
+          "modelAnswer": "In hot weather the hens suffer heat stress. They eat less feed and drink more water, and they pant and spend energy trying to keep cool, so less feed goes to making eggs; they lay fewer eggs, and the shells are thinner. In egg formation, the yolk develops in the ovary and is released into the infundibulum of the oviduct, where it can be fertilised. In the magnum the albumen is added, and in the isthmus the shell membranes. In the uterus, or shell gland, the hard shell is formed, and the egg is then laid through the vagina and cloaca, about 25 hours after the yolk was released.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "The heat makes the hens eat less so they get less nutrients for laying, and they pant and drink a lot of water to cool down, so they lay fewer eggs with thin shells. The yolk is formed in the ovary and released into the infundibulum. The magnum adds the albumen. The isthmus adds the shell membranes. The shell is added in the uterus and then the egg is laid through the cloaca.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The heat makes the hens eat less so they get less nutrients for laying"
+                },
+                {
+                  "point": 1,
+                  "quote": "they pant and drink a lot of water to cool down, so they lay fewer eggs with thin shells"
+                },
+                {
+                  "point": 2,
+                  "quote": "The yolk is formed in the ovary and released into the infundibulum"
+                },
+                {
+                  "point": 3,
+                  "quote": "The magnum adds the albumen. The isthmus adds the shell membranes"
+                },
+                {
+                  "point": 4,
+                  "quote": "The shell is added in the uterus and then the egg is laid through the cloaca"
+                }
+              ],
+              "feedback": "A complete answer covering heat stress and every part of the oviduct in order. Excellent."
+            },
+            {
+              "tier": "full",
+              "text": "High temperature reduces feed intake. Energy is used for cooling by panting instead of egg production, so egg number and shell quality drop. Egg formation: ovary releases yolk; infundibulum (fertilisation); magnum (albumen); isthmus (shell membranes); shell gland (shell); vagina and cloaca (laying). It takes about 25 hours.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "High temperature reduces feed intake"
+                },
+                {
+                  "point": 1,
+                  "quote": "Energy is used for cooling by panting instead of egg production, so egg number and shell quality drop"
+                },
+                {
+                  "point": 2,
+                  "quote": "ovary releases yolk; infundibulum (fertilisation)"
+                },
+                {
+                  "point": 3,
+                  "quote": "magnum (albumen); isthmus (shell membranes)"
+                },
+                {
+                  "point": 4,
+                  "quote": "shell gland (shell); vagina and cloaca (laying)"
+                }
+              ],
+              "feedback": "All five marks in a neat, accurate sequence. Well done."
+            },
+            {
+              "tier": "partial",
+              "text": "The heat stresses the birds so they lay fewer eggs. The egg is formed in the ovary, then the white is added and lastly the shell in the uterus.",
+              "meets": [
+                {
+                  "point": 4,
+                  "quote": "lastly the shell in the uterus"
+                }
+              ],
+              "feedback": "The shell gland step is right. Explain how heat cuts laying (less feed eaten, energy spent cooling), and name where the yolk goes and which parts add the albumen (magnum) and shell membranes (isthmus)."
+            },
+            {
+              "tier": "partial",
+              "text": "In hot weather birds eat less feed and so produce fewer eggs. The yolk comes from the ovary. The albumen is added in the magnum and membranes in the isthmus. The shell is formed in the gizzard.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "In hot weather birds eat less feed and so produce fewer eggs"
+                },
+                {
+                  "point": 2,
+                  "quote": "The yolk comes from the ovary"
+                },
+                {
+                  "point": 3,
+                  "quote": "The albumen is added in the magnum and membranes in the isthmus"
+                }
+              ],
+              "feedback": "Most of the oviduct is right. The gizzard is part of the digestive system; the shell is formed in the uterus (shell gland). Also say what panting and heat do to shell quality."
+            },
+            {
+              "tier": "weak",
+              "text": "The eggs are falling because the cock is not mating the hens enough in the hot season.",
+              "meets": [],
+              "feedback": "Layers lay eggs without a cock. The fall is caused by heat stress: the hens eat less and spend energy keeping cool. Then describe the parts of the oviduct."
+            },
+            {
+              "tier": "weak",
+              "text": "Heat makes the hens to lay eggs that are already cooked. The egg is formed in the stomach.",
+              "meets": [],
+              "feedback": "Eggs are formed in the oviduct, not the stomach. Heat reduces feed intake and egg numbers. Study the stages: ovary, infundibulum, magnum, isthmus, uterus."
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "topic": "Feeding livestock, rangeland, animal improvement and why animals fall ill",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. classify feeds, state the sources and functions of feed nutrients, and describe balanced, production and maintenance rations;\n2. describe the causes, symptoms and correction of malnutrition, including ketosis and rickets;\n3. explain rangeland, the factors affecting herbage production and methods of improving it;\n4. state the aims and methods of animal improvement and compare local, exotic and cross-bred animals;\n5. explain artificial insemination;\n6. name the causal organisms of disease and the factors that predispose animals to it.\n\n## Materials\n\nSamples of maize, groundnut cake, fish meal, bone meal, wheat offal and dry grass; a bag label from a commercial layer feed; pictures of a White Fulani cow and a Friesian cow.\n\n## Starter (5 minutes)\n\nRead out the layer feed label: crude protein 16.5%, calcium 3.5%. Ask: why does a laying hen need so much calcium?\n\n## Development\n\n1. Sort the feed samples into concentrates (energy and protein) and roughages. List the nutrients with their sources and functions.\n2. Explain a balanced ration, maintenance and production rations, and supplementary feeding. Discuss malnutrition with ketosis and rickets as examples.\n3. Define rangeland and describe its features. Discuss what limits herbage production and how to improve it.\n4. Compare the two cows in the pictures. Explain introduction, selection and cross-breeding. Explain artificial insemination with its advantages and disadvantages.\n5. List the disease-causing organisms and predisposing factors; explain susceptibility and resistance.\n\n## Class activity\n\nStudents calculate a simple ration using the Pearson square for a 16% protein feed from maize and groundnut cake.\n\n## Evaluation\n\n1. Give one source of protein and one source of energy in feed.\n2. Name two methods of rangeland improvement.\n3. State one advantage of artificial insemination.\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Feeding, breeding and keeping animals healthy",
+        "content": "# Animal nutrition\n\n**Animal nutrition** is how animals take in and use food for maintenance, growth and production.\n\n**Classes of feed**: **concentrates** are rich in nutrients and low in fibre (maize, groundnut cake, fish meal); **roughages** are bulky and high in fibre (grass, hay, silage, crop residues).\n\n| Nutrient | Source | Function |\n| --- | --- | --- |\n| Carbohydrates | Maize, cassava, wheat offal | Energy |\n| Protein | Groundnut cake, soya meal, fish meal | Growth, repair, eggs, milk |\n| Fats and oils | Oil seeds, palm kernel cake | Concentrated energy |\n| Minerals | Bone meal, oyster shell, salt lick | Bones, eggshells |\n| Vitamins | Green forage, premix | Health, prevent deficiency diseases |\n| Water | Clean drinking water | Every body process |\n\nA **balanced ration** supplies all nutrients in the right amounts. A **maintenance ration** keeps an animal alive without gaining or losing weight; a **production ration** supports growth, pregnancy, milk or eggs.\n\n**Worked example (Pearson square).** To make 100 kg of 16% protein feed from maize (9%) and groundnut cake (45%): maize parts = 45 - 16 = 29; cake parts = 16 - 9 = 7; total 36. Maize = 29/36 x 100 = 80.6 kg; cake = 7/36 x 100 = 19.4 kg.\n\n**Malnutrition** is a shortage, excess or imbalance of nutrients. **Rickets** (lack of calcium, phosphorus or vitamin D) gives soft, bent bones; correct with bone meal and vitamin D. **Ketosis** (energy shortage in high-yielding or pregnant animals) causes loss of appetite and a sweet smell of breath; correct with energy-rich feed or glucose.\n\n# Rangeland\n\n**Rangeland** is large natural grassland used for grazing, as on the Mambilla plateau. It has mixed grasses and legumes, low rainfall in many areas, and is often overgrazed. Herbage production depends on **rainfall**, the **grass and legume mix**, and **grazing pressure**.\n\n**Improvement**: controlled stocking; rotational grazing; fertilizer; introducing legumes such as Stylosanthes; reseeding; weed, pest and disease control; controlled burning.\n\n# Animal improvement\n\nAims: faster growth, higher milk and egg yield, disease resistance. Methods: **introduction** of exotic breeds, **selection** of the best animals, **breeding** (in-breeding, line-breeding, cross-breeding).\n\n**Local breeds** (White Fulani, West African Dwarf goat) are hardy and resistant to heat and local diseases but produce little. **Exotic breeds** (Friesian, Large White pig) produce much more but suffer in heat. **Crosses** combine hardiness and yield.\n\n**Artificial insemination (AI)** is placing semen collected from a male into the female's reproductive tract by hand. Semen is collected with an **artificial vagina** or by **electro-ejaculation**. AI lets one good bull serve thousands of cows and avoids spreading venereal disease, but needs skilled staff, equipment and accurate heat detection.\n\n# Disease\n\nA **disease** is any condition that impairs an animal's normal functioning. Causal organisms: **viruses, bacteria, fungi and protozoa**. Animals are predisposed by poor health status, poor nutrition and poor management (overcrowding, dirty pens). A **susceptible** animal catches a disease easily; a **resistant** one does not."
+      },
+      "cards": [
+        {
+          "front": "Concentrate",
+          "back": "A feed rich in nutrients and low in fibre, such as maize or groundnut cake."
+        },
+        {
+          "front": "Roughage",
+          "back": "A bulky feed high in fibre, such as grass, hay or silage."
+        },
+        {
+          "front": "Balanced ration",
+          "back": "A feed that supplies all the nutrients an animal needs in the right amounts."
+        },
+        {
+          "front": "Maintenance ration",
+          "back": "Feed that keeps an animal alive without gaining or losing weight."
+        },
+        {
+          "front": "Rickets",
+          "back": "Soft, bent bones caused by lack of calcium, phosphorus or vitamin D."
+        },
+        {
+          "front": "Rotational grazing",
+          "back": "Moving animals from one paddock to another so each can recover."
+        },
+        {
+          "front": "Artificial insemination",
+          "back": "Placing semen collected from a male into the female's reproductive tract by hand."
+        },
+        {
+          "front": "Advantage of local breeds",
+          "back": "Hardy and resistant to heat and local diseases."
+        },
+        {
+          "front": "Four causal organisms of animal disease",
+          "back": "Viruses, bacteria, fungi and protozoa."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Which feedstuff is mainly a source of protein?",
+          "options": ["Maize", "Cassava peel", "Groundnut cake", "Wheat offal"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Young pigs kept indoors with no access to sunlight develop bent legs. The most likely cause is shortage of",
+          "options": ["vitamin D", "carbohydrate", "water", "fibre"],
+          "answer": "A"
+        },
+        {
+          "prompt": "Moving cattle from one paddock to another so that each paddock can recover is called",
+          "options": [
+            "overstocking",
+            "reseeding",
+            "zero grazing",
+            "rotational grazing"
+          ],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which is an advantage of artificial insemination?",
+          "options": [
+            "It needs no skilled staff",
+            "Semen from one good bull can serve many cows",
+            "Heat detection is not necessary",
+            "It needs no equipment"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Compared with the Friesian, the White Fulani cow is",
+          "options": [
+            "higher in milk yield",
+            "less tolerant of heat",
+            "more resistant to local diseases",
+            "an exotic breed"
+          ],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "Using the Pearson square, calculate how many kilograms of maize (9% crude protein) and soya bean meal (44% crude protein) are needed to make 100 kg of a pig grower feed containing 16% crude protein.",
+          "markScheme": [
+            "Places 16% in the centre with 9% and 44% at the corners",
+            "Maize parts = 44 - 16 = 28",
+            "Soya parts = 16 - 9 = 7; total parts = 35",
+            "Maize = 28/35 x 100 = 80 kg",
+            "Soya bean meal = 7/35 x 100 = 20 kg"
+          ],
+          "modelAnswer": "Put 16% in the centre of the square, maize (9%) at the top left and soya bean meal (44%) at the bottom left. Subtract across the diagonals, ignoring signs: maize parts = 44 - 16 = 28, soya parts = 16 - 9 = 7. Total parts = 28 + 7 = 35. Maize = 28/35 x 100 = 80 kg. Soya bean meal = 7/35 x 100 = 20 kg. Check: 80 x 0.09 + 20 x 0.44 = 7.2 + 8.8 = 16 kg of protein in 100 kg.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Square: 16 in the middle, maize 9 and soya 44 on the left. Maize = 44 - 16 = 28 parts. Soya = 16 - 9 = 7 parts. Total = 35 parts. Maize = 28/35 x 100 = 80 kg. Soya = 7/35 x 100 = 20 kg.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Square: 16 in the middle, maize 9 and soya 44 on the left"
+                },
+                {
+                  "point": 1,
+                  "quote": "Maize = 44 - 16 = 28 parts"
+                },
+                {
+                  "point": 2,
+                  "quote": "Soya = 16 - 9 = 7 parts. Total = 35 parts"
+                },
+                {
+                  "point": 3,
+                  "quote": "Maize = 28/35 x 100 = 80 kg"
+                },
+                {
+                  "point": 4,
+                  "quote": "Soya = 7/35 x 100 = 20 kg"
+                }
+              ],
+              "feedback": "Every step correct and clearly laid out. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Placing 16% at the centre of the Pearson square with maize (9%) and SBM (44%) at the corners, the differences are 28 for maize and 7 for SBM, total 35. Maize = 28/35 x 100 = 80 kg; SBM = 7/35 x 100 = 20 kg. Check: 7.2 + 8.8 = 16 kg protein.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Placing 16% at the centre of the Pearson square with maize (9%) and SBM (44%) at the corners"
+                },
+                {
+                  "point": 1,
+                  "quote": "the differences are 28 for maize"
+                },
+                {
+                  "point": 2,
+                  "quote": "7 for SBM, total 35"
+                },
+                {
+                  "point": 3,
+                  "quote": "Maize = 28/35 x 100 = 80 kg"
+                },
+                {
+                  "point": 4,
+                  "quote": "SBM = 7/35 x 100 = 20 kg"
+                }
+              ],
+              "feedback": "All correct, and checking the protein total was excellent practice."
+            },
+            {
+              "tier": "partial",
+              "text": "Maize = 44 - 16 = 28. Soya = 16 - 9 = 7. Total = 35. So maize is 28 kg and soya is 7 kg.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Maize = 44 - 16 = 28"
+                },
+                {
+                  "point": 2,
+                  "quote": "Soya = 16 - 9 = 7. Total = 35"
+                }
+              ],
+              "feedback": "Your parts are right, but they are parts, not kilograms. Divide each by the total (35) and multiply by 100: maize 80 kg, soya 20 kg."
+            },
+            {
+              "tier": "partial",
+              "text": "16 in the middle, 9 and 44 at the corners. Maize = 16 - 9 = 7, soya = 44 - 16 = 28. Maize = 7/35 x 100 = 20 kg and soya = 28/35 x 100 = 80 kg.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "16 in the middle, 9 and 44 at the corners"
+                }
+              ],
+              "feedback": "The square is set up correctly, but the parts are read across the diagonal: maize gets 44 - 16 = 28 and soya gets 16 - 9 = 7. Your answers are swapped; 80 kg of soya would give far too much protein.",
+              "unsure": true
+            },
+            {
+              "tier": "weak",
+              "text": "Add 9 and 44 to get 53. Half of 100 is 50 kg maize and 50 kg soya.",
+              "meets": [],
+              "feedback": "Equal amounts would give 26.5% protein, not 16%. Use the Pearson square: subtract across the diagonals to find the parts of each feed."
+            },
+            {
+              "tier": "weak",
+              "text": "Maize = 9 x 16 = 144 and soya = 44 x 16 = 704.",
+              "meets": [],
+              "feedback": "Multiplying the percentages does not work. Put 16 in the centre of a square, subtract across the diagonals, then turn the parts into kilograms out of 100."
+            }
+          ]
+        },
+        {
+          "prompt": "Explain what artificial insemination is, describe one method of collecting semen, and give two advantages and two disadvantages of AI for a dairy farmer at Iseyin crossing White Fulani cows with a Friesian bull.",
+          "markScheme": [
+            "AI is the introduction of semen collected from a male into the female's reproductive tract by artificial means (not natural mating)",
+            "Method of collection: artificial vagina, or electro-ejaculation, or massage",
+            "Advantage 1: semen from one superior (Friesian) bull can serve many cows / farmer need not keep a bull",
+            "Advantage 2: prevents spread of venereal disease, or semen can be stored/transported over long distances",
+            "Disadvantage 1: requires skilled personnel and equipment (expensive)",
+            "Disadvantage 2: success depends on accurate heat detection, or poor handling spreads disease/reduces conception"
+          ],
+          "modelAnswer": "Artificial insemination is placing semen, collected from a male, into the reproductive tract of a female on heat by hand, without natural mating. Semen can be collected by letting the bull mount a dummy cow while his penis is directed into an artificial vagina. For the Iseyin farmer, AI means one excellent Friesian bull can serve many cows, so the farmer does not need to buy and feed a bull, and it prevents the spread of venereal diseases. However, it needs trained inseminators and costly equipment such as liquid nitrogen tanks, and it fails if the farmer does not detect the heat accurately.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "AI is when semen is collected from a bull and put into the reproductive tract of a cow by man, without mating. The semen is collected using an artificial vagina. Advantages: the farmer does not need to keep a Friesian bull because the semen can be bought, and it prevents diseases spread by mating. Disadvantages: it needs trained people and costly equipment, and the farmer must detect the heat correctly or the cow will not conceive.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "AI is when semen is collected from a bull and put into the reproductive tract of a cow by man, without mating"
+                },
+                {
+                  "point": 1,
+                  "quote": "The semen is collected using an artificial vagina"
+                },
+                {
+                  "point": 2,
+                  "quote": "the farmer does not need to keep a Friesian bull because the semen can be bought"
+                },
+                {
+                  "point": 3,
+                  "quote": "it prevents diseases spread by mating"
+                },
+                {
+                  "point": 4,
+                  "quote": "it needs trained people and costly equipment"
+                },
+                {
+                  "point": 5,
+                  "quote": "the farmer must detect the heat correctly or the cow will not conceive"
+                }
+              ],
+              "feedback": "Clear definition, method and balanced advantages and disadvantages. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Artificial insemination is the deposition of semen into the female tract by artificial means. Collection is by electro-ejaculation, using a mild electric current. Advantages: one superior bull serves thousands of cows; frozen semen can be transported far. Disadvantages: skilled technicians are scarce, and accurate heat detection is needed.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Artificial insemination is the deposition of semen into the female tract by artificial means"
+                },
+                {
+                  "point": 1,
+                  "quote": "Collection is by electro-ejaculation"
+                },
+                {
+                  "point": 2,
+                  "quote": "one superior bull serves thousands of cows"
+                },
+                {
+                  "point": 3,
+                  "quote": "frozen semen can be transported far"
+                },
+                {
+                  "point": 4,
+                  "quote": "skilled technicians are scarce"
+                },
+                {
+                  "point": 5,
+                  "quote": "accurate heat detection is needed"
+                }
+              ],
+              "feedback": "Precise and complete. All six marks."
+            },
+            {
+              "tier": "partial",
+              "text": "AI is putting semen into the cow artificially. It is good because one bull can serve many cows. It is expensive.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "AI is putting semen into the cow artificially"
+                },
+                {
+                  "point": 2,
+                  "quote": "one bull can serve many cows"
+                },
+                {
+                  "point": 4,
+                  "quote": "It is expensive"
+                }
+              ],
+              "feedback": "Definition, one advantage and one disadvantage earn marks. Describe a collection method (artificial vagina), and add a second advantage and a second disadvantage."
+            },
+            {
+              "tier": "partial",
+              "text": "Semen is collected from the bull with an artificial vagina and injected into the cow. AI makes cows produce more milk immediately. Disadvantage: it needs skilled workers.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Semen is collected from the bull with an artificial vagina"
+                },
+                {
+                  "point": 4,
+                  "quote": "it needs skilled workers"
+                }
+              ],
+              "feedback": "Collection and one disadvantage are right. AI does not raise milk at once; the gain comes in the cross-bred daughters. Give real advantages, such as one bull serving many cows."
+            },
+            {
+              "tier": "weak",
+              "text": "Artificial insemination is when the cow is given injection to make it produce more milk.",
+              "meets": [],
+              "feedback": "That describes a hormone injection, not AI. AI is placing semen from a chosen bull into the cow without mating. Reread the section and try again."
+            },
+            {
+              "tier": "weak",
+              "text": "AI means the Friesian bull is brought to mate with the White Fulani cows. Advantage is that the calves will be strong.",
+              "meets": [],
+              "feedback": "That is natural mating. In AI only the semen is brought, collected beforehand and placed in the cow by a trained inseminator."
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "topic": "Livestock diseases, parasites and fish farming",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe the causal organism, symptoms, transmission, prevention and control of named viral, bacterial, fungal and protozoan diseases of livestock;\n2. describe the life cycle, effects and control of tapeworm, liver fluke, roundworm, ticks and lice;\n3. state general methods of preventing disease: quarantine, vaccination, hygiene and breeding for resistance;\n4. explain aquaculture and fish farming, the siting, establishment and management of a fish pond, and the harvesting, processing and preservation of fish.\n\n## Materials\n\nTicks in a labelled bottle; a picture of a Newcastle-infected bird with twisted neck; a vaccine vial and a poultry drinker; a chart of the tapeworm life cycle; a picture of a concrete catfish pond and a smoking kiln.\n\n## Starter (5 minutes)\n\nAsk: a poultry farmer at Ogbomoso lost 400 birds in three days, with twisted necks and green droppings. What could have saved them?\n\n## Development\n\n1. Teach one disease from each group in a table: Newcastle and foot-and-mouth (viral); anthrax and brucellosis (bacterial); ringworm (fungal); trypanosomiasis and coccidiosis (protozoan).\n2. Define parasite; separate endoparasites and ectoparasites. Trace the tapeworm life cycle through the pig. Discuss ticks and lice and their control.\n3. List general methods of prevention.\n4. Define aquaculture. Discuss siting, construction, liming, fertilising, stocking, feeding, aeration and harvesting of a pond, and fish processing and preservation. Mention fishing regulations and fishing gear.\n\n## Class activity\n\nIn groups, students plan a small catfish pond: where to site it, how many fingerlings to stock, what to feed and how to market the fish.\n\n## Evaluation\n\n1. Which disease is spread by tsetse flies?\n2. Name the intermediate host of the liver fluke.\n3. Give two conditions for siting a fish pond.\n\n## Assignment\n\nWorksheet questions 1 to 4, due Friday.",
+      "reading": {
+        "title": "Keeping animals healthy, and farming fish",
+        "content": "# Major livestock diseases\n\n| Disease | Type | Animals | Spread | Signs | Control |\n| --- | --- | --- | --- | --- | --- |\n| Newcastle | Virus | Poultry | Contact, air, feed, drinkers | Gasping, twisted neck, green diarrhoea, sudden deaths | Vaccinate; isolate; no cure |\n| Foot and mouth | Virus | Cattle, goats, pigs | Contact, air | Blisters on mouth and feet, drooling, lameness | Vaccinate; quarantine |\n| Anthrax | Bacterium | Cattle, sheep | Spores in soil and carcasses | Sudden death, blood from body openings | Vaccinate; burn or bury carcasses deeply |\n| Brucellosis | Bacterium | Cattle, goats | Infected milk, aborted materials | Abortion, retained afterbirth | Test and slaughter; vaccinate |\n| Ringworm | Fungus | Cattle, goats | Contact | Round, hairless, scaly patches | Antifungal ointment; isolate |\n| Trypanosomiasis | Protozoan | Cattle | Tsetse fly | Anaemia, weight loss, fever | Trypanocides; clear tsetse bush; resistant N'Dama |\n| Coccidiosis | Protozoan | Poultry, rabbits | Contaminated litter | Bloody droppings, ruffled feathers | Coccidiostats in water; dry litter |\n\nDiseases reduce growth, milk and eggs, kill animals, cost money to treat, and some, like anthrax and brucellosis, infect people.\n\n# Parasites\n\nA **parasite** lives on or in another organism, the **host**, and harms it.\n\n- **Endoparasites** live inside: **tapeworm** (in the intestine; eggs in faeces are eaten by pigs or cattle, form cysts in the muscle, and people are infected by eating undercooked meat); **liver fluke** (in the liver; its intermediate host is a water snail); **roundworm** (in the intestine; eggs swallowed from soil or feed).\n- **Ectoparasites** live outside: **ticks** suck blood and spread diseases; **lice** cause itching, hair loss and restlessness.\n\nEffects: anaemia, weight loss, poor growth, low production and spread of disease. Control: deworming (drenching), dipping or spraying for ticks and lice, rotational grazing, clean water, snail control, meat inspection.\n\n# General prevention\n\n**Quarantine** new animals; **vaccinate** (inoculate) on schedule; keep pens, feeders and drinkers clean; give balanced feed; avoid overcrowding; **breed for resistance**.\n\n# Aquaculture\n\n**Aquaculture** is the rearing of aquatic organisms such as fish, shrimps and crabs under controlled conditions. **Fish farming** supplies cheap protein, income and employment, and uses land unsuitable for crops.\n\n**Siting a pond**: a reliable supply of clean water; clay or loamy soil that holds water; gently sloping land for draining; away from flooding and pollution; near roads and market; secure.\n\n**Establishment and management**: clear, dig and compact; lime the bottom; fertilize to grow plankton; fill and stock with fingerlings (catfish at about 10 per square metre in a concrete tank with water flow); feed pelleted feed; keep water aerated and clean; check for disease and predators.\n\n**Harvesting** by draining the pond or with nets. **Processing and preservation**: smoking in a kiln, sun-drying, salting, freezing and canning.\n\n**Regulations** protect stocks: minimum net mesh size, closed seasons, and bans on fishing with chemicals or explosives. **Gear**: nets (cast, gill, seine), hook and line, traps."
+      },
+      "cards": [
+        {
+          "front": "Newcastle disease",
+          "back": "A viral disease of poultry: gasping, twisted neck, green diarrhoea. Prevented by vaccination."
+        },
+        {
+          "front": "Trypanosomiasis",
+          "back": "A protozoan disease of cattle spread by the tsetse fly; causes anaemia and wasting."
+        },
+        {
+          "front": "Coccidiosis",
+          "back": "A protozoan disease of poultry and rabbits causing bloody droppings; spread through wet litter."
+        },
+        {
+          "front": "Endoparasite",
+          "back": "A parasite that lives inside the host, such as a tapeworm or liver fluke."
+        },
+        {
+          "front": "Intermediate host of the liver fluke",
+          "back": "A water snail."
+        },
+        {
+          "front": "Quarantine",
+          "back": "Keeping new or sick animals apart from the herd until they are shown to be healthy."
+        },
+        {
+          "front": "Aquaculture",
+          "back": "Rearing fish and other aquatic organisms under controlled conditions."
+        },
+        {
+          "front": "Soil for a fish pond",
+          "back": "Clay or loamy soil that holds water."
+        },
+        {
+          "front": "Two methods of preserving fish",
+          "back": "Smoking and sun-drying (also salting and freezing)."
+        }
+      ],
+      "closed": [
+        {
+          "prompt": "Birds on a poultry farm at Ogbomoso gasp, twist their necks and pass green droppings, and many die suddenly. The most likely disease is",
+          "options": [
+            "coccidiosis",
+            "Newcastle disease",
+            "aspergillosis",
+            "ringworm"
+          ],
+          "answer": "B"
+        },
+        {
+          "prompt": "Which of these diseases is caused by a protozoan and spread by the tsetse fly?",
+          "options": [
+            "Trypanosomiasis",
+            "Anthrax",
+            "Foot and mouth disease",
+            "Brucellosis"
+          ],
+          "answer": "A"
+        },
+        {
+          "prompt": "The intermediate host of the liver fluke is the",
+          "options": ["pig", "tick", "mosquito", "water snail"],
+          "answer": "D"
+        },
+        {
+          "prompt": "Which soil is best for the bottom of an earthen fish pond?",
+          "options": ["Sandy soil", "Gravel", "Clay soil", "Laterite"],
+          "answer": "C"
+        },
+        {
+          "prompt": "Keeping newly bought goats apart from the herd for some weeks before mixing them is called",
+          "options": ["culling", "dipping", "quarantine", "drenching"],
+          "answer": "C"
+        }
+      ],
+      "open": [
+        {
+          "prompt": "For Newcastle disease of poultry, state the causal organism, how it spreads, three symptoms, and how a farmer can prevent it.",
+          "markScheme": [
+            "Causal organism: virus (paramyxovirus)",
+            "Spread by contact with infected birds, droppings, contaminated feed/water/equipment, or air",
+            "Symptom 1: gasping/difficult breathing, coughing",
+            "Symptom 2: twisted neck/paralysis (nervous signs)",
+            "Symptom 3: greenish watery diarrhoea, or drop in egg production, or sudden death",
+            "Prevention: vaccinate birds on schedule (e.g. Lasota/Komarov), with isolation and hygiene"
+          ],
+          "modelAnswer": "Newcastle disease is caused by a virus. It spreads through contact with sick birds and their droppings, through contaminated feed, water and equipment, and through the air. Infected birds gasp for breath, twist their necks and become paralysed, and pass greenish watery droppings; egg laying stops and many die suddenly. There is no cure, so the farmer must vaccinate the birds on schedule, isolate new birds, and keep the house and drinkers clean.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Newcastle is caused by a virus. It spreads when healthy birds contact sick birds, their droppings or contaminated water. Symptoms: the birds gasp for air, their necks twist, and they have green diarrhoea. Prevention is by vaccination with Lasota vaccine in the drinking water and keeping the pen clean.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Newcastle is caused by a virus"
+                },
+                {
+                  "point": 1,
+                  "quote": "It spreads when healthy birds contact sick birds, their droppings or contaminated water"
+                },
+                {
+                  "point": 2,
+                  "quote": "the birds gasp for air"
+                },
+                {
+                  "point": 3,
+                  "quote": "their necks twist"
+                },
+                {
+                  "point": 4,
+                  "quote": "they have green diarrhoea"
+                },
+                {
+                  "point": 5,
+                  "quote": "Prevention is by vaccination with Lasota vaccine in the drinking water"
+                }
+              ],
+              "feedback": "Every part correct, and naming the Lasota vaccine shows real knowledge. Full marks."
+            },
+            {
+              "tier": "full",
+              "text": "Causal organism: paramyxovirus. Transmission: airborne droplets and contaminated feed, drinkers and equipment. Symptoms include respiratory distress, torticollis (twisted neck), and a sudden drop in egg production with high mortality. Control: routine vaccination, isolation of new stock and strict farm hygiene.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Causal organism: paramyxovirus"
+                },
+                {
+                  "point": 1,
+                  "quote": "airborne droplets and contaminated feed, drinkers and equipment"
+                },
+                {
+                  "point": 2,
+                  "quote": "respiratory distress"
+                },
+                {
+                  "point": 3,
+                  "quote": "torticollis (twisted neck)"
+                },
+                {
+                  "point": 4,
+                  "quote": "a sudden drop in egg production with high mortality"
+                },
+                {
+                  "point": 5,
+                  "quote": "routine vaccination, isolation of new stock and strict farm hygiene"
+                }
+              ],
+              "feedback": "Accurate and complete, with the correct technical terms. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "It is caused by a virus. The birds have twisted neck and green droppings. The farmer should give them antibiotics.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "It is caused by a virus"
+                },
+                {
+                  "point": 3,
+                  "quote": "The birds have twisted neck"
+                },
+                {
+                  "point": 4,
+                  "quote": "green droppings"
+                }
+              ],
+              "feedback": "Organism and two symptoms are right. Antibiotics do not kill viruses; the disease is prevented by vaccination. Also say how it spreads."
+            },
+            {
+              "tier": "partial",
+              "text": "Newcastle spreads through contaminated drinkers and droppings. The birds gasp and die. Vaccinate the birds.",
+              "meets": [
+                {
+                  "point": 1,
+                  "quote": "Newcastle spreads through contaminated drinkers and droppings"
+                },
+                {
+                  "point": 2,
+                  "quote": "The birds gasp"
+                },
+                {
+                  "point": 5,
+                  "quote": "Vaccinate the birds"
+                }
+              ],
+              "feedback": "Spread, one symptom and vaccination are right. Name the organism (a virus) and add two more symptoms, such as twisted neck and green diarrhoea."
+            },
+            {
+              "tier": "weak",
+              "text": "Newcastle is caused by worms in the intestine of the birds. The farmer should deworm them.",
+              "meets": [],
+              "feedback": "Newcastle disease is caused by a virus, not worms. Learn its spread, its signs (gasping, twisted neck, green droppings) and its prevention by vaccination."
+            },
+            {
+              "tier": "weak",
+              "text": "It is caused by a protozoan in wet litter. Birds pass bloody droppings.",
+              "meets": [],
+              "feedback": "That describes coccidiosis. Newcastle disease is viral; its signs are gasping, twisted neck and green diarrhoea. Compare the two in the table."
+            }
+          ]
+        },
+        {
+          "prompt": "A youth group at Abeokuta wants to start a catfish pond. State four conditions for siting the pond, and describe how they should stock, feed and harvest it and preserve the fish for sale.",
+          "markScheme": [
+            "Siting 1: reliable supply of clean (unpolluted) water",
+            "Siting 2: clay/loamy soil that holds water, or gently sloping land for drainage",
+            "Siting 3 and 4: any two others (away from flooding/pollution, near road/market, security)",
+            "Stocking: prepare/lime/fill the pond, then stock healthy fingerlings at the right density",
+            "Feeding: give pelleted/balanced fish feed regularly (and keep water clean/aerated)",
+            "Harvesting and preservation: drain or net the pond at market size (about 6 months), then smoke, dry, salt or freeze the fish"
+          ],
+          "modelAnswer": "The pond should be sited where there is a reliable supply of clean water, on clay or loamy soil that holds water, on gently sloping land so it can be drained, and near a road and market. After digging, the pond is limed and filled, then stocked with healthy catfish fingerlings at the right density. The fish are fed pelleted feed twice a day, and the water is changed or aerated to keep it clean. After about six months, when the fish reach market size, the pond is drained or netted, and fish not sold fresh are smoked in a kiln or frozen.",
+          "answers": [
+            {
+              "tier": "full",
+              "text": "Conditions: there must be enough clean water all year; the soil should be clayey so it holds water; the place should not flood; it should be near a road to the market. They should lime the pond, fill it with water and stock healthy fingerlings. They should feed the fish with floating pellets twice a day and change the water when it smells. After about six months they drain the pond and harvest the fish, then smoke the ones not sold fresh in a smoking kiln.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "there must be enough clean water all year"
+                },
+                {
+                  "point": 1,
+                  "quote": "the soil should be clayey so it holds water"
+                },
+                {
+                  "point": 2,
+                  "quote": "the place should not flood; it should be near a road to the market"
+                },
+                {
+                  "point": 3,
+                  "quote": "They should lime the pond, fill it with water and stock healthy fingerlings"
+                },
+                {
+                  "point": 4,
+                  "quote": "They should feed the fish with floating pellets twice a day and change the water when it smells"
+                },
+                {
+                  "point": 5,
+                  "quote": "After about six months they drain the pond and harvest the fish, then smoke the ones not sold fresh in a smoking kiln"
+                }
+              ],
+              "feedback": "A complete plan from siting to sale. Every mark earned."
+            },
+            {
+              "tier": "full",
+              "text": "Siting: reliable water source, water-retentive clay loam, gentle slope for draining, and good security. Stocking: after liming and fertilising, stock fingerlings at about 10 per square metre. Feeding: commercial pelleted feed at a percentage of body weight, with aeration. Harvest at 6 months by netting or draining; preserve by smoking, sun-drying or freezing.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "reliable water source"
+                },
+                {
+                  "point": 1,
+                  "quote": "water-retentive clay loam, gentle slope for draining"
+                },
+                {
+                  "point": 2,
+                  "quote": "good security"
+                },
+                {
+                  "point": 3,
+                  "quote": "after liming and fertilising, stock fingerlings at about 10 per square metre"
+                },
+                {
+                  "point": 4,
+                  "quote": "commercial pelleted feed at a percentage of body weight, with aeration"
+                },
+                {
+                  "point": 5,
+                  "quote": "Harvest at 6 months by netting or draining; preserve by smoking, sun-drying or freezing"
+                }
+              ],
+              "feedback": "Precise and complete, with stocking density and feeding rate. Excellent."
+            },
+            {
+              "tier": "partial",
+              "text": "The pond should be near water and the soil should be clay. They should put fingerlings and feed them. When the fish are big they should harvest them.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "The pond should be near water"
+                },
+                {
+                  "point": 1,
+                  "quote": "the soil should be clay"
+                },
+                {
+                  "point": 3,
+                  "quote": "They should put fingerlings"
+                }
+              ],
+              "feedback": "Water, soil and stocking earn marks. Give two more siting conditions (no flooding, near a market), say what the fish are fed, and how they are harvested and preserved."
+            },
+            {
+              "tier": "partial",
+              "text": "Site it near a river so water is free, and near the market. Stock fingerlings, feed with pellets. Harvest after six months and sell them fresh.",
+              "meets": [
+                {
+                  "point": 0,
+                  "quote": "Site it near a river so water is free"
+                },
+                {
+                  "point": 3,
+                  "quote": "Stock fingerlings"
+                },
+                {
+                  "point": 4,
+                  "quote": "feed with pellets"
+                }
+              ],
+              "feedback": "Water, stocking and feeding are right. A site beside a river may flood, so say away from flooding. Name the soil, and a preservation method (smoking) for fish not sold fresh."
+            },
+            {
+              "tier": "weak",
+              "text": "Dig the pond anywhere in the compound. Catch fish from the river and put them inside. Give them bread.",
+              "meets": [],
+              "feedback": "The site matters: it needs clean water, clay soil and no flooding. Stock healthy fingerlings from a hatchery and feed balanced fish pellets."
+            },
+            {
+              "tier": "weak",
+              "text": "The pond should be sited on sandy soil so the water can drain away quickly.",
+              "meets": [],
+              "feedback": "Sandy soil would let the pond leak dry. A pond needs clay soil that holds water. Then describe stocking, feeding, harvesting and preserving."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -2005,6 +2005,22 @@ export function createCoreRoutesPlugin(
           setResponseStatus(event, 401);
           return { error: "unauthorized" };
         }
+        // One setting for the whole deployment: only an org owner or admin.
+        const orgCtx = await getOrgContext(event).catch(() => null);
+        const { canUpdateAgentAppModelDefaultSettings } =
+          await import("../agent/app-model-defaults.js");
+        if (
+          !(await canUpdateAgentAppModelDefaultSettings(
+            session.email,
+            orgCtx?.orgId ?? session.orgId ?? null,
+          ))
+        ) {
+          setResponseStatus(event, 403);
+          return {
+            error:
+              "Only organization owners and admins can disconnect the agent engine.",
+          };
+        }
         try {
           await deleteSetting("agent-engine");
           return { ok: true };

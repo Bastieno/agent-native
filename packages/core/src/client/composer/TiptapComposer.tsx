@@ -72,6 +72,13 @@ import {
 
 export interface TiptapComposerHandle {
   focus(): void;
+  /**
+   * Put text in the composer without sending it.
+   *
+   * For callers that offer the user a prepared message to look over and
+   * change — `sendToAgentChat({ submit: false })` — rather than one to run.
+   */
+  setDraft(text: string): void;
 }
 
 export type ComposerSubmitIntent = "immediate" | "queued";
@@ -1315,6 +1322,22 @@ export function TiptapComposer({
   useImperativeHandle(focusRef, () => ({
     focus() {
       editor?.commands.focus("end");
+    },
+    setDraft(text: string) {
+      if (!editor) return;
+      // Replace whatever is there: a prepared message is the whole request,
+      // not an addition to a half-typed one.
+      editor.commands.setContent(
+        text
+          .split("\n")
+          .map((line) =>
+            line
+              ? `<p>${line.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>`
+              : "<p></p>",
+          )
+          .join(""),
+      );
+      editor.commands.focus("end");
     },
   }));
 
