@@ -154,3 +154,16 @@
     text-decoration: none !important;
   }
 }
+
+/* Phones: 100vh is the height with the browser's address bar tucked away, so a
+   full-height page is taller than what is on screen. The extra becomes a
+   second, outer scroll: reach the bottom of the page and the next swipe
+   carries the whole app up, taking the header with it. 100dvh follows the bar
+   as it shows and hides, so the app is exactly as tall as the screen. This
+   covers the portal shell and the assistant panel around it, both of which
+   are `h-screen`. Browsers without dvh keep 100vh. */
+@supports (height: 100dvh) {
+  .h-screen {
+    height: 100dvh;
+  }
+}
