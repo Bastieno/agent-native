@@ -3,7 +3,7 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { firstNameOrNull } from "@shared/person-name";
 import { useRole } from "@/hooks/use-role";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import {
   IconUsers,
@@ -11,29 +11,63 @@ import {
   IconBook,
   IconMessageDots,
   IconPointFilled,
+  IconChevronDown,
 } from "@tabler/icons-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 function StatCard({
   label,
   value,
   icon: Icon,
+  note,
 }: {
   label: string;
   value: number | string;
   icon: React.ElementType;
+  /** One fact worth knowing about this count, shown only when there is one. */
+  note?: string | null;
 }) {
   return (
-    <div className="rounded-lg border bg-card p-4 flex items-center gap-4">
+    <div className="flex h-full items-center gap-4 rounded-lg border bg-card p-4">
       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
         <Icon size={20} />
       </div>
       <div>
         <p className="text-2xl font-semibold">{value}</p>
         <p className="text-xs text-muted-foreground">{label}</p>
+        {note && <p className="mt-0.5 text-xs text-amber-600">{note}</p>}
       </div>
     </div>
   );
 }
+
+// One read feeds the counters' notes and the Needs attention list. The list
+// itself is made on the server (`get-school-attention`), so the page and the
+// assistant always agree on what needs doing and in what order.
+function useAttention() {
+  return useQuery({
+    queryKey: ["admin-overview-attention"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/get-school-attention"),
+      );
+      if (!res.ok) return null;
+      return res.json();
+    },
+  });
+}
+
+/** Where each kind of item is fixed. */
+const PAGE_ROUTE: Record<string, string> = {
+  classes: "/admin/classes",
+  curriculum: "/admin/curriculum",
+  "lesson notes": "/admin/lessons",
+  students: "/admin/students",
+};
 
 export default function AdminOverview() {
   const { sync } = useNavigationState();
@@ -49,6 +83,10 @@ export default function AdminOverview() {
       return res.json();
     },
   });
+
+  const { data: attention } = useAttention();
+  const noYearGroup: number = attention?.counts?.learnersWithoutYearGroup ?? 0;
+  const noTeacher: number = attention?.counts?.classesWithoutTeacher ?? 0;
 
   const isNewSchool = !schoolId;
 
@@ -110,7 +148,7 @@ export default function AdminOverview() {
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             <Link
               to="/admin/staff"
-              className="rounded-lg hover:opacity-80 transition-opacity"
+              className="h-full rounded-lg hover:opacity-80 transition-opacity"
             >
               <StatCard
                 label="Staff Members"
@@ -120,27 +158,31 @@ export default function AdminOverview() {
             </Link>
             <Link
               to="/admin/students"
-              className="rounded-lg hover:opacity-80 transition-opacity"
+              className="h-full rounded-lg hover:opacity-80 transition-opacity"
             >
               <StatCard
                 label="Students"
                 value={stats?.studentCount ?? "—"}
                 icon={IconUsers}
+                note={
+                  noYearGroup ? `${noYearGroup} without a year group` : null
+                }
               />
             </Link>
             <Link
               to="/admin/classes"
-              className="rounded-lg hover:opacity-80 transition-opacity"
+              className="h-full rounded-lg hover:opacity-80 transition-opacity"
             >
               <StatCard
                 label="Classes"
                 value={stats?.classCount ?? "—"}
                 icon={IconSchool}
+                note={noTeacher ? `${noTeacher} without a teacher` : null}
               />
             </Link>
             <Link
               to="/admin/curriculum"
-              className="rounded-lg hover:opacity-80 transition-opacity"
+              className="h-full rounded-lg hover:opacity-80 transition-opacity"
             >
               <StatCard
                 label="Subjects"
@@ -172,80 +214,19 @@ export default function AdminOverview() {
  * rather than an empty dashboard.
  */
 function NeedsAttention() {
-  const { data: coverage } = useQuery({
-    queryKey: ["admin-overview-coverage"],
-    queryFn: async () => {
-      const res = await fetch(
-        agentNativePath("/_agent-native/actions/get-lesson-note-coverage"),
-      );
-      if (!res.ok) return null;
-      return res.json();
-    },
-  });
-  const { data: records } = useQuery({
-    queryKey: ["admin-overview-records"],
-    queryFn: async () => {
-      const res = await fetch(
-        agentNativePath("/_agent-native/actions/check-student-records"),
-      );
-      if (!res.ok) return null;
-      return res.json();
-    },
-  });
+  const { data: attention } = useAttention();
+  const [showAll, setShowAll] = useState(false);
 
-  const totals = coverage?.totals;
-  const term = coverage?.term?.name;
-  const plural = (n: number, one: string, many: string) =>
-    `${n} ${n === 1 ? one : many}`;
-
-  const items: { text: string; to: string }[] = [];
-  if (totals?.withoutTeacher) {
-    items.push({
-      text: `${plural(totals.withoutTeacher, "class has", "classes have")} no teacher, so no work can be published to ${totals.withoutTeacher === 1 ? "it" : "them"}`,
-      to: "/admin/classes",
-    });
-  }
-  if (totals?.noCurriculum) {
-    items.push({
-      text: `${plural(totals.noCurriculum, "class has", "classes have")} no curriculum for ${term ?? "this term"}`,
-      to: "/admin/curriculum",
-    });
-  }
-  const behind = (totals?.withGaps ?? 0) + (totals?.withNothing ?? 0);
-  if (behind > 0) {
-    items.push({
-      text: `${plural(behind, "class is", "classes are")} behind on lesson notes`,
-      to: "/admin/lessons",
-    });
-  }
-  // Written but not declared ready is its own state, and it is the one a
-  // head teacher is asking about on a Sunday: the notes exist, but nobody
-  // has said they are ready to teach.
-  const written = (totals?.classes ?? 0) - (totals?.noCurriculum ?? 0);
-  const notReady = Math.max(0, written - behind - (totals?.ready ?? 0));
-  if (notReady > 0) {
-    items.push({
-      text: `${plural(notReady, "class has", "classes have")} lesson notes written but not yet marked ready`,
-      to: "/admin/lessons",
-    });
-  }
-  if (records?.withoutYearGroup?.length) {
-    items.push({
-      text: `${plural(records.withoutYearGroup.length, "learner has", "learners have")} no year group`,
-      to: "/admin/students",
-    });
-  }
-  for (const field of records?.byField ?? []) {
-    if (field.missingCount > 0) {
-      items.push({
-        text: `${plural(field.missingCount, "learner has", "learners have")} no ${field.label}`,
-        to: "/admin/students",
-      });
-    }
-  }
+  const items: { text: string; to: string; blocks?: boolean }[] = (
+    attention?.items ?? []
+  ).map((i: { text: string; page: string; blocks: boolean }) => ({
+    text: i.text,
+    to: PAGE_ROUTE[i.page] ?? "/admin",
+    blocks: i.blocks,
+  }));
 
   // Still loading, and nothing to say yet.
-  if (!coverage && !records) return null;
+  if (!attention) return null;
 
   return (
     <div className="rounded-lg border bg-card p-6">
@@ -256,25 +237,61 @@ function NeedsAttention() {
           lesson notes are written, and every learner&apos;s record is complete.
         </p>
       ) : (
-        <ul className="space-y-2">
-          {items.map((item) => (
-            <li key={item.text}>
-              <Link
-                to={item.to}
-                className="group flex items-start gap-2 text-sm text-muted-foreground hover:text-foreground"
-              >
-                <IconPointFilled
+        <Collapsible open={showAll} onOpenChange={setShowAll}>
+          <ul className="space-y-2">
+            {items.slice(0, VISIBLE).map((item) => (
+              <AttentionRow key={item.text} item={item} />
+            ))}
+          </ul>
+          {items.length > VISIBLE && (
+            <>
+              <CollapsibleContent>
+                <ul className="mt-2 space-y-2">
+                  {items.slice(VISIBLE).map((item) => (
+                    <AttentionRow key={item.text} item={item} />
+                  ))}
+                </ul>
+              </CollapsibleContent>
+              <CollapsibleTrigger className="mt-3 flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+                {showAll ? "Show less" : `${items.length - VISIBLE} more`}
+                <IconChevronDown
                   size={14}
-                  className="mt-0.5 shrink-0 text-muted-foreground/60"
+                  className={showAll ? "rotate-180" : ""}
                 />
-                <span className="underline-offset-2 group-hover:underline">
-                  {item.text}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+              </CollapsibleTrigger>
+            </>
+          )}
+        </Collapsible>
       )}
     </div>
+  );
+}
+
+const VISIBLE = 3;
+
+function AttentionRow({
+  item,
+}: {
+  item: { text: string; to: string; blocks?: boolean };
+}) {
+  return (
+    <li>
+      <Link
+        to={item.to}
+        className={`group flex items-start gap-2 text-sm hover:text-foreground ${
+          item.blocks ? "text-foreground" : "text-muted-foreground"
+        }`}
+      >
+        <IconPointFilled
+          size={14}
+          className={`mt-0.5 shrink-0 ${
+            item.blocks ? "text-amber-500" : "text-muted-foreground/60"
+          }`}
+        />
+        <span className="underline-offset-2 group-hover:underline">
+          {item.text}
+        </span>
+      </Link>
+    </li>
   );
 }

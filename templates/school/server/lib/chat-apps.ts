@@ -131,6 +131,7 @@ export const CHAT_APP_EXPOSURE: Record<
     ...CURRICULUM,
     ...TIMETABLE,
     "get-school-stats",
+    "get-school-attention",
     "get-lesson-note-coverage",
     ...ALWAYS,
   ]),

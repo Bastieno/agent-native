@@ -250,6 +250,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   // or a teacher checking their own — the action narrows to the caller's
   // classes, so the same question is safe to ask from either portal.
   "get-lesson-note-coverage": STAFF,
+  "get-school-attention": ADMIN,
   "get-lesson-note": EVERYONE, // handler restricts students to their own finalized lessons
   "create-lesson-note": STAFF,
   "update-lesson-note": STAFF,
