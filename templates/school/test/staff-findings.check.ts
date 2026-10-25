@@ -14,6 +14,7 @@ const fact = (over: Partial<ClassFact>): ClassFact => ({
   average: 60,
   othersAverage: 60,
   othersCount: 2,
+  othersWithOtherTeachers: 2,
   papersSet: 4,
   awaitingMarks: [],
   unpublished: [],
@@ -26,14 +27,27 @@ const fact = (over: Partial<ClassFact>): ClassFact => ({
   const f = teacherFindingsFor({
     passMark: 50,
     classes: [
-      fact({ classId: "a", name: "JSS1A Maths", average: 38, othersAverage: 52 }),
-      fact({ classId: "b", name: "JSS2A Maths", average: 41, othersAverage: 55 }),
+      fact({
+        classId: "a",
+        name: "JSS1A Maths",
+        average: 38,
+        othersAverage: 52,
+      }),
+      fact({
+        classId: "b",
+        name: "JSS2A Maths",
+        average: 41,
+        othersAverage: 55,
+      }),
     ],
   });
   const all = f.concerns.find((c) => c.kind === "all-below-pass");
   assert.ok(all, "all-below-pass raised");
   assert.equal(all!.evidence.length, 2);
-  assert.ok(!f.concerns.some((c) => c.kind === "below-pass"), "not repeated per class");
+  assert.ok(
+    !f.concerns.some((c) => c.kind === "below-pass"),
+    "not repeated per class",
+  );
   assert.ok(f.concerns.some((c) => c.kind === "behind-others"));
   assert.ok(f.next.some((n) => /ask the teacher/i.test(n)));
 }
@@ -42,7 +56,10 @@ const fact = (over: Partial<ClassFact>): ClassFact => ({
 {
   const f = teacherFindingsFor({
     passMark: 50,
-    classes: [fact({ name: "A", average: 40, othersAverage: 42 }), fact({ name: "B", average: 70, othersAverage: 68 })],
+    classes: [
+      fact({ name: "A", average: 40, othersAverage: 42 }),
+      fact({ name: "B", average: 70, othersAverage: 68 }),
+    ],
   });
   assert.equal(f.concerns.filter((c) => c.kind === "below-pass").length, 1);
   assert.ok(!f.concerns.some((c) => c.kind === "all-below-pass"));
@@ -52,12 +69,16 @@ const fact = (over: Partial<ClassFact>): ClassFact => ({
 {
   const recent = teacherFindingsFor({
     passMark: 50,
-    classes: [fact({ awaitingMarks: [{ title: "Test 1", count: 5, oldestDays: 3 }] })],
+    classes: [
+      fact({ awaitingMarks: [{ title: "Test 1", count: 5, oldestDays: 3 }] }),
+    ],
   });
   assert.ok(!recent.concerns.some((c) => c.kind === "marking-waiting"));
   const old = teacherFindingsFor({
     passMark: 50,
-    classes: [fact({ awaitingMarks: [{ title: "Test 1", count: 5, oldestDays: 9 }] })],
+    classes: [
+      fact({ awaitingMarks: [{ title: "Test 1", count: 5, oldestDays: 9 }] }),
+    ],
   });
   const m = old.concerns.find((c) => c.kind === "marking-waiting");
   assert.ok(m && /9 days/.test(m.text));
@@ -80,14 +101,25 @@ const fact = (over: Partial<ClassFact>): ClassFact => ({
       { name: "Bayo", percentage: null, nothingHandedIn: true },
       { name: "Chi", percentage: 70, nothingHandedIn: false },
     ],
-    papers: [{ title: "Test 1", marked: 14, average: 31, handedIn: 14, enrolled: 15 }],
+    papers: [
+      { title: "Test 1", marked: 14, average: 31, handedIn: 14, enrolled: 15 },
+    ],
   });
   const kinds = f.concerns.map((c) => c.kind);
-  for (const k of ["below-pass", "behind-others", "learners-below-pass", "nothing-handed-in", "weak-papers"]) {
+  for (const k of [
+    "below-pass",
+    "behind-others",
+    "learners-below-pass",
+    "nothing-handed-in",
+    "weak-papers",
+  ]) {
     assert.ok(kinds.includes(k as any), `${k} raised`);
   }
   const text = JSON.stringify(f);
-  assert.ok(!/because|due to|lazy|ability|struggl/i.test(text), "no causes or labels");
+  assert.ok(
+    !/because|due to|lazy|ability|struggl/i.test(text),
+    "no causes or labels",
+  );
 }
 
 console.log("staff-findings: ok");

@@ -288,7 +288,7 @@ export default function AdminClass() {
           ? ", with work not handed in counted as zero"
           : ", with work not handed in left out of the average"}
         . "Others" is the mean of the school's other classes in the same subject
-        and year group with a different teacher.
+        and year group.
       </p>
     </div>
   );

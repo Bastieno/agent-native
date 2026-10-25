@@ -763,8 +763,8 @@ suggest asking the subject teacher.
 `get-class-profile --classId <id>`. The teacher's gives their classes and
 load, what is waiting on them (handed-in papers not marked, marks not
 published, lesson notes not written) and findings, each class's average set
-beside the school's other classes in the same subject and year group with a
-different teacher. The class's adds its teachers, every learner's figure
+beside the school's other classes in the same subject and year group,
+saying whether they share the teacher. The class's adds its teachers, every learner's figure
 (lowest first) and every paper's average and hand-in count. Both are counted
 exactly as a learner's Grades page and the report card count, so quote the
 figures and do not recompute them. Lead with the findings, in plain words,

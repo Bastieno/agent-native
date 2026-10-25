@@ -214,11 +214,15 @@ async function loadFacts(
         (p) =>
           p.id !== r.id &&
           p.subjectId === r.subjectId &&
-          p.gradeLevelId === r.gradeLevelId &&
-          p.teacher !== r.teacher,
+          p.gradeLevelId === r.gradeLevelId,
       )
-      .map((p) => averages.get(p.id)?.exact ?? null)
-      .filter((v): v is number => v !== null);
+      .map((p) => ({
+        exact: averages.get(p.id)?.exact ?? null,
+        otherTeacher: p.teacher !== r.teacher,
+      }))
+      .filter(
+        (p): p is { exact: number; otherTeacher: boolean } => p.exact !== null,
+      );
     const cov = coverageOf.get(r.id);
     const avg = averages.get(r.id);
 
@@ -230,9 +234,10 @@ async function loadFacts(
       learners: avg?.learners ?? 0,
       average: avg?.average ?? null,
       othersAverage: others.length
-        ? Math.round(others.reduce((a, b) => a + b, 0) / others.length)
+        ? Math.round(others.reduce((a, b) => a + b.exact, 0) / others.length)
         : null,
       othersCount: others.length,
+      othersWithOtherTeachers: others.filter((o) => o.otherTeacher).length,
       papersSet: mine.length,
       awaitingMarks: [...waiting.values()],
       unpublished: [...unpublished.values()],

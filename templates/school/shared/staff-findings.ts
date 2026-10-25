@@ -57,6 +57,8 @@ export interface ClassFact {
   /** The mean of the school's other classes in this subject and year group. */
   othersAverage: number | null;
   othersCount: number;
+  /** How many of those are led by someone else. */
+  othersWithOtherTeachers: number;
   /** Papers set that count towards marks. */
   papersSet: number;
   awaitingMarks: WaitingPaper[];
@@ -79,7 +81,15 @@ const label = (c: ClassFact) => c.name;
 
 function othersLine(c: ClassFact): string {
   if (c.othersAverage == null) return "";
-  return `${plural(c.othersCount, "other " + (c.yearGroup ?? "") + " " + c.subject + " class", "other " + (c.yearGroup ?? "") + " " + c.subject + " classes").replace(/\s+/g, " ")} average ${c.othersAverage}%`;
+  const where = `${c.yearGroup ?? ""} ${c.subject}`.trim();
+  const noun = c.othersCount === 1 ? "class" : "classes";
+  const who =
+    c.othersWithOtherTeachers === 0
+      ? ", all with the same teacher"
+      : c.othersWithOtherTeachers === c.othersCount
+        ? ", all with other teachers"
+        : `, ${c.othersWithOtherTeachers} with other teachers`;
+  return `${c.othersCount} other ${where} ${noun} average ${c.othersAverage}%${who}`;
 }
 
 /** Findings that hold for one class, whoever's page they appear on. */
