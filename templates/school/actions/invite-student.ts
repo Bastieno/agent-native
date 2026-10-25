@@ -1,3 +1,4 @@
+import { schoolAppUrl } from "../server/lib/school-host.js";
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { putOrgSetting, getOrgSetting } from "@agent-native/core/settings";
@@ -159,7 +160,7 @@ export default defineAction({
       name?: string;
     } | null;
     const schoolName = schoolConfig?.name ?? "your school";
-    const appUrl = getAppProductionUrl();
+    const appUrl = await schoolAppUrl(orgId, getAppProductionUrl());
     const emailConfigured = isEmailConfigured();
 
     let emailSent = false;

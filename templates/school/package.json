@@ -19,6 +19,7 @@
     "journey:compare": "tsx test/sim/compare.ts",
     "journey:assumptions": "tsx test/sim/assumptions.ts",
     "check:help": "tsx test/help.check.ts",
+    "check:host": "tsx test/school-host.check.ts",
     "journey:mcp-setup": "tsx test/sim/run-mcp-setup.ts",
     "journey:agent-access": "tsx test/sim/run-agent-access.ts",
     "journey:access": "tsx test/sim/run-access.ts",

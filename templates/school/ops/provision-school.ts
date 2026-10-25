@@ -1,7 +1,11 @@
 /**
  * Create a school for its head to set up.
  *
- *   pnpm provision:school --name "Green Valley Academy" --headEmail head@example.com [--headName "Mrs Okafor"]
+ *   pnpm provision:school --name "Green Valley Academy" --headEmail head@example.com [--headName "Mrs Okafor"] [--slug greenvalley]
+ *
+ * `--slug` gives the school its own address, `<slug>.<SCHOOL_BASE_DOMAIN>`
+ * (ellai.dev unless set). The DNS record and the Vercel domain are separate
+ * steps; see docs/school-domains.md.
  *
  * Operators only. Run it on the server, against the deployment's own
  * `DATABASE_URL`. Open sign-up never gives anyone a school (see
@@ -33,6 +37,7 @@ import {
   sendEmail,
 } from "@agent-native/core/server";
 import { nanoid } from "nanoid";
+import { assignHost, slugProblem } from "../server/lib/school-host.js";
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
@@ -55,6 +60,11 @@ async function main() {
     fail(
       'Usage: pnpm provision:school --name "School name" --headEmail head@example.com [--headName "Their name"]',
     );
+  }
+  const slug = arg("slug")?.toLowerCase();
+  if (slug) {
+    const problem = slugProblem(slug);
+    if (problem) fail(`--slug: ${problem}`);
   }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(headEmail)) {
     fail(`"${headEmail}" is not an email address.`);
@@ -92,7 +102,12 @@ async function main() {
     },
   ] as any);
 
-  const appUrl = getAppProductionUrl();
+  let appUrl = getAppProductionUrl();
+  if (slug) {
+    const base = process.env.SCHOOL_BASE_DOMAIN?.trim() || "ellai.dev";
+    const host = await assignHost(org.id, `${slug}.${base}`);
+    appUrl = `https://${host}`;
+  }
   const mcpUrl = `${appUrl.replace(/\/$/, "")}/_agent-native/mcp`;
 
   let emailed = false;

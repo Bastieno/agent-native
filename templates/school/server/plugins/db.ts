@@ -965,6 +965,15 @@ const migrations = runMigrations(
       version: 96,
       sql: `CREATE INDEX IF NOT EXISTS capability_seen_user_idx ON capability_seen (user_id)`,
     },
+    // Which address belongs to which school, for schools with their own URL.
+    {
+      version: 97,
+      sql: `CREATE TABLE IF NOT EXISTS school_domains (host TEXT PRIMARY KEY, org_id TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT (datetime('now')))`,
+    },
+    {
+      version: 98,
+      sql: `CREATE INDEX IF NOT EXISTS school_domains_org_idx ON school_domains (org_id)`,
+    },
   ],
   { table: "school_migrations" },
 );

@@ -1,4 +1,10 @@
-import { defineEventHandler, getRouterParam, getQuery, createError } from "h3";
+import {
+  defineEventHandler,
+  getRouterParam,
+  getQuery,
+  createError,
+  getRequestHost,
+} from "h3";
 import { getSession, runWithRequestContext } from "@agent-native/core/server";
 import { getDb, schema } from "../db/index.js";
 import { eq, and, desc, asc, inArray, sql, count } from "drizzle-orm";
@@ -19,7 +25,8 @@ import {
   assertClassAccess,
   assertAssessmentAccess,
 } from "../lib/class-access.js";
-import { rowOf, runSql } from "../lib/raw-sql.js";
+import { rowOf, rowsOf, runSql } from "../lib/raw-sql.js";
+import { orgForHost } from "../lib/school-host.js";
 
 // ─── Helper ──────────────────────────────────────────────────────────────────
 
@@ -226,15 +233,36 @@ export const getSessionInfo = defineEventHandler(async (event) => {
     ? await getSchoolProfile(db, session.userId)
     : null;
 
-  // The school this request acts in, as every action sees it.
+  // The school this request acts in, as every action sees it. A school's own
+  // address decides it for anyone who belongs to that school.
+  const hostOrgId = await orgForHost(
+    getRequestHost(event, { xForwardedHost: true }),
+  );
   const activeOrgId = session.email ? (await getOrgContext(event)).orgId : null;
+  if (hostOrgId && session.email) {
+    const mine = await rowsOf<{ org_id: string }>(
+      sql`SELECT org_id FROM org_members WHERE LOWER(email) = ${session.email.toLowerCase()}`,
+    );
+    if (mine.length > 0 && !mine.some((m) => m.org_id === hostOrgId)) {
+      return {
+        user: { id: session.userId, email: session.email, name: null },
+        schoolRole: null,
+        schoolId: null,
+        access: "none" as SchoolAccess,
+        schoolName: null,
+        accessDenied: true,
+        wrongSchool: true,
+      };
+    }
+    if (profile && profile.schoolId !== hostOrgId) profile = null;
+  }
 
   // An invited person's first sign-in: activate them from their own schools'
   // invitations, the active one first. Never from anyone else's.
   if (!profile && session.userId && session.email) {
     const found = await findPendingInvite(
       session.email,
-      await candidateOrgsFor(session.email, activeOrgId),
+      await candidateOrgsFor(session.email, hostOrgId ?? activeOrgId),
     );
     if (found) {
       profile = await activateInvite(db, session.userId, session.email, found);
@@ -248,7 +276,7 @@ export const getSessionInfo = defineEventHandler(async (event) => {
   if (!profile && session.email) {
     ({ access, schoolName } = await accessWithoutProfile(
       session.email,
-      activeOrgId,
+      hostOrgId ?? activeOrgId,
     ));
   }
 
