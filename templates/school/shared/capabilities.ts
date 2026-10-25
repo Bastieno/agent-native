@@ -234,7 +234,7 @@ export const CAPABILITIES: Capability[] = [
       "Give each learner an ID (their admission number) and a password. They sign in with those, and nothing needs to be sent to an email address.",
     steps: [
       "Ask the assistant to create accounts for a list of learners. Give each name and admission number, and their year group if you know it. A pasted class list works.",
-      "It makes a starting password for each and shows them once. Print them or write them out: they are not kept anywhere else.",
+      "It makes a starting password for each and shows them once, with a link to a printable sheet of cards, one per learner, to cut up and hand out. Keep that link private: it carries the passwords, and they are kept nowhere else.",
       "Hand each learner their ID and password. They sign in at the school's address with their ID in the same box where others type an email.",
       "If a learner forgets their password, ask the assistant to reset it. It gives you a new one to pass on.",
     ],

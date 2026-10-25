@@ -3,7 +3,8 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { createPasswordUser } from "@agent-native/core/server";
 import { z } from "zod";
 import { jsonish } from "../shared/zod-json.js";
-import { hostForOrg } from "../server/lib/school-host.js";
+import { hostForOrg, schoolAppUrl } from "../server/lib/school-host.js";
+import { sheetPath } from "../shared/credentials-sheet.js";
 import { recordStudentInvite } from "../server/lib/student-invite.js";
 import {
   generatePassword,
@@ -14,7 +15,7 @@ import {
 
 export default defineAction({
   description:
-    "Create learner accounts that sign in with an ID (their admission number) and a password, for learners who have no email address. Give each learner's name and ID, and their year group when known; a starting password is made for each unless one is given. The passwords are in the result and are not kept anywhere else, so hand them over (a printed sheet works) and tell the learner to keep theirs. Needs the school to have its own address; get-school-config shows it. Use invite-student instead when the learner has an email address.",
+    "Create learner accounts that sign in with an ID (their admission number) and a password, for learners who have no email address. Give each learner's name and ID, and their year group when known; a starting password is made for each unless one is given. The passwords are in the result and are not kept anywhere else, so hand them over (the result includes a link to a printable sheet of cards) and tell the learner to keep theirs. Needs the school to have its own address; get-school-config shows it. Use invite-student instead when the learner has an email address.",
   schema: z.object({
     students: jsonish(
       z
@@ -106,14 +107,29 @@ export default defineAction({
       }
     }
 
-    const local = host.endsWith(".localhost");
+    const base = await schoolAppUrl(orgId, "");
+    const signInAddress = `${base}/login`;
+    // The credentials ride in the link's fragment, which a browser never sends
+    // to a server, so the printable sheet needs nothing stored.
+    const printSheetUrl = created.length
+      ? `${base}${sheetPath({
+          address: signInAddress,
+          rows: created.map((c) => ({
+            n: c.name,
+            u: c.username,
+            p: c.password,
+            g: c.gradeLevel,
+          })),
+        })}`
+      : null;
     return {
-      signInAddress: `${local ? "http" : "https"}://${host}/login`,
+      signInAddress,
+      printSheetUrl,
       created,
       failed,
       message: `${created.length} account${created.length === 1 ? "" : "s"} created${
         failed.length ? `, ${failed.length} not` : ""
-      }. Each learner signs in at the address above with their ID and the password given; their record is made on first sign-in. These passwords are shown once and kept nowhere else.`,
+      }. Each learner signs in at the address above with their ID and the password given; their record is made on first sign-in. These passwords are shown once and kept nowhere else. Open printSheetUrl for a printable sheet of cards to cut up and hand out; keep that link private, because it carries the passwords.`,
     };
   },
 });
