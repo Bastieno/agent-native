@@ -39,6 +39,36 @@ export interface Capability {
 export const CAPABILITIES: Capability[] = [
   // ───────────────────────── Everyone ─────────────────────────
   {
+    id: "install-app",
+    roles: ["admin", "teacher", "student"],
+    group: "Staying informed",
+    title: "Put the app on your phone",
+    summary:
+      "Add the school to your Home Screen so it opens like an app, and so your phone can tell you when something new arrives. There is nothing to download.",
+    steps: [
+      "Android: open the school's address in Chrome, tap the menu (three dots), then Install app or Add to Home screen.",
+      "iPhone: open the school's address in Safari, tap Share, then Add to Home Screen, then Add. Open it from the new icon.",
+      "Laptop: in Chrome or Edge, use the install icon at the right end of the address bar.",
+      "Then open Notifications and switch on 'On this device'.",
+    ],
+    where: {
+      admin: "/install",
+      teacher: "/install",
+      student: "/install",
+    },
+    keywords: [
+      "install",
+      "home screen",
+      "add to home screen",
+      "phone",
+      "app",
+      "iphone",
+      "android",
+      "pwa",
+    ],
+    added: "2026-10-25",
+  },
+  {
     id: "notifications",
     roles: ["admin", "teacher", "student"],
     group: "Staying informed",
@@ -1218,5 +1248,5 @@ export const HIGHLIGHTS: Record<HelpRole, string[]> = {
     "teacher-pdf-resource",
     "teacher-learner-page",
   ],
-  student: ["student-week", "student-handouts", "student-tutor"],
+  student: ["student-week", "install-app", "student-tutor"],
 };

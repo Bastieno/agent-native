@@ -206,7 +206,12 @@ function PushToggle() {
       <span>
         On this device
         <span className="mt-0.5 block text-xs text-muted-foreground">
-          {hint}
+          {hint}{" "}
+          {support === "install" ? (
+            <a href="/install" className="text-primary hover:underline">
+              Show me how
+            </a>
+          ) : null}
         </span>
       </span>
       <Switch
