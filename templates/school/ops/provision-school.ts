@@ -38,7 +38,11 @@ import {
   fromWithName,
 } from "@agent-native/core/server";
 import { nanoid } from "nanoid";
-import { assignHost, slugProblem } from "../server/lib/school-host.js";
+import {
+  assignHost,
+  inviteLink,
+  slugProblem,
+} from "../server/lib/school-host.js";
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
@@ -109,6 +113,7 @@ async function main() {
     const host = await assignHost(org.id, `${slug}.${base}`);
     appUrl = `https://${host}`;
   }
+  const link = inviteLink(appUrl, headEmail);
   const mcpUrl = `${appUrl.replace(/\/$/, "")}/_agent-native/mcp`;
 
   let emailed = false;
@@ -121,7 +126,7 @@ async function main() {
           `Create your account with ${emailStrong(headEmail)}. That address is how the school knows you, so use it exactly.`,
           `You can set the school up with the assistant in the app, or from Claude or another AI app by connecting it to ${emailStrong(mcpUrl)}.`,
         ],
-        cta: { label: "Open the app", url: appUrl },
+        cta: { label: "Open the app", url: link },
         footer:
           "If you weren't expecting this, you can safely ignore this email.",
       });
@@ -144,7 +149,7 @@ async function main() {
   console.log(
     emailed
       ? `Invitation emailed to ${headEmail}.`
-      : `No email was sent. Tell ${headEmail} to create an account at ${appUrl} with that address.`,
+      : `No email was sent. Tell ${headEmail} to create an account at ${link} with that address.`,
   );
   console.log(`To set up from an MCP client, connect it to ${mcpUrl}.`);
 }

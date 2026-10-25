@@ -1,4 +1,4 @@
-import { schoolAppUrl } from "../server/lib/school-host.js";
+import { inviteLink, schoolAppUrl } from "../server/lib/school-host.js";
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { putOrgSetting, getOrgSetting } from "@agent-native/core/settings";
@@ -85,6 +85,7 @@ export default defineAction({
     } | null;
     const schoolName = schoolConfig?.name ?? "your school";
     const appUrl = await schoolAppUrl(orgId, getAppProductionUrl());
+    const link = inviteLink(appUrl, email);
     const emailConfigured = isEmailConfigured();
 
     let emailSent = false;
@@ -110,7 +111,7 @@ export default defineAction({
             // invitation is matched by the address it was sent to.
             `Create your account with ${emailStrong(email)} to accept. That address is how the invitation reaches you, so use it exactly.`,
           ],
-          cta: { label: "Accept invitation", url: appUrl },
+          cta: { label: "Accept invitation", url: link },
           footer: `Invited by ${
             inviterName ? `${inviterName} (${userEmail})` : userEmail
           }. If you weren't expecting this, you can safely ignore this email.`,
@@ -136,19 +137,19 @@ export default defineAction({
       schoolRole: args.schoolRole,
       emailSent,
       emailError: emailError ?? null,
-      inviteUrl: appUrl,
+      inviteUrl: link,
       // This used to promise to run finalize-staff-invite after sign-in, which
       // the guide forbids in the normal flow: the account activates itself.
       // inviteUrl is the school's sign-in address, the same for everyone —
       // an invitation is matched by the email address it was sent to, not by
       // a token in the link. Saying so stops an agent reporting a missing
       // token as a fault, and stops anyone expecting a personal link.
-      inviteUrlNote: `This is the school's sign-in address, the same for everyone. The invitation is matched by email address, so ${args.name} must sign in with ${email} for it to apply.`,
+      inviteUrlNote: `This opens the school's sign-up page with the address filled in. The invitation is matched by email address, so ${args.name} must sign in with ${email} for it to apply.`,
       message: emailSent
         ? `Invitation emailed to ${args.name} (${email}). They must sign in with that address for the invitation to apply. Their account activates on first sign-in; after that they can be given classes.`
         : emailError
-          ? `Invite recorded, but the email failed to send: ${emailError}. Nobody has been told — send ${args.name} the school's sign-in address yourself: ${appUrl}, and tell them to sign in with ${email}.`
-          : `Invite recorded, but no email was sent — the school has no email provider set up. Send ${args.name} the school's sign-in address yourself: ${appUrl}, and tell them to sign in with ${email}. Their account activates on first sign-in; after that they can be given classes.`,
+          ? `Invite recorded, but the email failed to send: ${emailError}. Nobody has been told — send ${args.name} the school's sign-in link yourself: ${link}, and tell them to sign in with ${email}.`
+          : `Invite recorded, but no email was sent — the school has no email provider set up. Send ${args.name} the school's sign-in link yourself: ${link}, and tell them to sign in with ${email}. Their account activates on first sign-in; after that they can be given classes.`,
     };
   },
 });

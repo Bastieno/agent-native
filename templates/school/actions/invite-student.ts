@@ -1,4 +1,4 @@
-import { schoolAppUrl } from "../server/lib/school-host.js";
+import { inviteLink, schoolAppUrl } from "../server/lib/school-host.js";
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { putOrgSetting, getOrgSetting } from "@agent-native/core/settings";
@@ -162,6 +162,7 @@ export default defineAction({
     } | null;
     const schoolName = schoolConfig?.name ?? "your school";
     const appUrl = await schoolAppUrl(orgId, getAppProductionUrl());
+    const link = inviteLink(appUrl, email);
     const emailConfigured = isEmailConfigured();
 
     let emailSent = false;
@@ -181,7 +182,7 @@ export default defineAction({
             `${emailStrong(schoolName)} has invited you to join as a student.`,
             `Create your account with ${emailStrong(email)} to accept. That address is how the invitation reaches you, so use it exactly.`,
           ],
-          cta: { label: "Accept invitation", url: appUrl },
+          cta: { label: "Accept invitation", url: link },
           footer: `${
             userEmail
               ? `Invited by ${inviterName ? `${inviterName} (${userEmail})` : userEmail}. `
@@ -218,12 +219,12 @@ export default defineAction({
       fieldsNotGiven: unanswered.length ? unanswered : null,
       emailSent,
       emailError: emailError ?? null,
-      inviteUrl: appUrl,
+      inviteUrl: link,
       message: emailSent
         ? `Invitation emailed to ${args.name} (${email})${gradeLevelName ? `, joining ${gradeLevelName}` : ""}. They must create their account with that address for the invitation to apply; they are activated as a student on first sign-in, and anything recorded here is written onto their record then.`
         : emailError
-          ? `Invite recorded, but the email failed to send: ${emailError}. Nobody has been told — share this link with ${args.name} yourself: ${appUrl}`
-          : `Invite recorded, but no email was sent — the school has no email provider set up. Share this link with ${args.name} yourself: ${appUrl}`,
+          ? `Invite recorded, but the email failed to send: ${emailError}. Nobody has been told — share this link with ${args.name} yourself: ${link}`
+          : `Invite recorded, but no email was sent — the school has no email provider set up. Share this link with ${args.name} yourself: ${link}`,
     };
   },
 });

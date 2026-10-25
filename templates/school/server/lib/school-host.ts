@@ -120,3 +120,12 @@ export async function schoolAppUrl(
   const local = host.endsWith(".localhost") || host === "localhost";
   return `${local ? "http" : "https"}://${host}`;
 }
+
+/**
+ * The link an invitation sends: the school's sign-in page, on the sign-up tab,
+ * with the invited address filled in.
+ */
+export function inviteLink(appUrl: string, email: string): string {
+  const base = appUrl.replace(/\/$/, "");
+  return `${base}/login?tab=signup&email=${encodeURIComponent(email)}`;
+}

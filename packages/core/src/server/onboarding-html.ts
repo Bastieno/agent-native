@@ -1560,6 +1560,17 @@ ${
       }
     } catch (e) {}
     setActiveTab(initial, { persist: false });
+      // An invitation link carries the address it was sent to, so the person
+      // does not have to retype it. It is only a convenience: nothing trusts it.
+      try {
+        var invited = (new URLSearchParams(location.search).get('email') || '').trim();
+        if (/^[^@\\s]{1,64}@[^@\\s]{1,255}$/.test(invited)) {
+          ['s-email', 'l-email'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el && !el.value) el.value = invited;
+          });
+        }
+      } catch (e) {}
       try {
         if (new URLSearchParams(location.search).has('verified')) {
           var msg = document.getElementById('l-msg');
