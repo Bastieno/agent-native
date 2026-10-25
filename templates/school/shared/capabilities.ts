@@ -236,10 +236,15 @@ export const CAPABILITIES: Capability[] = [
       "Ask the assistant to create accounts for a list of learners. Give each name and admission number, and their year group if you know it. A pasted class list works.",
       "It makes a starting password for each and shows them once, with a link to a printable sheet of cards, one per learner, to cut up and hand out. Keep that link private: it carries the passwords, and they are kept nowhere else.",
       "Hand each learner their ID and password. They sign in at the school's address with their ID in the same box where others type an email.",
-      "If a learner forgets their password, ask the assistant to reset it by name or ID. It gives you a new one to pass on.",
+      "If a learner forgets their password, ask the assistant to reset it by name or ID. It gives you a new one to pass on. A form teacher can do this for the learners of their own arm.",
+      "Every reset is recorded. Ask 'who reset passwords this week?' to see who changed whose.",
     ],
     where: { admin: "/admin/students" },
-    actions: ["create-student-accounts", "reset-student-password"],
+    actions: [
+      "create-student-accounts",
+      "reset-student-password",
+      "list-password-resets",
+    ],
     starters: [
       {
         label: "Create learner accounts",
@@ -684,6 +689,35 @@ export const CAPABILITIES: Capability[] = [
       "week",
     ],
     added: "2026-09-01",
+  },
+  {
+    id: "teacher-reset-password",
+    roles: ["teacher"],
+    group: "Your learners",
+    title: "Reset a password for a learner in your arm",
+    summary:
+      "If you are the form teacher of an arm, you can give one of its learners a new password when they forget theirs. It only applies to learners who sign in with an ID.",
+    steps: [
+      "Ask the assistant to reset the password for the learner, by name or ID.",
+      "It shows the new password once. Give it to the learner.",
+      "The reset is recorded for the school's admin. A learner with an email address uses 'Forgot password' instead.",
+    ],
+    actions: ["reset-student-password"],
+    starters: [
+      {
+        label: "Reset a password",
+        text: "Give [learner name or ID] a new password.",
+      },
+    ],
+    keywords: [
+      "password",
+      "forgot password",
+      "reset password",
+      "form teacher",
+      "login",
+      "sign in",
+    ],
+    added: "2026-10-25",
   },
   {
     id: "teacher-activities",

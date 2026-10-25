@@ -691,6 +691,22 @@ export const notificationPrefs = table("notification_prefs", {
   updatedAt: text("updated_at").notNull().default(now()),
 });
 
+/**
+ * Every time someone other than the learner changed a learner's password: who,
+ * for whom, when. Names are copied in, so the record still reads if an account
+ * is later renamed. Never holds a password.
+ */
+export const passwordResets = table("password_resets", {
+  id: text("id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  learnerUserId: text("learner_user_id").notNull(),
+  learnerName: text("learner_name").notNull(),
+  resetByUserId: text("reset_by_user_id").notNull(),
+  resetByName: text("reset_by_name").notNull(),
+  resetByRole: text("reset_by_role").notNull(),
+  createdAt: text("created_at").notNull().default(now()),
+});
+
 /** A phone or browser that agreed to receive push notifications. */
 export const pushSubscriptions = table("push_subscriptions", {
   id: text("id").primaryKey(),

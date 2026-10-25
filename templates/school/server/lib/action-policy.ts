@@ -212,7 +212,10 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-student": ADMIN,
   "invite-student": ADMIN,
   "create-student-accounts": ADMIN,
-  "reset-student-password": ADMIN,
+  // Admins any ID learner; a teacher only the learners of an arm they are the
+  // form teacher of, which the action itself checks.
+  "reset-student-password": ["school_admin", "teacher"],
+  "list-password-resets": ADMIN,
   "list-student-invites": ADMIN,
   "cancel-student-invite": ADMIN,
   "reactivate-student": ADMIN,

@@ -1007,6 +1007,15 @@ const migrations = runMigrations(
       version: 105,
       sql: `CREATE INDEX IF NOT EXISTS school_notifications_user_idx ON school_notifications (user_id, created_at)`,
     },
+    // Who changed whose password, and when.
+    {
+      version: 106,
+      sql: `CREATE TABLE IF NOT EXISTS password_resets (id TEXT PRIMARY KEY, school_id TEXT NOT NULL, learner_user_id TEXT NOT NULL, learner_name TEXT NOT NULL, reset_by_user_id TEXT NOT NULL, reset_by_name TEXT NOT NULL, reset_by_role TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT (datetime('now')))`,
+    },
+    {
+      version: 107,
+      sql: `CREATE INDEX IF NOT EXISTS password_resets_school_idx ON password_resets (school_id, created_at)`,
+    },
   ],
   { table: "school_migrations" },
 );

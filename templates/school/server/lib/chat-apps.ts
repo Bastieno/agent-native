@@ -51,6 +51,7 @@ const PEOPLE_AND_CLASSES = [
   "invite-student",
   "create-student-accounts",
   "reset-student-password",
+  "list-password-resets",
   "list-classes",
   "create-class",
   "add-teacher-to-class",
@@ -254,7 +255,14 @@ export const CHAT_APP_EXPOSURE: Record<
     ...REPORTS,
     ...ALWAYS,
   ]),
-  teacher: new Set([...TEACHING, ...ANALYTICS, ...ALWAYS]),
+  // Teachers may reset the password of a learner in an arm they are form
+  // teacher of (checked in the action); coordinators may not.
+  teacher: new Set([
+    ...TEACHING,
+    ...ANALYTICS,
+    "reset-student-password",
+    ...ALWAYS,
+  ]),
 };
 
 /** Every action any role sees from a chat app: these are marked for it. */

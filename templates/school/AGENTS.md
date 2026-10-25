@@ -1888,7 +1888,7 @@ Update `SCHOOL_GUIDE.md` whenever the admin shares school-specific context. Upda
 
 ## Learners without an email address
 
-Many learners have no email, and a school should not have to make one for each. `create-student-accounts` makes accounts that sign in with an ID (usually the admission number) and a password; `reset-student-password` gives a learner who forgot theirs a new one. Both are admin-only.
+Many learners have no email, and a school should not have to make one for each. `create-student-accounts` makes accounts that sign in with an ID (usually the admission number) and a password; `reset-student-password` gives a learner who forgot theirs a new one. `create-student-accounts` is admin-only. `reset-student-password` is for an admin (any ID learner) or a teacher who is the form teacher (`arms.formTeacherUserId`) of the learner's arm; a teacher only sees learners of their own arms, and a subject coordinator may not. Every reset is written to `password_resets` (who, for whom, when, never the password); `list-password-resets` (admin) reads it.
 
 - Underneath, the sign-in system needs an email, so the app makes one up: `<id>@<school address>.invalid`. `.invalid` cannot receive mail, so nothing is ever sent to it. The sign-in page builds the same address from what the learner types (an ID with no "@"), tidying it first: lower case, no spaces, slashes become hyphens (`2026/0142` is `2026-0142`).
 - The school needs its own address (`school_domains`), because the ID is only unique within it. Without one the action refuses and says so; use `invite-student` for learners who have an email.
