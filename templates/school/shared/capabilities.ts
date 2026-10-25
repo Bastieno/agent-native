@@ -236,7 +236,7 @@ export const CAPABILITIES: Capability[] = [
       "Ask the assistant to create accounts for a list of learners. Give each name and admission number, and their year group if you know it. A pasted class list works.",
       "It makes a starting password for each and shows them once, with a link to a printable sheet of cards, one per learner, to cut up and hand out. Keep that link private: it carries the passwords, and they are kept nowhere else.",
       "Hand each learner their ID and password. They sign in at the school's address with their ID in the same box where others type an email.",
-      "If a learner forgets their password, ask the assistant to reset it. It gives you a new one to pass on.",
+      "If a learner forgets their password, ask the assistant to reset it by name or ID. It gives you a new one to pass on.",
     ],
     where: { admin: "/admin/students" },
     actions: ["create-student-accounts", "reset-student-password"],
@@ -247,7 +247,7 @@ export const CAPABILITIES: Capability[] = [
       },
       {
         label: "Reset a password",
-        text: "Give [admission number] a new password.",
+        text: "Give [learner name or ID] a new password.",
       },
     ],
     keywords: [

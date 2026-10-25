@@ -1718,7 +1718,7 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 | `update-student`            | `--id ...fields`                                          |
 | `invite-student`            | `--email --name`                                          |
 | `create-student-accounts`   | `--students '[{name,username,gradeLevel?}]'`              |
-| `reset-student-password`    | `--username`                                              |
+| `reset-student-password`    | `--learner <name or ID>`                                  |
 | `categorize-students`       | `--classId [--confirm false\|true]` — preview then commit |
 | `override-student-category` | `--studentId --classId --category`                        |
 
