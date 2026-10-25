@@ -13,7 +13,9 @@ import {
   IconBell,
   IconCalendarTime,
   IconHelp,
+  IconPlugConnected,
 } from "@tabler/icons-react";
+import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
 import { HelpDot } from "@/components/help/HelpDot";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
@@ -97,6 +99,17 @@ export function AdminSidebar({
           Help
           <HelpDot />
         </NavLink>
+        <ConnectAiAppDialog
+          trigger={
+            <button
+              type="button"
+              className="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm text-sidebar-foreground transition-colors hover:bg-sidebar-accent/60"
+            >
+              <IconPlugConnected size={16} />
+              Your AI app
+            </button>
+          }
+        />
         <button
           type="button"
           onClick={async () => {
