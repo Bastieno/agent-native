@@ -1717,6 +1717,8 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 | `create-student`            | `--userId --gradeLevelId --admissionNumber`               |
 | `update-student`            | `--id ...fields`                                          |
 | `invite-student`            | `--email --name`                                          |
+| `create-student-accounts`   | `--students '[{name,username,gradeLevel?}]'`              |
+| `reset-student-password`    | `--username`                                              |
 | `categorize-students`       | `--classId [--confirm false\|true]` — preview then commit |
 | `override-student-category` | `--studentId --classId --category`                        |
 
@@ -1883,3 +1885,13 @@ Update `SCHOOL_GUIDE.md` whenever the admin shares school-specific context. Upda
 **Always use Tabler Icons** (`@tabler/icons-react`). Never use other icon libraries or emojis as icons.
 
 **Never use browser dialogs** (`window.confirm`/`alert`/`prompt`) — use shadcn `AlertDialog`.
+
+## Learners without an email address
+
+Many learners have no email, and a school should not have to make one for each. `create-student-accounts` makes accounts that sign in with an ID (usually the admission number) and a password; `reset-student-password` gives a learner who forgot theirs a new one. Both are admin-only.
+
+- Underneath, the sign-in system needs an email, so the app makes one up: `<id>@<school address>.invalid`. `.invalid` cannot receive mail, so nothing is ever sent to it. The sign-in page builds the same address from what the learner types (an ID with no "@"), tidying it first: lower case, no spaces, slashes become hyphens (`2026/0142` is `2026-0142`).
+- The school needs its own address (`school_domains`), because the ID is only unique within it. Without one the action refuses and says so; use `invite-student` for learners who have an email.
+- Passwords are made readable (no 0/O or 1/l), returned once in the result and kept nowhere else (only a hash is stored). Hand them over on a printed sheet and tell the learner to keep theirs. There is no email to reset through, so a forgotten password is `reset-student-password`.
+- Accounts are created already verified, and still pass through the invite-only sign-up rule, because each one is recorded as a pending student invitation first. The learner's record, year group and fields are written on first sign-in, as with an emailed invitation.
+- A learner with a real email address still signs in with it, and resets their own password by email.

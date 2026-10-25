@@ -627,6 +627,86 @@ export async function getBetterAuthInternalAdapter(
   return undefined;
 }
 
+interface PasswordContext {
+  password?: { hash: (password: string) => Promise<string> };
+  internalAdapter?: {
+    createUser: (u: {
+      email: string;
+      name: string;
+      emailVerified?: boolean;
+    }) => Promise<{ id: string }>;
+    linkAccount: (a: {
+      userId: string;
+      providerId: string;
+      accountId: string;
+      password?: string;
+    }) => Promise<unknown>;
+    updatePassword: (userId: string, hash: string) => Promise<unknown>;
+    findUserByEmail: (
+      email: string,
+    ) => Promise<{ user: { id: string } } | null>;
+  };
+}
+
+async function passwordContext(): Promise<Required<PasswordContext>> {
+  const auth = (await getBetterAuth()) as unknown as {
+    $context?: Promise<PasswordContext>;
+  };
+  const ctx = await auth.$context;
+  if (!ctx?.password?.hash || !ctx.internalAdapter?.updatePassword) {
+    throw new Error("This sign-in system cannot manage passwords directly.");
+  }
+  return ctx as Required<PasswordContext>;
+}
+
+/**
+ * Create an account with a password for someone who has no usable email —
+ * a school's learner signing in with an admission number. The address is one
+ * the app made up, so it is marked verified: there is nobody to send the
+ * confirmation to. The app's sign-up rule still runs, so only a person the
+ * app already expects can be created.
+ */
+export async function createPasswordUser(args: {
+  email: string;
+  name: string;
+  password: string;
+}): Promise<{ id: string }> {
+  if (args.password.length < 8) {
+    throw new Error("A password needs at least 8 characters.");
+  }
+  const ctx = await passwordContext();
+  if (await ctx.internalAdapter.findUserByEmail(args.email)) {
+    throw new Error("That sign-in name is already taken.");
+  }
+  const user = await ctx.internalAdapter.createUser({
+    email: args.email,
+    name: args.name,
+    emailVerified: true,
+  });
+  await ctx.internalAdapter.linkAccount({
+    userId: user.id,
+    providerId: "credential",
+    accountId: user.id,
+    password: await ctx.password.hash(args.password),
+  });
+  return { id: user.id };
+}
+
+/** Set a new password for an existing account, for an administrator who resets it. */
+export async function setUserPassword(
+  userId: string,
+  password: string,
+): Promise<void> {
+  if (password.length < 8) {
+    throw new Error("A password needs at least 8 characters.");
+  }
+  const ctx = await passwordContext();
+  await ctx.internalAdapter.updatePassword(
+    userId,
+    await ctx.password.hash(password),
+  );
+}
+
 /** Reset for testing */
 export async function resetBetterAuth(): Promise<void> {
   _auth = undefined;

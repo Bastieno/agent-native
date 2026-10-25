@@ -211,6 +211,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "create-student": ADMIN,
   "update-student": ADMIN,
   "invite-student": ADMIN,
+  "create-student-accounts": ADMIN,
+  "reset-student-password": ADMIN,
   "list-student-invites": ADMIN,
   "cancel-student-invite": ADMIN,
   "reactivate-student": ADMIN,

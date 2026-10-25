@@ -393,3 +393,5 @@ export type NitroPluginDef = (nitroApp: any) => void | Promise<void>;
 export function defineNitroPlugin(def: NitroPluginDef): NitroPluginDef {
   return def;
 }
+
+export { createPasswordUser, setUserPassword } from "./better-auth-instance.js";

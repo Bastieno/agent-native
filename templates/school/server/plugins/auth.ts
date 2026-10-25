@@ -7,6 +7,8 @@ const auth = createAuthPlugin({
   // an address no school has invited cannot create an account, by email or
   // by Google.
   allowSignUp: allowSchoolSignUp,
+  // Learners without an email address sign in with their school ID.
+  usernameLogin: true,
   marketing: {
     appName: "Agent-Native School",
     tagline:

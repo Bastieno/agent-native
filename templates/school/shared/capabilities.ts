@@ -142,6 +142,8 @@ export const CAPABILITIES: Capability[] = [
       "list-students",
       "create-student",
       "invite-student",
+      "create-student-accounts",
+      "reset-student-password",
       "get-student-profile",
       "get-class-profile",
       "get-teacher-profile",

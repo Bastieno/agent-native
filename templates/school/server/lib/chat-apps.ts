@@ -49,6 +49,8 @@ const PEOPLE_AND_CLASSES = [
   "list-students",
   "create-student",
   "invite-student",
+  "create-student-accounts",
+  "reset-student-password",
   "list-classes",
   "create-class",
   "add-teacher-to-class",
@@ -357,6 +359,8 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
 const CONSEQUENTIAL = new Set([
   "invite-staff",
   "invite-student",
+  "create-student-accounts",
+  "reset-student-password",
   "update-staff-role",
   "discard-curriculum-draft",
   "commit-curriculum-draft",

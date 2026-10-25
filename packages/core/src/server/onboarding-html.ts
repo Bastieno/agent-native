@@ -94,6 +94,12 @@ export interface OnboardingHtmlOptions {
    * iframes use popup; Builder desktop preview/editor surfaces use redirect.
    */
   googleAuthMode?: GoogleAuthMode;
+  /**
+   * Let people sign in with an ID instead of an email address. An identifier
+   * with no "@" becomes `<id>@<this host>.invalid`, the made-up address the
+   * app registered for them; one with an "@" is left alone.
+   */
+  usernameLogin?: boolean;
 }
 
 export function getOnboardingHtml(opts: OnboardingHtmlOptions = {}): string {
@@ -925,8 +931,13 @@ ${
     </div>
 
     <form id="login-form" class="form">
-    <label for="l-email">Email</label>
-    <input id="l-email" type="email" autocomplete="email" placeholder="you@example.com" required />
+    ${
+      opts.usernameLogin
+        ? `<label for="l-email">Email or school ID</label>
+    <input id="l-email" type="text" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="username" placeholder="you@example.com or your ID" required />`
+        : `<label for="l-email">Email</label>
+    <input id="l-email" type="email" autocomplete="email" placeholder="you@example.com" required />`
+    }
     <label for="l-pass">Password</label>
     <input id="l-pass" type="password" autocomplete="current-password" placeholder="Enter password" required />
     <button type="submit">Sign in</button>
@@ -1539,6 +1550,13 @@ ${
         }
       }
     }
+    var __AN_USERNAME_LOGIN = ${opts.usernameLogin ? "true" : "false"};
+    function __anLoginIdentifier(raw) {
+      var id = String(raw || '').trim();
+      if (!__AN_USERNAME_LOGIN || id.indexOf('@') >= 0) return id;
+      id = id.toLowerCase().replace(/\\s+/g, '').replace(/[\\/\\\\]+/g, '-');
+      return id + '@' + location.hostname.toLowerCase() + '.invalid';
+    }
     (function initActiveTab() {
     var initial = 'signup';
     try {
@@ -1743,7 +1761,7 @@ ${
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: document.getElementById('l-email').value,
+          email: __anLoginIdentifier(document.getElementById('l-email').value),
           password: document.getElementById('l-pass').value,
         }),
       });

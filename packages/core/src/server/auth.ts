@@ -234,6 +234,12 @@ export interface AuthOptions {
     runLocalCommand?: string;
   };
   /**
+   * Let people sign in with an ID instead of an email address (a school's
+   * learners with an admission number). The sign-in page turns an ID into the
+   * made-up `<id>@<host>.invalid` address the app registered for it.
+   */
+  usernameLogin?: boolean;
+  /**
    * Optional host-scoped notice shown before the built-in Google sign-in
    * redirects to Google.
    */
@@ -908,6 +914,7 @@ function getOnboardingHtmlOptions(
   return {
     googleOnly: options.googleOnly,
     marketing: options.marketing,
+    usernameLogin: options.usernameLogin,
     googleSignInNotice: options.googleSignInNotice,
     googleAuthMode: options.googleAuthMode,
     requestHost: event ? getRequestHost(event) : undefined,

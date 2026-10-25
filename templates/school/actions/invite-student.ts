@@ -1,3 +1,4 @@
+import { recordStudentInvite } from "../server/lib/student-invite.js";
 import { inviteLink, schoolAppUrl } from "../server/lib/school-host.js";
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
@@ -60,102 +61,14 @@ export default defineAction({
 
     const email = args.email.trim().toLowerCase();
 
-    // The year group by whatever the school calls it. Resolved now rather
-    // than at sign-in, so a name nobody has is refused while the person who
-    // typed it is still here to correct it.
-    let gradeLevelId: string | undefined;
-    let gradeLevelName: string | undefined;
-    if (args.gradeLevel?.trim()) {
-      const db = getDb();
-      const wanted = args.gradeLevel.trim();
-      const levels = await db
-        .select({ id: schema.gradeLevels.id, name: schema.gradeLevels.name })
-        .from(schema.gradeLevels)
-        // school_id is this table's own scope; org_id is the column the
-        // app's access checks read. Rows written before org_id existed have
-        // none, and they still belong to the school that owns their
-        // school_id — refusing them would tell an admin their own year group
-        // does not exist.
-        .where(
-          and(
-            eq(schema.gradeLevels.schoolId, orgId),
-            or(
-              eq(schema.gradeLevels.orgId, orgId),
-              isNull(schema.gradeLevels.orgId),
-            ),
-          ),
-        );
-      const match = levels.find(
-        (l: any) =>
-          l.id === wanted ||
-          l.name?.toLowerCase() === wanted.toLowerCase() ||
-          l.name?.replace(/\s+/gu, "").toLowerCase() ===
-            wanted.replace(/\s+/gu, "").toLowerCase(),
-      );
-      if (!match) {
-        throw new Error(
-          `This school has no year group called "${args.gradeLevel}". It has: ${
-            levels.map((l: any) => l.name).join(", ") || "none yet"
-          }.`,
-        );
-      }
-      gradeLevelId = match.id;
-      gradeLevelName = match.name ?? undefined;
-    }
-
-    // Whatever else this school records about a student — its own fields,
-    // its own options. An unrecognised one is refused rather than stored,
-    // because a value no screen can read is worse than no value at all.
-    const defs = await studentFieldDefs(orgId);
-    const { values: fieldValues, problems } = checkFieldValues(
-      defs,
-      args.fields as Record<string, unknown> | undefined,
-    );
-    if (problems.length) {
-      throw new Error(problems.join(" "));
-    }
-
-    const invite: PendingStudentInvite = {
-      id: nanoid(),
+    const recorded = await recordStudentInvite({
+      orgId,
+      userEmail,
       email,
       name: args.name,
-      invitedAt: Date.now(),
-      ...(gradeLevelId ? { gradeLevelId, gradeLevelName } : {}),
-      ...(Object.keys(fieldValues).length ? { fields: fieldValues } : {}),
-    };
-    // One writer at a time: read, append and write are a single operation.
-    // In parallel — the way an agent invites a class — two invitations read
-    // the same list and the second write dropped the first. Ten at once lost
-    // two; forty lost twelve, with nothing reported to anybody.
-    await withOrgSettingLock(`${orgId}:pending-student-invites`, async () => {
-      const existingList = ((await getOrgSetting(
-        orgId,
-        "pending-student-invites",
-      )) ?? []) as PendingStudentInvite[];
-      if (existingList.some((inv) => inv.email === email)) {
-        throw new Error(
-          `An invitation is already pending for ${email}. They should check their inbox (or spam folder).`,
-        );
-      }
-      await putOrgSetting(orgId, "pending-student-invites", [
-        ...existingList,
-        invite,
-      ] as any);
+      gradeLevel: args.gradeLevel,
+      fields: args.fields as Record<string, unknown> | undefined,
     });
-
-    // Without this the framework has no record that the address belongs to
-    // this school, so signing up creates the student a brand-new org of their
-    // own and every school read — config, classes, grades — comes back empty.
-    // invite-staff has always done it; invite-student did not.
-    try {
-      const exec = getDbExec();
-      await exec.execute({
-        sql: `INSERT INTO org_invitations (id, org_id, email, invited_by, created_at, status, role) VALUES (?, ?, ?, ?, ?, 'pending', 'member')`,
-        args: [nanoid(), orgId, email, userEmail ?? "", Date.now()],
-      });
-    } catch {
-      // Non-fatal — our own pending list is the source of truth for the UI.
-    }
 
     const schoolConfig = (await getOrgSetting(orgId, "school-config")) as {
       name?: string;
@@ -205,6 +118,10 @@ export default defineAction({
         console.error("[invite-student] failed to send email:", err);
       }
     }
+
+    const gradeLevelName = recorded.gradeLevelName;
+    const fieldValues = recorded.fields ?? {};
+    const defs = await studentFieldDefs(orgId);
 
     // Name the fields nobody answered, at the one moment someone could.
     // Left unsaid, a field added last month quietly stays empty for every
