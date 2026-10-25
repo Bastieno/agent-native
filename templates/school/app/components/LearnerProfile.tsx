@@ -20,7 +20,7 @@ import { ListState } from "@/components/ListState";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { cn } from "@/lib/utils";
 import { useBackTarget } from "@/lib/origin";
-import { FindingList, type Finding } from "@/components/Findings";
+import { FindingList, type Finding, NextStepList } from "@/components/Findings";
 
 type Piece = {
   assessmentId: string;
@@ -294,11 +294,7 @@ export function LearnerProfile({
             <IconMessageCircle size={15} />
             Suggested next steps
           </h2>
-          <ul className="space-y-1.5 rounded-lg border bg-card p-4 text-sm">
-            {findings.next.map((n) => (
-              <li key={n}>{n}</li>
-            ))}
-          </ul>
+          <NextStepList steps={findings.next} />
         </section>
       ) : null}
 

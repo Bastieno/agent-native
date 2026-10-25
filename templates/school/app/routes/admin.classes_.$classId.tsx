@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BackLink } from "@/components/layout/BackLink";
 import { ListState } from "@/components/ListState";
-import { FindingList, type Finding } from "@/components/Findings";
+import { FindingList, type Finding, NextStepList } from "@/components/Findings";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { cn } from "@/lib/utils";
 import { useBackTarget, useOrigin } from "@/lib/origin";
@@ -237,11 +237,7 @@ export default function AdminClass() {
       {findings.next.length > 0 ? (
         <section className="space-y-2">
           <h2 className="text-sm font-medium">Suggested next steps</h2>
-          <ul className="space-y-1.5 rounded-lg border bg-card p-4 text-sm">
-            {findings.next.map((n) => (
-              <li key={n}>{n}</li>
-            ))}
-          </ul>
+          <NextStepList steps={findings.next} />
         </section>
       ) : null}
 

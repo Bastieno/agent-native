@@ -483,11 +483,11 @@ export function findingsFor(input: {
       );
     } else if (missedHere.length > 0) {
       next.push(
-        `Ask ${who} whether ${list(missedHere.slice(0, 2).map((p) => p.topic))} can still be handed in.`,
+        `Ask ${who} about ${s.subject}: whether ${list(missedHere.slice(0, 2).map((p) => p.topic))} can still be handed in.`,
       );
     } else if (s.belowPassMark || c.kind === "behind-class") {
       next.push(
-        `Ask ${who} what is behind the ${s.subject} marks, and what support would help.`,
+        `Ask ${who} about ${s.subject}: what is behind the marks, and what support would help.`,
       );
     }
   }
