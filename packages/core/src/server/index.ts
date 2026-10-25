@@ -352,7 +352,14 @@ export {
   getEmailProvider,
   type EmailProvider,
   type SendEmailArgs,
+  fromWithName,
 } from "./email.js";
+export {
+  setEmailBrandingResolver,
+  brandingForRequest,
+  type EmailBranding,
+  type EmailBrandingResolver,
+} from "./email-branding.js";
 export {
   renderEmail,
   emailStrong,

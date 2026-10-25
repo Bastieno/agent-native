@@ -13,7 +13,8 @@ import { betterAuth, type BetterAuthOptions } from "better-auth";
 import { APIError } from "better-auth/api";
 import { jwt } from "better-auth/plugins/jwt";
 import { bearer } from "better-auth/plugins/bearer";
-import { sendEmail, isEmailConfigured } from "./email.js";
+import { sendEmail, isEmailConfigured, fromWithName } from "./email.js";
+import { brandingForRequest } from "./email-branding.js";
 import {
   renderResetPasswordEmail,
   renderVerifySignupEmail,
@@ -711,7 +712,8 @@ async function createBetterAuthInstance(
       // skip verification by default so +qa accounts can be created quickly;
       // hosted QA deployments can opt out with AUTH_SKIP_EMAIL_VERIFICATION=1.
       requireEmailVerification,
-      sendResetPassword: async ({ user, token }) => {
+      sendResetPassword: async ({ user, token }, request) => {
+        const branding = await brandingForRequest(request);
         // APP_BASE_PATH lets this app mount under a prefix (e.g. /mail). The
         // reset link must include that prefix so the page resolves correctly.
         const appBasePath = (
@@ -719,12 +721,20 @@ async function createBetterAuthInstance(
           process.env.APP_BASE_PATH ||
           ""
         ).replace(/\/$/, "");
-        const resetUrl = `${appUrl}${appBasePath}/_agent-native/auth/reset?token=${encodeURIComponent(token)}`;
+        const resetUrl = `${branding?.origin ?? appUrl}${appBasePath}/_agent-native/auth/reset?token=${encodeURIComponent(token)}`;
         const { subject, html, text } = renderResetPasswordEmail({
           email: user.email,
           resetUrl,
+          appName: branding?.name,
         });
-        await sendEmail({ to: user.email, subject, html, text });
+        await sendEmail({
+          to: user.email,
+          subject,
+          html,
+          text,
+          from: fromWithName(branding?.name),
+          replyTo: branding?.replyTo,
+        });
       },
     },
     emailVerification: {
@@ -736,7 +746,8 @@ async function createBetterAuthInstance(
       // verified users would have to go back and sign in manually, which is
       // a confusing dead-end on the verify screen.
       autoSignInAfterVerification: true,
-      sendVerificationEmail: async ({ user, url }) => {
+      sendVerificationEmail: async ({ user, url }, request) => {
+        const branding = await brandingForRequest(request);
         // APP_BASE_PATH lets this app mount under a prefix (e.g. /mail). The
         // verification link must include that prefix so the page resolves correctly.
         const verifyBasePath = (
@@ -744,14 +755,25 @@ async function createBetterAuthInstance(
           process.env.APP_BASE_PATH ||
           ""
         ).replace(/\/$/, "");
-        const verifyUrl = verifyBasePath
-          ? url.replace(/(\/\/[^/]+)(\/)/, `$1${verifyBasePath}$2`)
+        const onOwnOrigin = branding?.origin
+          ? url.replace(/^https?:\/\/[^/]+/, branding.origin)
           : url;
+        const verifyUrl = verifyBasePath
+          ? onOwnOrigin.replace(/(\/\/[^/]+)(\/)/, `$1${verifyBasePath}$2`)
+          : onOwnOrigin;
         const { subject, html, text } = renderVerifySignupEmail({
           email: user.email,
           verifyUrl,
+          appName: branding?.name,
         });
-        await sendEmail({ to: user.email, subject, html, text });
+        await sendEmail({
+          to: user.email,
+          subject,
+          html,
+          text,
+          from: fromWithName(branding?.name),
+          replyTo: branding?.replyTo,
+        });
       },
     },
     socialProviders,

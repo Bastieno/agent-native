@@ -4,6 +4,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { putOrgSetting, getOrgSetting } from "@agent-native/core/settings";
 import {
   sendEmail,
+  fromWithName,
   isEmailConfigured,
   getAppProductionUrl,
   renderEmail,
@@ -192,6 +193,7 @@ export default defineAction({
           subject: `You've been invited to join ${schoolName}`,
           html,
           text,
+          from: fromWithName(schoolName),
         });
         emailSent = true;
       } catch (err) {

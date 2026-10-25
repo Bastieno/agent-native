@@ -86,13 +86,15 @@ export interface RenderVerifySignupEmailArgs {
   email: string;
   /** The full verification URL from better-auth. */
   verifyUrl: string;
+  /** Names the sender instead of the app, for an organisation's own address. */
+  appName?: string;
 }
 
 export function renderVerifySignupEmail(
   args: RenderVerifySignupEmailArgs,
 ): RenderedEmailMessage {
   const email = stripCrlf(args.email);
-  const appName = resolveAppName();
+  const appName = args.appName ? stripCrlf(args.appName) : resolveAppName();
 
   const { html, text } = renderEmail({
     preheader: `Confirm ${email} to finish setting up your ${appName} account.`,
@@ -121,13 +123,15 @@ export interface RenderResetPasswordEmailArgs {
   email: string;
   /** The full reset URL (includes the signed token). */
   resetUrl: string;
+  /** Names the sender instead of the app, for an organisation's own address. */
+  appName?: string;
 }
 
 export function renderResetPasswordEmail(
   args: RenderResetPasswordEmailArgs,
 ): RenderedEmailMessage {
   const email = stripCrlf(args.email);
-  const appName = resolveAppName();
+  const appName = args.appName ? stripCrlf(args.appName) : resolveAppName();
 
   const { html, text } = renderEmail({
     preheader: `Reset the password for ${email}. This link expires in 1 hour.`,

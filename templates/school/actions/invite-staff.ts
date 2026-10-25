@@ -5,6 +5,7 @@ import { putOrgSetting, getOrgSetting } from "@agent-native/core/settings";
 import { getDbExec } from "@agent-native/core/db";
 import {
   sendEmail,
+  fromWithName,
   isEmailConfigured,
   getAppProductionUrl,
   renderEmail,
@@ -119,6 +120,7 @@ export default defineAction({
           subject: `You're invited to join ${schoolName}`,
           html,
           text,
+          from: fromWithName(schoolName),
         });
         emailSent = true;
       } catch (err) {

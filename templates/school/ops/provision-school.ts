@@ -35,6 +35,7 @@ import {
   isEmailConfigured,
   renderEmail,
   sendEmail,
+  fromWithName,
 } from "@agent-native/core/server";
 import { nanoid } from "nanoid";
 import { assignHost, slugProblem } from "../server/lib/school-host.js";
@@ -129,6 +130,7 @@ async function main() {
         subject: `Set up ${name}`,
         html,
         text,
+        from: fromWithName(name),
       });
       emailed = true;
     } catch (err) {
