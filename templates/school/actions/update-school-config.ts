@@ -32,7 +32,7 @@ const perAudience = <T extends z.ZodTypeAny>(v: T) =>
 
 export default defineAction({
   description:
-    "Update the school's configuration: grading scale, term structure, grade prefix, pass mark, assessment terminology, timezone, locale, custom label overrides, or the assistant's settings (`agent`: learners on/off school-wide and per year group, model and daily message limit per role). Pass only the fields you want to change — others are merged.",
+    "Update the school's configuration: reply-to address for its emails, grading scale, term structure, grade prefix, pass mark, assessment terminology, timezone, locale, custom label overrides, or the assistant's settings (`agent`: learners on/off school-wide and per year group, model and daily message limit per role). Pass only the fields you want to change — others are merged.",
   schema: z.object({
     gradingScale: jsonish(
       z.object({
@@ -225,6 +225,14 @@ export default defineAction({
       .optional()
       .describe(
         'The school\'s own timezone, e.g. "Africa/Lagos" — anything that happened at a moment in time is shown in it.',
+      ),
+    replyToEmail: z
+      .string()
+      .email()
+      .nullable()
+      .optional()
+      .describe(
+        "Where replies go when the school's emails are answered (invitations, password resets). Emails are sent from a no-reply address, so without this a reply is lost. null clears it; invitations then reply to the person who sent them.",
       ),
     locale: z
       .string()

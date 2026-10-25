@@ -82,6 +82,7 @@ export default defineAction({
 
     const schoolConfig = (await getOrgSetting(orgId, "school-config")) as {
       name?: string;
+      replyToEmail?: string | null;
     } | null;
     const schoolName = schoolConfig?.name ?? "your school";
     const appUrl = await schoolAppUrl(orgId, getAppProductionUrl());
@@ -122,6 +123,8 @@ export default defineAction({
           html,
           text,
           from: fromWithName(schoolName),
+          // The school's own address, else whoever sent the invitation.
+          replyTo: schoolConfig?.replyToEmail || userEmail || undefined,
         });
         emailSent = true;
       } catch (err) {

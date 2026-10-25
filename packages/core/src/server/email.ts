@@ -173,7 +173,9 @@ export async function sendEmail(args: SendEmailArgs): Promise<void> {
   console.log(
     `\n[agent-native:email] No email provider configured. ` +
       `Set RESEND_API_KEY or SENDGRID_API_KEY to send real emails.\n` +
-      `---\nTo: ${args.to}\nFrom: ${from}\nSubject: ${args.subject}\n\n` +
+      `---\nTo: ${args.to}\nFrom: ${from}\n` +
+      (args.replyTo ? `Reply-To: ${args.replyTo}\n` : "") +
+      `Subject: ${args.subject}\n\n` +
       `${args.text || stripHtml(args.html)}\n---\n`,
   );
 }

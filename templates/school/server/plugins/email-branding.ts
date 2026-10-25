@@ -20,6 +20,7 @@ export default function emailBrandingPlugin() {
 
     const config = (await getOrgSetting(orgId, "school-config")) as {
       name?: string;
+      replyToEmail?: string | null;
     } | null;
     let name = config?.name?.trim() || "";
     if (!name) {
@@ -29,6 +30,10 @@ export default function emailBrandingPlugin() {
       });
       name = rows[0] ? String((rows[0] as any).name) : "";
     }
-    return { origin, ...(name ? { name } : {}) };
+    return {
+      origin,
+      ...(name ? { name } : {}),
+      ...(config?.replyToEmail ? { replyTo: config.replyToEmail } : {}),
+    };
   });
 }
