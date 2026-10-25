@@ -10,6 +10,8 @@ import { useLocation } from "react-router";
  * needs no storage; a page opened without one (a bookmark, a link in a
  * message) falls back to its own parent.
  */
+const PORTALS = ["/student", "/teacher", "/admin"];
+
 export interface Origin {
   to: string;
   label: string;
@@ -26,14 +28,23 @@ export function useOrigin() {
 /** The origin a page was opened from, when it carries a usable one. */
 export function originOf(state: unknown): Origin | null {
   const from = (state as { from?: Partial<Origin> } | null)?.from;
-  // Only paths inside the portal: state is not trusted to point elsewhere.
+  // Only paths inside a portal: state is not trusted to point elsewhere.
   if (
     typeof from?.to === "string" &&
-    (from.to === "/student" || from.to.startsWith("/student/")) &&
+    PORTALS.some((p) => from.to === p || from.to!.startsWith(`${p}/`)) &&
     typeof from.label === "string" &&
     from.label
   ) {
     return { to: from.to, label: from.label };
   }
   return null;
+}
+
+/**
+ * Where a detail page's back link goes: the page it was opened from when the
+ * link said so, else its own parent.
+ */
+export function useBackTarget(fallback: Origin): Origin {
+  const { state } = useLocation();
+  return originOf(state) ?? fallback;
 }

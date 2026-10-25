@@ -9,6 +9,7 @@ import { ListState } from "@/components/ListState";
 import { FindingList, type Finding } from "@/components/Findings";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { cn } from "@/lib/utils";
+import { useBackTarget, useOrigin } from "@/lib/origin";
 
 type ClassRow = {
   classId: string;
@@ -67,6 +68,8 @@ const roleLabel: Record<string, string> = {
  */
 export default function AdminStaffMember() {
   const { userId } = useParams<{ userId: string }>();
+  const back = useBackTarget({ to: "/admin/staff", label: "Staff" });
+  const origin = useOrigin();
   const { sync } = useNavigationState();
 
   useEffect(() => {
@@ -97,7 +100,7 @@ export default function AdminStaffMember() {
   if (error || !data) {
     return (
       <div className="space-y-3 p-6">
-        <BackLink to="/admin/staff">Staff</BackLink>
+        <BackLink to={back.to}>{back.label}</BackLink>
         <ListState
           title="This person isn't available"
           description="They may have been removed from the school."
@@ -111,7 +114,7 @@ export default function AdminStaffMember() {
   return (
     <div className="h-full space-y-6 overflow-auto p-4 pb-24 sm:p-6 sm:pb-24">
       <div>
-        <BackLink to="/admin/staff">Staff</BackLink>
+        <BackLink to={back.to}>{back.label}</BackLink>
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="text-xl font-semibold">
             {teacher.name ?? teacher.email}
@@ -202,7 +205,12 @@ export default function AdminStaffMember() {
         ) : (
           <div className="divide-y rounded-lg border">
             {classes.map((c) => (
-              <ClassLine key={c.classId} c={c} passMark={passMark} />
+              <ClassLine
+                key={c.classId}
+                c={c}
+                passMark={passMark}
+                from={origin(teacher.name ?? "Teacher")}
+              />
             ))}
           </div>
         )}
@@ -246,11 +254,20 @@ function Tile({
   );
 }
 
-function ClassLine({ c, passMark }: { c: ClassRow; passMark: number }) {
+function ClassLine({
+  c,
+  passMark,
+  from,
+}: {
+  c: ClassRow;
+  passMark: number;
+  from: ReturnType<ReturnType<typeof useOrigin>>;
+}) {
   const below = c.average != null && c.average < passMark;
   return (
     <Link
       to={`/admin/classes/${c.classId}`}
+      state={from}
       className="group flex items-center gap-3 px-4 py-3 hover:bg-muted/30"
     >
       <div className="min-w-0 flex-1">
@@ -282,7 +299,7 @@ function ClassLine({ c, passMark }: { c: ClassRow; passMark: number }) {
         <p className="text-xs tabular-nums text-muted-foreground">
           {c.othersAverage != null
             ? `others ${c.othersAverage}%`
-            : "no comparison"}
+            : "only class in " + (c.yearGroup ?? "its year")}
         </p>
       </div>
       <IconChevronRight size={16} className="shrink-0 text-muted-foreground" />

@@ -13,6 +13,7 @@ import { BackLink } from "@/components/layout/BackLink";
 import { ListState } from "@/components/ListState";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { cn } from "@/lib/utils";
+import { useBackTarget } from "@/lib/origin";
 import { FindingList, type Finding } from "@/components/Findings";
 
 type Piece = {
@@ -81,6 +82,7 @@ const ordinal = (n: number) => {
  */
 export default function AdminStudent() {
   const { studentId } = useParams<{ studentId: string }>();
+  const back = useBackTarget({ to: "/admin/students", label: "Students" });
   const { sync } = useNavigationState();
 
   useEffect(() => {
@@ -111,7 +113,7 @@ export default function AdminStudent() {
   if (error || !data) {
     return (
       <div className="space-y-3 p-6">
-        <BackLink to="/admin/students">Students</BackLink>
+        <BackLink to={back.to}>{back.label}</BackLink>
         <ListState
           title="This learner isn't available"
           description="They may have been removed, or you may not have access."
@@ -127,7 +129,7 @@ export default function AdminStudent() {
   return (
     <div className="h-full space-y-6 overflow-auto p-4 pb-24 sm:p-6 sm:pb-24">
       <div>
-        <BackLink to="/admin/students">Students</BackLink>
+        <BackLink to={back.to}>{back.label}</BackLink>
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="text-xl font-semibold">
             {learner.name ?? learner.email}

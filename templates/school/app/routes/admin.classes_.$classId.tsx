@@ -10,6 +10,7 @@ import { ListState } from "@/components/ListState";
 import { FindingList, type Finding } from "@/components/Findings";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { cn } from "@/lib/utils";
+import { useBackTarget, useOrigin } from "@/lib/origin";
 
 type Profile = {
   class: {
@@ -62,6 +63,8 @@ const SHOWN = 8;
  */
 export default function AdminClass() {
   const { classId } = useParams<{ classId: string }>();
+  const back = useBackTarget({ to: "/admin/classes", label: "Classes" });
+  const origin = useOrigin();
   const { sync } = useNavigationState();
 
   useEffect(() => {
@@ -92,7 +95,7 @@ export default function AdminClass() {
   if (error || !data) {
     return (
       <div className="space-y-3 p-6">
-        <BackLink to="/admin/classes">Classes</BackLink>
+        <BackLink to={back.to}>{back.label}</BackLink>
         <ListState
           title="This class isn't available"
           description="It may have been removed."
@@ -111,7 +114,7 @@ export default function AdminClass() {
   return (
     <div className="h-full space-y-6 overflow-auto p-4 pb-24 sm:p-6 sm:pb-24">
       <div>
-        <BackLink to="/admin/classes">Classes</BackLink>
+        <BackLink to={back.to}>{back.label}</BackLink>
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="text-xl font-semibold">{cls.name}</h1>
           <Badge variant={cls.status === "active" ? "default" : "secondary"}>
@@ -133,6 +136,7 @@ export default function AdminClass() {
                   {i > 0 ? ", " : ""}
                   <Link
                     to={`/admin/staff/${t.userId}`}
+                    state={origin(cls.name)}
                     className="hover:text-foreground hover:underline"
                   >
                     {t.name}
@@ -225,6 +229,7 @@ export default function AdminClass() {
             <Link
               key={l.studentId}
               to={`/admin/students/${l.studentId}`}
+              state={origin(cls.name)}
               className="group flex items-center justify-between gap-3 px-4 py-3 text-sm hover:bg-muted/30"
             >
               <span className="min-w-0 truncate group-hover:text-primary">
