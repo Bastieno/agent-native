@@ -51,3 +51,33 @@ Locally, `*.localhost` resolves to 127.0.0.1, so a school can be tried at
 - Branded sign-in page by host.
 - Steps 2 and 3 are manual; a script using a Cloudflare token and a Vercel token
   can do them once the pattern is proven.
+
+## Environment variables a deployment needs
+
+Set these in the Vercel project (Settings > Environment Variables, Production).
+
+| Variable                                                 | What it is for                                                                                                                                                                                                                                                  |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `DATABASE_URL`                                           | The Neon connection string.                                                                                                                                                                                                                                     |
+| `BETTER_AUTH_URL`, `BETTER_AUTH_SECRET`                  | Sign-in. The URL is the deployment's own address.                                                                                                                                                                                                               |
+| `RESEND_API_KEY`, `EMAIL_FROM`                           | Email. `EMAIL_FROM` such as `Ellai <noreply@ellai.dev>`; the sender name is replaced per school. Setting a key also turns on email verification at sign-up.                                                                                                     |
+| `CRON_SECRET`                                            | Protects the daily job (`/api/school/cron/daily`). Without it the job refuses to run, so no due-soon or to-mark notifications and no digests.                                                                                                                   |
+| `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` | Phone push. Generate once with `npx web-push generate-vapid-keys`; the subject is `mailto:` an address you read. Never rotate the keys once people have subscribed, or their phones stop receiving until they subscribe again. Without them push is simply off. |
+| `DIGEST_MAX_PER_RUN`                                     | Optional. Most digest emails per daily run (60 by default), so invitations and resets still fit under the email provider's daily limit.                                                                                                                         |
+
+The daily job is scheduled in `vercel.json` (05:00 UTC, 06:00 in Lagos).
+
+## Learners who have no email
+
+`create-student-accounts` gives a learner an ID and password. The school needs
+its own address first (above), because the ID is only unique within it. Behind
+the scenes the app makes up `<id>@<school address>.invalid`, which can never
+receive mail. A forgotten password is reset by an admin with
+`reset-student-password`; there is no email to reset through. See "Learners
+without an email address" in `AGENTS.md`.
+
+## Per-school email
+
+Each school's emails are sent under the school's name, replies go to the
+school's `replyToEmail` (set with `update-school-config`), and reset and
+verification links point at the school's own address.
