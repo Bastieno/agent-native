@@ -12,6 +12,7 @@
 import { and, desc, eq, inArray, isNull, sql } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { getDb, schema } from "../db/index.js";
+import { pushToUsers } from "./push.js";
 
 export interface NewNotification {
   kind: string;
@@ -42,6 +43,7 @@ export async function notify(
   const createdAt = new Date().toISOString();
   const body = (n.body ?? "").slice(0, BODY_MAX);
   let added = 0;
+  const newlyTold: string[] = [];
   // In slices: a whole school at once is a long statement.
   for (let i = 0; i < unique.length; i += 100) {
     const slice = unique.slice(i, i + 100);
@@ -60,8 +62,25 @@ export async function notify(
       .insert(schema.notifications)
       .values(rows)
       .onConflictDoNothing()
-      .returning({ id: schema.notifications.id });
-    added += Array.isArray(result) ? result.length : 0;
+      .returning({
+        id: schema.notifications.id,
+        userId: schema.notifications.userId,
+      });
+    const inserted = Array.isArray(result) ? result : [];
+    added += inserted.length;
+    newlyTold.push(...inserted.map((r: any) => r.userId));
+  }
+  // Only those who did not already have it, and never at the cost of the
+  // notification itself: a push that fails leaves the feed untouched.
+  try {
+    await pushToUsers(newlyTold, {
+      title: n.title,
+      body: n.body,
+      url: n.link ?? "/",
+      tag: n.dedupeKey,
+    });
+  } catch (err) {
+    console.error("[notify] push failed:", err);
   }
   return added;
 }

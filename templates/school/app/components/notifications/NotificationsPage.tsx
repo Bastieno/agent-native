@@ -11,6 +11,14 @@ import {
   type NotificationItem,
 } from "@/hooks/use-notifications";
 import { cn } from "@/lib/utils";
+import {
+  disablePush,
+  enablePush,
+  isSubscribed,
+  pushSupport,
+  type PushSupport,
+} from "@/lib/push-client";
+import { useState } from "react";
 
 const ACTIONS = "/_agent-native/actions";
 
@@ -168,6 +176,55 @@ function HowToHear() {
           }
         />
       </label>
+      <PushToggle />
     </section>
+  );
+}
+
+/** Notifications on this phone or computer, when it can and the school allows. */
+function PushToggle() {
+  const [support, setSupport] = useState<PushSupport | null>(null);
+  const [on, setOn] = useState(false);
+  const [busy, setBusy] = useState(false);
+  useEffect(() => {
+    pushSupport()
+      .then(async (s) => {
+        setSupport(s);
+        setOn(s === "ready" ? await isSubscribed() : false);
+      })
+      .catch(() => setSupport("unsupported"));
+  }, []);
+  if (!support || support === "off" || support === "unsupported") return null;
+  const hint =
+    support === "install"
+      ? "On an iPhone, add this app to your Home Screen first (Share, then Add to Home Screen), then open it from there."
+      : support === "denied"
+        ? "Notifications are blocked for this site in your browser settings."
+        : "A message on this device when something new arrives.";
+  return (
+    <label className="flex items-start justify-between gap-4 text-sm">
+      <span>
+        On this device
+        <span className="mt-0.5 block text-xs text-muted-foreground">
+          {hint}
+        </span>
+      </span>
+      <Switch
+        checked={on}
+        disabled={busy || support !== "ready"}
+        onCheckedChange={async (want) => {
+          setBusy(true);
+          try {
+            if (want) setOn(await enablePush());
+            else {
+              await disablePush();
+              setOn(false);
+            }
+          } finally {
+            setBusy(false);
+          }
+        }}
+      />
+    </label>
   );
 }

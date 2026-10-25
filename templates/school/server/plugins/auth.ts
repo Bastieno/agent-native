@@ -8,7 +8,9 @@ const auth = createAuthPlugin({
   // by Google.
   allowSignUp: allowSchoolSignUp,
   // The scheduler's own call: no session, gated by CRON_SECRET in the route.
-  publicPaths: ["/api/school/cron/daily"],
+  // The cron call (gated by CRON_SECRET) and the manifest, which a browser
+  // fetches without cookies and which holds nothing but the school's name.
+  publicPaths: ["/api/school/cron/daily", "/manifest.json"],
   // Learners without an email address sign in with their school ID.
   usernameLogin: true,
   marketing: {

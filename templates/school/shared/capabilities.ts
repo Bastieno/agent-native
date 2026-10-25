@@ -37,6 +37,41 @@ export interface Capability {
 }
 
 export const CAPABILITIES: Capability[] = [
+  // ───────────────────────── Everyone ─────────────────────────
+  {
+    id: "notifications",
+    roles: ["admin", "teacher", "student"],
+    group: "Staying informed",
+    title: "Notifications and reminders",
+    summary:
+      "New announcements, work due soon and work waiting to be marked show up under Notifications, with a count beside it. You can also get a daily email, and a message on your phone.",
+    steps: [
+      "Open Notifications to read what is new; tap one to go to it.",
+      "Under 'How you hear', turn on the daily email if your school has enabled it.",
+      "On a phone, add the app to your Home Screen, then switch on 'On this device'.",
+    ],
+    where: {
+      admin: "/admin/notifications",
+      teacher: "/teacher/notifications",
+      student: "/student/notifications",
+    },
+    actions: [
+      "list-my-notifications",
+      "mark-notifications-read",
+      "update-my-notifications",
+    ],
+    keywords: [
+      "notification",
+      "reminder",
+      "alert",
+      "announcement",
+      "due",
+      "email",
+      "phone",
+      "push",
+    ],
+    added: "2026-10-25",
+  },
   // ───────────────────────── Admin ─────────────────────────
   {
     id: "admin-setup",
