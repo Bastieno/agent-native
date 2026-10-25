@@ -975,18 +975,21 @@ const migrations = runMigrations(
       sql: `CREATE INDEX IF NOT EXISTS school_domains_org_idx ON school_domains (org_id)`,
     },
     // Notifications: what a person should hear about, how they want to hear,
-    // and the phones that agreed to push.
+    // and the phones that agreed to push. The table is school_notifications
+    // because the framework already has its own `notifications`.
     {
       version: 99,
-      sql: `CREATE TABLE IF NOT EXISTS notifications (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, school_id TEXT NOT NULL, kind TEXT NOT NULL, title TEXT NOT NULL, body TEXT NOT NULL DEFAULT '', link TEXT, dedupe_key TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT (datetime('now')), read_at TEXT, emailed_at TEXT)`,
+      sql: `CREATE TABLE IF NOT EXISTS school_notifications (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, school_id TEXT NOT NULL, kind TEXT NOT NULL, title TEXT NOT NULL, body TEXT NOT NULL DEFAULT '', link TEXT, dedupe_key TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT (datetime('now')), read_at TEXT, emailed_at TEXT)`,
     },
+    // Databases that applied 99 before it was renamed did nothing for this
+    // table; this makes sure it exists everywhere.
     {
       version: 100,
-      sql: `CREATE UNIQUE INDEX IF NOT EXISTS notifications_dedupe_idx ON notifications (user_id, dedupe_key)`,
+      sql: `CREATE TABLE IF NOT EXISTS school_notifications (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, school_id TEXT NOT NULL, kind TEXT NOT NULL, title TEXT NOT NULL, body TEXT NOT NULL DEFAULT '', link TEXT, dedupe_key TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT (datetime('now')), read_at TEXT, emailed_at TEXT)`,
     },
     {
       version: 101,
-      sql: `CREATE INDEX IF NOT EXISTS notifications_user_idx ON notifications (user_id, created_at)`,
+      sql: `CREATE UNIQUE INDEX IF NOT EXISTS school_notifications_dedupe_idx ON school_notifications (user_id, dedupe_key)`,
     },
     {
       version: 102,
@@ -999,6 +1002,10 @@ const migrations = runMigrations(
     {
       version: 104,
       sql: `CREATE UNIQUE INDEX IF NOT EXISTS push_subscriptions_endpoint_idx ON push_subscriptions (endpoint)`,
+    },
+    {
+      version: 105,
+      sql: `CREATE INDEX IF NOT EXISTS school_notifications_user_idx ON school_notifications (user_id, created_at)`,
     },
   ],
   { table: "school_migrations" },

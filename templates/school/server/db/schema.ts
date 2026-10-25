@@ -660,12 +660,15 @@ export const capabilitySeen = table("capability_seen", {
 });
 
 /**
+ * (Named school_notifications: the framework already owns a table called
+ * notifications, with other columns.)
+ *
  * Things a person should hear about: a new announcement, work due soon, work
  * waiting to be marked. One row per person per thing. `dedupeKey` makes the
  * daily job safe to run twice: the same thing is never added for the same
  * person again. `emailedAt` marks what a digest email has already carried.
  */
-export const notifications = table("notifications", {
+export const notifications = table("school_notifications", {
   id: text("id").primaryKey(),
   userId: text("user_id").notNull(),
   schoolId: text("school_id").notNull(),
