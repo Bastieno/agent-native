@@ -1,12 +1,12 @@
 import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and, asc, desc, sql, inArray } from "drizzle-orm";
+import { eq, and, asc, desc, sql, inArray, getTableColumns } from "drizzle-orm";
 import { z } from "zod";
 import { numberish } from "../shared/zod-json.js";
 
 export default defineAction({
   description:
-    "List lesson notes for a class, optionally filtered by unit or status.",
+    "List lesson notes for a class, optionally filtered by unit or status. Returns titles, weeks and status, not the note text: use get-lesson-note to read one.",
   schema: z.object({
     classId: z.string().describe("Class ID"),
     unitId: z.string().optional(),
@@ -21,8 +21,14 @@ export default defineAction({
       conditions.push(eq(schema.lessonNotes.unitId, args.unitId));
     if (args.status)
       conditions.push(eq(schema.lessonNotes.status, args.status));
+    // Everything but the note's own text. A list shows titles, weeks and
+    // status; reading each lesson's full body for every row sent kilobytes the
+    // page never showed. get-lesson-note returns the text when it is wanted.
+    const { content: _content, ...columns } = getTableColumns(
+      schema.lessonNotes,
+    );
     const rows = await db
-      .select()
+      .select(columns)
       .from(schema.lessonNotes)
       .where(and(...conditions))
       // Teaching order, not editing order. Sorting by what was touched last

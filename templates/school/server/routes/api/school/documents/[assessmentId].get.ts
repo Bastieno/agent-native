@@ -1,4 +1,10 @@
-import { createError, defineEventHandler, getQuery, getRouterParam } from "h3";
+import {
+  createError,
+  defineEventHandler,
+  getQuery,
+  getRequestHeader,
+  getRouterParam,
+} from "h3";
 import { eq } from "drizzle-orm";
 import { getSession, runWithRequestContext } from "@agent-native/core/server";
 import { getDb, schema } from "../../../../db/index.js";
@@ -61,8 +67,20 @@ export default defineEventHandler(async (event) => {
       }
 
       const doc = await documentOf(assessmentId);
-      const file = doc ? await documentBytes(assessmentId, doc.id) : null;
-      if (!doc || !file) throw createError({ statusCode: 404 });
+      if (!doc) throw createError({ statusCode: 404 });
+
+      // A browser that already holds this version is told so without the file
+      // being read out of the database again: the check above has run, so
+      // access is still enforced, but the stored bytes stay where they are.
+      const etag = `"${doc.id}"`;
+      if (getRequestHeader(event, "if-none-match") === etag) {
+        return new Response(null, {
+          status: 304,
+          headers: { ETag: etag, "Cache-Control": "private, no-cache" },
+        });
+      }
+      const file = await documentBytes(assessmentId, doc.id);
+      if (!file) throw createError({ statusCode: 404 });
 
       const download = !!getQuery(event).download;
       const safeName = file.fileName.replace(/[^\w .()-]+/g, "");
@@ -74,7 +92,7 @@ export default defineEventHandler(async (event) => {
           // Changes when a new version replaces it, so the viewer never shows
           // a stale copy, and nobody but the signed-in person keeps one.
           "Cache-Control": "private, no-cache",
-          ETag: `"${doc.id}"`,
+          ETag: etag,
           "X-Content-Type-Options": "nosniff",
           // A PDF is only ever read here, never allowed to run anything.
           "Content-Security-Policy": "sandbox; default-src 'none'",
