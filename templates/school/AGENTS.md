@@ -758,6 +758,25 @@ clearly can"): the marks and hand-ins are what you know. What the data cannot te
 was missed, what happened at home or in class), say it cannot tell, and
 suggest asking the subject teacher.
 
+**"How is [teacher] doing?" and "how is [class] doing?"** Use
+`get-teacher-profile --userId <id>` (the user id from `list-staff`) and
+`get-class-profile --classId <id>`. The teacher's gives their classes and
+load, what is waiting on them (handed-in papers not marked, marks not
+published, lesson notes not written) and findings, each class's average set
+beside the school's other classes in the same subject and year group with a
+different teacher. The class's adds its teachers, every learner's figure
+(lowest first) and every paper's average and hand-in count. Both are counted
+exactly as a learner's Grades page and the report card count, so quote the
+figures and do not recompute them. Lead with the findings, in plain words,
+then offer the detail. When the pages are open, `view-screen` returns
+`teacherOnScreen` or `classOnScreen`: the same profile with each finding's
+`basis` and `evidence`; answer "explain this" from those. A class figure is a
+reason to look, not a verdict on the teacher, and you do not know why a class
+is where it is: a hard cohort, a hard paper and a small group look the same.
+Say what the figures show, say the comparison beside them, and suggest asking
+the teacher; never offer causes, and never call a teacher good or bad.
+Admin only.
+
 ### A4a. Report cards
 
 A report card is a term's record for one learner: their published marks in every
@@ -995,23 +1014,25 @@ pnpm action navigate --view=extensions
 
 ### A6. Navigation Map (Admin)
 
-| User says                              | Navigate to                                                                                                                                   |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| "overview", "home", "dashboard"        | `navigate --view=overview`                                                                                                                    |
-| "curriculum"                           | `navigate --view=curriculum`                                                                                                                  |
-| "what's missing for JSS1?"             | `navigate --view=curriculum --gradeLevelId <id>` — only that year group's subjects, counted for it                                            |
-| "show me the Maths curriculum"         | `navigate --view=curriculum --subjectId <id> [--gradeLevelId <id>]`                                                                           |
-| "set up curriculum"                    | `navigate --view=curriculum-setup`                                                                                                            |
-| "staff", "teachers"                    | `navigate --view=staff`                                                                                                                       |
-| "students", "roster"                   | `navigate --view=students`                                                                                                                    |
-| "[learner]", "how is [learner] doing?" | `navigate --view=students --studentId <id>` — the learner's page: what is going well, what needs attention, and each subject beside the class |
-| "classes"                              | `navigate --view=classes`                                                                                                                     |
-| "arms", "SS1A"                         | `navigate --view=arms` — the arms tab of Classes                                                                                              |
-| "timetable"                            | `navigate --view=timetable [--termId <id>] [--armId <id> \| --teacherUserId <id> \| --room "..."]`                                            |
-| "lesson notes", "who's behind?"        | `navigate --view=lessons` — readiness per class; add `--classId` for one, `--lessonId` for a note                                             |
-| "analytics", "performance"             | `navigate --view=analytics`                                                                                                                   |
-| "settings", "configure"                | `navigate --view=settings` (`settingsTab: assistant` in `<current-screen>` means the Assistant tab)                                           |
-| "extensions", "widgets"                | `navigate --view=extensions`                                                                                                                  |
+| User says                              | Navigate to                                                                                                                                       |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "overview", "home", "dashboard"        | `navigate --view=overview`                                                                                                                        |
+| "curriculum"                           | `navigate --view=curriculum`                                                                                                                      |
+| "what's missing for JSS1?"             | `navigate --view=curriculum --gradeLevelId <id>` — only that year group's subjects, counted for it                                                |
+| "show me the Maths curriculum"         | `navigate --view=curriculum --subjectId <id> [--gradeLevelId <id>]`                                                                               |
+| "set up curriculum"                    | `navigate --view=curriculum-setup`                                                                                                                |
+| "staff", "teachers"                    | `navigate --view=staff`                                                                                                                           |
+| "students", "roster"                   | `navigate --view=students`                                                                                                                        |
+| "[learner]", "how is [learner] doing?" | `navigate --view=students --studentId <id>` — the learner's page: what is going well, what needs attention, and each subject beside the class     |
+| "[teacher]", "how is [teacher] doing?" | `navigate --view=staff --staffUserId <userId>` — the teacher's page: their classes beside the school's other classes, and what is waiting on them |
+| "[class]", "how is [class] doing?"     | `navigate --view=classes --classId <id>` — the class in depth: teachers, learners (lowest first) and papers                                       |
+| "classes"                              | `navigate --view=classes`                                                                                                                         |
+| "arms", "SS1A"                         | `navigate --view=arms` — the arms tab of Classes                                                                                                  |
+| "timetable"                            | `navigate --view=timetable [--termId <id>] [--armId <id> \| --teacherUserId <id> \| --room "..."]`                                                |
+| "lesson notes", "who's behind?"        | `navigate --view=lessons` — readiness per class; add `--classId` for one, `--lessonId` for a note                                                 |
+| "analytics", "performance"             | `navigate --view=analytics`                                                                                                                       |
+| "settings", "configure"                | `navigate --view=settings` (`settingsTab: assistant` in `<current-screen>` means the Assistant tab)                                               |
+| "extensions", "widgets"                | `navigate --view=extensions`                                                                                                                      |
 
 ---
 

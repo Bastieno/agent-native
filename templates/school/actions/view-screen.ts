@@ -27,6 +27,10 @@ import getSchoolAnalytics from "./get-school-analytics.js";
 import getMyAnalytics from "./get-my-analytics.js";
 import getGradebook from "./get-gradebook.js";
 import getMyTermGrades from "./get-my-term-grades.js";
+import {
+  classProfileFor,
+  teacherProfileFor,
+} from "../server/lib/staff-profile.js";
 
 /**
  * A page's figures, the same ones its own query loads, for the agent to read.
@@ -342,6 +346,28 @@ export default defineAction({
           }));
         } catch {
           // continue
+        }
+      }
+
+      // A teacher's or a class's page is open: the same profile the page
+      // shows, with each finding's basis and evidence, so "why does it say
+      // that?" is answered from the data and not guessed at.
+      if (nav.view === "staff" && nav.staffUserId && schoolId) {
+        try {
+          screen.teacherOnScreen = await teacherProfileFor(nav.staffUserId, {
+            orgId: schoolId,
+          });
+        } catch {
+          // no longer there
+        }
+      }
+      if (nav.view === "classes" && nav.classId && schoolId) {
+        try {
+          screen.classOnScreen = await classProfileFor(nav.classId, {
+            orgId: schoolId,
+          });
+        } catch {
+          // no longer there
         }
       }
 

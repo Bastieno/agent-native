@@ -64,12 +64,16 @@ export default function AdminLayout() {
       "curriculum-setup": nav.curriculumDraftId
         ? `/admin/curriculum-setup?draftId=${nav.curriculumDraftId}`
         : "/admin/curriculum-setup",
-      staff: "/admin/staff",
+      // A teacher opens on their own page; without one, the list.
+      staff: nav.staffUserId
+        ? `/admin/staff/${nav.staffUserId}`
+        : "/admin/staff",
       // A learner opens on their own page; without one, the list.
       students: nav.studentId
         ? `/admin/students/${nav.studentId}`
         : "/admin/students",
-      classes: "/admin/classes",
+      // A class opens on its own page; without one, the list.
+      classes: nav.classId ? `/admin/classes/${nav.classId}` : "/admin/classes",
       arms: "/admin/classes?tab=arms",
       timetable: timetablePath(nav),
       // A note opens on its own; without one, how ready each class is.

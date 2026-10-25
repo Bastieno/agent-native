@@ -133,6 +133,9 @@ const ANALYTICS = [
   "get-student-profile",
 ];
 
+/** What only a head may look into: one teacher, and one class in depth. */
+const ADMIN_ANALYTICS = ["get-teacher-profile", "get-class-profile"];
+
 /**
  * Issuing a term's report card is long, careful work: gathering every mark,
  * confirming the extras, writing it down. Done by the school's own assistant,
@@ -169,6 +172,7 @@ export const CHAT_APP_EXPOSURE: Record<
     ...EXTENSION_ACTIONS,
     "get-custom-fields-schema",
     ...ANALYTICS,
+    ...ADMIN_ANALYTICS,
     "get-school-analytics",
     ...REPORTS,
     ...ALWAYS,
@@ -199,7 +203,7 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
   [CURRICULUM, "curriculum"],
   [TIMETABLE, "timetable"],
   [[...EXTENSION_ACTIONS, "get-custom-fields-schema"], "extensions"],
-  [[...ANALYTICS, "get-school-analytics"], "analytics"],
+  [[...ANALYTICS, ...ADMIN_ANALYTICS, "get-school-analytics"], "analytics"],
   [REPORTS, "report-cards"],
   [
     [

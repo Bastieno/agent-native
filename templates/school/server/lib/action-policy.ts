@@ -346,6 +346,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   // One learner for the person who must act on it. A teacher is held to their
   // own classes inside the action; policy only says who may ask at all.
   "get-student-profile": STAFF,
+  "get-teacher-profile": ADMIN,
+  "get-class-profile": ADMIN,
   "identify-struggling-students": STAFF,
   "get-school-analytics": ADMIN_COORD,
 

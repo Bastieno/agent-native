@@ -2,7 +2,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { NO_TEACHER_LABEL } from "@shared/class-teacher";
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { useEffect, useMemo, useState } from "react";
 import { ArmsTab } from "@/components/timetable/ArmsTab";
 import { ClassesTabs } from "@/components/timetable/ClassesTabs";
@@ -26,6 +26,7 @@ import {
   IconUsers,
   IconChevronDown,
   IconChevronRight,
+  IconPencil,
 } from "@tabler/icons-react";
 import {
   Select,
@@ -366,19 +367,18 @@ export default function AdminClasses() {
                   <ul className="divide-y border-t sm:hidden">
                     {rows.map((cls: any) => (
                       <li key={cls.id}>
-                        <button
-                          type="button"
-                          onClick={() => openClassDialog(cls)}
-                          className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-muted/20"
-                        >
-                          <div className="min-w-0 flex-1">
-                            <p className="truncate text-sm font-medium">
+                        <div className="flex w-full items-center gap-3 px-4 py-3 hover:bg-muted/20">
+                          <Link
+                            to={`/admin/classes/${cls.id}`}
+                            className="group min-w-0 flex-1"
+                          >
+                            <p className="truncate text-sm font-medium group-hover:text-primary">
                               {cls.name}
                             </p>
                             <p className="truncate text-xs text-muted-foreground">
                               {cls.teacherName ?? NO_TEACHER_LABEL}
                             </p>
-                          </div>
+                          </Link>
                           <span className="inline-flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
                             <IconUsers size={13} />
                             {cls.enrollmentCount ?? 0}
@@ -391,7 +391,16 @@ export default function AdminClasses() {
                           >
                             {cls.status}
                           </Badge>
-                        </button>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-7 w-7 shrink-0"
+                            aria-label={`Edit ${cls.name}`}
+                            onClick={() => openClassDialog(cls)}
+                          >
+                            <IconPencil size={14} />
+                          </Button>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -425,7 +434,13 @@ export default function AdminClasses() {
                           onClick={() => openClassDialog(cls)}
                         >
                           <td className="px-4 py-2.5 font-medium">
-                            {cls.name}
+                            <Link
+                              to={`/admin/classes/${cls.id}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="hover:text-primary hover:underline"
+                            >
+                              {cls.name}
+                            </Link>
                             {/* Subject and teacher have their own columns from
                                 sm up; on a phone they sit under the name. */}
                             <span className="block text-xs font-normal text-muted-foreground sm:hidden">

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath, sendToAgentChat } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -225,8 +226,12 @@ export default function AdminStaff() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted shrink-0">
                       <IconUser size={15} className="text-muted-foreground" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">
+                    {/* The name block opens the person's page. */}
+                    <Link
+                      to={`/admin/staff/${member.userId}`}
+                      className="group flex-1 min-w-0"
+                    >
+                      <p className="text-sm font-medium truncate group-hover:text-primary">
                         {member.name ?? member.email ?? member.userId}
                       </p>
                       {member.email && member.name && (
@@ -234,7 +239,7 @@ export default function AdminStaff() {
                           {member.email}
                         </p>
                       )}
-                    </div>
+                    </Link>
                     <Badge variant="outline" className="text-xs shrink-0">
                       {roleLabel[member.schoolRole] ?? member.schoolRole}
                     </Badge>
