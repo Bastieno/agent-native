@@ -11,11 +11,13 @@ import {
   IconPuzzle,
   IconLogout,
   IconBell,
+  IconInbox,
   IconCalendarTime,
   IconHelp,
   IconPlugConnected,
 } from "@tabler/icons-react";
 import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
+import { NotificationCount } from "@/components/notifications/NotificationCount";
 import { HelpDot } from "@/components/help/HelpDot";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
@@ -84,6 +86,21 @@ export function AdminSidebar({
         ))}
       </nav>
       <div className="border-t p-2">
+        <NavLink
+          to="/admin/notifications"
+          className={({ isActive }) =>
+            cn(
+              "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors",
+              isActive
+                ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                : "text-sidebar-foreground hover:bg-sidebar-accent/60",
+            )
+          }
+        >
+          <IconInbox size={16} />
+          Notifications
+          <NotificationCount />
+        </NavLink>
         <NavLink
           to="/admin/help"
           className={({ isActive }) =>

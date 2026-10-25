@@ -4,6 +4,7 @@ import {
   IconChartBar,
   IconLayoutDashboard,
   IconLogout,
+  IconInbox,
   IconHelp,
   IconPlugConnected,
   IconPuzzle,
@@ -13,6 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
+import { NotificationCount } from "@/components/notifications/NotificationCount";
 import { HelpDot } from "@/components/help/HelpDot";
 import { useTeacherExtensions } from "@/hooks/use-teacher-extensions";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
@@ -77,6 +79,21 @@ export function TeacherSidebar({
         ))}
       </nav>
       <div className="border-t p-2">
+        <NavLink
+          to="/teacher/notifications"
+          className={({ isActive }) =>
+            cn(
+              "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors",
+              isActive
+                ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                : "text-sidebar-foreground hover:bg-sidebar-accent/60",
+            )
+          }
+        >
+          <IconInbox size={16} />
+          Notifications
+          <NotificationCount />
+        </NavLink>
         <NavLink
           to="/teacher/help"
           className={({ isActive }) =>

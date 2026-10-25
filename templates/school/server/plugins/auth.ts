@@ -7,6 +7,8 @@ const auth = createAuthPlugin({
   // an address no school has invited cannot create an account, by email or
   // by Google.
   allowSignUp: allowSchoolSignUp,
+  // The scheduler's own call: no session, gated by CRON_SECRET in the route.
+  publicPaths: ["/api/school/cron/daily"],
   // Learners without an email address sign in with their school ID.
   usernameLogin: true,
   marketing: {

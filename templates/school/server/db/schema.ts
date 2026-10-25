@@ -659,6 +659,46 @@ export const capabilitySeen = table("capability_seen", {
   seenAt: text("seen_at").notNull().default(now()),
 });
 
+/**
+ * Things a person should hear about: a new announcement, work due soon, work
+ * waiting to be marked. One row per person per thing. `dedupeKey` makes the
+ * daily job safe to run twice: the same thing is never added for the same
+ * person again. `emailedAt` marks what a digest email has already carried.
+ */
+export const notifications = table("notifications", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").notNull(),
+  schoolId: text("school_id").notNull(),
+  kind: text("kind").notNull(), // announcement | due-soon | to-mark | ...
+  title: text("title").notNull(),
+  body: text("body").notNull().default(""),
+  link: text("link"),
+  dedupeKey: text("dedupe_key").notNull(),
+  createdAt: text("created_at").notNull().default(now()),
+  readAt: text("read_at"),
+  emailedAt: text("emailed_at"),
+});
+
+/** How a person wants to hear: by email digest, and by push on their phone. */
+export const notificationPrefs = table("notification_prefs", {
+  userId: text("user_id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  emailDigest: text("email_digest").notNull().default("off"), // off | daily
+  push: text("push").notNull().default("on"), // on | off
+  updatedAt: text("updated_at").notNull().default(now()),
+});
+
+/** A phone or browser that agreed to receive push notifications. */
+export const pushSubscriptions = table("push_subscriptions", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").notNull(),
+  schoolId: text("school_id").notNull(),
+  endpoint: text("endpoint").notNull(),
+  p256dh: text("p256dh").notNull(),
+  auth: text("auth").notNull(),
+  createdAt: text("created_at").notNull().default(now()),
+});
+
 export const gradebookEntries = table("gradebook_entries", {
   id: text("id").primaryKey(),
   studentId: text("student_id").notNull(),

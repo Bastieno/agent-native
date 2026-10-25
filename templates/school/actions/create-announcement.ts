@@ -3,6 +3,12 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import { actorForEmail } from "../server/lib/class-access.js";
+import {
+  notify,
+  peopleOfClass,
+  peopleOfSchool,
+} from "../server/lib/notifications.js";
 
 export default defineAction({
   description: "Create a school-wide or class-specific announcement.",
@@ -35,6 +41,30 @@ export default defineAction({
       orgId,
       visibility: "org" as const,
     });
-    return { id, title: args.title, scope: args.scope };
+    // Tell the people it is for, once, other than whoever wrote it. A draft
+    // tells nobody until it is published.
+    let told = 0;
+    if (args.publishNow) {
+      const author = userEmail ? await actorForEmail(userEmail) : null;
+      const people =
+        args.scope === "class" && args.classId
+          ? await peopleOfClass(orgId, args.classId)
+          : await peopleOfSchool(orgId, [
+              "school_admin",
+              "subject_coordinator",
+              "teacher",
+              "student",
+            ]);
+      told = await notify(
+        people.filter((p) => p.userId !== author?.userId),
+        {
+          kind: "announcement",
+          title: args.title,
+          body: args.content,
+          dedupeKey: `announcement:${id}`,
+        },
+      );
+    }
+    return { id, title: args.title, scope: args.scope, notified: told };
   },
 });

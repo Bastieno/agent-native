@@ -226,6 +226,12 @@ export default defineAction({
       .describe(
         'The school\'s own timezone, e.g. "Africa/Lagos" — anything that happened at a moment in time is shown in it.',
       ),
+    emailDigests: z.coerce
+      .boolean()
+      .optional()
+      .describe(
+        "Whether the school sends daily digest emails at all. Off until the school says: each email counts against the sending limit, so it is a deliberate choice. Even when on, only people who opted in get one.",
+      ),
     replyToEmail: z
       .string()
       .email()

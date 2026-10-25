@@ -974,6 +974,32 @@ const migrations = runMigrations(
       version: 98,
       sql: `CREATE INDEX IF NOT EXISTS school_domains_org_idx ON school_domains (org_id)`,
     },
+    // Notifications: what a person should hear about, how they want to hear,
+    // and the phones that agreed to push.
+    {
+      version: 99,
+      sql: `CREATE TABLE IF NOT EXISTS notifications (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, school_id TEXT NOT NULL, kind TEXT NOT NULL, title TEXT NOT NULL, body TEXT NOT NULL DEFAULT '', link TEXT, dedupe_key TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT (datetime('now')), read_at TEXT, emailed_at TEXT)`,
+    },
+    {
+      version: 100,
+      sql: `CREATE UNIQUE INDEX IF NOT EXISTS notifications_dedupe_idx ON notifications (user_id, dedupe_key)`,
+    },
+    {
+      version: 101,
+      sql: `CREATE INDEX IF NOT EXISTS notifications_user_idx ON notifications (user_id, created_at)`,
+    },
+    {
+      version: 102,
+      sql: `CREATE TABLE IF NOT EXISTS notification_prefs (user_id TEXT PRIMARY KEY, school_id TEXT NOT NULL, email_digest TEXT NOT NULL DEFAULT 'off', push TEXT NOT NULL DEFAULT 'on', updated_at TEXT NOT NULL DEFAULT (datetime('now')))`,
+    },
+    {
+      version: 103,
+      sql: `CREATE TABLE IF NOT EXISTS push_subscriptions (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, school_id TEXT NOT NULL, endpoint TEXT NOT NULL, p256dh TEXT NOT NULL, auth TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT (datetime('now')))`,
+    },
+    {
+      version: 104,
+      sql: `CREATE UNIQUE INDEX IF NOT EXISTS push_subscriptions_endpoint_idx ON push_subscriptions (endpoint)`,
+    },
   ],
   { table: "school_migrations" },
 );

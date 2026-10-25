@@ -3,11 +3,13 @@ import {
   IconLayoutDashboard,
   IconBook,
   IconCalendarWeek,
+  IconInbox,
   IconHelp,
   IconTrophy,
   IconLogout,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
+import { NotificationCount } from "@/components/notifications/NotificationCount";
 import { HelpDot } from "@/components/help/HelpDot";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
@@ -22,6 +24,12 @@ const navItems = [
   { href: "/student/week", label: "My week", icon: IconCalendarWeek },
   { href: "/student/classes", label: "My Classes", icon: IconBook },
   { href: "/student/grades", label: "Grades", icon: IconTrophy },
+  {
+    href: "/student/notifications",
+    label: "Alerts",
+    icon: IconInbox,
+    count: true,
+  },
   { href: "/student/help", label: "Help", icon: IconHelp, dot: true },
 ];
 
@@ -47,7 +55,7 @@ export function StudentNav({ agent = true }: { agent?: boolean }) {
         {schoolName}
       </span>
       <nav className="flex flex-1 items-center gap-1 overflow-x-auto">
-        {navItems.map(({ href, label, icon: Icon, end, dot }: any) => (
+        {navItems.map(({ href, label, icon: Icon, end, dot, count }: any) => (
           <NavLink
             key={href}
             to={href}
@@ -67,6 +75,7 @@ export function StudentNav({ agent = true }: { agent?: boolean }) {
                 the agent panel open); the active item keeps its label. */}
             <span className="hidden sm:inline">{label}</span>
             {dot ? <HelpDot /> : null}
+            {count ? <NotificationCount /> : null}
           </NavLink>
         ))}
       </nav>
