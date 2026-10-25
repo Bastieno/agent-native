@@ -26,6 +26,7 @@
  *     itself) are skipped — no PII and avoids self-recursion.
  *   - Any error during interception falls back to the original response.
  */
+import { idlePollDelay } from "../client/idle-poll.js";
 import { redactDemoData } from "./redact.js";
 import { agentNativePath } from "../client/api-path.js";
 
@@ -47,7 +48,7 @@ const SKIP_SUBSTRINGS = [
 ];
 
 let installed = false;
-let pollTimer: ReturnType<typeof setInterval> | null = null;
+let pollTimer: ReturnType<typeof setTimeout> | null = null;
 let demoEnabled = false;
 let originalFetch: typeof fetch | null = null;
 
@@ -174,12 +175,20 @@ export function ensureDemoModeFetchInterceptor(): void {
   };
 
   void refreshDemoFlag();
-  pollTimer = setInterval(() => void refreshDemoFlag(), 4_000);
+  // Re-check the flag on a timer that slows when nobody is at the page and
+  // does not ask at all in a hidden tab.
+  const tick = () => {
+    if (!(typeof document !== "undefined" && document.hidden)) {
+      void refreshDemoFlag();
+    }
+    pollTimer = setTimeout(tick, idlePollDelay(4_000));
+  };
+  pollTimer = setTimeout(tick, idlePollDelay(4_000));
   if (typeof pollTimer === "object" && "unref" in pollTimer) {
     try {
       (pollTimer as unknown as { unref: () => void }).unref();
     } catch {
-      // unref unavailable in the browser — fine, interval is cheap.
+      // unref unavailable in the browser — fine.
     }
   }
 }

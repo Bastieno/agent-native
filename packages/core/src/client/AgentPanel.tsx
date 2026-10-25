@@ -21,6 +21,7 @@
  *   <AgentChatSurface mode="page" className="h-screen" />
  */
 
+import { idlePollDelay } from "./idle-poll.js";
 import React, {
   useState,
   useEffect,
@@ -1730,7 +1731,7 @@ function URLSync({ browserTabId }: { browserTabId?: string }) {
         return null;
       }
     },
-    refetchInterval: 2_000,
+    refetchInterval: () => idlePollDelay(2_000),
     retry: false,
   });
 
