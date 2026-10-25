@@ -1,8 +1,9 @@
 import { getOrgSetting } from "@agent-native/core/settings";
-import { and, desc, eq } from "drizzle-orm";
+import { and, desc, eq, inArray, isNotNull } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
 import { rowOf } from "./raw-sql.js";
+import { isForLearner } from "./audience.js";
 import {
   AccessDeniedError,
   actorForEmail,
@@ -223,6 +224,62 @@ export async function studentProfileFor(
     }
   }
 
+  // Where a teacher could do something about it, as data rather than a
+  // sentence, so a page can offer the work and an agent can start it. The
+  // weakest subjects first; a subject is here only for a reason the figures
+  // give (below the pass mark, or work not handed in).
+  const focus = withClass
+    .filter((s) => s.belowPassMark || s.missed > 0)
+    .sort((a, b) => (a.percentage ?? 101) - (b.percentage ?? 101))
+    .slice(0, 4)
+    .map((s) => ({
+      classId: s.classId,
+      subject: s.subject,
+      percentage: s.percentage,
+      missed: s.missed,
+      reason: [
+        s.belowPassMark && s.percentage != null
+          ? `${s.percentage}% is below the pass mark`
+          : null,
+        s.missed > 0
+          ? `${s.missed} piece${s.missed === 1 ? "" : "s"} not handed in`
+          : null,
+      ]
+        .filter(Boolean)
+        .join(", "),
+    }));
+
+  // What has already been made for this learner alone, in the classes the
+  // reader may see.
+  const madeFor = await db
+    .select({
+      id: schema.assessments.id,
+      title: schema.assessments.title,
+      format: schema.assessments.format,
+      status: schema.assessments.status,
+      classId: schema.assessments.classId,
+      createdAt: schema.assessments.createdAt,
+      audienceStudentIdsJson: schema.assessments.audienceStudentIdsJson,
+    })
+    .from(schema.assessments)
+    .where(
+      and(
+        inArray(
+          schema.assessments.classId,
+          withClass.map((s) => s.classId),
+        ),
+        isNotNull(schema.assessments.audienceStudentIdsJson),
+      ),
+    );
+  const subjectOf = new Map(withClass.map((s) => [s.classId, s.subject]));
+  const resources = madeFor
+    .filter((a) => isForLearner(a, studentId))
+    .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)))
+    .map(({ audienceStudentIdsJson, ...a }) => ({
+      ...a,
+      subject: subjectOf.get(a.classId) ?? null,
+    }));
+
   return {
     learner: {
       id: student.id,
@@ -242,6 +299,8 @@ export async function studentProfileFor(
     summary,
     subjects: withClass,
     findings,
+    focus,
+    resources,
     position,
     // Said so the reader knows how the figures were counted.
     counting: {

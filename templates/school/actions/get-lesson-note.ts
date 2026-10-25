@@ -10,6 +10,7 @@ import {
 } from "../server/lib/lesson-attribution.js";
 import { materialForLesson } from "../server/lib/student-note-writer.js";
 import { getOrgSetting } from "@agent-native/core/settings";
+import { resolveStudentId } from "../server/lib/student-session.js";
 
 export default defineAction({
   description:
@@ -91,6 +92,8 @@ export default defineAction({
     // point of a preview.
     const material = await materialForLesson(note.id, {
       publishedOnly: role === "student",
+      forStudentId:
+        role === "student" ? await resolveStudentId(undefined) : undefined,
     });
 
     // What work looks like in this subject, in the school's own words. The

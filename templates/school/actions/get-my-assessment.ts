@@ -2,6 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { resolveStudentId } from "../server/lib/student-session.js";
+import { isForLearner } from "../server/lib/audience.js";
 import { activityWindow } from "../server/lib/activity-window.js";
 import {
   forLearner,
@@ -58,6 +59,7 @@ export default defineAction({
         durationMinutes: schema.assessments.durationMinutes,
         navigation: schema.assessments.navigation,
         instantFeedback: schema.assessments.instantFeedback,
+        audienceStudentIdsJson: schema.assessments.audienceStudentIdsJson,
       })
       .from(schema.assessments)
       .where(eq(schema.assessments.id, rawArgs.assessmentId))
@@ -77,6 +79,10 @@ export default defineAction({
     // activity" and "you cannot see it" should be indistinguishable, or the
     // refusal itself confirms that a test exists.
     if (assessment.status !== "published" && assessment.status !== "closed") {
+      throw new Error("Assessment not found.");
+    }
+    // Made for other learners: the same refusal, for the same reason.
+    if (!isForLearner(assessment, studentId)) {
       throw new Error("Assessment not found.");
     }
 

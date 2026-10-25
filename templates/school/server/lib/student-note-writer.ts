@@ -1,3 +1,4 @@
+import { isForLearner } from "./audience.js";
 import { getDb, schema } from "../db/index.js";
 import { and, eq, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
@@ -142,7 +143,7 @@ export async function writeStudentNotes(
  */
 export async function materialForLesson(
   lessonNoteId: string,
-  opts: { publishedOnly: boolean },
+  opts: { publishedOnly: boolean; forStudentId?: string },
 ) {
   const db = getDb();
   const conditions = [eq(schema.assessments.lessonNoteId, lessonNoteId)];
@@ -166,12 +167,23 @@ export async function materialForLesson(
       // publishing is something they read, not something they discover.
       publishedByUserId: schema.assessments.publishedByUserId,
       publishedAt: schema.assessments.publishedAt,
+      audienceStudentIdsJson: schema.assessments.audienceStudentIdsJson,
     })
     .from(schema.assessments)
     .where(and(...conditions))
-    // A class does not see material its teacher has scheduled for later.
+    // A class does not see material its teacher has scheduled for later, nor
+    // what was made for other learners. With no learner named, anything made
+    // for particular learners stays out rather than going to everyone.
     .then((all: any[]) =>
-      opts.publishedOnly ? all.filter((r) => !heldBack(r)) : all,
+      opts.publishedOnly
+        ? all.filter(
+            (r) =>
+              !heldBack(r) &&
+              (opts.forStudentId
+                ? isForLearner(r, opts.forStudentId)
+                : !r.audienceStudentIdsJson),
+          )
+        : all,
     );
   // Who published each one, in words. A learner is not shown this (they see
   // only published work anyway, and whose decision it was is staffroom
@@ -192,7 +204,12 @@ export async function materialForLesson(
     } catch {
       objectives = [];
     }
-    const { publishedByUserId, publishedAt, ...fields } = rest as any;
+    const {
+      publishedByUserId,
+      publishedAt,
+      audienceStudentIdsJson,
+      ...fields
+    } = rest as any;
     return {
       ...fields,
       objectives,

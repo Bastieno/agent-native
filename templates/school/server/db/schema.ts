@@ -365,6 +365,10 @@ export const assessments = table("assessments", {
   dueDate: text("due_date"),
   totalPoints: integer("total_points").notNull().default(100),
   status: text("status").notNull().default("draft"), // draft | published | closed
+  // JSON array of student record ids this was made for. Null is the whole
+  // class. Only ever set on material (nothing marked, nothing handed in), so
+  // no class figure has to know about it.
+  audienceStudentIdsJson: text("audience_student_ids_json"),
   customFieldsJson: text("custom_fields_json").notNull().default("{}"),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),

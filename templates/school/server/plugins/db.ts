@@ -941,6 +941,12 @@ const migrations = runMigrations(
           ALTER TABLE framework_objectives ALTER COLUMN code_generated SET DEFAULT FALSE`,
       },
     },
+    // Work made for particular learners rather than the whole class: the ids
+    // of the students who may see it. Null is the whole class, as before.
+    {
+      version: 92,
+      sql: `ALTER TABLE assessments ADD COLUMN audience_student_ids_json TEXT`,
+    },
   ],
   { table: "school_migrations" },
 );

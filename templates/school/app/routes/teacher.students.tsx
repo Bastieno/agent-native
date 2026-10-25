@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -155,7 +155,10 @@ export default function TeacherStudents() {
           <ul className="divide-y rounded-lg border sm:hidden">
             {paged.items.map((s: any) => (
               <li key={s.id} className="flex items-start gap-3 px-4 py-3">
-                <div className="min-w-0 flex-1">
+                <Link
+                  to={s.studentId ? `/teacher/students/${s.studentId}` : "#"}
+                  className="min-w-0 flex-1"
+                >
                   <p className="truncate text-sm font-medium">{s.name}</p>
                   <p className="truncate text-xs text-muted-foreground">
                     {s.email}
@@ -166,7 +169,7 @@ export default function TeacherStudents() {
                       ? ` · ${s.completionRate}% done`
                       : ""}
                   </p>
-                </div>
+                </Link>
                 <div className="flex shrink-0 flex-col items-end gap-1">
                   <span className="text-sm font-medium tabular-nums">
                     {s.averageScore != null ? `${s.averageScore}%` : "—"}
@@ -205,7 +208,12 @@ export default function TeacherStudents() {
                 {paged.items.map((s: any) => (
                   <tr key={s.id} className="border-b last:border-0">
                     <td className="px-4 py-2.5">
-                      <div>
+                      <Link
+                        to={
+                          s.studentId ? `/teacher/students/${s.studentId}` : "#"
+                        }
+                        className="block hover:text-primary"
+                      >
                         <p className="font-medium">{s.name}</p>
                         <p className="text-xs text-muted-foreground">
                           {s.email}
@@ -214,7 +222,7 @@ export default function TeacherStudents() {
                         <p className="text-xs text-muted-foreground sm:hidden">
                           {s.className ?? "—"}
                         </p>
-                      </div>
+                      </Link>
                     </td>
                     <td className="hidden px-4 py-2.5 text-xs text-muted-foreground sm:table-cell">
                       {s.className ?? "—"}

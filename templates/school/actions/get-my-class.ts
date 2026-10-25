@@ -5,6 +5,7 @@ import { eq, and, desc, asc, inArray, sql } from "drizzle-orm";
 import { resolveStudentId } from "../server/lib/student-session.js";
 import { z } from "zod";
 import { sharedWithClass } from "../server/lib/shared-with-class.js";
+import { isForLearner } from "../server/lib/audience.js";
 import { heldBack } from "../shared/held-back.js";
 import { rowOf } from "../server/lib/raw-sql.js";
 
@@ -82,6 +83,10 @@ export default defineAction({
       .where(eq(schema.lessonNotes.classId, rawArgs.classId))
       .orderBy(asc(schema.lessonNotes.lessonDate));
 
+    // Work made for particular learners is shown to them alone. Staff looking
+    // without naming a learner see all of it.
+    const forThisLearner = (a: any) => !studentId || isForLearner(a, studentId);
+
     const openWeeks = allLessons.length
       ? await db
           .select({
@@ -90,6 +95,7 @@ export default defineAction({
             gradingMode: schema.assessments.gradingMode,
             responseMode: schema.assessments.responseMode,
             opensAt: schema.assessments.opensAt,
+            audienceStudentIdsJson: schema.assessments.audienceStudentIdsJson,
           })
           .from(schema.assessments)
           .where(
@@ -106,7 +112,7 @@ export default defineAction({
     // count towards what a listed week holds.
     const hasMaterial = new Set(
       openWeeks
-        .filter((w: any) => !heldBack(w))
+        .filter((w: any) => !heldBack(w) && forThisLearner(w))
         .map((w: any) => w.lessonNoteId)
         .filter(Boolean),
     );
@@ -115,7 +121,7 @@ export default defineAction({
     // know what "key terms" means.
     const shapesByWeek = new Map<string, string[]>();
     for (const w of openWeeks as any[]) {
-      if (!w.lessonNoteId || heldBack(w)) continue;
+      if (!w.lessonNoteId || heldBack(w) || !forThisLearner(w)) continue;
       if (w.gradingMode !== "none" || w.responseMode !== "none") continue;
       const list = shapesByWeek.get(w.lessonNoteId) ?? [];
       list.push(w.renderAs ?? "prose");
@@ -138,13 +144,16 @@ export default defineAction({
         dueDate: schema.assessments.dueDate,
         status: schema.assessments.status,
         opensAt: schema.assessments.opensAt,
+        audienceStudentIdsJson: schema.assessments.audienceStudentIdsJson,
       })
       .from(schema.assessments)
       .where(
         and(eq(schema.assessments.classId, rawArgs.classId), sharedWithClass()),
       )
       .orderBy(asc(schema.assessments.dueDate));
-    const listed = assessments.filter((a: any) => !heldBack(a));
+    const listed = assessments.filter(
+      (a: any) => !heldBack(a) && forThisLearner(a),
+    );
 
     // The student's own status per assessment — never anyone else's.
     const assessmentIds = listed.map((a: any) => a.id);
@@ -169,7 +178,7 @@ export default defineAction({
     return {
       cls: { ...cls, teacherName },
       lessons,
-      assessments: listed.map((a: any) => ({
+      assessments: listed.map(({ audienceStudentIdsJson, ...a }: any) => ({
         ...a,
         // Something to read is not something to hand in. Counting the two
         // together told a learner they owed seven pieces of work when they

@@ -40,6 +40,8 @@ export default function TeacherLayout() {
       navigate(`/teacher/assessments/${nav.assessmentId}`);
     else if (nav.view === "gradebook" && nav.classId)
       navigate(`/teacher/gradebook/${nav.classId}`);
+    else if (nav.view === "students" && nav.studentId)
+      navigate(`/teacher/students/${nav.studentId}`);
     else if (nav.view === "students") navigate("/teacher/students");
     else if (nav.view === "analytics") navigate("/teacher/analytics");
     else if (nav.view === "extensions") navigate("/teacher/extensions");

@@ -1174,6 +1174,30 @@ questions first — never put one on take-home work.
 practicals differently here" — update it with `manage-activity-blueprints` so
 the next activity starts from their answer, not yours.
 
+### B1b-2. Helping one learner
+
+A teacher opens a learner from Students: their term in the teacher's own
+classes, what is going well, what needs attention, and under Suggested next
+steps each subject the figures give a reason to act on, with a button that
+writes the request into the chat. `view-screen` returns `learnerOnScreen` (the
+same profile, scoped to this teacher's classes) and `get-student-profile`
+returns it directly; `focus` lists the subjects and why, `resources` what has
+already been made for this learner alone.
+
+**To make something for one learner, call `create-activity` with `studentIds`**
+(the learner's record id, from the profile or `list-class-students`). Only the
+named learners see it; classmates' lists, class pages and the paper itself do
+not show it, and it is refused to anyone else who holds its id. Because it is
+for one child it is practice or reading only: no marks, no timer, nothing to
+hand in, so no class average, gradebook or report card ever counts it. Say the
+learner's name in the preview ("This would be made for Musa alone"), draft it
+from the week's objectives and the marks the profile quotes, and let the
+teacher read it before `publish: true`. Never tell the class, and never tell
+the learner why it was made beyond what the teacher says.
+
+A teacher reaching the school from their own AI app has the same tools:
+`get-student-profile`, `list-class-students` and `create-activity`.
+
 ### B1c. Printing — documents instead of new screens
 
 **First ask whether the app already holds it.** A worksheet, reading page,
@@ -1422,16 +1446,17 @@ Building or changing a term's timetable on the grid is an admin's job (A2c). A t
 
 ### B7. Navigation Map (Teacher)
 
-| User says                       | Navigate to                                      |
-| ------------------------------- | ------------------------------------------------ |
-| "dashboard", "home"             | `navigate --view=dashboard`                      |
-| "my classes", "classes"         | `navigate --view=classes`                        |
-| "class [name/X]"                | `navigate --view=class --classId <id>`           |
-| "lesson [title]", "edit lesson" | `navigate --view=lesson --lessonId <id>`         |
-| "assessment [title]"            | `navigate --view=assessment --assessmentId <id>` |
-| "gradebook"                     | `navigate --view=gradebook --classId <id>`       |
-| "students", "my students"       | `navigate --view=students`                       |
-| "analytics"                     | `navigate --view=analytics`                      |
+| User says                        | Navigate to                                      |
+| -------------------------------- | ------------------------------------------------ |
+| "dashboard", "home"              | `navigate --view=dashboard`                      |
+| "my classes", "classes"          | `navigate --view=classes`                        |
+| "class [name/X]"                 | `navigate --view=class --classId <id>`           |
+| "lesson [title]", "edit lesson"  | `navigate --view=lesson --lessonId <id>`         |
+| "assessment [title]"             | `navigate --view=assessment --assessmentId <id>` |
+| "gradebook"                      | `navigate --view=gradebook --classId <id>`       |
+| "students", "my students"        | `navigate --view=students`                       |
+| "[learner]", "how is [learner]?" | `navigate --view=students --studentId <id>`      |
+| "analytics"                      | `navigate --view=analytics`                      |
 
 ---
 

@@ -1,3 +1,4 @@
+import { isForLearner } from "../server/lib/audience.js";
 import { defineAction } from "@agent-native/core";
 import { readAppState } from "@agent-native/core/application-state";
 import { getOrgSetting } from "@agent-native/core/settings";
@@ -388,6 +389,18 @@ export default defineAction({
 
     // ─── Teacher views ────────────────────────────────────────────────────────
     if (role === "teacher") {
+      // A learner's page is open: the same profile as the admin's, limited to
+      // this teacher's own classes by the profile itself.
+      if (nav.view === "students" && nav.studentId && schoolId) {
+        try {
+          screen.learnerOnScreen = await studentProfileFor(nav.studentId, {
+            orgId: schoolId,
+            userEmail,
+          });
+        } catch {
+          // not one of their learners, or no longer there
+        }
+      }
       // The gradebook and the analytics a teacher is looking at.
       if (nav.view === "gradebook" && nav.classId) {
         const gb: any = await onScreen(() =>
@@ -720,7 +733,11 @@ export default defineAction({
               ),
             )
             .limit(1);
-          if (assessment) {
+          if (
+            assessment &&
+            (!screen.studentId ||
+              isForLearner(assessment, String(screen.studentId)))
+          ) {
             // Get assigned variant (never reveal difficulty name to student)
             const [assigned] = studentUserId
               ? await db

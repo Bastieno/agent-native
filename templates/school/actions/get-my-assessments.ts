@@ -1,3 +1,4 @@
+import { isForLearner } from "../server/lib/audience.js";
 import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, and, inArray } from "drizzle-orm";
@@ -73,12 +74,15 @@ export default defineAction({
     }
     if (classIds.length === 0) return [];
 
-    const activities = await db
-      .select()
-      .from(schema.assessments)
-      .where(
-        and(inArray(schema.assessments.classId, classIds), sharedWithClass()),
-      );
+    // Work made for particular learners is listed for them alone.
+    const activities = (
+      await db
+        .select()
+        .from(schema.assessments)
+        .where(
+          and(inArray(schema.assessments.classId, classIds), sharedWithClass()),
+        )
+    ).filter((a: any) => isForLearner(a, studentId));
     if (activities.length === 0) return [];
 
     const activityIds = activities.map((a: { id: string }) => a.id);

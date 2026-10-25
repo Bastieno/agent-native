@@ -3,7 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { writeAppState } from "@agent-native/core/application-state";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and, asc } from "drizzle-orm";
+import { eq, and, asc, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import {
@@ -13,6 +13,7 @@ import {
 import { jsonish } from "../shared/zod-json.js";
 import { withCardIds } from "../shared/card-key.js";
 import { styleForClass } from "../server/lib/assessment-style.js";
+import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 
 /**
  * Create a piece of work for a class — a worksheet, a reading task, a problem
@@ -77,6 +78,11 @@ export default defineAction({
     "Create an activity for a class: any piece of work a learner does — worksheet, reading, problem set, essay, practical, oral. You supply the content (instructions, questions, optional difficulty variants, optional rubric); this records it with its objectives, timing and marking mode. Read the week's objectives and the school's activity blueprints first, then draft. Preview by default; pass confirm=true to create.",
   schema: z.object({
     classId: z.string().describe("Class this is for"),
+    studentIds: jsonish(z.array(z.string()))
+      .optional()
+      .describe(
+        "Make this for particular learners in the class instead of all of it: their student record ids (from list-class-students or get-student-profile). Only they see it, and nobody else is told it exists. Such work is practice or reading, so it can carry no marks and nothing to hand in: gradingMode and responseMode stay 'none', with no rubric or points. Use it for a catch-up page, extra practice or a revision deck for one child.",
+      ),
     title: z
       .string()
       .describe(
@@ -308,8 +314,62 @@ export default defineAction({
 
     const shape = args.renderAs ?? "prose";
 
+    // Work for named learners. It is never marked and never handed in, so no
+    // class average, gradebook or report card has to know it exists, and
+    // nobody is counted as having missed it.
+    const audienceIds = [...new Set(args.studentIds ?? [])];
+    let audienceNames: string[] = [];
+    if (args.studentIds) {
+      if (audienceIds.length === 0) {
+        throw new Error("Name at least one learner, or leave studentIds out.");
+      }
+      if (
+        gradingMode !== "none" ||
+        responseMode !== "none" ||
+        args.rubric?.length ||
+        args.durationMinutes ||
+        args.totalPoints
+      ) {
+        throw new Error(
+          "Work made for particular learners is practice or reading: it carries no marks and nothing to hand in. Remove the rubric, points, timer and response, or set it for the whole class.",
+        );
+      }
+      const rows = await db
+        .select({ id: schema.students.id, userId: schema.students.userId })
+        .from(schema.students)
+        .where(
+          and(
+            inArray(schema.students.id, audienceIds),
+            eq(schema.students.schoolId, orgId),
+          ),
+        );
+      const enrolled = await db
+        .select({ userId: schema.classEnrollments.studentUserId })
+        .from(schema.classEnrollments)
+        .where(
+          and(
+            eq(schema.classEnrollments.classId, args.classId),
+            eq(schema.classEnrollments.status, "active"),
+          ),
+        );
+      const inClass = new Set(enrolled.map((e: any) => e.userId));
+      const missing = audienceIds.filter(
+        (id) => !rows.some((r: any) => r.id === id && inClass.has(r.userId)),
+      );
+      if (missing.length) {
+        throw new Error(
+          `${missing.length} of those learners are not in ${cls.name}, so it cannot be made for them.`,
+        );
+      }
+      const labels = await getUserLabels(rows.map((r: any) => r.userId));
+      audienceNames = rows.map(
+        (r: any) => labelFor(labels, r.userId) ?? "A learner",
+      );
+    }
+
     const preview = {
       class: cls.name,
+      forLearners: args.studentIds ? audienceNames : null,
       title: args.title,
       format: args.format,
       renderAs: shape,
@@ -404,6 +464,9 @@ export default defineAction({
       dueDate: args.dueDate ?? null,
       totalPoints,
       status: args.publish ? "published" : "draft",
+      audienceStudentIdsJson: args.studentIds
+        ? JSON.stringify(audienceIds)
+        : null,
       ownerEmail: userEmail ?? "",
       orgId,
       visibility: "org" as const,
@@ -485,9 +548,9 @@ export default defineAction({
       ...preview,
       assessmentId,
       status: args.publish ? "published" : "draft",
-      message: `Created "${args.title}" for ${cls.name}${
-        args.publish ? " and published it" : " as a draft"
-      }.`,
+      message: `Created "${args.title}" for ${
+        args.studentIds ? audienceNames.join(", ") : cls.name
+      }${args.publish ? " and published it" : " as a draft"}.`,
     };
   },
 });

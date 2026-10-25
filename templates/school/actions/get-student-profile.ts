@@ -19,7 +19,7 @@ import { studentProfileFor } from "../server/lib/student-profile.js";
  */
 export default defineAction({
   description:
-    "Staff-facing: one learner's term for deciding what to do — who they are, their overall average, each subject's average beside the class's, what is going well, what needs attention (below the pass mark, missed work, falling marks, well behind the class), and suggested next steps naming the teacher and the work. Every finding has a `basis` (how it was counted) and `evidence` (the papers and figures behind it): quote those when asked to explain a number, and do not guess at causes. Counted the way the report card counts. A teacher sees only learners in their own classes. A position in the year group is given only when the school has ranking switched on.",
+    "Staff-facing: one learner's term for deciding what to do — who they are, their overall average, each subject's average beside the class's, what is going well, what needs attention (below the pass mark, missed work, falling marks, well behind the class), and suggested next steps naming the teacher and the work. Every finding has a `basis` (how it was counted) and `evidence` (the papers and figures behind it): quote those when asked to explain a number, and do not guess at causes. Counted the way the report card counts. A teacher sees only learners in their own classes. `focus` lists the subjects the figures give a reason to act on, and `resources` what has already been made for this learner alone (make one with create-activity and studentIds). A position in the year group is given only when the school has ranking switched on.",
   schema: z.object({
     studentId: z
       .string()
