@@ -6466,6 +6466,10 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
         "/_agent-native/mcp",
       ],
     });
+    // Nitro ignores this, but an app that wraps the plugin can wait on it.
+    // Without it a wrapper sees no work and lets requests through before
+    // the actions and MCP routes exist.
+    return initPromise;
   };
 }
 
