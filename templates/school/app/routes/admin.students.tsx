@@ -175,12 +175,21 @@ export default function AdminStudents() {
       : null;
   }, [recordGaps]);
 
+  // The school's own year groups, in its order: a setting, so it does not
+  // depend on which learners happen to be loaded.
+  const { data: gradeLevelRows = [] } = useQuery<Array<{ name: string }>>({
+    queryKey: ["grade-levels"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-grade-levels"),
+      );
+      if (!res.ok) return [];
+      return res.json();
+    },
+  });
   const gradeLevels = useMemo(
-    () =>
-      Array.from(
-        new Set(students.map((s: any) => s.gradeLevelName).filter(Boolean)),
-      ).sort(),
-    [students],
+    () => gradeLevelRows.map((g) => g.name),
+    [gradeLevelRows],
   );
 
   const filtered = students.filter((s: any) => {

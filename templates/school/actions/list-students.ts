@@ -12,7 +12,7 @@ export default defineAction({
   schema: z.object({
     gradeLevelId: z.string().optional(),
     status: z.enum(["active", "graduated", "withdrawn"]).optional(),
-    limit: numberish().optional().default(50),
+    limit: numberish().optional().default(5000),
   }),
   http: { method: "GET" },
   run: async (args) => {
@@ -34,7 +34,7 @@ export default defineAction({
         eq(schema.students.gradeLevelId, schema.gradeLevels.id),
       )
       .where(and(...conditions))
-      .limit(args.limit ?? 50);
+      .limit(args.limit ?? 5000);
 
     const labels = await getUserLabels(rows.map((r: any) => r.student.userId));
 
