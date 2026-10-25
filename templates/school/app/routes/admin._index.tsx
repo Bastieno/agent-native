@@ -39,7 +39,14 @@ function StatCard({
         <Icon size={20} />
       </div>
       <div>
-        <p className="text-2xl font-semibold">{value}</p>
+        {value === "—" ? (
+          <div
+            className="my-1 h-6 w-10 animate-pulse rounded bg-muted"
+            aria-label="Loading"
+          />
+        ) : (
+          <p className="text-2xl font-semibold">{value}</p>
+        )}
         <p className="text-xs text-muted-foreground">{label}</p>
         {note && <p className="mt-0.5 text-xs text-amber-600">{note}</p>}
       </div>
@@ -71,19 +78,42 @@ const PAGE_ROUTE: Record<string, string> = {
   students: "/admin/students",
 };
 
+const statsCacheKey = (schoolId: string) => `school-overview-stats:${schoolId}`;
+
+/** The last counters this browser saw, so a return visit shows numbers at once. */
+function cachedStats(schoolId: string): Record<string, number> | undefined {
+  try {
+    const raw = localStorage.getItem(statsCacheKey(schoolId));
+    return raw ? JSON.parse(raw) : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export default function AdminOverview() {
   const { sync } = useNavigationState();
   const { schoolId, user } = useRole();
 
-  const { data: stats } = useQuery({
+  const { data: stats, isPlaceholderData } = useQuery({
     queryKey: ["admin-overview-stats"],
     queryFn: async () => {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-school-stats"),
       );
       if (!res.ok) return null;
-      return res.json();
+      const fresh = await res.json();
+      try {
+        if (schoolId) {
+          localStorage.setItem(statsCacheKey(schoolId), JSON.stringify(fresh));
+        }
+      } catch {
+        // The cache is a convenience; the page works without it.
+      }
+      return fresh;
     },
+    // Shown until the real figures arrive, then replaced by them.
+    // Only for this school, so nobody sees another school's figures.
+    placeholderData: () => (schoolId ? cachedStats(schoolId) : undefined),
   });
 
   const { data: attention } = useAttention();
@@ -98,7 +128,7 @@ export default function AdminOverview() {
       view: "overview",
       isNewSchool: !schoolId,
       // Left out until the counts have loaded, so the agent is never told 0.
-      ...(stats
+      ...(stats && !isPlaceholderData
         ? {
             staffCount: stats.staffCount ?? 0,
             studentCount: stats.studentCount ?? 0,
@@ -107,7 +137,7 @@ export default function AdminOverview() {
           }
         : {}),
     } as any);
-  }, [sync, schoolId, stats]);
+  }, [sync, schoolId, stats, isPlaceholderData]);
 
   return (
     <div className="h-full overflow-auto p-6 space-y-6">
