@@ -9,6 +9,7 @@
  */
 import { and, eq, inArray, ne } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
+import { sendDailyDigests } from "./email-digest.js";
 import { notify, type Recipient } from "./notifications.js";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -177,5 +178,7 @@ export async function notifyToMark(now: Date): Promise<number> {
 export async function runDailyNotifications(now = new Date()) {
   const dueSoon = await notifyDueSoon(now);
   const toMark = await notifyToMark(now);
-  return { dueSoon, toMark };
+  // After the notifications above, so today's are in the digest.
+  const digests = await sendDailyDigests(now);
+  return { dueSoon, toMark, digests };
 }
