@@ -1,3 +1,7 @@
+import {
+  paperAverage,
+  publishedPercentages,
+} from "../server/lib/paper-profile.js";
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
@@ -6,7 +10,7 @@ import { z } from "zod";
 
 export default defineAction({
   description:
-    "Get analytics for an assessment: submission rate, average score, grade distribution, and per-variant breakdown.",
+    "Get analytics for an assessment: submission rate, average score (published marks, as the class page counts it), and per-variant breakdown. For who has not handed in and which questions were missed, use get-paper-profile.",
   schema: z.object({
     assessmentId: z.string(),
   }),
@@ -37,14 +41,9 @@ export default defineAction({
       ["submitted", "graded"].includes(s.status),
     );
     const graded = grades.filter((g: any) => g.score != null);
-    const scores = graded
-      .map((g: any) => parseFloat(g.percentage ?? "0"))
-      .filter(Boolean);
-    const average = scores.length
-      ? (
-          scores.reduce((a: number, b: number) => a + b, 0) / scores.length
-        ).toFixed(1)
-      : null;
+    // The same average the class page shows: published marks only, and a
+    // mark of zero is a mark.
+    const average = paperAverage(publishedPercentages(grades as any));
 
     const variants = await db
       .select()
@@ -53,20 +52,12 @@ export default defineAction({
 
     const byVariant = variants.map((v: any) => {
       const varGrades = graded.filter((g: any) => g.variantId === v.id);
-      const varScores = varGrades
-        .map((g: any) => parseFloat(g.percentage ?? "0"))
-        .filter(Boolean);
       return {
         variantId: v.id,
         label: v.label,
         difficulty: v.difficulty,
         count: varGrades.length,
-        average: varScores.length
-          ? (
-              varScores.reduce((a: number, b: number) => a + b, 0) /
-              varScores.length
-            ).toFixed(1)
-          : null,
+        average: paperAverage(publishedPercentages(varGrades as any)),
       };
     });
 

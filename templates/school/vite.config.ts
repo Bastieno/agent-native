@@ -1,6 +1,7 @@
 import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig } from "@agent-native/core/vite";
 import { mergeConfig } from "vite";
+import { fileURLToPath } from "node:url";
 
 // In dev, Nitro's own renderer needs a fetch handler of its own: `ssr-entry.ts`
 // answers every request that is not a page with a plain 404, which is what an
@@ -21,6 +22,15 @@ export default ({ command }: { command: string }) =>
         // Wi-Fi a shell on the developer's machine. Override deliberately with
         // `--host` when you need to test from a phone or tablet on the LAN.
         host: "127.0.0.1",
+        // The dev server serves only this folder by default. The PDF viewer's
+        // worker lives in the shared node_modules at the repository root, so
+        // without this a browser is refused it and no PDF can be shown in dev.
+        // A production build bundles the worker and needs nothing here.
+        fs: {
+          allow: [
+            fileURLToPath(new URL("../../node_modules", import.meta.url)),
+          ],
+        },
       },
       ...(command === "serve"
         ? {

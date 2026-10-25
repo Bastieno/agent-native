@@ -1,3 +1,5 @@
+import { DraftsWaiting } from "@/components/help/DraftsWaiting";
+import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -119,6 +121,8 @@ export default function AdminOverview() {
           Manage your school, staff, students, and curriculum.
         </p>
       </div>
+      <HelpNudge />
+      <DraftsWaiting role="admin" />
 
       {isNewSchool ? (
         <div className="rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-8 flex flex-col items-center text-center gap-4">

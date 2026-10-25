@@ -15,7 +15,7 @@ import {
 
 export default defineAction({
   description:
-    "Add a recurring weekly schedule slot to a class (e.g. every Monday at 08:00–08:45, Period 1). Run once per slot per class. Use list-class-schedules to see existing slots before adding to avoid duplicates. Prefer set-timetable-period, which takes times from the school's week. Refuses a term that is still showing the school's earlier timetable (copy it in first with copy-timetable). The reply says which term the slot went into.",
+    "Add a recurring weekly schedule slot to a class (e.g. every Monday at 08:00–08:45, Period 1). Run once per slot per class. Check get-my-week or get-timetable first so a slot is not added twice. An admin building a term's timetable should prefer set-timetable-period, which takes times from the school's week; this is how a teacher adds a single lesson to their own class. Refuses a term that is still showing the school's earlier timetable (copy it in first with copy-timetable). The reply says which term the slot went into.",
   schema: z.object({
     classId: z.string().describe("Class ID"),
     dayOfWeek: z

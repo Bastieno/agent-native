@@ -2,6 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
 import { eq, asc } from "drizzle-orm";
 import { z } from "zod";
+import { documentOf } from "../server/lib/document-resource.js";
 import {
   actorLabel,
   describeActors,
@@ -74,6 +75,8 @@ export default defineAction({
     return {
       assessment: {
         ...assessment,
+        // A PDF set as the material, when this is one.
+        document: await documentOf(args.id),
         className: cls?.name ?? null,
         lessonTitle: lesson?.title ?? null,
         publishedBy: assessment.publishedByUserId

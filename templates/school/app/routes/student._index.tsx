@@ -1,3 +1,4 @@
+import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -83,6 +84,7 @@ export default function StudentDashboard() {
 
   return (
     <div className="p-6 space-y-6">
+      <HelpNudge />
       <div>
         <h1 className="text-xl font-semibold">
           {firstName ? `Welcome back, ${firstName}` : "Welcome back"}

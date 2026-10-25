@@ -7,6 +7,7 @@ import { appStateGet } from "@agent-native/core/application-state";
 import actionsRegistry from "../../.generated/actions-registry.js";
 import { guardActions } from "../lib/guard-actions.js";
 import { gateAgentMessage } from "../lib/agent-gate.js";
+import { freeHelpReply } from "../lib/help-reply.js";
 import {
   CHAT_APP_INSTRUCTIONS,
   chatAppToolFilter,
@@ -44,7 +45,20 @@ const agentChat = createAgentChatPlugin({
   // learner cannot get round it by picking a model or calling the endpoint
   // directly: a switched-off learner, one sitting a paper and one over the
   // day's limit get a calm reply and no model is called.
-  prepareRequest: async ({ event, ownerEmail, internalContinuation }) => {
+  prepareRequest: async ({
+    event,
+    ownerEmail,
+    message,
+    internalContinuation,
+  }) => {
+    // "How do I make a PDF?" from a teacher or admin, when one Help entry is
+    // a clear match, is answered from the school's own Help with no model run
+    // and no use of the day's allowance. Doubtful matches, questions about the
+    // school's data and requests to do something go to the assistant as usual.
+    if (!internalContinuation) {
+      const free = await freeHelpReply(ownerEmail, message).catch(() => null);
+      if (free) return { reply: free };
+    }
     let orgId: string | null = null;
     try {
       orgId = (await getOrgContext(event)).orgId ?? null;

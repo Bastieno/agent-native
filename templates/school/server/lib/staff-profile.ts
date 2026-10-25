@@ -1,3 +1,5 @@
+import { paperAverage, publishedPercentages } from "./paper-profile.js";
+import { audienceOf } from "./audience.js";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { and, eq, inArray, or, isNull, sql } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
@@ -494,6 +496,9 @@ export async function classProfileFor(classId: string, who: { orgId: string }) {
     })
     .sort(
       (a, b) =>
+        // A learner who has handed in nothing is the weakest figure there is,
+        // whatever the school's missed-work setting makes of their average.
+        Number(b.nothingHandedIn) - Number(a.nothingHandedIn) ||
         (a.percentage ?? 101) - (b.percentage ?? 101) ||
         a.name.localeCompare(b.name),
     );
@@ -520,10 +525,9 @@ export async function classProfileFor(classId: string, who: { orgId: string }) {
         .where(inArray(schema.submissions.assessmentId, ids))
     : [];
   const papers = extra.assessments.map((a) => {
-    const marks = grades
-      .filter((g) => g.assessmentId === a.id && g.isPublished)
-      .map((g) => parseFloat(g.percentage ?? ""))
-      .filter((n) => Number.isFinite(n));
+    const marks = publishedPercentages(
+      grades.filter((g) => g.assessmentId === a.id),
+    );
     const handedIn = subs.filter(
       (s) =>
         s.assessmentId === a.id &&
@@ -534,11 +538,38 @@ export async function classProfileFor(classId: string, who: { orgId: string }) {
       title: a.title,
       dueDate: a.dueDate,
       marked: marks.length,
-      average: marks.length
-        ? Math.round(marks.reduce((x, y) => x + y, 0) / marks.length)
-        : null,
+      average: paperAverage(marks),
       handedIn,
       enrolled: enrolled.length,
+    };
+  });
+
+  // Handouts and other reading that belong to no particular week: a PDF made
+  // from a reference, or a catch-up page for one learner. An admin covering
+  // for a teacher finds them here, since nothing else lists them.
+  const handoutRows = await db
+    .select({
+      id: schema.assessments.id,
+      title: schema.assessments.title,
+      status: schema.assessments.status,
+      audienceStudentIdsJson: schema.assessments.audienceStudentIdsJson,
+    })
+    .from(schema.assessments)
+    .where(
+      and(
+        eq(schema.assessments.classId, classId),
+        eq(schema.assessments.gradingMode, "none"),
+        eq(schema.assessments.responseMode, "none"),
+        isNull(schema.assessments.lessonNoteId),
+      ),
+    );
+  const handouts = handoutRows.map((h) => {
+    const audience = audienceOf(h);
+    return {
+      id: h.id,
+      title: h.title,
+      status: h.status,
+      forLearners: audience ? audience.length : 0,
     };
   });
 
@@ -577,6 +608,7 @@ export async function classProfileFor(classId: string, who: { orgId: string }) {
     },
     learners,
     papers,
+    handouts,
     findings,
     counting: counting(loaded.policy),
   };

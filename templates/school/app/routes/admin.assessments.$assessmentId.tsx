@@ -15,7 +15,7 @@ export default function AdminAssessment() {
     <AssessmentDetail
       assessmentId={assessmentId!}
       role="admin"
-      backToClass={() => "/admin/lessons"}
+      backToClass={(classId) => `/admin/classes/${classId}`}
       backToLesson={(lessonNoteId) => `/admin/lessons/${lessonNoteId}`}
       backToClasses="/admin/classes"
     />

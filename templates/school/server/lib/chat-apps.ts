@@ -77,6 +77,36 @@ const TIMETABLE = [
 ];
 const TEACHING = [
   "get-my-week",
+  "get-my-schedule",
+  "get-my-attention",
+  // What is planned for the term's timetable, and what it still lacks.
+  "get-timetable-coverage",
+  "get-timetable-proposal",
+  "create-class-schedule",
+  "get-current-term",
+  "get-school-resource",
+  // What a teacher reads before grading or drafting: the school's own scale,
+  // pass mark and words, its year groups, subjects and terms, and how work is
+  // usually done here.
+  "get-school-config",
+  "get-custom-fields-schema",
+  "list-subjects",
+  "list-grade-levels",
+  "list-academic-years",
+  "list-terms",
+  "list-arms",
+  "list-announcements",
+  "manage-activity-blueprints",
+  // What the week is meant to teach, and how this school words its questions:
+  // read before drafting anything.
+  "get-subject",
+  "list-units",
+  "list-learning-objectives",
+  "get-curriculum-calendar",
+  "list-framework-objectives",
+  "get-school-library",
+  "get-assessment-style",
+  "list-assessment-styles",
   "get-timetable",
   "list-classes",
   "get-class",
@@ -90,11 +120,25 @@ const TEACHING = [
   "finalize-lesson-note",
   "reopen-lesson-note",
   "create-activity",
+  "create-assessment",
+  "create-document-resource",
   "list-assessments",
   "get-assessment",
   "update-assessment",
   "publish-assessment",
   "close-assessment",
+  "unshare-assessment",
+  "delete-activity",
+  "list-variants",
+  "create-variant",
+  "update-variant",
+  "delete-variant",
+  "assign-variants",
+  "create-rubric",
+  "update-rubric",
+  "attach-lesson-resource",
+  "list-lesson-resources",
+  "create-document",
   "get-print-material",
   "get-marking-queue",
   "list-submissions",
@@ -103,10 +147,24 @@ const TEACHING = [
   "record-answer-mark",
   "compile-submission-grade",
   "request-resubmission",
+  "bulk-grade-submissions",
   "get-gradebook",
+  "update-gradebook-entry",
   "publish-grades",
   "get-class-performance",
   "identify-struggling-students",
+  "list-my-students",
+  "get-my-analytics",
+  "get-student",
+  "get-student-performance",
+  "categorize-students",
+  "override-student-category",
+  "get-assessment-analytics",
+  "get-answer-insights",
+  "get-card-difficulty",
+  "get-lesson-note-coverage",
+  "generate-report-card",
+  "get-report-card",
   "create-announcement",
 ];
 
@@ -131,6 +189,7 @@ const ANALYTICS = [
   "identify-struggling-students",
   "get-class-performance",
   "get-student-profile",
+  "get-paper-profile",
 ];
 
 /** What only a head may look into: one teacher, and one class in depth. */
@@ -145,7 +204,7 @@ const ADMIN_ANALYTICS = ["get-teacher-profile", "get-class-profile"];
 const REPORTS = ["issue-report-card", "get-report-card"];
 
 /** Everyone who may connect also gets these. */
-const ALWAYS = ["get-school-guidance", "get-my-profile", "ask_app"];
+const ALWAYS = ["get-school-guidance", "get-my-profile", "get-help", "ask_app"];
 
 /** A head whose school is provisioned but not yet set up. */
 const BEFORE_SETUP = new Set([
@@ -171,6 +230,12 @@ export const CHAT_APP_EXPOSURE: Record<
     "get-lesson-note-coverage",
     ...EXTENSION_ACTIONS,
     "get-custom-fields-schema",
+    // An admin may set work for any class and share it, to cover an absence
+    // or set a subject up before its teacher exists. Publishing to a class
+    // that is somebody else's names the teacher and asks first.
+    "create-activity",
+    "create-document-resource",
+    "publish-assessment",
     ...ANALYTICS,
     ...ADMIN_ANALYTICS,
     "get-school-analytics",
@@ -201,9 +266,23 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
   [STAFF_ADMIN, "staff"],
   [PEOPLE_AND_CLASSES, "setup"],
   [CURRICULUM, "curriculum"],
-  [TIMETABLE, "timetable"],
+  [[...TIMETABLE, "create-class-schedule"], "timetable"],
   [[...EXTENSION_ACTIONS, "get-custom-fields-schema"], "extensions"],
-  [[...ANALYTICS, ...ADMIN_ANALYTICS, "get-school-analytics"], "analytics"],
+  [
+    [
+      ...ANALYTICS,
+      ...ADMIN_ANALYTICS,
+      "get-school-analytics",
+      "list-my-students",
+      "get-my-analytics",
+      "get-card-difficulty",
+      "get-student",
+      "get-student-performance",
+      "get-assessment-analytics",
+      "get-answer-insights",
+    ],
+    "analytics",
+  ],
   [REPORTS, "report-cards"],
   [
     [
@@ -222,12 +301,37 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
   [
     [
       "create-activity",
+      "create-document-resource",
       "list-assessments",
       "get-assessment",
       "update-assessment",
       "publish-assessment",
       "close-assessment",
+      "unshare-assessment",
+      "delete-activity",
+      "list-variants",
+      "create-variant",
+      "update-variant",
+      "delete-variant",
+      "assign-variants",
+      "create-rubric",
+      "update-rubric",
+      "attach-lesson-resource",
+      "list-lesson-resources",
+      "create-document",
       "get-print-material",
+      "get-subject",
+      "list-units",
+      "list-learning-objectives",
+      "get-curriculum-calendar",
+      "list-framework-objectives",
+      "get-school-library",
+      "get-assessment-style",
+      "list-assessment-styles",
+      "categorize-students",
+      "override-student-category",
+      "create-assessment",
+      "manage-activity-blueprints",
     ],
     "activities",
   ],
@@ -240,6 +344,8 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
       "record-answer-mark",
       "compile-submission-grade",
       "request-resubmission",
+      "bulk-grade-submissions",
+      "update-gradebook-entry",
       "get-gradebook",
       "publish-grades",
     ],
@@ -260,6 +366,10 @@ const CONSEQUENTIAL = new Set([
   "close-assessment",
   "publish-grades",
   "finalize-lesson-note",
+  "delete-activity",
+  "unshare-assessment",
+  "override-student-category",
+  "bulk-grade-submissions",
 ]);
 
 function topicFor(name: string): GuidanceTopic | null {
@@ -417,4 +527,5 @@ How to work:
 - Setting a school up: show one editable setup sheet drafted from what you can infer (name, year groups, terms, grading, curriculum), and let the head correct it. Do not ask twenty questions. Run check-school-setup to see what is still empty.
 - Confirm before anything that cannot be undone, such as inviting someone, publishing marks or closing work, and say what will happen.
 - Describe what the data says, not a screen you have not seen.
+- A teacher asking for a handout or PDF from a reference document: read get-school-guidance "activities" first, look at the reference pages as images, write the resource fresh, and save it with the school's PDF tool as a draft for them to read; the school adds its own crest and footer.
 - To learn how something works, read get-school-guidance for its topic; never use ask_app for that. Use ask_app only for work no tool here can do: it runs the school's own assistant, which costs the school money.`;

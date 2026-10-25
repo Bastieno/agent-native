@@ -1,3 +1,5 @@
+import { TeacherAttention } from "@/components/help/TeacherAttention";
+import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -49,6 +51,8 @@ export default function TeacherDashboard() {
           Here's your overview.
         </p>
       </div>
+      <HelpNudge />
+      <TeacherAttention />
       <Today />
       <div>
         <h2 className="text-sm font-medium mb-3">My Classes</h2>

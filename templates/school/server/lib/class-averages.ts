@@ -26,6 +26,20 @@ export interface ClassAverage {
   }>;
 }
 
+/**
+ * Whether a learner's figure in a class counts as struggling: below the pass
+ * mark, or work set and none of it handed in. One rule, used wherever a count
+ * of struggling learners is given, so a count and the list behind it agree.
+ */
+export function isStrugglingFigure(
+  f: { percentage: number | null; nothingHandedIn: boolean },
+  passMark: number,
+): boolean {
+  return (
+    f.nothingHandedIn || (f.percentage !== null && f.percentage < passMark)
+  );
+}
+
 export async function classAveragesFor(
   classIds: string[],
   policy: MissedWorkPolicy,

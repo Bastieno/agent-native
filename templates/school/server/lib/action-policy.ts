@@ -276,6 +276,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "get-assessment": STAFF,
   "create-assessment": STAFF,
   "create-activity": STAFF,
+  "create-document-resource": STAFF,
   "manage-activity-blueprints": STAFF,
   "update-assessment": STAFF,
   "publish-assessment": STAFF,
@@ -342,6 +343,10 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "list-my-students": STAFF,
   "get-class-performance": STAFF,
   "get-assessment-analytics": STAFF,
+  "get-paper-profile": STAFF,
+  "get-help": STAFF,
+  "list-my-drafts": STAFF,
+  "get-my-attention": STAFF,
   "get-student-performance": STAFF,
   // One learner for the person who must act on it. A teacher is held to their
   // own classes inside the action; policy only says who may ask at all.

@@ -624,6 +624,41 @@ export const grades = table("grades", {
   updatedAt: text("updated_at").notNull().default(now()),
 });
 
+/**
+ * A finished PDF set as a piece of learning material.
+ *
+ * The file is the branded copy, stored whole as base64 text so it works on
+ * every database and needs no file service. One row per version of an
+ * activity's document; the highest version is the one shown. Reached only
+ * through the activity it belongs to (class access, publishing and the
+ * learner audience all apply), never by its own id alone.
+ */
+export const documentFiles = table("document_files", {
+  id: text("id").primaryKey(),
+  assessmentId: text("assessment_id").notNull(),
+  orgId: text("org_id").notNull(),
+  version: integer("version").notNull().default(1),
+  fileName: text("file_name").notNull(),
+  byteSize: integer("byte_size").notNull(),
+  pageCount: integer("page_count").notNull(),
+  dataBase64: text("data_base64").notNull(),
+  createdBy: text("created_by"),
+  createdAt: text("created_at").notNull().default(now()),
+});
+
+/**
+ * Which capabilities a person has seen, so the app mentions each new thing to
+ * the people it is for, once, and never to someone who already knows it. One
+ * row per person per capability; the id is "<userId>:<capabilityId>".
+ */
+export const capabilitySeen = table("capability_seen", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").notNull(),
+  schoolId: text("school_id").notNull(),
+  capabilityId: text("capability_id").notNull(),
+  seenAt: text("seen_at").notNull().default(now()),
+});
+
 export const gradebookEntries = table("gradebook_entries", {
   id: text("id").primaryKey(),
   studentId: text("student_id").notNull(),

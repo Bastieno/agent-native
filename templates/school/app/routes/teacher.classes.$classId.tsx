@@ -1,4 +1,6 @@
-import { useParams } from "react-router";
+import { CapabilityHint } from "@/components/help/CapabilityHint";
+import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
+import { useParams, useSearchParams } from "react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
 import { Pagination, usePagination } from "@/components/Pagination";
@@ -6,6 +8,8 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router";
+import { useSchoolDates } from "@/hooks/use-school-dates";
+import { useOrigin } from "@/lib/origin";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { isCurrentWeek } from "@shared/term-weeks";
@@ -76,6 +80,14 @@ export default function TeacherClass() {
     if (classId) sync({ role: "teacher", view: "class", classId });
   }, [sync, classId]);
 
+  const origin = useOrigin();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tab = ["lessons", "assessments", "students"].includes(
+    searchParams.get("tab") ?? "",
+  )
+    ? (searchParams.get("tab") as string)
+    : "lessons";
+  const { formatDate } = useSchoolDates();
   const { data: cls } = useQuery({
     queryKey: ["class", classId],
     queryFn: async () => {
@@ -123,6 +135,14 @@ export default function TeacherClass() {
     (a: any) => !(a.gradingMode === "none" && a.responseMode === "none"),
   );
   const materialCount = allActivities.length - assessments.length;
+  // Handouts and reading that belong to no particular week (a PDF made from a
+  // reference, a catch-up page for one learner). They would otherwise be listed
+  // nowhere, since the Assessments tab leaves out anything with nothing to hand
+  // in and a lesson lists only what is attached to it.
+  const looseMaterial = allActivities.filter(
+    (a: any) =>
+      a.gradingMode === "none" && a.responseMode === "none" && !a.lessonNoteId,
+  );
 
   const { data: students = [], isLoading: studentsLoading } = useQuery<any[]>({
     queryKey: ["class-students", classId],
@@ -212,7 +232,14 @@ export default function TeacherClass() {
           </Badge>
         )}
       </div>
-      <Tabs defaultValue="lessons">
+      <Tabs
+        value={tab}
+        onValueChange={(v) =>
+          // The tab lives in the address, so a page opened from this one can
+          // say where it came from, and Back returns to the same tab.
+          setSearchParams(v === "lessons" ? {} : { tab: v }, { replace: true })
+        }
+      >
         {/* Three tabs have to share a phone's width: icons go, text shrinks. */}
         <TabsList className="w-full">
           <TabsTrigger
@@ -240,6 +267,20 @@ export default function TeacherClass() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="lessons" className="mt-4 space-y-2">
+          <CapabilityHint
+            id="teacher-pdf-resource"
+            action={
+              <ConnectAiAppDialog
+                trigger={
+                  <Button size="sm" variant="outline">
+                    Show me
+                  </Button>
+                }
+              />
+            }
+          >
+            Make a PDF handout from a reference document with your own AI app.
+          </CapabilityHint>
           {lessonsLoading ? (
             <ListState loading rows={3} title="Lesson notes" />
           ) : lessons.length === 0 ? (
@@ -260,8 +301,40 @@ export default function TeacherClass() {
                     thisWeek && "border-primary/60 bg-primary/5",
                   )}
                 >
-                  <span className="min-w-0 truncate text-sm font-medium">
-                    {lesson.title}
+                  <span className="min-w-0">
+                    <span className="block truncate text-sm font-medium">
+                      {lesson.title}
+                    </span>
+                    {/* Where it sits: the week, the unit, and what is waiting
+                        on the teacher. One quiet line, nothing to scan past. */}
+                    {(() => {
+                      const waiting =
+                        (lesson.materialCount ?? 0) -
+                        (lesson.materialShared ?? 0);
+                      const line = [
+                        lesson.weekNumber
+                          ? `Week ${lesson.weekNumber}${
+                              lesson.lessonDate
+                                ? ` · ${formatDate(lesson.lessonDate, { day: "numeric", month: "short" })}`
+                                : ""
+                            }`
+                          : lesson.lessonDate
+                            ? formatDate(lesson.lessonDate, {
+                                day: "numeric",
+                                month: "short",
+                              })
+                            : null,
+                        lesson.unitTitle,
+                        waiting > 0
+                          ? `${waiting} piece${waiting === 1 ? "" : "s"} not shared yet`
+                          : null,
+                      ].filter(Boolean);
+                      return line.length ? (
+                        <span className="block truncate text-xs text-muted-foreground">
+                          {line.join(" · ")}
+                        </span>
+                      ) : null;
+                    })()}
                   </span>
                   <span className="flex shrink-0 items-center gap-2">
                     {thisWeek ? (
@@ -273,7 +346,7 @@ export default function TeacherClass() {
                       }
                       className="text-xs"
                     >
-                      {lesson.status}
+                      {lesson.status === "finalized" ? "Ready" : "Draft"}
                     </Badge>
                   </span>
                 </Link>
@@ -281,6 +354,56 @@ export default function TeacherClass() {
             })
           )}
           <Pagination {...lessonsPaged} noun="lessons" />
+          {looseMaterial.length > 0 ? (
+            <div className="space-y-2 pt-4">
+              <div>
+                <h3 className="text-sm font-medium text-muted-foreground">
+                  Handouts and other material
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  Not tied to a week. Ask the assistant to attach one to a week.
+                </p>
+              </div>
+              <div className="divide-y rounded-lg border">
+                {looseMaterial.map((m: any) => {
+                  let forLearners = 0;
+                  try {
+                    forLearners = m.audienceStudentIdsJson
+                      ? JSON.parse(m.audienceStudentIdsJson).length
+                      : 0;
+                  } catch {
+                    forLearners = 0;
+                  }
+                  return (
+                    <Link
+                      key={m.id}
+                      to={`/teacher/assessments/${m.id}`}
+                      state={origin(cls?.name ?? "Class")}
+                      className="flex items-center justify-between gap-3 px-4 py-3 text-sm transition-colors hover:bg-accent/50"
+                    >
+                      <span className="min-w-0">
+                        <span className="block truncate font-medium">
+                          {m.title}
+                        </span>
+                        {forLearners > 0 ? (
+                          <span className="block text-xs text-muted-foreground">
+                            For {forLearners} learner
+                            {forLearners === 1 ? "" : "s"} only
+                          </span>
+                        ) : null}
+                      </span>
+                      <Badge
+                        variant={m.status === "draft" ? "secondary" : "default"}
+                        className="shrink-0 text-xs"
+                      >
+                        {m.status === "draft" ? "Draft" : "Shared"}
+                      </Badge>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
         </TabsContent>
         <TabsContent value="assessments" className="mt-4 space-y-2">
           {/* Say what this list is before saying what it leaves out — the
@@ -303,6 +426,7 @@ export default function TeacherClass() {
               <Link
                 key={assessment.id}
                 to={`/teacher/assessments/${assessment.id}`}
+                state={origin(`${cls?.name ?? "Class"} assessments`)}
                 className="flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50 transition-colors"
               >
                 <div>
@@ -351,14 +475,20 @@ export default function TeacherClass() {
                 key={s.enrollmentId}
                 className="flex items-center gap-3 rounded-lg border p-3"
               >
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium">
+                {/* The name opens the learner: how they are doing, and what
+                    to do about it. Back returns to this class. */}
+                <Link
+                  to={s.studentId ? `/teacher/students/${s.studentId}` : "#"}
+                  state={origin(cls?.name ?? "Class")}
+                  className="group flex-1 min-w-0"
+                >
+                  <p className="text-sm font-medium group-hover:text-primary">
                     {s.name ?? s.email ?? s.studentUserId}
                   </p>
                   {s.email && s.name && (
                     <p className="text-xs text-muted-foreground">{s.email}</p>
                   )}
-                </div>
+                </Link>
                 {s.category && (
                   <Badge variant="outline" className="text-xs capitalize">
                     {s.category}

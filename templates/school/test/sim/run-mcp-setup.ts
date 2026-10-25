@@ -239,8 +239,10 @@ async function joinAs(email: string): Promise<string> {
 // was 48 KB when the admin's list was 46 KB, which left room for one tool.
 // 72 KB leaves room for a dozen more admin tools; it was raised from 56 KB
 // when the analytics and "who am I" tools went in, rather than trimming
-// tool descriptions. Raise it again only on purpose.
-const BUDGET_BYTES = 72 * 1024;
+// tool descriptions. Raised to 80 KB on 2026-10-25, on purpose, when teachers'
+// own AI apps were given the tools they need (PDF resources, paper and learner
+// profiles, what needs attention, help); the teacher's list was then 72 KB.
+const BUDGET_BYTES = 80 * 1024;
 
 /**
  * A chat app (Claude Desktop, claude.ai, ChatGPT) calls the school's own

@@ -86,6 +86,7 @@ export default function AdminLayout() {
         ? `/admin/lessons/${nav.lessonId}`
         : "/admin/lessons",
       analytics: "/admin/analytics",
+      help: "/admin/help",
       announcements: "/admin/announcements",
       settings: "/admin/settings",
       extensions: "/admin/extensions",

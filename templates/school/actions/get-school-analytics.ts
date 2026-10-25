@@ -7,7 +7,10 @@ import { z } from "zod";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { isUnassignedTeacher } from "../shared/class-teacher.js";
 import { sharedWithClass } from "../server/lib/shared-with-class.js";
-import { classAveragesFor } from "../server/lib/class-averages.js";
+import {
+  classAveragesFor,
+  isStrugglingFigure,
+} from "../server/lib/class-averages.js";
 import { missedWorkPolicy } from "../shared/missed-work.js";
 
 export default defineAction({
@@ -148,9 +151,9 @@ export default defineAction({
     // counted as the report card counts them (published marks, and work not
     // handed in by the school's missed-work setting), so this page and a
     // learner's page can never quote different numbers for the same class.
-    const policy = missedWorkPolicy(
-      await getOrgSetting(orgId, "school-config"),
-    );
+    const schoolConfig = (await getOrgSetting(orgId, "school-config")) as any;
+    const policy = missedWorkPolicy(schoolConfig);
+    const passMark: number = schoolConfig?.passMark ?? 50;
     const classAverages = await classAveragesFor(classIds, policy);
 
     const pctByClass: Record<string, number[]> = {};
@@ -197,6 +200,11 @@ export default defineAction({
           ? null
           : (labelFor(teacherLabels, cls.primaryTeacherUserId) ?? null),
         assessmentCount: classAssessments.length,
+        // Learners below the pass mark or with nothing handed in: the same
+        // count the teacher sees, and the first names on the class page.
+        strugglingCount: (classAverages.get(cls.id)?.figures ?? []).filter(
+          (f) => isStrugglingFigure(f, passMark),
+        ).length,
         gradedCount: pcts.length,
         averageScore:
           classAverages.get(cls.id)?.exact != null

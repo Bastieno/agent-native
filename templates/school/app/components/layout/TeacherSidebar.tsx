@@ -4,12 +4,16 @@ import {
   IconChartBar,
   IconLayoutDashboard,
   IconLogout,
+  IconHelp,
+  IconPlugConnected,
   IconPuzzle,
   IconSchool,
   IconUsers,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
+import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
+import { HelpDot } from "@/components/help/HelpDot";
 import { useTeacherExtensions } from "@/hooks/use-teacher-extensions";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 
@@ -73,6 +77,32 @@ export function TeacherSidebar({
         ))}
       </nav>
       <div className="border-t p-2">
+        <NavLink
+          to="/teacher/help"
+          className={({ isActive }) =>
+            cn(
+              "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors",
+              isActive
+                ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                : "text-sidebar-foreground hover:bg-sidebar-accent/60",
+            )
+          }
+        >
+          <IconHelp size={16} />
+          Help
+          <HelpDot />
+        </NavLink>
+        <ConnectAiAppDialog
+          trigger={
+            <button
+              type="button"
+              className="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm text-sidebar-foreground transition-colors hover:bg-sidebar-accent/60"
+            >
+              <IconPlugConnected size={16} />
+              Your AI app
+            </button>
+          }
+        />
         <button
           type="button"
           onClick={async () => {

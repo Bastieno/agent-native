@@ -1,6 +1,9 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
-import { classAveragesFor } from "../server/lib/class-averages.js";
+import {
+  classAveragesFor,
+  isStrugglingFigure,
+} from "../server/lib/class-averages.js";
 import { missedWorkPolicy } from "../shared/missed-work.js";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
@@ -12,7 +15,7 @@ import { sharedWithClass } from "../server/lib/shared-with-class.js";
 
 export default defineAction({
   description:
-    "Teacher-facing: performance across the classes you teach — overall average, work awaiting grading, students below the pass mark, and a per-class breakdown.",
+    "Teacher-facing: performance across all the classes you are the main teacher of, in one call — overall average, work awaiting grading, and per class the average, hand-in rate and the learners who are struggling, by name and figure (below the pass mark, or nothing handed in), weakest first. Use it for 'how are my classes doing?'; use get-paper-profile for one paper and get-student-profile for one learner. Returns nothing for someone who is the main teacher of no class.",
   schema: z.object({}),
   http: { method: "GET" },
   run: async () => {
@@ -57,6 +60,7 @@ export default defineAction({
     const assessments = await db
       .select({
         id: schema.assessments.id,
+        title: schema.assessments.title,
         classId: schema.assessments.classId,
       })
       .from(schema.assessments)
@@ -148,8 +152,7 @@ export default defineAction({
     const isStruggling = (f: {
       percentage: number | null;
       nothingHandedIn: boolean;
-    }) =>
-      f.nothingHandedIn || (f.percentage !== null && f.percentage < passMark);
+    }) => isStrugglingFigure(f, passMark);
     // Across classes: a learner is struggling when their own average over the
     // teacher's classes is below the pass mark, or they have handed nothing in.
     const byLearner = new Map<string, number[]>();
@@ -175,6 +178,29 @@ export default defineAction({
       ...[...nothingBy].filter((id) => !byLearner.has(id)),
     ]).size;
 
+    // Who they are, so the page can name them and open each one. Only the
+    // struggling learners are looked up, not the whole roster.
+    const strugglingIds = new Set<string>();
+    for (const c of classAverages.values()) {
+      for (const f of c.figures)
+        if (isStruggling(f)) strugglingIds.add(f.studentId);
+    }
+    const strugglingRows = strugglingIds.size
+      ? await db
+          .select({ id: schema.students.id, userId: schema.students.userId })
+          .from(schema.students)
+          .where(inArray(schema.students.id, [...strugglingIds]))
+      : [];
+    const strugglingLabels = await getUserLabels(
+      strugglingRows.map((r: any) => r.userId),
+    );
+    const nameOf = new Map(
+      strugglingRows.map((r: any) => [
+        r.id,
+        labelFor(strugglingLabels, r.userId) ?? "A learner",
+      ]),
+    );
+
     // Per-class breakdown
     const byClass = primaryClasses.map((c: any) => {
       const classAssessmentIds = new Set(
@@ -191,6 +217,28 @@ export default defineAction({
           classAssessmentIds.has(s.assessmentId) &&
           !gradedSubmissionIds.has(s.id),
       ).length;
+
+      // Which papers those are, so "5 to grade" is a place to go and not just
+      // a number.
+      const queue = new Map<string, number>();
+      for (const s of pendingSubmissions) {
+        if (
+          classAssessmentIds.has(s.assessmentId) &&
+          !gradedSubmissionIds.has(s.id)
+        ) {
+          queue.set(s.assessmentId, (queue.get(s.assessmentId) ?? 0) + 1);
+        }
+      }
+      const titleOf = new Map(
+        assessments.map((a: any) => [a.id, a.title as string]),
+      );
+      const gradingQueue = [...queue.entries()]
+        .map(([id, count]) => ({
+          id,
+          title: titleOf.get(id) ?? "Paper",
+          count,
+        }))
+        .sort((a, b) => b.count - a.count);
 
       const classStruggling = (classCounted?.figures ?? []).filter(
         isStruggling,
@@ -209,7 +257,22 @@ export default defineAction({
         averageScore: classAvg,
         studentCount: countMap[c.id] ?? 0,
         pendingGrading: classPendingSubs,
+        gradingQueue,
         strugglingCount: classStruggling,
+        // Lowest first; a learner who has handed in nothing leads.
+        strugglingLearners: (classCounted?.figures ?? [])
+          .filter(isStruggling)
+          .map((f: any) => ({
+            studentId: f.studentId,
+            name: nameOf.get(f.studentId) ?? "A learner",
+            percentage: f.percentage,
+            nothingHandedIn: f.nothingHandedIn,
+          }))
+          .sort(
+            (a: any, b: any) =>
+              Number(b.nothingHandedIn) - Number(a.nothingHandedIn) ||
+              (a.percentage ?? 101) - (b.percentage ?? 101),
+          ),
         completionRate:
           expected > 0
             ? Math.round((Math.min(done, expected) / expected) * 100)

@@ -3,6 +3,7 @@ import { getDb, schema } from "../server/db/index.js";
 import { eq, and } from "drizzle-orm";
 import { resolveStudentId } from "../server/lib/student-session.js";
 import { isForLearner } from "../server/lib/audience.js";
+import { documentOf } from "../server/lib/document-resource.js";
 import { activityWindow } from "../server/lib/activity-window.js";
 import {
   forLearner,
@@ -201,8 +202,11 @@ export default defineAction({
           .limit(1)
       : [];
 
+    // Who else it was made for is nobody's business but the teacher's.
+    const { audienceStudentIdsJson: _audience, ...visible } = assessment;
     return {
-      ...assessment,
+      ...visible,
+      document: await documentOf(rawArgs.assessmentId),
       className: cls?.name ?? null,
       lessonTitle: week?.title ?? null,
       // difficulty is deliberately omitted.

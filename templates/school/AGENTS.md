@@ -48,6 +48,25 @@ kind of request.
   their averages, subjects by term, classes and what each is missing), a short
   table is clearer than a list; use one then, and only then.
 
+## Help: what people can do and how
+
+Every role has a Help page (`/admin/help`, `/teacher/help`, `/student/help`)
+written from one list, `shared/capabilities.ts`. It is also what `get-help`
+returns. When a teacher or admin asks "how do I…?" or "can the app…?", call
+`get-help` with their question and quote its steps in the school's words, rather
+than describing features from memory. A clear how-to question may already have
+been answered from Help before you were asked, with no model run; if the person
+asks again with more detail, they want you.
+
+When you add a feature a role can use, add its entry to
+`shared/capabilities.ts` in the same change. `test/help.check.ts` fails if an
+action offered to a role is claimed by no entry. Learner entries never mention
+groups, versions or categories.
+
+When a teacher attaches a long reference document or asks for a PDF, say the
+job is best done from their own AI app (Your AI app in the sidebar) before
+starting it yourself.
+
 ## Destructive Actions
 
 Before executing any destructive or irreversible action (suspend, remove, delete, publish grades, close assessment), always confirm with the user first — describe what will happen and ask them to confirm before proceeding.
@@ -896,7 +915,7 @@ school's assistant is not involved. What it sees is set in
 `server/lib/chat-apps.ts`:
 
 - **A short list per role**, not everything the role may run: setup, staff,
-  learners and classes, curriculum and timetable for an admin; the week,
+  learners and classes, curriculum and timetable for an admin, who can also set and share work for any class; the week,
   lesson notes, activities and marking for a teacher; the teacher's list plus
   curriculum for a subject coordinator. A head whose school is not set up yet
   sees only `setup-school`, `check-school-setup`, `get-school-guidance` and
@@ -1198,6 +1217,40 @@ the learner why it was made beyond what the teacher says.
 A teacher reaching the school from their own AI app has the same tools:
 `get-student-profile`, `list-class-students` and `create-activity`.
 
+### B1b-3. PDF learning resources (from a reference document)
+
+A teacher can ask for a branded PDF handout made from a reference document
+(a textbook chapter, another teacher's notes, a scheme of work). This is long
+work, so it is best done from the teacher's own AI app, which reads the pages
+and builds the PDF on their own account; the school's assistant should offer
+that route when a teacher attaches a long reference or asks for a PDF, and
+point them to "Your AI app" in the sidebar. The app then calls
+`create-document-resource` with the finished PDF.
+
+How to make a good one:
+
+- **Read the reference pages as images.** Text extraction scrambles maths
+  (matrices, fractions and determinants come out as loose digits). Ask the
+  teacher for a page range or topic rather than the whole book; one topic per
+  PDF, under 12 MB and 150 pages.
+- **Write it fresh.** Use the week's objectives and the school's guide. Never
+  copy another school's pages, text or watermark into the handout.
+- **Redraw diagrams cleanly** (as vector drawings or sharp images) rather than
+  pasting blurry screenshots. Check every formula and diagram came out before
+  sending.
+- **Do not add the school's branding yourself.** The crest, school name, the
+  class and title, and "Page n of N" are stamped on every page when the file is
+  saved.
+- **Attach it to its week.** When the handout is for a particular week, pass
+  `lessonNoteId` (`list-lesson-notes` gives it). It then appears in that week's
+  "What your class sees", with Read it and Share. Without one it is listed under
+  "Handouts and other material" on the class page.
+- It is saved as a **draft**. The teacher opens it in the app, reads it, then
+  shares it (or asks for changes). Never publish it unless they said to.
+  `studentIds` makes it for named learners only, as with `create-activity`.
+- Learners open it inside the app, and can download or print it. It carries no
+  marks and nothing to hand in.
+
 ### B1c. Printing — documents instead of new screens
 
 **First ask whether the app already holds it.** A worksheet, reading page,
@@ -1417,6 +1470,18 @@ pnpm action get-assessment-analytics --assessmentId <id>
 pnpm action get-student-performance --studentId <id>
 pnpm action identify-struggling-students --classId c-1 --threshold 0.5
 ```
+
+**"Why is this paper low?"** Use `get-paper-profile --assessmentId <id>` (the
+paper's id is on `get-class-profile` and `list-assessments`), not
+`get-assessment-analytics` and not a pile of submissions. It gives who has
+handed in and who has not (by name), the average of published marks counted
+exactly as the class page counts it, how many marks sit below the pass mark,
+how many are waiting to be published, and the questions most often missed.
+Quote those figures and how they were counted, then stop: a hard paper, a topic
+not yet taught and missed work look identical in the data, so never offer a
+cause. Suggest asking the teacher, and offer what you could make for the
+learners who did badly or did not hand in. An admin or teacher sees the same
+summary at the top of the paper's own page.
 
 When asked "How is my class doing?":
 
@@ -1740,13 +1805,14 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 
 ### Analytics
 
-| Action                         | Role    | Args                                        |
-| ------------------------------ | ------- | ------------------------------------------- |
-| `get-class-performance`        | teacher | `--classId`                                 |
-| `get-assessment-analytics`     | teacher | `--assessmentId`                            |
-| `get-student-performance`      | teacher | `--studentId [--classId]`                   |
-| `identify-struggling-students` | teacher | `--classId\|--gradeLevel [--threshold 0.5]` |
-| `get-school-analytics`         | admin   | `[--gradeLevel] [--subjectName] [--termId]` |
+| Action                         | Role    | Args                                            |
+| ------------------------------ | ------- | ----------------------------------------------- |
+| `get-class-performance`        | teacher | `--classId`                                     |
+| `get-assessment-analytics`     | teacher | `--assessmentId`                                |
+| `get-student-performance`      | teacher | `--studentId [--classId]`                       |
+| `get-paper-profile`            | staff   | `--assessmentId` — how a class did on one paper |
+| `identify-struggling-students` | teacher | `--classId\|--gradeLevel [--threshold 0.5]`     |
+| `get-school-analytics`         | admin   | `[--gradeLevel] [--subjectName] [--termId]`     |
 
 ### Student-Facing
 

@@ -296,7 +296,7 @@ export function AssistantSettings() {
  * deployment's own, so they are read from the browser rather than written
  * into the page.
  */
-function McpAddress() {
+export function McpAddress() {
   const [address, setAddress] = useState("");
   useEffect(() => {
     setAddress(`${window.location.origin}/_agent-native/mcp`);

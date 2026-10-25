@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
+import { useOrigin } from "@/lib/origin";
 import { BackLink } from "@/components/layout/BackLink";
 import { Badge } from "@/components/ui/badge";
 import { IconTable, IconChevronDown } from "@tabler/icons-react";
@@ -38,6 +39,7 @@ export default function TeacherGradebook() {
   const { config } = useSchoolConfig();
   const thresholds = resolveCategoryThresholds(config as any);
   const { classId } = useParams<{ classId: string }>();
+  const origin = useOrigin();
   const { sync } = useNavigationState();
 
   useEffect(() => {
@@ -156,6 +158,13 @@ export default function TeacherGradebook() {
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <div className="divide-y border-t">
+                    <Link
+                      to={`/teacher/students/${student.studentId}`}
+                      state={origin("Gradebook")}
+                      className="block px-3 py-2 text-sm text-primary hover:underline"
+                    >
+                      How is {student.name} doing?
+                    </Link>
                     {marks.map(
                       ({ assessment, score, letterGrade, max }: any) => (
                         <div
@@ -223,7 +232,13 @@ export default function TeacherGradebook() {
                 {rows.map(({ student, marks, avg }: any) => (
                   <tr key={student.id} className="border-b last:border-0">
                     <td className="sticky left-0 z-10 border-r bg-background px-4 py-2.5">
-                      <p className="font-medium">{student.name}</p>
+                      <Link
+                        to={`/teacher/students/${student.studentId}`}
+                        state={origin("Gradebook")}
+                        className="font-medium hover:text-primary"
+                      >
+                        {student.name}
+                      </Link>
                     </td>
                     {marks.map(({ assessment, score, letterGrade }: any) => (
                       <td

@@ -4,6 +4,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router";
 import { cn } from "@/lib/utils";
+import { useOrigin } from "@/lib/origin";
 import { Pagination, usePagination } from "@/components/Pagination";
 import {
   Select,
@@ -396,6 +397,7 @@ function SubjectCard({
   classes: any[];
   passMark: number;
 }) {
+  const origin = useOrigin();
   const [open, setOpen] = useState(false);
   const canOpen = classes.length > 0;
   const avg = averageOf(subject);
@@ -461,9 +463,22 @@ function SubjectCard({
           {classes.map((cls: any) => (
             <div key={cls.classId} className="space-y-0.5 py-2.5 pl-9 pr-4">
               <div className="flex items-baseline justify-between gap-3">
-                <span className="text-sm font-medium">{cls.className}</span>
-                <span className="text-sm tabular-nums">
-                  {cls.averageScore ? `${cls.averageScore}%` : "—"}
+                <Link
+                  to={`/admin/classes/${cls.classId}`}
+                  state={origin("Analytics")}
+                  className="text-sm font-medium hover:text-primary"
+                >
+                  {cls.className}
+                </Link>
+                <span className="flex items-baseline gap-3">
+                  {cls.strugglingCount > 0 ? (
+                    <span className="text-xs text-destructive">
+                      {cls.strugglingCount} struggling
+                    </span>
+                  ) : null}
+                  <span className="text-sm tabular-nums">
+                    {cls.averageScore ? `${cls.averageScore}%` : "—"}
+                  </span>
                 </span>
               </div>
               <p className="text-xs text-muted-foreground">
@@ -507,6 +522,7 @@ function SubjectRow({
   classes: any[];
   passMark: number;
 }) {
+  const origin = useOrigin();
   const [open, setOpen] = useState(false);
   const canOpen = classes.length > 0;
   const avg = averageOf(subject);
@@ -592,14 +608,31 @@ function SubjectRow({
                   key={cls.classId}
                   className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-2.5 pl-10 pr-4 text-sm"
                 >
-                  <span className="font-medium">{cls.className}</span>
+                  <Link
+                    to={`/admin/classes/${cls.classId}`}
+                    state={origin("Analytics")}
+                    onClick={(e) => e.stopPropagation()}
+                    className="font-medium hover:text-primary"
+                  >
+                    {cls.className}
+                  </Link>
                   <span className="text-xs text-muted-foreground">
                     {/* A class nobody teaches is the finding, not a blank. */}
                     {cls.teacherName ?? (
                       <span className="italic">No teacher assigned</span>
                     )}
                   </span>
-                  <span className="ml-auto tabular-nums">
+                  {cls.strugglingCount > 0 ? (
+                    <span className="ml-auto text-xs text-destructive">
+                      {cls.strugglingCount} struggling
+                    </span>
+                  ) : null}
+                  <span
+                    className={cn(
+                      "tabular-nums",
+                      cls.strugglingCount > 0 ? "" : "ml-auto",
+                    )}
+                  >
                     {cls.averageScore ? `${cls.averageScore}%` : "—"}
                   </span>
                   <span className="w-28 text-right text-xs text-muted-foreground tabular-nums">

@@ -12,7 +12,9 @@ import {
   IconLogout,
   IconBell,
   IconCalendarTime,
+  IconHelp,
 } from "@tabler/icons-react";
+import { HelpDot } from "@/components/help/HelpDot";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useCurrentTerm } from "@/hooks/use-current-term";
@@ -80,6 +82,21 @@ export function AdminSidebar({
         ))}
       </nav>
       <div className="border-t p-2">
+        <NavLink
+          to="/admin/help"
+          className={({ isActive }) =>
+            cn(
+              "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors",
+              isActive
+                ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                : "text-sidebar-foreground hover:bg-sidebar-accent/60",
+            )
+          }
+        >
+          <IconHelp size={16} />
+          Help
+          <HelpDot />
+        </NavLink>
         <button
           type="button"
           onClick={async () => {

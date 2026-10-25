@@ -48,6 +48,12 @@ type Profile = {
     handedIn: number;
     enrolled: number;
   }>;
+  handouts: Array<{
+    id: string;
+    title: string;
+    status: string;
+    forLearners: number;
+  }>;
   findings: { strengths: Finding[]; concerns: Finding[]; next: string[] };
   counting: { missedWorkCountsAsZero: boolean };
 };
@@ -105,6 +111,7 @@ export default function AdminClass() {
   }
 
   const { class: cls, teachers, summary, learners, papers, findings } = data;
+  const drafts = data.handouts.filter((h) => h.status === "draft");
   const below = summary.average != null && summary.average < data.passMark;
   const gap =
     summary.average != null && summary.othersAverage != null
@@ -148,6 +155,25 @@ export default function AdminClass() {
           )}
         </p>
       </div>
+
+      {/* A draft nobody has read is an action, so it is said at the top, once.
+          The handouts themselves are reference and live further down. */}
+      {drafts.length > 0 ? (
+        <Link
+          to={`/admin/assessments/${drafts[0].id}`}
+          state={origin(cls.name)}
+          className="flex items-center justify-between gap-3 rounded-lg border border-dashed bg-muted/30 px-4 py-2.5 text-sm hover:bg-muted/50"
+        >
+          <span className="min-w-0 truncate">
+            {drafts.length === 1
+              ? `A draft handout is waiting to be read and shared: ${drafts[0].title}`
+              : `${drafts.length} draft handouts are waiting to be read and shared`}
+          </span>
+          <span className="shrink-0 text-xs text-primary">
+            {drafts.length === 1 ? "Open it" : "See them below"}
+          </span>
+        </Link>
+      ) : null}
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="rounded-lg border bg-card p-4">
@@ -262,12 +288,14 @@ export default function AdminClass() {
       >
         {(shown) =>
           papers.slice(0, shown).map((p) => (
-            <div
+            <Link
               key={p.id}
-              className="flex items-center justify-between gap-3 px-4 py-3 text-sm"
+              to={`/admin/assessments/${p.id}`}
+              state={origin(cls.name)}
+              className="group flex items-center justify-between gap-3 px-4 py-3 text-sm hover:bg-muted/30"
             >
               <div className="min-w-0">
-                <p className="truncate">{p.title}</p>
+                <p className="truncate group-hover:text-primary">{p.title}</p>
                 <p className="text-xs text-muted-foreground">
                   {p.handedIn} of {p.enrolled} handed in · {p.marked} marked
                 </p>
@@ -282,7 +310,43 @@ export default function AdminClass() {
               >
                 {p.average != null ? `${p.average}%` : "—"}
               </span>
-            </div>
+            </Link>
+          ))
+        }
+      </Section>
+
+      {/* Handouts and reading that belong to no particular week: a PDF made
+          from a reference, a catch-up page for one learner. Without this an
+          admin covering for a teacher would find them nowhere. */}
+      <Section
+        title="Handouts and other material"
+        note="Not tied to a week. Ask the assistant to attach one."
+        total={data.handouts.length}
+      >
+        {(shown) =>
+          data.handouts.slice(0, shown).map((h) => (
+            <Link
+              key={h.id}
+              to={`/admin/assessments/${h.id}`}
+              state={origin(cls.name)}
+              className="group flex items-center justify-between gap-3 px-4 py-3 text-sm hover:bg-muted/30"
+            >
+              <div className="min-w-0">
+                <p className="truncate group-hover:text-primary">{h.title}</p>
+                {h.forLearners > 0 ? (
+                  <p className="text-xs text-muted-foreground">
+                    For {h.forLearners} learner{h.forLearners === 1 ? "" : "s"}{" "}
+                    only
+                  </p>
+                ) : null}
+              </div>
+              <Badge
+                variant={h.status === "draft" ? "secondary" : "default"}
+                className="shrink-0 text-xs"
+              >
+                {h.status === "draft" ? "Draft" : "Shared"}
+              </Badge>
+            </Link>
           ))
         }
       </Section>

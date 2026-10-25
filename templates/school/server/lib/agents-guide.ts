@@ -29,6 +29,8 @@ export const GUIDANCE_TOPICS = {
   ],
   activities: [
     "### B1b. Creating Activities (worksheets, reading, practicals, problem sets)",
+    "### B1b-2. Helping one learner",
+    "### B1b-3. PDF learning resources (from a reference document)",
     "### B1c. Printing — documents instead of new screens",
   ],
   marking: [

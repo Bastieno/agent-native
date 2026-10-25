@@ -947,6 +947,24 @@ const migrations = runMigrations(
       version: 92,
       sql: `ALTER TABLE assessments ADD COLUMN audience_student_ids_json TEXT`,
     },
+    // Branded PDFs set as learning material, one row per version.
+    {
+      version: 93,
+      sql: `CREATE TABLE IF NOT EXISTS document_files (id TEXT PRIMARY KEY, assessment_id TEXT NOT NULL, org_id TEXT NOT NULL, version INTEGER NOT NULL DEFAULT 1, file_name TEXT NOT NULL, byte_size INTEGER NOT NULL, page_count INTEGER NOT NULL, data_base64 TEXT NOT NULL, created_by TEXT, created_at TEXT NOT NULL DEFAULT (datetime('now')))`,
+    },
+    {
+      version: 94,
+      sql: `CREATE INDEX IF NOT EXISTS document_files_assessment_idx ON document_files (assessment_id, version)`,
+    },
+    // Which Help entries each person has seen, for the tour and hints.
+    {
+      version: 95,
+      sql: `CREATE TABLE IF NOT EXISTS capability_seen (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, school_id TEXT NOT NULL, capability_id TEXT NOT NULL, seen_at TEXT NOT NULL DEFAULT (datetime('now')))`,
+    },
+    {
+      version: 96,
+      sql: `CREATE INDEX IF NOT EXISTS capability_seen_user_idx ON capability_seen (user_id)`,
+    },
   ],
   { table: "school_migrations" },
 );

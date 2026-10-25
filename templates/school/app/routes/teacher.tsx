@@ -45,6 +45,7 @@ export default function TeacherLayout() {
     else if (nav.view === "students") navigate("/teacher/students");
     else if (nav.view === "analytics") navigate("/teacher/analytics");
     else if (nav.view === "extensions") navigate("/teacher/extensions");
+    else if (nav.view === "help") navigate("/teacher/help");
   }, [command.data, clearCommand, navigate]);
 
   useEffect(() => {

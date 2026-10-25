@@ -1,8 +1,11 @@
-import { useNavigate } from "react-router";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router";
+import { originOf, useOrigin } from "@/lib/origin";
+import { PaperSummary } from "@/components/activity/PaperSummary";
 import { BackLink } from "@/components/layout/BackLink";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
-import { agentNativePath } from "@agent-native/core/client";
+import { agentNativePath, sendToAgentChat } from "@agent-native/core/client";
+import { DocumentViewer } from "@/components/activity/DocumentViewer";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -87,6 +90,10 @@ export function AssessmentDetail({
   const navigate = useNavigate();
   const { sync } = useNavigationState();
   const qc = useQueryClient();
+  const [publishDoc, setPublishDoc] = useState(false);
+  const origin = useOrigin();
+  // Back goes where this was opened from when the link said so.
+  const cameFrom = originOf(useLocation().state);
   const [activeVariant, setActiveVariant] = useState<string | null>(null);
   // Whether the open variant is being shown as the class will see it.
   const [asStudent, setAsStudent] = useState(false);
@@ -185,6 +192,42 @@ export function AssessmentDetail({
   const submittedCount = submissions.filter(
     (s: any) => s.status === "submitted",
   ).length;
+
+  // Someone who has come to mark should land on the work to mark, not on the
+  // questions. A link can say which tab; otherwise, work waiting opens it.
+  const [searchParams] = useSearchParams();
+  const [chosenTab, setChosenTab] = useState<string | null>(
+    searchParams.get("tab"),
+  );
+  const activeTab =
+    chosenTab ??
+    (!isMaterial && submittedCount > 0 ? "submissions" : "variants");
+
+  // The list, with what needs marking first, then what has been marked, then
+  // the learners still working or who have not handed in.
+  const RANK: Record<string, number> = {
+    submitted: 0,
+    resubmission_requested: 1,
+    graded: 2,
+  };
+  const orderedSubmissions = [...submissions].sort(
+    (a: any, b: any) =>
+      (RANK[a.status] ?? 3) - (RANK[b.status] ?? 3) ||
+      String(a.studentName ?? "").localeCompare(String(b.studentName ?? "")),
+  );
+  const STATUS_WORDS: Record<string, string> = {
+    submitted: "Ready to mark",
+    graded: "Marked",
+    resubmission_requested: "Asked to redo",
+    draft: "Not handed in",
+    not_started: "Not started",
+  };
+  const groupOf = (status: string) =>
+    status === "submitted" || status === "resubmission_requested"
+      ? "Ready to mark"
+      : status === "graded"
+        ? "Marked"
+        : "Not handed in yet";
   const gradedCount = submissions.filter(
     (s: any) => s.status === "graded",
   ).length;
@@ -310,7 +353,9 @@ export function AssessmentDetail({
             {/* Back to the week when this belongs to one, because that is
                 where it was opened from; to the class otherwise. The way
                 out should retrace the way in. */}
-            {assessment?.lessonNoteId ? (
+            {cameFrom ? (
+              <BackLink to={cameFrom.to}>{cameFrom.label}</BackLink>
+            ) : assessment?.lessonNoteId ? (
               <BackLink to={backToLesson(assessment.lessonNoteId)}>
                 {assessment.lessonTitle ?? "Back to the lesson"}
               </BackLink>
@@ -373,9 +418,80 @@ export function AssessmentDetail({
           </div>
         </div>
 
+        {/* A PDF set as the material: read it here, then publish it or ask
+          for changes. What the class gets is exactly this file. */}
+        {assessment?.document ? (
+          <div className="space-y-3">
+            {assessment.status === "draft" ? (
+              <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border bg-muted/30 px-4 py-3">
+                <p className="text-sm">
+                  {assessment.audienceStudentIdsJson
+                    ? "A draft, for the learners it was made for. Read it, then share it."
+                    : "A draft only you can see. Read it, then share it with the class."}
+                </p>
+                <div className="flex gap-2">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() =>
+                      sendToAgentChat({
+                        message: `Change the PDF "${assessment.title}": `,
+                        submit: false,
+                        openSidebar: true,
+                      })
+                    }
+                  >
+                    Ask for changes
+                  </Button>
+                  <Button
+                    size="sm"
+                    disabled={publishDoc}
+                    onClick={async () => {
+                      setPublishDoc(true);
+                      try {
+                        const res = await fetch(
+                          agentNativePath(
+                            "/_agent-native/actions/publish-assessment",
+                          ),
+                          {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ id: assessmentId }),
+                          },
+                        );
+                        if (!res.ok) throw new Error(await res.text());
+                        toast.success("Shared");
+                        qc.invalidateQueries({
+                          queryKey: ["assessment", assessmentId],
+                        });
+                      } catch (e: any) {
+                        toast.error(e?.message || "Could not share it");
+                      } finally {
+                        setPublishDoc(false);
+                      }
+                    }}
+                  >
+                    {assessment.audienceStudentIdsJson
+                      ? "Share"
+                      : "Share with class"}
+                  </Button>
+                </div>
+              </div>
+            ) : null}
+            <DocumentViewer
+              assessmentId={assessmentId}
+              document={assessment.document}
+            />
+          </div>
+        ) : null}
+
         {/* Something to read is not work to mark. Counting submissions and
           "variants" on a page nobody hands in told a teacher about machinery
           they have no use for, and hid the one thing they came to see. */}
+        {!isMaterial ? (
+          <PaperSummary assessmentId={assessmentId} role={role} />
+        ) : null}
+
         {!isMaterial ? (
           <div className="flex gap-4 text-sm">
             <div className="text-center">
@@ -393,165 +509,193 @@ export function AssessmentDetail({
           </div>
         ) : null}
 
-        <Tabs defaultValue="variants">
-          <TabsList className={isMaterial ? "hidden" : undefined}>
-            <TabsTrigger value="variants">Variants</TabsTrigger>
-            <TabsTrigger value="submissions">Submissions</TabsTrigger>
-          </TabsList>
-          <TabsContent value="variants" className="mt-4 space-y-3">
-            {variantsLoading ? (
-              <ListState loading rows={2} title="Variants" />
-            ) : variants.length === 0 ? (
-              <div className="rounded-lg border border-dashed p-8 text-center">
-                <p className="text-sm font-medium">No variants yet</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Ask the agent to create variants (e.g. "create hard, medium,
-                  and easy versions").
-                </p>
-              </div>
-            ) : (
-              <div className="grid gap-3">
-                {variants.map((variant: any) => {
-                  const open = activeVariant === variant.id;
-                  return (
-                    <div
-                      key={variant.id}
-                      className={`min-w-0 rounded-lg border transition-colors ${
-                        open ? "border-primary" : "hover:border-primary/40"
-                      }`}
-                    >
-                      {/* Only the header is a button: the body can hold cards
-                        and other controls, which cannot nest inside one. */}
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setActiveVariant(open ? null : variant.id)
-                        }
-                        aria-expanded={open}
-                        className={`w-full space-y-2 p-4 text-left ${
-                          open ? "bg-primary/5" : ""
+        {assessment?.document ? null : (
+          <Tabs value={activeTab} onValueChange={setChosenTab}>
+            <TabsList className={isMaterial ? "hidden" : undefined}>
+              <TabsTrigger value="variants">Variants</TabsTrigger>
+              <TabsTrigger value="submissions">Submissions</TabsTrigger>
+            </TabsList>
+            <TabsContent value="variants" className="mt-4 space-y-3">
+              {variantsLoading ? (
+                <ListState loading rows={2} title="Variants" />
+              ) : variants.length === 0 ? (
+                <div className="rounded-lg border border-dashed p-8 text-center">
+                  <p className="text-sm font-medium">No variants yet</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Ask the agent to create variants (e.g. "create hard, medium,
+                    and easy versions").
+                  </p>
+                </div>
+              ) : (
+                <div className="grid gap-3">
+                  {variants.map((variant: any) => {
+                    const open = activeVariant === variant.id;
+                    return (
+                      <div
+                        key={variant.id}
+                        className={`min-w-0 rounded-lg border transition-colors ${
+                          open ? "border-primary" : "hover:border-primary/40"
                         }`}
                       >
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm font-medium">
-                            {variant.label}
-                          </span>
-                          {/* "Custom" and "0 pts" say nothing about a page the
+                        {/* Only the header is a button: the body can hold cards
+                        and other controls, which cannot nest inside one. */}
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setActiveVariant(open ? null : variant.id)
+                          }
+                          aria-expanded={open}
+                          className={`w-full space-y-2 p-4 text-left ${
+                            open ? "bg-primary/5" : ""
+                          }`}
+                        >
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-medium">
+                              {variant.label}
+                            </span>
+                            {/* "Custom" and "0 pts" say nothing about a page the
                             class reads; they belong to graded work. */}
-                          {!isMaterial ? (
-                            <>
-                              <Badge
-                                variant="outline"
-                                className="text-xs capitalize"
-                              >
-                                {variant.difficulty}
-                              </Badge>
-                              <span className="text-xs text-muted-foreground">
-                                {variant.totalPoints} pts
-                              </span>
-                            </>
-                          ) : null}
-                          <IconChevronDown
-                            size={16}
-                            className={`ml-auto shrink-0 text-muted-foreground transition-transform ${
-                              open ? "rotate-180" : ""
-                            }`}
-                          />
-                        </div>
-                        {variant.instructions && (
-                          <p className="line-clamp-2 text-xs text-muted-foreground">
-                            {variant.instructions}
-                          </p>
-                        )}
-                      </button>
+                            {!isMaterial ? (
+                              <>
+                                <Badge
+                                  variant="outline"
+                                  className="text-xs capitalize"
+                                >
+                                  {variant.difficulty}
+                                </Badge>
+                                <span className="text-xs text-muted-foreground">
+                                  {variant.totalPoints} pts
+                                </span>
+                              </>
+                            ) : null}
+                            <IconChevronDown
+                              size={16}
+                              className={`ml-auto shrink-0 text-muted-foreground transition-transform ${
+                                open ? "rotate-180" : ""
+                              }`}
+                            />
+                          </div>
+                          {variant.instructions && (
+                            <p className="line-clamp-2 text-xs text-muted-foreground">
+                              {variant.instructions}
+                            </p>
+                          )}
+                        </button>
 
-                      {open && (variant.content || variant.contentJson) ? (
-                        <div className="space-y-3 border-t p-4">
-                          {/* The teacher's own view shows hints and card backs
+                        {open && (variant.content || variant.contentJson) ? (
+                          <div className="space-y-3 border-t p-4">
+                            {/* The teacher's own view shows hints and card backs
                             outright; flipping to the learner's view uses the
                             very same renderer, so it cannot drift from what
                             the class actually gets. */}
-                          <div className="flex items-center justify-between gap-2">
-                            <span className="text-xs font-medium text-muted-foreground">
-                              {headingFor(assessment?.renderAs)}
-                            </span>
-                            {/* Only where the two views actually differ. On
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="text-xs font-medium text-muted-foreground">
+                                {headingFor(assessment?.renderAs)}
+                              </span>
+                              {/* Only where the two views actually differ. On
                                 a reading page there is no hidden half, so
                                 the button promised a change that never came
                                 — and a control that does nothing teaches a
                                 teacher to ignore it on the pages where it
                                 matters. */}
-                            {differsForStudent(variant) ? (
-                              <Button
-                                size="sm"
-                                variant={asStudent ? "default" : "outline"}
-                                onClick={() => setAsStudent((v) => !v)}
-                              >
-                                <IconEye size={14} className="mr-1.5" />
-                                {asStudent
-                                  ? "Seeing it as a student"
-                                  : "View as student"}
-                              </Button>
-                            ) : null}
+                              {differsForStudent(variant) ? (
+                                <Button
+                                  size="sm"
+                                  variant={asStudent ? "default" : "outline"}
+                                  onClick={() => setAsStudent((v) => !v)}
+                                >
+                                  <IconEye size={14} className="mr-1.5" />
+                                  {asStudent
+                                    ? "Seeing it as a student"
+                                    : "View as student"}
+                                </Button>
+                              ) : null}
+                            </div>
+                            <ActivityContent
+                              contentJson={variant.contentJson}
+                              markdown={variant.content}
+                              audience={asStudent ? "student" : "teacher"}
+                            />
                           </div>
-                          <ActivityContent
-                            contentJson={variant.contentJson}
-                            markdown={variant.content}
-                            audience={asStudent ? "student" : "teacher"}
-                          />
-                        </div>
-                      ) : null}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </TabsContent>
-          <TabsContent value="submissions" className="mt-4 space-y-2">
-            {submissionsLoading ? (
-              <ListState loading rows={3} title="Submissions" />
-            ) : submissions.length === 0 ? (
-              <p className="text-sm text-muted-foreground">
-                No submissions yet.
-              </p>
-            ) : (
-              submissions.map((sub: any) => (
-                <button
-                  key={sub.id}
-                  onClick={() => openGrading(sub)}
-                  className="w-full flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50 transition-colors text-left"
-                >
-                  <div className="min-w-0">
-                    <p className="flex items-center gap-2 text-sm font-medium">
-                      <span className="truncate">
-                        {sub.studentName ?? sub.studentEmail ?? sub.studentId}
-                      </span>
-                      {/* Which papers want a second look, before opening any. */}
-                      {sub.flaggedCount || sub.unmarkedCount ? (
-                        <Badge variant="destructive" className="gap-1 text-xs">
-                          <IconFlag size={10} />
-                          {(sub.flaggedCount ?? 0) + (sub.unmarkedCount ?? 0)}
-                        </Badge>
-                      ) : null}
-                    </p>
-                    {sub.score != null && (
-                      <p className="text-xs text-muted-foreground">
-                        Score: {sub.score} /{" "}
-                        {sub.maxScore ?? assessment?.totalPoints ?? "—"}
+                        ) : null}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </TabsContent>
+            <TabsContent value="submissions" className="mt-4 space-y-2">
+              {submissionsLoading ? (
+                <ListState loading rows={3} title="Submissions" />
+              ) : submissions.length === 0 ? (
+                <p className="text-sm text-muted-foreground">
+                  No submissions yet.
+                </p>
+              ) : (
+                orderedSubmissions.map((sub: any, i: number) => (
+                  <div key={sub.id} className="space-y-2">
+                    {i === 0 ||
+                    groupOf(orderedSubmissions[i - 1].status) !==
+                      groupOf(sub.status) ? (
+                      <p className="pt-2 text-xs font-medium text-muted-foreground">
+                        {groupOf(sub.status)}{" "}
+                        <span className="font-normal">
+                          (
+                          {
+                            orderedSubmissions.filter(
+                              (s: any) =>
+                                groupOf(s.status) === groupOf(sub.status),
+                            ).length
+                          }
+                          )
+                        </span>
                       </p>
-                    )}
+                    ) : null}
+                    <button
+                      onClick={() => openGrading(sub)}
+                      className="w-full flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50 transition-colors text-left"
+                    >
+                      <div className="min-w-0">
+                        <p className="flex items-center gap-2 text-sm font-medium">
+                          <span className="truncate">
+                            {sub.studentName ??
+                              sub.studentEmail ??
+                              sub.studentId}
+                          </span>
+                          {/* Which papers want a second look, before opening any. */}
+                          {sub.flaggedCount || sub.unmarkedCount ? (
+                            <Badge
+                              variant="destructive"
+                              className="gap-1 text-xs"
+                            >
+                              <IconFlag size={10} />
+                              {(sub.flaggedCount ?? 0) +
+                                (sub.unmarkedCount ?? 0)}
+                            </Badge>
+                          ) : null}
+                        </p>
+                        {sub.score != null && (
+                          <p className="text-xs text-muted-foreground">
+                            Score: {sub.score} /{" "}
+                            {sub.maxScore ?? assessment?.totalPoints ?? "—"}
+                          </p>
+                        )}
+                      </div>
+                      <Badge
+                        variant={
+                          sub.status === "submitted" ? "default" : "secondary"
+                        }
+                        className="text-xs"
+                      >
+                        {STATUS_WORDS[sub.status] ?? sub.status}
+                      </Badge>
+                    </button>
                   </div>
-                  <Badge
-                    variant={sub.status === "graded" ? "default" : "secondary"}
-                    className="text-xs"
-                  >
-                    {sub.status}
-                  </Badge>
-                </button>
-              ))
-            )}
-          </TabsContent>
-        </Tabs>
+                ))
+              )}
+            </TabsContent>
+          </Tabs>
+        )}
 
         {/* Grading Dialog */}
         <Dialog
@@ -566,6 +710,16 @@ export function AssessmentDetail({
                   gradingTarget?.studentEmail ??
                   gradingTarget?.studentId}
               </DialogTitle>
+              {/* Marks alone do not say how this learner is doing overall. */}
+              {gradingTarget?.studentId ? (
+                <Link
+                  to={`/${role}/students/${gradingTarget.studentId}`}
+                  state={origin(assessment?.title ?? "Activity")}
+                  className="text-xs text-primary hover:underline"
+                >
+                  See how they are doing overall
+                </Link>
+              ) : null}
             </DialogHeader>
             <div className="space-y-4 py-2 max-h-[70vh] overflow-y-auto">
               {gradingDetail?.answers?.length ? (

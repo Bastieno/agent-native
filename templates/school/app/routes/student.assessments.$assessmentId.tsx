@@ -1,3 +1,4 @@
+import { DocumentViewer } from "@/components/activity/DocumentViewer";
 import { useLocation, useParams } from "react-router";
 import { originOf } from "@/lib/origin";
 import { BackLink } from "@/components/layout/BackLink";
@@ -377,6 +378,12 @@ export default function StudentAssessment() {
             answer sheet carries the questions, this reading copy stands
             down. Everything else — a reading page, a card deck, a table,
             a practical — still shows here, since those have no sheet. */}
+        {assessment?.document && !timing?.notYetOpen ? (
+          <DocumentViewer
+            assessmentId={assessmentId!}
+            document={assessment.document}
+          />
+        ) : null}
         {!oneAtATime &&
           questionBlocks.length === 0 &&
           // A handed-in paper is shown as their own paper below instead.

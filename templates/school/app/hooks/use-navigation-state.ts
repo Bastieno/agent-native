@@ -27,6 +27,7 @@ export interface AdminNav {
     | "analytics"
     | "settings"
     | "extensions"
+    | "help"
     // The term's timetable on a grid, by arm, teacher or room.
     | "timetable";
   subjectId?: string;
@@ -73,6 +74,7 @@ export interface TeacherNav {
     | "analytics"
     // The extensions the admin has put in front of teachers.
     | "extensions"
+    | "help"
     // Drafting a curriculum is subject work, so a teacher reaches these too.
     | "curriculum"
     | "curriculum-setup";
@@ -103,7 +105,8 @@ export interface StudentNav {
     | "progress"
     | "week"
     // One subject, week by week, for going back over it.
-    | "revise";
+    | "revise"
+    | "help";
   classId?: string;
   lessonId?: string;
   assessmentId?: string;
