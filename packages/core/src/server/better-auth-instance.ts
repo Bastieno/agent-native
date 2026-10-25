@@ -701,6 +701,13 @@ async function createBetterAuthInstance(
   const auth = betterAuth({
     basePath,
     baseURL: appUrl,
+    // An organisation's own address is a trusted origin for requests made to
+    // it; without this, a browser holding cookies is refused with
+    // INVALID_ORIGIN on every auth call from that address.
+    trustedOrigins: async (request?: Request) => {
+      const branding = await brandingForRequest(request);
+      return branding?.origin ? [branding.origin] : [];
+    },
     database,
     secret,
     emailAndPassword: {
