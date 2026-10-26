@@ -150,6 +150,7 @@ export function LearnerProfile({
     enabled: !!studentId,
   });
   const latestReportCard = issued?.reportCards?.[0];
+  const { config } = useSchoolConfig();
 
   if (isLoading) {
     return (
@@ -170,7 +171,6 @@ export function LearnerProfile({
     );
   }
 
-  const { config } = useSchoolConfig();
   const { learner, summary, subjects, findings, position, counting } = data;
   const weak =
     summary?.percentage != null && summary.percentage < summary.passMark;
