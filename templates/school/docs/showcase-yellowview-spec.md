@@ -1,6 +1,6 @@
 # Yellow View showcase: a whole American high school, one quarter in
 
-**Status:** proposal for the owner to react to. Agreed so far (2026-10-26): grades 9 to 12, about 180 learners, Columbus Ohio, full breadth of content, GPA with honors and AP weighting, quarters as the school's terms, no sub-agents while writing content.
+**Status:** built (2026-10-26); the decisions below were agreed with the owner. Agreed so far (2026-10-26): grades 9 to 12, about 180 learners, Columbus Ohio, full breadth of content, GPA with honors and AP weighting, quarters as the school's terms, no sub-agents while writing content.
 
 ## What this is for
 
@@ -15,7 +15,7 @@ Crestfield College (Nigeria) and Yellow View High School (United States) side by
   - Q1: Mon 08/17/2026 to Fri 10/23/2026, 10 weeks. Taught: weeks 1 to 8 (Labor Day, Mon 09/07, falls in week 4 and is a day off, not a week), week 9 review, week 10 quarter assessments, grades posted.
   - Q2: 10/26 to 12/18. Q3: 01/11/2027 to 03/19. Q4: 03/29 to 06/04. Dates only; nothing taught.
 - **Grading:** A+ to F with plus and minus, whole-number bands. A 93 to 100 (4.0), A- 90 to 92 (3.7), B+ 87 to 89 (3.3), B 83 to 86 (3.0), B- 80 to 82 (2.7), C+ 77 to 79 (2.3), C 73 to 76 (2.0), C- 70 to 72 (1.7), D+ 67 to 69 (1.3), D 63 to 66 (1.0), D- 60 to 62 (0.7), F 0 to 59 (0). Pass mark 60. Honors +0.5, AP +1.0 (only when the course earned points). Missed work counts as zero. Positions on report cards off (US schools do not rank on the card).
-- **Day:** Monday to Friday, 7:30 to 2:35. Homeroom 7:30 to 7:45, seven periods of 48 minutes, a 30-minute lunch between periods 4 and 5, 3-minute passing time rolled into the periods. Friday is the same. Rooms by subject (labs, gym, art room, band room, library) plus a classroom for each homeroom.
+- **Day:** Monday to Friday, 7:30 to 2:20. Homeroom 7:30 to 7:48, seven periods of 48 minutes with four minutes between, a 30-minute lunch after period 4. Friday is the same. Rooms by subject (labs, gym, fitness room, art room, band and choir rooms, auditorium, library) plus a classroom for each homeroom.
 - **People:** one principal (admin), four department heads as coordinators (English and Social Studies, Math and Computer Science, Science, Electives and World Languages), about 28 teachers, one counselor and one assistant principal on the staff list. Students are 45 per grade in three homerooms of 15. Every student signs in with a school email (`firstname.lastname@yellowview.k12.oh.us` style), teachers likewise. Names are a realistic US mix (Anglo, Black, Hispanic and Latino, Asian American, Somali and Nepali families, as Columbus has).
 - **Ability and diligence** hidden per student, as at Crestfield.
 

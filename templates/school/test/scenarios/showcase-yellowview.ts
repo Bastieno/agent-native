@@ -34,13 +34,13 @@ export const ARMS: ArmPlan[] = YEARS.flatMap((yearGroup) => {
   const n = yearGroup.replace("Grade ", "");
   const upper = yearGroup === G11 || yearGroup === G12;
   return [
-    { yearGroup, name: `${n}A`, stream: STANDARD },
-    { yearGroup, name: `${n}B`, stream: STANDARD },
+    { yearGroup, name: `${n}A`, stream: STANDARD, abilityBias: 0.12 },
+    { yearGroup, name: `${n}B`, stream: STANDARD, abilityBias: 0.12 },
     {
       yearGroup,
       name: `${n}C`,
       stream: upper ? HONORS_AP : HONORS,
-      abilityBias: 0.16,
+      abilityBias: 0.28,
     },
   ];
 });
@@ -309,7 +309,7 @@ export const SUBJECTS: SubjectPlan[] = [
       department: SCI,
       library: lib(NGSS, "Anatomy and Physiology"),
       year: G12,
-      lab: "Biology Lab",
+      lab: "Biology Lab 2",
     },
     { name: "Honors Anatomy and Physiology", code: "HANP" },
   ),
@@ -551,7 +551,7 @@ export const SUBJECTS: SubjectPlan[] = [
     department: SCI,
     library: lib(AP, "AP Biology"),
     years: [G11, G12],
-    lab: "Biology Lab",
+    lab: "Biology Lab 2",
     courseLevel: "AP",
   }),
   elective({
@@ -804,7 +804,6 @@ export const STAFF: StaffPlan[] = [
     supports: [
       { subject: "Chemistry", arms: ["10A"] },
       { subject: "Physics", arms: ["11A"] },
-      { subject: "Biology", arms: ["9A"] },
     ],
   },
 
@@ -985,6 +984,7 @@ export const showcase: Showcase = {
   },
   specialRooms: [
     "Biology Lab",
+    "Biology Lab 2",
     "Chemistry Lab",
     "Physics Lab",
     "Computer Lab",

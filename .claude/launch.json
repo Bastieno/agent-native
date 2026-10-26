@@ -75,6 +75,26 @@
       ],
       "port": 8133,
       "autoPort": false
+    },
+    {
+      "name": "school-crestfield-check",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "DATABASE_URL=file:./data/crestfield-check.db",
+        "BETTER_AUTH_URL=http://localhost:8134",
+        "corepack",
+        "pnpm",
+        "--dir",
+        "templates/school",
+        "exec",
+        "agent-native",
+        "dev",
+        "--port",
+        "8134",
+        "--strictPort"
+      ],
+      "port": 8134,
+      "autoPort": false
     }
   ]
 }
