@@ -1,3 +1,5 @@
+import { calendarPositionFor } from "./calendar-position.js";
+import type { CalendarPosition } from "../../shared/calendar-position.js";
 import {
   schoolLocale,
   schoolTimeZone,
@@ -32,6 +34,8 @@ export interface MyWeekLesson {
 
 export interface MyWeek {
   term: { id: string; name: string } | null;
+  /** The week of the term and what it is for; null between terms. */
+  calendar: CalendarPosition | null;
   termStatus: "current" | "next" | "none";
   days: Array<{
     day: number;
@@ -134,7 +138,11 @@ export async function getMyWeek(
     term.termId && term.termName
       ? { id: term.termId, name: term.termName }
       : null;
-  const base = { term: termInfo, termStatus: term.status };
+  const calendar =
+    term.status === "current"
+      ? await calendarPositionFor(orgId, date ?? today)
+      : null;
+  const base = { term: termInfo, termStatus: term.status, calendar };
 
   if (!week || week.days.length === 0) {
     return {
@@ -245,6 +253,11 @@ export async function getMyWeek(
     message = `This is your timetable for ${term.termName}, which hasn't started yet.`;
   else if (term.termName) message = `Your week for ${term.termName}.`;
   else message = "Your week.";
+  // A break still shows the usual slots; say what the week is, so a quiet
+  // week is not mistaken for a gap.
+  if (calendar && calendar.kind !== "teaching") {
+    message = `${calendar.message} ${message}`;
+  }
 
   return { ...base, days, next, message };
 }

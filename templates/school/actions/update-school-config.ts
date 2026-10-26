@@ -107,6 +107,12 @@ export default defineAction({
             .describe(
               "Only this term. Omit when the week falls the same way in every term.",
             ),
+          kind: z
+            .enum(["break", "revision", "assessment", "exam"])
+            .optional()
+            .describe(
+              "What the week means for lessons: break (none, e.g. mid-term break, half-term, spring break), revision (lessons are for revising), assessment (a test week), exam (examinations). Omit and it is read from the label.",
+            ),
         }),
       ),
     )

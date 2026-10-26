@@ -13,6 +13,7 @@ import { carriesMarks } from "../server/lib/gradebook.js";
 import { sharedWithClass } from "../server/lib/shared-with-class.js";
 import { audienceOf } from "../server/lib/audience.js";
 import { missedWorkPolicy } from "../shared/missed-work.js";
+import { calendarPositionFor } from "../server/lib/calendar-position.js";
 
 /**
  * What a teacher needs to know or do, most pressing first, each with the page
@@ -26,7 +27,7 @@ import { missedWorkPolicy } from "../shared/missed-work.js";
  */
 export default defineAction({
   description:
-    "What the signed-in teacher needs to know or do, most pressing first, each with a link: work handed in and waiting to be marked, marks ready to publish, this week's lesson notes not ready, drafts waiting to be read and shared, and classes with learners who are struggling. Use it for 'what needs my attention?' or 'what should I do today?'.",
+    "What the signed-in teacher needs to know or do, most pressing first, each with a link: work handed in and waiting to be marked, marks ready to publish, this week's lesson notes not ready, drafts waiting to be read and shared, and classes with learners who are struggling. Use it for 'what needs my attention?' or 'what should I do today?'. `calendar` says which week of the term it is and what it is for: in a break, revision or exam week no new lesson notes are expected, so do not report them as missing.",
   schema: z.object({}),
   http: { method: "GET" },
   run: async () => {
@@ -149,7 +150,9 @@ export default defineAction({
       }
     }
 
-    // This week's lesson notes that are not ready to teach from.
+    // This week's lesson notes that are not ready to teach from. In a break,
+    // revision or exam week none are due, and the week says so.
+    const calendar = await calendarPositionFor(orgId);
     const today = new Date();
     const day = (d: Date) => d.toISOString().slice(0, 10);
     const weekAgo = day(new Date(today.getTime() - 6 * 86_400_000));
@@ -166,6 +169,7 @@ export default defineAction({
     for (const n of notes
       .filter(
         (n) =>
+          (calendar?.lessonNotesExpected ?? true) &&
           n.lessonDate &&
           n.lessonDate.slice(0, 10) >= weekAgo &&
           n.lessonDate.slice(0, 10) <= day(today) &&
@@ -239,6 +243,6 @@ export default defineAction({
       });
     }
 
-    return { items: items.slice(0, 10) };
+    return { calendar, items: items.slice(0, 10) };
   },
 });
