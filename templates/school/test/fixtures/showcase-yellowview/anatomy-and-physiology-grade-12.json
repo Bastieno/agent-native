@@ -1,0 +1,2773 @@
+{
+ "subject": "Anatomy and Physiology",
+ "yearGroup": "Grade 12",
+ "weeks": {
+  "1": {
+   "topic": "Orientation to the body: terms, cavities, levels and feedback",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use anatomical terms for position, planes and body cavities to describe where structures lie;\n2. list the levels of organization from chemicals to the whole organism;\n3. explain how negative feedback keeps body temperature, blood glucose and fluid balance stable.\n\n## Materials\n\nAnatomical position posters, body outline worksheets, sticky notes, a torso model, the quiz.\n\n## Starter (7 minutes)\n\nHave a volunteer stand in the anatomical position (standing, feet flat, palms forward). Ask: \"If I say the elbow is proximal to the wrist, what do I mean? What if I say the sternum is anterior to the spine?\" Build the vocabulary from their answers.\n\n## Main activity\n\n1. Directional terms: superior and inferior, anterior and posterior, medial and lateral, proximal and distal, superficial and deep. Students label sticky notes and place them on a partner.\n2. Planes and cavities: sagittal, frontal and transverse planes; the dorsal cavity (cranial and spinal) and the ventral cavity (thoracic and abdominopelvic). Use the torso model to find the diaphragm that separates the thoracic and abdominal cavities.\n3. Levels of organization: chemical, cellular, tissue, organ, organ system, organism. Then homeostasis with a thermostat analogy and the sweating loop for body temperature.\n\n## Checking for understanding\n\nWhiteboards: \"The heart is ___ to the lungs, and ___ to the diaphragm.\" Look for medial and superior.\n\n## Quiz and problem set\n\nFive quiz questions and a short problem set on terms and feedback.",
+   "reading": {
+    "title": "A common language for the body",
+    "content": "Anatomists describe every structure as if the body is in the **anatomical position**: standing upright, feet flat and together, arms at the sides, palms facing forward. Doing so avoids confusion when, for example, a patient is lying down or has an arm raised. \"Left\" and \"right\" always refer to the patient's left and right, not the observer's.\n\nDirectional terms come in pairs. **Superior** means toward the head and **inferior** toward the feet. **Anterior**, or ventral, means toward the front, and **posterior**, or dorsal, toward the back. **Medial** means toward the midline of the body and **lateral** away from it. **Proximal** and **distal** describe position along a limb: the elbow is proximal to the wrist, because it is closer to where the limb attaches to the trunk. **Superficial** is closer to the surface, and **deep** is farther inside.\n\nImaginary **planes** cut the body to help in description. A sagittal plane divides it into left and right parts, a frontal (coronal) plane divides it into front and back, and a transverse plane divides it into upper and lower parts. A CT scan shows transverse slices.\n\nThe body contains two major **cavities**. The dorsal cavity is at the back and has two parts: the cranial cavity, which holds the brain, and the spinal cavity, which holds the spinal cord. The ventral cavity is at the front and includes the thoracic cavity, which holds the heart and lungs, and the abdominopelvic cavity, which holds the digestive organs, the bladder and the reproductive organs. The muscle called the diaphragm separates the thoracic and abdominopelvic cavities.\n\nThe body is organized in levels. Atoms form molecules at the **chemical level**. Molecules form organelles, which make up cells at the **cellular level**. Similar cells form **tissues**, tissues form **organs**, and organs working together form **organ systems**. All eleven systems together make the **organism**.\n\nFor the organism to survive, conditions inside must stay stable, which is **homeostasis**. Most of it works by **negative feedback**, where the response reverses the change. If body temperature rises above 37 degrees Celsius, receptors in the skin and brain signal the hypothalamus. It triggers sweating and widening of skin blood vessels, which cool the body. Once the temperature falls, the signals stop. Blood glucose works the same way: after a meal, insulin lowers it, and glucagon raises it when it falls. Fluid balance is maintained by the kidneys, which produce more or less urine under the control of the hormone ADH."
+   },
+   "cards": [
+    {
+     "front": "Anatomical position",
+     "back": "Standing upright, feet together, arms at the sides, palms forward."
+    },
+    {
+     "front": "Proximal",
+     "back": "Closer to the point of attachment of a limb to the trunk."
+    },
+    {
+     "front": "Distal",
+     "back": "Farther from the point of attachment of a limb."
+    },
+    {
+     "front": "Sagittal plane",
+     "back": "A plane that divides the body into left and right parts."
+    },
+    {
+     "front": "Transverse plane",
+     "back": "A plane that divides the body into upper and lower parts."
+    },
+    {
+     "front": "Thoracic cavity",
+     "back": "The chest cavity that contains the heart and lungs."
+    },
+    {
+     "front": "Homeostasis",
+     "back": "Keeping the body's internal conditions stable."
+    },
+    {
+     "front": "Negative feedback",
+     "back": "A response that reverses the change that triggered it."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "The elbow is ___ to the wrist.",
+     "options": [
+      "Distal",
+      "Proximal",
+      "Inferior",
+      "Lateral"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which plane divides the body into front and back parts?",
+     "options": [
+      "Sagittal",
+      "Frontal",
+      "Transverse",
+      "Oblique"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which organ is found in the thoracic cavity?",
+     "options": [
+      "Stomach",
+      "Urinary bladder",
+      "Heart",
+      "Spinal cord"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the correct order from simplest to most complex?",
+     "options": [
+      "Cell, tissue, organ, organ system",
+      "Tissue, cell, organ system, organ",
+      "Organ, tissue, cell, organ system",
+      "Cell, organ, tissue, organ system"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "After a meal, blood glucose rises and insulin is released, which lowers it. This is an example of:",
+     "options": [
+      "Positive feedback",
+      "Negative feedback",
+      "A reflex arc",
+      "Diffusion"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe the position of the heart relative to the lungs and the diaphragm, using at least two directional terms and naming the cavity that contains it.",
+     "markScheme": [
+      "Names the thoracic cavity as the cavity containing the heart",
+      "Describes the heart as medial to the lungs",
+      "Describes the heart as superior to the diaphragm",
+      "Uses a further correct directional term, such as anterior to the spine or deep to the sternum"
+     ],
+     "modelAnswer": "The heart lies in the thoracic cavity. It is medial to the lungs, between them near the midline, and superior to the diaphragm. It is also anterior to the spine and deep to the sternum.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The heart is in the thoracic cavity. It is medial to the lungs, sitting between them. It is superior to the diaphragm. It is also anterior to the spine and deep to the breastbone.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The heart is in the thoracic cavity."
+        },
+        {
+         "point": 1,
+         "quote": "It is medial to the lungs, sitting between them."
+        },
+        {
+         "point": 2,
+         "quote": "It is superior to the diaphragm."
+        },
+        {
+         "point": 3,
+         "quote": "It is also anterior to the spine and deep to the breastbone."
+        }
+       ],
+       "feedback": "Full marks. Four terms used correctly, each tied to a landmark."
+      },
+      {
+       "tier": "full",
+       "text": "Cavity: thoracic. Medial to each lung, near the midline. Above, or superior to, the diaphragm. Posterior to the sternum and anterior to the vertebral column.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cavity: thoracic."
+        },
+        {
+         "point": 1,
+         "quote": "Medial to each lung, near the midline."
+        },
+        {
+         "point": 2,
+         "quote": "Above, or superior to, the diaphragm."
+        },
+        {
+         "point": 3,
+         "quote": "Posterior to the sternum and anterior to the vertebral column."
+        }
+       ],
+       "feedback": "All four marks, and the pair of anterior and posterior statements is a strong check."
+      },
+      {
+       "tier": "partial",
+       "text": "The heart is in the thoracic cavity. It is superior to the diaphragm.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The heart is in the thoracic cavity."
+        },
+        {
+         "point": 2,
+         "quote": "It is superior to the diaphragm."
+        }
+       ],
+       "feedback": "Good. Add its position relative to the lungs, using medial or lateral, and one more directional term."
+      },
+      {
+       "tier": "partial",
+       "text": "The heart is medial to the lungs and it is in the abdominal cavity, below the diaphragm.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The heart is medial to the lungs"
+        }
+       ],
+       "feedback": "The heart is above the diaphragm in the thoracic cavity. Correct the cavity and the direction.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The heart is lateral to the lungs because it is on the left side of the body.",
+       "meets": [],
+       "feedback": "Lateral means away from the midline. The heart sits between the lungs, so it is medial to them."
+      },
+      {
+       "tier": "weak",
+       "text": "It is in the thoracic cavity. It is distal to the lungs, near the feet.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is in the thoracic cavity."
+        }
+       ],
+       "feedback": "Distal and proximal describe limbs. The heart is near the midline, so medial is the right term."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain how negative feedback returns body temperature to normal after a person exercises in the heat. Name the receptors, the control center and two effector responses.",
+     "markScheme": [
+      "Names temperature receptors in the skin and brain as the detectors of the rise",
+      "Names the hypothalamus as the control center",
+      "Gives sweating and widening of skin blood vessels as the effector responses",
+      "States that the response reverses the change, and that it stops once temperature returns to normal"
+     ],
+     "modelAnswer": "Temperature receptors in the skin and brain detect the rise in body temperature. They signal the hypothalamus, which is the control center. It triggers sweating and widening of blood vessels in the skin, which lose heat. The temperature falls, which reverses the original change, and the responses stop once it is back to normal.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Receptors in the skin and brain sense that the temperature is rising. They send the information to the hypothalamus, the control center. The hypothalamus makes the sweat glands release sweat and the blood vessels in the skin widen. That cools the body and reverses the rise, and when it reaches normal the responses switch off.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Receptors in the skin and brain sense that the temperature is rising."
+        },
+        {
+         "point": 1,
+         "quote": "They send the information to the hypothalamus, the control center."
+        },
+        {
+         "point": 2,
+         "quote": "The hypothalamus makes the sweat glands release sweat and the blood vessels in the skin widen."
+        },
+        {
+         "point": 3,
+         "quote": "That cools the body and reverses the rise, and when it reaches normal the responses switch off."
+        }
+       ],
+       "feedback": "Full marks. Each part of the loop is named in order."
+      },
+      {
+       "tier": "full",
+       "text": "Thermoreceptors detect the warmer blood and skin. The hypothalamus compares this to the set point. Effectors: sweat glands produce sweat and skin arterioles dilate. Heat loss lowers the temperature, which turns the response off, so it is negative feedback.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Thermoreceptors detect the warmer blood and skin."
+        },
+        {
+         "point": 1,
+         "quote": "The hypothalamus compares this to the set point."
+        },
+        {
+         "point": 2,
+         "quote": "Effectors: sweat glands produce sweat and skin arterioles dilate."
+        },
+        {
+         "point": 3,
+         "quote": "Heat loss lowers the temperature, which turns the response off, so it is negative feedback."
+        }
+       ],
+       "feedback": "All four marks, and the set point is a good addition."
+      },
+      {
+       "tier": "partial",
+       "text": "The hypothalamus is the control center. The body sweats to cool down.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The hypothalamus is the control center."
+        },
+        {
+         "point": 2,
+         "quote": "The body sweats"
+        }
+       ],
+       "feedback": "Name the receptors that detect the change, and say what happens once the temperature returns to normal."
+      },
+      {
+       "tier": "partial",
+       "text": "Receptors in the skin detect heat. The response stops when the body is cooled. The heart then pumps harder to cool you down.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Receptors in the skin detect heat."
+        },
+        {
+         "point": 3,
+         "quote": "The response stops when the body is cooled."
+        }
+       ],
+       "feedback": "The effectors are the sweat glands and skin blood vessels. Name the control center, the hypothalamus.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The body gets hot so it shivers to warm up and then it is the right temperature.",
+       "meets": [],
+       "feedback": "Shivering raises temperature when you are cold. When too hot, the body sweats and widens skin vessels."
+      },
+      {
+       "tier": "weak",
+       "text": "The body sweats. That is positive feedback because sweating is a positive thing.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The body sweats."
+        }
+       ],
+       "feedback": "Negative feedback is not bad. It means the response reverses the change. Sweating cools you down."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Tissues to organ systems, and the energy demands of exercise",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe how tissues combine to form organs and how organ systems interact;\n2. link cellular respiration in muscle cells to the energy demands of exercise.\n\n## Materials\n\nOrgan cards, a chart of the eleven organ systems, a stopwatch, a pulse chart, the worksheet.\n\n## Starter (6 minutes)\n\nPose: \"You run up the stairs to class. Which organ systems did you use, and in what order?\" List on the board and draw arrows to show interactions.\n\n## Main activity\n\n1. Build a concept map of the eleven systems with arrows for interactions. Pick the stomach as an organ and list its four tissue types.\n2. Discuss muscle energy: ATP stores for a few seconds, then the creatine phosphate system, then aerobic respiration for long events and glycolysis with lactate in intense bursts.\n3. Measure resting pulse and pulse after one minute of step-ups; students calculate the percent increase and explain it in terms of oxygen demand.\n\n## Checking for understanding\n\nAsk: \"Why does your breathing stay fast after you stop exercising?\" Listen for the oxygen debt idea.\n\n## Problem set and worksheet\n\nInteraction problems, a pulse calculation and a short written explanation.",
+   "reading": {
+    "title": "Systems working together",
+    "content": "Organs are made of several types of tissue. The stomach is a good example. Its inner lining is epithelial tissue that secretes mucus and acid. Its wall contains smooth muscle tissue that churns the food. Connective tissue holds the layers together and supplies blood vessels, and nervous tissue controls the muscle and secretion. Each tissue contributes to the stomach's job, so the stomach's function cannot be understood by looking at one tissue alone.\n\nIn the same way, organs are grouped into eleven **organ systems**: integumentary, skeletal, muscular, nervous, endocrine, cardiovascular, lymphatic and immune, respiratory, digestive, urinary and reproductive. No system works in isolation. The digestive system absorbs glucose, the cardiovascular system delivers it, the respiratory system provides oxygen, and the nervous and endocrine systems coordinate the response. A failure in one place is felt in others: the kidneys, part of the urinary system, control blood volume and so affect blood pressure in the cardiovascular system.\n\nExercise shows how these systems interact. A muscle cell uses **ATP** to power the sliding of its filaments. A muscle contains only enough ATP for a few seconds of work. The next source is **creatine phosphate**, which can quickly regenerate ATP and lasts about 10 seconds. After that, the cell relies on glucose. If oxygen is plentiful, as in a jog, the cell uses **aerobic respiration**, which produces about 30 ATP per glucose and releases carbon dioxide and water. In a sprint, oxygen cannot reach the muscle fast enough, so the cell uses **glycolysis** alone, which makes only 2 ATP per glucose and produces lactate. Lactate builds up in the muscle and contributes to the burning feeling, but the body later converts it back to glucose in the liver.\n\nDuring exercise, the heart rate and breathing rate rise to supply more oxygen. A resting pulse of 70 beats per minute might go up to 130 after a minute of step-ups. This is an increase of (130 - 70)/70 times 100, which is 86 percent. After exercise stops, breathing stays fast for a while because the body is repaying the **oxygen debt**: replacing the oxygen stores, clearing lactate and restoring ATP and creatine phosphate. A person who trains regularly has a lower resting heart rate, because the heart has become stronger and pumps more blood with each beat."
+   },
+   "cards": [
+    {
+     "front": "Organ",
+     "back": "A structure made of two or more tissue types working together."
+    },
+    {
+     "front": "Organ system",
+     "back": "A group of organs that cooperate for a common function."
+    },
+    {
+     "front": "ATP",
+     "back": "The molecule that supplies energy for muscle contraction."
+    },
+    {
+     "front": "Creatine phosphate",
+     "back": "A store that quickly regenerates ATP in the first seconds of exercise."
+    },
+    {
+     "front": "Aerobic respiration",
+     "back": "Making ATP from glucose using oxygen; about 30 ATP per glucose."
+    },
+    {
+     "front": "Glycolysis",
+     "back": "The first stage of glucose breakdown, giving 2 ATP and lactate without oxygen."
+    },
+    {
+     "front": "Lactate",
+     "back": "A product of glycolysis when oxygen is limited."
+    },
+    {
+     "front": "Oxygen debt",
+     "back": "The extra oxygen needed after exercise to restore the body's resting state."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which tissue lines the inside of the stomach and secretes mucus?",
+     "options": [
+      "Muscle tissue",
+      "Epithelial tissue",
+      "Nervous tissue",
+      "Bone"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which energy source in a muscle is used first in a sprint?",
+     "options": [
+      "Aerobic respiration",
+      "Stored ATP and creatine phosphate",
+      "Fat stores",
+      "Protein"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A resting pulse of 70 rises to 130 after exercise. What is the percent increase?",
+     "options": [
+      "46%",
+      "60%",
+      "86%",
+      "186%"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "About how much ATP does one glucose give by glycolysis alone?",
+     "options": [
+      "2",
+      "10",
+      "30",
+      "100"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Why does breathing stay fast after a sprint ends?",
+     "options": [
+      "The lungs are damaged",
+      "The body repays the oxygen debt",
+      "The heart stops pumping",
+      "Muscles stop using oxygen"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student's resting pulse is 72 beats per minute and rises to 132 after one minute of step-ups. Calculate the percent increase and explain why the heart rate rises during exercise.",
+     "markScheme": [
+      "Calculates the increase as 60 beats per minute",
+      "Calculates the percent increase as about 83 percent",
+      "Explains that muscles need more oxygen and glucose",
+      "Explains that a faster heart rate delivers more blood, and so more oxygen, to the muscles and removes carbon dioxide faster"
+     ],
+     "modelAnswer": "The increase is 132 minus 72, which is 60 beats per minute. The percent increase is 60 divided by 72, times 100, which is about 83 percent. During exercise the muscles use more ATP, so they need more oxygen and glucose. A faster heart rate delivers more blood, and so more oxygen, to the muscles and carries carbon dioxide away faster.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The increase is 132 − 72 = 60 beats per minute. 60/72 × 100 = about 83%. The muscles are using more ATP so they need more oxygen and glucose. A faster pulse moves more blood to the muscles, delivering oxygen and taking away carbon dioxide.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The increase is 132 − 72 = 60 beats per minute."
+        },
+        {
+         "point": 1,
+         "quote": "60/72 × 100 = about 83%."
+        },
+        {
+         "point": 2,
+         "quote": "The muscles are using more ATP so they need more oxygen and glucose."
+        },
+        {
+         "point": 3,
+         "quote": "A faster pulse moves more blood to the muscles, delivering oxygen and taking away carbon dioxide."
+        }
+       ],
+       "feedback": "Full marks. You divided by the resting pulse, which is the correct baseline."
+      },
+      {
+       "tier": "full",
+       "text": "132 − 72 = 60 bpm more. (60 ÷ 72) × 100 ≈ 83% increase. Working muscles demand more oxygen to make ATP by aerobic respiration. The heart pumps faster to carry oxygenated blood to the muscles and clear the carbon dioxide.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "132 − 72 = 60 bpm more."
+        },
+        {
+         "point": 1,
+         "quote": "(60 ÷ 72) × 100 ≈ 83% increase."
+        },
+        {
+         "point": 2,
+         "quote": "Working muscles demand more oxygen to make ATP by aerobic respiration."
+        },
+        {
+         "point": 3,
+         "quote": "The heart pumps faster to carry oxygenated blood to the muscles and clear the carbon dioxide."
+        }
+       ],
+       "feedback": "All four marks, with the process explained."
+      },
+      {
+       "tier": "partial",
+       "text": "The pulse went up by 60. 60/132 × 100 = 45%. The muscles need more oxygen.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The pulse went up by 60."
+        },
+        {
+         "point": 2,
+         "quote": "The muscles need more oxygen."
+        }
+       ],
+       "feedback": "Percent change uses the starting value, the resting pulse of 72, not the final one. That gives 83 percent."
+      },
+      {
+       "tier": "partial",
+       "text": "It is an 83% increase. A faster heart delivers more blood.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It is an 83% increase."
+        },
+        {
+         "point": 3,
+         "quote": "A faster heart delivers more blood."
+        }
+       ],
+       "feedback": "Good. Show the subtraction, and say why the muscles need that extra blood.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "132 + 72 = 204, so the pulse went up 204%. The heart goes faster because it is excited.",
+       "meets": [],
+       "feedback": "To find the change, subtract the two pulses. The heart rate rises to meet the muscles' demand for oxygen."
+      },
+      {
+       "tier": "weak",
+       "text": "The increase is 60. The heart rises because the body is hot and the heart tries to get rid of the heat.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The increase is 60."
+        }
+       ],
+       "feedback": "Heat loss involves the skin. The heart rate rises mainly to deliver oxygen and glucose to the working muscles."
+      }
+     ]
+    },
+    {
+     "prompt": "Compare how a muscle cell makes ATP during a 100 meter sprint and during a 5 kilometer jog. Mention the energy source, the role of oxygen and the amount of ATP made.",
+     "markScheme": [
+      "States that a sprint uses stored ATP and creatine phosphate first",
+      "States that sprint glycolysis makes only 2 ATP per glucose and produces lactate",
+      "States that the jog uses aerobic respiration with oxygen",
+      "States that aerobic respiration gives about 30 ATP per glucose, so it can last longer"
+     ],
+     "modelAnswer": "In a sprint the muscle first uses stored ATP and creatine phosphate, then glycolysis, which makes only 2 ATP per glucose and produces lactate because oxygen is limited. In a jog, oxygen reaches the muscle fast enough for aerobic respiration, which makes about 30 ATP per glucose and can supply energy for much longer.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "In a sprint, the muscle uses stored ATP and creatine phosphate first. Then glycolysis gives only 2 ATP per glucose and makes lactate, since oxygen can't keep up. In a jog there's enough oxygen so the cells use aerobic respiration. That makes about 30 ATP per glucose, so it can last a long time.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "In a sprint, the muscle uses stored ATP and creatine phosphate first."
+        },
+        {
+         "point": 1,
+         "quote": "Then glycolysis gives only 2 ATP per glucose and makes lactate, since oxygen can't keep up."
+        },
+        {
+         "point": 2,
+         "quote": "In a jog there's enough oxygen so the cells use aerobic respiration."
+        },
+        {
+         "point": 3,
+         "quote": "That makes about 30 ATP per glucose, so it can last a long time."
+        }
+       ],
+       "feedback": "Full marks. The contrast between oxygen-limited and oxygen-rich conditions is clear."
+      },
+      {
+       "tier": "full",
+       "text": "The first seconds of the sprint come from ATP already in the muscle and creatine phosphate. After that, anaerobic glycolysis makes just 2 ATP per glucose with lactate as a by-product. Jogging is aerobic: glucose is broken down using oxygen. About 30 ATP per glucose means a steady supply for a long time.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The first seconds of the sprint come from ATP already in the muscle and creatine phosphate."
+        },
+        {
+         "point": 1,
+         "quote": "After that, anaerobic glycolysis makes just 2 ATP per glucose with lactate as a by-product."
+        },
+        {
+         "point": 2,
+         "quote": "Jogging is aerobic: glucose is broken down using oxygen."
+        },
+        {
+         "point": 3,
+         "quote": "About 30 ATP per glucose means a steady supply for a long time."
+        }
+       ],
+       "feedback": "All four marks, with accurate detail."
+      },
+      {
+       "tier": "partial",
+       "text": "A sprint uses ATP and creatine phosphate. A jog uses aerobic respiration with oxygen.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A sprint uses ATP and creatine phosphate."
+        },
+        {
+         "point": 2,
+         "quote": "A jog uses aerobic respiration with oxygen."
+        }
+       ],
+       "feedback": "Add the glycolysis stage of the sprint and compare the amount of ATP made in each case."
+      },
+      {
+       "tier": "partial",
+       "text": "The sprint makes 2 ATP per glucose and lactate. The jog makes 30 ATP. The sprint doesn't use oxygen at all because the muscle is too busy.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The sprint makes 2 ATP per glucose and lactate."
+        },
+        {
+         "point": 3,
+         "quote": "The jog makes 30 ATP."
+        }
+       ],
+       "feedback": "Muscles still use oxygen in a sprint, but they cannot get enough, so glycolysis makes up the rest. Name the energy source for the jog.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A sprint uses fat and a jog uses protein, because the body saves sugar for later.",
+       "meets": [],
+       "feedback": "Both mainly use glucose. The difference is whether oxygen is available for aerobic respiration."
+      },
+      {
+       "tier": "weak",
+       "text": "A jog makes 30 ATP per glucose. Both use the same method, but a jog takes more time.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "A jog makes 30 ATP per glucose."
+        }
+       ],
+       "feedback": "The methods are different: sprint glycolysis without enough oxygen, and aerobic respiration for the jog."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Biological molecules, the cell and the four tissue types",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the biological molecules of the body and the structure and function of the cell and its organelles;\n2. identify the four tissue types and match each to its structure and function.\n\n## Materials\n\nCompound microscopes, prepared slides of epithelial, connective, muscle and nervous tissue, colored pencils, cheek-cell sample kit, iodine stain, the practical sheet.\n\n## Starter (6 minutes)\n\nHold up a food label. Ask: \"Which of these ingredients become part of your own cells, and which are fuel?\" Sort carbohydrates, lipids, proteins and nucleic acids on the board.\n\n## Main activity\n\n1. Review the four classes of molecules with examples from the body: glucose and glycogen, phospholipids and cholesterol, hemoglobin and enzymes, DNA and RNA.\n2. Tour the cell: membrane, nucleus, ribosomes, rough ER, Golgi, mitochondria, lysosomes. Students draw and annotate a cell.\n3. Practical: view four prepared tissue slides at 100x and 400x, sketch each, and write a one-line structure-function statement. Stain and view a cheek cell.\n\n## Checking for understanding\n\nAsk: \"Why do muscle cells contain a lot of mitochondria?\" Look for the ATP idea.\n\n## Worksheet and practical write-up\n\nA tissue comparison table and the observation sketches with captions.",
+   "reading": {
+    "title": "The cell and its four kinds of tissue",
+    "content": "Four classes of large molecules make up the body. **Carbohydrates**, such as glucose and glycogen, provide quick energy. **Lipids**, such as fats, phospholipids and cholesterol, store energy and form membranes. **Proteins**, chains of amino acids, include enzymes, antibodies, hemoglobin and structural fibers such as collagen. **Nucleic acids**, DNA and RNA, carry the instructions for building proteins.\n\nThe cell is the basic unit of life. The **plasma membrane** is a phospholipid bilayer with embedded proteins that controls what enters and leaves. The **nucleus** holds the DNA. **Ribosomes** build proteins; those on the rough endoplasmic reticulum make proteins for export, and the Golgi apparatus modifies and packages them. **Mitochondria** make most of the cell's ATP, so cells with high energy demands, such as muscle and liver cells, have many. **Lysosomes** contain enzymes that digest worn-out parts and ingested material.\n\nCells with similar structure and function form **tissues**, and there are four primary types.\n\n**Epithelial tissue** covers body surfaces and lines cavities and organs. Its cells are tightly packed with little space between them, and it is classified by the shape of the cells (squamous, cuboidal, columnar) and by the number of layers. Epithelium protects, absorbs, secretes and filters. Skin is covered by many layers of squamous epithelium, while the small intestine is lined by a single layer of columnar cells that absorb nutrients.\n\n**Connective tissue** supports and connects. Its cells are scattered in an extracellular matrix. Bone has a hard mineral matrix, cartilage has a firm flexible matrix, blood has a liquid matrix, and adipose tissue stores fat. Tendons are dense connective tissue made of strong collagen fibers.\n\n**Muscle tissue** contracts. Skeletal muscle is striated and voluntary. Cardiac muscle is striated, involuntary and branched, and found only in the heart. Smooth muscle is nonstriated and involuntary, and found in the walls of organs such as the stomach and blood vessels.\n\n**Nervous tissue** carries electrical signals. Neurons have a cell body and long extensions, while supporting cells called neuroglia protect and nourish them.\n\nWhen you look at a slide, ask what the arrangement of the cells suggests about the job. Tightly packed cells in a sheet suggest covering, scattered cells in a matrix suggest support, long parallel fibers suggest contraction and branching cells with long extensions suggest signaling."
+   },
+   "cards": [
+    {
+     "front": "Plasma membrane",
+     "back": "A phospholipid bilayer that controls what enters and leaves the cell."
+    },
+    {
+     "front": "Mitochondria",
+     "back": "Organelles that make most of the cell's ATP."
+    },
+    {
+     "front": "Ribosome",
+     "back": "A structure that builds proteins."
+    },
+    {
+     "front": "Epithelial tissue",
+     "back": "Tissue that covers surfaces and lines cavities."
+    },
+    {
+     "front": "Connective tissue",
+     "back": "Tissue that supports and connects, with cells in a matrix."
+    },
+    {
+     "front": "Muscle tissue",
+     "back": "Tissue specialized to contract."
+    },
+    {
+     "front": "Nervous tissue",
+     "back": "Tissue that carries electrical signals."
+    },
+    {
+     "front": "Extracellular matrix",
+     "back": "The material between connective tissue cells."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which organelle makes most of a cell's ATP?",
+     "options": [
+      "Nucleus",
+      "Ribosome",
+      "Mitochondrion",
+      "Lysosome"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which tissue has cells scattered in a large extracellular matrix?",
+     "options": [
+      "Epithelial",
+      "Connective",
+      "Muscle",
+      "Nervous"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Cardiac muscle is:",
+     "options": [
+      "Striated and voluntary",
+      "Striated, branched and involuntary",
+      "Nonstriated and voluntary",
+      "Nonstriated and found in the stomach"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The lining of the small intestine is a single layer of columnar cells that absorb nutrients. This is:",
+     "options": [
+      "Connective tissue",
+      "Epithelial tissue",
+      "Nervous tissue",
+      "Smooth muscle"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which molecule class includes enzymes and hemoglobin?",
+     "options": [
+      "Carbohydrates",
+      "Lipids",
+      "Proteins",
+      "Nucleic acids"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Compare skeletal, cardiac and smooth muscle in terms of appearance, control and location.",
+     "markScheme": [
+      "States that skeletal muscle is striated and voluntary and attached to bones",
+      "States that cardiac muscle is striated, branched and involuntary and found in the heart",
+      "States that smooth muscle is nonstriated and involuntary and found in organ walls and blood vessels",
+      "Relates one structure to its function, such as cardiac muscle's branching helping it contract as a unit"
+     ],
+     "modelAnswer": "Skeletal muscle is striated and voluntary, and attached to bones. Cardiac muscle is striated, branched and involuntary, and found only in the heart. Smooth muscle is nonstriated and involuntary, and found in the walls of the stomach, intestines and blood vessels. The branching of cardiac cells lets a signal spread so the heart contracts as a unit.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Skeletal muscle has stripes and I can control it, and it is attached to the bones. Cardiac muscle is striped but branched, involuntary, and only in the heart. Smooth muscle has no stripes, is involuntary, and is in the walls of the stomach and blood vessels. The branching of cardiac cells lets the signal spread quickly so the whole heart beats together.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Skeletal muscle has stripes and I can control it, and it is attached to the bones."
+        },
+        {
+         "point": 1,
+         "quote": "Cardiac muscle is striped but branched, involuntary, and only in the heart."
+        },
+        {
+         "point": 2,
+         "quote": "Smooth muscle has no stripes, is involuntary, and is in the walls of the stomach and blood vessels."
+        },
+        {
+         "point": 3,
+         "quote": "The branching of cardiac cells lets the signal spread quickly so the whole heart beats together."
+        }
+       ],
+       "feedback": "Full marks. You linked a structure to a function at the end."
+      },
+      {
+       "tier": "full",
+       "text": "Skeletal: striated, voluntary, moves the bones. Cardiac: striated, branched, involuntary, found in the heart wall. Smooth: nonstriated, involuntary, lines the digestive tract and vessels. Cardiac cells are joined at discs so electrical signals pass quickly and the heart contracts together.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Skeletal: striated, voluntary, moves the bones."
+        },
+        {
+         "point": 1,
+         "quote": "Cardiac: striated, branched, involuntary, found in the heart wall."
+        },
+        {
+         "point": 2,
+         "quote": "Smooth: nonstriated, involuntary, lines the digestive tract and vessels."
+        },
+        {
+         "point": 3,
+         "quote": "Cardiac cells are joined at discs so electrical signals pass quickly and the heart contracts together."
+        }
+       ],
+       "feedback": "All four marks, with a good table-style answer."
+      },
+      {
+       "tier": "partial",
+       "text": "Skeletal muscle is striated and voluntary. Smooth muscle is not striated and is involuntary. Cardiac muscle is smooth and voluntary.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Skeletal muscle is striated and voluntary."
+        },
+        {
+         "point": 2,
+         "quote": "Smooth muscle is not striated and is involuntary."
+        }
+       ],
+       "feedback": "Cardiac muscle is striated and involuntary, and found only in the heart."
+      },
+      {
+       "tier": "partial",
+       "text": "Cardiac muscle is in the heart and involuntary. Its branching helps the heart beat together.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Cardiac muscle is in the heart and involuntary."
+        },
+        {
+         "point": 3,
+         "quote": "Its branching helps the heart beat together."
+        }
+       ],
+       "feedback": "Add the appearance of each muscle type and the location of the skeletal and smooth muscle.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "All three are the same, they just move different parts of the body.",
+       "meets": [],
+       "feedback": "They differ in structure and control. Compare the stripes, the branching and whether you can control them."
+      },
+      {
+       "tier": "weak",
+       "text": "Skeletal muscle is attached to bones. The heart is made of skeletal muscle because it works all the time.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Skeletal muscle is attached to bones."
+        }
+       ],
+       "feedback": "The heart is made of cardiac muscle, a different type that is striated but involuntary."
+      }
+     ]
+    },
+    {
+     "prompt": "Match each of the four tissue types to one body location and explain how its structure suits its function.",
+     "markScheme": [
+      "Epithelial tissue with a location and a structure-function link, such as tightly packed cells forming a barrier",
+      "Connective tissue with a location and a link, such as bone's hard matrix for support",
+      "Muscle tissue with a location and a link, such as long fibers that shorten",
+      "Nervous tissue with a location and a link, such as long extensions of neurons to carry signals"
+     ],
+     "modelAnswer": "Epithelial tissue forms the epidermis of the skin; its tightly packed cells make a barrier. Connective tissue forms bone, whose hard mineral matrix supports the body. Muscle tissue forms the biceps, whose long fibers shorten to produce movement. Nervous tissue forms the brain and nerves; neurons have long extensions that carry signals over a distance.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Epithelial tissue covers the skin, and its cells are packed tightly together, so it makes a barrier. Connective tissue makes up bone, and the hard matrix gives support. Muscle tissue is in the biceps, and its long fibers can shorten. Nervous tissue is in the brain and nerves, and neurons have long branches that carry signals.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Epithelial tissue covers the skin, and its cells are packed tightly together, so it makes a barrier."
+        },
+        {
+         "point": 1,
+         "quote": "Connective tissue makes up bone, and the hard matrix gives support."
+        },
+        {
+         "point": 2,
+         "quote": "Muscle tissue is in the biceps, and its long fibers can shorten."
+        },
+        {
+         "point": 3,
+         "quote": "Nervous tissue is in the brain and nerves, and neurons have long branches that carry signals."
+        }
+       ],
+       "feedback": "Full marks. Each tissue has a location and a reason."
+      },
+      {
+       "tier": "full",
+       "text": "Epithelium lines the small intestine in a single layer, which makes it easy for nutrients to be absorbed. Cartilage is connective tissue in the nose, flexible because of its matrix. Cardiac muscle in the heart has branched cells which pass signals fast. The spinal cord is nervous tissue, made of neurons with long axons.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Epithelium lines the small intestine in a single layer, which makes it easy for nutrients to be absorbed."
+        },
+        {
+         "point": 1,
+         "quote": "Cartilage is connective tissue in the nose, flexible because of its matrix."
+        },
+        {
+         "point": 2,
+         "quote": "Cardiac muscle in the heart has branched cells which pass signals fast."
+        },
+        {
+         "point": 3,
+         "quote": "The spinal cord is nervous tissue, made of neurons with long axons."
+        }
+       ],
+       "feedback": "All four marks, using a different example for each."
+      },
+      {
+       "tier": "partial",
+       "text": "Epithelial tissue is on the skin and is a barrier. Muscle tissue is in the arm and contracts.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Epithelial tissue is on the skin and is a barrier."
+        },
+        {
+         "point": 2,
+         "quote": "Muscle tissue is in the arm and contracts."
+        }
+       ],
+       "feedback": "Add the two other tissue types, each with a location and a structure-function link."
+      },
+      {
+       "tier": "partial",
+       "text": "Bone is connective tissue with a hard matrix. The brain is nervous tissue. Nerve cells are round so they can bounce signals.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Bone is connective tissue with a hard matrix."
+        },
+        {
+         "point": 3,
+         "quote": "The brain is nervous tissue."
+        }
+       ],
+       "feedback": "Neurons have long extensions, which carry the signals. Add epithelial and muscle examples too.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Skin is muscle tissue, bone is nervous tissue, the brain is epithelial and the heart is connective.",
+       "meets": [],
+       "feedback": "Check each location against the tissue's job: skin is covered by epithelium, bone is connective, the brain is nervous."
+      },
+      {
+       "tier": "weak",
+       "text": "Muscle is in the arm. The tissues are all made of cells so they are the same.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Muscle is in the arm."
+        }
+       ],
+       "feedback": "The tissues differ in the arrangement and shape of their cells. Link each shape to its job."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Four tissue types under the microscope",
+    "instructions": "View prepared slides of epithelial, connective, muscle and nervous tissue at 100x and 400x. For each, draw a labeled sketch of what you see, record the magnification, and write a one-sentence statement linking the cell arrangement to the tissue's function. Then stain and view cheek cells.",
+    "steps": [
+     {
+      "text": "Collect a microscope and the four labeled slides. Start with the lowest power objective."
+     },
+     {
+      "text": "Focus on the epithelial slide, sketch the arrangement of the cells, and label cell shape and layers."
+     },
+     {
+      "text": "Repeat for the connective, muscle and nervous slides, using the fine focus on higher power.",
+      "note": "Carry the microscope with two hands and never use the coarse focus on high power."
+     },
+     {
+      "text": "Prepare a cheek-cell slide with iodine stain and note the nucleus and the membrane."
+     },
+     {
+      "text": "Write a structure-function statement for each tissue."
+     },
+     {
+      "text": "Complete a comparison table of the four tissue types."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Observation: accurate labeled sketches with magnification",
+      "maxPoints": 4
+     },
+     {
+      "description": "Interpretation: structure-function statements for each tissue",
+      "maxPoints": 4
+     },
+     {
+      "description": "Technique and table: correct use of the microscope and a complete comparison",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "At 400x the epithelial slide showed a single layer of tall columnar cells packed tightly with nuclei at the base, which suits absorption and secretion. The connective slide, bone, had cells in small spaces within a hard layered matrix, which suits support. The muscle slide showed long striped fibers, which shorten to contract. The nerve slide had star-shaped cell bodies with long thin branches, which carry signals. My cheek cell showed a pale nucleus stained brown by the iodine and a thin membrane.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report: accurate observations with magnification and a function for every structure."
+     },
+     {
+      "tier": "full",
+      "text": "Epithelial tissue (100x): cells packed in a sheet with almost no space between them, forming a barrier. Connective tissue (cartilage, 400x): round cells in lacunae inside a firm clear matrix, which gives flexible support. Muscle tissue (skeletal, 400x): long parallel striated fibers with several nuclei each, which can shorten. Nervous tissue (100x): large cell bodies with long processes, which carry signals. I stored the microscope with the lowest objective in place. The comparison table is attached.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. The sketches should be on the page with titles and the magnification; this is how a record is checked."
+     },
+     {
+      "tier": "partial",
+      "text": "I looked at the four slides and drew them. The epithelial cells were close together and flat. The connective slide had cells far apart. The muscle one had stripes and the nerve one had long lines. I wrote the tissue names on each drawing but I do not remember the magnification I used for them so I left it out.",
+      "scores": [
+       2,
+       2,
+       2
+      ],
+      "feedback": "Record the magnification for every sketch and link each structure to a function. Describe what the arrangement tells you."
+     },
+     {
+      "tier": "partial",
+      "text": "The epithelial tissue has tightly packed cells so it is a barrier. The connective tissue has a matrix so it supports the body. The muscle tissue is striped so it contracts, and the nervous tissue has long extensions so it sends signals. I did not do the cheek cell because my group ran out of iodine and the table was not finished.",
+      "scores": [
+       1,
+       4,
+       2
+      ],
+      "feedback": "Your statements are excellent. Add the sketches with labels and magnification and complete the table and the cheek-cell slide."
+     },
+     {
+      "tier": "weak",
+      "text": "I looked at the slides. They were purple and pink. Some had dots and some had lines. The microscope was hard to focus but I got it in the end. The cheek cell looked like a little round bubble with a dot in the middle of it and it was very small.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Name each tissue and describe the arrangement of its cells. Say what that arrangement tells you about its function."
+     },
+     {
+      "tier": "weak",
+      "text": "All the tissues look the same under the microscope because they are all made of cells. The only difference is the color. I think the muscle is the pink one and the nerve is purple because nerves are blue in the body, so that means they have more dye in them.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "The tissues differ in the shape and arrangement of cells. Color comes from the stain and does not tell you the tissue's function."
+     }
+    ]
+   }
+  },
+  "4": {
+   "topic": "The skin: layers, roles, healing and burns",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the layers of the skin and its roles in protection, temperature control and sensation;\n2. explain how the skin heals after a cut or a burn and how burns are classified.\n\n## Materials\n\nSkin model or layered diagram, a magnifier, ink pad, white paper, a thermometer, ice water and room-temperature water, the practical sheet.\n\n## Starter (6 minutes)\n\nAsk: \"What is the largest organ in your body, and what does it do for you every day?\" Gather answers: protects, keeps water in, senses touch, controls temperature, makes vitamin D.\n\n## Main activity\n\n1. Label the epidermis (with the stratum corneum, melanocytes and keratinocytes), the dermis (with collagen, blood vessels, glands, hair follicles and receptors) and the hypodermis.\n2. Explain the roles: barrier, temperature control through sweating and blood vessel changes, touch and pain receptors, and vitamin D synthesis.\n3. Healing and burns: the steps of wound healing, and the classification of first-, second- and third-degree burns.\n4. Practical: take fingerprints, compare touch sensitivity at two-point discrimination on fingertip and forearm, and test the skin's temperature response.\n\n## Checking for understanding\n\nAsk: \"Why does a second-degree burn blister but a first-degree burn doesn't?\"\n\n## Practical write-up and worksheet\n\nA data table from two-point discrimination and the interpretation of the results.",
+   "reading": {
+    "title": "The skin as an organ",
+    "content": "The skin, the **integumentary system**, is the largest organ of the body. In an adult it covers about 1.7 square meters and weighs around 4 kg. It has three layers.\n\nThe **epidermis** is the outer layer, a stratified squamous epithelium without blood vessels. Its surface layer, the stratum corneum, is made of dead cells filled with keratin, a tough waterproof protein. New cells form in the deepest layer, move upward over about a month and flake off. Melanocytes in the epidermis make the pigment melanin, which absorbs ultraviolet light and protects DNA. The **dermis** below is much thicker connective tissue. It contains collagen and elastic fibers that give strength and stretch, blood vessels, nerve endings, sweat glands, oil glands and hair follicles. The **hypodermis**, or subcutaneous layer, is made of adipose and loose connective tissue that insulates and cushions.\n\nThe skin has several roles. It forms a **barrier** against microbes, water loss and chemicals. It helps with **temperature control**. When you are hot, dermal blood vessels widen to carry heat to the surface, and sweat glands release sweat which cools by evaporation. When you are cold, the vessels narrow to conserve heat. The skin holds **sensory receptors** for touch, pressure, pain and temperature. It also makes **vitamin D** when exposed to sunlight.\n\nWhen skin is cut, the body heals it in steps. First, bleeding stops as a clot forms. Within hours, inflammation brings white blood cells to destroy bacteria. Fibroblasts then form new collagen to fill the wound and new blood vessels grow, producing granulation tissue. Finally, epidermal cells move over the surface, and the scar tissue is remodeled over months. A deep wound can leave a scar made of dense collagen that does not have hair follicles or glands.\n\nBurns are classified by depth. A **first-degree burn** damages only the epidermis, causing redness and pain but no blister, like a mild sunburn. A **second-degree burn** damages the epidermis and part of the dermis, causing blisters and severe pain. A **third-degree burn** destroys the full thickness of the skin, and may be white or charred and painless, because the nerve endings are destroyed. Third-degree burns need skin grafts. The danger of a large burn is loss of fluid and infection, so the extent of the burn matters as well as the depth."
+   },
+   "cards": [
+    {
+     "front": "Epidermis",
+     "back": "The outer layer of skin, a stratified squamous epithelium without blood vessels."
+    },
+    {
+     "front": "Dermis",
+     "back": "The thick connective tissue layer with blood vessels, nerves and glands."
+    },
+    {
+     "front": "Hypodermis",
+     "back": "The fatty layer below the dermis that insulates and cushions."
+    },
+    {
+     "front": "Keratin",
+     "back": "A tough protein that waterproofs the surface of the skin."
+    },
+    {
+     "front": "Melanin",
+     "back": "A pigment that protects skin from ultraviolet light."
+    },
+    {
+     "front": "First-degree burn",
+     "back": "A burn that damages only the epidermis."
+    },
+    {
+     "front": "Second-degree burn",
+     "back": "A burn that damages the epidermis and part of the dermis, with blisters."
+    },
+    {
+     "front": "Third-degree burn",
+     "back": "A burn that destroys the full thickness of the skin."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which layer of skin contains blood vessels, sweat glands and nerve endings?",
+     "options": [
+      "Epidermis",
+      "Dermis",
+      "Stratum corneum",
+      "Melanin layer"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A burn that causes blisters and damages part of the dermis is:",
+     "options": [
+      "First-degree",
+      "Second-degree",
+      "Third-degree",
+      "A rash"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "When you are hot, which response helps lose heat?",
+     "options": [
+      "Narrowing of dermal blood vessels",
+      "Widening of dermal blood vessels",
+      "Goosebumps",
+      "Shivering"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which protein makes the surface of the epidermis waterproof?",
+     "options": [
+      "Collagen",
+      "Keratin",
+      "Melanin",
+      "Hemoglobin"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why can a third-degree burn be painless?",
+     "options": [
+      "The burn is too shallow",
+      "Nerve endings in the skin have been destroyed",
+      "The blood vessels are widened",
+      "The epidermis has regrown"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student burns the back of their hand on a hot pan. The area is red, swollen and has a blister, and it is very painful. Classify the burn, name the layers damaged, and explain why it blisters.",
+     "markScheme": [
+      "Classifies the burn as second-degree",
+      "States that the epidermis and part of the dermis are damaged",
+      "Explains that fluid leaks from damaged blood vessels in the dermis",
+      "Explains that the fluid collects under the epidermis, forming a blister that protects the tissue underneath"
+     ],
+     "modelAnswer": "This is a second-degree burn. The epidermis and part of the dermis are damaged. Fluid leaks from the damaged blood vessels in the dermis and collects under the epidermis, raising it as a blister, which protects the tissue underneath while it heals.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It is a second-degree burn. It damaged the epidermis and part of the dermis. The damaged blood vessels in the dermis leak fluid. The fluid gets trapped under the epidermis, which lifts up as a blister and protects the healing skin.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is a second-degree burn."
+        },
+        {
+         "point": 1,
+         "quote": "It damaged the epidermis and part of the dermis."
+        },
+        {
+         "point": 2,
+         "quote": "The damaged blood vessels in the dermis leak fluid."
+        },
+        {
+         "point": 3,
+         "quote": "The fluid gets trapped under the epidermis, which lifts up as a blister and protects the healing skin."
+        }
+       ],
+       "feedback": "Full marks. Pain tells you that nerve endings in the dermis are still working."
+      },
+      {
+       "tier": "full",
+       "text": "Second-degree burn, because of the blister. The burn goes through the epidermis into the dermis. Tissue fluid leaks out of the injured capillaries. It collects under the top layer, forming a protective blister.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Second-degree burn, because of the blister."
+        },
+        {
+         "point": 1,
+         "quote": "The burn goes through the epidermis into the dermis."
+        },
+        {
+         "point": 2,
+         "quote": "Tissue fluid leaks out of the injured capillaries."
+        },
+        {
+         "point": 3,
+         "quote": "It collects under the top layer, forming a protective blister."
+        }
+       ],
+       "feedback": "All four marks, with a reason for the classification."
+      },
+      {
+       "tier": "partial",
+       "text": "It is a second-degree burn because it damages the dermis.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is a second-degree burn"
+        },
+        {
+         "point": 1,
+         "quote": "because it damages the dermis"
+        }
+       ],
+       "feedback": "Good. Explain what causes the blister and what it does."
+      },
+      {
+       "tier": "partial",
+       "text": "Fluid leaks from the blood vessels and makes the blister. It's a first-degree burn.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Fluid leaks from the blood vessels"
+        },
+        {
+         "point": 3,
+         "quote": "makes the blister"
+        }
+       ],
+       "feedback": "A blister means the dermis is damaged, which makes it second-degree. A first-degree burn affects only the epidermis.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It is a third-degree burn because it hurts so much, and the blister is where the bone shows.",
+       "meets": [],
+       "feedback": "A third-degree burn is often painless and destroys the whole thickness of the skin. A blister means the dermis was only partly damaged."
+      },
+      {
+       "tier": "weak",
+       "text": "Fluid leaks out. The blister is full of pus because of bacteria that got in right away.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Fluid leaks out."
+        }
+       ],
+       "feedback": "The fluid in a new blister is clear tissue fluid from leaking blood vessels. Pus appears only with infection."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe how the skin helps the body lose heat during exercise and how it conserves heat in the cold. Name the structures involved in each case.",
+     "markScheme": [
+      "States that when hot, dermal blood vessels widen so more blood carries heat to the surface",
+      "States that sweat glands release sweat, which cools by evaporation",
+      "States that when cold, dermal blood vessels narrow, reducing blood flow near the surface",
+      "States that the hypodermis, or erector pili muscles and hair, insulate and help retain heat"
+     ],
+     "modelAnswer": "When hot, the blood vessels in the dermis widen so that more blood flows near the surface and loses heat. Sweat glands release sweat, which cools the body as it evaporates. When cold, the dermal vessels narrow to reduce heat loss, and the fat of the hypodermis insulates the body.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "When hot, the blood vessels in the dermis widen so more warm blood is near the surface. The sweat glands release sweat, which takes heat away as it evaporates. When cold, the vessels narrow so less blood goes to the surface. The fat layer under the dermis insulates the body and keeps the heat in.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "When hot, the blood vessels in the dermis widen so more warm blood is near the surface."
+        },
+        {
+         "point": 1,
+         "quote": "The sweat glands release sweat, which takes heat away as it evaporates."
+        },
+        {
+         "point": 2,
+         "quote": "When cold, the vessels narrow so less blood goes to the surface."
+        },
+        {
+         "point": 3,
+         "quote": "The fat layer under the dermis insulates the body and keeps the heat in."
+        }
+       ],
+       "feedback": "Full marks. Each of the two environments is covered with named structures."
+      },
+      {
+       "tier": "full",
+       "text": "Heat: vasodilation of dermal arterioles lets heat radiate from the skin. Eccrine sweat glands secrete sweat that cools by evaporation. Cold: vasoconstriction reduces the blood flow to the skin. The hypodermis, a layer of fat, acts as insulation.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Heat: vasodilation of dermal arterioles lets heat radiate from the skin."
+        },
+        {
+         "point": 1,
+         "quote": "Eccrine sweat glands secrete sweat that cools by evaporation."
+        },
+        {
+         "point": 2,
+         "quote": "Cold: vasoconstriction reduces the blood flow to the skin."
+        },
+        {
+         "point": 3,
+         "quote": "The hypodermis, a layer of fat, acts as insulation."
+        }
+       ],
+       "feedback": "All four marks, using precise terms."
+      },
+      {
+       "tier": "partial",
+       "text": "The blood vessels get bigger when hot. Sweat glands make sweat.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The blood vessels get bigger when hot."
+        },
+        {
+         "point": 1,
+         "quote": "Sweat glands make sweat."
+        }
+       ],
+       "feedback": "Good for the heat response. Describe what happens in the cold and name a structure that insulates."
+      },
+      {
+       "tier": "partial",
+       "text": "In the cold the blood vessels narrow. The sweat glands make you shiver.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "In the cold the blood vessels narrow."
+        },
+        {
+         "point": 1,
+         "quote": "The sweat glands make you shiver."
+        }
+       ],
+       "feedback": "Shivering is done by skeletal muscles, not the sweat glands. The sweat glands release sweat when hot.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "When hot the skin makes more melanin to block the heat, and when cold it makes keratin to keep warm.",
+       "meets": [],
+       "feedback": "Melanin protects against ultraviolet light and keratin waterproofs. Temperature control uses blood vessels and sweat glands."
+      },
+      {
+       "tier": "weak",
+       "text": "The fat insulates you. The blood vessels never change because they are always the same size.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The fat insulates you."
+        }
+       ],
+       "feedback": "The blood vessels do change in diameter in response to temperature. They widen to lose heat and narrow to conserve it."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Touch sensitivity and the skin's receptors",
+    "instructions": "Use two-point discrimination to map the density of touch receptors. With a blindfolded partner, touch two points a set distance apart on the fingertip, palm, forearm and back of the neck. Find the smallest distance at which the partner reports two points, and compare the regions. Then take a fingerprint and classify the pattern.",
+    "steps": [
+     {
+      "text": "Prepare a ruler with two blunt toothpicks spaced at 2, 5, 10, 20 and 40 mm."
+     },
+     {
+      "text": "Have your partner close their eyes. Touch the fingertip with one or two points in random order."
+     },
+     {
+      "text": "Record whether the partner reports one or two points at each spacing.",
+      "note": "Touch gently; the skin should not be pressed hard or broken."
+     },
+     {
+      "text": "Repeat on the palm, forearm and back of the neck."
+     },
+     {
+      "text": "Record the smallest distance for which the partner says two points for each region."
+     },
+     {
+      "text": "Take a fingerprint and classify it as a loop, whorl or arch."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method: random order, same pressure, same spacing for each region",
+      "maxPoints": 4
+     },
+     {
+      "description": "Results: table of smallest distance for each region",
+      "maxPoints": 4
+     },
+     {
+      "description": "Interpretation: links receptor density to function and body region",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "The smallest distance at which my partner felt two points was 2 mm on the fingertip, 8 mm on the palm, 35 mm on the forearm and 40 mm on the back of the neck. I randomized one and two point touches to avoid guessing. The fingertip is the most sensitive because it has the highest density of touch receptors in the dermis, which allows us to feel fine detail when reading and handling objects. The forearm and the neck have fewer receptors, which suits their protective, less precise role. My fingerprint was a loop pattern.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report: controlled method, a complete table, and an interpretation based on receptor density and function."
+     },
+     {
+      "tier": "full",
+      "text": "We used spacings of 2, 5, 10, 20 and 40 mm and mixed in one-point touches. Results: fingertip 2 mm, palm 10 mm, forearm 40 mm, neck 40 mm. The smaller the distance, the denser the receptors. The fingertip is used for fine touch, so it has more receptors in the dermis. Possible error: our pressure may not have been the same each time, and my partner may have guessed. The fingerprint was a whorl, which was one of the three types we were taught.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. The method should say how you kept the pressure constant, because that is a control for fairness."
+     },
+     {
+      "tier": "partial",
+      "text": "The fingertip was the most sensitive and the forearm was the least sensitive. My partner could feel two points about 2 mm apart on the fingertip. The other places needed more distance. I think this is because the fingertips have more nerves. I did not take a fingerprint, and I did not write down the distances for the palm and neck.",
+      "scores": [
+       2,
+       2,
+       2
+      ],
+      "feedback": "Complete the table for all four regions. Name the receptors in the dermis and explain why different regions have different densities."
+     },
+     {
+      "tier": "partial",
+      "text": "Results: fingertip 2 mm, palm 8 mm, forearm 35 mm, neck 40 mm. We tested the regions in order from fingertip to neck without any one-point touches. My conclusion is that the fingertip is the most sensitive because it is at the end of the arm, and the neck is least sensitive because it is far from the hand.",
+      "scores": [
+       2,
+       4,
+       1
+      ],
+      "feedback": "The data is good. Sensitivity depends on how many receptors are in the skin, not how far the region is from the hand. Use random one- and two-point touches next time."
+     },
+     {
+      "tier": "weak",
+      "text": "We touched my partner with toothpicks and they said how many points they felt. It tickled a bit. The fingertip was good and the arm was not good. Everyone in our class had different results, so the experiment doesn't prove anything about the skin.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Record the smallest spacing for each region. Differences between people are natural, but the pattern among regions is the result to explain."
+     },
+     {
+      "tier": "weak",
+      "text": "The skin on the fingertip has more melanin than the skin on the forearm, and that is why it can feel two points so close together. Melanin is the part of the skin that detects touch. We did not write down the actual distances but the fingertip was best.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Melanin gives color and protects against ultraviolet light. Touch is detected by sensory receptors in the dermis. Record the distances."
+     }
+    ]
+   }
+  },
+  "5": {
+   "topic": "The skeleton, joints and the three kinds of muscle",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. name the major bones, classify them by shape, and explain how bones grow, repair and support the body;\n2. compare fibrous, cartilaginous and synovial joints;\n3. compare skeletal, cardiac and smooth muscle by structure, control and location.\n\n## Materials\n\nAn articulated skeleton, bone models, long bone cross section, joint model, the worksheet and quiz.\n\n## Starter (6 minutes)\n\nAsk: \"How many bones do you have? Why do babies have more than adults?\" Take guesses and tell them 206 for adults and about 300 for newborns, which fuse as they grow.\n\n## Main activity\n\n1. Label the axial skeleton (skull, vertebral column, rib cage) and appendicular skeleton (limbs, pectoral and pelvic girdles). Sort bones by shape: long (femur), short (carpals), flat (sternum), irregular (vertebrae).\n2. Bone growth and repair: ossification of cartilage, growth plates, osteoblasts and osteoclasts, and the four stages of fracture repair.\n3. Joints: fibrous (skull sutures), cartilaginous (intervertebral discs) and synovial (knee, shoulder). Students move their joints and describe the range of motion.\n4. Revisit the three muscle types from the previous week with a focus on how skeletal muscle attaches to the skeleton.\n\n## Checking for understanding\n\nAsk: \"Why does a synovial joint have the greatest range of motion?\"\n\n## Worksheet and quiz\n\nBone classification, joint comparison and a short quiz.",
+   "reading": {
+    "title": "Bones, joints and the muscles that move them",
+    "content": "An adult skeleton has 206 bones, divided into the **axial skeleton**, which consists of the skull, the vertebral column and the rib cage, and the **appendicular skeleton**, which includes the bones of the limbs and the girdles that connect them to the axial skeleton. Bones are classified by shape. **Long bones**, such as the femur, are longer than wide. **Short bones**, such as the carpals of the wrist, are cube-like. **Flat bones**, such as the sternum and skull bones, protect organs and provide broad surfaces for muscles. **Irregular bones**, such as vertebrae, have complex shapes.\n\nBone is living tissue with a hard matrix of calcium phosphate and flexible collagen. The calcium gives it strength under compression and the collagen resists stretching. **Osteoblasts** build new bone, **osteocytes** maintain it and **osteoclasts** break it down. Bone is constantly remodeled, which lets it respond to stress: weight-bearing exercise makes it denser, while lack of use weakens it. In children, long bones grow at the **epiphyseal plates**, areas of cartilage that are gradually replaced by bone. When growth ends in the late teens, the plates close.\n\nWhen a bone breaks, repair takes place in four stages. A hematoma forms from the bleeding. A soft callus of fibrocartilage bridges the break within a few weeks. A hard callus of new bone replaces it, and finally remodeling restores the shape. Setting the bones in a cast keeps the ends close together.\n\nBones meet at **joints**. In **fibrous joints**, such as the sutures of the skull, fibrous tissue holds the bones together and no movement is possible. In **cartilaginous joints**, such as the intervertebral discs, cartilage connects the bones and allows slight movement. In **synovial joints**, such as the knee, shoulder and hip, the bones are separated by a fluid-filled cavity and the ends are covered by smooth articular cartilage. Ligaments hold the bones together. These joints allow the most movement. Ball-and-socket joints, in the shoulder and hip, move in all directions; hinge joints, in the knee and elbow, move in one plane.\n\nMuscle tissue moves the skeleton and the organs. **Skeletal muscle** is striated, voluntary and attached to bones by tendons. **Cardiac muscle** is striated and branched, involuntary and found in the heart. **Smooth muscle** has no stripes, is involuntary and lines the walls of the digestive tract, blood vessels and airways."
+   },
+   "cards": [
+    {
+     "front": "Axial skeleton",
+     "back": "The skull, vertebral column and rib cage."
+    },
+    {
+     "front": "Appendicular skeleton",
+     "back": "The limbs and the girdles that attach them."
+    },
+    {
+     "front": "Osteoblast",
+     "back": "A cell that builds new bone."
+    },
+    {
+     "front": "Osteoclast",
+     "back": "A cell that breaks down bone."
+    },
+    {
+     "front": "Epiphyseal plate",
+     "back": "A cartilage growth zone in a child's long bone."
+    },
+    {
+     "front": "Synovial joint",
+     "back": "A freely movable joint with a fluid-filled cavity."
+    },
+    {
+     "front": "Ligament",
+     "back": "A band of connective tissue that joins bone to bone."
+    },
+    {
+     "front": "Tendon",
+     "back": "A band of connective tissue that joins muscle to bone."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "The femur is classified as a:",
+     "options": [
+      "Short bone",
+      "Flat bone",
+      "Long bone",
+      "Irregular bone"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which cell type breaks down bone?",
+     "options": [
+      "Osteoblast",
+      "Osteocyte",
+      "Osteoclast",
+      "Fibroblast"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "The sutures of the skull are:",
+     "options": [
+      "Fibrous joints",
+      "Cartilaginous joints",
+      "Synovial joints",
+      "Ball-and-socket joints"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which joint allows movement in all directions?",
+     "options": [
+      "Hinge joint of the elbow",
+      "Ball-and-socket joint of the shoulder",
+      "Skull suture",
+      "Intervertebral disc"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A tendon connects:",
+     "options": [
+      "Bone to bone",
+      "Muscle to bone",
+      "Muscle to muscle",
+      "Cartilage to cartilage"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe the four stages by which a broken bone heals, and explain why a cast is used.",
+     "markScheme": [
+      "States that a hematoma (blood clot) forms at the break",
+      "States that a soft callus of fibrocartilage forms to bridge the gap",
+      "States that a hard callus of new bone replaces it, and then the bone is remodeled",
+      "Explains that a cast holds the ends in place so the bone heals in the correct position"
+     ],
+     "modelAnswer": "First a hematoma forms at the break. Next a soft callus of fibrocartilage bridges the gap. Then a hard callus of new bone replaces the cartilage, and finally the bone is remodeled back into its normal shape. A cast holds the broken ends together so that the bone heals in the right position.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "First a blood clot, a hematoma, forms at the break. Then a soft callus of fibrocartilage grows across the gap. It's replaced by a hard callus of new bone, and then the bone is remodeled to its normal shape. A cast holds the ends still and close together so the bone heals straight.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "First a blood clot, a hematoma, forms at the break."
+        },
+        {
+         "point": 1,
+         "quote": "Then a soft callus of fibrocartilage grows across the gap."
+        },
+        {
+         "point": 2,
+         "quote": "It's replaced by a hard callus of new bone, and then the bone is remodeled to its normal shape."
+        },
+        {
+         "point": 3,
+         "quote": "A cast holds the ends still and close together so the bone heals straight."
+        }
+       ],
+       "feedback": "Full marks. All four stages are in the right order and the cast is explained."
+      },
+      {
+       "tier": "full",
+       "text": "Stage 1: a hematoma forms from the bleeding. Stage 2: fibrocartilage makes a soft callus. The cast keeps the broken ends aligned. Stage 3 and 4: the soft callus turns to a hard bony callus, and remodeling restores the shape.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Stage 1: a hematoma forms from the bleeding."
+        },
+        {
+         "point": 1,
+         "quote": "Stage 2: fibrocartilage makes a soft callus."
+        },
+        {
+         "point": 3,
+         "quote": "The cast keeps the broken ends aligned."
+        },
+        {
+         "point": 2,
+         "quote": "Stage 3 and 4: the soft callus turns to a hard bony callus, and remodeling restores the shape."
+        }
+       ],
+       "feedback": "All four marks, and the cast's purpose is clear."
+      },
+      {
+       "tier": "partial",
+       "text": "A blood clot forms. New bone replaces it and the bone is remodeled.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A blood clot forms."
+        },
+        {
+         "point": 2,
+         "quote": "New bone replaces it and the bone is remodeled."
+        }
+       ],
+       "feedback": "Include the soft callus stage, and say why a cast is used."
+      },
+      {
+       "tier": "partial",
+       "text": "A soft callus of cartilage forms. The cast keeps the bone in the right place. The bone heals right away in one day.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A soft callus of cartilage forms."
+        },
+        {
+         "point": 3,
+         "quote": "The cast keeps the bone in the right place."
+        }
+       ],
+       "feedback": "Bone healing takes weeks to months. Add the hematoma and the hard callus stages.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The bone glues itself back together with calcium from milk. The cast is for keeping the bone warm.",
+       "meets": [],
+       "feedback": "Bones heal through cells building callus and new bone. The cast keeps the ends aligned and still."
+      },
+      {
+       "tier": "weak",
+       "text": "The cast holds the bone in place. The doctor puts the bone back together using screws and then there is nothing for the body to do.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The cast holds the bone in place."
+        }
+       ],
+       "feedback": "Even with screws, the body's cells do the healing, through the stages of hematoma, callus and remodeling."
+      }
+     ]
+    },
+    {
+     "prompt": "Compare a hinge joint such as the knee with a ball-and-socket joint such as the shoulder. Describe the range of movement of each and name the parts common to synovial joints.",
+     "markScheme": [
+      "States that a hinge joint moves in one plane, bending and straightening",
+      "States that a ball-and-socket joint moves in all directions and can rotate",
+      "Names two features of synovial joints, such as articular cartilage and synovial fluid",
+      "Names ligaments or the joint capsule as the structure that stabilizes the joint"
+     ],
+     "modelAnswer": "A hinge joint such as the knee moves in one plane, bending and straightening. A ball-and-socket joint such as the shoulder moves in all directions and can rotate. Both are synovial joints, with articular cartilage covering the bone ends and synovial fluid in the cavity to reduce friction. Ligaments and the joint capsule stabilize them.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The knee is a hinge that only bends and straightens. The shoulder is ball-and-socket so it moves all directions and rotates. Both have smooth articular cartilage and synovial fluid in a cavity. Ligaments around them hold the bones together.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The knee is a hinge that only bends and straightens."
+        },
+        {
+         "point": 1,
+         "quote": "The shoulder is ball-and-socket so it moves all directions and rotates."
+        },
+        {
+         "point": 2,
+         "quote": "Both have smooth articular cartilage and synovial fluid in a cavity."
+        },
+        {
+         "point": 3,
+         "quote": "Ligaments around them hold the bones together."
+        }
+       ],
+       "feedback": "Full marks. Comparing movement and shared structures is exactly what the question asked."
+      },
+      {
+       "tier": "full",
+       "text": "A hinge joint moves back and forth in one plane. A ball-and-socket joint gives a wide range including rotation. Synovial joints have cartilage on the bone ends and fluid that reduces friction. The joint capsule and ligaments stabilize them.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A hinge joint moves back and forth in one plane."
+        },
+        {
+         "point": 1,
+         "quote": "A ball-and-socket joint gives a wide range including rotation."
+        },
+        {
+         "point": 2,
+         "quote": "Synovial joints have cartilage on the bone ends and fluid that reduces friction."
+        },
+        {
+         "point": 3,
+         "quote": "The joint capsule and ligaments stabilize them."
+        }
+       ],
+       "feedback": "All four marks, with a good use of the plane concept."
+      },
+      {
+       "tier": "partial",
+       "text": "The knee bends and straightens. The shoulder moves all around.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The knee bends and straightens."
+        },
+        {
+         "point": 1,
+         "quote": "The shoulder moves all around."
+        }
+       ],
+       "feedback": "Name two features that all synovial joints share, and a structure that stabilizes them."
+      },
+      {
+       "tier": "partial",
+       "text": "Both have synovial fluid and cartilage. The shoulder has the most movement. The knee moves in all directions too.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Both have synovial fluid and cartilage."
+        },
+        {
+         "point": 1,
+         "quote": "The shoulder has the most movement."
+        }
+       ],
+       "feedback": "The knee is a hinge joint and moves in one plane only. The shoulder has the greater range.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The knee and shoulder are the same because they are both joints and both have bones.",
+       "meets": [],
+       "feedback": "The two joints differ in range of motion: one plane for the knee, all directions for the shoulder."
+      },
+      {
+       "tier": "weak",
+       "text": "Ligaments hold the joints together. The knee is the ball-and-socket joint because it is in the leg.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Ligaments hold the joints together."
+        }
+       ],
+       "feedback": "The shoulder and hip are the ball-and-socket joints. The knee is a hinge joint."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "How muscle contracts, and how muscles work as a team",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how skeletal muscle contracts, using the sliding filament model;\n2. name the major muscles of the body and describe the actions of prime movers, antagonists and synergists.\n\n## Materials\n\nMuscle charts, resistance bands, a model of a sarcomere (two combs and rubber bands), a handout of muscle actions, the quiz.\n\n## Starter (6 minutes)\n\nAsk students to flex their biceps and feel the triceps. Ask: \"Which muscle is working, which is relaxing, and what happens when you straighten the arm?\"\n\n## Main activity\n\n1. Layers of a muscle: muscle, fascicle, fiber, myofibril, sarcomere. Draw a sarcomere with thin actin and thick myosin filaments.\n2. Sliding filament model: calcium is released, myosin heads bind actin, power stroke pulls the thin filaments inward, ATP releases and resets. The sarcomere shortens but the filaments do not.\n3. Muscle actions: prime mover (agonist), antagonist, synergist, fixator. Demonstrate with the biceps and triceps and the quadriceps and hamstrings.\n4. Name the major muscles on a chart: deltoid, pectoralis major, rectus abdominis, biceps brachii, quadriceps, gastrocnemius, trapezius, latissimus dorsi, gluteus maximus.\n\n## Checking for understanding\n\nAsk: \"What happens in a muscle when ATP runs out after death?\" Look for rigor mortis.\n\n## Quiz and problem set\n\nFive quiz questions and a short problem set.",
+   "reading": {
+    "title": "The sliding filament model and muscle teamwork",
+    "content": "A skeletal muscle is built in layers. The whole muscle is wrapped in connective tissue and contains bundles called fascicles. Each fascicle is a group of muscle fibers, which are long cells with many nuclei. Each fiber contains hundreds of rod-like **myofibrils**, and each myofibril is a chain of repeating units called **sarcomeres**. The sarcomere is the functional unit of contraction. It contains two kinds of protein filament: thin filaments made mostly of **actin** and thick filaments of **myosin**. They overlap in a pattern that gives skeletal muscle its stripes.\n\nThe **sliding filament model** explains how the sarcomere shortens. A nerve impulse reaches the muscle fiber and triggers the release of calcium ions inside the cell. Calcium exposes binding sites on the actin. Myosin heads, already charged with energy from the breakdown of ATP, bind to the actin to form cross-bridges. The myosin head then pivots, the **power stroke**, and pulls the thin filament toward the center of the sarcomere. A new molecule of ATP binds to the head, releasing it from the actin, and the cycle repeats. The filaments themselves do not shorten. They slide past one another, so the sarcomere gets shorter, and all the sarcomeres in a fiber shorten together to produce a contraction. When the signal stops, calcium is pumped back and the muscle relaxes. After death, no ATP is available to release the myosin heads, so the muscles stay locked, which is **rigor mortis**.\n\nMuscles rarely work alone. When you bend the elbow, the biceps brachii is the **prime mover**, or agonist, because it produces the movement. The triceps brachii is the **antagonist**, which opposes it and relaxes. When you straighten the arm, their roles are reversed. Other muscles, such as the brachialis, help the prime mover and are called **synergists**. **Fixators** hold a bone steady so the prime mover can act effectively.\n\nYou should know the main muscles by name. The deltoid raises the arm. The pectoralis major pulls the arm forward across the chest. The latissimus dorsi pulls the arm down and back. The trapezius moves the scapula and shoulders. The rectus abdominis flexes the trunk. The quadriceps on the front of the thigh extend the knee, and the hamstrings on the back flex it. The gluteus maximus extends the hip, and the gastrocnemius in the calf points the foot. Names often hint at location, shape, size or action, which makes them easier to remember."
+   },
+   "cards": [
+    {
+     "front": "Sarcomere",
+     "back": "The functional unit of contraction in a muscle, containing actin and myosin filaments."
+    },
+    {
+     "front": "Actin",
+     "back": "The protein of the thin filaments."
+    },
+    {
+     "front": "Myosin",
+     "back": "The protein of the thick filaments, with heads that bind actin."
+    },
+    {
+     "front": "Sliding filament model",
+     "back": "Contraction occurs when thin filaments slide past thick filaments, shortening the sarcomere."
+    },
+    {
+     "front": "Prime mover (agonist)",
+     "back": "The muscle mainly responsible for a movement."
+    },
+    {
+     "front": "Antagonist",
+     "back": "A muscle that opposes the action of the prime mover."
+    },
+    {
+     "front": "Synergist",
+     "back": "A muscle that helps the prime mover."
+    },
+    {
+     "front": "Rigor mortis",
+     "back": "Stiffening of muscles after death, when no ATP is available to release myosin."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In the sliding filament model, the sarcomere shortens because:",
+     "options": [
+      "The filaments themselves get shorter",
+      "The thin filaments slide toward the center over the thick filaments",
+      "The myosin is destroyed",
+      "The muscle fibers divide"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What ion triggers the exposure of binding sites on actin?",
+     "options": [
+      "Sodium",
+      "Potassium",
+      "Calcium",
+      "Chloride"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "When you bend your elbow, the triceps is the:",
+     "options": [
+      "Prime mover",
+      "Antagonist",
+      "Synergist",
+      "Fixator"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why do muscles stay stiff after death?",
+     "options": [
+      "Calcium is pumped out",
+      "No ATP is available to release the myosin heads",
+      "The actin disappears",
+      "Blood clots in the muscle"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which muscles extend the knee?",
+     "options": [
+      "Hamstrings",
+      "Gastrocnemius",
+      "Quadriceps",
+      "Deltoid"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe the sequence of events by which a nerve impulse leads to the shortening of a sarcomere, using the terms calcium, cross-bridge, power stroke and ATP.",
+     "markScheme": [
+      "States that a nerve impulse causes calcium release inside the muscle fiber",
+      "States that calcium exposes binding sites on actin so myosin heads form cross-bridges",
+      "States that the myosin heads pivot in a power stroke, pulling the thin filaments toward the center",
+      "States that ATP binds to the myosin head to release it from actin, resetting the cycle"
+     ],
+     "modelAnswer": "A nerve impulse triggers the release of calcium in the muscle fiber. Calcium exposes binding sites on actin, so myosin heads attach to form cross-bridges. The heads pivot in a power stroke and pull the thin filaments toward the center of the sarcomere. ATP then binds the myosin head, releasing it from the actin so that the cycle can repeat, and the sarcomere shortens.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A nerve impulse makes calcium ions flood into the muscle fiber. The calcium uncovers binding sites on actin, so myosin heads attach and form cross-bridges. The heads pivot, which is the power stroke, and pull the thin filaments toward the middle. ATP binds to the head and lets it go from the actin so it can reach out again.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A nerve impulse makes calcium ions flood into the muscle fiber."
+        },
+        {
+         "point": 1,
+         "quote": "The calcium uncovers binding sites on actin, so myosin heads attach and form cross-bridges."
+        },
+        {
+         "point": 2,
+         "quote": "The heads pivot, which is the power stroke, and pull the thin filaments toward the middle."
+        },
+        {
+         "point": 3,
+         "quote": "ATP binds to the head and lets it go from the actin so it can reach out again."
+        }
+       ],
+       "feedback": "Full marks. Each of the four terms is used in its right place in the sequence."
+      },
+      {
+       "tier": "full",
+       "text": "The signal from the motor neuron releases calcium in the cell. Calcium frees the actin sites and the myosin heads latch on, forming cross-bridges. The power stroke slides the actin over the myosin, shortening the sarcomere. A new ATP detaches the head and resets it for the next cycle.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The signal from the motor neuron releases calcium in the cell."
+        },
+        {
+         "point": 1,
+         "quote": "Calcium frees the actin sites and the myosin heads latch on, forming cross-bridges."
+        },
+        {
+         "point": 2,
+         "quote": "The power stroke slides the actin over the myosin, shortening the sarcomere."
+        },
+        {
+         "point": 3,
+         "quote": "A new ATP detaches the head and resets it for the next cycle."
+        }
+       ],
+       "feedback": "All four marks, and the effect on the sarcomere is clear."
+      },
+      {
+       "tier": "partial",
+       "text": "Calcium is released. The power stroke pulls the thin filaments. ATP gives the muscle the power for the stroke, so the heads let go when ATP runs out.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Calcium is released."
+        },
+        {
+         "point": 2,
+         "quote": "The power stroke pulls the thin filaments."
+        }
+       ],
+       "feedback": "ATP is needed to release the head from actin. When ATP runs out, the heads stay attached, as in rigor mortis."
+      },
+      {
+       "tier": "partial",
+       "text": "Myosin heads form cross-bridges with actin. ATP detaches them.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Myosin heads form cross-bridges with actin."
+        },
+        {
+         "point": 3,
+         "quote": "ATP detaches them."
+        }
+       ],
+       "feedback": "Good. Start with the nerve impulse and calcium release, and include the power stroke.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The muscle gets shorter because the filaments shrink when you want to move.",
+       "meets": [],
+       "feedback": "The filaments do not shorten; they slide past each other, which shortens the sarcomere."
+      },
+      {
+       "tier": "weak",
+       "text": "ATP is used to release the myosin. The nerve impulse goes into the bone and the bone pulls the muscle.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "ATP is used to release the myosin."
+        }
+       ],
+       "feedback": "The nerve impulse goes to the muscle fiber and triggers calcium release. Bones are moved by the muscles, not the other way round."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain the roles of the biceps brachii, triceps brachii and brachialis when you bend your elbow to lift a book, and say how the roles change when you straighten the arm.",
+     "markScheme": [
+      "Names the biceps brachii as the prime mover in bending the elbow",
+      "Names the triceps brachii as the antagonist that relaxes during the bend",
+      "Names the brachialis as a synergist that helps the prime mover",
+      "States that when you straighten the arm, the triceps becomes the prime mover and the biceps the antagonist"
+     ],
+     "modelAnswer": "When you bend your elbow, the biceps brachii is the prime mover, which contracts to produce the movement. The triceps brachii is the antagonist, which relaxes and opposes the movement. The brachialis is a synergist, which helps the biceps. When you straighten the arm, the roles reverse: the triceps becomes the prime mover and the biceps the antagonist.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The biceps brachii is the prime mover for bending the elbow. The triceps brachii is the antagonist and relaxes while this happens. The brachialis is a synergist helping the biceps. When I straighten the arm the triceps becomes the prime mover and the biceps is the antagonist.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The biceps brachii is the prime mover for bending the elbow."
+        },
+        {
+         "point": 1,
+         "quote": "The triceps brachii is the antagonist and relaxes while this happens."
+        },
+        {
+         "point": 2,
+         "quote": "The brachialis is a synergist helping the biceps."
+        },
+        {
+         "point": 3,
+         "quote": "When I straighten the arm the triceps becomes the prime mover and the biceps is the antagonist."
+        }
+       ],
+       "feedback": "Full marks. You showed that the roles reverse with the direction of movement."
+      },
+      {
+       "tier": "full",
+       "text": "Flexion is driven by the biceps (agonist). The triceps is the antagonist, and it has to relax or it would resist. The brachialis assists as a synergist. In extension the roles swap: triceps agonist, biceps antagonist.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Flexion is driven by the biceps (agonist)."
+        },
+        {
+         "point": 1,
+         "quote": "The triceps is the antagonist, and it has to relax or it would resist."
+        },
+        {
+         "point": 2,
+         "quote": "The brachialis assists as a synergist."
+        },
+        {
+         "point": 3,
+         "quote": "In extension the roles swap: triceps agonist, biceps antagonist."
+        }
+       ],
+       "feedback": "All four marks, and the explanation of why the antagonist has to relax is a good detail."
+      },
+      {
+       "tier": "partial",
+       "text": "The biceps is the prime mover. The triceps is the antagonist. The roles stay the same when I straighten the arm.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The biceps is the prime mover."
+        },
+        {
+         "point": 1,
+         "quote": "The triceps is the antagonist."
+        }
+       ],
+       "feedback": "The roles swap when you straighten the arm: the triceps becomes the prime mover. Add the synergist."
+      },
+      {
+       "tier": "partial",
+       "text": "The brachialis is a synergist. They swap roles when the arm straightens.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The brachialis is a synergist."
+        },
+        {
+         "point": 3,
+         "quote": "They swap roles when the arm straightens."
+        }
+       ],
+       "feedback": "Good. Name the prime mover and the antagonist for bending the elbow.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The biceps and triceps both contract together to bend the elbow, and the brachialis relaxes.",
+       "meets": [],
+       "feedback": "The triceps would resist the bend if it contracted. The antagonist relaxes while the prime mover contracts."
+      },
+      {
+       "tier": "weak",
+       "text": "The biceps is the prime mover. The triceps is the synergist because it is next to the biceps.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The biceps is the prime mover."
+        }
+       ],
+       "feedback": "A synergist helps the prime mover. The triceps opposes the bend, so it is the antagonist."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Neurons, action potentials, synapses and reflexes",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the structure of a neuron and how an action potential travels along it;\n2. explain how a signal crosses a synapse and how a reflex arc works.\n\n## Materials\n\nNeuron diagram, a model made with pipe cleaners and beads, a meter stick for the ruler drop reaction test, the problem set.\n\n## Starter (6 minutes)\n\nDo the ruler-drop test: one student drops a meter stick and another catches it. Record how far it fell. Ask: \"How long did the signal take to travel from the eyes to the hand?\" Use the distance to estimate the reaction time.\n\n## Main activity\n\n1. Draw a neuron: dendrites, cell body, axon, myelin sheath, nodes of Ranvier, axon terminals. Describe the resting potential of about -70 mV.\n2. Action potential: depolarization when sodium channels open, repolarization when potassium leaves, and the refractory period. Explain the all-or-none rule and saltatory conduction in myelinated axons.\n3. The synapse: neurotransmitter release, binding to receptors and removal. Example: acetylcholine at the neuromuscular junction.\n4. The reflex arc: receptor, sensory neuron, integration center, motor neuron, effector. Use the knee-jerk reflex.\n\n## Checking for understanding\n\nAsk: \"Why does myelin make impulses faster?\"\n\n## Problem set and worksheet\n\nReaction time calculations, a reflex arc diagram and a synapse explanation.",
+   "reading": {
+    "title": "How nerves carry signals",
+    "content": "The basic unit of the nervous system is the **neuron**. A typical neuron has branching **dendrites**, which receive signals; a **cell body**, which contains the nucleus; and a long **axon** that carries the signal away to the **axon terminals**. Many axons are wrapped in a fatty **myelin sheath**, made by supporting cells, with small gaps between the segments called **nodes of Ranvier**.\n\nA neuron at rest is polarized: the inside is negative relative to the outside, at about -70 millivolts. This **resting potential** is maintained by the sodium-potassium pump, which moves 3 sodium ions out for every 2 potassium ions in, using ATP. When the neuron is stimulated enough to reach a threshold, voltage-gated sodium channels open, sodium rushes in and the inside becomes positive for a moment, to about +30 mV. This is **depolarization**. Then the sodium channels close and potassium channels open, so potassium flows out and the inside becomes negative again. This is **repolarization**. This brief change in voltage is the **action potential**. It follows an **all-or-none** rule: either the threshold is reached and a full-size action potential occurs, or nothing happens. A stronger stimulus does not make a bigger action potential, but it makes more of them per second.\n\nThe action potential moves down the axon because depolarization at one spot triggers depolarization in the next. In myelinated axons the impulse jumps from one node to the next, which is called **saltatory conduction**, and increases the speed from about 1 meter per second to over 100 meters per second. In multiple sclerosis, the myelin is damaged and signals slow or fail.\n\nAt the end of the axon, the neuron meets the next cell at a **synapse**, a small gap. When the action potential arrives, calcium enters the terminal and causes vesicles to release a **neurotransmitter** into the gap. The neurotransmitter diffuses across and binds to receptors on the next cell, opening channels. The signal is then ended by removing the neurotransmitter, either by enzymes that break it down or by reuptake. At the junction between a motor neuron and a muscle, the neurotransmitter is acetylcholine.\n\nA **reflex** is a fast, automatic response. The pathway, the **reflex arc**, has five parts: a receptor detects a stimulus, a sensory neuron carries the signal to the spinal cord, an integration center there processes it, a motor neuron carries the response out, and an effector, such as a muscle, acts. In the knee-jerk reflex, tapping the tendon stretches the thigh muscle and the leg kicks. The brain is not needed for the response, which makes it faster, but it is informed afterward."
+   },
+   "cards": [
+    {
+     "front": "Neuron",
+     "back": "A nerve cell that carries electrical signals."
+    },
+    {
+     "front": "Myelin sheath",
+     "back": "A fatty covering on some axons that speeds up conduction."
+    },
+    {
+     "front": "Resting potential",
+     "back": "The electrical difference across the membrane of an unstimulated neuron, about -70 mV."
+    },
+    {
+     "front": "Action potential",
+     "back": "A brief reversal of the membrane voltage that travels along an axon."
+    },
+    {
+     "front": "All-or-none rule",
+     "back": "A neuron either fires a full action potential or none at all."
+    },
+    {
+     "front": "Synapse",
+     "back": "The gap where a neuron passes a signal to another cell."
+    },
+    {
+     "front": "Neurotransmitter",
+     "back": "A chemical released at a synapse to carry the signal across."
+    },
+    {
+     "front": "Reflex arc",
+     "back": "The pathway of a reflex: receptor, sensory neuron, integration center, motor neuron, effector."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What causes depolarization at the start of an action potential?",
+     "options": [
+      "Potassium leaving the cell",
+      "Sodium entering the cell",
+      "Calcium leaving the cell",
+      "Chloride leaving the cell"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why are myelinated axons faster?",
+     "options": [
+      "The impulse jumps between nodes of Ranvier",
+      "They are shorter",
+      "They have more dendrites",
+      "They have no ion channels"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What happens at a synapse when an action potential arrives?",
+     "options": [
+      "The axon stops working",
+      "Neurotransmitter is released into the gap",
+      "The myelin dissolves",
+      "The neuron divides"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In a reflex arc, the neuron that carries the signal from the spinal cord to the muscle is the:",
+     "options": [
+      "Sensory neuron",
+      "Motor neuron",
+      "Interneuron only",
+      "Receptor"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A meter stick falls 20 cm before a student catches it. The reaction time is about (d = 1/2 g t squared):",
+     "options": [
+      "0.10 s",
+      "0.20 s",
+      "0.30 s",
+      "0.45 s"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe the sequence of events in an action potential, from the resting state to the return to rest, and explain the role of sodium and potassium.",
+     "markScheme": [
+      "States that at rest the inside of the neuron is negative, about -70 mV",
+      "States that a stimulus reaching threshold opens sodium channels and sodium enters, causing depolarization",
+      "States that sodium channels close and potassium channels open, so potassium leaves, causing repolarization",
+      "States that the sodium-potassium pump restores the ion distribution, and the process follows the all-or-none rule"
+     ],
+     "modelAnswer": "At rest, the inside of the neuron is negative, about -70 mV. When a stimulus reaches threshold, sodium channels open and sodium enters, depolarizing the neuron. Then the sodium channels close and potassium channels open, so potassium leaves and the neuron repolarizes. The sodium-potassium pump restores the ion distribution. An action potential is all-or-none: it occurs fully or not at all.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "At rest the inside is about −70 mV, negative compared with outside. When a stimulus reaches threshold, sodium channels open, sodium rushes in, and the inside becomes positive. Then the sodium channels close, potassium channels open and potassium leaves, bringing the voltage back down. The sodium-potassium pump restores the ions, and the action potential is all-or-none.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At rest the inside is about −70 mV, negative compared with outside."
+        },
+        {
+         "point": 1,
+         "quote": "When a stimulus reaches threshold, sodium channels open, sodium rushes in, and the inside becomes positive."
+        },
+        {
+         "point": 2,
+         "quote": "Then the sodium channels close, potassium channels open and potassium leaves, bringing the voltage back down."
+        },
+        {
+         "point": 3,
+         "quote": "The sodium-potassium pump restores the ions, and the action potential is all-or-none."
+        }
+       ],
+       "feedback": "Full marks. The role of each ion is given in sequence."
+      },
+      {
+       "tier": "full",
+       "text": "Resting potential is about −70 mV. Depolarization: Na+ channels open and Na+ enters. Repolarization: K+ channels open and K+ exits. The pump moves 3 Na+ out and 2 K+ in to restore the resting state, and either a full spike happens or none.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Resting potential is about −70 mV."
+        },
+        {
+         "point": 1,
+         "quote": "Depolarization: Na+ channels open and Na+ enters."
+        },
+        {
+         "point": 2,
+         "quote": "Repolarization: K+ channels open and K+ exits."
+        },
+        {
+         "point": 3,
+         "quote": "The pump moves 3 Na+ out and 2 K+ in to restore the resting state, and either a full spike happens or none."
+        }
+       ],
+       "feedback": "All four marks, with accurate numbers."
+      },
+      {
+       "tier": "partial",
+       "text": "At rest the inside is negative. Sodium enters. Then potassium enters to make it negative again.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At rest the inside is negative."
+        },
+        {
+         "point": 1,
+         "quote": "Sodium enters."
+        },
+        {
+         "point": 2,
+         "quote": "Then potassium enters to make it negative again."
+        }
+       ],
+       "feedback": "Potassium leaves the cell during repolarization. Add the sodium-potassium pump and the all-or-none rule."
+      },
+      {
+       "tier": "partial",
+       "text": "Potassium leaves to repolarize the cell. It is all-or-none.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Potassium leaves to repolarize the cell."
+        },
+        {
+         "point": 3,
+         "quote": "It is all-or-none."
+        }
+       ],
+       "feedback": "Good. Add the resting state and the step where sodium enters.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A stronger stimulus makes a bigger action potential, and the cell uses calcium to move the signal along the axon.",
+       "meets": [],
+       "feedback": "Action potentials are all-or-none, and they depend on sodium and potassium movement. A stronger stimulus makes more of them."
+      },
+      {
+       "tier": "weak",
+       "text": "The neuron is at −70 mV at rest. The neuron fills with water and then bursts to send the signal.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The neuron is at −70 mV at rest."
+        }
+       ],
+       "feedback": "Signals are sent by ion movements across the membrane, not by bursting. Describe the sodium and potassium channels."
+      }
+     ]
+    },
+    {
+     "prompt": "Trace the pathway of the knee-jerk reflex through the five parts of a reflex arc, and explain why a reflex is faster than a voluntary response.",
+     "markScheme": [
+      "Identifies the receptor as the stretch receptor in the thigh muscle or tendon detecting the tap",
+      "Identifies the sensory neuron carrying the signal to the spinal cord",
+      "Identifies the integration center in the spinal cord and the motor neuron carrying the signal back to the quadriceps (effector)",
+      "Explains that the reflex bypasses the brain, so the pathway is shorter and quicker"
+     ],
+     "modelAnswer": "A stretch receptor in the thigh muscle detects the tap on the tendon. A sensory neuron carries the signal to the spinal cord, where the integration center connects directly to a motor neuron. The motor neuron carries the signal to the quadriceps, the effector, which contracts and kicks the leg. A reflex is faster because it bypasses the brain, so the pathway is shorter.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The tap stretches the tendon and a stretch receptor in the muscle detects it. A sensory neuron carries the signal to the spinal cord. In the spinal cord a motor neuron is activated and sends the signal to the quadriceps, which is the effector. It doesn't go through the brain first, so it's shorter and quicker.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The tap stretches the tendon and a stretch receptor in the muscle detects it."
+        },
+        {
+         "point": 1,
+         "quote": "A sensory neuron carries the signal to the spinal cord."
+        },
+        {
+         "point": 2,
+         "quote": "In the spinal cord a motor neuron is activated and sends the signal to the quadriceps, which is the effector."
+        },
+        {
+         "point": 3,
+         "quote": "It doesn't go through the brain first, so it's shorter and quicker."
+        }
+       ],
+       "feedback": "Full marks. All five parts are covered, ending with the reason it is fast."
+      },
+      {
+       "tier": "full",
+       "text": "Receptor: stretch receptors in the quadriceps. Sensory neuron: carries the impulse to the spinal cord. Integration center in the spinal cord, then the motor neuron takes the signal to the effector, the quadriceps. The brain is bypassed, so the delay is short.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Receptor: stretch receptors in the quadriceps."
+        },
+        {
+         "point": 1,
+         "quote": "Sensory neuron: carries the impulse to the spinal cord."
+        },
+        {
+         "point": 2,
+         "quote": "Integration center in the spinal cord, then the motor neuron takes the signal to the effector, the quadriceps."
+        },
+        {
+         "point": 3,
+         "quote": "The brain is bypassed, so the delay is short."
+        }
+       ],
+       "feedback": "All four marks, in the standard terms."
+      },
+      {
+       "tier": "partial",
+       "text": "The receptor detects the tap. The motor neuron makes the muscle kick.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The receptor detects the tap."
+        },
+        {
+         "point": 2,
+         "quote": "The motor neuron makes the muscle kick."
+        }
+       ],
+       "feedback": "Include the sensory neuron, the integration center and the reason that a reflex is quick."
+      },
+      {
+       "tier": "partial",
+       "text": "A sensory neuron goes to the spinal cord and then up to the brain, which decides to kick. It's fast because neurons are fast.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A sensory neuron goes to the spinal cord"
+        },
+        {
+         "point": 3,
+         "quote": "It's fast because neurons are fast."
+        }
+       ],
+       "feedback": "In a reflex the spinal cord, not the brain, connects the sensory and motor neurons. That is why it is faster than a voluntary action.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The doctor's hammer makes the muscle jump directly with no nerves because it is a reflex.",
+       "meets": [],
+       "feedback": "Reflexes use nerves too. The pathway is receptor, sensory neuron, spinal cord, motor neuron and effector."
+      },
+      {
+       "tier": "weak",
+       "text": "A reflex is fast. It starts in the brain and goes down the spinal cord to the leg, taking the shortest path.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "A reflex is fast."
+        }
+       ],
+       "feedback": "A reflex is fast because it does not go through the brain. The spinal cord handles the response."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "The brain, the nervous system divisions, and a dissection",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the main regions of the brain and the roles of the central and peripheral nervous systems;\n2. dissect or model an organ system and report what the structures show about their function.\n\n## Materials\n\nPreserved sheep brains or an anatomical brain model, dissection trays, scalpels or probes, gloves, goggles, paper towels, the practical sheet.\n\n## Starter (6 minutes)\n\nAsk: \"If a person has a stroke that damages the left side of the cerebrum, what might they lose the ability to do?\" Discuss language, movement on the right side of the body and so on.\n\n## Main activity\n\n1. Brain regions: cerebrum with four lobes (frontal, parietal, temporal, occipital), cerebellum, brainstem (midbrain, pons, medulla), thalamus and hypothalamus. Match each to a function.\n2. Divisions of the nervous system: central (brain and spinal cord) and peripheral (cranial and spinal nerves), and the somatic and autonomic divisions with sympathetic and parasympathetic branches.\n3. Practical: dissect a sheep brain, or study a brain model if no specimen is available. Identify the meninges, cerebrum, cerebellum, brainstem and corpus callosum, and sketch a midsagittal section.\n\n## Checking for understanding\n\nAsk: \"Which part of the autonomic nervous system speeds up the heart?\"\n\n## Worksheet and practical write-up\n\nA labeled sketch and a structure-function table.",
+   "reading": {
+    "title": "The command center and its connections",
+    "content": "The nervous system has two main parts. The **central nervous system (CNS)** is the brain and the spinal cord. The **peripheral nervous system (PNS)** consists of all the nerves outside the CNS: 12 pairs of cranial nerves and 31 pairs of spinal nerves. The PNS is divided by function. The **somatic** division carries voluntary signals to the skeletal muscles and sensory information from the skin and joints. The **autonomic** division controls involuntary functions of the heart, glands and smooth muscle. It has two branches. The **sympathetic** branch prepares the body for \"fight or flight\": it speeds up the heart, widens the airways and the pupils, and slows digestion. The **parasympathetic** branch controls \"rest and digest\": it slows the heart and stimulates digestion.\n\nThe brain is protected by the skull and three membranes called the **meninges**, with cerebrospinal fluid cushioning it. The largest part is the **cerebrum**, with two hemispheres joined by a bundle of fibers, the **corpus callosum**. Its folded outer layer, the cortex, increases the surface area. The cerebrum has four lobes. The **frontal lobe** is for reasoning, planning and voluntary movement. The **parietal lobe** processes touch and spatial awareness. The **temporal lobe** handles hearing and memory. The **occipital lobe** processes vision. Each hemisphere mostly controls the opposite side of the body, so a stroke on the left side can cause weakness on the right side. Language areas are usually in the left hemisphere.\n\nBeneath the cerebrum, the **thalamus** relays sensory signals to the cortex and the **hypothalamus** controls hunger, thirst, temperature, and the pituitary gland. The **cerebellum**, at the back and below, coordinates movement and balance. The **brainstem**, with the midbrain, pons and medulla oblongata, connects the brain to the spinal cord. The medulla controls vital automatic functions such as heart rate, breathing and blood pressure, so damage to it is often fatal.\n\nIn a dissection, structures show their function through their form. The folded cortex shows how a large surface is packed into a small skull. The cerebellum is deeply folded with many fine ridges, matching its role in precise coordination. The large, thick corpus callosum shows how much information passes between the hemispheres. When you dissect, work carefully, identify each structure before cutting, and record what you see with labeled sketches."
+   },
+   "cards": [
+    {
+     "front": "Central nervous system",
+     "back": "The brain and the spinal cord."
+    },
+    {
+     "front": "Peripheral nervous system",
+     "back": "The nerves outside the brain and spinal cord."
+    },
+    {
+     "front": "Sympathetic division",
+     "back": "The branch of the autonomic system for fight or flight."
+    },
+    {
+     "front": "Parasympathetic division",
+     "back": "The branch of the autonomic system for rest and digest."
+    },
+    {
+     "front": "Cerebellum",
+     "back": "The part of the brain that coordinates movement and balance."
+    },
+    {
+     "front": "Medulla oblongata",
+     "back": "The brainstem region that controls heart rate and breathing."
+    },
+    {
+     "front": "Corpus callosum",
+     "back": "The bundle of fibers connecting the two cerebral hemispheres."
+    },
+    {
+     "front": "Meninges",
+     "back": "The three protective membranes around the brain and spinal cord."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which lobe of the cerebrum processes vision?",
+     "options": [
+      "Frontal",
+      "Parietal",
+      "Temporal",
+      "Occipital"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Which part of the brain coordinates balance and fine movement?",
+     "options": [
+      "Cerebellum",
+      "Medulla",
+      "Thalamus",
+      "Hypothalamus"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "The sympathetic division of the autonomic nervous system:",
+     "options": [
+      "Slows the heart",
+      "Prepares the body for fight or flight",
+      "Stimulates digestion",
+      "Controls voluntary muscles"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A stroke damages the left side of the cerebrum. Weakness is most likely on the:",
+     "options": [
+      "Left side of the body",
+      "Right side of the body",
+      "Both sides equally",
+      "Neither side"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which structure joins the two cerebral hemispheres?",
+     "options": [
+      "Meninges",
+      "Corpus callosum",
+      "Medulla",
+      "Pons"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A cyclist hits their head in a crash and has trouble with balance and with smooth, coordinated movements, but they can think and speak normally. Which part of the brain is most likely affected, and why? Name the other part of the brain responsible for breathing.",
+     "markScheme": [
+      "Identifies the cerebellum as the part affected",
+      "Explains that the cerebellum coordinates movement and balance",
+      "Explains that normal thinking and speech suggest the cerebrum (frontal lobe, language areas) is working",
+      "Identifies the medulla oblongata (brainstem) as the part responsible for breathing"
+     ],
+     "modelAnswer": "The cerebellum is most likely affected, because it coordinates movement and balance. Normal thinking and speech suggest the cerebrum is working, including the frontal lobe and language areas. Breathing is controlled by the medulla oblongata in the brainstem.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It is probably the cerebellum. The cerebellum coordinates movement and balance. Since they can think and speak normally, the cerebrum is OK. Breathing is controlled by the medulla in the brainstem.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is probably the cerebellum."
+        },
+        {
+         "point": 1,
+         "quote": "The cerebellum coordinates movement and balance."
+        },
+        {
+         "point": 2,
+         "quote": "Since they can think and speak normally, the cerebrum is OK."
+        },
+        {
+         "point": 3,
+         "quote": "Breathing is controlled by the medulla in the brainstem."
+        }
+       ],
+       "feedback": "Full marks. You reasoned from the symptoms to the structure and ruled out the cerebrum."
+      },
+      {
+       "tier": "full",
+       "text": "Cerebellum damage. It fine-tunes movement and keeps balance, which is what's affected. The frontal and temporal lobes seem intact because thinking and speech are fine. The medulla oblongata controls breathing and heart rate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cerebellum damage."
+        },
+        {
+         "point": 1,
+         "quote": "It fine-tunes movement and keeps balance, which is what's affected."
+        },
+        {
+         "point": 2,
+         "quote": "The frontal and temporal lobes seem intact because thinking and speech are fine."
+        },
+        {
+         "point": 3,
+         "quote": "The medulla oblongata controls breathing and heart rate."
+        }
+       ],
+       "feedback": "All four marks, and the detail of the lobes shows good recall."
+      },
+      {
+       "tier": "partial",
+       "text": "The cerebellum. It controls balance.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The cerebellum."
+        },
+        {
+         "point": 1,
+         "quote": "It controls balance."
+        }
+       ],
+       "feedback": "Good. Use the normal thinking and speech as evidence about the cerebrum, and name the part that controls breathing."
+      },
+      {
+       "tier": "partial",
+       "text": "The medulla controls breathing. The cerebrum is fine. The balance problem is from the thalamus.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The medulla controls breathing."
+        },
+        {
+         "point": 2,
+         "quote": "The cerebrum is fine."
+        }
+       ],
+       "feedback": "The thalamus relays sensory signals. Balance and coordination come from the cerebellum.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The occipital lobe is damaged because it is at the back of the head where they hit it.",
+       "meets": [],
+       "feedback": "The occipital lobe processes vision. Balance problems point to the cerebellum, which sits low at the back of the brain."
+      },
+      {
+       "tier": "weak",
+       "text": "The medulla controls breathing. The cerebrum controls balance because it is the biggest part.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The medulla controls breathing."
+        }
+       ],
+       "feedback": "Size does not decide function. The cerebellum coordinates balance, and the cerebrum handles thinking and voluntary movement."
+      }
+     ]
+    },
+    {
+     "prompt": "Compare the sympathetic and parasympathetic divisions of the autonomic nervous system. Give two effects of each on the body and say when each is dominant.",
+     "markScheme": [
+      "Says the sympathetic division is dominant during stress or exercise (fight or flight)",
+      "Gives two sympathetic effects, such as a faster heart rate and wider airways or pupils",
+      "Says the parasympathetic division is dominant at rest (rest and digest)",
+      "Gives two parasympathetic effects, such as a slower heart rate and stimulated digestion"
+     ],
+     "modelAnswer": "The sympathetic division dominates during stress or exercise, and speeds up the heart and widens the airways and pupils while slowing digestion. The parasympathetic division dominates at rest, slowing the heart and stimulating digestion. The two work in opposite ways to keep the body balanced.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The sympathetic division takes over in stress or exercise, the fight-or-flight response. It makes the heart beat faster and widens the airways. The parasympathetic division is dominant at rest, rest and digest. It slows the heart and speeds up digestion.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The sympathetic division takes over in stress or exercise, the fight-or-flight response."
+        },
+        {
+         "point": 1,
+         "quote": "It makes the heart beat faster and widens the airways."
+        },
+        {
+         "point": 2,
+         "quote": "The parasympathetic division is dominant at rest, rest and digest."
+        },
+        {
+         "point": 3,
+         "quote": "It slows the heart and speeds up digestion."
+        }
+       ],
+       "feedback": "Full marks. The contrast between effects and situations is clear."
+      },
+      {
+       "tier": "full",
+       "text": "Sympathetic is dominant in an emergency. The pupils dilate and the heart rate rises, while digestion slows. Parasympathetic dominates in relaxed conditions. The heart rate slows and the digestive glands become active.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Sympathetic is dominant in an emergency."
+        },
+        {
+         "point": 1,
+         "quote": "The pupils dilate and the heart rate rises, while digestion slows."
+        },
+        {
+         "point": 2,
+         "quote": "Parasympathetic dominates in relaxed conditions."
+        },
+        {
+         "point": 3,
+         "quote": "The heart rate slows and the digestive glands become active."
+        }
+       ],
+       "feedback": "All four marks, with two effects for each division."
+      },
+      {
+       "tier": "partial",
+       "text": "The sympathetic division is for fight or flight. It speeds up the heart. The parasympathetic does the same thing as the sympathetic.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The sympathetic division is for fight or flight."
+        },
+        {
+         "point": 1,
+         "quote": "It speeds up the heart."
+        }
+       ],
+       "feedback": "The parasympathetic division has opposite effects: it slows the heart and stimulates digestion."
+      },
+      {
+       "tier": "partial",
+       "text": "The parasympathetic division is for rest. It slows the heart and helps digestion.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The parasympathetic division is for rest."
+        },
+        {
+         "point": 3,
+         "quote": "It slows the heart and helps digestion."
+        }
+       ],
+       "feedback": "Good. Describe the sympathetic division and when it is dominant, with two effects.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Sympathetic means you feel sorry for someone and parasympathetic is the one that works the muscles you can control.",
+       "meets": [],
+       "feedback": "Both are parts of the autonomic system, which controls involuntary functions. Voluntary muscles are controlled by the somatic division."
+      },
+      {
+       "tier": "weak",
+       "text": "The parasympathetic is for resting. The sympathetic makes you fall asleep and slows the heartbeat.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The parasympathetic is for resting."
+        }
+       ],
+       "feedback": "The sympathetic prepares you for action and speeds the heart. The parasympathetic slows it."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Sheep brain dissection",
+    "instructions": "Examine a preserved sheep brain, identifying the meninges, cerebrum, cerebellum and brainstem from the outside. Then make a midsagittal cut, find the corpus callosum, thalamus and hypothalamus, and sketch the section. Write a structure-function table. If specimens are unavailable, use the brain model and complete the same steps.",
+    "steps": [
+     {
+      "text": "Put on gloves and goggles and place the brain on a dissection tray."
+     },
+     {
+      "text": "Identify the dura mater, if present, and the cerebrum, cerebellum and brainstem from the outside."
+     },
+     {
+      "text": "Find the longitudinal fissure between the two hemispheres and note the folds, the gyri and sulci."
+     },
+     {
+      "text": "Make a single midsagittal cut from the front to the back along the fissure.",
+      "note": "Cut away from your body and keep fingers behind the scalpel."
+     },
+     {
+      "text": "Find the corpus callosum, thalamus, hypothalamus and the cerebellum's tree-like pattern in the section."
+     },
+     {
+      "text": "Draw the section with labels and write a structure-function note for each structure."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Technique and safety: correct handling and a clean midsagittal cut",
+      "maxPoints": 4
+     },
+     {
+      "description": "Observation: labeled sketch with the main structures",
+      "maxPoints": 4
+     },
+     {
+      "description": "Interpretation: structure-function links for the structures",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "The outer surface was covered by a tough dura mater, and under it the cerebrum was folded into gyri and sulci, which increase the surface area of the cortex. The cerebellum at the back had finer, deeper folds. After the midsagittal cut I found the white corpus callosum joining the hemispheres, the thalamus just below it and the hypothalamus further down. The brainstem was thick and led to the spinal cord. The folds suit the large amount of processing in a small skull, and the corpus callosum lets the hemispheres share information.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report: careful technique, the right structures, and each linked to a function."
+     },
+     {
+      "tier": "full",
+      "text": "Technique: gloves and goggles on, brain on the tray, one cut along the longitudinal fissure, tools put away after use. Observations: the sheep cerebrum has deep folds, the cerebellum has a tree-like pattern in section (the arbor vitae), and the brainstem includes the medulla. The corpus callosum is a white arch connecting the hemispheres. Interpretation: the cerebellum's many folds give it lots of surface area for coordinating movement, and the medulla sits where it can control breathing.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. Add the labeled midsagittal sketch to the observation to complete it."
+     },
+     {
+      "tier": "partial",
+      "text": "We looked at the sheep brain and cut it in half. I could see the big folds on the cerebrum and the cerebellum at the back. In the middle was the white part, the corpus callosum. I did not label the other structures because I could not tell which was the thalamus and the hypothalamus, and I did not write a function for each.",
+      "scores": [
+       3,
+       2,
+       1
+      ],
+      "feedback": "Use the diagram to find the thalamus and hypothalamus, label them in the sketch, and write what each does."
+     },
+     {
+      "tier": "partial",
+      "text": "The brain had a cerebrum, a cerebellum and a brainstem. The cerebrum does thinking, the cerebellum does balance and the brainstem controls breathing and heartbeat. The folds make more surface. I did not do the dissection because I did not want to touch the specimen, so these notes are from the textbook and the model.",
+      "scores": [
+       0,
+       1,
+       4
+      ],
+      "feedback": "Your functions are right, but this task needs your own observations. You can use the model for the same steps and sketch what you see."
+     },
+     {
+      "tier": "weak",
+      "text": "We cut the brain with a knife and it was soft and gray. It smelled bad. The inside looked white and gray. There were many folds. It was interesting to see what a brain looks like on the inside. I washed my hands afterward and put everything back where it was.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Name the structures you saw and what they do. Draw and label a sketch of the midsagittal section."
+     },
+     {
+      "tier": "weak",
+      "text": "The cerebellum is at the front of the brain and the cerebrum is the small part at the back. The corpus callosum is the part that sends signals to the stomach. I labeled all of them in my sketch, but the brain did not look like the diagram so I'm not sure that mine was normal.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Check a reference: the cerebrum is the large front and top part and the cerebellum sits at the back and below. The corpus callosum joins the hemispheres."
+     }
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,2668 @@
+{
+ "subject": "Honors Biology",
+ "yearGroup": "Grade 9",
+ "weeks": {
+  "1": {
+   "topic": "Experimental design, uncertainty and scale in microscopy",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. plan a safe investigation with controls, replicates and recorded uncertainty;\n2. use a microscope, calibrate a field of view and calculate actual size and magnification;\n3. build a claim, evidence and reasoning argument and judge how strong the evidence is.\n\n## Materials\n\nCompound microscopes, stage micrometer slides (or a clear millimeter ruler), prepared onion and cheek-cell slides, lens paper, the practical sheet.\n\n## Starter (8 minutes)\n\nShow two data tables for a plant growth test: one with a single plant per group, one with ten. Ask: \"Which result would you bet money on, and why?\" Name replicates, sample size and outliers on the board.\n\n## Main activity\n\n1. Mini-lecture: independent, dependent and controlled variables, a negative control, and the difference between precision and accuracy. Students critique a poorly designed fertilizer test from a local garden center claim.\n2. Practical: calibrate the field of view at 40x, 100x and 400x, then measure cells and compute actual size from a drawing using the formula actual = drawing / magnification.\n3. Introduce the CER format and mark a sample argument with a three-point rubric.\n\n## Checking for understanding\n\nAsk pairs to name one source of uncertainty in measuring a cell with a ruler under the scope and how they would reduce it.\n\n## Collect\n\nThe practical write-up.",
+   "reading": {
+    "title": "How sure can you be? Evidence, error and scale",
+    "content": "A good biology investigation does more than change one thing and watch. It is built so that someone who disagrees with you has a hard time explaining the data another way. Start with a testable question and a hypothesis that says what you expect and why. Choose one independent variable, define exactly how you will measure the dependent variable, and list the variables you will hold constant. Add a **control group** that gets no treatment, so you have something to compare with. If a fertilizer is claimed to double growth, a group with plain water shows how much growth would have happened anyway.\n\nNext, think about repeats. A single trial can be misled by a lucky seed or a miscounted leaf. Running several **replicates** lets you calculate a mean, and the spread of the replicates tells you about **precision**. **Accuracy** is different: it asks whether your mean is close to the true value. A scale that always reads 2 g too high is precise but not accurate. Every instrument also carries **uncertainty**. A ruler marked in millimeters is read to plus or minus 0.5 mm, so reporting a length as 12.37 mm claims more than the tool can support.\n\nMicroscopes extend this thinking to scale. Total magnification is the product of the eyepiece and objective: a 10x eyepiece with a 40x objective gives 400x. To measure an object, you cannot lay a ruler on it, so you **calibrate**. At 100x, a field of view might be 1.8 mm across. If a cell spans about a third of the field, it is about 0.6 mm, or 600 micrometers. To find the real size of something from a drawing, use actual size = drawing size / magnification. A 36 mm drawing made at 400x represents 0.09 mm, which is 90 micrometers. Keep the unit conversions straight: 1 mm = 1000 micrometers.\n\nWhen you present results, use the **claim, evidence, reasoning** pattern. The claim is a single sentence that answers the question. The evidence is specific data, with numbers and units. The reasoning explains, with a biological principle, why the evidence supports the claim. The strongest arguments also mention limits: a small sample, a missing control, or a measurement that was hard to make. That honesty is not weakness. It is how science earns trust."
+   },
+   "cards": [
+    {
+     "front": "Control group",
+     "back": "A group that receives no treatment, used for comparison."
+    },
+    {
+     "front": "Replicate",
+     "back": "A repeat of the same trial, used to find a mean and judge precision."
+    },
+    {
+     "front": "Precision",
+     "back": "How close repeated measurements are to each other."
+    },
+    {
+     "front": "Accuracy",
+     "back": "How close a measurement is to the true value."
+    },
+    {
+     "front": "Uncertainty",
+     "back": "The range of doubt in a measurement, such as plus or minus 0.5 mm."
+    },
+    {
+     "front": "Calibrate",
+     "back": "Use a known scale to find the real size of a microscope field."
+    },
+    {
+     "front": "Actual size",
+     "back": "Drawing size divided by magnification."
+    },
+    {
+     "front": "Micrometer (µm)",
+     "back": "One thousandth of a millimeter."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A fertilizer company says its product doubles growth. Which design gives the strongest test?",
+     "options": [
+      "Ten plants with fertilizer, no comparison group",
+      "Ten plants with fertilizer and ten with plain water, same soil and light",
+      "One plant with fertilizer and one without",
+      "Ten plants with fertilizer in sun and ten without in shade"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A scale always reads 2 g too high, but gives the same reading each time. Its readings are:",
+     "options": [
+      "Accurate but not precise",
+      "Precise but not accurate",
+      "Both accurate and precise",
+      "Neither precise nor accurate"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A drawing of a cell is 36 mm long at 400x. What is the actual length?",
+     "options": [
+      "0.09 mm",
+      "14.4 mm",
+      "0.9 mm",
+      "9 mm"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "The field of view at 100x is 1.8 mm. A cell spans one third of it. About how long is the cell in micrometers?",
+     "options": [
+      "60 µm",
+      "600 µm",
+      "6 µm",
+      "6000 µm"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which sentence is the reasoning part of an argument about the fertilizer?",
+     "options": [
+      "The treated plants averaged 14.2 cm and the controls 9.8 cm.",
+      "The fertilizer increased growth.",
+      "Nitrogen in the fertilizer supports protein synthesis, which allows faster cell growth.",
+      "We used ten plants in each group."
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student measures the width of an onion cell in a drawing as 27 mm, made at 150x. Calculate the actual width in micrometers, showing the conversion, and say why reporting the answer to five decimal places would be misleading.",
+     "markScheme": [
+      "Uses actual size = drawing size / magnification",
+      "Calculates 27 / 150 = 0.18 mm",
+      "Converts correctly to 180 micrometers",
+      "Explains the measurement is only as precise as the ruler, so extra decimals claim false precision"
+     ],
+     "modelAnswer": "Actual size equals drawing size divided by magnification, so 27 mm divided by 150 is 0.18 mm. Multiplying by 1000 gives 180 micrometers. The drawing was measured with a millimeter ruler, so the answer can only be as precise as that tool, and five decimal places would claim precision the measurement does not have.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Actual size is the drawing size divided by the magnification. 27 ÷ 150 = 0.18 mm. There are 1000 µm in a mm, so it is 180 µm. Giving five decimals would be misleading because I measured with a ruler marked in millimeters, so I can't know it that exactly.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Actual size is the drawing size divided by the magnification."
+        },
+        {
+         "point": 1,
+         "quote": "27 ÷ 150 = 0.18 mm."
+        },
+        {
+         "point": 2,
+         "quote": "There are 1000 µm in a mm, so it is 180 µm."
+        },
+        {
+         "point": 3,
+         "quote": "Giving five decimals would be misleading because I measured with a ruler marked in millimeters, so I can't know it that exactly."
+        }
+       ],
+       "feedback": "Full marks. Linking the number of digits to the instrument is exactly the point."
+      },
+      {
+       "tier": "full",
+       "text": "Actual = drawing / magnification, so 27 mm / 150 = 0.18 mm, which is 180 micrometers. The ruler only reads to about half a millimeter, so extra decimal places would suggest a precision we didn't measure.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Actual = drawing / magnification"
+        },
+        {
+         "point": 1,
+         "quote": "so 27 mm / 150 = 0.18 mm"
+        },
+        {
+         "point": 2,
+         "quote": "which is 180 micrometers"
+        },
+        {
+         "point": 3,
+         "quote": "The ruler only reads to about half a millimeter, so extra decimal places would suggest a precision we didn't measure."
+        }
+       ],
+       "feedback": "All four marks, and a precise statement of why the digits matter."
+      },
+      {
+       "tier": "partial",
+       "text": "You divide the drawing size by the magnification. 27 / 150 = 0.18 mm, so the cell is 0.18 micrometers.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "You divide the drawing size by the magnification."
+        },
+        {
+         "point": 1,
+         "quote": "27 / 150 = 0.18 mm"
+        }
+       ],
+       "feedback": "The division is right but 0.18 is in millimeters. Multiply by 1000 to get micrometers. Then address the decimal places."
+      },
+      {
+       "tier": "partial",
+       "text": "The answer is 180 µm. More decimals would not be right because the ruler is not that exact.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The answer is 180 µm."
+        },
+        {
+         "point": 3,
+         "quote": "More decimals would not be right because the ruler is not that exact."
+        }
+       ],
+       "feedback": "Good conclusions. Show the formula and the working that gives 0.18 mm, because the method earns marks too.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "27 × 150 = 4050 so the cell is 4050 micrometers wide.",
+       "meets": [],
+       "feedback": "Multiplying makes the cell look larger than the drawing. The drawing is magnified, so the real cell is smaller. Divide instead."
+      },
+      {
+       "tier": "weak",
+       "text": "Drawing size divided by magnification. Then I added the numbers, 27 + 150 = 177, so 177 µm.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Drawing size divided by magnification."
+        }
+       ],
+       "feedback": "You remembered the rule but then used addition. Divide 27 by 150 to get 0.18 mm, then convert to micrometers."
+      }
+     ]
+    },
+    {
+     "prompt": "A student's group tests a cleaning product on bean seedlings. They spray three seedlings with the product, record that two wilt, and conclude it kills plants. Evaluate the strength of the evidence and describe two changes that would improve the investigation.",
+     "markScheme": [
+      "States that the sample size is too small to be reliable",
+      "States that there is no control group for comparison",
+      "Suggests adding a control group sprayed with water",
+      "Suggests more replicates and a measured dependent variable such as height or mass"
+     ],
+     "modelAnswer": "The evidence is weak. Three seedlings is too small a sample, and there is no control group, so we cannot tell whether spraying with any liquid would cause wilting. The group should spray a control group with water and use more seedlings, measuring a variable such as leaf mass or height rather than only noting that plants wilt.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Three seedlings is too few to trust. There is no control group, so we don't know if water would cause the same wilting. They should add a group sprayed with only water. They should also use more plants and measure something like height instead of just saying wilt.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Three seedlings is too few to trust."
+        },
+        {
+         "point": 1,
+         "quote": "There is no control group, so we don't know if water would cause the same wilting."
+        },
+        {
+         "point": 2,
+         "quote": "They should add a group sprayed with only water."
+        },
+        {
+         "point": 3,
+         "quote": "They should also use more plants and measure something like height instead of just saying wilt."
+        }
+       ],
+       "feedback": "Full marks. A precise evaluation with two concrete improvements."
+      },
+      {
+       "tier": "full",
+       "text": "The sample is tiny, only three plants, and two out of three could be luck. Without a control it isn't a fair comparison. A control group sprayed with water would show what spraying alone does. They need more replicates and a measurement, like mass of leaves, to compare.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The sample is tiny, only three plants, and two out of three could be luck."
+        },
+        {
+         "point": 1,
+         "quote": "Without a control it isn't a fair comparison."
+        },
+        {
+         "point": 2,
+         "quote": "A control group sprayed with water would show what spraying alone does."
+        },
+        {
+         "point": 3,
+         "quote": "They need more replicates and a measurement, like mass of leaves, to compare."
+        }
+       ],
+       "feedback": "All four marks. Noting that two of three could be chance is a sharp observation."
+      },
+      {
+       "tier": "partial",
+       "text": "Three plants is not enough. They should measure how tall the plants get.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Three plants is not enough."
+        },
+        {
+         "point": 3,
+         "quote": "They should measure how tall the plants get."
+        }
+       ],
+       "feedback": "Both are good. Add the missing control group and say what it would be sprayed with."
+      },
+      {
+       "tier": "partial",
+       "text": "There is no control group. They should spray water on some. The product probably does kill plants.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "There is no control group."
+        },
+        {
+         "point": 2,
+         "quote": "They should spray water on some."
+        }
+       ],
+       "feedback": "The control is the key point. Be careful: you cannot say the product kills plants, because the evidence is too weak to say that.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The evidence is good because the plants wilted and that proves it.",
+       "meets": [],
+       "feedback": "Two of three wilting does not prove anything. Without a control or more plants, you cannot rule out chance or the effect of spraying."
+      },
+      {
+       "tier": "weak",
+       "text": "They should use water for comparison. Also the bean plants might not like the soil.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "They should use water for comparison."
+        }
+       ],
+       "feedback": "The water group is a good fix. Say it is a control and why it is needed, and add replicates and a measured variable."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Calibrating the microscope and measuring a cell",
+    "instructions": "Using a clear millimeter ruler under the scope at 40x, find the diameter of the field of view. Use that to estimate the field at 100x and 400x. Then measure the length of five onion epidermal cells at 100x, calculate the mean and its range, and report the result with the correct units and uncertainty.",
+    "steps": [
+     {
+      "text": "Place the clear ruler on the stage and focus at 40x to read the field of view in millimeters."
+     },
+     {
+      "text": "Calculate the field at 100x and 400x by scaling from 40x, since field size falls in proportion to magnification."
+     },
+     {
+      "text": "Swap in the onion slide and focus at 100x using the fine focus knob.",
+      "note": "Always begin on the lowest power to avoid damaging the slide."
+     },
+     {
+      "text": "Estimate the length of five cells as a fraction of the field of view and convert to micrometers."
+     },
+     {
+      "text": "Calculate the mean length and the range of your five measurements."
+     },
+     {
+      "text": "Write a short claim, evidence and reasoning statement about the typical onion cell length, noting one source of uncertainty."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Calibration: correct field of view at three magnifications",
+      "maxPoints": 4
+     },
+     {
+      "description": "Measurement: five cells, mean and range with units",
+      "maxPoints": 4
+     },
+     {
+      "description": "Evaluation: CER statement with a named source of uncertainty",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "The field at 40x was 4.5 mm, so it scaled to 1.8 mm at 100x and 0.45 mm at 400x. At 100x my five cells were 540, 600, 570, 630 and 585 micrometers long. The mean is 585 micrometers and the range is 90 micrometers. Claim: a typical onion cell is about 585 micrometers long. The cells were not in a perfect line with the diameter of the field, so each estimate has about plus or minus 30 micrometers of uncertainty.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report. Calibration, mean and range are all correct, and the uncertainty is named and sized."
+     },
+     {
+      "tier": "full",
+      "text": "We calibrated with the ruler and got a 4.4 mm field at 40x, so 1.76 mm at 100x. Our five cells took up between 0.28 and 0.36 of the field, which gave lengths of 493, 528, 580, 616 and 634 micrometers. The mean is 570 micrometers and the range is 141. The claim is that onion cells average 570 micrometers. The evidence is the five measurements. Estimating a fraction by eye is the biggest uncertainty, so more cells would help.",
+      "scores": [
+       4,
+       4,
+       3
+      ],
+      "feedback": "Very good. The reasoning could say why more cells would improve the mean, but the uncertainty is well chosen."
+     },
+     {
+      "tier": "partial",
+      "text": "The field at 40x was 4.5 mm and at 100x it was 1.8 mm. I measured five onion cells, and the lengths were around 600 micrometers. The mean was about 600. I think this is the size of an onion cell, though I did not write down the units for each one.",
+      "scores": [
+       3,
+       2,
+       1
+      ],
+      "feedback": "Calibration is right. Record each of the five lengths, give the range and name one source of uncertainty in the conclusion."
+     },
+     {
+      "tier": "partial",
+      "text": "We looked at the onion cells and they were about 0.6 mm long. We took five measurements and the mean was 0.6. I did not do the field of view at 400x because the slide was hard to focus at the higher power.",
+      "scores": [
+       1,
+       3,
+       2
+      ],
+      "feedback": "Your measurements are sensible. You need the calibration at all three magnifications. Say how you got the field size at 100x, which is the basis of the measurements."
+     },
+     {
+      "tier": "weak",
+      "text": "We used the microscope and looked at the onion. The cells were small and rectangle shaped. They were like little bricks in a wall. We drew them in our notebook and labeled them, and the cell walls were easy to see once the slide was in focus.",
+      "scores": [
+       0,
+       1,
+       0
+      ],
+      "feedback": "A good observation, but this task needs numbers. Calibrate the field, measure five cells in micrometers and calculate the mean."
+     },
+     {
+      "tier": "weak",
+      "text": "The field of view is 100 because the lens is 100x. The cells were 10 big. I think onion cells are about 10 but I am not sure what the unit is, it might be millimeters or something, and I did not use the ruler on the stage.",
+      "scores": [
+       0,
+       1,
+       1
+      ],
+      "feedback": "The field of view is a length, not the magnification number. Use the ruler to measure it in millimeters and then give every length a unit."
+     }
+    ]
+   }
+  },
+  "2": {
+   "topic": "Organ systems in coordination, and the path from gene to protein",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. model how cells, tissues, organs and organ systems coordinate to meet the body's needs;\n2. explain how the DNA sequence determines protein structure through transcription and translation.\n\n## Materials\n\nCodon wheel handout, whiteboards, short DNA sequences on cards, the worksheet.\n\n## Starter (6 minutes)\n\nPose: \"A marathon runner's body at mile 20 is under pressure. Name every system under demand and what each supplies or removes.\" Build a web on the board linking systems.\n\n## Main activity\n\n1. Mini-lecture and discussion on how systems depend on each other, with the idea that disease in one system affects others (for example, kidney disease and blood pressure).\n2. Walk through transcription and translation with an example gene: DNA template to mRNA to tRNA anticodons to amino acid chain. Students transcribe and translate three sequences with the codon wheel.\n3. Introduce point mutations: silent, missense and nonsense. Students predict the effect of each on the sequence.\n\n## Checking for understanding\n\nWhiteboards: given a DNA strand, write the mRNA and the first three amino acids. Look for confusing T with U.\n\n## Worksheet\n\nTranscription, translation and mutation questions.",
+   "reading": {
+    "title": "From gene to protein: the flow of information",
+    "content": "No organ works alone. A marathon runner at mile twenty is a good example of how systems depend on each other. The muscular system demands energy. The respiratory system raises its breathing rate to bring in oxygen, the circulatory system speeds up the heart to deliver it, and the digestive and endocrine systems supply and regulate glucose. The nervous system monitors and adjusts it all. The excretory system removes waste, and the skin cools the body. A problem in one place spreads to others. If the kidneys fail to remove fluid, blood pressure rises, and the heart works harder.\n\nEach of these systems is built from cells whose structure and function depend on proteins, and the information for making a protein is stored in a gene. The flow of information has two main steps. In **transcription**, which takes place in the nucleus, an enzyme called RNA polymerase reads one strand of DNA, the template strand, and builds a matching strand of messenger RNA (mRNA). RNA uses the base uracil (U) in place of thymine (T). So a DNA template reading TAC GGA becomes the mRNA AUG CCU.\n\nIn **translation**, the mRNA leaves the nucleus and reaches a ribosome. The ribosome reads the mRNA in groups of three bases called codons. Transfer RNA molecules (tRNA) carry specific amino acids and have an anticodon that pairs with the codon. AUG codes for methionine and also signals the start. The ribosome links one amino acid to the next, forming a polypeptide, until it meets a stop codon such as UAA. The finished chain folds, and its final three-dimensional shape determines its job.\n\nMutations are changes in the DNA sequence. A **silent** mutation changes a codon to another that codes for the same amino acid, so the protein is unaffected. A **missense** mutation changes one amino acid, which may or may not change the function. In sickle cell disease, one change from GAG to GTG in the DNA replaces glutamic acid with valine in hemoglobin, and that is enough to make hemoglobin stick together in low oxygen. A **nonsense** mutation changes a codon to a stop codon, cutting the protein short, which usually destroys its function.\n\nBecause a protein's shape depends on its amino acids, a single changed base can reach all the way up through the cell, tissue, organ and system to affect the whole organism."
+   },
+   "cards": [
+    {
+     "front": "Transcription",
+     "back": "Copying a gene's DNA template into messenger RNA in the nucleus."
+    },
+    {
+     "front": "Translation",
+     "back": "Reading mRNA at a ribosome to build a chain of amino acids."
+    },
+    {
+     "front": "mRNA",
+     "back": "Messenger RNA, the copy of a gene that carries the code to the ribosome."
+    },
+    {
+     "front": "tRNA",
+     "back": "Transfer RNA, which brings the amino acid that matches each codon."
+    },
+    {
+     "front": "Anticodon",
+     "back": "The three bases on tRNA that pair with a codon on mRNA."
+    },
+    {
+     "front": "Silent mutation",
+     "back": "A base change that does not change the amino acid."
+    },
+    {
+     "front": "Missense mutation",
+     "back": "A base change that swaps one amino acid for another."
+    },
+    {
+     "front": "Nonsense mutation",
+     "back": "A base change that creates a stop codon and shortens the protein."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A DNA template strand reads TAC GGA. What is the mRNA?",
+     "options": [
+      "ATG CCT",
+      "AUG CCU",
+      "UAC GGA",
+      "AUG CCA"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Where does translation take place?",
+     "options": [
+      "In the nucleus",
+      "At a ribosome",
+      "In the Golgi apparatus",
+      "In the cell membrane"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A mutation changes the codon GAA (glutamic acid) to GAG (also glutamic acid). This is a:",
+     "options": [
+      "Silent mutation",
+      "Missense mutation",
+      "Nonsense mutation",
+      "Frameshift"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A mutation changes UAC (tyrosine) to UAA (stop). What is the likely effect?",
+     "options": [
+      "One amino acid is swapped",
+      "No effect",
+      "The protein is cut short",
+      "The protein is made faster"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A person with failing kidneys has high blood pressure. Which explanation best shows system coordination?",
+     "options": [
+      "The kidneys control blood volume, so retained fluid raises pressure in the circulatory system",
+      "The kidneys pump blood to the heart",
+      "The kidneys make red blood cells only",
+      "The kidneys and heart are the same organ"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A DNA template strand has the sequence TAC CGA TTT. Write the mRNA and use the codon chart (AUG = Met, GCU = Ala, AAA = Lys) to give the amino acid sequence, and name the process for each step.",
+     "markScheme": [
+      "Writes the mRNA as AUG GCU AAA",
+      "Names the first step as transcription",
+      "Gives the amino acid sequence Met-Ala-Lys",
+      "Names the second step as translation and says it takes place at the ribosome"
+     ],
+     "modelAnswer": "Transcription of TAC CGA TTT gives the mRNA AUG GCU AAA. Translation at the ribosome reads this as Met, Ala, Lys.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The mRNA is AUG GCU AAA because A pairs with U and T pairs with A. Making it is transcription. The amino acids are Met, Ala, Lys. That step is translation, which happens at the ribosome.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The mRNA is AUG GCU AAA"
+        },
+        {
+         "point": 1,
+         "quote": "Making it is transcription."
+        },
+        {
+         "point": 2,
+         "quote": "The amino acids are Met, Ala, Lys."
+        },
+        {
+         "point": 3,
+         "quote": "That step is translation, which happens at the ribosome."
+        }
+       ],
+       "feedback": "Full marks. You pointed out the base pairing rule, which is where most mistakes happen."
+      },
+      {
+       "tier": "full",
+       "text": "Transcription copies the template into mRNA: AUG GCU AAA. Translation at the ribosome then reads each codon, giving methionine, alanine, lysine.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Transcription"
+        },
+        {
+         "point": 0,
+         "quote": "mRNA: AUG GCU AAA"
+        },
+        {
+         "point": 3,
+         "quote": "Translation at the ribosome"
+        },
+        {
+         "point": 2,
+         "quote": "methionine, alanine, lysine"
+        }
+       ],
+       "feedback": "All four marks, with the two processes and their locations in the right order."
+      },
+      {
+       "tier": "partial",
+       "text": "Transcription makes the mRNA. The mRNA is ATG GCT AAA. The amino acids are Met, Ala, Lys.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Transcription makes the mRNA"
+        }
+       ],
+       "feedback": "Your mRNA still has T in it. RNA uses U instead of T, so it is AUG GCU AAA. The rest is good, but name translation too."
+      },
+      {
+       "tier": "partial",
+       "text": "AUG GCU AAA and then translation at the ribosome reads it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "AUG GCU AAA"
+        },
+        {
+         "point": 3,
+         "quote": "translation at the ribosome"
+        }
+       ],
+       "feedback": "The mRNA and the process are right. Name the first step (transcription) and write out the amino acid chain.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It is the same: TAC CGA TTT. The amino acids are TAC, CGA, TTT.",
+       "meets": [],
+       "feedback": "The mRNA is a different molecule with complementary bases, and the amino acids are named from the codon chart. Start by pairing each base."
+      },
+      {
+       "tier": "weak",
+       "text": "Met, Ala, Lys is the amino acid chain. It is made in the nucleus by DNA.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Met, Ala, Lys"
+        }
+       ],
+       "feedback": "The amino acids are right, but the chain is made at ribosomes by translation, not in the nucleus. First show the mRNA you got by transcription."
+      }
+     ]
+    },
+    {
+     "prompt": "Compare silent, missense and nonsense mutations. For each, say what happens to the amino acid sequence and predict how likely it is to affect the protein's function.",
+     "markScheme": [
+      "Says a silent mutation does not change the amino acid and is unlikely to affect function",
+      "Says a missense mutation swaps one amino acid and may or may not affect function",
+      "Says a nonsense mutation creates a stop codon and shortens the protein",
+      "Says a nonsense mutation usually destroys function, and gives a link such as the folded shape depending on the amino acids"
+     ],
+     "modelAnswer": "A silent mutation changes the codon but not the amino acid, so the protein is usually unaffected. A missense mutation swaps one amino acid, which may change the shape and function or may have little effect. A nonsense mutation creates a stop codon, so the protein is cut short and its folded shape and function are usually lost.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A silent mutation changes the codon to one that still codes for the same amino acid, so it usually has no effect. A missense mutation swaps one amino acid for another, and whether it matters depends on where it is. A nonsense mutation turns a codon into a stop codon so the chain is shorter. A shortened chain can't fold into the right shape so it usually doesn't work.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A silent mutation changes the codon to one that still codes for the same amino acid, so it usually has no effect."
+        },
+        {
+         "point": 1,
+         "quote": "A missense mutation swaps one amino acid for another, and whether it matters depends on where it is."
+        },
+        {
+         "point": 2,
+         "quote": "A nonsense mutation turns a codon into a stop codon so the chain is shorter."
+        },
+        {
+         "point": 3,
+         "quote": "A shortened chain can't fold into the right shape so it usually doesn't work."
+        }
+       ],
+       "feedback": "Full marks. You tied each type to what happens to the chain and the function."
+      },
+      {
+       "tier": "full",
+       "text": "Silent: same amino acid, so function is unchanged. Missense: a different amino acid, which can change the shape (like sickle cell) or be harmless. Nonsense: a stop codon appears early so translation ends too soon. The short protein is usually useless because its shape depends on the full sequence.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Silent: same amino acid, so function is unchanged."
+        },
+        {
+         "point": 1,
+         "quote": "Missense: a different amino acid, which can change the shape (like sickle cell) or be harmless."
+        },
+        {
+         "point": 2,
+         "quote": "Nonsense: a stop codon appears early so translation ends too soon."
+        },
+        {
+         "point": 3,
+         "quote": "The short protein is usually useless because its shape depends on the full sequence."
+        }
+       ],
+       "feedback": "All four marks. The sickle cell reference fits the missense idea."
+      },
+      {
+       "tier": "partial",
+       "text": "Silent mutations do not change the amino acid. Missense mutations change one amino acid. Nonsense mutations change a lot of amino acids.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Silent mutations do not change the amino acid."
+        },
+        {
+         "point": 1,
+         "quote": "Missense mutations change one amino acid."
+        }
+       ],
+       "feedback": "A nonsense mutation does not change many amino acids, it adds a stop codon. Say what that does to the length of the protein."
+      },
+      {
+       "tier": "partial",
+       "text": "Nonsense creates a stop codon and the protein usually doesn't work. Silent is the same as missense.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Nonsense creates a stop codon"
+        },
+        {
+         "point": 3,
+         "quote": "the protein usually doesn't work"
+        }
+       ],
+       "feedback": "Your nonsense answer is good. Silent and missense are different: only a missense mutation changes the amino acid.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "They all make the protein stop working because any mutation is bad.",
+       "meets": [],
+       "feedback": "Many mutations have no effect. Compare each type on whether the amino acid sequence changes."
+      },
+      {
+       "tier": "weak",
+       "text": "A silent mutation doesn't change the protein. Missense is when the gene goes missing and nonsense is when it makes no sense.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A silent mutation doesn't change the protein."
+        }
+       ],
+       "feedback": "Silent is right. Missense means a different amino acid is used. Nonsense means a stop codon appears. Review the reading on mutations."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Photosynthesis in two stages, and where the mass of a plant comes from",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use evidence to show how atoms from sugars are rebuilt into amino acids and other large molecules;\n2. model the light-dependent reactions and the Calvin cycle and how they transform light energy into chemical energy.\n\n## Materials\n\nLeaf chromatography strips, a diagram of the chloroplast, colored paper atoms, the quiz.\n\n## Starter (6 minutes)\n\nPose the van Helmont willow data: a 2 kg tree grows to 76 kg while the soil loses 0.06 kg. Ask students to propose where the mass came from and what evidence would test each idea.\n\n## Main activity\n\n1. Draw the chloroplast and mark the thylakoid and stroma. Light-dependent reactions occur in the thylakoid membranes: light excites chlorophyll, water is split to release oxygen, and ATP and NADPH are made.\n2. The Calvin cycle in the stroma uses ATP and NADPH to fix carbon dioxide into sugar. Use colored paper atoms to track one carbon through three turns of the cycle.\n3. Compare absorption spectra with chromatography and ask why plants look green.\n\n## Checking for understanding\n\nAsk: \"Which atoms in glucose come from water? Which from carbon dioxide?\" Check the answers on whiteboards.\n\n## Quiz\n\nFive questions from the reading and the lesson.",
+   "reading": {
+    "title": "Capturing light: two stages, one purpose",
+    "content": "Photosynthesis is often written as one equation, but it is really two linked sets of reactions that take place in the chloroplast. The first set, the **light-dependent reactions**, happens in the thylakoid membranes, which are stacks of flattened sacs. Chlorophyll absorbs mostly red and blue light and reflects green, which is why leaves look green. The absorbed energy excites electrons, which are passed along a chain of proteins in the membrane. To replace the electrons, water molecules are split, releasing oxygen gas as a by-product and hydrogen ions. The energy passed along the chain is used to make two energy-carrying molecules, **ATP** and **NADPH**.\n\nThe second set, the **Calvin cycle**, takes place in the fluid around the thylakoids, called the stroma. It does not use light directly. Instead, it uses the ATP and NADPH from the first stage to build sugar. An enzyme called rubisco attaches carbon dioxide to a five-carbon molecule. After a series of steps, carbon is released as a three-carbon sugar, and two of those can join to make glucose. In this stage, the carbon in the sugar comes from carbon dioxide, the hydrogen comes from NADPH (and so from water), and the energy comes from ATP and NADPH, which came from light.\n\nTrack the atoms and you can answer the old question about where a tree comes from. In the 1600s, Jan van Helmont grew a willow in a measured amount of soil. After five years the tree had gained about 74 kg and the soil had lost about 60 g. He concluded, correctly in part, that the tree gained its mass from water. We now know that most of the dry mass came from carbon dioxide, which he did not measure.\n\nThe sugar made in the Calvin cycle is a building block. With extra energy and nitrogen from nitrate taken up by the roots, the plant makes amino acids, and from those, proteins. Sugar is also built into starch for storage, cellulose for cell walls, and lipids. A corn field in central Ohio takes carbon dioxide from the air, but it still needs nitrogen from the soil, which is why farmers fertilize."
+   },
+   "cards": [
+    {
+     "front": "Light-dependent reactions",
+     "back": "Reactions in the thylakoid membranes that capture light and make ATP and NADPH."
+    },
+    {
+     "front": "Calvin cycle",
+     "back": "Reactions in the stroma that use ATP and NADPH to build sugar from carbon dioxide."
+    },
+    {
+     "front": "Thylakoid",
+     "back": "A flattened membrane sac in the chloroplast where light is captured."
+    },
+    {
+     "front": "Stroma",
+     "back": "The fluid of the chloroplast where the Calvin cycle takes place."
+    },
+    {
+     "front": "NADPH",
+     "back": "An electron carrier made in the light reactions and used to build sugar."
+    },
+    {
+     "front": "Rubisco",
+     "back": "The enzyme that attaches carbon dioxide to a five-carbon molecule in the Calvin cycle."
+    },
+    {
+     "front": "Carbon fixation",
+     "back": "Joining carbon dioxide to an organic molecule."
+    },
+    {
+     "front": "By-product",
+     "back": "A substance made along with the main product, such as oxygen in photosynthesis."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Where does the oxygen released in photosynthesis come from?",
+     "options": [
+      "Carbon dioxide",
+      "Water",
+      "Glucose",
+      "Chlorophyll"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Where do the light-dependent reactions occur?",
+     "options": [
+      "Stroma",
+      "Cytoplasm",
+      "Thylakoid membranes",
+      "Nucleus"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What does the Calvin cycle use from the light reactions?",
+     "options": [
+      "Oxygen and water",
+      "ATP and NADPH",
+      "Glucose and oxygen",
+      "Chlorophyll and light"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A plant is kept in complete darkness but given carbon dioxide. Why does sugar production quickly stop?",
+     "options": [
+      "Carbon dioxide cannot enter in the dark",
+      "No ATP or NADPH is made, so the Calvin cycle cannot continue",
+      "Rubisco needs light to be made",
+      "Water is used up"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Leaves look green because chlorophyll:",
+     "options": [
+      "Absorbs green light",
+      "Reflects green light and absorbs mostly red and blue",
+      "Makes green pigments from glucose",
+      "Absorbs all colors equally"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Compare what happens in the light-dependent reactions and in the Calvin cycle. State where each occurs, what goes in, and what comes out.",
+     "markScheme": [
+      "States the light reactions occur in the thylakoid membranes and the Calvin cycle in the stroma",
+      "States that the light reactions take in light and water",
+      "States that the light reactions produce ATP, NADPH and oxygen",
+      "States that the Calvin cycle takes in carbon dioxide, ATP and NADPH and produces sugar"
+     ],
+     "modelAnswer": "The light reactions occur in the thylakoid membranes; the Calvin cycle occurs in the stroma. The light reactions take in light and water and make ATP, NADPH and oxygen. The Calvin cycle uses carbon dioxide, ATP and NADPH to make sugar.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The light reactions are in the thylakoids and the Calvin cycle is in the stroma. The light reactions use light and water and make ATP, NADPH and oxygen. The Calvin cycle uses carbon dioxide with the ATP and NADPH to make sugar.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The light reactions are in the thylakoids and the Calvin cycle is in the stroma."
+        },
+        {
+         "point": 1,
+         "quote": "The light reactions use light and water"
+        },
+        {
+         "point": 2,
+         "quote": "make ATP, NADPH and oxygen"
+        },
+        {
+         "point": 3,
+         "quote": "The Calvin cycle uses carbon dioxide with the ATP and NADPH to make sugar."
+        }
+       ],
+       "feedback": "Full marks. The way the output of the first stage becomes the input of the second is clear."
+      },
+      {
+       "tier": "full",
+       "text": "Stage one happens in the thylakoid membranes, stage two in the stroma. Stage one takes in light energy and splits water. It produces oxygen, ATP and NADPH. In stage two, carbon dioxide is fixed using that ATP and NADPH and the result is a three-carbon sugar.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Stage one happens in the thylakoid membranes, stage two in the stroma."
+        },
+        {
+         "point": 1,
+         "quote": "Stage one takes in light energy and splits water."
+        },
+        {
+         "point": 2,
+         "quote": "It produces oxygen, ATP and NADPH."
+        },
+        {
+         "point": 3,
+         "quote": "In stage two, carbon dioxide is fixed using that ATP and NADPH and the result is a three-carbon sugar."
+        }
+       ],
+       "feedback": "All four marks, and you gave the three-carbon sugar detail."
+      },
+      {
+       "tier": "partial",
+       "text": "Light reactions in the thylakoid, Calvin cycle in the stroma. The Calvin cycle makes sugar. The light reactions make glucose from carbon dioxide.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Light reactions in the thylakoid, Calvin cycle in the stroma."
+        },
+        {
+         "point": 3,
+         "quote": "The Calvin cycle makes sugar."
+        }
+       ],
+       "feedback": "The light reactions do not use carbon dioxide. They use light and water, and make ATP, NADPH and oxygen."
+      },
+      {
+       "tier": "partial",
+       "text": "The light reactions need light and water and give out oxygen, ATP and NADPH. The Calvin cycle is in the thylakoid too.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The light reactions need light and water"
+        },
+        {
+         "point": 2,
+         "quote": "give out oxygen, ATP and NADPH"
+        }
+       ],
+       "feedback": "The light reactions are well explained. The Calvin cycle is in the stroma, and you should say what goes in and comes out.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Both stages happen anywhere in the cell and both need light to make glucose.",
+       "meets": [],
+       "feedback": "The stages happen in different parts of the chloroplast, and only the first needs light directly. Draw a chloroplast and place each stage."
+      },
+      {
+       "tier": "weak",
+       "text": "The light reactions make oxygen. The Calvin cycle uses oxygen to make sugar.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The light reactions make oxygen."
+        }
+       ],
+       "feedback": "Oxygen is released in the first stage. The Calvin cycle uses carbon dioxide, not oxygen, and it makes sugar."
+      }
+     ]
+    },
+    {
+     "prompt": "Van Helmont's willow gained about 74 kg while the soil lost about 0.06 kg. He concluded the tree's mass came from water. Use what you know about photosynthesis to evaluate his conclusion.",
+     "markScheme": [
+      "Uses the data to support that the soil was not the main source of mass",
+      "States that water is part of the answer, as it supplies hydrogen and the electrons",
+      "States that most of the dry mass is carbon, which came from carbon dioxide in the air",
+      "Explains that carbon dioxide is fixed in the Calvin cycle into sugar and other molecules"
+     ],
+     "modelAnswer": "The data supports van Helmont's conclusion that the soil was not the main source, since it lost only 0.06 kg. But water is only part of the answer. Most of the dry mass of a tree is carbon, and that carbon came from carbon dioxide in the air, which the Calvin cycle fixes into sugar that is built into cellulose and other molecules.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The soil lost only 0.06 kg so he was right that it wasn't the main source. Water does contribute, since its hydrogen ends up in sugar. But most of the dry mass of wood is carbon, which comes from carbon dioxide in the air. The Calvin cycle fixes that CO2 into sugar which gets built into cellulose.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The soil lost only 0.06 kg so he was right that it wasn't the main source."
+        },
+        {
+         "point": 1,
+         "quote": "Water does contribute, since its hydrogen ends up in sugar."
+        },
+        {
+         "point": 2,
+         "quote": "But most of the dry mass of wood is carbon, which comes from carbon dioxide in the air."
+        },
+        {
+         "point": 3,
+         "quote": "The Calvin cycle fixes that CO2 into sugar which gets built into cellulose."
+        }
+       ],
+       "feedback": "Full marks. You judged his conclusion as partly right and said what is missing."
+      },
+      {
+       "tier": "full",
+       "text": "His data show the soil didn't supply the mass. Water supplies some hydrogen and oxygen. However, he didn't know that most of a plant's dry weight is carbon from CO2. Plants fix CO2 in the Calvin cycle to make sugar and build the wood from it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "His data show the soil didn't supply the mass."
+        },
+        {
+         "point": 1,
+         "quote": "Water supplies some hydrogen and oxygen."
+        },
+        {
+         "point": 2,
+         "quote": "However, he didn't know that most of a plant's dry weight is carbon from CO2."
+        },
+        {
+         "point": 3,
+         "quote": "Plants fix CO2 in the Calvin cycle to make sugar and build the wood from it."
+        }
+       ],
+       "feedback": "All four marks. A balanced evaluation."
+      },
+      {
+       "tier": "partial",
+       "text": "The soil only lost 0.06 kg so the tree didn't get its mass from the soil. It got most of it from CO2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The soil only lost 0.06 kg so the tree didn't get its mass from the soil."
+        },
+        {
+         "point": 2,
+         "quote": "It got most of it from CO2."
+        }
+       ],
+       "feedback": "Good. Evaluate the water claim and say how the CO2 becomes tree mass in the Calvin cycle."
+      },
+      {
+       "tier": "partial",
+       "text": "Water is part of it and he was right. The Calvin cycle makes sugar.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Water is part of it"
+        },
+        {
+         "point": 3,
+         "quote": "The Calvin cycle makes sugar."
+        }
+       ],
+       "feedback": "He was only partly right. Say what the mass is mostly made of and where that carbon comes from.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "He was completely right. The tree is made of water because plants drink a lot.",
+       "meets": [],
+       "feedback": "Water is part of the answer, but a plant's dry mass is mostly carbon. Think about what wood is made of."
+      },
+      {
+       "tier": "weak",
+       "text": "The soil lost almost nothing. So the tree must have gotten the mass from the sun.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The soil lost almost nothing."
+        }
+       ],
+       "feedback": "Light supplies energy, not mass. The mass comes from atoms, mostly carbon from carbon dioxide."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Cellular respiration in stages, and energy accounting",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. model cellular respiration as a sequence of stages that breaks bonds in glucose and builds ATP;\n2. compare photosynthesis and respiration as a cycle of matter and a one-way flow of energy, with numbers.\n\n## Materials\n\nAtom model kits, a stage-by-stage poster, a data table of ATP yields, the problem set.\n\n## Starter (6 minutes)\n\nAsk: \"A runner burns about 100 Calories per mile. How is a cookie turned into movement?\" Collect steps and use the answers to organize the lesson.\n\n## Main activity\n\n1. Break glucose into its stages: glycolysis in the cytoplasm, the Krebs cycle in the mitochondrial matrix, and the electron transport chain on the inner membrane, where oxygen is the final electron acceptor and water is formed.\n2. Compare ATP yields: about 2 from glycolysis alone (fermentation) and about 30 or more with oxygen. Use this to explain why oxygen matters.\n3. Atom accounting: count C, H and O in the reactants and products of both processes and show that mass is conserved while energy is not recycled.\n\n## Checking for understanding\n\nAsk: \"Why does your breathing stay fast for a minute after you stop running?\" Look for oxygen debt and lactate.\n\n## Problem set\n\nAtom counting, ATP comparison, and a short energy-flow explanation.",
+   "reading": {
+    "title": "Respiration: taking apart glucose, step by step",
+    "content": "When you eat a cookie, its energy is not released all at once like a flame. Cells take glucose apart in small steps, and at each step they capture some of the energy in the form of **ATP**. This is **cellular respiration**, and it has three main stages.\n\nThe first, **glycolysis**, takes place in the cytoplasm and does not need oxygen. One glucose molecule with six carbons is split into two molecules of pyruvate with three carbons each. This yields a net gain of 2 ATP. If oxygen is not available, cells can continue with **fermentation**, which converts pyruvate to lactate in animal cells or to ethanol and carbon dioxide in yeast. Fermentation lets glycolysis continue, but it produces only the same 2 ATP per glucose, which is why intense exercise without enough oxygen cannot be sustained.\n\nWith oxygen present, pyruvate enters the mitochondrion. In the **Krebs cycle**, which occurs in the matrix, the carbon atoms are released as carbon dioxide, which you breathe out, and electron carriers are loaded with energy. In the third stage, the **electron transport chain**, which is on the inner membrane of the mitochondrion, the carriers pass their electrons along a series of proteins. The energy released builds up a gradient of hydrogen ions, and an enzyme called ATP synthase uses that gradient to make ATP. At the end of the chain oxygen accepts the electrons and combines with hydrogen to form water. That is why we need to breathe oxygen. Altogether, aerobic respiration yields about 30 to 32 ATP per glucose, many times more than fermentation.\n\nAtoms are conserved. The overall equation, C6H12O6 plus 6 O2 yielding 6 CO2 plus 6 H2O plus energy, has 6 C, 12 H and 18 O on each side. The carbon in your exhaled carbon dioxide was in glucose, and the glucose was built from carbon dioxide by a plant. Matter cycles. Energy does not: the energy captured as ATP is used for work and finally released as heat, which cannot be recycled by cells. About 60 percent of the energy in glucose is lost as heat even in the best case, which is why you feel warm when you exercise."
+   },
+   "cards": [
+    {
+     "front": "Glycolysis",
+     "back": "The first stage of respiration, splitting glucose into two pyruvate in the cytoplasm."
+    },
+    {
+     "front": "Krebs cycle",
+     "back": "The stage in the mitochondrial matrix that releases carbon dioxide and loads electron carriers."
+    },
+    {
+     "front": "Electron transport chain",
+     "back": "The final stage on the inner mitochondrial membrane, which makes most ATP."
+    },
+    {
+     "front": "ATP synthase",
+     "back": "The enzyme that makes ATP using a hydrogen ion gradient."
+    },
+    {
+     "front": "Pyruvate",
+     "back": "A three-carbon molecule made when glucose is split in glycolysis."
+    },
+    {
+     "front": "Fermentation",
+     "back": "Making ATP without oxygen, by glycolysis followed by making lactate or ethanol."
+    },
+    {
+     "front": "Aerobic",
+     "back": "Using oxygen."
+    },
+    {
+     "front": "Final electron acceptor",
+     "back": "Oxygen, which combines with hydrogen to form water at the end of the chain."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which stage of respiration does not need oxygen?",
+     "options": [
+      "Krebs cycle",
+      "Electron transport chain",
+      "Glycolysis",
+      "ATP synthase"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Approximately how much ATP is made per glucose in aerobic respiration?",
+     "options": [
+      "2",
+      "4",
+      "30 to 32",
+      "100"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Where does the electron transport chain occur?",
+     "options": [
+      "Cytoplasm",
+      "Mitochondrial matrix",
+      "Inner mitochondrial membrane",
+      "Nucleus"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "How many oxygen atoms are on the reactant side of C6H12O6 + 6 O2?",
+     "options": [
+      "6",
+      "12",
+      "18",
+      "24"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A sprinter's muscles run short of oxygen. What do the muscle cells do to keep making some ATP?",
+     "options": [
+      "Switch to photosynthesis",
+      "Carry on with glycolysis and make lactate by fermentation",
+      "Stop making ATP",
+      "Use the Calvin cycle"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain why a muscle cell with oxygen makes far more ATP from one glucose than a muscle cell without oxygen. Refer to the stages involved.",
+     "markScheme": [
+      "States that without oxygen only glycolysis (with fermentation) occurs",
+      "States that glycolysis yields only about 2 ATP per glucose",
+      "States that with oxygen the Krebs cycle and electron transport chain also occur",
+      "States that oxygen is the final electron acceptor and the chain makes about 30 or more ATP"
+     ],
+     "modelAnswer": "Without oxygen, the cell can only carry out glycolysis followed by fermentation, which gives a net of 2 ATP per glucose. With oxygen, pyruvate goes on to the Krebs cycle and the electron transport chain. Oxygen is the final electron acceptor that keeps the chain running, and the chain makes about 30 or more ATP per glucose.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Without oxygen the cell can only do glycolysis and then fermentation. That only gets 2 ATP per glucose. With oxygen, the pyruvate goes on into the Krebs cycle and the electron transport chain. Oxygen is the last electron acceptor, so the chain keeps going and it makes around 30 ATP.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Without oxygen the cell can only do glycolysis and then fermentation."
+        },
+        {
+         "point": 1,
+         "quote": "That only gets 2 ATP per glucose."
+        },
+        {
+         "point": 2,
+         "quote": "With oxygen, the pyruvate goes on into the Krebs cycle and the electron transport chain."
+        },
+        {
+         "point": 3,
+         "quote": "Oxygen is the last electron acceptor, so the chain keeps going and it makes around 30 ATP."
+        }
+       ],
+       "feedback": "Full marks. Linking oxygen to the continuing of the chain is the key idea."
+      },
+      {
+       "tier": "full",
+       "text": "Anaerobic cells stop after glycolysis and ferment pyruvate. Glycolysis nets only 2 ATP. Aerobic cells use the Krebs cycle and the electron transport chain as well. Oxygen accepts the electrons at the end of the chain, and the chain yields 30 to 32 ATP.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Anaerobic cells stop after glycolysis and ferment pyruvate."
+        },
+        {
+         "point": 1,
+         "quote": "Glycolysis nets only 2 ATP."
+        },
+        {
+         "point": 2,
+         "quote": "Aerobic cells use the Krebs cycle and the electron transport chain as well."
+        },
+        {
+         "point": 3,
+         "quote": "Oxygen accepts the electrons at the end of the chain, and the chain yields 30 to 32 ATP."
+        }
+       ],
+       "feedback": "All four marks, with accurate numbers."
+      },
+      {
+       "tier": "partial",
+       "text": "Glycolysis gives 2 ATP. With oxygen the Krebs cycle and electron transport also happen so you get more.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Glycolysis gives 2 ATP."
+        },
+        {
+         "point": 2,
+         "quote": "With oxygen the Krebs cycle and electron transport also happen"
+        }
+       ],
+       "feedback": "Good. Say what happens without oxygen (fermentation) and what oxygen does in the chain."
+      },
+      {
+       "tier": "partial",
+       "text": "Oxygen is the final electron acceptor so the chain makes lots of ATP. Without oxygen, nothing happens at all.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Oxygen is the final electron acceptor so the chain makes lots of ATP."
+        },
+        {
+         "point": 0,
+         "quote": "Without oxygen, nothing happens at all."
+        }
+       ],
+       "feedback": "Without oxygen, glycolysis and fermentation continue and give a small amount of ATP. Your oxygen point is right.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "With oxygen the cell makes more because oxygen is turned into ATP.",
+       "meets": [],
+       "feedback": "Oxygen is not converted into ATP. It accepts electrons at the end of the chain, which allows ATP synthase to keep running."
+      },
+      {
+       "tier": "weak",
+       "text": "Glycolysis gives 2 ATP. The rest of the energy is stored in the lactate forever.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Glycolysis gives 2 ATP."
+        }
+       ],
+       "feedback": "You have the 2 ATP. Energy is not stored forever in lactate; the aerobic stages get the extra ATP when oxygen is present."
+      }
+     ]
+    },
+    {
+     "prompt": "Show with an atom count that matter is conserved in respiration, and explain why energy, unlike carbon, does not cycle back to be reused by cells.",
+     "markScheme": [
+      "Counts 6 C, 12 H and 18 O on the reactant side",
+      "Counts 6 C, 12 H and 18 O on the product side and concludes atoms are conserved",
+      "States that energy is released as heat when ATP is used",
+      "States that heat cannot be recaptured by cells, so energy flows in one direction and needs a constant source"
+     ],
+     "modelAnswer": "The reactants C6H12O6 and 6 O2 contain 6 C, 12 H and 18 O. The products 6 CO2 and 6 H2O contain 6 C, 12 H and 18 O, so atoms are conserved. Energy used from ATP ends up as heat, which cells cannot recapture, so energy flows one way through an ecosystem and a constant supply of light is needed.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Reactants: glucose has 6 C, 12 H, 6 O and 6 O2 adds 12 O, so 6 C, 12 H, 18 O. Products: 6 CO2 has 6 C and 12 O, and 6 H2O has 12 H and 6 O, which is also 6 C, 12 H, 18 O, so matter is conserved. Energy ends up as heat when ATP is used. Cells can't turn that heat back into chemical energy so energy flows one way and needs sunlight all the time.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Reactants: glucose has 6 C, 12 H, 6 O and 6 O2 adds 12 O, so 6 C, 12 H, 18 O."
+        },
+        {
+         "point": 1,
+         "quote": "Products: 6 CO2 has 6 C and 12 O, and 6 H2O has 12 H and 6 O, which is also 6 C, 12 H, 18 O, so matter is conserved."
+        },
+        {
+         "point": 2,
+         "quote": "Energy ends up as heat when ATP is used."
+        },
+        {
+         "point": 3,
+         "quote": "Cells can't turn that heat back into chemical energy so energy flows one way and needs sunlight all the time."
+        }
+       ],
+       "feedback": "Full marks. The count is complete on both sides."
+      },
+      {
+       "tier": "full",
+       "text": "Left side: C6H12O6 plus 6 O2 gives 6 carbon, 12 hydrogen and 18 oxygen. Right side: 6 CO2 plus 6 H2O is also 6 C, 12 H, 18 O. Nothing is lost. The energy from ATP gets released as heat in the body. Heat can't be reused by organisms to make food so the ecosystem keeps needing new energy from the sun.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Left side: C6H12O6 plus 6 O2 gives 6 carbon, 12 hydrogen and 18 oxygen."
+        },
+        {
+         "point": 1,
+         "quote": "Right side: 6 CO2 plus 6 H2O is also 6 C, 12 H, 18 O. Nothing is lost."
+        },
+        {
+         "point": 2,
+         "quote": "The energy from ATP gets released as heat in the body."
+        },
+        {
+         "point": 3,
+         "quote": "Heat can't be reused by organisms to make food so the ecosystem keeps needing new energy from the sun."
+        }
+       ],
+       "feedback": "All four marks, and a precise contrast between matter and energy."
+      },
+      {
+       "tier": "partial",
+       "text": "The reactants have 6 C, 12 H and 18 O. The products have 6 C and 6 H2O so it is balanced. Energy cycles like carbon does.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The reactants have 6 C, 12 H and 18 O."
+        },
+        {
+         "point": 1,
+         "quote": "The products have 6 C and 6 H2O so it is balanced."
+        }
+       ],
+       "feedback": "Your product count needs all the atoms, including 12 H and 18 O. And energy does not cycle: it ends up as heat."
+      },
+      {
+       "tier": "partial",
+       "text": "Energy is lost as heat. It can't be reused so we need the sun.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Energy is lost as heat."
+        },
+        {
+         "point": 3,
+         "quote": "It can't be reused so we need the sun."
+        }
+       ],
+       "feedback": "Your explanation of energy is good. Add the atom counts for both sides to show matter is conserved.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "There are more atoms in the products because the glucose breaks into more pieces.",
+       "meets": [],
+       "feedback": "Breaking a molecule into more pieces does not add atoms. Count the carbon, hydrogen and oxygen on each side again."
+      },
+      {
+       "tier": "weak",
+       "text": "There are 6 C, 12 H and 18 O to start. Energy goes around in a circle like carbon because nature recycles everything.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There are 6 C, 12 H and 18 O to start."
+        }
+       ],
+       "feedback": "Your reactant count is right. But energy is lost as heat at each step, so it does not recycle."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "The cell cycle, its control and feedback in organisms",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. model mitosis as the mechanism for growth and the replacement of cells;\n2. describe the phases of the cell cycle and explain how checkpoints and signals regulate it;\n3. plan an investigation of a feedback mechanism that keeps an internal condition stable.\n\n## Materials\n\nOnion root tip slides, a data sheet of cell counts, graph paper, the worksheet.\n\n## Starter (6 minutes)\n\nShow a count of cells in each phase from 200 cells in an onion root tip: 164 in interphase, 20 in prophase, 6 in metaphase, 4 in anaphase and 6 in telophase. Ask: \"What does this tell us about how long each phase lasts?\"\n\n## Main activity\n\n1. Work out the proportion of time in each phase if the whole cycle takes 24 hours. Interphase is 164/200 x 24 h, about 19.7 hours.\n2. Introduce the control system: cyclins and kinases, the G1/S, G2/M and spindle checkpoints, and what happens when p53 detects DNA damage. Link to cancer as a loss of control.\n3. Plan an investigation of negative feedback: how does heart rate recover after exercise, and what would a good dataset include?\n\n## Checking for understanding\n\nAsk students to predict what happens to a cell with a faulty p53 gene.\n\n## Worksheet\n\nCalculations of phase length, a checkpoint explanation and an investigation plan.",
+   "reading": {
+    "title": "Dividing under control",
+    "content": "The cell cycle has two main parts. **Interphase** is the long stage in which the cell grows (G1), copies its DNA (S) and prepares to divide (G2). **Mitosis** is the short stage in which the copied chromosomes are separated, followed by **cytokinesis**, in which the cytoplasm divides. Each chromosome is copied into two identical **sister chromatids**, held together at the centromere. In prophase the chromosomes condense and the spindle forms. In metaphase, the chromosomes line up at the equator. In anaphase, the sister chromatids are pulled apart. In telophase, two nuclei re-form. Mitosis makes two daughter cells with the same DNA as the parent, which is why it supports growth and replacement of cells, such as the lining of your gut, which is replaced every few days.\n\nYou can estimate how long each phase lasts by counting. If you examine 200 cells from an onion root tip and find 164 in interphase, the fraction in interphase is 164/200 = 0.82. If a full cycle takes 24 hours, interphase lasts about 0.82 x 24, which is 19.7 hours. Mitosis is short, so few cells are caught in it at any moment.\n\nThe cycle is controlled at **checkpoints**. At the G1 checkpoint, the cell checks its size, nutrients and DNA. At the G2 checkpoint it checks that DNA was copied correctly. At the spindle checkpoint in metaphase it checks that all chromosomes are attached before anaphase. The signals are proteins such as **cyclins**, which rise and fall in each cycle, and enzymes called kinases that cyclins activate. When DNA is damaged, a protein called **p53** halts the cycle for repair or triggers cell death. If the p53 gene is damaged, cells with mutations may keep dividing, which is a step toward **cancer**, a disease of uncontrolled division.\n\nOrganisms also keep conditions stable by **feedback**. In **negative feedback**, the response reduces the original change. After exercise, carbon dioxide in the blood rises, receptors detect it, and the brain raises the heart and breathing rate. As the carbon dioxide falls, the signals ease. In **positive feedback**, such as the contractions of childbirth, the response strengthens the change until an endpoint is reached. To investigate feedback, record a variable over time, for example heart rate every 15 seconds for five minutes after exercise, with several people to allow a mean."
+   },
+   "cards": [
+    {
+     "front": "Interphase",
+     "back": "The growth and DNA-copying part of the cell cycle (G1, S and G2)."
+    },
+    {
+     "front": "Sister chromatids",
+     "back": "The two identical copies of a chromosome after DNA replication."
+    },
+    {
+     "front": "Cytokinesis",
+     "back": "Division of the cytoplasm to form two daughter cells."
+    },
+    {
+     "front": "Checkpoint",
+     "back": "A point at which the cell cycle can be paused if conditions are not right."
+    },
+    {
+     "front": "Cyclin",
+     "back": "A protein that rises and falls to drive the cell cycle forward."
+    },
+    {
+     "front": "p53",
+     "back": "A protein that halts the cycle when DNA is damaged."
+    },
+    {
+     "front": "Cancer",
+     "back": "A disease in which cells divide without the normal controls."
+    },
+    {
+     "front": "Positive feedback",
+     "back": "A response that strengthens the change that triggered it."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In a count of 200 root tip cells, 20 are in prophase. If the whole cycle takes 24 hours, about how long does prophase last?",
+     "options": [
+      "2.4 hours",
+      "0.24 hours",
+      "20 hours",
+      "4.8 hours"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "At which stage are sister chromatids pulled apart?",
+     "options": [
+      "Prophase",
+      "Metaphase",
+      "Anaphase",
+      "Telophase"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What does the p53 protein do when it detects DNA damage?",
+     "options": [
+      "Speeds up division",
+      "Halts the cycle for repair or triggers cell death",
+      "Copies the DNA again",
+      "Moves the chromosomes"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is an example of positive feedback?",
+     "options": [
+      "Sweating when too hot",
+      "Insulin lowering blood glucose",
+      "Contractions during childbirth strengthening each other",
+      "Breathing rate falling after exercise"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Why can a mutation in the p53 gene lead to cancer?",
+     "options": [
+      "Cells with damaged DNA may continue to divide without being halted",
+      "The cell stops making ATP",
+      "The cell cannot enter interphase",
+      "The nucleus disappears"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "In a count of 250 onion root tip cells, 205 are in interphase, 25 in prophase, 8 in metaphase, 7 in anaphase and 5 in telophase. If the cell cycle takes 20 hours, calculate how long the cells spend in interphase and in prophase, and say which phase of mitosis is shortest.",
+     "markScheme": [
+      "Calculates the fraction in interphase as 205/250 = 0.82",
+      "Calculates interphase length as 16.4 hours",
+      "Calculates prophase length as 25/250 x 20 = 2 hours",
+      "Identifies telophase as the shortest phase of mitosis, with 5 cells"
+     ],
+     "modelAnswer": "Interphase is 205 out of 250 cells, which is 0.82, so it lasts 0.82 x 20 = 16.4 hours. Prophase is 25/250 x 20 = 2 hours. Telophase has the fewest cells, 5, so it is the shortest phase of mitosis.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "205 out of 250 is 0.82 of the cells in interphase. 0.82 times 20 hours is 16.4 hours. Prophase is 25/250 = 0.1, and 0.1 × 20 = 2 hours. Telophase has the fewest cells, only 5, so it is the shortest.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "205 out of 250 is 0.82 of the cells in interphase."
+        },
+        {
+         "point": 1,
+         "quote": "0.82 times 20 hours is 16.4 hours."
+        },
+        {
+         "point": 2,
+         "quote": "Prophase is 25/250 = 0.1, and 0.1 × 20 = 2 hours."
+        },
+        {
+         "point": 3,
+         "quote": "Telophase has the fewest cells, only 5, so it is the shortest."
+        }
+       ],
+       "feedback": "Full marks. Counting is a good stand-in for timing because a random sample catches each phase in proportion to its length."
+      },
+      {
+       "tier": "full",
+       "text": "Interphase fraction: 205/250 = 0.82. Time: 0.82 × 20 = 16.4 h. Prophase: 25/250 × 20 = 2 h. The smallest number is in telophase (5), so telophase is the shortest.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Interphase fraction: 205/250 = 0.82."
+        },
+        {
+         "point": 1,
+         "quote": "Time: 0.82 × 20 = 16.4 h."
+        },
+        {
+         "point": 2,
+         "quote": "Prophase: 25/250 × 20 = 2 h."
+        },
+        {
+         "point": 3,
+         "quote": "The smallest number is in telophase (5), so telophase is the shortest."
+        }
+       ],
+       "feedback": "All four marks, in a clear and organized layout."
+      },
+      {
+       "tier": "partial",
+       "text": "205/250 = 0.82. 0.82 × 20 = 16.4 hours. Prophase is 25 hours because there are 25 cells. The shortest is anaphase.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "205/250 = 0.82."
+        },
+        {
+         "point": 1,
+         "quote": "0.82 × 20 = 16.4 hours."
+        }
+       ],
+       "feedback": "Interphase is right. Prophase needs the fraction of cells (25/250) multiplied by 20 hours, not the number of cells. Telophase has the fewest cells."
+      },
+      {
+       "tier": "partial",
+       "text": "25 / 250 × 20 = 2 hours for prophase. The shortest is telophase. Interphase is 20 hours because it's the biggest.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "25 / 250 × 20 = 2 hours for prophase."
+        },
+        {
+         "point": 3,
+         "quote": "The shortest is telophase."
+        }
+       ],
+       "feedback": "Prophase and telophase are right. Interphase is a fraction of the cycle: 205/250 of 20 hours is 16.4 hours.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "205 + 25 = 230 hours. The shortest phase is interphase because it is the first phase.",
+       "meets": [],
+       "feedback": "You are adding cell counts and treating them as hours. Divide each count by 250 and multiply by 20 hours. Interphase is the longest phase."
+      },
+      {
+       "tier": "weak",
+       "text": "Telophase is the smallest number so it is the shortest. To get the times you multiply 205 by 20 and 25 by 20.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Telophase is the smallest number so it is the shortest."
+        }
+       ],
+       "feedback": "Telophase is right. To find time, use the fraction of cells in the phase, for example 205/250, times the 20 hours of the cycle."
+      }
+     ]
+    },
+    {
+     "prompt": "Design an investigation to show negative feedback in the control of heart rate after exercise. Include the variables, the measurements, the controls and the pattern you expect.",
+     "markScheme": [
+      "Identifies the independent variable as time since exercise stopped or exercise intensity",
+      "Identifies the dependent variable as heart rate, measured in beats per minute at set intervals",
+      "Names controlled variables such as the same exercise, the same participants or a rested baseline",
+      "Predicts heart rate rising then falling back toward the resting level, and links this to negative feedback"
+     ],
+     "modelAnswer": "I would have several students do the same two minutes of step-ups. The independent variable is time since stopping, and the dependent variable is heart rate in beats per minute, recorded every 30 seconds for five minutes, after a resting baseline. I would control the exercise, the room and the people, and use the mean of the group. I expect the rate to peak and then fall back toward the resting rate, which is negative feedback.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The independent variable is the time after exercise stops. The dependent variable is the heart rate in beats per minute, recorded every 30 seconds for five minutes. We would keep the exercise the same, the same people, and take a resting rate first. I expect the heart rate to be high then drop back to the resting rate, because negative feedback reverses the change.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The independent variable is the time after exercise stops."
+        },
+        {
+         "point": 1,
+         "quote": "The dependent variable is the heart rate in beats per minute, recorded every 30 seconds for five minutes."
+        },
+        {
+         "point": 2,
+         "quote": "We would keep the exercise the same, the same people, and take a resting rate first."
+        },
+        {
+         "point": 3,
+         "quote": "I expect the heart rate to be high then drop back to the resting rate, because negative feedback reverses the change."
+        }
+       ],
+       "feedback": "Full marks. A complete design with an expected pattern and the link to feedback."
+      },
+      {
+       "tier": "full",
+       "text": "Independent: minutes after two minutes of step-ups. Dependent: heart rate in bpm measured every 30 seconds. Controlled: same step height, same students, same room, and a resting baseline reading. Prediction: the heart rate peaks and then falls toward resting. That shows negative feedback because the response reduces the change.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Independent: minutes after two minutes of step-ups."
+        },
+        {
+         "point": 1,
+         "quote": "Dependent: heart rate in bpm measured every 30 seconds."
+        },
+        {
+         "point": 2,
+         "quote": "Controlled: same step height, same students, same room, and a resting baseline reading."
+        },
+        {
+         "point": 3,
+         "quote": "Prediction: the heart rate peaks and then falls toward resting. That shows negative feedback because the response reduces the change."
+        }
+       ],
+       "feedback": "All four marks. The baseline reading is a good detail."
+      },
+      {
+       "tier": "partial",
+       "text": "We would measure heart rate every 30 seconds in beats per minute. It should go down after the exercise, which is negative feedback.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "We would measure heart rate every 30 seconds in beats per minute."
+        },
+        {
+         "point": 3,
+         "quote": "It should go down after the exercise, which is negative feedback."
+        }
+       ],
+       "feedback": "Good. Name the independent variable and the controlled variables, since a fair test depends on them."
+      },
+      {
+       "tier": "partial",
+       "text": "The independent variable is time after exercise. We keep the exercise the same. The heart rate will keep going up.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The independent variable is time after exercise."
+        },
+        {
+         "point": 2,
+         "quote": "We keep the exercise the same."
+        }
+       ],
+       "feedback": "After exercise, the heart rate falls as feedback restores the normal level. Also say how you will measure it.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "We would exercise and see how tired people get. Tired is the dependent variable.",
+       "meets": [],
+       "feedback": "Tiredness is hard to measure. Use a measurable variable such as heart rate in beats per minute at set times."
+      },
+      {
+       "tier": "weak",
+       "text": "We keep the people the same. Then we do different exercise each time and see which is best.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "We keep the people the same."
+        }
+       ],
+       "feedback": "Keeping the people the same is good, but changing the exercise makes it two variables at once. Keep the exercise the same and change the time of measurement."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Tissues, organs and hormonal control of blood glucose",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe how specialized cells form tissues, and tissues form organs, with structure matched to function;\n2. explain the hormonal feedback that holds blood glucose and body temperature in a narrow range and what happens when it fails.\n\n## Materials\n\nGlucose tolerance data, a graphing sheet, simulated glucose curves, pictures of tissue slides, the practical sheet.\n\n## Starter (6 minutes)\n\nShow two graphs of blood glucose over four hours after a meal: one from a person without diabetes and one with type 1 diabetes. Ask: \"What is different, and what does it tell us about the control system?\"\n\n## Main activity\n\n1. Review tissue types and make a table matching a specialized cell (cardiac muscle, alveolar cell, root hair) to its structure and function.\n2. Trace the glucose loop: stimulus, receptor (beta cells), control center (pancreas), effector (liver, muscle), response. Include insulin and glucagon as antagonistic hormones.\n3. Practical: analyze a simulated glucose tolerance test and compare curves for a healthy person, type 1 and type 2 diabetes.\n\n## Checking for understanding\n\nAsk: \"Why do type 1 patients need injected insulin but type 2 patients often start with diet changes?\"\n\n## Practical write-up\n\nCollect the analysis and conclusions.",
+   "reading": {
+    "title": "Antagonistic hormones and the glucose balance",
+    "content": "Specialized cells build tissues, and the structure of each cell suits its work. Cardiac muscle cells are branched and joined by intercalated discs, which let a signal pass quickly so the heart contracts as a unit. Cells in the walls of the lungs' alveoli are extremely thin, which keeps the gas diffusion path short. Tissues combine into organs, and the pancreas is a good example: most of it makes digestive enzymes, but clusters of cells called the islets of Langerhans make hormones.\n\nHormones are chemical messengers carried in the blood. Blood glucose is kept near 90 mg per deciliter by two **antagonistic** hormones, which are hormones that act in opposite directions. When glucose rises after a meal, **beta cells** in the pancreas release **insulin**. Insulin binds to receptors on muscle, fat and liver cells and causes glucose transporters to move to the membrane, so glucose enters the cells. The liver also converts glucose to the storage molecule glycogen. Blood glucose falls. When glucose drops, as between meals, **alpha cells** release **glucagon**, which tells the liver to break down glycogen and release glucose. This is negative feedback with two effectors.\n\nIn **type 1 diabetes**, the immune system destroys beta cells, so little insulin is made. People need insulin by injection or pump. In **type 2 diabetes**, cells respond poorly to insulin, and eventually the pancreas may not keep up. A glucose tolerance test reveals the difference. After a drink containing 75 g of glucose, a healthy person's blood glucose peaks at about 140 mg/dL and returns to normal within two hours. A person with diabetes may have a fasting level above 126 mg/dL and a two-hour value above 200.\n\nBody temperature is regulated by the hypothalamus, which acts as a thermostat. If you overheat, blood vessels in the skin widen and sweat glands release sweat, losing heat. If you get cold, vessels narrow and muscles shiver to generate heat. These loops share the same structure: a stimulus, a receptor, a control center, an effector and a response that returns the condition toward the set point."
+   },
+   "cards": [
+    {
+     "front": "Antagonistic hormones",
+     "back": "Hormones that have opposite effects, such as insulin and glucagon."
+    },
+    {
+     "front": "Beta cell",
+     "back": "A pancreas cell that makes insulin."
+    },
+    {
+     "front": "Alpha cell",
+     "back": "A pancreas cell that makes glucagon."
+    },
+    {
+     "front": "Glycogen",
+     "back": "The storage form of glucose in the liver and muscle."
+    },
+    {
+     "front": "Type 1 diabetes",
+     "back": "A condition in which the immune system destroys beta cells so little insulin is made."
+    },
+    {
+     "front": "Type 2 diabetes",
+     "back": "A condition in which cells respond poorly to insulin."
+    },
+    {
+     "front": "Hypothalamus",
+     "back": "The brain region that acts as the body's thermostat."
+    },
+    {
+     "front": "Set point",
+     "back": "The normal value that a feedback system works to maintain."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which hormone causes the liver to convert glycogen into glucose?",
+     "options": [
+      "Insulin",
+      "Glucagon",
+      "Thyroxine",
+      "Pepsin"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In type 1 diabetes, the main problem is that:",
+     "options": [
+      "Cells do not respond to insulin",
+      "The immune system destroys insulin-making beta cells",
+      "The liver makes too much glycogen",
+      "The kidney cannot filter glucose"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Insulin and glucagon are called antagonistic because they:",
+     "options": [
+      "Are made by different organs",
+      "Have opposite effects on blood glucose",
+      "Are both made by the liver",
+      "Are both enzymes"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A person's fasting blood glucose is 135 mg/dL and their two-hour value is 215 mg/dL. These values most likely suggest:",
+     "options": [
+      "Normal glucose control",
+      "Low blood sugar",
+      "Diabetes",
+      "Too much glucagon"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the hypothalamus's role in temperature control?",
+     "options": [
+      "It is the effector that sweats",
+      "It acts as the control center comparing temperature to the set point",
+      "It makes insulin",
+      "It stores heat"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain how insulin and glucagon work together to keep blood glucose steady between meals and after a meal, and why this is called negative feedback.",
+     "markScheme": [
+      "States that after a meal glucose rises and beta cells release insulin",
+      "States that insulin makes cells and the liver take up glucose or store it as glycogen, lowering blood glucose",
+      "States that between meals glucose falls and alpha cells release glucagon so the liver releases glucose",
+      "States that each response reverses the change that triggered it, which is negative feedback"
+     ],
+     "modelAnswer": "After a meal blood glucose rises, so beta cells release insulin. Insulin causes cells to take up glucose and the liver to store it as glycogen, so glucose falls. Between meals glucose falls and alpha cells release glucagon, which causes the liver to break glycogen down into glucose. In each case the response reverses the change that triggered it, which is negative feedback.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "When blood glucose goes up after eating, the beta cells in the pancreas release insulin. Insulin makes the muscle and liver cells take in glucose and the liver stores it as glycogen, so blood glucose goes down. When glucose gets low between meals, alpha cells release glucagon and the liver breaks down glycogen to release glucose. Each response undoes the change that started it, so it's negative feedback.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "When blood glucose goes up after eating, the beta cells in the pancreas release insulin."
+        },
+        {
+         "point": 1,
+         "quote": "Insulin makes the muscle and liver cells take in glucose and the liver stores it as glycogen, so blood glucose goes down."
+        },
+        {
+         "point": 2,
+         "quote": "When glucose gets low between meals, alpha cells release glucagon and the liver breaks down glycogen to release glucose."
+        },
+        {
+         "point": 3,
+         "quote": "Each response undoes the change that started it, so it's negative feedback."
+        }
+       ],
+       "feedback": "Full marks. You used the correct cells and showed both directions of the loop."
+      },
+      {
+       "tier": "full",
+       "text": "A meal raises blood glucose and beta cells respond with insulin. Insulin brings glucose into cells and promotes glycogen formation in the liver, which lowers the level. Fasting lowers glucose, which signals alpha cells to release glucagon so the liver turns glycogen to glucose. The response in each case opposes the change, which is why it's called negative feedback.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A meal raises blood glucose and beta cells respond with insulin."
+        },
+        {
+         "point": 1,
+         "quote": "Insulin brings glucose into cells and promotes glycogen formation in the liver, which lowers the level."
+        },
+        {
+         "point": 2,
+         "quote": "Fasting lowers glucose, which signals alpha cells to release glucagon so the liver turns glycogen to glucose."
+        },
+        {
+         "point": 3,
+         "quote": "The response in each case opposes the change, which is why it's called negative feedback."
+        }
+       ],
+       "feedback": "All four marks. Careful and complete."
+      },
+      {
+       "tier": "partial",
+       "text": "After a meal beta cells release insulin. It lowers blood glucose by moving it into cells. Glucagon does the same job as insulin.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "After a meal beta cells release insulin."
+        },
+        {
+         "point": 1,
+         "quote": "It lowers blood glucose by moving it into cells."
+        }
+       ],
+       "feedback": "Glucagon does the opposite of insulin: it raises blood glucose. Add what triggers it and what the liver does."
+      },
+      {
+       "tier": "partial",
+       "text": "Glucagon is released when glucose is low and makes the liver release glucose. It's negative feedback because it fixes the change.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Glucagon is released when glucose is low and makes the liver release glucose."
+        },
+        {
+         "point": 3,
+         "quote": "It's negative feedback because it fixes the change."
+        }
+       ],
+       "feedback": "Good on glucagon and the feedback idea. Add the first half of the loop: what happens to insulin after a meal.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Insulin is made by the liver and glucagon is made by the kidney. They keep the glucose steady.",
+       "meets": [],
+       "feedback": "Both are made in the pancreas, insulin by beta cells and glucagon by alpha cells. Review the reading on where each is made."
+      },
+      {
+       "tier": "weak",
+       "text": "It is negative feedback. That means it is a bad kind of feedback that makes the body worse.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "It is negative feedback."
+        }
+       ],
+       "feedback": "Negative here does not mean bad. It means the response reduces the change, which keeps things stable."
+      }
+     ]
+    },
+    {
+     "prompt": "A glucose tolerance test shows that Person A's blood glucose peaks at 140 mg/dL and returns to 95 within two hours. Person B starts at 140 and peaks at 290 mg/dL, still at 250 after two hours. Compare them and suggest what each pattern shows about insulin.",
+     "markScheme": [
+      "Says Person A returns to normal levels, showing a working insulin response",
+      "Says Person B's glucose rises much higher and stays high",
+      "Suggests Person B has diabetes, as insulin is either missing or not effective",
+      "Distinguishes the two possibilities, type 1 (not enough insulin) or type 2 (cells respond poorly)"
+     ],
+     "modelAnswer": "Person A's glucose rises and returns to normal within two hours, which shows a working insulin response. Person B starts high, rises to 290 and is still at 250 after two hours, so glucose is not being cleared. This suggests diabetes: in type 1 there is not enough insulin because beta cells are destroyed, and in type 2 the cells do not respond properly to the insulin.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Person A's glucose goes back to 95 so their insulin is working properly. Person B's goes much higher and is still 250 after two hours. That suggests B has diabetes because the glucose isn't being cleared. It could be type 1 where not enough insulin is made, or type 2 where cells don't respond to it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Person A's glucose goes back to 95 so their insulin is working properly."
+        },
+        {
+         "point": 1,
+         "quote": "Person B's goes much higher and is still 250 after two hours."
+        },
+        {
+         "point": 2,
+         "quote": "That suggests B has diabetes because the glucose isn't being cleared."
+        },
+        {
+         "point": 3,
+         "quote": "It could be type 1 where not enough insulin is made, or type 2 where cells don't respond to it."
+        }
+       ],
+       "feedback": "Full marks. You compared the data and gave both possible causes."
+      },
+      {
+       "tier": "full",
+       "text": "A's curve rises a bit and returns to normal, a healthy insulin response. B's curve peaks at 290 and stays above 250. B's glucose isn't being taken up, which points to diabetes. The test can't tell type 1 from type 2: either there's little insulin, or cells are insulin-resistant.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A's curve rises a bit and returns to normal, a healthy insulin response."
+        },
+        {
+         "point": 1,
+         "quote": "B's curve peaks at 290 and stays above 250."
+        },
+        {
+         "point": 2,
+         "quote": "B's glucose isn't being taken up, which points to diabetes."
+        },
+        {
+         "point": 3,
+         "quote": "The test can't tell type 1 from type 2: either there's little insulin, or cells are insulin-resistant."
+        }
+       ],
+       "feedback": "All four marks. Recognizing that one test cannot separate the types shows careful thinking."
+      },
+      {
+       "tier": "partial",
+       "text": "Person A's blood glucose goes back to normal. B's goes much higher. B has too much insulin.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Person A's blood glucose goes back to normal."
+        },
+        {
+         "point": 1,
+         "quote": "B's goes much higher."
+        }
+       ],
+       "feedback": "Too much insulin would lower glucose. B's high glucose suggests too little insulin or cells that do not respond."
+      },
+      {
+       "tier": "partial",
+       "text": "B probably has diabetes. Maybe type 1 or type 2.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "B probably has diabetes."
+        },
+        {
+         "point": 3,
+         "quote": "Maybe type 1 or type 2."
+        }
+       ],
+       "feedback": "Good. Support it with data from the curves: how high B's glucose rose and how long it stayed high.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Person B ate more sugar than A. That's why the glucose is higher and it doesn't mean anything is wrong.",
+       "meets": [],
+       "feedback": "In a tolerance test both people drink the same amount of glucose. The difference is in how the body clears it."
+      },
+      {
+       "tier": "weak",
+       "text": "A returned to normal. B is better because the number is bigger so there is more energy.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A returned to normal."
+        }
+       ],
+       "feedback": "A high glucose level is not a sign of better health. Staying high means the body is not controlling it."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Analyzing glucose tolerance curves",
+    "instructions": "Use the data sheet of blood glucose readings (mg/dL) taken at 0, 30, 60, 90, 120 and 180 minutes after a 75 g glucose drink for three people: a healthy volunteer, a person with type 1 and a person with type 2 diabetes. Graph all three on one set of axes, find the peak and the recovery time for each, and write a CER conclusion.",
+    "steps": [
+     {
+      "text": "Read the data sheet and label each person's readings in a table with units."
+     },
+     {
+      "text": "Plot all three curves on one graph with time on the x-axis and glucose on the y-axis."
+     },
+     {
+      "text": "Mark the fasting level, the peak and the two-hour value for each curve."
+     },
+     {
+      "text": "Calculate the change from fasting to peak for each person and the percent of the peak still left at two hours.",
+      "note": "Use the same units for all three people."
+     },
+     {
+      "text": "Describe how each curve differs from the healthy one."
+     },
+     {
+      "text": "Write a claim, evidence and reasoning conclusion that links each curve to what insulin is doing."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Data handling: table, graph with labeled axes and units",
+      "maxPoints": 4
+     },
+     {
+      "description": "Analysis: peak, fasting, recovery and calculations",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: claim, evidence and reasoning linked to insulin",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "I graphed the three curves with time in minutes and glucose in mg/dL. The healthy person went from 90 to a peak of 140 at 30 minutes and was back to 95 by 120 minutes. Person with type 1 went from 150 to 320 and was still at 290 after two hours. The person with type 2 went from 130 to 260 and was at 210. The healthy person cleared 97 percent of the rise. The claim is that the healthy volunteer has a working insulin response. The evidence is that glucose returned to the fasting level, which happens when insulin moves glucose into cells.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent analysis. The percent cleared is a strong comparison and the reasoning is tied to what insulin does."
+     },
+     {
+      "tier": "full",
+      "text": "Table and graph: time in minutes, glucose in mg/dL, three labeled curves. Analysis: healthy 90 to 140 (change 50), type 1 150 to 320 (change 170), type 2 130 to 260 (change 130). At two hours healthy was 95, type 1 290, type 2 210. Claim: both diabetic curves show impaired insulin control. Evidence: neither returned near fasting levels. Reasoning: in type 1, too little insulin is made, and in type 2 cells respond poorly, so glucose stays in the blood.",
+      "scores": [
+       4,
+       4,
+       3
+      ],
+      "feedback": "Very good. Say which of the curves best fits type 1 and why, and your conclusion would be complete."
+     },
+     {
+      "tier": "partial",
+      "text": "I made a graph with the three people. The healthy person went up and then came back down. The type 1 and type 2 people stayed high. The type 1 one was highest. I think that means they do not have enough insulin and that is why the glucose doesn't go down.",
+      "scores": [
+       2,
+       2,
+       2
+      ],
+      "feedback": "You described the shapes. Add numbers from the table: the peak, the fasting level and the two-hour value for each person."
+     },
+     {
+      "tier": "partial",
+      "text": "The healthy person peaked at 140 and was back to 95. The type 1 person peaked at 320 and the type 2 person peaked at 260. I did not make a graph because I ran out of time but the table has all the numbers in it with the units.",
+      "scores": [
+       1,
+       3,
+       2
+      ],
+      "feedback": "The numbers are good. The graph is a required part, so make it. Then explain what the numbers say about insulin."
+     },
+     {
+      "tier": "weak",
+      "text": "The graph has three lines. The healthy line is the lowest one and the diabetic lines are higher. The sugar is higher because they ate more sugar before the test and this makes the glucose high, so the test is not really fair to them.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Everyone drank the same glucose. The difference comes from how well their bodies clear it. Use the data to compare the peaks and the two-hour values."
+     },
+     {
+      "tier": "weak",
+      "text": "Glucose goes up when you drink a sugary drink. All three people went up. Everyone is the same because they all went up so there is no real difference between them, and I did not find a peak or a two-hour value for any of the lines.",
+      "scores": [
+       0,
+       1,
+       0
+      ],
+      "feedback": "All three rose, but compare how high and how long. A healthy person's glucose recovers within two hours; the others do not."
+     }
+    ]
+   }
+  },
+  "7": {
+   "topic": "Macromolecules and enzyme kinetics",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the four classes of biological macromolecules, their monomers, and how they are assembled and broken down;\n2. explain how enzymes lower activation energy and how temperature, pH and substrate concentration change reaction rate.\n\n## Materials\n\nMolecular models, graphs of rate against temperature, pH and substrate concentration, food labels, the worksheet.\n\n## Starter (6 minutes)\n\nShow a food label from a protein bar. Ask: \"Which of these ingredients are polymers, and what are they built from?\" Link to the monomers on the board.\n\n## Main activity\n\n1. Dehydration synthesis and hydrolysis: use model kits to join two monosaccharides (removing water) and split a dipeptide (adding water).\n2. Energy diagram for an enzyme-catalyzed reaction: show the activation energy with and without the enzyme.\n3. Interpret three graphs: rate against temperature (a peak then a drop), rate against pH, and rate against substrate concentration (a plateau when all active sites are occupied).\n\n## Checking for understanding\n\nAsk: \"Why does the rate level off at high substrate concentration?\" Listen for saturation of the enzyme.\n\n## Worksheet\n\nMacromolecule matching, graph interpretation, and one short explanation.",
+   "reading": {
+    "title": "Polymers, enzymes and the speed of life",
+    "content": "Most of the large molecules in your body are **polymers**, long chains built from repeating units called **monomers**. Carbohydrates are built from monosaccharides such as glucose. Proteins are built from twenty kinds of amino acids. Nucleic acids are built from nucleotides. Lipids are different: they are not true polymers, but fats are assembled from three fatty acids and one glycerol. Monomers are joined by **dehydration synthesis**, a reaction that removes a molecule of water for each bond. They are broken apart by **hydrolysis**, which adds water. Digestion is hydrolysis: the amylase in saliva hydrolyzes starch into the sugar maltose.\n\nEach class has characteristic roles. Starch and glycogen store glucose, and cellulose gives plant cells strength. Lipids store energy compactly, with more than twice the energy per gram of carbohydrate, and form the phospholipid bilayer of membranes. Proteins serve as enzymes, transport proteins, hormones and structural fibers. DNA and RNA store and transfer information.\n\nChemical reactions need an input of energy to get started, called **activation energy**. **Enzymes** are proteins that act as catalysts. They lower the activation energy by holding the substrate in an orientation that makes the reaction easier, so the reaction speeds up by a factor of millions without changing the overall energy released. The enzyme is not consumed.\n\nThe rate at which an enzyme works depends on conditions. With rising temperature the rate climbs because collisions are more frequent and energetic, until the optimum, often near 37 degrees Celsius in humans. Beyond that, heat disrupts the weak bonds that hold the folded protein in its shape, the active site distorts and the enzyme **denatures**. Each enzyme has an optimum pH, because acidity changes the charges on amino acids in the active site. Pepsin in the stomach is best at about pH 2 and trypsin in the small intestine at about pH 8.\n\nRate also depends on substrate concentration. At low concentration, adding substrate increases the rate because more active sites are being used. At high concentration, every enzyme is working at its maximum speed, so the rate levels off. The enzymes are said to be **saturated**. Adding more enzyme, not more substrate, would then increase the rate."
+   },
+   "cards": [
+    {
+     "front": "Monomer",
+     "back": "A small unit that joins with others to build a polymer."
+    },
+    {
+     "front": "Polymer",
+     "back": "A large molecule made of repeating monomers."
+    },
+    {
+     "front": "Dehydration synthesis",
+     "back": "Joining monomers by removing a molecule of water."
+    },
+    {
+     "front": "Hydrolysis",
+     "back": "Breaking a bond by adding a molecule of water."
+    },
+    {
+     "front": "Activation energy",
+     "back": "The energy needed to start a reaction."
+    },
+    {
+     "front": "Catalyst",
+     "back": "A substance that speeds up a reaction without being used up."
+    },
+    {
+     "front": "Saturation",
+     "back": "The condition in which all enzyme active sites are occupied, so the rate cannot rise."
+    },
+    {
+     "front": "Optimum",
+     "back": "The condition at which an enzyme works fastest."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which reaction joins two glucose molecules into maltose?",
+     "options": [
+      "Hydrolysis",
+      "Dehydration synthesis",
+      "Fermentation",
+      "Denaturation"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How does an enzyme speed up a reaction?",
+     "options": [
+      "It adds energy to the reaction",
+      "It lowers the activation energy",
+      "It is used up in making the product",
+      "It raises the temperature"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A graph of enzyme rate against substrate concentration levels off at high concentrations. What does this show?",
+     "options": [
+      "The enzyme has denatured",
+      "The enzyme's active sites are saturated",
+      "The substrate is used up",
+      "The pH is wrong"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Trypsin works best at pH 8. In the stomach at pH 2 it would:",
+     "options": [
+      "Work faster",
+      "Work at the same rate",
+      "Be unlikely to work well",
+      "Turn into pepsin"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which molecule stores more energy per gram?",
+     "options": [
+      "Starch",
+      "Glycogen",
+      "A fat",
+      "Glucose"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A graph shows an enzyme's reaction rate rising with substrate concentration and then leveling off. Explain the shape of the graph, and say what would raise the rate at the plateau.",
+     "markScheme": [
+      "States that at low concentrations, increasing substrate raises the rate because more active sites are used",
+      "States that at high concentrations all active sites are occupied (saturated)",
+      "States that the rate therefore reaches a maximum and levels off",
+      "States that adding more enzyme, not more substrate, would raise the rate at the plateau"
+     ],
+     "modelAnswer": "At low substrate concentration, many active sites are empty, so more substrate increases the rate. At high concentration, all active sites are occupied, so the enzyme is saturated and the rate reaches a maximum and levels off. Adding more enzyme would raise the rate, since there would be more active sites.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "At the start adding substrate raises the rate because there are empty active sites to use. Later every active site is full. So the rate hits its maximum and goes flat. To go faster you'd need more enzyme because more substrate wouldn't help.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At the start adding substrate raises the rate because there are empty active sites to use."
+        },
+        {
+         "point": 1,
+         "quote": "Later every active site is full."
+        },
+        {
+         "point": 2,
+         "quote": "So the rate hits its maximum and goes flat."
+        },
+        {
+         "point": 3,
+         "quote": "To go faster you'd need more enzyme because more substrate wouldn't help."
+        }
+       ],
+       "feedback": "Full marks. Naming what would raise the plateau shows real understanding."
+      },
+      {
+       "tier": "full",
+       "text": "When substrate is low there are free active sites, so more substrate means more collisions that work. At high concentration the enzymes are saturated. The rate can't go any higher, so the line levels off. Adding more enzyme would add more active sites and raise the maximum rate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "When substrate is low there are free active sites, so more substrate means more collisions that work."
+        },
+        {
+         "point": 1,
+         "quote": "At high concentration the enzymes are saturated."
+        },
+        {
+         "point": 2,
+         "quote": "The rate can't go any higher, so the line levels off."
+        },
+        {
+         "point": 3,
+         "quote": "Adding more enzyme would add more active sites and raise the maximum rate."
+        }
+       ],
+       "feedback": "All four marks, with a clear use of the term saturated."
+      },
+      {
+       "tier": "partial",
+       "text": "More substrate means more reactions at first. Then the enzymes are all busy. Then the substrate runs out so it levels.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "More substrate means more reactions at first."
+        },
+        {
+         "point": 1,
+         "quote": "Then the enzymes are all busy."
+        }
+       ],
+       "feedback": "The substrate has not run out. The enzyme is saturated. Say what would raise the rate at the plateau."
+      },
+      {
+       "tier": "partial",
+       "text": "The rate reaches a maximum. Adding more enzyme would increase it.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The rate reaches a maximum."
+        },
+        {
+         "point": 3,
+         "quote": "Adding more enzyme would increase it."
+        }
+       ],
+       "feedback": "Good. Explain why the rate climbs at first and why it stops climbing.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The enzyme gets tired and stops working so the graph goes flat.",
+       "meets": [],
+       "feedback": "Enzymes do not get tired. At the plateau all active sites are in use, so more substrate cannot speed the reaction."
+      },
+      {
+       "tier": "weak",
+       "text": "At first more substrate makes the rate go up. Then it's denatured so the line levels.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At first more substrate makes the rate go up."
+        }
+       ],
+       "feedback": "Denaturing is caused by heat or pH and makes the rate fall, not level off. A plateau is saturation."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain how a protein in food, such as chicken, is turned into amino acids in the body, and name the two types of reaction involved in building and breaking proteins.",
+     "markScheme": [
+      "Names hydrolysis as the reaction that breaks the bonds in proteins",
+      "States that water is added to break each peptide bond",
+      "States that enzymes (proteases such as pepsin and trypsin) speed up this reaction",
+      "Names dehydration synthesis as the reaction that builds proteins from amino acids in the cells"
+     ],
+     "modelAnswer": "Proteins are broken down by hydrolysis, in which water is added to break each peptide bond. Digestive enzymes such as pepsin and trypsin speed this up, releasing amino acids. The body's cells then build their own proteins from these amino acids by dehydration synthesis, which removes water to form each bond.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The protein is broken down by hydrolysis. Water is added to break each peptide bond. Enzymes like pepsin and trypsin make that go faster. Later cells join amino acids into new proteins by dehydration synthesis, which takes water out.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The protein is broken down by hydrolysis."
+        },
+        {
+         "point": 1,
+         "quote": "Water is added to break each peptide bond."
+        },
+        {
+         "point": 2,
+         "quote": "Enzymes like pepsin and trypsin make that go faster."
+        },
+        {
+         "point": 3,
+         "quote": "Later cells join amino acids into new proteins by dehydration synthesis, which takes water out."
+        }
+       ],
+       "feedback": "Full marks. You described both reactions and put them in order."
+      },
+      {
+       "tier": "full",
+       "text": "Hydrolysis breaks proteins into amino acids. It adds a water molecule at each peptide bond. Proteases speed it up in the stomach and small intestine. The cells then use dehydration synthesis to make the proteins they need.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hydrolysis breaks proteins into amino acids."
+        },
+        {
+         "point": 1,
+         "quote": "It adds a water molecule at each peptide bond."
+        },
+        {
+         "point": 2,
+         "quote": "Proteases speed it up in the stomach and small intestine."
+        },
+        {
+         "point": 3,
+         "quote": "The cells then use dehydration synthesis to make the proteins they need."
+        }
+       ],
+       "feedback": "All four marks. Identifying the proteases is a nice detail."
+      },
+      {
+       "tier": "partial",
+       "text": "It is broken down by hydrolysis and enzymes help. Then the amino acids are built back by hydrolysis too.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is broken down by hydrolysis"
+        },
+        {
+         "point": 2,
+         "quote": "enzymes help"
+        }
+       ],
+       "feedback": "Building proteins is dehydration synthesis, which removes water, so it is the opposite of hydrolysis. Add the role of water in breaking bonds."
+      },
+      {
+       "tier": "partial",
+       "text": "Dehydration synthesis builds proteins. Water is added when they are broken down.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Dehydration synthesis builds proteins."
+        },
+        {
+         "point": 1,
+         "quote": "Water is added when they are broken down."
+        }
+       ],
+       "feedback": "Name hydrolysis as the breakdown reaction and say which enzymes speed it up.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The chicken is burned in the stomach by acid and turned to amino acids.",
+       "meets": [],
+       "feedback": "Stomach acid helps, but the protein is broken down by enzymes using hydrolysis, not burned."
+      },
+      {
+       "tier": "weak",
+       "text": "Cells make proteins from amino acids. The breakdown is by dehydration.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Cells make proteins from amino acids."
+        }
+       ],
+       "feedback": "The building step is dehydration synthesis. Breaking down is hydrolysis, which adds water."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Cell structure, endosymbiosis and membrane transport",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. compare prokaryotic and eukaryotic cells and relate organelle structure to function, including the evidence for endosymbiosis;\n2. explain how the structure of the membrane controls movement by diffusion, facilitated diffusion, osmosis and active transport, and predict water movement using concentrations.\n\n## Materials\n\nOrganelle cards, a membrane model, osmosis problem sheets, the quiz.\n\n## Starter (6 minutes)\n\nPose: \"Mitochondria have their own DNA and make copies of themselves by dividing. What does that suggest about where they came from?\" Collect hypotheses and record them.\n\n## Main activity\n\n1. Compare a bacterium, an animal cell and a plant cell. Introduce the endosymbiotic theory with the evidence: mitochondria and chloroplasts have their own circular DNA, ribosomes similar to bacteria, a double membrane and divide on their own.\n2. Draw the fluid mosaic model. Classify transport by whether it needs a protein and whether it needs energy.\n3. Osmosis problems: predict which way water moves and what happens to a cell between a hypotonic, hypertonic or isotonic solution.\n\n## Checking for understanding\n\nAsk: \"What happens to a red blood cell placed in pure water?\" Wait for answers that include swelling and bursting.\n\n## Quiz\n\nFive questions at the end of the lesson.",
+   "reading": {
+    "title": "Organelles with a past, and a membrane that chooses",
+    "content": "Prokaryotes, such as bacteria, have a single circular chromosome in a region called the nucleoid, small ribosomes, and no membrane-bound organelles. Eukaryotic cells are on average ten times larger, with a nucleus and organelles bounded by membranes that create separate compartments for different reactions. Compartments let a cell run chemically incompatible processes at once. The lysosome, for example, holds powerful digestive enzymes that would damage the rest of the cell.\n\nWhy do mitochondria and chloroplasts look so much like small bacteria? According to the **endosymbiotic theory**, they once were. Long ago, a larger cell engulfed an aerobic bacterium, and instead of digesting it, kept it. The two benefited each other, and over time the bacterium became the mitochondrion. A later engulfing of a photosynthetic bacterium produced chloroplasts. The evidence is strong: both organelles have their own circular DNA, ribosomes like those of bacteria, double membranes, and they divide independently of the cell by a process like binary fission.\n\nThe cell membrane is described by the **fluid mosaic model**. It is a bilayer of phospholipids, with hydrophilic heads facing the water and hydrophobic tails facing inward, studded with proteins and cholesterol. Small nonpolar molecules like oxygen pass through the lipid layer by **simple diffusion**. Ions and polar molecules such as glucose cannot cross the hydrophobic center and must pass through channel or carrier proteins, in **facilitated diffusion**, which still moves substances down their concentration gradient and needs no ATP. **Active transport** moves substances against the gradient and uses ATP, like the sodium-potassium pump that nerve cells use.\n\n**Osmosis** is the diffusion of water across a selectively permeable membrane, toward the side with a higher concentration of solute, because that side has a lower concentration of free water. A solution with more solute than the cell is **hypertonic**: water leaves the cell and an animal cell shrinks. A solution with less solute is **hypotonic**: water enters and an animal cell may burst. In an **isotonic** solution, there is no net movement. Plant cells in a hypotonic solution take in water and become firm, or turgid, because the cell wall resists bursting, which is why a wilted plant recovers after watering."
+   },
+   "cards": [
+    {
+     "front": "Endosymbiotic theory",
+     "back": "The idea that mitochondria and chloroplasts came from engulfed bacteria."
+    },
+    {
+     "front": "Fluid mosaic model",
+     "back": "The model of the membrane as a phospholipid bilayer with embedded proteins."
+    },
+    {
+     "front": "Facilitated diffusion",
+     "back": "Movement down a gradient through a channel or carrier protein, with no ATP."
+    },
+    {
+     "front": "Hypertonic",
+     "back": "A solution with more solute than the cell, so water leaves the cell."
+    },
+    {
+     "front": "Hypotonic",
+     "back": "A solution with less solute than the cell, so water enters the cell."
+    },
+    {
+     "front": "Isotonic",
+     "back": "A solution with the same solute concentration as the cell; no net water movement."
+    },
+    {
+     "front": "Turgid",
+     "back": "Firm, as a plant cell is when it is full of water."
+    },
+    {
+     "front": "Nucleoid",
+     "back": "The region in a prokaryote where the circular chromosome is found."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which feature is evidence that mitochondria came from bacteria?",
+     "options": [
+      "They are found in all cells",
+      "They have their own circular DNA",
+      "They are bigger than the nucleus",
+      "They contain chlorophyll"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Glucose enters a red blood cell through a carrier protein, moving from high to low concentration. This is:",
+     "options": [
+      "Simple diffusion",
+      "Facilitated diffusion",
+      "Active transport",
+      "Osmosis"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A red blood cell is placed in a hypotonic solution. What is most likely to happen?",
+     "options": [
+      "It shrinks",
+      "It stays the same",
+      "It swells and may burst",
+      "It makes more ATP"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A sodium-potassium pump moves ions against their gradient. This requires:",
+     "options": [
+      "No energy",
+      "ATP",
+      "A hypotonic solution",
+      "Only a channel"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why can oxygen pass through the lipid bilayer easily while sodium ions cannot?",
+     "options": [
+      "Oxygen is small and nonpolar, and ions are charged and repelled by the hydrophobic center",
+      "Oxygen is larger than sodium",
+      "Sodium has no charge",
+      "Oxygen needs ATP to cross"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Give three pieces of evidence for the endosymbiotic theory and explain what each suggests about the origin of mitochondria.",
+     "markScheme": [
+      "States that mitochondria have their own circular DNA, like bacteria",
+      "States that they have ribosomes similar to bacterial ribosomes",
+      "States that they have a double membrane or divide independently like bacteria",
+      "Concludes that this suggests mitochondria were once free-living bacteria engulfed by a larger cell"
+     ],
+     "modelAnswer": "Mitochondria have their own circular DNA, as bacteria do. They have ribosomes similar to those of bacteria, and a double membrane and they divide independently by a process like binary fission. These features suggest mitochondria were once free-living aerobic bacteria that were engulfed by a larger cell and kept.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Mitochondria have their own circular DNA like bacteria do. They have small ribosomes that are like bacterial ribosomes. They have a double membrane and can divide on their own like bacteria. All of this suggests they started as free bacteria that were taken in by a bigger cell.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mitochondria have their own circular DNA like bacteria do."
+        },
+        {
+         "point": 1,
+         "quote": "They have small ribosomes that are like bacterial ribosomes."
+        },
+        {
+         "point": 2,
+         "quote": "They have a double membrane and can divide on their own like bacteria."
+        },
+        {
+         "point": 3,
+         "quote": "All of this suggests they started as free bacteria that were taken in by a bigger cell."
+        }
+       ],
+       "feedback": "Full marks. The evidence leads directly to the conclusion."
+      },
+      {
+       "tier": "full",
+       "text": "Circular DNA separate from the nucleus, like a bacterial chromosome. Ribosomes are the bacterial size, not the larger eukaryotic size. They are surrounded by two membranes and divide independently by something like binary fission. So an ancestor of the eukaryotic cell likely engulfed an aerobic bacterium, which became the mitochondrion.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Circular DNA separate from the nucleus, like a bacterial chromosome."
+        },
+        {
+         "point": 1,
+         "quote": "Ribosomes are the bacterial size, not the larger eukaryotic size."
+        },
+        {
+         "point": 2,
+         "quote": "They are surrounded by two membranes and divide independently by something like binary fission."
+        },
+        {
+         "point": 3,
+         "quote": "So an ancestor of the eukaryotic cell likely engulfed an aerobic bacterium, which became the mitochondrion."
+        }
+       ],
+       "feedback": "All four marks, and you gave the mechanism of how it happened."
+      },
+      {
+       "tier": "partial",
+       "text": "They have their own DNA. They have two membranes. This means they are bacteria.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "They have their own DNA."
+        },
+        {
+         "point": 2,
+         "quote": "They have two membranes."
+        }
+       ],
+       "feedback": "The conclusion is too strong. The evidence suggests they came from bacteria long ago. Add one more piece of evidence, the ribosomes."
+      },
+      {
+       "tier": "partial",
+       "text": "They were probably bacteria that got engulfed. The ribosomes are small like bacteria.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "They were probably bacteria that got engulfed."
+        },
+        {
+         "point": 1,
+         "quote": "The ribosomes are small like bacteria."
+        }
+       ],
+       "feedback": "Good. Add the DNA evidence and the membrane or division evidence, since you were asked for three pieces.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Mitochondria are found in both bacteria and animals so they must have come from bacteria.",
+       "meets": [],
+       "feedback": "Bacteria do not have mitochondria. The evidence is that mitochondria have bacteria-like features, such as their own DNA."
+      },
+      {
+       "tier": "weak",
+       "text": "Mitochondria have DNA. That means they are the brain of the cell.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mitochondria have DNA."
+        }
+       ],
+       "feedback": "Mitochondria having DNA is a clue, especially that it is circular like bacterial DNA. They make ATP, and the nucleus controls the cell."
+      }
+     ]
+    },
+    {
+     "prompt": "A student places a piece of celery in pure water and another in a strong salt solution. Predict what happens to each, using the terms hypotonic and hypertonic, and explain the movement of water.",
+     "markScheme": [
+      "States that pure water is hypotonic to the celery cells",
+      "States that water moves into the cells by osmosis so the celery becomes turgid or firm",
+      "States that the strong salt solution is hypertonic",
+      "States that water leaves the cells by osmosis so the celery becomes limp"
+     ],
+     "modelAnswer": "Pure water is hypotonic to the celery cells, so water moves in by osmosis and the cells become turgid, and the celery stays firm. The strong salt solution is hypertonic, so water leaves the cells by osmosis and the celery becomes limp.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Pure water is hypotonic compared to the cells. Water moves into the celery by osmosis and it gets turgid and crisp. The strong salt water is hypertonic. Water goes out of the cells by osmosis so the celery gets limp.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Pure water is hypotonic compared to the cells."
+        },
+        {
+         "point": 1,
+         "quote": "Water moves into the celery by osmosis and it gets turgid and crisp."
+        },
+        {
+         "point": 2,
+         "quote": "The strong salt water is hypertonic."
+        },
+        {
+         "point": 3,
+         "quote": "Water goes out of the cells by osmosis so the celery gets limp."
+        }
+       ],
+       "feedback": "Full marks. You used both terms with the correct direction of water movement."
+      },
+      {
+       "tier": "full",
+       "text": "The pure water has less solute than the celery cells so it's hypotonic. Water enters the cells by osmosis and they become firm. The salt solution has more solute than the cells, which is hypertonic. Water leaves, so the cells shrink and the celery goes soft.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The pure water has less solute than the celery cells so it's hypotonic."
+        },
+        {
+         "point": 1,
+         "quote": "Water enters the cells by osmosis and they become firm."
+        },
+        {
+         "point": 2,
+         "quote": "The salt solution has more solute than the cells, which is hypertonic."
+        },
+        {
+         "point": 3,
+         "quote": "Water leaves, so the cells shrink and the celery goes soft."
+        }
+       ],
+       "feedback": "All four marks. Your reasoning in terms of solute amounts is exactly right."
+      },
+      {
+       "tier": "partial",
+       "text": "Pure water is hypotonic and the celery gets firm. In salt water the celery gets bigger too.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Pure water is hypotonic"
+        },
+        {
+         "point": 1,
+         "quote": "the celery gets firm"
+        }
+       ],
+       "feedback": "Salt water is hypertonic, so water leaves the cells and the celery goes limp, not bigger."
+      },
+      {
+       "tier": "partial",
+       "text": "The salt water is hypertonic and water leaves the celery so it goes limp.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The salt water is hypertonic"
+        },
+        {
+         "point": 3,
+         "quote": "water leaves the celery so it goes limp"
+        }
+       ],
+       "feedback": "Good on the salt water. Predict what happens in pure water and name the solution type.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Salt water will make the celery salty and the pure water won't do anything.",
+       "meets": [],
+       "feedback": "Think about water moving across the membrane by osmosis, not about salt entering. Compare the solute concentrations inside and outside."
+      },
+      {
+       "tier": "weak",
+       "text": "Pure water is hypotonic. The water pushes out of the celery because water goes where there is more room.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Pure water is hypotonic."
+        }
+       ],
+       "feedback": "Water in pure water enters the cells by osmosis. It moves toward the side with more solute, which is inside the cells."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

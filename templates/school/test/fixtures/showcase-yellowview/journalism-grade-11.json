@@ -1,0 +1,2465 @@
+{
+ "subject": "Journalism",
+ "yearGroup": "Grade 11",
+ "weeks": {
+  "1": {
+   "topic": "Word choice, framing and the same story in three media",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. evaluate how a news writer's word choice and framing reveal a point of view;\n2. compare how the same event is reported in print, broadcast and online sources.\n\n## Materials\n\nTwo short invented articles about the same school board vote (one neutral, one loaded), a print story, a broadcast script and an online post on the same event, a framing chart, the quiz.\n\n## Starter (7 minutes)\n\nWrite two headlines on the board: \"Board approves later start time\" and \"Board slams students with chaotic schedule shake-up.\" Ask: \"Which one is a fact? Which one carries an opinion? What words tell you?\"\n\n## Main activity\n\n1. Word choice: denotation (dictionary meaning) and connotation (feelings attached). Compare \"criticized\" with \"slammed,\" \"government\" with \"regime,\" \"protesters\" with \"mob,\" \"said\" with \"claimed\" or \"admitted.\" Loaded words reveal a point of view even in a story that looks factual.\n2. Framing: what a story puts first, what it leaves out, which sources it quotes, and how it describes people. Two stories about the same vote can emphasize different facts.\n3. Compare media: print (depth, space for context, time to verify), broadcast (short, visual, spoken), online (fast, updated, links, sometimes less checked). Students fill in a chart for the same event in three versions.\n\n## Checking for understanding\n\nAsk: \"What is a neutral word for 'slammed'? Why does the choice matter?\"\n\n## Quiz\n\nConnotation, framing and media comparison.",
+   "reading": {
+    "title": "The same vote, told three ways",
+    "content": "Every news story is made of choices. A reporter decides which facts go first, whom to quote, and which words to use. Those choices are the **framing** of the story, and they can shape how readers feel even when every fact is accurate. A good reader notices the choices.\n\nStart with **word choice**. Every word has a **denotation**, its dictionary meaning, and a **connotation**, the feelings and associations that come with it. Compare these pairs: \"The mayor **criticized** the plan\" and \"The mayor **slammed** the plan\"; \"The group **said** the data were wrong\" and \"The group **claimed** the data were wrong\"; \"Students **gathered** outside\" and \"A **mob** gathered outside.\" The first word in each pair is plain, and the second suggests a judgment. Neutral news writing prefers the plain word. The verb **said** is the most reliable verb of attribution, because \"claimed,\" \"admitted,\" \"insisted\" and \"confessed\" imply something about whether the speaker is telling the truth.\n\nFraming goes beyond words. Imagine that the Yellow View school board votes 5 to 2 to move the first bell from 7:20 a.m. to 8:15 a.m. One story might open: \"Yellow View teens will get an extra hour of sleep next fall, following a 5-2 vote by the school board Tuesday.\" Another might open: \"Parents of athletes fear that practices will end after dark under a new bell schedule approved by the school board on a 5-2 vote Tuesday.\" Both are accurate. The first emphasizes sleep, the second emphasizes a cost. The reader should ask: Which sources are quoted? Whose voices are missing? Which facts come in the first paragraph and which are buried at the end?\n\nDifferent media tell the same event differently. A **print** article has space for background, numbers and several voices, and a day to verify facts. A **broadcast** report is short, often 30 to 90 seconds, uses pictures and sound, and focuses on a single main idea and a person on camera. An **online** post can be published within minutes, can be updated, can include links, video and reader comments, but it may also be less checked, and headlines are often written to attract clicks. When you compare coverage, make a chart: What is the main point? What is the first fact? Who is quoted? What is left out? What is the tone? Reading the same event in two or three formats is one of the best ways to find the facts they share and the points on which they differ."
+   },
+   "cards": [
+    {
+     "front": "Denotation",
+     "back": "The dictionary meaning of a word."
+    },
+    {
+     "front": "Connotation",
+     "back": "The feelings or associations that come with a word."
+    },
+    {
+     "front": "Framing",
+     "back": "The choices of what to emphasize, include or leave out in a story."
+    },
+    {
+     "front": "Attribution",
+     "back": "Telling the reader who said or provided the information."
+    },
+    {
+     "front": "Loaded word",
+     "back": "A word chosen to sway opinion, such as slammed or mob."
+    },
+    {
+     "front": "Neutral verb",
+     "back": "A plain attribution verb such as said."
+    },
+    {
+     "front": "Print",
+     "back": "Medium with room for depth and time to verify."
+    },
+    {
+     "front": "Broadcast",
+     "back": "Medium that is short, spoken and visual."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which sentence uses the most neutral word choice?",
+     "options": [
+      "The mayor slammed the plan.",
+      "The mayor criticized the plan.",
+      "The mayor trashed the plan.",
+      "The mayor destroyed the plan."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which attribution verb is the most neutral?",
+     "options": [
+      "claimed",
+      "admitted",
+      "said",
+      "insisted"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Two accurate stories about the same vote open differently, one on sleep and one on athletes' practice times. This is a difference in:",
+     "options": [
+      "Denotation",
+      "Framing",
+      "Spelling",
+      "Layout only"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which medium usually has the most space for background and the time to verify?",
+     "options": [
+      "A tweet",
+      "A print article",
+      "A 30-second broadcast",
+      "A comment"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The word \"mob\" instead of \"crowd\" shows a difference in:",
+     "options": [
+      "Denotation only",
+      "Connotation",
+      "Grammar",
+      "Spelling"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Read these two sentences about the same event: (A) \"Parents slammed the board's chaotic new schedule at a heated meeting.\" (B) \"Several parents raised concerns about the new schedule at Tuesday's meeting.\" Identify the loaded words in A, rewrite A in neutral language, and explain how the word choice affects the reader.",
+     "markScheme": [
+      "Identifies at least two loaded words in A, such as slammed, chaotic or heated",
+      "Rewrites A in neutral language, such as Parents criticized the new schedule at the meeting",
+      "Explains that connotation can push the reader toward a negative view of the board",
+      "Explains that neutral language lets readers form their own judgment, or notes that B is more neutral"
+     ],
+     "modelAnswer": "The loaded words in A are slammed, chaotic and heated. A neutral version is: Parents criticized the board's new schedule at the meeting. The loaded words have connotations that push the reader toward a negative view of the board and the meeting. Neutral language, as in B, gives the facts and lets readers form their own judgment.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The loaded words in A are 'slammed,' 'chaotic' and 'heated.' A neutral rewrite is: Parents criticized the board's new schedule at the meeting. The loaded words make the reader feel negative about the board before seeing any facts. Sentence B is more neutral, so it lets readers decide for themselves.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The loaded words in A are 'slammed,' 'chaotic' and 'heated.'"
+        },
+        {
+         "point": 1,
+         "quote": "A neutral rewrite is: Parents criticized the board's new schedule at the meeting."
+        },
+        {
+         "point": 2,
+         "quote": "The loaded words make the reader feel negative about the board before seeing any facts."
+        },
+        {
+         "point": 3,
+         "quote": "Sentence B is more neutral, so it lets readers decide for themselves."
+        }
+       ],
+       "feedback": "Full marks. You identified the words, rewrote the sentence and explained the effect."
+      },
+      {
+       "tier": "full",
+       "text": "'Slammed' and 'chaotic' are opinionated, and 'heated' suggests anger. Neutral: Parents expressed concerns about the new schedule during the meeting. The connotations color how readers see both the parents and the board. Neutral word choice is fairer because it reports what happened and not how the writer feels about it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "'Slammed' and 'chaotic' are opinionated, and 'heated' suggests anger."
+        },
+        {
+         "point": 1,
+         "quote": "Neutral: Parents expressed concerns about the new schedule during the meeting."
+        },
+        {
+         "point": 2,
+         "quote": "The connotations color how readers see both the parents and the board."
+        },
+        {
+         "point": 3,
+         "quote": "Neutral word choice is fairer because it reports what happened and not how the writer feels about it."
+        }
+       ],
+       "feedback": "Full marks. Noticing 'heated' as a loaded word is a sharp observation."
+      },
+      {
+       "tier": "partial",
+       "text": "The loaded words are 'slammed' and 'chaotic.' A rewrite: Parents criticized the schedule. Loaded words don't matter because the facts are the same.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The loaded words are 'slammed' and 'chaotic.'"
+        },
+        {
+         "point": 1,
+         "quote": "A rewrite: Parents criticized the schedule."
+        }
+       ],
+       "feedback": "Loaded words matter because their connotations affect the reader even when the facts are the same. Explain the effect."
+      },
+      {
+       "tier": "partial",
+       "text": "The loaded words push readers to feel negative. B is more neutral. The loaded word is 'parents.'",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The loaded words push readers to feel negative."
+        },
+        {
+         "point": 3,
+         "quote": "B is more neutral."
+        }
+       ],
+       "feedback": "'Parents' is neutral. The loaded words are slammed, chaotic and heated.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "There are no loaded words. Both sentences say the same thing, so word choice does not matter.",
+       "meets": [],
+       "feedback": "Words like slammed and chaotic carry opinions. Compare the connotations in A and B."
+      },
+      {
+       "tier": "weak",
+       "text": "Parents criticized the schedule. The loaded words are all the verbs, because verbs show action and action is opinion.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Parents criticized the schedule."
+        }
+       ],
+       "feedback": "Verbs are not all loaded. Slammed is loaded, while criticized and said are plain."
+      }
+     ]
+    },
+    {
+     "prompt": "A fire alarm forces Yellow View High School to evacuate for 20 minutes on Monday. Describe how a print article, a 30-second broadcast report and an online post would each tell this story differently. Give one strength and one weakness of each medium.",
+     "markScheme": [
+      "Describes the print article as longer with background and several sources, a strength being depth and time to verify",
+      "States a weakness of print, such as slower publication",
+      "Describes broadcast as short, visual and focused on one idea, a strength being immediacy or visuals, a weakness being little detail",
+      "Describes the online post as fast and updatable with links and photos, a weakness being the risk of errors or lack of checking"
+     ],
+     "modelAnswer": "The print article would be longer, with background on the cause, quotes from the principal and students, and time to verify facts, but it would be published later. A 30-second broadcast would give the main point with pictures and one interview, which is immediate but has little detail. An online post could be published within minutes and updated with photos and links, but it risks mistakes when it is rushed.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The print article would be longer, with background, the cause of the alarm and quotes from several people, so it has depth and time to check facts. Its weakness is that it comes out later than the other media. The broadcast would be a 30-second report with video and one interview, which is quick and visual, but it has little detail. The online post can go up in minutes and be updated with photos and links, but it may contain mistakes if it's rushed.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The print article would be longer, with background, the cause of the alarm and quotes from several people, so it has depth and time to check facts."
+        },
+        {
+         "point": 1,
+         "quote": "Its weakness is that it comes out later than the other media."
+        },
+        {
+         "point": 2,
+         "quote": "The broadcast would be a 30-second report with video and one interview, which is quick and visual, but it has little detail."
+        },
+        {
+         "point": 3,
+         "quote": "The online post can go up in minutes and be updated with photos and links, but it may contain mistakes if it's rushed."
+        }
+       ],
+       "feedback": "Full marks. Each medium has a strength and a weakness, and all are linked to the event."
+      },
+      {
+       "tier": "full",
+       "text": "Print: in-depth, includes several sources and context, and it can be verified before it is published. Print is slower, so readers may already know the news. Broadcast: short, spoken and visual with a student on camera, which is immediate, but it can't include many details. Online: fastest and can be updated as new facts arrive, but corrections and accuracy can suffer when speed is the priority.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Print: in-depth, includes several sources and context, and it can be verified before it is published."
+        },
+        {
+         "point": 1,
+         "quote": "Print is slower, so readers may already know the news."
+        },
+        {
+         "point": 2,
+         "quote": "Broadcast: short, spoken and visual with a student on camera, which is immediate, but it can't include many details."
+        },
+        {
+         "point": 3,
+         "quote": "Online: fastest and can be updated as new facts arrive, but corrections and accuracy can suffer when speed is the priority."
+        }
+       ],
+       "feedback": "Full marks. The point about readers already knowing the news is an astute weakness of print."
+      },
+      {
+       "tier": "partial",
+       "text": "Print has more detail. Broadcast is short and has video. Online is the best because it is the newest and never has mistakes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Print has more detail."
+        },
+        {
+         "point": 2,
+         "quote": "Broadcast is short and has video."
+        }
+       ],
+       "feedback": "Online posts can contain errors, especially when rushed. Give a weakness of each medium."
+      },
+      {
+       "tier": "partial",
+       "text": "The online post is fast and can be updated. Print is slower. Broadcast is better because it is the longest.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The online post is fast and can be updated."
+        },
+        {
+         "point": 1,
+         "quote": "Print is slower."
+        }
+       ],
+       "feedback": "Broadcast reports are usually the shortest, often under a minute. Describe what a broadcast story includes.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "All three would be exactly the same because the event is the same.",
+       "meets": [],
+       "feedback": "The medium shapes length, detail, speed and style. Describe the differences."
+      },
+      {
+       "tier": "weak",
+       "text": "Print is longer. Broadcast and online are not news; only print is real news.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Print is longer."
+        }
+       ],
+       "feedback": "All three can be news. Each has strengths and weaknesses."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Reporting, opinion and advertising; student press rights",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. tell reporting that supports its claims with evidence from opinion or advertising dressed as news;\n2. explain how the First Amendment and school press rulings bear on what a student newspaper may print.\n\n## Materials\n\nSamples of an invented news story, an editorial and a \"sponsored content\" piece, a summary of Tinker, Hazelwood and Mahanoy, a case study of a school paper dispute, the problem set.\n\n## Starter (6 minutes)\n\nShow three short pieces and ask: \"Which is news, which is opinion, which is an ad?\" Let students vote and give reasons. Discuss what clues they used: label, byline, tone, evidence, who benefits.\n\n## Main activity\n\n1. Three kinds of content: news (reports facts, attributes claims, sources named, balanced), opinion (a writer's view, labeled, uses evidence to argue), and advertising or sponsored content (paid, aims to sell, may imitate a news story and carry a small \"sponsored\" label). Check: Who wrote it? Who paid? Does it cite sources? Are claims supported? Is it labeled?\n2. The First Amendment protects freedom of the press. Student press rulings: Tinker v. Des Moines (1969): students do not \"shed their constitutional rights\" at the schoolhouse gate; schools may restrict speech only if it would substantially disrupt school. Hazelwood v. Kuhlmeier (1988): schools may exercise editorial control over school-sponsored publications, such as a newspaper produced as part of a class, for reasonable educational reasons. Mahanoy Area School District v. B.L. (2021): limited authority over off-campus speech. Some states have passed laws that expand student press freedom beyond Hazelwood.\n3. Case study: a student editor wants to print a story about a staff member's misconduct. Discuss legal limits (libel, invasion of privacy, true threats), ethical responsibilities (fairness, accuracy, minimizing harm) and what an editor can do if an administrator objects.\n\n## Checking for understanding\n\nAsk: \"What does Hazelwood allow a school to do, and what does it not allow?\"\n\n## Problem set\n\nClassify content and analyze a student press case.",
+   "reading": {
+    "title": "What kind of content is this? And who decides what students can print?",
+    "content": "Not everything that looks like a news story is news. As a reader and as a reporter, you need to be able to tell three kinds of content apart.\n\n**News reporting** reports verified facts. It answers who, what, where, when, why and how. It names its sources and **attributes** claims (\"according to the district's budget report\"; \"Principal Maria Lopez said\"). It gives space to different sides of a dispute and keeps the reporter's opinion out. A news story supports its claims with evidence that readers can check.\n\n**Opinion** gives a writer's or an organization's point of view. Editorials, columns and reviews are opinion. They can use facts, but their purpose is to persuade. A responsible publication labels opinion clearly, with words like \"Editorial\" or \"Opinion\" and a byline or an editorial board label, and keeps it apart from the news pages.\n\n**Advertising** is paid to promote a product or an idea. Some ads imitate news stories, a practice called **native advertising** or **sponsored content**. A story called \"5 Ways This Energy Drink Will Change Your Life,\" with a small gray \"Sponsored\" label, is an ad dressed as news. To judge a piece, ask: Who wrote it? Who paid for it? Does it name sources and give evidence? Does it present more than one side? Is it clearly labeled? If a piece cites no sources and tells you what to buy, it is probably an ad.\n\nThe First Amendment protects the freedom of the press, but student journalists have more complicated rights than professional ones. Three Supreme Court cases matter. In **Tinker v. Des Moines** (1969), students wore black armbands to protest the Vietnam War, and the Court ruled that students do not \"shed their constitutional rights to freedom of speech or expression at the schoolhouse gate,\" and that schools can restrict student expression only if it would substantially disrupt school activities or invade the rights of others. In **Hazelwood School District v. Kuhlmeier** (1988), the Court ruled that a school principal could remove two articles from a school-sponsored student newspaper that was produced in a journalism class, because schools may control the content of school-sponsored publications for legitimate educational reasons. In **Mahanoy Area School District v. B.L.** (2021), the Court held that a school had limited authority to punish a student for off-campus speech on social media. Since Hazelwood, some states have passed laws, often called \"New Voices\" laws, that give student journalists more protection; students should find out what the law is in their state and what their school's policy says.\n\nEven where a student paper is free from censorship, there are limits. Libel (false statements that harm a person's reputation), invasion of privacy and true threats are not protected. Ethical rules also apply: be accurate, be fair, minimize harm, and be open about corrections."
+   },
+   "cards": [
+    {
+     "front": "Attribution",
+     "back": "Naming the source of information in a story."
+    },
+    {
+     "front": "Opinion",
+     "back": "Content that gives a point of view, clearly labeled."
+    },
+    {
+     "front": "Native advertising",
+     "back": "Paid content designed to look like news."
+    },
+    {
+     "front": "Tinker v. Des Moines",
+     "back": "1969 ruling that students keep free-speech rights at school unless there is substantial disruption."
+    },
+    {
+     "front": "Hazelwood v. Kuhlmeier",
+     "back": "1988 ruling allowing school control over school-sponsored publications for educational reasons."
+    },
+    {
+     "front": "Libel",
+     "back": "A false published statement that harms someone's reputation."
+    },
+    {
+     "front": "Byline",
+     "back": "The line naming the writer of a story."
+    },
+    {
+     "front": "Editorial board",
+     "back": "The group that writes an organization's editorials."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A story with no sources, a small \"Sponsored\" label, and a call to buy a product is most likely:",
+     "options": [
+      "News",
+      "An editorial",
+      "Native advertising",
+      "A court ruling"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which case protected students wearing black armbands to protest a war?",
+     "options": [
+      "Hazelwood v. Kuhlmeier",
+      "Tinker v. Des Moines",
+      "Mahanoy v. B.L.",
+      "Miranda v. Arizona"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Hazelwood allows schools to:",
+     "options": [
+      "Never control student papers",
+      "Exercise editorial control over school-sponsored publications for educational reasons",
+      "Punish all online speech",
+      "Close newspapers for any reason"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which feature best distinguishes news from opinion?",
+     "options": [
+      "News names sources and attributes claims while opinion argues a view",
+      "News is always longer",
+      "Opinion has no facts",
+      "News is always online"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A false published statement that harms someone's reputation is:",
+     "options": [
+      "Attribution",
+      "Libel",
+      "A byline",
+      "Framing"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A website posts an article titled \"Why Every Teen Needs Brainy Boost Drink,\" with a small gray label that reads \"Sponsored.\" It includes quotes from a satisfied customer and no other sources. Explain why this is not news reporting. Give three clues, and explain how a responsible reader should treat the article.",
+     "markScheme": [
+      "Identifies the sponsored label as a clue that the content is paid advertising",
+      "Identifies the lack of independent sources and evidence as a clue",
+      "Identifies the one-sided persuasion (telling readers what they need) or promotional title as a clue",
+      "Explains that a reader should treat it as an ad, check independent sources and consider who benefits"
+     ],
+     "modelAnswer": "This is native advertising, not news. The Sponsored label shows that someone paid for it. It has no independent sources or evidence, only a satisfied customer. The title tells teens what they need, which is persuasion rather than reporting. A responsible reader should treat it as an ad, look for independent evidence and ask who benefits.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The 'Sponsored' label shows that someone paid for the piece, so it's advertising. It has no independent sources or evidence, only one happy customer. The title tells teens what they 'need,' which is persuasion and not reporting. A reader should treat it as an ad, look for independent evidence and ask who benefits from the claim.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The 'Sponsored' label shows that someone paid for the piece, so it's advertising."
+        },
+        {
+         "point": 1,
+         "quote": "It has no independent sources or evidence, only one happy customer."
+        },
+        {
+         "point": 2,
+         "quote": "The title tells teens what they 'need,' which is persuasion and not reporting."
+        },
+        {
+         "point": 3,
+         "quote": "A reader should treat it as an ad, look for independent evidence and ask who benefits from the claim."
+        }
+       ],
+       "feedback": "Full marks. Three clear clues and a sensible response."
+      },
+      {
+       "tier": "full",
+       "text": "It is labeled 'Sponsored,' which means paid content designed to look like a news story. It doesn't name any experts or studies that can be checked. It promotes one product and doesn't present any other side. I'd read it as an ad, and look for reliable sources before believing its claims.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is labeled 'Sponsored,' which means paid content designed to look like a news story."
+        },
+        {
+         "point": 1,
+         "quote": "It doesn't name any experts or studies that can be checked."
+        },
+        {
+         "point": 2,
+         "quote": "It promotes one product and doesn't present any other side."
+        },
+        {
+         "point": 3,
+         "quote": "I'd read it as an ad, and look for reliable sources before believing its claims."
+        }
+       ],
+       "feedback": "Full marks. The point about no other side is an important clue."
+      },
+      {
+       "tier": "partial",
+       "text": "The label says 'Sponsored.' The title is promotional. A reader should believe it because it has a quote.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The label says 'Sponsored.'"
+        },
+        {
+         "point": 2,
+         "quote": "The title is promotional."
+        }
+       ],
+       "feedback": "A single customer quote is not independent evidence. Explain why a reader should be cautious."
+      },
+      {
+       "tier": "partial",
+       "text": "There are no independent sources. The reader should check who paid for it. The title shows that it is news because it has a name.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "There are no independent sources."
+        },
+        {
+         "point": 3,
+         "quote": "The reader should check who paid for it."
+        }
+       ],
+       "feedback": "A product name in the title suggests advertising. Identify the label and the promotional title as clues.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It is news because it is on a website and has an article format.",
+       "meets": [],
+       "feedback": "Format is not enough. Look at the label, sources, evidence and purpose."
+      },
+      {
+       "tier": "weak",
+       "text": "It is sponsored. Sponsored means the government approved it, so it is accurate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is sponsored."
+        }
+       ],
+       "feedback": "Sponsored means that someone paid for it. It does not mean it is verified."
+      }
+     ]
+    },
+    {
+     "prompt": "The editor of the Yellow View Voice, a school newspaper produced in a class, wants to print a story that says the new athletic director has been accused of mistreating players. The principal wants to stop the story. Explain what Hazelwood allows, what the editor must do to meet journalistic standards, and one option the editor has if the principal objects.",
+     "markScheme": [
+      "States that under Hazelwood, schools may control content of school-sponsored publications for reasonable educational reasons",
+      "States that the editor must verify the facts and get comment from the accused",
+      "States that the editor must use attribution and avoid libel, and report fairly",
+      "States an option, such as asking for the principal's specific educational reason, appealing to the district, or checking whether state law gives more protection"
+     ],
+     "modelAnswer": "Under Hazelwood, the school can control the content of a school-sponsored paper for reasonable educational reasons, so the principal may have the power to stop the story. To meet standards, the editor must verify the facts, seek comment from the athletic director, attribute claims to named sources and avoid libel. If the principal objects, the editor can ask for the specific educational reason, appeal to the district, and check whether the state has a law that gives student journalists more protection.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Under Hazelwood, the school can control a school-sponsored paper if it has a reasonable educational reason, so the principal might be able to stop it. The editor must verify the allegations with documents or sources and ask the athletic director for comment. The story has to attribute claims to named sources and avoid libel. If the principal objects, the editor can ask for the specific reason, appeal to the district and check whether state law gives students more protection.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Under Hazelwood, the school can control a school-sponsored paper if it has a reasonable educational reason, so the principal might be able to stop it."
+        },
+        {
+         "point": 1,
+         "quote": "The editor must verify the allegations with documents or sources and ask the athletic director for comment."
+        },
+        {
+         "point": 2,
+         "quote": "The story has to attribute claims to named sources and avoid libel."
+        },
+        {
+         "point": 3,
+         "quote": "If the principal objects, the editor can ask for the specific reason, appeal to the district and check whether state law gives students more protection."
+        }
+       ],
+       "feedback": "Full marks. You balanced the legal question with the ethical standards."
+      },
+      {
+       "tier": "full",
+       "text": "Hazelwood gives schools broad power over school-sponsored publications like a class newspaper. The editor needs two sources or documents, and has to give the accused person a chance to respond. Claims have to be attributed, and the story must not state unproven accusations as fact, to avoid libel. The editor can ask the principal to explain the educational reason, bring in a media law adviser, and see if a state 'New Voices' law applies.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hazelwood gives schools broad power over school-sponsored publications like a class newspaper."
+        },
+        {
+         "point": 1,
+         "quote": "The editor needs two sources or documents, and has to give the accused person a chance to respond."
+        },
+        {
+         "point": 2,
+         "quote": "Claims have to be attributed, and the story must not state unproven accusations as fact, to avoid libel."
+        },
+        {
+         "point": 3,
+         "quote": "The editor can ask the principal to explain the educational reason, bring in a media law adviser, and see if a state 'New Voices' law applies."
+        }
+       ],
+       "feedback": "Full marks. Calling for two sources and a chance to respond is solid practice."
+      },
+      {
+       "tier": "partial",
+       "text": "Hazelwood lets the school control the paper. The editor can appeal. The editor should print it anyway because of the First Amendment.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hazelwood lets the school control the paper."
+        },
+        {
+         "point": 3,
+         "quote": "The editor can appeal."
+        }
+       ],
+       "feedback": "The First Amendment is limited for school-sponsored papers under Hazelwood. Add the standards the story must meet."
+      },
+      {
+       "tier": "partial",
+       "text": "The editor must verify the facts and ask the athletic director for comment. Attribute the claims. Hazelwood says that school papers have no restrictions.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The editor must verify the facts and ask the athletic director for comment."
+        },
+        {
+         "point": 2,
+         "quote": "Attribute the claims."
+        }
+       ],
+       "feedback": "Hazelwood allows schools to control school-sponsored papers for educational reasons. Explain what it permits.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The principal can never stop a story because of the First Amendment, so the editor should publish it.",
+       "meets": [],
+       "feedback": "Under Hazelwood a school may control a school-sponsored paper for educational reasons, so the question is more complicated."
+      },
+      {
+       "tier": "weak",
+       "text": "The editor should check the facts. A rumor from the locker room is enough to print because everyone knows it.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The editor should check the facts."
+        }
+       ],
+       "feedback": "A rumor is not verified. Print only what you can verify and attribute."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "The inverted pyramid and the feature story",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. write a news story in inverted-pyramid form that answers who, what, where, when, why and how;\n2. write a feature story that opens with a scene and organizes information around a central idea.\n\n## Materials\n\nA fact sheet about an invented event (a fire drill gone wrong, a robotics win), model stories, a scene-writing worksheet, the worksheet.\n\n## Starter (6 minutes)\n\nGive students a fact sheet and ask them to circle the single most important fact. Then ask them to put the facts in order of importance. Compare their choices and introduce the inverted pyramid.\n\n## Main activity\n\n1. The inverted pyramid: the lede (first sentence or paragraph) gives the most important facts, the next paragraphs add important details, and the least important background goes last, so the story can be cut from the bottom. A good news lede answers who, what, where and when, and often why or how, in about 25 to 35 words.\n2. Write a news story from the fact sheet: lede, second paragraph with a key quote, supporting details, background. Attribute with \"said.\"\n3. The feature story: opens with a scene or a person, then moves to a nut graf (a paragraph that states the central idea), then develops the idea with details, quotes and context, and returns to the opening at the end. Use sensory details, avoid opinion words.\n4. Compare the two forms side by side.\n\n## Checking for understanding\n\nAsk: \"Can you cut the last paragraph of a news story and still understand it? Why?\"\n\n## Worksheet\n\nA news story and a scene lede.",
+   "reading": {
+    "title": "The inverted pyramid, and the scene that opens a feature",
+    "content": "Most hard news stories use the **inverted pyramid**: the most important information goes first and the least important goes last. The shape comes from the way news used to be set in type and cut for space. The editors cut from the bottom, so the end of a story had to be expendable. It still helps readers, who often read only the first few paragraphs.\n\nThe **lede** (also spelled lead) is the opening sentence or paragraph, and it carries the most weight. A good news lede answers the **5 W's and an H**: who, what, where, when, why and how, or at least the ones that matter most, in about 25 to 35 words. Here is a lede for an invented event: \"Yellow View High School's robotics team won the state championship Saturday in Columbus, beating 48 other teams with a robot built in six weeks.\" The **who** is the robotics team, the **what** is winning the championship, the **where** is Columbus, the **when** is Saturday, and the **how** is a robot built in six weeks. The second paragraph often adds a key quote or the next most important fact: \"'We didn't think we had a chance after the first round,' team captain Jada Brooks said.\" Next come more details, background, and secondary information. Attribute opinions and claims by naming the source and using **said**: \"Coach Daniel Reyes said the team practiced 20 hours a week.\" Do not put your own opinion in the story; avoid words such as \"amazing\" unless it is in a quotation.\n\nA **feature story** works differently. It is not time-sensitive, and its purpose is to explain, to explore a person or a trend, and to hold the reader through to the end. A feature often opens with a **scene** or an **anecdote**: \"At 6:40 a.m., before the first bell, senior Maya Chen unlocks the door of Room 112 and flips on the lights of the school's only student-run food pantry.\" The scene uses sensory details and draws the reader in. Then comes the **nut graf**, a paragraph that explains the central idea and why the story matters: \"Maya is one of 14 student volunteers who stock the pantry, which serves about 60 classmates a week and has grown from a single shelf to a room.\" After that the writer develops the idea with details, quotes, numbers and context, and often ends by returning to the opening scene, which gives the story a sense of completion.\n\nWhen you plan a story, ask: Is this news that readers need now (inverted pyramid) or an in-depth piece that explores a theme (feature)? Many publications run both on the same topic."
+   },
+   "cards": [
+    {
+     "front": "Inverted pyramid",
+     "back": "A news structure with the most important facts first."
+    },
+    {
+     "front": "Lede",
+     "back": "The opening sentence or paragraph of a news story."
+    },
+    {
+     "front": "5 W's and an H",
+     "back": "Who, what, where, when, why and how."
+    },
+    {
+     "front": "Nut graf",
+     "back": "The paragraph in a feature that states the central idea."
+    },
+    {
+     "front": "Scene lede",
+     "back": "An opening that places the reader in a specific moment."
+    },
+    {
+     "front": "Attribution verb 'said'",
+     "back": "The standard, neutral verb for quotes."
+    },
+    {
+     "front": "Feature story",
+     "back": "An in-depth story that explores a person, trend or idea."
+    },
+    {
+     "front": "Anecdote",
+     "back": "A short story used to illustrate a point."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In the inverted pyramid, the least important information goes:",
+     "options": [
+      "First",
+      "In the middle",
+      "Last",
+      "In the headline"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which is the best news lede?",
+     "options": [
+      "It was a great day for the school.",
+      "Yellow View High School's robotics team won the state championship Saturday in Columbus.",
+      "Many people were happy about the win.",
+      "Robotics is a fun club at Yellow View."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The nut graf in a feature story:",
+     "options": [
+      "Gives the headline",
+      "States the central idea and why the story matters",
+      "Lists all quotes",
+      "Ends the story"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which verb of attribution should a news writer use most?",
+     "options": [
+      "claimed",
+      "exclaimed",
+      "said",
+      "boasted"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which story type often opens with a scene?",
+     "options": [
+      "A hard news brief",
+      "A feature",
+      "A weather list",
+      "A correction"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Fact sheet: The Yellow View High School band won first place at the Ohio state marching contest on Saturday, Oct. 12, in Canton. It was the band's first state title in 18 years. There were 22 bands. Director Alicia Moore said, \"The students worked every morning since August.\" The band has 96 members. The score was 91.4, ahead of the second-place band's 89.8. Write a news story of three paragraphs in inverted-pyramid form, with a lede that answers who, what, where and when, a quote with attribution, and supporting details.",
+     "markScheme": [
+      "Writes a lede that includes who, what, where and when",
+      "Places the most important facts first and the least important last",
+      "Includes the quote correctly attributed with said",
+      "Includes supporting details such as the score, the number of bands or members, without opinion words"
+     ],
+     "modelAnswer": "The Yellow View High School marching band won first place at the Ohio state marching contest Saturday in Canton, claiming its first state title in 18 years. The band scored 91.4, ahead of the second-place band's 89.8, in a field of 22 bands. \"The students worked every morning since August,\" director Alicia Moore said. The band has 96 members.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The Yellow View High School marching band won first place at the Ohio state contest Saturday in Canton, its first state title in 18 years. The band scored 91.4 and beat the second-place band, which scored 89.8, in a field of 22 bands. \"The students worked every morning since August,\" director Alicia Moore said. The band has 96 members.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The Yellow View High School marching band won first place at the Ohio state contest Saturday in Canton, its first state title in 18 years."
+        },
+        {
+         "point": 1,
+         "quote": "The band scored 91.4 and beat the second-place band, which scored 89.8, in a field of 22 bands."
+        },
+        {
+         "point": 2,
+         "quote": "\"The students worked every morning since August,\" director Alicia Moore said."
+        },
+        {
+         "point": 3,
+         "quote": "The band has 96 members."
+        }
+       ],
+       "feedback": "Full marks. The lede has the 5 W's, the details follow, and the least important fact is last."
+      },
+      {
+       "tier": "full",
+       "text": "CANTON, Ohio — Yellow View High School's marching band won the Ohio state marching contest Saturday, ending an 18-year wait for a state title. The 96-member band scored 91.4 points, ahead of the runner-up's 89.8, among 22 bands. Director Alicia Moore said, \"The students worked every morning since August.\" The contest was held on Oct. 12.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "CANTON, Ohio — Yellow View High School's marching band won the Ohio state marching contest Saturday, ending an 18-year wait for a state title."
+        },
+        {
+         "point": 1,
+         "quote": "The 96-member band scored 91.4 points, ahead of the runner-up's 89.8, among 22 bands."
+        },
+        {
+         "point": 2,
+         "quote": "Director Alicia Moore said, \"The students worked every morning since August.\""
+        },
+        {
+         "point": 3,
+         "quote": "The contest was held on Oct. 12."
+        }
+       ],
+       "feedback": "Full marks. A dateline is a nice professional touch."
+      },
+      {
+       "tier": "partial",
+       "text": "The Yellow View High School marching band won first place Saturday in Canton. The students worked hard, said Moore. The band has 96 members. The amazing band is the best in Ohio.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The Yellow View High School marching band won first place Saturday in Canton."
+        },
+        {
+         "point": 3,
+         "quote": "The band has 96 members."
+        }
+       ],
+       "feedback": "Avoid opinion words such as 'amazing' and 'best.' Add the score and the quote with the full attribution."
+      },
+      {
+       "tier": "partial",
+       "text": "The band scored 91.4, ahead of 89.8, among 22 bands. \"The students worked every morning since August,\" Moore said. On Saturday, in Canton, the band won. It was a great day.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The band scored 91.4, ahead of 89.8, among 22 bands."
+        },
+        {
+         "point": 2,
+         "quote": "\"The students worked every morning since August,\" Moore said."
+        }
+       ],
+       "feedback": "Start with the most important fact in the lede, who won what, where and when. 'It was a great day' is opinion.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It was a beautiful fall day and the band members got up early in the morning, put on their uniforms and went to Canton.",
+       "meets": [],
+       "feedback": "A news story starts with the most important fact: the band won a state title. Save the scene for a feature."
+      },
+      {
+       "tier": "weak",
+       "text": "The band has 96 members. Moore exclaimed that the students were incredible and the best band ever.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The band has 96 members."
+        }
+       ],
+       "feedback": "Use said, not exclaimed, and report the actual quote. Do not include opinion words."
+      }
+     ]
+    },
+    {
+     "prompt": "Write a feature story opening of two paragraphs about a student who volunteers at the school's food pantry before school. Paragraph one should be a scene with at least two sensory details. Paragraph two should be a nut graf that states the central idea and why it matters. Use invented but plausible details.",
+     "markScheme": [
+      "Opens with a specific scene with a time and place",
+      "Includes at least two sensory details such as sights, sounds or smells",
+      "Writes a nut graf that states the central idea of the story",
+      "Explains why the story matters, with a fact or number, and avoids unsupported opinion"
+     ],
+     "modelAnswer": "At 6:40 a.m., before the first bell, senior Maya Chen unlocks Room 112 and flips on the lights. The room smells of cardboard and bananas, and cans clink as she stacks them on a metal shelf. Maya is one of 14 student volunteers who run the school's food pantry, which serves about 60 classmates a week. It has grown from a single shelf in a closet to a full room in two years, a sign of how many students need help with food.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "At 6:40 a.m., before the first bell, senior Maya Chen unlocks Room 112 and flips on the lights. The room smells like cardboard and ripe bananas, and cans clink as she lines them up on a metal shelf. Maya is one of 14 student volunteers who run Yellow View's food pantry, which now serves about 60 classmates each week. It started as one shelf in a closet two years ago, and its growth shows how many students need help with food.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At 6:40 a.m., before the first bell, senior Maya Chen unlocks Room 112 and flips on the lights."
+        },
+        {
+         "point": 1,
+         "quote": "The room smells like cardboard and ripe bananas, and cans clink as she lines them up on a metal shelf."
+        },
+        {
+         "point": 2,
+         "quote": "Maya is one of 14 student volunteers who run Yellow View's food pantry, which now serves about 60 classmates each week."
+        },
+        {
+         "point": 3,
+         "quote": "It started as one shelf in a closet two years ago, and its growth shows how many students need help with food."
+        }
+       ],
+       "feedback": "Full marks. The scene has sensory details, and the nut graf gives the idea and a reason for the story."
+      },
+      {
+       "tier": "full",
+       "text": "The hallway is still dark when sophomore Jordan Reyes slips through the side door of the cafeteria at 7 a.m. A refrigerator hums, a cart squeaks, and the sharp smell of oranges fills the stockroom. Jordan is one of a dozen students who run the school's weekly food pantry, which serves 60 families. The pantry, started by a teacher two years ago, now gives out about 400 pounds of food every Friday, which matters because one in six Ohio children faces food insecurity.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The hallway is still dark when sophomore Jordan Reyes slips through the side door of the cafeteria at 7 a.m."
+        },
+        {
+         "point": 1,
+         "quote": "A refrigerator hums, a cart squeaks, and the sharp smell of oranges fills the stockroom."
+        },
+        {
+         "point": 2,
+         "quote": "Jordan is one of a dozen students who run the school's weekly food pantry, which serves 60 families."
+        },
+        {
+         "point": 3,
+         "quote": "The pantry, started by a teacher two years ago, now gives out about 400 pounds of food every Friday, which matters because one in six Ohio children faces food insecurity."
+        }
+       ],
+       "feedback": "Full marks. The statistic gives the story a reason to matter, but make sure to cite its source in a real story."
+      },
+      {
+       "tier": "partial",
+       "text": "At 6:40 a.m., senior Maya Chen opens Room 112. She is a nice person who really cares. Maya is one of 14 volunteers who run the pantry. It is an amazing project.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At 6:40 a.m., senior Maya Chen opens Room 112."
+        },
+        {
+         "point": 2,
+         "quote": "Maya is one of 14 volunteers who run the pantry."
+        }
+       ],
+       "feedback": "Add sensory details to the scene, and replace 'nice' and 'amazing' with facts. Explain why the story matters."
+      },
+      {
+       "tier": "partial",
+       "text": "The room smells of bananas and the cans clink. The pantry matters because 60 students use it each week. Maya Chen is a volunteer.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The room smells of bananas and the cans clink."
+        },
+        {
+         "point": 3,
+         "quote": "The pantry matters because 60 students use it each week."
+        }
+       ],
+       "feedback": "Start with a time and place for the scene and state the central idea in a nut graf.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Food pantries are important in society. Many people need help. This story is about a food pantry at school.",
+       "meets": [],
+       "feedback": "A feature opening should place readers in a specific scene, not make general statements."
+      },
+      {
+       "tier": "weak",
+       "text": "Maya is one of 14 volunteers. The pantry is the greatest thing the school has ever done and everyone should donate.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Maya is one of 14 volunteers."
+        }
+       ],
+       "feedback": "Avoid opinion and persuasion in a feature. Show with facts and details."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Editorials, headlines, ledes and captions",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. write an editorial that takes a clear position and answers the strongest objection;\n2. write headlines, ledes and captions that are accurate, concise and suited to the audience.\n\n## Materials\n\nModel editorials from the Yellow View Voice (invented), a headline-writing workshop, photos for caption practice, the worksheet.\n\n## Starter (6 minutes)\n\nPose: \"Should the school allow phones at lunch?\" Take a quick poll and ask students to explain their reasons. Point out that an editorial needs a position, evidence and an answer to the other side.\n\n## Main activity\n\n1. Editorial structure: a hook, a clear position (thesis), two or three arguments with evidence, the strongest counterargument stated fairly, a rebuttal, and a conclusion with a recommendation. Tone: firm, not insulting. Written in the voice of the editorial board (\"we\").\n2. Headlines: use strong present-tense verbs, be specific, fit the space, avoid ending with a period, capitalize only the first word and proper nouns (in AP style), and never promise more than the story delivers. Compare \"Board votes\" with \"Board OKs later start for high schools.\"\n3. Ledes: short and specific; avoid starting with \"On Tuesday\" or a quote unless it is exceptional.\n4. Captions: identify people (left to right), say what is happening, give the date or context, use the present tense for the action in the photo and add one sentence of context in the past tense.\n\n## Checking for understanding\n\nAsk: \"What's wrong with the headline 'Students are upset'?\"\n\n## Worksheet\n\nAn editorial paragraph, headlines and captions.",
+   "reading": {
+    "title": "Taking a stand fairly, and writing the words readers see first",
+    "content": "An **editorial** is a piece of opinion that represents the view of a publication. Unlike a news story, it takes a **position**. But a good editorial is more than a complaint; it follows a structure. It begins with a **hook**, an example or fact that draws in the reader. It states a clear **position** (the thesis): \"The Yellow View Voice believes that students should be allowed to use phones during lunch.\" It then gives **two or three arguments**, each supported by **evidence**, such as numbers, examples or expert views: \"Students use lunch to check on family and to arrange rides after practice; a survey of 200 students found that 74 percent make a family-related call or text during lunch.\" Then comes the part that makes an editorial persuasive and fair: the **strongest counterargument**, stated honestly, and a **rebuttal**: \"Some teachers worry that phones will make the cafeteria silent and that students will not talk to each other. This is a fair concern. But a lunch policy can require phones to be put away in the first ten minutes or in designated tables, while still giving students the chance to connect with family.\" Finally, the editorial **concludes** with a recommendation. Editorials are written in the voice of the board (\"we\") and avoid personal attacks.\n\n**Headlines** are the first thing the reader sees. A good headline is **accurate** (it matches the story), **specific**, **concise** and active. Use a **strong verb in the present tense** and omit unnecessary words: \"Board OKs later start for high schools\" is better than \"The school board voted on Tuesday to approve a later starting time for high schools.\" Use sentence-style capitalization (only the first word and proper nouns). Do not end with a period. Avoid vague headlines such as \"Students are upset\" and avoid ones that promise more than the story offers, such as \"School bans phones\" if only one rule changed.\n\nThe **lede** of a news story must be specific: \"The Yellow View robotics team won the state title Saturday\" is better than \"A big event happened over the weekend.\" Avoid starting with a time (\"On Tuesday\") or a weak quote.\n\nA **caption** explains a photo. It should **identify** the people in it, usually from left to right, say **what is happening**, and add **context**. Use the present tense for what the picture shows and the past tense for earlier events: \"Seniors Jada Brooks, left, and Marcus Lee, right, tighten the arm of their robot before the final round. The team went on to win the state title Saturday in Columbus.\" Never write a caption that says only what the picture already shows, such as \"Students stand in the gym.\" A reader should learn something new from it."
+   },
+   "cards": [
+    {
+     "front": "Editorial",
+     "back": "An opinion piece representing the view of a publication."
+    },
+    {
+     "front": "Thesis (position)",
+     "back": "The clear statement of the editorial's view."
+    },
+    {
+     "front": "Counterargument",
+     "back": "The strongest argument against your position."
+    },
+    {
+     "front": "Rebuttal",
+     "back": "Your response to the counterargument."
+    },
+    {
+     "front": "Headline",
+     "back": "The title of a story, short and active."
+    },
+    {
+     "front": "Sentence-style headline",
+     "back": "Only the first word and proper nouns are capitalized."
+    },
+    {
+     "front": "Caption",
+     "back": "Text that explains a photograph."
+    },
+    {
+     "front": "Left to right",
+     "back": "The order in which people are identified in a photo caption."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which headline is the best?",
+     "options": [
+      "Students are upset",
+      "Board OKs later start for high schools",
+      "The school board voted on Tuesday on something",
+      "Big news today"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "An editorial should include:",
+     "options": [
+      "Only the writer's feelings",
+      "A position, evidence, and the strongest counterargument",
+      "No evidence",
+      "Insults to the other side"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A caption should:",
+     "options": [
+      "Repeat what is obvious in the picture",
+      "Identify people, say what is happening and add context",
+      "Be at least 200 words",
+      "Give the reporter's opinion"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which headline follows AP sentence-style capitalization?",
+     "options": [
+      "Board Approves A Later Start For High Schools",
+      "Board approves later start for high schools",
+      "BOARD APPROVES LATER START",
+      "Board approves later start for high schools."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In an editorial, a rebuttal:",
+     "options": [
+      "Repeats the position",
+      "Responds to the strongest objection",
+      "Introduces a new topic",
+      "Lists the sources"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write an editorial paragraph (about 120 words) for the Yellow View Voice arguing for or against allowing phones at lunch. Include a clear position, one argument with evidence (invent a plausible survey number), the strongest counterargument and a rebuttal.",
+     "markScheme": [
+      "States a clear position in the voice of the editorial board",
+      "Gives an argument supported by evidence such as a survey result",
+      "States the strongest counterargument fairly",
+      "Gives a rebuttal that answers the counterargument and recommends a solution"
+     ],
+     "modelAnswer": "The Yellow View Voice believes students should be allowed to use phones at lunch. Many students use lunch to arrange rides and check on family; in a Voice survey of 200 students, 74 percent said they make a family-related call or text during lunch. Some teachers worry that the cafeteria will go silent. That is a fair concern, but the school can ask students to put phones away for the first ten minutes. A balanced policy protects both conversation and family contact.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The Yellow View Voice believes that students should be allowed to use phones at lunch. In a Voice survey of 200 students, 74 percent said they use lunch to contact family or arrange rides. Some teachers worry that phones will make the cafeteria silent and that students will stop talking. That is a fair concern, but the school could require phones to be put away for the first ten minutes, which protects conversation and still allows students to reach their families.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The Yellow View Voice believes that students should be allowed to use phones at lunch."
+        },
+        {
+         "point": 1,
+         "quote": "In a Voice survey of 200 students, 74 percent said they use lunch to contact family or arrange rides."
+        },
+        {
+         "point": 2,
+         "quote": "Some teachers worry that phones will make the cafeteria silent and that students will stop talking."
+        },
+        {
+         "point": 3,
+         "quote": "That is a fair concern, but the school could require phones to be put away for the first ten minutes, which protects conversation and still allows students to reach their families."
+        }
+       ],
+       "feedback": "Full marks. The counterargument is stated fairly, and the rebuttal offers a workable solution."
+      },
+      {
+       "tier": "full",
+       "text": "We urge the school to keep phones out of the cafeteria at lunch. A Voice poll of 150 students found that 62 percent said they ate while looking at a screen and 58 percent said they did not talk to the people at their table. Opponents argue that a phone ban would stop students from contacting parents in an emergency. The office phone and teachers can handle emergencies, and a lunch free of screens gives students a rare time to talk face to face.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "We urge the school to keep phones out of the cafeteria at lunch."
+        },
+        {
+         "point": 1,
+         "quote": "A Voice poll of 150 students found that 62 percent said they ate while looking at a screen and 58 percent said they did not talk to the people at their table."
+        },
+        {
+         "point": 2,
+         "quote": "Opponents argue that a phone ban would stop students from contacting parents in an emergency."
+        },
+        {
+         "point": 3,
+         "quote": "The office phone and teachers can handle emergencies, and a lunch free of screens gives students a rare time to talk face to face."
+        }
+       ],
+       "feedback": "Full marks. A well-argued editorial on the other side, with a fair statement of the objection."
+      },
+      {
+       "tier": "partial",
+       "text": "We think students should have phones at lunch. Everyone knows that most students need their phones. Teachers say it's bad, but they are wrong. Phones are good.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "We think students should have phones at lunch."
+        },
+        {
+         "point": 1,
+         "quote": "Everyone knows that most students need their phones."
+        }
+       ],
+       "feedback": "Support your argument with evidence, such as a survey, and state the counterargument fairly. 'They are wrong' is not a rebuttal."
+      },
+      {
+       "tier": "partial",
+       "text": "Some say phones make lunch silent. The school could limit phones to the second half of lunch. We believe in phones because it's the best.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Some say phones make lunch silent."
+        },
+        {
+         "point": 3,
+         "quote": "The school could limit phones to the second half of lunch."
+        }
+       ],
+       "feedback": "State your position clearly and add evidence. 'It's the best' is an opinion without support.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Phones are great and anyone who says otherwise is dumb. Students should have their phones all the time.",
+       "meets": [],
+       "feedback": "An editorial should be firm but fair and should not insult the other side. Add evidence and a counterargument."
+      },
+      {
+       "tier": "weak",
+       "text": "A survey said many students like phones. This editorial is about how phones were invented in the 1900s.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A survey said many students like phones."
+        }
+       ],
+       "feedback": "Stay on the topic of lunch policy. State your position and respond to the strongest objection."
+      }
+     ]
+    },
+    {
+     "prompt": "Improve these three items. (1) Headline: \"The School Board Voted On Tuesday To Approve A Plan To Build A New Gym.\" (2) Lede: \"On Tuesday, there was a meeting at which the board talked about the gym.\" (3) Caption for a photo of two students holding a trophy: \"Students holding a trophy.\" Rewrite each one, and explain the rule you applied.",
+     "markScheme": [
+      "Rewrites the headline in a short, active, present-tense, sentence-style form, such as Board OKs plan for new gym",
+      "Rewrites the lede to be specific, with who, what and when, such as The school board approved a plan Tuesday to build a new gym",
+      "Rewrites the caption to identify people, say what is happening and add context",
+      "Explains at least two rules applied, such as active verbs, brevity, specificity and identifying people left to right"
+     ],
+     "modelAnswer": "Headline: Board OKs plan for new gym. Lede: The school board approved a $4.2 million plan Tuesday to build a new gym at Yellow View High School. Caption: Seniors Jada Brooks, left, and Marcus Lee hold the state robotics trophy after Saturday's win in Columbus. Rules: use short active headlines, make ledes specific, and identify people and add context in captions.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(1) Board OKs plan for new gym (2) The school board approved a $4.2 million plan Tuesday to build a new gym at Yellow View High School. (3) Seniors Jada Brooks, left, and Marcus Lee hold the state robotics trophy after Saturday's win in Columbus. I used a short active headline, a specific lede with the key facts, and a caption that identifies people left to right and gives context.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Board OKs plan for new gym"
+        },
+        {
+         "point": 1,
+         "quote": "The school board approved a $4.2 million plan Tuesday to build a new gym at Yellow View High School."
+        },
+        {
+         "point": 2,
+         "quote": "Seniors Jada Brooks, left, and Marcus Lee hold the state robotics trophy after Saturday's win in Columbus."
+        },
+        {
+         "point": 3,
+         "quote": "I used a short active headline, a specific lede with the key facts, and a caption that identifies people left to right and gives context."
+        }
+       ],
+       "feedback": "Full marks. All three are improved, and the rules are named."
+      },
+      {
+       "tier": "full",
+       "text": "(1) Board approves new gym plan (2) Yellow View's school board voted 5-2 Tuesday to build a new gym, a project that will cost $4.2 million. (3) Band members Ana Ruiz, left, and Ben Cho hold the first-place trophy from the state contest in Canton. The rules: strong present-tense verbs in headlines, specifics in the lede and identifying people with context in captions.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Board approves new gym plan"
+        },
+        {
+         "point": 1,
+         "quote": "Yellow View's school board voted 5-2 Tuesday to build a new gym, a project that will cost $4.2 million."
+        },
+        {
+         "point": 2,
+         "quote": "Band members Ana Ruiz, left, and Ben Cho hold the first-place trophy from the state contest in Canton."
+        },
+        {
+         "point": 3,
+         "quote": "The rules: strong present-tense verbs in headlines, specifics in the lede and identifying people with context in captions."
+        }
+       ],
+       "feedback": "Full marks. The vote count and the cost make the lede specific."
+      },
+      {
+       "tier": "partial",
+       "text": "(1) Board approves gym (2) The board met Tuesday and approved the gym. (3) Two students hold a trophy they won. I made them shorter.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Board approves gym"
+        },
+        {
+         "point": 3,
+         "quote": "I made them shorter."
+        }
+       ],
+       "feedback": "Shorter is not the only rule. Add specifics to the lede and identify the people and the context in the caption."
+      },
+      {
+       "tier": "partial",
+       "text": "(1) The Board Voted To Build A New Gym. (2) The school board approved a plan Tuesday to build a new gym. (3) Marcus Lee, left, and Jada Brooks hold the trophy after winning the state title.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The school board approved a plan Tuesday to build a new gym."
+        },
+        {
+         "point": 2,
+         "quote": "Marcus Lee, left, and Jada Brooks hold the trophy after winning the state title."
+        }
+       ],
+       "feedback": "AP headlines use sentence-style capitalization and active verbs: Board OKs plan for new gym. Your lede and caption are good.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "(1) Gym. (2) There was a meeting about the gym on Tuesday. (3) Trophy.",
+       "meets": [],
+       "feedback": "A headline needs a subject and an active verb, a lede needs the key facts, and a caption needs names and context."
+      },
+      {
+       "tier": "weak",
+       "text": "(1) Amazing! Board Gives Us the Best Gym Ever (2) We are so excited about the gym! (3) Our awesome winners!",
+       "meets": [],
+       "feedback": "Avoid opinion words and exclamation in news writing. Stick to facts and identify the people in captions."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Digital tools, updating a news page and planning a project",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use digital tools to produce, publish and update a school news page;\n2. plan a reporting project from a focused question to a published piece.\n\n## Materials\n\nA school news page template (or a free content management tool), sample photos with permission notes, a project planning sheet, a timeline template, the worksheet.\n\n## Starter (6 minutes)\n\nShow an online news page. Ask: \"How do you know when it was published? What if there is a mistake? How do you know who wrote it?\" Gather answers about bylines, timestamps and corrections.\n\n## Main activity\n\n1. Producing and publishing online: headline, subhead (deck), byline, dateline and timestamp, body copy, photos with captions and credits, links to sources, tags, and an accessible design (alt text for images, readable fonts, headings). Respect copyright: use your own photos or permitted images, and credit them.\n2. Updating: add new information with a clear note (\"Updated at 4:15 p.m. with comment from Principal Lopez\"); correct errors openly (\"Correction: An earlier version of this story gave the wrong date for the vote.\"). Never silently change facts.\n3. Planning a project: start with a focused question (\"How many Yellow View students work part-time, and how does it affect their sleep?\"), then list sources (interviews, documents, data), a method, a timeline with milestones (reporting, drafting, fact-checking, editing, publishing), roles, and the format (story, photo essay, podcast, graphic).\n4. Peer review of a project plan.\n\n## Checking for understanding\n\nAsk: \"What belongs in a correction note?\"\n\n## Worksheet\n\nA news page layout and a project plan.",
+   "reading": {
+    "title": "Publishing, updating and planning like a newsroom",
+    "content": "When a story is published online, the page contains more than the text. A professional news page has a **headline**, often a **subhead** or **deck** that adds a detail, a **byline** naming the reporter, a **dateline** that tells where the story was reported, and a **timestamp** that shows when it was published and updated. The body should be broken into short paragraphs. **Photos** need a caption and a **credit** (who took the picture). It is important to respect **copyright**: use your own photographs or images you have permission to use, and credit the photographer. The page can include **links** to the documents or the sources that support the story, and **tags** that help readers find related stories. Good design includes **alt text** for the images, so that readers with visual impairments can understand them, large readable type, and clear headings.\n\nOne of the great strengths of online news is that it can be **updated**. When new information arrives, a reporter adds it and tells the reader that the story changed. For example: \"Updated at 4:15 p.m. with comment from Principal Maria Lopez.\" When a reporter finds a mistake, the story must be **corrected** openly. A correction note states what was wrong and what is right: \"Correction: An earlier version of this story gave the wrong date for the vote. The board voted Tuesday, not Monday.\" Silently changing a fact, even a small one, damages the reader's trust and is considered bad practice. Corrections protect the credibility of the publication more than they hurt it.\n\nA reporting project starts with a **focused question**, one that can be answered by reporting and that matters to your audience. \"What is happening with school lunch?\" is too broad. \"How many Yellow View students work part-time, and how does it affect their sleep?\" is focused. Next, list the **sources** you will need: people to interview (students, a counselor, a researcher), documents (district attendance data, a public survey) and data. Decide on the **method**: a survey of 150 students, five interviews, and a review of sleep research. Create a **timeline** with milestones: for example, week 1 for the survey and interview requests, week 2 for the interviews, week 3 for drafting, week 4 for fact-checking and editing, and publication at the end. Assign **roles**: reporter, photographer, editor, fact-checker. Choose the **format**: a written story with a chart, a photo essay, a podcast or a combination. Share your plan with an editor, who can point out gaps, such as a missing perspective or a deadline that is too short."
+   },
+   "cards": [
+    {
+     "front": "Byline",
+     "back": "The line naming the writer of a story."
+    },
+    {
+     "front": "Timestamp",
+     "back": "The date and time a story was published or updated."
+    },
+    {
+     "front": "Alt text",
+     "back": "A text description of an image for readers who cannot see it."
+    },
+    {
+     "front": "Correction",
+     "back": "An open note that fixes an error in a published story."
+    },
+    {
+     "front": "Update note",
+     "back": "A note telling readers what new information was added."
+    },
+    {
+     "front": "Focused question",
+     "back": "A specific, answerable question that guides a reporting project."
+    },
+    {
+     "front": "Photo credit",
+     "back": "A line naming who took a photograph."
+    },
+    {
+     "front": "Milestone",
+     "back": "A checkpoint with a date in a project timeline."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "When you find a factual error in a published story, you should:",
+     "options": [
+      "Silently fix it",
+      "Delete the story",
+      "Correct it and add a clear correction note",
+      "Ignore it"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which is the best focused question for a reporting project?",
+     "options": [
+      "What is happening with school lunch?",
+      "How many Yellow View students work part-time, and how does it affect their sleep?",
+      "Is school good?",
+      "What should we write about?"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Alt text is used to:",
+     "options": [
+      "Make images larger",
+      "Describe images for readers who cannot see them",
+      "Add colors",
+      "Credit photographers"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which of these belongs in a photo credit?",
+     "options": [
+      "The caption",
+      "The name of the photographer",
+      "The headline",
+      "The opinion of the editor"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is a reason to include a timestamp on a story?",
+     "options": [
+      "To show when the story was published or updated",
+      "To make the page longer",
+      "To hide the author",
+      "To add a color"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "You published an online story that says the student council voted 8-4 to hold prom at the Convention Center on Saturday, April 12. The next morning the council adviser tells you that the vote was 8-5 and the date is April 5. Write the correction note, and explain the steps you should take to correct the story and why you should not just change the numbers silently.",
+     "markScheme": [
+      "Writes a correction note stating what was wrong and what is right (vote 8-5, date April 5)",
+      "Explains that the story should be corrected on the page promptly",
+      "Explains that the reporter should verify the correct facts with a second source or the minutes",
+      "Explains that silent changes damage trust and that openness protects credibility"
+     ],
+     "modelAnswer": "Correction: An earlier version of this story gave the wrong vote count and date for the prom. The student council voted 8-5, not 8-4, to hold prom at the Convention Center on Saturday, April 5, not April 12. I would first verify the facts with the minutes or a second source, then correct the story promptly with the note. Silent changes would damage readers' trust, while an open correction protects the credibility of the publication.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Correction: An earlier version of this story gave the wrong vote and date. The council voted 8-5, not 8-4, and prom is Saturday, April 5, not April 12. I would fix the story on the page promptly, with the note at the top or bottom. Before changing it, I'd check the council's minutes or ask a second person to confirm the numbers. Silent changes would make readers lose trust, but an open correction shows we care about accuracy.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Correction: An earlier version of this story gave the wrong vote and date. The council voted 8-5, not 8-4, and prom is Saturday, April 5, not April 12."
+        },
+        {
+         "point": 1,
+         "quote": "I would fix the story on the page promptly, with the note at the top or bottom."
+        },
+        {
+         "point": 2,
+         "quote": "Before changing it, I'd check the council's minutes or ask a second person to confirm the numbers."
+        },
+        {
+         "point": 3,
+         "quote": "Silent changes would make readers lose trust, but an open correction shows we care about accuracy."
+        }
+       ],
+       "feedback": "Full marks. The note states both errors and the right facts, and the steps are in a sensible order."
+      },
+      {
+       "tier": "full",
+       "text": "Correction: The student council voted 8-5, not 8-4, to hold prom at the Convention Center on April 5. An earlier version of this story gave the wrong information. The story should be updated right away so readers see the right facts. I would verify against the official minutes or by asking another council member. Quietly changing the numbers would be dishonest to readers who saw the first version, and corrections build credibility.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Correction: The student council voted 8-5, not 8-4, to hold prom at the Convention Center on April 5. An earlier version of this story gave the wrong information."
+        },
+        {
+         "point": 1,
+         "quote": "The story should be updated right away so readers see the right facts."
+        },
+        {
+         "point": 2,
+         "quote": "I would verify against the official minutes or by asking another council member."
+        },
+        {
+         "point": 3,
+         "quote": "Quietly changing the numbers would be dishonest to readers who saw the first version, and corrections build credibility."
+        }
+       ],
+       "feedback": "Full marks. Mentioning readers who saw the first version is an important reason."
+      },
+      {
+       "tier": "partial",
+       "text": "Correction: the vote was 8-5 and the date is April 5. I'd fix it quickly. I'd just change the numbers without a note because it is only a small mistake.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Correction: the vote was 8-5 and the date is April 5."
+        },
+        {
+         "point": 1,
+         "quote": "I'd fix it quickly."
+        }
+       ],
+       "feedback": "Even small factual changes need a note. Explain why silent changes are a problem."
+      },
+      {
+       "tier": "partial",
+       "text": "I'd verify with the minutes. A correction protects the credibility of the paper. Delete the story and write it again.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "I'd verify with the minutes."
+        },
+        {
+         "point": 3,
+         "quote": "A correction protects the credibility of the paper."
+        }
+       ],
+       "feedback": "Deleting the story hides the mistake. Publish a correction note with the right facts.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I would not do anything because the adviser might be wrong and nobody reads the story anyway.",
+       "meets": [],
+       "feedback": "Verify the facts and correct any error. Readers rely on accurate information."
+      },
+      {
+       "tier": "weak",
+       "text": "Fix it on the page. Corrections make the paper look bad, so it's better not to mention that the story was changed.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Fix it on the page."
+        }
+       ],
+       "feedback": "Corrections protect credibility. Not mentioning a change is a silent change."
+      }
+     ]
+    },
+    {
+     "prompt": "Plan a reporting project for the Yellow View Voice. Write a focused question, list at least three sources, describe your method, and give a four-week timeline with milestones. Name the format you would use and explain why.",
+     "markScheme": [
+      "Writes a focused, answerable question that matters to the audience",
+      "Lists at least three appropriate sources (interviews, documents, data)",
+      "Describes a method and a four-week timeline with milestones",
+      "Chooses a format and explains why it suits the question"
+     ],
+     "modelAnswer": "Question: How many Yellow View students work part-time, and how does it affect their sleep? Sources: a survey of 150 students, interviews with five working students and a counselor, and sleep research from a pediatric group. Timeline: Week 1 survey, week 2 interviews, week 3 drafting, week 4 fact-checking, editing and publishing. Format: a written story with a chart, because the survey data are best shown visually.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "My question is: How many Yellow View students work part-time, and how does it affect their sleep? My sources are a survey of 150 students, interviews with five working students and a counselor, and a sleep study from a children's hospital. The timeline is: Week 1 survey and interview requests; Week 2 interviews; Week 3 draft; Week 4 fact-check, edit and publish. I'd publish a written story with a chart because the survey results are easier to see in a graph.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "My question is: How many Yellow View students work part-time, and how does it affect their sleep?"
+        },
+        {
+         "point": 1,
+         "quote": "My sources are a survey of 150 students, interviews with five working students and a counselor, and a sleep study from a children's hospital."
+        },
+        {
+         "point": 2,
+         "quote": "The timeline is: Week 1 survey and interview requests; Week 2 interviews; Week 3 draft; Week 4 fact-check, edit and publish."
+        },
+        {
+         "point": 3,
+         "quote": "I'd publish a written story with a chart because the survey results are easier to see in a graph."
+        }
+       ],
+       "feedback": "Full marks. The plan is specific, with sources, a timeline and a reason for the format."
+      },
+      {
+       "tier": "full",
+       "text": "Question: Why do 40 percent of Yellow View sophomores miss lunch, and what can the school do about it? Sources: the school's lunch data, interviews with the cafeteria manager, three students and a nutritionist. Week 1: get the data; week 2: interviews; week 3: draft the story; week 4: fact-check and publish. A podcast would work well because the interviews give the voices of students directly.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Question: Why do 40 percent of Yellow View sophomores miss lunch, and what can the school do about it?"
+        },
+        {
+         "point": 1,
+         "quote": "Sources: the school's lunch data, interviews with the cafeteria manager, three students and a nutritionist."
+        },
+        {
+         "point": 2,
+         "quote": "Week 1: get the data; week 2: interviews; week 3: draft the story; week 4: fact-check and publish."
+        },
+        {
+         "point": 3,
+         "quote": "A podcast would work well because the interviews give the voices of students directly."
+        }
+       ],
+       "feedback": "Full marks. Choosing a podcast for the interview voices is a good match."
+      },
+      {
+       "tier": "partial",
+       "text": "My question is about lunch. I'd talk to students, the principal and look at data. Week 1 do the research and week 2 write it up. A story is the format.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "My question is about lunch."
+        },
+        {
+         "point": 1,
+         "quote": "I'd talk to students, the principal and look at data."
+        }
+       ],
+       "feedback": "Make the question focused and answerable, and add milestones for all four weeks. Explain why a story is the best format."
+      },
+      {
+       "tier": "partial",
+       "text": "Week 1 survey, week 2 interviews, week 3 draft, week 4 edit. I'd use a podcast to hear voices. The question is: What is school like?",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Week 1 survey, week 2 interviews, week 3 draft, week 4 edit."
+        },
+        {
+         "point": 3,
+         "quote": "I'd use a podcast to hear voices."
+        }
+       ],
+       "feedback": "'What is school like?' is too broad. Make the question focused, and list the sources you will use.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I will write about whatever I find interesting. I will ask my friends and publish it when I am done.",
+       "meets": [],
+       "feedback": "A project needs a focused question, planned sources and a timeline."
+      },
+      {
+       "tier": "weak",
+       "text": "I'd interview students. The question doesn't matter as long as the story is long, and no timeline is needed.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "I'd interview students."
+        }
+       ],
+       "feedback": "A focused question and a timeline help you finish on time."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Interviews, documents, fact-checking and attribution",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. gather information from interviews and documents, check facts and attribute sources properly;\n2. conduct an interview with prepared questions and follow-ups, and report the answers fairly.\n\n## Materials\n\nA sample budget document (invented), a recorded interview clip or transcript, an interview planning sheet, fact-checking checklist, role-play cards, the quiz.\n\n## Starter (6 minutes)\n\nRole-play two interviews: one with only yes-or-no questions, one with open questions. Ask: \"Which interview gave you a story? Why?\" Discuss open-ended questions and follow-ups.\n\n## Main activity\n\n1. Preparing: research first, write 8 to 10 open questions (how, why, what happened, what next), order them from easy to sensitive, know your main question, and ask permission to record. Questions to avoid: yes-or-no, leading, double-barreled.\n2. During: listen more than you talk, ask follow-ups (\"Can you give an example?\" \"What did you mean by...?\"), confirm names and spellings, take accurate quotes, and ask \"Is there anything I haven't asked?\"\n3. Attribution: use \"said,\" \"according to\"; on the record (can be quoted with name), on background, off the record (cannot be used), and why reporters ask for named sources. Quote accurately; paraphrase fairly; never change a quote's meaning.\n4. Documents and fact-checking: use official documents (budgets, minutes, test results). Check names, titles, numbers, dates, spelling; confirm with a second source; call back to verify; keep notes.\n\n## Checking for understanding\n\nAsk: \"What is wrong with the question 'Don't you think the lunch is terrible?'\"\n\n## Quiz\n\nInterview questions, attribution and fact-checking.",
+   "reading": {
+    "title": "Asking, listening, checking",
+    "content": "Interviews are the heart of reporting. Good interviews begin with **preparation**. Research the person and the topic first so that you do not waste time on basic facts. Write eight to ten **open-ended questions** that begin with how, why, what or tell me about. Avoid **yes-or-no** questions (\"Do you like the new schedule?\"), **leading** questions (\"Don't you think the new schedule is terrible?\") and **double-barreled** questions that ask two things at once (\"How do you feel about the schedule and the new gym?\"). Instead ask: \"How has the new schedule changed your day?\" Order the questions from easy to sensitive, and decide on the one question that you must have answered. Ask for permission to record, and tell the person what the story is about.\n\nDuring the interview, **listen more than you talk**. Ask **follow-up questions** when something interesting or unclear comes up: \"Can you give me an example?\" \"What did you mean by 'it's been hard'?\" \"What happened next?\" Confirm the spelling of the person's name and the exact title. Write down key quotes word for word, and use pauses to let the person continue. Finish with: \"Is there anything I haven't asked that you think I should know?\"\n\n**Attribution** tells the reader where the information came from. Use **said** for quotes: \"'We cut the budget by 8 percent,' Principal Maria Lopez said.\" For information from a document, use \"according to\": \"According to the district budget, the cafeteria spent $212,000 last year.\" Be clear on the ground rules. **On the record** means that the person can be quoted by name. **On background** means that the information can be used without naming the source. **Off the record** means that the information cannot be published. Agree on the rules before the interview. Named sources are best because readers can judge their credibility. Quote accurately; if you change a word, you change the quote. Paraphrase fairly. Never change the meaning.\n\n**Documents** are a second source of information: budgets, meeting minutes, test results and policies. They can confirm what people tell you and can reveal facts no one mentioned. Finally, **fact-check** everything: names, titles, numbers, dates and the spelling of every word. Confirm important claims with a second source. Re-read your notes against the story. A single error can damage the credibility of the whole piece, and the credibility of the publication. Many newsrooms follow the rule: \"If your mother says she loves you, check it out.\""
+   },
+   "cards": [
+    {
+     "front": "Open-ended question",
+     "back": "A question that needs more than yes or no."
+    },
+    {
+     "front": "Leading question",
+     "back": "A question that suggests the answer the interviewer wants."
+    },
+    {
+     "front": "Follow-up question",
+     "back": "A question that goes deeper based on the answer."
+    },
+    {
+     "front": "On the record",
+     "back": "The person may be quoted by name."
+    },
+    {
+     "front": "Off the record",
+     "back": "Information that cannot be published."
+    },
+    {
+     "front": "According to",
+     "back": "A phrase to attribute information to a document or source."
+    },
+    {
+     "front": "Fact-checking",
+     "back": "Verifying names, numbers, dates and claims."
+    },
+    {
+     "front": "Second source",
+     "back": "A separate source used to confirm a fact."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which is an open-ended question?",
+     "options": [
+      "Do you like the new schedule?",
+      "How has the new schedule changed your day?",
+      "Is the schedule bad?",
+      "Isn't the schedule awful?"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A source says something is \"off the record.\" This means you:",
+     "options": [
+      "May publish the name",
+      "May not publish it",
+      "May quote it later",
+      "Must record it"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is a leading question?",
+     "options": [
+      "Why did the board change the schedule?",
+      "Don't you think the new schedule is terrible?",
+      "What happened at the meeting?",
+      "How many students attended?"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the best way to attribute a figure from a budget document?",
+     "options": [
+      "The budget is huge.",
+      "According to the district budget, the cafeteria spent $212,000 last year.",
+      "Everyone says the cafeteria spends a lot.",
+      "The cafeteria obviously spent too much."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why should a reporter confirm important claims with a second source?",
+     "options": [
+      "To make the story longer",
+      "To check accuracy and protect credibility",
+      "To get more quotes",
+      "To avoid attribution"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "You will interview the cafeteria manager for a story about why many Yellow View students skip lunch. Write eight questions in order. They should be open-ended, include at least two follow-ups you might ask depending on the answer, and avoid leading, yes-or-no and double-barreled questions. Identify one question you must have answered.",
+     "markScheme": [
+      "Writes at least six open-ended questions beginning with how, why, what or tell me about",
+      "Avoids leading, yes-or-no and double-barreled questions",
+      "Includes at least two follow-up questions linked to possible answers",
+      "Identifies the one must-answer question and orders the questions from easy to sensitive"
+     ],
+     "modelAnswer": "1. How long have you managed the cafeteria? 2. What does a typical lunch period look like? 3. How many students eat lunch each day? 4. Why do you think some students skip lunch? 5. What have you noticed about the lines? 6. What changes have you tried? Follow-ups: Can you give an example? What did you do next? Must-answer: Why do you think some students skip lunch?",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "1. How long have you managed the cafeteria? 2. What does a typical lunch period look like? 3. How many students eat lunch each day? 4. Why do you think some students skip lunch? 5. What changes have you tried? 6. How do students react to the menu? None of these are leading, yes-or-no or double-barreled. Follow-ups: Can you give me an example? What happened after you tried that? The must-answer question is number 4, and I put easier questions first.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1. How long have you managed the cafeteria? 2. What does a typical lunch period look like? 3. How many students eat lunch each day? 4. Why do you think some students skip lunch? 5. What changes have you tried? 6. How do students react to the menu?"
+        },
+        {
+         "point": 1,
+         "quote": "None of these are leading, yes-or-no or double-barreled."
+        },
+        {
+         "point": 2,
+         "quote": "Follow-ups: Can you give me an example? What happened after you tried that?"
+        },
+        {
+         "point": 3,
+         "quote": "The must-answer question is number 4, and I put easier questions first."
+        }
+       ],
+       "feedback": "Full marks. The questions are open, ordered and include follow-ups."
+      },
+      {
+       "tier": "full",
+       "text": "Tell me about a typical lunch period. How long do students have to eat? What are the lines like? Why do you think some students skip lunch? What have you heard from students about the food? What would you change if you could? I avoided yes-or-no and leading questions. Follow-ups I may ask: What did you mean by that? Who told you that? My key question is: Why do you think some students skip lunch? It comes after the easier ones.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Tell me about a typical lunch period. How long do students have to eat? What are the lines like? Why do you think some students skip lunch? What have you heard from students about the food? What would you change if you could?"
+        },
+        {
+         "point": 1,
+         "quote": "I avoided yes-or-no and leading questions."
+        },
+        {
+         "point": 2,
+         "quote": "Follow-ups I may ask: What did you mean by that? Who told you that?"
+        },
+        {
+         "point": 3,
+         "quote": "My key question is: Why do you think some students skip lunch? It comes after the easier ones."
+        }
+       ],
+       "feedback": "Full marks. Using 'tell me about' is a classic open-ended opening."
+      },
+      {
+       "tier": "partial",
+       "text": "1. How long have you worked here? 2. What is a typical lunch like? 3. Why do students skip lunch? 4. Don't you think the food is bad? 5. Do students like the pizza? My key question is number 3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1. How long have you worked here? 2. What is a typical lunch like? 3. Why do students skip lunch?"
+        },
+        {
+         "point": 3,
+         "quote": "My key question is number 3."
+        }
+       ],
+       "feedback": "Question 4 is leading and question 5 is yes-or-no. Rewrite them, and add at least two follow-ups."
+      },
+      {
+       "tier": "partial",
+       "text": "Follow-ups: Can you give an example? What happened next? Must-answer: Why do students skip lunch? 1. Do you like your job? 2. Is the lunch period too short and is the food good?",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Follow-ups: Can you give an example? What happened next?"
+        },
+        {
+         "point": 3,
+         "quote": "Must-answer: Why do students skip lunch?"
+        }
+       ],
+       "feedback": "Question 1 is yes-or-no and question 2 asks two things. Write at least six open-ended questions.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Do students skip lunch? Is the food bad? Do you like pizza? Are the lines long? Is the lunch period short?",
+       "meets": [],
+       "feedback": "These are all yes-or-no questions. Rewrite them as open-ended questions beginning with how, why, what or tell me about."
+      },
+      {
+       "tier": "weak",
+       "text": "What is a typical day like? I'll make sure the manager agrees with me by asking, 'You agree that the food is terrible, right?'",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "What is a typical day like?"
+        }
+       ],
+       "feedback": "That is a leading question. A neutral question lets the source speak freely."
+      }
+     ]
+    },
+    {
+     "prompt": "Rewrite each statement with correct attribution, and explain the difference between on the record, on background and off the record. (1) The cafeteria spent $212,000 last year (from a district budget). (2) \"We have cut costs by 8 percent\" (said by Principal Maria Lopez). (3) A teacher tells you privately that the lunch period is too short and asks not to be named.",
+     "markScheme": [
+      "Attributes (1) to the document with according to the district budget",
+      "Attributes (2) to the principal with said",
+      "Explains that the teacher's request means the information is on background or off the record and the name cannot be published",
+      "Explains the three ground rules correctly (on the record can be named, on background can be used without naming, off the record cannot be used)"
+     ],
+     "modelAnswer": "(1) According to the district budget, the cafeteria spent $212,000 last year. (2) \"We have cut costs by 8 percent,\" Principal Maria Lopez said. (3) If the teacher asks not to be named, the information is on background and the teacher cannot be named; if it is off the record, it cannot be used at all. On the record means the person can be quoted by name; on background means the information can be used without naming the source; off the record means it cannot be published.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(1) According to the district budget, the cafeteria spent $212,000 last year. (2) \"We have cut costs by 8 percent,\" Principal Maria Lopez said. (3) The teacher asked not to be named, so I can use the information on background without the name, or not at all if it is off the record. On the record means I can quote and name the person, on background means I can use the information but not name the source, and off the record means I can't publish it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "According to the district budget, the cafeteria spent $212,000 last year."
+        },
+        {
+         "point": 1,
+         "quote": "\"We have cut costs by 8 percent,\" Principal Maria Lopez said."
+        },
+        {
+         "point": 2,
+         "quote": "The teacher asked not to be named, so I can use the information on background without the name, or not at all if it is off the record."
+        },
+        {
+         "point": 3,
+         "quote": "On the record means I can quote and name the person, on background means I can use the information but not name the source, and off the record means I can't publish it."
+        }
+       ],
+       "feedback": "Full marks. The attributions are in correct form and the ground rules are explained."
+      },
+      {
+       "tier": "full",
+       "text": "(1) The cafeteria spent $212,000 last year, according to the district budget. (2) Principal Maria Lopez said the school has cut costs by 8 percent. (3) Because the teacher asked for anonymity, I'd confirm the ground rules first; if on background, I can print the claim without naming her. On the record: usable with a name; on background: usable without a name; off the record: not usable.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The cafeteria spent $212,000 last year, according to the district budget."
+        },
+        {
+         "point": 1,
+         "quote": "Principal Maria Lopez said the school has cut costs by 8 percent."
+        },
+        {
+         "point": 2,
+         "quote": "Because the teacher asked for anonymity, I'd confirm the ground rules first; if on background, I can print the claim without naming her."
+        },
+        {
+         "point": 3,
+         "quote": "On the record: usable with a name; on background: usable without a name; off the record: not usable."
+        }
+       ],
+       "feedback": "Full marks. Confirming the ground rules before using the information is good practice."
+      },
+      {
+       "tier": "partial",
+       "text": "(1) According to the district budget, the cafeteria spent $212,000. (2) Principal Lopez claimed they cut costs 8 percent. (3) I'd print the teacher's name anyway. On the record means the source can be named.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "According to the district budget, the cafeteria spent $212,000."
+        },
+        {
+         "point": 3,
+         "quote": "On the record means the source can be named."
+        }
+       ],
+       "feedback": "Use 'said' instead of 'claimed,' and do not name the teacher after she asked not to be named."
+      },
+      {
+       "tier": "partial",
+       "text": "(1) The cafeteria spent a lot. (2) \"We have cut costs by 8 percent,\" Principal Maria Lopez said. (3) The teacher should not be named.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "\"We have cut costs by 8 percent,\" Principal Maria Lopez said."
+        },
+        {
+         "point": 2,
+         "quote": "The teacher should not be named."
+        }
+       ],
+       "feedback": "Attribute the figure in (1) to the budget and give the exact number. Explain the three ground rules.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "(1) The cafeteria spent $212,000. (2) The principal said they cut costs. (3) I'd publish the teacher's name since the information is true.",
+       "meets": [],
+       "feedback": "A source's request not to be named should be respected. Attribute the figure to the budget."
+      },
+      {
+       "tier": "weak",
+       "text": "Principal Lopez said that they cut costs by 8 percent. Off the record means that I can use the information as long as I don't say who it came from.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Principal Lopez said that they cut costs by 8 percent."
+        }
+       ],
+       "feedback": "Off the record means that the information cannot be published. 'Not named' describes on background."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Broadcast and podcast segments, and AP style",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. present a short broadcast or podcast segment with a clear structure and a steady delivery;\n2. apply Associated Press style conventions for numbers, titles and attribution.\n\n## Materials\n\nA one-page AP style cheat sheet (invented examples), a broadcast script template, a microphone or recording app, a timer, the problem set.\n\n## Starter (6 minutes)\n\nRead the same sentence aloud twice, once written for print (\"Principal Maria Lopez, 52, announced Tuesday that the 2025-26 school budget, which totals $48.2 million, will include a 3.1 percent increase.\") and once for the ear. Ask: \"Which version is easier to follow when you only hear it?\"\n\n## Main activity\n\n1. Writing for the ear: short sentences, one idea each, conversational words, present or present perfect tense, round numbers (\"nearly 50 million dollars\"), attribution first (\"Principal Maria Lopez says the budget will grow\"), and spelled-out pronunciation guides for hard names. Read it aloud before recording.\n2. Structure of a 60-second segment: a hook, a main point, one voice or fact, a close that tells what happens next.\n3. Delivery: pace (about 150 words a minute), pauses, breath, emphasis, a clear voice, and a steady rhythm. Record and replay.\n4. AP style: numbers one through nine are spelled out, 10 and above are numerals; ages always numerals; percent spelled out with numerals (3.1 percent); titles capitalized before names (Principal Maria Lopez) and lowercase after (Maria Lopez, principal of Yellow View); months abbreviated with a specific date (Oct. 12) but spelled out alone (October); states: Columbus, Ohio; attribution with said.\n\n## Checking for understanding\n\nAsk: \"How do you write 'seven' and '12' in AP style? What about an age?\"\n\n## Problem set\n\nAP style editing and a broadcast script.",
+   "reading": {
+    "title": "Writing for the ear, and the rules that keep copy consistent",
+    "content": "Broadcast and podcast writing is written to be heard, not read. A listener cannot go back and re-read a sentence, so every sentence must be clear the first time. Follow a few rules. Use **short sentences**, with one idea each. Use **conversational words**, as if you were telling a friend. Put the **attribution first**: \"Principal Maria Lopez says the school will add a new bus route,\" rather than \"A new bus route will be added, Principal Maria Lopez says.\" Use **present or present perfect tense** for recent news (\"says,\" \"has approved\") to give it immediacy. **Round numbers** so the listener can follow: say \"nearly 50 million dollars\" instead of \"$48,212,306.\" Avoid long strings of names and titles. For difficult names, write a **pronunciation guide** in the script. Always read your script aloud before recording; if you stumble, rewrite.\n\nA 60-second segment has a clear **structure**: a **hook** that gets attention in the first sentence, a **main point** that states the news, a **supporting voice or fact** (a short sound bite or a number), and a **close** that tells the listener what happens next. For example: \"Yellow View students could be starting school an hour later next fall. The school board voted five to two Tuesday night to move the first bell to 8:15. Board president Elena Ruiz says research shows teens do better with more sleep. The change takes effect in August, and families will get a letter with details next month.\" The script is about 55 words, which is roughly 20 seconds at a normal pace. Aim for about 150 words a minute, with pauses at the ends of sentences and a breath before each new idea. Vary your pitch so you do not sound flat, and emphasize the key words. Record yourself and listen to the pace, volume and clarity.\n\nWhether you are writing for the screen or the microphone, consistency matters. The **Associated Press Stylebook** is the style guide that most American newsrooms follow. A few key rules: Spell out the numbers **one through nine** and use numerals for **10 and above** (seven students, 12 teachers). Ages are always numerals (a 16-year-old student, Maria Lopez, 52). Use numerals with the word **percent** (3.1 percent). **Capitalize a formal title before a name** and lowercase it after: \"Principal Maria Lopez,\" but \"Maria Lopez, principal of Yellow View.\" **Abbreviate** months with a specific date: **Oct. 12**, but write October alone (\"in October\"). The months March, April, May, June and July are never abbreviated. Write a city and a state as \"Columbus, Ohio.\" Use **said** for attribution. Consistent style makes the work look professional and helps readers focus on the content and not on the inconsistencies."
+   },
+   "cards": [
+    {
+     "front": "Writing for the ear",
+     "back": "Short sentences, conversational words and attribution first."
+    },
+    {
+     "front": "Sound bite",
+     "back": "A short recorded quote used in a broadcast."
+    },
+    {
+     "front": "Pronunciation guide",
+     "back": "A respelling of a hard name in a script."
+    },
+    {
+     "front": "150 words per minute",
+     "back": "A normal pace for broadcast reading."
+    },
+    {
+     "front": "AP numbers",
+     "back": "Spell out one through nine; use numerals for 10 and above."
+    },
+    {
+     "front": "AP ages",
+     "back": "Always use numerals."
+    },
+    {
+     "front": "AP titles",
+     "back": "Capitalize before a name; lowercase after."
+    },
+    {
+     "front": "AP dates",
+     "back": "Abbreviate months with a specific date, such as Oct. 12."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In AP style, which is correct?",
+     "options": [
+      "7 students and twelve teachers",
+      "Seven students and 12 teachers",
+      "seven students and twelve teachers",
+      "7 students and 12 teachers"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which sentence uses AP style for a title?",
+     "options": [
+      "Maria Lopez, Principal, spoke.",
+      "Principal Maria Lopez spoke.",
+      "Maria Lopez, Principal, spoke today.",
+      "The Principal Maria Lopez spoke."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the best broadcast style for the amount $48,212,306?",
+     "options": [
+      "$48,212,306",
+      "nearly 50 million dollars",
+      "forty-eight million two hundred twelve thousand",
+      "about $48.2m"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How should the date October 12 be written in AP style?",
+     "options": [
+      "October 12",
+      "Oct. 12",
+      "10/12",
+      "Oct 12th"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A good pace for reading a broadcast script is about:",
+     "options": [
+      "50 words per minute",
+      "150 words per minute",
+      "300 words per minute",
+      "500 words per minute"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Rewrite this print sentence for a 20-second podcast segment: \"Principal Maria Lopez, 52, announced Tuesday that the 2025-26 school budget, which totals $48,212,306, will include a 3.1 percent increase in funding for transportation, according to a document released by the district.\" Use short sentences, attribution first, rounded numbers and an easy structure. Then say why each change helps the listener.",
+     "markScheme": [
+      "Splits the sentence into shorter sentences, each with one idea",
+      "Puts the attribution first (Principal Maria Lopez says...)",
+      "Rounds the numbers for the ear (nearly 50 million dollars, about 3 percent)",
+      "Explains that listeners cannot re-read, so clarity, rounding and attribution first help them follow"
+     ],
+     "modelAnswer": "Principal Maria Lopez says next year's school budget will grow. The budget is nearly 50 million dollars. About 3 percent more will go to buses. The district released the numbers Tuesday. Listeners cannot go back and re-read, so short sentences, rounded numbers and attribution first make it easier to follow.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Principal Maria Lopez says next year's school budget will grow. She says more money will go to buses. The budget is nearly 50 million dollars, and about 3 percent more will go to transportation. Short sentences, rounded numbers and the speaker first make it easier to follow because listeners can't re-read.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Principal Maria Lopez says next year's school budget will grow."
+        },
+        {
+         "point": 1,
+         "quote": "She says more money will go to buses."
+        },
+        {
+         "point": 2,
+         "quote": "The budget is nearly 50 million dollars, and about 3 percent more will go to transportation."
+        },
+        {
+         "point": 3,
+         "quote": "Short sentences, rounded numbers and the speaker first make it easier to follow because listeners can't re-read."
+        }
+       ],
+       "feedback": "Full marks. Each change is explained by the needs of a listener."
+      },
+      {
+       "tier": "full",
+       "text": "Yellow View's budget is going up. Principal Maria Lopez says it will include more money for buses. The district released the plan Tuesday. The total is close to 48 million dollars, with transportation up about 3 percent. I split the long sentence, rounded the numbers and put the source first, because a listener only hears the sentence once.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Yellow View's budget is going up. Principal Maria Lopez says it will include more money for buses."
+        },
+        {
+         "point": 1,
+         "quote": "The district released the plan Tuesday."
+        },
+        {
+         "point": 2,
+         "quote": "The total is close to 48 million dollars, with transportation up about 3 percent."
+        },
+        {
+         "point": 3,
+         "quote": "I split the long sentence, rounded the numbers and put the source first, because a listener only hears the sentence once."
+        }
+       ],
+       "feedback": "Full marks. 'Only hears the sentence once' is the key reason."
+      },
+      {
+       "tier": "partial",
+       "text": "Principal Maria Lopez says the budget will increase. It is 48,212,306 dollars with 3.1 percent for transportation. The district released a document.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Principal Maria Lopez says the budget will increase."
+        },
+        {
+         "point": 2,
+         "quote": "It is 48,212,306 dollars with 3.1 percent for transportation."
+        }
+       ],
+       "feedback": "Round the numbers for the ear. 48,212,306 is hard to follow when spoken: say nearly 50 million dollars."
+      },
+      {
+       "tier": "partial",
+       "text": "Bus money will go up about 3 percent. Listeners can't re-read. Principal Maria Lopez, 52, announced Tuesday.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Bus money will go up about 3 percent."
+        },
+        {
+         "point": 3,
+         "quote": "Listeners can't re-read."
+        }
+       ],
+       "feedback": "Leave out details that don't help the listener, such as her age. Put the attribution first and round the main number.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Principal Maria Lopez, 52, announced Tuesday that the 2025-26 school budget, which totals $48,212,306, will include a 3.1 percent increase in funding for transportation.",
+       "meets": [],
+       "feedback": "That is the print sentence. Break it into short sentences for the ear."
+      },
+      {
+       "tier": "weak",
+       "text": "Principal Maria Lopez says the budget will grow. Listeners prefer long sentences with many details so that they get all the information.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Principal Maria Lopez says the budget will grow."
+        }
+       ],
+       "feedback": "Listeners cannot go back, so short sentences with one idea each work better."
+      }
+     ]
+    },
+    {
+     "prompt": "Edit these sentences to AP style: (1) \"There were 7 students and twelve teachers at the October 12th meeting.\" (2) \"principal Maria Lopez, age fifty-two, said the budget grew by 3.1%.\" (3) \"The meeting was held in Columbus Ohio on September twenty-fourth.\" Rewrite each sentence correctly and name the rule.",
+     "markScheme": [
+      "Corrects (1) to seven students, 12 teachers and Oct. 12",
+      "Corrects (2) to Principal Maria Lopez, 52, said the budget grew by 3.1 percent",
+      "Corrects (3) to Columbus, Ohio, and Sept. 24",
+      "Names at least three AP rules applied (numbers, titles, ages, percent, month abbreviations, state names)"
+     ],
+     "modelAnswer": "(1) There were seven students and 12 teachers at the Oct. 12 meeting. (2) Principal Maria Lopez, 52, said the budget grew by 3.1 percent. (3) The meeting was held in Columbus, Ohio, on Sept. 24. Rules: spell out one through nine; numerals for 10 and above; ages are numerals; capitalize titles before names; percent is spelled out; abbreviate months with dates.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(1) There were seven students and 12 teachers at the Oct. 12 meeting. (2) Principal Maria Lopez, 52, said the budget grew by 3.1 percent. (3) The meeting was held in Columbus, Ohio, on Sept. 24. Rules: spell out one through nine, use numerals for 10 and up and for ages, capitalize the title before the name, spell out percent, and abbreviate months with dates.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There were seven students and 12 teachers at the Oct. 12 meeting."
+        },
+        {
+         "point": 1,
+         "quote": "Principal Maria Lopez, 52, said the budget grew by 3.1 percent."
+        },
+        {
+         "point": 2,
+         "quote": "The meeting was held in Columbus, Ohio, on Sept. 24."
+        },
+        {
+         "point": 3,
+         "quote": "Rules: spell out one through nine, use numerals for 10 and up and for ages, capitalize the title before the name, spell out percent, and abbreviate months with dates."
+        }
+       ],
+       "feedback": "Full marks. All three sentences are corrected and the rules are named."
+      },
+      {
+       "tier": "full",
+       "text": "(1) Seven students and 12 teachers attended the Oct. 12 meeting. (2) Principal Maria Lopez, 52, said the budget increased 3.1 percent. (3) The meeting took place Sept. 24 in Columbus, Ohio. AP rules used: numbers under 10 are spelled out, ages are numerals, titles before names are capitalized, percent is a word, Sept. is abbreviated with a date and the state name follows the city.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Seven students and 12 teachers attended the Oct. 12 meeting."
+        },
+        {
+         "point": 1,
+         "quote": "Principal Maria Lopez, 52, said the budget increased 3.1 percent."
+        },
+        {
+         "point": 2,
+         "quote": "The meeting took place Sept. 24 in Columbus, Ohio."
+        },
+        {
+         "point": 3,
+         "quote": "AP rules used: numbers under 10 are spelled out, ages are numerals, titles before names are capitalized, percent is a word, Sept. is abbreviated with a date and the state name follows the city."
+        }
+       ],
+       "feedback": "Full marks. Rewording also tightened the sentences."
+      },
+      {
+       "tier": "partial",
+       "text": "(1) There were seven students and 12 teachers at the Oct. 12 meeting. (2) Principal Maria Lopez, age 52, said the budget grew 3.1%. (3) The meeting was in Columbus, Ohio, on September 24th. I used the rule for numbers.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There were seven students and 12 teachers at the Oct. 12 meeting."
+        },
+        {
+         "point": 3,
+         "quote": "I used the rule for numbers."
+        }
+       ],
+       "feedback": "Use percent instead of the symbol, and write Sept. 24 without th. Name more of the rules you applied."
+      },
+      {
+       "tier": "partial",
+       "text": "(1) There were 7 students and 12 teachers at the October 12th meeting. (2) Principal Maria Lopez, 52, said the budget grew by 3.1 percent. (3) The meeting was in Columbus, Ohio, on Sept. 24.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Principal Maria Lopez, 52, said the budget grew by 3.1 percent."
+        },
+        {
+         "point": 2,
+         "quote": "The meeting was in Columbus, Ohio, on Sept. 24."
+        }
+       ],
+       "feedback": "In (1), spell out seven and write Oct. 12. Your corrections in (2) and (3) are right.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "They are all fine, because AP style is only a suggestion and it doesn't matter.",
+       "meets": [],
+       "feedback": "AP style provides consistency in newsrooms. Apply the rules to each sentence."
+      },
+      {
+       "tier": "weak",
+       "text": "Principal Maria Lopez, 52, said the budget grew by 3.1 percent. The state should be abbreviated as OH in every story.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Principal Maria Lopez, 52, said the budget grew by 3.1 percent."
+        }
+       ],
+       "feedback": "AP style spells out Ohio when it follows a city: Columbus, Ohio."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Editing copy and writing in plain language",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. edit copy for grammar, spelling and punctuation to a publishable standard;\n2. choose precise, plain language over jargon when writing for a general audience.\n\n## Materials\n\nA short article with planted errors, a list of editing marks, a jargon-to-plain-language chart, a copy editing checklist, the worksheet.\n\n## Starter (6 minutes)\n\nShow a paragraph with errors and ask students to find as many as they can in 90 seconds: \"The principals announcement effected over 200 student's.\" Discuss how a few errors can cost a publication its credibility.\n\n## Main activity\n\n1. Editing for correctness: subject-verb agreement, pronoun agreement, apostrophes (its / it's; possessives with students' vs student's), commas (series, after introductory phrases, around nonessential clauses), homophones (affect / effect, their / there / they're), spelling of names, consistency.\n2. Editing for clarity: cut wordiness (\"in order to\" becomes \"to\"), prefer active voice (\"The board approved the plan\" over \"The plan was approved by the board\"), choose strong verbs, remove redundancy (\"past history,\" \"free gift\").\n3. Plain language: replace jargon with plain words for a general audience: \"utilize\" becomes \"use,\" \"individuals\" becomes \"people,\" \"commence\" becomes \"begin,\" \"stakeholders\" becomes \"parents and teachers,\" \"implement\" becomes \"start.\" Explain technical terms when they are needed.\n4. Practice: edit a 150-word article and then swap with a partner for a second read.\n\n## Checking for understanding\n\nAsk: \"Which is better for a general audience, 'utilize' or 'use'? Why?\"\n\n## Worksheet\n\nCopy editing and plain-language rewriting.",
+   "reading": {
+    "title": "The last read: making copy correct and clear",
+    "content": "A story is not finished when the writer finishes. It must be edited. Editing happens in layers. First comes **correctness**: grammar, spelling and punctuation. A few common problems recur in student copy. **Subject-verb agreement**: \"The team of students **is** winning,\" not \"are winning,\" because the subject is team. **Pronoun agreement**: \"Each student should bring **his or her** lunch\" or, more simply, \"Students should bring **their** lunches.\" **Apostrophes**: **it's** means \"it is\" and **its** shows possession; **students'** shows possession by many students, and **student's** by one. **Commas**: use them to separate items in a series, after an introductory phrase (\"After the vote, the board adjourned\"), and around nonessential clauses (\"Principal Maria Lopez, who joined the school in 2019, said...\"). **Homophones**: **affect** is usually a verb (\"The change will affect students\") and **effect** is usually a noun (\"The effect was immediate\"); **their** shows possession, **there** shows place and **they're** means \"they are.\" Check every name against a reliable source: a misspelled name is among the most upsetting mistakes for readers and sources. Keep your style consistent with AP.\n\nThe second layer is **clarity**. Cut **wordiness**: \"in order to\" becomes \"to,\" \"due to the fact that\" becomes \"because,\" \"at this point in time\" becomes \"now.\" Prefer the **active voice**: \"The board approved the plan\" is shorter and more direct than \"The plan was approved by the board.\" Choose **strong verbs** over weak verbs plus adverbs. Remove **redundancy** such as \"past history,\" \"free gift,\" \"completely finished\" or \"future plans.\"\n\nThe third layer is **plain language**. A news story is written for the general reader, who may not know the specialist words of education, government or science. Replace **jargon** with plain words: **utilize** becomes **use**; **individuals** becomes **people**; **commence** becomes **begin**; **stakeholders** becomes **parents and teachers**; **implement** becomes **start**; **fiscal year** can become **budget year**. When a technical term is necessary, define it the first time: \"The district uses a levy, a tax that voters must approve, to pay for the new gym.\" Good journalism respects the reader's time and intelligence. A sentence like \"The administration will utilize a multi-faceted approach to optimize the learning environment\" says nothing, whereas \"The school will add tutors and open the library after school\" says something the reader can picture.\n\nFinally, read your piece aloud and have someone else read it. Fresh eyes catch errors that the writer misses, and the effort to be correct and clear is what separates a published piece from a draft."
+   },
+   "cards": [
+    {
+     "front": "Subject-verb agreement",
+     "back": "A verb matches its subject in number."
+    },
+    {
+     "front": "its / it's",
+     "back": "Possessive / it is."
+    },
+    {
+     "front": "students' / student's",
+     "back": "Possessive of many students / of one student."
+    },
+    {
+     "front": "affect / effect",
+     "back": "Usually a verb meaning to influence / usually a noun meaning a result."
+    },
+    {
+     "front": "Active voice",
+     "back": "The subject does the action: The board approved the plan."
+    },
+    {
+     "front": "Redundancy",
+     "back": "Saying the same thing twice, such as past history."
+    },
+    {
+     "front": "Jargon",
+     "back": "Specialized words that a general reader may not know."
+    },
+    {
+     "front": "Plain language",
+     "back": "Clear, simple wording suited to a general audience."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which sentence is correct?",
+     "options": [
+      "The team of students are winning.",
+      "The team of students is winning.",
+      "The team of students be winning.",
+      "The team of students were winning now."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the plain-language replacement for \"utilize\"?",
+     "options": [
+      "use",
+      "utility",
+      "commence",
+      "implement"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Choose the correct word: \"The new schedule will ___ every student.\"",
+     "options": [
+      "effect",
+      "affect",
+      "effects",
+      "affects"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which sentence is in the active voice?",
+     "options": [
+      "The plan was approved by the board.",
+      "The board approved the plan.",
+      "The plan has been approved.",
+      "Approval was given."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is a redundancy?",
+     "options": [
+      "past history",
+      "history",
+      "recent history",
+      "history class"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Edit this paragraph for grammar, punctuation and clarity, and rewrite it: \"The principals announcement effected over 200 student's on Tuesday. In order to utilize the new bus routes individuals will need to commence registering. Its important that everyone read there email.\" Identify at least five corrections you made.",
+     "markScheme": [
+      "Corrects the apostrophe errors (principal's, students, It's)",
+      "Corrects the word-choice errors (affected, their)",
+      "Replaces jargon and wordiness (use, people, start, to)",
+      "Produces a clear, correct rewrite and identifies at least five corrections"
+     ],
+     "modelAnswer": "The principal's announcement affected more than 200 students on Tuesday. To use the new bus routes, people will need to start registering. It's important that everyone read their email. Corrections: principals to principal's, effected to affected, student's to students, in order to utilize to to use, individuals to people, commence to start, Its to It's, there to their.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The principal's announcement affected more than 200 students on Tuesday. It's important that everyone read their email. I changed 'effected' to 'affected,' 'there' to 'their,' and 'principals' to 'principal's.' To use the new bus routes, people will need to start registering. I replaced 'in order to utilize' with 'to use,' 'individuals' with 'people,' and 'commence' with 'start.' The rewrite is correct and clearer, with eight corrections in all, including 'student's' to 'students' and 'Its' to 'It's.'",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The principal's announcement affected more than 200 students on Tuesday. It's important that everyone read their email."
+        },
+        {
+         "point": 1,
+         "quote": "I changed 'effected' to 'affected,' 'there' to 'their,' and 'principals' to 'principal's.'"
+        },
+        {
+         "point": 2,
+         "quote": "To use the new bus routes, people will need to start registering. I replaced 'in order to utilize' with 'to use,' 'individuals' with 'people,' and 'commence' with 'start.'"
+        },
+        {
+         "point": 3,
+         "quote": "The rewrite is correct and clearer, with eight corrections in all, including 'student's' to 'students' and 'Its' to 'It's.'"
+        }
+       ],
+       "feedback": "Full marks. You fixed grammar and plain language and explained the corrections."
+      },
+      {
+       "tier": "full",
+       "text": "The principal's announcement Tuesday affected more than 200 students. It's important to read your email. Corrections: effected to affected, student's to students, Its to It's, there to their. To use the new bus routes, families need to begin registering. I cut 'in order,' replaced 'utilize' with 'use' and 'individuals' with 'families.' That is at least eight changes, and the paragraph is now shorter and plainer.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The principal's announcement Tuesday affected more than 200 students. It's important to read your email."
+        },
+        {
+         "point": 1,
+         "quote": "Corrections: effected to affected, student's to students, Its to It's, there to their."
+        },
+        {
+         "point": 2,
+         "quote": "To use the new bus routes, families need to begin registering. I cut 'in order,' replaced 'utilize' with 'use' and 'individuals' with 'families.'"
+        },
+        {
+         "point": 3,
+         "quote": "That is at least eight changes, and the paragraph is now shorter and plainer."
+        }
+       ],
+       "feedback": "Full marks. Replacing 'individuals' with 'families' fits the context well."
+      },
+      {
+       "tier": "partial",
+       "text": "The principal's announcement affected over 200 students on Tuesday. I fixed 'effected' and 'student's.' In order to use the new bus routes individuals must commence registering. Its important to read their email.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The principal's announcement affected over 200 students on Tuesday."
+        },
+        {
+         "point": 1,
+         "quote": "I fixed 'effected' and 'student's.'"
+        }
+       ],
+       "feedback": "You left 'in order to utilize,' 'individuals,' 'commence' and 'Its.' Fix the jargon and the contraction."
+      },
+      {
+       "tier": "partial",
+       "text": "To use the new bus routes, people will need to start registering. I made five corrections. The principals announcement effected over 200 students.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "To use the new bus routes, people will need to start registering."
+        },
+        {
+         "point": 3,
+         "quote": "I made five corrections."
+        }
+       ],
+       "feedback": "'Principals' needs an apostrophe (principal's) and 'effected' should be 'affected.' List the corrections you made.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The paragraph is fine as it is. Jargon makes it sound professional.",
+       "meets": [],
+       "feedback": "Jargon makes writing harder for general readers. Edit for plain language."
+      },
+      {
+       "tier": "weak",
+       "text": "Effected should be affected. I would make the paragraph longer by adding more big words so that it sounds smart.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Effected should be affected."
+        }
+       ],
+       "feedback": "Good editing makes copy shorter and clearer, not longer and more complex."
+      }
+     ]
+    },
+    {
+     "prompt": "Rewrite each sentence in plain, active language and explain what you changed: (1) \"The decision was made by the administration to implement a new policy regarding the utilization of mobile devices.\" (2) \"At this point in time, the school is in the process of commencing renovations.\" (3) \"Stakeholders are encouraged to provide feedback in order to optimize outcomes.\"",
+     "markScheme": [
+      "Rewrites (1) in the active voice with plain words, such as The school started a new cell phone policy",
+      "Rewrites (2) concisely, such as The school is starting renovations now",
+      "Rewrites (3) with plain words, such as Parents and teachers can share their ideas",
+      "Explains the changes, such as active voice, cutting wordiness and replacing jargon"
+     ],
+     "modelAnswer": "(1) The school adopted a new cell phone policy. (2) The school is starting renovations now. (3) Parents and teachers are invited to share their ideas. I changed the passive voice to active, cut wordy phrases such as at this point in time and in the process of, and replaced jargon like implement, utilization, commence, stakeholders and optimize outcomes with plain words.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(1) The school adopted a new policy on cell phones. (2) The school is starting renovations now. (3) Parents and teachers are invited to share their ideas. I used the active voice, cut phrases like 'at this point in time,' and replaced jargon like 'utilization,' 'commencing,' 'stakeholders' and 'optimize outcomes' with plain words.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The school adopted a new policy on cell phones."
+        },
+        {
+         "point": 1,
+         "quote": "The school is starting renovations now."
+        },
+        {
+         "point": 2,
+         "quote": "Parents and teachers are invited to share their ideas."
+        },
+        {
+         "point": 3,
+         "quote": "I used the active voice, cut phrases like 'at this point in time,' and replaced jargon like 'utilization,' 'commencing,' 'stakeholders' and 'optimize outcomes' with plain words."
+        }
+       ],
+       "feedback": "Full marks. Each rewrite is shorter, plainer and active, and you explained the changes."
+      },
+      {
+       "tier": "full",
+       "text": "(1) Administrators started a new cell phone policy. (2) Renovations at the school begin now. (3) The school wants parents and teachers to send comments. I cut wordiness, changed passive sentences to active ones and swapped abstract terms such as 'stakeholders' for the real groups.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Administrators started a new cell phone policy."
+        },
+        {
+         "point": 1,
+         "quote": "Renovations at the school begin now."
+        },
+        {
+         "point": 2,
+         "quote": "The school wants parents and teachers to send comments."
+        },
+        {
+         "point": 3,
+         "quote": "I cut wordiness, changed passive sentences to active ones and swapped abstract terms such as 'stakeholders' for the real groups."
+        }
+       ],
+       "feedback": "Full marks. Naming the real groups in place of 'stakeholders' is exactly the point of plain language."
+      },
+      {
+       "tier": "partial",
+       "text": "(1) The administration made a new phone policy. (2) At this point in time, the school is starting renovations. (3) Stakeholders can give feedback. I made them shorter.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The administration made a new phone policy."
+        },
+        {
+         "point": 3,
+         "quote": "I made them shorter."
+        }
+       ],
+       "feedback": "Cut 'at this point in time' and replace 'stakeholders' with the real groups. Explain more of the changes."
+      },
+      {
+       "tier": "partial",
+       "text": "(1) The decision was made to start a new phone policy. (2) The school is starting renovations now. (3) Parents and teachers are asked for their ideas.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The school is starting renovations now."
+        },
+        {
+         "point": 2,
+         "quote": "Parents and teachers are asked for their ideas."
+        }
+       ],
+       "feedback": "In (1), 'the decision was made' is passive; say who decided. Name the rules you used.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "They are already clear. I would keep them because they sound formal.",
+       "meets": [],
+       "feedback": "These sentences are wordy and use jargon. Rewrite them plainly."
+      },
+      {
+       "tier": "weak",
+       "text": "The school is starting renovations now. I would make (1) and (3) longer so they sound more professional.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The school is starting renovations now."
+        }
+       ],
+       "feedback": "Longer is not clearer. Use active voice and plain words."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

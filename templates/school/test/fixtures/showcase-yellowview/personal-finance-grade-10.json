@@ -1,0 +1,2415 @@
+{
+ "subject": "Personal Finance",
+ "yearGroup": "Grade 10",
+ "weeks": {
+  "1": {
+   "topic": "Earning income and reading a pay stub",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how education and skills affect earning potential, using data on careers;\n2. read a pay stub and explain gross pay, net pay and each deduction;\n3. calculate take-home pay from an hourly wage and a salary.\n\n## Materials\n\nA sample pay stub (invented), a career earnings table (illustrative figures), calculators, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"Two people work 40 hours a week. One earns $15 an hour, the other $25. Why might that be?\" List answers: training, experience, demand, risk.\n\n## Main activity\n\n1. Earning potential: on average, more education and in-demand skills lead to higher pay and lower unemployment, but with exceptions. Trades, certificates and degrees all raise earning power; so does experience.\n2. The pay stub: gross pay (before deductions); deductions: Social Security (6.2 percent), Medicare (1.45 percent), federal income tax withholding, state income tax withholding; net pay (take-home).\n3. Hourly example: 30 hours at $15 = $450 gross. Social Security 6.2 percent = $27.90; Medicare 1.45 percent = $6.53; federal withholding $24; state withholding $8; total deductions $66.43; net pay $383.57.\n4. Salary example: $52,000 a year paid every two weeks (26 paychecks) = $2,000 gross each. Social Security $124, Medicare $29, federal $180, state $60: total $393; net $1,607.\n\n## Worksheet\n\nCompute gross, deductions and net pay.",
+   "reading": {
+    "title": "What you earn, and what you take home",
+    "content": "Most people earn income by working, and what they earn depends on many things. Across large groups of workers, those with more **education and training** tend to earn more, and are less likely to be unemployed. The reasons are practical: skills that are rare or in high demand, such as nursing, electrical work, welding or computer programming, command higher pay because employers compete for them. Education does not have to mean a four-year degree. A one-year certificate, an apprenticeship in a trade or a two-year associate's degree can all raise earning power, and so can years of **experience**. These are averages, not guarantees: some people earn a lot without a degree, and some graduates earn little. Choosing a path also means weighing the cost of training and the years of earning lost while studying.\n\nWhen you start a job, your paycheck is smaller than the number you were quoted. **Gross pay** is what you earn before anything is taken out. For an hourly worker it is hours times the hourly rate; for a salaried worker it is the annual salary divided by the number of paychecks. **Net pay**, or take-home pay, is what is left after **deductions**. The pay stub lists each deduction. **Social Security** (6.2 percent of gross pay) and **Medicare** (1.45 percent) together are called FICA, and fund retirement and health benefits for older Americans. **Federal income tax** and **state income tax** are withheld in advance so that you do not owe a large bill at the end of the year. Some people also have deductions for health insurance or a retirement plan.\n\nHere is an hourly example. A student works 30 hours at $15 an hour: gross pay is 30 x 15 = $450. Social Security is 6.2 percent of 450, which is $27.90. Medicare is 1.45 percent of 450, which is $6.53 (rounded). Suppose federal withholding is $24 and state withholding is $8. Total deductions are 27.90 + 6.53 + 24 + 8 = $66.43, so net pay is 450 - 66.43 = $383.57.\n\nA salary example: a worker earns $52,000 a year and is paid every two weeks, 26 paychecks a year. Gross pay per check is 52,000 / 26 = $2,000. Social Security is $124 and Medicare is $29. If federal withholding is $180 and state is $60, the deductions total $393 and net pay is $1,607. Reading the stub carefully lets you notice mistakes and plan your spending around the amount you really receive, not the amount you were promised."
+   },
+   "cards": [
+    {
+     "front": "Gross pay",
+     "back": "Earnings before any deductions."
+    },
+    {
+     "front": "Net pay",
+     "back": "Take-home pay after deductions."
+    },
+    {
+     "front": "Deduction",
+     "back": "An amount taken out of gross pay."
+    },
+    {
+     "front": "FICA",
+     "back": "Social Security and Medicare payroll taxes."
+    },
+    {
+     "front": "Withholding",
+     "back": "Income tax taken from each paycheck in advance."
+    },
+    {
+     "front": "Salary",
+     "back": "A fixed yearly pay divided across paychecks."
+    },
+    {
+     "front": "Earning potential",
+     "back": "How much a person can expect to earn over time."
+    },
+    {
+     "front": "Apprenticeship",
+     "back": "Paid training on the job in a skilled trade."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A student works 30 hours at $15 an hour. What is the gross pay?",
+     "options": [
+      "$45",
+      "$315",
+      "$450",
+      "$495"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which deduction is 6.2 percent of gross pay?",
+     "options": [
+      "Medicare",
+      "Social Security",
+      "State tax",
+      "Health insurance"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A salary of $52,000 is paid every two weeks, 26 times a year. What is the gross pay per check?",
+     "options": [
+      "$1,000",
+      "$2,000",
+      "$4,333",
+      "$26,000"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Gross pay is $450 and total deductions are $66.43. What is the net pay?",
+     "options": [
+      "$383.57",
+      "$516.43",
+      "$66.43",
+      "$450.00"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which statement about education and pay is most accurate?",
+     "options": [
+      "More training tends to raise average pay, with exceptions",
+      "A degree guarantees a high income",
+      "Training never affects pay",
+      "Only a four-year degree helps"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student works 20 hours in a week at $15 an hour. Social Security and Medicare together take 7.65 percent of gross pay, and $15 is withheld for income taxes. Calculate the gross pay, the FICA deduction and the net pay, then explain why take-home pay is lower than gross pay.",
+     "markScheme": [
+      "Calculates gross pay as $300",
+      "Calculates the FICA deduction as $22.95",
+      "Calculates net pay as $262.05",
+      "Explains that deductions pay for taxes and programs such as Social Security and Medicare, so take-home is lower"
+     ],
+     "modelAnswer": "Gross pay is 20 times $15, which is $300. FICA is 7.65 percent of $300, which is $22.95. Adding the $15 of income tax gives $37.95 of deductions, so net pay is $300 minus $37.95, which is $262.05. Take-home pay is lower because taxes and payroll contributions are taken out before the money is paid, to fund services and programs such as Social Security and Medicare.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Gross pay is 20 × $15 = $300. FICA is 7.65 percent of 300, which is $22.95. With the $15 income tax, deductions are $37.95, so net pay is 300 - 37.95 = $262.05. Take-home is lower because taxes and payroll contributions are taken out first to pay for programs like Social Security and Medicare.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Gross pay is 20 × $15 = $300."
+        },
+        {
+         "point": 1,
+         "quote": "FICA is 7.65 percent of 300, which is $22.95."
+        },
+        {
+         "point": 2,
+         "quote": "With the $15 income tax, deductions are $37.95, so net pay is 300 - 37.95 = $262.05."
+        },
+        {
+         "point": 3,
+         "quote": "Take-home is lower because taxes and payroll contributions are taken out first to pay for programs like Social Security and Medicare."
+        }
+       ],
+       "feedback": "Full marks. Every figure is correct and the reason is clear."
+      },
+      {
+       "tier": "full",
+       "text": "She earns $300 gross for 20 hours. Social Security and Medicare take $22.95. Add $15 for income tax and the deductions are $37.95, which leaves $262.05 in net pay. The difference is money withheld for taxes and for the Social Security and Medicare programs she will use later.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "She earns $300 gross for 20 hours."
+        },
+        {
+         "point": 1,
+         "quote": "Social Security and Medicare take $22.95."
+        },
+        {
+         "point": 2,
+         "quote": "Add $15 for income tax and the deductions are $37.95, which leaves $262.05 in net pay."
+        },
+        {
+         "point": 3,
+         "quote": "The difference is money withheld for taxes and for the Social Security and Medicare programs she will use later."
+        }
+       ],
+       "feedback": "Full marks. Linking the deductions to later benefits is accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "Gross pay is $300. Deductions are taxes. FICA is 7.65 percent so it is $7.65, and net pay is $277.35.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Gross pay is $300."
+        },
+        {
+         "point": 3,
+         "quote": "Deductions are taxes."
+        }
+       ],
+       "feedback": "7.65 percent of $300 is $22.95, not $7.65. Recalculate FICA and net pay."
+      },
+      {
+       "tier": "partial",
+       "text": "FICA is $22.95. Net pay is $262.05. Gross pay is 20 + 15 = $35.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "FICA is $22.95."
+        },
+        {
+         "point": 2,
+         "quote": "Net pay is $262.05."
+        }
+       ],
+       "feedback": "Gross pay is hours times the rate, so 20 times $15.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Gross pay and net pay are the same. The employer must be keeping the missing money.",
+       "meets": [],
+       "feedback": "Deductions are sent to the government for taxes and programs, not kept by the employer."
+      },
+      {
+       "tier": "weak",
+       "text": "It is $300. Net pay is $300 plus the deductions because they are added in.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is $300."
+        }
+       ],
+       "feedback": "Deductions are subtracted from gross pay to find net pay."
+      }
+     ]
+    },
+    {
+     "prompt": "Worker A earns $40,000 a year with no training after high school. Worker B completes a two-year technical program costing $12,000 and then earns $60,000 a year. Calculate how much more Worker B earns over 10 years, subtract the program cost, and explain two other things (one for and one against) that Worker B should consider.",
+     "markScheme": [
+      "Calculates the extra earnings as $20,000 a year, or $200,000 over 10 years",
+      "Subtracts the $12,000 cost to reach $188,000",
+      "Gives one consideration in favor, such as higher pay or better job security",
+      "Gives one consideration against, such as two years of lost earnings or the chance the job market changes"
+     ],
+     "modelAnswer": "Worker B earns $20,000 more each year, which is $200,000 over 10 years. Subtracting the $12,000 program cost leaves $188,000. In favor, skilled workers often have better job security and room to advance. Against, B gives up two years of full-time earnings while studying and the job market may change.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "B earns $60,000 - $40,000 = $20,000 more a year, which is $200,000 over 10 years. After the $12,000 program, the gain is $188,000. In favor: skilled workers often have steadier jobs and can move up. Against: B loses about two years of full-time pay while studying, and the demand for the skill could change.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "B earns $60,000 - $40,000 = $20,000 more a year, which is $200,000 over 10 years."
+        },
+        {
+         "point": 1,
+         "quote": "After the $12,000 program, the gain is $188,000."
+        },
+        {
+         "point": 2,
+         "quote": "In favor: skilled workers often have steadier jobs and can move up."
+        },
+        {
+         "point": 3,
+         "quote": "Against: B loses about two years of full-time pay while studying, and the demand for the skill could change."
+        }
+       ],
+       "feedback": "Full marks. You included a cost that the raw figures hide."
+      },
+      {
+       "tier": "full",
+       "text": "The yearly gap is $20,000, so over a decade it is $200,000. Taking away the $12,000 tuition leaves $188,000. A good point for B is that employers are asking for the training, so jobs are easier to find. A point against is that B can't work full time during the two years, so the real gain is smaller.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The yearly gap is $20,000, so over a decade it is $200,000."
+        },
+        {
+         "point": 1,
+         "quote": "Taking away the $12,000 tuition leaves $188,000."
+        },
+        {
+         "point": 2,
+         "quote": "A good point for B is that employers are asking for the training, so jobs are easier to find."
+        },
+        {
+         "point": 3,
+         "quote": "A point against is that B can't work full time during the two years, so the real gain is smaller."
+        }
+       ],
+       "feedback": "Full marks. The real gain accounts for time spent studying."
+      },
+      {
+       "tier": "partial",
+       "text": "B earns $20,000 more a year, or $200,000 in 10 years. B may find a job more easily. The program costs nothing, so the gain is $200,000.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "B earns $20,000 more a year, or $200,000 in 10 years."
+        },
+        {
+         "point": 2,
+         "quote": "B may find a job more easily."
+        }
+       ],
+       "feedback": "The program costs $12,000, so subtract it. Also name something against the choice."
+      },
+      {
+       "tier": "partial",
+       "text": "$200,000 - $12,000 = $188,000. Studying costs two years of pay. B earns $100,000 more a year.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "$200,000 - $12,000 = $188,000."
+        },
+        {
+         "point": 3,
+         "quote": "Studying costs two years of pay."
+        }
+       ],
+       "feedback": "The yearly difference is $60,000 minus $40,000, which is $20,000.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Education does not affect pay, so Worker A is just as well off.",
+       "meets": [],
+       "feedback": "On average, training raises earnings. Use the figures to compare."
+      },
+      {
+       "tier": "weak",
+       "text": "Worker B should do it because $60,000 is a bigger number. No calculation is needed.",
+       "meets": [],
+       "feedback": "Work out the extra earnings and the cost before deciding."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Income tax, and the cost of different paths after high school",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe how federal and state income tax works and complete a simple tax form;\n2. compare the costs and benefits of college, trade school and work after graduation.\n\n## Materials\n\nA simplified tax form (invented numbers), an illustrative bracket table, cost comparison cards, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"Why does your employer take tax out of each paycheck instead of letting you pay at the end of the year?\" Discuss pay as you go.\n\n## Main activity\n\n1. How income tax works: you report your income for a year, subtract a standard deduction, and apply tax rates to taxable income. Withholding during the year is compared with the tax owed; if too much was withheld, you get a refund; if too little, you owe more. Many states, including Ohio, also tax income.\n2. Marginal tax rates (illustrative): 10 percent on the first $11,000 of taxable income and 12 percent on the portion above that. Example: taxable income $15,000: 10 percent of 11,000 = $1,100; 12 percent of 4,000 = $480; total $1,580.\n3. Simple return: wages $9,000, standard deduction assumed to be $13,000, so taxable income is $0 and the tax is $0; $450 was withheld, so the refund is $450.\n4. Paths after school: a four-year college (illustrative total cost $80,000, higher earnings later), a two-year trade program ($20,000, earning sooner), working right away (no tuition cost, but possibly lower earnings over a career).\n\n## Worksheet\n\nFill in a simple tax form and compare paths.",
+   "reading": {
+    "title": "How tax works, and what each path really costs",
+    "content": "Income tax is the way in which governments collect money from people's earnings to pay for roads, schools, defense and many services. The **federal government** and many states, including Ohio, tax income. During the year, your employer **withholds** part of each paycheck and sends it to the government on your behalf. After the year ends, you file a **tax return** to work out what you actually owe.\n\nThe process has a few steps. First, add up your **income** for the year. Second, subtract the **standard deduction**, a set amount that nobody pays tax on. What is left is your **taxable income**. Third, apply the **tax rates** to your taxable income. Finally, compare the tax you owe with the amount that was already withheld. If more was withheld than you owe, the difference is a **refund**; if less, you pay the difference.\n\nTax rates are **marginal**: higher rates apply only to the portion of income above a threshold, not to all of it. Imagine (for practice) a rate of 10 percent on the first $11,000 of taxable income and 12 percent on anything above. If your taxable income is $15,000, you pay 10 percent of $11,000, which is $1,100, plus 12 percent of the remaining $4,000, which is $480, for a total of $1,580. Earning a raise that pushes you into a higher bracket never reduces your take-home pay, since only the extra dollars are taxed at the higher rate.\n\nA simple return: a student earned $9,000 in wages and, for this exercise, the standard deduction is $13,000. Taxable income is the larger of zero and 9,000 - 13,000, which is $0, so the tax owed is $0. If $450 was withheld during the year, the whole $450 comes back as a refund. This is why even teenagers with part-time jobs should file: otherwise they lose money that was withheld.\n\nTaxes are one part of planning your life after high school. There are three broad paths, each with costs and benefits. A **four-year college** may cost $80,000 or more in tuition and fees (for the illustration), but graduates in many fields earn more over a lifetime. A **trade school or two-year program** may cost about $20,000, takes less time, and leads to jobs such as electrician or dental hygienist that pay well. **Working right away** costs no tuition and starts earning immediately, but may lead to lower earnings later without added skills. Whichever path you choose, compare the total cost, the time before you earn full pay, the likely income, and how much you may borrow. The best path is the one that fits your goals and keeps debt manageable."
+   },
+   "cards": [
+    {
+     "front": "Taxable income",
+     "back": "Income left after the standard deduction."
+    },
+    {
+     "front": "Standard deduction",
+     "back": "A set amount of income that is not taxed."
+    },
+    {
+     "front": "Withholding",
+     "back": "Tax taken from pay during the year."
+    },
+    {
+     "front": "Refund",
+     "back": "Money returned when too much tax was withheld."
+    },
+    {
+     "front": "Marginal rate",
+     "back": "A tax rate applied only to income above a threshold."
+    },
+    {
+     "front": "Tax return",
+     "back": "A yearly form that reports income and tax owed."
+    },
+    {
+     "front": "Tuition",
+     "back": "The price charged for classes."
+    },
+    {
+     "front": "Trade school",
+     "back": "A school that trains for a skilled occupation."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Wages are $9,000, the standard deduction is $13,000. What is the taxable income?",
+     "options": [
+      "$0",
+      "$4,000",
+      "$9,000",
+      "$22,000"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "$450 was withheld and the tax owed is $0. What is the refund?",
+     "options": [
+      "$0",
+      "$450",
+      "$900",
+      "$13,000"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "With 10 percent on the first $11,000 and 12 percent above, what is the tax on $15,000 of taxable income?",
+     "options": [
+      "$1,500",
+      "$1,580",
+      "$1,800",
+      "$1,100"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A marginal tax rate means a higher rate applies to:",
+     "options": [
+      "All of your income",
+      "Only the income above the threshold",
+      "Only your first dollar",
+      "Your deductions"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why should a student with a part-time job file a tax return even if no tax is owed?",
+     "options": [
+      "To get back the tax that was withheld",
+      "To lose money",
+      "Because it is fun",
+      "To avoid working"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "For practice, use a 10 percent rate on the first $11,000 of taxable income and 12 percent above that. A worker has taxable income of $20,000 and had $2,000 withheld during the year. Calculate the tax owed and decide whether the worker gets a refund or owes more, and how much. Then explain why a raise cannot lower take-home pay under marginal rates.",
+     "markScheme": [
+      "Calculates the tax on the first $11,000 as $1,100",
+      "Calculates the tax on the remaining $9,000 as $1,080, for a total of $2,180",
+      "Concludes that the worker owes $180 more because $2,000 was withheld",
+      "Explains that only the extra dollars are taxed at the higher rate, so take-home pay still rises"
+     ],
+     "modelAnswer": "The first $11,000 is taxed at 10 percent, which is $1,100. The remaining $9,000 is taxed at 12 percent, which is $1,080. Total tax is $2,180. Since $2,000 was withheld, the worker owes $180 more. A raise cannot lower take-home pay because only the extra dollars are taxed at the higher rate, and the earlier dollars keep their lower rate.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "10 percent of $11,000 is $1,100. The other $9,000 at 12 percent is $1,080, so the tax is $2,180. Only $2,000 was withheld, so the worker owes $180 more. A raise can't lower take-home pay because only the extra dollars get the higher rate; the first dollars stay at 10 percent.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "10 percent of $11,000 is $1,100."
+        },
+        {
+         "point": 1,
+         "quote": "The other $9,000 at 12 percent is $1,080, so the tax is $2,180."
+        },
+        {
+         "point": 2,
+         "quote": "Only $2,000 was withheld, so the worker owes $180 more."
+        },
+        {
+         "point": 3,
+         "quote": "A raise can't lower take-home pay because only the extra dollars get the higher rate; the first dollars stay at 10 percent."
+        }
+       ],
+       "feedback": "Full marks. The two-step marginal calculation is exactly right."
+      },
+      {
+       "tier": "full",
+       "text": "The first slice is $1,100. The second slice is 12 percent of $9,000, or $1,080, so the total is $2,180. Compared with the $2,000 withheld, there is a $180 balance due. Marginal rates tax only the dollars above the threshold, so earning more always leaves more in your pocket.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The first slice is $1,100."
+        },
+        {
+         "point": 1,
+         "quote": "The second slice is 12 percent of $9,000, or $1,080, so the total is $2,180."
+        },
+        {
+         "point": 2,
+         "quote": "Compared with the $2,000 withheld, there is a $180 balance due."
+        },
+        {
+         "point": 3,
+         "quote": "Marginal rates tax only the dollars above the threshold, so earning more always leaves more in your pocket."
+        }
+       ],
+       "feedback": "Full marks. Your explanation of marginal rates is accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "The first $11,000 is taxed $1,100. A raise only taxes the extra dollars. All $20,000 is taxed at 12 percent, which is $2,400, so the worker owes $400.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The first $11,000 is taxed $1,100."
+        },
+        {
+         "point": 3,
+         "quote": "A raise only taxes the extra dollars."
+        }
+       ],
+       "feedback": "Only the part above $11,000 is taxed at 12 percent. Apply 10 percent to the first slice."
+      },
+      {
+       "tier": "partial",
+       "text": "The second slice is $1,080. The worker owes more. A raise would push all the income into a higher rate and lower take-home pay.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The second slice is $1,080."
+        },
+        {
+         "point": 2,
+         "quote": "The worker owes more."
+        }
+       ],
+       "feedback": "Marginal rates apply the higher rate only to the extra income. A raise never lowers take-home pay.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The tax is $20,000 because that is the income. Nothing is withheld.",
+       "meets": [],
+       "feedback": "Apply the rates to taxable income, then compare with the amount withheld."
+      },
+      {
+       "tier": "weak",
+       "text": "The worker gets a refund of $2,000. A refund is always the amount withheld.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The worker gets a refund of $2,000."
+        }
+       ],
+       "feedback": "A refund is only the amount withheld beyond the tax owed. Here, the tax is higher than the withholding."
+      }
+     ]
+    },
+    {
+     "prompt": "A graduate is choosing between a four-year college (illustrative cost $80,000, graduates earning $60,000 a year), a trade program (cost $20,000, earning $50,000 a year starting two years sooner) and working at once (no cost, earning $38,000 a year). Calculate the total earnings over the first 10 years after high school for the trade path versus working at once, after subtracting program cost, and say what else the graduate should consider before choosing.",
+     "markScheme": [
+      "Calculates work-at-once earnings as $380,000 over 10 years",
+      "Calculates the trade path as 8 years at $50,000 = $400,000 minus $20,000 = $380,000 (the two years of study have no earnings in this simple comparison)",
+      "Concludes that the two paths are equal after 10 years under these assumptions, with the trade path ahead afterwards",
+      "Names another consideration, such as job satisfaction, borrowing, career growth or job demand"
+     ],
+     "modelAnswer": "Working at once earns 10 times $38,000, which is $380,000. The trade path has two years of study with no earnings, then 8 years at $50,000, which is $400,000, minus $20,000 for the program, giving $380,000. The two paths are equal after 10 years, but the trade worker earns $12,000 more per year afterwards. The graduate should also consider job satisfaction, how much would be borrowed and how strong the demand for the trade is.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Working right away is 10 × $38,000 = $380,000. The trade path is 8 working years × $50,000 = $400,000, minus the $20,000 program, which is $380,000. So after 10 years they are equal, but the trade worker then earns $12,000 more each year. The graduate should also think about whether they'd enjoy the work, how much they'd borrow, and the demand for the trade.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Working right away is 10 × $38,000 = $380,000."
+        },
+        {
+         "point": 1,
+         "quote": "The trade path is 8 working years × $50,000 = $400,000, minus the $20,000 program, which is $380,000."
+        },
+        {
+         "point": 2,
+         "quote": "So after 10 years they are equal, but the trade worker then earns $12,000 more each year."
+        },
+        {
+         "point": 3,
+         "quote": "The graduate should also think about whether they'd enjoy the work, how much they'd borrow, and the demand for the trade."
+        }
+       ],
+       "feedback": "Full marks. The comparison shows when each path pulls ahead."
+      },
+      {
+       "tier": "full",
+       "text": "Working at once brings in $380,000 over ten years. The trade path brings in $400,000 over eight working years and the program cost of $20,000 takes it to $380,000. That is a tie at year 10, and after that the trade path leads by $12,000 each year. Other things to weigh are job satisfaction, any loans, and whether employers will keep hiring in that trade.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Working at once brings in $380,000 over ten years."
+        },
+        {
+         "point": 1,
+         "quote": "The trade path brings in $400,000 over eight working years and the program cost of $20,000 takes it to $380,000."
+        },
+        {
+         "point": 2,
+         "quote": "That is a tie at year 10, and after that the trade path leads by $12,000 each year."
+        },
+        {
+         "point": 3,
+         "quote": "Other things to weigh are job satisfaction, any loans, and whether employers will keep hiring in that trade."
+        }
+       ],
+       "feedback": "Full marks. Spotting the tie is the key insight."
+      },
+      {
+       "tier": "partial",
+       "text": "Working is $380,000. The graduate should consider whether they like the work. The trade path earns 10 × $50,000 = $500,000, so it is far ahead.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Working is $380,000."
+        },
+        {
+         "point": 3,
+         "quote": "The graduate should consider whether they like the work."
+        }
+       ],
+       "feedback": "The trade path has two years of study without earnings in this comparison, and the program costs $20,000."
+      },
+      {
+       "tier": "partial",
+       "text": "Trade is $400,000 - $20,000 = $380,000. They are equal at 10 years. Working right away gives $38,000 in total.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Trade is $400,000 - $20,000 = $380,000."
+        },
+        {
+         "point": 2,
+         "quote": "They are equal at 10 years."
+        }
+       ],
+       "feedback": "Working earns $38,000 a year for 10 years, which is $380,000.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "College is always best because it costs the most. Nobody should work right away.",
+       "meets": [],
+       "feedback": "Cost does not decide the best path. Compare earnings, time and debt."
+      },
+      {
+       "tier": "weak",
+       "text": "The graduate should pick whatever their friend picks. No comparison is needed.",
+       "meets": [],
+       "feedback": "A good choice rests on costs, earnings and personal goals, not on copying a friend."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Budgeting and comparing prices",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. create a monthly budget that separates needs from wants;\n2. compare prices and unit costs to make a purchasing decision.\n\n## Materials\n\nA budget template, price tags or flyers (invented) for three sizes of the same product, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nAsk students to write down three things they bought last week and mark each \"need\" or \"want\". Compare across the class and see where opinions differ.\n\n## Main activity\n\n1. Budget: a plan for how to use income. Steps: find monthly take-home pay, list needs (housing, food, transport, phone, insurance), list wants (eating out, streaming, hobbies), set savings first, and check that spending does not exceed income.\n2. Example: take-home $2,000. Needs: rent $800, food $250, transport $200, phone $50 = $1,300. Wants $300. Savings $400 (20 percent). Total $2,000. The budget balances.\n3. Fixed expenses (rent) and variable expenses (food). Tracking real spending against the plan and adjusting.\n4. Unit price: price divided by quantity. A 12-oz bottle at $2.40 costs 20 cents per ounce; a 32-oz bottle at $5.76 costs 18 cents; a 64-oz at $12.16 costs 19 cents. The 32-oz bottle is the best value, and the largest size is not always cheapest. Other factors: quality, storage, whether you will use it before it spoils.\n\n## Worksheet\n\nBuild a balanced budget and compare unit prices.",
+   "reading": {
+    "title": "Telling your money where to go",
+    "content": "A **budget** is a plan for your money. Without one, many people reach the end of the month wondering where their pay went. A budget has four steps. First, find your monthly **income** after taxes: your take-home pay. Second, list your **needs**: things you must pay to live and work, such as housing, groceries, transportation, a phone and insurance. Third, list your **wants**: things that you would like but could do without, such as eating out, streaming services, new clothes beyond the basics and hobbies. Fourth, decide how much to **save**. A useful habit is to treat saving like a bill and pay yourself first, perhaps 10 to 20 percent of income. Finally, check that your planned spending plus saving does not exceed your income.\n\nHere is an example. A worker has take-home pay of $2,000 a month. Needs: rent $800, food $250, transportation $200 and phone $50, a total of $1,300. Wants: $300 for entertainment, eating out and clothes. Savings: $400, which is 20 percent of income. The total is 1,300 + 300 + 400 = $2,000, which equals the income, so the budget **balances**. If the total were more than $2,000, the person would be spending more than they earn and would have to cut wants first, since needs are harder to reduce. Some expenses are **fixed**, such as rent, and stay the same each month. Others are **variable**, such as food and entertainment, and give you room to adjust. A budget is a plan, so compare it with what you actually spend, and adjust the plan when real life differs.\n\nSmart shopping stretches a budget. One tool is the **unit price**, the price per unit of measure, found by dividing price by quantity. Suppose a drink comes in three sizes. A 12-ounce bottle costs $2.40, which is 2.40 / 12 = $0.20, or 20 cents per ounce. A 32-ounce bottle costs $5.76, which is 18 cents per ounce. A 64-ounce bottle costs $12.16, which is 19 cents per ounce. The middle size is the best value even though the largest bottle is the biggest, which shows that larger packages are not always cheaper. A bargain also depends on whether you will use the product: a huge pack of fresh produce that spoils is no bargain. Compare quality, brand and where you buy it, and consider waiting for sales for things you do not need today. Small savings on regular purchases add up to large sums over a year."
+   },
+   "cards": [
+    {
+     "front": "Budget",
+     "back": "A plan for how income will be spent and saved."
+    },
+    {
+     "front": "Need",
+     "back": "Something required to live and work."
+    },
+    {
+     "front": "Want",
+     "back": "Something you would like but could do without."
+    },
+    {
+     "front": "Pay yourself first",
+     "back": "Setting aside savings before spending on wants."
+    },
+    {
+     "front": "Fixed expense",
+     "back": "A cost that stays the same each month, such as rent."
+    },
+    {
+     "front": "Variable expense",
+     "back": "A cost that changes from month to month."
+    },
+    {
+     "front": "Unit price",
+     "back": "Price divided by quantity, such as cents per ounce."
+    },
+    {
+     "front": "Balanced budget",
+     "back": "Planned spending and saving equal income."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A 12-ounce bottle costs $2.40. What is the unit price per ounce?",
+     "options": [
+      "10 cents",
+      "20 cents",
+      "24 cents",
+      "30 cents"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which size is the best value: 12 oz at 20 cents/oz, 32 oz at 18 cents/oz, or 64 oz at 19 cents/oz?",
+     "options": [
+      "12 oz",
+      "32 oz",
+      "64 oz",
+      "They are equal"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which expense is fixed?",
+     "options": [
+      "Rent",
+      "Eating out",
+      "Movie tickets",
+      "Groceries"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Needs are $1,300, wants $300 and savings $400. What total income balances the budget?",
+     "options": [
+      "$1,300",
+      "$1,700",
+      "$2,000",
+      "$2,400"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "If spending exceeds income, which category should usually be cut first?",
+     "options": [
+      "Wants",
+      "Housing",
+      "Groceries",
+      "Insurance"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A worker's take-home pay is $2,400 a month. Rent is $950, groceries $300, transportation $220 and phone $60. Wants are $350. The worker wants to save 15 percent of income. Calculate the total of needs, the savings amount, and whether the budget balances. If not, say how much is over or under and suggest one change.",
+     "markScheme": [
+      "Calculates needs as $1,530",
+      "Calculates savings as $360",
+      "Totals spending and saving as $2,240 and concludes there is $160 unplanned",
+      "Suggests a sensible use of the $160 surplus or a change, such as more savings or a debt payment"
+     ],
+     "modelAnswer": "Needs are 950 + 300 + 220 + 60 = $1,530. Savings are 15 percent of $2,400, which is $360. Needs plus wants plus savings is 1,530 + 350 + 360 = $2,240, which is $160 less than the income, so the budget has $160 unassigned. The worker could put it toward savings or an emergency fund.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Needs: 950 + 300 + 220 + 60 = $1,530. Savings: 15 percent of $2,400 = $360. Needs + wants + savings = 1,530 + 350 + 360 = $2,240, so $160 of the income is not assigned. I'd put the $160 into the emergency fund or a savings goal.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Needs: 950 + 300 + 220 + 60 = $1,530."
+        },
+        {
+         "point": 1,
+         "quote": "Savings: 15 percent of $2,400 = $360."
+        },
+        {
+         "point": 2,
+         "quote": "Needs + wants + savings = 1,530 + 350 + 360 = $2,240, so $160 of the income is not assigned."
+        },
+        {
+         "point": 3,
+         "quote": "I'd put the $160 into the emergency fund or a savings goal."
+        }
+       ],
+       "feedback": "Full marks. A balanced result and a sensible use of the surplus."
+      },
+      {
+       "tier": "full",
+       "text": "The needs come to $1,530. 15 percent of $2,400 is $360 for savings. Altogether $2,240 is planned, which leaves $160 unplanned. Since it's left over, I'd raise the savings to 22 percent or use it to pay down a debt.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The needs come to $1,530."
+        },
+        {
+         "point": 1,
+         "quote": "15 percent of $2,400 is $360 for savings."
+        },
+        {
+         "point": 2,
+         "quote": "Altogether $2,240 is planned, which leaves $160 unplanned."
+        },
+        {
+         "point": 3,
+         "quote": "Since it's left over, I'd raise the savings to 22 percent or use it to pay down a debt."
+        }
+       ],
+       "feedback": "Full marks. Each category was added correctly."
+      },
+      {
+       "tier": "partial",
+       "text": "Needs total $1,530. The extra can be saved. Savings are 15 percent of 350, which is $52.50, and the budget is $160 over.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Needs total $1,530."
+        },
+        {
+         "point": 3,
+         "quote": "The extra can be saved."
+        }
+       ],
+       "feedback": "Savings are 15 percent of income, which is $2,400. Recalculate the savings and the balance."
+      },
+      {
+       "tier": "partial",
+       "text": "Savings are $360. There is $160 left unassigned. Needs are 950 + 300, which is $1,250.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Savings are $360."
+        },
+        {
+         "point": 2,
+         "quote": "There is $160 left unassigned."
+        }
+       ],
+       "feedback": "Needs include all four items: rent, groceries, transportation and phone.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A budget does not need numbers. I would spend what I need and see what is left.",
+       "meets": [],
+       "feedback": "A budget plans the numbers in advance. Calculate each category."
+      },
+      {
+       "tier": "weak",
+       "text": "Savings are $360. Wants should be paid before needs because wants are more fun.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Savings are $360."
+        }
+       ],
+       "feedback": "Needs come first. Wants are what you cut when money is tight."
+      }
+     ]
+    },
+    {
+     "prompt": "A shopper compares three packs of the same granola bars: 6 bars for $3.90, 12 bars for $7.20 and 24 bars for $15.60. Calculate the unit price per bar for each, say which is best value, and explain one reason why the best-value pack might still not be the right choice.",
+     "markScheme": [
+      "Calculates 65 cents per bar for the 6-pack",
+      "Calculates 60 cents for the 12-pack and 65 cents for the 24-pack",
+      "Identifies the 12-pack as the best value",
+      "Gives a valid reason it may not suit, such as spoilage, storage, a small budget or not needing that many"
+     ],
+     "modelAnswer": "The 6-pack costs 3.90 divided by 6, which is 65 cents per bar. The 12-pack costs 7.20 divided by 12, which is 60 cents. The 24-pack costs 15.60 divided by 24, which is 65 cents. The 12-pack is the best value. It might still not be right if the shopper cannot eat 12 bars before they go stale, or cannot spend $7.20 at once.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "6 bars for $3.90 is 65 cents a bar. 12 bars for $7.20 is 60 cents, and 24 bars for $15.60 is 65 cents. The 12-pack is the best value. It still might not be right if the shopper can't eat 12 before they go stale, or can't afford $7.20 at once.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "6 bars for $3.90 is 65 cents a bar."
+        },
+        {
+         "point": 1,
+         "quote": "12 bars for $7.20 is 60 cents, and 24 bars for $15.60 is 65 cents."
+        },
+        {
+         "point": 2,
+         "quote": "The 12-pack is the best value."
+        },
+        {
+         "point": 3,
+         "quote": "It still might not be right if the shopper can't eat 12 before they go stale, or can't afford $7.20 at once."
+        }
+       ],
+       "feedback": "Full marks. The biggest pack is not the cheapest per bar."
+      },
+      {
+       "tier": "full",
+       "text": "The small pack costs $3.90 ÷ 6 = $0.65 per bar. The middle pack is $0.60 per bar and the largest pack is $0.65 per bar. So the 12-pack is best. If the shopper only eats one a day, a pack of 12 might still be wasted and storing it costs room.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The small pack costs $3.90 ÷ 6 = $0.65 per bar."
+        },
+        {
+         "point": 1,
+         "quote": "The middle pack is $0.60 per bar and the largest pack is $0.65 per bar."
+        },
+        {
+         "point": 2,
+         "quote": "So the 12-pack is best."
+        },
+        {
+         "point": 3,
+         "quote": "If the shopper only eats one a day, a pack of 12 might still be wasted and storing it costs room."
+        }
+       ],
+       "feedback": "Full marks. Considering how quickly the food is used is sensible."
+      },
+      {
+       "tier": "partial",
+       "text": "The 6-pack is 65 cents. A bigger pack could go stale. The 24-pack is cheapest because it is the biggest.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The 6-pack is 65 cents."
+        },
+        {
+         "point": 3,
+         "quote": "A bigger pack could go stale."
+        }
+       ],
+       "feedback": "Divide $15.60 by 24 to get 65 cents. It is not cheaper than the 12-pack."
+      },
+      {
+       "tier": "partial",
+       "text": "The 12-pack is 60 cents. It is the best value. The unit price is the total price, so $7.20 is the unit price.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The 12-pack is 60 cents."
+        },
+        {
+         "point": 2,
+         "quote": "It is the best value."
+        }
+       ],
+       "feedback": "Unit price is the price divided by the quantity, not the total.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The cheapest pack is the one with the lowest total price, so the 6-pack is best.",
+       "meets": [],
+       "feedback": "Compare cost per bar, not the total price."
+      },
+      {
+       "tier": "weak",
+       "text": "Bigger is always better value, so the 24-pack wins. No calculation is needed.",
+       "meets": [],
+       "feedback": "Larger packs are not always cheaper per unit. Divide to check."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Influences on spending, and a first-year plan",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how advertising and peers influence spending;\n2. create a personal financial plan for the first year after high school.\n\n## Materials\n\nSample ads (invented), an impulse-purchase reflection sheet, a first-year plan template, calculators, the quiz.\n\n## Starter (6 minutes)\n\nAsk: \"Think of something you wanted because you saw it online or a friend had it. Did you still want it a week later?\" Collect honest responses.\n\n## Main activity\n\n1. Advertising: tactics include limited-time offers, celebrity endorsements, \"free shipping\" thresholds, subscriptions that renew automatically, and targeted ads based on your data. Peer pressure: buying to fit in, comparing with friends and social media.\n2. Strategies: wait 48 hours before non-essential purchases, make a list before shopping, set a \"fun money\" limit, unsubscribe from sales emails, ask \"do I need it?\" and \"what am I giving up?\"\n3. First-year plan: set goals (for example, saving $3,000 for a car in 12 months, which is $250 a month), estimate income and expenses, include an emergency fund contribution, and review every month.\n4. Example plan: take-home $2,100; fixed costs $1,350; variable costs $500; savings $250; total $2,100.\n\n## Quiz\n\nInfluences and the first-year plan.",
+   "reading": {
+    "title": "Why we buy, and planning your first year",
+    "content": "Spending is not only about what you need. Advertisers and friends shape what we want, often without us noticing. **Advertising** uses many tactics to create a feeling that you must buy now. A **limited-time offer** (\"Only today!\") creates urgency, so you do not think. An **endorsement** by a celebrity or influencer suggests that using the product makes you more like them. A \"**free shipping** on orders over $50\" message can push someone to spend $50 to save a $5 fee. A **free trial** that renews automatically can turn into a monthly charge you forget about. Online ads are also **targeted**: companies use your browsing and location data to show items you are likely to buy.\n\nPeers also matter. People often buy to fit in, to match what friends have, or to show status. Social media increases this pressure because we see only the best of what other people own and do. Wanting to belong is normal, but spending to impress people can lead to money problems, and the item is often forgotten quickly. Notice your feelings: a purchase made when you are bored, stressed or excited is an **impulse purchase**, and it often disappoints.\n\nThere are simple defenses. **Wait 48 hours** before buying any non-essential item; many wants fade. **Make a list** before shopping and stick to it. Set a monthly **fun money** amount that you can spend with no guilt, so that you are not tempted to overspend. Unsubscribe from sales emails. And ask two questions: \"Do I really need this?\" and \"What am I giving up to buy it?\" Every dollar you spend now is a dollar that you cannot save for something else.\n\nThese habits fit into a **personal financial plan**, which is a written plan for your money over a period, such as the first year after high school. Start with **goals**: for example, save $3,000 for a used car in 12 months, which is $3,000 / 12 = $250 a month. Estimate your **income** after taxes, say $2,100 a month. List your **fixed costs**, such as rent, phone and insurance, perhaps $1,350, and your **variable costs**, such as food, gas and fun, perhaps $500. Add the $250 for savings. Total: 1,350 + 500 + 250 = $2,100, which equals the income, so the plan works. Include a small amount for an emergency fund, and review the plan each month to see if real spending matches. Plans change as jobs, rents and goals change, but having one lets you make choices instead of drifting."
+   },
+   "cards": [
+    {
+     "front": "Impulse purchase",
+     "back": "An unplanned buy made on a sudden urge."
+    },
+    {
+     "front": "Limited-time offer",
+     "back": "An ad tactic that creates urgency to buy now."
+    },
+    {
+     "front": "Endorsement",
+     "back": "A famous person's support for a product."
+    },
+    {
+     "front": "Targeted ad",
+     "back": "An ad chosen using your personal data."
+    },
+    {
+     "front": "Peer pressure",
+     "back": "Influence from friends to act or buy a certain way."
+    },
+    {
+     "front": "Fun money",
+     "back": "A set amount to spend on wants without guilt."
+    },
+    {
+     "front": "Financial goal",
+     "back": "A specific money target with a deadline."
+    },
+    {
+     "front": "Financial plan",
+     "back": "A written plan for income, spending and saving."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which tactic creates urgency to make you buy right away?",
+     "options": [
+      "A limited-time offer",
+      "A warranty",
+      "A receipt",
+      "A budget"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "How much must be saved each month to reach $3,000 in 12 months?",
+     "options": [
+      "$150",
+      "$250",
+      "$300",
+      "$360"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which habit best reduces impulse purchases?",
+     "options": [
+      "Waiting 48 hours before non-essential items",
+      "Shopping when bored",
+      "Buying on the first ad",
+      "Ignoring prices"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Income is $2,100. Fixed costs are $1,350, variable costs $500 and savings $250. Does the plan balance?",
+     "options": [
+      "Yes, it totals $2,100",
+      "No, it is $100 short",
+      "No, it is $250 over",
+      "It cannot be known"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A free trial that renews automatically may cause:",
+     "options": [
+      "A forgotten monthly charge",
+      "A refund",
+      "Lower prices",
+      "A tax cut"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student sees an online ad: \"Sneakers, 40 percent off today only, free shipping over $75!\" The sneakers cost $60 after the discount. Identify two advertising tactics in the ad, explain how a friend wearing the same shoes could add pressure, and describe two steps the student could take to decide wisely.",
+     "markScheme": [
+      "Identifies the limited-time urgency as one tactic",
+      "Identifies the free-shipping threshold as a second tactic (it encourages spending more)",
+      "Explains how peers influence buying, such as wanting to fit in",
+      "Describes two sensible steps, such as waiting 48 hours and checking the budget or the real need"
+     ],
+     "modelAnswer": "The ad uses a limited-time offer, today only, to make the student hurry, and a free-shipping threshold of $75, which may push the student to add items to reach it. A friend wearing the same shoes can add pressure to fit in. The student could wait 48 hours and see if the want remains, and check the budget to see whether $60 fits in the fun money.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The 'today only' offer creates urgency, so you hurry without thinking. Free shipping over $75 might push me to add items just to reach the limit. If a friend has the same shoes, I'd feel pressure to fit in. I'd wait 48 hours to see if I still want them and check that $60 fits into my fun money.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The 'today only' offer creates urgency, so you hurry without thinking."
+        },
+        {
+         "point": 1,
+         "quote": "Free shipping over $75 might push me to add items just to reach the limit."
+        },
+        {
+         "point": 2,
+         "quote": "If a friend has the same shoes, I'd feel pressure to fit in."
+        },
+        {
+         "point": 3,
+         "quote": "I'd wait 48 hours to see if I still want them and check that $60 fits into my fun money."
+        }
+       ],
+       "feedback": "Full marks. You named both tactics and sensible defenses."
+      },
+      {
+       "tier": "full",
+       "text": "The first tactic is the limited time: 'today only.' The second is the free shipping threshold, which gets people to spend more than they planned. Peers matter because wanting to belong makes the shoes feel like a need. I'd sleep on it, then look at my budget and ask whether I need new shoes at all.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The first tactic is the limited time: 'today only.'"
+        },
+        {
+         "point": 1,
+         "quote": "The second is the free shipping threshold, which gets people to spend more than they planned."
+        },
+        {
+         "point": 2,
+         "quote": "Peers matter because wanting to belong makes the shoes feel like a need."
+        },
+        {
+         "point": 3,
+         "quote": "I'd sleep on it, then look at my budget and ask whether I need new shoes at all."
+        }
+       ],
+       "feedback": "Full marks. Asking whether you need them is the key question."
+      },
+      {
+       "tier": "partial",
+       "text": "The ad is for today only. I'd wait two days before buying. Peers do not affect what I buy, and shipping is always free.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The ad is for today only."
+        },
+        {
+         "point": 3,
+         "quote": "I'd wait two days before buying."
+        }
+       ],
+       "feedback": "Free shipping can have conditions, and friends can strongly affect choices. Revise these."
+      },
+      {
+       "tier": "partial",
+       "text": "The free shipping threshold makes you spend more. Friends can pressure you. I should buy now before the deal ends.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The free shipping threshold makes you spend more."
+        },
+        {
+         "point": 2,
+         "quote": "Friends can pressure you."
+        }
+       ],
+       "feedback": "Buying immediately is the reaction the ad wants. Describe how to pause and decide.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Ads are just information and have no effect on what people buy.",
+       "meets": [],
+       "feedback": "Ads are designed to influence buying. Identify the tactics in this one."
+      },
+      {
+       "tier": "weak",
+       "text": "The student should buy two pairs so that the free shipping applies, because that saves money.",
+       "meets": [],
+       "feedback": "Spending more to avoid a small fee usually costs more overall."
+      }
+     ]
+    },
+    {
+     "prompt": "Write a first-year plan for a graduate who will have take-home pay of $2,300 a month. The goal is to save $4,200 in 12 months for a car down payment. List the monthly savings, at least four fixed and variable expenses with amounts, a total, and one habit that will help keep the plan on track.",
+     "markScheme": [
+      "Calculates monthly savings as $350",
+      "Lists at least four fixed and variable expenses with amounts",
+      "Shows a total that matches $2,300 (the plan balances)",
+      "Names a habit such as reviewing monthly, waiting 48 hours, or tracking spending"
+     ],
+     "modelAnswer": "Savings are $4,200 divided by 12, which is $350 a month. Expenses: rent $900 (fixed), phone and insurance $210 (fixed), food $380 (variable), gas $220 (variable), fun $240 (variable). The total is 350 + 900 + 210 + 380 + 220 + 240 = $2,300, which balances. To stay on track, I will review my spending each month and wait 48 hours before non-essential purchases.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Savings: $4,200 ÷ 12 = $350 a month. Fixed: rent $900, phone and insurance $210. Variable: food $380, gas $220, fun $240. Total: 350 + 900 + 210 + 380 + 220 + 240 = $2,300, so it balances. I'll review my spending every month and wait 48 hours before any non-essential buy.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Savings: $4,200 ÷ 12 = $350 a month."
+        },
+        {
+         "point": 1,
+         "quote": "Fixed: rent $900, phone and insurance $210. Variable: food $380, gas $220, fun $240."
+        },
+        {
+         "point": 2,
+         "quote": "Total: 350 + 900 + 210 + 380 + 220 + 240 = $2,300, so it balances."
+        },
+        {
+         "point": 3,
+         "quote": "I'll review my spending every month and wait 48 hours before any non-essential buy."
+        }
+       ],
+       "feedback": "Full marks. The plan adds up exactly to the income."
+      },
+      {
+       "tier": "full",
+       "text": "I need to save $350 each month for the down payment. Rent $950 and insurance $150 are fixed; groceries $350, gas $200 and entertainment $150 are variable. With $350 savings, the total is 950 + 150 + 350 + 200 + 150 + 350 = $2,150, so $150 is left, which I'll add to my emergency fund to reach $2,300. I'll track my spending in an app each week.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I need to save $350 each month for the down payment."
+        },
+        {
+         "point": 1,
+         "quote": "Rent $950 and insurance $150 are fixed; groceries $350, gas $200 and entertainment $150 are variable."
+        },
+        {
+         "point": 2,
+         "quote": "With $350 savings, the total is 950 + 150 + 350 + 200 + 150 + 350 = $2,150, so $150 is left, which I'll add to my emergency fund to reach $2,300."
+        },
+        {
+         "point": 3,
+         "quote": "I'll track my spending in an app each week."
+        }
+       ],
+       "feedback": "Full marks. Assigning the leftover $150 keeps the plan balanced."
+      },
+      {
+       "tier": "partial",
+       "text": "I'd save $350 each month. I'll review my spending monthly. My expenses are rent and fun and the total is more than my pay.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd save $350 each month."
+        },
+        {
+         "point": 3,
+         "quote": "I'll review my spending monthly."
+        }
+       ],
+       "feedback": "List at least four expenses and make the total match the income of $2,300."
+      },
+      {
+       "tier": "partial",
+       "text": "Rent $900, food $380, gas $220 and phone $210. That balances. Savings are $4,200 a month.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Rent $900, food $380, gas $220 and phone $210."
+        },
+        {
+         "point": 2,
+         "quote": "That balances."
+        }
+       ],
+       "feedback": "Divide $4,200 by 12 months to find the monthly savings.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I do not need a plan. I will save whatever is left at the end of each month.",
+       "meets": [],
+       "feedback": "Saving what is left usually means saving nothing. Plan savings first."
+      },
+      {
+       "tier": "weak",
+       "text": "The plan balances. I will spend everything and borrow for the car down payment.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The plan balances."
+        }
+       ],
+       "feedback": "The goal is to save the down payment, not to borrow it."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Saving, emergency funds, accounts and interest",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain why an emergency fund matters and set a savings goal;\n2. compare savings accounts, checking accounts and certificates of deposit;\n3. calculate simple and compound interest and compare the results.\n\n## Materials\n\nAccount comparison cards (invented banks), a savings goal template, calculators, the problem set.\n\n## Starter (6 minutes)\n\nAsk: \"Your phone breaks and you need a $300 repair. What do you do?\" Discuss using savings, borrowing, or going without.\n\n## Main activity\n\n1. Emergency fund: money set aside for surprises such as a repair, a job loss or a medical bill. Goal: 3 to 6 months of essential expenses. If monthly expenses are $1,800, then 3 months is $5,400 and 6 months is $10,800. Start small.\n2. Savings goals: specific, measurable, with a deadline. Save $1,200 in 8 months: $150 a month.\n3. Accounts: checking (everyday spending, little or no interest, debit card), savings (earns interest, easy access, limited withdrawals), certificate of deposit (CD: money locked for a fixed term at a fixed rate, penalty for early withdrawal). Check for fees, minimum balances and whether the bank is insured by the FDIC (up to $250,000 per depositor).\n4. Interest: simple interest = principal x rate x time. $1,000 at 5 percent for 3 years = $150. Compound interest: interest is earned on interest. $1,000 at 5 percent compounded yearly for 3 years = 1,000 x 1.05^3 = $1,157.63; interest $157.63, which is $7.63 more than simple.\n\n## Problem set\n\nCalculate and compare.",
+   "reading": {
+    "title": "A cushion for surprises, and money that grows",
+    "content": "Life is full of surprises: a car repair, a lost job, a medical bill. People without savings often turn to credit cards or loans, which cost more. An **emergency fund** is money set aside only for these events. Experts suggest saving **three to six months** of essential expenses. If your necessary monthly costs are $1,800, three months is 3 x 1,800 = $5,400 and six months is $10,800. That is a big sum, so start with a smaller target, such as $500, and build up. Keep the emergency fund separate from your spending money so that you are not tempted to use it.\n\nSaving works best with a clear **savings goal**: specific, measurable and with a deadline. \"Save $1,200 for a laptop in 8 months\" is a goal, and it breaks down to 1,200 / 8 = $150 a month. Automatic transfers on payday make saving a habit.\n\nWhere you keep your money matters. A **checking account** is for everyday spending and bill paying; it usually comes with a debit card and checks, but pays little or no interest. A **savings account** is meant for money you are not spending soon; it pays **interest** and is easy to reach, although banks may limit withdrawals each month. A **certificate of deposit (CD)** holds your money for a fixed term, such as one year, at a fixed interest rate that is usually higher, but you pay a **penalty** if you take the money out early. When you choose an account, check for monthly **fees**, **minimum balance** requirements and the interest rate, and make sure that the bank is insured by the **FDIC**, which protects deposits up to $250,000 per depositor, per bank, if the bank fails.\n\nInterest is the price of using money. **Simple interest** is calculated only on the original amount, the **principal**: interest = principal x rate x time. On $1,000 at 5 percent for 3 years, interest is 1,000 x 0.05 x 3 = $150. **Compound interest** is calculated on the principal plus the interest already earned, so interest earns interest. At 5 percent compounded yearly: after year 1, $1,050; after year 2, $1,102.50; after year 3, $1,157.63 (rounded). The interest is $157.63, which is $7.63 more than simple interest. The gap looks small here, but it grows quickly with larger amounts, higher rates and longer times, which is why compounding is so powerful for savers, and so costly for borrowers."
+   },
+   "cards": [
+    {
+     "front": "Emergency fund",
+     "back": "Money set aside only for unexpected costs."
+    },
+    {
+     "front": "Savings goal",
+     "back": "A specific amount to save by a deadline."
+    },
+    {
+     "front": "Certificate of deposit",
+     "back": "A deposit locked for a fixed term at a fixed rate."
+    },
+    {
+     "front": "Principal",
+     "back": "The original amount saved or borrowed."
+    },
+    {
+     "front": "Simple interest",
+     "back": "Interest calculated only on the principal."
+    },
+    {
+     "front": "Compound interest",
+     "back": "Interest calculated on the principal plus earned interest."
+    },
+    {
+     "front": "FDIC",
+     "back": "A federal agency that insures bank deposits."
+    },
+    {
+     "front": "Early withdrawal penalty",
+     "back": "A fee for taking money from a CD before its term ends."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Monthly essential expenses are $1,800. How much is a three-month emergency fund?",
+     "options": [
+      "$1,800",
+      "$3,600",
+      "$5,400",
+      "$10,800"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the simple interest on $1,000 at 5 percent for 3 years?",
+     "options": [
+      "$50",
+      "$150",
+      "$157.63",
+      "$1,150"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which account holds money for a fixed term and charges a penalty for early withdrawal?",
+     "options": [
+      "Checking account",
+      "Savings account",
+      "Certificate of deposit",
+      "Debit card"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What does the FDIC do?",
+     "options": [
+      "Insures bank deposits up to $250,000",
+      "Sets tax rates",
+      "Gives out loans",
+      "Prints money"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Compound interest differs from simple interest because:",
+     "options": [
+      "It is earned on the principal plus earned interest",
+      "It is always lower",
+      "It is paid only on loans",
+      "It has no time period"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student deposits $2,000 in an account paying 4 percent a year for 2 years. Calculate the interest with simple interest and the balance with interest compounded yearly. Show the difference and explain why compounding gives more.",
+     "markScheme": [
+      "Calculates simple interest as $160",
+      "Calculates the compounded balance as $2,163.20",
+      "States the compound interest as $163.20, which is $3.20 more than simple",
+      "Explains that compounding earns interest on previously earned interest"
+     ],
+     "modelAnswer": "Simple interest is 2,000 times 0.04 times 2, which is $160. With compounding, year 1 gives $2,080 and year 2 gives $2,080 times 1.04, which is $2,163.20, so the interest is $163.20. That is $3.20 more than simple interest. Compounding gives more because in year 2 the interest is earned on the $2,080, including the interest from year 1.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Simple interest: 2,000 × 0.04 × 2 = $160. Compounded: year 1 is $2,080, year 2 is 2,080 × 1.04 = $2,163.20. So the compound interest is $163.20, which is $3.20 more. It's more because in year 2 I earn interest on the interest from year 1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Simple interest: 2,000 × 0.04 × 2 = $160."
+        },
+        {
+         "point": 1,
+         "quote": "Compounded: year 1 is $2,080, year 2 is 2,080 × 1.04 = $2,163.20."
+        },
+        {
+         "point": 2,
+         "quote": "So the compound interest is $163.20, which is $3.20 more."
+        },
+        {
+         "point": 3,
+         "quote": "It's more because in year 2 I earn interest on the interest from year 1."
+        }
+       ],
+       "feedback": "Full marks. Both methods are shown step by step."
+      },
+      {
+       "tier": "full",
+       "text": "With simple interest I'd earn $80 a year, which makes $160. With compounding, the balance after year 1 is $2,080 and after year 2 is $2,163.20. The difference is $163.20 - $160 = $3.20. Compounding pays interest on a growing balance, not on the original amount only.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "With simple interest I'd earn $80 a year, which makes $160."
+        },
+        {
+         "point": 1,
+         "quote": "With compounding, the balance after year 1 is $2,080 and after year 2 is $2,163.20."
+        },
+        {
+         "point": 2,
+         "quote": "The difference is $163.20 - $160 = $3.20."
+        },
+        {
+         "point": 3,
+         "quote": "Compounding pays interest on a growing balance, not on the original amount only."
+        }
+       ],
+       "feedback": "Full marks. 'Growing balance' describes compounding well."
+      },
+      {
+       "tier": "partial",
+       "text": "Simple interest is $160. Compounding earns interest on interest. The compounded balance is 2,000 × 1.08 = $2,160, which is the same.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Simple interest is $160."
+        },
+        {
+         "point": 3,
+         "quote": "Compounding earns interest on interest."
+        }
+       ],
+       "feedback": "Compound each year: 2,000 × 1.04 × 1.04 = $2,163.20, which is not the same as $2,160."
+      },
+      {
+       "tier": "partial",
+       "text": "The balance is $2,163.20. It is $3.20 more. Simple interest is $80 for the whole time.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The balance is $2,163.20."
+        },
+        {
+         "point": 2,
+         "quote": "It is $3.20 more."
+        }
+       ],
+       "feedback": "$80 is one year of simple interest. Over 2 years it is $160.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Interest is 4 percent, so the answer is $4 whichever method I use.",
+       "meets": [],
+       "feedback": "Apply the 4 percent to the $2,000 principal for each year."
+      },
+      {
+       "tier": "weak",
+       "text": "Compound and simple interest give the same number because they are both interest.",
+       "meets": [],
+       "feedback": "Compounding earns interest on earlier interest, so it gives more over time."
+      }
+     ]
+    },
+    {
+     "prompt": "A worker's essential expenses are $1,800 a month. The worker has $600 saved. Calculate a three-month emergency fund goal and how much more is needed. If the worker saves $150 a month, how many months will it take? Then recommend where to keep the emergency fund (checking, savings or CD) and explain why.",
+     "markScheme": [
+      "Calculates the three-month goal as $5,400",
+      "Calculates the shortfall as $4,800 and the time as 32 months at $150 a month",
+      "Recommends a savings account (or an equivalent accessible account) as a good fit",
+      "Explains the reasoning, such as access without penalty, interest earned and deposit insurance"
+     ],
+     "modelAnswer": "A three-month fund is 3 times $1,800, which is $5,400. With $600 saved, $4,800 more is needed. At $150 a month it takes 4,800 divided by 150, which is 32 months. I would keep it in a savings account, since it earns interest, can be reached quickly in an emergency without a penalty, and is insured by the FDIC.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Three months of expenses is 3 × $1,800 = $5,400. With $600 saved, $4,800 more is needed, and at $150 a month that is 4,800 ÷ 150 = 32 months. I'd keep it in a savings account. It earns interest, I can get it quickly with no penalty, and the FDIC insures it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Three months of expenses is 3 × $1,800 = $5,400."
+        },
+        {
+         "point": 1,
+         "quote": "With $600 saved, $4,800 more is needed, and at $150 a month that is 4,800 ÷ 150 = 32 months."
+        },
+        {
+         "point": 2,
+         "quote": "I'd keep it in a savings account."
+        },
+        {
+         "point": 3,
+         "quote": "It earns interest, I can get it quickly with no penalty, and the FDIC insures it."
+        }
+       ],
+       "feedback": "Full marks. A realistic timeline and a well-reasoned account."
+      },
+      {
+       "tier": "full",
+       "text": "The target is $5,400. The shortfall is $4,800, so it takes 32 months at $150 a month, which is almost three years. A savings account suits it better than a CD or checking. A CD would charge a penalty if I needed the money early, and checking pays almost nothing and tempts me to spend.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The target is $5,400."
+        },
+        {
+         "point": 1,
+         "quote": "The shortfall is $4,800, so it takes 32 months at $150 a month, which is almost three years."
+        },
+        {
+         "point": 2,
+         "quote": "A savings account suits it better than a CD or checking."
+        },
+        {
+         "point": 3,
+         "quote": "A CD would charge a penalty if I needed the money early, and checking pays almost nothing and tempts me to spend."
+        }
+       ],
+       "feedback": "Full marks. Rejecting the other two accounts shows good reasoning."
+      },
+      {
+       "tier": "partial",
+       "text": "The goal is $5,400. A savings account. It takes 4,800 months because I save $1 a month. A CD is best since it pays more.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The goal is $5,400."
+        },
+        {
+         "point": 2,
+         "quote": "A savings account."
+        }
+       ],
+       "feedback": "At $150 a month it takes 32 months. And a CD has a penalty for early withdrawal, which does not suit emergencies."
+      },
+      {
+       "tier": "partial",
+       "text": "It takes 32 months. A savings account earns interest. The goal is $1,800 because that is one month.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It takes 32 months."
+        },
+        {
+         "point": 3,
+         "quote": "A savings account earns interest."
+        }
+       ],
+       "feedback": "Experts suggest three to six months of expenses, so the goal is $5,400.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "An emergency fund is not needed. I can always borrow on a credit card.",
+       "meets": [],
+       "feedback": "Borrowing costs interest. A fund covers surprises without debt."
+      },
+      {
+       "tier": "weak",
+       "text": "I would keep all of it in cash under my mattress because that is the safest.",
+       "meets": [],
+       "feedback": "Cash at home earns nothing and can be lost. A bank account is insured."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Investing: stocks, bonds, funds, risk and time",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe stocks, bonds and mutual funds and the relationship of risk and return;\n2. explain the benefit of investing early using compound growth.\n\n## Materials\n\nA growth table (illustrative 7 percent), a risk-return spectrum chart, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"Would you rather have a guaranteed $100 or a coin flip for $250 or nothing?\" Discuss risk and expected value.\n\n## Main activity\n\n1. Stocks: shares of ownership in a company; they can rise in value and may pay dividends; they can also fall. Bonds: loans to a company or government that pay interest and return the principal at maturity; usually lower risk and lower return than stocks. Mutual funds and index funds: pools of many investments, giving diversification; fees (expense ratios) matter.\n2. Risk and return: higher potential return usually comes with higher risk of loss. Diversification means not putting all your money in one place. Time horizon: longer horizons can better ride out ups and downs.\n3. Compounding for investors (illustrative 7 percent a year, not guaranteed): $1,000 grows to about $1,967 in 10 years, about $7,612 in 30 years, and about $14,974 in 40 years.\n4. Rule of 72: years to double is about 72 divided by the rate: 72 / 7 is about 10 years.\n\n## Worksheet\n\nMatch investments to risk and compare starting early with starting late.",
+   "reading": {
+    "title": "Putting money to work, and why starting early matters",
+    "content": "Saving keeps your money safe. **Investing** puts it to work, in exchange for the possibility of larger gains, and for the risk of loss. The main types of investments differ in how they work.\n\nA **stock** is a share of ownership in a company. If the company does well, the share price may rise and the company may pay **dividends**, a portion of profits. If it does poorly, the price can fall, and you could lose some or all of your money. A **bond** is a loan that you make to a company or government. The borrower pays you **interest** and returns your **principal** on a set date, the maturity. Bonds are usually less risky than stocks, and usually return less. A **mutual fund** pools money from many investors to buy a collection of stocks, bonds or both, managed by professionals. An **index fund** is a type of fund that simply follows a market index, and often has lower fees. A fund gives **diversification**: your money is spread over many companies, so a problem at one company does little harm. Fees matter, too; a fund with a 1 percent yearly fee takes a meaningful bite out of returns over decades.\n\nThe central rule of investing is the **relationship of risk and return**: investments with a higher chance of high returns usually also have a higher chance of losses. A savings account has low risk and low return. Bonds are in the middle. Stocks have higher risk and, over long periods, have historically earned more. No one can promise a return, and anybody who promises high returns with no risk is probably running a scam. Your **time horizon**, the time before you need the money, matters: money needed in a year should not be in stocks, while money for retirement 40 years away can ride out market ups and downs.\n\nThe most powerful tool you have as a young investor is **time**, thanks to compound growth. Suppose an investment earns an average of 7 percent a year (an assumption for practice; real returns vary and are not guaranteed). A single $1,000 invested grows to about $1,967 after 10 years, about $7,612 after 30 years and about $14,974 after 40 years. Someone who invests $1,000 at 18 and leaves it until 58 ends up with about $14,974, but someone who waits until 28 and invests the same $1,000 ends up with only about $7,612, around half, despite investing the same amount. The **Rule of 72** gives a quick estimate: divide 72 by the rate to find the years to double. At 7 percent it takes about 72 / 7, roughly 10 years. Start early, invest regularly, diversify, keep fees low and avoid panic when markets drop."
+   },
+   "cards": [
+    {
+     "front": "Stock",
+     "back": "A share of ownership in a company."
+    },
+    {
+     "front": "Bond",
+     "back": "A loan to a company or government that pays interest."
+    },
+    {
+     "front": "Mutual fund",
+     "back": "A pool of many investments managed together."
+    },
+    {
+     "front": "Diversification",
+     "back": "Spreading money across many investments to reduce risk."
+    },
+    {
+     "front": "Dividend",
+     "back": "A share of a company's profit paid to shareholders."
+    },
+    {
+     "front": "Time horizon",
+     "back": "How long before you need the money."
+    },
+    {
+     "front": "Risk and return",
+     "back": "Higher possible gains usually come with higher possible losses."
+    },
+    {
+     "front": "Rule of 72",
+     "back": "Divide 72 by the rate to estimate years to double."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which investment is a loan to a company or government?",
+     "options": [
+      "Stock",
+      "Bond",
+      "Dividend",
+      "Index"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the main benefit of a mutual fund?",
+     "options": [
+      "It guarantees a profit",
+      "It spreads money across many investments",
+      "It has no fees",
+      "It never falls in value"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Using the Rule of 72, about how long does money take to double at 6 percent?",
+     "options": [
+      "6 years",
+      "12 years",
+      "36 years",
+      "72 years"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which statement about risk is accurate?",
+     "options": [
+      "Higher possible returns usually come with higher risk",
+      "Risk and return are unrelated",
+      "Bonds can never lose value",
+      "All investments are guaranteed"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Why does starting to invest early help?",
+     "options": [
+      "Money has more time to grow through compounding",
+      "Early investors pay no fees",
+      "Returns are guaranteed",
+      "Stocks only rise early"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain the difference between a stock, a bond and a mutual fund. Then explain how the relationship of risk and return applies to them, and why someone saving for a goal in one year should not put the money in stocks.",
+     "markScheme": [
+      "Defines a stock as part ownership of a company",
+      "Defines a bond as a loan that pays interest, and a mutual fund as a pool of many investments",
+      "Explains that higher potential return comes with higher risk, with stocks riskier than bonds",
+      "Explains that a short time horizon means prices might be down when the money is needed, so stocks are unsuitable"
+     ],
+     "modelAnswer": "A stock is part ownership of a company. A bond is a loan to a company or government that pays interest, and a mutual fund pools money from many investors into a collection of investments. Higher possible returns come with higher risk, and stocks are riskier than bonds. Money needed in a year should not be in stocks because the price might be down when it is needed, and there would be no time to recover.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A stock is a share of ownership in a company. A bond is a loan that pays interest, and a mutual fund pools many investors' money into a collection of investments. Higher possible returns come with higher risk, so stocks are riskier than bonds. Money needed in a year shouldn't be in stocks, because prices could be down when I need it, with no time to recover.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A stock is a share of ownership in a company."
+        },
+        {
+         "point": 1,
+         "quote": "A bond is a loan that pays interest, and a mutual fund pools many investors' money into a collection of investments."
+        },
+        {
+         "point": 2,
+         "quote": "Higher possible returns come with higher risk, so stocks are riskier than bonds."
+        },
+        {
+         "point": 3,
+         "quote": "Money needed in a year shouldn't be in stocks, because prices could be down when I need it, with no time to recover."
+        }
+       ],
+       "feedback": "Full marks. The time horizon reasoning is exactly right."
+      },
+      {
+       "tier": "full",
+       "text": "Owning a stock means owning a small piece of the company. Buying a bond means lending money for interest; a mutual fund holds lots of different investments in one package. The more return an investment might give, the more you might lose, which is why stocks are riskier than bonds. If I need the cash next year, a market drop could leave me short, so a savings account is safer.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Owning a stock means owning a small piece of the company."
+        },
+        {
+         "point": 1,
+         "quote": "Buying a bond means lending money for interest; a mutual fund holds lots of different investments in one package."
+        },
+        {
+         "point": 2,
+         "quote": "The more return an investment might give, the more you might lose, which is why stocks are riskier than bonds."
+        },
+        {
+         "point": 3,
+         "quote": "If I need the cash next year, a market drop could leave me short, so a savings account is safer."
+        }
+       ],
+       "feedback": "Full marks. Naming a safer alternative is a good addition."
+      },
+      {
+       "tier": "partial",
+       "text": "A stock is ownership in a company. Stocks are riskier. A bond is when you borrow money from a company. Stocks are fine for one year because they always rise.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A stock is ownership in a company."
+        },
+        {
+         "point": 2,
+         "quote": "Stocks are riskier."
+        }
+       ],
+       "feedback": "With a bond you lend money. And stocks can fall, so they aren't safe for a one-year goal."
+      },
+      {
+       "tier": "partial",
+       "text": "A mutual fund pools many investments. A one-year goal needs safety. A stock is a loan to a government.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A mutual fund pools many investments."
+        },
+        {
+         "point": 3,
+         "quote": "A one-year goal needs safety."
+        }
+       ],
+       "feedback": "A stock is part ownership of a company. A bond is the loan.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "All investments are the same, and they all earn the same return.",
+       "meets": [],
+       "feedback": "Investments differ in how they work and in their risk and return."
+      },
+      {
+       "tier": "weak",
+       "text": "Risk-free investments with huge returns are easy to find, so risk does not matter.",
+       "meets": [],
+       "feedback": "High returns without risk are a warning sign of a scam."
+      }
+     ]
+    },
+    {
+     "prompt": "Two friends each invest a single $1,000. Maya invests at 18 and Ben at 28. Assume 7 percent a year, with both leaving the money until age 58. Using about $14,974 for 40 years and about $7,612 for 30 years, say how much each has at 58 and compare them. Explain the lesson about time, and give one caution about the assumption.",
+     "markScheme": [
+      "States Maya has about $14,974 and Ben about $7,612",
+      "Compares them, noting that Maya has roughly twice as much from the same single deposit",
+      "Explains that the extra 10 years of compounding made the difference, not the amount invested",
+      "Cautions that 7 percent is an assumption and real returns vary and are not guaranteed"
+     ],
+     "modelAnswer": "Maya has about $14,974 at 58 and Ben has about $7,612. Maya has roughly twice as much from the same $1,000. The difference comes from 10 extra years of compounding, not from investing more money. The caution is that 7 percent is an assumption: real returns vary from year to year and are not guaranteed.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Maya ends up with about $14,974, and Ben with about $7,612. So Maya has roughly twice as much from the same $1,000. The extra ten years of compounding made the difference, not extra money. But 7 percent is only an assumption; real returns vary and are never guaranteed.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Maya ends up with about $14,974, and Ben with about $7,612."
+        },
+        {
+         "point": 1,
+         "quote": "So Maya has roughly twice as much from the same $1,000."
+        },
+        {
+         "point": 2,
+         "quote": "The extra ten years of compounding made the difference, not extra money."
+        },
+        {
+         "point": 3,
+         "quote": "But 7 percent is only an assumption; real returns vary and are never guaranteed."
+        }
+       ],
+       "feedback": "Full marks. The lesson and the caution are both clear."
+      },
+      {
+       "tier": "full",
+       "text": "Maya: about $14,974. Ben: about $7,612. Maya has about twice as much even though both put in only $1,000. Time is the reason, since her money had ten more years to grow on itself. The 7 percent is a guess for practice, as markets go up and down.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Maya: about $14,974. Ben: about $7,612."
+        },
+        {
+         "point": 1,
+         "quote": "Maya has about twice as much even though both put in only $1,000."
+        },
+        {
+         "point": 2,
+         "quote": "Time is the reason, since her money had ten more years to grow on itself."
+        },
+        {
+         "point": 3,
+         "quote": "The 7 percent is a guess for practice, as markets go up and down."
+        }
+       ],
+       "feedback": "Full marks. 'Grow on itself' is a good way to describe compounding."
+      },
+      {
+       "tier": "partial",
+       "text": "Maya has $14,974 and Ben has $7,612. Returns are not guaranteed. Maya invested more money, so she has more.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Maya has $14,974 and Ben has $7,612."
+        },
+        {
+         "point": 3,
+         "quote": "Returns are not guaranteed."
+        }
+       ],
+       "feedback": "They each invested the same $1,000. The difference is ten extra years of compounding."
+      },
+      {
+       "tier": "partial",
+       "text": "Maya has about twice as much. Time made the difference. Both have $1,000 at 58 because nothing changes.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Maya has about twice as much."
+        },
+        {
+         "point": 2,
+         "quote": "Time made the difference."
+        }
+       ],
+       "feedback": "Compound growth increases the balance. Use the figures given for each person.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It does not matter when you start investing, because both get the same money.",
+       "meets": [],
+       "feedback": "Starting earlier gives more time for compounding, so the results differ."
+      },
+      {
+       "tier": "weak",
+       "text": "Ben should have invested at 58 because that is when people retire.",
+       "meets": [],
+       "feedback": "Investing later gives less time to grow. Starting early is the lesson."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Credit cards, loans and credit scores",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe how credit cards and loans work and calculate the cost of borrowing;\n2. explain a credit score and what raises or lowers it.\n\n## Materials\n\nA sample credit card statement (invented), a loan cost table, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"If a friend lends you $20 and you pay back $25, what was the cost of borrowing?\" Introduce interest as the price of borrowed money.\n\n## Main activity\n\n1. Credit means borrowing with a promise to repay. Credit card: a revolving line of credit with a limit; pay in full each month and there is no interest; carry a balance and interest is charged at the APR (annual percentage rate). A 24 percent APR is 2 percent a month. On a $600 balance, the first month's interest is $12. If only the minimum $25 is paid, $13 reduces the balance, and the debt falls very slowly.\n2. Loans: an installment loan is repaid in fixed payments. Example: $2,000 borrowed at 10 percent simple interest for 2 years: interest $400, total $2,400, or $100 a month over 24 months. Compare the total cost, not just the payment.\n3. Credit score (300 to 850): a number that predicts how likely you are to repay. Factors: payment history (the biggest), how much of your limit you use (credit utilization; keep below 30 percent), length of history, new accounts and types of credit. Paying late and maxing out cards lower it; paying on time and keeping balances low raise it. A $300 balance on a $1,000 limit is 30 percent utilization.\n4. Why it matters: it affects interest rates, renting an apartment and sometimes jobs.\n\n## Worksheet\n\nCalculate interest and utilization.",
+   "reading": {
+    "title": "The cost of borrowed money, and the number that follows you",
+    "content": "**Credit** means borrowing money, or buying now and paying later, with a promise to repay. It can be useful, for example for a car, a home or education, but it always costs something, called **interest**, the fee for using someone else's money.\n\nA **credit card** gives you a **credit limit**, the highest balance you may carry. Each month you receive a statement. If you pay the whole balance by the due date, you pay no interest. If you carry a balance, the card company charges interest at the **annual percentage rate (APR)**, which can be very high. At a 24 percent APR, the monthly rate is 24 / 12 = 2 percent. On a $600 balance, interest for a month is 0.02 x 600 = $12. If you pay only a minimum of $25, $12 goes to interest and just $13 reduces the balance, so the debt falls slowly while interest keeps being added. Paying only the minimum can keep you in debt for years. The best habits are to pay in full every month and to use a card only for purchases you could pay for from your budget.\n\nA **loan** gives you a lump sum that you repay in fixed payments over a period. The cost of borrowing is the total you repay minus the amount you borrowed. For practice, suppose you borrow $2,000 at 10 percent simple interest for 2 years: interest is 2,000 x 0.10 x 2 = $400. You repay $2,400 in total, which is $100 a month over 24 months. Always compare the **total cost**, not just the monthly payment: a longer loan has a lower payment but costs more in interest.\n\nLenders decide whether to lend to you, and at what rate, partly by your **credit score**, a number from 300 to 850 that predicts how likely you are to repay. Several factors go into it. **Payment history** is the most important: paying late hurts. **Credit utilization**, how much of your limit you are using, matters next: a $300 balance on a $1,000 limit is 30 percent utilization, and keeping it under 30 percent is recommended. Other factors are the **length** of your credit history, how often you **apply** for new credit, and the mix of accounts. A high score can lower your interest rate, which saves thousands of dollars on a loan. Landlords and some employers also look at credit reports. You can build a good score by paying every bill on time, keeping balances low and not opening more accounts than you need. Check your credit report for errors each year; you can get free reports from the official source."
+   },
+   "cards": [
+    {
+     "front": "Credit",
+     "back": "Borrowing with a promise to repay later."
+    },
+    {
+     "front": "APR",
+     "back": "The yearly cost of borrowing, expressed as a percentage."
+    },
+    {
+     "front": "Credit limit",
+     "back": "The highest balance a card allows."
+    },
+    {
+     "front": "Minimum payment",
+     "back": "The smallest payment you must make on a card each month."
+    },
+    {
+     "front": "Cost of borrowing",
+     "back": "The total repaid minus the amount borrowed."
+    },
+    {
+     "front": "Credit score",
+     "back": "A number from 300 to 850 predicting repayment."
+    },
+    {
+     "front": "Credit utilization",
+     "back": "The share of your limit that you are using."
+    },
+    {
+     "front": "Payment history",
+     "back": "Whether you pay on time; the biggest score factor."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A card has a 24 percent APR. What is the monthly interest rate?",
+     "options": [
+      "1 percent",
+      "2 percent",
+      "12 percent",
+      "24 percent"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is one month of interest on a $600 balance at 2 percent?",
+     "options": [
+      "$2",
+      "$12",
+      "$24",
+      "$120"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A $300 balance on a $1,000 limit is what utilization?",
+     "options": [
+      "3 percent",
+      "30 percent",
+      "300 percent",
+      "70 percent"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which factor most affects a credit score?",
+     "options": [
+      "Payment history",
+      "Your age",
+      "Your address",
+      "Your income"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "You borrow $2,000 at 10 percent simple interest for 2 years. What is the total repaid?",
+     "options": [
+      "$2,200",
+      "$2,400",
+      "$2,600",
+      "$4,000"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student has a $600 credit card balance at a 24 percent APR (2 percent a month) and pays the $25 minimum this month. Calculate the interest for the month, how much of the payment reduces the balance, and the new balance. Explain why paying only the minimum is costly and what you would do instead.",
+     "markScheme": [
+      "Calculates the month's interest as $12",
+      "Calculates that $13 reduces the balance, so the new balance is $587",
+      "Explains that most of the payment goes to interest so the debt shrinks slowly and total interest grows",
+      "Suggests paying more than the minimum or paying in full, and not adding new charges"
+     ],
+     "modelAnswer": "Interest for the month is 2 percent of $600, which is $12. Of the $25 payment, $12 pays the interest and $13 reduces the balance, so the new balance is $587. Paying only the minimum is costly because about half of the payment goes to interest, the balance shrinks slowly, and interest keeps being added. I would pay more than the minimum, ideally the whole balance, and avoid new charges.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The monthly interest is 2 percent of $600, which is $12. Of the $25 payment, $13 reduces the balance, so the new balance is $587. Paying the minimum is costly because nearly half goes to interest, so the debt shrinks slowly and more interest keeps being added. I'd pay much more than the minimum, ideally the full balance, and stop adding new charges.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The monthly interest is 2 percent of $600, which is $12."
+        },
+        {
+         "point": 1,
+         "quote": "Of the $25 payment, $13 reduces the balance, so the new balance is $587."
+        },
+        {
+         "point": 2,
+         "quote": "Paying the minimum is costly because nearly half goes to interest, so the debt shrinks slowly and more interest keeps being added."
+        },
+        {
+         "point": 3,
+         "quote": "I'd pay much more than the minimum, ideally the full balance, and stop adding new charges."
+        }
+       ],
+       "feedback": "Full marks. The calculation and the habit are both right."
+      },
+      {
+       "tier": "full",
+       "text": "Interest is $600 × 0.02 = $12. The remaining $13 of the payment lowers the balance to $587. It would take years to pay off like this, because most of each payment goes to interest at the start. A better plan is to pay as much as my budget allows, and to stop using the card until the balance is gone.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Interest is $600 × 0.02 = $12."
+        },
+        {
+         "point": 1,
+         "quote": "The remaining $13 of the payment lowers the balance to $587."
+        },
+        {
+         "point": 2,
+         "quote": "It would take years to pay off like this, because most of each payment goes to interest at the start."
+        },
+        {
+         "point": 3,
+         "quote": "A better plan is to pay as much as my budget allows, and to stop using the card until the balance is gone."
+        }
+       ],
+       "feedback": "Full marks. Stopping new charges is an important extra step."
+      },
+      {
+       "tier": "partial",
+       "text": "Interest is $12. I would pay more than the minimum. The new balance is $575 because the whole $25 reduces the balance.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Interest is $12."
+        },
+        {
+         "point": 3,
+         "quote": "I would pay more than the minimum."
+        }
+       ],
+       "feedback": "The interest takes $12 of the payment, so only $13 reduces the balance."
+      },
+      {
+       "tier": "partial",
+       "text": "The new balance is $587. The minimum keeps you in debt. Interest is $24 because the APR is 24 percent.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The new balance is $587."
+        },
+        {
+         "point": 2,
+         "quote": "The minimum keeps you in debt."
+        }
+       ],
+       "feedback": "24 percent is the yearly rate. Divide by 12 months to get 2 percent a month.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A minimum payment means the debt is paid off, so there is nothing more to worry about.",
+       "meets": [],
+       "feedback": "Paying the minimum leaves most of the balance, and interest keeps being charged."
+      },
+      {
+       "tier": "weak",
+       "text": "Interest does not exist on credit cards, because they are free money.",
+       "meets": [],
+       "feedback": "Cards charge interest on balances you carry past the due date."
+      }
+     ]
+    },
+    {
+     "prompt": "A student has a card with a $1,500 limit and a $600 balance. She asks how her credit score works. Calculate her credit utilization, say whether it is above or below the 30 percent guideline, and explain two actions that would raise her score and two that would lower it.",
+     "markScheme": [
+      "Calculates utilization as 40 percent",
+      "States that it is above the 30 percent guideline",
+      "Gives two actions that raise a score, such as paying on time and lowering the balance",
+      "Gives two actions that lower a score, such as paying late and opening many new accounts or maxing out the card"
+     ],
+     "modelAnswer": "Utilization is $600 divided by $1,500, which is 40 percent. That is above the 30 percent guideline. Her score would rise if she pays every bill on time and pays the balance down below $450. It would fall if she pays late or maxes out the card, or applies for many new accounts at once.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Utilization is 600 ÷ 1,500 = 40 percent. That's above the 30 percent guideline. She'd raise her score by paying every bill on time and paying the balance below $450. She'd lower it by paying late, maxing out the card, or applying for lots of new accounts.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Utilization is 600 ÷ 1,500 = 40 percent."
+        },
+        {
+         "point": 1,
+         "quote": "That's above the 30 percent guideline."
+        },
+        {
+         "point": 2,
+         "quote": "She'd raise her score by paying every bill on time and paying the balance below $450."
+        },
+        {
+         "point": 3,
+         "quote": "She'd lower it by paying late, maxing out the card, or applying for lots of new accounts."
+        }
+       ],
+       "feedback": "Full marks. $450 is exactly 30 percent of the limit."
+      },
+      {
+       "tier": "full",
+       "text": "Her utilization is 40 percent because 600 is 40 percent of 1,500. The guideline is under 30 percent, so it's a bit high. Paying on time and reducing the balance both help the score. Missing a payment or running the balance up to the limit would hurt it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Her utilization is 40 percent because 600 is 40 percent of 1,500."
+        },
+        {
+         "point": 1,
+         "quote": "The guideline is under 30 percent, so it's a bit high."
+        },
+        {
+         "point": 2,
+         "quote": "Paying on time and reducing the balance both help the score."
+        },
+        {
+         "point": 3,
+         "quote": "Missing a payment or running the balance up to the limit would hurt it."
+        }
+       ],
+       "feedback": "Full marks. Each factor is linked to the score correctly."
+      },
+      {
+       "tier": "partial",
+       "text": "Utilization is 40 percent. Paying on time helps. That is below the guideline so it's fine, and nothing lowers a score.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Utilization is 40 percent."
+        },
+        {
+         "point": 2,
+         "quote": "Paying on time helps."
+        }
+       ],
+       "feedback": "40 percent is above the 30 percent guideline, and several actions can lower a score."
+      },
+      {
+       "tier": "partial",
+       "text": "It is above 30 percent. Paying late lowers the score. Utilization is 1,500 ÷ 600, which is 250 percent.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It is above 30 percent."
+        },
+        {
+         "point": 3,
+         "quote": "Paying late lowers the score."
+        }
+       ],
+       "feedback": "Utilization is the balance divided by the limit: 600 divided by 1,500.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A credit score is the same as a bank balance, so more money means a better score.",
+       "meets": [],
+       "feedback": "A score reflects how you manage credit, such as paying on time."
+      },
+      {
+       "tier": "weak",
+       "text": "Credit scores do not matter, because nobody ever checks them.",
+       "meets": [],
+       "feedback": "Lenders, landlords and others check scores, and they affect interest rates."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Insurance, scams and identity theft",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe types of insurance and explain what each protects against;\n2. recognize scams and identity theft and describe how to protect yourself.\n\n## Materials\n\nScenario cards, an insurance terms handout, examples of scam messages (fictional), the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"A car accident could cost $30,000. How can people protect themselves from a cost that large?\" Introduce sharing risk.\n\n## Main activity\n\n1. Insurance: you pay a premium, and the insurer pays for covered losses. A deductible is the amount you pay first. Example: a $2,000 repair with a $500 deductible: you pay $500 and the insurer pays $1,500. Types: health (medical costs), auto (damage and liability; required by law in Ohio), renters (belongings and liability in a rental), homeowners, life (income for dependents), disability (income if you cannot work).\n2. Choosing coverage: higher deductible means lower premium, but more out of pocket when something happens. Insure risks that you cannot afford to cover yourself.\n3. Scams: phishing, fake check scams, fake job offers, prize or lottery scams, \"grandparent\" scams, romance scams, and investment scams promising guaranteed returns. Red flags: pressure to act fast, payment by gift cards or wire, requests for secrecy, offers that sound too good to be true.\n4. Identity theft: criminals use your personal information (Social Security number, birth date, account numbers). Protection: guard your SSN, use strong unique passwords and two-factor authentication, shred documents, check statements, freeze your credit (free), review your credit reports. If it happens: report it, place a fraud alert, and contact banks.\n\n## Worksheet\n\nMatch insurance to risk and spot scam signs.",
+   "reading": {
+    "title": "Protecting what you have",
+    "content": "Some losses are too large for most people to handle on their own: a hospital stay, a car crash, a house fire. **Insurance** is a way to share that risk. You pay a regular amount, called a **premium**, and in return the insurance company agrees to pay for specific losses. When a loss occurs, you make a **claim**. Most policies include a **deductible**, the amount that you pay before the insurer pays. If a repair costs $2,000 and your deductible is $500, you pay $500 and the insurer pays $1,500. Choosing a higher deductible usually lowers the premium, but you must be able to pay it when something happens.\n\nThere are several main types. **Health insurance** pays part of the costs of doctor visits, hospital stays and medicine. **Auto insurance** pays for damage to cars and for injuries you cause to others (this is called **liability** coverage); it is required by law in Ohio and most states. **Renters insurance** covers your belongings in a rental home or apartment if they are stolen or damaged by fire, and protects you if someone is hurt in your home. **Homeowners insurance** protects a house and its contents. **Life insurance** pays money to your family if you die, which matters if others depend on your income. **Disability insurance** replaces part of your income if illness or injury prevents you from working. A good rule is to insure the risks that you could not afford to cover yourself, and to skip coverage for small losses that you can handle from savings.\n\nMoney is also threatened by criminals. **Scams** try to trick you into giving money or information. Common types include **phishing** messages that pretend to be a bank, **fake check** scams (a stranger sends you a check for too much and asks you to send back the extra, then the check bounces and you owe the bank), **fake job** offers that ask you to pay a fee, **prize** scams that say you won a contest you never entered, and **investment** scams promising guaranteed high returns. Red flags include pressure to act right away, a request for payment by **gift cards, wire transfer or cryptocurrency**, a demand for secrecy, and offers that seem too good to be true.\n\nIn **identity theft**, a criminal uses your personal information, such as your Social Security number, to open accounts or buy things in your name. To protect yourself, never share your Social Security number unless necessary, use strong unique passwords and two-factor authentication, shred papers with personal details, check your account statements regularly, and consider a **credit freeze**, which is free and stops new accounts from being opened in your name. If your identity is stolen, report it at once to the government's identity-theft site, place a fraud alert, and contact your banks and card companies. Acting fast limits the damage."
+   },
+   "cards": [
+    {
+     "front": "Premium",
+     "back": "The regular payment you make for insurance."
+    },
+    {
+     "front": "Deductible",
+     "back": "The amount you pay before the insurer pays."
+    },
+    {
+     "front": "Claim",
+     "back": "A request to the insurer to pay for a covered loss."
+    },
+    {
+     "front": "Liability coverage",
+     "back": "Pays for harm you cause to others."
+    },
+    {
+     "front": "Renters insurance",
+     "back": "Covers your belongings in a rental home."
+    },
+    {
+     "front": "Phishing",
+     "back": "A message that pretends to be trusted to steal information."
+    },
+    {
+     "front": "Identity theft",
+     "back": "Using someone's personal information without permission."
+    },
+    {
+     "front": "Credit freeze",
+     "back": "A free block on new accounts being opened in your name."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A $2,000 repair has a $500 deductible. How much does the insurer pay?",
+     "options": [
+      "$500",
+      "$1,500",
+      "$2,000",
+      "$2,500"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which insurance covers your belongings in an apartment you rent?",
+     "options": [
+      "Auto insurance",
+      "Renters insurance",
+      "Life insurance",
+      "Health insurance"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is a red flag for a scam?",
+     "options": [
+      "A request to pay with gift cards",
+      "A written contract you can read",
+      "Time to think",
+      "A secure website"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What does a credit freeze do?",
+     "options": [
+      "Blocks new accounts being opened in your name",
+      "Raises your score",
+      "Erases your debt",
+      "Cancels your cards"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A higher deductible usually means:",
+     "options": [
+      "A lower premium but more out of pocket after a loss",
+      "A higher premium",
+      "No coverage",
+      "No claims"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student receives a message saying she has won a $1,000 gift card in a contest she never entered. To claim it she must pay a $50 \"processing fee\" using gift cards and tell nobody. List three red flags, explain what she should do, and name two ways she can protect her identity in general.",
+     "markScheme": [
+      "Identifies a contest she never entered as a red flag",
+      "Identifies the payment by gift cards and the fee up front as red flags, or the secrecy demand",
+      "Says she should not pay, should ignore or report the message and tell a trusted adult",
+      "Names two protections, such as strong unique passwords, two-factor authentication, guarding her Social Security number or a credit freeze"
+     ],
+     "modelAnswer": "Red flags: a contest she never entered, a fee to claim a prize, payment by gift cards, and a demand for secrecy. She should not pay anything, should not reply, should report the message and tell a parent or teacher. To protect her identity she can use strong unique passwords with two-factor authentication, and guard her Social Security number.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "She never entered the contest, so winning makes no sense. They want a $50 fee paid with gift cards and want it kept secret, which are classic scam signs. She should not pay or reply; she should report the message and tell a parent or teacher. To protect herself she should use strong unique passwords with two-factor authentication, and never share her Social Security number.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "She never entered the contest, so winning makes no sense."
+        },
+        {
+         "point": 1,
+         "quote": "They want a $50 fee paid with gift cards and want it kept secret, which are classic scam signs."
+        },
+        {
+         "point": 2,
+         "quote": "She should not pay or reply; she should report the message and tell a parent or teacher."
+        },
+        {
+         "point": 3,
+         "quote": "To protect herself she should use strong unique passwords with two-factor authentication, and never share her Social Security number."
+        }
+       ],
+       "feedback": "Full marks. The red flags and the response are both accurate."
+      },
+      {
+       "tier": "full",
+       "text": "Red flag one: a prize for something she didn't enter. Two: asking for a fee up front, three: payment by gift cards, and four: telling nobody. She should delete it, report it as a scam, and talk to a trusted adult. In general she can freeze her credit when she's older and shred papers with personal details.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Red flag one: a prize for something she didn't enter."
+        },
+        {
+         "point": 1,
+         "quote": "Two: asking for a fee up front, three: payment by gift cards, and four: telling nobody."
+        },
+        {
+         "point": 2,
+         "quote": "She should delete it, report it as a scam, and talk to a trusted adult."
+        },
+        {
+         "point": 3,
+         "quote": "In general she can freeze her credit when she's older and shred papers with personal details."
+        }
+       ],
+       "feedback": "Full marks. Naming four flags is more than was needed."
+      },
+      {
+       "tier": "partial",
+       "text": "She never entered a contest. She should tell a trusted adult. She should pay the fee because $1,000 is more than $50, and keep it secret as asked.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "She never entered a contest."
+        },
+        {
+         "point": 2,
+         "quote": "She should tell a trusted adult."
+        }
+       ],
+       "feedback": "Paying a fee for a prize is the scam. Explain why and say what to do instead."
+      },
+      {
+       "tier": "partial",
+       "text": "Gift cards and secrecy are red flags. Use two-factor authentication. She should reply to ask if it's real.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Gift cards and secrecy are red flags."
+        },
+        {
+         "point": 3,
+         "quote": "Use two-factor authentication."
+        }
+       ],
+       "feedback": "Replying confirms your address is active. Do not reply; report the message.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It is real because it says she won. She should send the fee fast to claim it.",
+       "meets": [],
+       "feedback": "Prize scams ask for payment and pressure you to act fast. Do not pay."
+      },
+      {
+       "tier": "weak",
+       "text": "She should keep her passwords safe. Scams are harmless and never cost anyone money.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "She should keep her passwords safe."
+        }
+       ],
+       "feedback": "Scams cost people billions of dollars each year. Identify the red flags."
+      }
+     ]
+    },
+    {
+     "prompt": "A 19-year-old rents an apartment and owns a laptop, a bike and furniture worth about $3,000. She also drives a used car. Explain which two types of insurance she most needs and why, and calculate what she pays and what the insurer pays for a $2,400 theft claim with a $500 deductible. Say how a higher deductible could affect her.",
+     "markScheme": [
+      "Identifies renters insurance as protecting her belongings and liability",
+      "Identifies auto insurance as required and protecting against damage and liability",
+      "Calculates that she pays $500 and the insurer pays $1,900",
+      "Explains that a higher deductible lowers the premium but raises what she pays after a loss"
+     ],
+     "modelAnswer": "She needs renters insurance to cover her belongings and liability, and auto insurance, which is required and covers damage and injuries she may cause. For a $2,400 theft claim with a $500 deductible, she pays $500 and the insurer pays $1,900. A higher deductible would lower her premium, but she would have to pay more out of pocket after a loss.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Renters insurance covers her laptop, bike and furniture and protects her if someone is hurt in her home. Auto insurance is required and pays for damage and injuries she may cause. For the $2,400 theft she pays the $500 deductible and the insurer pays $1,900. A higher deductible would lower her premium but she'd pay more out of pocket after a loss.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Renters insurance covers her laptop, bike and furniture and protects her if someone is hurt in her home."
+        },
+        {
+         "point": 1,
+         "quote": "Auto insurance is required and pays for damage and injuries she may cause."
+        },
+        {
+         "point": 2,
+         "quote": "For the $2,400 theft she pays the $500 deductible and the insurer pays $1,900."
+        },
+        {
+         "point": 3,
+         "quote": "A higher deductible would lower her premium but she'd pay more out of pocket after a loss."
+        }
+       ],
+       "feedback": "Full marks. Both policies and the deductible arithmetic are right."
+      },
+      {
+       "tier": "full",
+       "text": "She needs renters insurance because her $3,000 of belongings are at risk of theft or fire. She also needs auto insurance, as the law requires it and a crash could cost far more than she has. On the theft, she pays $500 and they pay 2,400 - 500 = $1,900. If she picked a $1,000 deductible her premium would drop, but she'd have to find $1,000 after a claim.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "She needs renters insurance because her $3,000 of belongings are at risk of theft or fire."
+        },
+        {
+         "point": 1,
+         "quote": "She also needs auto insurance, as the law requires it and a crash could cost far more than she has."
+        },
+        {
+         "point": 2,
+         "quote": "On the theft, she pays $500 and they pay 2,400 - 500 = $1,900."
+        },
+        {
+         "point": 3,
+         "quote": "If she picked a $1,000 deductible her premium would drop, but she'd have to find $1,000 after a claim."
+        }
+       ],
+       "feedback": "Full marks. The $1,000 example makes the trade-off concrete."
+      },
+      {
+       "tier": "partial",
+       "text": "Renters insurance covers her belongings. She pays $500. Life insurance is the most important and a higher deductible lowers what she pays after a loss.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Renters insurance covers her belongings."
+        },
+        {
+         "point": 2,
+         "quote": "She pays $500."
+        }
+       ],
+       "feedback": "A higher deductible raises what you pay after a loss. And auto insurance is required for her car."
+      },
+      {
+       "tier": "partial",
+       "text": "Auto insurance is required. A higher deductible lowers the premium. The insurer pays $2,900 because it adds the deductible.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Auto insurance is required."
+        },
+        {
+         "point": 3,
+         "quote": "A higher deductible lowers the premium."
+        }
+       ],
+       "feedback": "The insurer pays the claim minus the deductible: $2,400 minus $500.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "She does not need insurance because nothing bad will happen to her.",
+       "meets": [],
+       "feedback": "Insurance covers losses that are too large to pay yourself. Name two policies."
+      },
+      {
+       "tier": "weak",
+       "text": "A deductible is the monthly payment, so she pays $2,400 each month.",
+       "meets": [],
+       "feedback": "The monthly payment is the premium. The deductible is paid when a claim is made."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

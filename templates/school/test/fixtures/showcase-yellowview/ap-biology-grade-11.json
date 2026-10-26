@@ -1,0 +1,2672 @@
+{
+ "subject": "AP Biology",
+ "yearGroup": "Grade 11",
+ "weeks": {
+  "1": {
+   "topic": "Water, macromolecules and protein structure",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how the structure and properties of water support life;\n2. describe the structure and function of carbohydrates, lipids, proteins and nucleic acids;\n3. explain how a protein's levels of structure determine its function.\n\n## Materials\n\nPennies and droppers (water drop cohesion lab), molecular model kits, a protein folding handout, sickle cell hemoglobin model, the problem set.\n\n## Starter (7 minutes)\n\nPlace drops of water on a penny and see how many fit before spilling over. Ask: \"What holds the drop together, and what does this tell us about water molecules?\" Record student explanations for use later.\n\n## Main activity\n\n1. Water: polarity, hydrogen bonding, cohesion, adhesion, high specific heat, ice less dense than liquid water. Link each property to a biological consequence (transport in xylem, temperature stability of lakes, ice insulating a pond).\n2. Macromolecules: monomers, polymers, dehydration synthesis and hydrolysis. Directionality of nucleic acids (5' to 3'), glycosidic, ester and peptide bonds.\n3. Protein structure: primary (sequence), secondary (alpha helix and beta sheet by hydrogen bonds in the backbone), tertiary (R group interactions) and quaternary (multiple subunits). Use sickle cell hemoglobin to show how one substitution (glutamic acid to valine) alters function.\n\n## Checking for understanding\n\nMini whiteboards: \"Which level of structure is disrupted when a protein is heated until it denatures?\"\n\n## Problem set\n\nAP-style free response on water, macromolecule identification and protein structure.",
+   "reading": {
+    "title": "Water and the molecules built from carbon",
+    "content": "Life as we know it depends on water, and almost every property of water comes from its structure. A water molecule is **polar**: oxygen pulls the shared electrons toward itself, giving it a partial negative charge, and the hydrogens carry partial positive charges. The positive hydrogen of one molecule is attracted to the negative oxygen of another, forming a **hydrogen bond**. Individual hydrogen bonds are weak, but there are enormous numbers of them, and together they produce water's biological properties. **Cohesion**, the attraction between water molecules, lets columns of water be pulled up the xylem of a tall tree. **Adhesion**, attraction to other polar surfaces such as the walls of the xylem, helps the water climb. The high **specific heat** of water means that a lot of energy is needed to raise its temperature, which moderates the temperature of lakes and of the bodies of organisms. Ice is less dense than liquid water, because the hydrogen bonds hold the molecules in a rigid lattice with more space between them. A pond therefore freezes from the top, and the ice insulates the water below, where fish survive the winter.\n\nFour classes of macromolecules are built from small monomers. Monomers are linked by **dehydration synthesis**, which removes a water molecule, and polymers are broken by **hydrolysis**, which adds one. **Carbohydrates** are built from monosaccharides joined by glycosidic bonds: starch stores glucose in plants, glycogen in animals, and cellulose forms plant cell walls. **Lipids** are not true polymers; fats are made of glycerol and three fatty acids joined by ester bonds. Saturated fats have no double bonds and are solid at room temperature, while unsaturated ones have double bonds that make kinks. **Proteins** are polymers of amino acids joined by peptide bonds. **Nucleic acids** are polymers of nucleotides, each with a sugar, a phosphate and a nitrogenous base, with a direction from the 5' end to the 3' end.\n\nA protein's function depends on its shape, which has four levels. The **primary structure** is the sequence of amino acids. The **secondary structure** is the local folding of the backbone, stabilized by hydrogen bonds, into alpha helices and beta sheets. The **tertiary structure** is the overall three-dimensional shape determined by interactions among the R groups: hydrophobic interactions, ionic bonds, hydrogen bonds and disulfide bridges. The **quaternary structure** exists only in proteins with more than one polypeptide, such as hemoglobin with four. Change the primary structure and you may change everything above it. In sickle cell disease, one substitution, glutamic acid (polar) replaced by valine (nonpolar), makes hemoglobin molecules stick together in low oxygen and form fibers that distort red blood cells. Heat or extreme pH disrupts the weak bonds that hold the secondary and tertiary structure, which is called denaturation."
+   },
+   "cards": [
+    {
+     "front": "Hydrogen bond",
+     "back": "A weak attraction between a partially positive hydrogen and a partially negative atom such as oxygen."
+    },
+    {
+     "front": "Cohesion",
+     "back": "Attraction between molecules of the same substance, such as water to water."
+    },
+    {
+     "front": "Adhesion",
+     "back": "Attraction between molecules of different substances, such as water to a xylem wall."
+    },
+    {
+     "front": "Dehydration synthesis",
+     "back": "Joining monomers by removing a water molecule."
+    },
+    {
+     "front": "Peptide bond",
+     "back": "The covalent bond that links amino acids in a protein."
+    },
+    {
+     "front": "Tertiary structure",
+     "back": "The overall 3D shape of a polypeptide, set by R group interactions."
+    },
+    {
+     "front": "Quaternary structure",
+     "back": "The arrangement of multiple polypeptide subunits in a protein."
+    },
+    {
+     "front": "Denaturation",
+     "back": "Loss of a protein's shape and function by disruption of weak bonds."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which property of water best explains why a tall tree can pull water up its xylem?",
+     "options": [
+      "High specific heat",
+      "Cohesion and adhesion",
+      "Density of ice",
+      "Polarity of oxygen gas"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which type of bond links amino acids in a protein?",
+     "options": [
+      "Glycosidic bond",
+      "Ester bond",
+      "Peptide bond",
+      "Phosphodiester bond"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which level of protein structure is stabilized mainly by hydrogen bonds in the backbone?",
+     "options": [
+      "Primary",
+      "Secondary",
+      "Tertiary",
+      "Quaternary"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In sickle cell disease, a nonpolar valine replaces a polar glutamic acid. This change in which level of structure causes the others to change?",
+     "options": [
+      "Primary",
+      "Secondary",
+      "Quaternary only",
+      "None; it is a change in the lipid"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A pond freezes from the top down. This is because ice:",
+     "options": [
+      "Is denser than liquid water",
+      "Is less dense than liquid water because of the hydrogen bond lattice",
+      "Has no hydrogen bonds",
+      "Has a higher specific heat"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain how two properties of water that result from hydrogen bonding help a tree survive. For each property, state what it is and describe its biological effect.",
+     "markScheme": [
+      "Identifies cohesion (or adhesion) as a property resulting from hydrogen bonding",
+      "Links cohesion/adhesion to the transport of water up the xylem against gravity",
+      "Identifies a second property, such as high specific heat or evaporative cooling",
+      "Links the second property to a biological effect, such as moderating temperature or cooling leaves by transpiration"
+     ],
+     "modelAnswer": "Cohesion, the attraction between water molecules caused by hydrogen bonds, together with adhesion to the xylem walls, lets a continuous column of water be pulled up the tree against gravity. Water's high specific heat and its high heat of vaporization, also due to hydrogen bonds, mean that evaporating water from the leaves removes a lot of heat, which cools the leaves and moderates their temperature.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Cohesion is the attraction of water molecules to each other through hydrogen bonds. It lets the tree pull a column of water up the xylem against gravity, helped by adhesion to the xylem walls. Water also has a high heat of vaporization because so many hydrogen bonds have to be broken. When water evaporates from the leaves it takes a lot of heat with it, which cools the leaf in the summer sun.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cohesion is the attraction of water molecules to each other through hydrogen bonds."
+        },
+        {
+         "point": 1,
+         "quote": "It lets the tree pull a column of water up the xylem against gravity, helped by adhesion to the xylem walls."
+        },
+        {
+         "point": 2,
+         "quote": "Water also has a high heat of vaporization because so many hydrogen bonds have to be broken."
+        },
+        {
+         "point": 3,
+         "quote": "When water evaporates from the leaves it takes a lot of heat with it, which cools the leaf in the summer sun."
+        }
+       ],
+       "feedback": "Full marks. Each property is named, linked to hydrogen bonding, and tied to a tree."
+      },
+      {
+       "tier": "full",
+       "text": "Water molecules stick together (cohesion) and stick to the xylem (adhesion) because of hydrogen bonding. This lets the sap travel up hundreds of feet without a pump. High specific heat means water absorbs a lot of heat for a small change in temperature. That keeps the temperature inside the plant steady, and transpiration cools the leaves.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Water molecules stick together (cohesion) and stick to the xylem (adhesion) because of hydrogen bonding."
+        },
+        {
+         "point": 1,
+         "quote": "This lets the sap travel up hundreds of feet without a pump."
+        },
+        {
+         "point": 2,
+         "quote": "High specific heat means water absorbs a lot of heat for a small change in temperature."
+        },
+        {
+         "point": 3,
+         "quote": "That keeps the temperature inside the plant steady, and transpiration cools the leaves."
+        }
+       ],
+       "feedback": "All four marks, with a clear link between each property and its effect."
+      },
+      {
+       "tier": "partial",
+       "text": "Cohesion is when water sticks to itself. It helps water move up the tree. Water also helps because it is wet.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cohesion is when water sticks to itself."
+        },
+        {
+         "point": 1,
+         "quote": "It helps water move up the tree."
+        }
+       ],
+       "feedback": "A second property needs to be named and linked to a biological effect, such as high specific heat or evaporative cooling."
+      },
+      {
+       "tier": "partial",
+       "text": "Water has a high specific heat and it keeps the tree from overheating.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Water has a high specific heat"
+        },
+        {
+         "point": 3,
+         "quote": "it keeps the tree from overheating"
+        }
+       ],
+       "feedback": "Good. Explain that this comes from hydrogen bonds, and add a second property, such as cohesion and the movement of water in xylem.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Water is a polar molecule, so it is good for life. The tree uses water to grow and to make food.",
+       "meets": [],
+       "feedback": "Name specific properties, such as cohesion or high specific heat, and connect each one to a function in the tree."
+      },
+      {
+       "tier": "weak",
+       "text": "Cohesion is when water sticks to itself. It happens because water has covalent bonds between molecules, and this makes the water pull itself up the tree like a rope.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cohesion is when water sticks to itself."
+        }
+       ],
+       "feedback": "The attraction between water molecules is due to hydrogen bonds, not covalent bonds between molecules. Link it to xylem transport."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain how a single amino acid substitution in the primary structure of hemoglobin can lead to the symptoms of sickle cell disease. Refer to at least two levels of protein structure.",
+     "markScheme": [
+      "Identifies the substitution as polar glutamic acid replaced by nonpolar valine",
+      "States that the change in the primary structure alters interactions of R groups, changing the tertiary shape",
+      "States that, in low oxygen, the altered hemoglobin molecules stick together (through the quaternary level) into long fibers",
+      "States that the fibers distort red blood cells into a sickle shape, causing blockage and reduced oxygen delivery"
+     ],
+     "modelAnswer": "In sickle cell disease the polar amino acid glutamic acid is replaced by the nonpolar valine in the primary structure. This changes R group interactions, altering the surface of the folded subunits. In low oxygen the hemoglobin molecules stick together through the nonpolar patch and form long fibers. The fibers distort the red blood cells into a sickle shape, which can block small vessels and reduce the delivery of oxygen.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "In the primary structure, glutamic acid, which is polar, is replaced by valine, which is nonpolar. That changes the R group interactions so the surface of the folded subunit is different. In low oxygen the hemoglobin molecules stick together and form long fibers. These fibers bend the red blood cell into a sickle shape that can get stuck in small vessels and reduce oxygen delivery.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "In the primary structure, glutamic acid, which is polar, is replaced by valine, which is nonpolar."
+        },
+        {
+         "point": 1,
+         "quote": "That changes the R group interactions so the surface of the folded subunit is different."
+        },
+        {
+         "point": 2,
+         "quote": "In low oxygen the hemoglobin molecules stick together and form long fibers."
+        },
+        {
+         "point": 3,
+         "quote": "These fibers bend the red blood cell into a sickle shape that can get stuck in small vessels and reduce oxygen delivery."
+        }
+       ],
+       "feedback": "Full marks. You followed the effect from the primary structure to the whole cell."
+      },
+      {
+       "tier": "full",
+       "text": "One nucleotide change makes valine take the place of glutamic acid in the beta chain. Valine is hydrophobic, so the tertiary structure has a sticky patch on its surface. Deoxygenated hemoglobin polymerizes into long strands through those patches. The cell is deformed into a sickle shape, which blocks capillaries and carries less oxygen.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "One nucleotide change makes valine take the place of glutamic acid in the beta chain."
+        },
+        {
+         "point": 1,
+         "quote": "Valine is hydrophobic, so the tertiary structure has a sticky patch on its surface."
+        },
+        {
+         "point": 2,
+         "quote": "Deoxygenated hemoglobin polymerizes into long strands through those patches."
+        },
+        {
+         "point": 3,
+         "quote": "The cell is deformed into a sickle shape, which blocks capillaries and carries less oxygen."
+        }
+       ],
+       "feedback": "All four marks. Linking the hydrophobic patch to polymerization is a strong detail."
+      },
+      {
+       "tier": "partial",
+       "text": "Valine replaces glutamic acid in the primary structure. The red blood cells become sickle shaped.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Valine replaces glutamic acid in the primary structure."
+        },
+        {
+         "point": 3,
+         "quote": "The red blood cells become sickle shaped."
+        }
+       ],
+       "feedback": "Explain how the change affects the shape of the protein and why the hemoglobin molecules clump in low oxygen."
+      },
+      {
+       "tier": "partial",
+       "text": "The tertiary structure changes. The hemoglobin forms fibers in low oxygen. The substitution is in the DNA of the red blood cell, not the protein.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The tertiary structure changes."
+        },
+        {
+         "point": 2,
+         "quote": "The hemoglobin forms fibers in low oxygen."
+        }
+       ],
+       "feedback": "The substitution in the amino acid sequence arises from a change in the gene. State the amino acid change, and the effect on the red blood cell.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A mutation makes the red blood cells sickle shaped, which is caused by the iron in the hemoglobin being broken.",
+       "meets": [],
+       "feedback": "The cause is a different amino acid in the protein. Explain how it changes the interactions of the protein, not the iron."
+      },
+      {
+       "tier": "weak",
+       "text": "Glutamic acid is replaced by valine. This makes the hemoglobin quaternary structure disappear completely so the cell has no hemoglobin.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Glutamic acid is replaced by valine."
+        }
+       ],
+       "feedback": "The hemoglobin is still present, but the new amino acid causes the molecules to stick together in low oxygen."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Nucleic acids and the organelles of the cell",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the structure of DNA and RNA and how they differ;\n2. compare prokaryotic and eukaryotic cells and describe the functions of the organelles.\n\n## Materials\n\nDNA and RNA models, base-pair cards, organelle cards, microscope images of bacteria and eukaryotic cells, the worksheet.\n\n## Starter (6 minutes)\n\nGive a base composition: in a sample of DNA, 30 percent of the bases are adenine. Ask: \"What percent is thymine? Guanine? Cytosine?\" Work through Chargaff's rules (A = T = 30 percent, G = C = 20 percent).\n\n## Main activity\n\n1. Compare DNA and RNA: sugar (deoxyribose and ribose), bases (T and U), strands (double and single), location and function. Draw antiparallel strands with 5' and 3' ends and hydrogen bonds (2 for A-T, 3 for G-C).\n2. Prokaryotes and eukaryotes: compare the nucleoid and nucleus, ribosome size, membrane-bound organelles, and typical size.\n3. Organelle functions and the endomembrane system: from the nucleus to the rough ER to the Golgi to the vesicles and the membrane. Mitochondria and chloroplasts and the endosymbiotic evidence.\n\n## Checking for understanding\n\nAsk: \"Why does a G-C rich DNA molecule melt at a higher temperature than an A-T rich one?\"\n\n## Worksheet\n\nChargaff's rules, a trace of a secreted protein through the cell, and a comparison table.",
+   "reading": {
+    "title": "The information molecules and the cell that uses them",
+    "content": "DNA and RNA are polymers of nucleotides, each made of a five-carbon sugar, a phosphate group and a nitrogenous base. The sugar in DNA is deoxyribose and in RNA is ribose. DNA uses the bases adenine (A), thymine (T), guanine (G) and cytosine (C); RNA uses uracil (U) instead of thymine. Nucleotides are joined by phosphodiester bonds between the 3' carbon of one sugar and the 5' phosphate of the next, which gives each strand a direction. In DNA, two strands run **antiparallel**, one 5' to 3' and the other 3' to 5', and are held together by hydrogen bonds between complementary bases: A pairs with T by two hydrogen bonds, and G pairs with C by three. This is the basis of **Chargaff's rules**: in double-stranded DNA the amount of A equals T, and G equals C. If 30 percent of the bases are adenine, then 30 percent are thymine, and the remaining 40 percent are split evenly, 20 percent guanine and 20 percent cytosine. A DNA molecule rich in G-C pairs has more hydrogen bonds per unit length and so melts at a higher temperature. RNA is usually single-stranded and can fold into shapes, which allows it to act as messenger (mRNA), adapter (tRNA) and part of the ribosome (rRNA).\n\nCells are of two types. **Prokaryotic** cells have no membrane-bound nucleus; their DNA is a circular chromosome in the nucleoid, and they have small 70S ribosomes and a cell wall, but no membrane-bound organelles. **Eukaryotic** cells have a nucleus bounded by a double membrane, larger 80S ribosomes, and many membrane-bound organelles. Compartmentalization lets different reactions take place in different environments.\n\nIn a eukaryote, proteins for secretion follow a path through the **endomembrane system**. Ribosomes on the rough endoplasmic reticulum make the polypeptide into the lumen. Vesicles carry it to the Golgi apparatus, which modifies, sorts and packages it, and other vesicles carry it to the plasma membrane, where it is released by exocytosis. The smooth ER makes lipids and detoxifies drugs. Lysosomes contain hydrolytic enzymes that digest worn-out organelles and food. Mitochondria make most of the ATP, and chloroplasts in plants and algae carry out photosynthesis. Both have their own circular DNA, 70S ribosomes and double membranes. This evidence supports the **endosymbiotic theory**, that they originated from bacteria engulfed by an ancestral cell. The cytoskeleton of microfilaments, intermediate filaments and microtubules supports the cell and moves things within it."
+   },
+   "cards": [
+    {
+     "front": "Chargaff's rules",
+     "back": "In double-stranded DNA, A equals T and G equals C."
+    },
+    {
+     "front": "Antiparallel",
+     "back": "Running in opposite directions, as the two strands of DNA do."
+    },
+    {
+     "front": "Phosphodiester bond",
+     "back": "The bond linking nucleotides in a nucleic acid strand."
+    },
+    {
+     "front": "Nucleoid",
+     "back": "The region of a prokaryote where its circular DNA is located."
+    },
+    {
+     "front": "Endomembrane system",
+     "back": "The linked membranes of the ER, Golgi, vesicles and plasma membrane."
+    },
+    {
+     "front": "Golgi apparatus",
+     "back": "The organelle that modifies, sorts and packages proteins."
+    },
+    {
+     "front": "Lysosome",
+     "back": "An organelle with hydrolytic enzymes that digest materials."
+    },
+    {
+     "front": "Endosymbiotic theory",
+     "back": "The idea that mitochondria and chloroplasts came from engulfed prokaryotes."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In a double-stranded DNA sample, 30% of the bases are adenine. What percent are guanine?",
+     "options": [
+      "20%",
+      "30%",
+      "40%",
+      "60%"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which base is found in RNA but not in DNA?",
+     "options": [
+      "Thymine",
+      "Uracil",
+      "Adenine",
+      "Cytosine"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A secreted protein is made on the rough ER. What is its next stop in the secretory pathway?",
+     "options": [
+      "Lysosome",
+      "Golgi apparatus",
+      "Nucleus",
+      "Mitochondrion"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which piece of evidence best supports the endosymbiotic theory?",
+     "options": [
+      "Mitochondria have their own circular DNA and 70S ribosomes",
+      "Mitochondria have cristae",
+      "Mitochondria make ATP",
+      "Mitochondria are found in the cytoplasm"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Why does DNA with a high G-C content have a higher melting temperature than DNA with a high A-T content?",
+     "options": [
+      "G-C pairs form three hydrogen bonds",
+      "G-C pairs form two covalent bonds",
+      "G is larger than A",
+      "A-T pairs are held by ionic bonds"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe the pathway taken by a digestive enzyme from its synthesis to its secretion from a pancreatic cell, naming the organelles involved and what happens at each.",
+     "markScheme": [
+      "States that the enzyme is made by ribosomes on the rough ER, entering the lumen of the ER",
+      "States that vesicles carry it from the ER to the Golgi apparatus",
+      "States that the Golgi modifies, sorts and packages the protein into vesicles",
+      "States that a secretory vesicle fuses with the plasma membrane and releases the enzyme by exocytosis"
+     ],
+     "modelAnswer": "The enzyme is synthesized by ribosomes on the rough ER, and enters the ER lumen as it is made. Transport vesicles carry it to the Golgi apparatus, which modifies, sorts and packages it into secretory vesicles. The secretory vesicle moves to the plasma membrane and fuses with it, releasing the enzyme by exocytosis.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Ribosomes on the rough ER make the enzyme and feed it into the ER lumen. Transport vesicles carry it to the Golgi. The Golgi modifies it, sorts it and packages it into vesicles. A secretory vesicle fuses with the plasma membrane and releases the enzyme by exocytosis.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Ribosomes on the rough ER make the enzyme and feed it into the ER lumen."
+        },
+        {
+         "point": 1,
+         "quote": "Transport vesicles carry it to the Golgi."
+        },
+        {
+         "point": 2,
+         "quote": "The Golgi modifies it, sorts it and packages it into vesicles."
+        },
+        {
+         "point": 3,
+         "quote": "A secretory vesicle fuses with the plasma membrane and releases the enzyme by exocytosis."
+        }
+       ],
+       "feedback": "Full marks. All four stages are in the right order with the function of each."
+      },
+      {
+       "tier": "full",
+       "text": "The polypeptide is synthesized at the rough ER and goes into the lumen. Vesicles bud off the ER and travel to the Golgi apparatus. There it gets modified, such as the addition of sugars, and then sorted. It leaves in a vesicle that fuses with the membrane in exocytosis.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The polypeptide is synthesized at the rough ER and goes into the lumen."
+        },
+        {
+         "point": 1,
+         "quote": "Vesicles bud off the ER and travel to the Golgi apparatus."
+        },
+        {
+         "point": 2,
+         "quote": "There it gets modified, such as the addition of sugars, and then sorted."
+        },
+        {
+         "point": 3,
+         "quote": "It leaves in a vesicle that fuses with the membrane in exocytosis."
+        }
+       ],
+       "feedback": "All four marks, with a good example of modification."
+      },
+      {
+       "tier": "partial",
+       "text": "The ribosomes on the rough ER make the enzyme. It is released by exocytosis.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The ribosomes on the rough ER make the enzyme."
+        },
+        {
+         "point": 3,
+         "quote": "It is released by exocytosis."
+        }
+       ],
+       "feedback": "Fill in the middle: the movement to the Golgi, and what the Golgi does to the protein."
+      },
+      {
+       "tier": "partial",
+       "text": "It goes to the Golgi in a vesicle and is packaged there. The lysosome then releases it from the cell.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It goes to the Golgi in a vesicle"
+        },
+        {
+         "point": 2,
+         "quote": "is packaged there"
+        }
+       ],
+       "feedback": "Lysosomes digest materials inside the cell. A secreted enzyme leaves by exocytosis at the plasma membrane.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The nucleus makes the enzyme and sends it straight out of the cell through the nuclear pore.",
+       "meets": [],
+       "feedback": "Nuclear pores connect the nucleus and the cytoplasm. The enzyme is made at ribosomes and goes through the ER and the Golgi."
+      },
+      {
+       "tier": "weak",
+       "text": "The enzyme leaves by exocytosis. It is made in the mitochondria, since that is where energy is made.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The enzyme leaves by exocytosis."
+        }
+       ],
+       "feedback": "Proteins for secretion are made by ribosomes on the rough ER. The mitochondria make ATP."
+      }
+     ]
+    },
+    {
+     "prompt": "A DNA sample from one organism is 22 percent thymine. Determine the percentages of the other three bases, and explain which sample, this one or one that is 35 percent thymine, would have the higher melting temperature.",
+     "markScheme": [
+      "States that adenine is also 22 percent by Chargaff's rule",
+      "States that guanine and cytosine are each 28 percent",
+      "Identifies the 22 percent thymine sample as having the higher G-C content",
+      "Explains that G-C pairs have three hydrogen bonds, so more energy is needed to separate the strands"
+     ],
+     "modelAnswer": "Adenine is equal to thymine, so adenine is 22 percent. That leaves 56 percent for guanine and cytosine, which are equal, so each is 28 percent. The sample with 22 percent thymine has a higher G-C content (56 percent versus 30 percent). G-C pairs have three hydrogen bonds and A-T pairs have two, so more energy is needed to separate the strands, and the melting temperature is higher.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A = T = 22%. That leaves 56% for G and C, so each is 28%. The 22% T sample has more G-C pairs, 56% against 30% for the other. G-C has three hydrogen bonds and A-T only two, so this sample needs more heat to separate its strands.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A = T = 22%."
+        },
+        {
+         "point": 1,
+         "quote": "That leaves 56% for G and C, so each is 28%."
+        },
+        {
+         "point": 2,
+         "quote": "The 22% T sample has more G-C pairs, 56% against 30% for the other."
+        },
+        {
+         "point": 3,
+         "quote": "G-C has three hydrogen bonds and A-T only two, so this sample needs more heat to separate its strands."
+        }
+       ],
+       "feedback": "Full marks. You compared the two samples quantitatively."
+      },
+      {
+       "tier": "full",
+       "text": "Adenine is 22% because it pairs with thymine. Guanine and cytosine make up 100 − 44 = 56%, so 28% each. The sample with 22% T has a higher G-C content than one with 35% T. More G-C pairs means more hydrogen bonds, so a higher melting temperature.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Adenine is 22% because it pairs with thymine."
+        },
+        {
+         "point": 1,
+         "quote": "Guanine and cytosine make up 100 − 44 = 56%, so 28% each."
+        },
+        {
+         "point": 2,
+         "quote": "The sample with 22% T has a higher G-C content than one with 35% T."
+        },
+        {
+         "point": 3,
+         "quote": "More G-C pairs means more hydrogen bonds, so a higher melting temperature."
+        }
+       ],
+       "feedback": "All four marks, with a clear explanation."
+      },
+      {
+       "tier": "partial",
+       "text": "Adenine is 22%. G and C are 28% each. The sample with more thymine melts at a higher temperature.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Adenine is 22%."
+        },
+        {
+         "point": 1,
+         "quote": "G and C are 28% each."
+        }
+       ],
+       "feedback": "More thymine means more A-T pairs, which have fewer hydrogen bonds, so a lower melting temperature."
+      },
+      {
+       "tier": "partial",
+       "text": "The 22% T sample has more G-C. G-C pairs have three hydrogen bonds.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The 22% T sample has more G-C."
+        },
+        {
+         "point": 3,
+         "quote": "G-C pairs have three hydrogen bonds."
+        }
+       ],
+       "feedback": "Good reasoning. Give the percentages of the other three bases using Chargaff's rule.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Adenine is 78% because the percents add to 100 and thymine is 22%. Guanine and cytosine are 0%.",
+       "meets": [],
+       "feedback": "Adenine pairs with thymine, so it has the same percent as thymine. The remaining bases are guanine and cytosine."
+      },
+      {
+       "tier": "weak",
+       "text": "A = T = 22%. G is 22% and C is 34% since they have to add up to 100 and C is bigger.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A = T = 22%."
+        }
+       ],
+       "feedback": "G and C pair together, so they must be equal. Each is 28 percent."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Surface area to volume, the membrane and transport",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how surface area to volume ratio limits cell size;\n2. describe the fluid mosaic model and the movement of substances across a membrane.\n\n## Materials\n\nAgar cubes with phenolphthalein (pink in base), dilute NaOH or vinegar solution, rulers, scalpels, timers, graph paper, the practical sheet.\n\n## Starter (6 minutes)\n\nShow a cube with sides of 1, 2 and 3 cm. Ask students to calculate the surface area, the volume and the ratio. Surface area: 6, 24, 54 cm squared. Volume: 1, 8, 27 cm cubed. Ratio: 6, 3, 2. Ask what this means for diffusion into a cell.\n\n## Main activity\n\n1. SA:V: the surface area grows with the square of the dimension and volume with the cube. Larger cells have a smaller ratio. Cells and organs solve the problem through small size, flattening, folding (microvilli, villi), or many small units.\n2. Fluid mosaic model: phospholipid bilayer, cholesterol, integral and peripheral proteins, glycoproteins. Which molecules cross freely, and which need proteins.\n3. Practical: place agar cubes of different sizes in dilute acid, time how long the pink color disappears from the cube center, and compare diffusion time and SA:V.\n\n## Checking for understanding\n\nAsk: \"Why are the intestinal cells covered with microvilli?\"\n\n## Practical write-up\n\nCollect with a table, graph and a conclusion.",
+   "reading": {
+    "title": "Why cells are small, and how the membrane chooses",
+    "content": "A cell must exchange materials with its surroundings. Nutrients and oxygen come in, and waste goes out through the plasma membrane, which is the surface. But the needs of the cell depend on its volume: a bigger cell has more cytoplasm to supply. This creates a problem, because as an object grows, its volume increases faster than its surface area. For a cube of side L, the surface area is 6 L squared and the volume is L cubed, so the ratio is 6/L. A cube with a 1 cm side has a SA:V of 6, a 2 cm cube has 3, and a 3 cm cube has 2. For a sphere of radius r, SA:V is 3/r. As the cell grows, there is less membrane area for each unit of volume, and the time for a substance to diffuse from the membrane to the center increases. This limits the size of most cells to a few tens of micrometers. Cells and tissues get around the limit in several ways. Cells are small and numerous. Shapes are flattened or elongated, like a neuron or a red blood cell. Surfaces are folded, like the microvilli on intestinal cells or the cristae of mitochondria, and these increase the surface area without increasing the volume much.\n\nThe membrane itself is described by the **fluid mosaic model**. The core is a bilayer of phospholipids, with hydrophilic heads facing the aqueous environments and hydrophobic tails facing inward. It is fluid because the lipids and many proteins can move sideways. Cholesterol in animal membranes moderates fluidity. A mosaic of proteins is embedded in or attached to the bilayer. **Integral proteins** span the membrane and form channels and carriers. **Peripheral proteins** attach on the surface. Carbohydrates attached to lipids and proteins on the outer surface form a code that cells use to recognize each other.\n\nThe bilayer is **selectively permeable**. Small nonpolar molecules such as oxygen and carbon dioxide and small uncharged polar molecules such as water pass through, although water also crosses faster through proteins called aquaporins. Ions, such as sodium and potassium, and larger polar molecules, such as glucose, cannot cross the hydrophobic core and need channel or carrier proteins. **Passive transport** moves substances down their concentration gradient without energy: simple diffusion, facilitated diffusion and osmosis. **Active transport** moves substances against the gradient using ATP, as the sodium-potassium pump does. Large molecules cross by endocytosis, where the membrane folds in to form a vesicle, or by exocytosis, where a vesicle fuses with the membrane and releases its contents."
+   },
+   "cards": [
+    {
+     "front": "Surface area to volume ratio",
+     "back": "The surface area divided by the volume; it falls as an object gets larger."
+    },
+    {
+     "front": "Microvilli",
+     "back": "Folds in the membrane of a cell that increase its surface area."
+    },
+    {
+     "front": "Fluid mosaic model",
+     "back": "A model of the membrane as a fluid phospholipid bilayer with embedded proteins."
+    },
+    {
+     "front": "Integral protein",
+     "back": "A protein that spans the membrane."
+    },
+    {
+     "front": "Aquaporin",
+     "back": "A channel protein that lets water cross the membrane quickly."
+    },
+    {
+     "front": "Facilitated diffusion",
+     "back": "Passive transport through a channel or carrier protein."
+    },
+    {
+     "front": "Active transport",
+     "back": "Moving a substance against its gradient using ATP."
+    },
+    {
+     "front": "Endocytosis",
+     "back": "Taking in large materials by folding the membrane into a vesicle."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the SA:V ratio of a cube with a side of 3 cm?",
+     "options": [
+      "0.5",
+      "2",
+      "6",
+      "18"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "As a cell grows larger, its surface area to volume ratio:",
+     "options": [
+      "Increases",
+      "Decreases",
+      "Stays the same",
+      "Becomes zero"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which substance would need a carrier or channel protein to cross a membrane?",
+     "options": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Glucose",
+      "A small lipid"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Microvilli on intestinal epithelial cells most directly help to:",
+     "options": [
+      "Increase surface area for absorption",
+      "Make the cell larger",
+      "Store DNA",
+      "Stop diffusion"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Moving sodium ions out of a cell against their concentration gradient requires:",
+     "options": [
+      "Simple diffusion",
+      "Facilitated diffusion",
+      "Active transport using ATP",
+      "Osmosis"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Cell A is a cube of side 2 micrometers and cell B is a cube of side 20 micrometers. Calculate the surface area to volume ratio for each and explain which is better suited to exchange materials by diffusion.",
+     "markScheme": [
+      "Calculates the SA:V of cell A as 3 per micrometer",
+      "Calculates the SA:V of cell B as 0.3 per micrometer",
+      "States that cell A has the higher ratio",
+      "Explains that a higher ratio means more membrane per unit volume and a shorter diffusion distance, so cell A exchanges materials more efficiently"
+     ],
+     "modelAnswer": "For cell A, the surface area is 6 times 4 = 24 square micrometers and the volume is 8 cubic micrometers, so the ratio is 3. For cell B, the surface area is 6 times 400 = 2400 and the volume is 8000, so the ratio is 0.3. Cell A has the higher ratio, which means more membrane per unit of volume and a shorter distance for diffusion, so it exchanges materials more efficiently.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Cell A: SA = 6 × 2² = 24, V = 8, so SA:V = 3. Cell B: SA = 6 × 20² = 2400, V = 8000, so SA:V = 0.3. Cell A has the larger ratio. That means more membrane for each bit of volume and a shorter distance for substances to diffuse, so it's better at exchanging materials.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cell A: SA = 6 × 2² = 24, V = 8, so SA:V = 3."
+        },
+        {
+         "point": 1,
+         "quote": "Cell B: SA = 6 × 20² = 2400, V = 8000, so SA:V = 0.3."
+        },
+        {
+         "point": 2,
+         "quote": "Cell A has the larger ratio."
+        },
+        {
+         "point": 3,
+         "quote": "That means more membrane for each bit of volume and a shorter distance for substances to diffuse, so it's better at exchanging materials."
+        }
+       ],
+       "feedback": "Full marks. The ratio is ten times greater for the smaller cell."
+      },
+      {
+       "tier": "full",
+       "text": "For a cube SA:V = 6/L, so A is 6/2 = 3 per μm. B is 6/20 = 0.3 per μm. A has the higher SA:V. The smaller cell has a shorter path from the membrane to the center and relatively more surface to take in nutrients, so diffusion is more efficient.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "For a cube SA:V = 6/L, so A is 6/2 = 3 per μm."
+        },
+        {
+         "point": 1,
+         "quote": "B is 6/20 = 0.3 per μm."
+        },
+        {
+         "point": 2,
+         "quote": "A has the higher SA:V."
+        },
+        {
+         "point": 3,
+         "quote": "The smaller cell has a shorter path from the membrane to the center and relatively more surface to take in nutrients, so diffusion is more efficient."
+        }
+       ],
+       "feedback": "All four marks, using the shortcut 6/L."
+      },
+      {
+       "tier": "partial",
+       "text": "Cell A has an SA:V of 3. It is better. Cell B has more surface so it is better at diffusion.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cell A has an SA:V of 3."
+        },
+        {
+         "point": 2,
+         "quote": "It is better."
+        }
+       ],
+       "feedback": "Cell B has a larger surface, but it also has far more volume to supply, so its ratio is lower: 0.3."
+      },
+      {
+       "tier": "partial",
+       "text": "Cell B is 0.3. The smaller cell has a shorter diffusion distance.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Cell B is 0.3."
+        },
+        {
+         "point": 3,
+         "quote": "The smaller cell has a shorter diffusion distance."
+        }
+       ],
+       "feedback": "Good reasoning. Calculate the ratio for cell A and state which cell is better suited.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Cell B is bigger so it has more surface area and can take in more, which means it exchanges better.",
+       "meets": [],
+       "feedback": "A larger cell has less surface area for each unit of volume. Compare the ratios, not the total area."
+      },
+      {
+       "tier": "weak",
+       "text": "A's ratio is 24/8 = 3. B's ratio is 2400 − 8000 = −5600, so it is negative.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A's ratio is 24/8 = 3."
+        }
+       ],
+       "feedback": "A ratio is a division: 2400 divided by 8000 is 0.3."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe how each of the following crosses the plasma membrane of a muscle cell: oxygen, glucose, sodium ions and a large protein. Identify whether energy is needed in each case.",
+     "markScheme": [
+      "States that oxygen crosses by simple diffusion, with no energy",
+      "States that glucose crosses by facilitated diffusion through a carrier protein, with no energy",
+      "States that sodium ions are moved against their gradient by active transport (a pump) using ATP",
+      "States that a large protein crosses by exocytosis or endocytosis, using energy"
+     ],
+     "modelAnswer": "Oxygen is small and nonpolar and crosses by simple diffusion, with no energy. Glucose is polar and crosses by facilitated diffusion through a carrier protein, down its gradient, with no energy. Sodium ions are moved out against their gradient by the sodium-potassium pump, which is active transport and uses ATP. A large protein moves by exocytosis or endocytosis, which use energy.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Oxygen goes through the bilayer by simple diffusion with no energy. Glucose is polar so it needs a carrier protein, facilitated diffusion, still without energy. Sodium is pumped out against its gradient by the sodium-potassium pump, which uses ATP. A large protein leaves in a vesicle by exocytosis, and that needs energy.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Oxygen goes through the bilayer by simple diffusion with no energy."
+        },
+        {
+         "point": 1,
+         "quote": "Glucose is polar so it needs a carrier protein, facilitated diffusion, still without energy."
+        },
+        {
+         "point": 2,
+         "quote": "Sodium is pumped out against its gradient by the sodium-potassium pump, which uses ATP."
+        },
+        {
+         "point": 3,
+         "quote": "A large protein leaves in a vesicle by exocytosis, and that needs energy."
+        }
+       ],
+       "feedback": "Full marks. All four are correct, with the energy requirement for each."
+      },
+      {
+       "tier": "full",
+       "text": "O₂: simple diffusion, passive. Glucose: facilitated diffusion by a transport protein, passive. Na⁺: active transport via a pump, needs ATP. Large protein: exocytosis or endocytosis, needs ATP.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "O₂: simple diffusion, passive."
+        },
+        {
+         "point": 1,
+         "quote": "Glucose: facilitated diffusion by a transport protein, passive."
+        },
+        {
+         "point": 2,
+         "quote": "Na⁺: active transport via a pump, needs ATP."
+        },
+        {
+         "point": 3,
+         "quote": "Large protein: exocytosis or endocytosis, needs ATP."
+        }
+       ],
+       "feedback": "All four marks in a compact form."
+      },
+      {
+       "tier": "partial",
+       "text": "Oxygen crosses by diffusion. Sodium needs ATP and a pump.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Oxygen crosses by diffusion."
+        },
+        {
+         "point": 2,
+         "quote": "Sodium needs ATP and a pump."
+        }
+       ],
+       "feedback": "Add glucose (a carrier protein) and the large protein (vesicles), and say whether each needs energy."
+      },
+      {
+       "tier": "partial",
+       "text": "Glucose uses a carrier protein. The protein uses exocytosis. Glucose uses ATP to get in.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Glucose uses a carrier protein."
+        },
+        {
+         "point": 3,
+         "quote": "The protein uses exocytosis."
+        }
+       ],
+       "feedback": "Facilitated diffusion of glucose goes down its gradient and does not use ATP.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "They all cross the same way because the membrane is a hole that lets everything pass.",
+       "meets": [],
+       "feedback": "The membrane is selectively permeable. Different substances cross by different methods, depending on size, polarity and charge."
+      },
+      {
+       "tier": "weak",
+       "text": "Sodium uses a pump. Oxygen needs a protein channel because it is a big molecule.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Sodium uses a pump."
+        }
+       ],
+       "feedback": "Oxygen is small and nonpolar and crosses the lipid bilayer directly."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Surface area to volume and diffusion in agar cubes",
+    "instructions": "Cut agar cubes (colored pink with phenolphthalein) of side 0.5, 1.0 and 2.0 cm. Place them in dilute vinegar and time how long it takes for the pink to disappear completely. Calculate the SA:V of each cube and graph the time against SA:V. Conclude how cell size affects the efficiency of diffusion.",
+    "steps": [
+     {
+      "text": "Use a scalpel and ruler to cut agar cubes of side 0.5, 1.0 and 2.0 cm. Cut carefully with the blade facing away from you."
+     },
+     {
+      "text": "Calculate the surface area, volume and SA:V of each cube and record them in a table."
+     },
+     {
+      "text": "Place each cube in a separate cup with 100 mL of dilute vinegar and start the timer at once.",
+      "note": "Vinegar can irritate the eyes. Wear goggles."
+     },
+     {
+      "text": "Stir gently. Record the time at which the pink disappears from the whole cube."
+     },
+     {
+      "text": "Repeat for three cubes of each size and calculate the mean time."
+     },
+     {
+      "text": "Graph the mean time against SA:V and write a conclusion relating cell size to diffusion."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method and controls: same volume of solution, repeated trials",
+      "maxPoints": 4
+     },
+     {
+      "description": "Calculations and graph: SA:V values and a graph with labeled axes",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: claim supported with data and an explanation of cell size",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "The cubes had SA:V ratios of 12 for 0.5 cm, 6 for 1.0 cm and 3 for 2.0 cm. The mean times to turn colorless were 40 seconds, 130 seconds and 460 seconds. My graph of time against SA:V shows that time increases as the ratio falls. The claim is that a higher SA:V ratio leads to faster diffusion to the center. The evidence is that the smallest cube lost its color in under a minute. Reasoning: with a smaller volume per unit of surface and a shorter distance, the acid reaches all the agar faster. Cells are small for this reason.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report: controlled trials, correct ratios, a clear graph description, and a CER conclusion tied to cell size."
+     },
+     {
+      "tier": "full",
+      "text": "Question: how does the size of a cube affect how fast acid reaches the center? Method: three cubes of each size in 100 mL of vinegar. Data: SA:V 12, 6 and 3, with mean times of 38 s, 125 s and 475 s. The largest cube took more than ten times as long as the smallest, even though the volume was 64 times as large, so the time does not scale only with volume. A cell with a low SA:V, like a large cell, cannot supply its interior quickly. A source of error was judging when the pink had fully disappeared.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. A graph with labeled axes and units would complete the data presentation."
+     },
+     {
+      "tier": "partial",
+      "text": "We cut cubes of different sizes and put them in vinegar. The small ones turned clear fast and the big one took a long time. The SA:V was higher for the small cube. I think this shows that small cells are better at diffusion. I did not record the exact times and I forgot to calculate the SA:V for the 1.0 cm cube.",
+      "scores": [
+       2,
+       1,
+       2
+      ],
+      "feedback": "Record times and calculate every SA:V. Support the claim with the numbers."
+     },
+     {
+      "tier": "partial",
+      "text": "SA:V was 12, 6 and 3. The mean times were 40, 130 and 460 seconds. The graph went up. I concluded that bigger cubes are slower because they are heavier and the acid is pulled down more slowly. We did three trials each and used the same volume of vinegar in every cup so it was a fair test.",
+      "scores": [
+       4,
+       3,
+       1
+      ],
+      "feedback": "The method and data are good. The reason is the shorter diffusion distance and the higher SA:V of small cubes, not their weight."
+     },
+     {
+      "tier": "weak",
+      "text": "The agar cubes were pink and the vinegar made them turn white. Some took longer than others. This happens in cells too. The big cube was hard to cut straight and the edges were not perfect so the results may be wrong because of that.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Give the times and SA:V values and connect them in a claim. Explain how diffusion distance relates to cell size."
+     },
+     {
+      "tier": "weak",
+      "text": "The SA:V of the cubes was 0.5, 1.0 and 2.0 because those were the sides. The ratio is the same for all of them so the cell size does not matter. The time was longer for the big one because the vinegar ran out in that cup.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "The sides are lengths, not ratios. SA:V is 6 over the side length, so the three ratios are different, and size does matter."
+     }
+    ]
+   }
+  },
+  "4": {
+   "topic": "Water potential and compartmentalization",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. predict the movement of water using water potential;\n2. explain how compartmentalization increases the efficiency of a cell.\n\n## Materials\n\nPotato cores, sucrose solutions of known molarity, balances, calculators with the AP equation sheet, organelle diagrams, the worksheet.\n\n## Starter (6 minutes)\n\nPresent: \"A plant cell is placed in a 0.2 M sucrose solution. Does water move in or out?\" Take votes, then show how to answer with numbers.\n\n## Main activity\n\n1. Define water potential Ψ = Ψs + Ψp. Solute potential Ψs = -iCRT, with R = 0.0831 L bar per mol per K, T in kelvin. For 0.2 M sucrose at 25 degrees Celsius, Ψs = -0.2 x 0.0831 x 298 = -4.95 bar. Pressure potential in an open beaker is zero.\n2. Work cases: a plant cell with Ψs = -5.0 and Ψp = +2.0 has Ψ = -3.0 bar. Placed in the 0.2 M solution (Ψ = -4.95 bar), water leaves the cell. In pure water (Ψ = 0), water enters.\n3. Plasmolysis and turgor in plant cells.\n4. Compartmentalization: the mitochondrial matrix and intermembrane space, lysosomal pH, folded inner membranes. Relate to efficiency and to separation of incompatible reactions.\n\n## Checking for understanding\n\nAsk: \"Which direction does water move: from high to low water potential, or the reverse?\"\n\n## Worksheet\n\nWater potential calculations and an explanation of compartments.",
+   "reading": {
+    "title": "Following water down the gradient",
+    "content": "Water moves across a selectively permeable membrane by **osmosis**. In AP Biology we predict its direction with **water potential**, symbolized Ψ, measured in bars or megapascals. Water always moves from a region of **higher** water potential to a region of **lower** water potential. Pure water in an open container at standard pressure has a water potential of 0, so every solution has a negative water potential relative to pure water.\n\nWater potential has two parts: Ψ = Ψs + Ψp. The **solute potential**, Ψs, depends on the concentration of dissolved particles: Ψs = -iCRT. Here i is the ionization constant (1 for sucrose, which does not ionize, and 2 for NaCl), C is the molar concentration, R is the pressure constant 0.0831 liter bar per mole kelvin, and T is the temperature in kelvin. For a 0.2 M sucrose solution at 25 degrees Celsius (298 K), Ψs = -(1)(0.2)(0.0831)(298) = -4.95 bar. The **pressure potential**, Ψp, is the physical pressure on the solution. It is zero in an open beaker. In a plant cell, the cell wall pushes back when the cell takes in water, so Ψp is positive, and this is called **turgor pressure**.\n\nConsider a plant cell with a solute potential of -5.0 bar and a pressure potential of +2.0 bar. Its water potential is -5.0 + 2.0 = -3.0 bar. If it is placed in the 0.2 M sucrose solution (Ψ = -4.95 bar), the cell has the higher water potential, and so water moves out of the cell. As water leaves, Ψp falls toward zero and the cell loses turgor. If the loss continues, the membrane pulls away from the wall in a process called **plasmolysis**. In pure water (Ψ = 0), the water potential outside is higher than the cell's -3.0 bar, so water enters, and Ψp rises until the pressure potential balances the difference. At that point Ψp = +5.0 bar, the cell has Ψ = 0, and there is no net movement. The wall prevents the cell from bursting, which is why plants wilt in dry soil and stand firm when watered.\n\nEukaryotic cells also increase efficiency by **compartmentalization**. Membranes divide the cell into regions with different conditions. Lysosomes keep digestive enzymes at pH 5 away from the cytoplasm at pH 7.2, which would be damaged by them. The folded inner membrane of the mitochondrion, the cristae, increases the surface area for the enzymes of the electron transport chain, and the intermembrane space, small in volume, allows a steep proton gradient to build up quickly. Separating a reaction in a small volume increases the concentration of reactants and so speeds the reaction."
+   },
+   "cards": [
+    {
+     "front": "Water potential (Ψ)",
+     "back": "A measure of the potential energy of water; water moves from high to low Ψ."
+    },
+    {
+     "front": "Solute potential (Ψs)",
+     "back": "The effect of dissolved solutes on water potential; equals -iCRT."
+    },
+    {
+     "front": "Pressure potential (Ψp)",
+     "back": "The effect of physical pressure on water potential."
+    },
+    {
+     "front": "Turgor pressure",
+     "back": "The positive pressure potential in a plant cell pushing the membrane against the wall."
+    },
+    {
+     "front": "Plasmolysis",
+     "back": "The shrinking of the plant cell membrane away from the wall in a hypertonic solution."
+    },
+    {
+     "front": "Ionization constant (i)",
+     "back": "The number of particles a solute makes in solution; 1 for sucrose, 2 for NaCl."
+    },
+    {
+     "front": "Compartmentalization",
+     "back": "Separating reactions into membrane-bound regions to increase efficiency."
+    },
+    {
+     "front": "Cristae",
+     "back": "The folds of the inner mitochondrial membrane."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A 0.2 M sucrose solution at 25 degrees Celsius has a solute potential closest to (R = 0.0831 L bar/mol K):",
+     "options": [
+      "-0.5 bar",
+      "-1.0 bar",
+      "-4.95 bar",
+      "-49.5 bar"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A plant cell has Ψs = -5.0 bar and Ψp = +2.0 bar. What is its water potential?",
+     "options": [
+      "-7.0 bar",
+      "-3.0 bar",
+      "+3.0 bar",
+      "+7.0 bar"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Water moves:",
+     "options": [
+      "From low to high water potential",
+      "From high to low water potential",
+      "Only from high to low solute concentration",
+      "Only into the cell"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why do plants wilt in dry soil?",
+     "options": [
+      "Water leaves the cells and turgor pressure falls",
+      "The cell walls dissolve",
+      "Solute potential becomes positive",
+      "Photosynthesis stops immediately"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "The pressure potential of an open beaker of solution is:",
+     "options": [
+      "Negative",
+      "Zero",
+      "Positive",
+      "Equal to solute potential"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A plant cell has a solute potential of -5.0 bar and a pressure potential of +2.0 bar. It is placed in an open beaker of 0.2 M sucrose solution at 25 degrees Celsius (Ψs = -4.95 bar, Ψp = 0). Calculate the water potentials of the cell and the solution and predict the direction of net water movement and the effect on the cell.",
+     "markScheme": [
+      "Calculates the water potential of the cell as -3.0 bar",
+      "States the water potential of the solution as -4.95 bar",
+      "Predicts that water moves out of the cell, from higher to lower water potential",
+      "Predicts the effect: the pressure potential and turgor decrease, and the cell may become plasmolyzed"
+     ],
+     "modelAnswer": "The cell's water potential is -5.0 + 2.0 = -3.0 bar. The solution's is -4.95 + 0 = -4.95 bar. Water moves from higher to lower water potential, so it leaves the cell. As it leaves, turgor pressure falls, and if the loss continues the cell membrane may pull away from the wall in plasmolysis.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The cell: Ψ = −5.0 + 2.0 = −3.0 bar. The solution: Ψ = −4.95 + 0 = −4.95 bar. Water moves from the higher to the lower water potential, so out of the cell. The cell loses turgor, and it may plasmolyze if it keeps losing water.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The cell: Ψ = −5.0 + 2.0 = −3.0 bar."
+        },
+        {
+         "point": 1,
+         "quote": "The solution: Ψ = −4.95 + 0 = −4.95 bar."
+        },
+        {
+         "point": 2,
+         "quote": "Water moves from the higher to the lower water potential, so out of the cell."
+        },
+        {
+         "point": 3,
+         "quote": "The cell loses turgor, and it may plasmolyze if it keeps losing water."
+        }
+       ],
+       "feedback": "Full marks. Each step follows from the previous one."
+      },
+      {
+       "tier": "full",
+       "text": "Ψ(cell) = Ψs + Ψp = −3.0 bar. Ψ(solution) = −4.95 bar because the pressure potential is zero in an open beaker. −3.0 is higher than −4.95, so water leaves the cell by osmosis. Turgor pressure drops and the cell may become flaccid or plasmolyzed.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Ψ(cell) = Ψs + Ψp = −3.0 bar."
+        },
+        {
+         "point": 1,
+         "quote": "Ψ(solution) = −4.95 bar because the pressure potential is zero in an open beaker."
+        },
+        {
+         "point": 2,
+         "quote": "−3.0 is higher than −4.95, so water leaves the cell by osmosis."
+        },
+        {
+         "point": 3,
+         "quote": "Turgor pressure drops and the cell may become flaccid or plasmolyzed."
+        }
+       ],
+       "feedback": "All four marks, with the reason for the zero pressure potential."
+      },
+      {
+       "tier": "partial",
+       "text": "The cell has Ψ = −3.0 bar. The solution has −4.95 bar. The water moves into the cell because the solution is more negative.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The cell has Ψ = −3.0 bar."
+        },
+        {
+         "point": 1,
+         "quote": "The solution has −4.95 bar."
+        }
+       ],
+       "feedback": "Water moves from higher to lower water potential. The cell, at -3.0, has the higher value, so water leaves."
+      },
+      {
+       "tier": "partial",
+       "text": "Water leaves the cell. The cell loses turgor.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Water leaves the cell."
+        },
+        {
+         "point": 3,
+         "quote": "The cell loses turgor."
+        }
+       ],
+       "feedback": "Good prediction. Show the calculation of the water potential of the cell and the solution.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "-5.0 − 2.0 = −7.0 bar for the cell. The solution has −4.95 so water moves in because −7.0 is lower.",
+       "meets": [],
+       "feedback": "The water potential is Ψs + Ψp, and pressure potential is positive here: −3.0 bar. Water moves from high to low potential, so out of the cell."
+      },
+      {
+       "tier": "weak",
+       "text": "The solution is −4.95 bar. Water moves from the low solute concentration to the high so it goes into the sucrose.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The solution is −4.95 bar."
+        }
+       ],
+       "feedback": "Compare the water potentials: the cell has the higher one. Water moves out of the cell into the solution, but think of it in terms of potential."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain how compartmentalization in a eukaryotic cell increases metabolic efficiency. Use the lysosome and the mitochondrion as examples.",
+     "markScheme": [
+      "States that membranes separate reactions or conditions into distinct regions",
+      "Uses the lysosome: its acidic digestive enzymes are kept apart from the rest of the cell, which would be damaged",
+      "Uses the mitochondrion: the folded inner membrane (cristae) increases the surface area for the electron transport chain",
+      "States that a small intermembrane space allows a proton gradient to build quickly, or that high local concentration speeds reactions"
+     ],
+     "modelAnswer": "Membranes divide a eukaryotic cell into compartments, each with its own conditions and enzymes. Lysosomes keep powerful digestive enzymes at an acidic pH separate from the rest of the cell, which would be damaged. In the mitochondrion, the folded inner membrane increases the surface area for the electron transport chain, and the small intermembrane space allows a steep proton gradient to build quickly, which makes ATP production efficient.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Membranes separate the cell into compartments with different conditions so reactions don't interfere. Lysosomes keep digestive enzymes and their acidic pH away from the cytoplasm, which they would otherwise harm. The cristae of the mitochondrion fold the inner membrane to give more surface for the electron transport chain. The intermembrane space is small, so protons build up into a steep gradient quickly.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Membranes separate the cell into compartments with different conditions so reactions don't interfere."
+        },
+        {
+         "point": 1,
+         "quote": "Lysosomes keep digestive enzymes and their acidic pH away from the cytoplasm, which they would otherwise harm."
+        },
+        {
+         "point": 2,
+         "quote": "The cristae of the mitochondrion fold the inner membrane to give more surface for the electron transport chain."
+        },
+        {
+         "point": 3,
+         "quote": "The intermembrane space is small, so protons build up into a steep gradient quickly."
+        }
+       ],
+       "feedback": "Full marks. Each example is tied to the benefit of the compartment."
+      },
+      {
+       "tier": "full",
+       "text": "Compartments allow incompatible reactions to run at the same time in different conditions. The lysosome holds hydrolytic enzymes at pH 5 so the cytoplasm isn't digested. In the mitochondrion, cristae increase membrane area, so there is room for more electron transport chains. A small space concentrates protons, which raises the gradient that powers ATP synthase.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Compartments allow incompatible reactions to run at the same time in different conditions."
+        },
+        {
+         "point": 1,
+         "quote": "The lysosome holds hydrolytic enzymes at pH 5 so the cytoplasm isn't digested."
+        },
+        {
+         "point": 2,
+         "quote": "In the mitochondrion, cristae increase membrane area, so there is room for more electron transport chains."
+        },
+        {
+         "point": 3,
+         "quote": "A small space concentrates protons, which raises the gradient that powers ATP synthase."
+        }
+       ],
+       "feedback": "All four marks, with accurate pH detail."
+      },
+      {
+       "tier": "partial",
+       "text": "Compartments separate different reactions. The cristae give more surface area.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Compartments separate different reactions."
+        },
+        {
+         "point": 2,
+         "quote": "The cristae give more surface area."
+        }
+       ],
+       "feedback": "Add the lysosome example and explain the advantage of the small intermembrane space."
+      },
+      {
+       "tier": "partial",
+       "text": "The lysosome has digestive enzymes separate from the cell. The small space concentrates protons. Compartmentalization makes the cell bigger.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The lysosome has digestive enzymes separate from the cell."
+        },
+        {
+         "point": 3,
+         "quote": "The small space concentrates protons."
+        }
+       ],
+       "feedback": "Compartmentalization does not make the cell bigger. It improves efficiency by separating and concentrating reactions.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Compartments just give the cell a place to store things like a warehouse, and the more rooms the cell has the more energy it makes.",
+       "meets": [],
+       "feedback": "Compartments create different conditions and concentrate reactants. Link your answer to a particular benefit in an organelle."
+      },
+      {
+       "tier": "weak",
+       "text": "Membranes separate the cell into compartments. Prokaryotes also have lysosomes and mitochondria, but they're smaller.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Membranes separate the cell into compartments."
+        }
+       ],
+       "feedback": "Prokaryotes lack membrane-bound organelles such as lysosomes and mitochondria."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Enzymes, photosynthesis and the stages of respiration",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how enzymes lower activation energy, and how inhibitors and conditions change their rate;\n2. describe the light-dependent and light-independent reactions of photosynthesis;\n3. describe the stages of cellular respiration and where ATP is made.\n\n## Materials\n\nEnergy diagram handout, enzyme rate data, chloroplast and mitochondrion diagrams, calculators, the quiz.\n\n## Starter (6 minutes)\n\nShow an energy diagram of an uncatalyzed and a catalyzed reaction. Ask: \"What is different about the two curves, and what stays the same?\"\n\n## Main activity\n\n1. Enzyme function: active site, induced fit, activation energy lowered, delta G unchanged. Competitive inhibition (can be overcome by more substrate) versus noncompetitive (binds elsewhere, changes shape). Effects of temperature and pH.\n2. Photosynthesis: light reactions in the thylakoid (photosystems II and I, electron transport chain, proton gradient, ATP synthase, NADPH, oxygen from water). Calvin cycle in the stroma (carbon fixation by rubisco, reduction, regeneration of RuBP), with 3 turns for one G3P.\n3. Respiration: glycolysis (cytoplasm; net 2 ATP, 2 NADH), pyruvate oxidation and the Krebs cycle (matrix; CO2 released, NADH and FADH2), the electron transport chain (inner membrane; proton gradient; oxygen the final acceptor; about 26 to 28 ATP).\n\n## Checking for understanding\n\nAsk: \"Where does the oxygen released in photosynthesis come from? Where does the oxygen consumed in respiration end up?\"\n\n## Quiz\n\nFive questions on enzymes, photosynthesis and respiration.",
+   "reading": {
+    "title": "Catalysts, light, and the stepwise release of energy",
+    "content": "Chemical reactions need to pass through a high-energy transition state before they proceed. The energy required is the **activation energy**. An enzyme speeds a reaction by lowering the activation energy, not by changing the overall energy difference between reactants and products (delta G). The substrate binds to the enzyme's **active site**, and the enzyme changes shape slightly to fit it tightly, which is called **induced fit**. This stabilizes the transition state. Enzyme activity depends on conditions. With temperature, rate rises until the optimum and then falls sharply as the enzyme denatures. With pH, each enzyme has an optimum at which its charges and shape are best. **Competitive inhibitors** resemble the substrate and bind to the active site; adding more substrate can overcome their effect. **Noncompetitive inhibitors** bind elsewhere, at an allosteric site, and change the shape of the enzyme so that the active site no longer works, which cannot be overcome by more substrate.\n\n**Photosynthesis** has two stages in the chloroplast. In the **light reactions** in the thylakoid membrane, photosystem II absorbs light and splits water, releasing oxygen and electrons. The electrons pass along an electron transport chain, which pumps protons into the thylakoid space. The gradient of protons drives ATP synthase to make ATP. Photosystem I re-energizes the electrons, and they reduce NADP+ to NADPH. In the **Calvin cycle** in the stroma, the enzyme rubisco attaches CO2 to the five-carbon RuBP in carbon fixation. ATP and NADPH from the light reactions reduce the product to glyceraldehyde-3-phosphate (G3P), and some of the G3P is used to regenerate RuBP. Three turns of the cycle fix three CO2 molecules and yield one net G3P, which can be built into glucose and other molecules.\n\n**Cellular respiration** harvests the energy of glucose in three stages. **Glycolysis**, in the cytoplasm, splits glucose into two pyruvate, with a net gain of 2 ATP and 2 NADH. In the matrix of the mitochondrion, pyruvate is oxidized to acetyl CoA, releasing CO2, and the **Krebs cycle** completes the oxidation, releasing more CO2 and producing NADH, FADH2 and a little ATP. The **electron transport chain** in the inner membrane accepts electrons from NADH and FADH2, pumping protons into the intermembrane space. Oxygen is the final electron acceptor, forming water. The proton gradient drives ATP synthase, and this chemiosmosis makes the majority of ATP, a total of about 30 to 32 per glucose. Photosynthesis and respiration are linked by similar mechanisms: both use electron transport chains and chemiosmosis, but one builds sugar with light and the other releases energy from it."
+   },
+   "cards": [
+    {
+     "front": "Activation energy",
+     "back": "The energy needed to start a reaction; lowered by enzymes."
+    },
+    {
+     "front": "Induced fit",
+     "back": "Change in the shape of an enzyme's active site to fit the substrate."
+    },
+    {
+     "front": "Competitive inhibitor",
+     "back": "A molecule that binds the active site and competes with the substrate."
+    },
+    {
+     "front": "Noncompetitive inhibitor",
+     "back": "A molecule that binds elsewhere and changes the enzyme's shape."
+    },
+    {
+     "front": "Rubisco",
+     "back": "The enzyme that fixes CO2 in the Calvin cycle."
+    },
+    {
+     "front": "Photosystem II",
+     "back": "The complex that absorbs light and splits water in the light reactions."
+    },
+    {
+     "front": "Chemiosmosis",
+     "back": "Using a proton gradient to drive ATP synthesis through ATP synthase."
+    },
+    {
+     "front": "Final electron acceptor",
+     "back": "Oxygen, which forms water at the end of the respiratory chain."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How does an enzyme speed up a reaction?",
+     "options": [
+      "By increasing the energy of the reactants",
+      "By lowering the activation energy",
+      "By changing the free energy change (delta G)",
+      "By being used up in the reaction"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Increasing the substrate concentration can overcome the effect of which inhibitor?",
+     "options": [
+      "Competitive",
+      "Noncompetitive",
+      "Both",
+      "Neither"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Where does the oxygen released in photosynthesis come from?",
+     "options": [
+      "CO2",
+      "Water",
+      "Glucose",
+      "RuBP"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Where does the electron transport chain of cellular respiration take place?",
+     "options": [
+      "Cytoplasm",
+      "Mitochondrial matrix",
+      "Inner mitochondrial membrane",
+      "Outer mitochondrial membrane"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "How many turns of the Calvin cycle are needed to produce one net molecule of G3P?",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "6"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Compare competitive and noncompetitive inhibition of an enzyme. Describe where each inhibitor binds, and predict the effect of increasing the substrate concentration in each case.",
+     "markScheme": [
+      "States that a competitive inhibitor binds to the active site because it resembles the substrate",
+      "States that increasing substrate concentration reduces the inhibition by competitive inhibitors",
+      "States that a noncompetitive inhibitor binds at an allosteric site, changing the shape of the enzyme",
+      "States that increasing substrate does not overcome noncompetitive inhibition because the active site no longer works"
+     ],
+     "modelAnswer": "A competitive inhibitor resembles the substrate and binds to the active site. Increasing the substrate concentration makes it more likely that the substrate occupies the active site, so the inhibition is reduced. A noncompetitive inhibitor binds at an allosteric site elsewhere on the enzyme and changes its shape so the active site does not work. Adding more substrate does not overcome this inhibition.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A competitive inhibitor looks like the substrate and binds the active site. If you add more substrate it outcompetes the inhibitor, so the inhibition is reduced. A noncompetitive inhibitor binds somewhere else, at an allosteric site, and changes the enzyme's shape. More substrate doesn't help because the active site is distorted, so the enzyme can't work.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A competitive inhibitor looks like the substrate and binds the active site."
+        },
+        {
+         "point": 1,
+         "quote": "If you add more substrate it outcompetes the inhibitor, so the inhibition is reduced."
+        },
+        {
+         "point": 2,
+         "quote": "A noncompetitive inhibitor binds somewhere else, at an allosteric site, and changes the enzyme's shape."
+        },
+        {
+         "point": 3,
+         "quote": "More substrate doesn't help because the active site is distorted, so the enzyme can't work."
+        }
+       ],
+       "feedback": "Full marks. Both the binding site and the effect of substrate are clearly contrasted."
+      },
+      {
+       "tier": "full",
+       "text": "Competitive inhibitors compete with the substrate for the active site. Raising substrate concentration restores the rate, because substrate molecules win more often. Noncompetitive inhibitors attach to an allosteric site and change the shape of the active site. Adding substrate can't fix that, so the maximum rate stays lower.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Competitive inhibitors compete with the substrate for the active site."
+        },
+        {
+         "point": 1,
+         "quote": "Raising substrate concentration restores the rate, because substrate molecules win more often."
+        },
+        {
+         "point": 2,
+         "quote": "Noncompetitive inhibitors attach to an allosteric site and change the shape of the active site."
+        },
+        {
+         "point": 3,
+         "quote": "Adding substrate can't fix that, so the maximum rate stays lower."
+        }
+       ],
+       "feedback": "All four marks, with a good link to maximum rate."
+      },
+      {
+       "tier": "partial",
+       "text": "A competitive inhibitor binds the active site. A noncompetitive inhibitor binds somewhere else.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A competitive inhibitor binds the active site."
+        },
+        {
+         "point": 2,
+         "quote": "A noncompetitive inhibitor binds somewhere else."
+        }
+       ],
+       "feedback": "Predict the effect of more substrate in each case."
+      },
+      {
+       "tier": "partial",
+       "text": "More substrate reduces competitive inhibition. More substrate also overcomes noncompetitive inhibition.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "More substrate reduces competitive inhibition."
+        },
+        {
+         "point": 3,
+         "quote": "More substrate also overcomes noncompetitive inhibition."
+        }
+       ],
+       "feedback": "Noncompetitive inhibitors change the shape of the enzyme, so more substrate cannot fix it.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Both inhibitors destroy the enzyme and make it stop working forever.",
+       "meets": [],
+       "feedback": "Inhibitors do not necessarily destroy the enzyme. They bind and reduce its activity, and many binding events are reversible."
+      },
+      {
+       "tier": "weak",
+       "text": "A noncompetitive inhibitor binds elsewhere. A competitive inhibitor binds to the substrate instead of the enzyme.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "A noncompetitive inhibitor binds elsewhere."
+        }
+       ],
+       "feedback": "A competitive inhibitor binds to the enzyme's active site, in competition with the substrate."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe how the light reactions and the Calvin cycle are linked. State where each takes place, what the light reactions supply, and what the Calvin cycle returns.",
+     "markScheme": [
+      "States that the light reactions occur in the thylakoid membranes and the Calvin cycle in the stroma",
+      "States that the light reactions supply ATP and NADPH",
+      "States that the Calvin cycle uses ATP and NADPH to reduce fixed CO2 to G3P",
+      "States that the Calvin cycle returns ADP, NADP+ and Pi to the light reactions to be recharged"
+     ],
+     "modelAnswer": "The light reactions take place in the thylakoid membranes and the Calvin cycle takes place in the stroma. The light reactions supply ATP and NADPH. The Calvin cycle uses them to reduce fixed CO2 to G3P. It returns ADP, NADP+ and phosphate to the light reactions, where they are recharged.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The light reactions are in the thylakoid membrane and the Calvin cycle is in the stroma. The light reactions make ATP and NADPH. The Calvin cycle uses that ATP and NADPH to reduce the fixed carbon dioxide to G3P. It sends ADP, NADP+ and phosphate back to be recharged by the light reactions.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The light reactions are in the thylakoid membrane and the Calvin cycle is in the stroma."
+        },
+        {
+         "point": 1,
+         "quote": "The light reactions make ATP and NADPH."
+        },
+        {
+         "point": 2,
+         "quote": "The Calvin cycle uses that ATP and NADPH to reduce the fixed carbon dioxide to G3P."
+        },
+        {
+         "point": 3,
+         "quote": "It sends ADP, NADP+ and phosphate back to be recharged by the light reactions."
+        }
+       ],
+       "feedback": "Full marks. The recycling of the carriers is a nice final point."
+      },
+      {
+       "tier": "full",
+       "text": "Thylakoids hold the light reactions, and the stroma holds the Calvin cycle. Light energy is converted to chemical energy in ATP and NADPH. Those two supply energy and reducing power to make G3P from CO₂. The spent carriers ADP and NADP⁺ go back to the thylakoid to be re-energized.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Thylakoids hold the light reactions, and the stroma holds the Calvin cycle."
+        },
+        {
+         "point": 1,
+         "quote": "Light energy is converted to chemical energy in ATP and NADPH."
+        },
+        {
+         "point": 2,
+         "quote": "Those two supply energy and reducing power to make G3P from CO₂."
+        },
+        {
+         "point": 3,
+         "quote": "The spent carriers ADP and NADP⁺ go back to the thylakoid to be re-energized."
+        }
+       ],
+       "feedback": "All four marks, with accurate terms."
+      },
+      {
+       "tier": "partial",
+       "text": "Light reactions in the thylakoid and Calvin cycle in the stroma. The light reactions make ATP.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Light reactions in the thylakoid and Calvin cycle in the stroma."
+        },
+        {
+         "point": 1,
+         "quote": "The light reactions make ATP."
+        }
+       ],
+       "feedback": "Include NADPH, what the Calvin cycle does with the products, and what is returned."
+      },
+      {
+       "tier": "partial",
+       "text": "The Calvin cycle reduces CO2 to G3P using ATP and NADPH. It returns ADP and NADP+. The Calvin cycle uses light directly.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The Calvin cycle reduces CO2 to G3P using ATP and NADPH."
+        },
+        {
+         "point": 3,
+         "quote": "It returns ADP and NADP+."
+        }
+       ],
+       "feedback": "The Calvin cycle does not use light directly. It depends on the ATP and NADPH made by the light reactions.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The light reactions make glucose and the Calvin cycle makes oxygen, so each one needs the other's product.",
+       "meets": [],
+       "feedback": "The light reactions release oxygen and make ATP and NADPH. The Calvin cycle makes sugar."
+      },
+      {
+       "tier": "weak",
+       "text": "The Calvin cycle is in the stroma. Both stages happen only during the day in the same place at the same time.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The Calvin cycle is in the stroma."
+        }
+       ],
+       "feedback": "The two stages occur in different parts of the chloroplast. They are linked by the carriers, and the Calvin cycle depends on the products of the light reactions."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Fermentation versus aerobic respiration, and cell signaling",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. compare aerobic respiration and fermentation;\n2. describe the stages of cell signaling and give an example of a signal transduction pathway.\n\n## Materials\n\nYeast, sugar solution and balloons (demo), data tables, signal pathway diagrams, calculators, the problem set.\n\n## Starter (6 minutes)\n\nShow a balloon inflating on a flask of yeast and sugar. Ask: \"What gas is being produced, and is this aerobic or anaerobic? How could we tell from the products?\"\n\n## Main activity\n\n1. Compare ATP yield: aerobic 30 to 32 ATP per glucose, fermentation 2 ATP. Both start with glycolysis. Lactic acid fermentation (animal cells) regenerates NAD+ by reducing pyruvate to lactate, and alcohol fermentation (yeast) produces ethanol and CO2.\n2. Cell signaling: reception, transduction, response. Ligand, receptor (GPCR, receptor tyrosine kinase), second messengers (cAMP, calcium), phosphorylation cascades, amplification.\n3. Example: epinephrine binds a GPCR on a liver cell, activating adenylyl cyclase and producing cAMP, which activates protein kinase A and leads to glycogen breakdown.\n\n## Checking for understanding\n\nAsk: \"Why does fermentation need to regenerate NAD+?\"\n\n## Problem set\n\nA yield comparison, a pathway diagram, and a data question about a signaling inhibitor.",
+   "reading": {
+    "title": "Two ways to run glycolysis, and how cells talk",
+    "content": "Glycolysis is the first stage of respiration and does not need oxygen. It makes a net 2 ATP per glucose and converts NAD+ to NADH. If glycolysis is to continue, NAD+ must be regenerated, or the process stops. When oxygen is present, NADH is oxidized by the electron transport chain, and the whole of respiration yields 30 to 32 ATP per glucose. Without oxygen, cells use **fermentation**, which regenerates NAD+ without the chain. In **lactic acid fermentation**, pyruvate is reduced to lactate, as in your muscles during a sprint. In **alcohol fermentation**, yeast converts pyruvate to ethanol and releases CO2, which makes bread rise and beer fizzy. Fermentation produces only 2 ATP per glucose, about one fifteenth of the aerobic yield, so cells must consume much more glucose to meet the same energy needs. This is why organisms in low oxygen environments often grow slowly, and why muscles tire quickly in an all-out sprint.\n\nCells communicate by **signal transduction**, which has three stages. In **reception**, a signaling molecule (ligand) binds to a receptor protein, usually on the cell surface. In **transduction**, the signal is relayed through a series of molecules inside the cell, usually a cascade of phosphorylation by protein kinases, or second messengers such as cyclic AMP (cAMP) and calcium ions. A cascade **amplifies** the signal because each activated enzyme activates many molecules of the next. In the **response**, the cell changes, for example by altering gene expression or the activity of an enzyme.\n\nA classic example is the response of a liver cell to the hormone epinephrine, which signals danger. Epinephrine binds to a G protein-coupled receptor on the cell surface. The receptor activates a G protein, which activates the enzyme adenylyl cyclase to make cAMP from ATP. The cAMP activates protein kinase A, which starts a phosphorylation cascade that activates glycogen phosphorylase and inactivates glycogen synthase. The result is the breakdown of glycogen to glucose, which is released into the blood. A single epinephrine molecule can lead to the release of thousands of glucose molecules. The pathway is turned off by enzymes that break down cAMP and by phosphatases that remove phosphates. Defects in signaling can lead to disease: cholera toxin keeps a G protein active, causing watery diarrhea, and many cancers involve receptors that signal even when no ligand is present."
+   },
+   "cards": [
+    {
+     "front": "Fermentation",
+     "back": "Regenerating NAD+ without oxygen so that glycolysis can continue."
+    },
+    {
+     "front": "Lactic acid fermentation",
+     "back": "Fermentation that reduces pyruvate to lactate."
+    },
+    {
+     "front": "Alcohol fermentation",
+     "back": "Fermentation that makes ethanol and CO2 from pyruvate."
+    },
+    {
+     "front": "Ligand",
+     "back": "A signaling molecule that binds to a receptor."
+    },
+    {
+     "front": "Signal transduction",
+     "back": "The relay of a signal from a receptor to a response inside the cell."
+    },
+    {
+     "front": "Second messenger",
+     "back": "A small molecule, such as cAMP, that relays a signal inside the cell."
+    },
+    {
+     "front": "Phosphorylation cascade",
+     "back": "A series of protein kinases each activating the next by adding phosphate."
+    },
+    {
+     "front": "Amplification",
+     "back": "One signal molecule leading to the activation of many molecules downstream."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How much ATP does fermentation produce per glucose (net)?",
+     "options": [
+      "0",
+      "2",
+      "30",
+      "38"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why does fermentation reduce pyruvate to lactate or ethanol?",
+     "options": [
+      "To make more ATP",
+      "To regenerate NAD+ so glycolysis can continue",
+      "To make oxygen",
+      "To make glucose"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In the epinephrine pathway, which molecule is the second messenger?",
+     "options": [
+      "Glucose",
+      "cAMP",
+      "Glycogen",
+      "Receptor"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A phosphorylation cascade amplifies a signal because:",
+     "options": [
+      "Each kinase activates many copies of the next",
+      "The receptor is larger",
+      "It uses more ATP",
+      "It makes the ligand"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Yeast bubbling in sugar solution without oxygen produces CO2 and:",
+     "options": [
+      "Lactate",
+      "Ethanol",
+      "Oxygen",
+      "Glucose"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Compare ATP production in a muscle cell with and without oxygen. Explain why glycolysis would stop without fermentation in the absence of oxygen.",
+     "markScheme": [
+      "States that glycolysis yields a net 2 ATP and converts NAD+ to NADH",
+      "States that without oxygen NADH cannot be oxidized by the electron transport chain",
+      "States that fermentation (pyruvate to lactate) regenerates NAD+ so glycolysis continues",
+      "States that with oxygen the Krebs cycle and electron transport chain yield about 30 to 32 ATP per glucose, much more than fermentation's 2"
+     ],
+     "modelAnswer": "Glycolysis yields a net 2 ATP and uses NAD+, producing NADH. Without oxygen the electron transport chain cannot oxidize NADH, so NAD+ would run out and glycolysis would stop. Fermentation reduces pyruvate to lactate, regenerating NAD+ so glycolysis can continue. With oxygen, the Krebs cycle and the electron transport chain produce about 30 to 32 ATP per glucose, far more than the 2 ATP from fermentation.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Glycolysis makes a net 2 ATP and uses NAD⁺, turning it into NADH. Without oxygen the electron transport chain can't take electrons from NADH so NAD⁺ would run out. Fermentation turns pyruvate into lactate, which regenerates NAD⁺ so glycolysis can keep going. With oxygen the whole process yields about 30 to 32 ATP, compared with only 2 for fermentation.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Glycolysis makes a net 2 ATP and uses NAD⁺, turning it into NADH."
+        },
+        {
+         "point": 1,
+         "quote": "Without oxygen the electron transport chain can't take electrons from NADH so NAD⁺ would run out."
+        },
+        {
+         "point": 2,
+         "quote": "Fermentation turns pyruvate into lactate, which regenerates NAD⁺ so glycolysis can keep going."
+        },
+        {
+         "point": 3,
+         "quote": "With oxygen the whole process yields about 30 to 32 ATP, compared with only 2 for fermentation."
+        }
+       ],
+       "feedback": "Full marks. The regeneration of NAD+ is the central point and you made it clearly."
+      },
+      {
+       "tier": "full",
+       "text": "Glycolysis nets 2 ATP and 2 NADH. With no O₂ the chain stops, so NADH can't be recycled to NAD⁺. Lactic acid fermentation uses NADH to reduce pyruvate to lactate, restoring NAD⁺. Aerobic respiration gives about 30–32 ATP per glucose, 15 times more.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Glycolysis nets 2 ATP and 2 NADH."
+        },
+        {
+         "point": 1,
+         "quote": "With no O₂ the chain stops, so NADH can't be recycled to NAD⁺."
+        },
+        {
+         "point": 2,
+         "quote": "Lactic acid fermentation uses NADH to reduce pyruvate to lactate, restoring NAD⁺."
+        },
+        {
+         "point": 3,
+         "quote": "Aerobic respiration gives about 30–32 ATP per glucose, 15 times more."
+        }
+       ],
+       "feedback": "All four marks, with a quantitative comparison."
+      },
+      {
+       "tier": "partial",
+       "text": "Glycolysis makes 2 ATP. Respiration with oxygen makes about 30 to 32.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Glycolysis makes 2 ATP."
+        },
+        {
+         "point": 3,
+         "quote": "Respiration with oxygen makes about 30 to 32."
+        }
+       ],
+       "feedback": "Explain why glycolysis would stop without oxygen, and the role of fermentation in regenerating NAD+."
+      },
+      {
+       "tier": "partial",
+       "text": "Fermentation turns pyruvate into lactate. Without oxygen NADH builds up. The lactate makes ATP.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Fermentation turns pyruvate into lactate."
+        },
+        {
+         "point": 1,
+         "quote": "Without oxygen NADH builds up."
+        }
+       ],
+       "feedback": "Fermentation does not make ATP. It regenerates NAD+ so glycolysis can continue to make its 2 ATP.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Without oxygen the cell makes no ATP at all, so it dies immediately.",
+       "meets": [],
+       "feedback": "Glycolysis and fermentation still make a little ATP without oxygen. It is just a small amount."
+      },
+      {
+       "tier": "weak",
+       "text": "Aerobic respiration makes more ATP. Fermentation makes more because it is faster and produces lactate that the cell can use as energy.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Aerobic respiration makes more ATP."
+        }
+       ],
+       "feedback": "Fermentation makes only 2 ATP per glucose. Lactate is not used as fuel by the cell that made it in this way."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe the three stages of signal transduction using the response of a liver cell to epinephrine. Explain how the pathway amplifies the signal.",
+     "markScheme": [
+      "Describes reception: epinephrine binds to a G protein-coupled receptor on the cell surface",
+      "Describes transduction: a G protein activates adenylyl cyclase, producing cAMP, which activates protein kinase A and a phosphorylation cascade",
+      "Describes the response: glycogen is broken down to glucose that is released",
+      "Explains amplification: each activated enzyme activates many molecules of the next, so one signal molecule leads to thousands of glucose molecules"
+     ],
+     "modelAnswer": "In reception, epinephrine binds to a G protein-coupled receptor on the surface of the liver cell. In transduction, the receptor activates a G protein, which activates adenylyl cyclase to make cAMP, which activates protein kinase A and a phosphorylation cascade. In the response, glycogen is broken down to glucose, which is released into the blood. The cascade amplifies the signal because each enzyme activates many molecules of the next, so one epinephrine molecule can release thousands of glucose molecules.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Reception: epinephrine binds to a G protein-coupled receptor on the liver cell's surface. Transduction: the G protein activates adenylyl cyclase, which makes cAMP, and cAMP activates protein kinase A and a cascade. Response: glycogen is broken down to glucose that goes into the blood. Each enzyme in the cascade activates many of the next, so one hormone molecule leads to thousands of glucose molecules.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Reception: epinephrine binds to a G protein-coupled receptor on the liver cell's surface."
+        },
+        {
+         "point": 1,
+         "quote": "Transduction: the G protein activates adenylyl cyclase, which makes cAMP, and cAMP activates protein kinase A and a cascade."
+        },
+        {
+         "point": 2,
+         "quote": "Response: glycogen is broken down to glucose that goes into the blood."
+        },
+        {
+         "point": 3,
+         "quote": "Each enzyme in the cascade activates many of the next, so one hormone molecule leads to thousands of glucose molecules."
+        }
+       ],
+       "feedback": "Full marks. All three stages and the amplification are covered."
+      },
+      {
+       "tier": "full",
+       "text": "The ligand epinephrine binds to the GPCR on the outside of the cell. A G protein turns on adenylyl cyclase, cAMP is the second messenger, and it activates protein kinases that phosphorylate other enzymes. The enzymes break down glycogen, and glucose is released. Because every step activates many molecules, the signal is amplified a great deal.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The ligand epinephrine binds to the GPCR on the outside of the cell."
+        },
+        {
+         "point": 1,
+         "quote": "A G protein turns on adenylyl cyclase, cAMP is the second messenger, and it activates protein kinases that phosphorylate other enzymes."
+        },
+        {
+         "point": 2,
+         "quote": "The enzymes break down glycogen, and glucose is released."
+        },
+        {
+         "point": 3,
+         "quote": "Because every step activates many molecules, the signal is amplified a great deal."
+        }
+       ],
+       "feedback": "All four marks, in correct terms."
+      },
+      {
+       "tier": "partial",
+       "text": "Epinephrine binds to a receptor on the cell surface. Glycogen is broken down to glucose.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Epinephrine binds to a receptor on the cell surface."
+        },
+        {
+         "point": 2,
+         "quote": "Glycogen is broken down to glucose."
+        }
+       ],
+       "feedback": "Describe the steps between the receptor and the response, and explain how the signal is amplified."
+      },
+      {
+       "tier": "partial",
+       "text": "cAMP activates protein kinase A. The cascade amplifies the signal. Epinephrine enters the cell and binds to the DNA.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "cAMP activates protein kinase A."
+        },
+        {
+         "point": 3,
+         "quote": "The cascade amplifies the signal."
+        }
+       ],
+       "feedback": "Epinephrine is a hydrophilic hormone that binds to a surface receptor. It does not enter the cell.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Epinephrine is made by the cell and gives it energy to break down the glycogen.",
+       "meets": [],
+       "feedback": "Epinephrine is a hormone from outside the cell that binds a receptor. The cell responds to it."
+      },
+      {
+       "tier": "weak",
+       "text": "The cell releases glucose. A cascade means that the signal gets weaker at each step.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The cell releases glucose."
+        }
+       ],
+       "feedback": "A cascade amplifies the signal: each activated enzyme activates many molecules of the next."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Feedback and the control of the cell cycle",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how feedback regulates a biological process;\n2. describe the cell cycle and how checkpoints control it, including the mitotic index.\n\n## Materials\n\nOnion root tip photos with counted cells, cyclin graphs, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"A cell is dividing every 24 hours. If you look at 100 cells at random, how many do you expect to see in mitosis?\" Link to the fraction of the cycle spent in mitosis.\n\n## Main activity\n\n1. Feedback: negative feedback (end product inhibition of an enzyme in a metabolic pathway, the thermostat, blood glucose) versus positive feedback (oxytocin, fruit ripening with ethylene, the action potential upstroke).\n2. The cell cycle: G1, S, G2, M, with cytokinesis. G0. The checkpoints: G1 (size, nutrients, DNA damage), G2 (DNA replication complete), M (spindle attachment).\n3. Control: cyclin-dependent kinases (Cdks) activated by cyclins; p53; cancer as loss of control and mutations in proto-oncogenes and tumor suppressors.\n4. Calculation: mitotic index. In a count of 200 cells, 24 are in mitosis, which is 12 percent. If the cycle takes 20 hours, mitosis lasts 2.4 hours.\n\n## Checking for understanding\n\nAsk: \"How does end-product inhibition prevent waste?\"\n\n## Worksheet\n\nFeedback examples, a mitotic index calculation and a checkpoint explanation.",
+   "reading": {
+    "title": "Control loops inside the cell",
+    "content": "Living things stay alive by regulating processes, and the most common way is **feedback**. In **negative feedback**, the output of a process reduces its own production. A familiar example is **end-product inhibition** in a metabolic pathway: when the final product accumulates, it binds to an allosteric site on an enzyme early in the pathway and inhibits it, so the cell stops making more than it needs. In **positive feedback**, the output increases its own production, moving the system away from its starting point. Ethylene released by ripe fruit stimulates the ripening of neighboring fruit, which produce more ethylene, which is why one ripe banana speeds up a bunch.\n\nThe cell cycle is regulated by feedback loops. The cycle has an interphase (G1, S and G2) and a mitotic (M) phase. In **G1**, the cell grows. In **S**, DNA is replicated. In **G2**, the cell prepares to divide. In **M**, mitosis (prophase, metaphase, anaphase and telophase) divides the nucleus and cytokinesis divides the cytoplasm. Cells that do not divide, such as mature neurons, rest in **G0**. The cycle proceeds only if conditions are right, as checked at **checkpoints**. The G1 checkpoint asks whether the cell is large enough, has nutrients and growth signals, and has undamaged DNA. The G2 checkpoint checks that DNA replication is complete and undamaged. The spindle checkpoint in metaphase makes sure all chromosomes are attached before anaphase begins.\n\nThe checkpoints are controlled by the proteins **cyclins** and **cyclin-dependent kinases (Cdks)**. Cdk is always present but inactive until it binds to a cyclin, whose concentration rises and falls through the cycle. The active cyclin-Cdk complex phosphorylates target proteins that push the cell past the checkpoint. The protein **p53** halts the cycle at G1 when DNA is damaged, to allow repair, or triggers programmed cell death if repair is impossible. **Cancer** develops when cell division escapes control. Mutations in **proto-oncogenes** make them oncogenes that stimulate division continuously, and mutations in **tumor suppressor genes**, such as p53, remove the brakes.\n\nThe fraction of time a cell spends in each phase can be estimated by counting. The **mitotic index** is the percentage of cells in mitosis. If 24 of 200 cells in an onion root tip are in mitosis, the index is 12 percent. If the total cell cycle lasts 20 hours, the time spent in mitosis is 0.12 times 20, which is 2.4 hours. A high mitotic index suggests rapid growth, as in root tips and in tumors."
+   },
+   "cards": [
+    {
+     "front": "End-product inhibition",
+     "back": "A pathway's final product inhibits an early enzyme, preventing overproduction."
+    },
+    {
+     "front": "Positive feedback",
+     "back": "A process whose output increases its own production."
+    },
+    {
+     "front": "Checkpoint",
+     "back": "A control point at which the cell cycle can be halted."
+    },
+    {
+     "front": "Cyclin",
+     "back": "A protein whose concentration varies through the cycle and activates Cdk."
+    },
+    {
+     "front": "Cdk",
+     "back": "A kinase that drives the cell cycle when bound to a cyclin."
+    },
+    {
+     "front": "p53",
+     "back": "A tumor suppressor protein that halts the cycle when DNA is damaged."
+    },
+    {
+     "front": "Proto-oncogene",
+     "back": "A normal gene that stimulates division; a mutated form, an oncogene, can cause cancer."
+    },
+    {
+     "front": "Mitotic index",
+     "back": "The percent of cells in mitosis in a sample."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A pathway's end product inhibits an enzyme early in the pathway. This is an example of:",
+     "options": [
+      "Positive feedback",
+      "Negative feedback",
+      "Competitive inhibition of the product",
+      "Gene duplication"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In a count of 200 cells, 24 are in mitosis. What is the mitotic index?",
+     "options": [
+      "2.4%",
+      "12%",
+      "24%",
+      "88%"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "At which checkpoint would a cell with unreplicated DNA be stopped?",
+     "options": [
+      "G1",
+      "G2",
+      "Spindle checkpoint only",
+      "Cytokinesis"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A mutation that stops p53 working would most likely:",
+     "options": [
+      "Prevent cells dividing",
+      "Let cells with damaged DNA continue to divide",
+      "Stop DNA replication",
+      "Make cells enter G0"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Ripe fruit releasing ethylene that causes more ripening is an example of:",
+     "options": [
+      "Negative feedback",
+      "Positive feedback",
+      "Competitive inhibition",
+      "Homeostasis only"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "In a sample of 250 cells from an onion root tip, 30 are in mitosis. If the cell cycle takes 24 hours, calculate the mitotic index and the time spent in mitosis. Explain what a much higher mitotic index would suggest.",
+     "markScheme": [
+      "Calculates the mitotic index as 30/250 = 12 percent",
+      "Calculates the time in mitosis as 0.12 x 24 = 2.9 hours",
+      "States that a higher index means a larger fraction of cells is dividing, so the tissue is growing faster",
+      "Gives a reasonable example or implication, such as a tumor or rapidly growing region"
+     ],
+     "modelAnswer": "The mitotic index is 30/250 = 12 percent. The time in mitosis is 0.12 times 24, which is about 2.9 hours. A much higher index would mean that a larger fraction of cells is dividing, so the tissue is growing faster, as in a tumor or a rapidly growing root tip.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "30/250 × 100 = 12% mitotic index. 0.12 × 24 h = 2.9 hours in mitosis. A higher index would mean more cells are dividing, so the tissue is growing faster. That could be a tumor, where cells divide without the normal controls.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "30/250 × 100 = 12% mitotic index."
+        },
+        {
+         "point": 1,
+         "quote": "0.12 × 24 h = 2.9 hours in mitosis."
+        },
+        {
+         "point": 2,
+         "quote": "A higher index would mean more cells are dividing, so the tissue is growing faster."
+        },
+        {
+         "point": 3,
+         "quote": "That could be a tumor, where cells divide without the normal controls."
+        }
+       ],
+       "feedback": "Full marks. The tumor link shows you see why the index is used in medicine."
+      },
+      {
+       "tier": "full",
+       "text": "Mitotic index = 12%. Mitosis lasts about 2.9 h of the 24 h cycle. A higher index means a bigger share of the cells are in M phase, so faster growth. Cancer tissue often has a high mitotic index, as does a fast-growing root tip.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mitotic index = 12%."
+        },
+        {
+         "point": 1,
+         "quote": "Mitosis lasts about 2.9 h of the 24 h cycle."
+        },
+        {
+         "point": 2,
+         "quote": "A higher index means a bigger share of the cells are in M phase, so faster growth."
+        },
+        {
+         "point": 3,
+         "quote": "Cancer tissue often has a high mitotic index, as does a fast-growing root tip."
+        }
+       ],
+       "feedback": "All four marks, concise and accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "The index is 12%. A higher index means more growth.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The index is 12%."
+        },
+        {
+         "point": 2,
+         "quote": "A higher index means more growth."
+        }
+       ],
+       "feedback": "Calculate the time spent in mitosis, and give an example of a tissue with a high index."
+      },
+      {
+       "tier": "partial",
+       "text": "0.12 × 24 = 2.9 hours. A tumor would have a higher index. The index is 30/250 = 0.12 cells.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "0.12 × 24 = 2.9 hours."
+        },
+        {
+         "point": 3,
+         "quote": "A tumor would have a higher index."
+        }
+       ],
+       "feedback": "The mitotic index is a percent of cells, 12 percent, not a number of cells.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "30 + 250 = 280 so the mitotic index is 280. A higher index means the cells are dying.",
+       "meets": [],
+       "feedback": "The index is the fraction of cells in mitosis, 30/250. A higher index means more dividing cells."
+      },
+      {
+       "tier": "weak",
+       "text": "30 out of 250 is 12%. Mitosis takes 12 hours because the percent tells you the hours.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "30 out of 250 is 12%."
+        }
+       ],
+       "feedback": "To find the time, multiply the fraction by the length of the cycle: 0.12 times 24 hours."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain how the cell cycle checkpoint at G1 uses p53 to respond to DNA damage, and describe how a mutation in the p53 gene could contribute to cancer.",
+     "markScheme": [
+      "States that DNA damage is detected and p53 is activated",
+      "States that p53 halts the cycle at the G1 checkpoint to allow repair",
+      "States that if the damage cannot be repaired, p53 triggers programmed cell death",
+      "States that a nonfunctional p53 allows cells with damaged DNA to divide, so mutations accumulate and can lead to cancer"
+     ],
+     "modelAnswer": "When DNA is damaged, p53 is activated. p53 halts the cell cycle at the G1 checkpoint, to allow time for repair. If the damage cannot be repaired, p53 triggers programmed cell death. If the p53 gene is mutated and nonfunctional, cells with damaged DNA continue to divide, mutations accumulate, and this can lead to cancer.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "When DNA is damaged, the p53 protein is activated. It stops the cell at the G1 checkpoint so the DNA can be repaired. If it can't be fixed, p53 makes the cell die by apoptosis. If p53 is mutated, damaged cells keep dividing and mutations build up, which can cause cancer.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "When DNA is damaged, the p53 protein is activated."
+        },
+        {
+         "point": 1,
+         "quote": "It stops the cell at the G1 checkpoint so the DNA can be repaired."
+        },
+        {
+         "point": 2,
+         "quote": "If it can't be fixed, p53 makes the cell die by apoptosis."
+        },
+        {
+         "point": 3,
+         "quote": "If p53 is mutated, damaged cells keep dividing and mutations build up, which can cause cancer."
+        }
+       ],
+       "feedback": "Full marks. Each part of the p53 response is clearly described."
+      },
+      {
+       "tier": "full",
+       "text": "DNA damage triggers p53 activation. The cell cycle pauses at G1, giving repair enzymes time. Irreparable damage leads p53 to trigger programmed cell death. A nonfunctional p53 removes this brake, so cells with mutations can divide and form tumors.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "DNA damage triggers p53 activation."
+        },
+        {
+         "point": 1,
+         "quote": "The cell cycle pauses at G1, giving repair enzymes time."
+        },
+        {
+         "point": 2,
+         "quote": "Irreparable damage leads p53 to trigger programmed cell death."
+        },
+        {
+         "point": 3,
+         "quote": "A nonfunctional p53 removes this brake, so cells with mutations can divide and form tumors."
+        }
+       ],
+       "feedback": "All four marks, with precise terms."
+      },
+      {
+       "tier": "partial",
+       "text": "p53 detects DNA damage. It stops the cell cycle for repair.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "p53 detects DNA damage."
+        },
+        {
+         "point": 1,
+         "quote": "It stops the cell cycle for repair."
+        }
+       ],
+       "feedback": "Add what happens if repair fails, and what happens if p53 is mutated."
+      },
+      {
+       "tier": "partial",
+       "text": "If the damage can't be repaired, p53 triggers cell death. A mutated p53 means cells divide faster. p53 is an oncogene.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "If the damage can't be repaired, p53 triggers cell death."
+        },
+        {
+         "point": 3,
+         "quote": "A mutated p53 means cells divide faster."
+        }
+       ],
+       "feedback": "p53 is a tumor suppressor gene. Mutations that inactivate it remove the brake on division.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "p53 repairs the DNA itself by cutting out the damage, and a mutation in it makes more DNA damage.",
+       "meets": [],
+       "feedback": "p53 is a regulatory protein that halts the cycle. Repair is carried out by other enzymes."
+      },
+      {
+       "tier": "weak",
+       "text": "A mutation in p53 can cause cancer. p53 makes cells divide so mutation makes them divide less.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "A mutation in p53 can cause cancer."
+        }
+       ],
+       "feedback": "p53 normally stops the cycle when DNA is damaged. A loss of p53 function lets cells divide when they should not."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Experimental design, data analysis and the chi-square test",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. analyze data from an experiment with a control and justify a claim from the results;\n2. perform a statistical test, such as chi-square, and say what the result means.\n\n## Materials\n\nIsopods (pill bugs) and a two-chambered choice box with damp and dry sides, timers, calculators, chi-square table, the practical sheet.\n\n## Starter (6 minutes)\n\nPresent a data set: 14 of 20 isopods in the damp chamber and 6 in the dry. Ask: \"Is this evidence of a preference, or could it be chance?\" Take opinions, then introduce the idea of a null hypothesis.\n\n## Main activity\n\n1. Experimental design review: independent, dependent, controlled variables, a control group, replication and sample size.\n2. The chi-square test: chi-square = sum of (observed - expected) squared / expected. Degrees of freedom = number of categories minus one. Critical value at p = 0.05 for 1 degree of freedom is 3.84. If chi-square is below it, fail to reject the null hypothesis.\n3. Work an example from genetics: a monohybrid cross expected to give 3:1. Observed 740 purple and 260 white of 1000 gives chi-square = 0.53, which is below 3.84.\n4. Practical: carry out the isopod choice test, calculate chi-square and state a conclusion.\n\n## Checking for understanding\n\nAsk: \"What does it mean to fail to reject the null hypothesis? Does it prove there is no preference?\"\n\n## Practical write-up\n\nCollect with data, calculation and a CER conclusion.",
+   "reading": {
+    "title": "From data to a defended claim",
+    "content": "A good experiment has a testable question, a clear comparison, and enough replicates for the result to be trusted. The **independent variable** is the one that you change. The **dependent variable** is what you measure. **Controlled variables** are held constant. A **control group** does not receive the treatment, and shows what would have happened anyway. If you want to test the effect of a fertilizer on bean growth, the plants with plain water are the control. The size of the sample matters: ten plants per group make a better case than one.\n\nWhen you write the conclusion of an experiment, use the claim, evidence and reasoning pattern. The claim answers the question. The evidence cites the data with numbers. The reasoning links the evidence to a biological principle and explains why the data support the claim, and also notes limits, such as sources of error.\n\nStatistics help decide whether a difference is real or due to chance. The **chi-square test** compares observed counts with the counts expected under a **null hypothesis**, which states that there is no difference or no effect. Calculate chi-square as the sum of (O - E) squared divided by E over all categories. Suppose a monohybrid cross is expected to give a 3:1 ratio of purple to white flowers. Of 1000 offspring, you expect 750 purple and 250 white. You observe 740 purple and 260 white. Then chi-square = (740 - 750) squared / 750 + (260 - 250) squared / 250 = 0.133 + 0.400 = 0.53. The **degrees of freedom** are the number of categories minus one, which is 1. The critical value at the 0.05 significance level for 1 degree of freedom is 3.84. Because 0.53 is less than 3.84, the difference between observed and expected is small enough to be due to chance, and we **fail to reject** the null hypothesis. This does not prove that the ratio is 3:1; it says the data are consistent with it.\n\nIn a behavior experiment, 20 isopods are placed in a choice chamber with a damp side and a dry side. If they have no preference, the null hypothesis expects 10 and 10. Suppose 14 go to the damp side and 6 to the dry. Chi-square = (14 - 10) squared / 10 + (6 - 10) squared / 10 = 1.6 + 1.6 = 3.2. With 1 degree of freedom, 3.2 is less than 3.84, so we fail to reject the null hypothesis. The result is not statistically significant. A larger sample might give a different result: if 28 out of 40 chose damp, the expected values are 20 and 20 and chi-square = 64/20 + 64/20 = 6.4, which exceeds 3.84, and the null hypothesis would be rejected. This shows why sample size matters."
+   },
+   "cards": [
+    {
+     "front": "Control group",
+     "back": "A group that does not receive the treatment, used for comparison."
+    },
+    {
+     "front": "Null hypothesis",
+     "back": "The statement that there is no effect or difference."
+    },
+    {
+     "front": "Chi-square",
+     "back": "A statistic comparing observed with expected counts: the sum of (O - E)^2 / E."
+    },
+    {
+     "front": "Degrees of freedom",
+     "back": "The number of categories minus one in a chi-square test."
+    },
+    {
+     "front": "Critical value",
+     "back": "The chi-square value above which the null hypothesis is rejected; 3.84 for df = 1 at p = 0.05."
+    },
+    {
+     "front": "Fail to reject",
+     "back": "The conclusion when the data are consistent with the null hypothesis."
+    },
+    {
+     "front": "Sample size",
+     "back": "The number of individuals or trials; larger samples give stronger evidence."
+    },
+    {
+     "front": "CER",
+     "back": "Claim, evidence and reasoning: a structure for defending a conclusion."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A cross is expected to give a 3:1 ratio. Of 1000 offspring, how many purple flowers are expected?",
+     "options": [
+      "250",
+      "500",
+      "750",
+      "900"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "With 1 degree of freedom, the critical value at p = 0.05 is:",
+     "options": [
+      "0.05",
+      "1.96",
+      "3.84",
+      "5.99"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A chi-square value of 0.53 with 1 degree of freedom means:",
+     "options": [
+      "Reject the null hypothesis",
+      "Fail to reject the null hypothesis",
+      "The null hypothesis is proven",
+      "The experiment must be repeated"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Isopod data: 14 damp and 6 dry out of 20, expected 10 and 10. What is chi-square?",
+     "options": [
+      "1.6",
+      "3.2",
+      "6.4",
+      "16"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the purpose of a control group?",
+     "options": [
+      "To increase the sample size",
+      "To show what happens without the treatment",
+      "To change the independent variable",
+      "To remove all variables"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "In a test of animal behavior, 40 isopods are placed in a choice chamber and 28 move to the damp side. Under a null hypothesis of no preference, calculate chi-square, state the degrees of freedom and the critical value (3.84), and write a conclusion.",
+     "markScheme": [
+      "States expected values of 20 and 20 under the null hypothesis",
+      "Calculates chi-square as 6.4",
+      "States that there is 1 degree of freedom and compares 6.4 with the critical value 3.84",
+      "Concludes that the null hypothesis is rejected, so isopods prefer damp conditions"
+     ],
+     "modelAnswer": "Under the null hypothesis, expect 20 on each side. Chi-square = (28 - 20) squared / 20 + (12 - 20) squared / 20 = 3.2 + 3.2 = 6.4. There is 1 degree of freedom, and the critical value is 3.84. Since 6.4 is greater than 3.84, the null hypothesis is rejected, and the isopods show a significant preference for the damp side.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "If there's no preference, I expect 20 on each side. χ² = (28−20)²/20 + (12−20)²/20 = 3.2 + 3.2 = 6.4. With 2 categories, df = 1 and the critical value is 3.84, so 6.4 is greater. I reject the null hypothesis, which means the isopods significantly prefer damp.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "If there's no preference, I expect 20 on each side."
+        },
+        {
+         "point": 1,
+         "quote": "χ² = (28−20)²/20 + (12−20)²/20 = 3.2 + 3.2 = 6.4."
+        },
+        {
+         "point": 2,
+         "quote": "With 2 categories, df = 1 and the critical value is 3.84, so 6.4 is greater."
+        },
+        {
+         "point": 3,
+         "quote": "I reject the null hypothesis, which means the isopods significantly prefer damp."
+        }
+       ],
+       "feedback": "Full marks. Every step of the test is shown with the decision at the end."
+      },
+      {
+       "tier": "full",
+       "text": "Expected: 20 damp and 20 dry. Chi-square = 64/20 + 64/20 = 6.4. df = 1; critical value 3.84; 6.4 > 3.84. So the result is significant at p < 0.05 and the null hypothesis is rejected.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Expected: 20 damp and 20 dry."
+        },
+        {
+         "point": 1,
+         "quote": "Chi-square = 64/20 + 64/20 = 6.4."
+        },
+        {
+         "point": 2,
+         "quote": "df = 1; critical value 3.84; 6.4 > 3.84."
+        },
+        {
+         "point": 3,
+         "quote": "So the result is significant at p < 0.05 and the null hypothesis is rejected."
+        }
+       ],
+       "feedback": "All four marks, with a precise statement of significance."
+      },
+      {
+       "tier": "partial",
+       "text": "Expected is 20 and 20. Chi-square is 6.4. I accept the null hypothesis because 6.4 is greater than 3.84.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Expected is 20 and 20."
+        },
+        {
+         "point": 1,
+         "quote": "Chi-square is 6.4."
+        }
+       ],
+       "feedback": "When chi-square exceeds the critical value, you reject the null hypothesis. Here the isopods prefer damp conditions."
+      },
+      {
+       "tier": "partial",
+       "text": "df = 1 and the critical value is 3.84. The null hypothesis is rejected.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "df = 1 and the critical value is 3.84."
+        },
+        {
+         "point": 3,
+         "quote": "The null hypothesis is rejected."
+        }
+       ],
+       "feedback": "Good decision. Show the expected values and the chi-square calculation that gives 6.4.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "28 − 12 = 16 so the chi-square value is 16 and that proves they prefer damp.",
+       "meets": [],
+       "feedback": "Chi-square sums (O − E) squared divided by E for each category, using the expected value 20."
+      },
+      {
+       "tier": "weak",
+       "text": "The expected value is 20 for each. Chi-square is (28 + 12) / 20 = 2.0, which is below 3.84 so I fail to reject.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The expected value is 20 for each."
+        }
+       ],
+       "feedback": "You need to square the differences from the expected value, not add the observed values: 3.2 + 3.2 = 6.4."
+      }
+     ]
+    },
+    {
+     "prompt": "A student tests whether a fertilizer increases the height of bean plants. She grows 10 plants with fertilizer and 10 without under identical light and water. Identify the independent and dependent variables, the control group, and two controlled variables, and explain why the control group is needed.",
+     "markScheme": [
+      "Identifies the independent variable as the presence of fertilizer",
+      "Identifies the dependent variable as the height of the plants",
+      "Identifies the plants without fertilizer as the control group and names two controlled variables",
+      "Explains that the control shows the growth that would occur anyway, so the effect of the fertilizer can be judged"
+     ],
+     "modelAnswer": "The independent variable is whether the fertilizer is applied. The dependent variable is the height of the plants. The 10 plants without fertilizer are the control group. Controlled variables include the amount of light and water, the soil, and the type of bean. The control group is needed to show the growth that would happen without the fertilizer, so that the effect of the fertilizer can be judged.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The independent variable is whether the plants get fertilizer. The dependent variable is the height of the plants. The control group is the 10 plants without fertilizer, and light and water are kept the same, along with the soil. Without a control you wouldn't know how much the plants would have grown anyway.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The independent variable is whether the plants get fertilizer."
+        },
+        {
+         "point": 1,
+         "quote": "The dependent variable is the height of the plants."
+        },
+        {
+         "point": 2,
+         "quote": "The control group is the 10 plants without fertilizer, and light and water are kept the same, along with the soil."
+        },
+        {
+         "point": 3,
+         "quote": "Without a control you wouldn't know how much the plants would have grown anyway."
+        }
+       ],
+       "feedback": "Full marks. The reason for the control is stated clearly."
+      },
+      {
+       "tier": "full",
+       "text": "IV: fertilizer present or not. DV: plant height in cm. Control: unfertilized plants. Controlled variables: light, water, soil type and bean variety. The control gives a baseline of normal growth to compare with the fertilized plants.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "IV: fertilizer present or not."
+        },
+        {
+         "point": 1,
+         "quote": "DV: plant height in cm."
+        },
+        {
+         "point": 2,
+         "quote": "Control: unfertilized plants. Controlled variables: light, water, soil type and bean variety."
+        },
+        {
+         "point": 3,
+         "quote": "The control gives a baseline of normal growth to compare with the fertilized plants."
+        }
+       ],
+       "feedback": "All four marks, in a compact form."
+      },
+      {
+       "tier": "partial",
+       "text": "The independent variable is the fertilizer. The dependent variable is the height.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The independent variable is the fertilizer."
+        },
+        {
+         "point": 1,
+         "quote": "The dependent variable is the height."
+        }
+       ],
+       "feedback": "Identify the control group and two controlled variables, and say why a control is needed."
+      },
+      {
+       "tier": "partial",
+       "text": "The control group is the plants without fertilizer. It shows what would have happened anyway. The dependent variable is the amount of fertilizer.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The control group is the plants without fertilizer."
+        },
+        {
+         "point": 3,
+         "quote": "It shows what would have happened anyway."
+        }
+       ],
+       "feedback": "The amount of fertilizer is what the student changes, so it belongs to the independent variable. The height is measured as the dependent variable.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The control group is the plants that get the most fertilizer because they are the ones that are controlled.",
+       "meets": [],
+       "feedback": "A control group gets no treatment. In this experiment it is the plants without fertilizer."
+      },
+      {
+       "tier": "weak",
+       "text": "The dependent variable is the plant height. The control group is not needed because the 10 plants with fertilizer already show the effect.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The dependent variable is the plant height."
+        }
+       ],
+       "feedback": "Without a comparison group you cannot tell whether the growth was caused by the fertilizer."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Isopod choice chamber and chi-square",
+    "instructions": "Set up a two-chambered choice box with a damp side and a dry side. Place 10 isopods in the middle, count how many are on each side after 5 minutes, and repeat for a total of 4 trials with different isopods (40 total observations). Calculate chi-square against the null hypothesis of no preference, and write a CER conclusion.",
+    "steps": [
+     {
+      "text": "Line one half of the chamber floor with damp paper towel and the other half with dry paper towel."
+     },
+     {
+      "text": "Place 10 isopods in the center of the chamber and cover the box with a lid."
+     },
+     {
+      "text": "After 5 minutes, count the isopods on each side, without touching them.",
+      "note": "Handle the isopods gently, and return them to their container after the test."
+     },
+     {
+      "text": "Repeat with three new groups of 10 isopods. Swap the position of the damp side to control for position."
+     },
+     {
+      "text": "Add the counts of all trials and calculate expected values for no preference."
+     },
+     {
+      "text": "Calculate chi-square, compare it with 3.84 and write a conclusion."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Design: control of position, replicated trials, treatment of animals",
+      "maxPoints": 4
+     },
+     {
+      "description": "Analysis: correct expected values, chi-square and decision",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: CER with a limit or source of error",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "We ran four trials of 10 isopods and swapped the position of the damp side between trials. In total, 29 isopods were on the damp side and 11 on the dry side. Under the null hypothesis, we expected 20 on each side. Chi-square = (29 - 20) squared / 20 + (11 - 20) squared / 20 = 4.05 + 4.05 = 8.1, which exceeds the critical value of 3.84 for 1 degree of freedom. We reject the null hypothesis. Claim: pill bugs prefer damp environments, which reduces water loss through their gills. A limit is that isopods may have moved little during the five minutes.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report: controlled design, correct statistics, and a CER conclusion that links the behavior to its biological reason."
+     },
+     {
+      "tier": "full",
+      "text": "Design: choice chamber with damp and dry sides, 4 trials of 10 isopods, with the sides swapped each time. Data: 27 damp and 13 dry. Expected: 20 and 20. Chi-square = 49/20 + 49/20 = 4.9. df = 1, critical value 3.84. Since 4.9 > 3.84, I reject the null hypothesis at p = 0.05. The evidence supports that isopods prefer damp conditions, probably because they breathe with gill-like structures that must stay moist. I did not use a no-isopod control, so I cannot rule out an effect of the box.",
+      "scores": [
+       4,
+       4,
+       3
+      ],
+      "feedback": "Very good. The reasoning is strong; a note on possible effects of the box or of disturbance would complete the evaluation."
+     },
+     {
+      "tier": "partial",
+      "text": "We put 10 isopods in the box four times. In total 27 were on the damp side and 13 were on the dry side. The expected number was 20 for each side. I calculated chi-square as 27 minus 20 which is 7, divided by 20 is 0.35. The result is less than 3.84 so the isopods do not prefer damp or dry sides in this experiment.",
+      "scores": [
+       3,
+       1,
+       1
+      ],
+      "feedback": "Chi-square sums the squared differences for both sides: (7 squared / 20) + (7 squared / 20) = 4.9, which is above 3.84."
+     },
+     {
+      "tier": "partial",
+      "text": "The null hypothesis is that isopods have no preference. We tested 40 isopods and 29 chose the damp side. Chi-square was 8.1 and the critical value is 3.84, so we reject the null hypothesis. I think that isopods like damp places. We did not move the damp side between trials, so it could have been something about the position in the room.",
+      "scores": [
+       2,
+       4,
+       2
+      ],
+      "feedback": "The analysis is correct. Swapping sides is needed to control for position effects. Add the reasoning about why damp conditions help isopods."
+     },
+     {
+      "tier": "weak",
+      "text": "The isopods moved around in the box. Some went to the wet side and some went to the dry side. It was hard to count them because they kept moving. They are cute little animals. I think the experiment worked because we had a chart and filled it in.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Give the counts, calculate expected values and chi-square, and state a conclusion about the null hypothesis."
+     },
+     {
+      "tier": "weak",
+      "text": "The chi-square was 8.1 so it is significant, which proves that all isopods like water. The experiment proves it forever and no more testing is needed. We counted 29 on the damp side but I forgot to record the number on the dry side or the expected numbers.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Statistical significance does not prove a result forever; it supports the claim for this sample. Record all the counts and expected values."
+     }
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,2445 @@
+{
+ "subject": "Spanish I",
+ "yearGroup": "Grade 9",
+ "weeks": {
+  "1": {
+   "topic": "Saludos, presentaciones, la fecha y el tiempo",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. greet people, introduce themselves and say goodbye in Spanish, using formal and informal forms;\n2. ask and answer questions about names, age and where they are from;\n3. exchange information about days, dates and the weather.\n\n## Materials\n\nName cards, a classroom calendar in Spanish, weather picture cards, a short audio dialogue, the quiz.\n\n## Starter (7 minutes)\n\nGreet students at the door in Spanish, using \"Buenos días\" and \"¿Cómo te llamas?\" Have them answer \"Me llamo ___.\" Write the exchange on the board and point out the question marks and exclamation marks at the beginning of sentences.\n\n## Main activity\n\n1. Greetings by time of day (buenos días, buenas tardes, buenas noches) and goodbyes (adiós, hasta luego, hasta mañana). Contrast informal tú (¿Cómo estás?) with formal usted (¿Cómo está usted?) and when to use each: a classmate versus the principal.\n2. Pair work: introduce yourself and ask a partner \"¿Cuántos años tienes?\" and \"¿De dónde eres?\" Model: \"Tengo quince años. Soy de Columbus.\"\n3. Days of the week and dates: \"Hoy es lunes, el diez de octubre.\" Weather phrases with hacer: hace frío, hace calor, hace viento; llueve, nieva.\n4. Record the weather in Columbus each morning on a class chart.\n\n## Checking for understanding\n\nCold-call: \"¿Qué tiempo hace hoy?\" Listen for hace + noun and for correct use of tú and usted.\n\n## Quiz\n\nFive questions on greetings, introductions and weather.",
+   "reading": {
+    "title": "Hola, me llamo Marta",
+    "content": "In Spanish you can greet someone differently depending on the time of day. In the morning you say **buenos días**, in the afternoon **buenas tardes**, and in the evening **buenas noches**. A short, friendly greeting is **hola**. To say goodbye you can say **adiós**, **hasta luego** (see you later) or **hasta mañana** (see you tomorrow).\n\nSpanish also has two ways to say \"you.\" With friends, classmates and family, use the informal **tú**: \"¿Cómo estás?\" (How are you?). With adults you do not know well, teachers or older people, use the formal **usted**: \"¿Cómo está usted?\" Using the right form shows respect, and in many Spanish-speaking countries it is important. Notice that questions begin with an upside-down question mark: ¿Cómo te llamas? Exclamations begin with an upside-down exclamation mark: ¡Mucho gusto!\n\nRead this short dialogue between two students at a Columbus high school.\n\n— Hola, buenos días. ¿Cómo te llamas?\n— Me llamo Marta. ¿Y tú?\n— Me llamo Diego. Mucho gusto.\n— Encantada. ¿Cuántos años tienes, Diego?\n— Tengo quince años. ¿Y tú?\n— Tengo catorce años. Soy de Cleveland. ¿De dónde eres tú?\n— Soy de Columbus, pero mi familia es de México.\n\nTo say your age, Spanish uses the verb **tener** (to have): \"Tengo quince años,\" literally \"I have fifteen years.\" To say where you are from, use **ser de**: \"Soy de Ohio.\"\n\nYou can also talk about the date and the weather. The days of the week are lunes, martes, miércoles, jueves, viernes, sábado and domingo, and they are not capitalized. A date is written with the day first: \"Hoy es lunes, el diez de octubre.\" For the weather, Spanish uses the verb **hacer**: \"Hace frío\" (it is cold), \"Hace calor\" (it is hot), \"Hace viento\" (it is windy), \"Hace sol\" (it is sunny). For rain and snow there are special verbs: \"Llueve\" (it rains) and \"Nieva\" (it snows). In Ohio in November you might say, \"Hoy hace frío y nieva un poco.\""
+   },
+   "cards": [
+    {
+     "front": "buenos días",
+     "back": "good morning"
+    },
+    {
+     "front": "buenas tardes",
+     "back": "good afternoon"
+    },
+    {
+     "front": "¿Cómo te llamas?",
+     "back": "What is your name? (informal)"
+    },
+    {
+     "front": "Me llamo + name",
+     "back": "My name is + name"
+    },
+    {
+     "front": "¿Cuántos años tienes?",
+     "back": "How old are you?"
+    },
+    {
+     "front": "¿De dónde eres?",
+     "back": "Where are you from?"
+    },
+    {
+     "front": "Hace frío.",
+     "back": "It is cold."
+    },
+    {
+     "front": "hasta mañana",
+     "back": "see you tomorrow"
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which greeting would you use at 4:00 in the afternoon?",
+     "options": [
+      "Buenos días",
+      "Buenas tardes",
+      "Buenas noches",
+      "Hasta luego"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "You meet the school principal. Which question is correct and polite?",
+     "options": [
+      "¿Cómo estás?",
+      "¿Cómo te llamas?",
+      "¿Cómo está usted?",
+      "¿Qué tal, amigo?"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "How do you say \"I am fifteen years old\"?",
+     "options": [
+      "Soy quince años",
+      "Tengo quince años",
+      "Estoy quince años",
+      "Hago quince años"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which sentence means \"It is windy\"?",
+     "options": [
+      "Llueve",
+      "Hace calor",
+      "Hace viento",
+      "Nieva"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the date: \"Hoy es martes, el doce de noviembre.\"?",
+     "options": [
+      "Today is Monday, December 11",
+      "Today is Tuesday, November 12",
+      "Today is Tuesday, December 11",
+      "Today is Thursday, November 12"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write a short dialogue in Spanish between you and a new classmate. Greet each other, say your names, say how old you are and where you are from. Use at least one question.",
+     "markScheme": [
+      "Uses a correct greeting (hola or buenos días / buenas tardes)",
+      "Says their name with me llamo",
+      "States their age with tengo ... años",
+      "States where they are from with soy de plus a place"
+     ],
+     "modelAnswer": "— Hola, buenos días. ¿Cómo te llamas? — Me llamo Ana. ¿Y tú? — Me llamo Luis. Tengo quince años. ¿Cuántos años tienes? — Tengo catorce años. Soy de Columbus. ¿De dónde eres tú? — Soy de Dayton.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "— Hola, buenos días. ¿Cómo te llamas? — Me llamo Sarah. ¿Y tú? — Me llamo Jake. Tengo quince años. ¿De dónde eres? — Soy de Columbus.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hola, buenos días."
+        },
+        {
+         "point": 1,
+         "quote": "Me llamo Sarah."
+        },
+        {
+         "point": 2,
+         "quote": "Tengo quince años."
+        },
+        {
+         "point": 3,
+         "quote": "Soy de Columbus."
+        }
+       ],
+       "feedback": "Muy bien. All four parts are there and your question marks are in the right place."
+      },
+      {
+       "tier": "full",
+       "text": "— Buenas tardes. ¿Cómo te llamas? — Me llamo Jasmine. ¿Y tú? — Me llamo Omar. ¿Cuántos años tienes? — Tengo catorce años. Y tú, ¿de dónde eres? — Soy de Cleveland.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Buenas tardes."
+        },
+        {
+         "point": 1,
+         "quote": "Me llamo Jasmine."
+        },
+        {
+         "point": 2,
+         "quote": "Tengo catorce años."
+        },
+        {
+         "point": 3,
+         "quote": "Soy de Cleveland."
+        }
+       ],
+       "feedback": "Excelente. You asked three different questions and answered all of them with correct verbs."
+      },
+      {
+       "tier": "partial",
+       "text": "— Hola. ¿Como te llamas? — Me llamo Tyler. ¿Y tu? — Me llamo Ben. Yo soy quince años.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hola."
+        },
+        {
+         "point": 1,
+         "quote": "Me llamo Tyler."
+        }
+       ],
+       "feedback": "Good start. For age use tengo, not soy: tengo quince años. Add accents: cómo and tú."
+      },
+      {
+       "tier": "partial",
+       "text": "— Buenos días. — Tengo quince años y yo soy de Ohio. ¿Y tu?",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Buenos días."
+        },
+        {
+         "point": 2,
+         "quote": "Tengo quince años"
+        },
+        {
+         "point": 3,
+         "quote": "soy de Ohio"
+        }
+       ],
+       "feedback": "You gave your age and home. Add your name with me llamo and ask a complete question.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "— Hello. My name is Emma. I am fifteen. I am from Dayton.",
+       "meets": [],
+       "feedback": "That is all English. Try again in Spanish: hola, me llamo Emma, tengo quince años, soy de Dayton."
+      },
+      {
+       "tier": "weak",
+       "text": "— Hola. Yo llamo Mia y yo tienes quince años y de Columbus.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hola."
+        }
+       ],
+       "feedback": "Hola is correct. Use me llamo for your name, tengo for I have, and soy de for where you are from."
+      }
+     ]
+    },
+    {
+     "prompt": "Look at the weather in Columbus today. Write three sentences in Spanish: say what day and date it is, what the weather is like, and whether you like the weather. Use hace, llueve or nieva.",
+     "markScheme": [
+      "Gives the day and the date, such as hoy es lunes, el diez de octubre",
+      "Describes the weather with hace, llueve or nieva",
+      "Expresses an opinion about the weather, such as me gusta or no me gusta",
+      "Writes complete sentences with mostly correct spelling and accents"
+     ],
+     "modelAnswer": "Hoy es jueves, el catorce de noviembre. Hace frío y hace viento en Columbus. No me gusta el frío, pero me gusta la nieve.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Hoy es lunes, el cuatro de noviembre. Hace frío y llueve. No me gusta la lluvia. Prefiero el sol en el verano.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hoy es lunes, el cuatro de noviembre."
+        },
+        {
+         "point": 1,
+         "quote": "Hace frío y llueve."
+        },
+        {
+         "point": 2,
+         "quote": "No me gusta la lluvia."
+        },
+        {
+         "point": 3,
+         "quote": "Prefiero el sol en el verano."
+        }
+       ],
+       "feedback": "Muy bien. Your sentences are complete, and the accents on the words are right."
+      },
+      {
+       "tier": "full",
+       "text": "Hoy es viernes, el ocho de diciembre. Hace mucho frío y nieva. Me gusta la nieve porque es divertida. Mis amigos y yo jugamos afuera.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hoy es viernes, el ocho de diciembre."
+        },
+        {
+         "point": 1,
+         "quote": "Hace mucho frío y nieva."
+        },
+        {
+         "point": 2,
+         "quote": "Me gusta la nieve porque es divertida."
+        },
+        {
+         "point": 3,
+         "quote": "Mis amigos y yo jugamos afuera."
+        }
+       ],
+       "feedback": "Excelente. You went beyond the task by giving a reason with porque."
+      },
+      {
+       "tier": "partial",
+       "text": "Hoy es martes, el cinco de marzo. Hace sol. Yo gusto el sol.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hoy es martes, el cinco de marzo."
+        },
+        {
+         "point": 1,
+         "quote": "Hace sol."
+        }
+       ],
+       "feedback": "Good first two sentences. To say you like something use me gusta: me gusta el sol."
+      },
+      {
+       "tier": "partial",
+       "text": "Hace calor y hace sol. Me gusta el calor. Hoy es lunes, octubre.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Hace calor y hace sol."
+        },
+        {
+         "point": 2,
+         "quote": "Me gusta el calor."
+        }
+       ],
+       "feedback": "Your weather and opinion are correct. A date needs the number too: el diez de octubre.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Today is Monday. It is cold and snowy. I like the snow.",
+       "meets": [],
+       "feedback": "Please write in Spanish. Use hoy es lunes, hace frío, nieva and me gusta la nieve."
+      },
+      {
+       "tier": "weak",
+       "text": "Hoy lunes. Es frío. Yo gusto snow.",
+       "meets": [],
+       "feedback": "Say hoy es lunes. For weather use hace frío, not es frío. Replace snow with la nieve."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Describir a personas, la clase y las cosas que tengo",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe people using ser and common adjectives that agree in gender and number;\n2. talk about classes, school supplies and what they need, using tener and hay.\n\n## Materials\n\nPhotos of famous people, picture cards of school supplies, a classroom with labeled objects, the worksheet, quiz and problem set.\n\n## Starter (6 minutes)\n\nHold up photos of a famous athlete and a singer. Ask in Spanish: \"¿Cómo es?\" Elicit adjectives and write them on the board: alto, simpático, inteligente, joven. Ask why some end in -o and others in -e.\n\n## Main activity\n\n1. Present ser: soy, eres, es, somos, son. Describe people: Mi amiga es alta y simpática. Mi hermano es alto y simpático. Discuss agreement: adjectives ending in -o change to -a for feminine and add -s for plural (altos, altas), and those ending in -e (inteligente) only add -s.\n2. Classes and supplies: la clase de matemáticas, de inglés, de ciencias, de arte; el lápiz, el cuaderno, la mochila, la calculadora. Articles: el, la, los, las, and un, una.\n3. Tener and hay: tengo un cuaderno, tienes una mochila, tiene tres clases; hay veinte estudiantes en la clase.\n4. Pair activity: \"Necesito un lápiz. ¿Tienes un lápiz?\"\n\n## Checking for understanding\n\nWhiteboard: write one sentence that describes your best friend with ser and two adjectives.\n\n## Worksheet, quiz and problem set\n\nAgreement, tener and hay.",
+   "reading": {
+    "title": "Mi amiga Lucía y mi clase",
+    "content": "In Spanish, adjectives describe people and things, and they have to **agree** with the noun they describe. Most adjectives that end in **-o** have four forms: alto, alta, altos, altas. An adjective that ends in **-e** or in most consonants has the same form for masculine and feminine: inteligente, joven, fácil. Plural forms add -s or -es: inteligentes, jóvenes, fáciles. Adjectives usually go after the noun in Spanish: \"una chica simpática,\" not \"a simpatic girl.\"\n\nTo describe what someone is like we use the verb **ser**: yo **soy**, tú **eres**, él/ella **es**, nosotros **somos**, ellos/ellas **son**. Read this paragraph about a Columbus student.\n\n\"Mi amiga se llama Lucía. Ella es alta, delgada y muy simpática. Mi amigo Pablo es bajo y trabajador. Lucía y Pablo son estudiantes inteligentes. Yo soy un poco tímido, pero mis amigos son muy divertidos.\"\n\nNow look at the classroom. The words for school things have a gender: **el** lápiz, **el** cuaderno, **el** libro, **la** mochila, **la** calculadora, **la** silla, **la** tarea. For more than one, use **los** or **las**: los libros, las mochilas. The words for school subjects often start with \"clase de\": la clase de matemáticas, la clase de inglés, la clase de ciencias, la clase de arte, la clase de historia, la clase de educación física.\n\nTwo verbs help us talk about what we have. **Tener** means \"to have\": yo **tengo**, tú **tienes**, él/ella **tiene**, nosotros **tenemos**, ellos **tienen**. \"Tengo seis clases. Mi amigo tiene una calculadora.\" The word **hay** means both \"there is\" and \"there are,\" and it never changes: \"Hay veinticinco estudiantes en la clase.\" \"Hay un cuaderno en la mesa.\" \"No hay lápices.\"\n\nTo say what you need, use **necesitar**: \"Necesito un bolígrafo y un cuaderno.\" To ask a classmate, say: \"¿Tienes un lápiz?\" Notice how often we use tener with school things, with a masculine or feminine article that matches the noun."
+   },
+   "cards": [
+    {
+     "front": "alto / alta",
+     "back": "tall (masculine / feminine)"
+    },
+    {
+     "front": "simpático / simpática",
+     "back": "nice, friendly"
+    },
+    {
+     "front": "inteligente",
+     "back": "intelligent (masculine and feminine)"
+    },
+    {
+     "front": "la mochila",
+     "back": "the backpack"
+    },
+    {
+     "front": "el cuaderno",
+     "back": "the notebook"
+    },
+    {
+     "front": "tengo / tienes / tiene",
+     "back": "I have / you have / he or she has"
+    },
+    {
+     "front": "hay",
+     "back": "there is, there are"
+    },
+    {
+     "front": "necesito",
+     "back": "I need"
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which sentence is correct?",
+     "options": [
+      "Mi amiga es alto.",
+      "Mi amiga es alta.",
+      "Mi amiga son alta.",
+      "Mi amiga está alto."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the plural of \"la mochila azul\"?",
+     "options": [
+      "los mochilas azules",
+      "las mochilas azules",
+      "las mochilas azul",
+      "la mochilas azules"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which verb form completes: \"Nosotros ___ una clase de arte.\"?",
+     "options": [
+      "tengo",
+      "tiene",
+      "tenemos",
+      "tienes"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "\"Hay veinte estudiantes en la clase\" means:",
+     "options": [
+      "I have twenty students in the class",
+      "There are twenty students in the class",
+      "The students are twenty",
+      "Twenty students need the class"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which adjective has the same form for masculine and feminine?",
+     "options": [
+      "simpático",
+      "trabajador",
+      "inteligente",
+      "delgado"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe your best friend in Spanish in three sentences. Use ser with at least two adjectives, and make the adjectives agree. Say one thing your friend has in their backpack, using tener.",
+     "markScheme": [
+      "Uses the correct form of ser (es / son)",
+      "Uses at least two adjectives",
+      "Makes the adjectives agree in gender and number with the person described",
+      "Uses a correct form of tener with a school object"
+     ],
+     "modelAnswer": "Mi mejor amiga se llama Emily. Ella es alta, simpática y muy inteligente. Tiene una calculadora y dos cuadernos en su mochila.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Mi mejor amigo se llama Marcus. Él es alto y trabajador. Los dos adjetivos terminan en -o porque Marcus es masculino. Marcus tiene una calculadora en su mochila.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "es"
+        },
+        {
+         "point": 1,
+         "quote": "alto y trabajador"
+        },
+        {
+         "point": 2,
+         "quote": "Los dos adjetivos terminan en -o"
+        },
+        {
+         "point": 3,
+         "quote": "tiene una calculadora en su mochila"
+        }
+       ],
+       "feedback": "Muy bien. Your adjectives agree with Marcus, and tiene is the correct form for él."
+      },
+      {
+       "tier": "full",
+       "text": "Mi amiga Gabriela es simpática, inteligente y divertida. Ella es baja y delgada también. Gabriela tiene tres cuadernos y un bolígrafo en la mochila.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "es"
+        },
+        {
+         "point": 1,
+         "quote": "simpática, inteligente y divertida"
+        },
+        {
+         "point": 2,
+         "quote": "Ella es baja y delgada también."
+        },
+        {
+         "point": 3,
+         "quote": "tiene tres cuadernos y un bolígrafo"
+        }
+       ],
+       "feedback": "Excelente. Notice you used simpática with a for Gabriela, and inteligente with no change."
+      },
+      {
+       "tier": "partial",
+       "text": "Mi amiga se llama Hannah. Ella es alto y simpático. Ella tiene un libro en la mochila.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "es"
+        },
+        {
+         "point": 1,
+         "quote": "alto y simpático"
+        },
+        {
+         "point": 3,
+         "quote": "tiene un libro"
+        }
+       ],
+       "feedback": "Hannah is a girl, so the adjectives need to be feminine: alta y simpática."
+      },
+      {
+       "tier": "partial",
+       "text": "Mi amigo Carlos es inteligente y trabajador. Carlos tengo un lápiz y dos cuadernos.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "es inteligente y trabajador"
+        }
+       ],
+       "feedback": "Your description is good. With Carlos use tiene, not tengo: Carlos tiene un lápiz.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "My friend is tall and nice. She has a backpack with a book.",
+       "meets": [],
+       "feedback": "Please write this in Spanish. Try: mi amiga es alta y simpática. Ella tiene un libro."
+      },
+      {
+       "tier": "weak",
+       "text": "Mi amiga es simpático. Ella son muy alto. Yo tiene una mochila.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "es"
+        }
+       ],
+       "feedback": "You used es once, which is correct. Use es for one person (ella es), and feminine endings: simpática, alta."
+      }
+     ]
+    },
+    {
+     "prompt": "You are in Spanish class and you forgot some supplies. Write three sentences in Spanish telling what you need and asking a classmate if they have it. Then say how many students there are in your Spanish class, using hay.",
+     "markScheme": [
+      "Says what they need using necesito",
+      "Names a school supply with a correct article",
+      "Asks a classmate a question with tienes",
+      "States how many students there are using hay"
+     ],
+     "modelAnswer": "Necesito un lápiz y un cuaderno. ¿Tienes un lápiz? En mi clase de español hay veintidós estudiantes.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Necesito un cuaderno y una calculadora. ¿Tienes un cuaderno, por favor? En mi clase de español hay veinticuatro estudiantes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Necesito"
+        },
+        {
+         "point": 1,
+         "quote": "un cuaderno y una calculadora"
+        },
+        {
+         "point": 2,
+         "quote": "¿Tienes un cuaderno, por favor?"
+        },
+        {
+         "point": 3,
+         "quote": "hay veinticuatro estudiantes"
+        }
+       ],
+       "feedback": "Muy bien. Your articles match: un cuaderno, una calculadora."
+      },
+      {
+       "tier": "full",
+       "text": "Hola, necesito un bolígrafo y un lápiz. Ana, ¿tienes un bolígrafo? Hay veintiséis estudiantes en la clase.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "necesito"
+        },
+        {
+         "point": 1,
+         "quote": "un bolígrafo y un lápiz"
+        },
+        {
+         "point": 2,
+         "quote": "¿tienes un bolígrafo?"
+        },
+        {
+         "point": 3,
+         "quote": "Hay veintiséis estudiantes en la clase."
+        }
+       ],
+       "feedback": "Excelente. You used the person's name when asking, which is very natural."
+      },
+      {
+       "tier": "partial",
+       "text": "Necesito una lápiz. ¿Tienes un lápiz? En mi clase hay un estudiantes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Necesito"
+        },
+        {
+         "point": 1,
+         "quote": "una lápiz"
+        },
+        {
+         "point": 2,
+         "quote": "¿Tienes un lápiz?"
+        }
+       ],
+       "feedback": "Lápiz is masculine, so say un lápiz. For the class, use a number: hay veinte estudiantes."
+      },
+      {
+       "tier": "partial",
+       "text": "Yo necesito una mochila. Hay veinte estudiantes en mi clase. Tengo un pregunta.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "una mochila"
+        },
+        {
+         "point": 3,
+         "quote": "Hay veinte estudiantes en mi clase."
+        }
+       ],
+       "feedback": "Your need and your hay sentence are good. Remember to ask the classmate directly: ¿tienes una mochila?",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I need a pencil. Do you have a pencil? There are twenty students.",
+       "meets": [],
+       "feedback": "Try this in Spanish: necesito un lápiz, ¿tienes un lápiz? Hay veinte estudiantes."
+      },
+      {
+       "tier": "weak",
+       "text": "Yo necesito pencil. Tú tengo lápiz? Hay veinte estudiante en class.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "necesito"
+        }
+       ],
+       "feedback": "Necesito is right. Use tienes for you, un lápiz, and write estudiantes and clase."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Me gusta, no me gusta, y la hora",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. say what they like and do not like with gustar, and ask a classmate the same;\n2. tell time and say when classes begin and end.\n\n## Materials\n\nA paper clock for each pair, picture cards of activities, a class schedule template, the quiz, problem set and worksheet.\n\n## Starter (6 minutes)\n\nHold up pictures: a pizza, a basketball, homework. Ask in Spanish: \"¿Te gusta la pizza?\" Students answer \"Sí, me gusta\" or \"No, no me gusta.\" Draw a thumbs up and down.\n\n## Main activity\n\n1. Gustar: me gusta + singular noun or infinitive (me gusta la música; me gusta bailar), me gustan + plural noun (me gustan los deportes). Add a mí me gusta, a ti te gusta, a él le gusta. Practice negative: no me gusta.\n2. Interview: students ask three classmates \"¿Te gusta el básquetbol? ¿Te gustan las matemáticas?\" and record answers.\n3. Time: ¿Qué hora es? Es la una. Son las dos. Son las tres y media, y cuarto, menos cuarto. A las ocho de la mañana, de la tarde, de la noche. ¿A qué hora es la clase de arte?\n4. Make a short schedule of four classes with times.\n\n## Checking for understanding\n\nShow the paper clock: 8:15, 9:30, 12:45. Students say the time in Spanish.\n\n## Quiz, problem set and worksheet\n\nGustar practice and time.",
+   "reading": {
+    "title": "¿Qué te gusta? ¿Qué hora es?",
+    "content": "To say you like something in Spanish, use the verb **gustar**, but it works differently from \"to like\" in English. Literally, \"me gusta\" means \"it is pleasing to me.\" Because of this, the verb agrees with the thing you like, not with the person. If the thing is singular, or an activity, use **gusta**: \"Me gusta la música. Me gusta bailar.\" If the thing is plural, use **gustan**: \"Me gustan los deportes. Me gustan las matemáticas.\" The word before gusta changes with the person: **me** (I), **te** (you), **le** (he, she, you formal), **nos** (we), **les** (they). To make a sentence negative, put **no** before: \"No me gusta la tarea.\" For emphasis, add **a mí**, **a ti**, **a él**: \"A mí me gusta el fútbol, pero a ti no te gusta.\"\n\nTo ask a classmate, say: \"¿Te gusta el básquetbol?\" or \"¿Te gustan los videojuegos?\" The answer can be \"Sí, me gusta\" or \"No, no me gusta.\"\n\nLook at a sample interview.\n\n— ¿Te gusta la clase de ciencias?\n— Sí, me gusta mucho. Me gustan los experimentos. ¿Y a ti?\n— A mí no me gusta la ciencia, pero me gusta el arte.\n\nTo tell time, use **es** for one o'clock and **son** for the other hours. \"¿Qué hora es?\" \"Es la una.\" \"Son las dos.\" For minutes, add **y** (past) or **menos** (to): \"Son las tres y diez.\" \"Son las cuatro y cuarto\" (4:15). \"Son las cinco y media\" (5:30). \"Son las seis menos cuarto\" (5:45). To say when something happens, use **a la** or **a las**: \"La clase de español es a las nueve y media.\" To say AM or PM, add **de la mañana**, **de la tarde** or **de la noche**: \"Mi primera clase empieza a las ocho de la mañana y la última termina a las tres de la tarde.\"\n\nIn an American high school, many students start at around 7:30 or 8:00 and end in the early afternoon. Here is a short schedule: \"Tengo la clase de inglés a las ocho, la clase de matemáticas a las nueve, el almuerzo a las doce y la clase de arte a la una.\""
+   },
+   "cards": [
+    {
+     "front": "me gusta",
+     "back": "I like it (singular)"
+    },
+    {
+     "front": "me gustan",
+     "back": "I like them (plural)"
+    },
+    {
+     "front": "no me gusta",
+     "back": "I do not like it"
+    },
+    {
+     "front": "¿Qué hora es?",
+     "back": "What time is it?"
+    },
+    {
+     "front": "Es la una.",
+     "back": "It is one o'clock."
+    },
+    {
+     "front": "Son las dos y media.",
+     "back": "It is two thirty."
+    },
+    {
+     "front": "a las ocho de la mañana",
+     "back": "at eight in the morning"
+    },
+    {
+     "front": "menos cuarto",
+     "back": "a quarter to"
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which Spanish sentence correctly says \"I like sports\"?",
+     "options": [
+      "Me gusta los deportes.",
+      "Me gustan los deportes.",
+      "Me gustas los deportes.",
+      "Yo gusto los deportes."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What time is it: \"Son las cinco y media\"?",
+     "options": [
+      "5:15",
+      "5:30",
+      "5:45",
+      "4:30"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How do you say \"I do not like homework\"?",
+     "options": [
+      "No me gusta la tarea",
+      "Me no gusta la tarea",
+      "No gusto la tarea",
+      "No me gustan la tarea"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "\"A las ocho de la mañana\" means:",
+     "options": [
+      "At eight in the evening",
+      "At eight in the morning",
+      "At eight thirty",
+      "Eight o'clock tomorrow"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How would you ask a classmate if they like soccer?",
+     "options": [
+      "¿Me gusta el fútbol?",
+      "¿Te gusta el fútbol?",
+      "¿Le gustan el fútbol?",
+      "¿Tienes gusta el fútbol?"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write four sentences in Spanish about what you like and do not like. Include one activity with me gusta + infinitive, one plural noun with me gustan, and one negative sentence with no me gusta.",
+     "markScheme": [
+      "Uses me gusta with an infinitive or singular noun correctly",
+      "Uses me gustan with a plural noun correctly",
+      "Uses a negative sentence with no me gusta (or no me gustan)",
+      "Writes complete sentences with correct articles or spelling"
+     ],
+     "modelAnswer": "Me gusta bailar. Me gustan los deportes. No me gusta la tarea de matemáticas. También me gusta la música.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Me gusta jugar al básquetbol. Me gustan los videojuegos. No me gusta la tarea. También me gusta la pizza de pepperoni.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Me gusta jugar al básquetbol."
+        },
+        {
+         "point": 1,
+         "quote": "Me gustan los videojuegos."
+        },
+        {
+         "point": 2,
+         "quote": "No me gusta la tarea."
+        },
+        {
+         "point": 3,
+         "quote": "También me gusta la pizza de pepperoni."
+        }
+       ],
+       "feedback": "Muy bien. Each verb form matches what you like, and your articles are correct."
+      },
+      {
+       "tier": "full",
+       "text": "Me gusta bailar con mis amigos. Me gustan las clases de arte y de ciencias. No me gustan los lunes. A mi hermano le gusta el fútbol.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Me gusta bailar con mis amigos."
+        },
+        {
+         "point": 1,
+         "quote": "Me gustan las clases de arte y de ciencias."
+        },
+        {
+         "point": 2,
+         "quote": "No me gustan los lunes."
+        },
+        {
+         "point": 3,
+         "quote": "A mi hermano le gusta el fútbol."
+        }
+       ],
+       "feedback": "Excelente. You used le gusta correctly for your brother, which we practiced."
+      },
+      {
+       "tier": "partial",
+       "text": "Me gusta la música. Me gusta los deportes. No me gusta la tarea.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Me gusta la música."
+        },
+        {
+         "point": 1,
+         "quote": "Me gusta los deportes."
+        },
+        {
+         "point": 2,
+         "quote": "No me gusta la tarea."
+        }
+       ],
+       "feedback": "Deportes is plural, so use me gustan los deportes. Your other two sentences are right."
+      },
+      {
+       "tier": "partial",
+       "text": "Me gusta cantar. Yo gusto los gatos. No me gusta el invierno.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Me gusta cantar."
+        },
+        {
+         "point": 2,
+         "quote": "No me gusta el invierno."
+        }
+       ],
+       "feedback": "Nice use of the infinitive. For plural things use me gustan los gatos, not yo gusto.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I like to dance. I like sports. I do not like homework. I like pizza.",
+       "meets": [],
+       "feedback": "Please use Spanish: me gusta bailar, me gustan los deportes, no me gusta la tarea."
+      },
+      {
+       "tier": "weak",
+       "text": "Yo gusto bailar. Yo gusto los deportes. No yo gusto la tarea. Pizza yo gusto.",
+       "meets": [],
+       "feedback": "Gustar needs me: me gusta bailar. Put no before me: no me gusta la tarea."
+      }
+     ]
+    },
+    {
+     "prompt": "Write your class schedule in Spanish for three classes. For each class say the name and the time it begins, using a la / a las. Include de la mañana or de la tarde at least once.",
+     "markScheme": [
+      "Names three classes with la clase de plus a subject",
+      "States a time with son / es or a la / a las correctly",
+      "Uses de la mañana or de la tarde appropriately",
+      "Gives times in a logical order with correct number words"
+     ],
+     "modelAnswer": "La clase de inglés es a las ocho de la mañana. La clase de ciencias es a las diez y media. La clase de arte es a la una de la tarde.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "La clase de inglés, la clase de matemáticas y la clase de español. La clase de inglés es a las ocho y cuarto. La de matemáticas es a las nueve y media de la mañana. La clase de español es a las once y diez.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La clase de inglés, la clase de matemáticas y la clase de español."
+        },
+        {
+         "point": 1,
+         "quote": "a las ocho y cuarto"
+        },
+        {
+         "point": 2,
+         "quote": "de la mañana"
+        },
+        {
+         "point": 3,
+         "quote": "La clase de español es a las once y diez."
+        }
+       ],
+       "feedback": "Muy bien. The times go in order, and the number words are spelled correctly."
+      },
+      {
+       "tier": "full",
+       "text": "Mi primera clase de arte es a las ocho de la mañana. Mi clase de historia es a las diez menos cuarto. Mi clase de ciencias es a la una de la tarde.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "clase de arte"
+        },
+        {
+         "point": 1,
+         "quote": "a las ocho"
+        },
+        {
+         "point": 2,
+         "quote": "de la mañana"
+        },
+        {
+         "point": 3,
+         "quote": "Mi clase de ciencias es a la una de la tarde."
+        }
+       ],
+       "feedback": "Excelente. Note that for one o'clock you correctly used a la una."
+      },
+      {
+       "tier": "partial",
+       "text": "La clase de inglés es a las ocho. La clase de arte es a las dos de la tarde. La clase de ciencias es a la once.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La clase de inglés"
+        },
+        {
+         "point": 1,
+         "quote": "a las ocho"
+        }
+       ],
+       "feedback": "For eleven use a las once. Only one o'clock uses a la una."
+      },
+      {
+       "tier": "partial",
+       "text": "Mi clase de matemáticas es a las nueve de la mañana. Mi clase de inglés es a las diez. Mi clase de arte es a las tres de la noche.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "de la mañana"
+        },
+        {
+         "point": 1,
+         "quote": "Mi clase de inglés es a las diez."
+        }
+       ],
+       "feedback": "Three PM is de la tarde, not de la noche. You also need three class names with la clase de.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "English class is at eight. Math is at nine. Art is at one.",
+       "meets": [],
+       "feedback": "Write in Spanish: la clase de inglés es a las ocho. La clase de arte es a la una."
+      },
+      {
+       "tier": "weak",
+       "text": "Clase inglés ocho. Clase de arte uno. Matemáticas nueve y media en mañana.",
+       "meets": [],
+       "feedback": "Use full sentences: la clase de inglés es a las ocho. Say de la mañana, not en mañana."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Verbos en -ar y la pronunciación",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use regular -ar verbs in the present tense to say what people do;\n2. recognize the sounds of the Spanish alphabet and read simple words aloud with correct pronunciation.\n\n## Materials\n\nAudio of the Spanish alphabet, a verb conjugation chart, picture cards of activities, a class poster of the vowels, the problem set and worksheet.\n\n## Starter (6 minutes)\n\nChant the five vowels, with the sounds of a (ah), e (eh), i (ee), o (oh), u (oo). Ask students to read aloud the words casa, mesa, libro, dos, uno. Compare with English: Spanish vowels stay the same.\n\n## Main activity\n\n1. Present regular -ar verbs: hablar, estudiar, caminar, bailar, cantar, trabajar, escuchar, tomar. Remove -ar and add endings: -o, -as, -a, -amos, -an. Examples: yo hablo español, tú estudias mucho, ella baila bien, nosotros caminamos a la escuela, ellos trabajan en un restaurante.\n2. Pronunciation: the alphabet (a, be, ce, de...), silent h, the sounds of ll, ñ and rr, j and g before e or i, qu and que. Stress and written accents.\n3. Pair activity: each partner says three things they do on a school day and the other writes what they heard.\n\n## Checking for understanding\n\nWhiteboards: conjugate \"estudiar\" for yo, tú, ella, nosotros. Spell your name aloud in Spanish.\n\n## Problem set and worksheet\n\nConjugation and a pronunciation exercise.",
+   "reading": {
+    "title": "Lo que hacemos todos los días",
+    "content": "Most Spanish verbs end in **-ar**, **-er** or **-ir** in their basic form, called the infinitive. This week we will learn the regular **-ar** verbs. To use one in the present tense, drop the **-ar** and add an ending that shows who is doing the action. For **hablar** (to speak) the forms are:\n\n- yo **hablo**\n- tú **hablas**\n- él / ella / usted **habla**\n- nosotros **hablamos**\n- ellos / ellas / ustedes **hablan**\n\nOther common regular -ar verbs are **estudiar** (to study), **caminar** (to walk), **bailar** (to dance), **cantar** (to sing), **trabajar** (to work), **escuchar** (to listen to), **tomar** (to take, drink) and **necesitar** (to need). They all follow the same pattern. Because the ending already tells you the subject, Spanish speakers often leave out the pronoun: \"Estudio mucho\" is enough for \"I study a lot.\" There is no separate form for \"I am studying,\" so \"estudio\" can mean \"I study\" or \"I am studying.\"\n\nHere are some examples. \"Yo hablo inglés y un poco de español.\" \"Tú estudias con tus amigos.\" \"Mi hermana canta en el coro de la escuela.\" \"Nosotros caminamos a la escuela por la mañana.\" \"Mis padres trabajan en un hospital.\" To make a sentence negative, put **no** before the verb: \"No hablo francés.\"\n\nPronunciation is easier in Spanish than in English because each letter has a consistent sound. The five vowels are always pronounced the same way: **a** like \"ah,\" **e** like \"eh,\" **i** like \"ee,\" **o** like \"oh\" and **u** like \"oo.\" The letter **h** is silent: hola sounds like \"ola.\" The double **ll** sounds like \"y\" in most places: llamo. The letter **ñ** sounds like \"ny\" in \"canyon\": español. The **rr** is rolled. The **j** and the **g** before e or i are like an English \"h\" but stronger: jugar, gente. The **qu** is just a \"k\": ¿qué? Words with a written accent are stressed on that syllable: música, teléfono, canción. The Spanish alphabet has the same letters as English, with the addition of **ñ**, and each letter has a name: a, be, ce, de, e, efe, ge, hache, i, jota, ka, ele, eme, ene, eñe, o, pe, cu, erre, ese, te, u, uve, doble ve, equis, ye, zeta."
+   },
+   "cards": [
+    {
+     "front": "hablar",
+     "back": "to speak, to talk"
+    },
+    {
+     "front": "yo hablo",
+     "back": "I speak"
+    },
+    {
+     "front": "tú estudias",
+     "back": "you study"
+    },
+    {
+     "front": "nosotros caminamos",
+     "back": "we walk"
+    },
+    {
+     "front": "ellos trabajan",
+     "back": "they work"
+    },
+    {
+     "front": "escuchar",
+     "back": "to listen to"
+    },
+    {
+     "front": "la h",
+     "back": "silent letter h"
+    },
+    {
+     "front": "la ñ",
+     "back": "the letter ñ, sounds like \"ny\""
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How do you say \"we dance\"?",
+     "options": [
+      "bailo",
+      "bailas",
+      "bailamos",
+      "bailan"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which ending goes with \"tú\" in a regular -ar verb?",
+     "options": [
+      "-o",
+      "-as",
+      "-a",
+      "-an"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How is the letter \"h\" pronounced in \"hola\"?",
+     "options": [
+      "Like English h",
+      "Like English k",
+      "It is silent",
+      "Like English j"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which sentence correctly says \"She speaks Spanish\"?",
+     "options": [
+      "Ella hablo español.",
+      "Ella habla español.",
+      "Ella hablas español.",
+      "Ella hablan español."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How do you pronounce the vowel \"e\" in Spanish?",
+     "options": [
+      "Like \"ee\"",
+      "Like \"eh\"",
+      "Like \"ay\" in day",
+      "Like \"uh\""
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write four sentences in Spanish telling what you and your friends do on a school day. Use four different regular -ar verbs. Use yo, tú or ella, nosotros and ellos at least once each.",
+     "markScheme": [
+      "Uses a correct yo form (-o)",
+      "Uses a correct tú or ella form (-as or -a)",
+      "Uses a correct nosotros form (-amos)",
+      "Uses a correct ellos form (-an) and four different verbs"
+     ],
+     "modelAnswer": "Yo estudio en la biblioteca. Mi amiga canta en el coro. Nosotros caminamos a la escuela. Mis amigos trabajan en un restaurante.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Yo estudio con mis amigos. Mi amiga baila muy bien. Nosotros caminamos a la escuela. Mis padres trabajan en un hospital.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Yo estudio con mis amigos."
+        },
+        {
+         "point": 1,
+         "quote": "Mi amiga baila muy bien."
+        },
+        {
+         "point": 2,
+         "quote": "Nosotros caminamos a la escuela."
+        },
+        {
+         "point": 3,
+         "quote": "Mis padres trabajan en un hospital."
+        }
+       ],
+       "feedback": "Muy bien. Each verb ending matches its subject, and you used four different verbs."
+      },
+      {
+       "tier": "full",
+       "text": "Por la mañana yo escucho música. Tú hablas mucho en la clase. Nosotros bailamos en la cafetería. Ellos cantan en el coro.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Por la mañana yo escucho música."
+        },
+        {
+         "point": 1,
+         "quote": "Tú hablas mucho en la clase."
+        },
+        {
+         "point": 2,
+         "quote": "Nosotros bailamos en la cafetería."
+        },
+        {
+         "point": 3,
+         "quote": "Ellos cantan en el coro."
+        }
+       ],
+       "feedback": "Excelente. Good use of por la mañana to give context to the sentences."
+      },
+      {
+       "tier": "partial",
+       "text": "Yo estudio mucho. Mi amiga cantas bien. Nosotros caminamos a clase. Ellos trabajamos en un restaurante.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Yo estudio mucho."
+        },
+        {
+         "point": 1,
+         "quote": "Mi amiga cantas bien."
+        },
+        {
+         "point": 2,
+         "quote": "Nosotros caminamos a clase."
+        }
+       ],
+       "feedback": "Match the ending to the subject: mi amiga canta, and ellos trabajan."
+      },
+      {
+       "tier": "partial",
+       "text": "Nosotros hablamos español. Mis amigos escuchan música. Yo estudias y ella bailo.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Nosotros hablamos español."
+        },
+        {
+         "point": 3,
+         "quote": "Mis amigos escuchan música."
+        }
+       ],
+       "feedback": "Check the yo and ella forms: yo estudio, ella baila. Your nosotros and ellos forms are correct.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I study, you dance, we walk, and they work at a restaurant.",
+       "meets": [],
+       "feedback": "Please write in Spanish: yo estudio, tú bailas, nosotros caminamos, ellos trabajan."
+      },
+      {
+       "tier": "weak",
+       "text": "Yo estudiar. Tú bailar. Nosotros caminar. Ellos trabajar.",
+       "meets": [],
+       "feedback": "Do not use the infinitive. Take off -ar and add the ending: yo estudio, tú bailas, nosotros caminamos, ellos trabajan."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain in English, and give Spanish examples, how Spanish vowels and the letters h, ll and ñ are pronounced. Then write your own name and the name of your school in Spanish and say how you would spell each aloud.",
+     "markScheme": [
+      "States that each Spanish vowel has one consistent sound (a-ah, e-eh, i-ee, o-oh, u-oo)",
+      "States that h is silent, with an example such as hola",
+      "States that ll sounds like y and ñ like ny, with an example such as llamo or español",
+      "Spells a name aloud using the Spanish names of the letters"
+     ],
+     "modelAnswer": "Spanish vowels always sound the same: a (ah), e (eh), i (ee), o (oh), u (oo). The h is silent, as in hola. The ll sounds like y in llamo and the ñ like ny in español. My name is Ana: a, ene, a.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Spanish vowels always have the same sound: a is ah, e is eh, i is ee, o is oh and u is oo. The h is silent, so hola sounds like ola. The ll sounds like y in llamo, and ñ sounds like ny in español. My name is Ben: be, e, ene.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Spanish vowels always have the same sound: a is ah, e is eh, i is ee, o is oh and u is oo."
+        },
+        {
+         "point": 1,
+         "quote": "The h is silent, so hola sounds like ola."
+        },
+        {
+         "point": 2,
+         "quote": "The ll sounds like y in llamo, and ñ sounds like ny in español."
+        },
+        {
+         "point": 3,
+         "quote": "My name is Ben: be, e, ene."
+        }
+       ],
+       "feedback": "Excelente. Your examples support each rule, and you spelled your name with the Spanish letter names."
+      },
+      {
+       "tier": "full",
+       "text": "In Spanish each vowel is pronounced one way, unlike English. The letter h is silent as in hasta. The double l sounds like a y as in calle, and ñ is ny as in mañana. My name is Jada: jota, a, de, a.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "In Spanish each vowel is pronounced one way, unlike English."
+        },
+        {
+         "point": 1,
+         "quote": "The letter h is silent as in hasta."
+        },
+        {
+         "point": 2,
+         "quote": "The double l sounds like a y as in calle, and ñ is ny as in mañana."
+        },
+        {
+         "point": 3,
+         "quote": "My name is Jada: jota, a, de, a."
+        }
+       ],
+       "feedback": "Muy bien. Spelling with jota for the first letter is exactly right."
+      },
+      {
+       "tier": "partial",
+       "text": "The vowels are always the same: a ah, e eh, i ee, o oh, u oo. The h is silent. My name is Sam: ese, a, eme.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The vowels are always the same: a ah, e eh, i ee, o oh, u oo."
+        },
+        {
+         "point": 1,
+         "quote": "The h is silent."
+        }
+       ],
+       "feedback": "Add what you know about ll and ñ, with an example of each."
+      },
+      {
+       "tier": "partial",
+       "text": "The ñ sounds like ny and ll sounds like y. My name is Tia: te, i, a. The h sounds like h in English.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The ñ sounds like ny and ll sounds like y."
+        },
+        {
+         "point": 3,
+         "quote": "My name is Tia: te, i, a."
+        }
+       ],
+       "feedback": "The h is silent in Spanish, as in hola. Add a rule about the vowels.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The vowels change depending on the word like in English, and h is loud.",
+       "meets": [],
+       "feedback": "In Spanish the vowels are consistent and h is silent. Review the vowel sounds in the reading."
+      },
+      {
+       "tier": "weak",
+       "text": "My name is Max: eme, a, equis. Spanish is pronounced the same as English.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "My name is Max: eme, a, equis."
+        }
+       ],
+       "feedback": "Spelling your name is correct. Spanish pronunciation is different: write the vowel sounds and the silent h."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Los números, la familia y las ideas principales",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. understand numbers from 0 to 100 and use them for ages, prices and phone numbers;\n2. identify the main idea of a short text about a family or a school;\n3. present information about themselves and their family in a short spoken or written description.\n\n## Materials\n\nNumber cards, play money, a menu with prices from a taquería, short family reading texts, the worksheet.\n\n## Starter (6 minutes)\n\nPlay \"bingo\" with numbers from 1 to 50. Call numbers in Spanish and students mark them. Review 1 to 20 first, then 21 to 30 (veintiuno, veintidós...), then the tens.\n\n## Main activity\n\n1. Numbers: 0 to 20, 21 to 29 (one word), 30 to 100 (treinta y uno). Use them for ages, phone numbers (read digit by digit or in pairs), and prices: \"El burrito cuesta nueve dólares con cincuenta.\"\n2. Family vocabulary: mi madre, mi padre, mi hermano, mi hermana, mis abuelos, mi tío, mi prima. Possessives mi / mis, tu / tus, su / sus.\n3. Reading for the main idea: students read three short paragraphs and choose a title. Strategies: look for cognates, repeated words and the first sentence.\n4. Presentation: prepare a 40-second description of your family: names, ages and one thing each person does.\n\n## Checking for understanding\n\nWhiteboards: write the number your teacher says, and a price.\n\n## Worksheet\n\nNumbers, family vocabulary and a main-idea reading.",
+   "reading": {
+    "title": "Mi familia y los números",
+    "content": "Learning the numbers in Spanish is useful every day. From 0 to 15 you learn each word: **cero, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince**. From 16 to 29 the words are built: **dieciséis, diecisiete, dieciocho, diecinueve, veinte, veintiuno, veintidós, veintitrés**. For the tens, learn **treinta, cuarenta, cincuenta, sesenta, setenta, ochenta, noventa** and **cien** (100). From 31 on, put them together with **y**: treinta **y** uno (31), cuarenta **y** cinco (45), noventa **y** nueve (99). We use numbers for ages, as in \"Mi abuelo tiene setenta y ocho años.\" For prices: \"Un burrito cuesta nueve dólares.\" For phone numbers, people often say two digits at a time: 614-555-0132 is \"seis uno cuatro, cinco cinco cinco, cero uno, tres dos.\"\n\nFamily words are also important. **Mi madre** (or mamá) and **mi padre** (papá) are your parents. **Mi hermano** and **mi hermana** are your brother and sister. **Mis abuelos** are your grandparents. **Mi tío** and **mi tía** are an uncle and an aunt, **mi primo** and **mi prima** are a male or female cousin. To show possession, use **mi / mis** (my), **tu / tus** (your) and **su / sus** (his, her, their). The word changes for plural nouns: mi hermano, mis hermanos.\n\nReading in a new language is easier if you look for the **main idea**, not every word. Look at the title, the first sentence, the words that repeat and words that look like English words (cognates). Read this short text.\n\n\"Me llamo Elena y tengo quince años. Mi familia es grande. Tengo dos hermanos y una hermana. Mi padre trabaja en un hospital y mi madre es profesora de matemáticas. Mis abuelos viven en Columbus y mi abuela cocina mucho. Los domingos toda mi familia come junta.\"\n\nWhat is the main idea? The text is about Elena's large family and what each person does. A good title would be \"La familia de Elena.\" You do not need to understand every word, such as \"cocina\" (cooks) or \"junta\" (together), to know the main idea.\n\nTo present your own family, first say who you are, then name each person, say their age and what they do. \"Mi familia es pequeña. Tengo un hermano, Jack. Tiene doce años. Le gusta jugar al fútbol.\""
+   },
+   "cards": [
+    {
+     "front": "veintiuno",
+     "back": "twenty-one"
+    },
+    {
+     "front": "treinta y cinco",
+     "back": "thirty-five"
+    },
+    {
+     "front": "noventa y nueve",
+     "back": "ninety-nine"
+    },
+    {
+     "front": "cien",
+     "back": "one hundred"
+    },
+    {
+     "front": "mis abuelos",
+     "back": "my grandparents"
+    },
+    {
+     "front": "mi primo / mi prima",
+     "back": "my cousin (male / female)"
+    },
+    {
+     "front": "la idea principal",
+     "back": "the main idea"
+    },
+    {
+     "front": "cuesta",
+     "back": "it costs"
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which number is \"cuarenta y siete\"?",
+     "options": [
+      "14",
+      "47",
+      "74",
+      "407"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How do you write 100 in Spanish?",
+     "options": [
+      "cien",
+      "diez",
+      "mil",
+      "ciento diez"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "\"Mis tíos\" means:",
+     "options": [
+      "my cousins",
+      "my uncles (and aunts)",
+      "my brothers",
+      "my grandparents"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the best title for a text that describes Elena's large family and what each person does?",
+     "options": [
+      "Mi escuela",
+      "La familia de Elena",
+      "El tiempo en Columbus",
+      "Los números"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A burrito costs \"nueve dólares\". What is the price?",
+     "options": [
+      "$0.09",
+      "$9",
+      "$19",
+      "$90"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write five sentences in Spanish describing your family (real or invented). Say how many people are in your family, give the names and ages of two people, using numbers, and tell what one person does.",
+     "markScheme": [
+      "States how many people there are in the family or names family members correctly",
+      "Gives the age of one person with tiene ... años, writing the number in Spanish",
+      "Gives the age of a second person using a different number",
+      "Tells what a family member does using a correct present-tense verb"
+     ],
+     "modelAnswer": "Mi familia es pequeña. Tengo un hermano, Jack, y una hermana, Ella. Jack tiene doce años y Ella tiene diecisiete años. Mi madre trabaja en una escuela.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Mi familia es grande: tengo dos hermanos y una hermana. Mi padre se llama Mark y tiene cuarenta y cinco años. Mi madre se llama Julia y tiene cuarenta y tres años. Mi madre trabaja en un hospital.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mi familia es grande: tengo dos hermanos y una hermana."
+        },
+        {
+         "point": 1,
+         "quote": "tiene cuarenta y cinco años"
+        },
+        {
+         "point": 2,
+         "quote": "tiene cuarenta y tres años"
+        },
+        {
+         "point": 3,
+         "quote": "Mi madre trabaja en un hospital."
+        }
+       ],
+       "feedback": "Muy bien. Your numbers are spelled correctly, including the y in cuarenta y cinco."
+      },
+      {
+       "tier": "full",
+       "text": "En mi familia hay cinco personas. Mi hermano Sam tiene dieciséis años y mi abuela tiene setenta y ocho años. Mi hermano estudia mucho y toca la guitarra.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "En mi familia hay cinco personas."
+        },
+        {
+         "point": 1,
+         "quote": "tiene dieciséis años"
+        },
+        {
+         "point": 2,
+         "quote": "tiene setenta y ocho años"
+        },
+        {
+         "point": 3,
+         "quote": "Mi hermano estudia mucho y toca la guitarra."
+        }
+       ],
+       "feedback": "Excelente. You used hay for the number of people, and dieciséis has the accent."
+      },
+      {
+       "tier": "partial",
+       "text": "Mi familia es pequeña. Mi hermana tiene quince años. Mi padre tiene cuarenta y ocho. Mi madre cocina en un restaurante.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mi familia es pequeña."
+        },
+        {
+         "point": 1,
+         "quote": "tiene quince años"
+        },
+        {
+         "point": 3,
+         "quote": "cocina"
+        }
+       ],
+       "feedback": "Say año after the number: tiene cuarenta y ocho años. Check that you give the ages of two people with their numbers."
+      },
+      {
+       "tier": "partial",
+       "text": "Mi tío se llama Pablo y tiene treinta y dos años. Pablo trabaja en una tienda. Mi familia es muy grande.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "tiene treinta y dos años"
+        },
+        {
+         "point": 3,
+         "quote": "Pablo trabaja en una tienda."
+        }
+       ],
+       "feedback": "Good sentences. Add how many people are in your family and a second age.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "My family is big. My brother is twelve and my sister is seventeen. My mom is a nurse.",
+       "meets": [],
+       "feedback": "Please write in Spanish, using: mi familia es grande, mi hermano tiene doce años."
+      },
+      {
+       "tier": "weak",
+       "text": "Mi familia es grande. Mi hermano tengo 12. Mi madre trabajo en hospital.",
+       "meets": [],
+       "feedback": "Use tiene for he has, and write the number in Spanish: doce años. Madre trabaja, not trabajo."
+      }
+     ]
+    },
+    {
+     "prompt": "Read this text and answer in English, then write the main idea as a title in Spanish.\n\n\"Me llamo Carlos y vivo en Columbus. Mi escuela es grande y tiene mil estudiantes. Mi clase favorita es la clase de música porque me gusta cantar. Mis amigos y yo estudiamos en la biblioteca después de las clases.\"\n\nWhat are two details you understand? What is the main idea?",
+     "markScheme": [
+      "Identifies that Carlos lives in Columbus and goes to a large school",
+      "Identifies a second detail, such as the school has a thousand students or music is his favorite class",
+      "States the main idea as Carlos describing his school and what he likes",
+      "Writes a suitable Spanish title, such as La escuela de Carlos"
+     ],
+     "modelAnswer": "Carlos lives in Columbus and goes to a big school. His favorite class is music because he likes to sing. The main idea is Carlos describing his school and what he does there. Title: La escuela de Carlos.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Carlos lives in Columbus and his school is big. His favorite class is music because he likes to sing. The main idea is a description of Carlos and his school. La escuela de Carlos",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Carlos lives in Columbus and his school is big."
+        },
+        {
+         "point": 1,
+         "quote": "His favorite class is music because he likes to sing."
+        },
+        {
+         "point": 2,
+         "quote": "The main idea is a description of Carlos and his school."
+        },
+        {
+         "point": 3,
+         "quote": "La escuela de Carlos"
+        }
+       ],
+       "feedback": "Muy bien. Your title matches the main idea and is spelled correctly."
+      },
+      {
+       "tier": "full",
+       "text": "He lives in Columbus and his school has a lot of students. He studies in the library with friends after class. It is about his school life and what he likes to do. Mi escuela y mi clase favorita",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "He lives in Columbus and his school has a lot of students."
+        },
+        {
+         "point": 1,
+         "quote": "He studies in the library with friends after class."
+        },
+        {
+         "point": 2,
+         "quote": "It is about his school life and what he likes to do."
+        },
+        {
+         "point": 3,
+         "quote": "Mi escuela y mi clase favorita"
+        }
+       ],
+       "feedback": "Excelente. A longer title like this is fine because it includes both main ideas."
+      },
+      {
+       "tier": "partial",
+       "text": "Carlos lives in Columbus. His favorite class is music. The main idea is that he has a thousand friends.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Carlos lives in Columbus."
+        },
+        {
+         "point": 1,
+         "quote": "His favorite class is music."
+        }
+       ],
+       "feedback": "Mil estudiantes means a thousand students, not friends. The main idea is his school and what he likes."
+      },
+      {
+       "tier": "partial",
+       "text": "The main idea is about his school and what he likes. El escuela de Carlos",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The main idea is about his school and what he likes."
+        },
+        {
+         "point": 3,
+         "quote": "El escuela de Carlos"
+        }
+       ],
+       "feedback": "Your main idea is good. Escuela is feminine: la escuela de Carlos. Add two details you understood.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I do not understand it. It is Spanish and it is hard.",
+       "meets": [],
+       "feedback": "Try looking for cognates: escuela, música, biblioteca, favorita. They tell you the text is about school."
+      },
+      {
+       "tier": "weak",
+       "text": "Carlos lives in Columbus. It is about a family dinner on Sunday and his grandmother.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Carlos lives in Columbus."
+        }
+       ],
+       "feedback": "Look at the words again: escuela, clase and biblioteca are about school, not a family dinner."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Mi horario y los saludos en el mundo hispano",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. write a short paragraph about their schedule and favorite subjects;\n2. compare greetings and personal space in Spanish-speaking countries with those in their community.\n\n## Materials\n\nA sample schedule written in Spanish, short video clips of greetings in Mexico, Spain and Colombia, a writing rubric, the worksheet and quiz.\n\n## Starter (6 minutes)\n\nShow two photos: a handshake at a business meeting in Columbus, and two friends greeting with a kiss on the cheek in Madrid. Ask in English: \"What differences do you see?\" Record ideas.\n\n## Main activity\n\n1. Model a paragraph: \"Mi día en la escuela.\" Include time, classes, a verb in the present tense, and an opinion. Use connecting words: primero, después, también, pero, porque.\n2. Students write their own paragraph of five to six sentences, using the class schedule from last week and at least three -ar verbs and gustar.\n3. Greetings across cultures: in many Spanish-speaking countries friends and family greet with a kiss on the cheek (one in Latin America, two in Spain), men often shake hands or hug, and people stand closer when they talk than in the US. Discuss respect, usted, and that customs vary by country and by region.\n4. Make a Venn diagram comparing greetings in Spanish-speaking countries and in the US.\n\n## Checking for understanding\n\nAsk: \"When would you use usted instead of tú, and how does that show respect?\"\n\n## Worksheet and quiz\n\nQuestions about the paragraph and the cultural comparison.",
+   "reading": {
+    "title": "Mi horario y cómo nos saludamos",
+    "content": "Writing a paragraph in Spanish means connecting short sentences with simple linking words. Useful words are **primero** (first), **después** (then, afterward), **también** (also), **pero** (but), **porque** (because) and **y** (and). A paragraph about your schedule might include the time, the class, a verb in the present tense and an opinion. Read this model.\n\n\"Mi día en la escuela es largo, pero me gusta. Primero, tengo la clase de inglés a las ocho de la mañana. Después, estudio matemáticas a las nueve y media. Mi clase favorita es la clase de arte porque me gusta dibujar. También me gusta la clase de español porque la profesora es muy simpática. Por la tarde, mis amigos y yo caminamos a casa y escuchamos música.\"\n\nNotice that the paragraph uses **me gusta**, regular -ar verbs (estudio, dibujar, caminamos, escuchamos), and times (a las ocho de la mañana). It also begins with a topic sentence that gives the main idea, and each next sentence adds a detail.\n\nLanguage is only one part of communicating. Greetings and the use of personal space differ from one culture to another. In the United States, a handshake is common in formal situations, and friends often greet with a wave or a short hug. In many Spanish-speaking countries, it is customary for family members and friends to greet each other with a kiss on the cheek: one kiss in most of Latin America, and two in Spain. Women often greet both women and men this way, and men often greet friends with a handshake, a hug or a pat on the back. People usually stand closer when they talk than most people in the US do, and stepping back can seem unfriendly. In a formal situation, with someone older or someone you do not know, people shake hands and use **usted**. It is polite to greet people when you enter a room, including shopkeepers, and to say goodbye when you leave.\n\nThese are general customs. They differ by country, by region, and by family, and many people who live in the United States mix both traditions. In Columbus, which has a large Latino community that includes families from Mexico, Puerto Rico and Central America, you can see both ways of greeting. The best way to be respectful is to observe what others do and to ask politely."
+   },
+   "cards": [
+    {
+     "front": "primero",
+     "back": "first"
+    },
+    {
+     "front": "después",
+     "back": "then, afterward"
+    },
+    {
+     "front": "también",
+     "back": "also"
+    },
+    {
+     "front": "porque",
+     "back": "because"
+    },
+    {
+     "front": "mi clase favorita",
+     "back": "my favorite class"
+    },
+    {
+     "front": "un beso en la mejilla",
+     "back": "a kiss on the cheek"
+    },
+    {
+     "front": "el espacio personal",
+     "back": "personal space"
+    },
+    {
+     "front": "usted",
+     "back": "you (formal)"
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which linking word means \"because\"?",
+     "options": [
+      "pero",
+      "después",
+      "porque",
+      "también"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "In Spain, friends typically greet with how many kisses on the cheek?",
+     "options": [
+      "None",
+      "One",
+      "Two",
+      "Three"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which sentence would be best as the topic sentence of a paragraph about your day?",
+     "options": [
+      "Me gusta la pizza.",
+      "Mi día en la escuela es largo, pero me gusta.",
+      "Hace frío hoy.",
+      "Tengo dos hermanos."
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "When would you most likely use usted?",
+     "options": [
+      "With your best friend",
+      "With your little brother",
+      "With an older person you do not know",
+      "With your pet"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What can stepping back during a conversation seem like in many Spanish-speaking communities?",
+     "options": [
+      "Polite",
+      "Unfriendly",
+      "Funny",
+      "Respectful"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write a paragraph of at least five sentences in Spanish about your school day. Include times for two classes, your favorite class and why, and one thing you do after school. Use at least two linking words (primero, después, también, pero, porque).",
+     "markScheme": [
+      "Gives times for two classes correctly",
+      "States a favorite class and a reason with porque",
+      "Describes an activity after school with a correct present-tense verb",
+      "Uses at least two linking words and mostly correct spelling and accents"
+     ],
+     "modelAnswer": "Mi día en la escuela es interesante. Primero, tengo la clase de ciencias a las ocho y media. Después, tengo la clase de español a las diez. Mi clase favorita es el arte porque me gusta dibujar. También, después de la escuela, camino a casa con mis amigos.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Mi día es largo, pero me gusta. Primero, tengo la clase de inglés a las ocho y la clase de ciencias a las nueve y media. Mi clase favorita es la clase de música porque me gusta cantar. Después, estudio en la biblioteca con mis amigos. También bailamos en el club de baile los jueves.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "tengo la clase de inglés a las ocho y la clase de ciencias a las nueve y media"
+        },
+        {
+         "point": 1,
+         "quote": "Mi clase favorita es la clase de música porque me gusta cantar."
+        },
+        {
+         "point": 2,
+         "quote": "estudio en la biblioteca con mis amigos"
+        },
+        {
+         "point": 3,
+         "quote": "También bailamos en el club de baile los jueves."
+        }
+       ],
+       "feedback": "Muy bien. You used primero, después, también and pero. Your accents on música and día are correct."
+      },
+      {
+       "tier": "full",
+       "text": "Mi día en la escuela es divertido. La clase de matemáticas es a las diez y la clase de arte es a la una de la tarde. Mi clase favorita es el arte porque la profesora es simpática. Pero la tarea de matemáticas es difícil. Después de la escuela, trabajo en un restaurante. También camino a casa con mi hermana.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La clase de matemáticas es a las diez y la clase de arte es a la una de la tarde."
+        },
+        {
+         "point": 1,
+         "quote": "Mi clase favorita es el arte porque la profesora es simpática."
+        },
+        {
+         "point": 2,
+         "quote": "Después de la escuela, trabajo en un restaurante."
+        },
+        {
+         "point": 3,
+         "quote": "También camino a casa con mi hermana."
+        }
+       ],
+       "feedback": "Excelente. A good variety of verbs, a reason with porque, and a contrast with pero."
+      },
+      {
+       "tier": "partial",
+       "text": "Mi día es largo. Tengo la clase de inglés a las ocho y la clase de arte a las doce. Mi clase favorita es el arte porque yo gusto dibujar. Después, camino a casa.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Tengo la clase de inglés a las ocho y la clase de arte a las doce."
+        },
+        {
+         "point": 2,
+         "quote": "Después, camino a casa."
+        }
+       ],
+       "feedback": "Good schedule sentences. After porque write me gusta dibujar, not yo gusto."
+      },
+      {
+       "tier": "partial",
+       "text": "Primero, tengo inglés. Mi clase favorita es el español porque es fácil. También estudio con mis amigos. Mi clase de ciencias es a las nueve.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Mi clase favorita es el español porque es fácil."
+        },
+        {
+         "point": 3,
+         "quote": "También estudio con mis amigos."
+        }
+       ],
+       "feedback": "You need a time for the first class too, such as a las ocho. Your reason with porque is excellent.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "My school day is long. I have English at eight and art at one. My favorite class is art because I like to draw.",
+       "meets": [],
+       "feedback": "Please write this in Spanish. Use: tengo la clase de inglés a las ocho, mi clase favorita es el arte."
+      },
+      {
+       "tier": "weak",
+       "text": "Yo escuela. Clase ocho. Arte favorito porque yo dibujar. Yo casa.",
+       "meets": [],
+       "feedback": "Write complete sentences: tengo la clase de inglés a las ocho. Use me gusta dibujar and camino a casa."
+      }
+     ]
+    },
+    {
+     "prompt": "Compare greetings in the United States and in many Spanish-speaking countries. Give two similarities or differences in how people greet and in personal space, and explain when it is important to use usted. Answer in English.",
+     "markScheme": [
+      "States a difference in greeting, such as a kiss on the cheek compared with a handshake or wave",
+      "States a difference in personal space, with people standing closer in many Spanish-speaking countries",
+      "States a similarity, such as handshakes in formal situations in both",
+      "Explains that usted is used with elders and strangers to show respect"
+     ],
+     "modelAnswer": "In many Spanish-speaking countries friends and family greet with a kiss on the cheek, while in the US a wave, hug or handshake is more common. People often stand closer when talking. In both, a handshake is common in formal situations. Usted is used with older people and strangers to show respect.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "In many Spanish-speaking countries friends greet with a kiss on the cheek, but in the US we usually wave or hug. People also stand closer together when they talk. In both places, people shake hands in a formal setting. Usted is used with older people and strangers to show respect.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "In many Spanish-speaking countries friends greet with a kiss on the cheek, but in the US we usually wave or hug."
+        },
+        {
+         "point": 1,
+         "quote": "People also stand closer together when they talk."
+        },
+        {
+         "point": 2,
+         "quote": "In both places, people shake hands in a formal setting."
+        },
+        {
+         "point": 3,
+         "quote": "Usted is used with older people and strangers to show respect."
+        }
+       ],
+       "feedback": "Excelente. You gave differences and a similarity, and explained why usted matters."
+      },
+      {
+       "tier": "full",
+       "text": "A cheek kiss is a normal greeting among friends in Latin America, one kiss, and in Spain, two kisses; a handshake or hug is more common here. Personal space is smaller, so stepping back can seem unfriendly. Handshakes are used in both cultures in formal situations. You use usted for teachers, older adults and people you don't know.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A cheek kiss is a normal greeting among friends in Latin America, one kiss, and in Spain, two kisses; a handshake or hug is more common here."
+        },
+        {
+         "point": 1,
+         "quote": "Personal space is smaller, so stepping back can seem unfriendly."
+        },
+        {
+         "point": 2,
+         "quote": "Handshakes are used in both cultures in formal situations."
+        },
+        {
+         "point": 3,
+         "quote": "You use usted for teachers, older adults and people you don't know."
+        }
+       ],
+       "feedback": "Muy bien. Mentioning the number of kisses in different regions shows careful reading."
+      },
+      {
+       "tier": "partial",
+       "text": "They kiss on the cheek in Spanish-speaking countries. Usted is for respect.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "They kiss on the cheek in Spanish-speaking countries."
+        },
+        {
+         "point": 3,
+         "quote": "Usted is for respect."
+        }
+       ],
+       "feedback": "Add a difference in personal space and a similarity between the two cultures."
+      },
+      {
+       "tier": "partial",
+       "text": "People stand closer. Both shake hands. They kiss strangers on the cheek, and use usted with friends.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "People stand closer."
+        },
+        {
+         "point": 2,
+         "quote": "Both shake hands."
+        }
+       ],
+       "feedback": "Usted is used with strangers and elders, and kisses are for friends and family. Fix the last part.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Everyone in Spanish-speaking countries kisses everyone, and personal space is the same everywhere.",
+       "meets": [],
+       "feedback": "Customs vary by country and by situation, and personal space is often smaller. Not everyone greets everyone with a kiss."
+      },
+      {
+       "tier": "weak",
+       "text": "They greet with a kiss on the cheek. Americans never touch each other when they greet so it is very rude.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "They greet with a kiss on the cheek."
+        }
+       ],
+       "feedback": "Americans do shake hands and hug. Differences are not rude; they are different customs."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Tradiciones y geografía del mundo hispano",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe a product or tradition from a Spanish-speaking country, such as Day of the Dead or la quinceañera;\n2. use Spanish to learn about geography by naming the countries and capitals of Spanish-speaking nations.\n\n## Materials\n\nPhotos of an ofrenda, pan de muerto, cempasúchil flowers and a quinceañera, a political map of the Spanish-speaking world, the quiz, problem set and worksheet.\n\n## Starter (6 minutes)\n\nShow a photo of an ofrenda with marigolds, candles and photographs. Ask in English: \"What do you think this is for?\" Collect ideas about remembering family. Introduce the term \"Día de Muertos.\"\n\n## Main activity\n\n1. Día de Muertos (November 1 and 2, Mexico): families remember loved ones who have died with an ofrenda (altar), photos, candles, marigolds (cempasúchil), pan de muerto and favorite foods. It is a celebration of life and memory, not a sad or scary event. Mention the UNESCO recognition and the film Coco.\n2. La quinceañera: a celebration of a girl's fifteenth birthday in many Latin American communities: Mass, a dress, a court of friends, a waltz and a party. Discuss similarities with a sweet sixteen or a graduation.\n3. Geography: label a map with countries and capitals: México (Ciudad de México), España (Madrid), Argentina (Buenos Aires), Colombia (Bogotá), Perú (Lima), Chile (Santiago), Cuba (La Habana), Venezuela (Caracas), Ecuador (Quito), Costa Rica (San José).\n4. Practice questions: \"¿Cuál es la capital de Perú?\" \"La capital de Perú es Lima.\"\n\n## Checking for understanding\n\nMap quiz: students point to a country when the teacher says its name.\n\n## Quiz, problem set and worksheet\n\nCulture and geography.",
+   "reading": {
+    "title": "Dos tradiciones y un mapa",
+    "content": "The Spanish language is spoken by more than 500 million people in 20 countries, and each region has its own traditions. This week we learn about two important celebrations and about the map of the Spanish-speaking world.\n\n**El Día de Muertos** (Day of the Dead) is a holiday celebrated in Mexico on November 1 and 2. It may sound scary, but it is a joyful occasion to remember family members and friends who have died. Families make an **ofrenda**, an altar in the home or at the cemetery, with photographs of the loved ones, candles, and their favorite foods and drinks. The bright orange **cempasúchil** flowers (marigolds) decorate the altar, and their strong scent is said to guide spirits home. There is **pan de muerto**, a sweet bread, and **calaveras de azúcar**, sugar skulls with names written on them. People believe that on these days the souls of the dead come back to visit. The tradition combines indigenous Mexican customs and Catholic traditions, and UNESCO recognizes it as part of the heritage of humanity. Today the holiday is also celebrated in the United States, including in Columbus, where cultural centers and families put up altars. It is not the same as Halloween, even though the dates are close.\n\n**La quinceañera** is a celebration of a girl's fifteenth birthday in Mexico and many other Latin American countries, and among Latino families in the United States. It marks the passage from childhood to young adulthood. The celebration often begins with a Mass of thanksgiving. The honored girl, the **quinceañera**, wears a long formal dress, and she is accompanied by a group of friends and relatives, the **corte**. There are traditions such as the first dance, a waltz with her father, and a party with food, music and a cake. Families may spend months planning it. Some families today choose a trip or another gift instead.\n\nKnowing where Spanish is spoken helps us understand the world. The country names and capitals include: **México** (capital: Ciudad de México), **España** (Madrid), **Argentina** (Buenos Aires), **Colombia** (Bogotá), **Perú** (Lima), **Chile** (Santiago), **Cuba** (La Habana), **Venezuela** (Caracas), **Ecuador** (Quito) and **Costa Rica** (San José). To ask a question, use \"¿Cuál es la capital de Perú?\" and answer \"La capital de Perú es Lima.\" Spanish is also spoken in Puerto Rico, a territory of the United States, and in Equatorial Guinea, in Africa."
+   },
+   "cards": [
+    {
+     "front": "el Día de Muertos",
+     "back": "Day of the Dead"
+    },
+    {
+     "front": "la ofrenda",
+     "back": "the altar with offerings"
+    },
+    {
+     "front": "el cempasúchil",
+     "back": "marigold flowers"
+    },
+    {
+     "front": "el pan de muerto",
+     "back": "sweet bread for Day of the Dead"
+    },
+    {
+     "front": "la quinceañera",
+     "back": "a girl's 15th birthday celebration"
+    },
+    {
+     "front": "la capital de Perú",
+     "back": "the capital of Peru (Lima)"
+    },
+    {
+     "front": "Buenos Aires",
+     "back": "capital of Argentina"
+    },
+    {
+     "front": "Bogotá",
+     "back": "capital of Colombia"
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the main purpose of Día de Muertos?",
+     "options": [
+      "To scare people",
+      "To remember and honor loved ones who have died",
+      "To celebrate a harvest only",
+      "To mark the end of the school year"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which flower is traditionally used to decorate ofrendas?",
+     "options": [
+      "Rose",
+      "Tulip",
+      "Cempasúchil (marigold)",
+      "Sunflower"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the capital of Colombia?",
+     "options": [
+      "Lima",
+      "Bogotá",
+      "Santiago",
+      "Caracas"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "La quinceañera celebrates:",
+     "options": [
+      "A fifteenth birthday",
+      "A wedding",
+      "A high school graduation",
+      "A new year"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "How do you say \"The capital of Chile is Santiago\"?",
+     "options": [
+      "La capital de Chile es Santiago",
+      "El capital de Chile son Santiago",
+      "Santiago es Chile capital",
+      "La capital Chile tiene Santiago"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Choose Día de Muertos or la quinceañera. Write four sentences in Spanish about it: say when or at what age it takes place, one thing people do or have, and whether you would like to attend and why. You may use simple sentences.",
+     "markScheme": [
+      "Names the tradition and says when or at what age it takes place",
+      "Names one thing people have, such as una ofrenda, flores, un vestido or una fiesta",
+      "Names one thing people do, using a correct present-tense verb",
+      "Gives an opinion with me gusta or me gustaría and a reason"
+     ],
+     "modelAnswer": "El Día de Muertos es el primero y el dos de noviembre. Las familias tienen una ofrenda con fotos y flores. Ellos recuerdan a sus familiares. Me gusta porque es una tradición bonita.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "El Día de Muertos es en noviembre, en México. Las familias tienen una ofrenda con velas y flores de cempasúchil. Ellos recuerdan a sus abuelos y preparan pan de muerto. Me gusta esta tradición porque es una celebración de la vida.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "El Día de Muertos es en noviembre, en México."
+        },
+        {
+         "point": 1,
+         "quote": "Las familias tienen una ofrenda con velas y flores de cempasúchil."
+        },
+        {
+         "point": 2,
+         "quote": "Ellos recuerdan a sus abuelos y preparan pan de muerto."
+        },
+        {
+         "point": 3,
+         "quote": "Me gusta esta tradición porque es una celebración de la vida."
+        }
+       ],
+       "feedback": "Muy bien. Your verbs agree with their subjects, and your last sentence gives a clear reason."
+      },
+      {
+       "tier": "full",
+       "text": "La quinceañera es la fiesta de los quince años de una chica. La chica tiene un vestido largo y una fiesta con música. Ella baila el vals con su padre. Me gustaría ir porque me gusta bailar y la comida.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La quinceañera es la fiesta de los quince años de una chica."
+        },
+        {
+         "point": 1,
+         "quote": "La chica tiene un vestido largo y una fiesta con música."
+        },
+        {
+         "point": 2,
+         "quote": "Ella baila el vals con su padre."
+        },
+        {
+         "point": 3,
+         "quote": "Me gustaría ir porque me gusta bailar y la comida."
+        }
+       ],
+       "feedback": "Excelente. You used me gustaría, which we just met, and your reasons are clear."
+      },
+      {
+       "tier": "partial",
+       "text": "El Día de Muertos es en noviembre. Hay una ofrenda con flores. Las familias comer pan de muerto. Me gusta porque bonito.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "El Día de Muertos es en noviembre."
+        },
+        {
+         "point": 1,
+         "quote": "Hay una ofrenda con flores."
+        }
+       ],
+       "feedback": "Conjugate the verb: las familias comen pan de muerto. Say porque es bonito."
+      },
+      {
+       "tier": "partial",
+       "text": "La quinceañera es una fiesta para chicas de quince años. Las chicas bailan. Yo gustaría ir.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La quinceañera es una fiesta para chicas de quince años."
+        },
+        {
+         "point": 2,
+         "quote": "Las chicas bailan."
+        }
+       ],
+       "feedback": "You need a thing people have and a full opinion: me gustaría ir porque me gusta la música.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Day of the Dead is in November. People have an altar. I like it because it is beautiful.",
+       "meets": [],
+       "feedback": "Please write in Spanish: el Día de Muertos es en noviembre, las familias tienen una ofrenda."
+      },
+      {
+       "tier": "weak",
+       "text": "El Día de Muertos halloween. Ellos tiene miedo. Yo no gusta.",
+       "meets": [],
+       "feedback": "Día de Muertos is not Halloween, and it is not scary. Try: es una celebración para recordar a la familia."
+      }
+     ]
+    },
+    {
+     "prompt": "Write the capitals of four Spanish-speaking countries in Spanish sentences, using \"La capital de ___ es ___.\" Then name one country that is in South America and one in Central America or the Caribbean from the countries in our reading.",
+     "markScheme": [
+      "Writes at least four sentences with la capital de ... es ... in the correct form",
+      "Gives at least three of the four capitals correctly",
+      "Names a country in South America correctly",
+      "Names a country in Central America or the Caribbean correctly, such as Costa Rica or Cuba"
+     ],
+     "modelAnswer": "La capital de México es Ciudad de México. La capital de Perú es Lima. La capital de España es Madrid. La capital de Colombia es Bogotá. Perú está en Sudamérica y Cuba está en el Caribe.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "La capital de México es Ciudad de México. La capital de Chile es Santiago. La capital de Argentina es Buenos Aires. La capital de Cuba es La Habana. Las cuatro capitales son correctas. Chile está en Sudamérica. Cuba está en el Caribe.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La capital de México es Ciudad de México. La capital de Chile es Santiago. La capital de Argentina es Buenos Aires. La capital de Cuba es La Habana."
+        },
+        {
+         "point": 1,
+         "quote": "Las cuatro capitales son correctas."
+        },
+        {
+         "point": 2,
+         "quote": "Chile está en Sudamérica."
+        },
+        {
+         "point": 3,
+         "quote": "Cuba está en el Caribe."
+        }
+       ],
+       "feedback": "Excelente. All four sentences follow the pattern, and the location sentences are correct."
+      },
+      {
+       "tier": "full",
+       "text": "La capital de España es Madrid. La capital de Perú es Lima. La capital de Ecuador es Quito. La capital de Costa Rica es San José. Todas las capitales son correctas. Perú y Ecuador están en Sudamérica. Costa Rica está en Centroamérica.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La capital de España es Madrid. La capital de Perú es Lima. La capital de Ecuador es Quito. La capital de Costa Rica es San José."
+        },
+        {
+         "point": 1,
+         "quote": "Todas las capitales son correctas."
+        },
+        {
+         "point": 2,
+         "quote": "Perú y Ecuador están en Sudamérica."
+        },
+        {
+         "point": 3,
+         "quote": "Costa Rica está en Centroamérica."
+        }
+       ],
+       "feedback": "Muy bien. Naming two countries on each continent shows what you know."
+      },
+      {
+       "tier": "partial",
+       "text": "La capital de Perú es Lima. La capital de Colombia es Bogotá. La capital de España es Barcelona. La capital de Chile es Santiago.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La capital de Perú es Lima."
+        },
+        {
+         "point": 1,
+         "quote": "La capital de Colombia es Bogotá."
+        }
+       ],
+       "feedback": "Madrid is the capital of Spain, not Barcelona. Add a country from South America and one from Central America or the Caribbean."
+      },
+      {
+       "tier": "partial",
+       "text": "La capital de Argentina es Buenos Aires. Argentina está en Sudamérica. Costa Rica está en Centroamérica. La capital de Venezuela es Lima.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Argentina está en Sudamérica."
+        },
+        {
+         "point": 3,
+         "quote": "Costa Rica está en Centroamérica."
+        }
+       ],
+       "feedback": "The capital of Venezuela is Caracas. Lima is the capital of Peru. Write four sentences with the correct capitals.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The capital of Peru is Lima. The capital of Spain is Madrid. Peru is in South America.",
+       "meets": [],
+       "feedback": "Please write in Spanish: la capital de Perú es Lima. La capital de España es Madrid."
+      },
+      {
+       "tier": "weak",
+       "text": "La capital Perú Lima. México capital Madrid. España capital Bogotá.",
+       "meets": [],
+       "feedback": "Use the full pattern: la capital de Perú es Lima. Check the capitals: Madrid is in España and Ciudad de México is in México."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Cognados, falsos amigos y el español en mi comunidad",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. notice similarities between Spanish and English words, including cognates and false friends;\n2. find examples of Spanish in their community, such as signs, menus and media, and report what they say.\n\n## Materials\n\nA list of cognates and false friends, photos of Spanish signs and menus from Columbus (Hilltop, Westerville, Short North), a class scavenger hunt sheet, the quiz, problem set and worksheet.\n\n## Starter (6 minutes)\n\nWrite on the board: importante, restaurante, familia, teléfono, animal. Ask in English: \"Can you guess what these mean?\" Introduce the word \"cognate\" and show that many Spanish words look like English because both come from Latin or Greek.\n\n## Main activity\n\n1. Cognates: common endings -ción = -tion (información), -dad = -ty (universidad), -ante = -ant, -oso = -ous (famoso). Cognates help in reading, but pronunciation differs.\n2. False friends (falsos amigos): embarazada means pregnant, not embarrassed; la librería is a bookstore, not a library (la biblioteca); actual means current; asistir means to attend; el éxito means success; constipado means having a cold. Discuss how to check meaning in context.\n3. Spanish around us: students examine photos and real examples (a bakery sign, a bus announcement, a menu, a pharmacy label) and report in English what each says and in Spanish one word they recognize.\n4. Homework: find one example of Spanish in your community and write a short report.\n\n## Checking for understanding\n\nAsk: \"If you read 'La librería está en la calle Main,' what is the building and what is it not?\"\n\n## Quiz, problem set and worksheet\n\nCognates, false friends and a community example.",
+   "reading": {
+    "title": "Palabras amigas y palabras traidoras",
+    "content": "One of the best things about learning Spanish as an English speaker is that thousands of words look and mean almost the same in both languages. These words are called **cognates**, and they exist because English and Spanish borrowed many words from Latin and Greek. Examples are **importante**, **familia**, **restaurante**, **teléfono**, **animal**, **música** and **chocolate**. There are patterns that help you find more. English words ending in **-tion** often end in **-ción** in Spanish: *information* is *información*, *nation* is *nación*. English **-ty** becomes **-dad**: *university* is *universidad*, *city* is *ciudad*. English **-ous** becomes **-oso**: *famous* is *famoso*. English **-ly** adverbs often match **-mente**: *finally* is *finalmente*. Cognates help you understand new texts quickly. Remember that they are pronounced in a Spanish way, with the five pure vowels: *familia* is \"fah-MEE-lyah,\" not like the English word.\n\nNot all similar words are friends. A **false friend** (falso amigo) looks like an English word but has a different meaning. If you say \"Estoy embarazada\" you are not saying \"I am embarrassed\" but \"I am pregnant.\" The word **embarazoso** is closer to \"embarrassing\" in meaning, and \"I am embarrassed\" is \"Tengo vergüenza.\" A **librería** is a bookstore, not a library, which is a **biblioteca**. The word **actual** means \"current\" or \"present-day,\" not \"real,\" which is **real** or **verdadero**. **Asistir** means \"to attend a class or event,\" not \"to assist,\" which is **ayudar**. **Éxito** means \"success,\" not \"exit,\" which is **salida**. **Constipado** means \"having a cold,\" not \"constipated.\" When a word seems strange in context, use the other words in the sentence to decide. If \"Voy a asistir a la clase\" came from a person in a school, \"attend\" makes sense and \"assist\" does not.\n\nSpanish is also all around you. In Ohio, nearly half a million people speak Spanish at home, and in Columbus you can see **carnicerías** (butcher shops), **panaderías** (bakeries), **taquerías**, signs such as **Se habla español** (Spanish spoken here) and **Abierto** (open), pharmacy labels, church bulletins, bus announcements and radio stations. A menu might say **tacos de pollo**, **arroz con frijoles** and **agua fresca**, and you can read much of it by recognizing cognates and food words. When you find an example, you can report what it says, where you saw it, and who you think it is for. Doing so shows how the language is part of the community and not just a school subject."
+   },
+   "cards": [
+    {
+     "front": "el cognado",
+     "back": "a word that looks and means the same in two languages"
+    },
+    {
+     "front": "el falso amigo",
+     "back": "a false friend, a word that looks similar but has a different meaning"
+    },
+    {
+     "front": "la biblioteca",
+     "back": "the library"
+    },
+    {
+     "front": "la librería",
+     "back": "the bookstore"
+    },
+    {
+     "front": "embarazada",
+     "back": "pregnant (not embarrassed)"
+    },
+    {
+     "front": "asistir",
+     "back": "to attend"
+    },
+    {
+     "front": "el éxito",
+     "back": "success"
+    },
+    {
+     "front": "Se habla español.",
+     "back": "Spanish spoken here."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which pair are cognates?",
+     "options": [
+      "importante / important",
+      "librería / library",
+      "embarazada / embarrassed",
+      "éxito / exit"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What does \"la librería\" mean?",
+     "options": [
+      "The library",
+      "The bookstore",
+      "The classroom",
+      "The liberty"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "English words ending in -tion usually end in what in Spanish?",
+     "options": [
+      "-dad",
+      "-ción",
+      "-oso",
+      "-mente"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "\"Voy a asistir a la clase de arte\" means:",
+     "options": [
+      "I am going to help the art class",
+      "I am going to attend the art class",
+      "I am going to assist the art teacher",
+      "I am going to resist art class"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A sign in a store window says \"Se habla español.\" What does it tell customers?",
+     "options": [
+      "The store is closed",
+      "Spanish is spoken there",
+      "The store sells Spanish books",
+      "The store is in Spain"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write in Spanish the cognates for these English words and explain the pattern: information, university, famous. Then explain in English what a false friend is and give one example with its real meaning.",
+     "markScheme": [
+      "Writes información, universidad and famoso correctly",
+      "Explains the patterns -tion/-ción, -ty/-dad and -ous/-oso",
+      "Defines a false friend as a word that looks like an English word but has a different meaning",
+      "Gives a correct example, such as embarazada (pregnant) or librería (bookstore)"
+     ],
+     "modelAnswer": "Información, universidad, famoso. The patterns are -tion becomes -ción, -ty becomes -dad and -ous becomes -oso. A false friend is a word that looks like an English word but means something different, such as librería, which means bookstore and not library.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "información, universidad, famoso. The patterns are -tion to -ción, -ty to -dad and -ous to -oso. A false friend is a Spanish word that looks like an English word but has a different meaning. For example, embarazada means pregnant, not embarrassed.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "información, universidad, famoso"
+        },
+        {
+         "point": 1,
+         "quote": "The patterns are -tion to -ción, -ty to -dad and -ous to -oso."
+        },
+        {
+         "point": 2,
+         "quote": "A false friend is a Spanish word that looks like an English word but has a different meaning."
+        },
+        {
+         "point": 3,
+         "quote": "For example, embarazada means pregnant, not embarrassed."
+        }
+       ],
+       "feedback": "Excelente. You wrote all three words correctly and explained the patterns."
+      },
+      {
+       "tier": "full",
+       "text": "Información, universidad, famoso. English -tion becomes -ción in Spanish, -ty becomes -dad, and -ous becomes -oso. A false friend looks like an English word but it means something else. Librería is a bookstore. Library is biblioteca.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Información, universidad, famoso."
+        },
+        {
+         "point": 1,
+         "quote": "English -tion becomes -ción in Spanish, -ty becomes -dad, and -ous becomes -oso."
+        },
+        {
+         "point": 2,
+         "quote": "A false friend looks like an English word but it means something else."
+        },
+        {
+         "point": 3,
+         "quote": "Librería is a bookstore. Library is biblioteca."
+        }
+       ],
+       "feedback": "Muy bien. Giving the correct word for the English meaning, biblioteca, is a good extra."
+      },
+      {
+       "tier": "partial",
+       "text": "información, universidad, famoso. -tion becomes -ción. A false friend is a good friend in Spanish class. Embarazada is embarrassed.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "información, universidad, famoso"
+        },
+        {
+         "point": 1,
+         "quote": "-tion becomes -ción."
+        }
+       ],
+       "feedback": "A false friend is a word that looks similar but has a different meaning, and embarazada means pregnant. Explain the other two patterns too."
+      },
+      {
+       "tier": "partial",
+       "text": "informacion, universidad, famoso. A false friend is a word that looks like an English word but means something different.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "informacion, universidad, famoso"
+        },
+        {
+         "point": 2,
+         "quote": "A false friend is a word that looks like an English word but means something different."
+        }
+       ],
+       "feedback": "Información needs the accent. Explain the three patterns and give an example of a false friend.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Information, university, famous are the same in Spanish. A false friend is a person who lies.",
+       "meets": [],
+       "feedback": "The Spanish words have different spellings: información, universidad, famoso. A false friend is a word, not a person."
+      },
+      {
+       "tier": "weak",
+       "text": "-tion becomes -ción. Informasion, universty, famous. A false friend is a cognate.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "-tion becomes -ción."
+        }
+       ],
+       "feedback": "Spell the Spanish words: información, universidad, famoso. A false friend is the opposite of a cognate, since the meaning is different."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe an example of Spanish that you see in your community, such as a sign, a menu, a store, a radio station or a label. Answer in English: what does it say, where is it, who is it for and which cognates or words did you recognize? Write one sentence in Spanish about it.",
+     "markScheme": [
+      "Describes what the example says or means",
+      "States where it is found in the community",
+      "States who it is for, such as Spanish-speaking customers or neighbors",
+      "Names recognized words or cognates and writes one correct sentence in Spanish about it"
+     ],
+     "modelAnswer": "A bakery sign in the Hilltop neighborhood says Panadería y pastelería, which means bakery and pastry shop. It is for people who shop there, including Spanish speakers. I recognized pastelería because it looks like pastry. En la panadería hay pan dulce y café.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A sign says Se habla español, which means Spanish spoken here. It is on the door of a pharmacy near my house. It is for customers who speak Spanish so they know they can get help. I recognized español. En la farmacia hay una persona que habla español.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A sign says Se habla español, which means Spanish spoken here."
+        },
+        {
+         "point": 1,
+         "quote": "It is on the door of a pharmacy near my house."
+        },
+        {
+         "point": 2,
+         "quote": "It is for customers who speak Spanish so they know they can get help."
+        },
+        {
+         "point": 3,
+         "quote": "I recognized español. En la farmacia hay una persona que habla español."
+        }
+       ],
+       "feedback": "Muy bien. Your sentence in Spanish is correct, and you thought about who the sign is for."
+      },
+      {
+       "tier": "full",
+       "text": "A taquería menu lists tacos de pollo, arroz con frijoles and agua fresca. It's in a restaurant in the Short North. It is for all customers, including Spanish speakers and people learning the language. I recognized pollo from chicken and arroz because we learned it. Me gustan los tacos.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A taquería menu lists tacos de pollo, arroz con frijoles and agua fresca."
+        },
+        {
+         "point": 1,
+         "quote": "It's in a restaurant in the Short North."
+        },
+        {
+         "point": 2,
+         "quote": "It is for all customers, including Spanish speakers and people learning the language."
+        },
+        {
+         "point": 3,
+         "quote": "I recognized pollo from chicken and arroz because we learned it. Me gustan los tacos."
+        }
+       ],
+       "feedback": "Excelente. Using a cognate and a food word shows how to read a menu."
+      },
+      {
+       "tier": "partial",
+       "text": "A sign says Abierto, which means open. It is on a store near the school. I do not know who it is for. I did not know any other word. Es una tienda.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A sign says Abierto, which means open."
+        },
+        {
+         "point": 1,
+         "quote": "It is on a store near the school."
+        }
+       ],
+       "feedback": "Say who the sign is for, and which words you recognized. Your Spanish sentence is correct."
+      },
+      {
+       "tier": "partial",
+       "text": "A bus in Columbus has an announcement in Spanish. It is for Spanish speakers who ride the bus. I heard the word parada. The bus is big.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A bus in Columbus has an announcement in Spanish."
+        },
+        {
+         "point": 2,
+         "quote": "It is for Spanish speakers who ride the bus."
+        }
+       ],
+       "feedback": "Say what the announcement meant. Parada means stop. Add a Spanish sentence, for example: la parada está cerca.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I saw Spanish. It was a sign. It was nice. I do not know what it said.",
+       "meets": [],
+       "feedback": "Describe where you saw it and what it said. Look for cognates and use a dictionary for the other words."
+      },
+      {
+       "tier": "weak",
+       "text": "A store called Carnicería is for people who are carnivores, and it is in the library because the library has books.",
+       "meets": [],
+       "feedback": "Carnicería is a butcher shop, so the guess is close, but a library is a biblioteca. Say where you saw it, who it is for, and use a Spanish sentence."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

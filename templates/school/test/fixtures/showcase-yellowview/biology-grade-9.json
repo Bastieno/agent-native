@@ -1,0 +1,2721 @@
+{
+ "subject": "Biology",
+ "yearGroup": "Grade 9",
+ "weeks": {
+  "1": {
+   "topic": "Investigations, microscopes and explaining from evidence",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. plan a safe investigation, name the variables and record data with units;\n2. use a microscope, draw what they see to scale and calculate magnification;\n3. write a scientific explanation with a claim, evidence and reasoning.\n\n## Materials\n\nCompound microscopes, prepared onion-skin slides, rulers, lab safety contract, the exit ticket.\n\n## Starter (8 minutes)\n\nShow a photo of two identical bean plants, one on a sunny windowsill and one in a closet. Ask: \"What did the person change, what did they measure, and what did they keep the same?\" Write independent, dependent and controlled on the board and sort student answers into them.\n\n## Main activity\n\n1. Model a claim, evidence and reasoning (CER) using the bean photo: the claim answers the question, the evidence is measured data, the reasoning says why the data supports the claim.\n2. Walk through the parts of the microscope and the rule for carrying it with two hands. Students focus on the onion slide, starting on low power.\n3. Students draw three cells with a title, a ruler line and the magnification, then calculate magnification as drawing size divided by actual size.\n\n## Checking for understanding\n\nCirculate with a checklist: low power first, one hand on the fine focus, drawing labeled with units. Ask any pair, \"How do you know your claim is supported?\"\n\n## Exit ticket\n\nA drawing is 45 mm long and the real cell is 0.15 mm. What is the magnification?",
+   "reading": {
+    "title": "Thinking like a biologist",
+    "content": "Biology starts with a question you can test. \"Do plants grow better in light?\" is testable. \"Are plants nicer than animals?\" is not. Once you have a testable question, you design an investigation around three kinds of variables. The **independent variable** is the one thing you change on purpose, such as the hours of light. The **dependent variable** is what you measure in response, such as the height of the plant in centimeters. **Controlled variables** are everything else you keep the same, such as the soil, the amount of water and the type of seed. If you change two things at once, you cannot tell which one caused the result.\n\nGood data has units and repeats. Measuring five plants in each group is better than measuring one, because one plant might be unusual. Scientists also know that every measurement has some uncertainty. A ruler marked in millimeters cannot honestly tell you a length to the hundredth of a millimeter.\n\nMany living things are too small to see, so biologists use a compound microscope. You always start on the lowest power objective, because it has the widest view and is easiest to focus. You then switch to a higher power and use only the fine focus knob so the lens does not crash into the slide. Total magnification is the eyepiece power multiplied by the objective power. A 10x eyepiece with a 40x objective gives 400x.\n\nWhen you draw what you see, use a sharp pencil, a clear title, and label lines that do not cross. Record the magnification. To find the magnification of a drawing, divide the length of the drawing by the real length of the object. If your drawing of a cell is 45 mm long and the cell is 0.15 mm long, the magnification is 45 divided by 0.15, which is 300.\n\nThe last skill is explaining. A strong scientific explanation has three parts. The **claim** answers the question. The **evidence** is the data you collected. The **reasoning** connects the two with a scientific idea. \"Plants in the sunny window grew taller\" is a statement of evidence, but it only becomes an explanation when you add the reasoning that plants use light to make food for growth."
+   },
+   "cards": [
+    {
+     "front": "Independent variable",
+     "back": "The one factor the investigator changes on purpose."
+    },
+    {
+     "front": "Dependent variable",
+     "back": "The factor that is measured to see the effect of the change."
+    },
+    {
+     "front": "Controlled variable",
+     "back": "A factor kept the same in every group so the test is fair."
+    },
+    {
+     "front": "Total magnification",
+     "back": "Eyepiece power multiplied by objective power."
+    },
+    {
+     "front": "Claim",
+     "back": "The part of an explanation that answers the question."
+    },
+    {
+     "front": "Evidence",
+     "back": "Measured data or observations that support the claim."
+    },
+    {
+     "front": "Reasoning",
+     "back": "The scientific idea that links the evidence to the claim."
+    },
+    {
+     "front": "Fine focus",
+     "back": "The knob used for small adjustments, and the only one used on high power."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A student tests whether the temperature of water changes how fast sugar dissolves. What is the dependent variable?",
+     "options": [
+      "The temperature of the water",
+      "The time the sugar takes to dissolve",
+      "The amount of sugar used",
+      "The size of the beaker"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which objective lens should you use first when you place a new slide on the stage?",
+     "options": [
+      "The highest power",
+      "The medium power",
+      "The lowest power",
+      "Any, as long as you use the coarse focus"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A microscope has a 10x eyepiece and a 40x objective. What is the total magnification?",
+     "options": [
+      "50x",
+      "400x",
+      "30x",
+      "4x"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which sentence is the reasoning in a scientific explanation?",
+     "options": [
+      "The plants in the closet were 3 cm tall after two weeks.",
+      "Light affects plant growth.",
+      "Plants use light energy to make sugars they need to grow, so less light means less growth.",
+      "Our group measured five plants."
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A drawing of a cell is 60 mm long. The real cell is 0.2 mm long. What is the magnification?",
+     "options": [
+      "12x",
+      "300x",
+      "0.0033x",
+      "60x"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A class wants to find out if the amount of salt in water changes how many seconds a raw egg takes to float. Name the independent variable, the dependent variable, and two variables that should be controlled.",
+     "markScheme": [
+      "Names the amount of salt as the independent variable",
+      "Names the time for the egg to float as the dependent variable",
+      "Names one correct controlled variable, such as volume of water",
+      "Names a second correct controlled variable, such as egg size or water temperature"
+     ],
+     "modelAnswer": "The independent variable is the amount of salt added. The dependent variable is the time in seconds the egg takes to float. Two controlled variables are the volume of water and the temperature of the water, and I would also use eggs of the same size.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "We change the amount of salt, that's the independent. The dependent is how many seconds it takes for the egg to float. We would keep the same volume of water and the same temperature so it's fair.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "We change the amount of salt"
+        },
+        {
+         "point": 1,
+         "quote": "The dependent is how many seconds it takes for the egg to float."
+        },
+        {
+         "point": 2,
+         "quote": "keep the same volume of water"
+        },
+        {
+         "point": 3,
+         "quote": "the same temperature"
+        }
+       ],
+       "feedback": "Full marks. You tied each variable to what is changed or measured, which is exactly the sorting skill."
+      },
+      {
+       "tier": "full",
+       "text": "Independent variable: grams of salt. Dependent variable: time to float in seconds. Controlled: same cup and same amount of water, and same size egg.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Independent variable: grams of salt."
+        },
+        {
+         "point": 1,
+         "quote": "Dependent variable: time to float in seconds."
+        },
+        {
+         "point": 2,
+         "quote": "same cup and same amount of water"
+        },
+        {
+         "point": 3,
+         "quote": "same size egg"
+        }
+       ],
+       "feedback": "All four marks, and you put the units on the dependent variable."
+      },
+      {
+       "tier": "partial",
+       "text": "The salt is what we change. The dependent variable is the egg. We should keep the water the same.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The salt is what we change."
+        }
+       ],
+       "feedback": "The egg is the thing you test, but the dependent variable is what you measure about it, which is the time it takes to float. Name a second controlled variable too."
+      },
+      {
+       "tier": "partial",
+       "text": "The time it takes to float is dependent and the water amount is controlled. Salt is controlled too I think.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The time it takes to float is dependent"
+        },
+        {
+         "point": 2,
+         "quote": "the water amount is controlled"
+        }
+       ],
+       "feedback": "Your dependent variable is right. Salt is the one thing you change, so it is the independent variable, not controlled.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The egg is the independent and the salt is dependent. Controlled is the table.",
+       "meets": [],
+       "feedback": "Try asking what the class changes on purpose. That is the salt. The table does not affect the egg, so it is not a variable worth controlling here."
+      },
+      {
+       "tier": "weak",
+       "text": "The salt amount is the independent variable. The rest are all dependent because they depend on the egg.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The salt amount is the independent variable."
+        }
+       ],
+       "feedback": "You found the independent variable. The dependent variable is one measured result, the floating time. Everything else you keep the same is controlled."
+      }
+     ]
+    },
+    {
+     "prompt": "A drawing of an onion cell is 48 mm long. The real cell is 0.16 mm long. Calculate the magnification and show your working.",
+     "markScheme": [
+      "Writes magnification = drawing size / actual size",
+      "Substitutes both lengths in the same unit",
+      "Calculates 300",
+      "Writes the answer as a magnification, 300x"
+     ],
+     "modelAnswer": "Magnification = drawing size divided by actual size. 48 mm divided by 0.16 mm is 300. The magnification is 300x.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Magnification is image size over real size. 48 / 0.16 = 300. So it is 300x.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Magnification is image size over real size."
+        },
+        {
+         "point": 1,
+         "quote": "48 / 0.16"
+        },
+        {
+         "point": 2,
+         "quote": "= 300"
+        },
+        {
+         "point": 3,
+         "quote": "So it is 300x."
+        }
+       ],
+       "feedback": "Full marks. Both lengths were already in millimeters, which is why you could divide directly."
+      },
+      {
+       "tier": "full",
+       "text": "Drawing size divided by actual size, so 48 mm ÷ 0.16 mm equals 300. The drawing is magnified 300x.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Drawing size divided by actual size"
+        },
+        {
+         "point": 1,
+         "quote": "48 mm ÷ 0.16 mm"
+        },
+        {
+         "point": 2,
+         "quote": "equals 300"
+        },
+        {
+         "point": 3,
+         "quote": "The drawing is magnified 300x."
+        }
+       ],
+       "feedback": "All four marks. Showing the units cancel is a nice touch."
+      },
+      {
+       "tier": "partial",
+       "text": "Drawing divided by actual. 48 / 0.16 = 3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Drawing divided by actual"
+        },
+        {
+         "point": 1,
+         "quote": "48 / 0.16"
+        }
+       ],
+       "feedback": "Your setup is right but the division is off by a factor of 100. Check by multiplying: 0.16 times 3 is only 0.48, not 48."
+      },
+      {
+       "tier": "partial",
+       "text": "48 / 0.16 = 300 so it is 300.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "so it is 300"
+        }
+       ],
+       "feedback": "The number is right, but you need to show the formula and write it as 300x with the x for times.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "48 + 0.16 = 48.16 so the magnification is 48.16.",
+       "meets": [],
+       "feedback": "Magnification compares the size of the drawing to the real size, so you divide. Adding the two lengths does not mean anything here."
+      },
+      {
+       "tier": "weak",
+       "text": "You divide the real size by the drawing size which gives 0.0033.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "You divide the real size by the drawing size"
+        }
+       ],
+       "feedback": "You have the right idea of dividing but you flipped the two lengths. A drawing that is bigger than the cell should give a number larger than 1."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "From cells to organ systems, and DNA to proteins",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. develop a model of how cells, tissues, organs and organ systems work together;\n2. explain how the sequence of DNA determines the proteins a cell makes.\n\n## Materials\n\nCards for the levels of organization, a paper DNA strip activity, scissors, glue, the practical sheet.\n\n## Starter (7 minutes)\n\nAsk: \"When you run the mile in PE, which parts of you are working, and how do they know what the others are doing?\" List answers on the board and sort them into cells, organs and systems.\n\n## Main activity\n\n1. Build a concept map from cell to tissue to organ to organ system to organism, using the heart and circulatory system as the example.\n2. Introduce DNA as a code. Each group gets a strip of DNA bases and uses a codon chart to build the chain of amino acids, then folds a pipe-cleaner model to show how the chain becomes a protein shape.\n3. Practical: students model the flow of a message in a body by passing a coded note through a chain, then change one letter and see how the final result changes.\n\n## Checking for understanding\n\nAsk for a one-minute explanation: \"Why can a single changed base change a protein?\" Listen for sequence, shape and function.\n\n## Exit ticket\n\nDraw a three-box flow from DNA to protein and label each arrow.",
+   "reading": {
+    "title": "Tiny parts, working together",
+    "content": "Your body is made of trillions of cells, but they are not all alike. A muscle cell is long and packed with fibers that shorten. A nerve cell has long branches that carry signals. Cells of the same kind work together as a **tissue**. Muscle tissue contracts. Epithelial tissue covers surfaces. Different tissues combine into an **organ**, such as the stomach or the heart. Organs that work toward one job are an **organ system**. The digestive system, for example, includes the mouth, stomach, small intestine and liver, and its job is to break down food and absorb nutrients.\n\nNo system works alone. When you sprint to catch a COTA bus, your muscular system needs oxygen from the respiratory system, delivered by the circulatory system, and your nervous system coordinates all of it. A change in one part affects the others.\n\nWhat tells each cell which proteins to make? The answer is **DNA**, the molecule found in the nucleus of your cells. DNA is a long chain of four bases, abbreviated A, T, C and G. A group of three bases is a **codon**, and each codon points to one amino acid. In a cell, the DNA sequence is copied into a messenger molecule called RNA, and ribosomes read the RNA codon by codon. They link amino acids in the order the code says, forming a chain.\n\nThe chain folds into a specific three-dimensional shape, and that shape is the protein. This matters because a protein works by its shape. An enzyme has a pocket that fits one particular molecule. A hemoglobin protein carries oxygen because of the way its folds create a space for it.\n\nIf one base in the DNA is changed, the codon may change, and so may the amino acid. Sometimes that has no effect. Sometimes it changes the shape of the protein so it works poorly or not at all. Sickle cell disease is caused by one changed base that gives a different amino acid in hemoglobin, which bends red blood cells out of shape. Small changes at the base level can have large effects at the level of the organism."
+   },
+   "cards": [
+    {
+     "front": "Tissue",
+     "back": "A group of similar cells that do the same job."
+    },
+    {
+     "front": "Organ",
+     "back": "A structure made of different tissues that work together for one function."
+    },
+    {
+     "front": "Organ system",
+     "back": "A group of organs that work together for a larger job."
+    },
+    {
+     "front": "DNA",
+     "back": "The molecule that stores the instructions for making proteins."
+    },
+    {
+     "front": "Codon",
+     "back": "A group of three bases that points to one amino acid."
+    },
+    {
+     "front": "Ribosome",
+     "back": "The cell structure that builds proteins by reading RNA."
+    },
+    {
+     "front": "Amino acid",
+     "back": "A building block that links in a chain to make a protein."
+    },
+    {
+     "front": "Protein shape",
+     "back": "The folded form of a protein, which decides what it can do."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which list goes from smallest to largest level of organization?",
+     "options": [
+      "Organ, tissue, cell, system",
+      "Cell, tissue, organ, organ system",
+      "Tissue, cell, system, organ",
+      "Cell, organ, tissue, organ system"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The stomach is made of muscle, nerve and epithelial tissue working together. This makes the stomach a(n):",
+     "options": [
+      "Cell",
+      "Tissue",
+      "Organ",
+      "Organ system"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What does a codon do?",
+     "options": [
+      "Copies the whole cell",
+      "Points to a specific amino acid",
+      "Stores energy",
+      "Carries oxygen in the blood"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why can one changed DNA base alter how an organism works?",
+     "options": [
+      "It can change an amino acid, which can change the protein's shape and function",
+      "It always makes the cell divide",
+      "It removes the nucleus",
+      "It changes the number of cells in a tissue"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A runner's muscles need more oxygen during a race. Which pair of systems must work together to deliver it?",
+     "options": [
+      "Digestive and skeletal",
+      "Respiratory and circulatory",
+      "Nervous and excretory",
+      "Skeletal and integumentary"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain how the heart, the lungs and the blood vessels work together to supply a muscle with oxygen when a student runs the mile.",
+     "markScheme": [
+      "States that the lungs take in oxygen",
+      "States that the blood carries oxygen from the lungs",
+      "States that the heart pumps blood through the vessels to the muscles",
+      "Links the oxygen delivered to the muscles' need during exercise"
+     ],
+     "modelAnswer": "The lungs take in oxygen and pass it into the blood. The heart pumps the oxygen-rich blood through blood vessels to the muscle cells. During the mile the muscles need more oxygen to release energy, so the heart beats faster and breathing speeds up.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Your lungs bring in oxygen and it goes into the blood. The heart pumps that blood through the vessels to the muscles. When you run, your muscles need extra oxygen so you breathe and your heart beats faster.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Your lungs bring in oxygen"
+        },
+        {
+         "point": 1,
+         "quote": "it goes into the blood"
+        },
+        {
+         "point": 2,
+         "quote": "The heart pumps that blood through the vessels to the muscles."
+        },
+        {
+         "point": 3,
+         "quote": "When you run, your muscles need extra oxygen so you breathe and your heart beats faster."
+        }
+       ],
+       "feedback": "Full marks. You followed the oxygen along its whole path and explained why exercise speeds it up."
+      },
+      {
+       "tier": "full",
+       "text": "Oxygen enters through the lungs, then the blood picks it up and carries it. The heart is the pump that pushes blood through the arteries to the leg muscles. Running uses more energy so the muscles need more oxygen.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Oxygen enters through the lungs"
+        },
+        {
+         "point": 1,
+         "quote": "then the blood picks it up and carries it"
+        },
+        {
+         "point": 2,
+         "quote": "The heart is the pump that pushes blood through the arteries to the leg muscles."
+        },
+        {
+         "point": 3,
+         "quote": "Running uses more energy so the muscles need more oxygen."
+        }
+       ],
+       "feedback": "All four marks. Naming the arteries shows you know the vessels are part of the delivery route."
+      },
+      {
+       "tier": "partial",
+       "text": "The lungs take in oxygen and the heart makes it go around. The muscles use it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The lungs take in oxygen"
+        }
+       ],
+       "feedback": "Good start. Say what the oxygen travels in (the blood) and why the heart and breathing rates increase during a run."
+      },
+      {
+       "tier": "partial",
+       "text": "The heart pumps the blood to the muscles. The muscles need more when you run.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The heart pumps the blood to the muscles."
+        },
+        {
+         "point": 3,
+         "quote": "The muscles need more when you run."
+        }
+       ],
+       "feedback": "Where does the blood pick up the oxygen? Add the lungs and say the blood carries it.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The heart breathes in the oxygen and the lungs pump it to the muscles.",
+       "meets": [],
+       "feedback": "The jobs are swapped. The lungs take in oxygen and the heart pumps blood. Try drawing the path with arrows."
+      },
+      {
+       "tier": "weak",
+       "text": "Blood carries stuff to the muscles because it is red.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Blood carries stuff to the muscles"
+        }
+       ],
+       "feedback": "Blood does carry things to the muscles, which is a start. Say what it carries (oxygen), where it gets it, and what the heart does."
+      }
+     ]
+    },
+    {
+     "prompt": "A mutation changes one base in the DNA that codes for a protein. Explain, step by step, how this could change the protein's job.",
+     "markScheme": [
+      "States that the DNA sequence codes for the order of amino acids",
+      "States that the changed base may change a codon and so an amino acid",
+      "States that this can change the folded shape of the protein",
+      "States that a different shape can change or stop the protein's function"
+     ],
+     "modelAnswer": "DNA codes for the order of amino acids in a protein. If one base changes, a codon may change and a different amino acid may be added. That can change how the chain folds, and since a protein works by its shape, the protein may work differently or not at all.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The DNA order of bases tells the cell which amino acids to put in order. If one base is different, the codon can change and a different amino acid can get added. That might make the protein fold into a different shape and then it might not do its job.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The DNA order of bases tells the cell which amino acids to put in order."
+        },
+        {
+         "point": 1,
+         "quote": "If one base is different, the codon can change and a different amino acid can get added."
+        },
+        {
+         "point": 2,
+         "quote": "That might make the protein fold into a different shape"
+        },
+        {
+         "point": 3,
+         "quote": "then it might not do its job."
+        }
+       ],
+       "feedback": "Full marks. You kept the steps in order, from base to amino acid to shape to function."
+      },
+      {
+       "tier": "full",
+       "text": "A gene is a code for a chain of amino acids. Changing one base can change a codon so the chain has a different amino acid. The chain then folds up differently, and since proteins work because of their shape, it may not work the same.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A gene is a code for a chain of amino acids."
+        },
+        {
+         "point": 1,
+         "quote": "Changing one base can change a codon so the chain has a different amino acid."
+        },
+        {
+         "point": 2,
+         "quote": "The chain then folds up differently"
+        },
+        {
+         "point": 3,
+         "quote": "proteins work because of their shape, it may not work the same"
+        }
+       ],
+       "feedback": "All four marks, with a clear link between shape and function."
+      },
+      {
+       "tier": "partial",
+       "text": "DNA gives the order of amino acids so one base change can change an amino acid. Then the cell dies.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "DNA gives the order of amino acids"
+        },
+        {
+         "point": 1,
+         "quote": "one base change can change an amino acid"
+        }
+       ],
+       "feedback": "The first two steps are good. A changed protein does not always kill the cell. Say how the new shape affects the job of the protein."
+      },
+      {
+       "tier": "partial",
+       "text": "The mutation changes the shape of the protein and then it doesn't work right.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The mutation changes the shape of the protein"
+        },
+        {
+         "point": 3,
+         "quote": "then it doesn't work right"
+        }
+       ],
+       "feedback": "You jumped to the end. Explain how the base change reaches the shape: through a different codon and a different amino acid.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A mutation makes the cell grow bigger so the protein is bigger.",
+       "meets": [],
+       "feedback": "Mutations do not usually change cell size. A changed base changes a codon, then an amino acid, then the shape. Revisit the reading."
+      },
+      {
+       "tier": "weak",
+       "text": "DNA tells the order of amino acids. Mutations are always bad and the person gets sick.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "DNA tells the order of amino acids"
+        }
+       ],
+       "feedback": "You have the code idea right. Many mutations have no effect, and some are helpful, so you cannot say always. Link the change to the shape of the protein."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Modeling how a message becomes a body part",
+    "instructions": "In a chain of four students, pass a coded message from a DNA card to a ribosome student to build a short protein out of colored beads. Then change one letter in the code and repeat. Record what changed and explain it using the ideas of codon, amino acid and protein shape.",
+    "steps": [
+     {
+      "text": "Read the DNA card with the six-base sequence aloud to the ribosome student."
+     },
+     {
+      "text": "Use the codon chart to turn each group of three bases into one bead color."
+     },
+     {
+      "text": "String the beads in order to build the protein chain and record the colors in your table."
+     },
+     {
+      "text": "Change one base on the DNA card as your teacher directs, and repeat the process.",
+      "note": "Do not swap more than one base, or you will not know which change mattered."
+     },
+     {
+      "text": "Compare the two chains and record how many beads are different."
+     },
+     {
+      "text": "Write a short conclusion that links the change in the code to a change in the protein."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method: correct use of the codon chart and a clear record of both chains",
+      "maxPoints": 4
+     },
+     {
+      "description": "Results: the two chains compared accurately",
+      "maxPoints": 3
+     },
+     {
+      "description": "Conclusion: links the base change to protein shape and function",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "I used the codon chart to turn the six bases into two beads, red then blue. After I changed the third base, the second bead became green. Only one bead out of two was different. A changed base changes a codon, which changes an amino acid, and in a real cell that could change how the protein folds and works.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Strong write-up. Every step is in the order you did it, and the conclusion explains why one letter mattered."
+     },
+     {
+      "tier": "full",
+      "text": "Method: we read the DNA card CAT GGA and matched each codon to a bead color with the chart. Results: the first chain was yellow and orange, and after changing the A in the second codon to C, the chain was yellow and purple, so one bead changed. Conclusion: one base change swapped an amino acid. This could make the protein fold into a different shape, so it might not do the same job.",
+      "scores": [
+       4,
+       3,
+       3
+      ],
+      "feedback": "Clear and complete. For full marks in the conclusion, say what might happen to the function in the body."
+     },
+     {
+      "tier": "partial",
+      "text": "We used the codon chart to build the beads, one color for each group of three letters, and wrote the colors down in our table. After the teacher had us change one letter, the chain looked different from the first one. So I think the DNA change made a different protein, but I did not count how many beads changed.",
+      "scores": [
+       2,
+       1,
+       2
+      ],
+      "feedback": "Be specific. Say which colors you got in each chain and how many beads changed. Then explain why a different amino acid might change the shape."
+     },
+     {
+      "tier": "partial",
+      "text": "First we read the DNA card out loud and made a chain with red, blue, red. Then we changed one letter and made the chain again, and it had red, green, red. The change made one bead different out of three, and the other two stayed the same as before.",
+      "scores": [
+       3,
+       2,
+       1
+      ],
+      "feedback": "Your records are clear. The conclusion is missing: what does a different bead mean for the real protein?"
+     },
+     {
+      "tier": "weak",
+      "text": "We passed the message down the line and made beads from the code. It was fun because we got to work in a group, and the second chain looked a little different from the first one when we put them next to each other on the desk.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Describe what you did in steps, record the bead colors in each chain, and tie the result to the idea of a codon."
+     },
+     {
+      "tier": "weak",
+      "text": "The beads show that DNA is made of beads that go in a line. When we changed the code the whole chain changed completely and nothing matched the first chain anymore, so I think a small change in DNA changes everything about the protein.",
+      "scores": [
+       1,
+       0,
+       1
+      ],
+      "feedback": "Only one bead changed, not the whole chain. Compare the two chains again and count the differences carefully."
+     }
+    ]
+   }
+  },
+  "3": {
+   "topic": "Photosynthesis: light energy becomes sugar",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use evidence to show how carbon, hydrogen and oxygen from sugars build amino acids and other large molecules;\n2. model how photosynthesis changes light energy into stored chemical energy.\n\n## Materials\n\nElodea or spinach leaf disks, baking soda solution, syringes, cups, a lamp, a timer, the practical sheet.\n\n## Starter (7 minutes)\n\nHold up a tiny seed and a photo of a large oak. Ask: \"Where did all of that tree come from? The soil lost almost no weight.\" Take predictions and record them for revisiting at the end.\n\n## Main activity\n\n1. Present the photosynthesis equation in words: carbon dioxide plus water, using light energy, makes glucose plus oxygen. Annotate it with where each item comes from and goes to.\n2. Practical: leaf disk floating test. Disks sink at first when air is drawn out, and rise as photosynthesis produces oxygen in the light. Measure how many disks float each minute.\n3. Connect the glucose to growth. Show how atoms from glucose are rebuilt into larger molecules, including amino acids that need nitrogen from the soil.\n\n## Checking for understanding\n\nCold-call: \"Where did the tree's mass come from?\" Look for carbon dioxide from the air.\n\n## Exit ticket\n\nList the two reactants and two products of photosynthesis and name the energy source.",
+   "reading": {
+    "title": "Where does a tree come from?",
+    "content": "A tree is made mostly of wood, and wood is made mostly of carbon. For a long time people assumed trees took their mass from the soil. In the 1600s a scientist grew a willow in a pot for five years. The tree gained about 74 kilograms, but the soil lost only a tiny amount. So where did the mass come from? Most of it came from the air, in the form of carbon dioxide.\n\n**Photosynthesis** is the process in which plants, algae and some bacteria turn light energy into the chemical energy stored in sugar. It happens in the chloroplasts, which contain a green pigment called chlorophyll that absorbs light. In words: carbon dioxide plus water, in the presence of light energy, becomes glucose plus oxygen. The carbon and oxygen atoms in glucose come from carbon dioxide, the hydrogen atoms come from water, and the energy comes from the light. The oxygen given off came from the water molecules.\n\nGlucose is not the end of the story. The plant uses the atoms in glucose as building blocks. Glucose can be joined into long chains of starch for storage or cellulose for cell walls. The carbon, hydrogen and oxygen can be rebuilt into fats and, with nitrogen taken up through the roots, into amino acids, which then join into proteins. This is why a farmer in central Ohio adds nitrogen fertilizer to a corn field. The corn can make sugar from air and water, but it needs nitrogen to make its proteins.\n\nSeveral factors limit how fast photosynthesis happens: the brightness of the light, the amount of carbon dioxide, and the temperature. At low light, more light means more sugar. At some point another factor, such as carbon dioxide, becomes the limit, and adding more light does not help.\n\nPhotosynthesis matters for every living thing. It captures energy from the sun that nearly every food chain depends on, and it releases the oxygen that animals and plants need for respiration."
+   },
+   "cards": [
+    {
+     "front": "Photosynthesis",
+     "back": "The process that uses light energy to turn carbon dioxide and water into glucose and oxygen."
+    },
+    {
+     "front": "Chloroplast",
+     "back": "The cell structure where photosynthesis happens."
+    },
+    {
+     "front": "Chlorophyll",
+     "back": "The green pigment that absorbs light for photosynthesis."
+    },
+    {
+     "front": "Glucose",
+     "back": "A simple sugar that stores chemical energy."
+    },
+    {
+     "front": "Reactant",
+     "back": "A substance that is used up in a chemical reaction."
+    },
+    {
+     "front": "Product",
+     "back": "A substance that is made in a chemical reaction."
+    },
+    {
+     "front": "Limiting factor",
+     "back": "The condition in shortest supply, which sets the rate of a process."
+    },
+    {
+     "front": "Cellulose",
+     "back": "A long chain of glucose that builds plant cell walls."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which are the reactants of photosynthesis?",
+     "options": [
+      "Glucose and oxygen",
+      "Carbon dioxide and water",
+      "Oxygen and water",
+      "Glucose and carbon dioxide"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A seed grows into a large tree. Most of the tree's mass came from:",
+     "options": [
+      "The soil",
+      "Water only",
+      "Carbon dioxide in the air",
+      "Sunlight"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Where does photosynthesis take place?",
+     "options": [
+      "Mitochondria",
+      "Nucleus",
+      "Chloroplasts",
+      "Cell wall"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A greenhouse tomato plant is in bright light and warm, but the air has very little carbon dioxide. What is most likely the limiting factor?",
+     "options": [
+      "Light",
+      "Temperature",
+      "Carbon dioxide",
+      "Oxygen"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Why does a corn field need nitrogen fertilizer even though corn can make sugar from air and water?",
+     "options": [
+      "Nitrogen is needed to make amino acids for proteins",
+      "Nitrogen is the energy source for photosynthesis",
+      "Nitrogen makes chlorophyll green only",
+      "Nitrogen replaces carbon dioxide"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A plant is placed in a sealed jar in bright light. Describe what happens to the amount of carbon dioxide and oxygen in the jar over several hours and explain why.",
+     "markScheme": [
+      "States that carbon dioxide in the jar decreases",
+      "States that oxygen in the jar increases",
+      "Links the changes to photosynthesis",
+      "States that light energy is changed into chemical energy in glucose"
+     ],
+     "modelAnswer": "The carbon dioxide in the jar decreases and the oxygen increases. The plant is carrying out photosynthesis, which uses carbon dioxide and water and releases oxygen. The light energy is stored as chemical energy in glucose.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The carbon dioxide would go down and the oxygen would go up. That is because the plant is doing photosynthesis. It takes the light and stores the energy in glucose.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The carbon dioxide would go down"
+        },
+        {
+         "point": 1,
+         "quote": "the oxygen would go up"
+        },
+        {
+         "point": 2,
+         "quote": "That is because the plant is doing photosynthesis."
+        },
+        {
+         "point": 3,
+         "quote": "It takes the light and stores the energy in glucose."
+        }
+       ],
+       "feedback": "Full marks. You named both changes and gave the process that causes them."
+      },
+      {
+       "tier": "full",
+       "text": "CO2 gets used up so there's less of it. The plant releases oxygen so there's more of that. Photosynthesis uses CO2 and water and turns light energy into the chemical energy in sugar.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "CO2 gets used up so there's less of it."
+        },
+        {
+         "point": 1,
+         "quote": "The plant releases oxygen so there's more of that."
+        },
+        {
+         "point": 2,
+         "quote": "Photosynthesis uses CO2 and water"
+        },
+        {
+         "point": 3,
+         "quote": "turns light energy into the chemical energy in sugar."
+        }
+       ],
+       "feedback": "All four marks. Linking the gas changes to the equation is exactly what the question asked."
+      },
+      {
+       "tier": "partial",
+       "text": "The oxygen goes up because of photosynthesis. The carbon dioxide goes up too.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The oxygen goes up"
+        },
+        {
+         "point": 2,
+         "quote": "because of photosynthesis"
+        }
+       ],
+       "feedback": "You have one gas right. Carbon dioxide is a reactant, so it is used up and decreases."
+      },
+      {
+       "tier": "partial",
+       "text": "There is less carbon dioxide because the plant uses it. The plant gets energy from the soil.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There is less carbon dioxide"
+        }
+       ],
+       "feedback": "Good on carbon dioxide. Add oxygen going up, and fix the energy: it comes from light, not the soil.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The plant breathes in oxygen and breathes out carbon dioxide like us.",
+       "meets": [],
+       "feedback": "That is respiration, which plants also do. In bright light photosynthesis is faster and the plant takes in carbon dioxide and gives out oxygen."
+      },
+      {
+       "tier": "weak",
+       "text": "It is photosynthesis so nothing changes in the jar.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "It is photosynthesis"
+        }
+       ],
+       "feedback": "You named the process. But photosynthesis changes the gases. Write down which gas is a reactant and which is a product."
+      }
+     ]
+    },
+    {
+     "prompt": "A willow tree grew from 2 kg to 76 kg while the soil in its pot lost only 0.06 kg. Use this evidence to explain where the tree's extra mass came from.",
+     "markScheme": [
+      "Uses the data to state the tree gained far more mass than the soil lost",
+      "Concludes the soil was not the main source of mass",
+      "States that carbon dioxide from the air supplied the carbon",
+      "States that water and photosynthesis built the mass into glucose and other molecules"
+     ],
+     "modelAnswer": "The tree gained about 74 kg while the soil lost only 0.06 kg, so the soil cannot be the main source. Most of the mass came from carbon dioxide in the air and from water. In photosynthesis, the plant builds those atoms into glucose, and then into cellulose and other molecules.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The tree gained 74 kg and the soil only lost 0.06 kg, so the soil isn't where the mass came from. The carbon came from carbon dioxide in the air. With water, the plant uses photosynthesis to make glucose and build cellulose and other molecules.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The tree gained 74 kg and the soil only lost 0.06 kg"
+        },
+        {
+         "point": 1,
+         "quote": "so the soil isn't where the mass came from"
+        },
+        {
+         "point": 2,
+         "quote": "The carbon came from carbon dioxide in the air."
+        },
+        {
+         "point": 3,
+         "quote": "With water, the plant uses photosynthesis to make glucose and build cellulose and other molecules."
+        }
+       ],
+       "feedback": "Full marks. You used the numbers as evidence first, then gave the reasoning."
+      },
+      {
+       "tier": "full",
+       "text": "There is a big difference between the 74 kg of growth and 0.06 kg of soil lost. So the soil can't be what the tree is made of. The tree takes in CO2 from the air. Photosynthesis uses CO2 and water to make sugar which becomes wood.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There is a big difference between the 74 kg of growth and 0.06 kg of soil lost."
+        },
+        {
+         "point": 1,
+         "quote": "So the soil can't be what the tree is made of."
+        },
+        {
+         "point": 2,
+         "quote": "The tree takes in CO2 from the air."
+        },
+        {
+         "point": 3,
+         "quote": "Photosynthesis uses CO2 and water to make sugar which becomes wood."
+        }
+       ],
+       "feedback": "All four marks, and a good use of comparison in the data."
+      },
+      {
+       "tier": "partial",
+       "text": "The tree gained a lot more than the soil lost. It came from the air.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The tree gained a lot more than the soil lost."
+        },
+        {
+         "point": 2,
+         "quote": "It came from the air."
+        }
+       ],
+       "feedback": "Say which gas in the air and what the plant does with it. Add the water and the process of photosynthesis."
+      },
+      {
+       "tier": "partial",
+       "text": "The soil isn't the main source. The tree used water and light to make glucose.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The soil isn't the main source."
+        },
+        {
+         "point": 3,
+         "quote": "The tree used water and light to make glucose."
+        }
+       ],
+       "feedback": "Good conclusions. Add data from the question and name carbon dioxide as the source of carbon.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The tree got its mass from the soil, because roots take in soil.",
+       "meets": [],
+       "feedback": "The data says the soil lost almost nothing. Roots take in water and minerals, but those are a tiny part of the mass."
+      },
+      {
+       "tier": "weak",
+       "text": "The tree grew 74 kg. The sun gave it all the mass because the sun is big.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The tree grew 74 kg."
+        }
+       ],
+       "feedback": "You quoted the data. Light provides energy, not mass. The mass came from carbon dioxide and water."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Leaf disk floating test",
+    "instructions": "Use a syringe to pull the air out of spinach leaf disks in a baking soda solution so they sink. Place cups under a lamp and count how many disks float each minute for ten minutes. Compare a cup in bright light with a cup in dim light.",
+    "steps": [
+     {
+      "text": "Punch ten leaf disks with a hole punch, avoiding the veins."
+     },
+     {
+      "text": "Draw the air out of the disks with a syringe and the baking soda solution until they all sink.",
+      "note": "Do not squeeze the plunger hard; the disks should not be crushed."
+     },
+     {
+      "text": "Pour the disks and the solution into two clear cups, labeled bright and dim."
+     },
+     {
+      "text": "Place one cup 10 cm from the lamp and one cup 40 cm away, and start the timer."
+     },
+     {
+      "text": "Every minute, record the number of disks floating in each cup in your table."
+     },
+     {
+      "text": "Graph the number of floating disks against time and write a conclusion."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method: fair test with one variable changed and the others controlled",
+      "maxPoints": 4
+     },
+     {
+      "description": "Results: complete table and a graph with labeled axes and units",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: uses the data and the idea of photosynthesis producing oxygen",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "We changed the distance from the lamp, 10 cm and 40 cm, and kept the number of disks, the solution and the leaf the same. In bright light all ten disks floated by minute 8 but in dim light only 3 floated after ten minutes. I made a line graph of floating disks against time. The disks float because photosynthesis makes oxygen that gets trapped in the leaf, and more light makes photosynthesis faster.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "Excellent. A fair test, clear data, and a conclusion that explains why the disks float."
+     },
+     {
+      "tier": "full",
+      "text": "Question: does light brightness change the rate of photosynthesis? Independent variable was distance from the lamp. We controlled the number of disks, the amount of baking soda solution and the temperature. The table shows 2 disks floating at minute 3 in bright light and 0 in dim light, and 10 vs 3 at minute 10. The graph shows the bright line rising faster. Bright light gives more energy for photosynthesis, which makes oxygen faster.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. Your graph description is clear, though the full table should include every minute."
+     },
+     {
+      "tier": "partial",
+      "text": "We put the cups by the lamp and counted the disks that were floating as the minutes went by. More disks floated in the bright cup than in the other one by the end of the time. This is because the bright one had more light on it.",
+      "scores": [
+       2,
+       2,
+       2
+      ],
+      "feedback": "Add the distances you used, the numbers from your table and the reason why disks float, which is the oxygen made by photosynthesis."
+     },
+     {
+      "tier": "partial",
+      "text": "The disks in bright light floated faster, with all 10 up by minute 8. The dim cup only had 3 floating at the end of the ten minutes. I think they float because of the baking soda, since that is what we put in the water.",
+      "scores": [
+       2,
+       3,
+       1
+      ],
+      "feedback": "The data is good. The baking soda provides carbon dioxide, which allows photosynthesis. The floating is caused by the oxygen produced."
+     },
+     {
+      "tier": "weak",
+      "text": "We did the experiment with the leaf disks and the lamp, and we put the disks in the cups with the solution. Some of them floated up to the top after a while and some stayed on the bottom of the cup.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Say how many floated in each cup and when. Then explain what makes the disks rise."
+     },
+     {
+      "tier": "weak",
+      "text": "The disks floated because the lamp made them hot and the hot air lifted them up to the top of the water. The cup that was closer to the lamp got hotter so more of its disks floated, and the far cup stayed cooler.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "The lamp gives light energy for photosynthesis. The oxygen made by the leaf makes the disks float, not hot air. Check the variables you controlled."
+     }
+    ]
+   }
+  },
+  "4": {
+   "topic": "Cellular respiration and the cycle of matter",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. model cellular respiration as a process that breaks bonds in food molecules and releases energy for the cell;\n2. compare photosynthesis and respiration as a cycle of matter and a flow of energy.\n\n## Materials\n\nMolecular model kits, two colors of paper clips, mini whiteboards, a quiz sheet.\n\n## Starter (6 minutes)\n\nAsk: \"Your phone battery goes down as you use it. Where does a cell get energy?\" Collect answers. Show that a cell cannot use a candy bar directly: it must release the energy slowly.\n\n## Main activity\n\n1. Use model kits to build a glucose molecule and six oxygen molecules, then break and rearrange the bonds to form six carbon dioxide and six water molecules. Count the atoms before and after to show matter is conserved.\n2. Introduce ATP as the short-term energy currency of the cell.\n3. Draw a two-way cycle poster that shows photosynthesis and respiration side by side. Mark what moves in a cycle (carbon, oxygen) and what flows one way (energy).\n\n## Checking for understanding\n\nMini whiteboards: \"Write the reactants and products of respiration.\" Hold up and check.\n\n## Quiz (last 12 minutes)\n\nStudents take the five-question quiz on respiration and the comparison table.",
+   "reading": {
+    "title": "Burning food without a flame",
+    "content": "Every cell in your body needs energy all the time. It gets that energy from food, but it cannot use the sugar directly. Instead, cells carry out **cellular respiration**, a series of reactions that break down glucose and use the released energy to build a molecule called **ATP**. ATP is like a rechargeable battery that the cell can spend on moving, building molecules and sending signals.\n\nIn words, cellular respiration is glucose plus oxygen producing carbon dioxide plus water, with energy released. If that sounds like photosynthesis backward, that is because it is. Photosynthesis builds glucose from carbon dioxide and water using light energy. Respiration takes apart glucose, using oxygen, and returns carbon dioxide and water.\n\nMost of the reactions of respiration take place in the **mitochondria**, which is why they are called the power plants of the cell. Muscle cells have many mitochondria because they use a lot of energy. A small part of the process, called glycolysis, takes place in the cytoplasm before the mitochondria. When oxygen is missing, cells can still get a small amount of energy by fermentation, but it is much less efficient. This is why your muscles burn when you sprint the final lap on the track.\n\nNotice what happens to matter and to energy. The atoms are conserved. The carbon atoms in the glucose end up in carbon dioxide, which you breathe out. The hydrogen atoms end up in water. No atoms are made or destroyed. They are just rearranged, so matter cycles between living things and the air: plants take carbon dioxide in and build sugar, animals eat the sugar and release carbon dioxide again.\n\nEnergy is different. Light energy comes into the system from the sun, is stored in glucose, and is released as ATP and as heat. Some of the energy is always lost as heat, so energy flows through ecosystems in one direction and cannot be reused over and over. That is why ecosystems need a constant supply of sunlight, while the atoms of carbon and oxygen can be recycled."
+   },
+   "cards": [
+    {
+     "front": "Cellular respiration",
+     "back": "The process that breaks down glucose with oxygen to release energy as ATP."
+    },
+    {
+     "front": "ATP",
+     "back": "The molecule cells use to store and move energy for work."
+    },
+    {
+     "front": "Mitochondria",
+     "back": "The cell structures where most of respiration takes place."
+    },
+    {
+     "front": "Fermentation",
+     "back": "Getting a little energy from glucose without oxygen."
+    },
+    {
+     "front": "Glycolysis",
+     "back": "The first step of respiration, in which glucose is split in the cytoplasm."
+    },
+    {
+     "front": "Conservation of matter",
+     "back": "Atoms are rearranged in a reaction, not created or destroyed."
+    },
+    {
+     "front": "Cycle of matter",
+     "back": "The movement of atoms such as carbon between living things and the environment."
+    },
+    {
+     "front": "Flow of energy",
+     "back": "Energy moves in one direction through an ecosystem and is lost as heat."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What are the products of cellular respiration?",
+     "options": [
+      "Glucose and oxygen",
+      "Carbon dioxide, water and energy",
+      "Oxygen and ATP only",
+      "Carbon dioxide and glucose"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why do muscle cells contain many mitochondria?",
+     "options": [
+      "They store DNA",
+      "They need a lot of ATP for movement",
+      "They make photosynthesis faster",
+      "They make the cell larger"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which statement about matter and energy in an ecosystem is correct?",
+     "options": [
+      "Both cycle and are reused forever",
+      "Matter is lost as heat and energy is recycled",
+      "Matter cycles, and energy flows one way and is lost as heat",
+      "Neither matter nor energy changes"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A glucose molecule has 6 carbon atoms. In respiration, how many carbon dioxide molecules can be formed from it?",
+     "options": [
+      "1",
+      "3",
+      "6",
+      "12"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "How are photosynthesis and respiration related?",
+     "options": [
+      "The products of one are the reactants of the other",
+      "They both use light to make glucose",
+      "They both happen only in animals",
+      "They both release oxygen"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Compare photosynthesis and cellular respiration. Give the reactants and products of each and say which one stores energy and which one releases it.",
+     "markScheme": [
+      "Gives the reactants and products of photosynthesis correctly",
+      "Gives the reactants and products of respiration correctly",
+      "States that photosynthesis stores energy in glucose",
+      "States that respiration releases energy from glucose"
+     ],
+     "modelAnswer": "Photosynthesis uses carbon dioxide, water and light to make glucose and oxygen, and it stores energy in glucose. Respiration uses glucose and oxygen to make carbon dioxide and water, and it releases the energy for the cell as ATP.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Photosynthesis takes in carbon dioxide and water with light and makes glucose and oxygen. Respiration takes glucose and oxygen and makes carbon dioxide and water. Photosynthesis stores energy in the glucose and respiration releases it as ATP.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Photosynthesis takes in carbon dioxide and water with light and makes glucose and oxygen."
+        },
+        {
+         "point": 1,
+         "quote": "Respiration takes glucose and oxygen and makes carbon dioxide and water."
+        },
+        {
+         "point": 2,
+         "quote": "Photosynthesis stores energy in the glucose"
+        },
+        {
+         "point": 3,
+         "quote": "respiration releases it as ATP."
+        }
+       ],
+       "feedback": "Full marks. They are mirror images and you showed that clearly."
+      },
+      {
+       "tier": "full",
+       "text": "Photosynthesis: CO2 + H2O + light gives glucose + O2. Respiration: glucose + O2 gives CO2 + H2O. The first one stores the light energy in sugar and the second releases the energy from the sugar for the cell to use.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Photosynthesis: CO2 + H2O + light gives glucose + O2."
+        },
+        {
+         "point": 1,
+         "quote": "Respiration: glucose + O2 gives CO2 + H2O."
+        },
+        {
+         "point": 2,
+         "quote": "The first one stores the light energy in sugar"
+        },
+        {
+         "point": 3,
+         "quote": "the second releases the energy from the sugar for the cell to use."
+        }
+       ],
+       "feedback": "All four marks, including the use of formulas."
+      },
+      {
+       "tier": "partial",
+       "text": "Photosynthesis uses CO2 and water to make glucose and oxygen. Respiration makes glucose too.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Photosynthesis uses CO2 and water to make glucose and oxygen."
+        }
+       ],
+       "feedback": "Respiration breaks down glucose, it does not make it. Its products are carbon dioxide and water."
+      },
+      {
+       "tier": "partial",
+       "text": "Photosynthesis stores energy. Respiration releases energy. They are opposite.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Photosynthesis stores energy."
+        },
+        {
+         "point": 3,
+         "quote": "Respiration releases energy."
+        }
+       ],
+       "feedback": "Good summary of energy. Now give the actual reactants and products for each.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Photosynthesis is for plants and respiration is breathing for animals. Plants don't respire.",
+       "meets": [],
+       "feedback": "Plants respire too, all the time. Both processes happen in plants. List the reactants and products of each."
+      },
+      {
+       "tier": "weak",
+       "text": "Respiration uses glucose and oxygen. Photosynthesis makes ATP.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Respiration uses glucose and oxygen."
+        }
+       ],
+       "feedback": "Your respiration reactants are right. Photosynthesis makes glucose. ATP is made in respiration."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain why carbon is described as cycling through an ecosystem but energy is described as flowing through it.",
+     "markScheme": [
+      "States that carbon atoms are conserved and move between organisms and the air",
+      "Gives an example of the carbon cycle, such as CO2 taken in by plants and returned by respiration",
+      "States that energy enters as light and is lost as heat at each step",
+      "States that energy cannot be reused so a constant supply from the sun is needed"
+     ],
+     "modelAnswer": "Carbon atoms are never destroyed, so they pass between the air and living things: plants take in carbon dioxide and build glucose, and respiration returns carbon dioxide to the air. Energy enters as light and some becomes heat at every step, which cannot be reused, so the ecosystem needs sunlight all the time.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Carbon atoms are not used up. They just get moved around. Plants take CO2 from the air and build sugar, and when animals respire they put CO2 back. Energy comes in as sunlight and at every step some leaves as heat. That heat can't be used again so the ecosystem always needs more sun.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Carbon atoms are not used up. They just get moved around."
+        },
+        {
+         "point": 1,
+         "quote": "Plants take CO2 from the air and build sugar, and when animals respire they put CO2 back."
+        },
+        {
+         "point": 2,
+         "quote": "Energy comes in as sunlight and at every step some leaves as heat."
+        },
+        {
+         "point": 3,
+         "quote": "That heat can't be used again so the ecosystem always needs more sun."
+        }
+       ],
+       "feedback": "Full marks. The contrast between recycled atoms and one-way energy is stated clearly."
+      },
+      {
+       "tier": "full",
+       "text": "The same carbon atoms are recycled because matter is conserved. For example the carbon in my breakfast was CO2 in the air once, and respiration returns it as CO2. Energy goes from the sun to plants to animals and gets lost as heat. You can't recycle heat, so energy needs to be supplied by the sun constantly.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The same carbon atoms are recycled because matter is conserved."
+        },
+        {
+         "point": 1,
+         "quote": "For example the carbon in my breakfast was CO2 in the air once, and respiration returns it as CO2."
+        },
+        {
+         "point": 2,
+         "quote": "Energy goes from the sun to plants to animals and gets lost as heat."
+        },
+        {
+         "point": 3,
+         "quote": "You can't recycle heat, so energy needs to be supplied by the sun constantly."
+        }
+       ],
+       "feedback": "All four marks, with a personal example that makes the cycle real."
+      },
+      {
+       "tier": "partial",
+       "text": "Carbon is always around, it just moves. Energy is lost as heat.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Carbon is always around, it just moves."
+        },
+        {
+         "point": 2,
+         "quote": "Energy is lost as heat."
+        }
+       ],
+       "feedback": "Add an example of how carbon moves between living things and the air, and say why the lost energy matters."
+      },
+      {
+       "tier": "partial",
+       "text": "Plants take in carbon dioxide and animals breathe it out again. Energy also cycles in the same way.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Plants take in carbon dioxide and animals breathe it out again."
+        }
+       ],
+       "feedback": "Your carbon example is good. But energy does not cycle. It is lost as heat and has to be supplied again by the sun.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Both carbon and energy go around in circles because everything in nature is a cycle.",
+       "meets": [],
+       "feedback": "Only matter cycles. Energy is lost as heat. Try tracing one carbon atom and then one packet of light energy."
+      },
+      {
+       "tier": "weak",
+       "text": "Energy comes from the sun. Carbon flows through the ecosystem too and it ends.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Energy comes from the sun."
+        }
+       ],
+       "feedback": "You have the source of energy right. Carbon does not end. It is conserved and cycles back to the air."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "The cell cycle, mitosis and feedback in the body",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. model the role of mitosis in growth and in the replacement of cells;\n2. describe the stages of the cell cycle and how checkpoints control it;\n3. plan an investigation of how a feedback mechanism keeps a condition stable.\n\n## Materials\n\nPop beads, pipe cleaners, onion root tip slides, thermometers, the quiz.\n\n## Starter (6 minutes)\n\nAsk: \"You scraped your knee last week. It is healed now. What happened to the cells?\" Collect ideas about new cells replacing damaged ones.\n\n## Main activity\n\n1. Use pop beads to model one chromosome copying itself and then separating into two cells. Name prophase, metaphase, anaphase, and telophase as the beads move.\n2. Show an onion root tip slide. Students count cells in each stage in a field of view and use the proportions to guess how long each stage lasts.\n3. Introduce a feedback loop with the thermostat of a house, then body temperature. In pairs, plan an investigation: how does heart rate return to rest after jogging in place?\n\n## Checking for understanding\n\nAsk students to explain what a checkpoint is and what might happen if a cell ignores it.\n\n## Quiz (last 10 minutes)\n\nFive questions on the cell cycle and feedback.",
+   "reading": {
+    "title": "How cells divide, and how the body stays steady",
+    "content": "Your body makes new cells every day. Skin cells wear off, blood cells wear out, and you grow taller. Cells come from other cells by a repeating pattern called the **cell cycle**. It has a long stage called **interphase**, in which the cell grows and copies its DNA, followed by **mitosis**, in which the copied chromosomes are shared out, and then the cytoplasm splits in two.\n\nMitosis has four stages. In **prophase**, the chromosomes condense and become visible. In **metaphase**, they line up in the middle of the cell. In **anaphase**, the two copies of each chromosome are pulled to opposite ends. In **telophase**, two new nuclei form. The result is two cells that have exactly the same DNA as the original. That is why mitosis is used for growth and for repairing tissue, like the skin on your knee.\n\nCells do not divide whenever they like. The cell cycle has **checkpoints**, which are like quality inspectors. One checks whether the DNA has been copied correctly. If there is damage, the cell either repairs it or, if it cannot, destroys itself. Cancer happens when this control fails and cells divide without stopping, forming a tumor.\n\nThe body also needs conditions inside it to stay steady, even when conditions outside change. This is called **homeostasis**. It works by **feedback**. Think about a thermostat. When the house cools below the set temperature, the furnace turns on. When the house warms, it turns off. In the same way, if you get too hot on the football field in August, receptors in your skin send a signal to your brain, and your body sweats and widens blood vessels in the skin to lose heat. Once your temperature falls, the signals stop. This is **negative feedback**, because the response reduces the change that triggered it.\n\nTo investigate a feedback mechanism, you measure a condition, such as heart rate, before, during and after a disturbance, such as exercise. You expect the value to rise, then return toward the starting level, and the time it takes to return is a measure of how well the mechanism works."
+   },
+   "cards": [
+    {
+     "front": "Interphase",
+     "back": "The long stage of the cell cycle when the cell grows and copies its DNA."
+    },
+    {
+     "front": "Mitosis",
+     "back": "Cell division that gives two cells with identical DNA."
+    },
+    {
+     "front": "Metaphase",
+     "back": "The stage in which chromosomes line up in the middle of the cell."
+    },
+    {
+     "front": "Anaphase",
+     "back": "The stage in which copies of each chromosome are pulled apart."
+    },
+    {
+     "front": "Checkpoint",
+     "back": "A control point that checks whether a cell should continue its cycle."
+    },
+    {
+     "front": "Homeostasis",
+     "back": "Keeping the conditions inside the body steady."
+    },
+    {
+     "front": "Negative feedback",
+     "back": "A response that reduces the change that started it."
+    },
+    {
+     "front": "Tumor",
+     "back": "A mass of cells that divide without the normal controls."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "During which stage of mitosis do chromosomes line up in the middle of the cell?",
+     "options": [
+      "Prophase",
+      "Metaphase",
+      "Anaphase",
+      "Telophase"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What does mitosis produce from one parent cell?",
+     "options": [
+      "Four cells with half the DNA",
+      "Two cells with identical DNA",
+      "Two cells with different DNA",
+      "One larger cell"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the main role of a checkpoint in the cell cycle?",
+     "options": [
+      "To speed up division",
+      "To check that the cell is ready before it continues",
+      "To make the cell larger",
+      "To change the DNA code"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Your body temperature rises during a game, you sweat, and your temperature falls. This is an example of:",
+     "options": [
+      "Positive feedback",
+      "Negative feedback",
+      "Mitosis",
+      "Photosynthesis"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In an investigation of heart rate and exercise, which variable would be measured as the dependent variable?",
+     "options": [
+      "The type of shoes",
+      "The heart rate in beats per minute",
+      "The age of the student",
+      "The room temperature"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student scrapes their knee in gym class. Explain how mitosis helps the skin heal, and why the new cells match the old ones.",
+     "markScheme": [
+      "States that mitosis makes new cells",
+      "States that the new cells replace the damaged ones",
+      "States that mitosis copies the DNA so the daughter cells are identical",
+      "Mentions that cell division is controlled so it stops once healing is complete"
+     ],
+     "modelAnswer": "Mitosis makes new cells that replace the damaged skin cells. Before dividing, the cell copies its DNA, so the two new cells have identical DNA to the original and are the same type of skin cell. Checkpoints stop the cells dividing once the wound is closed.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Mitosis makes new cells next to the cut and they replace the cells that got damaged. The DNA is copied first so each new cell has the same DNA as the old one. When the cut is filled the checkpoints tell the cells to stop dividing.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mitosis makes new cells"
+        },
+        {
+         "point": 1,
+         "quote": "they replace the cells that got damaged"
+        },
+        {
+         "point": 2,
+         "quote": "The DNA is copied first so each new cell has the same DNA as the old one."
+        },
+        {
+         "point": 3,
+         "quote": "When the cut is filled the checkpoints tell the cells to stop dividing."
+        }
+       ],
+       "feedback": "Full marks. Including the stopping signal shows you understand control of the cycle."
+      },
+      {
+       "tier": "full",
+       "text": "Skin cells near the cut divide by mitosis. The new cells fill the gap and replace the lost cells. Because the DNA is copied exactly, they are the same type of skin cell. Once the gap is filled, signals tell them to stop.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Skin cells near the cut divide by mitosis."
+        },
+        {
+         "point": 1,
+         "quote": "The new cells fill the gap and replace the lost cells."
+        },
+        {
+         "point": 2,
+         "quote": "Because the DNA is copied exactly, they are the same type of skin cell."
+        },
+        {
+         "point": 3,
+         "quote": "Once the gap is filled, signals tell them to stop."
+        }
+       ],
+       "feedback": "All four marks, with a clear order of events."
+      },
+      {
+       "tier": "partial",
+       "text": "Mitosis makes new cells to heal it. The cells are all different so they can do different jobs.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mitosis makes new cells"
+        }
+       ],
+       "feedback": "Mitosis gives identical cells, not different ones. Your first point is good. Add how DNA is copied and how the process stops."
+      },
+      {
+       "tier": "partial",
+       "text": "New cells replace the damaged ones and have the same DNA.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "New cells replace the damaged ones"
+        },
+        {
+         "point": 2,
+         "quote": "have the same DNA"
+        }
+       ],
+       "feedback": "Good. Name mitosis as the process, and say what stops the division after the wound closes.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The cells just stretch to cover the cut because they grow bigger.",
+       "meets": [],
+       "feedback": "Cells do grow, but healing needs more cells, which come from mitosis. Look at what happens in interphase and mitosis."
+      },
+      {
+       "tier": "weak",
+       "text": "Mitosis makes new cells and they get half of the DNA each.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mitosis makes new cells"
+        }
+       ],
+       "feedback": "Each new cell gets a full copy of the DNA, not half. The DNA is copied first in interphase."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe how negative feedback keeps body temperature steady when a student plays football on a hot August afternoon.",
+     "markScheme": [
+      "States that a rise in body temperature is detected",
+      "States that the body responds by sweating or widening skin blood vessels",
+      "States that this loses heat and body temperature falls",
+      "States that once the temperature is back to normal the response stops"
+     ],
+     "modelAnswer": "Receptors detect that body temperature is rising and send a signal to the brain. The body responds by sweating and widening the blood vessels in the skin to lose heat. The temperature falls, and when it is back to normal the response switches off, which is negative feedback.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Receptors in the skin notice that the body is getting hotter. The brain tells the body to sweat and the blood vessels in the skin widen. That sends heat out so the temperature drops. When it gets back to normal the sweating slows down.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Receptors in the skin notice that the body is getting hotter."
+        },
+        {
+         "point": 1,
+         "quote": "The brain tells the body to sweat and the blood vessels in the skin widen."
+        },
+        {
+         "point": 2,
+         "quote": "That sends heat out so the temperature drops."
+        },
+        {
+         "point": 3,
+         "quote": "When it gets back to normal the sweating slows down."
+        }
+       ],
+       "feedback": "Full marks. You described the whole loop from detection to switching off."
+      },
+      {
+       "tier": "full",
+       "text": "My body senses that my temperature has gone up. I start sweating and my skin gets red from the blood vessels widening. Sweat evaporating takes heat away so my temperature goes down. After that the response stops, so I do not get too cold.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "My body senses that my temperature has gone up."
+        },
+        {
+         "point": 1,
+         "quote": "I start sweating and my skin gets red from the blood vessels widening."
+        },
+        {
+         "point": 2,
+         "quote": "Sweat evaporating takes heat away so my temperature goes down."
+        },
+        {
+         "point": 3,
+         "quote": "After that the response stops, so I do not get too cold."
+        }
+       ],
+       "feedback": "All four marks. The personal detail about red skin is accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "The body sweats and that cools you down. It happens all the time.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The body sweats"
+        },
+        {
+         "point": 2,
+         "quote": "and that cools you down"
+        }
+       ],
+       "feedback": "Say what triggers the sweating (a rise in temperature detected by receptors) and that it stops once the temperature is normal again."
+      },
+      {
+       "tier": "partial",
+       "text": "The brain sees you are too hot and then you stop being hot.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The brain sees you are too hot"
+        }
+       ],
+       "feedback": "You have the detection. Fill in the middle: what does the body do to cool down, and how does the loop end?",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "When you get hot the body makes you shiver to cool down.",
+       "meets": [],
+       "feedback": "Shivering warms you when you are cold. When hot, the body sweats and widens skin blood vessels."
+      },
+      {
+       "tier": "weak",
+       "text": "Your temperature goes down because the football field is cooler.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Your temperature goes down"
+        }
+       ],
+       "feedback": "The change comes from the body's response, not from the field. Describe the detection and the responses."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Tissues, organs and keeping blood sugar and temperature in range",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe how a tissue is made of specialized cells and how tissues form organs;\n2. explain how the body keeps blood sugar and body temperature within a narrow range.\n\n## Materials\n\nPictures of four tissue types, a model of the pancreas feedback loop, glucose test strips (demonstration only), the worksheet.\n\n## Starter (6 minutes)\n\nShow a slice of a muscle, a nerve and a skin picture. Ask: \"Why don't all cells look the same?\" Take answers linking structure and job.\n\n## Main activity\n\n1. Sort cards of specialized cells (red blood cell, neuron, root hair cell) by structure and function. Then group them into tissues and organs.\n2. Draw the blood sugar loop on the board. After a meal, blood glucose rises, the pancreas releases insulin, cells take in glucose, and blood glucose falls. When blood glucose drops, glucagon signals the liver to release stored glucose.\n3. Compare with the temperature loop from last week. Students make a table of stimulus, receptor, control center, effector and response for each.\n\n## Checking for understanding\n\nAsk students to predict what happens if the pancreas makes no insulin.\n\n## Problem set\n\nFour short problems on tissue structure and feedback. Students work in pairs and explain each answer in a sentence.",
+   "reading": {
+    "title": "Specialized cells and a steady inner world",
+    "content": "Cells in a multicellular body are specialized. That means their structure is suited to their job. A red blood cell is a flexible disk with no nucleus, which leaves more room for hemoglobin to carry oxygen. A nerve cell has a long extension that carries electrical signals over a distance. A cell in the lining of the small intestine has tiny folds on its surface that increase the area for absorbing nutrients. When you see a cell's structure, you can often guess its function.\n\nA group of similar specialized cells forms a **tissue**. The four main tissue types in the human body are epithelial tissue, which covers surfaces, connective tissue, which supports and connects, muscle tissue, which contracts, and nervous tissue, which carries signals. Organs are made of several tissues. The stomach has muscle tissue to churn food, epithelial tissue to line it, connective tissue to hold it together and nervous tissue to control it.\n\nThe body must keep conditions within a narrow range for cells to work. Take blood sugar. After a meal with pasta and juice, glucose enters the blood and the level rises. The **pancreas** detects the rise and releases the hormone **insulin**. Insulin signals body cells and the liver to take up glucose from the blood, and the level falls back to normal. Between meals or during a long run, blood glucose falls. The pancreas then releases a different hormone, **glucagon**, which tells the liver to release stored glucose. Two hormones with opposite effects keep the level steady.\n\nIn diabetes, this system does not work properly. In type 1 diabetes the pancreas does not make enough insulin. In type 2 diabetes, body cells respond poorly to insulin. In both, blood glucose can rise too high, and people need to monitor and manage it.\n\nBody temperature is also held at about 37 degrees Celsius, or 98.6 degrees Fahrenheit. The same loop pattern appears: a **stimulus** (change), a **receptor** that detects it, a **control center** (the brain or pancreas) that processes it, and an **effector** (muscle, gland) that carries out the response. When you learn to describe any feedback loop this way, you can analyze new examples you have never met."
+   },
+   "cards": [
+    {
+     "front": "Specialized cell",
+     "back": "A cell whose structure is suited to a particular job."
+    },
+    {
+     "front": "Tissue",
+     "back": "A group of similar cells working together."
+    },
+    {
+     "front": "Epithelial tissue",
+     "back": "Tissue that covers surfaces and lines organs."
+    },
+    {
+     "front": "Insulin",
+     "back": "A hormone from the pancreas that lowers blood glucose."
+    },
+    {
+     "front": "Glucagon",
+     "back": "A hormone from the pancreas that raises blood glucose."
+    },
+    {
+     "front": "Receptor",
+     "back": "A cell or structure that detects a change."
+    },
+    {
+     "front": "Effector",
+     "back": "A muscle or gland that carries out the response."
+    },
+    {
+     "front": "Diabetes",
+     "back": "A condition in which blood glucose is not controlled properly."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A red blood cell has no nucleus. How does this help it?",
+     "options": [
+      "It can divide faster",
+      "It leaves more room for hemoglobin to carry oxygen",
+      "It makes the cell stronger",
+      "It allows photosynthesis"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What happens to blood glucose after a large meal?",
+     "options": [
+      "It falls because the cells use it all up",
+      "It rises, and the pancreas releases insulin",
+      "It stays the same because the liver stops working",
+      "It rises, and the pancreas releases glucagon"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which hormone tells the liver to release stored glucose?",
+     "options": [
+      "Insulin",
+      "Glucagon",
+      "Hemoglobin",
+      "Adrenaline only"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The stomach contains muscle, epithelial, connective and nervous tissue. This means the stomach is:",
+     "options": [
+      "A tissue",
+      "An organ",
+      "A cell",
+      "A system"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In a thermostat analogy for body temperature, what is the effector?",
+     "options": [
+      "The thermometer in the room",
+      "The temperature setting",
+      "The furnace or air conditioner",
+      "The house"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain how the body returns blood glucose to normal after a student eats a large pasta lunch, naming the organ and hormone involved.",
+     "markScheme": [
+      "States that blood glucose rises after the meal",
+      "Names the pancreas as the organ that detects and responds",
+      "Names insulin as the hormone released",
+      "States that glucose is taken up by cells and the liver so blood glucose falls"
+     ],
+     "modelAnswer": "After the meal, blood glucose rises. The pancreas detects this and releases insulin. Insulin makes body cells and the liver take up glucose from the blood, so the blood glucose level falls back to normal.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The glucose in the blood goes up after the lunch. The pancreas senses it and releases insulin. Insulin makes the cells and liver take in the glucose so the level in the blood goes back down.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The glucose in the blood goes up after the lunch."
+        },
+        {
+         "point": 1,
+         "quote": "The pancreas senses it"
+        },
+        {
+         "point": 2,
+         "quote": "releases insulin"
+        },
+        {
+         "point": 3,
+         "quote": "Insulin makes the cells and liver take in the glucose so the level in the blood goes back down."
+        }
+       ],
+       "feedback": "Full marks. The sequence is complete and the organ and hormone are named correctly."
+      },
+      {
+       "tier": "full",
+       "text": "Blood sugar rises when the food is digested. The pancreas is the organ that detects the rise and it puts out insulin. Insulin tells the liver and body cells to absorb glucose, which lowers blood sugar.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Blood sugar rises when the food is digested."
+        },
+        {
+         "point": 1,
+         "quote": "The pancreas is the organ that detects the rise"
+        },
+        {
+         "point": 2,
+         "quote": "it puts out insulin"
+        },
+        {
+         "point": 3,
+         "quote": "Insulin tells the liver and body cells to absorb glucose, which lowers blood sugar."
+        }
+       ],
+       "feedback": "All four marks. Good use of both terms for glucose."
+      },
+      {
+       "tier": "partial",
+       "text": "Blood glucose goes up. Insulin is released and the glucose goes away.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Blood glucose goes up."
+        },
+        {
+         "point": 2,
+         "quote": "Insulin is released"
+        }
+       ],
+       "feedback": "Name the organ that releases insulin and say where the glucose goes."
+      },
+      {
+       "tier": "partial",
+       "text": "The pancreas reacts and releases glucagon, so the glucose is taken into the cells.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The pancreas reacts"
+        }
+       ],
+       "feedback": "The pancreas is right, but the hormone that lowers glucose is insulin. Glucagon raises it.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The stomach releases insulin to digest the pasta.",
+       "meets": [],
+       "feedback": "Insulin comes from the pancreas and does not digest food. It controls the level of glucose in the blood."
+      },
+      {
+       "tier": "weak",
+       "text": "Blood glucose is high after lunch. The body just sweats it out.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Blood glucose is high after lunch."
+        }
+       ],
+       "feedback": "You noticed the rise in glucose. The body does not sweat out glucose. A hormone from the pancreas moves it into cells."
+      }
+     ]
+    },
+    {
+     "prompt": "A cell lining the small intestine has many tiny folds on its surface. Explain how this structure suits its function, and say what level of organization a group of these cells forms.",
+     "markScheme": [
+      "Identifies the function as absorbing nutrients",
+      "States that the folds increase the surface area",
+      "Links the larger surface area to faster or more absorption",
+      "Names the group of similar cells as a tissue"
+     ],
+     "modelAnswer": "The cell's function is to absorb nutrients from digested food. The folds increase its surface area, so more nutrients can pass in at once. A group of similar cells like this forms a tissue, which here is epithelial tissue.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "These cells are there to absorb nutrients. The folds make the surface area bigger, so more nutrients can get in faster. A group of them together is a tissue.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "These cells are there to absorb nutrients."
+        },
+        {
+         "point": 1,
+         "quote": "The folds make the surface area bigger"
+        },
+        {
+         "point": 2,
+         "quote": "more nutrients can get in faster"
+        },
+        {
+         "point": 3,
+         "quote": "A group of them together is a tissue."
+        }
+       ],
+       "feedback": "Full marks. You tied structure to function as the question asked."
+      },
+      {
+       "tier": "full",
+       "text": "The job of the cell is absorbing digested food. Having folds gives it more surface area. More area means more absorption at the same time. Lots of the same cells make up epithelial tissue.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The job of the cell is absorbing digested food."
+        },
+        {
+         "point": 1,
+         "quote": "Having folds gives it more surface area."
+        },
+        {
+         "point": 2,
+         "quote": "More area means more absorption at the same time."
+        },
+        {
+         "point": 3,
+         "quote": "Lots of the same cells make up epithelial tissue."
+        }
+       ],
+       "feedback": "All four marks, and you named the type of tissue."
+      },
+      {
+       "tier": "partial",
+       "text": "They absorb food. The folds make a bigger surface.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "They absorb food."
+        },
+        {
+         "point": 1,
+         "quote": "The folds make a bigger surface."
+        }
+       ],
+       "feedback": "Good. Add why a bigger surface matters and say what a group of cells is called."
+      },
+      {
+       "tier": "partial",
+       "text": "Together they form a tissue. The folds help them hold food.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Together they form a tissue."
+        }
+       ],
+       "feedback": "Folds do not hold food. They increase the area for absorption. Say what the cells do and why the folds help.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The folds make the cell stronger so the acid doesn't break it.",
+       "meets": [],
+       "feedback": "The folds are about absorption, not strength. Look at what the small intestine does with digested food."
+      },
+      {
+       "tier": "weak",
+       "text": "They make a tissue and it makes the stomach move.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "They make a tissue"
+        }
+       ],
+       "feedback": "A group of similar cells is a tissue, which you have right. The folds are for absorbing nutrients, not movement."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Biological molecules and how enzymes work",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the four classes of biological molecules and match each to its building blocks and role;\n2. explain how enzymes speed up reactions and how temperature and pH change their activity.\n\n## Materials\n\nFood labels, iodine and Benedict's reagent (demonstration), a graph of enzyme activity against temperature, the worksheet.\n\n## Starter (6 minutes)\n\nPass around a cereal box label. Ask: \"What do carbohydrates, proteins, and fats do for you?\" Make three columns on the board and fill in jobs.\n\n## Main activity\n\n1. Present the four classes (carbohydrates, lipids, proteins, nucleic acids) with their building blocks (sugars, fatty acids and glycerol, amino acids, nucleotides). Use food-label data to connect them to ordinary foods.\n2. Demonstrate the lock and key model with a paper cut-out. An enzyme has an active site that fits one substrate.\n3. Students analyze a graph of enzyme activity against temperature and one against pH and describe what each shows.\n\n## Checking for understanding\n\nAsk: \"Why does an enzyme stop working in a very hot pot of water?\" Listen for a changed shape.\n\n## Differentiated worksheet\n\nA shared set of questions with hints for students who need them and extension prompts for those who finish.",
+   "reading": {
+    "title": "The molecules of life and the helpers that speed them up",
+    "content": "Living things are built from four classes of large molecules. **Carbohydrates** include sugars and starch. Their building blocks are simple sugars, and their main role is to supply energy. **Lipids**, such as fats and oils, are made of fatty acids and glycerol. They store a lot of energy and form the membranes of cells. **Proteins** are chains of amino acids. They do most of the work in a cell: they build structures, carry signals and speed up reactions. **Nucleic acids**, such as DNA, are chains of nucleotides that store the instructions for making proteins.\n\nLook at a nutrition label from a cereal box sold at Kroger. The grams of carbohydrate, fat and protein tell you how much of each class is in a serving. All three come from the same few elements, mainly carbon, hydrogen and oxygen, with nitrogen added in proteins.\n\nThe proteins that speed up chemical reactions are called **enzymes**. Without enzymes, many reactions in the body would be too slow for life. Amylase in your saliva, for example, breaks down starch into sugars. An enzyme works because of its shape. It has a pocket called the **active site** that fits one particular molecule, the **substrate**, much like a key fits a lock. The substrate binds, the reaction takes place, and the products leave. The enzyme is not used up and can work again.\n\nEnzymes work best in certain conditions. As temperature rises, molecules move faster and collide more often, so activity increases. But beyond the optimum temperature, the enzyme's shape begins to change. This is called **denaturing**. The active site no longer fits the substrate and activity drops quickly. A boiled egg shows this: the proteins in the egg white have been denatured and cannot go back. Similarly, each enzyme has an optimum pH. Pepsin in the stomach works best at a very acid pH around 2, while amylase in the mouth works best near neutral. If the pH moves far from the optimum, the shape changes and the enzyme stops working."
+   },
+   "cards": [
+    {
+     "front": "Carbohydrate",
+     "back": "A molecule made of sugars that supplies energy."
+    },
+    {
+     "front": "Lipid",
+     "back": "A fat or oil that stores energy and forms membranes."
+    },
+    {
+     "front": "Protein",
+     "back": "A chain of amino acids that builds structures and speeds up reactions."
+    },
+    {
+     "front": "Nucleic acid",
+     "back": "A chain of nucleotides, such as DNA, that stores genetic information."
+    },
+    {
+     "front": "Enzyme",
+     "back": "A protein that speeds up a chemical reaction without being used up."
+    },
+    {
+     "front": "Active site",
+     "back": "The pocket of an enzyme where the substrate binds."
+    },
+    {
+     "front": "Substrate",
+     "back": "The molecule an enzyme acts on."
+    },
+    {
+     "front": "Denature",
+     "back": "To change the shape of a protein so it no longer works."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What are the building blocks of proteins?",
+     "options": [
+      "Fatty acids",
+      "Amino acids",
+      "Simple sugars",
+      "Nucleotides"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which class of molecule stores genetic information?",
+     "options": [
+      "Carbohydrates",
+      "Lipids",
+      "Nucleic acids",
+      "Sugars"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Why does an enzyme work on only one substrate?",
+     "options": [
+      "Its active site has a specific shape that fits that substrate",
+      "It is destroyed by other substrates",
+      "It only works in the stomach",
+      "It needs light"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "An enzyme works best at 37 degrees Celsius. At 70 degrees its activity drops to almost zero. Which is the best explanation?",
+     "options": [
+      "The substrate ran out",
+      "The enzyme was denatured and its active site changed shape",
+      "The enzyme was used up in the reaction",
+      "The molecules slowed down"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Pepsin works best at pH 2 in the stomach. What would happen if it were placed in a neutral pH 7 solution?",
+     "options": [
+      "It would work faster",
+      "It would work the same",
+      "Its activity would drop because pH 7 is away from its optimum",
+      "It would turn into amylase"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain, using the lock and key model, why an enzyme that breaks down starch will not break down protein.",
+     "markScheme": [
+      "States that an enzyme has an active site with a specific shape",
+      "States that the substrate must fit the active site",
+      "States that protein has a different shape from starch so does not fit",
+      "Concludes that the enzyme only acts on its own substrate"
+     ],
+     "modelAnswer": "An enzyme has an active site with a particular shape. Only a substrate that fits that shape can bind to it. Protein has a different shape from starch, so it does not fit the active site, and the enzyme acts only on starch.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "An enzyme has an active site that is a special shape. The substrate has to fit into it like a key in a lock. Protein is a different shape to starch so it can't fit. That means the enzyme only works on its own substrate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "An enzyme has an active site that is a special shape."
+        },
+        {
+         "point": 1,
+         "quote": "The substrate has to fit into it like a key in a lock."
+        },
+        {
+         "point": 2,
+         "quote": "Protein is a different shape to starch so it can't fit."
+        },
+        {
+         "point": 3,
+         "quote": "That means the enzyme only works on its own substrate."
+        }
+       ],
+       "feedback": "Full marks. You used the lock and key idea correctly and reached the right conclusion."
+      },
+      {
+       "tier": "full",
+       "text": "The shape of the active site is specific. Only a molecule that matches that shape can bind. A protein molecule doesn't match the starch molecule's shape. So the starch enzyme can't break it down, it is specific to starch.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The shape of the active site is specific."
+        },
+        {
+         "point": 1,
+         "quote": "Only a molecule that matches that shape can bind."
+        },
+        {
+         "point": 2,
+         "quote": "A protein molecule doesn't match the starch molecule's shape."
+        },
+        {
+         "point": 3,
+         "quote": "So the starch enzyme can't break it down, it is specific to starch."
+        }
+       ],
+       "feedback": "All four marks, with clear and concise reasoning."
+      },
+      {
+       "tier": "partial",
+       "text": "The active site has a shape and the starch fits in it. Protein is bigger so it doesn't work.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The active site has a shape"
+        },
+        {
+         "point": 1,
+         "quote": "the starch fits in it"
+        }
+       ],
+       "feedback": "Protein being larger is not the main reason. Say that the shape of protein does not match the active site."
+      },
+      {
+       "tier": "partial",
+       "text": "The enzyme only works on one thing. Protein is a different shape.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The enzyme only works on one thing."
+        },
+        {
+         "point": 2,
+         "quote": "Protein is a different shape."
+        }
+       ],
+       "feedback": "Both are right. Add the active site and explain that the substrate has to fit it.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The enzyme is hungry for starch so it doesn't eat the protein.",
+       "meets": [],
+       "feedback": "Enzymes do not choose by hunger. It is about shape. Draw the active site and the two substrates."
+      },
+      {
+       "tier": "weak",
+       "text": "Enzymes are specific. That's because they are made of carbohydrate.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Enzymes are specific."
+        }
+       ],
+       "feedback": "Enzymes are specific, which is right. But enzymes are proteins, and their specificity comes from the shape of the active site."
+      }
+     ]
+    },
+    {
+     "prompt": "A graph shows an enzyme's activity rising up to 40 degrees Celsius, then falling sharply to zero by 60 degrees. Describe the pattern and explain why activity falls at high temperature.",
+     "markScheme": [
+      "Describes that activity increases with temperature up to about 40 degrees",
+      "Explains that molecules move faster and collide more often",
+      "States that above the optimum the activity decreases sharply",
+      "Explains that the enzyme is denatured as its shape changes"
+     ],
+     "modelAnswer": "Activity rises as temperature increases up to about 40 degrees, because the molecules move faster and collide more often. Above that temperature activity falls sharply, because the enzyme is denatured: its shape, including the active site, changes so the substrate no longer fits.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The enzyme gets more active as it warms up until 40. That's because the molecules move faster and bump into each other more. After 40 it drops fast until it's zero at 60. The enzyme is denatured, the shape changes so the substrate can't fit.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The enzyme gets more active as it warms up until 40."
+        },
+        {
+         "point": 1,
+         "quote": "That's because the molecules move faster and bump into each other more."
+        },
+        {
+         "point": 2,
+         "quote": "After 40 it drops fast until it's zero at 60."
+        },
+        {
+         "point": 3,
+         "quote": "The enzyme is denatured, the shape changes so the substrate can't fit."
+        }
+       ],
+       "feedback": "Full marks. You described the graph and explained both halves of it."
+      },
+      {
+       "tier": "full",
+       "text": "From 0 to 40 degrees the rate goes up. There is more collision energy between the enzyme and substrate. Over 40 the line goes steeply down. The active site is distorted, so the enzyme denatures and stops working.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "From 0 to 40 degrees the rate goes up."
+        },
+        {
+         "point": 1,
+         "quote": "There is more collision energy between the enzyme and substrate."
+        },
+        {
+         "point": 2,
+         "quote": "Over 40 the line goes steeply down."
+        },
+        {
+         "point": 3,
+         "quote": "The active site is distorted, so the enzyme denatures and stops working."
+        }
+       ],
+       "feedback": "All four marks, with the data and the reason."
+      },
+      {
+       "tier": "partial",
+       "text": "Activity goes up until 40 and then goes down because the enzyme is denatured.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Activity goes up until 40"
+        },
+        {
+         "point": 3,
+         "quote": "the enzyme is denatured"
+        }
+       ],
+       "feedback": "Good points. Explain why activity goes up (more collisions) and describe the drop as sharp."
+      },
+      {
+       "tier": "partial",
+       "text": "Molecules move faster when it is hotter so they react more. At high temperature the enzyme is killed.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Molecules move faster when it is hotter"
+        }
+       ],
+       "feedback": "Enzymes are not alive, so they are denatured and not killed. Describe the shape change.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It goes down because the enzyme runs out of substrate when it's hot.",
+       "meets": [],
+       "feedback": "The drop at high temperature is not about running out of substrate. It is about the enzyme's shape changing."
+      },
+      {
+       "tier": "weak",
+       "text": "The graph goes up and then down. The enzyme melts at 60.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The graph goes up and then down."
+        }
+       ],
+       "feedback": "You described the shape of the graph. Enzymes do not melt, they denature: the folding of the protein changes."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Cell structure and how substances cross the membrane",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. compare prokaryotic and eukaryotic cells and name the job of each organelle;\n2. explain how the membrane controls what enters and leaves through diffusion, osmosis and active transport.\n\n## Materials\n\nPotato cubes or strips, salt and sugar solutions at three concentrations, balances, rulers, paper towels, the practical sheet.\n\n## Starter (6 minutes)\n\nShow a picture of a cell labeled as a city. Ask: \"If the cell is a city, what is the nucleus? The membrane? The mitochondria?\" Gather analogies and correct any that mislead.\n\n## Main activity\n\n1. Compare a bacterial cell with an animal cell and a plant cell using a Venn diagram. Add the cell wall and chloroplast to the plant cell.\n2. Demonstrate diffusion with food coloring in warm and cold water.\n3. Practical: place potato strips of equal mass in solutions of different concentrations, then measure the mass again after 30 minutes. Plot the percent change in mass against the concentration.\n\n## Checking for understanding\n\nAsk: \"Which way does water move when a cell is in salty water?\" Wait for an answer with the reason, from high to low water concentration.\n\n## Differentiated worksheet\n\nQuestions on diffusion, osmosis and active transport at three levels of difficulty.",
+   "reading": {
+    "title": "Inside the cell, and what gets through the membrane",
+    "content": "All living things are made of cells, but there are two main kinds. **Prokaryotic** cells, such as bacteria, are small and simple. Their DNA floats in the cytoplasm because they have no nucleus. **Eukaryotic** cells, found in animals, plants, fungi and protists, are larger and have a nucleus and other structures bounded by membranes.\n\nInside a eukaryotic cell, each **organelle** has a job. The nucleus holds the DNA. Mitochondria release energy from glucose. Ribosomes build proteins. The endoplasmic reticulum and Golgi apparatus move and package those proteins. Plant cells also have a cell wall, which supports them, and chloroplasts for photosynthesis, and a large vacuole that stores water.\n\nAround every cell is a **cell membrane**. It is made of a double layer of lipids with proteins in it, and it is selectively permeable. That means it lets some substances through more easily than others. Oxygen and carbon dioxide pass freely. Large molecules and ions do not.\n\nSubstances move in three main ways. In **diffusion**, particles spread from where there are many of them to where there are fewer, with no energy needed from the cell. Oxygen moving from the blood into a muscle cell is an example. **Osmosis** is the diffusion of water across a membrane, from where water is more concentrated to where it is less. If a potato strip is placed in very salty water, water moves out of the potato cells and the strip loses mass. If it is placed in pure water, water moves in and the strip gains mass. Where there is no change, the solution inside and outside is balanced.\n\nSometimes a cell needs to move a substance from a low concentration to a high concentration, against the natural direction. This is **active transport**. It needs energy, in the form of ATP, and special carrier proteins. Root hair cells use active transport to take up minerals from soil even though the soil has a lower concentration than the cell. This is one reason that cells with a lot of active transport have many mitochondria."
+   },
+   "cards": [
+    {
+     "front": "Prokaryotic cell",
+     "back": "A cell with no nucleus, such as a bacterium."
+    },
+    {
+     "front": "Eukaryotic cell",
+     "back": "A cell with a nucleus and membrane-bound organelles."
+    },
+    {
+     "front": "Organelle",
+     "back": "A structure inside a cell that has a specific job."
+    },
+    {
+     "front": "Selectively permeable",
+     "back": "Lets some substances through more easily than others."
+    },
+    {
+     "front": "Diffusion",
+     "back": "The spreading of particles from high to low concentration."
+    },
+    {
+     "front": "Osmosis",
+     "back": "The diffusion of water across a membrane."
+    },
+    {
+     "front": "Active transport",
+     "back": "Moving a substance against its concentration gradient using energy."
+    },
+    {
+     "front": "Cell wall",
+     "back": "A rigid outer layer in plant cells that gives support."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which structure is found in a plant cell but not in an animal cell?",
+     "options": [
+      "Nucleus",
+      "Mitochondrion",
+      "Chloroplast",
+      "Ribosome"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A bacterium differs from an animal cell because it:",
+     "options": [
+      "Has no nucleus",
+      "Has no DNA",
+      "Has no cell membrane",
+      "Is always larger"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A potato strip placed in very salty water loses mass. This is because:",
+     "options": [
+      "Salt moves out of the potato",
+      "Water moves out of the potato cells by osmosis",
+      "The potato cells divide",
+      "The potato makes sugar"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which of these needs ATP?",
+     "options": [
+      "Diffusion of oxygen",
+      "Osmosis of water",
+      "Active transport of minerals",
+      "Spreading of food coloring"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which organelle is the site of most ATP production?",
+     "options": [
+      "Ribosome",
+      "Nucleus",
+      "Mitochondrion",
+      "Golgi apparatus"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A potato strip with a mass of 5.0 g is placed in a strong salt solution and has a mass of 4.2 g after 30 minutes. Calculate the percent change in mass and explain what happened to the potato cells.",
+     "markScheme": [
+      "Calculates the change in mass as a loss of 0.8 g",
+      "Calculates the percent change as -16%",
+      "States that water moved out of the cells by osmosis",
+      "Explains that the solution outside had a lower water concentration than the potato cells"
+     ],
+     "modelAnswer": "The mass changed by 4.2 - 5.0 = -0.8 g. The percent change is -0.8 / 5.0 x 100 = -16%. Water left the potato cells by osmosis, because the strong salt solution had a lower water concentration than the inside of the cells.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "4.2 - 5.0 = -0.8 g. -0.8 divided by 5.0 times 100 is -16%. Water moved out of the potato cells by osmosis. The salt solution had less water than the cells did so the water went out to it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "4.2 - 5.0 = -0.8 g."
+        },
+        {
+         "point": 1,
+         "quote": "-0.8 divided by 5.0 times 100 is -16%."
+        },
+        {
+         "point": 2,
+         "quote": "Water moved out of the potato cells by osmosis."
+        },
+        {
+         "point": 3,
+         "quote": "The salt solution had less water than the cells did so the water went out to it."
+        }
+       ],
+       "feedback": "Full marks. Dividing by the starting mass is the step many people miss."
+      },
+      {
+       "tier": "full",
+       "text": "The potato lost 0.8 g. That is a 16% decrease (0.8/5 × 100). It is osmosis, water left the cells. There was a lower concentration of water outside in the strong salt.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The potato lost 0.8 g."
+        },
+        {
+         "point": 1,
+         "quote": "That is a 16% decrease (0.8/5 × 100)."
+        },
+        {
+         "point": 2,
+         "quote": "It is osmosis, water left the cells."
+        },
+        {
+         "point": 3,
+         "quote": "There was a lower concentration of water outside in the strong salt."
+        }
+       ],
+       "feedback": "All four marks, with a clear check of the sign of the change."
+      },
+      {
+       "tier": "partial",
+       "text": "It lost 0.8 g. 0.8 / 4.2 × 100 = 19%. Water went out by osmosis.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It lost 0.8 g."
+        },
+        {
+         "point": 2,
+         "quote": "Water went out by osmosis."
+        }
+       ],
+       "feedback": "You divided by the final mass. Percent change always uses the starting mass, 5.0 g, which gives 16%."
+      },
+      {
+       "tier": "partial",
+       "text": "The percent change is -16% because the potato got smaller. The salt went into the potato.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The percent change is -16%"
+        }
+       ],
+       "feedback": "The calculation is right. But it was water leaving the cells, not salt entering them.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "5.0 + 4.2 = 9.2 g, so it is 9.2%. The potato absorbed salt.",
+       "meets": [],
+       "feedback": "To find the change you subtract. The potato lost mass, so the answer is a decrease."
+      },
+      {
+       "tier": "weak",
+       "text": "The mass dropped by 0.8 g. It's because the cells got smaller from drying.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The mass dropped by 0.8 g."
+        }
+       ],
+       "feedback": "You got the change in mass. Explain why, using osmosis: water moves out of the cells into the salt solution."
+      }
+     ]
+    },
+    {
+     "prompt": "Compare diffusion and active transport. State the direction each moves substances relative to concentration and whether each needs energy, and give one example of each.",
+     "markScheme": [
+      "States that diffusion moves substances from high to low concentration",
+      "States that diffusion does not need energy from the cell",
+      "States that active transport moves substances from low to high concentration and needs ATP",
+      "Gives a correct example of each, such as oxygen into a cell and minerals into root hair cells"
+     ],
+     "modelAnswer": "In diffusion, substances move from a region of high concentration to low concentration and the cell uses no energy, such as oxygen moving into a muscle cell. In active transport, substances move from low to high concentration using ATP and carrier proteins, such as root hair cells taking up minerals from the soil.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Diffusion goes from high concentration to low concentration and doesn't use any energy. Active transport goes from low to high and needs ATP. An example of diffusion is oxygen going into cells and an example of active transport is root hairs taking minerals from the soil.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Diffusion goes from high concentration to low concentration"
+        },
+        {
+         "point": 1,
+         "quote": "doesn't use any energy"
+        },
+        {
+         "point": 2,
+         "quote": "Active transport goes from low to high and needs ATP."
+        },
+        {
+         "point": 3,
+         "quote": "An example of diffusion is oxygen going into cells and an example of active transport is root hairs taking minerals from the soil."
+        }
+       ],
+       "feedback": "Full marks. You included both direction and energy, with an example of each."
+      },
+      {
+       "tier": "full",
+       "text": "Particles diffuse down the gradient, from lots to few. The cell does not spend energy. Active transport pushes them up the gradient and needs ATP and carrier proteins. Carbon dioxide leaving a cell is diffusion; plants taking up nitrate against the gradient is active transport.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Particles diffuse down the gradient, from lots to few."
+        },
+        {
+         "point": 1,
+         "quote": "The cell does not spend energy."
+        },
+        {
+         "point": 2,
+         "quote": "Active transport pushes them up the gradient and needs ATP and carrier proteins."
+        },
+        {
+         "point": 3,
+         "quote": "Carbon dioxide leaving a cell is diffusion; plants taking up nitrate against the gradient is active transport."
+        }
+       ],
+       "feedback": "All four marks, and the gradient language is accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "Diffusion is high to low. Active transport goes low to high. Both need energy.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Diffusion is high to low."
+        },
+        {
+         "point": 2,
+         "quote": "Active transport goes low to high."
+        }
+       ],
+       "feedback": "Diffusion needs no energy from the cell. Add an example of each."
+      },
+      {
+       "tier": "partial",
+       "text": "Diffusion doesn't need energy but active transport does. For example, smelling perfume across a room.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Diffusion doesn't need energy"
+        }
+       ],
+       "feedback": "Good on energy. Add the direction of each, and a biological example of each.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Diffusion is when cells divide and active transport is when they exercise.",
+       "meets": [],
+       "feedback": "These terms are about how substances move across membranes. Review the reading on the three ways substances move."
+      },
+      {
+       "tier": "weak",
+       "text": "Diffusion needs no energy. Active transport is the same as osmosis.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Diffusion needs no energy."
+        }
+       ],
+       "feedback": "Osmosis is diffusion of water, so it needs no energy. Active transport moves substances against the gradient and uses ATP."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Osmosis in potato strips",
+    "instructions": "Cut potato strips of equal size and mass. Place one strip in each of five sugar solutions (0%, 5%, 10%, 15% and 20%) for 30 minutes. Measure the mass again and calculate the percent change. Find the concentration at which there is no change.",
+    "steps": [
+     {
+      "text": "Cut five potato strips of equal size and measure the mass of each on the balance."
+     },
+     {
+      "text": "Label five cups with each sugar concentration and add 50 mL of the solution to each."
+     },
+     {
+      "text": "Place one strip in each cup and note the time.",
+      "note": "Use the same volume of solution in every cup."
+     },
+     {
+      "text": "After 30 minutes, remove each strip, blot it on a paper towel and measure its mass."
+     },
+     {
+      "text": "Calculate the percent change in mass for each strip using the starting mass."
+     },
+     {
+      "text": "Graph percent change against concentration and read off the concentration where the line crosses zero."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method: fair test with equal strips, equal volumes and blotting",
+      "maxPoints": 4
+     },
+     {
+      "description": "Results: accurate percent change calculations and a graph with labeled axes",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: uses osmosis to explain the pattern and finds the zero point",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "We cut five strips of 3.0 g each, used 50 mL of solution each, and blotted before weighing. The 0% strip gained 8% and the 20% strip lost 14%. The line on my graph crosses zero near 9%, so the potato cells have about the same concentration as a 9% solution. In pure water, water moves into the cells by osmosis and the strip gains mass. In strong sugar, water moves out and it loses mass.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report. The zero crossing is the key result and you explained it with osmosis."
+     },
+     {
+      "tier": "full",
+      "text": "Independent variable: sugar concentration. Dependent: percent change in mass. We controlled the mass of the strips, the solution volume and the time. The results table shows +8%, +4%, -1%, -7%, -14% from 0% to 20%. The graph crosses zero at about 9%. Water moved into the potato in weak solutions and out in strong solutions, as it moves from a high to a lower water concentration.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. Label the axes on the graph with units to earn full marks for results."
+     },
+     {
+      "tier": "partial",
+      "text": "We put the potato strips in the solutions for 30 minutes and then took them out and weighed them. The potato in water got heavier and the one in 20% sugar got lighter. This is osmosis because the water moved.",
+      "scores": [
+       2,
+       2,
+       2
+      ],
+      "feedback": "Add the numbers, the controlled variables, and what the zero point tells you about the potato cells."
+     },
+     {
+      "tier": "partial",
+      "text": "We measured the mass before and after for every strip. The 0% strip gained 0.3 g and the 20% strip lost 0.4 g. I think the potato absorbed the sugar so it got heavier in water and lighter in the strong solutions.",
+      "scores": [
+       3,
+       2,
+       1
+      ],
+      "feedback": "The data is good. Water, not sugar, moved into the potato in pure water. Explain this using osmosis."
+     },
+     {
+      "tier": "weak",
+      "text": "We did the potato experiment with the five cups and the balance. The potatoes changed a lot while they sat in the solutions. The results were different in each cup, and some of the strips looked bendy at the end.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Describe the method in steps, give the actual masses and say what the changes mean."
+     },
+     {
+      "tier": "weak",
+      "text": "The potato in sugar got bigger because sugar is food and potatoes eat it, so the more sugar there is the more it grows. That is why the strip in the strongest sugar should have gotten the biggest, and I do not know why it shrank.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Potatoes do not eat the solution. Water moves across the membrane by osmosis. Check which strips gained and lost mass."
+     }
+    ]
+   }
+  }
+ }
+}
