@@ -1,4 +1,4 @@
-# Yellow View High School — showcase run cmvpbqp9a
+# Yellow View High School — showcase run cmvpdtw1l
 
 ## Checklist
 
@@ -22,16 +22,16 @@
 
 ## Time
 
-- build: 17.8s
+- build: 14.1s
 - curriculum: 0.5s
-- timetable: 5.0s
-- teaching: 114.2s
-- revision and exams: 12.6s
-- report cards: 1.1s
-- checklist: 6.5s
+- timetable: 4.6s
+- teaching: 99.9s
+- revision and exams: 10.8s
+- report cards: 0.9s
+- checklist: 5.8s
 
 ## Findings
 
 Nothing to report: every expectation held.
 
-_School id 64a5cac049584df78607d7140c885d73, left in place._
+_School id 1e9bc74837d44742b91badccc251ce08, left in place._

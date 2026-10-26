@@ -8,7 +8,7 @@ At the start of every conversation:
 
 1. **Navigation context is pre-injected** — a `<current-screen>` block in the system prompt already tells you `role`, `view`, and any active entity IDs. You do NOT need to call `view-screen` just to discover the role or current view.
 2. Call `view-screen` only when you need a **full data snapshot** — entity details, live content, submission drafts, stats. Skip it for simple lookups or when the pre-injected context is enough.
-3. Read `SCHOOL_GUIDE.md` resource (`--scope shared`) — needed for grading, curriculum co-authoring, onboarding, analytics, or anything school-policy-specific. Skip for simple lookups.
+3. Read the school's guide with `get-school-resource` (each school has its own) — needed for grading, curriculum co-authoring, onboarding, analytics, or anything school-policy-specific. Skip for simple lookups.
 4. Read `LEARNINGS.md` resource (`--scope personal` and `--scope shared`) — needed when preferences, corrections, or past context may affect the answer. Skip for simple lookups.
 
 **CRITICAL: Always check `navigation.role` first.** It determines which section of this guide applies and how you should behave.
@@ -982,7 +982,7 @@ When admin shares school-specific context ("we follow Cambridge curriculum for S
 pnpm action update-school-resource --content "..."
 ```
 
-This writes to `SCHOOL_GUIDE.md` (org-scoped resource). You will read this at the start of future conversations.
+This writes the school's own guide (kept per school at `school-guides/<school id>/SCHOOL_GUIDE.md`; the old shared `SCHOOL_GUIDE.md` is read only while the database holds a single school, and `pnpm adopt:school-guide` gives it to the school that wrote it). You will read it with `get-school-resource` at the start of future conversations.
 
 ### A5b. Extensions: the school's own mini-apps
 
@@ -1874,11 +1874,11 @@ Student opens assessment → reads variant (no difficulty shown) → types in ed
 
 ## Resources
 
-| Resource          | Scope             | Purpose                                                     |
-| ----------------- | ----------------- | ----------------------------------------------------------- |
-| `AGENTS.md`       | shared            | This file — agent behavior guide                            |
-| `SCHOOL_GUIDE.md` | shared            | School identity, terminology, pedagogy, grading conventions |
-| `LEARNINGS.md`    | personal + shared | Corrections, preferences, patterns from past conversations  |
+| Resource       | Scope             | Purpose                                                                             |
+| -------------- | ----------------- | ----------------------------------------------------------------------------------- |
+| `AGENTS.md`    | shared            | This file — agent behavior guide                                                    |
+| School guide   | per school        | School identity, terminology, pedagogy, grading conventions (`get-school-resource`) |
+| `LEARNINGS.md` | personal + shared | Corrections, preferences, patterns from past conversations                          |
 
 Update `SCHOOL_GUIDE.md` whenever the admin shares school-specific context. Update `LEARNINGS.md` when you learn a preference, pattern, or correction.
 

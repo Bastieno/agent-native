@@ -1,7 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting } from "@agent-native/core/settings";
-import { resourceGetByPath, SHARED_OWNER } from "@agent-native/core/resources";
+import { readSchoolGuide } from "../server/lib/school-guide.js";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -277,7 +277,7 @@ export default defineAction({
       });
     }
 
-    const guide = await resourceGetByPath(SHARED_OWNER, "SCHOOL_GUIDE.md");
+    const guide = await readSchoolGuide(orgId);
     if (!guide?.content?.trim()) {
       gaps.push({
         setting: "School guide",

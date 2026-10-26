@@ -1,6 +1,6 @@
 # Yellow View High School, Columbus, Ohio — who is who
 
-Run `cmvpbqp9a`. Everyone signs in at http://localhost:8133 with their email and the shared password **SimTest!2026pass**.
+Run `cmvpdtw1l`. Everyone signs in at http://localhost:8133 with their email and the shared password **SimTest!2026pass**.
 
 These are local test accounts on the local dev server. Do not reuse the password anywhere real, and do not publish this file.
 

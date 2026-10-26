@@ -1,6 +1,6 @@
 # Where to look — Yellow View High School
 
-Sign in at http://localhost:8133 with the email in school-roster.md and the shared password **SimTest!2026pass**. Run `cmvpbqp9a`.
+Sign in at http://localhost:8133 with the email in school-roster.md and the shared password **SimTest!2026pass**. Run `cmvpdtw1l`.
 
 ## Who to sign in as
 

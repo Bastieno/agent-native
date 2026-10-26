@@ -35,6 +35,8 @@
     "provision:school": "tsx ops/provision-school.ts",
     "migrate:school": "tsx ops/migrate-school.ts",
     "load:school": "tsx ops/load-school-db.ts",
+    "adopt:school-guide": "tsx ops/adopt-school-guide.ts",
+    "add:school": "tsx ops/add-school-db.ts",
     "backfill:org-invitations": "tsx ops/backfill-org-invitations.ts",
     "report:accountless-users": "tsx ops/accountless-users.ts"
   },

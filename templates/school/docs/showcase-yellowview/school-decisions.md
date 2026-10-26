@@ -1,6 +1,6 @@
 # Yellow View High School — every setting and choice the run made
 
-Run `cmvpbqp9a`. What the app decided for itself (the timetable draft, the groups, who is struggling) is reported as the app's; everything else here was chosen by the run, from docs/showcase-school-spec.md.
+Run `cmvpdtw1l`. What the app decided for itself (the timetable draft, the groups, who is struggling) is reported as the app's; everything else here was chosen by the run, from docs/showcase-school-spec.md.
 
 ## Identity
 
@@ -31,7 +31,7 @@ Run `cmvpbqp9a`. What the app decided for itself (the timetable draft, the group
 ## Rooms
 
 - **Classrooms:** one per homeroom, named "<homeroom> classroom" (12)
-- **Special rooms:** Biology Lab, Biology Lab 2, Chemistry Lab, Physics Lab, Computer Lab, Library, Gym, Fitness Room, Art Room, Band Room, Choir Room, Auditorium
+- **Special rooms:** Biology Lab, Biology Lab 2, Chemistry Lab, Chemistry Lab 2, Physics Lab, Physics Lab 2, Computer Lab, Library, Gym, Fitness Room, Art Room, Band Room, Choir Room, Auditorium
 
 ## Grading
 
@@ -246,9 +246,9 @@ Run `cmvpbqp9a`. What the app decided for itself (the timetable draft, the group
 
 ## Timetable generation
 
-- **Draft:** 444 lessons proposed in 115 ms, 0 not fitted; accepted as drafted
+- **Draft:** 444 lessons proposed in 110 ms, 0 not fitted; accepted as drafted
 - **Placed by hand:** nothing: the draft placed every lesson
-- **Practicals:** each science double moved into its lab and named "Practical": Grade 11 AP Biology, Monday periods 4–5, Biology Lab 2; Grade 11 AP Environmental Science, Monday periods 4–5, Chemistry Lab; Grade 12 AP Biology, Monday periods 2–3, Biology Lab 2; 10A Chemistry, Friday periods 8–9, Chemistry Lab; 11A Physics, Monday periods 7–8, Physics Lab; 9A Biology, Tuesday periods 2–3, Biology Lab; 9B Biology, Monday periods 4–5, Biology Lab; 9C Honors Biology, Monday periods 2–3, Biology Lab; 10B Chemistry, Monday periods 2–3, Chemistry Lab; 10C Honors Chemistry, Monday periods 8–9, Chemistry Lab; 11B Physics, Monday periods 2–3, Physics Lab; 11C Honors Physics, Tuesday periods 4–5, Physics Lab; 12A Anatomy and Physiology, Monday periods 7–8, Biology Lab 2; 12B Anatomy and Physiology, Tuesday periods 4–5, Biology Lab 2; 12C Honors Anatomy and Physiology, Tuesday periods 7–8, Biology Lab 2
+- **Practicals:** each science double moved into its lab and named "Practical": Grade 11 AP Biology, Monday periods 2–3, Biology Lab 2; Grade 11 AP Environmental Science, Monday periods 2–3, Chemistry Lab; Grade 12 AP Biology, Monday periods 4–5, Biology Lab 2; 10A Chemistry, Monday periods 4–5, Chemistry Lab; 11A Physics, Tuesday periods 4–5, Physics Lab; 9A Biology, Monday periods 4–5, Biology Lab; 9B Biology, Monday periods 2–3, Biology Lab; 9C Honors Biology, Tuesday periods 2–3, Biology Lab; 10B Chemistry, Friday periods 7–8, Chemistry Lab; 10C Honors Chemistry, Monday periods 8–9, Chemistry Lab; 11B Physics, Monday periods 4–5, Physics Lab; 11C Honors Physics, Monday periods 7–8, Physics Lab; 12A Anatomy and Physiology, Monday periods 7–8, Biology Lab 2; 12B Anatomy and Physiology, Tuesday periods 7–8, Biology Lab 2; 12C Honors Anatomy and Physiology, Wednesday periods 7–8, Biology Lab 2
 
 ## Activity mix per subject
 

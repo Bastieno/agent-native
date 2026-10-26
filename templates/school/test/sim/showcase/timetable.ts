@@ -180,52 +180,70 @@ export async function buildTimetable(run: ShowcaseRun): Promise<void> {
       );
       continue;
     }
-    const lab = cls.subject.lab!;
+    // The school's lab for the subject, and its second one where it has two.
+    const second = (name: string) =>
+      name.endsWith(" 2") ? name.slice(0, -2) : `${name} 2`;
+    const rooms = [cls.subject.lab!, second(cls.subject.lab!)].filter(
+      (name, i) => i === 0 || scenario.specialRooms.includes(name),
+    );
     const others = periods.filter((p) => p.classId !== cls.id);
     const teachers = new Set([
       cls.teacher.userId,
       ...cls.support.map((x) => x.userId),
     ]);
     const attached = new Set(cls.arm ? [cls.arm.id] : cls.optionArmIds);
-    const busyAt = (day: number, n: number) =>
+    const peopleBusy = (day: number, n: number) =>
       others.some(
         (p) =>
           p.day === day &&
           p.periodNumber === n &&
-          (p.room === lab ||
-            p.teachers.some((t) => teachers.has(t.userId)) ||
+          (p.teachers.some((t) => teachers.has(t.userId)) ||
             (p.armId && attached.has(p.armId)) ||
             p.optionArmIds.some((a) => attached.has(a))),
       );
-    const labBusy = (day: number, n: number) =>
-      others.some(
-        (p) => p.day === day && p.periodNumber === n && p.room === lab,
-      );
-    const ok = pairs2.filter(
-      (q) => !busyAt(q.day, q.first) && !busyAt(q.day, q.second),
+    // The class's own other lessons count too: a double cannot land on them.
+    const ownOther = periods.filter(
+      (p) => p.classId === cls.id && !double.includes(p),
     );
-    // Where the draft put the double is already free of teachers and learners;
-    // only the lab need be free there.
-    if (!ok.length && first.periodNumber != null) {
-      const here = pairs2.find(
-        (q) => q.day === first.day && q.first === first.periodNumber,
+    const ownBusy = (day: number, n: number) =>
+      ownOther.some((p) => p.day === day && p.periodNumber === n);
+    const roomBusy = (room: string, day: number, n: number) =>
+      others.some(
+        (p) => p.day === day && p.periodNumber === n && p.room === room,
       );
-      if (
-        here &&
-        !labBusy(here.day, here.first) &&
-        !labBusy(here.day, here.second)
-      )
-        ok.push(here);
+    let lab = rooms[0];
+    let target: { day: number; first: number; second: number } | undefined;
+    for (const room of rooms) {
+      const free = pairs2.filter(
+        (q) =>
+          !peopleBusy(q.day, q.first) &&
+          !peopleBusy(q.day, q.second) &&
+          !ownBusy(q.day, q.first) &&
+          !ownBusy(q.day, q.second) &&
+          !roomBusy(room, q.day, q.first) &&
+          !roomBusy(room, q.day, q.second),
+      );
+      // Stay where the draft put the double when that room is free there.
+      // (Where it stands, the people are free already; only the room matters.)
+      const here = pairs2.find(
+        (q) =>
+          q.day === first.day &&
+          q.first === first.periodNumber &&
+          !roomBusy(room, q.day, q.first) &&
+          !roomBusy(room, q.day, q.second),
+      );
+      const pick = here ?? free[0];
+      if (pick) {
+        lab = room;
+        target = pick;
+        break;
+      }
     }
-    // Stay where the draft put the double when the lab is free there.
-    const target =
-      ok.find((q) => q.day === first.day && q.first === first.periodNumber) ??
-      ok[0];
     if (!target) {
       findings.add(
         "missing",
         "timetable",
-        `${cls.name} has no free pair of periods in the ${lab}`,
+        `${cls.name} has no free pair of periods in the ${rooms.join(" or ")}`,
       );
       continue;
     }

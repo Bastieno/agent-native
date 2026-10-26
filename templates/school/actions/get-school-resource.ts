@@ -1,6 +1,7 @@
 import { defineAction } from "@agent-native/core";
-import { resourceGetByPath, SHARED_OWNER } from "@agent-native/core/resources";
+import { currentAccess } from "@agent-native/core/sharing";
 import { z } from "zod";
+import { readSchoolGuide } from "../server/lib/school-guide.js";
 
 export default defineAction({
   description:
@@ -8,10 +9,9 @@ export default defineAction({
   schema: z.object({}),
   http: { method: "GET" },
   run: async () => {
-    const resource = await resourceGetByPath(SHARED_OWNER, "SCHOOL_GUIDE.md");
-    return {
-      content: resource?.content ?? null,
-      updatedAt: resource?.updatedAt ?? null,
-    };
+    const { orgId } = currentAccess();
+    if (!orgId) throw new Error("No school context.");
+    const guide = await readSchoolGuide(orgId);
+    return { content: guide.content, updatedAt: guide.updatedAt };
   },
 });

@@ -1,6 +1,6 @@
 # Putting Yellow View beside Crestfield in production: the plan
 
-**Status:** a design for the owner to approve. Nothing here has been built or run against any hosted database.
+**Status:** built and proven on a local copy of production (2026-10-26). Nothing has been run against the hosted database except read-only queries and a read-only copy.
 
 ## The problem
 
@@ -14,14 +14,14 @@ loader that **adds** to a database that is in use.
 The source database holds exactly one school, so the rule is "everything in it, minus what the target already has or
 must never receive", enforced by checks rather than trusted.
 
-| Goes in (Yellow View's own) | Stays out |
-| --- | --- |
-| its organisation, members and invitations; its 210 accounts and their passwords (hash as is) | the local dev account `dev@local.test` and its workspace |
-| school profiles, students, staff, arms, subjects, classes, enrolments, timetable | sessions, verification codes, signing keys, each person's last screen (`application_state`) |
-| terms, lesson notes, assessments, submissions, grades, report cards, announcements | the 83 shipped sample libraries (NERDC, WAEC) and the 5 shipped WAEC assessment styles: production already has them, a second copy would double every library Crestfield sees |
-| its 46 imported library entries and their objectives | the 15 shared framework resources (`AGENTS.md`, `LEARNINGS.md`, remote-agents files) |
-| its settings (`o:<its org>:*`, `u:<its people>:*`) | every other settings key |
-| the 192 PDF study guides (`document_files`) | migration bookkeeping tables |
+| Goes in (Yellow View's own)                                                                  | Stays out                                                                                                                                                                     |
+| -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| its organisation, members and invitations; its 210 accounts and their passwords (hash as is) | the local dev account `dev@local.test` and its workspace                                                                                                                      |
+| school profiles, students, staff, arms, subjects, classes, enrolments, timetable             | sessions, verification codes, signing keys, each person's last screen (`application_state`)                                                                                   |
+| terms, lesson notes, assessments, submissions, grades, report cards, announcements           | the 83 shipped sample libraries (NERDC, WAEC) and the 5 shipped WAEC assessment styles: production already has them, a second copy would double every library Crestfield sees |
+| its 46 imported library entries and their objectives                                         | the 15 shared framework resources (`AGENTS.md`, `LEARNINGS.md`, remote-agents files)                                                                                          |
+| its settings (`o:<its org>:*`, `u:<its people>:*`)                                           | every other settings key                                                                                                                                                      |
+| the 192 PDF study guides (`document_files`)                                                  | migration bookkeeping tables                                                                                                                                                  |
 
 ## The loader: `ops/add-school-db.ts` (new; `pnpm add:school`)
 
@@ -77,14 +77,34 @@ The test run never touches production's data:
 
 ## Going live (each step confirmed with you before it runs)
 
+0. Rebuild Yellow View locally with `SIM_PASSWORD` from `~/.crestfield-demo.env` set.
 1. A restore point: a Neon branch (or point-in-time marker) made just before.
 2. `pnpm migrate:school` on production (adds the two columns).
-3. Deploy the branch to `crestfield-demo` (`NITRO_PRESET=vercel pnpm build`, `vercel deploy --prebuilt --prod`).
-4. `pnpm add:school --write` on production, with the fingerprint printed before and after.
-5. `school_domains` row for `yellowview.ellai.dev` (`assignHost`).
-6. Cloudflare `CNAME yellowview` to `cname.vercel-dns.com`, DNS only (you add it), then
+3. `pnpm adopt:school-guide --school crestfield.ellai.dev --write` (gives Crestfield's guide its own path; the shared file stays).
+4. Deploy the branch to `crestfield-demo` (`NITRO_PRESET=vercel pnpm build`, `vercel deploy --prebuilt --prod`).
+5. `pnpm add:school --from file:./data/yellowview.db --email-domain yellowview.test --host yellowview.ellai.dev` (dry run), review, then `--write`.
+6. (The `school_domains` row is added by the loader's `--host`.)
+7. Cloudflare `CNAME yellowview` to `cname.vercel-dns.com`, DNS only (you add it), then
    `npx vercel domains add yellowview.ellai.dev crestfield-demo`.
-7. Open both addresses side by side; run the demo note's checks.
+8. Open both addresses side by side; run the demo note's checks.
+
+## What was proven on the copy
+
+A copy of production (121,000 rows, read only) was loaded into a local Postgres, then the real sequence was run on it:
+`migrate:school`, `adopt:school-guide` for Crestfield, `add:school` (dry run, then `--write`).
+
+- 83,266 rows added in 2 seconds; the loader's own check passed (every table's count as expected, the fingerprint of 44
+  tables of other schools' rows unchanged).
+- Independently, with SQL written separately from the loader: Crestfield's classes (112), submissions (14,534), grades
+  (14,524), students (180), accounts (214 not at `yellowview.test`), settings, resources and library rows have identical
+  counts and ids hashes before and after. The only change in the database outside Yellow View is the one adopted guide row.
+- Run again without `--resume`: refused, naming the first table. With `--resume`: nothing duplicated.
+- A host-routed check against the app on the copy: `yellowview` reads the Yellow View guide and 96 classes, `crestfield`
+  reads the Crestfield guide and 112; a Crestfield principal on Yellow View's address has no role there, and the reverse.
+- The loader's own test (`test/add-school.check.ts`) fails if an UPDATE, DELETE, TRUNCATE, DROP or ALTER ever appears.
+
+Passwords: accounts carry the password they were built with. The production load must come from a build made with
+`SIM_PASSWORD` set to the private demo password, never the public test one in the repository.
 
 ## What I need from you
 

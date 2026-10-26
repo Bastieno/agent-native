@@ -27,53 +27,14 @@
 import { createClient } from "@libsql/client";
 import { loadEnv } from "@agent-native/core/scripts";
 import { closeDbExec, getDbExec, isPostgres } from "@agent-native/core/db";
-
-/**
- * Never copied: tied to the secret of the server that wrote them, ephemeral
- * (where each person was looking), or bookkeeping.
- */
-const SKIP = new Set([
-  "session",
-  "sessions",
-  "verification",
-  "jwks",
-  "application_state",
-  "school_migrations",
-  "_org_migrations",
-]);
-
-const q = (name: string) => `"${name.replace(/"/g, '""')}"`;
-
-/**
- * One statement, retried. The first queries on a fresh connection to a hosted
- * database sometimes fail with no message while it wakes, and a long load now
- * and then loses its connection. Everything this tool runs is safe to repeat:
- * reads, `ON CONFLICT DO NOTHING` inserts and sequence resets. A statement that
- * never answers is given up on after a minute.
- */
-async function withRetry<T>(run: () => Promise<T>): Promise<T> {
-  let last: unknown;
-  for (let attempt = 1; attempt <= 6; attempt++) {
-    try {
-      return await Promise.race([
-        run(),
-        new Promise<never>((_, reject) =>
-          setTimeout(() => reject(new Error("no answer in 60s")), 60_000),
-        ),
-      ]);
-    } catch (err) {
-      last = err;
-      console.log(
-        `  (connection hiccup, attempt ${attempt} of 6: ${err instanceof Error ? err.message || err.name : "error"})`,
-      );
-      await new Promise((r) => setTimeout(r, 1000 * attempt));
-    }
-  }
-  throw last;
-}
-
-/** Enough rows for a statement, but never more than about this many bytes. */
-const MAX_STATEMENT_BYTES = 400_000;
+import {
+  copyPlan,
+  NEVER_COPIED as SKIP,
+  q,
+  withRetry,
+  type Column,
+  type Plan,
+} from "./lib/load-common.js";
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
@@ -84,44 +45,6 @@ function arg(name: string): string | undefined {
 function fail(message: string): never {
   console.error(message);
   process.exit(1);
-}
-
-type Column = { name: string; type: string; sequence: boolean };
-
-/** One SQLite value as the Postgres column wants it. */
-function convert(value: unknown, type: string): unknown {
-  if (value === null || value === undefined) return null;
-  if (value instanceof ArrayBuffer) value = Buffer.from(value);
-  switch (type) {
-    case "boolean":
-      return (
-        value === true ||
-        value === 1 ||
-        value === 1n ||
-        value === "1" ||
-        value === "true" ||
-        value === "t"
-      );
-    case "smallint":
-    case "integer":
-    case "bigint":
-    case "double precision":
-    case "real":
-    case "numeric":
-      return typeof value === "bigint" ? Number(value) : Number(value);
-    case "bytea":
-      return Buffer.isBuffer(value) ? value : Buffer.from(String(value));
-    case "timestamp without time zone":
-    case "timestamp with time zone":
-    case "date":
-      if (typeof value === "number")
-        return new Date(value < 1e11 ? value * 1000 : value);
-      return value;
-    default:
-      return typeof value === "string" || Buffer.isBuffer(value)
-        ? value
-        : String(value);
-  }
 }
 
 async function main() {
@@ -254,7 +177,6 @@ async function main() {
       sequence: String(r.column_default ?? "").startsWith("nextval("),
     }));
 
-  type Plan = { table: string; columns: Column[]; rows: number; where: string };
   const plans: Plan[] = [];
   const problems: string[] = [];
   for (const table of sourceTables) {
@@ -314,62 +236,9 @@ async function main() {
   const started = Date.now();
   let done = 0;
   for (const plan of plans) {
-    const names = plan.columns.map((c) => q(c.name)).join(", ");
-    const perBatch = Math.max(
-      1,
-      Math.min(200, Math.floor(30_000 / plan.columns.length)),
-    );
-    let after = -1;
-    const pending: Promise<unknown>[] = [];
-    for (;;) {
-      const page = (await src.execute({
-        sql: `SELECT rowid AS _rowid, ${plan.columns.map((c) => q(c.name)).join(", ")}
-              FROM ${q(plan.table)} WHERE rowid > ? AND (${plan.where}) ORDER BY rowid LIMIT ?`,
-        args: [after, perBatch],
-      })) as any;
-      if (page.rows.length === 0) break;
-      after = Number(page.rows[page.rows.length - 1]._rowid);
-      // Split the page so no statement carries more than MAX_STATEMENT_BYTES.
-      const converted = page.rows.map((row: any) =>
-        plan.columns.map((c) => convert(row[c.name], c.type)),
-      );
-      let from = 0;
-      while (from < converted.length) {
-        let to = from;
-        let bytes = 0;
-        while (
-          to < converted.length &&
-          (to === from || bytes < MAX_STATEMENT_BYTES)
-        ) {
-          bytes += converted[to].reduce(
-            (n: number, v: unknown) =>
-              n + (typeof v === "string" ? v.length : 16),
-            0,
-          );
-          to++;
-        }
-        const chunk = converted.slice(from, to);
-        const marks = chunk
-          .map(() => `(${plan.columns.map(() => "?").join(", ")})`)
-          .join(", ");
-        pending.push(
-          dst.execute({
-            sql: `INSERT INTO ${q(plan.table)} (${names}) VALUES ${marks} ON CONFLICT DO NOTHING`,
-            args: chunk.flat(),
-          }),
-        );
-        if (pending.length >= 2) await Promise.all(pending.splice(0));
-        from = to;
-      }
-      done += page.rows.length;
-    }
-    await Promise.all(pending);
-    // A serial column's counter must start after the rows just written.
-    for (const c of plan.columns.filter((c) => c.sequence)) {
-      await dst.execute(
-        `SELECT setval(pg_get_serial_sequence('${plan.table}', '${c.name}'), COALESCE((SELECT MAX(${q(c.name)}) FROM ${q(plan.table)}), 1))`,
-      );
-    }
+    await copyPlan(src, dst, plan, (n) => {
+      done += n;
+    });
     console.log(
       `  ${plan.table}: ${plan.rows.toLocaleString()} (${done.toLocaleString()} of ${total.toLocaleString()}, ${((Date.now() - started) / 1000).toFixed(0)}s)`,
     );
