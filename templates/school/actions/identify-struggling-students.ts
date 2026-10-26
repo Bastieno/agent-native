@@ -21,6 +21,8 @@ export default defineAction({
       ),
   }),
   http: false,
+  // It only reads, so a host lists it with the read-only tools.
+  readOnly: true,
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");

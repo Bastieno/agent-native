@@ -313,8 +313,10 @@ async function chatClientDirect() {
     console.log(`  !!  the admin's list has ${head.names.size} tools`);
   }
   check(
-    head.byName.get("invite-staff")?.annotations?.destructiveHint === true,
-    "inviting staff is flagged for the host to confirm",
+    head.byName.get("discard-curriculum-draft")?.annotations
+      ?.destructiveHint === true &&
+      head.byName.get("invite-staff")?.annotations?.destructiveHint === false,
+    "only what discards or deletes is flagged for the host to confirm; inviting staff is not",
   );
 
   check(

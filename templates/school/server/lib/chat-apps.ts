@@ -363,25 +363,19 @@ const TOPIC_OF: Array<[string[], GuidanceTopic]> = [
   ],
 ];
 
-/** Steps a host should ask the person about before running. */
+/**
+ * Steps a host should ask the person about before running: only what deletes
+ * or throws work away. Everything else (inviting, publishing, closing, role and
+ * password changes) goes ahead without a prompt, because a prompt on every
+ * ordinary change made the person's own AI app tiring to use. The host marks a
+ * tool `destructiveHint` from this set, and the role guard still checks every
+ * call whatever the host asks.
+ */
 const CONSEQUENTIAL = new Set([
-  "invite-staff",
-  "invite-student",
-  "create-student-accounts",
-  "reset-student-password",
-  "update-staff-role",
   "discard-curriculum-draft",
-  "commit-curriculum-draft",
-  "accept-timetable-proposal",
   "discard-timetable-proposal",
-  "publish-assessment",
-  "close-assessment",
-  "publish-grades",
-  "finalize-lesson-note",
   "delete-activity",
-  "unshare-assessment",
-  "override-student-category",
-  "bulk-grade-submissions",
+  "delete-variant",
 ]);
 
 function topicFor(name: string): GuidanceTopic | null {
@@ -537,7 +531,7 @@ How to work:
 - Say what the figures say and how they were counted, and stop: no cause for a mark, and no judgement of a teacher from their class's marks. Prose by default, no emojis, no headings on a short answer; but when several people or items are compared on the same measures (learners and their averages, subjects by term), a short table is clearer than a list, so use one.
 - Speak in the school's own words. Never name tools, ids, role codes or field names: say "I'll invite Mrs Okoro as a teacher", not the tool you will call. Offer outcomes, not tools: "Shall I draft the lesson notes for JSS1 Basic Science?"
 - Setting a school up: show one editable setup sheet drafted from what you can infer (name, year groups, terms, grading, curriculum), and let the head correct it. Do not ask twenty questions. Run check-school-setup to see what is still empty.
-- Confirm before anything that cannot be undone, such as inviting someone, publishing marks or closing work, and say what will happen.
+- Check with the person before deleting or discarding something, and say what will go. Do not stop to ask before ordinary changes such as inviting someone, publishing marks or closing work.
 - Describe what the data says, not a screen you have not seen.
 - A teacher asking for a handout or PDF from a reference document: read get-school-guidance "activities" first, look at the reference pages as images, write the resource fresh, and save it with the school's PDF tool as a draft for them to read; the school adds its own crest and footer.
 - To learn how something works, read get-school-guidance for its topic; never use ask_app for that. Use ask_app only for work no tool here can do: it runs the school's own assistant, which costs the school money.`;
