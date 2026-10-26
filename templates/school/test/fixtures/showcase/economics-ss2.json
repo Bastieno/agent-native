@@ -322,7 +322,7 @@
       "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate total, average and marginal product from a table;\n2. state the law of variable proportions and say where diminishing returns begin;\n3. define fixed, variable, total, average and marginal cost and calculate them;\n4. distinguish the economist's view of cost from the accountant's view.\n\n## Materials\n\nCalculators, a product table for workers on a cassava farm, a cost table for a bakery, graph paper.\n\n## Starter (5 minutes)\n\nAsk: one worker bakes 10 loaves in an hour. Two workers share the same small oven. Will they bake 20? Why might it be fewer than 20?\n\n## Development\n\n1. Define production, productivity, total product (TP), average product (AP = TP / workers) and marginal product (MP = change in TP from one more worker).\n2. Fill in a table of workers 1 to 7. Show that MP first rises, then falls, and AP follows it. State the law of variable proportions, pointing out where diminishing returns begin.\n3. Define costs: fixed cost (FC), variable cost (VC), total cost (TC = FC + VC), average cost (AC = TC / Q) and marginal cost (MC = change in TC from one more unit).\n4. Distinguish short run (at least one factor fixed) from long run (all factors variable).\n5. Explain the economist's cost, which includes opportunity cost and the owner's own resources, against the accountant's cost, which counts money paid out only.\n\n## Class activity\n\nGroups complete a cost table for a bakery and plot AC and MC on one graph.\n\n## Evaluation\n\n1. A firm's TC rises from N140 to N170 when output rises from 1 to 2. State the MC.\n2. Why is rent paid to oneself still a cost to an economist?\n\n## Assignment\n\nComplete the worksheet on the app.",
       "reading": {
         "title": "More workers, more output, and what it costs",
-        "content": "# Productivity and the concepts of cost\n\n## Product\n\nOn a cassava farm, workers share one plot of fixed size.\n\n| Workers | Total product (bags) | Average product | Marginal product |\n| --- | --- | --- | --- |\n| 1 | 10 | 10 | 10 |\n| 2 | 30 | 15 | 20 |\n| 3 | 60 | 20 | 30 |\n| 4 | 80 | 20 | 20 |\n| 5 | 90 | 18 | 10 |\n| 6 | 90 | 15 | 0 |\n| 7 | 84 | 12 | -6 |\n\n**Total product (TP)** is the total output. **Average product (AP)** = TP / number of workers. **Marginal product (MP)** is the extra output from one more worker.\n\nThe **law of variable proportions** (law of diminishing returns) says that when more units of a variable factor are added to a fixed factor, the extra output at first rises, but after a point it falls. Here MP rises up to the third worker, 30 bags, and falls from the fourth worker. Diminishing returns begin after the third worker. The plot is too small for so many people.\n\n## Costs\n\n- **Fixed costs (FC)** do not change with output: rent, insurance, a loan on machines.\n- **Variable costs (VC)** change with output: flour, fuel, wages paid per piece.\n- **Total cost (TC)** = FC + VC.\n- **Average cost (AC)** = TC / output.\n- **Marginal cost (MC)** = change in TC when one more unit is made.\n\n**Example.** A bakery has fixed cost of N20,000. At 10 bags of flour the total cost is N50,000, and at 11 bags it is N52,000. Variable cost at 10 bags = 50,000 - 20,000 = N30,000. AC = 50,000 / 10 = N5,000. MC of the 11th = 52,000 - 50,000 = N2,000.\n\nIn the **short run** at least one factor (say, the size of the oven) is fixed. In the **long run** all factors can be changed.\n\n## Economist's cost and accountant's cost\n\nAn accountant records the money actually paid out: wages, rent, materials. An economist also counts **opportunity cost**, including the value of the owner's own time and property used in the business. If Mama Kemi runs her shop in her own building, the accountant records no rent; the economist counts the rent she could have earned by letting it."
+        "content": "# Productivity and the concepts of cost\n\n## Product\n\nOn a cassava farm, workers share one plot of fixed size.\n\n| Workers | Total product (bags) | Average product | Marginal product |\n| --- | --- | --- | --- |\n| 1 | 10 | 10 | 10 |\n| 2 | 30 | 15 | 20 |\n| 3 | 60 | 20 | 30 |\n| 4 | 80 | 20 | 20 |\n| 5 | 90 | 18 | 10 |\n| 6 | 90 | 15 | 0 |\n| 7 | 84 | 12 | -6 |\n\n**Total product (TP)** is the total output. **Average product (AP)** = TP / number of workers. **Marginal product (MP)** is the extra output from one more worker.\n\nThe **law of variable proportions** (law of diminishing returns) says that when more units of a variable factor are added to a fixed factor, the extra output at first rises, but after a point it falls. Here MP rises up to the third worker, 30 bags, and falls from the fourth worker. Diminishing returns begin after the third worker. The plot is too small for so many people.\n\n## Costs\n\n- **Fixed costs (FC)** do not change with output: rent, insurance, a loan on machines.\n- **Variable costs (VC)** change with output: flour, fuel, wages paid per piece.\n- **Total cost (TC)** = FC + VC.\n- **Average cost (AC)** = TC / output.\n- **Marginal cost (MC)** = change in TC when one more unit is made.\n\n**Example.** A bakery has fixed cost of N20,000. At 10 bags of flour the total cost is N50,000, and at 11 bags it is N52,000. Variable cost at 10 bags = 50,000 - 20,000 = N30,000. AC = 50,000 / 10 = N5,000. MC of the 11th = 52,000 - 50,000 = $\\ce{N2}$,000.\n\nIn the **short run** at least one factor (say, the size of the oven) is fixed. In the **long run** all factors can be changed.\n\n## Economist's cost and accountant's cost\n\nAn accountant records the money actually paid out: wages, rent, materials. An economist also counts **opportunity cost**, including the value of the owner's own time and property used in the business. If Mama Kemi runs her shop in her own building, the accountant records no rent; the economist counts the rent she could have earned by letting it."
       },
       "cards": [
         {
@@ -416,14 +416,14 @@
           "markScheme": [
             "Variable cost = 50,000 - 20,000 = N30,000",
             "Average cost = 50,000 / 10 = N5,000",
-            "Marginal cost = 52,000 - 50,000 = N2,000",
+            "Marginal cost = 52,000 - 50,000 = $\\ce{N2}$,000",
             "States the formula used for variable cost"
           ],
-          "modelAnswer": "(a) Variable cost = total cost - fixed cost = 50,000 - 20,000 = N30,000. (b) Average cost = 50,000 / 10 = N5,000 per bag. (c) Marginal cost = 52,000 - 50,000 = N2,000.",
+          "modelAnswer": "(a) Variable cost = total cost - fixed cost = 50,000 - 20,000 = N30,000. (b) Average cost = 50,000 / 10 = N5,000 per bag. (c) Marginal cost = 52,000 - 50,000 = $\\ce{N2}$,000.",
           "answers": [
             {
               "tier": "full",
-              "text": "(a) VC = TC - FC = 50,000 - 20,000 = N30,000. (b) AC = TC/Q = 50,000/10 = N5,000. (c) MC = 52,000 - 50,000 = N2,000.",
+              "text": "(a) VC = TC - FC = 50,000 - 20,000 = N30,000. (b) AC = TC/Q = 50,000/10 = N5,000. (c) MC = 52,000 - 50,000 = $\\ce{N2}$,000.",
               "meets": [
                 {
                   "point": 0,
@@ -435,7 +435,7 @@
                 },
                 {
                   "point": 2,
-                  "quote": "MC = 52,000 - 50,000 = N2,000"
+                  "quote": "MC = 52,000 - 50,000 = $\\ce{N2}$,000"
                 },
                 {
                   "point": 3,
@@ -446,7 +446,7 @@
             },
             {
               "tier": "full",
-              "text": "Variable cost is total cost minus fixed cost, which is N50,000 - N20,000 = N30,000. Average cost is N50,000 divided by 10 bags = N5,000. Marginal cost of the 11th bag is N52,000 - N50,000 = N2,000.",
+              "text": "Variable cost is total cost minus fixed cost, which is N50,000 - N20,000 = N30,000. Average cost is N50,000 divided by 10 bags = N5,000. Marginal cost of the 11th bag is N52,000 - N50,000 = $\\ce{N2}$,000.",
               "meets": [
                 {
                   "point": 0,
@@ -458,7 +458,7 @@
                 },
                 {
                   "point": 2,
-                  "quote": "N52,000 - N50,000 = N2,000"
+                  "quote": "N52,000 - N50,000 = $\\ce{N2}$,000"
                 },
                 {
                   "point": 3,
@@ -480,11 +480,11 @@
                   "quote": "50,000 / 10 = 5,000"
                 }
               ],
-              "feedback": "Parts (a) and (b) are right. Marginal cost is the change in total cost from one more unit, N52,000 - N50,000 = N2,000, not the new average cost. Also write the unit (naira)."
+              "feedback": "Parts (a) and (b) are right. Marginal cost is the change in total cost from one more unit, N52,000 - N50,000 = $\\ce{N2}$,000, not the new average cost. Also write the unit (naira)."
             },
             {
               "tier": "partial",
-              "text": "(a) VC = 50,000 - 20,000 = N30,000. (b) AC = 30,000/10 = N3,000. (c) MC = N2,000.",
+              "text": "(a) VC = 50,000 - 20,000 = N30,000. (b) AC = 30,000/10 = N3,000. (c) MC = $\\ce{N2}$,000.",
               "meets": [
                 {
                   "point": 0,
@@ -492,7 +492,7 @@
                 },
                 {
                   "point": 2,
-                  "quote": "MC = N2,000"
+                  "quote": "MC = $\\ce{N2}$,000"
                 }
               ],
               "feedback": "Variable cost and marginal cost are right. Average cost uses total cost, 50,000 / 10 = N5,000; N3,000 is the average variable cost.",
@@ -502,7 +502,7 @@
               "tier": "weak",
               "text": "(a) The variable cost is 20,000. (b) The average cost is 50,000. (c) The marginal cost is 52,000.",
               "meets": [],
-              "feedback": "20,000 is the fixed cost. Variable cost = TC - FC = N30,000. Average cost divides by output (N5,000), and marginal cost is the increase in total cost for the 11th bag (N2,000)."
+              "feedback": "20,000 is the fixed cost. Variable cost = TC - FC = N30,000. Average cost divides by output (N5,000), and marginal cost is the increase in total cost for the 11th bag ($\\ce{N2}$,000)."
             },
             {
               "tier": "weak",
@@ -624,7 +624,7 @@
       "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. calculate total, average and marginal revenue;\n2. explain marginal revenue product and its use in hiring decisions;\n3. describe perfect competition, monopoly and monopolistic competition;\n4. explain how price and output are decided under each, using profit maximisation (MC = MR).\n\n## Materials\n\nCalculators, a demand and revenue table for a monopolist, cards describing five local businesses, graph paper.\n\n## Starter (5 minutes)\n\nAsk: in Mile 12 market, many traders sell the same tomatoes and none can choose the price. Then ask: NEPA (or a single electricity distributor in a town) is the only seller of power. How is that different?\n\n## Development\n\n1. Define total revenue (TR = price x quantity), average revenue (AR = TR / Q, which equals price) and marginal revenue (MR = change in TR from one more unit).\n2. Work a table. Show that under perfect competition price is the same for every unit, so AR = MR = P; under monopoly price falls as output rises, so MR is below AR.\n3. Define marginal revenue product (MRP = marginal physical product x marginal revenue) and the rule: hire a worker if MRP is greater than the wage.\n4. Describe market structures: perfect competition (many sellers, identical goods, free entry), monopoly (one seller, no close substitute, barriers to entry), monopolistic competition (many sellers, differentiated goods, such as bakeries and hair salons).\n5. State the profit-maximising rule: produce where MC = MR. Show the resulting price and output for each structure.\n\n## Class activity\n\nSorting cards: which market structure does each local business belong to?\n\n## Evaluation\n\n1. A firm sells 4 units at N40 each. What is its total revenue?\n2. Why is a monopolist's marginal revenue below its price?\n\n## Assignment\n\nComplete the differentiated worksheet on the app. Core and extension questions are marked.",
       "reading": {
         "title": "Money coming in, and who sells to whom",
-        "content": "# Revenue concepts and market structures\n\n## Revenue\n\n**Total revenue (TR)** = price x quantity sold. **Average revenue (AR)** = TR / quantity, which is the same as price. **Marginal revenue (MR)** is the extra revenue from selling one more unit.\n\nA monopolist sells a product and must cut price to sell more:\n\n| Quantity | Price (AR) | TR | MR |\n| --- | --- | --- | --- |\n| 1 | 50 | 50 | 50 |\n| 2 | 45 | 90 | 40 |\n| 3 | 40 | 120 | 30 |\n| 4 | 35 | 140 | 20 |\n| 5 | 30 | 150 | 10 |\n\nMR is below price because the lower price applies to all units, not only the extra one.\n\nUnder perfect competition a firm accepts the market price, so AR = MR = price. A trader who sells tomatoes at N500 a basket earns N500 for every extra basket.\n\n## Marginal revenue product\n\n**MRP** = marginal physical product of a worker x marginal revenue. If an extra worker adds 20 baskets and each basket sells for N2,000, MRP = N40,000. If the worker costs less than that, hiring is worthwhile.\n\n## Market structures\n\n**Perfect competition**: many buyers and sellers; identical product; free entry and exit; full knowledge. No firm can control price. Farm produce markets come close.\n\n**Monopoly**: a single seller with no close substitute and barriers to entry, such as a licence or huge capital. The monopolist can control price. A public water board in a town is an example.\n\n**Monopolistic competition**: many sellers offering differentiated products, such as brands of bread or hair salons. Each has a little control over its price through branding.\n\n## Profit maximisation\n\nA firm maximises profit by producing the output where **marginal cost equals marginal revenue (MC = MR)**, as long as price covers average cost. Under perfect competition, the price is fixed by the market and the firm adjusts output. Under monopoly, the firm chooses price and output together, often charging a higher price and producing less than a competitive industry would."
+        "content": "# Revenue concepts and market structures\n\n## Revenue\n\n**Total revenue (TR)** = price x quantity sold. **Average revenue (AR)** = TR / quantity, which is the same as price. **Marginal revenue (MR)** is the extra revenue from selling one more unit.\n\nA monopolist sells a product and must cut price to sell more:\n\n| Quantity | Price (AR) | TR | MR |\n| --- | --- | --- | --- |\n| 1 | 50 | 50 | 50 |\n| 2 | 45 | 90 | 40 |\n| 3 | 40 | 120 | 30 |\n| 4 | 35 | 140 | 20 |\n| 5 | 30 | 150 | 10 |\n\nMR is below price because the lower price applies to all units, not only the extra one.\n\nUnder perfect competition a firm accepts the market price, so AR = MR = price. A trader who sells tomatoes at N500 a basket earns N500 for every extra basket.\n\n## Marginal revenue product\n\n**MRP** = marginal physical product of a worker x marginal revenue. If an extra worker adds 20 baskets and each basket sells for $\\ce{N2}$,000, MRP = N40,000. If the worker costs less than that, hiring is worthwhile.\n\n## Market structures\n\n**Perfect competition**: many buyers and sellers; identical product; free entry and exit; full knowledge. No firm can control price. Farm produce markets come close.\n\n**Monopoly**: a single seller with no close substitute and barriers to entry, such as a licence or huge capital. The monopolist can control price. A public water board in a town is an example.\n\n**Monopolistic competition**: many sellers offering differentiated products, such as brands of bread or hair salons. Each has a little control over its price through branding.\n\n## Profit maximisation\n\nA firm maximises profit by producing the output where **marginal cost equals marginal revenue (MC = MR)**, as long as price covers average cost. Under perfect competition, the price is fixed by the market and the firm adjusts output. Under monopoly, the firm chooses price and output together, often charging a higher price and producing less than a competitive industry would."
       },
       "cards": [
         {

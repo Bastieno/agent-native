@@ -836,11 +836,11 @@
       },
       {
        "tier": "full",
-       "text": "CO2 gets used up so there's less of it. The plant releases oxygen so there's more of that. Photosynthesis uses CO2 and water and turns light energy into the chemical energy in sugar.",
+       "text": "$\\ce{CO2}$ gets used up so there's less of it. The plant releases oxygen so there's more of that. Photosynthesis uses $\\ce{CO2}$ and water and turns light energy into the chemical energy in sugar.",
        "meets": [
         {
          "point": 0,
-         "quote": "CO2 gets used up so there's less of it."
+         "quote": "$\\ce{CO2}$ gets used up so there's less of it."
         },
         {
          "point": 1,
@@ -848,7 +848,7 @@
         },
         {
          "point": 2,
-         "quote": "Photosynthesis uses CO2 and water"
+         "quote": "Photosynthesis uses $\\ce{CO2}$ and water"
         },
         {
          "point": 3,
@@ -938,7 +938,7 @@
       },
       {
        "tier": "full",
-       "text": "There is a big difference between the 74 kg of growth and 0.06 kg of soil lost. So the soil can't be what the tree is made of. The tree takes in CO2 from the air. Photosynthesis uses CO2 and water to make sugar which becomes wood.",
+       "text": "There is a big difference between the 74 kg of growth and 0.06 kg of soil lost. So the soil can't be what the tree is made of. The tree takes in $\\ce{CO2}$ from the air. Photosynthesis uses $\\ce{CO2}$ and water to make sugar which becomes wood.",
        "meets": [
         {
          "point": 0,
@@ -950,11 +950,11 @@
         },
         {
          "point": 2,
-         "quote": "The tree takes in CO2 from the air."
+         "quote": "The tree takes in $\\ce{CO2}$ from the air."
         },
         {
          "point": 3,
-         "quote": "Photosynthesis uses CO2 and water to make sugar which becomes wood."
+         "quote": "Photosynthesis uses $\\ce{CO2}$ and water to make sugar which becomes wood."
         }
        ],
        "feedback": "All four marks, and a good use of comparison in the data."
@@ -1241,15 +1241,15 @@
       },
       {
        "tier": "full",
-       "text": "Photosynthesis: CO2 + H2O + light gives glucose + O2. Respiration: glucose + O2 gives CO2 + H2O. The first one stores the light energy in sugar and the second releases the energy from the sugar for the cell to use.",
+       "text": "Photosynthesis: $\\ce{CO2}$ + $\\ce{H2O}$ + light gives glucose + $\\ce{O2}$. Respiration: glucose + $\\ce{O2}$ gives $\\ce{CO2}$ + $\\ce{H2O}$. The first one stores the light energy in sugar and the second releases the energy from the sugar for the cell to use.",
        "meets": [
         {
          "point": 0,
-         "quote": "Photosynthesis: CO2 + H2O + light gives glucose + O2."
+         "quote": "Photosynthesis: $\\ce{CO2}$ + $\\ce{H2O}$ + light gives glucose + $\\ce{O2}$."
         },
         {
          "point": 1,
-         "quote": "Respiration: glucose + O2 gives CO2 + H2O."
+         "quote": "Respiration: glucose + $\\ce{O2}$ gives $\\ce{CO2}$ + $\\ce{H2O}$."
         },
         {
          "point": 2,
@@ -1264,11 +1264,11 @@
       },
       {
        "tier": "partial",
-       "text": "Photosynthesis uses CO2 and water to make glucose and oxygen. Respiration makes glucose too.",
+       "text": "Photosynthesis uses $\\ce{CO2}$ and water to make glucose and oxygen. Respiration makes glucose too.",
        "meets": [
         {
          "point": 0,
-         "quote": "Photosynthesis uses CO2 and water to make glucose and oxygen."
+         "quote": "Photosynthesis uses $\\ce{CO2}$ and water to make glucose and oxygen."
         }
        ],
        "feedback": "Respiration breaks down glucose, it does not make it. Its products are carbon dioxide and water."
@@ -1312,7 +1312,7 @@
      "prompt": "Explain why carbon is described as cycling through an ecosystem but energy is described as flowing through it.",
      "markScheme": [
       "States that carbon atoms are conserved and move between organisms and the air",
-      "Gives an example of the carbon cycle, such as CO2 taken in by plants and returned by respiration",
+      "Gives an example of the carbon cycle, such as $\\ce{CO2}$ taken in by plants and returned by respiration",
       "States that energy enters as light and is lost as heat at each step",
       "States that energy cannot be reused so a constant supply from the sun is needed"
      ],
@@ -1320,7 +1320,7 @@
      "answers": [
       {
        "tier": "full",
-       "text": "Carbon atoms are not used up. They just get moved around. Plants take CO2 from the air and build sugar, and when animals respire they put CO2 back. Energy comes in as sunlight and at every step some leaves as heat. That heat can't be used again so the ecosystem always needs more sun.",
+       "text": "Carbon atoms are not used up. They just get moved around. Plants take $\\ce{CO2}$ from the air and build sugar, and when animals respire they put $\\ce{CO2}$ back. Energy comes in as sunlight and at every step some leaves as heat. That heat can't be used again so the ecosystem always needs more sun.",
        "meets": [
         {
          "point": 0,
@@ -1328,7 +1328,7 @@
         },
         {
          "point": 1,
-         "quote": "Plants take CO2 from the air and build sugar, and when animals respire they put CO2 back."
+         "quote": "Plants take $\\ce{CO2}$ from the air and build sugar, and when animals respire they put $\\ce{CO2}$ back."
         },
         {
          "point": 2,
@@ -1343,7 +1343,7 @@
       },
       {
        "tier": "full",
-       "text": "The same carbon atoms are recycled because matter is conserved. For example the carbon in my breakfast was CO2 in the air once, and respiration returns it as CO2. Energy goes from the sun to plants to animals and gets lost as heat. You can't recycle heat, so energy needs to be supplied by the sun constantly.",
+       "text": "The same carbon atoms are recycled because matter is conserved. For example the carbon in my breakfast was $\\ce{CO2}$ in the air once, and respiration returns it as $\\ce{CO2}$. Energy goes from the sun to plants to animals and gets lost as heat. You can't recycle heat, so energy needs to be supplied by the sun constantly.",
        "meets": [
         {
          "point": 0,
@@ -1351,7 +1351,7 @@
         },
         {
          "point": 1,
-         "quote": "For example the carbon in my breakfast was CO2 in the air once, and respiration returns it as CO2."
+         "quote": "For example the carbon in my breakfast was $\\ce{CO2}$ in the air once, and respiration returns it as $\\ce{CO2}$."
         },
         {
          "point": 2,

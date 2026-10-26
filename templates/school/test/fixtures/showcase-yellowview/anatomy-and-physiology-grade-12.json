@@ -2177,7 +2177,7 @@
       },
       {
        "tier": "full",
-       "text": "Resting potential is about −70 mV. Depolarization: Na+ channels open and Na+ enters. Repolarization: K+ channels open and K+ exits. The pump moves 3 Na+ out and 2 K+ in to restore the resting state, and either a full spike happens or none.",
+       "text": "Resting potential is about −70 mV. Depolarization: $\\ce{Na^+}$ channels open and $\\ce{Na^+}$ enters. Repolarization: $\\ce{K^+}$ channels open and $\\ce{K^+}$ exits. The pump moves 3 $\\ce{Na^+}$ out and 2 $\\ce{K^+}$ in to restore the resting state, and either a full spike happens or none.",
        "meets": [
         {
          "point": 0,
@@ -2185,15 +2185,15 @@
         },
         {
          "point": 1,
-         "quote": "Depolarization: Na+ channels open and Na+ enters."
+         "quote": "Depolarization: $\\ce{Na^+}$ channels open and $\\ce{Na^+}$ enters."
         },
         {
          "point": 2,
-         "quote": "Repolarization: K+ channels open and K+ exits."
+         "quote": "Repolarization: $\\ce{K^+}$ channels open and $\\ce{K^+}$ exits."
         },
         {
          "point": 3,
-         "quote": "The pump moves 3 Na+ out and 2 K+ in to restore the resting state, and either a full spike happens or none."
+         "quote": "The pump moves 3 $\\ce{Na^+}$ out and 2 $\\ce{K^+}$ in to restore the resting state, and either a full spike happens or none."
         }
        ],
        "feedback": "All four marks, with accurate numbers."

@@ -312,10 +312,10 @@
   },
   "2": {
    "topic": "Isotopes, average atomic mass and ions",
-   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. distinguish physical and chemical change and justify the classification with evidence at the particle level;\n2. use protons, neutrons and electrons to describe isotopes and ions, and calculate average atomic mass.\n\n## Materials\n\nMass spectrum printouts of boron and chlorine, atom model cards, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nShow the periodic table entry for boron (10.81) and ask: \"Why isn't the mass of boron a whole number?\" Take ideas and record them.\n\n## Main activity\n\n1. Evidence of chemical change: mini-demo with magnesium ribbon burning and sugar dissolving. Ask students to explain the difference at the particle level (bonds broken and formed).\n2. Review protons, neutrons and electrons, then give a mass spectrum for boron with peaks at 10 and 11. Students read the percent abundance and compute a weighted average.\n3. Practice with chlorine, and with ions such as Fe3+ and N3-.\n\n## Checking for understanding\n\nAsk: \"If a sample is 75% Cl-35 and 25% Cl-37, estimate the average atomic mass without a calculator.\" Look for 35.5.\n\n## Worksheet\n\nIsotope notation, average atomic mass calculations and ion particle counts.",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. distinguish physical and chemical change and justify the classification with evidence at the particle level;\n2. use protons, neutrons and electrons to describe isotopes and ions, and calculate average atomic mass.\n\n## Materials\n\nMass spectrum printouts of boron and chlorine, atom model cards, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nShow the periodic table entry for boron (10.81) and ask: \"Why isn't the mass of boron a whole number?\" Take ideas and record them.\n\n## Main activity\n\n1. Evidence of chemical change: mini-demo with magnesium ribbon burning and sugar dissolving. Ask students to explain the difference at the particle level (bonds broken and formed).\n2. Review protons, neutrons and electrons, then give a mass spectrum for boron with peaks at 10 and 11. Students read the percent abundance and compute a weighted average.\n3. Practice with chlorine, and with ions such as $\\ce{Fe^3+}$ and $\\ce{N^3-}$.\n\n## Checking for understanding\n\nAsk: \"If a sample is 75% Cl-35 and 25% Cl-37, estimate the average atomic mass without a calculator.\" Look for 35.5.\n\n## Worksheet\n\nIsotope notation, average atomic mass calculations and ion particle counts.",
    "reading": {
     "title": "Why atomic masses are not whole numbers",
-    "content": "In a **physical change**, particles keep their identities and only their arrangement or energy changes. Water boiling, sugar dissolving and a metal bar bending are physical changes. In a **chemical change**, bonds between atoms are broken and new bonds form, so new substances appear. Magnesium burning in air produces a white powder, magnesium oxide, that has none of the properties of the shiny metal. Evidence for a chemical change includes a new color, gas bubbles from a source other than boiling, a precipitate, light, and an energy change. But a good chemist treats each of these as a clue, not a proof. Dissolving some salts in water makes the solution cold, and yet no new substance forms.\n\nAt the center of every atom is a nucleus made of protons and neutrons. The number of protons is the **atomic number** and identifies the element. Atoms of one element can have different numbers of neutrons, and these are **isotopes**. We write them as boron-10 and boron-11, or with the mass number as a superscript before the symbol. The two isotopes behave almost identically in chemical reactions, because chemical behavior depends on electrons. They differ in mass.\n\nThe mass of a single atom is measured in atomic mass units (amu). The number printed on the periodic table is the **average atomic mass**, a weighted average of the masses of the isotopes as they occur in nature. A mass spectrometer measures the mass and the abundance of each isotope. Boron has two stable isotopes: boron-10 with a mass of 10.013 amu and an abundance of 19.9 percent, and boron-11 with a mass of 11.009 amu and an abundance of 80.1 percent. The average is 0.199 times 10.013 plus 0.801 times 11.009, which is 1.993 plus 8.818, or 10.81 amu. Because most boron atoms are boron-11, the average is much closer to 11 than to 10.\n\nWhen atoms gain or lose electrons they become **ions**. The number of protons never changes. An iron atom has 26 protons. An Fe3+ ion has lost three electrons, so it has 26 protons and 23 electrons. A nitride ion, N3-, has 7 protons and 10 electrons. The ions of metals are positive because they tend to lose electrons, and the ions of nonmetals are negative because they tend to gain them."
+    "content": "In a **physical change**, particles keep their identities and only their arrangement or energy changes. Water boiling, sugar dissolving and a metal bar bending are physical changes. In a **chemical change**, bonds between atoms are broken and new bonds form, so new substances appear. Magnesium burning in air produces a white powder, magnesium oxide, that has none of the properties of the shiny metal. Evidence for a chemical change includes a new color, gas bubbles from a source other than boiling, a precipitate, light, and an energy change. But a good chemist treats each of these as a clue, not a proof. Dissolving some salts in water makes the solution cold, and yet no new substance forms.\n\nAt the center of every atom is a nucleus made of protons and neutrons. The number of protons is the **atomic number** and identifies the element. Atoms of one element can have different numbers of neutrons, and these are **isotopes**. We write them as boron-10 and boron-11, or with the mass number as a superscript before the symbol. The two isotopes behave almost identically in chemical reactions, because chemical behavior depends on electrons. They differ in mass.\n\nThe mass of a single atom is measured in atomic mass units (amu). The number printed on the periodic table is the **average atomic mass**, a weighted average of the masses of the isotopes as they occur in nature. A mass spectrometer measures the mass and the abundance of each isotope. Boron has two stable isotopes: boron-10 with a mass of 10.013 amu and an abundance of 19.9 percent, and boron-11 with a mass of 11.009 amu and an abundance of 80.1 percent. The average is 0.199 times 10.013 plus 0.801 times 11.009, which is 1.993 plus 8.818, or 10.81 amu. Because most boron atoms are boron-11, the average is much closer to 11 than to 10.\n\nWhen atoms gain or lose electrons they become **ions**. The number of protons never changes. An iron atom has 26 protons. An $\\ce{Fe^3+}$ ion has lost three electrons, so it has 26 protons and 23 electrons. A nitride ion, $\\ce{N^3-}$, has 7 protons and 10 electrons. The ions of metals are positive because they tend to lose electrons, and the ions of nonmetals are negative because they tend to gain them."
    },
    "cards": [
     {
@@ -363,7 +363,7 @@
      "answer": "C"
     },
     {
-     "prompt": "How many protons and electrons are in an Fe3+ ion (atomic number 26)?",
+     "prompt": "How many protons and electrons are in an $\\ce{Fe^3+}$ ion (atomic number 26)?",
      "options": [
       "26 protons and 23 electrons",
       "23 protons and 26 electrons",
@@ -541,7 +541,7 @@
       },
       {
        "tier": "full",
-       "text": "Chemical change. Evidence: light given off and a white solid with different properties. The Mg metallic bonds and the O=O bonds are broken, and ionic bonds form between Mg2+ and O2-. Mg atoms are conserved, but the substance is magnesium oxide and not magnesium.",
+       "text": "Chemical change. Evidence: light given off and a white solid with different properties. The Mg metallic bonds and the O=O bonds are broken, and ionic bonds form between $\\ce{Mg^2+}$ and $\\ce{O^2-}$. Mg atoms are conserved, but the substance is magnesium oxide and not magnesium.",
        "meets": [
         {
          "point": 0,
@@ -553,7 +553,7 @@
         },
         {
          "point": 2,
-         "quote": "The Mg metallic bonds and the O=O bonds are broken, and ionic bonds form between Mg2+ and O2-."
+         "quote": "The Mg metallic bonds and the O=O bonds are broken, and ionic bonds form between $\\ce{Mg^2+}$ and $\\ce{O^2-}$."
         },
         {
          "point": 3,
@@ -619,7 +619,7 @@
    "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use the periodic table and successive ionization energies to predict electron arrangement and properties;\n2. explain trends in atomic radius, ionization energy and electronegativity in terms of nuclear charge, shielding and distance.\n\n## Materials\n\nData table of successive ionization energies, periodic table templates, magnesium ribbon, zinc and copper strips, 1 M hydrochloric acid in dropper bottles (teacher dispensed), the practical sheet.\n\n## Starter (6 minutes)\n\nDisplay ionization energies for magnesium: 738, 1451 and 7733 kJ/mol. Ask: \"What do these numbers tell you about how many outer electrons magnesium has?\" Take answers and note the huge jump.\n\n## Main activity\n\n1. Write electron configurations for elements to sulfur (S is 1s2 2s2 2p6 3s2 3p4) and relate the highest energy level to the period and the outer electrons to the group.\n2. Use the successive ionization energies of magnesium to show that two electrons are easy to remove and the third is hard, because it comes from a full inner level.\n3. Explain exceptions: the dip in first ionization energy from nitrogen to oxygen, caused by repulsion between paired electrons in one p orbital.\n4. Practical: compare the reactivity of magnesium, zinc and copper with dilute acid.\n\n## Checking for understanding\n\nAsk: \"Why is the first ionization energy of oxygen lower than that of nitrogen?\"\n\n## Practical write-up\n\nCollect with a ranking and an explanation.",
    "reading": {
     "title": "Evidence for electron shells",
-    "content": "The periodic table is a map of electron arrangement. Electrons occupy energy levels, and the energy levels contain orbitals that hold at most two electrons each. The configuration of sulfur, which has 16 electrons, is 1s2 2s2 2p6 3s2 3p4. The highest energy level occupied, 3, matches sulfur's period, and the 6 electrons in that level match its group, 16 in the table or the group of 6 valence electrons.\n\nHow do we know that atoms have shells at all? One piece of evidence is **successive ionization energies**, the energies needed to remove the first, second, third electron and so on. For magnesium they are 738, 1451 and 7733 kJ/mol. The first two are modest, and the third is more than five times the second. That huge jump tells us that after two electrons are gone, the next one has to come from a lower level that is much closer to the nucleus and much more strongly held. Magnesium therefore has two valence electrons, which agrees with its position in group 2, and forms Mg2+.\n\nPeriodic trends follow from three ideas: how strongly the nucleus pulls, how far the electron is from the nucleus, and how much the inner electrons shield it. Across a period, the number of protons rises while the electrons are added to the same level, so the **effective nuclear charge** felt by the valence electrons increases. The atomic radius falls, and the ionization energy and electronegativity rise. Down a group, each period adds a level farther from the nucleus and more inner electrons that shield the valence electrons, so the radius increases and the ionization energy decreases.\n\nThere are exceptions that confirm the model. Oxygen's first ionization energy (1314 kJ/mol) is lower than nitrogen's (1402), even though oxygen has more protons. Nitrogen's three p electrons are in three separate orbitals. In oxygen, two of the four p electrons share an orbital, and the repulsion between them makes one easier to remove.\n\nThe same ideas predict chemical behavior. Metals with low ionization energies lose electrons easily and react readily. In dilute acid, magnesium reacts vigorously and zinc more slowly, releasing hydrogen gas. Copper does not react. The order of reactivity is related to how easily each metal loses electrons to form ions in solution."
+    "content": "The periodic table is a map of electron arrangement. Electrons occupy energy levels, and the energy levels contain orbitals that hold at most two electrons each. The configuration of sulfur, which has 16 electrons, is 1s2 2s2 2p6 3s2 3p4. The highest energy level occupied, 3, matches sulfur's period, and the 6 electrons in that level match its group, 16 in the table or the group of 6 valence electrons.\n\nHow do we know that atoms have shells at all? One piece of evidence is **successive ionization energies**, the energies needed to remove the first, second, third electron and so on. For magnesium they are 738, 1451 and 7733 kJ/mol. The first two are modest, and the third is more than five times the second. That huge jump tells us that after two electrons are gone, the next one has to come from a lower level that is much closer to the nucleus and much more strongly held. Magnesium therefore has two valence electrons, which agrees with its position in group 2, and forms $\\ce{Mg^2+}$.\n\nPeriodic trends follow from three ideas: how strongly the nucleus pulls, how far the electron is from the nucleus, and how much the inner electrons shield it. Across a period, the number of protons rises while the electrons are added to the same level, so the **effective nuclear charge** felt by the valence electrons increases. The atomic radius falls, and the ionization energy and electronegativity rise. Down a group, each period adds a level farther from the nucleus and more inner electrons that shield the valence electrons, so the radius increases and the ionization energy decreases.\n\nThere are exceptions that confirm the model. Oxygen's first ionization energy (1314 kJ/mol) is lower than nitrogen's (1402), even though oxygen has more protons. Nitrogen's three p electrons are in three separate orbitals. In oxygen, two of the four p electrons share an orbital, and the repulsion between them makes one easier to remove.\n\nThe same ideas predict chemical behavior. Metals with low ionization energies lose electrons easily and react readily. In dilute acid, magnesium reacts vigorously and zinc more slowly, releasing hydrogen gas. Copper does not react. The order of reactivity is related to how easily each metal loses electrons to form ions in solution."
    },
    "cards": [
     {
@@ -962,7 +962,7 @@
     "writeUps": [
      {
       "tier": "full",
-      "text": "In the same 3 mL of 1 M HCl, magnesium produced about 85 bubbles in 30 seconds and the tube became warm, zinc produced 12 bubbles and copper produced none after three minutes. The ranking is Mg, Zn, Cu. Magnesium loses its two valence electrons most easily to form Mg2+, and the hydrogen ions in the acid take those electrons to form hydrogen gas. Copper does not lose electrons easily to the acid, so no reaction is visible.",
+      "text": "In the same 3 mL of 1 M HCl, magnesium produced about 85 bubbles in 30 seconds and the tube became warm, zinc produced 12 bubbles and copper produced none after three minutes. The ranking is Mg, Zn, Cu. Magnesium loses its two valence electrons most easily to form $\\ce{Mg^2+}$, and the hydrogen ions in the acid take those electrons to form hydrogen gas. Copper does not lose electrons easily to the acid, so no reaction is visible.",
       "scores": [
        4,
        4,
@@ -972,7 +972,7 @@
      },
      {
       "tier": "full",
-      "text": "We kept the acid volume and the strip size the same. At one minute the counts per 30 seconds were Mg 90, Zn 10, Cu 0. After three minutes magnesium was nearly gone, zinc was bubbling slowly and copper was unchanged. So magnesium is most reactive, then zinc, then copper. The gas is hydrogen, formed when the metal gives electrons to H+. The more easily a metal gives up electrons, the faster it reacts.",
+      "text": "We kept the acid volume and the strip size the same. At one minute the counts per 30 seconds were Mg 90, Zn 10, Cu 0. After three minutes magnesium was nearly gone, zinc was bubbling slowly and copper was unchanged. So magnesium is most reactive, then zinc, then copper. The gas is hydrogen, formed when the metal gives electrons to $\\ce{H^+}$. The more easily a metal gives up electrons, the faster it reacts.",
       "scores": [
        4,
        4,
@@ -1025,10 +1025,10 @@
   },
   "4": {
    "topic": "Bonding models, electronegativity and lattice energy",
-   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain why a reaction proceeds from the arrangement of valence electrons and the energy of the products;\n2. classify bonds using electronegativity differences, predict properties, and write formulas and names for ionic and covalent compounds, including polyatomic ions and transition metals.\n\n## Materials\n\nElectronegativity table, ion cards, a data table of melting points and lattice energies, the worksheet.\n\n## Starter (6 minutes)\n\nWrite on the board: NaCl melts at 801 degrees Celsius, MgO at 2852. Ask: \"Both are ionic. Why is MgO so much higher?\" Gather ideas about charge and size.\n\n## Main activity\n\n1. Bond classification by electronegativity difference: below about 0.4 is nonpolar covalent, 0.4 to 1.7 is polar covalent, above 1.7 is mostly ionic. Calculate for Na-Cl (2.23), O-H (1.24) and C-H (0.35).\n2. Lattice energy: introduce Coulomb's law qualitatively. Bigger charges and smaller ions give a stronger attraction, so MgO is much more strongly bonded than NaCl.\n3. Naming with transition metals and polyatomic ions: iron(III) sulfate is Fe2(SO4)3 and ammonium phosphate is (NH4)3PO4.\n\n## Checking for understanding\n\nWhiteboards: formula for copper(II) nitrate. Look for Cu(NO3)2.\n\n## Worksheet\n\nClassification, formulas, names and one lattice energy explanation.",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain why a reaction proceeds from the arrangement of valence electrons and the energy of the products;\n2. classify bonds using electronegativity differences, predict properties, and write formulas and names for ionic and covalent compounds, including polyatomic ions and transition metals.\n\n## Materials\n\nElectronegativity table, ion cards, a data table of melting points and lattice energies, the worksheet.\n\n## Starter (6 minutes)\n\nWrite on the board: NaCl melts at 801 degrees Celsius, MgO at 2852. Ask: \"Both are ionic. Why is MgO so much higher?\" Gather ideas about charge and size.\n\n## Main activity\n\n1. Bond classification by electronegativity difference: below about 0.4 is nonpolar covalent, 0.4 to 1.7 is polar covalent, above 1.7 is mostly ionic. Calculate for Na-Cl (2.23), O-H (1.24) and C-H (0.35).\n2. Lattice energy: introduce Coulomb's law qualitatively. Bigger charges and smaller ions give a stronger attraction, so MgO is much more strongly bonded than NaCl.\n3. Naming with transition metals and polyatomic ions: iron(III) sulfate is $\\ce{Fe2(SO4)3}$ and ammonium phosphate is $\\ce{(NH4)3PO4}$.\n\n## Checking for understanding\n\nWhiteboards: formula for copper(II) nitrate. Look for $\\ce{Cu(NO3)2}$.\n\n## Worksheet\n\nClassification, formulas, names and one lattice energy explanation.",
    "reading": {
     "title": "A spectrum of bonding",
-    "content": "Bonds are not sharply divided into ionic and covalent. They lie on a spectrum that depends on how unequally the atoms share the electrons. The measure is the difference in **electronegativity**, which is the pull an atom has on the electrons in a bond. For sodium chloride, the electronegativity of chlorine is 3.16 and that of sodium is 0.93, a difference of 2.23. The electrons are so strongly pulled to chlorine that they are essentially transferred, and the bond is ionic. For the O-H bond in water, 3.44 minus 2.20 is 1.24: the electrons are shared, but unequally, and the bond is polar covalent. For C-H, 2.55 minus 2.20 is 0.35, so the electrons are shared almost equally and the bond is nonpolar. As a rough guide, a difference below 0.4 is nonpolar covalent, from 0.4 to 1.7 is polar covalent, and above 1.7 is mostly ionic.\n\nThe properties of ionic compounds come from the strength of the attraction between the ions in the crystal. The energy needed to separate one mole of an ionic solid into gaseous ions is the **lattice energy**. By Coulomb's law, the force between two charges grows with the size of the charges and shrinks with the distance between them. Sodium chloride has ions of charge 1+ and 1-, while magnesium oxide has 2+ and 2-, which are also smaller, so their centers are closer together. The attraction in MgO is therefore much stronger. This is why MgO melts at 2852 degrees Celsius while NaCl melts at 801, and why magnesium oxide is used to line furnaces.\n\nMany transition metals form more than one ion, so the charge is shown in the name with a Roman numeral. Iron(II) is Fe2+ and iron(III) is Fe3+. To write the formula of iron(III) sulfate, combine Fe3+ with the sulfate ion SO4 2-. The least common multiple of 3 and 2 is 6, so you need two Fe3+ and three SO4 2-: Fe2(SO4)3. Parentheses are placed around a polyatomic ion when the subscript is more than one. Ammonium phosphate combines NH4+ and PO4 3-, so three ammonium ions are needed: (NH4)3PO4.\n\nWhy does a reaction go the way it does? Atoms react to reach a lower-energy arrangement of valence electrons. When sodium meets chlorine, transferring an electron produces ions that attract strongly, and the energy released as the lattice forms more than pays for the energy to ionize sodium. The product is more stable than the separate atoms, so the reaction proceeds."
+    "content": "Bonds are not sharply divided into ionic and covalent. They lie on a spectrum that depends on how unequally the atoms share the electrons. The measure is the difference in **electronegativity**, which is the pull an atom has on the electrons in a bond. For sodium chloride, the electronegativity of chlorine is 3.16 and that of sodium is 0.93, a difference of 2.23. The electrons are so strongly pulled to chlorine that they are essentially transferred, and the bond is ionic. For the O-H bond in water, 3.44 minus 2.20 is 1.24: the electrons are shared, but unequally, and the bond is polar covalent. For C-H, 2.55 minus 2.20 is 0.35, so the electrons are shared almost equally and the bond is nonpolar. As a rough guide, a difference below 0.4 is nonpolar covalent, from 0.4 to 1.7 is polar covalent, and above 1.7 is mostly ionic.\n\nThe properties of ionic compounds come from the strength of the attraction between the ions in the crystal. The energy needed to separate one mole of an ionic solid into gaseous ions is the **lattice energy**. By Coulomb's law, the force between two charges grows with the size of the charges and shrinks with the distance between them. Sodium chloride has ions of charge 1+ and 1-, while magnesium oxide has 2+ and 2-, which are also smaller, so their centers are closer together. The attraction in MgO is therefore much stronger. This is why MgO melts at 2852 degrees Celsius while NaCl melts at 801, and why magnesium oxide is used to line furnaces.\n\nMany transition metals form more than one ion, so the charge is shown in the name with a Roman numeral. Iron(II) is $\\ce{Fe^2+}$ and iron(III) is $\\ce{Fe^3+}$. To write the formula of iron(III) sulfate, combine $\\ce{Fe^3+}$ with the sulfate ion $\\ce{SO4^2-}$. The least common multiple of 3 and 2 is 6, so you need two $\\ce{Fe^3+}$ and three $\\ce{SO4^2-}$: $\\ce{Fe2(SO4)3}$. Parentheses are placed around a polyatomic ion when the subscript is more than one. Ammonium phosphate combines $\\ce{NH4^+}$ and $\\ce{PO4^3-}$, so three ammonium ions are needed: $\\ce{(NH4)3PO4}$.\n\nWhy does a reaction go the way it does? Atoms react to reach a lower-energy arrangement of valence electrons. When sodium meets chlorine, transferring an electron produces ions that attract strongly, and the energy released as the lattice forms more than pays for the energy to ionize sodium. The product is more stable than the separate atoms, so the reaction proceeds."
    },
    "cards": [
     {
@@ -1088,20 +1088,20 @@
     {
      "prompt": "What is the formula of iron(III) sulfate?",
      "options": [
-      "FeSO4",
-      "Fe3SO4",
-      "Fe2(SO4)3",
-      "Fe3(SO4)2"
+      "$\\ce{FeSO4}$",
+      "$\\ce{Fe3SO4}$",
+      "$\\ce{Fe2(SO4)3}$",
+      "$\\ce{Fe3(SO4)2}$"
      ],
      "answer": "C"
     },
     {
-     "prompt": "What is the formula of ammonium phosphate (NH4+ and PO4 3-)?",
+     "prompt": "What is the formula of ammonium phosphate ($\\ce{NH4^+}$ and $\\ce{PO4^3-}$)?",
      "options": [
-      "NH4PO4",
-      "(NH4)3PO4",
-      "NH4(PO4)3",
-      "(NH4)2PO4"
+      "$\\ce{NH4PO4}$",
+      "$\\ce{(NH4)3PO4}$",
+      "$\\ce{NH4(PO4)3}$",
+      "$\\ce{(NH4)2PO4}$"
      ],
      "answer": "B"
     },
@@ -1121,7 +1121,7 @@
      "prompt": "Magnesium oxide melts at 2852 degrees Celsius but sodium chloride melts at 801 degrees Celsius. Explain the difference using ion charge and size.",
      "markScheme": [
       "States that both are held together by attractions between oppositely charged ions in a lattice",
-      "States that Mg2+ and O2- have larger charges than Na+ and Cl-",
+      "States that $\\ce{Mg^2+}$ and $\\ce{O^2-}$ have larger charges than $\\ce{Na^+}$ and $\\ce{Cl^-}$",
       "States that the ions in MgO are also smaller, so the distance between centers is shorter",
       "Concludes that the force and lattice energy are greater in MgO, so more energy is needed to melt it"
      ],
@@ -1129,7 +1129,7 @@
      "answers": [
       {
        "tier": "full",
-       "text": "Both are lattices of oppositely charged ions held by electrostatic attraction. Mg2+ and O2- have twice the charge of Na+ and Cl-. The ions in MgO are smaller, so they are closer together. By Coulomb's law bigger charges and shorter distance mean a stronger force, so MgO needs far more energy to melt.",
+       "text": "Both are lattices of oppositely charged ions held by electrostatic attraction. $\\ce{Mg^2+}$ and $\\ce{O^2-}$ have twice the charge of $\\ce{Na^+}$ and $\\ce{Cl^-}$. The ions in MgO are smaller, so they are closer together. By Coulomb's law bigger charges and shorter distance mean a stronger force, so MgO needs far more energy to melt.",
        "meets": [
         {
          "point": 0,
@@ -1137,7 +1137,7 @@
         },
         {
          "point": 1,
-         "quote": "Mg2+ and O2- have twice the charge of Na+ and Cl-."
+         "quote": "$\\ce{Mg^2+}$ and $\\ce{O^2-}$ have twice the charge of $\\ce{Na^+}$ and $\\ce{Cl^-}$."
         },
         {
          "point": 2,
@@ -1228,14 +1228,14 @@
      "markScheme": [
       "Classifies Na-Cl as mostly ionic with a difference of 2.23",
       "Classifies O-H as polar covalent (1.24) and C-H as nonpolar covalent (0.35)",
-      "Writes the formula Fe2(SO4)3",
+      "Writes the formula $\\ce{Fe2(SO4)3}$",
       "Shows that two 3+ ions give +6 and three 2- ions give -6"
      ],
-     "modelAnswer": "Na-Cl has a difference of 2.23, so it is mostly ionic. O-H has 1.24, polar covalent, and C-H has 0.35, nonpolar covalent. Iron(III) sulfate combines Fe3+ and SO4 2-; two Fe3+ give +6 and three SO4 2- give -6, so the formula is Fe2(SO4)3.",
+     "modelAnswer": "Na-Cl has a difference of 2.23, so it is mostly ionic. O-H has 1.24, polar covalent, and C-H has 0.35, nonpolar covalent. Iron(III) sulfate combines $\\ce{Fe^3+}$ and $\\ce{SO4^2-}$; two $\\ce{Fe^3+}$ give +6 and three $\\ce{SO4^2-}$ give -6, so the formula is $\\ce{Fe2(SO4)3}$.",
      "answers": [
       {
        "tier": "full",
-       "text": "Na-Cl: 3.16 - 0.93 = 2.23, mostly ionic. O-H: 3.44 - 2.20 = 1.24, polar covalent; C-H: 2.55 - 2.20 = 0.35, nonpolar covalent. Iron(III) sulfate is Fe2(SO4)3. 2 × (+3) = +6 and 3 × (-2) = -6, so it is neutral.",
+       "text": "Na-Cl: 3.16 - 0.93 = 2.23, mostly ionic. O-H: 3.44 - 2.20 = 1.24, polar covalent; C-H: 2.55 - 2.20 = 0.35, nonpolar covalent. Iron(III) sulfate is $\\ce{Fe2(SO4)3}$. 2 × (+3) = +6 and 3 × (-2) = -6, so it is neutral.",
        "meets": [
         {
          "point": 0,
@@ -1247,7 +1247,7 @@
         },
         {
          "point": 2,
-         "quote": "Iron(III) sulfate is Fe2(SO4)3."
+         "quote": "Iron(III) sulfate is $\\ce{Fe2(SO4)3}$."
         },
         {
          "point": 3,
@@ -1258,7 +1258,7 @@
       },
       {
        "tier": "full",
-       "text": "The difference for NaCl is 2.23 so it's ionic. O–H at 1.24 is polar covalent and C–H at 0.35 is nonpolar covalent. Fe³⁺ with SO₄²⁻ gives Fe2(SO4)3. The charges: 6+ from two iron ions and 6- from three sulfates.",
+       "text": "The difference for NaCl is 2.23 so it's ionic. O–H at 1.24 is polar covalent and C–H at 0.35 is nonpolar covalent. Fe³⁺ with SO₄²⁻ gives $\\ce{Fe2(SO4)3}$. The charges: 6+ from two iron ions and 6- from three sulfates.",
        "meets": [
         {
          "point": 0,
@@ -1270,7 +1270,7 @@
         },
         {
          "point": 2,
-         "quote": "Fe³⁺ with SO₄²⁻ gives Fe2(SO4)3."
+         "quote": "Fe³⁺ with SO₄²⁻ gives $\\ce{Fe2(SO4)3}$."
         },
         {
          "point": 3,
@@ -1281,7 +1281,7 @@
       },
       {
        "tier": "partial",
-       "text": "Na-Cl is ionic (2.23). O-H is polar covalent and C-H is nonpolar covalent. Iron(III) sulfate is FeSO4.",
+       "text": "Na-Cl is ionic (2.23). O-H is polar covalent and C-H is nonpolar covalent. Iron(III) sulfate is $\\ce{FeSO4}$.",
        "meets": [
         {
          "point": 0,
@@ -1292,15 +1292,15 @@
          "quote": "O-H is polar covalent and C-H is nonpolar covalent."
         }
        ],
-       "feedback": "FeSO4 would be iron(II) sulfate, with Fe2+ and SO4 2-. For iron(III) you need two Fe3+ and three sulfate ions."
+       "feedback": "$\\ce{FeSO4}$ would be iron(II) sulfate, with $\\ce{Fe^2+}$ and $\\ce{SO4^2-}$. For iron(III) you need two $\\ce{Fe^3+}$ and three sulfate ions."
       },
       {
        "tier": "partial",
-       "text": "Fe2(SO4)3 because 6+ and 6- cancel. The bonds are all covalent because they are between atoms.",
+       "text": "$\\ce{Fe2(SO4)3}$ because 6+ and 6- cancel. The bonds are all covalent because they are between atoms.",
        "meets": [
         {
          "point": 2,
-         "quote": "Fe2(SO4)3"
+         "quote": "$\\ce{Fe2(SO4)3}$"
         },
         {
          "point": 3,
@@ -1312,20 +1312,20 @@
       },
       {
        "tier": "weak",
-       "text": "Na-Cl is covalent and O-H is ionic because oxygen is in the ionic group. The formula is Fe3S2O.",
+       "text": "Na-Cl is covalent and O-H is ionic because oxygen is in the ionic group. The formula is $\\ce{Fe3S2O}$.",
        "meets": [],
-       "feedback": "Compute the electronegativity differences to classify the bonds. The formula must use the sulfate ion, SO4 2-, with the charges balanced."
+       "feedback": "Compute the electronegativity differences to classify the bonds. The formula must use the sulfate ion, $\\ce{SO4^2-}$, with the charges balanced."
       },
       {
        "tier": "weak",
-       "text": "NaCl is ionic. The others have no difference because hydrogen is the same in each. Iron(III) sulfate is Fe(SO4).",
+       "text": "NaCl is ionic. The others have no difference because hydrogen is the same in each. Iron(III) sulfate is $\\ce{Fe(SO4)}$.",
        "meets": [
         {
          "point": 0,
          "quote": "NaCl is ionic."
         }
        ],
-       "feedback": "Hydrogen is paired with different atoms, so the differences are different. Find the difference for each pair. And FeSO4 does not balance 3+ with 2-."
+       "feedback": "Hydrogen is paired with different atoms, so the differences are different. Find the difference for each pair. And $\\ce{FeSO4}$ does not balance 3+ with 2-."
       }
      ]
     }
@@ -1333,10 +1333,10 @@
   },
   "5": {
    "topic": "Lewis structures, formal charge, shape and intermolecular forces",
-   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. plan an investigation of how forces between particles explain properties of substances;\n2. draw Lewis structures with formal charge, predict shape and polarity, and explain bond angles;\n3. use conservation of mass to count atoms in balanced reactions.\n\n## Materials\n\nMolecular model kits, boiling point data for hydrides of groups 14 to 17, graph paper, the quiz.\n\n## Starter (6 minutes)\n\nPlot the boiling points of CH4, NH3, H2O and HF on the board with those of SiH4, PH3, H2S and HCl. Ask: \"Why do NH3, H2O and HF stand out?\"\n\n## Main activity\n\n1. Draw Lewis structures for H2O, NH3, CO2, SO2 and the ammonium ion, using formal charge to choose between possible structures.\n2. Build models and use VSEPR to predict shape and bond angles: water 104.5 degrees, ammonia 107 degrees, methane 109.5 degrees. Explain the angles by the greater repulsion of lone pairs.\n3. Rank the strength of the dispersion, dipole-dipole and hydrogen bond attractions and apply them to boiling points. Plan an investigation to compare the surface tension of water, ethanol and a soap solution.\n\n## Checking for understanding\n\nAsk: \"Why is the H-O-H angle smaller than the tetrahedral angle?\" Look for lone-pair repulsion.\n\n## Quiz\n\nFive questions on structure, shape and forces.",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. plan an investigation of how forces between particles explain properties of substances;\n2. draw Lewis structures with formal charge, predict shape and polarity, and explain bond angles;\n3. use conservation of mass to count atoms in balanced reactions.\n\n## Materials\n\nMolecular model kits, boiling point data for hydrides of groups 14 to 17, graph paper, the quiz.\n\n## Starter (6 minutes)\n\nPlot the boiling points of $\\ce{CH4}$, $\\ce{NH3}$, $\\ce{H2O}$ and HF on the board with those of $\\ce{SiH4}$, $\\ce{PH3}$, $\\ce{H2S}$ and HCl. Ask: \"Why do $\\ce{NH3}$, $\\ce{H2O}$ and HF stand out?\"\n\n## Main activity\n\n1. Draw Lewis structures for $\\ce{H2O}$, $\\ce{NH3}$, $\\ce{CO2}$, $\\ce{SO2}$ and the ammonium ion, using formal charge to choose between possible structures.\n2. Build models and use VSEPR to predict shape and bond angles: water 104.5 degrees, ammonia 107 degrees, methane 109.5 degrees. Explain the angles by the greater repulsion of lone pairs.\n3. Rank the strength of the dispersion, dipole-dipole and hydrogen bond attractions and apply them to boiling points. Plan an investigation to compare the surface tension of water, ethanol and a soap solution.\n\n## Checking for understanding\n\nAsk: \"Why is the H-O-H angle smaller than the tetrahedral angle?\" Look for lone-pair repulsion.\n\n## Quiz\n\nFive questions on structure, shape and forces.",
    "reading": {
     "title": "Structure explains behavior",
-    "content": "Drawing a good Lewis structure is a way of keeping track of valence electrons. Count the total valence electrons, connect the atoms with single bonds, complete the octets of the outer atoms, and put any remaining electrons on the central atom. If the central atom lacks an octet, form double or triple bonds. When more than one structure is possible, use **formal charge** to choose. The formal charge on an atom is its number of valence electrons, minus the nonbonding electrons, minus the number of bonds. The best structure has formal charges as close to zero as possible. For carbon dioxide, two double bonds give every atom a formal charge of zero, which beats a structure with one single and one triple bond.\n\nThe electron pairs around a central atom, both bonding pairs and lone pairs, repel each other and spread out as far as they can, which is the basis of VSEPR. Four pairs give a tetrahedral arrangement with angles of 109.5 degrees. In methane all four are bonding pairs and the angle is exactly this. In ammonia, one pair is a lone pair, and the H-N-H angle is 107 degrees. In water, two lone pairs push the H-O-H angle down to 104.5 degrees. A lone pair is held only by one nucleus, so it spreads out and repels more strongly than a bonding pair.\n\nThe polarity of a molecule combines bond polarity and shape. Water and ammonia are polar. Carbon dioxide and methane are nonpolar because their polar bonds are arranged symmetrically.\n\nBetween molecules, forces determine the physical properties. **Dispersion forces** result from momentary shifts in electron clouds. They act between all particles and grow with the number of electrons, which is why the boiling points of CH4, SiH4 and GeH4 rise. **Dipole-dipole forces** act between permanent dipoles. **Hydrogen bonds** are exceptionally strong dipole-dipole attractions that occur when a hydrogen bonded to N, O or F is attracted to a lone pair on another N, O or F atom. Water, with two hydrogens and two lone pairs, forms a network of hydrogen bonds. This is why water boils at 100 degrees Celsius while H2S, a larger molecule, boils at minus 60. Hydrogen bonds also explain why ice floats and why water has high surface tension."
+    "content": "Drawing a good Lewis structure is a way of keeping track of valence electrons. Count the total valence electrons, connect the atoms with single bonds, complete the octets of the outer atoms, and put any remaining electrons on the central atom. If the central atom lacks an octet, form double or triple bonds. When more than one structure is possible, use **formal charge** to choose. The formal charge on an atom is its number of valence electrons, minus the nonbonding electrons, minus the number of bonds. The best structure has formal charges as close to zero as possible. For carbon dioxide, two double bonds give every atom a formal charge of zero, which beats a structure with one single and one triple bond.\n\nThe electron pairs around a central atom, both bonding pairs and lone pairs, repel each other and spread out as far as they can, which is the basis of VSEPR. Four pairs give a tetrahedral arrangement with angles of 109.5 degrees. In methane all four are bonding pairs and the angle is exactly this. In ammonia, one pair is a lone pair, and the H-N-H angle is 107 degrees. In water, two lone pairs push the H-O-H angle down to 104.5 degrees. A lone pair is held only by one nucleus, so it spreads out and repels more strongly than a bonding pair.\n\nThe polarity of a molecule combines bond polarity and shape. Water and ammonia are polar. Carbon dioxide and methane are nonpolar because their polar bonds are arranged symmetrically.\n\nBetween molecules, forces determine the physical properties. **Dispersion forces** result from momentary shifts in electron clouds. They act between all particles and grow with the number of electrons, which is why the boiling points of $\\ce{CH4}$, $\\ce{SiH4}$ and $\\ce{GeH4}$ rise. **Dipole-dipole forces** act between permanent dipoles. **Hydrogen bonds** are exceptionally strong dipole-dipole attractions that occur when a hydrogen bonded to N, O or F is attracted to a lone pair on another N, O or F atom. Water, with two hydrogens and two lone pairs, forms a network of hydrogen bonds. This is why water boils at 100 degrees Celsius while $\\ce{H2S}$, a larger molecule, boils at minus 60. Hydrogen bonds also explain why ice floats and why water has high surface tension."
    },
    "cards": [
     {
@@ -1404,21 +1404,21 @@
      "answer": "C"
     },
     {
-     "prompt": "Why does H2O boil at a much higher temperature than H2S?",
+     "prompt": "Why does $\\ce{H2O}$ boil at a much higher temperature than $\\ce{H2S}$?",
      "options": [
-      "H2O is heavier",
-      "H2O forms hydrogen bonds",
-      "H2O has weaker dispersion forces",
-      "H2S is ionic"
+      "$\\ce{H2O}$ is heavier",
+      "$\\ce{H2O}$ forms hydrogen bonds",
+      "$\\ce{H2O}$ has weaker dispersion forces",
+      "$\\ce{H2S}$ is ionic"
      ],
      "answer": "B"
     },
     {
      "prompt": "Which molecule is nonpolar despite having polar bonds?",
      "options": [
-      "H2O",
-      "NH3",
-      "CO2",
+      "$\\ce{H2O}$",
+      "$\\ce{NH3}$",
+      "$\\ce{CO2}$",
       "HF"
      ],
      "answer": "C"
@@ -1426,7 +1426,7 @@
    ],
    "open": [
     {
-     "prompt": "Draw or describe the Lewis structure of NH3, state its shape and approximate bond angle, and explain why the bond angle is less than the tetrahedral angle.",
+     "prompt": "Draw or describe the Lewis structure of $\\ce{NH3}$, state its shape and approximate bond angle, and explain why the bond angle is less than the tetrahedral angle.",
      "markScheme": [
       "Describes nitrogen bonded to three hydrogens with one lone pair (8 valence electrons in total)",
       "States the shape as trigonal pyramidal",
@@ -1532,26 +1532,26 @@
      ]
     },
     {
-     "prompt": "The boiling points of CH4, NH3, H2O and HF are -162, -33, 100 and 20 degrees Celsius. Explain why NH3, H2O and HF have much higher boiling points than CH4, and why water's is the highest.",
+     "prompt": "The boiling points of $\\ce{CH4}$, $\\ce{NH3}$, $\\ce{H2O}$ and HF are -162, -33, 100 and 20 degrees Celsius. Explain why $\\ce{NH3}$, $\\ce{H2O}$ and HF have much higher boiling points than $\\ce{CH4}$, and why water's is the highest.",
      "markScheme": [
-      "Says CH4 is nonpolar with only weak dispersion forces",
-      "Says NH3, H2O and HF can form hydrogen bonds, which are much stronger",
+      "Says $\\ce{CH4}$ is nonpolar with only weak dispersion forces",
+      "Says $\\ce{NH3}$, $\\ce{H2O}$ and HF can form hydrogen bonds, which are much stronger",
       "Says water can form more hydrogen bonds per molecule, with two H and two lone pairs",
       "Concludes that more extensive hydrogen bonding means more energy to separate molecules, giving water the highest boiling point"
      ],
-     "modelAnswer": "Methane is nonpolar and has only weak dispersion forces, so it boils at a very low temperature. NH3, H2O and HF all have a hydrogen bonded to N, O or F and so form hydrogen bonds, which are much stronger. Water has two hydrogens and two lone pairs, so each molecule can make up to four hydrogen bonds, more than NH3 or HF, and it takes the most energy to separate the molecules.",
+     "modelAnswer": "Methane is nonpolar and has only weak dispersion forces, so it boils at a very low temperature. $\\ce{NH3}$, $\\ce{H2O}$ and HF all have a hydrogen bonded to N, O or F and so form hydrogen bonds, which are much stronger. Water has two hydrogens and two lone pairs, so each molecule can make up to four hydrogen bonds, more than $\\ce{NH3}$ or HF, and it takes the most energy to separate the molecules.",
      "answers": [
       {
        "tier": "full",
-       "text": "CH4 is nonpolar so it only has weak dispersion forces. NH3, H2O and HF have hydrogen bonds, which are a lot stronger. Water has two H and two lone pairs so each molecule can form up to four hydrogen bonds, more than the others. More hydrogen bonds means more energy to separate the molecules, so water's boiling point is the highest.",
+       "text": "$\\ce{CH4}$ is nonpolar so it only has weak dispersion forces. $\\ce{NH3}$, $\\ce{H2O}$ and HF have hydrogen bonds, which are a lot stronger. Water has two H and two lone pairs so each molecule can form up to four hydrogen bonds, more than the others. More hydrogen bonds means more energy to separate the molecules, so water's boiling point is the highest.",
        "meets": [
         {
          "point": 0,
-         "quote": "CH4 is nonpolar so it only has weak dispersion forces."
+         "quote": "$\\ce{CH4}$ is nonpolar so it only has weak dispersion forces."
         },
         {
          "point": 1,
-         "quote": "NH3, H2O and HF have hydrogen bonds, which are a lot stronger."
+         "quote": "$\\ce{NH3}$, $\\ce{H2O}$ and HF have hydrogen bonds, which are a lot stronger."
         },
         {
          "point": 2,
@@ -1562,11 +1562,11 @@
          "quote": "More hydrogen bonds means more energy to separate the molecules, so water's boiling point is the highest."
         }
        ],
-       "feedback": "Full marks. The count of hydrogen bonds per molecule is the key to ranking water above HF and NH3."
+       "feedback": "Full marks. The count of hydrogen bonds per molecule is the key to ranking water above HF and $\\ce{NH3}$."
       },
       {
        "tier": "full",
-       "text": "Methane has only dispersion forces and those are weak for a small molecule. The other three have H bonded to N, O or F, so they form hydrogen bonds. Water can make about four H-bonds per molecule while HF and NH3 can make fewer. So it takes more energy to pull water molecules apart and it boils highest.",
+       "text": "Methane has only dispersion forces and those are weak for a small molecule. The other three have H bonded to N, O or F, so they form hydrogen bonds. Water can make about four H-bonds per molecule while HF and $\\ce{NH3}$ can make fewer. So it takes more energy to pull water molecules apart and it boils highest.",
        "meets": [
         {
          "point": 0,
@@ -1578,7 +1578,7 @@
         },
         {
          "point": 2,
-         "quote": "Water can make about four H-bonds per molecule while HF and NH3 can make fewer."
+         "quote": "Water can make about four H-bonds per molecule while HF and $\\ce{NH3}$ can make fewer."
         },
         {
          "point": 3,
@@ -1589,11 +1589,11 @@
       },
       {
        "tier": "partial",
-       "text": "NH3, H2O and HF have hydrogen bonds. Water has the most so it is the highest.",
+       "text": "$\\ce{NH3}$, $\\ce{H2O}$ and HF have hydrogen bonds. Water has the most so it is the highest.",
        "meets": [
         {
          "point": 1,
-         "quote": "NH3, H2O and HF have hydrogen bonds."
+         "quote": "$\\ce{NH3}$, $\\ce{H2O}$ and HF have hydrogen bonds."
         },
         {
          "point": 3,
@@ -1622,11 +1622,11 @@
       },
       {
        "tier": "weak",
-       "text": "CH4 has weak forces. Hydrogen bonds are bonds inside the molecule between the hydrogen and the oxygen.",
+       "text": "$\\ce{CH4}$ has weak forces. Hydrogen bonds are bonds inside the molecule between the hydrogen and the oxygen.",
        "meets": [
         {
          "point": 0,
-         "quote": "CH4 has weak forces."
+         "quote": "$\\ce{CH4}$ has weak forces."
         }
        ],
        "feedback": "A hydrogen bond is between molecules, from the H of one molecule to a lone pair on another. The bond between H and O in a molecule is covalent."
@@ -1637,10 +1637,10 @@
   },
   "6": {
    "topic": "Balancing, the mole, percent composition and empirical formulas",
-   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. balance equations (including combustion of larger hydrocarbons) and classify reactions;\n2. convert among moles, mass and particles, and use percent composition to find an empirical formula.\n\n## Materials\n\nCalculators, periodic tables, samples of calcium hydroxide and iron(III) oxide, a table of percent composition data, the problem set.\n\n## Starter (6 minutes)\n\nPose: \"A bag of Ohio State pennants has 12 blue and 6 scarlet. What is the simplest ratio? How does that relate to the formula of glucose, C6H12O6?\" Link to the idea of a simplest ratio.\n\n## Main activity\n\n1. Balance harder equations: 2C4H10 + 13O2 gives 8CO2 + 10H2O, and 2Al + Fe2O3 gives Al2O3 + 2Fe. Use the fractional method then clear fractions.\n2. Moles, mass and particles: for Ca(OH)2 (74.10 g/mol) show that 74.1 g is 1.00 mol, or 6.02 x 10^23 formula units, containing 1.20 x 10^24 hydrogen atoms.\n3. Percent composition of Fe2O3 (69.94 percent iron) and finding an empirical formula from 40.0 percent C, 6.7 percent H and 53.3 percent O.\n\n## Checking for understanding\n\nAsk: \"Why is the empirical formula CH2O for glucose and for formaldehyde, but their molecular formulas differ?\"\n\n## Problem set\n\nBalancing, mole conversions and an empirical formula problem.",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. balance equations (including combustion of larger hydrocarbons) and classify reactions;\n2. convert among moles, mass and particles, and use percent composition to find an empirical formula.\n\n## Materials\n\nCalculators, periodic tables, samples of calcium hydroxide and iron(III) oxide, a table of percent composition data, the problem set.\n\n## Starter (6 minutes)\n\nPose: \"A bag of Ohio State pennants has 12 blue and 6 scarlet. What is the simplest ratio? How does that relate to the formula of glucose, $\\ce{C6H12O6}$?\" Link to the idea of a simplest ratio.\n\n## Main activity\n\n1. Balance harder equations: $\\ce{2C4H10}$ + $\\ce{13O2}$ gives $\\ce{8CO2}$ + $\\ce{10H2O}$, and 2Al + $\\ce{Fe2O3}$ gives $\\ce{Al2O3}$ + 2Fe. Use the fractional method then clear fractions.\n2. Moles, mass and particles: for $\\ce{Ca(OH)2}$ (74.10 g/mol) show that 74.1 g is 1.00 mol, or 6.02 x 10^23 formula units, containing 1.20 x 10^24 hydrogen atoms.\n3. Percent composition of $\\ce{Fe2O3}$ (69.94 percent iron) and finding an empirical formula from 40.0 percent C, 6.7 percent H and 53.3 percent O.\n\n## Checking for understanding\n\nAsk: \"Why is the empirical formula $\\ce{CH2O}$ for glucose and for formaldehyde, but their molecular formulas differ?\"\n\n## Problem set\n\nBalancing, mole conversions and an empirical formula problem.",
    "reading": {
     "title": "Counting atoms and finding formulas",
-    "content": "Balancing a larger equation is easier with a method. Take the combustion of butane, C4H10 + O2 gives CO2 + H2O. Start with the elements that appear in just one reactant and one product, carbon and hydrogen: four carbons need 4 CO2 and ten hydrogens need 5 H2O. Now count the oxygen on the right: 8 plus 5, which is 13 oxygen atoms, so the left needs 6.5 O2. A fraction is not allowed, so double everything: 2C4H10 + 13O2 gives 8CO2 + 10H2O. Always check the atom counts at the end: 8 C, 20 H and 26 O on each side. Reactions of this type, with a metal oxide and a more reactive metal, such as 2Al + Fe2O3 gives Al2O3 + 2Fe, are single replacement reactions, and this one releases so much heat that the iron comes out molten.\n\nThe **mole** connects counts to masses. For calcium hydroxide, Ca(OH)2, the molar mass is 40.08 plus 2 times (16.00 plus 1.008), which is 74.10 g/mol. A sample with a mass of 74.1 g is 1.00 mol and contains 6.02 times 10 to the power of 23 formula units. Each formula unit has two hydrogen atoms, so there are 1.20 times 10 to the power of 24 hydrogen atoms. Keep track of what you are counting: formula units, molecules, atoms or ions.\n\nThe **percent composition** of a compound is the mass of each element as a percentage of the molar mass. In Fe2O3, the molar mass is 2(55.85) plus 3(16.00), which is 159.7 g/mol. The iron makes up 111.7 divided by 159.7, which is 69.94 percent. This tells a mining company how much iron they can get from a tonne of ore.\n\nPercent composition also allows you to work backward to a formula. Suppose an analysis gives 40.0 percent carbon, 6.7 percent hydrogen and 53.3 percent oxygen. Assume 100 g of sample so the percentages become grams, and convert to moles: 40.0 divided by 12.01 is 3.33 mol of C, 6.7 divided by 1.008 is 6.6 mol of H, and 53.3 divided by 16.00 is 3.33 mol of O. Divide by the smallest, 3.33, to get C 1, H 2, O 1. The **empirical formula** is CH2O, the simplest whole-number ratio. To get the **molecular formula**, you need the molar mass: if it is 180 g/mol, then 180 divided by 30.03 is 6, so the molecular formula is C6H12O6."
+    "content": "Balancing a larger equation is easier with a method. Take the combustion of butane, $\\ce{C4H10}$ + $\\ce{O2}$ gives $\\ce{CO2}$ + $\\ce{H2O}$. Start with the elements that appear in just one reactant and one product, carbon and hydrogen: four carbons need 4 $\\ce{CO2}$ and ten hydrogens need 5 $\\ce{H2O}$. Now count the oxygen on the right: 8 plus 5, which is 13 oxygen atoms, so the left needs 6.5 $\\ce{O2}$. A fraction is not allowed, so double everything: $\\ce{2C4H10}$ + $\\ce{13O2}$ gives $\\ce{8CO2}$ + $\\ce{10H2O}$. Always check the atom counts at the end: 8 C, 20 H and 26 O on each side. Reactions of this type, with a metal oxide and a more reactive metal, such as 2Al + $\\ce{Fe2O3}$ gives $\\ce{Al2O3}$ + 2Fe, are single replacement reactions, and this one releases so much heat that the iron comes out molten.\n\nThe **mole** connects counts to masses. For calcium hydroxide, $\\ce{Ca(OH)2}$, the molar mass is 40.08 plus 2 times (16.00 plus 1.008), which is 74.10 g/mol. A sample with a mass of 74.1 g is 1.00 mol and contains 6.02 times 10 to the power of 23 formula units. Each formula unit has two hydrogen atoms, so there are 1.20 times 10 to the power of 24 hydrogen atoms. Keep track of what you are counting: formula units, molecules, atoms or ions.\n\nThe **percent composition** of a compound is the mass of each element as a percentage of the molar mass. In $\\ce{Fe2O3}$, the molar mass is 2(55.85) plus 3(16.00), which is 159.7 g/mol. The iron makes up 111.7 divided by 159.7, which is 69.94 percent. This tells a mining company how much iron they can get from a tonne of ore.\n\nPercent composition also allows you to work backward to a formula. Suppose an analysis gives 40.0 percent carbon, 6.7 percent hydrogen and 53.3 percent oxygen. Assume 100 g of sample so the percentages become grams, and convert to moles: 40.0 divided by 12.01 is 3.33 mol of C, 6.7 divided by 1.008 is 6.6 mol of H, and 53.3 divided by 16.00 is 3.33 mol of O. Divide by the smallest, 3.33, to get C 1, H 2, O 1. The **empirical formula** is $\\ce{CH2O}$, the simplest whole-number ratio. To get the **molecular formula**, you need the molar mass: if it is 180 g/mol, then 180 divided by 30.03 is 6, so the molecular formula is $\\ce{C6H12O6}$."
    },
    "cards": [
     {
@@ -1678,7 +1678,7 @@
    ],
    "closed": [
     {
-     "prompt": "What coefficient goes in front of O2 when C4H10 + O2 gives CO2 + H2O is balanced with the smallest whole numbers (C4H10 has coefficient 2)?",
+     "prompt": "What coefficient goes in front of $\\ce{O2}$ when $\\ce{C4H10}$ + $\\ce{O2}$ gives $\\ce{CO2}$ + $\\ce{H2O}$ is balanced with the smallest whole numbers ($\\ce{C4H10}$ has coefficient 2)?",
      "options": [
       "6.5",
       "8",
@@ -1688,7 +1688,7 @@
      "answer": "C"
     },
     {
-     "prompt": "What is the molar mass of Ca(OH)2 (Ca 40.08, O 16.00, H 1.008)?",
+     "prompt": "What is the molar mass of $\\ce{Ca(OH)2}$ (Ca 40.08, O 16.00, H 1.008)?",
      "options": [
       "57.09 g/mol",
       "74.10 g/mol",
@@ -1698,7 +1698,7 @@
      "answer": "B"
     },
     {
-     "prompt": "What is the percent by mass of iron in Fe2O3 (molar mass 159.7 g/mol, Fe 55.85)?",
+     "prompt": "What is the percent by mass of iron in $\\ce{Fe2O3}$ (molar mass 159.7 g/mol, Fe 55.85)?",
      "options": [
       "30.06%",
       "34.97%",
@@ -1711,14 +1711,14 @@
      "prompt": "A compound is 40.0% C, 6.7% H and 53.3% O by mass. Its empirical formula is:",
      "options": [
       "CHO",
-      "CH2O",
-      "C2H4O",
-      "C3H6O3"
+      "$\\ce{CH2O}$",
+      "$\\ce{C2H4O}$",
+      "$\\ce{C3H6O3}$"
      ],
      "answer": "B"
     },
     {
-     "prompt": "How many hydrogen atoms are in 1.00 mol of Ca(OH)2?",
+     "prompt": "How many hydrogen atoms are in 1.00 mol of $\\ce{Ca(OH)2}$?",
      "options": [
       "6.02 x 10^23",
       "1.20 x 10^24",
@@ -1734,14 +1734,14 @@
      "markScheme": [
       "Converts 30.4 g of N to 2.17 mol and 69.6 g of O to 4.35 mol",
       "Divides by the smaller number to get a 1 to 2 ratio",
-      "Writes the empirical formula NO2",
-      "Divides the molar mass 92.0 by the empirical mass 46.0 to get 2 and gives the molecular formula N2O4"
+      "Writes the empirical formula $\\ce{NO2}$",
+      "Divides the molar mass 92.0 by the empirical mass 46.0 to get 2 and gives the molecular formula $\\ce{N2O4}$"
      ],
-     "modelAnswer": "In 100 g there are 30.4 g of N, which is 2.17 mol, and 69.6 g of O, which is 4.35 mol. Dividing by 2.17 gives N 1 and O 2, so the empirical formula is NO2, with a mass of 46.0. The molar mass 92.0 is twice that, so the molecular formula is N2O4.",
+     "modelAnswer": "In 100 g there are 30.4 g of N, which is 2.17 mol, and 69.6 g of O, which is 4.35 mol. Dividing by 2.17 gives N 1 and O 2, so the empirical formula is $\\ce{NO2}$, with a mass of 46.0. The molar mass 92.0 is twice that, so the molecular formula is $\\ce{N2O4}$.",
      "answers": [
       {
        "tier": "full",
-       "text": "Assume 100 g: 30.4 g N / 14.01 = 2.17 mol and 69.6 g O / 16.00 = 4.35 mol. Dividing by 2.17 gives 1 N to 2.00 O. The empirical formula is NO2. NO2 has a mass of 46.0, and 92.0/46.0 = 2, so the molecular formula is N2O4.",
+       "text": "Assume 100 g: 30.4 g N / 14.01 = 2.17 mol and 69.6 g O / 16.00 = 4.35 mol. Dividing by 2.17 gives 1 N to 2.00 O. The empirical formula is $\\ce{NO2}$. $\\ce{NO2}$ has a mass of 46.0, and 92.0/46.0 = 2, so the molecular formula is $\\ce{N2O4}$.",
        "meets": [
         {
          "point": 0,
@@ -1753,18 +1753,18 @@
         },
         {
          "point": 2,
-         "quote": "The empirical formula is NO2."
+         "quote": "The empirical formula is $\\ce{NO2}$."
         },
         {
          "point": 3,
-         "quote": "NO2 has a mass of 46.0, and 92.0/46.0 = 2, so the molecular formula is N2O4."
+         "quote": "$\\ce{NO2}$ has a mass of 46.0, and 92.0/46.0 = 2, so the molecular formula is $\\ce{N2O4}$."
         }
        ],
        "feedback": "Full marks. The method is exactly the one for any empirical formula problem."
       },
       {
        "tier": "full",
-       "text": "Percentages become grams: N = 30.4 g (2.17 mol) and O = 69.6 g (4.35 mol). The mole ratio N:O is 1:2. Empirical formula NO2. The empirical mass is 46.01, so 92.0 is two times that. Molecular formula N2O4.",
+       "text": "Percentages become grams: N = 30.4 g (2.17 mol) and O = 69.6 g (4.35 mol). The mole ratio N:O is 1:2. Empirical formula $\\ce{NO2}$. The empirical mass is 46.01, so 92.0 is two times that. Molecular formula $\\ce{N2O4}$.",
        "meets": [
         {
          "point": 0,
@@ -1776,18 +1776,18 @@
         },
         {
          "point": 2,
-         "quote": "Empirical formula NO2."
+         "quote": "Empirical formula $\\ce{NO2}$."
         },
         {
          "point": 3,
-         "quote": "The empirical mass is 46.01, so 92.0 is two times that. Molecular formula N2O4."
+         "quote": "The empirical mass is 46.01, so 92.0 is two times that. Molecular formula $\\ce{N2O4}$."
         }
        ],
        "feedback": "All four marks, and the rounding of the 2.00 to a whole number is sensible."
       },
       {
        "tier": "partial",
-       "text": "30.4 g of N is 2.17 mol and 69.6 g of O is 4.35 mol. The ratio is 1:2. The formula is N2O.",
+       "text": "30.4 g of N is 2.17 mol and 69.6 g of O is 4.35 mol. The ratio is 1:2. The formula is $\\ce{N2O}$.",
        "meets": [
         {
          "point": 0,
@@ -1798,19 +1798,19 @@
          "quote": "The ratio is 1:2."
         }
        ],
-       "feedback": "The ratio 1 N to 2 O gives NO2, not N2O. The subscripts follow the ratio of N to O in that order."
+       "feedback": "The ratio 1 N to 2 O gives $\\ce{NO2}$, not $\\ce{N2O}$. The subscripts follow the ratio of N to O in that order."
       },
       {
        "tier": "partial",
-       "text": "The empirical formula is NO2. The molecular formula is N2O4 because the molar mass is double.",
+       "text": "The empirical formula is $\\ce{NO2}$. The molecular formula is $\\ce{N2O4}$ because the molar mass is double.",
        "meets": [
         {
          "point": 2,
-         "quote": "The empirical formula is NO2."
+         "quote": "The empirical formula is $\\ce{NO2}$."
         },
         {
          "point": 3,
-         "quote": "The molecular formula is N2O4 because the molar mass is double."
+         "quote": "The molecular formula is $\\ce{N2O4}$ because the molar mass is double."
         }
        ],
        "feedback": "Both are right. Show how you got the mole values from the percentages, since that is where most of the marks are.",
@@ -1818,17 +1818,17 @@
       },
       {
        "tier": "weak",
-       "text": "30.4 and 69.6 are in a ratio of about 1 to 2.3 so the formula is N O2.3 which I will round to NO2.",
+       "text": "30.4 and 69.6 are in a ratio of about 1 to 2.3 so the formula is N $\\ce{O2}$.3 which I will round to $\\ce{NO2}$.",
        "meets": [],
        "feedback": "You must convert the masses to moles before finding the ratio, because the atoms have different masses. Using the masses directly gave a wrong ratio."
       },
       {
        "tier": "weak",
-       "text": "Molecular formula is N2O4. I just knew that nitrogen oxide is N2O4 from the chemistry book.",
+       "text": "Molecular formula is $\\ce{N2O4}$. I just knew that nitrogen oxide is $\\ce{N2O4}$ from the chemistry book.",
        "meets": [
         {
          "point": 3,
-         "quote": "Molecular formula is N2O4."
+         "quote": "Molecular formula is $\\ce{N2O4}$."
         }
        ],
        "feedback": "The answer is correct, but the question asks for the method. Show the empirical formula from the data first and then use the molar mass."
@@ -1836,22 +1836,22 @@
      ]
     },
     {
-     "prompt": "Balance 2Al + Fe2O3 gives Al2O3 + Fe, and then calculate how many moles and how many atoms of aluminum are in 54.0 g of aluminum (molar mass 26.98 g/mol).",
+     "prompt": "Balance 2Al + $\\ce{Fe2O3}$ gives $\\ce{Al2O3}$ + Fe, and then calculate how many moles and how many atoms of aluminum are in 54.0 g of aluminum (molar mass 26.98 g/mol).",
      "markScheme": [
-      "Balances the equation as 2Al + Fe2O3 gives Al2O3 + 2Fe",
+      "Balances the equation as 2Al + $\\ce{Fe2O3}$ gives $\\ce{Al2O3}$ + 2Fe",
       "Verifies the counts of 2 Al, 2 Fe and 3 O on each side",
       "Calculates 54.0 / 26.98 = 2.00 mol",
       "Multiplies by Avogadro's number to get 1.20 x 10^24 atoms"
      ],
-     "modelAnswer": "The balanced equation is 2Al + Fe2O3 gives Al2O3 + 2Fe, with 2 Al, 2 Fe and 3 O on each side. The moles of aluminum are 54.0 divided by 26.98, which is 2.00 mol. The number of atoms is 2.00 times 6.02 x 10^23, which is 1.20 x 10^24 atoms.",
+     "modelAnswer": "The balanced equation is 2Al + $\\ce{Fe2O3}$ gives $\\ce{Al2O3}$ + 2Fe, with 2 Al, 2 Fe and 3 O on each side. The moles of aluminum are 54.0 divided by 26.98, which is 2.00 mol. The number of atoms is 2.00 times 6.02 x 10^23, which is 1.20 x 10^24 atoms.",
      "answers": [
       {
        "tier": "full",
-       "text": "2Al + Fe2O3 → Al2O3 + 2Fe. Left: 2 Al, 2 Fe, 3 O. Right: 2 Al, 2 Fe, 3 O. Balanced. 54.0 g ÷ 26.98 g/mol = 2.00 mol. 2.00 mol × 6.02 × 10^23 = 1.20 × 10^24 atoms.",
+       "text": "2Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + 2Fe. Left: 2 Al, 2 Fe, 3 O. Right: 2 Al, 2 Fe, 3 O. Balanced. 54.0 g ÷ 26.98 g/mol = 2.00 mol. 2.00 mol × 6.02 × 10^23 = 1.20 × 10^24 atoms.",
        "meets": [
         {
          "point": 0,
-         "quote": "2Al + Fe2O3 → Al2O3 + 2Fe."
+         "quote": "2Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + 2Fe."
         },
         {
          "point": 1,
@@ -1870,11 +1870,11 @@
       },
       {
        "tier": "full",
-       "text": "The balanced equation has a 2 in front of the Fe, 2Al + Fe2O3 → Al2O3 + 2Fe. I counted each element on both sides to check it: 2, 2, 3. Moles of Al = 54.0/26.98 = 2.00. Atoms = 2.00 × 6.022 × 10^23 = 1.20 × 10^24.",
+       "text": "The balanced equation has a 2 in front of the Fe, 2Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + 2Fe. I counted each element on both sides to check it: 2, 2, 3. Moles of Al = 54.0/26.98 = 2.00. Atoms = 2.00 × 6.022 × 10^23 = 1.20 × 10^24.",
        "meets": [
         {
          "point": 0,
-         "quote": "The balanced equation has a 2 in front of the Fe, 2Al + Fe2O3 → Al2O3 + 2Fe."
+         "quote": "The balanced equation has a 2 in front of the Fe, 2Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + 2Fe."
         },
         {
          "point": 1,
@@ -1893,11 +1893,11 @@
       },
       {
        "tier": "partial",
-       "text": "2Al + Fe2O3 → Al2O3 + 2Fe. 54.0/26.98 = 2.00 mol. The atoms are 2.00 + 6.02 × 10^23 = 6.02 × 10^23.",
+       "text": "2Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + 2Fe. 54.0/26.98 = 2.00 mol. The atoms are 2.00 + 6.02 × 10^23 = 6.02 × 10^23.",
        "meets": [
         {
          "point": 0,
-         "quote": "2Al + Fe2O3 → Al2O3 + 2Fe."
+         "quote": "2Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + 2Fe."
         },
         {
          "point": 2,
@@ -1924,17 +1924,17 @@
       },
       {
        "tier": "weak",
-       "text": "Al + Fe2O3 → Al2O3 + Fe is balanced already, and 54.0 g of Al is 54.0 mol.",
+       "text": "Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + Fe is balanced already, and 54.0 g of Al is 54.0 mol.",
        "meets": [],
        "feedback": "The equation has 2 Fe on the left and 1 on the right, and 1 Al on the left against 2 on the right. Moles are found by dividing the mass by the molar mass."
       },
       {
        "tier": "weak",
-       "text": "2Al + Fe2O3 → Al2O3 + 2Fe. 54.0 × 26.98 = 1457 mol of aluminum.",
+       "text": "2Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + 2Fe. 54.0 × 26.98 = 1457 mol of aluminum.",
        "meets": [
         {
          "point": 0,
-         "quote": "2Al + Fe2O3 → Al2O3 + 2Fe."
+         "quote": "2Al + $\\ce{Fe2O3}$ → $\\ce{Al2O3}$ + 2Fe."
         }
        ],
        "feedback": "Your equation is right. To get moles divide the mass by the molar mass. 1457 mol would be a huge mass."
@@ -1945,10 +1945,10 @@
   },
   "7": {
    "topic": "Stoichiometry with limiting reactants and yield",
-   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. calculate the mass of product from the mass of reactant and identify the limiting reactant and the excess left over;\n2. calculate percent yield and analyze reasons for yields below 100 percent.\n\n## Materials\n\nCalculators, thermite reaction video (demo only, no student handling), worked-example handout, the worksheet.\n\n## Starter (6 minutes)\n\nShow a video of thermite (Al + Fe2O3). Ask: \"If I start with 54.0 g of aluminum and 80.0 g of iron(III) oxide, how much iron can I make?\" Collect guesses and note they need the mole ratio.\n\n## Main activity\n\n1. Present the three-step method (grams to moles, mole ratio, moles to grams) and apply to 2Al + Fe2O3 gives Al2O3 + 2Fe.\n2. Limiting reactant: with 54.0 g Al (2.00 mol) and 80.0 g Fe2O3 (0.501 mol), find which runs out, the mass of iron produced (56.0 g) and the mass of excess aluminum left.\n3. Compare predictions to a measured yield. If 49.0 g of iron is recovered, the percent yield is 87.5 percent.\n\n## Checking for understanding\n\nWhiteboards: with 10.0 g H2 and 64.0 g O2, find which limits.\n\n## Worksheet\n\nTwo limiting-reactant problems and one percent yield question with reasons.",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. calculate the mass of product from the mass of reactant and identify the limiting reactant and the excess left over;\n2. calculate percent yield and analyze reasons for yields below 100 percent.\n\n## Materials\n\nCalculators, thermite reaction video (demo only, no student handling), worked-example handout, the worksheet.\n\n## Starter (6 minutes)\n\nShow a video of thermite (Al + $\\ce{Fe2O3}$). Ask: \"If I start with 54.0 g of aluminum and 80.0 g of iron(III) oxide, how much iron can I make?\" Collect guesses and note they need the mole ratio.\n\n## Main activity\n\n1. Present the three-step method (grams to moles, mole ratio, moles to grams) and apply to 2Al + $\\ce{Fe2O3}$ gives $\\ce{Al2O3}$ + 2Fe.\n2. Limiting reactant: with 54.0 g Al (2.00 mol) and 80.0 g $\\ce{Fe2O3}$ (0.501 mol), find which runs out, the mass of iron produced (56.0 g) and the mass of excess aluminum left.\n3. Compare predictions to a measured yield. If 49.0 g of iron is recovered, the percent yield is 87.5 percent.\n\n## Checking for understanding\n\nWhiteboards: with 10.0 g $\\ce{H2}$ and 64.0 g $\\ce{O2}$, find which limits.\n\n## Worksheet\n\nTwo limiting-reactant problems and one percent yield question with reasons.",
    "reading": {
     "title": "What runs out first, and what we actually get",
-    "content": "Stoichiometry problems follow a pattern: grams of the given substance to moles, moles of given to moles of wanted using the coefficients in the balanced equation, and then moles of the wanted substance to grams. Consider the thermite reaction, 2Al + Fe2O3 gives Al2O3 + 2Fe. The equation says that 2 mol of aluminum react with 1 mol of iron(III) oxide to give 2 mol of iron.\n\nWhen both reactants are given, you must find which one limits the reaction. Suppose there are 54.0 g of Al and 80.0 g of Fe2O3. The aluminum is 54.0 divided by 26.98, which is 2.00 mol. The iron(III) oxide is 80.0 divided by 159.7, which is 0.501 mol. The equation needs 2 mol of Al for each 1 mol of Fe2O3, so 0.501 mol of Fe2O3 needs 1.00 mol of Al. We have 2.00 mol, so there is more than enough aluminum. The Fe2O3 is the **limiting reactant**, and the aluminum is in **excess**. The amount of iron is found from the limiting reactant: 0.501 mol of Fe2O3 gives 1.00 mol of iron (2 mol Fe per 1 mol Fe2O3), and 1.00 times 55.85 is 56.0 g. The aluminum left over is 2.00 minus 1.00, which is 1.00 mol, or 27.0 g.\n\nAnother example: for 2H2 + O2 gives 2H2O, start with 10.0 g of H2 (4.95 mol) and 64.0 g of O2 (2.00 mol). The 2.00 mol of oxygen needs 4.00 mol of hydrogen. Since there is 4.95 mol, oxygen limits. The yield of water is 2 times 2.00, which is 4.00 mol, or 72.1 g, and 0.95 mol of hydrogen (1.9 g) remains.\n\nThe 56.0 g of iron is the **theoretical yield**: the maximum the equation allows. If you collect 49.0 g, the **percent yield** is 49.0 divided by 56.0, times 100, which is 87.5 percent. Yields below 100 percent are normal. Some product is lost during separation, some reactant may form side products, and some reactions do not go to completion. Yields over 100 percent are a warning. They usually mean that the product is wet or impure, or that there was a weighing error.\n\nA chemist uses these calculations to decide how much of each starting material to buy, how much waste to expect, and whether a process is efficient enough to be worth running."
+    "content": "Stoichiometry problems follow a pattern: grams of the given substance to moles, moles of given to moles of wanted using the coefficients in the balanced equation, and then moles of the wanted substance to grams. Consider the thermite reaction, 2Al + $\\ce{Fe2O3}$ gives $\\ce{Al2O3}$ + 2Fe. The equation says that 2 mol of aluminum react with 1 mol of iron(III) oxide to give 2 mol of iron.\n\nWhen both reactants are given, you must find which one limits the reaction. Suppose there are 54.0 g of Al and 80.0 g of $\\ce{Fe2O3}$. The aluminum is 54.0 divided by 26.98, which is 2.00 mol. The iron(III) oxide is 80.0 divided by 159.7, which is 0.501 mol. The equation needs 2 mol of Al for each 1 mol of $\\ce{Fe2O3}$, so 0.501 mol of $\\ce{Fe2O3}$ needs 1.00 mol of Al. We have 2.00 mol, so there is more than enough aluminum. The $\\ce{Fe2O3}$ is the **limiting reactant**, and the aluminum is in **excess**. The amount of iron is found from the limiting reactant: 0.501 mol of $\\ce{Fe2O3}$ gives 1.00 mol of iron (2 mol Fe per 1 mol $\\ce{Fe2O3}$), and 1.00 times 55.85 is 56.0 g. The aluminum left over is 2.00 minus 1.00, which is 1.00 mol, or 27.0 g.\n\nAnother example: for $\\ce{2H2}$ + $\\ce{O2}$ gives $\\ce{2H2O}$, start with 10.0 g of $\\ce{H2}$ (4.95 mol) and 64.0 g of $\\ce{O2}$ (2.00 mol). The 2.00 mol of oxygen needs 4.00 mol of hydrogen. Since there is 4.95 mol, oxygen limits. The yield of water is 2 times 2.00, which is 4.00 mol, or 72.1 g, and 0.95 mol of hydrogen (1.9 g) remains.\n\nThe 56.0 g of iron is the **theoretical yield**: the maximum the equation allows. If you collect 49.0 g, the **percent yield** is 49.0 divided by 56.0, times 100, which is 87.5 percent. Yields below 100 percent are normal. Some product is lost during separation, some reactant may form side products, and some reactions do not go to completion. Yields over 100 percent are a warning. They usually mean that the product is wet or impure, or that there was a weighing error.\n\nA chemist uses these calculations to decide how much of each starting material to buy, how much waste to expect, and whether a process is efficient enough to be worth running."
    },
    "cards": [
     {
@@ -1986,11 +1986,11 @@
    ],
    "closed": [
     {
-     "prompt": "In 2Al + Fe2O3 gives Al2O3 + 2Fe, you have 2.00 mol Al and 0.501 mol Fe2O3. Which is limiting?",
+     "prompt": "In 2Al + $\\ce{Fe2O3}$ gives $\\ce{Al2O3}$ + 2Fe, you have 2.00 mol Al and 0.501 mol $\\ce{Fe2O3}$. Which is limiting?",
      "options": [
       "Al",
-      "Fe2O3",
-      "Al2O3",
+      "$\\ce{Fe2O3}$",
+      "$\\ce{Al2O3}$",
       "Fe"
      ],
      "answer": "B"
@@ -2016,7 +2016,7 @@
      "answer": "A"
     },
     {
-     "prompt": "In 2H2 + O2 gives 2H2O, you have 4.95 mol H2 and 2.00 mol O2. How much water forms?",
+     "prompt": "In $\\ce{2H2}$ + $\\ce{O2}$ gives $\\ce{2H2O}$, you have 4.95 mol $\\ce{H2}$ and 2.00 mol $\\ce{O2}$. How much water forms?",
      "options": [
       "2.00 mol",
       "4.00 mol",
@@ -2038,49 +2038,49 @@
    ],
    "open": [
     {
-     "prompt": "For 2H2 + O2 gives 2H2O, 10.0 g of hydrogen (2.02 g/mol) reacts with 64.0 g of oxygen (32.00 g/mol). Determine the limiting reactant, the mass of water formed (18.02 g/mol), and the mass of the excess reactant that remains.",
+     "prompt": "For $\\ce{2H2}$ + $\\ce{O2}$ gives $\\ce{2H2O}$, 10.0 g of hydrogen (2.02 g/mol) reacts with 64.0 g of oxygen (32.00 g/mol). Determine the limiting reactant, the mass of water formed (18.02 g/mol), and the mass of the excess reactant that remains.",
      "markScheme": [
-      "Calculates 4.95 mol H2 and 2.00 mol O2",
-      "Identifies oxygen as limiting because 2.00 mol O2 needs 4.00 mol H2 and there is 4.95 mol",
+      "Calculates 4.95 mol $\\ce{H2}$ and 2.00 mol $\\ce{O2}$",
+      "Identifies oxygen as limiting because 2.00 mol $\\ce{O2}$ needs 4.00 mol $\\ce{H2}$ and there is 4.95 mol",
       "Calculates 4.00 mol of water, which is 72.1 g",
       "Calculates the hydrogen left over as 0.95 mol, about 1.9 g"
      ],
-     "modelAnswer": "10.0 g of H2 is 4.95 mol and 64.0 g of O2 is 2.00 mol. The 2.00 mol of O2 needs 4.00 mol of H2, and there is 4.95 mol, so oxygen is limiting. It produces 4.00 mol of water, which is 72.1 g. The hydrogen left over is 4.95 minus 4.00, 0.95 mol, which is about 1.9 g.",
+     "modelAnswer": "10.0 g of $\\ce{H2}$ is 4.95 mol and 64.0 g of $\\ce{O2}$ is 2.00 mol. The 2.00 mol of $\\ce{O2}$ needs 4.00 mol of $\\ce{H2}$, and there is 4.95 mol, so oxygen is limiting. It produces 4.00 mol of water, which is 72.1 g. The hydrogen left over is 4.95 minus 4.00, 0.95 mol, which is about 1.9 g.",
      "answers": [
       {
        "tier": "full",
-       "text": "10.0/2.02 = 4.95 mol H2 and 64.0/32.00 = 2.00 mol O2. 2.00 mol O2 needs 4.00 mol H2, and we have 4.95, so O2 is limiting. It gives 2 × 2.00 = 4.00 mol H2O = 4.00 × 18.02 = 72.1 g. The leftover H2 is 4.95 - 4.00 = 0.95 mol, which is about 1.9 g.",
+       "text": "10.0/2.02 = 4.95 mol $\\ce{H2}$ and 64.0/32.00 = 2.00 mol $\\ce{O2}$. 2.00 mol $\\ce{O2}$ needs 4.00 mol $\\ce{H2}$, and we have 4.95, so $\\ce{O2}$ is limiting. It gives 2 × 2.00 = 4.00 mol $\\ce{H2O}$ = 4.00 × 18.02 = 72.1 g. The leftover $\\ce{H2}$ is 4.95 - 4.00 = 0.95 mol, which is about 1.9 g.",
        "meets": [
         {
          "point": 0,
-         "quote": "10.0/2.02 = 4.95 mol H2 and 64.0/32.00 = 2.00 mol O2."
+         "quote": "10.0/2.02 = 4.95 mol $\\ce{H2}$ and 64.0/32.00 = 2.00 mol $\\ce{O2}$."
         },
         {
          "point": 1,
-         "quote": "2.00 mol O2 needs 4.00 mol H2, and we have 4.95, so O2 is limiting."
+         "quote": "2.00 mol $\\ce{O2}$ needs 4.00 mol $\\ce{H2}$, and we have 4.95, so $\\ce{O2}$ is limiting."
         },
         {
          "point": 2,
-         "quote": "It gives 2 × 2.00 = 4.00 mol H2O = 4.00 × 18.02 = 72.1 g."
+         "quote": "It gives 2 × 2.00 = 4.00 mol $\\ce{H2O}$ = 4.00 × 18.02 = 72.1 g."
         },
         {
          "point": 3,
-         "quote": "The leftover H2 is 4.95 - 4.00 = 0.95 mol, which is about 1.9 g."
+         "quote": "The leftover $\\ce{H2}$ is 4.95 - 4.00 = 0.95 mol, which is about 1.9 g."
         }
        ],
        "feedback": "Full marks. Completing the excess calculation shows you track every substance."
       },
       {
        "tier": "full",
-       "text": "Moles: H2 4.95, O2 2.00. The ratio is 2 H2 : 1 O2, so O2 would need 4.00 mol H2. There is more than that, so oxygen runs out first. Water = 4.00 mol = 72.1 g. Excess H2 = 0.95 mol × 2.02 = 1.9 g.",
+       "text": "Moles: $\\ce{H2}$ 4.95, $\\ce{O2}$ 2.00. The ratio is 2 $\\ce{H2}$ : 1 $\\ce{O2}$, so $\\ce{O2}$ would need 4.00 mol $\\ce{H2}$. There is more than that, so oxygen runs out first. Water = 4.00 mol = 72.1 g. Excess $\\ce{H2}$ = 0.95 mol × 2.02 = 1.9 g.",
        "meets": [
         {
          "point": 0,
-         "quote": "Moles: H2 4.95, O2 2.00."
+         "quote": "Moles: $\\ce{H2}$ 4.95, $\\ce{O2}$ 2.00."
         },
         {
          "point": 1,
-         "quote": "The ratio is 2 H2 : 1 O2, so O2 would need 4.00 mol H2. There is more than that, so oxygen runs out first."
+         "quote": "The ratio is 2 $\\ce{H2}$ : 1 $\\ce{O2}$, so $\\ce{O2}$ would need 4.00 mol $\\ce{H2}$. There is more than that, so oxygen runs out first."
         },
         {
          "point": 2,
@@ -2088,21 +2088,21 @@
         },
         {
          "point": 3,
-         "quote": "Excess H2 = 0.95 mol × 2.02 = 1.9 g."
+         "quote": "Excess $\\ce{H2}$ = 0.95 mol × 2.02 = 1.9 g."
         }
        ],
        "feedback": "All four marks, with well-organized work."
       },
       {
        "tier": "partial",
-       "text": "4.95 mol H2 and 2.00 mol O2. There is more hydrogen so oxygen is limiting. Water is 4.95 mol × 18.02 = 89.2 g.",
+       "text": "4.95 mol $\\ce{H2}$ and 2.00 mol $\\ce{O2}$. There is more hydrogen so oxygen is limiting. Water is 4.95 mol × 18.02 = 89.2 g.",
        "meets": [
         {
          "point": 0,
-         "quote": "4.95 mol H2 and 2.00 mol O2."
+         "quote": "4.95 mol $\\ce{H2}$ and 2.00 mol $\\ce{O2}$."
         }
        ],
-       "feedback": "Your limiting reactant is right, but the yield comes from the limiting reactant, 2.00 mol of O2, giving 4.00 mol of water, 72.1 g."
+       "feedback": "Your limiting reactant is right, but the yield comes from the limiting reactant, 2.00 mol of $\\ce{O2}$, giving 4.00 mol of water, 72.1 g."
       },
       {
        "tier": "partial",
@@ -2135,7 +2135,7 @@
          "quote": "Hydrogen is 4.95 mol and oxygen is 2.00 mol."
         }
        ],
-       "feedback": "The ratio in the equation is 2:1, so you cannot just pick the smaller number. 2.00 mol of O2 needs 4.00 mol of H2, and 4.95 is enough."
+       "feedback": "The ratio in the equation is 2:1, so you cannot just pick the smaller number. 2.00 mol of $\\ce{O2}$ needs 4.00 mol of $\\ce{H2}$, and 4.95 is enough."
       }
      ]
     },
@@ -2249,10 +2249,10 @@
   },
   "8": {
    "topic": "Precipitation stoichiometry and calorimetry",
-   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. predict precipitates with solubility rules, write net ionic equations and calculate the mass of a precipitate from solution concentrations;\n2. investigate how thermal energy moves between two systems and use calorimetry to find a specific heat.\n\n## Materials\n\nCoffee cup calorimeters with lids, thermometers, a hot water bath, unknown metal samples (50.0 g iron, copper or aluminum), balances, the practical sheet.\n\n## Starter (6 minutes)\n\nPour 50.0 mL of 0.200 M lead nitrate solution into 50.0 mL of 0.300 M potassium iodide in front of the class. Ask: \"How much yellow solid can form at most?\"\n\n## Main activity\n\n1. Review solubility rules and net ionic equations for the lead iodide reaction. Work out the moles: 0.0100 mol Pb2+ and 0.0150 mol I-. The ratio is 1 Pb to 2 I, so iodide is limiting and 0.00750 mol of PbI2 (461.0 g/mol), or 3.46 g, forms.\n2. Introduce q = mc delta T and calorimetry: heat lost by the metal equals heat gained by the water, if the cup is well insulated.\n3. Practical: determine the specific heat of an unknown metal and identify it from a table.\n\n## Checking for understanding\n\nAsk: \"Why do we use a lid, and what would heat loss to the room do to the calculated specific heat?\"\n\n## Practical write-up\n\nCollect with data, calculation and identification.",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. predict precipitates with solubility rules, write net ionic equations and calculate the mass of a precipitate from solution concentrations;\n2. investigate how thermal energy moves between two systems and use calorimetry to find a specific heat.\n\n## Materials\n\nCoffee cup calorimeters with lids, thermometers, a hot water bath, unknown metal samples (50.0 g iron, copper or aluminum), balances, the practical sheet.\n\n## Starter (6 minutes)\n\nPour 50.0 mL of 0.200 M lead nitrate solution into 50.0 mL of 0.300 M potassium iodide in front of the class. Ask: \"How much yellow solid can form at most?\"\n\n## Main activity\n\n1. Review solubility rules and net ionic equations for the lead iodide reaction. Work out the moles: 0.0100 mol $\\ce{Pb^2+}$ and 0.0150 mol I-. The ratio is 1 Pb to 2 I, so iodide is limiting and 0.00750 mol of $\\ce{PbI2}$ (461.0 g/mol), or 3.46 g, forms.\n2. Introduce q = mc delta T and calorimetry: heat lost by the metal equals heat gained by the water, if the cup is well insulated.\n3. Practical: determine the specific heat of an unknown metal and identify it from a table.\n\n## Checking for understanding\n\nAsk: \"Why do we use a lid, and what would heat loss to the room do to the calculated specific heat?\"\n\n## Practical write-up\n\nCollect with data, calculation and identification.",
    "reading": {
     "title": "How much solid, and how much heat",
-    "content": "Predicting a precipitate is only the first step. A chemist also wants to know how much solid will form. Take the reaction of lead nitrate with potassium iodide: Pb(NO3)2(aq) + 2KI(aq) gives PbI2(s) + 2KNO3(aq). The net ionic equation is Pb2+(aq) + 2I-(aq) gives PbI2(s), the bright yellow solid. The potassium and nitrate ions are spectators.\n\nConcentration is expressed as **molarity**, moles of solute per liter of solution. A volume of 50.0 mL of 0.200 M Pb(NO3)2 contains 0.0500 L times 0.200 mol/L, which is 0.0100 mol of Pb2+. A volume of 50.0 mL of 0.300 M KI has 0.0150 mol of I-. The net equation needs 2 mol of I- for each Pb2+. The 0.0100 mol of lead would need 0.0200 mol of iodide, but only 0.0150 mol is present, so iodide is the limiting reactant. The moles of lead iodide formed are 0.0150 divided by 2, or 0.00750 mol. With a molar mass of 207.2 plus 2(126.9), which is 461.0 g/mol, the mass of the precipitate is 0.00750 times 461.0, or 3.46 g. A real experiment would give slightly less, so the percent yield would be below 100.\n\nHeat flow is also quantitative. The heat gained or lost by a substance is q = mcΔT, where c is the **specific heat**, the energy needed to raise 1 g by 1 degree Celsius. For water, c is 4.18 J/g per degree. In a **calorimeter**, an insulated container, a hot sample is placed in water and the final temperature is measured. If no heat is lost to the surroundings, the heat lost by the metal equals the heat gained by the water.\n\nFor example, 50.0 g of an unknown metal at 100.0 degrees Celsius is dropped into 100.0 g of water at 22.0 degrees. The final temperature is 26.0. The water gained 100.0 times 4.18 times 4.0, which is 1672 J. The metal lost the same, with a temperature change of 74.0 degrees. So c equals 1672 divided by (50.0 times 74.0), which is 0.452 J/g per degree. This is close to the specific heat of iron, 0.449, so the metal is probably iron. If some heat leaked to the room, the water would gain less than the metal lost, and the calculated c would be too low."
+    "content": "Predicting a precipitate is only the first step. A chemist also wants to know how much solid will form. Take the reaction of lead nitrate with potassium iodide: $\\ce{Pb(NO3)2}$(aq) + 2KI(aq) gives $\\ce{PbI2}$(s) + $\\ce{2KNO3}$(aq). The net ionic equation is $\\ce{Pb^2+}$(aq) + 2I-(aq) gives $\\ce{PbI2}$(s), the bright yellow solid. The potassium and nitrate ions are spectators.\n\nConcentration is expressed as **molarity**, moles of solute per liter of solution. A volume of 50.0 mL of 0.200 M $\\ce{Pb(NO3)2}$ contains 0.0500 L times 0.200 mol/L, which is 0.0100 mol of $\\ce{Pb^2+}$. A volume of 50.0 mL of 0.300 M KI has 0.0150 mol of I-. The net equation needs 2 mol of I- for each $\\ce{Pb^2+}$. The 0.0100 mol of lead would need 0.0200 mol of iodide, but only 0.0150 mol is present, so iodide is the limiting reactant. The moles of lead iodide formed are 0.0150 divided by 2, or 0.00750 mol. With a molar mass of 207.2 plus 2(126.9), which is 461.0 g/mol, the mass of the precipitate is 0.00750 times 461.0, or 3.46 g. A real experiment would give slightly less, so the percent yield would be below 100.\n\nHeat flow is also quantitative. The heat gained or lost by a substance is q = mcΔT, where c is the **specific heat**, the energy needed to raise 1 g by 1 degree Celsius. For water, c is 4.18 J/g per degree. In a **calorimeter**, an insulated container, a hot sample is placed in water and the final temperature is measured. If no heat is lost to the surroundings, the heat lost by the metal equals the heat gained by the water.\n\nFor example, 50.0 g of an unknown metal at 100.0 degrees Celsius is dropped into 100.0 g of water at 22.0 degrees. The final temperature is 26.0. The water gained 100.0 times 4.18 times 4.0, which is 1672 J. The metal lost the same, with a temperature change of 74.0 degrees. So c equals 1672 divided by (50.0 times 74.0), which is 0.452 J/g per degree. This is close to the specific heat of iron, 0.449, so the metal is probably iron. If some heat leaked to the room, the water would gain less than the metal lost, and the calculated c would be too low."
    },
    "cards": [
     {
@@ -2290,7 +2290,7 @@
    ],
    "closed": [
     {
-     "prompt": "How many moles of Pb2+ are in 50.0 mL of 0.200 M Pb(NO3)2?",
+     "prompt": "How many moles of $\\ce{Pb^2+}$ are in 50.0 mL of 0.200 M $\\ce{Pb(NO3)2}$?",
      "options": [
       "0.00200 mol",
       "0.0100 mol",
@@ -2300,7 +2300,7 @@
      "answer": "B"
     },
     {
-     "prompt": "In Pb2+ + 2I- gives PbI2(s), 0.0100 mol Pb2+ is mixed with 0.0150 mol I-. How many moles of PbI2 form?",
+     "prompt": "In $\\ce{Pb^2+}$ + 2I- gives $\\ce{PbI2}$(s), 0.0100 mol $\\ce{Pb^2+}$ is mixed with 0.0150 mol I-. How many moles of $\\ce{PbI2}$ form?",
      "options": [
       "0.00750 mol",
       "0.0100 mol",
@@ -2330,53 +2330,53 @@
      "answer": "B"
     },
     {
-     "prompt": "Which ions are spectators in Pb(NO3)2 + 2KI gives PbI2 + 2KNO3?",
+     "prompt": "Which ions are spectators in $\\ce{Pb(NO3)2}$ + 2KI gives $\\ce{PbI2}$ + $\\ce{2KNO3}$?",
      "options": [
-      "Pb2+ and I-",
-      "K+ and NO3-",
-      "Pb2+ and NO3-",
-      "K+ and I-"
+      "$\\ce{Pb^2+}$ and I-",
+      "$\\ce{K^+}$ and $\\ce{NO3^-}$",
+      "$\\ce{Pb^2+}$ and $\\ce{NO3^-}$",
+      "$\\ce{K^+}$ and I-"
      ],
      "answer": "B"
     }
    ],
    "open": [
     {
-     "prompt": "50.0 mL of 0.200 M Pb(NO3)2 is mixed with 50.0 mL of 0.300 M KI. Find the limiting reactant and the mass of PbI2 (461.0 g/mol) that precipitates. Write the net ionic equation.",
+     "prompt": "50.0 mL of 0.200 M $\\ce{Pb(NO3)2}$ is mixed with 50.0 mL of 0.300 M KI. Find the limiting reactant and the mass of $\\ce{PbI2}$ (461.0 g/mol) that precipitates. Write the net ionic equation.",
      "markScheme": [
-      "Writes the net ionic equation Pb2+ + 2I- gives PbI2(s)",
-      "Calculates 0.0100 mol Pb2+ and 0.0150 mol I-",
-      "Identifies iodide as limiting because 0.0100 mol Pb2+ needs 0.0200 mol I-",
-      "Calculates 0.00750 mol PbI2, which is 3.46 g"
+      "Writes the net ionic equation $\\ce{Pb^2+}$ + 2I- gives $\\ce{PbI2}$(s)",
+      "Calculates 0.0100 mol $\\ce{Pb^2+}$ and 0.0150 mol I-",
+      "Identifies iodide as limiting because 0.0100 mol $\\ce{Pb^2+}$ needs 0.0200 mol I-",
+      "Calculates 0.00750 mol $\\ce{PbI2}$, which is 3.46 g"
      ],
-     "modelAnswer": "The net ionic equation is Pb2+(aq) + 2I-(aq) gives PbI2(s). There are 0.0100 mol of Pb2+ and 0.0150 mol of I-. The lead would need 0.0200 mol of iodide, so iodide is limiting. The moles of PbI2 are 0.0150 divided by 2, which is 0.00750 mol, and the mass is 0.00750 times 461.0, which is 3.46 g.",
+     "modelAnswer": "The net ionic equation is $\\ce{Pb^2+}$(aq) + 2I-(aq) gives $\\ce{PbI2}$(s). There are 0.0100 mol of $\\ce{Pb^2+}$ and 0.0150 mol of I-. The lead would need 0.0200 mol of iodide, so iodide is limiting. The moles of $\\ce{PbI2}$ are 0.0150 divided by 2, which is 0.00750 mol, and the mass is 0.00750 times 461.0, which is 3.46 g.",
      "answers": [
       {
        "tier": "full",
-       "text": "Pb2+(aq) + 2I-(aq) → PbI2(s). Moles Pb2+ = 0.0500 L × 0.200 = 0.0100, moles I- = 0.0500 × 0.300 = 0.0150. Pb2+ would need 0.0200 mol I- but there's only 0.0150, so iodide is limiting. PbI2 = 0.0150/2 = 0.00750 mol × 461.0 = 3.46 g.",
+       "text": "$\\ce{Pb^2+}$(aq) + 2I-(aq) → $\\ce{PbI2}$(s). Moles $\\ce{Pb^2+}$ = 0.0500 L × 0.200 = 0.0100, moles I- = 0.0500 × 0.300 = 0.0150. $\\ce{Pb^2+}$ would need 0.0200 mol I- but there's only 0.0150, so iodide is limiting. $\\ce{PbI2}$ = 0.0150/2 = 0.00750 mol × 461.0 = 3.46 g.",
        "meets": [
         {
          "point": 0,
-         "quote": "Pb2+(aq) + 2I-(aq) → PbI2(s)."
+         "quote": "$\\ce{Pb^2+}$(aq) + 2I-(aq) → $\\ce{PbI2}$(s)."
         },
         {
          "point": 1,
-         "quote": "Moles Pb2+ = 0.0500 L × 0.200 = 0.0100, moles I- = 0.0500 × 0.300 = 0.0150."
+         "quote": "Moles $\\ce{Pb^2+}$ = 0.0500 L × 0.200 = 0.0100, moles I- = 0.0500 × 0.300 = 0.0150."
         },
         {
          "point": 2,
-         "quote": "Pb2+ would need 0.0200 mol I- but there's only 0.0150, so iodide is limiting."
+         "quote": "$\\ce{Pb^2+}$ would need 0.0200 mol I- but there's only 0.0150, so iodide is limiting."
         },
         {
          "point": 3,
-         "quote": "PbI2 = 0.0150/2 = 0.00750 mol × 461.0 = 3.46 g."
+         "quote": "$\\ce{PbI2}$ = 0.0150/2 = 0.00750 mol × 461.0 = 3.46 g."
         }
        ],
        "feedback": "Full marks. All the steps and units are present and the logic is in order."
       },
       {
        "tier": "full",
-       "text": "Net ionic: Pb²⁺ + 2I⁻ → PbI₂(s). 0.0100 mol Pb2+ and 0.0150 mol I-. The ratio needs 2 I- per Pb2+. 0.0150 mol I- only reacts with 0.00750 mol Pb2+, so I- limits. Mass of PbI2 = 0.00750 × 461.0 = 3.46 g.",
+       "text": "Net ionic: Pb²⁺ + 2I⁻ → PbI₂(s). 0.0100 mol $\\ce{Pb^2+}$ and 0.0150 mol I-. The ratio needs 2 I- per $\\ce{Pb^2+}$. 0.0150 mol I- only reacts with 0.00750 mol $\\ce{Pb^2+}$, so I- limits. Mass of $\\ce{PbI2}$ = 0.00750 × 461.0 = 3.46 g.",
        "meets": [
         {
          "point": 0,
@@ -2384,30 +2384,30 @@
         },
         {
          "point": 1,
-         "quote": "0.0100 mol Pb2+ and 0.0150 mol I-."
+         "quote": "0.0100 mol $\\ce{Pb^2+}$ and 0.0150 mol I-."
         },
         {
          "point": 2,
-         "quote": "The ratio needs 2 I- per Pb2+. 0.0150 mol I- only reacts with 0.00750 mol Pb2+, so I- limits."
+         "quote": "The ratio needs 2 I- per $\\ce{Pb^2+}$. 0.0150 mol I- only reacts with 0.00750 mol $\\ce{Pb^2+}$, so I- limits."
         },
         {
          "point": 3,
-         "quote": "Mass of PbI2 = 0.00750 × 461.0 = 3.46 g."
+         "quote": "Mass of $\\ce{PbI2}$ = 0.00750 × 461.0 = 3.46 g."
         }
        ],
        "feedback": "All four marks. Working from the iodide side is a good check."
       },
       {
        "tier": "partial",
-       "text": "Pb2+ + 2I- → PbI2(s). 0.0100 mol Pb2+ and 0.0150 mol I-. Lead is the limiting reactant because it has fewer moles, so PbI2 is 0.0100 mol = 4.61 g.",
+       "text": "$\\ce{Pb^2+}$ + 2I- → $\\ce{PbI2}$(s). 0.0100 mol $\\ce{Pb^2+}$ and 0.0150 mol I-. Lead is the limiting reactant because it has fewer moles, so $\\ce{PbI2}$ is 0.0100 mol = 4.61 g.",
        "meets": [
         {
          "point": 0,
-         "quote": "Pb2+ + 2I- → PbI2(s)."
+         "quote": "$\\ce{Pb^2+}$ + 2I- → $\\ce{PbI2}$(s)."
         },
         {
          "point": 1,
-         "quote": "0.0100 mol Pb2+ and 0.0150 mol I-."
+         "quote": "0.0100 mol $\\ce{Pb^2+}$ and 0.0150 mol I-."
         }
        ],
        "feedback": "You must account for the 1 to 2 ratio. Iodide is the limiting reactant, which gives 0.00750 mol, or 3.46 g."
@@ -2436,11 +2436,11 @@
       },
       {
        "tier": "weak",
-       "text": "The net ionic equation is Pb2+ + 2I- → PbI2. The limiting reactant is the one in the larger volume.",
+       "text": "The net ionic equation is $\\ce{Pb^2+}$ + 2I- → $\\ce{PbI2}$. The limiting reactant is the one in the larger volume.",
        "meets": [
         {
          "point": 0,
-         "quote": "The net ionic equation is Pb2+ + 2I- → PbI2."
+         "quote": "The net ionic equation is $\\ce{Pb^2+}$ + 2I- → $\\ce{PbI2}$."
         }
        ],
        "feedback": "Volume does not decide it; moles and the mole ratio do. Both solutions have the same volume here, so look at the moles."

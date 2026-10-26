@@ -3,6 +3,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { remarkBindUnits } from "@/components/remark-bind-units";
+import "katex/contrib/mhchem";
 import "katex/dist/katex.min.css";
 import { cn } from "@/lib/utils";
 

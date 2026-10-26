@@ -721,7 +721,7 @@
   },
   "3": {
    "topic": "Chemistry of the body, the cell and tissue histology",
-   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the biological molecules of the body, pH and buffers, and the structure and function of the cell and its organelles, including membrane transport;\n2. identify the four tissue types and their subtypes, matching each to structure and function.\n\n## Materials\n\npH paper, baking soda and vinegar, bromothymol blue, prepared tissue slides, tissue key, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"Blood pH stays between 7.35 and 7.45. A drop to 7.0 is a medical emergency. Why such a narrow window?\" Gather ideas about enzymes.\n\n## Main activity\n\n1. pH and buffers: pH 7 is neutral, each unit is a tenfold change in hydrogen ion concentration. The carbonic acid-bicarbonate buffer resists change in blood pH. Test a buffer and water with added acid.\n2. Membrane transport in the body: osmosis in red blood cells, the sodium-potassium pump (3 Na+ out, 2 K+ in), facilitated diffusion of glucose.\n3. Tissue subtypes: simple and stratified epithelia, loose and dense connective tissue, bone, cartilage, blood, three muscle types and neurons. Use a key to identify unknown slides.\n\n## Checking for understanding\n\nAsk: \"A solution has pH 6 and another pH 8. Which has more hydrogen ions, and by how much?\"\n\n## Worksheet\n\npH calculations, transport, and tissue identification.",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the biological molecules of the body, pH and buffers, and the structure and function of the cell and its organelles, including membrane transport;\n2. identify the four tissue types and their subtypes, matching each to structure and function.\n\n## Materials\n\npH paper, baking soda and vinegar, bromothymol blue, prepared tissue slides, tissue key, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"Blood pH stays between 7.35 and 7.45. A drop to 7.0 is a medical emergency. Why such a narrow window?\" Gather ideas about enzymes.\n\n## Main activity\n\n1. pH and buffers: pH 7 is neutral, each unit is a tenfold change in hydrogen ion concentration. The carbonic acid-bicarbonate buffer resists change in blood pH. Test a buffer and water with added acid.\n2. Membrane transport in the body: osmosis in red blood cells, the sodium-potassium pump (3 $\\ce{Na^+}$ out, 2 $\\ce{K^+}$ in), facilitated diffusion of glucose.\n3. Tissue subtypes: simple and stratified epithelia, loose and dense connective tissue, bone, cartilage, blood, three muscle types and neurons. Use a key to identify unknown slides.\n\n## Checking for understanding\n\nAsk: \"A solution has pH 6 and another pH 8. Which has more hydrogen ions, and by how much?\"\n\n## Worksheet\n\npH calculations, transport, and tissue identification.",
    "reading": {
     "title": "pH, membranes and the architecture of tissues",
     "content": "Chemical reactions in the body depend on precise conditions. The measure of acidity is **pH**, the negative logarithm of the hydrogen ion concentration. Each unit is a tenfold change: a solution of pH 6 has ten times as many hydrogen ions as one of pH 7, and a hundred times as many as a solution of pH 8. Blood has a pH of 7.35 to 7.45, slightly basic. A fall below 7.35 is **acidosis** and a rise above 7.45 is **alkalosis**. Because the shape of enzymes depends on pH, even small deviations cause serious problems. The stomach, in contrast, has a pH around 2 because pepsin works best in acid.\n\nHow does blood keep its pH steady, even though metabolism makes acids all the time? It contains **buffers**, chemicals that take up or release hydrogen ions. The main one is the carbonic acid-bicarbonate system. If hydrogen ions increase, bicarbonate binds them and forms carbonic acid, which breaks into water and carbon dioxide that is exhaled. The lungs and kidneys also adjust the pH over minutes to days.\n\nThe cell membrane controls what moves in and out. **Osmosis** is the movement of water to the side with the higher solute concentration. A red blood cell in pure water takes up water, swells and bursts, while one in a concentrated salt solution loses water and shrinks. That is why intravenous fluids are made isotonic, at 0.9 percent salt. The **sodium-potassium pump** uses ATP to move three sodium ions out and two potassium ions in, maintaining the gradient that nerves and muscles use. Glucose enters most cells by **facilitated diffusion**, through carrier proteins, without ATP.\n\nTissue types have subtypes defined by structure. **Epithelium** is classified by cell shape and number of layers. Simple squamous epithelium, a single flat layer, lines the air sacs of the lungs and the blood capillaries where substances pass quickly. Stratified squamous epithelium, many layers, covers the skin and the lining of the mouth, which resists abrasion. Simple columnar epithelium lines the intestine and absorbs. **Connective tissue** includes loose tissue that packs around organs, dense tissue with strong collagen fibers in tendons, cartilage, bone and blood. **Muscle** is skeletal, cardiac or smooth. **Nervous tissue** consists of neurons and neuroglia.\n\nTo identify an unknown slide, ask a few questions in order. Are cells packed in a sheet? That suggests epithelium, and the shape and layers refine it. Are the cells scattered in a matrix? That suggests connective tissue. Long fibers with stripes? Muscle. Cells with long processes? Nervous tissue."
@@ -745,7 +745,7 @@
     },
     {
      "front": "Sodium-potassium pump",
-     "back": "A pump using ATP to move 3 Na+ out and 2 K+ in."
+     "back": "A pump using ATP to move 3 $\\ce{Na^+}$ out and 2 $\\ce{K^+}$ in."
     },
     {
      "front": "Facilitated diffusion",
@@ -784,10 +784,10 @@
     {
      "prompt": "The sodium-potassium pump moves:",
      "options": [
-      "3 Na+ in and 2 K+ out",
-      "3 Na+ out and 2 K+ in",
-      "2 Na+ out and 3 K+ in",
-      "Na+ and K+ in the same direction"
+      "3 $\\ce{Na^+}$ in and 2 $\\ce{K^+}$ out",
+      "3 $\\ce{Na^+}$ out and 2 $\\ce{K^+}$ in",
+      "2 $\\ce{Na^+}$ out and 3 $\\ce{K^+}$ in",
+      "$\\ce{Na^+}$ and $\\ce{K^+}$ in the same direction"
      ],
      "answer": "B"
     },
@@ -908,11 +908,11 @@
       },
       {
        "tier": "weak",
-       "text": "The lungs get rid of CO2. A buffer is a type of protein that makes blood thicker.",
+       "text": "The lungs get rid of $\\ce{CO2}$. A buffer is a type of protein that makes blood thicker.",
        "meets": [
         {
          "point": 2,
-         "quote": "The lungs get rid of CO2."
+         "quote": "The lungs get rid of $\\ce{CO2}$."
         }
        ],
        "feedback": "A buffer is a chemical system that resists a change in pH. It does not make blood thicker."

@@ -797,7 +797,7 @@
             },
             {
               "tier": "full",
-              "text": "m = 100 g, c = 4.2 J/g/K, ΔT = 6.8 K. Q = 100 × 4.2 × 6.8 = 2856 J = 2.856 kJ. n(H2O) = 0.050 dm3 × 1.0 mol dm-3 = 0.050 mol. Heat of neutralisation = 2.856 ÷ 0.050 = 57.1 kJ mol-1, and since heat was released ΔH = −57.1 kJ mol-1.",
+              "text": "m = 100 g, c = 4.2 J/g/K, ΔT = 6.8 K. Q = 100 × 4.2 × 6.8 = 2856 J = 2.856 kJ. n($\\ce{H2O}$) = 0.050 dm3 × 1.0 mol dm-3 = 0.050 mol. Heat of neutralisation = 2.856 ÷ 0.050 = 57.1 kJ mol-1, and since heat was released ΔH = −57.1 kJ mol-1.",
               "meets": [
                 {
                   "point": 0,
@@ -813,7 +813,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "n(H2O) = 0.050 dm3 × 1.0 mol dm-3 = 0.050 mol"
+                  "quote": "n($\\ce{H2O}$) = 0.050 dm3 × 1.0 mol dm-3 = 0.050 mol"
                 },
                 {
                   "point": 4,
@@ -865,7 +865,7 @@
             },
             {
               "tier": "weak",
-              "text": "HCl + NaOH → NaCl + H2O. The enthalpy of neutralisation is -57 kJ/mol for all acids and bases.",
+              "text": "HCl + NaOH → NaCl + $\\ce{H2O}$. The enthalpy of neutralisation is -57 kJ/mol for all acids and bases.",
               "meets": [],
               "feedback": "The equation is correct, but the question asks you to calculate the value from these results. Work out Q = mcΔT, then divide by the moles of water. Also, weak acids and bases give values below 57 kJ mol⁻¹."
             }
@@ -884,15 +884,15 @@
           "answers": [
             {
               "tier": "full",
-              "text": "A strong acid ionises completely in water: HCl + H2O → H3O+ + Cl-. A weak acid is only partially ionised and it forms an equilibrium: CH3COOH + H2O ⇌ CH3COO- + H3O+. Experiment 1: put the two acids of the same concentration in a circuit, the bulb is bright with HCl but dim with ethanoic acid. Experiment 2: add magnesium ribbon to both, HCl gives rapid effervescence but ethanoic acid gives slow bubbles. Ethanoic acid has a higher pH because it produces fewer H3O+ ions, so the concentration of H3O+ is lower.",
+              "text": "A strong acid ionises completely in water: HCl + $\\ce{H2O}$ → $\\ce{H3O^+}$ + $\\ce{Cl^-}$. A weak acid is only partially ionised and it forms an equilibrium: $\\ce{CH3COOH}$ + $\\ce{H2O}$ ⇌ $\\ce{CH3COO^-}$ + $\\ce{H3O^+}$. Experiment 1: put the two acids of the same concentration in a circuit, the bulb is bright with HCl but dim with ethanoic acid. Experiment 2: add magnesium ribbon to both, HCl gives rapid effervescence but ethanoic acid gives slow bubbles. Ethanoic acid has a higher pH because it produces fewer $\\ce{H3O^+}$ ions, so the concentration of $\\ce{H3O^+}$ is lower.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "A strong acid ionises completely in water: HCl + H2O → H3O+ + Cl-"
+                  "quote": "A strong acid ionises completely in water: HCl + $\\ce{H2O}$ → $\\ce{H3O^+}$ + $\\ce{Cl^-}$"
                 },
                 {
                   "point": 1,
-                  "quote": "A weak acid is only partially ionised and it forms an equilibrium: CH3COOH + H2O ⇌ CH3COO- + H3O+"
+                  "quote": "A weak acid is only partially ionised and it forms an equilibrium: $\\ce{CH3COOH}$ + $\\ce{H2O}$ ⇌ $\\ce{CH3COO^-}$ + $\\ce{H3O^+}$"
                 },
                 {
                   "point": 2,
@@ -904,22 +904,22 @@
                 },
                 {
                   "point": 4,
-                  "quote": "it produces fewer H3O+ ions, so the concentration of H3O+ is lower"
+                  "quote": "it produces fewer $\\ce{H3O^+}$ ions, so the concentration of $\\ce{H3O^+}$ is lower"
                 }
               ],
               "feedback": "Complete, with the equilibrium arrow in the right place. Full marks."
             },
             {
               "tier": "full",
-              "text": "HCl is a strong acid: all its molecules react with water, HCl + H2O → H3O+ + Cl-. Ethanoic acid is weak: only a small fraction of molecules ionise, CH3COOH + H2O ⇌ H3O+ + CH3COO-, and the rest stay as molecules. Test 1: using a conductivity meter, HCl gives a much higher reading. Test 2: drop marble chips into each; HCl fizzes vigorously while ethanoic acid fizzes slowly. At 0.01 mol dm-3, [H3O+] in HCl is 0.01 so pH = 2, but in ethanoic acid [H3O+] is much less than 0.01 so the pH is higher (about 3.4).",
+              "text": "HCl is a strong acid: all its molecules react with water, HCl + $\\ce{H2O}$ → $\\ce{H3O^+}$ + $\\ce{Cl^-}$. Ethanoic acid is weak: only a small fraction of molecules ionise, $\\ce{CH3COOH}$ + $\\ce{H2O}$ ⇌ $\\ce{H3O^+}$ + $\\ce{CH3COO^-}$, and the rest stay as molecules. Test 1: using a conductivity meter, HCl gives a much higher reading. Test 2: drop marble chips into each; HCl fizzes vigorously while ethanoic acid fizzes slowly. At 0.01 mol dm-3, [$\\ce{H3O^+}$] in HCl is 0.01 so pH = 2, but in ethanoic acid [$\\ce{H3O^+}$] is much less than 0.01 so the pH is higher (about 3.4).",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "HCl is a strong acid: all its molecules react with water, HCl + H2O → H3O+ + Cl-"
+                  "quote": "HCl is a strong acid: all its molecules react with water, HCl + $\\ce{H2O}$ → $\\ce{H3O^+}$ + $\\ce{Cl^-}$"
                 },
                 {
                   "point": 1,
-                  "quote": "only a small fraction of molecules ionise, CH3COOH + H2O ⇌ H3O+ + CH3COO-"
+                  "quote": "only a small fraction of molecules ionise, $\\ce{CH3COOH}$ + $\\ce{H2O}$ ⇌ $\\ce{H3O^+}$ + $\\ce{CH3COO^-}$"
                 },
                 {
                   "point": 2,
@@ -931,18 +931,18 @@
                 },
                 {
                   "point": 4,
-                  "quote": "in ethanoic acid [H3O+] is much less than 0.01 so the pH is higher"
+                  "quote": "in ethanoic acid [$\\ce{H3O^+}$] is much less than 0.01 so the pH is higher"
                 }
               ],
               "feedback": "Excellent. Working out pH 2 for the hydrochloric acid made your explanation of the higher pH very convincing."
             },
             {
               "tier": "partial",
-              "text": "A strong acid ionises completely, HCl → H+ + Cl-. A weak acid ionises partially. HCl conducts electricity better than ethanoic acid. Ethanoic acid has a higher pH because it is weak.",
+              "text": "A strong acid ionises completely, HCl → $\\ce{H^+}$ + $\\ce{Cl^-}$. A weak acid ionises partially. HCl conducts electricity better than ethanoic acid. Ethanoic acid has a higher pH because it is weak.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "A strong acid ionises completely, HCl → H+ + Cl-"
+                  "quote": "A strong acid ionises completely, HCl → $\\ce{H^+}$ + $\\ce{Cl^-}$"
                 },
                 {
                   "point": 2,
@@ -953,15 +953,15 @@
             },
             {
               "tier": "partial",
-              "text": "Strong acids are concentrated and weak acids are dilute. HCl + H2O → H3O+ + Cl-. CH3COOH + H2O ⇌ CH3COO- + H3O+. HCl reacts faster with zinc. Ethanoic acid has a higher pH because it has less H3O+ ions.",
+              "text": "Strong acids are concentrated and weak acids are dilute. HCl + $\\ce{H2O}$ → $\\ce{H3O^+}$ + $\\ce{Cl^-}$. $\\ce{CH3COOH}$ + $\\ce{H2O}$ ⇌ $\\ce{CH3COO^-}$ + $\\ce{H3O^+}$. HCl reacts faster with zinc. Ethanoic acid has a higher pH because it has less $\\ce{H3O^+}$ ions.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "HCl + H2O → H3O+ + Cl-"
+                  "quote": "HCl + $\\ce{H2O}$ → $\\ce{H3O^+}$ + $\\ce{Cl^-}$"
                 },
                 {
                   "point": 1,
-                  "quote": "CH3COOH + H2O ⇌ CH3COO- + H3O+"
+                  "quote": "$\\ce{CH3COOH}$ + $\\ce{H2O}$ ⇌ $\\ce{CH3COO^-}$ + $\\ce{H3O^+}$"
                 },
                 {
                   "point": 3,
@@ -969,7 +969,7 @@
                 },
                 {
                   "point": 4,
-                  "quote": "Ethanoic acid has a higher pH because it has less H3O+ ions"
+                  "quote": "Ethanoic acid has a higher pH because it has less $\\ce{H3O^+}$ ions"
                 }
               ],
               "feedback": "Your equations, the zinc test and the pH reason are right. Strong and weak are not concentrated and dilute: strength is how fully the acid ionises. Add a second test, such as conductivity."
@@ -1101,7 +1101,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Hydrolysis is the reaction of the ions of a salt with water to form an acidic or alkaline solution. NaCl is formed from a strong acid and strong base, the ions do not react with water so it is neutral, pH 7. NH4Cl: NH4+ + H2O ⇌ NH3 + H3O+, the H3O+ makes it acidic. AlCl3: Al3+ is small with a high charge so its charge density is high, it attracts the water molecules and causes them to release H3O+, so it is acidic. Na2CO3: CO3 2- + H2O ⇌ HCO3- + OH-, the OH- makes it alkaline.",
+              "text": "Hydrolysis is the reaction of the ions of a salt with water to form an acidic or alkaline solution. NaCl is formed from a strong acid and strong base, the ions do not react with water so it is neutral, pH 7. $\\ce{NH4Cl}$: $\\ce{NH4^+}$ + $\\ce{H2O}$ ⇌ $\\ce{NH3}$ + $\\ce{H3O^+}$, the $\\ce{H3O^+}$ makes it acidic. $\\ce{AlCl3}$: $\\ce{Al^3+}$ is small with a high charge so its charge density is high, it attracts the water molecules and causes them to release $\\ce{H3O^+}$, so it is acidic. $\\ce{Na2CO3}$: $\\ce{CO3^2-}$ + $\\ce{H2O}$ ⇌ $\\ce{HCO3^-}$ + $\\ce{OH^-}$, the $\\ce{OH^-}$ makes it alkaline.",
               "meets": [
                 {
                   "point": 0,
@@ -1113,49 +1113,49 @@
                 },
                 {
                   "point": 2,
-                  "quote": "NH4+ + H2O ⇌ NH3 + H3O+, the H3O+ makes it acidic"
+                  "quote": "$\\ce{NH4^+}$ + $\\ce{H2O}$ ⇌ $\\ce{NH3}$ + $\\ce{H3O^+}$, the $\\ce{H3O^+}$ makes it acidic"
                 },
                 {
                   "point": 3,
-                  "quote": "Al3+ is small with a high charge so its charge density is high, it attracts the water molecules and causes them to release H3O+"
+                  "quote": "$\\ce{Al^3+}$ is small with a high charge so its charge density is high, it attracts the water molecules and causes them to release $\\ce{H3O^+}$"
                 },
                 {
                   "point": 4,
-                  "quote": "CO3 2- + H2O ⇌ HCO3- + OH-, the OH- makes it alkaline"
+                  "quote": "$\\ce{CO3^2-}$ + $\\ce{H2O}$ ⇌ $\\ce{HCO3^-}$ + $\\ce{OH^-}$, the $\\ce{OH^-}$ makes it alkaline"
                 }
               ],
               "feedback": "All four salts explained correctly, including the charge density of Al³⁺. Full marks."
             },
             {
               "tier": "full",
-              "text": "When some salts dissolve, their ions react with water and produce H3O+ or OH- ions; this is hydrolysis. Sodium chloride is neutral because Na+ and Cl- come from NaOH and HCl, which are both strong, and they do not hydrolyse. Ammonium chloride hydrolyses as NH4+ + H2O ⇌ NH3 + H3O+, giving an acidic solution. Aluminium chloride is acidic because the Al3+ ion has a very high charge density and it polarises the water molecules joined to it so that they give off H3O+. Sodium carbonate gives an alkaline solution since CO3 2- + H2O ⇌ HCO3- + OH-.",
+              "text": "When some salts dissolve, their ions react with water and produce $\\ce{H3O^+}$ or $\\ce{OH^-}$ ions; this is hydrolysis. Sodium chloride is neutral because $\\ce{Na^+}$ and $\\ce{Cl^-}$ come from NaOH and HCl, which are both strong, and they do not hydrolyse. Ammonium chloride hydrolyses as $\\ce{NH4^+}$ + $\\ce{H2O}$ ⇌ $\\ce{NH3}$ + $\\ce{H3O^+}$, giving an acidic solution. Aluminium chloride is acidic because the $\\ce{Al^3+}$ ion has a very high charge density and it polarises the water molecules joined to it so that they give off $\\ce{H3O^+}$. Sodium carbonate gives an alkaline solution since $\\ce{CO3^2-}$ + $\\ce{H2O}$ ⇌ $\\ce{HCO3^-}$ + $\\ce{OH^-}$.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "When some salts dissolve, their ions react with water and produce H3O+ or OH- ions; this is hydrolysis"
+                  "quote": "When some salts dissolve, their ions react with water and produce $\\ce{H3O^+}$ or $\\ce{OH^-}$ ions; this is hydrolysis"
                 },
                 {
                   "point": 1,
-                  "quote": "Sodium chloride is neutral because Na+ and Cl- come from NaOH and HCl, which are both strong, and they do not hydrolyse"
+                  "quote": "Sodium chloride is neutral because $\\ce{Na^+}$ and $\\ce{Cl^-}$ come from NaOH and HCl, which are both strong, and they do not hydrolyse"
                 },
                 {
                   "point": 2,
-                  "quote": "Ammonium chloride hydrolyses as NH4+ + H2O ⇌ NH3 + H3O+, giving an acidic solution"
+                  "quote": "Ammonium chloride hydrolyses as $\\ce{NH4^+}$ + $\\ce{H2O}$ ⇌ $\\ce{NH3}$ + $\\ce{H3O^+}$, giving an acidic solution"
                 },
                 {
                   "point": 3,
-                  "quote": "the Al3+ ion has a very high charge density and it polarises the water molecules joined to it so that they give off H3O+"
+                  "quote": "the $\\ce{Al^3+}$ ion has a very high charge density and it polarises the water molecules joined to it so that they give off $\\ce{H3O^+}$"
                 },
                 {
                   "point": 4,
-                  "quote": "Sodium carbonate gives an alkaline solution since CO3 2- + H2O ⇌ HCO3- + OH-"
+                  "quote": "Sodium carbonate gives an alkaline solution since $\\ce{CO3^2-}$ + $\\ce{H2O}$ ⇌ $\\ce{HCO3^-}$ + $\\ce{OH^-}$"
                 }
               ],
               "feedback": "Excellent. Saying Al³⁺ polarises the water molecules is precisely the idea. Full marks."
             },
             {
               "tier": "partial",
-              "text": "Hydrolysis is when a salt reacts with water. NaCl is neutral because it is from a strong acid and a strong base. NH4Cl is acidic because it is from a strong acid and a weak base. Na2CO3 is alkaline because it is from a strong base and a weak acid.",
+              "text": "Hydrolysis is when a salt reacts with water. NaCl is neutral because it is from a strong acid and a strong base. $\\ce{NH4Cl}$ is acidic because it is from a strong acid and a weak base. $\\ce{Na2CO3}$ is alkaline because it is from a strong base and a weak acid.",
               "meets": [
                 {
                   "point": 0,
@@ -1170,15 +1170,15 @@
             },
             {
               "tier": "partial",
-              "text": "NH4+ + H2O ⇌ NH3 + H3O+ so NH4Cl is acidic. CO3 2- + H2O ⇌ HCO3- + OH- so Na2CO3 is alkaline. AlCl3 is acidic because chlorine is an acid. NaCl is neutral.",
+              "text": "$\\ce{NH4^+}$ + $\\ce{H2O}$ ⇌ $\\ce{NH3}$ + $\\ce{H3O^+}$ so $\\ce{NH4Cl}$ is acidic. $\\ce{CO3^2-}$ + $\\ce{H2O}$ ⇌ $\\ce{HCO3^-}$ + $\\ce{OH^-}$ so $\\ce{Na2CO3}$ is alkaline. $\\ce{AlCl3}$ is acidic because chlorine is an acid. NaCl is neutral.",
               "meets": [
                 {
                   "point": 2,
-                  "quote": "NH4+ + H2O ⇌ NH3 + H3O+ so NH4Cl is acidic"
+                  "quote": "$\\ce{NH4^+}$ + $\\ce{H2O}$ ⇌ $\\ce{NH3}$ + $\\ce{H3O^+}$ so $\\ce{NH4Cl}$ is acidic"
                 },
                 {
                   "point": 4,
-                  "quote": "CO3 2- + H2O ⇌ HCO3- + OH- so Na2CO3 is alkaline"
+                  "quote": "$\\ce{CO3^2-}$ + $\\ce{H2O}$ ⇌ $\\ce{HCO3^-}$ + $\\ce{OH^-}$ so $\\ce{Na2CO3}$ is alkaline"
                 }
               ],
               "feedback": "Both equations are right. Chloride ions do not make AlCl₃ acidic; the Al³⁺ ion does, because its high charge density makes water release H₃O⁺. Define hydrolysis, and say why NaCl is neutral: its ions do not react with water."
@@ -1191,7 +1191,7 @@
             },
             {
               "tier": "weak",
-              "text": "NaCl is neutral because sodium and chlorine cancel out. NH4Cl is alkaline because ammonia is alkaline.",
+              "text": "NaCl is neutral because sodium and chlorine cancel out. $\\ce{NH4Cl}$ is alkaline because ammonia is alkaline.",
               "meets": [],
               "feedback": "NH₄Cl gives an acidic solution: the ammonium ion releases H₃O⁺ into water. NaCl is neutral because its ions come from a strong acid and a strong base and do not react with water. Define hydrolysis and write the equations."
             }
@@ -1211,7 +1211,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "An indicator is a weak organic acid whose molecule HIn and ion In- have different colours. HIn ⇌ H+ + In-. In acid the equilibrium shifts to the left so the colour of HIn shows, in alkali it shifts to the right so the colour of In- shows. Methyl orange is red in acid and yellow in alkali, range 3.1 to 4.4. Phenolphthalein is colourless in acid and pink in alkali, range 8.3 to 10. (i) Methyl orange, because HCl and NH3 is strong acid and weak base so the end point is acidic. (ii) Phenolphthalein, because ethanoic acid and NaOH is weak acid and strong base so the end point is alkaline.",
+              "text": "An indicator is a weak organic acid whose molecule HIn and ion In- have different colours. HIn ⇌ $\\ce{H^+}$ + In-. In acid the equilibrium shifts to the left so the colour of HIn shows, in alkali it shifts to the right so the colour of In- shows. Methyl orange is red in acid and yellow in alkali, range 3.1 to 4.4. Phenolphthalein is colourless in acid and pink in alkali, range 8.3 to 10. (i) Methyl orange, because HCl and $\\ce{NH3}$ is strong acid and weak base so the end point is acidic. (ii) Phenolphthalein, because ethanoic acid and NaOH is weak acid and strong base so the end point is alkaline.",
               "meets": [
                 {
                   "point": 0,
@@ -1231,7 +1231,7 @@
                 },
                 {
                   "point": 4,
-                  "quote": "Methyl orange, because HCl and NH3 is strong acid and weak base so the end point is acidic"
+                  "quote": "Methyl orange, because HCl and $\\ce{NH3}$ is strong acid and weak base so the end point is acidic"
                 },
                 {
                   "point": 5,
@@ -1242,7 +1242,7 @@
             },
             {
               "tier": "full",
-              "text": "Indicators are weak acids (organic dyes). The undissociated HIn is one colour and In- is another. Adding H+ moves HIn ⇌ H+ + In- backwards, giving the acid colour, while adding OH- removes H+ and moves it forwards to the alkaline colour. Methyl orange: red to yellow between pH 3.1 and 4.4. Phenolphthalein: colourless to pink between pH 8.3 and 10.0. For HCl/NH3 I would use methyl orange since the salt NH4Cl makes the end point about pH 5, on the acid side. For CH3COOH/NaOH I would use phenolphthalein because sodium ethanoate makes the end point alkaline, about pH 9.",
+              "text": "Indicators are weak acids (organic dyes). The undissociated HIn is one colour and In- is another. Adding $\\ce{H^+}$ moves HIn ⇌ $\\ce{H^+}$ + In- backwards, giving the acid colour, while adding $\\ce{OH^-}$ removes $\\ce{H^+}$ and moves it forwards to the alkaline colour. Methyl orange: red to yellow between pH 3.1 and 4.4. Phenolphthalein: colourless to pink between pH 8.3 and 10.0. For HCl/$\\ce{NH3}$ I would use methyl orange since the salt $\\ce{NH4Cl}$ makes the end point about pH 5, on the acid side. For $\\ce{CH3COOH}$/NaOH I would use phenolphthalein because sodium ethanoate makes the end point alkaline, about pH 9.",
               "meets": [
                 {
                   "point": 0,
@@ -1250,7 +1250,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "Adding H+ moves HIn ⇌ H+ + In- backwards, giving the acid colour, while adding OH- removes H+ and moves it forwards to the alkaline colour"
+                  "quote": "Adding $\\ce{H^+}$ moves HIn ⇌ $\\ce{H^+}$ + In- backwards, giving the acid colour, while adding $\\ce{OH^-}$ removes $\\ce{H^+}$ and moves it forwards to the alkaline colour"
                 },
                 {
                   "point": 2,
@@ -1262,11 +1262,11 @@
                 },
                 {
                   "point": 4,
-                  "quote": "For HCl/NH3 I would use methyl orange since the salt NH4Cl makes the end point about pH 5, on the acid side"
+                  "quote": "For HCl/$\\ce{NH3}$ I would use methyl orange since the salt $\\ce{NH4Cl}$ makes the end point about pH 5, on the acid side"
                 },
                 {
                   "point": 5,
-                  "quote": "For CH3COOH/NaOH I would use phenolphthalein because sodium ethanoate makes the end point alkaline"
+                  "quote": "For $\\ce{CH3COOH}$/NaOH I would use phenolphthalein because sodium ethanoate makes the end point alkaline"
                 }
               ],
               "feedback": "Excellent. Linking each end-point to the hydrolysis of the salt formed joins this topic to last lesson's. Full marks."
@@ -1538,42 +1538,42 @@
           "answers": [
             {
               "tier": "full",
-              "text": "The cation is Zn2+. Zn2+, Al3+ and Pb2+ all give white precipitates soluble in excess NaOH, but only the zinc one also dissolves in excess NH3; with Al3+ and Pb2+ the precipitate remains. Zn2+ + 2OH- → Zn(OH)2. The anion is Cl-: Ag+ + Cl- → AgCl, a white precipitate. The HNO3 is added first so that carbonate ions are removed, otherwise they would also precipitate with silver. So Y is ZnCl2.",
+              "text": "The cation is $\\ce{Zn^2+}$. $\\ce{Zn^2+}$, $\\ce{Al^3+}$ and $\\ce{Pb^2+}$ all give white precipitates soluble in excess NaOH, but only the zinc one also dissolves in excess $\\ce{NH3}$; with $\\ce{Al^3+}$ and $\\ce{Pb^2+}$ the precipitate remains. $\\ce{Zn^2+}$ + $\\ce{2OH^-}$ → $\\ce{Zn(OH)2}$. The anion is $\\ce{Cl^-}$: $\\ce{Ag^+}$ + $\\ce{Cl^-}$ → AgCl, a white precipitate. The $\\ce{HNO3}$ is added first so that carbonate ions are removed, otherwise they would also precipitate with silver. So Y is $\\ce{ZnCl2}$.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "The cation is Zn2+"
+                  "quote": "The cation is $\\ce{Zn^2+}$"
                 },
                 {
                   "point": 1,
-                  "quote": "only the zinc one also dissolves in excess NH3; with Al3+ and Pb2+ the precipitate remains"
+                  "quote": "only the zinc one also dissolves in excess $\\ce{NH3}$; with $\\ce{Al^3+}$ and $\\ce{Pb^2+}$ the precipitate remains"
                 },
                 {
                   "point": 2,
-                  "quote": "Zn2+ + 2OH- → Zn(OH)2"
+                  "quote": "$\\ce{Zn^2+}$ + $\\ce{2OH^-}$ → $\\ce{Zn(OH)2}$"
                 },
                 {
                   "point": 3,
-                  "quote": "The anion is Cl-"
+                  "quote": "The anion is $\\ce{Cl^-}$"
                 },
                 {
                   "point": 4,
-                  "quote": "Ag+ + Cl- → AgCl"
+                  "quote": "$\\ce{Ag^+}$ + $\\ce{Cl^-}$ → AgCl"
                 },
                 {
                   "point": 5,
-                  "quote": "The HNO3 is added first so that carbonate ions are removed, otherwise they would also precipitate with silver"
+                  "quote": "The $\\ce{HNO3}$ is added first so that carbonate ions are removed, otherwise they would also precipitate with silver"
                 }
               ],
               "feedback": "Every ion ruled in and out with a reason, and both equations right. Full marks."
             },
             {
               "tier": "full",
-              "text": "Y contains zinc ions, Zn2+, and chloride ions, Cl-. With NaOH: Zn2+(aq) + 2OH-(aq) → Zn(OH)2(s), white, which dissolves in excess to form a zincate. Aluminium and lead hydroxides would not dissolve in excess ammonia, but zinc hydroxide forms a complex with ammonia and dissolves, so it must be zinc. The silver nitrate gives white AgCl: Ag+(aq) + Cl-(aq) → AgCl(s). Dilute nitric acid is used first to destroy CO3 2- ions which would give a false white precipitate.",
+              "text": "Y contains zinc ions, $\\ce{Zn^2+}$, and chloride ions, $\\ce{Cl^-}$. With NaOH: $\\ce{Zn^2+}$(aq) + $\\ce{2OH^-}$(aq) → $\\ce{Zn(OH)2}$(s), white, which dissolves in excess to form a zincate. Aluminium and lead hydroxides would not dissolve in excess ammonia, but zinc hydroxide forms a complex with ammonia and dissolves, so it must be zinc. The silver nitrate gives white AgCl: $\\ce{Ag^+}$(aq) + $\\ce{Cl^-}$(aq) → AgCl(s). Dilute nitric acid is used first to destroy $\\ce{CO3^2-}$ ions which would give a false white precipitate.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Y contains zinc ions, Zn2+"
+                  "quote": "Y contains zinc ions, $\\ce{Zn^2+}$"
                 },
                 {
                   "point": 1,
@@ -1581,53 +1581,53 @@
                 },
                 {
                   "point": 2,
-                  "quote": "Zn2+(aq) + 2OH-(aq) → Zn(OH)2(s)"
+                  "quote": "$\\ce{Zn^2+}$(aq) + $\\ce{2OH^-}$(aq) → $\\ce{Zn(OH)2}$(s)"
                 },
                 {
                   "point": 3,
-                  "quote": "chloride ions, Cl-"
+                  "quote": "chloride ions, $\\ce{Cl^-}$"
                 },
                 {
                   "point": 4,
-                  "quote": "Ag+(aq) + Cl-(aq) → AgCl(s)"
+                  "quote": "$\\ce{Ag^+}$(aq) + $\\ce{Cl^-}$(aq) → AgCl(s)"
                 },
                 {
                   "point": 5,
-                  "quote": "Dilute nitric acid is used first to destroy CO3 2- ions which would give a false white precipitate"
+                  "quote": "Dilute nitric acid is used first to destroy $\\ce{CO3^2-}$ ions which would give a false white precipitate"
                 }
               ],
               "feedback": "Excellent, with state symbols and the reason zinc hydroxide dissolves in ammonia. Full marks."
             },
             {
               "tier": "partial",
-              "text": "The cation is Al3+ because its white precipitate dissolves in excess NaOH. Al3+ + 3OH- → Al(OH)3. The anion is Cl- because it gives a white precipitate with silver nitrate. Ag+ + Cl- → AgCl.",
+              "text": "The cation is $\\ce{Al^3+}$ because its white precipitate dissolves in excess NaOH. $\\ce{Al^3+}$ + $\\ce{3OH^-}$ → $\\ce{Al(OH)3}$. The anion is $\\ce{Cl^-}$ because it gives a white precipitate with silver nitrate. $\\ce{Ag^+}$ + $\\ce{Cl^-}$ → AgCl.",
               "meets": [
                 {
                   "point": 3,
-                  "quote": "The anion is Cl-"
+                  "quote": "The anion is $\\ce{Cl^-}$"
                 },
                 {
                   "point": 4,
-                  "quote": "Ag+ + Cl- → AgCl"
+                  "quote": "$\\ce{Ag^+}$ + $\\ce{Cl^-}$ → AgCl"
                 }
               ],
               "feedback": "The chloride test is right. Look again at the ammonia result: Al(OH)₃ does not dissolve in excess ammonia, but Zn(OH)₂ does, so the cation is Zn²⁺. Also explain why the nitric acid is added first."
             },
             {
               "tier": "partial",
-              "text": "Cation is Zn2+ since it dissolves in excess of both NaOH and NH3. Zn2+ + 2OH- → Zn(OH)2. The anion is SO4 2- because it gives a white precipitate.",
+              "text": "Cation is $\\ce{Zn^2+}$ since it dissolves in excess of both NaOH and $\\ce{NH3}$. $\\ce{Zn^2+}$ + $\\ce{2OH^-}$ → $\\ce{Zn(OH)2}$. The anion is $\\ce{SO4^2-}$ because it gives a white precipitate.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Cation is Zn2+"
+                  "quote": "Cation is $\\ce{Zn^2+}$"
                 },
                 {
                   "point": 1,
-                  "quote": "since it dissolves in excess of both NaOH and NH3"
+                  "quote": "since it dissolves in excess of both NaOH and $\\ce{NH3}$"
                 },
                 {
                   "point": 2,
-                  "quote": "Zn2+ + 2OH- → Zn(OH)2"
+                  "quote": "$\\ce{Zn^2+}$ + $\\ce{2OH^-}$ → $\\ce{Zn(OH)2}$"
                 }
               ],
               "feedback": "Your cation is right and well explained. Sulphate is tested with barium chloride; a white precipitate with silver nitrate in nitric acid shows chloride, Ag⁺ + Cl⁻ → AgCl. Say why the acid is added first."
@@ -1640,7 +1640,7 @@
             },
             {
               "tier": "weak",
-              "text": "The cation is Pb2+ because lead gives a white precipitate. The anion is chloride.",
+              "text": "The cation is $\\ce{Pb^2+}$ because lead gives a white precipitate. The anion is chloride.",
               "meets": [
                 {
                   "point": 3,
@@ -1697,19 +1697,19 @@
         "writeUps": [
           {
             "tier": "full",
-            "text": "Burette readings (cm3): Rough: initial 0.00, final 25.20, titre 25.20. 1st: 0.00, 24.80, titre 24.80. 2nd: 0.50, 25.25, titre 24.75. 3rd: 1.00, 25.85, titre 24.85. Average of concordant titres = (24.80 + 24.75 + 24.85)/3 = 24.80 cm3. Calculation: moles of Na2CO3 = 25.0/1000 x 0.050 = 0.00125 mol. From the equation 1 mol Na2CO3 reacts with 2 mol HCl, so moles of HCl = 0.00250 mol. Concentration of A = 0.00250 x 1000/24.80 = 0.101 mol dm-3. Mass concentration = 0.1008 x 36.5 = 3.68 g dm-3. The colour changed from yellow to orange at the end-point.",
+            "text": "Burette readings (cm3): Rough: initial 0.00, final 25.20, titre 25.20. 1st: 0.00, 24.80, titre 24.80. 2nd: 0.50, 25.25, titre 24.75. 3rd: 1.00, 25.85, titre 24.85. Average of concordant titres = (24.80 + 24.75 + 24.85)/3 = 24.80 cm3. Calculation: moles of $\\ce{Na2CO3}$ = 25.0/1000 x 0.050 = 0.00125 mol. From the equation 1 mol $\\ce{Na2CO3}$ reacts with 2 mol HCl, so moles of HCl = 0.00250 mol. Concentration of A = 0.00250 x 1000/24.80 = 0.101 mol dm-3. Mass concentration = 0.1008 x 36.5 = 3.68 g dm-3. The colour changed from yellow to orange at the end-point.",
             "scores": [4, 2, 4],
             "feedback": "A model report: a full table, the rough titre left out of the average, and every step of the calculation correct."
           },
           {
             "tier": "full",
-            "text": "I rinsed and filled the burette with A and pipetted 25.0 cm3 of B into the flask with methyl orange. Titres: rough 25.30, then 24.85, 24.80 and 24.90 cm3 (all readings recorded to 2 d.p.). Concordant average = 24.85 cm3. n(Na2CO3) = 0.0250 × 0.050 = 1.25 × 10^-3 mol. n(HCl) = 2 × 1.25 × 10^-3 = 2.50 × 10^-3 mol. c(HCl) = 2.50 × 10^-3 ÷ 0.02485 = 0.101 mol dm-3. Mass concentration = 0.1006 × 36.5 = 3.67 g dm-3.",
+            "text": "I rinsed and filled the burette with A and pipetted 25.0 cm3 of B into the flask with methyl orange. Titres: rough 25.30, then 24.85, 24.80 and 24.90 cm3 (all readings recorded to 2 d.p.). Concordant average = 24.85 cm3. n($\\ce{Na2CO3}$) = 0.0250 × 0.050 = 1.25 × 10^-3 mol. n(HCl) = 2 × 1.25 × 10^-3 = 2.50 × 10^-3 mol. c(HCl) = 2.50 × 10^-3 ÷ 0.02485 = 0.101 mol dm-3. Mass concentration = 0.1006 × 36.5 = 3.67 g dm-3.",
             "scores": [3, 2, 4],
             "feedback": "Your calculation is excellent. For full technique marks, show the initial and final readings in a table, not just the titres."
           },
           {
             "tier": "partial",
-            "text": "We titrated 25.0 cm3 of B with A using methyl orange. Titres: 25.20, 24.80, 24.75, 24.85. Average = (25.20 + 24.80 + 24.75 + 24.85)/4 = 24.90 cm3. Moles of Na2CO3 = 0.025 x 0.05 = 0.00125. Moles of HCl = 0.00125. Concentration = 0.00125/0.0249 = 0.0502 mol dm-3.",
+            "text": "We titrated 25.0 cm3 of B with A using methyl orange. Titres: 25.20, 24.80, 24.75, 24.85. Average = (25.20 + 24.80 + 24.75 + 24.85)/4 = 24.90 cm3. Moles of $\\ce{Na2CO3}$ = 0.025 x 0.05 = 0.00125. Moles of HCl = 0.00125. Concentration = 0.00125/0.0249 = 0.0502 mol dm-3.",
             "scores": [2, 0, 2],
             "feedback": "Your readings are good, but the rough titre must not go into the average; use 24.80, 24.75 and 24.85, giving 24.80 cm³. The equation has 2HCl, so the moles of acid are 0.00250, and A is 0.101 mol dm⁻³. Then give the mass concentration."
           },
@@ -1868,7 +1868,7 @@
             },
             {
               "tier": "full",
-              "text": "Collision theory says particles react only when they collide with at least the activation energy. More concentrated acid: more H+ ions are crowded into the same space, so they hit the magnesium surface more often per second. Hotter acid: particles move faster, so collisions happen more often, and a larger proportion of them have at least the activation energy, which is the bigger effect. Activation energy means the least energy colliding particles need for a reaction. Exothermic profile: reactants on the left, a hump whose height above them is Ea, products on the right below the starting level, ΔH negative.",
+              "text": "Collision theory says particles react only when they collide with at least the activation energy. More concentrated acid: more $\\ce{H^+}$ ions are crowded into the same space, so they hit the magnesium surface more often per second. Hotter acid: particles move faster, so collisions happen more often, and a larger proportion of them have at least the activation energy, which is the bigger effect. Activation energy means the least energy colliding particles need for a reaction. Exothermic profile: reactants on the left, a hump whose height above them is Ea, products on the right below the starting level, ΔH negative.",
               "meets": [
                 {
                   "point": 0,
@@ -1876,7 +1876,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "more H+ ions are crowded into the same space, so they hit the magnesium surface more often per second"
+                  "quote": "more $\\ce{H^+}$ ions are crowded into the same space, so they hit the magnesium surface more often per second"
                 },
                 {
                   "point": 2,
@@ -1955,7 +1955,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Dynamic equilibrium is when the rate of the forward reaction equals the rate of the backward reaction so the concentrations remain constant. Le Chatelier's principle: if a change is imposed on a system at equilibrium, the system shifts in a way to annul the change. (a) Increase in pressure favours the side with fewer gas molecules; left has 3, right has 2, so more SO3 forms. (b) The forward reaction is exothermic, so raising temperature favours the backward (endothermic) reaction and less SO3 is formed. (c) Removing SO3 makes the equilibrium shift right to produce more SO3. (d) A catalyst has no effect on the amount of SO3, it only helps equilibrium to be reached faster.",
+              "text": "Dynamic equilibrium is when the rate of the forward reaction equals the rate of the backward reaction so the concentrations remain constant. Le Chatelier's principle: if a change is imposed on a system at equilibrium, the system shifts in a way to annul the change. (a) Increase in pressure favours the side with fewer gas molecules; left has 3, right has 2, so more $\\ce{SO3}$ forms. (b) The forward reaction is exothermic, so raising temperature favours the backward (endothermic) reaction and less $\\ce{SO3}$ is formed. (c) Removing $\\ce{SO3}$ makes the equilibrium shift right to produce more $\\ce{SO3}$. (d) A catalyst has no effect on the amount of $\\ce{SO3}$, it only helps equilibrium to be reached faster.",
               "meets": [
                 {
                   "point": 0,
@@ -1967,30 +1967,30 @@
                 },
                 {
                   "point": 2,
-                  "quote": "Increase in pressure favours the side with fewer gas molecules; left has 3, right has 2, so more SO3 forms"
+                  "quote": "Increase in pressure favours the side with fewer gas molecules; left has 3, right has 2, so more $\\ce{SO3}$ forms"
                 },
                 {
                   "point": 3,
-                  "quote": "raising temperature favours the backward (endothermic) reaction and less SO3 is formed"
+                  "quote": "raising temperature favours the backward (endothermic) reaction and less $\\ce{SO3}$ is formed"
                 },
                 {
                   "point": 4,
-                  "quote": "Removing SO3 makes the equilibrium shift right to produce more SO3"
+                  "quote": "Removing $\\ce{SO3}$ makes the equilibrium shift right to produce more $\\ce{SO3}$"
                 },
                 {
                   "point": 5,
-                  "quote": "A catalyst has no effect on the amount of SO3, it only helps equilibrium to be reached faster"
+                  "quote": "A catalyst has no effect on the amount of $\\ce{SO3}$, it only helps equilibrium to be reached faster"
                 }
               ],
               "feedback": "Every prediction is right and every one is explained. Full marks."
             },
             {
               "tier": "full",
-              "text": "At dynamic equilibrium both reactions are still going on but at the same speed, so the amounts of SO2, O2 and SO3 do not change. Le Chatelier: a system at equilibrium responds to any change by moving to oppose that change. (a) Higher pressure: equilibrium moves to the right because 2 moles of gas take less space than 3, so the yield of SO3 rises. (b) Higher temperature: the system absorbs the extra heat by going backwards (endothermic), so SO3 falls. (c) Taking SO3 away: the system makes more SO3 to replace it, shifting right. (d) Catalyst (V2O5): same yield, it just gets there quicker by speeding up both directions equally.",
+              "text": "At dynamic equilibrium both reactions are still going on but at the same speed, so the amounts of $\\ce{SO2}$, $\\ce{O2}$ and $\\ce{SO3}$ do not change. Le Chatelier: a system at equilibrium responds to any change by moving to oppose that change. (a) Higher pressure: equilibrium moves to the right because 2 moles of gas take less space than 3, so the yield of $\\ce{SO3}$ rises. (b) Higher temperature: the system absorbs the extra heat by going backwards (endothermic), so $\\ce{SO3}$ falls. (c) Taking $\\ce{SO3}$ away: the system makes more $\\ce{SO3}$ to replace it, shifting right. (d) Catalyst ($\\ce{V2O5}$): same yield, it just gets there quicker by speeding up both directions equally.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "both reactions are still going on but at the same speed, so the amounts of SO2, O2 and SO3 do not change"
+                  "quote": "both reactions are still going on but at the same speed, so the amounts of $\\ce{SO2}$, $\\ce{O2}$ and $\\ce{SO3}$ do not change"
                 },
                 {
                   "point": 1,
@@ -1998,15 +1998,15 @@
                 },
                 {
                   "point": 2,
-                  "quote": "equilibrium moves to the right because 2 moles of gas take less space than 3, so the yield of SO3 rises"
+                  "quote": "equilibrium moves to the right because 2 moles of gas take less space than 3, so the yield of $\\ce{SO3}$ rises"
                 },
                 {
                   "point": 3,
-                  "quote": "the system absorbs the extra heat by going backwards (endothermic), so SO3 falls"
+                  "quote": "the system absorbs the extra heat by going backwards (endothermic), so $\\ce{SO3}$ falls"
                 },
                 {
                   "point": 4,
-                  "quote": "the system makes more SO3 to replace it, shifting right"
+                  "quote": "the system makes more $\\ce{SO3}$ to replace it, shifting right"
                 },
                 {
                   "point": 5,
@@ -2017,7 +2017,7 @@
             },
             {
               "tier": "partial",
-              "text": "Dynamic equilibrium is when the forward and backward reactions occur at the same rate. Le Chatelier's principle says the equilibrium shifts to oppose any change. (a) More SO3 because pressure pushes it forward. (b) More SO3 because heat speeds up the reaction. (c) More SO3. (d) More SO3 because a catalyst speeds up the reaction.",
+              "text": "Dynamic equilibrium is when the forward and backward reactions occur at the same rate. Le Chatelier's principle says the equilibrium shifts to oppose any change. (a) More $\\ce{SO3}$ because pressure pushes it forward. (b) More $\\ce{SO3}$ because heat speeds up the reaction. (c) More $\\ce{SO3}$. (d) More $\\ce{SO3}$ because a catalyst speeds up the reaction.",
               "meets": [
                 {
                   "point": 0,
@@ -2032,7 +2032,7 @@
             },
             {
               "tier": "partial",
-              "text": "Le Chatelier's principle states that when a system at equilibrium is disturbed it shifts to oppose the disturbance. (a) Increase pressure: shifts to the right since there are fewer molecules on the right, more SO3. (b) Increase temperature: shifts to the left because the reaction is exothermic, less SO3. (c) Removing SO3 shifts the equilibrium to the left. (d) Catalyst has no effect on the position.",
+              "text": "Le Chatelier's principle states that when a system at equilibrium is disturbed it shifts to oppose the disturbance. (a) Increase pressure: shifts to the right since there are fewer molecules on the right, more $\\ce{SO3}$. (b) Increase temperature: shifts to the left because the reaction is exothermic, less $\\ce{SO3}$. (c) Removing $\\ce{SO3}$ shifts the equilibrium to the left. (d) Catalyst has no effect on the position.",
               "meets": [
                 {
                   "point": 1,
@@ -2040,11 +2040,11 @@
                 },
                 {
                   "point": 2,
-                  "quote": "Increase pressure: shifts to the right since there are fewer molecules on the right, more SO3"
+                  "quote": "Increase pressure: shifts to the right since there are fewer molecules on the right, more $\\ce{SO3}$"
                 },
                 {
                   "point": 3,
-                  "quote": "Increase temperature: shifts to the left because the reaction is exothermic, less SO3"
+                  "quote": "Increase temperature: shifts to the left because the reaction is exothermic, less $\\ce{SO3}$"
                 },
                 {
                   "point": 5,
@@ -2055,17 +2055,17 @@
             },
             {
               "tier": "weak",
-              "text": "Equilibrium is when the reaction has stopped. Increasing pressure and temperature both give more SO3 because they make the reaction go faster.",
+              "text": "Equilibrium is when the reaction has stopped. Increasing pressure and temperature both give more $\\ce{SO3}$ because they make the reaction go faster.",
               "meets": [],
               "feedback": "At equilibrium the reaction has not stopped: forward and backward go on at equal rates. Speed and yield are different things. Use Le Chatelier's principle to predict each change from the equation and the sign of ΔH."
             },
             {
               "tier": "weak",
-              "text": "A catalyst speeds up the reaction but does not change the amount of SO3. Raising temperature makes more SO3 because it is exothermic.",
+              "text": "A catalyst speeds up the reaction but does not change the amount of $\\ce{SO3}$. Raising temperature makes more $\\ce{SO3}$ because it is exothermic.",
               "meets": [
                 {
                   "point": 5,
-                  "quote": "A catalyst speeds up the reaction but does not change the amount of SO3"
+                  "quote": "A catalyst speeds up the reaction but does not change the amount of $\\ce{SO3}$"
                 }
               ],
               "feedback": "Your catalyst point is right. Because the forward reaction gives out heat, raising the temperature shifts it backwards and lowers the SO₃. Define dynamic equilibrium, state Le Chatelier's principle, and answer (a) and (c)."
@@ -2175,27 +2175,27 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Fe in FeCl2 is +2 and in FeCl3 it is +3. Cl in Cl2 is 0 and in FeCl3 it is -1. The oxidation number of iron increased so FeCl2 is oxidised, Fe2+ → Fe3+ + e-, it lost an electron. The oxidation number of chlorine decreased so Cl2 is reduced, it gained electrons, so Cl2 is the oxidising agent. FeCl2 is the reducing agent because it gives electrons to chlorine.",
+              "text": "Fe in $\\ce{FeCl2}$ is +2 and in $\\ce{FeCl3}$ it is +3. Cl in $\\ce{Cl2}$ is 0 and in $\\ce{FeCl3}$ it is -1. The oxidation number of iron increased so $\\ce{FeCl2}$ is oxidised, $\\ce{Fe^2+}$ → $\\ce{Fe^3+}$ + e-, it lost an electron. The oxidation number of chlorine decreased so $\\ce{Cl2}$ is reduced, it gained electrons, so $\\ce{Cl2}$ is the oxidising agent. $\\ce{FeCl2}$ is the reducing agent because it gives electrons to chlorine.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Fe in FeCl2 is +2 and in FeCl3 it is +3"
+                  "quote": "Fe in $\\ce{FeCl2}$ is +2 and in $\\ce{FeCl3}$ it is +3"
                 },
                 {
                   "point": 1,
-                  "quote": "Cl in Cl2 is 0 and in FeCl3 it is -1"
+                  "quote": "Cl in $\\ce{Cl2}$ is 0 and in $\\ce{FeCl3}$ it is -1"
                 },
                 {
                   "point": 2,
-                  "quote": "The oxidation number of iron increased so FeCl2 is oxidised, Fe2+ → Fe3+ + e-, it lost an electron"
+                  "quote": "The oxidation number of iron increased so $\\ce{FeCl2}$ is oxidised, $\\ce{Fe^2+}$ → $\\ce{Fe^3+}$ + e-, it lost an electron"
                 },
                 {
                   "point": 3,
-                  "quote": "Cl2 is reduced, it gained electrons, so Cl2 is the oxidising agent"
+                  "quote": "$\\ce{Cl2}$ is reduced, it gained electrons, so $\\ce{Cl2}$ is the oxidising agent"
                 },
                 {
                   "point": 4,
-                  "quote": "FeCl2 is the reducing agent because it gives electrons to chlorine"
+                  "quote": "$\\ce{FeCl2}$ is the reducing agent because it gives electrons to chlorine"
                 }
               ],
               "feedback": "Every oxidation number is right, and the half-equation for iron makes the electron loss clear. Full marks."
@@ -2229,7 +2229,7 @@
             },
             {
               "tier": "partial",
-              "text": "Iron changes from +2 to +3 so it is oxidised. Chlorine changes from 0 to -1 so it is reduced. The oxidising agent is FeCl2 and the reducing agent is Cl2.",
+              "text": "Iron changes from +2 to +3 so it is oxidised. Chlorine changes from 0 to -1 so it is reduced. The oxidising agent is $\\ce{FeCl2}$ and the reducing agent is $\\ce{Cl2}$.",
               "meets": [
                 {
                   "point": 0,
@@ -2244,11 +2244,11 @@
             },
             {
               "tier": "partial",
-              "text": "FeCl2 is oxidised because it gains chlorine. Cl2 is reduced. Chlorine is the oxidising agent and FeCl2 is the reducing agent.",
+              "text": "$\\ce{FeCl2}$ is oxidised because it gains chlorine. $\\ce{Cl2}$ is reduced. Chlorine is the oxidising agent and $\\ce{FeCl2}$ is the reducing agent.",
               "meets": [
                 {
                   "point": 4,
-                  "quote": "FeCl2 is the reducing agent"
+                  "quote": "$\\ce{FeCl2}$ is the reducing agent"
                 }
               ],
               "feedback": "Your agents are right. The question asks you to use oxidation numbers: iron goes from +2 to +3 and chlorine from 0 to −1. Then explain in electrons: Fe²⁺ loses an electron, chlorine gains one."
@@ -2261,11 +2261,11 @@
             },
             {
               "tier": "weak",
-              "text": "Fe is +2 in FeCl2. Chlorine is oxidised because it gains electrons.",
+              "text": "Fe is +2 in $\\ce{FeCl2}$. Chlorine is oxidised because it gains electrons.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Fe is +2 in FeCl2"
+                  "quote": "Fe is +2 in $\\ce{FeCl2}$"
                 }
               ],
               "feedback": "Fe is +2 in FeCl₂, and it becomes +3 in FeCl₃. Gaining electrons is reduction, not oxidation, so chlorine is reduced. Finish by naming the oxidising and reducing agents."
@@ -2286,19 +2286,19 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Zinc is the negative electrode since its E° is more negative. At zinc: Zn → Zn2+ + 2e-. At copper: Cu2+ + 2e- → Cu. Overall: Zn + Cu2+ → Zn2+ + Cu. E.m.f. = 0.34 - (-0.76) = 1.10 V. Electrons flow from the zinc to the copper through the wire. It is a primary cell because it cannot be recharged, unlike the lead-acid accumulator which is a secondary cell.",
+              "text": "Zinc is the negative electrode since its E° is more negative. At zinc: Zn → $\\ce{Zn^2+}$ + 2e-. At copper: $\\ce{Cu^2+}$ + 2e- → Cu. Overall: Zn + $\\ce{Cu^2+}$ → $\\ce{Zn^2+}$ + Cu. E.m.f. = 0.34 - (-0.76) = 1.10 V. Electrons flow from the zinc to the copper through the wire. It is a primary cell because it cannot be recharged, unlike the lead-acid accumulator which is a secondary cell.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Zinc is the negative electrode since its E° is more negative. At zinc: Zn → Zn2+ + 2e-"
+                  "quote": "Zinc is the negative electrode since its E° is more negative. At zinc: Zn → $\\ce{Zn^2+}$ + 2e-"
                 },
                 {
                   "point": 1,
-                  "quote": "At copper: Cu2+ + 2e- → Cu"
+                  "quote": "At copper: $\\ce{Cu^2+}$ + 2e- → Cu"
                 },
                 {
                   "point": 2,
-                  "quote": "Overall: Zn + Cu2+ → Zn2+ + Cu"
+                  "quote": "Overall: Zn + $\\ce{Cu^2+}$ → $\\ce{Zn^2+}$ + Cu"
                 },
                 {
                   "point": 3,
@@ -2317,19 +2317,19 @@
             },
             {
               "tier": "full",
-              "text": "Negative pole: zinc, where zinc atoms are oxidised, Zn(s) → Zn2+(aq) + 2e-. Positive pole: copper, where Cu2+(aq) + 2e- → Cu(s) and copper is deposited. Cell reaction: Zn(s) + Cu2+(aq) → Zn2+(aq) + Cu(s). E°cell = E°right − E°left = +0.34 − (−0.76) = +1.10 V. In the external circuit the electrons travel from Zn to Cu. The Daniell cell is primary: the reaction cannot be reversed by charging, whereas a secondary cell like a car battery can be recharged.",
+              "text": "Negative pole: zinc, where zinc atoms are oxidised, Zn(s) → $\\ce{Zn^2+}$(aq) + 2e-. Positive pole: copper, where $\\ce{Cu^2+}$(aq) + 2e- → Cu(s) and copper is deposited. Cell reaction: Zn(s) + $\\ce{Cu^2+}$(aq) → $\\ce{Zn^2+}$(aq) + Cu(s). E°cell = E°right − E°left = +0.34 − (−0.76) = +1.10 V. In the external circuit the electrons travel from Zn to Cu. The Daniell cell is primary: the reaction cannot be reversed by charging, whereas a secondary cell like a car battery can be recharged.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Negative pole: zinc, where zinc atoms are oxidised, Zn(s) → Zn2+(aq) + 2e-"
+                  "quote": "Negative pole: zinc, where zinc atoms are oxidised, Zn(s) → $\\ce{Zn^2+}$(aq) + 2e-"
                 },
                 {
                   "point": 1,
-                  "quote": "Cu2+(aq) + 2e- → Cu(s)"
+                  "quote": "$\\ce{Cu^2+}$(aq) + 2e- → Cu(s)"
                 },
                 {
                   "point": 2,
-                  "quote": "Zn(s) + Cu2+(aq) → Zn2+(aq) + Cu(s)"
+                  "quote": "Zn(s) + $\\ce{Cu^2+}$(aq) → $\\ce{Zn^2+}$(aq) + Cu(s)"
                 },
                 {
                   "point": 3,
@@ -2348,11 +2348,11 @@
             },
             {
               "tier": "partial",
-              "text": "Zinc: Zn → Zn2+ + 2e-. Copper: Cu2+ + 2e- → Cu. E.m.f. = -0.76 + 0.34 = -0.42 V. Electrons flow from zinc to copper. It is a secondary cell because it produces electricity.",
+              "text": "Zinc: Zn → $\\ce{Zn^2+}$ + 2e-. Copper: $\\ce{Cu^2+}$ + 2e- → Cu. E.m.f. = -0.76 + 0.34 = -0.42 V. Electrons flow from zinc to copper. It is a secondary cell because it produces electricity.",
               "meets": [
                 {
                   "point": 1,
-                  "quote": "Copper: Cu2+ + 2e- → Cu"
+                  "quote": "Copper: $\\ce{Cu^2+}$ + 2e- → Cu"
                 },
                 {
                   "point": 4,
@@ -2363,19 +2363,19 @@
             },
             {
               "tier": "partial",
-              "text": "Zinc is negative. Zn → Zn2+ + 2e-. Cu2+ + 2e- → Cu. Zn + Cu2+ → Zn2+ + Cu. E.m.f. = 0.34 + 0.76 = 1.10 V. Electrons flow from copper to zinc.",
+              "text": "Zinc is negative. Zn → $\\ce{Zn^2+}$ + 2e-. $\\ce{Cu^2+}$ + 2e- → Cu. Zn + $\\ce{Cu^2+}$ → $\\ce{Zn^2+}$ + Cu. E.m.f. = 0.34 + 0.76 = 1.10 V. Electrons flow from copper to zinc.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Zinc is negative. Zn → Zn2+ + 2e-"
+                  "quote": "Zinc is negative. Zn → $\\ce{Zn^2+}$ + 2e-"
                 },
                 {
                   "point": 1,
-                  "quote": "Cu2+ + 2e- → Cu"
+                  "quote": "$\\ce{Cu^2+}$ + 2e- → Cu"
                 },
                 {
                   "point": 2,
-                  "quote": "Zn + Cu2+ → Zn2+ + Cu"
+                  "quote": "Zn + $\\ce{Cu^2+}$ → $\\ce{Zn^2+}$ + Cu"
                 },
                 {
                   "point": 3,
@@ -2511,19 +2511,19 @@
           "answers": [
             {
               "tier": "full",
-              "text": "The ions present are H+, SO4 2- and OH- (from water). At the cathode H+ ions gain electrons: 2H+ + 2e- → H2, so hydrogen gas is produced. At the anode OH- is preferentially discharged instead of SO4 2-: 4OH- → 2H2O + O2 + 4e-, so oxygen is produced. The volume of hydrogen is twice that of oxygen, 2 : 1. The acid becomes more concentrated because only water is being electrolysed.",
+              "text": "The ions present are $\\ce{H^+}$, $\\ce{SO4^2-}$ and $\\ce{OH^-}$ (from water). At the cathode $\\ce{H^+}$ ions gain electrons: $\\ce{2H^+}$ + 2e- → $\\ce{H2}$, so hydrogen gas is produced. At the anode $\\ce{OH^-}$ is preferentially discharged instead of $\\ce{SO4^2-}$: $\\ce{4OH^-}$ → $\\ce{2H2O}$ + $\\ce{O2}$ + 4e-, so oxygen is produced. The volume of hydrogen is twice that of oxygen, 2 : 1. The acid becomes more concentrated because only water is being electrolysed.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "The ions present are H+, SO4 2- and OH- (from water)"
+                  "quote": "The ions present are $\\ce{H^+}$, $\\ce{SO4^2-}$ and $\\ce{OH^-}$ (from water)"
                 },
                 {
                   "point": 1,
-                  "quote": "At the cathode H+ ions gain electrons: 2H+ + 2e- → H2"
+                  "quote": "At the cathode $\\ce{H^+}$ ions gain electrons: $\\ce{2H^+}$ + 2e- → $\\ce{H2}$"
                 },
                 {
                   "point": 2,
-                  "quote": "At the anode OH- is preferentially discharged instead of SO4 2-: 4OH- → 2H2O + O2 + 4e-"
+                  "quote": "At the anode $\\ce{OH^-}$ is preferentially discharged instead of $\\ce{SO4^2-}$: $\\ce{4OH^-}$ → $\\ce{2H2O}$ + $\\ce{O2}$ + 4e-"
                 },
                 {
                   "point": 3,
@@ -2538,38 +2538,38 @@
             },
             {
               "tier": "full",
-              "text": "Ions: H+ (from acid and water), SO4 2- (from acid) and OH- (from water). Cathode (negative): H+ is attracted and discharged as hydrogen gas, 2H+(aq) + 2e- → H2(g). Anode (positive): both SO4 2- and OH- are attracted but OH- is lower in the electrochemical series so it is discharged, 4OH-(aq) → 2H2O(l) + O2(g) + 4e-. For every 4 electrons, 2 H2 and 1 O2 form, so hydrogen : oxygen = 2 : 1. Since H+ and OH- (water) are being removed, the acid gets more concentrated.",
+              "text": "Ions: $\\ce{H^+}$ (from acid and water), $\\ce{SO4^2-}$ (from acid) and $\\ce{OH^-}$ (from water). Cathode (negative): $\\ce{H^+}$ is attracted and discharged as hydrogen gas, $\\ce{2H^+}$(aq) + 2e- → $\\ce{H2}$(g). Anode (positive): both $\\ce{SO4^2-}$ and $\\ce{OH^-}$ are attracted but $\\ce{OH^-}$ is lower in the electrochemical series so it is discharged, $\\ce{4OH^-}$(aq) → $\\ce{2H2O}$(l) + $\\ce{O2}$(g) + 4e-. For every 4 electrons, 2 $\\ce{H2}$ and 1 $\\ce{O2}$ form, so hydrogen : oxygen = 2 : 1. Since $\\ce{H^+}$ and $\\ce{OH^-}$ (water) are being removed, the acid gets more concentrated.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Ions: H+ (from acid and water), SO4 2- (from acid) and OH- (from water)"
+                  "quote": "Ions: $\\ce{H^+}$ (from acid and water), $\\ce{SO4^2-}$ (from acid) and $\\ce{OH^-}$ (from water)"
                 },
                 {
                   "point": 1,
-                  "quote": "H+ is attracted and discharged as hydrogen gas, 2H+(aq) + 2e- → H2(g)"
+                  "quote": "$\\ce{H^+}$ is attracted and discharged as hydrogen gas, $\\ce{2H^+}$(aq) + 2e- → $\\ce{H2}$(g)"
                 },
                 {
                   "point": 2,
-                  "quote": "OH- is lower in the electrochemical series so it is discharged, 4OH-(aq) → 2H2O(l) + O2(g) + 4e-"
+                  "quote": "$\\ce{OH^-}$ is lower in the electrochemical series so it is discharged, $\\ce{4OH^-}$(aq) → $\\ce{2H2O}$(l) + $\\ce{O2}$(g) + 4e-"
                 },
                 {
                   "point": 3,
-                  "quote": "For every 4 electrons, 2 H2 and 1 O2 form, so hydrogen : oxygen = 2 : 1"
+                  "quote": "For every 4 electrons, 2 $\\ce{H2}$ and 1 $\\ce{O2}$ form, so hydrogen : oxygen = 2 : 1"
                 },
                 {
                   "point": 4,
-                  "quote": "Since H+ and OH- (water) are being removed, the acid gets more concentrated"
+                  "quote": "Since $\\ce{H^+}$ and $\\ce{OH^-}$ (water) are being removed, the acid gets more concentrated"
                 }
               ],
               "feedback": "Excellent. Using the four electrons to explain the 2 : 1 ratio is exactly the right reasoning."
             },
             {
               "tier": "partial",
-              "text": "H+, SO4 2- and OH- ions are present. Hydrogen is given off at the cathode and oxygen at the anode. The ratio of hydrogen to oxygen is 2 : 1. The acid becomes more dilute.",
+              "text": "$\\ce{H^+}$, $\\ce{SO4^2-}$ and $\\ce{OH^-}$ ions are present. Hydrogen is given off at the cathode and oxygen at the anode. The ratio of hydrogen to oxygen is 2 : 1. The acid becomes more dilute.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "H+, SO4 2- and OH- ions are present"
+                  "quote": "$\\ce{H^+}$, $\\ce{SO4^2-}$ and $\\ce{OH^-}$ ions are present"
                 },
                 {
                   "point": 3,
@@ -2580,11 +2580,11 @@
             },
             {
               "tier": "partial",
-              "text": "At the cathode: 2H+ + 2e- → H2. At the anode SO4 2- is discharged to give sulphur dioxide and oxygen. The gases are produced in equal volumes.",
+              "text": "At the cathode: $\\ce{2H^+}$ + 2e- → $\\ce{H2}$. At the anode $\\ce{SO4^2-}$ is discharged to give sulphur dioxide and oxygen. The gases are produced in equal volumes.",
               "meets": [
                 {
                   "point": 1,
-                  "quote": "At the cathode: 2H+ + 2e- → H2"
+                  "quote": "At the cathode: $\\ce{2H^+}$ + 2e- → $\\ce{H2}$"
                 }
               ],
               "feedback": "The cathode is right. At the anode OH⁻ is discharged in preference to SO₄²⁻, giving only oxygen: 4OH⁻ → 2H₂O + O₂ + 4e⁻. That makes the ratio 2 : 1. Also list the ions and say what happens to the acid."
@@ -2617,7 +2617,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "t = 32 x 60 + 10 = 1930 s. (a) Q = It = 0.5 x 1930 = 965 C. (b) Cu2+ + 2e- → Cu. 2 x 96500 C deposit 64 g, so 965 C deposit 64 x 965/193000 = 0.32 g. Moles of electrons = 965/96500 = 0.01 mol, moles of Cu = 0.005 mol. (c) The anode dissolves, Cu → Cu2+ + 2e-, so it loses 0.32 g. (d) 2H+ + 2e- → H2, 0.01 mol electrons give 0.005 mol H2 = 0.005 x 22.4 = 0.112 dm3.",
+              "text": "t = 32 x 60 + 10 = 1930 s. (a) Q = It = 0.5 x 1930 = 965 C. (b) $\\ce{Cu^2+}$ + 2e- → Cu. 2 x 96500 C deposit 64 g, so 965 C deposit 64 x 965/193000 = 0.32 g. Moles of electrons = 965/96500 = 0.01 mol, moles of Cu = 0.005 mol. (c) The anode dissolves, Cu → $\\ce{Cu^2+}$ + 2e-, so it loses 0.32 g. (d) $\\ce{2H^+}$ + 2e- → $\\ce{H2}$, 0.01 mol electrons give 0.005 mol $\\ce{H2}$ = 0.005 x 22.4 = 0.112 dm3.",
               "meets": [
                 {
                   "point": 0,
@@ -2637,18 +2637,18 @@
                 },
                 {
                   "point": 4,
-                  "quote": "The anode dissolves, Cu → Cu2+ + 2e-, so it loses 0.32 g"
+                  "quote": "The anode dissolves, Cu → $\\ce{Cu^2+}$ + 2e-, so it loses 0.32 g"
                 },
                 {
                   "point": 5,
-                  "quote": "0.01 mol electrons give 0.005 mol H2 = 0.005 x 22.4 = 0.112 dm3"
+                  "quote": "0.01 mol electrons give 0.005 mol $\\ce{H2}$ = 0.005 x 22.4 = 0.112 dm3"
                 }
               ],
               "feedback": "All correct, and you checked the copper two ways. Full marks."
             },
             {
               "tier": "full",
-              "text": "Time = 1930 s. Q = 0.50 × 1930 = 965 C. Number of faradays = 965 ÷ 96500 = 0.0100 F, i.e. 0.0100 mol of electrons. Copper needs 2 electrons per ion, so 0.0100/2 = 0.00500 mol Cu is deposited, mass = 0.00500 × 64 = 0.320 g. The copper anode goes into solution as Cu2+ at the same rate, so its mass decreases by 0.320 g. Hydrogen also needs 2 electrons per molecule, so 0.00500 mol H2, volume = 0.00500 × 22400 = 112 cm3 at s.t.p.",
+              "text": "Time = 1930 s. Q = 0.50 × 1930 = 965 C. Number of faradays = 965 ÷ 96500 = 0.0100 F, i.e. 0.0100 mol of electrons. Copper needs 2 electrons per ion, so 0.0100/2 = 0.00500 mol Cu is deposited, mass = 0.00500 × 64 = 0.320 g. The copper anode goes into solution as $\\ce{Cu^2+}$ at the same rate, so its mass decreases by 0.320 g. Hydrogen also needs 2 electrons per molecule, so 0.00500 mol $\\ce{H2}$, volume = 0.00500 × 22400 = 112 cm3 at s.t.p.",
               "meets": [
                 {
                   "point": 0,
@@ -2668,11 +2668,11 @@
                 },
                 {
                   "point": 4,
-                  "quote": "The copper anode goes into solution as Cu2+ at the same rate, so its mass decreases by 0.320 g"
+                  "quote": "The copper anode goes into solution as $\\ce{Cu^2+}$ at the same rate, so its mass decreases by 0.320 g"
                 },
                 {
                   "point": 5,
-                  "quote": "0.00500 mol H2, volume = 0.00500 × 22400 = 112 cm3 at s.t.p."
+                  "quote": "0.00500 mol $\\ce{H2}$, volume = 0.00500 × 22400 = 112 cm3 at s.t.p."
                 }
               ],
               "feedback": "Excellent. Seeing that copper and hydrogen both need two electrons each makes parts (b) and (d) quick. Full marks."
@@ -2826,7 +2826,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "C = 85.7/12 = 7.14, H = 14.3/1 = 14.3. Divide by the smallest: C = 1, H = 2. Empirical formula = CH2. Molar mass = 2 x VD = 2 x 28 = 56. (CH2)n = 56, 14n = 56, n = 4. Molecular formula = C4H8. Isomers: but-1-ene CH2=CHCH2CH3 and but-2-ene CH3CH=CHCH3.",
+              "text": "C = 85.7/12 = 7.14, H = 14.3/1 = 14.3. Divide by the smallest: C = 1, H = 2. Empirical formula = $\\ce{CH2}$. Molar mass = 2 x VD = 2 x 28 = 56. ($\\ce{CH2}$)n = 56, 14n = 56, n = 4. Molecular formula = $\\ce{C4H8}$. Isomers: but-1-ene $\\ce{CH2=CHCH2CH3}$ and but-2-ene $\\ce{CH3CH=CHCH3}$.",
               "meets": [
                 {
                   "point": 0,
@@ -2834,7 +2834,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "Empirical formula = CH2"
+                  "quote": "Empirical formula = $\\ce{CH2}$"
                 },
                 {
                   "point": 2,
@@ -2842,18 +2842,18 @@
                 },
                 {
                   "point": 3,
-                  "quote": "14n = 56, n = 4. Molecular formula = C4H8"
+                  "quote": "14n = 56, n = 4. Molecular formula = $\\ce{C4H8}$"
                 },
                 {
                   "point": 4,
-                  "quote": "Isomers: but-1-ene CH2=CHCH2CH3 and but-2-ene CH3CH=CHCH3"
+                  "quote": "Isomers: but-1-ene $\\ce{CH2=CHCH2CH3}$ and but-2-ene $\\ce{CH3CH=CHCH3}$"
                 }
               ],
               "feedback": "Every step is correct, and the structures make your isomers clear. Full marks."
             },
             {
               "tier": "full",
-              "text": "Mole ratio C : H = 85.7 ÷ 12 : 14.3 ÷ 1 = 7.14 : 14.3 = 1 : 2, so the empirical formula is CH2 (mass 14). Relative molecular mass = 2 × 28 = 56. 56 ÷ 14 = 4, so the molecular formula is C4H8. Isomers: but-2-ene and 2-methylpropene.",
+              "text": "Mole ratio C : H = 85.7 ÷ 12 : 14.3 ÷ 1 = 7.14 : 14.3 = 1 : 2, so the empirical formula is $\\ce{CH2}$ (mass 14). Relative molecular mass = 2 × 28 = 56. 56 ÷ 14 = 4, so the molecular formula is $\\ce{C4H8}$. Isomers: but-2-ene and 2-methylpropene.",
               "meets": [
                 {
                   "point": 0,
@@ -2861,7 +2861,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "= 1 : 2, so the empirical formula is CH2"
+                  "quote": "= 1 : 2, so the empirical formula is $\\ce{CH2}$"
                 },
                 {
                   "point": 2,
@@ -2869,7 +2869,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "56 ÷ 14 = 4, so the molecular formula is C4H8"
+                  "quote": "56 ÷ 14 = 4, so the molecular formula is $\\ce{C4H8}$"
                 },
                 {
                   "point": 4,
@@ -2880,7 +2880,7 @@
             },
             {
               "tier": "partial",
-              "text": "C = 85.7/12 = 7.14 and H = 14.3/1 = 14.3. Ratio 1 : 2, empirical formula CH2. Molecular formula = (CH2)n, 14n = 28, n = 2, C2H4. Isomers: ethene and ethane.",
+              "text": "C = 85.7/12 = 7.14 and H = 14.3/1 = 14.3. Ratio 1 : 2, empirical formula $\\ce{CH2}$. Molecular formula = ($\\ce{CH2}$)n, 14n = 28, n = 2, $\\ce{C2H4}$. Isomers: ethene and ethane.",
               "meets": [
                 {
                   "point": 0,
@@ -2888,14 +2888,14 @@
                 },
                 {
                   "point": 1,
-                  "quote": "Ratio 1 : 2, empirical formula CH2"
+                  "quote": "Ratio 1 : 2, empirical formula $\\ce{CH2}$"
                 }
               ],
               "feedback": "Your empirical formula is right. 28 is the vapour density; the molar mass is twice that, 56, so the formula is C₄H₈. Isomers must have the same formula, and ethane is C₂H₆; name two isomers of C₄H₈."
             },
             {
               "tier": "partial",
-              "text": "Molar mass = 2 x 28 = 56. 12 x 4 = 48 and 56 - 48 = 8, so it is C4H8. The isomers are but-1-ene and but-2-ene.",
+              "text": "Molar mass = 2 x 28 = 56. 12 x 4 = 48 and 56 - 48 = 8, so it is $\\ce{C4H8}$. The isomers are but-1-ene and but-2-ene.",
               "meets": [
                 {
                   "point": 2,
@@ -2910,13 +2910,13 @@
             },
             {
               "tier": "weak",
-              "text": "Empirical formula = C85.7H14.3. Molecular formula = C6H6 because it is a hydrocarbon.",
+              "text": "Empirical formula = C85.7H14.3. Molecular formula = $\\ce{C6H6}$ because it is a hydrocarbon.",
               "meets": [],
               "feedback": "Percentages are not numbers of atoms. Divide each by its relative atomic mass first (85.7/12 and 14.3/1) to find the ratio of atoms. Then use the vapour density to find the molar mass."
             },
             {
               "tier": "weak",
-              "text": "C = 85.7 x 12 = 1028.4, H = 14.3 x 1 = 14.3. Ratio 72 : 1, empirical formula C72H.",
+              "text": "C = 85.7 x 12 = 1028.4, H = 14.3 x 1 = 14.3. Ratio 72 : 1, empirical formula $\\ce{C72H}$.",
               "meets": [],
               "feedback": "Divide each percentage by the relative atomic mass; do not multiply. 85.7 ÷ 12 = 7.14 and 14.3 ÷ 1 = 14.3 give the ratio 1 : 2. Then use the vapour density, 28, to find the molar mass."
             }
@@ -2936,7 +2936,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Crude oil is a mixture of hydrocarbons and it is separated by fractional distillation because the components have different boiling points. The crude oil is heated and the vapour goes up the fractionating column which is hotter at the bottom and cooler at the top, and each fraction condenses at its own level. Fractions: petrol used as fuel for cars, kerosene used for lamps and jet fuel, bitumen used for tarring roads. Cracking is breaking down large hydrocarbon molecules into smaller ones using heat and catalyst, e.g. C10H22 → C8H18 + C2H4. Reforming is changing straight chain alkanes into branched or cyclic ones to make better petrol. Octane number is the measure of the anti-knock property of petrol; iso-octane is 100 and heptane is 0, so higher octane petrol knocks less.",
+              "text": "Crude oil is a mixture of hydrocarbons and it is separated by fractional distillation because the components have different boiling points. The crude oil is heated and the vapour goes up the fractionating column which is hotter at the bottom and cooler at the top, and each fraction condenses at its own level. Fractions: petrol used as fuel for cars, kerosene used for lamps and jet fuel, bitumen used for tarring roads. Cracking is breaking down large hydrocarbon molecules into smaller ones using heat and catalyst, e.g. $\\ce{C10H22}$ → $\\ce{C8H18}$ + $\\ce{C2H4}$. Reforming is changing straight chain alkanes into branched or cyclic ones to make better petrol. Octane number is the measure of the anti-knock property of petrol; iso-octane is 100 and heptane is 0, so higher octane petrol knocks less.",
               "meets": [
                 {
                   "point": 0,
@@ -2952,7 +2952,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "Cracking is breaking down large hydrocarbon molecules into smaller ones using heat and catalyst, e.g. C10H22 → C8H18 + C2H4"
+                  "quote": "Cracking is breaking down large hydrocarbon molecules into smaller ones using heat and catalyst, e.g. $\\ce{C10H22}$ → $\\ce{C8H18}$ + $\\ce{C2H4}$"
                 },
                 {
                   "point": 4,
@@ -2967,7 +2967,7 @@
             },
             {
               "tier": "full",
-              "text": "In fractional distillation the crude is vaporised and fed into a tall column; the temperature drops as you go up, so heavy, high-boiling fractions condense low down and light ones higher. Separation depends on boiling point. Refinery gas is bottled as cooking gas, diesel runs lorries and generators, lubricating oil is used in engines. Cracking: long-chain alkanes are split by heat with a catalyst into shorter alkanes and alkenes, C10H22 → C8H18 + C2H4. Reforming: straight chains are rearranged into branched and aromatic molecules. Octane rating tells how well petrol resists knocking (pre-ignition) in an engine; the higher the number, the better.",
+              "text": "In fractional distillation the crude is vaporised and fed into a tall column; the temperature drops as you go up, so heavy, high-boiling fractions condense low down and light ones higher. Separation depends on boiling point. Refinery gas is bottled as cooking gas, diesel runs lorries and generators, lubricating oil is used in engines. Cracking: long-chain alkanes are split by heat with a catalyst into shorter alkanes and alkenes, $\\ce{C10H22}$ → $\\ce{C8H18}$ + $\\ce{C2H4}$. Reforming: straight chains are rearranged into branched and aromatic molecules. Octane rating tells how well petrol resists knocking (pre-ignition) in an engine; the higher the number, the better.",
               "meets": [
                 {
                   "point": 0,
@@ -2983,7 +2983,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "long-chain alkanes are split by heat with a catalyst into shorter alkanes and alkenes, C10H22 → C8H18 + C2H4"
+                  "quote": "long-chain alkanes are split by heat with a catalyst into shorter alkanes and alkenes, $\\ce{C10H22}$ → $\\ce{C8H18}$ + $\\ce{C2H4}$"
                 },
                 {
                   "point": 4,
@@ -3013,7 +3013,7 @@
             },
             {
               "tier": "partial",
-              "text": "The crude oil is heated and the vapour rises in a column that is cooler at the top, so different fractions condense at different heights. Cracking: C10H22 → C8H18 + C2H4, done with heat and a catalyst to break big molecules. Reforming makes branched molecules. Octane number shows the quality of petrol.",
+              "text": "The crude oil is heated and the vapour rises in a column that is cooler at the top, so different fractions condense at different heights. Cracking: $\\ce{C10H22}$ → $\\ce{C8H18}$ + $\\ce{C2H4}$, done with heat and a catalyst to break big molecules. Reforming makes branched molecules. Octane number shows the quality of petrol.",
               "meets": [
                 {
                   "point": 1,
@@ -3021,7 +3021,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "Cracking: C10H22 → C8H18 + C2H4, done with heat and a catalyst to break big molecules"
+                  "quote": "Cracking: $\\ce{C10H22}$ → $\\ce{C8H18}$ + $\\ce{C2H4}$, done with heat and a catalyst to break big molecules"
                 },
                 {
                   "point": 4,

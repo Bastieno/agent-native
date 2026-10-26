@@ -927,7 +927,7 @@
      "answers": [
       {
        "tier": "full",
-       "text": "The soil lost only 0.06 kg so he was right that it wasn't the main source. Water does contribute, since its hydrogen ends up in sugar. But most of the dry mass of wood is carbon, which comes from carbon dioxide in the air. The Calvin cycle fixes that CO2 into sugar which gets built into cellulose.",
+       "text": "The soil lost only 0.06 kg so he was right that it wasn't the main source. Water does contribute, since its hydrogen ends up in sugar. But most of the dry mass of wood is carbon, which comes from carbon dioxide in the air. The Calvin cycle fixes that $\\ce{CO2}$ into sugar which gets built into cellulose.",
        "meets": [
         {
          "point": 0,
@@ -943,14 +943,14 @@
         },
         {
          "point": 3,
-         "quote": "The Calvin cycle fixes that CO2 into sugar which gets built into cellulose."
+         "quote": "The Calvin cycle fixes that $\\ce{CO2}$ into sugar which gets built into cellulose."
         }
        ],
        "feedback": "Full marks. You judged his conclusion as partly right and said what is missing."
       },
       {
        "tier": "full",
-       "text": "His data show the soil didn't supply the mass. Water supplies some hydrogen and oxygen. However, he didn't know that most of a plant's dry weight is carbon from CO2. Plants fix CO2 in the Calvin cycle to make sugar and build the wood from it.",
+       "text": "His data show the soil didn't supply the mass. Water supplies some hydrogen and oxygen. However, he didn't know that most of a plant's dry weight is carbon from $\\ce{CO2}$. Plants fix $\\ce{CO2}$ in the Calvin cycle to make sugar and build the wood from it.",
        "meets": [
         {
          "point": 0,
@@ -962,18 +962,18 @@
         },
         {
          "point": 2,
-         "quote": "However, he didn't know that most of a plant's dry weight is carbon from CO2."
+         "quote": "However, he didn't know that most of a plant's dry weight is carbon from $\\ce{CO2}$."
         },
         {
          "point": 3,
-         "quote": "Plants fix CO2 in the Calvin cycle to make sugar and build the wood from it."
+         "quote": "Plants fix $\\ce{CO2}$ in the Calvin cycle to make sugar and build the wood from it."
         }
        ],
        "feedback": "All four marks. A balanced evaluation."
       },
       {
        "tier": "partial",
-       "text": "The soil only lost 0.06 kg so the tree didn't get its mass from the soil. It got most of it from CO2.",
+       "text": "The soil only lost 0.06 kg so the tree didn't get its mass from the soil. It got most of it from $\\ce{CO2}$.",
        "meets": [
         {
          "point": 0,
@@ -981,10 +981,10 @@
         },
         {
          "point": 2,
-         "quote": "It got most of it from CO2."
+         "quote": "It got most of it from $\\ce{CO2}$."
         }
        ],
-       "feedback": "Good. Evaluate the water claim and say how the CO2 becomes tree mass in the Calvin cycle."
+       "feedback": "Good. Evaluate the water claim and say how the $\\ce{CO2}$ becomes tree mass in the Calvin cycle."
       },
       {
        "tier": "partial",
@@ -1028,7 +1028,7 @@
    "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. model cellular respiration as a sequence of stages that breaks bonds in glucose and builds ATP;\n2. compare photosynthesis and respiration as a cycle of matter and a one-way flow of energy, with numbers.\n\n## Materials\n\nAtom model kits, a stage-by-stage poster, a data table of ATP yields, the problem set.\n\n## Starter (6 minutes)\n\nAsk: \"A runner burns about 100 Calories per mile. How is a cookie turned into movement?\" Collect steps and use the answers to organize the lesson.\n\n## Main activity\n\n1. Break glucose into its stages: glycolysis in the cytoplasm, the Krebs cycle in the mitochondrial matrix, and the electron transport chain on the inner membrane, where oxygen is the final electron acceptor and water is formed.\n2. Compare ATP yields: about 2 from glycolysis alone (fermentation) and about 30 or more with oxygen. Use this to explain why oxygen matters.\n3. Atom accounting: count C, H and O in the reactants and products of both processes and show that mass is conserved while energy is not recycled.\n\n## Checking for understanding\n\nAsk: \"Why does your breathing stay fast for a minute after you stop running?\" Look for oxygen debt and lactate.\n\n## Problem set\n\nAtom counting, ATP comparison, and a short energy-flow explanation.",
    "reading": {
     "title": "Respiration: taking apart glucose, step by step",
-    "content": "When you eat a cookie, its energy is not released all at once like a flame. Cells take glucose apart in small steps, and at each step they capture some of the energy in the form of **ATP**. This is **cellular respiration**, and it has three main stages.\n\nThe first, **glycolysis**, takes place in the cytoplasm and does not need oxygen. One glucose molecule with six carbons is split into two molecules of pyruvate with three carbons each. This yields a net gain of 2 ATP. If oxygen is not available, cells can continue with **fermentation**, which converts pyruvate to lactate in animal cells or to ethanol and carbon dioxide in yeast. Fermentation lets glycolysis continue, but it produces only the same 2 ATP per glucose, which is why intense exercise without enough oxygen cannot be sustained.\n\nWith oxygen present, pyruvate enters the mitochondrion. In the **Krebs cycle**, which occurs in the matrix, the carbon atoms are released as carbon dioxide, which you breathe out, and electron carriers are loaded with energy. In the third stage, the **electron transport chain**, which is on the inner membrane of the mitochondrion, the carriers pass their electrons along a series of proteins. The energy released builds up a gradient of hydrogen ions, and an enzyme called ATP synthase uses that gradient to make ATP. At the end of the chain oxygen accepts the electrons and combines with hydrogen to form water. That is why we need to breathe oxygen. Altogether, aerobic respiration yields about 30 to 32 ATP per glucose, many times more than fermentation.\n\nAtoms are conserved. The overall equation, C6H12O6 plus 6 O2 yielding 6 CO2 plus 6 H2O plus energy, has 6 C, 12 H and 18 O on each side. The carbon in your exhaled carbon dioxide was in glucose, and the glucose was built from carbon dioxide by a plant. Matter cycles. Energy does not: the energy captured as ATP is used for work and finally released as heat, which cannot be recycled by cells. About 60 percent of the energy in glucose is lost as heat even in the best case, which is why you feel warm when you exercise."
+    "content": "When you eat a cookie, its energy is not released all at once like a flame. Cells take glucose apart in small steps, and at each step they capture some of the energy in the form of **ATP**. This is **cellular respiration**, and it has three main stages.\n\nThe first, **glycolysis**, takes place in the cytoplasm and does not need oxygen. One glucose molecule with six carbons is split into two molecules of pyruvate with three carbons each. This yields a net gain of 2 ATP. If oxygen is not available, cells can continue with **fermentation**, which converts pyruvate to lactate in animal cells or to ethanol and carbon dioxide in yeast. Fermentation lets glycolysis continue, but it produces only the same 2 ATP per glucose, which is why intense exercise without enough oxygen cannot be sustained.\n\nWith oxygen present, pyruvate enters the mitochondrion. In the **Krebs cycle**, which occurs in the matrix, the carbon atoms are released as carbon dioxide, which you breathe out, and electron carriers are loaded with energy. In the third stage, the **electron transport chain**, which is on the inner membrane of the mitochondrion, the carriers pass their electrons along a series of proteins. The energy released builds up a gradient of hydrogen ions, and an enzyme called ATP synthase uses that gradient to make ATP. At the end of the chain oxygen accepts the electrons and combines with hydrogen to form water. That is why we need to breathe oxygen. Altogether, aerobic respiration yields about 30 to 32 ATP per glucose, many times more than fermentation.\n\nAtoms are conserved. The overall equation, $\\ce{C6H12O6}$ plus 6 $\\ce{O2}$ yielding 6 $\\ce{CO2}$ plus 6 $\\ce{H2O}$ plus energy, has 6 C, 12 H and 18 O on each side. The carbon in your exhaled carbon dioxide was in glucose, and the glucose was built from carbon dioxide by a plant. Matter cycles. Energy does not: the energy captured as ATP is used for work and finally released as heat, which cannot be recycled by cells. About 60 percent of the energy in glucose is lost as heat even in the best case, which is why you feel warm when you exercise."
    },
    "cards": [
     {
@@ -1096,7 +1096,7 @@
      "answer": "C"
     },
     {
-     "prompt": "How many oxygen atoms are on the reactant side of C6H12O6 + 6 O2?",
+     "prompt": "How many oxygen atoms are on the reactant side of $\\ce{C6H12O6}$ + 6 $\\ce{O2}$?",
      "options": [
       "6",
       "12",
@@ -1231,19 +1231,19 @@
       "States that energy is released as heat when ATP is used",
       "States that heat cannot be recaptured by cells, so energy flows in one direction and needs a constant source"
      ],
-     "modelAnswer": "The reactants C6H12O6 and 6 O2 contain 6 C, 12 H and 18 O. The products 6 CO2 and 6 H2O contain 6 C, 12 H and 18 O, so atoms are conserved. Energy used from ATP ends up as heat, which cells cannot recapture, so energy flows one way through an ecosystem and a constant supply of light is needed.",
+     "modelAnswer": "The reactants $\\ce{C6H12O6}$ and 6 $\\ce{O2}$ contain 6 C, 12 H and 18 O. The products 6 $\\ce{CO2}$ and 6 $\\ce{H2O}$ contain 6 C, 12 H and 18 O, so atoms are conserved. Energy used from ATP ends up as heat, which cells cannot recapture, so energy flows one way through an ecosystem and a constant supply of light is needed.",
      "answers": [
       {
        "tier": "full",
-       "text": "Reactants: glucose has 6 C, 12 H, 6 O and 6 O2 adds 12 O, so 6 C, 12 H, 18 O. Products: 6 CO2 has 6 C and 12 O, and 6 H2O has 12 H and 6 O, which is also 6 C, 12 H, 18 O, so matter is conserved. Energy ends up as heat when ATP is used. Cells can't turn that heat back into chemical energy so energy flows one way and needs sunlight all the time.",
+       "text": "Reactants: glucose has 6 C, 12 H, 6 O and 6 $\\ce{O2}$ adds 12 O, so 6 C, 12 H, 18 O. Products: 6 $\\ce{CO2}$ has 6 C and 12 O, and 6 $\\ce{H2O}$ has 12 H and 6 O, which is also 6 C, 12 H, 18 O, so matter is conserved. Energy ends up as heat when ATP is used. Cells can't turn that heat back into chemical energy so energy flows one way and needs sunlight all the time.",
        "meets": [
         {
          "point": 0,
-         "quote": "Reactants: glucose has 6 C, 12 H, 6 O and 6 O2 adds 12 O, so 6 C, 12 H, 18 O."
+         "quote": "Reactants: glucose has 6 C, 12 H, 6 O and 6 $\\ce{O2}$ adds 12 O, so 6 C, 12 H, 18 O."
         },
         {
          "point": 1,
-         "quote": "Products: 6 CO2 has 6 C and 12 O, and 6 H2O has 12 H and 6 O, which is also 6 C, 12 H, 18 O, so matter is conserved."
+         "quote": "Products: 6 $\\ce{CO2}$ has 6 C and 12 O, and 6 $\\ce{H2O}$ has 12 H and 6 O, which is also 6 C, 12 H, 18 O, so matter is conserved."
         },
         {
          "point": 2,
@@ -1258,15 +1258,15 @@
       },
       {
        "tier": "full",
-       "text": "Left side: C6H12O6 plus 6 O2 gives 6 carbon, 12 hydrogen and 18 oxygen. Right side: 6 CO2 plus 6 H2O is also 6 C, 12 H, 18 O. Nothing is lost. The energy from ATP gets released as heat in the body. Heat can't be reused by organisms to make food so the ecosystem keeps needing new energy from the sun.",
+       "text": "Left side: $\\ce{C6H12O6}$ plus 6 $\\ce{O2}$ gives 6 carbon, 12 hydrogen and 18 oxygen. Right side: 6 $\\ce{CO2}$ plus 6 $\\ce{H2O}$ is also 6 C, 12 H, 18 O. Nothing is lost. The energy from ATP gets released as heat in the body. Heat can't be reused by organisms to make food so the ecosystem keeps needing new energy from the sun.",
        "meets": [
         {
          "point": 0,
-         "quote": "Left side: C6H12O6 plus 6 O2 gives 6 carbon, 12 hydrogen and 18 oxygen."
+         "quote": "Left side: $\\ce{C6H12O6}$ plus 6 $\\ce{O2}$ gives 6 carbon, 12 hydrogen and 18 oxygen."
         },
         {
          "point": 1,
-         "quote": "Right side: 6 CO2 plus 6 H2O is also 6 C, 12 H, 18 O. Nothing is lost."
+         "quote": "Right side: 6 $\\ce{CO2}$ plus 6 $\\ce{H2O}$ is also 6 C, 12 H, 18 O. Nothing is lost."
         },
         {
          "point": 2,
@@ -1281,7 +1281,7 @@
       },
       {
        "tier": "partial",
-       "text": "The reactants have 6 C, 12 H and 18 O. The products have 6 C and 6 H2O so it is balanced. Energy cycles like carbon does.",
+       "text": "The reactants have 6 C, 12 H and 18 O. The products have 6 C and 6 $\\ce{H2O}$ so it is balanced. Energy cycles like carbon does.",
        "meets": [
         {
          "point": 0,
@@ -1289,7 +1289,7 @@
         },
         {
          "point": 1,
-         "quote": "The products have 6 C and 6 H2O so it is balanced."
+         "quote": "The products have 6 C and 6 $\\ce{H2O}$ so it is balanced."
         }
        ],
        "feedback": "Your product count needs all the atoms, including 12 H and 18 O. And energy does not cycle: it ends up as heat."

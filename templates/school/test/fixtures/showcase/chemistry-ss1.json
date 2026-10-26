@@ -1036,11 +1036,11 @@
           "answers": [
             {
               "tier": "full",
-              "text": "(a) Mg + 2HCl → MgCl2 + H2, there is effervescence and the magnesium ribbon disappears. (b) CaO + 2HCl → CaCl2 + H2O, the white solid dissolves and the test tube becomes warm, no bubbles. (c) Na2CO3 + 2HCl → 2NaCl + H2O + CO2, there is effervescence and the gas turns lime water milky.",
+              "text": "(a) Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$, there is effervescence and the magnesium ribbon disappears. (b) CaO + 2HCl → $\\ce{CaCl2}$ + $\\ce{H2O}$, the white solid dissolves and the test tube becomes warm, no bubbles. (c) $\\ce{Na2CO3}$ + 2HCl → 2NaCl + $\\ce{H2O}$ + $\\ce{CO2}$, there is effervescence and the gas turns lime water milky.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Mg + 2HCl → MgCl2 + H2"
+                  "quote": "Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$"
                 },
                 {
                   "point": 1,
@@ -1048,7 +1048,7 @@
                 },
                 {
                   "point": 2,
-                  "quote": "CaO + 2HCl → CaCl2 + H2O"
+                  "quote": "CaO + 2HCl → $\\ce{CaCl2}$ + $\\ce{H2O}$"
                 },
                 {
                   "point": 3,
@@ -1056,7 +1056,7 @@
                 },
                 {
                   "point": 4,
-                  "quote": "Na2CO3 + 2HCl → 2NaCl + H2O + CO2"
+                  "quote": "$\\ce{Na2CO3}$ + 2HCl → 2NaCl + $\\ce{H2O}$ + $\\ce{CO2}$"
                 },
                 {
                   "point": 5,
@@ -1067,11 +1067,11 @@
             },
             {
               "tier": "full",
-              "text": "a) Mg(s) + 2HCl(aq) → MgCl2(aq) + H2(g). Observation: bubbles are given off and the gas gives a pop sound with a lighted splint. b) CaO(s) + 2HCl(aq) → CaCl2(aq) + H2O(l). Observation: the solid dissolves to give a colourless solution and heat is given off but no gas. c) Na2CO3(s) + 2HCl(aq) → 2NaCl(aq) + H2O(l) + CO2(g). Observation: fizzing, and the gas turns lime water milky.",
+              "text": "a) Mg(s) + 2HCl(aq) → $\\ce{MgCl2}$(aq) + $\\ce{H2}$(g). Observation: bubbles are given off and the gas gives a pop sound with a lighted splint. b) CaO(s) + 2HCl(aq) → $\\ce{CaCl2}$(aq) + $\\ce{H2O}$(l). Observation: the solid dissolves to give a colourless solution and heat is given off but no gas. c) $\\ce{Na2CO3}$(s) + 2HCl(aq) → 2NaCl(aq) + $\\ce{H2O}$(l) + $\\ce{CO2}$(g). Observation: fizzing, and the gas turns lime water milky.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Mg(s) + 2HCl(aq) → MgCl2(aq) + H2(g)"
+                  "quote": "Mg(s) + 2HCl(aq) → $\\ce{MgCl2}$(aq) + $\\ce{H2}$(g)"
                 },
                 {
                   "point": 1,
@@ -1079,7 +1079,7 @@
                 },
                 {
                   "point": 2,
-                  "quote": "CaO(s) + 2HCl(aq) → CaCl2(aq) + H2O(l)"
+                  "quote": "CaO(s) + 2HCl(aq) → $\\ce{CaCl2}$(aq) + $\\ce{H2O}$(l)"
                 },
                 {
                   "point": 3,
@@ -1087,7 +1087,7 @@
                 },
                 {
                   "point": 4,
-                  "quote": "Na2CO3(s) + 2HCl(aq) → 2NaCl(aq) + H2O(l) + CO2(g)"
+                  "quote": "$\\ce{Na2CO3}$(s) + 2HCl(aq) → 2NaCl(aq) + $\\ce{H2O}$(l) + $\\ce{CO2}$(g)"
                 },
                 {
                   "point": 5,
@@ -1098,7 +1098,7 @@
             },
             {
               "tier": "partial",
-              "text": "(a) Mg + HCl → MgCl2 + H2, bubbles of hydrogen are seen. (b) CaO + 2HCl → CaCl2 + H2O, it dissolves. (c) Na2CO3 + 2HCl → 2NaCl + H2O + CO2, effervescence occurs.",
+              "text": "(a) Mg + HCl → $\\ce{MgCl2}$ + $\\ce{H2}$, bubbles of hydrogen are seen. (b) CaO + 2HCl → $\\ce{CaCl2}$ + $\\ce{H2O}$, it dissolves. (c) $\\ce{Na2CO3}$ + 2HCl → 2NaCl + $\\ce{H2O}$ + $\\ce{CO2}$, effervescence occurs.",
               "meets": [
                 {
                   "point": 1,
@@ -1106,26 +1106,26 @@
                 },
                 {
                   "point": 2,
-                  "quote": "CaO + 2HCl → CaCl2 + H2O"
+                  "quote": "CaO + 2HCl → $\\ce{CaCl2}$ + $\\ce{H2O}$"
                 },
                 {
                   "point": 4,
-                  "quote": "Na2CO3 + 2HCl → 2NaCl + H2O + CO2"
+                  "quote": "$\\ce{Na2CO3}$ + 2HCl → 2NaCl + $\\ce{H2O}$ + $\\ce{CO2}$"
                 }
               ],
               "feedback": "Equations (b) and (c) are balanced. Equation (a) needs 2HCl to balance the chlorine. For (b) say there is no gas and the tube warms, and for (c) say how you know the gas is carbon (IV) oxide: it turns lime water milky."
             },
             {
               "tier": "partial",
-              "text": "Mg + 2HCl → MgCl2 + H2, effervescence. CaO + 2HCl → CaCl2 + H2, effervescence. Na2CO3 + HCl → NaCl + CO2, the gas turns lime water milky.",
+              "text": "Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$, effervescence. CaO + 2HCl → $\\ce{CaCl2}$ + $\\ce{H2}$, effervescence. $\\ce{Na2CO3}$ + HCl → NaCl + $\\ce{CO2}$, the gas turns lime water milky.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Mg + 2HCl → MgCl2 + H2"
+                  "quote": "Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$"
                 },
                 {
                   "point": 1,
-                  "quote": "MgCl2 + H2, effervescence"
+                  "quote": "$\\ce{MgCl2}$ + $\\ce{H2}$, effervescence"
                 },
                 {
                   "point": 5,
@@ -1142,11 +1142,11 @@
             },
             {
               "tier": "weak",
-              "text": "Mg + 2HCl → MgCl2 + H2. The other ones do not react because calcium oxide and sodium carbonate are not metals.",
+              "text": "Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$. The other ones do not react because calcium oxide and sodium carbonate are not metals.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Mg + 2HCl → MgCl2 + H2"
+                  "quote": "Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$"
                 }
               ],
               "feedback": "Your magnesium equation is right. Oxides and trioxocarbonates do react with acids: an oxide gives a salt and water, and a trioxocarbonate gives a salt, water and carbon (IV) oxide. Write those two, with what you would see."
@@ -1317,25 +1317,25 @@
         "writeUps": [
           {
             "tier": "full",
-            "text": "Method: dilute HCl was put in tubes A, B and C. Clean Mg ribbon was added to A, marble chips to B (gas led into lime water) and MgO to C. MgO was shaken with water in D and tested with universal indicator. Results: A: rapid effervescence, ribbon dissolved, tube warm; gas burned with a squeaky pop, so hydrogen. B: effervescence, chips got smaller, lime water turned milky, so CO2. C: white solid dissolved, colourless solution, tube slightly warm, no gas. D: indicator turned blue, pH 9, so MgO is a basic oxide, weakly alkaline because it is only slightly soluble. Equations: Mg + 2HCl → MgCl2 + H2; CaCO3 + 2HCl → CaCl2 + H2O + CO2; MgO + 2HCl → MgCl2 + H2O. Conclusion: acids react with metals to give a salt and hydrogen, with trioxocarbonates to give a salt, water and CO2, and with basic oxides to give a salt and water only.",
+            "text": "Method: dilute HCl was put in tubes A, B and C. Clean Mg ribbon was added to A, marble chips to B (gas led into lime water) and MgO to C. MgO was shaken with water in D and tested with universal indicator. Results: A: rapid effervescence, ribbon dissolved, tube warm; gas burned with a squeaky pop, so hydrogen. B: effervescence, chips got smaller, lime water turned milky, so $\\ce{CO2}$. C: white solid dissolved, colourless solution, tube slightly warm, no gas. D: indicator turned blue, pH 9, so MgO is a basic oxide, weakly alkaline because it is only slightly soluble. Equations: Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$; $\\ce{CaCO3}$ + 2HCl → $\\ce{CaCl2}$ + $\\ce{H2O}$ + $\\ce{CO2}$; MgO + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2O}$. Conclusion: acids react with metals to give a salt and hydrogen, with trioxocarbonates to give a salt, water and $\\ce{CO2}$, and with basic oxides to give a salt and water only.",
             "scores": [4, 3, 3],
             "feedback": "A model write-up: careful observations, both gases tested and named, the pH explained and every equation balanced."
           },
           {
             "tier": "full",
-            "text": "In A the magnesium ribbon fizzed quickly and disappeared and the tube got hot. A lighted splint gave a pop, so the gas is hydrogen. In B the marble chips fizzed and the gas made the lime water milky, so it is carbon (IV) oxide. In C the magnesium oxide dissolved with no bubbles. In D the universal indicator went blue, about pH 10, showing the oxide is basic. Mg + 2HCl → MgCl2 + H2. CaCO3 + 2HCl → CaCl2 + CO2 + H2O. MgO + 2HCl → MgCl2 + H2O. So an acid with a metal gives hydrogen, with a carbonate gives carbon (IV) oxide, and with an oxide gives no gas.",
+            "text": "In A the magnesium ribbon fizzed quickly and disappeared and the tube got hot. A lighted splint gave a pop, so the gas is hydrogen. In B the marble chips fizzed and the gas made the lime water milky, so it is carbon (IV) oxide. In C the magnesium oxide dissolved with no bubbles. In D the universal indicator went blue, about pH 10, showing the oxide is basic. Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$. $\\ce{CaCO3}$ + 2HCl → $\\ce{CaCl2}$ + $\\ce{CO2}$ + $\\ce{H2O}$. MgO + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2O}$. So an acid with a metal gives hydrogen, with a carbonate gives carbon (IV) oxide, and with an oxide gives no gas.",
             "scores": [3, 3, 3],
             "feedback": "Correct tests, pH and equations throughout. For the last observation mark, note what you felt in tube C as well: it warmed slightly."
           },
           {
             "tier": "partial",
-            "text": "Tube A: magnesium + acid gave bubbles and the ribbon disappeared. The gas was hydrogen. Tube B: marble chips fizzed, the lime water turned milky so the gas was CO2. Tube C: magnesium oxide dissolved. Tube D: the indicator turned blue. Mg + 2HCl → MgCl2 + H2 and CaCO3 + HCl → CaCl2 + CO2.",
+            "text": "Tube A: magnesium + acid gave bubbles and the ribbon disappeared. The gas was hydrogen. Tube B: marble chips fizzed, the lime water turned milky so the gas was $\\ce{CO2}$. Tube C: magnesium oxide dissolved. Tube D: the indicator turned blue. Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$ and $\\ce{CaCO3}$ + HCl → $\\ce{CaCl2}$ + $\\ce{CO2}$.",
             "scores": [3, 2, 1],
             "feedback": "Your observations are good. You named hydrogen without the splint test, and did not say what the blue colour means. The marble chip equation needs water as a product and 2HCl; and C needs its equation too."
           },
           {
             "tier": "partial",
-            "text": "When magnesium was put into the acid there was effervescence and the splint went off with a pop showing hydrogen gas. The marble chips also fizzed and gave hydrogen gas. Magnesium oxide also fizzed in the acid. The pH of magnesium oxide was 9. Mg + 2HCl → MgCl2 + H2.",
+            "text": "When magnesium was put into the acid there was effervescence and the splint went off with a pop showing hydrogen gas. The marble chips also fizzed and gave hydrogen gas. Magnesium oxide also fizzed in the acid. The pH of magnesium oxide was 9. Mg + 2HCl → $\\ce{MgCl2}$ + $\\ce{H2}$.",
             "scores": [2, 2, 1],
             "feedback": "The magnesium test and the pH are right. Marble chips give carbon (IV) oxide, which turns lime water milky, and magnesium oxide dissolves without fizzing. Write the equations for B and C and say what pH 9 means."
           },
@@ -1461,7 +1461,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "KBr: the colourless solution turns orange. Cl2 + 2KBr → 2KCl + Br2. KI: the solution turns brown. Cl2 + 2KI → 2KCl + I2. This happens because chlorine is more reactive than bromine and iodine so it displaces them from their salts.",
+              "text": "KBr: the colourless solution turns orange. $\\ce{Cl2}$ + 2KBr → 2KCl + $\\ce{Br2}$. KI: the solution turns brown. $\\ce{Cl2}$ + 2KI → 2KCl + $\\ce{I2}$. This happens because chlorine is more reactive than bromine and iodine so it displaces them from their salts.",
               "meets": [
                 {
                   "point": 0,
@@ -1469,7 +1469,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "Cl2 + 2KBr → 2KCl + Br2"
+                  "quote": "$\\ce{Cl2}$ + 2KBr → 2KCl + $\\ce{Br2}$"
                 },
                 {
                   "point": 2,
@@ -1477,7 +1477,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "Cl2 + 2KI → 2KCl + I2"
+                  "quote": "$\\ce{Cl2}$ + 2KI → 2KCl + $\\ce{I2}$"
                 },
                 {
                   "point": 4,
@@ -1488,7 +1488,7 @@
             },
             {
               "tier": "full",
-              "text": "In the first tube the solution becomes yellow-brown because bromine is set free, Cl2 + 2KBr → 2KCl + Br2. In the second tube a brown colour of iodine is seen, Cl2 + 2KI → 2KCl + I2. Chlorine is a stronger oxidising agent than Br2 and I2, it removes electrons from Br- and I- ions and turns them into the halogens.",
+              "text": "In the first tube the solution becomes yellow-brown because bromine is set free, $\\ce{Cl2}$ + 2KBr → 2KCl + $\\ce{Br2}$. In the second tube a brown colour of iodine is seen, $\\ce{Cl2}$ + 2KI → 2KCl + $\\ce{I2}$. Chlorine is a stronger oxidising agent than $\\ce{Br2}$ and $\\ce{I2}$, it removes electrons from $\\ce{Br^-}$ and I- ions and turns them into the halogens.",
               "meets": [
                 {
                   "point": 0,
@@ -1496,7 +1496,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "Cl2 + 2KBr → 2KCl + Br2"
+                  "quote": "$\\ce{Cl2}$ + 2KBr → 2KCl + $\\ce{Br2}$"
                 },
                 {
                   "point": 2,
@@ -1504,18 +1504,18 @@
                 },
                 {
                   "point": 3,
-                  "quote": "Cl2 + 2KI → 2KCl + I2"
+                  "quote": "$\\ce{Cl2}$ + 2KI → 2KCl + $\\ce{I2}$"
                 },
                 {
                   "point": 4,
-                  "quote": "Chlorine is a stronger oxidising agent than Br2 and I2, it removes electrons from Br- and I- ions"
+                  "quote": "Chlorine is a stronger oxidising agent than $\\ce{Br2}$ and $\\ce{I2}$, it removes electrons from $\\ce{Br^-}$ and I- ions"
                 }
               ],
               "feedback": "Complete. Explaining the displacement as chlorine taking electrons from the ions shows you see it as a redox reaction. Excellent."
             },
             {
               "tier": "partial",
-              "text": "The potassium bromide turns orange and the potassium iodide turns brown. Cl2 + KBr → KCl + Br2 and Cl2 + KI → KCl + I2. Chlorine is more reactive.",
+              "text": "The potassium bromide turns orange and the potassium iodide turns brown. $\\ce{Cl2}$ + KBr → KCl + $\\ce{Br2}$ and $\\ce{Cl2}$ + KI → KCl + $\\ce{I2}$. Chlorine is more reactive.",
               "meets": [
                 {
                   "point": 0,
@@ -1534,15 +1534,15 @@
             },
             {
               "tier": "partial",
-              "text": "In KBr, bromine is formed: Cl2 + 2KBr → 2KCl + Br2. In KI, iodine is formed: Cl2 + 2KI → 2KCl + I2. Both solutions turn green because of the chlorine.",
+              "text": "In KBr, bromine is formed: $\\ce{Cl2}$ + 2KBr → 2KCl + $\\ce{Br2}$. In KI, iodine is formed: $\\ce{Cl2}$ + 2KI → 2KCl + $\\ce{I2}$. Both solutions turn green because of the chlorine.",
               "meets": [
                 {
                   "point": 1,
-                  "quote": "Cl2 + 2KBr → 2KCl + Br2"
+                  "quote": "$\\ce{Cl2}$ + 2KBr → 2KCl + $\\ce{Br2}$"
                 },
                 {
                   "point": 3,
-                  "quote": "Cl2 + 2KI → 2KCl + I2"
+                  "quote": "$\\ce{Cl2}$ + 2KI → 2KCl + $\\ce{I2}$"
                 }
               ],
               "feedback": "Both equations are balanced. The colours come from the halogens formed, not the chlorine: orange for bromine and brown for iodine. Then say why: chlorine is a stronger oxidising agent than bromine and iodine."
@@ -1579,11 +1579,11 @@
           "answers": [
             {
               "tier": "full",
-              "text": "(a) Variable oxidation state means the metal can have more than one charge, iron can be +2 as in FeCl2 or +3 as in FeCl3. (b) Their compounds have colours e.g. copper(II) sulphate is blue. (c) They can act as catalysts e.g. iron in Haber process for making ammonia. Sodium reacts violently with cold water giving sodium hydroxide and hydrogen gas. Iron does not react with cold water, it only reacts with steam when it is red hot, so iron is less reactive than sodium.",
+              "text": "(a) Variable oxidation state means the metal can have more than one charge, iron can be +2 as in $\\ce{FeCl2}$ or +3 as in $\\ce{FeCl3}$. (b) Their compounds have colours e.g. copper(II) sulphate is blue. (c) They can act as catalysts e.g. iron in Haber process for making ammonia. Sodium reacts violently with cold water giving sodium hydroxide and hydrogen gas. Iron does not react with cold water, it only reacts with steam when it is red hot, so iron is less reactive than sodium.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "iron can be +2 as in FeCl2 or +3 as in FeCl3"
+                  "quote": "iron can be +2 as in $\\ce{FeCl2}$ or +3 as in $\\ce{FeCl3}$"
                 },
                 {
                   "point": 1,
@@ -1606,11 +1606,11 @@
             },
             {
               "tier": "full",
-              "text": "Variable oxidation states: copper forms Cu+ and Cu2+, as in copper(I) oxide and copper(II) oxide. Coloured compounds: iron(II) sulphate is pale green and iron(III) chloride is yellow-brown. Catalytic ability: nickel is used to convert vegetable oil to margarine. Sodium + cold water: very fast reaction, it melts into a ball and moves about, 2Na + 2H2O → 2NaOH + H2. Iron + cold water: no reaction, it needs air and water together to rust slowly and that takes days.",
+              "text": "Variable oxidation states: copper forms Cu+ and $\\ce{Cu^2+}$, as in copper(I) oxide and copper(II) oxide. Coloured compounds: iron(II) sulphate is pale green and iron(III) chloride is yellow-brown. Catalytic ability: nickel is used to convert vegetable oil to margarine. Sodium + cold water: very fast reaction, it melts into a ball and moves about, 2Na + $\\ce{2H2O}$ → 2NaOH + $\\ce{H2}$. Iron + cold water: no reaction, it needs air and water together to rust slowly and that takes days.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "copper forms Cu+ and Cu2+, as in copper(I) oxide and copper(II) oxide"
+                  "quote": "copper forms Cu+ and $\\ce{Cu^2+}$, as in copper(I) oxide and copper(II) oxide"
                 },
                 {
                   "point": 1,
@@ -1622,7 +1622,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "very fast reaction, it melts into a ball and moves about, 2Na + 2H2O → 2NaOH + H2"
+                  "quote": "very fast reaction, it melts into a ball and moves about, 2Na + $\\ce{2H2O}$ → 2NaOH + $\\ce{H2}$"
                 },
                 {
                   "point": 4,
@@ -1633,26 +1633,26 @@
             },
             {
               "tier": "partial",
-              "text": "(a) They have more than one oxidation state like Fe2+ and Fe3+. (b) Their compounds are coloured. (c) They are used as catalysts. Sodium reacts with water but iron does not.",
+              "text": "(a) They have more than one oxidation state like $\\ce{Fe^2+}$ and $\\ce{Fe^3+}$. (b) Their compounds are coloured. (c) They are used as catalysts. Sodium reacts with water but iron does not.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "They have more than one oxidation state like Fe2+ and Fe3+"
+                  "quote": "They have more than one oxidation state like $\\ce{Fe^2+}$ and $\\ce{Fe^3+}$"
                 }
               ],
               "feedback": "Part (a) is right with a good example. For (b) and (c) the question asks for an example each, such as blue copper (II) tetraoxosulphate (VI) and iron in the Haber process. Say how fast sodium reacts with cold water and what it forms, and that iron reacts only with steam."
             },
             {
               "tier": "partial",
-              "text": "Transition metals have variable oxidation states e.g. iron forms FeCl2 and FeCl3. They form coloured compounds e.g. CuSO4 is blue. They are catalysts e.g. platinum. Iron reacts with water faster than sodium because iron is heavier.",
+              "text": "Transition metals have variable oxidation states e.g. iron forms $\\ce{FeCl2}$ and $\\ce{FeCl3}$. They form coloured compounds e.g. $\\ce{CuSO4}$ is blue. They are catalysts e.g. platinum. Iron reacts with water faster than sodium because iron is heavier.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "iron forms FeCl2 and FeCl3"
+                  "quote": "iron forms $\\ce{FeCl2}$ and $\\ce{FeCl3}$"
                 },
                 {
                   "point": 1,
-                  "quote": "CuSO4 is blue"
+                  "quote": "$\\ce{CuSO4}$ is blue"
                 }
               ],
               "feedback": "Parts (a) and (b) are right. For (c), name the reaction the catalyst is used in, such as iron in the Haber process. Sodium is far more reactive than iron: it reacts violently with cold water, while iron does not react with cold water at all."
@@ -1785,19 +1785,19 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Magnesium gives away its 2 outer electrons and becomes Mg2+ with configuration 2,8. Oxygen accepts the 2 electrons and becomes O2- with 2,8. The Mg2+ and O2- ions attract each other by strong electrostatic force, this is an ionic bond. Properties: (1) it has a very high melting point because a lot of heat is needed to overcome the strong attraction between the ions. (2) it conducts electricity when molten because the ions can move but not in solid state.",
+              "text": "Magnesium gives away its 2 outer electrons and becomes $\\ce{Mg^2+}$ with configuration 2,8. Oxygen accepts the 2 electrons and becomes $\\ce{O^2-}$ with 2,8. The $\\ce{Mg^2+}$ and $\\ce{O^2-}$ ions attract each other by strong electrostatic force, this is an ionic bond. Properties: (1) it has a very high melting point because a lot of heat is needed to overcome the strong attraction between the ions. (2) it conducts electricity when molten because the ions can move but not in solid state.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Magnesium gives away its 2 outer electrons and becomes Mg2+ with configuration 2,8"
+                  "quote": "Magnesium gives away its 2 outer electrons and becomes $\\ce{Mg^2+}$ with configuration 2,8"
                 },
                 {
                   "point": 1,
-                  "quote": "Oxygen accepts the 2 electrons and becomes O2- with 2,8"
+                  "quote": "Oxygen accepts the 2 electrons and becomes $\\ce{O^2-}$ with 2,8"
                 },
                 {
                   "point": 2,
-                  "quote": "The Mg2+ and O2- ions attract each other by strong electrostatic force, this is an ionic bond"
+                  "quote": "The $\\ce{Mg^2+}$ and $\\ce{O^2-}$ ions attract each other by strong electrostatic force, this is an ionic bond"
                 },
                 {
                   "point": 3,
@@ -1839,15 +1839,15 @@
             },
             {
               "tier": "partial",
-              "text": "Magnesium loses 2 electrons to form Mg2+ and oxygen gains 2 electrons to form O2-. They form an ionic bond. MgO has a high melting point and dissolves in water.",
+              "text": "Magnesium loses 2 electrons to form $\\ce{Mg^2+}$ and oxygen gains 2 electrons to form $\\ce{O^2-}$. They form an ionic bond. MgO has a high melting point and dissolves in water.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Magnesium loses 2 electrons to form Mg2+"
+                  "quote": "Magnesium loses 2 electrons to form $\\ce{Mg^2+}$"
                 },
                 {
                   "point": 1,
-                  "quote": "oxygen gains 2 electrons to form O2-"
+                  "quote": "oxygen gains 2 electrons to form $\\ce{O^2-}$"
                 },
                 {
                   "point": 3,
@@ -1873,7 +1873,7 @@
             },
             {
               "tier": "weak",
-              "text": "Magnesium burns in oxygen with a bright white light to form magnesium oxide which is a white powder. 2Mg + O2 → 2MgO.",
+              "text": "Magnesium burns in oxygen with a bright white light to form magnesium oxide which is a white powder. 2Mg + $\\ce{O2}$ → 2MgO.",
               "meets": [],
               "feedback": "That describes the reaction, not the bond. Explain what happens to the electrons: magnesium loses two, oxygen gains two, and the ions attract. Then give two properties."
             },
@@ -1898,7 +1898,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "In a covalent bond each atom contributes one electron to the shared pair. In a dative bond the two electrons are donated by one atom only. In NH3, nitrogen has one lone pair of electrons that is not used in bonding. H+ has no electron, so nitrogen donates its lone pair to H+ and they share it, forming NH4+. After it is formed the dative bond is the same as the other three N-H bonds so all four are identical.",
+              "text": "In a covalent bond each atom contributes one electron to the shared pair. In a dative bond the two electrons are donated by one atom only. In $\\ce{NH3}$, nitrogen has one lone pair of electrons that is not used in bonding. $\\ce{H^+}$ has no electron, so nitrogen donates its lone pair to $\\ce{H^+}$ and they share it, forming $\\ce{NH4^+}$. After it is formed the dative bond is the same as the other three N-H bonds so all four are identical.",
               "meets": [
                 {
                   "point": 0,
@@ -1914,7 +1914,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "H+ has no electron, so nitrogen donates its lone pair to H+ and they share it, forming NH4+"
+                  "quote": "$\\ce{H^+}$ has no electron, so nitrogen donates its lone pair to $\\ce{H^+}$ and they share it, forming $\\ce{NH4^+}$"
                 },
                 {
                   "point": 4,
@@ -1925,7 +1925,7 @@
             },
             {
               "tier": "full",
-              "text": "Covalent: sharing of electrons where both atoms give one electron each. Dative: sharing where one atom (the donor) gives both electrons. Ammonia has a lone pair on the N atom. The hydrogen ion is just a proton with an empty orbital, the lone pair from N is donated into it, NH3 + H+ → NH4+. The four N–H bonds in NH4+ are then exactly alike and the ion is tetrahedral.",
+              "text": "Covalent: sharing of electrons where both atoms give one electron each. Dative: sharing where one atom (the donor) gives both electrons. Ammonia has a lone pair on the N atom. The hydrogen ion is just a proton with an empty orbital, the lone pair from N is donated into it, $\\ce{NH3}$ + $\\ce{H^+}$ → $\\ce{NH4^+}$. The four N–H bonds in $\\ce{NH4^+}$ are then exactly alike and the ion is tetrahedral.",
               "meets": [
                 {
                   "point": 0,
@@ -1941,18 +1941,18 @@
                 },
                 {
                   "point": 3,
-                  "quote": "the lone pair from N is donated into it, NH3 + H+ → NH4+"
+                  "quote": "the lone pair from N is donated into it, $\\ce{NH3}$ + $\\ce{H^+}$ → $\\ce{NH4^+}$"
                 },
                 {
                   "point": 4,
-                  "quote": "The four N–H bonds in NH4+ are then exactly alike"
+                  "quote": "The four N–H bonds in $\\ce{NH4^+}$ are then exactly alike"
                 }
               ],
               "feedback": "Complete and precise. Describing H⁺ as a proton with an empty orbital explains exactly why it accepts the pair."
             },
             {
               "tier": "partial",
-              "text": "A covalent bond is formed by sharing of electrons. A dative bond is when one atom provides both electrons. In ammonia, nitrogen has a lone pair which it gives to H+ to form NH4+.",
+              "text": "A covalent bond is formed by sharing of electrons. A dative bond is when one atom provides both electrons. In ammonia, nitrogen has a lone pair which it gives to $\\ce{H^+}$ to form $\\ce{NH4^+}$.",
               "meets": [
                 {
                   "point": 1,
@@ -1964,7 +1964,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "which it gives to H+ to form NH4+"
+                  "quote": "which it gives to $\\ce{H^+}$ to form $\\ce{NH4^+}$"
                 }
               ],
               "feedback": "The dative bond is explained well. To earn the covalent bond mark, say each atom gives one electron to the shared pair. Then answer the last part: once formed, the new bond is identical to the other three."
@@ -2103,7 +2103,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Metallic bonding is the attraction between positive metal ions in a lattice and the sea of delocalised electrons around them. The atoms release their valence electrons, which become delocalised and bind the ions together. (a) copper conducts because the delocalised electrons are mobile and can flow through the wire. (b) the layers of aluminium ions can slide over each other when hammered and the electrons still hold them so it does not break. (c) magnesium has 2 valence electrons while sodium has 1, also Mg2+ is smaller, so the bonding in magnesium is stronger and needs more heat to melt.",
+              "text": "Metallic bonding is the attraction between positive metal ions in a lattice and the sea of delocalised electrons around them. The atoms release their valence electrons, which become delocalised and bind the ions together. (a) copper conducts because the delocalised electrons are mobile and can flow through the wire. (b) the layers of aluminium ions can slide over each other when hammered and the electrons still hold them so it does not break. (c) magnesium has 2 valence electrons while sodium has 1, also $\\ce{Mg^2+}$ is smaller, so the bonding in magnesium is stronger and needs more heat to melt.",
               "meets": [
                 {
                   "point": 0,
@@ -2123,7 +2123,7 @@
                 },
                 {
                   "point": 4,
-                  "quote": "magnesium has 2 valence electrons while sodium has 1, also Mg2+ is smaller, so the bonding in magnesium is stronger and needs more heat to melt"
+                  "quote": "magnesium has 2 valence electrons while sodium has 1, also $\\ce{Mg^2+}$ is smaller, so the bonding in magnesium is stronger and needs more heat to melt"
                 }
               ],
               "feedback": "A full explanation, and you used both factors, charge and size, to compare magnesium with sodium. Excellent."
@@ -2222,7 +2222,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Electron pairs repel each other so they stay as far apart as possible. BeCl2 has 2 bond pairs, it is linear, 180°. BF3 has 3 bond pairs so it is trigonal planar with 120°. CH4 has 4 bond pairs, tetrahedral, 109.5°. NH3 has 3 bond pairs and 1 lone pair, it is pyramidal and the angle is 107°. The lone pair repels the bond pairs more strongly than bond pairs repel each other so the angle closes to 107°.",
+              "text": "Electron pairs repel each other so they stay as far apart as possible. $\\ce{BeCl2}$ has 2 bond pairs, it is linear, 180°. $\\ce{BF3}$ has 3 bond pairs so it is trigonal planar with 120°. $\\ce{CH4}$ has 4 bond pairs, tetrahedral, 109.5°. $\\ce{NH3}$ has 3 bond pairs and 1 lone pair, it is pyramidal and the angle is 107°. The lone pair repels the bond pairs more strongly than bond pairs repel each other so the angle closes to 107°.",
               "meets": [
                 {
                   "point": 0,
@@ -2230,19 +2230,19 @@
                 },
                 {
                   "point": 1,
-                  "quote": "BeCl2 has 2 bond pairs, it is linear, 180°"
+                  "quote": "$\\ce{BeCl2}$ has 2 bond pairs, it is linear, 180°"
                 },
                 {
                   "point": 2,
-                  "quote": "BF3 has 3 bond pairs so it is trigonal planar with 120°"
+                  "quote": "$\\ce{BF3}$ has 3 bond pairs so it is trigonal planar with 120°"
                 },
                 {
                   "point": 3,
-                  "quote": "CH4 has 4 bond pairs, tetrahedral, 109.5°"
+                  "quote": "$\\ce{CH4}$ has 4 bond pairs, tetrahedral, 109.5°"
                 },
                 {
                   "point": 4,
-                  "quote": "NH3 has 3 bond pairs and 1 lone pair, it is pyramidal and the angle is 107°"
+                  "quote": "$\\ce{NH3}$ has 3 bond pairs and 1 lone pair, it is pyramidal and the angle is 107°"
                 },
                 {
                   "point": 5,
@@ -2253,7 +2253,7 @@
             },
             {
               "tier": "full",
-              "text": "Because like charges repel, the bonding pairs and lone pairs on a central atom get as far from each other as they can. With two pairs (BeCl2) the shape is a straight line, 180°. Three pairs (BF3) give a flat triangle, 120°. Four pairs (CH4) give a tetrahedron, 109.5°. In NH3 one of the four pairs is a lone pair, so the atoms form a pyramid with an angle of about 107°. It is smaller than methane's because the lone pair takes more space and repels harder, pressing the three N-H bonds together.",
+              "text": "Because like charges repel, the bonding pairs and lone pairs on a central atom get as far from each other as they can. With two pairs ($\\ce{BeCl2}$) the shape is a straight line, 180°. Three pairs ($\\ce{BF3}$) give a flat triangle, 120°. Four pairs ($\\ce{CH4}$) give a tetrahedron, 109.5°. In $\\ce{NH3}$ one of the four pairs is a lone pair, so the atoms form a pyramid with an angle of about 107°. It is smaller than methane's because the lone pair takes more space and repels harder, pressing the three N-H bonds together.",
               "meets": [
                 {
                   "point": 0,
@@ -2261,19 +2261,19 @@
                 },
                 {
                   "point": 1,
-                  "quote": "With two pairs (BeCl2) the shape is a straight line, 180°"
+                  "quote": "With two pairs ($\\ce{BeCl2}$) the shape is a straight line, 180°"
                 },
                 {
                   "point": 2,
-                  "quote": "Three pairs (BF3) give a flat triangle, 120°"
+                  "quote": "Three pairs ($\\ce{BF3}$) give a flat triangle, 120°"
                 },
                 {
                   "point": 3,
-                  "quote": "Four pairs (CH4) give a tetrahedron, 109.5°"
+                  "quote": "Four pairs ($\\ce{CH4}$) give a tetrahedron, 109.5°"
                 },
                 {
                   "point": 4,
-                  "quote": "In NH3 one of the four pairs is a lone pair, so the atoms form a pyramid with an angle of about 107°"
+                  "quote": "In $\\ce{NH3}$ one of the four pairs is a lone pair, so the atoms form a pyramid with an angle of about 107°"
                 },
                 {
                   "point": 5,
@@ -2284,26 +2284,26 @@
             },
             {
               "tier": "partial",
-              "text": "BeCl2 is linear 180°, BF3 is trigonal planar 120°, CH4 is tetrahedral 109.5° and NH3 is tetrahedral 109.5° also because it has four pairs.",
+              "text": "$\\ce{BeCl2}$ is linear 180°, $\\ce{BF3}$ is trigonal planar 120°, $\\ce{CH4}$ is tetrahedral 109.5° and $\\ce{NH3}$ is tetrahedral 109.5° also because it has four pairs.",
               "meets": [
                 {
                   "point": 1,
-                  "quote": "BeCl2 is linear 180°"
+                  "quote": "$\\ce{BeCl2}$ is linear 180°"
                 },
                 {
                   "point": 2,
-                  "quote": "BF3 is trigonal planar 120°"
+                  "quote": "$\\ce{BF3}$ is trigonal planar 120°"
                 },
                 {
                   "point": 3,
-                  "quote": "CH4 is tetrahedral 109.5°"
+                  "quote": "$\\ce{CH4}$ is tetrahedral 109.5°"
                 }
               ],
               "feedback": "The first three shapes are right. Ammonia's four pairs include one lone pair, which repels more strongly, so the molecule is pyramidal with an angle of about 107°. Start your answer by stating that electron pairs repel and spread as far apart as possible."
             },
             {
               "tier": "partial",
-              "text": "The electron pairs repel and spread out as far as possible. BeCl2 is linear. BF3 is triangular. CH4 is tetrahedral and NH3 is pyramidal. NH3 has a smaller angle because nitrogen is smaller than carbon.",
+              "text": "The electron pairs repel and spread out as far as possible. $\\ce{BeCl2}$ is linear. $\\ce{BF3}$ is triangular. $\\ce{CH4}$ is tetrahedral and $\\ce{NH3}$ is pyramidal. $\\ce{NH3}$ has a smaller angle because nitrogen is smaller than carbon.",
               "meets": [
                 {
                   "point": 0,
@@ -2314,13 +2314,13 @@
             },
             {
               "tier": "weak",
-              "text": "All the molecules are tetrahedral because carbon and other atoms always form four bonds. NH3 is smaller because it has only three hydrogens.",
+              "text": "All the molecules are tetrahedral because carbon and other atoms always form four bonds. $\\ce{NH3}$ is smaller because it has only three hydrogens.",
               "meets": [],
               "feedback": "Each molecule takes the shape that puts its electron pairs furthest apart, so two pairs give a straight line and three a flat triangle. Count the pairs on the central atom first, then use the table in this week's reading."
             },
             {
               "tier": "weak",
-              "text": "Electron pairs repel so they move far apart. BeCl2 is bent like water, BF3 is pyramidal.",
+              "text": "Electron pairs repel so they move far apart. $\\ce{BeCl2}$ is bent like water, $\\ce{BF3}$ is pyramidal.",
               "meets": [
                 {
                   "point": 0,
@@ -2531,11 +2531,11 @@
           "answers": [
             {
               "tier": "full",
-              "text": "Molar mass of CaCO3 = 40 + 12 + 16x3 = 100 g/mol. (a) % Ca = 40/100 x 100 = 40%. (b) moles = 25/100 = 0.25 mol. (c) number of formula units = 0.25 x 6.02 x 10^23 = 1.505 x 10^23. (d) CaCO3 → CaO + CO2, 1 mole of CaCO3 gives 1 mole of CO2 so 0.25 mol CO2. Mass = 0.25 x 44 = 11 g.",
+              "text": "Molar mass of $\\ce{CaCO3}$ = 40 + 12 + 16x3 = 100 g/mol. (a) % Ca = 40/100 x 100 = 40%. (b) moles = 25/100 = 0.25 mol. (c) number of formula units = 0.25 x 6.02 x 10^23 = 1.505 x 10^23. (d) $\\ce{CaCO3}$ → CaO + $\\ce{CO2}$, 1 mole of $\\ce{CaCO3}$ gives 1 mole of $\\ce{CO2}$ so 0.25 mol $\\ce{CO2}$. Mass = 0.25 x 44 = 11 g.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Molar mass of CaCO3 = 40 + 12 + 16x3 = 100 g/mol"
+                  "quote": "Molar mass of $\\ce{CaCO3}$ = 40 + 12 + 16x3 = 100 g/mol"
                 },
                 {
                   "point": 1,
@@ -2551,7 +2551,7 @@
                 },
                 {
                   "point": 4,
-                  "quote": "CaCO3 → CaO + CO2, 1 mole of CaCO3 gives 1 mole of CO2"
+                  "quote": "$\\ce{CaCO3}$ → CaO + $\\ce{CO2}$, 1 mole of $\\ce{CaCO3}$ gives 1 mole of $\\ce{CO2}$"
                 },
                 {
                   "point": 5,
@@ -2562,7 +2562,7 @@
             },
             {
               "tier": "full",
-              "text": "M(CaCO3) = 100 g mol-1. Calcium is 40 out of 100, so 40%. n = m/M = 25.0/100 = 0.250 mol. Formula units = nL = 0.250 × 6.02 × 10^23 = 1.51 × 10^23. Equation: CaCO3(s) → CaO(s) + CO2(g); the mole ratio CaCO3 : CO2 is 1 : 1, so n(CO2) = 0.250 mol and m = nM = 0.250 × 44 = 11.0 g of CO2.",
+              "text": "M(CaCO3) = 100 g mol-1. Calcium is 40 out of 100, so 40%. n = m/M = 25.0/100 = 0.250 mol. Formula units = nL = 0.250 × 6.02 × 10^23 = 1.51 × 10^23. Equation: $\\ce{CaCO3}$(s) → CaO(s) + $\\ce{CO2}$(g); the mole ratio $\\ce{CaCO3}$ : $\\ce{CO2}$ is 1 : 1, so n($\\ce{CO2}$) = 0.250 mol and m = nM = 0.250 × 44 = 11.0 g of $\\ce{CO2}$.",
               "meets": [
                 {
                   "point": 0,
@@ -2582,22 +2582,22 @@
                 },
                 {
                   "point": 4,
-                  "quote": "CaCO3(s) → CaO(s) + CO2(g); the mole ratio CaCO3 : CO2 is 1 : 1"
+                  "quote": "$\\ce{CaCO3}$(s) → CaO(s) + $\\ce{CO2}$(g); the mole ratio $\\ce{CaCO3}$ : $\\ce{CO2}$ is 1 : 1"
                 },
                 {
                   "point": 5,
-                  "quote": "m = nM = 0.250 × 44 = 11.0 g of CO2"
+                  "quote": "m = nM = 0.250 × 44 = 11.0 g of $\\ce{CO2}$"
                 }
               ],
               "feedback": "All correct, with sensible significant figures and the formulas n = m/M and N = nL used well."
             },
             {
               "tier": "partial",
-              "text": "Molar mass CaCO3 = 40 + 12 + 48 = 100. % of Ca = 40%. Moles = 25/100 = 0.25. Number of particles = 0.25 x 6.02 x 10^23 = 1.505 x 10^23. Mass of CO2 = 25 - 40% = 15 g.",
+              "text": "Molar mass $\\ce{CaCO3}$ = 40 + 12 + 48 = 100. % of Ca = 40%. Moles = 25/100 = 0.25. Number of particles = 0.25 x 6.02 x 10^23 = 1.505 x 10^23. Mass of $\\ce{CO2}$ = 25 - 40% = 15 g.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Molar mass CaCO3 = 40 + 12 + 48 = 100"
+                  "quote": "Molar mass $\\ce{CaCO3}$ = 40 + 12 + 48 = 100"
                 },
                 {
                   "point": 1,
@@ -2616,11 +2616,11 @@
             },
             {
               "tier": "partial",
-              "text": "CaCO3 = 40 + 12 + 16 = 68. % Ca = 40/68 x 100 = 58.8%. Moles = 25/68 = 0.37 mol. CaCO3 → CaO + CO2, so moles of CO2 = moles of CaCO3.",
+              "text": "$\\ce{CaCO3}$ = 40 + 12 + 16 = 68. % Ca = 40/68 x 100 = 58.8%. Moles = 25/68 = 0.37 mol. $\\ce{CaCO3}$ → CaO + $\\ce{CO2}$, so moles of $\\ce{CO2}$ = moles of $\\ce{CaCO3}$.",
               "meets": [
                 {
                   "point": 4,
-                  "quote": "CaCO3 → CaO + CO2, so moles of CO2 = moles of CaCO3"
+                  "quote": "$\\ce{CaCO3}$ → CaO + $\\ce{CO2}$, so moles of $\\ce{CO2}$ = moles of $\\ce{CaCO3}$"
                 }
               ],
               "feedback": "Your equation and mole ratio are right. You counted only one oxygen: CaCO₃ has three, so its molar mass is 100, not 68. Redo (a) to (c) with 100, then find the mass of CO₂ from 0.25 mol × 44."
@@ -2633,11 +2633,11 @@
             },
             {
               "tier": "weak",
-              "text": "Molar mass of CaCO3 is 40 + 12 + 48 = 100. The carbon dioxide given off is 25 g because mass is conserved.",
+              "text": "Molar mass of $\\ce{CaCO3}$ is 40 + 12 + 48 = 100. The carbon dioxide given off is 25 g because mass is conserved.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Molar mass of CaCO3 is 40 + 12 + 48 = 100"
+                  "quote": "Molar mass of $\\ce{CaCO3}$ is 40 + 12 + 48 = 100"
                 }
               ],
               "feedback": "Your molar mass is right. Mass is conserved across all the products, so the 25 g is shared between CaO and CO₂. Find the moles of CaCO₃ first, then use the equation to get the moles and mass of CO₂."
@@ -2817,7 +2817,7 @@
             },
             {
               "tier": "partial",
-              "text": "(a) A primary standard is a pure stable substance that can be weighed accurately to give a solution of known concentration. (b) 3.15/0.25 = 12.6 g dm-3. (c) Molar mass of (COOH)2 = 90, so molar conc = 12.6/90 = 0.14 mol dm-3. (d) 0.014 mol dm-3.",
+              "text": "(a) A primary standard is a pure stable substance that can be weighed accurately to give a solution of known concentration. (b) 3.15/0.25 = 12.6 g dm-3. (c) Molar mass of $\\ce{(COOH)2}$ = 90, so molar conc = 12.6/90 = 0.14 mol dm-3. (d) 0.014 mol dm-3.",
               "meets": [
                 {
                   "point": 0,
@@ -2863,7 +2863,7 @@
           "answers": [
             {
               "tier": "full",
-              "text": "(a) moles of Zn = 6.5/65 = 0.1 mol. (b) Zn : HCl = 1 : 2 so moles of HCl = 0.2 mol. Volume = 0.2/2 = 0.1 dm3 = 100 cm3. (c) ZnCl2 = 65 + 71 = 136 g/mol. Zn : ZnCl2 = 1 : 1 so 0.1 mol ZnCl2. Mass = 0.1 x 136 = 13.6 g. (d) % yield = 11.56/13.6 x 100 = 85%.",
+              "text": "(a) moles of Zn = 6.5/65 = 0.1 mol. (b) Zn : HCl = 1 : 2 so moles of HCl = 0.2 mol. Volume = 0.2/2 = 0.1 dm3 = 100 cm3. (c) $\\ce{ZnCl2}$ = 65 + 71 = 136 g/mol. Zn : $\\ce{ZnCl2}$ = 1 : 1 so 0.1 mol $\\ce{ZnCl2}$. Mass = 0.1 x 136 = 13.6 g. (d) % yield = 11.56/13.6 x 100 = 85%.",
               "meets": [
                 {
                   "point": 0,
@@ -2879,7 +2879,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "ZnCl2 = 65 + 71 = 136 g/mol. Zn : ZnCl2 = 1 : 1 so 0.1 mol ZnCl2"
+                  "quote": "$\\ce{ZnCl2}$ = 65 + 71 = 136 g/mol. Zn : $\\ce{ZnCl2}$ = 1 : 1 so 0.1 mol $\\ce{ZnCl2}$"
                 },
                 {
                   "point": 4,
@@ -2925,7 +2925,7 @@
             },
             {
               "tier": "partial",
-              "text": "Moles of Zn = 6.5/65 = 0.1. Moles of HCl = 0.1, volume = 0.1/2 = 0.05 dm3. Molar mass of ZnCl2 = 136, mass = 0.1 x 136 = 13.6 g. Percentage yield = 11.56/13.6 x 100 = 85%.",
+              "text": "Moles of Zn = 6.5/65 = 0.1. Moles of HCl = 0.1, volume = 0.1/2 = 0.05 dm3. Molar mass of $\\ce{ZnCl2}$ = 136, mass = 0.1 x 136 = 13.6 g. Percentage yield = 11.56/13.6 x 100 = 85%.",
               "meets": [
                 {
                   "point": 0,
@@ -2933,7 +2933,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "Molar mass of ZnCl2 = 136"
+                  "quote": "Molar mass of $\\ce{ZnCl2}$ = 136"
                 },
                 {
                   "point": 4,
@@ -2948,7 +2948,7 @@
             },
             {
               "tier": "partial",
-              "text": "Zn = 6.5/65 = 0.1 mol, HCl = 0.2 mol. Volume = 0.2 x 2 = 0.4 dm3. ZnCl2 = 65 + 35.5 = 100.5, so mass = 0.1 x 100.5 = 10.05 g. Yield = 10.05/11.56 x 100 = 86.9%.",
+              "text": "Zn = 6.5/65 = 0.1 mol, HCl = 0.2 mol. Volume = 0.2 x 2 = 0.4 dm3. $\\ce{ZnCl2}$ = 65 + 35.5 = 100.5, so mass = 0.1 x 100.5 = 10.05 g. Yield = 10.05/11.56 x 100 = 86.9%.",
               "meets": [
                 {
                   "point": 0,
@@ -3027,13 +3027,13 @@
         "writeUps": [
           {
             "tier": "full",
-            "text": "Method: I weighed 2.66 g of anhydrous Na2CO3 by difference (bottle + solid 14.82 g, empty bottle 12.16 g). I dissolved it in about 100 cm3 of distilled water in a beaker, transferred it to a 250 cm3 volumetric flask with a funnel, rinsed the beaker, rod and funnel twice into the flask, made it up to the mark with the meniscus at eye level and inverted it ten times. Results: mass concentration = 2.66/0.250 = 10.64 g dm-3. Molar mass of Na2CO3 = 46 + 12 + 48 = 106 g mol-1, so molar concentration = 10.64/106 = 0.100 mol dm-3. Dilution: 25.0 cm3 made up to 250 cm3 gives a dilution factor of 10, so the new concentration = 0.100/10 = 0.0100 mol dm-3 (1.064 g dm-3). Conclusion: the standard solution is 0.100 mol dm-3 and the diluted one 0.0100 mol dm-3.",
+            "text": "Method: I weighed 2.66 g of anhydrous $\\ce{Na2CO3}$ by difference (bottle + solid 14.82 g, empty bottle 12.16 g). I dissolved it in about 100 cm3 of distilled water in a beaker, transferred it to a 250 cm3 volumetric flask with a funnel, rinsed the beaker, rod and funnel twice into the flask, made it up to the mark with the meniscus at eye level and inverted it ten times. Results: mass concentration = 2.66/0.250 = 10.64 g dm-3. Molar mass of $\\ce{Na2CO3}$ = 46 + 12 + 48 = 106 g mol-1, so molar concentration = 10.64/106 = 0.100 mol dm-3. Dilution: 25.0 cm3 made up to 250 cm3 gives a dilution factor of 10, so the new concentration = 0.100/10 = 0.0100 mol dm-3 (1.064 g dm-3). Conclusion: the standard solution is 0.100 mol dm-3 and the diluted one 0.0100 mol dm-3.",
             "scores": [4, 4, 2],
             "feedback": "Excellent. Weighing by difference and rinsing everything into the flask are exactly right, and every calculation is correct."
           },
           {
             "tier": "full",
-            "text": "Mass of Na2CO3 used = 2.65 g. It was dissolved in distilled water, poured into the 250 cm3 flask with rinsings and made up to the mark, then shaken well. Mass concentration = 2.65 g / 0.250 dm3 = 10.6 g dm-3. Moles = 2.65/106 = 0.0250 mol, so molar concentration = 0.0250/0.250 = 0.100 mol dm-3. 25.0 cm3 of it was diluted to 250 cm3. c1V1 = c2V2: 0.100 × 25.0 = c2 × 250, c2 = 0.0100 mol dm-3. Dilution factor = 250/25.0 = 10.",
+            "text": "Mass of $\\ce{Na2CO3}$ used = 2.65 g. It was dissolved in distilled water, poured into the 250 cm3 flask with rinsings and made up to the mark, then shaken well. Mass concentration = 2.65 g / 0.250 dm3 = 10.6 g dm-3. Moles = 2.65/106 = 0.0250 mol, so molar concentration = 0.0250/0.250 = 0.100 mol dm-3. 25.0 cm3 of it was diluted to 250 cm3. c1V1 = c2V2: 0.100 × 25.0 = c2 × 250, c2 = 0.0100 mol dm-3. Dilution factor = 250/25.0 = 10.",
             "scores": [3, 4, 2],
             "feedback": "All your calculations are correct. For the last technique mark, say how you read the mark (meniscus at eye level) and how you weighed the solid."
           },
@@ -3045,7 +3045,7 @@
           },
           {
             "tier": "partial",
-            "text": "2.70 g of Na2CO3 was dissolved in a beaker of distilled water and poured into the 250 cm3 flask, and the beaker was rinsed into it. Water was added up to the mark. Mass concentration = 2.70/0.25 = 10.8 g/dm3. Molar concentration = 10.8/106 = 0.102 mol/dm3. After dilution it is 0.102 mol/dm3 because the amount of salt does not change.",
+            "text": "2.70 g of $\\ce{Na2CO3}$ was dissolved in a beaker of distilled water and poured into the 250 cm3 flask, and the beaker was rinsed into it. Water was added up to the mark. Mass concentration = 2.70/0.25 = 10.8 g/dm3. Molar concentration = 10.8/106 = 0.102 mol/dm3. After dilution it is 0.102 mol/dm3 because the amount of salt does not change.",
             "scores": [3, 4, 0],
             "feedback": "Good technique and correct concentrations for your mass. The amount of salt stays the same, but it is now in ten times the volume, so the concentration falls ten times, to 0.0102 mol dm⁻³. Say the dilution factor is 10."
           },
@@ -3057,7 +3057,7 @@
           },
           {
             "tier": "weak",
-            "text": "I weighed the sodium carbonate on the balance and it was 2.65 g. I poured it in the flask and put water. Molar mass of Na2CO3 is 23 + 12 + 16 = 51. Concentration = 2.65/51 = 0.052 mol/dm3.",
+            "text": "I weighed the sodium carbonate on the balance and it was 2.65 g. I poured it in the flask and put water. Molar mass of $\\ce{Na2CO3}$ is 23 + 12 + 16 = 51. Concentration = 2.65/51 = 0.052 mol/dm3.",
             "scores": [1, 0, 0],
             "feedback": "Recording the mass was right. Na₂CO₃ has two sodium atoms and three oxygen atoms, so the molar mass is 106. Then divide the moles by 0.250 dm³. Also describe how you made the solution up to the mark and do the dilution."
           }

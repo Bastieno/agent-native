@@ -113,6 +113,15 @@ page still not show it. Say "the school's terms are set — here they are", neve
 it with `view-screen` first; when it cannot tell you, say what the data says
 and leave the screen out of it.
 
+## Writing formulas and notation
+
+Anything you write that a learner reads, a lesson note, a worksheet, a question, an answer, a card, is shown
+exactly as you type it, except between dollar signs, where it is set as notation. So mark notation, never plain-type it:
+
+- Chemistry: `$\ce{MgCl2}$`, `$\ce{Ca(NO3)2}$`, `$\ce{Mg^2+}$`, `$\ce{2H2 + O2 -> 2H2O}$`. Plain `MgCl2` or `Mg2+` shows as typed, with the numbers on the line.
+- Maths and physics: `$x^2$`, `$\frac{1}{2}mv^2$`, `$9.8\ \text{m/s}^2$`.
+- Leave ordinary words, prices, class names and grades (N300, SS3B, B+) outside the dollar signs.
+
 ## Running Actions
 
 Always use `pnpm action <name> [--args]` from the template root.

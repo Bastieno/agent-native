@@ -7,7 +7,7 @@
       "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. recall the meaning of networking, the Internet and an intranet;\n2. choose the right network type (LAN, MAN or WAN) for a given organisation;\n3. state the devices that make a network work;\n4. work out the cost saving from sharing resources and state the significance of networking.\n\n## Materials\n\nA network switch, a router and a network cable to pass around, a floor plan of a school with two blocks, calculators.\n\n## Starter (5 minutes)\n\nRecap SS1: ask pupils to explain in one sentence the difference between a LAN and a WAN. Then ask: a school has an ICT room in Block A and an admin office in Block B, 80 metres apart. What kind of network joins them?\n\n## Development\n\n1. Recall: a network links computers to share data and resources. The Internet is public and worldwide; an intranet is private to one organisation; an extranet allows selected outsiders, such as parents, to reach part of the intranet.\n2. Network devices: network interface card (NIC), cable or wireless access point, switch (links computers in a LAN), router (links networks and gives Internet access), modem (converts signals for the telephone or fibre line).\n3. Choose the network: one building or compound means LAN; several sites in a city means MAN; branches across states mean WAN.\n4. Cost of sharing: work out the cost of one shared printer against many.\n5. Significance: sharing, communication, central backup, security; and its weaknesses.\n\n## Class activity\n\nPupils are given five organisations (a village clinic, a state university, a bank, a cyber cafe, a pharmacy chain) and pick and justify a network type for each.\n\n## Evaluation\n\n1. Which device links several computers in a LAN?\n2. Why do banks use WANs?\n\n## Assignment\n\nComplete the worksheet and the quiz on the app.",
       "reading": {
         "title": "Putting a network to work",
-        "content": "# Networking in practice: choosing and using networks\n\n## Recall\n\nA **network** links two or more computers to share data, programs and devices. The **Internet** is a public worldwide network of networks. An **intranet** is a private network for one organisation. An **extranet** is a part of an intranet that selected outsiders, such as parents or suppliers, can reach with a password.\n\n## Devices that make a network work\n\n- **Network interface card (NIC)**: the part in each computer that connects it to the network.\n- **Cable or wireless access point**: the path for the signal.\n- **Switch**: joins the computers inside a LAN and sends data only to the computer that needs it.\n- **Router**: joins different networks, such as the school LAN to the Internet, and directs data.\n- **Modem**: converts signals so they can travel on a telephone or fibre line.\n\n## Choosing the right network\n\n| Organisation | Network | Why |\n| --- | --- | --- |\n| A school ICT room | LAN | one room or building |\n| A university with campuses across a city | MAN | several sites in one city |\n| A bank with branches in many states | WAN | sites far apart |\n\n## The cost of sharing\n\nA school ICT room has 20 computers. Giving each its own printer at N150,000 would cost 20 x 150,000 = N3,000,000. Connecting them in a LAN so that they share two printers costs 2 x 150,000 = N300,000 plus a switch of about N60,000 and cables of N40,000, a total of N400,000. The school saves N3,000,000 - N400,000 = **N2,600,000**.\n\n## Significance and limits\n\nNetworking allows resource sharing, quick communication, one central backup and control of who sees what. Its limits are the cost of setting up, the risk of viruses spreading, and the dependence on a server or router: if it fails, many users stop.\n\n## Using a network safely\n\nPupils should log in with their own password, never share it, log out when done, and not install programs on a shared computer."
+        "content": "# Networking in practice: choosing and using networks\n\n## Recall\n\nA **network** links two or more computers to share data, programs and devices. The **Internet** is a public worldwide network of networks. An **intranet** is a private network for one organisation. An **extranet** is a part of an intranet that selected outsiders, such as parents or suppliers, can reach with a password.\n\n## Devices that make a network work\n\n- **Network interface card (NIC)**: the part in each computer that connects it to the network.\n- **Cable or wireless access point**: the path for the signal.\n- **Switch**: joins the computers inside a LAN and sends data only to the computer that needs it.\n- **Router**: joins different networks, such as the school LAN to the Internet, and directs data.\n- **Modem**: converts signals so they can travel on a telephone or fibre line.\n\n## Choosing the right network\n\n| Organisation | Network | Why |\n| --- | --- | --- |\n| A school ICT room | LAN | one room or building |\n| A university with campuses across a city | MAN | several sites in one city |\n| A bank with branches in many states | WAN | sites far apart |\n\n## The cost of sharing\n\nA school ICT room has 20 computers. Giving each its own printer at N150,000 would cost 20 x 150,000 = N3,000,000. Connecting them in a LAN so that they share two printers costs 2 x 150,000 = N300,000 plus a switch of about N60,000 and cables of N40,000, a total of N400,000. The school saves N3,000,000 - N400,000 = **$\\ce{N2}$,600,000**.\n\n## Significance and limits\n\nNetworking allows resource sharing, quick communication, one central backup and control of who sees what. Its limits are the cost of setting up, the risk of viruses spreading, and the dependence on a server or router: if it fails, many users stop.\n\n## Using a network safely\n\nPupils should log in with their own password, never share it, log out when done, and not install programs on a shared computer."
       },
       "cards": [
         {
@@ -102,13 +102,13 @@
             "Cost of separate printers = 25 x 120,000 = N3,000,000",
             "Cost of shared printers = 2 x 120,000 = N240,000",
             "Total networked cost = 240,000 + 70,000 + 30,000 = N340,000",
-            "Saving = 3,000,000 - 340,000 = N2,660,000"
+            "Saving = 3,000,000 - 340,000 = $\\ce{N2}$,660,000"
           ],
-          "modelAnswer": "(a) 25 x N120,000 = N3,000,000. (b) Two printers cost 2 x 120,000 = N240,000. The total cost with the switch and cables is 240,000 + 70,000 + 30,000 = N340,000. The saving is 3,000,000 - 340,000 = N2,660,000.",
+          "modelAnswer": "(a) 25 x N120,000 = N3,000,000. (b) Two printers cost 2 x 120,000 = N240,000. The total cost with the switch and cables is 240,000 + 70,000 + 30,000 = N340,000. The saving is 3,000,000 - 340,000 = $\\ce{N2}$,660,000.",
           "answers": [
             {
               "tier": "full",
-              "text": "(a) 25 x 120,000 = N3,000,000. (b) Two printers = 2 x 120,000 = N240,000. The total = 240,000 + 70,000 + 30,000 = N340,000. The saving = 3,000,000 - 340,000 = N2,660,000.",
+              "text": "(a) 25 x 120,000 = N3,000,000. (b) Two printers = 2 x 120,000 = N240,000. The total = 240,000 + 70,000 + 30,000 = N340,000. The saving = 3,000,000 - 340,000 = $\\ce{N2}$,660,000.",
               "meets": [
                 {
                   "point": 0,
@@ -124,14 +124,14 @@
                 },
                 {
                   "point": 3,
-                  "quote": "The saving = 3,000,000 - 340,000 = N2,660,000"
+                  "quote": "The saving = 3,000,000 - 340,000 = $\\ce{N2}$,660,000"
                 }
               ],
               "feedback": "All four marks. Each step is clear and the units are shown."
             },
             {
               "tier": "full",
-              "text": "Separate printers cost 25 times N120,000 which is N3,000,000. For the network, 2 printers cost N240,000, and with the N70,000 switch and N30,000 cables the cost is N340,000. The school saves N2,660,000.",
+              "text": "Separate printers cost 25 times N120,000 which is N3,000,000. For the network, 2 printers cost N240,000, and with the N70,000 switch and N30,000 cables the cost is N340,000. The school saves $\\ce{N2}$,660,000.",
               "meets": [
                 {
                   "point": 0,
@@ -147,7 +147,7 @@
                 },
                 {
                   "point": 3,
-                  "quote": "The school saves N2,660,000"
+                  "quote": "The school saves $\\ce{N2}$,660,000"
                 }
               ],
               "feedback": "Full marks. The saving is the figure a bursar would want."
@@ -165,7 +165,7 @@
                   "quote": "240,000 + 70,000 + 30,000 = N340,000"
                 }
               ],
-              "feedback": "Both costs are right. You did not state the saving: 3,000,000 - 340,000 = N2,660,000. Also show how you found the cost of two printers."
+              "feedback": "Both costs are right. You did not state the saving: 3,000,000 - 340,000 = $\\ce{N2}$,660,000. Also show how you found the cost of two printers."
             },
             {
               "tier": "partial",
@@ -180,7 +180,7 @@
                   "quote": "Two printers cost 240,000"
                 }
               ],
-              "feedback": "The first two parts are right. You left out the N30,000 cables, so the total is N340,000 and the saving N2,660,000.",
+              "feedback": "The first two parts are right. You left out the N30,000 cables, so the total is N340,000 and the saving $\\ce{N2}$,660,000.",
               "unsure": true
             },
             {
@@ -193,7 +193,7 @@
               "tier": "weak",
               "text": "(a) 120,000. (b) A network is cheaper.",
               "meets": [],
-              "feedback": "Show the calculation for each: 25 printers cost N3,000,000 and the network costs N340,000, a saving of N2,660,000."
+              "feedback": "Show the calculation for each: 25 printers cost N3,000,000 and the network costs N340,000, a saving of $\\ce{N2}$,660,000."
             }
           ]
         },
